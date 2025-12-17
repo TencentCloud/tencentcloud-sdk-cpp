@@ -19,6 +19,8 @@ set(evt_public_header
   )
 
 set(evt_public_header_model
+  include/tencentcloud/evt/v20250217/model/CompleteApprovalRequest.h
+  include/tencentcloud/evt/v20250217/model/CompleteApprovalResponse.h
   include/tencentcloud/evt/v20250217/model/CreateRoleUserResponse.h
   include/tencentcloud/evt/v20250217/model/CreateRoleUserRequest.h
   include/tencentcloud/evt/v20250217/model/UserAttribute.h
@@ -26,6 +28,8 @@ set(evt_public_header_model
 
 set(evt_src
   src/v20250217/EvtClient.cpp
+  src/v20250217/model/CompleteApprovalRequest.cpp
+  src/v20250217/model/CompleteApprovalResponse.cpp
   src/v20250217/model/CreateRoleUserResponse.cpp
   src/v20250217/model/CreateRoleUserRequest.cpp
   src/v20250217/model/UserAttribute.cpp

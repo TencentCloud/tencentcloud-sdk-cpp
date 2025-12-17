@@ -28,7 +28,8 @@ GetWsTokenResponse::GetWsTokenResponse() :
     m_balanceHasBeenSet(false),
     m_inputLenLimitHasBeenSet(false),
     m_patternHasBeenSet(false),
-    m_singleWorkflowHasBeenSet(false)
+    m_singleWorkflowHasBeenSet(false),
+    m_visionModelInputLimitHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,16 @@ CoreInternalOutcome GetWsTokenResponse::Deserialize(const string &payload)
         m_singleWorkflowHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VisionModelInputLimit") && !rsp["VisionModelInputLimit"].IsNull())
+    {
+        if (!rsp["VisionModelInputLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VisionModelInputLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_visionModelInputLimit = rsp["VisionModelInputLimit"].GetInt64();
+        m_visionModelInputLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -172,6 +183,14 @@ string GetWsTokenResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_singleWorkflow.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_visionModelInputLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VisionModelInputLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_visionModelInputLimit, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -234,6 +253,16 @@ KnowledgeQaSingleWorkflow GetWsTokenResponse::GetSingleWorkflow() const
 bool GetWsTokenResponse::SingleWorkflowHasBeenSet() const
 {
     return m_singleWorkflowHasBeenSet;
+}
+
+int64_t GetWsTokenResponse::GetVisionModelInputLimit() const
+{
+    return m_visionModelInputLimit;
+}
+
+bool GetWsTokenResponse::VisionModelInputLimitHasBeenSet() const
+{
+    return m_visionModelInputLimitHasBeenSet;
 }
 
 

@@ -107,6 +107,8 @@
 #include <tencentcloud/bh/v20230418/model/DescribeChangePwdTaskDetailResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeCmdTemplatesRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeCmdTemplatesResponse.h>
+#include <tencentcloud/bh/v20230418/model/DescribeDepartmentsRequest.h>
+#include <tencentcloud/bh/v20230418/model/DescribeDepartmentsResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeDeviceAccountsRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeDeviceAccountsResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeDeviceGroupMembersRequest.h>
@@ -365,6 +367,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCmdTemplatesResponse> DescribeCmdTemplatesOutcome;
                 typedef std::future<DescribeCmdTemplatesOutcome> DescribeCmdTemplatesOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DescribeCmdTemplatesRequest&, DescribeCmdTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCmdTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDepartmentsResponse> DescribeDepartmentsOutcome;
+                typedef std::future<DescribeDepartmentsOutcome> DescribeDepartmentsOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::DescribeDepartmentsRequest&, DescribeDepartmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDepartmentsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceAccountsResponse> DescribeDeviceAccountsOutcome;
                 typedef std::future<DescribeDeviceAccountsOutcome> DescribeDeviceAccountsOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DescribeDeviceAccountsRequest&, DescribeDeviceAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceAccountsAsyncHandler;
@@ -922,6 +927,15 @@ namespace TencentCloud
                 DescribeCmdTemplatesOutcome DescribeCmdTemplates(const Model::DescribeCmdTemplatesRequest &request);
                 void DescribeCmdTemplatesAsync(const Model::DescribeCmdTemplatesRequest& request, const DescribeCmdTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCmdTemplatesOutcomeCallable DescribeCmdTemplatesCallable(const Model::DescribeCmdTemplatesRequest& request);
+
+                /**
+                 *查询部门信息
+                 * @param req DescribeDepartmentsRequest
+                 * @return DescribeDepartmentsOutcome
+                 */
+                DescribeDepartmentsOutcome DescribeDepartments(const Model::DescribeDepartmentsRequest &request);
+                void DescribeDepartmentsAsync(const Model::DescribeDepartmentsRequest& request, const DescribeDepartmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDepartmentsOutcomeCallable DescribeDepartmentsCallable(const Model::DescribeDepartmentsRequest& request);
 
                 /**
                  *查询主机账号列表

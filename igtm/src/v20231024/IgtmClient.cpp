@@ -190,6 +190,56 @@ IgtmClient::CreateMonitorOutcomeCallable IgtmClient::CreateMonitorCallable(const
     return prom->get_future();
 }
 
+IgtmClient::CreatePackageAndPayOutcome IgtmClient::CreatePackageAndPay(const CreatePackageAndPayRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePackageAndPay");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePackageAndPayResponse rsp = CreatePackageAndPayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePackageAndPayOutcome(rsp);
+        else
+            return CreatePackageAndPayOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePackageAndPayOutcome(outcome.GetError());
+    }
+}
+
+void IgtmClient::CreatePackageAndPayAsync(const CreatePackageAndPayRequest& request, const CreatePackageAndPayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreatePackageAndPayRequest&;
+    using Resp = CreatePackageAndPayResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreatePackageAndPay", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IgtmClient::CreatePackageAndPayOutcomeCallable IgtmClient::CreatePackageAndPayCallable(const CreatePackageAndPayRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreatePackageAndPayOutcome>>();
+    CreatePackageAndPayAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const CreatePackageAndPayRequest&,
+        CreatePackageAndPayOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IgtmClient::CreateStrategyOutcome IgtmClient::CreateStrategy(const CreateStrategyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateStrategy");
@@ -1282,6 +1332,56 @@ IgtmClient::ModifyMonitorOutcomeCallable IgtmClient::ModifyMonitorCallable(const
         const IgtmClient*,
         const ModifyMonitorRequest&,
         ModifyMonitorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IgtmClient::ModifyPackageAutoRenewOutcome IgtmClient::ModifyPackageAutoRenew(const ModifyPackageAutoRenewRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPackageAutoRenew");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPackageAutoRenewResponse rsp = ModifyPackageAutoRenewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPackageAutoRenewOutcome(rsp);
+        else
+            return ModifyPackageAutoRenewOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPackageAutoRenewOutcome(outcome.GetError());
+    }
+}
+
+void IgtmClient::ModifyPackageAutoRenewAsync(const ModifyPackageAutoRenewRequest& request, const ModifyPackageAutoRenewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyPackageAutoRenewRequest&;
+    using Resp = ModifyPackageAutoRenewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyPackageAutoRenew", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IgtmClient::ModifyPackageAutoRenewOutcomeCallable IgtmClient::ModifyPackageAutoRenewCallable(const ModifyPackageAutoRenewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyPackageAutoRenewOutcome>>();
+    ModifyPackageAutoRenewAsync(
+    request,
+    [prom](
+        const IgtmClient*,
+        const ModifyPackageAutoRenewRequest&,
+        ModifyPackageAutoRenewOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

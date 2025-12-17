@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lke/v20231130/model/NL2SQLModelConfig.h>
 
 
 namespace TencentCloud
@@ -171,6 +172,31 @@ namespace TencentCloud
                      */
                     bool RerankModelHasBeenSet() const;
 
+                    /**
+                     * 获取NL2SQL模型配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NatureLanguageToSqlModelConfig NL2SQL模型配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    NL2SQLModelConfig GetNatureLanguageToSqlModelConfig() const;
+
+                    /**
+                     * 设置NL2SQL模型配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _natureLanguageToSqlModelConfig NL2SQL模型配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNatureLanguageToSqlModelConfig(const NL2SQLModelConfig& _natureLanguageToSqlModelConfig);
+
+                    /**
+                     * 判断参数 NatureLanguageToSqlModelConfig 是否已赋值
+                     * @return NatureLanguageToSqlModelConfig 是否已赋值
+                     * 
+                     */
+                    bool NatureLanguageToSqlModelConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +233,13 @@ namespace TencentCloud
                      */
                     std::string m_rerankModel;
                     bool m_rerankModelHasBeenSet;
+
+                    /**
+                     * NL2SQL模型配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    NL2SQLModelConfig m_natureLanguageToSqlModelConfig;
+                    bool m_natureLanguageToSqlModelConfigHasBeenSet;
 
                 };
             }

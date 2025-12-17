@@ -45,6 +45,20 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取token
+                     * @return Token token
+                     * 
+                     */
+                    std::string GetToken() const;
+
+                    /**
+                     * 判断参数 Token 是否已赋值
+                     * @return Token 是否已赋值
+                     * 
+                     */
+                    bool TokenHasBeenSet() const;
+
+                    /**
                      * 获取加速信息
                      * @return AcceleratorInfo 加速信息
                      * 
@@ -73,6 +87,12 @@ namespace TencentCloud
                     bool AndroidInstanceErrorsHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * token
+                     */
+                    std::string m_token;
+                    bool m_tokenHasBeenSet;
 
                     /**
                      * 加速信息

@@ -24,10 +24,12 @@ LogsetInfo::LogsetInfo() :
     m_logsetIdHasBeenSet(false),
     m_logsetNameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
+    m_assumerUinHasBeenSet(false),
     m_assumerNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_topicCountHasBeenSet(false),
-    m_roleNameHasBeenSet(false)
+    m_roleNameHasBeenSet(false),
+    m_metricTopicCountHasBeenSet(false)
 {
 }
 
@@ -64,6 +66,16 @@ CoreInternalOutcome LogsetInfo::Deserialize(const rapidjson::Value &value)
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssumerUin") && !value["AssumerUin"].IsNull())
+    {
+        if (!value["AssumerUin"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogsetInfo.AssumerUin` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_assumerUin = value["AssumerUin"].GetUint64();
+        m_assumerUinHasBeenSet = true;
     }
 
     if (value.HasMember("AssumerName") && !value["AssumerName"].IsNull())
@@ -116,6 +128,16 @@ CoreInternalOutcome LogsetInfo::Deserialize(const rapidjson::Value &value)
         m_roleNameHasBeenSet = true;
     }
 
+    if (value.HasMember("MetricTopicCount") && !value["MetricTopicCount"].IsNull())
+    {
+        if (!value["MetricTopicCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogsetInfo.MetricTopicCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_metricTopicCount = value["MetricTopicCount"].GetInt64();
+        m_metricTopicCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +167,14 @@ void LogsetInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assumerUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssumerUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_assumerUin, allocator);
     }
 
     if (m_assumerNameHasBeenSet)
@@ -184,6 +214,14 @@ void LogsetInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "RoleName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_roleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metricTopicCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetricTopicCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_metricTopicCount, allocator);
     }
 
 }
@@ -235,6 +273,22 @@ void LogsetInfo::SetCreateTime(const string& _createTime)
 bool LogsetInfo::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+uint64_t LogsetInfo::GetAssumerUin() const
+{
+    return m_assumerUin;
+}
+
+void LogsetInfo::SetAssumerUin(const uint64_t& _assumerUin)
+{
+    m_assumerUin = _assumerUin;
+    m_assumerUinHasBeenSet = true;
+}
+
+bool LogsetInfo::AssumerUinHasBeenSet() const
+{
+    return m_assumerUinHasBeenSet;
 }
 
 string LogsetInfo::GetAssumerName() const
@@ -299,5 +353,21 @@ void LogsetInfo::SetRoleName(const string& _roleName)
 bool LogsetInfo::RoleNameHasBeenSet() const
 {
     return m_roleNameHasBeenSet;
+}
+
+int64_t LogsetInfo::GetMetricTopicCount() const
+{
+    return m_metricTopicCount;
+}
+
+void LogsetInfo::SetMetricTopicCount(const int64_t& _metricTopicCount)
+{
+    m_metricTopicCount = _metricTopicCount;
+    m_metricTopicCountHasBeenSet = true;
+}
+
+bool LogsetInfo::MetricTopicCountHasBeenSet() const
+{
+    return m_metricTopicCountHasBeenSet;
 }
 

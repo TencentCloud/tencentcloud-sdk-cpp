@@ -45,19 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主题ID
-- 通过[获取主题列表](https://cloud.tencent.com/document/product/614/56454)获取主题Id。
-                     * @return TopicId 主题ID
-- 通过[获取主题列表](https://cloud.tencent.com/document/product/614/56454)获取主题Id。
+                     * 获取 主题ID- 通过[获取主题列表](https://cloud.tencent.com/document/product/614/56454)获取主题Id。
+                     * @return TopicId  主题ID- 通过[获取主题列表](https://cloud.tencent.com/document/product/614/56454)获取主题Id。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置主题ID
-- 通过[获取主题列表](https://cloud.tencent.com/document/product/614/56454)获取主题Id。
-                     * @param _topicId 主题ID
-- 通过[获取主题列表](https://cloud.tencent.com/document/product/614/56454)获取主题Id。
+                     * 设置 主题ID- 通过[获取主题列表](https://cloud.tencent.com/document/product/614/56454)获取主题Id。
+                     * @param _topicId  主题ID- 通过[获取主题列表](https://cloud.tencent.com/document/product/614/56454)获取主题Id。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -218,6 +214,27 @@ namespace TencentCloud
                      * 
                      */
                     bool PeriodHasBeenSet() const;
+
+                    /**
+                     * 获取存储类型：cold 低频存储，hot 标准存储
+                     * @return StorageType 存储类型：cold 低频存储，hot 标准存储
+                     * 
+                     */
+                    std::string GetStorageType() const;
+
+                    /**
+                     * 设置存储类型：cold 低频存储，hot 标准存储
+                     * @param _storageType 存储类型：cold 低频存储，hot 标准存储
+                     * 
+                     */
+                    void SetStorageType(const std::string& _storageType);
+
+                    /**
+                     * 判断参数 StorageType 是否已赋值
+                     * @return StorageType 是否已赋值
+                     * 
+                     */
+                    bool StorageTypeHasBeenSet() const;
 
                     /**
                      * 获取主题描述
@@ -381,11 +398,56 @@ namespace TencentCloud
                      */
                     bool CancelTopicAsyncTaskIDHasBeenSet() const;
 
+                    /**
+                     * 获取加密相关参数。 支持加密地域并且开白用户可以传此参数，其他场景不能传递该参数。
+只支持传入1：kms-cls 云产品秘钥加密
+                     * @return Encryption 加密相关参数。 支持加密地域并且开白用户可以传此参数，其他场景不能传递该参数。
+只支持传入1：kms-cls 云产品秘钥加密
+                     * 
+                     */
+                    uint64_t GetEncryption() const;
+
+                    /**
+                     * 设置加密相关参数。 支持加密地域并且开白用户可以传此参数，其他场景不能传递该参数。
+只支持传入1：kms-cls 云产品秘钥加密
+                     * @param _encryption 加密相关参数。 支持加密地域并且开白用户可以传此参数，其他场景不能传递该参数。
+只支持传入1：kms-cls 云产品秘钥加密
+                     * 
+                     */
+                    void SetEncryption(const uint64_t& _encryption);
+
+                    /**
+                     * 判断参数 Encryption 是否已赋值
+                     * @return Encryption 是否已赋值
+                     * 
+                     */
+                    bool EncryptionHasBeenSet() const;
+
+                    /**
+                     * 获取开启记录公网来源ip和服务端接收时间
+                     * @return IsSourceFrom 开启记录公网来源ip和服务端接收时间
+                     * 
+                     */
+                    bool GetIsSourceFrom() const;
+
+                    /**
+                     * 设置开启记录公网来源ip和服务端接收时间
+                     * @param _isSourceFrom 开启记录公网来源ip和服务端接收时间
+                     * 
+                     */
+                    void SetIsSourceFrom(const bool& _isSourceFrom);
+
+                    /**
+                     * 判断参数 IsSourceFrom 是否已赋值
+                     * @return IsSourceFrom 是否已赋值
+                     * 
+                     */
+                    bool IsSourceFromHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 主题ID
-- 通过[获取主题列表](https://cloud.tencent.com/document/product/614/56454)获取主题Id。
+                     *  主题ID- 通过[获取主题列表](https://cloud.tencent.com/document/product/614/56454)获取主题Id。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
@@ -433,6 +495,12 @@ namespace TencentCloud
                     bool m_periodHasBeenSet;
 
                     /**
+                     * 存储类型：cold 低频存储，hot 标准存储
+                     */
+                    std::string m_storageType;
+                    bool m_storageTypeHasBeenSet;
+
+                    /**
                      * 主题描述
                      */
                     std::string m_describes;
@@ -476,6 +544,19 @@ namespace TencentCloud
                      */
                     std::string m_cancelTopicAsyncTaskID;
                     bool m_cancelTopicAsyncTaskIDHasBeenSet;
+
+                    /**
+                     * 加密相关参数。 支持加密地域并且开白用户可以传此参数，其他场景不能传递该参数。
+只支持传入1：kms-cls 云产品秘钥加密
+                     */
+                    uint64_t m_encryption;
+                    bool m_encryptionHasBeenSet;
+
+                    /**
+                     * 开启记录公网来源ip和服务端接收时间
+                     */
+                    bool m_isSourceFrom;
+                    bool m_isSourceFromHasBeenSet;
 
                 };
             }

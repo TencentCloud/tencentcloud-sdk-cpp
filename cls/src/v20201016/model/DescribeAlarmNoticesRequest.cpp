@@ -25,7 +25,8 @@ using namespace std;
 DescribeAlarmNoticesRequest::DescribeAlarmNoticesRequest() :
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_hasAlarmShieldCountHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string DescribeAlarmNoticesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_hasAlarmShieldCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasAlarmShieldCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_hasAlarmShieldCount, allocator);
     }
 
 
@@ -121,6 +130,22 @@ void DescribeAlarmNoticesRequest::SetLimit(const int64_t& _limit)
 bool DescribeAlarmNoticesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+bool DescribeAlarmNoticesRequest::GetHasAlarmShieldCount() const
+{
+    return m_hasAlarmShieldCount;
+}
+
+void DescribeAlarmNoticesRequest::SetHasAlarmShieldCount(const bool& _hasAlarmShieldCount)
+{
+    m_hasAlarmShieldCount = _hasAlarmShieldCount;
+    m_hasAlarmShieldCountHasBeenSet = true;
+}
+
+bool DescribeAlarmNoticesRequest::HasAlarmShieldCountHasBeenSet() const
+{
+    return m_hasAlarmShieldCountHasBeenSet;
 }
 
 

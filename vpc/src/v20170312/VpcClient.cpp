@@ -11140,6 +11140,56 @@ VpcClient::DescribeRouteListOutcomeCallable VpcClient::DescribeRouteListCallable
     return prom->get_future();
 }
 
+VpcClient::DescribeRoutePoliciesOutcome VpcClient::DescribeRoutePolicies(const DescribeRoutePoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRoutePolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRoutePoliciesResponse rsp = DescribeRoutePoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRoutePoliciesOutcome(rsp);
+        else
+            return DescribeRoutePoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRoutePoliciesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeRoutePoliciesAsync(const DescribeRoutePoliciesRequest& request, const DescribeRoutePoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRoutePoliciesRequest&;
+    using Resp = DescribeRoutePoliciesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRoutePolicies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VpcClient::DescribeRoutePoliciesOutcomeCallable VpcClient::DescribeRoutePoliciesCallable(const DescribeRoutePoliciesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRoutePoliciesOutcome>>();
+    DescribeRoutePoliciesAsync(
+    request,
+    [prom](
+        const VpcClient*,
+        const DescribeRoutePoliciesRequest&,
+        DescribeRoutePoliciesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VpcClient::DescribeRoutePolicyEntriesOutcome VpcClient::DescribeRoutePolicyEntries(const DescribeRoutePolicyEntriesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRoutePolicyEntries");

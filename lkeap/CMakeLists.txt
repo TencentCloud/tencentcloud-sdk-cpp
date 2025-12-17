@@ -37,7 +37,7 @@ set(lkeap_public_header_model
   include/tencentcloud/lkeap/v20240522/model/ListQAsResponse.h
   include/tencentcloud/lkeap/v20240522/model/DeleteAttributeLabelsResponse.h
   include/tencentcloud/lkeap/v20240522/model/RetrievalSetting.h
-  include/tencentcloud/lkeap/v20240522/model/ListDocsRequest.h
+  include/tencentcloud/lkeap/v20240522/model/CancelTaskRequest.h
   include/tencentcloud/lkeap/v20240522/model/CreateAttributeLabelResponse.h
   include/tencentcloud/lkeap/v20240522/model/RetrieveKnowledgeResponse.h
   include/tencentcloud/lkeap/v20240522/model/CreateSplitDocumentFlowResponse.h
@@ -45,7 +45,7 @@ set(lkeap_public_header_model
   include/tencentcloud/lkeap/v20240522/model/CreateQAResponse.h
   include/tencentcloud/lkeap/v20240522/model/ModifyAttributeLabelRequest.h
   include/tencentcloud/lkeap/v20240522/model/GetReconstructDocumentResultResponse.h
-  include/tencentcloud/lkeap/v20240522/model/ReconstructDocumentSSEConfig.h
+  include/tencentcloud/lkeap/v20240522/model/ListDocsRequest.h
   include/tencentcloud/lkeap/v20240522/model/ListDocsResponse.h
   include/tencentcloud/lkeap/v20240522/model/DocumentUsage.h
   include/tencentcloud/lkeap/v20240522/model/ListAttributeLabelsRequest.h
@@ -56,7 +56,7 @@ set(lkeap_public_header_model
   include/tencentcloud/lkeap/v20240522/model/CreateReconstructDocumentFlowConfig.h
   include/tencentcloud/lkeap/v20240522/model/RunRerankRequest.h
   include/tencentcloud/lkeap/v20240522/model/ChatUsage.h
-  include/tencentcloud/lkeap/v20240522/model/GetSplitDocumentResultRequest.h
+  include/tencentcloud/lkeap/v20240522/model/DeleteQAsResponse.h
   include/tencentcloud/lkeap/v20240522/model/Delta.h
   include/tencentcloud/lkeap/v20240522/model/ReconstructDocumentSSERequest.h
   include/tencentcloud/lkeap/v20240522/model/ListAttributeLabelsResponse.h
@@ -69,6 +69,8 @@ set(lkeap_public_header_model
   include/tencentcloud/lkeap/v20240522/model/DeleteDocsResponse.h
   include/tencentcloud/lkeap/v20240522/model/LabelItem.h
   include/tencentcloud/lkeap/v20240522/model/CreateReconstructDocumentFlowRequest.h
+  include/tencentcloud/lkeap/v20240522/model/GetSplitDocumentResultRequest.h
+  include/tencentcloud/lkeap/v20240522/model/ReconstructDocumentSSEConfig.h
   include/tencentcloud/lkeap/v20240522/model/GetSplitDocumentResultResponse.h
   include/tencentcloud/lkeap/v20240522/model/ModifyQAResponse.h
   include/tencentcloud/lkeap/v20240522/model/ReconstructDocumentFailedPage.h
@@ -77,7 +79,7 @@ set(lkeap_public_header_model
   include/tencentcloud/lkeap/v20240522/model/Thinking.h
   include/tencentcloud/lkeap/v20240522/model/QueryRewriteResponse.h
   include/tencentcloud/lkeap/v20240522/model/UploadDocRequest.h
-  include/tencentcloud/lkeap/v20240522/model/DeleteQAsResponse.h
+  include/tencentcloud/lkeap/v20240522/model/CancelTaskResponse.h
   include/tencentcloud/lkeap/v20240522/model/CreateKnowledgeBaseResponse.h
   include/tencentcloud/lkeap/v20240522/model/GetEmbeddingResponse.h
   include/tencentcloud/lkeap/v20240522/model/QueryRewriteRequest.h
@@ -118,7 +120,7 @@ set(lkeap_src
   src/v20240522/model/ListQAsResponse.cpp
   src/v20240522/model/DeleteAttributeLabelsResponse.cpp
   src/v20240522/model/RetrievalSetting.cpp
-  src/v20240522/model/ListDocsRequest.cpp
+  src/v20240522/model/CancelTaskRequest.cpp
   src/v20240522/model/CreateAttributeLabelResponse.cpp
   src/v20240522/model/RetrieveKnowledgeResponse.cpp
   src/v20240522/model/CreateSplitDocumentFlowResponse.cpp
@@ -126,7 +128,7 @@ set(lkeap_src
   src/v20240522/model/CreateQAResponse.cpp
   src/v20240522/model/ModifyAttributeLabelRequest.cpp
   src/v20240522/model/GetReconstructDocumentResultResponse.cpp
-  src/v20240522/model/ReconstructDocumentSSEConfig.cpp
+  src/v20240522/model/ListDocsRequest.cpp
   src/v20240522/model/ListDocsResponse.cpp
   src/v20240522/model/DocumentUsage.cpp
   src/v20240522/model/ListAttributeLabelsRequest.cpp
@@ -137,7 +139,7 @@ set(lkeap_src
   src/v20240522/model/CreateReconstructDocumentFlowConfig.cpp
   src/v20240522/model/RunRerankRequest.cpp
   src/v20240522/model/ChatUsage.cpp
-  src/v20240522/model/GetSplitDocumentResultRequest.cpp
+  src/v20240522/model/DeleteQAsResponse.cpp
   src/v20240522/model/Delta.cpp
   src/v20240522/model/ReconstructDocumentSSERequest.cpp
   src/v20240522/model/ListAttributeLabelsResponse.cpp
@@ -150,6 +152,8 @@ set(lkeap_src
   src/v20240522/model/DeleteDocsResponse.cpp
   src/v20240522/model/LabelItem.cpp
   src/v20240522/model/CreateReconstructDocumentFlowRequest.cpp
+  src/v20240522/model/GetSplitDocumentResultRequest.cpp
+  src/v20240522/model/ReconstructDocumentSSEConfig.cpp
   src/v20240522/model/GetSplitDocumentResultResponse.cpp
   src/v20240522/model/ModifyQAResponse.cpp
   src/v20240522/model/ReconstructDocumentFailedPage.cpp
@@ -158,7 +162,7 @@ set(lkeap_src
   src/v20240522/model/Thinking.cpp
   src/v20240522/model/QueryRewriteResponse.cpp
   src/v20240522/model/UploadDocRequest.cpp
-  src/v20240522/model/DeleteQAsResponse.cpp
+  src/v20240522/model/CancelTaskResponse.cpp
   src/v20240522/model/CreateKnowledgeBaseResponse.cpp
   src/v20240522/model/GetEmbeddingResponse.cpp
   src/v20240522/model/QueryRewriteRequest.cpp

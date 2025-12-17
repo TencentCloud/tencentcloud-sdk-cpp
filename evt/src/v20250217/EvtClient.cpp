@@ -40,6 +40,56 @@ EvtClient::EvtClient(const Credential &credential, const string &region, const C
 }
 
 
+EvtClient::CompleteApprovalOutcome EvtClient::CompleteApproval(const CompleteApprovalRequest &request)
+{
+    auto outcome = MakeRequest(request, "CompleteApproval");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CompleteApprovalResponse rsp = CompleteApprovalResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CompleteApprovalOutcome(rsp);
+        else
+            return CompleteApprovalOutcome(o.GetError());
+    }
+    else
+    {
+        return CompleteApprovalOutcome(outcome.GetError());
+    }
+}
+
+void EvtClient::CompleteApprovalAsync(const CompleteApprovalRequest& request, const CompleteApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CompleteApprovalRequest&;
+    using Resp = CompleteApprovalResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CompleteApproval", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EvtClient::CompleteApprovalOutcomeCallable EvtClient::CompleteApprovalCallable(const CompleteApprovalRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CompleteApprovalOutcome>>();
+    CompleteApprovalAsync(
+    request,
+    [prom](
+        const EvtClient*,
+        const CompleteApprovalRequest&,
+        CompleteApprovalOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EvtClient::CreateRoleUserOutcome EvtClient::CreateRoleUser(const CreateRoleUserRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRoleUser");

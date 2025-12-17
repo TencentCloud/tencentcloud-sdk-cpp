@@ -92,6 +92,27 @@ namespace TencentCloud
                      */
                     bool ReasonsHasBeenSet() const;
 
+                    /**
+                     * 获取处理状态 0-待处理 1-已拒答 2-已忽略 3-已添加为新问答 4-已添加为相似问
+                     * @return HandlingStatuses 处理状态 0-待处理 1-已拒答 2-已忽略 3-已添加为新问答 4-已添加为相似问
+                     * 
+                     */
+                    std::vector<uint64_t> GetHandlingStatuses() const;
+
+                    /**
+                     * 设置处理状态 0-待处理 1-已拒答 2-已忽略 3-已添加为新问答 4-已添加为相似问
+                     * @param _handlingStatuses 处理状态 0-待处理 1-已拒答 2-已忽略 3-已添加为新问答 4-已添加为相似问
+                     * 
+                     */
+                    void SetHandlingStatuses(const std::vector<uint64_t>& _handlingStatuses);
+
+                    /**
+                     * 判断参数 HandlingStatuses 是否已赋值
+                     * @return HandlingStatuses 是否已赋值
+                     * 
+                     */
+                    bool HandlingStatusesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -106,6 +127,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_reasons;
                     bool m_reasonsHasBeenSet;
+
+                    /**
+                     * 处理状态 0-待处理 1-已拒答 2-已忽略 3-已添加为新问答 4-已添加为相似问
+                     */
+                    std::vector<uint64_t> m_handlingStatuses;
+                    bool m_handlingStatusesHasBeenSet;
 
                 };
             }

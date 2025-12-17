@@ -25,7 +25,8 @@ using namespace std;
 ReplaceSecurityGroupPoliciesRequest::ReplaceSecurityGroupPoliciesRequest() :
     m_securityGroupIdHasBeenSet(false),
     m_securityGroupPolicySetHasBeenSet(false),
-    m_originalSecurityGroupPolicySetHasBeenSet(false)
+    m_originalSecurityGroupPolicySetHasBeenSet(false),
+    m_updateTypeHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,14 @@ string ReplaceSecurityGroupPoliciesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_originalSecurityGroupPolicySet.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_updateTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_updateType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -116,6 +125,22 @@ void ReplaceSecurityGroupPoliciesRequest::SetOriginalSecurityGroupPolicySet(cons
 bool ReplaceSecurityGroupPoliciesRequest::OriginalSecurityGroupPolicySetHasBeenSet() const
 {
     return m_originalSecurityGroupPolicySetHasBeenSet;
+}
+
+string ReplaceSecurityGroupPoliciesRequest::GetUpdateType() const
+{
+    return m_updateType;
+}
+
+void ReplaceSecurityGroupPoliciesRequest::SetUpdateType(const string& _updateType)
+{
+    m_updateType = _updateType;
+    m_updateTypeHasBeenSet = true;
+}
+
+bool ReplaceSecurityGroupPoliciesRequest::UpdateTypeHasBeenSet() const
+{
+    return m_updateTypeHasBeenSet;
 }
 
 

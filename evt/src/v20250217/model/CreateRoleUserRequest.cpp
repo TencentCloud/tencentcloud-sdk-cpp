@@ -28,7 +28,8 @@ CreateRoleUserRequest::CreateRoleUserRequest() :
     m_usernameHasBeenSet(false),
     m_enabledHasBeenSet(false),
     m_phoneHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+    m_attributesHasBeenSet(false),
+    m_tencentUinHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string CreateRoleUserRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_tencentUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TencentUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_tencentUin, allocator);
     }
 
 
@@ -196,6 +205,22 @@ void CreateRoleUserRequest::SetAttributes(const vector<UserAttribute>& _attribut
 bool CreateRoleUserRequest::AttributesHasBeenSet() const
 {
     return m_attributesHasBeenSet;
+}
+
+uint64_t CreateRoleUserRequest::GetTencentUin() const
+{
+    return m_tencentUin;
+}
+
+void CreateRoleUserRequest::SetTencentUin(const uint64_t& _tencentUin)
+{
+    m_tencentUin = _tencentUin;
+    m_tencentUinHasBeenSet = true;
+}
+
+bool CreateRoleUserRequest::TencentUinHasBeenSet() const
+{
+    return m_tencentUinHasBeenSet;
 }
 
 

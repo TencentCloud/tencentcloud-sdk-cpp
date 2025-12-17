@@ -111,6 +111,27 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
+                     * 获取若AssumerUin非空，则表示创建该日志集的服务方Uin
+                     * @return AssumerUin 若AssumerUin非空，则表示创建该日志集的服务方Uin
+                     * 
+                     */
+                    uint64_t GetAssumerUin() const;
+
+                    /**
+                     * 设置若AssumerUin非空，则表示创建该日志集的服务方Uin
+                     * @param _assumerUin 若AssumerUin非空，则表示创建该日志集的服务方Uin
+                     * 
+                     */
+                    void SetAssumerUin(const uint64_t& _assumerUin);
+
+                    /**
+                     * 判断参数 AssumerUin 是否已赋值
+                     * @return AssumerUin 是否已赋值
+                     * 
+                     */
+                    bool AssumerUinHasBeenSet() const;
+
+                    /**
                      * 获取云产品标识，日志集由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
                      * @return AssumerName 云产品标识，日志集由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
                      * 
@@ -194,6 +215,27 @@ namespace TencentCloud
                      */
                     bool RoleNameHasBeenSet() const;
 
+                    /**
+                     * 获取日志集下指标主题的数目
+                     * @return MetricTopicCount 日志集下指标主题的数目
+                     * 
+                     */
+                    int64_t GetMetricTopicCount() const;
+
+                    /**
+                     * 设置日志集下指标主题的数目
+                     * @param _metricTopicCount 日志集下指标主题的数目
+                     * 
+                     */
+                    void SetMetricTopicCount(const int64_t& _metricTopicCount);
+
+                    /**
+                     * 判断参数 MetricTopicCount 是否已赋值
+                     * @return MetricTopicCount 是否已赋值
+                     * 
+                     */
+                    bool MetricTopicCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -213,6 +255,12 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 若AssumerUin非空，则表示创建该日志集的服务方Uin
+                     */
+                    uint64_t m_assumerUin;
+                    bool m_assumerUinHasBeenSet;
 
                     /**
                      * 云产品标识，日志集由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
@@ -237,6 +285,12 @@ namespace TencentCloud
                      */
                     std::string m_roleName;
                     bool m_roleNameHasBeenSet;
+
+                    /**
+                     * 日志集下指标主题的数目
+                     */
+                    int64_t m_metricTopicCount;
+                    bool m_metricTopicCountHasBeenSet;
 
                 };
             }

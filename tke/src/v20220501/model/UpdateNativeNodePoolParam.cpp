@@ -41,7 +41,8 @@ UpdateNativeNodePoolParam::UpdateNativeNodePoolParam() :
     m_updateExistedNodeHasBeenSet(false),
     m_dataDisksHasBeenSet(false),
     m_keyIdsHasBeenSet(false),
-    m_gPUConfigsHasBeenSet(false)
+    m_gPUConfigsHasBeenSet(false),
+    m_passwordHasBeenSet(false)
 {
 }
 
@@ -337,6 +338,16 @@ CoreInternalOutcome UpdateNativeNodePoolParam::Deserialize(const rapidjson::Valu
         m_gPUConfigsHasBeenSet = true;
     }
 
+    if (value.HasMember("Password") && !value["Password"].IsNull())
+    {
+        if (!value["Password"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateNativeNodePoolParam.Password` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_password = string(value["Password"].GetString());
+        m_passwordHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -555,6 +566,14 @@ void UpdateNativeNodePoolParam::ToJsonObject(rapidjson::Value &value, rapidjson:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_passwordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Password";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -894,5 +913,21 @@ void UpdateNativeNodePoolParam::SetGPUConfigs(const vector<GPUConfig>& _gPUConfi
 bool UpdateNativeNodePoolParam::GPUConfigsHasBeenSet() const
 {
     return m_gPUConfigsHasBeenSet;
+}
+
+string UpdateNativeNodePoolParam::GetPassword() const
+{
+    return m_password;
+}
+
+void UpdateNativeNodePoolParam::SetPassword(const string& _password)
+{
+    m_password = _password;
+    m_passwordHasBeenSet = true;
+}
+
+bool UpdateNativeNodePoolParam::PasswordHasBeenSet() const
+{
+    return m_passwordHasBeenSet;
 }
 

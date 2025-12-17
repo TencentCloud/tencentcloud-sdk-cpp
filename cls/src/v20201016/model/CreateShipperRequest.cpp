@@ -36,7 +36,9 @@ CreateShipperRequest::CreateShipperRequest() :
     m_filenameModeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
+    m_storageTypeHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
+    m_externalIdHasBeenSet(false)
 {
 }
 
@@ -166,6 +168,22 @@ string CreateShipperRequest::ToJsonString() const
         string key = "StorageType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roleArnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleArn";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_roleArn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_externalId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -398,6 +416,38 @@ void CreateShipperRequest::SetStorageType(const string& _storageType)
 bool CreateShipperRequest::StorageTypeHasBeenSet() const
 {
     return m_storageTypeHasBeenSet;
+}
+
+string CreateShipperRequest::GetRoleArn() const
+{
+    return m_roleArn;
+}
+
+void CreateShipperRequest::SetRoleArn(const string& _roleArn)
+{
+    m_roleArn = _roleArn;
+    m_roleArnHasBeenSet = true;
+}
+
+bool CreateShipperRequest::RoleArnHasBeenSet() const
+{
+    return m_roleArnHasBeenSet;
+}
+
+string CreateShipperRequest::GetExternalId() const
+{
+    return m_externalId;
+}
+
+void CreateShipperRequest::SetExternalId(const string& _externalId)
+{
+    m_externalId = _externalId;
+    m_externalIdHasBeenSet = true;
+}
+
+bool CreateShipperRequest::ExternalIdHasBeenSet() const
+{
+    return m_externalIdHasBeenSet;
 }
 
 

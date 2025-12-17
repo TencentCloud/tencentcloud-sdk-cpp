@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频图像帧列表，图像帧传url
-                     * @return Frames 视频图像帧列表，图像帧传url
+                     * 获取视频图像帧列表，图像帧传url，最大支持传入数量为512帧
+                     * @return Frames 视频图像帧列表，图像帧传url，最大支持传入数量为512帧
                      * 
                      */
                     std::vector<std::string> GetFrames() const;
 
                     /**
-                     * 设置视频图像帧列表，图像帧传url
-                     * @param _frames 视频图像帧列表，图像帧传url
+                     * 设置视频图像帧列表，图像帧传url，最大支持传入数量为512帧
+                     * @param _frames 视频图像帧列表，图像帧传url，最大支持传入数量为512帧
                      * 
                      */
                     void SetFrames(const std::vector<std::string>& _frames);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 视频图像帧列表，图像帧传url
+                     * 视频图像帧列表，图像帧传url，最大支持传入数量为512帧
                      */
                     std::vector<std::string> m_frames;
                     bool m_framesHasBeenSet;

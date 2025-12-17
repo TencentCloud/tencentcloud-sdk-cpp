@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取属性键名
-                     * @return Key 属性键名
+                     * 获取<p>自定义角色体系中用户属性的ID</p><p>属性键名</p>
+                     * @return Key <p>自定义角色体系中用户属性的ID</p><p>属性键名</p>
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置属性键名
-                     * @param _key 属性键名
+                     * 设置<p>自定义角色体系中用户属性的ID</p><p>属性键名</p>
+                     * @param _key <p>自定义角色体系中用户属性的ID</p><p>属性键名</p>
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取属性值
-                     * @return Value 属性值
+                     * 获取<p>自定义角色体系中的用户属性值，只支持传入对应用户属性支持的角色ID</p><p>属性值</p>
+                     * @return Value <p>自定义角色体系中的用户属性值，只支持传入对应用户属性支持的角色ID</p><p>属性值</p>
                      * 
                      */
                     std::vector<int64_t> GetValue() const;
 
                     /**
-                     * 设置属性值
-                     * @param _value 属性值
+                     * 设置<p>自定义角色体系中的用户属性值，只支持传入对应用户属性支持的角色ID</p><p>属性值</p>
+                     * @param _value <p>自定义角色体系中的用户属性值，只支持传入对应用户属性支持的角色ID</p><p>属性值</p>
                      * 
                      */
                     void SetValue(const std::vector<int64_t>& _value);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 属性键名
+                     * <p>自定义角色体系中用户属性的ID</p><p>属性键名</p>
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 属性值
+                     * <p>自定义角色体系中的用户属性值，只支持传入对应用户属性支持的角色ID</p><p>属性值</p>
                      */
                     std::vector<int64_t> m_value;
                     bool m_valueHasBeenSet;

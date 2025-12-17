@@ -507,6 +507,27 @@ namespace TencentCloud
                      */
                     bool GPUConfigsHasBeenSet() const;
 
+                    /**
+                     * 获取原生节点池密码
+                     * @return Password 原生节点池密码
+                     * 
+                     */
+                    std::string GetPassword() const;
+
+                    /**
+                     * 设置原生节点池密码
+                     * @param _password 原生节点池密码
+                     * 
+                     */
+                    void SetPassword(const std::string& _password);
+
+                    /**
+                     * 判断参数 Password 是否已赋值
+                     * @return Password 是否已赋值
+                     * 
+                     */
+                    bool PasswordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -637,6 +658,12 @@ namespace TencentCloud
                      */
                     std::vector<GPUConfig> m_gPUConfigs;
                     bool m_gPUConfigsHasBeenSet;
+
+                    /**
+                     * 原生节点池密码
+                     */
+                    std::string m_password;
+                    bool m_passwordHasBeenSet;
 
                 };
             }

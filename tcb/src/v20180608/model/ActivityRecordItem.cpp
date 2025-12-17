@@ -22,11 +22,14 @@ using namespace std;
 
 ActivityRecordItem::ActivityRecordItem() :
     m_uinHasBeenSet(false),
+    m_envIdHasBeenSet(false),
     m_activityIdHasBeenSet(false),
+    m_activityNameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_subStatusHasBeenSet(false),
     m_subStatusIntHasBeenSet(false),
-    m_isDeletedHasBeenSet(false)
+    m_isDeletedHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -45,6 +48,16 @@ CoreInternalOutcome ActivityRecordItem::Deserialize(const rapidjson::Value &valu
         m_uinHasBeenSet = true;
     }
 
+    if (value.HasMember("EnvId") && !value["EnvId"].IsNull())
+    {
+        if (!value["EnvId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActivityRecordItem.EnvId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_envId = string(value["EnvId"].GetString());
+        m_envIdHasBeenSet = true;
+    }
+
     if (value.HasMember("ActivityId") && !value["ActivityId"].IsNull())
     {
         if (!value["ActivityId"].IsInt64())
@@ -53,6 +66,16 @@ CoreInternalOutcome ActivityRecordItem::Deserialize(const rapidjson::Value &valu
         }
         m_activityId = value["ActivityId"].GetInt64();
         m_activityIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ActivityName") && !value["ActivityName"].IsNull())
+    {
+        if (!value["ActivityName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActivityRecordItem.ActivityName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_activityName = string(value["ActivityName"].GetString());
+        m_activityNameHasBeenSet = true;
     }
 
     if (value.HasMember("Status") && !value["Status"].IsNull())
@@ -95,6 +118,16 @@ CoreInternalOutcome ActivityRecordItem::Deserialize(const rapidjson::Value &valu
         m_isDeletedHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActivityRecordItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,12 +143,28 @@ void ActivityRecordItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_envIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_envId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_activityIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ActivityId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_activityId, allocator);
+    }
+
+    if (m_activityNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActivityName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_activityName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
@@ -150,6 +199,14 @@ void ActivityRecordItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, m_isDeleted, allocator);
     }
 
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -169,6 +226,22 @@ bool ActivityRecordItem::UinHasBeenSet() const
     return m_uinHasBeenSet;
 }
 
+string ActivityRecordItem::GetEnvId() const
+{
+    return m_envId;
+}
+
+void ActivityRecordItem::SetEnvId(const string& _envId)
+{
+    m_envId = _envId;
+    m_envIdHasBeenSet = true;
+}
+
+bool ActivityRecordItem::EnvIdHasBeenSet() const
+{
+    return m_envIdHasBeenSet;
+}
+
 int64_t ActivityRecordItem::GetActivityId() const
 {
     return m_activityId;
@@ -183,6 +256,22 @@ void ActivityRecordItem::SetActivityId(const int64_t& _activityId)
 bool ActivityRecordItem::ActivityIdHasBeenSet() const
 {
     return m_activityIdHasBeenSet;
+}
+
+string ActivityRecordItem::GetActivityName() const
+{
+    return m_activityName;
+}
+
+void ActivityRecordItem::SetActivityName(const string& _activityName)
+{
+    m_activityName = _activityName;
+    m_activityNameHasBeenSet = true;
+}
+
+bool ActivityRecordItem::ActivityNameHasBeenSet() const
+{
+    return m_activityNameHasBeenSet;
 }
 
 int64_t ActivityRecordItem::GetStatus() const
@@ -247,5 +336,21 @@ void ActivityRecordItem::SetIsDeleted(const bool& _isDeleted)
 bool ActivityRecordItem::IsDeletedHasBeenSet() const
 {
     return m_isDeletedHasBeenSet;
+}
+
+string ActivityRecordItem::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void ActivityRecordItem::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool ActivityRecordItem::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

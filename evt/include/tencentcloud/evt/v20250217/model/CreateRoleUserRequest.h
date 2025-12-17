@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取角色体系ID
-                     * @return RoleSystemId 角色体系ID
+                     * 获取<p>自定义角色体系的ID</p><p>角色体系ID</p>
+                     * @return RoleSystemId <p>自定义角色体系的ID</p><p>角色体系ID</p>
                      * 
                      */
                     int64_t GetRoleSystemId() const;
 
                     /**
-                     * 设置角色体系ID
-                     * @param _roleSystemId 角色体系ID
+                     * 设置<p>自定义角色体系的ID</p><p>角色体系ID</p>
+                     * @param _roleSystemId <p>自定义角色体系的ID</p><p>角色体系ID</p>
                      * 
                      */
                     void SetRoleSystemId(const int64_t& _roleSystemId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool RoleSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取人员ID
-                     * @return UserId 人员ID
+                     * 获取<p>要添加的自定义用户ID，建议与腾讯云-子用户的用户名称保持一致</p><p>人员ID</p>
+                     * @return UserId <p>要添加的自定义用户ID，建议与腾讯云-子用户的用户名称保持一致</p><p>人员ID</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置人员ID
-                     * @param _userId 人员ID
+                     * 设置<p>要添加的自定义用户ID，建议与腾讯云-子用户的用户名称保持一致</p><p>人员ID</p>
+                     * @param _userId <p>要添加的自定义用户ID，建议与腾讯云-子用户的用户名称保持一致</p><p>人员ID</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取人员名称
-                     * @return Username 人员名称
+                     * 获取<p>自定义用户的名称</p><p>人员名称</p>
+                     * @return Username <p>自定义用户的名称</p><p>人员名称</p>
                      * 
                      */
                     std::string GetUsername() const;
 
                     /**
-                     * 设置人员名称
-                     * @param _username 人员名称
+                     * 设置<p>自定义用户的名称</p><p>人员名称</p>
+                     * @param _username <p>自定义用户的名称</p><p>人员名称</p>
                      * 
                      */
                     void SetUsername(const std::string& _username);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool UsernameHasBeenSet() const;
 
                     /**
-                     * 获取是否启用
-                     * @return Enabled 是否启用
+                     * 获取<p>是否启用当前用户</p>枚举值：<ul><li> 1： 启用</li><li> 2： 禁用</li></ul><p>是否启用</p>
+                     * @return Enabled <p>是否启用当前用户</p>枚举值：<ul><li> 1： 启用</li><li> 2： 禁用</li></ul><p>是否启用</p>
                      * 
                      */
                     uint64_t GetEnabled() const;
 
                     /**
-                     * 设置是否启用
-                     * @param _enabled 是否启用
+                     * 设置<p>是否启用当前用户</p>枚举值：<ul><li> 1： 启用</li><li> 2： 禁用</li></ul><p>是否启用</p>
+                     * @param _enabled <p>是否启用当前用户</p>枚举值：<ul><li> 1： 启用</li><li> 2： 禁用</li></ul><p>是否启用</p>
                      * 
                      */
                     void SetEnabled(const uint64_t& _enabled);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool EnabledHasBeenSet() const;
 
                     /**
-                     * 获取手机号
-                     * @return Phone 手机号
+                     * 获取<p>自定义用户的手机号</p><p>手机号</p>
+                     * @return Phone <p>自定义用户的手机号</p><p>手机号</p>
                      * 
                      */
                     std::string GetPhone() const;
 
                     /**
-                     * 设置手机号
-                     * @param _phone 手机号
+                     * 设置<p>自定义用户的手机号</p><p>手机号</p>
+                     * @param _phone <p>自定义用户的手机号</p><p>手机号</p>
                      * 
                      */
                     void SetPhone(const std::string& _phone);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool PhoneHasBeenSet() const;
 
                     /**
-                     * 获取属性列表
-                     * @return Attributes 属性列表
+                     * 获取<p>自定义用户的身份属性列表</p><p>属性列表</p>
+                     * @return Attributes <p>自定义用户的身份属性列表</p><p>属性列表</p>
                      * 
                      */
                     std::vector<UserAttribute> GetAttributes() const;
 
                     /**
-                     * 设置属性列表
-                     * @param _attributes 属性列表
+                     * 设置<p>自定义用户的身份属性列表</p><p>属性列表</p>
+                     * @param _attributes <p>自定义用户的身份属性列表</p><p>属性列表</p>
                      * 
                      */
                     void SetAttributes(const std::vector<UserAttribute>& _attributes);
@@ -169,43 +169,70 @@ namespace TencentCloud
                      */
                     bool AttributesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义用户与腾讯云-子用户关联，如果不传默认按照子用户名称进行匹配</p>
+                     * @return TencentUin <p>自定义用户与腾讯云-子用户关联，如果不传默认按照子用户名称进行匹配</p>
+                     * 
+                     */
+                    uint64_t GetTencentUin() const;
+
+                    /**
+                     * 设置<p>自定义用户与腾讯云-子用户关联，如果不传默认按照子用户名称进行匹配</p>
+                     * @param _tencentUin <p>自定义用户与腾讯云-子用户关联，如果不传默认按照子用户名称进行匹配</p>
+                     * 
+                     */
+                    void SetTencentUin(const uint64_t& _tencentUin);
+
+                    /**
+                     * 判断参数 TencentUin 是否已赋值
+                     * @return TencentUin 是否已赋值
+                     * 
+                     */
+                    bool TencentUinHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 角色体系ID
+                     * <p>自定义角色体系的ID</p><p>角色体系ID</p>
                      */
                     int64_t m_roleSystemId;
                     bool m_roleSystemIdHasBeenSet;
 
                     /**
-                     * 人员ID
+                     * <p>要添加的自定义用户ID，建议与腾讯云-子用户的用户名称保持一致</p><p>人员ID</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 人员名称
+                     * <p>自定义用户的名称</p><p>人员名称</p>
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
 
                     /**
-                     * 是否启用
+                     * <p>是否启用当前用户</p>枚举值：<ul><li> 1： 启用</li><li> 2： 禁用</li></ul><p>是否启用</p>
                      */
                     uint64_t m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
-                     * 手机号
+                     * <p>自定义用户的手机号</p><p>手机号</p>
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
 
                     /**
-                     * 属性列表
+                     * <p>自定义用户的身份属性列表</p><p>属性列表</p>
                      */
                     std::vector<UserAttribute> m_attributes;
                     bool m_attributesHasBeenSet;
+
+                    /**
+                     * <p>自定义用户与腾讯云-子用户关联，如果不传默认按照子用户名称进行匹配</p>
+                     */
+                    uint64_t m_tencentUin;
+                    bool m_tencentUinHasBeenSet;
 
                 };
             }

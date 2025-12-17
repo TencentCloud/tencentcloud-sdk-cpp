@@ -350,6 +350,35 @@ namespace TencentCloud
                      */
                     bool AlarmShieldStatusHasBeenSet() const;
 
+                    /**
+                     * 获取统一设定自定义回调参数。
+-  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。
+-  false:优先使用告警策略中单独配置的请求头及请求内容。
+                     * @return CallbackPrioritize 统一设定自定义回调参数。
+-  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。
+-  false:优先使用告警策略中单独配置的请求头及请求内容。
+                     * 
+                     */
+                    bool GetCallbackPrioritize() const;
+
+                    /**
+                     * 设置统一设定自定义回调参数。
+-  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。
+-  false:优先使用告警策略中单独配置的请求头及请求内容。
+                     * @param _callbackPrioritize 统一设定自定义回调参数。
+-  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。
+-  false:优先使用告警策略中单独配置的请求头及请求内容。
+                     * 
+                     */
+                    void SetCallbackPrioritize(const bool& _callbackPrioritize);
+
+                    /**
+                     * 判断参数 CallbackPrioritize 是否已赋值
+                     * @return CallbackPrioritize 是否已赋值
+                     * 
+                     */
+                    bool CallbackPrioritizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -435,6 +464,14 @@ namespace TencentCloud
                      */
                     uint64_t m_alarmShieldStatus;
                     bool m_alarmShieldStatusHasBeenSet;
+
+                    /**
+                     * 统一设定自定义回调参数。
+-  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。
+-  false:优先使用告警策略中单独配置的请求头及请求内容。
+                     */
+                    bool m_callbackPrioritize;
+                    bool m_callbackPrioritizeHasBeenSet;
 
                 };
             }

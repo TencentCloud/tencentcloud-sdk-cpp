@@ -890,6 +890,56 @@ OcrClient::EstateCertOCROutcomeCallable OcrClient::EstateCertOCRCallable(const E
     return prom->get_future();
 }
 
+OcrClient::ExtractDocAgentOutcome OcrClient::ExtractDocAgent(const ExtractDocAgentRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExtractDocAgent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExtractDocAgentResponse rsp = ExtractDocAgentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExtractDocAgentOutcome(rsp);
+        else
+            return ExtractDocAgentOutcome(o.GetError());
+    }
+    else
+    {
+        return ExtractDocAgentOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::ExtractDocAgentAsync(const ExtractDocAgentRequest& request, const ExtractDocAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ExtractDocAgentRequest&;
+    using Resp = ExtractDocAgentResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ExtractDocAgent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OcrClient::ExtractDocAgentOutcomeCallable OcrClient::ExtractDocAgentCallable(const ExtractDocAgentRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ExtractDocAgentOutcome>>();
+    ExtractDocAgentAsync(
+    request,
+    [prom](
+        const OcrClient*,
+        const ExtractDocAgentRequest&,
+        ExtractDocAgentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OcrClient::ExtractDocBasicOutcome OcrClient::ExtractDocBasic(const ExtractDocBasicRequest &request)
 {
     auto outcome = MakeRequest(request, "ExtractDocBasic");

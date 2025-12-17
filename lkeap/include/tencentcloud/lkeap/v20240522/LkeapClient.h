@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/lkeap/v20240522/model/CancelTaskRequest.h>
+#include <tencentcloud/lkeap/v20240522/model/CancelTaskResponse.h>
 #include <tencentcloud/lkeap/v20240522/model/ChatCompletionsRequest.h>
 #include <tencentcloud/lkeap/v20240522/model/ChatCompletionsResponse.h>
 #include <tencentcloud/lkeap/v20240522/model/CreateAttributeLabelRequest.h>
@@ -89,6 +91,9 @@ namespace TencentCloud
                 LkeapClient(const Credential &credential, const std::string &region);
                 LkeapClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CancelTaskResponse> CancelTaskOutcome;
+                typedef std::future<CancelTaskOutcome> CancelTaskOutcomeCallable;
+                typedef std::function<void(const LkeapClient*, const Model::CancelTaskRequest&, CancelTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChatCompletionsResponse> ChatCompletionsOutcome;
                 typedef std::future<ChatCompletionsOutcome> ChatCompletionsOutcomeCallable;
                 typedef std::function<void(const LkeapClient*, const Model::ChatCompletionsRequest&, ChatCompletionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChatCompletionsAsyncHandler;
@@ -171,6 +176,15 @@ namespace TencentCloud
 
 
                 /**
+                 *文档解析任务取消
+                 * @param req CancelTaskRequest
+                 * @return CancelTaskOutcome
+                 */
+                CancelTaskOutcome CancelTask(const Model::CancelTaskRequest &request);
+                void CancelTaskAsync(const Model::CancelTaskRequest& request, const CancelTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelTaskOutcomeCallable CancelTaskCallable(const Model::CancelTaskRequest& request);
+
+                /**
                  *### 接口功能
 
 调用接口，发起一次对话请求。默认该接口下的单账号QPM上限为15000 ，TPM上限为1200000
@@ -193,14 +207,10 @@ namespace TencentCloud
 - DeepSeek-V3.1-Terminus（model 参数值为 deepseek-v3.1-terminus）
     - DeepSeek-V3.1-Terminus 为685B 参数 MoE 模型，在保持模型原有能力的基础上，优化了语言一致性，Agent 能力等问题，输出效果相比前一版本更加稳定。
     -  支持128K上下文长度，最大输入长度96k，最大输出32k（默认4k），最大思维链输出长度32k。
-- DeepSeek-V3.2-Exp（model 参数值为 deepseek-v3.2-exp）
-    - DeepSeek-V3.2-Exp 为685B 参数 MoE 模型，在 V3.1-Terminus 的基础上引入了 DeepSeek Sparse Attention（一种稀疏注意力机制），针对长文本的训练和推理效率进行了探索性的优化和验证。
-    -  支持128K上下文长度，最大输入长度96k，非思考模式最大输出8k（默认4k），思考模式最大输出64k（默认32k），最大思维链输出长度32k。
-    -  该模型目前处于试运营阶段，仅支持少量接入，如需申请开通请联系您的商务经理。
 - DeepSeek-V3.2（model 参数值为 deepseek-v3.2）
     - DeepSeek-V3.2 为685B 参数 MoE 模型，其引入的稀疏注意力架构使长文本处理更高效，并在推理评测中达到GPT-5水平。
     -  支持128K上下文长度，最大输入长度96k，非思考模式最大输出8k（默认4k），思考模式最大输出64k（默认32k），最大思维链输出长度32k。
-    -  该模型目前处于试运营阶段，仅支持少量接入，如需申请开通请联系您的商务经理。
+    -  默认单账号下 DeepSeek-V3.2 模型的限制为：QPM：15,000 ，TPM：300,000
 ### 计费说明
 
 - 标准计费（2025年2月26日起生效），计费模式为后付费小时结，为保证您账户资源的正常使用，请提前[开通后付费](https://console.cloud.tencent.com/lkeap/settings)并及时[充值](https://console.cloud.tencent.com/expense/recharge)。
@@ -212,8 +222,6 @@ namespace TencentCloud
     - DeepSeek-V3.1 模型 | 输入：0.004元/千token | 输出：0.012元/千token
 
     - DeepSeek-V3.1-Terminus 模型 | 输入：0.004元/千token | 输出：0.012元/千token
-
-    - DeepSeek-V3.2-Exp 模型 | 输入：0.002元/千token | 输出：0.003元/千token
 
     - DeepSeek-V3.2 模型 | 输入：0.002元/千token | 输出：0.003元/千token
 

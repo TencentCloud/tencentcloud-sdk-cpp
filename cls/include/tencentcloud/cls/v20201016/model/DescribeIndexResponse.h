@@ -142,6 +142,20 @@ namespace TencentCloud
                      */
                     bool MetadataFlagHasBeenSet() const;
 
+                    /**
+                     * 获取自定义日志解析异常存储字段。
+                     * @return CoverageField 自定义日志解析异常存储字段。
+                     * 
+                     */
+                    std::string GetCoverageField() const;
+
+                    /**
+                     * 判断参数 CoverageField 是否已赋值
+                     * @return CoverageField 是否已赋值
+                     * 
+                     */
+                    bool CoverageFieldHasBeenSet() const;
+
                 private:
 
                     /**
@@ -186,6 +200,12 @@ namespace TencentCloud
                      */
                     uint64_t m_metadataFlag;
                     bool m_metadataFlagHasBeenSet;
+
+                    /**
+                     * 自定义日志解析异常存储字段。
+                     */
+                    std::string m_coverageField;
+                    bool m_coverageFieldHasBeenSet;
 
                 };
             }

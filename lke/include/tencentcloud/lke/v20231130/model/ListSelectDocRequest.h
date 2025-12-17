@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return BotBizId 应用ID
+                     * 获取应用ID,获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * @return BotBizId 应用ID,获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _botBizId 应用ID
+                     * 设置应用ID,获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * @param _botBizId 应用ID,获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取文档状态筛选。文档状态对应码为7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期。其中仅状态为10 待发布、12 已发布的文档支持生成问答
-                     * @return Status 文档状态筛选。文档状态对应码为7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期。其中仅状态为10 待发布、12 已发布的文档支持生成问答
+                     * 获取文档状态筛选。文档状态对应码为7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期。其中仅状态为10 待发布、12 已发布的文档支持生成问答（未填写时默认值为空数组）
+                     * @return Status 文档状态筛选。文档状态对应码为7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期。其中仅状态为10 待发布、12 已发布的文档支持生成问答（未填写时默认值为空数组）
                      * 
                      */
                     std::vector<int64_t> GetStatus() const;
 
                     /**
-                     * 设置文档状态筛选。文档状态对应码为7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期。其中仅状态为10 待发布、12 已发布的文档支持生成问答
-                     * @param _status 文档状态筛选。文档状态对应码为7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期。其中仅状态为10 待发布、12 已发布的文档支持生成问答
+                     * 设置文档状态筛选。文档状态对应码为7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期。其中仅状态为10 待发布、12 已发布的文档支持生成问答（未填写时默认值为空数组）
+                     * @param _status 文档状态筛选。文档状态对应码为7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期。其中仅状态为10 待发布、12 已发布的文档支持生成问答（未填写时默认值为空数组）
                      * 
                      */
                     void SetStatus(const std::vector<int64_t>& _status);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID
+                     * 应用ID,获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 文档状态筛选。文档状态对应码为7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期。其中仅状态为10 待发布、12 已发布的文档支持生成问答
+                     * 文档状态筛选。文档状态对应码为7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期。其中仅状态为10 待发布、12 已发布的文档支持生成问答（未填写时默认值为空数组）
                      */
                     std::vector<int64_t> m_status;
                     bool m_statusHasBeenSet;

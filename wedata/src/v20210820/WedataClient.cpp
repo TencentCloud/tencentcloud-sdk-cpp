@@ -9390,6 +9390,56 @@ WedataClient::DescribeTaskDetailDsOutcomeCallable WedataClient::DescribeTaskDeta
     return prom->get_future();
 }
 
+WedataClient::DescribeTaskInstancesStatusOutcome WedataClient::DescribeTaskInstancesStatus(const DescribeTaskInstancesStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTaskInstancesStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskInstancesStatusResponse rsp = DescribeTaskInstancesStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskInstancesStatusOutcome(rsp);
+        else
+            return DescribeTaskInstancesStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskInstancesStatusOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeTaskInstancesStatusAsync(const DescribeTaskInstancesStatusRequest& request, const DescribeTaskInstancesStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTaskInstancesStatusRequest&;
+    using Resp = DescribeTaskInstancesStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTaskInstancesStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::DescribeTaskInstancesStatusOutcomeCallable WedataClient::DescribeTaskInstancesStatusCallable(const DescribeTaskInstancesStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTaskInstancesStatusOutcome>>();
+    DescribeTaskInstancesStatusAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DescribeTaskInstancesStatusRequest&,
+        DescribeTaskInstancesStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::DescribeTaskLineageOutcome WedataClient::DescribeTaskLineage(const DescribeTaskLineageRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTaskLineage");

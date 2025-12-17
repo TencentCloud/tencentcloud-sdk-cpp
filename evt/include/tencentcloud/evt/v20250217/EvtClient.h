@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/evt/v20250217/model/CompleteApprovalRequest.h>
+#include <tencentcloud/evt/v20250217/model/CompleteApprovalResponse.h>
 #include <tencentcloud/evt/v20250217/model/CreateRoleUserRequest.h>
 #include <tencentcloud/evt/v20250217/model/CreateRoleUserResponse.h>
 
@@ -39,11 +41,23 @@ namespace TencentCloud
                 EvtClient(const Credential &credential, const std::string &region);
                 EvtClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CompleteApprovalResponse> CompleteApprovalOutcome;
+                typedef std::future<CompleteApprovalOutcome> CompleteApprovalOutcomeCallable;
+                typedef std::function<void(const EvtClient*, const Model::CompleteApprovalRequest&, CompleteApprovalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CompleteApprovalAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRoleUserResponse> CreateRoleUserOutcome;
                 typedef std::future<CreateRoleUserOutcome> CreateRoleUserOutcomeCallable;
                 typedef std::function<void(const EvtClient*, const Model::CreateRoleUserRequest&, CreateRoleUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoleUserAsyncHandler;
 
 
+
+                /**
+                 *执行审批
+                 * @param req CompleteApprovalRequest
+                 * @return CompleteApprovalOutcome
+                 */
+                CompleteApprovalOutcome CompleteApproval(const Model::CompleteApprovalRequest &request);
+                void CompleteApprovalAsync(const Model::CompleteApprovalRequest& request, const CompleteApprovalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CompleteApprovalOutcomeCallable CompleteApprovalCallable(const Model::CompleteApprovalRequest& request);
 
                 /**
                  *创建人员

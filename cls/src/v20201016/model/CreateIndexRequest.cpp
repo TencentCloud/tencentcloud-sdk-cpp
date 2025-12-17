@@ -27,7 +27,8 @@ CreateIndexRequest::CreateIndexRequest() :
     m_ruleHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_includeInternalFieldsHasBeenSet(false),
-    m_metadataFlagHasBeenSet(false)
+    m_metadataFlagHasBeenSet(false),
+    m_coverageFieldHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string CreateIndexRequest::ToJsonString() const
         string key = "MetadataFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_metadataFlag, allocator);
+    }
+
+    if (m_coverageFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CoverageField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_coverageField.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void CreateIndexRequest::SetMetadataFlag(const uint64_t& _metadataFlag)
 bool CreateIndexRequest::MetadataFlagHasBeenSet() const
 {
     return m_metadataFlagHasBeenSet;
+}
+
+string CreateIndexRequest::GetCoverageField() const
+{
+    return m_coverageField;
+}
+
+void CreateIndexRequest::SetCoverageField(const string& _coverageField)
+{
+    m_coverageField = _coverageField;
+    m_coverageFieldHasBeenSet = true;
+}
+
+bool CreateIndexRequest::CoverageFieldHasBeenSet() const
+{
+    return m_coverageFieldHasBeenSet;
 }
 
 

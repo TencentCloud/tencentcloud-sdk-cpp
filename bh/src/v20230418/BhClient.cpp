@@ -2140,6 +2140,56 @@ BhClient::DescribeCmdTemplatesOutcomeCallable BhClient::DescribeCmdTemplatesCall
     return prom->get_future();
 }
 
+BhClient::DescribeDepartmentsOutcome BhClient::DescribeDepartments(const DescribeDepartmentsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDepartments");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDepartmentsResponse rsp = DescribeDepartmentsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDepartmentsOutcome(rsp);
+        else
+            return DescribeDepartmentsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDepartmentsOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::DescribeDepartmentsAsync(const DescribeDepartmentsRequest& request, const DescribeDepartmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDepartmentsRequest&;
+    using Resp = DescribeDepartmentsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDepartments", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BhClient::DescribeDepartmentsOutcomeCallable BhClient::DescribeDepartmentsCallable(const DescribeDepartmentsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDepartmentsOutcome>>();
+    DescribeDepartmentsAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeDepartmentsRequest&,
+        DescribeDepartmentsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 BhClient::DescribeDeviceAccountsOutcome BhClient::DescribeDeviceAccounts(const DescribeDeviceAccountsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDeviceAccounts");

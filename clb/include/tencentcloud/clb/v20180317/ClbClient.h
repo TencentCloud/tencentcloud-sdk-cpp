@@ -121,6 +121,8 @@
 #include <tencentcloud/clb/v20180317/model/DescribeResourcesResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeRewriteRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeRewriteResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeTargetGroupInstanceStatusRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeTargetGroupInstanceStatusResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeTargetGroupInstancesRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeTargetGroupInstancesResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeTargetGroupListRequest.h>
@@ -358,6 +360,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRewriteResponse> DescribeRewriteOutcome;
                 typedef std::future<DescribeRewriteOutcome> DescribeRewriteOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeRewriteRequest&, DescribeRewriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRewriteAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTargetGroupInstanceStatusResponse> DescribeTargetGroupInstanceStatusOutcome;
+                typedef std::future<DescribeTargetGroupInstanceStatusOutcome> DescribeTargetGroupInstanceStatusOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeTargetGroupInstanceStatusRequest&, DescribeTargetGroupInstanceStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTargetGroupInstanceStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTargetGroupInstancesResponse> DescribeTargetGroupInstancesOutcome;
                 typedef std::future<DescribeTargetGroupInstancesOutcome> DescribeTargetGroupInstancesOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeTargetGroupInstancesRequest&, DescribeTargetGroupInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTargetGroupInstancesAsyncHandler;
@@ -965,6 +970,15 @@ BGP带宽包必须传带宽包id
                 DescribeRewriteOutcome DescribeRewrite(const Model::DescribeRewriteRequest &request);
                 void DescribeRewriteAsync(const Model::DescribeRewriteRequest& request, const DescribeRewriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRewriteOutcomeCallable DescribeRewriteCallable(const Model::DescribeRewriteRequest& request);
+
+                /**
+                 *查询目标组后端服务状态。目前仅支持网关负载均衡类型的目标组支持查询后端服务状态。
+                 * @param req DescribeTargetGroupInstanceStatusRequest
+                 * @return DescribeTargetGroupInstanceStatusOutcome
+                 */
+                DescribeTargetGroupInstanceStatusOutcome DescribeTargetGroupInstanceStatus(const Model::DescribeTargetGroupInstanceStatusRequest &request);
+                void DescribeTargetGroupInstanceStatusAsync(const Model::DescribeTargetGroupInstanceStatusRequest& request, const DescribeTargetGroupInstanceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTargetGroupInstanceStatusOutcomeCallable DescribeTargetGroupInstanceStatusCallable(const Model::DescribeTargetGroupInstanceStatusRequest& request);
 
                 /**
                  *获取目标组绑定的服务器信息

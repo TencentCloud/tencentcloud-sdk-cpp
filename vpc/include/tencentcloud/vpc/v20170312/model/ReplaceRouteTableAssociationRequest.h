@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取子网实例ID，例如：subnet-3x5lf5q0。可通过DescribeSubnets接口查询。
-                     * @return SubnetId 子网实例ID，例如：subnet-3x5lf5q0。可通过DescribeSubnets接口查询。
-                     * 
-                     */
-                    std::string GetSubnetId() const;
-
-                    /**
-                     * 设置子网实例ID，例如：subnet-3x5lf5q0。可通过DescribeSubnets接口查询。
-                     * @param _subnetId 子网实例ID，例如：subnet-3x5lf5q0。可通过DescribeSubnets接口查询。
-                     * 
-                     */
-                    void SetSubnetId(const std::string& _subnetId);
-
-                    /**
-                     * 判断参数 SubnetId 是否已赋值
-                     * @return SubnetId 是否已赋值
-                     * 
-                     */
-                    bool SubnetIdHasBeenSet() const;
-
-                    /**
                      * 获取路由表实例ID，例如：rtb-azd4dt1c。
                      * @return RouteTableId 路由表实例ID，例如：rtb-azd4dt1c。
                      * 
@@ -84,19 +63,40 @@ namespace TencentCloud
                      */
                     bool RouteTableIdHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取子网实例ID，例如：subnet-3x5lf5q0。可通过DescribeSubnets接口查询。对于存在子网唯一ID的子网，该参数为必选；否则， SubnetId和CidrBlock必选二选一。
+                     * @return SubnetId 子网实例ID，例如：subnet-3x5lf5q0。可通过DescribeSubnets接口查询。对于存在子网唯一ID的子网，该参数为必选；否则， SubnetId和CidrBlock必选二选一。
+                     * 
+                     */
+                    std::string GetSubnetId() const;
 
                     /**
-                     * 子网实例ID，例如：subnet-3x5lf5q0。可通过DescribeSubnets接口查询。
+                     * 设置子网实例ID，例如：subnet-3x5lf5q0。可通过DescribeSubnets接口查询。对于存在子网唯一ID的子网，该参数为必选；否则， SubnetId和CidrBlock必选二选一。
+                     * @param _subnetId 子网实例ID，例如：subnet-3x5lf5q0。可通过DescribeSubnets接口查询。对于存在子网唯一ID的子网，该参数为必选；否则， SubnetId和CidrBlock必选二选一。
+                     * 
                      */
-                    std::string m_subnetId;
-                    bool m_subnetIdHasBeenSet;
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     * 
+                     */
+                    bool SubnetIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * 路由表实例ID，例如：rtb-azd4dt1c。
                      */
                     std::string m_routeTableId;
                     bool m_routeTableIdHasBeenSet;
+
+                    /**
+                     * 子网实例ID，例如：subnet-3x5lf5q0。可通过DescribeSubnets接口查询。对于存在子网唯一ID的子网，该参数为必选；否则， SubnetId和CidrBlock必选二选一。
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
 
                 };
             }

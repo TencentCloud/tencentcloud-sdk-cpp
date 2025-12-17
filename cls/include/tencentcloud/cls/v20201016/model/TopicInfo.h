@@ -154,6 +154,27 @@ namespace TencentCloud
                     bool IndexHasBeenSet() const;
 
                     /**
+                     * 获取AssumerUin非空则表示创建该日志主题的服务方Uin
+                     * @return AssumerUin AssumerUin非空则表示创建该日志主题的服务方Uin
+                     * 
+                     */
+                    uint64_t GetAssumerUin() const;
+
+                    /**
+                     * 设置AssumerUin非空则表示创建该日志主题的服务方Uin
+                     * @param _assumerUin AssumerUin非空则表示创建该日志主题的服务方Uin
+                     * 
+                     */
+                    void SetAssumerUin(const uint64_t& _assumerUin);
+
+                    /**
+                     * 判断参数 AssumerUin 是否已赋值
+                     * @return AssumerUin 是否已赋值
+                     * 
+                     */
+                    bool AssumerUinHasBeenSet() const;
+
+                    /**
                      * 获取云产品标识，主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
                      * @return AssumerName 云产品标识，主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
                      * 
@@ -175,19 +196,15 @@ namespace TencentCloud
                     bool AssumerNameHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-时间格式：yyyy-MM-dd HH:mm:ss
-                     * @return CreateTime 创建时间
-时间格式：yyyy-MM-dd HH:mm:ss
+                     * 获取创建时间。格式：yyyy-MM-dd HH:mm:ss
+                     * @return CreateTime 创建时间。格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-时间格式：yyyy-MM-dd HH:mm:ss
-                     * @param _createTime 创建时间
-时间格式：yyyy-MM-dd HH:mm:ss
+                     * 设置创建时间。格式：yyyy-MM-dd HH:mm:ss
+                     * @param _createTime 创建时间。格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -248,6 +265,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取RoleName非空则表示创建该日志主题的服务方使用的角色
+                     * @return RoleName RoleName非空则表示创建该日志主题的服务方使用的角色
+                     * 
+                     */
+                    std::string GetRoleName() const;
+
+                    /**
+                     * 设置RoleName非空则表示创建该日志主题的服务方使用的角色
+                     * @param _roleName RoleName非空则表示创建该日志主题的服务方使用的角色
+                     * 
+                     */
+                    void SetRoleName(const std::string& _roleName);
+
+                    /**
+                     * 判断参数 RoleName 是否已赋值
+                     * @return RoleName 是否已赋值
+                     * 
+                     */
+                    bool RoleNameHasBeenSet() const;
 
                     /**
                      * 获取该主题是否开启自动分裂
@@ -574,6 +612,27 @@ HotPeriod=0为没有开启日志沉降。
                      */
                     bool EffectiveDateHasBeenSet() const;
 
+                    /**
+                     * 获取IsSourceFrom 开启记录公网来源ip和服务端接收时间
+                     * @return IsSourceFrom IsSourceFrom 开启记录公网来源ip和服务端接收时间
+                     * 
+                     */
+                    bool GetIsSourceFrom() const;
+
+                    /**
+                     * 设置IsSourceFrom 开启记录公网来源ip和服务端接收时间
+                     * @param _isSourceFrom IsSourceFrom 开启记录公网来源ip和服务端接收时间
+                     * 
+                     */
+                    void SetIsSourceFrom(const bool& _isSourceFrom);
+
+                    /**
+                     * 判断参数 IsSourceFrom 是否已赋值
+                     * @return IsSourceFrom 是否已赋值
+                     * 
+                     */
+                    bool IsSourceFromHasBeenSet() const;
+
                 private:
 
                     /**
@@ -607,14 +666,19 @@ HotPeriod=0为没有开启日志沉降。
                     bool m_indexHasBeenSet;
 
                     /**
+                     * AssumerUin非空则表示创建该日志主题的服务方Uin
+                     */
+                    uint64_t m_assumerUin;
+                    bool m_assumerUinHasBeenSet;
+
+                    /**
                      * 云产品标识，主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
                      */
                     std::string m_assumerName;
                     bool m_assumerNameHasBeenSet;
 
                     /**
-                     * 创建时间
-时间格式：yyyy-MM-dd HH:mm:ss
+                     * 创建时间。格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
@@ -632,6 +696,12 @@ HotPeriod=0为没有开启日志沉降。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * RoleName非空则表示创建该日志主题的服务方使用的角色
+                     */
+                    std::string m_roleName;
+                    bool m_roleNameHasBeenSet;
 
                     /**
                      * 该主题是否开启自动分裂
@@ -723,6 +793,12 @@ HotPeriod=0为没有开启日志沉降。
                      */
                     std::string m_effectiveDate;
                     bool m_effectiveDateHasBeenSet;
+
+                    /**
+                     * IsSourceFrom 开启记录公网来源ip和服务端接收时间
+                     */
+                    bool m_isSourceFrom;
+                    bool m_isSourceFromHasBeenSet;
 
                 };
             }

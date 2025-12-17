@@ -467,6 +467,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteConflictsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteListRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteListResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeRoutePoliciesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeRoutePoliciesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRoutePolicyEntriesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRoutePolicyEntriesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteTableAssociatedInstancesRequest.h>
@@ -1565,6 +1567,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRouteListResponse> DescribeRouteListOutcome;
                 typedef std::future<DescribeRouteListOutcome> DescribeRouteListOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeRouteListRequest&, DescribeRouteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRoutePoliciesResponse> DescribeRoutePoliciesOutcome;
+                typedef std::future<DescribeRoutePoliciesOutcome> DescribeRoutePoliciesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeRoutePoliciesRequest&, DescribeRoutePoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoutePoliciesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRoutePolicyEntriesResponse> DescribeRoutePolicyEntriesOutcome;
                 typedef std::future<DescribeRoutePolicyEntriesOutcome> DescribeRoutePolicyEntriesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeRoutePolicyEntriesRequest&, DescribeRoutePolicyEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoutePolicyEntriesAsyncHandler;
@@ -2844,7 +2849,7 @@ namespace TencentCloud
                  *本接口（CreateNetworkInterface）用于创建弹性网卡。
 * 创建弹性网卡时可以指定内网IP，并且可以指定一个主IP，指定的内网IP必须在弹性网卡所在子网内，而且不能被占用。
 * 创建弹性网卡时可以指定需要申请的内网IP数量，系统会随机生成内网IP地址。
-* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href="/document/product/576/18527">弹性网卡使用限制</a>。
+* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href="https://cloud.tencent.com/document/product/576/18527">弹性网卡使用限制</a>。
 * 创建弹性网卡同时可以绑定已有安全组。
 * 创建弹性网卡同时可以绑定标签, 响应里的标签列表代表添加成功的标签。
 >?本接口为异步接口，可调用 [DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037) 接口查询任务执行结果，待任务执行成功后再进行其他操作。
@@ -4381,6 +4386,15 @@ namespace TencentCloud
                 DescribeRouteListOutcome DescribeRouteList(const Model::DescribeRouteListRequest &request);
                 void DescribeRouteListAsync(const Model::DescribeRouteListRequest& request, const DescribeRouteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRouteListOutcomeCallable DescribeRouteListCallable(const Model::DescribeRouteListRequest& request);
+
+                /**
+                 *本接口（DescribeRoutePolicies）用于查询路由策略列表。
+                 * @param req DescribeRoutePoliciesRequest
+                 * @return DescribeRoutePoliciesOutcome
+                 */
+                DescribeRoutePoliciesOutcome DescribeRoutePolicies(const Model::DescribeRoutePoliciesRequest &request);
+                void DescribeRoutePoliciesAsync(const Model::DescribeRoutePoliciesRequest& request, const DescribeRoutePoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRoutePoliciesOutcomeCallable DescribeRoutePoliciesCallable(const Model::DescribeRoutePoliciesRequest& request);
 
                 /**
                  *本接口（DescribeRoutePolicyEntries）用于查询路由接收策略条目列表。

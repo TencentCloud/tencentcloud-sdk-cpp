@@ -57,6 +57,8 @@
 #include <tencentcloud/ocr/v20181119/model/EnterpriseLicenseOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/EstateCertOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/EstateCertOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/ExtractDocAgentRequest.h>
+#include <tencentcloud/ocr/v20181119/model/ExtractDocAgentResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ExtractDocBasicRequest.h>
 #include <tencentcloud/ocr/v20181119/model/ExtractDocBasicResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ExtractDocMultiRequest.h>
@@ -260,6 +262,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EstateCertOCRResponse> EstateCertOCROutcome;
                 typedef std::future<EstateCertOCROutcome> EstateCertOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::EstateCertOCRRequest&, EstateCertOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> EstateCertOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExtractDocAgentResponse> ExtractDocAgentOutcome;
+                typedef std::future<ExtractDocAgentOutcome> ExtractDocAgentOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::ExtractDocAgentRequest&, ExtractDocAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExtractDocAgentAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExtractDocBasicResponse> ExtractDocBasicOutcome;
                 typedef std::future<ExtractDocBasicOutcome> ExtractDocBasicOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::ExtractDocBasicRequest&, ExtractDocBasicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExtractDocBasicAsyncHandler;
@@ -665,6 +670,15 @@ namespace TencentCloud
                 EstateCertOCROutcome EstateCertOCR(const Model::EstateCertOCRRequest &request);
                 void EstateCertOCRAsync(const Model::EstateCertOCRRequest& request, const EstateCertOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EstateCertOCROutcomeCallable EstateCertOCRCallable(const Model::EstateCertOCRRequest& request);
+
+                /**
+                 *用于查询文档处理任务。文档处理领域里常见的通用Agent 如抽取、比对之类的，目前我们提供的抽取，但未来可以根据实际情况和客户需求扩展。
+                 * @param req ExtractDocAgentRequest
+                 * @return ExtractDocAgentOutcome
+                 */
+                ExtractDocAgentOutcome ExtractDocAgent(const Model::ExtractDocAgentRequest &request);
+                void ExtractDocAgentAsync(const Model::ExtractDocAgentRequest& request, const ExtractDocAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExtractDocAgentOutcomeCallable ExtractDocAgentCallable(const Model::ExtractDocAgentRequest& request);
 
                 /**
                  *本接口支持识别并提取制式卡证、票据、表单等结构化场景的字段信息。无需任何配置，灵活高效。适用于各类结构化信息录入场景。点击[立即体验](https://ocrdemo.cloud.tencent.com/?action=ExtractDocBasic)。

@@ -159,6 +159,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeAIRecognitionTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAdaptiveDynamicStreamingTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAdaptiveDynamicStreamingTemplatesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcUsageDataRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcUsageDataResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAllClassRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAllClassResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAnimatedGraphicsTemplatesRequest.h>
@@ -621,6 +623,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAdaptiveDynamicStreamingTemplatesResponse> DescribeAdaptiveDynamicStreamingTemplatesOutcome;
                 typedef std::future<DescribeAdaptiveDynamicStreamingTemplatesOutcome> DescribeAdaptiveDynamicStreamingTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeAdaptiveDynamicStreamingTemplatesRequest&, DescribeAdaptiveDynamicStreamingTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAdaptiveDynamicStreamingTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAigcUsageDataResponse> DescribeAigcUsageDataOutcome;
+                typedef std::future<DescribeAigcUsageDataOutcome> DescribeAigcUsageDataOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeAigcUsageDataRequest&, DescribeAigcUsageDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcUsageDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAllClassResponse> DescribeAllClassOutcome;
                 typedef std::future<DescribeAllClassOutcome> DescribeAllClassOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeAllClassRequest&, DescribeAllClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllClassAsyncHandler;
@@ -1660,6 +1665,18 @@ namespace TencentCloud
                 DescribeAdaptiveDynamicStreamingTemplatesOutcome DescribeAdaptiveDynamicStreamingTemplates(const Model::DescribeAdaptiveDynamicStreamingTemplatesRequest &request);
                 void DescribeAdaptiveDynamicStreamingTemplatesAsync(const Model::DescribeAdaptiveDynamicStreamingTemplatesRequest& request, const DescribeAdaptiveDynamicStreamingTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAdaptiveDynamicStreamingTemplatesOutcomeCallable DescribeAdaptiveDynamicStreamingTemplatesCallable(const Model::DescribeAdaptiveDynamicStreamingTemplatesRequest& request);
+
+                /**
+                 *该接口返回查询时间范围内AIGC的统计信息。
+   1. 可以查询最近365天内的AIGC统计数据。
+   2. 查询时间跨度不超过90天。
+   3. 查询时间跨度超过1天的，返回以天为粒度的数据，否则，返回以5分钟为粒度的数据。
+                 * @param req DescribeAigcUsageDataRequest
+                 * @return DescribeAigcUsageDataOutcome
+                 */
+                DescribeAigcUsageDataOutcome DescribeAigcUsageData(const Model::DescribeAigcUsageDataRequest &request);
+                void DescribeAigcUsageDataAsync(const Model::DescribeAigcUsageDataRequest& request, const DescribeAigcUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAigcUsageDataOutcomeCallable DescribeAigcUsageDataCallable(const Model::DescribeAigcUsageDataRequest& request);
 
                 /**
                  ** 获得用户的所有分类信息。

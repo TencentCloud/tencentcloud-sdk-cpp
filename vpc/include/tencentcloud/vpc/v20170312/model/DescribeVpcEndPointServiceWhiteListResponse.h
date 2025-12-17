@@ -47,14 +47,14 @@ namespace TencentCloud
                     /**
                      * 获取白名单对象数组。已废弃
                      * @return VpcEndpointServiceUserSet 白名单对象数组。已废弃
-                     * 
+                     * @deprecated
                      */
                     std::vector<VpcEndPointServiceUser> GetVpcEndpointServiceUserSet() const;
 
                     /**
                      * 判断参数 VpcEndpointServiceUserSet 是否已赋值
                      * @return VpcEndpointServiceUserSet 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool VpcEndpointServiceUserSetHasBeenSet() const;
 

@@ -76,7 +76,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttrKey 标签标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetAttrKey() const;
 
@@ -85,14 +85,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attrKey 标签标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetAttrKey(const std::string& _attrKey);
 
                     /**
                      * 判断参数 AttrKey 是否已赋值
                      * @return AttrKey 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AttrKeyHasBeenSet() const;
 
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool IsUpdatingHasBeenSet() const;
 
                     /**
-                     * 获取状态
+                     * 获取发布状态(1 待发布 2 发布中 3 已发布 4 发布失败)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 状态
+                     * @return Status 发布状态(1 待发布 2 发布中 3 已发布 4 发布失败)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态
+                     * 设置发布状态(1 待发布 2 发布中 3 已发布 4 发布失败)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 状态
+                     * @param _status 发布状态(1 待发布 2 发布中 3 已发布 4 发布失败)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -280,7 +280,7 @@ namespace TencentCloud
                     bool m_isUpdatingHasBeenSet;
 
                     /**
-                     * 状态
+                     * 发布状态(1 待发布 2 发布中 3 已发布 4 发布失败)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;

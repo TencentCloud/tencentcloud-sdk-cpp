@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频的url，如"https://your-video-path.mp/4"
-                     * @return Url 视频的url，如"https://your-video-path.mp/4"
+                     * 获取视频的url，如"https://your-video-path.mp4"，视频文件大小不超过100M。
+                     * @return Url 视频的url，如"https://your-video-path.mp4"，视频文件大小不超过100M。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置视频的url，如"https://your-video-path.mp/4"
-                     * @param _url 视频的url，如"https://your-video-path.mp/4"
+                     * 设置视频的url，如"https://your-video-path.mp4"，视频文件大小不超过100M。
+                     * @param _url 视频的url，如"https://your-video-path.mp4"，视频文件大小不超过100M。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 视频的url，如"https://your-video-path.mp/4"
+                     * 视频的url，如"https://your-video-path.mp4"，视频文件大小不超过100M。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

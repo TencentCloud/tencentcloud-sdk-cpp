@@ -35,7 +35,21 @@ Snapshots::Snapshots() :
     m_failedShardsHasBeenSet(false),
     m_successfulShardsHasBeenSet(false),
     m_failuresHasBeenSet(false),
-    m_userBackUpHasBeenSet(false)
+    m_userBackUpHasBeenSet(false),
+    m_esRepositoryTypeHasBeenSet(false),
+    m_paasEsRepositoryHasBeenSet(false),
+    m_userEsRepositoryHasBeenSet(false),
+    m_storageDurationHasBeenSet(false),
+    m_autoBackupIntervalHasBeenSet(false),
+    m_cosRetentionHasBeenSet(false),
+    m_retainUntilDateHasBeenSet(false),
+    m_retentionGraceTimeHasBeenSet(false),
+    m_isLockedHasBeenSet(false),
+    m_remoteCosHasBeenSet(false),
+    m_remoteCosRegionHasBeenSet(false),
+    m_cosEncryptionHasBeenSet(false),
+    m_kmsKeyHasBeenSet(false),
+    m_strategyNameHasBeenSet(false)
 {
 }
 
@@ -210,6 +224,146 @@ CoreInternalOutcome Snapshots::Deserialize(const rapidjson::Value &value)
         m_userBackUpHasBeenSet = true;
     }
 
+    if (value.HasMember("EsRepositoryType") && !value["EsRepositoryType"].IsNull())
+    {
+        if (!value["EsRepositoryType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshots.EsRepositoryType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_esRepositoryType = value["EsRepositoryType"].GetUint64();
+        m_esRepositoryTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PaasEsRepository") && !value["PaasEsRepository"].IsNull())
+    {
+        if (!value["PaasEsRepository"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshots.PaasEsRepository` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_paasEsRepository = string(value["PaasEsRepository"].GetString());
+        m_paasEsRepositoryHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserEsRepository") && !value["UserEsRepository"].IsNull())
+    {
+        if (!value["UserEsRepository"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshots.UserEsRepository` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userEsRepository = string(value["UserEsRepository"].GetString());
+        m_userEsRepositoryHasBeenSet = true;
+    }
+
+    if (value.HasMember("StorageDuration") && !value["StorageDuration"].IsNull())
+    {
+        if (!value["StorageDuration"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshots.StorageDuration` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageDuration = value["StorageDuration"].GetUint64();
+        m_storageDurationHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoBackupInterval") && !value["AutoBackupInterval"].IsNull())
+    {
+        if (!value["AutoBackupInterval"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshots.AutoBackupInterval` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoBackupInterval = value["AutoBackupInterval"].GetUint64();
+        m_autoBackupIntervalHasBeenSet = true;
+    }
+
+    if (value.HasMember("CosRetention") && !value["CosRetention"].IsNull())
+    {
+        if (!value["CosRetention"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshots.CosRetention` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosRetention = value["CosRetention"].GetUint64();
+        m_cosRetentionHasBeenSet = true;
+    }
+
+    if (value.HasMember("RetainUntilDate") && !value["RetainUntilDate"].IsNull())
+    {
+        if (!value["RetainUntilDate"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshots.RetainUntilDate` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_retainUntilDate = string(value["RetainUntilDate"].GetString());
+        m_retainUntilDateHasBeenSet = true;
+    }
+
+    if (value.HasMember("RetentionGraceTime") && !value["RetentionGraceTime"].IsNull())
+    {
+        if (!value["RetentionGraceTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshots.RetentionGraceTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_retentionGraceTime = value["RetentionGraceTime"].GetUint64();
+        m_retentionGraceTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsLocked") && !value["IsLocked"].IsNull())
+    {
+        if (!value["IsLocked"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshots.IsLocked` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isLocked = value["IsLocked"].GetUint64();
+        m_isLockedHasBeenSet = true;
+    }
+
+    if (value.HasMember("RemoteCos") && !value["RemoteCos"].IsNull())
+    {
+        if (!value["RemoteCos"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshots.RemoteCos` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_remoteCos = value["RemoteCos"].GetUint64();
+        m_remoteCosHasBeenSet = true;
+    }
+
+    if (value.HasMember("RemoteCosRegion") && !value["RemoteCosRegion"].IsNull())
+    {
+        if (!value["RemoteCosRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshots.RemoteCosRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remoteCosRegion = string(value["RemoteCosRegion"].GetString());
+        m_remoteCosRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("CosEncryption") && !value["CosEncryption"].IsNull())
+    {
+        if (!value["CosEncryption"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshots.CosEncryption` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosEncryption = value["CosEncryption"].GetUint64();
+        m_cosEncryptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("KmsKey") && !value["KmsKey"].IsNull())
+    {
+        if (!value["KmsKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshots.KmsKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kmsKey = string(value["KmsKey"].GetString());
+        m_kmsKeyHasBeenSet = true;
+    }
+
+    if (value.HasMember("StrategyName") && !value["StrategyName"].IsNull())
+    {
+        if (!value["StrategyName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshots.StrategyName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_strategyName = string(value["StrategyName"].GetString());
+        m_strategyNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -352,6 +506,118 @@ void Snapshots::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "UserBackUp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userBackUp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_esRepositoryTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EsRepositoryType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_esRepositoryType, allocator);
+    }
+
+    if (m_paasEsRepositoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PaasEsRepository";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_paasEsRepository.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userEsRepositoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserEsRepository";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userEsRepository.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_storageDuration, allocator);
+    }
+
+    if (m_autoBackupIntervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoBackupInterval";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoBackupInterval, allocator);
+    }
+
+    if (m_cosRetentionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosRetention";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cosRetention, allocator);
+    }
+
+    if (m_retainUntilDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetainUntilDate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_retainUntilDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_retentionGraceTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetentionGraceTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_retentionGraceTime, allocator);
+    }
+
+    if (m_isLockedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsLocked";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isLocked, allocator);
+    }
+
+    if (m_remoteCosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoteCos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_remoteCos, allocator);
+    }
+
+    if (m_remoteCosRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoteCosRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remoteCosRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosEncryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosEncryption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cosEncryption, allocator);
+    }
+
+    if (m_kmsKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KmsKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kmsKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_strategyNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StrategyName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_strategyName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -595,5 +861,229 @@ void Snapshots::SetUserBackUp(const string& _userBackUp)
 bool Snapshots::UserBackUpHasBeenSet() const
 {
     return m_userBackUpHasBeenSet;
+}
+
+uint64_t Snapshots::GetEsRepositoryType() const
+{
+    return m_esRepositoryType;
+}
+
+void Snapshots::SetEsRepositoryType(const uint64_t& _esRepositoryType)
+{
+    m_esRepositoryType = _esRepositoryType;
+    m_esRepositoryTypeHasBeenSet = true;
+}
+
+bool Snapshots::EsRepositoryTypeHasBeenSet() const
+{
+    return m_esRepositoryTypeHasBeenSet;
+}
+
+string Snapshots::GetPaasEsRepository() const
+{
+    return m_paasEsRepository;
+}
+
+void Snapshots::SetPaasEsRepository(const string& _paasEsRepository)
+{
+    m_paasEsRepository = _paasEsRepository;
+    m_paasEsRepositoryHasBeenSet = true;
+}
+
+bool Snapshots::PaasEsRepositoryHasBeenSet() const
+{
+    return m_paasEsRepositoryHasBeenSet;
+}
+
+string Snapshots::GetUserEsRepository() const
+{
+    return m_userEsRepository;
+}
+
+void Snapshots::SetUserEsRepository(const string& _userEsRepository)
+{
+    m_userEsRepository = _userEsRepository;
+    m_userEsRepositoryHasBeenSet = true;
+}
+
+bool Snapshots::UserEsRepositoryHasBeenSet() const
+{
+    return m_userEsRepositoryHasBeenSet;
+}
+
+uint64_t Snapshots::GetStorageDuration() const
+{
+    return m_storageDuration;
+}
+
+void Snapshots::SetStorageDuration(const uint64_t& _storageDuration)
+{
+    m_storageDuration = _storageDuration;
+    m_storageDurationHasBeenSet = true;
+}
+
+bool Snapshots::StorageDurationHasBeenSet() const
+{
+    return m_storageDurationHasBeenSet;
+}
+
+uint64_t Snapshots::GetAutoBackupInterval() const
+{
+    return m_autoBackupInterval;
+}
+
+void Snapshots::SetAutoBackupInterval(const uint64_t& _autoBackupInterval)
+{
+    m_autoBackupInterval = _autoBackupInterval;
+    m_autoBackupIntervalHasBeenSet = true;
+}
+
+bool Snapshots::AutoBackupIntervalHasBeenSet() const
+{
+    return m_autoBackupIntervalHasBeenSet;
+}
+
+uint64_t Snapshots::GetCosRetention() const
+{
+    return m_cosRetention;
+}
+
+void Snapshots::SetCosRetention(const uint64_t& _cosRetention)
+{
+    m_cosRetention = _cosRetention;
+    m_cosRetentionHasBeenSet = true;
+}
+
+bool Snapshots::CosRetentionHasBeenSet() const
+{
+    return m_cosRetentionHasBeenSet;
+}
+
+string Snapshots::GetRetainUntilDate() const
+{
+    return m_retainUntilDate;
+}
+
+void Snapshots::SetRetainUntilDate(const string& _retainUntilDate)
+{
+    m_retainUntilDate = _retainUntilDate;
+    m_retainUntilDateHasBeenSet = true;
+}
+
+bool Snapshots::RetainUntilDateHasBeenSet() const
+{
+    return m_retainUntilDateHasBeenSet;
+}
+
+uint64_t Snapshots::GetRetentionGraceTime() const
+{
+    return m_retentionGraceTime;
+}
+
+void Snapshots::SetRetentionGraceTime(const uint64_t& _retentionGraceTime)
+{
+    m_retentionGraceTime = _retentionGraceTime;
+    m_retentionGraceTimeHasBeenSet = true;
+}
+
+bool Snapshots::RetentionGraceTimeHasBeenSet() const
+{
+    return m_retentionGraceTimeHasBeenSet;
+}
+
+uint64_t Snapshots::GetIsLocked() const
+{
+    return m_isLocked;
+}
+
+void Snapshots::SetIsLocked(const uint64_t& _isLocked)
+{
+    m_isLocked = _isLocked;
+    m_isLockedHasBeenSet = true;
+}
+
+bool Snapshots::IsLockedHasBeenSet() const
+{
+    return m_isLockedHasBeenSet;
+}
+
+uint64_t Snapshots::GetRemoteCos() const
+{
+    return m_remoteCos;
+}
+
+void Snapshots::SetRemoteCos(const uint64_t& _remoteCos)
+{
+    m_remoteCos = _remoteCos;
+    m_remoteCosHasBeenSet = true;
+}
+
+bool Snapshots::RemoteCosHasBeenSet() const
+{
+    return m_remoteCosHasBeenSet;
+}
+
+string Snapshots::GetRemoteCosRegion() const
+{
+    return m_remoteCosRegion;
+}
+
+void Snapshots::SetRemoteCosRegion(const string& _remoteCosRegion)
+{
+    m_remoteCosRegion = _remoteCosRegion;
+    m_remoteCosRegionHasBeenSet = true;
+}
+
+bool Snapshots::RemoteCosRegionHasBeenSet() const
+{
+    return m_remoteCosRegionHasBeenSet;
+}
+
+uint64_t Snapshots::GetCosEncryption() const
+{
+    return m_cosEncryption;
+}
+
+void Snapshots::SetCosEncryption(const uint64_t& _cosEncryption)
+{
+    m_cosEncryption = _cosEncryption;
+    m_cosEncryptionHasBeenSet = true;
+}
+
+bool Snapshots::CosEncryptionHasBeenSet() const
+{
+    return m_cosEncryptionHasBeenSet;
+}
+
+string Snapshots::GetKmsKey() const
+{
+    return m_kmsKey;
+}
+
+void Snapshots::SetKmsKey(const string& _kmsKey)
+{
+    m_kmsKey = _kmsKey;
+    m_kmsKeyHasBeenSet = true;
+}
+
+bool Snapshots::KmsKeyHasBeenSet() const
+{
+    return m_kmsKeyHasBeenSet;
+}
+
+string Snapshots::GetStrategyName() const
+{
+    return m_strategyName;
+}
+
+void Snapshots::SetStrategyName(const string& _strategyName)
+{
+    m_strategyName = _strategyName;
+    m_strategyNameHasBeenSet = true;
+}
+
+bool Snapshots::StrategyNameHasBeenSet() const
+{
+    return m_strategyNameHasBeenSet;
 }
 

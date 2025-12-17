@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool SecurityGroupPolicySetHasBeenSet() const;
 
                     /**
-                     * 获取旧的安全组规则集合对象，可选，日志记录用。
-                     * @return OriginalSecurityGroupPolicySet 旧的安全组规则集合对象，可选，日志记录用。
+                     * 获取旧的安全组规则集合对象，当更新优先级时为必选，且修改顺序与SecurityGroupPolicySet参数顺序一一对应，入参长度需要与SecurityGroupPolicySet参数保持一致。
+                     * @return OriginalSecurityGroupPolicySet 旧的安全组规则集合对象，当更新优先级时为必选，且修改顺序与SecurityGroupPolicySet参数顺序一一对应，入参长度需要与SecurityGroupPolicySet参数保持一致。
                      * 
                      */
                     SecurityGroupPolicySet GetOriginalSecurityGroupPolicySet() const;
 
                     /**
-                     * 设置旧的安全组规则集合对象，可选，日志记录用。
-                     * @param _originalSecurityGroupPolicySet 旧的安全组规则集合对象，可选，日志记录用。
+                     * 设置旧的安全组规则集合对象，当更新优先级时为必选，且修改顺序与SecurityGroupPolicySet参数顺序一一对应，入参长度需要与SecurityGroupPolicySet参数保持一致。
+                     * @param _originalSecurityGroupPolicySet 旧的安全组规则集合对象，当更新优先级时为必选，且修改顺序与SecurityGroupPolicySet参数顺序一一对应，入参长度需要与SecurityGroupPolicySet参数保持一致。
                      * 
                      */
                     void SetOriginalSecurityGroupPolicySet(const SecurityGroupPolicySet& _originalSecurityGroupPolicySet);
@@ -105,6 +105,27 @@ namespace TencentCloud
                      * 
                      */
                     bool OriginalSecurityGroupPolicySetHasBeenSet() const;
+
+                    /**
+                     * 获取更新类型，默认 Policy  Policy：只更新内容  Priority：只更新优先级  Both：内容和优先级都更新
+                     * @return UpdateType 更新类型，默认 Policy  Policy：只更新内容  Priority：只更新优先级  Both：内容和优先级都更新
+                     * 
+                     */
+                    std::string GetUpdateType() const;
+
+                    /**
+                     * 设置更新类型，默认 Policy  Policy：只更新内容  Priority：只更新优先级  Both：内容和优先级都更新
+                     * @param _updateType 更新类型，默认 Policy  Policy：只更新内容  Priority：只更新优先级  Both：内容和优先级都更新
+                     * 
+                     */
+                    void SetUpdateType(const std::string& _updateType);
+
+                    /**
+                     * 判断参数 UpdateType 是否已赋值
+                     * @return UpdateType 是否已赋值
+                     * 
+                     */
+                    bool UpdateTypeHasBeenSet() const;
 
                 private:
 
@@ -121,10 +142,16 @@ namespace TencentCloud
                     bool m_securityGroupPolicySetHasBeenSet;
 
                     /**
-                     * 旧的安全组规则集合对象，可选，日志记录用。
+                     * 旧的安全组规则集合对象，当更新优先级时为必选，且修改顺序与SecurityGroupPolicySet参数顺序一一对应，入参长度需要与SecurityGroupPolicySet参数保持一致。
                      */
                     SecurityGroupPolicySet m_originalSecurityGroupPolicySet;
                     bool m_originalSecurityGroupPolicySetHasBeenSet;
+
+                    /**
+                     * 更新类型，默认 Policy  Policy：只更新内容  Priority：只更新优先级  Both：内容和优先级都更新
+                     */
+                    std::string m_updateType;
+                    bool m_updateTypeHasBeenSet;
 
                 };
             }

@@ -25,7 +25,15 @@ using namespace std;
 CreateClusterSnapshotRequest::CreateClusterSnapshotRequest() :
     m_instanceIdHasBeenSet(false),
     m_snapshotNameHasBeenSet(false),
-    m_indicesHasBeenSet(false)
+    m_indicesHasBeenSet(false),
+    m_esRepositoryTypeHasBeenSet(false),
+    m_userEsRepositoryHasBeenSet(false),
+    m_storageDurationHasBeenSet(false),
+    m_cosRetentionHasBeenSet(false),
+    m_retainUntilDateHasBeenSet(false),
+    m_retentionGraceTimeHasBeenSet(false),
+    m_remoteCosHasBeenSet(false),
+    m_remoteCosRegionHasBeenSet(false)
 {
 }
 
@@ -58,6 +66,70 @@ string CreateClusterSnapshotRequest::ToJsonString() const
         string key = "Indices";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_indices.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_esRepositoryTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EsRepositoryType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_esRepositoryType, allocator);
+    }
+
+    if (m_userEsRepositoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserEsRepository";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userEsRepository.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_storageDuration, allocator);
+    }
+
+    if (m_cosRetentionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosRetention";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cosRetention, allocator);
+    }
+
+    if (m_retainUntilDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetainUntilDate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_retainUntilDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_retentionGraceTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetentionGraceTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_retentionGraceTime, allocator);
+    }
+
+    if (m_remoteCosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoteCos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_remoteCos, allocator);
+    }
+
+    if (m_remoteCosRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoteCosRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_remoteCosRegion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +186,134 @@ void CreateClusterSnapshotRequest::SetIndices(const string& _indices)
 bool CreateClusterSnapshotRequest::IndicesHasBeenSet() const
 {
     return m_indicesHasBeenSet;
+}
+
+uint64_t CreateClusterSnapshotRequest::GetEsRepositoryType() const
+{
+    return m_esRepositoryType;
+}
+
+void CreateClusterSnapshotRequest::SetEsRepositoryType(const uint64_t& _esRepositoryType)
+{
+    m_esRepositoryType = _esRepositoryType;
+    m_esRepositoryTypeHasBeenSet = true;
+}
+
+bool CreateClusterSnapshotRequest::EsRepositoryTypeHasBeenSet() const
+{
+    return m_esRepositoryTypeHasBeenSet;
+}
+
+string CreateClusterSnapshotRequest::GetUserEsRepository() const
+{
+    return m_userEsRepository;
+}
+
+void CreateClusterSnapshotRequest::SetUserEsRepository(const string& _userEsRepository)
+{
+    m_userEsRepository = _userEsRepository;
+    m_userEsRepositoryHasBeenSet = true;
+}
+
+bool CreateClusterSnapshotRequest::UserEsRepositoryHasBeenSet() const
+{
+    return m_userEsRepositoryHasBeenSet;
+}
+
+uint64_t CreateClusterSnapshotRequest::GetStorageDuration() const
+{
+    return m_storageDuration;
+}
+
+void CreateClusterSnapshotRequest::SetStorageDuration(const uint64_t& _storageDuration)
+{
+    m_storageDuration = _storageDuration;
+    m_storageDurationHasBeenSet = true;
+}
+
+bool CreateClusterSnapshotRequest::StorageDurationHasBeenSet() const
+{
+    return m_storageDurationHasBeenSet;
+}
+
+uint64_t CreateClusterSnapshotRequest::GetCosRetention() const
+{
+    return m_cosRetention;
+}
+
+void CreateClusterSnapshotRequest::SetCosRetention(const uint64_t& _cosRetention)
+{
+    m_cosRetention = _cosRetention;
+    m_cosRetentionHasBeenSet = true;
+}
+
+bool CreateClusterSnapshotRequest::CosRetentionHasBeenSet() const
+{
+    return m_cosRetentionHasBeenSet;
+}
+
+string CreateClusterSnapshotRequest::GetRetainUntilDate() const
+{
+    return m_retainUntilDate;
+}
+
+void CreateClusterSnapshotRequest::SetRetainUntilDate(const string& _retainUntilDate)
+{
+    m_retainUntilDate = _retainUntilDate;
+    m_retainUntilDateHasBeenSet = true;
+}
+
+bool CreateClusterSnapshotRequest::RetainUntilDateHasBeenSet() const
+{
+    return m_retainUntilDateHasBeenSet;
+}
+
+uint64_t CreateClusterSnapshotRequest::GetRetentionGraceTime() const
+{
+    return m_retentionGraceTime;
+}
+
+void CreateClusterSnapshotRequest::SetRetentionGraceTime(const uint64_t& _retentionGraceTime)
+{
+    m_retentionGraceTime = _retentionGraceTime;
+    m_retentionGraceTimeHasBeenSet = true;
+}
+
+bool CreateClusterSnapshotRequest::RetentionGraceTimeHasBeenSet() const
+{
+    return m_retentionGraceTimeHasBeenSet;
+}
+
+uint64_t CreateClusterSnapshotRequest::GetRemoteCos() const
+{
+    return m_remoteCos;
+}
+
+void CreateClusterSnapshotRequest::SetRemoteCos(const uint64_t& _remoteCos)
+{
+    m_remoteCos = _remoteCos;
+    m_remoteCosHasBeenSet = true;
+}
+
+bool CreateClusterSnapshotRequest::RemoteCosHasBeenSet() const
+{
+    return m_remoteCosHasBeenSet;
+}
+
+string CreateClusterSnapshotRequest::GetRemoteCosRegion() const
+{
+    return m_remoteCosRegion;
+}
+
+void CreateClusterSnapshotRequest::SetRemoteCosRegion(const string& _remoteCosRegion)
+{
+    m_remoteCosRegion = _remoteCosRegion;
+    m_remoteCosRegionHasBeenSet = true;
+}
+
+bool CreateClusterSnapshotRequest::RemoteCosRegionHasBeenSet() const
+{
+    return m_remoteCosRegionHasBeenSet;
 }
 
 

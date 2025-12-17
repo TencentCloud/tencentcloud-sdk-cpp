@@ -29,6 +29,7 @@
 #include <tencentcloud/cls/v20201016/model/WebCallback.h>
 #include <tencentcloud/cls/v20201016/model/NoticeRule.h>
 #include <tencentcloud/cls/v20201016/model/AlarmNoticeDeliverConfig.h>
+#include <tencentcloud/cls/v20201016/model/AlarmShieldCount.h>
 
 
 namespace TencentCloud
@@ -323,6 +324,162 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取投递日志开关。
+
+参数值：
+
+1：关闭
+
+2：开启 
+
+                     * @return DeliverStatus 投递日志开关。
+
+参数值：
+
+1：关闭
+
+2：开启 
+
+                     * 
+                     */
+                    uint64_t GetDeliverStatus() const;
+
+                    /**
+                     * 设置投递日志开关。
+
+参数值：
+
+1：关闭
+
+2：开启 
+
+                     * @param _deliverStatus 投递日志开关。
+
+参数值：
+
+1：关闭
+
+2：开启 
+
+                     * 
+                     */
+                    void SetDeliverStatus(const uint64_t& _deliverStatus);
+
+                    /**
+                     * 判断参数 DeliverStatus 是否已赋值
+                     * @return DeliverStatus 是否已赋值
+                     * 
+                     */
+                    bool DeliverStatusHasBeenSet() const;
+
+                    /**
+                     * 获取投递日志标识。
+
+参数值：
+
+1：未启用
+
+2：已启用
+
+3：投递异常
+                     * @return DeliverFlag 投递日志标识。
+
+参数值：
+
+1：未启用
+
+2：已启用
+
+3：投递异常
+                     * 
+                     */
+                    uint64_t GetDeliverFlag() const;
+
+                    /**
+                     * 设置投递日志标识。
+
+参数值：
+
+1：未启用
+
+2：已启用
+
+3：投递异常
+                     * @param _deliverFlag 投递日志标识。
+
+参数值：
+
+1：未启用
+
+2：已启用
+
+3：投递异常
+                     * 
+                     */
+                    void SetDeliverFlag(const uint64_t& _deliverFlag);
+
+                    /**
+                     * 判断参数 DeliverFlag 是否已赋值
+                     * @return DeliverFlag 是否已赋值
+                     * 
+                     */
+                    bool DeliverFlagHasBeenSet() const;
+
+                    /**
+                     * 获取通知渠道组配置的告警屏蔽统计状态数量信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmShieldCount 通知渠道组配置的告警屏蔽统计状态数量信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AlarmShieldCount GetAlarmShieldCount() const;
+
+                    /**
+                     * 设置通知渠道组配置的告警屏蔽统计状态数量信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmShieldCount 通知渠道组配置的告警屏蔽统计状态数量信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmShieldCount(const AlarmShieldCount& _alarmShieldCount);
+
+                    /**
+                     * 判断参数 AlarmShieldCount 是否已赋值
+                     * @return AlarmShieldCount 是否已赋值
+                     * 
+                     */
+                    bool AlarmShieldCountHasBeenSet() const;
+
+                    /**
+                     * 获取统一设定自定义回调参数。
+-  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。
+-  false:优先使用告警策略中单独配置的请求头及请求内容。
+                     * @return CallbackPrioritize 统一设定自定义回调参数。
+-  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。
+-  false:优先使用告警策略中单独配置的请求头及请求内容。
+                     * 
+                     */
+                    bool GetCallbackPrioritize() const;
+
+                    /**
+                     * 设置统一设定自定义回调参数。
+-  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。
+-  false:优先使用告警策略中单独配置的请求头及请求内容。
+                     * @param _callbackPrioritize 统一设定自定义回调参数。
+-  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。
+-  false:优先使用告警策略中单独配置的请求头及请求内容。
+                     * 
+                     */
+                    void SetCallbackPrioritize(const bool& _callbackPrioritize);
+
+                    /**
+                     * 判断参数 CallbackPrioritize 是否已赋值
+                     * @return CallbackPrioritize 是否已赋值
+                     * 
+                     */
+                    bool CallbackPrioritizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -401,6 +558,48 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 投递日志开关。
+
+参数值：
+
+1：关闭
+
+2：开启 
+
+                     */
+                    uint64_t m_deliverStatus;
+                    bool m_deliverStatusHasBeenSet;
+
+                    /**
+                     * 投递日志标识。
+
+参数值：
+
+1：未启用
+
+2：已启用
+
+3：投递异常
+                     */
+                    uint64_t m_deliverFlag;
+                    bool m_deliverFlagHasBeenSet;
+
+                    /**
+                     * 通知渠道组配置的告警屏蔽统计状态数量信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AlarmShieldCount m_alarmShieldCount;
+                    bool m_alarmShieldCountHasBeenSet;
+
+                    /**
+                     * 统一设定自定义回调参数。
+-  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。
+-  false:优先使用告警策略中单独配置的请求头及请求内容。
+                     */
+                    bool m_callbackPrioritize;
+                    bool m_callbackPrioritizeHasBeenSet;
 
                 };
             }

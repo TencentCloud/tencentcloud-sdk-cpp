@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/ConsumerContent.h>
 #include <tencentcloud/cls/v20201016/model/Ckafka.h>
+#include <tencentcloud/cls/v20201016/model/AdvancedConsumerConfiguration.h>
 
 
 namespace TencentCloud
@@ -186,6 +187,69 @@ namespace TencentCloud
                      */
                     bool CompressionHasBeenSet() const;
 
+                    /**
+                     * 获取角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)
+                     * @return RoleArn 角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)
+                     * 
+                     */
+                    std::string GetRoleArn() const;
+
+                    /**
+                     * 设置角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)
+                     * @param _roleArn 角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)
+                     * 
+                     */
+                    void SetRoleArn(const std::string& _roleArn);
+
+                    /**
+                     * 判断参数 RoleArn 是否已赋值
+                     * @return RoleArn 是否已赋值
+                     * 
+                     */
+                    bool RoleArnHasBeenSet() const;
+
+                    /**
+                     * 获取外部ID
+                     * @return ExternalId 外部ID
+                     * 
+                     */
+                    std::string GetExternalId() const;
+
+                    /**
+                     * 设置外部ID
+                     * @param _externalId 外部ID
+                     * 
+                     */
+                    void SetExternalId(const std::string& _externalId);
+
+                    /**
+                     * 判断参数 ExternalId 是否已赋值
+                     * @return ExternalId 是否已赋值
+                     * 
+                     */
+                    bool ExternalIdHasBeenSet() const;
+
+                    /**
+                     * 获取高级配置
+                     * @return AdvancedConfig 高级配置
+                     * 
+                     */
+                    AdvancedConsumerConfiguration GetAdvancedConfig() const;
+
+                    /**
+                     * 设置高级配置
+                     * @param _advancedConfig 高级配置
+                     * 
+                     */
+                    void SetAdvancedConfig(const AdvancedConsumerConfiguration& _advancedConfig);
+
+                    /**
+                     * 判断参数 AdvancedConfig 是否已赋值
+                     * @return AdvancedConfig 是否已赋值
+                     * 
+                     */
+                    bool AdvancedConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -227,6 +291,24 @@ namespace TencentCloud
                      */
                     int64_t m_compression;
                     bool m_compressionHasBeenSet;
+
+                    /**
+                     * 角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)
+                     */
+                    std::string m_roleArn;
+                    bool m_roleArnHasBeenSet;
+
+                    /**
+                     * 外部ID
+                     */
+                    std::string m_externalId;
+                    bool m_externalIdHasBeenSet;
+
+                    /**
+                     * 高级配置
+                     */
+                    AdvancedConsumerConfiguration m_advancedConfig;
+                    bool m_advancedConfigHasBeenSet;
 
                 };
             }

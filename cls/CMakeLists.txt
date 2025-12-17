@@ -37,6 +37,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/TopicIdAndRegion.h
   include/tencentcloud/cls/v20201016/model/CreateConfigExtraResponse.h
   include/tencentcloud/cls/v20201016/model/DescribeConfigExtrasResponse.h
+  include/tencentcloud/cls/v20201016/model/AdvancedConsumerConfiguration.h
   include/tencentcloud/cls/v20201016/model/ConditionInfo.h
   include/tencentcloud/cls/v20201016/model/DeleteMachineGroupResponse.h
   include/tencentcloud/cls/v20201016/model/Tag.h
@@ -311,7 +312,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DeleteWebCallbackResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyKafkaRechargeResponse.h
   include/tencentcloud/cls/v20201016/model/DescribeAlarmShieldsRequest.h
-  include/tencentcloud/cls/v20201016/model/DescribeKafkaConsumerGroupDetailRequest.h
+  include/tencentcloud/cls/v20201016/model/ModifyAlarmShieldRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeTopicsResponse.h
   include/tencentcloud/cls/v20201016/model/EventLog.h
   include/tencentcloud/cls/v20201016/model/HighLightItem.h
@@ -349,6 +350,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/CosRechargeInfo.h
   include/tencentcloud/cls/v20201016/model/Column.h
   include/tencentcloud/cls/v20201016/model/DescribeDataTransformInfoRequest.h
+  include/tencentcloud/cls/v20201016/model/AlarmShieldCount.h
   include/tencentcloud/cls/v20201016/model/Filter.h
   include/tencentcloud/cls/v20201016/model/ModifyTopicRequest.h
   include/tencentcloud/cls/v20201016/model/SplitPartitionResponse.h
@@ -367,7 +369,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/MetricLabel.h
   include/tencentcloud/cls/v20201016/model/DescribeScheduledSqlInfoRequest.h
   include/tencentcloud/cls/v20201016/model/SearchLogRequest.h
-  include/tencentcloud/cls/v20201016/model/ModifyAlarmShieldRequest.h
+  include/tencentcloud/cls/v20201016/model/DescribeKafkaConsumerGroupDetailRequest.h
   include/tencentcloud/cls/v20201016/model/MergePartitionResponse.h
   include/tencentcloud/cls/v20201016/model/CreateDataTransformRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeMachineGroupsResponse.h
@@ -398,6 +400,7 @@ set(cls_src
   src/v20201016/model/TopicIdAndRegion.cpp
   src/v20201016/model/CreateConfigExtraResponse.cpp
   src/v20201016/model/DescribeConfigExtrasResponse.cpp
+  src/v20201016/model/AdvancedConsumerConfiguration.cpp
   src/v20201016/model/ConditionInfo.cpp
   src/v20201016/model/DeleteMachineGroupResponse.cpp
   src/v20201016/model/Tag.cpp
@@ -672,7 +675,7 @@ set(cls_src
   src/v20201016/model/DeleteWebCallbackResponse.cpp
   src/v20201016/model/ModifyKafkaRechargeResponse.cpp
   src/v20201016/model/DescribeAlarmShieldsRequest.cpp
-  src/v20201016/model/DescribeKafkaConsumerGroupDetailRequest.cpp
+  src/v20201016/model/ModifyAlarmShieldRequest.cpp
   src/v20201016/model/DescribeTopicsResponse.cpp
   src/v20201016/model/EventLog.cpp
   src/v20201016/model/HighLightItem.cpp
@@ -710,6 +713,7 @@ set(cls_src
   src/v20201016/model/CosRechargeInfo.cpp
   src/v20201016/model/Column.cpp
   src/v20201016/model/DescribeDataTransformInfoRequest.cpp
+  src/v20201016/model/AlarmShieldCount.cpp
   src/v20201016/model/Filter.cpp
   src/v20201016/model/ModifyTopicRequest.cpp
   src/v20201016/model/SplitPartitionResponse.cpp
@@ -728,7 +732,7 @@ set(cls_src
   src/v20201016/model/MetricLabel.cpp
   src/v20201016/model/DescribeScheduledSqlInfoRequest.cpp
   src/v20201016/model/SearchLogRequest.cpp
-  src/v20201016/model/ModifyAlarmShieldRequest.cpp
+  src/v20201016/model/DescribeKafkaConsumerGroupDetailRequest.cpp
   src/v20201016/model/MergePartitionResponse.cpp
   src/v20201016/model/CreateDataTransformRequest.cpp
   src/v20201016/model/DescribeMachineGroupsResponse.cpp

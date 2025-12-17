@@ -40,6 +40,56 @@ LkeapClient::LkeapClient(const Credential &credential, const string &region, con
 }
 
 
+LkeapClient::CancelTaskOutcome LkeapClient::CancelTask(const CancelTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelTaskResponse rsp = CancelTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelTaskOutcome(rsp);
+        else
+            return CancelTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelTaskOutcome(outcome.GetError());
+    }
+}
+
+void LkeapClient::CancelTaskAsync(const CancelTaskRequest& request, const CancelTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CancelTaskRequest&;
+    using Resp = CancelTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CancelTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LkeapClient::CancelTaskOutcomeCallable LkeapClient::CancelTaskCallable(const CancelTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CancelTaskOutcome>>();
+    CancelTaskAsync(
+    request,
+    [prom](
+        const LkeapClient*,
+        const CancelTaskRequest&,
+        CancelTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LkeapClient::ChatCompletionsOutcome LkeapClient::ChatCompletions(const ChatCompletionsRequest &request)
 {
     auto outcome = MakeRequest(request, "ChatCompletions");

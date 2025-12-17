@@ -5590,6 +5590,56 @@ TkeClient::DescribeClustersOutcomeCallable TkeClient::DescribeClustersCallable(c
     return prom->get_future();
 }
 
+TkeClient::DescribeControlPlaneLogsOutcome TkeClient::DescribeControlPlaneLogs(const DescribeControlPlaneLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeControlPlaneLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeControlPlaneLogsResponse rsp = DescribeControlPlaneLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeControlPlaneLogsOutcome(rsp);
+        else
+            return DescribeControlPlaneLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeControlPlaneLogsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeControlPlaneLogsAsync(const DescribeControlPlaneLogsRequest& request, const DescribeControlPlaneLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeControlPlaneLogsRequest&;
+    using Resp = DescribeControlPlaneLogsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeControlPlaneLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DescribeControlPlaneLogsOutcomeCallable TkeClient::DescribeControlPlaneLogsCallable(const DescribeControlPlaneLogsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeControlPlaneLogsOutcome>>();
+    DescribeControlPlaneLogsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeControlPlaneLogsRequest&,
+        DescribeControlPlaneLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::DescribeECMInstancesOutcome TkeClient::DescribeECMInstances(const DescribeECMInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeECMInstances");
@@ -9040,6 +9090,56 @@ TkeClient::DisableClusterDeletionProtectionOutcomeCallable TkeClient::DisableClu
     return prom->get_future();
 }
 
+TkeClient::DisableControlPlaneLogsOutcome TkeClient::DisableControlPlaneLogs(const DisableControlPlaneLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableControlPlaneLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableControlPlaneLogsResponse rsp = DisableControlPlaneLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableControlPlaneLogsOutcome(rsp);
+        else
+            return DisableControlPlaneLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableControlPlaneLogsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DisableControlPlaneLogsAsync(const DisableControlPlaneLogsRequest& request, const DisableControlPlaneLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DisableControlPlaneLogsRequest&;
+    using Resp = DisableControlPlaneLogsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DisableControlPlaneLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DisableControlPlaneLogsOutcomeCallable TkeClient::DisableControlPlaneLogsCallable(const DisableControlPlaneLogsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DisableControlPlaneLogsOutcome>>();
+    DisableControlPlaneLogsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DisableControlPlaneLogsRequest&,
+        DisableControlPlaneLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::DisableEncryptionProtectionOutcome TkeClient::DisableEncryptionProtection(const DisableEncryptionProtectionRequest &request)
 {
     auto outcome = MakeRequest(request, "DisableEncryptionProtection");
@@ -9332,6 +9432,56 @@ TkeClient::EnableClusterDeletionProtectionOutcomeCallable TkeClient::EnableClust
         const TkeClient*,
         const EnableClusterDeletionProtectionRequest&,
         EnableClusterDeletionProtectionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TkeClient::EnableControlPlaneLogsOutcome TkeClient::EnableControlPlaneLogs(const EnableControlPlaneLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableControlPlaneLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableControlPlaneLogsResponse rsp = EnableControlPlaneLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableControlPlaneLogsOutcome(rsp);
+        else
+            return EnableControlPlaneLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableControlPlaneLogsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::EnableControlPlaneLogsAsync(const EnableControlPlaneLogsRequest& request, const EnableControlPlaneLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EnableControlPlaneLogsRequest&;
+    using Resp = EnableControlPlaneLogsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EnableControlPlaneLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::EnableControlPlaneLogsOutcomeCallable TkeClient::EnableControlPlaneLogsCallable(const EnableControlPlaneLogsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EnableControlPlaneLogsOutcome>>();
+    EnableControlPlaneLogsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const EnableControlPlaneLogsRequest&,
+        EnableControlPlaneLogsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -245,6 +245,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeClusterVirtualNodePoolsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClustersRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClustersResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeControlPlaneLogsRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeControlPlaneLogsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeECMInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeECMInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEKSClusterCredentialRequest.h>
@@ -383,6 +385,8 @@
 #include <tencentcloud/tke/v20180525/model/DisableClusterAuditResponse.h>
 #include <tencentcloud/tke/v20180525/model/DisableClusterDeletionProtectionRequest.h>
 #include <tencentcloud/tke/v20180525/model/DisableClusterDeletionProtectionResponse.h>
+#include <tencentcloud/tke/v20180525/model/DisableControlPlaneLogsRequest.h>
+#include <tencentcloud/tke/v20180525/model/DisableControlPlaneLogsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DisableEncryptionProtectionRequest.h>
 #include <tencentcloud/tke/v20180525/model/DisableEncryptionProtectionResponse.h>
 #include <tencentcloud/tke/v20180525/model/DisableEventPersistenceRequest.h>
@@ -395,6 +399,8 @@
 #include <tencentcloud/tke/v20180525/model/EnableClusterAuditResponse.h>
 #include <tencentcloud/tke/v20180525/model/EnableClusterDeletionProtectionRequest.h>
 #include <tencentcloud/tke/v20180525/model/EnableClusterDeletionProtectionResponse.h>
+#include <tencentcloud/tke/v20180525/model/EnableControlPlaneLogsRequest.h>
+#include <tencentcloud/tke/v20180525/model/EnableControlPlaneLogsResponse.h>
 #include <tencentcloud/tke/v20180525/model/EnableEncryptionProtectionRequest.h>
 #include <tencentcloud/tke/v20180525/model/EnableEncryptionProtectionResponse.h>
 #include <tencentcloud/tke/v20180525/model/EnableEventPersistenceRequest.h>
@@ -874,6 +880,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClustersResponse> DescribeClustersOutcome;
                 typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClustersRequest&, DescribeClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeControlPlaneLogsResponse> DescribeControlPlaneLogsOutcome;
+                typedef std::future<DescribeControlPlaneLogsOutcome> DescribeControlPlaneLogsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeControlPlaneLogsRequest&, DescribeControlPlaneLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeControlPlaneLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeECMInstancesResponse> DescribeECMInstancesOutcome;
                 typedef std::future<DescribeECMInstancesOutcome> DescribeECMInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeECMInstancesRequest&, DescribeECMInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeECMInstancesAsyncHandler;
@@ -1081,6 +1090,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisableClusterDeletionProtectionResponse> DisableClusterDeletionProtectionOutcome;
                 typedef std::future<DisableClusterDeletionProtectionOutcome> DisableClusterDeletionProtectionOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DisableClusterDeletionProtectionRequest&, DisableClusterDeletionProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableClusterDeletionProtectionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisableControlPlaneLogsResponse> DisableControlPlaneLogsOutcome;
+                typedef std::future<DisableControlPlaneLogsOutcome> DisableControlPlaneLogsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DisableControlPlaneLogsRequest&, DisableControlPlaneLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableControlPlaneLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisableEncryptionProtectionResponse> DisableEncryptionProtectionOutcome;
                 typedef std::future<DisableEncryptionProtectionOutcome> DisableEncryptionProtectionOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DisableEncryptionProtectionRequest&, DisableEncryptionProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableEncryptionProtectionAsyncHandler;
@@ -1099,6 +1111,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnableClusterDeletionProtectionResponse> EnableClusterDeletionProtectionOutcome;
                 typedef std::future<EnableClusterDeletionProtectionOutcome> EnableClusterDeletionProtectionOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::EnableClusterDeletionProtectionRequest&, EnableClusterDeletionProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableClusterDeletionProtectionAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableControlPlaneLogsResponse> EnableControlPlaneLogsOutcome;
+                typedef std::future<EnableControlPlaneLogsOutcome> EnableControlPlaneLogsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::EnableControlPlaneLogsRequest&, EnableControlPlaneLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableControlPlaneLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableEncryptionProtectionResponse> EnableEncryptionProtectionOutcome;
                 typedef std::future<EnableEncryptionProtectionOutcome> EnableEncryptionProtectionOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::EnableEncryptionProtectionRequest&, EnableEncryptionProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableEncryptionProtectionAsyncHandler;
@@ -2300,6 +2315,15 @@ namespace TencentCloud
                 DescribeClustersOutcomeCallable DescribeClustersCallable(const Model::DescribeClustersRequest& request);
 
                 /**
+                 *查询插件日志采集配置
+                 * @param req DescribeControlPlaneLogsRequest
+                 * @return DescribeControlPlaneLogsOutcome
+                 */
+                DescribeControlPlaneLogsOutcome DescribeControlPlaneLogs(const Model::DescribeControlPlaneLogsRequest &request);
+                void DescribeControlPlaneLogsAsync(const Model::DescribeControlPlaneLogsRequest& request, const DescribeControlPlaneLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeControlPlaneLogsOutcomeCallable DescribeControlPlaneLogsCallable(const Model::DescribeControlPlaneLogsRequest& request);
+
+                /**
                  *获取ECM实例相关信息
                  * @param req DescribeECMInstancesRequest
                  * @return DescribeECMInstancesOutcome
@@ -2921,6 +2945,15 @@ namespace TencentCloud
                 DisableClusterDeletionProtectionOutcomeCallable DisableClusterDeletionProtectionCallable(const Model::DisableClusterDeletionProtectionRequest& request);
 
                 /**
+                 *删除插件日志采集配置
+                 * @param req DisableControlPlaneLogsRequest
+                 * @return DisableControlPlaneLogsOutcome
+                 */
+                DisableControlPlaneLogsOutcome DisableControlPlaneLogs(const Model::DisableControlPlaneLogsRequest &request);
+                void DisableControlPlaneLogsAsync(const Model::DisableControlPlaneLogsRequest& request, const DisableControlPlaneLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableControlPlaneLogsOutcomeCallable DisableControlPlaneLogsCallable(const Model::DisableControlPlaneLogsRequest& request);
+
+                /**
                  *关闭加密信息保护
                  * @param req DisableEncryptionProtectionRequest
                  * @return DisableEncryptionProtectionOutcome
@@ -2973,6 +3006,15 @@ namespace TencentCloud
                 EnableClusterDeletionProtectionOutcome EnableClusterDeletionProtection(const Model::EnableClusterDeletionProtectionRequest &request);
                 void EnableClusterDeletionProtectionAsync(const Model::EnableClusterDeletionProtectionRequest& request, const EnableClusterDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableClusterDeletionProtectionOutcomeCallable EnableClusterDeletionProtectionCallable(const Model::EnableClusterDeletionProtectionRequest& request);
+
+                /**
+                 *创建插件日志采集配置
+                 * @param req EnableControlPlaneLogsRequest
+                 * @return EnableControlPlaneLogsOutcome
+                 */
+                EnableControlPlaneLogsOutcome EnableControlPlaneLogs(const Model::EnableControlPlaneLogsRequest &request);
+                void EnableControlPlaneLogsAsync(const Model::EnableControlPlaneLogsRequest& request, const EnableControlPlaneLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableControlPlaneLogsOutcomeCallable EnableControlPlaneLogsCallable(const Model::EnableControlPlaneLogsRequest& request);
 
                 /**
                  *开启加密数据保护，需要先开启KMS能力，完成KMS授权

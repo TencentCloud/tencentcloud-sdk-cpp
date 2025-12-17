@@ -43,7 +43,8 @@ CreateNativeNodePoolParam::CreateNativeNodePoolParam() :
     m_qGPUEnableHasBeenSet(false),
     m_keyIdsHasBeenSet(false),
     m_machineTypeHasBeenSet(false),
-    m_automationServiceHasBeenSet(false)
+    m_automationServiceHasBeenSet(false),
+    m_passwordHasBeenSet(false)
 {
 }
 
@@ -356,6 +357,16 @@ CoreInternalOutcome CreateNativeNodePoolParam::Deserialize(const rapidjson::Valu
         m_automationServiceHasBeenSet = true;
     }
 
+    if (value.HasMember("Password") && !value["Password"].IsNull())
+    {
+        if (!value["Password"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateNativeNodePoolParam.Password` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_password = string(value["Password"].GetString());
+        m_passwordHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -584,6 +595,14 @@ void CreateNativeNodePoolParam::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "AutomationService";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_automationService, allocator);
+    }
+
+    if (m_passwordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Password";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -955,5 +974,21 @@ void CreateNativeNodePoolParam::SetAutomationService(const bool& _automationServ
 bool CreateNativeNodePoolParam::AutomationServiceHasBeenSet() const
 {
     return m_automationServiceHasBeenSet;
+}
+
+string CreateNativeNodePoolParam::GetPassword() const
+{
+    return m_password;
+}
+
+void CreateNativeNodePoolParam::SetPassword(const string& _password)
+{
+    m_password = _password;
+    m_passwordHasBeenSet = true;
+}
+
+bool CreateNativeNodePoolParam::PasswordHasBeenSet() const
+{
+    return m_passwordHasBeenSet;
 }
 

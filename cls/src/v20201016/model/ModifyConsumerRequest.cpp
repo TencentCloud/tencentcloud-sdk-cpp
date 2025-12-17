@@ -28,7 +28,10 @@ ModifyConsumerRequest::ModifyConsumerRequest() :
     m_needContentHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_ckafkaHasBeenSet(false),
-    m_compressionHasBeenSet(false)
+    m_compressionHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
+    m_externalIdHasBeenSet(false),
+    m_advancedConfigHasBeenSet(false)
 {
 }
 
@@ -87,6 +90,31 @@ string ModifyConsumerRequest::ToJsonString() const
         string key = "Compression";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_compression, allocator);
+    }
+
+    if (m_roleArnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleArn";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_roleArn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_externalId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_advancedConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_advancedConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -191,6 +219,54 @@ void ModifyConsumerRequest::SetCompression(const int64_t& _compression)
 bool ModifyConsumerRequest::CompressionHasBeenSet() const
 {
     return m_compressionHasBeenSet;
+}
+
+string ModifyConsumerRequest::GetRoleArn() const
+{
+    return m_roleArn;
+}
+
+void ModifyConsumerRequest::SetRoleArn(const string& _roleArn)
+{
+    m_roleArn = _roleArn;
+    m_roleArnHasBeenSet = true;
+}
+
+bool ModifyConsumerRequest::RoleArnHasBeenSet() const
+{
+    return m_roleArnHasBeenSet;
+}
+
+string ModifyConsumerRequest::GetExternalId() const
+{
+    return m_externalId;
+}
+
+void ModifyConsumerRequest::SetExternalId(const string& _externalId)
+{
+    m_externalId = _externalId;
+    m_externalIdHasBeenSet = true;
+}
+
+bool ModifyConsumerRequest::ExternalIdHasBeenSet() const
+{
+    return m_externalIdHasBeenSet;
+}
+
+AdvancedConsumerConfiguration ModifyConsumerRequest::GetAdvancedConfig() const
+{
+    return m_advancedConfig;
+}
+
+void ModifyConsumerRequest::SetAdvancedConfig(const AdvancedConsumerConfiguration& _advancedConfig)
+{
+    m_advancedConfig = _advancedConfig;
+    m_advancedConfigHasBeenSet = true;
+}
+
+bool ModifyConsumerRequest::AdvancedConfigHasBeenSet() const
+{
+    return m_advancedConfigHasBeenSet;
 }
 
 

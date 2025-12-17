@@ -3440,6 +3440,56 @@ VodClient::DescribeAdaptiveDynamicStreamingTemplatesOutcomeCallable VodClient::D
     return prom->get_future();
 }
 
+VodClient::DescribeAigcUsageDataOutcome VodClient::DescribeAigcUsageData(const DescribeAigcUsageDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAigcUsageData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAigcUsageDataResponse rsp = DescribeAigcUsageDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAigcUsageDataOutcome(rsp);
+        else
+            return DescribeAigcUsageDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAigcUsageDataOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeAigcUsageDataAsync(const DescribeAigcUsageDataRequest& request, const DescribeAigcUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAigcUsageDataRequest&;
+    using Resp = DescribeAigcUsageDataResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAigcUsageData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeAigcUsageDataOutcomeCallable VodClient::DescribeAigcUsageDataCallable(const DescribeAigcUsageDataRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAigcUsageDataOutcome>>();
+    DescribeAigcUsageDataAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeAigcUsageDataRequest&,
+        DescribeAigcUsageDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::DescribeAllClassOutcome VodClient::DescribeAllClass(const DescribeAllClassRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAllClass");

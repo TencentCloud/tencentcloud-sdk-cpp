@@ -32,7 +32,11 @@ AlarmNotice::AlarmNotice() :
     m_jumpDomainHasBeenSet(false),
     m_alarmNoticeDeliverConfigHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_deliverStatusHasBeenSet(false),
+    m_deliverFlagHasBeenSet(false),
+    m_alarmShieldCountHasBeenSet(false),
+    m_callbackPrioritizeHasBeenSet(false)
 {
 }
 
@@ -208,6 +212,53 @@ CoreInternalOutcome AlarmNotice::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("DeliverStatus") && !value["DeliverStatus"].IsNull())
+    {
+        if (!value["DeliverStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.DeliverStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deliverStatus = value["DeliverStatus"].GetUint64();
+        m_deliverStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeliverFlag") && !value["DeliverFlag"].IsNull())
+    {
+        if (!value["DeliverFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.DeliverFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deliverFlag = value["DeliverFlag"].GetUint64();
+        m_deliverFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlarmShieldCount") && !value["AlarmShieldCount"].IsNull())
+    {
+        if (!value["AlarmShieldCount"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.AlarmShieldCount` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_alarmShieldCount.Deserialize(value["AlarmShieldCount"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_alarmShieldCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("CallbackPrioritize") && !value["CallbackPrioritize"].IsNull())
+    {
+        if (!value["CallbackPrioritize"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.CallbackPrioritize` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_callbackPrioritize = value["CallbackPrioritize"].GetBool();
+        m_callbackPrioritizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +389,39 @@ void AlarmNotice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deliverStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeliverStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deliverStatus, allocator);
+    }
+
+    if (m_deliverFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeliverFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deliverFlag, allocator);
+    }
+
+    if (m_alarmShieldCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmShieldCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_alarmShieldCount.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_callbackPrioritizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackPrioritize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_callbackPrioritize, allocator);
     }
 
 }
@@ -533,5 +617,69 @@ void AlarmNotice::SetUpdateTime(const string& _updateTime)
 bool AlarmNotice::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+uint64_t AlarmNotice::GetDeliverStatus() const
+{
+    return m_deliverStatus;
+}
+
+void AlarmNotice::SetDeliverStatus(const uint64_t& _deliverStatus)
+{
+    m_deliverStatus = _deliverStatus;
+    m_deliverStatusHasBeenSet = true;
+}
+
+bool AlarmNotice::DeliverStatusHasBeenSet() const
+{
+    return m_deliverStatusHasBeenSet;
+}
+
+uint64_t AlarmNotice::GetDeliverFlag() const
+{
+    return m_deliverFlag;
+}
+
+void AlarmNotice::SetDeliverFlag(const uint64_t& _deliverFlag)
+{
+    m_deliverFlag = _deliverFlag;
+    m_deliverFlagHasBeenSet = true;
+}
+
+bool AlarmNotice::DeliverFlagHasBeenSet() const
+{
+    return m_deliverFlagHasBeenSet;
+}
+
+AlarmShieldCount AlarmNotice::GetAlarmShieldCount() const
+{
+    return m_alarmShieldCount;
+}
+
+void AlarmNotice::SetAlarmShieldCount(const AlarmShieldCount& _alarmShieldCount)
+{
+    m_alarmShieldCount = _alarmShieldCount;
+    m_alarmShieldCountHasBeenSet = true;
+}
+
+bool AlarmNotice::AlarmShieldCountHasBeenSet() const
+{
+    return m_alarmShieldCountHasBeenSet;
+}
+
+bool AlarmNotice::GetCallbackPrioritize() const
+{
+    return m_callbackPrioritize;
+}
+
+void AlarmNotice::SetCallbackPrioritize(const bool& _callbackPrioritize)
+{
+    m_callbackPrioritize = _callbackPrioritize;
+    m_callbackPrioritizeHasBeenSet = true;
+}
+
+bool AlarmNotice::CallbackPrioritizeHasBeenSet() const
+{
+    return m_callbackPrioritizeHasBeenSet;
 }
 

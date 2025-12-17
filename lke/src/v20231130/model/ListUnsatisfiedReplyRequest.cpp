@@ -30,7 +30,8 @@ ListUnsatisfiedReplyRequest::ListUnsatisfiedReplyRequest() :
     m_loginSubAccountUinHasBeenSet(false),
     m_queryHasBeenSet(false),
     m_reasonsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_handlingStatusesHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,19 @@ string ListUnsatisfiedReplyRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_handlingStatusesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HandlingStatuses";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_handlingStatuses.begin(); itr != m_handlingStatuses.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -244,6 +258,22 @@ void ListUnsatisfiedReplyRequest::SetStatus(const int64_t& _status)
 bool ListUnsatisfiedReplyRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+vector<int64_t> ListUnsatisfiedReplyRequest::GetHandlingStatuses() const
+{
+    return m_handlingStatuses;
+}
+
+void ListUnsatisfiedReplyRequest::SetHandlingStatuses(const vector<int64_t>& _handlingStatuses)
+{
+    m_handlingStatuses = _handlingStatuses;
+    m_handlingStatusesHasBeenSet = true;
+}
+
+bool ListUnsatisfiedReplyRequest::HandlingStatusesHasBeenSet() const
+{
+    return m_handlingStatusesHasBeenSet;
 }
 
 

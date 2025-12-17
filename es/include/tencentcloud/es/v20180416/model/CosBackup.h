@@ -89,6 +89,27 @@ namespace TencentCloud
                     bool BackupTimeHasBeenSet() const;
 
                     /**
+                     * 获取备份快照前缀
+                     * @return SnapshotName 备份快照前缀
+                     * 
+                     */
+                    std::string GetSnapshotName() const;
+
+                    /**
+                     * 设置备份快照前缀
+                     * @param _snapshotName 备份快照前缀
+                     * 
+                     */
+                    void SetSnapshotName(const std::string& _snapshotName);
+
+                    /**
+                     * 判断参数 SnapshotName 是否已赋值
+                     * @return SnapshotName 是否已赋值
+                     * 
+                     */
+                    bool SnapshotNameHasBeenSet() const;
+
+                    /**
                      * 获取0 腾讯云仓库; 1 客户仓库
                      * @return EsRepositoryType 0 腾讯云仓库; 1 客户仓库
                      * 
@@ -108,6 +129,27 @@ namespace TencentCloud
                      * 
                      */
                     bool EsRepositoryTypeHasBeenSet() const;
+
+                    /**
+                     * 获取托管快照仓库名称
+                     * @return PaasEsRepository 托管快照仓库名称
+                     * 
+                     */
+                    std::string GetPaasEsRepository() const;
+
+                    /**
+                     * 设置托管快照仓库名称
+                     * @param _paasEsRepository 托管快照仓库名称
+                     * 
+                     */
+                    void SetPaasEsRepository(const std::string& _paasEsRepository);
+
+                    /**
+                     * 判断参数 PaasEsRepository 是否已赋值
+                     * @return PaasEsRepository 是否已赋值
+                     * 
+                     */
+                    bool PaasEsRepositoryHasBeenSet() const;
 
                     /**
                      * 获取客户快照仓库名称
@@ -172,6 +214,174 @@ namespace TencentCloud
                      */
                     bool AutoBackupIntervalHasBeenSet() const;
 
+                    /**
+                     * 获取备份锁定 0 不锁定; 1 锁定
+                     * @return CosRetention 备份锁定 0 不锁定; 1 锁定
+                     * 
+                     */
+                    uint64_t GetCosRetention() const;
+
+                    /**
+                     * 设置备份锁定 0 不锁定; 1 锁定
+                     * @param _cosRetention 备份锁定 0 不锁定; 1 锁定
+                     * 
+                     */
+                    void SetCosRetention(const uint64_t& _cosRetention);
+
+                    /**
+                     * 判断参数 CosRetention 是否已赋值
+                     * @return CosRetention 是否已赋值
+                     * 
+                     */
+                    bool CosRetentionHasBeenSet() const;
+
+                    /**
+                     * 获取锁定截止日期 2022-12-10T08:34:48.000Z
+                     * @return RetainUntilDate 锁定截止日期 2022-12-10T08:34:48.000Z
+                     * 
+                     */
+                    std::string GetRetainUntilDate() const;
+
+                    /**
+                     * 设置锁定截止日期 2022-12-10T08:34:48.000Z
+                     * @param _retainUntilDate 锁定截止日期 2022-12-10T08:34:48.000Z
+                     * 
+                     */
+                    void SetRetainUntilDate(const std::string& _retainUntilDate);
+
+                    /**
+                     * 判断参数 RetainUntilDate 是否已赋值
+                     * @return RetainUntilDate 是否已赋值
+                     * 
+                     */
+                    bool RetainUntilDateHasBeenSet() const;
+
+                    /**
+                     * 获取锁定宽限期
+                     * @return RetentionGraceTime 锁定宽限期
+                     * 
+                     */
+                    uint64_t GetRetentionGraceTime() const;
+
+                    /**
+                     * 设置锁定宽限期
+                     * @param _retentionGraceTime 锁定宽限期
+                     * 
+                     */
+                    void SetRetentionGraceTime(const uint64_t& _retentionGraceTime);
+
+                    /**
+                     * 判断参数 RetentionGraceTime 是否已赋值
+                     * @return RetentionGraceTime 是否已赋值
+                     * 
+                     */
+                    bool RetentionGraceTimeHasBeenSet() const;
+
+                    /**
+                     * 获取跨地域备份 0 不跨地域; 1 跨地域
+                     * @return RemoteCos 跨地域备份 0 不跨地域; 1 跨地域
+                     * 
+                     */
+                    uint64_t GetRemoteCos() const;
+
+                    /**
+                     * 设置跨地域备份 0 不跨地域; 1 跨地域
+                     * @param _remoteCos 跨地域备份 0 不跨地域; 1 跨地域
+                     * 
+                     */
+                    void SetRemoteCos(const uint64_t& _remoteCos);
+
+                    /**
+                     * 判断参数 RemoteCos 是否已赋值
+                     * @return RemoteCos 是否已赋值
+                     * 
+                     */
+                    bool RemoteCosHasBeenSet() const;
+
+                    /**
+                     * 获取跨地域备份地域名称 ap-guangzhou
+                     * @return RemoteCosRegion 跨地域备份地域名称 ap-guangzhou
+                     * 
+                     */
+                    std::string GetRemoteCosRegion() const;
+
+                    /**
+                     * 设置跨地域备份地域名称 ap-guangzhou
+                     * @param _remoteCosRegion 跨地域备份地域名称 ap-guangzhou
+                     * 
+                     */
+                    void SetRemoteCosRegion(const std::string& _remoteCosRegion);
+
+                    /**
+                     * 判断参数 RemoteCosRegion 是否已赋值
+                     * @return RemoteCosRegion 是否已赋值
+                     * 
+                     */
+                    bool RemoteCosRegionHasBeenSet() const;
+
+                    /**
+                     * 获取策略名称
+                     * @return StrategyName 策略名称
+                     * 
+                     */
+                    std::string GetStrategyName() const;
+
+                    /**
+                     * 设置策略名称
+                     * @param _strategyName 策略名称
+                     * 
+                     */
+                    void SetStrategyName(const std::string& _strategyName);
+
+                    /**
+                     * 判断参数 StrategyName 是否已赋值
+                     * @return StrategyName 是否已赋值
+                     * 
+                     */
+                    bool StrategyNameHasBeenSet() const;
+
+                    /**
+                     * 获取备份索引列表，如果不填表示备份所有索引
+                     * @return Indices 备份索引列表，如果不填表示备份所有索引
+                     * 
+                     */
+                    std::string GetIndices() const;
+
+                    /**
+                     * 设置备份索引列表，如果不填表示备份所有索引
+                     * @param _indices 备份索引列表，如果不填表示备份所有索引
+                     * 
+                     */
+                    void SetIndices(const std::string& _indices);
+
+                    /**
+                     * 判断参数 Indices 是否已赋值
+                     * @return Indices 是否已赋值
+                     * 
+                     */
+                    bool IndicesHasBeenSet() const;
+
+                    /**
+                     * 获取策略创建时间
+                     * @return CreateTime 策略创建时间
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置策略创建时间
+                     * @param _createTime 策略创建时间
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,10 +397,22 @@ namespace TencentCloud
                     bool m_backupTimeHasBeenSet;
 
                     /**
+                     * 备份快照前缀
+                     */
+                    std::string m_snapshotName;
+                    bool m_snapshotNameHasBeenSet;
+
+                    /**
                      * 0 腾讯云仓库; 1 客户仓库
                      */
                     uint64_t m_esRepositoryType;
                     bool m_esRepositoryTypeHasBeenSet;
+
+                    /**
+                     * 托管快照仓库名称
+                     */
+                    std::string m_paasEsRepository;
+                    bool m_paasEsRepositoryHasBeenSet;
 
                     /**
                      * 客户快照仓库名称
@@ -209,6 +431,54 @@ namespace TencentCloud
                      */
                     uint64_t m_autoBackupInterval;
                     bool m_autoBackupIntervalHasBeenSet;
+
+                    /**
+                     * 备份锁定 0 不锁定; 1 锁定
+                     */
+                    uint64_t m_cosRetention;
+                    bool m_cosRetentionHasBeenSet;
+
+                    /**
+                     * 锁定截止日期 2022-12-10T08:34:48.000Z
+                     */
+                    std::string m_retainUntilDate;
+                    bool m_retainUntilDateHasBeenSet;
+
+                    /**
+                     * 锁定宽限期
+                     */
+                    uint64_t m_retentionGraceTime;
+                    bool m_retentionGraceTimeHasBeenSet;
+
+                    /**
+                     * 跨地域备份 0 不跨地域; 1 跨地域
+                     */
+                    uint64_t m_remoteCos;
+                    bool m_remoteCosHasBeenSet;
+
+                    /**
+                     * 跨地域备份地域名称 ap-guangzhou
+                     */
+                    std::string m_remoteCosRegion;
+                    bool m_remoteCosRegionHasBeenSet;
+
+                    /**
+                     * 策略名称
+                     */
+                    std::string m_strategyName;
+                    bool m_strategyNameHasBeenSet;
+
+                    /**
+                     * 备份索引列表，如果不填表示备份所有索引
+                     */
+                    std::string m_indices;
+                    bool m_indicesHasBeenSet;
+
+                    /**
+                     * 策略创建时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

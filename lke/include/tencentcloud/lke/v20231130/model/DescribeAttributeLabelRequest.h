@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return BotBizId 应用ID
+                     * 获取应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * @return BotBizId 应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _botBizId 应用ID
+                     * 设置应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * @param _botBizId 应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BotBizIdHasBeenSet() const;
 
                     /**
-                     * 获取属性ID
-                     * @return AttributeBizId 属性ID
+                     * 获取标签ID
+                     * @return AttributeBizId 标签ID
                      * 
                      */
                     std::string GetAttributeBizId() const;
 
                     /**
-                     * 设置属性ID
-                     * @param _attributeBizId 属性ID
+                     * 设置标签ID
+                     * @param _attributeBizId 标签ID
                      * 
                      */
                     void SetAttributeBizId(const std::string& _attributeBizId);
@@ -85,15 +85,19 @@ namespace TencentCloud
                     bool AttributeBizIdHasBeenSet() const;
 
                     /**
-                     * 获取每次加载的数量 
-                     * @return Limit 每次加载的数量 
+                     * 获取每次请求返回的最大标签数量​，限制单次接口返回的标签数量，避免数据量过大。取值范围：大于0。
+
+                     * @return Limit 每次请求返回的最大标签数量​，限制单次接口返回的标签数量，避免数据量过大。取值范围：大于0。
+
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每次加载的数量 
-                     * @param _limit 每次加载的数量 
+                     * 设置每次请求返回的最大标签数量​，限制单次接口返回的标签数量，避免数据量过大。取值范围：大于0。
+
+                     * @param _limit 每次请求返回的最大标签数量​，限制单次接口返回的标签数量，避免数据量过大。取值范围：大于0。
+
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -148,15 +152,15 @@ namespace TencentCloud
                     bool LoginSubAccountUinHasBeenSet() const;
 
                     /**
-                     * 获取查询标签或相似标签
-                     * @return Query 查询标签或相似标签
+                     * 获取搜索关键词，用于查询标签标准词或相似词
+                     * @return Query 搜索关键词，用于查询标签标准词或相似词
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
-                     * 设置查询标签或相似标签
-                     * @param _query 查询标签或相似标签
+                     * 设置搜索关键词，用于查询标签标准词或相似词
+                     * @param _query 搜索关键词，用于查询标签标准词或相似词
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -169,15 +173,15 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取滚动加载游标的标签ID
-                     * @return LastLabelBizId 滚动加载游标的标签ID
+                     * 获取滚动加载游标，上一次请求返回的最后一个标签ID
+                     * @return LastLabelBizId 滚动加载游标，上一次请求返回的最后一个标签ID
                      * 
                      */
                     std::string GetLastLabelBizId() const;
 
                     /**
-                     * 设置滚动加载游标的标签ID
-                     * @param _lastLabelBizId 滚动加载游标的标签ID
+                     * 设置滚动加载游标，上一次请求返回的最后一个标签ID
+                     * @param _lastLabelBizId 滚动加载游标，上一次请求返回的最后一个标签ID
                      * 
                      */
                     void SetLastLabelBizId(const std::string& _lastLabelBizId);
@@ -213,19 +217,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID
+                     * 应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
 
                     /**
-                     * 属性ID
+                     * 标签ID
                      */
                     std::string m_attributeBizId;
                     bool m_attributeBizIdHasBeenSet;
 
                     /**
-                     * 每次加载的数量 
+                     * 每次请求返回的最大标签数量​，限制单次接口返回的标签数量，避免数据量过大。取值范围：大于0。
+
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -243,13 +248,13 @@ namespace TencentCloud
                     bool m_loginSubAccountUinHasBeenSet;
 
                     /**
-                     * 查询标签或相似标签
+                     * 搜索关键词，用于查询标签标准词或相似词
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 滚动加载游标的标签ID
+                     * 滚动加载游标，上一次请求返回的最后一个标签ID
                      */
                     std::string m_lastLabelBizId;
                     bool m_lastLabelBizIdHasBeenSet;

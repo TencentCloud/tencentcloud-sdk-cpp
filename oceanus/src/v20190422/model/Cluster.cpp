@@ -77,7 +77,8 @@ Cluster::Cluster() :
     m_yarnsHasBeenSet(false),
     m_deploymentModeHasBeenSet(false),
     m_slaveZonesHasBeenSet(false),
-    m_logCOSBucketHasBeenSet(false)
+    m_logCOSBucketHasBeenSet(false),
+    m_cdcIdHasBeenSet(false)
 {
 }
 
@@ -757,6 +758,16 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_logCOSBucketHasBeenSet = true;
     }
 
+    if (value.HasMember("CdcId") && !value["CdcId"].IsNull())
+    {
+        if (!value["CdcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.CdcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cdcId = string(value["CdcId"].GetString());
+        m_cdcIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1277,6 +1288,14 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "LogCOSBucket";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logCOSBucket.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cdcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cdcId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2192,5 +2211,21 @@ void Cluster::SetLogCOSBucket(const string& _logCOSBucket)
 bool Cluster::LogCOSBucketHasBeenSet() const
 {
     return m_logCOSBucketHasBeenSet;
+}
+
+string Cluster::GetCdcId() const
+{
+    return m_cdcId;
+}
+
+void Cluster::SetCdcId(const string& _cdcId)
+{
+    m_cdcId = _cdcId;
+    m_cdcIdHasBeenSet = true;
+}
+
+bool Cluster::CdcIdHasBeenSet() const
+{
+    return m_cdcIdHasBeenSet;
 }
 

@@ -68,6 +68,27 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
+                     * 获取环境ID
+                     * @return EnvId 环境ID
+                     * 
+                     */
+                    std::string GetEnvId() const;
+
+                    /**
+                     * 设置环境ID
+                     * @param _envId 环境ID
+                     * 
+                     */
+                    void SetEnvId(const std::string& _envId);
+
+                    /**
+                     * 判断参数 EnvId 是否已赋值
+                     * @return EnvId 是否已赋值
+                     * 
+                     */
+                    bool EnvIdHasBeenSet() const;
+
+                    /**
                      * 获取活动id
                      * @return ActivityId 活动id
                      * 
@@ -87,6 +108,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ActivityIdHasBeenSet() const;
+
+                    /**
+                     * 获取活动名称（唯一英文标识）
+                     * @return ActivityName 活动名称（唯一英文标识）
+                     * 
+                     */
+                    std::string GetActivityName() const;
+
+                    /**
+                     * 设置活动名称（唯一英文标识）
+                     * @param _activityName 活动名称（唯一英文标识）
+                     * 
+                     */
+                    void SetActivityName(const std::string& _activityName);
+
+                    /**
+                     * 判断参数 ActivityName 是否已赋值
+                     * @return ActivityName 是否已赋值
+                     * 
+                     */
+                    bool ActivityNameHasBeenSet() const;
 
                     /**
                      * 获取自定义状态码
@@ -152,15 +194,15 @@ namespace TencentCloud
                     bool SubStatusIntHasBeenSet() const;
 
                     /**
-                     * 获取是否软删除
-                     * @return IsDeleted 是否软删除
+                     * 获取是否已删除
+                     * @return IsDeleted 是否已删除
                      * 
                      */
                     bool GetIsDeleted() const;
 
                     /**
-                     * 设置是否软删除
-                     * @param _isDeleted 是否软删除
+                     * 设置是否已删除
+                     * @param _isDeleted 是否已删除
                      * 
                      */
                     void SetIsDeleted(const bool& _isDeleted);
@@ -172,6 +214,27 @@ namespace TencentCloud
                      */
                     bool IsDeletedHasBeenSet() const;
 
+                    /**
+                     * 获取活动参与时间
+                     * @return CreateTime 活动参与时间
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置活动参与时间
+                     * @param _createTime 活动参与时间
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -181,10 +244,22 @@ namespace TencentCloud
                     bool m_uinHasBeenSet;
 
                     /**
+                     * 环境ID
+                     */
+                    std::string m_envId;
+                    bool m_envIdHasBeenSet;
+
+                    /**
                      * 活动id
                      */
                     int64_t m_activityId;
                     bool m_activityIdHasBeenSet;
+
+                    /**
+                     * 活动名称（唯一英文标识）
+                     */
+                    std::string m_activityName;
+                    bool m_activityNameHasBeenSet;
 
                     /**
                      * 自定义状态码
@@ -205,10 +280,16 @@ namespace TencentCloud
                     bool m_subStatusIntHasBeenSet;
 
                     /**
-                     * 是否软删除
+                     * 是否已删除
                      */
                     bool m_isDeleted;
                     bool m_isDeletedHasBeenSet;
+
+                    /**
+                     * 活动参与时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

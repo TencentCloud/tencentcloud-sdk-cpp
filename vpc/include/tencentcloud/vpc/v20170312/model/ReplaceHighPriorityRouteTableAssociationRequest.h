@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool HighPriorityRouteTableIdHasBeenSet() const;
 
                     /**
-                     * 获取子网唯一 ID
-                     * @return SubnetId 子网唯一 ID
+                     * 获取子网唯一 ID。对于存在子网唯一ID的场景，该参数为必选。对于不存在子网ID的特殊场景，SubnetId和CidrBlock参数至少提供一个，二选一。
+                     * @return SubnetId 子网唯一 ID。对于存在子网唯一ID的场景，该参数为必选。对于不存在子网ID的特殊场景，SubnetId和CidrBlock参数至少提供一个，二选一。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网唯一 ID
-                     * @param _subnetId 子网唯一 ID
+                     * 设置子网唯一 ID。对于存在子网唯一ID的场景，该参数为必选。对于不存在子网ID的特殊场景，SubnetId和CidrBlock参数至少提供一个，二选一。
+                     * @param _subnetId 子网唯一 ID。对于存在子网唯一ID的场景，该参数为必选。对于不存在子网ID的特殊场景，SubnetId和CidrBlock参数至少提供一个，二选一。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_highPriorityRouteTableIdHasBeenSet;
 
                     /**
-                     * 子网唯一 ID
+                     * 子网唯一 ID。对于存在子网唯一ID的场景，该参数为必选。对于不存在子网ID的特殊场景，SubnetId和CidrBlock参数至少提供一个，二选一。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;

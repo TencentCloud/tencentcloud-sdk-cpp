@@ -173,6 +173,27 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取是否克隆标签。
+                     * @return IsCloneTags 是否克隆标签。
+                     * 
+                     */
+                    bool GetIsCloneTags() const;
+
+                    /**
+                     * 设置是否克隆标签。
+                     * @param _isCloneTags 是否克隆标签。
+                     * 
+                     */
+                    void SetIsCloneTags(const bool& _isCloneTags);
+
+                    /**
+                     * 判断参数 IsCloneTags 是否已赋值
+                     * @return IsCloneTags 是否已赋值
+                     * 
+                     */
+                    bool IsCloneTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +232,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 是否克隆标签。
+                     */
+                    bool m_isCloneTags;
+                    bool m_isCloneTagsHasBeenSet;
 
                 };
             }

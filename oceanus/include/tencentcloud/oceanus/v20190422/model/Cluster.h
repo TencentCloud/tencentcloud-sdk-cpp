@@ -1390,6 +1390,31 @@ namespace TencentCloud
                      */
                     bool LogCOSBucketHasBeenSet() const;
 
+                    /**
+                     * 获取Cdc集群Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CdcId Cdc集群Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCdcId() const;
+
+                    /**
+                     * 设置Cdc集群Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cdcId Cdc集群Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCdcId(const std::string& _cdcId);
+
+                    /**
+                     * 判断参数 CdcId 是否已赋值
+                     * @return CdcId 是否已赋值
+                     * 
+                     */
+                    bool CdcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1767,6 +1792,13 @@ namespace TencentCloud
                      */
                     std::string m_logCOSBucket;
                     bool m_logCOSBucketHasBeenSet;
+
+                    /**
+                     * Cdc集群Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cdcId;
+                    bool m_cdcIdHasBeenSet;
 
                 };
             }

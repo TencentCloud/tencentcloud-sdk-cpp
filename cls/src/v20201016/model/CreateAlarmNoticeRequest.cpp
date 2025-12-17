@@ -32,7 +32,8 @@ CreateAlarmNoticeRequest::CreateAlarmNoticeRequest() :
     m_jumpDomainHasBeenSet(false),
     m_deliverStatusHasBeenSet(false),
     m_deliverConfigHasBeenSet(false),
-    m_alarmShieldStatusHasBeenSet(false)
+    m_alarmShieldStatusHasBeenSet(false),
+    m_callbackPrioritizeHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,14 @@ string CreateAlarmNoticeRequest::ToJsonString() const
         string key = "AlarmShieldStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_alarmShieldStatus, allocator);
+    }
+
+    if (m_callbackPrioritizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackPrioritize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_callbackPrioritize, allocator);
     }
 
 
@@ -318,6 +327,22 @@ void CreateAlarmNoticeRequest::SetAlarmShieldStatus(const uint64_t& _alarmShield
 bool CreateAlarmNoticeRequest::AlarmShieldStatusHasBeenSet() const
 {
     return m_alarmShieldStatusHasBeenSet;
+}
+
+bool CreateAlarmNoticeRequest::GetCallbackPrioritize() const
+{
+    return m_callbackPrioritize;
+}
+
+void CreateAlarmNoticeRequest::SetCallbackPrioritize(const bool& _callbackPrioritize)
+{
+    m_callbackPrioritize = _callbackPrioritize;
+    m_callbackPrioritizeHasBeenSet = true;
+}
+
+bool CreateAlarmNoticeRequest::CallbackPrioritizeHasBeenSet() const
+{
+    return m_callbackPrioritizeHasBeenSet;
 }
 
 

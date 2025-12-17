@@ -397,6 +397,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskByStatusReportResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskDetailDsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskDetailDsResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTaskInstancesStatusRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTaskInstancesStatusResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskLineageRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskLineageResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskLockStatusRequest.h>
@@ -1192,6 +1194,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTaskDetailDsResponse> DescribeTaskDetailDsOutcome;
                 typedef std::future<DescribeTaskDetailDsOutcome> DescribeTaskDetailDsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTaskDetailDsRequest&, DescribeTaskDetailDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskDetailDsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTaskInstancesStatusResponse> DescribeTaskInstancesStatusOutcome;
+                typedef std::future<DescribeTaskInstancesStatusOutcome> DescribeTaskInstancesStatusOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTaskInstancesStatusRequest&, DescribeTaskInstancesStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskInstancesStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTaskLineageResponse> DescribeTaskLineageOutcome;
                 typedef std::future<DescribeTaskLineageOutcome> DescribeTaskLineageOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTaskLineageRequest&, DescribeTaskLineageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskLineageAsyncHandler;
@@ -3210,6 +3215,15 @@ namespace TencentCloud
                 DescribeTaskDetailDsOutcome DescribeTaskDetailDs(const Model::DescribeTaskDetailDsRequest &request);
                 void DescribeTaskDetailDsAsync(const Model::DescribeTaskDetailDsRequest& request, const DescribeTaskDetailDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTaskDetailDsOutcomeCallable DescribeTaskDetailDsCallable(const Model::DescribeTaskDetailDsRequest& request);
+
+                /**
+                 *分组获取编排空间调试任务实例状态信息
+                 * @param req DescribeTaskInstancesStatusRequest
+                 * @return DescribeTaskInstancesStatusOutcome
+                 */
+                DescribeTaskInstancesStatusOutcome DescribeTaskInstancesStatus(const Model::DescribeTaskInstancesStatusRequest &request);
+                void DescribeTaskInstancesStatusAsync(const Model::DescribeTaskInstancesStatusRequest& request, const DescribeTaskInstancesStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskInstancesStatusOutcomeCallable DescribeTaskInstancesStatusCallable(const Model::DescribeTaskInstancesStatusRequest& request);
 
                 /**
                  *通过任务查询表的血缘关系

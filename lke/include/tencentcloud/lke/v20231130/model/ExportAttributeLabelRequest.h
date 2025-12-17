@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return BotBizId 应用ID
+                     * 获取应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * @return BotBizId 应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _botBizId 应用ID
+                     * 设置应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * @param _botBizId 应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool LoginSubAccountUinHasBeenSet() const;
 
                     /**
-                     * 获取属性ID
-                     * @return AttributeBizIds 属性ID
+                     * 获取标签ID
+                     * @return AttributeBizIds 标签ID
                      * 
                      */
                     std::vector<std::string> GetAttributeBizIds() const;
 
                     /**
-                     * 设置属性ID
-                     * @param _attributeBizIds 属性ID
+                     * 设置标签ID
+                     * @param _attributeBizIds 标签ID
                      * 
                      */
                     void SetAttributeBizIds(const std::vector<std::string>& _attributeBizIds);
@@ -151,7 +151,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID
+                     * 应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
@@ -169,7 +169,7 @@ namespace TencentCloud
                     bool m_loginSubAccountUinHasBeenSet;
 
                     /**
-                     * 属性ID
+                     * 标签ID
                      */
                     std::vector<std::string> m_attributeBizIds;
                     bool m_attributeBizIdsHasBeenSet;

@@ -26,10 +26,12 @@ TopicInfo::TopicInfo() :
     m_topicNameHasBeenSet(false),
     m_partitionCountHasBeenSet(false),
     m_indexHasBeenSet(false),
+    m_assumerUinHasBeenSet(false),
     m_assumerNameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_roleNameHasBeenSet(false),
     m_autoSplitHasBeenSet(false),
     m_maxSplitPartitionsHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
@@ -42,7 +44,8 @@ TopicInfo::TopicInfo() :
     m_extendsHasBeenSet(false),
     m_topicAsyncTaskIDHasBeenSet(false),
     m_migrationStatusHasBeenSet(false),
-    m_effectiveDateHasBeenSet(false)
+    m_effectiveDateHasBeenSet(false),
+    m_isSourceFromHasBeenSet(false)
 {
 }
 
@@ -101,6 +104,16 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
         m_indexHasBeenSet = true;
     }
 
+    if (value.HasMember("AssumerUin") && !value["AssumerUin"].IsNull())
+    {
+        if (!value["AssumerUin"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.AssumerUin` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_assumerUin = value["AssumerUin"].GetUint64();
+        m_assumerUinHasBeenSet = true;
+    }
+
     if (value.HasMember("AssumerName") && !value["AssumerName"].IsNull())
     {
         if (!value["AssumerName"].IsString())
@@ -149,6 +162,16 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
             m_tags.push_back(item);
         }
         m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("RoleName") && !value["RoleName"].IsNull())
+    {
+        if (!value["RoleName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.RoleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_roleName = string(value["RoleName"].GetString());
+        m_roleNameHasBeenSet = true;
     }
 
     if (value.HasMember("AutoSplit") && !value["AutoSplit"].IsNull())
@@ -288,6 +311,16 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
         m_effectiveDateHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSourceFrom") && !value["IsSourceFrom"].IsNull())
+    {
+        if (!value["IsSourceFrom"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.IsSourceFrom` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSourceFrom = value["IsSourceFrom"].GetBool();
+        m_isSourceFromHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -335,6 +368,14 @@ void TopicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, m_index, allocator);
     }
 
+    if (m_assumerUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssumerUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_assumerUin, allocator);
+    }
+
     if (m_assumerNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -372,6 +413,14 @@ void TopicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_roleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roleName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_autoSplitHasBeenSet)
@@ -479,6 +528,14 @@ void TopicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, rapidjson::Value(m_effectiveDate.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_isSourceFromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSourceFrom";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSourceFrom, allocator);
+    }
+
 }
 
 
@@ -562,6 +619,22 @@ bool TopicInfo::IndexHasBeenSet() const
     return m_indexHasBeenSet;
 }
 
+uint64_t TopicInfo::GetAssumerUin() const
+{
+    return m_assumerUin;
+}
+
+void TopicInfo::SetAssumerUin(const uint64_t& _assumerUin)
+{
+    m_assumerUin = _assumerUin;
+    m_assumerUinHasBeenSet = true;
+}
+
+bool TopicInfo::AssumerUinHasBeenSet() const
+{
+    return m_assumerUinHasBeenSet;
+}
+
 string TopicInfo::GetAssumerName() const
 {
     return m_assumerName;
@@ -624,6 +697,22 @@ void TopicInfo::SetTags(const vector<Tag>& _tags)
 bool TopicInfo::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string TopicInfo::GetRoleName() const
+{
+    return m_roleName;
+}
+
+void TopicInfo::SetRoleName(const string& _roleName)
+{
+    m_roleName = _roleName;
+    m_roleNameHasBeenSet = true;
+}
+
+bool TopicInfo::RoleNameHasBeenSet() const
+{
+    return m_roleNameHasBeenSet;
 }
 
 bool TopicInfo::GetAutoSplit() const
@@ -832,5 +921,21 @@ void TopicInfo::SetEffectiveDate(const string& _effectiveDate)
 bool TopicInfo::EffectiveDateHasBeenSet() const
 {
     return m_effectiveDateHasBeenSet;
+}
+
+bool TopicInfo::GetIsSourceFrom() const
+{
+    return m_isSourceFrom;
+}
+
+void TopicInfo::SetIsSourceFrom(const bool& _isSourceFrom)
+{
+    m_isSourceFrom = _isSourceFrom;
+    m_isSourceFromHasBeenSet = true;
+}
+
+bool TopicInfo::IsSourceFromHasBeenSet() const
+{
+    return m_isSourceFromHasBeenSet;
 }
 

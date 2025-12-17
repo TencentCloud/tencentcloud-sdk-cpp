@@ -189,18 +189,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取首次登陆是否修改密码
+                     * 获取首次登录是否修改密码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FirstModify 首次登陆是否修改密码
+                     * @return FirstModify 首次登录是否修改密码
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFirstModify() const;
 
                     /**
-                     * 设置首次登陆是否修改密码
+                     * 设置首次登录是否修改密码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _firstModify 首次登陆是否修改密码
+                     * @param _firstModify 首次登录是否修改密码
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -314,18 +314,18 @@ namespace TencentCloud
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取更改人
+                     * 获取修改人
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdatedUser 更改人
+                     * @return UpdatedUser 修改人
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedUser() const;
 
                     /**
-                     * 设置更改人
+                     * 设置修改人
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updatedUser 更改人
+                     * @param _updatedUser 修改人
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -364,18 +364,18 @@ namespace TencentCloud
                     bool UpdatedAtHasBeenSet() const;
 
                     /**
-                     * 获取全局角色
+                     * 获取系统全局角色
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GlobalUserName 全局角色
+                     * @return GlobalUserName 系统全局角色
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGlobalUserName() const;
 
                     /**
-                     * 设置全局角色
+                     * 设置系统全局角色
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _globalUserName 全局角色
+                     * @param _globalUserName 系统全局角色
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -389,18 +389,18 @@ namespace TencentCloud
                     bool GlobalUserNameHasBeenSet() const;
 
                     /**
-                     * 获取全局角色编码
+                     * 获取系统全局角色编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GlobalUserCode 全局角色编码
+                     * @return GlobalUserCode 系统全局角色编码
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGlobalUserCode() const;
 
                     /**
-                     * 设置全局角色编码
+                     * 设置系统全局角色编码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _globalUserCode 全局角色编码
+                     * @param _globalUserCode 系统全局角色编码
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -656,7 +656,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 首次登陆是否修改密码
+                     * 首次登录是否修改密码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_firstModify;
@@ -691,7 +691,7 @@ namespace TencentCloud
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * 更改人
+                     * 修改人
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedUser;
@@ -705,14 +705,14 @@ namespace TencentCloud
                     bool m_updatedAtHasBeenSet;
 
                     /**
-                     * 全局角色
+                     * 系统全局角色
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_globalUserName;
                     bool m_globalUserNameHasBeenSet;
 
                     /**
-                     * 全局角色编码
+                     * 系统全局角色编码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_globalUserCode;

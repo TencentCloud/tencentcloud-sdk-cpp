@@ -525,6 +525,85 @@ MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）
                      */
                     bool StorageTypeHasBeenSet() const;
 
+                    /**
+                     * 获取角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)
+                     * @return RoleArn 角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)
+                     * 
+                     */
+                    std::string GetRoleArn() const;
+
+                    /**
+                     * 设置角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)
+                     * @param _roleArn 角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)
+                     * 
+                     */
+                    void SetRoleArn(const std::string& _roleArn);
+
+                    /**
+                     * 判断参数 RoleArn 是否已赋值
+                     * @return RoleArn 是否已赋值
+                     * 
+                     */
+                    bool RoleArnHasBeenSet() const;
+
+                    /**
+                     * 获取外部ID
+                     * @return ExternalId 外部ID
+                     * 
+                     */
+                    std::string GetExternalId() const;
+
+                    /**
+                     * 设置外部ID
+                     * @param _externalId 外部ID
+                     * 
+                     */
+                    void SetExternalId(const std::string& _externalId);
+
+                    /**
+                     * 判断参数 ExternalId 是否已赋值
+                     * @return ExternalId 是否已赋值
+                     * 
+                     */
+                    bool ExternalIdHasBeenSet() const;
+
+                    /**
+                     * 获取任务运行状态。支持`0`,`1`,`2`
+
+- `0`: 停止
+- `1`: 运行中
+- `2`: 异常
+                     * @return TaskStatus 任务运行状态。支持`0`,`1`,`2`
+
+- `0`: 停止
+- `1`: 运行中
+- `2`: 异常
+                     * 
+                     */
+                    uint64_t GetTaskStatus() const;
+
+                    /**
+                     * 设置任务运行状态。支持`0`,`1`,`2`
+
+- `0`: 停止
+- `1`: 运行中
+- `2`: 异常
+                     * @param _taskStatus 任务运行状态。支持`0`,`1`,`2`
+
+- `0`: 停止
+- `1`: 运行中
+- `2`: 异常
+                     * 
+                     */
+                    void SetTaskStatus(const uint64_t& _taskStatus);
+
+                    /**
+                     * 判断参数 TaskStatus 是否已赋值
+                     * @return TaskStatus 是否已赋值
+                     * 
+                     */
+                    bool TaskStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -660,6 +739,28 @@ MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;
+
+                    /**
+                     * 角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)
+                     */
+                    std::string m_roleArn;
+                    bool m_roleArnHasBeenSet;
+
+                    /**
+                     * 外部ID
+                     */
+                    std::string m_externalId;
+                    bool m_externalIdHasBeenSet;
+
+                    /**
+                     * 任务运行状态。支持`0`,`1`,`2`
+
+- `0`: 停止
+- `1`: 运行中
+- `2`: 异常
+                     */
+                    uint64_t m_taskStatus;
+                    bool m_taskStatusHasBeenSet;
 
                 };
             }

@@ -105,6 +105,174 @@ namespace TencentCloud
                      */
                     bool IndicesHasBeenSet() const;
 
+                    /**
+                     * 获取0 腾讯云仓库; 1 客户仓库
+                     * @return EsRepositoryType 0 腾讯云仓库; 1 客户仓库
+                     * 
+                     */
+                    uint64_t GetEsRepositoryType() const;
+
+                    /**
+                     * 设置0 腾讯云仓库; 1 客户仓库
+                     * @param _esRepositoryType 0 腾讯云仓库; 1 客户仓库
+                     * 
+                     */
+                    void SetEsRepositoryType(const uint64_t& _esRepositoryType);
+
+                    /**
+                     * 判断参数 EsRepositoryType 是否已赋值
+                     * @return EsRepositoryType 是否已赋值
+                     * 
+                     */
+                    bool EsRepositoryTypeHasBeenSet() const;
+
+                    /**
+                     * 获取客户快照仓库名称
+                     * @return UserEsRepository 客户快照仓库名称
+                     * 
+                     */
+                    std::string GetUserEsRepository() const;
+
+                    /**
+                     * 设置客户快照仓库名称
+                     * @param _userEsRepository 客户快照仓库名称
+                     * 
+                     */
+                    void SetUserEsRepository(const std::string& _userEsRepository);
+
+                    /**
+                     * 判断参数 UserEsRepository 是否已赋值
+                     * @return UserEsRepository 是否已赋值
+                     * 
+                     */
+                    bool UserEsRepositoryHasBeenSet() const;
+
+                    /**
+                     * 获取快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天
+                     * @return StorageDuration 快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天
+                     * 
+                     */
+                    uint64_t GetStorageDuration() const;
+
+                    /**
+                     * 设置快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天
+                     * @param _storageDuration 快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天
+                     * 
+                     */
+                    void SetStorageDuration(const uint64_t& _storageDuration);
+
+                    /**
+                     * 判断参数 StorageDuration 是否已赋值
+                     * @return StorageDuration 是否已赋值
+                     * 
+                     */
+                    bool StorageDurationHasBeenSet() const;
+
+                    /**
+                     * 获取备份锁定 0 不锁定; 1 锁定
+                     * @return CosRetention 备份锁定 0 不锁定; 1 锁定
+                     * 
+                     */
+                    uint64_t GetCosRetention() const;
+
+                    /**
+                     * 设置备份锁定 0 不锁定; 1 锁定
+                     * @param _cosRetention 备份锁定 0 不锁定; 1 锁定
+                     * 
+                     */
+                    void SetCosRetention(const uint64_t& _cosRetention);
+
+                    /**
+                     * 判断参数 CosRetention 是否已赋值
+                     * @return CosRetention 是否已赋值
+                     * 
+                     */
+                    bool CosRetentionHasBeenSet() const;
+
+                    /**
+                     * 获取锁定截止日期 2022-12-10T08:34:48.000Z
+                     * @return RetainUntilDate 锁定截止日期 2022-12-10T08:34:48.000Z
+                     * 
+                     */
+                    std::string GetRetainUntilDate() const;
+
+                    /**
+                     * 设置锁定截止日期 2022-12-10T08:34:48.000Z
+                     * @param _retainUntilDate 锁定截止日期 2022-12-10T08:34:48.000Z
+                     * 
+                     */
+                    void SetRetainUntilDate(const std::string& _retainUntilDate);
+
+                    /**
+                     * 判断参数 RetainUntilDate 是否已赋值
+                     * @return RetainUntilDate 是否已赋值
+                     * 
+                     */
+                    bool RetainUntilDateHasBeenSet() const;
+
+                    /**
+                     * 获取锁定宽限期,单位天
+                     * @return RetentionGraceTime 锁定宽限期,单位天
+                     * 
+                     */
+                    uint64_t GetRetentionGraceTime() const;
+
+                    /**
+                     * 设置锁定宽限期,单位天
+                     * @param _retentionGraceTime 锁定宽限期,单位天
+                     * 
+                     */
+                    void SetRetentionGraceTime(const uint64_t& _retentionGraceTime);
+
+                    /**
+                     * 判断参数 RetentionGraceTime 是否已赋值
+                     * @return RetentionGraceTime 是否已赋值
+                     * 
+                     */
+                    bool RetentionGraceTimeHasBeenSet() const;
+
+                    /**
+                     * 获取跨地域备份 0 不跨地域; 1 跨地域
+                     * @return RemoteCos 跨地域备份 0 不跨地域; 1 跨地域
+                     * 
+                     */
+                    uint64_t GetRemoteCos() const;
+
+                    /**
+                     * 设置跨地域备份 0 不跨地域; 1 跨地域
+                     * @param _remoteCos 跨地域备份 0 不跨地域; 1 跨地域
+                     * 
+                     */
+                    void SetRemoteCos(const uint64_t& _remoteCos);
+
+                    /**
+                     * 判断参数 RemoteCos 是否已赋值
+                     * @return RemoteCos 是否已赋值
+                     * 
+                     */
+                    bool RemoteCosHasBeenSet() const;
+
+                    /**
+                     * 获取跨地域备份地域名称 ap-guangzhou
+                     * @return RemoteCosRegion 跨地域备份地域名称 ap-guangzhou
+                     * 
+                     */
+                    std::string GetRemoteCosRegion() const;
+
+                    /**
+                     * 设置跨地域备份地域名称 ap-guangzhou
+                     * @param _remoteCosRegion 跨地域备份地域名称 ap-guangzhou
+                     * 
+                     */
+                    void SetRemoteCosRegion(const std::string& _remoteCosRegion);
+
+                    /**
+                     * 判断参数 RemoteCosRegion 是否已赋值
+                     * @return RemoteCosRegion 是否已赋值
+                     * 
+                     */
+                    bool RemoteCosRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +292,54 @@ namespace TencentCloud
                      */
                     std::string m_indices;
                     bool m_indicesHasBeenSet;
+
+                    /**
+                     * 0 腾讯云仓库; 1 客户仓库
+                     */
+                    uint64_t m_esRepositoryType;
+                    bool m_esRepositoryTypeHasBeenSet;
+
+                    /**
+                     * 客户快照仓库名称
+                     */
+                    std::string m_userEsRepository;
+                    bool m_userEsRepositoryHasBeenSet;
+
+                    /**
+                     * 快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天
+                     */
+                    uint64_t m_storageDuration;
+                    bool m_storageDurationHasBeenSet;
+
+                    /**
+                     * 备份锁定 0 不锁定; 1 锁定
+                     */
+                    uint64_t m_cosRetention;
+                    bool m_cosRetentionHasBeenSet;
+
+                    /**
+                     * 锁定截止日期 2022-12-10T08:34:48.000Z
+                     */
+                    std::string m_retainUntilDate;
+                    bool m_retainUntilDateHasBeenSet;
+
+                    /**
+                     * 锁定宽限期,单位天
+                     */
+                    uint64_t m_retentionGraceTime;
+                    bool m_retentionGraceTimeHasBeenSet;
+
+                    /**
+                     * 跨地域备份 0 不跨地域; 1 跨地域
+                     */
+                    uint64_t m_remoteCos;
+                    bool m_remoteCosHasBeenSet;
+
+                    /**
+                     * 跨地域备份地域名称 ap-guangzhou
+                     */
+                    std::string m_remoteCosRegion;
+                    bool m_remoteCosRegionHasBeenSet;
 
                 };
             }

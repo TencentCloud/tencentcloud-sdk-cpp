@@ -32,7 +32,8 @@ DescribeDedicatedClusterOverviewResponse::DescribeDedicatedClusterOverviewRespon
     m_vpnConnectionBandwidthDataHasBeenSet(false),
     m_hostDetailInfoHasBeenSet(false),
     m_hostStandbyCountHasBeenSet(false),
-    m_hostNormalCountHasBeenSet(false)
+    m_hostNormalCountHasBeenSet(false),
+    m_hostAbnormalCountHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome DescribeDedicatedClusterOverviewResponse::Deserialize(const 
         m_hostNormalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HostAbnormalCount") && !rsp["HostAbnormalCount"].IsNull())
+    {
+        if (!rsp["HostAbnormalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostAbnormalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostAbnormalCount = rsp["HostAbnormalCount"].GetUint64();
+        m_hostAbnormalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -290,6 +301,14 @@ string DescribeDedicatedClusterOverviewResponse::ToJsonString() const
         string key = "HostNormalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hostNormalCount, allocator);
+    }
+
+    if (m_hostAbnormalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostAbnormalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hostAbnormalCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -392,6 +411,16 @@ uint64_t DescribeDedicatedClusterOverviewResponse::GetHostNormalCount() const
 bool DescribeDedicatedClusterOverviewResponse::HostNormalCountHasBeenSet() const
 {
     return m_hostNormalCountHasBeenSet;
+}
+
+uint64_t DescribeDedicatedClusterOverviewResponse::GetHostAbnormalCount() const
+{
+    return m_hostAbnormalCount;
+}
+
+bool DescribeDedicatedClusterOverviewResponse::HostAbnormalCountHasBeenSet() const
+{
+    return m_hostAbnormalCountHasBeenSet;
 }
 
 

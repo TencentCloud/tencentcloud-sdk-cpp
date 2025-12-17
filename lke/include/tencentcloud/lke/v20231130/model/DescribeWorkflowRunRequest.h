@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return AppBizId 应用ID
+                     * 获取应用ID, 获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)。
+                     * @return AppBizId 应用ID, 获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)。
                      * 
                      */
                     std::string GetAppBizId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _appBizId 应用ID
+                     * 设置应用ID, 获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)。
+                     * @param _appBizId 应用ID, 获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)。
                      * 
                      */
                     void SetAppBizId(const std::string& _appBizId);
@@ -165,7 +165,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID
+                     * 应用ID, 获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)。
                      */
                     std::string m_appBizId;
                     bool m_appBizIdHasBeenSet;

@@ -38,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 可以传入多种类型的内容，如图片、文本。
+                * 可以传入多种类型的内容，目前支持文本、图片、视频。
                 */
                 class Content : public AbstractModel
                 {
@@ -53,12 +53,12 @@ namespace TencentCloud
                      * 获取内容类型
 注意：
 需包含至少一个 Type 为"text"的参数。
-参数值可选范围：[text", "image_url","video_url"]
+参数值可选范围：["text", "image_url","video_url","video_frames"]
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 内容类型
 注意：
 需包含至少一个 Type 为"text"的参数。
-参数值可选范围：[text", "image_url","video_url"]
+参数值可选范围：["text", "image_url","video_url","video_frames"]
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -68,12 +68,12 @@ namespace TencentCloud
                      * 设置内容类型
 注意：
 需包含至少一个 Type 为"text"的参数。
-参数值可选范围：[text", "image_url","video_url"]
+参数值可选范围：["text", "image_url","video_url","video_frames"]
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 内容类型
 注意：
 需包含至少一个 Type 为"text"的参数。
-参数值可选范围：[text", "image_url","video_url"]
+参数值可选范围：["text", "image_url","video_url","video_frames"]
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -87,18 +87,18 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取当 Type 为 text 时使用，表示具体的文本内容。当 Type 为 image_url 时，当前字段内容需保持为空，传递内容不生效。
+                     * 获取当 Type 为 text 时使用，表示具体的文本内容。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Text 当 Type 为 text 时使用，表示具体的文本内容。当 Type 为 image_url 时，当前字段内容需保持为空，传递内容不生效。
+                     * @return Text 当 Type 为 text 时使用，表示具体的文本内容。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetText() const;
 
                     /**
-                     * 设置当 Type 为 text 时使用，表示具体的文本内容。当 Type 为 image_url 时，当前字段内容需保持为空，传递内容不生效。
+                     * 设置当 Type 为 text 时使用，表示具体的文本内容。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _text 当 Type 为 text 时使用，表示具体的文本内容。当 Type 为 image_url 时，当前字段内容需保持为空，传递内容不生效。
+                     * @param _text 当 Type 为 text 时使用，表示具体的文本内容。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -113,10 +113,10 @@ namespace TencentCloud
 
                     /**
                      * 获取图片的url，当 Type 为 image_url 时使用，表示具体的图片内容
-如"https://example.com/1.png" 或 图片的base64（注意 "data:image/jpeg;base64," 为必要部分）："data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAA......"。当 Type 为 text 时，当前字段内容需保持为空，传递内容不生效。
+如"https://example.com/1.png" 或 图片的base64（注意 "data:image/jpeg;base64," 为必要部分）："data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAA......"。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageUrl 图片的url，当 Type 为 image_url 时使用，表示具体的图片内容
-如"https://example.com/1.png" 或 图片的base64（注意 "data:image/jpeg;base64," 为必要部分）："data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAA......"。当 Type 为 text 时，当前字段内容需保持为空，传递内容不生效。
+如"https://example.com/1.png" 或 图片的base64（注意 "data:image/jpeg;base64," 为必要部分）："data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAA......"。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,10 +124,10 @@ namespace TencentCloud
 
                     /**
                      * 设置图片的url，当 Type 为 image_url 时使用，表示具体的图片内容
-如"https://example.com/1.png" 或 图片的base64（注意 "data:image/jpeg;base64," 为必要部分）："data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAA......"。当 Type 为 text 时，当前字段内容需保持为空，传递内容不生效。
+如"https://example.com/1.png" 或 图片的base64（注意 "data:image/jpeg;base64," 为必要部分）："data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAA......"。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageUrl 图片的url，当 Type 为 image_url 时使用，表示具体的图片内容
-如"https://example.com/1.png" 或 图片的base64（注意 "data:image/jpeg;base64," 为必要部分）："data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAA......"。当 Type 为 text 时，当前字段内容需保持为空，传递内容不生效。
+如"https://example.com/1.png" 或 图片的base64（注意 "data:image/jpeg;base64," 为必要部分）："data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAA......"。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -141,18 +141,18 @@ namespace TencentCloud
                     bool ImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取当type为video_url时使用，标识具体的视频链接内容
+                     * 获取当 Type 为 video_url 时使用，标识具体的视频链接内容，如"https://your-video-path.mp4"。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VideoUrl 当type为video_url时使用，标识具体的视频链接内容
+                     * @return VideoUrl 当 Type 为 video_url 时使用，标识具体的视频链接内容，如"https://your-video-path.mp4"。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     VideoUrl GetVideoUrl() const;
 
                     /**
-                     * 设置当type为video_url时使用，标识具体的视频链接内容
+                     * 设置当 Type 为 video_url 时使用，标识具体的视频链接内容，如"https://your-video-path.mp4"。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _videoUrl 当type为video_url时使用，标识具体的视频链接内容
+                     * @param _videoUrl 当 Type 为 video_url 时使用，标识具体的视频链接内容，如"https://your-video-path.mp4"。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -166,18 +166,18 @@ namespace TencentCloud
                     bool VideoUrlHasBeenSet() const;
 
                     /**
-                     * 获取当type为video_frames时使用，标识具体的视频内图像帧内容
+                     * 获取当 Type 为 video_frames 时使用，标识具体的视频内图像帧内容，当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VideoFrames 当type为video_frames时使用，标识具体的视频内图像帧内容
+                     * @return VideoFrames 当 Type 为 video_frames 时使用，标识具体的视频内图像帧内容，当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     VideoFrames GetVideoFrames() const;
 
                     /**
-                     * 设置当type为video_frames时使用，标识具体的视频内图像帧内容
+                     * 设置当 Type 为 video_frames 时使用，标识具体的视频内图像帧内容，当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _videoFrames 当type为video_frames时使用，标识具体的视频内图像帧内容
+                     * @param _videoFrames 当 Type 为 video_frames 时使用，标识具体的视频内图像帧内容，当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -196,14 +196,14 @@ namespace TencentCloud
                      * 内容类型
 注意：
 需包含至少一个 Type 为"text"的参数。
-参数值可选范围：[text", "image_url","video_url"]
+参数值可选范围：["text", "image_url","video_url","video_frames"]
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 当 Type 为 text 时使用，表示具体的文本内容。当 Type 为 image_url 时，当前字段内容需保持为空，传递内容不生效。
+                     * 当 Type 为 text 时使用，表示具体的文本内容。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_text;
@@ -211,21 +211,21 @@ namespace TencentCloud
 
                     /**
                      * 图片的url，当 Type 为 image_url 时使用，表示具体的图片内容
-如"https://example.com/1.png" 或 图片的base64（注意 "data:image/jpeg;base64," 为必要部分）："data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAA......"。当 Type 为 text 时，当前字段内容需保持为空，传递内容不生效。
+如"https://example.com/1.png" 或 图片的base64（注意 "data:image/jpeg;base64," 为必要部分）："data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAA......"。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ImageUrl m_imageUrl;
                     bool m_imageUrlHasBeenSet;
 
                     /**
-                     * 当type为video_url时使用，标识具体的视频链接内容
+                     * 当 Type 为 video_url 时使用，标识具体的视频链接内容，如"https://your-video-path.mp4"。当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     VideoUrl m_videoUrl;
                     bool m_videoUrlHasBeenSet;
 
                     /**
-                     * 当type为video_frames时使用，标识具体的视频内图像帧内容
+                     * 当 Type 为 video_frames 时使用，标识具体的视频内图像帧内容，当 Type 为 其他类型 时，当前字段内容需保持为空，传递内容不生效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     VideoFrames m_videoFrames;

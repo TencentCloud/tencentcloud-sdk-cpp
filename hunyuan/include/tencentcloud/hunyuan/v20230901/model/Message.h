@@ -91,18 +91,18 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取多种类型内容（目前支持图片和文本），仅 hunyuan-vision 和 hunyuan-turbo-vision 模型支持
+                     * 获取多种类型内容（目前支持文本、图片和视频），图片支持混元图生文系列模型，视频支持混元视频生文系列模型，详情参考[产品概述](https://cloud.tencent.com/document/product/1729/104753)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Contents 多种类型内容（目前支持图片和文本），仅 hunyuan-vision 和 hunyuan-turbo-vision 模型支持
+                     * @return Contents 多种类型内容（目前支持文本、图片和视频），图片支持混元图生文系列模型，视频支持混元视频生文系列模型，详情参考[产品概述](https://cloud.tencent.com/document/product/1729/104753)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Content> GetContents() const;
 
                     /**
-                     * 设置多种类型内容（目前支持图片和文本），仅 hunyuan-vision 和 hunyuan-turbo-vision 模型支持
+                     * 设置多种类型内容（目前支持文本、图片和视频），图片支持混元图生文系列模型，视频支持混元视频生文系列模型，详情参考[产品概述](https://cloud.tencent.com/document/product/1729/104753)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _contents 多种类型内容（目前支持图片和文本），仅 hunyuan-vision 和 hunyuan-turbo-vision 模型支持
+                     * @param _contents 多种类型内容（目前支持文本、图片和视频），图片支持混元图生文系列模型，视频支持混元视频生文系列模型，详情参考[产品概述](https://cloud.tencent.com/document/product/1729/104753)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -226,7 +226,7 @@ namespace TencentCloud
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 多种类型内容（目前支持图片和文本），仅 hunyuan-vision 和 hunyuan-turbo-vision 模型支持
+                     * 多种类型内容（目前支持文本、图片和视频），图片支持混元图生文系列模型，视频支持混元视频生文系列模型，详情参考[产品概述](https://cloud.tencent.com/document/product/1729/104753)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Content> m_contents;

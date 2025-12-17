@@ -29,6 +29,8 @@
 #include <tencentcloud/igtm/v20231024/model/CreateInstanceResponse.h>
 #include <tencentcloud/igtm/v20231024/model/CreateMonitorRequest.h>
 #include <tencentcloud/igtm/v20231024/model/CreateMonitorResponse.h>
+#include <tencentcloud/igtm/v20231024/model/CreatePackageAndPayRequest.h>
+#include <tencentcloud/igtm/v20231024/model/CreatePackageAndPayResponse.h>
 #include <tencentcloud/igtm/v20231024/model/CreateStrategyRequest.h>
 #include <tencentcloud/igtm/v20231024/model/CreateStrategyResponse.h>
 #include <tencentcloud/igtm/v20231024/model/DeleteAddressPoolRequest.h>
@@ -73,6 +75,8 @@
 #include <tencentcloud/igtm/v20231024/model/ModifyInstanceConfigResponse.h>
 #include <tencentcloud/igtm/v20231024/model/ModifyMonitorRequest.h>
 #include <tencentcloud/igtm/v20231024/model/ModifyMonitorResponse.h>
+#include <tencentcloud/igtm/v20231024/model/ModifyPackageAutoRenewRequest.h>
+#include <tencentcloud/igtm/v20231024/model/ModifyPackageAutoRenewResponse.h>
 #include <tencentcloud/igtm/v20231024/model/ModifyStrategyRequest.h>
 #include <tencentcloud/igtm/v20231024/model/ModifyStrategyResponse.h>
 
@@ -98,6 +102,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateMonitorResponse> CreateMonitorOutcome;
                 typedef std::future<CreateMonitorOutcome> CreateMonitorOutcomeCallable;
                 typedef std::function<void(const IgtmClient*, const Model::CreateMonitorRequest&, CreateMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMonitorAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePackageAndPayResponse> CreatePackageAndPayOutcome;
+                typedef std::future<CreatePackageAndPayOutcome> CreatePackageAndPayOutcomeCallable;
+                typedef std::function<void(const IgtmClient*, const Model::CreatePackageAndPayRequest&, CreatePackageAndPayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePackageAndPayAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateStrategyResponse> CreateStrategyOutcome;
                 typedef std::future<CreateStrategyOutcome> CreateStrategyOutcomeCallable;
                 typedef std::function<void(const IgtmClient*, const Model::CreateStrategyRequest&, CreateStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStrategyAsyncHandler;
@@ -164,6 +171,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyMonitorResponse> ModifyMonitorOutcome;
                 typedef std::future<ModifyMonitorOutcome> ModifyMonitorOutcomeCallable;
                 typedef std::function<void(const IgtmClient*, const Model::ModifyMonitorRequest&, ModifyMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMonitorAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPackageAutoRenewResponse> ModifyPackageAutoRenewOutcome;
+                typedef std::future<ModifyPackageAutoRenewOutcome> ModifyPackageAutoRenewOutcomeCallable;
+                typedef std::function<void(const IgtmClient*, const Model::ModifyPackageAutoRenewRequest&, ModifyPackageAutoRenewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPackageAutoRenewAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyStrategyResponse> ModifyStrategyOutcome;
                 typedef std::future<ModifyStrategyOutcome> ModifyStrategyOutcomeCallable;
                 typedef std::function<void(const IgtmClient*, const Model::ModifyStrategyRequest&, ModifyStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStrategyAsyncHandler;
@@ -196,6 +206,15 @@ namespace TencentCloud
                 CreateMonitorOutcome CreateMonitor(const Model::CreateMonitorRequest &request);
                 void CreateMonitorAsync(const Model::CreateMonitorRequest& request, const CreateMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateMonitorOutcomeCallable CreateMonitorCallable(const Model::CreateMonitorRequest& request);
+
+                /**
+                 *购买套餐并支付，此接口会在余额扣费，谨慎调用
+                 * @param req CreatePackageAndPayRequest
+                 * @return CreatePackageAndPayOutcome
+                 */
+                CreatePackageAndPayOutcome CreatePackageAndPay(const Model::CreatePackageAndPayRequest &request);
+                void CreatePackageAndPayAsync(const Model::CreatePackageAndPayRequest& request, const CreatePackageAndPayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePackageAndPayOutcomeCallable CreatePackageAndPayCallable(const Model::CreatePackageAndPayRequest& request);
 
                 /**
                  *新建策略接口
@@ -394,6 +413,15 @@ namespace TencentCloud
                 ModifyMonitorOutcome ModifyMonitor(const Model::ModifyMonitorRequest &request);
                 void ModifyMonitorAsync(const Model::ModifyMonitorRequest& request, const ModifyMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyMonitorOutcomeCallable ModifyMonitorCallable(const Model::ModifyMonitorRequest& request);
+
+                /**
+                 *设置自动续费接口
+                 * @param req ModifyPackageAutoRenewRequest
+                 * @return ModifyPackageAutoRenewOutcome
+                 */
+                ModifyPackageAutoRenewOutcome ModifyPackageAutoRenew(const Model::ModifyPackageAutoRenewRequest &request);
+                void ModifyPackageAutoRenewAsync(const Model::ModifyPackageAutoRenewRequest& request, const ModifyPackageAutoRenewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPackageAutoRenewOutcomeCallable ModifyPackageAutoRenewCallable(const Model::ModifyPackageAutoRenewRequest& request);
 
                 /**
                  *修改策略接口

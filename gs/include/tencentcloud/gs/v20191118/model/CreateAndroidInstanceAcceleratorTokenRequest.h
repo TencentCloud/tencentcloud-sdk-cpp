@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户IP，用户客户端的公网IP，用于就近选择起始加速节点
-                     * @return UserIP 用户IP，用户客户端的公网IP，用于就近选择起始加速节点
-                     * 
-                     */
-                    std::string GetUserIP() const;
-
-                    /**
-                     * 设置用户IP，用户客户端的公网IP，用于就近选择起始加速节点
-                     * @param _userIP 用户IP，用户客户端的公网IP，用于就近选择起始加速节点
-                     * 
-                     */
-                    void SetUserIP(const std::string& _userIP);
-
-                    /**
-                     * 判断参数 UserIP 是否已赋值
-                     * @return UserIP 是否已赋值
-                     * 
-                     */
-                    bool UserIPHasBeenSet() const;
-
-                    /**
                      * 获取实例 ID 列表。每次请求的实例的上限为 500。
                      * @return AndroidInstanceIds 实例 ID 列表。每次请求的实例的上限为 500。
                      * 
@@ -84,19 +63,40 @@ namespace TencentCloud
                      */
                     bool AndroidInstanceIdsHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取用户IP，可以根据该 IP 选择就近加速点。如果不填，将自动选择就近加速点。
+                     * @return UserIP 用户IP，可以根据该 IP 选择就近加速点。如果不填，将自动选择就近加速点。
+                     * 
+                     */
+                    std::string GetUserIP() const;
 
                     /**
-                     * 用户IP，用户客户端的公网IP，用于就近选择起始加速节点
+                     * 设置用户IP，可以根据该 IP 选择就近加速点。如果不填，将自动选择就近加速点。
+                     * @param _userIP 用户IP，可以根据该 IP 选择就近加速点。如果不填，将自动选择就近加速点。
+                     * 
                      */
-                    std::string m_userIP;
-                    bool m_userIPHasBeenSet;
+                    void SetUserIP(const std::string& _userIP);
+
+                    /**
+                     * 判断参数 UserIP 是否已赋值
+                     * @return UserIP 是否已赋值
+                     * 
+                     */
+                    bool UserIPHasBeenSet() const;
+
+                private:
 
                     /**
                      * 实例 ID 列表。每次请求的实例的上限为 500。
                      */
                     std::vector<std::string> m_androidInstanceIds;
                     bool m_androidInstanceIdsHasBeenSet;
+
+                    /**
+                     * 用户IP，可以根据该 IP 选择就近加速点。如果不填，将自动选择就近加速点。
+                     */
+                    std::string m_userIP;
+                    bool m_userIPHasBeenSet;
 
                 };
             }

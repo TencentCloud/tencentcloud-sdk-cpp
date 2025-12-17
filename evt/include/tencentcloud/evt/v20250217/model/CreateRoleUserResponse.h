@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人员ID
-                     * @return UserId 人员ID
+                     * 获取<p>人员ID</p>
+                     * @return UserId <p>人员ID</p>
                      * 
                      */
                     std::string GetUserId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 人员ID
+                     * <p>人员ID</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;

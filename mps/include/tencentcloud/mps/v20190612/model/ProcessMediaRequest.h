@@ -433,15 +433,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。
-                     * @return ResourceId 资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。
+                     * 获取资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
+                     * @return ResourceId 资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。
-                     * @param _resourceId 资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。
+                     * 设置资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
+                     * @param _resourceId 资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -596,7 +596,7 @@ namespace TencentCloud
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。
+                     * 资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;

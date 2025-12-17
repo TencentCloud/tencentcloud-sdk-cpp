@@ -40,7 +40,10 @@ ShipperInfo::ShipperInfo() :
     m_progressHasBeenSet(false),
     m_remainTimeHasBeenSet(false),
     m_historyStatusHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
+    m_storageTypeHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
+    m_externalIdHasBeenSet(false),
+    m_taskStatusHasBeenSet(false)
 {
 }
 
@@ -273,6 +276,36 @@ CoreInternalOutcome ShipperInfo::Deserialize(const rapidjson::Value &value)
         m_storageTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("RoleArn") && !value["RoleArn"].IsNull())
+    {
+        if (!value["RoleArn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ShipperInfo.RoleArn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_roleArn = string(value["RoleArn"].GetString());
+        m_roleArnHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExternalId") && !value["ExternalId"].IsNull())
+    {
+        if (!value["ExternalId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ShipperInfo.ExternalId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_externalId = string(value["ExternalId"].GetString());
+        m_externalIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskStatus") && !value["TaskStatus"].IsNull())
+    {
+        if (!value["TaskStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ShipperInfo.TaskStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskStatus = value["TaskStatus"].GetUint64();
+        m_taskStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -447,6 +480,30 @@ void ShipperInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "StorageType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roleArnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleArn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roleArn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskStatus, allocator);
     }
 
 }
@@ -770,5 +827,53 @@ void ShipperInfo::SetStorageType(const string& _storageType)
 bool ShipperInfo::StorageTypeHasBeenSet() const
 {
     return m_storageTypeHasBeenSet;
+}
+
+string ShipperInfo::GetRoleArn() const
+{
+    return m_roleArn;
+}
+
+void ShipperInfo::SetRoleArn(const string& _roleArn)
+{
+    m_roleArn = _roleArn;
+    m_roleArnHasBeenSet = true;
+}
+
+bool ShipperInfo::RoleArnHasBeenSet() const
+{
+    return m_roleArnHasBeenSet;
+}
+
+string ShipperInfo::GetExternalId() const
+{
+    return m_externalId;
+}
+
+void ShipperInfo::SetExternalId(const string& _externalId)
+{
+    m_externalId = _externalId;
+    m_externalIdHasBeenSet = true;
+}
+
+bool ShipperInfo::ExternalIdHasBeenSet() const
+{
+    return m_externalIdHasBeenSet;
+}
+
+uint64_t ShipperInfo::GetTaskStatus() const
+{
+    return m_taskStatus;
+}
+
+void ShipperInfo::SetTaskStatus(const uint64_t& _taskStatus)
+{
+    m_taskStatus = _taskStatus;
+    m_taskStatusHasBeenSet = true;
+}
+
+bool ShipperInfo::TaskStatusHasBeenSet() const
+{
+    return m_taskStatusHasBeenSet;
 }
 

@@ -134,21 +134,21 @@ namespace TencentCloud
                     /**
                      * 获取~~是否是PassService类型。该字段已废弃，请不要使用该字段。~~
                      * @return IsPassService ~~是否是PassService类型。该字段已废弃，请不要使用该字段。~~
-                     * 
+                     * @deprecated
                      */
                     bool GetIsPassService() const;
 
                     /**
                      * 设置~~是否是PassService类型。该字段已废弃，请不要使用该字段。~~
                      * @param _isPassService ~~是否是PassService类型。该字段已废弃，请不要使用该字段。~~
-                     * 
+                     * @deprecated
                      */
                     void SetIsPassService(const bool& _isPassService);
 
                     /**
                      * 判断参数 IsPassService 是否已赋值
                      * @return IsPassService 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IsPassServiceHasBeenSet() const;
 

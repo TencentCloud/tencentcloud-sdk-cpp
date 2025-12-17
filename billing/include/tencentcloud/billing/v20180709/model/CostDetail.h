@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/billing/v20180709/model/CostComponentSet.h>
+#include <tencentcloud/billing/v20180709/model/BillTagInfo.h>
 
 
 namespace TencentCloud
@@ -383,6 +384,27 @@ namespace TencentCloud
                      */
                     bool ProductCodeHasBeenSet() const;
 
+                    /**
+                     * 获取标签信息	
+                     * @return Tags 标签信息	
+                     * 
+                     */
+                    std::vector<BillTagInfo> GetTags() const;
+
+                    /**
+                     * 设置标签信息	
+                     * @param _tags 标签信息	
+                     * 
+                     */
+                    void SetTags(const std::vector<BillTagInfo>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -480,6 +502,12 @@ namespace TencentCloud
                      */
                     std::string m_productCode;
                     bool m_productCodeHasBeenSet;
+
+                    /**
+                     * 标签信息	
+                     */
+                    std::vector<BillTagInfo> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

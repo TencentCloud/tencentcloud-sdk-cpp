@@ -30,12 +30,15 @@ ModifyTopicRequest::ModifyTopicRequest() :
     m_autoSplitHasBeenSet(false),
     m_maxSplitPartitionsHasBeenSet(false),
     m_periodHasBeenSet(false),
+    m_storageTypeHasBeenSet(false),
     m_describesHasBeenSet(false),
     m_hotPeriodHasBeenSet(false),
     m_isWebTrackingHasBeenSet(false),
     m_extendsHasBeenSet(false),
     m_partitionCountHasBeenSet(false),
-    m_cancelTopicAsyncTaskIDHasBeenSet(false)
+    m_cancelTopicAsyncTaskIDHasBeenSet(false),
+    m_encryptionHasBeenSet(false),
+    m_isSourceFromHasBeenSet(false)
 {
 }
 
@@ -109,6 +112,14 @@ string ModifyTopicRequest::ToJsonString() const
         d.AddMember(iKey, m_period, allocator);
     }
 
+    if (m_storageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_describesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -156,6 +167,22 @@ string ModifyTopicRequest::ToJsonString() const
         string key = "CancelTopicAsyncTaskID";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cancelTopicAsyncTaskID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encryption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_encryption, allocator);
+    }
+
+    if (m_isSourceFromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSourceFrom";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isSourceFrom, allocator);
     }
 
 
@@ -278,6 +305,22 @@ bool ModifyTopicRequest::PeriodHasBeenSet() const
     return m_periodHasBeenSet;
 }
 
+string ModifyTopicRequest::GetStorageType() const
+{
+    return m_storageType;
+}
+
+void ModifyTopicRequest::SetStorageType(const string& _storageType)
+{
+    m_storageType = _storageType;
+    m_storageTypeHasBeenSet = true;
+}
+
+bool ModifyTopicRequest::StorageTypeHasBeenSet() const
+{
+    return m_storageTypeHasBeenSet;
+}
+
 string ModifyTopicRequest::GetDescribes() const
 {
     return m_describes;
@@ -372,6 +415,38 @@ void ModifyTopicRequest::SetCancelTopicAsyncTaskID(const string& _cancelTopicAsy
 bool ModifyTopicRequest::CancelTopicAsyncTaskIDHasBeenSet() const
 {
     return m_cancelTopicAsyncTaskIDHasBeenSet;
+}
+
+uint64_t ModifyTopicRequest::GetEncryption() const
+{
+    return m_encryption;
+}
+
+void ModifyTopicRequest::SetEncryption(const uint64_t& _encryption)
+{
+    m_encryption = _encryption;
+    m_encryptionHasBeenSet = true;
+}
+
+bool ModifyTopicRequest::EncryptionHasBeenSet() const
+{
+    return m_encryptionHasBeenSet;
+}
+
+bool ModifyTopicRequest::GetIsSourceFrom() const
+{
+    return m_isSourceFrom;
+}
+
+void ModifyTopicRequest::SetIsSourceFrom(const bool& _isSourceFrom)
+{
+    m_isSourceFrom = _isSourceFrom;
+    m_isSourceFromHasBeenSet = true;
+}
+
+bool ModifyTopicRequest::IsSourceFromHasBeenSet() const
+{
+    return m_isSourceFromHasBeenSet;
 }
 
 

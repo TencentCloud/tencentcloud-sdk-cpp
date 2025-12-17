@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return BotBizId 应用ID
+                     * 获取应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * @return BotBizId 应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _botBizId 应用ID
+                     * 设置应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * @param _botBizId 应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BotBizIdHasBeenSet() const;
 
                     /**
-                     * 获取属性名称
-                     * @return LabelName 属性名称
+                     * 获取标签名称
+                     * @return LabelName 标签名称
                      * 
                      */
                     std::string GetLabelName() const;
 
                     /**
-                     * 设置属性名称
-                     * @param _labelName 属性名称
+                     * 设置标签名称
+                     * @param _labelName 标签名称
                      * 
                      */
                     void SetLabelName(const std::string& _labelName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LabelNameHasBeenSet() const;
 
                     /**
-                     * 获取属性ID
-                     * @return AttributeBizId 属性ID
+                     * 获取标签ID
+                     * @return AttributeBizId 标签ID
                      * 
                      */
                     std::string GetAttributeBizId() const;
 
                     /**
-                     * 设置属性ID
-                     * @param _attributeBizId 属性ID
+                     * 设置标签ID
+                     * @param _attributeBizId 标签ID
                      * 
                      */
                     void SetAttributeBizId(const std::string& _attributeBizId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool LoginSubAccountUinHasBeenSet() const;
 
                     /**
-                     * 获取滚动加载，最后一个属性标签ID
-                     * @return LastLabelBizId 滚动加载，最后一个属性标签ID
+                     * 获取最后一个标签ID。用于滚动加载：是一种分批、滚动式的存在性检查机制。客户端需要持续调用接口，并每次传入上一次返回的最后一个记录的ID，直到接口明确返回“存在”或“已检查全部数据且不存在”为止。
+                     * @return LastLabelBizId 最后一个标签ID。用于滚动加载：是一种分批、滚动式的存在性检查机制。客户端需要持续调用接口，并每次传入上一次返回的最后一个记录的ID，直到接口明确返回“存在”或“已检查全部数据且不存在”为止。
                      * 
                      */
                     std::string GetLastLabelBizId() const;
 
                     /**
-                     * 设置滚动加载，最后一个属性标签ID
-                     * @param _lastLabelBizId 滚动加载，最后一个属性标签ID
+                     * 设置最后一个标签ID。用于滚动加载：是一种分批、滚动式的存在性检查机制。客户端需要持续调用接口，并每次传入上一次返回的最后一个记录的ID，直到接口明确返回“存在”或“已检查全部数据且不存在”为止。
+                     * @param _lastLabelBizId 最后一个标签ID。用于滚动加载：是一种分批、滚动式的存在性检查机制。客户端需要持续调用接口，并每次传入上一次返回的最后一个记录的ID，直到接口明确返回“存在”或“已检查全部数据且不存在”为止。
                      * 
                      */
                     void SetLastLabelBizId(const std::string& _lastLabelBizId);
@@ -171,19 +171,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID
+                     * 应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
 
                     /**
-                     * 属性名称
+                     * 标签名称
                      */
                     std::string m_labelName;
                     bool m_labelNameHasBeenSet;
 
                     /**
-                     * 属性ID
+                     * 标签ID
                      */
                     std::string m_attributeBizId;
                     bool m_attributeBizIdHasBeenSet;
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_loginSubAccountUinHasBeenSet;
 
                     /**
-                     * 滚动加载，最后一个属性标签ID
+                     * 最后一个标签ID。用于滚动加载：是一种分批、滚动式的存在性检查机制。客户端需要持续调用接口，并每次传入上一次返回的最后一个记录的ID，直到接口明确返回“存在”或“已检查全部数据且不存在”为止。
                      */
                     std::string m_lastLabelBizId;
                     bool m_lastLabelBizIdHasBeenSet;

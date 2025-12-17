@@ -28,7 +28,8 @@ CloneSecurityGroupRequest::CloneSecurityGroupRequest() :
     m_groupDescriptionHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_remoteRegionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_isCloneTagsHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string CloneSecurityGroupRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isCloneTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCloneTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isCloneTags, allocator);
     }
 
 
@@ -196,6 +205,22 @@ void CloneSecurityGroupRequest::SetTags(const vector<Tag>& _tags)
 bool CloneSecurityGroupRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+bool CloneSecurityGroupRequest::GetIsCloneTags() const
+{
+    return m_isCloneTags;
+}
+
+void CloneSecurityGroupRequest::SetIsCloneTags(const bool& _isCloneTags)
+{
+    m_isCloneTags = _isCloneTags;
+    m_isCloneTagsHasBeenSet = true;
+}
+
+bool CloneSecurityGroupRequest::IsCloneTagsHasBeenSet() const
+{
+    return m_isCloneTagsHasBeenSet;
 }
 
 
