@@ -27,7 +27,8 @@ CreateFlowGroupByTemplatesRequest::CreateFlowGroupByTemplatesRequest() :
     m_flowGroupNameHasBeenSet(false),
     m_flowGroupInfosHasBeenSet(false),
     m_agentHasBeenSet(false),
-    m_flowGroupOptionsHasBeenSet(false)
+    m_flowGroupOptionsHasBeenSet(false),
+    m_userFlowTypeHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,15 @@ string CreateFlowGroupByTemplatesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_flowGroupOptions.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_userFlowTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserFlowType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_userFlowType.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -174,6 +184,22 @@ void CreateFlowGroupByTemplatesRequest::SetFlowGroupOptions(const FlowGroupOptio
 bool CreateFlowGroupByTemplatesRequest::FlowGroupOptionsHasBeenSet() const
 {
     return m_flowGroupOptionsHasBeenSet;
+}
+
+UserFlowType CreateFlowGroupByTemplatesRequest::GetUserFlowType() const
+{
+    return m_userFlowType;
+}
+
+void CreateFlowGroupByTemplatesRequest::SetUserFlowType(const UserFlowType& _userFlowType)
+{
+    m_userFlowType = _userFlowType;
+    m_userFlowTypeHasBeenSet = true;
+}
+
+bool CreateFlowGroupByTemplatesRequest::UserFlowTypeHasBeenSet() const
+{
+    return m_userFlowTypeHasBeenSet;
 }
 
 

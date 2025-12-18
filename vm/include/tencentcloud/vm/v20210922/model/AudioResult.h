@@ -31,6 +31,7 @@
 #include <tencentcloud/vm/v20210922/model/SpeakerResult.h>
 #include <tencentcloud/vm/v20210922/model/TravelResult.h>
 #include <tencentcloud/vm/v20210922/model/LabelResult.h>
+#include <tencentcloud/vm/v20210922/model/Sentence.h>
 
 
 namespace TencentCloud
@@ -456,6 +457,27 @@ namespace TencentCloud
                      */
                     bool HitTypeHasBeenSet() const;
 
+                    /**
+                     * 获取ASR句子的起止时间
+                     * @return Sentences ASR句子的起止时间
+                     * 
+                     */
+                    std::vector<Sentence> GetSentences() const;
+
+                    /**
+                     * 设置ASR句子的起止时间
+                     * @param _sentences ASR句子的起止时间
+                     * 
+                     */
+                    void SetSentences(const std::vector<Sentence>& _sentences);
+
+                    /**
+                     * 判断参数 Sentences 是否已赋值
+                     * @return Sentences 是否已赋值
+                     * 
+                     */
+                    bool SentencesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -572,6 +594,12 @@ namespace TencentCloud
                      */
                     std::string m_hitType;
                     bool m_hitTypeHasBeenSet;
+
+                    /**
+                     * ASR句子的起止时间
+                     */
+                    std::vector<Sentence> m_sentences;
+                    bool m_sentencesHasBeenSet;
 
                 };
             }

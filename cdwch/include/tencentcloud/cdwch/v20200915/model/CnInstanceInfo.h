@@ -216,6 +216,48 @@ namespace TencentCloud
                      */
                     bool ResourcesHasBeenSet() const;
 
+                    /**
+                     * 获取desc
+                     * @return IsSecondaryZone desc
+                     * 
+                     */
+                    std::string GetIsSecondaryZone() const;
+
+                    /**
+                     * 设置desc
+                     * @param _isSecondaryZone desc
+                     * 
+                     */
+                    void SetIsSecondaryZone(const std::string& _isSecondaryZone);
+
+                    /**
+                     * 判断参数 IsSecondaryZone 是否已赋值
+                     * @return IsSecondaryZone 是否已赋值
+                     * 
+                     */
+                    bool IsSecondaryZoneHasBeenSet() const;
+
+                    /**
+                     * 获取desc
+                     * @return SecondaryZoneInfo desc
+                     * 
+                     */
+                    std::string GetSecondaryZoneInfo() const;
+
+                    /**
+                     * 设置desc
+                     * @param _secondaryZoneInfo desc
+                     * 
+                     */
+                    void SetSecondaryZoneInfo(const std::string& _secondaryZoneInfo);
+
+                    /**
+                     * 判断参数 SecondaryZoneInfo 是否已赋值
+                     * @return SecondaryZoneInfo 是否已赋值
+                     * 
+                     */
+                    bool SecondaryZoneInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -265,6 +307,18 @@ namespace TencentCloud
                      */
                     std::vector<CNResource> m_resources;
                     bool m_resourcesHasBeenSet;
+
+                    /**
+                     * desc
+                     */
+                    std::string m_isSecondaryZone;
+                    bool m_isSecondaryZoneHasBeenSet;
+
+                    /**
+                     * desc
+                     */
+                    std::string m_secondaryZoneInfo;
+                    bool m_secondaryZoneInfoHasBeenSet;
 
                 };
             }

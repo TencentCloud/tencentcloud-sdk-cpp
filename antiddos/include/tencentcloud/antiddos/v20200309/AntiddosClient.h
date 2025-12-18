@@ -27,6 +27,8 @@
 #include <tencentcloud/antiddos/v20200309/model/AssociateDDoSEipAddressResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/AssociateDDoSEipLoadBalancerRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/AssociateDDoSEipLoadBalancerResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/CreateBgpInstanceRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/CreateBgpInstanceResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateBlackWhiteIpListRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateBlackWhiteIpListResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateBoundIPRequest.h>
@@ -103,6 +105,8 @@
 #include <tencentcloud/antiddos/v20200309/model/DescribeBasicDeviceStatusResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBgpBizTrendRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBgpBizTrendResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeBgpInstancesRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeBgpInstancesResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBizHttpStatusRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBizHttpStatusResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBizMonitorTrendRequest.h>
@@ -231,6 +235,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AssociateDDoSEipLoadBalancerResponse> AssociateDDoSEipLoadBalancerOutcome;
                 typedef std::future<AssociateDDoSEipLoadBalancerOutcome> AssociateDDoSEipLoadBalancerOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::AssociateDDoSEipLoadBalancerRequest&, AssociateDDoSEipLoadBalancerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateDDoSEipLoadBalancerAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBgpInstanceResponse> CreateBgpInstanceOutcome;
+                typedef std::future<CreateBgpInstanceOutcome> CreateBgpInstanceOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::CreateBgpInstanceRequest&, CreateBgpInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBgpInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBlackWhiteIpListResponse> CreateBlackWhiteIpListOutcome;
                 typedef std::future<CreateBlackWhiteIpListOutcome> CreateBlackWhiteIpListOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::CreateBlackWhiteIpListRequest&, CreateBlackWhiteIpListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBlackWhiteIpListAsyncHandler;
@@ -345,6 +352,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBgpBizTrendResponse> DescribeBgpBizTrendOutcome;
                 typedef std::future<DescribeBgpBizTrendOutcome> DescribeBgpBizTrendOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeBgpBizTrendRequest&, DescribeBgpBizTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBgpBizTrendAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBgpInstancesResponse> DescribeBgpInstancesOutcome;
+                typedef std::future<DescribeBgpInstancesOutcome> DescribeBgpInstancesOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribeBgpInstancesRequest&, DescribeBgpInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBgpInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBizHttpStatusResponse> DescribeBizHttpStatusOutcome;
                 typedef std::future<DescribeBizHttpStatusOutcome> DescribeBizHttpStatusOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeBizHttpStatusRequest&, DescribeBizHttpStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizHttpStatusAsyncHandler;
@@ -527,6 +537,15 @@ namespace TencentCloud
                 AssociateDDoSEipLoadBalancerOutcome AssociateDDoSEipLoadBalancer(const Model::AssociateDDoSEipLoadBalancerRequest &request);
                 void AssociateDDoSEipLoadBalancerAsync(const Model::AssociateDDoSEipLoadBalancerRequest& request, const AssociateDDoSEipLoadBalancerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AssociateDDoSEipLoadBalancerOutcomeCallable AssociateDDoSEipLoadBalancerCallable(const Model::AssociateDDoSEipLoadBalancerRequest& request);
+
+                /**
+                 *通过API 购买高防包接口
+                 * @param req CreateBgpInstanceRequest
+                 * @return CreateBgpInstanceOutcome
+                 */
+                CreateBgpInstanceOutcome CreateBgpInstance(const Model::CreateBgpInstanceRequest &request);
+                void CreateBgpInstanceAsync(const Model::CreateBgpInstanceRequest& request, const CreateBgpInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBgpInstanceOutcomeCallable CreateBgpInstanceCallable(const Model::CreateBgpInstanceRequest& request);
 
                 /**
                  *添加DDoS防护的IP黑白名单
@@ -869,6 +888,15 @@ namespace TencentCloud
                 DescribeBgpBizTrendOutcome DescribeBgpBizTrend(const Model::DescribeBgpBizTrendRequest &request);
                 void DescribeBgpBizTrendAsync(const Model::DescribeBgpBizTrendRequest& request, const DescribeBgpBizTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBgpBizTrendOutcomeCallable DescribeBgpBizTrendCallable(const Model::DescribeBgpBizTrendRequest& request);
+
+                /**
+                 *购买后，查询购买的高防包实例信息
+                 * @param req DescribeBgpInstancesRequest
+                 * @return DescribeBgpInstancesOutcome
+                 */
+                DescribeBgpInstancesOutcome DescribeBgpInstances(const Model::DescribeBgpInstancesRequest &request);
+                void DescribeBgpInstancesAsync(const Model::DescribeBgpInstancesRequest& request, const DescribeBgpInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBgpInstancesOutcomeCallable DescribeBgpInstancesCallable(const Model::DescribeBgpInstancesRequest& request);
 
                 /**
                  *获取业务流量状态码统计列表

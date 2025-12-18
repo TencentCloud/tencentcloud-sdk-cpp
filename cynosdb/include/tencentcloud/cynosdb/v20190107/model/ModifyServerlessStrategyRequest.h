@@ -302,6 +302,27 @@ namespace TencentCloud
                      */
                     bool AutoArchiveHasBeenSet() const;
 
+                    /**
+                     * 获取升级类型。 默认值：upgradeImmediate。 可选值： upgradeImmediate：立即完成修改 upgradeInMaintain：在维护时间窗口内完成修改
+                     * @return UpgradeType 升级类型。 默认值：upgradeImmediate。 可选值： upgradeImmediate：立即完成修改 upgradeInMaintain：在维护时间窗口内完成修改
+                     * 
+                     */
+                    std::string GetUpgradeType() const;
+
+                    /**
+                     * 设置升级类型。 默认值：upgradeImmediate。 可选值： upgradeImmediate：立即完成修改 upgradeInMaintain：在维护时间窗口内完成修改
+                     * @param _upgradeType 升级类型。 默认值：upgradeImmediate。 可选值： upgradeImmediate：立即完成修改 upgradeInMaintain：在维护时间窗口内完成修改
+                     * 
+                     */
+                    void SetUpgradeType(const std::string& _upgradeType);
+
+                    /**
+                     * 判断参数 UpgradeType 是否已赋值
+                     * @return UpgradeType 是否已赋值
+                     * 
+                     */
+                    bool UpgradeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -377,6 +398,12 @@ namespace TencentCloud
                      */
                     std::string m_autoArchive;
                     bool m_autoArchiveHasBeenSet;
+
+                    /**
+                     * 升级类型。 默认值：upgradeImmediate。 可选值： upgradeImmediate：立即完成修改 upgradeInMaintain：在维护时间窗口内完成修改
+                     */
+                    std::string m_upgradeType;
+                    bool m_upgradeTypeHasBeenSet;
 
                 };
             }

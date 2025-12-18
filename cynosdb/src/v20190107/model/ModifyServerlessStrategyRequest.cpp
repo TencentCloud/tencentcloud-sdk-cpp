@@ -34,7 +34,8 @@ ModifyServerlessStrategyRequest::ModifyServerlessStrategyRequest() :
     m_maxRoCpuHasBeenSet(false),
     m_minRoCountHasBeenSet(false),
     m_maxRoCountHasBeenSet(false),
-    m_autoArchiveHasBeenSet(false)
+    m_autoArchiveHasBeenSet(false),
+    m_upgradeTypeHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,14 @@ string ModifyServerlessStrategyRequest::ToJsonString() const
         string key = "AutoArchive";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_autoArchive.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_upgradeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpgradeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_upgradeType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -339,6 +348,22 @@ void ModifyServerlessStrategyRequest::SetAutoArchive(const string& _autoArchive)
 bool ModifyServerlessStrategyRequest::AutoArchiveHasBeenSet() const
 {
     return m_autoArchiveHasBeenSet;
+}
+
+string ModifyServerlessStrategyRequest::GetUpgradeType() const
+{
+    return m_upgradeType;
+}
+
+void ModifyServerlessStrategyRequest::SetUpgradeType(const string& _upgradeType)
+{
+    m_upgradeType = _upgradeType;
+    m_upgradeTypeHasBeenSet = true;
+}
+
+bool ModifyServerlessStrategyRequest::UpgradeTypeHasBeenSet() const
+{
+    return m_upgradeTypeHasBeenSet;
 }
 
 

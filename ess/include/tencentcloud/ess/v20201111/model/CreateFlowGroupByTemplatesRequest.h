@@ -25,6 +25,7 @@
 #include <tencentcloud/ess/v20201111/model/FlowGroupInfo.h>
 #include <tencentcloud/ess/v20201111/model/Agent.h>
 #include <tencentcloud/ess/v20201111/model/FlowGroupOptions.h>
+#include <tencentcloud/ess/v20201111/model/UserFlowType.h>
 
 
 namespace TencentCloud
@@ -179,6 +180,39 @@ namespace TencentCloud
                      */
                     bool FlowGroupOptionsHasBeenSet() const;
 
+                    /**
+                     * 获取用户自定义合同类型。  
+自定义合同类型配置的地方如链接图所示。[点击查看自定义合同类型管理的位置](https://qcloudimg.tencent-cloud.cn/raw/36582cea03ae6a2559894844942b5d5c.png)  
+
+注意： 如果传递了自定义合同类型，则每一个子合同对应模板上面的自定义合同类型将会失效，已最外层定义的为准。 例如： 这份合同组有三个子合同，设置合同类型为<font color="blue">人事/劳务</font> 第一份子合同选择的模板的合同自定义合同类型是<font color="blue">采购</font> 第二份和第三份子合同选择的模板的合同自定义合同类型是<font color="blue">人事/劳务</font> 但最终这个合同组的合同类型是<font color="blue">人事/劳务</font>
+                     * @return UserFlowType 用户自定义合同类型。  
+自定义合同类型配置的地方如链接图所示。[点击查看自定义合同类型管理的位置](https://qcloudimg.tencent-cloud.cn/raw/36582cea03ae6a2559894844942b5d5c.png)  
+
+注意： 如果传递了自定义合同类型，则每一个子合同对应模板上面的自定义合同类型将会失效，已最外层定义的为准。 例如： 这份合同组有三个子合同，设置合同类型为<font color="blue">人事/劳务</font> 第一份子合同选择的模板的合同自定义合同类型是<font color="blue">采购</font> 第二份和第三份子合同选择的模板的合同自定义合同类型是<font color="blue">人事/劳务</font> 但最终这个合同组的合同类型是<font color="blue">人事/劳务</font>
+                     * 
+                     */
+                    UserFlowType GetUserFlowType() const;
+
+                    /**
+                     * 设置用户自定义合同类型。  
+自定义合同类型配置的地方如链接图所示。[点击查看自定义合同类型管理的位置](https://qcloudimg.tencent-cloud.cn/raw/36582cea03ae6a2559894844942b5d5c.png)  
+
+注意： 如果传递了自定义合同类型，则每一个子合同对应模板上面的自定义合同类型将会失效，已最外层定义的为准。 例如： 这份合同组有三个子合同，设置合同类型为<font color="blue">人事/劳务</font> 第一份子合同选择的模板的合同自定义合同类型是<font color="blue">采购</font> 第二份和第三份子合同选择的模板的合同自定义合同类型是<font color="blue">人事/劳务</font> 但最终这个合同组的合同类型是<font color="blue">人事/劳务</font>
+                     * @param _userFlowType 用户自定义合同类型。  
+自定义合同类型配置的地方如链接图所示。[点击查看自定义合同类型管理的位置](https://qcloudimg.tencent-cloud.cn/raw/36582cea03ae6a2559894844942b5d5c.png)  
+
+注意： 如果传递了自定义合同类型，则每一个子合同对应模板上面的自定义合同类型将会失效，已最外层定义的为准。 例如： 这份合同组有三个子合同，设置合同类型为<font color="blue">人事/劳务</font> 第一份子合同选择的模板的合同自定义合同类型是<font color="blue">采购</font> 第二份和第三份子合同选择的模板的合同自定义合同类型是<font color="blue">人事/劳务</font> 但最终这个合同组的合同类型是<font color="blue">人事/劳务</font>
+                     * 
+                     */
+                    void SetUserFlowType(const UserFlowType& _userFlowType);
+
+                    /**
+                     * 判断参数 UserFlowType 是否已赋值
+                     * @return UserFlowType 是否已赋值
+                     * 
+                     */
+                    bool UserFlowTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -217,6 +251,15 @@ namespace TencentCloud
                      */
                     FlowGroupOptions m_flowGroupOptions;
                     bool m_flowGroupOptionsHasBeenSet;
+
+                    /**
+                     * 用户自定义合同类型。  
+自定义合同类型配置的地方如链接图所示。[点击查看自定义合同类型管理的位置](https://qcloudimg.tencent-cloud.cn/raw/36582cea03ae6a2559894844942b5d5c.png)  
+
+注意： 如果传递了自定义合同类型，则每一个子合同对应模板上面的自定义合同类型将会失效，已最外层定义的为准。 例如： 这份合同组有三个子合同，设置合同类型为<font color="blue">人事/劳务</font> 第一份子合同选择的模板的合同自定义合同类型是<font color="blue">采购</font> 第二份和第三份子合同选择的模板的合同自定义合同类型是<font color="blue">人事/劳务</font> 但最终这个合同组的合同类型是<font color="blue">人事/劳务</font>
+                     */
+                    UserFlowType m_userFlowType;
+                    bool m_userFlowTypeHasBeenSet;
 
                 };
             }

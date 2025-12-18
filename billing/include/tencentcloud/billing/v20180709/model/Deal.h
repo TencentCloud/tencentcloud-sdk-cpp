@@ -645,6 +645,27 @@ postMoveIn 按量计费迁入资源
                      */
                     bool ResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取订单对应的可用区Id
+                     * @return ZoneCode 订单对应的可用区Id
+                     * 
+                     */
+                    std::string GetZoneCode() const;
+
+                    /**
+                     * 设置订单对应的可用区Id
+                     * @param _zoneCode 订单对应的可用区Id
+                     * 
+                     */
+                    void SetZoneCode(const std::string& _zoneCode);
+
+                    /**
+                     * 判断参数 ZoneCode 是否已赋值
+                     * @return ZoneCode 是否已赋值
+                     * 
+                     */
+                    bool ZoneCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -815,6 +836,12 @@ postMoveIn 按量计费迁入资源
                      */
                     std::vector<std::string> m_resourceId;
                     bool m_resourceIdHasBeenSet;
+
+                    /**
+                     * 订单对应的可用区Id
+                     */
+                    std::string m_zoneCode;
+                    bool m_zoneCodeHasBeenSet;
 
                 };
             }

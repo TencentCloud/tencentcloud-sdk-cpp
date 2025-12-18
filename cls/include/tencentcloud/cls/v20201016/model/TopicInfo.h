@@ -455,6 +455,27 @@ HotPeriod=0为没有开启日志沉降。
                     bool HotPeriodHasBeenSet() const;
 
                     /**
+                     * 获取kms-cls服务秘钥id
+                     * @return KeyId kms-cls服务秘钥id
+                     * 
+                     */
+                    std::string GetKeyId() const;
+
+                    /**
+                     * 设置kms-cls服务秘钥id
+                     * @param _keyId kms-cls服务秘钥id
+                     * 
+                     */
+                    void SetKeyId(const std::string& _keyId);
+
+                    /**
+                     * 判断参数 KeyId 是否已赋值
+                     * @return KeyId 是否已赋值
+                     * 
+                     */
+                    bool KeyIdHasBeenSet() const;
+
+                    /**
                      * 获取主题类型。
 - 0: 日志主题 
 - 1: 指标主题
@@ -749,6 +770,12 @@ HotPeriod=0为没有开启日志沉降。
                      */
                     uint64_t m_hotPeriod;
                     bool m_hotPeriodHasBeenSet;
+
+                    /**
+                     * kms-cls服务秘钥id
+                     */
+                    std::string m_keyId;
+                    bool m_keyIdHasBeenSet;
 
                     /**
                      * 主题类型。

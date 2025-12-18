@@ -28,7 +28,9 @@ CnInstanceInfo::CnInstanceInfo() :
     m_statusDescHasBeenSet(false),
     m_instanceStateInfoHasBeenSet(false),
     m_instanceIDHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
+    m_resourcesHasBeenSet(false),
+    m_isSecondaryZoneHasBeenSet(false),
+    m_secondaryZoneInfoHasBeenSet(false)
 {
 }
 
@@ -134,6 +136,26 @@ CoreInternalOutcome CnInstanceInfo::Deserialize(const rapidjson::Value &value)
         m_resourcesHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSecondaryZone") && !value["IsSecondaryZone"].IsNull())
+    {
+        if (!value["IsSecondaryZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CnInstanceInfo.IsSecondaryZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSecondaryZone = string(value["IsSecondaryZone"].GetString());
+        m_isSecondaryZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecondaryZoneInfo") && !value["SecondaryZoneInfo"].IsNull())
+    {
+        if (!value["SecondaryZoneInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CnInstanceInfo.SecondaryZoneInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_secondaryZoneInfo = string(value["SecondaryZoneInfo"].GetString());
+        m_secondaryZoneInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -211,6 +233,22 @@ void CnInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isSecondaryZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSecondaryZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isSecondaryZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secondaryZoneInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecondaryZoneInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secondaryZoneInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -342,5 +380,37 @@ void CnInstanceInfo::SetResources(const vector<CNResource>& _resources)
 bool CnInstanceInfo::ResourcesHasBeenSet() const
 {
     return m_resourcesHasBeenSet;
+}
+
+string CnInstanceInfo::GetIsSecondaryZone() const
+{
+    return m_isSecondaryZone;
+}
+
+void CnInstanceInfo::SetIsSecondaryZone(const string& _isSecondaryZone)
+{
+    m_isSecondaryZone = _isSecondaryZone;
+    m_isSecondaryZoneHasBeenSet = true;
+}
+
+bool CnInstanceInfo::IsSecondaryZoneHasBeenSet() const
+{
+    return m_isSecondaryZoneHasBeenSet;
+}
+
+string CnInstanceInfo::GetSecondaryZoneInfo() const
+{
+    return m_secondaryZoneInfo;
+}
+
+void CnInstanceInfo::SetSecondaryZoneInfo(const string& _secondaryZoneInfo)
+{
+    m_secondaryZoneInfo = _secondaryZoneInfo;
+    m_secondaryZoneInfoHasBeenSet = true;
+}
+
+bool CnInstanceInfo::SecondaryZoneInfoHasBeenSet() const
+{
+    return m_secondaryZoneInfoHasBeenSet;
 }
 

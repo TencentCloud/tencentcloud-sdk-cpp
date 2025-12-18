@@ -39,6 +39,7 @@ TopicInfo::TopicInfo() :
     m_subAssumerNameHasBeenSet(false),
     m_describesHasBeenSet(false),
     m_hotPeriodHasBeenSet(false),
+    m_keyIdHasBeenSet(false),
     m_bizTypeHasBeenSet(false),
     m_isWebTrackingHasBeenSet(false),
     m_extendsHasBeenSet(false),
@@ -242,6 +243,16 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
         }
         m_hotPeriod = value["HotPeriod"].GetUint64();
         m_hotPeriodHasBeenSet = true;
+    }
+
+    if (value.HasMember("KeyId") && !value["KeyId"].IsNull())
+    {
+        if (!value["KeyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.KeyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_keyId = string(value["KeyId"].GetString());
+        m_keyIdHasBeenSet = true;
     }
 
     if (value.HasMember("BizType") && !value["BizType"].IsNull())
@@ -477,6 +488,14 @@ void TopicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "HotPeriod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hotPeriod, allocator);
+    }
+
+    if (m_keyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bizTypeHasBeenSet)
@@ -825,6 +844,22 @@ void TopicInfo::SetHotPeriod(const uint64_t& _hotPeriod)
 bool TopicInfo::HotPeriodHasBeenSet() const
 {
     return m_hotPeriodHasBeenSet;
+}
+
+string TopicInfo::GetKeyId() const
+{
+    return m_keyId;
+}
+
+void TopicInfo::SetKeyId(const string& _keyId)
+{
+    m_keyId = _keyId;
+    m_keyIdHasBeenSet = true;
+}
+
+bool TopicInfo::KeyIdHasBeenSet() const
+{
+    return m_keyIdHasBeenSet;
 }
 
 uint64_t TopicInfo::GetBizType() const

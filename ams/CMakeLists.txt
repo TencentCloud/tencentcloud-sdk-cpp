@@ -69,6 +69,7 @@ set(ams_public_header_model
   include/tencentcloud/ams/v20201229/model/CancelTaskRequest.h
   include/tencentcloud/ams/v20201229/model/DescribeTaskDetailResponse.h
   include/tencentcloud/ams/v20201229/model/CreateAudioModerationTaskRequest.h
+  include/tencentcloud/ams/v20201229/model/TravelResults.h
   include/tencentcloud/ams/v20201229/model/TaskInput.h
   include/tencentcloud/ams/v20201229/model/LabelResults.h
   include/tencentcloud/ams/v20201229/model/DescribeTaskDetailRequest.h
@@ -87,7 +88,7 @@ set(ams_public_header_model
   include/tencentcloud/ams/v20201229/model/BucketInfo.h
   include/tencentcloud/ams/v20201229/model/AudioResultDetailTextResult.h
   include/tencentcloud/ams/v20201229/model/SpeakerResults.h
-  include/tencentcloud/ams/v20201229/model/TravelResults.h
+  include/tencentcloud/ams/v20201229/model/Sentence.h
   include/tencentcloud/ams/v20201229/model/AudioResult.h
   include/tencentcloud/ams/v20201229/model/AudioResultDetailMoanResult.h
   include/tencentcloud/ams/v20201229/model/TaskData.h
@@ -148,6 +149,7 @@ set(ams_src
   src/v20201229/model/CancelTaskRequest.cpp
   src/v20201229/model/DescribeTaskDetailResponse.cpp
   src/v20201229/model/CreateAudioModerationTaskRequest.cpp
+  src/v20201229/model/TravelResults.cpp
   src/v20201229/model/TaskInput.cpp
   src/v20201229/model/LabelResults.cpp
   src/v20201229/model/DescribeTaskDetailRequest.cpp
@@ -166,7 +168,7 @@ set(ams_src
   src/v20201229/model/BucketInfo.cpp
   src/v20201229/model/AudioResultDetailTextResult.cpp
   src/v20201229/model/SpeakerResults.cpp
-  src/v20201229/model/TravelResults.cpp
+  src/v20201229/model/Sentence.cpp
   src/v20201229/model/AudioResult.cpp
   src/v20201229/model/AudioResultDetailMoanResult.cpp
   src/v20201229/model/TaskData.cpp

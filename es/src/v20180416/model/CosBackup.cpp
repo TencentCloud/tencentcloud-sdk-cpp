@@ -27,6 +27,7 @@ CosBackup::CosBackup() :
     m_esRepositoryTypeHasBeenSet(false),
     m_paasEsRepositoryHasBeenSet(false),
     m_userEsRepositoryHasBeenSet(false),
+    m_cosBasePathHasBeenSet(false),
     m_storageDurationHasBeenSet(false),
     m_autoBackupIntervalHasBeenSet(false),
     m_cosRetentionHasBeenSet(false),
@@ -103,6 +104,16 @@ CoreInternalOutcome CosBackup::Deserialize(const rapidjson::Value &value)
         }
         m_userEsRepository = string(value["UserEsRepository"].GetString());
         m_userEsRepositoryHasBeenSet = true;
+    }
+
+    if (value.HasMember("CosBasePath") && !value["CosBasePath"].IsNull())
+    {
+        if (!value["CosBasePath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosBackup.CosBasePath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosBasePath = string(value["CosBasePath"].GetString());
+        m_cosBasePathHasBeenSet = true;
     }
 
     if (value.HasMember("StorageDuration") && !value["StorageDuration"].IsNull())
@@ -258,6 +269,14 @@ void CosBackup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "UserEsRepository";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userEsRepository.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosBasePathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosBasePath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cosBasePath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_storageDurationHasBeenSet)
@@ -437,6 +456,22 @@ void CosBackup::SetUserEsRepository(const string& _userEsRepository)
 bool CosBackup::UserEsRepositoryHasBeenSet() const
 {
     return m_userEsRepositoryHasBeenSet;
+}
+
+string CosBackup::GetCosBasePath() const
+{
+    return m_cosBasePath;
+}
+
+void CosBackup::SetCosBasePath(const string& _cosBasePath)
+{
+    m_cosBasePath = _cosBasePath;
+    m_cosBasePathHasBeenSet = true;
+}
+
+bool CosBackup::CosBasePathHasBeenSet() const
+{
+    return m_cosBasePathHasBeenSet;
 }
 
 uint64_t CosBackup::GetStorageDuration() const

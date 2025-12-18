@@ -27,7 +27,8 @@ CreateFlowGroupByFilesRequest::CreateFlowGroupByFilesRequest() :
     m_flowGroupNameHasBeenSet(false),
     m_flowGroupInfosHasBeenSet(false),
     m_agentHasBeenSet(false),
-    m_flowGroupOptionsHasBeenSet(false)
+    m_flowGroupOptionsHasBeenSet(false),
+    m_userFlowTypeHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,15 @@ string CreateFlowGroupByFilesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_flowGroupOptions.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_userFlowTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserFlowType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_userFlowType.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -174,6 +184,22 @@ void CreateFlowGroupByFilesRequest::SetFlowGroupOptions(const FlowGroupOptions& 
 bool CreateFlowGroupByFilesRequest::FlowGroupOptionsHasBeenSet() const
 {
     return m_flowGroupOptionsHasBeenSet;
+}
+
+UserFlowType CreateFlowGroupByFilesRequest::GetUserFlowType() const
+{
+    return m_userFlowType;
+}
+
+void CreateFlowGroupByFilesRequest::SetUserFlowType(const UserFlowType& _userFlowType)
+{
+    m_userFlowType = _userFlowType;
+    m_userFlowTypeHasBeenSet = true;
+}
+
+bool CreateFlowGroupByFilesRequest::UserFlowTypeHasBeenSet() const
+{
+    return m_userFlowTypeHasBeenSet;
 }
 
 

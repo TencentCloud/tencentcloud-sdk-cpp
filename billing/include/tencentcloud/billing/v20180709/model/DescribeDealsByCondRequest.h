@@ -258,6 +258,27 @@ namespace TencentCloud
                      */
                     bool ResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取订单状态
+                     * @return StatusSet 订单状态
+                     * 
+                     */
+                    std::vector<int64_t> GetStatusSet() const;
+
+                    /**
+                     * 设置订单状态
+                     * @param _statusSet 订单状态
+                     * 
+                     */
+                    void SetStatusSet(const std::vector<int64_t>& _statusSet);
+
+                    /**
+                     * 判断参数 StatusSet 是否已赋值
+                     * @return StatusSet 是否已赋值
+                     * 
+                     */
+                    bool StatusSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -319,6 +340,12 @@ namespace TencentCloud
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
+
+                    /**
+                     * 订单状态
+                     */
+                    std::vector<int64_t> m_statusSet;
+                    bool m_statusSetHasBeenSet;
 
                 };
             }

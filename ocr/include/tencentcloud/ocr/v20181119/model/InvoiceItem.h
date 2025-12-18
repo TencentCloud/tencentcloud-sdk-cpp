@@ -346,14 +346,18 @@ FailedOperation.UnKnowError：表示识别失败；
 
                     /**
                      * 获取该发票中所有字段坐标信息。包括字段英文名称、字段值所在位置四点坐标、字段所属行号，具体内容请点击左侧链接。
+字段在原始图的坐标可以根据Polygon转换得出。
                      * @return ItemPolygon 该发票中所有字段坐标信息。包括字段英文名称、字段值所在位置四点坐标、字段所属行号，具体内容请点击左侧链接。
+字段在原始图的坐标可以根据Polygon转换得出。
                      * 
                      */
                     std::vector<ItemPolygonInfo> GetItemPolygon() const;
 
                     /**
                      * 设置该发票中所有字段坐标信息。包括字段英文名称、字段值所在位置四点坐标、字段所属行号，具体内容请点击左侧链接。
+字段在原始图的坐标可以根据Polygon转换得出。
                      * @param _itemPolygon 该发票中所有字段坐标信息。包括字段英文名称、字段值所在位置四点坐标、字段所属行号，具体内容请点击左侧链接。
+字段在原始图的坐标可以根据Polygon转换得出。
                      * 
                      */
                     void SetItemPolygon(const std::vector<ItemPolygonInfo>& _itemPolygon);
@@ -492,6 +496,7 @@ FailedOperation.UnKnowError：表示识别失败；
 
                     /**
                      * 该发票中所有字段坐标信息。包括字段英文名称、字段值所在位置四点坐标、字段所属行号，具体内容请点击左侧链接。
+字段在原始图的坐标可以根据Polygon转换得出。
                      */
                     std::vector<ItemPolygonInfo> m_itemPolygon;
                     bool m_itemPolygonHasBeenSet;

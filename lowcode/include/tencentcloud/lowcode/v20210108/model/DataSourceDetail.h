@@ -935,6 +935,27 @@ namespace TencentCloud
                      */
                     bool DbSourceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取模型预览状态开关
+                     * @return StagingSwitch 模型预览状态开关
+                     * 
+                     */
+                    bool GetStagingSwitch() const;
+
+                    /**
+                     * 设置模型预览状态开关
+                     * @param _stagingSwitch 模型预览状态开关
+                     * 
+                     */
+                    void SetStagingSwitch(const bool& _stagingSwitch);
+
+                    /**
+                     * 判断参数 StagingSwitch 是否已赋值
+                     * @return StagingSwitch 是否已赋值
+                     * 
+                     */
+                    bool StagingSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1186,6 +1207,12 @@ namespace TencentCloud
                      */
                     std::string m_dbSourceType;
                     bool m_dbSourceTypeHasBeenSet;
+
+                    /**
+                     * 模型预览状态开关
+                     */
+                    bool m_stagingSwitch;
+                    bool m_stagingSwitchHasBeenSet;
 
                 };
             }

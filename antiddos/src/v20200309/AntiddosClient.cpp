@@ -140,6 +140,56 @@ AntiddosClient::AssociateDDoSEipLoadBalancerOutcomeCallable AntiddosClient::Asso
     return prom->get_future();
 }
 
+AntiddosClient::CreateBgpInstanceOutcome AntiddosClient::CreateBgpInstance(const CreateBgpInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBgpInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBgpInstanceResponse rsp = CreateBgpInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBgpInstanceOutcome(rsp);
+        else
+            return CreateBgpInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBgpInstanceOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::CreateBgpInstanceAsync(const CreateBgpInstanceRequest& request, const CreateBgpInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateBgpInstanceRequest&;
+    using Resp = CreateBgpInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateBgpInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AntiddosClient::CreateBgpInstanceOutcomeCallable AntiddosClient::CreateBgpInstanceCallable(const CreateBgpInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateBgpInstanceOutcome>>();
+    CreateBgpInstanceAsync(
+    request,
+    [prom](
+        const AntiddosClient*,
+        const CreateBgpInstanceRequest&,
+        CreateBgpInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AntiddosClient::CreateBlackWhiteIpListOutcome AntiddosClient::CreateBlackWhiteIpList(const CreateBlackWhiteIpListRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBlackWhiteIpList");
@@ -2032,6 +2082,56 @@ AntiddosClient::DescribeBgpBizTrendOutcomeCallable AntiddosClient::DescribeBgpBi
         const AntiddosClient*,
         const DescribeBgpBizTrendRequest&,
         DescribeBgpBizTrendOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AntiddosClient::DescribeBgpInstancesOutcome AntiddosClient::DescribeBgpInstances(const DescribeBgpInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBgpInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBgpInstancesResponse rsp = DescribeBgpInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBgpInstancesOutcome(rsp);
+        else
+            return DescribeBgpInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBgpInstancesOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeBgpInstancesAsync(const DescribeBgpInstancesRequest& request, const DescribeBgpInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBgpInstancesRequest&;
+    using Resp = DescribeBgpInstancesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBgpInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AntiddosClient::DescribeBgpInstancesOutcomeCallable AntiddosClient::DescribeBgpInstancesCallable(const DescribeBgpInstancesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBgpInstancesOutcome>>();
+    DescribeBgpInstancesAsync(
+    request,
+    [prom](
+        const AntiddosClient*,
+        const DescribeBgpInstancesRequest&,
+        DescribeBgpInstancesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

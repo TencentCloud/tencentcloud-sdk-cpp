@@ -58,10 +58,11 @@ set(vm_public_header_model
   include/tencentcloud/vm/v20210922/model/TextPosition.h
   include/tencentcloud/vm/v20210922/model/SpeakerResult.h
   include/tencentcloud/vm/v20210922/model/ImageResultResult.h
+  include/tencentcloud/vm/v20210922/model/TravelResult.h
   include/tencentcloud/vm/v20210922/model/StorageInfo.h
   include/tencentcloud/vm/v20210922/model/BucketInfo.h
   include/tencentcloud/vm/v20210922/model/CreateVideoModerationTaskResponse.h
-  include/tencentcloud/vm/v20210922/model/TravelResult.h
+  include/tencentcloud/vm/v20210922/model/Sentence.h
   include/tencentcloud/vm/v20210922/model/TaskResult.h
   include/tencentcloud/vm/v20210922/model/TaskLabel.h
   include/tencentcloud/vm/v20210922/model/CancelTaskRequest.h
@@ -170,10 +171,11 @@ set(vm_src
   src/v20210922/model/TextPosition.cpp
   src/v20210922/model/SpeakerResult.cpp
   src/v20210922/model/ImageResultResult.cpp
+  src/v20210922/model/TravelResult.cpp
   src/v20210922/model/StorageInfo.cpp
   src/v20210922/model/BucketInfo.cpp
   src/v20210922/model/CreateVideoModerationTaskResponse.cpp
-  src/v20210922/model/TravelResult.cpp
+  src/v20210922/model/Sentence.cpp
   src/v20210922/model/TaskResult.cpp
   src/v20210922/model/TaskLabel.cpp
   src/v20210922/model/CancelTaskRequest.cpp

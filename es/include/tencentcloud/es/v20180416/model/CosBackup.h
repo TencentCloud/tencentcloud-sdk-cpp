@@ -173,6 +173,27 @@ namespace TencentCloud
                     bool UserEsRepositoryHasBeenSet() const;
 
                     /**
+                     * 获取cos存储文件夹目录
+                     * @return CosBasePath cos存储文件夹目录
+                     * 
+                     */
+                    std::string GetCosBasePath() const;
+
+                    /**
+                     * 设置cos存储文件夹目录
+                     * @param _cosBasePath cos存储文件夹目录
+                     * 
+                     */
+                    void SetCosBasePath(const std::string& _cosBasePath);
+
+                    /**
+                     * 判断参数 CosBasePath 是否已赋值
+                     * @return CosBasePath 是否已赋值
+                     * 
+                     */
+                    bool CosBasePathHasBeenSet() const;
+
+                    /**
                      * 获取快照存储周期 单位天
                      * @return StorageDuration 快照存储周期 单位天
                      * 
@@ -419,6 +440,12 @@ namespace TencentCloud
                      */
                     std::string m_userEsRepository;
                     bool m_userEsRepositoryHasBeenSet;
+
+                    /**
+                     * cos存储文件夹目录
+                     */
+                    std::string m_cosBasePath;
+                    bool m_cosBasePathHasBeenSet;
 
                     /**
                      * 快照存储周期 单位天

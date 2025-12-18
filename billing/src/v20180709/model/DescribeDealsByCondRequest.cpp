@@ -30,7 +30,8 @@ DescribeDealsByCondRequest::DescribeDealsByCondRequest() :
     m_statusHasBeenSet(false),
     m_orderIdHasBeenSet(false),
     m_bigDealIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+    m_resourceIdHasBeenSet(false),
+    m_statusSetHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,19 @@ string DescribeDealsByCondRequest::ToJsonString() const
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_statusSet.begin(); itr != m_statusSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -239,6 +253,22 @@ void DescribeDealsByCondRequest::SetResourceId(const string& _resourceId)
 bool DescribeDealsByCondRequest::ResourceIdHasBeenSet() const
 {
     return m_resourceIdHasBeenSet;
+}
+
+vector<int64_t> DescribeDealsByCondRequest::GetStatusSet() const
+{
+    return m_statusSet;
+}
+
+void DescribeDealsByCondRequest::SetStatusSet(const vector<int64_t>& _statusSet)
+{
+    m_statusSet = _statusSet;
+    m_statusSetHasBeenSet = true;
+}
+
+bool DescribeDealsByCondRequest::StatusSetHasBeenSet() const
+{
+    return m_statusSetHasBeenSet;
 }
 
 
