@@ -29,6 +29,7 @@
 #include <tencentcloud/as/v20180419/model/ServiceSettings.h>
 #include <tencentcloud/as/v20180419/model/SpotMixedAllocationPolicy.h>
 #include <tencentcloud/as/v20180419/model/InstanceNameIndexSettings.h>
+#include <tencentcloud/as/v20180419/model/HostNameIndexSettings.h>
 
 
 namespace TencentCloud
@@ -823,6 +824,48 @@ namespace TencentCloud
                      */
                     bool InstanceNameIndexSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取实例主机名序号相关设置。
+                     * @return HostNameIndexSettings 实例主机名序号相关设置。
+                     * 
+                     */
+                    HostNameIndexSettings GetHostNameIndexSettings() const;
+
+                    /**
+                     * 设置实例主机名序号相关设置。
+                     * @param _hostNameIndexSettings 实例主机名序号相关设置。
+                     * 
+                     */
+                    void SetHostNameIndexSettings(const HostNameIndexSettings& _hostNameIndexSettings);
+
+                    /**
+                     * 判断参数 HostNameIndexSettings 是否已赋值
+                     * @return HostNameIndexSettings 是否已赋值
+                     * 
+                     */
+                    bool HostNameIndexSettingsHasBeenSet() const;
+
+                    /**
+                     * 获取匹配期望数并发扩容功能，不能在InstanceAllocationPolicy为竞价混合模式时设置，也不能在ScalingMode为扩容优先开机模式时设置。目前仅支持两个匹配期望数扩容活动并发进行，不支持指定数量扩容、缩容等其他类型活动并发。默认值为FALSE，表示不开启。
+                     * @return ConcurrentScaleOutForDesiredCapacity 匹配期望数并发扩容功能，不能在InstanceAllocationPolicy为竞价混合模式时设置，也不能在ScalingMode为扩容优先开机模式时设置。目前仅支持两个匹配期望数扩容活动并发进行，不支持指定数量扩容、缩容等其他类型活动并发。默认值为FALSE，表示不开启。
+                     * 
+                     */
+                    bool GetConcurrentScaleOutForDesiredCapacity() const;
+
+                    /**
+                     * 设置匹配期望数并发扩容功能，不能在InstanceAllocationPolicy为竞价混合模式时设置，也不能在ScalingMode为扩容优先开机模式时设置。目前仅支持两个匹配期望数扩容活动并发进行，不支持指定数量扩容、缩容等其他类型活动并发。默认值为FALSE，表示不开启。
+                     * @param _concurrentScaleOutForDesiredCapacity 匹配期望数并发扩容功能，不能在InstanceAllocationPolicy为竞价混合模式时设置，也不能在ScalingMode为扩容优先开机模式时设置。目前仅支持两个匹配期望数扩容活动并发进行，不支持指定数量扩容、缩容等其他类型活动并发。默认值为FALSE，表示不开启。
+                     * 
+                     */
+                    void SetConcurrentScaleOutForDesiredCapacity(const bool& _concurrentScaleOutForDesiredCapacity);
+
+                    /**
+                     * 判断参数 ConcurrentScaleOutForDesiredCapacity 是否已赋值
+                     * @return ConcurrentScaleOutForDesiredCapacity 是否已赋值
+                     * 
+                     */
+                    bool ConcurrentScaleOutForDesiredCapacityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1041,6 +1084,18 @@ namespace TencentCloud
                      */
                     InstanceNameIndexSettings m_instanceNameIndexSettings;
                     bool m_instanceNameIndexSettingsHasBeenSet;
+
+                    /**
+                     * 实例主机名序号相关设置。
+                     */
+                    HostNameIndexSettings m_hostNameIndexSettings;
+                    bool m_hostNameIndexSettingsHasBeenSet;
+
+                    /**
+                     * 匹配期望数并发扩容功能，不能在InstanceAllocationPolicy为竞价混合模式时设置，也不能在ScalingMode为扩容优先开机模式时设置。目前仅支持两个匹配期望数扩容活动并发进行，不支持指定数量扩容、缩容等其他类型活动并发。默认值为FALSE，表示不开启。
+                     */
+                    bool m_concurrentScaleOutForDesiredCapacity;
+                    bool m_concurrentScaleOutForDesiredCapacityHasBeenSet;
 
                 };
             }

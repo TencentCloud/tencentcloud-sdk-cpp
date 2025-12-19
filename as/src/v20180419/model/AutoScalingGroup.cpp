@@ -52,7 +52,9 @@ AutoScalingGroup::AutoScalingGroup() :
     m_instanceAllocationPolicyHasBeenSet(false),
     m_spotMixedAllocationPolicyHasBeenSet(false),
     m_capacityRebalanceHasBeenSet(false),
-    m_instanceNameIndexSettingsHasBeenSet(false)
+    m_instanceNameIndexSettingsHasBeenSet(false),
+    m_hostNameIndexSettingsHasBeenSet(false),
+    m_concurrentScaleOutForDesiredCapacityHasBeenSet(false)
 {
 }
 
@@ -434,6 +436,33 @@ CoreInternalOutcome AutoScalingGroup::Deserialize(const rapidjson::Value &value)
         m_instanceNameIndexSettingsHasBeenSet = true;
     }
 
+    if (value.HasMember("HostNameIndexSettings") && !value["HostNameIndexSettings"].IsNull())
+    {
+        if (!value["HostNameIndexSettings"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScalingGroup.HostNameIndexSettings` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_hostNameIndexSettings.Deserialize(value["HostNameIndexSettings"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_hostNameIndexSettingsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConcurrentScaleOutForDesiredCapacity") && !value["ConcurrentScaleOutForDesiredCapacity"].IsNull())
+    {
+        if (!value["ConcurrentScaleOutForDesiredCapacity"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScalingGroup.ConcurrentScaleOutForDesiredCapacity` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_concurrentScaleOutForDesiredCapacity = value["ConcurrentScaleOutForDesiredCapacity"].GetBool();
+        m_concurrentScaleOutForDesiredCapacityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -732,6 +761,23 @@ void AutoScalingGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_instanceNameIndexSettings.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_hostNameIndexSettingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostNameIndexSettings";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_hostNameIndexSettings.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_concurrentScaleOutForDesiredCapacityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConcurrentScaleOutForDesiredCapacity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_concurrentScaleOutForDesiredCapacity, allocator);
     }
 
 }
@@ -1247,5 +1293,37 @@ void AutoScalingGroup::SetInstanceNameIndexSettings(const InstanceNameIndexSetti
 bool AutoScalingGroup::InstanceNameIndexSettingsHasBeenSet() const
 {
     return m_instanceNameIndexSettingsHasBeenSet;
+}
+
+HostNameIndexSettings AutoScalingGroup::GetHostNameIndexSettings() const
+{
+    return m_hostNameIndexSettings;
+}
+
+void AutoScalingGroup::SetHostNameIndexSettings(const HostNameIndexSettings& _hostNameIndexSettings)
+{
+    m_hostNameIndexSettings = _hostNameIndexSettings;
+    m_hostNameIndexSettingsHasBeenSet = true;
+}
+
+bool AutoScalingGroup::HostNameIndexSettingsHasBeenSet() const
+{
+    return m_hostNameIndexSettingsHasBeenSet;
+}
+
+bool AutoScalingGroup::GetConcurrentScaleOutForDesiredCapacity() const
+{
+    return m_concurrentScaleOutForDesiredCapacity;
+}
+
+void AutoScalingGroup::SetConcurrentScaleOutForDesiredCapacity(const bool& _concurrentScaleOutForDesiredCapacity)
+{
+    m_concurrentScaleOutForDesiredCapacity = _concurrentScaleOutForDesiredCapacity;
+    m_concurrentScaleOutForDesiredCapacityHasBeenSet = true;
+}
+
+bool AutoScalingGroup::ConcurrentScaleOutForDesiredCapacityHasBeenSet() const
+{
+    return m_concurrentScaleOutForDesiredCapacityHasBeenSet;
 }
 

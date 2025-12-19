@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BotAppKeyHasBeenSet() const;
 
                     /**
-                     * 获取消息ID 【大模型回复答案的RecordID】
-                     * @return RecordId 消息ID 【大模型回复答案的RecordID】
+                     * 获取消息ID 【大模型回复答案的RecordID】可以通过[GetMsgRecord](https://cloud.tencent.com/document/product/1759/105090)接口获取
+                     * @return RecordId 消息ID 【大模型回复答案的RecordID】可以通过[GetMsgRecord](https://cloud.tencent.com/document/product/1759/105090)接口获取
                      * 
                      */
                     std::string GetRecordId() const;
 
                     /**
-                     * 设置消息ID 【大模型回复答案的RecordID】
-                     * @param _recordId 消息ID 【大模型回复答案的RecordID】
+                     * 设置消息ID 【大模型回复答案的RecordID】可以通过[GetMsgRecord](https://cloud.tencent.com/document/product/1759/105090)接口获取
+                     * @param _recordId 消息ID 【大模型回复答案的RecordID】可以通过[GetMsgRecord](https://cloud.tencent.com/document/product/1759/105090)接口获取
                      * 
                      */
                     void SetRecordId(const std::string& _recordId);
@@ -172,7 +172,7 @@ namespace TencentCloud
                     bool m_botAppKeyHasBeenSet;
 
                     /**
-                     * 消息ID 【大模型回复答案的RecordID】
+                     * 消息ID 【大模型回复答案的RecordID】可以通过[GetMsgRecord](https://cloud.tencent.com/document/product/1759/105090)接口获取
                      */
                     std::string m_recordId;
                     bool m_recordIdHasBeenSet;

@@ -28,6 +28,7 @@ set(dataagent_public_header_model
   include/tencentcloud/dataagent/v20250513/model/GetSessionDetailsResponse.h
   include/tencentcloud/dataagent/v20250513/model/ModifyChunkRequest.h
   include/tencentcloud/dataagent/v20250513/model/QueryChunkListResponse.h
+  include/tencentcloud/dataagent/v20250513/model/GetJobsByKnowledgeBaseIdRequest.h
   include/tencentcloud/dataagent/v20250513/model/UploadJob.h
   include/tencentcloud/dataagent/v20250513/model/QueryChunkListRequest.h
   include/tencentcloud/dataagent/v20250513/model/StopChatAIRequest.h
@@ -38,6 +39,7 @@ set(dataagent_public_header_model
   include/tencentcloud/dataagent/v20250513/model/CreateDataAgentSessionResponse.h
   include/tencentcloud/dataagent/v20250513/model/CosFileInfo.h
   include/tencentcloud/dataagent/v20250513/model/KnowledgeBase.h
+  include/tencentcloud/dataagent/v20250513/model/GetJobsByKnowledgeBaseIdResponse.h
   include/tencentcloud/dataagent/v20250513/model/StopChatAIResponse.h
   include/tencentcloud/dataagent/v20250513/model/GetUploadJobDetailsResponse.h
   include/tencentcloud/dataagent/v20250513/model/Task.h
@@ -71,6 +73,7 @@ set(dataagent_src
   src/v20250513/model/GetSessionDetailsResponse.cpp
   src/v20250513/model/ModifyChunkRequest.cpp
   src/v20250513/model/QueryChunkListResponse.cpp
+  src/v20250513/model/GetJobsByKnowledgeBaseIdRequest.cpp
   src/v20250513/model/UploadJob.cpp
   src/v20250513/model/QueryChunkListRequest.cpp
   src/v20250513/model/StopChatAIRequest.cpp
@@ -81,6 +84,7 @@ set(dataagent_src
   src/v20250513/model/CreateDataAgentSessionResponse.cpp
   src/v20250513/model/CosFileInfo.cpp
   src/v20250513/model/KnowledgeBase.cpp
+  src/v20250513/model/GetJobsByKnowledgeBaseIdResponse.cpp
   src/v20250513/model/StopChatAIResponse.cpp
   src/v20250513/model/GetUploadJobDetailsResponse.cpp
   src/v20250513/model/Task.cpp

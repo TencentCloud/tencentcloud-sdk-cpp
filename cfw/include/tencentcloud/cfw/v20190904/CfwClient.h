@@ -777,7 +777,9 @@ namespace TencentCloud
                 DeleteAddressTemplateOutcomeCallable DeleteAddressTemplateCallable(const Model::DeleteAddressTemplateRequest& request);
 
                 /**
-                 *全部删除规则
+                 *业务废弃
+
+全部删除规则
                  * @param req DeleteAllAccessControlRuleRequest
                  * @return DeleteAllAccessControlRuleOutcome
                  */

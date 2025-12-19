@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return AppBizId 应用ID
+                     * 获取应用ID, 获取方法参看如何获取 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * @return AppBizId 应用ID, 获取方法参看如何获取 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      * 
                      */
                     std::string GetAppBizId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _appBizId 应用ID
+                     * 设置应用ID, 获取方法参看如何获取 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * @param _appBizId 应用ID, 获取方法参看如何获取 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      * 
                      */
                     void SetAppBizId(const std::string& _appBizId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AppBizIdHasBeenSet() const;
 
                     /**
-                     * 获取每页数量
-                     * @return PageSize 每页数量
+                     * 获取每页数量(取值范围1-200)
+                     * @return PageSize 每页数量(取值范围1-200)
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置每页数量
-                     * @param _pageSize 每页数量
+                     * 设置每页数量(取值范围1-200)
+                     * @param _pageSize 每页数量(取值范围1-200)
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool RunEnvHasBeenSet() const;
 
                     /**
-                     * 获取页码
-                     * @return Page 页码
+                     * 获取页码(必须大于0)
+                     * @return Page 页码(必须大于0)
                      * 
                      */
                     uint64_t GetPage() const;
 
                     /**
-                     * 设置页码
-                     * @param _page 页码
+                     * 设置页码(必须大于0)
+                     * @param _page 页码(必须大于0)
                      * 
                      */
                     void SetPage(const uint64_t& _page);
@@ -171,13 +171,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID
+                     * 应用ID, 获取方法参看如何获取 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      */
                     std::string m_appBizId;
                     bool m_appBizIdHasBeenSet;
 
                     /**
-                     * 每页数量
+                     * 每页数量(取值范围1-200)
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
@@ -189,7 +189,7 @@ namespace TencentCloud
                     bool m_runEnvHasBeenSet;
 
                     /**
-                     * 页码
+                     * 页码(必须大于0)
                      */
                     uint64_t m_page;
                     bool m_pageHasBeenSet;

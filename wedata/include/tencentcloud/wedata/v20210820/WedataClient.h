@@ -271,6 +271,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationTasksResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationVersionNodesInfoRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationVersionNodesInfoResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeLineageInfoRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeLineageInfoResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeManualTriggerRecordPageRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeManualTriggerRecordPageResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeOfflineTaskTokenRequest.h>
@@ -1005,6 +1007,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIntegrationVersionNodesInfoResponse> DescribeIntegrationVersionNodesInfoOutcome;
                 typedef std::future<DescribeIntegrationVersionNodesInfoOutcome> DescribeIntegrationVersionNodesInfoOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeIntegrationVersionNodesInfoRequest&, DescribeIntegrationVersionNodesInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntegrationVersionNodesInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLineageInfoResponse> DescribeLineageInfoOutcome;
+                typedef std::future<DescribeLineageInfoOutcome> DescribeLineageInfoOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeLineageInfoRequest&, DescribeLineageInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLineageInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeManualTriggerRecordPageResponse> DescribeManualTriggerRecordPageOutcome;
                 typedef std::future<DescribeManualTriggerRecordPageOutcome> DescribeManualTriggerRecordPageOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeManualTriggerRecordPageRequest&, DescribeManualTriggerRecordPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeManualTriggerRecordPageAsyncHandler;
@@ -2645,6 +2650,15 @@ namespace TencentCloud
                 DescribeIntegrationVersionNodesInfoOutcome DescribeIntegrationVersionNodesInfo(const Model::DescribeIntegrationVersionNodesInfoRequest &request);
                 void DescribeIntegrationVersionNodesInfoAsync(const Model::DescribeIntegrationVersionNodesInfoRequest& request, const DescribeIntegrationVersionNodesInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIntegrationVersionNodesInfoOutcomeCallable DescribeIntegrationVersionNodesInfoCallable(const Model::DescribeIntegrationVersionNodesInfoRequest& request);
+
+                /**
+                 *通用血缘查询接口
+                 * @param req DescribeLineageInfoRequest
+                 * @return DescribeLineageInfoOutcome
+                 */
+                DescribeLineageInfoOutcome DescribeLineageInfo(const Model::DescribeLineageInfoRequest &request);
+                void DescribeLineageInfoAsync(const Model::DescribeLineageInfoRequest& request, const DescribeLineageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLineageInfoOutcomeCallable DescribeLineageInfoCallable(const Model::DescribeLineageInfoRequest& request);
 
                 /**
                  *查询手动任务触发记录

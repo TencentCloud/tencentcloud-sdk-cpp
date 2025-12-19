@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return BotBizId 应用ID
+                     * 获取应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * @return BotBizId 应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _botBizId 应用ID
+                     * 设置应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * @param _botBizId 应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BotBizIdHasBeenSet() const;
 
                     /**
-                     * 获取页码
-                     * @return PageNumber 页码
+                     * 获取页码，取值范围：大于0
+                     * @return PageNumber 页码，取值范围：大于0
                      * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
-                     * 设置页码
-                     * @param _pageNumber 页码
+                     * 设置页码，取值范围：大于0
+                     * @param _pageNumber 页码，取值范围：大于0
                      * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取每页数量
-                     * @return PageSize 每页数量
+                     * 获取每页数量，取值范围：大于0
+                     * @return PageSize 每页数量，取值范围：大于0
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置每页数量
-                     * @param _pageSize 每页数量
+                     * 设置每页数量，取值范围：大于0
+                     * @param _pageSize 每页数量，取值范围：大于0
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool LoginSubAccountUinHasBeenSet() const;
 
                     /**
-                     * 获取查询内容
-                     * @return Query 查询内容
+                     * 获取查询内容，同时匹配标签内容和标签值内容
+                     * @return Query 查询内容，同时匹配标签内容和标签值内容
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
-                     * 设置查询内容
-                     * @param _query 查询内容
+                     * 设置查询内容，同时匹配标签内容和标签值内容
+                     * @param _query 查询内容，同时匹配标签内容和标签值内容
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取每个属性同步拉取的标签值数量
-                     * @return LabelSize 每个属性同步拉取的标签值数量
+                     * 获取每个标签同步拉取的标签值数量。即在展示标签列表时，为每一个标签加载多少个具体的标签值。
+                     * @return LabelSize 每个标签同步拉取的标签值数量。即在展示标签列表时，为每一个标签加载多少个具体的标签值。
                      * 
                      */
                     uint64_t GetLabelSize() const;
 
                     /**
-                     * 设置每个属性同步拉取的标签值数量
-                     * @param _labelSize 每个属性同步拉取的标签值数量
+                     * 设置每个标签同步拉取的标签值数量。即在展示标签列表时，为每一个标签加载多少个具体的标签值。
+                     * @param _labelSize 每个标签同步拉取的标签值数量。即在展示标签列表时，为每一个标签加载多少个具体的标签值。
                      * 
                      */
                     void SetLabelSize(const uint64_t& _labelSize);
@@ -192,19 +192,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID
+                     * 应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
 
                     /**
-                     * 页码
+                     * 页码，取值范围：大于0
                      */
                     uint64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 每页数量
+                     * 每页数量，取值范围：大于0
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
@@ -222,13 +222,13 @@ namespace TencentCloud
                     bool m_loginSubAccountUinHasBeenSet;
 
                     /**
-                     * 查询内容
+                     * 查询内容，同时匹配标签内容和标签值内容
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 每个属性同步拉取的标签值数量
+                     * 每个标签同步拉取的标签值数量。即在展示标签列表时，为每一个标签加载多少个具体的标签值。
                      */
                     uint64_t m_labelSize;
                     bool m_labelSizeHasBeenSet;

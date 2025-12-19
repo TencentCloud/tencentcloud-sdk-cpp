@@ -3490,6 +3490,56 @@ AntiddosClient::DescribeListPortAclListOutcomeCallable AntiddosClient::DescribeL
     return prom->get_future();
 }
 
+AntiddosClient::DescribeListProtectThresholdConfigNewOutcome AntiddosClient::DescribeListProtectThresholdConfigNew(const DescribeListProtectThresholdConfigNewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeListProtectThresholdConfigNew");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeListProtectThresholdConfigNewResponse rsp = DescribeListProtectThresholdConfigNewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeListProtectThresholdConfigNewOutcome(rsp);
+        else
+            return DescribeListProtectThresholdConfigNewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeListProtectThresholdConfigNewOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeListProtectThresholdConfigNewAsync(const DescribeListProtectThresholdConfigNewRequest& request, const DescribeListProtectThresholdConfigNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeListProtectThresholdConfigNewRequest&;
+    using Resp = DescribeListProtectThresholdConfigNewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeListProtectThresholdConfigNew", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AntiddosClient::DescribeListProtectThresholdConfigNewOutcomeCallable AntiddosClient::DescribeListProtectThresholdConfigNewCallable(const DescribeListProtectThresholdConfigNewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeListProtectThresholdConfigNewOutcome>>();
+    DescribeListProtectThresholdConfigNewAsync(
+    request,
+    [prom](
+        const AntiddosClient*,
+        const DescribeListProtectThresholdConfigNewRequest&,
+        DescribeListProtectThresholdConfigNewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AntiddosClient::DescribeListProtocolBlockConfigOutcome AntiddosClient::DescribeListProtocolBlockConfig(const DescribeListProtocolBlockConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeListProtocolBlockConfig");

@@ -290,6 +290,56 @@ DataagentClient::DeleteDataAgentSessionOutcomeCallable DataagentClient::DeleteDa
     return prom->get_future();
 }
 
+DataagentClient::GetJobsByKnowledgeBaseIdOutcome DataagentClient::GetJobsByKnowledgeBaseId(const GetJobsByKnowledgeBaseIdRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetJobsByKnowledgeBaseId");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetJobsByKnowledgeBaseIdResponse rsp = GetJobsByKnowledgeBaseIdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetJobsByKnowledgeBaseIdOutcome(rsp);
+        else
+            return GetJobsByKnowledgeBaseIdOutcome(o.GetError());
+    }
+    else
+    {
+        return GetJobsByKnowledgeBaseIdOutcome(outcome.GetError());
+    }
+}
+
+void DataagentClient::GetJobsByKnowledgeBaseIdAsync(const GetJobsByKnowledgeBaseIdRequest& request, const GetJobsByKnowledgeBaseIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetJobsByKnowledgeBaseIdRequest&;
+    using Resp = GetJobsByKnowledgeBaseIdResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetJobsByKnowledgeBaseId", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DataagentClient::GetJobsByKnowledgeBaseIdOutcomeCallable DataagentClient::GetJobsByKnowledgeBaseIdCallable(const GetJobsByKnowledgeBaseIdRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetJobsByKnowledgeBaseIdOutcome>>();
+    GetJobsByKnowledgeBaseIdAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const GetJobsByKnowledgeBaseIdRequest&,
+        GetJobsByKnowledgeBaseIdOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DataagentClient::GetKnowledgeBaseFileListOutcome DataagentClient::GetKnowledgeBaseFileList(const GetKnowledgeBaseFileListRequest &request)
 {
     auto outcome = MakeRequest(request, "GetKnowledgeBaseFileList");

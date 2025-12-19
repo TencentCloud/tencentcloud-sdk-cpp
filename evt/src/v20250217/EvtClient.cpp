@@ -140,3 +140,53 @@ EvtClient::CreateRoleUserOutcomeCallable EvtClient::CreateRoleUserCallable(const
     return prom->get_future();
 }
 
+EvtClient::DeleteRoleUserOutcome EvtClient::DeleteRoleUser(const DeleteRoleUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRoleUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRoleUserResponse rsp = DeleteRoleUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRoleUserOutcome(rsp);
+        else
+            return DeleteRoleUserOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRoleUserOutcome(outcome.GetError());
+    }
+}
+
+void EvtClient::DeleteRoleUserAsync(const DeleteRoleUserRequest& request, const DeleteRoleUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteRoleUserRequest&;
+    using Resp = DeleteRoleUserResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteRoleUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EvtClient::DeleteRoleUserOutcomeCallable EvtClient::DeleteRoleUserCallable(const DeleteRoleUserRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteRoleUserOutcome>>();
+    DeleteRoleUserAsync(
+    request,
+    [prom](
+        const EvtClient*,
+        const DeleteRoleUserRequest&,
+        DeleteRoleUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+

@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/weilingwith/v20230427/model/DescribeCityWorkspaceListResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeListProtectThresholdConfigNewResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Weilingwith::V20230427::Model;
+using namespace TencentCloud::Antiddos::V20200309::Model;
 using namespace std;
 
-DescribeCityWorkspaceListResponse::DescribeCityWorkspaceListResponse() :
-    m_resultHasBeenSet(false)
+DescribeListProtectThresholdConfigNewResponse::DescribeListProtectThresholdConfigNewResponse() :
+    m_totalHasBeenSet(false),
+    m_configListHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeCityWorkspaceListResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeListProtectThresholdConfigNewResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +63,67 @@ CoreInternalOutcome DescribeCityWorkspaceListResponse::Deserialize(const string 
     }
 
 
-    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
     {
-        if (!rsp["Result"].IsObject())
+        if (!rsp["Total"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `Result` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Total` IsUint64=false incorrectly").SetRequestId(requestId));
         }
+        m_total = rsp["Total"].GetUint64();
+        m_totalHasBeenSet = true;
+    }
 
-        CoreInternalOutcome outcome = m_result.Deserialize(rsp["Result"]);
-        if (!outcome.IsSuccess())
+    if (rsp.HasMember("ConfigList") && !rsp["ConfigList"].IsNull())
+    {
+        if (!rsp["ConfigList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ConfigList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ConfigList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            ProtectThresholdRelationNew item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_configList.push_back(item);
         }
-
-        m_resultHasBeenSet = true;
+        m_configListHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeCityWorkspaceListResponse::ToJsonString() const
+string DescribeListProtectThresholdConfigNewResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_resultHasBeenSet)
+    if (m_totalHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Result";
+        string key = "Total";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_result.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, m_total, allocator);
+    }
+
+    if (m_configListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_configList.begin(); itr != m_configList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +138,24 @@ string DescribeCityWorkspaceListResponse::ToJsonString() const
 }
 
 
-DescribeCityWorkspaceListRes DescribeCityWorkspaceListResponse::GetResult() const
+uint64_t DescribeListProtectThresholdConfigNewResponse::GetTotal() const
 {
-    return m_result;
+    return m_total;
 }
 
-bool DescribeCityWorkspaceListResponse::ResultHasBeenSet() const
+bool DescribeListProtectThresholdConfigNewResponse::TotalHasBeenSet() const
 {
-    return m_resultHasBeenSet;
+    return m_totalHasBeenSet;
+}
+
+vector<ProtectThresholdRelationNew> DescribeListProtectThresholdConfigNewResponse::GetConfigList() const
+{
+    return m_configList;
+}
+
+bool DescribeListProtectThresholdConfigNewResponse::ConfigListHasBeenSet() const
+{
+    return m_configListHasBeenSet;
 }
 
 

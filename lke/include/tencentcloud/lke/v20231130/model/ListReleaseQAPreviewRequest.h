@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return BotBizId 应用ID
+                     * 获取应用ID（获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)）
+                     * @return BotBizId 应用ID（获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)）
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _botBizId 应用ID
+                     * 设置应用ID（获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)）
+                     * @param _botBizId 应用ID（获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)）
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BotBizIdHasBeenSet() const;
 
                     /**
-                     * 获取页码
-                     * @return PageNumber 页码
+                     * 获取页码（必须大于0）
+                     * @return PageNumber 页码（必须大于0）
                      * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
-                     * 设置页码
-                     * @param _pageNumber 页码
+                     * 设置页码（必须大于0）
+                     * @param _pageNumber 页码（必须大于0）
                      * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取每页数量
-                     * @return PageSize 每页数量
+                     * 获取每页数量（取值范围为1-200）
+                     * @return PageSize 每页数量（取值范围为1-200）
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置每页数量
-                     * @param _pageSize 每页数量
+                     * 设置每页数量（取值范围为1-200）
+                     * @param _pageSize 每页数量（取值范围为1-200）
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取查询内容
-                     * @return Query 查询内容
+                     * 获取查询内容关键字，用于模糊查询，若未提供该参数，默认为查询全部。
+                     * @return Query 查询内容关键字，用于模糊查询，若未提供该参数，默认为查询全部。
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
-                     * 设置查询内容
-                     * @param _query 查询内容
+                     * 设置查询内容关键字，用于模糊查询，若未提供该参数，默认为查询全部。
+                     * @param _query 查询内容关键字，用于模糊查询，若未提供该参数，默认为查询全部。
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取发布单ID
-                     * @return ReleaseBizId 发布单ID
+                     * 获取发布单ID（可以通过[ListRelease](https://cloud.tencent.com/document/product/1759/105077)获得）
+                     * @return ReleaseBizId 发布单ID（可以通过[ListRelease](https://cloud.tencent.com/document/product/1759/105077)获得）
                      * 
                      */
                     std::string GetReleaseBizId() const;
 
                     /**
-                     * 设置发布单ID
-                     * @param _releaseBizId 发布单ID
+                     * 设置发布单ID（可以通过[ListRelease](https://cloud.tencent.com/document/product/1759/105077)获得）
+                     * @param _releaseBizId 发布单ID（可以通过[ListRelease](https://cloud.tencent.com/document/product/1759/105077)获得）
                      * 
                      */
                     void SetReleaseBizId(const std::string& _releaseBizId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ReleaseBizIdHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取开始时间。Unix 时间戳，单位是秒，默认为空。
+                     * @return StartTime 开始时间。Unix 时间戳，单位是秒，默认为空。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置开始时间。Unix 时间戳，单位是秒，默认为空。
+                     * @param _startTime 开始时间。Unix 时间戳，单位是秒，默认为空。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间。Unix 时间戳，单位是秒，默认为空。
+                     * @return EndTime 结束时间。Unix 时间戳，单位是秒，默认为空。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置结束时间。Unix 时间戳，单位是秒，默认为空。
+                     * @param _endTime 结束时间。Unix 时间戳，单位是秒，默认为空。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取状态(1新增2修改3删除)
-                     * @return Actions 状态(1新增2修改3删除)
+                     * 获取状态(1新增2修改3删除)，其和ReleaseStatus的区别为：Actions表示的是对数据/内容的操作状态，ReleaseStatus表示数据/内容本身的发布状态
+                     * @return Actions 状态(1新增2修改3删除)，其和ReleaseStatus的区别为：Actions表示的是对数据/内容的操作状态，ReleaseStatus表示数据/内容本身的发布状态
                      * 
                      */
                     std::vector<uint64_t> GetActions() const;
 
                     /**
-                     * 设置状态(1新增2修改3删除)
-                     * @param _actions 状态(1新增2修改3删除)
+                     * 设置状态(1新增2修改3删除)，其和ReleaseStatus的区别为：Actions表示的是对数据/内容的操作状态，ReleaseStatus表示数据/内容本身的发布状态
+                     * @param _actions 状态(1新增2修改3删除)，其和ReleaseStatus的区别为：Actions表示的是对数据/内容的操作状态，ReleaseStatus表示数据/内容本身的发布状态
                      * 
                      */
                     void SetActions(const std::vector<uint64_t>& _actions);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool ActionsHasBeenSet() const;
 
                     /**
-                     * 获取发布状态(4发布成功5发布失败)
-                     * @return ReleaseStatus 发布状态(4发布成功5发布失败)
+                     * 获取发布状态(4发布成功5发布失败)。其和Actions的区别为：Actions表示的是对数据/内容的操作状态，ReleaseStatus表示数据/内容本身的发布状态
+                     * @return ReleaseStatus 发布状态(4发布成功5发布失败)。其和Actions的区别为：Actions表示的是对数据/内容的操作状态，ReleaseStatus表示数据/内容本身的发布状态
                      * 
                      */
                     std::vector<uint64_t> GetReleaseStatus() const;
 
                     /**
-                     * 设置发布状态(4发布成功5发布失败)
-                     * @param _releaseStatus 发布状态(4发布成功5发布失败)
+                     * 设置发布状态(4发布成功5发布失败)。其和Actions的区别为：Actions表示的是对数据/内容的操作状态，ReleaseStatus表示数据/内容本身的发布状态
+                     * @param _releaseStatus 发布状态(4发布成功5发布失败)。其和Actions的区别为：Actions表示的是对数据/内容的操作状态，ReleaseStatus表示数据/内容本身的发布状态
                      * 
                      */
                     void SetReleaseStatus(const std::vector<uint64_t>& _releaseStatus);
@@ -234,55 +234,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID
+                     * 应用ID（获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)）
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
 
                     /**
-                     * 页码
+                     * 页码（必须大于0）
                      */
                     uint64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 每页数量
+                     * 每页数量（取值范围为1-200）
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 查询内容
+                     * 查询内容关键字，用于模糊查询，若未提供该参数，默认为查询全部。
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 发布单ID
+                     * 发布单ID（可以通过[ListRelease](https://cloud.tencent.com/document/product/1759/105077)获得）
                      */
                     std::string m_releaseBizId;
                     bool m_releaseBizIdHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * 开始时间。Unix 时间戳，单位是秒，默认为空。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间。Unix 时间戳，单位是秒，默认为空。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 状态(1新增2修改3删除)
+                     * 状态(1新增2修改3删除)，其和ReleaseStatus的区别为：Actions表示的是对数据/内容的操作状态，ReleaseStatus表示数据/内容本身的发布状态
                      */
                     std::vector<uint64_t> m_actions;
                     bool m_actionsHasBeenSet;
 
                     /**
-                     * 发布状态(4发布成功5发布失败)
+                     * 发布状态(4发布成功5发布失败)。其和Actions的区别为：Actions表示的是对数据/内容的操作状态，ReleaseStatus表示数据/内容本身的发布状态
                      */
                     std::vector<uint64_t> m_releaseStatus;
                     bool m_releaseStatusHasBeenSet;

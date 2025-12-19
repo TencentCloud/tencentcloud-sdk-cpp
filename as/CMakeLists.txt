@@ -128,6 +128,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/CreateLifecycleHookRequest.h
   include/tencentcloud/as/v20180419/model/ScheduledAction.h
   include/tencentcloud/as/v20180419/model/ModifyLifecycleHookRequest.h
+  include/tencentcloud/as/v20180419/model/UpgradeLifecycleHookRequest.h
   include/tencentcloud/as/v20180419/model/CompleteLifecycleActionResponse.h
   include/tencentcloud/as/v20180419/model/ScaleOutInstancesResponse.h
   include/tencentcloud/as/v20180419/model/RefreshSettings.h
@@ -168,7 +169,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/StopInstanceRefreshResponse.h
   include/tencentcloud/as/v20180419/model/AttachLoadBalancersRequest.h
   include/tencentcloud/as/v20180419/model/SpotMixedAllocationPolicy.h
-  include/tencentcloud/as/v20180419/model/UpgradeLifecycleHookRequest.h
+  include/tencentcloud/as/v20180419/model/HostNameIndexSettings.h
   include/tencentcloud/as/v20180419/model/ResumeInstanceRefreshResponse.h
   include/tencentcloud/as/v20180419/model/DescribeScalingPoliciesResponse.h
   include/tencentcloud/as/v20180419/model/Activity.h
@@ -298,6 +299,7 @@ set(as_src
   src/v20180419/model/CreateLifecycleHookRequest.cpp
   src/v20180419/model/ScheduledAction.cpp
   src/v20180419/model/ModifyLifecycleHookRequest.cpp
+  src/v20180419/model/UpgradeLifecycleHookRequest.cpp
   src/v20180419/model/CompleteLifecycleActionResponse.cpp
   src/v20180419/model/ScaleOutInstancesResponse.cpp
   src/v20180419/model/RefreshSettings.cpp
@@ -338,7 +340,7 @@ set(as_src
   src/v20180419/model/StopInstanceRefreshResponse.cpp
   src/v20180419/model/AttachLoadBalancersRequest.cpp
   src/v20180419/model/SpotMixedAllocationPolicy.cpp
-  src/v20180419/model/UpgradeLifecycleHookRequest.cpp
+  src/v20180419/model/HostNameIndexSettings.cpp
   src/v20180419/model/ResumeInstanceRefreshResponse.cpp
   src/v20180419/model/DescribeScalingPoliciesResponse.cpp
   src/v20180419/model/Activity.cpp

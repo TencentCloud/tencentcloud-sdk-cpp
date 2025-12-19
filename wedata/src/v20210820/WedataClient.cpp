@@ -6240,6 +6240,56 @@ WedataClient::DescribeIntegrationVersionNodesInfoOutcomeCallable WedataClient::D
     return prom->get_future();
 }
 
+WedataClient::DescribeLineageInfoOutcome WedataClient::DescribeLineageInfo(const DescribeLineageInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLineageInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLineageInfoResponse rsp = DescribeLineageInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLineageInfoOutcome(rsp);
+        else
+            return DescribeLineageInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLineageInfoOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeLineageInfoAsync(const DescribeLineageInfoRequest& request, const DescribeLineageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLineageInfoRequest&;
+    using Resp = DescribeLineageInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLineageInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::DescribeLineageInfoOutcomeCallable WedataClient::DescribeLineageInfoCallable(const DescribeLineageInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLineageInfoOutcome>>();
+    DescribeLineageInfoAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DescribeLineageInfoRequest&,
+        DescribeLineageInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::DescribeManualTriggerRecordPageOutcome WedataClient::DescribeManualTriggerRecordPage(const DescribeManualTriggerRecordPageRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeManualTriggerRecordPage");

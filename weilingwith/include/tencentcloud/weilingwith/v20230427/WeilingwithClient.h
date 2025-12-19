@@ -65,8 +65,6 @@
 #include <tencentcloud/weilingwith/v20230427/model/DescribeBuildingProfileResponse.h>
 #include <tencentcloud/weilingwith/v20230427/model/DescribeCameraExtendInfoRequest.h>
 #include <tencentcloud/weilingwith/v20230427/model/DescribeCameraExtendInfoResponse.h>
-#include <tencentcloud/weilingwith/v20230427/model/DescribeCityWorkspaceListRequest.h>
-#include <tencentcloud/weilingwith/v20230427/model/DescribeCityWorkspaceListResponse.h>
 #include <tencentcloud/weilingwith/v20230427/model/DescribeDeviceGroupListRequest.h>
 #include <tencentcloud/weilingwith/v20230427/model/DescribeDeviceGroupListResponse.h>
 #include <tencentcloud/weilingwith/v20230427/model/DescribeDeviceListRequest.h>
@@ -228,9 +226,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCameraExtendInfoResponse> DescribeCameraExtendInfoOutcome;
                 typedef std::future<DescribeCameraExtendInfoOutcome> DescribeCameraExtendInfoOutcomeCallable;
                 typedef std::function<void(const WeilingwithClient*, const Model::DescribeCameraExtendInfoRequest&, DescribeCameraExtendInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCameraExtendInfoAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeCityWorkspaceListResponse> DescribeCityWorkspaceListOutcome;
-                typedef std::future<DescribeCityWorkspaceListOutcome> DescribeCityWorkspaceListOutcomeCallable;
-                typedef std::function<void(const WeilingwithClient*, const Model::DescribeCityWorkspaceListRequest&, DescribeCityWorkspaceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCityWorkspaceListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceGroupListResponse> DescribeDeviceGroupListOutcome;
                 typedef std::future<DescribeDeviceGroupListOutcome> DescribeDeviceGroupListOutcomeCallable;
                 typedef std::function<void(const WeilingwithClient*, const Model::DescribeDeviceGroupListRequest&, DescribeDeviceGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceGroupListAsyncHandler;
@@ -548,17 +543,6 @@ namespace TencentCloud
                 DescribeCameraExtendInfoOutcome DescribeCameraExtendInfo(const Model::DescribeCameraExtendInfoRequest &request);
                 void DescribeCameraExtendInfoAsync(const Model::DescribeCameraExtendInfoRequest& request, const DescribeCameraExtendInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCameraExtendInfoOutcomeCallable DescribeCameraExtendInfoCallable(const Model::DescribeCameraExtendInfoRequest& request);
-
-                /**
-                 *老微瓴后续不继续更新
-
-通过城市id查询工作空间列表
-                 * @param req DescribeCityWorkspaceListRequest
-                 * @return DescribeCityWorkspaceListOutcome
-                 */
-                DescribeCityWorkspaceListOutcome DescribeCityWorkspaceList(const Model::DescribeCityWorkspaceListRequest &request);
-                void DescribeCityWorkspaceListAsync(const Model::DescribeCityWorkspaceListRequest& request, const DescribeCityWorkspaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeCityWorkspaceListOutcomeCallable DescribeCityWorkspaceListCallable(const Model::DescribeCityWorkspaceListRequest& request);
 
                 /**
                  *设备分组列表

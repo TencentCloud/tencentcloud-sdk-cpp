@@ -26,7 +26,8 @@ VerifyQARequest::VerifyQARequest() :
     m_listHasBeenSet(false),
     m_botBizIdHasBeenSet(false),
     m_loginUinHasBeenSet(false),
-    m_loginSubAccountUinHasBeenSet(false)
+    m_loginSubAccountUinHasBeenSet(false),
+    m_knowledgeBizIdHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,14 @@ string VerifyQARequest::ToJsonString() const
         string key = "LoginSubAccountUin";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_loginSubAccountUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_knowledgeBizIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeBizId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_knowledgeBizId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -146,6 +155,22 @@ void VerifyQARequest::SetLoginSubAccountUin(const string& _loginSubAccountUin)
 bool VerifyQARequest::LoginSubAccountUinHasBeenSet() const
 {
     return m_loginSubAccountUinHasBeenSet;
+}
+
+string VerifyQARequest::GetKnowledgeBizId() const
+{
+    return m_knowledgeBizId;
+}
+
+void VerifyQARequest::SetKnowledgeBizId(const string& _knowledgeBizId)
+{
+    m_knowledgeBizId = _knowledgeBizId;
+    m_knowledgeBizIdHasBeenSet = true;
+}
+
+bool VerifyQARequest::KnowledgeBizIdHasBeenSet() const
+{
+    return m_knowledgeBizIdHasBeenSet;
 }
 
 

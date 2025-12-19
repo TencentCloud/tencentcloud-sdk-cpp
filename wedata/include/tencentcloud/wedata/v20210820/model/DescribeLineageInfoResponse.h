@@ -14,60 +14,60 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_WEILINGWITH_V20230427_MODEL_DESCRIBECITYWORKSPACELISTRESPONSE_H_
-#define TENCENTCLOUD_WEILINGWITH_V20230427_MODEL_DESCRIBECITYWORKSPACELISTRESPONSE_H_
+#ifndef TENCENTCLOUD_WEDATA_V20210820_MODEL_DESCRIBELINEAGEINFORESPONSE_H_
+#define TENCENTCLOUD_WEDATA_V20210820_MODEL_DESCRIBELINEAGEINFORESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/weilingwith/v20230427/model/DescribeCityWorkspaceListRes.h>
+#include <tencentcloud/wedata/v20210820/model/LineageCommonInfoVO.h>
 
 
 namespace TencentCloud
 {
-    namespace Weilingwith
+    namespace Wedata
     {
-        namespace V20230427
+        namespace V20210820
         {
             namespace Model
             {
                 /**
-                * DescribeCityWorkspaceList返回参数结构体
+                * DescribeLineageInfo返回参数结构体
                 */
-                class DescribeCityWorkspaceListResponse : public AbstractModel
+                class DescribeLineageInfoResponse : public AbstractModel
                 {
                 public:
-                    DescribeCityWorkspaceListResponse();
-                    ~DescribeCityWorkspaceListResponse() = default;
+                    DescribeLineageInfoResponse();
+                    ~DescribeLineageInfoResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取工作空间信息集合
+                     * 获取血缘信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Result 工作空间信息集合
+                     * @return Data 血缘信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    DescribeCityWorkspaceListRes GetResult() const;
+                    LineageCommonInfoVO GetData() const;
 
                     /**
-                     * 判断参数 Result 是否已赋值
-                     * @return Result 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      * 
                      */
-                    bool ResultHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 工作空间信息集合
+                     * 血缘信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    DescribeCityWorkspaceListRes m_result;
-                    bool m_resultHasBeenSet;
+                    LineageCommonInfoVO m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }
@@ -75,4 +75,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_WEILINGWITH_V20230427_MODEL_DESCRIBECITYWORKSPACELISTRESPONSE_H_
+#endif // !TENCENTCLOUD_WEDATA_V20210820_MODEL_DESCRIBELINEAGEINFORESPONSE_H_

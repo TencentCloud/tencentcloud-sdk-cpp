@@ -47,7 +47,9 @@ CreateAutoScalingGroupRequest::CreateAutoScalingGroupRequest() :
     m_instanceAllocationPolicyHasBeenSet(false),
     m_spotMixedAllocationPolicyHasBeenSet(false),
     m_capacityRebalanceHasBeenSet(false),
-    m_instanceNameIndexSettingsHasBeenSet(false)
+    m_instanceNameIndexSettingsHasBeenSet(false),
+    m_hostNameIndexSettingsHasBeenSet(false),
+    m_concurrentScaleOutForDesiredCapacityHasBeenSet(false)
 {
 }
 
@@ -293,6 +295,23 @@ string CreateAutoScalingGroupRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_instanceNameIndexSettings.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_hostNameIndexSettingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostNameIndexSettings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_hostNameIndexSettings.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_concurrentScaleOutForDesiredCapacityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConcurrentScaleOutForDesiredCapacity";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_concurrentScaleOutForDesiredCapacity, allocator);
     }
 
 
@@ -701,6 +720,38 @@ void CreateAutoScalingGroupRequest::SetInstanceNameIndexSettings(const InstanceN
 bool CreateAutoScalingGroupRequest::InstanceNameIndexSettingsHasBeenSet() const
 {
     return m_instanceNameIndexSettingsHasBeenSet;
+}
+
+HostNameIndexSettings CreateAutoScalingGroupRequest::GetHostNameIndexSettings() const
+{
+    return m_hostNameIndexSettings;
+}
+
+void CreateAutoScalingGroupRequest::SetHostNameIndexSettings(const HostNameIndexSettings& _hostNameIndexSettings)
+{
+    m_hostNameIndexSettings = _hostNameIndexSettings;
+    m_hostNameIndexSettingsHasBeenSet = true;
+}
+
+bool CreateAutoScalingGroupRequest::HostNameIndexSettingsHasBeenSet() const
+{
+    return m_hostNameIndexSettingsHasBeenSet;
+}
+
+bool CreateAutoScalingGroupRequest::GetConcurrentScaleOutForDesiredCapacity() const
+{
+    return m_concurrentScaleOutForDesiredCapacity;
+}
+
+void CreateAutoScalingGroupRequest::SetConcurrentScaleOutForDesiredCapacity(const bool& _concurrentScaleOutForDesiredCapacity)
+{
+    m_concurrentScaleOutForDesiredCapacity = _concurrentScaleOutForDesiredCapacity;
+    m_concurrentScaleOutForDesiredCapacityHasBeenSet = true;
+}
+
+bool CreateAutoScalingGroupRequest::ConcurrentScaleOutForDesiredCapacityHasBeenSet() const
+{
+    return m_concurrentScaleOutForDesiredCapacityHasBeenSet;
 }
 
 

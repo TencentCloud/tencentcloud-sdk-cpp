@@ -27,6 +27,8 @@
 #include <tencentcloud/evt/v20250217/model/CompleteApprovalResponse.h>
 #include <tencentcloud/evt/v20250217/model/CreateRoleUserRequest.h>
 #include <tencentcloud/evt/v20250217/model/CreateRoleUserResponse.h>
+#include <tencentcloud/evt/v20250217/model/DeleteRoleUserRequest.h>
+#include <tencentcloud/evt/v20250217/model/DeleteRoleUserResponse.h>
 
 
 namespace TencentCloud
@@ -47,6 +49,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRoleUserResponse> CreateRoleUserOutcome;
                 typedef std::future<CreateRoleUserOutcome> CreateRoleUserOutcomeCallable;
                 typedef std::function<void(const EvtClient*, const Model::CreateRoleUserRequest&, CreateRoleUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoleUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRoleUserResponse> DeleteRoleUserOutcome;
+                typedef std::future<DeleteRoleUserOutcome> DeleteRoleUserOutcomeCallable;
+                typedef std::function<void(const EvtClient*, const Model::DeleteRoleUserRequest&, DeleteRoleUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoleUserAsyncHandler;
 
 
 
@@ -67,6 +72,15 @@ namespace TencentCloud
                 CreateRoleUserOutcome CreateRoleUser(const Model::CreateRoleUserRequest &request);
                 void CreateRoleUserAsync(const Model::CreateRoleUserRequest& request, const CreateRoleUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateRoleUserOutcomeCallable CreateRoleUserCallable(const Model::CreateRoleUserRequest& request);
+
+                /**
+                 *删除自定义用户
+                 * @param req DeleteRoleUserRequest
+                 * @return DeleteRoleUserOutcome
+                 */
+                DeleteRoleUserOutcome DeleteRoleUser(const Model::DeleteRoleUserRequest &request);
+                void DeleteRoleUserAsync(const Model::DeleteRoleUserRequest& request, const DeleteRoleUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRoleUserOutcomeCallable DeleteRoleUserCallable(const Model::DeleteRoleUserRequest& request);
 
             };
         }

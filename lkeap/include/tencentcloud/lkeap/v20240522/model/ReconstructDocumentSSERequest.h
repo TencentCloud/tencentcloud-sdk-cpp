@@ -164,23 +164,15 @@ namespace TencentCloud
                     bool FileStartPageNumberHasBeenSet() const;
 
                     /**
-                     * 获取说明：文档的结束页码。
-备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。
-默认值：无
-                     * @return FileEndPageNumber 说明：文档的结束页码。
-备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。
-默认值：无
+                     * 获取说明：文档的结束页码。备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值，文档页码大于100页建议使用异步解析接入。默认值：无
+                     * @return FileEndPageNumber 说明：文档的结束页码。备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值，文档页码大于100页建议使用异步解析接入。默认值：无
                      * 
                      */
                     int64_t GetFileEndPageNumber() const;
 
                     /**
-                     * 设置说明：文档的结束页码。
-备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。
-默认值：无
-                     * @param _fileEndPageNumber 说明：文档的结束页码。
-备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。
-默认值：无
+                     * 设置说明：文档的结束页码。备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值，文档页码大于100页建议使用异步解析接入。默认值：无
+                     * @param _fileEndPageNumber 说明：文档的结束页码。备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值，文档页码大于100页建议使用异步解析接入。默认值：无
                      * 
                      */
                     void SetFileEndPageNumber(const int64_t& _fileEndPageNumber);
@@ -261,9 +253,7 @@ namespace TencentCloud
                     bool m_fileStartPageNumberHasBeenSet;
 
                     /**
-                     * 说明：文档的结束页码。
-备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。
-默认值：无
+                     * 说明：文档的结束页码。备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值，文档页码大于100页建议使用异步解析接入。默认值：无
                      */
                     int64_t m_fileEndPageNumber;
                     bool m_fileEndPageNumberHasBeenSet;
