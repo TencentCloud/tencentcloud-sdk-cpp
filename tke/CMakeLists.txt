@@ -728,6 +728,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20220501/model/HealthCheckTemplateRule.h
   include/tencentcloud/tke/v20220501/model/DescribeClustersRequest.h
   include/tencentcloud/tke/v20220501/model/GPUConfig.h
+  include/tencentcloud/tke/v20220501/model/DescribeClusterMachinesRequest.h
   include/tencentcloud/tke/v20220501/model/HealthCheckPolicyRule.h
   include/tencentcloud/tke/v20220501/model/DeleteHealthCheckPolicyRequest.h
   include/tencentcloud/tke/v20220501/model/CreateNodePoolResponse.h
@@ -759,10 +760,12 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20220501/model/ModifyNodePoolRequest.h
   include/tencentcloud/tke/v20220501/model/SuperNodeInfo.h
   include/tencentcloud/tke/v20220501/model/UpdateNativeNodePoolParam.h
+  include/tencentcloud/tke/v20220501/model/DeleteNodePoolRequest.h
   include/tencentcloud/tke/v20220501/model/Annotation.h
   include/tencentcloud/tke/v20220501/model/ModifyClusterMachineResponse.h
   include/tencentcloud/tke/v20220501/model/DescribeClusterInstancesRequest.h
   include/tencentcloud/tke/v20220501/model/DeleteHealthCheckPolicyResponse.h
+  include/tencentcloud/tke/v20220501/model/Machine.h
   include/tencentcloud/tke/v20220501/model/SetMachineLoginRequest.h
   include/tencentcloud/tke/v20220501/model/GPUParams.h
   include/tencentcloud/tke/v20220501/model/DeleteClusterMachinesRequest.h
@@ -781,7 +784,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20220501/model/NativeNodePoolInfo.h
   include/tencentcloud/tke/v20220501/model/DescribeNodePoolsRequest.h
   include/tencentcloud/tke/v20220501/model/NodePool.h
-  include/tencentcloud/tke/v20220501/model/DeleteNodePoolRequest.h
+  include/tencentcloud/tke/v20220501/model/DescribeClusterMachinesResponse.h
   include/tencentcloud/tke/v20220501/model/InstanceAdvancedSettings.h
   include/tencentcloud/tke/v20220501/model/IntOrString.h
   include/tencentcloud/tke/v20220501/model/ExternalNodePoolInfo.h
@@ -1514,6 +1517,7 @@ set(tke_src
   src/v20220501/model/HealthCheckTemplateRule.cpp
   src/v20220501/model/DescribeClustersRequest.cpp
   src/v20220501/model/GPUConfig.cpp
+  src/v20220501/model/DescribeClusterMachinesRequest.cpp
   src/v20220501/model/HealthCheckPolicyRule.cpp
   src/v20220501/model/DeleteHealthCheckPolicyRequest.cpp
   src/v20220501/model/CreateNodePoolResponse.cpp
@@ -1545,10 +1549,12 @@ set(tke_src
   src/v20220501/model/ModifyNodePoolRequest.cpp
   src/v20220501/model/SuperNodeInfo.cpp
   src/v20220501/model/UpdateNativeNodePoolParam.cpp
+  src/v20220501/model/DeleteNodePoolRequest.cpp
   src/v20220501/model/Annotation.cpp
   src/v20220501/model/ModifyClusterMachineResponse.cpp
   src/v20220501/model/DescribeClusterInstancesRequest.cpp
   src/v20220501/model/DeleteHealthCheckPolicyResponse.cpp
+  src/v20220501/model/Machine.cpp
   src/v20220501/model/SetMachineLoginRequest.cpp
   src/v20220501/model/GPUParams.cpp
   src/v20220501/model/DeleteClusterMachinesRequest.cpp
@@ -1567,7 +1573,7 @@ set(tke_src
   src/v20220501/model/NativeNodePoolInfo.cpp
   src/v20220501/model/DescribeNodePoolsRequest.cpp
   src/v20220501/model/NodePool.cpp
-  src/v20220501/model/DeleteNodePoolRequest.cpp
+  src/v20220501/model/DescribeClusterMachinesResponse.cpp
   src/v20220501/model/InstanceAdvancedSettings.cpp
   src/v20220501/model/IntOrString.cpp
   src/v20220501/model/ExternalNodePoolInfo.cpp

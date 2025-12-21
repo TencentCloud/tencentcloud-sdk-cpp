@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导播台ID。
-                     * @return CasterId 导播台ID。
+                     * 获取<p>导播台ID。</p>
+                     * @return CasterId <p>导播台ID。</p>
                      * 
                      */
                     uint64_t GetCasterId() const;
 
                     /**
-                     * 设置导播台ID。
-                     * @param _casterId 导播台ID。
+                     * 设置<p>导播台ID。</p>
+                     * @param _casterId <p>导播台ID。</p>
                      * 
                      */
                     void SetCasterId(const uint64_t& _casterId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool CasterIdHasBeenSet() const;
 
                     /**
-                     * 获取修改的导播台输入源信息
-                     * @return InputInfo 修改的导播台输入源信息
+                     * 获取<p>修改的导播台输入源信息</p>
+                     * @return InputInfo <p>修改的导播台输入源信息</p>
                      * 
                      */
                     CasterInputInfo GetInputInfo() const;
 
                     /**
-                     * 设置修改的导播台输入源信息
-                     * @param _inputInfo 修改的导播台输入源信息
+                     * 设置<p>修改的导播台输入源信息</p>
+                     * @param _inputInfo <p>修改的导播台输入源信息</p>
                      * 
                      */
                     void SetInputInfo(const CasterInputInfo& _inputInfo);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 导播台ID。
+                     * <p>导播台ID。</p>
                      */
                     uint64_t m_casterId;
                     bool m_casterIdHasBeenSet;
 
                     /**
-                     * 修改的导播台输入源信息
+                     * <p>修改的导播台输入源信息</p>
                      */
                     CasterInputInfo m_inputInfo;
                     bool m_inputInfoHasBeenSet;

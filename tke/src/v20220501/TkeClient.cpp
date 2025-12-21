@@ -340,6 +340,56 @@ TkeClient::DescribeClusterInstancesOutcomeCallable TkeClient::DescribeClusterIns
     return prom->get_future();
 }
 
+TkeClient::DescribeClusterMachinesOutcome TkeClient::DescribeClusterMachines(const DescribeClusterMachinesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterMachines");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterMachinesResponse rsp = DescribeClusterMachinesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterMachinesOutcome(rsp);
+        else
+            return DescribeClusterMachinesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterMachinesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterMachinesAsync(const DescribeClusterMachinesRequest& request, const DescribeClusterMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeClusterMachinesRequest&;
+    using Resp = DescribeClusterMachinesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterMachines", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DescribeClusterMachinesOutcomeCallable TkeClient::DescribeClusterMachinesCallable(const DescribeClusterMachinesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeClusterMachinesOutcome>>();
+    DescribeClusterMachinesAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterMachinesRequest&,
+        DescribeClusterMachinesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::DescribeClustersOutcome TkeClient::DescribeClusters(const DescribeClustersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusters");

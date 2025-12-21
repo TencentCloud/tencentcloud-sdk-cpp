@@ -44,10 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取rtmp协议输入源播放地址。
-注：仅可作为预览使用，不可分发。
-                     * @return InputPlayUrl rtmp协议输入源播放地址。
-注：仅可作为预览使用，不可分发。
+                     * 获取<p>rtmp协议输入源播放地址。注：仅可作为预览使用，不可分发。</p>
+                     * @return InputPlayUrl <p>rtmp协议输入源播放地址。注：仅可作为预览使用，不可分发。</p>
                      * 
                      */
                     std::string GetInputPlayUrl() const;
@@ -60,14 +58,8 @@ namespace TencentCloud
                     bool InputPlayUrlHasBeenSet() const;
 
                     /**
-                     * 获取webrtc协议播放地址。
-注：
-1. 需配合使用腾讯云快直播播放SDK使用才可正常播放。
-2. 仅作为预览使用，不可分发。
-                     * @return InputWebRTCPlayUrl webrtc协议播放地址。
-注：
-1. 需配合使用腾讯云快直播播放SDK使用才可正常播放。
-2. 仅作为预览使用，不可分发。
+                     * 获取<p>webrtc协议播放地址。注：1. 需配合使用腾讯云快直播播放SDK使用才可正常播放。2. 仅作为预览使用，不可分发。</p>
+                     * @return InputWebRTCPlayUrl <p>webrtc协议播放地址。注：1. 需配合使用腾讯云快直播播放SDK使用才可正常播放。2. 仅作为预览使用，不可分发。</p>
                      * 
                      */
                     std::string GetInputWebRTCPlayUrl() const;
@@ -82,17 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * rtmp协议输入源播放地址。
-注：仅可作为预览使用，不可分发。
+                     * <p>rtmp协议输入源播放地址。注：仅可作为预览使用，不可分发。</p>
                      */
                     std::string m_inputPlayUrl;
                     bool m_inputPlayUrlHasBeenSet;
 
                     /**
-                     * webrtc协议播放地址。
-注：
-1. 需配合使用腾讯云快直播播放SDK使用才可正常播放。
-2. 仅作为预览使用，不可分发。
+                     * <p>webrtc协议播放地址。注：1. 需配合使用腾讯云快直播播放SDK使用才可正常播放。2. 仅作为预览使用，不可分发。</p>
                      */
                     std::string m_inputWebRTCPlayUrl;
                     bool m_inputWebRTCPlayUrlHasBeenSet;

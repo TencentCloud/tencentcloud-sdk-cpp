@@ -890,6 +890,56 @@ TdaiClient::RemoveChatOutcomeCallable TdaiClient::RemoveChatCallable(const Remov
     return prom->get_future();
 }
 
+TdaiClient::StartAgentTaskOutcome TdaiClient::StartAgentTask(const StartAgentTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartAgentTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartAgentTaskResponse rsp = StartAgentTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartAgentTaskOutcome(rsp);
+        else
+            return StartAgentTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return StartAgentTaskOutcome(outcome.GetError());
+    }
+}
+
+void TdaiClient::StartAgentTaskAsync(const StartAgentTaskRequest& request, const StartAgentTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StartAgentTaskRequest&;
+    using Resp = StartAgentTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StartAgentTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdaiClient::StartAgentTaskOutcomeCallable TdaiClient::StartAgentTaskCallable(const StartAgentTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StartAgentTaskOutcome>>();
+    StartAgentTaskAsync(
+    request,
+    [prom](
+        const TdaiClient*,
+        const StartAgentTaskRequest&,
+        StartAgentTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TdaiClient::TerminateAgentInstanceOutcome TdaiClient::TerminateAgentInstance(const TerminateAgentInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "TerminateAgentInstance");

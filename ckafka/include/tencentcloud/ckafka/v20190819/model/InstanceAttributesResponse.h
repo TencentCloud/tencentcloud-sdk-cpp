@@ -52,15 +52,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id
-                     * @return InstanceId ckafka集群实例Id
+                     * 获取<p>ckafka集群实例Id</p>
+                     * @return InstanceId <p>ckafka集群实例Id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id
-                     * @param _instanceId ckafka集群实例Id
+                     * 设置<p>ckafka集群实例Id</p>
+                     * @param _instanceId <p>ckafka集群实例Id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -73,15 +73,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取ckafka集群实例Name
-                     * @return InstanceName ckafka集群实例Name
+                     * 获取<p>ckafka集群实例Name</p>
+                     * @return InstanceName <p>ckafka集群实例Name</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置ckafka集群实例Name
-                     * @param _instanceName ckafka集群实例Name
+                     * 设置<p>ckafka集群实例Name</p>
+                     * @param _instanceName <p>ckafka集群实例Name</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -94,15 +94,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取接入点 VIP 列表信息
-                     * @return VipList 接入点 VIP 列表信息
+                     * 获取<p>接入点 VIP 列表信息</p>
+                     * @return VipList <p>接入点 VIP 列表信息</p>
                      * 
                      */
                     std::vector<VipEntity> GetVipList() const;
 
                     /**
-                     * 设置接入点 VIP 列表信息
-                     * @param _vipList 接入点 VIP 列表信息
+                     * 设置<p>接入点 VIP 列表信息</p>
+                     * @param _vipList <p>接入点 VIP 列表信息</p>
                      * 
                      */
                     void SetVipList(const std::vector<VipEntity>& _vipList);
@@ -115,15 +115,15 @@ namespace TencentCloud
                     bool VipListHasBeenSet() const;
 
                     /**
-                     * 获取虚拟IP
-                     * @return Vip 虚拟IP
+                     * 获取<p>虚拟IP</p>
+                     * @return Vip <p>虚拟IP</p>
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置虚拟IP
-                     * @param _vip 虚拟IP
+                     * 设置<p>虚拟IP</p>
+                     * @param _vip <p>虚拟IP</p>
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -136,15 +136,15 @@ namespace TencentCloud
                     bool VipHasBeenSet() const;
 
                     /**
-                     * 获取虚拟端口
-                     * @return Vport 虚拟端口
+                     * 获取<p>虚拟端口</p>
+                     * @return Vport <p>虚拟端口</p>
                      * 
                      */
                     std::string GetVport() const;
 
                     /**
-                     * 设置虚拟端口
-                     * @param _vport 虚拟端口
+                     * 设置<p>虚拟端口</p>
+                     * @param _vport <p>虚拟端口</p>
                      * 
                      */
                     void SetVport(const std::string& _vport);
@@ -157,15 +157,15 @@ namespace TencentCloud
                     bool VportHasBeenSet() const;
 
                     /**
-                     * 获取实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 
-                     * @return Status 实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 
+                     * 获取<p>实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 </p>
+                     * @return Status <p>实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 </p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 
-                     * @param _status 实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 
+                     * 设置<p>实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 </p>
+                     * @param _status <p>实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 </p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -178,15 +178,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取实例带宽，单位：Mbps
-                     * @return Bandwidth 实例带宽，单位：Mbps
+                     * 获取<p>实例带宽，单位：Mbps</p>
+                     * @return Bandwidth <p>实例带宽，单位：Mbps</p>
                      * 
                      */
                     int64_t GetBandwidth() const;
 
                     /**
-                     * 设置实例带宽，单位：Mbps
-                     * @param _bandwidth 实例带宽，单位：Mbps
+                     * 设置<p>实例带宽，单位：Mbps</p>
+                     * @param _bandwidth <p>实例带宽，单位：Mbps</p>
                      * 
                      */
                     void SetBandwidth(const int64_t& _bandwidth);
@@ -199,15 +199,15 @@ namespace TencentCloud
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取实例的存储大小，单位：GB
-                     * @return DiskSize 实例的存储大小，单位：GB
+                     * 获取<p>实例的存储大小，单位：GB</p>
+                     * @return DiskSize <p>实例的存储大小，单位：GB</p>
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置实例的存储大小，单位：GB
-                     * @param _diskSize 实例的存储大小，单位：GB
+                     * 设置<p>实例的存储大小，单位：GB</p>
+                     * @param _diskSize <p>实例的存储大小，单位：GB</p>
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -220,15 +220,15 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取可用区
-                     * @return ZoneId 可用区
+                     * 获取<p>可用区</p>
+                     * @return ZoneId <p>可用区</p>
                      * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
-                     * 设置可用区
-                     * @param _zoneId 可用区
+                     * 设置<p>可用区</p>
+                     * @param _zoneId <p>可用区</p>
                      * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
@@ -241,15 +241,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取VPC 的 ID，为空表示是基础网络
-                     * @return VpcId VPC 的 ID，为空表示是基础网络
+                     * 获取<p>VPC 的 ID，为空表示是基础网络</p>
+                     * @return VpcId <p>VPC 的 ID，为空表示是基础网络</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC 的 ID，为空表示是基础网络
-                     * @param _vpcId VPC 的 ID，为空表示是基础网络
+                     * 设置<p>VPC 的 ID，为空表示是基础网络</p>
+                     * @param _vpcId <p>VPC 的 ID，为空表示是基础网络</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -262,15 +262,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网 ID， 为空表示基础网络
-                     * @return SubnetId 子网 ID， 为空表示基础网络
+                     * 获取<p>子网 ID， 为空表示基础网络</p>
+                     * @return SubnetId <p>子网 ID， 为空表示基础网络</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网 ID， 为空表示基础网络
-                     * @param _subnetId 子网 ID， 为空表示基础网络
+                     * 设置<p>子网 ID， 为空表示基础网络</p>
+                     * @param _subnetId <p>子网 ID， 为空表示基础网络</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -283,15 +283,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取实例健康状态， 1：健康，2：告警，3：异常
-                     * @return Healthy 实例健康状态， 1：健康，2：告警，3：异常
+                     * 获取<p>实例健康状态， 1：健康，2：告警，3：异常</p>
+                     * @return Healthy <p>实例健康状态， 1：健康，2：告警，3：异常</p>
                      * 
                      */
                     int64_t GetHealthy() const;
 
                     /**
-                     * 设置实例健康状态， 1：健康，2：告警，3：异常
-                     * @param _healthy 实例健康状态， 1：健康，2：告警，3：异常
+                     * 设置<p>实例健康状态， 1：健康，2：告警，3：异常</p>
+                     * @param _healthy <p>实例健康状态， 1：健康，2：告警，3：异常</p>
                      * 
                      */
                     void SetHealthy(const int64_t& _healthy);
@@ -304,15 +304,15 @@ namespace TencentCloud
                     bool HealthyHasBeenSet() const;
 
                     /**
-                     * 获取实例健康信息，当前会展示磁盘利用率，最大长度为256
-                     * @return HealthyMessage 实例健康信息，当前会展示磁盘利用率，最大长度为256
+                     * 获取<p>实例健康信息，当前会展示磁盘利用率，最大长度为256</p>
+                     * @return HealthyMessage <p>实例健康信息，当前会展示磁盘利用率，最大长度为256</p>
                      * 
                      */
                     std::string GetHealthyMessage() const;
 
                     /**
-                     * 设置实例健康信息，当前会展示磁盘利用率，最大长度为256
-                     * @param _healthyMessage 实例健康信息，当前会展示磁盘利用率，最大长度为256
+                     * 设置<p>实例健康信息，当前会展示磁盘利用率，最大长度为256</p>
+                     * @param _healthyMessage <p>实例健康信息，当前会展示磁盘利用率，最大长度为256</p>
                      * 
                      */
                     void SetHealthyMessage(const std::string& _healthyMessage);
@@ -325,15 +325,15 @@ namespace TencentCloud
                     bool HealthyMessageHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -346,15 +346,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取消息保存时间,单位为分钟
-                     * @return MsgRetentionTime 消息保存时间,单位为分钟
+                     * 获取<p>消息保存时间,单位为分钟</p>
+                     * @return MsgRetentionTime <p>消息保存时间,单位为分钟</p>
                      * 
                      */
                     int64_t GetMsgRetentionTime() const;
 
                     /**
-                     * 设置消息保存时间,单位为分钟
-                     * @param _msgRetentionTime 消息保存时间,单位为分钟
+                     * 设置<p>消息保存时间,单位为分钟</p>
+                     * @param _msgRetentionTime <p>消息保存时间,单位为分钟</p>
                      * 
                      */
                     void SetMsgRetentionTime(const int64_t& _msgRetentionTime);
@@ -367,15 +367,15 @@ namespace TencentCloud
                     bool MsgRetentionTimeHasBeenSet() const;
 
                     /**
-                     * 获取自动创建 Topic 配置， 若该字段为空，则表示未开启自动创建
-                     * @return Config 自动创建 Topic 配置， 若该字段为空，则表示未开启自动创建
+                     * 获取<p>自动创建 Topic 配置， 若该字段为空，则表示未开启自动创建</p>
+                     * @return Config <p>自动创建 Topic 配置， 若该字段为空，则表示未开启自动创建</p>
                      * 
                      */
                     InstanceConfigDO GetConfig() const;
 
                     /**
-                     * 设置自动创建 Topic 配置， 若该字段为空，则表示未开启自动创建
-                     * @param _config 自动创建 Topic 配置， 若该字段为空，则表示未开启自动创建
+                     * 设置<p>自动创建 Topic 配置， 若该字段为空，则表示未开启自动创建</p>
+                     * @param _config <p>自动创建 Topic 配置， 若该字段为空，则表示未开启自动创建</p>
                      * 
                      */
                     void SetConfig(const InstanceConfigDO& _config);
@@ -388,15 +388,15 @@ namespace TencentCloud
                     bool ConfigHasBeenSet() const;
 
                     /**
-                     * 获取剩余创建分区数
-                     * @return RemainderPartitions 剩余创建分区数
+                     * 获取<p>剩余创建分区数</p>
+                     * @return RemainderPartitions <p>剩余创建分区数</p>
                      * 
                      */
                     int64_t GetRemainderPartitions() const;
 
                     /**
-                     * 设置剩余创建分区数
-                     * @param _remainderPartitions 剩余创建分区数
+                     * 设置<p>剩余创建分区数</p>
+                     * @param _remainderPartitions <p>剩余创建分区数</p>
                      * 
                      */
                     void SetRemainderPartitions(const int64_t& _remainderPartitions);
@@ -409,15 +409,15 @@ namespace TencentCloud
                     bool RemainderPartitionsHasBeenSet() const;
 
                     /**
-                     * 获取剩余创建主题数
-                     * @return RemainderTopics 剩余创建主题数
+                     * 获取<p>剩余创建主题数</p>
+                     * @return RemainderTopics <p>剩余创建主题数</p>
                      * 
                      */
                     int64_t GetRemainderTopics() const;
 
                     /**
-                     * 设置剩余创建主题数
-                     * @param _remainderTopics 剩余创建主题数
+                     * 设置<p>剩余创建主题数</p>
+                     * @param _remainderTopics <p>剩余创建主题数</p>
                      * 
                      */
                     void SetRemainderTopics(const int64_t& _remainderTopics);
@@ -430,15 +430,15 @@ namespace TencentCloud
                     bool RemainderTopicsHasBeenSet() const;
 
                     /**
-                     * 获取当前创建分区数
-                     * @return CreatedPartitions 当前创建分区数
+                     * 获取<p>当前创建分区数</p>
+                     * @return CreatedPartitions <p>当前创建分区数</p>
                      * 
                      */
                     int64_t GetCreatedPartitions() const;
 
                     /**
-                     * 设置当前创建分区数
-                     * @param _createdPartitions 当前创建分区数
+                     * 设置<p>当前创建分区数</p>
+                     * @param _createdPartitions <p>当前创建分区数</p>
                      * 
                      */
                     void SetCreatedPartitions(const int64_t& _createdPartitions);
@@ -451,15 +451,15 @@ namespace TencentCloud
                     bool CreatedPartitionsHasBeenSet() const;
 
                     /**
-                     * 获取当前创建主题数
-                     * @return CreatedTopics 当前创建主题数
+                     * 获取<p>当前创建主题数</p>
+                     * @return CreatedTopics <p>当前创建主题数</p>
                      * 
                      */
                     int64_t GetCreatedTopics() const;
 
                     /**
-                     * 设置当前创建主题数
-                     * @param _createdTopics 当前创建主题数
+                     * 设置<p>当前创建主题数</p>
+                     * @param _createdTopics <p>当前创建主题数</p>
                      * 
                      */
                     void SetCreatedTopics(const int64_t& _createdTopics);
@@ -472,15 +472,15 @@ namespace TencentCloud
                     bool CreatedTopicsHasBeenSet() const;
 
                     /**
-                     * 获取标签数组
-                     * @return Tags 标签数组
+                     * 获取<p>标签数组</p>
+                     * @return Tags <p>标签数组</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签数组
-                     * @param _tags 标签数组
+                     * 设置<p>标签数组</p>
+                     * @param _tags <p>标签数组</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -493,15 +493,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取过期时间
-                     * @return ExpireTime 过期时间
+                     * 获取<p>过期时间</p>
+                     * @return ExpireTime <p>过期时间</p>
                      * 
                      */
                     uint64_t GetExpireTime() const;
 
                     /**
-                     * 设置过期时间
-                     * @param _expireTime 过期时间
+                     * 设置<p>过期时间</p>
+                     * @param _expireTime <p>过期时间</p>
                      * 
                      */
                     void SetExpireTime(const uint64_t& _expireTime);
@@ -514,15 +514,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取可用区列表
-                     * @return ZoneIds 可用区列表
+                     * 获取<p>可用区列表</p>
+                     * @return ZoneIds <p>可用区列表</p>
                      * 
                      */
                     std::vector<int64_t> GetZoneIds() const;
 
                     /**
-                     * 设置可用区列表
-                     * @param _zoneIds 可用区列表
+                     * 设置<p>可用区列表</p>
+                     * @param _zoneIds <p>可用区列表</p>
                      * 
                      */
                     void SetZoneIds(const std::vector<int64_t>& _zoneIds);
@@ -535,15 +535,15 @@ namespace TencentCloud
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
-                     * 获取ckafka集群实例版本
-                     * @return Version ckafka集群实例版本
+                     * 获取<p>ckafka集群实例版本</p>
+                     * @return Version <p>ckafka集群实例版本</p>
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
-                     * 设置ckafka集群实例版本
-                     * @param _version ckafka集群实例版本
+                     * 设置<p>ckafka集群实例版本</p>
+                     * @param _version <p>ckafka集群实例版本</p>
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -556,15 +556,15 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取最大分组数
-                     * @return MaxGroupNum 最大分组数
+                     * 获取<p>最大分组数</p>
+                     * @return MaxGroupNum <p>最大分组数</p>
                      * 
                      */
                     int64_t GetMaxGroupNum() const;
 
                     /**
-                     * 设置最大分组数
-                     * @param _maxGroupNum 最大分组数
+                     * 设置<p>最大分组数</p>
+                     * @param _maxGroupNum <p>最大分组数</p>
                      * 
                      */
                     void SetMaxGroupNum(const int64_t& _maxGroupNum);
@@ -577,15 +577,15 @@ namespace TencentCloud
                     bool MaxGroupNumHasBeenSet() const;
 
                     /**
-                     * 获取售卖类型,0:标准版,1:专业版
-                     * @return Cvm 售卖类型,0:标准版,1:专业版
+                     * 获取<p>售卖类型,0:标准版,1:专业版</p>
+                     * @return Cvm <p>售卖类型,0:标准版,1:专业版</p>
                      * 
                      */
                     int64_t GetCvm() const;
 
                     /**
-                     * 设置售卖类型,0:标准版,1:专业版
-                     * @param _cvm 售卖类型,0:标准版,1:专业版
+                     * 设置<p>售卖类型,0:标准版,1:专业版</p>
+                     * @param _cvm <p>售卖类型,0:标准版,1:专业版</p>
                      * 
                      */
                     void SetCvm(const int64_t& _cvm);
@@ -598,31 +598,15 @@ namespace TencentCloud
                     bool CvmHasBeenSet() const;
 
                     /**
-                     * 获取实例类型  枚举列表: 
-profession  :专业版    
-standards2  :标准版
-premium   :高级版
-serverless  :serverless版
-                     * @return InstanceType 实例类型  枚举列表: 
-profession  :专业版    
-standards2  :标准版
-premium   :高级版
-serverless  :serverless版
+                     * 获取<p>实例类型  枚举列表: profession  :专业版  <br />standards2  :标准版premium   :高级版serverless  :serverless版</p>
+                     * @return InstanceType <p>实例类型  枚举列表: profession  :专业版  <br />standards2  :标准版premium   :高级版serverless  :serverless版</p>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置实例类型  枚举列表: 
-profession  :专业版    
-standards2  :标准版
-premium   :高级版
-serverless  :serverless版
-                     * @param _instanceType 实例类型  枚举列表: 
-profession  :专业版    
-standards2  :标准版
-premium   :高级版
-serverless  :serverless版
+                     * 设置<p>实例类型  枚举列表: profession  :专业版  <br />standards2  :标准版premium   :高级版serverless  :serverless版</p>
+                     * @param _instanceType <p>实例类型  枚举列表: profession  :专业版  <br />standards2  :标准版premium   :高级版serverless  :serverless版</p>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -635,15 +619,15 @@ serverless  :serverless版
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取表示该实例支持的特性。FEATURE_SUBNET_ACL:表示acl策略支持设置子网。
-                     * @return Features 表示该实例支持的特性。FEATURE_SUBNET_ACL:表示acl策略支持设置子网。
+                     * 获取<p>表示该实例支持的特性。FEATURE_SUBNET_ACL:表示acl策略支持设置子网。</p>
+                     * @return Features <p>表示该实例支持的特性。FEATURE_SUBNET_ACL:表示acl策略支持设置子网。</p>
                      * 
                      */
                     std::vector<std::string> GetFeatures() const;
 
                     /**
-                     * 设置表示该实例支持的特性。FEATURE_SUBNET_ACL:表示acl策略支持设置子网。
-                     * @param _features 表示该实例支持的特性。FEATURE_SUBNET_ACL:表示acl策略支持设置子网。
+                     * 设置<p>表示该实例支持的特性。FEATURE_SUBNET_ACL:表示acl策略支持设置子网。</p>
+                     * @param _features <p>表示该实例支持的特性。FEATURE_SUBNET_ACL:表示acl策略支持设置子网。</p>
                      * 
                      */
                     void SetFeatures(const std::vector<std::string>& _features);
@@ -656,15 +640,15 @@ serverless  :serverless版
                     bool FeaturesHasBeenSet() const;
 
                     /**
-                     * 获取动态消息保留策略
-                     * @return RetentionTimeConfig 动态消息保留策略
+                     * 获取<p>动态消息保留策略</p>
+                     * @return RetentionTimeConfig <p>动态消息保留策略</p>
                      * 
                      */
                     DynamicRetentionTime GetRetentionTimeConfig() const;
 
                     /**
-                     * 设置动态消息保留策略
-                     * @param _retentionTimeConfig 动态消息保留策略
+                     * 设置<p>动态消息保留策略</p>
+                     * @param _retentionTimeConfig <p>动态消息保留策略</p>
                      * 
                      */
                     void SetRetentionTimeConfig(const DynamicRetentionTime& _retentionTimeConfig);
@@ -677,15 +661,15 @@ serverless  :serverless版
                     bool RetentionTimeConfigHasBeenSet() const;
 
                     /**
-                     * 获取最大连接数
-                     * @return MaxConnection 最大连接数
+                     * 获取<p>最大连接数</p>
+                     * @return MaxConnection <p>最大连接数</p>
                      * 
                      */
                     uint64_t GetMaxConnection() const;
 
                     /**
-                     * 设置最大连接数
-                     * @param _maxConnection 最大连接数
+                     * 设置<p>最大连接数</p>
+                     * @param _maxConnection <p>最大连接数</p>
                      * 
                      */
                     void SetMaxConnection(const uint64_t& _maxConnection);
@@ -698,15 +682,15 @@ serverless  :serverless版
                     bool MaxConnectionHasBeenSet() const;
 
                     /**
-                     * 获取公网带宽
-                     * @return PublicNetwork 公网带宽
+                     * 获取<p>公网带宽</p>
+                     * @return PublicNetwork <p>公网带宽</p>
                      * 
                      */
                     int64_t GetPublicNetwork() const;
 
                     /**
-                     * 设置公网带宽
-                     * @param _publicNetwork 公网带宽
+                     * 设置<p>公网带宽</p>
+                     * @param _publicNetwork <p>公网带宽</p>
                      * 
                      */
                     void SetPublicNetwork(const int64_t& _publicNetwork);
@@ -719,15 +703,15 @@ serverless  :serverless版
                     bool PublicNetworkHasBeenSet() const;
 
                     /**
-                     * 获取该字段已废弃,无实际含义
-                     * @return DeleteRouteTimestamp 该字段已废弃,无实际含义
+                     * 获取<p>该字段已废弃,无实际含义</p>
+                     * @return DeleteRouteTimestamp <p>该字段已废弃,无实际含义</p>
                      * 
                      */
                     std::string GetDeleteRouteTimestamp() const;
 
                     /**
-                     * 设置该字段已废弃,无实际含义
-                     * @param _deleteRouteTimestamp 该字段已废弃,无实际含义
+                     * 设置<p>该字段已废弃,无实际含义</p>
+                     * @param _deleteRouteTimestamp <p>该字段已废弃,无实际含义</p>
                      * 
                      */
                     void SetDeleteRouteTimestamp(const std::string& _deleteRouteTimestamp);
@@ -740,15 +724,15 @@ serverless  :serverless版
                     bool DeleteRouteTimestampHasBeenSet() const;
 
                     /**
-                     * 获取剩余创建分区数
-                     * @return RemainingPartitions 剩余创建分区数
+                     * 获取<p>剩余创建分区数</p>
+                     * @return RemainingPartitions <p>剩余创建分区数</p>
                      * 
                      */
                     int64_t GetRemainingPartitions() const;
 
                     /**
-                     * 设置剩余创建分区数
-                     * @param _remainingPartitions 剩余创建分区数
+                     * 设置<p>剩余创建分区数</p>
+                     * @param _remainingPartitions <p>剩余创建分区数</p>
                      * 
                      */
                     void SetRemainingPartitions(const int64_t& _remainingPartitions);
@@ -761,15 +745,15 @@ serverless  :serverless版
                     bool RemainingPartitionsHasBeenSet() const;
 
                     /**
-                     * 获取剩余创建主题数
-                     * @return RemainingTopics 剩余创建主题数
+                     * 获取<p>剩余创建主题数</p>
+                     * @return RemainingTopics <p>剩余创建主题数</p>
                      * 
                      */
                     int64_t GetRemainingTopics() const;
 
                     /**
-                     * 设置剩余创建主题数
-                     * @param _remainingTopics 剩余创建主题数
+                     * 设置<p>剩余创建主题数</p>
+                     * @param _remainingTopics <p>剩余创建主题数</p>
                      * 
                      */
                     void SetRemainingTopics(const int64_t& _remainingTopics);
@@ -782,15 +766,15 @@ serverless  :serverless版
                     bool RemainingTopicsHasBeenSet() const;
 
                     /**
-                     * 获取动态硬盘扩容策略
-                     * @return DynamicDiskConfig 动态硬盘扩容策略
+                     * 获取<p>动态硬盘扩容策略</p>
+                     * @return DynamicDiskConfig <p>动态硬盘扩容策略</p>
                      * 
                      */
                     DynamicDiskConfig GetDynamicDiskConfig() const;
 
                     /**
-                     * 设置动态硬盘扩容策略
-                     * @param _dynamicDiskConfig 动态硬盘扩容策略
+                     * 设置<p>动态硬盘扩容策略</p>
+                     * @param _dynamicDiskConfig <p>动态硬盘扩容策略</p>
                      * 
                      */
                     void SetDynamicDiskConfig(const DynamicDiskConfig& _dynamicDiskConfig);
@@ -803,15 +787,15 @@ serverless  :serverless版
                     bool DynamicDiskConfigHasBeenSet() const;
 
                     /**
-                     * 获取系统维护时间
-                     * @return SystemMaintenanceTime 系统维护时间
+                     * 获取<p>系统维护时间</p>
+                     * @return SystemMaintenanceTime <p>系统维护时间</p>
                      * 
                      */
                     std::string GetSystemMaintenanceTime() const;
 
                     /**
-                     * 设置系统维护时间
-                     * @param _systemMaintenanceTime 系统维护时间
+                     * 设置<p>系统维护时间</p>
+                     * @param _systemMaintenanceTime <p>系统维护时间</p>
                      * 
                      */
                     void SetSystemMaintenanceTime(const std::string& _systemMaintenanceTime);
@@ -824,15 +808,15 @@ serverless  :serverless版
                     bool SystemMaintenanceTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例级别消息最大大小
-                     * @return MaxMessageByte 实例级别消息最大大小
+                     * 获取<p>实例级别消息最大大小</p>
+                     * @return MaxMessageByte <p>实例级别消息最大大小</p>
                      * 
                      */
                     uint64_t GetMaxMessageByte() const;
 
                     /**
-                     * 设置实例级别消息最大大小
-                     * @param _maxMessageByte 实例级别消息最大大小
+                     * 设置<p>实例级别消息最大大小</p>
+                     * @param _maxMessageByte <p>实例级别消息最大大小</p>
                      * 
                      */
                     void SetMaxMessageByte(const uint64_t& _maxMessageByte);
@@ -845,15 +829,15 @@ serverless  :serverless版
                     bool MaxMessageByteHasBeenSet() const;
 
                     /**
-                     * 获取实例计费类型  POSTPAID_BY_HOUR 按小时付费; PREPAID 包年包月
-                     * @return InstanceChargeType 实例计费类型  POSTPAID_BY_HOUR 按小时付费; PREPAID 包年包月
+                     * 获取<p>实例计费类型  POSTPAID_BY_HOUR 按小时付费; PREPAID 包年包月</p>
+                     * @return InstanceChargeType <p>实例计费类型  POSTPAID_BY_HOUR 按小时付费; PREPAID 包年包月</p>
                      * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置实例计费类型  POSTPAID_BY_HOUR 按小时付费; PREPAID 包年包月
-                     * @param _instanceChargeType 实例计费类型  POSTPAID_BY_HOUR 按小时付费; PREPAID 包年包月
+                     * 设置<p>实例计费类型  POSTPAID_BY_HOUR 按小时付费; PREPAID 包年包月</p>
+                     * @param _instanceChargeType <p>实例计费类型  POSTPAID_BY_HOUR 按小时付费; PREPAID 包年包月</p>
                      * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
@@ -866,23 +850,15 @@ serverless  :serverless版
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启弹性带宽白名单   
-1:已开启弹性带宽白名单;
-0:未开启弹性带宽白名单;
-                     * @return ElasticBandwidthSwitch 是否开启弹性带宽白名单   
-1:已开启弹性带宽白名单;
-0:未开启弹性带宽白名单;
+                     * 获取<p>是否开启弹性带宽白名单 <br />1:已开启弹性带宽白名单;0:未开启弹性带宽白名单;</p>
+                     * @return ElasticBandwidthSwitch <p>是否开启弹性带宽白名单 <br />1:已开启弹性带宽白名单;0:未开启弹性带宽白名单;</p>
                      * 
                      */
                     int64_t GetElasticBandwidthSwitch() const;
 
                     /**
-                     * 设置是否开启弹性带宽白名单   
-1:已开启弹性带宽白名单;
-0:未开启弹性带宽白名单;
-                     * @param _elasticBandwidthSwitch 是否开启弹性带宽白名单   
-1:已开启弹性带宽白名单;
-0:未开启弹性带宽白名单;
+                     * 设置<p>是否开启弹性带宽白名单 <br />1:已开启弹性带宽白名单;0:未开启弹性带宽白名单;</p>
+                     * @param _elasticBandwidthSwitch <p>是否开启弹性带宽白名单 <br />1:已开启弹性带宽白名单;0:未开启弹性带宽白名单;</p>
                      * 
                      */
                     void SetElasticBandwidthSwitch(const int64_t& _elasticBandwidthSwitch);
@@ -895,43 +871,15 @@ serverless  :serverless版
                     bool ElasticBandwidthSwitchHasBeenSet() const;
 
                     /**
-                     * 获取弹性带宽开通状态
-1:未开启弹性带宽;
-16: 开启弹性带宽中;
-32:开启弹性带宽成功;
-33:关闭弹性带宽中;
-34:关闭弹性带宽成功;
-64:开启弹性带宽失败;
-65:关闭弹性带宽失败;
-                     * @return ElasticBandwidthOpenStatus 弹性带宽开通状态
-1:未开启弹性带宽;
-16: 开启弹性带宽中;
-32:开启弹性带宽成功;
-33:关闭弹性带宽中;
-34:关闭弹性带宽成功;
-64:开启弹性带宽失败;
-65:关闭弹性带宽失败;
+                     * 获取<p>弹性带宽开通状态1:未开启弹性带宽;16: 开启弹性带宽中;32:开启弹性带宽成功;33:关闭弹性带宽中;34:关闭弹性带宽成功;64:开启弹性带宽失败;65:关闭弹性带宽失败;</p>
+                     * @return ElasticBandwidthOpenStatus <p>弹性带宽开通状态1:未开启弹性带宽;16: 开启弹性带宽中;32:开启弹性带宽成功;33:关闭弹性带宽中;34:关闭弹性带宽成功;64:开启弹性带宽失败;65:关闭弹性带宽失败;</p>
                      * 
                      */
                     int64_t GetElasticBandwidthOpenStatus() const;
 
                     /**
-                     * 设置弹性带宽开通状态
-1:未开启弹性带宽;
-16: 开启弹性带宽中;
-32:开启弹性带宽成功;
-33:关闭弹性带宽中;
-34:关闭弹性带宽成功;
-64:开启弹性带宽失败;
-65:关闭弹性带宽失败;
-                     * @param _elasticBandwidthOpenStatus 弹性带宽开通状态
-1:未开启弹性带宽;
-16: 开启弹性带宽中;
-32:开启弹性带宽成功;
-33:关闭弹性带宽中;
-34:关闭弹性带宽成功;
-64:开启弹性带宽失败;
-65:关闭弹性带宽失败;
+                     * 设置<p>弹性带宽开通状态1:未开启弹性带宽;16: 开启弹性带宽中;32:开启弹性带宽成功;33:关闭弹性带宽中;34:关闭弹性带宽成功;64:开启弹性带宽失败;65:关闭弹性带宽失败;</p>
+                     * @param _elasticBandwidthOpenStatus <p>弹性带宽开通状态1:未开启弹性带宽;16: 开启弹性带宽中;32:开启弹性带宽成功;33:关闭弹性带宽中;34:关闭弹性带宽成功;64:开启弹性带宽失败;65:关闭弹性带宽失败;</p>
                      * 
                      */
                     void SetElasticBandwidthOpenStatus(const int64_t& _elasticBandwidthOpenStatus);
@@ -944,39 +892,15 @@ serverless  :serverless版
                     bool ElasticBandwidthOpenStatusHasBeenSet() const;
 
                     /**
-                     * 获取集群类型  
-CLOUD_IDC IDC集群
-CLOUD_CVM_SHARE CVM共享集群
-CLOUD_CVM_YUNTI 云梯CVM集群
-CLOUD_CVM    CVM集群
-CLOUD_CDC CDC集群
-CLOUD_EKS_TSE EKS集群
-                     * @return ClusterType 集群类型  
-CLOUD_IDC IDC集群
-CLOUD_CVM_SHARE CVM共享集群
-CLOUD_CVM_YUNTI 云梯CVM集群
-CLOUD_CVM    CVM集群
-CLOUD_CDC CDC集群
-CLOUD_EKS_TSE EKS集群
+                     * 获取<p>集群类型<br />CLOUD_IDC IDC集群CLOUD_CVM_SHARE CVM共享集群CLOUD_CVM_YUNTI 云梯CVM集群CLOUD_CVM    CVM集群CLOUD_CDC CDC集群CLOUD_EKS_TSE EKS集群</p>
+                     * @return ClusterType <p>集群类型<br />CLOUD_IDC IDC集群CLOUD_CVM_SHARE CVM共享集群CLOUD_CVM_YUNTI 云梯CVM集群CLOUD_CVM    CVM集群CLOUD_CDC CDC集群CLOUD_EKS_TSE EKS集群</p>
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置集群类型  
-CLOUD_IDC IDC集群
-CLOUD_CVM_SHARE CVM共享集群
-CLOUD_CVM_YUNTI 云梯CVM集群
-CLOUD_CVM    CVM集群
-CLOUD_CDC CDC集群
-CLOUD_EKS_TSE EKS集群
-                     * @param _clusterType 集群类型  
-CLOUD_IDC IDC集群
-CLOUD_CVM_SHARE CVM共享集群
-CLOUD_CVM_YUNTI 云梯CVM集群
-CLOUD_CVM    CVM集群
-CLOUD_CDC CDC集群
-CLOUD_EKS_TSE EKS集群
+                     * 设置<p>集群类型<br />CLOUD_IDC IDC集群CLOUD_CVM_SHARE CVM共享集群CLOUD_CVM_YUNTI 云梯CVM集群CLOUD_CVM    CVM集群CLOUD_CDC CDC集群CLOUD_EKS_TSE EKS集群</p>
+                     * @param _clusterType <p>集群类型<br />CLOUD_IDC IDC集群CLOUD_CVM_SHARE CVM共享集群CLOUD_CVM_YUNTI 云梯CVM集群CLOUD_CVM    CVM集群CLOUD_CDC CDC集群CLOUD_EKS_TSE EKS集群</p>
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -989,15 +913,15 @@ CLOUD_EKS_TSE EKS集群
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取免费分区数量
-                     * @return FreePartitionNumber 免费分区数量
+                     * 获取<p>免费分区数量</p>
+                     * @return FreePartitionNumber <p>免费分区数量</p>
                      * 
                      */
                     int64_t GetFreePartitionNumber() const;
 
                     /**
-                     * 设置免费分区数量
-                     * @param _freePartitionNumber 免费分区数量
+                     * 设置<p>免费分区数量</p>
+                     * @param _freePartitionNumber <p>免费分区数量</p>
                      * 
                      */
                     void SetFreePartitionNumber(const int64_t& _freePartitionNumber);
@@ -1010,15 +934,15 @@ CLOUD_EKS_TSE EKS集群
                     bool FreePartitionNumberHasBeenSet() const;
 
                     /**
-                     * 获取弹性带宽上浮值
-                     * @return ElasticFloatBandwidth 弹性带宽上浮值
+                     * 获取<p>弹性带宽上浮值</p>
+                     * @return ElasticFloatBandwidth <p>弹性带宽上浮值</p>
                      * 
                      */
                     int64_t GetElasticFloatBandwidth() const;
 
                     /**
-                     * 设置弹性带宽上浮值
-                     * @param _elasticFloatBandwidth 弹性带宽上浮值
+                     * 设置<p>弹性带宽上浮值</p>
+                     * @param _elasticFloatBandwidth <p>弹性带宽上浮值</p>
                      * 
                      */
                     void SetElasticFloatBandwidth(const int64_t& _elasticFloatBandwidth);
@@ -1031,15 +955,15 @@ CLOUD_EKS_TSE EKS集群
                     bool ElasticFloatBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取ssl自定义证书id  仅自定义证书实例集群返回
-                     * @return CustomCertId ssl自定义证书id  仅自定义证书实例集群返回
+                     * 获取<p>ssl自定义证书id  仅自定义证书实例集群返回</p>
+                     * @return CustomCertId <p>ssl自定义证书id  仅自定义证书实例集群返回</p>
                      * 
                      */
                     std::string GetCustomCertId() const;
 
                     /**
-                     * 设置ssl自定义证书id  仅自定义证书实例集群返回
-                     * @param _customCertId ssl自定义证书id  仅自定义证书实例集群返回
+                     * 设置<p>ssl自定义证书id  仅自定义证书实例集群返回</p>
+                     * @param _customCertId <p>ssl自定义证书id  仅自定义证书实例集群返回</p>
                      * 
                      */
                     void SetCustomCertId(const std::string& _customCertId);
@@ -1052,15 +976,15 @@ CLOUD_EKS_TSE EKS集群
                     bool CustomCertIdHasBeenSet() const;
 
                     /**
-                     * 获取集群topic默认 unclean.leader.election.enable配置: 1 开启 0 关闭
-                     * @return UncleanLeaderElectionEnable 集群topic默认 unclean.leader.election.enable配置: 1 开启 0 关闭
+                     * 获取<p>集群topic默认 unclean.leader.election.enable配置: 1 开启 0 关闭</p>
+                     * @return UncleanLeaderElectionEnable <p>集群topic默认 unclean.leader.election.enable配置: 1 开启 0 关闭</p>
                      * 
                      */
                     int64_t GetUncleanLeaderElectionEnable() const;
 
                     /**
-                     * 设置集群topic默认 unclean.leader.election.enable配置: 1 开启 0 关闭
-                     * @param _uncleanLeaderElectionEnable 集群topic默认 unclean.leader.election.enable配置: 1 开启 0 关闭
+                     * 设置<p>集群topic默认 unclean.leader.election.enable配置: 1 开启 0 关闭</p>
+                     * @param _uncleanLeaderElectionEnable <p>集群topic默认 unclean.leader.election.enable配置: 1 开启 0 关闭</p>
                      * 
                      */
                     void SetUncleanLeaderElectionEnable(const int64_t& _uncleanLeaderElectionEnable);
@@ -1073,15 +997,15 @@ CLOUD_EKS_TSE EKS集群
                     bool UncleanLeaderElectionEnableHasBeenSet() const;
 
                     /**
-                     * 获取实例删除保护开关: 1 开启 0 关闭
-                     * @return DeleteProtectionEnable 实例删除保护开关: 1 开启 0 关闭
+                     * 获取<p>实例删除保护开关: 1 开启 0 关闭</p>
+                     * @return DeleteProtectionEnable <p>实例删除保护开关: 1 开启 0 关闭</p>
                      * 
                      */
                     int64_t GetDeleteProtectionEnable() const;
 
                     /**
-                     * 设置实例删除保护开关: 1 开启 0 关闭
-                     * @param _deleteProtectionEnable 实例删除保护开关: 1 开启 0 关闭
+                     * 设置<p>实例删除保护开关: 1 开启 0 关闭</p>
+                     * @param _deleteProtectionEnable <p>实例删除保护开关: 1 开启 0 关闭</p>
                      * 
                      */
                     void SetDeleteProtectionEnable(const int64_t& _deleteProtectionEnable);
@@ -1096,296 +1020,277 @@ CLOUD_EKS_TSE EKS集群
                 private:
 
                     /**
-                     * ckafka集群实例Id
+                     * <p>ckafka集群实例Id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * ckafka集群实例Name
+                     * <p>ckafka集群实例Name</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 接入点 VIP 列表信息
+                     * <p>接入点 VIP 列表信息</p>
                      */
                     std::vector<VipEntity> m_vipList;
                     bool m_vipListHasBeenSet;
 
                     /**
-                     * 虚拟IP
+                     * <p>虚拟IP</p>
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
-                     * 虚拟端口
+                     * <p>虚拟端口</p>
                      */
                     std::string m_vport;
                     bool m_vportHasBeenSet;
 
                     /**
-                     * 实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 
+                     * <p>实例的状态。0: 创建中，1: 运行中，2: 删除中,  3: 已删除,  5: 隔离中,  7: 升级中,  -1: 创建失败 </p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 实例带宽，单位：Mbps
+                     * <p>实例带宽，单位：Mbps</p>
                      */
                     int64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * 实例的存储大小，单位：GB
+                     * <p>实例的存储大小，单位：GB</p>
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 可用区
+                     * <p>可用区</p>
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * VPC 的 ID，为空表示是基础网络
+                     * <p>VPC 的 ID，为空表示是基础网络</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网 ID， 为空表示基础网络
+                     * <p>子网 ID， 为空表示基础网络</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 实例健康状态， 1：健康，2：告警，3：异常
+                     * <p>实例健康状态， 1：健康，2：告警，3：异常</p>
                      */
                     int64_t m_healthy;
                     bool m_healthyHasBeenSet;
 
                     /**
-                     * 实例健康信息，当前会展示磁盘利用率，最大长度为256
+                     * <p>实例健康信息，当前会展示磁盘利用率，最大长度为256</p>
                      */
                     std::string m_healthyMessage;
                     bool m_healthyMessageHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 消息保存时间,单位为分钟
+                     * <p>消息保存时间,单位为分钟</p>
                      */
                     int64_t m_msgRetentionTime;
                     bool m_msgRetentionTimeHasBeenSet;
 
                     /**
-                     * 自动创建 Topic 配置， 若该字段为空，则表示未开启自动创建
+                     * <p>自动创建 Topic 配置， 若该字段为空，则表示未开启自动创建</p>
                      */
                     InstanceConfigDO m_config;
                     bool m_configHasBeenSet;
 
                     /**
-                     * 剩余创建分区数
+                     * <p>剩余创建分区数</p>
                      */
                     int64_t m_remainderPartitions;
                     bool m_remainderPartitionsHasBeenSet;
 
                     /**
-                     * 剩余创建主题数
+                     * <p>剩余创建主题数</p>
                      */
                     int64_t m_remainderTopics;
                     bool m_remainderTopicsHasBeenSet;
 
                     /**
-                     * 当前创建分区数
+                     * <p>当前创建分区数</p>
                      */
                     int64_t m_createdPartitions;
                     bool m_createdPartitionsHasBeenSet;
 
                     /**
-                     * 当前创建主题数
+                     * <p>当前创建主题数</p>
                      */
                     int64_t m_createdTopics;
                     bool m_createdTopicsHasBeenSet;
 
                     /**
-                     * 标签数组
+                     * <p>标签数组</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 过期时间
+                     * <p>过期时间</p>
                      */
                     uint64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 可用区列表
+                     * <p>可用区列表</p>
                      */
                     std::vector<int64_t> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
 
                     /**
-                     * ckafka集群实例版本
+                     * <p>ckafka集群实例版本</p>
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 最大分组数
+                     * <p>最大分组数</p>
                      */
                     int64_t m_maxGroupNum;
                     bool m_maxGroupNumHasBeenSet;
 
                     /**
-                     * 售卖类型,0:标准版,1:专业版
+                     * <p>售卖类型,0:标准版,1:专业版</p>
                      */
                     int64_t m_cvm;
                     bool m_cvmHasBeenSet;
 
                     /**
-                     * 实例类型  枚举列表: 
-profession  :专业版    
-standards2  :标准版
-premium   :高级版
-serverless  :serverless版
+                     * <p>实例类型  枚举列表: profession  :专业版  <br />standards2  :标准版premium   :高级版serverless  :serverless版</p>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 表示该实例支持的特性。FEATURE_SUBNET_ACL:表示acl策略支持设置子网。
+                     * <p>表示该实例支持的特性。FEATURE_SUBNET_ACL:表示acl策略支持设置子网。</p>
                      */
                     std::vector<std::string> m_features;
                     bool m_featuresHasBeenSet;
 
                     /**
-                     * 动态消息保留策略
+                     * <p>动态消息保留策略</p>
                      */
                     DynamicRetentionTime m_retentionTimeConfig;
                     bool m_retentionTimeConfigHasBeenSet;
 
                     /**
-                     * 最大连接数
+                     * <p>最大连接数</p>
                      */
                     uint64_t m_maxConnection;
                     bool m_maxConnectionHasBeenSet;
 
                     /**
-                     * 公网带宽
+                     * <p>公网带宽</p>
                      */
                     int64_t m_publicNetwork;
                     bool m_publicNetworkHasBeenSet;
 
                     /**
-                     * 该字段已废弃,无实际含义
+                     * <p>该字段已废弃,无实际含义</p>
                      */
                     std::string m_deleteRouteTimestamp;
                     bool m_deleteRouteTimestampHasBeenSet;
 
                     /**
-                     * 剩余创建分区数
+                     * <p>剩余创建分区数</p>
                      */
                     int64_t m_remainingPartitions;
                     bool m_remainingPartitionsHasBeenSet;
 
                     /**
-                     * 剩余创建主题数
+                     * <p>剩余创建主题数</p>
                      */
                     int64_t m_remainingTopics;
                     bool m_remainingTopicsHasBeenSet;
 
                     /**
-                     * 动态硬盘扩容策略
+                     * <p>动态硬盘扩容策略</p>
                      */
                     DynamicDiskConfig m_dynamicDiskConfig;
                     bool m_dynamicDiskConfigHasBeenSet;
 
                     /**
-                     * 系统维护时间
+                     * <p>系统维护时间</p>
                      */
                     std::string m_systemMaintenanceTime;
                     bool m_systemMaintenanceTimeHasBeenSet;
 
                     /**
-                     * 实例级别消息最大大小
+                     * <p>实例级别消息最大大小</p>
                      */
                     uint64_t m_maxMessageByte;
                     bool m_maxMessageByteHasBeenSet;
 
                     /**
-                     * 实例计费类型  POSTPAID_BY_HOUR 按小时付费; PREPAID 包年包月
+                     * <p>实例计费类型  POSTPAID_BY_HOUR 按小时付费; PREPAID 包年包月</p>
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
 
                     /**
-                     * 是否开启弹性带宽白名单   
-1:已开启弹性带宽白名单;
-0:未开启弹性带宽白名单;
+                     * <p>是否开启弹性带宽白名单 <br />1:已开启弹性带宽白名单;0:未开启弹性带宽白名单;</p>
                      */
                     int64_t m_elasticBandwidthSwitch;
                     bool m_elasticBandwidthSwitchHasBeenSet;
 
                     /**
-                     * 弹性带宽开通状态
-1:未开启弹性带宽;
-16: 开启弹性带宽中;
-32:开启弹性带宽成功;
-33:关闭弹性带宽中;
-34:关闭弹性带宽成功;
-64:开启弹性带宽失败;
-65:关闭弹性带宽失败;
+                     * <p>弹性带宽开通状态1:未开启弹性带宽;16: 开启弹性带宽中;32:开启弹性带宽成功;33:关闭弹性带宽中;34:关闭弹性带宽成功;64:开启弹性带宽失败;65:关闭弹性带宽失败;</p>
                      */
                     int64_t m_elasticBandwidthOpenStatus;
                     bool m_elasticBandwidthOpenStatusHasBeenSet;
 
                     /**
-                     * 集群类型  
-CLOUD_IDC IDC集群
-CLOUD_CVM_SHARE CVM共享集群
-CLOUD_CVM_YUNTI 云梯CVM集群
-CLOUD_CVM    CVM集群
-CLOUD_CDC CDC集群
-CLOUD_EKS_TSE EKS集群
+                     * <p>集群类型<br />CLOUD_IDC IDC集群CLOUD_CVM_SHARE CVM共享集群CLOUD_CVM_YUNTI 云梯CVM集群CLOUD_CVM    CVM集群CLOUD_CDC CDC集群CLOUD_EKS_TSE EKS集群</p>
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 免费分区数量
+                     * <p>免费分区数量</p>
                      */
                     int64_t m_freePartitionNumber;
                     bool m_freePartitionNumberHasBeenSet;
 
                     /**
-                     * 弹性带宽上浮值
+                     * <p>弹性带宽上浮值</p>
                      */
                     int64_t m_elasticFloatBandwidth;
                     bool m_elasticFloatBandwidthHasBeenSet;
 
                     /**
-                     * ssl自定义证书id  仅自定义证书实例集群返回
+                     * <p>ssl自定义证书id  仅自定义证书实例集群返回</p>
                      */
                     std::string m_customCertId;
                     bool m_customCertIdHasBeenSet;
 
                     /**
-                     * 集群topic默认 unclean.leader.election.enable配置: 1 开启 0 关闭
+                     * <p>集群topic默认 unclean.leader.election.enable配置: 1 开启 0 关闭</p>
                      */
                     int64_t m_uncleanLeaderElectionEnable;
                     bool m_uncleanLeaderElectionEnableHasBeenSet;
 
                     /**
-                     * 实例删除保护开关: 1 开启 0 关闭
+                     * <p>实例删除保护开关: 1 开启 0 关闭</p>
                      */
                     int64_t m_deleteProtectionEnable;
                     bool m_deleteProtectionEnableHasBeenSet;

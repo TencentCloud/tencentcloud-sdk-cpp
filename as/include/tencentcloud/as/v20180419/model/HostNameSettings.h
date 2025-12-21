@@ -118,18 +118,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云服务器的主机名后缀。
-HostNameSettings的该入参非必选，未选时不设置主机名后缀。
-<li> 点号（.）和短横线（-）不能作为 HostNameSuffix 的首尾字符，不能连续使用。</li> 
+<li> 点号（.）和短横线（-）不能作为 HostNameSuffix 的尾字符，不能连续使用。</li> 
 <li> 不支持 Windows 实例。</li> 
 <li>其他类型（Linux 等）实例：字符长度为[1, 39]，且与 HostName 的长度和不能超过 41，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。</li> 
-假设后缀名称为 suffix，原主机名为 test.0，最终主机名为 test.0.suffix。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostNameSuffix 云服务器的主机名后缀。
-HostNameSettings的该入参非必选，未选时不设置主机名后缀。
-<li> 点号（.）和短横线（-）不能作为 HostNameSuffix 的首尾字符，不能连续使用。</li> 
+<li> 点号（.）和短横线（-）不能作为 HostNameSuffix 的尾字符，不能连续使用。</li> 
 <li> 不支持 Windows 实例。</li> 
 <li>其他类型（Linux 等）实例：字符长度为[1, 39]，且与 HostName 的长度和不能超过 41，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。</li> 
-假设后缀名称为 suffix，原主机名为 test.0，最终主机名为 test.0.suffix。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -137,18 +133,14 @@ HostNameSettings的该入参非必选，未选时不设置主机名后缀。
 
                     /**
                      * 设置云服务器的主机名后缀。
-HostNameSettings的该入参非必选，未选时不设置主机名后缀。
-<li> 点号（.）和短横线（-）不能作为 HostNameSuffix 的首尾字符，不能连续使用。</li> 
+<li> 点号（.）和短横线（-）不能作为 HostNameSuffix 的尾字符，不能连续使用。</li> 
 <li> 不支持 Windows 实例。</li> 
 <li>其他类型（Linux 等）实例：字符长度为[1, 39]，且与 HostName 的长度和不能超过 41，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。</li> 
-假设后缀名称为 suffix，原主机名为 test.0，最终主机名为 test.0.suffix。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostNameSuffix 云服务器的主机名后缀。
-HostNameSettings的该入参非必选，未选时不设置主机名后缀。
-<li> 点号（.）和短横线（-）不能作为 HostNameSuffix 的首尾字符，不能连续使用。</li> 
+<li> 点号（.）和短横线（-）不能作为 HostNameSuffix 的尾字符，不能连续使用。</li> 
 <li> 不支持 Windows 实例。</li> 
 <li>其他类型（Linux 等）实例：字符长度为[1, 39]，且与 HostName 的长度和不能超过 41，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。</li> 
-假设后缀名称为 suffix，原主机名为 test.0，最终主机名为 test.0.suffix。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -162,31 +154,31 @@ HostNameSettings的该入参非必选，未选时不设置主机名后缀。
                     bool HostNameSuffixHasBeenSet() const;
 
                     /**
-                     * 获取云服务器的主机名分隔符。
-默认的分隔符是点号（.），可选短横线（-）。仅有点号（.）和短横线（-）能作为主机名的分隔符。如果不设置，则默认采用点号（.）分隔符。
-通过分割符连接多段。
-
-假设原主机名为“product-as-host”，分隔符HostNameDelimiter为“-”，设置主机名后缀"suffix"，那么最终主机名为“product-as-host-suffix”。
-                     * @return HostNameDelimiter 云服务器的主机名分隔符。
-默认的分隔符是点号（.），可选短横线（-）。仅有点号（.）和短横线（-）能作为主机名的分隔符。如果不设置，则默认采用点号（.）分隔符。
-通过分割符连接多段。
-
-假设原主机名为“product-as-host”，分隔符HostNameDelimiter为“-”，设置主机名后缀"suffix"，那么最终主机名为“product-as-host-suffix”。
+                     * 获取云服务器的主机名分隔符。默认的分隔符是点号（.），可选短横线（-）或空字符串。
+分隔符用于拼接主机名，递增序号，后缀。假设主机名为 testGpu4090 ，递增序号为 0007，后缀为 server：
+- 分隔符为英文点号（.），最终拼接为 testGpu4090.007.server
+- 分隔符为短横线（-），最终拼接为 testGpu4090-007-server
+- 分隔符为空字符串，最终拼接为 testGpu4090007server
+                     * @return HostNameDelimiter 云服务器的主机名分隔符。默认的分隔符是点号（.），可选短横线（-）或空字符串。
+分隔符用于拼接主机名，递增序号，后缀。假设主机名为 testGpu4090 ，递增序号为 0007，后缀为 server：
+- 分隔符为英文点号（.），最终拼接为 testGpu4090.007.server
+- 分隔符为短横线（-），最终拼接为 testGpu4090-007-server
+- 分隔符为空字符串，最终拼接为 testGpu4090007server
                      * 
                      */
                     std::string GetHostNameDelimiter() const;
 
                     /**
-                     * 设置云服务器的主机名分隔符。
-默认的分隔符是点号（.），可选短横线（-）。仅有点号（.）和短横线（-）能作为主机名的分隔符。如果不设置，则默认采用点号（.）分隔符。
-通过分割符连接多段。
-
-假设原主机名为“product-as-host”，分隔符HostNameDelimiter为“-”，设置主机名后缀"suffix"，那么最终主机名为“product-as-host-suffix”。
-                     * @param _hostNameDelimiter 云服务器的主机名分隔符。
-默认的分隔符是点号（.），可选短横线（-）。仅有点号（.）和短横线（-）能作为主机名的分隔符。如果不设置，则默认采用点号（.）分隔符。
-通过分割符连接多段。
-
-假设原主机名为“product-as-host”，分隔符HostNameDelimiter为“-”，设置主机名后缀"suffix"，那么最终主机名为“product-as-host-suffix”。
+                     * 设置云服务器的主机名分隔符。默认的分隔符是点号（.），可选短横线（-）或空字符串。
+分隔符用于拼接主机名，递增序号，后缀。假设主机名为 testGpu4090 ，递增序号为 0007，后缀为 server：
+- 分隔符为英文点号（.），最终拼接为 testGpu4090.007.server
+- 分隔符为短横线（-），最终拼接为 testGpu4090-007-server
+- 分隔符为空字符串，最终拼接为 testGpu4090007server
+                     * @param _hostNameDelimiter 云服务器的主机名分隔符。默认的分隔符是点号（.），可选短横线（-）或空字符串。
+分隔符用于拼接主机名，递增序号，后缀。假设主机名为 testGpu4090 ，递增序号为 0007，后缀为 server：
+- 分隔符为英文点号（.），最终拼接为 testGpu4090.007.server
+- 分隔符为短横线（-），最终拼接为 testGpu4090-007-server
+- 分隔符为空字符串，最终拼接为 testGpu4090007server
                      * 
                      */
                     void SetHostNameDelimiter(const std::string& _hostNameDelimiter);
@@ -221,22 +213,20 @@ HostNameSettings的该入参非必选，未选时不设置主机名后缀。
 
                     /**
                      * 云服务器的主机名后缀。
-HostNameSettings的该入参非必选，未选时不设置主机名后缀。
-<li> 点号（.）和短横线（-）不能作为 HostNameSuffix 的首尾字符，不能连续使用。</li> 
+<li> 点号（.）和短横线（-）不能作为 HostNameSuffix 的尾字符，不能连续使用。</li> 
 <li> 不支持 Windows 实例。</li> 
 <li>其他类型（Linux 等）实例：字符长度为[1, 39]，且与 HostName 的长度和不能超过 41，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。</li> 
-假设后缀名称为 suffix，原主机名为 test.0，最终主机名为 test.0.suffix。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostNameSuffix;
                     bool m_hostNameSuffixHasBeenSet;
 
                     /**
-                     * 云服务器的主机名分隔符。
-默认的分隔符是点号（.），可选短横线（-）。仅有点号（.）和短横线（-）能作为主机名的分隔符。如果不设置，则默认采用点号（.）分隔符。
-通过分割符连接多段。
-
-假设原主机名为“product-as-host”，分隔符HostNameDelimiter为“-”，设置主机名后缀"suffix"，那么最终主机名为“product-as-host-suffix”。
+                     * 云服务器的主机名分隔符。默认的分隔符是点号（.），可选短横线（-）或空字符串。
+分隔符用于拼接主机名，递增序号，后缀。假设主机名为 testGpu4090 ，递增序号为 0007，后缀为 server：
+- 分隔符为英文点号（.），最终拼接为 testGpu4090.007.server
+- 分隔符为短横线（-），最终拼接为 testGpu4090-007-server
+- 分隔符为空字符串，最终拼接为 testGpu4090007server
                      */
                     std::string m_hostNameDelimiter;
                     bool m_hostNameDelimiterHasBeenSet;

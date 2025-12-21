@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返佣月份，如2018-02
-                     * @return RebateMonth 返佣月份，如2018-02
+                     * 获取<p>返佣月份，如2018-02</p>
+                     * @return RebateMonth <p>返佣月份，如2018-02</p>
                      * 
                      */
                     std::string GetRebateMonth() const;
 
                     /**
-                     * 设置返佣月份，如2018-02
-                     * @param _rebateMonth 返佣月份，如2018-02
+                     * 设置<p>返佣月份，如2018-02</p>
+                     * @param _rebateMonth <p>返佣月份，如2018-02</p>
                      * 
                      */
                     void SetRebateMonth(const std::string& _rebateMonth);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool RebateMonthHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取<p>偏移量</p>
+                     * @return Offset <p>偏移量</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置<p>偏移量</p>
+                     * @param _offset <p>偏移量</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取限制数目
-                     * @return Limit 限制数目
+                     * 获取<p>限制数目</p>
+                     * @return Limit <p>限制数目</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置限制数目
-                     * @param _limit 限制数目
+                     * 设置<p>限制数目</p>
+                     * @param _limit <p>限制数目</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返佣月份，如2018-02
+                     * <p>返佣月份，如2018-02</p>
                      */
                     std::string m_rebateMonth;
                     bool m_rebateMonthHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * <p>偏移量</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 限制数目
+                     * <p>限制数目</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

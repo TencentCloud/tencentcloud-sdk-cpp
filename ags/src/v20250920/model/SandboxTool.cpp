@@ -30,7 +30,9 @@ SandboxTool::SandboxTool() :
     m_networkConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
+    m_storageMountsHasBeenSet(false)
 {
 }
 
@@ -156,6 +158,36 @@ CoreInternalOutcome SandboxTool::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("RoleArn") && !value["RoleArn"].IsNull())
+    {
+        if (!value["RoleArn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SandboxTool.RoleArn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_roleArn = string(value["RoleArn"].GetString());
+        m_roleArnHasBeenSet = true;
+    }
+
+    if (value.HasMember("StorageMounts") && !value["StorageMounts"].IsNull())
+    {
+        if (!value["StorageMounts"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SandboxTool.StorageMounts` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["StorageMounts"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            StorageMount item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_storageMounts.push_back(item);
+        }
+        m_storageMountsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -249,6 +281,29 @@ void SandboxTool::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roleArnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleArn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roleArn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageMountsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageMounts";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_storageMounts.begin(); itr != m_storageMounts.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -412,5 +467,37 @@ void SandboxTool::SetUpdateTime(const string& _updateTime)
 bool SandboxTool::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string SandboxTool::GetRoleArn() const
+{
+    return m_roleArn;
+}
+
+void SandboxTool::SetRoleArn(const string& _roleArn)
+{
+    m_roleArn = _roleArn;
+    m_roleArnHasBeenSet = true;
+}
+
+bool SandboxTool::RoleArnHasBeenSet() const
+{
+    return m_roleArnHasBeenSet;
+}
+
+vector<StorageMount> SandboxTool::GetStorageMounts() const
+{
+    return m_storageMounts;
+}
+
+void SandboxTool::SetStorageMounts(const vector<StorageMount>& _storageMounts)
+{
+    m_storageMounts = _storageMounts;
+    m_storageMountsHasBeenSet = true;
+}
+
+bool SandboxTool::StorageMountsHasBeenSet() const
+{
+    return m_storageMountsHasBeenSet;
 }
 

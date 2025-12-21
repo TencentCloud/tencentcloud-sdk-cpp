@@ -390,15 +390,15 @@ SPAM：封禁
                     bool RecordCountEndHasBeenSet() const;
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取项目ID，"帐号中心-项目管理"拿到项目ID
+                     * @return ProjectId 项目ID，"帐号中心-项目管理"拿到项目ID
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置项目ID，"帐号中心-项目管理"拿到项目ID
+                     * @param _projectId 项目ID，"帐号中心-项目管理"拿到项目ID
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -531,7 +531,7 @@ SPAM：封禁
                     bool m_recordCountEndHasBeenSet;
 
                     /**
-                     * 项目ID
+                     * 项目ID，"帐号中心-项目管理"拿到项目ID
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;

@@ -44,10 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取修改输入源后的预览地址。
-注：该地址仅作为预览使用，不可分发。
-                     * @return InputPlayUrl 修改输入源后的预览地址。
-注：该地址仅作为预览使用，不可分发。
+                     * 获取<p>修改输入源后的预览地址。注：该地址仅作为预览使用，不可分发。</p>
+                     * @return InputPlayUrl <p>修改输入源后的预览地址。注：该地址仅作为预览使用，不可分发。</p>
                      * 
                      */
                     std::string GetInputPlayUrl() const;
@@ -60,12 +58,8 @@ namespace TencentCloud
                     bool InputPlayUrlHasBeenSet() const;
 
                     /**
-                     * 获取修改后的输入源webrtc预览地址。
-该地址需配合腾讯云快直播播放SDK使用。
-注：该地址仅做预览使用，不可分发。
-                     * @return InputWebRTCPlayUrl 修改后的输入源webrtc预览地址。
-该地址需配合腾讯云快直播播放SDK使用。
-注：该地址仅做预览使用，不可分发。
+                     * 获取<p>修改后的输入源webrtc预览地址。该地址需配合腾讯云快直播播放SDK使用。注：该地址仅做预览使用，不可分发。</p>
+                     * @return InputWebRTCPlayUrl <p>修改后的输入源webrtc预览地址。该地址需配合腾讯云快直播播放SDK使用。注：该地址仅做预览使用，不可分发。</p>
                      * 
                      */
                     std::string GetInputWebRTCPlayUrl() const;
@@ -80,16 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 修改输入源后的预览地址。
-注：该地址仅作为预览使用，不可分发。
+                     * <p>修改输入源后的预览地址。注：该地址仅作为预览使用，不可分发。</p>
                      */
                     std::string m_inputPlayUrl;
                     bool m_inputPlayUrlHasBeenSet;
 
                     /**
-                     * 修改后的输入源webrtc预览地址。
-该地址需配合腾讯云快直播播放SDK使用。
-注：该地址仅做预览使用，不可分发。
+                     * <p>修改后的输入源webrtc预览地址。该地址需配合腾讯云快直播播放SDK使用。注：该地址仅做预览使用，不可分发。</p>
                      */
                     std::string m_inputWebRTCPlayUrl;
                     bool m_inputWebRTCPlayUrlHasBeenSet;

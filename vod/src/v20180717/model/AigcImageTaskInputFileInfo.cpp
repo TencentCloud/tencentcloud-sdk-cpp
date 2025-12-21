@@ -23,7 +23,8 @@ using namespace std;
 AigcImageTaskInputFileInfo::AigcImageTaskInputFileInfo() :
     m_typeHasBeenSet(false),
     m_fileIdHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_textHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome AigcImageTaskInputFileInfo::Deserialize(const rapidjson::Val
         m_urlHasBeenSet = true;
     }
 
+    if (value.HasMember("Text") && !value["Text"].IsNull())
+    {
+        if (!value["Text"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcImageTaskInputFileInfo.Text` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_text = string(value["Text"].GetString());
+        m_textHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void AigcImageTaskInputFileInfo::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_textHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Text";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void AigcImageTaskInputFileInfo::SetUrl(const string& _url)
 bool AigcImageTaskInputFileInfo::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string AigcImageTaskInputFileInfo::GetText() const
+{
+    return m_text;
+}
+
+void AigcImageTaskInputFileInfo::SetText(const string& _text)
+{
+    m_text = _text;
+    m_textHasBeenSet = true;
+}
+
+bool AigcImageTaskInputFileInfo::TextHasBeenSet() const
+{
+    return m_textHasBeenSet;
 }
 

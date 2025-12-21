@@ -77,6 +77,10 @@
 #include <tencentcloud/emr/v20190103/model/DescribeGroupsSTDResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeHBaseTableOverviewRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeHBaseTableOverviewResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeHBaseTableRequestMetricRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeHBaseTableRequestMetricResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeHBaseTableStoreSizeMetricRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeHBaseTableStoreSizeMetricResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeHDFSStorageInfoRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeHDFSStorageInfoResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeHiveQueriesRequest.h>
@@ -298,6 +302,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeHBaseTableOverviewResponse> DescribeHBaseTableOverviewOutcome;
                 typedef std::future<DescribeHBaseTableOverviewOutcome> DescribeHBaseTableOverviewOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeHBaseTableOverviewRequest&, DescribeHBaseTableOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHBaseTableOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHBaseTableRequestMetricResponse> DescribeHBaseTableRequestMetricOutcome;
+                typedef std::future<DescribeHBaseTableRequestMetricOutcome> DescribeHBaseTableRequestMetricOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeHBaseTableRequestMetricRequest&, DescribeHBaseTableRequestMetricOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHBaseTableRequestMetricAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHBaseTableStoreSizeMetricResponse> DescribeHBaseTableStoreSizeMetricOutcome;
+                typedef std::future<DescribeHBaseTableStoreSizeMetricOutcome> DescribeHBaseTableStoreSizeMetricOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeHBaseTableStoreSizeMetricRequest&, DescribeHBaseTableStoreSizeMetricOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHBaseTableStoreSizeMetricAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHDFSStorageInfoResponse> DescribeHDFSStorageInfoOutcome;
                 typedef std::future<DescribeHDFSStorageInfoOutcome> DescribeHDFSStorageInfoOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeHDFSStorageInfoRequest&, DescribeHDFSStorageInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHDFSStorageInfoAsyncHandler;
@@ -735,6 +745,24 @@ namespace TencentCloud
                 DescribeHBaseTableOverviewOutcome DescribeHBaseTableOverview(const Model::DescribeHBaseTableOverviewRequest &request);
                 void DescribeHBaseTableOverviewAsync(const Model::DescribeHBaseTableOverviewRequest& request, const DescribeHBaseTableOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeHBaseTableOverviewOutcomeCallable DescribeHBaseTableOverviewCallable(const Model::DescribeHBaseTableOverviewRequest& request);
+
+                /**
+                 *Hbase的表粒度读取和写入速率
+                 * @param req DescribeHBaseTableRequestMetricRequest
+                 * @return DescribeHBaseTableRequestMetricOutcome
+                 */
+                DescribeHBaseTableRequestMetricOutcome DescribeHBaseTableRequestMetric(const Model::DescribeHBaseTableRequestMetricRequest &request);
+                void DescribeHBaseTableRequestMetricAsync(const Model::DescribeHBaseTableRequestMetricRequest& request, const DescribeHBaseTableRequestMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHBaseTableRequestMetricOutcomeCallable DescribeHBaseTableRequestMetricCallable(const Model::DescribeHBaseTableRequestMetricRequest& request);
+
+                /**
+                 *查询Hbase的表粒度StoreSize大小监控指标数据
+                 * @param req DescribeHBaseTableStoreSizeMetricRequest
+                 * @return DescribeHBaseTableStoreSizeMetricOutcome
+                 */
+                DescribeHBaseTableStoreSizeMetricOutcome DescribeHBaseTableStoreSizeMetric(const Model::DescribeHBaseTableStoreSizeMetricRequest &request);
+                void DescribeHBaseTableStoreSizeMetricAsync(const Model::DescribeHBaseTableStoreSizeMetricRequest& request, const DescribeHBaseTableStoreSizeMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHBaseTableStoreSizeMetricOutcomeCallable DescribeHBaseTableStoreSizeMetricCallable(const Model::DescribeHBaseTableStoreSizeMetricRequest& request);
 
                 /**
                  *查询HDFS存储文件信息

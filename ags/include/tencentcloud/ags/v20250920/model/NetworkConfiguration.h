@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ags/v20250920/model/VPCConfig.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网络模式（当前支持 PUBLIC）
-                     * @return NetworkMode 网络模式（当前支持 PUBLIC）
+                     * 获取网络模式（当前支持 PUBLIC, VPC, SANDBOX）
+                     * @return NetworkMode 网络模式（当前支持 PUBLIC, VPC, SANDBOX）
                      * 
                      */
                     std::string GetNetworkMode() const;
 
                     /**
-                     * 设置网络模式（当前支持 PUBLIC）
-                     * @param _networkMode 网络模式（当前支持 PUBLIC）
+                     * 设置网络模式（当前支持 PUBLIC, VPC, SANDBOX）
+                     * @param _networkMode 网络模式（当前支持 PUBLIC, VPC, SANDBOX）
                      * 
                      */
                     void SetNetworkMode(const std::string& _networkMode);
@@ -67,13 +68,40 @@ namespace TencentCloud
                      */
                     bool NetworkModeHasBeenSet() const;
 
+                    /**
+                     * 获取VPC网络相关配置
+                     * @return VpcConfig VPC网络相关配置
+                     * 
+                     */
+                    VPCConfig GetVpcConfig() const;
+
+                    /**
+                     * 设置VPC网络相关配置
+                     * @param _vpcConfig VPC网络相关配置
+                     * 
+                     */
+                    void SetVpcConfig(const VPCConfig& _vpcConfig);
+
+                    /**
+                     * 判断参数 VpcConfig 是否已赋值
+                     * @return VpcConfig 是否已赋值
+                     * 
+                     */
+                    bool VpcConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 网络模式（当前支持 PUBLIC）
+                     * 网络模式（当前支持 PUBLIC, VPC, SANDBOX）
                      */
                     std::string m_networkMode;
                     bool m_networkModeHasBeenSet;
+
+                    /**
+                     * VPC网络相关配置
+                     */
+                    VPCConfig m_vpcConfig;
+                    bool m_vpcConfigHasBeenSet;
 
                 };
             }

@@ -1990,6 +1990,56 @@ TcrClient::DeleteReplicationInstanceOutcomeCallable TcrClient::DeleteReplication
     return prom->get_future();
 }
 
+TcrClient::DeleteReplicationRuleOutcome TcrClient::DeleteReplicationRule(const DeleteReplicationRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteReplicationRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteReplicationRuleResponse rsp = DeleteReplicationRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteReplicationRuleOutcome(rsp);
+        else
+            return DeleteReplicationRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteReplicationRuleOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DeleteReplicationRuleAsync(const DeleteReplicationRuleRequest& request, const DeleteReplicationRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteReplicationRuleRequest&;
+    using Resp = DeleteReplicationRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteReplicationRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcrClient::DeleteReplicationRuleOutcomeCallable TcrClient::DeleteReplicationRuleCallable(const DeleteReplicationRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteReplicationRuleOutcome>>();
+    DeleteReplicationRuleAsync(
+    request,
+    [prom](
+        const TcrClient*,
+        const DeleteReplicationRuleRequest&,
+        DeleteReplicationRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcrClient::DeleteRepositoryOutcome TcrClient::DeleteRepository(const DeleteRepositoryRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteRepository");
@@ -3732,6 +3782,56 @@ TcrClient::DescribeReplicationInstancesOutcomeCallable TcrClient::DescribeReplic
         const TcrClient*,
         const DescribeReplicationInstancesRequest&,
         DescribeReplicationInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcrClient::DescribeReplicationPoliciesOutcome TcrClient::DescribeReplicationPolicies(const DescribeReplicationPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReplicationPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReplicationPoliciesResponse rsp = DescribeReplicationPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReplicationPoliciesOutcome(rsp);
+        else
+            return DescribeReplicationPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReplicationPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeReplicationPoliciesAsync(const DescribeReplicationPoliciesRequest& request, const DescribeReplicationPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeReplicationPoliciesRequest&;
+    using Resp = DescribeReplicationPoliciesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeReplicationPolicies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcrClient::DescribeReplicationPoliciesOutcomeCallable TcrClient::DescribeReplicationPoliciesCallable(const DescribeReplicationPoliciesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeReplicationPoliciesOutcome>>();
+    DescribeReplicationPoliciesAsync(
+    request,
+    [prom](
+        const TcrClient*,
+        const DescribeReplicationPoliciesRequest&,
+        DescribeReplicationPoliciesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

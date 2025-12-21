@@ -30,7 +30,8 @@ ModifyScheduledActionRequest::ModifyScheduledActionRequest() :
     m_desiredCapacityHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_recurrenceHasBeenSet(false)
+    m_recurrenceHasBeenSet(false),
+    m_disableUpdateDesiredCapacityHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string ModifyScheduledActionRequest::ToJsonString() const
         string key = "Recurrence";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_recurrence.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disableUpdateDesiredCapacityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableUpdateDesiredCapacity";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_disableUpdateDesiredCapacity, allocator);
     }
 
 
@@ -239,6 +248,22 @@ void ModifyScheduledActionRequest::SetRecurrence(const string& _recurrence)
 bool ModifyScheduledActionRequest::RecurrenceHasBeenSet() const
 {
     return m_recurrenceHasBeenSet;
+}
+
+bool ModifyScheduledActionRequest::GetDisableUpdateDesiredCapacity() const
+{
+    return m_disableUpdateDesiredCapacity;
+}
+
+void ModifyScheduledActionRequest::SetDisableUpdateDesiredCapacity(const bool& _disableUpdateDesiredCapacity)
+{
+    m_disableUpdateDesiredCapacity = _disableUpdateDesiredCapacity;
+    m_disableUpdateDesiredCapacityHasBeenSet = true;
+}
+
+bool ModifyScheduledActionRequest::DisableUpdateDesiredCapacityHasBeenSet() const
+{
+    return m_disableUpdateDesiredCapacityHasBeenSet;
 }
 
 

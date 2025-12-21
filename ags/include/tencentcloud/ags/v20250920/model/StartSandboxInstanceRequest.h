@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ags/v20250920/model/MountOption.h>
 
 
 namespace TencentCloud
@@ -126,6 +127,27 @@ namespace TencentCloud
                      */
                     bool ClientTokenHasBeenSet() const;
 
+                    /**
+                     * 获取沙箱实例存储挂载配置
+                     * @return MountOptions 沙箱实例存储挂载配置
+                     * 
+                     */
+                    std::vector<MountOption> GetMountOptions() const;
+
+                    /**
+                     * 设置沙箱实例存储挂载配置
+                     * @param _mountOptions 沙箱实例存储挂载配置
+                     * 
+                     */
+                    void SetMountOptions(const std::vector<MountOption>& _mountOptions);
+
+                    /**
+                     * 判断参数 MountOptions 是否已赋值
+                     * @return MountOptions 是否已赋值
+                     * 
+                     */
+                    bool MountOptionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +173,12 @@ namespace TencentCloud
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
+
+                    /**
+                     * 沙箱实例存储挂载配置
+                     */
+                    std::vector<MountOption> m_mountOptions;
+                    bool m_mountOptionsHasBeenSet;
 
                 };
             }

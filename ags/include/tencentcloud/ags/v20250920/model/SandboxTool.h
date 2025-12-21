@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ags/v20250920/model/NetworkConfiguration.h>
 #include <tencentcloud/ags/v20250920/model/Tag.h>
+#include <tencentcloud/ags/v20250920/model/StorageMount.h>
 
 
 namespace TencentCloud
@@ -258,6 +259,48 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取沙箱工具绑定角色ARN
+                     * @return RoleArn 沙箱工具绑定角色ARN
+                     * 
+                     */
+                    std::string GetRoleArn() const;
+
+                    /**
+                     * 设置沙箱工具绑定角色ARN
+                     * @param _roleArn 沙箱工具绑定角色ARN
+                     * 
+                     */
+                    void SetRoleArn(const std::string& _roleArn);
+
+                    /**
+                     * 判断参数 RoleArn 是否已赋值
+                     * @return RoleArn 是否已赋值
+                     * 
+                     */
+                    bool RoleArnHasBeenSet() const;
+
+                    /**
+                     * 获取沙箱工具中实例存储挂载配置
+                     * @return StorageMounts 沙箱工具中实例存储挂载配置
+                     * 
+                     */
+                    std::vector<StorageMount> GetStorageMounts() const;
+
+                    /**
+                     * 设置沙箱工具中实例存储挂载配置
+                     * @param _storageMounts 沙箱工具中实例存储挂载配置
+                     * 
+                     */
+                    void SetStorageMounts(const std::vector<StorageMount>& _storageMounts);
+
+                    /**
+                     * 判断参数 StorageMounts 是否已赋值
+                     * @return StorageMounts 是否已赋值
+                     * 
+                     */
+                    bool StorageMountsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -319,6 +362,18 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 沙箱工具绑定角色ARN
+                     */
+                    std::string m_roleArn;
+                    bool m_roleArnHasBeenSet;
+
+                    /**
+                     * 沙箱工具中实例存储挂载配置
+                     */
+                    std::vector<StorageMount> m_storageMounts;
+                    bool m_storageMountsHasBeenSet;
 
                 };
             }

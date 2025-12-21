@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取解析规则内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchemaContent 解析规则内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSchemaContent() const;
 
                     /**
                      * 设置解析规则内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _schemaContent 解析规则内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSchemaContent(const std::string& _schemaContent);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取解析规则时间格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchemaDateFormat 解析规则时间格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSchemaDateFormat() const;
 
                     /**
                      * 设置解析规则时间格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _schemaDateFormat 解析规则时间格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSchemaDateFormat(const std::string& _schemaDateFormat);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取解析规则对应的多行匹配规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchemaMultilinePattern 解析规则对应的多行匹配规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSchemaMultilinePattern() const;
 
                     /**
                      * 设置解析规则对应的多行匹配规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _schemaMultilinePattern 解析规则对应的多行匹配规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSchemaMultilinePattern(const std::string& _schemaMultilinePattern);
@@ -165,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户填写的解析规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchemaPatternLayout 用户填写的解析规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSchemaPatternLayout() const;
 
                     /**
                      * 设置用户填写的解析规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _schemaPatternLayout 用户填写的解析规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSchemaPatternLayout(const std::string& _schemaPatternLayout);
@@ -198,21 +182,18 @@ namespace TencentCloud
 
                     /**
                      * 解析规则内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_schemaContent;
                     bool m_schemaContentHasBeenSet;
 
                     /**
                      * 解析规则时间格式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_schemaDateFormat;
                     bool m_schemaDateFormatHasBeenSet;
 
                     /**
                      * 解析规则对应的多行匹配规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_schemaMultilinePattern;
                     bool m_schemaMultilinePatternHasBeenSet;
@@ -225,7 +206,6 @@ namespace TencentCloud
 
                     /**
                      * 用户填写的解析规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_schemaPatternLayout;
                     bool m_schemaPatternLayoutHasBeenSet;

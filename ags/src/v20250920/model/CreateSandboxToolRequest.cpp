@@ -29,7 +29,9 @@ CreateSandboxToolRequest::CreateSandboxToolRequest() :
     m_descriptionHasBeenSet(false),
     m_defaultTimeoutHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
+    m_storageMountsHasBeenSet(false)
 {
 }
 
@@ -102,6 +104,29 @@ string CreateSandboxToolRequest::ToJsonString() const
         string key = "ClientToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roleArnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleArn";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_roleArn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageMountsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageMounts";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_storageMounts.begin(); itr != m_storageMounts.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -222,6 +247,38 @@ void CreateSandboxToolRequest::SetClientToken(const string& _clientToken)
 bool CreateSandboxToolRequest::ClientTokenHasBeenSet() const
 {
     return m_clientTokenHasBeenSet;
+}
+
+string CreateSandboxToolRequest::GetRoleArn() const
+{
+    return m_roleArn;
+}
+
+void CreateSandboxToolRequest::SetRoleArn(const string& _roleArn)
+{
+    m_roleArn = _roleArn;
+    m_roleArnHasBeenSet = true;
+}
+
+bool CreateSandboxToolRequest::RoleArnHasBeenSet() const
+{
+    return m_roleArnHasBeenSet;
+}
+
+vector<StorageMount> CreateSandboxToolRequest::GetStorageMounts() const
+{
+    return m_storageMounts;
+}
+
+void CreateSandboxToolRequest::SetStorageMounts(const vector<StorageMount>& _storageMounts)
+{
+    m_storageMounts = _storageMounts;
+    m_storageMountsHasBeenSet = true;
+}
+
+bool CreateSandboxToolRequest::StorageMountsHasBeenSet() const
+{
+    return m_storageMountsHasBeenSet;
 }
 
 

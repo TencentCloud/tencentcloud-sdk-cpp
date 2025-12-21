@@ -37,7 +37,8 @@ BusinessLogConfig::BusinessLogConfig() :
     m_filebeatIgnoreOlderHasBeenSet(false),
     m_filebeatHarvesterLimitHasBeenSet(false),
     m_filebeatCloseInactiveHasBeenSet(false),
-    m_filebeatCleanInactiveHasBeenSet(false)
+    m_filebeatCleanInactiveHasBeenSet(false),
+    m_customMultilinePatternHasBeenSet(false)
 {
 }
 
@@ -243,6 +244,16 @@ CoreInternalOutcome BusinessLogConfig::Deserialize(const rapidjson::Value &value
         m_filebeatCleanInactiveHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomMultilinePattern") && !value["CustomMultilinePattern"].IsNull())
+    {
+        if (!value["CustomMultilinePattern"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `BusinessLogConfig.CustomMultilinePattern` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_customMultilinePattern = value["CustomMultilinePattern"].GetBool();
+        m_customMultilinePatternHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -399,6 +410,14 @@ void BusinessLogConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "FilebeatCleanInactive";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_filebeatCleanInactive, allocator);
+    }
+
+    if (m_customMultilinePatternHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomMultilinePattern";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_customMultilinePattern, allocator);
     }
 
 }
@@ -674,5 +693,21 @@ void BusinessLogConfig::SetFilebeatCleanInactive(const int64_t& _filebeatCleanIn
 bool BusinessLogConfig::FilebeatCleanInactiveHasBeenSet() const
 {
     return m_filebeatCleanInactiveHasBeenSet;
+}
+
+bool BusinessLogConfig::GetCustomMultilinePattern() const
+{
+    return m_customMultilinePattern;
+}
+
+void BusinessLogConfig::SetCustomMultilinePattern(const bool& _customMultilinePattern)
+{
+    m_customMultilinePattern = _customMultilinePattern;
+    m_customMultilinePatternHasBeenSet = true;
+}
+
+bool BusinessLogConfig::CustomMultilinePatternHasBeenSet() const
+{
+    return m_customMultilinePatternHasBeenSet;
 }
 

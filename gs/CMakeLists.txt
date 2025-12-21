@@ -70,6 +70,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/DisconnectAndroidInstanceAcceleratorResponse.h
   include/tencentcloud/gs/v20191118/model/CleanAndroidInstancesAppDataRequest.h
   include/tencentcloud/gs/v20191118/model/DisableAndroidInstancesAppRequest.h
+  include/tencentcloud/gs/v20191118/model/AndroidInstanceBackup.h
   include/tencentcloud/gs/v20191118/model/DisconnectAndroidInstanceResponse.h
   include/tencentcloud/gs/v20191118/model/EnableAndroidInstancesAppResponse.h
   include/tencentcloud/gs/v20191118/model/ConnectAndroidInstanceRequest.h
@@ -265,6 +266,7 @@ set(gs_src
   src/v20191118/model/DisconnectAndroidInstanceAcceleratorResponse.cpp
   src/v20191118/model/CleanAndroidInstancesAppDataRequest.cpp
   src/v20191118/model/DisableAndroidInstancesAppRequest.cpp
+  src/v20191118/model/AndroidInstanceBackup.cpp
   src/v20191118/model/DisconnectAndroidInstanceResponse.cpp
   src/v20191118/model/EnableAndroidInstancesAppResponse.cpp
   src/v20191118/model/ConnectAndroidInstanceRequest.cpp

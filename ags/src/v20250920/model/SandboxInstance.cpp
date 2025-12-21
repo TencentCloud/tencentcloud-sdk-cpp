@@ -29,7 +29,8 @@ SandboxInstance::SandboxInstance() :
     m_expiresAtHasBeenSet(false),
     m_stopReasonHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_mountOptionsHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,26 @@ CoreInternalOutcome SandboxInstance::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("MountOptions") && !value["MountOptions"].IsNull())
+    {
+        if (!value["MountOptions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SandboxInstance.MountOptions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MountOptions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MountOption item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_mountOptions.push_back(item);
+        }
+        m_mountOptionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +226,21 @@ void SandboxInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mountOptionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MountOptions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_mountOptions.begin(); itr != m_mountOptions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -352,5 +388,21 @@ void SandboxInstance::SetUpdateTime(const string& _updateTime)
 bool SandboxInstance::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+vector<MountOption> SandboxInstance::GetMountOptions() const
+{
+    return m_mountOptions;
+}
+
+void SandboxInstance::SetMountOptions(const vector<MountOption>& _mountOptions)
+{
+    m_mountOptions = _mountOptions;
+    m_mountOptionsHasBeenSet = true;
+}
+
+bool SandboxInstance::MountOptionsHasBeenSet() const
+{
+    return m_mountOptionsHasBeenSet;
 }
 

@@ -101,6 +101,8 @@
 #include <tencentcloud/tcr/v20190924/model/DeleteNamespacePersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteReplicationInstanceRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteReplicationInstanceResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteReplicationRuleRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteReplicationRuleResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteRepositoryRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteRepositoryResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteRepositoryPersonalRequest.h>
@@ -171,6 +173,8 @@
 #include <tencentcloud/tcr/v20190924/model/DescribeReplicationInstanceSyncStatusResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeReplicationInstancesRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeReplicationInstancesResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeReplicationPoliciesRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeReplicationPoliciesResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeRepositoriesRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeRepositoriesResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeRepositoryFilterPersonalRequest.h>
@@ -374,6 +378,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteReplicationInstanceResponse> DeleteReplicationInstanceOutcome;
                 typedef std::future<DeleteReplicationInstanceOutcome> DeleteReplicationInstanceOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteReplicationInstanceRequest&, DeleteReplicationInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteReplicationInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteReplicationRuleResponse> DeleteReplicationRuleOutcome;
+                typedef std::future<DeleteReplicationRuleOutcome> DeleteReplicationRuleOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DeleteReplicationRuleRequest&, DeleteReplicationRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteReplicationRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRepositoryResponse> DeleteRepositoryOutcome;
                 typedef std::future<DeleteRepositoryOutcome> DeleteRepositoryOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteRepositoryRequest&, DeleteRepositoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRepositoryAsyncHandler;
@@ -479,6 +486,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeReplicationInstancesResponse> DescribeReplicationInstancesOutcome;
                 typedef std::future<DescribeReplicationInstancesOutcome> DescribeReplicationInstancesOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeReplicationInstancesRequest&, DescribeReplicationInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReplicationInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeReplicationPoliciesResponse> DescribeReplicationPoliciesOutcome;
+                typedef std::future<DescribeReplicationPoliciesOutcome> DescribeReplicationPoliciesOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeReplicationPoliciesRequest&, DescribeReplicationPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReplicationPoliciesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRepositoriesResponse> DescribeRepositoriesOutcome;
                 typedef std::future<DescribeRepositoriesOutcome> DescribeRepositoriesOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeRepositoriesRequest&, DescribeRepositoriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRepositoriesAsyncHandler;
@@ -942,6 +952,15 @@ namespace TencentCloud
                 DeleteReplicationInstanceOutcomeCallable DeleteReplicationInstanceCallable(const Model::DeleteReplicationInstanceRequest& request);
 
                 /**
+                 *删除实例同步规则
+                 * @param req DeleteReplicationRuleRequest
+                 * @return DeleteReplicationRuleOutcome
+                 */
+                DeleteReplicationRuleOutcome DeleteReplicationRule(const Model::DeleteReplicationRuleRequest &request);
+                void DeleteReplicationRuleAsync(const Model::DeleteReplicationRuleRequest& request, const DeleteReplicationRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteReplicationRuleOutcomeCallable DeleteReplicationRuleCallable(const Model::DeleteReplicationRuleRequest& request);
+
+                /**
                  *删除镜像仓库
                  * @param req DeleteRepositoryRequest
                  * @return DeleteRepositoryOutcome
@@ -1257,6 +1276,15 @@ namespace TencentCloud
                 DescribeReplicationInstancesOutcome DescribeReplicationInstances(const Model::DescribeReplicationInstancesRequest &request);
                 void DescribeReplicationInstancesAsync(const Model::DescribeReplicationInstancesRequest& request, const DescribeReplicationInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeReplicationInstancesOutcomeCallable DescribeReplicationInstancesCallable(const Model::DescribeReplicationInstancesRequest& request);
+
+                /**
+                 *获取实例同步规则列表
+                 * @param req DescribeReplicationPoliciesRequest
+                 * @return DescribeReplicationPoliciesOutcome
+                 */
+                DescribeReplicationPoliciesOutcome DescribeReplicationPolicies(const Model::DescribeReplicationPoliciesRequest &request);
+                void DescribeReplicationPoliciesAsync(const Model::DescribeReplicationPoliciesRequest& request, const DescribeReplicationPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReplicationPoliciesOutcomeCallable DescribeReplicationPoliciesCallable(const Model::DescribeReplicationPoliciesRequest& request);
 
                 /**
                  *查询镜像仓库列表或指定镜像仓库信息

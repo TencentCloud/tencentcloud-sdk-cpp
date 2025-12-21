@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ags/v20250920/model/MountOption.h>
 
 
 namespace TencentCloud
@@ -235,6 +236,27 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取存储挂载选项
+                     * @return MountOptions 存储挂载选项
+                     * 
+                     */
+                    std::vector<MountOption> GetMountOptions() const;
+
+                    /**
+                     * 设置存储挂载选项
+                     * @param _mountOptions 存储挂载选项
+                     * 
+                     */
+                    void SetMountOptions(const std::vector<MountOption>& _mountOptions);
+
+                    /**
+                     * 判断参数 MountOptions 是否已赋值
+                     * @return MountOptions 是否已赋值
+                     * 
+                     */
+                    bool MountOptionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +312,12 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 存储挂载选项
+                     */
+                    std::vector<MountOption> m_mountOptions;
+                    bool m_mountOptionsHasBeenSet;
 
                 };
             }

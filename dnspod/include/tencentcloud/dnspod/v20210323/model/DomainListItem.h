@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取域名默认的解析记录默认TTL值
-                     * @return TTL 域名默认的解析记录默认TTL值
+                     * 获取域名默认的解析记录默认TTL值，单位：秒
+                     * @return TTL 域名默认的解析记录默认TTL值，单位：秒
                      * 
                      */
                     uint64_t GetTTL() const;
 
                     /**
-                     * 设置域名默认的解析记录默认TTL值
-                     * @param _tTL 域名默认的解析记录默认TTL值
+                     * 设置域名默认的解析记录默认TTL值，单位：秒
+                     * @param _tTL 域名默认的解析记录默认TTL值，单位：秒
                      * 
                      */
                     void SetTTL(const uint64_t& _tTL);
@@ -555,7 +555,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 域名默认的解析记录默认TTL值
+                     * 域名默认的解析记录默认TTL值，单位：秒
                      */
                     uint64_t m_tTL;
                     bool m_tTLHasBeenSet;

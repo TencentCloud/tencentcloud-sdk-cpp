@@ -57,6 +57,8 @@
 #include <tencentcloud/tdai/v20250717/model/RecoverAgentInstanceResponse.h>
 #include <tencentcloud/tdai/v20250717/model/RemoveChatRequest.h>
 #include <tencentcloud/tdai/v20250717/model/RemoveChatResponse.h>
+#include <tencentcloud/tdai/v20250717/model/StartAgentTaskRequest.h>
+#include <tencentcloud/tdai/v20250717/model/StartAgentTaskResponse.h>
 #include <tencentcloud/tdai/v20250717/model/TerminateAgentInstanceRequest.h>
 #include <tencentcloud/tdai/v20250717/model/TerminateAgentInstanceResponse.h>
 
@@ -124,6 +126,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RemoveChatResponse> RemoveChatOutcome;
                 typedef std::future<RemoveChatOutcome> RemoveChatOutcomeCallable;
                 typedef std::function<void(const TdaiClient*, const Model::RemoveChatRequest&, RemoveChatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveChatAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartAgentTaskResponse> StartAgentTaskOutcome;
+                typedef std::future<StartAgentTaskOutcome> StartAgentTaskOutcomeCallable;
+                typedef std::function<void(const TdaiClient*, const Model::StartAgentTaskRequest&, StartAgentTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartAgentTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::TerminateAgentInstanceResponse> TerminateAgentInstanceOutcome;
                 typedef std::future<TerminateAgentInstanceOutcome> TerminateAgentInstanceOutcomeCallable;
                 typedef std::function<void(const TdaiClient*, const Model::TerminateAgentInstanceRequest&, TerminateAgentInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateAgentInstanceAsyncHandler;
@@ -282,6 +287,15 @@ namespace TencentCloud
                 RemoveChatOutcome RemoveChat(const Model::RemoveChatRequest &request);
                 void RemoveChatAsync(const Model::RemoveChatRequest& request, const RemoveChatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RemoveChatOutcomeCallable RemoveChatCallable(const Model::RemoveChatRequest& request);
+
+                /**
+                 *该接口用于启动一个智能体的任务
+                 * @param req StartAgentTaskRequest
+                 * @return StartAgentTaskOutcome
+                 */
+                StartAgentTaskOutcome StartAgentTask(const Model::StartAgentTaskRequest &request);
+                void StartAgentTaskAsync(const Model::StartAgentTaskRequest& request, const StartAgentTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartAgentTaskOutcomeCallable StartAgentTaskCallable(const Model::StartAgentTaskRequest& request);
 
                 /**
                  *本接口（TerminateAgentInstance）用于下线智能体实例，通常在用户需要下线智能体实例时使用。

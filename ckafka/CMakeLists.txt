@@ -117,6 +117,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/InstanceQuotaConfigResp.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicDetailResponse.h
   include/tencentcloud/ckafka/v20190819/model/SecurityGroupRouteResp.h
+  include/tencentcloud/ckafka/v20190819/model/LatestBrokerVersion.h
   include/tencentcloud/ckafka/v20190819/model/DeleteAclRequest.h
   include/tencentcloud/ckafka/v20190819/model/RouteDTO.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTaskResponse.h
@@ -201,6 +202,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/ModifyDatahubTopicRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTopicsResp.h
   include/tencentcloud/ckafka/v20190819/model/ModifyDatahubTaskResponse.h
+  include/tencentcloud/ckafka/v20190819/model/InstanceVersion.h
   include/tencentcloud/ckafka/v20190819/model/DescribeConnectResourcesResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeCkafkaVersionResponse.h
   include/tencentcloud/ckafka/v20190819/model/TopicDetail.h
@@ -485,6 +487,7 @@ set(ckafka_src
   src/v20190819/model/InstanceQuotaConfigResp.cpp
   src/v20190819/model/DescribeTopicDetailResponse.cpp
   src/v20190819/model/SecurityGroupRouteResp.cpp
+  src/v20190819/model/LatestBrokerVersion.cpp
   src/v20190819/model/DeleteAclRequest.cpp
   src/v20190819/model/RouteDTO.cpp
   src/v20190819/model/DescribeDatahubTaskResponse.cpp
@@ -569,6 +572,7 @@ set(ckafka_src
   src/v20190819/model/ModifyDatahubTopicRequest.cpp
   src/v20190819/model/DescribeDatahubTopicsResp.cpp
   src/v20190819/model/ModifyDatahubTaskResponse.cpp
+  src/v20190819/model/InstanceVersion.cpp
   src/v20190819/model/DescribeConnectResourcesResponse.cpp
   src/v20190819/model/DescribeCkafkaVersionResponse.cpp
   src/v20190819/model/TopicDetail.cpp

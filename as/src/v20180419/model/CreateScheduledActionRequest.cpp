@@ -25,12 +25,13 @@ using namespace std;
 CreateScheduledActionRequest::CreateScheduledActionRequest() :
     m_autoScalingGroupIdHasBeenSet(false),
     m_scheduledActionNameHasBeenSet(false),
-    m_maxSizeHasBeenSet(false),
     m_minSizeHasBeenSet(false),
-    m_desiredCapacityHasBeenSet(false),
     m_startTimeHasBeenSet(false),
+    m_desiredCapacityHasBeenSet(false),
+    m_maxSizeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_recurrenceHasBeenSet(false)
+    m_recurrenceHasBeenSet(false),
+    m_disableUpdateDesiredCapacityHasBeenSet(false)
 {
 }
 
@@ -57,20 +58,20 @@ string CreateScheduledActionRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_scheduledActionName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_maxSizeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MaxSize";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_maxSize, allocator);
-    }
-
     if (m_minSizeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_minSize, allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_desiredCapacityHasBeenSet)
@@ -81,12 +82,12 @@ string CreateScheduledActionRequest::ToJsonString() const
         d.AddMember(iKey, m_desiredCapacity, allocator);
     }
 
-    if (m_startTimeHasBeenSet)
+    if (m_maxSizeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StartTime";
+        string key = "MaxSize";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_maxSize, allocator);
     }
 
     if (m_endTimeHasBeenSet)
@@ -103,6 +104,14 @@ string CreateScheduledActionRequest::ToJsonString() const
         string key = "Recurrence";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_recurrence.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disableUpdateDesiredCapacityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableUpdateDesiredCapacity";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_disableUpdateDesiredCapacity, allocator);
     }
 
 
@@ -145,22 +154,6 @@ bool CreateScheduledActionRequest::ScheduledActionNameHasBeenSet() const
     return m_scheduledActionNameHasBeenSet;
 }
 
-uint64_t CreateScheduledActionRequest::GetMaxSize() const
-{
-    return m_maxSize;
-}
-
-void CreateScheduledActionRequest::SetMaxSize(const uint64_t& _maxSize)
-{
-    m_maxSize = _maxSize;
-    m_maxSizeHasBeenSet = true;
-}
-
-bool CreateScheduledActionRequest::MaxSizeHasBeenSet() const
-{
-    return m_maxSizeHasBeenSet;
-}
-
 uint64_t CreateScheduledActionRequest::GetMinSize() const
 {
     return m_minSize;
@@ -175,6 +168,22 @@ void CreateScheduledActionRequest::SetMinSize(const uint64_t& _minSize)
 bool CreateScheduledActionRequest::MinSizeHasBeenSet() const
 {
     return m_minSizeHasBeenSet;
+}
+
+string CreateScheduledActionRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void CreateScheduledActionRequest::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool CreateScheduledActionRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
 }
 
 uint64_t CreateScheduledActionRequest::GetDesiredCapacity() const
@@ -193,20 +202,20 @@ bool CreateScheduledActionRequest::DesiredCapacityHasBeenSet() const
     return m_desiredCapacityHasBeenSet;
 }
 
-string CreateScheduledActionRequest::GetStartTime() const
+uint64_t CreateScheduledActionRequest::GetMaxSize() const
 {
-    return m_startTime;
+    return m_maxSize;
 }
 
-void CreateScheduledActionRequest::SetStartTime(const string& _startTime)
+void CreateScheduledActionRequest::SetMaxSize(const uint64_t& _maxSize)
 {
-    m_startTime = _startTime;
-    m_startTimeHasBeenSet = true;
+    m_maxSize = _maxSize;
+    m_maxSizeHasBeenSet = true;
 }
 
-bool CreateScheduledActionRequest::StartTimeHasBeenSet() const
+bool CreateScheduledActionRequest::MaxSizeHasBeenSet() const
 {
-    return m_startTimeHasBeenSet;
+    return m_maxSizeHasBeenSet;
 }
 
 string CreateScheduledActionRequest::GetEndTime() const
@@ -239,6 +248,22 @@ void CreateScheduledActionRequest::SetRecurrence(const string& _recurrence)
 bool CreateScheduledActionRequest::RecurrenceHasBeenSet() const
 {
     return m_recurrenceHasBeenSet;
+}
+
+bool CreateScheduledActionRequest::GetDisableUpdateDesiredCapacity() const
+{
+    return m_disableUpdateDesiredCapacity;
+}
+
+void CreateScheduledActionRequest::SetDisableUpdateDesiredCapacity(const bool& _disableUpdateDesiredCapacity)
+{
+    m_disableUpdateDesiredCapacity = _disableUpdateDesiredCapacity;
+    m_disableUpdateDesiredCapacityHasBeenSet = true;
+}
+
+bool CreateScheduledActionRequest::DisableUpdateDesiredCapacityHasBeenSet() const
+{
+    return m_disableUpdateDesiredCapacityHasBeenSet;
 }
 
 

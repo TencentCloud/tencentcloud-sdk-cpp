@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/gs/v20191118/model/AndroidInstanceBackup.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取备份列表
+                     * @return Backups 备份列表
+                     * 
+                     */
+                    std::vector<AndroidInstanceBackup> GetBackups() const;
+
+                    /**
+                     * 判断参数 Backups 是否已赋值
+                     * @return Backups 是否已赋值
+                     * 
+                     */
+                    bool BackupsHasBeenSet() const;
+
+                    /**
+                     * 获取备份总数
+                     * @return TotalCount 备份总数
+                     * 
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 备份列表
+                     */
+                    std::vector<AndroidInstanceBackup> m_backups;
+                    bool m_backupsHasBeenSet;
+
+                    /**
+                     * 备份总数
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

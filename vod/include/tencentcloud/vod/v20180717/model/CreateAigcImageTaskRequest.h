@@ -70,10 +70,14 @@ namespace TencentCloud
 <li>GEM：Gemini；</li>
 <li>Jimeng：即梦；</li>
 <li>Qwen：千问。</li>
+<li>Hunyuan：混元。</li>
+<li>Mingmou：明眸。</li>
                      * @return ModelName 模型名称。取值：
 <li>GEM：Gemini；</li>
 <li>Jimeng：即梦；</li>
 <li>Qwen：千问。</li>
+<li>Hunyuan：混元。</li>
+<li>Mingmou：明眸。</li>
                      * 
                      */
                     std::string GetModelName() const;
@@ -83,10 +87,14 @@ namespace TencentCloud
 <li>GEM：Gemini；</li>
 <li>Jimeng：即梦；</li>
 <li>Qwen：千问。</li>
+<li>Hunyuan：混元。</li>
+<li>Mingmou：明眸。</li>
                      * @param _modelName 模型名称。取值：
 <li>GEM：Gemini；</li>
 <li>Jimeng：即梦；</li>
 <li>Qwen：千问。</li>
+<li>Hunyuan：混元。</li>
+<li>Mingmou：明眸。</li>
                      * 
                      */
                     void SetModelName(const std::string& _modelName);
@@ -103,10 +111,14 @@ namespace TencentCloud
 <li>当 ModelName 是 GEM，可选值为 2.5、3.0；</li>
 <li>当 ModelName 是 Jimeng，可选值为 4.0；</li>
 <li>当 ModelName 是 Qwen，可选值为 0925；</li>
+<li>当 ModelName 是 Hunyuan，可选值为 3.0；</li>
+<li>当 ModelName 是 Mingmou，可选值为 1.0；</li>
                      * @return ModelVersion 模型版本。取值：
 <li>当 ModelName 是 GEM，可选值为 2.5、3.0；</li>
 <li>当 ModelName 是 Jimeng，可选值为 4.0；</li>
 <li>当 ModelName 是 Qwen，可选值为 0925；</li>
+<li>当 ModelName 是 Hunyuan，可选值为 3.0；</li>
+<li>当 ModelName 是 Mingmou，可选值为 1.0；</li>
                      * 
                      */
                     std::string GetModelVersion() const;
@@ -116,10 +128,14 @@ namespace TencentCloud
 <li>当 ModelName 是 GEM，可选值为 2.5、3.0；</li>
 <li>当 ModelName 是 Jimeng，可选值为 4.0；</li>
 <li>当 ModelName 是 Qwen，可选值为 0925；</li>
+<li>当 ModelName 是 Hunyuan，可选值为 3.0；</li>
+<li>当 ModelName 是 Mingmou，可选值为 1.0；</li>
                      * @param _modelVersion 模型版本。取值：
 <li>当 ModelName 是 GEM，可选值为 2.5、3.0；</li>
 <li>当 ModelName 是 Jimeng，可选值为 4.0；</li>
 <li>当 ModelName 是 Qwen，可选值为 0925；</li>
+<li>当 ModelName 是 Hunyuan，可选值为 3.0；</li>
+<li>当 ModelName 是 Mingmou，可选值为 1.0；</li>
                      * 
                      */
                     void SetModelVersion(const std::string& _modelVersion);
@@ -153,15 +169,15 @@ namespace TencentCloud
                     bool FileInfosHasBeenSet() const;
 
                     /**
-                     * 获取生成图片的提示词。最大支持1000字符，当 FileInfos 为空时，此参数必填。
-                     * @return Prompt 生成图片的提示词。最大支持1000字符，当 FileInfos 为空时，此参数必填。
+                     * 获取生成图片的提示词。最大支持2000字符，当 FileInfos 为空时，此参数必填。
+                     * @return Prompt 生成图片的提示词。最大支持2000字符，当 FileInfos 为空时，此参数必填。
                      * 
                      */
                     std::string GetPrompt() const;
 
                     /**
-                     * 设置生成图片的提示词。最大支持1000字符，当 FileInfos 为空时，此参数必填。
-                     * @param _prompt 生成图片的提示词。最大支持1000字符，当 FileInfos 为空时，此参数必填。
+                     * 设置生成图片的提示词。最大支持2000字符，当 FileInfos 为空时，此参数必填。
+                     * @param _prompt 生成图片的提示词。最大支持2000字符，当 FileInfos 为空时，此参数必填。
                      * 
                      */
                     void SetPrompt(const std::string& _prompt);
@@ -333,6 +349,8 @@ namespace TencentCloud
 <li>GEM：Gemini；</li>
 <li>Jimeng：即梦；</li>
 <li>Qwen：千问。</li>
+<li>Hunyuan：混元。</li>
+<li>Mingmou：明眸。</li>
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;
@@ -342,6 +360,8 @@ namespace TencentCloud
 <li>当 ModelName 是 GEM，可选值为 2.5、3.0；</li>
 <li>当 ModelName 是 Jimeng，可选值为 4.0；</li>
 <li>当 ModelName 是 Qwen，可选值为 0925；</li>
+<li>当 ModelName 是 Hunyuan，可选值为 3.0；</li>
+<li>当 ModelName 是 Mingmou，可选值为 1.0；</li>
                      */
                     std::string m_modelVersion;
                     bool m_modelVersionHasBeenSet;
@@ -353,7 +373,7 @@ namespace TencentCloud
                     bool m_fileInfosHasBeenSet;
 
                     /**
-                     * 生成图片的提示词。最大支持1000字符，当 FileInfos 为空时，此参数必填。
+                     * 生成图片的提示词。最大支持2000字符，当 FileInfos 为空时，此参数必填。
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;

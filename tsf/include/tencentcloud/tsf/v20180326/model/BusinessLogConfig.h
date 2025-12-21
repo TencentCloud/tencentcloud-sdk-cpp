@@ -114,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigDesc 配置项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigDesc() const;
 
                     /**
                      * 设置配置项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configDesc 配置项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigDesc(const std::string& _configDesc);
@@ -139,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置项标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigTags 配置项标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigTags() const;
 
                     /**
                      * 设置配置项标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configTags 配置项标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigTags(const std::string& _configTags);
@@ -185,18 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置项创建时间，格式为yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigCreateTime 配置项创建时间，格式为yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigCreateTime() const;
 
                     /**
                      * 设置配置项创建时间，格式为yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configCreateTime 配置项创建时间，格式为yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigCreateTime(const std::string& _configCreateTime);
@@ -210,18 +198,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置项更新时间，格式为yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigUpdateTime 配置项更新时间，格式为yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigUpdateTime() const;
 
                     /**
                      * 设置配置项更新时间，格式为yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configUpdateTime 配置项更新时间，格式为yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigUpdateTime(const std::string& _configUpdateTime);
@@ -426,6 +410,27 @@ namespace TencentCloud
                      */
                     bool FilebeatCleanInactiveHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启自定义pattern
+                     * @return CustomMultilinePattern 是否开启自定义pattern
+                     * 
+                     */
+                    bool GetCustomMultilinePattern() const;
+
+                    /**
+                     * 设置是否开启自定义pattern
+                     * @param _customMultilinePattern 是否开启自定义pattern
+                     * 
+                     */
+                    void SetCustomMultilinePattern(const bool& _customMultilinePattern);
+
+                    /**
+                     * 判断参数 CustomMultilinePattern 是否已赋值
+                     * @return CustomMultilinePattern 是否已赋值
+                     * 
+                     */
+                    bool CustomMultilinePatternHasBeenSet() const;
+
                 private:
 
                     /**
@@ -448,14 +453,12 @@ namespace TencentCloud
 
                     /**
                      * 配置项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configDesc;
                     bool m_configDescHasBeenSet;
 
                     /**
                      * 配置项标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configTags;
                     bool m_configTagsHasBeenSet;
@@ -468,14 +471,12 @@ namespace TencentCloud
 
                     /**
                      * 配置项创建时间，格式为yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configCreateTime;
                     bool m_configCreateTimeHasBeenSet;
 
                     /**
                      * 配置项更新时间，格式为yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configUpdateTime;
                     bool m_configUpdateTimeHasBeenSet;
@@ -534,6 +535,12 @@ namespace TencentCloud
                      */
                     int64_t m_filebeatCleanInactive;
                     bool m_filebeatCleanInactiveHasBeenSet;
+
+                    /**
+                     * 是否开启自定义pattern
+                     */
+                    bool m_customMultilinePattern;
+                    bool m_customMultilinePatternHasBeenSet;
 
                 };
             }

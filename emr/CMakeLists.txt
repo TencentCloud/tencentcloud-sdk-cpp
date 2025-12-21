@@ -55,6 +55,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/RenewInstancesInfo.h
   include/tencentcloud/emr/v20190103/model/ModifyResourceRequest.h
   include/tencentcloud/emr/v20190103/model/MultiDisk.h
+  include/tencentcloud/emr/v20190103/model/DescribeHBaseTableRequestMetricRequest.h
   include/tencentcloud/emr/v20190103/model/NodeSpecDisk.h
   include/tencentcloud/emr/v20190103/model/RunJobFlowRequest.h
   include/tencentcloud/emr/v20190103/model/ScaleOutClusterRequest.h
@@ -101,6 +102,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/ShortNodeInfo.h
   include/tencentcloud/emr/v20190103/model/DescribeAutoScaleRecordsRequest.h
   include/tencentcloud/emr/v20190103/model/JobFlowResource.h
+  include/tencentcloud/emr/v20190103/model/DescribeHBaseTableRequestMetricResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeJobFlowResponse.h
   include/tencentcloud/emr/v20190103/model/ClusterSetting.h
   include/tencentcloud/emr/v20190103/model/ModifyResourceResponse.h
@@ -187,6 +189,8 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/TagInfo.h
   include/tencentcloud/emr/v20190103/model/ModifySLInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/ModifyGlobalConfigRequest.h
+  include/tencentcloud/emr/v20190103/model/DescribeHBaseTableStoreSizeMetricResponse.h
+  include/tencentcloud/emr/v20190103/model/HBaseMetricData.h
   include/tencentcloud/emr/v20190103/model/LoadMetricsCondition.h
   include/tencentcloud/emr/v20190103/model/DescribeImpalaQueriesResponse.h
   include/tencentcloud/emr/v20190103/model/SetNodeResourceConfigDefaultResponse.h
@@ -203,6 +207,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/ImpalaQuery.h
   include/tencentcloud/emr/v20190103/model/CreateInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeServiceNodeInfosRequest.h
+  include/tencentcloud/emr/v20190103/model/DescribeHBaseTableStoreSizeMetricRequest.h
   include/tencentcloud/emr/v20190103/model/DayRepeatStrategy.h
   include/tencentcloud/emr/v20190103/model/PriceResult.h
   include/tencentcloud/emr/v20190103/model/UserManagerFilter.h
@@ -418,6 +423,7 @@ set(emr_src
   src/v20190103/model/RenewInstancesInfo.cpp
   src/v20190103/model/ModifyResourceRequest.cpp
   src/v20190103/model/MultiDisk.cpp
+  src/v20190103/model/DescribeHBaseTableRequestMetricRequest.cpp
   src/v20190103/model/NodeSpecDisk.cpp
   src/v20190103/model/RunJobFlowRequest.cpp
   src/v20190103/model/ScaleOutClusterRequest.cpp
@@ -464,6 +470,7 @@ set(emr_src
   src/v20190103/model/ShortNodeInfo.cpp
   src/v20190103/model/DescribeAutoScaleRecordsRequest.cpp
   src/v20190103/model/JobFlowResource.cpp
+  src/v20190103/model/DescribeHBaseTableRequestMetricResponse.cpp
   src/v20190103/model/DescribeJobFlowResponse.cpp
   src/v20190103/model/ClusterSetting.cpp
   src/v20190103/model/ModifyResourceResponse.cpp
@@ -550,6 +557,8 @@ set(emr_src
   src/v20190103/model/TagInfo.cpp
   src/v20190103/model/ModifySLInstanceResponse.cpp
   src/v20190103/model/ModifyGlobalConfigRequest.cpp
+  src/v20190103/model/DescribeHBaseTableStoreSizeMetricResponse.cpp
+  src/v20190103/model/HBaseMetricData.cpp
   src/v20190103/model/LoadMetricsCondition.cpp
   src/v20190103/model/DescribeImpalaQueriesResponse.cpp
   src/v20190103/model/SetNodeResourceConfigDefaultResponse.cpp
@@ -566,6 +575,7 @@ set(emr_src
   src/v20190103/model/ImpalaQuery.cpp
   src/v20190103/model/CreateInstanceResponse.cpp
   src/v20190103/model/DescribeServiceNodeInfosRequest.cpp
+  src/v20190103/model/DescribeHBaseTableStoreSizeMetricRequest.cpp
   src/v20190103/model/DayRepeatStrategy.cpp
   src/v20190103/model/PriceResult.cpp
   src/v20190103/model/UserManagerFilter.cpp

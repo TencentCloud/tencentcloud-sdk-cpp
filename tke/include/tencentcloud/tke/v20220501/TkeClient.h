@@ -35,6 +35,8 @@
 #include <tencentcloud/tke/v20220501/model/DeleteNodePoolResponse.h>
 #include <tencentcloud/tke/v20220501/model/DescribeClusterInstancesRequest.h>
 #include <tencentcloud/tke/v20220501/model/DescribeClusterInstancesResponse.h>
+#include <tencentcloud/tke/v20220501/model/DescribeClusterMachinesRequest.h>
+#include <tencentcloud/tke/v20220501/model/DescribeClusterMachinesResponse.h>
 #include <tencentcloud/tke/v20220501/model/DescribeClustersRequest.h>
 #include <tencentcloud/tke/v20220501/model/DescribeClustersResponse.h>
 #include <tencentcloud/tke/v20220501/model/DescribeHealthCheckPoliciesRequest.h>
@@ -91,6 +93,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterInstancesResponse> DescribeClusterInstancesOutcome;
                 typedef std::future<DescribeClusterInstancesOutcome> DescribeClusterInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterInstancesRequest&, DescribeClusterInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterMachinesResponse> DescribeClusterMachinesOutcome;
+                typedef std::future<DescribeClusterMachinesOutcome> DescribeClusterMachinesOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeClusterMachinesRequest&, DescribeClusterMachinesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterMachinesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClustersResponse> DescribeClustersOutcome;
                 typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClustersRequest&, DescribeClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersAsyncHandler;
@@ -183,6 +188,15 @@ namespace TencentCloud
                 DescribeClusterInstancesOutcome DescribeClusterInstances(const Model::DescribeClusterInstancesRequest &request);
                 void DescribeClusterInstancesAsync(const Model::DescribeClusterInstancesRequest& request, const DescribeClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClusterInstancesOutcomeCallable DescribeClusterInstancesCallable(const Model::DescribeClusterInstancesRequest& request);
+
+                /**
+                 *查询托原生点列表
+                 * @param req DescribeClusterMachinesRequest
+                 * @return DescribeClusterMachinesOutcome
+                 */
+                DescribeClusterMachinesOutcome DescribeClusterMachines(const Model::DescribeClusterMachinesRequest &request);
+                void DescribeClusterMachinesAsync(const Model::DescribeClusterMachinesRequest& request, const DescribeClusterMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterMachinesOutcomeCallable DescribeClusterMachinesCallable(const Model::DescribeClusterMachinesRequest& request);
 
                 /**
                  *查询集群列表

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导播台ID
-                     * @return CasterId 导播台ID
+                     * 获取<p>导播台ID</p>
+                     * @return CasterId <p>导播台ID</p>
                      * 
                      */
                     uint64_t GetCasterId() const;
 
                     /**
-                     * 设置导播台ID
-                     * @param _casterId 导播台ID
+                     * 设置<p>导播台ID</p>
+                     * @param _casterId <p>导播台ID</p>
                      * 
                      */
                     void SetCasterId(const uint64_t& _casterId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool CasterIdHasBeenSet() const;
 
                     /**
-                     * 获取导播台布局参数信息。
-                     * @return LayoutInfo 导播台布局参数信息。
+                     * 获取<p>导播台布局参数信息。</p>
+                     * @return LayoutInfo <p>导播台布局参数信息。</p>
                      * 
                      */
                     CasterLayoutInfo GetLayoutInfo() const;
 
                     /**
-                     * 设置导播台布局参数信息。
-                     * @param _layoutInfo 导播台布局参数信息。
+                     * 设置<p>导播台布局参数信息。</p>
+                     * @param _layoutInfo <p>导播台布局参数信息。</p>
                      * 
                      */
                     void SetLayoutInfo(const CasterLayoutInfo& _layoutInfo);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 导播台ID
+                     * <p>导播台ID</p>
                      */
                     uint64_t m_casterId;
                     bool m_casterIdHasBeenSet;
 
                     /**
-                     * 导播台布局参数信息。
+                     * <p>导播台布局参数信息。</p>
                      */
                     CasterLayoutInfo m_layoutInfo;
                     bool m_layoutInfoHasBeenSet;

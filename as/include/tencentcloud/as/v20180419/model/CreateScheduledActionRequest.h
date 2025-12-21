@@ -93,27 +93,6 @@ namespace TencentCloud
                     bool ScheduledActionNameHasBeenSet() const;
 
                     /**
-                     * 获取当定时任务触发时，设置的伸缩组最大实例数。
-                     * @return MaxSize 当定时任务触发时，设置的伸缩组最大实例数。
-                     * 
-                     */
-                    uint64_t GetMaxSize() const;
-
-                    /**
-                     * 设置当定时任务触发时，设置的伸缩组最大实例数。
-                     * @param _maxSize 当定时任务触发时，设置的伸缩组最大实例数。
-                     * 
-                     */
-                    void SetMaxSize(const uint64_t& _maxSize);
-
-                    /**
-                     * 判断参数 MaxSize 是否已赋值
-                     * @return MaxSize 是否已赋值
-                     * 
-                     */
-                    bool MaxSizeHasBeenSet() const;
-
-                    /**
                      * 获取当定时任务触发时，设置的伸缩组最小实例数。
                      * @return MinSize 当定时任务触发时，设置的伸缩组最小实例数。
                      * 
@@ -133,6 +112,27 @@ namespace TencentCloud
                      * 
                      */
                     bool MinSizeHasBeenSet() const;
+
+                    /**
+                     * 获取定时任务的首次触发时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+                     * @return StartTime 定时任务的首次触发时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置定时任务的首次触发时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+                     * @param _startTime 定时任务的首次触发时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取当定时任务触发时，设置的伸缩组期望实例数。
@@ -156,25 +156,25 @@ namespace TencentCloud
                     bool DesiredCapacityHasBeenSet() const;
 
                     /**
-                     * 获取定时任务的首次触发时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
-                     * @return StartTime 定时任务的首次触发时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+                     * 获取当定时任务触发时，设置的伸缩组最大实例数。
+                     * @return MaxSize 当定时任务触发时，设置的伸缩组最大实例数。
                      * 
                      */
-                    std::string GetStartTime() const;
+                    uint64_t GetMaxSize() const;
 
                     /**
-                     * 设置定时任务的首次触发时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
-                     * @param _startTime 定时任务的首次触发时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+                     * 设置当定时任务触发时，设置的伸缩组最大实例数。
+                     * @param _maxSize 当定时任务触发时，设置的伸缩组最大实例数。
                      * 
                      */
-                    void SetStartTime(const std::string& _startTime);
+                    void SetMaxSize(const uint64_t& _maxSize);
 
                     /**
-                     * 判断参数 StartTime 是否已赋值
-                     * @return StartTime 是否已赋值
+                     * 判断参数 MaxSize 是否已赋值
+                     * @return MaxSize 是否已赋值
                      * 
                      */
-                    bool StartTimeHasBeenSet() const;
+                    bool MaxSizeHasBeenSet() const;
 
                     /**
                      * 获取定时任务的结束时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。<br><br>此参数与`Recurrence`需要同时指定，到达结束时间之后，定时任务将不再生效。
@@ -218,6 +218,51 @@ namespace TencentCloud
                      */
                     bool RecurrenceHasBeenSet() const;
 
+                    /**
+                     * 获取停用期望数更新。默认值为 False，表示定时任务触发时期望实例数正常更新。
+该值为 True 时，定时任务触发时不会主动修改期望实例数，但可能会因最大最小值机制修改期望实例数。
+以下案例的前提都是停用期望数更新为 True：
+
+- 定时任务触发时，原期望数为 5，定时任务将最小值改为 10，最大值改为 20，期望数改为 15，由于停用期望数更新，15不生效，但原期望数 5 小于最小值 10，最终新期望数为 10。
+- 定时任务触发时，原期望数为 25，定时任务将最小值改为 10，最大值改为 20，期望数改为 15，由于停用期望数更新，15不生效，但原期望数 25 大于最大值 20，最终新期望数为 20。
+- 定时任务触发时，原期望数为 13，定时任务将最小值改为 10，最大值改为 20，期望数改为 15，由于停用期望数更新，15不生效，期望数保持为 13 。
+                     * @return DisableUpdateDesiredCapacity 停用期望数更新。默认值为 False，表示定时任务触发时期望实例数正常更新。
+该值为 True 时，定时任务触发时不会主动修改期望实例数，但可能会因最大最小值机制修改期望实例数。
+以下案例的前提都是停用期望数更新为 True：
+
+- 定时任务触发时，原期望数为 5，定时任务将最小值改为 10，最大值改为 20，期望数改为 15，由于停用期望数更新，15不生效，但原期望数 5 小于最小值 10，最终新期望数为 10。
+- 定时任务触发时，原期望数为 25，定时任务将最小值改为 10，最大值改为 20，期望数改为 15，由于停用期望数更新，15不生效，但原期望数 25 大于最大值 20，最终新期望数为 20。
+- 定时任务触发时，原期望数为 13，定时任务将最小值改为 10，最大值改为 20，期望数改为 15，由于停用期望数更新，15不生效，期望数保持为 13 。
+                     * 
+                     */
+                    bool GetDisableUpdateDesiredCapacity() const;
+
+                    /**
+                     * 设置停用期望数更新。默认值为 False，表示定时任务触发时期望实例数正常更新。
+该值为 True 时，定时任务触发时不会主动修改期望实例数，但可能会因最大最小值机制修改期望实例数。
+以下案例的前提都是停用期望数更新为 True：
+
+- 定时任务触发时，原期望数为 5，定时任务将最小值改为 10，最大值改为 20，期望数改为 15，由于停用期望数更新，15不生效，但原期望数 5 小于最小值 10，最终新期望数为 10。
+- 定时任务触发时，原期望数为 25，定时任务将最小值改为 10，最大值改为 20，期望数改为 15，由于停用期望数更新，15不生效，但原期望数 25 大于最大值 20，最终新期望数为 20。
+- 定时任务触发时，原期望数为 13，定时任务将最小值改为 10，最大值改为 20，期望数改为 15，由于停用期望数更新，15不生效，期望数保持为 13 。
+                     * @param _disableUpdateDesiredCapacity 停用期望数更新。默认值为 False，表示定时任务触发时期望实例数正常更新。
+该值为 True 时，定时任务触发时不会主动修改期望实例数，但可能会因最大最小值机制修改期望实例数。
+以下案例的前提都是停用期望数更新为 True：
+
+- 定时任务触发时，原期望数为 5，定时任务将最小值改为 10，最大值改为 20，期望数改为 15，由于停用期望数更新，15不生效，但原期望数 5 小于最小值 10，最终新期望数为 10。
+- 定时任务触发时，原期望数为 25，定时任务将最小值改为 10，最大值改为 20，期望数改为 15，由于停用期望数更新，15不生效，但原期望数 25 大于最大值 20，最终新期望数为 20。
+- 定时任务触发时，原期望数为 13，定时任务将最小值改为 10，最大值改为 20，期望数改为 15，由于停用期望数更新，15不生效，期望数保持为 13 。
+                     * 
+                     */
+                    void SetDisableUpdateDesiredCapacity(const bool& _disableUpdateDesiredCapacity);
+
+                    /**
+                     * 判断参数 DisableUpdateDesiredCapacity 是否已赋值
+                     * @return DisableUpdateDesiredCapacity 是否已赋值
+                     * 
+                     */
+                    bool DisableUpdateDesiredCapacityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,16 +280,16 @@ namespace TencentCloud
                     bool m_scheduledActionNameHasBeenSet;
 
                     /**
-                     * 当定时任务触发时，设置的伸缩组最大实例数。
-                     */
-                    uint64_t m_maxSize;
-                    bool m_maxSizeHasBeenSet;
-
-                    /**
                      * 当定时任务触发时，设置的伸缩组最小实例数。
                      */
                     uint64_t m_minSize;
                     bool m_minSizeHasBeenSet;
+
+                    /**
+                     * 定时任务的首次触发时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
 
                     /**
                      * 当定时任务触发时，设置的伸缩组期望实例数。
@@ -253,10 +298,10 @@ namespace TencentCloud
                     bool m_desiredCapacityHasBeenSet;
 
                     /**
-                     * 定时任务的首次触发时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+                     * 当定时任务触发时，设置的伸缩组最大实例数。
                      */
-                    std::string m_startTime;
-                    bool m_startTimeHasBeenSet;
+                    uint64_t m_maxSize;
+                    bool m_maxSizeHasBeenSet;
 
                     /**
                      * 定时任务的结束时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。<br><br>此参数与`Recurrence`需要同时指定，到达结束时间之后，定时任务将不再生效。
@@ -269,6 +314,18 @@ namespace TencentCloud
                      */
                     std::string m_recurrence;
                     bool m_recurrenceHasBeenSet;
+
+                    /**
+                     * 停用期望数更新。默认值为 False，表示定时任务触发时期望实例数正常更新。
+该值为 True 时，定时任务触发时不会主动修改期望实例数，但可能会因最大最小值机制修改期望实例数。
+以下案例的前提都是停用期望数更新为 True：
+
+- 定时任务触发时，原期望数为 5，定时任务将最小值改为 10，最大值改为 20，期望数改为 15，由于停用期望数更新，15不生效，但原期望数 5 小于最小值 10，最终新期望数为 10。
+- 定时任务触发时，原期望数为 25，定时任务将最小值改为 10，最大值改为 20，期望数改为 15，由于停用期望数更新，15不生效，但原期望数 25 大于最大值 20，最终新期望数为 20。
+- 定时任务触发时，原期望数为 13，定时任务将最小值改为 10，最大值改为 20，期望数改为 15，由于停用期望数更新，15不生效，期望数保持为 13 。
+                     */
+                    bool m_disableUpdateDesiredCapacity;
+                    bool m_disableUpdateDesiredCapacityHasBeenSet;
 
                 };
             }

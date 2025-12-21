@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gs::V20191118::Model;
 using namespace std;
 
-DescribeAndroidInstanceBackupsResponse::DescribeAndroidInstanceBackupsResponse()
+DescribeAndroidInstanceBackupsResponse::DescribeAndroidInstanceBackupsResponse() :
+    m_backupsHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome DescribeAndroidInstanceBackupsResponse::Deserialize(const st
     }
 
 
+    if (rsp.HasMember("Backups") && !rsp["Backups"].IsNull())
+    {
+        if (!rsp["Backups"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Backups` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Backups"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AndroidInstanceBackup item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_backups.push_back(item);
+        }
+        m_backupsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string DescribeAndroidInstanceBackupsResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_backupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Backups";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_backups.begin(); itr != m_backups.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string DescribeAndroidInstanceBackupsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<AndroidInstanceBackup> DescribeAndroidInstanceBackupsResponse::GetBackups() const
+{
+    return m_backups;
+}
+
+bool DescribeAndroidInstanceBackupsResponse::BackupsHasBeenSet() const
+{
+    return m_backupsHasBeenSet;
+}
+
+int64_t DescribeAndroidInstanceBackupsResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeAndroidInstanceBackupsResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
 
 

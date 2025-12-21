@@ -21,7 +21,8 @@ using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
 NetworkConfiguration::NetworkConfiguration() :
-    m_networkModeHasBeenSet(false)
+    m_networkModeHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,23 @@ CoreInternalOutcome NetworkConfiguration::Deserialize(const rapidjson::Value &va
         m_networkModeHasBeenSet = true;
     }
 
+    if (value.HasMember("VpcConfig") && !value["VpcConfig"].IsNull())
+    {
+        if (!value["VpcConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetworkConfiguration.VpcConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_vpcConfig.Deserialize(value["VpcConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_vpcConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +71,15 @@ void NetworkConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "NetworkMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_networkMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_vpcConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -72,5 +99,21 @@ void NetworkConfiguration::SetNetworkMode(const string& _networkMode)
 bool NetworkConfiguration::NetworkModeHasBeenSet() const
 {
     return m_networkModeHasBeenSet;
+}
+
+VPCConfig NetworkConfiguration::GetVpcConfig() const
+{
+    return m_vpcConfig;
+}
+
+void NetworkConfiguration::SetVpcConfig(const VPCConfig& _vpcConfig)
+{
+    m_vpcConfig = _vpcConfig;
+    m_vpcConfigHasBeenSet = true;
+}
+
+bool NetworkConfiguration::VpcConfigHasBeenSet() const
+{
+    return m_vpcConfigHasBeenSet;
 }
 
