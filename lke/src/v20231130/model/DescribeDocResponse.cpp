@@ -51,7 +51,10 @@ DescribeDocResponse::DescribeDocResponse() :
     m_isDisabledHasBeenSet(false),
     m_isDownloadHasBeenSet(false),
     m_splitRuleHasBeenSet(false),
-    m_updatePeriodInfoHasBeenSet(false)
+    m_updatePeriodInfoHasBeenSet(false),
+    m_cateBizIdPathHasBeenSet(false),
+    m_cateNamePathHasBeenSet(false),
+    m_enableScopeHasBeenSet(false)
 {
 }
 
@@ -386,6 +389,42 @@ CoreInternalOutcome DescribeDocResponse::Deserialize(const string &payload)
         m_updatePeriodInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CateBizIdPath") && !rsp["CateBizIdPath"].IsNull())
+    {
+        if (!rsp["CateBizIdPath"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CateBizIdPath` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CateBizIdPath"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_cateBizIdPath.push_back((*itr).GetString());
+        }
+        m_cateBizIdPathHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CateNamePath") && !rsp["CateNamePath"].IsNull())
+    {
+        if (!rsp["CateNamePath"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CateNamePath` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CateNamePath"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_cateNamePath.push_back((*itr).GetString());
+        }
+        m_cateNamePathHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EnableScope") && !rsp["EnableScope"].IsNull())
+    {
+        if (!rsp["EnableScope"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnableScope` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableScope = rsp["EnableScope"].GetInt64();
+        m_enableScopeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -626,6 +665,40 @@ string DescribeDocResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_updatePeriodInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cateBizIdPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CateBizIdPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_cateBizIdPath.begin(); itr != m_cateBizIdPath.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_cateNamePathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CateNamePath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_cateNamePath.begin(); itr != m_cateNamePath.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_enableScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableScope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableScope, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -918,6 +991,36 @@ UpdatePeriodInfo DescribeDocResponse::GetUpdatePeriodInfo() const
 bool DescribeDocResponse::UpdatePeriodInfoHasBeenSet() const
 {
     return m_updatePeriodInfoHasBeenSet;
+}
+
+vector<string> DescribeDocResponse::GetCateBizIdPath() const
+{
+    return m_cateBizIdPath;
+}
+
+bool DescribeDocResponse::CateBizIdPathHasBeenSet() const
+{
+    return m_cateBizIdPathHasBeenSet;
+}
+
+vector<string> DescribeDocResponse::GetCateNamePath() const
+{
+    return m_cateNamePath;
+}
+
+bool DescribeDocResponse::CateNamePathHasBeenSet() const
+{
+    return m_cateNamePathHasBeenSet;
+}
+
+int64_t DescribeDocResponse::GetEnableScope() const
+{
+    return m_enableScope;
+}
+
+bool DescribeDocResponse::EnableScopeHasBeenSet() const
+{
+    return m_enableScopeHasBeenSet;
 }
 
 

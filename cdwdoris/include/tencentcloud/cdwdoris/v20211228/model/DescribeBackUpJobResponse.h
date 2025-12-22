@@ -86,6 +86,20 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取当前时间
+                     * @return CurrentTime 当前时间
+                     * 
+                     */
+                    std::string GetCurrentTime() const;
+
+                    /**
+                     * 判断参数 CurrentTime 是否已赋值
+                     * @return CurrentTime 是否已赋值
+                     * 
+                     */
+                    bool CurrentTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,6 +119,12 @@ namespace TencentCloud
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 当前时间
+                     */
+                    std::string m_currentTime;
+                    bool m_currentTimeHasBeenSet;
 
                 };
             }

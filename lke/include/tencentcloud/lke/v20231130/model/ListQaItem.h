@@ -551,6 +551,52 @@ namespace TencentCloud
                      */
                     bool StaffNameHasBeenSet() const;
 
+                    /**
+                     * 获取问答生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableScope 问答生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetEnableScope() const;
+
+                    /**
+                     * 设置问答生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _enableScope 问答生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnableScope(const int64_t& _enableScope);
+
+                    /**
+                     * 判断参数 EnableScope 是否已赋值
+                     * @return EnableScope 是否已赋值
+                     * 
+                     */
+                    bool EnableScopeHasBeenSet() const;
+
+                    /**
+                     * 获取问答关联的文档生效域
+                     * @return DocEnableScope 问答关联的文档生效域
+                     * 
+                     */
+                    int64_t GetDocEnableScope() const;
+
+                    /**
+                     * 设置问答关联的文档生效域
+                     * @param _docEnableScope 问答关联的文档生效域
+                     * 
+                     */
+                    void SetDocEnableScope(const int64_t& _docEnableScope);
+
+                    /**
+                     * 判断参数 DocEnableScope 是否已赋值
+                     * @return DocEnableScope 是否已赋值
+                     * 
+                     */
+                    bool DocEnableScopeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -696,6 +742,19 @@ namespace TencentCloud
                      */
                     std::string m_staffName;
                     bool m_staffNameHasBeenSet;
+
+                    /**
+                     * 问答生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_enableScope;
+                    bool m_enableScopeHasBeenSet;
+
+                    /**
+                     * 问答关联的文档生效域
+                     */
+                    int64_t m_docEnableScope;
+                    bool m_docEnableScopeHasBeenSet;
 
                 };
             }

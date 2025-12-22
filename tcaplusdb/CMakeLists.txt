@@ -27,7 +27,6 @@ set(tcaplusdb_public_header_model
   include/tencentcloud/tcaplusdb/v20190823/model/ModifyClusterPasswordResponse.h
   include/tencentcloud/tcaplusdb/v20190823/model/DeleteClusterResponse.h
   include/tencentcloud/tcaplusdb/v20190823/model/DeleteTableIndexResponse.h
-  include/tencentcloud/tcaplusdb/v20190823/model/TableRollbackResultNew.h
   include/tencentcloud/tcaplusdb/v20190823/model/DescribeBackupRecordsResponse.h
   include/tencentcloud/tcaplusdb/v20190823/model/ApplyStatus.h
   include/tencentcloud/tcaplusdb/v20190823/model/RegionInfo.h
@@ -138,7 +137,6 @@ set(tcaplusdb_public_header_model
   include/tencentcloud/tcaplusdb/v20190823/model/DescribeUinInWhitelistResponse.h
   include/tencentcloud/tcaplusdb/v20190823/model/SnapshotInfo.h
   include/tencentcloud/tcaplusdb/v20190823/model/ParsedTableInfoNew.h
-  include/tencentcloud/tcaplusdb/v20190823/model/RollbackTablesResponse.h
   include/tencentcloud/tcaplusdb/v20190823/model/MachineInfo.h
   include/tencentcloud/tcaplusdb/v20190823/model/CreateBackupRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/TableResultNew.h
@@ -152,7 +150,6 @@ set(tcaplusdb_public_header_model
   include/tencentcloud/tcaplusdb/v20190823/model/DescribeBackupRecordsRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/PoolInfo.h
   include/tencentcloud/tcaplusdb/v20190823/model/DescribeMachineRequest.h
-  include/tencentcloud/tcaplusdb/v20190823/model/RollbackTablesRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/DescribeUinInWhitelistRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/CompareIdlFilesRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/ProxyDetailInfo.h
@@ -177,7 +174,6 @@ set(tcaplusdb_src
   src/v20190823/model/ModifyClusterPasswordResponse.cpp
   src/v20190823/model/DeleteClusterResponse.cpp
   src/v20190823/model/DeleteTableIndexResponse.cpp
-  src/v20190823/model/TableRollbackResultNew.cpp
   src/v20190823/model/DescribeBackupRecordsResponse.cpp
   src/v20190823/model/ApplyStatus.cpp
   src/v20190823/model/RegionInfo.cpp
@@ -288,7 +284,6 @@ set(tcaplusdb_src
   src/v20190823/model/DescribeUinInWhitelistResponse.cpp
   src/v20190823/model/SnapshotInfo.cpp
   src/v20190823/model/ParsedTableInfoNew.cpp
-  src/v20190823/model/RollbackTablesResponse.cpp
   src/v20190823/model/MachineInfo.cpp
   src/v20190823/model/CreateBackupRequest.cpp
   src/v20190823/model/TableResultNew.cpp
@@ -302,7 +297,6 @@ set(tcaplusdb_src
   src/v20190823/model/DescribeBackupRecordsRequest.cpp
   src/v20190823/model/PoolInfo.cpp
   src/v20190823/model/DescribeMachineRequest.cpp
-  src/v20190823/model/RollbackTablesRequest.cpp
   src/v20190823/model/DescribeUinInWhitelistRequest.cpp
   src/v20190823/model/CompareIdlFilesRequest.cpp
   src/v20190823/model/ProxyDetailInfo.cpp

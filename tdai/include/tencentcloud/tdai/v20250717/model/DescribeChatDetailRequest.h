@@ -110,14 +110,14 @@ namespace TencentCloud
                      * @return BeginStreamingTokenId 开始拉取的流式TokenID。0表示从该流最早的TokenID开始获取
                      * 
                      */
-                    std::string GetBeginStreamingTokenId() const;
+                    int64_t GetBeginStreamingTokenId() const;
 
                     /**
                      * 设置开始拉取的流式TokenID。0表示从该流最早的TokenID开始获取
                      * @param _beginStreamingTokenId 开始拉取的流式TokenID。0表示从该流最早的TokenID开始获取
                      * 
                      */
-                    void SetBeginStreamingTokenId(const std::string& _beginStreamingTokenId);
+                    void SetBeginStreamingTokenId(const int64_t& _beginStreamingTokenId);
 
                     /**
                      * 判断参数 BeginStreamingTokenId 是否已赋值
@@ -170,7 +170,7 @@ namespace TencentCloud
                     /**
                      * 开始拉取的流式TokenID。0表示从该流最早的TokenID开始获取
                      */
-                    std::string m_beginStreamingTokenId;
+                    int64_t m_beginStreamingTokenId;
                     bool m_beginStreamingTokenIdHasBeenSet;
 
                     /**

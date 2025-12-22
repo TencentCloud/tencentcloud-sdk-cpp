@@ -45,14 +45,18 @@ namespace TencentCloud
 
                     /**
                      * 获取应用ID
+若要操作共享知识库，传KnowledgeBizId
                      * @return BotBizId 应用ID
+若要操作共享知识库，传KnowledgeBizId
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
                      * 设置应用ID
+若要操作共享知识库，传KnowledgeBizId
                      * @param _botBizId 应用ID
+若要操作共享知识库，传KnowledgeBizId
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -212,15 +216,15 @@ namespace TencentCloud
                     bool CateBizIdHasBeenSet() const;
 
                     /**
-                     * 获取有效开始时间，unix时间戳
-                     * @return ExpireStart 有效开始时间，unix时间戳
+                     * 获取有效开始时间，单位是unix时间戳。默认值为0，表示问答为永久有效.
+                     * @return ExpireStart 有效开始时间，单位是unix时间戳。默认值为0，表示问答为永久有效.
                      * 
                      */
                     std::string GetExpireStart() const;
 
                     /**
-                     * 设置有效开始时间，unix时间戳
-                     * @param _expireStart 有效开始时间，unix时间戳
+                     * 设置有效开始时间，单位是unix时间戳。默认值为0，表示问答为永久有效.
+                     * @param _expireStart 有效开始时间，单位是unix时间戳。默认值为0，表示问答为永久有效.
                      * 
                      */
                     void SetExpireStart(const std::string& _expireStart);
@@ -295,10 +299,32 @@ namespace TencentCloud
                      */
                     bool QuestionDescHasBeenSet() const;
 
+                    /**
+                     * 获取问答生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     * @return EnableScope 问答生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     * 
+                     */
+                    int64_t GetEnableScope() const;
+
+                    /**
+                     * 设置问答生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     * @param _enableScope 问答生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     * 
+                     */
+                    void SetEnableScope(const int64_t& _enableScope);
+
+                    /**
+                     * 判断参数 EnableScope 是否已赋值
+                     * @return EnableScope 是否已赋值
+                     * 
+                     */
+                    bool EnableScopeHasBeenSet() const;
+
                 private:
 
                     /**
                      * 应用ID
+若要操作共享知识库，传KnowledgeBizId
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
@@ -346,7 +372,7 @@ namespace TencentCloud
                     bool m_cateBizIdHasBeenSet;
 
                     /**
-                     * 有效开始时间，unix时间戳
+                     * 有效开始时间，单位是unix时间戳。默认值为0，表示问答为永久有效.
                      */
                     std::string m_expireStart;
                     bool m_expireStartHasBeenSet;
@@ -368,6 +394,12 @@ namespace TencentCloud
                      */
                     std::string m_questionDesc;
                     bool m_questionDescHasBeenSet;
+
+                    /**
+                     * 问答生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     */
+                    int64_t m_enableScope;
+                    bool m_enableScopeHasBeenSet;
 
                 };
             }

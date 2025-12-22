@@ -268,10 +268,12 @@ namespace TencentCloud
 
 USCC :(默认)工商组织营业执照
 PRACTICELICENSEOFMEDICALINSTITUTION :医疗机构执业许可证
+CLINICFILLINGCERTIFICATE:诊所备案证
                      * @return OrganizationIdCardType 企业证照类型：
 
 USCC :(默认)工商组织营业执照
 PRACTICELICENSEOFMEDICALINSTITUTION :医疗机构执业许可证
+CLINICFILLINGCERTIFICATE:诊所备案证
                      * 
                      */
                     std::string GetOrganizationIdCardType() const;
@@ -281,10 +283,12 @@ PRACTICELICENSEOFMEDICALINSTITUTION :医疗机构执业许可证
 
 USCC :(默认)工商组织营业执照
 PRACTICELICENSEOFMEDICALINSTITUTION :医疗机构执业许可证
+CLINICFILLINGCERTIFICATE:诊所备案证
                      * @param _organizationIdCardType 企业证照类型：
 
 USCC :(默认)工商组织营业执照
 PRACTICELICENSEOFMEDICALINSTITUTION :医疗机构执业许可证
+CLINICFILLINGCERTIFICATE:诊所备案证
                      * 
                      */
                     void SetOrganizationIdCardType(const std::string& _organizationIdCardType);
@@ -399,6 +403,7 @@ OrganizationIdCardTypeSame  是否可以更改证照类型。
 
 USCC :(默认)工商组织营业执照
 PRACTICELICENSEOFMEDICALINSTITUTION :医疗机构执业许可证
+CLINICFILLINGCERTIFICATE:诊所备案证
                      */
                     std::string m_organizationIdCardType;
                     bool m_organizationIdCardTypeHasBeenSet;

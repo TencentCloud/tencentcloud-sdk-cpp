@@ -543,6 +543,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/BatchCreateTaskVersionDTO.h
   include/tencentcloud/wedata/v20210820/model/CreateTaskVersionDsRequest.h
   include/tencentcloud/wedata/v20210820/model/DeleteOfflineTaskRequest.h
+  include/tencentcloud/wedata/v20210820/model/DependencyConfigTimeoutDTO.h
   include/tencentcloud/wedata/v20210820/model/WeightInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeDatabaseInfoListResponse.h
   include/tencentcloud/wedata/v20210820/model/ModifyDsFolderResponse.h
@@ -1905,6 +1906,7 @@ set(wedata_src
   src/v20210820/model/BatchCreateTaskVersionDTO.cpp
   src/v20210820/model/CreateTaskVersionDsRequest.cpp
   src/v20210820/model/DeleteOfflineTaskRequest.cpp
+  src/v20210820/model/DependencyConfigTimeoutDTO.cpp
   src/v20210820/model/WeightInfo.cpp
   src/v20210820/model/DescribeDatabaseInfoListResponse.cpp
   src/v20210820/model/ModifyDsFolderResponse.cpp

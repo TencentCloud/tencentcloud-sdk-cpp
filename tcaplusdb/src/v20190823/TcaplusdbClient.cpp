@@ -2390,56 +2390,6 @@ TcaplusdbClient::RecoverRecycleTablesOutcomeCallable TcaplusdbClient::RecoverRec
     return prom->get_future();
 }
 
-TcaplusdbClient::RollbackTablesOutcome TcaplusdbClient::RollbackTables(const RollbackTablesRequest &request)
-{
-    auto outcome = MakeRequest(request, "RollbackTables");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        RollbackTablesResponse rsp = RollbackTablesResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return RollbackTablesOutcome(rsp);
-        else
-            return RollbackTablesOutcome(o.GetError());
-    }
-    else
-    {
-        return RollbackTablesOutcome(outcome.GetError());
-    }
-}
-
-void TcaplusdbClient::RollbackTablesAsync(const RollbackTablesRequest& request, const RollbackTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const RollbackTablesRequest&;
-    using Resp = RollbackTablesResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "RollbackTables", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TcaplusdbClient::RollbackTablesOutcomeCallable TcaplusdbClient::RollbackTablesCallable(const RollbackTablesRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<RollbackTablesOutcome>>();
-    RollbackTablesAsync(
-    request,
-    [prom](
-        const TcaplusdbClient*,
-        const RollbackTablesRequest&,
-        RollbackTablesOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 TcaplusdbClient::SetBackupExpireRuleOutcome TcaplusdbClient::SetBackupExpireRule(const SetBackupExpireRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "SetBackupExpireRule");

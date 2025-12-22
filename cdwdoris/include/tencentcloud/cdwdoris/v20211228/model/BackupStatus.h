@@ -382,6 +382,27 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取上传大小
+                     * @return UploadBytes 上传大小
+                     * 
+                     */
+                    int64_t GetUploadBytes() const;
+
+                    /**
+                     * 设置上传大小
+                     * @param _uploadBytes 上传大小
+                     * 
+                     */
+                    void SetUploadBytes(const int64_t& _uploadBytes);
+
+                    /**
+                     * 判断参数 UploadBytes 是否已赋值
+                     * @return UploadBytes 是否已赋值
+                     * 
+                     */
+                    bool UploadBytesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -479,6 +500,12 @@ namespace TencentCloud
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 上传大小
+                     */
+                    int64_t m_uploadBytes;
+                    bool m_uploadBytesHasBeenSet;
 
                 };
             }

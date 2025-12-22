@@ -36,7 +36,20 @@ BackUpJobDisplay::BackUpJobDisplay() :
     m_isUserDefineBucketHasBeenSet(false),
     m_errorReasonHasBeenSet(false),
     m_snapshotRemainPolicyHasBeenSet(false),
-    m_isolationCountHasBeenSet(false)
+    m_isolationCountHasBeenSet(false),
+    m_enableSecurityLockHasBeenSet(false),
+    m_gracePeriodHasBeenSet(false),
+    m_graceStartTimeHasBeenSet(false),
+    m_isWithinGracePeriodHasBeenSet(false),
+    m_useManagedBucketHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
+    m_instanceStatusHasBeenSet(false),
+    m_instanceStatusDescHasBeenSet(false),
+    m_dataRemoteRegionHasBeenSet(false),
+    m_bucketEncryptionHasBeenSet(false),
+    m_encryptionHasBeenSet(false),
+    m_encryptionEnabledHasBeenSet(false)
 {
 }
 
@@ -226,6 +239,143 @@ CoreInternalOutcome BackUpJobDisplay::Deserialize(const rapidjson::Value &value)
         m_isolationCountHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableSecurityLock") && !value["EnableSecurityLock"].IsNull())
+    {
+        if (!value["EnableSecurityLock"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.EnableSecurityLock` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableSecurityLock = value["EnableSecurityLock"].GetUint64();
+        m_enableSecurityLockHasBeenSet = true;
+    }
+
+    if (value.HasMember("GracePeriod") && !value["GracePeriod"].IsNull())
+    {
+        if (!value["GracePeriod"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.GracePeriod` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gracePeriod = value["GracePeriod"].GetUint64();
+        m_gracePeriodHasBeenSet = true;
+    }
+
+    if (value.HasMember("GraceStartTime") && !value["GraceStartTime"].IsNull())
+    {
+        if (!value["GraceStartTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.GraceStartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_graceStartTime = string(value["GraceStartTime"].GetString());
+        m_graceStartTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsWithinGracePeriod") && !value["IsWithinGracePeriod"].IsNull())
+    {
+        if (!value["IsWithinGracePeriod"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.IsWithinGracePeriod` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isWithinGracePeriod = value["IsWithinGracePeriod"].GetBool();
+        m_isWithinGracePeriodHasBeenSet = true;
+    }
+
+    if (value.HasMember("UseManagedBucket") && !value["UseManagedBucket"].IsNull())
+    {
+        if (!value["UseManagedBucket"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.UseManagedBucket` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_useManagedBucket = value["UseManagedBucket"].GetBool();
+        m_useManagedBucketHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceName") && !value["InstanceName"].IsNull())
+    {
+        if (!value["InstanceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceName = string(value["InstanceName"].GetString());
+        m_instanceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceStatus") && !value["InstanceStatus"].IsNull())
+    {
+        if (!value["InstanceStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.InstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceStatus = string(value["InstanceStatus"].GetString());
+        m_instanceStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceStatusDesc") && !value["InstanceStatusDesc"].IsNull())
+    {
+        if (!value["InstanceStatusDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.InstanceStatusDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceStatusDesc = string(value["InstanceStatusDesc"].GetString());
+        m_instanceStatusDescHasBeenSet = true;
+    }
+
+    if (value.HasMember("DataRemoteRegion") && !value["DataRemoteRegion"].IsNull())
+    {
+        if (!value["DataRemoteRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.DataRemoteRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataRemoteRegion = string(value["DataRemoteRegion"].GetString());
+        m_dataRemoteRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("BucketEncryption") && !value["BucketEncryption"].IsNull())
+    {
+        if (!value["BucketEncryption"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.BucketEncryption` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_bucketEncryption.Deserialize(value["BucketEncryption"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_bucketEncryptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Encryption") && !value["Encryption"].IsNull())
+    {
+        if (!value["Encryption"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.Encryption` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryption = string(value["Encryption"].GetString());
+        m_encryptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("EncryptionEnabled") && !value["EncryptionEnabled"].IsNull())
+    {
+        if (!value["EncryptionEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.EncryptionEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptionEnabled = value["EncryptionEnabled"].GetBool();
+        m_encryptionEnabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -362,6 +512,111 @@ void BackUpJobDisplay::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "IsolationCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isolationCount, allocator);
+    }
+
+    if (m_enableSecurityLockHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSecurityLock";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableSecurityLock, allocator);
+    }
+
+    if (m_gracePeriodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GracePeriod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gracePeriod, allocator);
+    }
+
+    if (m_graceStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GraceStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_graceStartTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isWithinGracePeriodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsWithinGracePeriod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isWithinGracePeriod, allocator);
+    }
+
+    if (m_useManagedBucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseManagedBucket";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useManagedBucket, allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceStatusDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceStatusDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceStatusDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataRemoteRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataRemoteRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataRemoteRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bucketEncryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BucketEncryption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_bucketEncryption.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_encryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encryption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryption.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptionEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptionEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_encryptionEnabled, allocator);
     }
 
 }
@@ -621,5 +876,213 @@ void BackUpJobDisplay::SetIsolationCount(const int64_t& _isolationCount)
 bool BackUpJobDisplay::IsolationCountHasBeenSet() const
 {
     return m_isolationCountHasBeenSet;
+}
+
+uint64_t BackUpJobDisplay::GetEnableSecurityLock() const
+{
+    return m_enableSecurityLock;
+}
+
+void BackUpJobDisplay::SetEnableSecurityLock(const uint64_t& _enableSecurityLock)
+{
+    m_enableSecurityLock = _enableSecurityLock;
+    m_enableSecurityLockHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::EnableSecurityLockHasBeenSet() const
+{
+    return m_enableSecurityLockHasBeenSet;
+}
+
+uint64_t BackUpJobDisplay::GetGracePeriod() const
+{
+    return m_gracePeriod;
+}
+
+void BackUpJobDisplay::SetGracePeriod(const uint64_t& _gracePeriod)
+{
+    m_gracePeriod = _gracePeriod;
+    m_gracePeriodHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::GracePeriodHasBeenSet() const
+{
+    return m_gracePeriodHasBeenSet;
+}
+
+string BackUpJobDisplay::GetGraceStartTime() const
+{
+    return m_graceStartTime;
+}
+
+void BackUpJobDisplay::SetGraceStartTime(const string& _graceStartTime)
+{
+    m_graceStartTime = _graceStartTime;
+    m_graceStartTimeHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::GraceStartTimeHasBeenSet() const
+{
+    return m_graceStartTimeHasBeenSet;
+}
+
+bool BackUpJobDisplay::GetIsWithinGracePeriod() const
+{
+    return m_isWithinGracePeriod;
+}
+
+void BackUpJobDisplay::SetIsWithinGracePeriod(const bool& _isWithinGracePeriod)
+{
+    m_isWithinGracePeriod = _isWithinGracePeriod;
+    m_isWithinGracePeriodHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::IsWithinGracePeriodHasBeenSet() const
+{
+    return m_isWithinGracePeriodHasBeenSet;
+}
+
+bool BackUpJobDisplay::GetUseManagedBucket() const
+{
+    return m_useManagedBucket;
+}
+
+void BackUpJobDisplay::SetUseManagedBucket(const bool& _useManagedBucket)
+{
+    m_useManagedBucket = _useManagedBucket;
+    m_useManagedBucketHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::UseManagedBucketHasBeenSet() const
+{
+    return m_useManagedBucketHasBeenSet;
+}
+
+string BackUpJobDisplay::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void BackUpJobDisplay::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string BackUpJobDisplay::GetInstanceName() const
+{
+    return m_instanceName;
+}
+
+void BackUpJobDisplay::SetInstanceName(const string& _instanceName)
+{
+    m_instanceName = _instanceName;
+    m_instanceNameHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::InstanceNameHasBeenSet() const
+{
+    return m_instanceNameHasBeenSet;
+}
+
+string BackUpJobDisplay::GetInstanceStatus() const
+{
+    return m_instanceStatus;
+}
+
+void BackUpJobDisplay::SetInstanceStatus(const string& _instanceStatus)
+{
+    m_instanceStatus = _instanceStatus;
+    m_instanceStatusHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::InstanceStatusHasBeenSet() const
+{
+    return m_instanceStatusHasBeenSet;
+}
+
+string BackUpJobDisplay::GetInstanceStatusDesc() const
+{
+    return m_instanceStatusDesc;
+}
+
+void BackUpJobDisplay::SetInstanceStatusDesc(const string& _instanceStatusDesc)
+{
+    m_instanceStatusDesc = _instanceStatusDesc;
+    m_instanceStatusDescHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::InstanceStatusDescHasBeenSet() const
+{
+    return m_instanceStatusDescHasBeenSet;
+}
+
+string BackUpJobDisplay::GetDataRemoteRegion() const
+{
+    return m_dataRemoteRegion;
+}
+
+void BackUpJobDisplay::SetDataRemoteRegion(const string& _dataRemoteRegion)
+{
+    m_dataRemoteRegion = _dataRemoteRegion;
+    m_dataRemoteRegionHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::DataRemoteRegionHasBeenSet() const
+{
+    return m_dataRemoteRegionHasBeenSet;
+}
+
+BucketEncryptionInfo BackUpJobDisplay::GetBucketEncryption() const
+{
+    return m_bucketEncryption;
+}
+
+void BackUpJobDisplay::SetBucketEncryption(const BucketEncryptionInfo& _bucketEncryption)
+{
+    m_bucketEncryption = _bucketEncryption;
+    m_bucketEncryptionHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::BucketEncryptionHasBeenSet() const
+{
+    return m_bucketEncryptionHasBeenSet;
+}
+
+string BackUpJobDisplay::GetEncryption() const
+{
+    return m_encryption;
+}
+
+void BackUpJobDisplay::SetEncryption(const string& _encryption)
+{
+    m_encryption = _encryption;
+    m_encryptionHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::EncryptionHasBeenSet() const
+{
+    return m_encryptionHasBeenSet;
+}
+
+bool BackUpJobDisplay::GetEncryptionEnabled() const
+{
+    return m_encryptionEnabled;
+}
+
+void BackUpJobDisplay::SetEncryptionEnabled(const bool& _encryptionEnabled)
+{
+    m_encryptionEnabled = _encryptionEnabled;
+    m_encryptionEnabledHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::EncryptionEnabledHasBeenSet() const
+{
+    return m_encryptionEnabledHasBeenSet;
 }
 

@@ -56,7 +56,8 @@ ListDocItem::ListDocItem() :
     m_customerKnowledgeIdHasBeenSet(false),
     m_attributeFlagsHasBeenSet(false),
     m_isDisabledHasBeenSet(false),
-    m_staffNameHasBeenSet(false)
+    m_staffNameHasBeenSet(false),
+    m_enableScopeHasBeenSet(false)
 {
 }
 
@@ -441,6 +442,16 @@ CoreInternalOutcome ListDocItem::Deserialize(const rapidjson::Value &value)
         m_staffNameHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableScope") && !value["EnableScope"].IsNull())
+    {
+        if (!value["EnableScope"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListDocItem.EnableScope` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableScope = value["EnableScope"].GetInt64();
+        m_enableScopeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -751,6 +762,14 @@ void ListDocItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "StaffName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_staffName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableScope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableScope, allocator);
     }
 
 }
@@ -1330,5 +1349,21 @@ void ListDocItem::SetStaffName(const string& _staffName)
 bool ListDocItem::StaffNameHasBeenSet() const
 {
     return m_staffNameHasBeenSet;
+}
+
+int64_t ListDocItem::GetEnableScope() const
+{
+    return m_enableScope;
+}
+
+void ListDocItem::SetEnableScope(const int64_t& _enableScope)
+{
+    m_enableScope = _enableScope;
+    m_enableScopeHasBeenSet = true;
+}
+
+bool ListDocItem::EnableScopeHasBeenSet() const
+{
+    return m_enableScopeHasBeenSet;
 }
 

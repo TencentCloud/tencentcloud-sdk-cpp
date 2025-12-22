@@ -37,7 +37,8 @@ Project::Project() :
     m_modelHasBeenSet(false),
     m_secondModuleListHasBeenSet(false),
     m_ownerHasBeenSet(false),
-    m_workspaceExtHasBeenSet(false)
+    m_workspaceExtHasBeenSet(false),
+    m_createTimestampHasBeenSet(false)
 {
 }
 
@@ -270,6 +271,16 @@ CoreInternalOutcome Project::Deserialize(const rapidjson::Value &value)
         m_workspaceExtHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTimestamp") && !value["CreateTimestamp"].IsNull())
+    {
+        if (!value["CreateTimestamp"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Project.CreateTimestamp` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTimestamp = value["CreateTimestamp"].GetUint64();
+        m_createTimestampHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -440,6 +451,14 @@ void Project::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_createTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTimestamp, allocator);
     }
 
 }
@@ -715,5 +734,21 @@ void Project::SetWorkspaceExt(const vector<WorkspaceExt>& _workspaceExt)
 bool Project::WorkspaceExtHasBeenSet() const
 {
     return m_workspaceExtHasBeenSet;
+}
+
+uint64_t Project::GetCreateTimestamp() const
+{
+    return m_createTimestamp;
+}
+
+void Project::SetCreateTimestamp(const uint64_t& _createTimestamp)
+{
+    m_createTimestamp = _createTimestamp;
+    m_createTimestampHasBeenSet = true;
+}
+
+bool Project::CreateTimestampHasBeenSet() const
+{
+    return m_createTimestampHasBeenSet;
 }
 

@@ -29,7 +29,9 @@ ProcessImageRequest::ProcessImageRequest() :
     m_outputPathHasBeenSet(false),
     m_definitionHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
-    m_imageTaskHasBeenSet(false)
+    m_imageTaskHasBeenSet(false),
+    m_scheduleIdHasBeenSet(false),
+    m_addOnParameterHasBeenSet(false)
 {
 }
 
@@ -97,6 +99,23 @@ string ProcessImageRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_imageTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_scheduleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scheduleId, allocator);
+    }
+
+    if (m_addOnParameterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddOnParameter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_addOnParameter.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -217,6 +236,38 @@ void ProcessImageRequest::SetImageTask(const ImageTaskInput& _imageTask)
 bool ProcessImageRequest::ImageTaskHasBeenSet() const
 {
     return m_imageTaskHasBeenSet;
+}
+
+uint64_t ProcessImageRequest::GetScheduleId() const
+{
+    return m_scheduleId;
+}
+
+void ProcessImageRequest::SetScheduleId(const uint64_t& _scheduleId)
+{
+    m_scheduleId = _scheduleId;
+    m_scheduleIdHasBeenSet = true;
+}
+
+bool ProcessImageRequest::ScheduleIdHasBeenSet() const
+{
+    return m_scheduleIdHasBeenSet;
+}
+
+AddOnParameter ProcessImageRequest::GetAddOnParameter() const
+{
+    return m_addOnParameter;
+}
+
+void ProcessImageRequest::SetAddOnParameter(const AddOnParameter& _addOnParameter)
+{
+    m_addOnParameter = _addOnParameter;
+    m_addOnParameterHasBeenSet = true;
+}
+
+bool ProcessImageRequest::AddOnParameterHasBeenSet() const
+{
+    return m_addOnParameterHasBeenSet;
 }
 
 

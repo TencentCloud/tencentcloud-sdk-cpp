@@ -25,7 +25,8 @@ CreateTaskBaseAttribute::CreateTaskBaseAttribute() :
     m_taskTypeIdHasBeenSet(false),
     m_workflowIdHasBeenSet(false),
     m_ownerUinHasBeenSet(false),
-    m_taskDescriptionHasBeenSet(false)
+    m_taskDescriptionHasBeenSet(false),
+    m_taskFolderPathHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome CreateTaskBaseAttribute::Deserialize(const rapidjson::Value 
         m_taskDescriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskFolderPath") && !value["TaskFolderPath"].IsNull())
+    {
+        if (!value["TaskFolderPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateTaskBaseAttribute.TaskFolderPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskFolderPath = string(value["TaskFolderPath"].GetString());
+        m_taskFolderPathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void CreateTaskBaseAttribute::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "TaskDescription";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskFolderPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskFolderPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskFolderPath.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void CreateTaskBaseAttribute::SetTaskDescription(const string& _taskDescription)
 bool CreateTaskBaseAttribute::TaskDescriptionHasBeenSet() const
 {
     return m_taskDescriptionHasBeenSet;
+}
+
+string CreateTaskBaseAttribute::GetTaskFolderPath() const
+{
+    return m_taskFolderPath;
+}
+
+void CreateTaskBaseAttribute::SetTaskFolderPath(const string& _taskFolderPath)
+{
+    m_taskFolderPath = _taskFolderPath;
+    m_taskFolderPathHasBeenSet = true;
+}
+
+bool CreateTaskBaseAttribute::TaskFolderPathHasBeenSet() const
+{
+    return m_taskFolderPathHasBeenSet;
 }
 

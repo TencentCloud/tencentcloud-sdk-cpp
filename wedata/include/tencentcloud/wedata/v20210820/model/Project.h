@@ -471,6 +471,31 @@ namespace TencentCloud
                      */
                     bool WorkspaceExtHasBeenSet() const;
 
+                    /**
+                     * 获取创建时间时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTimestamp 创建时间时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetCreateTimestamp() const;
+
+                    /**
+                     * 设置创建时间时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createTimestamp 创建时间时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreateTimestamp(const uint64_t& _createTimestamp);
+
+                    /**
+                     * 判断参数 CreateTimestamp 是否已赋值
+                     * @return CreateTimestamp 是否已赋值
+                     * 
+                     */
+                    bool CreateTimestampHasBeenSet() const;
+
                 private:
 
                     /**
@@ -590,6 +615,13 @@ namespace TencentCloud
                      */
                     std::vector<WorkspaceExt> m_workspaceExt;
                     bool m_workspaceExtHasBeenSet;
+
+                    /**
+                     * 创建时间时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_createTimestamp;
+                    bool m_createTimestampHasBeenSet;
 
                 };
             }

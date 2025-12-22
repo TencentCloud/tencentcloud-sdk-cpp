@@ -209,6 +209,7 @@ set(bh_public_header_model
   include/tencentcloud/bh/v20230418/model/CreateDeviceAccountRequest.h
   include/tencentcloud/bh/v20230418/model/AddDeviceGroupMembersResponse.h
   include/tencentcloud/bh/v20230418/model/DeleteCmdTemplatesRequest.h
+  include/tencentcloud/bh/v20230418/model/EnvInternetAccessSetting.h
   include/tencentcloud/bh/v20230418/model/DescribeUserGroupsResponse.h
   include/tencentcloud/bh/v20230418/model/DescribeUserDirectoryRequest.h
   include/tencentcloud/bh/v20230418/model/SyncUserToIOARequest.h
@@ -460,6 +461,7 @@ set(bh_src
   src/v20230418/model/CreateDeviceAccountRequest.cpp
   src/v20230418/model/AddDeviceGroupMembersResponse.cpp
   src/v20230418/model/DeleteCmdTemplatesRequest.cpp
+  src/v20230418/model/EnvInternetAccessSetting.cpp
   src/v20230418/model/DescribeUserGroupsResponse.cpp
   src/v20230418/model/DescribeUserDirectoryRequest.cpp
   src/v20230418/model/SyncUserToIOARequest.cpp

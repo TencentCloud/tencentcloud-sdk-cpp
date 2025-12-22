@@ -39,7 +39,9 @@ Apply::Apply() :
     m_approverNameHasBeenSet(false),
     m_approveProjectNameHasBeenSet(false),
     m_applyIdHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+    m_metadataHasBeenSet(false),
+    m_createTimestampHasBeenSet(false),
+    m_approveTimestampHasBeenSet(false)
 {
 }
 
@@ -238,6 +240,26 @@ CoreInternalOutcome Apply::Deserialize(const rapidjson::Value &value)
         m_metadataHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTimestamp") && !value["CreateTimestamp"].IsNull())
+    {
+        if (!value["CreateTimestamp"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Apply.CreateTimestamp` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTimestamp = value["CreateTimestamp"].GetUint64();
+        m_createTimestampHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApproveTimestamp") && !value["ApproveTimestamp"].IsNull())
+    {
+        if (!value["ApproveTimestamp"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Apply.ApproveTimestamp` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_approveTimestamp = value["ApproveTimestamp"].GetUint64();
+        m_approveTimestampHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +417,22 @@ void Apply::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "Metadata";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_metadata.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTimestamp, allocator);
+    }
+
+    if (m_approveTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproveTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_approveTimestamp, allocator);
     }
 
 }
@@ -702,5 +740,37 @@ void Apply::SetMetadata(const string& _metadata)
 bool Apply::MetadataHasBeenSet() const
 {
     return m_metadataHasBeenSet;
+}
+
+uint64_t Apply::GetCreateTimestamp() const
+{
+    return m_createTimestamp;
+}
+
+void Apply::SetCreateTimestamp(const uint64_t& _createTimestamp)
+{
+    m_createTimestamp = _createTimestamp;
+    m_createTimestampHasBeenSet = true;
+}
+
+bool Apply::CreateTimestampHasBeenSet() const
+{
+    return m_createTimestampHasBeenSet;
+}
+
+uint64_t Apply::GetApproveTimestamp() const
+{
+    return m_approveTimestamp;
+}
+
+void Apply::SetApproveTimestamp(const uint64_t& _approveTimestamp)
+{
+    m_approveTimestamp = _approveTimestamp;
+    m_approveTimestampHasBeenSet = true;
+}
+
+bool Apply::ApproveTimestampHasBeenSet() const
+{
+    return m_approveTimestampHasBeenSet;
 }
 

@@ -471,6 +471,56 @@ namespace TencentCloud
                      */
                     bool CdwUserNameHasBeenSet() const;
 
+                    /**
+                     * 获取创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTimestamp 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetCreateTimestamp() const;
+
+                    /**
+                     * 设置创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createTimestamp 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreateTimestamp(const uint64_t& _createTimestamp);
+
+                    /**
+                     * 判断参数 CreateTimestamp 是否已赋值
+                     * @return CreateTimestamp 是否已赋值
+                     * 
+                     */
+                    bool CreateTimestampHasBeenSet() const;
+
+                    /**
+                     * 获取修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdateTimestamp 修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetUpdateTimestamp() const;
+
+                    /**
+                     * 设置修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _updateTimestamp 修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUpdateTimestamp(const uint64_t& _updateTimestamp);
+
+                    /**
+                     * 判断参数 UpdateTimestamp 是否已赋值
+                     * @return UpdateTimestamp 是否已赋值
+                     * 
+                     */
+                    bool UpdateTimestampHasBeenSet() const;
+
                 private:
 
                     /**
@@ -591,6 +641,20 @@ namespace TencentCloud
                      */
                     std::string m_cdwUserName;
                     bool m_cdwUserNameHasBeenSet;
+
+                    /**
+                     * 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_createTimestamp;
+                    bool m_createTimestampHasBeenSet;
+
+                    /**
+                     * 修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_updateTimestamp;
+                    bool m_updateTimestampHasBeenSet;
 
                 };
             }

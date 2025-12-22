@@ -60,6 +60,7 @@ Resource::Resource() :
     m_intranetAccessHasBeenSet(false),
     m_intranetPrivateIpSetHasBeenSet(false),
     m_intranetVpcIdHasBeenSet(false),
+    m_intranetSubnetIdHasBeenSet(false),
     m_intranetVpcCidrHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_shareClbHasBeenSet(false),
@@ -492,6 +493,16 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         }
         m_intranetVpcId = string(value["IntranetVpcId"].GetString());
         m_intranetVpcIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("IntranetSubnetId") && !value["IntranetSubnetId"].IsNull())
+    {
+        if (!value["IntranetSubnetId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.IntranetSubnetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_intranetSubnetId = string(value["IntranetSubnetId"].GetString());
+        m_intranetSubnetIdHasBeenSet = true;
     }
 
     if (value.HasMember("IntranetVpcCidr") && !value["IntranetVpcCidr"].IsNull())
@@ -978,6 +989,14 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "IntranetVpcId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_intranetVpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intranetSubnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntranetSubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_intranetSubnetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_intranetVpcCidrHasBeenSet)
@@ -1717,6 +1736,22 @@ void Resource::SetIntranetVpcId(const string& _intranetVpcId)
 bool Resource::IntranetVpcIdHasBeenSet() const
 {
     return m_intranetVpcIdHasBeenSet;
+}
+
+string Resource::GetIntranetSubnetId() const
+{
+    return m_intranetSubnetId;
+}
+
+void Resource::SetIntranetSubnetId(const string& _intranetSubnetId)
+{
+    m_intranetSubnetId = _intranetSubnetId;
+    m_intranetSubnetIdHasBeenSet = true;
+}
+
+bool Resource::IntranetSubnetIdHasBeenSet() const
+{
+    return m_intranetSubnetIdHasBeenSet;
 }
 
 string Resource::GetIntranetVpcCidr() const

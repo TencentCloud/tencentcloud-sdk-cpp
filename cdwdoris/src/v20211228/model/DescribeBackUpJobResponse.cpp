@@ -26,7 +26,8 @@ using namespace std;
 DescribeBackUpJobResponse::DescribeBackUpJobResponse() :
     m_backUpJobsHasBeenSet(false),
     m_errorMsgHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_currentTimeHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome DescribeBackUpJobResponse::Deserialize(const string &payload
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CurrentTime") && !rsp["CurrentTime"].IsNull())
+    {
+        if (!rsp["CurrentTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CurrentTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentTime = string(rsp["CurrentTime"].GetString());
+        m_currentTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +154,14 @@ string DescribeBackUpJobResponse::ToJsonString() const
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_currentTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_currentTime.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -185,6 +204,16 @@ int64_t DescribeBackUpJobResponse::GetTotalCount() const
 bool DescribeBackUpJobResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+string DescribeBackUpJobResponse::GetCurrentTime() const
+{
+    return m_currentTime;
+}
+
+bool DescribeBackUpJobResponse::CurrentTimeHasBeenSet() const
+{
+    return m_currentTimeHasBeenSet;
 }
 
 

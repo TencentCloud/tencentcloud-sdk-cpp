@@ -347,6 +347,56 @@ namespace TencentCloud
                      */
                     bool IsProjectOwnerHasBeenSet() const;
 
+                    /**
+                     * 获取创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTimestamp 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetCreateTimestamp() const;
+
+                    /**
+                     * 设置创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createTimestamp 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreateTimestamp(const uint64_t& _createTimestamp);
+
+                    /**
+                     * 判断参数 CreateTimestamp 是否已赋值
+                     * @return CreateTimestamp 是否已赋值
+                     * 
+                     */
+                    bool CreateTimestampHasBeenSet() const;
+
+                    /**
+                     * 获取用户状态 0:历史 1:正常 2:已删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 用户状态 0:历史 1:正常 2:已删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetStatus() const;
+
+                    /**
+                     * 设置用户状态 0:历史 1:正常 2:已删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _status 用户状态 0:历史 1:正常 2:已删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatus(const uint64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -432,6 +482,20 @@ namespace TencentCloud
                      */
                     bool m_isProjectOwner;
                     bool m_isProjectOwnerHasBeenSet;
+
+                    /**
+                     * 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_createTimestamp;
+                    bool m_createTimestampHasBeenSet;
+
+                    /**
+                     * 用户状态 0:历史 1:正常 2:已删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

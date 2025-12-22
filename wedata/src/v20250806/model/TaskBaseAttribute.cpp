@@ -38,7 +38,8 @@ TaskBaseAttribute::TaskBaseAttribute() :
     m_ownerUinHasBeenSet(false),
     m_taskDescriptionHasBeenSet(false),
     m_updateUserUinHasBeenSet(false),
-    m_createUserUinHasBeenSet(false)
+    m_createUserUinHasBeenSet(false),
+    m_taskFolderPathHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,16 @@ CoreInternalOutcome TaskBaseAttribute::Deserialize(const rapidjson::Value &value
         m_createUserUinHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskFolderPath") && !value["TaskFolderPath"].IsNull())
+    {
+        if (!value["TaskFolderPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskBaseAttribute.TaskFolderPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskFolderPath = string(value["TaskFolderPath"].GetString());
+        m_taskFolderPathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +387,14 @@ void TaskBaseAttribute::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "CreateUserUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createUserUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskFolderPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskFolderPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskFolderPath.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -667,5 +686,21 @@ void TaskBaseAttribute::SetCreateUserUin(const string& _createUserUin)
 bool TaskBaseAttribute::CreateUserUinHasBeenSet() const
 {
     return m_createUserUinHasBeenSet;
+}
+
+string TaskBaseAttribute::GetTaskFolderPath() const
+{
+    return m_taskFolderPath;
+}
+
+void TaskBaseAttribute::SetTaskFolderPath(const string& _taskFolderPath)
+{
+    m_taskFolderPath = _taskFolderPath;
+    m_taskFolderPathHasBeenSet = true;
+}
+
+bool TaskBaseAttribute::TaskFolderPathHasBeenSet() const
+{
+    return m_taskFolderPathHasBeenSet;
 }
 

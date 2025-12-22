@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdwdoris/v20211228/model/BucketEncryptionInfo.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取当前系统时间
+                     * @return CurrentTime 当前系统时间
+                     * 
+                     */
+                    std::string GetCurrentTime() const;
+
+                    /**
+                     * 判断参数 CurrentTime 是否已赋值
+                     * @return CurrentTime 是否已赋值
+                     * 
+                     */
+                    bool CurrentTimeHasBeenSet() const;
+
+                    /**
+                     * 获取桶加密状态信息
+                     * @return BucketEncryption 桶加密状态信息
+                     * 
+                     */
+                    BucketEncryptionInfo GetBucketEncryption() const;
+
+                    /**
+                     * 判断参数 BucketEncryption 是否已赋值
+                     * @return BucketEncryption 是否已赋值
+                     * 
+                     */
+                    bool BucketEncryptionHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 当前系统时间
+                     */
+                    std::string m_currentTime;
+                    bool m_currentTimeHasBeenSet;
+
+                    /**
+                     * 桶加密状态信息
+                     */
+                    BucketEncryptionInfo m_bucketEncryption;
+                    bool m_bucketEncryptionHasBeenSet;
 
                 };
             }

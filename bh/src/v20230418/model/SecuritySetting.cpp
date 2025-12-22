@@ -22,7 +22,8 @@ using namespace std;
 
 SecuritySetting::SecuritySetting() :
     m_authModeGMHasBeenSet(false),
-    m_reconnectionHasBeenSet(false)
+    m_reconnectionHasBeenSet(false),
+    m_envInternetAccessHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,23 @@ CoreInternalOutcome SecuritySetting::Deserialize(const rapidjson::Value &value)
         m_reconnectionHasBeenSet = true;
     }
 
+    if (value.HasMember("EnvInternetAccess") && !value["EnvInternetAccess"].IsNull())
+    {
+        if (!value["EnvInternetAccess"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecuritySetting.EnvInternetAccess` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_envInternetAccess.Deserialize(value["EnvInternetAccess"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_envInternetAccessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +106,15 @@ void SecuritySetting::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_reconnection.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_envInternetAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvInternetAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_envInternetAccess.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -123,5 +150,21 @@ void SecuritySetting::SetReconnection(const ReconnectionSetting& _reconnection)
 bool SecuritySetting::ReconnectionHasBeenSet() const
 {
     return m_reconnectionHasBeenSet;
+}
+
+EnvInternetAccessSetting SecuritySetting::GetEnvInternetAccess() const
+{
+    return m_envInternetAccess;
+}
+
+void SecuritySetting::SetEnvInternetAccess(const EnvInternetAccessSetting& _envInternetAccess)
+{
+    m_envInternetAccess = _envInternetAccess;
+    m_envInternetAccessHasBeenSet = true;
+}
+
+bool SecuritySetting::EnvInternetAccessHasBeenSet() const
+{
+    return m_envInternetAccessHasBeenSet;
 }
 

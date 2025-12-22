@@ -496,6 +496,68 @@ namespace TencentCloud
                      */
                     bool IsDisabledHasBeenSet() const;
 
+                    /**
+                     * 获取从根节点开始的路径分类ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CateBizIdPath 从根节点开始的路径分类ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetCateBizIdPath() const;
+
+                    /**
+                     * 判断参数 CateBizIdPath 是否已赋值
+                     * @return CateBizIdPath 是否已赋值
+                     * 
+                     */
+                    bool CateBizIdPathHasBeenSet() const;
+
+                    /**
+                     * 获取从根节点开始的路径分类名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CateNamePath 从根节点开始的路径分类名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetCateNamePath() const;
+
+                    /**
+                     * 判断参数 CateNamePath 是否已赋值
+                     * @return CateNamePath 是否已赋值
+                     * 
+                     */
+                    bool CateNamePathHasBeenSet() const;
+
+                    /**
+                     * 获取问答生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableScope 问答生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetEnableScope() const;
+
+                    /**
+                     * 判断参数 EnableScope 是否已赋值
+                     * @return EnableScope 是否已赋值
+                     * 
+                     */
+                    bool EnableScopeHasBeenSet() const;
+
+                    /**
+                     * 获取问答关联的文档生效域
+                     * @return DocEnableScope 问答关联的文档生效域
+                     * 
+                     */
+                    int64_t GetDocEnableScope() const;
+
+                    /**
+                     * 判断参数 DocEnableScope 是否已赋值
+                     * @return DocEnableScope 是否已赋值
+                     * 
+                     */
+                    bool DocEnableScopeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -692,6 +754,33 @@ namespace TencentCloud
                      */
                     bool m_isDisabled;
                     bool m_isDisabledHasBeenSet;
+
+                    /**
+                     * 从根节点开始的路径分类ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_cateBizIdPath;
+                    bool m_cateBizIdPathHasBeenSet;
+
+                    /**
+                     * 从根节点开始的路径分类名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_cateNamePath;
+                    bool m_cateNamePathHasBeenSet;
+
+                    /**
+                     * 问答生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_enableScope;
+                    bool m_enableScopeHasBeenSet;
+
+                    /**
+                     * 问答关联的文档生效域
+                     */
+                    int64_t m_docEnableScope;
+                    bool m_docEnableScopeHasBeenSet;
 
                 };
             }

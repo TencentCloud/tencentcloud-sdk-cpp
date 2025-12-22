@@ -927,6 +927,31 @@ namespace TencentCloud
                      */
                     bool StaffNameHasBeenSet() const;
 
+                    /**
+                     * 获取文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableScope 文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetEnableScope() const;
+
+                    /**
+                     * 设置文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _enableScope 文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnableScope(const int64_t& _enableScope);
+
+                    /**
+                     * 判断参数 EnableScope 是否已赋值
+                     * @return EnableScope 是否已赋值
+                     * 
+                     */
+                    bool EnableScopeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1175,6 +1200,13 @@ namespace TencentCloud
                      */
                     std::string m_staffName;
                     bool m_staffNameHasBeenSet;
+
+                    /**
+                     * 文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_enableScope;
+                    bool m_enableScopeHasBeenSet;
 
                 };
             }

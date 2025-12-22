@@ -23,7 +23,8 @@ using namespace TencentCloud::Cdwdoris::V20211228::Model;
 using namespace std;
 
 DescribeBackUpSchedulesRequest::DescribeBackUpSchedulesRequest() :
-    m_applicationTypeHasBeenSet(false)
+    m_applicationTypeHasBeenSet(false),
+    m_encryptionFiltersHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,19 @@ string DescribeBackUpSchedulesRequest::ToJsonString() const
         string key = "ApplicationType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_applicationType, allocator);
+    }
+
+    if (m_encryptionFiltersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptionFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_encryptionFilters.begin(); itr != m_encryptionFilters.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -64,6 +78,22 @@ void DescribeBackUpSchedulesRequest::SetApplicationType(const int64_t& _applicat
 bool DescribeBackUpSchedulesRequest::ApplicationTypeHasBeenSet() const
 {
     return m_applicationTypeHasBeenSet;
+}
+
+vector<int64_t> DescribeBackUpSchedulesRequest::GetEncryptionFilters() const
+{
+    return m_encryptionFilters;
+}
+
+void DescribeBackUpSchedulesRequest::SetEncryptionFilters(const vector<int64_t>& _encryptionFilters)
+{
+    m_encryptionFilters = _encryptionFilters;
+    m_encryptionFiltersHasBeenSet = true;
+}
+
+bool DescribeBackUpSchedulesRequest::EncryptionFiltersHasBeenSet() const
+{
+    return m_encryptionFiltersHasBeenSet;
 }
 
 

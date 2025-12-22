@@ -443,6 +443,52 @@ namespace TencentCloud
                      */
                     bool UpdatePeriodInfoHasBeenSet() const;
 
+                    /**
+                     * 获取从根节点开始的路径分类ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CateBizIdPath 从根节点开始的路径分类ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetCateBizIdPath() const;
+
+                    /**
+                     * 判断参数 CateBizIdPath 是否已赋值
+                     * @return CateBizIdPath 是否已赋值
+                     * 
+                     */
+                    bool CateBizIdPathHasBeenSet() const;
+
+                    /**
+                     * 获取从根节点开始的路径分类名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CateNamePath 从根节点开始的路径分类名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetCateNamePath() const;
+
+                    /**
+                     * 判断参数 CateNamePath 是否已赋值
+                     * @return CateNamePath 是否已赋值
+                     * 
+                     */
+                    bool CateNamePathHasBeenSet() const;
+
+                    /**
+                     * 获取文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     * @return EnableScope 文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     * 
+                     */
+                    int64_t GetEnableScope() const;
+
+                    /**
+                     * 判断参数 EnableScope 是否已赋值
+                     * @return EnableScope 是否已赋值
+                     * 
+                     */
+                    bool EnableScopeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -615,6 +661,26 @@ namespace TencentCloud
                      */
                     UpdatePeriodInfo m_updatePeriodInfo;
                     bool m_updatePeriodInfoHasBeenSet;
+
+                    /**
+                     * 从根节点开始的路径分类ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_cateBizIdPath;
+                    bool m_cateBizIdPathHasBeenSet;
+
+                    /**
+                     * 从根节点开始的路径分类名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_cateNamePath;
+                    bool m_cateNamePathHasBeenSet;
+
+                    /**
+                     * 文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     */
+                    int64_t m_enableScope;
+                    bool m_enableScopeHasBeenSet;
 
                 };
             }

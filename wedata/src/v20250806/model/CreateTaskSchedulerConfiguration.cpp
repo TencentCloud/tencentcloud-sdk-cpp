@@ -28,22 +28,28 @@ CreateTaskSchedulerConfiguration::CreateTaskSchedulerConfiguration() :
     m_endTimeHasBeenSet(false),
     m_executionStartTimeHasBeenSet(false),
     m_executionEndTimeHasBeenSet(false),
-    m_scheduleRunTypeHasBeenSet(false),
     m_calendarOpenHasBeenSet(false),
     m_calendarIdHasBeenSet(false),
     m_selfDependHasBeenSet(false),
     m_upstreamDependencyConfigListHasBeenSet(false),
     m_eventListenerListHasBeenSet(false),
+    m_allowRedoTypeHasBeenSet(false),
+    m_paramTaskOutListHasBeenSet(false),
+    m_paramTaskInListHasBeenSet(false),
+    m_taskOutputRegistryListHasBeenSet(false),
+    m_initStrategyHasBeenSet(false),
+    m_scheduleRunTypeHasBeenSet(false),
     m_runPriorityHasBeenSet(false),
     m_retryWaitHasBeenSet(false),
     m_maxRetryAttemptsHasBeenSet(false),
     m_executionTTLHasBeenSet(false),
     m_waitExecutionTotalTTLHasBeenSet(false),
-    m_allowRedoTypeHasBeenSet(false),
-    m_paramTaskOutListHasBeenSet(false),
-    m_paramTaskInListHasBeenSet(false),
-    m_taskOutputRegistryListHasBeenSet(false),
-    m_initStrategyHasBeenSet(false)
+    m_scheduleTypeHasBeenSet(false),
+    m_runPriorityTypeHasBeenSet(false),
+    m_retryWaitMinuteHasBeenSet(false),
+    m_maxRetryNumberHasBeenSet(false),
+    m_executionTTLMinuteHasBeenSet(false),
+    m_waitExecutionTotalTTLMinuteHasBeenSet(false)
 {
 }
 
@@ -122,16 +128,6 @@ CoreInternalOutcome CreateTaskSchedulerConfiguration::Deserialize(const rapidjso
         m_executionEndTimeHasBeenSet = true;
     }
 
-    if (value.HasMember("ScheduleRunType") && !value["ScheduleRunType"].IsNull())
-    {
-        if (!value["ScheduleRunType"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CreateTaskSchedulerConfiguration.ScheduleRunType` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_scheduleRunType = string(value["ScheduleRunType"].GetString());
-        m_scheduleRunTypeHasBeenSet = true;
-    }
-
     if (value.HasMember("CalendarOpen") && !value["CalendarOpen"].IsNull())
     {
         if (!value["CalendarOpen"].IsString())
@@ -200,56 +196,6 @@ CoreInternalOutcome CreateTaskSchedulerConfiguration::Deserialize(const rapidjso
             m_eventListenerList.push_back(item);
         }
         m_eventListenerListHasBeenSet = true;
-    }
-
-    if (value.HasMember("RunPriority") && !value["RunPriority"].IsNull())
-    {
-        if (!value["RunPriority"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CreateTaskSchedulerConfiguration.RunPriority` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_runPriority = string(value["RunPriority"].GetString());
-        m_runPriorityHasBeenSet = true;
-    }
-
-    if (value.HasMember("RetryWait") && !value["RetryWait"].IsNull())
-    {
-        if (!value["RetryWait"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CreateTaskSchedulerConfiguration.RetryWait` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_retryWait = string(value["RetryWait"].GetString());
-        m_retryWaitHasBeenSet = true;
-    }
-
-    if (value.HasMember("MaxRetryAttempts") && !value["MaxRetryAttempts"].IsNull())
-    {
-        if (!value["MaxRetryAttempts"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CreateTaskSchedulerConfiguration.MaxRetryAttempts` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_maxRetryAttempts = string(value["MaxRetryAttempts"].GetString());
-        m_maxRetryAttemptsHasBeenSet = true;
-    }
-
-    if (value.HasMember("ExecutionTTL") && !value["ExecutionTTL"].IsNull())
-    {
-        if (!value["ExecutionTTL"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CreateTaskSchedulerConfiguration.ExecutionTTL` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_executionTTL = string(value["ExecutionTTL"].GetString());
-        m_executionTTLHasBeenSet = true;
-    }
-
-    if (value.HasMember("WaitExecutionTotalTTL") && !value["WaitExecutionTotalTTL"].IsNull())
-    {
-        if (!value["WaitExecutionTotalTTL"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CreateTaskSchedulerConfiguration.WaitExecutionTotalTTL` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_waitExecutionTotalTTL = string(value["WaitExecutionTotalTTL"].GetString());
-        m_waitExecutionTotalTTLHasBeenSet = true;
     }
 
     if (value.HasMember("AllowRedoType") && !value["AllowRedoType"].IsNull())
@@ -332,6 +278,126 @@ CoreInternalOutcome CreateTaskSchedulerConfiguration::Deserialize(const rapidjso
         m_initStrategyHasBeenSet = true;
     }
 
+    if (value.HasMember("ScheduleRunType") && !value["ScheduleRunType"].IsNull())
+    {
+        if (!value["ScheduleRunType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateTaskSchedulerConfiguration.ScheduleRunType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleRunType = string(value["ScheduleRunType"].GetString());
+        m_scheduleRunTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunPriority") && !value["RunPriority"].IsNull())
+    {
+        if (!value["RunPriority"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateTaskSchedulerConfiguration.RunPriority` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_runPriority = string(value["RunPriority"].GetString());
+        m_runPriorityHasBeenSet = true;
+    }
+
+    if (value.HasMember("RetryWait") && !value["RetryWait"].IsNull())
+    {
+        if (!value["RetryWait"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateTaskSchedulerConfiguration.RetryWait` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_retryWait = string(value["RetryWait"].GetString());
+        m_retryWaitHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxRetryAttempts") && !value["MaxRetryAttempts"].IsNull())
+    {
+        if (!value["MaxRetryAttempts"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateTaskSchedulerConfiguration.MaxRetryAttempts` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxRetryAttempts = string(value["MaxRetryAttempts"].GetString());
+        m_maxRetryAttemptsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExecutionTTL") && !value["ExecutionTTL"].IsNull())
+    {
+        if (!value["ExecutionTTL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateTaskSchedulerConfiguration.ExecutionTTL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_executionTTL = string(value["ExecutionTTL"].GetString());
+        m_executionTTLHasBeenSet = true;
+    }
+
+    if (value.HasMember("WaitExecutionTotalTTL") && !value["WaitExecutionTotalTTL"].IsNull())
+    {
+        if (!value["WaitExecutionTotalTTL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateTaskSchedulerConfiguration.WaitExecutionTotalTTL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_waitExecutionTotalTTL = string(value["WaitExecutionTotalTTL"].GetString());
+        m_waitExecutionTotalTTLHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScheduleType") && !value["ScheduleType"].IsNull())
+    {
+        if (!value["ScheduleType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateTaskSchedulerConfiguration.ScheduleType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleType = value["ScheduleType"].GetInt64();
+        m_scheduleTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunPriorityType") && !value["RunPriorityType"].IsNull())
+    {
+        if (!value["RunPriorityType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateTaskSchedulerConfiguration.RunPriorityType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_runPriorityType = value["RunPriorityType"].GetInt64();
+        m_runPriorityTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RetryWaitMinute") && !value["RetryWaitMinute"].IsNull())
+    {
+        if (!value["RetryWaitMinute"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateTaskSchedulerConfiguration.RetryWaitMinute` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_retryWaitMinute = value["RetryWaitMinute"].GetInt64();
+        m_retryWaitMinuteHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxRetryNumber") && !value["MaxRetryNumber"].IsNull())
+    {
+        if (!value["MaxRetryNumber"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateTaskSchedulerConfiguration.MaxRetryNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxRetryNumber = value["MaxRetryNumber"].GetInt64();
+        m_maxRetryNumberHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExecutionTTLMinute") && !value["ExecutionTTLMinute"].IsNull())
+    {
+        if (!value["ExecutionTTLMinute"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateTaskSchedulerConfiguration.ExecutionTTLMinute` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_executionTTLMinute = value["ExecutionTTLMinute"].GetInt64();
+        m_executionTTLMinuteHasBeenSet = true;
+    }
+
+    if (value.HasMember("WaitExecutionTotalTTLMinute") && !value["WaitExecutionTotalTTLMinute"].IsNull())
+    {
+        if (!value["WaitExecutionTotalTTLMinute"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateTaskSchedulerConfiguration.WaitExecutionTotalTTLMinute` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_waitExecutionTotalTTLMinute = value["WaitExecutionTotalTTLMinute"].GetInt64();
+        m_waitExecutionTotalTTLMinuteHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,14 +461,6 @@ void CreateTaskSchedulerConfiguration::ToJsonObject(rapidjson::Value &value, rap
         value.AddMember(iKey, rapidjson::Value(m_executionEndTime.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_scheduleRunTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ScheduleRunType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_scheduleRunType.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_calendarOpenHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -455,46 +513,6 @@ void CreateTaskSchedulerConfiguration::ToJsonObject(rapidjson::Value &value, rap
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_runPriorityHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RunPriority";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_runPriority.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_retryWaitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RetryWait";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_retryWait.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_maxRetryAttemptsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MaxRetryAttempts";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_maxRetryAttempts.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_executionTTLHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ExecutionTTL";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_executionTTL.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_waitExecutionTotalTTLHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "WaitExecutionTotalTTL";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_waitExecutionTotalTTL.c_str(), allocator).Move(), allocator);
     }
 
     if (m_allowRedoTypeHasBeenSet)
@@ -556,6 +574,102 @@ void CreateTaskSchedulerConfiguration::ToJsonObject(rapidjson::Value &value, rap
         string key = "InitStrategy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_initStrategy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleRunTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleRunType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleRunType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runPriorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunPriority";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runPriority.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_retryWaitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetryWait";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_retryWait.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxRetryAttemptsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxRetryAttempts";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_maxRetryAttempts.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executionTTLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutionTTL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_executionTTL.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_waitExecutionTotalTTLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WaitExecutionTotalTTL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_waitExecutionTotalTTL.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scheduleType, allocator);
+    }
+
+    if (m_runPriorityTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunPriorityType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_runPriorityType, allocator);
+    }
+
+    if (m_retryWaitMinuteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetryWaitMinute";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_retryWaitMinute, allocator);
+    }
+
+    if (m_maxRetryNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxRetryNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxRetryNumber, allocator);
+    }
+
+    if (m_executionTTLMinuteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutionTTLMinute";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_executionTTLMinute, allocator);
+    }
+
+    if (m_waitExecutionTotalTTLMinuteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WaitExecutionTotalTTLMinute";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_waitExecutionTotalTTLMinute, allocator);
     }
 
 }
@@ -673,22 +787,6 @@ bool CreateTaskSchedulerConfiguration::ExecutionEndTimeHasBeenSet() const
     return m_executionEndTimeHasBeenSet;
 }
 
-string CreateTaskSchedulerConfiguration::GetScheduleRunType() const
-{
-    return m_scheduleRunType;
-}
-
-void CreateTaskSchedulerConfiguration::SetScheduleRunType(const string& _scheduleRunType)
-{
-    m_scheduleRunType = _scheduleRunType;
-    m_scheduleRunTypeHasBeenSet = true;
-}
-
-bool CreateTaskSchedulerConfiguration::ScheduleRunTypeHasBeenSet() const
-{
-    return m_scheduleRunTypeHasBeenSet;
-}
-
 string CreateTaskSchedulerConfiguration::GetCalendarOpen() const
 {
     return m_calendarOpen;
@@ -767,6 +865,102 @@ void CreateTaskSchedulerConfiguration::SetEventListenerList(const vector<EventLi
 bool CreateTaskSchedulerConfiguration::EventListenerListHasBeenSet() const
 {
     return m_eventListenerListHasBeenSet;
+}
+
+string CreateTaskSchedulerConfiguration::GetAllowRedoType() const
+{
+    return m_allowRedoType;
+}
+
+void CreateTaskSchedulerConfiguration::SetAllowRedoType(const string& _allowRedoType)
+{
+    m_allowRedoType = _allowRedoType;
+    m_allowRedoTypeHasBeenSet = true;
+}
+
+bool CreateTaskSchedulerConfiguration::AllowRedoTypeHasBeenSet() const
+{
+    return m_allowRedoTypeHasBeenSet;
+}
+
+vector<OutTaskParameter> CreateTaskSchedulerConfiguration::GetParamTaskOutList() const
+{
+    return m_paramTaskOutList;
+}
+
+void CreateTaskSchedulerConfiguration::SetParamTaskOutList(const vector<OutTaskParameter>& _paramTaskOutList)
+{
+    m_paramTaskOutList = _paramTaskOutList;
+    m_paramTaskOutListHasBeenSet = true;
+}
+
+bool CreateTaskSchedulerConfiguration::ParamTaskOutListHasBeenSet() const
+{
+    return m_paramTaskOutListHasBeenSet;
+}
+
+vector<InTaskParameter> CreateTaskSchedulerConfiguration::GetParamTaskInList() const
+{
+    return m_paramTaskInList;
+}
+
+void CreateTaskSchedulerConfiguration::SetParamTaskInList(const vector<InTaskParameter>& _paramTaskInList)
+{
+    m_paramTaskInList = _paramTaskInList;
+    m_paramTaskInListHasBeenSet = true;
+}
+
+bool CreateTaskSchedulerConfiguration::ParamTaskInListHasBeenSet() const
+{
+    return m_paramTaskInListHasBeenSet;
+}
+
+vector<TaskDataRegistry> CreateTaskSchedulerConfiguration::GetTaskOutputRegistryList() const
+{
+    return m_taskOutputRegistryList;
+}
+
+void CreateTaskSchedulerConfiguration::SetTaskOutputRegistryList(const vector<TaskDataRegistry>& _taskOutputRegistryList)
+{
+    m_taskOutputRegistryList = _taskOutputRegistryList;
+    m_taskOutputRegistryListHasBeenSet = true;
+}
+
+bool CreateTaskSchedulerConfiguration::TaskOutputRegistryListHasBeenSet() const
+{
+    return m_taskOutputRegistryListHasBeenSet;
+}
+
+string CreateTaskSchedulerConfiguration::GetInitStrategy() const
+{
+    return m_initStrategy;
+}
+
+void CreateTaskSchedulerConfiguration::SetInitStrategy(const string& _initStrategy)
+{
+    m_initStrategy = _initStrategy;
+    m_initStrategyHasBeenSet = true;
+}
+
+bool CreateTaskSchedulerConfiguration::InitStrategyHasBeenSet() const
+{
+    return m_initStrategyHasBeenSet;
+}
+
+string CreateTaskSchedulerConfiguration::GetScheduleRunType() const
+{
+    return m_scheduleRunType;
+}
+
+void CreateTaskSchedulerConfiguration::SetScheduleRunType(const string& _scheduleRunType)
+{
+    m_scheduleRunType = _scheduleRunType;
+    m_scheduleRunTypeHasBeenSet = true;
+}
+
+bool CreateTaskSchedulerConfiguration::ScheduleRunTypeHasBeenSet() const
+{
+    return m_scheduleRunTypeHasBeenSet;
 }
 
 string CreateTaskSchedulerConfiguration::GetRunPriority() const
@@ -849,83 +1043,99 @@ bool CreateTaskSchedulerConfiguration::WaitExecutionTotalTTLHasBeenSet() const
     return m_waitExecutionTotalTTLHasBeenSet;
 }
 
-string CreateTaskSchedulerConfiguration::GetAllowRedoType() const
+int64_t CreateTaskSchedulerConfiguration::GetScheduleType() const
 {
-    return m_allowRedoType;
+    return m_scheduleType;
 }
 
-void CreateTaskSchedulerConfiguration::SetAllowRedoType(const string& _allowRedoType)
+void CreateTaskSchedulerConfiguration::SetScheduleType(const int64_t& _scheduleType)
 {
-    m_allowRedoType = _allowRedoType;
-    m_allowRedoTypeHasBeenSet = true;
+    m_scheduleType = _scheduleType;
+    m_scheduleTypeHasBeenSet = true;
 }
 
-bool CreateTaskSchedulerConfiguration::AllowRedoTypeHasBeenSet() const
+bool CreateTaskSchedulerConfiguration::ScheduleTypeHasBeenSet() const
 {
-    return m_allowRedoTypeHasBeenSet;
+    return m_scheduleTypeHasBeenSet;
 }
 
-vector<OutTaskParameter> CreateTaskSchedulerConfiguration::GetParamTaskOutList() const
+int64_t CreateTaskSchedulerConfiguration::GetRunPriorityType() const
 {
-    return m_paramTaskOutList;
+    return m_runPriorityType;
 }
 
-void CreateTaskSchedulerConfiguration::SetParamTaskOutList(const vector<OutTaskParameter>& _paramTaskOutList)
+void CreateTaskSchedulerConfiguration::SetRunPriorityType(const int64_t& _runPriorityType)
 {
-    m_paramTaskOutList = _paramTaskOutList;
-    m_paramTaskOutListHasBeenSet = true;
+    m_runPriorityType = _runPriorityType;
+    m_runPriorityTypeHasBeenSet = true;
 }
 
-bool CreateTaskSchedulerConfiguration::ParamTaskOutListHasBeenSet() const
+bool CreateTaskSchedulerConfiguration::RunPriorityTypeHasBeenSet() const
 {
-    return m_paramTaskOutListHasBeenSet;
+    return m_runPriorityTypeHasBeenSet;
 }
 
-vector<InTaskParameter> CreateTaskSchedulerConfiguration::GetParamTaskInList() const
+int64_t CreateTaskSchedulerConfiguration::GetRetryWaitMinute() const
 {
-    return m_paramTaskInList;
+    return m_retryWaitMinute;
 }
 
-void CreateTaskSchedulerConfiguration::SetParamTaskInList(const vector<InTaskParameter>& _paramTaskInList)
+void CreateTaskSchedulerConfiguration::SetRetryWaitMinute(const int64_t& _retryWaitMinute)
 {
-    m_paramTaskInList = _paramTaskInList;
-    m_paramTaskInListHasBeenSet = true;
+    m_retryWaitMinute = _retryWaitMinute;
+    m_retryWaitMinuteHasBeenSet = true;
 }
 
-bool CreateTaskSchedulerConfiguration::ParamTaskInListHasBeenSet() const
+bool CreateTaskSchedulerConfiguration::RetryWaitMinuteHasBeenSet() const
 {
-    return m_paramTaskInListHasBeenSet;
+    return m_retryWaitMinuteHasBeenSet;
 }
 
-vector<TaskDataRegistry> CreateTaskSchedulerConfiguration::GetTaskOutputRegistryList() const
+int64_t CreateTaskSchedulerConfiguration::GetMaxRetryNumber() const
 {
-    return m_taskOutputRegistryList;
+    return m_maxRetryNumber;
 }
 
-void CreateTaskSchedulerConfiguration::SetTaskOutputRegistryList(const vector<TaskDataRegistry>& _taskOutputRegistryList)
+void CreateTaskSchedulerConfiguration::SetMaxRetryNumber(const int64_t& _maxRetryNumber)
 {
-    m_taskOutputRegistryList = _taskOutputRegistryList;
-    m_taskOutputRegistryListHasBeenSet = true;
+    m_maxRetryNumber = _maxRetryNumber;
+    m_maxRetryNumberHasBeenSet = true;
 }
 
-bool CreateTaskSchedulerConfiguration::TaskOutputRegistryListHasBeenSet() const
+bool CreateTaskSchedulerConfiguration::MaxRetryNumberHasBeenSet() const
 {
-    return m_taskOutputRegistryListHasBeenSet;
+    return m_maxRetryNumberHasBeenSet;
 }
 
-string CreateTaskSchedulerConfiguration::GetInitStrategy() const
+int64_t CreateTaskSchedulerConfiguration::GetExecutionTTLMinute() const
 {
-    return m_initStrategy;
+    return m_executionTTLMinute;
 }
 
-void CreateTaskSchedulerConfiguration::SetInitStrategy(const string& _initStrategy)
+void CreateTaskSchedulerConfiguration::SetExecutionTTLMinute(const int64_t& _executionTTLMinute)
 {
-    m_initStrategy = _initStrategy;
-    m_initStrategyHasBeenSet = true;
+    m_executionTTLMinute = _executionTTLMinute;
+    m_executionTTLMinuteHasBeenSet = true;
 }
 
-bool CreateTaskSchedulerConfiguration::InitStrategyHasBeenSet() const
+bool CreateTaskSchedulerConfiguration::ExecutionTTLMinuteHasBeenSet() const
 {
-    return m_initStrategyHasBeenSet;
+    return m_executionTTLMinuteHasBeenSet;
+}
+
+int64_t CreateTaskSchedulerConfiguration::GetWaitExecutionTotalTTLMinute() const
+{
+    return m_waitExecutionTotalTTLMinute;
+}
+
+void CreateTaskSchedulerConfiguration::SetWaitExecutionTotalTTLMinute(const int64_t& _waitExecutionTotalTTLMinute)
+{
+    m_waitExecutionTotalTTLMinute = _waitExecutionTotalTTLMinute;
+    m_waitExecutionTotalTTLMinuteHasBeenSet = true;
+}
+
+bool CreateTaskSchedulerConfiguration::WaitExecutionTotalTTLMinuteHasBeenSet() const
+{
+    return m_waitExecutionTotalTTLMinuteHasBeenSet;
 }
 

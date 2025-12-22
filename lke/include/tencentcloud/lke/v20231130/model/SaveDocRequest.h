@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return BotBizId 应用ID
+                     * 获取应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * @return BotBizId 应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _botBizId 应用ID
+                     * 设置应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * @param _botBizId 应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool BotBizIdHasBeenSet() const;
 
                     /**
-                     * 获取文件名
-                     * @return FileName 文件名
+                     * 获取文件名，需要包含文件扩展名
+                     * @return FileName 文件名，需要包含文件扩展名
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置文件名
-                     * @param _fileName 文件名
+                     * 设置文件名，需要包含文件扩展名
+                     * @param _fileName 文件名，需要包含文件扩展名
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -229,15 +229,15 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                     bool SizeHasBeenSet() const;
 
                     /**
-                     * 获取标签适用范围，需要传参为1
-                     * @return AttrRange 标签适用范围，需要传参为1
+                     * 获取标签适用范围，1:全部，2:按条件。默认为1。
+                     * @return AttrRange 标签适用范围，1:全部，2:按条件。默认为1。
                      * 
                      */
                     uint64_t GetAttrRange() const;
 
                     /**
-                     * 设置标签适用范围，需要传参为1
-                     * @param _attrRange 标签适用范围，需要传参为1
+                     * 设置标签适用范围，1:全部，2:按条件。默认为1。
+                     * @param _attrRange 标签适用范围，1:全部，2:按条件。默认为1。
                      * 
                      */
                     void SetAttrRange(const uint64_t& _attrRange);
@@ -338,15 +338,15 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                     bool ReferUrlTypeHasBeenSet() const;
 
                     /**
-                     * 获取有效开始时间，unix秒级时间戳
-                     * @return ExpireStart 有效开始时间，unix秒级时间戳
+                     * 获取有效开始时间，unix秒级时间戳，默认为0
+                     * @return ExpireStart 有效开始时间，unix秒级时间戳，默认为0
                      * 
                      */
                     std::string GetExpireStart() const;
 
                     /**
-                     * 设置有效开始时间，unix秒级时间戳
-                     * @param _expireStart 有效开始时间，unix秒级时间戳
+                     * 设置有效开始时间，unix秒级时间戳，默认为0
+                     * @param _expireStart 有效开始时间，unix秒级时间戳，默认为0
                      * 
                      */
                     void SetExpireStart(const std::string& _expireStart);
@@ -359,15 +359,15 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                     bool ExpireStartHasBeenSet() const;
 
                     /**
-                     * 获取有效结束时间，unix秒级时间戳，0代表永久有效
-                     * @return ExpireEnd 有效结束时间，unix秒级时间戳，0代表永久有效
+                     * 获取有效结束时间，unix秒级时间戳，默认为0代表永久有效
+                     * @return ExpireEnd 有效结束时间，unix秒级时间戳，默认为0代表永久有效
                      * 
                      */
                     std::string GetExpireEnd() const;
 
                     /**
-                     * 设置有效结束时间，unix秒级时间戳，0代表永久有效
-                     * @param _expireEnd 有效结束时间，unix秒级时间戳，0代表永久有效
+                     * 设置有效结束时间，unix秒级时间戳，默认为0代表永久有效
+                     * @param _expireEnd 有效结束时间，unix秒级时间戳，默认为0代表永久有效
                      * 
                      */
                     void SetExpireEnd(const std::string& _expireEnd);
@@ -380,15 +380,15 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                     bool ExpireEndHasBeenSet() const;
 
                     /**
-                     * 获取是否引用链接
-                     * @return IsRefer 是否引用链接
+                     * 获取是否显示引用的文档来源(false不显示 true显示）默认false
+                     * @return IsRefer 是否显示引用的文档来源(false不显示 true显示）默认false
                      * 
                      */
                     bool GetIsRefer() const;
 
                     /**
-                     * 设置是否引用链接
-                     * @param _isRefer 是否引用链接
+                     * 设置是否显示引用的文档来源(false不显示 true显示）默认false
+                     * @param _isRefer 是否显示引用的文档来源(false不显示 true显示）默认false
                      * 
                      */
                     void SetIsRefer(const bool& _isRefer);
@@ -401,15 +401,15 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                     bool IsReferHasBeenSet() const;
 
                     /**
-                     * 获取文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档） 默认为1  <br> 请注意，opt=1的时候请从腾讯云智能体开发平台页面下载excel模板
-                     * @return Opt 文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档） 默认为1  <br> 请注意，opt=1的时候请从腾讯云智能体开发平台页面下载excel模板
+                     * 获取文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档） 默认为2 <br> 请注意，opt=1的时候请从腾讯云智能体开发平台页面下载excel模板
+                     * @return Opt 文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档） 默认为2 <br> 请注意，opt=1的时候请从腾讯云智能体开发平台页面下载excel模板
                      * 
                      */
                     uint64_t GetOpt() const;
 
                     /**
-                     * 设置文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档） 默认为1  <br> 请注意，opt=1的时候请从腾讯云智能体开发平台页面下载excel模板
-                     * @param _opt 文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档） 默认为1  <br> 请注意，opt=1的时候请从腾讯云智能体开发平台页面下载excel模板
+                     * 设置文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档） 默认为2 <br> 请注意，opt=1的时候请从腾讯云智能体开发平台页面下载excel模板
+                     * @param _opt 文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档） 默认为2 <br> 请注意，opt=1的时候请从腾讯云智能体开发平台页面下载excel模板
                      * 
                      */
                     void SetOpt(const uint64_t& _opt);
@@ -842,15 +842,15 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                     bool SplitRuleHasBeenSet() const;
 
                     /**
-                     * 获取文档更新频率
-                     * @return UpdatePeriodInfo 文档更新频率
+                     * 获取文档更新频率，默认值为0不更新
+                     * @return UpdatePeriodInfo 文档更新频率，默认值为0不更新
                      * 
                      */
                     UpdatePeriodInfo GetUpdatePeriodInfo() const;
 
                     /**
-                     * 设置文档更新频率
-                     * @param _updatePeriodInfo 文档更新频率
+                     * 设置文档更新频率，默认值为0不更新
+                     * @param _updatePeriodInfo 文档更新频率，默认值为0不更新
                      * 
                      */
                     void SetUpdatePeriodInfo(const UpdatePeriodInfo& _updatePeriodInfo);
@@ -862,16 +862,37 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                      */
                     bool UpdatePeriodInfoHasBeenSet() const;
 
+                    /**
+                     * 获取文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     * @return EnableScope 文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     * 
+                     */
+                    int64_t GetEnableScope() const;
+
+                    /**
+                     * 设置文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     * @param _enableScope 文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     * 
+                     */
+                    void SetEnableScope(const int64_t& _enableScope);
+
+                    /**
+                     * 判断参数 EnableScope 是否已赋值
+                     * @return EnableScope 是否已赋值
+                     * 
+                     */
+                    bool EnableScopeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 应用ID
+                     * 应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
 
                     /**
-                     * 文件名
+                     * 文件名，需要包含文件扩展名
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
@@ -916,7 +937,7 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                     bool m_sizeHasBeenSet;
 
                     /**
-                     * 标签适用范围，需要传参为1
+                     * 标签适用范围，1:全部，2:按条件。默认为1。
                      */
                     uint64_t m_attrRange;
                     bool m_attrRangeHasBeenSet;
@@ -947,25 +968,25 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                     bool m_referUrlTypeHasBeenSet;
 
                     /**
-                     * 有效开始时间，unix秒级时间戳
+                     * 有效开始时间，unix秒级时间戳，默认为0
                      */
                     std::string m_expireStart;
                     bool m_expireStartHasBeenSet;
 
                     /**
-                     * 有效结束时间，unix秒级时间戳，0代表永久有效
+                     * 有效结束时间，unix秒级时间戳，默认为0代表永久有效
                      */
                     std::string m_expireEnd;
                     bool m_expireEndHasBeenSet;
 
                     /**
-                     * 是否引用链接
+                     * 是否显示引用的文档来源(false不显示 true显示）默认false
                      */
                     bool m_isRefer;
                     bool m_isReferHasBeenSet;
 
                     /**
-                     * 文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档） 默认为1  <br> 请注意，opt=1的时候请从腾讯云智能体开发平台页面下载excel模板
+                     * 文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档） 默认为2 <br> 请注意，opt=1的时候请从腾讯云智能体开发平台页面下载excel模板
                      */
                     uint64_t m_opt;
                     bool m_optHasBeenSet;
@@ -1079,10 +1100,16 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                     bool m_splitRuleHasBeenSet;
 
                     /**
-                     * 文档更新频率
+                     * 文档更新频率，默认值为0不更新
                      */
                     UpdatePeriodInfo m_updatePeriodInfo;
                     bool m_updatePeriodInfoHasBeenSet;
+
+                    /**
+                     * 文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     */
+                    int64_t m_enableScope;
+                    bool m_enableScopeHasBeenSet;
 
                 };
             }

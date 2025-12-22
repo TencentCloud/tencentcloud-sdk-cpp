@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/csip/v20221121/model/CheckViewRiskItem.h>
+#include <tencentcloud/csip/v20221121/model/StandardItem.h>
 
 
 namespace TencentCloud
@@ -72,6 +73,20 @@ namespace TencentCloud
                      */
                     bool CheckViewRiskListHasBeenSet() const;
 
+                    /**
+                     * 获取检查视角下cspm规范标签列表
+                     * @return StandardNameList 检查视角下cspm规范标签列表
+                     * 
+                     */
+                    std::vector<StandardItem> GetStandardNameList() const;
+
+                    /**
+                     * 判断参数 StandardNameList 是否已赋值
+                     * @return StandardNameList 是否已赋值
+                     * 
+                     */
+                    bool StandardNameListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +100,12 @@ namespace TencentCloud
                      */
                     std::vector<CheckViewRiskItem> m_checkViewRiskList;
                     bool m_checkViewRiskListHasBeenSet;
+
+                    /**
+                     * 检查视角下cspm规范标签列表
+                     */
+                    std::vector<StandardItem> m_standardNameList;
+                    bool m_standardNameListHasBeenSet;
 
                 };
             }

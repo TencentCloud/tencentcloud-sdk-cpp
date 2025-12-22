@@ -867,6 +867,27 @@ namespace TencentCloud
                     bool IntranetVpcIdHasBeenSet() const;
 
                     /**
+                     * 获取开通内网访问的subnetId
+                     * @return IntranetSubnetId 开通内网访问的subnetId
+                     * 
+                     */
+                    std::string GetIntranetSubnetId() const;
+
+                    /**
+                     * 设置开通内网访问的subnetId
+                     * @param _intranetSubnetId 开通内网访问的subnetId
+                     * 
+                     */
+                    void SetIntranetSubnetId(const std::string& _intranetSubnetId);
+
+                    /**
+                     * 判断参数 IntranetSubnetId 是否已赋值
+                     * @return IntranetSubnetId 是否已赋值
+                     * 
+                     */
+                    bool IntranetSubnetIdHasBeenSet() const;
+
+                    /**
                      * 获取开通内网访问vpc的网段
                      * @return IntranetVpcCidr 开通内网访问vpc的网段
                      * 
@@ -1395,6 +1416,12 @@ namespace TencentCloud
                      */
                     std::string m_intranetVpcId;
                     bool m_intranetVpcIdHasBeenSet;
+
+                    /**
+                     * 开通内网访问的subnetId
+                     */
+                    std::string m_intranetSubnetId;
+                    bool m_intranetSubnetIdHasBeenSet;
 
                     /**
                      * 开通内网访问vpc的网段

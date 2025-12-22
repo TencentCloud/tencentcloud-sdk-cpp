@@ -251,8 +251,6 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeImageRepositoryResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeImageTagsRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeImageTagsResponse.h>
-#include <tencentcloud/tsf/v20180326/model/DescribeInovcationIndicatorsRequest.h>
-#include <tencentcloud/tsf/v20180326/model/DescribeInovcationIndicatorsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeInstancesRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeInstancesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeInvocationMetricDataCurveRequest.h>
@@ -835,9 +833,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeImageTagsResponse> DescribeImageTagsOutcome;
                 typedef std::future<DescribeImageTagsOutcome> DescribeImageTagsOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeImageTagsRequest&, DescribeImageTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageTagsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeInovcationIndicatorsResponse> DescribeInovcationIndicatorsOutcome;
-                typedef std::future<DescribeInovcationIndicatorsOutcome> DescribeInovcationIndicatorsOutcomeCallable;
-                typedef std::function<void(const TsfClient*, const Model::DescribeInovcationIndicatorsRequest&, DescribeInovcationIndicatorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInovcationIndicatorsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
@@ -2212,17 +2207,6 @@ namespace TencentCloud
                 DescribeImageTagsOutcome DescribeImageTags(const Model::DescribeImageTagsRequest &request);
                 void DescribeImageTagsAsync(const Model::DescribeImageTagsRequest& request, const DescribeImageTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeImageTagsOutcomeCallable DescribeImageTagsCallable(const Model::DescribeImageTagsRequest& request);
-
-                /**
-                 *废弃接口
-
-废弃
-                 * @param req DescribeInovcationIndicatorsRequest
-                 * @return DescribeInovcationIndicatorsOutcome
-                 */
-                DescribeInovcationIndicatorsOutcome DescribeInovcationIndicators(const Model::DescribeInovcationIndicatorsRequest &request);
-                void DescribeInovcationIndicatorsAsync(const Model::DescribeInovcationIndicatorsRequest& request, const DescribeInovcationIndicatorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeInovcationIndicatorsOutcomeCallable DescribeInovcationIndicatorsCallable(const Model::DescribeInovcationIndicatorsRequest& request);
 
                 /**
                  *无

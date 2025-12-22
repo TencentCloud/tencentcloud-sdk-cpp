@@ -69,22 +69,22 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取要预热的资源列表，每个元素格式类似如下:
-http://www.example.com/example.txt。参数值当前必填。
+                     * 获取要预热的资源列表，必填。每个元素格式类似如下:
+http://www.example.com/example.txt。
 注意：提交任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。
-                     * @return Targets 要预热的资源列表，每个元素格式类似如下:
-http://www.example.com/example.txt。参数值当前必填。
+                     * @return Targets 要预热的资源列表，必填。每个元素格式类似如下:
+http://www.example.com/example.txt。
 注意：提交任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。
                      * 
                      */
                     std::vector<std::string> GetTargets() const;
 
                     /**
-                     * 设置要预热的资源列表，每个元素格式类似如下:
-http://www.example.com/example.txt。参数值当前必填。
+                     * 设置要预热的资源列表，必填。每个元素格式类似如下:
+http://www.example.com/example.txt。
 注意：提交任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。
-                     * @param _targets 要预热的资源列表，每个元素格式类似如下:
-http://www.example.com/example.txt。参数值当前必填。
+                     * @param _targets 要预热的资源列表，必填。每个元素格式类似如下:
+http://www.example.com/example.txt。
 注意：提交任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。
                      * 
                      */
@@ -96,6 +96,55 @@ http://www.example.com/example.txt。参数值当前必填。
                      * 
                      */
                     bool TargetsHasBeenSet() const;
+
+                    /**
+                     * 获取预热模式，取值有：
+<li>default：默认模式，即预热到中间层；</li>
+<li>edge：边缘预热模式，即预热到边缘和中间层。</li>不填写时，默认值为 default。
+注意事项：
+1.预热至边缘产生的边缘层流量，会计入计费流量；
+2.边缘预热默认分配单独的预热额度 1000 条/天，不消费常规预热额度。
+说明：
+该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
+                     * @return Mode 预热模式，取值有：
+<li>default：默认模式，即预热到中间层；</li>
+<li>edge：边缘预热模式，即预热到边缘和中间层。</li>不填写时，默认值为 default。
+注意事项：
+1.预热至边缘产生的边缘层流量，会计入计费流量；
+2.边缘预热默认分配单独的预热额度 1000 条/天，不消费常规预热额度。
+说明：
+该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
+                     * 
+                     */
+                    std::string GetMode() const;
+
+                    /**
+                     * 设置预热模式，取值有：
+<li>default：默认模式，即预热到中间层；</li>
+<li>edge：边缘预热模式，即预热到边缘和中间层。</li>不填写时，默认值为 default。
+注意事项：
+1.预热至边缘产生的边缘层流量，会计入计费流量；
+2.边缘预热默认分配单独的预热额度 1000 条/天，不消费常规预热额度。
+说明：
+该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
+                     * @param _mode 预热模式，取值有：
+<li>default：默认模式，即预热到中间层；</li>
+<li>edge：边缘预热模式，即预热到边缘和中间层。</li>不填写时，默认值为 default。
+注意事项：
+1.预热至边缘产生的边缘层流量，会计入计费流量；
+2.边缘预热默认分配单独的预热额度 1000 条/天，不消费常规预热额度。
+说明：
+该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
+                     * 
+                     */
+                    void SetMode(const std::string& _mode);
+
+                    /**
+                     * 判断参数 Mode 是否已赋值
+                     * @return Mode 是否已赋值
+                     * 
+                     */
+                    bool ModeHasBeenSet() const;
 
                     /**
                      * 获取是否对url进行encode，若内容含有非 ASCII 字符集的字符，请开启此开关进行编码转换（编码规则遵循 RFC3986）。
@@ -119,15 +168,15 @@ http://www.example.com/example.txt。参数值当前必填。
                     bool EncodeUrlHasBeenSet() const;
 
                     /**
-                     * 获取附带的http头部信息。
-                     * @return Headers 附带的http头部信息。
+                     * 获取若需要携带 HTTP 头部信息预热，可入参该参数，否则放空即可。
+                     * @return Headers 若需要携带 HTTP 头部信息预热，可入参该参数，否则放空即可。
                      * 
                      */
                     std::vector<Header> GetHeaders() const;
 
                     /**
-                     * 设置附带的http头部信息。
-                     * @param _headers 附带的http头部信息。
+                     * 设置若需要携带 HTTP 头部信息预热，可入参该参数，否则放空即可。
+                     * @param _headers 若需要携带 HTTP 头部信息预热，可入参该参数，否则放空即可。
                      * 
                      */
                     void SetHeaders(const std::vector<Header>& _headers);
@@ -143,24 +192,22 @@ http://www.example.com/example.txt。参数值当前必填。
                      * 获取媒体分片预热控制，取值有：
 <li>on：开启分片预热，预热描述文件，并递归解析描述文件分片进行预热；</li>
 <li>off：仅预热提交的描述文件；</li>不填写时，默认值为 off。
-
 注意事项：
 1. 支持的描述文件为 M3U8，对应分片为 TS；
 2. 要求描述文件能正常请求，并按行业标准描述分片路径；
 3. 递归解析深度不超过 3 层；
 4. 解析获取的分片会正常累加每日预热用量，当用量超出配额时，会静默处理，不再执行预热。
-
+说明：
 该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
                      * @return PrefetchMediaSegments 媒体分片预热控制，取值有：
 <li>on：开启分片预热，预热描述文件，并递归解析描述文件分片进行预热；</li>
 <li>off：仅预热提交的描述文件；</li>不填写时，默认值为 off。
-
 注意事项：
 1. 支持的描述文件为 M3U8，对应分片为 TS；
 2. 要求描述文件能正常请求，并按行业标准描述分片路径；
 3. 递归解析深度不超过 3 层；
 4. 解析获取的分片会正常累加每日预热用量，当用量超出配额时，会静默处理，不再执行预热。
-
+说明：
 该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
                      * 
                      */
@@ -170,24 +217,22 @@ http://www.example.com/example.txt。参数值当前必填。
                      * 设置媒体分片预热控制，取值有：
 <li>on：开启分片预热，预热描述文件，并递归解析描述文件分片进行预热；</li>
 <li>off：仅预热提交的描述文件；</li>不填写时，默认值为 off。
-
 注意事项：
 1. 支持的描述文件为 M3U8，对应分片为 TS；
 2. 要求描述文件能正常请求，并按行业标准描述分片路径；
 3. 递归解析深度不超过 3 层；
 4. 解析获取的分片会正常累加每日预热用量，当用量超出配额时，会静默处理，不再执行预热。
-
+说明：
 该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
                      * @param _prefetchMediaSegments 媒体分片预热控制，取值有：
 <li>on：开启分片预热，预热描述文件，并递归解析描述文件分片进行预热；</li>
 <li>off：仅预热提交的描述文件；</li>不填写时，默认值为 off。
-
 注意事项：
 1. 支持的描述文件为 M3U8，对应分片为 TS；
 2. 要求描述文件能正常请求，并按行业标准描述分片路径；
 3. 递归解析深度不超过 3 层；
 4. 解析获取的分片会正常累加每日预热用量，当用量超出配额时，会静默处理，不再执行预热。
-
+说明：
 该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
                      * 
                      */
@@ -210,12 +255,25 @@ http://www.example.com/example.txt。参数值当前必填。
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 要预热的资源列表，每个元素格式类似如下:
-http://www.example.com/example.txt。参数值当前必填。
+                     * 要预热的资源列表，必填。每个元素格式类似如下:
+http://www.example.com/example.txt。
 注意：提交任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。
                      */
                     std::vector<std::string> m_targets;
                     bool m_targetsHasBeenSet;
+
+                    /**
+                     * 预热模式，取值有：
+<li>default：默认模式，即预热到中间层；</li>
+<li>edge：边缘预热模式，即预热到边缘和中间层。</li>不填写时，默认值为 default。
+注意事项：
+1.预热至边缘产生的边缘层流量，会计入计费流量；
+2.边缘预热默认分配单独的预热额度 1000 条/天，不消费常规预热额度。
+说明：
+该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
+                     */
+                    std::string m_mode;
+                    bool m_modeHasBeenSet;
 
                     /**
                      * 是否对url进行encode，若内容含有非 ASCII 字符集的字符，请开启此开关进行编码转换（编码规则遵循 RFC3986）。
@@ -224,7 +282,7 @@ http://www.example.com/example.txt。参数值当前必填。
                     bool m_encodeUrlHasBeenSet;
 
                     /**
-                     * 附带的http头部信息。
+                     * 若需要携带 HTTP 头部信息预热，可入参该参数，否则放空即可。
                      */
                     std::vector<Header> m_headers;
                     bool m_headersHasBeenSet;
@@ -233,13 +291,12 @@ http://www.example.com/example.txt。参数值当前必填。
                      * 媒体分片预热控制，取值有：
 <li>on：开启分片预热，预热描述文件，并递归解析描述文件分片进行预热；</li>
 <li>off：仅预热提交的描述文件；</li>不填写时，默认值为 off。
-
 注意事项：
 1. 支持的描述文件为 M3U8，对应分片为 TS；
 2. 要求描述文件能正常请求，并按行业标准描述分片路径；
 3. 递归解析深度不超过 3 层；
 4. 解析获取的分片会正常累加每日预热用量，当用量超出配额时，会静默处理，不再执行预热。
-
+说明：
 该参数为白名单功能，如有需要，请联系腾讯云工程师处理。
                      */
                     std::string m_prefetchMediaSegments;

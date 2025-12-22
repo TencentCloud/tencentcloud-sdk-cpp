@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool SizeHasBeenSet() const;
 
+                    /**
+                     * 获取来源 studio(Studio脚本)/codeTemplate(代码模版)
+                     * @return Source 来源 studio(Studio脚本)/codeTemplate(代码模版)
+                     * 
+                     */
+                    std::string GetSource() const;
+
+                    /**
+                     * 设置来源 studio(Studio脚本)/codeTemplate(代码模版)
+                     * @param _source 来源 studio(Studio脚本)/codeTemplate(代码模版)
+                     * 
+                     */
+                    void SetSource(const std::string& _source);
+
+                    /**
+                     * 判断参数 Source 是否已赋值
+                     * @return Source 是否已赋值
+                     * 
+                     */
+                    bool SourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;
+
+                    /**
+                     * 来源 studio(Studio脚本)/codeTemplate(代码模版)
+                     */
+                    std::string m_source;
+                    bool m_sourceHasBeenSet;
 
                 };
             }

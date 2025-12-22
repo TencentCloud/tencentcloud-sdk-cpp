@@ -390,6 +390,56 @@ VclmClient::DescribeTemplateToVideoJobOutcomeCallable VclmClient::DescribeTempla
     return prom->get_future();
 }
 
+VclmClient::DescribeVideoEditJobOutcome VclmClient::DescribeVideoEditJob(const DescribeVideoEditJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVideoEditJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVideoEditJobResponse rsp = DescribeVideoEditJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVideoEditJobOutcome(rsp);
+        else
+            return DescribeVideoEditJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVideoEditJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::DescribeVideoEditJobAsync(const DescribeVideoEditJobRequest& request, const DescribeVideoEditJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeVideoEditJobRequest&;
+    using Resp = DescribeVideoEditJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeVideoEditJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::DescribeVideoEditJobOutcomeCallable VclmClient::DescribeVideoEditJobCallable(const DescribeVideoEditJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeVideoEditJobOutcome>>();
+    DescribeVideoEditJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const DescribeVideoEditJobRequest&,
+        DescribeVideoEditJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VclmClient::DescribeVideoFaceFusionJobOutcome VclmClient::DescribeVideoFaceFusionJob(const DescribeVideoFaceFusionJobRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVideoFaceFusionJob");
@@ -832,6 +882,56 @@ VclmClient::SubmitTemplateToVideoJobOutcomeCallable VclmClient::SubmitTemplateTo
         const VclmClient*,
         const SubmitTemplateToVideoJobRequest&,
         SubmitTemplateToVideoJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VclmClient::SubmitVideoEditJobOutcome VclmClient::SubmitVideoEditJob(const SubmitVideoEditJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitVideoEditJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitVideoEditJobResponse rsp = SubmitVideoEditJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitVideoEditJobOutcome(rsp);
+        else
+            return SubmitVideoEditJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitVideoEditJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::SubmitVideoEditJobAsync(const SubmitVideoEditJobRequest& request, const SubmitVideoEditJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SubmitVideoEditJobRequest&;
+    using Resp = SubmitVideoEditJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SubmitVideoEditJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::SubmitVideoEditJobOutcomeCallable VclmClient::SubmitVideoEditJobCallable(const SubmitVideoEditJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SubmitVideoEditJobOutcome>>();
+    SubmitVideoEditJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const SubmitVideoEditJobRequest&,
+        SubmitVideoEditJobOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

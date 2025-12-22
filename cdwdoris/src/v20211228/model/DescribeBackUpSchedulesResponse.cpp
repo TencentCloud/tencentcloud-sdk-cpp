@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdwdoris::V20211228::Model;
 using namespace std;
 
-DescribeBackUpSchedulesResponse::DescribeBackUpSchedulesResponse()
+DescribeBackUpSchedulesResponse::DescribeBackUpSchedulesResponse() :
+    m_currentTimeHasBeenSet(false),
+    m_bucketEncryptionHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,33 @@ CoreInternalOutcome DescribeBackUpSchedulesResponse::Deserialize(const string &p
     }
 
 
+    if (rsp.HasMember("CurrentTime") && !rsp["CurrentTime"].IsNull())
+    {
+        if (!rsp["CurrentTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CurrentTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentTime = string(rsp["CurrentTime"].GetString());
+        m_currentTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("BucketEncryption") && !rsp["BucketEncryption"].IsNull())
+    {
+        if (!rsp["BucketEncryption"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `BucketEncryption` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_bucketEncryption.Deserialize(rsp["BucketEncryption"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_bucketEncryptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +99,23 @@ string DescribeBackUpSchedulesResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_currentTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_currentTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bucketEncryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BucketEncryption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_bucketEncryption.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +128,25 @@ string DescribeBackUpSchedulesResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeBackUpSchedulesResponse::GetCurrentTime() const
+{
+    return m_currentTime;
+}
+
+bool DescribeBackUpSchedulesResponse::CurrentTimeHasBeenSet() const
+{
+    return m_currentTimeHasBeenSet;
+}
+
+BucketEncryptionInfo DescribeBackUpSchedulesResponse::GetBucketEncryption() const
+{
+    return m_bucketEncryption;
+}
+
+bool DescribeBackUpSchedulesResponse::BucketEncryptionHasBeenSet() const
+{
+    return m_bucketEncryptionHasBeenSet;
+}
 
 

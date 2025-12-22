@@ -201,6 +201,27 @@ namespace TencentCloud
                      */
                     bool JobIdFiltersStrHasBeenSet() const;
 
+                    /**
+                     * 获取0-未加密；1-已加密
+                     * @return EncryptionFilters 0-未加密；1-已加密
+                     * 
+                     */
+                    std::vector<int64_t> GetEncryptionFilters() const;
+
+                    /**
+                     * 设置0-未加密；1-已加密
+                     * @param _encryptionFilters 0-未加密；1-已加密
+                     * 
+                     */
+                    void SetEncryptionFilters(const std::vector<int64_t>& _encryptionFilters);
+
+                    /**
+                     * 判断参数 EncryptionFilters 是否已赋值
+                     * @return EncryptionFilters 是否已赋值
+                     * 
+                     */
+                    bool EncryptionFiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -247,6 +268,12 @@ namespace TencentCloud
                      */
                     std::string m_jobIdFiltersStr;
                     bool m_jobIdFiltersStrHasBeenSet;
+
+                    /**
+                     * 0-未加密；1-已加密
+                     */
+                    std::vector<int64_t> m_encryptionFilters;
+                    bool m_encryptionFiltersHasBeenSet;
 
                 };
             }

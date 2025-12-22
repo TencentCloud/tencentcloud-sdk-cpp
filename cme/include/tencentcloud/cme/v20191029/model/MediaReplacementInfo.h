@@ -184,6 +184,43 @@ namespace TencentCloud
                      */
                     bool PreprocessOperationHasBeenSet() const;
 
+                    /**
+                     * 获取静音开关，仅对视频类型媒体生效。取值有：
+<li>ON：视频媒体开启静音，该段媒体在导出中会屏蔽音频；</li>
+<li>OFF：视频媒体关闭静音；</li>
+
+注：默认为 OFF，即不对视频媒体的音频做静音处理。
+                     * @return MuteSwitch 静音开关，仅对视频类型媒体生效。取值有：
+<li>ON：视频媒体开启静音，该段媒体在导出中会屏蔽音频；</li>
+<li>OFF：视频媒体关闭静音；</li>
+
+注：默认为 OFF，即不对视频媒体的音频做静音处理。
+                     * 
+                     */
+                    std::string GetMuteSwitch() const;
+
+                    /**
+                     * 设置静音开关，仅对视频类型媒体生效。取值有：
+<li>ON：视频媒体开启静音，该段媒体在导出中会屏蔽音频；</li>
+<li>OFF：视频媒体关闭静音；</li>
+
+注：默认为 OFF，即不对视频媒体的音频做静音处理。
+                     * @param _muteSwitch 静音开关，仅对视频类型媒体生效。取值有：
+<li>ON：视频媒体开启静音，该段媒体在导出中会屏蔽音频；</li>
+<li>OFF：视频媒体关闭静音；</li>
+
+注：默认为 OFF，即不对视频媒体的音频做静音处理。
+                     * 
+                     */
+                    void SetMuteSwitch(const std::string& _muteSwitch);
+
+                    /**
+                     * 判断参数 MuteSwitch 是否已赋值
+                     * @return MuteSwitch 是否已赋值
+                     * 
+                     */
+                    bool MuteSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -223,6 +260,16 @@ namespace TencentCloud
                      */
                     MediaPreprocessOperation m_preprocessOperation;
                     bool m_preprocessOperationHasBeenSet;
+
+                    /**
+                     * 静音开关，仅对视频类型媒体生效。取值有：
+<li>ON：视频媒体开启静音，该段媒体在导出中会屏蔽音频；</li>
+<li>OFF：视频媒体关闭静音；</li>
+
+注：默认为 OFF，即不对视频媒体的音频做静音处理。
+                     */
+                    std::string m_muteSwitch;
+                    bool m_muteSwitchHasBeenSet;
 
                 };
             }

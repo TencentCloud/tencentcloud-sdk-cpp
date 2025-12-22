@@ -117,8 +117,6 @@
 #include <tencentcloud/tcaplusdb/v20190823/model/ModifyTablesResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/RecoverRecycleTablesRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/RecoverRecycleTablesResponse.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/RollbackTablesRequest.h>
-#include <tencentcloud/tcaplusdb/v20190823/model/RollbackTablesResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/SetBackupExpireRuleRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/SetBackupExpireRuleResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/SetTableDataFlowRequest.h>
@@ -284,9 +282,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecoverRecycleTablesResponse> RecoverRecycleTablesOutcome;
                 typedef std::future<RecoverRecycleTablesOutcome> RecoverRecycleTablesOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::RecoverRecycleTablesRequest&, RecoverRecycleTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecoverRecycleTablesAsyncHandler;
-                typedef Outcome<Core::Error, Model::RollbackTablesResponse> RollbackTablesOutcome;
-                typedef std::future<RollbackTablesOutcome> RollbackTablesOutcomeCallable;
-                typedef std::function<void(const TcaplusdbClient*, const Model::RollbackTablesRequest&, RollbackTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollbackTablesAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetBackupExpireRuleResponse> SetBackupExpireRuleOutcome;
                 typedef std::future<SetBackupExpireRuleOutcome> SetBackupExpireRuleOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::SetBackupExpireRuleRequest&, SetBackupExpireRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetBackupExpireRuleAsyncHandler;
@@ -731,17 +726,6 @@ namespace TencentCloud
                 RecoverRecycleTablesOutcome RecoverRecycleTables(const Model::RecoverRecycleTablesRequest &request);
                 void RecoverRecycleTablesAsync(const Model::RecoverRecycleTablesRequest& request, const RecoverRecycleTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecoverRecycleTablesOutcomeCallable RecoverRecycleTablesCallable(const Model::RecoverRecycleTablesRequest& request);
-
-                /**
-                 *不再使用
-
-表格数据回档
-                 * @param req RollbackTablesRequest
-                 * @return RollbackTablesOutcome
-                 */
-                RollbackTablesOutcome RollbackTables(const Model::RollbackTablesRequest &request);
-                void RollbackTablesAsync(const Model::RollbackTablesRequest& request, const RollbackTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RollbackTablesOutcomeCallable RollbackTablesCallable(const Model::RollbackTablesRequest& request);
 
                 /**
                  *新增、删除、修改备份过期策略， ClusterId必须为具体的集群Id（appid）

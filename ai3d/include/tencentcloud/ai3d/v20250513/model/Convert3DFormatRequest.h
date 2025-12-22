@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取3D文件url地址。
-                     * @return File3D 3D文件url地址。
+                     * 获取3D文件url地址，模型文件大小≤60m，支持fbx，obj，glb格式3D文件输入。
+                     * @return File3D 3D文件url地址，模型文件大小≤60m，支持fbx，obj，glb格式3D文件输入。
                      * 
                      */
                     std::string GetFile3D() const;
 
                     /**
-                     * 设置3D文件url地址。
-                     * @param _file3D 3D文件url地址。
+                     * 设置3D文件url地址，模型文件大小≤60m，支持fbx，obj，glb格式3D文件输入。
+                     * @param _file3D 3D文件url地址，模型文件大小≤60m，支持fbx，obj，glb格式3D文件输入。
                      * 
                      */
                     void SetFile3D(const std::string& _file3D);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 3D文件url地址。
+                     * 3D文件url地址，模型文件大小≤60m，支持fbx，obj，glb格式3D文件输入。
                      */
                     std::string m_file3D;
                     bool m_file3DHasBeenSet;

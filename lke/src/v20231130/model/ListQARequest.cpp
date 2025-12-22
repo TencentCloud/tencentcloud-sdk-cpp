@@ -35,7 +35,8 @@ ListQARequest::ListQARequest() :
     m_cateBizIdHasBeenSet(false),
     m_qaBizIdsHasBeenSet(false),
     m_queryTypeHasBeenSet(false),
-    m_showCurrCateHasBeenSet(false)
+    m_showCurrCateHasBeenSet(false),
+    m_enableScopeHasBeenSet(false)
 {
 }
 
@@ -163,6 +164,14 @@ string ListQARequest::ToJsonString() const
         string key = "ShowCurrCate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_showCurrCate, allocator);
+    }
+
+    if (m_enableScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableScope";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableScope, allocator);
     }
 
 
@@ -379,6 +388,22 @@ void ListQARequest::SetShowCurrCate(const uint64_t& _showCurrCate)
 bool ListQARequest::ShowCurrCateHasBeenSet() const
 {
     return m_showCurrCateHasBeenSet;
+}
+
+int64_t ListQARequest::GetEnableScope() const
+{
+    return m_enableScope;
+}
+
+void ListQARequest::SetEnableScope(const int64_t& _enableScope)
+{
+    m_enableScope = _enableScope;
+    m_enableScopeHasBeenSet = true;
+}
+
+bool ListQARequest::EnableScopeHasBeenSet() const
+{
+    return m_enableScopeHasBeenSet;
 }
 
 

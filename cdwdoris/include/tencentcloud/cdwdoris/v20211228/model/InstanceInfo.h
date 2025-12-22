@@ -1282,6 +1282,69 @@ Changing  变更中
                      */
                     bool UseManagedBucketHasBeenSet() const;
 
+                    /**
+                     * 获取集群类型
+                     * @return InstanceType 集群类型
+                     * 
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置集群类型
+                     * @param _instanceType 集群类型
+                     * 
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     * 
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取对应主集群
+                     * @return MasterInstance 对应主集群
+                     * 
+                     */
+                    std::string GetMasterInstance() const;
+
+                    /**
+                     * 设置对应主集群
+                     * @param _masterInstance 对应主集群
+                     * 
+                     */
+                    void SetMasterInstance(const std::string& _masterInstance);
+
+                    /**
+                     * 判断参数 MasterInstance 是否已赋值
+                     * @return MasterInstance 是否已赋值
+                     * 
+                     */
+                    bool MasterInstanceHasBeenSet() const;
+
+                    /**
+                     * 获取对应备集群
+                     * @return SlaveInstances 对应备集群
+                     * 
+                     */
+                    std::vector<std::string> GetSlaveInstances() const;
+
+                    /**
+                     * 设置对应备集群
+                     * @param _slaveInstances 对应备集群
+                     * 
+                     */
+                    void SetSlaveInstances(const std::vector<std::string>& _slaveInstances);
+
+                    /**
+                     * 判断参数 SlaveInstances 是否已赋值
+                     * @return SlaveInstances 是否已赋值
+                     * 
+                     */
+                    bool SlaveInstancesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1634,6 +1697,24 @@ Changing  变更中
                      */
                     bool m_useManagedBucket;
                     bool m_useManagedBucketHasBeenSet;
+
+                    /**
+                     * 集群类型
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 对应主集群
+                     */
+                    std::string m_masterInstance;
+                    bool m_masterInstanceHasBeenSet;
+
+                    /**
+                     * 对应备集群
+                     */
+                    std::vector<std::string> m_slaveInstances;
+                    bool m_slaveInstancesHasBeenSet;
 
                 };
             }

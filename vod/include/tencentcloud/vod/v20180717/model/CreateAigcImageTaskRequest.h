@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool FileInfosHasBeenSet() const;
 
                     /**
-                     * 获取生成图片的提示词。最大支持2000字符，当 FileInfos 为空时，此参数必填。
-                     * @return Prompt 生成图片的提示词。最大支持2000字符，当 FileInfos 为空时，此参数必填。
+                     * 获取生成图片的提示词。当 FileInfos 为空时，此参数必填。
+                     * @return Prompt 生成图片的提示词。当 FileInfos 为空时，此参数必填。
                      * 
                      */
                     std::string GetPrompt() const;
 
                     /**
-                     * 设置生成图片的提示词。最大支持2000字符，当 FileInfos 为空时，此参数必填。
-                     * @param _prompt 生成图片的提示词。最大支持2000字符，当 FileInfos 为空时，此参数必填。
+                     * 设置生成图片的提示词。当 FileInfos 为空时，此参数必填。
+                     * @param _prompt 生成图片的提示词。当 FileInfos 为空时，此参数必填。
                      * 
                      */
                     void SetPrompt(const std::string& _prompt);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool PromptHasBeenSet() const;
 
                     /**
-                     * 获取要阻止模型生成图片的提示词。最大支持500个字符。
-                     * @return NegativePrompt 要阻止模型生成图片的提示词。最大支持500个字符。
+                     * 获取要阻止模型生成图片的提示词。
+                     * @return NegativePrompt 要阻止模型生成图片的提示词。
                      * 
                      */
                     std::string GetNegativePrompt() const;
 
                     /**
-                     * 设置要阻止模型生成图片的提示词。最大支持500个字符。
-                     * @param _negativePrompt 要阻止模型生成图片的提示词。最大支持500个字符。
+                     * 设置要阻止模型生成图片的提示词。
+                     * @param _negativePrompt 要阻止模型生成图片的提示词。
                      * 
                      */
                     void SetNegativePrompt(const std::string& _negativePrompt);
@@ -373,13 +373,13 @@ namespace TencentCloud
                     bool m_fileInfosHasBeenSet;
 
                     /**
-                     * 生成图片的提示词。最大支持2000字符，当 FileInfos 为空时，此参数必填。
+                     * 生成图片的提示词。当 FileInfos 为空时，此参数必填。
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
 
                     /**
-                     * 要阻止模型生成图片的提示词。最大支持500个字符。
+                     * 要阻止模型生成图片的提示词。
                      */
                     std::string m_negativePrompt;
                     bool m_negativePromptHasBeenSet;

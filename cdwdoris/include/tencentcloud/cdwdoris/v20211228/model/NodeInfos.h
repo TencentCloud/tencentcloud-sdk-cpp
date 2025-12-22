@@ -298,6 +298,27 @@ namespace TencentCloud
                      */
                     bool VirtualZoneHasBeenSet() const;
 
+                    /**
+                     * 获取是否有fdb
+                     * @return HasFDB 是否有fdb
+                     * 
+                     */
+                    bool GetHasFDB() const;
+
+                    /**
+                     * 设置是否有fdb
+                     * @param _hasFDB 是否有fdb
+                     * 
+                     */
+                    void SetHasFDB(const bool& _hasFDB);
+
+                    /**
+                     * 判断参数 HasFDB 是否已赋值
+                     * @return HasFDB 是否已赋值
+                     * 
+                     */
+                    bool HasFDBHasBeenSet() const;
+
                 private:
 
                     /**
@@ -371,6 +392,12 @@ namespace TencentCloud
                      */
                     std::string m_virtualZone;
                     bool m_virtualZoneHasBeenSet;
+
+                    /**
+                     * 是否有fdb
+                     */
+                    bool m_hasFDB;
+                    bool m_hasFDBHasBeenSet;
 
                 };
             }

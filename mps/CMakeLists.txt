@@ -92,6 +92,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/CreateImageSpriteTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/SmartErasePrivacyConfig.h
   include/tencentcloud/mps/v20190612/model/MediaSnapshotByTimePicInfoItem.h
+  include/tencentcloud/mps/v20190612/model/AddOnParameter.h
   include/tencentcloud/mps/v20190612/model/UserDefineFaceReviewTemplateInfo.h
   include/tencentcloud/mps/v20190612/model/CreateInputHLSPullSettings.h
   include/tencentcloud/mps/v20190612/model/DeleteStreamLinkSecurityGroupRequest.h
@@ -769,6 +770,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/UrlInputInfo.h
   include/tencentcloud/mps/v20190612/model/ComposeAudioStream.h
   include/tencentcloud/mps/v20190612/model/SmartSubtitleTaskTransTextSegmentItem.h
+  include/tencentcloud/mps/v20190612/model/AddOnImageInput.h
   include/tencentcloud/mps/v20190612/model/FaceConfigureInfo.h
   include/tencentcloud/mps/v20190612/model/LiveAiParagraphInfo.h
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskFaceResultOutput.h
@@ -805,6 +807,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/SmartSubtitlesTaskInput.h
   include/tencentcloud/mps/v20190612/model/CreateAnimatedGraphicsTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/TranslateConfigureInfoForUpdate.h
+  include/tencentcloud/mps/v20190612/model/ImageProcessOutputConfig.h
   include/tencentcloud/mps/v20190612/model/SampleSnapshotTemplate.h
   include/tencentcloud/mps/v20190612/model/RTSPPullSourceAddress.h
   include/tencentcloud/mps/v20190612/model/DescribeHLSPullSourceAddress.h
@@ -915,6 +918,7 @@ set(mps_src
   src/v20190612/model/CreateImageSpriteTemplateRequest.cpp
   src/v20190612/model/SmartErasePrivacyConfig.cpp
   src/v20190612/model/MediaSnapshotByTimePicInfoItem.cpp
+  src/v20190612/model/AddOnParameter.cpp
   src/v20190612/model/UserDefineFaceReviewTemplateInfo.cpp
   src/v20190612/model/CreateInputHLSPullSettings.cpp
   src/v20190612/model/DeleteStreamLinkSecurityGroupRequest.cpp
@@ -1592,6 +1596,7 @@ set(mps_src
   src/v20190612/model/UrlInputInfo.cpp
   src/v20190612/model/ComposeAudioStream.cpp
   src/v20190612/model/SmartSubtitleTaskTransTextSegmentItem.cpp
+  src/v20190612/model/AddOnImageInput.cpp
   src/v20190612/model/FaceConfigureInfo.cpp
   src/v20190612/model/LiveAiParagraphInfo.cpp
   src/v20190612/model/AiRecognitionTaskFaceResultOutput.cpp
@@ -1628,6 +1633,7 @@ set(mps_src
   src/v20190612/model/SmartSubtitlesTaskInput.cpp
   src/v20190612/model/CreateAnimatedGraphicsTemplateResponse.cpp
   src/v20190612/model/TranslateConfigureInfoForUpdate.cpp
+  src/v20190612/model/ImageProcessOutputConfig.cpp
   src/v20190612/model/SampleSnapshotTemplate.cpp
   src/v20190612/model/RTSPPullSourceAddress.cpp
   src/v20190612/model/DescribeHLSPullSourceAddress.cpp

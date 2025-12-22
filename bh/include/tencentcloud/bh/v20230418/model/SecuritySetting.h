@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/bh/v20230418/model/AuthModeSetting.h>
 #include <tencentcloud/bh/v20230418/model/ReconnectionSetting.h>
+#include <tencentcloud/bh/v20230418/model/EnvInternetAccessSetting.h>
 
 
 namespace TencentCloud
@@ -90,6 +91,27 @@ namespace TencentCloud
                      */
                     bool ReconnectionHasBeenSet() const;
 
+                    /**
+                     * 获取大区环境网络设置
+                     * @return EnvInternetAccess 大区环境网络设置
+                     * 
+                     */
+                    EnvInternetAccessSetting GetEnvInternetAccess() const;
+
+                    /**
+                     * 设置大区环境网络设置
+                     * @param _envInternetAccess 大区环境网络设置
+                     * 
+                     */
+                    void SetEnvInternetAccess(const EnvInternetAccessSetting& _envInternetAccess);
+
+                    /**
+                     * 判断参数 EnvInternetAccess 是否已赋值
+                     * @return EnvInternetAccess 是否已赋值
+                     * 
+                     */
+                    bool EnvInternetAccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -103,6 +125,12 @@ namespace TencentCloud
                      */
                     ReconnectionSetting m_reconnection;
                     bool m_reconnectionHasBeenSet;
+
+                    /**
+                     * 大区环境网络设置
+                     */
+                    EnvInternetAccessSetting m_envInternetAccess;
+                    bool m_envInternetAccessHasBeenSet;
 
                 };
             }

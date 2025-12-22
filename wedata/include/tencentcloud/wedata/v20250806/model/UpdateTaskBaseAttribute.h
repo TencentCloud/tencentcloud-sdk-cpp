@@ -109,6 +109,35 @@ namespace TencentCloud
                      */
                     bool TaskDescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取注意：
+- 路径上不要填写任务节点类型；例如，在 一个名为 wf01 的工作流，“通用” 分类下，现在想要在这个分类下的 tf_01 文件夹下，新建一个 shell 任务；则 填写 /tf_01 即可；
+- 如果 tf_01 文件夹不存在，则需要先创建这个文件夹（使用 CreateTaskFolder 接口）才能操作成功；
+                     * @return TaskFolderPath 注意：
+- 路径上不要填写任务节点类型；例如，在 一个名为 wf01 的工作流，“通用” 分类下，现在想要在这个分类下的 tf_01 文件夹下，新建一个 shell 任务；则 填写 /tf_01 即可；
+- 如果 tf_01 文件夹不存在，则需要先创建这个文件夹（使用 CreateTaskFolder 接口）才能操作成功；
+                     * 
+                     */
+                    std::string GetTaskFolderPath() const;
+
+                    /**
+                     * 设置注意：
+- 路径上不要填写任务节点类型；例如，在 一个名为 wf01 的工作流，“通用” 分类下，现在想要在这个分类下的 tf_01 文件夹下，新建一个 shell 任务；则 填写 /tf_01 即可；
+- 如果 tf_01 文件夹不存在，则需要先创建这个文件夹（使用 CreateTaskFolder 接口）才能操作成功；
+                     * @param _taskFolderPath 注意：
+- 路径上不要填写任务节点类型；例如，在 一个名为 wf01 的工作流，“通用” 分类下，现在想要在这个分类下的 tf_01 文件夹下，新建一个 shell 任务；则 填写 /tf_01 即可；
+- 如果 tf_01 文件夹不存在，则需要先创建这个文件夹（使用 CreateTaskFolder 接口）才能操作成功；
+                     * 
+                     */
+                    void SetTaskFolderPath(const std::string& _taskFolderPath);
+
+                    /**
+                     * 判断参数 TaskFolderPath 是否已赋值
+                     * @return TaskFolderPath 是否已赋值
+                     * 
+                     */
+                    bool TaskFolderPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +157,14 @@ namespace TencentCloud
                      */
                     std::string m_taskDescription;
                     bool m_taskDescriptionHasBeenSet;
+
+                    /**
+                     * 注意：
+- 路径上不要填写任务节点类型；例如，在 一个名为 wf01 的工作流，“通用” 分类下，现在想要在这个分类下的 tf_01 文件夹下，新建一个 shell 任务；则 填写 /tf_01 即可；
+- 如果 tf_01 文件夹不存在，则需要先创建这个文件夹（使用 CreateTaskFolder 接口）才能操作成功；
+                     */
+                    std::string m_taskFolderPath;
+                    bool m_taskFolderPathHasBeenSet;
 
                 };
             }

@@ -38,7 +38,8 @@ ModifyDocRequest::ModifyDocRequest() :
     m_isDownloadHasBeenSet(false),
     m_modifyTypesHasBeenSet(false),
     m_updatePeriodInfoHasBeenSet(false),
-    m_splitRuleHasBeenSet(false)
+    m_splitRuleHasBeenSet(false),
+    m_enableScopeHasBeenSet(false)
 {
 }
 
@@ -188,6 +189,14 @@ string ModifyDocRequest::ToJsonString() const
         string key = "SplitRule";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_splitRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableScope";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableScope, allocator);
     }
 
 
@@ -452,6 +461,22 @@ void ModifyDocRequest::SetSplitRule(const string& _splitRule)
 bool ModifyDocRequest::SplitRuleHasBeenSet() const
 {
     return m_splitRuleHasBeenSet;
+}
+
+int64_t ModifyDocRequest::GetEnableScope() const
+{
+    return m_enableScope;
+}
+
+void ModifyDocRequest::SetEnableScope(const int64_t& _enableScope)
+{
+    m_enableScope = _enableScope;
+    m_enableScopeHasBeenSet = true;
+}
+
+bool ModifyDocRequest::EnableScopeHasBeenSet() const
+{
+    return m_enableScopeHasBeenSet;
 }
 
 

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/csip/v20221121/model/StandardTerm.h>
 
 
 namespace TencentCloud
@@ -361,6 +362,27 @@ namespace TencentCloud
                      */
                     bool ClassifyHasBeenSet() const;
 
+                    /**
+                     * 获取等保合规
+                     * @return StandardTerms 等保合规
+                     * 
+                     */
+                    std::vector<StandardTerm> GetStandardTerms() const;
+
+                    /**
+                     * 设置等保合规
+                     * @param _standardTerms 等保合规
+                     * 
+                     */
+                    void SetStandardTerms(const std::vector<StandardTerm>& _standardTerms);
+
+                    /**
+                     * 判断参数 StandardTerms 是否已赋值
+                     * @return StandardTerms 是否已赋值
+                     * 
+                     */
+                    bool StandardTermsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,6 +474,12 @@ namespace TencentCloud
                      */
                     std::string m_classify;
                     bool m_classifyHasBeenSet;
+
+                    /**
+                     * 等保合规
+                     */
+                    std::vector<StandardTerm> m_standardTerms;
+                    bool m_standardTermsHasBeenSet;
 
                 };
             }

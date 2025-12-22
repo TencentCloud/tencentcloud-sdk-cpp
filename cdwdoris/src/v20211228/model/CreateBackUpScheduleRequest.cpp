@@ -40,7 +40,10 @@ CreateBackUpScheduleRequest::CreateBackUpScheduleRequest() :
     m_updateStatusHasBeenSet(false),
     m_cosBucketHasBeenSet(false),
     m_snapshotRemainPolicyHasBeenSet(false),
-    m_dataRemoteRegionHasBeenSet(false)
+    m_dataRemoteRegionHasBeenSet(false),
+    m_bucketTypeHasBeenSet(false),
+    m_enableSecurityLockHasBeenSet(false),
+    m_gracePeriodHasBeenSet(false)
 {
 }
 
@@ -204,6 +207,30 @@ string CreateBackUpScheduleRequest::ToJsonString() const
         string key = "DataRemoteRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dataRemoteRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bucketTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BucketType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_bucketType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableSecurityLockHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSecurityLock";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableSecurityLock, allocator);
+    }
+
+    if (m_gracePeriodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GracePeriod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_gracePeriod, allocator);
     }
 
 
@@ -500,6 +527,54 @@ void CreateBackUpScheduleRequest::SetDataRemoteRegion(const string& _dataRemoteR
 bool CreateBackUpScheduleRequest::DataRemoteRegionHasBeenSet() const
 {
     return m_dataRemoteRegionHasBeenSet;
+}
+
+string CreateBackUpScheduleRequest::GetBucketType() const
+{
+    return m_bucketType;
+}
+
+void CreateBackUpScheduleRequest::SetBucketType(const string& _bucketType)
+{
+    m_bucketType = _bucketType;
+    m_bucketTypeHasBeenSet = true;
+}
+
+bool CreateBackUpScheduleRequest::BucketTypeHasBeenSet() const
+{
+    return m_bucketTypeHasBeenSet;
+}
+
+int64_t CreateBackUpScheduleRequest::GetEnableSecurityLock() const
+{
+    return m_enableSecurityLock;
+}
+
+void CreateBackUpScheduleRequest::SetEnableSecurityLock(const int64_t& _enableSecurityLock)
+{
+    m_enableSecurityLock = _enableSecurityLock;
+    m_enableSecurityLockHasBeenSet = true;
+}
+
+bool CreateBackUpScheduleRequest::EnableSecurityLockHasBeenSet() const
+{
+    return m_enableSecurityLockHasBeenSet;
+}
+
+uint64_t CreateBackUpScheduleRequest::GetGracePeriod() const
+{
+    return m_gracePeriod;
+}
+
+void CreateBackUpScheduleRequest::SetGracePeriod(const uint64_t& _gracePeriod)
+{
+    m_gracePeriod = _gracePeriod;
+    m_gracePeriodHasBeenSet = true;
+}
+
+bool CreateBackUpScheduleRequest::GracePeriodHasBeenSet() const
+{
+    return m_gracePeriodHasBeenSet;
 }
 
 

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/HealthChecker.h>
 #include <tencentcloud/teo/v20220901/model/OriginGroupHealthStatus.h>
+#include <tencentcloud/teo/v20220901/model/OriginGroupReference.h>
 
 
 namespace TencentCloud
@@ -290,6 +291,27 @@ namespace TencentCloud
                      */
                     bool L7UsedListHasBeenSet() const;
 
+                    /**
+                     * 获取负载均衡被引用实例的列表。
+                     * @return References 负载均衡被引用实例的列表。
+                     * 
+                     */
+                    std::vector<OriginGroupReference> GetReferences() const;
+
+                    /**
+                     * 设置负载均衡被引用实例的列表。
+                     * @param _references 负载均衡被引用实例的列表。
+                     * 
+                     */
+                    void SetReferences(const std::vector<OriginGroupReference>& _references);
+
+                    /**
+                     * 判断参数 References 是否已赋值
+                     * @return References 是否已赋值
+                     * 
+                     */
+                    bool ReferencesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -359,6 +381,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_l7UsedList;
                     bool m_l7UsedListHasBeenSet;
+
+                    /**
+                     * 负载均衡被引用实例的列表。
+                     */
+                    std::vector<OriginGroupReference> m_references;
+                    bool m_referencesHasBeenSet;
 
                 };
             }

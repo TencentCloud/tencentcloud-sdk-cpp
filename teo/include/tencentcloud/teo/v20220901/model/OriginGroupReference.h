@@ -48,30 +48,30 @@ namespace TencentCloud
 
                     /**
                      * 获取引用服务类型，取值有：
-<li>AccelerationDomain: 加速域名；</li>
-<li>RuleEngine: 规则引擎；</li>
-<li>Loadbalance: 负载均衡；</li>
-<li>ApplicationProxy: 四层代理。</li>
+<li>acceleration-domain: 加速域名；</li>
+<li>rule-engine: 规则引擎；</li>
+<li>load-balancer: 负载均衡；</li>
+<li>application-proxy: 四层代理。</li>
                      * @return InstanceType 引用服务类型，取值有：
-<li>AccelerationDomain: 加速域名；</li>
-<li>RuleEngine: 规则引擎；</li>
-<li>Loadbalance: 负载均衡；</li>
-<li>ApplicationProxy: 四层代理。</li>
+<li>acceleration-domain: 加速域名；</li>
+<li>rule-engine: 规则引擎；</li>
+<li>load-balancer: 负载均衡；</li>
+<li>application-proxy: 四层代理。</li>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置引用服务类型，取值有：
-<li>AccelerationDomain: 加速域名；</li>
-<li>RuleEngine: 规则引擎；</li>
-<li>Loadbalance: 负载均衡；</li>
-<li>ApplicationProxy: 四层代理。</li>
+<li>acceleration-domain: 加速域名；</li>
+<li>rule-engine: 规则引擎；</li>
+<li>load-balancer: 负载均衡；</li>
+<li>application-proxy: 四层代理。</li>
                      * @param _instanceType 引用服务类型，取值有：
-<li>AccelerationDomain: 加速域名；</li>
-<li>RuleEngine: 规则引擎；</li>
-<li>Loadbalance: 负载均衡；</li>
-<li>ApplicationProxy: 四层代理。</li>
+<li>acceleration-domain: 加速域名；</li>
+<li>rule-engine: 规则引擎；</li>
+<li>load-balancer: 负载均衡；</li>
+<li>application-proxy: 四层代理。</li>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -105,15 +105,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取应用类型的实例名称。
-                     * @return InstanceName 应用类型的实例名称。
+                     * 获取引用类型的实例名称。
+                     * @return InstanceName 引用类型的实例名称。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置应用类型的实例名称。
-                     * @param _instanceName 应用类型的实例名称。
+                     * 设置引用类型的实例名称。
+                     * @param _instanceName 引用类型的实例名称。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -125,14 +125,77 @@ namespace TencentCloud
                      */
                     bool InstanceNameHasBeenSet() const;
 
+                    /**
+                     * 获取引用站点ID。
+                     * @return ZoneId 引用站点ID。
+                     * 
+                     */
+                    std::string GetZoneId() const;
+
+                    /**
+                     * 设置引用站点ID。
+                     * @param _zoneId 引用站点ID。
+                     * 
+                     */
+                    void SetZoneId(const std::string& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     * 
+                     */
+                    bool ZoneIdHasBeenSet() const;
+
+                    /**
+                     * 获取引用站点名称。
+                     * @return ZoneName 引用站点名称。
+                     * 
+                     */
+                    std::string GetZoneName() const;
+
+                    /**
+                     * 设置引用站点名称。
+                     * @param _zoneName 引用站点名称。
+                     * 
+                     */
+                    void SetZoneName(const std::string& _zoneName);
+
+                    /**
+                     * 判断参数 ZoneName 是否已赋值
+                     * @return ZoneName 是否已赋值
+                     * 
+                     */
+                    bool ZoneNameHasBeenSet() const;
+
+                    /**
+                     * 获取引用站点别名。
+                     * @return AliasZoneName 引用站点别名。
+                     * 
+                     */
+                    std::string GetAliasZoneName() const;
+
+                    /**
+                     * 设置引用站点别名。
+                     * @param _aliasZoneName 引用站点别名。
+                     * 
+                     */
+                    void SetAliasZoneName(const std::string& _aliasZoneName);
+
+                    /**
+                     * 判断参数 AliasZoneName 是否已赋值
+                     * @return AliasZoneName 是否已赋值
+                     * 
+                     */
+                    bool AliasZoneNameHasBeenSet() const;
+
                 private:
 
                     /**
                      * 引用服务类型，取值有：
-<li>AccelerationDomain: 加速域名；</li>
-<li>RuleEngine: 规则引擎；</li>
-<li>Loadbalance: 负载均衡；</li>
-<li>ApplicationProxy: 四层代理。</li>
+<li>acceleration-domain: 加速域名；</li>
+<li>rule-engine: 规则引擎；</li>
+<li>load-balancer: 负载均衡；</li>
+<li>application-proxy: 四层代理。</li>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
@@ -144,10 +207,28 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 应用类型的实例名称。
+                     * 引用类型的实例名称。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
+
+                    /**
+                     * 引用站点ID。
+                     */
+                    std::string m_zoneId;
+                    bool m_zoneIdHasBeenSet;
+
+                    /**
+                     * 引用站点名称。
+                     */
+                    std::string m_zoneName;
+                    bool m_zoneNameHasBeenSet;
+
+                    /**
+                     * 引用站点别名。
+                     */
+                    std::string m_aliasZoneName;
+                    bool m_aliasZoneNameHasBeenSet;
 
                 };
             }

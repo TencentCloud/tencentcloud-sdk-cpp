@@ -43,7 +43,8 @@ SaveDocRequest::SaveDocRequest() :
     m_isDownloadHasBeenSet(false),
     m_duplicateFileHandlesHasBeenSet(false),
     m_splitRuleHasBeenSet(false),
-    m_updatePeriodInfoHasBeenSet(false)
+    m_updatePeriodInfoHasBeenSet(false),
+    m_enableScopeHasBeenSet(false)
 {
 }
 
@@ -235,6 +236,14 @@ string SaveDocRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_updatePeriodInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_enableScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableScope";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableScope, allocator);
     }
 
 
@@ -579,6 +588,22 @@ void SaveDocRequest::SetUpdatePeriodInfo(const UpdatePeriodInfo& _updatePeriodIn
 bool SaveDocRequest::UpdatePeriodInfoHasBeenSet() const
 {
     return m_updatePeriodInfoHasBeenSet;
+}
+
+int64_t SaveDocRequest::GetEnableScope() const
+{
+    return m_enableScope;
+}
+
+void SaveDocRequest::SetEnableScope(const int64_t& _enableScope)
+{
+    m_enableScope = _enableScope;
+    m_enableScopeHasBeenSet = true;
+}
+
+bool SaveDocRequest::EnableScopeHasBeenSet() const
+{
+    return m_enableScopeHasBeenSet;
 }
 
 

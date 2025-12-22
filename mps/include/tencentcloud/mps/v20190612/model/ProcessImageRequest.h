@@ -24,6 +24,7 @@
 #include <tencentcloud/mps/v20190612/model/MediaInputInfo.h>
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
 #include <tencentcloud/mps/v20190612/model/ImageTaskInput.h>
+#include <tencentcloud/mps/v20190612/model/AddOnParameter.h>
 
 
 namespace TencentCloud
@@ -224,6 +225,64 @@ namespace TencentCloud
                      */
                     bool ImageTaskHasBeenSet() const;
 
+                    /**
+                     * 获取图片处理编排场景 ID。
+
+- 30000：文字水印擦除
+- 30010：图片扩展
+- 30100：换装场景
+                     * @return ScheduleId 图片处理编排场景 ID。
+
+- 30000：文字水印擦除
+- 30010：图片扩展
+- 30100：换装场景
+                     * 
+                     */
+                    uint64_t GetScheduleId() const;
+
+                    /**
+                     * 设置图片处理编排场景 ID。
+
+- 30000：文字水印擦除
+- 30010：图片扩展
+- 30100：换装场景
+                     * @param _scheduleId 图片处理编排场景 ID。
+
+- 30000：文字水印擦除
+- 30010：图片扩展
+- 30100：换装场景
+                     * 
+                     */
+                    void SetScheduleId(const uint64_t& _scheduleId);
+
+                    /**
+                     * 判断参数 ScheduleId 是否已赋值
+                     * @return ScheduleId 是否已赋值
+                     * 
+                     */
+                    bool ScheduleIdHasBeenSet() const;
+
+                    /**
+                     * 获取图片处理附加参数。
+                     * @return AddOnParameter 图片处理附加参数。
+                     * 
+                     */
+                    AddOnParameter GetAddOnParameter() const;
+
+                    /**
+                     * 设置图片处理附加参数。
+                     * @param _addOnParameter 图片处理附加参数。
+                     * 
+                     */
+                    void SetAddOnParameter(const AddOnParameter& _addOnParameter);
+
+                    /**
+                     * 判断参数 AddOnParameter 是否已赋值
+                     * @return AddOnParameter 是否已赋值
+                     * 
+                     */
+                    bool AddOnParameterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -275,6 +334,22 @@ namespace TencentCloud
                      */
                     ImageTaskInput m_imageTask;
                     bool m_imageTaskHasBeenSet;
+
+                    /**
+                     * 图片处理编排场景 ID。
+
+- 30000：文字水印擦除
+- 30010：图片扩展
+- 30100：换装场景
+                     */
+                    uint64_t m_scheduleId;
+                    bool m_scheduleIdHasBeenSet;
+
+                    /**
+                     * 图片处理附加参数。
+                     */
+                    AddOnParameter m_addOnParameter;
+                    bool m_addOnParameterHasBeenSet;
 
                 };
             }

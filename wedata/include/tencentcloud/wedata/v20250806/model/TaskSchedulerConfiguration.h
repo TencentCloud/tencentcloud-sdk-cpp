@@ -263,31 +263,6 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool ExecutionEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取调度类型: 0 正常调度 1 空跑调度
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScheduleRunType 调度类型: 0 正常调度 1 空跑调度
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetScheduleRunType() const;
-
-                    /**
-                     * 设置调度类型: 0 正常调度 1 空跑调度
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scheduleRunType 调度类型: 0 正常调度 1 空跑调度
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetScheduleRunType(const int64_t& _scheduleRunType);
-
-                    /**
-                     * 判断参数 ScheduleRunType 是否已赋值
-                     * @return ScheduleRunType 是否已赋值
-                     * 
-                     */
-                    bool ScheduleRunTypeHasBeenSet() const;
-
-                    /**
                      * 获取日历调度 取值为 0 和 1， 1为打开，0为关闭，默认为0
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CalendarOpen 日历调度 取值为 0 和 1， 1为打开，0为关闭，默认为0
@@ -415,27 +390,27 @@ CRONTAB_CYCLE: crontab表达式类型
                     /**
                      * 获取下游依赖数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DownStreamDependencyConfigList 下游依赖数组
+                     * @return DownstreamDependencyConfigList 下游依赖数组
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<DependencyTaskBrief> GetDownStreamDependencyConfigList() const;
+                    std::vector<DependencyTaskBrief> GetDownstreamDependencyConfigList() const;
 
                     /**
                      * 设置下游依赖数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _downStreamDependencyConfigList 下游依赖数组
+                     * @param _downstreamDependencyConfigList 下游依赖数组
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetDownStreamDependencyConfigList(const std::vector<DependencyTaskBrief>& _downStreamDependencyConfigList);
+                    void SetDownstreamDependencyConfigList(const std::vector<DependencyTaskBrief>& _downstreamDependencyConfigList);
 
                     /**
-                     * 判断参数 DownStreamDependencyConfigList 是否已赋值
-                     * @return DownStreamDependencyConfigList 是否已赋值
+                     * 判断参数 DownstreamDependencyConfigList 是否已赋值
+                     * @return DownstreamDependencyConfigList 是否已赋值
                      * 
                      */
-                    bool DownStreamDependencyConfigListHasBeenSet() const;
+                    bool DownstreamDependencyConfigListHasBeenSet() const;
 
                     /**
                      * 获取事件数组
@@ -461,131 +436,6 @@ CRONTAB_CYCLE: crontab表达式类型
                      * 
                      */
                     bool EventListenerListHasBeenSet() const;
-
-                    /**
-                     * 获取任务调度优先级 运行优先级 4高 5中 6低 , 默认:6
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RunPriority 任务调度优先级 运行优先级 4高 5中 6低 , 默认:6
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    uint64_t GetRunPriority() const;
-
-                    /**
-                     * 设置任务调度优先级 运行优先级 4高 5中 6低 , 默认:6
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _runPriority 任务调度优先级 运行优先级 4高 5中 6低 , 默认:6
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetRunPriority(const uint64_t& _runPriority);
-
-                    /**
-                     * 判断参数 RunPriority 是否已赋值
-                     * @return RunPriority 是否已赋值
-                     * 
-                     */
-                    bool RunPriorityHasBeenSet() const;
-
-                    /**
-                     * 获取重试策略 重试等待时间,单位分钟: 默认: 5
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RetryWait 重试策略 重试等待时间,单位分钟: 默认: 5
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetRetryWait() const;
-
-                    /**
-                     * 设置重试策略 重试等待时间,单位分钟: 默认: 5
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _retryWait 重试策略 重试等待时间,单位分钟: 默认: 5
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetRetryWait(const int64_t& _retryWait);
-
-                    /**
-                     * 判断参数 RetryWait 是否已赋值
-                     * @return RetryWait 是否已赋值
-                     * 
-                     */
-                    bool RetryWaitHasBeenSet() const;
-
-                    /**
-                     * 获取重试策略 最大尝试次数, 默认: 4
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxRetryAttempts 重试策略 最大尝试次数, 默认: 4
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetMaxRetryAttempts() const;
-
-                    /**
-                     * 设置重试策略 最大尝试次数, 默认: 4
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxRetryAttempts 重试策略 最大尝试次数, 默认: 4
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetMaxRetryAttempts(const int64_t& _maxRetryAttempts);
-
-                    /**
-                     * 判断参数 MaxRetryAttempts 是否已赋值
-                     * @return MaxRetryAttempts 是否已赋值
-                     * 
-                     */
-                    bool MaxRetryAttemptsHasBeenSet() const;
-
-                    /**
-                     * 获取超时处理策略 运行耗时超时（单位：分钟）默认为 -1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExecutionTTL 超时处理策略 运行耗时超时（单位：分钟）默认为 -1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetExecutionTTL() const;
-
-                    /**
-                     * 设置超时处理策略 运行耗时超时（单位：分钟）默认为 -1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _executionTTL 超时处理策略 运行耗时超时（单位：分钟）默认为 -1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetExecutionTTL(const int64_t& _executionTTL);
-
-                    /**
-                     * 判断参数 ExecutionTTL 是否已赋值
-                     * @return ExecutionTTL 是否已赋值
-                     * 
-                     */
-                    bool ExecutionTTLHasBeenSet() const;
-
-                    /**
-                     * 获取超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WaitExecutionTotalTTL 超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetWaitExecutionTotalTTL() const;
-
-                    /**
-                     * 设置超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _waitExecutionTotalTTL 超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetWaitExecutionTotalTTL(const std::string& _waitExecutionTotalTTL);
-
-                    /**
-                     * 判断参数 WaitExecutionTotalTTL 是否已赋值
-                     * @return WaitExecutionTotalTTL 是否已赋值
-                     * 
-                     */
-                    bool WaitExecutionTotalTTLHasBeenSet() const;
 
                     /**
                      * 获取重跑&补录配置, 默认为 ALL; , ALL 运行成功或失败后皆可重跑或补录, FAILURE 运行成功后不可重跑或补录，运行失败后可重跑或补录, NONE 运行成功或失败后皆不可重跑或补录;
@@ -720,6 +570,331 @@ CRONTAB_CYCLE: crontab表达式类型
                      */
                     bool InitStrategyHasBeenSet() const;
 
+                    /**
+                     * 获取调度类型: 0 正常调度 1 空跑调度，默认为 0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScheduleRunType 调度类型: 0 正常调度 1 空跑调度，默认为 0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    int64_t GetScheduleRunType() const;
+
+                    /**
+                     * 设置调度类型: 0 正常调度 1 空跑调度，默认为 0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scheduleRunType 调度类型: 0 正常调度 1 空跑调度，默认为 0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    void SetScheduleRunType(const int64_t& _scheduleRunType);
+
+                    /**
+                     * 判断参数 ScheduleRunType 是否已赋值
+                     * @return ScheduleRunType 是否已赋值
+                     * @deprecated
+                     */
+                    bool ScheduleRunTypeHasBeenSet() const;
+
+                    /**
+                     * 获取（废弃，建议使用 DownstreamDependencyConfigList）下游依赖数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DownStreamDependencyConfigList （废弃，建议使用 DownstreamDependencyConfigList）下游依赖数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    std::vector<DependencyTaskBrief> GetDownStreamDependencyConfigList() const;
+
+                    /**
+                     * 设置（废弃，建议使用 DownstreamDependencyConfigList）下游依赖数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _downStreamDependencyConfigList （废弃，建议使用 DownstreamDependencyConfigList）下游依赖数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    void SetDownStreamDependencyConfigList(const std::vector<DependencyTaskBrief>& _downStreamDependencyConfigList);
+
+                    /**
+                     * 判断参数 DownStreamDependencyConfigList 是否已赋值
+                     * @return DownStreamDependencyConfigList 是否已赋值
+                     * @deprecated
+                     */
+                    bool DownStreamDependencyConfigListHasBeenSet() const;
+
+                    /**
+                     * 获取任务调度优先级 运行优先级 4高 5中 6低 , 默认:6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RunPriority 任务调度优先级 运行优先级 4高 5中 6低 , 默认:6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    uint64_t GetRunPriority() const;
+
+                    /**
+                     * 设置任务调度优先级 运行优先级 4高 5中 6低 , 默认:6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _runPriority 任务调度优先级 运行优先级 4高 5中 6低 , 默认:6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    void SetRunPriority(const uint64_t& _runPriority);
+
+                    /**
+                     * 判断参数 RunPriority 是否已赋值
+                     * @return RunPriority 是否已赋值
+                     * @deprecated
+                     */
+                    bool RunPriorityHasBeenSet() const;
+
+                    /**
+                     * 获取重试策略 重试等待时间,单位分钟: 默认: 5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RetryWait 重试策略 重试等待时间,单位分钟: 默认: 5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    int64_t GetRetryWait() const;
+
+                    /**
+                     * 设置重试策略 重试等待时间,单位分钟: 默认: 5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _retryWait 重试策略 重试等待时间,单位分钟: 默认: 5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    void SetRetryWait(const int64_t& _retryWait);
+
+                    /**
+                     * 判断参数 RetryWait 是否已赋值
+                     * @return RetryWait 是否已赋值
+                     * @deprecated
+                     */
+                    bool RetryWaitHasBeenSet() const;
+
+                    /**
+                     * 获取重试策略 最大尝试次数, 默认: 4
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxRetryAttempts 重试策略 最大尝试次数, 默认: 4
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    int64_t GetMaxRetryAttempts() const;
+
+                    /**
+                     * 设置重试策略 最大尝试次数, 默认: 4
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _maxRetryAttempts 重试策略 最大尝试次数, 默认: 4
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    void SetMaxRetryAttempts(const int64_t& _maxRetryAttempts);
+
+                    /**
+                     * 判断参数 MaxRetryAttempts 是否已赋值
+                     * @return MaxRetryAttempts 是否已赋值
+                     * @deprecated
+                     */
+                    bool MaxRetryAttemptsHasBeenSet() const;
+
+                    /**
+                     * 获取超时处理策略 运行耗时超时（单位：分钟）默认为 -1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExecutionTTL 超时处理策略 运行耗时超时（单位：分钟）默认为 -1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    int64_t GetExecutionTTL() const;
+
+                    /**
+                     * 设置超时处理策略 运行耗时超时（单位：分钟）默认为 -1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _executionTTL 超时处理策略 运行耗时超时（单位：分钟）默认为 -1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    void SetExecutionTTL(const int64_t& _executionTTL);
+
+                    /**
+                     * 判断参数 ExecutionTTL 是否已赋值
+                     * @return ExecutionTTL 是否已赋值
+                     * @deprecated
+                     */
+                    bool ExecutionTTLHasBeenSet() const;
+
+                    /**
+                     * 获取超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WaitExecutionTotalTTL 超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    std::string GetWaitExecutionTotalTTL() const;
+
+                    /**
+                     * 设置超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _waitExecutionTotalTTL 超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    void SetWaitExecutionTotalTTL(const std::string& _waitExecutionTotalTTL);
+
+                    /**
+                     * 判断参数 WaitExecutionTotalTTL 是否已赋值
+                     * @return WaitExecutionTotalTTL 是否已赋值
+                     * @deprecated
+                     */
+                    bool WaitExecutionTotalTTLHasBeenSet() const;
+
+                    /**
+                     * 获取调度类型: 0 正常调度 1 空跑调度，默认为 0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScheduleType 调度类型: 0 正常调度 1 空跑调度，默认为 0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetScheduleType() const;
+
+                    /**
+                     * 设置调度类型: 0 正常调度 1 空跑调度，默认为 0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scheduleType 调度类型: 0 正常调度 1 空跑调度，默认为 0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScheduleType(const int64_t& _scheduleType);
+
+                    /**
+                     * 判断参数 ScheduleType 是否已赋值
+                     * @return ScheduleType 是否已赋值
+                     * 
+                     */
+                    bool ScheduleTypeHasBeenSet() const;
+
+                    /**
+                     * 获取任务调度优先级 运行优先级 4高 5中 6低 , 默认:6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RunPriorityType 任务调度优先级 运行优先级 4高 5中 6低 , 默认:6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRunPriorityType() const;
+
+                    /**
+                     * 设置任务调度优先级 运行优先级 4高 5中 6低 , 默认:6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _runPriorityType 任务调度优先级 运行优先级 4高 5中 6低 , 默认:6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRunPriorityType(const int64_t& _runPriorityType);
+
+                    /**
+                     * 判断参数 RunPriorityType 是否已赋值
+                     * @return RunPriorityType 是否已赋值
+                     * 
+                     */
+                    bool RunPriorityTypeHasBeenSet() const;
+
+                    /**
+                     * 获取重试策略 重试等待时间,单位分钟: 默认: 5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RetryWaitMinute 重试策略 重试等待时间,单位分钟: 默认: 5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRetryWaitMinute() const;
+
+                    /**
+                     * 设置重试策略 重试等待时间,单位分钟: 默认: 5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _retryWaitMinute 重试策略 重试等待时间,单位分钟: 默认: 5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRetryWaitMinute(const int64_t& _retryWaitMinute);
+
+                    /**
+                     * 判断参数 RetryWaitMinute 是否已赋值
+                     * @return RetryWaitMinute 是否已赋值
+                     * 
+                     */
+                    bool RetryWaitMinuteHasBeenSet() const;
+
+                    /**
+                     * 获取重试策略 最大尝试次数, 默认: 4
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxRetryNumber 重试策略 最大尝试次数, 默认: 4
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetMaxRetryNumber() const;
+
+                    /**
+                     * 设置重试策略 最大尝试次数, 默认: 4
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _maxRetryNumber 重试策略 最大尝试次数, 默认: 4
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMaxRetryNumber(const int64_t& _maxRetryNumber);
+
+                    /**
+                     * 判断参数 MaxRetryNumber 是否已赋值
+                     * @return MaxRetryNumber 是否已赋值
+                     * 
+                     */
+                    bool MaxRetryNumberHasBeenSet() const;
+
+                    /**
+                     * 获取超时处理策略 运行耗时超时（单位：分钟）默认为 -1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExecutionTTLMinute 超时处理策略 运行耗时超时（单位：分钟）默认为 -1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetExecutionTTLMinute() const;
+
+                    /**
+                     * 设置超时处理策略 运行耗时超时（单位：分钟）默认为 -1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _executionTTLMinute 超时处理策略 运行耗时超时（单位：分钟）默认为 -1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExecutionTTLMinute(const int64_t& _executionTTLMinute);
+
+                    /**
+                     * 判断参数 ExecutionTTLMinute 是否已赋值
+                     * @return ExecutionTTLMinute 是否已赋值
+                     * 
+                     */
+                    bool ExecutionTTLMinuteHasBeenSet() const;
+
+                    /**
+                     * 获取超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WaitExecutionTotalTTLMinute 超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetWaitExecutionTotalTTLMinute() const;
+
+                    /**
+                     * 设置超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _waitExecutionTotalTTLMinute 超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWaitExecutionTotalTTLMinute(const int64_t& _waitExecutionTotalTTLMinute);
+
+                    /**
+                     * 判断参数 WaitExecutionTotalTTLMinute 是否已赋值
+                     * @return WaitExecutionTotalTTLMinute 是否已赋值
+                     * 
+                     */
+                    bool WaitExecutionTotalTTLMinuteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -781,13 +956,6 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool m_executionEndTimeHasBeenSet;
 
                     /**
-                     * 调度类型: 0 正常调度 1 空跑调度
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_scheduleRunType;
-                    bool m_scheduleRunTypeHasBeenSet;
-
-                    /**
                      * 日历调度 取值为 0 和 1， 1为打开，0为关闭，默认为0
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -826,8 +994,8 @@ CRONTAB_CYCLE: crontab表达式类型
                      * 下游依赖数组
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<DependencyTaskBrief> m_downStreamDependencyConfigList;
-                    bool m_downStreamDependencyConfigListHasBeenSet;
+                    std::vector<DependencyTaskBrief> m_downstreamDependencyConfigList;
+                    bool m_downstreamDependencyConfigListHasBeenSet;
 
                     /**
                      * 事件数组
@@ -835,41 +1003,6 @@ CRONTAB_CYCLE: crontab表达式类型
                      */
                     std::vector<EventListener> m_eventListenerList;
                     bool m_eventListenerListHasBeenSet;
-
-                    /**
-                     * 任务调度优先级 运行优先级 4高 5中 6低 , 默认:6
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    uint64_t m_runPriority;
-                    bool m_runPriorityHasBeenSet;
-
-                    /**
-                     * 重试策略 重试等待时间,单位分钟: 默认: 5
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_retryWait;
-                    bool m_retryWaitHasBeenSet;
-
-                    /**
-                     * 重试策略 最大尝试次数, 默认: 4
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_maxRetryAttempts;
-                    bool m_maxRetryAttemptsHasBeenSet;
-
-                    /**
-                     * 超时处理策略 运行耗时超时（单位：分钟）默认为 -1
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_executionTTL;
-                    bool m_executionTTLHasBeenSet;
-
-                    /**
-                     * 超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_waitExecutionTotalTTL;
-                    bool m_waitExecutionTotalTTLHasBeenSet;
 
                     /**
                      * 重跑&补录配置, 默认为 ALL; , ALL 运行成功或失败后皆可重跑或补录, FAILURE 运行成功后不可重跑或补录，运行失败后可重跑或补录, NONE 运行成功或失败后皆不可重跑或补录;
@@ -907,6 +1040,97 @@ CRONTAB_CYCLE: crontab表达式类型
                      */
                     std::string m_initStrategy;
                     bool m_initStrategyHasBeenSet;
+
+                    /**
+                     * 调度类型: 0 正常调度 1 空跑调度，默认为 0
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_scheduleRunType;
+                    bool m_scheduleRunTypeHasBeenSet;
+
+                    /**
+                     * （废弃，建议使用 DownstreamDependencyConfigList）下游依赖数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DependencyTaskBrief> m_downStreamDependencyConfigList;
+                    bool m_downStreamDependencyConfigListHasBeenSet;
+
+                    /**
+                     * 任务调度优先级 运行优先级 4高 5中 6低 , 默认:6
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_runPriority;
+                    bool m_runPriorityHasBeenSet;
+
+                    /**
+                     * 重试策略 重试等待时间,单位分钟: 默认: 5
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_retryWait;
+                    bool m_retryWaitHasBeenSet;
+
+                    /**
+                     * 重试策略 最大尝试次数, 默认: 4
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxRetryAttempts;
+                    bool m_maxRetryAttemptsHasBeenSet;
+
+                    /**
+                     * 超时处理策略 运行耗时超时（单位：分钟）默认为 -1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_executionTTL;
+                    bool m_executionTTLHasBeenSet;
+
+                    /**
+                     * 超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_waitExecutionTotalTTL;
+                    bool m_waitExecutionTotalTTLHasBeenSet;
+
+                    /**
+                     * 调度类型: 0 正常调度 1 空跑调度，默认为 0
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_scheduleType;
+                    bool m_scheduleTypeHasBeenSet;
+
+                    /**
+                     * 任务调度优先级 运行优先级 4高 5中 6低 , 默认:6
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_runPriorityType;
+                    bool m_runPriorityTypeHasBeenSet;
+
+                    /**
+                     * 重试策略 重试等待时间,单位分钟: 默认: 5
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_retryWaitMinute;
+                    bool m_retryWaitMinuteHasBeenSet;
+
+                    /**
+                     * 重试策略 最大尝试次数, 默认: 4
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxRetryNumber;
+                    bool m_maxRetryNumberHasBeenSet;
+
+                    /**
+                     * 超时处理策略 运行耗时超时（单位：分钟）默认为 -1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_executionTTLMinute;
+                    bool m_executionTTLMinuteHasBeenSet;
+
+                    /**
+                     * 超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_waitExecutionTotalTTLMinute;
+                    bool m_waitExecutionTotalTTLMinuteHasBeenSet;
 
                 };
             }

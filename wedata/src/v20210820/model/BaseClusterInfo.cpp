@@ -37,7 +37,9 @@ BaseClusterInfo::BaseClusterInfo() :
     m_createTimeHasBeenSet(false),
     m_extraConfHasBeenSet(false),
     m_rangerUserNameHasBeenSet(false),
-    m_cdwUserNameHasBeenSet(false)
+    m_cdwUserNameHasBeenSet(false),
+    m_createTimestampHasBeenSet(false),
+    m_updateTimestampHasBeenSet(false)
 {
 }
 
@@ -216,6 +218,26 @@ CoreInternalOutcome BaseClusterInfo::Deserialize(const rapidjson::Value &value)
         m_cdwUserNameHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTimestamp") && !value["CreateTimestamp"].IsNull())
+    {
+        if (!value["CreateTimestamp"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BaseClusterInfo.CreateTimestamp` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTimestamp = value["CreateTimestamp"].GetUint64();
+        m_createTimestampHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTimestamp") && !value["UpdateTimestamp"].IsNull())
+    {
+        if (!value["UpdateTimestamp"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BaseClusterInfo.UpdateTimestamp` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTimestamp = value["UpdateTimestamp"].GetUint64();
+        m_updateTimestampHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +379,22 @@ void BaseClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "CdwUserName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cdwUserName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTimestamp, allocator);
+    }
+
+    if (m_updateTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_updateTimestamp, allocator);
     }
 
 }
@@ -632,5 +670,37 @@ void BaseClusterInfo::SetCdwUserName(const string& _cdwUserName)
 bool BaseClusterInfo::CdwUserNameHasBeenSet() const
 {
     return m_cdwUserNameHasBeenSet;
+}
+
+uint64_t BaseClusterInfo::GetCreateTimestamp() const
+{
+    return m_createTimestamp;
+}
+
+void BaseClusterInfo::SetCreateTimestamp(const uint64_t& _createTimestamp)
+{
+    m_createTimestamp = _createTimestamp;
+    m_createTimestampHasBeenSet = true;
+}
+
+bool BaseClusterInfo::CreateTimestampHasBeenSet() const
+{
+    return m_createTimestampHasBeenSet;
+}
+
+uint64_t BaseClusterInfo::GetUpdateTimestamp() const
+{
+    return m_updateTimestamp;
+}
+
+void BaseClusterInfo::SetUpdateTimestamp(const uint64_t& _updateTimestamp)
+{
+    m_updateTimestamp = _updateTimestamp;
+    m_updateTimestampHasBeenSet = true;
+}
+
+bool BaseClusterInfo::UpdateTimestampHasBeenSet() const
+{
+    return m_updateTimestampHasBeenSet;
 }
 

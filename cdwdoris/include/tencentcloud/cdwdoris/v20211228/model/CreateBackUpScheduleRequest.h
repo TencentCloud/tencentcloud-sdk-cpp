@@ -445,6 +445,69 @@ namespace TencentCloud
                      */
                     bool DataRemoteRegionHasBeenSet() const;
 
+                    /**
+                     * 获取托管桶类型：standard-标准，maz-多可用区
+                     * @return BucketType 托管桶类型：standard-标准，maz-多可用区
+                     * 
+                     */
+                    std::string GetBucketType() const;
+
+                    /**
+                     * 设置托管桶类型：standard-标准，maz-多可用区
+                     * @param _bucketType 托管桶类型：standard-标准，maz-多可用区
+                     * 
+                     */
+                    void SetBucketType(const std::string& _bucketType);
+
+                    /**
+                     * 判断参数 BucketType 是否已赋值
+                     * @return BucketType 是否已赋值
+                     * 
+                     */
+                    bool BucketTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启安全锁：0-未开启，1-开启
+                     * @return EnableSecurityLock 是否开启安全锁：0-未开启，1-开启
+                     * 
+                     */
+                    int64_t GetEnableSecurityLock() const;
+
+                    /**
+                     * 设置是否开启安全锁：0-未开启，1-开启
+                     * @param _enableSecurityLock 是否开启安全锁：0-未开启，1-开启
+                     * 
+                     */
+                    void SetEnableSecurityLock(const int64_t& _enableSecurityLock);
+
+                    /**
+                     * 判断参数 EnableSecurityLock 是否已赋值
+                     * @return EnableSecurityLock 是否已赋值
+                     * 
+                     */
+                    bool EnableSecurityLockHasBeenSet() const;
+
+                    /**
+                     * 获取宽限期（天数）
+                     * @return GracePeriod 宽限期（天数）
+                     * 
+                     */
+                    uint64_t GetGracePeriod() const;
+
+                    /**
+                     * 设置宽限期（天数）
+                     * @param _gracePeriod 宽限期（天数）
+                     * 
+                     */
+                    void SetGracePeriod(const uint64_t& _gracePeriod);
+
+                    /**
+                     * 判断参数 GracePeriod 是否已赋值
+                     * @return GracePeriod 是否已赋值
+                     * 
+                     */
+                    bool GracePeriodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -559,6 +622,24 @@ namespace TencentCloud
                      */
                     std::string m_dataRemoteRegion;
                     bool m_dataRemoteRegionHasBeenSet;
+
+                    /**
+                     * 托管桶类型：standard-标准，maz-多可用区
+                     */
+                    std::string m_bucketType;
+                    bool m_bucketTypeHasBeenSet;
+
+                    /**
+                     * 是否开启安全锁：0-未开启，1-开启
+                     */
+                    int64_t m_enableSecurityLock;
+                    bool m_enableSecurityLockHasBeenSet;
+
+                    /**
+                     * 宽限期（天数）
+                     */
+                    uint64_t m_gracePeriod;
+                    bool m_gracePeriodHasBeenSet;
 
                 };
             }

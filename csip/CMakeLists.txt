@@ -26,6 +26,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/BugInfoDetail.h
   include/tencentcloud/csip/v20221121/model/CsipRiskCenterStatistics.h
   include/tencentcloud/csip/v20221121/model/DescribeVULRiskAdvanceCFGListResponse.h
+  include/tencentcloud/csip/v20221121/model/StandardItem.h
   include/tencentcloud/csip/v20221121/model/HighBaseLineRiskItem.h
   include/tencentcloud/csip/v20221121/model/AccessKeyAlarmInfo.h
   include/tencentcloud/csip/v20221121/model/DescribeAssetViewVulRiskListResponse.h
@@ -119,7 +120,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/CreateRiskCenterScanTaskResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeSubnetAssetsResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskCenterAssetViewPortRiskListRequest.h
-  include/tencentcloud/csip/v20221121/model/StopRiskCenterTaskResponse.h
+  include/tencentcloud/csip/v20221121/model/StandardTerm.h
   include/tencentcloud/csip/v20221121/model/DescribeOrganizationInfoResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeVpcAssetsRequest.h
   include/tencentcloud/csip/v20221121/model/TaskAssetObject.h
@@ -212,6 +213,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/ReportTaskIdList.h
   include/tencentcloud/csip/v20221121/model/DescribeExposeAssetCategoryResponse.h
   include/tencentcloud/csip/v20221121/model/AddNewBindRoleUserResponse.h
+  include/tencentcloud/csip/v20221121/model/StopRiskCenterTaskResponse.h
   include/tencentcloud/csip/v20221121/model/DomainAssetVO.h
   include/tencentcloud/csip/v20221121/model/AKInfo.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskRulesResponse.h
@@ -293,6 +295,7 @@ set(csip_src
   src/v20221121/model/BugInfoDetail.cpp
   src/v20221121/model/CsipRiskCenterStatistics.cpp
   src/v20221121/model/DescribeVULRiskAdvanceCFGListResponse.cpp
+  src/v20221121/model/StandardItem.cpp
   src/v20221121/model/HighBaseLineRiskItem.cpp
   src/v20221121/model/AccessKeyAlarmInfo.cpp
   src/v20221121/model/DescribeAssetViewVulRiskListResponse.cpp
@@ -386,7 +389,7 @@ set(csip_src
   src/v20221121/model/CreateRiskCenterScanTaskResponse.cpp
   src/v20221121/model/DescribeSubnetAssetsResponse.cpp
   src/v20221121/model/DescribeRiskCenterAssetViewPortRiskListRequest.cpp
-  src/v20221121/model/StopRiskCenterTaskResponse.cpp
+  src/v20221121/model/StandardTerm.cpp
   src/v20221121/model/DescribeOrganizationInfoResponse.cpp
   src/v20221121/model/DescribeVpcAssetsRequest.cpp
   src/v20221121/model/TaskAssetObject.cpp
@@ -479,6 +482,7 @@ set(csip_src
   src/v20221121/model/ReportTaskIdList.cpp
   src/v20221121/model/DescribeExposeAssetCategoryResponse.cpp
   src/v20221121/model/AddNewBindRoleUserResponse.cpp
+  src/v20221121/model/StopRiskCenterTaskResponse.cpp
   src/v20221121/model/DomainAssetVO.cpp
   src/v20221121/model/AKInfo.cpp
   src/v20221121/model/DescribeRiskRulesResponse.cpp

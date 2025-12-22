@@ -37,6 +37,8 @@
 #include <tencentcloud/vclm/v20240523/model/DescribePortraitSingJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeTemplateToVideoJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeTemplateToVideoJobResponse.h>
+#include <tencentcloud/vclm/v20240523/model/DescribeVideoEditJobRequest.h>
+#include <tencentcloud/vclm/v20240523/model/DescribeVideoEditJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeVideoFaceFusionJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeVideoFaceFusionJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeVideoStylizationJobRequest.h>
@@ -55,6 +57,8 @@
 #include <tencentcloud/vclm/v20240523/model/SubmitPortraitSingJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitTemplateToVideoJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitTemplateToVideoJobResponse.h>
+#include <tencentcloud/vclm/v20240523/model/SubmitVideoEditJobRequest.h>
+#include <tencentcloud/vclm/v20240523/model/SubmitVideoEditJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitVideoFaceFusionJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitVideoFaceFusionJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitVideoStylizationJobRequest.h>
@@ -96,6 +100,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTemplateToVideoJobResponse> DescribeTemplateToVideoJobOutcome;
                 typedef std::future<DescribeTemplateToVideoJobOutcome> DescribeTemplateToVideoJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::DescribeTemplateToVideoJobRequest&, DescribeTemplateToVideoJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTemplateToVideoJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVideoEditJobResponse> DescribeVideoEditJobOutcome;
+                typedef std::future<DescribeVideoEditJobOutcome> DescribeVideoEditJobOutcomeCallable;
+                typedef std::function<void(const VclmClient*, const Model::DescribeVideoEditJobRequest&, DescribeVideoEditJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoEditJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVideoFaceFusionJobResponse> DescribeVideoFaceFusionJobOutcome;
                 typedef std::future<DescribeVideoFaceFusionJobOutcome> DescribeVideoFaceFusionJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::DescribeVideoFaceFusionJobRequest&, DescribeVideoFaceFusionJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoFaceFusionJobAsyncHandler;
@@ -123,6 +130,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SubmitTemplateToVideoJobResponse> SubmitTemplateToVideoJobOutcome;
                 typedef std::future<SubmitTemplateToVideoJobOutcome> SubmitTemplateToVideoJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::SubmitTemplateToVideoJobRequest&, SubmitTemplateToVideoJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTemplateToVideoJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitVideoEditJobResponse> SubmitVideoEditJobOutcome;
+                typedef std::future<SubmitVideoEditJobOutcome> SubmitVideoEditJobOutcomeCallable;
+                typedef std::function<void(const VclmClient*, const Model::SubmitVideoEditJobRequest&, SubmitVideoEditJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitVideoEditJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitVideoFaceFusionJobResponse> SubmitVideoFaceFusionJobOutcome;
                 typedef std::future<SubmitVideoFaceFusionJobOutcome> SubmitVideoFaceFusionJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::SubmitVideoFaceFusionJobRequest&, SubmitVideoFaceFusionJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitVideoFaceFusionJobAsyncHandler;
@@ -198,6 +208,15 @@ namespace TencentCloud
                 DescribeTemplateToVideoJobOutcome DescribeTemplateToVideoJob(const Model::DescribeTemplateToVideoJobRequest &request);
                 void DescribeTemplateToVideoJobAsync(const Model::DescribeTemplateToVideoJobRequest& request, const DescribeTemplateToVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTemplateToVideoJobOutcomeCallable DescribeTemplateToVideoJobCallable(const Model::DescribeTemplateToVideoJobRequest& request);
+
+                /**
+                 *用于提交视频编辑任务，支持上传视频、文本及图片素材开展编辑操作，涵盖风格迁移、元素替换、内容增减等核心能力。
+                 * @param req DescribeVideoEditJobRequest
+                 * @return DescribeVideoEditJobOutcome
+                 */
+                DescribeVideoEditJobOutcome DescribeVideoEditJob(const Model::DescribeVideoEditJobRequest &request);
+                void DescribeVideoEditJobAsync(const Model::DescribeVideoEditJobRequest& request, const DescribeVideoEditJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVideoEditJobOutcomeCallable DescribeVideoEditJobCallable(const Model::DescribeVideoEditJobRequest& request);
 
                 /**
                  *查询视频人脸融合任务
@@ -283,6 +302,15 @@ namespace TencentCloud
                 SubmitTemplateToVideoJobOutcome SubmitTemplateToVideoJob(const Model::SubmitTemplateToVideoJobRequest &request);
                 void SubmitTemplateToVideoJobAsync(const Model::SubmitTemplateToVideoJobRequest& request, const SubmitTemplateToVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SubmitTemplateToVideoJobOutcomeCallable SubmitTemplateToVideoJobCallable(const Model::SubmitTemplateToVideoJobRequest& request);
+
+                /**
+                 *用于提交视频编辑任务，支持上传视频、文本及图片素材开展编辑操作，涵盖风格迁移、元素替换、内容增减等核心能力。
+                 * @param req SubmitVideoEditJobRequest
+                 * @return SubmitVideoEditJobOutcome
+                 */
+                SubmitVideoEditJobOutcome SubmitVideoEditJob(const Model::SubmitVideoEditJobRequest &request);
+                void SubmitVideoEditJobAsync(const Model::SubmitVideoEditJobRequest& request, const SubmitVideoEditJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitVideoEditJobOutcomeCallable SubmitVideoEditJobCallable(const Model::SubmitVideoEditJobRequest& request);
 
                 /**
                  *提交视频人脸融合任务

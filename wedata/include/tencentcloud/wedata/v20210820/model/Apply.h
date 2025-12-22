@@ -458,14 +458,18 @@ namespace TencentCloud
 
                     /**
                      * 获取扩展字段
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Metadata 扩展字段
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMetadata() const;
 
                     /**
                      * 设置扩展字段
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metadata 扩展字段
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetadata(const std::string& _metadata);
@@ -476,6 +480,56 @@ namespace TencentCloud
                      * 
                      */
                     bool MetadataHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTimestamp 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetCreateTimestamp() const;
+
+                    /**
+                     * 设置创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createTimestamp 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreateTimestamp(const uint64_t& _createTimestamp);
+
+                    /**
+                     * 判断参数 CreateTimestamp 是否已赋值
+                     * @return CreateTimestamp 是否已赋值
+                     * 
+                     */
+                    bool CreateTimestampHasBeenSet() const;
+
+                    /**
+                     * 获取审批时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApproveTimestamp 审批时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetApproveTimestamp() const;
+
+                    /**
+                     * 设置审批时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _approveTimestamp 审批时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApproveTimestamp(const uint64_t& _approveTimestamp);
+
+                    /**
+                     * 判断参数 ApproveTimestamp 是否已赋值
+                     * @return ApproveTimestamp 是否已赋值
+                     * 
+                     */
+                    bool ApproveTimestampHasBeenSet() const;
 
                 private:
 
@@ -597,9 +651,24 @@ namespace TencentCloud
 
                     /**
                      * 扩展字段
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_metadata;
                     bool m_metadataHasBeenSet;
+
+                    /**
+                     * 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_createTimestamp;
+                    bool m_createTimestampHasBeenSet;
+
+                    /**
+                     * 审批时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_approveTimestamp;
+                    bool m_approveTimestampHasBeenSet;
 
                 };
             }

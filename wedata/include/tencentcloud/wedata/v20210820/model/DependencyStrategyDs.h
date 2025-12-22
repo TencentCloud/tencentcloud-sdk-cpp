@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/DependencyConfigTimeoutDTO.h>
 
 
 namespace TencentCloud
@@ -133,6 +134,31 @@ namespace TencentCloud
                      */
                     bool TaskDependencyExecutingTimeoutValueHasBeenSet() const;
 
+                    /**
+                     * 获取超时依赖策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DependencyConfigTimeoutTypeList 超时依赖策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<DependencyConfigTimeoutDTO> GetDependencyConfigTimeoutTypeList() const;
+
+                    /**
+                     * 设置超时依赖策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dependencyConfigTimeoutTypeList 超时依赖策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDependencyConfigTimeoutTypeList(const std::vector<DependencyConfigTimeoutDTO>& _dependencyConfigTimeoutTypeList);
+
+                    /**
+                     * 判断参数 DependencyConfigTimeoutTypeList 是否已赋值
+                     * @return DependencyConfigTimeoutTypeList 是否已赋值
+                     * 
+                     */
+                    bool DependencyConfigTimeoutTypeListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -158,6 +184,13 @@ namespace TencentCloud
                      */
                     int64_t m_taskDependencyExecutingTimeoutValue;
                     bool m_taskDependencyExecutingTimeoutValueHasBeenSet;
+
+                    /**
+                     * 超时依赖策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DependencyConfigTimeoutDTO> m_dependencyConfigTimeoutTypeList;
+                    bool m_dependencyConfigTimeoutTypeListHasBeenSet;
 
                 };
             }

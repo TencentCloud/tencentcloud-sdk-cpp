@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeCheckViewRisksResponse::DescribeCheckViewRisksResponse() :
     m_totalCountHasBeenSet(false),
-    m_checkViewRiskListHasBeenSet(false)
+    m_checkViewRiskListHasBeenSet(false),
+    m_standardNameListHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,26 @@ CoreInternalOutcome DescribeCheckViewRisksResponse::Deserialize(const string &pa
         m_checkViewRiskListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("StandardNameList") && !rsp["StandardNameList"].IsNull())
+    {
+        if (!rsp["StandardNameList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `StandardNameList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["StandardNameList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            StandardItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_standardNameList.push_back(item);
+        }
+        m_standardNameListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -120,6 +141,21 @@ string DescribeCheckViewRisksResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_checkViewRiskList.begin(); itr != m_checkViewRiskList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_standardNameListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StandardNameList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_standardNameList.begin(); itr != m_standardNameList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -156,6 +192,16 @@ vector<CheckViewRiskItem> DescribeCheckViewRisksResponse::GetCheckViewRiskList()
 bool DescribeCheckViewRisksResponse::CheckViewRiskListHasBeenSet() const
 {
     return m_checkViewRiskListHasBeenSet;
+}
+
+vector<StandardItem> DescribeCheckViewRisksResponse::GetStandardNameList() const
+{
+    return m_standardNameList;
+}
+
+bool DescribeCheckViewRisksResponse::StandardNameListHasBeenSet() const
+{
+    return m_standardNameListHasBeenSet;
 }
 
 

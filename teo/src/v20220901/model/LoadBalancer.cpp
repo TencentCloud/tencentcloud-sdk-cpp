@@ -30,7 +30,8 @@ LoadBalancer::LoadBalancer() :
     m_originGroupHealthStatusHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_l4UsedListHasBeenSet(false),
-    m_l7UsedListHasBeenSet(false)
+    m_l7UsedListHasBeenSet(false),
+    m_referencesHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,26 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
         m_l7UsedListHasBeenSet = true;
     }
 
+    if (value.HasMember("References") && !value["References"].IsNull())
+    {
+        if (!value["References"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.References` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["References"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            OriginGroupReference item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_references.push_back(item);
+        }
+        m_referencesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -264,6 +285,21 @@ void LoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         for (auto itr = m_l7UsedList.begin(); itr != m_l7UsedList.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_referencesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "References";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_references.begin(); itr != m_references.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -428,5 +464,21 @@ void LoadBalancer::SetL7UsedList(const vector<string>& _l7UsedList)
 bool LoadBalancer::L7UsedListHasBeenSet() const
 {
     return m_l7UsedListHasBeenSet;
+}
+
+vector<OriginGroupReference> LoadBalancer::GetReferences() const
+{
+    return m_references;
+}
+
+void LoadBalancer::SetReferences(const vector<OriginGroupReference>& _references)
+{
+    m_references = _references;
+    m_referencesHasBeenSet = true;
+}
+
+bool LoadBalancer::ReferencesHasBeenSet() const
+{
+    return m_referencesHasBeenSet;
 }
 

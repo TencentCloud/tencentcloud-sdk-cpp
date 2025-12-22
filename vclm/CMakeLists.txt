@@ -39,6 +39,7 @@ set(vclm_public_header_model
   include/tencentcloud/vclm/v20240523/model/SubmitVideoVoiceJobResponse.h
   include/tencentcloud/vclm/v20240523/model/FaceMergeInfo.h
   include/tencentcloud/vclm/v20240523/model/CheckAnimateImageJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/SubmitVideoEditJobResponse.h
   include/tencentcloud/vclm/v20240523/model/SubmitTemplateToVideoJobResponse.h
   include/tencentcloud/vclm/v20240523/model/CheckAnimateImageJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeVideoStylizationJobRequest.h
@@ -50,6 +51,7 @@ set(vclm_public_header_model
   include/tencentcloud/vclm/v20240523/model/SubmitHunyuanToVideoJobResponse.h
   include/tencentcloud/vclm/v20240523/model/DescribeHumanActorJobResponse.h
   include/tencentcloud/vclm/v20240523/model/ExtraParam.h
+  include/tencentcloud/vclm/v20240523/model/DescribeVideoEditJobResponse.h
   include/tencentcloud/vclm/v20240523/model/DescribeVideoStylizationJobResponse.h
   include/tencentcloud/vclm/v20240523/model/SubmitVideoStylizationJobResponse.h
   include/tencentcloud/vclm/v20240523/model/SubmitVideoFaceFusionJobRequest.h
@@ -58,9 +60,11 @@ set(vclm_public_header_model
   include/tencentcloud/vclm/v20240523/model/SubmitImageToVideoGeneralJobRequest.h
   include/tencentcloud/vclm/v20240523/model/SubmitHunyuanToVideoJobRequest.h
   include/tencentcloud/vclm/v20240523/model/Image.h
+  include/tencentcloud/vclm/v20240523/model/DescribeVideoEditJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeHumanActorJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeImageToVideoGeneralJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeTemplateToVideoJobRequest.h
+  include/tencentcloud/vclm/v20240523/model/SubmitVideoEditJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeImageAnimateJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribePortraitSingJobResponse.h
   include/tencentcloud/vclm/v20240523/model/DescribeHunyuanToVideoJobResponse.h
@@ -88,6 +92,7 @@ set(vclm_src
   src/v20240523/model/SubmitVideoVoiceJobResponse.cpp
   src/v20240523/model/FaceMergeInfo.cpp
   src/v20240523/model/CheckAnimateImageJobResponse.cpp
+  src/v20240523/model/SubmitVideoEditJobResponse.cpp
   src/v20240523/model/SubmitTemplateToVideoJobResponse.cpp
   src/v20240523/model/CheckAnimateImageJobRequest.cpp
   src/v20240523/model/DescribeVideoStylizationJobRequest.cpp
@@ -99,6 +104,7 @@ set(vclm_src
   src/v20240523/model/SubmitHunyuanToVideoJobResponse.cpp
   src/v20240523/model/DescribeHumanActorJobResponse.cpp
   src/v20240523/model/ExtraParam.cpp
+  src/v20240523/model/DescribeVideoEditJobResponse.cpp
   src/v20240523/model/DescribeVideoStylizationJobResponse.cpp
   src/v20240523/model/SubmitVideoStylizationJobResponse.cpp
   src/v20240523/model/SubmitVideoFaceFusionJobRequest.cpp
@@ -107,9 +113,11 @@ set(vclm_src
   src/v20240523/model/SubmitImageToVideoGeneralJobRequest.cpp
   src/v20240523/model/SubmitHunyuanToVideoJobRequest.cpp
   src/v20240523/model/Image.cpp
+  src/v20240523/model/DescribeVideoEditJobRequest.cpp
   src/v20240523/model/DescribeHumanActorJobRequest.cpp
   src/v20240523/model/DescribeImageToVideoGeneralJobRequest.cpp
   src/v20240523/model/DescribeTemplateToVideoJobRequest.cpp
+  src/v20240523/model/SubmitVideoEditJobRequest.cpp
   src/v20240523/model/DescribeImageAnimateJobRequest.cpp
   src/v20240523/model/DescribePortraitSingJobResponse.cpp
   src/v20240523/model/DescribeHunyuanToVideoJobResponse.cpp

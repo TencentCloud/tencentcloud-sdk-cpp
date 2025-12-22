@@ -632,6 +632,47 @@ namespace TencentCloud
                      */
                     bool CreateUserUinHasBeenSet() const;
 
+                    /**
+                     * 获取任务文件夹路径
+
+注意：
+- 路径上不要填写任务节点类型；例如，在 一个名为 wf01 的工作流，“通用” 分类下，现在想要在这个分类下的 tf_01 文件夹下，新建一个 shell 任务；则 填写 /tf_01 即可；
+- 如果 tf_01 文件夹不存在，则需要先创建这个文件夹（使用 CreateTaskFolder 接口）才能操作成功；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskFolderPath 任务文件夹路径
+
+注意：
+- 路径上不要填写任务节点类型；例如，在 一个名为 wf01 的工作流，“通用” 分类下，现在想要在这个分类下的 tf_01 文件夹下，新建一个 shell 任务；则 填写 /tf_01 即可；
+- 如果 tf_01 文件夹不存在，则需要先创建这个文件夹（使用 CreateTaskFolder 接口）才能操作成功；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTaskFolderPath() const;
+
+                    /**
+                     * 设置任务文件夹路径
+
+注意：
+- 路径上不要填写任务节点类型；例如，在 一个名为 wf01 的工作流，“通用” 分类下，现在想要在这个分类下的 tf_01 文件夹下，新建一个 shell 任务；则 填写 /tf_01 即可；
+- 如果 tf_01 文件夹不存在，则需要先创建这个文件夹（使用 CreateTaskFolder 接口）才能操作成功；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskFolderPath 任务文件夹路径
+
+注意：
+- 路径上不要填写任务节点类型；例如，在 一个名为 wf01 的工作流，“通用” 分类下，现在想要在这个分类下的 tf_01 文件夹下，新建一个 shell 任务；则 填写 /tf_01 即可；
+- 如果 tf_01 文件夹不存在，则需要先创建这个文件夹（使用 CreateTaskFolder 接口）才能操作成功；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskFolderPath(const std::string& _taskFolderPath);
+
+                    /**
+                     * 判断参数 TaskFolderPath 是否已赋值
+                     * @return TaskFolderPath 是否已赋值
+                     * 
+                     */
+                    bool TaskFolderPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -793,6 +834,17 @@ namespace TencentCloud
                      */
                     std::string m_createUserUin;
                     bool m_createUserUinHasBeenSet;
+
+                    /**
+                     * 任务文件夹路径
+
+注意：
+- 路径上不要填写任务节点类型；例如，在 一个名为 wf01 的工作流，“通用” 分类下，现在想要在这个分类下的 tf_01 文件夹下，新建一个 shell 任务；则 填写 /tf_01 即可；
+- 如果 tf_01 文件夹不存在，则需要先创建这个文件夹（使用 CreateTaskFolder 接口）才能操作成功；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taskFolderPath;
+                    bool m_taskFolderPathHasBeenSet;
 
                 };
             }

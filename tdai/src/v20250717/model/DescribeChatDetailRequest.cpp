@@ -67,7 +67,7 @@ string DescribeChatDetailRequest::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BeginStreamingTokenId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_beginStreamingTokenId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_beginStreamingTokenId, allocator);
     }
 
     if (m_tokenLimitHasBeenSet)
@@ -134,12 +134,12 @@ bool DescribeChatDetailRequest::StreamingIdHasBeenSet() const
     return m_streamingIdHasBeenSet;
 }
 
-string DescribeChatDetailRequest::GetBeginStreamingTokenId() const
+int64_t DescribeChatDetailRequest::GetBeginStreamingTokenId() const
 {
     return m_beginStreamingTokenId;
 }
 
-void DescribeChatDetailRequest::SetBeginStreamingTokenId(const string& _beginStreamingTokenId)
+void DescribeChatDetailRequest::SetBeginStreamingTokenId(const int64_t& _beginStreamingTokenId)
 {
     m_beginStreamingTokenId = _beginStreamingTokenId;
     m_beginStreamingTokenIdHasBeenSet = true;

@@ -5740,56 +5740,6 @@ TsfClient::DescribeImageTagsOutcomeCallable TsfClient::DescribeImageTagsCallable
     return prom->get_future();
 }
 
-TsfClient::DescribeInovcationIndicatorsOutcome TsfClient::DescribeInovcationIndicators(const DescribeInovcationIndicatorsRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeInovcationIndicators");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeInovcationIndicatorsResponse rsp = DescribeInovcationIndicatorsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeInovcationIndicatorsOutcome(rsp);
-        else
-            return DescribeInovcationIndicatorsOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeInovcationIndicatorsOutcome(outcome.GetError());
-    }
-}
-
-void TsfClient::DescribeInovcationIndicatorsAsync(const DescribeInovcationIndicatorsRequest& request, const DescribeInovcationIndicatorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeInovcationIndicatorsRequest&;
-    using Resp = DescribeInovcationIndicatorsResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeInovcationIndicators", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TsfClient::DescribeInovcationIndicatorsOutcomeCallable TsfClient::DescribeInovcationIndicatorsCallable(const DescribeInovcationIndicatorsRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeInovcationIndicatorsOutcome>>();
-    DescribeInovcationIndicatorsAsync(
-    request,
-    [prom](
-        const TsfClient*,
-        const DescribeInovcationIndicatorsRequest&,
-        DescribeInovcationIndicatorsOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 TsfClient::DescribeInstancesOutcome TsfClient::DescribeInstances(const DescribeInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstances");

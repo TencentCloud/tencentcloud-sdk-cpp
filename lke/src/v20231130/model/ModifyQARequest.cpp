@@ -35,7 +35,8 @@ ModifyQARequest::ModifyQARequest() :
     m_expireStartHasBeenSet(false),
     m_expireEndHasBeenSet(false),
     m_similarQuestionModifyHasBeenSet(false),
-    m_questionDescHasBeenSet(false)
+    m_questionDescHasBeenSet(false),
+    m_enableScopeHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,14 @@ string ModifyQARequest::ToJsonString() const
         string key = "QuestionDesc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_questionDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableScope";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableScope, allocator);
     }
 
 
@@ -372,6 +381,22 @@ void ModifyQARequest::SetQuestionDesc(const string& _questionDesc)
 bool ModifyQARequest::QuestionDescHasBeenSet() const
 {
     return m_questionDescHasBeenSet;
+}
+
+int64_t ModifyQARequest::GetEnableScope() const
+{
+    return m_enableScope;
+}
+
+void ModifyQARequest::SetEnableScope(const int64_t& _enableScope)
+{
+    m_enableScope = _enableScope;
+    m_enableScopeHasBeenSet = true;
+}
+
+bool ModifyQARequest::EnableScopeHasBeenSet() const
+{
+    return m_enableScopeHasBeenSet;
 }
 
 

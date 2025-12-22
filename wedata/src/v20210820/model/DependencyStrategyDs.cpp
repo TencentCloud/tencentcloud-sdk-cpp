@@ -23,7 +23,8 @@ using namespace std;
 DependencyStrategyDs::DependencyStrategyDs() :
     m_pollingNullStrategyHasBeenSet(false),
     m_taskDependencyExecutingStrategiesHasBeenSet(false),
-    m_taskDependencyExecutingTimeoutValueHasBeenSet(false)
+    m_taskDependencyExecutingTimeoutValueHasBeenSet(false),
+    m_dependencyConfigTimeoutTypeListHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,26 @@ CoreInternalOutcome DependencyStrategyDs::Deserialize(const rapidjson::Value &va
         m_taskDependencyExecutingTimeoutValueHasBeenSet = true;
     }
 
+    if (value.HasMember("DependencyConfigTimeoutTypeList") && !value["DependencyConfigTimeoutTypeList"].IsNull())
+    {
+        if (!value["DependencyConfigTimeoutTypeList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DependencyStrategyDs.DependencyConfigTimeoutTypeList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DependencyConfigTimeoutTypeList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DependencyConfigTimeoutDTO item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dependencyConfigTimeoutTypeList.push_back(item);
+        }
+        m_dependencyConfigTimeoutTypeListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +120,21 @@ void DependencyStrategyDs::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "TaskDependencyExecutingTimeoutValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskDependencyExecutingTimeoutValue, allocator);
+    }
+
+    if (m_dependencyConfigTimeoutTypeListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DependencyConfigTimeoutTypeList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dependencyConfigTimeoutTypeList.begin(); itr != m_dependencyConfigTimeoutTypeList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -150,5 +186,21 @@ void DependencyStrategyDs::SetTaskDependencyExecutingTimeoutValue(const int64_t&
 bool DependencyStrategyDs::TaskDependencyExecutingTimeoutValueHasBeenSet() const
 {
     return m_taskDependencyExecutingTimeoutValueHasBeenSet;
+}
+
+vector<DependencyConfigTimeoutDTO> DependencyStrategyDs::GetDependencyConfigTimeoutTypeList() const
+{
+    return m_dependencyConfigTimeoutTypeList;
+}
+
+void DependencyStrategyDs::SetDependencyConfigTimeoutTypeList(const vector<DependencyConfigTimeoutDTO>& _dependencyConfigTimeoutTypeList)
+{
+    m_dependencyConfigTimeoutTypeList = _dependencyConfigTimeoutTypeList;
+    m_dependencyConfigTimeoutTypeListHasBeenSet = true;
+}
+
+bool DependencyStrategyDs::DependencyConfigTimeoutTypeListHasBeenSet() const
+{
+    return m_dependencyConfigTimeoutTypeListHasBeenSet;
 }
 

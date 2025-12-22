@@ -44,7 +44,9 @@ ListQaItem::ListQaItem() :
     m_similarQuestionNumHasBeenSet(false),
     m_similarQuestionTipsHasBeenSet(false),
     m_isDisabledHasBeenSet(false),
-    m_staffNameHasBeenSet(false)
+    m_staffNameHasBeenSet(false),
+    m_enableScopeHasBeenSet(false),
+    m_docEnableScopeHasBeenSet(false)
 {
 }
 
@@ -303,6 +305,26 @@ CoreInternalOutcome ListQaItem::Deserialize(const rapidjson::Value &value)
         m_staffNameHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableScope") && !value["EnableScope"].IsNull())
+    {
+        if (!value["EnableScope"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListQaItem.EnableScope` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableScope = value["EnableScope"].GetInt64();
+        m_enableScopeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DocEnableScope") && !value["DocEnableScope"].IsNull())
+    {
+        if (!value["DocEnableScope"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListQaItem.DocEnableScope` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_docEnableScope = value["DocEnableScope"].GetInt64();
+        m_docEnableScopeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -507,6 +529,22 @@ void ListQaItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "StaffName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_staffName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableScope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableScope, allocator);
+    }
+
+    if (m_docEnableScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DocEnableScope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_docEnableScope, allocator);
     }
 
 }
@@ -894,5 +932,37 @@ void ListQaItem::SetStaffName(const string& _staffName)
 bool ListQaItem::StaffNameHasBeenSet() const
 {
     return m_staffNameHasBeenSet;
+}
+
+int64_t ListQaItem::GetEnableScope() const
+{
+    return m_enableScope;
+}
+
+void ListQaItem::SetEnableScope(const int64_t& _enableScope)
+{
+    m_enableScope = _enableScope;
+    m_enableScopeHasBeenSet = true;
+}
+
+bool ListQaItem::EnableScopeHasBeenSet() const
+{
+    return m_enableScopeHasBeenSet;
+}
+
+int64_t ListQaItem::GetDocEnableScope() const
+{
+    return m_docEnableScope;
+}
+
+void ListQaItem::SetDocEnableScope(const int64_t& _docEnableScope)
+{
+    m_docEnableScope = _docEnableScope;
+    m_docEnableScopeHasBeenSet = true;
+}
+
+bool ListQaItem::DocEnableScopeHasBeenSet() const
+{
+    return m_docEnableScopeHasBeenSet;
 }
 

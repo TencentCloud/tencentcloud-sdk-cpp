@@ -29,7 +29,8 @@ BaseProject::BaseProject() :
     m_descriptionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_modelHasBeenSet(false)
+    m_modelHasBeenSet(false),
+    m_scheduleModeHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome BaseProject::Deserialize(const rapidjson::Value &value)
         m_modelHasBeenSet = true;
     }
 
+    if (value.HasMember("ScheduleMode") && !value["ScheduleMode"].IsNull())
+    {
+        if (!value["ScheduleMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BaseProject.ScheduleMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleMode = string(value["ScheduleMode"].GetString());
+        m_scheduleModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void BaseProject::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Model";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_model.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void BaseProject::SetModel(const string& _model)
 bool BaseProject::ModelHasBeenSet() const
 {
     return m_modelHasBeenSet;
+}
+
+string BaseProject::GetScheduleMode() const
+{
+    return m_scheduleMode;
+}
+
+void BaseProject::SetScheduleMode(const string& _scheduleMode)
+{
+    m_scheduleMode = _scheduleMode;
+    m_scheduleModeHasBeenSet = true;
+}
+
+bool BaseProject::ScheduleModeHasBeenSet() const
+{
+    return m_scheduleModeHasBeenSet;
 }
 
