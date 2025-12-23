@@ -22,7 +22,9 @@
 using namespace TencentCloud::Monitor::V20180724::Model;
 using namespace std;
 
-DescribeClusterAgentCreatingProgressRequest::DescribeClusterAgentCreatingProgressRequest()
+DescribeClusterAgentCreatingProgressRequest::DescribeClusterAgentCreatingProgressRequest() :
+    m_instanceIdHasBeenSet(false),
+    m_clusterIdsHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,27 @@ string DescribeClusterAgentCreatingProgressRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_clusterIds.begin(); itr != m_clusterIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +63,37 @@ string DescribeClusterAgentCreatingProgressRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeClusterAgentCreatingProgressRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DescribeClusterAgentCreatingProgressRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DescribeClusterAgentCreatingProgressRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+vector<string> DescribeClusterAgentCreatingProgressRequest::GetClusterIds() const
+{
+    return m_clusterIds;
+}
+
+void DescribeClusterAgentCreatingProgressRequest::SetClusterIds(const vector<string>& _clusterIds)
+{
+    m_clusterIds = _clusterIds;
+    m_clusterIdsHasBeenSet = true;
+}
+
+bool DescribeClusterAgentCreatingProgressRequest::ClusterIdsHasBeenSet() const
+{
+    return m_clusterIdsHasBeenSet;
+}
 
 

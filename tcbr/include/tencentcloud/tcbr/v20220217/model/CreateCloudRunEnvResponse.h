@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境Id
-                     * @return EnvId 环境Id
+                     * 获取<p>环境Id</p>
+                     * @return EnvId <p>环境Id</p>
                      * 
                      */
                     std::string GetEnvId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
-                     * 获取后付费订单号
-                     * @return TranId 后付费订单号
+                     * 获取<p>后付费订单号</p>
+                     * @return TranId <p>后付费订单号</p>
                      * 
                      */
                     std::string GetTranId() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 环境Id
+                     * <p>环境Id</p>
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
 
                     /**
-                     * 后付费订单号
+                     * <p>后付费订单号</p>
                      */
                     std::string m_tranId;
                     bool m_tranIdHasBeenSet;

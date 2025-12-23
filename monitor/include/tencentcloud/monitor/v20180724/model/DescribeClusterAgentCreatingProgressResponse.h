@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/monitor/v20180724/model/BindProgressResponse.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取绑定状态response
+                     * @return Response 绑定状态response
+                     * 
+                     */
+                    std::vector<BindProgressResponse> GetResponse() const;
+
+                    /**
+                     * 判断参数 Response 是否已赋值
+                     * @return Response 是否已赋值
+                     * 
+                     */
+                    bool ResponseHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 绑定状态response
+                     */
+                    std::vector<BindProgressResponse> m_response;
+                    bool m_responseHasBeenSet;
 
                 };
             }

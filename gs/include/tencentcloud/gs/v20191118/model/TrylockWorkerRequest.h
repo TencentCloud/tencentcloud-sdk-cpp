@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool SetNoHasBeenSet() const;
 
                     /**
-                     * 获取【必选】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验
-                     * @return UserIp 【必选】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验
+                     * 获取【推荐填写】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验
+                     * @return UserIp 【推荐填写】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验
                      * 
                      */
                     std::string GetUserIp() const;
 
                     /**
-                     * 设置【必选】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验
-                     * @param _userIp 【必选】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验
+                     * 设置【推荐填写】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验
+                     * @param _userIp 【推荐填写】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验
                      * 
                      */
                     void SetUserIp(const std::string& _userIp);
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_setNoHasBeenSet;
 
                     /**
-                     * 【必选】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验
+                     * 【推荐填写】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验
                      */
                     std::string m_userIp;
                     bool m_userIpHasBeenSet;

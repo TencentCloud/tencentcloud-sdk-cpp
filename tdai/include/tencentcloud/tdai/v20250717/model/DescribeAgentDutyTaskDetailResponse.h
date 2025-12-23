@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdai/v20250717/model/AgentDutyTask.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取任务详细信息
+                     * @return AgentDutyTask 任务详细信息
+                     * 
+                     */
+                    AgentDutyTask GetAgentDutyTask() const;
+
+                    /**
+                     * 判断参数 AgentDutyTask 是否已赋值
+                     * @return AgentDutyTask 是否已赋值
+                     * 
+                     */
+                    bool AgentDutyTaskHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 任务详细信息
+                     */
+                    AgentDutyTask m_agentDutyTask;
+                    bool m_agentDutyTaskHasBeenSet;
 
                 };
             }

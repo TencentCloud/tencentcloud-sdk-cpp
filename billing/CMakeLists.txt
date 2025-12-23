@@ -204,6 +204,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/DescribeBudgetOperationLogRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByProductResponse.h
   include/tencentcloud/billing/v20180709/model/DescribeAllocationRuleSummaryRequest.h
+  include/tencentcloud/billing/v20180709/model/UinTempAmountModel.h
   include/tencentcloud/billing/v20180709/model/CreateAllocationTagResponse.h
   include/tencentcloud/billing/v20180709/model/ModifyAllocationUnitRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeBillDownloadUrlResponse.h
@@ -445,6 +446,7 @@ set(billing_src
   src/v20180709/model/DescribeBudgetOperationLogRequest.cpp
   src/v20180709/model/DescribeBillSummaryByProductResponse.cpp
   src/v20180709/model/DescribeAllocationRuleSummaryRequest.cpp
+  src/v20180709/model/UinTempAmountModel.cpp
   src/v20180709/model/CreateAllocationTagResponse.cpp
   src/v20180709/model/ModifyAllocationUnitRequest.cpp
   src/v20180709/model/DescribeBillDownloadUrlResponse.cpp

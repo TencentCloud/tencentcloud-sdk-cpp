@@ -42,7 +42,34 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取是否查询临时额度
+                     * @return TempCredit 是否查询临时额度
+                     * 
+                     */
+                    bool GetTempCredit() const;
+
+                    /**
+                     * 设置是否查询临时额度
+                     * @param _tempCredit 是否查询临时额度
+                     * 
+                     */
+                    void SetTempCredit(const bool& _tempCredit);
+
+                    /**
+                     * 判断参数 TempCredit 是否已赋值
+                     * @return TempCredit 是否已赋值
+                     * 
+                     */
+                    bool TempCreditHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 是否查询临时额度
+                     */
+                    bool m_tempCredit;
+                    bool m_tempCreditHasBeenSet;
 
                 };
             }

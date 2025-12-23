@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取一键部署任务Id，微信云托管，暂时用不到
-                     * @return TaskId 一键部署任务Id，微信云托管，暂时用不到
+                     * 获取<p>一键部署任务Id，微信云托管，暂时用不到</p>
+                     * @return TaskId <p>一键部署任务Id，微信云托管，暂时用不到</p>
                      * 
                      */
                     int64_t GetTaskId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 一键部署任务Id，微信云托管，暂时用不到
+                     * <p>一键部署任务Id，微信云托管，暂时用不到</p>
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;

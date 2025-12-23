@@ -158,6 +158,39 @@ UNKNOWN: 查询不到消费状态
                      */
                     bool ExceptionDescHasBeenSet() const;
 
+                    /**
+                     * 获取消费状态来源，枚举值如下：
+
+- DIFF_OFFSET：通过服务端offset计算
+- TRACE_REPORT：通过上报的轨迹判断
+                     * @return ConsumeStatusSource 消费状态来源，枚举值如下：
+
+- DIFF_OFFSET：通过服务端offset计算
+- TRACE_REPORT：通过上报的轨迹判断
+                     * 
+                     */
+                    std::string GetConsumeStatusSource() const;
+
+                    /**
+                     * 设置消费状态来源，枚举值如下：
+
+- DIFF_OFFSET：通过服务端offset计算
+- TRACE_REPORT：通过上报的轨迹判断
+                     * @param _consumeStatusSource 消费状态来源，枚举值如下：
+
+- DIFF_OFFSET：通过服务端offset计算
+- TRACE_REPORT：通过上报的轨迹判断
+                     * 
+                     */
+                    void SetConsumeStatusSource(const std::string& _consumeStatusSource);
+
+                    /**
+                     * 判断参数 ConsumeStatusSource 是否已赋值
+                     * @return ConsumeStatusSource 是否已赋值
+                     * 
+                     */
+                    bool ConsumeStatusSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -190,6 +223,15 @@ UNKNOWN: 查询不到消费状态
                      */
                     std::string m_exceptionDesc;
                     bool m_exceptionDescHasBeenSet;
+
+                    /**
+                     * 消费状态来源，枚举值如下：
+
+- DIFF_OFFSET：通过服务端offset计算
+- TRACE_REPORT：通过上报的轨迹判断
+                     */
+                    std::string m_consumeStatusSource;
+                    bool m_consumeStatusSourceHasBeenSet;
 
                 };
             }

@@ -84,6 +84,48 @@ namespace TencentCloud
                      */
                     bool ResourceGroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取项目ID
+                     * @return ProjectId 项目ID
+                     * 
+                     */
+                    std::string GetProjectId() const;
+
+                    /**
+                     * 设置项目ID
+                     * @param _projectId 项目ID
+                     * 
+                     */
+                    void SetProjectId(const std::string& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取用户Uin
+                     * @return UserUin 用户Uin
+                     * 
+                     */
+                    std::string GetUserUin() const;
+
+                    /**
+                     * 设置用户Uin
+                     * @param _userUin 用户Uin
+                     * 
+                     */
+                    void SetUserUin(const std::string& _userUin);
+
+                    /**
+                     * 判断参数 UserUin 是否已赋值
+                     * @return UserUin 是否已赋值
+                     * 
+                     */
+                    bool UserUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +139,18 @@ namespace TencentCloud
                      */
                     std::string m_resourceGroupId;
                     bool m_resourceGroupIdHasBeenSet;
+
+                    /**
+                     * 项目ID
+                     */
+                    std::string m_projectId;
+                    bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 用户Uin
+                     */
+                    std::string m_userUin;
+                    bool m_userUinHasBeenSet;
 
                 };
             }

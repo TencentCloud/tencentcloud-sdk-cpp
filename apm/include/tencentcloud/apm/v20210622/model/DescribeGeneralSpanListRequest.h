@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool BusinessNameHasBeenSet() const;
 
                     /**
-                     * 获取单页项目个数，默认为10000，合法取值范围为0～10000
-                     * @return Limit 单页项目个数，默认为10000，合法取值范围为0～10000
+                     * 获取单页项目个数，默认为1000，合法取值范围为1～1000
+                     * @return Limit 单页项目个数，默认为1000，合法取值范围为1～1000
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置单页项目个数，默认为10000，合法取值范围为0～10000
-                     * @param _limit 单页项目个数，默认为10000，合法取值范围为0～10000
+                     * 设置单页项目个数，默认为1000，合法取值范围为1～1000
+                     * @param _limit 单页项目个数，默认为1000，合法取值范围为1～1000
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -301,7 +301,7 @@ namespace TencentCloud
                     bool m_businessNameHasBeenSet;
 
                     /**
-                     * 单页项目个数，默认为10000，合法取值范围为0～10000
+                     * 单页项目个数，默认为1000，合法取值范围为1～1000
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

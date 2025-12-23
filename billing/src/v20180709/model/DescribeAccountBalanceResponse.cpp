@@ -36,7 +36,9 @@ DescribeAccountBalanceResponse::DescribeAccountBalanceResponse() :
     m_isCreditLimitedHasBeenSet(false),
     m_creditAmountHasBeenSet(false),
     m_creditBalanceHasBeenSet(false),
-    m_realCreditBalanceHasBeenSet(false)
+    m_realCreditBalanceHasBeenSet(false),
+    m_tempCreditHasBeenSet(false),
+    m_tempAmountInfoListHasBeenSet(false)
 {
 }
 
@@ -204,6 +206,36 @@ CoreInternalOutcome DescribeAccountBalanceResponse::Deserialize(const string &pa
         m_realCreditBalanceHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TempCredit") && !rsp["TempCredit"].IsNull())
+    {
+        if (!rsp["TempCredit"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `TempCredit` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_tempCredit = rsp["TempCredit"].GetDouble();
+        m_tempCreditHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TempAmountInfoList") && !rsp["TempAmountInfoList"].IsNull())
+    {
+        if (!rsp["TempAmountInfoList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TempAmountInfoList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["TempAmountInfoList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            UinTempAmountModel item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tempAmountInfoList.push_back(item);
+        }
+        m_tempAmountInfoListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -316,6 +348,29 @@ string DescribeAccountBalanceResponse::ToJsonString() const
         string key = "RealCreditBalance";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_realCreditBalance, allocator);
+    }
+
+    if (m_tempCreditHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TempCredit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tempCredit, allocator);
+    }
+
+    if (m_tempAmountInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TempAmountInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tempAmountInfoList.begin(); itr != m_tempAmountInfoList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -458,6 +513,26 @@ double DescribeAccountBalanceResponse::GetRealCreditBalance() const
 bool DescribeAccountBalanceResponse::RealCreditBalanceHasBeenSet() const
 {
     return m_realCreditBalanceHasBeenSet;
+}
+
+double DescribeAccountBalanceResponse::GetTempCredit() const
+{
+    return m_tempCredit;
+}
+
+bool DescribeAccountBalanceResponse::TempCreditHasBeenSet() const
+{
+    return m_tempCreditHasBeenSet;
+}
+
+vector<UinTempAmountModel> DescribeAccountBalanceResponse::GetTempAmountInfoList() const
+{
+    return m_tempAmountInfoList;
+}
+
+bool DescribeAccountBalanceResponse::TempAmountInfoListHasBeenSet() const
+{
+    return m_tempAmountInfoListHasBeenSet;
 }
 
 

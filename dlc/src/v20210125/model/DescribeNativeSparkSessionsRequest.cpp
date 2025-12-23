@@ -24,7 +24,9 @@ using namespace std;
 
 DescribeNativeSparkSessionsRequest::DescribeNativeSparkSessionsRequest() :
     m_dataEngineIdHasBeenSet(false),
-    m_resourceGroupIdHasBeenSet(false)
+    m_resourceGroupIdHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
+    m_userUinHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string DescribeNativeSparkSessionsRequest::ToJsonString() const
         string key = "ResourceGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resourceGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userUin.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +107,38 @@ void DescribeNativeSparkSessionsRequest::SetResourceGroupId(const string& _resou
 bool DescribeNativeSparkSessionsRequest::ResourceGroupIdHasBeenSet() const
 {
     return m_resourceGroupIdHasBeenSet;
+}
+
+string DescribeNativeSparkSessionsRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void DescribeNativeSparkSessionsRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool DescribeNativeSparkSessionsRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
+string DescribeNativeSparkSessionsRequest::GetUserUin() const
+{
+    return m_userUin;
+}
+
+void DescribeNativeSparkSessionsRequest::SetUserUin(const string& _userUin)
+{
+    m_userUin = _userUin;
+    m_userUinHasBeenSet = true;
+}
+
+bool DescribeNativeSparkSessionsRequest::UserUinHasBeenSet() const
+{
+    return m_userUinHasBeenSet;
 }
 
 

@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取限制条数
-                     * @return Limit 限制条数
+                     * 获取单次查询最大条数。取值范围：[0~100]，默认值为20
+                     * @return Limit 单次查询最大条数。取值范围：[0~100]，默认值为20
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置限制条数
-                     * @param _limit 限制条数
+                     * 设置单次查询最大条数。取值范围：[0~100]，默认值为20
+                     * @param _limit 单次查询最大条数。取值范围：[0~100]，默认值为20
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -295,7 +295,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 限制条数
+                     * 单次查询最大条数。取值范围：[0~100]，默认值为20
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

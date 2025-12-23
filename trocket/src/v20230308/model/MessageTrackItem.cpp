@@ -24,7 +24,8 @@ MessageTrackItem::MessageTrackItem() :
     m_consumerGroupHasBeenSet(false),
     m_consumeStatusHasBeenSet(false),
     m_trackTypeHasBeenSet(false),
-    m_exceptionDescHasBeenSet(false)
+    m_exceptionDescHasBeenSet(false),
+    m_consumeStatusSourceHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome MessageTrackItem::Deserialize(const rapidjson::Value &value)
         m_exceptionDescHasBeenSet = true;
     }
 
+    if (value.HasMember("ConsumeStatusSource") && !value["ConsumeStatusSource"].IsNull())
+    {
+        if (!value["ConsumeStatusSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MessageTrackItem.ConsumeStatusSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_consumeStatusSource = string(value["ConsumeStatusSource"].GetString());
+        m_consumeStatusSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void MessageTrackItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ExceptionDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_exceptionDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_consumeStatusSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumeStatusSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_consumeStatusSource.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void MessageTrackItem::SetExceptionDesc(const string& _exceptionDesc)
 bool MessageTrackItem::ExceptionDescHasBeenSet() const
 {
     return m_exceptionDescHasBeenSet;
+}
+
+string MessageTrackItem::GetConsumeStatusSource() const
+{
+    return m_consumeStatusSource;
+}
+
+void MessageTrackItem::SetConsumeStatusSource(const string& _consumeStatusSource)
+{
+    m_consumeStatusSource = _consumeStatusSource;
+    m_consumeStatusSourceHasBeenSet = true;
+}
+
+bool MessageTrackItem::ConsumeStatusSourceHasBeenSet() const
+{
+    return m_consumeStatusSourceHasBeenSet;
 }
 

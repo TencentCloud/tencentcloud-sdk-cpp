@@ -64,27 +64,6 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。
-                     * @return ConsumerGroup 消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。
-                     * 
-                     */
-                    std::string GetConsumerGroup() const;
-
-                    /**
-                     * 设置消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。
-                     * @param _consumerGroup 消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。
-                     * 
-                     */
-                    void SetConsumerGroup(const std::string& _consumerGroup);
-
-                    /**
-                     * 判断参数 ConsumerGroup 是否已赋值
-                     * @return ConsumerGroup 是否已赋值
-                     * 
-                     */
-                    bool ConsumerGroupHasBeenSet() const;
-
-                    /**
                      * 获取是否开启消费
                      * @return ConsumeEnable 是否开启消费
                      * 
@@ -129,6 +108,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ConsumeMessageOrderlyHasBeenSet() const;
+
+                    /**
+                     * 获取消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。
+                     * @return ConsumerGroup 消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。
+                     * 
+                     */
+                    std::string GetConsumerGroup() const;
+
+                    /**
+                     * 设置消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。
+                     * @param _consumerGroup 消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。
+                     * 
+                     */
+                    void SetConsumerGroup(const std::string& _consumerGroup);
+
+                    /**
+                     * 判断参数 ConsumerGroup 是否已赋值
+                     * @return ConsumerGroup 是否已赋值
+                     * 
+                     */
+                    bool ConsumerGroupHasBeenSet() const;
 
                     /**
                      * 获取最大重试次数，取值范围0～1000
@@ -181,12 +181,6 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。
-                     */
-                    std::string m_consumerGroup;
-                    bool m_consumerGroupHasBeenSet;
-
-                    /**
                      * 是否开启消费
                      */
                     bool m_consumeEnable;
@@ -198,6 +192,12 @@ namespace TencentCloud
                      */
                     bool m_consumeMessageOrderly;
                     bool m_consumeMessageOrderlyHasBeenSet;
+
+                    /**
+                     * 消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。
+                     */
+                    std::string m_consumerGroup;
+                    bool m_consumerGroupHasBeenSet;
 
                     /**
                      * 最大重试次数，取值范围0～1000

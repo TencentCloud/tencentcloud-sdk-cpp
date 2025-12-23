@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/billing/v20180709/model/UinTempAmountModel.h>
 
 
 namespace TencentCloud
@@ -225,6 +226,34 @@ namespace TencentCloud
                      */
                     bool RealCreditBalanceHasBeenSet() const;
 
+                    /**
+                     * 获取临时额度，单位 分
+                     * @return TempCredit 临时额度，单位 分
+                     * 
+                     */
+                    double GetTempCredit() const;
+
+                    /**
+                     * 判断参数 TempCredit 是否已赋值
+                     * @return TempCredit 是否已赋值
+                     * 
+                     */
+                    bool TempCreditHasBeenSet() const;
+
+                    /**
+                     * 获取临时额度详情
+                     * @return TempAmountInfoList 临时额度详情
+                     * 
+                     */
+                    std::vector<UinTempAmountModel> GetTempAmountInfoList() const;
+
+                    /**
+                     * 判断参数 TempAmountInfoList 是否已赋值
+                     * @return TempAmountInfoList 是否已赋值
+                     * 
+                     */
+                    bool TempAmountInfoListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -304,6 +333,18 @@ namespace TencentCloud
                      */
                     double m_realCreditBalance;
                     bool m_realCreditBalanceHasBeenSet;
+
+                    /**
+                     * 临时额度，单位 分
+                     */
+                    double m_tempCredit;
+                    bool m_tempCreditHasBeenSet;
+
+                    /**
+                     * 临时额度详情
+                     */
+                    std::vector<UinTempAmountModel> m_tempAmountInfoList;
+                    bool m_tempAmountInfoListHasBeenSet;
 
                 };
             }

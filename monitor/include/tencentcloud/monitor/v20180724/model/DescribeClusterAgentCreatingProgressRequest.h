@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取prom实例id
+                     * @return InstanceId prom实例id
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置prom实例id
+                     * @param _instanceId prom实例id
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取集群ids
+                     * @return ClusterIds 集群ids
+                     * 
+                     */
+                    std::vector<std::string> GetClusterIds() const;
+
+                    /**
+                     * 设置集群ids
+                     * @param _clusterIds 集群ids
+                     * 
+                     */
+                    void SetClusterIds(const std::vector<std::string>& _clusterIds);
+
+                    /**
+                     * 判断参数 ClusterIds 是否已赋值
+                     * @return ClusterIds 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * prom实例id
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 集群ids
+                     */
+                    std::vector<std::string> m_clusterIds;
+                    bool m_clusterIdsHasBeenSet;
 
                 };
             }

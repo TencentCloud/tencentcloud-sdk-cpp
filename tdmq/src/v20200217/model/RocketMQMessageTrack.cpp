@@ -24,7 +24,8 @@ RocketMQMessageTrack::RocketMQMessageTrack() :
     m_groupHasBeenSet(false),
     m_consumeStatusHasBeenSet(false),
     m_trackTypeHasBeenSet(false),
-    m_exceptionDescHasBeenSet(false)
+    m_exceptionDescHasBeenSet(false),
+    m_consumeStatusSourceHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome RocketMQMessageTrack::Deserialize(const rapidjson::Value &va
         m_exceptionDescHasBeenSet = true;
     }
 
+    if (value.HasMember("ConsumeStatusSource") && !value["ConsumeStatusSource"].IsNull())
+    {
+        if (!value["ConsumeStatusSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQMessageTrack.ConsumeStatusSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_consumeStatusSource = string(value["ConsumeStatusSource"].GetString());
+        m_consumeStatusSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void RocketMQMessageTrack::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "ExceptionDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_exceptionDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_consumeStatusSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumeStatusSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_consumeStatusSource.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void RocketMQMessageTrack::SetExceptionDesc(const string& _exceptionDesc)
 bool RocketMQMessageTrack::ExceptionDescHasBeenSet() const
 {
     return m_exceptionDescHasBeenSet;
+}
+
+string RocketMQMessageTrack::GetConsumeStatusSource() const
+{
+    return m_consumeStatusSource;
+}
+
+void RocketMQMessageTrack::SetConsumeStatusSource(const string& _consumeStatusSource)
+{
+    m_consumeStatusSource = _consumeStatusSource;
+    m_consumeStatusSourceHasBeenSet = true;
+}
+
+bool RocketMQMessageTrack::ConsumeStatusSourceHasBeenSet() const
+{
+    return m_consumeStatusSourceHasBeenSet;
 }
 

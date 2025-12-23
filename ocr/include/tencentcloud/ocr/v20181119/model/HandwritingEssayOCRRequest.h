@@ -107,10 +107,12 @@ namespace TencentCloud
 
                     /**
                      * 获取配置id支持：
-ArticleRecognize -- 手写作文模板
+ArticleRecognize -- 手写中文作文模板
+ArticleRecognizeEng -- 手写英文作文模板
 默认：ArticleRecognize
                      * @return ConfigId 配置id支持：
-ArticleRecognize -- 手写作文模板
+ArticleRecognize -- 手写中文作文模板
+ArticleRecognizeEng -- 手写英文作文模板
 默认：ArticleRecognize
                      * 
                      */
@@ -118,10 +120,12 @@ ArticleRecognize -- 手写作文模板
 
                     /**
                      * 设置配置id支持：
-ArticleRecognize -- 手写作文模板
+ArticleRecognize -- 手写中文作文模板
+ArticleRecognizeEng -- 手写英文作文模板
 默认：ArticleRecognize
                      * @param _configId 配置id支持：
-ArticleRecognize -- 手写作文模板
+ArticleRecognize -- 手写中文作文模板
+ArticleRecognizeEng -- 手写英文作文模板
 默认：ArticleRecognize
                      * 
                      */
@@ -177,7 +181,8 @@ ArticleRecognize -- 手写作文模板
 
                     /**
                      * 配置id支持：
-ArticleRecognize -- 手写作文模板
+ArticleRecognize -- 手写中文作文模板
+ArticleRecognizeEng -- 手写英文作文模板
 默认：ArticleRecognize
                      */
                     std::string m_configId;

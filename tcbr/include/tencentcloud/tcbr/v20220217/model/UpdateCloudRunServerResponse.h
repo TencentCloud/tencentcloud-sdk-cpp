@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境Id
-                     * @return EnvId 环境Id
+                     * 获取<p>环境Id</p>
+                     * @return EnvId <p>环境Id</p>
                      * 
                      */
                     std::string GetEnvId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
-                     * 获取一键部署任务Id，暂时用不到
-                     * @return TaskId 一键部署任务Id，暂时用不到
+                     * 获取<p>一键部署任务Id，暂时用不到</p>
+                     * @return TaskId <p>一键部署任务Id，暂时用不到</p>
                      * 
                      */
                     int64_t GetTaskId() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 环境Id
+                     * <p>环境Id</p>
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
 
                     /**
-                     * 一键部署任务Id，暂时用不到
+                     * <p>一键部署任务Id，暂时用不到</p>
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;

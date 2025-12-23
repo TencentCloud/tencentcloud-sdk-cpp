@@ -247,6 +247,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeOverviewL7DataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribePlansRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribePlansResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribePrefetchOriginLimitRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribePrefetchOriginLimitResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribePrefetchTasksRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribePrefetchTasksResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribePurgeTasksRequest.h>
@@ -381,6 +383,8 @@
 #include <tencentcloud/teo/v20220901/model/ModifyOriginGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyPlanRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyPlanResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyPrefetchOriginLimitRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyPrefetchOriginLimitResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyRealtimeLogDeliveryTaskRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyRealtimeLogDeliveryTaskResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyRuleRequest.h>
@@ -763,6 +767,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePlansResponse> DescribePlansOutcome;
                 typedef std::future<DescribePlansOutcome> DescribePlansOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribePlansRequest&, DescribePlansOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlansAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrefetchOriginLimitResponse> DescribePrefetchOriginLimitOutcome;
+                typedef std::future<DescribePrefetchOriginLimitOutcome> DescribePrefetchOriginLimitOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribePrefetchOriginLimitRequest&, DescribePrefetchOriginLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrefetchOriginLimitAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePrefetchTasksResponse> DescribePrefetchTasksOutcome;
                 typedef std::future<DescribePrefetchTasksOutcome> DescribePrefetchTasksOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribePrefetchTasksRequest&, DescribePrefetchTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrefetchTasksAsyncHandler;
@@ -964,6 +971,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPlanResponse> ModifyPlanOutcome;
                 typedef std::future<ModifyPlanOutcome> ModifyPlanOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyPlanRequest&, ModifyPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPlanAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPrefetchOriginLimitResponse> ModifyPrefetchOriginLimitOutcome;
+                typedef std::future<ModifyPrefetchOriginLimitOutcome> ModifyPrefetchOriginLimitOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyPrefetchOriginLimitRequest&, ModifyPrefetchOriginLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrefetchOriginLimitAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRealtimeLogDeliveryTaskResponse> ModifyRealtimeLogDeliveryTaskOutcome;
                 typedef std::future<ModifyRealtimeLogDeliveryTaskOutcome> ModifyRealtimeLogDeliveryTaskOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyRealtimeLogDeliveryTaskRequest&, ModifyRealtimeLogDeliveryTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRealtimeLogDeliveryTaskAsyncHandler;
@@ -2060,6 +2070,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribePlansOutcomeCallable DescribePlansCallable(const Model::DescribePlansRequest& request);
 
                 /**
+                 *本接口用于查询回源限速限制，该功能白名单内测中。
+                 * @param req DescribePrefetchOriginLimitRequest
+                 * @return DescribePrefetchOriginLimitOutcome
+                 */
+                DescribePrefetchOriginLimitOutcome DescribePrefetchOriginLimit(const Model::DescribePrefetchOriginLimitRequest &request);
+                void DescribePrefetchOriginLimitAsync(const Model::DescribePrefetchOriginLimitRequest& request, const DescribePrefetchOriginLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrefetchOriginLimitOutcomeCallable DescribePrefetchOriginLimitCallable(const Model::DescribePrefetchOriginLimitRequest& request);
+
+                /**
                  *DescribePrefetchTasks 用于查询预热任务提交历史记录及执行进度，通过 CreatePrefetchTasks 接口提交的任务可通过此接口进行查询。
                  * @param req DescribePrefetchTasksRequest
                  * @return DescribePrefetchTasksOutcome
@@ -2691,6 +2710,16 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 ModifyPlanOutcome ModifyPlan(const Model::ModifyPlanRequest &request);
                 void ModifyPlanAsync(const Model::ModifyPlanRequest& request, const ModifyPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPlanOutcomeCallable ModifyPlanCallable(const Model::ModifyPlanRequest& request);
+
+                /**
+                 *本接口用于配置回源限速限制，该功能白名单内测中。
+可通过此接口创建、修改与删除预热回源限速限制，每个账号最多支持 100 条限制。
+                 * @param req ModifyPrefetchOriginLimitRequest
+                 * @return ModifyPrefetchOriginLimitOutcome
+                 */
+                ModifyPrefetchOriginLimitOutcome ModifyPrefetchOriginLimit(const Model::ModifyPrefetchOriginLimitRequest &request);
+                void ModifyPrefetchOriginLimitAsync(const Model::ModifyPrefetchOriginLimitRequest& request, const ModifyPrefetchOriginLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPrefetchOriginLimitOutcomeCallable ModifyPrefetchOriginLimitCallable(const Model::ModifyPrefetchOriginLimitRequest& request);
 
                 /**
                  *通过本接口修改实时日志投递任务配置。本接口有如下限制：<li>不支持修改实时日志投递任务目的地类型（TaskType）；</li><li>不支持修改数据投递类型（LogType）</li><li>不支持修改数据投递区域（Area）</li><li>当原实时日志投递任务的目的地为腾讯云 CLS 时，不支持修改目的地详细配置，如日志集、日志主题。</li>

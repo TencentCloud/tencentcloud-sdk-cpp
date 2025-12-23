@@ -24,9 +24,9 @@ using namespace std;
 
 ModifyConsumerGroupRequest::ModifyConsumerGroupRequest() :
     m_instanceIdHasBeenSet(false),
-    m_consumerGroupHasBeenSet(false),
     m_consumeEnableHasBeenSet(false),
     m_consumeMessageOrderlyHasBeenSet(false),
+    m_consumerGroupHasBeenSet(false),
     m_maxRetryTimesHasBeenSet(false),
     m_remarkHasBeenSet(false)
 {
@@ -47,14 +47,6 @@ string ModifyConsumerGroupRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_consumerGroupHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ConsumerGroup";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_consumerGroup.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_consumeEnableHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -69,6 +61,14 @@ string ModifyConsumerGroupRequest::ToJsonString() const
         string key = "ConsumeMessageOrderly";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_consumeMessageOrderly, allocator);
+    }
+
+    if (m_consumerGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumerGroup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_consumerGroup.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maxRetryTimesHasBeenSet)
@@ -111,22 +111,6 @@ bool ModifyConsumerGroupRequest::InstanceIdHasBeenSet() const
     return m_instanceIdHasBeenSet;
 }
 
-string ModifyConsumerGroupRequest::GetConsumerGroup() const
-{
-    return m_consumerGroup;
-}
-
-void ModifyConsumerGroupRequest::SetConsumerGroup(const string& _consumerGroup)
-{
-    m_consumerGroup = _consumerGroup;
-    m_consumerGroupHasBeenSet = true;
-}
-
-bool ModifyConsumerGroupRequest::ConsumerGroupHasBeenSet() const
-{
-    return m_consumerGroupHasBeenSet;
-}
-
 bool ModifyConsumerGroupRequest::GetConsumeEnable() const
 {
     return m_consumeEnable;
@@ -157,6 +141,22 @@ void ModifyConsumerGroupRequest::SetConsumeMessageOrderly(const bool& _consumeMe
 bool ModifyConsumerGroupRequest::ConsumeMessageOrderlyHasBeenSet() const
 {
     return m_consumeMessageOrderlyHasBeenSet;
+}
+
+string ModifyConsumerGroupRequest::GetConsumerGroup() const
+{
+    return m_consumerGroup;
+}
+
+void ModifyConsumerGroupRequest::SetConsumerGroup(const string& _consumerGroup)
+{
+    m_consumerGroup = _consumerGroup;
+    m_consumerGroupHasBeenSet = true;
+}
+
+bool ModifyConsumerGroupRequest::ConsumerGroupHasBeenSet() const
+{
+    return m_consumerGroupHasBeenSet;
 }
 
 int64_t ModifyConsumerGroupRequest::GetMaxRetryTimes() const
