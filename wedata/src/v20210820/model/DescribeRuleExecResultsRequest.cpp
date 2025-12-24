@@ -24,7 +24,9 @@ using namespace std;
 
 DescribeRuleExecResultsRequest::DescribeRuleExecResultsRequest() :
     m_ruleGroupExecIdHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_filtersHasBeenSet(false),
+    m_orderFieldsHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,36 @@ string DescribeRuleExecResultsRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_orderFieldsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderFields";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_orderFields.begin(); itr != m_orderFields.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -89,6 +121,38 @@ void DescribeRuleExecResultsRequest::SetProjectId(const string& _projectId)
 bool DescribeRuleExecResultsRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+vector<Filter> DescribeRuleExecResultsRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeRuleExecResultsRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeRuleExecResultsRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
+
+vector<OrderField> DescribeRuleExecResultsRequest::GetOrderFields() const
+{
+    return m_orderFields;
+}
+
+void DescribeRuleExecResultsRequest::SetOrderFields(const vector<OrderField>& _orderFields)
+{
+    m_orderFields = _orderFields;
+    m_orderFieldsHasBeenSet = true;
+}
+
+bool DescribeRuleExecResultsRequest::OrderFieldsHasBeenSet() const
+{
+    return m_orderFieldsHasBeenSet;
 }
 
 

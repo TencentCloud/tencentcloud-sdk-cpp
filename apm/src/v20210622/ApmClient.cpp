@@ -990,6 +990,56 @@ ApmClient::DescribeTagValuesOutcomeCallable ApmClient::DescribeTagValuesCallable
     return prom->get_future();
 }
 
+ApmClient::DescribeTopologyNewOutcome ApmClient::DescribeTopologyNew(const DescribeTopologyNewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTopologyNew");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTopologyNewResponse rsp = DescribeTopologyNewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTopologyNewOutcome(rsp);
+        else
+            return DescribeTopologyNewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTopologyNewOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::DescribeTopologyNewAsync(const DescribeTopologyNewRequest& request, const DescribeTopologyNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTopologyNewRequest&;
+    using Resp = DescribeTopologyNewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTopologyNew", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ApmClient::DescribeTopologyNewOutcomeCallable ApmClient::DescribeTopologyNewCallable(const DescribeTopologyNewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTopologyNewOutcome>>();
+    DescribeTopologyNewAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const DescribeTopologyNewRequest&,
+        DescribeTopologyNewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ApmClient::ModifyApmApplicationConfigOutcome ApmClient::ModifyApmApplicationConfig(const ModifyApmApplicationConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyApmApplicationConfig");

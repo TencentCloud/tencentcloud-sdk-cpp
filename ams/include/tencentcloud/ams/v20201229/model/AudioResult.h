@@ -478,6 +478,27 @@ namespace TencentCloud
                      */
                     bool SentencesHasBeenSet() const;
 
+                    /**
+                     * 获取切片请求ID
+                     * @return RequestId 切片请求ID
+                     * 
+                     */
+                    std::string GetRequestId() const;
+
+                    /**
+                     * 设置切片请求ID
+                     * @param _requestId 切片请求ID
+                     * 
+                     */
+                    void SetRequestId(const std::string& _requestId);
+
+                    /**
+                     * 判断参数 RequestId 是否已赋值
+                     * @return RequestId 是否已赋值
+                     * 
+                     */
+                    bool RequestIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -600,6 +621,12 @@ namespace TencentCloud
                      */
                     std::vector<Sentence> m_sentences;
                     bool m_sentencesHasBeenSet;
+
+                    /**
+                     * 切片请求ID
+                     */
+                    std::string m_requestId;
+                    bool m_requestIdHasBeenSet;
 
                 };
             }

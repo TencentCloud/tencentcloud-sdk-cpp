@@ -414,6 +414,90 @@ namespace TencentCloud
                      */
                     bool LoadBalancerDomainHasBeenSet() const;
 
+                    /**
+                     * 获取监听器所属appid
+                     * @return MemberAppId 监听器所属appid
+                     * 
+                     */
+                    uint64_t GetMemberAppId() const;
+
+                    /**
+                     * 设置监听器所属appid
+                     * @param _memberAppId 监听器所属appid
+                     * 
+                     */
+                    void SetMemberAppId(const uint64_t& _memberAppId);
+
+                    /**
+                     * 判断参数 MemberAppId 是否已赋值
+                     * @return MemberAppId 是否已赋值
+                     * 
+                     */
+                    bool MemberAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取监听器自身所属uin
+                     * @return MemberUin 监听器自身所属uin
+                     * 
+                     */
+                    std::string GetMemberUin() const;
+
+                    /**
+                     * 设置监听器自身所属uin
+                     * @param _memberUin 监听器自身所属uin
+                     * 
+                     */
+                    void SetMemberUin(const std::string& _memberUin);
+
+                    /**
+                     * 判断参数 MemberUin 是否已赋值
+                     * @return MemberUin 是否已赋值
+                     * 
+                     */
+                    bool MemberUinHasBeenSet() const;
+
+                    /**
+                     * 获取监听器被接入的waf账号
+                     * @return Appid 监听器被接入的waf账号
+                     * 
+                     */
+                    uint64_t GetAppid() const;
+
+                    /**
+                     * 设置监听器被接入的waf账号
+                     * @param _appid 监听器被接入的waf账号
+                     * 
+                     */
+                    void SetAppid(const uint64_t& _appid);
+
+                    /**
+                     * 判断参数 Appid 是否已赋值
+                     * @return Appid 是否已赋值
+                     * 
+                     */
+                    bool AppidHasBeenSet() const;
+
+                    /**
+                     * 获取集团账号昵称
+                     * @return MemberNickName 集团账号昵称
+                     * 
+                     */
+                    std::string GetMemberNickName() const;
+
+                    /**
+                     * 设置集团账号昵称
+                     * @param _memberNickName 集团账号昵称
+                     * 
+                     */
+                    void SetMemberNickName(const std::string& _memberNickName);
+
+                    /**
+                     * 判断参数 MemberNickName 是否已赋值
+                     * @return MemberNickName 是否已赋值
+                     * 
+                     */
+                    bool MemberNickNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -516,6 +600,30 @@ namespace TencentCloud
                      */
                     std::string m_loadBalancerDomain;
                     bool m_loadBalancerDomainHasBeenSet;
+
+                    /**
+                     * 监听器所属appid
+                     */
+                    uint64_t m_memberAppId;
+                    bool m_memberAppIdHasBeenSet;
+
+                    /**
+                     * 监听器自身所属uin
+                     */
+                    std::string m_memberUin;
+                    bool m_memberUinHasBeenSet;
+
+                    /**
+                     * 监听器被接入的waf账号
+                     */
+                    uint64_t m_appid;
+                    bool m_appidHasBeenSet;
+
+                    /**
+                     * 集团账号昵称
+                     */
+                    std::string m_memberNickName;
+                    bool m_memberNickNameHasBeenSet;
 
                 };
             }

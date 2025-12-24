@@ -50,7 +50,10 @@ RuleGroup::RuleGroup() :
     m_pipelineTaskCountHasBeenSet(false),
     m_enableRuleCountHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_createUserNameHasBeenSet(false)
+    m_createUserNameHasBeenSet(false),
+    m_groupTypeHasBeenSet(false),
+    m_aspectTaskIdHasBeenSet(false),
+    m_catalogNameHasBeenSet(false)
 {
 }
 
@@ -373,6 +376,36 @@ CoreInternalOutcome RuleGroup::Deserialize(const rapidjson::Value &value)
         m_createUserNameHasBeenSet = true;
     }
 
+    if (value.HasMember("GroupType") && !value["GroupType"].IsNull())
+    {
+        if (!value["GroupType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.GroupType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupType = string(value["GroupType"].GetString());
+        m_groupTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AspectTaskId") && !value["AspectTaskId"].IsNull())
+    {
+        if (!value["AspectTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.AspectTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aspectTaskId = string(value["AspectTaskId"].GetString());
+        m_aspectTaskIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CatalogName") && !value["CatalogName"].IsNull())
+    {
+        if (!value["CatalogName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.CatalogName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_catalogName = string(value["CatalogName"].GetString());
+        m_catalogNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -620,6 +653,30 @@ void RuleGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "CreateUserName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createUserName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aspectTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AspectTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aspectTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_catalogNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CatalogName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_catalogName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1103,5 +1160,53 @@ void RuleGroup::SetCreateUserName(const string& _createUserName)
 bool RuleGroup::CreateUserNameHasBeenSet() const
 {
     return m_createUserNameHasBeenSet;
+}
+
+string RuleGroup::GetGroupType() const
+{
+    return m_groupType;
+}
+
+void RuleGroup::SetGroupType(const string& _groupType)
+{
+    m_groupType = _groupType;
+    m_groupTypeHasBeenSet = true;
+}
+
+bool RuleGroup::GroupTypeHasBeenSet() const
+{
+    return m_groupTypeHasBeenSet;
+}
+
+string RuleGroup::GetAspectTaskId() const
+{
+    return m_aspectTaskId;
+}
+
+void RuleGroup::SetAspectTaskId(const string& _aspectTaskId)
+{
+    m_aspectTaskId = _aspectTaskId;
+    m_aspectTaskIdHasBeenSet = true;
+}
+
+bool RuleGroup::AspectTaskIdHasBeenSet() const
+{
+    return m_aspectTaskIdHasBeenSet;
+}
+
+string RuleGroup::GetCatalogName() const
+{
+    return m_catalogName;
+}
+
+void RuleGroup::SetCatalogName(const string& _catalogName)
+{
+    m_catalogName = _catalogName;
+    m_catalogNameHasBeenSet = true;
+}
+
+bool RuleGroup::CatalogNameHasBeenSet() const
+{
+    return m_catalogNameHasBeenSet;
 }
 

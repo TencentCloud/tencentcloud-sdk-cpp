@@ -305,6 +305,8 @@
 #include <tencentcloud/mps/v20190612/model/ProcessLiveStreamResponse.h>
 #include <tencentcloud/mps/v20190612/model/ProcessMediaRequest.h>
 #include <tencentcloud/mps/v20190612/model/ProcessMediaResponse.h>
+#include <tencentcloud/mps/v20190612/model/RecognizeAudioRequest.h>
+#include <tencentcloud/mps/v20190612/model/RecognizeAudioResponse.h>
 #include <tencentcloud/mps/v20190612/model/RecognizeMediaForZhiXueRequest.h>
 #include <tencentcloud/mps/v20190612/model/RecognizeMediaForZhiXueResponse.h>
 #include <tencentcloud/mps/v20190612/model/ResetWorkflowRequest.h>
@@ -754,6 +756,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ProcessMediaResponse> ProcessMediaOutcome;
                 typedef std::future<ProcessMediaOutcome> ProcessMediaOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ProcessMediaRequest&, ProcessMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ProcessMediaAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizeAudioResponse> RecognizeAudioOutcome;
+                typedef std::future<RecognizeAudioOutcome> RecognizeAudioOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::RecognizeAudioRequest&, RecognizeAudioOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeAudioAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeMediaForZhiXueResponse> RecognizeMediaForZhiXueOutcome;
                 typedef std::future<RecognizeMediaForZhiXueOutcome> RecognizeMediaForZhiXueOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::RecognizeMediaForZhiXueRequest&, RecognizeMediaForZhiXueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeMediaForZhiXueAsyncHandler;
@@ -2118,6 +2123,15 @@ namespace TencentCloud
                 ProcessMediaOutcome ProcessMedia(const Model::ProcessMediaRequest &request);
                 void ProcessMediaAsync(const Model::ProcessMediaRequest& request, const ProcessMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ProcessMediaOutcomeCallable ProcessMediaCallable(const Model::ProcessMediaRequest& request);
+
+                /**
+                 *同步接口，返回语音识别结果
+                 * @param req RecognizeAudioRequest
+                 * @return RecognizeAudioOutcome
+                 */
+                RecognizeAudioOutcome RecognizeAudio(const Model::RecognizeAudioRequest &request);
+                void RecognizeAudioAsync(const Model::RecognizeAudioRequest& request, const RecognizeAudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeAudioOutcomeCallable RecognizeAudioCallable(const Model::RecognizeAudioRequest& request);
 
                 /**
                  *智能媒体识别，包含表情和动作识别。仅用于智学，其他调用无效。

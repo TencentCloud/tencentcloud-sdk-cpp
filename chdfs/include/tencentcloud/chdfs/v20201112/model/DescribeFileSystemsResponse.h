@@ -58,6 +58,34 @@ namespace TencentCloud
                      */
                     bool FileSystemsHasBeenSet() const;
 
+                    /**
+                     * 获取标识是否已获取全量
+                     * @return IsOver 标识是否已获取全量
+                     * 
+                     */
+                    bool GetIsOver() const;
+
+                    /**
+                     * 判断参数 IsOver 是否已赋值
+                     * @return IsOver 是否已赋值
+                     * 
+                     */
+                    bool IsOverHasBeenSet() const;
+
+                    /**
+                     * 获取下一次请求起始文件系统ID标记
+                     * @return NextFileSystemIdMarker 下一次请求起始文件系统ID标记
+                     * 
+                     */
+                    std::string GetNextFileSystemIdMarker() const;
+
+                    /**
+                     * 判断参数 NextFileSystemIdMarker 是否已赋值
+                     * @return NextFileSystemIdMarker 是否已赋值
+                     * 
+                     */
+                    bool NextFileSystemIdMarkerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +93,18 @@ namespace TencentCloud
                      */
                     std::vector<FileSystem> m_fileSystems;
                     bool m_fileSystemsHasBeenSet;
+
+                    /**
+                     * 标识是否已获取全量
+                     */
+                    bool m_isOver;
+                    bool m_isOverHasBeenSet;
+
+                    /**
+                     * 下一次请求起始文件系统ID标记
+                     */
+                    std::string m_nextFileSystemIdMarker;
+                    bool m_nextFileSystemIdMarkerHasBeenSet;
 
                 };
             }

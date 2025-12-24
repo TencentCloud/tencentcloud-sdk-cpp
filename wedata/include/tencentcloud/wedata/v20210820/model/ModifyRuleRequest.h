@@ -590,6 +590,48 @@ namespace TencentCloud
                      */
                     bool TargetTableNameHasBeenSet() const;
 
+                    /**
+                     * 获取目录
+                     * @return CatalogName 目录
+                     * 
+                     */
+                    std::string GetCatalogName() const;
+
+                    /**
+                     * 设置目录
+                     * @param _catalogName 目录
+                     * 
+                     */
+                    void SetCatalogName(const std::string& _catalogName);
+
+                    /**
+                     * 判断参数 CatalogName 是否已赋值
+                     * @return CatalogName 是否已赋值
+                     * 
+                     */
+                    bool CatalogNameHasBeenSet() const;
+
+                    /**
+                     * 获取目标目录
+                     * @return TargetCatalogName 目标目录
+                     * 
+                     */
+                    std::string GetTargetCatalogName() const;
+
+                    /**
+                     * 设置目标目录
+                     * @param _targetCatalogName 目标目录
+                     * 
+                     */
+                    void SetTargetCatalogName(const std::string& _targetCatalogName);
+
+                    /**
+                     * 判断参数 TargetCatalogName 是否已赋值
+                     * @return TargetCatalogName 是否已赋值
+                     * 
+                     */
+                    bool TargetCatalogNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -747,6 +789,18 @@ namespace TencentCloud
                      */
                     std::string m_targetTableName;
                     bool m_targetTableNameHasBeenSet;
+
+                    /**
+                     * 目录
+                     */
+                    std::string m_catalogName;
+                    bool m_catalogNameHasBeenSet;
+
+                    /**
+                     * 目标目录
+                     */
+                    std::string m_targetCatalogName;
+                    bool m_targetCatalogNameHasBeenSet;
 
                 };
             }

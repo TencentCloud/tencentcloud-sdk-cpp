@@ -7090,6 +7090,56 @@ MpsClient::ProcessMediaOutcomeCallable MpsClient::ProcessMediaCallable(const Pro
     return prom->get_future();
 }
 
+MpsClient::RecognizeAudioOutcome MpsClient::RecognizeAudio(const RecognizeAudioRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizeAudio");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizeAudioResponse rsp = RecognizeAudioResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizeAudioOutcome(rsp);
+        else
+            return RecognizeAudioOutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizeAudioOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::RecognizeAudioAsync(const RecognizeAudioRequest& request, const RecognizeAudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RecognizeAudioRequest&;
+    using Resp = RecognizeAudioResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RecognizeAudio", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::RecognizeAudioOutcomeCallable MpsClient::RecognizeAudioCallable(const RecognizeAudioRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RecognizeAudioOutcome>>();
+    RecognizeAudioAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const RecognizeAudioRequest&,
+        RecognizeAudioOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::RecognizeMediaForZhiXueOutcome MpsClient::RecognizeMediaForZhiXue(const RecognizeMediaForZhiXueRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizeMediaForZhiXue");

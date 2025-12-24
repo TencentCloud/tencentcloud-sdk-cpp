@@ -74,7 +74,11 @@ Rule::Rule() :
     m_updateTimeHasBeenSet(false),
     m_datasourceNameHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
-    m_failMsgHasBeenSet(false)
+    m_failMsgHasBeenSet(false),
+    m_groupTypeHasBeenSet(false),
+    m_aspectTaskIdHasBeenSet(false),
+    m_catalogNameHasBeenSet(false),
+    m_targetCatalogNameHasBeenSet(false)
 {
 }
 
@@ -654,6 +658,46 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
         m_failMsgHasBeenSet = true;
     }
 
+    if (value.HasMember("GroupType") && !value["GroupType"].IsNull())
+    {
+        if (!value["GroupType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.GroupType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupType = string(value["GroupType"].GetString());
+        m_groupTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AspectTaskId") && !value["AspectTaskId"].IsNull())
+    {
+        if (!value["AspectTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.AspectTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aspectTaskId = string(value["AspectTaskId"].GetString());
+        m_aspectTaskIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CatalogName") && !value["CatalogName"].IsNull())
+    {
+        if (!value["CatalogName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.CatalogName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_catalogName = string(value["CatalogName"].GetString());
+        m_catalogNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetCatalogName") && !value["TargetCatalogName"].IsNull())
+    {
+        if (!value["TargetCatalogName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.TargetCatalogName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetCatalogName = string(value["TargetCatalogName"].GetString());
+        m_targetCatalogNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1100,6 +1144,38 @@ void Rule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "FailMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_failMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aspectTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AspectTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aspectTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_catalogNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CatalogName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_catalogName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetCatalogNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetCatalogName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetCatalogName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1967,5 +2043,69 @@ void Rule::SetFailMsg(const string& _failMsg)
 bool Rule::FailMsgHasBeenSet() const
 {
     return m_failMsgHasBeenSet;
+}
+
+string Rule::GetGroupType() const
+{
+    return m_groupType;
+}
+
+void Rule::SetGroupType(const string& _groupType)
+{
+    m_groupType = _groupType;
+    m_groupTypeHasBeenSet = true;
+}
+
+bool Rule::GroupTypeHasBeenSet() const
+{
+    return m_groupTypeHasBeenSet;
+}
+
+string Rule::GetAspectTaskId() const
+{
+    return m_aspectTaskId;
+}
+
+void Rule::SetAspectTaskId(const string& _aspectTaskId)
+{
+    m_aspectTaskId = _aspectTaskId;
+    m_aspectTaskIdHasBeenSet = true;
+}
+
+bool Rule::AspectTaskIdHasBeenSet() const
+{
+    return m_aspectTaskIdHasBeenSet;
+}
+
+string Rule::GetCatalogName() const
+{
+    return m_catalogName;
+}
+
+void Rule::SetCatalogName(const string& _catalogName)
+{
+    m_catalogName = _catalogName;
+    m_catalogNameHasBeenSet = true;
+}
+
+bool Rule::CatalogNameHasBeenSet() const
+{
+    return m_catalogNameHasBeenSet;
+}
+
+string Rule::GetTargetCatalogName() const
+{
+    return m_targetCatalogName;
+}
+
+void Rule::SetTargetCatalogName(const string& _targetCatalogName)
+{
+    m_targetCatalogName = _targetCatalogName;
+    m_targetCatalogNameHasBeenSet = true;
+}
+
+bool Rule::TargetCatalogNameHasBeenSet() const
+{
+    return m_targetCatalogNameHasBeenSet;
 }
 

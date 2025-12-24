@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/StrToStrMap.h>
 #include <tencentcloud/wedata/v20210820/model/CreateMakeDatetimeInfo.h>
+#include <tencentcloud/wedata/v20210820/model/MakePlanAlarmRule.h>
 
 
 namespace TencentCloud
@@ -835,6 +836,148 @@ DATA_TIME：实例数据时间；SCHEDULE_TIME 计划调度时间
                      */
                     bool TimeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取开始时间
+                     * @return StartTime 开始时间
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置开始时间
+                     * @param _startTime 开始时间
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取结束时间
+                     * @return EndTime 结束时间
+                     * 
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置结束时间
+                     * @param _endTime 结束时间
+                     * 
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取失败百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FailurePercent 失败百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetFailurePercent() const;
+
+                    /**
+                     * 设置失败百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _failurePercent 失败百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFailurePercent(const int64_t& _failurePercent);
+
+                    /**
+                     * 判断参数 FailurePercent 是否已赋值
+                     * @return FailurePercent 是否已赋值
+                     * 
+                     */
+                    bool FailurePercentHasBeenSet() const;
+
+                    /**
+                     * 获取补录计划的告警规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmRule 补录计划的告警规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    MakePlanAlarmRule GetAlarmRule() const;
+
+                    /**
+                     * 设置补录计划的告警规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmRule 补录计划的告警规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmRule(const MakePlanAlarmRule& _alarmRule);
+
+                    /**
+                     * 判断参数 AlarmRule 是否已赋值
+                     * @return AlarmRule 是否已赋值
+                     * 
+                     */
+                    bool AlarmRuleHasBeenSet() const;
+
+                    /**
+                     * 获取运行类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RunType 运行类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRunType() const;
+
+                    /**
+                     * 设置运行类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _runType 运行类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRunType(const int64_t& _runType);
+
+                    /**
+                     * 判断参数 RunType 是否已赋值
+                     * @return RunType 是否已赋值
+                     * 
+                     */
+                    bool RunTypeHasBeenSet() const;
+
+                    /**
+                     * 获取定时运行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RunDateTime 定时运行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRunDateTime() const;
+
+                    /**
+                     * 设置定时运行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _runDateTime 定时运行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRunDateTime(const std::string& _runDateTime);
+
+                    /**
+                     * 判断参数 RunDateTime 是否已赋值
+                     * @return RunDateTime 是否已赋值
+                     * 
+                     */
+                    bool RunDateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1056,6 +1199,46 @@ DATA_TIME：实例数据时间；SCHEDULE_TIME 计划调度时间
                      */
                     std::string m_timeType;
                     bool m_timeTypeHasBeenSet;
+
+                    /**
+                     * 开始时间
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 结束时间
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 失败百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_failurePercent;
+                    bool m_failurePercentHasBeenSet;
+
+                    /**
+                     * 补录计划的告警规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MakePlanAlarmRule m_alarmRule;
+                    bool m_alarmRuleHasBeenSet;
+
+                    /**
+                     * 运行类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_runType;
+                    bool m_runTypeHasBeenSet;
+
+                    /**
+                     * 定时运行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_runDateTime;
+                    bool m_runDateTimeHasBeenSet;
 
                 };
             }

@@ -24,7 +24,9 @@ using namespace TencentCloud::Chdfs::V20201112::Model;
 using namespace std;
 
 DescribeFileSystemsResponse::DescribeFileSystemsResponse() :
-    m_fileSystemsHasBeenSet(false)
+    m_fileSystemsHasBeenSet(false),
+    m_isOverHasBeenSet(false),
+    m_nextFileSystemIdMarkerHasBeenSet(false)
 {
 }
 
@@ -82,6 +84,26 @@ CoreInternalOutcome DescribeFileSystemsResponse::Deserialize(const string &paylo
         m_fileSystemsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsOver") && !rsp["IsOver"].IsNull())
+    {
+        if (!rsp["IsOver"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsOver` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isOver = rsp["IsOver"].GetBool();
+        m_isOverHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NextFileSystemIdMarker") && !rsp["NextFileSystemIdMarker"].IsNull())
+    {
+        if (!rsp["NextFileSystemIdMarker"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NextFileSystemIdMarker` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nextFileSystemIdMarker = string(rsp["NextFileSystemIdMarker"].GetString());
+        m_nextFileSystemIdMarkerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +129,22 @@ string DescribeFileSystemsResponse::ToJsonString() const
         }
     }
 
+    if (m_isOverHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOver";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isOver, allocator);
+    }
+
+    if (m_nextFileSystemIdMarkerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NextFileSystemIdMarker";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nextFileSystemIdMarker.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +165,26 @@ vector<FileSystem> DescribeFileSystemsResponse::GetFileSystems() const
 bool DescribeFileSystemsResponse::FileSystemsHasBeenSet() const
 {
     return m_fileSystemsHasBeenSet;
+}
+
+bool DescribeFileSystemsResponse::GetIsOver() const
+{
+    return m_isOver;
+}
+
+bool DescribeFileSystemsResponse::IsOverHasBeenSet() const
+{
+    return m_isOverHasBeenSet;
+}
+
+string DescribeFileSystemsResponse::GetNextFileSystemIdMarker() const
+{
+    return m_nextFileSystemIdMarker;
+}
+
+bool DescribeFileSystemsResponse::NextFileSystemIdMarkerHasBeenSet() const
+{
+    return m_nextFileSystemIdMarkerHasBeenSet;
 }
 
 

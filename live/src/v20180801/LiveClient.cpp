@@ -7240,6 +7240,56 @@ LiveClient::DescribePullTransformPushInfoOutcomeCallable LiveClient::DescribePul
     return prom->get_future();
 }
 
+LiveClient::DescribePullTransformPushInfoListOutcome LiveClient::DescribePullTransformPushInfoList(const DescribePullTransformPushInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePullTransformPushInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePullTransformPushInfoListResponse rsp = DescribePullTransformPushInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePullTransformPushInfoListOutcome(rsp);
+        else
+            return DescribePullTransformPushInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePullTransformPushInfoListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribePullTransformPushInfoListAsync(const DescribePullTransformPushInfoListRequest& request, const DescribePullTransformPushInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePullTransformPushInfoListRequest&;
+    using Resp = DescribePullTransformPushInfoListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePullTransformPushInfoList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DescribePullTransformPushInfoListOutcomeCallable LiveClient::DescribePullTransformPushInfoListCallable(const DescribePullTransformPushInfoListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePullTransformPushInfoListOutcome>>();
+    DescribePullTransformPushInfoListAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DescribePullTransformPushInfoListRequest&,
+        DescribePullTransformPushInfoListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LiveClient::DescribePushBandwidthAndFluxListOutcome LiveClient::DescribePushBandwidthAndFluxList(const DescribePushBandwidthAndFluxListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePushBandwidthAndFluxList");

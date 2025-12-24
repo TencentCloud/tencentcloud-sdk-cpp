@@ -88,6 +88,27 @@ namespace TencentCloud
                     bool BackupPlanNameHasBeenSet() const;
 
                     /**
+                     * 获取全量备份并发数上限。
+                     * @return UpperParallel 全量备份并发数上限。
+                     * 
+                     */
+                    int64_t GetUpperParallel() const;
+
+                    /**
+                     * 设置全量备份并发数上限。
+                     * @param _upperParallel 全量备份并发数上限。
+                     * 
+                     */
+                    void SetUpperParallel(const int64_t& _upperParallel);
+
+                    /**
+                     * 判断参数 UpperParallel 是否已赋值
+                     * @return UpperParallel 是否已赋值
+                     * 
+                     */
+                    bool UpperParallelHasBeenSet() const;
+
+                    /**
                      * 获取备份源实例信息。
                      * @return SourceEndPoint 备份源实例信息。
                      * 
@@ -184,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_backupPlanName;
                     bool m_backupPlanNameHasBeenSet;
+
+                    /**
+                     * 全量备份并发数上限。
+                     */
+                    int64_t m_upperParallel;
+                    bool m_upperParallelHasBeenSet;
 
                     /**
                      * 备份源实例信息。

@@ -40,7 +40,8 @@ AudioResult::AudioResult() :
     m_subTagCodeHasBeenSet(false),
     m_labelResultsHasBeenSet(false),
     m_hitTypeHasBeenSet(false),
-    m_sentencesHasBeenSet(false)
+    m_sentencesHasBeenSet(false),
+    m_requestIdHasBeenSet(false)
 {
 }
 
@@ -329,6 +330,16 @@ CoreInternalOutcome AudioResult::Deserialize(const rapidjson::Value &value)
         m_sentencesHasBeenSet = true;
     }
 
+    if (value.HasMember("RequestId") && !value["RequestId"].IsNull())
+    {
+        if (!value["RequestId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioResult.RequestId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestId = string(value["RequestId"].GetString());
+        m_requestIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -550,6 +561,14 @@ void AudioResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_requestIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_requestId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -873,5 +892,21 @@ void AudioResult::SetSentences(const vector<Sentence>& _sentences)
 bool AudioResult::SentencesHasBeenSet() const
 {
     return m_sentencesHasBeenSet;
+}
+
+string AudioResult::GetRequestId() const
+{
+    return m_requestId;
+}
+
+void AudioResult::SetRequestId(const string& _requestId)
+{
+    m_requestId = _requestId;
+    m_requestIdHasBeenSet = true;
+}
+
+bool AudioResult::RequestIdHasBeenSet() const
+{
+    return m_requestIdHasBeenSet;
 }
 

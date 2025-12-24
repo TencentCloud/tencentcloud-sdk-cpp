@@ -1400,6 +1400,106 @@ namespace TencentCloud
                      */
                     bool FailMsgHasBeenSet() const;
 
+                    /**
+                     * 获取任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupType 任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGroupType() const;
+
+                    /**
+                     * 设置任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _groupType 任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGroupType(const std::string& _groupType);
+
+                    /**
+                     * 判断参数 GroupType 是否已赋值
+                     * @return GroupType 是否已赋值
+                     * 
+                     */
+                    bool GroupTypeHasBeenSet() const;
+
+                    /**
+                     * 获取编排任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AspectTaskId 编排任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAspectTaskId() const;
+
+                    /**
+                     * 设置编排任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _aspectTaskId 编排任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAspectTaskId(const std::string& _aspectTaskId);
+
+                    /**
+                     * 判断参数 AspectTaskId 是否已赋值
+                     * @return AspectTaskId 是否已赋值
+                     * 
+                     */
+                    bool AspectTaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CatalogName 目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCatalogName() const;
+
+                    /**
+                     * 设置目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _catalogName 目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCatalogName(const std::string& _catalogName);
+
+                    /**
+                     * 判断参数 CatalogName 是否已赋值
+                     * @return CatalogName 是否已赋值
+                     * 
+                     */
+                    bool CatalogNameHasBeenSet() const;
+
+                    /**
+                     * 获取目标目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetCatalogName 目标目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTargetCatalogName() const;
+
+                    /**
+                     * 设置目标目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _targetCatalogName 目标目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTargetCatalogName(const std::string& _targetCatalogName);
+
+                    /**
+                     * 判断参数 TargetCatalogName 是否已赋值
+                     * @return TargetCatalogName 是否已赋值
+                     * 
+                     */
+                    bool TargetCatalogNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1779,6 +1879,34 @@ namespace TencentCloud
                      */
                     std::string m_failMsg;
                     bool m_failMsgHasBeenSet;
+
+                    /**
+                     * 任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupType;
+                    bool m_groupTypeHasBeenSet;
+
+                    /**
+                     * 编排任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_aspectTaskId;
+                    bool m_aspectTaskIdHasBeenSet;
+
+                    /**
+                     * 目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_catalogName;
+                    bool m_catalogNameHasBeenSet;
+
+                    /**
+                     * 目标目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_targetCatalogName;
+                    bool m_targetCatalogNameHasBeenSet;
 
                 };
             }

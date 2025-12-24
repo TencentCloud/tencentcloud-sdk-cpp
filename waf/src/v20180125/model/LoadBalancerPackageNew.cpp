@@ -32,7 +32,11 @@ LoadBalancerPackageNew::LoadBalancerPackageNew() :
     m_zoneHasBeenSet(false),
     m_numericalVpcIdHasBeenSet(false),
     m_loadBalancerTypeHasBeenSet(false),
-    m_loadBalancerDomainHasBeenSet(false)
+    m_loadBalancerDomainHasBeenSet(false),
+    m_memberAppIdHasBeenSet(false),
+    m_memberUinHasBeenSet(false),
+    m_appidHasBeenSet(false),
+    m_memberNickNameHasBeenSet(false)
 {
 }
 
@@ -161,6 +165,46 @@ CoreInternalOutcome LoadBalancerPackageNew::Deserialize(const rapidjson::Value &
         m_loadBalancerDomainHasBeenSet = true;
     }
 
+    if (value.HasMember("MemberAppId") && !value["MemberAppId"].IsNull())
+    {
+        if (!value["MemberAppId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerPackageNew.MemberAppId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_memberAppId = value["MemberAppId"].GetUint64();
+        m_memberAppIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("MemberUin") && !value["MemberUin"].IsNull())
+    {
+        if (!value["MemberUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerPackageNew.MemberUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_memberUin = string(value["MemberUin"].GetString());
+        m_memberUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("Appid") && !value["Appid"].IsNull())
+    {
+        if (!value["Appid"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerPackageNew.Appid` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appid = value["Appid"].GetUint64();
+        m_appidHasBeenSet = true;
+    }
+
+    if (value.HasMember("MemberNickName") && !value["MemberNickName"].IsNull())
+    {
+        if (!value["MemberNickName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerPackageNew.MemberNickName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_memberNickName = string(value["MemberNickName"].GetString());
+        m_memberNickNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +306,38 @@ void LoadBalancerPackageNew::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "LoadBalancerDomain";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_loadBalancerDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_memberAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberAppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_memberAppId, allocator);
+    }
+
+    if (m_memberUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_memberUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Appid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appid, allocator);
+    }
+
+    if (m_memberNickNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberNickName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_memberNickName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +533,69 @@ void LoadBalancerPackageNew::SetLoadBalancerDomain(const string& _loadBalancerDo
 bool LoadBalancerPackageNew::LoadBalancerDomainHasBeenSet() const
 {
     return m_loadBalancerDomainHasBeenSet;
+}
+
+uint64_t LoadBalancerPackageNew::GetMemberAppId() const
+{
+    return m_memberAppId;
+}
+
+void LoadBalancerPackageNew::SetMemberAppId(const uint64_t& _memberAppId)
+{
+    m_memberAppId = _memberAppId;
+    m_memberAppIdHasBeenSet = true;
+}
+
+bool LoadBalancerPackageNew::MemberAppIdHasBeenSet() const
+{
+    return m_memberAppIdHasBeenSet;
+}
+
+string LoadBalancerPackageNew::GetMemberUin() const
+{
+    return m_memberUin;
+}
+
+void LoadBalancerPackageNew::SetMemberUin(const string& _memberUin)
+{
+    m_memberUin = _memberUin;
+    m_memberUinHasBeenSet = true;
+}
+
+bool LoadBalancerPackageNew::MemberUinHasBeenSet() const
+{
+    return m_memberUinHasBeenSet;
+}
+
+uint64_t LoadBalancerPackageNew::GetAppid() const
+{
+    return m_appid;
+}
+
+void LoadBalancerPackageNew::SetAppid(const uint64_t& _appid)
+{
+    m_appid = _appid;
+    m_appidHasBeenSet = true;
+}
+
+bool LoadBalancerPackageNew::AppidHasBeenSet() const
+{
+    return m_appidHasBeenSet;
+}
+
+string LoadBalancerPackageNew::GetMemberNickName() const
+{
+    return m_memberNickName;
+}
+
+void LoadBalancerPackageNew::SetMemberNickName(const string& _memberNickName)
+{
+    m_memberNickName = _memberNickName;
+    m_memberNickNameHasBeenSet = true;
+}
+
+bool LoadBalancerPackageNew::MemberNickNameHasBeenSet() const
+{
+    return m_memberNickNameHasBeenSet;
 }
 

@@ -30,6 +30,8 @@
 #include <tencentcloud/wedata/v20210820/model/TableMetaProperty.h>
 #include <tencentcloud/wedata/v20210820/model/GovDatasourceInfo.h>
 #include <tencentcloud/wedata/v20210820/model/CreateAndDDLSupport.h>
+#include <tencentcloud/wedata/v20210820/model/LabelTag.h>
+#include <tencentcloud/wedata/v20210820/model/LabelValueSelection.h>
 
 
 namespace TencentCloud
@@ -1781,6 +1783,281 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                      */
                     bool ColumnCountHasBeenSet() const;
 
+                    /**
+                     * 获取权限标记
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TablePermissionFlag 权限标记
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetTablePermissionFlag() const;
+
+                    /**
+                     * 设置权限标记
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tablePermissionFlag 权限标记
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTablePermissionFlag(const bool& _tablePermissionFlag);
+
+                    /**
+                     * 判断参数 TablePermissionFlag 是否已赋值
+                     * @return TablePermissionFlag 是否已赋值
+                     * 
+                     */
+                    bool TablePermissionFlagHasBeenSet() const;
+
+                    /**
+                     * 获取资产状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssetStatus 资产状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAssetStatus() const;
+
+                    /**
+                     * 设置资产状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _assetStatus 资产状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAssetStatus(const int64_t& _assetStatus);
+
+                    /**
+                     * 判断参数 AssetStatus 是否已赋值
+                     * @return AssetStatus 是否已赋值
+                     * 
+                     */
+                    bool AssetStatusHasBeenSet() const;
+
+                    /**
+                     * 获取资产等级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssetLevel 资产等级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAssetLevel() const;
+
+                    /**
+                     * 设置资产等级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _assetLevel 资产等级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAssetLevel(const int64_t& _assetLevel);
+
+                    /**
+                     * 判断参数 AssetLevel 是否已赋值
+                     * @return AssetLevel 是否已赋值
+                     * 
+                     */
+                    bool AssetLevelHasBeenSet() const;
+
+                    /**
+                     * 获取资产code
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssetCode 资产code
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAssetCode() const;
+
+                    /**
+                     * 设置资产code
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _assetCode 资产code
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAssetCode(const std::string& _assetCode);
+
+                    /**
+                     * 判断参数 AssetCode 是否已赋值
+                     * @return AssetCode 是否已赋值
+                     * 
+                     */
+                    bool AssetCodeHasBeenSet() const;
+
+                    /**
+                     * 获取审批状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssetAuditStatus 审批状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAssetAuditStatus() const;
+
+                    /**
+                     * 设置审批状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _assetAuditStatus 审批状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAssetAuditStatus(const std::string& _assetAuditStatus);
+
+                    /**
+                     * 判断参数 AssetAuditStatus 是否已赋值
+                     * @return AssetAuditStatus 是否已赋值
+                     * 
+                     */
+                    bool AssetAuditStatusHasBeenSet() const;
+
+                    /**
+                     * 获取发布时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublishedTime 发布时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPublishedTime() const;
+
+                    /**
+                     * 设置发布时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _publishedTime 发布时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPublishedTime(const std::string& _publishedTime);
+
+                    /**
+                     * 判断参数 PublishedTime 是否已赋值
+                     * @return PublishedTime 是否已赋值
+                     * 
+                     */
+                    bool PublishedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagInfoList 标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<LabelTag> GetTagInfoList() const;
+
+                    /**
+                     * 设置标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tagInfoList 标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTagInfoList(const std::vector<LabelTag>& _tagInfoList);
+
+                    /**
+                     * 判断参数 TagInfoList 是否已赋值
+                     * @return TagInfoList 是否已赋值
+                     * 
+                     */
+                    bool TagInfoListHasBeenSet() const;
+
+                    /**
+                     * 获取标签值选择列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LabelValueSelections 标签值选择列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<LabelValueSelection> GetLabelValueSelections() const;
+
+                    /**
+                     * 设置标签值选择列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _labelValueSelections 标签值选择列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLabelValueSelections(const std::vector<LabelValueSelection>& _labelValueSelections);
+
+                    /**
+                     * 判断参数 LabelValueSelections 是否已赋值
+                     * @return LabelValueSelections 是否已赋值
+                     * 
+                     */
+                    bool LabelValueSelectionsHasBeenSet() const;
+
+                    /**
+                     * 获取命名空间 - 对应TC-Catalog
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Namespace 命名空间 - 对应TC-Catalog
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNamespace() const;
+
+                    /**
+                     * 设置命名空间 - 对应TC-Catalog
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _namespace 命名空间 - 对应TC-Catalog
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNamespace(const std::string& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     * 
+                     */
+                    bool NamespaceHasBeenSet() const;
+
+                    /**
+                     * 获取Catalog来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MetaFrom Catalog来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMetaFrom() const;
+
+                    /**
+                     * 设置Catalog来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _metaFrom Catalog来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMetaFrom(const std::string& _metaFrom);
+
+                    /**
+                     * 判断参数 MetaFrom 是否已赋值
+                     * @return MetaFrom 是否已赋值
+                     * 
+                     */
+                    bool MetaFromHasBeenSet() const;
+
+                    /**
+                     * 获取引擎侧创建者
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EngineCreator 引擎侧创建者
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEngineCreator() const;
+
+                    /**
+                     * 设置引擎侧创建者
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _engineCreator 引擎侧创建者
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEngineCreator(const std::string& _engineCreator);
+
+                    /**
+                     * 判断参数 EngineCreator 是否已赋值
+                     * @return EngineCreator 是否已赋值
+                     * 
+                     */
+                    bool EngineCreatorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2266,6 +2543,83 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                      */
                     int64_t m_columnCount;
                     bool m_columnCountHasBeenSet;
+
+                    /**
+                     * 权限标记
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_tablePermissionFlag;
+                    bool m_tablePermissionFlagHasBeenSet;
+
+                    /**
+                     * 资产状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_assetStatus;
+                    bool m_assetStatusHasBeenSet;
+
+                    /**
+                     * 资产等级
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_assetLevel;
+                    bool m_assetLevelHasBeenSet;
+
+                    /**
+                     * 资产code
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_assetCode;
+                    bool m_assetCodeHasBeenSet;
+
+                    /**
+                     * 审批状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_assetAuditStatus;
+                    bool m_assetAuditStatusHasBeenSet;
+
+                    /**
+                     * 发布时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_publishedTime;
+                    bool m_publishedTimeHasBeenSet;
+
+                    /**
+                     * 标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<LabelTag> m_tagInfoList;
+                    bool m_tagInfoListHasBeenSet;
+
+                    /**
+                     * 标签值选择列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<LabelValueSelection> m_labelValueSelections;
+                    bool m_labelValueSelectionsHasBeenSet;
+
+                    /**
+                     * 命名空间 - 对应TC-Catalog
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_namespace;
+                    bool m_namespaceHasBeenSet;
+
+                    /**
+                     * Catalog来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_metaFrom;
+                    bool m_metaFromHasBeenSet;
+
+                    /**
+                     * 引擎侧创建者
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_engineCreator;
+                    bool m_engineCreatorHasBeenSet;
 
                 };
             }

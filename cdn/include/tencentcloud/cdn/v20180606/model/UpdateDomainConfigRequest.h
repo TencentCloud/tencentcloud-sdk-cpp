@@ -66,6 +66,8 @@
 #include <tencentcloud/cdn/v20180606/model/OthersPrivateAccess.h>
 #include <tencentcloud/cdn/v20180606/model/HttpsBilling.h>
 #include <tencentcloud/cdn/v20180606/model/ParamFilter.h>
+#include <tencentcloud/cdn/v20180606/model/AutoGuard.h>
+#include <tencentcloud/cdn/v20180606/model/GeoBlocker.h>
 
 
 namespace TencentCloud
@@ -1169,6 +1171,48 @@ global：全球加速
                      */
                     bool ParamFilterHasBeenSet() const;
 
+                    /**
+                     * 获取流量防盗刷配置
+                     * @return AutoGuard 流量防盗刷配置
+                     * 
+                     */
+                    AutoGuard GetAutoGuard() const;
+
+                    /**
+                     * 设置流量防盗刷配置
+                     * @param _autoGuard 流量防盗刷配置
+                     * 
+                     */
+                    void SetAutoGuard(const AutoGuard& _autoGuard);
+
+                    /**
+                     * 判断参数 AutoGuard 是否已赋值
+                     * @return AutoGuard 是否已赋值
+                     * 
+                     */
+                    bool AutoGuardHasBeenSet() const;
+
+                    /**
+                     * 获取区域访问控制配置
+                     * @return GeoBlocker 区域访问控制配置
+                     * 
+                     */
+                    GeoBlocker GetGeoBlocker() const;
+
+                    /**
+                     * 设置区域访问控制配置
+                     * @param _geoBlocker 区域访问控制配置
+                     * 
+                     */
+                    void SetGeoBlocker(const GeoBlocker& _geoBlocker);
+
+                    /**
+                     * 判断参数 GeoBlocker 是否已赋值
+                     * @return GeoBlocker 是否已赋值
+                     * 
+                     */
+                    bool GeoBlockerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1478,6 +1522,18 @@ global：全球加速
                      */
                     ParamFilter m_paramFilter;
                     bool m_paramFilterHasBeenSet;
+
+                    /**
+                     * 流量防盗刷配置
+                     */
+                    AutoGuard m_autoGuard;
+                    bool m_autoGuardHasBeenSet;
+
+                    /**
+                     * 区域访问控制配置
+                     */
+                    GeoBlocker m_geoBlocker;
+                    bool m_geoBlockerHasBeenSet;
 
                 };
             }

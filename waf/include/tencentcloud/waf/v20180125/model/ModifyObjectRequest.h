@@ -168,6 +168,48 @@ namespace TencentCloud
                      */
                     bool IpHeadersHasBeenSet() const;
 
+                    /**
+                     * 获取对象所属集团成员appid
+                     * @return MemberAppId 对象所属集团成员appid
+                     * 
+                     */
+                    uint64_t GetMemberAppId() const;
+
+                    /**
+                     * 设置对象所属集团成员appid
+                     * @param _memberAppId 对象所属集团成员appid
+                     * 
+                     */
+                    void SetMemberAppId(const uint64_t& _memberAppId);
+
+                    /**
+                     * 判断参数 MemberAppId 是否已赋值
+                     * @return MemberAppId 是否已赋值
+                     * 
+                     */
+                    bool MemberAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取对象所属集团成员uin
+                     * @return MemberUin 对象所属集团成员uin
+                     * 
+                     */
+                    std::string GetMemberUin() const;
+
+                    /**
+                     * 设置对象所属集团成员uin
+                     * @param _memberUin 对象所属集团成员uin
+                     * 
+                     */
+                    void SetMemberUin(const std::string& _memberUin);
+
+                    /**
+                     * 判断参数 MemberUin 是否已赋值
+                     * @return MemberUin 是否已赋值
+                     * 
+                     */
+                    bool MemberUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +247,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_ipHeaders;
                     bool m_ipHeadersHasBeenSet;
+
+                    /**
+                     * 对象所属集团成员appid
+                     */
+                    uint64_t m_memberAppId;
+                    bool m_memberAppIdHasBeenSet;
+
+                    /**
+                     * 对象所属集团成员uin
+                     */
+                    std::string m_memberUin;
+                    bool m_memberUinHasBeenSet;
 
                 };
             }

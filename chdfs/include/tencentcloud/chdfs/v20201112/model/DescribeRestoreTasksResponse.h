@@ -58,6 +58,34 @@ namespace TencentCloud
                      */
                     bool RestoreTasksHasBeenSet() const;
 
+                    /**
+                     * 获取标识是否已获取全量
+                     * @return IsOver 标识是否已获取全量
+                     * 
+                     */
+                    bool GetIsOver() const;
+
+                    /**
+                     * 判断参数 IsOver 是否已赋值
+                     * @return IsOver 是否已赋值
+                     * 
+                     */
+                    bool IsOverHasBeenSet() const;
+
+                    /**
+                     * 获取下一次请求起始回热任务ID标记
+                     * @return NextRestoreTaskIdMarker 下一次请求起始回热任务ID标记
+                     * 
+                     */
+                    uint64_t GetNextRestoreTaskIdMarker() const;
+
+                    /**
+                     * 判断参数 NextRestoreTaskIdMarker 是否已赋值
+                     * @return NextRestoreTaskIdMarker 是否已赋值
+                     * 
+                     */
+                    bool NextRestoreTaskIdMarkerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +93,18 @@ namespace TencentCloud
                      */
                     std::vector<RestoreTask> m_restoreTasks;
                     bool m_restoreTasksHasBeenSet;
+
+                    /**
+                     * 标识是否已获取全量
+                     */
+                    bool m_isOver;
+                    bool m_isOverHasBeenSet;
+
+                    /**
+                     * 下一次请求起始回热任务ID标记
+                     */
+                    uint64_t m_nextRestoreTaskIdMarker;
+                    bool m_nextRestoreTaskIdMarkerHasBeenSet;
 
                 };
             }

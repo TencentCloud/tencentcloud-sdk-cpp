@@ -106,6 +106,48 @@ namespace TencentCloud
                      */
                     bool ByHasBeenSet() const;
 
+                    /**
+                     * 获取集团成员列表
+                     * @return MemberAppIdList 集团成员列表
+                     * 
+                     */
+                    std::vector<uint64_t> GetMemberAppIdList() const;
+
+                    /**
+                     * 设置集团成员列表
+                     * @param _memberAppIdList 集团成员列表
+                     * 
+                     */
+                    void SetMemberAppIdList(const std::vector<uint64_t>& _memberAppIdList);
+
+                    /**
+                     * 判断参数 MemberAppIdList 是否已赋值
+                     * @return MemberAppIdList 是否已赋值
+                     * 
+                     */
+                    bool MemberAppIdListHasBeenSet() const;
+
+                    /**
+                     * 获取1代表跨账号情况，0代表单账号情况
+                     * @return IsCrossAccount 1代表跨账号情况，0代表单账号情况
+                     * 
+                     */
+                    int64_t GetIsCrossAccount() const;
+
+                    /**
+                     * 设置1代表跨账号情况，0代表单账号情况
+                     * @param _isCrossAccount 1代表跨账号情况，0代表单账号情况
+                     * 
+                     */
+                    void SetIsCrossAccount(const int64_t& _isCrossAccount);
+
+                    /**
+                     * 判断参数 IsCrossAccount 是否已赋值
+                     * @return IsCrossAccount 是否已赋值
+                     * 
+                     */
+                    bool IsCrossAccountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +167,18 @@ namespace TencentCloud
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;
+
+                    /**
+                     * 集团成员列表
+                     */
+                    std::vector<uint64_t> m_memberAppIdList;
+                    bool m_memberAppIdListHasBeenSet;
+
+                    /**
+                     * 1代表跨账号情况，0代表单账号情况
+                     */
+                    int64_t m_isCrossAccount;
+                    bool m_isCrossAccountHasBeenSet;
 
                 };
             }

@@ -214,6 +214,48 @@ namespace TencentCloud
                      */
                     bool PiracyRiskHasBeenSet() const;
 
+                    /**
+                     * 获取设备id
+                     * @return DeviceId 设备id
+                     * 
+                     */
+                    int64_t GetDeviceId() const;
+
+                    /**
+                     * 设置设备id
+                     * @param _deviceId 设备id
+                     * 
+                     */
+                    void SetDeviceId(const int64_t& _deviceId);
+
+                    /**
+                     * 判断参数 DeviceId 是否已赋值
+                     * @return DeviceId 是否已赋值
+                     * 
+                     */
+                    bool DeviceIdHasBeenSet() const;
+
+                    /**
+                     * 获取平台类型
+                     * @return OsType 平台类型
+                     * 
+                     */
+                    int64_t GetOsType() const;
+
+                    /**
+                     * 设置平台类型
+                     * @param _osType 平台类型
+                     * 
+                     */
+                    void SetOsType(const int64_t& _osType);
+
+                    /**
+                     * 判断参数 OsType 是否已赋值
+                     * @return OsType 是否已赋值
+                     * 
+                     */
+                    bool OsTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +305,18 @@ namespace TencentCloud
                      */
                     int64_t m_piracyRisk;
                     bool m_piracyRiskHasBeenSet;
+
+                    /**
+                     * 设备id
+                     */
+                    int64_t m_deviceId;
+                    bool m_deviceIdHasBeenSet;
+
+                    /**
+                     * 平台类型
+                     */
+                    int64_t m_osType;
+                    bool m_osTypeHasBeenSet;
 
                 };
             }

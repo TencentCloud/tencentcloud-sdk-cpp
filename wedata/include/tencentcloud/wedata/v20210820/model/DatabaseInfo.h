@@ -321,6 +321,31 @@ namespace TencentCloud
                      */
                     bool SchemaNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否展示目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShowEnableCatalog 是否展示目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetShowEnableCatalog() const;
+
+                    /**
+                     * 设置是否展示目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _showEnableCatalog 是否展示目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetShowEnableCatalog(const bool& _showEnableCatalog);
+
+                    /**
+                     * 判断参数 ShowEnableCatalog 是否已赋值
+                     * @return ShowEnableCatalog 是否已赋值
+                     * 
+                     */
+                    bool ShowEnableCatalogHasBeenSet() const;
+
                 private:
 
                     /**
@@ -399,6 +424,13 @@ namespace TencentCloud
                      */
                     std::string m_schemaName;
                     bool m_schemaNameHasBeenSet;
+
+                    /**
+                     * 是否展示目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_showEnableCatalog;
+                    bool m_showEnableCatalogHasBeenSet;
 
                 };
             }

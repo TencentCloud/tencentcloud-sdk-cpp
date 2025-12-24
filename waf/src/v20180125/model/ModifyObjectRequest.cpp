@@ -28,7 +28,9 @@ ModifyObjectRequest::ModifyObjectRequest() :
     m_statusHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_proxyHasBeenSet(false),
-    m_ipHeadersHasBeenSet(false)
+    m_ipHeadersHasBeenSet(false),
+    m_memberAppIdHasBeenSet(false),
+    m_memberUinHasBeenSet(false)
 {
 }
 
@@ -90,6 +92,22 @@ string ModifyObjectRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_memberAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_memberAppId, allocator);
+    }
+
+    if (m_memberUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_memberUin.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -194,6 +212,38 @@ void ModifyObjectRequest::SetIpHeaders(const vector<string>& _ipHeaders)
 bool ModifyObjectRequest::IpHeadersHasBeenSet() const
 {
     return m_ipHeadersHasBeenSet;
+}
+
+uint64_t ModifyObjectRequest::GetMemberAppId() const
+{
+    return m_memberAppId;
+}
+
+void ModifyObjectRequest::SetMemberAppId(const uint64_t& _memberAppId)
+{
+    m_memberAppId = _memberAppId;
+    m_memberAppIdHasBeenSet = true;
+}
+
+bool ModifyObjectRequest::MemberAppIdHasBeenSet() const
+{
+    return m_memberAppIdHasBeenSet;
+}
+
+string ModifyObjectRequest::GetMemberUin() const
+{
+    return m_memberUin;
+}
+
+void ModifyObjectRequest::SetMemberUin(const string& _memberUin)
+{
+    m_memberUin = _memberUin;
+    m_memberUinHasBeenSet = true;
+}
+
+bool ModifyObjectRequest::MemberUinHasBeenSet() const
+{
+    return m_memberUinHasBeenSet;
 }
 
 

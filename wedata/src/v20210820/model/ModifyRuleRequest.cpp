@@ -48,7 +48,9 @@ ModifyRuleRequest::ModifyRuleRequest() :
     m_sourceEngineTypesHasBeenSet(false),
     m_targetDatabaseNameHasBeenSet(false),
     m_targetSchemaNameHasBeenSet(false),
-    m_targetTableNameHasBeenSet(false)
+    m_targetTableNameHasBeenSet(false),
+    m_catalogNameHasBeenSet(false),
+    m_targetCatalogNameHasBeenSet(false)
 {
 }
 
@@ -272,6 +274,22 @@ string ModifyRuleRequest::ToJsonString() const
         string key = "TargetTableName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_targetTableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_catalogNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CatalogName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_catalogName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetCatalogNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetCatalogName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_targetCatalogName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -696,6 +714,38 @@ void ModifyRuleRequest::SetTargetTableName(const string& _targetTableName)
 bool ModifyRuleRequest::TargetTableNameHasBeenSet() const
 {
     return m_targetTableNameHasBeenSet;
+}
+
+string ModifyRuleRequest::GetCatalogName() const
+{
+    return m_catalogName;
+}
+
+void ModifyRuleRequest::SetCatalogName(const string& _catalogName)
+{
+    m_catalogName = _catalogName;
+    m_catalogNameHasBeenSet = true;
+}
+
+bool ModifyRuleRequest::CatalogNameHasBeenSet() const
+{
+    return m_catalogNameHasBeenSet;
+}
+
+string ModifyRuleRequest::GetTargetCatalogName() const
+{
+    return m_targetCatalogName;
+}
+
+void ModifyRuleRequest::SetTargetCatalogName(const string& _targetCatalogName)
+{
+    m_targetCatalogName = _targetCatalogName;
+    m_targetCatalogNameHasBeenSet = true;
+}
+
+bool ModifyRuleRequest::TargetCatalogNameHasBeenSet() const
+{
+    return m_targetCatalogNameHasBeenSet;
 }
 
 

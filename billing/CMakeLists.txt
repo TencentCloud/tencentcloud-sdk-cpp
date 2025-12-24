@@ -22,6 +22,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/CreateAllocationUnitRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeBillAdjustInfoResponse.h
   include/tencentcloud/billing/v20180709/model/DescribeCostSummaryByProductRequest.h
+  include/tencentcloud/billing/v20180709/model/OrderDto.h
   include/tencentcloud/billing/v20180709/model/DescribeBudgetResponse.h
   include/tencentcloud/billing/v20180709/model/DescribeCostExplorerSummaryResponse.h
   include/tencentcloud/billing/v20180709/model/ConsumptionBusinessSummaryDataItem.h
@@ -63,7 +64,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/DescribeAllocationOverviewResponse.h
   include/tencentcloud/billing/v20180709/model/DescribeDosageCosDetailByDateRequest.h
   include/tencentcloud/billing/v20180709/model/DeleteAllocationTagRequest.h
-  include/tencentcloud/billing/v20180709/model/OrderDto.h
+  include/tencentcloud/billing/v20180709/model/DescribeCostSummaryByTagRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByProductRequest.h
   include/tencentcloud/billing/v20180709/model/BillDistributionResourceSummary.h
   include/tencentcloud/billing/v20180709/model/WaveThresholdForm.h
@@ -106,6 +107,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByProjectRequest.h
   include/tencentcloud/billing/v20180709/model/CreateGatherRuleRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeBillResourceSummaryForOrganizationRequest.h
+  include/tencentcloud/billing/v20180709/model/DescribeDosageDetailByDateResponse.h
   include/tencentcloud/billing/v20180709/model/DescribeBudgetRemindRecordListRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeCostSummaryByRegionRequest.h
   include/tencentcloud/billing/v20180709/model/ConsumptionSummaryTrend.h
@@ -212,7 +214,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/ModifyGatherRuleResponse.h
   include/tencentcloud/billing/v20180709/model/DescribeAccountBalanceRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeBillDetailRequest.h
-  include/tencentcloud/billing/v20180709/model/DescribeDosageDetailByDateResponse.h
+  include/tencentcloud/billing/v20180709/model/DescribeCostSummaryByTagResponse.h
   include/tencentcloud/billing/v20180709/model/DescribeSavingPlanResourceInfoRequest.h
   include/tencentcloud/billing/v20180709/model/AnalyseZoneDetail.h
   include/tencentcloud/billing/v20180709/model/DescribeVoucherInfoResponse.h
@@ -264,6 +266,7 @@ set(billing_src
   src/v20180709/model/CreateAllocationUnitRequest.cpp
   src/v20180709/model/DescribeBillAdjustInfoResponse.cpp
   src/v20180709/model/DescribeCostSummaryByProductRequest.cpp
+  src/v20180709/model/OrderDto.cpp
   src/v20180709/model/DescribeBudgetResponse.cpp
   src/v20180709/model/DescribeCostExplorerSummaryResponse.cpp
   src/v20180709/model/ConsumptionBusinessSummaryDataItem.cpp
@@ -305,7 +308,7 @@ set(billing_src
   src/v20180709/model/DescribeAllocationOverviewResponse.cpp
   src/v20180709/model/DescribeDosageCosDetailByDateRequest.cpp
   src/v20180709/model/DeleteAllocationTagRequest.cpp
-  src/v20180709/model/OrderDto.cpp
+  src/v20180709/model/DescribeCostSummaryByTagRequest.cpp
   src/v20180709/model/DescribeBillSummaryByProductRequest.cpp
   src/v20180709/model/BillDistributionResourceSummary.cpp
   src/v20180709/model/WaveThresholdForm.cpp
@@ -348,6 +351,7 @@ set(billing_src
   src/v20180709/model/DescribeBillSummaryByProjectRequest.cpp
   src/v20180709/model/CreateGatherRuleRequest.cpp
   src/v20180709/model/DescribeBillResourceSummaryForOrganizationRequest.cpp
+  src/v20180709/model/DescribeDosageDetailByDateResponse.cpp
   src/v20180709/model/DescribeBudgetRemindRecordListRequest.cpp
   src/v20180709/model/DescribeCostSummaryByRegionRequest.cpp
   src/v20180709/model/ConsumptionSummaryTrend.cpp
@@ -454,7 +458,7 @@ set(billing_src
   src/v20180709/model/ModifyGatherRuleResponse.cpp
   src/v20180709/model/DescribeAccountBalanceRequest.cpp
   src/v20180709/model/DescribeBillDetailRequest.cpp
-  src/v20180709/model/DescribeDosageDetailByDateResponse.cpp
+  src/v20180709/model/DescribeCostSummaryByTagResponse.cpp
   src/v20180709/model/DescribeSavingPlanResourceInfoRequest.cpp
   src/v20180709/model/AnalyseZoneDetail.cpp
   src/v20180709/model/DescribeVoucherInfoResponse.cpp

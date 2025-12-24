@@ -31,6 +31,7 @@
 #include <tencentcloud/wedata/v20210820/model/AiopsDLCResourceConfigDto.h>
 #include <tencentcloud/wedata/v20210820/model/AiopsSimpleTaskDto.h>
 #include <tencentcloud/wedata/v20210820/model/ExtResourceFlagDto.h>
+#include <tencentcloud/wedata/v20210820/model/TaskExtOpsDto.h>
 
 
 namespace TencentCloud
@@ -2432,6 +2433,56 @@ CAN_MANAGE : 有权限管理操作
                      */
                     bool BundleInfoHasBeenSet() const;
 
+                    /**
+                     * 获取工作流类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkflowType 工作流类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetWorkflowType() const;
+
+                    /**
+                     * 设置工作流类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _workflowType 工作流类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWorkflowType(const std::string& _workflowType);
+
+                    /**
+                     * 判断参数 WorkflowType 是否已赋值
+                     * @return WorkflowType 是否已赋值
+                     * 
+                     */
+                    bool WorkflowTypeHasBeenSet() const;
+
+                    /**
+                     * 获取任务扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskExtDTO 任务扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    TaskExtOpsDto GetTaskExtDTO() const;
+
+                    /**
+                     * 设置任务扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskExtDTO 任务扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskExtDTO(const TaskExtOpsDto& _taskExtDTO);
+
+                    /**
+                     * 判断参数 TaskExtDTO 是否已赋值
+                     * @return TaskExtDTO 是否已赋值
+                     * 
+                     */
+                    bool TaskExtDTOHasBeenSet() const;
+
                 private:
 
                     /**
@@ -3099,6 +3150,20 @@ CAN_MANAGE : 有权限管理操作
                      */
                     std::string m_bundleInfo;
                     bool m_bundleInfoHasBeenSet;
+
+                    /**
+                     * 工作流类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_workflowType;
+                    bool m_workflowTypeHasBeenSet;
+
+                    /**
+                     * 任务扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TaskExtOpsDto m_taskExtDTO;
+                    bool m_taskExtDTOHasBeenSet;
 
                 };
             }

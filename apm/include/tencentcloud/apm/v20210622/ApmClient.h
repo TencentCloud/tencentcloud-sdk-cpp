@@ -61,6 +61,8 @@
 #include <tencentcloud/apm/v20210622/model/DescribeServiceOverviewResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeTagValuesRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeTagValuesResponse.h>
+#include <tencentcloud/apm/v20210622/model/DescribeTopologyNewRequest.h>
+#include <tencentcloud/apm/v20210622/model/DescribeTopologyNewResponse.h>
 #include <tencentcloud/apm/v20210622/model/ModifyApmApplicationConfigRequest.h>
 #include <tencentcloud/apm/v20210622/model/ModifyApmApplicationConfigResponse.h>
 #include <tencentcloud/apm/v20210622/model/ModifyApmAssociationRequest.h>
@@ -146,6 +148,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTagValuesResponse> DescribeTagValuesOutcome;
                 typedef std::future<DescribeTagValuesOutcome> DescribeTagValuesOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeTagValuesRequest&, DescribeTagValuesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagValuesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTopologyNewResponse> DescribeTopologyNewOutcome;
+                typedef std::future<DescribeTopologyNewOutcome> DescribeTopologyNewOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::DescribeTopologyNewRequest&, DescribeTopologyNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopologyNewAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyApmApplicationConfigResponse> ModifyApmApplicationConfigOutcome;
                 typedef std::future<ModifyApmApplicationConfigOutcome> ModifyApmApplicationConfigOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::ModifyApmApplicationConfigRequest&, ModifyApmApplicationConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApmApplicationConfigAsyncHandler;
@@ -341,6 +346,15 @@ namespace TencentCloud
                 DescribeTagValuesOutcome DescribeTagValues(const Model::DescribeTagValuesRequest &request);
                 void DescribeTagValuesAsync(const Model::DescribeTagValuesRequest& request, const DescribeTagValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTagValuesOutcomeCallable DescribeTagValuesCallable(const Model::DescribeTagValuesRequest& request);
+
+                /**
+                 *根据应用名查询服务拓扑图
+                 * @param req DescribeTopologyNewRequest
+                 * @return DescribeTopologyNewOutcome
+                 */
+                DescribeTopologyNewOutcome DescribeTopologyNew(const Model::DescribeTopologyNewRequest &request);
+                void DescribeTopologyNewAsync(const Model::DescribeTopologyNewRequest& request, const DescribeTopologyNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTopologyNewOutcomeCallable DescribeTopologyNewCallable(const Model::DescribeTopologyNewRequest& request);
 
                 /**
                  *修改应用配置接口

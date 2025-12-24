@@ -798,6 +798,81 @@ namespace TencentCloud
                      */
                     bool CreateUserNameHasBeenSet() const;
 
+                    /**
+                     * 获取任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupType 任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGroupType() const;
+
+                    /**
+                     * 设置任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _groupType 任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGroupType(const std::string& _groupType);
+
+                    /**
+                     * 判断参数 GroupType 是否已赋值
+                     * @return GroupType 是否已赋值
+                     * 
+                     */
+                    bool GroupTypeHasBeenSet() const;
+
+                    /**
+                     * 获取任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AspectTaskId 任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAspectTaskId() const;
+
+                    /**
+                     * 设置任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _aspectTaskId 任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAspectTaskId(const std::string& _aspectTaskId);
+
+                    /**
+                     * 判断参数 AspectTaskId 是否已赋值
+                     * @return AspectTaskId 是否已赋值
+                     * 
+                     */
+                    bool AspectTaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取catalog名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CatalogName catalog名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCatalogName() const;
+
+                    /**
+                     * 设置catalog名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _catalogName catalog名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCatalogName(const std::string& _catalogName);
+
+                    /**
+                     * 判断参数 CatalogName 是否已赋值
+                     * @return CatalogName 是否已赋值
+                     * 
+                     */
+                    bool CatalogNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1009,6 +1084,27 @@ namespace TencentCloud
                      */
                     std::string m_createUserName;
                     bool m_createUserNameHasBeenSet;
+
+                    /**
+                     * 任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupType;
+                    bool m_groupTypeHasBeenSet;
+
+                    /**
+                     * 任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_aspectTaskId;
+                    bool m_aspectTaskIdHasBeenSet;
+
+                    /**
+                     * catalog名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_catalogName;
+                    bool m_catalogNameHasBeenSet;
 
                 };
             }

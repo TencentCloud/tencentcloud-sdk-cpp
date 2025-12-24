@@ -28,7 +28,9 @@ SoftwareInformationData::SoftwareInformationData() :
     m_versionHasBeenSet(false),
     m_corpNameHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_piracyRiskHasBeenSet(false)
+    m_piracyRiskHasBeenSet(false),
+    m_deviceIdHasBeenSet(false),
+    m_osTypeHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,26 @@ CoreInternalOutcome SoftwareInformationData::Deserialize(const rapidjson::Value 
         m_piracyRiskHasBeenSet = true;
     }
 
+    if (value.HasMember("DeviceId") && !value["DeviceId"].IsNull())
+    {
+        if (!value["DeviceId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SoftwareInformationData.DeviceId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceId = value["DeviceId"].GetInt64();
+        m_deviceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OsType") && !value["OsType"].IsNull())
+    {
+        if (!value["OsType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SoftwareInformationData.OsType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_osType = value["OsType"].GetInt64();
+        m_osTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +208,22 @@ void SoftwareInformationData::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "PiracyRisk";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_piracyRisk, allocator);
+    }
+
+    if (m_deviceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deviceId, allocator);
+    }
+
+    if (m_osTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OsType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_osType, allocator);
     }
 
 }
@@ -317,5 +355,37 @@ void SoftwareInformationData::SetPiracyRisk(const int64_t& _piracyRisk)
 bool SoftwareInformationData::PiracyRiskHasBeenSet() const
 {
     return m_piracyRiskHasBeenSet;
+}
+
+int64_t SoftwareInformationData::GetDeviceId() const
+{
+    return m_deviceId;
+}
+
+void SoftwareInformationData::SetDeviceId(const int64_t& _deviceId)
+{
+    m_deviceId = _deviceId;
+    m_deviceIdHasBeenSet = true;
+}
+
+bool SoftwareInformationData::DeviceIdHasBeenSet() const
+{
+    return m_deviceIdHasBeenSet;
+}
+
+int64_t SoftwareInformationData::GetOsType() const
+{
+    return m_osType;
+}
+
+void SoftwareInformationData::SetOsType(const int64_t& _osType)
+{
+    m_osType = _osType;
+    m_osTypeHasBeenSet = true;
+}
+
+bool SoftwareInformationData::OsTypeHasBeenSet() const
+{
+    return m_osTypeHasBeenSet;
 }
 

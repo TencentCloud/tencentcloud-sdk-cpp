@@ -51,7 +51,13 @@ MakePlanOpsDto::MakePlanOpsDto() :
     m_makeDataTimeOrderHasBeenSet(false),
     m_scheduleTimeZoneHasBeenSet(false),
     m_appParamHasBeenSet(false),
-    m_timeTypeHasBeenSet(false)
+    m_timeTypeHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_failurePercentHasBeenSet(false),
+    m_alarmRuleHasBeenSet(false),
+    m_runTypeHasBeenSet(false),
+    m_runDateTimeHasBeenSet(false)
 {
 }
 
@@ -393,6 +399,73 @@ CoreInternalOutcome MakePlanOpsDto::Deserialize(const rapidjson::Value &value)
         m_timeTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
+    {
+        if (!value["StartTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = string(value["StartTime"].GetString());
+        m_startTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndTime") && !value["EndTime"].IsNull())
+    {
+        if (!value["EndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_endTime = string(value["EndTime"].GetString());
+        m_endTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FailurePercent") && !value["FailurePercent"].IsNull())
+    {
+        if (!value["FailurePercent"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.FailurePercent` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_failurePercent = value["FailurePercent"].GetInt64();
+        m_failurePercentHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlarmRule") && !value["AlarmRule"].IsNull())
+    {
+        if (!value["AlarmRule"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.AlarmRule` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_alarmRule.Deserialize(value["AlarmRule"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_alarmRuleHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunType") && !value["RunType"].IsNull())
+    {
+        if (!value["RunType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.RunType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_runType = value["RunType"].GetInt64();
+        m_runTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunDateTime") && !value["RunDateTime"].IsNull())
+    {
+        if (!value["RunDateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.RunDateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_runDateTime = string(value["RunDateTime"].GetString());
+        m_runDateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -665,6 +738,55 @@ void MakePlanOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "TimeType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_timeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_failurePercentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailurePercent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_failurePercent, allocator);
+    }
+
+    if (m_alarmRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_alarmRule.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_runTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_runType, allocator);
+    }
+
+    if (m_runDateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunDateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runDateTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1164,5 +1286,101 @@ void MakePlanOpsDto::SetTimeType(const string& _timeType)
 bool MakePlanOpsDto::TimeTypeHasBeenSet() const
 {
     return m_timeTypeHasBeenSet;
+}
+
+string MakePlanOpsDto::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void MakePlanOpsDto::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+string MakePlanOpsDto::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void MakePlanOpsDto::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
+}
+
+int64_t MakePlanOpsDto::GetFailurePercent() const
+{
+    return m_failurePercent;
+}
+
+void MakePlanOpsDto::SetFailurePercent(const int64_t& _failurePercent)
+{
+    m_failurePercent = _failurePercent;
+    m_failurePercentHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::FailurePercentHasBeenSet() const
+{
+    return m_failurePercentHasBeenSet;
+}
+
+MakePlanAlarmRule MakePlanOpsDto::GetAlarmRule() const
+{
+    return m_alarmRule;
+}
+
+void MakePlanOpsDto::SetAlarmRule(const MakePlanAlarmRule& _alarmRule)
+{
+    m_alarmRule = _alarmRule;
+    m_alarmRuleHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::AlarmRuleHasBeenSet() const
+{
+    return m_alarmRuleHasBeenSet;
+}
+
+int64_t MakePlanOpsDto::GetRunType() const
+{
+    return m_runType;
+}
+
+void MakePlanOpsDto::SetRunType(const int64_t& _runType)
+{
+    m_runType = _runType;
+    m_runTypeHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::RunTypeHasBeenSet() const
+{
+    return m_runTypeHasBeenSet;
+}
+
+string MakePlanOpsDto::GetRunDateTime() const
+{
+    return m_runDateTime;
+}
+
+void MakePlanOpsDto::SetRunDateTime(const string& _runDateTime)
+{
+    m_runDateTime = _runDateTime;
+    m_runDateTimeHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::RunDateTimeHasBeenSet() const
+{
+    return m_runDateTimeHasBeenSet;
 }
 

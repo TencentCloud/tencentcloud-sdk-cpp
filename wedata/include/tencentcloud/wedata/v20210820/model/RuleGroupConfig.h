@@ -47,18 +47,63 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型检测类型
+                     * 获取分析类型，可选值：
+INFERENCE-推理表
+TIME_SERIES-时序表
+SNAPSHOT-快照表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelMonitorType 模型检测类型
+                     * @return AnalysisType 分析类型，可选值：
+INFERENCE-推理表
+TIME_SERIES-时序表
+SNAPSHOT-快照表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAnalysisType() const;
+
+                    /**
+                     * 设置分析类型，可选值：
+INFERENCE-推理表
+TIME_SERIES-时序表
+SNAPSHOT-快照表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _analysisType 分析类型，可选值：
+INFERENCE-推理表
+TIME_SERIES-时序表
+SNAPSHOT-快照表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAnalysisType(const std::string& _analysisType);
+
+                    /**
+                     * 判断参数 AnalysisType 是否已赋值
+                     * @return AnalysisType 是否已赋值
+                     * 
+                     */
+                    bool AnalysisTypeHasBeenSet() const;
+
+                    /**
+                     * 获取模型检测类型，分析类型为推理表（INFERENCE）时必填，可选值：
+CLAASSIFICATION-分类
+REGRESSION-回归
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModelMonitorType 模型检测类型，分析类型为推理表（INFERENCE）时必填，可选值：
+CLAASSIFICATION-分类
+REGRESSION-回归
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModelMonitorType() const;
 
                     /**
-                     * 设置模型检测类型
+                     * 设置模型检测类型，分析类型为推理表（INFERENCE）时必填，可选值：
+CLAASSIFICATION-分类
+REGRESSION-回归
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modelMonitorType 模型检测类型
+                     * @param _modelMonitorType 模型检测类型，分析类型为推理表（INFERENCE）时必填，可选值：
+CLAASSIFICATION-分类
+REGRESSION-回归
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -472,18 +517,18 @@ namespace TencentCloud
                     bool PositiveValueHasBeenSet() const;
 
                     /**
-                     * 获取特征列
+                     * 获取数值型特征列
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FeatureColumn 特征列
+                     * @return FeatureColumn 数值型特征列
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFeatureColumn() const;
 
                     /**
-                     * 设置特征列
+                     * 设置数值型特征列
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _featureColumn 特征列
+                     * @param _featureColumn 数值型特征列
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -496,10 +541,72 @@ namespace TencentCloud
                      */
                     bool FeatureColumnHasBeenSet() const;
 
+                    /**
+                     * 获取分类型特征列
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CategoricalFeatureColumn 分类型特征列
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCategoricalFeatureColumn() const;
+
+                    /**
+                     * 设置分类型特征列
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _categoricalFeatureColumn 分类型特征列
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCategoricalFeatureColumn(const std::string& _categoricalFeatureColumn);
+
+                    /**
+                     * 判断参数 CategoricalFeatureColumn 是否已赋值
+                     * @return CategoricalFeatureColumn 是否已赋值
+                     * 
+                     */
+                    bool CategoricalFeatureColumnHasBeenSet() const;
+
+                    /**
+                     * 获取目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BaseCatalog 目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBaseCatalog() const;
+
+                    /**
+                     * 设置目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _baseCatalog 目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBaseCatalog(const std::string& _baseCatalog);
+
+                    /**
+                     * 判断参数 BaseCatalog 是否已赋值
+                     * @return BaseCatalog 是否已赋值
+                     * 
+                     */
+                    bool BaseCatalogHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 模型检测类型
+                     * 分析类型，可选值：
+INFERENCE-推理表
+TIME_SERIES-时序表
+SNAPSHOT-快照表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_analysisType;
+                    bool m_analysisTypeHasBeenSet;
+
+                    /**
+                     * 模型检测类型，分析类型为推理表（INFERENCE）时必填，可选值：
+CLAASSIFICATION-分类
+REGRESSION-回归
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modelMonitorType;
@@ -618,11 +725,25 @@ namespace TencentCloud
                     bool m_positiveValueHasBeenSet;
 
                     /**
-                     * 特征列
+                     * 数值型特征列
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_featureColumn;
                     bool m_featureColumnHasBeenSet;
+
+                    /**
+                     * 分类型特征列
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_categoricalFeatureColumn;
+                    bool m_categoricalFeatureColumnHasBeenSet;
+
+                    /**
+                     * 目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_baseCatalog;
+                    bool m_baseCatalogHasBeenSet;
 
                 };
             }

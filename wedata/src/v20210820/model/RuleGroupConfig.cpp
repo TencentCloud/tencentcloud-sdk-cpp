@@ -21,6 +21,7 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 RuleGroupConfig::RuleGroupConfig() :
+    m_analysisTypeHasBeenSet(false),
     m_modelMonitorTypeHasBeenSet(false),
     m_predictColumnHasBeenSet(false),
     m_predictColumnTypeHasBeenSet(false),
@@ -38,7 +39,9 @@ RuleGroupConfig::RuleGroupConfig() :
     m_comparisonColumnTypeHasBeenSet(false),
     m_protectionValueHasBeenSet(false),
     m_positiveValueHasBeenSet(false),
-    m_featureColumnHasBeenSet(false)
+    m_featureColumnHasBeenSet(false),
+    m_categoricalFeatureColumnHasBeenSet(false),
+    m_baseCatalogHasBeenSet(false)
 {
 }
 
@@ -46,6 +49,16 @@ CoreInternalOutcome RuleGroupConfig::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("AnalysisType") && !value["AnalysisType"].IsNull())
+    {
+        if (!value["AnalysisType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupConfig.AnalysisType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_analysisType = string(value["AnalysisType"].GetString());
+        m_analysisTypeHasBeenSet = true;
+    }
 
     if (value.HasMember("ModelMonitorType") && !value["ModelMonitorType"].IsNull())
     {
@@ -227,12 +240,40 @@ CoreInternalOutcome RuleGroupConfig::Deserialize(const rapidjson::Value &value)
         m_featureColumnHasBeenSet = true;
     }
 
+    if (value.HasMember("CategoricalFeatureColumn") && !value["CategoricalFeatureColumn"].IsNull())
+    {
+        if (!value["CategoricalFeatureColumn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupConfig.CategoricalFeatureColumn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_categoricalFeatureColumn = string(value["CategoricalFeatureColumn"].GetString());
+        m_categoricalFeatureColumnHasBeenSet = true;
+    }
+
+    if (value.HasMember("BaseCatalog") && !value["BaseCatalog"].IsNull())
+    {
+        if (!value["BaseCatalog"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupConfig.BaseCatalog` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_baseCatalog = string(value["BaseCatalog"].GetString());
+        m_baseCatalogHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void RuleGroupConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_analysisTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnalysisType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_analysisType.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_modelMonitorTypeHasBeenSet)
     {
@@ -378,8 +419,40 @@ void RuleGroupConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_featureColumn.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_categoricalFeatureColumnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CategoricalFeatureColumn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_categoricalFeatureColumn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_baseCatalogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BaseCatalog";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_baseCatalog.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
+
+string RuleGroupConfig::GetAnalysisType() const
+{
+    return m_analysisType;
+}
+
+void RuleGroupConfig::SetAnalysisType(const string& _analysisType)
+{
+    m_analysisType = _analysisType;
+    m_analysisTypeHasBeenSet = true;
+}
+
+bool RuleGroupConfig::AnalysisTypeHasBeenSet() const
+{
+    return m_analysisTypeHasBeenSet;
+}
 
 string RuleGroupConfig::GetModelMonitorType() const
 {
@@ -667,5 +740,37 @@ void RuleGroupConfig::SetFeatureColumn(const string& _featureColumn)
 bool RuleGroupConfig::FeatureColumnHasBeenSet() const
 {
     return m_featureColumnHasBeenSet;
+}
+
+string RuleGroupConfig::GetCategoricalFeatureColumn() const
+{
+    return m_categoricalFeatureColumn;
+}
+
+void RuleGroupConfig::SetCategoricalFeatureColumn(const string& _categoricalFeatureColumn)
+{
+    m_categoricalFeatureColumn = _categoricalFeatureColumn;
+    m_categoricalFeatureColumnHasBeenSet = true;
+}
+
+bool RuleGroupConfig::CategoricalFeatureColumnHasBeenSet() const
+{
+    return m_categoricalFeatureColumnHasBeenSet;
+}
+
+string RuleGroupConfig::GetBaseCatalog() const
+{
+    return m_baseCatalog;
+}
+
+void RuleGroupConfig::SetBaseCatalog(const string& _baseCatalog)
+{
+    m_baseCatalog = _baseCatalog;
+    m_baseCatalogHasBeenSet = true;
+}
+
+bool RuleGroupConfig::BaseCatalogHasBeenSet() const
+{
+    return m_baseCatalogHasBeenSet;
 }
 

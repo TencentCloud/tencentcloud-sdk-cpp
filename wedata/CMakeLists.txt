@@ -108,6 +108,8 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DataServiceRequestParam.h
   include/tencentcloud/wedata/v20210820/model/DataSourceEnvInfo.h
   include/tencentcloud/wedata/v20210820/model/SubmitTaskResponse.h
+  include/tencentcloud/wedata/v20210820/model/AttributeItemOpsDto.h
+  include/tencentcloud/wedata/v20210820/model/LabelValueSelection.h
   include/tencentcloud/wedata/v20210820/model/DescribeDataCheckStatRequest.h
   include/tencentcloud/wedata/v20210820/model/RegisterEventListenerResponse.h
   include/tencentcloud/wedata/v20210820/model/SubscribeWebHook.h
@@ -264,6 +266,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DependencyStrategyDs.h
   include/tencentcloud/wedata/v20210820/model/DescribeInstanceLogListResponse.h
   include/tencentcloud/wedata/v20210820/model/ModifyTaskInfoRequest.h
+  include/tencentcloud/wedata/v20210820/model/TaskExtOpsDto.h
   include/tencentcloud/wedata/v20210820/model/RuleGroup.h
   include/tencentcloud/wedata/v20210820/model/DescribeTableQualityDetailsRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeScheduleInstancesResponse.h
@@ -335,6 +338,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeInstanceListRequest.h
   include/tencentcloud/wedata/v20210820/model/GetOfflineInstanceListResponse.h
   include/tencentcloud/wedata/v20210820/model/DeleteCustomFunctionRequest.h
+  include/tencentcloud/wedata/v20210820/model/RobAndLockIntegrationTaskResponse.h
   include/tencentcloud/wedata/v20210820/model/InstanceLogInfo.h
   include/tencentcloud/wedata/v20210820/model/GetFileInfoRequest.h
   include/tencentcloud/wedata/v20210820/model/TableLineageBaseInfo.h
@@ -379,8 +383,10 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/TaskSimpleVo.h
   include/tencentcloud/wedata/v20210820/model/RemoveSchemaRequest.h
   include/tencentcloud/wedata/v20210820/model/IntegrationNodeDetail.h
+  include/tencentcloud/wedata/v20210820/model/LabelTag.h
   include/tencentcloud/wedata/v20210820/model/DescribeEventResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeOpsMakePlanInstancesRequest.h
+  include/tencentcloud/wedata/v20210820/model/AlarmQuietInterval.h
   include/tencentcloud/wedata/v20210820/model/GenHiveTableDDLSqlRequest.h
   include/tencentcloud/wedata/v20210820/model/BatchCreateIntegrationTaskAlarmsRequest.h
   include/tencentcloud/wedata/v20210820/model/QualityScore.h
@@ -407,6 +413,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/TaskTypeOpsDto.h
   include/tencentcloud/wedata/v20210820/model/BatchModifyOpsOwnersResponse.h
   include/tencentcloud/wedata/v20210820/model/GetPaginationTaskScriptResponseInfo.h
+  include/tencentcloud/wedata/v20210820/model/MakePlanAlarmRule.h
   include/tencentcloud/wedata/v20210820/model/DescribeDsTaskVersionListRequest.h
   include/tencentcloud/wedata/v20210820/model/CreateTaskAlarmRegularResponse.h
   include/tencentcloud/wedata/v20210820/model/DeleteRuleTemplateRequest.h
@@ -530,6 +537,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeWorkflowInfoByIdResponse.h
   include/tencentcloud/wedata/v20210820/model/OpsTaskCanvasInfoList.h
   include/tencentcloud/wedata/v20210820/model/SubmitTaskTestRunResponse.h
+  include/tencentcloud/wedata/v20210820/model/RuleDimStat.h
   include/tencentcloud/wedata/v20210820/model/UpdateProjectUserRoleResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeRoleListRequest.h
   include/tencentcloud/wedata/v20210820/model/ExecutorResourcePackageInfo.h
@@ -710,7 +718,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/RegisterEventListenerRequest.h
   include/tencentcloud/wedata/v20210820/model/BatchRunOpsTaskResponse.h
   include/tencentcloud/wedata/v20210820/model/CheckIntegrationNodeNameExistsResponse.h
-  include/tencentcloud/wedata/v20210820/model/RobAndLockIntegrationTaskResponse.h
+  include/tencentcloud/wedata/v20210820/model/AlarmGroup.h
   include/tencentcloud/wedata/v20210820/model/MakePlanInstanceOpsDtoCollection.h
   include/tencentcloud/wedata/v20210820/model/IndicatorBaseSimpleInfo.h
   include/tencentcloud/wedata/v20210820/model/DeleteTaskAlarmRegularRequest.h
@@ -917,7 +925,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationTaskResponse.h
   include/tencentcloud/wedata/v20210820/model/CreateDataModelRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeCodeTemplateDetailResponse.h
-  include/tencentcloud/wedata/v20210820/model/RuleDimStat.h
+  include/tencentcloud/wedata/v20210820/model/NotificationFatigue.h
   include/tencentcloud/wedata/v20210820/model/CreateHiveTableByDDLRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeFormVersionParamRequest.h
   include/tencentcloud/wedata/v20210820/model/DatabaseInfo.h
@@ -1471,6 +1479,8 @@ set(wedata_src
   src/v20210820/model/DataServiceRequestParam.cpp
   src/v20210820/model/DataSourceEnvInfo.cpp
   src/v20210820/model/SubmitTaskResponse.cpp
+  src/v20210820/model/AttributeItemOpsDto.cpp
+  src/v20210820/model/LabelValueSelection.cpp
   src/v20210820/model/DescribeDataCheckStatRequest.cpp
   src/v20210820/model/RegisterEventListenerResponse.cpp
   src/v20210820/model/SubscribeWebHook.cpp
@@ -1627,6 +1637,7 @@ set(wedata_src
   src/v20210820/model/DependencyStrategyDs.cpp
   src/v20210820/model/DescribeInstanceLogListResponse.cpp
   src/v20210820/model/ModifyTaskInfoRequest.cpp
+  src/v20210820/model/TaskExtOpsDto.cpp
   src/v20210820/model/RuleGroup.cpp
   src/v20210820/model/DescribeTableQualityDetailsRequest.cpp
   src/v20210820/model/DescribeScheduleInstancesResponse.cpp
@@ -1698,6 +1709,7 @@ set(wedata_src
   src/v20210820/model/DescribeInstanceListRequest.cpp
   src/v20210820/model/GetOfflineInstanceListResponse.cpp
   src/v20210820/model/DeleteCustomFunctionRequest.cpp
+  src/v20210820/model/RobAndLockIntegrationTaskResponse.cpp
   src/v20210820/model/InstanceLogInfo.cpp
   src/v20210820/model/GetFileInfoRequest.cpp
   src/v20210820/model/TableLineageBaseInfo.cpp
@@ -1742,8 +1754,10 @@ set(wedata_src
   src/v20210820/model/TaskSimpleVo.cpp
   src/v20210820/model/RemoveSchemaRequest.cpp
   src/v20210820/model/IntegrationNodeDetail.cpp
+  src/v20210820/model/LabelTag.cpp
   src/v20210820/model/DescribeEventResponse.cpp
   src/v20210820/model/DescribeOpsMakePlanInstancesRequest.cpp
+  src/v20210820/model/AlarmQuietInterval.cpp
   src/v20210820/model/GenHiveTableDDLSqlRequest.cpp
   src/v20210820/model/BatchCreateIntegrationTaskAlarmsRequest.cpp
   src/v20210820/model/QualityScore.cpp
@@ -1770,6 +1784,7 @@ set(wedata_src
   src/v20210820/model/TaskTypeOpsDto.cpp
   src/v20210820/model/BatchModifyOpsOwnersResponse.cpp
   src/v20210820/model/GetPaginationTaskScriptResponseInfo.cpp
+  src/v20210820/model/MakePlanAlarmRule.cpp
   src/v20210820/model/DescribeDsTaskVersionListRequest.cpp
   src/v20210820/model/CreateTaskAlarmRegularResponse.cpp
   src/v20210820/model/DeleteRuleTemplateRequest.cpp
@@ -1893,6 +1908,7 @@ set(wedata_src
   src/v20210820/model/DescribeWorkflowInfoByIdResponse.cpp
   src/v20210820/model/OpsTaskCanvasInfoList.cpp
   src/v20210820/model/SubmitTaskTestRunResponse.cpp
+  src/v20210820/model/RuleDimStat.cpp
   src/v20210820/model/UpdateProjectUserRoleResponse.cpp
   src/v20210820/model/DescribeRoleListRequest.cpp
   src/v20210820/model/ExecutorResourcePackageInfo.cpp
@@ -2073,7 +2089,7 @@ set(wedata_src
   src/v20210820/model/RegisterEventListenerRequest.cpp
   src/v20210820/model/BatchRunOpsTaskResponse.cpp
   src/v20210820/model/CheckIntegrationNodeNameExistsResponse.cpp
-  src/v20210820/model/RobAndLockIntegrationTaskResponse.cpp
+  src/v20210820/model/AlarmGroup.cpp
   src/v20210820/model/MakePlanInstanceOpsDtoCollection.cpp
   src/v20210820/model/IndicatorBaseSimpleInfo.cpp
   src/v20210820/model/DeleteTaskAlarmRegularRequest.cpp
@@ -2280,7 +2296,7 @@ set(wedata_src
   src/v20210820/model/DescribeIntegrationTaskResponse.cpp
   src/v20210820/model/CreateDataModelRequest.cpp
   src/v20210820/model/DescribeCodeTemplateDetailResponse.cpp
-  src/v20210820/model/RuleDimStat.cpp
+  src/v20210820/model/NotificationFatigue.cpp
   src/v20210820/model/CreateHiveTableByDDLRequest.cpp
   src/v20210820/model/DescribeFormVersionParamRequest.cpp
   src/v20210820/model/DatabaseInfo.cpp

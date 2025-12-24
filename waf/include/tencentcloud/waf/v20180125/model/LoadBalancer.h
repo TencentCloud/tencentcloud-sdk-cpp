@@ -298,6 +298,48 @@ namespace TencentCloud
                      */
                     bool LoadBalancerDomainHasBeenSet() const;
 
+                    /**
+                     * 获取监听器所属成员id
+                     * @return MemberAppId 监听器所属成员id
+                     * 
+                     */
+                    uint64_t GetMemberAppId() const;
+
+                    /**
+                     * 设置监听器所属成员id
+                     * @param _memberAppId 监听器所属成员id
+                     * 
+                     */
+                    void SetMemberAppId(const uint64_t& _memberAppId);
+
+                    /**
+                     * 判断参数 MemberAppId 是否已赋值
+                     * @return MemberAppId 是否已赋值
+                     * 
+                     */
+                    bool MemberAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取监听器所属成员的uin
+                     * @return MemberUin 监听器所属成员的uin
+                     * 
+                     */
+                    std::string GetMemberUin() const;
+
+                    /**
+                     * 设置监听器所属成员的uin
+                     * @param _memberUin 监听器所属成员的uin
+                     * 
+                     */
+                    void SetMemberUin(const std::string& _memberUin);
+
+                    /**
+                     * 判断参数 MemberUin 是否已赋值
+                     * @return MemberUin 是否已赋值
+                     * 
+                     */
+                    bool MemberUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -371,6 +413,18 @@ namespace TencentCloud
                      */
                     std::string m_loadBalancerDomain;
                     bool m_loadBalancerDomainHasBeenSet;
+
+                    /**
+                     * 监听器所属成员id
+                     */
+                    uint64_t m_memberAppId;
+                    bool m_memberAppIdHasBeenSet;
+
+                    /**
+                     * 监听器所属成员的uin
+                     */
+                    std::string m_memberUin;
+                    bool m_memberUinHasBeenSet;
 
                 };
             }

@@ -87,7 +87,9 @@ DetailDomain::DetailDomain() :
     m_qnPrivateAccessHasBeenSet(false),
     m_httpsBillingHasBeenSet(false),
     m_othersPrivateAccessHasBeenSet(false),
-    m_paramFilterHasBeenSet(false)
+    m_paramFilterHasBeenSet(false),
+    m_autoGuardHasBeenSet(false),
+    m_geoBlockerHasBeenSet(false)
 {
 }
 
@@ -1139,6 +1141,40 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
         m_paramFilterHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoGuard") && !value["AutoGuard"].IsNull())
+    {
+        if (!value["AutoGuard"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.AutoGuard` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_autoGuard.Deserialize(value["AutoGuard"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_autoGuardHasBeenSet = true;
+    }
+
+    if (value.HasMember("GeoBlocker") && !value["GeoBlocker"].IsNull())
+    {
+        if (!value["GeoBlocker"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.GeoBlocker` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_geoBlocker.Deserialize(value["GeoBlocker"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_geoBlockerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1749,6 +1785,24 @@ void DetailDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_paramFilter.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_autoGuardHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoGuard";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_autoGuard.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_geoBlockerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GeoBlocker";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_geoBlocker.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2824,5 +2878,37 @@ void DetailDomain::SetParamFilter(const ParamFilter& _paramFilter)
 bool DetailDomain::ParamFilterHasBeenSet() const
 {
     return m_paramFilterHasBeenSet;
+}
+
+AutoGuard DetailDomain::GetAutoGuard() const
+{
+    return m_autoGuard;
+}
+
+void DetailDomain::SetAutoGuard(const AutoGuard& _autoGuard)
+{
+    m_autoGuard = _autoGuard;
+    m_autoGuardHasBeenSet = true;
+}
+
+bool DetailDomain::AutoGuardHasBeenSet() const
+{
+    return m_autoGuardHasBeenSet;
+}
+
+GeoBlocker DetailDomain::GetGeoBlocker() const
+{
+    return m_geoBlocker;
+}
+
+void DetailDomain::SetGeoBlocker(const GeoBlocker& _geoBlocker)
+{
+    m_geoBlocker = _geoBlocker;
+    m_geoBlockerHasBeenSet = true;
+}
+
+bool DetailDomain::GeoBlockerHasBeenSet() const
+{
+    return m_geoBlockerHasBeenSet;
 }
 

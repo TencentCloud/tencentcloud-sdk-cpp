@@ -723,6 +723,31 @@ namespace TencentCloud
                      */
                     bool EngineParamHasBeenSet() const;
 
+                    /**
+                     * 获取catalog名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CatalogName catalog名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCatalogName() const;
+
+                    /**
+                     * 设置catalog名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _catalogName catalog名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCatalogName(const std::string& _catalogName);
+
+                    /**
+                     * 判断参数 CatalogName 是否已赋值
+                     * @return CatalogName 是否已赋值
+                     * 
+                     */
+                    bool CatalogNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -913,6 +938,13 @@ namespace TencentCloud
                      */
                     std::string m_engineParam;
                     bool m_engineParamHasBeenSet;
+
+                    /**
+                     * catalog名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_catalogName;
+                    bool m_catalogNameHasBeenSet;
 
                 };
             }

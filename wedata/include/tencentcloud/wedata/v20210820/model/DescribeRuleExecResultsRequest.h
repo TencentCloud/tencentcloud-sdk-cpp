@@ -21,6 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/Filter.h>
+#include <tencentcloud/wedata/v20210820/model/OrderField.h>
 
 
 namespace TencentCloud
@@ -84,6 +86,48 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取过滤条件	
+                     * @return Filters 过滤条件	
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置过滤条件	
+                     * @param _filters 过滤条件	
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取排序字段
+                     * @return OrderFields 排序字段
+                     * 
+                     */
+                    std::vector<OrderField> GetOrderFields() const;
+
+                    /**
+                     * 设置排序字段
+                     * @param _orderFields 排序字段
+                     * 
+                     */
+                    void SetOrderFields(const std::vector<OrderField>& _orderFields);
+
+                    /**
+                     * 判断参数 OrderFields 是否已赋值
+                     * @return OrderFields 是否已赋值
+                     * 
+                     */
+                    bool OrderFieldsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +141,18 @@ namespace TencentCloud
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 过滤条件	
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
+
+                    /**
+                     * 排序字段
+                     */
+                    std::vector<OrderField> m_orderFields;
+                    bool m_orderFieldsHasBeenSet;
 
                 };
             }

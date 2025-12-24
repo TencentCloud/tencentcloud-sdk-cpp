@@ -47,7 +47,8 @@ RuleGroupExecStrategy::RuleGroupExecStrategy() :
     m_descriptionHasBeenSet(false),
     m_scheduleTimeZoneHasBeenSet(false),
     m_groupConfigHasBeenSet(false),
-    m_engineParamHasBeenSet(false)
+    m_engineParamHasBeenSet(false),
+    m_catalogNameHasBeenSet(false)
 {
 }
 
@@ -346,6 +347,16 @@ CoreInternalOutcome RuleGroupExecStrategy::Deserialize(const rapidjson::Value &v
         m_engineParamHasBeenSet = true;
     }
 
+    if (value.HasMember("CatalogName") && !value["CatalogName"].IsNull())
+    {
+        if (!value["CatalogName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecStrategy.CatalogName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_catalogName = string(value["CatalogName"].GetString());
+        m_catalogNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -580,6 +591,14 @@ void RuleGroupExecStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "EngineParam";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_engineParam.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_catalogNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CatalogName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_catalogName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1015,5 +1034,21 @@ void RuleGroupExecStrategy::SetEngineParam(const string& _engineParam)
 bool RuleGroupExecStrategy::EngineParamHasBeenSet() const
 {
     return m_engineParamHasBeenSet;
+}
+
+string RuleGroupExecStrategy::GetCatalogName() const
+{
+    return m_catalogName;
+}
+
+void RuleGroupExecStrategy::SetCatalogName(const string& _catalogName)
+{
+    m_catalogName = _catalogName;
+    m_catalogNameHasBeenSet = true;
+}
+
+bool RuleGroupExecStrategy::CatalogNameHasBeenSet() const
+{
+    return m_catalogNameHasBeenSet;
 }
 

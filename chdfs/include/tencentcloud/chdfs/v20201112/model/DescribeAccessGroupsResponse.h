@@ -58,6 +58,34 @@ namespace TencentCloud
                      */
                     bool AccessGroupsHasBeenSet() const;
 
+                    /**
+                     * 获取标识是否已获取全量
+                     * @return IsOver 标识是否已获取全量
+                     * 
+                     */
+                    bool GetIsOver() const;
+
+                    /**
+                     * 判断参数 IsOver 是否已赋值
+                     * @return IsOver 是否已赋值
+                     * 
+                     */
+                    bool IsOverHasBeenSet() const;
+
+                    /**
+                     * 获取下一次请求起始权限组ID标记
+                     * @return NextAccessGroupIdMarker 下一次请求起始权限组ID标记
+                     * 
+                     */
+                    std::string GetNextAccessGroupIdMarker() const;
+
+                    /**
+                     * 判断参数 NextAccessGroupIdMarker 是否已赋值
+                     * @return NextAccessGroupIdMarker 是否已赋值
+                     * 
+                     */
+                    bool NextAccessGroupIdMarkerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +93,18 @@ namespace TencentCloud
                      */
                     std::vector<AccessGroup> m_accessGroups;
                     bool m_accessGroupsHasBeenSet;
+
+                    /**
+                     * 标识是否已获取全量
+                     */
+                    bool m_isOver;
+                    bool m_isOverHasBeenSet;
+
+                    /**
+                     * 下一次请求起始权限组ID标记
+                     */
+                    std::string m_nextAccessGroupIdMarker;
+                    bool m_nextAccessGroupIdMarkerHasBeenSet;
 
                 };
             }

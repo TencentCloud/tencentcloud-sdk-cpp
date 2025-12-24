@@ -31,7 +31,8 @@ DatabaseInfo::DatabaseInfo() :
     m_originSchemaNameHasBeenSet(false),
     m_dsEnvTypeHasBeenSet(false),
     m_clusterDeployTypeHasBeenSet(false),
-    m_schemaNameHasBeenSet(false)
+    m_schemaNameHasBeenSet(false),
+    m_showEnableCatalogHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome DatabaseInfo::Deserialize(const rapidjson::Value &value)
         m_schemaNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ShowEnableCatalog") && !value["ShowEnableCatalog"].IsNull())
+    {
+        if (!value["ShowEnableCatalog"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseInfo.ShowEnableCatalog` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_showEnableCatalog = value["ShowEnableCatalog"].GetBool();
+        m_showEnableCatalogHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +254,14 @@ void DatabaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "SchemaName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_showEnableCatalogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShowEnableCatalog";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_showEnableCatalog, allocator);
     }
 
 }
@@ -422,5 +441,21 @@ void DatabaseInfo::SetSchemaName(const string& _schemaName)
 bool DatabaseInfo::SchemaNameHasBeenSet() const
 {
     return m_schemaNameHasBeenSet;
+}
+
+bool DatabaseInfo::GetShowEnableCatalog() const
+{
+    return m_showEnableCatalog;
+}
+
+void DatabaseInfo::SetShowEnableCatalog(const bool& _showEnableCatalog)
+{
+    m_showEnableCatalog = _showEnableCatalog;
+    m_showEnableCatalogHasBeenSet = true;
+}
+
+bool DatabaseInfo::ShowEnableCatalogHasBeenSet() const
+{
+    return m_showEnableCatalogHasBeenSet;
 }
 

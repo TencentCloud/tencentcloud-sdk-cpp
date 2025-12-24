@@ -32,7 +32,9 @@ LoadBalancer::LoadBalancer() :
     m_vipHasBeenSet(false),
     m_numericalVpcIdHasBeenSet(false),
     m_loadBalancerTypeHasBeenSet(false),
-    m_loadBalancerDomainHasBeenSet(false)
+    m_loadBalancerDomainHasBeenSet(false),
+    m_memberAppIdHasBeenSet(false),
+    m_memberUinHasBeenSet(false)
 {
 }
 
@@ -161,6 +163,26 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
         m_loadBalancerDomainHasBeenSet = true;
     }
 
+    if (value.HasMember("MemberAppId") && !value["MemberAppId"].IsNull())
+    {
+        if (!value["MemberAppId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.MemberAppId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_memberAppId = value["MemberAppId"].GetUint64();
+        m_memberAppIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("MemberUin") && !value["MemberUin"].IsNull())
+    {
+        if (!value["MemberUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.MemberUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_memberUin = string(value["MemberUin"].GetString());
+        m_memberUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +284,22 @@ void LoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "LoadBalancerDomain";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_loadBalancerDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_memberAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberAppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_memberAppId, allocator);
+    }
+
+    if (m_memberUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_memberUin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +495,37 @@ void LoadBalancer::SetLoadBalancerDomain(const string& _loadBalancerDomain)
 bool LoadBalancer::LoadBalancerDomainHasBeenSet() const
 {
     return m_loadBalancerDomainHasBeenSet;
+}
+
+uint64_t LoadBalancer::GetMemberAppId() const
+{
+    return m_memberAppId;
+}
+
+void LoadBalancer::SetMemberAppId(const uint64_t& _memberAppId)
+{
+    m_memberAppId = _memberAppId;
+    m_memberAppIdHasBeenSet = true;
+}
+
+bool LoadBalancer::MemberAppIdHasBeenSet() const
+{
+    return m_memberAppIdHasBeenSet;
+}
+
+string LoadBalancer::GetMemberUin() const
+{
+    return m_memberUin;
+}
+
+void LoadBalancer::SetMemberUin(const string& _memberUin)
+{
+    m_memberUin = _memberUin;
+    m_memberUinHasBeenSet = true;
+}
+
+bool LoadBalancer::MemberUinHasBeenSet() const
+{
+    return m_memberUinHasBeenSet;
 }
 

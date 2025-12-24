@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool VoiceNameHasBeenSet() const;
 
                     /**
-                     * 获取声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在5秒～12秒之间
-                     * @return PromptAudio 声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在5秒～12秒之间
+                     * 获取声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在10秒～180秒之间
+                     * @return PromptAudio 声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在10秒～180秒之间
                      * 
                      */
                     std::string GetPromptAudio() const;
 
                     /**
-                     * 设置声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在5秒～12秒之间
-                     * @param _promptAudio 声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在5秒～12秒之间
+                     * 设置声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在10秒～180秒之间
+                     * @param _promptAudio 声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在10秒～180秒之间
                      * 
                      */
                     void SetPromptAudio(const std::string& _promptAudio);
@@ -204,7 +204,7 @@ namespace TencentCloud
                     bool m_voiceNameHasBeenSet;
 
                     /**
-                     * 声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在5秒～12秒之间
+                     * 声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在10秒～180秒之间
                      */
                     std::string m_promptAudio;
                     bool m_promptAudioHasBeenSet;

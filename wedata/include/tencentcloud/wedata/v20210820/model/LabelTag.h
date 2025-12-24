@@ -1,0 +1,281 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_WEDATA_V20210820_MODEL_LABELTAG_H_
+#define TENCENTCLOUD_WEDATA_V20210820_MODEL_LABELTAG_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Wedata
+    {
+        namespace V20210820
+        {
+            namespace Model
+            {
+                /**
+                * 资产标签
+                */
+                class LabelTag : public AbstractModel
+                {
+                public:
+                    LabelTag();
+                    ~LabelTag() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取标签id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagId 标签id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTagId() const;
+
+                    /**
+                     * 设置标签id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tagId 标签id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTagId(const int64_t& _tagId);
+
+                    /**
+                     * 判断参数 TagId 是否已赋值
+                     * @return TagId 是否已赋值
+                     * 
+                     */
+                    bool TagIdHasBeenSet() const;
+
+                    /**
+                     * 获取标签名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagName 标签名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTagName() const;
+
+                    /**
+                     * 设置标签名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tagName 标签名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTagName(const std::string& _tagName);
+
+                    /**
+                     * 判断参数 TagName 是否已赋值
+                     * @return TagName 是否已赋值
+                     * 
+                     */
+                    bool TagNameHasBeenSet() const;
+
+                    /**
+                     * 获取标签描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagDesc 标签描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTagDesc() const;
+
+                    /**
+                     * 设置标签描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tagDesc 标签描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTagDesc(const std::string& _tagDesc);
+
+                    /**
+                     * 判断参数 TagDesc 是否已赋值
+                     * @return TagDesc 是否已赋值
+                     * 
+                     */
+                    bool TagDescHasBeenSet() const;
+
+                    /**
+                     * 获取标签值Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagValueId 标签值Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTagValueId() const;
+
+                    /**
+                     * 设置标签值Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tagValueId 标签值Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTagValueId(const int64_t& _tagValueId);
+
+                    /**
+                     * 判断参数 TagValueId 是否已赋值
+                     * @return TagValueId 是否已赋值
+                     * 
+                     */
+                    bool TagValueIdHasBeenSet() const;
+
+                    /**
+                     * 获取标签值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagValue 标签值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTagValue() const;
+
+                    /**
+                     * 设置标签值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tagValue 标签值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTagValue(const std::string& _tagValue);
+
+                    /**
+                     * 判断参数 TagValue 是否已赋值
+                     * @return TagValue 是否已赋值
+                     * 
+                     */
+                    bool TagValueHasBeenSet() const;
+
+                    /**
+                     * 获取标签是否已删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagIsDeleted 标签是否已删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetTagIsDeleted() const;
+
+                    /**
+                     * 设置标签是否已删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tagIsDeleted 标签是否已删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTagIsDeleted(const bool& _tagIsDeleted);
+
+                    /**
+                     * 判断参数 TagIsDeleted 是否已赋值
+                     * @return TagIsDeleted 是否已赋值
+                     * 
+                     */
+                    bool TagIsDeletedHasBeenSet() const;
+
+                    /**
+                     * 获取标签值是否已删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagValueIsDeleted 标签值是否已删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetTagValueIsDeleted() const;
+
+                    /**
+                     * 设置标签值是否已删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tagValueIsDeleted 标签值是否已删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTagValueIsDeleted(const bool& _tagValueIsDeleted);
+
+                    /**
+                     * 判断参数 TagValueIsDeleted 是否已赋值
+                     * @return TagValueIsDeleted 是否已赋值
+                     * 
+                     */
+                    bool TagValueIsDeletedHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 标签id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_tagId;
+                    bool m_tagIdHasBeenSet;
+
+                    /**
+                     * 标签名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tagName;
+                    bool m_tagNameHasBeenSet;
+
+                    /**
+                     * 标签描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tagDesc;
+                    bool m_tagDescHasBeenSet;
+
+                    /**
+                     * 标签值Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_tagValueId;
+                    bool m_tagValueIdHasBeenSet;
+
+                    /**
+                     * 标签值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tagValue;
+                    bool m_tagValueHasBeenSet;
+
+                    /**
+                     * 标签是否已删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_tagIsDeleted;
+                    bool m_tagIsDeletedHasBeenSet;
+
+                    /**
+                     * 标签值是否已删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_tagValueIsDeleted;
+                    bool m_tagValueIsDeletedHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_WEDATA_V20210820_MODEL_LABELTAG_H_

@@ -383,6 +383,48 @@ namespace TencentCloud
                      */
                     bool VolumeHasBeenSet() const;
 
+                    /**
+                     * 获取开启播放进度回调, 默认false，当开启后，播放进度会通过trtc custom data 回调给播放端
+                     * @return EnableProgress 开启播放进度回调, 默认false，当开启后，播放进度会通过trtc custom data 回调给播放端
+                     * 
+                     */
+                    bool GetEnableProgress() const;
+
+                    /**
+                     * 设置开启播放进度回调, 默认false，当开启后，播放进度会通过trtc custom data 回调给播放端
+                     * @param _enableProgress 开启播放进度回调, 默认false，当开启后，播放进度会通过trtc custom data 回调给播放端
+                     * 
+                     */
+                    void SetEnableProgress(const bool& _enableProgress);
+
+                    /**
+                     * 判断参数 EnableProgress 是否已赋值
+                     * @return EnableProgress 是否已赋值
+                     * 
+                     */
+                    bool EnableProgressHasBeenSet() const;
+
+                    /**
+                     * 获取播放倍速，默认1.0，可取[0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0]
+                     * @return Tempo 播放倍速，默认1.0，可取[0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0]
+                     * 
+                     */
+                    double GetTempo() const;
+
+                    /**
+                     * 设置播放倍速，默认1.0，可取[0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0]
+                     * @param _tempo 播放倍速，默认1.0，可取[0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0]
+                     * 
+                     */
+                    void SetTempo(const double& _tempo);
+
+                    /**
+                     * 判断参数 Tempo 是否已赋值
+                     * @return Tempo 是否已赋值
+                     * 
+                     */
+                    bool TempoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -480,6 +522,18 @@ namespace TencentCloud
                      */
                     uint64_t m_volume;
                     bool m_volumeHasBeenSet;
+
+                    /**
+                     * 开启播放进度回调, 默认false，当开启后，播放进度会通过trtc custom data 回调给播放端
+                     */
+                    bool m_enableProgress;
+                    bool m_enableProgressHasBeenSet;
+
+                    /**
+                     * 播放倍速，默认1.0，可取[0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0]
+                     */
+                    double m_tempo;
+                    bool m_tempoHasBeenSet;
 
                 };
             }

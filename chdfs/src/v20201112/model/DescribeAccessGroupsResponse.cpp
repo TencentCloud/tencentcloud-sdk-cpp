@@ -24,7 +24,9 @@ using namespace TencentCloud::Chdfs::V20201112::Model;
 using namespace std;
 
 DescribeAccessGroupsResponse::DescribeAccessGroupsResponse() :
-    m_accessGroupsHasBeenSet(false)
+    m_accessGroupsHasBeenSet(false),
+    m_isOverHasBeenSet(false),
+    m_nextAccessGroupIdMarkerHasBeenSet(false)
 {
 }
 
@@ -82,6 +84,26 @@ CoreInternalOutcome DescribeAccessGroupsResponse::Deserialize(const string &payl
         m_accessGroupsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsOver") && !rsp["IsOver"].IsNull())
+    {
+        if (!rsp["IsOver"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsOver` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isOver = rsp["IsOver"].GetBool();
+        m_isOverHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NextAccessGroupIdMarker") && !rsp["NextAccessGroupIdMarker"].IsNull())
+    {
+        if (!rsp["NextAccessGroupIdMarker"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NextAccessGroupIdMarker` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nextAccessGroupIdMarker = string(rsp["NextAccessGroupIdMarker"].GetString());
+        m_nextAccessGroupIdMarkerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +129,22 @@ string DescribeAccessGroupsResponse::ToJsonString() const
         }
     }
 
+    if (m_isOverHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOver";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isOver, allocator);
+    }
+
+    if (m_nextAccessGroupIdMarkerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NextAccessGroupIdMarker";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nextAccessGroupIdMarker.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +165,26 @@ vector<AccessGroup> DescribeAccessGroupsResponse::GetAccessGroups() const
 bool DescribeAccessGroupsResponse::AccessGroupsHasBeenSet() const
 {
     return m_accessGroupsHasBeenSet;
+}
+
+bool DescribeAccessGroupsResponse::GetIsOver() const
+{
+    return m_isOver;
+}
+
+bool DescribeAccessGroupsResponse::IsOverHasBeenSet() const
+{
+    return m_isOverHasBeenSet;
+}
+
+string DescribeAccessGroupsResponse::GetNextAccessGroupIdMarker() const
+{
+    return m_nextAccessGroupIdMarker;
+}
+
+bool DescribeAccessGroupsResponse::NextAccessGroupIdMarkerHasBeenSet() const
+{
+    return m_nextAccessGroupIdMarkerHasBeenSet;
 }
 
 

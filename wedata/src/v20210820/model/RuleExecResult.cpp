@@ -53,7 +53,10 @@ RuleExecResult::RuleExecResult() :
     m_datasourceTypeHasBeenSet(false),
     m_ruleGroupTableIdHasBeenSet(false),
     m_monitorTypeHasBeenSet(false),
-    m_finishTimeHasBeenSet(false)
+    m_finishTimeHasBeenSet(false),
+    m_groupTypeHasBeenSet(false),
+    m_aspectTaskIdHasBeenSet(false),
+    m_catalogNameHasBeenSet(false)
 {
 }
 
@@ -406,6 +409,36 @@ CoreInternalOutcome RuleExecResult::Deserialize(const rapidjson::Value &value)
         m_finishTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("GroupType") && !value["GroupType"].IsNull())
+    {
+        if (!value["GroupType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleExecResult.GroupType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupType = string(value["GroupType"].GetString());
+        m_groupTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AspectTaskId") && !value["AspectTaskId"].IsNull())
+    {
+        if (!value["AspectTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleExecResult.AspectTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aspectTaskId = string(value["AspectTaskId"].GetString());
+        m_aspectTaskIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CatalogName") && !value["CatalogName"].IsNull())
+    {
+        if (!value["CatalogName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleExecResult.CatalogName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_catalogName = string(value["CatalogName"].GetString());
+        m_catalogNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -677,6 +710,30 @@ void RuleExecResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "FinishTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_finishTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aspectTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AspectTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aspectTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_catalogNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CatalogName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_catalogName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1208,5 +1265,53 @@ void RuleExecResult::SetFinishTime(const string& _finishTime)
 bool RuleExecResult::FinishTimeHasBeenSet() const
 {
     return m_finishTimeHasBeenSet;
+}
+
+string RuleExecResult::GetGroupType() const
+{
+    return m_groupType;
+}
+
+void RuleExecResult::SetGroupType(const string& _groupType)
+{
+    m_groupType = _groupType;
+    m_groupTypeHasBeenSet = true;
+}
+
+bool RuleExecResult::GroupTypeHasBeenSet() const
+{
+    return m_groupTypeHasBeenSet;
+}
+
+string RuleExecResult::GetAspectTaskId() const
+{
+    return m_aspectTaskId;
+}
+
+void RuleExecResult::SetAspectTaskId(const string& _aspectTaskId)
+{
+    m_aspectTaskId = _aspectTaskId;
+    m_aspectTaskIdHasBeenSet = true;
+}
+
+bool RuleExecResult::AspectTaskIdHasBeenSet() const
+{
+    return m_aspectTaskIdHasBeenSet;
+}
+
+string RuleExecResult::GetCatalogName() const
+{
+    return m_catalogName;
+}
+
+void RuleExecResult::SetCatalogName(const string& _catalogName)
+{
+    m_catalogName = _catalogName;
+    m_catalogNameHasBeenSet = true;
+}
+
+bool RuleExecResult::CatalogNameHasBeenSet() const
+{
+    return m_catalogNameHasBeenSet;
 }
 

@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool OwnerUinHasBeenSet() const;
 
+                    /**
+                     * 获取起始权限组ID标记
+                     * @return AccessGroupIdMarker 起始权限组ID标记
+                     * 
+                     */
+                    std::string GetAccessGroupIdMarker() const;
+
+                    /**
+                     * 设置起始权限组ID标记
+                     * @param _accessGroupIdMarker 起始权限组ID标记
+                     * 
+                     */
+                    void SetAccessGroupIdMarker(const std::string& _accessGroupIdMarker);
+
+                    /**
+                     * 判断参数 AccessGroupIdMarker 是否已赋值
+                     * @return AccessGroupIdMarker 是否已赋值
+                     * 
+                     */
+                    bool AccessGroupIdMarkerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -102,6 +123,12 @@ namespace TencentCloud
                      */
                     uint64_t m_ownerUin;
                     bool m_ownerUinHasBeenSet;
+
+                    /**
+                     * 起始权限组ID标记
+                     */
+                    std::string m_accessGroupIdMarker;
+                    bool m_accessGroupIdMarkerHasBeenSet;
 
                 };
             }

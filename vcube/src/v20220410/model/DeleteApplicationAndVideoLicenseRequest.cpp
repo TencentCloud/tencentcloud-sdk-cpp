@@ -22,7 +22,8 @@
 using namespace TencentCloud::Vcube::V20220410::Model;
 using namespace std;
 
-DeleteApplicationAndVideoLicenseRequest::DeleteApplicationAndVideoLicenseRequest()
+DeleteApplicationAndVideoLicenseRequest::DeleteApplicationAndVideoLicenseRequest() :
+    m_licenseIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DeleteApplicationAndVideoLicenseRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_licenseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LicenseId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_licenseId, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DeleteApplicationAndVideoLicenseRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DeleteApplicationAndVideoLicenseRequest::GetLicenseId() const
+{
+    return m_licenseId;
+}
+
+void DeleteApplicationAndVideoLicenseRequest::SetLicenseId(const uint64_t& _licenseId)
+{
+    m_licenseId = _licenseId;
+    m_licenseIdHasBeenSet = true;
+}
+
+bool DeleteApplicationAndVideoLicenseRequest::LicenseIdHasBeenSet() const
+{
+    return m_licenseIdHasBeenSet;
+}
 
 

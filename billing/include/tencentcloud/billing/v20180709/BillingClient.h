@@ -117,6 +117,8 @@
 #include <tencentcloud/billing/v20180709/model/DescribeCostSummaryByRegionResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeCostSummaryByResourceRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeCostSummaryByResourceResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeCostSummaryByTagRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeCostSummaryByTagResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeDealsByCondRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeDealsByCondResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeDosageCosDetailByDateRequest.h>
@@ -302,6 +304,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCostSummaryByResourceResponse> DescribeCostSummaryByResourceOutcome;
                 typedef std::future<DescribeCostSummaryByResourceOutcome> DescribeCostSummaryByResourceOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeCostSummaryByResourceRequest&, DescribeCostSummaryByResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCostSummaryByResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCostSummaryByTagResponse> DescribeCostSummaryByTagOutcome;
+                typedef std::future<DescribeCostSummaryByTagOutcome> DescribeCostSummaryByTagOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeCostSummaryByTagRequest&, DescribeCostSummaryByTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCostSummaryByTagAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDealsByCondResponse> DescribeDealsByCondOutcome;
                 typedef std::future<DescribeDealsByCondOutcome> DescribeDealsByCondOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeDealsByCondRequest&, DescribeDealsByCondOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDealsByCondAsyncHandler;
@@ -779,6 +784,15 @@ namespace TencentCloud
                 DescribeCostSummaryByResourceOutcome DescribeCostSummaryByResource(const Model::DescribeCostSummaryByResourceRequest &request);
                 void DescribeCostSummaryByResourceAsync(const Model::DescribeCostSummaryByResourceRequest& request, const DescribeCostSummaryByResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCostSummaryByResourceOutcomeCallable DescribeCostSummaryByResourceCallable(const Model::DescribeCostSummaryByResourceRequest& request);
+
+                /**
+                 *获取按标签汇总消耗详情
+                 * @param req DescribeCostSummaryByTagRequest
+                 * @return DescribeCostSummaryByTagOutcome
+                 */
+                DescribeCostSummaryByTagOutcome DescribeCostSummaryByTag(const Model::DescribeCostSummaryByTagRequest &request);
+                void DescribeCostSummaryByTagAsync(const Model::DescribeCostSummaryByTagRequest& request, const DescribeCostSummaryByTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCostSummaryByTagOutcomeCallable DescribeCostSummaryByTagCallable(const Model::DescribeCostSummaryByTagRequest& request);
 
                 /**
                  *查询订单

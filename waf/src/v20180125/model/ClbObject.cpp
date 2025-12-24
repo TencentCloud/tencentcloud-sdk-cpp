@@ -45,7 +45,10 @@ ClbObject::ClbObject() :
     m_objectFlowModeHasBeenSet(false),
     m_numericalVpcIdHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
-    m_addTimeHasBeenSet(false)
+    m_addTimeHasBeenSet(false),
+    m_memberAppIdHasBeenSet(false),
+    m_memberUinHasBeenSet(false),
+    m_memberNickNameHasBeenSet(false)
 {
 }
 
@@ -316,6 +319,36 @@ CoreInternalOutcome ClbObject::Deserialize(const rapidjson::Value &value)
         m_addTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("MemberAppId") && !value["MemberAppId"].IsNull())
+    {
+        if (!value["MemberAppId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClbObject.MemberAppId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_memberAppId = value["MemberAppId"].GetUint64();
+        m_memberAppIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("MemberUin") && !value["MemberUin"].IsNull())
+    {
+        if (!value["MemberUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClbObject.MemberUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_memberUin = string(value["MemberUin"].GetString());
+        m_memberUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("MemberNickName") && !value["MemberNickName"].IsNull())
+    {
+        if (!value["MemberNickName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClbObject.MemberNickName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_memberNickName = string(value["MemberNickName"].GetString());
+        m_memberNickNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -541,6 +574,30 @@ void ClbObject::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "AddTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_addTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_memberAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberAppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_memberAppId, allocator);
+    }
+
+    if (m_memberUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_memberUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_memberNickNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberNickName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_memberNickName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -944,5 +1001,53 @@ void ClbObject::SetAddTime(const string& _addTime)
 bool ClbObject::AddTimeHasBeenSet() const
 {
     return m_addTimeHasBeenSet;
+}
+
+uint64_t ClbObject::GetMemberAppId() const
+{
+    return m_memberAppId;
+}
+
+void ClbObject::SetMemberAppId(const uint64_t& _memberAppId)
+{
+    m_memberAppId = _memberAppId;
+    m_memberAppIdHasBeenSet = true;
+}
+
+bool ClbObject::MemberAppIdHasBeenSet() const
+{
+    return m_memberAppIdHasBeenSet;
+}
+
+string ClbObject::GetMemberUin() const
+{
+    return m_memberUin;
+}
+
+void ClbObject::SetMemberUin(const string& _memberUin)
+{
+    m_memberUin = _memberUin;
+    m_memberUinHasBeenSet = true;
+}
+
+bool ClbObject::MemberUinHasBeenSet() const
+{
+    return m_memberUinHasBeenSet;
+}
+
+string ClbObject::GetMemberNickName() const
+{
+    return m_memberNickName;
+}
+
+void ClbObject::SetMemberNickName(const string& _memberNickName)
+{
+    m_memberNickName = _memberNickName;
+    m_memberNickNameHasBeenSet = true;
+}
+
+bool ClbObject::MemberNickNameHasBeenSet() const
+{
+    return m_memberNickNameHasBeenSet;
 }
 

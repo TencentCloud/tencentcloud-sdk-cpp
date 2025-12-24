@@ -24,7 +24,9 @@ using namespace TencentCloud::Chdfs::V20201112::Model;
 using namespace std;
 
 DescribeRestoreTasksResponse::DescribeRestoreTasksResponse() :
-    m_restoreTasksHasBeenSet(false)
+    m_restoreTasksHasBeenSet(false),
+    m_isOverHasBeenSet(false),
+    m_nextRestoreTaskIdMarkerHasBeenSet(false)
 {
 }
 
@@ -82,6 +84,26 @@ CoreInternalOutcome DescribeRestoreTasksResponse::Deserialize(const string &payl
         m_restoreTasksHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsOver") && !rsp["IsOver"].IsNull())
+    {
+        if (!rsp["IsOver"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsOver` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isOver = rsp["IsOver"].GetBool();
+        m_isOverHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NextRestoreTaskIdMarker") && !rsp["NextRestoreTaskIdMarker"].IsNull())
+    {
+        if (!rsp["NextRestoreTaskIdMarker"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NextRestoreTaskIdMarker` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nextRestoreTaskIdMarker = rsp["NextRestoreTaskIdMarker"].GetUint64();
+        m_nextRestoreTaskIdMarkerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +129,22 @@ string DescribeRestoreTasksResponse::ToJsonString() const
         }
     }
 
+    if (m_isOverHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOver";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isOver, allocator);
+    }
+
+    if (m_nextRestoreTaskIdMarkerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NextRestoreTaskIdMarker";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nextRestoreTaskIdMarker, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +165,26 @@ vector<RestoreTask> DescribeRestoreTasksResponse::GetRestoreTasks() const
 bool DescribeRestoreTasksResponse::RestoreTasksHasBeenSet() const
 {
     return m_restoreTasksHasBeenSet;
+}
+
+bool DescribeRestoreTasksResponse::GetIsOver() const
+{
+    return m_isOver;
+}
+
+bool DescribeRestoreTasksResponse::IsOverHasBeenSet() const
+{
+    return m_isOverHasBeenSet;
+}
+
+uint64_t DescribeRestoreTasksResponse::GetNextRestoreTaskIdMarker() const
+{
+    return m_nextRestoreTaskIdMarker;
+}
+
+bool DescribeRestoreTasksResponse::NextRestoreTaskIdMarkerHasBeenSet() const
+{
+    return m_nextRestoreTaskIdMarkerHasBeenSet;
 }
 
 

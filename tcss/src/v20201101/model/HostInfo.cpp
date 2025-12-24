@@ -43,7 +43,8 @@ HostInfo::HostInfo() :
     m_clusterAccessedStatusHasBeenSet(false),
     m_chargeCoresCntHasBeenSet(false),
     m_defendStatusHasBeenSet(false),
-    m_coresCntHasBeenSet(false)
+    m_coresCntHasBeenSet(false),
+    m_lastOnlineTimeHasBeenSet(false)
 {
 }
 
@@ -299,6 +300,16 @@ CoreInternalOutcome HostInfo::Deserialize(const rapidjson::Value &value)
         m_coresCntHasBeenSet = true;
     }
 
+    if (value.HasMember("LastOnlineTime") && !value["LastOnlineTime"].IsNull())
+    {
+        if (!value["LastOnlineTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostInfo.LastOnlineTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastOnlineTime = string(value["LastOnlineTime"].GetString());
+        m_lastOnlineTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -496,6 +507,14 @@ void HostInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "CoresCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_coresCnt, allocator);
+    }
+
+    if (m_lastOnlineTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastOnlineTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastOnlineTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -867,5 +886,21 @@ void HostInfo::SetCoresCnt(const uint64_t& _coresCnt)
 bool HostInfo::CoresCntHasBeenSet() const
 {
     return m_coresCntHasBeenSet;
+}
+
+string HostInfo::GetLastOnlineTime() const
+{
+    return m_lastOnlineTime;
+}
+
+void HostInfo::SetLastOnlineTime(const string& _lastOnlineTime)
+{
+    m_lastOnlineTime = _lastOnlineTime;
+    m_lastOnlineTimeHasBeenSet = true;
+}
+
+bool HostInfo::LastOnlineTimeHasBeenSet() const
+{
+    return m_lastOnlineTimeHasBeenSet;
 }
 

@@ -88,7 +88,11 @@ InstanceOpsDto::InstanceOpsDto() :
     m_allowRedoTypeHasBeenSet(false),
     m_instanceCycleTypeHasBeenSet(false),
     m_instanceSchedulerDescHasBeenSet(false),
-    m_privilegesHasBeenSet(false)
+    m_privilegesHasBeenSet(false),
+    m_taskExecutionIdHasBeenSet(false),
+    m_dlcTaskIdHasBeenSet(false),
+    m_dlcSparkJobIdHasBeenSet(false),
+    m_extHasBeenSet(false)
 {
 }
 
@@ -817,6 +821,53 @@ CoreInternalOutcome InstanceOpsDto::Deserialize(const rapidjson::Value &value)
         m_privilegesHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskExecutionId") && !value["TaskExecutionId"].IsNull())
+    {
+        if (!value["TaskExecutionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.TaskExecutionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskExecutionId = string(value["TaskExecutionId"].GetString());
+        m_taskExecutionIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DlcTaskId") && !value["DlcTaskId"].IsNull())
+    {
+        if (!value["DlcTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.DlcTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dlcTaskId = string(value["DlcTaskId"].GetString());
+        m_dlcTaskIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DlcSparkJobId") && !value["DlcSparkJobId"].IsNull())
+    {
+        if (!value["DlcSparkJobId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.DlcSparkJobId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dlcSparkJobId = string(value["DlcSparkJobId"].GetString());
+        m_dlcSparkJobIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Ext") && !value["Ext"].IsNull())
+    {
+        if (!value["Ext"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.Ext` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ext.Deserialize(value["Ext"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1392,6 +1443,39 @@ void InstanceOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_taskExecutionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskExecutionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskExecutionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dlcTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DlcTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dlcTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dlcSparkJobIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DlcSparkJobId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dlcSparkJobId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ext";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ext.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2483,5 +2567,69 @@ void InstanceOpsDto::SetPrivileges(const vector<string>& _privileges)
 bool InstanceOpsDto::PrivilegesHasBeenSet() const
 {
     return m_privilegesHasBeenSet;
+}
+
+string InstanceOpsDto::GetTaskExecutionId() const
+{
+    return m_taskExecutionId;
+}
+
+void InstanceOpsDto::SetTaskExecutionId(const string& _taskExecutionId)
+{
+    m_taskExecutionId = _taskExecutionId;
+    m_taskExecutionIdHasBeenSet = true;
+}
+
+bool InstanceOpsDto::TaskExecutionIdHasBeenSet() const
+{
+    return m_taskExecutionIdHasBeenSet;
+}
+
+string InstanceOpsDto::GetDlcTaskId() const
+{
+    return m_dlcTaskId;
+}
+
+void InstanceOpsDto::SetDlcTaskId(const string& _dlcTaskId)
+{
+    m_dlcTaskId = _dlcTaskId;
+    m_dlcTaskIdHasBeenSet = true;
+}
+
+bool InstanceOpsDto::DlcTaskIdHasBeenSet() const
+{
+    return m_dlcTaskIdHasBeenSet;
+}
+
+string InstanceOpsDto::GetDlcSparkJobId() const
+{
+    return m_dlcSparkJobId;
+}
+
+void InstanceOpsDto::SetDlcSparkJobId(const string& _dlcSparkJobId)
+{
+    m_dlcSparkJobId = _dlcSparkJobId;
+    m_dlcSparkJobIdHasBeenSet = true;
+}
+
+bool InstanceOpsDto::DlcSparkJobIdHasBeenSet() const
+{
+    return m_dlcSparkJobIdHasBeenSet;
+}
+
+StrToStrMap InstanceOpsDto::GetExt() const
+{
+    return m_ext;
+}
+
+void InstanceOpsDto::SetExt(const StrToStrMap& _ext)
+{
+    m_ext = _ext;
+    m_extHasBeenSet = true;
+}
+
+bool InstanceOpsDto::ExtHasBeenSet() const
+{
+    return m_extHasBeenSet;
 }
 

@@ -27,6 +27,7 @@
 #include <tencentcloud/wedata/v20210820/model/TaskTypeOpsDto.h>
 #include <tencentcloud/wedata/v20210820/model/InstanceOpsDto.h>
 #include <tencentcloud/wedata/v20210820/model/InstanceLifeCycleOpsDto.h>
+#include <tencentcloud/wedata/v20210820/model/StrToStrMap.h>
 
 
 namespace TencentCloud
@@ -1733,6 +1734,106 @@ namespace TencentCloud
                      */
                     bool PrivilegesHasBeenSet() const;
 
+                    /**
+                     * 获取任务执行id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskExecutionId 任务执行id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTaskExecutionId() const;
+
+                    /**
+                     * 设置任务执行id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskExecutionId 任务执行id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskExecutionId(const std::string& _taskExecutionId);
+
+                    /**
+                     * 判断参数 TaskExecutionId 是否已赋值
+                     * @return TaskExecutionId 是否已赋值
+                     * 
+                     */
+                    bool TaskExecutionIdHasBeenSet() const;
+
+                    /**
+                     * 获取dlc taskid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DlcTaskId dlc taskid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDlcTaskId() const;
+
+                    /**
+                     * 设置dlc taskid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dlcTaskId dlc taskid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDlcTaskId(const std::string& _dlcTaskId);
+
+                    /**
+                     * 判断参数 DlcTaskId 是否已赋值
+                     * @return DlcTaskId 是否已赋值
+                     * 
+                     */
+                    bool DlcTaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取dlc jobid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DlcSparkJobId dlc jobid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDlcSparkJobId() const;
+
+                    /**
+                     * 设置dlc jobid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dlcSparkJobId dlc jobid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDlcSparkJobId(const std::string& _dlcSparkJobId);
+
+                    /**
+                     * 判断参数 DlcSparkJobId 是否已赋值
+                     * @return DlcSparkJobId 是否已赋值
+                     * 
+                     */
+                    bool DlcSparkJobIdHasBeenSet() const;
+
+                    /**
+                     * 获取扩展属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ext 扩展属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    StrToStrMap GetExt() const;
+
+                    /**
+                     * 设置扩展属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ext 扩展属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExt(const StrToStrMap& _ext);
+
+                    /**
+                     * 判断参数 Ext 是否已赋值
+                     * @return Ext 是否已赋值
+                     * 
+                     */
+                    bool ExtHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2206,6 +2307,34 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_privileges;
                     bool m_privilegesHasBeenSet;
+
+                    /**
+                     * 任务执行id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taskExecutionId;
+                    bool m_taskExecutionIdHasBeenSet;
+
+                    /**
+                     * dlc taskid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dlcTaskId;
+                    bool m_dlcTaskIdHasBeenSet;
+
+                    /**
+                     * dlc jobid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dlcSparkJobId;
+                    bool m_dlcSparkJobIdHasBeenSet;
+
+                    /**
+                     * 扩展属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    StrToStrMap m_ext;
+                    bool m_extHasBeenSet;
 
                 };
             }

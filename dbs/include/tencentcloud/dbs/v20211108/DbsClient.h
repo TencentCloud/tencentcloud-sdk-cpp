@@ -25,10 +25,16 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/dbs/v20211108/model/ConfigureBackupPlanRequest.h>
 #include <tencentcloud/dbs/v20211108/model/ConfigureBackupPlanResponse.h>
+#include <tencentcloud/dbs/v20211108/model/CreateBackupPlanRequest.h>
+#include <tencentcloud/dbs/v20211108/model/CreateBackupPlanResponse.h>
 #include <tencentcloud/dbs/v20211108/model/CreateConnectTestJobRequest.h>
 #include <tencentcloud/dbs/v20211108/model/CreateConnectTestJobResponse.h>
 #include <tencentcloud/dbs/v20211108/model/DescribeBackupCheckJobRequest.h>
 #include <tencentcloud/dbs/v20211108/model/DescribeBackupCheckJobResponse.h>
+#include <tencentcloud/dbs/v20211108/model/DescribeBackupPlansRequest.h>
+#include <tencentcloud/dbs/v20211108/model/DescribeBackupPlansResponse.h>
+#include <tencentcloud/dbs/v20211108/model/DescribeConnectTestResultRequest.h>
+#include <tencentcloud/dbs/v20211108/model/DescribeConnectTestResultResponse.h>
 #include <tencentcloud/dbs/v20211108/model/StartBackupCheckJobRequest.h>
 #include <tencentcloud/dbs/v20211108/model/StartBackupCheckJobResponse.h>
 #include <tencentcloud/dbs/v20211108/model/StartBackupPlanRequest.h>
@@ -50,12 +56,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ConfigureBackupPlanResponse> ConfigureBackupPlanOutcome;
                 typedef std::future<ConfigureBackupPlanOutcome> ConfigureBackupPlanOutcomeCallable;
                 typedef std::function<void(const DbsClient*, const Model::ConfigureBackupPlanRequest&, ConfigureBackupPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ConfigureBackupPlanAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBackupPlanResponse> CreateBackupPlanOutcome;
+                typedef std::future<CreateBackupPlanOutcome> CreateBackupPlanOutcomeCallable;
+                typedef std::function<void(const DbsClient*, const Model::CreateBackupPlanRequest&, CreateBackupPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupPlanAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateConnectTestJobResponse> CreateConnectTestJobOutcome;
                 typedef std::future<CreateConnectTestJobOutcome> CreateConnectTestJobOutcomeCallable;
                 typedef std::function<void(const DbsClient*, const Model::CreateConnectTestJobRequest&, CreateConnectTestJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConnectTestJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBackupCheckJobResponse> DescribeBackupCheckJobOutcome;
                 typedef std::future<DescribeBackupCheckJobOutcome> DescribeBackupCheckJobOutcomeCallable;
                 typedef std::function<void(const DbsClient*, const Model::DescribeBackupCheckJobRequest&, DescribeBackupCheckJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupCheckJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackupPlansResponse> DescribeBackupPlansOutcome;
+                typedef std::future<DescribeBackupPlansOutcome> DescribeBackupPlansOutcomeCallable;
+                typedef std::function<void(const DbsClient*, const Model::DescribeBackupPlansRequest&, DescribeBackupPlansOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupPlansAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConnectTestResultResponse> DescribeConnectTestResultOutcome;
+                typedef std::future<DescribeConnectTestResultOutcome> DescribeConnectTestResultOutcomeCallable;
+                typedef std::function<void(const DbsClient*, const Model::DescribeConnectTestResultRequest&, DescribeConnectTestResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConnectTestResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartBackupCheckJobResponse> StartBackupCheckJobOutcome;
                 typedef std::future<StartBackupCheckJobOutcome> StartBackupCheckJobOutcomeCallable;
                 typedef std::function<void(const DbsClient*, const Model::StartBackupCheckJobRequest&, StartBackupCheckJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartBackupCheckJobAsyncHandler;
@@ -75,6 +90,15 @@ namespace TencentCloud
                 ConfigureBackupPlanOutcomeCallable ConfigureBackupPlanCallable(const Model::ConfigureBackupPlanRequest& request);
 
                 /**
+                 *该接口用于创建备份计划。
+                 * @param req CreateBackupPlanRequest
+                 * @return CreateBackupPlanOutcome
+                 */
+                CreateBackupPlanOutcome CreateBackupPlan(const Model::CreateBackupPlanRequest &request);
+                void CreateBackupPlanAsync(const Model::CreateBackupPlanRequest& request, const CreateBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBackupPlanOutcomeCallable CreateBackupPlanCallable(const Model::CreateBackupPlanRequest& request);
+
+                /**
                  *该接口用于创建连通性检测任务，请在创建备份计划前，通过该接口来检测你的源端实例是否连通性正常。
                  * @param req CreateConnectTestJobRequest
                  * @return CreateConnectTestJobOutcome
@@ -91,6 +115,24 @@ namespace TencentCloud
                 DescribeBackupCheckJobOutcome DescribeBackupCheckJob(const Model::DescribeBackupCheckJobRequest &request);
                 void DescribeBackupCheckJobAsync(const Model::DescribeBackupCheckJobRequest& request, const DescribeBackupCheckJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBackupCheckJobOutcomeCallable DescribeBackupCheckJobCallable(const Model::DescribeBackupCheckJobRequest& request);
+
+                /**
+                 *本接口（DescribeBackupPlans）用于查询备份计划列表。
+                 * @param req DescribeBackupPlansRequest
+                 * @return DescribeBackupPlansOutcome
+                 */
+                DescribeBackupPlansOutcome DescribeBackupPlans(const Model::DescribeBackupPlansRequest &request);
+                void DescribeBackupPlansAsync(const Model::DescribeBackupPlansRequest& request, const DescribeBackupPlansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupPlansOutcomeCallable DescribeBackupPlansCallable(const Model::DescribeBackupPlansRequest& request);
+
+                /**
+                 *该接口用于查询连通性检测任务的结果
+                 * @param req DescribeConnectTestResultRequest
+                 * @return DescribeConnectTestResultOutcome
+                 */
+                DescribeConnectTestResultOutcome DescribeConnectTestResult(const Model::DescribeConnectTestResultRequest &request);
+                void DescribeConnectTestResultAsync(const Model::DescribeConnectTestResultRequest& request, const DescribeConnectTestResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConnectTestResultOutcomeCallable DescribeConnectTestResultCallable(const Model::DescribeConnectTestResultRequest& request);
 
                 /**
                  *本接口（StartBackupCheckJob）用于创建备份计划预校验任务。

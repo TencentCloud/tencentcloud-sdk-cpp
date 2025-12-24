@@ -28,6 +28,7 @@ CreateAigcVideoTaskRequest::CreateAigcVideoTaskRequest() :
     m_modelVersionHasBeenSet(false),
     m_fileInfosHasBeenSet(false),
     m_lastFrameFileIdHasBeenSet(false),
+    m_lastFrameUrlHasBeenSet(false),
     m_promptHasBeenSet(false),
     m_negativePromptHasBeenSet(false),
     m_enhancePromptHasBeenSet(false),
@@ -91,6 +92,14 @@ string CreateAigcVideoTaskRequest::ToJsonString() const
         string key = "LastFrameFileId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_lastFrameFileId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lastFrameUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastFrameUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_lastFrameUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_promptHasBeenSet)
@@ -244,6 +253,22 @@ void CreateAigcVideoTaskRequest::SetLastFrameFileId(const string& _lastFrameFile
 bool CreateAigcVideoTaskRequest::LastFrameFileIdHasBeenSet() const
 {
     return m_lastFrameFileIdHasBeenSet;
+}
+
+string CreateAigcVideoTaskRequest::GetLastFrameUrl() const
+{
+    return m_lastFrameUrl;
+}
+
+void CreateAigcVideoTaskRequest::SetLastFrameUrl(const string& _lastFrameUrl)
+{
+    m_lastFrameUrl = _lastFrameUrl;
+    m_lastFrameUrlHasBeenSet = true;
+}
+
+bool CreateAigcVideoTaskRequest::LastFrameUrlHasBeenSet() const
+{
+    return m_lastFrameUrlHasBeenSet;
 }
 
 string CreateAigcVideoTaskRequest::GetPrompt() const

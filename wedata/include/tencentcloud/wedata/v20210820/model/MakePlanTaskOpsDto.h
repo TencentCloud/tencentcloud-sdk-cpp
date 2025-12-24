@@ -148,18 +148,18 @@ namespace TencentCloud
                     bool SuccessPercentHasBeenSet() const;
 
                     /**
-                     * 获取预计生成的总实例个数，由于是异步生成，-1代表实例还未完完全生成
+                     * 获取预计生成的总实例个数，由于是异步生成，-1代表实例还未完全生成
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceTotalCount 预计生成的总实例个数，由于是异步生成，-1代表实例还未完完全生成
+                     * @return InstanceTotalCount 预计生成的总实例个数，由于是异步生成，-1代表实例还未完全生成
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInstanceTotalCount() const;
 
                     /**
-                     * 设置预计生成的总实例个数，由于是异步生成，-1代表实例还未完完全生成
+                     * 设置预计生成的总实例个数，由于是异步生成，-1代表实例还未完全生成
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceTotalCount 预计生成的总实例个数，由于是异步生成，-1代表实例还未完完全生成
+                     * @param _instanceTotalCount 预计生成的总实例个数，由于是异步生成，-1代表实例还未完全生成
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -171,6 +171,31 @@ namespace TencentCloud
                      * 
                      */
                     bool InstanceTotalCountHasBeenSet() const;
+
+                    /**
+                     * 获取补录任务实例失败百分数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FailurePercent 补录任务实例失败百分数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetFailurePercent() const;
+
+                    /**
+                     * 设置补录任务实例失败百分数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _failurePercent 补录任务实例失败百分数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFailurePercent(const int64_t& _failurePercent);
+
+                    /**
+                     * 判断参数 FailurePercent 是否已赋值
+                     * @return FailurePercent 是否已赋值
+                     * 
+                     */
+                    bool FailurePercentHasBeenSet() const;
 
                 private:
 
@@ -203,11 +228,18 @@ namespace TencentCloud
                     bool m_successPercentHasBeenSet;
 
                     /**
-                     * 预计生成的总实例个数，由于是异步生成，-1代表实例还未完完全生成
+                     * 预计生成的总实例个数，由于是异步生成，-1代表实例还未完全生成
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_instanceTotalCount;
                     bool m_instanceTotalCountHasBeenSet;
+
+                    /**
+                     * 补录任务实例失败百分数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_failurePercent;
+                    bool m_failurePercentHasBeenSet;
 
                 };
             }

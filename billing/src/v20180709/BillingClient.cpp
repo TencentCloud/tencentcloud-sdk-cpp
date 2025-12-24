@@ -2390,6 +2390,56 @@ BillingClient::DescribeCostSummaryByResourceOutcomeCallable BillingClient::Descr
     return prom->get_future();
 }
 
+BillingClient::DescribeCostSummaryByTagOutcome BillingClient::DescribeCostSummaryByTag(const DescribeCostSummaryByTagRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCostSummaryByTag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCostSummaryByTagResponse rsp = DescribeCostSummaryByTagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCostSummaryByTagOutcome(rsp);
+        else
+            return DescribeCostSummaryByTagOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCostSummaryByTagOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::DescribeCostSummaryByTagAsync(const DescribeCostSummaryByTagRequest& request, const DescribeCostSummaryByTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCostSummaryByTagRequest&;
+    using Resp = DescribeCostSummaryByTagResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCostSummaryByTag", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BillingClient::DescribeCostSummaryByTagOutcomeCallable BillingClient::DescribeCostSummaryByTagCallable(const DescribeCostSummaryByTagRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCostSummaryByTagOutcome>>();
+    DescribeCostSummaryByTagAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeCostSummaryByTagRequest&,
+        DescribeCostSummaryByTagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 BillingClient::DescribeDealsByCondOutcome BillingClient::DescribeDealsByCond(const DescribeDealsByCondRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDealsByCond");

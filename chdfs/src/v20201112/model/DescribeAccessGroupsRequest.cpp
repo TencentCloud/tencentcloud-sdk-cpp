@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeAccessGroupsRequest::DescribeAccessGroupsRequest() :
     m_vpcIdHasBeenSet(false),
-    m_ownerUinHasBeenSet(false)
+    m_ownerUinHasBeenSet(false),
+    m_accessGroupIdMarkerHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeAccessGroupsRequest::ToJsonString() const
         string key = "OwnerUin";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ownerUin, allocator);
+    }
+
+    if (m_accessGroupIdMarkerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessGroupIdMarker";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accessGroupIdMarker.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeAccessGroupsRequest::SetOwnerUin(const uint64_t& _ownerUin)
 bool DescribeAccessGroupsRequest::OwnerUinHasBeenSet() const
 {
     return m_ownerUinHasBeenSet;
+}
+
+string DescribeAccessGroupsRequest::GetAccessGroupIdMarker() const
+{
+    return m_accessGroupIdMarker;
+}
+
+void DescribeAccessGroupsRequest::SetAccessGroupIdMarker(const string& _accessGroupIdMarker)
+{
+    m_accessGroupIdMarker = _accessGroupIdMarker;
+    m_accessGroupIdMarkerHasBeenSet = true;
+}
+
+bool DescribeAccessGroupsRequest::AccessGroupIdMarkerHasBeenSet() const
+{
+    return m_accessGroupIdMarkerHasBeenSet;
 }
 
 

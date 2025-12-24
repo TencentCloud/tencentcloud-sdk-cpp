@@ -115,7 +115,9 @@ TaskOpsDto::TaskOpsDto() :
     m_ownerIdHasBeenSet(false),
     m_privilegesHasBeenSet(false),
     m_bundleIdHasBeenSet(false),
-    m_bundleInfoHasBeenSet(false)
+    m_bundleInfoHasBeenSet(false),
+    m_workflowTypeHasBeenSet(false),
+    m_taskExtDTOHasBeenSet(false)
 {
 }
 
@@ -1139,6 +1141,33 @@ CoreInternalOutcome TaskOpsDto::Deserialize(const rapidjson::Value &value)
         m_bundleInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("WorkflowType") && !value["WorkflowType"].IsNull())
+    {
+        if (!value["WorkflowType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskOpsDto.WorkflowType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workflowType = string(value["WorkflowType"].GetString());
+        m_workflowTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskExtDTO") && !value["TaskExtDTO"].IsNull())
+    {
+        if (!value["TaskExtDTO"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskOpsDto.TaskExtDTO` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_taskExtDTO.Deserialize(value["TaskExtDTO"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_taskExtDTOHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1929,6 +1958,23 @@ void TaskOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "BundleInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_bundleInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workflowTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workflowType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskExtDTOHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskExtDTO";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_taskExtDTO.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -3452,5 +3498,37 @@ void TaskOpsDto::SetBundleInfo(const string& _bundleInfo)
 bool TaskOpsDto::BundleInfoHasBeenSet() const
 {
     return m_bundleInfoHasBeenSet;
+}
+
+string TaskOpsDto::GetWorkflowType() const
+{
+    return m_workflowType;
+}
+
+void TaskOpsDto::SetWorkflowType(const string& _workflowType)
+{
+    m_workflowType = _workflowType;
+    m_workflowTypeHasBeenSet = true;
+}
+
+bool TaskOpsDto::WorkflowTypeHasBeenSet() const
+{
+    return m_workflowTypeHasBeenSet;
+}
+
+TaskExtOpsDto TaskOpsDto::GetTaskExtDTO() const
+{
+    return m_taskExtDTO;
+}
+
+void TaskOpsDto::SetTaskExtDTO(const TaskExtOpsDto& _taskExtDTO)
+{
+    m_taskExtDTO = _taskExtDTO;
+    m_taskExtDTOHasBeenSet = true;
+}
+
+bool TaskOpsDto::TaskExtDTOHasBeenSet() const
+{
+    return m_taskExtDTOHasBeenSet;
 }
 

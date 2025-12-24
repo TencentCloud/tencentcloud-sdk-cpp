@@ -184,6 +184,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DescribeMapInfoResponse.h
   include/tencentcloud/cdn/v20180606/model/DescribeTrafficPackagesResponse.h
   include/tencentcloud/cdn/v20180606/model/DescribeMapInfoRequest.h
+  include/tencentcloud/cdn/v20180606/model/PurgeUrlsCacheRequest.h
   include/tencentcloud/cdn/v20180606/model/RuleQueryString.h
   include/tencentcloud/cdn/v20180606/model/DescribeIpVisitRequest.h
   include/tencentcloud/cdn/v20180606/model/HttpHeaderRule.h
@@ -196,6 +197,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DeleteClsLogTopicResponse.h
   include/tencentcloud/cdn/v20180606/model/DescribeBillingDataResponse.h
   include/tencentcloud/cdn/v20180606/model/SchemeKey.h
+  include/tencentcloud/cdn/v20180606/model/GeoBlocker.h
   include/tencentcloud/cdn/v20180606/model/StatisticItem.h
   include/tencentcloud/cdn/v20180606/model/DescribeImageConfigRequest.h
   include/tencentcloud/cdn/v20180606/model/DescribeCdnIpResponse.h
@@ -212,6 +214,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/ParamFilterRule.h
   include/tencentcloud/cdn/v20180606/model/CappingRule.h
   include/tencentcloud/cdn/v20180606/model/PushTask.h
+  include/tencentcloud/cdn/v20180606/model/AutoGuard.h
   include/tencentcloud/cdn/v20180606/model/ListClsLogTopicsRequest.h
   include/tencentcloud/cdn/v20180606/model/Seo.h
   include/tencentcloud/cdn/v20180606/model/BandwidthAlert.h
@@ -223,7 +226,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/ModifyDomainConfigResponse.h
   include/tencentcloud/cdn/v20180606/model/Quic.h
   include/tencentcloud/cdn/v20180606/model/CdnData.h
-  include/tencentcloud/cdn/v20180606/model/PurgeUrlsCacheRequest.h
+  include/tencentcloud/cdn/v20180606/model/GeoBlockStrategy.h
   include/tencentcloud/cdn/v20180606/model/StartCdnDomainRequest.h
   include/tencentcloud/cdn/v20180606/model/OriginPullOptimization.h
   include/tencentcloud/cdn/v20180606/model/ErrorPage.h
@@ -455,6 +458,7 @@ set(cdn_src
   src/v20180606/model/DescribeMapInfoResponse.cpp
   src/v20180606/model/DescribeTrafficPackagesResponse.cpp
   src/v20180606/model/DescribeMapInfoRequest.cpp
+  src/v20180606/model/PurgeUrlsCacheRequest.cpp
   src/v20180606/model/RuleQueryString.cpp
   src/v20180606/model/DescribeIpVisitRequest.cpp
   src/v20180606/model/HttpHeaderRule.cpp
@@ -467,6 +471,7 @@ set(cdn_src
   src/v20180606/model/DeleteClsLogTopicResponse.cpp
   src/v20180606/model/DescribeBillingDataResponse.cpp
   src/v20180606/model/SchemeKey.cpp
+  src/v20180606/model/GeoBlocker.cpp
   src/v20180606/model/StatisticItem.cpp
   src/v20180606/model/DescribeImageConfigRequest.cpp
   src/v20180606/model/DescribeCdnIpResponse.cpp
@@ -483,6 +488,7 @@ set(cdn_src
   src/v20180606/model/ParamFilterRule.cpp
   src/v20180606/model/CappingRule.cpp
   src/v20180606/model/PushTask.cpp
+  src/v20180606/model/AutoGuard.cpp
   src/v20180606/model/ListClsLogTopicsRequest.cpp
   src/v20180606/model/Seo.cpp
   src/v20180606/model/BandwidthAlert.cpp
@@ -494,7 +500,7 @@ set(cdn_src
   src/v20180606/model/ModifyDomainConfigResponse.cpp
   src/v20180606/model/Quic.cpp
   src/v20180606/model/CdnData.cpp
-  src/v20180606/model/PurgeUrlsCacheRequest.cpp
+  src/v20180606/model/GeoBlockStrategy.cpp
   src/v20180606/model/StartCdnDomainRequest.cpp
   src/v20180606/model/OriginPullOptimization.cpp
   src/v20180606/model/ErrorPage.cpp

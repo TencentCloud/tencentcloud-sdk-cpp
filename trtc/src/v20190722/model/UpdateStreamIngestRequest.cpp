@@ -27,7 +27,9 @@ UpdateStreamIngestRequest::UpdateStreamIngestRequest() :
     m_taskIdHasBeenSet(false),
     m_streamUrlHasBeenSet(false),
     m_volumeHasBeenSet(false),
-    m_isPauseHasBeenSet(false)
+    m_isPauseHasBeenSet(false),
+    m_enableProgressHasBeenSet(false),
+    m_tempoHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,22 @@ string UpdateStreamIngestRequest::ToJsonString() const
         string key = "IsPause";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isPause, allocator);
+    }
+
+    if (m_enableProgressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableProgress";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableProgress, allocator);
+    }
+
+    if (m_tempoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tempo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_tempo, allocator);
     }
 
 
@@ -164,6 +182,38 @@ void UpdateStreamIngestRequest::SetIsPause(const bool& _isPause)
 bool UpdateStreamIngestRequest::IsPauseHasBeenSet() const
 {
     return m_isPauseHasBeenSet;
+}
+
+bool UpdateStreamIngestRequest::GetEnableProgress() const
+{
+    return m_enableProgress;
+}
+
+void UpdateStreamIngestRequest::SetEnableProgress(const bool& _enableProgress)
+{
+    m_enableProgress = _enableProgress;
+    m_enableProgressHasBeenSet = true;
+}
+
+bool UpdateStreamIngestRequest::EnableProgressHasBeenSet() const
+{
+    return m_enableProgressHasBeenSet;
+}
+
+double UpdateStreamIngestRequest::GetTempo() const
+{
+    return m_tempo;
+}
+
+void UpdateStreamIngestRequest::SetTempo(const double& _tempo)
+{
+    m_tempo = _tempo;
+    m_tempoHasBeenSet = true;
+}
+
+bool UpdateStreamIngestRequest::TempoHasBeenSet() const
+{
+    return m_tempoHasBeenSet;
 }
 
 

@@ -23,7 +23,8 @@ using namespace TencentCloud::Chdfs::V20201112::Model;
 using namespace std;
 
 DescribeRestoreTasksRequest::DescribeRestoreTasksRequest() :
-    m_fileSystemIdHasBeenSet(false)
+    m_fileSystemIdHasBeenSet(false),
+    m_restoreTaskIdMarkerHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeRestoreTasksRequest::ToJsonString() const
         string key = "FileSystemId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_fileSystemId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_restoreTaskIdMarkerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RestoreTaskIdMarker";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_restoreTaskIdMarker, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeRestoreTasksRequest::SetFileSystemId(const string& _fileSystemId)
 bool DescribeRestoreTasksRequest::FileSystemIdHasBeenSet() const
 {
     return m_fileSystemIdHasBeenSet;
+}
+
+uint64_t DescribeRestoreTasksRequest::GetRestoreTaskIdMarker() const
+{
+    return m_restoreTaskIdMarker;
+}
+
+void DescribeRestoreTasksRequest::SetRestoreTaskIdMarker(const uint64_t& _restoreTaskIdMarker)
+{
+    m_restoreTaskIdMarker = _restoreTaskIdMarker;
+    m_restoreTaskIdMarkerHasBeenSet = true;
+}
+
+bool DescribeRestoreTasksRequest::RestoreTaskIdMarkerHasBeenSet() const
+{
+    return m_restoreTaskIdMarkerHasBeenSet;
 }
 
 

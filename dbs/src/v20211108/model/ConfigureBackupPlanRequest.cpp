@@ -25,6 +25,7 @@ using namespace std;
 ConfigureBackupPlanRequest::ConfigureBackupPlanRequest() :
     m_backupPlanIdHasBeenSet(false),
     m_backupPlanNameHasBeenSet(false),
+    m_upperParallelHasBeenSet(false),
     m_sourceEndPointHasBeenSet(false),
     m_backupObjectHasBeenSet(false),
     m_backupStrategyHasBeenSet(false),
@@ -53,6 +54,14 @@ string ConfigureBackupPlanRequest::ToJsonString() const
         string key = "BackupPlanName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_backupPlanName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_upperParallelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpperParallel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_upperParallel, allocator);
     }
 
     if (m_sourceEndPointHasBeenSet)
@@ -128,6 +137,22 @@ void ConfigureBackupPlanRequest::SetBackupPlanName(const string& _backupPlanName
 bool ConfigureBackupPlanRequest::BackupPlanNameHasBeenSet() const
 {
     return m_backupPlanNameHasBeenSet;
+}
+
+int64_t ConfigureBackupPlanRequest::GetUpperParallel() const
+{
+    return m_upperParallel;
+}
+
+void ConfigureBackupPlanRequest::SetUpperParallel(const int64_t& _upperParallel)
+{
+    m_upperParallel = _upperParallel;
+    m_upperParallelHasBeenSet = true;
+}
+
+bool ConfigureBackupPlanRequest::UpperParallelHasBeenSet() const
+{
+    return m_upperParallelHasBeenSet;
 }
 
 BackupEndpoint ConfigureBackupPlanRequest::GetSourceEndPoint() const

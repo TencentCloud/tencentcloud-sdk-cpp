@@ -25,7 +25,8 @@ MakePlanTaskOpsDto::MakePlanTaskOpsDto() :
     m_instanceCountHasBeenSet(false),
     m_completePercentHasBeenSet(false),
     m_successPercentHasBeenSet(false),
-    m_instanceTotalCountHasBeenSet(false)
+    m_instanceTotalCountHasBeenSet(false),
+    m_failurePercentHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,16 @@ CoreInternalOutcome MakePlanTaskOpsDto::Deserialize(const rapidjson::Value &valu
         m_instanceTotalCountHasBeenSet = true;
     }
 
+    if (value.HasMember("FailurePercent") && !value["FailurePercent"].IsNull())
+    {
+        if (!value["FailurePercent"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanTaskOpsDto.FailurePercent` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_failurePercent = value["FailurePercent"].GetInt64();
+        m_failurePercentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +148,14 @@ void MakePlanTaskOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "InstanceTotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceTotalCount, allocator);
+    }
+
+    if (m_failurePercentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailurePercent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_failurePercent, allocator);
     }
 
 }
@@ -220,5 +239,21 @@ void MakePlanTaskOpsDto::SetInstanceTotalCount(const int64_t& _instanceTotalCoun
 bool MakePlanTaskOpsDto::InstanceTotalCountHasBeenSet() const
 {
     return m_instanceTotalCountHasBeenSet;
+}
+
+int64_t MakePlanTaskOpsDto::GetFailurePercent() const
+{
+    return m_failurePercent;
+}
+
+void MakePlanTaskOpsDto::SetFailurePercent(const int64_t& _failurePercent)
+{
+    m_failurePercent = _failurePercent;
+    m_failurePercentHasBeenSet = true;
+}
+
+bool MakePlanTaskOpsDto::FailurePercentHasBeenSet() const
+{
+    return m_failurePercentHasBeenSet;
 }
 

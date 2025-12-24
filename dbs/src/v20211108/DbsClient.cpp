@@ -90,6 +90,56 @@ DbsClient::ConfigureBackupPlanOutcomeCallable DbsClient::ConfigureBackupPlanCall
     return prom->get_future();
 }
 
+DbsClient::CreateBackupPlanOutcome DbsClient::CreateBackupPlan(const CreateBackupPlanRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBackupPlan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBackupPlanResponse rsp = CreateBackupPlanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBackupPlanOutcome(rsp);
+        else
+            return CreateBackupPlanOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBackupPlanOutcome(outcome.GetError());
+    }
+}
+
+void DbsClient::CreateBackupPlanAsync(const CreateBackupPlanRequest& request, const CreateBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateBackupPlanRequest&;
+    using Resp = CreateBackupPlanResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateBackupPlan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbsClient::CreateBackupPlanOutcomeCallable DbsClient::CreateBackupPlanCallable(const CreateBackupPlanRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateBackupPlanOutcome>>();
+    CreateBackupPlanAsync(
+    request,
+    [prom](
+        const DbsClient*,
+        const CreateBackupPlanRequest&,
+        CreateBackupPlanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbsClient::CreateConnectTestJobOutcome DbsClient::CreateConnectTestJob(const CreateConnectTestJobRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConnectTestJob");
@@ -182,6 +232,106 @@ DbsClient::DescribeBackupCheckJobOutcomeCallable DbsClient::DescribeBackupCheckJ
         const DbsClient*,
         const DescribeBackupCheckJobRequest&,
         DescribeBackupCheckJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbsClient::DescribeBackupPlansOutcome DbsClient::DescribeBackupPlans(const DescribeBackupPlansRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupPlans");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupPlansResponse rsp = DescribeBackupPlansResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupPlansOutcome(rsp);
+        else
+            return DescribeBackupPlansOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupPlansOutcome(outcome.GetError());
+    }
+}
+
+void DbsClient::DescribeBackupPlansAsync(const DescribeBackupPlansRequest& request, const DescribeBackupPlansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBackupPlansRequest&;
+    using Resp = DescribeBackupPlansResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupPlans", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbsClient::DescribeBackupPlansOutcomeCallable DbsClient::DescribeBackupPlansCallable(const DescribeBackupPlansRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBackupPlansOutcome>>();
+    DescribeBackupPlansAsync(
+    request,
+    [prom](
+        const DbsClient*,
+        const DescribeBackupPlansRequest&,
+        DescribeBackupPlansOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbsClient::DescribeConnectTestResultOutcome DbsClient::DescribeConnectTestResult(const DescribeConnectTestResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConnectTestResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConnectTestResultResponse rsp = DescribeConnectTestResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConnectTestResultOutcome(rsp);
+        else
+            return DescribeConnectTestResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConnectTestResultOutcome(outcome.GetError());
+    }
+}
+
+void DbsClient::DescribeConnectTestResultAsync(const DescribeConnectTestResultRequest& request, const DescribeConnectTestResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeConnectTestResultRequest&;
+    using Resp = DescribeConnectTestResultResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeConnectTestResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbsClient::DescribeConnectTestResultOutcomeCallable DbsClient::DescribeConnectTestResultCallable(const DescribeConnectTestResultRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeConnectTestResultOutcome>>();
+    DescribeConnectTestResultAsync(
+    request,
+    [prom](
+        const DbsClient*,
+        const DescribeConnectTestResultRequest&,
+        DescribeConnectTestResultOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

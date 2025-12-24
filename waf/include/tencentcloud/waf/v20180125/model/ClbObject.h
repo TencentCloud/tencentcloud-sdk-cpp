@@ -571,6 +571,69 @@ namespace TencentCloud
                      */
                     bool AddTimeHasBeenSet() const;
 
+                    /**
+                     * 获取跨账号时，表示成员账号的appid
+                     * @return MemberAppId 跨账号时，表示成员账号的appid
+                     * 
+                     */
+                    uint64_t GetMemberAppId() const;
+
+                    /**
+                     * 设置跨账号时，表示成员账号的appid
+                     * @param _memberAppId 跨账号时，表示成员账号的appid
+                     * 
+                     */
+                    void SetMemberAppId(const uint64_t& _memberAppId);
+
+                    /**
+                     * 判断参数 MemberAppId 是否已赋值
+                     * @return MemberAppId 是否已赋值
+                     * 
+                     */
+                    bool MemberAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取跨账号时，表示成员账号的uin
+                     * @return MemberUin 跨账号时，表示成员账号的uin
+                     * 
+                     */
+                    std::string GetMemberUin() const;
+
+                    /**
+                     * 设置跨账号时，表示成员账号的uin
+                     * @param _memberUin 跨账号时，表示成员账号的uin
+                     * 
+                     */
+                    void SetMemberUin(const std::string& _memberUin);
+
+                    /**
+                     * 判断参数 MemberUin 是否已赋值
+                     * @return MemberUin 是否已赋值
+                     * 
+                     */
+                    bool MemberUinHasBeenSet() const;
+
+                    /**
+                     * 获取跨账号时，表示成员账号的昵称
+                     * @return MemberNickName 跨账号时，表示成员账号的昵称
+                     * 
+                     */
+                    std::string GetMemberNickName() const;
+
+                    /**
+                     * 设置跨账号时，表示成员账号的昵称
+                     * @param _memberNickName 跨账号时，表示成员账号的昵称
+                     * 
+                     */
+                    void SetMemberNickName(const std::string& _memberNickName);
+
+                    /**
+                     * 判断参数 MemberNickName 是否已赋值
+                     * @return MemberNickName 是否已赋值
+                     * 
+                     */
+                    bool MemberNickNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -722,6 +785,24 @@ namespace TencentCloud
                      */
                     std::string m_addTime;
                     bool m_addTimeHasBeenSet;
+
+                    /**
+                     * 跨账号时，表示成员账号的appid
+                     */
+                    uint64_t m_memberAppId;
+                    bool m_memberAppIdHasBeenSet;
+
+                    /**
+                     * 跨账号时，表示成员账号的uin
+                     */
+                    std::string m_memberUin;
+                    bool m_memberUinHasBeenSet;
+
+                    /**
+                     * 跨账号时，表示成员账号的昵称
+                     */
+                    std::string m_memberNickName;
+                    bool m_memberNickNameHasBeenSet;
 
                 };
             }

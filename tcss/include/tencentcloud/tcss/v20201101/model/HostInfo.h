@@ -539,6 +539,27 @@ namespace TencentCloud
                      */
                     bool CoresCntHasBeenSet() const;
 
+                    /**
+                     * 获取最近在线时间
+                     * @return LastOnlineTime 最近在线时间
+                     * 
+                     */
+                    std::string GetLastOnlineTime() const;
+
+                    /**
+                     * 设置最近在线时间
+                     * @param _lastOnlineTime 最近在线时间
+                     * 
+                     */
+                    void SetLastOnlineTime(const std::string& _lastOnlineTime);
+
+                    /**
+                     * 判断参数 LastOnlineTime 是否已赋值
+                     * @return LastOnlineTime 是否已赋值
+                     * 
+                     */
+                    bool LastOnlineTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -680,6 +701,12 @@ namespace TencentCloud
                      */
                     uint64_t m_coresCnt;
                     bool m_coresCntHasBeenSet;
+
+                    /**
+                     * 最近在线时间
+                     */
+                    std::string m_lastOnlineTime;
+                    bool m_lastOnlineTimeHasBeenSet;
 
                 };
             }

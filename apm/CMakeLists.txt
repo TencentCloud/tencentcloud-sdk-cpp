@@ -20,165 +20,187 @@ set(apm_public_header
 
 set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/DescribeApmAssociationResponse.h
-  include/tencentcloud/apm/v20210622/model/ModifyApmInstanceRequest.h
-  include/tencentcloud/apm/v20210622/model/ApmInstanceDetail.h
   include/tencentcloud/apm/v20210622/model/CreateApmInstanceRequest.h
+  include/tencentcloud/apm/v20210622/model/DescribeServiceOverviewResponse.h
+  include/tencentcloud/apm/v20210622/model/ApmSampleConfig.h
+  include/tencentcloud/apm/v20210622/model/AgentOperationConfigView.h
+  include/tencentcloud/apm/v20210622/model/SelectorView.h
+  include/tencentcloud/apm/v20210622/model/DescribeApmSampleConfigRequest.h
+  include/tencentcloud/apm/v20210622/model/DescribeApmSampleConfigResponse.h
+  include/tencentcloud/apm/v20210622/model/DescribeServiceOverviewRequest.h
+  include/tencentcloud/apm/v20210622/model/DescribeTopologyNewResponse.h
+  include/tencentcloud/apm/v20210622/model/ModifyApmApplicationConfigResponse.h
+  include/tencentcloud/apm/v20210622/model/DescribeApmServiceMetricResponse.h
+  include/tencentcloud/apm/v20210622/model/ModifyApmAssociationRequest.h
+  include/tencentcloud/apm/v20210622/model/DescribeGeneralOTSpanListResponse.h
+  include/tencentcloud/apm/v20210622/model/DescribeApmApplicationConfigResponse.h
+  include/tencentcloud/apm/v20210622/model/DescribeApmAssociationRequest.h
+  include/tencentcloud/apm/v20210622/model/APMKV.h
+  include/tencentcloud/apm/v20210622/model/Position.h
+  include/tencentcloud/apm/v20210622/model/ComponentTopologyView.h
+  include/tencentcloud/apm/v20210622/model/CreateProfileTaskRequest.h
+  include/tencentcloud/apm/v20210622/model/ApmPrometheusRules.h
+  include/tencentcloud/apm/v20210622/model/TopologyEdgeNew.h
+  include/tencentcloud/apm/v20210622/model/DescribeApmPrometheusRuleRequest.h
+  include/tencentcloud/apm/v20210622/model/CreateApmPrometheusRuleResponse.h
+  include/tencentcloud/apm/v20210622/model/TerminateApmInstanceResponse.h
+  include/tencentcloud/apm/v20210622/model/ApmMetricRecord.h
+  include/tencentcloud/apm/v20210622/model/TopologyNode.h
+  include/tencentcloud/apm/v20210622/model/DescribeApmAgentResponse.h
+  include/tencentcloud/apm/v20210622/model/CreateApmSampleConfigRequest.h
+  include/tencentcloud/apm/v20210622/model/DescribeTagValuesRequest.h
+  include/tencentcloud/apm/v20210622/model/ApmServiceMetric.h
+  include/tencentcloud/apm/v20210622/model/ApmAppConfig.h
+  include/tencentcloud/apm/v20210622/model/CreateApmSampleConfigResponse.h
+  include/tencentcloud/apm/v20210622/model/Line.h
+  include/tencentcloud/apm/v20210622/model/ModifyApmAssociationResponse.h
+  include/tencentcloud/apm/v20210622/model/APMKVItem.h
+  include/tencentcloud/apm/v20210622/model/DescribeGeneralSpanListRequest.h
+  include/tencentcloud/apm/v20210622/model/DescribeApmAgentRequest.h
+  include/tencentcloud/apm/v20210622/model/DescribeMetricRecordsRequest.h
+  include/tencentcloud/apm/v20210622/model/DescribeGeneralMetricDataRequest.h
+  include/tencentcloud/apm/v20210622/model/ModifyApmPrometheusRuleRequest.h
+  include/tencentcloud/apm/v20210622/model/ModifyApmInstanceResponse.h
+  include/tencentcloud/apm/v20210622/model/SpanTag.h
+  include/tencentcloud/apm/v20210622/model/DescribeGeneralMetricDataResponse.h
+  include/tencentcloud/apm/v20210622/model/ModifyApmInstanceRequest.h
+  include/tencentcloud/apm/v20210622/model/ModifyApmSampleConfigRequest.h
+  include/tencentcloud/apm/v20210622/model/QueryMetricItem.h
+  include/tencentcloud/apm/v20210622/model/ServiceDetail.h
+  include/tencentcloud/apm/v20210622/model/DescribeApmInstancesResponse.h
+  include/tencentcloud/apm/v20210622/model/DescribeApmPrometheusRuleResponse.h
+  include/tencentcloud/apm/v20210622/model/ModifyApmSampleConfigResponse.h
+  include/tencentcloud/apm/v20210622/model/DescribeApmApplicationConfigRequest.h
+  include/tencentcloud/apm/v20210622/model/CreateProfileTaskResponse.h
+  include/tencentcloud/apm/v20210622/model/ModifyApmPrometheusRuleResponse.h
+  include/tencentcloud/apm/v20210622/model/DescribeMetricRecordsResponse.h
+  include/tencentcloud/apm/v20210622/model/ApmTag.h
+  include/tencentcloud/apm/v20210622/model/Filter.h
+  include/tencentcloud/apm/v20210622/model/DescribeGeneralOTSpanListRequest.h
+  include/tencentcloud/apm/v20210622/model/DescribeGeneralApmApplicationConfigResponse.h
+  include/tencentcloud/apm/v20210622/model/CreateApmInstanceResponse.h
+  include/tencentcloud/apm/v20210622/model/DeleteApmSampleConfigResponse.h
+  include/tencentcloud/apm/v20210622/model/DescribeGeneralApmApplicationConfigRequest.h
+  include/tencentcloud/apm/v20210622/model/DescribeTopologyNewRequest.h
+  include/tencentcloud/apm/v20210622/model/DescribeApmInstancesRequest.h
+  include/tencentcloud/apm/v20210622/model/DeleteApmSampleConfigRequest.h
+  include/tencentcloud/apm/v20210622/model/SpanLog.h
+  include/tencentcloud/apm/v20210622/model/TerminateApmInstanceRequest.h
+  include/tencentcloud/apm/v20210622/model/ApmInstanceDetail.h
+  include/tencentcloud/apm/v20210622/model/Span.h
   include/tencentcloud/apm/v20210622/model/ModifyGeneralApmApplicationConfigRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeApmServiceMetricRequest.h
   include/tencentcloud/apm/v20210622/model/CreateApmPrometheusRuleRequest.h
-  include/tencentcloud/apm/v20210622/model/QueryMetricItem.h
-  include/tencentcloud/apm/v20210622/model/ModifyApmPrometheusRuleRequest.h
-  include/tencentcloud/apm/v20210622/model/ModifyGeneralApmApplicationConfigResponse.h
-  include/tencentcloud/apm/v20210622/model/DescribeApmInstancesResponse.h
-  include/tencentcloud/apm/v20210622/model/AgentOperationConfigView.h
+  include/tencentcloud/apm/v20210622/model/TkeMeta.h
   include/tencentcloud/apm/v20210622/model/Instrument.h
   include/tencentcloud/apm/v20210622/model/DescribeTagValuesResponse.h
-  include/tencentcloud/apm/v20210622/model/DescribeTagValuesRequest.h
-  include/tencentcloud/apm/v20210622/model/DescribeApmPrometheusRuleResponse.h
-  include/tencentcloud/apm/v20210622/model/ServiceDetail.h
-  include/tencentcloud/apm/v20210622/model/Span.h
   include/tencentcloud/apm/v20210622/model/ApmAgentInfo.h
-  include/tencentcloud/apm/v20210622/model/TerminateApmInstanceRequest.h
   include/tencentcloud/apm/v20210622/model/ApmApplicationConfigView.h
-  include/tencentcloud/apm/v20210622/model/ApmMetricRecord.h
-  include/tencentcloud/apm/v20210622/model/DescribeServiceOverviewRequest.h
-  include/tencentcloud/apm/v20210622/model/DescribeApmSampleConfigResponse.h
-  include/tencentcloud/apm/v20210622/model/DescribeApmAgentResponse.h
-  include/tencentcloud/apm/v20210622/model/CreateApmSampleConfigRequest.h
-  include/tencentcloud/apm/v20210622/model/DescribeApmSampleConfigRequest.h
-  include/tencentcloud/apm/v20210622/model/ModifyApmInstanceResponse.h
-  include/tencentcloud/apm/v20210622/model/SpanLog.h
-  include/tencentcloud/apm/v20210622/model/ApmServiceMetric.h
-  include/tencentcloud/apm/v20210622/model/ModifyApmSampleConfigResponse.h
-  include/tencentcloud/apm/v20210622/model/ApmAppConfig.h
-  include/tencentcloud/apm/v20210622/model/CreateApmSampleConfigResponse.h
-  include/tencentcloud/apm/v20210622/model/DescribeApmApplicationConfigRequest.h
-  include/tencentcloud/apm/v20210622/model/Filter.h
-  include/tencentcloud/apm/v20210622/model/ApmField.h
-  include/tencentcloud/apm/v20210622/model/Line.h
-  include/tencentcloud/apm/v20210622/model/DescribeGeneralSpanListResponse.h
-  include/tencentcloud/apm/v20210622/model/CreateProfileTaskResponse.h
-  include/tencentcloud/apm/v20210622/model/DescribeGeneralSpanListRequest.h
-  include/tencentcloud/apm/v20210622/model/ModifyApmPrometheusRuleResponse.h
-  include/tencentcloud/apm/v20210622/model/ApmAssociation.h
   include/tencentcloud/apm/v20210622/model/OrderBy.h
-  include/tencentcloud/apm/v20210622/model/DescribeServiceOverviewResponse.h
-  include/tencentcloud/apm/v20210622/model/DescribeApmServiceMetricResponse.h
-  include/tencentcloud/apm/v20210622/model/ModifyApmAssociationResponse.h
-  include/tencentcloud/apm/v20210622/model/DescribeMetricRecordsResponse.h
-  include/tencentcloud/apm/v20210622/model/DescribeGeneralOTSpanListResponse.h
-  include/tencentcloud/apm/v20210622/model/ApmTag.h
-  include/tencentcloud/apm/v20210622/model/ModifyApmApplicationConfigResponse.h
-  include/tencentcloud/apm/v20210622/model/DescribeApmApplicationConfigResponse.h
-  include/tencentcloud/apm/v20210622/model/DescribeApmAssociationRequest.h
+  include/tencentcloud/apm/v20210622/model/ApmField.h
+  include/tencentcloud/apm/v20210622/model/DescribeGeneralSpanListResponse.h
+  include/tencentcloud/apm/v20210622/model/ApmAssociation.h
+  include/tencentcloud/apm/v20210622/model/Resource.h
+  include/tencentcloud/apm/v20210622/model/Selectors.h
   include/tencentcloud/apm/v20210622/model/ModifyApmApplicationConfigRequest.h
-  include/tencentcloud/apm/v20210622/model/APMKV.h
-  include/tencentcloud/apm/v20210622/model/DescribeGeneralOTSpanListRequest.h
-  include/tencentcloud/apm/v20210622/model/DescribeApmAgentRequest.h
-  include/tencentcloud/apm/v20210622/model/DescribeMetricRecordsRequest.h
-  include/tencentcloud/apm/v20210622/model/DescribeGeneralApmApplicationConfigResponse.h
-  include/tencentcloud/apm/v20210622/model/DescribeGeneralMetricDataRequest.h
-  include/tencentcloud/apm/v20210622/model/DescribeApmPrometheusRuleRequest.h
-  include/tencentcloud/apm/v20210622/model/CreateApmInstanceResponse.h
+  include/tencentcloud/apm/v20210622/model/ModifyGeneralApmApplicationConfigResponse.h
+  include/tencentcloud/apm/v20210622/model/CVMMeta.h
   include/tencentcloud/apm/v20210622/model/SpanReference.h
-  include/tencentcloud/apm/v20210622/model/CreateProfileTaskRequest.h
   include/tencentcloud/apm/v20210622/model/SpanProcess.h
-  include/tencentcloud/apm/v20210622/model/DeleteApmSampleConfigResponse.h
-  include/tencentcloud/apm/v20210622/model/ModifyApmAssociationRequest.h
-  include/tencentcloud/apm/v20210622/model/ApmPrometheusRules.h
-  include/tencentcloud/apm/v20210622/model/ModifyApmSampleConfigRequest.h
-  include/tencentcloud/apm/v20210622/model/DescribeGeneralApmApplicationConfigRequest.h
-  include/tencentcloud/apm/v20210622/model/ApmSampleConfig.h
   include/tencentcloud/apm/v20210622/model/GeneralFilter.h
-  include/tencentcloud/apm/v20210622/model/DescribeApmInstancesRequest.h
-  include/tencentcloud/apm/v20210622/model/SpanTag.h
-  include/tencentcloud/apm/v20210622/model/DescribeGeneralMetricDataResponse.h
-  include/tencentcloud/apm/v20210622/model/DeleteApmSampleConfigRequest.h
-  include/tencentcloud/apm/v20210622/model/APMKVItem.h
-  include/tencentcloud/apm/v20210622/model/CreateApmPrometheusRuleResponse.h
-  include/tencentcloud/apm/v20210622/model/TerminateApmInstanceResponse.h
   )
 
 set(apm_src
   src/v20210622/ApmClient.cpp
   src/v20210622/model/DescribeApmAssociationResponse.cpp
-  src/v20210622/model/ModifyApmInstanceRequest.cpp
-  src/v20210622/model/ApmInstanceDetail.cpp
   src/v20210622/model/CreateApmInstanceRequest.cpp
+  src/v20210622/model/DescribeServiceOverviewResponse.cpp
+  src/v20210622/model/ApmSampleConfig.cpp
+  src/v20210622/model/AgentOperationConfigView.cpp
+  src/v20210622/model/SelectorView.cpp
+  src/v20210622/model/DescribeApmSampleConfigRequest.cpp
+  src/v20210622/model/DescribeApmSampleConfigResponse.cpp
+  src/v20210622/model/DescribeServiceOverviewRequest.cpp
+  src/v20210622/model/DescribeTopologyNewResponse.cpp
+  src/v20210622/model/ModifyApmApplicationConfigResponse.cpp
+  src/v20210622/model/DescribeApmServiceMetricResponse.cpp
+  src/v20210622/model/ModifyApmAssociationRequest.cpp
+  src/v20210622/model/DescribeGeneralOTSpanListResponse.cpp
+  src/v20210622/model/DescribeApmApplicationConfigResponse.cpp
+  src/v20210622/model/DescribeApmAssociationRequest.cpp
+  src/v20210622/model/APMKV.cpp
+  src/v20210622/model/Position.cpp
+  src/v20210622/model/ComponentTopologyView.cpp
+  src/v20210622/model/CreateProfileTaskRequest.cpp
+  src/v20210622/model/ApmPrometheusRules.cpp
+  src/v20210622/model/TopologyEdgeNew.cpp
+  src/v20210622/model/DescribeApmPrometheusRuleRequest.cpp
+  src/v20210622/model/CreateApmPrometheusRuleResponse.cpp
+  src/v20210622/model/TerminateApmInstanceResponse.cpp
+  src/v20210622/model/ApmMetricRecord.cpp
+  src/v20210622/model/TopologyNode.cpp
+  src/v20210622/model/DescribeApmAgentResponse.cpp
+  src/v20210622/model/CreateApmSampleConfigRequest.cpp
+  src/v20210622/model/DescribeTagValuesRequest.cpp
+  src/v20210622/model/ApmServiceMetric.cpp
+  src/v20210622/model/ApmAppConfig.cpp
+  src/v20210622/model/CreateApmSampleConfigResponse.cpp
+  src/v20210622/model/Line.cpp
+  src/v20210622/model/ModifyApmAssociationResponse.cpp
+  src/v20210622/model/APMKVItem.cpp
+  src/v20210622/model/DescribeGeneralSpanListRequest.cpp
+  src/v20210622/model/DescribeApmAgentRequest.cpp
+  src/v20210622/model/DescribeMetricRecordsRequest.cpp
+  src/v20210622/model/DescribeGeneralMetricDataRequest.cpp
+  src/v20210622/model/ModifyApmPrometheusRuleRequest.cpp
+  src/v20210622/model/ModifyApmInstanceResponse.cpp
+  src/v20210622/model/SpanTag.cpp
+  src/v20210622/model/DescribeGeneralMetricDataResponse.cpp
+  src/v20210622/model/ModifyApmInstanceRequest.cpp
+  src/v20210622/model/ModifyApmSampleConfigRequest.cpp
+  src/v20210622/model/QueryMetricItem.cpp
+  src/v20210622/model/ServiceDetail.cpp
+  src/v20210622/model/DescribeApmInstancesResponse.cpp
+  src/v20210622/model/DescribeApmPrometheusRuleResponse.cpp
+  src/v20210622/model/ModifyApmSampleConfigResponse.cpp
+  src/v20210622/model/DescribeApmApplicationConfigRequest.cpp
+  src/v20210622/model/CreateProfileTaskResponse.cpp
+  src/v20210622/model/ModifyApmPrometheusRuleResponse.cpp
+  src/v20210622/model/DescribeMetricRecordsResponse.cpp
+  src/v20210622/model/ApmTag.cpp
+  src/v20210622/model/Filter.cpp
+  src/v20210622/model/DescribeGeneralOTSpanListRequest.cpp
+  src/v20210622/model/DescribeGeneralApmApplicationConfigResponse.cpp
+  src/v20210622/model/CreateApmInstanceResponse.cpp
+  src/v20210622/model/DeleteApmSampleConfigResponse.cpp
+  src/v20210622/model/DescribeGeneralApmApplicationConfigRequest.cpp
+  src/v20210622/model/DescribeTopologyNewRequest.cpp
+  src/v20210622/model/DescribeApmInstancesRequest.cpp
+  src/v20210622/model/DeleteApmSampleConfigRequest.cpp
+  src/v20210622/model/SpanLog.cpp
+  src/v20210622/model/TerminateApmInstanceRequest.cpp
+  src/v20210622/model/ApmInstanceDetail.cpp
+  src/v20210622/model/Span.cpp
   src/v20210622/model/ModifyGeneralApmApplicationConfigRequest.cpp
   src/v20210622/model/DescribeApmServiceMetricRequest.cpp
   src/v20210622/model/CreateApmPrometheusRuleRequest.cpp
-  src/v20210622/model/QueryMetricItem.cpp
-  src/v20210622/model/ModifyApmPrometheusRuleRequest.cpp
-  src/v20210622/model/ModifyGeneralApmApplicationConfigResponse.cpp
-  src/v20210622/model/DescribeApmInstancesResponse.cpp
-  src/v20210622/model/AgentOperationConfigView.cpp
+  src/v20210622/model/TkeMeta.cpp
   src/v20210622/model/Instrument.cpp
   src/v20210622/model/DescribeTagValuesResponse.cpp
-  src/v20210622/model/DescribeTagValuesRequest.cpp
-  src/v20210622/model/DescribeApmPrometheusRuleResponse.cpp
-  src/v20210622/model/ServiceDetail.cpp
-  src/v20210622/model/Span.cpp
   src/v20210622/model/ApmAgentInfo.cpp
-  src/v20210622/model/TerminateApmInstanceRequest.cpp
   src/v20210622/model/ApmApplicationConfigView.cpp
-  src/v20210622/model/ApmMetricRecord.cpp
-  src/v20210622/model/DescribeServiceOverviewRequest.cpp
-  src/v20210622/model/DescribeApmSampleConfigResponse.cpp
-  src/v20210622/model/DescribeApmAgentResponse.cpp
-  src/v20210622/model/CreateApmSampleConfigRequest.cpp
-  src/v20210622/model/DescribeApmSampleConfigRequest.cpp
-  src/v20210622/model/ModifyApmInstanceResponse.cpp
-  src/v20210622/model/SpanLog.cpp
-  src/v20210622/model/ApmServiceMetric.cpp
-  src/v20210622/model/ModifyApmSampleConfigResponse.cpp
-  src/v20210622/model/ApmAppConfig.cpp
-  src/v20210622/model/CreateApmSampleConfigResponse.cpp
-  src/v20210622/model/DescribeApmApplicationConfigRequest.cpp
-  src/v20210622/model/Filter.cpp
-  src/v20210622/model/ApmField.cpp
-  src/v20210622/model/Line.cpp
-  src/v20210622/model/DescribeGeneralSpanListResponse.cpp
-  src/v20210622/model/CreateProfileTaskResponse.cpp
-  src/v20210622/model/DescribeGeneralSpanListRequest.cpp
-  src/v20210622/model/ModifyApmPrometheusRuleResponse.cpp
-  src/v20210622/model/ApmAssociation.cpp
   src/v20210622/model/OrderBy.cpp
-  src/v20210622/model/DescribeServiceOverviewResponse.cpp
-  src/v20210622/model/DescribeApmServiceMetricResponse.cpp
-  src/v20210622/model/ModifyApmAssociationResponse.cpp
-  src/v20210622/model/DescribeMetricRecordsResponse.cpp
-  src/v20210622/model/DescribeGeneralOTSpanListResponse.cpp
-  src/v20210622/model/ApmTag.cpp
-  src/v20210622/model/ModifyApmApplicationConfigResponse.cpp
-  src/v20210622/model/DescribeApmApplicationConfigResponse.cpp
-  src/v20210622/model/DescribeApmAssociationRequest.cpp
+  src/v20210622/model/ApmField.cpp
+  src/v20210622/model/DescribeGeneralSpanListResponse.cpp
+  src/v20210622/model/ApmAssociation.cpp
+  src/v20210622/model/Resource.cpp
+  src/v20210622/model/Selectors.cpp
   src/v20210622/model/ModifyApmApplicationConfigRequest.cpp
-  src/v20210622/model/APMKV.cpp
-  src/v20210622/model/DescribeGeneralOTSpanListRequest.cpp
-  src/v20210622/model/DescribeApmAgentRequest.cpp
-  src/v20210622/model/DescribeMetricRecordsRequest.cpp
-  src/v20210622/model/DescribeGeneralApmApplicationConfigResponse.cpp
-  src/v20210622/model/DescribeGeneralMetricDataRequest.cpp
-  src/v20210622/model/DescribeApmPrometheusRuleRequest.cpp
-  src/v20210622/model/CreateApmInstanceResponse.cpp
+  src/v20210622/model/ModifyGeneralApmApplicationConfigResponse.cpp
+  src/v20210622/model/CVMMeta.cpp
   src/v20210622/model/SpanReference.cpp
-  src/v20210622/model/CreateProfileTaskRequest.cpp
   src/v20210622/model/SpanProcess.cpp
-  src/v20210622/model/DeleteApmSampleConfigResponse.cpp
-  src/v20210622/model/ModifyApmAssociationRequest.cpp
-  src/v20210622/model/ApmPrometheusRules.cpp
-  src/v20210622/model/ModifyApmSampleConfigRequest.cpp
-  src/v20210622/model/DescribeGeneralApmApplicationConfigRequest.cpp
-  src/v20210622/model/ApmSampleConfig.cpp
   src/v20210622/model/GeneralFilter.cpp
-  src/v20210622/model/DescribeApmInstancesRequest.cpp
-  src/v20210622/model/SpanTag.cpp
-  src/v20210622/model/DescribeGeneralMetricDataResponse.cpp
-  src/v20210622/model/DeleteApmSampleConfigRequest.cpp
-  src/v20210622/model/APMKVItem.cpp
-  src/v20210622/model/CreateApmPrometheusRuleResponse.cpp
-  src/v20210622/model/TerminateApmInstanceResponse.cpp
   )
 
 set(apm_include
