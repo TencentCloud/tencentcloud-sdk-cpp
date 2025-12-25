@@ -190,3 +190,53 @@ EvtClient::DeleteRoleUserOutcomeCallable EvtClient::DeleteRoleUserCallable(const
     return prom->get_future();
 }
 
+EvtClient::PutMessageOutcome EvtClient::PutMessage(const PutMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "PutMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PutMessageResponse rsp = PutMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PutMessageOutcome(rsp);
+        else
+            return PutMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return PutMessageOutcome(outcome.GetError());
+    }
+}
+
+void EvtClient::PutMessageAsync(const PutMessageRequest& request, const PutMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const PutMessageRequest&;
+    using Resp = PutMessageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "PutMessage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EvtClient::PutMessageOutcomeCallable EvtClient::PutMessageCallable(const PutMessageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<PutMessageOutcome>>();
+    PutMessageAsync(
+    request,
+    [prom](
+        const EvtClient*,
+        const PutMessageRequest&,
+        PutMessageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+

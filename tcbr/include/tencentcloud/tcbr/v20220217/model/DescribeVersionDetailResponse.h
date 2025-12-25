@@ -24,6 +24,7 @@
 #include <tencentcloud/tcbr/v20220217/model/HpaPolicy.h>
 #include <tencentcloud/tcbr/v20220217/model/VpcConf.h>
 #include <tencentcloud/tcbr/v20220217/model/VolumeConf.h>
+#include <tencentcloud/tcbr/v20220217/model/BuildPacksInfo.h>
 
 
 namespace TencentCloud
@@ -47,8 +48,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取版本名
-                     * @return Name 版本名
+                     * 获取<p>版本名</p>
+                     * @return Name <p>版本名</p>
                      * 
                      */
                     std::string GetName() const;
@@ -61,8 +62,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取端口号
-                     * @return Port 端口号
+                     * 获取<p>端口号</p>
+                     * @return Port <p>端口号</p>
                      * 
                      */
                     int64_t GetPort() const;
@@ -75,8 +76,8 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取cpu 规格
-                     * @return Cpu cpu 规格
+                     * 获取<p>cpu 规格</p>
+                     * @return Cpu <p>cpu 规格</p>
                      * 
                      */
                     double GetCpu() const;
@@ -89,8 +90,8 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取mem 规格
-                     * @return Mem mem 规格
+                     * 获取<p>mem 规格</p>
+                     * @return Mem <p>mem 规格</p>
                      * 
                      */
                     double GetMem() const;
@@ -103,8 +104,8 @@ namespace TencentCloud
                     bool MemHasBeenSet() const;
 
                     /**
-                     * 获取最小副本数
-                     * @return MinNum 最小副本数
+                     * 获取<p>最小副本数</p>
+                     * @return MinNum <p>最小副本数</p>
                      * 
                      */
                     int64_t GetMinNum() const;
@@ -117,8 +118,8 @@ namespace TencentCloud
                     bool MinNumHasBeenSet() const;
 
                     /**
-                     * 获取最大副本数
-                     * @return MaxNum 最大副本数
+                     * 获取<p>最大副本数</p>
+                     * @return MaxNum <p>最大副本数</p>
                      * 
                      */
                     int64_t GetMaxNum() const;
@@ -131,8 +132,8 @@ namespace TencentCloud
                     bool MaxNumHasBeenSet() const;
 
                     /**
-                     * 获取扩缩容策略
-                     * @return PolicyDetails 扩缩容策略
+                     * 获取<p>扩缩容策略</p>
+                     * @return PolicyDetails <p>扩缩容策略</p>
                      * 
                      */
                     std::vector<HpaPolicy> GetPolicyDetails() const;
@@ -145,8 +146,8 @@ namespace TencentCloud
                     bool PolicyDetailsHasBeenSet() const;
 
                     /**
-                     * 获取Dockerfile path
-                     * @return Dockerfile Dockerfile path
+                     * 获取<p>Dockerfile path</p>
+                     * @return Dockerfile <p>Dockerfile path</p>
                      * 
                      */
                     std::string GetDockerfile() const;
@@ -159,8 +160,8 @@ namespace TencentCloud
                     bool DockerfileHasBeenSet() const;
 
                     /**
-                     * 获取目标目录
-                     * @return BuildDir 目标目录
+                     * 获取<p>目标目录</p>
+                     * @return BuildDir <p>目标目录</p>
                      * 
                      */
                     std::string GetBuildDir() const;
@@ -173,8 +174,8 @@ namespace TencentCloud
                     bool BuildDirHasBeenSet() const;
 
                     /**
-                     * 获取环境变量
-                     * @return EnvParams 环境变量
+                     * 获取<p>环境变量</p>
+                     * @return EnvParams <p>环境变量</p>
                      * 
                      */
                     std::string GetEnvParams() const;
@@ -187,8 +188,8 @@ namespace TencentCloud
                     bool EnvParamsHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取<p>状态</p>
+                     * @return Status <p>状态</p>
                      * 
                      */
                     std::string GetStatus() const;
@@ -201,8 +202,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreatedTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreatedTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreatedTime() const;
@@ -215,8 +216,8 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdatedTime 更新时间
+                     * 获取<p>更新时间</p>
+                     * @return UpdatedTime <p>更新时间</p>
                      * 
                      */
                     std::string GetUpdatedTime() const;
@@ -229,8 +230,8 @@ namespace TencentCloud
                     bool UpdatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取日志采集路径
-                     * @return LogPath 日志采集路径
+                     * 获取<p>日志采集路径</p>
+                     * @return LogPath <p>日志采集路径</p>
                      * 
                      */
                     std::string GetLogPath() const;
@@ -243,9 +244,9 @@ namespace TencentCloud
                     bool LogPathHasBeenSet() const;
 
                     /**
-                     * 获取entryPoint
+                     * 获取<p>entryPoint</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EntryPoint entryPoint
+                     * @return EntryPoint <p>entryPoint</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -259,9 +260,9 @@ namespace TencentCloud
                     bool EntryPointHasBeenSet() const;
 
                     /**
-                     * 获取Cmd
+                     * 获取<p>Cmd</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Cmd Cmd
+                     * @return Cmd <p>Cmd</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -275,9 +276,9 @@ namespace TencentCloud
                     bool CmdHasBeenSet() const;
 
                     /**
-                     * 获取vpc conf
+                     * 获取<p>vpc conf</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VpcConf vpc conf
+                     * @return VpcConf <p>vpc conf</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -291,9 +292,9 @@ namespace TencentCloud
                     bool VpcConfHasBeenSet() const;
 
                     /**
-                     * 获取volume conf
+                     * 获取<p>volume conf</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VolumesConf volume conf
+                     * @return VolumesConf <p>volume conf</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -306,119 +307,142 @@ namespace TencentCloud
                      */
                     bool VolumesConfHasBeenSet() const;
 
+                    /**
+                     * 获取<p>buildpack 信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BuildPacks <p>buildpack 信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    BuildPacksInfo GetBuildPacks() const;
+
+                    /**
+                     * 判断参数 BuildPacks 是否已赋值
+                     * @return BuildPacks 是否已赋值
+                     * 
+                     */
+                    bool BuildPacksHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 版本名
+                     * <p>版本名</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 端口号
+                     * <p>端口号</p>
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * cpu 规格
+                     * <p>cpu 规格</p>
                      */
                     double m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * mem 规格
+                     * <p>mem 规格</p>
                      */
                     double m_mem;
                     bool m_memHasBeenSet;
 
                     /**
-                     * 最小副本数
+                     * <p>最小副本数</p>
                      */
                     int64_t m_minNum;
                     bool m_minNumHasBeenSet;
 
                     /**
-                     * 最大副本数
+                     * <p>最大副本数</p>
                      */
                     int64_t m_maxNum;
                     bool m_maxNumHasBeenSet;
 
                     /**
-                     * 扩缩容策略
+                     * <p>扩缩容策略</p>
                      */
                     std::vector<HpaPolicy> m_policyDetails;
                     bool m_policyDetailsHasBeenSet;
 
                     /**
-                     * Dockerfile path
+                     * <p>Dockerfile path</p>
                      */
                     std::string m_dockerfile;
                     bool m_dockerfileHasBeenSet;
 
                     /**
-                     * 目标目录
+                     * <p>目标目录</p>
                      */
                     std::string m_buildDir;
                     bool m_buildDirHasBeenSet;
 
                     /**
-                     * 环境变量
+                     * <p>环境变量</p>
                      */
                     std::string m_envParams;
                     bool m_envParamsHasBeenSet;
 
                     /**
-                     * 状态
+                     * <p>状态</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
                      */
                     std::string m_updatedTime;
                     bool m_updatedTimeHasBeenSet;
 
                     /**
-                     * 日志采集路径
+                     * <p>日志采集路径</p>
                      */
                     std::string m_logPath;
                     bool m_logPathHasBeenSet;
 
                     /**
-                     * entryPoint
+                     * <p>entryPoint</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_entryPoint;
                     bool m_entryPointHasBeenSet;
 
                     /**
-                     * Cmd
+                     * <p>Cmd</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cmd;
                     bool m_cmdHasBeenSet;
 
                     /**
-                     * vpc conf
+                     * <p>vpc conf</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     VpcConf m_vpcConf;
                     bool m_vpcConfHasBeenSet;
 
                     /**
-                     * volume conf
+                     * <p>volume conf</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VolumeConf> m_volumesConf;
                     bool m_volumesConfHasBeenSet;
+
+                    /**
+                     * <p>buildpack 信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BuildPacksInfo m_buildPacks;
+                    bool m_buildPacksHasBeenSet;
 
                 };
             }

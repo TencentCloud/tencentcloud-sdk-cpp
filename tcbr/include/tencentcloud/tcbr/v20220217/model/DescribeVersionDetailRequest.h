@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境Id
-                     * @return EnvId 环境Id
+                     * 获取<p>环境Id</p>
+                     * @return EnvId <p>环境Id</p>
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
-                     * 设置环境Id
-                     * @param _envId 环境Id
+                     * 设置<p>环境Id</p>
+                     * @param _envId <p>环境Id</p>
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
-                     * 获取服务名
-                     * @return ServerName 服务名
+                     * 获取<p>服务名</p>
+                     * @return ServerName <p>服务名</p>
                      * 
                      */
                     std::string GetServerName() const;
 
                     /**
-                     * 设置服务名
-                     * @param _serverName 服务名
+                     * 设置<p>服务名</p>
+                     * @param _serverName <p>服务名</p>
                      * 
                      */
                     void SetServerName(const std::string& _serverName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ServerNameHasBeenSet() const;
 
                     /**
-                     * 获取版本名
-                     * @return VersionName 版本名
+                     * 获取<p>版本名</p>
+                     * @return VersionName <p>版本名</p>
                      * 
                      */
                     std::string GetVersionName() const;
 
                     /**
-                     * 设置版本名
-                     * @param _versionName 版本名
+                     * 设置<p>版本名</p>
+                     * @param _versionName <p>版本名</p>
                      * 
                      */
                     void SetVersionName(const std::string& _versionName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool VersionNameHasBeenSet() const;
 
                     /**
-                     * 获取channel
-                     * @return Channel channel
+                     * 获取<p>channel</p>
+                     * @return Channel <p>channel</p>
                      * 
                      */
                     std::string GetChannel() const;
 
                     /**
-                     * 设置channel
-                     * @param _channel channel
+                     * 设置<p>channel</p>
+                     * @param _channel <p>channel</p>
                      * 
                      */
                     void SetChannel(const std::string& _channel);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 环境Id
+                     * <p>环境Id</p>
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
 
                     /**
-                     * 服务名
+                     * <p>服务名</p>
                      */
                     std::string m_serverName;
                     bool m_serverNameHasBeenSet;
 
                     /**
-                     * 版本名
+                     * <p>版本名</p>
                      */
                     std::string m_versionName;
                     bool m_versionNameHasBeenSet;
 
                     /**
-                     * channel
+                     * <p>channel</p>
                      */
                     std::string m_channel;
                     bool m_channelHasBeenSet;

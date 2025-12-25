@@ -94,6 +94,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DescribeCdnIpRequest.h
   include/tencentcloud/cdn/v20180606/model/Ipv6.h
   include/tencentcloud/cdn/v20180606/model/DescribeHttpsPackagesRequest.h
+  include/tencentcloud/cdn/v20180606/model/FilterRules.h
   include/tencentcloud/cdn/v20180606/model/DescribeTrafficPackagesRequest.h
   include/tencentcloud/cdn/v20180606/model/StatusCodeCache.h
   include/tencentcloud/cdn/v20180606/model/DescribeIpVisitResponse.h
@@ -368,6 +369,7 @@ set(cdn_src
   src/v20180606/model/DescribeCdnIpRequest.cpp
   src/v20180606/model/Ipv6.cpp
   src/v20180606/model/DescribeHttpsPackagesRequest.cpp
+  src/v20180606/model/FilterRules.cpp
   src/v20180606/model/DescribeTrafficPackagesRequest.cpp
   src/v20180606/model/StatusCodeCache.cpp
   src/v20180606/model/DescribeIpVisitResponse.cpp

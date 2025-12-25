@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取同步资产类别，1 - 主机资产, 2 - 数据库资产
-                     * @return Category 同步资产类别，1 - 主机资产, 2 - 数据库资产
+                     * 获取同步资产类别，1 - 主机资产, 2 - 数据库资产，3-容器资产
+                     * @return Category 同步资产类别，1 - 主机资产, 2 - 数据库资产，3-容器资产
                      * 
                      */
                     uint64_t GetCategory() const;
 
                     /**
-                     * 设置同步资产类别，1 - 主机资产, 2 - 数据库资产
-                     * @param _category 同步资产类别，1 - 主机资产, 2 - 数据库资产
+                     * 设置同步资产类别，1 - 主机资产, 2 - 数据库资产，3-容器资产
+                     * @param _category 同步资产类别，1 - 主机资产, 2 - 数据库资产，3-容器资产
                      * 
                      */
                     void SetCategory(const uint64_t& _category);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 同步资产类别，1 - 主机资产, 2 - 数据库资产
+                     * 同步资产类别，1 - 主机资产, 2 - 数据库资产，3-容器资产
                      */
                     uint64_t m_category;
                     bool m_categoryHasBeenSet;

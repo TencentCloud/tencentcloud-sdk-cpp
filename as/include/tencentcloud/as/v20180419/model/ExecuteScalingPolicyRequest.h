@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警伸缩策略ID，不支持目标追踪策略。可通过 [DescribeScalingPolicies](https://cloud.tencent.com/document/api/377/33178) 接口返回的 `ScalingPolicyType ` 参数获取告警策略类型。
-                     * @return AutoScalingPolicyId 告警伸缩策略ID，不支持目标追踪策略。可通过 [DescribeScalingPolicies](https://cloud.tencent.com/document/api/377/33178) 接口返回的 `ScalingPolicyType ` 参数获取告警策略类型。
+                     * 获取<p>告警伸缩策略ID，不支持目标追踪策略。可通过 <a href="https://cloud.tencent.com/document/api/377/33178">DescribeScalingPolicies</a> 接口返回的 <code>ScalingPolicyType</code> 参数获取告警策略类型。</p>
+                     * @return AutoScalingPolicyId <p>告警伸缩策略ID，不支持目标追踪策略。可通过 <a href="https://cloud.tencent.com/document/api/377/33178">DescribeScalingPolicies</a> 接口返回的 <code>ScalingPolicyType</code> 参数获取告警策略类型。</p>
                      * 
                      */
                     std::string GetAutoScalingPolicyId() const;
 
                     /**
-                     * 设置告警伸缩策略ID，不支持目标追踪策略。可通过 [DescribeScalingPolicies](https://cloud.tencent.com/document/api/377/33178) 接口返回的 `ScalingPolicyType ` 参数获取告警策略类型。
-                     * @param _autoScalingPolicyId 告警伸缩策略ID，不支持目标追踪策略。可通过 [DescribeScalingPolicies](https://cloud.tencent.com/document/api/377/33178) 接口返回的 `ScalingPolicyType ` 参数获取告警策略类型。
+                     * 设置<p>告警伸缩策略ID，不支持目标追踪策略。可通过 <a href="https://cloud.tencent.com/document/api/377/33178">DescribeScalingPolicies</a> 接口返回的 <code>ScalingPolicyType</code> 参数获取告警策略类型。</p>
+                     * @param _autoScalingPolicyId <p>告警伸缩策略ID，不支持目标追踪策略。可通过 <a href="https://cloud.tencent.com/document/api/377/33178">DescribeScalingPolicies</a> 接口返回的 <code>ScalingPolicyType</code> 参数获取告警策略类型。</p>
                      * 
                      */
                     void SetAutoScalingPolicyId(const std::string& _autoScalingPolicyId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AutoScalingPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取是否检查伸缩组活动处于冷却时间内，默认值为false
-                     * @return HonorCooldown 是否检查伸缩组活动处于冷却时间内，默认值为false
+                     * 获取<p>是否检查伸缩组活动处于冷却时间内，默认值为false</p>
+                     * @return HonorCooldown <p>是否检查伸缩组活动处于冷却时间内，默认值为false</p>
                      * 
                      */
                     bool GetHonorCooldown() const;
 
                     /**
-                     * 设置是否检查伸缩组活动处于冷却时间内，默认值为false
-                     * @param _honorCooldown 是否检查伸缩组活动处于冷却时间内，默认值为false
+                     * 设置<p>是否检查伸缩组活动处于冷却时间内，默认值为false</p>
+                     * @param _honorCooldown <p>是否检查伸缩组活动处于冷却时间内，默认值为false</p>
                      * 
                      */
                     void SetHonorCooldown(const bool& _honorCooldown);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool HonorCooldownHasBeenSet() const;
 
                     /**
-                     * 获取执行伸缩策略的触发来源，取值包括 API 和 CLOUD_MONITOR，默认值为 API。CLOUD_MONITOR 专门供云监控触发调用。
-                     * @return TriggerSource 执行伸缩策略的触发来源，取值包括 API 和 CLOUD_MONITOR，默认值为 API。CLOUD_MONITOR 专门供云监控触发调用。
+                     * 获取<p>执行伸缩策略的触发来源，取值包括 API 和 CLOUD_MONITOR，默认值为 API。CLOUD_MONITOR 专门供云监控触发调用。</p>
+                     * @return TriggerSource <p>执行伸缩策略的触发来源，取值包括 API 和 CLOUD_MONITOR，默认值为 API。CLOUD_MONITOR 专门供云监控触发调用。</p>
                      * 
                      */
                     std::string GetTriggerSource() const;
 
                     /**
-                     * 设置执行伸缩策略的触发来源，取值包括 API 和 CLOUD_MONITOR，默认值为 API。CLOUD_MONITOR 专门供云监控触发调用。
-                     * @param _triggerSource 执行伸缩策略的触发来源，取值包括 API 和 CLOUD_MONITOR，默认值为 API。CLOUD_MONITOR 专门供云监控触发调用。
+                     * 设置<p>执行伸缩策略的触发来源，取值包括 API 和 CLOUD_MONITOR，默认值为 API。CLOUD_MONITOR 专门供云监控触发调用。</p>
+                     * @param _triggerSource <p>执行伸缩策略的触发来源，取值包括 API 和 CLOUD_MONITOR，默认值为 API。CLOUD_MONITOR 专门供云监控触发调用。</p>
                      * 
                      */
                     void SetTriggerSource(const std::string& _triggerSource);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警伸缩策略ID，不支持目标追踪策略。可通过 [DescribeScalingPolicies](https://cloud.tencent.com/document/api/377/33178) 接口返回的 `ScalingPolicyType ` 参数获取告警策略类型。
+                     * <p>告警伸缩策略ID，不支持目标追踪策略。可通过 <a href="https://cloud.tencent.com/document/api/377/33178">DescribeScalingPolicies</a> 接口返回的 <code>ScalingPolicyType</code> 参数获取告警策略类型。</p>
                      */
                     std::string m_autoScalingPolicyId;
                     bool m_autoScalingPolicyIdHasBeenSet;
 
                     /**
-                     * 是否检查伸缩组活动处于冷却时间内，默认值为false
+                     * <p>是否检查伸缩组活动处于冷却时间内，默认值为false</p>
                      */
                     bool m_honorCooldown;
                     bool m_honorCooldownHasBeenSet;
 
                     /**
-                     * 执行伸缩策略的触发来源，取值包括 API 和 CLOUD_MONITOR，默认值为 API。CLOUD_MONITOR 专门供云监控触发调用。
+                     * <p>执行伸缩策略的触发来源，取值包括 API 和 CLOUD_MONITOR，默认值为 API。CLOUD_MONITOR 专门供云监控触发调用。</p>
                      */
                     std::string m_triggerSource;
                     bool m_triggerSourceHasBeenSet;

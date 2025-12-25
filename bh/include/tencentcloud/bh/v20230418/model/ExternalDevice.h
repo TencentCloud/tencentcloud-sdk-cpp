@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作系统名称，只能是Linux、Windows或MySQL
-                     * @return OsName 操作系统名称，只能是Linux、Windows或MySQL
+                     * 获取操作系统名称，只能是主机（Linux、Windows）、数据库（MySQL、SQL Server、MariaDB、PostgreSQL、MongoDBReplicaSet、MongoDBSharded、Redis）、容器（TKE、EKS）
+                     * @return OsName 操作系统名称，只能是主机（Linux、Windows）、数据库（MySQL、SQL Server、MariaDB、PostgreSQL、MongoDBReplicaSet、MongoDBSharded、Redis）、容器（TKE、EKS）
                      * 
                      */
                     std::string GetOsName() const;
 
                     /**
-                     * 设置操作系统名称，只能是Linux、Windows或MySQL
-                     * @param _osName 操作系统名称，只能是Linux、Windows或MySQL
+                     * 设置操作系统名称，只能是主机（Linux、Windows）、数据库（MySQL、SQL Server、MariaDB、PostgreSQL、MongoDBReplicaSet、MongoDBSharded、Redis）、容器（TKE、EKS）
+                     * @param _osName 操作系统名称，只能是主机（Linux、Windows）、数据库（MySQL、SQL Server、MariaDB、PostgreSQL、MongoDBReplicaSet、MongoDBSharded、Redis）、容器（TKE、EKS）
                      * 
                      */
                     void SetOsName(const std::string& _osName);
@@ -364,7 +364,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作系统名称，只能是Linux、Windows或MySQL
+                     * 操作系统名称，只能是主机（Linux、Windows）、数据库（MySQL、SQL Server、MariaDB、PostgreSQL、MongoDBReplicaSet、MongoDBSharded、Redis）、容器（TKE、EKS）
                      */
                     std::string m_osName;
                     bool m_osNameHasBeenSet;

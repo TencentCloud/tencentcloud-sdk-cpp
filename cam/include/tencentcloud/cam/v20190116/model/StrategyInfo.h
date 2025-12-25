@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cam/v20190116/model/Tag.h>
 
 
 namespace TencentCloud
@@ -90,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddTime 策略创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddTime() const;
 
                     /**
                      * 设置策略创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addTime 策略创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddTime(const std::string& _addTime);
@@ -401,6 +398,27 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取标签列表
+                     * @return Tags 标签列表
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签列表
+                     * @param _tags 标签列表
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -417,7 +435,6 @@ namespace TencentCloud
 
                     /**
                      * 策略创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_addTime;
                     bool m_addTimeHasBeenSet;
@@ -502,6 +519,12 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 标签列表
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

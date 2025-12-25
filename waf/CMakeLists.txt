@@ -33,6 +33,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DescribeOwaspWhiteRulesResponse.h
   include/tencentcloud/waf/v20180125/model/DeleteRateLimitsV2Request.h
   include/tencentcloud/waf/v20180125/model/GlobalSceneInfo.h
+  include/tencentcloud/waf/v20180125/model/Object.h
   include/tencentcloud/waf/v20180125/model/DescribePeakValueResponse.h
   include/tencentcloud/waf/v20180125/model/ProductInfo.h
   include/tencentcloud/waf/v20180125/model/DescribeAntiLeakageItem.h
@@ -78,6 +79,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ModifyAttackWhiteRuleRequest.h
   include/tencentcloud/waf/v20180125/model/HostRecord.h
   include/tencentcloud/waf/v20180125/model/DescribeBotUCBRuleRsp.h
+  include/tencentcloud/waf/v20180125/model/ModifyObjectsRequest.h
   include/tencentcloud/waf/v20180125/model/FreshAntiFakeUrlRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyAreaBanStatusRequest.h
   include/tencentcloud/waf/v20180125/model/SpartaProtectionPort.h
@@ -359,6 +361,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/BatchDomainResult.h
   include/tencentcloud/waf/v20180125/model/ApiNameOp.h
   include/tencentcloud/waf/v20180125/model/CreateAreaBanRuleResponse.h
+  include/tencentcloud/waf/v20180125/model/ModifyProtectionLevelRequest.h
   include/tencentcloud/waf/v20180125/model/GetAttackTotalCountRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteDomainWhiteRulesResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeAttackOverviewResponse.h
@@ -545,7 +548,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ModifyGenerateDealsRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyDomainWhiteRuleResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyObjectResponse.h
-  include/tencentcloud/waf/v20180125/model/ModifyProtectionLevelRequest.h
+  include/tencentcloud/waf/v20180125/model/ModifyObjectsResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyAntiFakeUrlStatusResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeOwaspRuleTypesResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyInstanceElasticModeRequest.h
@@ -603,6 +606,7 @@ set(waf_src
   src/v20180125/model/DescribeOwaspWhiteRulesResponse.cpp
   src/v20180125/model/DeleteRateLimitsV2Request.cpp
   src/v20180125/model/GlobalSceneInfo.cpp
+  src/v20180125/model/Object.cpp
   src/v20180125/model/DescribePeakValueResponse.cpp
   src/v20180125/model/ProductInfo.cpp
   src/v20180125/model/DescribeAntiLeakageItem.cpp
@@ -648,6 +652,7 @@ set(waf_src
   src/v20180125/model/ModifyAttackWhiteRuleRequest.cpp
   src/v20180125/model/HostRecord.cpp
   src/v20180125/model/DescribeBotUCBRuleRsp.cpp
+  src/v20180125/model/ModifyObjectsRequest.cpp
   src/v20180125/model/FreshAntiFakeUrlRequest.cpp
   src/v20180125/model/ModifyAreaBanStatusRequest.cpp
   src/v20180125/model/SpartaProtectionPort.cpp
@@ -929,6 +934,7 @@ set(waf_src
   src/v20180125/model/BatchDomainResult.cpp
   src/v20180125/model/ApiNameOp.cpp
   src/v20180125/model/CreateAreaBanRuleResponse.cpp
+  src/v20180125/model/ModifyProtectionLevelRequest.cpp
   src/v20180125/model/GetAttackTotalCountRequest.cpp
   src/v20180125/model/DeleteDomainWhiteRulesResponse.cpp
   src/v20180125/model/DescribeAttackOverviewResponse.cpp
@@ -1115,7 +1121,7 @@ set(waf_src
   src/v20180125/model/ModifyGenerateDealsRequest.cpp
   src/v20180125/model/ModifyDomainWhiteRuleResponse.cpp
   src/v20180125/model/ModifyObjectResponse.cpp
-  src/v20180125/model/ModifyProtectionLevelRequest.cpp
+  src/v20180125/model/ModifyObjectsResponse.cpp
   src/v20180125/model/ModifyAntiFakeUrlStatusResponse.cpp
   src/v20180125/model/DescribeOwaspRuleTypesResponse.cpp
   src/v20180125/model/ModifyInstanceElasticModeRequest.cpp

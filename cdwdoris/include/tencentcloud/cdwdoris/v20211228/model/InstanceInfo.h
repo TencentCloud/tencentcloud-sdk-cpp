@@ -1345,6 +1345,27 @@ Changing  变更中
                      */
                     bool SlaveInstancesHasBeenSet() const;
 
+                    /**
+                     * 获取ccr服务部署节点ip
+                     * @return SyncerIp ccr服务部署节点ip
+                     * 
+                     */
+                    std::string GetSyncerIp() const;
+
+                    /**
+                     * 设置ccr服务部署节点ip
+                     * @param _syncerIp ccr服务部署节点ip
+                     * 
+                     */
+                    void SetSyncerIp(const std::string& _syncerIp);
+
+                    /**
+                     * 判断参数 SyncerIp 是否已赋值
+                     * @return SyncerIp 是否已赋值
+                     * 
+                     */
+                    bool SyncerIpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1715,6 +1736,12 @@ Changing  变更中
                      */
                     std::vector<std::string> m_slaveInstances;
                     bool m_slaveInstancesHasBeenSet;
+
+                    /**
+                     * ccr服务部署节点ip
+                     */
+                    std::string m_syncerIp;
+                    bool m_syncerIpHasBeenSet;
 
                 };
             }

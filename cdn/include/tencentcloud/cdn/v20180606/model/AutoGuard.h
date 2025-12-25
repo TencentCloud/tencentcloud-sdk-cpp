@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdn/v20180606/model/FilterRules.h>
 
 
 namespace TencentCloud
@@ -71,6 +72,31 @@ namespace TencentCloud
                      */
                     bool SwitchHasBeenSet() const;
 
+                    /**
+                     * 获取流量防盗刷配置规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FilterRules 流量防盗刷配置规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<FilterRules> GetFilterRules() const;
+
+                    /**
+                     * 设置流量防盗刷配置规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _filterRules 流量防盗刷配置规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFilterRules(const std::vector<FilterRules>& _filterRules);
+
+                    /**
+                     * 判断参数 FilterRules 是否已赋值
+                     * @return FilterRules 是否已赋值
+                     * 
+                     */
+                    bool FilterRulesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -79,6 +105,13 @@ namespace TencentCloud
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
+
+                    /**
+                     * 流量防盗刷配置规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FilterRules> m_filterRules;
+                    bool m_filterRulesHasBeenSet;
 
                 };
             }

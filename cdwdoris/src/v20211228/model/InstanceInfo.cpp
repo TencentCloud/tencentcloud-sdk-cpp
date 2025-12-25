@@ -80,7 +80,8 @@ InstanceInfo::InstanceInfo() :
     m_useManagedBucketHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_masterInstanceHasBeenSet(false),
-    m_slaveInstancesHasBeenSet(false)
+    m_slaveInstancesHasBeenSet(false),
+    m_syncerIpHasBeenSet(false)
 {
 }
 
@@ -736,6 +737,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_slaveInstancesHasBeenSet = true;
     }
 
+    if (value.HasMember("SyncerIp") && !value["SyncerIp"].IsNull())
+    {
+        if (!value["SyncerIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.SyncerIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncerIp = string(value["SyncerIp"].GetString());
+        m_syncerIpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1247,6 +1258,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_syncerIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncerIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_syncerIp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2210,5 +2229,21 @@ void InstanceInfo::SetSlaveInstances(const vector<string>& _slaveInstances)
 bool InstanceInfo::SlaveInstancesHasBeenSet() const
 {
     return m_slaveInstancesHasBeenSet;
+}
+
+string InstanceInfo::GetSyncerIp() const
+{
+    return m_syncerIp;
+}
+
+void InstanceInfo::SetSyncerIp(const string& _syncerIp)
+{
+    m_syncerIp = _syncerIp;
+    m_syncerIpHasBeenSet = true;
+}
+
+bool InstanceInfo::SyncerIpHasBeenSet() const
+{
+    return m_syncerIpHasBeenSet;
 }
 

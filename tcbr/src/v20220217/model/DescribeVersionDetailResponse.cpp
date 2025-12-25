@@ -41,7 +41,8 @@ DescribeVersionDetailResponse::DescribeVersionDetailResponse() :
     m_entryPointHasBeenSet(false),
     m_cmdHasBeenSet(false),
     m_vpcConfHasBeenSet(false),
-    m_volumesConfHasBeenSet(false)
+    m_volumesConfHasBeenSet(false),
+    m_buildPacksHasBeenSet(false)
 {
 }
 
@@ -286,6 +287,23 @@ CoreInternalOutcome DescribeVersionDetailResponse::Deserialize(const string &pay
         m_volumesConfHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BuildPacks") && !rsp["BuildPacks"].IsNull())
+    {
+        if (!rsp["BuildPacks"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `BuildPacks` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_buildPacks.Deserialize(rsp["BuildPacks"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_buildPacksHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -453,6 +471,15 @@ string DescribeVersionDetailResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_buildPacksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BuildPacks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_buildPacks.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -645,6 +672,16 @@ vector<VolumeConf> DescribeVersionDetailResponse::GetVolumesConf() const
 bool DescribeVersionDetailResponse::VolumesConfHasBeenSet() const
 {
     return m_volumesConfHasBeenSet;
+}
+
+BuildPacksInfo DescribeVersionDetailResponse::GetBuildPacks() const
+{
+    return m_buildPacks;
+}
+
+bool DescribeVersionDetailResponse::BuildPacksHasBeenSet() const
+{
+    return m_buildPacksHasBeenSet;
 }
 
 

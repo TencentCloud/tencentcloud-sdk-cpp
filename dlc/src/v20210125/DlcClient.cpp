@@ -8290,6 +8290,56 @@ DlcClient::RollbackDataEngineImageOutcomeCallable DlcClient::RollbackDataEngineI
     return prom->get_future();
 }
 
+DlcClient::SetOptimizerPolicyOutcome DlcClient::SetOptimizerPolicy(const SetOptimizerPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetOptimizerPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetOptimizerPolicyResponse rsp = SetOptimizerPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetOptimizerPolicyOutcome(rsp);
+        else
+            return SetOptimizerPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return SetOptimizerPolicyOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::SetOptimizerPolicyAsync(const SetOptimizerPolicyRequest& request, const SetOptimizerPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SetOptimizerPolicyRequest&;
+    using Resp = SetOptimizerPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SetOptimizerPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::SetOptimizerPolicyOutcomeCallable DlcClient::SetOptimizerPolicyCallable(const SetOptimizerPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SetOptimizerPolicyOutcome>>();
+    SetOptimizerPolicyAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const SetOptimizerPolicyRequest&,
+        SetOptimizerPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::SuspendResumeDataEngineOutcome DlcClient::SuspendResumeDataEngine(const SuspendResumeDataEngineRequest &request)
 {
     auto outcome = MakeRequest(request, "SuspendResumeDataEngine");

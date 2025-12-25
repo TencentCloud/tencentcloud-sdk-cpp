@@ -103,6 +103,7 @@ set(cam_public_header_model
   include/tencentcloud/cam/v20190116/model/CreatePolicyResponse.h
   include/tencentcloud/cam/v20190116/model/ListGroupsResponse.h
   include/tencentcloud/cam/v20190116/model/DetachRolePolicyRequest.h
+  include/tencentcloud/cam/v20190116/model/Tag.h
   include/tencentcloud/cam/v20190116/model/UntagRoleResponse.h
   include/tencentcloud/cam/v20190116/model/ListPoliciesGrantingServiceAccessResponse.h
   include/tencentcloud/cam/v20190116/model/DeleteRolePermissionsBoundaryRequest.h
@@ -322,6 +323,7 @@ set(cam_src
   src/v20190116/model/CreatePolicyResponse.cpp
   src/v20190116/model/ListGroupsResponse.cpp
   src/v20190116/model/DetachRolePolicyRequest.cpp
+  src/v20190116/model/Tag.cpp
   src/v20190116/model/UntagRoleResponse.cpp
   src/v20190116/model/ListPoliciesGrantingServiceAccessResponse.cpp
   src/v20190116/model/DeleteRolePermissionsBoundaryRequest.cpp

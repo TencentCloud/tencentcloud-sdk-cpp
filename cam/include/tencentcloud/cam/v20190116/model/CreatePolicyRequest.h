@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cam/v20190116/model/Tag.h>
 
 
 namespace TencentCloud
@@ -105,6 +106,27 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取策略关联的标签列表
+                     * @return Tags 策略关联的标签列表
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置策略关联的标签列表
+                     * @param _tags 策略关联的标签列表
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +146,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 策略关联的标签列表
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

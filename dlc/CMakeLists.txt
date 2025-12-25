@@ -60,6 +60,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CreateNotebookSessionRequest.h
   include/tencentcloud/dlc/v20210125/model/UnboundDatasourceHouseRequest.h
   include/tencentcloud/dlc/v20210125/model/DeleteUserVpcConnectionResponse.h
+  include/tencentcloud/dlc/v20210125/model/SetOptimizerPolicyRequest.h
   include/tencentcloud/dlc/v20210125/model/UpdateDataEngineRequest.h
   include/tencentcloud/dlc/v20210125/model/SmartOptimizerWrittenPolicy.h
   include/tencentcloud/dlc/v20210125/model/DescribeSparkAppJobsRequest.h
@@ -253,6 +254,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DataEngineInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeSessionImageVersionResponse.h
   include/tencentcloud/dlc/v20210125/model/LockMetaDataResponse.h
+  include/tencentcloud/dlc/v20210125/model/SetOptimizerPolicyResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateUserRequest.h
   include/tencentcloud/dlc/v20210125/model/AlterDMSDatabaseRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeOtherCHDFSBindingListResponse.h
@@ -575,6 +577,7 @@ set(dlc_src
   src/v20210125/model/CreateNotebookSessionRequest.cpp
   src/v20210125/model/UnboundDatasourceHouseRequest.cpp
   src/v20210125/model/DeleteUserVpcConnectionResponse.cpp
+  src/v20210125/model/SetOptimizerPolicyRequest.cpp
   src/v20210125/model/UpdateDataEngineRequest.cpp
   src/v20210125/model/SmartOptimizerWrittenPolicy.cpp
   src/v20210125/model/DescribeSparkAppJobsRequest.cpp
@@ -768,6 +771,7 @@ set(dlc_src
   src/v20210125/model/DataEngineInfo.cpp
   src/v20210125/model/DescribeSessionImageVersionResponse.cpp
   src/v20210125/model/LockMetaDataResponse.cpp
+  src/v20210125/model/SetOptimizerPolicyResponse.cpp
   src/v20210125/model/CreateUserRequest.cpp
   src/v20210125/model/AlterDMSDatabaseRequest.cpp
   src/v20210125/model/DescribeOtherCHDFSBindingListResponse.cpp

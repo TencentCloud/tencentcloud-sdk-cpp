@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取伸缩活动ID
-                     * @return ActivityId 伸缩活动ID
+                     * 获取<p>伸缩活动ID</p>
+                     * @return ActivityId <p>伸缩活动ID</p>
                      * 
                      */
                     std::string GetActivityId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 伸缩活动ID
+                     * <p>伸缩活动ID</p>
                      */
                     std::string m_activityId;
                     bool m_activityIdHasBeenSet;

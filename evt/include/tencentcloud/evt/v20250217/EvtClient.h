@@ -29,6 +29,8 @@
 #include <tencentcloud/evt/v20250217/model/CreateRoleUserResponse.h>
 #include <tencentcloud/evt/v20250217/model/DeleteRoleUserRequest.h>
 #include <tencentcloud/evt/v20250217/model/DeleteRoleUserResponse.h>
+#include <tencentcloud/evt/v20250217/model/PutMessageRequest.h>
+#include <tencentcloud/evt/v20250217/model/PutMessageResponse.h>
 
 
 namespace TencentCloud
@@ -52,6 +54,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRoleUserResponse> DeleteRoleUserOutcome;
                 typedef std::future<DeleteRoleUserOutcome> DeleteRoleUserOutcomeCallable;
                 typedef std::function<void(const EvtClient*, const Model::DeleteRoleUserRequest&, DeleteRoleUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoleUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::PutMessageResponse> PutMessageOutcome;
+                typedef std::future<PutMessageOutcome> PutMessageOutcomeCallable;
+                typedef std::function<void(const EvtClient*, const Model::PutMessageRequest&, PutMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutMessageAsyncHandler;
 
 
 
@@ -81,6 +86,15 @@ namespace TencentCloud
                 DeleteRoleUserOutcome DeleteRoleUser(const Model::DeleteRoleUserRequest &request);
                 void DeleteRoleUserAsync(const Model::DeleteRoleUserRequest& request, const DeleteRoleUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteRoleUserOutcomeCallable DeleteRoleUserCallable(const Model::DeleteRoleUserRequest& request);
+
+                /**
+                 *推送事件数据
+                 * @param req PutMessageRequest
+                 * @return PutMessageOutcome
+                 */
+                PutMessageOutcome PutMessage(const Model::PutMessageRequest &request);
+                void PutMessageAsync(const Model::PutMessageRequest& request, const PutMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PutMessageOutcomeCallable PutMessageCallable(const Model::PutMessageRequest& request);
 
             };
         }

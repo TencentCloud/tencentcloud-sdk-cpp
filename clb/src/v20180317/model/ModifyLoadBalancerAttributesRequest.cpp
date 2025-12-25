@@ -28,6 +28,7 @@ ModifyLoadBalancerAttributesRequest::ModifyLoadBalancerAttributesRequest() :
     m_targetRegionInfoHasBeenSet(false),
     m_internetChargeInfoHasBeenSet(false),
     m_loadBalancerPassToTargetHasBeenSet(false),
+    m_switchFlagHasBeenSet(false),
     m_snatProHasBeenSet(false),
     m_deleteProtectHasBeenSet(false),
     m_modifyClassicDomainHasBeenSet(false),
@@ -82,6 +83,14 @@ string ModifyLoadBalancerAttributesRequest::ToJsonString() const
         string key = "LoadBalancerPassToTarget";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_loadBalancerPassToTarget, allocator);
+    }
+
+    if (m_switchFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SwitchFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_switchFlag, allocator);
     }
 
     if (m_snatProHasBeenSet)
@@ -202,6 +211,22 @@ void ModifyLoadBalancerAttributesRequest::SetLoadBalancerPassToTarget(const bool
 bool ModifyLoadBalancerAttributesRequest::LoadBalancerPassToTargetHasBeenSet() const
 {
     return m_loadBalancerPassToTargetHasBeenSet;
+}
+
+uint64_t ModifyLoadBalancerAttributesRequest::GetSwitchFlag() const
+{
+    return m_switchFlag;
+}
+
+void ModifyLoadBalancerAttributesRequest::SetSwitchFlag(const uint64_t& _switchFlag)
+{
+    m_switchFlag = _switchFlag;
+    m_switchFlagHasBeenSet = true;
+}
+
+bool ModifyLoadBalancerAttributesRequest::SwitchFlagHasBeenSet() const
+{
+    return m_switchFlagHasBeenSet;
 }
 
 bool ModifyLoadBalancerAttributesRequest::GetSnatPro() const

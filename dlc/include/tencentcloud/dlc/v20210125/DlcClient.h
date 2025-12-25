@@ -353,6 +353,8 @@
 #include <tencentcloud/dlc/v20210125/model/RevokeDLCCatalogAccessResponse.h>
 #include <tencentcloud/dlc/v20210125/model/RollbackDataEngineImageRequest.h>
 #include <tencentcloud/dlc/v20210125/model/RollbackDataEngineImageResponse.h>
+#include <tencentcloud/dlc/v20210125/model/SetOptimizerPolicyRequest.h>
+#include <tencentcloud/dlc/v20210125/model/SetOptimizerPolicyResponse.h>
 #include <tencentcloud/dlc/v20210125/model/SuspendResumeDataEngineRequest.h>
 #include <tencentcloud/dlc/v20210125/model/SuspendResumeDataEngineResponse.h>
 #include <tencentcloud/dlc/v20210125/model/SwitchDataEngineRequest.h>
@@ -898,6 +900,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RollbackDataEngineImageResponse> RollbackDataEngineImageOutcome;
                 typedef std::future<RollbackDataEngineImageOutcome> RollbackDataEngineImageOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::RollbackDataEngineImageRequest&, RollbackDataEngineImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollbackDataEngineImageAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetOptimizerPolicyResponse> SetOptimizerPolicyOutcome;
+                typedef std::future<SetOptimizerPolicyOutcome> SetOptimizerPolicyOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::SetOptimizerPolicyRequest&, SetOptimizerPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetOptimizerPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::SuspendResumeDataEngineResponse> SuspendResumeDataEngineOutcome;
                 typedef std::future<SuspendResumeDataEngineOutcome> SuspendResumeDataEngineOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::SuspendResumeDataEngineRequest&, SuspendResumeDataEngineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SuspendResumeDataEngineAsyncHandler;
@@ -2441,6 +2446,15 @@ namespace TencentCloud
                 RollbackDataEngineImageOutcome RollbackDataEngineImage(const Model::RollbackDataEngineImageRequest &request);
                 void RollbackDataEngineImageAsync(const Model::RollbackDataEngineImageRequest& request, const RollbackDataEngineImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RollbackDataEngineImageOutcomeCallable RollbackDataEngineImageCallable(const Model::RollbackDataEngineImageRequest& request);
+
+                /**
+                 *设置优化策略的接口
+                 * @param req SetOptimizerPolicyRequest
+                 * @return SetOptimizerPolicyOutcome
+                 */
+                SetOptimizerPolicyOutcome SetOptimizerPolicy(const Model::SetOptimizerPolicyRequest &request);
+                void SetOptimizerPolicyAsync(const Model::SetOptimizerPolicyRequest& request, const SetOptimizerPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetOptimizerPolicyOutcomeCallable SetOptimizerPolicyCallable(const Model::SetOptimizerPolicyRequest& request);
 
                 /**
                  *本接口用于控制挂起或启动数据引擎

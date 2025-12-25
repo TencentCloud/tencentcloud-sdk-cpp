@@ -24,7 +24,8 @@ using namespace TencentCloud::Tdai::V20250717::Model;
 using namespace std;
 
 DescribeAgentDutyTasksResponse::DescribeAgentDutyTasksResponse() :
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_dutyTasksHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,26 @@ CoreInternalOutcome DescribeAgentDutyTasksResponse::Deserialize(const string &pa
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DutyTasks") && !rsp["DutyTasks"].IsNull())
+    {
+        if (!rsp["DutyTasks"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DutyTasks` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["DutyTasks"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AgentDutyTask item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dutyTasks.push_back(item);
+        }
+        m_dutyTasksHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +109,21 @@ string DescribeAgentDutyTasksResponse::ToJsonString() const
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_dutyTasksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DutyTasks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dutyTasks.begin(); itr != m_dutyTasks.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +146,16 @@ int64_t DescribeAgentDutyTasksResponse::GetTotalCount() const
 bool DescribeAgentDutyTasksResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+vector<AgentDutyTask> DescribeAgentDutyTasksResponse::GetDutyTasks() const
+{
+    return m_dutyTasks;
+}
+
+bool DescribeAgentDutyTasksResponse::DutyTasksHasBeenSet() const
+{
+    return m_dutyTasksHasBeenSet;
 }
 
 

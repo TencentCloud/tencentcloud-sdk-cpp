@@ -8240,6 +8240,56 @@ WafClient::ModifyObjectOutcomeCallable WafClient::ModifyObjectCallable(const Mod
     return prom->get_future();
 }
 
+WafClient::ModifyObjectsOutcome WafClient::ModifyObjects(const ModifyObjectsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyObjects");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyObjectsResponse rsp = ModifyObjectsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyObjectsOutcome(rsp);
+        else
+            return ModifyObjectsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyObjectsOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyObjectsAsync(const ModifyObjectsRequest& request, const ModifyObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyObjectsRequest&;
+    using Resp = ModifyObjectsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyObjects", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::ModifyObjectsOutcomeCallable WafClient::ModifyObjectsCallable(const ModifyObjectsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyObjectsOutcome>>();
+    ModifyObjectsAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const ModifyObjectsRequest&,
+        ModifyObjectsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::ModifyOwaspRuleStatusOutcome WafClient::ModifyOwaspRuleStatus(const ModifyOwaspRuleStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyOwaspRuleStatus");

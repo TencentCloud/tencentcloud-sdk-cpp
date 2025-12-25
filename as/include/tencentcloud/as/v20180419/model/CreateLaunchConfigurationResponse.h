@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取当通过本接口来创建启动配置时会返回该参数，表示启动配置ID。
-                     * @return LaunchConfigurationId 当通过本接口来创建启动配置时会返回该参数，表示启动配置ID。
+                     * 获取<p>当通过本接口来创建启动配置时会返回该参数，表示启动配置ID。</p>
+                     * @return LaunchConfigurationId <p>当通过本接口来创建启动配置时会返回该参数，表示启动配置ID。</p>
                      * 
                      */
                     std::string GetLaunchConfigurationId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 当通过本接口来创建启动配置时会返回该参数，表示启动配置ID。
+                     * <p>当通过本接口来创建启动配置时会返回该参数，表示启动配置ID。</p>
                      */
                     std::string m_launchConfigurationId;
                     bool m_launchConfigurationIdHasBeenSet;

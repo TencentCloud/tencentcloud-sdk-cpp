@@ -21,7 +21,8 @@ using namespace TencentCloud::Cdn::V20180606::Model;
 using namespace std;
 
 AutoGuard::AutoGuard() :
-    m_switchHasBeenSet(false)
+    m_switchHasBeenSet(false),
+    m_filterRulesHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,26 @@ CoreInternalOutcome AutoGuard::Deserialize(const rapidjson::Value &value)
         m_switchHasBeenSet = true;
     }
 
+    if (value.HasMember("FilterRules") && !value["FilterRules"].IsNull())
+    {
+        if (!value["FilterRules"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AutoGuard.FilterRules` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["FilterRules"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FilterRules item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_filterRules.push_back(item);
+        }
+        m_filterRulesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +74,21 @@ void AutoGuard::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Switch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filterRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filterRules.begin(); itr != m_filterRules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -72,5 +108,21 @@ void AutoGuard::SetSwitch(const string& _switch)
 bool AutoGuard::SwitchHasBeenSet() const
 {
     return m_switchHasBeenSet;
+}
+
+vector<FilterRules> AutoGuard::GetFilterRules() const
+{
+    return m_filterRules;
+}
+
+void AutoGuard::SetFilterRules(const vector<FilterRules>& _filterRules)
+{
+    m_filterRules = _filterRules;
+    m_filterRulesHasBeenSet = true;
+}
+
+bool AutoGuard::FilterRulesHasBeenSet() const
+{
+    return m_filterRulesHasBeenSet;
 }
 

@@ -351,6 +351,8 @@
 #include <tencentcloud/waf/v20180125/model/ModifyModuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyObjectRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyObjectResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyObjectsRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyObjectsResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyOwaspRuleTypeActionRequest.h>
@@ -919,6 +921,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyObjectResponse> ModifyObjectOutcome;
                 typedef std::future<ModifyObjectOutcome> ModifyObjectOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyObjectRequest&, ModifyObjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyObjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyObjectsResponse> ModifyObjectsOutcome;
+                typedef std::future<ModifyObjectsOutcome> ModifyObjectsOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyObjectsRequest&, ModifyObjectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyObjectsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyOwaspRuleStatusResponse> ModifyOwaspRuleStatusOutcome;
                 typedef std::future<ModifyOwaspRuleStatusOutcome> ModifyOwaspRuleStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyOwaspRuleStatusRequest&, ModifyOwaspRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOwaspRuleStatusAsyncHandler;
@@ -2493,6 +2498,15 @@ namespace TencentCloud
                 ModifyObjectOutcome ModifyObject(const Model::ModifyObjectRequest &request);
                 void ModifyObjectAsync(const Model::ModifyObjectRequest& request, const ModifyObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyObjectOutcomeCallable ModifyObjectCallable(const Model::ModifyObjectRequest& request);
+
+                /**
+                 *批量修改防护对象
+                 * @param req ModifyObjectsRequest
+                 * @return ModifyObjectsOutcome
+                 */
+                ModifyObjectsOutcome ModifyObjects(const Model::ModifyObjectsRequest &request);
+                void ModifyObjectsAsync(const Model::ModifyObjectsRequest& request, const ModifyObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyObjectsOutcomeCallable ModifyObjectsCallable(const Model::ModifyObjectsRequest& request);
 
                 /**
                  *更新规则的开关

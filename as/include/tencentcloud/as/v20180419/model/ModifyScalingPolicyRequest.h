@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警策略ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeScalingPolicies](https://cloud.tencent.com/document/api/377/33178) ，取返回信息中的 AutoScalingPolicyId 获取告警策略ID。
-                     * @return AutoScalingPolicyId 告警策略ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeScalingPolicies](https://cloud.tencent.com/document/api/377/33178) ，取返回信息中的 AutoScalingPolicyId 获取告警策略ID。
+                     * 获取<p>告警策略ID。可通过登录 <a href="https://console.cloud.tencent.com/autoscaling/group">控制台</a> 或调用接口 <a href="https://cloud.tencent.com/document/api/377/33178">DescribeScalingPolicies</a> ，取返回信息中的 AutoScalingPolicyId 获取告警策略ID。</p>
+                     * @return AutoScalingPolicyId <p>告警策略ID。可通过登录 <a href="https://console.cloud.tencent.com/autoscaling/group">控制台</a> 或调用接口 <a href="https://cloud.tencent.com/document/api/377/33178">DescribeScalingPolicies</a> ，取返回信息中的 AutoScalingPolicyId 获取告警策略ID。</p>
                      * 
                      */
                     std::string GetAutoScalingPolicyId() const;
 
                     /**
-                     * 设置告警策略ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeScalingPolicies](https://cloud.tencent.com/document/api/377/33178) ，取返回信息中的 AutoScalingPolicyId 获取告警策略ID。
-                     * @param _autoScalingPolicyId 告警策略ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeScalingPolicies](https://cloud.tencent.com/document/api/377/33178) ，取返回信息中的 AutoScalingPolicyId 获取告警策略ID。
+                     * 设置<p>告警策略ID。可通过登录 <a href="https://console.cloud.tencent.com/autoscaling/group">控制台</a> 或调用接口 <a href="https://cloud.tencent.com/document/api/377/33178">DescribeScalingPolicies</a> ，取返回信息中的 AutoScalingPolicyId 获取告警策略ID。</p>
+                     * @param _autoScalingPolicyId <p>告警策略ID。可通过登录 <a href="https://console.cloud.tencent.com/autoscaling/group">控制台</a> 或调用接口 <a href="https://cloud.tencent.com/document/api/377/33178">DescribeScalingPolicies</a> ，取返回信息中的 AutoScalingPolicyId 获取告警策略ID。</p>
                      * 
                      */
                     void SetAutoScalingPolicyId(const std::string& _autoScalingPolicyId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool AutoScalingPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取告警策略名称，在您账号中必须唯一。名称长度不能超过60，名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点。
-                     * @return ScalingPolicyName 告警策略名称，在您账号中必须唯一。名称长度不能超过60，名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点。
+                     * 获取<p>告警策略名称，在您账号中必须唯一。名称长度不能超过60，名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点。</p>
+                     * @return ScalingPolicyName <p>告警策略名称，在您账号中必须唯一。名称长度不能超过60，名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点。</p>
                      * 
                      */
                     std::string GetScalingPolicyName() const;
 
                     /**
-                     * 设置告警策略名称，在您账号中必须唯一。名称长度不能超过60，名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点。
-                     * @param _scalingPolicyName 告警策略名称，在您账号中必须唯一。名称长度不能超过60，名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点。
+                     * 设置<p>告警策略名称，在您账号中必须唯一。名称长度不能超过60，名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点。</p>
+                     * @param _scalingPolicyName <p>告警策略名称，在您账号中必须唯一。名称长度不能超过60，名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点。</p>
                      * 
                      */
                     void SetScalingPolicyName(const std::string& _scalingPolicyName);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ScalingPolicyNameHasBeenSet() const;
 
                     /**
-                     * 获取告警触发后，期望实例数修改方式，仅适用于简单策略。取值范围：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
-                     * @return AdjustmentType 告警触发后，期望实例数修改方式，仅适用于简单策略。取值范围：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
+                     * 获取<p>告警触发后，期望实例数修改方式，仅适用于简单策略。取值范围：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li></p>
+                     * @return AdjustmentType <p>告警触发后，期望实例数修改方式，仅适用于简单策略。取值范围：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li></p>
                      * 
                      */
                     std::string GetAdjustmentType() const;
 
                     /**
-                     * 设置告警触发后，期望实例数修改方式，仅适用于简单策略。取值范围：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
-                     * @param _adjustmentType 告警触发后，期望实例数修改方式，仅适用于简单策略。取值范围：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
+                     * 设置<p>告警触发后，期望实例数修改方式，仅适用于简单策略。取值范围：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li></p>
+                     * @param _adjustmentType <p>告警触发后，期望实例数修改方式，仅适用于简单策略。取值范围：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li></p>
                      * 
                      */
                     void SetAdjustmentType(const std::string& _adjustmentType);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool AdjustmentTypeHasBeenSet() const;
 
                     /**
-                     * 获取告警触发后，期望实例数的调整值，仅适用于简单策略。<li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。</li>
-                     * @return AdjustmentValue 告警触发后，期望实例数的调整值，仅适用于简单策略。<li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。</li>
+                     * 获取<p>告警触发后，期望实例数的调整值，仅适用于简单策略。<li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。</li></p>
+                     * @return AdjustmentValue <p>告警触发后，期望实例数的调整值，仅适用于简单策略。<li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。</li></p>
                      * 
                      */
                     int64_t GetAdjustmentValue() const;
 
                     /**
-                     * 设置告警触发后，期望实例数的调整值，仅适用于简单策略。<li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。</li>
-                     * @param _adjustmentValue 告警触发后，期望实例数的调整值，仅适用于简单策略。<li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。</li>
+                     * 设置<p>告警触发后，期望实例数的调整值，仅适用于简单策略。<li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。</li></p>
+                     * @param _adjustmentValue <p>告警触发后，期望实例数的调整值，仅适用于简单策略。<li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。</li></p>
                      * 
                      */
                     void SetAdjustmentValue(const int64_t& _adjustmentValue);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool AdjustmentValueHasBeenSet() const;
 
                     /**
-                     * 获取冷却时间，仅适用于简单策略，单位为秒。
-                     * @return Cooldown 冷却时间，仅适用于简单策略，单位为秒。
+                     * 获取<p>冷却时间，仅适用于简单策略，单位为秒。</p>
+                     * @return Cooldown <p>冷却时间，仅适用于简单策略，单位为秒。</p>
                      * 
                      */
                     uint64_t GetCooldown() const;
 
                     /**
-                     * 设置冷却时间，仅适用于简单策略，单位为秒。
-                     * @param _cooldown 冷却时间，仅适用于简单策略，单位为秒。
+                     * 设置<p>冷却时间，仅适用于简单策略，单位为秒。</p>
+                     * @param _cooldown <p>冷却时间，仅适用于简单策略，单位为秒。</p>
                      * 
                      */
                     void SetCooldown(const uint64_t& _cooldown);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool CooldownHasBeenSet() const;
 
                     /**
-                     * 获取告警监控指标，仅适用于简单策略。
-                     * @return MetricAlarm 告警监控指标，仅适用于简单策略。
+                     * 获取<p>告警监控指标，仅适用于简单策略。</p>
+                     * @return MetricAlarm <p>告警监控指标，仅适用于简单策略。</p>
                      * 
                      */
                     MetricAlarm GetMetricAlarm() const;
 
                     /**
-                     * 设置告警监控指标，仅适用于简单策略。
-                     * @param _metricAlarm 告警监控指标，仅适用于简单策略。
+                     * 设置<p>告警监控指标，仅适用于简单策略。</p>
+                     * @param _metricAlarm <p>告警监控指标，仅适用于简单策略。</p>
                      * 
                      */
                     void SetMetricAlarm(const MetricAlarm& _metricAlarm);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool MetricAlarmHasBeenSet() const;
 
                     /**
-                     * 获取预定义监控项，仅适用于目标追踪策略。取值范围：<br><li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li><li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li><li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li><li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li><li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li>
-                     * @return PredefinedMetricType 预定义监控项，仅适用于目标追踪策略。取值范围：<br><li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li><li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li><li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li><li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li><li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li>
+                     * 获取<p>预定义监控项，仅适用于目标追踪策略。取值范围：<br><li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li><li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li><li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li><li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li><li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li></p>
+                     * @return PredefinedMetricType <p>预定义监控项，仅适用于目标追踪策略。取值范围：<br><li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li><li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li><li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li><li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li><li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li></p>
                      * 
                      */
                     std::string GetPredefinedMetricType() const;
 
                     /**
-                     * 设置预定义监控项，仅适用于目标追踪策略。取值范围：<br><li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li><li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li><li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li><li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li><li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li>
-                     * @param _predefinedMetricType 预定义监控项，仅适用于目标追踪策略。取值范围：<br><li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li><li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li><li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li><li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li><li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li>
+                     * 设置<p>预定义监控项，仅适用于目标追踪策略。取值范围：<br><li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li><li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li><li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li><li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li><li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li></p>
+                     * @param _predefinedMetricType <p>预定义监控项，仅适用于目标追踪策略。取值范围：<br><li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li><li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li><li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li><li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li><li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li></p>
                      * 
                      */
                     void SetPredefinedMetricType(const std::string& _predefinedMetricType);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool PredefinedMetricTypeHasBeenSet() const;
 
                     /**
-                     * 获取目标值，仅适用于目标追踪策略。<br><li>ASG_AVG_CPU_UTILIZATION：[1, 100)，单位：%</li><li>ASG_AVG_LAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_IN：>0，单位：Mbps</li>
-                     * @return TargetValue 目标值，仅适用于目标追踪策略。<br><li>ASG_AVG_CPU_UTILIZATION：[1, 100)，单位：%</li><li>ASG_AVG_LAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_IN：>0，单位：Mbps</li>
+                     * 获取<p>目标值，仅适用于目标追踪策略。<br><li>ASG_AVG_CPU_UTILIZATION：[1, 100)，单位：%</li><li>ASG_AVG_LAN_TRAFFIC_OUT：&gt;0，单位：Mbps</li><li>ASG_AVG_LAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_OUT：&gt;0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_IN：&gt;0，单位：Mbps</li></p>
+                     * @return TargetValue <p>目标值，仅适用于目标追踪策略。<br><li>ASG_AVG_CPU_UTILIZATION：[1, 100)，单位：%</li><li>ASG_AVG_LAN_TRAFFIC_OUT：&gt;0，单位：Mbps</li><li>ASG_AVG_LAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_OUT：&gt;0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_IN：&gt;0，单位：Mbps</li></p>
                      * 
                      */
                     uint64_t GetTargetValue() const;
 
                     /**
-                     * 设置目标值，仅适用于目标追踪策略。<br><li>ASG_AVG_CPU_UTILIZATION：[1, 100)，单位：%</li><li>ASG_AVG_LAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_IN：>0，单位：Mbps</li>
-                     * @param _targetValue 目标值，仅适用于目标追踪策略。<br><li>ASG_AVG_CPU_UTILIZATION：[1, 100)，单位：%</li><li>ASG_AVG_LAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_IN：>0，单位：Mbps</li>
+                     * 设置<p>目标值，仅适用于目标追踪策略。<br><li>ASG_AVG_CPU_UTILIZATION：[1, 100)，单位：%</li><li>ASG_AVG_LAN_TRAFFIC_OUT：&gt;0，单位：Mbps</li><li>ASG_AVG_LAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_OUT：&gt;0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_IN：&gt;0，单位：Mbps</li></p>
+                     * @param _targetValue <p>目标值，仅适用于目标追踪策略。<br><li>ASG_AVG_CPU_UTILIZATION：[1, 100)，单位：%</li><li>ASG_AVG_LAN_TRAFFIC_OUT：&gt;0，单位：Mbps</li><li>ASG_AVG_LAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_OUT：&gt;0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_IN：&gt;0，单位：Mbps</li></p>
                      * 
                      */
                     void SetTargetValue(const uint64_t& _targetValue);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool TargetValueHasBeenSet() const;
 
                     /**
-                     * 获取实例预热时间，单位为秒，仅适用于目标追踪策略。取值范围为0-3600。
-                     * @return EstimatedInstanceWarmup 实例预热时间，单位为秒，仅适用于目标追踪策略。取值范围为0-3600。
+                     * 获取<p>实例预热时间，单位为秒，仅适用于目标追踪策略。取值范围为0-3600。</p>
+                     * @return EstimatedInstanceWarmup <p>实例预热时间，单位为秒，仅适用于目标追踪策略。取值范围为0-3600。</p>
                      * 
                      */
                     uint64_t GetEstimatedInstanceWarmup() const;
 
                     /**
-                     * 设置实例预热时间，单位为秒，仅适用于目标追踪策略。取值范围为0-3600。
-                     * @param _estimatedInstanceWarmup 实例预热时间，单位为秒，仅适用于目标追踪策略。取值范围为0-3600。
+                     * 设置<p>实例预热时间，单位为秒，仅适用于目标追踪策略。取值范围为0-3600。</p>
+                     * @param _estimatedInstanceWarmup <p>实例预热时间，单位为秒，仅适用于目标追踪策略。取值范围为0-3600。</p>
                      * 
                      */
                     void SetEstimatedInstanceWarmup(const uint64_t& _estimatedInstanceWarmup);
@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool EstimatedInstanceWarmupHasBeenSet() const;
 
                     /**
-                     * 获取是否禁用缩容，仅适用于目标追踪策略。取值范围：<br><li>true：目标追踪策略仅触发扩容</li><li>false：目标追踪策略触发扩容和缩容</li>
-                     * @return DisableScaleIn 是否禁用缩容，仅适用于目标追踪策略。取值范围：<br><li>true：目标追踪策略仅触发扩容</li><li>false：目标追踪策略触发扩容和缩容</li>
+                     * 获取<p>是否禁用缩容，仅适用于目标追踪策略。取值范围：<br><li>true：目标追踪策略仅触发扩容</li><li>false：目标追踪策略触发扩容和缩容</li></p>
+                     * @return DisableScaleIn <p>是否禁用缩容，仅适用于目标追踪策略。取值范围：<br><li>true：目标追踪策略仅触发扩容</li><li>false：目标追踪策略触发扩容和缩容</li></p>
                      * 
                      */
                     bool GetDisableScaleIn() const;
 
                     /**
-                     * 设置是否禁用缩容，仅适用于目标追踪策略。取值范围：<br><li>true：目标追踪策略仅触发扩容</li><li>false：目标追踪策略触发扩容和缩容</li>
-                     * @param _disableScaleIn 是否禁用缩容，仅适用于目标追踪策略。取值范围：<br><li>true：目标追踪策略仅触发扩容</li><li>false：目标追踪策略触发扩容和缩容</li>
+                     * 设置<p>是否禁用缩容，仅适用于目标追踪策略。取值范围：<br><li>true：目标追踪策略仅触发扩容</li><li>false：目标追踪策略触发扩容和缩容</li></p>
+                     * @param _disableScaleIn <p>是否禁用缩容，仅适用于目标追踪策略。取值范围：<br><li>true：目标追踪策略仅触发扩容</li><li>false：目标追踪策略触发扩容和缩容</li></p>
                      * 
                      */
                     void SetDisableScaleIn(const bool& _disableScaleIn);
@@ -254,19 +254,15 @@ namespace TencentCloud
                     bool DisableScaleInHasBeenSet() const;
 
                     /**
-                     * 获取此参数已不再生效，请使用[创建通知](https://cloud.tencent.com/document/api/377/33185)。
-通知组ID，即为用户组ID集合。
-                     * @return NotificationUserGroupIds 此参数已不再生效，请使用[创建通知](https://cloud.tencent.com/document/api/377/33185)。
-通知组ID，即为用户组ID集合。
+                     * 获取<p>此参数已不再生效，请使用<a href="https://cloud.tencent.com/document/api/377/33185">创建通知</a>。通知组ID，即为用户组ID集合。</p>
+                     * @return NotificationUserGroupIds <p>此参数已不再生效，请使用<a href="https://cloud.tencent.com/document/api/377/33185">创建通知</a>。通知组ID，即为用户组ID集合。</p>
                      * 
                      */
                     std::vector<std::string> GetNotificationUserGroupIds() const;
 
                     /**
-                     * 设置此参数已不再生效，请使用[创建通知](https://cloud.tencent.com/document/api/377/33185)。
-通知组ID，即为用户组ID集合。
-                     * @param _notificationUserGroupIds 此参数已不再生效，请使用[创建通知](https://cloud.tencent.com/document/api/377/33185)。
-通知组ID，即为用户组ID集合。
+                     * 设置<p>此参数已不再生效，请使用<a href="https://cloud.tencent.com/document/api/377/33185">创建通知</a>。通知组ID，即为用户组ID集合。</p>
+                     * @param _notificationUserGroupIds <p>此参数已不再生效，请使用<a href="https://cloud.tencent.com/document/api/377/33185">创建通知</a>。通知组ID，即为用户组ID集合。</p>
                      * 
                      */
                     void SetNotificationUserGroupIds(const std::vector<std::string>& _notificationUserGroupIds);
@@ -281,68 +277,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警策略ID。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeScalingPolicies](https://cloud.tencent.com/document/api/377/33178) ，取返回信息中的 AutoScalingPolicyId 获取告警策略ID。
+                     * <p>告警策略ID。可通过登录 <a href="https://console.cloud.tencent.com/autoscaling/group">控制台</a> 或调用接口 <a href="https://cloud.tencent.com/document/api/377/33178">DescribeScalingPolicies</a> ，取返回信息中的 AutoScalingPolicyId 获取告警策略ID。</p>
                      */
                     std::string m_autoScalingPolicyId;
                     bool m_autoScalingPolicyIdHasBeenSet;
 
                     /**
-                     * 告警策略名称，在您账号中必须唯一。名称长度不能超过60，名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点。
+                     * <p>告警策略名称，在您账号中必须唯一。名称长度不能超过60，名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点。</p>
                      */
                     std::string m_scalingPolicyName;
                     bool m_scalingPolicyNameHasBeenSet;
 
                     /**
-                     * 告警触发后，期望实例数修改方式，仅适用于简单策略。取值范围：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
+                     * <p>告警触发后，期望实例数修改方式，仅适用于简单策略。取值范围：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li></p>
                      */
                     std::string m_adjustmentType;
                     bool m_adjustmentTypeHasBeenSet;
 
                     /**
-                     * 告警触发后，期望实例数的调整值，仅适用于简单策略。<li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。</li>
+                     * <p>告警触发后，期望实例数的调整值，仅适用于简单策略。<li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。</li></p>
                      */
                     int64_t m_adjustmentValue;
                     bool m_adjustmentValueHasBeenSet;
 
                     /**
-                     * 冷却时间，仅适用于简单策略，单位为秒。
+                     * <p>冷却时间，仅适用于简单策略，单位为秒。</p>
                      */
                     uint64_t m_cooldown;
                     bool m_cooldownHasBeenSet;
 
                     /**
-                     * 告警监控指标，仅适用于简单策略。
+                     * <p>告警监控指标，仅适用于简单策略。</p>
                      */
                     MetricAlarm m_metricAlarm;
                     bool m_metricAlarmHasBeenSet;
 
                     /**
-                     * 预定义监控项，仅适用于目标追踪策略。取值范围：<br><li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li><li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li><li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li><li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li><li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li>
+                     * <p>预定义监控项，仅适用于目标追踪策略。取值范围：<br><li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li><li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li><li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li><li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li><li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li></p>
                      */
                     std::string m_predefinedMetricType;
                     bool m_predefinedMetricTypeHasBeenSet;
 
                     /**
-                     * 目标值，仅适用于目标追踪策略。<br><li>ASG_AVG_CPU_UTILIZATION：[1, 100)，单位：%</li><li>ASG_AVG_LAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_IN：>0，单位：Mbps</li>
+                     * <p>目标值，仅适用于目标追踪策略。<br><li>ASG_AVG_CPU_UTILIZATION：[1, 100)，单位：%</li><li>ASG_AVG_LAN_TRAFFIC_OUT：&gt;0，单位：Mbps</li><li>ASG_AVG_LAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_OUT：&gt;0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_IN：&gt;0，单位：Mbps</li></p>
                      */
                     uint64_t m_targetValue;
                     bool m_targetValueHasBeenSet;
 
                     /**
-                     * 实例预热时间，单位为秒，仅适用于目标追踪策略。取值范围为0-3600。
+                     * <p>实例预热时间，单位为秒，仅适用于目标追踪策略。取值范围为0-3600。</p>
                      */
                     uint64_t m_estimatedInstanceWarmup;
                     bool m_estimatedInstanceWarmupHasBeenSet;
 
                     /**
-                     * 是否禁用缩容，仅适用于目标追踪策略。取值范围：<br><li>true：目标追踪策略仅触发扩容</li><li>false：目标追踪策略触发扩容和缩容</li>
+                     * <p>是否禁用缩容，仅适用于目标追踪策略。取值范围：<br><li>true：目标追踪策略仅触发扩容</li><li>false：目标追踪策略触发扩容和缩容</li></p>
                      */
                     bool m_disableScaleIn;
                     bool m_disableScaleInHasBeenSet;
 
                     /**
-                     * 此参数已不再生效，请使用[创建通知](https://cloud.tencent.com/document/api/377/33185)。
-通知组ID，即为用户组ID集合。
+                     * <p>此参数已不再生效，请使用<a href="https://cloud.tencent.com/document/api/377/33185">创建通知</a>。通知组ID，即为用户组ID集合。</p>
                      */
                     std::vector<std::string> m_notificationUserGroupIds;
                     bool m_notificationUserGroupIdsHasBeenSet;
