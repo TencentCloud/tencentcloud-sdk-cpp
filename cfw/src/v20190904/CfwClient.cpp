@@ -990,56 +990,6 @@ CfwClient::DeleteAddressTemplateOutcomeCallable CfwClient::DeleteAddressTemplate
     return prom->get_future();
 }
 
-CfwClient::DeleteAllAccessControlRuleOutcome CfwClient::DeleteAllAccessControlRule(const DeleteAllAccessControlRuleRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteAllAccessControlRule");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteAllAccessControlRuleResponse rsp = DeleteAllAccessControlRuleResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteAllAccessControlRuleOutcome(rsp);
-        else
-            return DeleteAllAccessControlRuleOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteAllAccessControlRuleOutcome(outcome.GetError());
-    }
-}
-
-void CfwClient::DeleteAllAccessControlRuleAsync(const DeleteAllAccessControlRuleRequest& request, const DeleteAllAccessControlRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DeleteAllAccessControlRuleRequest&;
-    using Resp = DeleteAllAccessControlRuleResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DeleteAllAccessControlRule", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-CfwClient::DeleteAllAccessControlRuleOutcomeCallable CfwClient::DeleteAllAccessControlRuleCallable(const DeleteAllAccessControlRuleRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DeleteAllAccessControlRuleOutcome>>();
-    DeleteAllAccessControlRuleAsync(
-    request,
-    [prom](
-        const CfwClient*,
-        const DeleteAllAccessControlRuleRequest&,
-        DeleteAllAccessControlRuleOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 CfwClient::DeleteBlockIgnoreRuleListOutcome CfwClient::DeleteBlockIgnoreRuleList(const DeleteBlockIgnoreRuleListRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteBlockIgnoreRuleList");

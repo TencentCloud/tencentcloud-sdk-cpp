@@ -88,8 +88,8 @@ namespace TencentCloud
                     bool RectHasBeenSet() const;
 
                     /**
-                     * 获取识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。
-                     * @return Color 识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。
+                     * 获取识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿”、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。
+                     * @return Color 识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿”、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。
                      * 
                      */
                     std::string GetColor() const;
@@ -115,6 +115,20 @@ namespace TencentCloud
                      */
                     bool LicensePlateInfosHasBeenSet() const;
 
+                    /**
+                     * 获取车牌类别， 如： 实体车牌、非实体车牌 示例值：实体车牌
+                     * @return LicensePlateCategory 车牌类别， 如： 实体车牌、非实体车牌 示例值：实体车牌
+                     * 
+                     */
+                    std::string GetLicensePlateCategory() const;
+
+                    /**
+                     * 判断参数 LicensePlateCategory 是否已赋值
+                     * @return LicensePlateCategory 是否已赋值
+                     * 
+                     */
+                    bool LicensePlateCategoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -136,7 +150,7 @@ namespace TencentCloud
                     bool m_rectHasBeenSet;
 
                     /**
-                     * 识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。
+                     * 识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿”、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。
                      */
                     std::string m_color;
                     bool m_colorHasBeenSet;
@@ -146,6 +160,12 @@ namespace TencentCloud
                      */
                     std::vector<LicensePlateInfo> m_licensePlateInfos;
                     bool m_licensePlateInfosHasBeenSet;
+
+                    /**
+                     * 车牌类别， 如： 实体车牌、非实体车牌 示例值：实体车牌
+                     */
+                    std::string m_licensePlateCategory;
+                    bool m_licensePlateCategoryHasBeenSet;
 
                 };
             }

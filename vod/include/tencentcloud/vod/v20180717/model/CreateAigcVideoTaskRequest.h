@@ -108,23 +108,47 @@ namespace TencentCloud
                     bool ModelVersionHasBeenSet() const;
 
                     /**
-                     * 获取AIGC 生视频任务的输入图片的文件信息。说明
-1. 当 ModelName 是 GV 时，最大长度为 3；其他情况下最大长度为1。
-2. 当 ModelName 是 GV 时，并且长度大于1时，则不能再指定 LastFrameFileId 参数。
-                     * @return FileInfos AIGC 生视频任务的输入图片的文件信息。说明
-1. 当 ModelName 是 GV 时，最大长度为 3；其他情况下最大长度为1。
-2. 当 ModelName 是 GV 时，并且长度大于1时，则不能再指定 LastFrameFileId 参数。
+                     * 获取最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。
+
+支持多图输入的模型：
+1. GV，使用多图输入时，不可使用LastFrameFileId和LastFrameUrl。
+2. Vidu，支持多图参考生视频。q2模型1-7张图片，可通过FileInfos里面的ObjectId作为主体id来传入。
+
+注意：
+1. 图片大小不超过10M。
+2. 支持的图片格式：jpeg、png。
+                     * @return FileInfos 最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。
+
+支持多图输入的模型：
+1. GV，使用多图输入时，不可使用LastFrameFileId和LastFrameUrl。
+2. Vidu，支持多图参考生视频。q2模型1-7张图片，可通过FileInfos里面的ObjectId作为主体id来传入。
+
+注意：
+1. 图片大小不超过10M。
+2. 支持的图片格式：jpeg、png。
                      * 
                      */
                     std::vector<AigcVideoTaskInputFileInfo> GetFileInfos() const;
 
                     /**
-                     * 设置AIGC 生视频任务的输入图片的文件信息。说明
-1. 当 ModelName 是 GV 时，最大长度为 3；其他情况下最大长度为1。
-2. 当 ModelName 是 GV 时，并且长度大于1时，则不能再指定 LastFrameFileId 参数。
-                     * @param _fileInfos AIGC 生视频任务的输入图片的文件信息。说明
-1. 当 ModelName 是 GV 时，最大长度为 3；其他情况下最大长度为1。
-2. 当 ModelName 是 GV 时，并且长度大于1时，则不能再指定 LastFrameFileId 参数。
+                     * 设置最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。
+
+支持多图输入的模型：
+1. GV，使用多图输入时，不可使用LastFrameFileId和LastFrameUrl。
+2. Vidu，支持多图参考生视频。q2模型1-7张图片，可通过FileInfos里面的ObjectId作为主体id来传入。
+
+注意：
+1. 图片大小不超过10M。
+2. 支持的图片格式：jpeg、png。
+                     * @param _fileInfos 最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。
+
+支持多图输入的模型：
+1. GV，使用多图输入时，不可使用LastFrameFileId和LastFrameUrl。
+2. Vidu，支持多图参考生视频。q2模型1-7张图片，可通过FileInfos里面的ObjectId作为主体id来传入。
+
+注意：
+1. 图片大小不超过10M。
+2. 支持的图片格式：jpeg、png。
                      * 
                      */
                     void SetFileInfos(const std::vector<AigcVideoTaskInputFileInfo>& _fileInfos);
@@ -203,15 +227,19 @@ namespace TencentCloud
                     bool LastFrameUrlHasBeenSet() const;
 
                     /**
-                     * 获取生成图片的提示词。当 FileInfos 为空时，此参数必填。
-                     * @return Prompt 生成图片的提示词。当 FileInfos 为空时，此参数必填。
+                     * 获取生成视频的提示词。当 FileInfos 为空时，此参数必填。
+示例值：move the picture
+                     * @return Prompt 生成视频的提示词。当 FileInfos 为空时，此参数必填。
+示例值：move the picture
                      * 
                      */
                     std::string GetPrompt() const;
 
                     /**
-                     * 设置生成图片的提示词。当 FileInfos 为空时，此参数必填。
-                     * @param _prompt 生成图片的提示词。当 FileInfos 为空时，此参数必填。
+                     * 设置生成视频的提示词。当 FileInfos 为空时，此参数必填。
+示例值：move the picture
+                     * @param _prompt 生成视频的提示词。当 FileInfos 为空时，此参数必填。
+示例值：move the picture
                      * 
                      */
                     void SetPrompt(const std::string& _prompt);
@@ -224,15 +252,15 @@ namespace TencentCloud
                     bool PromptHasBeenSet() const;
 
                     /**
-                     * 获取要阻止模型生成图片的提示词。
-                     * @return NegativePrompt 要阻止模型生成图片的提示词。
+                     * 获取要阻止模型生成视频的提示词。
+                     * @return NegativePrompt 要阻止模型生成视频的提示词。
                      * 
                      */
                     std::string GetNegativePrompt() const;
 
                     /**
-                     * 设置要阻止模型生成图片的提示词。
-                     * @param _negativePrompt 要阻止模型生成图片的提示词。
+                     * 设置要阻止模型生成视频的提示词。
+                     * @param _negativePrompt 要阻止模型生成视频的提示词。
                      * 
                      */
                     void SetNegativePrompt(const std::string& _negativePrompt);
@@ -370,6 +398,27 @@ namespace TencentCloud
                      */
                     bool ExtInfoHasBeenSet() const;
 
+                    /**
+                     * 获取输入图片的区域信息。当图片url是国外地址时候，可选Oversea。默认Mainland。
+                     * @return InputRegion 输入图片的区域信息。当图片url是国外地址时候，可选Oversea。默认Mainland。
+                     * 
+                     */
+                    std::string GetInputRegion() const;
+
+                    /**
+                     * 设置输入图片的区域信息。当图片url是国外地址时候，可选Oversea。默认Mainland。
+                     * @param _inputRegion 输入图片的区域信息。当图片url是国外地址时候，可选Oversea。默认Mainland。
+                     * 
+                     */
+                    void SetInputRegion(const std::string& _inputRegion);
+
+                    /**
+                     * 判断参数 InputRegion 是否已赋值
+                     * @return InputRegion 是否已赋值
+                     * 
+                     */
+                    bool InputRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -391,9 +440,15 @@ namespace TencentCloud
                     bool m_modelVersionHasBeenSet;
 
                     /**
-                     * AIGC 生视频任务的输入图片的文件信息。说明
-1. 当 ModelName 是 GV 时，最大长度为 3；其他情况下最大长度为1。
-2. 当 ModelName 是 GV 时，并且长度大于1时，则不能再指定 LastFrameFileId 参数。
+                     * 最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。
+
+支持多图输入的模型：
+1. GV，使用多图输入时，不可使用LastFrameFileId和LastFrameUrl。
+2. Vidu，支持多图参考生视频。q2模型1-7张图片，可通过FileInfos里面的ObjectId作为主体id来传入。
+
+注意：
+1. 图片大小不超过10M。
+2. 支持的图片格式：jpeg、png。
                      */
                     std::vector<AigcVideoTaskInputFileInfo> m_fileInfos;
                     bool m_fileInfosHasBeenSet;
@@ -417,13 +472,14 @@ namespace TencentCloud
                     bool m_lastFrameUrlHasBeenSet;
 
                     /**
-                     * 生成图片的提示词。当 FileInfos 为空时，此参数必填。
+                     * 生成视频的提示词。当 FileInfos 为空时，此参数必填。
+示例值：move the picture
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
 
                     /**
-                     * 要阻止模型生成图片的提示词。
+                     * 要阻止模型生成视频的提示词。
                      */
                     std::string m_negativePrompt;
                     bool m_negativePromptHasBeenSet;
@@ -463,6 +519,12 @@ namespace TencentCloud
                      */
                     std::string m_extInfo;
                     bool m_extInfoHasBeenSet;
+
+                    /**
+                     * 输入图片的区域信息。当图片url是国外地址时候，可选Oversea。默认Mainland。
+                     */
+                    std::string m_inputRegion;
+                    bool m_inputRegionHasBeenSet;
 
                 };
             }

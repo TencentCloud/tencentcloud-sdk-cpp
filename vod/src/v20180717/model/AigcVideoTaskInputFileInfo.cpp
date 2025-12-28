@@ -23,7 +23,10 @@ using namespace std;
 AigcVideoTaskInputFileInfo::AigcVideoTaskInputFileInfo() :
     m_typeHasBeenSet(false),
     m_fileIdHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_referenceTypeHasBeenSet(false),
+    m_objectIdHasBeenSet(false),
+    m_voiceIdHasBeenSet(false)
 {
 }
 
@@ -62,6 +65,36 @@ CoreInternalOutcome AigcVideoTaskInputFileInfo::Deserialize(const rapidjson::Val
         m_urlHasBeenSet = true;
     }
 
+    if (value.HasMember("ReferenceType") && !value["ReferenceType"].IsNull())
+    {
+        if (!value["ReferenceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoTaskInputFileInfo.ReferenceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_referenceType = string(value["ReferenceType"].GetString());
+        m_referenceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ObjectId") && !value["ObjectId"].IsNull())
+    {
+        if (!value["ObjectId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoTaskInputFileInfo.ObjectId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_objectId = string(value["ObjectId"].GetString());
+        m_objectIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("VoiceId") && !value["VoiceId"].IsNull())
+    {
+        if (!value["VoiceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoTaskInputFileInfo.VoiceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_voiceId = string(value["VoiceId"].GetString());
+        m_voiceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +124,30 @@ void AigcVideoTaskInputFileInfo::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_referenceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReferenceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_referenceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_objectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ObjectId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_objectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_voiceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoiceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_voiceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +199,53 @@ void AigcVideoTaskInputFileInfo::SetUrl(const string& _url)
 bool AigcVideoTaskInputFileInfo::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string AigcVideoTaskInputFileInfo::GetReferenceType() const
+{
+    return m_referenceType;
+}
+
+void AigcVideoTaskInputFileInfo::SetReferenceType(const string& _referenceType)
+{
+    m_referenceType = _referenceType;
+    m_referenceTypeHasBeenSet = true;
+}
+
+bool AigcVideoTaskInputFileInfo::ReferenceTypeHasBeenSet() const
+{
+    return m_referenceTypeHasBeenSet;
+}
+
+string AigcVideoTaskInputFileInfo::GetObjectId() const
+{
+    return m_objectId;
+}
+
+void AigcVideoTaskInputFileInfo::SetObjectId(const string& _objectId)
+{
+    m_objectId = _objectId;
+    m_objectIdHasBeenSet = true;
+}
+
+bool AigcVideoTaskInputFileInfo::ObjectIdHasBeenSet() const
+{
+    return m_objectIdHasBeenSet;
+}
+
+string AigcVideoTaskInputFileInfo::GetVoiceId() const
+{
+    return m_voiceId;
+}
+
+void AigcVideoTaskInputFileInfo::SetVoiceId(const string& _voiceId)
+{
+    m_voiceId = _voiceId;
+    m_voiceIdHasBeenSet = true;
+}
+
+bool AigcVideoTaskInputFileInfo::VoiceIdHasBeenSet() const
+{
+    return m_voiceIdHasBeenSet;
 }
 

@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取各组件日志采集配置，目前支持的组件有：kube-apiserver、kube-controller-manager、kube-scheduler、cluster-autoscaler、kapenter
-                     * @return Components 各组件日志采集配置，目前支持的组件有：kube-apiserver、kube-controller-manager、kube-scheduler、cluster-autoscaler、kapenter
+                     * 获取组件名称列表，目前支持的组件有：cluster-autoscaler、kapenter
+                     * @return Components 组件名称列表，目前支持的组件有：cluster-autoscaler、kapenter
                      * 
                      */
                     std::vector<ComponentLogConfig> GetComponents() const;
 
                     /**
-                     * 设置各组件日志采集配置，目前支持的组件有：kube-apiserver、kube-controller-manager、kube-scheduler、cluster-autoscaler、kapenter
-                     * @param _components 各组件日志采集配置，目前支持的组件有：kube-apiserver、kube-controller-manager、kube-scheduler、cluster-autoscaler、kapenter
+                     * 设置组件名称列表，目前支持的组件有：cluster-autoscaler、kapenter
+                     * @param _components 组件名称列表，目前支持的组件有：cluster-autoscaler、kapenter
                      * 
                      */
                     void SetComponents(const std::vector<ComponentLogConfig>& _components);
@@ -121,7 +121,7 @@ namespace TencentCloud
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 各组件日志采集配置，目前支持的组件有：kube-apiserver、kube-controller-manager、kube-scheduler、cluster-autoscaler、kapenter
+                     * 组件名称列表，目前支持的组件有：cluster-autoscaler、kapenter
                      */
                     std::vector<ComponentLogConfig> m_components;
                     bool m_componentsHasBeenSet;

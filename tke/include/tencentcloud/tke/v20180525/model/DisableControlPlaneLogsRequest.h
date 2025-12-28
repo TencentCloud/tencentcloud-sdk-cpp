@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取组件名称列表，目前支持的组件有：kube-apiserver、kube-controller-manager、kube-scheduler、cluster-autoscaler、kapenter
-                     * @return ComponentNames 组件名称列表，目前支持的组件有：kube-apiserver、kube-controller-manager、kube-scheduler、cluster-autoscaler、kapenter
+                     * 获取组件名称列表，目前支持的组件有：cluster-autoscaler、kapenter
+                     * @return ComponentNames 组件名称列表，目前支持的组件有：cluster-autoscaler、kapenter
                      * 
                      */
                     std::vector<std::string> GetComponentNames() const;
 
                     /**
-                     * 设置组件名称列表，目前支持的组件有：kube-apiserver、kube-controller-manager、kube-scheduler、cluster-autoscaler、kapenter
-                     * @param _componentNames 组件名称列表，目前支持的组件有：kube-apiserver、kube-controller-manager、kube-scheduler、cluster-autoscaler、kapenter
+                     * 设置组件名称列表，目前支持的组件有：cluster-autoscaler、kapenter
+                     * @param _componentNames 组件名称列表，目前支持的组件有：cluster-autoscaler、kapenter
                      * 
                      */
                     void SetComponentNames(const std::vector<std::string>& _componentNames);
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 组件名称列表，目前支持的组件有：kube-apiserver、kube-controller-manager、kube-scheduler、cluster-autoscaler、kapenter
+                     * 组件名称列表，目前支持的组件有：cluster-autoscaler、kapenter
                      */
                     std::vector<std::string> m_componentNames;
                     bool m_componentNamesHasBeenSet;

@@ -190,56 +190,6 @@ CdnClient::CreateClsLogTopicOutcomeCallable CdnClient::CreateClsLogTopicCallable
     return prom->get_future();
 }
 
-CdnClient::CreateDiagnoseUrlOutcome CdnClient::CreateDiagnoseUrl(const CreateDiagnoseUrlRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateDiagnoseUrl");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateDiagnoseUrlResponse rsp = CreateDiagnoseUrlResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateDiagnoseUrlOutcome(rsp);
-        else
-            return CreateDiagnoseUrlOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateDiagnoseUrlOutcome(outcome.GetError());
-    }
-}
-
-void CdnClient::CreateDiagnoseUrlAsync(const CreateDiagnoseUrlRequest& request, const CreateDiagnoseUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const CreateDiagnoseUrlRequest&;
-    using Resp = CreateDiagnoseUrlResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "CreateDiagnoseUrl", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-CdnClient::CreateDiagnoseUrlOutcomeCallable CdnClient::CreateDiagnoseUrlCallable(const CreateDiagnoseUrlRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<CreateDiagnoseUrlOutcome>>();
-    CreateDiagnoseUrlAsync(
-    request,
-    [prom](
-        const CdnClient*,
-        const CreateDiagnoseUrlRequest&,
-        CreateDiagnoseUrlOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 CdnClient::CreateEdgePackTaskOutcome CdnClient::CreateEdgePackTask(const CreateEdgePackTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateEdgePackTask");
@@ -732,56 +682,6 @@ CdnClient::DescribeCertDomainsOutcomeCallable CdnClient::DescribeCertDomainsCall
         const CdnClient*,
         const DescribeCertDomainsRequest&,
         DescribeCertDomainsOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-CdnClient::DescribeDiagnoseReportOutcome CdnClient::DescribeDiagnoseReport(const DescribeDiagnoseReportRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeDiagnoseReport");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeDiagnoseReportResponse rsp = DescribeDiagnoseReportResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeDiagnoseReportOutcome(rsp);
-        else
-            return DescribeDiagnoseReportOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeDiagnoseReportOutcome(outcome.GetError());
-    }
-}
-
-void CdnClient::DescribeDiagnoseReportAsync(const DescribeDiagnoseReportRequest& request, const DescribeDiagnoseReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeDiagnoseReportRequest&;
-    using Resp = DescribeDiagnoseReportResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeDiagnoseReport", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-CdnClient::DescribeDiagnoseReportOutcomeCallable CdnClient::DescribeDiagnoseReportCallable(const DescribeDiagnoseReportRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeDiagnoseReportOutcome>>();
-    DescribeDiagnoseReportAsync(
-    request,
-    [prom](
-        const CdnClient*,
-        const DescribeDiagnoseReportRequest&,
-        DescribeDiagnoseReportOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1982,56 +1882,6 @@ CdnClient::ListClsTopicDomainsOutcomeCallable CdnClient::ListClsTopicDomainsCall
         const CdnClient*,
         const ListClsTopicDomainsRequest&,
         ListClsTopicDomainsOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-CdnClient::ListDiagnoseReportOutcome CdnClient::ListDiagnoseReport(const ListDiagnoseReportRequest &request)
-{
-    auto outcome = MakeRequest(request, "ListDiagnoseReport");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ListDiagnoseReportResponse rsp = ListDiagnoseReportResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ListDiagnoseReportOutcome(rsp);
-        else
-            return ListDiagnoseReportOutcome(o.GetError());
-    }
-    else
-    {
-        return ListDiagnoseReportOutcome(outcome.GetError());
-    }
-}
-
-void CdnClient::ListDiagnoseReportAsync(const ListDiagnoseReportRequest& request, const ListDiagnoseReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const ListDiagnoseReportRequest&;
-    using Resp = ListDiagnoseReportResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "ListDiagnoseReport", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-CdnClient::ListDiagnoseReportOutcomeCallable CdnClient::ListDiagnoseReportCallable(const ListDiagnoseReportRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<ListDiagnoseReportOutcome>>();
-    ListDiagnoseReportAsync(
-    request,
-    [prom](
-        const CdnClient*,
-        const ListDiagnoseReportRequest&,
-        ListDiagnoseReportOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

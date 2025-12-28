@@ -14,57 +14,56 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CDN_V20180606_MODEL_LISTDIAGNOSEREPORTRESPONSE_H_
-#define TENCENTCLOUD_CDN_V20180606_MODEL_LISTDIAGNOSEREPORTRESPONSE_H_
+#ifndef TENCENTCLOUD_CLB_V20180317_MODEL_RENEWLOADBALANCERSRESPONSE_H_
+#define TENCENTCLOUD_CLB_V20180317_MODEL_RENEWLOADBALANCERSRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/cdn/v20180606/model/DiagnoseInfo.h>
 
 
 namespace TencentCloud
 {
-    namespace Cdn
+    namespace Clb
     {
-        namespace V20180606
+        namespace V20180317
         {
             namespace Model
             {
                 /**
-                * ListDiagnoseReport返回参数结构体
+                * RenewLoadBalancers返回参数结构体
                 */
-                class ListDiagnoseReportResponse : public AbstractModel
+                class RenewLoadBalancersResponse : public AbstractModel
                 {
                 public:
-                    ListDiagnoseReportResponse();
-                    ~ListDiagnoseReportResponse() = default;
+                    RenewLoadBalancersResponse();
+                    ~RenewLoadBalancersResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取诊断信息。
-                     * @return Data 诊断信息。
+                     * 获取订单号。
+                     * @return DealName 订单号。
                      * 
                      */
-                    std::vector<DiagnoseInfo> GetData() const;
+                    std::string GetDealName() const;
 
                     /**
-                     * 判断参数 Data 是否已赋值
-                     * @return Data 是否已赋值
+                     * 判断参数 DealName 是否已赋值
+                     * @return DealName 是否已赋值
                      * 
                      */
-                    bool DataHasBeenSet() const;
+                    bool DealNameHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 诊断信息。
+                     * 订单号。
                      */
-                    std::vector<DiagnoseInfo> m_data;
-                    bool m_dataHasBeenSet;
+                    std::string m_dealName;
+                    bool m_dealNameHasBeenSet;
 
                 };
             }
@@ -72,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CDN_V20180606_MODEL_LISTDIAGNOSEREPORTRESPONSE_H_
+#endif // !TENCENTCLOUD_CLB_V20180317_MODEL_RENEWLOADBALANCERSRESPONSE_H_

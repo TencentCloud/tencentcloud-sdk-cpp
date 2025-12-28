@@ -73,7 +73,9 @@ ModifyApmApplicationConfigRequest::ModifyApmApplicationConfigRequest() :
     m_disableMemoryUsedHasBeenSet(false),
     m_disableCpuUsedHasBeenSet(false),
     m_dbStatementParametersEnabledHasBeenSet(false),
-    m_slowSQLThresholdsHasBeenSet(false)
+    m_slowSQLThresholdsHasBeenSet(false),
+    m_enableDesensitizationRuleHasBeenSet(false),
+    m_desensitizationRuleHasBeenSet(false)
 {
 }
 
@@ -505,6 +507,22 @@ string ModifyApmApplicationConfigRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_enableDesensitizationRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDesensitizationRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableDesensitizationRule, allocator);
+    }
+
+    if (m_desensitizationRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DesensitizationRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_desensitizationRule.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1329,6 +1347,38 @@ void ModifyApmApplicationConfigRequest::SetSlowSQLThresholds(const vector<ApmTag
 bool ModifyApmApplicationConfigRequest::SlowSQLThresholdsHasBeenSet() const
 {
     return m_slowSQLThresholdsHasBeenSet;
+}
+
+int64_t ModifyApmApplicationConfigRequest::GetEnableDesensitizationRule() const
+{
+    return m_enableDesensitizationRule;
+}
+
+void ModifyApmApplicationConfigRequest::SetEnableDesensitizationRule(const int64_t& _enableDesensitizationRule)
+{
+    m_enableDesensitizationRule = _enableDesensitizationRule;
+    m_enableDesensitizationRuleHasBeenSet = true;
+}
+
+bool ModifyApmApplicationConfigRequest::EnableDesensitizationRuleHasBeenSet() const
+{
+    return m_enableDesensitizationRuleHasBeenSet;
+}
+
+string ModifyApmApplicationConfigRequest::GetDesensitizationRule() const
+{
+    return m_desensitizationRule;
+}
+
+void ModifyApmApplicationConfigRequest::SetDesensitizationRule(const string& _desensitizationRule)
+{
+    m_desensitizationRule = _desensitizationRule;
+    m_desensitizationRuleHasBeenSet = true;
+}
+
+bool ModifyApmApplicationConfigRequest::DesensitizationRuleHasBeenSet() const
+{
+    return m_desensitizationRuleHasBeenSet;
 }
 
 

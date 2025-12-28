@@ -187,6 +187,8 @@
 #include <tencentcloud/clb/v20180317/model/RegisterTargetsResponse.h>
 #include <tencentcloud/clb/v20180317/model/RegisterTargetsWithClassicalLBRequest.h>
 #include <tencentcloud/clb/v20180317/model/RegisterTargetsWithClassicalLBResponse.h>
+#include <tencentcloud/clb/v20180317/model/RenewLoadBalancersRequest.h>
+#include <tencentcloud/clb/v20180317/model/RenewLoadBalancersResponse.h>
 #include <tencentcloud/clb/v20180317/model/ReplaceCertForLoadBalancersRequest.h>
 #include <tencentcloud/clb/v20180317/model/ReplaceCertForLoadBalancersResponse.h>
 #include <tencentcloud/clb/v20180317/model/SetCustomizedConfigForLoadBalancerRequest.h>
@@ -459,6 +461,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RegisterTargetsWithClassicalLBResponse> RegisterTargetsWithClassicalLBOutcome;
                 typedef std::future<RegisterTargetsWithClassicalLBOutcome> RegisterTargetsWithClassicalLBOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::RegisterTargetsWithClassicalLBRequest&, RegisterTargetsWithClassicalLBOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterTargetsWithClassicalLBAsyncHandler;
+                typedef Outcome<Core::Error, Model::RenewLoadBalancersResponse> RenewLoadBalancersOutcome;
+                typedef std::future<RenewLoadBalancersOutcome> RenewLoadBalancersOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::RenewLoadBalancersRequest&, RenewLoadBalancersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewLoadBalancersAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReplaceCertForLoadBalancersResponse> ReplaceCertForLoadBalancersOutcome;
                 typedef std::future<ReplaceCertForLoadBalancersOutcome> ReplaceCertForLoadBalancersOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ReplaceCertForLoadBalancersRequest&, ReplaceCertForLoadBalancersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceCertForLoadBalancersAsyncHandler;
@@ -1301,6 +1306,15 @@ BGP带宽包必须传带宽包id
                 RegisterTargetsWithClassicalLBOutcome RegisterTargetsWithClassicalLB(const Model::RegisterTargetsWithClassicalLBRequest &request);
                 void RegisterTargetsWithClassicalLBAsync(const Model::RegisterTargetsWithClassicalLBRequest& request, const RegisterTargetsWithClassicalLBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RegisterTargetsWithClassicalLBOutcomeCallable RegisterTargetsWithClassicalLBCallable(const Model::RegisterTargetsWithClassicalLBRequest& request);
+
+                /**
+                 *API接口续费包年包月实例还在灰度中，如您需要体验该功能，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)
+                 * @param req RenewLoadBalancersRequest
+                 * @return RenewLoadBalancersOutcome
+                 */
+                RenewLoadBalancersOutcome RenewLoadBalancers(const Model::RenewLoadBalancersRequest &request);
+                void RenewLoadBalancersAsync(const Model::RenewLoadBalancersRequest& request, const RenewLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenewLoadBalancersOutcomeCallable RenewLoadBalancersCallable(const Model::RenewLoadBalancersRequest& request);
 
                 /**
                  *ReplaceCertForLoadBalancers 接口用以替换负载均衡实例所关联的证书，对于各个地域的负载均衡，如果指定的老的证书ID与其有关联关系，则会先解除关联，再建立新证书与该负载均衡的关联关系。

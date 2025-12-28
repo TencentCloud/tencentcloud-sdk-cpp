@@ -129,6 +129,93 @@ namespace TencentCloud
                      */
                     bool UrlHasBeenSet() const;
 
+                    /**
+                     * 获取参考类型，GV模型适用。
+注意：
+
+当使用GV模型时，可作为参考方式,可选asset(素材)、style(风格)。
+                     * @return ReferenceType 参考类型，GV模型适用。
+注意：
+
+当使用GV模型时，可作为参考方式,可选asset(素材)、style(风格)。
+                     * 
+                     */
+                    std::string GetReferenceType() const;
+
+                    /**
+                     * 设置参考类型，GV模型适用。
+注意：
+
+当使用GV模型时，可作为参考方式,可选asset(素材)、style(风格)。
+                     * @param _referenceType 参考类型，GV模型适用。
+注意：
+
+当使用GV模型时，可作为参考方式,可选asset(素材)、style(风格)。
+                     * 
+                     */
+                    void SetReferenceType(const std::string& _referenceType);
+
+                    /**
+                     * 判断参数 ReferenceType 是否已赋值
+                     * @return ReferenceType 是否已赋值
+                     * 
+                     */
+                    bool ReferenceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取主体id.
+适用模型：Vidu-q2.
+当需要对图片标识主体时，需要每个图片都带主体id，后续生成时可以通过@主体id的方式使用。
+                     * @return ObjectId 主体id.
+适用模型：Vidu-q2.
+当需要对图片标识主体时，需要每个图片都带主体id，后续生成时可以通过@主体id的方式使用。
+                     * 
+                     */
+                    std::string GetObjectId() const;
+
+                    /**
+                     * 设置主体id.
+适用模型：Vidu-q2.
+当需要对图片标识主体时，需要每个图片都带主体id，后续生成时可以通过@主体id的方式使用。
+                     * @param _objectId 主体id.
+适用模型：Vidu-q2.
+当需要对图片标识主体时，需要每个图片都带主体id，后续生成时可以通过@主体id的方式使用。
+                     * 
+                     */
+                    void SetObjectId(const std::string& _objectId);
+
+                    /**
+                     * 判断参数 ObjectId 是否已赋值
+                     * @return ObjectId 是否已赋值
+                     * 
+                     */
+                    bool ObjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取适用于Vidu-q2模型。
+当全部图片携带主体id时，可针对主体设置音色id。 音色列表：https://shengshu.feishu.cn/sheets/EgFvs6DShhiEBStmjzccr5gonOg
+                     * @return VoiceId 适用于Vidu-q2模型。
+当全部图片携带主体id时，可针对主体设置音色id。 音色列表：https://shengshu.feishu.cn/sheets/EgFvs6DShhiEBStmjzccr5gonOg
+                     * 
+                     */
+                    std::string GetVoiceId() const;
+
+                    /**
+                     * 设置适用于Vidu-q2模型。
+当全部图片携带主体id时，可针对主体设置音色id。 音色列表：https://shengshu.feishu.cn/sheets/EgFvs6DShhiEBStmjzccr5gonOg
+                     * @param _voiceId 适用于Vidu-q2模型。
+当全部图片携带主体id时，可针对主体设置音色id。 音色列表：https://shengshu.feishu.cn/sheets/EgFvs6DShhiEBStmjzccr5gonOg
+                     * 
+                     */
+                    void SetVoiceId(const std::string& _voiceId);
+
+                    /**
+                     * 判断参数 VoiceId 是否已赋值
+                     * @return VoiceId 是否已赋值
+                     * 
+                     */
+                    bool VoiceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -153,6 +240,30 @@ namespace TencentCloud
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
+
+                    /**
+                     * 参考类型，GV模型适用。
+注意：
+
+当使用GV模型时，可作为参考方式,可选asset(素材)、style(风格)。
+                     */
+                    std::string m_referenceType;
+                    bool m_referenceTypeHasBeenSet;
+
+                    /**
+                     * 主体id.
+适用模型：Vidu-q2.
+当需要对图片标识主体时，需要每个图片都带主体id，后续生成时可以通过@主体id的方式使用。
+                     */
+                    std::string m_objectId;
+                    bool m_objectIdHasBeenSet;
+
+                    /**
+                     * 适用于Vidu-q2模型。
+当全部图片携带主体id时，可针对主体设置音色id。 音色列表：https://shengshu.feishu.cn/sheets/EgFvs6DShhiEBStmjzccr5gonOg
+                     */
+                    std::string m_voiceId;
+                    bool m_voiceIdHasBeenSet;
 
                 };
             }

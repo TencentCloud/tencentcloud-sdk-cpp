@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/AsrHotWordsConfigure.h>
+#include <tencentcloud/mps/v20190612/model/SelectingSubtitleAreasConfig.h>
 
 
 namespace TencentCloud
@@ -334,13 +335,13 @@ namespace TencentCloud
                      * 获取智能字幕文件格式
 - vtt: WebVTT 格式
 - srt: SRT格式
-- original：与源字幕文件一致（用于纯字幕翻译模版）
+- original：与源字幕文件一致（用于纯字幕翻译模板）
 - 不填或填空：不生成字幕文件
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubtitleFormat 智能字幕文件格式
 - vtt: WebVTT 格式
 - srt: SRT格式
-- original：与源字幕文件一致（用于纯字幕翻译模版）
+- original：与源字幕文件一致（用于纯字幕翻译模板）
 - 不填或填空：不生成字幕文件
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -351,13 +352,13 @@ namespace TencentCloud
                      * 设置智能字幕文件格式
 - vtt: WebVTT 格式
 - srt: SRT格式
-- original：与源字幕文件一致（用于纯字幕翻译模版）
+- original：与源字幕文件一致（用于纯字幕翻译模板）
 - 不填或填空：不生成字幕文件
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subtitleFormat 智能字幕文件格式
 - vtt: WebVTT 格式
 - srt: SRT格式
-- original：与源字幕文件一致（用于纯字幕翻译模版）
+- original：与源字幕文件一致（用于纯字幕翻译模板）
 - 不填或填空：不生成字幕文件
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -641,9 +642,11 @@ OFF: 关闭翻译
                      * 获取字幕处理类型：
 - 0：ASR识别字幕
 - 1：纯字幕翻译
+- 2:  OCR识别字幕
                      * @return ProcessType 字幕处理类型：
 - 0：ASR识别字幕
 - 1：纯字幕翻译
+- 2:  OCR识别字幕
                      * 
                      */
                     uint64_t GetProcessType() const;
@@ -652,9 +655,11 @@ OFF: 关闭翻译
                      * 设置字幕处理类型：
 - 0：ASR识别字幕
 - 1：纯字幕翻译
+- 2:  OCR识别字幕
                      * @param _processType 字幕处理类型：
 - 0：ASR识别字幕
 - 1：纯字幕翻译
+- 2:  OCR识别字幕
                      * 
                      */
                     void SetProcessType(const uint64_t& _processType);
@@ -665,6 +670,31 @@ OFF: 关闭翻译
                      * 
                      */
                     bool ProcessTypeHasBeenSet() const;
+
+                    /**
+                     * 获取字幕OCR提取框选区域配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SelectingSubtitleAreasConfig 字幕OCR提取框选区域配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SelectingSubtitleAreasConfig GetSelectingSubtitleAreasConfig() const;
+
+                    /**
+                     * 设置字幕OCR提取框选区域配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _selectingSubtitleAreasConfig 字幕OCR提取框选区域配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSelectingSubtitleAreasConfig(const SelectingSubtitleAreasConfig& _selectingSubtitleAreasConfig);
+
+                    /**
+                     * 判断参数 SelectingSubtitleAreasConfig 是否已赋值
+                     * @return SelectingSubtitleAreasConfig 是否已赋值
+                     * 
+                     */
+                    bool SelectingSubtitleAreasConfigHasBeenSet() const;
 
                 private:
 
@@ -748,7 +778,7 @@ OFF: 关闭翻译
                      * 智能字幕文件格式
 - vtt: WebVTT 格式
 - srt: SRT格式
-- original：与源字幕文件一致（用于纯字幕翻译模版）
+- original：与源字幕文件一致（用于纯字幕翻译模板）
 - 不填或填空：不生成字幕文件
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -830,9 +860,17 @@ OFF: 关闭翻译
                      * 字幕处理类型：
 - 0：ASR识别字幕
 - 1：纯字幕翻译
+- 2:  OCR识别字幕
                      */
                     uint64_t m_processType;
                     bool m_processTypeHasBeenSet;
+
+                    /**
+                     * 字幕OCR提取框选区域配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SelectingSubtitleAreasConfig m_selectingSubtitleAreasConfig;
+                    bool m_selectingSubtitleAreasConfigHasBeenSet;
 
                 };
             }

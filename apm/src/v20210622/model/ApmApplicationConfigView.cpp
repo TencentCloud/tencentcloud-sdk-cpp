@@ -43,7 +43,9 @@ ApmApplicationConfigView::ApmApplicationConfigView() :
     m_disableMemoryUsedHasBeenSet(false),
     m_disableCpuUsedHasBeenSet(false),
     m_dbStatementParametersEnabledHasBeenSet(false),
-    m_slowSQLThresholdsHasBeenSet(false)
+    m_slowSQLThresholdsHasBeenSet(false),
+    m_enableDesensitizationRuleHasBeenSet(false),
+    m_desensitizationRuleHasBeenSet(false)
 {
 }
 
@@ -302,6 +304,26 @@ CoreInternalOutcome ApmApplicationConfigView::Deserialize(const rapidjson::Value
         m_slowSQLThresholdsHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableDesensitizationRule") && !value["EnableDesensitizationRule"].IsNull())
+    {
+        if (!value["EnableDesensitizationRule"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmApplicationConfigView.EnableDesensitizationRule` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableDesensitizationRule = value["EnableDesensitizationRule"].GetInt64();
+        m_enableDesensitizationRuleHasBeenSet = true;
+    }
+
+    if (value.HasMember("DesensitizationRule") && !value["DesensitizationRule"].IsNull())
+    {
+        if (!value["DesensitizationRule"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmApplicationConfigView.DesensitizationRule` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_desensitizationRule = string(value["DesensitizationRule"].GetString());
+        m_desensitizationRuleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -505,6 +527,22 @@ void ApmApplicationConfigView::ToJsonObject(rapidjson::Value &value, rapidjson::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_enableDesensitizationRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDesensitizationRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableDesensitizationRule, allocator);
+    }
+
+    if (m_desensitizationRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DesensitizationRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_desensitizationRule.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -876,5 +914,37 @@ void ApmApplicationConfigView::SetSlowSQLThresholds(const vector<ApmTag>& _slowS
 bool ApmApplicationConfigView::SlowSQLThresholdsHasBeenSet() const
 {
     return m_slowSQLThresholdsHasBeenSet;
+}
+
+int64_t ApmApplicationConfigView::GetEnableDesensitizationRule() const
+{
+    return m_enableDesensitizationRule;
+}
+
+void ApmApplicationConfigView::SetEnableDesensitizationRule(const int64_t& _enableDesensitizationRule)
+{
+    m_enableDesensitizationRule = _enableDesensitizationRule;
+    m_enableDesensitizationRuleHasBeenSet = true;
+}
+
+bool ApmApplicationConfigView::EnableDesensitizationRuleHasBeenSet() const
+{
+    return m_enableDesensitizationRuleHasBeenSet;
+}
+
+string ApmApplicationConfigView::GetDesensitizationRule() const
+{
+    return m_desensitizationRule;
+}
+
+void ApmApplicationConfigView::SetDesensitizationRule(const string& _desensitizationRule)
+{
+    m_desensitizationRule = _desensitizationRule;
+    m_desensitizationRuleHasBeenSet = true;
+}
+
+bool ApmApplicationConfigView::DesensitizationRuleHasBeenSet() const
+{
+    return m_desensitizationRuleHasBeenSet;
 }
 

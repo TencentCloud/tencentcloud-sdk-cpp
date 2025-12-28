@@ -34,7 +34,9 @@ AiAnalysisResult::AiAnalysisResult() :
     m_horizontalToVerticalTaskHasBeenSet(false),
     m_dubbingTaskHasBeenSet(false),
     m_videoRemakeTaskHasBeenSet(false),
-    m_videoComprehensionTaskHasBeenSet(false)
+    m_videoComprehensionTaskHasBeenSet(false),
+    m_cutoutTaskHasBeenSet(false),
+    m_reelTaskHasBeenSet(false)
 {
 }
 
@@ -274,6 +276,40 @@ CoreInternalOutcome AiAnalysisResult::Deserialize(const rapidjson::Value &value)
         m_videoComprehensionTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("CutoutTask") && !value["CutoutTask"].IsNull())
+    {
+        if (!value["CutoutTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResult.CutoutTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cutoutTask.Deserialize(value["CutoutTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cutoutTaskHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReelTask") && !value["ReelTask"].IsNull())
+    {
+        if (!value["ReelTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResult.ReelTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_reelTask.Deserialize(value["ReelTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_reelTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -404,6 +440,24 @@ void AiAnalysisResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_videoComprehensionTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cutoutTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CutoutTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cutoutTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_reelTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReelTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_reelTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -631,5 +685,37 @@ void AiAnalysisResult::SetVideoComprehensionTask(const AiAnalysisTaskVideoCompre
 bool AiAnalysisResult::VideoComprehensionTaskHasBeenSet() const
 {
     return m_videoComprehensionTaskHasBeenSet;
+}
+
+AiAnalysisTaskCutoutResult AiAnalysisResult::GetCutoutTask() const
+{
+    return m_cutoutTask;
+}
+
+void AiAnalysisResult::SetCutoutTask(const AiAnalysisTaskCutoutResult& _cutoutTask)
+{
+    m_cutoutTask = _cutoutTask;
+    m_cutoutTaskHasBeenSet = true;
+}
+
+bool AiAnalysisResult::CutoutTaskHasBeenSet() const
+{
+    return m_cutoutTaskHasBeenSet;
+}
+
+AiAnalysisTaskReelResult AiAnalysisResult::GetReelTask() const
+{
+    return m_reelTask;
+}
+
+void AiAnalysisResult::SetReelTask(const AiAnalysisTaskReelResult& _reelTask)
+{
+    m_reelTask = _reelTask;
+    m_reelTaskHasBeenSet = true;
+}
+
+bool AiAnalysisResult::ReelTaskHasBeenSet() const
+{
+    return m_reelTaskHasBeenSet;
 }
 

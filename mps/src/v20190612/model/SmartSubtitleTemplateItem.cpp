@@ -35,7 +35,8 @@ SmartSubtitleTemplateItem::SmartSubtitleTemplateItem() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_aliasNameHasBeenSet(false),
-    m_processTypeHasBeenSet(false)
+    m_processTypeHasBeenSet(false),
+    m_selectingSubtitleAreasConfigHasBeenSet(false)
 {
 }
 
@@ -201,6 +202,23 @@ CoreInternalOutcome SmartSubtitleTemplateItem::Deserialize(const rapidjson::Valu
         m_processTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SelectingSubtitleAreasConfig") && !value["SelectingSubtitleAreasConfig"].IsNull())
+    {
+        if (!value["SelectingSubtitleAreasConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmartSubtitleTemplateItem.SelectingSubtitleAreasConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_selectingSubtitleAreasConfig.Deserialize(value["SelectingSubtitleAreasConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_selectingSubtitleAreasConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -327,6 +345,15 @@ void SmartSubtitleTemplateItem::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "ProcessType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_processType, allocator);
+    }
+
+    if (m_selectingSubtitleAreasConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SelectingSubtitleAreasConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_selectingSubtitleAreasConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -570,5 +597,21 @@ void SmartSubtitleTemplateItem::SetProcessType(const uint64_t& _processType)
 bool SmartSubtitleTemplateItem::ProcessTypeHasBeenSet() const
 {
     return m_processTypeHasBeenSet;
+}
+
+SelectingSubtitleAreasConfig SmartSubtitleTemplateItem::GetSelectingSubtitleAreasConfig() const
+{
+    return m_selectingSubtitleAreasConfig;
+}
+
+void SmartSubtitleTemplateItem::SetSelectingSubtitleAreasConfig(const SelectingSubtitleAreasConfig& _selectingSubtitleAreasConfig)
+{
+    m_selectingSubtitleAreasConfig = _selectingSubtitleAreasConfig;
+    m_selectingSubtitleAreasConfigHasBeenSet = true;
+}
+
+bool SmartSubtitleTemplateItem::SelectingSubtitleAreasConfigHasBeenSet() const
+{
+    return m_selectingSubtitleAreasConfigHasBeenSet;
 }
 

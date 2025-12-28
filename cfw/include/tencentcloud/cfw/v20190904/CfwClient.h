@@ -61,8 +61,6 @@
 #include <tencentcloud/cfw/v20190904/model/DeleteAcRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteAddressTemplateRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteAddressTemplateResponse.h>
-#include <tencentcloud/cfw/v20190904/model/DeleteAllAccessControlRuleRequest.h>
-#include <tencentcloud/cfw/v20190904/model/DeleteAllAccessControlRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteBlockIgnoreRuleListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteBlockIgnoreRuleListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteBlockIgnoreRuleNewRequest.h>
@@ -320,9 +318,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAddressTemplateResponse> DeleteAddressTemplateOutcome;
                 typedef std::future<DeleteAddressTemplateOutcome> DeleteAddressTemplateOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteAddressTemplateRequest&, DeleteAddressTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAddressTemplateAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteAllAccessControlRuleResponse> DeleteAllAccessControlRuleOutcome;
-                typedef std::future<DeleteAllAccessControlRuleOutcome> DeleteAllAccessControlRuleOutcomeCallable;
-                typedef std::function<void(const CfwClient*, const Model::DeleteAllAccessControlRuleRequest&, DeleteAllAccessControlRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAllAccessControlRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteBlockIgnoreRuleListResponse> DeleteBlockIgnoreRuleListOutcome;
                 typedef std::future<DeleteBlockIgnoreRuleListOutcome> DeleteBlockIgnoreRuleListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteBlockIgnoreRuleListRequest&, DeleteBlockIgnoreRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBlockIgnoreRuleListAsyncHandler;
@@ -775,17 +770,6 @@ namespace TencentCloud
                 DeleteAddressTemplateOutcome DeleteAddressTemplate(const Model::DeleteAddressTemplateRequest &request);
                 void DeleteAddressTemplateAsync(const Model::DeleteAddressTemplateRequest& request, const DeleteAddressTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAddressTemplateOutcomeCallable DeleteAddressTemplateCallable(const Model::DeleteAddressTemplateRequest& request);
-
-                /**
-                 *业务废弃
-
-全部删除规则
-                 * @param req DeleteAllAccessControlRuleRequest
-                 * @return DeleteAllAccessControlRuleOutcome
-                 */
-                DeleteAllAccessControlRuleOutcome DeleteAllAccessControlRule(const Model::DeleteAllAccessControlRuleRequest &request);
-                void DeleteAllAccessControlRuleAsync(const Model::DeleteAllAccessControlRuleRequest& request, const DeleteAllAccessControlRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteAllAccessControlRuleOutcomeCallable DeleteAllAccessControlRuleCallable(const Model::DeleteAllAccessControlRuleRequest& request);
 
                 /**
                  *批量删除入侵防御封禁列表、放通列表规则

@@ -92,18 +92,18 @@ namespace TencentCloud
 
                     /**
                      * 获取如果需要克隆实例回档到指定备份集，则指定该值为备份文件的 Id。请使用 [查询数据备份文件列表](/document/api/236/15842)。
-说明：如果是克隆双节点、三节点实例，备份文件为物理备份，如果是克隆单节点、集群版实例，备份文件为快照备份。
+说明：如果是克隆双节点、三节点实例，备份文件为物理备份，如果是克隆单节点、云盘版实例，备份文件为快照备份。
                      * @return SpecifiedBackupId 如果需要克隆实例回档到指定备份集，则指定该值为备份文件的 Id。请使用 [查询数据备份文件列表](/document/api/236/15842)。
-说明：如果是克隆双节点、三节点实例，备份文件为物理备份，如果是克隆单节点、集群版实例，备份文件为快照备份。
+说明：如果是克隆双节点、三节点实例，备份文件为物理备份，如果是克隆单节点、云盘版实例，备份文件为快照备份。
                      * 
                      */
                     int64_t GetSpecifiedBackupId() const;
 
                     /**
                      * 设置如果需要克隆实例回档到指定备份集，则指定该值为备份文件的 Id。请使用 [查询数据备份文件列表](/document/api/236/15842)。
-说明：如果是克隆双节点、三节点实例，备份文件为物理备份，如果是克隆单节点、集群版实例，备份文件为快照备份。
+说明：如果是克隆双节点、三节点实例，备份文件为物理备份，如果是克隆单节点、云盘版实例，备份文件为快照备份。
                      * @param _specifiedBackupId 如果需要克隆实例回档到指定备份集，则指定该值为备份文件的 Id。请使用 [查询数据备份文件列表](/document/api/236/15842)。
-说明：如果是克隆双节点、三节点实例，备份文件为物理备份，如果是克隆单节点、集群版实例，备份文件为快照备份。
+说明：如果是克隆双节点、三节点实例，备份文件为物理备份，如果是克隆单节点、云盘版实例，备份文件为快照备份。
                      * 
                      */
                     void SetSpecifiedBackupId(const int64_t& _specifiedBackupId);
@@ -368,15 +368,15 @@ namespace TencentCloud
                     bool BackupZoneHasBeenSet() const;
 
                     /**
-                     * 获取克隆实例类型。支持值包括："UNIVERSAL" - 通用型实例，"EXCLUSIVE" - 独享型实例，"CLOUD_NATIVE_CLUSTER" - 集群版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 集群版加强型。不指定则默认为通用型。
-                     * @return DeviceType 克隆实例类型。支持值包括："UNIVERSAL" - 通用型实例，"EXCLUSIVE" - 独享型实例，"CLOUD_NATIVE_CLUSTER" - 集群版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 集群版加强型。不指定则默认为通用型。
+                     * 获取克隆实例类型。支持值包括："UNIVERSAL" - 通用型实例，"EXCLUSIVE" - 独享型实例，"CLOUD_NATIVE_CLUSTER" - 云盘版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 云盘版加强型。不指定则默认为通用型。
+                     * @return DeviceType 克隆实例类型。支持值包括："UNIVERSAL" - 通用型实例，"EXCLUSIVE" - 独享型实例，"CLOUD_NATIVE_CLUSTER" - 云盘版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 云盘版加强型。不指定则默认为通用型。
                      * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
-                     * 设置克隆实例类型。支持值包括："UNIVERSAL" - 通用型实例，"EXCLUSIVE" - 独享型实例，"CLOUD_NATIVE_CLUSTER" - 集群版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 集群版加强型。不指定则默认为通用型。
-                     * @param _deviceType 克隆实例类型。支持值包括："UNIVERSAL" - 通用型实例，"EXCLUSIVE" - 独享型实例，"CLOUD_NATIVE_CLUSTER" - 集群版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 集群版加强型。不指定则默认为通用型。
+                     * 设置克隆实例类型。支持值包括："UNIVERSAL" - 通用型实例，"EXCLUSIVE" - 独享型实例，"CLOUD_NATIVE_CLUSTER" - 云盘版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 云盘版加强型。不指定则默认为通用型。
+                     * @param _deviceType 克隆实例类型。支持值包括："UNIVERSAL" - 通用型实例，"EXCLUSIVE" - 独享型实例，"CLOUD_NATIVE_CLUSTER" - 云盘版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 云盘版加强型。不指定则默认为通用型。
                      * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
@@ -536,15 +536,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取集群版节点拓扑配置。
-                     * @return ClusterTopology 集群版节点拓扑配置。
+                     * 获取云盘版节点拓扑配置。
+                     * @return ClusterTopology 云盘版节点拓扑配置。
                      * 
                      */
                     ClusterTopology GetClusterTopology() const;
 
                     /**
-                     * 设置集群版节点拓扑配置。
-                     * @param _clusterTopology 集群版节点拓扑配置。
+                     * 设置云盘版节点拓扑配置。
+                     * @param _clusterTopology 云盘版节点拓扑配置。
                      * 
                      */
                     void SetClusterTopology(const ClusterTopology& _clusterTopology);
@@ -598,6 +598,27 @@ namespace TencentCloud
                      */
                     bool SpecifiedSubBackupIdHasBeenSet() const;
 
+                    /**
+                     * 获取新产生的克隆实例主库的可用区信息，默认同源实例 Zone 的值。
+                     * @return MasterZone 新产生的克隆实例主库的可用区信息，默认同源实例 Zone 的值。
+                     * 
+                     */
+                    std::string GetMasterZone() const;
+
+                    /**
+                     * 设置新产生的克隆实例主库的可用区信息，默认同源实例 Zone 的值。
+                     * @param _masterZone 新产生的克隆实例主库的可用区信息，默认同源实例 Zone 的值。
+                     * 
+                     */
+                    void SetMasterZone(const std::string& _masterZone);
+
+                    /**
+                     * 判断参数 MasterZone 是否已赋值
+                     * @return MasterZone 是否已赋值
+                     * 
+                     */
+                    bool MasterZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -615,7 +636,7 @@ namespace TencentCloud
 
                     /**
                      * 如果需要克隆实例回档到指定备份集，则指定该值为备份文件的 Id。请使用 [查询数据备份文件列表](/document/api/236/15842)。
-说明：如果是克隆双节点、三节点实例，备份文件为物理备份，如果是克隆单节点、集群版实例，备份文件为快照备份。
+说明：如果是克隆双节点、三节点实例，备份文件为物理备份，如果是克隆单节点、云盘版实例，备份文件为快照备份。
                      */
                     int64_t m_specifiedBackupId;
                     bool m_specifiedBackupIdHasBeenSet;
@@ -693,7 +714,7 @@ namespace TencentCloud
                     bool m_backupZoneHasBeenSet;
 
                     /**
-                     * 克隆实例类型。支持值包括："UNIVERSAL" - 通用型实例，"EXCLUSIVE" - 独享型实例，"CLOUD_NATIVE_CLUSTER" - 集群版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 集群版加强型。不指定则默认为通用型。
+                     * 克隆实例类型。支持值包括："UNIVERSAL" - 通用型实例，"EXCLUSIVE" - 独享型实例，"CLOUD_NATIVE_CLUSTER" - 云盘版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 云盘版加强型。不指定则默认为通用型。
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;
@@ -741,7 +762,7 @@ namespace TencentCloud
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 集群版节点拓扑配置。
+                     * 云盘版节点拓扑配置。
                      */
                     ClusterTopology m_clusterTopology;
                     bool m_clusterTopologyHasBeenSet;
@@ -757,6 +778,12 @@ namespace TencentCloud
                      */
                     int64_t m_specifiedSubBackupId;
                     bool m_specifiedSubBackupIdHasBeenSet;
+
+                    /**
+                     * 新产生的克隆实例主库的可用区信息，默认同源实例 Zone 的值。
+                     */
+                    std::string m_masterZone;
+                    bool m_masterZoneHasBeenSet;
 
                 };
             }

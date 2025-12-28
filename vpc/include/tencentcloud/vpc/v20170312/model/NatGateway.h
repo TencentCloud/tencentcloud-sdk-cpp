@@ -480,6 +480,27 @@ namespace TencentCloud
                     bool NatProductVersionHasBeenSet() const;
 
                     /**
+                     * 获取true代表仅允许匹配SNAT规则的内网IP的流量进行转发，false代表所有内网IP发起的流量都进行转发。默认为false。
+                     * @return StrictSnatMode true代表仅允许匹配SNAT规则的内网IP的流量进行转发，false代表所有内网IP发起的流量都进行转发。默认为false。
+                     * 
+                     */
+                    bool GetStrictSnatMode() const;
+
+                    /**
+                     * 设置true代表仅允许匹配SNAT规则的内网IP的流量进行转发，false代表所有内网IP发起的流量都进行转发。默认为false。
+                     * @param _strictSnatMode true代表仅允许匹配SNAT规则的内网IP的流量进行转发，false代表所有内网IP发起的流量都进行转发。默认为false。
+                     * 
+                     */
+                    void SetStrictSnatMode(const bool& _strictSnatMode);
+
+                    /**
+                     * 判断参数 StrictSnatMode 是否已赋值
+                     * @return StrictSnatMode 是否已赋值
+                     * 
+                     */
+                    bool StrictSnatModeHasBeenSet() const;
+
+                    /**
                      * 获取是否启用根据目的网段选择SNAT使用的EIP功能	
                      * @return SmartScheduleMode 是否启用根据目的网段选择SNAT使用的EIP功能	
                      * 
@@ -583,6 +604,69 @@ namespace TencentCloud
                      * 
                      */
                     bool ExclusiveTypeHasBeenSet() const;
+
+                    /**
+                     * 获取标准型NAT网关自动扩容
+                     * @return AutoScaling 标准型NAT网关自动扩容
+                     * 
+                     */
+                    bool GetAutoScaling() const;
+
+                    /**
+                     * 设置标准型NAT网关自动扩容
+                     * @param _autoScaling 标准型NAT网关自动扩容
+                     * 
+                     */
+                    void SetAutoScaling(const bool& _autoScaling);
+
+                    /**
+                     * 判断参数 AutoScaling 是否已赋值
+                     * @return AutoScaling 是否已赋值
+                     * 
+                     */
+                    bool AutoScalingHasBeenSet() const;
+
+                    /**
+                     * 获取是否代答公网发给NAT网关上弹性公网IP的ICMP echo请求报文，当前适用于标准型NAT网关
+                     * @return ICMPProxy 是否代答公网发给NAT网关上弹性公网IP的ICMP echo请求报文，当前适用于标准型NAT网关
+                     * 
+                     */
+                    bool GetICMPProxy() const;
+
+                    /**
+                     * 设置是否代答公网发给NAT网关上弹性公网IP的ICMP echo请求报文，当前适用于标准型NAT网关
+                     * @param _iCMPProxy 是否代答公网发给NAT网关上弹性公网IP的ICMP echo请求报文，当前适用于标准型NAT网关
+                     * 
+                     */
+                    void SetICMPProxy(const bool& _iCMPProxy);
+
+                    /**
+                     * 判断参数 ICMPProxy 是否已赋值
+                     * @return ICMPProxy 是否已赋值
+                     * 
+                     */
+                    bool ICMPProxyHasBeenSet() const;
+
+                    /**
+                     * 获取true代表同一个私网IP访问同一个公网目的IP时，固定使用同一个NAT网关上的弹性公网IP；false代表这种情况下使用的弹性公网IP不固定。默认为true。
+                     * @return PublicAddressAffinity true代表同一个私网IP访问同一个公网目的IP时，固定使用同一个NAT网关上的弹性公网IP；false代表这种情况下使用的弹性公网IP不固定。默认为true。
+                     * 
+                     */
+                    bool GetPublicAddressAffinity() const;
+
+                    /**
+                     * 设置true代表同一个私网IP访问同一个公网目的IP时，固定使用同一个NAT网关上的弹性公网IP；false代表这种情况下使用的弹性公网IP不固定。默认为true。
+                     * @param _publicAddressAffinity true代表同一个私网IP访问同一个公网目的IP时，固定使用同一个NAT网关上的弹性公网IP；false代表这种情况下使用的弹性公网IP不固定。默认为true。
+                     * 
+                     */
+                    void SetPublicAddressAffinity(const bool& _publicAddressAffinity);
+
+                    /**
+                     * 判断参数 PublicAddressAffinity 是否已赋值
+                     * @return PublicAddressAffinity 是否已赋值
+                     * 
+                     */
+                    bool PublicAddressAffinityHasBeenSet() const;
 
                 private:
 
@@ -709,6 +793,12 @@ namespace TencentCloud
                     bool m_natProductVersionHasBeenSet;
 
                     /**
+                     * true代表仅允许匹配SNAT规则的内网IP的流量进行转发，false代表所有内网IP发起的流量都进行转发。默认为false。
+                     */
+                    bool m_strictSnatMode;
+                    bool m_strictSnatModeHasBeenSet;
+
+                    /**
                      * 是否启用根据目的网段选择SNAT使用的EIP功能	
                      */
                     bool m_smartScheduleMode;
@@ -737,6 +827,24 @@ namespace TencentCloud
                      */
                     std::string m_exclusiveType;
                     bool m_exclusiveTypeHasBeenSet;
+
+                    /**
+                     * 标准型NAT网关自动扩容
+                     */
+                    bool m_autoScaling;
+                    bool m_autoScalingHasBeenSet;
+
+                    /**
+                     * 是否代答公网发给NAT网关上弹性公网IP的ICMP echo请求报文，当前适用于标准型NAT网关
+                     */
+                    bool m_iCMPProxy;
+                    bool m_iCMPProxyHasBeenSet;
+
+                    /**
+                     * true代表同一个私网IP访问同一个公网目的IP时，固定使用同一个NAT网关上的弹性公网IP；false代表这种情况下使用的弹性公网IP不固定。默认为true。
+                     */
+                    bool m_publicAddressAffinity;
+                    bool m_publicAddressAffinityHasBeenSet;
 
                 };
             }

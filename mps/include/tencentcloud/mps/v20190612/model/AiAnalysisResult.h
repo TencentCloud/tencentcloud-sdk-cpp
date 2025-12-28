@@ -37,6 +37,8 @@
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskDubbingResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskVideoRemakeResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskVideoComprehensionResult.h>
+#include <tencentcloud/mps/v20190612/model/AiAnalysisTaskCutoutResult.h>
+#include <tencentcloud/mps/v20190612/model/AiAnalysisTaskReelResult.h>
 
 
 namespace TencentCloud
@@ -71,6 +73,8 @@ namespace TencentCloud
 <li>Dubbing：智能译制</li>
 <li>VideoRemake: 视频去重</li>
 <li>VideoComprehension: 视频（音频）理解</li>
+<li>Cutout：视频抠图</li>
+<li>Reel：智能成片</li>
                      * @return Type 任务的类型，可以取的值有：
 <li>Classification：智能分类</li>
 <li>Cover：智能封面</li>
@@ -82,6 +86,8 @@ namespace TencentCloud
 <li>Dubbing：智能译制</li>
 <li>VideoRemake: 视频去重</li>
 <li>VideoComprehension: 视频（音频）理解</li>
+<li>Cutout：视频抠图</li>
+<li>Reel：智能成片</li>
                      * 
                      */
                     std::string GetType() const;
@@ -98,6 +104,8 @@ namespace TencentCloud
 <li>Dubbing：智能译制</li>
 <li>VideoRemake: 视频去重</li>
 <li>VideoComprehension: 视频（音频）理解</li>
+<li>Cutout：视频抠图</li>
+<li>Reel：智能成片</li>
                      * @param _type 任务的类型，可以取的值有：
 <li>Classification：智能分类</li>
 <li>Cover：智能封面</li>
@@ -109,6 +117,8 @@ namespace TencentCloud
 <li>Dubbing：智能译制</li>
 <li>VideoRemake: 视频去重</li>
 <li>VideoComprehension: 视频（音频）理解</li>
+<li>Cutout：视频抠图</li>
+<li>Reel：智能成片</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -445,6 +455,56 @@ namespace TencentCloud
                      */
                     bool VideoComprehensionTaskHasBeenSet() const;
 
+                    /**
+                     * 获取视频内容分析抠图任务的查询结果，当任务类型为Cutout时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CutoutTask 视频内容分析抠图任务的查询结果，当任务类型为Cutout时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AiAnalysisTaskCutoutResult GetCutoutTask() const;
+
+                    /**
+                     * 设置视频内容分析抠图任务的查询结果，当任务类型为Cutout时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cutoutTask 视频内容分析抠图任务的查询结果，当任务类型为Cutout时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCutoutTask(const AiAnalysisTaskCutoutResult& _cutoutTask);
+
+                    /**
+                     * 判断参数 CutoutTask 是否已赋值
+                     * @return CutoutTask 是否已赋值
+                     * 
+                     */
+                    bool CutoutTaskHasBeenSet() const;
+
+                    /**
+                     * 获取视频内容分析成片任务的查询结果，当任务类型为Reel时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReelTask 视频内容分析成片任务的查询结果，当任务类型为Reel时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AiAnalysisTaskReelResult GetReelTask() const;
+
+                    /**
+                     * 设置视频内容分析成片任务的查询结果，当任务类型为Reel时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _reelTask 视频内容分析成片任务的查询结果，当任务类型为Reel时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReelTask(const AiAnalysisTaskReelResult& _reelTask);
+
+                    /**
+                     * 判断参数 ReelTask 是否已赋值
+                     * @return ReelTask 是否已赋值
+                     * 
+                     */
+                    bool ReelTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -459,6 +519,8 @@ namespace TencentCloud
 <li>Dubbing：智能译制</li>
 <li>VideoRemake: 视频去重</li>
 <li>VideoComprehension: 视频（音频）理解</li>
+<li>Cutout：视频抠图</li>
+<li>Reel：智能成片</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -553,6 +615,20 @@ namespace TencentCloud
                      */
                     AiAnalysisTaskVideoComprehensionResult m_videoComprehensionTask;
                     bool m_videoComprehensionTaskHasBeenSet;
+
+                    /**
+                     * 视频内容分析抠图任务的查询结果，当任务类型为Cutout时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiAnalysisTaskCutoutResult m_cutoutTask;
+                    bool m_cutoutTaskHasBeenSet;
+
+                    /**
+                     * 视频内容分析成片任务的查询结果，当任务类型为Reel时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiAnalysisTaskReelResult m_reelTask;
+                    bool m_reelTaskHasBeenSet;
 
                 };
             }

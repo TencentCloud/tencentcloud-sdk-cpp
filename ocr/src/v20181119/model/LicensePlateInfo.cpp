@@ -24,7 +24,8 @@ LicensePlateInfo::LicensePlateInfo() :
     m_numberHasBeenSet(false),
     m_confidenceHasBeenSet(false),
     m_rectHasBeenSet(false),
-    m_colorHasBeenSet(false)
+    m_colorHasBeenSet(false),
+    m_licensePlateCategoryHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,16 @@ CoreInternalOutcome LicensePlateInfo::Deserialize(const rapidjson::Value &value)
         m_colorHasBeenSet = true;
     }
 
+    if (value.HasMember("LicensePlateCategory") && !value["LicensePlateCategory"].IsNull())
+    {
+        if (!value["LicensePlateCategory"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LicensePlateInfo.LicensePlateCategory` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_licensePlateCategory = string(value["LicensePlateCategory"].GetString());
+        m_licensePlateCategoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +129,14 @@ void LicensePlateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Color";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_color.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_licensePlateCategoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LicensePlateCategory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_licensePlateCategory.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -185,5 +204,21 @@ void LicensePlateInfo::SetColor(const string& _color)
 bool LicensePlateInfo::ColorHasBeenSet() const
 {
     return m_colorHasBeenSet;
+}
+
+string LicensePlateInfo::GetLicensePlateCategory() const
+{
+    return m_licensePlateCategory;
+}
+
+void LicensePlateInfo::SetLicensePlateCategory(const string& _licensePlateCategory)
+{
+    m_licensePlateCategory = _licensePlateCategory;
+    m_licensePlateCategoryHasBeenSet = true;
+}
+
+bool LicensePlateInfo::LicensePlateCategoryHasBeenSet() const
+{
+    return m_licensePlateCategoryHasBeenSet;
 }
 

@@ -131,6 +131,27 @@ namespace TencentCloud
                      */
                     bool ColorHasBeenSet() const;
 
+                    /**
+                     * 获取车牌类别， 如： 实体车牌、非实体车牌
+                     * @return LicensePlateCategory 车牌类别， 如： 实体车牌、非实体车牌
+                     * 
+                     */
+                    std::string GetLicensePlateCategory() const;
+
+                    /**
+                     * 设置车牌类别， 如： 实体车牌、非实体车牌
+                     * @param _licensePlateCategory 车牌类别， 如： 实体车牌、非实体车牌
+                     * 
+                     */
+                    void SetLicensePlateCategory(const std::string& _licensePlateCategory);
+
+                    /**
+                     * 判断参数 LicensePlateCategory 是否已赋值
+                     * @return LicensePlateCategory 是否已赋值
+                     * 
+                     */
+                    bool LicensePlateCategoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -156,6 +177,12 @@ namespace TencentCloud
                      */
                     std::string m_color;
                     bool m_colorHasBeenSet;
+
+                    /**
+                     * 车牌类别， 如： 实体车牌、非实体车牌
+                     */
+                    std::string m_licensePlateCategory;
+                    bool m_licensePlateCategoryHasBeenSet;
 
                 };
             }

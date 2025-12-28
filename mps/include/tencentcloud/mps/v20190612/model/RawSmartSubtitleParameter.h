@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/AsrHotWordsConfigure.h>
+#include <tencentcloud/mps/v20190612/model/SelectingSubtitleAreasConfig.h>
 
 
 namespace TencentCloud
@@ -993,7 +994,6 @@ ASR识别和纯字幕翻译当前支持以下语言：
 `iw`：希伯来语
 `ja`：日语
 `jv`：爪哇语
-`jw`：爪哇语
 `ka`：格鲁吉亚语
 `kk`：哈萨克语
 `km`：高棉语
@@ -1080,7 +1080,6 @@ ASR识别和纯字幕翻译当前支持以下语言：
 `th`：泰语
 `ti`：提格里尼亚语
 `tk`：土库曼语
-`tl`：菲律宾语（塔加拉语）
 `tn`：茨瓦纳语
 `tr`：土耳其语
 `ts`：聪加语
@@ -1190,7 +1189,6 @@ ASR识别和纯字幕翻译当前支持以下语言：
 `iw`：希伯来语
 `ja`：日语
 `jv`：爪哇语
-`jw`：爪哇语
 `ka`：格鲁吉亚语
 `kk`：哈萨克语
 `km`：高棉语
@@ -1277,7 +1275,6 @@ ASR识别和纯字幕翻译当前支持以下语言：
 `th`：泰语
 `ti`：提格里尼亚语
 `tk`：土库曼语
-`tl`：菲律宾语（塔加拉语）
 `tn`：茨瓦纳语
 `tr`：土耳其语
 `ts`：聪加语
@@ -1392,7 +1389,6 @@ ASR识别和纯字幕翻译当前支持以下语言：
 `iw`：希伯来语
 `ja`：日语
 `jv`：爪哇语
-`jw`：爪哇语
 `ka`：格鲁吉亚语
 `kk`：哈萨克语
 `km`：高棉语
@@ -1479,7 +1475,6 @@ ASR识别和纯字幕翻译当前支持以下语言：
 `th`：泰语
 `ti`：提格里尼亚语
 `tk`：土库曼语
-`tl`：菲律宾语（塔加拉语）
 `tn`：茨瓦纳语
 `tr`：土耳其语
 `ts`：聪加语
@@ -1589,7 +1584,6 @@ ASR识别和纯字幕翻译当前支持以下语言：
 `iw`：希伯来语
 `ja`：日语
 `jv`：爪哇语
-`jw`：爪哇语
 `ka`：格鲁吉亚语
 `kk`：哈萨克语
 `km`：高棉语
@@ -1676,7 +1670,6 @@ ASR识别和纯字幕翻译当前支持以下语言：
 `th`：泰语
 `ti`：提格里尼亚语
 `tk`：土库曼语
-`tl`：菲律宾语（塔加拉语）
 `tn`：茨瓦纳语
 `tr`：土耳其语
 `ts`：聪加语
@@ -1794,6 +1787,31 @@ ASR识别和纯字幕翻译当前支持以下语言：
                      * 
                      */
                     bool ProcessTypeHasBeenSet() const;
+
+                    /**
+                     * 获取字幕OCR提取框选区域配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SelectingSubtitleAreasConfig 字幕OCR提取框选区域配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SelectingSubtitleAreasConfig GetSelectingSubtitleAreasConfig() const;
+
+                    /**
+                     * 设置字幕OCR提取框选区域配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _selectingSubtitleAreasConfig 字幕OCR提取框选区域配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSelectingSubtitleAreasConfig(const SelectingSubtitleAreasConfig& _selectingSubtitleAreasConfig);
+
+                    /**
+                     * 判断参数 SelectingSubtitleAreasConfig 是否已赋值
+                     * @return SelectingSubtitleAreasConfig 是否已赋值
+                     * 
+                     */
+                    bool SelectingSubtitleAreasConfigHasBeenSet() const;
 
                 private:
 
@@ -2104,7 +2122,6 @@ ASR识别和纯字幕翻译当前支持以下语言：
 `iw`：希伯来语
 `ja`：日语
 `jv`：爪哇语
-`jw`：爪哇语
 `ka`：格鲁吉亚语
 `kk`：哈萨克语
 `km`：高棉语
@@ -2191,7 +2208,6 @@ ASR识别和纯字幕翻译当前支持以下语言：
 `th`：泰语
 `ti`：提格里尼亚语
 `tk`：土库曼语
-`tl`：菲律宾语（塔加拉语）
 `tn`：茨瓦纳语
 `tr`：土耳其语
 `ts`：聪加语
@@ -2239,6 +2255,13 @@ ASR识别和纯字幕翻译当前支持以下语言：
                      */
                     uint64_t m_processType;
                     bool m_processTypeHasBeenSet;
+
+                    /**
+                     * 字幕OCR提取框选区域配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SelectingSubtitleAreasConfig m_selectingSubtitleAreasConfig;
+                    bool m_selectingSubtitleAreasConfigHasBeenSet;
 
                 };
             }

@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdn/v20180606/model/ListDiagnoseReportResponse.h>
+#include <tencentcloud/clb/v20180317/model/RenewLoadBalancersResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cdn::V20180606::Model;
+using namespace TencentCloud::Clb::V20180317::Model;
 using namespace std;
 
-ListDiagnoseReportResponse::ListDiagnoseReportResponse() :
-    m_dataHasBeenSet(false)
+RenewLoadBalancersResponse::RenewLoadBalancersResponse() :
+    m_dealNameHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ListDiagnoseReportResponse::Deserialize(const string &payload)
+CoreInternalOutcome RenewLoadBalancersResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,49 +62,32 @@ CoreInternalOutcome ListDiagnoseReportResponse::Deserialize(const string &payloa
     }
 
 
-    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    if (rsp.HasMember("DealName") && !rsp["DealName"].IsNull())
     {
-        if (!rsp["Data"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Data` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["Data"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["DealName"].IsString())
         {
-            DiagnoseInfo item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_data.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `DealName` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_dataHasBeenSet = true;
+        m_dealName = string(rsp["DealName"].GetString());
+        m_dealNameHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string ListDiagnoseReportResponse::ToJsonString() const
+string RenewLoadBalancersResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_dataHasBeenSet)
+    if (m_dealNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Data";
+        string key = "DealName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(m_dealName.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -119,14 +102,14 @@ string ListDiagnoseReportResponse::ToJsonString() const
 }
 
 
-vector<DiagnoseInfo> ListDiagnoseReportResponse::GetData() const
+string RenewLoadBalancersResponse::GetDealName() const
 {
-    return m_data;
+    return m_dealName;
 }
 
-bool ListDiagnoseReportResponse::DataHasBeenSet() const
+bool RenewLoadBalancersResponse::DealNameHasBeenSet() const
 {
-    return m_dataHasBeenSet;
+    return m_dealNameHasBeenSet;
 }
 
 

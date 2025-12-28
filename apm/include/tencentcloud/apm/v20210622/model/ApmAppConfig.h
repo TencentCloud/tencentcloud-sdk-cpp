@@ -1275,6 +1275,48 @@ namespace TencentCloud
                      */
                     bool SlowSQLThresholdsHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启脱敏规则
+                     * @return EnableDesensitizationRule 是否开启脱敏规则
+                     * 
+                     */
+                    int64_t GetEnableDesensitizationRule() const;
+
+                    /**
+                     * 设置是否开启脱敏规则
+                     * @param _enableDesensitizationRule 是否开启脱敏规则
+                     * 
+                     */
+                    void SetEnableDesensitizationRule(const int64_t& _enableDesensitizationRule);
+
+                    /**
+                     * 判断参数 EnableDesensitizationRule 是否已赋值
+                     * @return EnableDesensitizationRule 是否已赋值
+                     * 
+                     */
+                    bool EnableDesensitizationRuleHasBeenSet() const;
+
+                    /**
+                     * 获取脱敏规则
+                     * @return DesensitizationRule 脱敏规则
+                     * 
+                     */
+                    std::string GetDesensitizationRule() const;
+
+                    /**
+                     * 设置脱敏规则
+                     * @param _desensitizationRule 脱敏规则
+                     * 
+                     */
+                    void SetDesensitizationRule(const std::string& _desensitizationRule);
+
+                    /**
+                     * 判断参数 DesensitizationRule 是否已赋值
+                     * @return DesensitizationRule 是否已赋值
+                     * 
+                     */
+                    bool DesensitizationRuleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1623,6 +1665,18 @@ namespace TencentCloud
                      */
                     std::vector<ApmTag> m_slowSQLThresholds;
                     bool m_slowSQLThresholdsHasBeenSet;
+
+                    /**
+                     * 是否开启脱敏规则
+                     */
+                    int64_t m_enableDesensitizationRule;
+                    bool m_enableDesensitizationRuleHasBeenSet;
+
+                    /**
+                     * 脱敏规则
+                     */
+                    std::string m_desensitizationRule;
+                    bool m_desensitizationRuleHasBeenSet;
 
                 };
             }
