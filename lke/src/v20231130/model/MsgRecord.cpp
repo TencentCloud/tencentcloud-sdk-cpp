@@ -46,7 +46,9 @@ MsgRecord::MsgRecord() :
     m_quoteInfosHasBeenSet(false),
     m_agentThoughtHasBeenSet(false),
     m_extraInfoHasBeenSet(false),
-    m_workFlowHasBeenSet(false)
+    m_workFlowHasBeenSet(false),
+    m_widgetsHasBeenSet(false),
+    m_widgetActionHasBeenSet(false)
 {
 }
 
@@ -389,6 +391,43 @@ CoreInternalOutcome MsgRecord::Deserialize(const rapidjson::Value &value)
         m_workFlowHasBeenSet = true;
     }
 
+    if (value.HasMember("Widgets") && !value["Widgets"].IsNull())
+    {
+        if (!value["Widgets"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MsgRecord.Widgets` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Widgets"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Widget item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_widgets.push_back(item);
+        }
+        m_widgetsHasBeenSet = true;
+    }
+
+    if (value.HasMember("WidgetAction") && !value["WidgetAction"].IsNull())
+    {
+        if (!value["WidgetAction"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsgRecord.WidgetAction` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_widgetAction.Deserialize(value["WidgetAction"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_widgetActionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -643,6 +682,30 @@ void MsgRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_workFlow.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_widgetsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Widgets";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_widgets.begin(); itr != m_widgets.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_widgetActionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WidgetAction";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_widgetAction.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1062,5 +1125,37 @@ void MsgRecord::SetWorkFlow(const WorkflowInfo& _workFlow)
 bool MsgRecord::WorkFlowHasBeenSet() const
 {
     return m_workFlowHasBeenSet;
+}
+
+vector<Widget> MsgRecord::GetWidgets() const
+{
+    return m_widgets;
+}
+
+void MsgRecord::SetWidgets(const vector<Widget>& _widgets)
+{
+    m_widgets = _widgets;
+    m_widgetsHasBeenSet = true;
+}
+
+bool MsgRecord::WidgetsHasBeenSet() const
+{
+    return m_widgetsHasBeenSet;
+}
+
+WidgetAction MsgRecord::GetWidgetAction() const
+{
+    return m_widgetAction;
+}
+
+void MsgRecord::SetWidgetAction(const WidgetAction& _widgetAction)
+{
+    m_widgetAction = _widgetAction;
+    m_widgetActionHasBeenSet = true;
+}
+
+bool MsgRecord::WidgetActionHasBeenSet() const
+{
+    return m_widgetActionHasBeenSet;
 }
 

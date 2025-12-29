@@ -93,11 +93,11 @@ namespace TencentCloud
                     bool QuestionHasBeenSet() const;
 
                     /**
-                     * 获取拒答问题来源的数据源唯一id, 通过[ListRejectedQuestion](https://capi.woa.com/api/detail?product=lke&version=2023-11-30&action=ListRejectedQuestion)接口获取
+                     * 获取拒答问题来源的数据源唯一id, 通过调用ListRejectedQuestion接口获取
 
 
 
-                     * @return RejectedBizId 拒答问题来源的数据源唯一id, 通过[ListRejectedQuestion](https://capi.woa.com/api/detail?product=lke&version=2023-11-30&action=ListRejectedQuestion)接口获取
+                     * @return RejectedBizId 拒答问题来源的数据源唯一id, 通过调用ListRejectedQuestion接口获取
 
 
 
@@ -106,11 +106,11 @@ namespace TencentCloud
                     std::string GetRejectedBizId() const;
 
                     /**
-                     * 设置拒答问题来源的数据源唯一id, 通过[ListRejectedQuestion](https://capi.woa.com/api/detail?product=lke&version=2023-11-30&action=ListRejectedQuestion)接口获取
+                     * 设置拒答问题来源的数据源唯一id, 通过调用ListRejectedQuestion接口获取
 
 
 
-                     * @param _rejectedBizId 拒答问题来源的数据源唯一id, 通过[ListRejectedQuestion](https://capi.woa.com/api/detail?product=lke&version=2023-11-30&action=ListRejectedQuestion)接口获取
+                     * @param _rejectedBizId 拒答问题来源的数据源唯一id, 通过调用ListRejectedQuestion接口获取
 
 
 
@@ -142,7 +142,7 @@ namespace TencentCloud
                     bool m_questionHasBeenSet;
 
                     /**
-                     * 拒答问题来源的数据源唯一id, 通过[ListRejectedQuestion](https://capi.woa.com/api/detail?product=lke&version=2023-11-30&action=ListRejectedQuestion)接口获取
+                     * 拒答问题来源的数据源唯一id, 通过调用ListRejectedQuestion接口获取
 
 
 

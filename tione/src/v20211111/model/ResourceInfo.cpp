@@ -27,7 +27,9 @@ ResourceInfo::ResourceInfo() :
     m_gpuTypeHasBeenSet(false),
     m_realGpuHasBeenSet(false),
     m_realGpuDetailSetHasBeenSet(false),
-    m_enableRDMAHasBeenSet(false)
+    m_enableRDMAHasBeenSet(false),
+    m_rootDiskHasBeenSet(false),
+    m_dataDiskHasBeenSet(false)
 {
 }
 
@@ -116,6 +118,26 @@ CoreInternalOutcome ResourceInfo::Deserialize(const rapidjson::Value &value)
         m_enableRDMAHasBeenSet = true;
     }
 
+    if (value.HasMember("RootDisk") && !value["RootDisk"].IsNull())
+    {
+        if (!value["RootDisk"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceInfo.RootDisk` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rootDisk = value["RootDisk"].GetUint64();
+        m_rootDiskHasBeenSet = true;
+    }
+
+    if (value.HasMember("DataDisk") && !value["DataDisk"].IsNull())
+    {
+        if (!value["DataDisk"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceInfo.DataDisk` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataDisk = value["DataDisk"].GetUint64();
+        m_dataDiskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +206,22 @@ void ResourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "EnableRDMA";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableRDMA, allocator);
+    }
+
+    if (m_rootDiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RootDisk";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rootDisk, allocator);
+    }
+
+    if (m_dataDiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataDisk";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dataDisk, allocator);
     }
 
 }
@@ -299,5 +337,37 @@ void ResourceInfo::SetEnableRDMA(const bool& _enableRDMA)
 bool ResourceInfo::EnableRDMAHasBeenSet() const
 {
     return m_enableRDMAHasBeenSet;
+}
+
+uint64_t ResourceInfo::GetRootDisk() const
+{
+    return m_rootDisk;
+}
+
+void ResourceInfo::SetRootDisk(const uint64_t& _rootDisk)
+{
+    m_rootDisk = _rootDisk;
+    m_rootDiskHasBeenSet = true;
+}
+
+bool ResourceInfo::RootDiskHasBeenSet() const
+{
+    return m_rootDiskHasBeenSet;
+}
+
+uint64_t ResourceInfo::GetDataDisk() const
+{
+    return m_dataDisk;
+}
+
+void ResourceInfo::SetDataDisk(const uint64_t& _dataDisk)
+{
+    m_dataDisk = _dataDisk;
+    m_dataDiskHasBeenSet = true;
+}
+
+bool ResourceInfo::DataDiskHasBeenSet() const
+{
+    return m_dataDiskHasBeenSet;
 }
 

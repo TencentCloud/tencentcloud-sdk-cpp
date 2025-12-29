@@ -80,7 +80,14 @@ DataEngineInfo::DataEngineInfo() :
     m_gatewayStateHasBeenSet(false),
     m_isAIGatewayHasBeenSet(false),
     m_isAIEngineHasBeenSet(false),
-    m_scheduleElasticityConfHasBeenSet(false)
+    m_scheduleElasticityConfHasBeenSet(false),
+    m_gPUInfoHasBeenSet(false),
+    m_engineResourceUsedGPUHasBeenSet(false),
+    m_gPUTotalSizeHasBeenSet(false),
+    m_instanceModelHasBeenSet(false),
+    m_nodeNumHasBeenSet(false),
+    m_sizeWithElasticHasBeenSet(false),
+    m_maxElasticSizeHasBeenSet(false)
 {
 }
 
@@ -743,6 +750,83 @@ CoreInternalOutcome DataEngineInfo::Deserialize(const rapidjson::Value &value)
         m_scheduleElasticityConfHasBeenSet = true;
     }
 
+    if (value.HasMember("GPUInfo") && !value["GPUInfo"].IsNull())
+    {
+        if (!value["GPUInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.GPUInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_gPUInfo.Deserialize(value["GPUInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_gPUInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("EngineResourceUsedGPU") && !value["EngineResourceUsedGPU"].IsNull())
+    {
+        if (!value["EngineResourceUsedGPU"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.EngineResourceUsedGPU` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_engineResourceUsedGPU = value["EngineResourceUsedGPU"].GetInt64();
+        m_engineResourceUsedGPUHasBeenSet = true;
+    }
+
+    if (value.HasMember("GPUTotalSize") && !value["GPUTotalSize"].IsNull())
+    {
+        if (!value["GPUTotalSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.GPUTotalSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gPUTotalSize = value["GPUTotalSize"].GetInt64();
+        m_gPUTotalSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceModel") && !value["InstanceModel"].IsNull())
+    {
+        if (!value["InstanceModel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.InstanceModel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceModel = string(value["InstanceModel"].GetString());
+        m_instanceModelHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeNum") && !value["NodeNum"].IsNull())
+    {
+        if (!value["NodeNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.NodeNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeNum = value["NodeNum"].GetInt64();
+        m_nodeNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("SizeWithElastic") && !value["SizeWithElastic"].IsNull())
+    {
+        if (!value["SizeWithElastic"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.SizeWithElastic` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sizeWithElastic = value["SizeWithElastic"].GetUint64();
+        m_sizeWithElasticHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxElasticSize") && !value["MaxElasticSize"].IsNull())
+    {
+        if (!value["MaxElasticSize"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.MaxElasticSize` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxElasticSize = value["MaxElasticSize"].GetUint64();
+        m_maxElasticSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1257,6 +1341,63 @@ void DataEngineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_scheduleElasticityConf.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_gPUInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GPUInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_gPUInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_engineResourceUsedGPUHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineResourceUsedGPU";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_engineResourceUsedGPU, allocator);
+    }
+
+    if (m_gPUTotalSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GPUTotalSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gPUTotalSize, allocator);
+    }
+
+    if (m_instanceModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceModel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceModel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nodeNum, allocator);
+    }
+
+    if (m_sizeWithElasticHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SizeWithElastic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sizeWithElastic, allocator);
+    }
+
+    if (m_maxElasticSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxElasticSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxElasticSize, allocator);
     }
 
 }
@@ -2220,5 +2361,117 @@ void DataEngineInfo::SetScheduleElasticityConf(const ScheduleElasticityConf& _sc
 bool DataEngineInfo::ScheduleElasticityConfHasBeenSet() const
 {
     return m_scheduleElasticityConfHasBeenSet;
+}
+
+GPUInfo DataEngineInfo::GetGPUInfo() const
+{
+    return m_gPUInfo;
+}
+
+void DataEngineInfo::SetGPUInfo(const GPUInfo& _gPUInfo)
+{
+    m_gPUInfo = _gPUInfo;
+    m_gPUInfoHasBeenSet = true;
+}
+
+bool DataEngineInfo::GPUInfoHasBeenSet() const
+{
+    return m_gPUInfoHasBeenSet;
+}
+
+int64_t DataEngineInfo::GetEngineResourceUsedGPU() const
+{
+    return m_engineResourceUsedGPU;
+}
+
+void DataEngineInfo::SetEngineResourceUsedGPU(const int64_t& _engineResourceUsedGPU)
+{
+    m_engineResourceUsedGPU = _engineResourceUsedGPU;
+    m_engineResourceUsedGPUHasBeenSet = true;
+}
+
+bool DataEngineInfo::EngineResourceUsedGPUHasBeenSet() const
+{
+    return m_engineResourceUsedGPUHasBeenSet;
+}
+
+int64_t DataEngineInfo::GetGPUTotalSize() const
+{
+    return m_gPUTotalSize;
+}
+
+void DataEngineInfo::SetGPUTotalSize(const int64_t& _gPUTotalSize)
+{
+    m_gPUTotalSize = _gPUTotalSize;
+    m_gPUTotalSizeHasBeenSet = true;
+}
+
+bool DataEngineInfo::GPUTotalSizeHasBeenSet() const
+{
+    return m_gPUTotalSizeHasBeenSet;
+}
+
+string DataEngineInfo::GetInstanceModel() const
+{
+    return m_instanceModel;
+}
+
+void DataEngineInfo::SetInstanceModel(const string& _instanceModel)
+{
+    m_instanceModel = _instanceModel;
+    m_instanceModelHasBeenSet = true;
+}
+
+bool DataEngineInfo::InstanceModelHasBeenSet() const
+{
+    return m_instanceModelHasBeenSet;
+}
+
+int64_t DataEngineInfo::GetNodeNum() const
+{
+    return m_nodeNum;
+}
+
+void DataEngineInfo::SetNodeNum(const int64_t& _nodeNum)
+{
+    m_nodeNum = _nodeNum;
+    m_nodeNumHasBeenSet = true;
+}
+
+bool DataEngineInfo::NodeNumHasBeenSet() const
+{
+    return m_nodeNumHasBeenSet;
+}
+
+uint64_t DataEngineInfo::GetSizeWithElastic() const
+{
+    return m_sizeWithElastic;
+}
+
+void DataEngineInfo::SetSizeWithElastic(const uint64_t& _sizeWithElastic)
+{
+    m_sizeWithElastic = _sizeWithElastic;
+    m_sizeWithElasticHasBeenSet = true;
+}
+
+bool DataEngineInfo::SizeWithElasticHasBeenSet() const
+{
+    return m_sizeWithElasticHasBeenSet;
+}
+
+uint64_t DataEngineInfo::GetMaxElasticSize() const
+{
+    return m_maxElasticSize;
+}
+
+void DataEngineInfo::SetMaxElasticSize(const uint64_t& _maxElasticSize)
+{
+    m_maxElasticSize = _maxElasticSize;
+    m_maxElasticSizeHasBeenSet = true;
+}
+
+bool DataEngineInfo::MaxElasticSizeHasBeenSet() const
+{
+    return m_maxElasticSizeHasBeenSet;
 }
 

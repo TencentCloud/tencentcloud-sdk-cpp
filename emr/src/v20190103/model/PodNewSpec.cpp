@@ -32,7 +32,8 @@ PodNewSpec::PodNewSpec() :
     m_dynamicPodSpecHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_podNameHasBeenSet(false)
+    m_podNameHasBeenSet(false),
+    m_otherAccountInfoHasBeenSet(false)
 {
 }
 
@@ -178,6 +179,23 @@ CoreInternalOutcome PodNewSpec::Deserialize(const rapidjson::Value &value)
         m_podNameHasBeenSet = true;
     }
 
+    if (value.HasMember("OtherAccountInfo") && !value["OtherAccountInfo"].IsNull())
+    {
+        if (!value["OtherAccountInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `PodNewSpec.OtherAccountInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_otherAccountInfo.Deserialize(value["OtherAccountInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_otherAccountInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -287,6 +305,15 @@ void PodNewSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "PodName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_podName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_otherAccountInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OtherAccountInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_otherAccountInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -482,5 +509,21 @@ void PodNewSpec::SetPodName(const string& _podName)
 bool PodNewSpec::PodNameHasBeenSet() const
 {
     return m_podNameHasBeenSet;
+}
+
+OtherAccountInfo PodNewSpec::GetOtherAccountInfo() const
+{
+    return m_otherAccountInfo;
+}
+
+void PodNewSpec::SetOtherAccountInfo(const OtherAccountInfo& _otherAccountInfo)
+{
+    m_otherAccountInfo = _otherAccountInfo;
+    m_otherAccountInfoHasBeenSet = true;
+}
+
+bool PodNewSpec::OtherAccountInfoHasBeenSet() const
+{
+    return m_otherAccountInfoHasBeenSet;
 }
 

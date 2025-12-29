@@ -192,18 +192,14 @@ HYBRID_PAID:
 
                     /**
                      * 获取后付费实例对应的机型规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 后付费实例对应的机型规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置后付费实例对应的机型规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceType 后付费实例对应的机型规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -217,18 +213,14 @@ HYBRID_PAID:
 
                     /**
                      * 获取模型信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelInfo 模型信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ModelInfo GetModelInfo() const;
 
                     /**
                      * 设置模型信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modelInfo 模型信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModelInfo(const ModelInfo& _modelInfo);
@@ -242,18 +234,14 @@ HYBRID_PAID:
 
                     /**
                      * 获取是否启用日志
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogEnable 是否启用日志
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetLogEnable() const;
 
                     /**
                      * 设置是否启用日志
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logEnable 是否启用日志
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogEnable(const bool& _logEnable);
@@ -267,18 +255,14 @@ HYBRID_PAID:
 
                     /**
                      * 获取日志配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogConfig 日志配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     LogConfig GetLogConfig() const;
 
                     /**
                      * 设置日志配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logConfig 日志配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogConfig(const LogConfig& _logConfig);
@@ -292,18 +276,14 @@ HYBRID_PAID:
 
                     /**
                      * 获取是否开启鉴权
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizationEnable 是否开启鉴权
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAuthorizationEnable() const;
 
                     /**
                      * 设置是否开启鉴权
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authorizationEnable 是否开启鉴权
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthorizationEnable(const bool& _authorizationEnable);
@@ -317,18 +297,14 @@ HYBRID_PAID:
 
                     /**
                      * 获取hpa配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HorizontalPodAutoscaler hpa配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     HorizontalPodAutoscaler GetHorizontalPodAutoscaler() const;
 
                     /**
                      * 设置hpa配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _horizontalPodAutoscaler hpa配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHorizontalPodAutoscaler(const HorizontalPodAutoscaler& _horizontalPodAutoscaler);
@@ -1037,6 +1013,48 @@ HYBRID_PAID:
                      */
                     bool VolumeMountsHasBeenSet() const;
 
+                    /**
+                     * 获取调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用
+                     * @return SchedulingStrategy 调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用
+                     * 
+                     */
+                    std::string GetSchedulingStrategy() const;
+
+                    /**
+                     * 设置调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用
+                     * @param _schedulingStrategy 调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用
+                     * 
+                     */
+                    void SetSchedulingStrategy(const std::string& _schedulingStrategy);
+
+                    /**
+                     * 判断参数 SchedulingStrategy 是否已赋值
+                     * @return SchedulingStrategy 是否已赋值
+                     * 
+                     */
+                    bool SchedulingStrategyHasBeenSet() const;
+
+                    /**
+                     * 获取服务实际运行的节点数
+                     * @return NodeCount 服务实际运行的节点数
+                     * 
+                     */
+                    int64_t GetNodeCount() const;
+
+                    /**
+                     * 设置服务实际运行的节点数
+                     * @param _nodeCount 服务实际运行的节点数
+                     * 
+                     */
+                    void SetNodeCount(const int64_t& _nodeCount);
+
+                    /**
+                     * 判断参数 NodeCount 是否已赋值
+                     * @return NodeCount 是否已赋值
+                     * 
+                     */
+                    bool NodeCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1076,42 +1094,36 @@ HYBRID_PAID:
 
                     /**
                      * 后付费实例对应的机型规格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
                      * 模型信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ModelInfo m_modelInfo;
                     bool m_modelInfoHasBeenSet;
 
                     /**
                      * 是否启用日志
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_logEnable;
                     bool m_logEnableHasBeenSet;
 
                     /**
                      * 日志配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LogConfig m_logConfig;
                     bool m_logConfigHasBeenSet;
 
                     /**
                      * 是否开启鉴权
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_authorizationEnable;
                     bool m_authorizationEnableHasBeenSet;
 
                     /**
                      * hpa配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HorizontalPodAutoscaler m_horizontalPodAutoscaler;
                     bool m_horizontalPodAutoscalerHasBeenSet;
@@ -1311,6 +1323,18 @@ HYBRID_PAID:
                      */
                     std::vector<VolumeMount> m_volumeMounts;
                     bool m_volumeMountsHasBeenSet;
+
+                    /**
+                     * 调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用
+                     */
+                    std::string m_schedulingStrategy;
+                    bool m_schedulingStrategyHasBeenSet;
+
+                    /**
+                     * 服务实际运行的节点数
+                     */
+                    int64_t m_nodeCount;
+                    bool m_nodeCountHasBeenSet;
 
                 };
             }

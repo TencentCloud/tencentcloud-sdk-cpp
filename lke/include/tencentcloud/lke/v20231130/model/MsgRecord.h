@@ -32,6 +32,8 @@
 #include <tencentcloud/lke/v20231130/model/AgentThought.h>
 #include <tencentcloud/lke/v20231130/model/ExtraInfo.h>
 #include <tencentcloud/lke/v20231130/model/WorkflowInfo.h>
+#include <tencentcloud/lke/v20231130/model/Widget.h>
+#include <tencentcloud/lke/v20231130/model/WidgetAction.h>
 
 
 namespace TencentCloud
@@ -704,6 +706,56 @@ namespace TencentCloud
                      */
                     bool WorkFlowHasBeenSet() const;
 
+                    /**
+                     * 获取Widget信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Widgets Widget信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Widget> GetWidgets() const;
+
+                    /**
+                     * 设置Widget信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _widgets Widget信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWidgets(const std::vector<Widget>& _widgets);
+
+                    /**
+                     * 判断参数 Widgets 是否已赋值
+                     * @return Widgets 是否已赋值
+                     * 
+                     */
+                    bool WidgetsHasBeenSet() const;
+
+                    /**
+                     * 获取Widget动作信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WidgetAction Widget动作信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    WidgetAction GetWidgetAction() const;
+
+                    /**
+                     * 设置Widget动作信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _widgetAction Widget动作信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWidgetAction(const WidgetAction& _widgetAction);
+
+                    /**
+                     * 判断参数 WidgetAction 是否已赋值
+                     * @return WidgetAction 是否已赋值
+                     * 
+                     */
+                    bool WidgetActionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -887,6 +939,20 @@ namespace TencentCloud
                      */
                     WorkflowInfo m_workFlow;
                     bool m_workFlowHasBeenSet;
+
+                    /**
+                     * Widget信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Widget> m_widgets;
+                    bool m_widgetsHasBeenSet;
+
+                    /**
+                     * Widget动作信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WidgetAction m_widgetAction;
+                    bool m_widgetActionHasBeenSet;
 
                 };
             }

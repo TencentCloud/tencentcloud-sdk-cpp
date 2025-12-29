@@ -28,6 +28,7 @@
 #include <tencentcloud/emr/v20190103/model/ExternalAccess.h>
 #include <tencentcloud/emr/v20190103/model/NodeAffinity.h>
 #include <tencentcloud/emr/v20190103/model/Disk.h>
+#include <tencentcloud/emr/v20190103/model/Toleration.h>
 
 
 namespace TencentCloud
@@ -255,6 +256,31 @@ namespace TencentCloud
                      */
                     bool DisksHasBeenSet() const;
 
+                    /**
+                     * 获取容忍
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tolerations 容忍
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Toleration> GetTolerations() const;
+
+                    /**
+                     * 设置容忍
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tolerations 容忍
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTolerations(const std::vector<Toleration>& _tolerations);
+
+                    /**
+                     * 判断参数 Tolerations 是否已赋值
+                     * @return Tolerations 是否已赋值
+                     * 
+                     */
+                    bool TolerationsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -314,6 +340,13 @@ namespace TencentCloud
                      */
                     std::vector<Disk> m_disks;
                     bool m_disksHasBeenSet;
+
+                    /**
+                     * 容忍
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Toleration> m_tolerations;
+                    bool m_tolerationsHasBeenSet;
 
                 };
             }

@@ -25,7 +25,10 @@ TimeOutStrategyInfo::TimeOutStrategyInfo() :
     m_typeHasBeenSet(false),
     m_hourHasBeenSet(false),
     m_minHasBeenSet(false),
-    m_scheduleTimeZoneHasBeenSet(false)
+    m_scheduleTimeZoneHasBeenSet(false),
+    m_secondHasBeenSet(false),
+    m_timesHasBeenSet(false),
+    m_alarmTriggerFrequencyHasBeenSet(false)
 {
 }
 
@@ -84,6 +87,36 @@ CoreInternalOutcome TimeOutStrategyInfo::Deserialize(const rapidjson::Value &val
         m_scheduleTimeZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("Second") && !value["Second"].IsNull())
+    {
+        if (!value["Second"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TimeOutStrategyInfo.Second` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_second = value["Second"].GetInt64();
+        m_secondHasBeenSet = true;
+    }
+
+    if (value.HasMember("Times") && !value["Times"].IsNull())
+    {
+        if (!value["Times"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TimeOutStrategyInfo.Times` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_times = value["Times"].GetInt64();
+        m_timesHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlarmTriggerFrequency") && !value["AlarmTriggerFrequency"].IsNull())
+    {
+        if (!value["AlarmTriggerFrequency"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TimeOutStrategyInfo.AlarmTriggerFrequency` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmTriggerFrequency = value["AlarmTriggerFrequency"].GetInt64();
+        m_alarmTriggerFrequencyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +162,30 @@ void TimeOutStrategyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "ScheduleTimeZone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secondHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Second";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_second, allocator);
+    }
+
+    if (m_timesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Times";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_times, allocator);
+    }
+
+    if (m_alarmTriggerFrequencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmTriggerFrequency";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_alarmTriggerFrequency, allocator);
     }
 
 }
@@ -212,5 +269,53 @@ void TimeOutStrategyInfo::SetScheduleTimeZone(const string& _scheduleTimeZone)
 bool TimeOutStrategyInfo::ScheduleTimeZoneHasBeenSet() const
 {
     return m_scheduleTimeZoneHasBeenSet;
+}
+
+int64_t TimeOutStrategyInfo::GetSecond() const
+{
+    return m_second;
+}
+
+void TimeOutStrategyInfo::SetSecond(const int64_t& _second)
+{
+    m_second = _second;
+    m_secondHasBeenSet = true;
+}
+
+bool TimeOutStrategyInfo::SecondHasBeenSet() const
+{
+    return m_secondHasBeenSet;
+}
+
+int64_t TimeOutStrategyInfo::GetTimes() const
+{
+    return m_times;
+}
+
+void TimeOutStrategyInfo::SetTimes(const int64_t& _times)
+{
+    m_times = _times;
+    m_timesHasBeenSet = true;
+}
+
+bool TimeOutStrategyInfo::TimesHasBeenSet() const
+{
+    return m_timesHasBeenSet;
+}
+
+int64_t TimeOutStrategyInfo::GetAlarmTriggerFrequency() const
+{
+    return m_alarmTriggerFrequency;
+}
+
+void TimeOutStrategyInfo::SetAlarmTriggerFrequency(const int64_t& _alarmTriggerFrequency)
+{
+    m_alarmTriggerFrequency = _alarmTriggerFrequency;
+    m_alarmTriggerFrequencyHasBeenSet = true;
+}
+
+bool TimeOutStrategyInfo::AlarmTriggerFrequencyHasBeenSet() const
+{
+    return m_alarmTriggerFrequencyHasBeenSet;
 }
 

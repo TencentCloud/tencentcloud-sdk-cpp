@@ -45,14 +45,18 @@ namespace TencentCloud
 
                     /**
                      * 获取应用ID
+若要操作共享知识库，传KnowledgeBizId
                      * @return BotBizId 应用ID
+若要操作共享知识库，传KnowledgeBizId
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
                      * 设置应用ID
+若要操作共享知识库，传KnowledgeBizId
                      * @param _botBizId 应用ID
+若要操作共享知识库，传KnowledgeBizId
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -87,14 +91,42 @@ namespace TencentCloud
 
                     /**
                      * 获取查询参数
+Filters.pageNumber范围是>0,0<Filters.pageSize<=200
+Filters.query用于内容检索，模糊匹配
+Filters.AcceptStatus默认值是0，表示不筛选，返回所有状态
+Filters.ReleaseStatus默认值是0，表示不筛选，返回所有状态
+Filters.Source默认值是0，表示不筛选，返回所有来源。表示来源(1 文档生成 2 批量导入 3 手动添加)。
+Filter.QueryType默认值是"filename"，表示查询类型。
+ShowCurrCate表示，是否只展示当前分类的数据 0不是，1是
                      * @return Filters 查询参数
+Filters.pageNumber范围是>0,0<Filters.pageSize<=200
+Filters.query用于内容检索，模糊匹配
+Filters.AcceptStatus默认值是0，表示不筛选，返回所有状态
+Filters.ReleaseStatus默认值是0，表示不筛选，返回所有状态
+Filters.Source默认值是0，表示不筛选，返回所有来源。表示来源(1 文档生成 2 批量导入 3 手动添加)。
+Filter.QueryType默认值是"filename"，表示查询类型。
+ShowCurrCate表示，是否只展示当前分类的数据 0不是，1是
                      * 
                      */
                     QAQuery GetFilters() const;
 
                     /**
                      * 设置查询参数
+Filters.pageNumber范围是>0,0<Filters.pageSize<=200
+Filters.query用于内容检索，模糊匹配
+Filters.AcceptStatus默认值是0，表示不筛选，返回所有状态
+Filters.ReleaseStatus默认值是0，表示不筛选，返回所有状态
+Filters.Source默认值是0，表示不筛选，返回所有来源。表示来源(1 文档生成 2 批量导入 3 手动添加)。
+Filter.QueryType默认值是"filename"，表示查询类型。
+ShowCurrCate表示，是否只展示当前分类的数据 0不是，1是
                      * @param _filters 查询参数
+Filters.pageNumber范围是>0,0<Filters.pageSize<=200
+Filters.query用于内容检索，模糊匹配
+Filters.AcceptStatus默认值是0，表示不筛选，返回所有状态
+Filters.ReleaseStatus默认值是0，表示不筛选，返回所有状态
+Filters.Source默认值是0，表示不筛选，返回所有来源。表示来源(1 文档生成 2 批量导入 3 手动添加)。
+Filter.QueryType默认值是"filename"，表示查询类型。
+ShowCurrCate表示，是否只展示当前分类的数据 0不是，1是
                      * 
                      */
                     void SetFilters(const QAQuery& _filters);
@@ -110,6 +142,7 @@ namespace TencentCloud
 
                     /**
                      * 应用ID
+若要操作共享知识库，传KnowledgeBizId
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
@@ -122,6 +155,13 @@ namespace TencentCloud
 
                     /**
                      * 查询参数
+Filters.pageNumber范围是>0,0<Filters.pageSize<=200
+Filters.query用于内容检索，模糊匹配
+Filters.AcceptStatus默认值是0，表示不筛选，返回所有状态
+Filters.ReleaseStatus默认值是0，表示不筛选，返回所有状态
+Filters.Source默认值是0，表示不筛选，返回所有来源。表示来源(1 文档生成 2 批量导入 3 手动添加)。
+Filter.QueryType默认值是"filename"，表示查询类型。
+ShowCurrCate表示，是否只展示当前分类的数据 0不是，1是
                      */
                     QAQuery m_filters;
                     bool m_filtersHasBeenSet;

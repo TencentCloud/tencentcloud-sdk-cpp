@@ -1175,6 +1175,48 @@ NotExists
                      */
                     bool VoicemailAsrURLHasBeenSet() const;
 
+                    /**
+                     * 获取如果是智能体相关通话，这里是智能体 ID
+                     * @return AIAgentId 如果是智能体相关通话，这里是智能体 ID
+                     * 
+                     */
+                    int64_t GetAIAgentId() const;
+
+                    /**
+                     * 设置如果是智能体相关通话，这里是智能体 ID
+                     * @param _aIAgentId 如果是智能体相关通话，这里是智能体 ID
+                     * 
+                     */
+                    void SetAIAgentId(const int64_t& _aIAgentId);
+
+                    /**
+                     * 判断参数 AIAgentId 是否已赋值
+                     * @return AIAgentId 是否已赋值
+                     * 
+                     */
+                    bool AIAgentIdHasBeenSet() const;
+
+                    /**
+                     * 获取如果是智能体相关通话，这里是智能体名称
+                     * @return AIAgentName 如果是智能体相关通话，这里是智能体名称
+                     * 
+                     */
+                    std::string GetAIAgentName() const;
+
+                    /**
+                     * 设置如果是智能体相关通话，这里是智能体名称
+                     * @param _aIAgentName 如果是智能体相关通话，这里是智能体名称
+                     * 
+                     */
+                    void SetAIAgentName(const std::string& _aIAgentName);
+
+                    /**
+                     * 判断参数 AIAgentName 是否已赋值
+                     * @return AIAgentName 是否已赋值
+                     * 
+                     */
+                    bool AIAgentNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1486,6 +1528,18 @@ NotExists
                      */
                     std::vector<std::string> m_voicemailAsrURL;
                     bool m_voicemailAsrURLHasBeenSet;
+
+                    /**
+                     * 如果是智能体相关通话，这里是智能体 ID
+                     */
+                    int64_t m_aIAgentId;
+                    bool m_aIAgentIdHasBeenSet;
+
+                    /**
+                     * 如果是智能体相关通话，这里是智能体名称
+                     */
+                    std::string m_aIAgentName;
+                    bool m_aIAgentNameHasBeenSet;
 
                 };
             }

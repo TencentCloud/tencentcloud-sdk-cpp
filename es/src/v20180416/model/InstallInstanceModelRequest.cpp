@@ -26,7 +26,11 @@ InstallInstanceModelRequest::InstallInstanceModelRequest() :
     m_instanceIdHasBeenSet(false),
     m_usrCosModelUrlListHasBeenSet(false),
     m_modelNamesHasBeenSet(false),
-    m_taskTypesHasBeenSet(false)
+    m_taskTypesHasBeenSet(false),
+    m_huggingFaceModelNamesHasBeenSet(false),
+    m_modelDescriptionHasBeenSet(false),
+    m_modelSourceTypeHasBeenSet(false),
+    m_uploadedCosPathsHasBeenSet(false)
 {
 }
 
@@ -79,6 +83,48 @@ string InstallInstanceModelRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_taskTypes.begin(); itr != m_taskTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_huggingFaceModelNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HuggingFaceModelNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_huggingFaceModelNames.begin(); itr != m_huggingFaceModelNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_modelDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelDescription";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelSourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelSourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelSourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uploadedCosPathsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UploadedCosPaths";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_uploadedCosPaths.begin(); itr != m_uploadedCosPaths.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -154,6 +200,70 @@ void InstallInstanceModelRequest::SetTaskTypes(const vector<string>& _taskTypes)
 bool InstallInstanceModelRequest::TaskTypesHasBeenSet() const
 {
     return m_taskTypesHasBeenSet;
+}
+
+vector<string> InstallInstanceModelRequest::GetHuggingFaceModelNames() const
+{
+    return m_huggingFaceModelNames;
+}
+
+void InstallInstanceModelRequest::SetHuggingFaceModelNames(const vector<string>& _huggingFaceModelNames)
+{
+    m_huggingFaceModelNames = _huggingFaceModelNames;
+    m_huggingFaceModelNamesHasBeenSet = true;
+}
+
+bool InstallInstanceModelRequest::HuggingFaceModelNamesHasBeenSet() const
+{
+    return m_huggingFaceModelNamesHasBeenSet;
+}
+
+string InstallInstanceModelRequest::GetModelDescription() const
+{
+    return m_modelDescription;
+}
+
+void InstallInstanceModelRequest::SetModelDescription(const string& _modelDescription)
+{
+    m_modelDescription = _modelDescription;
+    m_modelDescriptionHasBeenSet = true;
+}
+
+bool InstallInstanceModelRequest::ModelDescriptionHasBeenSet() const
+{
+    return m_modelDescriptionHasBeenSet;
+}
+
+string InstallInstanceModelRequest::GetModelSourceType() const
+{
+    return m_modelSourceType;
+}
+
+void InstallInstanceModelRequest::SetModelSourceType(const string& _modelSourceType)
+{
+    m_modelSourceType = _modelSourceType;
+    m_modelSourceTypeHasBeenSet = true;
+}
+
+bool InstallInstanceModelRequest::ModelSourceTypeHasBeenSet() const
+{
+    return m_modelSourceTypeHasBeenSet;
+}
+
+vector<string> InstallInstanceModelRequest::GetUploadedCosPaths() const
+{
+    return m_uploadedCosPaths;
+}
+
+void InstallInstanceModelRequest::SetUploadedCosPaths(const vector<string>& _uploadedCosPaths)
+{
+    m_uploadedCosPaths = _uploadedCosPaths;
+    m_uploadedCosPathsHasBeenSet = true;
+}
+
+bool InstallInstanceModelRequest::UploadedCosPathsHasBeenSet() const
+{
+    return m_uploadedCosPathsHasBeenSet;
 }
 
 

@@ -174,6 +174,27 @@ namespace TencentCloud
                      */
                     bool SystemVariableHasBeenSet() const;
 
+                    /**
+                     * 获取工具参数
+                     * @return ToolParam 工具参数
+                     * 
+                     */
+                    std::string GetToolParam() const;
+
+                    /**
+                     * 设置工具参数
+                     * @param _toolParam 工具参数
+                     * 
+                     */
+                    void SetToolParam(const std::string& _toolParam);
+
+                    /**
+                     * 判断参数 ToolParam 是否已赋值
+                     * @return ToolParam 是否已赋值
+                     * 
+                     */
+                    bool ToolParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +232,12 @@ namespace TencentCloud
                      */
                     AgentInputSystemVariable m_systemVariable;
                     bool m_systemVariableHasBeenSet;
+
+                    /**
+                     * 工具参数
+                     */
+                    std::string m_toolParam;
+                    bool m_toolParamHasBeenSet;
 
                 };
             }

@@ -30,6 +30,7 @@
 #include <tencentcloud/dlc/v20210125/model/SessionResourceTemplate.h>
 #include <tencentcloud/dlc/v20210125/model/AccessInfo.h>
 #include <tencentcloud/dlc/v20210125/model/ScheduleElasticityConf.h>
+#include <tencentcloud/dlc/v20210125/model/GPUInfo.h>
 
 
 namespace TencentCloud
@@ -1496,6 +1497,153 @@ namespace TencentCloud
                      */
                     bool ScheduleElasticityConfHasBeenSet() const;
 
+                    /**
+                     * 获取GPU 信息
+                     * @return GPUInfo GPU 信息
+                     * 
+                     */
+                    GPUInfo GetGPUInfo() const;
+
+                    /**
+                     * 设置GPU 信息
+                     * @param _gPUInfo GPU 信息
+                     * 
+                     */
+                    void SetGPUInfo(const GPUInfo& _gPUInfo);
+
+                    /**
+                     * 判断参数 GPUInfo 是否已赋值
+                     * @return GPUInfo 是否已赋值
+                     * 
+                     */
+                    bool GPUInfoHasBeenSet() const;
+
+                    /**
+                     * 获取GPU 使用量
+                     * @return EngineResourceUsedGPU GPU 使用量
+                     * 
+                     */
+                    int64_t GetEngineResourceUsedGPU() const;
+
+                    /**
+                     * 设置GPU 使用量
+                     * @param _engineResourceUsedGPU GPU 使用量
+                     * 
+                     */
+                    void SetEngineResourceUsedGPU(const int64_t& _engineResourceUsedGPU);
+
+                    /**
+                     * 判断参数 EngineResourceUsedGPU 是否已赋值
+                     * @return EngineResourceUsedGPU 是否已赋值
+                     * 
+                     */
+                    bool EngineResourceUsedGPUHasBeenSet() const;
+
+                    /**
+                     * 获取GPU 总规格
+                     * @return GPUTotalSize GPU 总规格
+                     * 
+                     */
+                    int64_t GetGPUTotalSize() const;
+
+                    /**
+                     * 设置GPU 总规格
+                     * @param _gPUTotalSize GPU 总规格
+                     * 
+                     */
+                    void SetGPUTotalSize(const int64_t& _gPUTotalSize);
+
+                    /**
+                     * 判断参数 GPUTotalSize 是否已赋值
+                     * @return GPUTotalSize 是否已赋值
+                     * 
+                     */
+                    bool GPUTotalSizeHasBeenSet() const;
+
+                    /**
+                     * 获取GPU 机型
+                     * @return InstanceModel GPU 机型
+                     * 
+                     */
+                    std::string GetInstanceModel() const;
+
+                    /**
+                     * 设置GPU 机型
+                     * @param _instanceModel GPU 机型
+                     * 
+                     */
+                    void SetInstanceModel(const std::string& _instanceModel);
+
+                    /**
+                     * 判断参数 InstanceModel 是否已赋值
+                     * @return InstanceModel 是否已赋值
+                     * 
+                     */
+                    bool InstanceModelHasBeenSet() const;
+
+                    /**
+                     * 获取节点数量
+                     * @return NodeNum 节点数量
+                     * 
+                     */
+                    int64_t GetNodeNum() const;
+
+                    /**
+                     * 设置节点数量
+                     * @param _nodeNum 节点数量
+                     * 
+                     */
+                    void SetNodeNum(const int64_t& _nodeNum);
+
+                    /**
+                     * 判断参数 NodeNum 是否已赋值
+                     * @return NodeNum 是否已赋值
+                     * 
+                     */
+                    bool NodeNumHasBeenSet() const;
+
+                    /**
+                     * 获取引擎规格，包含负载弹性或分时弹性
+                     * @return SizeWithElastic 引擎规格，包含负载弹性或分时弹性
+                     * 
+                     */
+                    uint64_t GetSizeWithElastic() const;
+
+                    /**
+                     * 设置引擎规格，包含负载弹性或分时弹性
+                     * @param _sizeWithElastic 引擎规格，包含负载弹性或分时弹性
+                     * 
+                     */
+                    void SetSizeWithElastic(const uint64_t& _sizeWithElastic);
+
+                    /**
+                     * 判断参数 SizeWithElastic 是否已赋值
+                     * @return SizeWithElastic 是否已赋值
+                     * 
+                     */
+                    bool SizeWithElasticHasBeenSet() const;
+
+                    /**
+                     * 获取最大弹性值，包含负载弹性或分时弹性
+                     * @return MaxElasticSize 最大弹性值，包含负载弹性或分时弹性
+                     * 
+                     */
+                    uint64_t GetMaxElasticSize() const;
+
+                    /**
+                     * 设置最大弹性值，包含负载弹性或分时弹性
+                     * @param _maxElasticSize 最大弹性值，包含负载弹性或分时弹性
+                     * 
+                     */
+                    void SetMaxElasticSize(const uint64_t& _maxElasticSize);
+
+                    /**
+                     * 判断参数 MaxElasticSize 是否已赋值
+                     * @return MaxElasticSize 是否已赋值
+                     * 
+                     */
+                    bool MaxElasticSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1903,6 +2051,48 @@ namespace TencentCloud
                      */
                     ScheduleElasticityConf m_scheduleElasticityConf;
                     bool m_scheduleElasticityConfHasBeenSet;
+
+                    /**
+                     * GPU 信息
+                     */
+                    GPUInfo m_gPUInfo;
+                    bool m_gPUInfoHasBeenSet;
+
+                    /**
+                     * GPU 使用量
+                     */
+                    int64_t m_engineResourceUsedGPU;
+                    bool m_engineResourceUsedGPUHasBeenSet;
+
+                    /**
+                     * GPU 总规格
+                     */
+                    int64_t m_gPUTotalSize;
+                    bool m_gPUTotalSizeHasBeenSet;
+
+                    /**
+                     * GPU 机型
+                     */
+                    std::string m_instanceModel;
+                    bool m_instanceModelHasBeenSet;
+
+                    /**
+                     * 节点数量
+                     */
+                    int64_t m_nodeNum;
+                    bool m_nodeNumHasBeenSet;
+
+                    /**
+                     * 引擎规格，包含负载弹性或分时弹性
+                     */
+                    uint64_t m_sizeWithElastic;
+                    bool m_sizeWithElasticHasBeenSet;
+
+                    /**
+                     * 最大弹性值，包含负载弹性或分时弹性
+                     */
+                    uint64_t m_maxElasticSize;
+                    bool m_maxElasticSizeHasBeenSet;
 
                 };
             }

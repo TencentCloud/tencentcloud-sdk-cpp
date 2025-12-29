@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AppBizIdsHasBeenSet() const;
 
                     /**
-                     * 获取空间列表
-                     * @return SpaceId 空间列表
+                     * 获取空间ID，用于限定查询范围。不填时查询所有空间的数据
+                     * @return SpaceId 空间ID，用于限定查询范围。不填时查询所有空间的数据
                      * 
                      */
                     std::string GetSpaceId() const;
 
                     /**
-                     * 设置空间列表
-                     * @param _spaceId 空间列表
+                     * 设置空间ID，用于限定查询范围。不填时查询所有空间的数据
+                     * @param _spaceId 空间ID，用于限定查询范围。不填时查询所有空间的数据
                      * 
                      */
                     void SetSpaceId(const std::string& _spaceId);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_appBizIdsHasBeenSet;
 
                     /**
-                     * 空间列表
+                     * 空间ID，用于限定查询范围。不填时查询所有空间的数据
                      */
                     std::string m_spaceId;
                     bool m_spaceIdHasBeenSet;

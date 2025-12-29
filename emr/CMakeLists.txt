@@ -104,6 +104,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/JobFlowResource.h
   include/tencentcloud/emr/v20190103/model/DescribeHBaseTableRequestMetricResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeJobFlowResponse.h
+  include/tencentcloud/emr/v20190103/model/Toleration.h
   include/tencentcloud/emr/v20190103/model/ClusterSetting.h
   include/tencentcloud/emr/v20190103/model/ModifyResourceResponse.h
   include/tencentcloud/emr/v20190103/model/PodSpecInfo.h
@@ -353,6 +354,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/ClusterRelationMeta.h
   include/tencentcloud/emr/v20190103/model/VolumeSetting.h
   include/tencentcloud/emr/v20190103/model/TerminateSLInstanceResponse.h
+  include/tencentcloud/emr/v20190103/model/OtherAccountInfo.h
   include/tencentcloud/emr/v20190103/model/DescribeAutoScaleStrategiesRequest.h
   include/tencentcloud/emr/v20190103/model/NodeSpecDiskV2.h
   include/tencentcloud/emr/v20190103/model/DeployYarnConfResponse.h
@@ -472,6 +474,7 @@ set(emr_src
   src/v20190103/model/JobFlowResource.cpp
   src/v20190103/model/DescribeHBaseTableRequestMetricResponse.cpp
   src/v20190103/model/DescribeJobFlowResponse.cpp
+  src/v20190103/model/Toleration.cpp
   src/v20190103/model/ClusterSetting.cpp
   src/v20190103/model/ModifyResourceResponse.cpp
   src/v20190103/model/PodSpecInfo.cpp
@@ -721,6 +724,7 @@ set(emr_src
   src/v20190103/model/ClusterRelationMeta.cpp
   src/v20190103/model/VolumeSetting.cpp
   src/v20190103/model/TerminateSLInstanceResponse.cpp
+  src/v20190103/model/OtherAccountInfo.cpp
   src/v20190103/model/DescribeAutoScaleStrategiesRequest.cpp
   src/v20190103/model/NodeSpecDiskV2.cpp
   src/v20190103/model/DeployYarnConfResponse.cpp

@@ -29,7 +29,8 @@ CloudResource::CloudResource() :
     m_volumeDirHasBeenSet(false),
     m_externalAccessHasBeenSet(false),
     m_affinityHasBeenSet(false),
-    m_disksHasBeenSet(false)
+    m_disksHasBeenSet(false),
+    m_tolerationsHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,26 @@ CoreInternalOutcome CloudResource::Deserialize(const rapidjson::Value &value)
         m_disksHasBeenSet = true;
     }
 
+    if (value.HasMember("Tolerations") && !value["Tolerations"].IsNull())
+    {
+        if (!value["Tolerations"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudResource.Tolerations` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tolerations"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Toleration item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tolerations.push_back(item);
+        }
+        m_tolerationsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -242,6 +263,21 @@ void CloudResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
 
         int i=0;
         for (auto itr = m_disks.begin(); itr != m_disks.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_tolerationsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tolerations";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tolerations.begin(); itr != m_tolerations.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -393,5 +429,21 @@ void CloudResource::SetDisks(const vector<Disk>& _disks)
 bool CloudResource::DisksHasBeenSet() const
 {
     return m_disksHasBeenSet;
+}
+
+vector<Toleration> CloudResource::GetTolerations() const
+{
+    return m_tolerations;
+}
+
+void CloudResource::SetTolerations(const vector<Toleration>& _tolerations)
+{
+    m_tolerations = _tolerations;
+    m_tolerationsHasBeenSet = true;
+}
+
+bool CloudResource::TolerationsHasBeenSet() const
+{
+    return m_tolerationsHasBeenSet;
 }
 

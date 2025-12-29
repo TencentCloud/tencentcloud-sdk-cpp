@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取当选择语音问答模式时，系统自动播报的问题文本，最大长度为150个字符。
-                     * @return Question 当选择语音问答模式时，系统自动播报的问题文本，最大长度为150个字符。
+                     * 获取当选择语音问答模式时，系统自动播报的问题文本，最大长度为250个字符。
+                     * @return Question 当选择语音问答模式时，系统自动播报的问题文本，最大长度为250个字符。
                      * 
                      */
                     std::string GetQuestion() const;
 
                     /**
-                     * 设置当选择语音问答模式时，系统自动播报的问题文本，最大长度为150个字符。
-                     * @param _question 当选择语音问答模式时，系统自动播报的问题文本，最大长度为150个字符。
+                     * 设置当选择语音问答模式时，系统自动播报的问题文本，最大长度为250个字符。
+                     * @param _question 当选择语音问答模式时，系统自动播报的问题文本，最大长度为250个字符。
                      * 
                      */
                     void SetQuestion(const std::string& _question);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 当选择语音问答模式时，系统自动播报的问题文本，最大长度为150个字符。
+                     * 当选择语音问答模式时，系统自动播报的问题文本，最大长度为250个字符。
                      */
                     std::string m_question;
                     bool m_questionHasBeenSet;

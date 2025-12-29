@@ -21,10 +21,13 @@ using namespace TencentCloud::Lke::V20231130::Model;
 using namespace std;
 
 ModelParameter::ModelParameter() :
+    m_nameHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_defaultValueHasBeenSet(false),
+    m_enumValuesHasBeenSet(false),
     m_defaultHasBeenSet(false),
     m_minHasBeenSet(false),
-    m_maxHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_maxHasBeenSet(false)
 {
 }
 
@@ -32,6 +35,49 @@ CoreInternalOutcome ModelParameter::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelParameter.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelParameter.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DefaultValue") && !value["DefaultValue"].IsNull())
+    {
+        if (!value["DefaultValue"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelParameter.DefaultValue` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultValue = string(value["DefaultValue"].GetString());
+        m_defaultValueHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnumValues") && !value["EnumValues"].IsNull())
+    {
+        if (!value["EnumValues"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ModelParameter.EnumValues` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["EnumValues"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_enumValues.push_back((*itr).GetString());
+        }
+        m_enumValuesHasBeenSet = true;
+    }
 
     if (value.HasMember("Default") && !value["Default"].IsNull())
     {
@@ -63,22 +109,49 @@ CoreInternalOutcome ModelParameter::Deserialize(const rapidjson::Value &value)
         m_maxHasBeenSet = true;
     }
 
-    if (value.HasMember("Name") && !value["Name"].IsNull())
-    {
-        if (!value["Name"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ModelParameter.Name` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_name = string(value["Name"].GetString());
-        m_nameHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
 void ModelParameter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_defaultValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_defaultValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enumValuesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnumValues";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_enumValues.begin(); itr != m_enumValues.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
 
     if (m_defaultHasBeenSet)
     {
@@ -104,16 +177,72 @@ void ModelParameter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, m_max, allocator);
     }
 
-    if (m_nameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Name";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
-    }
-
 }
 
+
+string ModelParameter::GetName() const
+{
+    return m_name;
+}
+
+void ModelParameter::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool ModelParameter::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+string ModelParameter::GetType() const
+{
+    return m_type;
+}
+
+void ModelParameter::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool ModelParameter::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+string ModelParameter::GetDefaultValue() const
+{
+    return m_defaultValue;
+}
+
+void ModelParameter::SetDefaultValue(const string& _defaultValue)
+{
+    m_defaultValue = _defaultValue;
+    m_defaultValueHasBeenSet = true;
+}
+
+bool ModelParameter::DefaultValueHasBeenSet() const
+{
+    return m_defaultValueHasBeenSet;
+}
+
+vector<string> ModelParameter::GetEnumValues() const
+{
+    return m_enumValues;
+}
+
+void ModelParameter::SetEnumValues(const vector<string>& _enumValues)
+{
+    m_enumValues = _enumValues;
+    m_enumValuesHasBeenSet = true;
+}
+
+bool ModelParameter::EnumValuesHasBeenSet() const
+{
+    return m_enumValuesHasBeenSet;
+}
 
 double ModelParameter::GetDefault() const
 {
@@ -161,21 +290,5 @@ void ModelParameter::SetMax(const double& _max)
 bool ModelParameter::MaxHasBeenSet() const
 {
     return m_maxHasBeenSet;
-}
-
-string ModelParameter::GetName() const
-{
-    return m_name;
-}
-
-void ModelParameter::SetName(const string& _name)
-{
-    m_name = _name;
-    m_nameHasBeenSet = true;
-}
-
-bool ModelParameter::NameHasBeenSet() const
-{
-    return m_nameHasBeenSet;
 }
 

@@ -390,6 +390,106 @@ MpsClient::CreateAdaptiveDynamicStreamingTemplateOutcomeCallable MpsClient::Crea
     return prom->get_future();
 }
 
+MpsClient::CreateAigcImageTaskOutcome MpsClient::CreateAigcImageTask(const CreateAigcImageTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcImageTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcImageTaskResponse rsp = CreateAigcImageTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcImageTaskOutcome(rsp);
+        else
+            return CreateAigcImageTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcImageTaskOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateAigcImageTaskAsync(const CreateAigcImageTaskRequest& request, const CreateAigcImageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcImageTaskRequest&;
+    using Resp = CreateAigcImageTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcImageTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::CreateAigcImageTaskOutcomeCallable MpsClient::CreateAigcImageTaskCallable(const CreateAigcImageTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcImageTaskOutcome>>();
+    CreateAigcImageTaskAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const CreateAigcImageTaskRequest&,
+        CreateAigcImageTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MpsClient::CreateAigcVideoTaskOutcome MpsClient::CreateAigcVideoTask(const CreateAigcVideoTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcVideoTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcVideoTaskResponse rsp = CreateAigcVideoTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcVideoTaskOutcome(rsp);
+        else
+            return CreateAigcVideoTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcVideoTaskOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateAigcVideoTaskAsync(const CreateAigcVideoTaskRequest& request, const CreateAigcVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcVideoTaskRequest&;
+    using Resp = CreateAigcVideoTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcVideoTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::CreateAigcVideoTaskOutcomeCallable MpsClient::CreateAigcVideoTaskCallable(const CreateAigcVideoTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcVideoTaskOutcome>>();
+    CreateAigcVideoTaskAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const CreateAigcVideoTaskRequest&,
+        CreateAigcVideoTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::CreateAnimatedGraphicsTemplateOutcome MpsClient::CreateAnimatedGraphicsTemplate(const CreateAnimatedGraphicsTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAnimatedGraphicsTemplate");
@@ -3082,6 +3182,106 @@ MpsClient::DescribeAdaptiveDynamicStreamingTemplatesOutcomeCallable MpsClient::D
         const MpsClient*,
         const DescribeAdaptiveDynamicStreamingTemplatesRequest&,
         DescribeAdaptiveDynamicStreamingTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MpsClient::DescribeAigcImageTaskOutcome MpsClient::DescribeAigcImageTask(const DescribeAigcImageTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAigcImageTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAigcImageTaskResponse rsp = DescribeAigcImageTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAigcImageTaskOutcome(rsp);
+        else
+            return DescribeAigcImageTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAigcImageTaskOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeAigcImageTaskAsync(const DescribeAigcImageTaskRequest& request, const DescribeAigcImageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAigcImageTaskRequest&;
+    using Resp = DescribeAigcImageTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAigcImageTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::DescribeAigcImageTaskOutcomeCallable MpsClient::DescribeAigcImageTaskCallable(const DescribeAigcImageTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAigcImageTaskOutcome>>();
+    DescribeAigcImageTaskAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const DescribeAigcImageTaskRequest&,
+        DescribeAigcImageTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MpsClient::DescribeAigcVideoTaskOutcome MpsClient::DescribeAigcVideoTask(const DescribeAigcVideoTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAigcVideoTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAigcVideoTaskResponse rsp = DescribeAigcVideoTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAigcVideoTaskOutcome(rsp);
+        else
+            return DescribeAigcVideoTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAigcVideoTaskOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeAigcVideoTaskAsync(const DescribeAigcVideoTaskRequest& request, const DescribeAigcVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAigcVideoTaskRequest&;
+    using Resp = DescribeAigcVideoTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAigcVideoTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::DescribeAigcVideoTaskOutcomeCallable MpsClient::DescribeAigcVideoTaskCallable(const DescribeAigcVideoTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAigcVideoTaskOutcome>>();
+    DescribeAigcVideoTaskAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const DescribeAigcVideoTaskRequest&,
+        DescribeAigcVideoTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

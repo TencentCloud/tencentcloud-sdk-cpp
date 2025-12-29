@@ -234,6 +234,48 @@ RealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有�
                      */
                     bool EnableRDMAHasBeenSet() const;
 
+                    /**
+                     * 获取root disk size(GB)
+                     * @return RootDisk root disk size(GB)
+                     * 
+                     */
+                    uint64_t GetRootDisk() const;
+
+                    /**
+                     * 设置root disk size(GB)
+                     * @param _rootDisk root disk size(GB)
+                     * 
+                     */
+                    void SetRootDisk(const uint64_t& _rootDisk);
+
+                    /**
+                     * 判断参数 RootDisk 是否已赋值
+                     * @return RootDisk 是否已赋值
+                     * 
+                     */
+                    bool RootDiskHasBeenSet() const;
+
+                    /**
+                     * 获取data disk size(GB)
+                     * @return DataDisk data disk size(GB)
+                     * 
+                     */
+                    uint64_t GetDataDisk() const;
+
+                    /**
+                     * 设置data disk size(GB)
+                     * @param _dataDisk data disk size(GB)
+                     * 
+                     */
+                    void SetDataDisk(const uint64_t& _dataDisk);
+
+                    /**
+                     * 判断参数 DataDisk 是否已赋值
+                     * @return DataDisk 是否已赋值
+                     * 
+                     */
+                    bool DataDiskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -287,6 +329,18 @@ RealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有�
                      */
                     bool m_enableRDMA;
                     bool m_enableRDMAHasBeenSet;
+
+                    /**
+                     * root disk size(GB)
+                     */
+                    uint64_t m_rootDisk;
+                    bool m_rootDiskHasBeenSet;
+
+                    /**
+                     * data disk size(GB)
+                     */
+                    uint64_t m_dataDisk;
+                    bool m_dataDiskHasBeenSet;
 
                 };
             }

@@ -585,6 +585,27 @@ hotword_list：临时热词表。每次请求时直接传入临时热词表来�
                      */
                     bool InputSampleRateHasBeenSet() const;
 
+                    /**
+                     * 获取替换词id。用于调用对应的替换词表。
+                     * @return ReplaceTextId 替换词id。用于调用对应的替换词表。
+                     * 
+                     */
+                    std::string GetReplaceTextId() const;
+
+                    /**
+                     * 设置替换词id。用于调用对应的替换词表。
+                     * @param _replaceTextId 替换词id。用于调用对应的替换词表。
+                     * 
+                     */
+                    void SetReplaceTextId(const std::string& _replaceTextId);
+
+                    /**
+                     * 判断参数 ReplaceTextId 是否已赋值
+                     * @return ReplaceTextId 是否已赋值
+                     * 
+                     */
+                    bool ReplaceTextIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -736,6 +757,12 @@ hotword_list：临时热词表。每次请求时直接传入临时热词表来�
                      */
                     int64_t m_inputSampleRate;
                     bool m_inputSampleRateHasBeenSet;
+
+                    /**
+                     * 替换词id。用于调用对应的替换词表。
+                     */
+                    std::string m_replaceTextId;
+                    bool m_replaceTextIdHasBeenSet;
 
                 };
             }

@@ -58,6 +58,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribeChatMessagesResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeSessionDetailResponse.h
   include/tencentcloud/ccc/v20200210/model/ServeParticipant.h
+  include/tencentcloud/ccc/v20200210/model/PlaySoundCallResponse.h
   include/tencentcloud/ccc/v20200210/model/AICallExtractResultElement.h
   include/tencentcloud/ccc/v20200210/model/DescribeTelCallInfoResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeExtensionsResponse.h
@@ -224,6 +225,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribeIMCdrListRequest.h
   include/tencentcloud/ccc/v20200210/model/AIAnalysisResult.h
   include/tencentcloud/ccc/v20200210/model/DescribeAutoCalloutTasksRequest.h
+  include/tencentcloud/ccc/v20200210/model/PlaySoundCallRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeChatMessagesRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeTelSessionResponse.h
   include/tencentcloud/ccc/v20200210/model/SetStaffStatusRspItem.h
@@ -289,6 +291,7 @@ set(ccc_src
   src/v20200210/model/DescribeChatMessagesResponse.cpp
   src/v20200210/model/DescribeSessionDetailResponse.cpp
   src/v20200210/model/ServeParticipant.cpp
+  src/v20200210/model/PlaySoundCallResponse.cpp
   src/v20200210/model/AICallExtractResultElement.cpp
   src/v20200210/model/DescribeTelCallInfoResponse.cpp
   src/v20200210/model/DescribeExtensionsResponse.cpp
@@ -455,6 +458,7 @@ set(ccc_src
   src/v20200210/model/DescribeIMCdrListRequest.cpp
   src/v20200210/model/AIAnalysisResult.cpp
   src/v20200210/model/DescribeAutoCalloutTasksRequest.cpp
+  src/v20200210/model/PlaySoundCallRequest.cpp
   src/v20200210/model/DescribeChatMessagesRequest.cpp
   src/v20200210/model/DescribeTelSessionResponse.cpp
   src/v20200210/model/SetStaffStatusRspItem.cpp

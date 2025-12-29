@@ -30,7 +30,8 @@ DescribePrivateNatGatewayTranslationAclRulesRequest::DescribePrivateNatGatewayTr
     m_originalIpHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,21 @@ string DescribePrivateNatGatewayTranslationAclRulesRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -239,6 +255,22 @@ void DescribePrivateNatGatewayTranslationAclRulesRequest::SetDescription(const s
 bool DescribePrivateNatGatewayTranslationAclRulesRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+vector<Filter> DescribePrivateNatGatewayTranslationAclRulesRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribePrivateNatGatewayTranslationAclRulesRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribePrivateNatGatewayTranslationAclRulesRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

@@ -87,18 +87,18 @@ namespace TencentCloud
 
                     /**
                      * 获取访客ID（外部输入，建议唯一，标识当前接入会话的用户）
-长度限制： string(64)
+长度限制： string(64)，即最长不超过64个字符
                      * @return VisitorBizId 访客ID（外部输入，建议唯一，标识当前接入会话的用户）
-长度限制： string(64)
+长度限制： string(64)，即最长不超过64个字符
                      * 
                      */
                     std::string GetVisitorBizId() const;
 
                     /**
                      * 设置访客ID（外部输入，建议唯一，标识当前接入会话的用户）
-长度限制： string(64)
+长度限制： string(64)，即最长不超过64个字符
                      * @param _visitorBizId 访客ID（外部输入，建议唯一，标识当前接入会话的用户）
-长度限制： string(64)
+长度限制： string(64)，即最长不超过64个字符
                      * 
                      */
                     void SetVisitorBizId(const std::string& _visitorBizId);
@@ -113,21 +113,21 @@ namespace TencentCloud
                     /**
                      * 获取知识标签，用于知识库中知识的检索过滤。该字段即将下线，请使用对话端接口中的 custom_variables 字段替代该字段。
                      * @return VisitorLabels 知识标签，用于知识库中知识的检索过滤。该字段即将下线，请使用对话端接口中的 custom_variables 字段替代该字段。
-                     * 
+                     * @deprecated
                      */
                     std::vector<GetWsTokenReq_Label> GetVisitorLabels() const;
 
                     /**
                      * 设置知识标签，用于知识库中知识的检索过滤。该字段即将下线，请使用对话端接口中的 custom_variables 字段替代该字段。
                      * @param _visitorLabels 知识标签，用于知识库中知识的检索过滤。该字段即将下线，请使用对话端接口中的 custom_variables 字段替代该字段。
-                     * 
+                     * @deprecated
                      */
                     void SetVisitorLabels(const std::vector<GetWsTokenReq_Label>& _visitorLabels);
 
                     /**
                      * 判断参数 VisitorLabels 是否已赋值
                      * @return VisitorLabels 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool VisitorLabelsHasBeenSet() const;
 
@@ -147,7 +147,7 @@ namespace TencentCloud
 
                     /**
                      * 访客ID（外部输入，建议唯一，标识当前接入会话的用户）
-长度限制： string(64)
+长度限制： string(64)，即最长不超过64个字符
                      */
                     std::string m_visitorBizId;
                     bool m_visitorBizIdHasBeenSet;

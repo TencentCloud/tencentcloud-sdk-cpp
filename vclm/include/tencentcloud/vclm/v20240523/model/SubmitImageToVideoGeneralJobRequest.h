@@ -103,6 +103,27 @@ Base64 和 Url 必须提供一个，如果都提供以ImageUrl为准。
                     bool PromptHasBeenSet() const;
 
                     /**
+                     * 获取输出视频分辨率。可选择：480p、720p、1080p。
+                     * @return Resolution 输出视频分辨率。可选择：480p、720p、1080p。
+                     * 
+                     */
+                    std::string GetResolution() const;
+
+                    /**
+                     * 设置输出视频分辨率。可选择：480p、720p、1080p。
+                     * @param _resolution 输出视频分辨率。可选择：480p、720p、1080p。
+                     * 
+                     */
+                    void SetResolution(const std::string& _resolution);
+
+                    /**
+                     * 判断参数 Resolution 是否已赋值
+                     * @return Resolution 是否已赋值
+                     * 
+                     */
+                    bool ResolutionHasBeenSet() const;
+
+                    /**
                      * 获取为生成视频添加标识的开关，默认为1，0 需前往 控制台 申请开启显示标识自主完成方可生效。  1：添加标识；  0：不添加标识；  其他数值：默认按1处理。
                      * @return LogoAdd 为生成视频添加标识的开关，默认为1，0 需前往 控制台 申请开启显示标识自主完成方可生效。  1：添加标识；  0：不添加标识；  其他数值：默认按1处理。
                      * 
@@ -161,6 +182,12 @@ Base64 和 Url 必须提供一个，如果都提供以ImageUrl为准。
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
+
+                    /**
+                     * 输出视频分辨率。可选择：480p、720p、1080p。
+                     */
+                    std::string m_resolution;
+                    bool m_resolutionHasBeenSet;
 
                     /**
                      * 为生成视频添加标识的开关，默认为1，0 需前往 控制台 申请开启显示标识自主完成方可生效。  1：添加标识；  0：不添加标识；  其他数值：默认按1处理。

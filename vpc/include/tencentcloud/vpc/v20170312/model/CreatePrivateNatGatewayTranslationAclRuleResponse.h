@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/TranslationAclRule.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取创建成功的访问控制列表。
+                     * @return TranslationAclRuleSet 创建成功的访问控制列表。
+                     * 
+                     */
+                    std::vector<TranslationAclRule> GetTranslationAclRuleSet() const;
+
+                    /**
+                     * 判断参数 TranslationAclRuleSet 是否已赋值
+                     * @return TranslationAclRuleSet 是否已赋值
+                     * 
+                     */
+                    bool TranslationAclRuleSetHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 创建成功的访问控制列表。
+                     */
+                    std::vector<TranslationAclRule> m_translationAclRuleSet;
+                    bool m_translationAclRuleSetHasBeenSet;
 
                 };
             }

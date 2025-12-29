@@ -476,8 +476,8 @@ namespace TencentCloud
                     bool CateNamePathHasBeenSet() const;
 
                     /**
-                     * 获取文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
-                     * @return EnableScope 文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     * 获取文档生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效
+                     * @return EnableScope 文档生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效
                      * 
                      */
                     int64_t GetEnableScope() const;
@@ -677,7 +677,7 @@ namespace TencentCloud
                     bool m_cateNamePathHasBeenSet;
 
                     /**
-                     * 文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     * 文档生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效
                      */
                     int64_t m_enableScope;
                     bool m_enableScopeHasBeenSet;

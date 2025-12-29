@@ -41,7 +41,9 @@ UpdateNativeNodePoolParam::UpdateNativeNodePoolParam() :
     m_updateExistedNodeHasBeenSet(false),
     m_dataDisksHasBeenSet(false),
     m_keyIdsHasBeenSet(false),
+    m_deletePolicyHasBeenSet(false),
     m_gPUConfigsHasBeenSet(false),
+    m_automationServiceHasBeenSet(false),
     m_passwordHasBeenSet(false)
 {
 }
@@ -318,6 +320,16 @@ CoreInternalOutcome UpdateNativeNodePoolParam::Deserialize(const rapidjson::Valu
         m_keyIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("DeletePolicy") && !value["DeletePolicy"].IsNull())
+    {
+        if (!value["DeletePolicy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateNativeNodePoolParam.DeletePolicy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deletePolicy = string(value["DeletePolicy"].GetString());
+        m_deletePolicyHasBeenSet = true;
+    }
+
     if (value.HasMember("GPUConfigs") && !value["GPUConfigs"].IsNull())
     {
         if (!value["GPUConfigs"].IsArray())
@@ -336,6 +348,16 @@ CoreInternalOutcome UpdateNativeNodePoolParam::Deserialize(const rapidjson::Valu
             m_gPUConfigs.push_back(item);
         }
         m_gPUConfigsHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutomationService") && !value["AutomationService"].IsNull())
+    {
+        if (!value["AutomationService"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateNativeNodePoolParam.AutomationService` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_automationService = value["AutomationService"].GetBool();
+        m_automationServiceHasBeenSet = true;
     }
 
     if (value.HasMember("Password") && !value["Password"].IsNull())
@@ -553,6 +575,14 @@ void UpdateNativeNodePoolParam::ToJsonObject(rapidjson::Value &value, rapidjson:
         }
     }
 
+    if (m_deletePolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletePolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deletePolicy.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_gPUConfigsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -566,6 +596,14 @@ void UpdateNativeNodePoolParam::ToJsonObject(rapidjson::Value &value, rapidjson:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_automationServiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutomationService";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_automationService, allocator);
     }
 
     if (m_passwordHasBeenSet)
@@ -899,6 +937,22 @@ bool UpdateNativeNodePoolParam::KeyIdsHasBeenSet() const
     return m_keyIdsHasBeenSet;
 }
 
+string UpdateNativeNodePoolParam::GetDeletePolicy() const
+{
+    return m_deletePolicy;
+}
+
+void UpdateNativeNodePoolParam::SetDeletePolicy(const string& _deletePolicy)
+{
+    m_deletePolicy = _deletePolicy;
+    m_deletePolicyHasBeenSet = true;
+}
+
+bool UpdateNativeNodePoolParam::DeletePolicyHasBeenSet() const
+{
+    return m_deletePolicyHasBeenSet;
+}
+
 vector<GPUConfig> UpdateNativeNodePoolParam::GetGPUConfigs() const
 {
     return m_gPUConfigs;
@@ -913,6 +967,22 @@ void UpdateNativeNodePoolParam::SetGPUConfigs(const vector<GPUConfig>& _gPUConfi
 bool UpdateNativeNodePoolParam::GPUConfigsHasBeenSet() const
 {
     return m_gPUConfigsHasBeenSet;
+}
+
+bool UpdateNativeNodePoolParam::GetAutomationService() const
+{
+    return m_automationService;
+}
+
+void UpdateNativeNodePoolParam::SetAutomationService(const bool& _automationService)
+{
+    m_automationService = _automationService;
+    m_automationServiceHasBeenSet = true;
+}
+
+bool UpdateNativeNodePoolParam::AutomationServiceHasBeenSet() const
+{
+    return m_automationServiceHasBeenSet;
 }
 
 string UpdateNativeNodePoolParam::GetPassword() const

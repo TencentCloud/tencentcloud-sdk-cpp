@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/Filter.h>
 
 
 namespace TencentCloud
@@ -210,6 +211,27 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取过滤条件。<li>AclRuleId - Integer - ACL规则ID。</li>
+                     * @return Filters 过滤条件。<li>AclRuleId - Integer - ACL规则ID。</li>
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置过滤条件。<li>AclRuleId - Integer - ACL规则ID。</li>
+                     * @param _filters 过滤条件。<li>AclRuleId - Integer - ACL规则ID。</li>
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +281,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 过滤条件。<li>AclRuleId - Integer - ACL规则ID。</li>
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

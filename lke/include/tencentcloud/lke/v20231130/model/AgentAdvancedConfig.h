@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lke/v20231130/model/StructuredOutputConfig.h>
+#include <tencentcloud/lke/v20231130/model/AgentOutputConfig.h>
+#include <tencentcloud/lke/v20231130/model/ClarificationConfig.h>
 
 
 namespace TencentCloud
@@ -173,6 +175,48 @@ namespace TencentCloud
                      */
                     bool StructuredOutputConfigHasBeenSet() const;
 
+                    /**
+                     * 获取Agent输出配置
+                     * @return AgentOutputConfig Agent输出配置
+                     * 
+                     */
+                    AgentOutputConfig GetAgentOutputConfig() const;
+
+                    /**
+                     * 设置Agent输出配置
+                     * @param _agentOutputConfig Agent输出配置
+                     * 
+                     */
+                    void SetAgentOutputConfig(const AgentOutputConfig& _agentOutputConfig);
+
+                    /**
+                     * 判断参数 AgentOutputConfig 是否已赋值
+                     * @return AgentOutputConfig 是否已赋值
+                     * 
+                     */
+                    bool AgentOutputConfigHasBeenSet() const;
+
+                    /**
+                     * 获取澄清询问配置
+                     * @return ClarificationConfig 澄清询问配置
+                     * 
+                     */
+                    ClarificationConfig GetClarificationConfig() const;
+
+                    /**
+                     * 设置澄清询问配置
+                     * @param _clarificationConfig 澄清询问配置
+                     * 
+                     */
+                    void SetClarificationConfig(const ClarificationConfig& _clarificationConfig);
+
+                    /**
+                     * 判断参数 ClarificationConfig 是否已赋值
+                     * @return ClarificationConfig 是否已赋值
+                     * 
+                     */
+                    bool ClarificationConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -210,6 +254,18 @@ namespace TencentCloud
                      */
                     StructuredOutputConfig m_structuredOutputConfig;
                     bool m_structuredOutputConfigHasBeenSet;
+
+                    /**
+                     * Agent输出配置
+                     */
+                    AgentOutputConfig m_agentOutputConfig;
+                    bool m_agentOutputConfigHasBeenSet;
+
+                    /**
+                     * 澄清询问配置
+                     */
+                    ClarificationConfig m_clarificationConfig;
+                    bool m_clarificationConfigHasBeenSet;
 
                 };
             }

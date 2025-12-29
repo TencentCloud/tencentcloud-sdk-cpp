@@ -235,6 +235,48 @@ namespace TencentCloud
                      */
                     bool FailCountHasBeenSet() const;
 
+                    /**
+                     * 获取版本号，格式是 v{date}{time}
+                     * @return ReleaseVersion 版本号，格式是 v{date}{time}
+                     * 
+                     */
+                    std::string GetReleaseVersion() const;
+
+                    /**
+                     * 设置版本号，格式是 v{date}{time}
+                     * @param _releaseVersion 版本号，格式是 v{date}{time}
+                     * 
+                     */
+                    void SetReleaseVersion(const std::string& _releaseVersion);
+
+                    /**
+                     * 判断参数 ReleaseVersion 是否已赋值
+                     * @return ReleaseVersion 是否已赋值
+                     * 
+                     */
+                    bool ReleaseVersionHasBeenSet() const;
+
+                    /**
+                     * 获取是否可还原
+                     * @return CanRollback 是否可还原
+                     * 
+                     */
+                    bool GetCanRollback() const;
+
+                    /**
+                     * 设置是否可还原
+                     * @param _canRollback 是否可还原
+                     * 
+                     */
+                    void SetCanRollback(const bool& _canRollback);
+
+                    /**
+                     * 判断参数 CanRollback 是否已赋值
+                     * @return CanRollback 是否已赋值
+                     * 
+                     */
+                    bool CanRollbackHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +332,18 @@ namespace TencentCloud
                      */
                     int64_t m_failCount;
                     bool m_failCountHasBeenSet;
+
+                    /**
+                     * 版本号，格式是 v{date}{time}
+                     */
+                    std::string m_releaseVersion;
+                    bool m_releaseVersionHasBeenSet;
+
+                    /**
+                     * 是否可还原
+                     */
+                    bool m_canRollback;
+                    bool m_canRollbackHasBeenSet;
 
                 };
             }

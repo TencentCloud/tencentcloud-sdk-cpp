@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/rce/v20250425/model/ManageIPPortraitRiskOutput.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取出参
+                     * @return Data 出参
+                     * 
+                     */
+                    ManageIPPortraitRiskOutput GetData() const;
+
+                    /**
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
+                     * 
+                     */
+                    bool DataHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 出参
+                     */
+                    ManageIPPortraitRiskOutput m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

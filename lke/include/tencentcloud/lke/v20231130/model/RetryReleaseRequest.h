@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取机器人ID
-                     * @return BotBizId 机器人ID
+                     * 获取应用ID（获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)）
+                     * @return BotBizId 应用ID（获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)）
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
-                     * 设置机器人ID
-                     * @param _botBizId 机器人ID
+                     * 设置应用ID（获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)）
+                     * @param _botBizId 应用ID（获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)）
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BotBizIdHasBeenSet() const;
 
                     /**
-                     * 获取发布业务ID
-                     * @return ReleaseBizId 发布业务ID
+                     * 获取发布单ID（可以通过[ListRelease](https://cloud.tencent.com/document/product/1759/105077)获得）
+                     * @return ReleaseBizId 发布单ID（可以通过[ListRelease](https://cloud.tencent.com/document/product/1759/105077)获得）
                      * 
                      */
                     std::string GetReleaseBizId() const;
 
                     /**
-                     * 设置发布业务ID
-                     * @param _releaseBizId 发布业务ID
+                     * 设置发布单ID（可以通过[ListRelease](https://cloud.tencent.com/document/product/1759/105077)获得）
+                     * @param _releaseBizId 发布单ID（可以通过[ListRelease](https://cloud.tencent.com/document/product/1759/105077)获得）
                      * 
                      */
                     void SetReleaseBizId(const std::string& _releaseBizId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 机器人ID
+                     * 应用ID（获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)）
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
 
                     /**
-                     * 发布业务ID
+                     * 发布单ID（可以通过[ListRelease](https://cloud.tencent.com/document/product/1759/105077)获得）
                      */
                     std::string m_releaseBizId;
                     bool m_releaseBizIdHasBeenSet;

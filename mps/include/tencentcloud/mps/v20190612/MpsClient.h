@@ -37,6 +37,10 @@
 #include <tencentcloud/mps/v20190612/model/CreateAIRecognitionTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateAdaptiveDynamicStreamingTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateAdaptiveDynamicStreamingTemplateResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateAigcImageTaskRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateAigcImageTaskResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateAigcVideoTaskRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateAigcVideoTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateAnimatedGraphicsTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateAnimatedGraphicsTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateAsrHotwordsRequest.h>
@@ -145,6 +149,10 @@
 #include <tencentcloud/mps/v20190612/model/DescribeAIRecognitionTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAdaptiveDynamicStreamingTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAdaptiveDynamicStreamingTemplatesResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeAigcImageTaskRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeAigcImageTaskResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeAigcVideoTaskRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeAigcVideoTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAnimatedGraphicsTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAnimatedGraphicsTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeAsrHotwordsRequest.h>
@@ -354,6 +362,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAdaptiveDynamicStreamingTemplateResponse> CreateAdaptiveDynamicStreamingTemplateOutcome;
                 typedef std::future<CreateAdaptiveDynamicStreamingTemplateOutcome> CreateAdaptiveDynamicStreamingTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateAdaptiveDynamicStreamingTemplateRequest&, CreateAdaptiveDynamicStreamingTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAdaptiveDynamicStreamingTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAigcImageTaskResponse> CreateAigcImageTaskOutcome;
+                typedef std::future<CreateAigcImageTaskOutcome> CreateAigcImageTaskOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateAigcImageTaskRequest&, CreateAigcImageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcImageTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAigcVideoTaskResponse> CreateAigcVideoTaskOutcome;
+                typedef std::future<CreateAigcVideoTaskOutcome> CreateAigcVideoTaskOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateAigcVideoTaskRequest&, CreateAigcVideoTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcVideoTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAnimatedGraphicsTemplateResponse> CreateAnimatedGraphicsTemplateOutcome;
                 typedef std::future<CreateAnimatedGraphicsTemplateOutcome> CreateAnimatedGraphicsTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateAnimatedGraphicsTemplateRequest&, CreateAnimatedGraphicsTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAnimatedGraphicsTemplateAsyncHandler;
@@ -516,6 +530,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAdaptiveDynamicStreamingTemplatesResponse> DescribeAdaptiveDynamicStreamingTemplatesOutcome;
                 typedef std::future<DescribeAdaptiveDynamicStreamingTemplatesOutcome> DescribeAdaptiveDynamicStreamingTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeAdaptiveDynamicStreamingTemplatesRequest&, DescribeAdaptiveDynamicStreamingTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAdaptiveDynamicStreamingTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAigcImageTaskResponse> DescribeAigcImageTaskOutcome;
+                typedef std::future<DescribeAigcImageTaskOutcome> DescribeAigcImageTaskOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeAigcImageTaskRequest&, DescribeAigcImageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcImageTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAigcVideoTaskResponse> DescribeAigcVideoTaskOutcome;
+                typedef std::future<DescribeAigcVideoTaskOutcome> DescribeAigcVideoTaskOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeAigcVideoTaskRequest&, DescribeAigcVideoTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcVideoTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAnimatedGraphicsTemplatesResponse> DescribeAnimatedGraphicsTemplatesOutcome;
                 typedef std::future<DescribeAnimatedGraphicsTemplatesOutcome> DescribeAnimatedGraphicsTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeAnimatedGraphicsTemplatesRequest&, DescribeAnimatedGraphicsTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAnimatedGraphicsTemplatesAsyncHandler;
@@ -843,6 +863,24 @@ namespace TencentCloud
                 CreateAdaptiveDynamicStreamingTemplateOutcome CreateAdaptiveDynamicStreamingTemplate(const Model::CreateAdaptiveDynamicStreamingTemplateRequest &request);
                 void CreateAdaptiveDynamicStreamingTemplateAsync(const Model::CreateAdaptiveDynamicStreamingTemplateRequest& request, const CreateAdaptiveDynamicStreamingTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAdaptiveDynamicStreamingTemplateOutcomeCallable CreateAdaptiveDynamicStreamingTemplateCallable(const Model::CreateAdaptiveDynamicStreamingTemplateRequest& request);
+
+                /**
+                 *调用该接口用于创建AIGC生图片任务。
+                 * @param req CreateAigcImageTaskRequest
+                 * @return CreateAigcImageTaskOutcome
+                 */
+                CreateAigcImageTaskOutcome CreateAigcImageTask(const Model::CreateAigcImageTaskRequest &request);
+                void CreateAigcImageTaskAsync(const Model::CreateAigcImageTaskRequest& request, const CreateAigcImageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAigcImageTaskOutcomeCallable CreateAigcImageTaskCallable(const Model::CreateAigcImageTaskRequest& request);
+
+                /**
+                 *调用该接口，用于创建AI生视频任务。
+                 * @param req CreateAigcVideoTaskRequest
+                 * @return CreateAigcVideoTaskOutcome
+                 */
+                CreateAigcVideoTaskOutcome CreateAigcVideoTask(const Model::CreateAigcVideoTaskRequest &request);
+                void CreateAigcVideoTaskAsync(const Model::CreateAigcVideoTaskRequest& request, const CreateAigcVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAigcVideoTaskOutcomeCallable CreateAigcVideoTaskCallable(const Model::CreateAigcVideoTaskRequest& request);
 
                 /**
                  *创建用户自定义转动图模板，数量上限：16。
@@ -1360,6 +1398,24 @@ namespace TencentCloud
                 DescribeAdaptiveDynamicStreamingTemplatesOutcome DescribeAdaptiveDynamicStreamingTemplates(const Model::DescribeAdaptiveDynamicStreamingTemplatesRequest &request);
                 void DescribeAdaptiveDynamicStreamingTemplatesAsync(const Model::DescribeAdaptiveDynamicStreamingTemplatesRequest& request, const DescribeAdaptiveDynamicStreamingTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAdaptiveDynamicStreamingTemplatesOutcomeCallable DescribeAdaptiveDynamicStreamingTemplatesCallable(const Model::DescribeAdaptiveDynamicStreamingTemplatesRequest& request);
+
+                /**
+                 *调用该接口，查询AIGC生图片任务进度以及获取生成结果。
+                 * @param req DescribeAigcImageTaskRequest
+                 * @return DescribeAigcImageTaskOutcome
+                 */
+                DescribeAigcImageTaskOutcome DescribeAigcImageTask(const Model::DescribeAigcImageTaskRequest &request);
+                void DescribeAigcImageTaskAsync(const Model::DescribeAigcImageTaskRequest& request, const DescribeAigcImageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAigcImageTaskOutcomeCallable DescribeAigcImageTaskCallable(const Model::DescribeAigcImageTaskRequest& request);
+
+                /**
+                 *调用该接口，用于查询AIGC生视频任务的进度以及获取生成结果。
+                 * @param req DescribeAigcVideoTaskRequest
+                 * @return DescribeAigcVideoTaskOutcome
+                 */
+                DescribeAigcVideoTaskOutcome DescribeAigcVideoTask(const Model::DescribeAigcVideoTaskRequest &request);
+                void DescribeAigcVideoTaskAsync(const Model::DescribeAigcVideoTaskRequest& request, const DescribeAigcVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAigcVideoTaskOutcomeCallable DescribeAigcVideoTaskCallable(const Model::DescribeAigcVideoTaskRequest& request);
 
                 /**
                  *查询转动图模板列表，支持根据条件，分页查询。

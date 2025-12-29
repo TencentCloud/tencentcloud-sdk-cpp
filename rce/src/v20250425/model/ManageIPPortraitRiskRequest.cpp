@@ -22,7 +22,9 @@
 using namespace TencentCloud::Rce::V20250425::Model;
 using namespace std;
 
-ManageIPPortraitRiskRequest::ManageIPPortraitRiskRequest()
+ManageIPPortraitRiskRequest::ManageIPPortraitRiskRequest() :
+    m_postTimeHasBeenSet(false),
+    m_businessSecurityDataHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,23 @@ string ManageIPPortraitRiskRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_postTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PostTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_postTime, allocator);
+    }
+
+    if (m_businessSecurityDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessSecurityData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_businessSecurityData.ToJsonObject(d[key.c_str()], allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +59,37 @@ string ManageIPPortraitRiskRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t ManageIPPortraitRiskRequest::GetPostTime() const
+{
+    return m_postTime;
+}
+
+void ManageIPPortraitRiskRequest::SetPostTime(const int64_t& _postTime)
+{
+    m_postTime = _postTime;
+    m_postTimeHasBeenSet = true;
+}
+
+bool ManageIPPortraitRiskRequest::PostTimeHasBeenSet() const
+{
+    return m_postTimeHasBeenSet;
+}
+
+ManageIPPortraitRiskInput ManageIPPortraitRiskRequest::GetBusinessSecurityData() const
+{
+    return m_businessSecurityData;
+}
+
+void ManageIPPortraitRiskRequest::SetBusinessSecurityData(const ManageIPPortraitRiskInput& _businessSecurityData)
+{
+    m_businessSecurityData = _businessSecurityData;
+    m_businessSecurityDataHasBeenSet = true;
+}
+
+bool ManageIPPortraitRiskRequest::BusinessSecurityDataHasBeenSet() const
+{
+    return m_businessSecurityDataHasBeenSet;
+}
 
 

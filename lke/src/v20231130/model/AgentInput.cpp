@@ -26,7 +26,8 @@ AgentInput::AgentInput() :
     m_customVarIdHasBeenSet(false),
     m_envVarIdHasBeenSet(false),
     m_appVarIdHasBeenSet(false),
-    m_systemVariableHasBeenSet(false)
+    m_systemVariableHasBeenSet(false),
+    m_toolParamHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,16 @@ CoreInternalOutcome AgentInput::Deserialize(const rapidjson::Value &value)
         m_systemVariableHasBeenSet = true;
     }
 
+    if (value.HasMember("ToolParam") && !value["ToolParam"].IsNull())
+    {
+        if (!value["ToolParam"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentInput.ToolParam` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_toolParam = string(value["ToolParam"].GetString());
+        m_toolParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +175,14 @@ void AgentInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_systemVariable.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_toolParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToolParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_toolParam.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -263,5 +282,21 @@ void AgentInput::SetSystemVariable(const AgentInputSystemVariable& _systemVariab
 bool AgentInput::SystemVariableHasBeenSet() const
 {
     return m_systemVariableHasBeenSet;
+}
+
+string AgentInput::GetToolParam() const
+{
+    return m_toolParam;
+}
+
+void AgentInput::SetToolParam(const string& _toolParam)
+{
+    m_toolParam = _toolParam;
+    m_toolParamHasBeenSet = true;
+}
+
+bool AgentInput::ToolParamHasBeenSet() const
+{
+    return m_toolParamHasBeenSet;
 }
 

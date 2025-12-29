@@ -93,6 +93,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/CreateImageSpriteTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/SmartErasePrivacyConfig.h
   include/tencentcloud/mps/v20190612/model/MediaSnapshotByTimePicInfoItem.h
+  include/tencentcloud/mps/v20190612/model/DescribeAigcImageTaskRequest.h
   include/tencentcloud/mps/v20190612/model/AddOnParameter.h
   include/tencentcloud/mps/v20190612/model/UserDefineFaceReviewTemplateInfo.h
   include/tencentcloud/mps/v20190612/model/CreateInputHLSPullSettings.h
@@ -175,6 +176,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/DescribeStreamLinkEventResponse.h
   include/tencentcloud/mps/v20190612/model/EnableWorkflowRequest.h
   include/tencentcloud/mps/v20190612/model/CreateStreamLinkFlowResponse.h
+  include/tencentcloud/mps/v20190612/model/AigcImageExtraParam.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskClassificationOutput.h
   include/tencentcloud/mps/v20190612/model/SRTAddressDestination.h
   include/tencentcloud/mps/v20190612/model/DescribeFlowId.h
@@ -184,6 +186,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskOcrFullTextResultOutput.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskHighlightResult.h
   include/tencentcloud/mps/v20190612/model/ComposeTransitionOperation.h
+  include/tencentcloud/mps/v20190612/model/CreateAigcVideoTaskResponse.h
   include/tencentcloud/mps/v20190612/model/UserDefineAsrTextReviewTemplateInfo.h
   include/tencentcloud/mps/v20190612/model/ComposeTrackTime.h
   include/tencentcloud/mps/v20190612/model/AiSampleFaceInfo.h
@@ -249,6 +252,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/Rules.h
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskOcrWordsResult.h
   include/tencentcloud/mps/v20190612/model/PornAsrReviewTemplateInfo.h
+  include/tencentcloud/mps/v20190612/model/CreateAigcImageTaskResponse.h
   include/tencentcloud/mps/v20190612/model/ComposeVideoStream.h
   include/tencentcloud/mps/v20190612/model/ProhibitedAsrReviewTemplateInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskCutoutInput.h
@@ -333,6 +337,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/CreateMediaEvaluationResponse.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskTagResult.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskDelLogoInput.h
+  include/tencentcloud/mps/v20190612/model/DescribeAigcImageTaskResponse.h
   include/tencentcloud/mps/v20190612/model/SmartSubtitleTaskBatchOutput.h
   include/tencentcloud/mps/v20190612/model/BatchStopStreamLinkFlowRequest.h
   include/tencentcloud/mps/v20190612/model/RTMPAddressDestination.h
@@ -341,6 +346,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/CreateAsrHotwordsResponse.h
   include/tencentcloud/mps/v20190612/model/DeleteBlindWatermarkTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/QualityControlItemConfig.h
+  include/tencentcloud/mps/v20190612/model/CreateSnapshotByTimeOffsetTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/CreateStreamLinkEventResponse.h
   include/tencentcloud/mps/v20190612/model/AdaptiveDynamicStreamingInfoItem.h
   include/tencentcloud/mps/v20190612/model/DescribeProcessImageTemplatesResponse.h
@@ -358,6 +364,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/MediaProcessTaskSnapshotByTimeOffsetResult.h
   include/tencentcloud/mps/v20190612/model/DescribeOutputHLSPullSettings.h
   include/tencentcloud/mps/v20190612/model/AddBlindWatermarkConfig.h
+  include/tencentcloud/mps/v20190612/model/CreateAigcVideoTaskRequest.h
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskTransTextResultInput.h
   include/tencentcloud/mps/v20190612/model/DescribeSchedulesResponse.h
   include/tencentcloud/mps/v20190612/model/ImageQualityEnhanceConfig.h
@@ -375,6 +382,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/MediaProcessTaskTranscodeResult.h
   include/tencentcloud/mps/v20190612/model/SnapshotByTimeOffsetTaskInput.h
   include/tencentcloud/mps/v20190612/model/ImageSpriteTaskInput.h
+  include/tencentcloud/mps/v20190612/model/AigcImageInfo.h
   include/tencentcloud/mps/v20190612/model/DeleteContentReviewTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/VODInputInfo.h
   include/tencentcloud/mps/v20190612/model/ImageWatermarkTemplate.h
@@ -383,6 +391,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskVideoRemakeInput.h
   include/tencentcloud/mps/v20190612/model/LiveStreamAsrWordsRecognitionResult.h
   include/tencentcloud/mps/v20190612/model/MediaAiAnalysisFrameTagItem.h
+  include/tencentcloud/mps/v20190612/model/FlowMediaVideo.h
   include/tencentcloud/mps/v20190612/model/RecognizeMediaForZhiXueResponse.h
   include/tencentcloud/mps/v20190612/model/AiSamplePerson.h
   include/tencentcloud/mps/v20190612/model/FlowStatistics.h
@@ -465,6 +474,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/DescribeBlindWatermarkTemplatesResponse.h
   include/tencentcloud/mps/v20190612/model/ImageWatermarkInputForUpdate.h
   include/tencentcloud/mps/v20190612/model/DescribeAIAnalysisTemplatesRequest.h
+  include/tencentcloud/mps/v20190612/model/AigcStoreCosParam.h
   include/tencentcloud/mps/v20190612/model/FlowVideo.h
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskOcrWordsResultItem.h
   include/tencentcloud/mps/v20190612/model/UpdateSmartErasePrivacyConfig.h
@@ -724,6 +734,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/MediaContentReviewSegmentItem.h
   include/tencentcloud/mps/v20190612/model/AiContentReviewResult.h
   include/tencentcloud/mps/v20190612/model/LiveActivityResult.h
+  include/tencentcloud/mps/v20190612/model/CreateAigcImageTaskRequest.h
   include/tencentcloud/mps/v20190612/model/TerrorismImgReviewTemplateInfo.h
   include/tencentcloud/mps/v20190612/model/AsrHotwordsSet.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskHeadTailInput.h
@@ -764,13 +775,14 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskObjectResult.h
   include/tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowRealtimeStatusRequest.h
   include/tencentcloud/mps/v20190612/model/DescribeAIAnalysisTemplatesResponse.h
-  include/tencentcloud/mps/v20190612/model/CreateSnapshotByTimeOffsetTemplateRequest.h
+  include/tencentcloud/mps/v20190612/model/AigcVideoExtraParam.h
   include/tencentcloud/mps/v20190612/model/ParseLiveStreamProcessNotificationRequest.h
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskAsrWordsResult.h
+  include/tencentcloud/mps/v20190612/model/DescribeAigcVideoTaskRequest.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskHeadTailResult.h
   include/tencentcloud/mps/v20190612/model/CreateSampleSnapshotTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/WorkflowTask.h
-  include/tencentcloud/mps/v20190612/model/FlowMediaVideo.h
+  include/tencentcloud/mps/v20190612/model/DescribeAigcVideoTaskResponse.h
   include/tencentcloud/mps/v20190612/model/DeleteSmartEraseTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/AiReviewTaskPornAsrResult.h
   include/tencentcloud/mps/v20190612/model/ModifyBlindWatermarkTemplateRequest.h
@@ -845,6 +857,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/FailOverOption.h
   include/tencentcloud/mps/v20190612/model/LowLightEnhanceConfig.h
   include/tencentcloud/mps/v20190612/model/DescribeMediaMetaDataRequest.h
+  include/tencentcloud/mps/v20190612/model/AigcVideoReferenceImageInfo.h
   include/tencentcloud/mps/v20190612/model/FrameTagConfigureInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/CreateImageSpriteTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/DescribeAIRecognitionTemplatesRequest.h
@@ -929,6 +942,7 @@ set(mps_src
   src/v20190612/model/CreateImageSpriteTemplateRequest.cpp
   src/v20190612/model/SmartErasePrivacyConfig.cpp
   src/v20190612/model/MediaSnapshotByTimePicInfoItem.cpp
+  src/v20190612/model/DescribeAigcImageTaskRequest.cpp
   src/v20190612/model/AddOnParameter.cpp
   src/v20190612/model/UserDefineFaceReviewTemplateInfo.cpp
   src/v20190612/model/CreateInputHLSPullSettings.cpp
@@ -1011,6 +1025,7 @@ set(mps_src
   src/v20190612/model/DescribeStreamLinkEventResponse.cpp
   src/v20190612/model/EnableWorkflowRequest.cpp
   src/v20190612/model/CreateStreamLinkFlowResponse.cpp
+  src/v20190612/model/AigcImageExtraParam.cpp
   src/v20190612/model/AiAnalysisTaskClassificationOutput.cpp
   src/v20190612/model/SRTAddressDestination.cpp
   src/v20190612/model/DescribeFlowId.cpp
@@ -1020,6 +1035,7 @@ set(mps_src
   src/v20190612/model/AiRecognitionTaskOcrFullTextResultOutput.cpp
   src/v20190612/model/AiAnalysisTaskHighlightResult.cpp
   src/v20190612/model/ComposeTransitionOperation.cpp
+  src/v20190612/model/CreateAigcVideoTaskResponse.cpp
   src/v20190612/model/UserDefineAsrTextReviewTemplateInfo.cpp
   src/v20190612/model/ComposeTrackTime.cpp
   src/v20190612/model/AiSampleFaceInfo.cpp
@@ -1085,6 +1101,7 @@ set(mps_src
   src/v20190612/model/Rules.cpp
   src/v20190612/model/AiRecognitionTaskOcrWordsResult.cpp
   src/v20190612/model/PornAsrReviewTemplateInfo.cpp
+  src/v20190612/model/CreateAigcImageTaskResponse.cpp
   src/v20190612/model/ComposeVideoStream.cpp
   src/v20190612/model/ProhibitedAsrReviewTemplateInfoForUpdate.cpp
   src/v20190612/model/AiAnalysisTaskCutoutInput.cpp
@@ -1169,6 +1186,7 @@ set(mps_src
   src/v20190612/model/CreateMediaEvaluationResponse.cpp
   src/v20190612/model/AiAnalysisTaskTagResult.cpp
   src/v20190612/model/AiAnalysisTaskDelLogoInput.cpp
+  src/v20190612/model/DescribeAigcImageTaskResponse.cpp
   src/v20190612/model/SmartSubtitleTaskBatchOutput.cpp
   src/v20190612/model/BatchStopStreamLinkFlowRequest.cpp
   src/v20190612/model/RTMPAddressDestination.cpp
@@ -1177,6 +1195,7 @@ set(mps_src
   src/v20190612/model/CreateAsrHotwordsResponse.cpp
   src/v20190612/model/DeleteBlindWatermarkTemplateResponse.cpp
   src/v20190612/model/QualityControlItemConfig.cpp
+  src/v20190612/model/CreateSnapshotByTimeOffsetTemplateRequest.cpp
   src/v20190612/model/CreateStreamLinkEventResponse.cpp
   src/v20190612/model/AdaptiveDynamicStreamingInfoItem.cpp
   src/v20190612/model/DescribeProcessImageTemplatesResponse.cpp
@@ -1194,6 +1213,7 @@ set(mps_src
   src/v20190612/model/MediaProcessTaskSnapshotByTimeOffsetResult.cpp
   src/v20190612/model/DescribeOutputHLSPullSettings.cpp
   src/v20190612/model/AddBlindWatermarkConfig.cpp
+  src/v20190612/model/CreateAigcVideoTaskRequest.cpp
   src/v20190612/model/AiRecognitionTaskTransTextResultInput.cpp
   src/v20190612/model/DescribeSchedulesResponse.cpp
   src/v20190612/model/ImageQualityEnhanceConfig.cpp
@@ -1211,6 +1231,7 @@ set(mps_src
   src/v20190612/model/MediaProcessTaskTranscodeResult.cpp
   src/v20190612/model/SnapshotByTimeOffsetTaskInput.cpp
   src/v20190612/model/ImageSpriteTaskInput.cpp
+  src/v20190612/model/AigcImageInfo.cpp
   src/v20190612/model/DeleteContentReviewTemplateResponse.cpp
   src/v20190612/model/VODInputInfo.cpp
   src/v20190612/model/ImageWatermarkTemplate.cpp
@@ -1219,6 +1240,7 @@ set(mps_src
   src/v20190612/model/AiAnalysisTaskVideoRemakeInput.cpp
   src/v20190612/model/LiveStreamAsrWordsRecognitionResult.cpp
   src/v20190612/model/MediaAiAnalysisFrameTagItem.cpp
+  src/v20190612/model/FlowMediaVideo.cpp
   src/v20190612/model/RecognizeMediaForZhiXueResponse.cpp
   src/v20190612/model/AiSamplePerson.cpp
   src/v20190612/model/FlowStatistics.cpp
@@ -1301,6 +1323,7 @@ set(mps_src
   src/v20190612/model/DescribeBlindWatermarkTemplatesResponse.cpp
   src/v20190612/model/ImageWatermarkInputForUpdate.cpp
   src/v20190612/model/DescribeAIAnalysisTemplatesRequest.cpp
+  src/v20190612/model/AigcStoreCosParam.cpp
   src/v20190612/model/FlowVideo.cpp
   src/v20190612/model/AiRecognitionTaskOcrWordsResultItem.cpp
   src/v20190612/model/UpdateSmartErasePrivacyConfig.cpp
@@ -1560,6 +1583,7 @@ set(mps_src
   src/v20190612/model/MediaContentReviewSegmentItem.cpp
   src/v20190612/model/AiContentReviewResult.cpp
   src/v20190612/model/LiveActivityResult.cpp
+  src/v20190612/model/CreateAigcImageTaskRequest.cpp
   src/v20190612/model/TerrorismImgReviewTemplateInfo.cpp
   src/v20190612/model/AsrHotwordsSet.cpp
   src/v20190612/model/AiAnalysisTaskHeadTailInput.cpp
@@ -1600,13 +1624,14 @@ set(mps_src
   src/v20190612/model/AiRecognitionTaskObjectResult.cpp
   src/v20190612/model/DescribeStreamLinkFlowRealtimeStatusRequest.cpp
   src/v20190612/model/DescribeAIAnalysisTemplatesResponse.cpp
-  src/v20190612/model/CreateSnapshotByTimeOffsetTemplateRequest.cpp
+  src/v20190612/model/AigcVideoExtraParam.cpp
   src/v20190612/model/ParseLiveStreamProcessNotificationRequest.cpp
   src/v20190612/model/AiRecognitionTaskAsrWordsResult.cpp
+  src/v20190612/model/DescribeAigcVideoTaskRequest.cpp
   src/v20190612/model/AiAnalysisTaskHeadTailResult.cpp
   src/v20190612/model/CreateSampleSnapshotTemplateRequest.cpp
   src/v20190612/model/WorkflowTask.cpp
-  src/v20190612/model/FlowMediaVideo.cpp
+  src/v20190612/model/DescribeAigcVideoTaskResponse.cpp
   src/v20190612/model/DeleteSmartEraseTemplateResponse.cpp
   src/v20190612/model/AiReviewTaskPornAsrResult.cpp
   src/v20190612/model/ModifyBlindWatermarkTemplateRequest.cpp
@@ -1681,6 +1706,7 @@ set(mps_src
   src/v20190612/model/FailOverOption.cpp
   src/v20190612/model/LowLightEnhanceConfig.cpp
   src/v20190612/model/DescribeMediaMetaDataRequest.cpp
+  src/v20190612/model/AigcVideoReferenceImageInfo.cpp
   src/v20190612/model/FrameTagConfigureInfoForUpdate.cpp
   src/v20190612/model/CreateImageSpriteTemplateResponse.cpp
   src/v20190612/model/DescribeAIRecognitionTemplatesRequest.cpp

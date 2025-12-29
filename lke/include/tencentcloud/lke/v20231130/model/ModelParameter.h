@@ -47,6 +47,94 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取超参名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Name 超参名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置超参名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _name 超参名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取类型
+                     * @return Type 类型
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置类型
+                     * @param _type 类型
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取默认值
+                     * @return DefaultValue 默认值
+                     * 
+                     */
+                    std::string GetDefaultValue() const;
+
+                    /**
+                     * 设置默认值
+                     * @param _defaultValue 默认值
+                     * 
+                     */
+                    void SetDefaultValue(const std::string& _defaultValue);
+
+                    /**
+                     * 判断参数 DefaultValue 是否已赋值
+                     * @return DefaultValue 是否已赋值
+                     * 
+                     */
+                    bool DefaultValueHasBeenSet() const;
+
+                    /**
+                     * 获取枚举值
+                     * @return EnumValues 枚举值
+                     * 
+                     */
+                    std::vector<std::string> GetEnumValues() const;
+
+                    /**
+                     * 设置枚举值
+                     * @param _enumValues 枚举值
+                     * 
+                     */
+                    void SetEnumValues(const std::vector<std::string>& _enumValues);
+
+                    /**
+                     * 判断参数 EnumValues 是否已赋值
+                     * @return EnumValues 是否已赋值
+                     * 
+                     */
+                    bool EnumValuesHasBeenSet() const;
+
+                    /**
                      * 获取默认值
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Default 默认值
@@ -121,32 +209,32 @@ namespace TencentCloud
                      */
                     bool MaxHasBeenSet() const;
 
-                    /**
-                     * 获取超参名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 超参名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetName() const;
-
-                    /**
-                     * 设置超参名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 超参名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetName(const std::string& _name);
-
-                    /**
-                     * 判断参数 Name 是否已赋值
-                     * @return Name 是否已赋值
-                     * 
-                     */
-                    bool NameHasBeenSet() const;
-
                 private:
+
+                    /**
+                     * 超参名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * 类型
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * 默认值
+                     */
+                    std::string m_defaultValue;
+                    bool m_defaultValueHasBeenSet;
+
+                    /**
+                     * 枚举值
+                     */
+                    std::vector<std::string> m_enumValues;
+                    bool m_enumValuesHasBeenSet;
 
                     /**
                      * 默认值
@@ -168,13 +256,6 @@ namespace TencentCloud
                      */
                     double m_max;
                     bool m_maxHasBeenSet;
-
-                    /**
-                     * 超参名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_name;
-                    bool m_nameHasBeenSet;
 
                 };
             }

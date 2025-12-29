@@ -41,7 +41,8 @@ SentenceRecognitionRequest::SentenceRecognitionRequest() :
     m_customizationIdHasBeenSet(false),
     m_reinforceHotwordHasBeenSet(false),
     m_hotwordListHasBeenSet(false),
-    m_inputSampleRateHasBeenSet(false)
+    m_inputSampleRateHasBeenSet(false),
+    m_replaceTextIdHasBeenSet(false)
 {
 }
 
@@ -202,6 +203,14 @@ string SentenceRecognitionRequest::ToJsonString() const
         string key = "InputSampleRate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_inputSampleRate, allocator);
+    }
+
+    if (m_replaceTextIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplaceTextId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_replaceTextId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -514,6 +523,22 @@ void SentenceRecognitionRequest::SetInputSampleRate(const int64_t& _inputSampleR
 bool SentenceRecognitionRequest::InputSampleRateHasBeenSet() const
 {
     return m_inputSampleRateHasBeenSet;
+}
+
+string SentenceRecognitionRequest::GetReplaceTextId() const
+{
+    return m_replaceTextId;
+}
+
+void SentenceRecognitionRequest::SetReplaceTextId(const string& _replaceTextId)
+{
+    m_replaceTextId = _replaceTextId;
+    m_replaceTextIdHasBeenSet = true;
+}
+
+bool SentenceRecognitionRequest::ReplaceTextIdHasBeenSet() const
+{
+    return m_replaceTextIdHasBeenSet;
 }
 
 

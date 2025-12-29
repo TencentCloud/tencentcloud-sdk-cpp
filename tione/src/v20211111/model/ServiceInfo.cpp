@@ -59,7 +59,9 @@ ServiceInfo::ServiceInfo() :
     m_healthProbeHasBeenSet(false),
     m_rollingUpdateHasBeenSet(false),
     m_instancePerReplicasHasBeenSet(false),
-    m_volumeMountsHasBeenSet(false)
+    m_volumeMountsHasBeenSet(false),
+    m_schedulingStrategyHasBeenSet(false),
+    m_nodeCountHasBeenSet(false)
 {
 }
 
@@ -609,6 +611,26 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
         m_volumeMountsHasBeenSet = true;
     }
 
+    if (value.HasMember("SchedulingStrategy") && !value["SchedulingStrategy"].IsNull())
+    {
+        if (!value["SchedulingStrategy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.SchedulingStrategy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schedulingStrategy = string(value["SchedulingStrategy"].GetString());
+        m_schedulingStrategyHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeCount") && !value["NodeCount"].IsNull())
+    {
+        if (!value["NodeCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.NodeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeCount = value["NodeCount"].GetInt64();
+        m_nodeCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -979,6 +1001,22 @@ void ServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_schedulingStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchedulingStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schedulingStrategy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nodeCount, allocator);
     }
 
 }
@@ -1606,5 +1644,37 @@ void ServiceInfo::SetVolumeMounts(const vector<VolumeMount>& _volumeMounts)
 bool ServiceInfo::VolumeMountsHasBeenSet() const
 {
     return m_volumeMountsHasBeenSet;
+}
+
+string ServiceInfo::GetSchedulingStrategy() const
+{
+    return m_schedulingStrategy;
+}
+
+void ServiceInfo::SetSchedulingStrategy(const string& _schedulingStrategy)
+{
+    m_schedulingStrategy = _schedulingStrategy;
+    m_schedulingStrategyHasBeenSet = true;
+}
+
+bool ServiceInfo::SchedulingStrategyHasBeenSet() const
+{
+    return m_schedulingStrategyHasBeenSet;
+}
+
+int64_t ServiceInfo::GetNodeCount() const
+{
+    return m_nodeCount;
+}
+
+void ServiceInfo::SetNodeCount(const int64_t& _nodeCount)
+{
+    m_nodeCount = _nodeCount;
+    m_nodeCountHasBeenSet = true;
+}
+
+bool ServiceInfo::NodeCountHasBeenSet() const
+{
+    return m_nodeCountHasBeenSet;
 }
 

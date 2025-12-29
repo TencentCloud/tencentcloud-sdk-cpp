@@ -164,6 +164,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesRequest.h
   include/tencentcloud/ess/v20201111/model/FailedUpdateStaffData.h
   include/tencentcloud/ess/v20201111/model/GetTaskResultApiRequest.h
+  include/tencentcloud/ess/v20201111/model/DynamicSignOption.h
   include/tencentcloud/ess/v20201111/model/FlowDetailInfo.h
   include/tencentcloud/ess/v20201111/model/CreatePersonAuthCertificateImageRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowByFilesResponse.h
@@ -551,6 +552,7 @@ set(ess_src
   src/v20201111/model/DeleteIntegrationEmployeesRequest.cpp
   src/v20201111/model/FailedUpdateStaffData.cpp
   src/v20201111/model/GetTaskResultApiRequest.cpp
+  src/v20201111/model/DynamicSignOption.cpp
   src/v20201111/model/FlowDetailInfo.cpp
   src/v20201111/model/CreatePersonAuthCertificateImageRequest.cpp
   src/v20201111/model/CreateFlowByFilesResponse.cpp

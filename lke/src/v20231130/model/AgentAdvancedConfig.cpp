@@ -26,7 +26,9 @@ AgentAdvancedConfig::AgentAdvancedConfig() :
     m_maxReasoningRoundHasBeenSet(false),
     m_historyLimitHasBeenSet(false),
     m_enableStructuredOutputHasBeenSet(false),
-    m_structuredOutputConfigHasBeenSet(false)
+    m_structuredOutputConfigHasBeenSet(false),
+    m_agentOutputConfigHasBeenSet(false),
+    m_clarificationConfigHasBeenSet(false)
 {
 }
 
@@ -102,6 +104,40 @@ CoreInternalOutcome AgentAdvancedConfig::Deserialize(const rapidjson::Value &val
         m_structuredOutputConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("AgentOutputConfig") && !value["AgentOutputConfig"].IsNull())
+    {
+        if (!value["AgentOutputConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentAdvancedConfig.AgentOutputConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_agentOutputConfig.Deserialize(value["AgentOutputConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_agentOutputConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClarificationConfig") && !value["ClarificationConfig"].IsNull())
+    {
+        if (!value["ClarificationConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentAdvancedConfig.ClarificationConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_clarificationConfig.Deserialize(value["ClarificationConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_clarificationConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +192,24 @@ void AgentAdvancedConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_structuredOutputConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_agentOutputConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentOutputConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agentOutputConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_clarificationConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClarificationConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_clarificationConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -255,5 +309,37 @@ void AgentAdvancedConfig::SetStructuredOutputConfig(const StructuredOutputConfig
 bool AgentAdvancedConfig::StructuredOutputConfigHasBeenSet() const
 {
     return m_structuredOutputConfigHasBeenSet;
+}
+
+AgentOutputConfig AgentAdvancedConfig::GetAgentOutputConfig() const
+{
+    return m_agentOutputConfig;
+}
+
+void AgentAdvancedConfig::SetAgentOutputConfig(const AgentOutputConfig& _agentOutputConfig)
+{
+    m_agentOutputConfig = _agentOutputConfig;
+    m_agentOutputConfigHasBeenSet = true;
+}
+
+bool AgentAdvancedConfig::AgentOutputConfigHasBeenSet() const
+{
+    return m_agentOutputConfigHasBeenSet;
+}
+
+ClarificationConfig AgentAdvancedConfig::GetClarificationConfig() const
+{
+    return m_clarificationConfig;
+}
+
+void AgentAdvancedConfig::SetClarificationConfig(const ClarificationConfig& _clarificationConfig)
+{
+    m_clarificationConfig = _clarificationConfig;
+    m_clarificationConfigHasBeenSet = true;
+}
+
+bool AgentAdvancedConfig::ClarificationConfigHasBeenSet() const
+{
+    return m_clarificationConfigHasBeenSet;
 }
 

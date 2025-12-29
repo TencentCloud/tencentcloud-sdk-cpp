@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lke/v20231130/model/WorkflowRunNodeInfo.h>
 #include <tencentcloud/lke/v20231130/model/OptionCardIndex.h>
+#include <tencentcloud/lke/v20231130/model/Content.h>
 
 
 namespace TencentCloud
@@ -265,6 +266,31 @@ namespace TencentCloud
                      */
                     bool OptionCardIndexHasBeenSet() const;
 
+                    /**
+                     * 获取工作流多气泡输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Contents 工作流多气泡输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Content> GetContents() const;
+
+                    /**
+                     * 设置工作流多气泡输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _contents 工作流多气泡输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetContents(const std::vector<Content>& _contents);
+
+                    /**
+                     * 判断参数 Contents 是否已赋值
+                     * @return Contents 是否已赋值
+                     * 
+                     */
+                    bool ContentsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -327,6 +353,13 @@ namespace TencentCloud
                      */
                     OptionCardIndex m_optionCardIndex;
                     bool m_optionCardIndexHasBeenSet;
+
+                    /**
+                     * 工作流多气泡输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Content> m_contents;
+                    bool m_contentsHasBeenSet;
 
                 };
             }

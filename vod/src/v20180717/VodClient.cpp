@@ -1540,6 +1540,56 @@ VodClient::CreateSampleSnapshotTemplateOutcomeCallable VodClient::CreateSampleSn
     return prom->get_future();
 }
 
+VodClient::CreateSceneAigcImageTaskOutcome VodClient::CreateSceneAigcImageTask(const CreateSceneAigcImageTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSceneAigcImageTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSceneAigcImageTaskResponse rsp = CreateSceneAigcImageTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSceneAigcImageTaskOutcome(rsp);
+        else
+            return CreateSceneAigcImageTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSceneAigcImageTaskOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateSceneAigcImageTaskAsync(const CreateSceneAigcImageTaskRequest& request, const CreateSceneAigcImageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateSceneAigcImageTaskRequest&;
+    using Resp = CreateSceneAigcImageTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateSceneAigcImageTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateSceneAigcImageTaskOutcomeCallable VodClient::CreateSceneAigcImageTaskCallable(const CreateSceneAigcImageTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateSceneAigcImageTaskOutcome>>();
+    CreateSceneAigcImageTaskAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateSceneAigcImageTaskRequest&,
+        CreateSceneAigcImageTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::CreateSnapshotByTimeOffsetTemplateOutcome VodClient::CreateSnapshotByTimeOffsetTemplate(const CreateSnapshotByTimeOffsetTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSnapshotByTimeOffsetTemplate");

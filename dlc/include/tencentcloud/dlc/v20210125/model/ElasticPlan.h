@@ -151,6 +151,27 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取分时弹性上限
+                     * @return ElasticLimit 分时弹性上限
+                     * 
+                     */
+                    int64_t GetElasticLimit() const;
+
+                    /**
+                     * 设置分时弹性上限
+                     * @param _elasticLimit 分时弹性上限
+                     * 
+                     */
+                    void SetElasticLimit(const int64_t& _elasticLimit);
+
+                    /**
+                     * 判断参数 ElasticLimit 是否已赋值
+                     * @return ElasticLimit 是否已赋值
+                     * 
+                     */
+                    bool ElasticLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +203,12 @@ namespace TencentCloud
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 分时弹性上限
+                     */
+                    int64_t m_elasticLimit;
+                    bool m_elasticLimitHasBeenSet;
 
                 };
             }

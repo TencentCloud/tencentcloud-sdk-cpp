@@ -1031,6 +1031,27 @@ HYBRID_PAID:
                      */
                     bool VolumeMountsHasBeenSet() const;
 
+                    /**
+                     * 获取调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用
+                     * @return SchedulingStrategy 调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用
+                     * 
+                     */
+                    std::string GetSchedulingStrategy() const;
+
+                    /**
+                     * 设置调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用
+                     * @param _schedulingStrategy 调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用
+                     * 
+                     */
+                    void SetSchedulingStrategy(const std::string& _schedulingStrategy);
+
+                    /**
+                     * 判断参数 SchedulingStrategy 是否已赋值
+                     * @return SchedulingStrategy 是否已赋值
+                     * 
+                     */
+                    bool SchedulingStrategyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1307,6 +1328,12 @@ HYBRID_PAID:
                      */
                     std::vector<VolumeMount> m_volumeMounts;
                     bool m_volumeMountsHasBeenSet;
+
+                    /**
+                     * 调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用
+                     */
+                    std::string m_schedulingStrategy;
+                    bool m_schedulingStrategyHasBeenSet;
 
                 };
             }

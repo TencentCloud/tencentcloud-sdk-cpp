@@ -29,7 +29,8 @@ WorkFlowSummary::WorkFlowSummary() :
     m_outputsHasBeenSet(false),
     m_workflowReleaseTimeHasBeenSet(false),
     m_pendingMessagesHasBeenSet(false),
-    m_optionCardIndexHasBeenSet(false)
+    m_optionCardIndexHasBeenSet(false),
+    m_contentsHasBeenSet(false)
 {
 }
 
@@ -154,6 +155,26 @@ CoreInternalOutcome WorkFlowSummary::Deserialize(const rapidjson::Value &value)
         m_optionCardIndexHasBeenSet = true;
     }
 
+    if (value.HasMember("Contents") && !value["Contents"].IsNull())
+    {
+        if (!value["Contents"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WorkFlowSummary.Contents` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Contents"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Content item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_contents.push_back(item);
+        }
+        m_contentsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -254,6 +275,21 @@ void WorkFlowSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_optionCardIndex.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_contentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Contents";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_contents.begin(); itr != m_contents.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -401,5 +437,21 @@ void WorkFlowSummary::SetOptionCardIndex(const OptionCardIndex& _optionCardIndex
 bool WorkFlowSummary::OptionCardIndexHasBeenSet() const
 {
     return m_optionCardIndexHasBeenSet;
+}
+
+vector<Content> WorkFlowSummary::GetContents() const
+{
+    return m_contents;
+}
+
+void WorkFlowSummary::SetContents(const vector<Content>& _contents)
+{
+    m_contents = _contents;
+    m_contentsHasBeenSet = true;
+}
+
+bool WorkFlowSummary::ContentsHasBeenSet() const
+{
+    return m_contentsHasBeenSet;
 }
 

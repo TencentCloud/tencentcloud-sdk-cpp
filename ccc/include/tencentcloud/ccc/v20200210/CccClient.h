@@ -161,6 +161,8 @@
 #include <tencentcloud/ccc/v20200210/model/PauseAutoCalloutTaskResponse.h>
 #include <tencentcloud/ccc/v20200210/model/PausePredictiveDialingCampaignRequest.h>
 #include <tencentcloud/ccc/v20200210/model/PausePredictiveDialingCampaignResponse.h>
+#include <tencentcloud/ccc/v20200210/model/PlaySoundCallRequest.h>
+#include <tencentcloud/ccc/v20200210/model/PlaySoundCallResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ResetExtensionPasswordRequest.h>
 #include <tencentcloud/ccc/v20200210/model/ResetExtensionPasswordResponse.h>
 #include <tencentcloud/ccc/v20200210/model/RestoreMemberOnlineRequest.h>
@@ -406,6 +408,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PausePredictiveDialingCampaignResponse> PausePredictiveDialingCampaignOutcome;
                 typedef std::future<PausePredictiveDialingCampaignOutcome> PausePredictiveDialingCampaignOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::PausePredictiveDialingCampaignRequest&, PausePredictiveDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PausePredictiveDialingCampaignAsyncHandler;
+                typedef Outcome<Core::Error, Model::PlaySoundCallResponse> PlaySoundCallOutcome;
+                typedef std::future<PlaySoundCallOutcome> PlaySoundCallOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::PlaySoundCallRequest&, PlaySoundCallOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PlaySoundCallAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetExtensionPasswordResponse> ResetExtensionPasswordOutcome;
                 typedef std::future<ResetExtensionPasswordOutcome> ResetExtensionPasswordOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::ResetExtensionPasswordRequest&, ResetExtensionPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetExtensionPasswordAsyncHandler;
@@ -1082,6 +1087,15 @@ namespace TencentCloud
                 PausePredictiveDialingCampaignOutcome PausePredictiveDialingCampaign(const Model::PausePredictiveDialingCampaignRequest &request);
                 void PausePredictiveDialingCampaignAsync(const Model::PausePredictiveDialingCampaignRequest& request, const PausePredictiveDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PausePredictiveDialingCampaignOutcomeCallable PausePredictiveDialingCampaignCallable(const Model::PausePredictiveDialingCampaignRequest& request);
+
+                /**
+                 *对与座席通话中的会话，进行放音
+                 * @param req PlaySoundCallRequest
+                 * @return PlaySoundCallOutcome
+                 */
+                PlaySoundCallOutcome PlaySoundCall(const Model::PlaySoundCallRequest &request);
+                void PlaySoundCallAsync(const Model::PlaySoundCallRequest& request, const PlaySoundCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PlaySoundCallOutcomeCallable PlaySoundCallCallable(const Model::PlaySoundCallRequest& request);
 
                 /**
                  *重置话机注册密码

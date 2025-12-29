@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return BotBizId 应用ID
+                     * 获取应用ID。获取方法参看如何获取 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)  
+                     * @return BotBizId 应用ID。获取方法参看如何获取 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)  
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _botBizId 应用ID
+                     * 设置应用ID。获取方法参看如何获取 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)  
+                     * @param _botBizId 应用ID。获取方法参看如何获取 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)  
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BotBizIdHasBeenSet() const;
 
                     /**
-                     * 获取发布详情
-                     * @return ReleaseBizId 发布详情
+                     * 获取发布ID
+                     * @return ReleaseBizId 发布ID
                      * 
                      */
                     std::string GetReleaseBizId() const;
 
                     /**
-                     * 设置发布详情
-                     * @param _releaseBizId 发布详情
+                     * 设置发布ID
+                     * @param _releaseBizId 发布ID
                      * 
                      */
                     void SetReleaseBizId(const std::string& _releaseBizId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID
+                     * 应用ID。获取方法参看如何获取 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)  
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
 
                     /**
-                     * 发布详情
+                     * 发布ID
                      */
                     std::string m_releaseBizId;
                     bool m_releaseBizIdHasBeenSet;

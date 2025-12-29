@@ -106,15 +106,23 @@ namespace TencentCloud
                     bool DataKeyHasBeenSet() const;
 
                     /**
-                     * 获取是否设置预置密钥
-                     * @return Encrypted 是否设置预置密钥
+                     * 获取是否设置预置密钥。
+true：设置预置密钥；
+false：不设置预置密钥。
+                     * @return Encrypted 是否设置预置密钥。
+true：设置预置密钥；
+false：不设置预置密钥。
                      * 
                      */
                     bool GetEncrypted() const;
 
                     /**
-                     * 设置是否设置预置密钥
-                     * @param _encrypted 是否设置预置密钥
+                     * 设置是否设置预置密钥。
+true：设置预置密钥；
+false：不设置预置密钥。
+                     * @param _encrypted 是否设置预置密钥。
+true：设置预置密钥；
+false：不设置预置密钥。
                      * 
                      */
                     void SetEncrypted(const bool& _encrypted);
@@ -280,7 +288,9 @@ namespace TencentCloud
                     bool m_dataKeyHasBeenSet;
 
                     /**
-                     * 是否设置预置密钥
+                     * 是否设置预置密钥。
+true：设置预置密钥；
+false：不设置预置密钥。
                      */
                     bool m_encrypted;
                     bool m_encryptedHasBeenSet;

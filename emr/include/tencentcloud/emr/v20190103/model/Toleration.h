@@ -1,0 +1,192 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_EMR_V20190103_MODEL_TOLERATION_H_
+#define TENCENTCLOUD_EMR_V20190103_MODEL_TOLERATION_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Emr
+    {
+        namespace V20190103
+        {
+            namespace Model
+            {
+                /**
+                * Tolerations
+                */
+                class Toleration : public AbstractModel
+                {
+                public:
+                    Toleration();
+                    ~Toleration() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取键
+                     * @return Key 键
+                     * 
+                     */
+                    std::string GetKey() const;
+
+                    /**
+                     * 设置键
+                     * @param _key 键
+                     * 
+                     */
+                    void SetKey(const std::string& _key);
+
+                    /**
+                     * 判断参数 Key 是否已赋值
+                     * @return Key 是否已赋值
+                     * 
+                     */
+                    bool KeyHasBeenSet() const;
+
+                    /**
+                     * 获取值
+                     * @return Value 值
+                     * 
+                     */
+                    std::string GetValue() const;
+
+                    /**
+                     * 设置值
+                     * @param _value 值
+                     * 
+                     */
+                    void SetValue(const std::string& _value);
+
+                    /**
+                     * 判断参数 Value 是否已赋值
+                     * @return Value 是否已赋值
+                     * 
+                     */
+                    bool ValueHasBeenSet() const;
+
+                    /**
+                     * 获取操作符
+                     * @return Operator 操作符
+                     * 
+                     */
+                    std::string GetOperator() const;
+
+                    /**
+                     * 设置操作符
+                     * @param _operator 操作符
+                     * 
+                     */
+                    void SetOperator(const std::string& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     * 
+                     */
+                    bool OperatorHasBeenSet() const;
+
+                    /**
+                     * 获取污点排斥效果
+                     * @return Effect 污点排斥效果
+                     * 
+                     */
+                    std::string GetEffect() const;
+
+                    /**
+                     * 设置污点排斥效果
+                     * @param _effect 污点排斥效果
+                     * 
+                     */
+                    void SetEffect(const std::string& _effect);
+
+                    /**
+                     * 判断参数 Effect 是否已赋值
+                     * @return Effect 是否已赋值
+                     * 
+                     */
+                    bool EffectHasBeenSet() const;
+
+                    /**
+                     * 获取驱逐等待时间
+                     * @return TolerationSeconds 驱逐等待时间
+                     * 
+                     */
+                    int64_t GetTolerationSeconds() const;
+
+                    /**
+                     * 设置驱逐等待时间
+                     * @param _tolerationSeconds 驱逐等待时间
+                     * 
+                     */
+                    void SetTolerationSeconds(const int64_t& _tolerationSeconds);
+
+                    /**
+                     * 判断参数 TolerationSeconds 是否已赋值
+                     * @return TolerationSeconds 是否已赋值
+                     * 
+                     */
+                    bool TolerationSecondsHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 键
+                     */
+                    std::string m_key;
+                    bool m_keyHasBeenSet;
+
+                    /**
+                     * 值
+                     */
+                    std::string m_value;
+                    bool m_valueHasBeenSet;
+
+                    /**
+                     * 操作符
+                     */
+                    std::string m_operator;
+                    bool m_operatorHasBeenSet;
+
+                    /**
+                     * 污点排斥效果
+                     */
+                    std::string m_effect;
+                    bool m_effectHasBeenSet;
+
+                    /**
+                     * 驱逐等待时间
+                     */
+                    int64_t m_tolerationSeconds;
+                    bool m_tolerationSecondsHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_EMR_V20190103_MODEL_TOLERATION_H_

@@ -126,6 +126,90 @@ namespace TencentCloud
                      */
                     bool TaskTypesHasBeenSet() const;
 
+                    /**
+                     * 获取HuggingFace模型名称
+                     * @return HuggingFaceModelNames HuggingFace模型名称
+                     * 
+                     */
+                    std::vector<std::string> GetHuggingFaceModelNames() const;
+
+                    /**
+                     * 设置HuggingFace模型名称
+                     * @param _huggingFaceModelNames HuggingFace模型名称
+                     * 
+                     */
+                    void SetHuggingFaceModelNames(const std::vector<std::string>& _huggingFaceModelNames);
+
+                    /**
+                     * 判断参数 HuggingFaceModelNames 是否已赋值
+                     * @return HuggingFaceModelNames 是否已赋值
+                     * 
+                     */
+                    bool HuggingFaceModelNamesHasBeenSet() const;
+
+                    /**
+                     * 获取模型描述
+                     * @return ModelDescription 模型描述
+                     * 
+                     */
+                    std::string GetModelDescription() const;
+
+                    /**
+                     * 设置模型描述
+                     * @param _modelDescription 模型描述
+                     * 
+                     */
+                    void SetModelDescription(const std::string& _modelDescription);
+
+                    /**
+                     * 判断参数 ModelDescription 是否已赋值
+                     * @return ModelDescription 是否已赋值
+                     * 
+                     */
+                    bool ModelDescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取模型来源：UserModel、HuggingFace和PlatformModel
+                     * @return ModelSourceType 模型来源：UserModel、HuggingFace和PlatformModel
+                     * 
+                     */
+                    std::string GetModelSourceType() const;
+
+                    /**
+                     * 设置模型来源：UserModel、HuggingFace和PlatformModel
+                     * @param _modelSourceType 模型来源：UserModel、HuggingFace和PlatformModel
+                     * 
+                     */
+                    void SetModelSourceType(const std::string& _modelSourceType);
+
+                    /**
+                     * 判断参数 ModelSourceType 是否已赋值
+                     * @return ModelSourceType 是否已赋值
+                     * 
+                     */
+                    bool ModelSourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取已上传的模型路径
+                     * @return UploadedCosPaths 已上传的模型路径
+                     * 
+                     */
+                    std::vector<std::string> GetUploadedCosPaths() const;
+
+                    /**
+                     * 设置已上传的模型路径
+                     * @param _uploadedCosPaths 已上传的模型路径
+                     * 
+                     */
+                    void SetUploadedCosPaths(const std::vector<std::string>& _uploadedCosPaths);
+
+                    /**
+                     * 判断参数 UploadedCosPaths 是否已赋值
+                     * @return UploadedCosPaths 是否已赋值
+                     * 
+                     */
+                    bool UploadedCosPathsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +235,30 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_taskTypes;
                     bool m_taskTypesHasBeenSet;
+
+                    /**
+                     * HuggingFace模型名称
+                     */
+                    std::vector<std::string> m_huggingFaceModelNames;
+                    bool m_huggingFaceModelNamesHasBeenSet;
+
+                    /**
+                     * 模型描述
+                     */
+                    std::string m_modelDescription;
+                    bool m_modelDescriptionHasBeenSet;
+
+                    /**
+                     * 模型来源：UserModel、HuggingFace和PlatformModel
+                     */
+                    std::string m_modelSourceType;
+                    bool m_modelSourceTypeHasBeenSet;
+
+                    /**
+                     * 已上传的模型路径
+                     */
+                    std::vector<std::string> m_uploadedCosPaths;
+                    bool m_uploadedCosPathsHasBeenSet;
 
                 };
             }

@@ -31,7 +31,8 @@ CreateOrganizationBatchSignUrlRequest::CreateOrganizationBatchSignUrlRequest() :
     m_mobileHasBeenSet(false),
     m_recipientIdsHasBeenSet(false),
     m_flowGroupIdHasBeenSet(false),
-    m_canBatchRejectHasBeenSet(false)
+    m_canBatchRejectHasBeenSet(false),
+    m_dynamicSignOptionHasBeenSet(false)
 {
 }
 
@@ -124,6 +125,15 @@ string CreateOrganizationBatchSignUrlRequest::ToJsonString() const
         string key = "CanBatchReject";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_canBatchReject, allocator);
+    }
+
+    if (m_dynamicSignOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DynamicSignOption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dynamicSignOption.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -276,6 +286,22 @@ void CreateOrganizationBatchSignUrlRequest::SetCanBatchReject(const bool& _canBa
 bool CreateOrganizationBatchSignUrlRequest::CanBatchRejectHasBeenSet() const
 {
     return m_canBatchRejectHasBeenSet;
+}
+
+DynamicSignOption CreateOrganizationBatchSignUrlRequest::GetDynamicSignOption() const
+{
+    return m_dynamicSignOption;
+}
+
+void CreateOrganizationBatchSignUrlRequest::SetDynamicSignOption(const DynamicSignOption& _dynamicSignOption)
+{
+    m_dynamicSignOption = _dynamicSignOption;
+    m_dynamicSignOptionHasBeenSet = true;
+}
+
+bool CreateOrganizationBatchSignUrlRequest::DynamicSignOptionHasBeenSet() const
+{
+    return m_dynamicSignOptionHasBeenSet;
 }
 
 

@@ -191,6 +191,89 @@ namespace TencentCloud
                      */
                     bool ScheduleTimeZoneHasBeenSet() const;
 
+                    /**
+                     * 获取秒（用于 Spark Streaming 策略）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Second 秒（用于 Spark Streaming 策略）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSecond() const;
+
+                    /**
+                     * 设置秒（用于 Spark Streaming 策略）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _second 秒（用于 Spark Streaming 策略）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSecond(const int64_t& _second);
+
+                    /**
+                     * 判断参数 Second 是否已赋值
+                     * @return Second 是否已赋值
+                     * 
+                     */
+                    bool SecondHasBeenSet() const;
+
+                    /**
+                     * 获取次数（用于 Spark Streaming 重试次数超限策略，ruleType=10）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Times 次数（用于 Spark Streaming 重试次数超限策略，ruleType=10）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTimes() const;
+
+                    /**
+                     * 设置次数（用于 Spark Streaming 重试次数超限策略，ruleType=10）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _times 次数（用于 Spark Streaming 重试次数超限策略，ruleType=10）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTimes(const int64_t& _times);
+
+                    /**
+                     * 判断参数 Times 是否已赋值
+                     * @return Times 是否已赋值
+                     * 
+                     */
+                    bool TimesHasBeenSet() const;
+
+                    /**
+                     * 获取告警触发频率（用于 Spark Streaming 策略 ruleType=8/9/10）
+         * 单位：分钟，范围：5-1440
+         * 告警触发后，在该时间内暂停检测，避免告警风暴
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmTriggerFrequency 告警触发频率（用于 Spark Streaming 策略 ruleType=8/9/10）
+         * 单位：分钟，范围：5-1440
+         * 告警触发后，在该时间内暂停检测，避免告警风暴
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAlarmTriggerFrequency() const;
+
+                    /**
+                     * 设置告警触发频率（用于 Spark Streaming 策略 ruleType=8/9/10）
+         * 单位：分钟，范围：5-1440
+         * 告警触发后，在该时间内暂停检测，避免告警风暴
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmTriggerFrequency 告警触发频率（用于 Spark Streaming 策略 ruleType=8/9/10）
+         * 单位：分钟，范围：5-1440
+         * 告警触发后，在该时间内暂停检测，避免告警风暴
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmTriggerFrequency(const int64_t& _alarmTriggerFrequency);
+
+                    /**
+                     * 判断参数 AlarmTriggerFrequency 是否已赋值
+                     * @return AlarmTriggerFrequency 是否已赋值
+                     * 
+                     */
+                    bool AlarmTriggerFrequencyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +315,29 @@ namespace TencentCloud
                      */
                     std::string m_scheduleTimeZone;
                     bool m_scheduleTimeZoneHasBeenSet;
+
+                    /**
+                     * 秒（用于 Spark Streaming 策略）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_second;
+                    bool m_secondHasBeenSet;
+
+                    /**
+                     * 次数（用于 Spark Streaming 重试次数超限策略，ruleType=10）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_times;
+                    bool m_timesHasBeenSet;
+
+                    /**
+                     * 告警触发频率（用于 Spark Streaming 策略 ruleType=8/9/10）
+         * 单位：分钟，范围：5-1440
+         * 告警触发后，在该时间内暂停检测，避免告警风暴
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_alarmTriggerFrequency;
+                    bool m_alarmTriggerFrequencyHasBeenSet;
 
                 };
             }

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/rce/v20250425/model/ManageIPPortraitRiskInput.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取请求秒级时间戳
+                     * @return PostTime 请求秒级时间戳
+                     * 
+                     */
+                    int64_t GetPostTime() const;
+
+                    /**
+                     * 设置请求秒级时间戳
+                     * @param _postTime 请求秒级时间戳
+                     * 
+                     */
+                    void SetPostTime(const int64_t& _postTime);
+
+                    /**
+                     * 判断参数 PostTime 是否已赋值
+                     * @return PostTime 是否已赋值
+                     * 
+                     */
+                    bool PostTimeHasBeenSet() const;
+
+                    /**
+                     * 获取业务入参
+                     * @return BusinessSecurityData 业务入参
+                     * 
+                     */
+                    ManageIPPortraitRiskInput GetBusinessSecurityData() const;
+
+                    /**
+                     * 设置业务入参
+                     * @param _businessSecurityData 业务入参
+                     * 
+                     */
+                    void SetBusinessSecurityData(const ManageIPPortraitRiskInput& _businessSecurityData);
+
+                    /**
+                     * 判断参数 BusinessSecurityData 是否已赋值
+                     * @return BusinessSecurityData 是否已赋值
+                     * 
+                     */
+                    bool BusinessSecurityDataHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 请求秒级时间戳
+                     */
+                    int64_t m_postTime;
+                    bool m_postTimeHasBeenSet;
+
+                    /**
+                     * 业务入参
+                     */
+                    ManageIPPortraitRiskInput m_businessSecurityData;
+                    bool m_businessSecurityDataHasBeenSet;
 
                 };
             }

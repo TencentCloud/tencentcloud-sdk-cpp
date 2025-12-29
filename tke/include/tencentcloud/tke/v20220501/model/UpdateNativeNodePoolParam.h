@@ -487,6 +487,27 @@ namespace TencentCloud
                     bool KeyIdsHasBeenSet() const;
 
                     /**
+                     * 获取节点移出策略，有Random（随机）、Newest（优先移出最新实例）、Oldest（优先移出最旧实例）三种可选，默认是Newest
+                     * @return DeletePolicy 节点移出策略，有Random（随机）、Newest（优先移出最新实例）、Oldest（优先移出最旧实例）三种可选，默认是Newest
+                     * 
+                     */
+                    std::string GetDeletePolicy() const;
+
+                    /**
+                     * 设置节点移出策略，有Random（随机）、Newest（优先移出最新实例）、Oldest（优先移出最旧实例）三种可选，默认是Newest
+                     * @param _deletePolicy 节点移出策略，有Random（随机）、Newest（优先移出最新实例）、Oldest（优先移出最旧实例）三种可选，默认是Newest
+                     * 
+                     */
+                    void SetDeletePolicy(const std::string& _deletePolicy);
+
+                    /**
+                     * 判断参数 DeletePolicy 是否已赋值
+                     * @return DeletePolicy 是否已赋值
+                     * 
+                     */
+                    bool DeletePolicyHasBeenSet() const;
+
+                    /**
                      * 获取节点池 GPU 配置
                      * @return GPUConfigs 节点池 GPU 配置
                      * 
@@ -506,6 +527,27 @@ namespace TencentCloud
                      * 
                      */
                     bool GPUConfigsHasBeenSet() const;
+
+                    /**
+                     * 获取原生节点池安装自动化助手开关状态
+                     * @return AutomationService 原生节点池安装自动化助手开关状态
+                     * 
+                     */
+                    bool GetAutomationService() const;
+
+                    /**
+                     * 设置原生节点池安装自动化助手开关状态
+                     * @param _automationService 原生节点池安装自动化助手开关状态
+                     * 
+                     */
+                    void SetAutomationService(const bool& _automationService);
+
+                    /**
+                     * 判断参数 AutomationService 是否已赋值
+                     * @return AutomationService 是否已赋值
+                     * 
+                     */
+                    bool AutomationServiceHasBeenSet() const;
 
                     /**
                      * 获取原生节点池密码
@@ -654,10 +696,22 @@ namespace TencentCloud
                     bool m_keyIdsHasBeenSet;
 
                     /**
+                     * 节点移出策略，有Random（随机）、Newest（优先移出最新实例）、Oldest（优先移出最旧实例）三种可选，默认是Newest
+                     */
+                    std::string m_deletePolicy;
+                    bool m_deletePolicyHasBeenSet;
+
+                    /**
                      * 节点池 GPU 配置
                      */
                     std::vector<GPUConfig> m_gPUConfigs;
                     bool m_gPUConfigsHasBeenSet;
+
+                    /**
+                     * 原生节点池安装自动化助手开关状态
+                     */
+                    bool m_automationService;
+                    bool m_automationServiceHasBeenSet;
 
                     /**
                      * 原生节点池密码

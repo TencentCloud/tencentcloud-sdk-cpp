@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
 #include <tencentcloud/ess/v20201111/model/Agent.h>
+#include <tencentcloud/ess/v20201111/model/DynamicSignOption.h>
 
 
 namespace TencentCloud
@@ -78,23 +79,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取请指定需执行批量签署的流程ID，数量范围为1-100。
-您可登录腾讯电子签控制台，浏览 "合同"->"合同中心" 以查阅某一合同的FlowId（在页面中显示为合同ID）。
-用户将利用链接对这些合同实施批量操作。
-                     * @return FlowIds 请指定需执行批量签署的流程ID，数量范围为1-100。
-您可登录腾讯电子签控制台，浏览 "合同"->"合同中心" 以查阅某一合同的FlowId（在页面中显示为合同ID）。
-用户将利用链接对这些合同实施批量操作。
+                     * 获取请指定需执行批量签署的流程ID，数量范围为1-100。您可登录腾讯电子签控制台，浏览 "合同"->"合同中心" 以查阅某一合同的FlowId（在页面中显示为合同ID）。用户将利用链接对这些合同实施批量操作。  注：生成动态签署方领取时此参数必传。 
+                     * @return FlowIds 请指定需执行批量签署的流程ID，数量范围为1-100。您可登录腾讯电子签控制台，浏览 "合同"->"合同中心" 以查阅某一合同的FlowId（在页面中显示为合同ID）。用户将利用链接对这些合同实施批量操作。  注：生成动态签署方领取时此参数必传。 
                      * 
                      */
                     std::vector<std::string> GetFlowIds() const;
 
                     /**
-                     * 设置请指定需执行批量签署的流程ID，数量范围为1-100。
-您可登录腾讯电子签控制台，浏览 "合同"->"合同中心" 以查阅某一合同的FlowId（在页面中显示为合同ID）。
-用户将利用链接对这些合同实施批量操作。
-                     * @param _flowIds 请指定需执行批量签署的流程ID，数量范围为1-100。
-您可登录腾讯电子签控制台，浏览 "合同"->"合同中心" 以查阅某一合同的FlowId（在页面中显示为合同ID）。
-用户将利用链接对这些合同实施批量操作。
+                     * 设置请指定需执行批量签署的流程ID，数量范围为1-100。您可登录腾讯电子签控制台，浏览 "合同"->"合同中心" 以查阅某一合同的FlowId（在页面中显示为合同ID）。用户将利用链接对这些合同实施批量操作。  注：生成动态签署方领取时此参数必传。 
+                     * @param _flowIds 请指定需执行批量签署的流程ID，数量范围为1-100。您可登录腾讯电子签控制台，浏览 "合同"->"合同中心" 以查阅某一合同的FlowId（在页面中显示为合同ID）。用户将利用链接对这些合同实施批量操作。  注：生成动态签署方领取时此参数必传。 
                      * 
                      */
                     void SetFlowIds(const std::vector<std::string>& _flowIds);
@@ -231,23 +224,15 @@ UserId必须是传入合同（FlowId）中的签署人。
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。
-您可以通过查询合同接口（DescribeFlowInfo）查询此参数。
-若传了此参数，则可以不传 UserId, Name, Mobile等参数
-                     * @return RecipientIds 为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。
-您可以通过查询合同接口（DescribeFlowInfo）查询此参数。
-若传了此参数，则可以不传 UserId, Name, Mobile等参数
+                     * 获取为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。您可以通过查询合同接口（DescribeFlowInfo）查询此参数。若传了此参数，则可以不传 UserId, Name, Mobile等参数  注：生成动态签署方领取时此参数必传。
+                     * @return RecipientIds 为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。您可以通过查询合同接口（DescribeFlowInfo）查询此参数。若传了此参数，则可以不传 UserId, Name, Mobile等参数  注：生成动态签署方领取时此参数必传。
                      * 
                      */
                     std::vector<std::string> GetRecipientIds() const;
 
                     /**
-                     * 设置为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。
-您可以通过查询合同接口（DescribeFlowInfo）查询此参数。
-若传了此参数，则可以不传 UserId, Name, Mobile等参数
-                     * @param _recipientIds 为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。
-您可以通过查询合同接口（DescribeFlowInfo）查询此参数。
-若传了此参数，则可以不传 UserId, Name, Mobile等参数
+                     * 设置为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。您可以通过查询合同接口（DescribeFlowInfo）查询此参数。若传了此参数，则可以不传 UserId, Name, Mobile等参数  注：生成动态签署方领取时此参数必传。
+                     * @param _recipientIds 为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。您可以通过查询合同接口（DescribeFlowInfo）查询此参数。若传了此参数，则可以不传 UserId, Name, Mobile等参数  注：生成动态签署方领取时此参数必传。
                      * 
                      */
                     void SetRecipientIds(const std::vector<std::string>& _recipientIds);
@@ -301,6 +286,27 @@ UserId必须是传入合同（FlowId）中的签署人。
                      */
                     bool CanBatchRejectHasBeenSet() const;
 
+                    /**
+                     * 获取动态签署方领取链接配置。
+                     * @return DynamicSignOption 动态签署方领取链接配置。
+                     * 
+                     */
+                    DynamicSignOption GetDynamicSignOption() const;
+
+                    /**
+                     * 设置动态签署方领取链接配置。
+                     * @param _dynamicSignOption 动态签署方领取链接配置。
+                     * 
+                     */
+                    void SetDynamicSignOption(const DynamicSignOption& _dynamicSignOption);
+
+                    /**
+                     * 判断参数 DynamicSignOption 是否已赋值
+                     * @return DynamicSignOption 是否已赋值
+                     * 
+                     */
+                    bool DynamicSignOptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,9 +319,7 @@ UserId必须是传入合同（FlowId）中的签署人。
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 请指定需执行批量签署的流程ID，数量范围为1-100。
-您可登录腾讯电子签控制台，浏览 "合同"->"合同中心" 以查阅某一合同的FlowId（在页面中显示为合同ID）。
-用户将利用链接对这些合同实施批量操作。
+                     * 请指定需执行批量签署的流程ID，数量范围为1-100。您可登录腾讯电子签控制台，浏览 "合同"->"合同中心" 以查阅某一合同的FlowId（在页面中显示为合同ID）。用户将利用链接对这些合同实施批量操作。  注：生成动态签署方领取时此参数必传。 
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;
@@ -355,9 +359,7 @@ UserId必须是传入合同（FlowId）中的签署人。
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。
-您可以通过查询合同接口（DescribeFlowInfo）查询此参数。
-若传了此参数，则可以不传 UserId, Name, Mobile等参数
+                     * 为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。您可以通过查询合同接口（DescribeFlowInfo）查询此参数。若传了此参数，则可以不传 UserId, Name, Mobile等参数  注：生成动态签署方领取时此参数必传。
                      */
                     std::vector<std::string> m_recipientIds;
                     bool m_recipientIdsHasBeenSet;
@@ -373,6 +375,12 @@ UserId必须是传入合同（FlowId）中的签署人。
                      */
                     bool m_canBatchReject;
                     bool m_canBatchRejectHasBeenSet;
+
+                    /**
+                     * 动态签署方领取链接配置。
+                     */
+                    DynamicSignOption m_dynamicSignOption;
+                    bool m_dynamicSignOptionHasBeenSet;
 
                 };
             }

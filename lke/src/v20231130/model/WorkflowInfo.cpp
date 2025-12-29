@@ -26,7 +26,8 @@ WorkflowInfo::WorkflowInfo() :
     m_workflowRunIdHasBeenSet(false),
     m_optionCardsHasBeenSet(false),
     m_outputsHasBeenSet(false),
-    m_workflowReleaseTimeHasBeenSet(false)
+    m_workflowReleaseTimeHasBeenSet(false),
+    m_contentsHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,26 @@ CoreInternalOutcome WorkflowInfo::Deserialize(const rapidjson::Value &value)
         m_workflowReleaseTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Contents") && !value["Contents"].IsNull())
+    {
+        if (!value["Contents"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WorkflowInfo.Contents` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Contents"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Content item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_contents.push_back(item);
+        }
+        m_contentsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +185,21 @@ void WorkflowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "WorkflowReleaseTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_workflowReleaseTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Contents";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_contents.begin(); itr != m_contents.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -263,5 +299,21 @@ void WorkflowInfo::SetWorkflowReleaseTime(const string& _workflowReleaseTime)
 bool WorkflowInfo::WorkflowReleaseTimeHasBeenSet() const
 {
     return m_workflowReleaseTimeHasBeenSet;
+}
+
+vector<Content> WorkflowInfo::GetContents() const
+{
+    return m_contents;
+}
+
+void WorkflowInfo::SetContents(const vector<Content>& _contents)
+{
+    m_contents = _contents;
+    m_contentsHasBeenSet = true;
+}
+
+bool WorkflowInfo::ContentsHasBeenSet() const
+{
+    return m_contentsHasBeenSet;
 }
 

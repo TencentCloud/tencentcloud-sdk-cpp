@@ -45,14 +45,18 @@ namespace TencentCloud
 
                     /**
                      * 获取应用ID
+若要操作共享知识库，传KnowledgeBizId
                      * @return BotBizId 应用ID
+若要操作共享知识库，传KnowledgeBizId
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
                      * 设置应用ID
+若要操作共享知识库，传KnowledgeBizId
                      * @param _botBizId 应用ID
+若要操作共享知识库，传KnowledgeBizId
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -65,15 +69,15 @@ namespace TencentCloud
                     bool BotBizIdHasBeenSet() const;
 
                     /**
-                     * 获取勾选导出ID列表
-                     * @return ReplyBizIds 勾选导出ID列表
+                     * 获取勾选导出不满意回复的ID列表
+                     * @return ReplyBizIds 勾选导出不满意回复的ID列表
                      * 
                      */
                     std::vector<std::string> GetReplyBizIds() const;
 
                     /**
-                     * 设置勾选导出ID列表
-                     * @param _replyBizIds 勾选导出ID列表
+                     * 设置勾选导出不满意回复的ID列表
+                     * @param _replyBizIds 勾选导出不满意回复的ID列表
                      * 
                      */
                     void SetReplyBizIds(const std::vector<std::string>& _replyBizIds);
@@ -152,12 +156,13 @@ namespace TencentCloud
 
                     /**
                      * 应用ID
+若要操作共享知识库，传KnowledgeBizId
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
 
                     /**
-                     * 勾选导出ID列表
+                     * 勾选导出不满意回复的ID列表
                      */
                     std::vector<std::string> m_replyBizIds;
                     bool m_replyBizIdsHasBeenSet;

@@ -81,8 +81,11 @@ set(rce_public_header_model
   include/tencentcloud/rce/v20201103/model/DeleteNameListResponse.h
   include/tencentcloud/rce/v20201103/model/InputModifyNameListDataFrontListData.h
   include/tencentcloud/rce/v20201103/model/DescribeUserUsageCntResponse.h
+  include/tencentcloud/rce/v20250425/model/ManageIPPortraitRiskOutput.h
+  include/tencentcloud/rce/v20250425/model/ManageIPPortraitRiskInput.h
   include/tencentcloud/rce/v20250425/model/ManageIPPortraitRiskResponse.h
   include/tencentcloud/rce/v20250425/model/ManageIPPortraitRiskRequest.h
+  include/tencentcloud/rce/v20250425/model/ManageIPPortraitRiskValueOutput.h
   )
 
 set(rce_src
@@ -149,8 +152,11 @@ set(rce_src
   src/v20201103/model/DeleteNameListResponse.cpp
   src/v20201103/model/InputModifyNameListDataFrontListData.cpp
   src/v20201103/model/DescribeUserUsageCntResponse.cpp
+  src/v20250425/model/ManageIPPortraitRiskOutput.cpp
+  src/v20250425/model/ManageIPPortraitRiskInput.cpp
   src/v20250425/model/ManageIPPortraitRiskResponse.cpp
   src/v20250425/model/ManageIPPortraitRiskRequest.cpp
+  src/v20250425/model/ManageIPPortraitRiskValueOutput.cpp
   )
 
 set(rce_include

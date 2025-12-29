@@ -83,6 +83,8 @@
 #include <tencentcloud/vod/v20180717/model/CreateRoundPlayResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateSampleSnapshotTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateSampleSnapshotTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateSceneAigcImageTaskRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateSceneAigcImageTaskResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateSnapshotByTimeOffsetTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateSnapshotByTimeOffsetTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateStorageRegionRequest.h>
@@ -509,6 +511,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSampleSnapshotTemplateResponse> CreateSampleSnapshotTemplateOutcome;
                 typedef std::future<CreateSampleSnapshotTemplateOutcome> CreateSampleSnapshotTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateSampleSnapshotTemplateRequest&, CreateSampleSnapshotTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSampleSnapshotTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSceneAigcImageTaskResponse> CreateSceneAigcImageTaskOutcome;
+                typedef std::future<CreateSceneAigcImageTaskOutcome> CreateSceneAigcImageTaskOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateSceneAigcImageTaskRequest&, CreateSceneAigcImageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSceneAigcImageTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSnapshotByTimeOffsetTemplateResponse> CreateSnapshotByTimeOffsetTemplateOutcome;
                 typedef std::future<CreateSnapshotByTimeOffsetTemplateOutcome> CreateSnapshotByTimeOffsetTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateSnapshotByTimeOffsetTemplateRequest&, CreateSnapshotByTimeOffsetTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotByTimeOffsetTemplateAsyncHandler;
@@ -1307,6 +1312,15 @@ namespace TencentCloud
                 CreateSampleSnapshotTemplateOutcome CreateSampleSnapshotTemplate(const Model::CreateSampleSnapshotTemplateRequest &request);
                 void CreateSampleSnapshotTemplateAsync(const Model::CreateSampleSnapshotTemplateRequest& request, const CreateSampleSnapshotTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSampleSnapshotTemplateOutcomeCallable CreateSampleSnapshotTemplateCallable(const Model::CreateSampleSnapshotTemplateRequest& request);
+
+                /**
+                 *该接口用于生成场景化 AIGC 图片。<b>接口处于内测阶段，如需使用请[联系我们](https://cloud.tencent.com/online-service?from=sales_sales&source=PRESALE)，接口调用会产生实际费用。</b>
+                 * @param req CreateSceneAigcImageTaskRequest
+                 * @return CreateSceneAigcImageTaskOutcome
+                 */
+                CreateSceneAigcImageTaskOutcome CreateSceneAigcImageTask(const Model::CreateSceneAigcImageTaskRequest &request);
+                void CreateSceneAigcImageTaskAsync(const Model::CreateSceneAigcImageTaskRequest& request, const CreateSceneAigcImageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSceneAigcImageTaskOutcomeCallable CreateSceneAigcImageTaskCallable(const Model::CreateSceneAigcImageTaskRequest& request);
 
                 /**
                  *创建用户自定义指定时间点截图模板，数量上限：16。

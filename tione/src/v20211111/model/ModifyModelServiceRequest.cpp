@@ -56,7 +56,8 @@ ModifyModelServiceRequest::ModifyModelServiceRequest() :
     m_rollingUpdateHasBeenSet(false),
     m_sidecarHasBeenSet(false),
     m_resourceGroupIdHasBeenSet(false),
-    m_volumeMountsHasBeenSet(false)
+    m_volumeMountsHasBeenSet(false),
+    m_schedulingStrategyHasBeenSet(false)
 {
 }
 
@@ -375,6 +376,14 @@ string ModifyModelServiceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_schedulingStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchedulingStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_schedulingStrategy.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -927,6 +936,22 @@ void ModifyModelServiceRequest::SetVolumeMounts(const vector<VolumeMount>& _volu
 bool ModifyModelServiceRequest::VolumeMountsHasBeenSet() const
 {
     return m_volumeMountsHasBeenSet;
+}
+
+string ModifyModelServiceRequest::GetSchedulingStrategy() const
+{
+    return m_schedulingStrategy;
+}
+
+void ModifyModelServiceRequest::SetSchedulingStrategy(const string& _schedulingStrategy)
+{
+    m_schedulingStrategy = _schedulingStrategy;
+    m_schedulingStrategyHasBeenSet = true;
+}
+
+bool ModifyModelServiceRequest::SchedulingStrategyHasBeenSet() const
+{
+    return m_schedulingStrategyHasBeenSet;
 }
 
 

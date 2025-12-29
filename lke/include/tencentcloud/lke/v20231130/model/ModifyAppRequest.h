@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用 ID
-                     * @return AppBizId 应用 ID
+                     * 获取应用ID, 获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)。
+                     * @return AppBizId 应用ID, 获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)。
                      * 
                      */
                     std::string GetAppBizId() const;
 
                     /**
-                     * 设置应用 ID
-                     * @param _appBizId 应用 ID
+                     * 设置应用ID, 获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)。
+                     * @param _appBizId 应用ID, 获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)。
                      * 
                      */
                     void SetAppBizId(const std::string& _appBizId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool AppBizIdHasBeenSet() const;
 
                     /**
-                     * 获取应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classify-知识标签提取
-                     * @return AppType 应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classify-知识标签提取
+                     * 获取应用类型；"knowledge_qa" 知识问答应用（包含标准模式 单工作流 Multi-Agent 等模式）
+                     * @return AppType 应用类型；"knowledge_qa" 知识问答应用（包含标准模式 单工作流 Multi-Agent 等模式）
                      * 
                      */
                     std::string GetAppType() const;
 
                     /**
-                     * 设置应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classify-知识标签提取
-                     * @param _appType 应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classify-知识标签提取
+                     * 设置应用类型；"knowledge_qa" 知识问答应用（包含标准模式 单工作流 Multi-Agent 等模式）
+                     * @param _appType 应用类型；"knowledge_qa" 知识问答应用（包含标准模式 单工作流 Multi-Agent 等模式）
                      * 
                      */
                     void SetAppType(const std::string& _appType);
@@ -152,13 +152,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用 ID
+                     * 应用ID, 获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)。
                      */
                     std::string m_appBizId;
                     bool m_appBizIdHasBeenSet;
 
                     /**
-                     * 应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classify-知识标签提取
+                     * 应用类型；"knowledge_qa" 知识问答应用（包含标准模式 单工作流 Multi-Agent 等模式）
                      */
                     std::string m_appType;
                     bool m_appTypeHasBeenSet;

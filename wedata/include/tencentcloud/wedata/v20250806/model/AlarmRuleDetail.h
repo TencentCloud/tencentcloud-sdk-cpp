@@ -245,6 +245,106 @@ namespace TencentCloud
                      */
                     bool MonitorWhiteTasksHasBeenSet() const;
 
+                    /**
+                     * 获取3.0 Workflow 完成时间（周期）告警策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkflowCompletionTimeCycleExtInfo 3.0 Workflow 完成时间（周期）告警策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<TimeOutStrategyInfo> GetWorkflowCompletionTimeCycleExtInfo() const;
+
+                    /**
+                     * 设置3.0 Workflow 完成时间（周期）告警策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _workflowCompletionTimeCycleExtInfo 3.0 Workflow 完成时间（周期）告警策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWorkflowCompletionTimeCycleExtInfo(const std::vector<TimeOutStrategyInfo>& _workflowCompletionTimeCycleExtInfo);
+
+                    /**
+                     * 判断参数 WorkflowCompletionTimeCycleExtInfo 是否已赋值
+                     * @return WorkflowCompletionTimeCycleExtInfo 是否已赋值
+                     * 
+                     */
+                    bool WorkflowCompletionTimeCycleExtInfoHasBeenSet() const;
+
+                    /**
+                     * 获取工作流执行触发告警条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkflowExecutionTrigger 工作流执行触发告警条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetWorkflowExecutionTrigger() const;
+
+                    /**
+                     * 设置工作流执行触发告警条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _workflowExecutionTrigger 工作流执行触发告警条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWorkflowExecutionTrigger(const int64_t& _workflowExecutionTrigger);
+
+                    /**
+                     * 判断参数 WorkflowExecutionTrigger 是否已赋值
+                     * @return WorkflowExecutionTrigger 是否已赋值
+                     * 
+                     */
+                    bool WorkflowExecutionTriggerHasBeenSet() const;
+
+                    /**
+                     * 获取工作流执行失败告警条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkflowExecutionFailureTrigger 工作流执行失败告警条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetWorkflowExecutionFailureTrigger() const;
+
+                    /**
+                     * 设置工作流执行失败告警条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _workflowExecutionFailureTrigger 工作流执行失败告警条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWorkflowExecutionFailureTrigger(const int64_t& _workflowExecutionFailureTrigger);
+
+                    /**
+                     * 判断参数 WorkflowExecutionFailureTrigger 是否已赋值
+                     * @return WorkflowExecutionFailureTrigger 是否已赋值
+                     * 
+                     */
+                    bool WorkflowExecutionFailureTriggerHasBeenSet() const;
+
+                    /**
+                     * 获取工作流执行成功告警条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkflowExecutionSuccessTrigger 工作流执行成功告警条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetWorkflowExecutionSuccessTrigger() const;
+
+                    /**
+                     * 设置工作流执行成功告警条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _workflowExecutionSuccessTrigger 工作流执行成功告警条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWorkflowExecutionSuccessTrigger(const int64_t& _workflowExecutionSuccessTrigger);
+
+                    /**
+                     * 判断参数 WorkflowExecutionSuccessTrigger 是否已赋值
+                     * @return WorkflowExecutionSuccessTrigger 是否已赋值
+                     * 
+                     */
+                    bool WorkflowExecutionSuccessTriggerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -300,6 +400,34 @@ namespace TencentCloud
                      */
                     std::vector<MonitorWhiteTask> m_monitorWhiteTasks;
                     bool m_monitorWhiteTasksHasBeenSet;
+
+                    /**
+                     * 3.0 Workflow 完成时间（周期）告警策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TimeOutStrategyInfo> m_workflowCompletionTimeCycleExtInfo;
+                    bool m_workflowCompletionTimeCycleExtInfoHasBeenSet;
+
+                    /**
+                     * 工作流执行触发告警条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_workflowExecutionTrigger;
+                    bool m_workflowExecutionTriggerHasBeenSet;
+
+                    /**
+                     * 工作流执行失败告警条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_workflowExecutionFailureTrigger;
+                    bool m_workflowExecutionFailureTriggerHasBeenSet;
+
+                    /**
+                     * 工作流执行成功告警条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_workflowExecutionSuccessTrigger;
+                    bool m_workflowExecutionSuccessTriggerHasBeenSet;
 
                 };
             }

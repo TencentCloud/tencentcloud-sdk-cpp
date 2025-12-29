@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取腾讯云主账号
-                     * @return UinAccount 腾讯云主账号
+                     * 获取子账号标识列表，支持批量查询多个子账号。不填时查询主账号下所有子账号的汇总数据
+                     * @return UinAccount 子账号标识列表，支持批量查询多个子账号。不填时查询主账号下所有子账号的汇总数据
                      * 
                      */
                     std::vector<std::string> GetUinAccount() const;
 
                     /**
-                     * 设置腾讯云主账号
-                     * @param _uinAccount 腾讯云主账号
+                     * 设置子账号标识列表，支持批量查询多个子账号。不填时查询主账号下所有子账号的汇总数据
+                     * @param _uinAccount 子账号标识列表，支持批量查询多个子账号。不填时查询主账号下所有子账号的汇总数据
                      * 
                      */
                     void SetUinAccount(const std::vector<std::string>& _uinAccount);
@@ -108,55 +108,55 @@ namespace TencentCloud
                     /**
                      * 获取开始时间戳, 单位为秒(废弃)
                      * @return StartTime 开始时间戳, 单位为秒(废弃)
-                     * 
+                     * @deprecated
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间戳, 单位为秒(废弃)
                      * @param _startTime 开始时间戳, 单位为秒(废弃)
-                     * 
+                     * @deprecated
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间戳, 单位为秒(废弃)
                      * @return EndTime 结束时间戳, 单位为秒(废弃)
-                     * 
+                     * @deprecated
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间戳, 单位为秒(废弃)
                      * @param _endTime 结束时间戳, 单位为秒(废弃)
-                     * 
+                     * @deprecated
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取应用id列表
-                     * @return AppBizIds 应用id列表
+                     * 获取应用ID列表。不填时：若指定SpaceId则查该空间所有应用；否则查用户下所有应用
+                     * @return AppBizIds 应用ID列表。不填时：若指定SpaceId则查该空间所有应用；否则查用户下所有应用
                      * 
                      */
                     std::vector<std::string> GetAppBizIds() const;
 
                     /**
-                     * 设置应用id列表
-                     * @param _appBizIds 应用id列表
+                     * 设置应用ID列表。不填时：若指定SpaceId则查该空间所有应用；否则查用户下所有应用
+                     * @param _appBizIds 应用ID列表。不填时：若指定SpaceId则查该空间所有应用；否则查用户下所有应用
                      * 
                      */
                     void SetAppBizIds(const std::vector<std::string>& _appBizIds);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool AppBizIdsHasBeenSet() const;
 
                     /**
-                     * 获取应用类型(knowledge_qa应用管理， shared_knowlege 共享知识库)
-                     * @return AppType 应用类型(knowledge_qa应用管理， shared_knowlege 共享知识库)
+                     * 获取应用类型。可选值：knowledge_qa(知识问答)/plugin_parsing_qa(插件)/shared_knowledge(知识库)/evaluate_test(评测)。不填时查所有类型
+                     * @return AppType 应用类型。可选值：knowledge_qa(知识问答)/plugin_parsing_qa(插件)/shared_knowledge(知识库)/evaluate_test(评测)。不填时查所有类型
                      * 
                      */
                     std::string GetAppType() const;
 
                     /**
-                     * 设置应用类型(knowledge_qa应用管理， shared_knowlege 共享知识库)
-                     * @param _appType 应用类型(knowledge_qa应用管理， shared_knowlege 共享知识库)
+                     * 设置应用类型。可选值：knowledge_qa(知识问答)/plugin_parsing_qa(插件)/shared_knowledge(知识库)/evaluate_test(评测)。不填时查所有类型
+                     * @param _appType 应用类型。可选值：knowledge_qa(知识问答)/plugin_parsing_qa(插件)/shared_knowledge(知识库)/evaluate_test(评测)。不填时查所有类型
                      * 
                      */
                     void SetAppType(const std::string& _appType);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool SubScenesHasBeenSet() const;
 
                     /**
-                     * 获取开始时间戳, 单位为秒
-                     * @return StatStartTime 开始时间戳, 单位为秒
+                     * 获取开始时间。Unix 时间戳，单位是秒，默认为空。
+                     * @return StatStartTime 开始时间。Unix 时间戳，单位是秒，默认为空。
                      * 
                      */
                     int64_t GetStatStartTime() const;
 
                     /**
-                     * 设置开始时间戳, 单位为秒
-                     * @param _statStartTime 开始时间戳, 单位为秒
+                     * 设置开始时间。Unix 时间戳，单位是秒，默认为空。
+                     * @param _statStartTime 开始时间。Unix 时间戳，单位是秒，默认为空。
                      * 
                      */
                     void SetStatStartTime(const int64_t& _statStartTime);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool StatStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间戳, 单位为秒
-                     * @return StatEndTime 结束时间戳, 单位为秒
+                     * 获取结束时间。Unix 时间戳，单位是秒，默认为空。
+                     * @return StatEndTime 结束时间。Unix 时间戳，单位是秒，默认为空。
                      * 
                      */
                     int64_t GetStatEndTime() const;
 
                     /**
-                     * 设置结束时间戳, 单位为秒
-                     * @param _statEndTime 结束时间戳, 单位为秒
+                     * 设置结束时间。Unix 时间戳，单位是秒，默认为空。
+                     * @param _statEndTime 结束时间。Unix 时间戳，单位是秒，默认为空。
                      * 
                      */
                     void SetStatEndTime(const int64_t& _statEndTime);
@@ -255,7 +255,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 腾讯云主账号
+                     * 子账号标识列表，支持批量查询多个子账号。不填时查询主账号下所有子账号的汇总数据
                      */
                     std::vector<std::string> m_uinAccount;
                     bool m_uinAccountHasBeenSet;
@@ -285,13 +285,13 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 应用id列表
+                     * 应用ID列表。不填时：若指定SpaceId则查该空间所有应用；否则查用户下所有应用
                      */
                     std::vector<std::string> m_appBizIds;
                     bool m_appBizIdsHasBeenSet;
 
                     /**
-                     * 应用类型(knowledge_qa应用管理， shared_knowlege 共享知识库)
+                     * 应用类型。可选值：knowledge_qa(知识问答)/plugin_parsing_qa(插件)/shared_knowledge(知识库)/evaluate_test(评测)。不填时查所有类型
                      */
                     std::string m_appType;
                     bool m_appTypeHasBeenSet;
@@ -303,13 +303,13 @@ namespace TencentCloud
                     bool m_subScenesHasBeenSet;
 
                     /**
-                     * 开始时间戳, 单位为秒
+                     * 开始时间。Unix 时间戳，单位是秒，默认为空。
                      */
                     int64_t m_statStartTime;
                     bool m_statStartTimeHasBeenSet;
 
                     /**
-                     * 结束时间戳, 单位为秒
+                     * 结束时间。Unix 时间戳，单位是秒，默认为空。
                      */
                     int64_t m_statEndTime;
                     bool m_statEndTimeHasBeenSet;

@@ -21,7 +21,8 @@ using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
 SmartOptimizerWrittenPolicy::SmartOptimizerWrittenPolicy() :
-    m_writtenEnableHasBeenSet(false)
+    m_writtenEnableHasBeenSet(false),
+    m_advancePolicyHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,23 @@ CoreInternalOutcome SmartOptimizerWrittenPolicy::Deserialize(const rapidjson::Va
         m_writtenEnableHasBeenSet = true;
     }
 
+    if (value.HasMember("AdvancePolicy") && !value["AdvancePolicy"].IsNull())
+    {
+        if (!value["AdvancePolicy"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmartOptimizerWrittenPolicy.AdvancePolicy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_advancePolicy.Deserialize(value["AdvancePolicy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_advancePolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +71,15 @@ void SmartOptimizerWrittenPolicy::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "WrittenEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_writtenEnable.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_advancePolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancePolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_advancePolicy.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -72,5 +99,21 @@ void SmartOptimizerWrittenPolicy::SetWrittenEnable(const string& _writtenEnable)
 bool SmartOptimizerWrittenPolicy::WrittenEnableHasBeenSet() const
 {
     return m_writtenEnableHasBeenSet;
+}
+
+WrittenAdvancePolicy SmartOptimizerWrittenPolicy::GetAdvancePolicy() const
+{
+    return m_advancePolicy;
+}
+
+void SmartOptimizerWrittenPolicy::SetAdvancePolicy(const WrittenAdvancePolicy& _advancePolicy)
+{
+    m_advancePolicy = _advancePolicy;
+    m_advancePolicyHasBeenSet = true;
+}
+
+bool SmartOptimizerWrittenPolicy::AdvancePolicyHasBeenSet() const
+{
+    return m_advancePolicyHasBeenSet;
 }
 

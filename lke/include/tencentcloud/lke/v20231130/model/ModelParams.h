@@ -235,6 +235,64 @@ namespace TencentCloud
                      */
                     bool ReplyFormatHasBeenSet() const;
 
+                    /**
+                     * 获取深度思考值
+disabled
+enabled
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeepThinking 深度思考值
+disabled
+enabled
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDeepThinking() const;
+
+                    /**
+                     * 设置深度思考值
+disabled
+enabled
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _deepThinking 深度思考值
+disabled
+enabled
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeepThinking(const std::string& _deepThinking);
+
+                    /**
+                     * 判断参数 DeepThinking 是否已赋值
+                     * @return DeepThinking 是否已赋值
+                     * 
+                     */
+                    bool DeepThinkingHasBeenSet() const;
+
+                    /**
+                     * 获取效果 disabled low medium high
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReasoningEffort 效果 disabled low medium high
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetReasoningEffort() const;
+
+                    /**
+                     * 设置效果 disabled low medium high
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _reasoningEffort 效果 disabled low medium high
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReasoningEffort(const std::string& _reasoningEffort);
+
+                    /**
+                     * 判断参数 ReasoningEffort 是否已赋值
+                     * @return ReasoningEffort 是否已赋值
+                     * 
+                     */
+                    bool ReasoningEffortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +348,22 @@ namespace TencentCloud
                      */
                     std::string m_replyFormat;
                     bool m_replyFormatHasBeenSet;
+
+                    /**
+                     * 深度思考值
+disabled
+enabled
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deepThinking;
+                    bool m_deepThinkingHasBeenSet;
+
+                    /**
+                     * 效果 disabled low medium high
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_reasoningEffort;
+                    bool m_reasoningEffortHasBeenSet;
 
                 };
             }

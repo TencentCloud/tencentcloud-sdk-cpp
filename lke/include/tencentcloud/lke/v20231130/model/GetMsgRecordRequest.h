@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取类型
-                     * @return Type 类型
+                     * 获取接入类型， 5-API 访客，目前仅支持传5
+                     * @return Type 接入类型， 5-API 访客，目前仅支持传5
                      * 
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置类型
-                     * @param _type 类型
+                     * 设置接入类型， 5-API 访客，目前仅支持传5
+                     * @param _type 接入类型， 5-API 访客，目前仅支持传5
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取会话sessionid
-                     * @return SessionId 会话sessionid
+                     * 获取会话sessionid。
+                     * @return SessionId 会话sessionid。
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置会话sessionid
-                     * @param _sessionId 会话sessionid
+                     * 设置会话sessionid。
+                     * @param _sessionId 会话sessionid。
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -127,15 +127,23 @@ namespace TencentCloud
                     bool BotAppKeyHasBeenSet() const;
 
                     /**
-                     * 获取场景, 体验: 1; 正式: 2
-                     * @return Scene 场景, 体验: 1; 正式: 2
+                     * 获取场景, 体验: 1; 正式: 2 。
+
+体验用于创建应用测试的时候使用，正式是应用发布后对外的时候使用
+                     * @return Scene 场景, 体验: 1; 正式: 2 。
+
+体验用于创建应用测试的时候使用，正式是应用发布后对外的时候使用
                      * 
                      */
                     uint64_t GetScene() const;
 
                     /**
-                     * 设置场景, 体验: 1; 正式: 2
-                     * @param _scene 场景, 体验: 1; 正式: 2
+                     * 设置场景, 体验: 1; 正式: 2 。
+
+体验用于创建应用测试的时候使用，正式是应用发布后对外的时候使用
+                     * @param _scene 场景, 体验: 1; 正式: 2 。
+
+体验用于创建应用测试的时候使用，正式是应用发布后对外的时候使用
                      * 
                      */
                     void SetScene(const uint64_t& _scene);
@@ -152,10 +160,12 @@ namespace TencentCloud
 
 MidRecordId与LastRecordId只能选择一个
 
+LastRecordId 和MidRecordId都不填的时候，默认从最新的消息ID开始取。
                      * @return LastRecordId 最后一条记录ID， 消息从后往前获取
 
 MidRecordId与LastRecordId只能选择一个
 
+LastRecordId 和MidRecordId都不填的时候，默认从最新的消息ID开始取。
                      * 
                      */
                     std::string GetLastRecordId() const;
@@ -165,10 +175,12 @@ MidRecordId与LastRecordId只能选择一个
 
 MidRecordId与LastRecordId只能选择一个
 
+LastRecordId 和MidRecordId都不填的时候，默认从最新的消息ID开始取。
                      * @param _lastRecordId 最后一条记录ID， 消息从后往前获取
 
 MidRecordId与LastRecordId只能选择一个
 
+LastRecordId 和MidRecordId都不填的时候，默认从最新的消息ID开始取。
                      * 
                      */
                     void SetLastRecordId(const std::string& _lastRecordId);
@@ -185,9 +197,13 @@ MidRecordId与LastRecordId只能选择一个
 
 MidRecordId与LastRecordId只能选择一个
 
+LastRecordId 和MidRecordId都不填的时候，默认从最新的消息Id开始取
+
                      * @return MidRecordId 传该值，代表拉取该记录id的前后总共count条消息记录
 
 MidRecordId与LastRecordId只能选择一个
+
+LastRecordId 和MidRecordId都不填的时候，默认从最新的消息Id开始取
 
                      * 
                      */
@@ -198,9 +214,13 @@ MidRecordId与LastRecordId只能选择一个
 
 MidRecordId与LastRecordId只能选择一个
 
+LastRecordId 和MidRecordId都不填的时候，默认从最新的消息Id开始取
+
                      * @param _midRecordId 传该值，代表拉取该记录id的前后总共count条消息记录
 
 MidRecordId与LastRecordId只能选择一个
+
+LastRecordId 和MidRecordId都不填的时候，默认从最新的消息Id开始取
 
                      * 
                      */
@@ -216,7 +236,7 @@ MidRecordId与LastRecordId只能选择一个
                 private:
 
                     /**
-                     * 类型
+                     * 接入类型， 5-API 访客，目前仅支持传5
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
@@ -228,7 +248,7 @@ MidRecordId与LastRecordId只能选择一个
                     bool m_countHasBeenSet;
 
                     /**
-                     * 会话sessionid
+                     * 会话sessionid。
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
@@ -240,7 +260,9 @@ MidRecordId与LastRecordId只能选择一个
                     bool m_botAppKeyHasBeenSet;
 
                     /**
-                     * 场景, 体验: 1; 正式: 2
+                     * 场景, 体验: 1; 正式: 2 。
+
+体验用于创建应用测试的时候使用，正式是应用发布后对外的时候使用
                      */
                     uint64_t m_scene;
                     bool m_sceneHasBeenSet;
@@ -250,6 +272,7 @@ MidRecordId与LastRecordId只能选择一个
 
 MidRecordId与LastRecordId只能选择一个
 
+LastRecordId 和MidRecordId都不填的时候，默认从最新的消息ID开始取。
                      */
                     std::string m_lastRecordId;
                     bool m_lastRecordIdHasBeenSet;
@@ -258,6 +281,8 @@ MidRecordId与LastRecordId只能选择一个
                      * 传该值，代表拉取该记录id的前后总共count条消息记录
 
 MidRecordId与LastRecordId只能选择一个
+
+LastRecordId 和MidRecordId都不填的时候，默认从最新的消息Id开始取
 
                      */
                     std::string m_midRecordId;

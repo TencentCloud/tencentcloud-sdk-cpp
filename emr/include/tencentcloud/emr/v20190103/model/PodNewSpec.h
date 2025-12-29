@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/PodVolume.h>
 #include <tencentcloud/emr/v20190103/model/DynamicPodSpec.h>
+#include <tencentcloud/emr/v20190103/model/OtherAccountInfo.h>
 
 
 namespace TencentCloud
@@ -312,6 +313,27 @@ namespace TencentCloud
                      */
                     bool PodNameHasBeenSet() const;
 
+                    /**
+                     * 获取其他账号授权信息
+                     * @return OtherAccountInfo 其他账号授权信息
+                     * 
+                     */
+                    OtherAccountInfo GetOtherAccountInfo() const;
+
+                    /**
+                     * 设置其他账号授权信息
+                     * @param _otherAccountInfo 其他账号授权信息
+                     * 
+                     */
+                    void SetOtherAccountInfo(const OtherAccountInfo& _otherAccountInfo);
+
+                    /**
+                     * 判断参数 OtherAccountInfo 是否已赋值
+                     * @return OtherAccountInfo 是否已赋值
+                     * 
+                     */
+                    bool OtherAccountInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -388,6 +410,12 @@ namespace TencentCloud
                      */
                     std::string m_podName;
                     bool m_podNameHasBeenSet;
+
+                    /**
+                     * 其他账号授权信息
+                     */
+                    OtherAccountInfo m_otherAccountInfo;
+                    bool m_otherAccountInfoHasBeenSet;
 
                 };
             }

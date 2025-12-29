@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取比较运算符，可选值：<br><li>GREATER_THAN：大于</li><li>GREATER_THAN_OR_EQUAL_TO：大于或等于</li><li>LESS_THAN：小于</li><li> LESS_THAN_OR_EQUAL_TO：小于或等于</li><li> EQUAL_TO：等于</li> <li>NOT_EQUAL_TO：不等于</li>
-                     * @return ComparisonOperator 比较运算符，可选值：<br><li>GREATER_THAN：大于</li><li>GREATER_THAN_OR_EQUAL_TO：大于或等于</li><li>LESS_THAN：小于</li><li> LESS_THAN_OR_EQUAL_TO：小于或等于</li><li> EQUAL_TO：等于</li> <li>NOT_EQUAL_TO：不等于</li>
+                     * 获取<p>比较运算符，可选值：<br><li>GREATER_THAN：大于</li><li>GREATER_THAN_OR_EQUAL_TO：大于或等于</li><li>LESS_THAN：小于</li><li> LESS_THAN_OR_EQUAL_TO：小于或等于</li><li> EQUAL_TO：等于</li> <li>NOT_EQUAL_TO：不等于</li></p>
+                     * @return ComparisonOperator <p>比较运算符，可选值：<br><li>GREATER_THAN：大于</li><li>GREATER_THAN_OR_EQUAL_TO：大于或等于</li><li>LESS_THAN：小于</li><li> LESS_THAN_OR_EQUAL_TO：小于或等于</li><li> EQUAL_TO：等于</li> <li>NOT_EQUAL_TO：不等于</li></p>
                      * 
                      */
                     std::string GetComparisonOperator() const;
 
                     /**
-                     * 设置比较运算符，可选值：<br><li>GREATER_THAN：大于</li><li>GREATER_THAN_OR_EQUAL_TO：大于或等于</li><li>LESS_THAN：小于</li><li> LESS_THAN_OR_EQUAL_TO：小于或等于</li><li> EQUAL_TO：等于</li> <li>NOT_EQUAL_TO：不等于</li>
-                     * @param _comparisonOperator 比较运算符，可选值：<br><li>GREATER_THAN：大于</li><li>GREATER_THAN_OR_EQUAL_TO：大于或等于</li><li>LESS_THAN：小于</li><li> LESS_THAN_OR_EQUAL_TO：小于或等于</li><li> EQUAL_TO：等于</li> <li>NOT_EQUAL_TO：不等于</li>
+                     * 设置<p>比较运算符，可选值：<br><li>GREATER_THAN：大于</li><li>GREATER_THAN_OR_EQUAL_TO：大于或等于</li><li>LESS_THAN：小于</li><li> LESS_THAN_OR_EQUAL_TO：小于或等于</li><li> EQUAL_TO：等于</li> <li>NOT_EQUAL_TO：不等于</li></p>
+                     * @param _comparisonOperator <p>比较运算符，可选值：<br><li>GREATER_THAN：大于</li><li>GREATER_THAN_OR_EQUAL_TO：大于或等于</li><li>LESS_THAN：小于</li><li> LESS_THAN_OR_EQUAL_TO：小于或等于</li><li> EQUAL_TO：等于</li> <li>NOT_EQUAL_TO：不等于</li></p>
                      * 
                      */
                     void SetComparisonOperator(const std::string& _comparisonOperator);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ComparisonOperatorHasBeenSet() const;
 
                     /**
-                     * 获取指标名称，可选字段如下：<br><li>CPU_UTILIZATION：CPU利用率</li><li>MEM_UTILIZATION：内存利用率</li><li>LAN_TRAFFIC_OUT：内网出带宽</li><li>LAN_TRAFFIC_IN：内网入带宽</li><li>WAN_TRAFFIC_OUT：外网出带宽</li><li>WAN_TRAFFIC_IN：外网入带宽</li><li>TCP_CURR_ESTAB：TCP连接数</li>
-                     * @return MetricName 指标名称，可选字段如下：<br><li>CPU_UTILIZATION：CPU利用率</li><li>MEM_UTILIZATION：内存利用率</li><li>LAN_TRAFFIC_OUT：内网出带宽</li><li>LAN_TRAFFIC_IN：内网入带宽</li><li>WAN_TRAFFIC_OUT：外网出带宽</li><li>WAN_TRAFFIC_IN：外网入带宽</li><li>TCP_CURR_ESTAB：TCP连接数</li>
+                     * 获取<p>指标名称，可选字段如下：<li>CPU_UTILIZATION：CPU利用率</li><li>MEM_UTILIZATION：内存利用率</li><li>LAN_TRAFFIC_OUT：内网出带宽</li><li>LAN_TRAFFIC_IN：内网入带宽</li><li>WAN_TRAFFIC_OUT：外网出带宽</li><li>WAN_TRAFFIC_IN：外网入带宽</li><li>TCP_CURR_ESTAB：TCP连接数</li></p><p>当前外网出入带宽属于 CLB 类指标，其他指标属于 CVM 类指标。修改指标名称时不允许跨类别修改。</p>
+                     * @return MetricName <p>指标名称，可选字段如下：<li>CPU_UTILIZATION：CPU利用率</li><li>MEM_UTILIZATION：内存利用率</li><li>LAN_TRAFFIC_OUT：内网出带宽</li><li>LAN_TRAFFIC_IN：内网入带宽</li><li>WAN_TRAFFIC_OUT：外网出带宽</li><li>WAN_TRAFFIC_IN：外网入带宽</li><li>TCP_CURR_ESTAB：TCP连接数</li></p><p>当前外网出入带宽属于 CLB 类指标，其他指标属于 CVM 类指标。修改指标名称时不允许跨类别修改。</p>
                      * 
                      */
                     std::string GetMetricName() const;
 
                     /**
-                     * 设置指标名称，可选字段如下：<br><li>CPU_UTILIZATION：CPU利用率</li><li>MEM_UTILIZATION：内存利用率</li><li>LAN_TRAFFIC_OUT：内网出带宽</li><li>LAN_TRAFFIC_IN：内网入带宽</li><li>WAN_TRAFFIC_OUT：外网出带宽</li><li>WAN_TRAFFIC_IN：外网入带宽</li><li>TCP_CURR_ESTAB：TCP连接数</li>
-                     * @param _metricName 指标名称，可选字段如下：<br><li>CPU_UTILIZATION：CPU利用率</li><li>MEM_UTILIZATION：内存利用率</li><li>LAN_TRAFFIC_OUT：内网出带宽</li><li>LAN_TRAFFIC_IN：内网入带宽</li><li>WAN_TRAFFIC_OUT：外网出带宽</li><li>WAN_TRAFFIC_IN：外网入带宽</li><li>TCP_CURR_ESTAB：TCP连接数</li>
+                     * 设置<p>指标名称，可选字段如下：<li>CPU_UTILIZATION：CPU利用率</li><li>MEM_UTILIZATION：内存利用率</li><li>LAN_TRAFFIC_OUT：内网出带宽</li><li>LAN_TRAFFIC_IN：内网入带宽</li><li>WAN_TRAFFIC_OUT：外网出带宽</li><li>WAN_TRAFFIC_IN：外网入带宽</li><li>TCP_CURR_ESTAB：TCP连接数</li></p><p>当前外网出入带宽属于 CLB 类指标，其他指标属于 CVM 类指标。修改指标名称时不允许跨类别修改。</p>
+                     * @param _metricName <p>指标名称，可选字段如下：<li>CPU_UTILIZATION：CPU利用率</li><li>MEM_UTILIZATION：内存利用率</li><li>LAN_TRAFFIC_OUT：内网出带宽</li><li>LAN_TRAFFIC_IN：内网入带宽</li><li>WAN_TRAFFIC_OUT：外网出带宽</li><li>WAN_TRAFFIC_IN：外网入带宽</li><li>TCP_CURR_ESTAB：TCP连接数</li></p><p>当前外网出入带宽属于 CLB 类指标，其他指标属于 CVM 类指标。修改指标名称时不允许跨类别修改。</p>
                      * 
                      */
                     void SetMetricName(const std::string& _metricName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool MetricNameHasBeenSet() const;
 
                     /**
-                     * 获取告警阈值：<br><li>CPU_UTILIZATION：[1, 100]，单位：%</li><li>MEM_UTILIZATION：[1, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：>0，单位：Mbps </li><li>LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>WAN_TRAFFIC_IN：>0，单位：Mbps</li><li>TCP_CURR_ESTAB：>0, 单位：Count</li>
-                     * @return Threshold 告警阈值：<br><li>CPU_UTILIZATION：[1, 100]，单位：%</li><li>MEM_UTILIZATION：[1, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：>0，单位：Mbps </li><li>LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>WAN_TRAFFIC_IN：>0，单位：Mbps</li><li>TCP_CURR_ESTAB：>0, 单位：Count</li>
+                     * 获取<p>告警阈值：<br><li>CPU_UTILIZATION：[1, 100]，单位：%</li><li>MEM_UTILIZATION：[1, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：&gt;0，单位：Mbps </li><li>LAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：&gt;0，单位：Mbps</li><li>WAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>TCP_CURR_ESTAB：&gt;0, 单位：Count</li></p>
+                     * @return Threshold <p>告警阈值：<br><li>CPU_UTILIZATION：[1, 100]，单位：%</li><li>MEM_UTILIZATION：[1, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：&gt;0，单位：Mbps </li><li>LAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：&gt;0，单位：Mbps</li><li>WAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>TCP_CURR_ESTAB：&gt;0, 单位：Count</li></p>
                      * 
                      */
                     uint64_t GetThreshold() const;
 
                     /**
-                     * 设置告警阈值：<br><li>CPU_UTILIZATION：[1, 100]，单位：%</li><li>MEM_UTILIZATION：[1, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：>0，单位：Mbps </li><li>LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>WAN_TRAFFIC_IN：>0，单位：Mbps</li><li>TCP_CURR_ESTAB：>0, 单位：Count</li>
-                     * @param _threshold 告警阈值：<br><li>CPU_UTILIZATION：[1, 100]，单位：%</li><li>MEM_UTILIZATION：[1, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：>0，单位：Mbps </li><li>LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>WAN_TRAFFIC_IN：>0，单位：Mbps</li><li>TCP_CURR_ESTAB：>0, 单位：Count</li>
+                     * 设置<p>告警阈值：<br><li>CPU_UTILIZATION：[1, 100]，单位：%</li><li>MEM_UTILIZATION：[1, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：&gt;0，单位：Mbps </li><li>LAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：&gt;0，单位：Mbps</li><li>WAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>TCP_CURR_ESTAB：&gt;0, 单位：Count</li></p>
+                     * @param _threshold <p>告警阈值：<br><li>CPU_UTILIZATION：[1, 100]，单位：%</li><li>MEM_UTILIZATION：[1, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：&gt;0，单位：Mbps </li><li>LAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：&gt;0，单位：Mbps</li><li>WAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>TCP_CURR_ESTAB：&gt;0, 单位：Count</li></p>
                      * 
                      */
                     void SetThreshold(const uint64_t& _threshold);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ThresholdHasBeenSet() const;
 
                     /**
-                     * 获取时间周期，单位：秒，取值枚举值为60、300。
-                     * @return Period 时间周期，单位：秒，取值枚举值为60、300。
+                     * 获取<p>时间周期，单位：秒，取值枚举值为60、300。</p>
+                     * @return Period <p>时间周期，单位：秒，取值枚举值为60、300。</p>
                      * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
-                     * 设置时间周期，单位：秒，取值枚举值为60、300。
-                     * @param _period 时间周期，单位：秒，取值枚举值为60、300。
+                     * 设置<p>时间周期，单位：秒，取值枚举值为60、300。</p>
+                     * @param _period <p>时间周期，单位：秒，取值枚举值为60、300。</p>
                      * 
                      */
                     void SetPeriod(const uint64_t& _period);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取重复次数。取值范围 [1, 10]
-                     * @return ContinuousTime 重复次数。取值范围 [1, 10]
+                     * 获取<p>重复次数。取值范围 [1, 10]</p>
+                     * @return ContinuousTime <p>重复次数。取值范围 [1, 10]</p>
                      * 
                      */
                     uint64_t GetContinuousTime() const;
 
                     /**
-                     * 设置重复次数。取值范围 [1, 10]
-                     * @param _continuousTime 重复次数。取值范围 [1, 10]
+                     * 设置<p>重复次数。取值范围 [1, 10]</p>
+                     * @param _continuousTime <p>重复次数。取值范围 [1, 10]</p>
                      * 
                      */
                     void SetContinuousTime(const uint64_t& _continuousTime);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ContinuousTimeHasBeenSet() const;
 
                     /**
-                     * 获取统计类型，可选字段如下：<br><li>AVERAGE：平均值</li><li>MAXIMUM：最大值<li>MINIMUM：最小值</li><br> 默认取值：AVERAGE
-                     * @return Statistic 统计类型，可选字段如下：<br><li>AVERAGE：平均值</li><li>MAXIMUM：最大值<li>MINIMUM：最小值</li><br> 默认取值：AVERAGE
+                     * 获取<p>统计类型，可选字段如下：<br><li>AVERAGE：平均值</li><li>MAXIMUM：最大值<li>MINIMUM：最小值</li><br> 默认取值：AVERAGE</p>
+                     * @return Statistic <p>统计类型，可选字段如下：<br><li>AVERAGE：平均值</li><li>MAXIMUM：最大值<li>MINIMUM：最小值</li><br> 默认取值：AVERAGE</p>
                      * 
                      */
                     std::string GetStatistic() const;
 
                     /**
-                     * 设置统计类型，可选字段如下：<br><li>AVERAGE：平均值</li><li>MAXIMUM：最大值<li>MINIMUM：最小值</li><br> 默认取值：AVERAGE
-                     * @param _statistic 统计类型，可选字段如下：<br><li>AVERAGE：平均值</li><li>MAXIMUM：最大值<li>MINIMUM：最小值</li><br> 默认取值：AVERAGE
+                     * 设置<p>统计类型，可选字段如下：<br><li>AVERAGE：平均值</li><li>MAXIMUM：最大值<li>MINIMUM：最小值</li><br> 默认取值：AVERAGE</p>
+                     * @param _statistic <p>统计类型，可选字段如下：<br><li>AVERAGE：平均值</li><li>MAXIMUM：最大值<li>MINIMUM：最小值</li><br> 默认取值：AVERAGE</p>
                      * 
                      */
                     void SetStatistic(const std::string& _statistic);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool StatisticHasBeenSet() const;
 
                     /**
-                     * 获取精确告警阈值，本参数不作为入参输入，仅用作查询接口出参：<br><li>CPU_UTILIZATION：(0, 100]，单位：%</li><li>MEM_UTILIZATION：(0, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：>0，单位：Mbps </li><li>LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>WAN_TRAFFIC_IN：>0，单位：Mbps</li><li>TCP_CURR_ESTAB：>0, 单位：Count</li>
-                     * @return PreciseThreshold 精确告警阈值，本参数不作为入参输入，仅用作查询接口出参：<br><li>CPU_UTILIZATION：(0, 100]，单位：%</li><li>MEM_UTILIZATION：(0, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：>0，单位：Mbps </li><li>LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>WAN_TRAFFIC_IN：>0，单位：Mbps</li><li>TCP_CURR_ESTAB：>0, 单位：Count</li>
+                     * 获取<p>精确告警阈值，本参数不作为入参输入，仅用作查询接口出参：<br><li>CPU_UTILIZATION：(0, 100]，单位：%</li><li>MEM_UTILIZATION：(0, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：&gt;0，单位：Mbps </li><li>LAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：&gt;0，单位：Mbps</li><li>WAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>TCP_CURR_ESTAB：&gt;0, 单位：Count</li></p>
+                     * @return PreciseThreshold <p>精确告警阈值，本参数不作为入参输入，仅用作查询接口出参：<br><li>CPU_UTILIZATION：(0, 100]，单位：%</li><li>MEM_UTILIZATION：(0, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：&gt;0，单位：Mbps </li><li>LAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：&gt;0，单位：Mbps</li><li>WAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>TCP_CURR_ESTAB：&gt;0, 单位：Count</li></p>
                      * 
                      */
                     double GetPreciseThreshold() const;
 
                     /**
-                     * 设置精确告警阈值，本参数不作为入参输入，仅用作查询接口出参：<br><li>CPU_UTILIZATION：(0, 100]，单位：%</li><li>MEM_UTILIZATION：(0, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：>0，单位：Mbps </li><li>LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>WAN_TRAFFIC_IN：>0，单位：Mbps</li><li>TCP_CURR_ESTAB：>0, 单位：Count</li>
-                     * @param _preciseThreshold 精确告警阈值，本参数不作为入参输入，仅用作查询接口出参：<br><li>CPU_UTILIZATION：(0, 100]，单位：%</li><li>MEM_UTILIZATION：(0, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：>0，单位：Mbps </li><li>LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>WAN_TRAFFIC_IN：>0，单位：Mbps</li><li>TCP_CURR_ESTAB：>0, 单位：Count</li>
+                     * 设置<p>精确告警阈值，本参数不作为入参输入，仅用作查询接口出参：<br><li>CPU_UTILIZATION：(0, 100]，单位：%</li><li>MEM_UTILIZATION：(0, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：&gt;0，单位：Mbps </li><li>LAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：&gt;0，单位：Mbps</li><li>WAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>TCP_CURR_ESTAB：&gt;0, 单位：Count</li></p>
+                     * @param _preciseThreshold <p>精确告警阈值，本参数不作为入参输入，仅用作查询接口出参：<br><li>CPU_UTILIZATION：(0, 100]，单位：%</li><li>MEM_UTILIZATION：(0, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：&gt;0，单位：Mbps </li><li>LAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：&gt;0，单位：Mbps</li><li>WAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>TCP_CURR_ESTAB：&gt;0, 单位：Count</li></p>
                      * 
                      */
                     void SetPreciseThreshold(const double& _preciseThreshold);
@@ -196,43 +196,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 比较运算符，可选值：<br><li>GREATER_THAN：大于</li><li>GREATER_THAN_OR_EQUAL_TO：大于或等于</li><li>LESS_THAN：小于</li><li> LESS_THAN_OR_EQUAL_TO：小于或等于</li><li> EQUAL_TO：等于</li> <li>NOT_EQUAL_TO：不等于</li>
+                     * <p>比较运算符，可选值：<br><li>GREATER_THAN：大于</li><li>GREATER_THAN_OR_EQUAL_TO：大于或等于</li><li>LESS_THAN：小于</li><li> LESS_THAN_OR_EQUAL_TO：小于或等于</li><li> EQUAL_TO：等于</li> <li>NOT_EQUAL_TO：不等于</li></p>
                      */
                     std::string m_comparisonOperator;
                     bool m_comparisonOperatorHasBeenSet;
 
                     /**
-                     * 指标名称，可选字段如下：<br><li>CPU_UTILIZATION：CPU利用率</li><li>MEM_UTILIZATION：内存利用率</li><li>LAN_TRAFFIC_OUT：内网出带宽</li><li>LAN_TRAFFIC_IN：内网入带宽</li><li>WAN_TRAFFIC_OUT：外网出带宽</li><li>WAN_TRAFFIC_IN：外网入带宽</li><li>TCP_CURR_ESTAB：TCP连接数</li>
+                     * <p>指标名称，可选字段如下：<li>CPU_UTILIZATION：CPU利用率</li><li>MEM_UTILIZATION：内存利用率</li><li>LAN_TRAFFIC_OUT：内网出带宽</li><li>LAN_TRAFFIC_IN：内网入带宽</li><li>WAN_TRAFFIC_OUT：外网出带宽</li><li>WAN_TRAFFIC_IN：外网入带宽</li><li>TCP_CURR_ESTAB：TCP连接数</li></p><p>当前外网出入带宽属于 CLB 类指标，其他指标属于 CVM 类指标。修改指标名称时不允许跨类别修改。</p>
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;
 
                     /**
-                     * 告警阈值：<br><li>CPU_UTILIZATION：[1, 100]，单位：%</li><li>MEM_UTILIZATION：[1, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：>0，单位：Mbps </li><li>LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>WAN_TRAFFIC_IN：>0，单位：Mbps</li><li>TCP_CURR_ESTAB：>0, 单位：Count</li>
+                     * <p>告警阈值：<br><li>CPU_UTILIZATION：[1, 100]，单位：%</li><li>MEM_UTILIZATION：[1, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：&gt;0，单位：Mbps </li><li>LAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：&gt;0，单位：Mbps</li><li>WAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>TCP_CURR_ESTAB：&gt;0, 单位：Count</li></p>
                      */
                     uint64_t m_threshold;
                     bool m_thresholdHasBeenSet;
 
                     /**
-                     * 时间周期，单位：秒，取值枚举值为60、300。
+                     * <p>时间周期，单位：秒，取值枚举值为60、300。</p>
                      */
                     uint64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 重复次数。取值范围 [1, 10]
+                     * <p>重复次数。取值范围 [1, 10]</p>
                      */
                     uint64_t m_continuousTime;
                     bool m_continuousTimeHasBeenSet;
 
                     /**
-                     * 统计类型，可选字段如下：<br><li>AVERAGE：平均值</li><li>MAXIMUM：最大值<li>MINIMUM：最小值</li><br> 默认取值：AVERAGE
+                     * <p>统计类型，可选字段如下：<br><li>AVERAGE：平均值</li><li>MAXIMUM：最大值<li>MINIMUM：最小值</li><br> 默认取值：AVERAGE</p>
                      */
                     std::string m_statistic;
                     bool m_statisticHasBeenSet;
 
                     /**
-                     * 精确告警阈值，本参数不作为入参输入，仅用作查询接口出参：<br><li>CPU_UTILIZATION：(0, 100]，单位：%</li><li>MEM_UTILIZATION：(0, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：>0，单位：Mbps </li><li>LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>WAN_TRAFFIC_IN：>0，单位：Mbps</li><li>TCP_CURR_ESTAB：>0, 单位：Count</li>
+                     * <p>精确告警阈值，本参数不作为入参输入，仅用作查询接口出参：<br><li>CPU_UTILIZATION：(0, 100]，单位：%</li><li>MEM_UTILIZATION：(0, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：&gt;0，单位：Mbps </li><li>LAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：&gt;0，单位：Mbps</li><li>WAN_TRAFFIC_IN：&gt;0，单位：Mbps</li><li>TCP_CURR_ESTAB：&gt;0, 单位：Count</li></p>
                      */
                     double m_preciseThreshold;
                     bool m_preciseThresholdHasBeenSet;

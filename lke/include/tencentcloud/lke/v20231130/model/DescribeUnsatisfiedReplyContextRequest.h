@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BotBizIdHasBeenSet() const;
 
                     /**
-                     * 获取回复ID，调用这个接口获得：[ListUnsatisfiedReply](https://capi.woa.com/api/detail?product=lke&version=2023-11-30&action=ListUnsatisfiedReply) 
-                     * @return ReplyBizId 回复ID，调用这个接口获得：[ListUnsatisfiedReply](https://capi.woa.com/api/detail?product=lke&version=2023-11-30&action=ListUnsatisfiedReply) 
+                     * 获取回复ID
+                     * @return ReplyBizId 回复ID
                      * 
                      */
                     std::string GetReplyBizId() const;
 
                     /**
-                     * 设置回复ID，调用这个接口获得：[ListUnsatisfiedReply](https://capi.woa.com/api/detail?product=lke&version=2023-11-30&action=ListUnsatisfiedReply) 
-                     * @param _replyBizId 回复ID，调用这个接口获得：[ListUnsatisfiedReply](https://capi.woa.com/api/detail?product=lke&version=2023-11-30&action=ListUnsatisfiedReply) 
+                     * 设置回复ID
+                     * @param _replyBizId 回复ID
                      * 
                      */
                     void SetReplyBizId(const std::string& _replyBizId);
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_botBizIdHasBeenSet;
 
                     /**
-                     * 回复ID，调用这个接口获得：[ListUnsatisfiedReply](https://capi.woa.com/api/detail?product=lke&version=2023-11-30&action=ListUnsatisfiedReply) 
+                     * 回复ID
                      */
                     std::string m_replyBizId;
                     bool m_replyBizIdHasBeenSet;

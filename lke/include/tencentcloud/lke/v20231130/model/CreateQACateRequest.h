@@ -44,14 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取应用ID
+若要操作共享知识库，传KnowledgeBizId
                      * @return BotBizId 应用ID
+若要操作共享知识库，传KnowledgeBizId
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
                      * 设置应用ID
+若要操作共享知识库，传KnowledgeBizId
                      * @param _botBizId 应用ID
+若要操作共享知识库，传KnowledgeBizId
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -85,19 +89,15 @@ namespace TencentCloud
                     bool ParentBizIdHasBeenSet() const;
 
                     /**
-                     * 获取分类名称
-
-                     * @return Name 分类名称
-
+                     * 获取创建的分类名称
+                     * @return Name 创建的分类名称
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置分类名称
-
-                     * @param _name 分类名称
-
+                     * 设置创建的分类名称
+                     * @param _name 创建的分类名称
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -113,6 +113,7 @@ namespace TencentCloud
 
                     /**
                      * 应用ID
+若要操作共享知识库，传KnowledgeBizId
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
@@ -124,8 +125,7 @@ namespace TencentCloud
                     bool m_parentBizIdHasBeenSet;
 
                     /**
-                     * 分类名称
-
+                     * 创建的分类名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

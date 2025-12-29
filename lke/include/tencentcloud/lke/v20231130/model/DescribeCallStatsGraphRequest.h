@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取uin
-                     * @return UinAccount uin
+                     * 获取子账号标识列表，支持批量查询多个子账号。不填时查询主账号下所有子账号的汇总数据
+                     * @return UinAccount 子账号标识列表，支持批量查询多个子账号。不填时查询主账号下所有子账号的汇总数据
                      * 
                      */
                     std::vector<std::string> GetUinAccount() const;
 
                     /**
-                     * 设置uin
-                     * @param _uinAccount uin
+                     * 设置子账号标识列表，支持批量查询多个子账号。不填时查询主账号下所有子账号的汇总数据
+                     * @param _uinAccount 子账号标识列表，支持批量查询多个子账号。不填时查询主账号下所有子账号的汇总数据
                      * 
                      */
                     void SetUinAccount(const std::vector<std::string>& _uinAccount);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LoginSubAccountUinHasBeenSet() const;
 
                     /**
-                     * 获取子业务类型
-                     * @return SubBizType 子业务类型
+                     * 获取子业务类型，用于筛选不同业务场景的调用统计
+                     * @return SubBizType 子业务类型，用于筛选不同业务场景的调用统计
                      * 
                      */
                     std::string GetSubBizType() const;
 
                     /**
-                     * 设置子业务类型
-                     * @param _subBizType 子业务类型
+                     * 设置子业务类型，用于筛选不同业务场景的调用统计
+                     * @param _subBizType 子业务类型，用于筛选不同业务场景的调用统计
                      * 
                      */
                     void SetSubBizType(const std::string& _subBizType);
@@ -150,42 +150,42 @@ namespace TencentCloud
                     /**
                      * 获取开始时间戳, 单位为秒(废弃)
                      * @return StartTime 开始时间戳, 单位为秒(废弃)
-                     * 
+                     * @deprecated
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间戳, 单位为秒(废弃)
                      * @param _startTime 开始时间戳, 单位为秒(废弃)
-                     * 
+                     * @deprecated
                      */
                     void SetStartTime(const std::string& _startTime);
 
                     /**
                      * 判断参数 StartTime 是否已赋值
                      * @return StartTime 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool StartTimeHasBeenSet() const;
 
                     /**
                      * 获取结束时间戳, 单位为秒(废弃)
                      * @return EndTime 结束时间戳, 单位为秒(废弃)
-                     * 
+                     * @deprecated
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间戳, 单位为秒(废弃)
                      * @param _endTime 结束时间戳, 单位为秒(废弃)
-                     * 
+                     * @deprecated
                      */
                     void SetEndTime(const std::string& _endTime);
 
                     /**
                      * 判断参数 EndTime 是否已赋值
                      * @return EndTime 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool EndTimeHasBeenSet() const;
 
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool AppTypeHasBeenSet() const;
 
                     /**
-                     * 获取空间id
-                     * @return SpaceId 空间id
+                     * 获取空间ID，用于限定查询范围。不填时查询所有空间的数据
+                     * @return SpaceId 空间ID，用于限定查询范围。不填时查询所有空间的数据
                      * 
                      */
                     std::string GetSpaceId() const;
 
                     /**
-                     * 设置空间id
-                     * @param _spaceId 空间id
+                     * 设置空间ID，用于限定查询范围。不填时查询所有空间的数据
+                     * @param _spaceId 空间ID，用于限定查询范围。不填时查询所有空间的数据
                      * 
                      */
                     void SetSpaceId(const std::string& _spaceId);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool SpaceIdHasBeenSet() const;
 
                     /**
-                     * 获取开始时间戳, 单位为秒
-                     * @return StatStartTime 开始时间戳, 单位为秒
+                     * 获取开始时间。Unix 时间戳，单位是秒，默认为空。
+                     * @return StatStartTime 开始时间。Unix 时间戳，单位是秒，默认为空。
                      * 
                      */
                     int64_t GetStatStartTime() const;
 
                     /**
-                     * 设置开始时间戳, 单位为秒
-                     * @param _statStartTime 开始时间戳, 单位为秒
+                     * 设置开始时间。Unix 时间戳，单位是秒，默认为空。
+                     * @param _statStartTime 开始时间。Unix 时间戳，单位是秒，默认为空。
                      * 
                      */
                     void SetStatStartTime(const int64_t& _statStartTime);
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool StatStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间戳, 单位为秒
-                     * @return StatEndTime 结束时间戳, 单位为秒
+                     * 获取结束时间。Unix 时间戳，单位是秒，默认为空。
+                     * @return StatEndTime 结束时间。Unix 时间戳，单位是秒，默认为空。
                      * 
                      */
                     int64_t GetStatEndTime() const;
 
                     /**
-                     * 设置结束时间戳, 单位为秒
-                     * @param _statEndTime 结束时间戳, 单位为秒
+                     * 设置结束时间。Unix 时间戳，单位是秒，默认为空。
+                     * @param _statEndTime 结束时间。Unix 时间戳，单位是秒，默认为空。
                      * 
                      */
                     void SetStatEndTime(const int64_t& _statEndTime);
@@ -318,7 +318,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * uin
+                     * 子账号标识列表，支持批量查询多个子账号。不填时查询主账号下所有子账号的汇总数据
                      */
                     std::vector<std::string> m_uinAccount;
                     bool m_uinAccountHasBeenSet;
@@ -336,7 +336,7 @@ namespace TencentCloud
                     bool m_loginSubAccountUinHasBeenSet;
 
                     /**
-                     * 子业务类型
+                     * 子业务类型，用于筛选不同业务场景的调用统计
                      */
                     std::string m_subBizType;
                     bool m_subBizTypeHasBeenSet;
@@ -378,19 +378,19 @@ namespace TencentCloud
                     bool m_appTypeHasBeenSet;
 
                     /**
-                     * 空间id
+                     * 空间ID，用于限定查询范围。不填时查询所有空间的数据
                      */
                     std::string m_spaceId;
                     bool m_spaceIdHasBeenSet;
 
                     /**
-                     * 开始时间戳, 单位为秒
+                     * 开始时间。Unix 时间戳，单位是秒，默认为空。
                      */
                     int64_t m_statStartTime;
                     bool m_statStartTimeHasBeenSet;
 
                     /**
-                     * 结束时间戳, 单位为秒
+                     * 结束时间。Unix 时间戳，单位是秒，默认为空。
                      */
                     int64_t m_statEndTime;
                     bool m_statEndTimeHasBeenSet;

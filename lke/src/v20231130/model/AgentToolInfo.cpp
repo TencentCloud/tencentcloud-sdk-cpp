@@ -39,7 +39,8 @@ AgentToolInfo::AgentToolInfo() :
     m_queryHasBeenSet(false),
     m_financeStatusHasBeenSet(false),
     m_toolSourceHasBeenSet(false),
-    m_financeTypeHasBeenSet(false)
+    m_financeTypeHasBeenSet(false),
+    m_toolAdvanceConfigHasBeenSet(false)
 {
 }
 
@@ -285,6 +286,23 @@ CoreInternalOutcome AgentToolInfo::Deserialize(const rapidjson::Value &value)
         m_financeTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ToolAdvanceConfig") && !value["ToolAdvanceConfig"].IsNull())
+    {
+        if (!value["ToolAdvanceConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentToolInfo.ToolAdvanceConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_toolAdvanceConfig.Deserialize(value["ToolAdvanceConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_toolAdvanceConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -471,6 +489,15 @@ void AgentToolInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "FinanceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_financeType, allocator);
+    }
+
+    if (m_toolAdvanceConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToolAdvanceConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_toolAdvanceConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -778,5 +805,21 @@ void AgentToolInfo::SetFinanceType(const int64_t& _financeType)
 bool AgentToolInfo::FinanceTypeHasBeenSet() const
 {
     return m_financeTypeHasBeenSet;
+}
+
+ToolAdvanceConfig AgentToolInfo::GetToolAdvanceConfig() const
+{
+    return m_toolAdvanceConfig;
+}
+
+void AgentToolInfo::SetToolAdvanceConfig(const ToolAdvanceConfig& _toolAdvanceConfig)
+{
+    m_toolAdvanceConfig = _toolAdvanceConfig;
+    m_toolAdvanceConfigHasBeenSet = true;
+}
+
+bool AgentToolInfo::ToolAdvanceConfigHasBeenSet() const
+{
+    return m_toolAdvanceConfigHasBeenSet;
 }
 

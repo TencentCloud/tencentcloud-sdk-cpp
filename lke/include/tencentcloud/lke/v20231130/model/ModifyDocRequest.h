@@ -385,15 +385,19 @@ namespace TencentCloud
                     bool SplitRuleHasBeenSet() const;
 
                     /**
-                     * 获取文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
-                     * @return EnableScope 文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     * 获取文档生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。
+若不传，则不会修改文档生效域。
+                     * @return EnableScope 文档生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。
+若不传，则不会修改文档生效域。
                      * 
                      */
                     int64_t GetEnableScope() const;
 
                     /**
-                     * 设置文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
-                     * @param _enableScope 文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     * 设置文档生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。
+若不传，则不会修改文档生效域。
+                     * @param _enableScope 文档生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。
+若不传，则不会修改文档生效域。
                      * 
                      */
                     void SetEnableScope(const int64_t& _enableScope);
@@ -505,7 +509,8 @@ namespace TencentCloud
                     bool m_splitRuleHasBeenSet;
 
                     /**
-                     * 文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     * 文档生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。
+若不传，则不会修改文档生效域。
                      */
                     int64_t m_enableScope;
                     bool m_enableScopeHasBeenSet;

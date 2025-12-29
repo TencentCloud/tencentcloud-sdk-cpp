@@ -46,7 +46,135 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取是否开启暴露容器服务端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Enable 是否开启暴露容器服务端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetEnable() const;
+
+                    /**
+                     * 设置是否开启暴露容器服务端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _enable 是否开启暴露容器服务端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnable(const bool& _enable);
+
+                    /**
+                     * 判断参数 Enable 是否已赋值
+                     * @return Enable 是否已赋值
+                     * 
+                     */
+                    bool EnableHasBeenSet() const;
+
+                    /**
+                     * 获取vpc id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpcId vpc id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置vpc id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _vpcId vpc id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     * 
+                     */
+                    bool VpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取clb id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClbId clb id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClbId() const;
+
+                    /**
+                     * 设置clb id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clbId clb id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClbId(const std::string& _clbId);
+
+                    /**
+                     * 判断参数 ClbId 是否已赋值
+                     * @return ClbId 是否已赋值
+                     * 
+                     */
+                    bool ClbIdHasBeenSet() const;
+
+                    /**
+                     * 获取clb domain
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClbHost clb domain
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClbHost() const;
+
+                    /**
+                     * 设置clb domain
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clbHost clb domain
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClbHost(const std::string& _clbHost);
+
+                    /**
+                     * 判断参数 ClbHost 是否已赋值
+                     * @return ClbHost 是否已赋值
+                     * 
+                     */
+                    bool ClbHostHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 是否开启暴露容器服务端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enable;
+                    bool m_enableHasBeenSet;
+
+                    /**
+                     * vpc id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * clb id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clbId;
+                    bool m_clbIdHasBeenSet;
+
+                    /**
+                     * clb domain
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clbHost;
+                    bool m_clbHostHasBeenSet;
 
                 };
             }

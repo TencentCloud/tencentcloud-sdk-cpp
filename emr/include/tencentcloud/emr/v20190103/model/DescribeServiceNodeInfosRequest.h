@@ -264,15 +264,15 @@ namespace TencentCloud
                     bool HealthStateIdHasBeenSet() const;
 
                     /**
-                     * 获取服务组件名称，都是大写例如YARN
-                     * @return ServiceName 服务组件名称，都是大写例如YARN
+                     * 获取服务组件名称应采用全大写形式（例如：YARN），api调用时须与 ServiceGroupType 在两者之中任选其一并保证必填。
+                     * @return ServiceName 服务组件名称应采用全大写形式（例如：YARN），api调用时须与 ServiceGroupType 在两者之中任选其一并保证必填。
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
-                     * 设置服务组件名称，都是大写例如YARN
-                     * @param _serviceName 服务组件名称，都是大写例如YARN
+                     * 设置服务组件名称应采用全大写形式（例如：YARN），api调用时须与 ServiceGroupType 在两者之中任选其一并保证必填。
+                     * @param _serviceName 服务组件名称应采用全大写形式（例如：YARN），api调用时须与 ServiceGroupType 在两者之中任选其一并保证必填。
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -419,7 +419,7 @@ namespace TencentCloud
                     bool m_healthStateIdHasBeenSet;
 
                     /**
-                     * 服务组件名称，都是大写例如YARN
+                     * 服务组件名称应采用全大写形式（例如：YARN），api调用时须与 ServiceGroupType 在两者之中任选其一并保证必填。
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;

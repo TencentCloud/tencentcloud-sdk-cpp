@@ -29,7 +29,9 @@ ListReleaseItem::ListReleaseItem() :
     m_statusDescHasBeenSet(false),
     m_reasonHasBeenSet(false),
     m_successCountHasBeenSet(false),
-    m_failCountHasBeenSet(false)
+    m_failCountHasBeenSet(false),
+    m_releaseVersionHasBeenSet(false),
+    m_canRollbackHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,26 @@ CoreInternalOutcome ListReleaseItem::Deserialize(const rapidjson::Value &value)
         m_failCountHasBeenSet = true;
     }
 
+    if (value.HasMember("ReleaseVersion") && !value["ReleaseVersion"].IsNull())
+    {
+        if (!value["ReleaseVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListReleaseItem.ReleaseVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_releaseVersion = string(value["ReleaseVersion"].GetString());
+        m_releaseVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("CanRollback") && !value["CanRollback"].IsNull())
+    {
+        if (!value["CanRollback"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListReleaseItem.CanRollback` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_canRollback = value["CanRollback"].GetBool();
+        m_canRollbackHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +227,22 @@ void ListReleaseItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "FailCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_failCount, allocator);
+    }
+
+    if (m_releaseVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReleaseVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_releaseVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_canRollbackHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanRollback";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_canRollback, allocator);
     }
 
 }
@@ -352,5 +390,37 @@ void ListReleaseItem::SetFailCount(const int64_t& _failCount)
 bool ListReleaseItem::FailCountHasBeenSet() const
 {
     return m_failCountHasBeenSet;
+}
+
+string ListReleaseItem::GetReleaseVersion() const
+{
+    return m_releaseVersion;
+}
+
+void ListReleaseItem::SetReleaseVersion(const string& _releaseVersion)
+{
+    m_releaseVersion = _releaseVersion;
+    m_releaseVersionHasBeenSet = true;
+}
+
+bool ListReleaseItem::ReleaseVersionHasBeenSet() const
+{
+    return m_releaseVersionHasBeenSet;
+}
+
+bool ListReleaseItem::GetCanRollback() const
+{
+    return m_canRollback;
+}
+
+void ListReleaseItem::SetCanRollback(const bool& _canRollback)
+{
+    m_canRollback = _canRollback;
+    m_canRollbackHasBeenSet = true;
+}
+
+bool ListReleaseItem::CanRollbackHasBeenSet() const
+{
+    return m_canRollbackHasBeenSet;
 }
 

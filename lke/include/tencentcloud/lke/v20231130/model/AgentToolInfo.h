@@ -29,6 +29,7 @@
 #include <tencentcloud/lke/v20231130/model/AgentMCPServerInfo.h>
 #include <tencentcloud/lke/v20231130/model/AgentPluginHeader.h>
 #include <tencentcloud/lke/v20231130/model/AgentPluginQuery.h>
+#include <tencentcloud/lke/v20231130/model/ToolAdvanceConfig.h>
 
 
 namespace TencentCloud
@@ -462,6 +463,27 @@ namespace TencentCloud
                      */
                     bool FinanceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取工具高级设置
+                     * @return ToolAdvanceConfig 工具高级设置
+                     * 
+                     */
+                    ToolAdvanceConfig GetToolAdvanceConfig() const;
+
+                    /**
+                     * 设置工具高级设置
+                     * @param _toolAdvanceConfig 工具高级设置
+                     * 
+                     */
+                    void SetToolAdvanceConfig(const ToolAdvanceConfig& _toolAdvanceConfig);
+
+                    /**
+                     * 判断参数 ToolAdvanceConfig 是否已赋值
+                     * @return ToolAdvanceConfig 是否已赋值
+                     * 
+                     */
+                    bool ToolAdvanceConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -580,6 +602,12 @@ namespace TencentCloud
                      */
                     int64_t m_financeType;
                     bool m_financeTypeHasBeenSet;
+
+                    /**
+                     * 工具高级设置
+                     */
+                    ToolAdvanceConfig m_toolAdvanceConfig;
+                    bool m_toolAdvanceConfigHasBeenSet;
 
                 };
             }
