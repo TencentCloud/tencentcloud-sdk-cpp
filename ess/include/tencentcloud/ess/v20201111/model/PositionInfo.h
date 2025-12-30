@@ -172,6 +172,69 @@ namespace TencentCloud
                      */
                     bool IdHasBeenSet() const;
 
+                    /**
+                     * 获取开始位置
+                     * @return Begin 开始位置
+                     * 
+                     */
+                    int64_t GetBegin() const;
+
+                    /**
+                     * 设置开始位置
+                     * @param _begin 开始位置
+                     * 
+                     */
+                    void SetBegin(const int64_t& _begin);
+
+                    /**
+                     * 判断参数 Begin 是否已赋值
+                     * @return Begin 是否已赋值
+                     * 
+                     */
+                    bool BeginHasBeenSet() const;
+
+                    /**
+                     * 获取结束位置
+                     * @return End 结束位置
+                     * 
+                     */
+                    int64_t GetEnd() const;
+
+                    /**
+                     * 设置结束位置
+                     * @param _end 结束位置
+                     * 
+                     */
+                    void SetEnd(const int64_t& _end);
+
+                    /**
+                     * 判断参数 End 是否已赋值
+                     * @return End 是否已赋值
+                     * 
+                     */
+                    bool EndHasBeenSet() const;
+
+                    /**
+                     * 获取文档类型，1：pdf，2：doc 文档
+                     * @return DocType 文档类型，1：pdf，2：doc 文档
+                     * 
+                     */
+                    int64_t GetDocType() const;
+
+                    /**
+                     * 设置文档类型，1：pdf，2：doc 文档
+                     * @param _docType 文档类型，1：pdf，2：doc 文档
+                     * 
+                     */
+                    void SetDocType(const int64_t& _docType);
+
+                    /**
+                     * 判断参数 DocType 是否已赋值
+                     * @return DocType 是否已赋值
+                     * 
+                     */
+                    bool DocTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +272,24 @@ namespace TencentCloud
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * 开始位置
+                     */
+                    int64_t m_begin;
+                    bool m_beginHasBeenSet;
+
+                    /**
+                     * 结束位置
+                     */
+                    int64_t m_end;
+                    bool m_endHasBeenSet;
+
+                    /**
+                     * 文档类型，1：pdf，2：doc 文档
+                     */
+                    int64_t m_docType;
+                    bool m_docTypeHasBeenSet;
 
                 };
             }

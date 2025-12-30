@@ -699,6 +699,48 @@ namespace TencentCloud
                      */
                     bool OldAlgorithmHasBeenSet() const;
 
+                    /**
+                     * 获取实例状态，不同云产品状态不一样	
+                     * @return InstanceStatus 实例状态，不同云产品状态不一样	
+                     * 
+                     */
+                    std::string GetInstanceStatus() const;
+
+                    /**
+                     * 设置实例状态，不同云产品状态不一样	
+                     * @param _instanceStatus 实例状态，不同云产品状态不一样	
+                     * 
+                     */
+                    void SetInstanceStatus(const std::string& _instanceStatus);
+
+                    /**
+                     * 判断参数 InstanceStatus 是否已赋值
+                     * @return InstanceStatus 是否已赋值
+                     * 
+                     */
+                    bool InstanceStatusHasBeenSet() const;
+
+                    /**
+                     * 获取监听器状态
+                     * @return ListenerStatus 监听器状态
+                     * 
+                     */
+                    std::string GetListenerStatus() const;
+
+                    /**
+                     * 设置监听器状态
+                     * @param _listenerStatus 监听器状态
+                     * 
+                     */
+                    void SetListenerStatus(const std::string& _listenerStatus);
+
+                    /**
+                     * 判断参数 ListenerStatus 是否已赋值
+                     * @return ListenerStatus 是否已赋值
+                     * 
+                     */
+                    bool ListenerStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -882,6 +924,18 @@ namespace TencentCloud
                      */
                     std::string m_oldAlgorithm;
                     bool m_oldAlgorithmHasBeenSet;
+
+                    /**
+                     * 实例状态，不同云产品状态不一样	
+                     */
+                    std::string m_instanceStatus;
+                    bool m_instanceStatusHasBeenSet;
+
+                    /**
+                     * 监听器状态
+                     */
+                    std::string m_listenerStatus;
+                    bool m_listenerStatusHasBeenSet;
 
                 };
             }

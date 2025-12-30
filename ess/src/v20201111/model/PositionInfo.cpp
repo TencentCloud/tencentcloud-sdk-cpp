@@ -26,7 +26,10 @@ PositionInfo::PositionInfo() :
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
     m_pageIndexHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_beginHasBeenSet(false),
+    m_endHasBeenSet(false),
+    m_docTypeHasBeenSet(false)
 {
 }
 
@@ -95,6 +98,36 @@ CoreInternalOutcome PositionInfo::Deserialize(const rapidjson::Value &value)
         m_idHasBeenSet = true;
     }
 
+    if (value.HasMember("Begin") && !value["Begin"].IsNull())
+    {
+        if (!value["Begin"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PositionInfo.Begin` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_begin = value["Begin"].GetInt64();
+        m_beginHasBeenSet = true;
+    }
+
+    if (value.HasMember("End") && !value["End"].IsNull())
+    {
+        if (!value["End"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PositionInfo.End` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_end = value["End"].GetInt64();
+        m_endHasBeenSet = true;
+    }
+
+    if (value.HasMember("DocType") && !value["DocType"].IsNull())
+    {
+        if (!value["DocType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PositionInfo.DocType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_docType = value["DocType"].GetInt64();
+        m_docTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +181,30 @@ void PositionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_beginHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Begin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_begin, allocator);
+    }
+
+    if (m_endHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "End";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_end, allocator);
+    }
+
+    if (m_docTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DocType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_docType, allocator);
     }
 
 }
@@ -247,5 +304,53 @@ void PositionInfo::SetId(const string& _id)
 bool PositionInfo::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+int64_t PositionInfo::GetBegin() const
+{
+    return m_begin;
+}
+
+void PositionInfo::SetBegin(const int64_t& _begin)
+{
+    m_begin = _begin;
+    m_beginHasBeenSet = true;
+}
+
+bool PositionInfo::BeginHasBeenSet() const
+{
+    return m_beginHasBeenSet;
+}
+
+int64_t PositionInfo::GetEnd() const
+{
+    return m_end;
+}
+
+void PositionInfo::SetEnd(const int64_t& _end)
+{
+    m_end = _end;
+    m_endHasBeenSet = true;
+}
+
+bool PositionInfo::EndHasBeenSet() const
+{
+    return m_endHasBeenSet;
+}
+
+int64_t PositionInfo::GetDocType() const
+{
+    return m_docType;
+}
+
+void PositionInfo::SetDocType(const int64_t& _docType)
+{
+    m_docType = _docType;
+    m_docTypeHasBeenSet = true;
+}
+
+bool PositionInfo::DocTypeHasBeenSet() const
+{
+    return m_docTypeHasBeenSet;
 }
 

@@ -45,7 +45,9 @@ UpdateRecordDetail::UpdateRecordDetail() :
     m_tCBTypeHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_algorithmHasBeenSet(false),
-    m_oldAlgorithmHasBeenSet(false)
+    m_oldAlgorithmHasBeenSet(false),
+    m_instanceStatusHasBeenSet(false),
+    m_listenerStatusHasBeenSet(false)
 {
 }
 
@@ -307,6 +309,26 @@ CoreInternalOutcome UpdateRecordDetail::Deserialize(const rapidjson::Value &valu
         m_oldAlgorithmHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceStatus") && !value["InstanceStatus"].IsNull())
+    {
+        if (!value["InstanceStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateRecordDetail.InstanceStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceStatus = string(value["InstanceStatus"].GetString());
+        m_instanceStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ListenerStatus") && !value["ListenerStatus"].IsNull())
+    {
+        if (!value["ListenerStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateRecordDetail.ListenerStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_listenerStatus = string(value["ListenerStatus"].GetString());
+        m_listenerStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -517,6 +539,22 @@ void UpdateRecordDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "OldAlgorithm";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_oldAlgorithm.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_listenerStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ListenerStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_listenerStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -920,5 +958,37 @@ void UpdateRecordDetail::SetOldAlgorithm(const string& _oldAlgorithm)
 bool UpdateRecordDetail::OldAlgorithmHasBeenSet() const
 {
     return m_oldAlgorithmHasBeenSet;
+}
+
+string UpdateRecordDetail::GetInstanceStatus() const
+{
+    return m_instanceStatus;
+}
+
+void UpdateRecordDetail::SetInstanceStatus(const string& _instanceStatus)
+{
+    m_instanceStatus = _instanceStatus;
+    m_instanceStatusHasBeenSet = true;
+}
+
+bool UpdateRecordDetail::InstanceStatusHasBeenSet() const
+{
+    return m_instanceStatusHasBeenSet;
+}
+
+string UpdateRecordDetail::GetListenerStatus() const
+{
+    return m_listenerStatus;
+}
+
+void UpdateRecordDetail::SetListenerStatus(const string& _listenerStatus)
+{
+    m_listenerStatus = _listenerStatus;
+    m_listenerStatusHasBeenSet = true;
+}
+
+bool UpdateRecordDetail::ListenerStatusHasBeenSet() const
+{
+    return m_listenerStatusHasBeenSet;
 }
 

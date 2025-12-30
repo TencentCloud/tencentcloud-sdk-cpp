@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取专用集群配置列表
-                     * @return DedicatedClusterTypeSet 专用集群配置列表
+                     * 获取<p>专用集群配置列表</p>
+                     * @return DedicatedClusterTypeSet <p>专用集群配置列表</p>
                      * 
                      */
                     std::vector<DedicatedClusterType> GetDedicatedClusterTypeSet() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool DedicatedClusterTypeSetHasBeenSet() const;
 
                     /**
-                     * 获取符合条件的个数
-                     * @return TotalCount 符合条件的个数
+                     * 获取<p>符合条件的个数</p>
+                     * @return TotalCount <p>符合条件的个数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 专用集群配置列表
+                     * <p>专用集群配置列表</p>
                      */
                     std::vector<DedicatedClusterType> m_dedicatedClusterTypeSet;
                     bool m_dedicatedClusterTypeSetHasBeenSet;
 
                     /**
-                     * 符合条件的个数
+                     * <p>符合条件的个数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

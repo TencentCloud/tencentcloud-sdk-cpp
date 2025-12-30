@@ -68,6 +68,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/OperateSealsRequest.h
   include/tencentcloud/ess/v20201111/model/Staff.h
   include/tencentcloud/ess/v20201111/model/DescribeFileUrlsResponse.h
+  include/tencentcloud/ess/v20201111/model/ContractSummaryInfo.h
   include/tencentcloud/ess/v20201111/model/RelieveInfo.h
   include/tencentcloud/ess/v20201111/model/CreateBatchAdminChangeInvitationsUrlResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationSealsResponse.h
@@ -97,6 +98,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/IntegrationDepartment.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationRolesResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeBillUsageDetailResponse.h
+  include/tencentcloud/ess/v20201111/model/ContractSummary.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowBriefsResponse.h
   include/tencentcloud/ess/v20201111/model/CreateBatchAdminChangeInvitationsRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowTemplatesResponse.h
@@ -276,6 +278,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateIntegrationUserRolesRequest.h
   include/tencentcloud/ess/v20201111/model/SuccessUpdateStaffData.h
   include/tencentcloud/ess/v20201111/model/SuccessCreateStaffData.h
+  include/tencentcloud/ess/v20201111/model/Identity.h
   include/tencentcloud/ess/v20201111/model/UploadFile.h
   include/tencentcloud/ess/v20201111/model/CreateFlowSignReviewResponse.h
   include/tencentcloud/ess/v20201111/model/RenewAutoSignLicenseRequest.h
@@ -456,6 +459,7 @@ set(ess_src
   src/v20201111/model/OperateSealsRequest.cpp
   src/v20201111/model/Staff.cpp
   src/v20201111/model/DescribeFileUrlsResponse.cpp
+  src/v20201111/model/ContractSummaryInfo.cpp
   src/v20201111/model/RelieveInfo.cpp
   src/v20201111/model/CreateBatchAdminChangeInvitationsUrlResponse.cpp
   src/v20201111/model/DescribeOrganizationSealsResponse.cpp
@@ -485,6 +489,7 @@ set(ess_src
   src/v20201111/model/IntegrationDepartment.cpp
   src/v20201111/model/DescribeIntegrationRolesResponse.cpp
   src/v20201111/model/DescribeBillUsageDetailResponse.cpp
+  src/v20201111/model/ContractSummary.cpp
   src/v20201111/model/DescribeFlowBriefsResponse.cpp
   src/v20201111/model/CreateBatchAdminChangeInvitationsRequest.cpp
   src/v20201111/model/DescribeFlowTemplatesResponse.cpp
@@ -664,6 +669,7 @@ set(ess_src
   src/v20201111/model/CreateIntegrationUserRolesRequest.cpp
   src/v20201111/model/SuccessUpdateStaffData.cpp
   src/v20201111/model/SuccessCreateStaffData.cpp
+  src/v20201111/model/Identity.cpp
   src/v20201111/model/UploadFile.cpp
   src/v20201111/model/CreateFlowSignReviewResponse.cpp
   src/v20201111/model/RenewAutoSignLicenseRequest.cpp

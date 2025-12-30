@@ -29,7 +29,9 @@ ChannelCreateOrganizationBatchSignUrlRequest::ChannelCreateOrganizationBatchSign
     m_nameHasBeenSet(false),
     m_mobileHasBeenSet(false),
     m_flowGroupIdHasBeenSet(false),
-    m_canBatchRejectHasBeenSet(false)
+    m_canBatchRejectHasBeenSet(false),
+    m_dynamicSignOptionHasBeenSet(false),
+    m_recipientIdsHasBeenSet(false)
 {
 }
 
@@ -100,6 +102,28 @@ string ChannelCreateOrganizationBatchSignUrlRequest::ToJsonString() const
         string key = "CanBatchReject";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_canBatchReject, allocator);
+    }
+
+    if (m_dynamicSignOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DynamicSignOption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dynamicSignOption.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_recipientIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecipientIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_recipientIds.begin(); itr != m_recipientIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -220,6 +244,38 @@ void ChannelCreateOrganizationBatchSignUrlRequest::SetCanBatchReject(const bool&
 bool ChannelCreateOrganizationBatchSignUrlRequest::CanBatchRejectHasBeenSet() const
 {
     return m_canBatchRejectHasBeenSet;
+}
+
+DynamicSignOption ChannelCreateOrganizationBatchSignUrlRequest::GetDynamicSignOption() const
+{
+    return m_dynamicSignOption;
+}
+
+void ChannelCreateOrganizationBatchSignUrlRequest::SetDynamicSignOption(const DynamicSignOption& _dynamicSignOption)
+{
+    m_dynamicSignOption = _dynamicSignOption;
+    m_dynamicSignOptionHasBeenSet = true;
+}
+
+bool ChannelCreateOrganizationBatchSignUrlRequest::DynamicSignOptionHasBeenSet() const
+{
+    return m_dynamicSignOptionHasBeenSet;
+}
+
+vector<string> ChannelCreateOrganizationBatchSignUrlRequest::GetRecipientIds() const
+{
+    return m_recipientIds;
+}
+
+void ChannelCreateOrganizationBatchSignUrlRequest::SetRecipientIds(const vector<string>& _recipientIds)
+{
+    m_recipientIds = _recipientIds;
+    m_recipientIdsHasBeenSet = true;
+}
+
+bool ChannelCreateOrganizationBatchSignUrlRequest::RecipientIdsHasBeenSet() const
+{
+    return m_recipientIdsHasBeenSet;
 }
 
 

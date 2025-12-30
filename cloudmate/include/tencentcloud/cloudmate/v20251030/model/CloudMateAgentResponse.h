@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取unix时间戳
-                     * @return Timestamp unix时间戳
+                     * 获取Unix 时间戳
+                     * @return Timestamp Unix 时间戳
                      * 
                      */
                     uint64_t GetTimestamp() const;
@@ -151,7 +151,7 @@ namespace TencentCloud
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * unix时间戳
+                     * Unix 时间戳
                      */
                     uint64_t m_timestamp;
                     bool m_timestampHasBeenSet;

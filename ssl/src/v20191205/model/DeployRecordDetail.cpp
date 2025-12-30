@@ -45,7 +45,8 @@ DeployRecordDetail::DeployRecordDetail() :
     m_urlHasBeenSet(false),
     m_algorithmHasBeenSet(false),
     m_oldAlgorithmHasBeenSet(false),
-    m_instanceStatusHasBeenSet(false)
+    m_instanceStatusHasBeenSet(false),
+    m_listenerStatusHasBeenSet(false)
 {
 }
 
@@ -310,6 +311,16 @@ CoreInternalOutcome DeployRecordDetail::Deserialize(const rapidjson::Value &valu
         m_instanceStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("ListenerStatus") && !value["ListenerStatus"].IsNull())
+    {
+        if (!value["ListenerStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeployRecordDetail.ListenerStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_listenerStatus = string(value["ListenerStatus"].GetString());
+        m_listenerStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -525,6 +536,14 @@ void DeployRecordDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "InstanceStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_listenerStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ListenerStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_listenerStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -928,5 +947,21 @@ void DeployRecordDetail::SetInstanceStatus(const string& _instanceStatus)
 bool DeployRecordDetail::InstanceStatusHasBeenSet() const
 {
     return m_instanceStatusHasBeenSet;
+}
+
+string DeployRecordDetail::GetListenerStatus() const
+{
+    return m_listenerStatus;
+}
+
+void DeployRecordDetail::SetListenerStatus(const string& _listenerStatus)
+{
+    m_listenerStatus = _listenerStatus;
+    m_listenerStatusHasBeenSet = true;
+}
+
+bool DeployRecordDetail::ListenerStatusHasBeenSet() const
+{
+    return m_listenerStatusHasBeenSet;
 }
 

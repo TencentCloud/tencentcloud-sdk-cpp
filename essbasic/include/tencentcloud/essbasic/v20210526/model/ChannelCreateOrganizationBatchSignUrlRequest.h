@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/Agent.h>
+#include <tencentcloud/essbasic/v20210526/model/DynamicSignOption.h>
 
 
 namespace TencentCloud
@@ -222,6 +223,48 @@ namespace TencentCloud
                      */
                     bool CanBatchRejectHasBeenSet() const;
 
+                    /**
+                     * 获取动态签署方领取链接配置。
+                     * @return DynamicSignOption 动态签署方领取链接配置。
+                     * 
+                     */
+                    DynamicSignOption GetDynamicSignOption() const;
+
+                    /**
+                     * 设置动态签署方领取链接配置。
+                     * @param _dynamicSignOption 动态签署方领取链接配置。
+                     * 
+                     */
+                    void SetDynamicSignOption(const DynamicSignOption& _dynamicSignOption);
+
+                    /**
+                     * 判断参数 DynamicSignOption 是否已赋值
+                     * @return DynamicSignOption 是否已赋值
+                     * 
+                     */
+                    bool DynamicSignOptionHasBeenSet() const;
+
+                    /**
+                     * 获取为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。 注：生成动态签署方领取时此参数必传。
+                     * @return RecipientIds 为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。 注：生成动态签署方领取时此参数必传。
+                     * 
+                     */
+                    std::vector<std::string> GetRecipientIds() const;
+
+                    /**
+                     * 设置为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。 注：生成动态签署方领取时此参数必传。
+                     * @param _recipientIds 为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。 注：生成动态签署方领取时此参数必传。
+                     * 
+                     */
+                    void SetRecipientIds(const std::vector<std::string>& _recipientIds);
+
+                    /**
+                     * 判断参数 RecipientIds 是否已赋值
+                     * @return RecipientIds 是否已赋值
+                     * 
+                     */
+                    bool RecipientIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -273,6 +316,18 @@ namespace TencentCloud
                      */
                     bool m_canBatchReject;
                     bool m_canBatchRejectHasBeenSet;
+
+                    /**
+                     * 动态签署方领取链接配置。
+                     */
+                    DynamicSignOption m_dynamicSignOption;
+                    bool m_dynamicSignOptionHasBeenSet;
+
+                    /**
+                     * 为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。 注：生成动态签署方领取时此参数必传。
+                     */
+                    std::vector<std::string> m_recipientIds;
+                    bool m_recipientIdsHasBeenSet;
 
                 };
             }

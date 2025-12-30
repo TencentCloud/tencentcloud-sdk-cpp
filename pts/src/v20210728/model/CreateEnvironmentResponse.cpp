@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Pts::V20210728::Model;
 using namespace std;
 
-CreateEnvironmentResponse::CreateEnvironmentResponse()
+CreateEnvironmentResponse::CreateEnvironmentResponse() :
+    m_envIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateEnvironmentResponse::Deserialize(const string &payload
     }
 
 
+    if (rsp.HasMember("EnvId") && !rsp["EnvId"].IsNull())
+    {
+        if (!rsp["EnvId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnvId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_envId = string(rsp["EnvId"].GetString());
+        m_envIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateEnvironmentResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_envIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_envId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateEnvironmentResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateEnvironmentResponse::GetEnvId() const
+{
+    return m_envId;
+}
+
+bool CreateEnvironmentResponse::EnvIdHasBeenSet() const
+{
+    return m_envIdHasBeenSet;
+}
 
 

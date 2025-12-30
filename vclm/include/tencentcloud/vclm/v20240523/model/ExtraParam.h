@@ -67,6 +67,63 @@ namespace TencentCloud
                      */
                     bool UserDesignatedUrlHasBeenSet() const;
 
+                    /**
+                     * 获取回调地址
+需要您在创建任务时主动设置 CallbackUrl，请求方法为 POST，当视频生成结束时，我们将向此地址发送生成结果。
+数据格式如下：
+{
+    "JobId": "1397428070633955328",
+    "Status": "DONE",
+    "ErrorCode": "",
+    "ErrorMessage": "",
+    "ResultVideoUrl": "https://vcg.cos.tencentcos.cn/template_to_video/fa80b846-b933-4981-afad-8a39b46ef2ca.mp4"
+}
+                     * @return CallbackUrl 回调地址
+需要您在创建任务时主动设置 CallbackUrl，请求方法为 POST，当视频生成结束时，我们将向此地址发送生成结果。
+数据格式如下：
+{
+    "JobId": "1397428070633955328",
+    "Status": "DONE",
+    "ErrorCode": "",
+    "ErrorMessage": "",
+    "ResultVideoUrl": "https://vcg.cos.tencentcos.cn/template_to_video/fa80b846-b933-4981-afad-8a39b46ef2ca.mp4"
+}
+                     * 
+                     */
+                    std::string GetCallbackUrl() const;
+
+                    /**
+                     * 设置回调地址
+需要您在创建任务时主动设置 CallbackUrl，请求方法为 POST，当视频生成结束时，我们将向此地址发送生成结果。
+数据格式如下：
+{
+    "JobId": "1397428070633955328",
+    "Status": "DONE",
+    "ErrorCode": "",
+    "ErrorMessage": "",
+    "ResultVideoUrl": "https://vcg.cos.tencentcos.cn/template_to_video/fa80b846-b933-4981-afad-8a39b46ef2ca.mp4"
+}
+                     * @param _callbackUrl 回调地址
+需要您在创建任务时主动设置 CallbackUrl，请求方法为 POST，当视频生成结束时，我们将向此地址发送生成结果。
+数据格式如下：
+{
+    "JobId": "1397428070633955328",
+    "Status": "DONE",
+    "ErrorCode": "",
+    "ErrorMessage": "",
+    "ResultVideoUrl": "https://vcg.cos.tencentcos.cn/template_to_video/fa80b846-b933-4981-afad-8a39b46ef2ca.mp4"
+}
+                     * 
+                     */
+                    void SetCallbackUrl(const std::string& _callbackUrl);
+
+                    /**
+                     * 判断参数 CallbackUrl 是否已赋值
+                     * @return CallbackUrl 是否已赋值
+                     * 
+                     */
+                    bool CallbackUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -74,6 +131,21 @@ namespace TencentCloud
                      */
                     std::string m_userDesignatedUrl;
                     bool m_userDesignatedUrlHasBeenSet;
+
+                    /**
+                     * 回调地址
+需要您在创建任务时主动设置 CallbackUrl，请求方法为 POST，当视频生成结束时，我们将向此地址发送生成结果。
+数据格式如下：
+{
+    "JobId": "1397428070633955328",
+    "Status": "DONE",
+    "ErrorCode": "",
+    "ErrorMessage": "",
+    "ResultVideoUrl": "https://vcg.cos.tencentcos.cn/template_to_video/fa80b846-b933-4981-afad-8a39b46ef2ca.mp4"
+}
+                     */
+                    std::string m_callbackUrl;
+                    bool m_callbackUrlHasBeenSet;
 
                 };
             }

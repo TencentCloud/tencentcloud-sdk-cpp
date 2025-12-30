@@ -48,11 +48,13 @@ namespace TencentCloud
                     /**
                      * 获取模型名称。
 当前支持的模型列表：
+Hunyuan,
 GEM，
 Jimeng，
 Qwen。
                      * @return ModelName 模型名称。
 当前支持的模型列表：
+Hunyuan,
 GEM，
 Jimeng，
 Qwen。
@@ -63,11 +65,13 @@ Qwen。
                     /**
                      * 设置模型名称。
 当前支持的模型列表：
+Hunyuan,
 GEM，
 Jimeng，
 Qwen。
                      * @param _modelName 模型名称。
 当前支持的模型列表：
+Hunyuan,
 GEM，
 Jimeng，
 Qwen。
@@ -295,6 +299,7 @@ Qwen。
                     /**
                      * 模型名称。
 当前支持的模型列表：
+Hunyuan,
 GEM，
 Jimeng，
 Qwen。

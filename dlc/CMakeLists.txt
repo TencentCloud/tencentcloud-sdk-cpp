@@ -229,6 +229,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CancelTaskResponse.h
   include/tencentcloud/dlc/v20210125/model/TableInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSQLResponse.h
+  include/tencentcloud/dlc/v20210125/model/DescribeResourceGroupUsageInfoResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSQLCostResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeTasksOverviewResponse.h
   include/tencentcloud/dlc/v20210125/model/KafkaInfo.h
@@ -510,6 +511,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/LockComponentInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeWorkGroupsRequest.h
   include/tencentcloud/dlc/v20210125/model/LockMetaDataRequest.h
+  include/tencentcloud/dlc/v20210125/model/DescribeResourceGroupUsageInfoRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSQLCostRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateNotebookSessionResponse.h
   include/tencentcloud/dlc/v20210125/model/DataMaskStrategyPolicy.h
@@ -749,6 +751,7 @@ set(dlc_src
   src/v20210125/model/CancelTaskResponse.cpp
   src/v20210125/model/TableInfo.cpp
   src/v20210125/model/DescribeSparkSessionBatchSQLResponse.cpp
+  src/v20210125/model/DescribeResourceGroupUsageInfoResponse.cpp
   src/v20210125/model/DescribeSparkSessionBatchSQLCostResponse.cpp
   src/v20210125/model/DescribeTasksOverviewResponse.cpp
   src/v20210125/model/KafkaInfo.cpp
@@ -1030,6 +1033,7 @@ set(dlc_src
   src/v20210125/model/LockComponentInfo.cpp
   src/v20210125/model/DescribeWorkGroupsRequest.cpp
   src/v20210125/model/LockMetaDataRequest.cpp
+  src/v20210125/model/DescribeResourceGroupUsageInfoRequest.cpp
   src/v20210125/model/DescribeSparkSessionBatchSQLCostRequest.cpp
   src/v20210125/model/CreateNotebookSessionResponse.cpp
   src/v20210125/model/DataMaskStrategyPolicy.cpp

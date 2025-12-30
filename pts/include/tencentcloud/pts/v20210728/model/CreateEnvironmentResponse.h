@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取环境ID
+                     * @return EnvId 环境ID
+                     * 
+                     */
+                    std::string GetEnvId() const;
+
+                    /**
+                     * 判断参数 EnvId 是否已赋值
+                     * @return EnvId 是否已赋值
+                     * 
+                     */
+                    bool EnvIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 环境ID
+                     */
+                    std::string m_envId;
+                    bool m_envIdHasBeenSet;
 
                 };
             }

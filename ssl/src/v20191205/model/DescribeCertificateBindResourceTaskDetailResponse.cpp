@@ -37,7 +37,11 @@ DescribeCertificateBindResourceTaskDetailResponse::DescribeCertificateBindResour
     m_statusHasBeenSet(false),
     m_cacheTimeHasBeenSet(false),
     m_tSEHasBeenSet(false),
-    m_cOSHasBeenSet(false)
+    m_cOSHasBeenSet(false),
+    m_tDMQHasBeenSet(false),
+    m_mQTTHasBeenSet(false),
+    m_gAAPHasBeenSet(false),
+    m_sCFHasBeenSet(false)
 {
 }
 
@@ -335,6 +339,86 @@ CoreInternalOutcome DescribeCertificateBindResourceTaskDetailResponse::Deseriali
         m_cOSHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TDMQ") && !rsp["TDMQ"].IsNull())
+    {
+        if (!rsp["TDMQ"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TDMQ` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["TDMQ"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TDMQInstanceList item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tDMQ.push_back(item);
+        }
+        m_tDMQHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("MQTT") && !rsp["MQTT"].IsNull())
+    {
+        if (!rsp["MQTT"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MQTT` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["MQTT"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MQTTInstanceList item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_mQTT.push_back(item);
+        }
+        m_mQTTHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("GAAP") && !rsp["GAAP"].IsNull())
+    {
+        if (!rsp["GAAP"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `GAAP` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["GAAP"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            GAAPInstanceList item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_gAAP.push_back(item);
+        }
+        m_gAAPHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SCF") && !rsp["SCF"].IsNull())
+    {
+        if (!rsp["SCF"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SCF` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SCF"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SCFInstanceList item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_sCF.push_back(item);
+        }
+        m_sCFHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -541,6 +625,66 @@ string DescribeCertificateBindResourceTaskDetailResponse::ToJsonString() const
         }
     }
 
+    if (m_tDMQHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TDMQ";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tDMQ.begin(); itr != m_tDMQ.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_mQTTHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MQTT";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_mQTT.begin(); itr != m_mQTT.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_gAAPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GAAP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_gAAP.begin(); itr != m_gAAP.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_sCFHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SCF";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_sCF.begin(); itr != m_sCF.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -691,6 +835,46 @@ vector<COSInstanceList> DescribeCertificateBindResourceTaskDetailResponse::GetCO
 bool DescribeCertificateBindResourceTaskDetailResponse::COSHasBeenSet() const
 {
     return m_cOSHasBeenSet;
+}
+
+vector<TDMQInstanceList> DescribeCertificateBindResourceTaskDetailResponse::GetTDMQ() const
+{
+    return m_tDMQ;
+}
+
+bool DescribeCertificateBindResourceTaskDetailResponse::TDMQHasBeenSet() const
+{
+    return m_tDMQHasBeenSet;
+}
+
+vector<MQTTInstanceList> DescribeCertificateBindResourceTaskDetailResponse::GetMQTT() const
+{
+    return m_mQTT;
+}
+
+bool DescribeCertificateBindResourceTaskDetailResponse::MQTTHasBeenSet() const
+{
+    return m_mQTTHasBeenSet;
+}
+
+vector<GAAPInstanceList> DescribeCertificateBindResourceTaskDetailResponse::GetGAAP() const
+{
+    return m_gAAP;
+}
+
+bool DescribeCertificateBindResourceTaskDetailResponse::GAAPHasBeenSet() const
+{
+    return m_gAAPHasBeenSet;
+}
+
+vector<SCFInstanceList> DescribeCertificateBindResourceTaskDetailResponse::GetSCF() const
+{
+    return m_sCF;
+}
+
+bool DescribeCertificateBindResourceTaskDetailResponse::SCFHasBeenSet() const
+{
+    return m_sCFHasBeenSet;
 }
 
 

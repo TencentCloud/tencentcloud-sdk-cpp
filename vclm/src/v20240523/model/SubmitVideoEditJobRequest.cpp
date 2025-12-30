@@ -25,6 +25,7 @@ using namespace std;
 SubmitVideoEditJobRequest::SubmitVideoEditJobRequest() :
     m_videoUrlHasBeenSet(false),
     m_promptHasBeenSet(false),
+    m_imagesHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_logoAddHasBeenSet(false),
     m_logoParamHasBeenSet(false)
@@ -52,6 +53,21 @@ string SubmitVideoEditJobRequest::ToJsonString() const
         string key = "Prompt";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_prompt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Images";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_images.begin(); itr != m_images.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_imageHasBeenSet)
@@ -118,6 +134,22 @@ void SubmitVideoEditJobRequest::SetPrompt(const string& _prompt)
 bool SubmitVideoEditJobRequest::PromptHasBeenSet() const
 {
     return m_promptHasBeenSet;
+}
+
+vector<Image> SubmitVideoEditJobRequest::GetImages() const
+{
+    return m_images;
+}
+
+void SubmitVideoEditJobRequest::SetImages(const vector<Image>& _images)
+{
+    m_images = _images;
+    m_imagesHasBeenSet = true;
+}
+
+bool SubmitVideoEditJobRequest::ImagesHasBeenSet() const
+{
+    return m_imagesHasBeenSet;
 }
 
 Image SubmitVideoEditJobRequest::GetImage() const

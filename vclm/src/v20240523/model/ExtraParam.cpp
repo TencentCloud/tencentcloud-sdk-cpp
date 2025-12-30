@@ -21,7 +21,8 @@ using namespace TencentCloud::Vclm::V20240523::Model;
 using namespace std;
 
 ExtraParam::ExtraParam() :
-    m_userDesignatedUrlHasBeenSet(false)
+    m_userDesignatedUrlHasBeenSet(false),
+    m_callbackUrlHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome ExtraParam::Deserialize(const rapidjson::Value &value)
         m_userDesignatedUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("CallbackUrl") && !value["CallbackUrl"].IsNull())
+    {
+        if (!value["CallbackUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtraParam.CallbackUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_callbackUrl = string(value["CallbackUrl"].GetString());
+        m_callbackUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void ExtraParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "UserDesignatedUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userDesignatedUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_callbackUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void ExtraParam::SetUserDesignatedUrl(const string& _userDesignatedUrl)
 bool ExtraParam::UserDesignatedUrlHasBeenSet() const
 {
     return m_userDesignatedUrlHasBeenSet;
+}
+
+string ExtraParam::GetCallbackUrl() const
+{
+    return m_callbackUrl;
+}
+
+void ExtraParam::SetCallbackUrl(const string& _callbackUrl)
+{
+    m_callbackUrl = _callbackUrl;
+    m_callbackUrlHasBeenSet = true;
+}
+
+bool ExtraParam::CallbackUrlHasBeenSet() const
+{
+    return m_callbackUrlHasBeenSet;
 }
 

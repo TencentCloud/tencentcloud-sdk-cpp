@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取游标ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScrollId 游标ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScrollId() const;
 
                     /**
                      * 设置游标ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scrollId 游标ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScrollId(const std::string& _scrollId);
@@ -116,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -176,14 +168,12 @@ namespace TencentCloud
 
                     /**
                      * 游标ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scrollId;
                     bool m_scrollIdHasBeenSet;
 
                     /**
                      * 查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

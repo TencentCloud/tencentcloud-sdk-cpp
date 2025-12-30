@@ -215,6 +215,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeNotebookSessionsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeOtherCHDFSBindingListRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeOtherCHDFSBindingListResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeResourceGroupUsageInfoRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeResourceGroupUsageInfoResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeResultDownloadRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeResultDownloadResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeScriptsRequest.h>
@@ -693,6 +695,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOtherCHDFSBindingListResponse> DescribeOtherCHDFSBindingListOutcome;
                 typedef std::future<DescribeOtherCHDFSBindingListOutcome> DescribeOtherCHDFSBindingListOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeOtherCHDFSBindingListRequest&, DescribeOtherCHDFSBindingListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOtherCHDFSBindingListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceGroupUsageInfoResponse> DescribeResourceGroupUsageInfoOutcome;
+                typedef std::future<DescribeResourceGroupUsageInfoOutcome> DescribeResourceGroupUsageInfoOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeResourceGroupUsageInfoRequest&, DescribeResourceGroupUsageInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGroupUsageInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResultDownloadResponse> DescribeResultDownloadOutcome;
                 typedef std::future<DescribeResultDownloadOutcome> DescribeResultDownloadOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeResultDownloadRequest&, DescribeResultDownloadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResultDownloadAsyncHandler;
@@ -1825,6 +1830,15 @@ namespace TencentCloud
                 DescribeOtherCHDFSBindingListOutcome DescribeOtherCHDFSBindingList(const Model::DescribeOtherCHDFSBindingListRequest &request);
                 void DescribeOtherCHDFSBindingListAsync(const Model::DescribeOtherCHDFSBindingListRequest& request, const DescribeOtherCHDFSBindingListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeOtherCHDFSBindingListOutcomeCallable DescribeOtherCHDFSBindingListCallable(const Model::DescribeOtherCHDFSBindingListRequest& request);
+
+                /**
+                 *本接口根据资源组ID查询资源组CU使用情况
+                 * @param req DescribeResourceGroupUsageInfoRequest
+                 * @return DescribeResourceGroupUsageInfoOutcome
+                 */
+                DescribeResourceGroupUsageInfoOutcome DescribeResourceGroupUsageInfo(const Model::DescribeResourceGroupUsageInfoRequest &request);
+                void DescribeResourceGroupUsageInfoAsync(const Model::DescribeResourceGroupUsageInfoRequest& request, const DescribeResourceGroupUsageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceGroupUsageInfoOutcomeCallable DescribeResourceGroupUsageInfoCallable(const Model::DescribeResourceGroupUsageInfoRequest& request);
 
                 /**
                  *查询结果下载任务

@@ -155,6 +155,7 @@ set(pts_public_header_model
   include/tencentcloud/pts/v20210728/model/NotificationHook.h
   include/tencentcloud/pts/v20210728/model/DescribeJobsResponse.h
   include/tencentcloud/pts/v20210728/model/GenerateTmpKeyRequest.h
+  include/tencentcloud/pts/v20210728/model/UpdateProjectResponse.h
   include/tencentcloud/pts/v20210728/model/DescribeSampleBatchQueryResponse.h
   include/tencentcloud/pts/v20210728/model/StartJobResponse.h
   include/tencentcloud/pts/v20210728/model/UpdateScenarioRequest.h
@@ -166,7 +167,7 @@ set(pts_public_header_model
   include/tencentcloud/pts/v20210728/model/Concurrency.h
   include/tencentcloud/pts/v20210728/model/DeleteAlertChannelRequest.h
   include/tencentcloud/pts/v20210728/model/DescribeErrorSummaryResponse.h
-  include/tencentcloud/pts/v20210728/model/UpdateProjectResponse.h
+  include/tencentcloud/pts/v20210728/model/EnvVar.h
   include/tencentcloud/pts/v20210728/model/UpdateFileScenarioRelationResponse.h
   )
 
@@ -308,6 +309,7 @@ set(pts_src
   src/v20210728/model/NotificationHook.cpp
   src/v20210728/model/DescribeJobsResponse.cpp
   src/v20210728/model/GenerateTmpKeyRequest.cpp
+  src/v20210728/model/UpdateProjectResponse.cpp
   src/v20210728/model/DescribeSampleBatchQueryResponse.cpp
   src/v20210728/model/StartJobResponse.cpp
   src/v20210728/model/UpdateScenarioRequest.cpp
@@ -319,7 +321,7 @@ set(pts_src
   src/v20210728/model/Concurrency.cpp
   src/v20210728/model/DeleteAlertChannelRequest.cpp
   src/v20210728/model/DescribeErrorSummaryResponse.cpp
-  src/v20210728/model/UpdateProjectResponse.cpp
+  src/v20210728/model/EnvVar.cpp
   src/v20210728/model/UpdateFileScenarioRelationResponse.cpp
   )
 

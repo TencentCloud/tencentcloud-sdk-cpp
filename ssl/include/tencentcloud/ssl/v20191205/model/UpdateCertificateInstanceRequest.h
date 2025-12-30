@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool RegionsHasBeenSet() const;
 
                     /**
-                     * 获取云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb、tke、apigateway、waf、tcb、tse、cos
-                     * @return ResourceTypesRegions 云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb、tke、apigateway、waf、tcb、tse、cos
+                     * 获取云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb、tke、apigateway、waf、tcb、tse、cos、mqtt
+                     * @return ResourceTypesRegions 云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb、tke、apigateway、waf、tcb、tse、cos、mqtt
                      * 
                      */
                     std::vector<ResourceTypeRegions> GetResourceTypesRegions() const;
 
                     /**
-                     * 设置云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb、tke、apigateway、waf、tcb、tse、cos
-                     * @param _resourceTypesRegions 云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb、tke、apigateway、waf、tcb、tse、cos
+                     * 设置云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb、tke、apigateway、waf、tcb、tse、cos、mqtt
+                     * @param _resourceTypesRegions 云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb、tke、apigateway、waf、tcb、tse、cos、mqtt
                      * 
                      */
                     void SetResourceTypesRegions(const std::vector<ResourceTypeRegions>& _resourceTypesRegions);
@@ -323,7 +323,7 @@ namespace TencentCloud
                     bool m_regionsHasBeenSet;
 
                     /**
-                     * 云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb、tke、apigateway、waf、tcb、tse、cos
+                     * 云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb、tke、apigateway、waf、tcb、tse、cos、mqtt
                      */
                     std::vector<ResourceTypeRegions> m_resourceTypesRegions;
                     bool m_resourceTypesRegionsHasBeenSet;

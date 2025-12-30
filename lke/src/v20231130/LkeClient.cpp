@@ -40,6 +40,56 @@ LkeClient::LkeClient(const Credential &credential, const string &region, const C
 }
 
 
+LkeClient::CallbackWorkflowToolNodeOutcome LkeClient::CallbackWorkflowToolNode(const CallbackWorkflowToolNodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CallbackWorkflowToolNode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CallbackWorkflowToolNodeResponse rsp = CallbackWorkflowToolNodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CallbackWorkflowToolNodeOutcome(rsp);
+        else
+            return CallbackWorkflowToolNodeOutcome(o.GetError());
+    }
+    else
+    {
+        return CallbackWorkflowToolNodeOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::CallbackWorkflowToolNodeAsync(const CallbackWorkflowToolNodeRequest& request, const CallbackWorkflowToolNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CallbackWorkflowToolNodeRequest&;
+    using Resp = CallbackWorkflowToolNodeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CallbackWorkflowToolNode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LkeClient::CallbackWorkflowToolNodeOutcomeCallable LkeClient::CallbackWorkflowToolNodeCallable(const CallbackWorkflowToolNodeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CallbackWorkflowToolNodeOutcome>>();
+    CallbackWorkflowToolNodeAsync(
+    request,
+    [prom](
+        const LkeClient*,
+        const CallbackWorkflowToolNodeRequest&,
+        CallbackWorkflowToolNodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LkeClient::CheckAttributeLabelExistOutcome LkeClient::CheckAttributeLabelExist(const CheckAttributeLabelExistRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckAttributeLabelExist");

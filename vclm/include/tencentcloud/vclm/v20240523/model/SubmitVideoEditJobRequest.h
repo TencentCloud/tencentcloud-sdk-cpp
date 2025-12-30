@@ -107,6 +107,27 @@ namespace TencentCloud
                     bool PromptHasBeenSet() const;
 
                     /**
+                     * 获取图片数组
+                     * @return Images 图片数组
+                     * 
+                     */
+                    std::vector<Image> GetImages() const;
+
+                    /**
+                     * 设置图片数组
+                     * @param _images 图片数组
+                     * 
+                     */
+                    void SetImages(const std::vector<Image>& _images);
+
+                    /**
+                     * 判断参数 Images 是否已赋值
+                     * @return Images 是否已赋值
+                     * 
+                     */
+                    bool ImagesHasBeenSet() const;
+
+                    /**
                      * 获取图片base64或者图片url
 
 - Base64 和 Url 必须提供一个，如果都提供以Url为准。
@@ -207,6 +228,12 @@ namespace TencentCloud
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
+
+                    /**
+                     * 图片数组
+                     */
+                    std::vector<Image> m_images;
+                    bool m_imagesHasBeenSet;
 
                     /**
                      * 图片base64或者图片url

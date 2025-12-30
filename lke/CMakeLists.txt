@@ -63,6 +63,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/DescribeAttributeLabelResponse.h
   include/tencentcloud/lke/v20231130/model/ModifyAttributeLabelResponse.h
   include/tencentcloud/lke/v20231130/model/KnowledgeQaSingleWorkflow.h
+  include/tencentcloud/lke/v20231130/model/CallbackWorkflowToolNodeRequest.h
   include/tencentcloud/lke/v20231130/model/RetryDocParseResponse.h
   include/tencentcloud/lke/v20231130/model/DeleteAgentResponse.h
   include/tencentcloud/lke/v20231130/model/GroupQAResponse.h
@@ -190,7 +191,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/DescribeNodeRunResponse.h
   include/tencentcloud/lke/v20231130/model/ModifyQAResponse.h
   include/tencentcloud/lke/v20231130/model/DeleteQAResponse.h
-  include/tencentcloud/lke/v20231130/model/ProcedureDebugging.h
+  include/tencentcloud/lke/v20231130/model/UpdateSharedKnowledgeRequest.h
   include/tencentcloud/lke/v20231130/model/GetMsgRecordRequest.h
   include/tencentcloud/lke/v20231130/model/InputBoxConfig.h
   include/tencentcloud/lke/v20231130/model/ReleaseConfigs.h
@@ -223,7 +224,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/AgentProcedure.h
   include/tencentcloud/lke/v20231130/model/ExportAttributeLabelRequest.h
   include/tencentcloud/lke/v20231130/model/ModifyQACateRequest.h
-  include/tencentcloud/lke/v20231130/model/UpdateSharedKnowledgeRequest.h
+  include/tencentcloud/lke/v20231130/model/ProcedureDebugging.h
   include/tencentcloud/lke/v20231130/model/StopDocParseRequest.h
   include/tencentcloud/lke/v20231130/model/DeleteQACateResponse.h
   include/tencentcloud/lke/v20231130/model/ListChannelResponse.h
@@ -315,6 +316,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/SandboxContent.h
   include/tencentcloud/lke/v20231130/model/ReferDetail.h
   include/tencentcloud/lke/v20231130/model/KnowledgeUpdateInfo.h
+  include/tencentcloud/lke/v20231130/model/CallbackWorkflowToolNodeResponse.h
   include/tencentcloud/lke/v20231130/model/GetDocPreviewRequest.h
   include/tencentcloud/lke/v20231130/model/DescribeAttributeLabelRequest.h
   include/tencentcloud/lke/v20231130/model/KnowledgeSummary.h
@@ -430,6 +432,7 @@ set(lke_src
   src/v20231130/model/DescribeAttributeLabelResponse.cpp
   src/v20231130/model/ModifyAttributeLabelResponse.cpp
   src/v20231130/model/KnowledgeQaSingleWorkflow.cpp
+  src/v20231130/model/CallbackWorkflowToolNodeRequest.cpp
   src/v20231130/model/RetryDocParseResponse.cpp
   src/v20231130/model/DeleteAgentResponse.cpp
   src/v20231130/model/GroupQAResponse.cpp
@@ -557,7 +560,7 @@ set(lke_src
   src/v20231130/model/DescribeNodeRunResponse.cpp
   src/v20231130/model/ModifyQAResponse.cpp
   src/v20231130/model/DeleteQAResponse.cpp
-  src/v20231130/model/ProcedureDebugging.cpp
+  src/v20231130/model/UpdateSharedKnowledgeRequest.cpp
   src/v20231130/model/GetMsgRecordRequest.cpp
   src/v20231130/model/InputBoxConfig.cpp
   src/v20231130/model/ReleaseConfigs.cpp
@@ -590,7 +593,7 @@ set(lke_src
   src/v20231130/model/AgentProcedure.cpp
   src/v20231130/model/ExportAttributeLabelRequest.cpp
   src/v20231130/model/ModifyQACateRequest.cpp
-  src/v20231130/model/UpdateSharedKnowledgeRequest.cpp
+  src/v20231130/model/ProcedureDebugging.cpp
   src/v20231130/model/StopDocParseRequest.cpp
   src/v20231130/model/DeleteQACateResponse.cpp
   src/v20231130/model/ListChannelResponse.cpp
@@ -682,6 +685,7 @@ set(lke_src
   src/v20231130/model/SandboxContent.cpp
   src/v20231130/model/ReferDetail.cpp
   src/v20231130/model/KnowledgeUpdateInfo.cpp
+  src/v20231130/model/CallbackWorkflowToolNodeResponse.cpp
   src/v20231130/model/GetDocPreviewRequest.cpp
   src/v20231130/model/DescribeAttributeLabelRequest.cpp
   src/v20231130/model/KnowledgeSummary.cpp

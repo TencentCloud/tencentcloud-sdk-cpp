@@ -37,7 +37,8 @@ DescribeContractReviewTaskResponse::DescribeContractReviewTaskResponse() :
     m_userDataHasBeenSet(false),
     m_highRiskCountHasBeenSet(false),
     m_totalRiskCountHasBeenSet(false),
-    m_approvedListsHasBeenSet(false)
+    m_approvedListsHasBeenSet(false),
+    m_summariesHasBeenSet(false)
 {
 }
 
@@ -242,6 +243,26 @@ CoreInternalOutcome DescribeContractReviewTaskResponse::Deserialize(const string
         m_approvedListsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Summaries") && !rsp["Summaries"].IsNull())
+    {
+        if (!rsp["Summaries"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Summaries` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Summaries"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ContractSummary item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_summaries.push_back(item);
+        }
+        m_summariesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -373,6 +394,21 @@ string DescribeContractReviewTaskResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_approvedLists.begin(); itr != m_approvedLists.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_summariesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Summaries";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_summaries.begin(); itr != m_summaries.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -529,6 +565,16 @@ vector<OutputReference> DescribeContractReviewTaskResponse::GetApprovedLists() c
 bool DescribeContractReviewTaskResponse::ApprovedListsHasBeenSet() const
 {
     return m_approvedListsHasBeenSet;
+}
+
+vector<ContractSummary> DescribeContractReviewTaskResponse::GetSummaries() const
+{
+    return m_summaries;
+}
+
+bool DescribeContractReviewTaskResponse::SummariesHasBeenSet() const
+{
+    return m_summariesHasBeenSet;
 }
 
 

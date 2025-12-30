@@ -281,6 +281,111 @@ namespace TencentCloud
                      */
                     bool RiskLevelIdHasBeenSet() const;
 
+                    /**
+                     * 获取风险标签
+                     * @return RiskLabels 风险标签
+                     * 
+                     */
+                    std::vector<std::string> GetRiskLabels() const;
+
+                    /**
+                     * 设置风险标签
+                     * @param _riskLabels 风险标签
+                     * 
+                     */
+                    void SetRiskLabels(const std::vector<std::string>& _riskLabels);
+
+                    /**
+                     * 判断参数 RiskLabels 是否已赋值
+                     * @return RiskLabels 是否已赋值
+                     * 
+                     */
+                    bool RiskLabelsHasBeenSet() const;
+
+                    /**
+                     * 获取风险来源 0:模型标注的风险 1:人工标注的风险
+                     * @return RiskOrigin 风险来源 0:模型标注的风险 1:人工标注的风险
+                     * 
+                     */
+                    int64_t GetRiskOrigin() const;
+
+                    /**
+                     * 设置风险来源 0:模型标注的风险 1:人工标注的风险
+                     * @param _riskOrigin 风险来源 0:模型标注的风险 1:人工标注的风险
+                     * 
+                     */
+                    void SetRiskOrigin(const int64_t& _riskOrigin);
+
+                    /**
+                     * 判断参数 RiskOrigin 是否已赋值
+                     * @return RiskOrigin 是否已赋值
+                     * 
+                     */
+                    bool RiskOriginHasBeenSet() const;
+
+                    /**
+                     * 获取创建人
+                     * @return Creator 创建人
+                     * 
+                     */
+                    std::string GetCreator() const;
+
+                    /**
+                     * 设置创建人
+                     * @param _creator 创建人
+                     * 
+                     */
+                    void SetCreator(const std::string& _creator);
+
+                    /**
+                     * 判断参数 Creator 是否已赋值
+                     * @return Creator 是否已赋值
+                     * 
+                     */
+                    bool CreatorHasBeenSet() const;
+
+                    /**
+                     * 获取创建人ID
+                     * @return CreatorId 创建人ID
+                     * 
+                     */
+                    std::string GetCreatorId() const;
+
+                    /**
+                     * 设置创建人ID
+                     * @param _creatorId 创建人ID
+                     * 
+                     */
+                    void SetCreatorId(const std::string& _creatorId);
+
+                    /**
+                     * 判断参数 CreatorId 是否已赋值
+                     * @return CreatorId 是否已赋值
+                     * 
+                     */
+                    bool CreatorIdHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间
+                     * @return CreatedOn 创建时间
+                     * 
+                     */
+                    int64_t GetCreatedOn() const;
+
+                    /**
+                     * 设置创建时间
+                     * @param _createdOn 创建时间
+                     * 
+                     */
+                    void SetCreatedOn(const int64_t& _createdOn);
+
+                    /**
+                     * 判断参数 CreatedOn 是否已赋值
+                     * @return CreatedOn 是否已赋值
+                     * 
+                     */
+                    bool CreatedOnHasBeenSet() const;
+
                 private:
 
                     /**
@@ -348,6 +453,36 @@ namespace TencentCloud
                      */
                     int64_t m_riskLevelId;
                     bool m_riskLevelIdHasBeenSet;
+
+                    /**
+                     * 风险标签
+                     */
+                    std::vector<std::string> m_riskLabels;
+                    bool m_riskLabelsHasBeenSet;
+
+                    /**
+                     * 风险来源 0:模型标注的风险 1:人工标注的风险
+                     */
+                    int64_t m_riskOrigin;
+                    bool m_riskOriginHasBeenSet;
+
+                    /**
+                     * 创建人
+                     */
+                    std::string m_creator;
+                    bool m_creatorHasBeenSet;
+
+                    /**
+                     * 创建人ID
+                     */
+                    std::string m_creatorId;
+                    bool m_creatorIdHasBeenSet;
+
+                    /**
+                     * 创建时间
+                     */
+                    int64_t m_createdOn;
+                    bool m_createdOnHasBeenSet;
 
                 };
             }

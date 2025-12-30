@@ -30,7 +30,12 @@ OutputRisk::OutputRisk() :
     m_contentHasBeenSet(false),
     m_positionsHasBeenSet(false),
     m_riskBasisHasBeenSet(false),
-    m_riskLevelIdHasBeenSet(false)
+    m_riskLevelIdHasBeenSet(false),
+    m_riskLabelsHasBeenSet(false),
+    m_riskOriginHasBeenSet(false),
+    m_creatorHasBeenSet(false),
+    m_creatorIdHasBeenSet(false),
+    m_createdOnHasBeenSet(false)
 {
 }
 
@@ -152,6 +157,59 @@ CoreInternalOutcome OutputRisk::Deserialize(const rapidjson::Value &value)
         m_riskLevelIdHasBeenSet = true;
     }
 
+    if (value.HasMember("RiskLabels") && !value["RiskLabels"].IsNull())
+    {
+        if (!value["RiskLabels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `OutputRisk.RiskLabels` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RiskLabels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_riskLabels.push_back((*itr).GetString());
+        }
+        m_riskLabelsHasBeenSet = true;
+    }
+
+    if (value.HasMember("RiskOrigin") && !value["RiskOrigin"].IsNull())
+    {
+        if (!value["RiskOrigin"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OutputRisk.RiskOrigin` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskOrigin = value["RiskOrigin"].GetInt64();
+        m_riskOriginHasBeenSet = true;
+    }
+
+    if (value.HasMember("Creator") && !value["Creator"].IsNull())
+    {
+        if (!value["Creator"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OutputRisk.Creator` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creator = string(value["Creator"].GetString());
+        m_creatorHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreatorId") && !value["CreatorId"].IsNull())
+    {
+        if (!value["CreatorId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OutputRisk.CreatorId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creatorId = string(value["CreatorId"].GetString());
+        m_creatorIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreatedOn") && !value["CreatedOn"].IsNull())
+    {
+        if (!value["CreatedOn"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OutputRisk.CreatedOn` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdOn = value["CreatedOn"].GetInt64();
+        m_createdOnHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -249,6 +307,51 @@ void OutputRisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "RiskLevelId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_riskLevelId, allocator);
+    }
+
+    if (m_riskLabelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskLabels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_riskLabels.begin(); itr != m_riskLabels.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_riskOriginHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskOrigin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_riskOrigin, allocator);
+    }
+
+    if (m_creatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Creator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_creatorIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatorId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creatorId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createdOnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatedOn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createdOn, allocator);
     }
 
 }
@@ -412,5 +515,85 @@ void OutputRisk::SetRiskLevelId(const int64_t& _riskLevelId)
 bool OutputRisk::RiskLevelIdHasBeenSet() const
 {
     return m_riskLevelIdHasBeenSet;
+}
+
+vector<string> OutputRisk::GetRiskLabels() const
+{
+    return m_riskLabels;
+}
+
+void OutputRisk::SetRiskLabels(const vector<string>& _riskLabels)
+{
+    m_riskLabels = _riskLabels;
+    m_riskLabelsHasBeenSet = true;
+}
+
+bool OutputRisk::RiskLabelsHasBeenSet() const
+{
+    return m_riskLabelsHasBeenSet;
+}
+
+int64_t OutputRisk::GetRiskOrigin() const
+{
+    return m_riskOrigin;
+}
+
+void OutputRisk::SetRiskOrigin(const int64_t& _riskOrigin)
+{
+    m_riskOrigin = _riskOrigin;
+    m_riskOriginHasBeenSet = true;
+}
+
+bool OutputRisk::RiskOriginHasBeenSet() const
+{
+    return m_riskOriginHasBeenSet;
+}
+
+string OutputRisk::GetCreator() const
+{
+    return m_creator;
+}
+
+void OutputRisk::SetCreator(const string& _creator)
+{
+    m_creator = _creator;
+    m_creatorHasBeenSet = true;
+}
+
+bool OutputRisk::CreatorHasBeenSet() const
+{
+    return m_creatorHasBeenSet;
+}
+
+string OutputRisk::GetCreatorId() const
+{
+    return m_creatorId;
+}
+
+void OutputRisk::SetCreatorId(const string& _creatorId)
+{
+    m_creatorId = _creatorId;
+    m_creatorIdHasBeenSet = true;
+}
+
+bool OutputRisk::CreatorIdHasBeenSet() const
+{
+    return m_creatorIdHasBeenSet;
+}
+
+int64_t OutputRisk::GetCreatedOn() const
+{
+    return m_createdOn;
+}
+
+void OutputRisk::SetCreatedOn(const int64_t& _createdOn)
+{
+    m_createdOn = _createdOn;
+    m_createdOnHasBeenSet = true;
+}
+
+bool OutputRisk::CreatedOnHasBeenSet() const
+{
+    return m_createdOnHasBeenSet;
 }
 

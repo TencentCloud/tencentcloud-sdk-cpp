@@ -41,7 +41,8 @@ RecognizeThaiIDCardOCRResponse::RecognizeThaiIDCardOCRResponse() :
     m_portraitImageHasBeenSet(false),
     m_warnCardInfosHasBeenSet(false),
     m_advancedInfoHasBeenSet(false),
-    m_cardCountHasBeenSet(false)
+    m_cardCountHasBeenSet(false),
+    m_isCompleteHasBeenSet(false)
 {
 }
 
@@ -262,6 +263,16 @@ CoreInternalOutcome RecognizeThaiIDCardOCRResponse::Deserialize(const string &pa
         m_cardCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsComplete") && !rsp["IsComplete"].IsNull())
+    {
+        if (!rsp["IsComplete"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsComplete` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isComplete = rsp["IsComplete"].GetBool();
+        m_isCompleteHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -419,6 +430,14 @@ string RecognizeThaiIDCardOCRResponse::ToJsonString() const
         string key = "CardCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cardCount, allocator);
+    }
+
+    if (m_isCompleteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsComplete";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isComplete, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -611,6 +630,16 @@ int64_t RecognizeThaiIDCardOCRResponse::GetCardCount() const
 bool RecognizeThaiIDCardOCRResponse::CardCountHasBeenSet() const
 {
     return m_cardCountHasBeenSet;
+}
+
+bool RecognizeThaiIDCardOCRResponse::GetIsComplete() const
+{
+    return m_isComplete;
+}
+
+bool RecognizeThaiIDCardOCRResponse::IsCompleteHasBeenSet() const
+{
+    return m_isCompleteHasBeenSet;
 }
 
 

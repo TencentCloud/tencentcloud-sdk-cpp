@@ -307,6 +307,20 @@ namespace TencentCloud
                      */
                     bool CardCountHasBeenSet() const;
 
+                    /**
+                     * 获取卡证字段是否完整，true：完整；false：不完整
+                     * @return IsComplete 卡证字段是否完整，true：完整；false：不完整
+                     * 
+                     */
+                    bool GetIsComplete() const;
+
+                    /**
+                     * 判断参数 IsComplete 是否已赋值
+                     * @return IsComplete 是否已赋值
+                     * 
+                     */
+                    bool IsCompleteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -422,6 +436,12 @@ namespace TencentCloud
                      */
                     int64_t m_cardCount;
                     bool m_cardCountHasBeenSet;
+
+                    /**
+                     * 卡证字段是否完整，true：完整；false：不完整
+                     */
+                    bool m_isComplete;
+                    bool m_isCompleteHasBeenSet;
 
                 };
             }

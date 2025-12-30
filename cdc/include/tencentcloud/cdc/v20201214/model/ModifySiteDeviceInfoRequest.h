@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取机房ID
-                     * @return SiteId 机房ID
+                     * 获取<p>机房ID</p>
+                     * @return SiteId <p>机房ID</p>
                      * 
                      */
                     std::string GetSiteId() const;
 
                     /**
-                     * 设置机房ID
-                     * @param _siteId 机房ID
+                     * 设置<p>机房ID</p>
+                     * @param _siteId <p>机房ID</p>
                      * 
                      */
                     void SetSiteId(const std::string& _siteId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SiteIdHasBeenSet() const;
 
                     /**
-                     * 获取您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。
-                     * @return FiberType 您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。
+                     * 获取<p>您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。</p>
+                     * @return FiberType <p>您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。</p>
                      * 
                      */
                     std::string GetFiberType() const;
 
                     /**
-                     * 设置您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。
-                     * @param _fiberType 您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。
+                     * 设置<p>您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。</p>
+                     * @param _fiberType <p>您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。</p>
                      * 
                      */
                     void SetFiberType(const std::string& _fiberType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool FiberTypeHasBeenSet() const;
 
                     /**
-                     * 获取您将CDC连接到网络时采用的光学标准。此字段取决于上行链路速度、光纤类型和到上游设备的距离。
-                     * @return OpticalStandard 您将CDC连接到网络时采用的光学标准。此字段取决于上行链路速度、光纤类型和到上游设备的距离。
+                     * 获取<p>您将CDC连接到网络时采用的光学标准。此字段取决于上行链路速度、光纤类型和到上游设备的距离。</p>
+                     * @return OpticalStandard <p>您将CDC连接到网络时采用的光学标准。此字段取决于上行链路速度、光纤类型和到上游设备的距离。</p>
                      * 
                      */
                     std::string GetOpticalStandard() const;
 
                     /**
-                     * 设置您将CDC连接到网络时采用的光学标准。此字段取决于上行链路速度、光纤类型和到上游设备的距离。
-                     * @param _opticalStandard 您将CDC连接到网络时采用的光学标准。此字段取决于上行链路速度、光纤类型和到上游设备的距离。
+                     * 设置<p>您将CDC连接到网络时采用的光学标准。此字段取决于上行链路速度、光纤类型和到上游设备的距离。</p>
+                     * @param _opticalStandard <p>您将CDC连接到网络时采用的光学标准。此字段取决于上行链路速度、光纤类型和到上游设备的距离。</p>
                      * 
                      */
                     void SetOpticalStandard(const std::string& _opticalStandard);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OpticalStandardHasBeenSet() const;
 
                     /**
-                     * 获取电源连接器类型
-                     * @return PowerConnectors 电源连接器类型
+                     * 获取<p>电源连接器类型</p>
+                     * @return PowerConnectors <p>电源连接器类型</p>
                      * 
                      */
                     std::string GetPowerConnectors() const;
 
                     /**
-                     * 设置电源连接器类型
-                     * @param _powerConnectors 电源连接器类型
+                     * 设置<p>电源连接器类型</p>
+                     * @param _powerConnectors <p>电源连接器类型</p>
                      * 
                      */
                     void SetPowerConnectors(const std::string& _powerConnectors);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool PowerConnectorsHasBeenSet() const;
 
                     /**
-                     * 获取从机架上方还是下方供电。取值范围：["UP","DOWN"]
-                     * @return PowerFeedDrop 从机架上方还是下方供电。取值范围：["UP","DOWN"]
+                     * 获取<p>从机架上方还是下方供电。取值范围：["UP","DOWN"]</p>
+                     * @return PowerFeedDrop <p>从机架上方还是下方供电。取值范围：["UP","DOWN"]</p>
                      * 
                      */
                     std::string GetPowerFeedDrop() const;
 
                     /**
-                     * 设置从机架上方还是下方供电。取值范围：["UP","DOWN"]
-                     * @param _powerFeedDrop 从机架上方还是下方供电。取值范围：["UP","DOWN"]
+                     * 设置<p>从机架上方还是下方供电。取值范围：["UP","DOWN"]</p>
+                     * @param _powerFeedDrop <p>从机架上方还是下方供电。取值范围：["UP","DOWN"]</p>
                      * 
                      */
                     void SetPowerFeedDrop(const std::string& _powerFeedDrop);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool PowerFeedDropHasBeenSet() const;
 
                     /**
-                     * 获取最大承重(KG)
-                     * @return MaxWeight 最大承重(KG)
+                     * 获取<p>最大承重(KG)</p>
+                     * @return MaxWeight <p>最大承重(KG)</p>
                      * 
                      */
                     int64_t GetMaxWeight() const;
 
                     /**
-                     * 设置最大承重(KG)
-                     * @param _maxWeight 最大承重(KG)
+                     * 设置<p>最大承重(KG)</p>
+                     * @param _maxWeight <p>最大承重(KG)</p>
                      * 
                      */
                     void SetMaxWeight(const int64_t& _maxWeight);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool MaxWeightHasBeenSet() const;
 
                     /**
-                     * 获取功耗(KW)
-                     * @return PowerDrawKva 功耗(KW)
+                     * 获取<p>功耗(KW)</p>
+                     * @return PowerDrawKva <p>功耗(KW)</p>
                      * 
                      */
                     int64_t GetPowerDrawKva() const;
 
                     /**
-                     * 设置功耗(KW)
-                     * @param _powerDrawKva 功耗(KW)
+                     * 设置<p>功耗(KW)</p>
+                     * @param _powerDrawKva <p>功耗(KW)</p>
                      * 
                      */
                     void SetPowerDrawKva(const int64_t& _powerDrawKva);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool PowerDrawKvaHasBeenSet() const;
 
                     /**
-                     * 获取网络到腾讯云Region区域的上行链路速度(Gbps)
-                     * @return UplinkSpeedGbps 网络到腾讯云Region区域的上行链路速度(Gbps)
+                     * 获取<p>网络到腾讯云Region区域的上行链路速度(Gbps)</p>
+                     * @return UplinkSpeedGbps <p>网络到腾讯云Region区域的上行链路速度(Gbps)</p>
                      * 
                      */
                     int64_t GetUplinkSpeedGbps() const;
 
                     /**
-                     * 设置网络到腾讯云Region区域的上行链路速度(Gbps)
-                     * @param _uplinkSpeedGbps 网络到腾讯云Region区域的上行链路速度(Gbps)
+                     * 设置<p>网络到腾讯云Region区域的上行链路速度(Gbps)</p>
+                     * @param _uplinkSpeedGbps <p>网络到腾讯云Region区域的上行链路速度(Gbps)</p>
                      * 
                      */
                     void SetUplinkSpeedGbps(const int64_t& _uplinkSpeedGbps);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool UplinkSpeedGbpsHasBeenSet() const;
 
                     /**
-                     * 获取将CDC连接到网络时，每台CDC网络设备(每个机架 2 台设备)使用的上行链路数量。
-                     * @return UplinkCount 将CDC连接到网络时，每台CDC网络设备(每个机架 2 台设备)使用的上行链路数量。
+                     * 获取<p>将CDC连接到网络时，每台CDC网络设备(每个机架 2 台设备)使用的上行链路数量。</p>
+                     * @return UplinkCount <p>将CDC连接到网络时，每台CDC网络设备(每个机架 2 台设备)使用的上行链路数量。</p>
                      * 
                      */
                     int64_t GetUplinkCount() const;
 
                     /**
-                     * 设置将CDC连接到网络时，每台CDC网络设备(每个机架 2 台设备)使用的上行链路数量。
-                     * @param _uplinkCount 将CDC连接到网络时，每台CDC网络设备(每个机架 2 台设备)使用的上行链路数量。
+                     * 设置<p>将CDC连接到网络时，每台CDC网络设备(每个机架 2 台设备)使用的上行链路数量。</p>
+                     * @param _uplinkCount <p>将CDC连接到网络时，每台CDC网络设备(每个机架 2 台设备)使用的上行链路数量。</p>
                      * 
                      */
                     void SetUplinkCount(const int64_t& _uplinkCount);
@@ -232,35 +232,15 @@ namespace TencentCloud
                     bool UplinkCountHasBeenSet() const;
 
                     /**
-                     * 获取是否满足下面环境条件：
-1、场地没有材料要求或验收标准会影响 CDC 设备配送和安装。
-2、确定的机架位置包含:
-温度范围为 41 到 104°F (5 到 40°C)。
-湿度范围为 10°F (-12°C)和 8% RH (相对湿度)到 70°F(21°C)和 80% RH。
-机架位置的气流方向为从前向后，且应具有足够的 CFM (每分钟立方英尺)，散热功率须达到CDC运行功率值的 145.8 倍以上。
-                     * @return ConditionRequirement 是否满足下面环境条件：
-1、场地没有材料要求或验收标准会影响 CDC 设备配送和安装。
-2、确定的机架位置包含:
-温度范围为 41 到 104°F (5 到 40°C)。
-湿度范围为 10°F (-12°C)和 8% RH (相对湿度)到 70°F(21°C)和 80% RH。
-机架位置的气流方向为从前向后，且应具有足够的 CFM (每分钟立方英尺)，散热功率须达到CDC运行功率值的 145.8 倍以上。
+                     * 获取<p>是否满足下面环境条件：1、场地没有材料要求或验收标准会影响 CDC 设备配送和安装。2、确定的机架位置包含:温度范围为 41 到 104°F (5 到 40°C)。湿度范围为 10°F (-12°C)和 8% RH (相对湿度)到 70°F(21°C)和 80% RH。机架位置的气流方向为从前向后，且应具有足够的 CFM (每分钟立方英尺)，散热功率须达到CDC运行功率值的 145.8 倍以上。</p>
+                     * @return ConditionRequirement <p>是否满足下面环境条件：1、场地没有材料要求或验收标准会影响 CDC 设备配送和安装。2、确定的机架位置包含:温度范围为 41 到 104°F (5 到 40°C)。湿度范围为 10°F (-12°C)和 8% RH (相对湿度)到 70°F(21°C)和 80% RH。机架位置的气流方向为从前向后，且应具有足够的 CFM (每分钟立方英尺)，散热功率须达到CDC运行功率值的 145.8 倍以上。</p>
                      * 
                      */
                     bool GetConditionRequirement() const;
 
                     /**
-                     * 设置是否满足下面环境条件：
-1、场地没有材料要求或验收标准会影响 CDC 设备配送和安装。
-2、确定的机架位置包含:
-温度范围为 41 到 104°F (5 到 40°C)。
-湿度范围为 10°F (-12°C)和 8% RH (相对湿度)到 70°F(21°C)和 80% RH。
-机架位置的气流方向为从前向后，且应具有足够的 CFM (每分钟立方英尺)，散热功率须达到CDC运行功率值的 145.8 倍以上。
-                     * @param _conditionRequirement 是否满足下面环境条件：
-1、场地没有材料要求或验收标准会影响 CDC 设备配送和安装。
-2、确定的机架位置包含:
-温度范围为 41 到 104°F (5 到 40°C)。
-湿度范围为 10°F (-12°C)和 8% RH (相对湿度)到 70°F(21°C)和 80% RH。
-机架位置的气流方向为从前向后，且应具有足够的 CFM (每分钟立方英尺)，散热功率须达到CDC运行功率值的 145.8 倍以上。
+                     * 设置<p>是否满足下面环境条件：1、场地没有材料要求或验收标准会影响 CDC 设备配送和安装。2、确定的机架位置包含:温度范围为 41 到 104°F (5 到 40°C)。湿度范围为 10°F (-12°C)和 8% RH (相对湿度)到 70°F(21°C)和 80% RH。机架位置的气流方向为从前向后，且应具有足够的 CFM (每分钟立方英尺)，散热功率须达到CDC运行功率值的 145.8 倍以上。</p>
+                     * @param _conditionRequirement <p>是否满足下面环境条件：1、场地没有材料要求或验收标准会影响 CDC 设备配送和安装。2、确定的机架位置包含:温度范围为 41 到 104°F (5 到 40°C)。湿度范围为 10°F (-12°C)和 8% RH (相对湿度)到 70°F(21°C)和 80% RH。机架位置的气流方向为从前向后，且应具有足够的 CFM (每分钟立方英尺)，散热功率须达到CDC运行功率值的 145.8 倍以上。</p>
                      * 
                      */
                     void SetConditionRequirement(const bool& _conditionRequirement);
@@ -273,27 +253,15 @@ namespace TencentCloud
                     bool ConditionRequirementHasBeenSet() const;
 
                     /**
-                     * 获取是否满足下面的尺寸条件：
-您的装货站台可以容纳一个机架箱(高 x 宽 x 深 = 94" x 54" x 48")。
-您可以提供从机架(高 x 宽 x 深 = 80" x 24" x 48")交货地点到机架最终安置位置的明确通道。测量深度时，应包括站台、走廊通道、门、转弯、坡道、货梯，并将其他通道限制考虑在内。
-在最终的 CDC安置位置，前部间隙可以为 48" 或更大，后部间隙可以为 24" 或更大。
-                     * @return DimensionRequirement 是否满足下面的尺寸条件：
-您的装货站台可以容纳一个机架箱(高 x 宽 x 深 = 94" x 54" x 48")。
-您可以提供从机架(高 x 宽 x 深 = 80" x 24" x 48")交货地点到机架最终安置位置的明确通道。测量深度时，应包括站台、走廊通道、门、转弯、坡道、货梯，并将其他通道限制考虑在内。
-在最终的 CDC安置位置，前部间隙可以为 48" 或更大，后部间隙可以为 24" 或更大。
+                     * 获取<p>是否满足下面的尺寸条件：您的装货站台可以容纳一个机架箱(高 x 宽 x 深 = 94" x 54" x 48")。您可以提供从机架(高 x 宽 x 深 = 80" x 24" x 48")交货地点到机架最终安置位置的明确通道。测量深度时，应包括站台、走廊通道、门、转弯、坡道、货梯，并将其他通道限制考虑在内。在最终的 CDC安置位置，前部间隙可以为 48" 或更大，后部间隙可以为 24" 或更大。</p>
+                     * @return DimensionRequirement <p>是否满足下面的尺寸条件：您的装货站台可以容纳一个机架箱(高 x 宽 x 深 = 94" x 54" x 48")。您可以提供从机架(高 x 宽 x 深 = 80" x 24" x 48")交货地点到机架最终安置位置的明确通道。测量深度时，应包括站台、走廊通道、门、转弯、坡道、货梯，并将其他通道限制考虑在内。在最终的 CDC安置位置，前部间隙可以为 48" 或更大，后部间隙可以为 24" 或更大。</p>
                      * 
                      */
                     bool GetDimensionRequirement() const;
 
                     /**
-                     * 设置是否满足下面的尺寸条件：
-您的装货站台可以容纳一个机架箱(高 x 宽 x 深 = 94" x 54" x 48")。
-您可以提供从机架(高 x 宽 x 深 = 80" x 24" x 48")交货地点到机架最终安置位置的明确通道。测量深度时，应包括站台、走廊通道、门、转弯、坡道、货梯，并将其他通道限制考虑在内。
-在最终的 CDC安置位置，前部间隙可以为 48" 或更大，后部间隙可以为 24" 或更大。
-                     * @param _dimensionRequirement 是否满足下面的尺寸条件：
-您的装货站台可以容纳一个机架箱(高 x 宽 x 深 = 94" x 54" x 48")。
-您可以提供从机架(高 x 宽 x 深 = 80" x 24" x 48")交货地点到机架最终安置位置的明确通道。测量深度时，应包括站台、走廊通道、门、转弯、坡道、货梯，并将其他通道限制考虑在内。
-在最终的 CDC安置位置，前部间隙可以为 48" 或更大，后部间隙可以为 24" 或更大。
+                     * 设置<p>是否满足下面的尺寸条件：您的装货站台可以容纳一个机架箱(高 x 宽 x 深 = 94" x 54" x 48")。您可以提供从机架(高 x 宽 x 深 = 80" x 24" x 48")交货地点到机架最终安置位置的明确通道。测量深度时，应包括站台、走廊通道、门、转弯、坡道、货梯，并将其他通道限制考虑在内。在最终的 CDC安置位置，前部间隙可以为 48" 或更大，后部间隙可以为 24" 或更大。</p>
+                     * @param _dimensionRequirement <p>是否满足下面的尺寸条件：您的装货站台可以容纳一个机架箱(高 x 宽 x 深 = 94" x 54" x 48")。您可以提供从机架(高 x 宽 x 深 = 80" x 24" x 48")交货地点到机架最终安置位置的明确通道。测量深度时，应包括站台、走廊通道、门、转弯、坡道、货梯，并将其他通道限制考虑在内。在最终的 CDC安置位置，前部间隙可以为 48" 或更大，后部间隙可以为 24" 或更大。</p>
                      * 
                      */
                     void SetDimensionRequirement(const bool& _dimensionRequirement);
@@ -306,15 +274,15 @@ namespace TencentCloud
                     bool DimensionRequirementHasBeenSet() const;
 
                     /**
-                     * 获取是否提供冗余的上游设备(交换机或路由器)，以便实现网络出口的高可用。
-                     * @return RedundantNetworking 是否提供冗余的上游设备(交换机或路由器)，以便实现网络出口的高可用。
+                     * 获取<p>是否提供冗余的上游设备(交换机或路由器)，以便实现网络出口的高可用。</p>
+                     * @return RedundantNetworking <p>是否提供冗余的上游设备(交换机或路由器)，以便实现网络出口的高可用。</p>
                      * 
                      */
                     bool GetRedundantNetworking() const;
 
                     /**
-                     * 设置是否提供冗余的上游设备(交换机或路由器)，以便实现网络出口的高可用。
-                     * @param _redundantNetworking 是否提供冗余的上游设备(交换机或路由器)，以便实现网络出口的高可用。
+                     * 设置<p>是否提供冗余的上游设备(交换机或路由器)，以便实现网络出口的高可用。</p>
+                     * @param _redundantNetworking <p>是否提供冗余的上游设备(交换机或路由器)，以便实现网络出口的高可用。</p>
                      * 
                      */
                     void SetRedundantNetworking(const bool& _redundantNetworking);
@@ -327,15 +295,15 @@ namespace TencentCloud
                     bool RedundantNetworkingHasBeenSet() const;
 
                     /**
-                     * 获取是否需要腾讯云团队协助完成机架支撑工作
-                     * @return NeedHelp 是否需要腾讯云团队协助完成机架支撑工作
+                     * 获取<p>是否需要腾讯云团队协助完成机架支撑工作</p>
+                     * @return NeedHelp <p>是否需要腾讯云团队协助完成机架支撑工作</p>
                      * 
                      */
                     bool GetNeedHelp() const;
 
                     /**
-                     * 设置是否需要腾讯云团队协助完成机架支撑工作
-                     * @param _needHelp 是否需要腾讯云团队协助完成机架支撑工作
+                     * 设置<p>是否需要腾讯云团队协助完成机架支撑工作</p>
+                     * @param _needHelp <p>是否需要腾讯云团队协助完成机架支撑工作</p>
                      * 
                      */
                     void SetNeedHelp(const bool& _needHelp);
@@ -348,15 +316,15 @@ namespace TencentCloud
                     bool NeedHelpHasBeenSet() const;
 
                     /**
-                     * 获取是否电源冗余
-                     * @return RedundantPower 是否电源冗余
+                     * 获取<p>是否电源冗余</p>
+                     * @return RedundantPower <p>是否电源冗余</p>
                      * 
                      */
                     bool GetRedundantPower() const;
 
                     /**
-                     * 设置是否电源冗余
-                     * @param _redundantPower 是否电源冗余
+                     * 设置<p>是否电源冗余</p>
+                     * @param _redundantPower <p>是否电源冗余</p>
                      * 
                      */
                     void SetRedundantPower(const bool& _redundantPower);
@@ -369,15 +337,15 @@ namespace TencentCloud
                     bool RedundantPowerHasBeenSet() const;
 
                     /**
-                     * 获取上游断路器是否具备
-                     * @return BreakerRequirement 上游断路器是否具备
+                     * 获取<p>上游断路器是否具备</p>
+                     * @return BreakerRequirement <p>上游断路器是否具备</p>
                      * 
                      */
                     bool GetBreakerRequirement() const;
 
                     /**
-                     * 设置上游断路器是否具备
-                     * @param _breakerRequirement 上游断路器是否具备
+                     * 设置<p>上游断路器是否具备</p>
+                     * @param _breakerRequirement <p>上游断路器是否具备</p>
                      * 
                      */
                     void SetBreakerRequirement(const bool& _breakerRequirement);
@@ -392,99 +360,91 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 机房ID
+                     * <p>机房ID</p>
                      */
                     std::string m_siteId;
                     bool m_siteIdHasBeenSet;
 
                     /**
-                     * 您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。
+                     * <p>您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。</p>
                      */
                     std::string m_fiberType;
                     bool m_fiberTypeHasBeenSet;
 
                     /**
-                     * 您将CDC连接到网络时采用的光学标准。此字段取决于上行链路速度、光纤类型和到上游设备的距离。
+                     * <p>您将CDC连接到网络时采用的光学标准。此字段取决于上行链路速度、光纤类型和到上游设备的距离。</p>
                      */
                     std::string m_opticalStandard;
                     bool m_opticalStandardHasBeenSet;
 
                     /**
-                     * 电源连接器类型
+                     * <p>电源连接器类型</p>
                      */
                     std::string m_powerConnectors;
                     bool m_powerConnectorsHasBeenSet;
 
                     /**
-                     * 从机架上方还是下方供电。取值范围：["UP","DOWN"]
+                     * <p>从机架上方还是下方供电。取值范围：["UP","DOWN"]</p>
                      */
                     std::string m_powerFeedDrop;
                     bool m_powerFeedDropHasBeenSet;
 
                     /**
-                     * 最大承重(KG)
+                     * <p>最大承重(KG)</p>
                      */
                     int64_t m_maxWeight;
                     bool m_maxWeightHasBeenSet;
 
                     /**
-                     * 功耗(KW)
+                     * <p>功耗(KW)</p>
                      */
                     int64_t m_powerDrawKva;
                     bool m_powerDrawKvaHasBeenSet;
 
                     /**
-                     * 网络到腾讯云Region区域的上行链路速度(Gbps)
+                     * <p>网络到腾讯云Region区域的上行链路速度(Gbps)</p>
                      */
                     int64_t m_uplinkSpeedGbps;
                     bool m_uplinkSpeedGbpsHasBeenSet;
 
                     /**
-                     * 将CDC连接到网络时，每台CDC网络设备(每个机架 2 台设备)使用的上行链路数量。
+                     * <p>将CDC连接到网络时，每台CDC网络设备(每个机架 2 台设备)使用的上行链路数量。</p>
                      */
                     int64_t m_uplinkCount;
                     bool m_uplinkCountHasBeenSet;
 
                     /**
-                     * 是否满足下面环境条件：
-1、场地没有材料要求或验收标准会影响 CDC 设备配送和安装。
-2、确定的机架位置包含:
-温度范围为 41 到 104°F (5 到 40°C)。
-湿度范围为 10°F (-12°C)和 8% RH (相对湿度)到 70°F(21°C)和 80% RH。
-机架位置的气流方向为从前向后，且应具有足够的 CFM (每分钟立方英尺)，散热功率须达到CDC运行功率值的 145.8 倍以上。
+                     * <p>是否满足下面环境条件：1、场地没有材料要求或验收标准会影响 CDC 设备配送和安装。2、确定的机架位置包含:温度范围为 41 到 104°F (5 到 40°C)。湿度范围为 10°F (-12°C)和 8% RH (相对湿度)到 70°F(21°C)和 80% RH。机架位置的气流方向为从前向后，且应具有足够的 CFM (每分钟立方英尺)，散热功率须达到CDC运行功率值的 145.8 倍以上。</p>
                      */
                     bool m_conditionRequirement;
                     bool m_conditionRequirementHasBeenSet;
 
                     /**
-                     * 是否满足下面的尺寸条件：
-您的装货站台可以容纳一个机架箱(高 x 宽 x 深 = 94" x 54" x 48")。
-您可以提供从机架(高 x 宽 x 深 = 80" x 24" x 48")交货地点到机架最终安置位置的明确通道。测量深度时，应包括站台、走廊通道、门、转弯、坡道、货梯，并将其他通道限制考虑在内。
-在最终的 CDC安置位置，前部间隙可以为 48" 或更大，后部间隙可以为 24" 或更大。
+                     * <p>是否满足下面的尺寸条件：您的装货站台可以容纳一个机架箱(高 x 宽 x 深 = 94" x 54" x 48")。您可以提供从机架(高 x 宽 x 深 = 80" x 24" x 48")交货地点到机架最终安置位置的明确通道。测量深度时，应包括站台、走廊通道、门、转弯、坡道、货梯，并将其他通道限制考虑在内。在最终的 CDC安置位置，前部间隙可以为 48" 或更大，后部间隙可以为 24" 或更大。</p>
                      */
                     bool m_dimensionRequirement;
                     bool m_dimensionRequirementHasBeenSet;
 
                     /**
-                     * 是否提供冗余的上游设备(交换机或路由器)，以便实现网络出口的高可用。
+                     * <p>是否提供冗余的上游设备(交换机或路由器)，以便实现网络出口的高可用。</p>
                      */
                     bool m_redundantNetworking;
                     bool m_redundantNetworkingHasBeenSet;
 
                     /**
-                     * 是否需要腾讯云团队协助完成机架支撑工作
+                     * <p>是否需要腾讯云团队协助完成机架支撑工作</p>
                      */
                     bool m_needHelp;
                     bool m_needHelpHasBeenSet;
 
                     /**
-                     * 是否电源冗余
+                     * <p>是否电源冗余</p>
                      */
                     bool m_redundantPower;
                     bool m_redundantPowerHasBeenSet;
 
                     /**
-                     * 上游断路器是否具备
+                     * <p>上游断路器是否具备</p>
                      */
                     bool m_breakerRequirement;
                     bool m_breakerRequirementHasBeenSet;

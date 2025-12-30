@@ -48,6 +48,7 @@ namespace TencentCloud
                     /**
                      * 获取模型名称。
 当前支持的模型列表:
+Hunyuan,
 Hailuo，
 Kling，
 Jimeng，
@@ -56,6 +57,7 @@ OS，
 GV。
                      * @return ModelName 模型名称。
 当前支持的模型列表:
+Hunyuan,
 Hailuo，
 Kling，
 Jimeng，
@@ -69,6 +71,7 @@ GV。
                     /**
                      * 设置模型名称。
 当前支持的模型列表:
+Hunyuan,
 Hailuo，
 Kling，
 Jimeng，
@@ -77,6 +80,7 @@ OS，
 GV。
                      * @param _modelName 模型名称。
 当前支持的模型列表:
+Hunyuan,
 Hailuo，
 Kling，
 Jimeng，
@@ -482,6 +486,7 @@ GV。
                     /**
                      * 模型名称。
 当前支持的模型列表:
+Hunyuan,
 Hailuo，
 Kling，
 Jimeng，

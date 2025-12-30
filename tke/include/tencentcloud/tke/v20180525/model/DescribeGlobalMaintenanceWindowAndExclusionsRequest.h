@@ -86,15 +86,19 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取筛选项
-                     * @return Filters 筛选项
+                     * 获取筛选项，支持按照以下字段过滤：
+- "ID"：维护窗口ID，如：10
+                     * @return Filters 筛选项，支持按照以下字段过滤：
+- "ID"：维护窗口ID，如：10
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置筛选项
-                     * @param _filters 筛选项
+                     * 设置筛选项，支持按照以下字段过滤：
+- "ID"：维护窗口ID，如：10
+                     * @param _filters 筛选项，支持按照以下字段过滤：
+- "ID"：维护窗口ID，如：10
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -121,7 +125,8 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 筛选项
+                     * 筛选项，支持按照以下字段过滤：
+- "ID"：维护窗口ID，如：10
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

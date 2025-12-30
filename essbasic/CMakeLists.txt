@@ -364,6 +364,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateReleaseFlowRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeFlowComponentsResponse.h
   include/tencentcloud/essbasic/v20210526/model/UserFlowType.h
+  include/tencentcloud/essbasic/v20210526/model/DynamicSignOption.h
   include/tencentcloud/essbasic/v20210526/model/DeleteOrganizationAuthorizationsRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByFilesResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateMultiFlowSignQRCodeResponse.h
@@ -782,6 +783,7 @@ set(essbasic_src
   src/v20210526/model/ChannelCreateReleaseFlowRequest.cpp
   src/v20210526/model/ChannelDescribeFlowComponentsResponse.cpp
   src/v20210526/model/UserFlowType.cpp
+  src/v20210526/model/DynamicSignOption.cpp
   src/v20210526/model/DeleteOrganizationAuthorizationsRequest.cpp
   src/v20210526/model/ChannelCreateFlowGroupByFilesResponse.cpp
   src/v20210526/model/ChannelCreateMultiFlowSignQRCodeResponse.cpp

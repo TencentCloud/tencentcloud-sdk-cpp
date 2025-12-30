@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取统计数据列表。
-                     * @return DataInfoList 统计数据列表。
+                     * 获取<p>统计数据列表。</p>
+                     * @return DataInfoList <p>统计数据列表。</p>
                      * 
                      */
                     std::vector<TranscodeTotalInfo> GetDataInfoList() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 统计数据列表。
+                     * <p>统计数据列表。</p>
                      */
                     std::vector<TranscodeTotalInfo> m_dataInfoList;
                     bool m_dataInfoListHasBeenSet;

@@ -571,6 +571,27 @@ namespace TencentCloud
                      */
                     bool InstanceStatusHasBeenSet() const;
 
+                    /**
+                     * 获取监听器状态
+                     * @return ListenerStatus 监听器状态
+                     * 
+                     */
+                    std::string GetListenerStatus() const;
+
+                    /**
+                     * 设置监听器状态
+                     * @param _listenerStatus 监听器状态
+                     * 
+                     */
+                    void SetListenerStatus(const std::string& _listenerStatus);
+
+                    /**
+                     * 判断参数 ListenerStatus 是否已赋值
+                     * @return ListenerStatus 是否已赋值
+                     * 
+                     */
+                    bool ListenerStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -722,6 +743,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceStatus;
                     bool m_instanceStatusHasBeenSet;
+
+                    /**
+                     * 监听器状态
+                     */
+                    std::string m_listenerStatus;
+                    bool m_listenerStatusHasBeenSet;
 
                 };
             }

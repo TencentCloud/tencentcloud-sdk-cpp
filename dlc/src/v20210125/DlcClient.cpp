@@ -4840,6 +4840,56 @@ DlcClient::DescribeOtherCHDFSBindingListOutcomeCallable DlcClient::DescribeOther
     return prom->get_future();
 }
 
+DlcClient::DescribeResourceGroupUsageInfoOutcome DlcClient::DescribeResourceGroupUsageInfo(const DescribeResourceGroupUsageInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceGroupUsageInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceGroupUsageInfoResponse rsp = DescribeResourceGroupUsageInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceGroupUsageInfoOutcome(rsp);
+        else
+            return DescribeResourceGroupUsageInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceGroupUsageInfoOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeResourceGroupUsageInfoAsync(const DescribeResourceGroupUsageInfoRequest& request, const DescribeResourceGroupUsageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeResourceGroupUsageInfoRequest&;
+    using Resp = DescribeResourceGroupUsageInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourceGroupUsageInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeResourceGroupUsageInfoOutcomeCallable DlcClient::DescribeResourceGroupUsageInfoCallable(const DescribeResourceGroupUsageInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeResourceGroupUsageInfoOutcome>>();
+    DescribeResourceGroupUsageInfoAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeResourceGroupUsageInfoRequest&,
+        DescribeResourceGroupUsageInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::DescribeResultDownloadOutcome DlcClient::DescribeResultDownload(const DescribeResultDownloadRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeResultDownload");

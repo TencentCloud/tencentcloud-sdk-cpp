@@ -33,6 +33,10 @@
 #include <tencentcloud/ssl/v20191205/model/TeoInstanceList.h>
 #include <tencentcloud/ssl/v20191205/model/TSEInstanceList.h>
 #include <tencentcloud/ssl/v20191205/model/COSInstanceList.h>
+#include <tencentcloud/ssl/v20191205/model/TDMQInstanceList.h>
+#include <tencentcloud/ssl/v20191205/model/MQTTInstanceList.h>
+#include <tencentcloud/ssl/v20191205/model/GAAPInstanceList.h>
+#include <tencentcloud/ssl/v20191205/model/SCFInstanceList.h>
 
 
 namespace TencentCloud
@@ -56,8 +60,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取关联clb资源详情	
-                     * @return CLB 关联clb资源详情	
+                     * 获取<p>关联clb资源详情   </p>
+                     * @return CLB <p>关联clb资源详情   </p>
                      * 
                      */
                     std::vector<ClbInstanceList> GetCLB() const;
@@ -70,8 +74,8 @@ namespace TencentCloud
                     bool CLBHasBeenSet() const;
 
                     /**
-                     * 获取关联cdn资源详情	
-                     * @return CDN 关联cdn资源详情	
+                     * 获取<p>关联cdn资源详情   </p>
+                     * @return CDN <p>关联cdn资源详情   </p>
                      * 
                      */
                     std::vector<CdnInstanceList> GetCDN() const;
@@ -84,8 +88,8 @@ namespace TencentCloud
                     bool CDNHasBeenSet() const;
 
                     /**
-                     * 获取关联waf资源详情	
-                     * @return WAF 关联waf资源详情	
+                     * 获取<p>关联waf资源详情   </p>
+                     * @return WAF <p>关联waf资源详情   </p>
                      * 
                      */
                     std::vector<WafInstanceList> GetWAF() const;
@@ -98,8 +102,8 @@ namespace TencentCloud
                     bool WAFHasBeenSet() const;
 
                     /**
-                     * 获取关联ddos资源详情	
-                     * @return DDOS 关联ddos资源详情	
+                     * 获取<p>关联ddos资源详情  </p>
+                     * @return DDOS <p>关联ddos资源详情  </p>
                      * 
                      */
                     std::vector<DdosInstanceList> GetDDOS() const;
@@ -112,8 +116,8 @@ namespace TencentCloud
                     bool DDOSHasBeenSet() const;
 
                     /**
-                     * 获取关联live资源详情	
-                     * @return LIVE 关联live资源详情	
+                     * 获取<p>关联live资源详情  </p>
+                     * @return LIVE <p>关联live资源详情  </p>
                      * 
                      */
                     std::vector<LiveInstanceList> GetLIVE() const;
@@ -126,8 +130,8 @@ namespace TencentCloud
                     bool LIVEHasBeenSet() const;
 
                     /**
-                     * 获取关联vod资源详情	
-                     * @return VOD 关联vod资源详情	
+                     * 获取<p>关联vod资源详情   </p>
+                     * @return VOD <p>关联vod资源详情   </p>
                      * 
                      */
                     std::vector<VODInstanceList> GetVOD() const;
@@ -140,8 +144,8 @@ namespace TencentCloud
                     bool VODHasBeenSet() const;
 
                     /**
-                     * 获取关联tke资源详情	
-                     * @return TKE 关联tke资源详情	
+                     * 获取<p>关联tke资源详情   </p>
+                     * @return TKE <p>关联tke资源详情   </p>
                      * 
                      */
                     std::vector<TkeInstanceList> GetTKE() const;
@@ -154,8 +158,8 @@ namespace TencentCloud
                     bool TKEHasBeenSet() const;
 
                     /**
-                     * 获取关联apigateway资源详情	
-                     * @return APIGATEWAY 关联apigateway资源详情	
+                     * 获取<p>关联apigateway资源详情    </p>
+                     * @return APIGATEWAY <p>关联apigateway资源详情    </p>
                      * 
                      */
                     std::vector<ApiGatewayInstanceList> GetAPIGATEWAY() const;
@@ -168,8 +172,8 @@ namespace TencentCloud
                     bool APIGATEWAYHasBeenSet() const;
 
                     /**
-                     * 获取关联tcb资源详情	
-                     * @return TCB 关联tcb资源详情	
+                     * 获取<p>关联tcb资源详情   </p>
+                     * @return TCB <p>关联tcb资源详情   </p>
                      * 
                      */
                     std::vector<TCBInstanceList> GetTCB() const;
@@ -182,8 +186,8 @@ namespace TencentCloud
                     bool TCBHasBeenSet() const;
 
                     /**
-                     * 获取关联teo资源详情	
-                     * @return TEO 关联teo资源详情	
+                     * 获取<p>关联teo资源详情   </p>
+                     * @return TEO <p>关联teo资源详情   </p>
                      * 
                      */
                     std::vector<TeoInstanceList> GetTEO() const;
@@ -196,8 +200,8 @@ namespace TencentCloud
                     bool TEOHasBeenSet() const;
 
                     /**
-                     * 获取关联云资源异步查询结果： 0表示查询中， 1表示查询成功。 2表示查询异常； 若状态为1，则查看BindResourceResult结果；若状态为2，则查看Error原因
-                     * @return Status 关联云资源异步查询结果： 0表示查询中， 1表示查询成功。 2表示查询异常； 若状态为1，则查看BindResourceResult结果；若状态为2，则查看Error原因
+                     * 获取<p>关联云资源异步查询结果： 0表示查询中， 1表示查询成功。 2表示查询异常； 若状态为1，则查看BindResourceResult结果；若状态为2，则查看Error原因</p>
+                     * @return Status <p>关联云资源异步查询结果： 0表示查询中， 1表示查询成功。 2表示查询异常； 若状态为1，则查看BindResourceResult结果；若状态为2，则查看Error原因</p>
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -210,8 +214,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取当前结果缓存时间
-                     * @return CacheTime 当前结果缓存时间
+                     * 获取<p>当前结果缓存时间</p>
+                     * @return CacheTime <p>当前结果缓存时间</p>
                      * 
                      */
                     std::string GetCacheTime() const;
@@ -224,8 +228,8 @@ namespace TencentCloud
                     bool CacheTimeHasBeenSet() const;
 
                     /**
-                     * 获取关联tse资源详情	
-                     * @return TSE 关联tse资源详情	
+                     * 获取<p>关联tse资源详情   </p>
+                     * @return TSE <p>关联tse资源详情   </p>
                      * 
                      */
                     std::vector<TSEInstanceList> GetTSE() const;
@@ -238,8 +242,8 @@ namespace TencentCloud
                     bool TSEHasBeenSet() const;
 
                     /**
-                     * 获取关联的COS资源详情
-                     * @return COS 关联的COS资源详情
+                     * 获取<p>关联的COS资源详情</p>
+                     * @return COS <p>关联的COS资源详情</p>
                      * 
                      */
                     std::vector<COSInstanceList> GetCOS() const;
@@ -251,91 +255,171 @@ namespace TencentCloud
                      */
                     bool COSHasBeenSet() const;
 
+                    /**
+                     * 获取<p>关联的TDMQ - Rabbit资源详情</p>
+                     * @return TDMQ <p>关联的TDMQ - Rabbit资源详情</p>
+                     * 
+                     */
+                    std::vector<TDMQInstanceList> GetTDMQ() const;
+
+                    /**
+                     * 判断参数 TDMQ 是否已赋值
+                     * @return TDMQ 是否已赋值
+                     * 
+                     */
+                    bool TDMQHasBeenSet() const;
+
+                    /**
+                     * 获取<p>关联的MQTT资源详情</p>
+                     * @return MQTT <p>关联的MQTT资源详情</p>
+                     * 
+                     */
+                    std::vector<MQTTInstanceList> GetMQTT() const;
+
+                    /**
+                     * 判断参数 MQTT 是否已赋值
+                     * @return MQTT 是否已赋值
+                     * 
+                     */
+                    bool MQTTHasBeenSet() const;
+
+                    /**
+                     * 获取<p>关联的GAAP资源详情</p>
+                     * @return GAAP <p>关联的GAAP资源详情</p>
+                     * 
+                     */
+                    std::vector<GAAPInstanceList> GetGAAP() const;
+
+                    /**
+                     * 判断参数 GAAP 是否已赋值
+                     * @return GAAP 是否已赋值
+                     * 
+                     */
+                    bool GAAPHasBeenSet() const;
+
+                    /**
+                     * 获取<p>关联的SCF资源详情</p>
+                     * @return SCF <p>关联的SCF资源详情</p>
+                     * 
+                     */
+                    std::vector<SCFInstanceList> GetSCF() const;
+
+                    /**
+                     * 判断参数 SCF 是否已赋值
+                     * @return SCF 是否已赋值
+                     * 
+                     */
+                    bool SCFHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 关联clb资源详情	
+                     * <p>关联clb资源详情   </p>
                      */
                     std::vector<ClbInstanceList> m_cLB;
                     bool m_cLBHasBeenSet;
 
                     /**
-                     * 关联cdn资源详情	
+                     * <p>关联cdn资源详情   </p>
                      */
                     std::vector<CdnInstanceList> m_cDN;
                     bool m_cDNHasBeenSet;
 
                     /**
-                     * 关联waf资源详情	
+                     * <p>关联waf资源详情   </p>
                      */
                     std::vector<WafInstanceList> m_wAF;
                     bool m_wAFHasBeenSet;
 
                     /**
-                     * 关联ddos资源详情	
+                     * <p>关联ddos资源详情  </p>
                      */
                     std::vector<DdosInstanceList> m_dDOS;
                     bool m_dDOSHasBeenSet;
 
                     /**
-                     * 关联live资源详情	
+                     * <p>关联live资源详情  </p>
                      */
                     std::vector<LiveInstanceList> m_lIVE;
                     bool m_lIVEHasBeenSet;
 
                     /**
-                     * 关联vod资源详情	
+                     * <p>关联vod资源详情   </p>
                      */
                     std::vector<VODInstanceList> m_vOD;
                     bool m_vODHasBeenSet;
 
                     /**
-                     * 关联tke资源详情	
+                     * <p>关联tke资源详情   </p>
                      */
                     std::vector<TkeInstanceList> m_tKE;
                     bool m_tKEHasBeenSet;
 
                     /**
-                     * 关联apigateway资源详情	
+                     * <p>关联apigateway资源详情    </p>
                      */
                     std::vector<ApiGatewayInstanceList> m_aPIGATEWAY;
                     bool m_aPIGATEWAYHasBeenSet;
 
                     /**
-                     * 关联tcb资源详情	
+                     * <p>关联tcb资源详情   </p>
                      */
                     std::vector<TCBInstanceList> m_tCB;
                     bool m_tCBHasBeenSet;
 
                     /**
-                     * 关联teo资源详情	
+                     * <p>关联teo资源详情   </p>
                      */
                     std::vector<TeoInstanceList> m_tEO;
                     bool m_tEOHasBeenSet;
 
                     /**
-                     * 关联云资源异步查询结果： 0表示查询中， 1表示查询成功。 2表示查询异常； 若状态为1，则查看BindResourceResult结果；若状态为2，则查看Error原因
+                     * <p>关联云资源异步查询结果： 0表示查询中， 1表示查询成功。 2表示查询异常； 若状态为1，则查看BindResourceResult结果；若状态为2，则查看Error原因</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 当前结果缓存时间
+                     * <p>当前结果缓存时间</p>
                      */
                     std::string m_cacheTime;
                     bool m_cacheTimeHasBeenSet;
 
                     /**
-                     * 关联tse资源详情	
+                     * <p>关联tse资源详情   </p>
                      */
                     std::vector<TSEInstanceList> m_tSE;
                     bool m_tSEHasBeenSet;
 
                     /**
-                     * 关联的COS资源详情
+                     * <p>关联的COS资源详情</p>
                      */
                     std::vector<COSInstanceList> m_cOS;
                     bool m_cOSHasBeenSet;
+
+                    /**
+                     * <p>关联的TDMQ - Rabbit资源详情</p>
+                     */
+                    std::vector<TDMQInstanceList> m_tDMQ;
+                    bool m_tDMQHasBeenSet;
+
+                    /**
+                     * <p>关联的MQTT资源详情</p>
+                     */
+                    std::vector<MQTTInstanceList> m_mQTT;
+                    bool m_mQTTHasBeenSet;
+
+                    /**
+                     * <p>关联的GAAP资源详情</p>
+                     */
+                    std::vector<GAAPInstanceList> m_gAAP;
+                    bool m_gAAPHasBeenSet;
+
+                    /**
+                     * <p>关联的SCF资源详情</p>
+                     */
+                    std::vector<SCFInstanceList> m_sCF;
+                    bool m_sCFHasBeenSet;
 
                 };
             }

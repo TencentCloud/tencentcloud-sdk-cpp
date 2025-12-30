@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/lke/v20231130/model/CallbackWorkflowToolNodeRequest.h>
+#include <tencentcloud/lke/v20231130/model/CallbackWorkflowToolNodeResponse.h>
 #include <tencentcloud/lke/v20231130/model/CheckAttributeLabelExistRequest.h>
 #include <tencentcloud/lke/v20231130/model/CheckAttributeLabelExistResponse.h>
 #include <tencentcloud/lke/v20231130/model/CheckAttributeLabelReferRequest.h>
@@ -247,6 +249,9 @@ namespace TencentCloud
                 LkeClient(const Credential &credential, const std::string &region);
                 LkeClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CallbackWorkflowToolNodeResponse> CallbackWorkflowToolNodeOutcome;
+                typedef std::future<CallbackWorkflowToolNodeOutcome> CallbackWorkflowToolNodeOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::CallbackWorkflowToolNodeRequest&, CallbackWorkflowToolNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CallbackWorkflowToolNodeAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckAttributeLabelExistResponse> CheckAttributeLabelExistOutcome;
                 typedef std::future<CheckAttributeLabelExistOutcome> CheckAttributeLabelExistOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::CheckAttributeLabelExistRequest&, CheckAttributeLabelExistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckAttributeLabelExistAsyncHandler;
@@ -564,6 +569,15 @@ namespace TencentCloud
                 typedef std::function<void(const LkeClient*, const Model::VerifyQARequest&, VerifyQAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyQAAsyncHandler;
 
 
+
+                /**
+                 *工作流工具节点异步回调
+                 * @param req CallbackWorkflowToolNodeRequest
+                 * @return CallbackWorkflowToolNodeOutcome
+                 */
+                CallbackWorkflowToolNodeOutcome CallbackWorkflowToolNode(const Model::CallbackWorkflowToolNodeRequest &request);
+                void CallbackWorkflowToolNodeAsync(const Model::CallbackWorkflowToolNodeRequest& request, const CallbackWorkflowToolNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CallbackWorkflowToolNodeOutcomeCallable CallbackWorkflowToolNodeCallable(const Model::CallbackWorkflowToolNodeRequest& request);
 
                 /**
                  *检查属性下的标签名是否存在

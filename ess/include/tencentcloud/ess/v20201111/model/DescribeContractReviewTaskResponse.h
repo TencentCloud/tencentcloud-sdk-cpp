@@ -24,6 +24,7 @@
 #include <tencentcloud/ess/v20201111/model/OutputRisk.h>
 #include <tencentcloud/ess/v20201111/model/RiskIdentificationRoleInfo.h>
 #include <tencentcloud/ess/v20201111/model/OutputReference.h>
+#include <tencentcloud/ess/v20201111/model/ContractSummary.h>
 
 
 namespace TencentCloud
@@ -284,6 +285,20 @@ namespace TencentCloud
                      */
                     bool ApprovedListsHasBeenSet() const;
 
+                    /**
+                     * 获取摘要信息
+                     * @return Summaries 摘要信息
+                     * 
+                     */
+                    std::vector<ContractSummary> GetSummaries() const;
+
+                    /**
+                     * 判断参数 Summaries 是否已赋值
+                     * @return Summaries 是否已赋值
+                     * 
+                     */
+                    bool SummariesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -390,6 +405,12 @@ namespace TencentCloud
                      */
                     std::vector<OutputReference> m_approvedLists;
                     bool m_approvedListsHasBeenSet;
+
+                    /**
+                     * 摘要信息
+                     */
+                    std::vector<ContractSummary> m_summaries;
+                    bool m_summariesHasBeenSet;
 
                 };
             }
