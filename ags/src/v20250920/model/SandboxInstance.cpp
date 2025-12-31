@@ -30,7 +30,8 @@ SandboxInstance::SandboxInstance() :
     m_stopReasonHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_mountOptionsHasBeenSet(false)
+    m_mountOptionsHasBeenSet(false),
+    m_customConfigurationHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,23 @@ CoreInternalOutcome SandboxInstance::Deserialize(const rapidjson::Value &value)
         m_mountOptionsHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomConfiguration") && !value["CustomConfiguration"].IsNull())
+    {
+        if (!value["CustomConfiguration"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SandboxInstance.CustomConfiguration` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_customConfiguration.Deserialize(value["CustomConfiguration"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_customConfigurationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +259,15 @@ void SandboxInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_customConfigurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customConfiguration.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -404,5 +431,21 @@ void SandboxInstance::SetMountOptions(const vector<MountOption>& _mountOptions)
 bool SandboxInstance::MountOptionsHasBeenSet() const
 {
     return m_mountOptionsHasBeenSet;
+}
+
+CustomConfigurationDetail SandboxInstance::GetCustomConfiguration() const
+{
+    return m_customConfiguration;
+}
+
+void SandboxInstance::SetCustomConfiguration(const CustomConfigurationDetail& _customConfiguration)
+{
+    m_customConfiguration = _customConfiguration;
+    m_customConfigurationHasBeenSet = true;
+}
+
+bool SandboxInstance::CustomConfigurationHasBeenSet() const
+{
+    return m_customConfigurationHasBeenSet;
 }
 

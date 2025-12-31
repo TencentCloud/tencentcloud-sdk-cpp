@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ags/v20250920/model/NetworkConfiguration.h>
 #include <tencentcloud/ags/v20250920/model/Tag.h>
+#include <tencentcloud/ags/v20250920/model/CustomConfiguration.h>
 
 
 namespace TencentCloud
@@ -128,6 +129,27 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取沙箱工具自定义配置
+                     * @return CustomConfiguration 沙箱工具自定义配置
+                     * 
+                     */
+                    CustomConfiguration GetCustomConfiguration() const;
+
+                    /**
+                     * 设置沙箱工具自定义配置
+                     * @param _customConfiguration 沙箱工具自定义配置
+                     * 
+                     */
+                    void SetCustomConfiguration(const CustomConfiguration& _customConfiguration);
+
+                    /**
+                     * 判断参数 CustomConfiguration 是否已赋值
+                     * @return CustomConfiguration 是否已赋值
+                     * 
+                     */
+                    bool CustomConfigurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -153,6 +175,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 沙箱工具自定义配置
+                     */
+                    CustomConfiguration m_customConfiguration;
+                    bool m_customConfigurationHasBeenSet;
 
                 };
             }

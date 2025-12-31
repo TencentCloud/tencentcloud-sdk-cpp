@@ -21,7 +21,8 @@ using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
 StorageSource::StorageSource() :
-    m_cosHasBeenSet(false)
+    m_cosHasBeenSet(false),
+    m_imageHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,23 @@ CoreInternalOutcome StorageSource::Deserialize(const rapidjson::Value &value)
         m_cosHasBeenSet = true;
     }
 
+    if (value.HasMember("Image") && !value["Image"].IsNull())
+    {
+        if (!value["Image"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `StorageSource.Image` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_image.Deserialize(value["Image"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -61,6 +79,15 @@ void StorageSource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cos.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_imageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Image";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_image.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -80,5 +107,21 @@ void StorageSource::SetCos(const CosStorageSource& _cos)
 bool StorageSource::CosHasBeenSet() const
 {
     return m_cosHasBeenSet;
+}
+
+ImageStorageSource StorageSource::GetImage() const
+{
+    return m_image;
+}
+
+void StorageSource::SetImage(const ImageStorageSource& _image)
+{
+    m_image = _image;
+    m_imageHasBeenSet = true;
+}
+
+bool StorageSource::ImageHasBeenSet() const
+{
+    return m_imageHasBeenSet;
 }
 

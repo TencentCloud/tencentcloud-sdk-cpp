@@ -27,6 +27,7 @@
 #include <tencentcloud/ags/v20250920/model/NetworkConfiguration.h>
 #include <tencentcloud/ags/v20250920/model/Tag.h>
 #include <tencentcloud/ags/v20250920/model/StorageMount.h>
+#include <tencentcloud/ags/v20250920/model/CustomConfigurationDetail.h>
 
 
 namespace TencentCloud
@@ -301,6 +302,27 @@ namespace TencentCloud
                      */
                     bool StorageMountsHasBeenSet() const;
 
+                    /**
+                     * 获取沙箱工具自定义配置
+                     * @return CustomConfiguration 沙箱工具自定义配置
+                     * 
+                     */
+                    CustomConfigurationDetail GetCustomConfiguration() const;
+
+                    /**
+                     * 设置沙箱工具自定义配置
+                     * @param _customConfiguration 沙箱工具自定义配置
+                     * 
+                     */
+                    void SetCustomConfiguration(const CustomConfigurationDetail& _customConfiguration);
+
+                    /**
+                     * 判断参数 CustomConfiguration 是否已赋值
+                     * @return CustomConfiguration 是否已赋值
+                     * 
+                     */
+                    bool CustomConfigurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -374,6 +396,12 @@ namespace TencentCloud
                      */
                     std::vector<StorageMount> m_storageMounts;
                     bool m_storageMountsHasBeenSet;
+
+                    /**
+                     * 沙箱工具自定义配置
+                     */
+                    CustomConfigurationDetail m_customConfiguration;
+                    bool m_customConfigurationHasBeenSet;
 
                 };
             }

@@ -91,6 +91,12 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeBlockIgnoreListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeBlockStaticListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeBlockStaticListResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCcnAssociatedInstancesRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCcnAssociatedInstancesResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCcnInstanceRegionStatusRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCcnInstanceRegionStatusResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCcnVpcFwSwitchRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCcnVpcFwSwitchResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwEipsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwEipsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwInsStatusRequest.h>
@@ -143,6 +149,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeSecurityGroupListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeSourceAssetRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeSourceAssetResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeSwitchErrorRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeSwitchErrorResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeSwitchListsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeSwitchListsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeTLogInfoRequest.h>
@@ -155,6 +163,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeUnHandleEventTabListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeVpcAcRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeVpcAcRuleResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeVpcFwCcnPolicyWhiteListRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeVpcFwCcnPolicyWhiteListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeVpcFwGroupSwitchRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeVpcFwGroupSwitchResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ExpandCfwVerticalRequest.h>
@@ -181,6 +191,8 @@
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockIgnoreRuleNewResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockTopRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockTopResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyClusterVpcFwSwitchRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyClusterVpcFwSwitchResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyEWRuleStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyEWRuleStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyEdgeIpSwitchRequest.h>
@@ -247,6 +259,10 @@
 #include <tencentcloud/cfw/v20190904/model/StopSecurityGroupRuleDispatchResponse.h>
 #include <tencentcloud/cfw/v20190904/model/SyncFwOperateRequest.h>
 #include <tencentcloud/cfw/v20190904/model/SyncFwOperateResponse.h>
+#include <tencentcloud/cfw/v20190904/model/UpdateCheckCcnNonDirectFlagRequest.h>
+#include <tencentcloud/cfw/v20190904/model/UpdateCheckCcnNonDirectFlagResponse.h>
+#include <tencentcloud/cfw/v20190904/model/UpdateClusterVpcFwRequest.h>
+#include <tencentcloud/cfw/v20190904/model/UpdateClusterVpcFwResponse.h>
 
 
 namespace TencentCloud
@@ -363,6 +379,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBlockStaticListResponse> DescribeBlockStaticListOutcome;
                 typedef std::future<DescribeBlockStaticListOutcome> DescribeBlockStaticListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeBlockStaticListRequest&, DescribeBlockStaticListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlockStaticListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCcnAssociatedInstancesResponse> DescribeCcnAssociatedInstancesOutcome;
+                typedef std::future<DescribeCcnAssociatedInstancesOutcome> DescribeCcnAssociatedInstancesOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeCcnAssociatedInstancesRequest&, DescribeCcnAssociatedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCcnAssociatedInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCcnInstanceRegionStatusResponse> DescribeCcnInstanceRegionStatusOutcome;
+                typedef std::future<DescribeCcnInstanceRegionStatusOutcome> DescribeCcnInstanceRegionStatusOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeCcnInstanceRegionStatusRequest&, DescribeCcnInstanceRegionStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCcnInstanceRegionStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCcnVpcFwSwitchResponse> DescribeCcnVpcFwSwitchOutcome;
+                typedef std::future<DescribeCcnVpcFwSwitchOutcome> DescribeCcnVpcFwSwitchOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeCcnVpcFwSwitchRequest&, DescribeCcnVpcFwSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCcnVpcFwSwitchAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCfwEipsResponse> DescribeCfwEipsOutcome;
                 typedef std::future<DescribeCfwEipsOutcome> DescribeCfwEipsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeCfwEipsRequest&, DescribeCfwEipsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfwEipsAsyncHandler;
@@ -441,6 +466,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSourceAssetResponse> DescribeSourceAssetOutcome;
                 typedef std::future<DescribeSourceAssetOutcome> DescribeSourceAssetOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeSourceAssetRequest&, DescribeSourceAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSourceAssetAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSwitchErrorResponse> DescribeSwitchErrorOutcome;
+                typedef std::future<DescribeSwitchErrorOutcome> DescribeSwitchErrorOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeSwitchErrorRequest&, DescribeSwitchErrorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSwitchErrorAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSwitchListsResponse> DescribeSwitchListsOutcome;
                 typedef std::future<DescribeSwitchListsOutcome> DescribeSwitchListsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeSwitchListsRequest&, DescribeSwitchListsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSwitchListsAsyncHandler;
@@ -459,6 +487,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVpcAcRuleResponse> DescribeVpcAcRuleOutcome;
                 typedef std::future<DescribeVpcAcRuleOutcome> DescribeVpcAcRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeVpcAcRuleRequest&, DescribeVpcAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcAcRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVpcFwCcnPolicyWhiteListResponse> DescribeVpcFwCcnPolicyWhiteListOutcome;
+                typedef std::future<DescribeVpcFwCcnPolicyWhiteListOutcome> DescribeVpcFwCcnPolicyWhiteListOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeVpcFwCcnPolicyWhiteListRequest&, DescribeVpcFwCcnPolicyWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcFwCcnPolicyWhiteListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVpcFwGroupSwitchResponse> DescribeVpcFwGroupSwitchOutcome;
                 typedef std::future<DescribeVpcFwGroupSwitchOutcome> DescribeVpcFwGroupSwitchOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeVpcFwGroupSwitchRequest&, DescribeVpcFwGroupSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcFwGroupSwitchAsyncHandler;
@@ -498,6 +529,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBlockTopResponse> ModifyBlockTopOutcome;
                 typedef std::future<ModifyBlockTopOutcome> ModifyBlockTopOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyBlockTopRequest&, ModifyBlockTopOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlockTopAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyClusterVpcFwSwitchResponse> ModifyClusterVpcFwSwitchOutcome;
+                typedef std::future<ModifyClusterVpcFwSwitchOutcome> ModifyClusterVpcFwSwitchOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyClusterVpcFwSwitchRequest&, ModifyClusterVpcFwSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterVpcFwSwitchAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyEWRuleStatusResponse> ModifyEWRuleStatusOutcome;
                 typedef std::future<ModifyEWRuleStatusOutcome> ModifyEWRuleStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyEWRuleStatusRequest&, ModifyEWRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEWRuleStatusAsyncHandler;
@@ -597,6 +631,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SyncFwOperateResponse> SyncFwOperateOutcome;
                 typedef std::future<SyncFwOperateOutcome> SyncFwOperateOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::SyncFwOperateRequest&, SyncFwOperateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncFwOperateAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateCheckCcnNonDirectFlagResponse> UpdateCheckCcnNonDirectFlagOutcome;
+                typedef std::future<UpdateCheckCcnNonDirectFlagOutcome> UpdateCheckCcnNonDirectFlagOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::UpdateCheckCcnNonDirectFlagRequest&, UpdateCheckCcnNonDirectFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCheckCcnNonDirectFlagAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateClusterVpcFwResponse> UpdateClusterVpcFwOutcome;
+                typedef std::future<UpdateClusterVpcFwOutcome> UpdateClusterVpcFwOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::UpdateClusterVpcFwRequest&, UpdateClusterVpcFwOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateClusterVpcFwAsyncHandler;
 
 
 
@@ -907,6 +947,35 @@ namespace TencentCloud
                 DescribeBlockStaticListOutcomeCallable DescribeBlockStaticListCallable(const Model::DescribeBlockStaticListRequest& request);
 
                 /**
+                 *查询云联网关联的实例信息
+                 * @param req DescribeCcnAssociatedInstancesRequest
+                 * @return DescribeCcnAssociatedInstancesOutcome
+                 */
+                DescribeCcnAssociatedInstancesOutcome DescribeCcnAssociatedInstances(const Model::DescribeCcnAssociatedInstancesRequest &request);
+                void DescribeCcnAssociatedInstancesAsync(const Model::DescribeCcnAssociatedInstancesRequest& request, const DescribeCcnAssociatedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCcnAssociatedInstancesOutcomeCallable DescribeCcnAssociatedInstancesCallable(const Model::DescribeCcnAssociatedInstancesRequest& request);
+
+                /**
+                 *查询CCN关联实例的地域防火墙引流网络部署状态
+1.根据CCN ID和实例ID列表，返回实例对应地域的防火墙引流网络部署状态
+2.如果传入实例ID列表为空，则返回CCN关联的所有实例的地域防火墙引流网络部署状态
+                 * @param req DescribeCcnInstanceRegionStatusRequest
+                 * @return DescribeCcnInstanceRegionStatusOutcome
+                 */
+                DescribeCcnInstanceRegionStatusOutcome DescribeCcnInstanceRegionStatus(const Model::DescribeCcnInstanceRegionStatusRequest &request);
+                void DescribeCcnInstanceRegionStatusAsync(const Model::DescribeCcnInstanceRegionStatusRequest& request, const DescribeCcnInstanceRegionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCcnInstanceRegionStatusOutcomeCallable DescribeCcnInstanceRegionStatusCallable(const Model::DescribeCcnInstanceRegionStatusRequest& request);
+
+                /**
+                 *查询CCN VPC防火墙开关配置
+                 * @param req DescribeCcnVpcFwSwitchRequest
+                 * @return DescribeCcnVpcFwSwitchOutcome
+                 */
+                DescribeCcnVpcFwSwitchOutcome DescribeCcnVpcFwSwitch(const Model::DescribeCcnVpcFwSwitchRequest &request);
+                void DescribeCcnVpcFwSwitchAsync(const Model::DescribeCcnVpcFwSwitchRequest& request, const DescribeCcnVpcFwSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCcnVpcFwSwitchOutcomeCallable DescribeCcnVpcFwSwitchCallable(const Model::DescribeCcnVpcFwSwitchRequest& request);
+
+                /**
                  *查询防火墙弹性公网IP
                  * @param req DescribeCfwEipsRequest
                  * @return DescribeCfwEipsOutcome
@@ -1141,6 +1210,15 @@ namespace TencentCloud
                 DescribeSourceAssetOutcomeCallable DescribeSourceAssetCallable(const Model::DescribeSourceAssetRequest& request);
 
                 /**
+                 *互联网边界防火墙开关横幅错误信息
+                 * @param req DescribeSwitchErrorRequest
+                 * @return DescribeSwitchErrorOutcome
+                 */
+                DescribeSwitchErrorOutcome DescribeSwitchError(const Model::DescribeSwitchErrorRequest &request);
+                void DescribeSwitchErrorAsync(const Model::DescribeSwitchErrorRequest& request, const DescribeSwitchErrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSwitchErrorOutcomeCallable DescribeSwitchErrorCallable(const Model::DescribeSwitchErrorRequest& request);
+
+                /**
                  *防火墙开关列表，请换用DescribeFwEdgeIps
                  * @param req DescribeSwitchListsRequest
                  * @return DescribeSwitchListsOutcome
@@ -1193,6 +1271,15 @@ namespace TencentCloud
                 DescribeVpcAcRuleOutcome DescribeVpcAcRule(const Model::DescribeVpcAcRuleRequest &request);
                 void DescribeVpcAcRuleAsync(const Model::DescribeVpcAcRuleRequest& request, const DescribeVpcAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVpcAcRuleOutcomeCallable DescribeVpcAcRuleCallable(const Model::DescribeVpcAcRuleRequest& request);
+
+                /**
+                 *查询VPC防火墙策略路由功能开白的CCN列表
+                 * @param req DescribeVpcFwCcnPolicyWhiteListRequest
+                 * @return DescribeVpcFwCcnPolicyWhiteListOutcome
+                 */
+                DescribeVpcFwCcnPolicyWhiteListOutcome DescribeVpcFwCcnPolicyWhiteList(const Model::DescribeVpcFwCcnPolicyWhiteListRequest &request);
+                void DescribeVpcFwCcnPolicyWhiteListAsync(const Model::DescribeVpcFwCcnPolicyWhiteListRequest& request, const DescribeVpcFwCcnPolicyWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVpcFwCcnPolicyWhiteListOutcomeCallable DescribeVpcFwCcnPolicyWhiteListCallable(const Model::DescribeVpcFwCcnPolicyWhiteListRequest& request);
 
                 /**
                  *VPC防火墙(组)开关列表
@@ -1313,6 +1400,15 @@ namespace TencentCloud
                 ModifyBlockTopOutcome ModifyBlockTop(const Model::ModifyBlockTopRequest &request);
                 void ModifyBlockTopAsync(const Model::ModifyBlockTopRequest& request, const ModifyBlockTopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyBlockTopOutcomeCallable ModifyBlockTopCallable(const Model::ModifyBlockTopRequest& request);
+
+                /**
+                 *修改集群模式VPC防火墙开关
+                 * @param req ModifyClusterVpcFwSwitchRequest
+                 * @return ModifyClusterVpcFwSwitchOutcome
+                 */
+                ModifyClusterVpcFwSwitchOutcome ModifyClusterVpcFwSwitch(const Model::ModifyClusterVpcFwSwitchRequest &request);
+                void ModifyClusterVpcFwSwitchAsync(const Model::ModifyClusterVpcFwSwitchRequest& request, const ModifyClusterVpcFwSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterVpcFwSwitchOutcomeCallable ModifyClusterVpcFwSwitchCallable(const Model::ModifyClusterVpcFwSwitchRequest& request);
 
                 /**
                  *启用停用VPC间规则或Nat边界规则
@@ -1614,6 +1710,24 @@ VPC间规则需指定EdgeId。Nat边界规则需指定地域Region与Direction�
                 SyncFwOperateOutcome SyncFwOperate(const Model::SyncFwOperateRequest &request);
                 void SyncFwOperateAsync(const Model::SyncFwOperateRequest& request, const SyncFwOperateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SyncFwOperateOutcomeCallable SyncFwOperateCallable(const Model::SyncFwOperateRequest& request);
+
+                /**
+                 *重新检测CCN中接入VPC防火墙的VPC实例非同城直通标记
+                 * @param req UpdateCheckCcnNonDirectFlagRequest
+                 * @return UpdateCheckCcnNonDirectFlagOutcome
+                 */
+                UpdateCheckCcnNonDirectFlagOutcome UpdateCheckCcnNonDirectFlag(const Model::UpdateCheckCcnNonDirectFlagRequest &request);
+                void UpdateCheckCcnNonDirectFlagAsync(const Model::UpdateCheckCcnNonDirectFlagRequest& request, const UpdateCheckCcnNonDirectFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateCheckCcnNonDirectFlagOutcomeCallable UpdateCheckCcnNonDirectFlagCallable(const Model::UpdateCheckCcnNonDirectFlagRequest& request);
+
+                /**
+                 *修改更新CCN中VPC防火墙策略配置
+                 * @param req UpdateClusterVpcFwRequest
+                 * @return UpdateClusterVpcFwOutcome
+                 */
+                UpdateClusterVpcFwOutcome UpdateClusterVpcFw(const Model::UpdateClusterVpcFwRequest &request);
+                void UpdateClusterVpcFwAsync(const Model::UpdateClusterVpcFwRequest& request, const UpdateClusterVpcFwAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateClusterVpcFwOutcomeCallable UpdateClusterVpcFwCallable(const Model::UpdateClusterVpcFwRequest& request);
 
             };
         }

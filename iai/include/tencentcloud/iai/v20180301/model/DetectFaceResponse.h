@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取请求的图片宽度。
-                     * @return ImageWidth 请求的图片宽度。
+                     * 获取请求的图片宽度，单位为：像素（px）。
+                     * @return ImageWidth 请求的图片宽度，单位为：像素（px）。
                      * 
                      */
                     int64_t GetImageWidth() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ImageWidthHasBeenSet() const;
 
                     /**
-                     * 获取请求的图片高度。
-                     * @return ImageHeight 请求的图片高度。
+                     * 获取请求的图片高度，单位为：像素（px）。
+                     * @return ImageHeight 请求的图片高度，单位为：像素（px）。
                      * 
                      */
                     int64_t GetImageHeight() const;
@@ -111,13 +111,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 请求的图片宽度。
+                     * 请求的图片宽度，单位为：像素（px）。
                      */
                     int64_t m_imageWidth;
                     bool m_imageWidthHasBeenSet;
 
                     /**
-                     * 请求的图片高度。
+                     * 请求的图片高度，单位为：像素（px）。
                      */
                     int64_t m_imageHeight;
                     bool m_imageHeightHasBeenSet;

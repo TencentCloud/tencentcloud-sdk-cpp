@@ -26,7 +26,8 @@ UpdateSandboxToolRequest::UpdateSandboxToolRequest() :
     m_toolIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_customConfigurationHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,15 @@ string UpdateSandboxToolRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_customConfigurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customConfiguration.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -147,6 +157,22 @@ void UpdateSandboxToolRequest::SetTags(const vector<Tag>& _tags)
 bool UpdateSandboxToolRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+CustomConfiguration UpdateSandboxToolRequest::GetCustomConfiguration() const
+{
+    return m_customConfiguration;
+}
+
+void UpdateSandboxToolRequest::SetCustomConfiguration(const CustomConfiguration& _customConfiguration)
+{
+    m_customConfiguration = _customConfiguration;
+    m_customConfigurationHasBeenSet = true;
+}
+
+bool UpdateSandboxToolRequest::CustomConfigurationHasBeenSet() const
+{
+    return m_customConfigurationHasBeenSet;
 }
 
 

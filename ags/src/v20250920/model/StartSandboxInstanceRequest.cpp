@@ -27,7 +27,8 @@ StartSandboxInstanceRequest::StartSandboxInstanceRequest() :
     m_toolNameHasBeenSet(false),
     m_timeoutHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
-    m_mountOptionsHasBeenSet(false)
+    m_mountOptionsHasBeenSet(false),
+    m_customConfigurationHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,15 @@ string StartSandboxInstanceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_customConfigurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customConfiguration.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -171,6 +181,22 @@ void StartSandboxInstanceRequest::SetMountOptions(const vector<MountOption>& _mo
 bool StartSandboxInstanceRequest::MountOptionsHasBeenSet() const
 {
     return m_mountOptionsHasBeenSet;
+}
+
+CustomConfiguration StartSandboxInstanceRequest::GetCustomConfiguration() const
+{
+    return m_customConfiguration;
+}
+
+void StartSandboxInstanceRequest::SetCustomConfiguration(const CustomConfiguration& _customConfiguration)
+{
+    m_customConfiguration = _customConfiguration;
+    m_customConfigurationHasBeenSet = true;
+}
+
+bool StartSandboxInstanceRequest::CustomConfigurationHasBeenSet() const
+{
+    return m_customConfigurationHasBeenSet;
 }
 
 

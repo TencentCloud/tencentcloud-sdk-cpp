@@ -24,6 +24,7 @@
 #include <tencentcloud/ags/v20250920/model/NetworkConfiguration.h>
 #include <tencentcloud/ags/v20250920/model/Tag.h>
 #include <tencentcloud/ags/v20250920/model/StorageMount.h>
+#include <tencentcloud/ags/v20250920/model/CustomConfiguration.h>
 
 
 namespace TencentCloud
@@ -67,15 +68,15 @@ namespace TencentCloud
                     bool ToolNameHasBeenSet() const;
 
                     /**
-                     * 获取沙箱工具类型，目前支持：browser、code-interpreter
-                     * @return ToolType 沙箱工具类型，目前支持：browser、code-interpreter
+                     * 获取沙箱工具类型，目前支持：browser、code-interpreter、custom
+                     * @return ToolType 沙箱工具类型，目前支持：browser、code-interpreter、custom
                      * 
                      */
                     std::string GetToolType() const;
 
                     /**
-                     * 设置沙箱工具类型，目前支持：browser、code-interpreter
-                     * @param _toolType 沙箱工具类型，目前支持：browser、code-interpreter
+                     * 设置沙箱工具类型，目前支持：browser、code-interpreter、custom
+                     * @param _toolType 沙箱工具类型，目前支持：browser、code-interpreter、custom
                      * 
                      */
                     void SetToolType(const std::string& _toolType);
@@ -234,6 +235,27 @@ namespace TencentCloud
                      */
                     bool StorageMountsHasBeenSet() const;
 
+                    /**
+                     * 获取沙箱工具自定义配置
+                     * @return CustomConfiguration 沙箱工具自定义配置
+                     * 
+                     */
+                    CustomConfiguration GetCustomConfiguration() const;
+
+                    /**
+                     * 设置沙箱工具自定义配置
+                     * @param _customConfiguration 沙箱工具自定义配置
+                     * 
+                     */
+                    void SetCustomConfiguration(const CustomConfiguration& _customConfiguration);
+
+                    /**
+                     * 判断参数 CustomConfiguration 是否已赋值
+                     * @return CustomConfiguration 是否已赋值
+                     * 
+                     */
+                    bool CustomConfigurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -243,7 +265,7 @@ namespace TencentCloud
                     bool m_toolNameHasBeenSet;
 
                     /**
-                     * 沙箱工具类型，目前支持：browser、code-interpreter
+                     * 沙箱工具类型，目前支持：browser、code-interpreter、custom
                      */
                     std::string m_toolType;
                     bool m_toolTypeHasBeenSet;
@@ -289,6 +311,12 @@ namespace TencentCloud
                      */
                     std::vector<StorageMount> m_storageMounts;
                     bool m_storageMountsHasBeenSet;
+
+                    /**
+                     * 沙箱工具自定义配置
+                     */
+                    CustomConfiguration m_customConfiguration;
+                    bool m_customConfigurationHasBeenSet;
 
                 };
             }

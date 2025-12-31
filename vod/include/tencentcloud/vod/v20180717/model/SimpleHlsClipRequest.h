@@ -263,21 +263,21 @@ namespace TencentCloud
                     /**
                      * 获取该字段已废弃。
                      * @return Precision 该字段已废弃。
-                     * 
+                     * @deprecated
                      */
                     std::string GetPrecision() const;
 
                     /**
                      * 设置该字段已废弃。
                      * @param _precision 该字段已废弃。
-                     * 
+                     * @deprecated
                      */
                     void SetPrecision(const std::string& _precision);
 
                     /**
                      * 判断参数 Precision 是否已赋值
                      * @return Precision 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool PrecisionHasBeenSet() const;
 

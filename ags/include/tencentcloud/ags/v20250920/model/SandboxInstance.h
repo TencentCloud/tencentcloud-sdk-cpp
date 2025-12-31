@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ags/v20250920/model/MountOption.h>
+#include <tencentcloud/ags/v20250920/model/CustomConfigurationDetail.h>
 
 
 namespace TencentCloud
@@ -257,6 +258,27 @@ namespace TencentCloud
                      */
                     bool MountOptionsHasBeenSet() const;
 
+                    /**
+                     * 获取沙箱实例自定义配置
+                     * @return CustomConfiguration 沙箱实例自定义配置
+                     * 
+                     */
+                    CustomConfigurationDetail GetCustomConfiguration() const;
+
+                    /**
+                     * 设置沙箱实例自定义配置
+                     * @param _customConfiguration 沙箱实例自定义配置
+                     * 
+                     */
+                    void SetCustomConfiguration(const CustomConfigurationDetail& _customConfiguration);
+
+                    /**
+                     * 判断参数 CustomConfiguration 是否已赋值
+                     * @return CustomConfiguration 是否已赋值
+                     * 
+                     */
+                    bool CustomConfigurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -318,6 +340,12 @@ namespace TencentCloud
                      */
                     std::vector<MountOption> m_mountOptions;
                     bool m_mountOptionsHasBeenSet;
+
+                    /**
+                     * 沙箱实例自定义配置
+                     */
+                    CustomConfigurationDetail m_customConfiguration;
+                    bool m_customConfigurationHasBeenSet;
 
                 };
             }

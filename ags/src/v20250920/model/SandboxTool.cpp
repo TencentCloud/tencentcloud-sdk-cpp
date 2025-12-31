@@ -32,7 +32,8 @@ SandboxTool::SandboxTool() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_storageMountsHasBeenSet(false)
+    m_storageMountsHasBeenSet(false),
+    m_customConfigurationHasBeenSet(false)
 {
 }
 
@@ -188,6 +189,23 @@ CoreInternalOutcome SandboxTool::Deserialize(const rapidjson::Value &value)
         m_storageMountsHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomConfiguration") && !value["CustomConfiguration"].IsNull())
+    {
+        if (!value["CustomConfiguration"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SandboxTool.CustomConfiguration` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_customConfiguration.Deserialize(value["CustomConfiguration"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_customConfigurationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -304,6 +322,15 @@ void SandboxTool::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_customConfigurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customConfiguration.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -499,5 +526,21 @@ void SandboxTool::SetStorageMounts(const vector<StorageMount>& _storageMounts)
 bool SandboxTool::StorageMountsHasBeenSet() const
 {
     return m_storageMountsHasBeenSet;
+}
+
+CustomConfigurationDetail SandboxTool::GetCustomConfiguration() const
+{
+    return m_customConfiguration;
+}
+
+void SandboxTool::SetCustomConfiguration(const CustomConfigurationDetail& _customConfiguration)
+{
+    m_customConfiguration = _customConfiguration;
+    m_customConfigurationHasBeenSet = true;
+}
+
+bool SandboxTool::CustomConfigurationHasBeenSet() const
+{
+    return m_customConfigurationHasBeenSet;
 }
 

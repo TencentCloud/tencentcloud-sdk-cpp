@@ -31,7 +31,8 @@ CreateSandboxToolRequest::CreateSandboxToolRequest() :
     m_tagsHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_storageMountsHasBeenSet(false)
+    m_storageMountsHasBeenSet(false),
+    m_customConfigurationHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,15 @@ string CreateSandboxToolRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_customConfigurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customConfiguration.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -279,6 +289,22 @@ void CreateSandboxToolRequest::SetStorageMounts(const vector<StorageMount>& _sto
 bool CreateSandboxToolRequest::StorageMountsHasBeenSet() const
 {
     return m_storageMountsHasBeenSet;
+}
+
+CustomConfiguration CreateSandboxToolRequest::GetCustomConfiguration() const
+{
+    return m_customConfiguration;
+}
+
+void CreateSandboxToolRequest::SetCustomConfiguration(const CustomConfiguration& _customConfiguration)
+{
+    m_customConfiguration = _customConfiguration;
+    m_customConfigurationHasBeenSet = true;
+}
+
+bool CreateSandboxToolRequest::CustomConfigurationHasBeenSet() const
+{
+    return m_customConfigurationHasBeenSet;
 }
 
 

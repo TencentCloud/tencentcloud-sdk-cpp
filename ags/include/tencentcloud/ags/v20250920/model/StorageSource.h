@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ags/v20250920/model/CosStorageSource.h>
+#include <tencentcloud/ags/v20250920/model/ImageStorageSource.h>
 
 
 namespace TencentCloud
@@ -68,6 +69,27 @@ namespace TencentCloud
                      */
                     bool CosHasBeenSet() const;
 
+                    /**
+                     * 获取镜像卷配置
+                     * @return Image 镜像卷配置
+                     * 
+                     */
+                    ImageStorageSource GetImage() const;
+
+                    /**
+                     * 设置镜像卷配置
+                     * @param _image 镜像卷配置
+                     * 
+                     */
+                    void SetImage(const ImageStorageSource& _image);
+
+                    /**
+                     * 判断参数 Image 是否已赋值
+                     * @return Image 是否已赋值
+                     * 
+                     */
+                    bool ImageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -75,6 +97,12 @@ namespace TencentCloud
                      */
                     CosStorageSource m_cos;
                     bool m_cosHasBeenSet;
+
+                    /**
+                     * 镜像卷配置
+                     */
+                    ImageStorageSource m_image;
+                    bool m_imageHasBeenSet;
 
                 };
             }

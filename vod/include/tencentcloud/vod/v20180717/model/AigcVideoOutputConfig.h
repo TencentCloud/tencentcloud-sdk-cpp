@@ -250,19 +250,19 @@ namespace TencentCloud
                     bool AspectRatioHasBeenSet() const;
 
                     /**
-                     * 获取是否生成音频。支持的模型包括 GV、OS。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li>
-默认值：Enabled
-                     * @return AudioGeneration 是否生成音频。支持的模型包括 GV、OS。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li>
-默认值：Enabled
+                     * 获取是否生成音频。支持的模型包括 GV、OS、Vidu。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li>
+默认值：Disabled
+                     * @return AudioGeneration 是否生成音频。支持的模型包括 GV、OS、Vidu。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li>
+默认值：Disabled
                      * 
                      */
                     std::string GetAudioGeneration() const;
 
                     /**
-                     * 设置是否生成音频。支持的模型包括 GV、OS。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li>
-默认值：Enabled
-                     * @param _audioGeneration 是否生成音频。支持的模型包括 GV、OS。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li>
-默认值：Enabled
+                     * 设置是否生成音频。支持的模型包括 GV、OS、Vidu。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li>
+默认值：Disabled
+                     * @param _audioGeneration 是否生成音频。支持的模型包括 GV、OS、Vidu。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li>
+默认值：Disabled
                      * 
                      */
                     void SetAudioGeneration(const std::string& _audioGeneration);
@@ -429,8 +429,8 @@ namespace TencentCloud
                     bool m_aspectRatioHasBeenSet;
 
                     /**
-                     * 是否生成音频。支持的模型包括 GV、OS。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li>
-默认值：Enabled
+                     * 是否生成音频。支持的模型包括 GV、OS、Vidu。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li>
+默认值：Disabled
                      */
                     std::string m_audioGeneration;
                     bool m_audioGenerationHasBeenSet;

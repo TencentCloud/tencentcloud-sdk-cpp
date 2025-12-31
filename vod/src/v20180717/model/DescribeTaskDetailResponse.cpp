@@ -53,7 +53,9 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_complexAdaptiveDynamicStreamingTaskHasBeenSet(false),
     m_processMediaByMPSTaskHasBeenSet(false),
     m_aigcImageTaskHasBeenSet(false),
-    m_aigcVideoTaskHasBeenSet(false)
+    m_aigcVideoTaskHasBeenSet(false),
+    m_importMediaKnowledgeHasBeenSet(false),
+    m_sceneAigcImageTaskHasBeenSet(false)
 {
 }
 
@@ -566,6 +568,40 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_aigcVideoTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ImportMediaKnowledge") && !rsp["ImportMediaKnowledge"].IsNull())
+    {
+        if (!rsp["ImportMediaKnowledge"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImportMediaKnowledge` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_importMediaKnowledge.Deserialize(rsp["ImportMediaKnowledge"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_importMediaKnowledgeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SceneAigcImageTask") && !rsp["SceneAigcImageTask"].IsNull())
+    {
+        if (!rsp["SceneAigcImageTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SceneAigcImageTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_sceneAigcImageTask.Deserialize(rsp["SceneAigcImageTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_sceneAigcImageTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -839,6 +875,24 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_aigcVideoTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_importMediaKnowledgeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImportMediaKnowledge";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_importMediaKnowledge.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_sceneAigcImageTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneAigcImageTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sceneAigcImageTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1151,6 +1205,26 @@ AigcVideoTask DescribeTaskDetailResponse::GetAigcVideoTask() const
 bool DescribeTaskDetailResponse::AigcVideoTaskHasBeenSet() const
 {
     return m_aigcVideoTaskHasBeenSet;
+}
+
+ImportMediaKnowledgeTask DescribeTaskDetailResponse::GetImportMediaKnowledge() const
+{
+    return m_importMediaKnowledge;
+}
+
+bool DescribeTaskDetailResponse::ImportMediaKnowledgeHasBeenSet() const
+{
+    return m_importMediaKnowledgeHasBeenSet;
+}
+
+SceneAigcImageTask DescribeTaskDetailResponse::GetSceneAigcImageTask() const
+{
+    return m_sceneAigcImageTask;
+}
+
+bool DescribeTaskDetailResponse::SceneAigcImageTaskHasBeenSet() const
+{
+    return m_sceneAigcImageTaskHasBeenSet;
 }
 
 
