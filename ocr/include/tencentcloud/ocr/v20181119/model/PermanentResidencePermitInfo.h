@@ -321,6 +321,31 @@ namespace TencentCloud
                      */
                     bool NationalityHasBeenSet() const;
 
+                    /**
+                     * 获取英文名
+示例值：Ming Li
+                     * @return EnName 英文名
+示例值：Ming Li
+                     * 
+                     */
+                    ContentInfo GetEnName() const;
+
+                    /**
+                     * 设置英文名
+示例值：Ming Li
+                     * @param _enName 英文名
+示例值：Ming Li
+                     * 
+                     */
+                    void SetEnName(const ContentInfo& _enName);
+
+                    /**
+                     * 判断参数 EnName 是否已赋值
+                     * @return EnName 是否已赋值
+                     * 
+                     */
+                    bool EnNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -400,6 +425,13 @@ namespace TencentCloud
                      */
                     ContentInfo m_nationality;
                     bool m_nationalityHasBeenSet;
+
+                    /**
+                     * 英文名
+示例值：Ming Li
+                     */
+                    ContentInfo m_enName;
+                    bool m_enNameHasBeenSet;
 
                 };
             }

@@ -195,6 +195,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQConsumerConnectionsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQEnvironmentRolesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQEnvironmentRolesResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQGeneralSKUsRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQGeneralSKUsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQGroupsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQGroupsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQMigratingTopicListRequest.h>
@@ -593,6 +595,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRocketMQEnvironmentRolesResponse> DescribeRocketMQEnvironmentRolesOutcome;
                 typedef std::future<DescribeRocketMQEnvironmentRolesOutcome> DescribeRocketMQEnvironmentRolesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQEnvironmentRolesRequest&, DescribeRocketMQEnvironmentRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQEnvironmentRolesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQGeneralSKUsResponse> DescribeRocketMQGeneralSKUsOutcome;
+                typedef std::future<DescribeRocketMQGeneralSKUsOutcome> DescribeRocketMQGeneralSKUsOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQGeneralSKUsRequest&, DescribeRocketMQGeneralSKUsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQGeneralSKUsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRocketMQGroupsResponse> DescribeRocketMQGroupsOutcome;
                 typedef std::future<DescribeRocketMQGroupsOutcome> DescribeRocketMQGroupsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQGroupsRequest&, DescribeRocketMQGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQGroupsAsyncHandler;
@@ -1581,6 +1586,16 @@ namespace TencentCloud
                 DescribeRocketMQEnvironmentRolesOutcome DescribeRocketMQEnvironmentRoles(const Model::DescribeRocketMQEnvironmentRolesRequest &request);
                 void DescribeRocketMQEnvironmentRolesAsync(const Model::DescribeRocketMQEnvironmentRolesRequest& request, const DescribeRocketMQEnvironmentRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRocketMQEnvironmentRolesOutcomeCallable DescribeRocketMQEnvironmentRolesCallable(const Model::DescribeRocketMQEnvironmentRolesRequest& request);
+
+                /**
+                 *查询通用集群售卖规格。
+当前 API 适用集群：4.x 通用集群。查询 5.x 集群的售卖规格接口文档见 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676)。
+                 * @param req DescribeRocketMQGeneralSKUsRequest
+                 * @return DescribeRocketMQGeneralSKUsOutcome
+                 */
+                DescribeRocketMQGeneralSKUsOutcome DescribeRocketMQGeneralSKUs(const Model::DescribeRocketMQGeneralSKUsRequest &request);
+                void DescribeRocketMQGeneralSKUsAsync(const Model::DescribeRocketMQGeneralSKUsRequest& request, const DescribeRocketMQGeneralSKUsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQGeneralSKUsOutcomeCallable DescribeRocketMQGeneralSKUsCallable(const Model::DescribeRocketMQGeneralSKUsRequest& request);
 
                 /**
                  *查询 RocketMQ 消费组列表。

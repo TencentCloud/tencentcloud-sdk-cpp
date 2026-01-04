@@ -141,6 +141,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopHotKeysResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopKeyPrefixListRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopKeyPrefixListResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeRedisUnExpiredKeyStatisticsRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeRedisUnExpiredKeyStatisticsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogDownloadUrlsRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogDownloadUrlsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogExportTasksRequest.h>
@@ -382,6 +384,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRedisTopKeyPrefixListResponse> DescribeRedisTopKeyPrefixListOutcome;
                 typedef std::future<DescribeRedisTopKeyPrefixListOutcome> DescribeRedisTopKeyPrefixListOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeRedisTopKeyPrefixListRequest&, DescribeRedisTopKeyPrefixListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisTopKeyPrefixListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRedisUnExpiredKeyStatisticsResponse> DescribeRedisUnExpiredKeyStatisticsOutcome;
+                typedef std::future<DescribeRedisUnExpiredKeyStatisticsOutcome> DescribeRedisUnExpiredKeyStatisticsOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeRedisUnExpiredKeyStatisticsRequest&, DescribeRedisUnExpiredKeyStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisUnExpiredKeyStatisticsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSecurityAuditLogDownloadUrlsResponse> DescribeSecurityAuditLogDownloadUrlsOutcome;
                 typedef std::future<DescribeSecurityAuditLogDownloadUrlsOutcome> DescribeSecurityAuditLogDownloadUrlsOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeSecurityAuditLogDownloadUrlsRequest&, DescribeSecurityAuditLogDownloadUrlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityAuditLogDownloadUrlsAsyncHandler;
@@ -990,6 +995,15 @@ namespace TencentCloud
                 DescribeRedisTopKeyPrefixListOutcome DescribeRedisTopKeyPrefixList(const Model::DescribeRedisTopKeyPrefixListRequest &request);
                 void DescribeRedisTopKeyPrefixListAsync(const Model::DescribeRedisTopKeyPrefixListRequest& request, const DescribeRedisTopKeyPrefixListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRedisTopKeyPrefixListOutcomeCallable DescribeRedisTopKeyPrefixListCallable(const Model::DescribeRedisTopKeyPrefixListRequest& request);
+
+                /**
+                 *查询Redis全量Key的内存分布情况。
+                 * @param req DescribeRedisUnExpiredKeyStatisticsRequest
+                 * @return DescribeRedisUnExpiredKeyStatisticsOutcome
+                 */
+                DescribeRedisUnExpiredKeyStatisticsOutcome DescribeRedisUnExpiredKeyStatistics(const Model::DescribeRedisUnExpiredKeyStatisticsRequest &request);
+                void DescribeRedisUnExpiredKeyStatisticsAsync(const Model::DescribeRedisUnExpiredKeyStatisticsRequest& request, const DescribeRedisUnExpiredKeyStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRedisUnExpiredKeyStatisticsOutcomeCallable DescribeRedisUnExpiredKeyStatisticsCallable(const Model::DescribeRedisUnExpiredKeyStatisticsRequest& request);
 
                 /**
                  *查询安全审计日志导出文件下载链接。目前日志文件下载仅提供腾讯云内网地址，请通过广州地域的腾讯云服务器进行下载。

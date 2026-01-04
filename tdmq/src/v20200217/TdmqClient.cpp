@@ -4340,6 +4340,56 @@ TdmqClient::DescribeRocketMQEnvironmentRolesOutcomeCallable TdmqClient::Describe
     return prom->get_future();
 }
 
+TdmqClient::DescribeRocketMQGeneralSKUsOutcome TdmqClient::DescribeRocketMQGeneralSKUs(const DescribeRocketMQGeneralSKUsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRocketMQGeneralSKUs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRocketMQGeneralSKUsResponse rsp = DescribeRocketMQGeneralSKUsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRocketMQGeneralSKUsOutcome(rsp);
+        else
+            return DescribeRocketMQGeneralSKUsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRocketMQGeneralSKUsOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeRocketMQGeneralSKUsAsync(const DescribeRocketMQGeneralSKUsRequest& request, const DescribeRocketMQGeneralSKUsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRocketMQGeneralSKUsRequest&;
+    using Resp = DescribeRocketMQGeneralSKUsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRocketMQGeneralSKUs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmqClient::DescribeRocketMQGeneralSKUsOutcomeCallable TdmqClient::DescribeRocketMQGeneralSKUsCallable(const DescribeRocketMQGeneralSKUsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRocketMQGeneralSKUsOutcome>>();
+    DescribeRocketMQGeneralSKUsAsync(
+    request,
+    [prom](
+        const TdmqClient*,
+        const DescribeRocketMQGeneralSKUsRequest&,
+        DescribeRocketMQGeneralSKUsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TdmqClient::DescribeRocketMQGroupsOutcome TdmqClient::DescribeRocketMQGroups(const DescribeRocketMQGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRocketMQGroups");

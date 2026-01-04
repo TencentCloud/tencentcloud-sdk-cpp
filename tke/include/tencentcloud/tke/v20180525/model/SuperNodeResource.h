@@ -235,6 +235,27 @@ namespace TencentCloud
                      */
                     bool DisasterRecoverGroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取定价类型
+                     * @return PriceType 定价类型
+                     * 
+                     */
+                    std::string GetPriceType() const;
+
+                    /**
+                     * 设置定价类型
+                     * @param _priceType 定价类型
+                     * 
+                     */
+                    void SetPriceType(const std::string& _priceType);
+
+                    /**
+                     * 判断参数 PriceType 是否已赋值
+                     * @return PriceType 是否已赋值
+                     * 
+                     */
+                    bool PriceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +311,12 @@ namespace TencentCloud
                      */
                     std::string m_disasterRecoverGroupId;
                     bool m_disasterRecoverGroupIdHasBeenSet;
+
+                    /**
+                     * 定价类型
+                     */
+                    std::string m_priceType;
+                    bool m_priceTypeHasBeenSet;
 
                 };
             }

@@ -14,57 +14,57 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CBS_V20170312_MODEL_INQUIRYPRICERENEWDISKSRESPONSE_H_
-#define TENCENTCLOUD_CBS_V20170312_MODEL_INQUIRYPRICERENEWDISKSRESPONSE_H_
+#ifndef TENCENTCLOUD_TDMQ_V20200217_MODEL_DESCRIBEROCKETMQGENERALSKUSRESPONSE_H_
+#define TENCENTCLOUD_TDMQ_V20200217_MODEL_DESCRIBEROCKETMQGENERALSKUSRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/cbs/v20170312/model/PrepayPrice.h>
+#include <tencentcloud/tdmq/v20200217/model/GeneralSKU.h>
 
 
 namespace TencentCloud
 {
-    namespace Cbs
+    namespace Tdmq
     {
-        namespace V20170312
+        namespace V20200217
         {
             namespace Model
             {
                 /**
-                * InquiryPriceRenewDisks返回参数结构体
+                * DescribeRocketMQGeneralSKUs返回参数结构体
                 */
-                class InquiryPriceRenewDisksResponse : public AbstractModel
+                class DescribeRocketMQGeneralSKUsResponse : public AbstractModel
                 {
                 public:
-                    InquiryPriceRenewDisksResponse();
-                    ~InquiryPriceRenewDisksResponse() = default;
+                    DescribeRocketMQGeneralSKUsResponse();
+                    ~DescribeRocketMQGeneralSKUsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取<p>描述了续费云盘的价格。</p>
-                     * @return DiskPrice <p>描述了续费云盘的价格。</p>
+                     * 获取商品配置信息
+                     * @return Skus 商品配置信息
                      * 
                      */
-                    PrepayPrice GetDiskPrice() const;
+                    std::vector<GeneralSKU> GetSkus() const;
 
                     /**
-                     * 判断参数 DiskPrice 是否已赋值
-                     * @return DiskPrice 是否已赋值
+                     * 判断参数 Skus 是否已赋值
+                     * @return Skus 是否已赋值
                      * 
                      */
-                    bool DiskPriceHasBeenSet() const;
+                    bool SkusHasBeenSet() const;
 
                 private:
 
                     /**
-                     * <p>描述了续费云盘的价格。</p>
+                     * 商品配置信息
                      */
-                    PrepayPrice m_diskPrice;
-                    bool m_diskPriceHasBeenSet;
+                    std::vector<GeneralSKU> m_skus;
+                    bool m_skusHasBeenSet;
 
                 };
             }
@@ -72,4 +72,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CBS_V20170312_MODEL_INQUIRYPRICERENEWDISKSRESPONSE_H_
+#endif // !TENCENTCLOUD_TDMQ_V20200217_MODEL_DESCRIBEROCKETMQGENERALSKUSRESPONSE_H_

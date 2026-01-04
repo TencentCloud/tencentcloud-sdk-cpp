@@ -41,7 +41,9 @@ AccessKeyRisk::AccessKeyRisk() :
     m_typeHasBeenSet(false),
     m_checkStatusHasBeenSet(false),
     m_appIDHasBeenSet(false),
-    m_queryParamHasBeenSet(false)
+    m_queryParamHasBeenSet(false),
+    m_cloudTypeHasBeenSet(false),
+    m_relatedAKHasBeenSet(false)
 {
 }
 
@@ -263,6 +265,36 @@ CoreInternalOutcome AccessKeyRisk::Deserialize(const rapidjson::Value &value)
         m_queryParamHasBeenSet = true;
     }
 
+    if (value.HasMember("CloudType") && !value["CloudType"].IsNull())
+    {
+        if (!value["CloudType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessKeyRisk.CloudType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudType = value["CloudType"].GetInt64();
+        m_cloudTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RelatedAK") && !value["RelatedAK"].IsNull())
+    {
+        if (!value["RelatedAK"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AccessKeyRisk.RelatedAK` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RelatedAK"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AKInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_relatedAK.push_back(item);
+        }
+        m_relatedAKHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -441,6 +473,29 @@ void AccessKeyRisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "QueryParam";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_queryParam.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cloudTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cloudType, allocator);
+    }
+
+    if (m_relatedAKHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RelatedAK";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_relatedAK.begin(); itr != m_relatedAK.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -780,5 +835,37 @@ void AccessKeyRisk::SetQueryParam(const string& _queryParam)
 bool AccessKeyRisk::QueryParamHasBeenSet() const
 {
     return m_queryParamHasBeenSet;
+}
+
+int64_t AccessKeyRisk::GetCloudType() const
+{
+    return m_cloudType;
+}
+
+void AccessKeyRisk::SetCloudType(const int64_t& _cloudType)
+{
+    m_cloudType = _cloudType;
+    m_cloudTypeHasBeenSet = true;
+}
+
+bool AccessKeyRisk::CloudTypeHasBeenSet() const
+{
+    return m_cloudTypeHasBeenSet;
+}
+
+vector<AKInfo> AccessKeyRisk::GetRelatedAK() const
+{
+    return m_relatedAK;
+}
+
+void AccessKeyRisk::SetRelatedAK(const vector<AKInfo>& _relatedAK)
+{
+    m_relatedAK = _relatedAK;
+    m_relatedAKHasBeenSet = true;
+}
+
+bool AccessKeyRisk::RelatedAKHasBeenSet() const
+{
+    return m_relatedAKHasBeenSet;
 }
 

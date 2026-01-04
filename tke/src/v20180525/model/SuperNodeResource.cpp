@@ -29,7 +29,8 @@ SuperNodeResource::SuperNodeResource() :
     m_quotaTypeHasBeenSet(false),
     m_chargeTypeHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_disasterRecoverGroupIdHasBeenSet(false)
+    m_disasterRecoverGroupIdHasBeenSet(false),
+    m_priceTypeHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome SuperNodeResource::Deserialize(const rapidjson::Value &value
         m_disasterRecoverGroupIdHasBeenSet = true;
     }
 
+    if (value.HasMember("PriceType") && !value["PriceType"].IsNull())
+    {
+        if (!value["PriceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuperNodeResource.PriceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_priceType = string(value["PriceType"].GetString());
+        m_priceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void SuperNodeResource::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "DisasterRecoverGroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_disasterRecoverGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_priceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PriceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_priceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void SuperNodeResource::SetDisasterRecoverGroupId(const string& _disasterRecover
 bool SuperNodeResource::DisasterRecoverGroupIdHasBeenSet() const
 {
     return m_disasterRecoverGroupIdHasBeenSet;
+}
+
+string SuperNodeResource::GetPriceType() const
+{
+    return m_priceType;
+}
+
+void SuperNodeResource::SetPriceType(const string& _priceType)
+{
+    m_priceType = _priceType;
+    m_priceTypeHasBeenSet = true;
+}
+
+bool SuperNodeResource::PriceTypeHasBeenSet() const
+{
+    return m_priceTypeHasBeenSet;
 }
 

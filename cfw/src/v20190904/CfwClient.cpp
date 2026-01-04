@@ -1840,6 +1840,56 @@ CfwClient::DescribeCcnInstanceRegionStatusOutcomeCallable CfwClient::DescribeCcn
     return prom->get_future();
 }
 
+CfwClient::DescribeCcnVpcFwPolicyLimitOutcome CfwClient::DescribeCcnVpcFwPolicyLimit(const DescribeCcnVpcFwPolicyLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCcnVpcFwPolicyLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCcnVpcFwPolicyLimitResponse rsp = DescribeCcnVpcFwPolicyLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCcnVpcFwPolicyLimitOutcome(rsp);
+        else
+            return DescribeCcnVpcFwPolicyLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCcnVpcFwPolicyLimitOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeCcnVpcFwPolicyLimitAsync(const DescribeCcnVpcFwPolicyLimitRequest& request, const DescribeCcnVpcFwPolicyLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCcnVpcFwPolicyLimitRequest&;
+    using Resp = DescribeCcnVpcFwPolicyLimitResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCcnVpcFwPolicyLimit", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeCcnVpcFwPolicyLimitOutcomeCallable CfwClient::DescribeCcnVpcFwPolicyLimitCallable(const DescribeCcnVpcFwPolicyLimitRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCcnVpcFwPolicyLimitOutcome>>();
+    DescribeCcnVpcFwPolicyLimitAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeCcnVpcFwPolicyLimitRequest&,
+        DescribeCcnVpcFwPolicyLimitOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::DescribeCcnVpcFwSwitchOutcome CfwClient::DescribeCcnVpcFwSwitch(const DescribeCcnVpcFwSwitchRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCcnVpcFwSwitch");
@@ -1982,6 +2032,56 @@ CfwClient::DescribeCfwInsStatusOutcomeCallable CfwClient::DescribeCfwInsStatusCa
         const CfwClient*,
         const DescribeCfwInsStatusRequest&,
         DescribeCfwInsStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::DescribeClusterVpcFwSwitchsOutcome CfwClient::DescribeClusterVpcFwSwitchs(const DescribeClusterVpcFwSwitchsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterVpcFwSwitchs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterVpcFwSwitchsResponse rsp = DescribeClusterVpcFwSwitchsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterVpcFwSwitchsOutcome(rsp);
+        else
+            return DescribeClusterVpcFwSwitchsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterVpcFwSwitchsOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeClusterVpcFwSwitchsAsync(const DescribeClusterVpcFwSwitchsRequest& request, const DescribeClusterVpcFwSwitchsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeClusterVpcFwSwitchsRequest&;
+    using Resp = DescribeClusterVpcFwSwitchsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterVpcFwSwitchs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeClusterVpcFwSwitchsOutcomeCallable CfwClient::DescribeClusterVpcFwSwitchsCallable(const DescribeClusterVpcFwSwitchsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeClusterVpcFwSwitchsOutcome>>();
+    DescribeClusterVpcFwSwitchsAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeClusterVpcFwSwitchsRequest&,
+        DescribeClusterVpcFwSwitchsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

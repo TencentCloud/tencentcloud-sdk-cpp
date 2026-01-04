@@ -14,57 +14,57 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CBS_V20170312_MODEL_INQUIRYPRICERENEWDISKSRESPONSE_H_
-#define TENCENTCLOUD_CBS_V20170312_MODEL_INQUIRYPRICERENEWDISKSRESPONSE_H_
+#ifndef TENCENTCLOUD_DBBRAIN_V20210527_MODEL_DESCRIBEREDISUNEXPIREDKEYSTATISTICSRESPONSE_H_
+#define TENCENTCLOUD_DBBRAIN_V20210527_MODEL_DESCRIBEREDISUNEXPIREDKEYSTATISTICSRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/cbs/v20170312/model/PrepayPrice.h>
+#include <tencentcloud/dbbrain/v20210527/model/RedisGlobalKeyInfo.h>
 
 
 namespace TencentCloud
 {
-    namespace Cbs
+    namespace Dbbrain
     {
-        namespace V20170312
+        namespace V20210527
         {
             namespace Model
             {
                 /**
-                * InquiryPriceRenewDisks返回参数结构体
+                * DescribeRedisUnExpiredKeyStatistics返回参数结构体
                 */
-                class InquiryPriceRenewDisksResponse : public AbstractModel
+                class DescribeRedisUnExpiredKeyStatisticsResponse : public AbstractModel
                 {
                 public:
-                    InquiryPriceRenewDisksResponse();
-                    ~InquiryPriceRenewDisksResponse() = default;
+                    DescribeRedisUnExpiredKeyStatisticsResponse();
+                    ~DescribeRedisUnExpiredKeyStatisticsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取<p>描述了续费云盘的价格。</p>
-                     * @return DiskPrice <p>描述了续费云盘的价格。</p>
+                     * 获取全量Key的聚合分布信息列表。
+                     * @return SeriesData 全量Key的聚合分布信息列表。
                      * 
                      */
-                    PrepayPrice GetDiskPrice() const;
+                    std::vector<RedisGlobalKeyInfo> GetSeriesData() const;
 
                     /**
-                     * 判断参数 DiskPrice 是否已赋值
-                     * @return DiskPrice 是否已赋值
+                     * 判断参数 SeriesData 是否已赋值
+                     * @return SeriesData 是否已赋值
                      * 
                      */
-                    bool DiskPriceHasBeenSet() const;
+                    bool SeriesDataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * <p>描述了续费云盘的价格。</p>
+                     * 全量Key的聚合分布信息列表。
                      */
-                    PrepayPrice m_diskPrice;
-                    bool m_diskPriceHasBeenSet;
+                    std::vector<RedisGlobalKeyInfo> m_seriesData;
+                    bool m_seriesDataHasBeenSet;
 
                 };
             }
@@ -72,4 +72,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CBS_V20170312_MODEL_INQUIRYPRICERENEWDISKSRESPONSE_H_
+#endif // !TENCENTCLOUD_DBBRAIN_V20210527_MODEL_DESCRIBEREDISUNEXPIREDKEYSTATISTICSRESPONSE_H_

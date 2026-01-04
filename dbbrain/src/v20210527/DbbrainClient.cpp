@@ -2990,6 +2990,56 @@ DbbrainClient::DescribeRedisTopKeyPrefixListOutcomeCallable DbbrainClient::Descr
     return prom->get_future();
 }
 
+DbbrainClient::DescribeRedisUnExpiredKeyStatisticsOutcome DbbrainClient::DescribeRedisUnExpiredKeyStatistics(const DescribeRedisUnExpiredKeyStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRedisUnExpiredKeyStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRedisUnExpiredKeyStatisticsResponse rsp = DescribeRedisUnExpiredKeyStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRedisUnExpiredKeyStatisticsOutcome(rsp);
+        else
+            return DescribeRedisUnExpiredKeyStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRedisUnExpiredKeyStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeRedisUnExpiredKeyStatisticsAsync(const DescribeRedisUnExpiredKeyStatisticsRequest& request, const DescribeRedisUnExpiredKeyStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRedisUnExpiredKeyStatisticsRequest&;
+    using Resp = DescribeRedisUnExpiredKeyStatisticsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRedisUnExpiredKeyStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbbrainClient::DescribeRedisUnExpiredKeyStatisticsOutcomeCallable DbbrainClient::DescribeRedisUnExpiredKeyStatisticsCallable(const DescribeRedisUnExpiredKeyStatisticsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRedisUnExpiredKeyStatisticsOutcome>>();
+    DescribeRedisUnExpiredKeyStatisticsAsync(
+    request,
+    [prom](
+        const DbbrainClient*,
+        const DescribeRedisUnExpiredKeyStatisticsRequest&,
+        DescribeRedisUnExpiredKeyStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbbrainClient::DescribeSecurityAuditLogDownloadUrlsOutcome DbbrainClient::DescribeSecurityAuditLogDownloadUrls(const DescribeSecurityAuditLogDownloadUrlsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSecurityAuditLogDownloadUrls");

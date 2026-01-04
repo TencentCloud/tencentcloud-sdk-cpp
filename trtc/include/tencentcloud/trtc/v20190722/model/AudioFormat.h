@@ -132,6 +132,27 @@ namespace TencentCloud
                      */
                     bool SampleRateHasBeenSet() const;
 
+                    /**
+                     * 获取 MP3 比特率 (kbps)，仅对 MP3 格式生效, 可以选： `64`, `128`, `192`, `256` ,  默认： `128` 
+                     * @return Bitrate  MP3 比特率 (kbps)，仅对 MP3 格式生效, 可以选： `64`, `128`, `192`, `256` ,  默认： `128` 
+                     * 
+                     */
+                    uint64_t GetBitrate() const;
+
+                    /**
+                     * 设置 MP3 比特率 (kbps)，仅对 MP3 格式生效, 可以选： `64`, `128`, `192`, `256` ,  默认： `128` 
+                     * @param _bitrate  MP3 比特率 (kbps)，仅对 MP3 格式生效, 可以选： `64`, `128`, `192`, `256` ,  默认： `128` 
+                     * 
+                     */
+                    void SetBitrate(const uint64_t& _bitrate);
+
+                    /**
+                     * 判断参数 Bitrate 是否已赋值
+                     * @return Bitrate 是否已赋值
+                     * 
+                     */
+                    bool BitrateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -156,6 +177,12 @@ namespace TencentCloud
                      */
                     uint64_t m_sampleRate;
                     bool m_sampleRateHasBeenSet;
+
+                    /**
+                     *  MP3 比特率 (kbps)，仅对 MP3 格式生效, 可以选： `64`, `128`, `192`, `256` ,  默认： `128` 
+                     */
+                    uint64_t m_bitrate;
+                    bool m_bitrateHasBeenSet;
 
                 };
             }

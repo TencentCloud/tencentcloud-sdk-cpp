@@ -109,6 +109,69 @@ namespace TencentCloud
                      */
                     bool AlarmCountHasBeenSet() const;
 
+                    /**
+                     * 获取访问密钥状态 0 禁用 1 已启用 2 已删除
+                     * @return AccessKeyStatus 访问密钥状态 0 禁用 1 已启用 2 已删除
+                     * 
+                     */
+                    int64_t GetAccessKeyStatus() const;
+
+                    /**
+                     * 设置访问密钥状态 0 禁用 1 已启用 2 已删除
+                     * @param _accessKeyStatus 访问密钥状态 0 禁用 1 已启用 2 已删除
+                     * 
+                     */
+                    void SetAccessKeyStatus(const int64_t& _accessKeyStatus);
+
+                    /**
+                     * 判断参数 AccessKeyStatus 是否已赋值
+                     * @return AccessKeyStatus 是否已赋值
+                     * 
+                     */
+                    bool AccessKeyStatusHasBeenSet() const;
+
+                    /**
+                     * 获取AK创建时间
+                     * @return AccessKeyCreateTime AK创建时间
+                     * 
+                     */
+                    std::string GetAccessKeyCreateTime() const;
+
+                    /**
+                     * 设置AK创建时间
+                     * @param _accessKeyCreateTime AK创建时间
+                     * 
+                     */
+                    void SetAccessKeyCreateTime(const std::string& _accessKeyCreateTime);
+
+                    /**
+                     * 判断参数 AccessKeyCreateTime 是否已赋值
+                     * @return AccessKeyCreateTime 是否已赋值
+                     * 
+                     */
+                    bool AccessKeyCreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取AK最后使用时间，从未使用过则返回“-”
+                     * @return LastAccessTime AK最后使用时间，从未使用过则返回“-”
+                     * 
+                     */
+                    std::string GetLastAccessTime() const;
+
+                    /**
+                     * 设置AK最后使用时间，从未使用过则返回“-”
+                     * @param _lastAccessTime AK最后使用时间，从未使用过则返回“-”
+                     * 
+                     */
+                    void SetLastAccessTime(const std::string& _lastAccessTime);
+
+                    /**
+                     * 判断参数 LastAccessTime 是否已赋值
+                     * @return LastAccessTime 是否已赋值
+                     * 
+                     */
+                    bool LastAccessTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +191,24 @@ namespace TencentCloud
                      */
                     int64_t m_alarmCount;
                     bool m_alarmCountHasBeenSet;
+
+                    /**
+                     * 访问密钥状态 0 禁用 1 已启用 2 已删除
+                     */
+                    int64_t m_accessKeyStatus;
+                    bool m_accessKeyStatusHasBeenSet;
+
+                    /**
+                     * AK创建时间
+                     */
+                    std::string m_accessKeyCreateTime;
+                    bool m_accessKeyCreateTimeHasBeenSet;
+
+                    /**
+                     * AK最后使用时间，从未使用过则返回“-”
+                     */
+                    std::string m_lastAccessTime;
+                    bool m_lastAccessTimeHasBeenSet;
 
                 };
             }

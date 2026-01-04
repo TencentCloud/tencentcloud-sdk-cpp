@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_DBBRAIN_V20210527_MODEL_DESCRIBEREDISTOPBIGKEYSREQUEST_H_
-#define TENCENTCLOUD_DBBRAIN_V20210527_MODEL_DESCRIBEREDISTOPBIGKEYSREQUEST_H_
+#ifndef TENCENTCLOUD_DBBRAIN_V20210527_MODEL_DESCRIBEREDISUNEXPIREDKEYSTATISTICSREQUEST_H_
+#define TENCENTCLOUD_DBBRAIN_V20210527_MODEL_DESCRIBEREDISUNEXPIREDKEYSTATISTICSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -32,26 +32,26 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * DescribeRedisTopBigKeys请求参数结构体
+                * DescribeRedisUnExpiredKeyStatistics请求参数结构体
                 */
-                class DescribeRedisTopBigKeysRequest : public AbstractModel
+                class DescribeRedisUnExpiredKeyStatisticsRequest : public AbstractModel
                 {
                 public:
-                    DescribeRedisTopBigKeysRequest();
-                    ~DescribeRedisTopBigKeysRequest() = default;
+                    DescribeRedisUnExpiredKeyStatisticsRequest();
+                    ~DescribeRedisUnExpiredKeyStatisticsRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
-                     * @return InstanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * 获取实例 ID。可通过接口获取。
+                     * @return InstanceId 实例 ID。可通过接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
-                     * @param _instanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * 设置实例 ID。可通过接口获取。
+                     * @param _instanceId 实例 ID。可通过接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -106,69 +106,6 @@ namespace TencentCloud
                     bool DateHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，取值包括Capacity - 内存，ItemCount - 元素数量，默认为Capacity。
-                     * @return SortBy 排序字段，取值包括Capacity - 内存，ItemCount - 元素数量，默认为Capacity。
-                     * 
-                     */
-                    std::string GetSortBy() const;
-
-                    /**
-                     * 设置排序字段，取值包括Capacity - 内存，ItemCount - 元素数量，默认为Capacity。
-                     * @param _sortBy 排序字段，取值包括Capacity - 内存，ItemCount - 元素数量，默认为Capacity。
-                     * 
-                     */
-                    void SetSortBy(const std::string& _sortBy);
-
-                    /**
-                     * 判断参数 SortBy 是否已赋值
-                     * @return SortBy 是否已赋值
-                     * 
-                     */
-                    bool SortByHasBeenSet() const;
-
-                    /**
-                     * 获取key类型筛选条件，默认为不进行筛选，取值包括string, list, set, hash, sortedset, stream。
-                     * @return KeyType key类型筛选条件，默认为不进行筛选，取值包括string, list, set, hash, sortedset, stream。
-                     * 
-                     */
-                    std::string GetKeyType() const;
-
-                    /**
-                     * 设置key类型筛选条件，默认为不进行筛选，取值包括string, list, set, hash, sortedset, stream。
-                     * @param _keyType key类型筛选条件，默认为不进行筛选，取值包括string, list, set, hash, sortedset, stream。
-                     * 
-                     */
-                    void SetKeyType(const std::string& _keyType);
-
-                    /**
-                     * 判断参数 KeyType 是否已赋值
-                     * @return KeyType 是否已赋值
-                     * 
-                     */
-                    bool KeyTypeHasBeenSet() const;
-
-                    /**
-                     * 获取查询数目，默认为20，最大值为100。
-                     * @return Limit 查询数目，默认为20，最大值为100。
-                     * 
-                     */
-                    int64_t GetLimit() const;
-
-                    /**
-                     * 设置查询数目，默认为20，最大值为100。
-                     * @param _limit 查询数目，默认为20，最大值为100。
-                     * 
-                     */
-                    void SetLimit(const int64_t& _limit);
-
-                    /**
-                     * 判断参数 Limit 是否已赋值
-                     * @return Limit 是否已赋值
-                     * 
-                     */
-                    bool LimitHasBeenSet() const;
-
-                    /**
                      * 获取异步任务ID。当为空时，选择最近任务的ID。
                      * @return AsyncRequestId 异步任务ID。当为空时，选择最近任务的ID。
                      * 
@@ -210,35 +147,10 @@ namespace TencentCloud
                      */
                     bool ShardIdsHasBeenSet() const;
 
-                    /**
-                     * 获取是否仅查询未设置过期时间的大Key。
-当为true时，仅查询未设置过期时间的大Key，默认为false。
-                     * @return UnExpireKey 是否仅查询未设置过期时间的大Key。
-当为true时，仅查询未设置过期时间的大Key，默认为false。
-                     * 
-                     */
-                    bool GetUnExpireKey() const;
-
-                    /**
-                     * 设置是否仅查询未设置过期时间的大Key。
-当为true时，仅查询未设置过期时间的大Key，默认为false。
-                     * @param _unExpireKey 是否仅查询未设置过期时间的大Key。
-当为true时，仅查询未设置过期时间的大Key，默认为false。
-                     * 
-                     */
-                    void SetUnExpireKey(const bool& _unExpireKey);
-
-                    /**
-                     * 判断参数 UnExpireKey 是否已赋值
-                     * @return UnExpireKey 是否已赋值
-                     * 
-                     */
-                    bool UnExpireKeyHasBeenSet() const;
-
                 private:
 
                     /**
-                     * 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * 实例 ID。可通过接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -256,24 +168,6 @@ namespace TencentCloud
                     bool m_dateHasBeenSet;
 
                     /**
-                     * 排序字段，取值包括Capacity - 内存，ItemCount - 元素数量，默认为Capacity。
-                     */
-                    std::string m_sortBy;
-                    bool m_sortByHasBeenSet;
-
-                    /**
-                     * key类型筛选条件，默认为不进行筛选，取值包括string, list, set, hash, sortedset, stream。
-                     */
-                    std::string m_keyType;
-                    bool m_keyTypeHasBeenSet;
-
-                    /**
-                     * 查询数目，默认为20，最大值为100。
-                     */
-                    int64_t m_limit;
-                    bool m_limitHasBeenSet;
-
-                    /**
                      * 异步任务ID。当为空时，选择最近任务的ID。
                      */
                     int64_t m_asyncRequestId;
@@ -285,17 +179,10 @@ namespace TencentCloud
                     std::vector<int64_t> m_shardIds;
                     bool m_shardIdsHasBeenSet;
 
-                    /**
-                     * 是否仅查询未设置过期时间的大Key。
-当为true时，仅查询未设置过期时间的大Key，默认为false。
-                     */
-                    bool m_unExpireKey;
-                    bool m_unExpireKeyHasBeenSet;
-
                 };
             }
         }
     }
 }
 
-#endif // !TENCENTCLOUD_DBBRAIN_V20210527_MODEL_DESCRIBEREDISTOPBIGKEYSREQUEST_H_
+#endif // !TENCENTCLOUD_DBBRAIN_V20210527_MODEL_DESCRIBEREDISUNEXPIREDKEYSTATISTICSREQUEST_H_

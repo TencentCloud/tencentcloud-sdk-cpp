@@ -24,13 +24,14 @@ using namespace std;
 
 DescribeRedisTopBigKeysRequest::DescribeRedisTopBigKeysRequest() :
     m_instanceIdHasBeenSet(false),
-    m_dateHasBeenSet(false),
     m_productHasBeenSet(false),
+    m_dateHasBeenSet(false),
     m_sortByHasBeenSet(false),
     m_keyTypeHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_asyncRequestIdHasBeenSet(false),
-    m_shardIdsHasBeenSet(false)
+    m_shardIdsHasBeenSet(false),
+    m_unExpireKeyHasBeenSet(false)
 {
 }
 
@@ -49,20 +50,20 @@ string DescribeRedisTopBigKeysRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_dateHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Date";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_date.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_productHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Product";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Date";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_date.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sortByHasBeenSet)
@@ -110,6 +111,14 @@ string DescribeRedisTopBigKeysRequest::ToJsonString() const
         }
     }
 
+    if (m_unExpireKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnExpireKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_unExpireKey, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -134,22 +143,6 @@ bool DescribeRedisTopBigKeysRequest::InstanceIdHasBeenSet() const
     return m_instanceIdHasBeenSet;
 }
 
-string DescribeRedisTopBigKeysRequest::GetDate() const
-{
-    return m_date;
-}
-
-void DescribeRedisTopBigKeysRequest::SetDate(const string& _date)
-{
-    m_date = _date;
-    m_dateHasBeenSet = true;
-}
-
-bool DescribeRedisTopBigKeysRequest::DateHasBeenSet() const
-{
-    return m_dateHasBeenSet;
-}
-
 string DescribeRedisTopBigKeysRequest::GetProduct() const
 {
     return m_product;
@@ -164,6 +157,22 @@ void DescribeRedisTopBigKeysRequest::SetProduct(const string& _product)
 bool DescribeRedisTopBigKeysRequest::ProductHasBeenSet() const
 {
     return m_productHasBeenSet;
+}
+
+string DescribeRedisTopBigKeysRequest::GetDate() const
+{
+    return m_date;
+}
+
+void DescribeRedisTopBigKeysRequest::SetDate(const string& _date)
+{
+    m_date = _date;
+    m_dateHasBeenSet = true;
+}
+
+bool DescribeRedisTopBigKeysRequest::DateHasBeenSet() const
+{
+    return m_dateHasBeenSet;
 }
 
 string DescribeRedisTopBigKeysRequest::GetSortBy() const
@@ -244,6 +253,22 @@ void DescribeRedisTopBigKeysRequest::SetShardIds(const vector<int64_t>& _shardId
 bool DescribeRedisTopBigKeysRequest::ShardIdsHasBeenSet() const
 {
     return m_shardIdsHasBeenSet;
+}
+
+bool DescribeRedisTopBigKeysRequest::GetUnExpireKey() const
+{
+    return m_unExpireKey;
+}
+
+void DescribeRedisTopBigKeysRequest::SetUnExpireKey(const bool& _unExpireKey)
+{
+    m_unExpireKey = _unExpireKey;
+    m_unExpireKeyHasBeenSet = true;
+}
+
+bool DescribeRedisTopBigKeysRequest::UnExpireKeyHasBeenSet() const
+{
+    return m_unExpireKeyHasBeenSet;
 }
 
 

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/csip/v20221121/model/AKInfo.h>
 
 
 namespace TencentCloud
@@ -515,6 +516,48 @@ namespace TencentCloud
                      */
                     bool QueryParamHasBeenSet() const;
 
+                    /**
+                     * 获取云类型 0-腾讯云 4-阿里云
+                     * @return CloudType 云类型 0-腾讯云 4-阿里云
+                     * 
+                     */
+                    int64_t GetCloudType() const;
+
+                    /**
+                     * 设置云类型 0-腾讯云 4-阿里云
+                     * @param _cloudType 云类型 0-腾讯云 4-阿里云
+                     * 
+                     */
+                    void SetCloudType(const int64_t& _cloudType);
+
+                    /**
+                     * 判断参数 CloudType 是否已赋值
+                     * @return CloudType 是否已赋值
+                     * 
+                     */
+                    bool CloudTypeHasBeenSet() const;
+
+                    /**
+                     * 获取相关的AK列表，包含AK名和AK备注
+                     * @return RelatedAK 相关的AK列表，包含AK名和AK备注
+                     * 
+                     */
+                    std::vector<AKInfo> GetRelatedAK() const;
+
+                    /**
+                     * 设置相关的AK列表，包含AK名和AK备注
+                     * @param _relatedAK 相关的AK列表，包含AK名和AK备注
+                     * 
+                     */
+                    void SetRelatedAK(const std::vector<AKInfo>& _relatedAK);
+
+                    /**
+                     * 判断参数 RelatedAK 是否已赋值
+                     * @return RelatedAK 是否已赋值
+                     * 
+                     */
+                    bool RelatedAKHasBeenSet() const;
+
                 private:
 
                     /**
@@ -649,6 +692,18 @@ namespace TencentCloud
                      */
                     std::string m_queryParam;
                     bool m_queryParamHasBeenSet;
+
+                    /**
+                     * 云类型 0-腾讯云 4-阿里云
+                     */
+                    int64_t m_cloudType;
+                    bool m_cloudTypeHasBeenSet;
+
+                    /**
+                     * 相关的AK列表，包含AK名和AK备注
+                     */
+                    std::vector<AKInfo> m_relatedAK;
+                    bool m_relatedAKHasBeenSet;
 
                 };
             }
