@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。填写实例id或者规格，两者必选其一。
-                     * @return InstanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。填写实例id或者规格，两者必选其一。
+                     * 获取<p>指定实例 ID。请登录 <a href="https://console.cloud.tencent.com/redis">Redis控制台</a> 在实例列表复制实例 ID。同时，InstanceId 与规格参数不能同时为空，至少提供一种。</p><ul><li>若仅指定 InstanceId：查询该实例当前规格的带宽。</li><li>若指定 InstanceId + 至少一个规格参数（ShardSize、ShardNum 或 ReplicateNum）：计算变更规格后的带宽。</li><li>若指定部分或所有规格参数（ShardSize、ShardNum、ReplicateNum 与 Type），而不指定 InstanceId：根据规格组合查询理论带宽。</li></ul>
+                     * @return InstanceId <p>指定实例 ID。请登录 <a href="https://console.cloud.tencent.com/redis">Redis控制台</a> 在实例列表复制实例 ID。同时，InstanceId 与规格参数不能同时为空，至少提供一种。</p><ul><li>若仅指定 InstanceId：查询该实例当前规格的带宽。</li><li>若指定 InstanceId + 至少一个规格参数（ShardSize、ShardNum 或 ReplicateNum）：计算变更规格后的带宽。</li><li>若指定部分或所有规格参数（ShardSize、ShardNum、ReplicateNum 与 Type），而不指定 InstanceId：根据规格组合查询理论带宽。</li></ul>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。填写实例id或者规格，两者必选其一。
-                     * @param _instanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。填写实例id或者规格，两者必选其一。
+                     * 设置<p>指定实例 ID。请登录 <a href="https://console.cloud.tencent.com/redis">Redis控制台</a> 在实例列表复制实例 ID。同时，InstanceId 与规格参数不能同时为空，至少提供一种。</p><ul><li>若仅指定 InstanceId：查询该实例当前规格的带宽。</li><li>若指定 InstanceId + 至少一个规格参数（ShardSize、ShardNum 或 ReplicateNum）：计算变更规格后的带宽。</li><li>若指定部分或所有规格参数（ShardSize、ShardNum、ReplicateNum 与 Type），而不指定 InstanceId：根据规格组合查询理论带宽。</li></ul>
+                     * @param _instanceId <p>指定实例 ID。请登录 <a href="https://console.cloud.tencent.com/redis">Redis控制台</a> 在实例列表复制实例 ID。同时，InstanceId 与规格参数不能同时为空，至少提供一种。</p><ul><li>若仅指定 InstanceId：查询该实例当前规格的带宽。</li><li>若指定 InstanceId + 至少一个规格参数（ShardSize、ShardNum 或 ReplicateNum）：计算变更规格后的带宽。</li><li>若指定部分或所有规格参数（ShardSize、ShardNum、ReplicateNum 与 Type），而不指定 InstanceId：根据规格组合查询理论带宽。</li></ul>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取分片大小，单位：MB
-                     * @return ShardSize 分片大小，单位：MB
+                     * 获取<p>分片大小。单位：MB。</p>
+                     * @return ShardSize <p>分片大小。单位：MB。</p>
                      * 
                      */
                     int64_t GetShardSize() const;
 
                     /**
-                     * 设置分片大小，单位：MB
-                     * @param _shardSize 分片大小，单位：MB
+                     * 设置<p>分片大小。单位：MB。</p>
+                     * @param _shardSize <p>分片大小。单位：MB。</p>
                      * 
                      */
                     void SetShardSize(const int64_t& _shardSize);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ShardSizeHasBeenSet() const;
 
                     /**
-                     * 获取分片数量。
-                     * @return ShardNum 分片数量。
+                     * 获取<p>分片数量。</p>
+                     * @return ShardNum <p>分片数量。</p>
                      * 
                      */
                     int64_t GetShardNum() const;
 
                     /**
-                     * 设置分片数量。
-                     * @param _shardNum 分片数量。
+                     * 设置<p>分片数量。</p>
+                     * @param _shardNum <p>分片数量。</p>
                      * 
                      */
                     void SetShardNum(const int64_t& _shardNum);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ShardNumHasBeenSet() const;
 
                     /**
-                     * 获取复制组数量。
-                     * @return ReplicateNum 复制组数量。
+                     * 获取<p>复制组数量。</p>
+                     * @return ReplicateNum <p>复制组数量。</p>
                      * 
                      */
                     int64_t GetReplicateNum() const;
 
                     /**
-                     * 设置复制组数量。
-                     * @param _replicateNum 复制组数量。
+                     * 设置<p>复制组数量。</p>
+                     * @param _replicateNum <p>复制组数量。</p>
                      * 
                      */
                     void SetReplicateNum(const int64_t& _replicateNum);
@@ -127,23 +127,15 @@ namespace TencentCloud
                     bool ReplicateNumHasBeenSet() const;
 
                     /**
-                     * 获取只读权重。
-- 100：开启从只读。
-- 0：关闭从只读。
-                     * @return ReadOnlyWeight 只读权重。
-- 100：开启从只读。
-- 0：关闭从只读。
+                     * 获取<p>只读权重。- 100：开启从只读。- 0：关闭从只读。</p>
+                     * @return ReadOnlyWeight <p>只读权重。- 100：开启从只读。- 0：关闭从只读。</p>
                      * 
                      */
                     int64_t GetReadOnlyWeight() const;
 
                     /**
-                     * 设置只读权重。
-- 100：开启从只读。
-- 0：关闭从只读。
-                     * @param _readOnlyWeight 只读权重。
-- 100：开启从只读。
-- 0：关闭从只读。
+                     * 设置<p>只读权重。- 100：开启从只读。- 0：关闭从只读。</p>
+                     * @param _readOnlyWeight <p>只读权重。- 100：开启从只读。- 0：关闭从只读。</p>
                      * 
                      */
                     void SetReadOnlyWeight(const int64_t& _readOnlyWeight);
@@ -156,15 +148,15 @@ namespace TencentCloud
                     bool ReadOnlyWeightHasBeenSet() const;
 
                     /**
-                     * 获取实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type。
-                     * @return Type 实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type。
+                     * 获取<p>实例类型，同 <a href="https://cloud.tencent.com/document/api/239/20026">CreateInstances</a> 的Type。</p>
+                     * @return Type <p>实例类型，同 <a href="https://cloud.tencent.com/document/api/239/20026">CreateInstances</a> 的Type。</p>
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type。
-                     * @param _type 实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type。
+                     * 设置<p>实例类型，同 <a href="https://cloud.tencent.com/document/api/239/20026">CreateInstances</a> 的Type。</p>
+                     * @param _type <p>实例类型，同 <a href="https://cloud.tencent.com/document/api/239/20026">CreateInstances</a> 的Type。</p>
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -179,39 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。填写实例id或者规格，两者必选其一。
+                     * <p>指定实例 ID。请登录 <a href="https://console.cloud.tencent.com/redis">Redis控制台</a> 在实例列表复制实例 ID。同时，InstanceId 与规格参数不能同时为空，至少提供一种。</p><ul><li>若仅指定 InstanceId：查询该实例当前规格的带宽。</li><li>若指定 InstanceId + 至少一个规格参数（ShardSize、ShardNum 或 ReplicateNum）：计算变更规格后的带宽。</li><li>若指定部分或所有规格参数（ShardSize、ShardNum、ReplicateNum 与 Type），而不指定 InstanceId：根据规格组合查询理论带宽。</li></ul>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 分片大小，单位：MB
+                     * <p>分片大小。单位：MB。</p>
                      */
                     int64_t m_shardSize;
                     bool m_shardSizeHasBeenSet;
 
                     /**
-                     * 分片数量。
+                     * <p>分片数量。</p>
                      */
                     int64_t m_shardNum;
                     bool m_shardNumHasBeenSet;
 
                     /**
-                     * 复制组数量。
+                     * <p>复制组数量。</p>
                      */
                     int64_t m_replicateNum;
                     bool m_replicateNumHasBeenSet;
 
                     /**
-                     * 只读权重。
-- 100：开启从只读。
-- 0：关闭从只读。
+                     * <p>只读权重。- 100：开启从只读。- 0：关闭从只读。</p>
                      */
                     int64_t m_readOnlyWeight;
                     bool m_readOnlyWeightHasBeenSet;
 
                     /**
-                     * 实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type。
+                     * <p>实例类型，同 <a href="https://cloud.tencent.com/document/api/239/20026">CreateInstances</a> 的Type。</p>
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;

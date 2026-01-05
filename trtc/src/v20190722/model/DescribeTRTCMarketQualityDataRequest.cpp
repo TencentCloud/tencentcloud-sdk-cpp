@@ -26,7 +26,8 @@ DescribeTRTCMarketQualityDataRequest::DescribeTRTCMarketQualityDataRequest() :
     m_sdkAppIdHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_periodHasBeenSet(false)
+    m_periodHasBeenSet(false),
+    m_isFloatHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeTRTCMarketQualityDataRequest::ToJsonString() const
         string key = "Period";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_period.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isFloatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsFloat";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isFloat, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeTRTCMarketQualityDataRequest::SetPeriod(const string& _period)
 bool DescribeTRTCMarketQualityDataRequest::PeriodHasBeenSet() const
 {
     return m_periodHasBeenSet;
+}
+
+bool DescribeTRTCMarketQualityDataRequest::GetIsFloat() const
+{
+    return m_isFloat;
+}
+
+void DescribeTRTCMarketQualityDataRequest::SetIsFloat(const bool& _isFloat)
+{
+    m_isFloat = _isFloat;
+    m_isFloatHasBeenSet = true;
+}
+
+bool DescribeTRTCMarketQualityDataRequest::IsFloatHasBeenSet() const
+{
+    return m_isFloatHasBeenSet;
 }
 
 

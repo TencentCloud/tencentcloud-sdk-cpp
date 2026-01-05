@@ -27,7 +27,8 @@ Account::Account() :
     m_privilegeHasBeenSet(false),
     m_readonlyPolicyHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_passwordLastModifiedTimeHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,16 @@ CoreInternalOutcome Account::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("PasswordLastModifiedTime") && !value["PasswordLastModifiedTime"].IsNull())
+    {
+        if (!value["PasswordLastModifiedTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Account.PasswordLastModifiedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_passwordLastModifiedTime = string(value["PasswordLastModifiedTime"].GetString());
+        m_passwordLastModifiedTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +186,14 @@ void Account::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_passwordLastModifiedTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PasswordLastModifiedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_passwordLastModifiedTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -290,5 +309,21 @@ void Account::SetCreateTime(const string& _createTime)
 bool Account::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string Account::GetPasswordLastModifiedTime() const
+{
+    return m_passwordLastModifiedTime;
+}
+
+void Account::SetPasswordLastModifiedTime(const string& _passwordLastModifiedTime)
+{
+    m_passwordLastModifiedTime = _passwordLastModifiedTime;
+    m_passwordLastModifiedTimeHasBeenSet = true;
+}
+
+bool Account::PasswordLastModifiedTimeHasBeenSet() const
+{
+    return m_passwordLastModifiedTimeHasBeenSet;
 }
 

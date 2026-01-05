@@ -194,6 +194,90 @@ namespace TencentCloud
                      */
                     bool FixMethodHasBeenSet() const;
 
+                    /**
+                     * 获取kb的ID
+                     * @return KbId kb的ID
+                     * 
+                     */
+                    uint64_t GetKbId() const;
+
+                    /**
+                     * 设置kb的ID
+                     * @param _kbId kb的ID
+                     * 
+                     */
+                    void SetKbId(const uint64_t& _kbId);
+
+                    /**
+                     * 判断参数 KbId 是否已赋值
+                     * @return KbId 是否已赋值
+                     * 
+                     */
+                    bool KbIdHasBeenSet() const;
+
+                    /**
+                     * 获取kb号
+                     * @return KbNumber kb号
+                     * 
+                     */
+                    std::string GetKbNumber() const;
+
+                    /**
+                     * 设置kb号
+                     * @param _kbNumber kb号
+                     * 
+                     */
+                    void SetKbNumber(const std::string& _kbNumber);
+
+                    /**
+                     * 判断参数 KbNumber 是否已赋值
+                     * @return KbNumber 是否已赋值
+                     * 
+                     */
+                    bool KbNumberHasBeenSet() const;
+
+                    /**
+                     * 获取kb名字
+                     * @return KbName kb名字
+                     * 
+                     */
+                    std::string GetKbName() const;
+
+                    /**
+                     * 设置kb名字
+                     * @param _kbName kb名字
+                     * 
+                     */
+                    void SetKbName(const std::string& _kbName);
+
+                    /**
+                     * 判断参数 KbName 是否已赋值
+                     * @return KbName 是否已赋值
+                     * 
+                     */
+                    bool KbNameHasBeenSet() const;
+
+                    /**
+                     * 获取前置kb列表
+                     * @return PreKbList 前置kb列表
+                     * 
+                     */
+                    std::vector<std::string> GetPreKbList() const;
+
+                    /**
+                     * 设置前置kb列表
+                     * @param _preKbList 前置kb列表
+                     * 
+                     */
+                    void SetPreKbList(const std::vector<std::string>& _preKbList);
+
+                    /**
+                     * 判断参数 PreKbList 是否已赋值
+                     * @return PreKbList 是否已赋值
+                     * 
+                     */
+                    bool PreKbListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -237,6 +321,30 @@ namespace TencentCloud
                      */
                     uint64_t m_fixMethod;
                     bool m_fixMethodHasBeenSet;
+
+                    /**
+                     * kb的ID
+                     */
+                    uint64_t m_kbId;
+                    bool m_kbIdHasBeenSet;
+
+                    /**
+                     * kb号
+                     */
+                    std::string m_kbNumber;
+                    bool m_kbNumberHasBeenSet;
+
+                    /**
+                     * kb名字
+                     */
+                    std::string m_kbName;
+                    bool m_kbNameHasBeenSet;
+
+                    /**
+                     * 前置kb列表
+                     */
+                    std::vector<std::string> m_preKbList;
+                    bool m_preKbListHasBeenSet;
 
                 };
             }

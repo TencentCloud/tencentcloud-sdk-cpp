@@ -295,6 +295,48 @@ namespace TencentCloud
                      */
                     bool OpenJobDefaultAlarmHasBeenSet() const;
 
+                    /**
+                     * 获取用户Uid
+                     * @return Uid 用户Uid
+                     * 
+                     */
+                    int64_t GetUid() const;
+
+                    /**
+                     * 设置用户Uid
+                     * @param _uid 用户Uid
+                     * 
+                     */
+                    void SetUid(const int64_t& _uid);
+
+                    /**
+                     * 判断参数 Uid 是否已赋值
+                     * @return Uid 是否已赋值
+                     * 
+                     */
+                    bool UidHasBeenSet() const;
+
+                    /**
+                     * 获取jdk版本
+                     * @return JdkVersion jdk版本
+                     * 
+                     */
+                    std::string GetJdkVersion() const;
+
+                    /**
+                     * 设置jdk版本
+                     * @param _jdkVersion jdk版本
+                     * 
+                     */
+                    void SetJdkVersion(const std::string& _jdkVersion);
+
+                    /**
+                     * 判断参数 JdkVersion 是否已赋值
+                     * @return JdkVersion 是否已赋值
+                     * 
+                     */
+                    bool JdkVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -368,6 +410,18 @@ namespace TencentCloud
                      */
                     int64_t m_openJobDefaultAlarm;
                     bool m_openJobDefaultAlarmHasBeenSet;
+
+                    /**
+                     * 用户Uid
+                     */
+                    int64_t m_uid;
+                    bool m_uidHasBeenSet;
+
+                    /**
+                     * jdk版本
+                     */
+                    std::string m_jdkVersion;
+                    bool m_jdkVersionHasBeenSet;
 
                 };
             }

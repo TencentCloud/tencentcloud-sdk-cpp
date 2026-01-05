@@ -50,13 +50,11 @@ namespace TencentCloud
 当前支持的模型列表：
 Hunyuan,
 GEM，
-Jimeng，
 Qwen。
                      * @return ModelName 模型名称。
 当前支持的模型列表：
 Hunyuan,
 GEM，
-Jimeng，
 Qwen。
                      * 
                      */
@@ -67,13 +65,11 @@ Qwen。
 当前支持的模型列表：
 Hunyuan,
 GEM，
-Jimeng，
 Qwen。
                      * @param _modelName 模型名称。
 当前支持的模型列表：
 Hunyuan,
 GEM，
-Jimeng，
 Qwen。
                      * 
                      */
@@ -90,11 +86,9 @@ Qwen。
                      * 获取指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。
 
 1. GEM， 可选[2.5,3.0]。
-2. Jimeng，可选[4.0]。
                      * @return ModelVersion 指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。
 
 1. GEM， 可选[2.5,3.0]。
-2. Jimeng，可选[4.0]。
                      * 
                      */
                     std::string GetModelVersion() const;
@@ -103,11 +97,9 @@ Qwen。
                      * 设置指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。
 
 1. GEM， 可选[2.5,3.0]。
-2. Jimeng，可选[4.0]。
                      * @param _modelVersion 指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。
 
 1. GEM， 可选[2.5,3.0]。
-2. Jimeng，可选[4.0]。
                      * 
                      */
                     void SetModelVersion(const std::string& _modelVersion);
@@ -301,7 +293,6 @@ Qwen。
 当前支持的模型列表：
 Hunyuan,
 GEM，
-Jimeng，
 Qwen。
                      */
                     std::string m_modelName;
@@ -311,7 +302,6 @@ Qwen。
                      * 指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。
 
 1. GEM， 可选[2.5,3.0]。
-2. Jimeng，可选[4.0]。
                      */
                     std::string m_modelVersion;
                     bool m_modelVersionHasBeenSet;

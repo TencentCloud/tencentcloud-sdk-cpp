@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取rasp当前最大cpu限制，0<cpu<=100，默认100表示不限制
-                     * @return RaspMaxCpu rasp当前最大cpu限制，0<cpu<=100，默认100表示不限制
+                     * 获取rasp当前最大cpu限制，大于0，小于等于100，默认100表示不限制
+                     * @return RaspMaxCpu rasp当前最大cpu限制，大于0，小于等于100，默认100表示不限制
                      * 
                      */
                     uint64_t GetRaspMaxCpu() const;
 
                     /**
-                     * 设置rasp当前最大cpu限制，0<cpu<=100，默认100表示不限制
-                     * @param _raspMaxCpu rasp当前最大cpu限制，0<cpu<=100，默认100表示不限制
+                     * 设置rasp当前最大cpu限制，大于0，小于等于100，默认100表示不限制
+                     * @param _raspMaxCpu rasp当前最大cpu限制，大于0，小于等于100，默认100表示不限制
                      * 
                      */
                     void SetRaspMaxCpu(const uint64_t& _raspMaxCpu);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * rasp当前最大cpu限制，0<cpu<=100，默认100表示不限制
+                     * rasp当前最大cpu限制，大于0，小于等于100，默认100表示不限制
                      */
                     uint64_t m_raspMaxCpu;
                     bool m_raspMaxCpuHasBeenSet;

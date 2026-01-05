@@ -24,7 +24,8 @@ SceneAigcImageOutputConfig::SceneAigcImageOutputConfig() :
     m_storageModeHasBeenSet(false),
     m_mediaNameHasBeenSet(false),
     m_classIdHasBeenSet(false),
-    m_expireTimeHasBeenSet(false)
+    m_expireTimeHasBeenSet(false),
+    m_aspectRatioHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome SceneAigcImageOutputConfig::Deserialize(const rapidjson::Val
         m_expireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("AspectRatio") && !value["AspectRatio"].IsNull())
+    {
+        if (!value["AspectRatio"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SceneAigcImageOutputConfig.AspectRatio` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aspectRatio = string(value["AspectRatio"].GetString());
+        m_aspectRatioHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void SceneAigcImageOutputConfig::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aspectRatioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AspectRatio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aspectRatio.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void SceneAigcImageOutputConfig::SetExpireTime(const string& _expireTime)
 bool SceneAigcImageOutputConfig::ExpireTimeHasBeenSet() const
 {
     return m_expireTimeHasBeenSet;
+}
+
+string SceneAigcImageOutputConfig::GetAspectRatio() const
+{
+    return m_aspectRatio;
+}
+
+void SceneAigcImageOutputConfig::SetAspectRatio(const string& _aspectRatio)
+{
+    m_aspectRatio = _aspectRatio;
+    m_aspectRatioHasBeenSet = true;
+}
+
+bool SceneAigcImageOutputConfig::AspectRatioHasBeenSet() const
+{
+    return m_aspectRatioHasBeenSet;
 }
 

@@ -161,6 +161,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/JobEvent.h
   include/tencentcloud/oceanus/v20190422/model/DescribeResourcesRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobEventsRequest.h
+  include/tencentcloud/oceanus/v20190422/model/FlinkJdkVersion.h
   include/tencentcloud/oceanus/v20190422/model/CheckSavepointResponse.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobsResponse.h
   include/tencentcloud/oceanus/v20190422/model/DescribeTreeResourcesResponse.h
@@ -318,6 +319,7 @@ set(oceanus_src
   src/v20190422/model/JobEvent.cpp
   src/v20190422/model/DescribeResourcesRequest.cpp
   src/v20190422/model/DescribeJobEventsRequest.cpp
+  src/v20190422/model/FlinkJdkVersion.cpp
   src/v20190422/model/CheckSavepointResponse.cpp
   src/v20190422/model/DescribeJobsResponse.cpp
   src/v20190422/model/DescribeTreeResourcesResponse.cpp

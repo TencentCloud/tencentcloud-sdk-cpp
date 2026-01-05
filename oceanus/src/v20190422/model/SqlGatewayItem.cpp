@@ -31,7 +31,8 @@ SqlGatewayItem::SqlGatewayItem() :
     m_updateTimeHasBeenSet(false),
     m_propertiesHasBeenSet(false),
     m_cpuHasBeenSet(false),
-    m_memHasBeenSet(false)
+    m_memHasBeenSet(false),
+    m_jdkVersionHasBeenSet(false)
 {
 }
 
@@ -170,6 +171,16 @@ CoreInternalOutcome SqlGatewayItem::Deserialize(const rapidjson::Value &value)
         m_memHasBeenSet = true;
     }
 
+    if (value.HasMember("JdkVersion") && !value["JdkVersion"].IsNull())
+    {
+        if (!value["JdkVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SqlGatewayItem.JdkVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jdkVersion = string(value["JdkVersion"].GetString());
+        m_jdkVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -277,6 +288,14 @@ void SqlGatewayItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Mem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mem, allocator);
+    }
+
+    if (m_jdkVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JdkVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jdkVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -456,5 +475,21 @@ void SqlGatewayItem::SetMem(const double& _mem)
 bool SqlGatewayItem::MemHasBeenSet() const
 {
     return m_memHasBeenSet;
+}
+
+string SqlGatewayItem::GetJdkVersion() const
+{
+    return m_jdkVersion;
+}
+
+void SqlGatewayItem::SetJdkVersion(const string& _jdkVersion)
+{
+    m_jdkVersion = _jdkVersion;
+    m_jdkVersionHasBeenSet = true;
+}
+
+bool SqlGatewayItem::JdkVersionHasBeenSet() const
+{
+    return m_jdkVersionHasBeenSet;
 }
 

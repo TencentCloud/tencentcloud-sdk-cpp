@@ -155,6 +155,20 @@ namespace TencentCloud
                      */
                     bool ScanEndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取任务扫描的KB编号
+                     * @return KBNumber 任务扫描的KB编号
+                     * 
+                     */
+                    std::vector<std::string> GetKBNumber() const;
+
+                    /**
+                     * 判断参数 KBNumber 是否已赋值
+                     * @return KBNumber 是否已赋值
+                     * 
+                     */
+                    bool KBNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -204,6 +218,12 @@ namespace TencentCloud
                      */
                     std::string m_scanEndTime;
                     bool m_scanEndTimeHasBeenSet;
+
+                    /**
+                     * 任务扫描的KB编号
+                     */
+                    std::vector<std::string> m_kBNumber;
+                    bool m_kBNumberHasBeenSet;
 
                 };
             }

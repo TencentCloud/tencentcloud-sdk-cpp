@@ -38,7 +38,8 @@ DescribeScanTaskDetailsResponse::DescribeScanTaskDetailsResponse() :
     m_riskEventCountHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_stoppingAllHasBeenSet(false),
-    m_vulCountHasBeenSet(false)
+    m_vulCountHasBeenSet(false),
+    m_patchInfoHasBeenSet(false)
 {
 }
 
@@ -249,6 +250,26 @@ CoreInternalOutcome DescribeScanTaskDetailsResponse::Deserialize(const string &p
         m_vulCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PatchInfo") && !rsp["PatchInfo"].IsNull())
+    {
+        if (!rsp["PatchInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PatchInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["PatchInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PatchInfoDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_patchInfo.push_back(item);
+        }
+        m_patchInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -396,6 +417,21 @@ string DescribeScanTaskDetailsResponse::ToJsonString() const
         string key = "VulCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vulCount, allocator);
+    }
+
+    if (m_patchInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PatchInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_patchInfo.begin(); itr != m_patchInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -558,6 +594,16 @@ uint64_t DescribeScanTaskDetailsResponse::GetVulCount() const
 bool DescribeScanTaskDetailsResponse::VulCountHasBeenSet() const
 {
     return m_vulCountHasBeenSet;
+}
+
+vector<PatchInfoDetail> DescribeScanTaskDetailsResponse::GetPatchInfo() const
+{
+    return m_patchInfo;
+}
+
+bool DescribeScanTaskDetailsResponse::PatchInfoHasBeenSet() const
+{
+    return m_patchInfoHasBeenSet;
 }
 
 

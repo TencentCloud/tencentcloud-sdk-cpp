@@ -42,7 +42,8 @@ HostLoginList::HostLoginList() :
     m_quuidHasBeenSet(false),
     m_descHasBeenSet(false),
     m_machineExtraInfoHasBeenSet(false),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_iPAnalyseHasBeenSet(false)
 {
 }
 
@@ -278,6 +279,23 @@ CoreInternalOutcome HostLoginList::Deserialize(const rapidjson::Value &value)
         m_portHasBeenSet = true;
     }
 
+    if (value.HasMember("IPAnalyse") && !value["IPAnalyse"].IsNull())
+    {
+        if (!value["IPAnalyse"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostLoginList.IPAnalyse` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_iPAnalyse.Deserialize(value["IPAnalyse"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_iPAnalyseHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -460,6 +478,15 @@ void HostLoginList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_port, allocator);
+    }
+
+    if (m_iPAnalyseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPAnalyse";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_iPAnalyse.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -815,5 +842,21 @@ void HostLoginList::SetPort(const int64_t& _port)
 bool HostLoginList::PortHasBeenSet() const
 {
     return m_portHasBeenSet;
+}
+
+IPAnalyse HostLoginList::GetIPAnalyse() const
+{
+    return m_iPAnalyse;
+}
+
+void HostLoginList::SetIPAnalyse(const IPAnalyse& _iPAnalyse)
+{
+    m_iPAnalyse = _iPAnalyse;
+    m_iPAnalyseHasBeenSet = true;
+}
+
+bool HostLoginList::IPAnalyseHasBeenSet() const
+{
+    return m_iPAnalyseHasBeenSet;
 }
 

@@ -281,6 +281,27 @@ namespace TencentCloud
                      */
                     bool ExcludedQuuidsHasBeenSet() const;
 
+                    /**
+                     * 获取推送语言类型，中文zh，英文en	
+                     * @return MsgLanguage 推送语言类型，中文zh，英文en	
+                     * 
+                     */
+                    std::string GetMsgLanguage() const;
+
+                    /**
+                     * 设置推送语言类型，中文zh，英文en	
+                     * @param _msgLanguage 推送语言类型，中文zh，英文en	
+                     * 
+                     */
+                    void SetMsgLanguage(const std::string& _msgLanguage);
+
+                    /**
+                     * 判断参数 MsgLanguage 是否已赋值
+                     * @return MsgLanguage 是否已赋值
+                     * 
+                     */
+                    bool MsgLanguageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -348,6 +369,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_excludedQuuids;
                     bool m_excludedQuuidsHasBeenSet;
+
+                    /**
+                     * 推送语言类型，中文zh，英文en	
+                     */
+                    std::string m_msgLanguage;
+                    bool m_msgLanguageHasBeenSet;
 
                 };
             }

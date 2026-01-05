@@ -25,7 +25,8 @@ using namespace std;
 DescribeVulFixStatusRequest::DescribeVulFixStatusRequest() :
     m_fixIdHasBeenSet(false),
     m_vulIdHasBeenSet(false),
-    m_quuidHasBeenSet(false)
+    m_quuidHasBeenSet(false),
+    m_kbIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeVulFixStatusRequest::ToJsonString() const
         string key = "Quuid";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kbIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KbId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_kbId, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeVulFixStatusRequest::SetQuuid(const string& _quuid)
 bool DescribeVulFixStatusRequest::QuuidHasBeenSet() const
 {
     return m_quuidHasBeenSet;
+}
+
+uint64_t DescribeVulFixStatusRequest::GetKbId() const
+{
+    return m_kbId;
+}
+
+void DescribeVulFixStatusRequest::SetKbId(const uint64_t& _kbId)
+{
+    m_kbId = _kbId;
+    m_kbIdHasBeenSet = true;
+}
+
+bool DescribeVulFixStatusRequest::KbIdHasBeenSet() const
+{
+    return m_kbIdHasBeenSet;
 }
 
 

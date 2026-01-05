@@ -47,7 +47,8 @@ BruteAttackInfo::BruteAttackInfo() :
     m_riskLevelHasBeenSet(false),
     m_dataFromHasBeenSet(false),
     m_attackStatusDescHasBeenSet(false),
-    m_banExpiredTimeHasBeenSet(false)
+    m_banExpiredTimeHasBeenSet(false),
+    m_iPAnalyseHasBeenSet(false)
 {
 }
 
@@ -333,6 +334,23 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
         m_banExpiredTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("IPAnalyse") && !value["IPAnalyse"].IsNull())
+    {
+        if (!value["IPAnalyse"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.IPAnalyse` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_iPAnalyse.Deserialize(value["IPAnalyse"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_iPAnalyseHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -555,6 +573,15 @@ void BruteAttackInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "BanExpiredTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_banExpiredTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iPAnalyseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPAnalyse";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_iPAnalyse.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -990,5 +1017,21 @@ void BruteAttackInfo::SetBanExpiredTime(const string& _banExpiredTime)
 bool BruteAttackInfo::BanExpiredTimeHasBeenSet() const
 {
     return m_banExpiredTimeHasBeenSet;
+}
+
+IPAnalyse BruteAttackInfo::GetIPAnalyse() const
+{
+    return m_iPAnalyse;
+}
+
+void BruteAttackInfo::SetIPAnalyse(const IPAnalyse& _iPAnalyse)
+{
+    m_iPAnalyse = _iPAnalyse;
+    m_iPAnalyseHasBeenSet = true;
+}
+
+bool BruteAttackInfo::IPAnalyseHasBeenSet() const
+{
+    return m_iPAnalyseHasBeenSet;
 }
 

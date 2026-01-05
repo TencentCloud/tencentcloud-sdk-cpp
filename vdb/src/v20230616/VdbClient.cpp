@@ -340,6 +340,156 @@ VdbClient::DescribeInstancesOutcomeCallable VdbClient::DescribeInstancesCallable
     return prom->get_future();
 }
 
+VdbClient::DescribePriceCreateInstanceOutcome VdbClient::DescribePriceCreateInstance(const DescribePriceCreateInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePriceCreateInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePriceCreateInstanceResponse rsp = DescribePriceCreateInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePriceCreateInstanceOutcome(rsp);
+        else
+            return DescribePriceCreateInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePriceCreateInstanceOutcome(outcome.GetError());
+    }
+}
+
+void VdbClient::DescribePriceCreateInstanceAsync(const DescribePriceCreateInstanceRequest& request, const DescribePriceCreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePriceCreateInstanceRequest&;
+    using Resp = DescribePriceCreateInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePriceCreateInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VdbClient::DescribePriceCreateInstanceOutcomeCallable VdbClient::DescribePriceCreateInstanceCallable(const DescribePriceCreateInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePriceCreateInstanceOutcome>>();
+    DescribePriceCreateInstanceAsync(
+    request,
+    [prom](
+        const VdbClient*,
+        const DescribePriceCreateInstanceRequest&,
+        DescribePriceCreateInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VdbClient::DescribePriceRenewInstanceOutcome VdbClient::DescribePriceRenewInstance(const DescribePriceRenewInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePriceRenewInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePriceRenewInstanceResponse rsp = DescribePriceRenewInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePriceRenewInstanceOutcome(rsp);
+        else
+            return DescribePriceRenewInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePriceRenewInstanceOutcome(outcome.GetError());
+    }
+}
+
+void VdbClient::DescribePriceRenewInstanceAsync(const DescribePriceRenewInstanceRequest& request, const DescribePriceRenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePriceRenewInstanceRequest&;
+    using Resp = DescribePriceRenewInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePriceRenewInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VdbClient::DescribePriceRenewInstanceOutcomeCallable VdbClient::DescribePriceRenewInstanceCallable(const DescribePriceRenewInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePriceRenewInstanceOutcome>>();
+    DescribePriceRenewInstanceAsync(
+    request,
+    [prom](
+        const VdbClient*,
+        const DescribePriceRenewInstanceRequest&,
+        DescribePriceRenewInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VdbClient::DescribePriceResizeInstanceOutcome VdbClient::DescribePriceResizeInstance(const DescribePriceResizeInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePriceResizeInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePriceResizeInstanceResponse rsp = DescribePriceResizeInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePriceResizeInstanceOutcome(rsp);
+        else
+            return DescribePriceResizeInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePriceResizeInstanceOutcome(outcome.GetError());
+    }
+}
+
+void VdbClient::DescribePriceResizeInstanceAsync(const DescribePriceResizeInstanceRequest& request, const DescribePriceResizeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePriceResizeInstanceRequest&;
+    using Resp = DescribePriceResizeInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePriceResizeInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VdbClient::DescribePriceResizeInstanceOutcomeCallable VdbClient::DescribePriceResizeInstanceCallable(const DescribePriceResizeInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePriceResizeInstanceOutcome>>();
+    DescribePriceResizeInstanceAsync(
+    request,
+    [prom](
+        const VdbClient*,
+        const DescribePriceResizeInstanceRequest&,
+        DescribePriceResizeInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VdbClient::DestroyInstancesOutcome VdbClient::DestroyInstances(const DestroyInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DestroyInstances");

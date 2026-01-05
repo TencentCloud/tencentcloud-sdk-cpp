@@ -700,6 +700,27 @@ namespace TencentCloud
                     bool JobManagerMemHasBeenSet() const;
 
                     /**
+                     * 获取jdk版本
+                     * @return JdkVersion jdk版本
+                     * 
+                     */
+                    std::string GetJdkVersion() const;
+
+                    /**
+                     * 设置jdk版本
+                     * @param _jdkVersion jdk版本
+                     * 
+                     */
+                    void SetJdkVersion(const std::string& _jdkVersion);
+
+                    /**
+                     * 判断参数 JdkVersion 是否已赋值
+                     * @return JdkVersion 是否已赋值
+                     * 
+                     */
+                    bool JdkVersionHasBeenSet() const;
+
+                    /**
                      * 获取TaskManager cpu
                      * @return TaskManagerCpu TaskManager cpu
                      * 
@@ -1012,6 +1033,12 @@ namespace TencentCloud
                      */
                     double m_jobManagerMem;
                     bool m_jobManagerMemHasBeenSet;
+
+                    /**
+                     * jdk版本
+                     */
+                    std::string m_jdkVersion;
+                    bool m_jdkVersionHasBeenSet;
 
                     /**
                      * TaskManager cpu

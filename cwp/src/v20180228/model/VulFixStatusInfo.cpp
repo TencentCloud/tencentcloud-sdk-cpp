@@ -27,7 +27,11 @@ VulFixStatusInfo::VulFixStatusInfo() :
     m_hostListHasBeenSet(false),
     m_failCntHasBeenSet(false),
     m_fixSuccessCntHasBeenSet(false),
-    m_fixMethodHasBeenSet(false)
+    m_fixMethodHasBeenSet(false),
+    m_kbIdHasBeenSet(false),
+    m_kbNumberHasBeenSet(false),
+    m_kbNameHasBeenSet(false),
+    m_preKbListHasBeenSet(false)
 {
 }
 
@@ -116,6 +120,49 @@ CoreInternalOutcome VulFixStatusInfo::Deserialize(const rapidjson::Value &value)
         m_fixMethodHasBeenSet = true;
     }
 
+    if (value.HasMember("KbId") && !value["KbId"].IsNull())
+    {
+        if (!value["KbId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulFixStatusInfo.KbId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_kbId = value["KbId"].GetUint64();
+        m_kbIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("KbNumber") && !value["KbNumber"].IsNull())
+    {
+        if (!value["KbNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulFixStatusInfo.KbNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kbNumber = string(value["KbNumber"].GetString());
+        m_kbNumberHasBeenSet = true;
+    }
+
+    if (value.HasMember("KbName") && !value["KbName"].IsNull())
+    {
+        if (!value["KbName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulFixStatusInfo.KbName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kbName = string(value["KbName"].GetString());
+        m_kbNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("PreKbList") && !value["PreKbList"].IsNull())
+    {
+        if (!value["PreKbList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VulFixStatusInfo.PreKbList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PreKbList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_preKbList.push_back((*itr).GetString());
+        }
+        m_preKbListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +231,43 @@ void VulFixStatusInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "FixMethod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fixMethod, allocator);
+    }
+
+    if (m_kbIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KbId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_kbId, allocator);
+    }
+
+    if (m_kbNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KbNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kbNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kbNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KbName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kbName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_preKbListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreKbList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_preKbList.begin(); itr != m_preKbList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -299,5 +383,69 @@ void VulFixStatusInfo::SetFixMethod(const uint64_t& _fixMethod)
 bool VulFixStatusInfo::FixMethodHasBeenSet() const
 {
     return m_fixMethodHasBeenSet;
+}
+
+uint64_t VulFixStatusInfo::GetKbId() const
+{
+    return m_kbId;
+}
+
+void VulFixStatusInfo::SetKbId(const uint64_t& _kbId)
+{
+    m_kbId = _kbId;
+    m_kbIdHasBeenSet = true;
+}
+
+bool VulFixStatusInfo::KbIdHasBeenSet() const
+{
+    return m_kbIdHasBeenSet;
+}
+
+string VulFixStatusInfo::GetKbNumber() const
+{
+    return m_kbNumber;
+}
+
+void VulFixStatusInfo::SetKbNumber(const string& _kbNumber)
+{
+    m_kbNumber = _kbNumber;
+    m_kbNumberHasBeenSet = true;
+}
+
+bool VulFixStatusInfo::KbNumberHasBeenSet() const
+{
+    return m_kbNumberHasBeenSet;
+}
+
+string VulFixStatusInfo::GetKbName() const
+{
+    return m_kbName;
+}
+
+void VulFixStatusInfo::SetKbName(const string& _kbName)
+{
+    m_kbName = _kbName;
+    m_kbNameHasBeenSet = true;
+}
+
+bool VulFixStatusInfo::KbNameHasBeenSet() const
+{
+    return m_kbNameHasBeenSet;
+}
+
+vector<string> VulFixStatusInfo::GetPreKbList() const
+{
+    return m_preKbList;
+}
+
+void VulFixStatusInfo::SetPreKbList(const vector<string>& _preKbList)
+{
+    m_preKbList = _preKbList;
+    m_preKbListHasBeenSet = true;
+}
+
+bool VulFixStatusInfo::PreKbListHasBeenSet() const
+{
+    return m_preKbListHasBeenSet;
 }
 

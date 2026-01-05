@@ -30,7 +30,8 @@ SubmitHunyuanTo3DProJobRequest::SubmitHunyuanTo3DProJobRequest() :
     m_enablePBRHasBeenSet(false),
     m_faceCountHasBeenSet(false),
     m_generateTypeHasBeenSet(false),
-    m_polygonTypeHasBeenSet(false)
+    m_polygonTypeHasBeenSet(false),
+    m_resultFormatHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,14 @@ string SubmitHunyuanTo3DProJobRequest::ToJsonString() const
         string key = "PolygonType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_polygonType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resultFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultFormat";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resultFormat.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -246,6 +255,22 @@ void SubmitHunyuanTo3DProJobRequest::SetPolygonType(const string& _polygonType)
 bool SubmitHunyuanTo3DProJobRequest::PolygonTypeHasBeenSet() const
 {
     return m_polygonTypeHasBeenSet;
+}
+
+string SubmitHunyuanTo3DProJobRequest::GetResultFormat() const
+{
+    return m_resultFormat;
+}
+
+void SubmitHunyuanTo3DProJobRequest::SetResultFormat(const string& _resultFormat)
+{
+    m_resultFormat = _resultFormat;
+    m_resultFormatHasBeenSet = true;
+}
+
+bool SubmitHunyuanTo3DProJobRequest::ResultFormatHasBeenSet() const
+{
+    return m_resultFormatHasBeenSet;
 }
 
 

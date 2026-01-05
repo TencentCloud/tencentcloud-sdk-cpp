@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cwp/v20180228/model/MachineExtraInfo.h>
+#include <tencentcloud/cwp/v20180228/model/IPAnalyse.h>
 
 
 namespace TencentCloud
@@ -404,6 +405,48 @@ namespace TencentCloud
                      */
                     bool NewHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启应用防护，0关闭，1开启
+                     * @return RaspOpen 是否开启应用防护，0关闭，1开启
+                     * 
+                     */
+                    int64_t GetRaspOpen() const;
+
+                    /**
+                     * 设置是否开启应用防护，0关闭，1开启
+                     * @param _raspOpen 是否开启应用防护，0关闭，1开启
+                     * 
+                     */
+                    void SetRaspOpen(const int64_t& _raspOpen);
+
+                    /**
+                     * 判断参数 RaspOpen 是否已赋值
+                     * @return RaspOpen 是否已赋值
+                     * 
+                     */
+                    bool RaspOpenHasBeenSet() const;
+
+                    /**
+                     * 获取ip分析
+                     * @return IPAnalyse ip分析
+                     * 
+                     */
+                    IPAnalyse GetIPAnalyse() const;
+
+                    /**
+                     * 设置ip分析
+                     * @param _iPAnalyse ip分析
+                     * 
+                     */
+                    void SetIPAnalyse(const IPAnalyse& _iPAnalyse);
+
+                    /**
+                     * 判断参数 IPAnalyse 是否已赋值
+                     * @return IPAnalyse 是否已赋值
+                     * 
+                     */
+                    bool IPAnalyseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -507,6 +550,18 @@ namespace TencentCloud
                      */
                     bool m_new;
                     bool m_newHasBeenSet;
+
+                    /**
+                     * 是否开启应用防护，0关闭，1开启
+                     */
+                    int64_t m_raspOpen;
+                    bool m_raspOpenHasBeenSet;
+
+                    /**
+                     * ip分析
+                     */
+                    IPAnalyse m_iPAnalyse;
+                    bool m_iPAnalyseHasBeenSet;
 
                 };
             }

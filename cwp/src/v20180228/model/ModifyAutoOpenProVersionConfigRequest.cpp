@@ -24,11 +24,13 @@ using namespace std;
 
 ModifyAutoOpenProVersionConfigRequest::ModifyAutoOpenProVersionConfigRequest() :
     m_statusHasBeenSet(false),
+    m_protectTypeHasBeenSet(false),
     m_autoRepurchaseSwitchHasBeenSet(false),
     m_autoRepurchaseRenewSwitchHasBeenSet(false),
     m_repurchaseRenewSwitchHasBeenSet(false),
     m_autoBindRaspSwitchHasBeenSet(false),
-    m_autoOpenRaspSwitchHasBeenSet(false)
+    m_autoOpenRaspSwitchHasBeenSet(false),
+    m_autoDowngradeSwitchHasBeenSet(false)
 {
 }
 
@@ -45,6 +47,14 @@ string ModifyAutoOpenProVersionConfigRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protectTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtectType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_protectType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_autoRepurchaseSwitchHasBeenSet)
@@ -87,6 +97,14 @@ string ModifyAutoOpenProVersionConfigRequest::ToJsonString() const
         d.AddMember(iKey, m_autoOpenRaspSwitch, allocator);
     }
 
+    if (m_autoDowngradeSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoDowngradeSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoDowngradeSwitch, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -109,6 +127,22 @@ void ModifyAutoOpenProVersionConfigRequest::SetStatus(const string& _status)
 bool ModifyAutoOpenProVersionConfigRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string ModifyAutoOpenProVersionConfigRequest::GetProtectType() const
+{
+    return m_protectType;
+}
+
+void ModifyAutoOpenProVersionConfigRequest::SetProtectType(const string& _protectType)
+{
+    m_protectType = _protectType;
+    m_protectTypeHasBeenSet = true;
+}
+
+bool ModifyAutoOpenProVersionConfigRequest::ProtectTypeHasBeenSet() const
+{
+    return m_protectTypeHasBeenSet;
 }
 
 uint64_t ModifyAutoOpenProVersionConfigRequest::GetAutoRepurchaseSwitch() const
@@ -189,6 +223,22 @@ void ModifyAutoOpenProVersionConfigRequest::SetAutoOpenRaspSwitch(const uint64_t
 bool ModifyAutoOpenProVersionConfigRequest::AutoOpenRaspSwitchHasBeenSet() const
 {
     return m_autoOpenRaspSwitchHasBeenSet;
+}
+
+uint64_t ModifyAutoOpenProVersionConfigRequest::GetAutoDowngradeSwitch() const
+{
+    return m_autoDowngradeSwitch;
+}
+
+void ModifyAutoOpenProVersionConfigRequest::SetAutoDowngradeSwitch(const uint64_t& _autoDowngradeSwitch)
+{
+    m_autoDowngradeSwitch = _autoDowngradeSwitch;
+    m_autoDowngradeSwitchHasBeenSet = true;
+}
+
+bool ModifyAutoOpenProVersionConfigRequest::AutoDowngradeSwitchHasBeenSet() const
+{
+    return m_autoDowngradeSwitchHasBeenSet;
 }
 
 

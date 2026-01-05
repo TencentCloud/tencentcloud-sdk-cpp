@@ -549,6 +549,89 @@ namespace TencentCloud
                      */
                     bool CloudTypeHasBeenSet() const;
 
+                    /**
+                     * 获取告警AI分析状态
+-1 分析失败
+0 未分析
+1 分析中
+2 分析成功，真实告警
+3 分析成功，可疑告警
+                     * @return AIStatus 告警AI分析状态
+-1 分析失败
+0 未分析
+1 分析中
+2 分析成功，真实告警
+3 分析成功，可疑告警
+                     * 
+                     */
+                    int64_t GetAIStatus() const;
+
+                    /**
+                     * 设置告警AI分析状态
+-1 分析失败
+0 未分析
+1 分析中
+2 分析成功，真实告警
+3 分析成功，可疑告警
+                     * @param _aIStatus 告警AI分析状态
+-1 分析失败
+0 未分析
+1 分析中
+2 分析成功，真实告警
+3 分析成功，可疑告警
+                     * 
+                     */
+                    void SetAIStatus(const int64_t& _aIStatus);
+
+                    /**
+                     * 判断参数 AIStatus 是否已赋值
+                     * @return AIStatus 是否已赋值
+                     * 
+                     */
+                    bool AIStatusHasBeenSet() const;
+
+                    /**
+                     * 获取首次告警时间戳（秒级）
+                     * @return FirstAlarmTimestamp 首次告警时间戳（秒级）
+                     * 
+                     */
+                    int64_t GetFirstAlarmTimestamp() const;
+
+                    /**
+                     * 设置首次告警时间戳（秒级）
+                     * @param _firstAlarmTimestamp 首次告警时间戳（秒级）
+                     * 
+                     */
+                    void SetFirstAlarmTimestamp(const int64_t& _firstAlarmTimestamp);
+
+                    /**
+                     * 判断参数 FirstAlarmTimestamp 是否已赋值
+                     * @return FirstAlarmTimestamp 是否已赋值
+                     * 
+                     */
+                    bool FirstAlarmTimestampHasBeenSet() const;
+
+                    /**
+                     * 获取最后告警时间戳（秒级）
+                     * @return LastAlarmTimestamp 最后告警时间戳（秒级）
+                     * 
+                     */
+                    int64_t GetLastAlarmTimestamp() const;
+
+                    /**
+                     * 设置最后告警时间戳（秒级）
+                     * @param _lastAlarmTimestamp 最后告警时间戳（秒级）
+                     * 
+                     */
+                    void SetLastAlarmTimestamp(const int64_t& _lastAlarmTimestamp);
+
+                    /**
+                     * 判断参数 LastAlarmTimestamp 是否已赋值
+                     * @return LastAlarmTimestamp 是否已赋值
+                     * 
+                     */
+                    bool LastAlarmTimestampHasBeenSet() const;
+
                 private:
 
                     /**
@@ -693,6 +776,29 @@ namespace TencentCloud
                      */
                     int64_t m_cloudType;
                     bool m_cloudTypeHasBeenSet;
+
+                    /**
+                     * 告警AI分析状态
+-1 分析失败
+0 未分析
+1 分析中
+2 分析成功，真实告警
+3 分析成功，可疑告警
+                     */
+                    int64_t m_aIStatus;
+                    bool m_aIStatusHasBeenSet;
+
+                    /**
+                     * 首次告警时间戳（秒级）
+                     */
+                    int64_t m_firstAlarmTimestamp;
+                    bool m_firstAlarmTimestampHasBeenSet;
+
+                    /**
+                     * 最后告警时间戳（秒级）
+                     */
+                    int64_t m_lastAlarmTimestamp;
+                    bool m_lastAlarmTimestampHasBeenSet;
 
                 };
             }

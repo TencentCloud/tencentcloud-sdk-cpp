@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/ChangeClothesConfig.h>
+#include <tencentcloud/vod/v20180717/model/ProductImageConfig.h>
 
 
 namespace TencentCloud
@@ -50,8 +51,10 @@ namespace TencentCloud
                     /**
                      * 获取AI生图场景类型，可选值：
 - change_clothes：AI换衣。
+- product_image：AI生商品图。
                      * @return Type AI生图场景类型，可选值：
 - change_clothes：AI换衣。
+- product_image：AI生商品图。
                      * 
                      */
                     std::string GetType() const;
@@ -59,8 +62,10 @@ namespace TencentCloud
                     /**
                      * 设置AI生图场景类型，可选值：
 - change_clothes：AI换衣。
+- product_image：AI生商品图。
                      * @param _type AI生图场景类型，可选值：
 - change_clothes：AI换衣。
+- product_image：AI生商品图。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -74,22 +79,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当 Type 为 change_clothes 时有效，则该项为必填，表示AI 换衣生图配置参数。
-
-
                      * @return ChangeClothesConfig 当 Type 为 change_clothes 时有效，则该项为必填，表示AI 换衣生图配置参数。
-
-
                      * 
                      */
                     ChangeClothesConfig GetChangeClothesConfig() const;
 
                     /**
                      * 设置当 Type 为 change_clothes 时有效，则该项为必填，表示AI 换衣生图配置参数。
-
-
                      * @param _changeClothesConfig 当 Type 为 change_clothes 时有效，则该项为必填，表示AI 换衣生图配置参数。
-
-
                      * 
                      */
                     void SetChangeClothesConfig(const ChangeClothesConfig& _changeClothesConfig);
@@ -101,22 +98,48 @@ namespace TencentCloud
                      */
                     bool ChangeClothesConfigHasBeenSet() const;
 
+                    /**
+                     * 获取当 Type 为 product_image 时有效，表示AI 生商品图配置参数。
+                     * @return ProductImageConfig 当 Type 为 product_image 时有效，表示AI 生商品图配置参数。
+                     * 
+                     */
+                    ProductImageConfig GetProductImageConfig() const;
+
+                    /**
+                     * 设置当 Type 为 product_image 时有效，表示AI 生商品图配置参数。
+                     * @param _productImageConfig 当 Type 为 product_image 时有效，表示AI 生商品图配置参数。
+                     * 
+                     */
+                    void SetProductImageConfig(const ProductImageConfig& _productImageConfig);
+
+                    /**
+                     * 判断参数 ProductImageConfig 是否已赋值
+                     * @return ProductImageConfig 是否已赋值
+                     * 
+                     */
+                    bool ProductImageConfigHasBeenSet() const;
+
                 private:
 
                     /**
                      * AI生图场景类型，可选值：
 - change_clothes：AI换衣。
+- product_image：AI生商品图。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 当 Type 为 change_clothes 时有效，则该项为必填，表示AI 换衣生图配置参数。
-
-
                      */
                     ChangeClothesConfig m_changeClothesConfig;
                     bool m_changeClothesConfigHasBeenSet;
+
+                    /**
+                     * 当 Type 为 product_image 时有效，表示AI 生商品图配置参数。
+                     */
+                    ProductImageConfig m_productImageConfig;
+                    bool m_productImageConfigHasBeenSet;
 
                 };
             }

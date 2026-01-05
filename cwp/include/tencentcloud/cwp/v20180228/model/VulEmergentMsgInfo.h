@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool VulIdHasBeenSet() const;
 
                     /**
-                     * 获取漏洞纰漏时间
-                     * @return PublishTime 漏洞纰漏时间
+                     * 获取漏洞披露时间
+                     * @return PublishTime 漏洞披露时间
                      * 
                      */
                     std::string GetPublishTime() const;
 
                     /**
-                     * 设置漏洞纰漏时间
-                     * @param _publishTime 漏洞纰漏时间
+                     * 设置漏洞披露时间
+                     * @param _publishTime 漏洞披露时间
                      * 
                      */
                     void SetPublishTime(const std::string& _publishTime);
@@ -172,6 +172,48 @@ namespace TencentCloud
                      */
                     bool SupportDefenseHasBeenSet() const;
 
+                    /**
+                     * 获取KB对应的ID
+                     * @return KbId KB对应的ID
+                     * 
+                     */
+                    uint64_t GetKbId() const;
+
+                    /**
+                     * 设置KB对应的ID
+                     * @param _kbId KB对应的ID
+                     * 
+                     */
+                    void SetKbId(const uint64_t& _kbId);
+
+                    /**
+                     * 判断参数 KbId 是否已赋值
+                     * @return KbId 是否已赋值
+                     * 
+                     */
+                    bool KbIdHasBeenSet() const;
+
+                    /**
+                     * 获取KB号
+                     * @return KbNumber KB号
+                     * 
+                     */
+                    std::string GetKbNumber() const;
+
+                    /**
+                     * 设置KB号
+                     * @param _kbNumber KB号
+                     * 
+                     */
+                    void SetKbNumber(const std::string& _kbNumber);
+
+                    /**
+                     * 判断参数 KbNumber 是否已赋值
+                     * @return KbNumber 是否已赋值
+                     * 
+                     */
+                    bool KbNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -181,7 +223,7 @@ namespace TencentCloud
                     bool m_vulIdHasBeenSet;
 
                     /**
-                     * 漏洞纰漏时间
+                     * 漏洞披露时间
                      */
                     std::string m_publishTime;
                     bool m_publishTimeHasBeenSet;
@@ -209,6 +251,18 @@ namespace TencentCloud
                      */
                     int64_t m_supportDefense;
                     bool m_supportDefenseHasBeenSet;
+
+                    /**
+                     * KB对应的ID
+                     */
+                    uint64_t m_kbId;
+                    bool m_kbIdHasBeenSet;
+
+                    /**
+                     * KB号
+                     */
+                    std::string m_kbNumber;
+                    bool m_kbNumberHasBeenSet;
 
                 };
             }

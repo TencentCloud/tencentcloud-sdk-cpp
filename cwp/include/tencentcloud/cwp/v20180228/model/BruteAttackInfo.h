@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cwp/v20180228/model/MachineExtraInfo.h>
+#include <tencentcloud/cwp/v20180228/model/IPAnalyse.h>
 
 
 namespace TencentCloud
@@ -662,6 +663,27 @@ namespace TencentCloud
                      */
                     bool BanExpiredTimeHasBeenSet() const;
 
+                    /**
+                     * 获取IP分析
+                     * @return IPAnalyse IP分析
+                     * 
+                     */
+                    IPAnalyse GetIPAnalyse() const;
+
+                    /**
+                     * 设置IP分析
+                     * @param _iPAnalyse IP分析
+                     * 
+                     */
+                    void SetIPAnalyse(const IPAnalyse& _iPAnalyse);
+
+                    /**
+                     * 判断参数 IPAnalyse 是否已赋值
+                     * @return IPAnalyse 是否已赋值
+                     * 
+                     */
+                    bool IPAnalyseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -837,6 +859,12 @@ namespace TencentCloud
                      */
                     std::string m_banExpiredTime;
                     bool m_banExpiredTimeHasBeenSet;
+
+                    /**
+                     * IP分析
+                     */
+                    IPAnalyse m_iPAnalyse;
+                    bool m_iPAnalyseHasBeenSet;
 
                 };
             }

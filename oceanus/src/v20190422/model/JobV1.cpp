@@ -62,7 +62,9 @@ JobV1::JobV1() :
     m_openJobDefaultAlarmHasBeenSet(false),
     m_progressDescHasBeenSet(false),
     m_continueAlarmHasBeenSet(false),
-    m_restartCountHasBeenSet(false)
+    m_restartCountHasBeenSet(false),
+    m_expectJobDefaultAlarmStatusHasBeenSet(false),
+    m_jdkVersionHasBeenSet(false)
 {
 }
 
@@ -508,6 +510,26 @@ CoreInternalOutcome JobV1::Deserialize(const rapidjson::Value &value)
         m_restartCountHasBeenSet = true;
     }
 
+    if (value.HasMember("ExpectJobDefaultAlarmStatus") && !value["ExpectJobDefaultAlarmStatus"].IsNull())
+    {
+        if (!value["ExpectJobDefaultAlarmStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobV1.ExpectJobDefaultAlarmStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_expectJobDefaultAlarmStatus = value["ExpectJobDefaultAlarmStatus"].GetInt64();
+        m_expectJobDefaultAlarmStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("JdkVersion") && !value["JdkVersion"].IsNull())
+    {
+        if (!value["JdkVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobV1.JdkVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jdkVersion = string(value["JdkVersion"].GetString());
+        m_jdkVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -857,6 +879,22 @@ void JobV1::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "RestartCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_restartCount, allocator);
+    }
+
+    if (m_expectJobDefaultAlarmStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpectJobDefaultAlarmStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expectJobDefaultAlarmStatus, allocator);
+    }
+
+    if (m_jdkVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JdkVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jdkVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1532,5 +1570,37 @@ void JobV1::SetRestartCount(const int64_t& _restartCount)
 bool JobV1::RestartCountHasBeenSet() const
 {
     return m_restartCountHasBeenSet;
+}
+
+int64_t JobV1::GetExpectJobDefaultAlarmStatus() const
+{
+    return m_expectJobDefaultAlarmStatus;
+}
+
+void JobV1::SetExpectJobDefaultAlarmStatus(const int64_t& _expectJobDefaultAlarmStatus)
+{
+    m_expectJobDefaultAlarmStatus = _expectJobDefaultAlarmStatus;
+    m_expectJobDefaultAlarmStatusHasBeenSet = true;
+}
+
+bool JobV1::ExpectJobDefaultAlarmStatusHasBeenSet() const
+{
+    return m_expectJobDefaultAlarmStatusHasBeenSet;
+}
+
+string JobV1::GetJdkVersion() const
+{
+    return m_jdkVersion;
+}
+
+void JobV1::SetJdkVersion(const string& _jdkVersion)
+{
+    m_jdkVersion = _jdkVersion;
+    m_jdkVersionHasBeenSet = true;
+}
+
+bool JobV1::JdkVersionHasBeenSet() const
+{
+    return m_jdkVersionHasBeenSet;
 }
 

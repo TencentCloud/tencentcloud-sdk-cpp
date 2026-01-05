@@ -1090,6 +1090,48 @@ namespace TencentCloud
                      */
                     bool RestartCountHasBeenSet() const;
 
+                    /**
+                     * 获取期望是开启默认告警
+                     * @return ExpectJobDefaultAlarmStatus 期望是开启默认告警
+                     * 
+                     */
+                    int64_t GetExpectJobDefaultAlarmStatus() const;
+
+                    /**
+                     * 设置期望是开启默认告警
+                     * @param _expectJobDefaultAlarmStatus 期望是开启默认告警
+                     * 
+                     */
+                    void SetExpectJobDefaultAlarmStatus(const int64_t& _expectJobDefaultAlarmStatus);
+
+                    /**
+                     * 判断参数 ExpectJobDefaultAlarmStatus 是否已赋值
+                     * @return ExpectJobDefaultAlarmStatus 是否已赋值
+                     * 
+                     */
+                    bool ExpectJobDefaultAlarmStatusHasBeenSet() const;
+
+                    /**
+                     * 获取jdk版本
+                     * @return JdkVersion jdk版本
+                     * 
+                     */
+                    std::string GetJdkVersion() const;
+
+                    /**
+                     * 设置jdk版本
+                     * @param _jdkVersion jdk版本
+                     * 
+                     */
+                    void SetJdkVersion(const std::string& _jdkVersion);
+
+                    /**
+                     * 判断参数 JdkVersion 是否已赋值
+                     * @return JdkVersion 是否已赋值
+                     * 
+                     */
+                    bool JdkVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1383,6 +1425,18 @@ namespace TencentCloud
                      */
                     int64_t m_restartCount;
                     bool m_restartCountHasBeenSet;
+
+                    /**
+                     * 期望是开启默认告警
+                     */
+                    int64_t m_expectJobDefaultAlarmStatus;
+                    bool m_expectJobDefaultAlarmStatusHasBeenSet;
+
+                    /**
+                     * jdk版本
+                     */
+                    std::string m_jdkVersion;
+                    bool m_jdkVersionHasBeenSet;
 
                 };
             }

@@ -51,7 +51,6 @@ namespace TencentCloud
 Hunyuan,
 Hailuo，
 Kling，
-Jimeng，
 Vidu，
 OS，
 GV。
@@ -60,7 +59,6 @@ GV。
 Hunyuan,
 Hailuo，
 Kling，
-Jimeng，
 Vidu，
 OS，
 GV。
@@ -74,7 +72,6 @@ GV。
 Hunyuan,
 Hailuo，
 Kling，
-Jimeng，
 Vidu，
 OS，
 GV。
@@ -83,7 +80,6 @@ GV。
 Hunyuan,
 Hailuo，
 Kling，
-Jimeng，
 Vidu，
 OS，
 GV。
@@ -101,16 +97,14 @@ GV。
                     /**
                      * 获取指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。
 1. Hailuo， 可选[02、2.3]。
-2. Kling，可选[2.0、2.1、2.5]。
-3. Jimeng, 可选[3.0pro]。
-4. Vidu,可选[q2、q2-pro、q2-turbo]。
+2. Kling，可选[2.0、2.1、2.5、O1、2.6]。
+3. Vidu,可选[q2、q2-pro、q2-turbo]。
 4. GV, 可选[3.1]。
 5. OS，可选[2.0]。
                      * @return ModelVersion 指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。
 1. Hailuo， 可选[02、2.3]。
-2. Kling，可选[2.0、2.1、2.5]。
-3. Jimeng, 可选[3.0pro]。
-4. Vidu,可选[q2、q2-pro、q2-turbo]。
+2. Kling，可选[2.0、2.1、2.5、O1、2.6]。
+3. Vidu,可选[q2、q2-pro、q2-turbo]。
 4. GV, 可选[3.1]。
 5. OS，可选[2.0]。
                      * 
@@ -120,16 +114,14 @@ GV。
                     /**
                      * 设置指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。
 1. Hailuo， 可选[02、2.3]。
-2. Kling，可选[2.0、2.1、2.5]。
-3. Jimeng, 可选[3.0pro]。
-4. Vidu,可选[q2、q2-pro、q2-turbo]。
+2. Kling，可选[2.0、2.1、2.5、O1、2.6]。
+3. Vidu,可选[q2、q2-pro、q2-turbo]。
 4. GV, 可选[3.1]。
 5. OS，可选[2.0]。
                      * @param _modelVersion 指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。
 1. Hailuo， 可选[02、2.3]。
-2. Kling，可选[2.0、2.1、2.5]。
-3. Jimeng, 可选[3.0pro]。
-4. Vidu,可选[q2、q2-pro、q2-turbo]。
+2. Kling，可选[2.0、2.1、2.5、O1、2.6]。
+3. Vidu,可选[q2、q2-pro、q2-turbo]。
 4. GV, 可选[3.1]。
 5. OS，可选[2.0]。
                      * 
@@ -373,17 +365,15 @@ GV。
                      * 获取生成视频的时长。
 注意：
 1. Kling支持 5、10秒。默认: 5秒。
-2. Jimeng支持5、10秒。 默认: 5秒。
-3. Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。
-4. Vidu支持1-10秒。
+2. Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。
+3. Vidu支持1-10秒。
 4. GV支持 8秒。 默认：8秒。
 5. OS支持4、8、12秒。 默认：8秒。
                      * @return Duration 生成视频的时长。
 注意：
 1. Kling支持 5、10秒。默认: 5秒。
-2. Jimeng支持5、10秒。 默认: 5秒。
-3. Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。
-4. Vidu支持1-10秒。
+2. Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。
+3. Vidu支持1-10秒。
 4. GV支持 8秒。 默认：8秒。
 5. OS支持4、8、12秒。 默认：8秒。
                      * 
@@ -394,17 +384,15 @@ GV。
                      * 设置生成视频的时长。
 注意：
 1. Kling支持 5、10秒。默认: 5秒。
-2. Jimeng支持5、10秒。 默认: 5秒。
-3. Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。
-4. Vidu支持1-10秒。
+2. Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。
+3. Vidu支持1-10秒。
 4. GV支持 8秒。 默认：8秒。
 5. OS支持4、8、12秒。 默认：8秒。
                      * @param _duration 生成视频的时长。
 注意：
 1. Kling支持 5、10秒。默认: 5秒。
-2. Jimeng支持5、10秒。 默认: 5秒。
-3. Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。
-4. Vidu支持1-10秒。
+2. Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。
+3. Vidu支持1-10秒。
 4. GV支持 8秒。 默认：8秒。
 5. OS支持4、8、12秒。 默认：8秒。
                      * 
@@ -419,15 +407,15 @@ GV。
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取用于传入模型要求的额外参数。
-                     * @return ExtraParameters 用于传入模型要求的额外参数。
+                     * 获取用于传入要求的额外参数。
+                     * @return ExtraParameters 用于传入要求的额外参数。
                      * 
                      */
                     AigcVideoExtraParam GetExtraParameters() const;
 
                     /**
-                     * 设置用于传入模型要求的额外参数。
-                     * @param _extraParameters 用于传入模型要求的额外参数。
+                     * 设置用于传入要求的额外参数。
+                     * @param _extraParameters 用于传入要求的额外参数。
                      * 
                      */
                     void SetExtraParameters(const AigcVideoExtraParam& _extraParameters);
@@ -461,6 +449,35 @@ GV。
                     bool StoreCosParamHasBeenSet() const;
 
                     /**
+                     * 获取用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。
+示例：
+{\"camera_control\":{\"type\":\"simple\"}}
+                     * @return AdditionalParameters 用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。
+示例：
+{\"camera_control\":{\"type\":\"simple\"}}
+                     * 
+                     */
+                    std::string GetAdditionalParameters() const;
+
+                    /**
+                     * 设置用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。
+示例：
+{\"camera_control\":{\"type\":\"simple\"}}
+                     * @param _additionalParameters 用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。
+示例：
+{\"camera_control\":{\"type\":\"simple\"}}
+                     * 
+                     */
+                    void SetAdditionalParameters(const std::string& _additionalParameters);
+
+                    /**
+                     * 判断参数 AdditionalParameters 是否已赋值
+                     * @return AdditionalParameters 是否已赋值
+                     * 
+                     */
+                    bool AdditionalParametersHasBeenSet() const;
+
+                    /**
                      * 获取接口操作者名称。
                      * @return Operator 接口操作者名称。
                      * 
@@ -489,7 +506,6 @@ GV。
 Hunyuan,
 Hailuo，
 Kling，
-Jimeng，
 Vidu，
 OS，
 GV。
@@ -500,9 +516,8 @@ GV。
                     /**
                      * 指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。
 1. Hailuo， 可选[02、2.3]。
-2. Kling，可选[2.0、2.1、2.5]。
-3. Jimeng, 可选[3.0pro]。
-4. Vidu,可选[q2、q2-pro、q2-turbo]。
+2. Kling，可选[2.0、2.1、2.5、O1、2.6]。
+3. Vidu,可选[q2、q2-pro、q2-turbo]。
 4. GV, 可选[3.1]。
 5. OS，可选[2.0]。
                      */
@@ -574,9 +589,8 @@ GV。
                      * 生成视频的时长。
 注意：
 1. Kling支持 5、10秒。默认: 5秒。
-2. Jimeng支持5、10秒。 默认: 5秒。
-3. Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。
-4. Vidu支持1-10秒。
+2. Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。
+3. Vidu支持1-10秒。
 4. GV支持 8秒。 默认：8秒。
 5. OS支持4、8、12秒。 默认：8秒。
                      */
@@ -584,7 +598,7 @@ GV。
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 用于传入模型要求的额外参数。
+                     * 用于传入要求的额外参数。
                      */
                     AigcVideoExtraParam m_extraParameters;
                     bool m_extraParametersHasBeenSet;
@@ -594,6 +608,14 @@ GV。
                      */
                     AigcStoreCosParam m_storeCosParam;
                     bool m_storeCosParamHasBeenSet;
+
+                    /**
+                     * 用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。
+示例：
+{\"camera_control\":{\"type\":\"simple\"}}
+                     */
+                    std::string m_additionalParameters;
+                    bool m_additionalParametersHasBeenSet;
 
                     /**
                      * 接口操作者名称。

@@ -138,6 +138,27 @@ namespace TencentCloud
                      */
                     bool ExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取指定所生成图片的宽高比。输入格式为 W:H。仅生商品图场景有效。
+                     * @return AspectRatio 指定所生成图片的宽高比。输入格式为 W:H。仅生商品图场景有效。
+                     * 
+                     */
+                    std::string GetAspectRatio() const;
+
+                    /**
+                     * 设置指定所生成图片的宽高比。输入格式为 W:H。仅生商品图场景有效。
+                     * @param _aspectRatio 指定所生成图片的宽高比。输入格式为 W:H。仅生商品图场景有效。
+                     * 
+                     */
+                    void SetAspectRatio(const std::string& _aspectRatio);
+
+                    /**
+                     * 判断参数 AspectRatio 是否已赋值
+                     * @return AspectRatio 是否已赋值
+                     * 
+                     */
+                    bool AspectRatioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -165,6 +186,12 @@ namespace TencentCloud
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 指定所生成图片的宽高比。输入格式为 W:H。仅生商品图场景有效。
+                     */
+                    std::string m_aspectRatio;
+                    bool m_aspectRatioHasBeenSet;
 
                 };
             }

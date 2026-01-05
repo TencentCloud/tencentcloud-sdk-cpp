@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标组的ID。
-                     * @return TargetGroupId 目标组的ID。
+                     * 获取<p>目标组的ID。</p>
+                     * @return TargetGroupId <p>目标组的ID。</p>
                      * 
                      */
                     std::string GetTargetGroupId() const;
 
                     /**
-                     * 设置目标组的ID。
-                     * @param _targetGroupId 目标组的ID。
+                     * 设置<p>目标组的ID。</p>
+                     * @param _targetGroupId <p>目标组的ID。</p>
                      * 
                      */
                     void SetTargetGroupId(const std::string& _targetGroupId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TargetGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取目标组的新名称。
-                     * @return TargetGroupName 目标组的新名称。
+                     * 获取<p>目标组的新名称。</p>
+                     * @return TargetGroupName <p>目标组的新名称。</p>
                      * 
                      */
                     std::string GetTargetGroupName() const;
 
                     /**
-                     * 设置目标组的新名称。
-                     * @param _targetGroupName 目标组的新名称。
+                     * 设置<p>目标组的新名称。</p>
+                     * @param _targetGroupName <p>目标组的新名称。</p>
                      * 
                      */
                     void SetTargetGroupName(const std::string& _targetGroupName);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool TargetGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取目标组的新默认端口。全监听目标组不支持此参数。
-                     * @return Port 目标组的新默认端口。全监听目标组不支持此参数。
+                     * 获取<p>目标组的新默认端口。全监听目标组不支持此参数。</p>
+                     * @return Port <p>目标组的新默认端口。全监听目标组不支持此参数。</p>
                      * 
                      */
                     uint64_t GetPort() const;
 
                     /**
-                     * 设置目标组的新默认端口。全监听目标组不支持此参数。
-                     * @param _port 目标组的新默认端口。全监听目标组不支持此参数。
+                     * 设置<p>目标组的新默认端口。全监听目标组不支持此参数。</p>
+                     * @param _port <p>目标组的新默认端口。全监听目标组不支持此参数。</p>
                      * 
                      */
                     void SetPort(const uint64_t& _port);
@@ -107,19 +107,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取调度算法，仅V2新版目标组，且后端转发协议为(HTTP|HTTPS|GRPC)时该参数有效。可选值：
-<ur><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li><li>默认为 WRR。</li><ur>
-                     * @return ScheduleAlgorithm 调度算法，仅V2新版目标组，且后端转发协议为(HTTP|HTTPS|GRPC)时该参数有效。可选值：
-<ur><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li><li>默认为 WRR。</li><ur>
+                     * 获取<p>调度算法，仅V2新版目标组，且后端转发协议为(HTTP|HTTPS|GRPC)时该参数有效。可选值：<ur><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li><li>默认为 WRR。</li><ur></p>
+                     * @return ScheduleAlgorithm <p>调度算法，仅V2新版目标组，且后端转发协议为(HTTP|HTTPS|GRPC)时该参数有效。可选值：<ur><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li><li>默认为 WRR。</li><ur></p>
                      * 
                      */
                     std::string GetScheduleAlgorithm() const;
 
                     /**
-                     * 设置调度算法，仅V2新版目标组，且后端转发协议为(HTTP|HTTPS|GRPC)时该参数有效。可选值：
-<ur><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li><li>默认为 WRR。</li><ur>
-                     * @param _scheduleAlgorithm 调度算法，仅V2新版目标组，且后端转发协议为(HTTP|HTTPS|GRPC)时该参数有效。可选值：
-<ur><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li><li>默认为 WRR。</li><ur>
+                     * 设置<p>调度算法，仅V2新版目标组，且后端转发协议为(HTTP|HTTPS|GRPC)时该参数有效。可选值：<ur><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li><li>默认为 WRR。</li><ur></p>
+                     * @param _scheduleAlgorithm <p>调度算法，仅V2新版目标组，且后端转发协议为(HTTP|HTTPS|GRPC)时该参数有效。可选值：<ur><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li><li>默认为 WRR。</li><ur></p>
                      * 
                      */
                     void SetScheduleAlgorithm(const std::string& _scheduleAlgorithm);
@@ -132,15 +128,15 @@ namespace TencentCloud
                     bool ScheduleAlgorithmHasBeenSet() const;
 
                     /**
-                     * 获取健康检查详情。
-                     * @return HealthCheck 健康检查详情。
+                     * 获取<p>健康检查详情。</p>
+                     * @return HealthCheck <p>健康检查详情。</p>
                      * 
                      */
                     TargetGroupHealthCheck GetHealthCheck() const;
 
                     /**
-                     * 设置健康检查详情。
-                     * @param _healthCheck 健康检查详情。
+                     * 设置<p>健康检查详情。</p>
+                     * @param _healthCheck <p>健康检查详情。</p>
                      * 
                      */
                     void SetHealthCheck(const TargetGroupHealthCheck& _healthCheck);
@@ -153,15 +149,15 @@ namespace TencentCloud
                     bool HealthCheckHasBeenSet() const;
 
                     /**
-                     * 获取后端服务默认权重, 其中：<ul><li>取值范围[0, 100]</li><li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li><li>v1目标组类型不支持设置Weight参数。</li> </ul>
-                     * @return Weight 后端服务默认权重, 其中：<ul><li>取值范围[0, 100]</li><li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li><li>v1目标组类型不支持设置Weight参数。</li> </ul>
+                     * 获取<p>后端服务默认权重, 其中：<ul><li>取值范围[0, 100]</li><li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li><li>v1目标组类型不支持设置Weight参数。</li> </ul></p>
+                     * @return Weight <p>后端服务默认权重, 其中：<ul><li>取值范围[0, 100]</li><li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li><li>v1目标组类型不支持设置Weight参数。</li> </ul></p>
                      * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
-                     * 设置后端服务默认权重, 其中：<ul><li>取值范围[0, 100]</li><li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li><li>v1目标组类型不支持设置Weight参数。</li> </ul>
-                     * @param _weight 后端服务默认权重, 其中：<ul><li>取值范围[0, 100]</li><li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li><li>v1目标组类型不支持设置Weight参数。</li> </ul>
+                     * 设置<p>后端服务默认权重, 其中：<ul><li>取值范围[0, 100]</li><li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li><li>v1目标组类型不支持设置Weight参数。</li> </ul></p>
+                     * @param _weight <p>后端服务默认权重, 其中：<ul><li>取值范围[0, 100]</li><li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li><li>v1目标组类型不支持设置Weight参数。</li> </ul></p>
                      * 
                      */
                     void SetWeight(const uint64_t& _weight);
@@ -174,15 +170,15 @@ namespace TencentCloud
                     bool WeightHasBeenSet() const;
 
                     /**
-                     * 获取是否开启长连接，此参数仅适用于HTTP/HTTPS目标组，true:关闭；false:开启， 默认关闭。
-                     * @return KeepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS目标组，true:关闭；false:开启， 默认关闭。
+                     * 获取<p>是否开启长连接，此参数仅适用于HTTP/HTTPS目标组，true:关闭；false:开启， 默认关闭。</p>
+                     * @return KeepaliveEnable <p>是否开启长连接，此参数仅适用于HTTP/HTTPS目标组，true:关闭；false:开启， 默认关闭。</p>
                      * 
                      */
                     bool GetKeepaliveEnable() const;
 
                     /**
-                     * 设置是否开启长连接，此参数仅适用于HTTP/HTTPS目标组，true:关闭；false:开启， 默认关闭。
-                     * @param _keepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS目标组，true:关闭；false:开启， 默认关闭。
+                     * 设置<p>是否开启长连接，此参数仅适用于HTTP/HTTPS目标组，true:关闭；false:开启， 默认关闭。</p>
+                     * @param _keepaliveEnable <p>是否开启长连接，此参数仅适用于HTTP/HTTPS目标组，true:关闭；false:开启， 默认关闭。</p>
                      * 
                      */
                     void SetKeepaliveEnable(const bool& _keepaliveEnable);
@@ -195,15 +191,15 @@ namespace TencentCloud
                     bool KeepaliveEnableHasBeenSet() const;
 
                     /**
-                     * 获取会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。TCP/UDP目标组不支持该参数。
-                     * @return SessionExpireTime 会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。TCP/UDP目标组不支持该参数。
+                     * 获取<p>会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。TCP/UDP目标组不支持该参数。</p>
+                     * @return SessionExpireTime <p>会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。TCP/UDP目标组不支持该参数。</p>
                      * 
                      */
                     uint64_t GetSessionExpireTime() const;
 
                     /**
-                     * 设置会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。TCP/UDP目标组不支持该参数。
-                     * @param _sessionExpireTime 会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。TCP/UDP目标组不支持该参数。
+                     * 设置<p>会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。TCP/UDP目标组不支持该参数。</p>
+                     * @param _sessionExpireTime <p>会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。TCP/UDP目标组不支持该参数。</p>
                      * 
                      */
                     void SetSessionExpireTime(const uint64_t& _sessionExpireTime);
@@ -215,56 +211,82 @@ namespace TencentCloud
                      */
                     bool SessionExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启SNAT（源IP替换），True（开启）、False（关闭）。默认为关闭。注意：SnatEnable开启时会替换客户端源IP，此时<code>透传客户端源IP</code>选项关闭，反之亦然。</p>
+                     * @return SnatEnable <p>是否开启SNAT（源IP替换），True（开启）、False（关闭）。默认为关闭。注意：SnatEnable开启时会替换客户端源IP，此时<code>透传客户端源IP</code>选项关闭，反之亦然。</p>
+                     * 
+                     */
+                    bool GetSnatEnable() const;
+
+                    /**
+                     * 设置<p>是否开启SNAT（源IP替换），True（开启）、False（关闭）。默认为关闭。注意：SnatEnable开启时会替换客户端源IP，此时<code>透传客户端源IP</code>选项关闭，反之亦然。</p>
+                     * @param _snatEnable <p>是否开启SNAT（源IP替换），True（开启）、False（关闭）。默认为关闭。注意：SnatEnable开启时会替换客户端源IP，此时<code>透传客户端源IP</code>选项关闭，反之亦然。</p>
+                     * 
+                     */
+                    void SetSnatEnable(const bool& _snatEnable);
+
+                    /**
+                     * 判断参数 SnatEnable 是否已赋值
+                     * @return SnatEnable 是否已赋值
+                     * 
+                     */
+                    bool SnatEnableHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 目标组的ID。
+                     * <p>目标组的ID。</p>
                      */
                     std::string m_targetGroupId;
                     bool m_targetGroupIdHasBeenSet;
 
                     /**
-                     * 目标组的新名称。
+                     * <p>目标组的新名称。</p>
                      */
                     std::string m_targetGroupName;
                     bool m_targetGroupNameHasBeenSet;
 
                     /**
-                     * 目标组的新默认端口。全监听目标组不支持此参数。
+                     * <p>目标组的新默认端口。全监听目标组不支持此参数。</p>
                      */
                     uint64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 调度算法，仅V2新版目标组，且后端转发协议为(HTTP|HTTPS|GRPC)时该参数有效。可选值：
-<ur><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li><li>默认为 WRR。</li><ur>
+                     * <p>调度算法，仅V2新版目标组，且后端转发协议为(HTTP|HTTPS|GRPC)时该参数有效。可选值：<ur><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li><li>默认为 WRR。</li><ur></p>
                      */
                     std::string m_scheduleAlgorithm;
                     bool m_scheduleAlgorithmHasBeenSet;
 
                     /**
-                     * 健康检查详情。
+                     * <p>健康检查详情。</p>
                      */
                     TargetGroupHealthCheck m_healthCheck;
                     bool m_healthCheckHasBeenSet;
 
                     /**
-                     * 后端服务默认权重, 其中：<ul><li>取值范围[0, 100]</li><li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li><li>v1目标组类型不支持设置Weight参数。</li> </ul>
+                     * <p>后端服务默认权重, 其中：<ul><li>取值范围[0, 100]</li><li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li><li>v1目标组类型不支持设置Weight参数。</li> </ul></p>
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;
 
                     /**
-                     * 是否开启长连接，此参数仅适用于HTTP/HTTPS目标组，true:关闭；false:开启， 默认关闭。
+                     * <p>是否开启长连接，此参数仅适用于HTTP/HTTPS目标组，true:关闭；false:开启， 默认关闭。</p>
                      */
                     bool m_keepaliveEnable;
                     bool m_keepaliveEnableHasBeenSet;
 
                     /**
-                     * 会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。TCP/UDP目标组不支持该参数。
+                     * <p>会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。TCP/UDP目标组不支持该参数。</p>
                      */
                     uint64_t m_sessionExpireTime;
                     bool m_sessionExpireTimeHasBeenSet;
+
+                    /**
+                     * <p>是否开启SNAT（源IP替换），True（开启）、False（关闭）。默认为关闭。注意：SnatEnable开启时会替换客户端源IP，此时<code>透传客户端源IP</code>选项关闭，反之亦然。</p>
+                     */
+                    bool m_snatEnable;
+                    bool m_snatEnableHasBeenSet;
 
                 };
             }

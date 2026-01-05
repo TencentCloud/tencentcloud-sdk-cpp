@@ -666,6 +666,48 @@ namespace TencentCloud
                      */
                     bool LatestFixTimeHasBeenSet() const;
 
+                    /**
+                     * 获取漏洞对应机器的应用防护开启数量
+                     * @return RaspOpenNodeCount 漏洞对应机器的应用防护开启数量
+                     * 
+                     */
+                    int64_t GetRaspOpenNodeCount() const;
+
+                    /**
+                     * 设置漏洞对应机器的应用防护开启数量
+                     * @param _raspOpenNodeCount 漏洞对应机器的应用防护开启数量
+                     * 
+                     */
+                    void SetRaspOpenNodeCount(const int64_t& _raspOpenNodeCount);
+
+                    /**
+                     * 判断参数 RaspOpenNodeCount 是否已赋值
+                     * @return RaspOpenNodeCount 是否已赋值
+                     * 
+                     */
+                    bool RaspOpenNodeCountHasBeenSet() const;
+
+                    /**
+                     * 获取漏洞对应机器的应用防护关闭数量
+                     * @return RaspClosedNodeCount 漏洞对应机器的应用防护关闭数量
+                     * 
+                     */
+                    int64_t GetRaspClosedNodeCount() const;
+
+                    /**
+                     * 设置漏洞对应机器的应用防护关闭数量
+                     * @param _raspClosedNodeCount 漏洞对应机器的应用防护关闭数量
+                     * 
+                     */
+                    void SetRaspClosedNodeCount(const int64_t& _raspClosedNodeCount);
+
+                    /**
+                     * 判断参数 RaspClosedNodeCount 是否已赋值
+                     * @return RaspClosedNodeCount 是否已赋值
+                     * 
+                     */
+                    bool RaspClosedNodeCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -843,6 +885,18 @@ namespace TencentCloud
                      */
                     std::string m_latestFixTime;
                     bool m_latestFixTimeHasBeenSet;
+
+                    /**
+                     * 漏洞对应机器的应用防护开启数量
+                     */
+                    int64_t m_raspOpenNodeCount;
+                    bool m_raspOpenNodeCountHasBeenSet;
+
+                    /**
+                     * 漏洞对应机器的应用防护关闭数量
+                     */
+                    int64_t m_raspClosedNodeCount;
+                    bool m_raspClosedNodeCountHasBeenSet;
 
                 };
             }

@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cwp/v20180228/model/ScanTaskDetails.h>
 #include <tencentcloud/cwp/v20180228/model/VulDetailInfo.h>
+#include <tencentcloud/cwp/v20180228/model/PatchInfoDetail.h>
 
 
 namespace TencentCloud
@@ -255,6 +256,20 @@ namespace TencentCloud
                      */
                     bool VulCountHasBeenSet() const;
 
+                    /**
+                     * 获取单独扫描kb时的信息
+                     * @return PatchInfo 单独扫描kb时的信息
+                     * 
+                     */
+                    std::vector<PatchInfoDetail> GetPatchInfo() const;
+
+                    /**
+                     * 判断参数 PatchInfo 是否已赋值
+                     * @return PatchInfo 是否已赋值
+                     * 
+                     */
+                    bool PatchInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -346,6 +361,12 @@ namespace TencentCloud
                      */
                     uint64_t m_vulCount;
                     bool m_vulCountHasBeenSet;
+
+                    /**
+                     * 单独扫描kb时的信息
+                     */
+                    std::vector<PatchInfoDetail> m_patchInfo;
+                    bool m_patchInfoHasBeenSet;
 
                 };
             }

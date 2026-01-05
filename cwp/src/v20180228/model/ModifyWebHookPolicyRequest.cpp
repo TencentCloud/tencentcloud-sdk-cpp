@@ -32,7 +32,8 @@ ModifyWebHookPolicyRequest::ModifyWebHookPolicyRequest() :
     m_customFieldsHasBeenSet(false),
     m_isDisabledHasBeenSet(false),
     m_quuidsHasBeenSet(false),
-    m_excludedQuuidsHasBeenSet(false)
+    m_excludedQuuidsHasBeenSet(false),
+    m_msgLanguageHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,14 @@ string ModifyWebHookPolicyRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_msgLanguageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MsgLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_msgLanguage.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -327,6 +336,22 @@ void ModifyWebHookPolicyRequest::SetExcludedQuuids(const vector<string>& _exclud
 bool ModifyWebHookPolicyRequest::ExcludedQuuidsHasBeenSet() const
 {
     return m_excludedQuuidsHasBeenSet;
+}
+
+string ModifyWebHookPolicyRequest::GetMsgLanguage() const
+{
+    return m_msgLanguage;
+}
+
+void ModifyWebHookPolicyRequest::SetMsgLanguage(const string& _msgLanguage)
+{
+    m_msgLanguage = _msgLanguage;
+    m_msgLanguageHasBeenSet = true;
+}
+
+bool ModifyWebHookPolicyRequest::MsgLanguageHasBeenSet() const
+{
+    return m_msgLanguageHasBeenSet;
 }
 
 

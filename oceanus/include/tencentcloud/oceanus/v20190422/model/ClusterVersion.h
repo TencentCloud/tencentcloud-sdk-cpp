@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/oceanus/v20190422/model/FlinkJdkVersion.h>
 
 
 namespace TencentCloud
@@ -96,6 +97,27 @@ namespace TencentCloud
                      */
                     bool SupportedFlinkHasBeenSet() const;
 
+                    /**
+                     * 获取jdk支持版本
+                     * @return JdkSupportVersion jdk支持版本
+                     * 
+                     */
+                    std::vector<FlinkJdkVersion> GetJdkSupportVersion() const;
+
+                    /**
+                     * 设置jdk支持版本
+                     * @param _jdkSupportVersion jdk支持版本
+                     * 
+                     */
+                    void SetJdkSupportVersion(const std::vector<FlinkJdkVersion>& _jdkSupportVersion);
+
+                    /**
+                     * 判断参数 JdkSupportVersion 是否已赋值
+                     * @return JdkSupportVersion 是否已赋值
+                     * 
+                     */
+                    bool JdkSupportVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +133,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_supportedFlink;
                     bool m_supportedFlinkHasBeenSet;
+
+                    /**
+                     * jdk支持版本
+                     */
+                    std::vector<FlinkJdkVersion> m_jdkSupportVersion;
+                    bool m_jdkSupportVersionHasBeenSet;
 
                 };
             }

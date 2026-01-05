@@ -311,6 +311,27 @@ quadrilateral: 四边形面与三角形面混合生成。
                      */
                     bool PolygonTypeHasBeenSet() const;
 
+                    /**
+                     * 获取生成模型的格式，仅限制生成一种格式； 生成模型文件组默认返回obj、glb格式（开启时Geometry参数时，默认为glb格式）； 可选值：STL，USDZ，FBX；
+                     * @return ResultFormat 生成模型的格式，仅限制生成一种格式； 生成模型文件组默认返回obj、glb格式（开启时Geometry参数时，默认为glb格式）； 可选值：STL，USDZ，FBX；
+                     * 
+                     */
+                    std::string GetResultFormat() const;
+
+                    /**
+                     * 设置生成模型的格式，仅限制生成一种格式； 生成模型文件组默认返回obj、glb格式（开启时Geometry参数时，默认为glb格式）； 可选值：STL，USDZ，FBX；
+                     * @param _resultFormat 生成模型的格式，仅限制生成一种格式； 生成模型文件组默认返回obj、glb格式（开启时Geometry参数时，默认为glb格式）； 可选值：STL，USDZ，FBX；
+                     * 
+                     */
+                    void SetResultFormat(const std::string& _resultFormat);
+
+                    /**
+                     * 判断参数 ResultFormat 是否已赋值
+                     * @return ResultFormat 是否已赋值
+                     * 
+                     */
+                    bool ResultFormatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -385,6 +406,12 @@ quadrilateral: 四边形面与三角形面混合生成。
                      */
                     std::string m_polygonType;
                     bool m_polygonTypeHasBeenSet;
+
+                    /**
+                     * 生成模型的格式，仅限制生成一种格式； 生成模型文件组默认返回obj、glb格式（开启时Geometry参数时，默认为glb格式）； 可选值：STL，USDZ，FBX；
+                     */
+                    std::string m_resultFormat;
+                    bool m_resultFormatHasBeenSet;
 
                 };
             }

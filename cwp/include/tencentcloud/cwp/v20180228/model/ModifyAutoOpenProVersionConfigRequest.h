@@ -72,6 +72,39 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
+                     * 获取加固防护模式
+PROVERSION_POSTPAY 专业版-按量计费
+PROVERSION_PREPAY 专业版-包年包月
+FLAGSHIP_PREPAY 旗舰版-包年包月
+                     * @return ProtectType 加固防护模式
+PROVERSION_POSTPAY 专业版-按量计费
+PROVERSION_PREPAY 专业版-包年包月
+FLAGSHIP_PREPAY 旗舰版-包年包月
+                     * 
+                     */
+                    std::string GetProtectType() const;
+
+                    /**
+                     * 设置加固防护模式
+PROVERSION_POSTPAY 专业版-按量计费
+PROVERSION_PREPAY 专业版-包年包月
+FLAGSHIP_PREPAY 旗舰版-包年包月
+                     * @param _protectType 加固防护模式
+PROVERSION_POSTPAY 专业版-按量计费
+PROVERSION_PREPAY 专业版-包年包月
+FLAGSHIP_PREPAY 旗舰版-包年包月
+                     * 
+                     */
+                    void SetProtectType(const std::string& _protectType);
+
+                    /**
+                     * 判断参数 ProtectType 是否已赋值
+                     * @return ProtectType 是否已赋值
+                     * 
+                     */
+                    bool ProtectTypeHasBeenSet() const;
+
+                    /**
                      * 获取自动加购/扩容授权开关,默认 1, 0关闭, 1开启
                      * @return AutoRepurchaseSwitch 自动加购/扩容授权开关,默认 1, 0关闭, 1开启
                      * 
@@ -176,6 +209,27 @@ namespace TencentCloud
                      */
                     bool AutoOpenRaspSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取自动缩容开关,0 关闭 1开启
+                     * @return AutoDowngradeSwitch 自动缩容开关,0 关闭 1开启
+                     * 
+                     */
+                    uint64_t GetAutoDowngradeSwitch() const;
+
+                    /**
+                     * 设置自动缩容开关,0 关闭 1开启
+                     * @param _autoDowngradeSwitch 自动缩容开关,0 关闭 1开启
+                     * 
+                     */
+                    void SetAutoDowngradeSwitch(const uint64_t& _autoDowngradeSwitch);
+
+                    /**
+                     * 判断参数 AutoDowngradeSwitch 是否已赋值
+                     * @return AutoDowngradeSwitch 是否已赋值
+                     * 
+                     */
+                    bool AutoDowngradeSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -185,6 +239,15 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 加固防护模式
+PROVERSION_POSTPAY 专业版-按量计费
+PROVERSION_PREPAY 专业版-包年包月
+FLAGSHIP_PREPAY 旗舰版-包年包月
+                     */
+                    std::string m_protectType;
+                    bool m_protectTypeHasBeenSet;
 
                     /**
                      * 自动加购/扩容授权开关,默认 1, 0关闭, 1开启
@@ -215,6 +278,12 @@ namespace TencentCloud
                      */
                     uint64_t m_autoOpenRaspSwitch;
                     bool m_autoOpenRaspSwitchHasBeenSet;
+
+                    /**
+                     * 自动缩容开关,0 关闭 1开启
+                     */
+                    uint64_t m_autoDowngradeSwitch;
+                    bool m_autoDowngradeSwitchHasBeenSet;
 
                 };
             }

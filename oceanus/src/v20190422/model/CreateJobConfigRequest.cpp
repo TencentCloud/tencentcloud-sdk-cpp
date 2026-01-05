@@ -54,6 +54,7 @@ CreateJobConfigRequest::CreateJobConfigRequest() :
     m_flinkVersionHasBeenSet(false),
     m_jobManagerCpuHasBeenSet(false),
     m_jobManagerMemHasBeenSet(false),
+    m_jdkVersionHasBeenSet(false),
     m_taskManagerCpuHasBeenSet(false),
     m_taskManagerMemHasBeenSet(false),
     m_useOldSystemConnectorHasBeenSet(false),
@@ -340,6 +341,14 @@ string CreateJobConfigRequest::ToJsonString() const
         string key = "JobManagerMem";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_jobManagerMem, allocator);
+    }
+
+    if (m_jdkVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JdkVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jdkVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskManagerCpuHasBeenSet)
@@ -892,6 +901,22 @@ void CreateJobConfigRequest::SetJobManagerMem(const double& _jobManagerMem)
 bool CreateJobConfigRequest::JobManagerMemHasBeenSet() const
 {
     return m_jobManagerMemHasBeenSet;
+}
+
+string CreateJobConfigRequest::GetJdkVersion() const
+{
+    return m_jdkVersion;
+}
+
+void CreateJobConfigRequest::SetJdkVersion(const string& _jdkVersion)
+{
+    m_jdkVersion = _jdkVersion;
+    m_jdkVersionHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::JdkVersionHasBeenSet() const
+{
+    return m_jdkVersionHasBeenSet;
 }
 
 double CreateJobConfigRequest::GetTaskManagerCpu() const

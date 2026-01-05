@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
-ScanVulAgainResponse::ScanVulAgainResponse()
+ScanVulAgainResponse::ScanVulAgainResponse() :
+    m_successCountHasBeenSet(false),
+    m_basicVersionCountHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,26 @@ CoreInternalOutcome ScanVulAgainResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("SuccessCount") && !rsp["SuccessCount"].IsNull())
+    {
+        if (!rsp["SuccessCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuccessCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_successCount = rsp["SuccessCount"].GetUint64();
+        m_successCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("BasicVersionCount") && !rsp["BasicVersionCount"].IsNull())
+    {
+        if (!rsp["BasicVersionCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BasicVersionCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_basicVersionCount = rsp["BasicVersionCount"].GetUint64();
+        m_basicVersionCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +92,22 @@ string ScanVulAgainResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_successCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuccessCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_successCount, allocator);
+    }
+
+    if (m_basicVersionCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BasicVersionCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_basicVersionCount, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +120,25 @@ string ScanVulAgainResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t ScanVulAgainResponse::GetSuccessCount() const
+{
+    return m_successCount;
+}
+
+bool ScanVulAgainResponse::SuccessCountHasBeenSet() const
+{
+    return m_successCountHasBeenSet;
+}
+
+uint64_t ScanVulAgainResponse::GetBasicVersionCount() const
+{
+    return m_basicVersionCount;
+}
+
+bool ScanVulAgainResponse::BasicVersionCountHasBeenSet() const
+{
+    return m_basicVersionCountHasBeenSet;
+}
 
 

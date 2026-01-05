@@ -47,27 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取漏洞id
-                     * @return VulId 漏洞id
-                     * 
-                     */
-                    uint64_t GetVulId() const;
-
-                    /**
-                     * 设置漏洞id
-                     * @param _vulId 漏洞id
-                     * 
-                     */
-                    void SetVulId(const uint64_t& _vulId);
-
-                    /**
-                     * 判断参数 VulId 是否已赋值
-                     * @return VulId 是否已赋值
-                     * 
-                     */
-                    bool VulIdHasBeenSet() const;
-
-                    /**
                      * 获取需要修复漏洞的主机，所有主机必须有VulId的这个漏洞且是待修复状态。
                      * @return Quuids 需要修复漏洞的主机，所有主机必须有VulId的这个漏洞且是待修复状态。
                      * 
@@ -87,6 +66,27 @@ namespace TencentCloud
                      * 
                      */
                     bool QuuidsHasBeenSet() const;
+
+                    /**
+                     * 获取漏洞id
+                     * @return VulId 漏洞id
+                     * 
+                     */
+                    uint64_t GetVulId() const;
+
+                    /**
+                     * 设置漏洞id
+                     * @param _vulId 漏洞id
+                     * 
+                     */
+                    void SetVulId(const uint64_t& _vulId);
+
+                    /**
+                     * 判断参数 VulId 是否已赋值
+                     * @return VulId 是否已赋值
+                     * 
+                     */
+                    bool VulIdHasBeenSet() const;
 
                     /**
                      * 获取修复方式 0组件更新或者安装补丁,1禁用服务
@@ -109,13 +109,28 @@ namespace TencentCloud
                      */
                     bool FixMethodHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取kb id
+                     * @return KbId kb id
+                     * 
+                     */
+                    uint64_t GetKbId() const;
 
                     /**
-                     * 漏洞id
+                     * 设置kb id
+                     * @param _kbId kb id
+                     * 
                      */
-                    uint64_t m_vulId;
-                    bool m_vulIdHasBeenSet;
+                    void SetKbId(const uint64_t& _kbId);
+
+                    /**
+                     * 判断参数 KbId 是否已赋值
+                     * @return KbId 是否已赋值
+                     * 
+                     */
+                    bool KbIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * 需要修复漏洞的主机，所有主机必须有VulId的这个漏洞且是待修复状态。
@@ -124,10 +139,22 @@ namespace TencentCloud
                     bool m_quuidsHasBeenSet;
 
                     /**
+                     * 漏洞id
+                     */
+                    uint64_t m_vulId;
+                    bool m_vulIdHasBeenSet;
+
+                    /**
                      * 修复方式 0组件更新或者安装补丁,1禁用服务
                      */
                     uint64_t m_fixMethod;
                     bool m_fixMethodHasBeenSet;
+
+                    /**
+                     * kb id
+                     */
+                    uint64_t m_kbId;
+                    bool m_kbIdHasBeenSet;
 
                 };
             }

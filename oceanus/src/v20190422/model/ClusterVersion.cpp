@@ -22,7 +22,8 @@ using namespace std;
 
 ClusterVersion::ClusterVersion() :
     m_flinkHasBeenSet(false),
-    m_supportedFlinkHasBeenSet(false)
+    m_supportedFlinkHasBeenSet(false),
+    m_jdkSupportVersionHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,26 @@ CoreInternalOutcome ClusterVersion::Deserialize(const rapidjson::Value &value)
         m_supportedFlinkHasBeenSet = true;
     }
 
+    if (value.HasMember("JdkSupportVersion") && !value["JdkSupportVersion"].IsNull())
+    {
+        if (!value["JdkSupportVersion"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClusterVersion.JdkSupportVersion` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["JdkSupportVersion"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FlinkJdkVersion item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_jdkSupportVersion.push_back(item);
+        }
+        m_jdkSupportVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -79,6 +100,21 @@ void ClusterVersion::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         for (auto itr = m_supportedFlink.begin(); itr != m_supportedFlink.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_jdkSupportVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JdkSupportVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_jdkSupportVersion.begin(); itr != m_jdkSupportVersion.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -115,5 +151,21 @@ void ClusterVersion::SetSupportedFlink(const vector<string>& _supportedFlink)
 bool ClusterVersion::SupportedFlinkHasBeenSet() const
 {
     return m_supportedFlinkHasBeenSet;
+}
+
+vector<FlinkJdkVersion> ClusterVersion::GetJdkSupportVersion() const
+{
+    return m_jdkSupportVersion;
+}
+
+void ClusterVersion::SetJdkSupportVersion(const vector<FlinkJdkVersion>& _jdkSupportVersion)
+{
+    m_jdkSupportVersion = _jdkSupportVersion;
+    m_jdkSupportVersionHasBeenSet = true;
+}
+
+bool ClusterVersion::JdkSupportVersionHasBeenSet() const
+{
+    return m_jdkSupportVersionHasBeenSet;
 }
 

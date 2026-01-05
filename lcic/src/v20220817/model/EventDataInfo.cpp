@@ -26,7 +26,8 @@ EventDataInfo::EventDataInfo() :
     m_deviceHasBeenSet(false),
     m_durationHasBeenSet(false),
     m_recordSizeHasBeenSet(false),
-    m_recordUrlHasBeenSet(false)
+    m_recordUrlHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome EventDataInfo::Deserialize(const rapidjson::Value &value)
         m_recordUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("Reason") && !value["Reason"].IsNull())
+    {
+        if (!value["Reason"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventDataInfo.Reason` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_reason = value["Reason"].GetUint64();
+        m_reasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void EventDataInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "RecordUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_recordUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Reason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_reason, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void EventDataInfo::SetRecordUrl(const string& _recordUrl)
 bool EventDataInfo::RecordUrlHasBeenSet() const
 {
     return m_recordUrlHasBeenSet;
+}
+
+uint64_t EventDataInfo::GetReason() const
+{
+    return m_reason;
+}
+
+void EventDataInfo::SetReason(const uint64_t& _reason)
+{
+    m_reason = _reason;
+    m_reasonHasBeenSet = true;
+}
+
+bool EventDataInfo::ReasonHasBeenSet() const
+{
+    return m_reasonHasBeenSet;
 }
 

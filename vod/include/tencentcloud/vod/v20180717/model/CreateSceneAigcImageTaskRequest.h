@@ -90,10 +90,12 @@ namespace TencentCloud
                     /**
                      * 获取输入图片列表，支持的图片格式：jpg、jpeg、png、webp。不同的场景需要不同的输入数据：
 
-- change_clothes：只能输入1张**模特**图片。
+- AI换衣场景：只能输入 1 张**模特**图片。
+- AI生商品图场景：需输入 1～10 张**同一产品**的不同角度的图片
                      * @return FileInfos 输入图片列表，支持的图片格式：jpg、jpeg、png、webp。不同的场景需要不同的输入数据：
 
-- change_clothes：只能输入1张**模特**图片。
+- AI换衣场景：只能输入 1 张**模特**图片。
+- AI生商品图场景：需输入 1～10 张**同一产品**的不同角度的图片
                      * 
                      */
                     std::vector<SceneAigcImageTaskInputFileInfo> GetFileInfos() const;
@@ -101,10 +103,12 @@ namespace TencentCloud
                     /**
                      * 设置输入图片列表，支持的图片格式：jpg、jpeg、png、webp。不同的场景需要不同的输入数据：
 
-- change_clothes：只能输入1张**模特**图片。
+- AI换衣场景：只能输入 1 张**模特**图片。
+- AI生商品图场景：需输入 1～10 张**同一产品**的不同角度的图片
                      * @param _fileInfos 输入图片列表，支持的图片格式：jpg、jpeg、png、webp。不同的场景需要不同的输入数据：
 
-- change_clothes：只能输入1张**模特**图片。
+- AI换衣场景：只能输入 1 张**模特**图片。
+- AI生商品图场景：需输入 1～10 张**同一产品**的不同角度的图片
                      * 
                      */
                     void SetFileInfos(const std::vector<SceneAigcImageTaskInputFileInfo>& _fileInfos);
@@ -238,7 +242,8 @@ namespace TencentCloud
                     /**
                      * 输入图片列表，支持的图片格式：jpg、jpeg、png、webp。不同的场景需要不同的输入数据：
 
-- change_clothes：只能输入1张**模特**图片。
+- AI换衣场景：只能输入 1 张**模特**图片。
+- AI生商品图场景：需输入 1～10 张**同一产品**的不同角度的图片
                      */
                     std::vector<SceneAigcImageTaskInputFileInfo> m_fileInfos;
                     bool m_fileInfosHasBeenSet;

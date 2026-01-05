@@ -35,6 +35,12 @@
 #include <tencentcloud/vdb/v20230616/model/DescribeInstanceNodesResponse.h>
 #include <tencentcloud/vdb/v20230616/model/DescribeInstancesRequest.h>
 #include <tencentcloud/vdb/v20230616/model/DescribeInstancesResponse.h>
+#include <tencentcloud/vdb/v20230616/model/DescribePriceCreateInstanceRequest.h>
+#include <tencentcloud/vdb/v20230616/model/DescribePriceCreateInstanceResponse.h>
+#include <tencentcloud/vdb/v20230616/model/DescribePriceRenewInstanceRequest.h>
+#include <tencentcloud/vdb/v20230616/model/DescribePriceRenewInstanceResponse.h>
+#include <tencentcloud/vdb/v20230616/model/DescribePriceResizeInstanceRequest.h>
+#include <tencentcloud/vdb/v20230616/model/DescribePriceResizeInstanceResponse.h>
 #include <tencentcloud/vdb/v20230616/model/DestroyInstancesRequest.h>
 #include <tencentcloud/vdb/v20230616/model/DestroyInstancesResponse.h>
 #include <tencentcloud/vdb/v20230616/model/DisassociateSecurityGroupsRequest.h>
@@ -83,6 +89,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const VdbClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePriceCreateInstanceResponse> DescribePriceCreateInstanceOutcome;
+                typedef std::future<DescribePriceCreateInstanceOutcome> DescribePriceCreateInstanceOutcomeCallable;
+                typedef std::function<void(const VdbClient*, const Model::DescribePriceCreateInstanceRequest&, DescribePriceCreateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePriceCreateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePriceRenewInstanceResponse> DescribePriceRenewInstanceOutcome;
+                typedef std::future<DescribePriceRenewInstanceOutcome> DescribePriceRenewInstanceOutcomeCallable;
+                typedef std::function<void(const VdbClient*, const Model::DescribePriceRenewInstanceRequest&, DescribePriceRenewInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePriceRenewInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePriceResizeInstanceResponse> DescribePriceResizeInstanceOutcome;
+                typedef std::future<DescribePriceResizeInstanceOutcome> DescribePriceResizeInstanceOutcomeCallable;
+                typedef std::function<void(const VdbClient*, const Model::DescribePriceResizeInstanceRequest&, DescribePriceResizeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePriceResizeInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DestroyInstancesResponse> DestroyInstancesOutcome;
                 typedef std::future<DestroyInstancesOutcome> DestroyInstancesOutcomeCallable;
                 typedef std::function<void(const VdbClient*, const Model::DestroyInstancesRequest&, DestroyInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyInstancesAsyncHandler;
@@ -163,6 +178,33 @@ namespace TencentCloud
                 DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest &request);
                 void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
+
+                /**
+                 *查询新购实例价格
+                 * @param req DescribePriceCreateInstanceRequest
+                 * @return DescribePriceCreateInstanceOutcome
+                 */
+                DescribePriceCreateInstanceOutcome DescribePriceCreateInstance(const Model::DescribePriceCreateInstanceRequest &request);
+                void DescribePriceCreateInstanceAsync(const Model::DescribePriceCreateInstanceRequest& request, const DescribePriceCreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePriceCreateInstanceOutcomeCallable DescribePriceCreateInstanceCallable(const Model::DescribePriceCreateInstanceRequest& request);
+
+                /**
+                 *查询实例续费价格（包年包月）
+                 * @param req DescribePriceRenewInstanceRequest
+                 * @return DescribePriceRenewInstanceOutcome
+                 */
+                DescribePriceRenewInstanceOutcome DescribePriceRenewInstance(const Model::DescribePriceRenewInstanceRequest &request);
+                void DescribePriceRenewInstanceAsync(const Model::DescribePriceRenewInstanceRequest& request, const DescribePriceRenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePriceRenewInstanceOutcomeCallable DescribePriceRenewInstanceCallable(const Model::DescribePriceRenewInstanceRequest& request);
+
+                /**
+                 *查询实例变配价格
+                 * @param req DescribePriceResizeInstanceRequest
+                 * @return DescribePriceResizeInstanceOutcome
+                 */
+                DescribePriceResizeInstanceOutcome DescribePriceResizeInstance(const Model::DescribePriceResizeInstanceRequest &request);
+                void DescribePriceResizeInstanceAsync(const Model::DescribePriceResizeInstanceRequest& request, const DescribePriceResizeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePriceResizeInstanceOutcomeCallable DescribePriceResizeInstanceCallable(const Model::DescribePriceResizeInstanceRequest& request);
 
                 /**
                  *本接口（DestroyInstances）用于销毁实例。

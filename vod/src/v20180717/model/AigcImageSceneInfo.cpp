@@ -22,7 +22,8 @@ using namespace std;
 
 AigcImageSceneInfo::AigcImageSceneInfo() :
     m_typeHasBeenSet(false),
-    m_changeClothesConfigHasBeenSet(false)
+    m_changeClothesConfigHasBeenSet(false),
+    m_productImageConfigHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,23 @@ CoreInternalOutcome AigcImageSceneInfo::Deserialize(const rapidjson::Value &valu
         m_changeClothesConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("ProductImageConfig") && !value["ProductImageConfig"].IsNull())
+    {
+        if (!value["ProductImageConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcImageSceneInfo.ProductImageConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_productImageConfig.Deserialize(value["ProductImageConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_productImageConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +98,15 @@ void AigcImageSceneInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_changeClothesConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_productImageConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductImageConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_productImageConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -115,5 +142,21 @@ void AigcImageSceneInfo::SetChangeClothesConfig(const ChangeClothesConfig& _chan
 bool AigcImageSceneInfo::ChangeClothesConfigHasBeenSet() const
 {
     return m_changeClothesConfigHasBeenSet;
+}
+
+ProductImageConfig AigcImageSceneInfo::GetProductImageConfig() const
+{
+    return m_productImageConfig;
+}
+
+void AigcImageSceneInfo::SetProductImageConfig(const ProductImageConfig& _productImageConfig)
+{
+    m_productImageConfig = _productImageConfig;
+    m_productImageConfigHasBeenSet = true;
+}
+
+bool AigcImageSceneInfo::ProductImageConfigHasBeenSet() const
+{
+    return m_productImageConfigHasBeenSet;
 }
 

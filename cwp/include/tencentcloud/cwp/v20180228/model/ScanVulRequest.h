@@ -210,6 +210,27 @@ namespace TencentCloud
                      */
                     bool ScanMethodHasBeenSet() const;
 
+                    /**
+                     * 获取kb编号
+                     * @return KBNumber kb编号
+                     * 
+                     */
+                    std::vector<std::string> GetKBNumber() const;
+
+                    /**
+                     * 设置kb编号
+                     * @param _kBNumber kb编号
+                     * 
+                     */
+                    void SetKBNumber(const std::vector<std::string>& _kBNumber);
+
+                    /**
+                     * 判断参数 KBNumber 是否已赋值
+                     * @return KBNumber 是否已赋值
+                     * 
+                     */
+                    bool KBNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +280,12 @@ namespace TencentCloud
                      */
                     uint64_t m_scanMethod;
                     bool m_scanMethodHasBeenSet;
+
+                    /**
+                     * kb编号
+                     */
+                    std::vector<std::string> m_kBNumber;
+                    bool m_kBNumberHasBeenSet;
 
                 };
             }

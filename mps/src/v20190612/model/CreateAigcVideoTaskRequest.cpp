@@ -34,6 +34,7 @@ CreateAigcVideoTaskRequest::CreateAigcVideoTaskRequest() :
     m_durationHasBeenSet(false),
     m_extraParametersHasBeenSet(false),
     m_storeCosParamHasBeenSet(false),
+    m_additionalParametersHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
 }
@@ -140,6 +141,14 @@ string CreateAigcVideoTaskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_storeCosParam.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_additionalParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdditionalParameters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_additionalParameters.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operatorHasBeenSet)
@@ -332,6 +341,22 @@ void CreateAigcVideoTaskRequest::SetStoreCosParam(const AigcStoreCosParam& _stor
 bool CreateAigcVideoTaskRequest::StoreCosParamHasBeenSet() const
 {
     return m_storeCosParamHasBeenSet;
+}
+
+string CreateAigcVideoTaskRequest::GetAdditionalParameters() const
+{
+    return m_additionalParameters;
+}
+
+void CreateAigcVideoTaskRequest::SetAdditionalParameters(const string& _additionalParameters)
+{
+    m_additionalParameters = _additionalParameters;
+    m_additionalParametersHasBeenSet = true;
+}
+
+bool CreateAigcVideoTaskRequest::AdditionalParametersHasBeenSet() const
+{
+    return m_additionalParametersHasBeenSet;
 }
 
 string CreateAigcVideoTaskRequest::GetOperator() const

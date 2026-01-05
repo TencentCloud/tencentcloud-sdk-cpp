@@ -44,7 +44,8 @@ DescribeLicenseGeneralResponse::DescribeLicenseGeneralResponse() :
     m_destroyOrderNumHasBeenSet(false),
     m_repurchaseRenewSwitchHasBeenSet(false),
     m_autoBindRaspSwitchHasBeenSet(false),
-    m_autoOpenRaspSwitchHasBeenSet(false)
+    m_autoOpenRaspSwitchHasBeenSet(false),
+    m_autoDowngradeSwitchHasBeenSet(false)
 {
 }
 
@@ -292,6 +293,16 @@ CoreInternalOutcome DescribeLicenseGeneralResponse::Deserialize(const string &pa
         m_autoOpenRaspSwitchHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AutoDowngradeSwitch") && !rsp["AutoDowngradeSwitch"].IsNull())
+    {
+        if (!rsp["AutoDowngradeSwitch"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoDowngradeSwitch` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoDowngradeSwitch = rsp["AutoDowngradeSwitch"].GetBool();
+        m_autoDowngradeSwitchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -468,6 +479,14 @@ string DescribeLicenseGeneralResponse::ToJsonString() const
         string key = "AutoOpenRaspSwitch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoOpenRaspSwitch, allocator);
+    }
+
+    if (m_autoDowngradeSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoDowngradeSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoDowngradeSwitch, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -690,6 +709,16 @@ bool DescribeLicenseGeneralResponse::GetAutoOpenRaspSwitch() const
 bool DescribeLicenseGeneralResponse::AutoOpenRaspSwitchHasBeenSet() const
 {
     return m_autoOpenRaspSwitchHasBeenSet;
+}
+
+bool DescribeLicenseGeneralResponse::GetAutoDowngradeSwitch() const
+{
+    return m_autoDowngradeSwitch;
+}
+
+bool DescribeLicenseGeneralResponse::AutoDowngradeSwitchHasBeenSet() const
+{
+    return m_autoDowngradeSwitchHasBeenSet;
 }
 
 

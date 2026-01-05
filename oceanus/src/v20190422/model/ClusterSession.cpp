@@ -41,7 +41,8 @@ ClusterSession::ClusterSession() :
     m_jobManagerCpuHasBeenSet(false),
     m_jobManagerMemHasBeenSet(false),
     m_taskManagerCpuHasBeenSet(false),
-    m_taskManagerMemHasBeenSet(false)
+    m_taskManagerMemHasBeenSet(false),
+    m_jdkVersionHasBeenSet(false)
 {
 }
 
@@ -280,6 +281,16 @@ CoreInternalOutcome ClusterSession::Deserialize(const rapidjson::Value &value)
         m_taskManagerMemHasBeenSet = true;
     }
 
+    if (value.HasMember("JdkVersion") && !value["JdkVersion"].IsNull())
+    {
+        if (!value["JdkVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterSession.JdkVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jdkVersion = string(value["JdkVersion"].GetString());
+        m_jdkVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -467,6 +478,14 @@ void ClusterSession::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "TaskManagerMem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskManagerMem, allocator);
+    }
+
+    if (m_jdkVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JdkVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jdkVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -806,5 +825,21 @@ void ClusterSession::SetTaskManagerMem(const double& _taskManagerMem)
 bool ClusterSession::TaskManagerMemHasBeenSet() const
 {
     return m_taskManagerMemHasBeenSet;
+}
+
+string ClusterSession::GetJdkVersion() const
+{
+    return m_jdkVersion;
+}
+
+void ClusterSession::SetJdkVersion(const string& _jdkVersion)
+{
+    m_jdkVersion = _jdkVersion;
+    m_jdkVersionHasBeenSet = true;
+}
+
+bool ClusterSession::JdkVersionHasBeenSet() const
+{
+    return m_jdkVersionHasBeenSet;
 }
 

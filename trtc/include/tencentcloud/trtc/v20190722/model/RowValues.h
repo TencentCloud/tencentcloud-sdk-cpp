@@ -71,6 +71,27 @@ namespace TencentCloud
                      */
                     bool RowValueHasBeenSet() const;
 
+                    /**
+                     * 获取数据值
+                     * @return RowValueFloat 数据值
+                     * 
+                     */
+                    std::vector<double> GetRowValueFloat() const;
+
+                    /**
+                     * 设置数据值
+                     * @param _rowValueFloat 数据值
+                     * 
+                     */
+                    void SetRowValueFloat(const std::vector<double>& _rowValueFloat);
+
+                    /**
+                     * 判断参数 RowValueFloat 是否已赋值
+                     * @return RowValueFloat 是否已赋值
+                     * 
+                     */
+                    bool RowValueFloatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -79,6 +100,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_rowValue;
                     bool m_rowValueHasBeenSet;
+
+                    /**
+                     * 数据值
+                     */
+                    std::vector<double> m_rowValueFloat;
+                    bool m_rowValueFloatHasBeenSet;
 
                 };
             }

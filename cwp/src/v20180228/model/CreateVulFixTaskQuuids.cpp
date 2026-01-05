@@ -21,9 +21,10 @@ using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
 CreateVulFixTaskQuuids::CreateVulFixTaskQuuids() :
-    m_vulIdHasBeenSet(false),
     m_quuidsHasBeenSet(false),
-    m_fixMethodHasBeenSet(false)
+    m_vulIdHasBeenSet(false),
+    m_fixMethodHasBeenSet(false),
+    m_kbIdHasBeenSet(false)
 {
 }
 
@@ -31,16 +32,6 @@ CoreInternalOutcome CreateVulFixTaskQuuids::Deserialize(const rapidjson::Value &
 {
     string requestId = "";
 
-
-    if (value.HasMember("VulId") && !value["VulId"].IsNull())
-    {
-        if (!value["VulId"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `CreateVulFixTaskQuuids.VulId` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_vulId = value["VulId"].GetUint64();
-        m_vulIdHasBeenSet = true;
-    }
 
     if (value.HasMember("Quuids") && !value["Quuids"].IsNull())
     {
@@ -55,6 +46,16 @@ CoreInternalOutcome CreateVulFixTaskQuuids::Deserialize(const rapidjson::Value &
         m_quuidsHasBeenSet = true;
     }
 
+    if (value.HasMember("VulId") && !value["VulId"].IsNull())
+    {
+        if (!value["VulId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateVulFixTaskQuuids.VulId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vulId = value["VulId"].GetUint64();
+        m_vulIdHasBeenSet = true;
+    }
+
     if (value.HasMember("FixMethod") && !value["FixMethod"].IsNull())
     {
         if (!value["FixMethod"].IsUint64())
@@ -65,20 +66,22 @@ CoreInternalOutcome CreateVulFixTaskQuuids::Deserialize(const rapidjson::Value &
         m_fixMethodHasBeenSet = true;
     }
 
+    if (value.HasMember("KbId") && !value["KbId"].IsNull())
+    {
+        if (!value["KbId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateVulFixTaskQuuids.KbId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_kbId = value["KbId"].GetUint64();
+        m_kbIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void CreateVulFixTaskQuuids::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_vulIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "VulId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_vulId, allocator);
-    }
 
     if (m_quuidsHasBeenSet)
     {
@@ -93,6 +96,14 @@ void CreateVulFixTaskQuuids::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         }
     }
 
+    if (m_vulIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VulId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vulId, allocator);
+    }
+
     if (m_fixMethodHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -101,24 +112,16 @@ void CreateVulFixTaskQuuids::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         value.AddMember(iKey, m_fixMethod, allocator);
     }
 
+    if (m_kbIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KbId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_kbId, allocator);
+    }
+
 }
 
-
-uint64_t CreateVulFixTaskQuuids::GetVulId() const
-{
-    return m_vulId;
-}
-
-void CreateVulFixTaskQuuids::SetVulId(const uint64_t& _vulId)
-{
-    m_vulId = _vulId;
-    m_vulIdHasBeenSet = true;
-}
-
-bool CreateVulFixTaskQuuids::VulIdHasBeenSet() const
-{
-    return m_vulIdHasBeenSet;
-}
 
 vector<string> CreateVulFixTaskQuuids::GetQuuids() const
 {
@@ -136,6 +139,22 @@ bool CreateVulFixTaskQuuids::QuuidsHasBeenSet() const
     return m_quuidsHasBeenSet;
 }
 
+uint64_t CreateVulFixTaskQuuids::GetVulId() const
+{
+    return m_vulId;
+}
+
+void CreateVulFixTaskQuuids::SetVulId(const uint64_t& _vulId)
+{
+    m_vulId = _vulId;
+    m_vulIdHasBeenSet = true;
+}
+
+bool CreateVulFixTaskQuuids::VulIdHasBeenSet() const
+{
+    return m_vulIdHasBeenSet;
+}
+
 uint64_t CreateVulFixTaskQuuids::GetFixMethod() const
 {
     return m_fixMethod;
@@ -150,5 +169,21 @@ void CreateVulFixTaskQuuids::SetFixMethod(const uint64_t& _fixMethod)
 bool CreateVulFixTaskQuuids::FixMethodHasBeenSet() const
 {
     return m_fixMethodHasBeenSet;
+}
+
+uint64_t CreateVulFixTaskQuuids::GetKbId() const
+{
+    return m_kbId;
+}
+
+void CreateVulFixTaskQuuids::SetKbId(const uint64_t& _kbId)
+{
+    m_kbId = _kbId;
+    m_kbIdHasBeenSet = true;
+}
+
+bool CreateVulFixTaskQuuids::KbIdHasBeenSet() const
+{
+    return m_kbIdHasBeenSet;
 }
 

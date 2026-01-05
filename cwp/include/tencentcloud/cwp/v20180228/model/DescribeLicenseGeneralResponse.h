@@ -337,6 +337,20 @@ namespace TencentCloud
                      */
                     bool AutoOpenRaspSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取是否自动缩容开关开启
+                     * @return AutoDowngradeSwitch 是否自动缩容开关开启
+                     * 
+                     */
+                    bool GetAutoDowngradeSwitch() const;
+
+                    /**
+                     * 判断参数 AutoDowngradeSwitch 是否已赋值
+                     * @return AutoDowngradeSwitch 是否已赋值
+                     * 
+                     */
+                    bool AutoDowngradeSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -464,6 +478,12 @@ namespace TencentCloud
                      */
                     bool m_autoOpenRaspSwitch;
                     bool m_autoOpenRaspSwitchHasBeenSet;
+
+                    /**
+                     * 是否自动缩容开关开启
+                     */
+                    bool m_autoDowngradeSwitch;
+                    bool m_autoDowngradeSwitchHasBeenSet;
 
                 };
             }

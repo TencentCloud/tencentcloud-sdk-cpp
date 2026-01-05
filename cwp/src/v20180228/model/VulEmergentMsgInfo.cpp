@@ -26,7 +26,9 @@ VulEmergentMsgInfo::VulEmergentMsgInfo() :
     m_nameHasBeenSet(false),
     m_nameEnHasBeenSet(false),
     m_supportFixHasBeenSet(false),
-    m_supportDefenseHasBeenSet(false)
+    m_supportDefenseHasBeenSet(false),
+    m_kbIdHasBeenSet(false),
+    m_kbNumberHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome VulEmergentMsgInfo::Deserialize(const rapidjson::Value &valu
         m_supportDefenseHasBeenSet = true;
     }
 
+    if (value.HasMember("KbId") && !value["KbId"].IsNull())
+    {
+        if (!value["KbId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulEmergentMsgInfo.KbId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_kbId = value["KbId"].GetUint64();
+        m_kbIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("KbNumber") && !value["KbNumber"].IsNull())
+    {
+        if (!value["KbNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulEmergentMsgInfo.KbNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kbNumber = string(value["KbNumber"].GetString());
+        m_kbNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void VulEmergentMsgInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "SupportDefense";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_supportDefense, allocator);
+    }
+
+    if (m_kbIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KbId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_kbId, allocator);
+    }
+
+    if (m_kbNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KbNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kbNumber.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void VulEmergentMsgInfo::SetSupportDefense(const int64_t& _supportDefense)
 bool VulEmergentMsgInfo::SupportDefenseHasBeenSet() const
 {
     return m_supportDefenseHasBeenSet;
+}
+
+uint64_t VulEmergentMsgInfo::GetKbId() const
+{
+    return m_kbId;
+}
+
+void VulEmergentMsgInfo::SetKbId(const uint64_t& _kbId)
+{
+    m_kbId = _kbId;
+    m_kbIdHasBeenSet = true;
+}
+
+bool VulEmergentMsgInfo::KbIdHasBeenSet() const
+{
+    return m_kbIdHasBeenSet;
+}
+
+string VulEmergentMsgInfo::GetKbNumber() const
+{
+    return m_kbNumber;
+}
+
+void VulEmergentMsgInfo::SetKbNumber(const string& _kbNumber)
+{
+    m_kbNumber = _kbNumber;
+    m_kbNumberHasBeenSet = true;
+}
+
+bool VulEmergentMsgInfo::KbNumberHasBeenSet() const
+{
+    return m_kbNumberHasBeenSet;
 }
 

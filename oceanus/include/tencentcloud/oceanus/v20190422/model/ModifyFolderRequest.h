@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件夹ID（必填）
-                     * @return SourceFolderId 文件夹ID（必填）
+                     * 获取只有移动文件夹的场景必填，如果是批量移动作业的场景，非必填。
+                     * @return SourceFolderId 只有移动文件夹的场景必填，如果是批量移动作业的场景，非必填。
                      * 
                      */
                     std::string GetSourceFolderId() const;
 
                     /**
-                     * 设置文件夹ID（必填）
-                     * @param _sourceFolderId 文件夹ID（必填）
+                     * 设置只有移动文件夹的场景必填，如果是批量移动作业的场景，非必填。
+                     * @param _sourceFolderId 只有移动文件夹的场景必填，如果是批量移动作业的场景，非必填。
                      * 
                      */
                     void SetSourceFolderId(const std::string& _sourceFolderId);
@@ -171,7 +171,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件夹ID（必填）
+                     * 只有移动文件夹的场景必填，如果是批量移动作业的场景，非必填。
                      */
                     std::string m_sourceFolderId;
                     bool m_sourceFolderIdHasBeenSet;

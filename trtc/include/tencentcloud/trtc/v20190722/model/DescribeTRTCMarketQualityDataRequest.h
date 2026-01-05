@@ -134,6 +134,27 @@ h：按小时。此时返回查询时间范围内 UTC 时间为整小时的数�
                      */
                     bool PeriodHasBeenSet() const;
 
+                    /**
+                     * 获取返回数据是否为小数
+                     * @return IsFloat 返回数据是否为小数
+                     * 
+                     */
+                    bool GetIsFloat() const;
+
+                    /**
+                     * 设置返回数据是否为小数
+                     * @param _isFloat 返回数据是否为小数
+                     * 
+                     */
+                    void SetIsFloat(const bool& _isFloat);
+
+                    /**
+                     * 判断参数 IsFloat 是否已赋值
+                     * @return IsFloat 是否已赋值
+                     * 
+                     */
+                    bool IsFloatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -161,6 +182,12 @@ h：按小时。此时返回查询时间范围内 UTC 时间为整小时的数�
                      */
                     std::string m_period;
                     bool m_periodHasBeenSet;
+
+                    /**
+                     * 返回数据是否为小数
+                     */
+                    bool m_isFloat;
+                    bool m_isFloatHasBeenSet;
 
                 };
             }

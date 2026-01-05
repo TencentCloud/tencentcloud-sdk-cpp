@@ -1,0 +1,2111 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/wedata/v20250806/model/QualityRule.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Wedata::V20250806::Model;
+using namespace std;
+
+QualityRule::QualityRule() :
+    m_ruleIdHasBeenSet(false),
+    m_ruleGroupIdHasBeenSet(false),
+    m_tableIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_ruleTemplateIdHasBeenSet(false),
+    m_ruleTemplateContentHasBeenSet(false),
+    m_qualityDimHasBeenSet(false),
+    m_sourceObjectTypeHasBeenSet(false),
+    m_sourceObjectDataTypeHasBeenSet(false),
+    m_sourceObjectDataTypeNameHasBeenSet(false),
+    m_sourceObjectValueHasBeenSet(false),
+    m_conditionTypeHasBeenSet(false),
+    m_conditionExpressionHasBeenSet(false),
+    m_customSqlHasBeenSet(false),
+    m_compareRuleHasBeenSet(false),
+    m_alarmLevelHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_operatorHasBeenSet(false),
+    m_targetDatabaseIdHasBeenSet(false),
+    m_targetDatabaseNameHasBeenSet(false),
+    m_targetTableIdHasBeenSet(false),
+    m_targetTableNameHasBeenSet(false),
+    m_targetConditionExprHasBeenSet(false),
+    m_relConditionExprHasBeenSet(false),
+    m_fieldConfigHasBeenSet(false),
+    m_multiSourceFlagHasBeenSet(false),
+    m_whereFlagHasBeenSet(false),
+    m_templateSqlHasBeenSet(false),
+    m_subQualityDimHasBeenSet(false),
+    m_targetObjectTypeHasBeenSet(false),
+    m_targetObjectDataTypeHasBeenSet(false),
+    m_targetObjectDataTypeNameHasBeenSet(false),
+    m_targetObjectValueHasBeenSet(false),
+    m_sourceEngineTypesHasBeenSet(false),
+    m_tableNameHasBeenSet(false),
+    m_tableOwnerNameHasBeenSet(false),
+    m_execStrategyHasBeenSet(false),
+    m_subscriptionHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_datasourceIdHasBeenSet(false),
+    m_databaseIdHasBeenSet(false),
+    m_monitorStatusHasBeenSet(false),
+    m_triggerConditionHasBeenSet(false),
+    m_dsEnvTypeHasBeenSet(false),
+    m_datasourceTypeHasBeenSet(false),
+    m_schemaNameHasBeenSet(false),
+    m_targetSchemaNameHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
+    m_projectNameHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
+    m_datasourceNameHasBeenSet(false),
+    m_databaseNameHasBeenSet(false),
+    m_failMsgHasBeenSet(false),
+    m_groupTypeHasBeenSet(false),
+    m_aspectTaskIdHasBeenSet(false),
+    m_catalogNameHasBeenSet(false),
+    m_targetCatalogNameHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome QualityRule::Deserialize(const rapidjson::Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("RuleId") && !value["RuleId"].IsNull())
+    {
+        if (!value["RuleId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.RuleId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleId = value["RuleId"].GetUint64();
+        m_ruleIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleGroupId") && !value["RuleGroupId"].IsNull())
+    {
+        if (!value["RuleGroupId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.RuleGroupId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleGroupId = value["RuleGroupId"].GetUint64();
+        m_ruleGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TableId") && !value["TableId"].IsNull())
+    {
+        if (!value["TableId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.TableId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableId = string(value["TableId"].GetString());
+        m_tableIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.Type` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = value["Type"].GetUint64();
+        m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleTemplateId") && !value["RuleTemplateId"].IsNull())
+    {
+        if (!value["RuleTemplateId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.RuleTemplateId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleTemplateId = value["RuleTemplateId"].GetUint64();
+        m_ruleTemplateIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleTemplateContent") && !value["RuleTemplateContent"].IsNull())
+    {
+        if (!value["RuleTemplateContent"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.RuleTemplateContent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleTemplateContent = string(value["RuleTemplateContent"].GetString());
+        m_ruleTemplateContentHasBeenSet = true;
+    }
+
+    if (value.HasMember("QualityDim") && !value["QualityDim"].IsNull())
+    {
+        if (!value["QualityDim"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.QualityDim` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_qualityDim = value["QualityDim"].GetUint64();
+        m_qualityDimHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceObjectType") && !value["SourceObjectType"].IsNull())
+    {
+        if (!value["SourceObjectType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.SourceObjectType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceObjectType = value["SourceObjectType"].GetUint64();
+        m_sourceObjectTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceObjectDataType") && !value["SourceObjectDataType"].IsNull())
+    {
+        if (!value["SourceObjectDataType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.SourceObjectDataType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceObjectDataType = value["SourceObjectDataType"].GetUint64();
+        m_sourceObjectDataTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceObjectDataTypeName") && !value["SourceObjectDataTypeName"].IsNull())
+    {
+        if (!value["SourceObjectDataTypeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.SourceObjectDataTypeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceObjectDataTypeName = string(value["SourceObjectDataTypeName"].GetString());
+        m_sourceObjectDataTypeNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceObjectValue") && !value["SourceObjectValue"].IsNull())
+    {
+        if (!value["SourceObjectValue"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.SourceObjectValue` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceObjectValue = string(value["SourceObjectValue"].GetString());
+        m_sourceObjectValueHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConditionType") && !value["ConditionType"].IsNull())
+    {
+        if (!value["ConditionType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.ConditionType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_conditionType = value["ConditionType"].GetUint64();
+        m_conditionTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConditionExpression") && !value["ConditionExpression"].IsNull())
+    {
+        if (!value["ConditionExpression"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.ConditionExpression` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_conditionExpression = string(value["ConditionExpression"].GetString());
+        m_conditionExpressionHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomSql") && !value["CustomSql"].IsNull())
+    {
+        if (!value["CustomSql"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.CustomSql` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customSql = string(value["CustomSql"].GetString());
+        m_customSqlHasBeenSet = true;
+    }
+
+    if (value.HasMember("CompareRule") && !value["CompareRule"].IsNull())
+    {
+        if (!value["CompareRule"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.CompareRule` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_compareRule.Deserialize(value["CompareRule"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_compareRuleHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlarmLevel") && !value["AlarmLevel"].IsNull())
+    {
+        if (!value["AlarmLevel"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.AlarmLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmLevel = value["AlarmLevel"].GetUint64();
+        m_alarmLevelHasBeenSet = true;
+    }
+
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Operator") && !value["Operator"].IsNull())
+    {
+        if (!value["Operator"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.Operator` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operator = string(value["Operator"].GetString());
+        m_operatorHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetDatabaseId") && !value["TargetDatabaseId"].IsNull())
+    {
+        if (!value["TargetDatabaseId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.TargetDatabaseId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetDatabaseId = string(value["TargetDatabaseId"].GetString());
+        m_targetDatabaseIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetDatabaseName") && !value["TargetDatabaseName"].IsNull())
+    {
+        if (!value["TargetDatabaseName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.TargetDatabaseName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetDatabaseName = string(value["TargetDatabaseName"].GetString());
+        m_targetDatabaseNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetTableId") && !value["TargetTableId"].IsNull())
+    {
+        if (!value["TargetTableId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.TargetTableId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetTableId = string(value["TargetTableId"].GetString());
+        m_targetTableIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetTableName") && !value["TargetTableName"].IsNull())
+    {
+        if (!value["TargetTableName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.TargetTableName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetTableName = string(value["TargetTableName"].GetString());
+        m_targetTableNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetConditionExpr") && !value["TargetConditionExpr"].IsNull())
+    {
+        if (!value["TargetConditionExpr"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.TargetConditionExpr` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetConditionExpr = string(value["TargetConditionExpr"].GetString());
+        m_targetConditionExprHasBeenSet = true;
+    }
+
+    if (value.HasMember("RelConditionExpr") && !value["RelConditionExpr"].IsNull())
+    {
+        if (!value["RelConditionExpr"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.RelConditionExpr` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_relConditionExpr = string(value["RelConditionExpr"].GetString());
+        m_relConditionExprHasBeenSet = true;
+    }
+
+    if (value.HasMember("FieldConfig") && !value["FieldConfig"].IsNull())
+    {
+        if (!value["FieldConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.FieldConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_fieldConfig.Deserialize(value["FieldConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_fieldConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("MultiSourceFlag") && !value["MultiSourceFlag"].IsNull())
+    {
+        if (!value["MultiSourceFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.MultiSourceFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_multiSourceFlag = value["MultiSourceFlag"].GetBool();
+        m_multiSourceFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("WhereFlag") && !value["WhereFlag"].IsNull())
+    {
+        if (!value["WhereFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.WhereFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_whereFlag = value["WhereFlag"].GetBool();
+        m_whereFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("TemplateSql") && !value["TemplateSql"].IsNull())
+    {
+        if (!value["TemplateSql"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.TemplateSql` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_templateSql = string(value["TemplateSql"].GetString());
+        m_templateSqlHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubQualityDim") && !value["SubQualityDim"].IsNull())
+    {
+        if (!value["SubQualityDim"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.SubQualityDim` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subQualityDim = value["SubQualityDim"].GetUint64();
+        m_subQualityDimHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetObjectType") && !value["TargetObjectType"].IsNull())
+    {
+        if (!value["TargetObjectType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.TargetObjectType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetObjectType = value["TargetObjectType"].GetUint64();
+        m_targetObjectTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetObjectDataType") && !value["TargetObjectDataType"].IsNull())
+    {
+        if (!value["TargetObjectDataType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.TargetObjectDataType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetObjectDataType = value["TargetObjectDataType"].GetUint64();
+        m_targetObjectDataTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetObjectDataTypeName") && !value["TargetObjectDataTypeName"].IsNull())
+    {
+        if (!value["TargetObjectDataTypeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.TargetObjectDataTypeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetObjectDataTypeName = string(value["TargetObjectDataTypeName"].GetString());
+        m_targetObjectDataTypeNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetObjectValue") && !value["TargetObjectValue"].IsNull())
+    {
+        if (!value["TargetObjectValue"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.TargetObjectValue` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetObjectValue = string(value["TargetObjectValue"].GetString());
+        m_targetObjectValueHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceEngineTypes") && !value["SourceEngineTypes"].IsNull())
+    {
+        if (!value["SourceEngineTypes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `QualityRule.SourceEngineTypes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SourceEngineTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_sourceEngineTypes.push_back((*itr).GetUint64());
+        }
+        m_sourceEngineTypesHasBeenSet = true;
+    }
+
+    if (value.HasMember("TableName") && !value["TableName"].IsNull())
+    {
+        if (!value["TableName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.TableName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableName = string(value["TableName"].GetString());
+        m_tableNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TableOwnerName") && !value["TableOwnerName"].IsNull())
+    {
+        if (!value["TableOwnerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.TableOwnerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableOwnerName = string(value["TableOwnerName"].GetString());
+        m_tableOwnerNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExecStrategy") && !value["ExecStrategy"].IsNull())
+    {
+        if (!value["ExecStrategy"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.ExecStrategy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_execStrategy.Deserialize(value["ExecStrategy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_execStrategyHasBeenSet = true;
+    }
+
+    if (value.HasMember("Subscription") && !value["Subscription"].IsNull())
+    {
+        if (!value["Subscription"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.Subscription` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_subscription.Deserialize(value["Subscription"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_subscriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasourceId") && !value["DatasourceId"].IsNull())
+    {
+        if (!value["DatasourceId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.DatasourceId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceId = value["DatasourceId"].GetUint64();
+        m_datasourceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatabaseId") && !value["DatabaseId"].IsNull())
+    {
+        if (!value["DatabaseId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.DatabaseId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_databaseId = string(value["DatabaseId"].GetString());
+        m_databaseIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("MonitorStatus") && !value["MonitorStatus"].IsNull())
+    {
+        if (!value["MonitorStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.MonitorStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_monitorStatus = value["MonitorStatus"].GetInt64();
+        m_monitorStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("TriggerCondition") && !value["TriggerCondition"].IsNull())
+    {
+        if (!value["TriggerCondition"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.TriggerCondition` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_triggerCondition = string(value["TriggerCondition"].GetString());
+        m_triggerConditionHasBeenSet = true;
+    }
+
+    if (value.HasMember("DsEnvType") && !value["DsEnvType"].IsNull())
+    {
+        if (!value["DsEnvType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.DsEnvType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dsEnvType = value["DsEnvType"].GetInt64();
+        m_dsEnvTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasourceType") && !value["DatasourceType"].IsNull())
+    {
+        if (!value["DatasourceType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.DatasourceType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceType = value["DatasourceType"].GetInt64();
+        m_datasourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SchemaName") && !value["SchemaName"].IsNull())
+    {
+        if (!value["SchemaName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.SchemaName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schemaName = string(value["SchemaName"].GetString());
+        m_schemaNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetSchemaName") && !value["TargetSchemaName"].IsNull())
+    {
+        if (!value["TargetSchemaName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.TargetSchemaName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetSchemaName = string(value["TargetSchemaName"].GetString());
+        m_targetSchemaNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProjectId") && !value["ProjectId"].IsNull())
+    {
+        if (!value["ProjectId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectId = string(value["ProjectId"].GetString());
+        m_projectIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProjectName") && !value["ProjectName"].IsNull())
+    {
+        if (!value["ProjectName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectName = string(value["ProjectName"].GetString());
+        m_projectNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasourceName") && !value["DatasourceName"].IsNull())
+    {
+        if (!value["DatasourceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.DatasourceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceName = string(value["DatasourceName"].GetString());
+        m_datasourceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatabaseName") && !value["DatabaseName"].IsNull())
+    {
+        if (!value["DatabaseName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_databaseName = string(value["DatabaseName"].GetString());
+        m_databaseNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("FailMsg") && !value["FailMsg"].IsNull())
+    {
+        if (!value["FailMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.FailMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_failMsg = string(value["FailMsg"].GetString());
+        m_failMsgHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupType") && !value["GroupType"].IsNull())
+    {
+        if (!value["GroupType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.GroupType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupType = string(value["GroupType"].GetString());
+        m_groupTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AspectTaskId") && !value["AspectTaskId"].IsNull())
+    {
+        if (!value["AspectTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.AspectTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aspectTaskId = string(value["AspectTaskId"].GetString());
+        m_aspectTaskIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CatalogName") && !value["CatalogName"].IsNull())
+    {
+        if (!value["CatalogName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.CatalogName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_catalogName = string(value["CatalogName"].GetString());
+        m_catalogNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetCatalogName") && !value["TargetCatalogName"].IsNull())
+    {
+        if (!value["TargetCatalogName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityRule.TargetCatalogName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetCatalogName = string(value["TargetCatalogName"].GetString());
+        m_targetCatalogNameHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void QualityRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+{
+
+    if (m_ruleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleId, allocator);
+    }
+
+    if (m_ruleGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleGroupId, allocator);
+    }
+
+    if (m_tableIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_type, allocator);
+    }
+
+    if (m_ruleTemplateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleTemplateId, allocator);
+    }
+
+    if (m_ruleTemplateContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleTemplateContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleTemplateContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_qualityDimHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QualityDim";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_qualityDim, allocator);
+    }
+
+    if (m_sourceObjectTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceObjectType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sourceObjectType, allocator);
+    }
+
+    if (m_sourceObjectDataTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceObjectDataType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sourceObjectDataType, allocator);
+    }
+
+    if (m_sourceObjectDataTypeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceObjectDataTypeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceObjectDataTypeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceObjectValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceObjectValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceObjectValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_conditionTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConditionType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_conditionType, allocator);
+    }
+
+    if (m_conditionExpressionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConditionExpression";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_conditionExpression.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customSqlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomSql";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customSql.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_compareRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CompareRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_compareRule.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_alarmLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_alarmLevel, allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetDatabaseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetDatabaseId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetDatabaseId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetDatabaseNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetDatabaseName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetDatabaseName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetTableIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetTableId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetTableId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetTableNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetTableName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetTableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetConditionExprHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetConditionExpr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetConditionExpr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_relConditionExprHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RelConditionExpr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_relConditionExpr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fieldConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FieldConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fieldConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_multiSourceFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiSourceFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_multiSourceFlag, allocator);
+    }
+
+    if (m_whereFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WhereFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_whereFlag, allocator);
+    }
+
+    if (m_templateSqlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateSql";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_templateSql.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subQualityDimHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubQualityDim";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subQualityDim, allocator);
+    }
+
+    if (m_targetObjectTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetObjectType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_targetObjectType, allocator);
+    }
+
+    if (m_targetObjectDataTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetObjectDataType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_targetObjectDataType, allocator);
+    }
+
+    if (m_targetObjectDataTypeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetObjectDataTypeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetObjectDataTypeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetObjectValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetObjectValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetObjectValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceEngineTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceEngineTypes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sourceEngineTypes.begin(); itr != m_sourceEngineTypes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_tableNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableOwnerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableOwnerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableOwnerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_execStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_execStrategy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_subscriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Subscription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_subscription.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_datasourceId, allocator);
+    }
+
+    if (m_databaseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_databaseId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_monitorStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_monitorStatus, allocator);
+    }
+
+    if (m_triggerConditionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerCondition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_triggerCondition.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dsEnvTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DsEnvType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dsEnvType, allocator);
+    }
+
+    if (m_datasourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_datasourceType, allocator);
+    }
+
+    if (m_schemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetSchemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetSchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetSchemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datasourceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_databaseNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_databaseName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_failMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_failMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aspectTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AspectTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aspectTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_catalogNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CatalogName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_catalogName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetCatalogNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetCatalogName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetCatalogName.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+uint64_t QualityRule::GetRuleId() const
+{
+    return m_ruleId;
+}
+
+void QualityRule::SetRuleId(const uint64_t& _ruleId)
+{
+    m_ruleId = _ruleId;
+    m_ruleIdHasBeenSet = true;
+}
+
+bool QualityRule::RuleIdHasBeenSet() const
+{
+    return m_ruleIdHasBeenSet;
+}
+
+uint64_t QualityRule::GetRuleGroupId() const
+{
+    return m_ruleGroupId;
+}
+
+void QualityRule::SetRuleGroupId(const uint64_t& _ruleGroupId)
+{
+    m_ruleGroupId = _ruleGroupId;
+    m_ruleGroupIdHasBeenSet = true;
+}
+
+bool QualityRule::RuleGroupIdHasBeenSet() const
+{
+    return m_ruleGroupIdHasBeenSet;
+}
+
+string QualityRule::GetTableId() const
+{
+    return m_tableId;
+}
+
+void QualityRule::SetTableId(const string& _tableId)
+{
+    m_tableId = _tableId;
+    m_tableIdHasBeenSet = true;
+}
+
+bool QualityRule::TableIdHasBeenSet() const
+{
+    return m_tableIdHasBeenSet;
+}
+
+string QualityRule::GetName() const
+{
+    return m_name;
+}
+
+void QualityRule::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool QualityRule::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+uint64_t QualityRule::GetType() const
+{
+    return m_type;
+}
+
+void QualityRule::SetType(const uint64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool QualityRule::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+uint64_t QualityRule::GetRuleTemplateId() const
+{
+    return m_ruleTemplateId;
+}
+
+void QualityRule::SetRuleTemplateId(const uint64_t& _ruleTemplateId)
+{
+    m_ruleTemplateId = _ruleTemplateId;
+    m_ruleTemplateIdHasBeenSet = true;
+}
+
+bool QualityRule::RuleTemplateIdHasBeenSet() const
+{
+    return m_ruleTemplateIdHasBeenSet;
+}
+
+string QualityRule::GetRuleTemplateContent() const
+{
+    return m_ruleTemplateContent;
+}
+
+void QualityRule::SetRuleTemplateContent(const string& _ruleTemplateContent)
+{
+    m_ruleTemplateContent = _ruleTemplateContent;
+    m_ruleTemplateContentHasBeenSet = true;
+}
+
+bool QualityRule::RuleTemplateContentHasBeenSet() const
+{
+    return m_ruleTemplateContentHasBeenSet;
+}
+
+uint64_t QualityRule::GetQualityDim() const
+{
+    return m_qualityDim;
+}
+
+void QualityRule::SetQualityDim(const uint64_t& _qualityDim)
+{
+    m_qualityDim = _qualityDim;
+    m_qualityDimHasBeenSet = true;
+}
+
+bool QualityRule::QualityDimHasBeenSet() const
+{
+    return m_qualityDimHasBeenSet;
+}
+
+uint64_t QualityRule::GetSourceObjectType() const
+{
+    return m_sourceObjectType;
+}
+
+void QualityRule::SetSourceObjectType(const uint64_t& _sourceObjectType)
+{
+    m_sourceObjectType = _sourceObjectType;
+    m_sourceObjectTypeHasBeenSet = true;
+}
+
+bool QualityRule::SourceObjectTypeHasBeenSet() const
+{
+    return m_sourceObjectTypeHasBeenSet;
+}
+
+uint64_t QualityRule::GetSourceObjectDataType() const
+{
+    return m_sourceObjectDataType;
+}
+
+void QualityRule::SetSourceObjectDataType(const uint64_t& _sourceObjectDataType)
+{
+    m_sourceObjectDataType = _sourceObjectDataType;
+    m_sourceObjectDataTypeHasBeenSet = true;
+}
+
+bool QualityRule::SourceObjectDataTypeHasBeenSet() const
+{
+    return m_sourceObjectDataTypeHasBeenSet;
+}
+
+string QualityRule::GetSourceObjectDataTypeName() const
+{
+    return m_sourceObjectDataTypeName;
+}
+
+void QualityRule::SetSourceObjectDataTypeName(const string& _sourceObjectDataTypeName)
+{
+    m_sourceObjectDataTypeName = _sourceObjectDataTypeName;
+    m_sourceObjectDataTypeNameHasBeenSet = true;
+}
+
+bool QualityRule::SourceObjectDataTypeNameHasBeenSet() const
+{
+    return m_sourceObjectDataTypeNameHasBeenSet;
+}
+
+string QualityRule::GetSourceObjectValue() const
+{
+    return m_sourceObjectValue;
+}
+
+void QualityRule::SetSourceObjectValue(const string& _sourceObjectValue)
+{
+    m_sourceObjectValue = _sourceObjectValue;
+    m_sourceObjectValueHasBeenSet = true;
+}
+
+bool QualityRule::SourceObjectValueHasBeenSet() const
+{
+    return m_sourceObjectValueHasBeenSet;
+}
+
+uint64_t QualityRule::GetConditionType() const
+{
+    return m_conditionType;
+}
+
+void QualityRule::SetConditionType(const uint64_t& _conditionType)
+{
+    m_conditionType = _conditionType;
+    m_conditionTypeHasBeenSet = true;
+}
+
+bool QualityRule::ConditionTypeHasBeenSet() const
+{
+    return m_conditionTypeHasBeenSet;
+}
+
+string QualityRule::GetConditionExpression() const
+{
+    return m_conditionExpression;
+}
+
+void QualityRule::SetConditionExpression(const string& _conditionExpression)
+{
+    m_conditionExpression = _conditionExpression;
+    m_conditionExpressionHasBeenSet = true;
+}
+
+bool QualityRule::ConditionExpressionHasBeenSet() const
+{
+    return m_conditionExpressionHasBeenSet;
+}
+
+string QualityRule::GetCustomSql() const
+{
+    return m_customSql;
+}
+
+void QualityRule::SetCustomSql(const string& _customSql)
+{
+    m_customSql = _customSql;
+    m_customSqlHasBeenSet = true;
+}
+
+bool QualityRule::CustomSqlHasBeenSet() const
+{
+    return m_customSqlHasBeenSet;
+}
+
+QualityCompareRule QualityRule::GetCompareRule() const
+{
+    return m_compareRule;
+}
+
+void QualityRule::SetCompareRule(const QualityCompareRule& _compareRule)
+{
+    m_compareRule = _compareRule;
+    m_compareRuleHasBeenSet = true;
+}
+
+bool QualityRule::CompareRuleHasBeenSet() const
+{
+    return m_compareRuleHasBeenSet;
+}
+
+uint64_t QualityRule::GetAlarmLevel() const
+{
+    return m_alarmLevel;
+}
+
+void QualityRule::SetAlarmLevel(const uint64_t& _alarmLevel)
+{
+    m_alarmLevel = _alarmLevel;
+    m_alarmLevelHasBeenSet = true;
+}
+
+bool QualityRule::AlarmLevelHasBeenSet() const
+{
+    return m_alarmLevelHasBeenSet;
+}
+
+string QualityRule::GetDescription() const
+{
+    return m_description;
+}
+
+void QualityRule::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool QualityRule::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
+
+string QualityRule::GetOperator() const
+{
+    return m_operator;
+}
+
+void QualityRule::SetOperator(const string& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool QualityRule::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
+}
+
+string QualityRule::GetTargetDatabaseId() const
+{
+    return m_targetDatabaseId;
+}
+
+void QualityRule::SetTargetDatabaseId(const string& _targetDatabaseId)
+{
+    m_targetDatabaseId = _targetDatabaseId;
+    m_targetDatabaseIdHasBeenSet = true;
+}
+
+bool QualityRule::TargetDatabaseIdHasBeenSet() const
+{
+    return m_targetDatabaseIdHasBeenSet;
+}
+
+string QualityRule::GetTargetDatabaseName() const
+{
+    return m_targetDatabaseName;
+}
+
+void QualityRule::SetTargetDatabaseName(const string& _targetDatabaseName)
+{
+    m_targetDatabaseName = _targetDatabaseName;
+    m_targetDatabaseNameHasBeenSet = true;
+}
+
+bool QualityRule::TargetDatabaseNameHasBeenSet() const
+{
+    return m_targetDatabaseNameHasBeenSet;
+}
+
+string QualityRule::GetTargetTableId() const
+{
+    return m_targetTableId;
+}
+
+void QualityRule::SetTargetTableId(const string& _targetTableId)
+{
+    m_targetTableId = _targetTableId;
+    m_targetTableIdHasBeenSet = true;
+}
+
+bool QualityRule::TargetTableIdHasBeenSet() const
+{
+    return m_targetTableIdHasBeenSet;
+}
+
+string QualityRule::GetTargetTableName() const
+{
+    return m_targetTableName;
+}
+
+void QualityRule::SetTargetTableName(const string& _targetTableName)
+{
+    m_targetTableName = _targetTableName;
+    m_targetTableNameHasBeenSet = true;
+}
+
+bool QualityRule::TargetTableNameHasBeenSet() const
+{
+    return m_targetTableNameHasBeenSet;
+}
+
+string QualityRule::GetTargetConditionExpr() const
+{
+    return m_targetConditionExpr;
+}
+
+void QualityRule::SetTargetConditionExpr(const string& _targetConditionExpr)
+{
+    m_targetConditionExpr = _targetConditionExpr;
+    m_targetConditionExprHasBeenSet = true;
+}
+
+bool QualityRule::TargetConditionExprHasBeenSet() const
+{
+    return m_targetConditionExprHasBeenSet;
+}
+
+string QualityRule::GetRelConditionExpr() const
+{
+    return m_relConditionExpr;
+}
+
+void QualityRule::SetRelConditionExpr(const string& _relConditionExpr)
+{
+    m_relConditionExpr = _relConditionExpr;
+    m_relConditionExprHasBeenSet = true;
+}
+
+bool QualityRule::RelConditionExprHasBeenSet() const
+{
+    return m_relConditionExprHasBeenSet;
+}
+
+QualityRuleFieldConfig QualityRule::GetFieldConfig() const
+{
+    return m_fieldConfig;
+}
+
+void QualityRule::SetFieldConfig(const QualityRuleFieldConfig& _fieldConfig)
+{
+    m_fieldConfig = _fieldConfig;
+    m_fieldConfigHasBeenSet = true;
+}
+
+bool QualityRule::FieldConfigHasBeenSet() const
+{
+    return m_fieldConfigHasBeenSet;
+}
+
+bool QualityRule::GetMultiSourceFlag() const
+{
+    return m_multiSourceFlag;
+}
+
+void QualityRule::SetMultiSourceFlag(const bool& _multiSourceFlag)
+{
+    m_multiSourceFlag = _multiSourceFlag;
+    m_multiSourceFlagHasBeenSet = true;
+}
+
+bool QualityRule::MultiSourceFlagHasBeenSet() const
+{
+    return m_multiSourceFlagHasBeenSet;
+}
+
+bool QualityRule::GetWhereFlag() const
+{
+    return m_whereFlag;
+}
+
+void QualityRule::SetWhereFlag(const bool& _whereFlag)
+{
+    m_whereFlag = _whereFlag;
+    m_whereFlagHasBeenSet = true;
+}
+
+bool QualityRule::WhereFlagHasBeenSet() const
+{
+    return m_whereFlagHasBeenSet;
+}
+
+string QualityRule::GetTemplateSql() const
+{
+    return m_templateSql;
+}
+
+void QualityRule::SetTemplateSql(const string& _templateSql)
+{
+    m_templateSql = _templateSql;
+    m_templateSqlHasBeenSet = true;
+}
+
+bool QualityRule::TemplateSqlHasBeenSet() const
+{
+    return m_templateSqlHasBeenSet;
+}
+
+uint64_t QualityRule::GetSubQualityDim() const
+{
+    return m_subQualityDim;
+}
+
+void QualityRule::SetSubQualityDim(const uint64_t& _subQualityDim)
+{
+    m_subQualityDim = _subQualityDim;
+    m_subQualityDimHasBeenSet = true;
+}
+
+bool QualityRule::SubQualityDimHasBeenSet() const
+{
+    return m_subQualityDimHasBeenSet;
+}
+
+uint64_t QualityRule::GetTargetObjectType() const
+{
+    return m_targetObjectType;
+}
+
+void QualityRule::SetTargetObjectType(const uint64_t& _targetObjectType)
+{
+    m_targetObjectType = _targetObjectType;
+    m_targetObjectTypeHasBeenSet = true;
+}
+
+bool QualityRule::TargetObjectTypeHasBeenSet() const
+{
+    return m_targetObjectTypeHasBeenSet;
+}
+
+uint64_t QualityRule::GetTargetObjectDataType() const
+{
+    return m_targetObjectDataType;
+}
+
+void QualityRule::SetTargetObjectDataType(const uint64_t& _targetObjectDataType)
+{
+    m_targetObjectDataType = _targetObjectDataType;
+    m_targetObjectDataTypeHasBeenSet = true;
+}
+
+bool QualityRule::TargetObjectDataTypeHasBeenSet() const
+{
+    return m_targetObjectDataTypeHasBeenSet;
+}
+
+string QualityRule::GetTargetObjectDataTypeName() const
+{
+    return m_targetObjectDataTypeName;
+}
+
+void QualityRule::SetTargetObjectDataTypeName(const string& _targetObjectDataTypeName)
+{
+    m_targetObjectDataTypeName = _targetObjectDataTypeName;
+    m_targetObjectDataTypeNameHasBeenSet = true;
+}
+
+bool QualityRule::TargetObjectDataTypeNameHasBeenSet() const
+{
+    return m_targetObjectDataTypeNameHasBeenSet;
+}
+
+string QualityRule::GetTargetObjectValue() const
+{
+    return m_targetObjectValue;
+}
+
+void QualityRule::SetTargetObjectValue(const string& _targetObjectValue)
+{
+    m_targetObjectValue = _targetObjectValue;
+    m_targetObjectValueHasBeenSet = true;
+}
+
+bool QualityRule::TargetObjectValueHasBeenSet() const
+{
+    return m_targetObjectValueHasBeenSet;
+}
+
+vector<uint64_t> QualityRule::GetSourceEngineTypes() const
+{
+    return m_sourceEngineTypes;
+}
+
+void QualityRule::SetSourceEngineTypes(const vector<uint64_t>& _sourceEngineTypes)
+{
+    m_sourceEngineTypes = _sourceEngineTypes;
+    m_sourceEngineTypesHasBeenSet = true;
+}
+
+bool QualityRule::SourceEngineTypesHasBeenSet() const
+{
+    return m_sourceEngineTypesHasBeenSet;
+}
+
+string QualityRule::GetTableName() const
+{
+    return m_tableName;
+}
+
+void QualityRule::SetTableName(const string& _tableName)
+{
+    m_tableName = _tableName;
+    m_tableNameHasBeenSet = true;
+}
+
+bool QualityRule::TableNameHasBeenSet() const
+{
+    return m_tableNameHasBeenSet;
+}
+
+string QualityRule::GetTableOwnerName() const
+{
+    return m_tableOwnerName;
+}
+
+void QualityRule::SetTableOwnerName(const string& _tableOwnerName)
+{
+    m_tableOwnerName = _tableOwnerName;
+    m_tableOwnerNameHasBeenSet = true;
+}
+
+bool QualityRule::TableOwnerNameHasBeenSet() const
+{
+    return m_tableOwnerNameHasBeenSet;
+}
+
+QualityRuleGroupExecStrategy QualityRule::GetExecStrategy() const
+{
+    return m_execStrategy;
+}
+
+void QualityRule::SetExecStrategy(const QualityRuleGroupExecStrategy& _execStrategy)
+{
+    m_execStrategy = _execStrategy;
+    m_execStrategyHasBeenSet = true;
+}
+
+bool QualityRule::ExecStrategyHasBeenSet() const
+{
+    return m_execStrategyHasBeenSet;
+}
+
+QualityRuleGroupSubscribe QualityRule::GetSubscription() const
+{
+    return m_subscription;
+}
+
+void QualityRule::SetSubscription(const QualityRuleGroupSubscribe& _subscription)
+{
+    m_subscription = _subscription;
+    m_subscriptionHasBeenSet = true;
+}
+
+bool QualityRule::SubscriptionHasBeenSet() const
+{
+    return m_subscriptionHasBeenSet;
+}
+
+string QualityRule::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void QualityRule::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool QualityRule::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+uint64_t QualityRule::GetDatasourceId() const
+{
+    return m_datasourceId;
+}
+
+void QualityRule::SetDatasourceId(const uint64_t& _datasourceId)
+{
+    m_datasourceId = _datasourceId;
+    m_datasourceIdHasBeenSet = true;
+}
+
+bool QualityRule::DatasourceIdHasBeenSet() const
+{
+    return m_datasourceIdHasBeenSet;
+}
+
+string QualityRule::GetDatabaseId() const
+{
+    return m_databaseId;
+}
+
+void QualityRule::SetDatabaseId(const string& _databaseId)
+{
+    m_databaseId = _databaseId;
+    m_databaseIdHasBeenSet = true;
+}
+
+bool QualityRule::DatabaseIdHasBeenSet() const
+{
+    return m_databaseIdHasBeenSet;
+}
+
+int64_t QualityRule::GetMonitorStatus() const
+{
+    return m_monitorStatus;
+}
+
+void QualityRule::SetMonitorStatus(const int64_t& _monitorStatus)
+{
+    m_monitorStatus = _monitorStatus;
+    m_monitorStatusHasBeenSet = true;
+}
+
+bool QualityRule::MonitorStatusHasBeenSet() const
+{
+    return m_monitorStatusHasBeenSet;
+}
+
+string QualityRule::GetTriggerCondition() const
+{
+    return m_triggerCondition;
+}
+
+void QualityRule::SetTriggerCondition(const string& _triggerCondition)
+{
+    m_triggerCondition = _triggerCondition;
+    m_triggerConditionHasBeenSet = true;
+}
+
+bool QualityRule::TriggerConditionHasBeenSet() const
+{
+    return m_triggerConditionHasBeenSet;
+}
+
+int64_t QualityRule::GetDsEnvType() const
+{
+    return m_dsEnvType;
+}
+
+void QualityRule::SetDsEnvType(const int64_t& _dsEnvType)
+{
+    m_dsEnvType = _dsEnvType;
+    m_dsEnvTypeHasBeenSet = true;
+}
+
+bool QualityRule::DsEnvTypeHasBeenSet() const
+{
+    return m_dsEnvTypeHasBeenSet;
+}
+
+int64_t QualityRule::GetDatasourceType() const
+{
+    return m_datasourceType;
+}
+
+void QualityRule::SetDatasourceType(const int64_t& _datasourceType)
+{
+    m_datasourceType = _datasourceType;
+    m_datasourceTypeHasBeenSet = true;
+}
+
+bool QualityRule::DatasourceTypeHasBeenSet() const
+{
+    return m_datasourceTypeHasBeenSet;
+}
+
+string QualityRule::GetSchemaName() const
+{
+    return m_schemaName;
+}
+
+void QualityRule::SetSchemaName(const string& _schemaName)
+{
+    m_schemaName = _schemaName;
+    m_schemaNameHasBeenSet = true;
+}
+
+bool QualityRule::SchemaNameHasBeenSet() const
+{
+    return m_schemaNameHasBeenSet;
+}
+
+string QualityRule::GetTargetSchemaName() const
+{
+    return m_targetSchemaName;
+}
+
+void QualityRule::SetTargetSchemaName(const string& _targetSchemaName)
+{
+    m_targetSchemaName = _targetSchemaName;
+    m_targetSchemaNameHasBeenSet = true;
+}
+
+bool QualityRule::TargetSchemaNameHasBeenSet() const
+{
+    return m_targetSchemaNameHasBeenSet;
+}
+
+string QualityRule::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void QualityRule::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool QualityRule::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
+string QualityRule::GetProjectName() const
+{
+    return m_projectName;
+}
+
+void QualityRule::SetProjectName(const string& _projectName)
+{
+    m_projectName = _projectName;
+    m_projectNameHasBeenSet = true;
+}
+
+bool QualityRule::ProjectNameHasBeenSet() const
+{
+    return m_projectNameHasBeenSet;
+}
+
+string QualityRule::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void QualityRule::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool QualityRule::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
+}
+
+string QualityRule::GetDatasourceName() const
+{
+    return m_datasourceName;
+}
+
+void QualityRule::SetDatasourceName(const string& _datasourceName)
+{
+    m_datasourceName = _datasourceName;
+    m_datasourceNameHasBeenSet = true;
+}
+
+bool QualityRule::DatasourceNameHasBeenSet() const
+{
+    return m_datasourceNameHasBeenSet;
+}
+
+string QualityRule::GetDatabaseName() const
+{
+    return m_databaseName;
+}
+
+void QualityRule::SetDatabaseName(const string& _databaseName)
+{
+    m_databaseName = _databaseName;
+    m_databaseNameHasBeenSet = true;
+}
+
+bool QualityRule::DatabaseNameHasBeenSet() const
+{
+    return m_databaseNameHasBeenSet;
+}
+
+string QualityRule::GetFailMsg() const
+{
+    return m_failMsg;
+}
+
+void QualityRule::SetFailMsg(const string& _failMsg)
+{
+    m_failMsg = _failMsg;
+    m_failMsgHasBeenSet = true;
+}
+
+bool QualityRule::FailMsgHasBeenSet() const
+{
+    return m_failMsgHasBeenSet;
+}
+
+string QualityRule::GetGroupType() const
+{
+    return m_groupType;
+}
+
+void QualityRule::SetGroupType(const string& _groupType)
+{
+    m_groupType = _groupType;
+    m_groupTypeHasBeenSet = true;
+}
+
+bool QualityRule::GroupTypeHasBeenSet() const
+{
+    return m_groupTypeHasBeenSet;
+}
+
+string QualityRule::GetAspectTaskId() const
+{
+    return m_aspectTaskId;
+}
+
+void QualityRule::SetAspectTaskId(const string& _aspectTaskId)
+{
+    m_aspectTaskId = _aspectTaskId;
+    m_aspectTaskIdHasBeenSet = true;
+}
+
+bool QualityRule::AspectTaskIdHasBeenSet() const
+{
+    return m_aspectTaskIdHasBeenSet;
+}
+
+string QualityRule::GetCatalogName() const
+{
+    return m_catalogName;
+}
+
+void QualityRule::SetCatalogName(const string& _catalogName)
+{
+    m_catalogName = _catalogName;
+    m_catalogNameHasBeenSet = true;
+}
+
+bool QualityRule::CatalogNameHasBeenSet() const
+{
+    return m_catalogNameHasBeenSet;
+}
+
+string QualityRule::GetTargetCatalogName() const
+{
+    return m_targetCatalogName;
+}
+
+void QualityRule::SetTargetCatalogName(const string& _targetCatalogName)
+{
+    m_targetCatalogName = _targetCatalogName;
+    m_targetCatalogNameHasBeenSet = true;
+}
+
+bool QualityRule::TargetCatalogNameHasBeenSet() const
+{
+    return m_targetCatalogNameHasBeenSet;
+}
+

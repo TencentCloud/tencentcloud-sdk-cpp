@@ -30,7 +30,8 @@ ModifyTargetGroupAttributeRequest::ModifyTargetGroupAttributeRequest() :
     m_healthCheckHasBeenSet(false),
     m_weightHasBeenSet(false),
     m_keepaliveEnableHasBeenSet(false),
-    m_sessionExpireTimeHasBeenSet(false)
+    m_sessionExpireTimeHasBeenSet(false),
+    m_snatEnableHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string ModifyTargetGroupAttributeRequest::ToJsonString() const
         string key = "SessionExpireTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sessionExpireTime, allocator);
+    }
+
+    if (m_snatEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnatEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_snatEnable, allocator);
     }
 
 
@@ -240,6 +249,22 @@ void ModifyTargetGroupAttributeRequest::SetSessionExpireTime(const uint64_t& _se
 bool ModifyTargetGroupAttributeRequest::SessionExpireTimeHasBeenSet() const
 {
     return m_sessionExpireTimeHasBeenSet;
+}
+
+bool ModifyTargetGroupAttributeRequest::GetSnatEnable() const
+{
+    return m_snatEnable;
+}
+
+void ModifyTargetGroupAttributeRequest::SetSnatEnable(const bool& _snatEnable)
+{
+    m_snatEnable = _snatEnable;
+    m_snatEnableHasBeenSet = true;
+}
+
+bool ModifyTargetGroupAttributeRequest::SnatEnableHasBeenSet() const
+{
+    return m_snatEnableHasBeenSet;
 }
 
 

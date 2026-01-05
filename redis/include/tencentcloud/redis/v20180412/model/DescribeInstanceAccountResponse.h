@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取账号详细信息。
-                     * @return Accounts 账号详细信息。
+                     * 获取<p>账号详细信息。</p>
+                     * @return Accounts <p>账号详细信息。</p>
                      * 
                      */
                     std::vector<Account> GetAccounts() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool AccountsHasBeenSet() const;
 
                     /**
-                     * 获取账号个数。
-                     * @return TotalCount 账号个数。
+                     * 获取<p>账号个数。</p>
+                     * @return TotalCount <p>账号个数。</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 账号详细信息。
+                     * <p>账号详细信息。</p>
                      */
                     std::vector<Account> m_accounts;
                     bool m_accountsHasBeenSet;
 
                     /**
-                     * 账号个数。
+                     * <p>账号个数。</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

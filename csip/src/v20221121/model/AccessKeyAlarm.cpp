@@ -43,7 +43,10 @@ AccessKeyAlarm::AccessKeyAlarm() :
     m_isSupportEditWhiteAccountHasBeenSet(false),
     m_evidenceHasBeenSet(false),
     m_ruleKeyHasBeenSet(false),
-    m_cloudTypeHasBeenSet(false)
+    m_cloudTypeHasBeenSet(false),
+    m_aIStatusHasBeenSet(false),
+    m_firstAlarmTimestampHasBeenSet(false),
+    m_lastAlarmTimestampHasBeenSet(false)
 {
 }
 
@@ -288,6 +291,36 @@ CoreInternalOutcome AccessKeyAlarm::Deserialize(const rapidjson::Value &value)
         m_cloudTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AIStatus") && !value["AIStatus"].IsNull())
+    {
+        if (!value["AIStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessKeyAlarm.AIStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_aIStatus = value["AIStatus"].GetInt64();
+        m_aIStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("FirstAlarmTimestamp") && !value["FirstAlarmTimestamp"].IsNull())
+    {
+        if (!value["FirstAlarmTimestamp"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessKeyAlarm.FirstAlarmTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_firstAlarmTimestamp = value["FirstAlarmTimestamp"].GetInt64();
+        m_firstAlarmTimestampHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastAlarmTimestamp") && !value["LastAlarmTimestamp"].IsNull())
+    {
+        if (!value["LastAlarmTimestamp"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessKeyAlarm.LastAlarmTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastAlarmTimestamp = value["LastAlarmTimestamp"].GetInt64();
+        m_lastAlarmTimestampHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -487,6 +520,30 @@ void AccessKeyAlarm::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "CloudType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cloudType, allocator);
+    }
+
+    if (m_aIStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AIStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aIStatus, allocator);
+    }
+
+    if (m_firstAlarmTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FirstAlarmTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_firstAlarmTimestamp, allocator);
+    }
+
+    if (m_lastAlarmTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastAlarmTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lastAlarmTimestamp, allocator);
     }
 
 }
@@ -858,5 +915,53 @@ void AccessKeyAlarm::SetCloudType(const int64_t& _cloudType)
 bool AccessKeyAlarm::CloudTypeHasBeenSet() const
 {
     return m_cloudTypeHasBeenSet;
+}
+
+int64_t AccessKeyAlarm::GetAIStatus() const
+{
+    return m_aIStatus;
+}
+
+void AccessKeyAlarm::SetAIStatus(const int64_t& _aIStatus)
+{
+    m_aIStatus = _aIStatus;
+    m_aIStatusHasBeenSet = true;
+}
+
+bool AccessKeyAlarm::AIStatusHasBeenSet() const
+{
+    return m_aIStatusHasBeenSet;
+}
+
+int64_t AccessKeyAlarm::GetFirstAlarmTimestamp() const
+{
+    return m_firstAlarmTimestamp;
+}
+
+void AccessKeyAlarm::SetFirstAlarmTimestamp(const int64_t& _firstAlarmTimestamp)
+{
+    m_firstAlarmTimestamp = _firstAlarmTimestamp;
+    m_firstAlarmTimestampHasBeenSet = true;
+}
+
+bool AccessKeyAlarm::FirstAlarmTimestampHasBeenSet() const
+{
+    return m_firstAlarmTimestampHasBeenSet;
+}
+
+int64_t AccessKeyAlarm::GetLastAlarmTimestamp() const
+{
+    return m_lastAlarmTimestamp;
+}
+
+void AccessKeyAlarm::SetLastAlarmTimestamp(const int64_t& _lastAlarmTimestamp)
+{
+    m_lastAlarmTimestamp = _lastAlarmTimestamp;
+    m_lastAlarmTimestampHasBeenSet = true;
+}
+
+bool AccessKeyAlarm::LastAlarmTimestampHasBeenSet() const
+{
+    return m_lastAlarmTimestampHasBeenSet;
 }
 

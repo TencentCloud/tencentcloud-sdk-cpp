@@ -28,8 +28,8 @@ set(vdb_public_header_model
   include/tencentcloud/vdb/v20230616/model/ScaleOutInstanceResponse.h
   include/tencentcloud/vdb/v20230616/model/IsolateInstanceRequest.h
   include/tencentcloud/vdb/v20230616/model/DescribeInstanceNodesRequest.h
+  include/tencentcloud/vdb/v20230616/model/DescribePriceResizeInstanceResponse.h
   include/tencentcloud/vdb/v20230616/model/CreateInstanceResponse.h
-  include/tencentcloud/vdb/v20230616/model/DestroyInstancesRequest.h
   include/tencentcloud/vdb/v20230616/model/DescribeDBSecurityGroupsRequest.h
   include/tencentcloud/vdb/v20230616/model/Inbound.h
   include/tencentcloud/vdb/v20230616/model/AssociateSecurityGroupsRequest.h
@@ -39,22 +39,28 @@ set(vdb_public_header_model
   include/tencentcloud/vdb/v20230616/model/CreateInstanceRequest.h
   include/tencentcloud/vdb/v20230616/model/DescribeDBSecurityGroupsResponse.h
   include/tencentcloud/vdb/v20230616/model/InstanceInfo.h
-  include/tencentcloud/vdb/v20230616/model/DescribeInstancesResponse.h
+  include/tencentcloud/vdb/v20230616/model/DescribePriceResizeInstanceRequest.h
+  include/tencentcloud/vdb/v20230616/model/DescribePriceRenewInstanceRequest.h
+  include/tencentcloud/vdb/v20230616/model/DescribePriceCreateInstanceRequest.h
   include/tencentcloud/vdb/v20230616/model/AssociateSecurityGroupsResponse.h
   include/tencentcloud/vdb/v20230616/model/DescribeInstancesRequest.h
   include/tencentcloud/vdb/v20230616/model/DisassociateSecurityGroupsRequest.h
+  include/tencentcloud/vdb/v20230616/model/DisassociateSecurityGroupsResponse.h
   include/tencentcloud/vdb/v20230616/model/IsolateInstanceResponse.h
   include/tencentcloud/vdb/v20230616/model/DescribeInstanceMaintenanceWindowRequest.h
   include/tencentcloud/vdb/v20230616/model/DescribeInstanceMaintenanceWindowResponse.h
   include/tencentcloud/vdb/v20230616/model/ScaleOutInstanceRequest.h
+  include/tencentcloud/vdb/v20230616/model/DescribePriceCreateInstanceResponse.h
   include/tencentcloud/vdb/v20230616/model/DestroyInstancesResponse.h
   include/tencentcloud/vdb/v20230616/model/ScaleUpInstanceRequest.h
   include/tencentcloud/vdb/v20230616/model/CreateInstancesComponent.h
+  include/tencentcloud/vdb/v20230616/model/DescribeInstancesResponse.h
   include/tencentcloud/vdb/v20230616/model/RecoverInstanceResponse.h
   include/tencentcloud/vdb/v20230616/model/ModifyInstanceMaintenanceWindowRequest.h
-  include/tencentcloud/vdb/v20230616/model/DisassociateSecurityGroupsResponse.h
-  include/tencentcloud/vdb/v20230616/model/ScaleUpInstanceResponse.h
+  include/tencentcloud/vdb/v20230616/model/DescribePriceRenewInstanceResponse.h
   include/tencentcloud/vdb/v20230616/model/ModifyDBInstanceSecurityGroupsRequest.h
+  include/tencentcloud/vdb/v20230616/model/ScaleUpInstanceResponse.h
+  include/tencentcloud/vdb/v20230616/model/DestroyInstancesRequest.h
   )
 
 set(vdb_src
@@ -68,8 +74,8 @@ set(vdb_src
   src/v20230616/model/ScaleOutInstanceResponse.cpp
   src/v20230616/model/IsolateInstanceRequest.cpp
   src/v20230616/model/DescribeInstanceNodesRequest.cpp
+  src/v20230616/model/DescribePriceResizeInstanceResponse.cpp
   src/v20230616/model/CreateInstanceResponse.cpp
-  src/v20230616/model/DestroyInstancesRequest.cpp
   src/v20230616/model/DescribeDBSecurityGroupsRequest.cpp
   src/v20230616/model/Inbound.cpp
   src/v20230616/model/AssociateSecurityGroupsRequest.cpp
@@ -79,22 +85,28 @@ set(vdb_src
   src/v20230616/model/CreateInstanceRequest.cpp
   src/v20230616/model/DescribeDBSecurityGroupsResponse.cpp
   src/v20230616/model/InstanceInfo.cpp
-  src/v20230616/model/DescribeInstancesResponse.cpp
+  src/v20230616/model/DescribePriceResizeInstanceRequest.cpp
+  src/v20230616/model/DescribePriceRenewInstanceRequest.cpp
+  src/v20230616/model/DescribePriceCreateInstanceRequest.cpp
   src/v20230616/model/AssociateSecurityGroupsResponse.cpp
   src/v20230616/model/DescribeInstancesRequest.cpp
   src/v20230616/model/DisassociateSecurityGroupsRequest.cpp
+  src/v20230616/model/DisassociateSecurityGroupsResponse.cpp
   src/v20230616/model/IsolateInstanceResponse.cpp
   src/v20230616/model/DescribeInstanceMaintenanceWindowRequest.cpp
   src/v20230616/model/DescribeInstanceMaintenanceWindowResponse.cpp
   src/v20230616/model/ScaleOutInstanceRequest.cpp
+  src/v20230616/model/DescribePriceCreateInstanceResponse.cpp
   src/v20230616/model/DestroyInstancesResponse.cpp
   src/v20230616/model/ScaleUpInstanceRequest.cpp
   src/v20230616/model/CreateInstancesComponent.cpp
+  src/v20230616/model/DescribeInstancesResponse.cpp
   src/v20230616/model/RecoverInstanceResponse.cpp
   src/v20230616/model/ModifyInstanceMaintenanceWindowRequest.cpp
-  src/v20230616/model/DisassociateSecurityGroupsResponse.cpp
-  src/v20230616/model/ScaleUpInstanceResponse.cpp
+  src/v20230616/model/DescribePriceRenewInstanceResponse.cpp
   src/v20230616/model/ModifyDBInstanceSecurityGroupsRequest.cpp
+  src/v20230616/model/ScaleUpInstanceResponse.cpp
+  src/v20230616/model/DestroyInstancesRequest.cpp
   )
 
 set(vdb_include

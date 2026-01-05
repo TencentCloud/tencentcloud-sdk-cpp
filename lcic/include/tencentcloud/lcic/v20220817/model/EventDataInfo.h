@@ -172,6 +172,27 @@ namespace TencentCloud
                      */
                     bool RecordUrlHasBeenSet() const;
 
+                    /**
+                     * 获取MemberQuit事件，对应Reason（0:主动退出 1:被踢 2:永久被踢 4:失去心跳下线 5:房间结束，成员自动退出）
+                     * @return Reason MemberQuit事件，对应Reason（0:主动退出 1:被踢 2:永久被踢 4:失去心跳下线 5:房间结束，成员自动退出）
+                     * 
+                     */
+                    uint64_t GetReason() const;
+
+                    /**
+                     * 设置MemberQuit事件，对应Reason（0:主动退出 1:被踢 2:永久被踢 4:失去心跳下线 5:房间结束，成员自动退出）
+                     * @param _reason MemberQuit事件，对应Reason（0:主动退出 1:被踢 2:永久被踢 4:失去心跳下线 5:房间结束，成员自动退出）
+                     * 
+                     */
+                    void SetReason(const uint64_t& _reason);
+
+                    /**
+                     * 判断参数 Reason 是否已赋值
+                     * @return Reason 是否已赋值
+                     * 
+                     */
+                    bool ReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +230,12 @@ namespace TencentCloud
                      */
                     std::string m_recordUrl;
                     bool m_recordUrlHasBeenSet;
+
+                    /**
+                     * MemberQuit事件，对应Reason（0:主动退出 1:被踢 2:永久被踢 4:失去心跳下线 5:房间结束，成员自动退出）
+                     */
+                    uint64_t m_reason;
+                    bool m_reasonHasBeenSet;
 
                 };
             }

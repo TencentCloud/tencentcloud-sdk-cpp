@@ -54,6 +54,7 @@ JobConfig::JobConfig() :
     m_indexNameHasBeenSet(false),
     m_workspaceNameHasBeenSet(false),
     m_flinkVersionHasBeenSet(false),
+    m_jdkVersionHasBeenSet(false),
     m_jobManagerCpuHasBeenSet(false),
     m_jobManagerMemHasBeenSet(false),
     m_taskManagerCpuHasBeenSet(false),
@@ -450,6 +451,16 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
         m_flinkVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("JdkVersion") && !value["JdkVersion"].IsNull())
+    {
+        if (!value["JdkVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.JdkVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jdkVersion = string(value["JdkVersion"].GetString());
+        m_jdkVersionHasBeenSet = true;
+    }
+
     if (value.HasMember("JobManagerCpu") && !value["JobManagerCpu"].IsNull())
     {
         if (!value["JobManagerCpu"].IsLosslessDouble())
@@ -820,6 +831,14 @@ void JobConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "FlinkVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_flinkVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jdkVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JdkVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jdkVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_jobManagerCpuHasBeenSet)
@@ -1408,6 +1427,22 @@ void JobConfig::SetFlinkVersion(const string& _flinkVersion)
 bool JobConfig::FlinkVersionHasBeenSet() const
 {
     return m_flinkVersionHasBeenSet;
+}
+
+string JobConfig::GetJdkVersion() const
+{
+    return m_jdkVersion;
+}
+
+void JobConfig::SetJdkVersion(const string& _jdkVersion)
+{
+    m_jdkVersion = _jdkVersion;
+    m_jdkVersionHasBeenSet = true;
+}
+
+bool JobConfig::JdkVersionHasBeenSet() const
+{
+    return m_jdkVersionHasBeenSet;
 }
 
 double JobConfig::GetJobManagerCpu() const

@@ -2890,6 +2890,56 @@ WafClient::DescribeBatchIpAccessControlOutcomeCallable WafClient::DescribeBatchI
     return prom->get_future();
 }
 
+WafClient::DescribeBotIdRuleOutcome WafClient::DescribeBotIdRule(const DescribeBotIdRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBotIdRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBotIdRuleResponse rsp = DescribeBotIdRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBotIdRuleOutcome(rsp);
+        else
+            return DescribeBotIdRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBotIdRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeBotIdRuleAsync(const DescribeBotIdRuleRequest& request, const DescribeBotIdRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBotIdRuleRequest&;
+    using Resp = DescribeBotIdRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBotIdRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DescribeBotIdRuleOutcomeCallable WafClient::DescribeBotIdRuleCallable(const DescribeBotIdRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBotIdRuleOutcome>>();
+    DescribeBotIdRuleAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DescribeBotIdRuleRequest&,
+        DescribeBotIdRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::DescribeBotSceneListOutcome WafClient::DescribeBotSceneList(const DescribeBotSceneListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBotSceneList");

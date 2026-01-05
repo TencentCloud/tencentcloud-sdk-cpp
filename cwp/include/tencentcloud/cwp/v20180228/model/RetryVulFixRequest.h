@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool VulIdHasBeenSet() const;
 
+                    /**
+                     * 获取Kb Id 
+                     * @return KbId Kb Id 
+                     * 
+                     */
+                    uint64_t GetKbId() const;
+
+                    /**
+                     * 设置Kb Id 
+                     * @param _kbId Kb Id 
+                     * 
+                     */
+                    void SetKbId(const uint64_t& _kbId);
+
+                    /**
+                     * 判断参数 KbId 是否已赋值
+                     * @return KbId 是否已赋值
+                     * 
+                     */
+                    bool KbIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     uint64_t m_vulId;
                     bool m_vulIdHasBeenSet;
+
+                    /**
+                     * Kb Id 
+                     */
+                    uint64_t m_kbId;
+                    bool m_kbIdHasBeenSet;
 
                 };
             }

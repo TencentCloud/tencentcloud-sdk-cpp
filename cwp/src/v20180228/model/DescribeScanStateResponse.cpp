@@ -31,7 +31,8 @@ DescribeScanStateResponse::DescribeScanStateResponse() :
     m_typeHasBeenSet(false),
     m_scanBeginTimeHasBeenSet(false),
     m_riskEventCountHasBeenSet(false),
-    m_scanEndTimeHasBeenSet(false)
+    m_scanEndTimeHasBeenSet(false),
+    m_kBNumberHasBeenSet(false)
 {
 }
 
@@ -152,6 +153,19 @@ CoreInternalOutcome DescribeScanStateResponse::Deserialize(const string &payload
         m_scanEndTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("KBNumber") && !rsp["KBNumber"].IsNull())
+    {
+        if (!rsp["KBNumber"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KBNumber` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["KBNumber"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_kBNumber.push_back((*itr).GetString());
+        }
+        m_kBNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -229,6 +243,19 @@ string DescribeScanStateResponse::ToJsonString() const
         string key = "ScanEndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_scanEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kBNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KBNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_kBNumber.begin(); itr != m_kBNumber.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -321,6 +348,16 @@ string DescribeScanStateResponse::GetScanEndTime() const
 bool DescribeScanStateResponse::ScanEndTimeHasBeenSet() const
 {
     return m_scanEndTimeHasBeenSet;
+}
+
+vector<string> DescribeScanStateResponse::GetKBNumber() const
+{
+    return m_kBNumber;
+}
+
+bool DescribeScanStateResponse::KBNumberHasBeenSet() const
+{
+    return m_kBNumberHasBeenSet;
 }
 
 

@@ -24,7 +24,8 @@ using namespace std;
 
 ScanVulAgainRequest::ScanVulAgainRequest() :
     m_eventIdsHasBeenSet(false),
-    m_uuidsHasBeenSet(false)
+    m_uuidsHasBeenSet(false),
+    m_eventTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ScanVulAgainRequest::ToJsonString() const
         string key = "Uuids";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_uuids.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eventTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_eventType, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void ScanVulAgainRequest::SetUuids(const string& _uuids)
 bool ScanVulAgainRequest::UuidsHasBeenSet() const
 {
     return m_uuidsHasBeenSet;
+}
+
+uint64_t ScanVulAgainRequest::GetEventType() const
+{
+    return m_eventType;
+}
+
+void ScanVulAgainRequest::SetEventType(const uint64_t& _eventType)
+{
+    m_eventType = _eventType;
+    m_eventTypeHasBeenSet = true;
+}
+
+bool ScanVulAgainRequest::EventTypeHasBeenSet() const
+{
+    return m_eventTypeHasBeenSet;
 }
 
 

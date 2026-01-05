@@ -37,7 +37,9 @@ NetAttackEvent::NetAttackEvent() :
     m_payVersionHasBeenSet(false),
     m_quuidHasBeenSet(false),
     m_countHasBeenSet(false),
-    m_newHasBeenSet(false)
+    m_newHasBeenSet(false),
+    m_raspOpenHasBeenSet(false),
+    m_iPAnalyseHasBeenSet(false)
 {
 }
 
@@ -223,6 +225,33 @@ CoreInternalOutcome NetAttackEvent::Deserialize(const rapidjson::Value &value)
         m_newHasBeenSet = true;
     }
 
+    if (value.HasMember("RaspOpen") && !value["RaspOpen"].IsNull())
+    {
+        if (!value["RaspOpen"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetAttackEvent.RaspOpen` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_raspOpen = value["RaspOpen"].GetInt64();
+        m_raspOpenHasBeenSet = true;
+    }
+
+    if (value.HasMember("IPAnalyse") && !value["IPAnalyse"].IsNull())
+    {
+        if (!value["IPAnalyse"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetAttackEvent.IPAnalyse` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_iPAnalyse.Deserialize(value["IPAnalyse"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_iPAnalyseHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -365,6 +394,23 @@ void NetAttackEvent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "New";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_new, allocator);
+    }
+
+    if (m_raspOpenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RaspOpen";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_raspOpen, allocator);
+    }
+
+    if (m_iPAnalyseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPAnalyse";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_iPAnalyse.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -640,5 +686,37 @@ void NetAttackEvent::SetNew(const bool& _new)
 bool NetAttackEvent::NewHasBeenSet() const
 {
     return m_newHasBeenSet;
+}
+
+int64_t NetAttackEvent::GetRaspOpen() const
+{
+    return m_raspOpen;
+}
+
+void NetAttackEvent::SetRaspOpen(const int64_t& _raspOpen)
+{
+    m_raspOpen = _raspOpen;
+    m_raspOpenHasBeenSet = true;
+}
+
+bool NetAttackEvent::RaspOpenHasBeenSet() const
+{
+    return m_raspOpenHasBeenSet;
+}
+
+IPAnalyse NetAttackEvent::GetIPAnalyse() const
+{
+    return m_iPAnalyse;
+}
+
+void NetAttackEvent::SetIPAnalyse(const IPAnalyse& _iPAnalyse)
+{
+    m_iPAnalyse = _iPAnalyse;
+    m_iPAnalyseHasBeenSet = true;
+}
+
+bool NetAttackEvent::IPAnalyseHasBeenSet() const
+{
+    return m_iPAnalyseHasBeenSet;
 }
 

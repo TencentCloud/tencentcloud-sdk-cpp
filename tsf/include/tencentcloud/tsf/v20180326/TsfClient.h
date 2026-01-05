@@ -1239,7 +1239,9 @@ namespace TencentCloud
                 ChangeApiUsableStatusOutcomeCallable ChangeApiUsableStatusCallable(const Model::ChangeApiUsableStatusRequest& request);
 
                 /**
-                 *对执行失败的任务批次执行续跑
+                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
+
+对执行失败的任务批次执行续跑
                  * @param req ContinueRunFailedTaskBatchRequest
                  * @return ContinueRunFailedTaskBatchOutcome
                  */
@@ -1482,7 +1484,9 @@ namespace TencentCloud
                 CreateRepositoryOutcomeCallable CreateRepositoryCallable(const Model::CreateRepositoryRequest& request);
 
                 /**
-                 *创建任务
+                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
+
+创建任务
                  * @param req CreateTaskRequest
                  * @return CreateTaskOutcome
                  */
@@ -1491,7 +1495,9 @@ namespace TencentCloud
                 CreateTaskOutcomeCallable CreateTaskCallable(const Model::CreateTaskRequest& request);
 
                 /**
-                 *创建工作流
+                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
+
+创建工作流
                  * @param req CreateTaskFlowRequest
                  * @return CreateTaskFlowOutcome
                  */
@@ -1710,7 +1716,9 @@ namespace TencentCloud
                 DeleteServerlessGroupOutcomeCallable DeleteServerlessGroupCallable(const Model::DeleteServerlessGroupRequest& request);
 
                 /**
-                 *删除任务
+                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
+
+删除任务
                  * @param req DeleteTaskRequest
                  * @return DeleteTaskOutcome
                  */
@@ -2065,7 +2073,9 @@ namespace TencentCloud
                 DescribeFileConfigsOutcomeCallable DescribeFileConfigsCallable(const Model::DescribeFileConfigsRequest& request);
 
                 /**
-                 *查询工作流最新一个批次的状态信息
+                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
+
+查询工作流最新一个批次的状态信息
                  * @param req DescribeFlowLastBatchStateRequest
                  * @return DescribeFlowLastBatchStateOutcome
                  */
@@ -2533,7 +2543,9 @@ namespace TencentCloud
                 DescribeStatisticsOutcomeCallable DescribeStatisticsCallable(const Model::DescribeStatisticsRequest& request);
 
                 /**
-                 *查询任务详情
+                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
+
+查询任务详情
                  * @param req DescribeTaskDetailRequest
                  * @return DescribeTaskDetailOutcome
                  */
@@ -2542,7 +2554,9 @@ namespace TencentCloud
                 DescribeTaskDetailOutcomeCallable DescribeTaskDetailCallable(const Model::DescribeTaskDetailRequest& request);
 
                 /**
-                 *查询任务最近一次执行状态
+                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
+
+查询任务最近一次执行状态
                  * @param req DescribeTaskLastStatusRequest
                  * @return DescribeTaskLastStatusOutcome
                  */
@@ -2551,7 +2565,9 @@ namespace TencentCloud
                 DescribeTaskLastStatusOutcomeCallable DescribeTaskLastStatusCallable(const Model::DescribeTaskLastStatusRequest& request);
 
                 /**
-                 *翻页查询任务列表
+                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
+
+翻页查询任务列表
                  * @param req DescribeTaskRecordsRequest
                  * @return DescribeTaskRecordsOutcome
                  */
@@ -2633,7 +2649,9 @@ namespace TencentCloud
                 DisableLaneRuleOutcomeCallable DisableLaneRuleCallable(const Model::DisableLaneRuleRequest& request);
 
                 /**
-                 *停用任务
+                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
+
+停用任务
                  * @param req DisableTaskRequest
                  * @return DisableTaskOutcome
                  */
@@ -2642,7 +2660,9 @@ namespace TencentCloud
                 DisableTaskOutcomeCallable DisableTaskCallable(const Model::DisableTaskRequest& request);
 
                 /**
-                 *停用工作流
+                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
+
+停用工作流
                  * @param req DisableTaskFlowRequest
                  * @return DisableTaskFlowOutcome
                  */
@@ -2705,7 +2725,9 @@ namespace TencentCloud
                 EnableLaneRuleOutcomeCallable EnableLaneRuleCallable(const Model::EnableLaneRuleRequest& request);
 
                 /**
-                 *启用任务
+                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
+
+启用任务
                  * @param req EnableTaskRequest
                  * @return EnableTaskOutcome
                  */
@@ -2714,7 +2736,9 @@ namespace TencentCloud
                 EnableTaskOutcomeCallable EnableTaskCallable(const Model::EnableTaskRequest& request);
 
                 /**
-                 *启用工作流
+                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
+
+启用工作流
                  * @param req EnableTaskFlowRequest
                  * @return EnableTaskFlowOutcome
                  */
@@ -2741,7 +2765,9 @@ namespace TencentCloud
                 EnableUnitRuleOutcomeCallable EnableUnitRuleCallable(const Model::EnableUnitRuleRequest& request);
 
                 /**
-                 *手动执行一次任务
+                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
+
+手动执行一次任务
                  * @param req ExecuteTaskRequest
                  * @return ExecuteTaskOutcome
                  */
@@ -2750,7 +2776,9 @@ namespace TencentCloud
                 ExecuteTaskOutcomeCallable ExecuteTaskCallable(const Model::ExecuteTaskRequest& request);
 
                 /**
-                 *执行一次工作流
+                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
+
+执行一次工作流
                  * @param req ExecuteTaskFlowRequest
                  * @return ExecuteTaskFlowOutcome
                  */
@@ -2876,7 +2904,9 @@ namespace TencentCloud
                 ModifyProgramOutcomeCallable ModifyProgramCallable(const Model::ModifyProgramRequest& request);
 
                 /**
-                 *修改任务
+                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
+
+修改任务
                  * @param req ModifyTaskRequest
                  * @return ModifyTaskOutcome
                  */
@@ -2915,7 +2945,9 @@ namespace TencentCloud
                 ReassociateBusinessLogConfigOutcomeCallable ReassociateBusinessLogConfigCallable(const Model::ReassociateBusinessLogConfigRequest& request);
 
                 /**
-                 *重新执行任务
+                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
+
+重新执行任务
                  * @param req RedoTaskRequest
                  * @return RedoTaskOutcome
                  */
@@ -2924,7 +2956,9 @@ namespace TencentCloud
                 RedoTaskOutcomeCallable RedoTaskCallable(const Model::RedoTaskRequest& request);
 
                 /**
-                 *重新执行任务批次
+                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
+
+重新执行任务批次
                  * @param req RedoTaskBatchRequest
                  * @return RedoTaskBatchOutcome
                  */
@@ -2933,7 +2967,9 @@ namespace TencentCloud
                 RedoTaskBatchOutcomeCallable RedoTaskBatchCallable(const Model::RedoTaskBatchRequest& request);
 
                 /**
-                 *重新执行在某个节点上执行任务。
+                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
+
+重新执行在某个节点上执行任务。
                  * @param req RedoTaskExecuteRequest
                  * @return RedoTaskExecuteOutcome
                  */
@@ -2942,7 +2978,9 @@ namespace TencentCloud
                 RedoTaskExecuteOutcomeCallable RedoTaskExecuteCallable(const Model::RedoTaskExecuteRequest& request);
 
                 /**
-                 *重新执行工作流批次
+                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
+
+重新执行工作流批次
                  * @param req RedoTaskFlowBatchRequest
                  * @return RedoTaskFlowBatchOutcome
                  */
@@ -3113,7 +3151,9 @@ namespace TencentCloud
                 StopGroupOutcomeCallable StopGroupCallable(const Model::StopGroupRequest& request);
 
                 /**
-                 *停止执行中的任务批次， 非运行中的任务不可调用。
+                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
+
+停止执行中的任务批次， 非运行中的任务不可调用。
                  * @param req StopTaskBatchRequest
                  * @return StopTaskBatchOutcome
                  */
@@ -3122,7 +3162,9 @@ namespace TencentCloud
                 StopTaskBatchOutcomeCallable StopTaskBatchCallable(const Model::StopTaskBatchRequest& request);
 
                 /**
-                 *停止正在某个节点上执行的任务
+                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
+
+停止正在某个节点上执行的任务
                  * @param req StopTaskExecuteRequest
                  * @return StopTaskExecuteOutcome
                  */
@@ -3131,7 +3173,9 @@ namespace TencentCloud
                 StopTaskExecuteOutcomeCallable StopTaskExecuteCallable(const Model::StopTaskExecuteRequest& request);
 
                 /**
-                 *停止一个工作流批次
+                 *分布式任务调度 TCT 已到达 EOMS 节点，进行产品下线处理。退市公告https://cloud.tencent.com/announce/detail/2053
+
+停止一个工作流批次
                  * @param req TerminateTaskFlowBatchRequest
                  * @return TerminateTaskFlowBatchOutcome
                  */

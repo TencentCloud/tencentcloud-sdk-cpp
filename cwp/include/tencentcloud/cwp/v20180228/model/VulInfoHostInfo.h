@@ -214,6 +214,27 @@ namespace TencentCloud
                      */
                     bool MachineTypeHasBeenSet() const;
 
+                    /**
+                     * 获取agent是否在线；0不在线，1在线
+                     * @return AgentStatus agent是否在线；0不在线，1在线
+                     * 
+                     */
+                    uint64_t GetAgentStatus() const;
+
+                    /**
+                     * 设置agent是否在线；0不在线，1在线
+                     * @param _agentStatus agent是否在线；0不在线，1在线
+                     * 
+                     */
+                    void SetAgentStatus(const uint64_t& _agentStatus);
+
+                    /**
+                     * 判断参数 AgentStatus 是否已赋值
+                     * @return AgentStatus 是否已赋值
+                     * 
+                     */
+                    bool AgentStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +284,12 @@ namespace TencentCloud
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
+
+                    /**
+                     * agent是否在线；0不在线，1在线
+                     */
+                    uint64_t m_agentStatus;
+                    bool m_agentStatusHasBeenSet;
 
                 };
             }

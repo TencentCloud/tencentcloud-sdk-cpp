@@ -140,6 +140,56 @@ WedataClient::AssociateResourceGroupToProjectOutcomeCallable WedataClient::Assoc
     return prom->get_future();
 }
 
+WedataClient::AuthorizeDataSourceOutcome WedataClient::AuthorizeDataSource(const AuthorizeDataSourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "AuthorizeDataSource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AuthorizeDataSourceResponse rsp = AuthorizeDataSourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AuthorizeDataSourceOutcome(rsp);
+        else
+            return AuthorizeDataSourceOutcome(o.GetError());
+    }
+    else
+    {
+        return AuthorizeDataSourceOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::AuthorizeDataSourceAsync(const AuthorizeDataSourceRequest& request, const AuthorizeDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AuthorizeDataSourceRequest&;
+    using Resp = AuthorizeDataSourceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AuthorizeDataSource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::AuthorizeDataSourceOutcomeCallable WedataClient::AuthorizeDataSourceCallable(const AuthorizeDataSourceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AuthorizeDataSourceOutcome>>();
+    AuthorizeDataSourceAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const AuthorizeDataSourceRequest&,
+        AuthorizeDataSourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::CreateCodeFileOutcome WedataClient::CreateCodeFile(const CreateCodeFileRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCodeFile");
@@ -232,6 +282,56 @@ WedataClient::CreateCodeFolderOutcomeCallable WedataClient::CreateCodeFolderCall
         const WedataClient*,
         const CreateCodeFolderRequest&,
         CreateCodeFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::CreateCodePermissionsOutcome WedataClient::CreateCodePermissions(const CreateCodePermissionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCodePermissions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCodePermissionsResponse rsp = CreateCodePermissionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCodePermissionsOutcome(rsp);
+        else
+            return CreateCodePermissionsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCodePermissionsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::CreateCodePermissionsAsync(const CreateCodePermissionsRequest& request, const CreateCodePermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCodePermissionsRequest&;
+    using Resp = CreateCodePermissionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCodePermissions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::CreateCodePermissionsOutcomeCallable WedataClient::CreateCodePermissionsCallable(const CreateCodePermissionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCodePermissionsOutcome>>();
+    CreateCodePermissionsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateCodePermissionsRequest&,
+        CreateCodePermissionsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -482,6 +582,56 @@ WedataClient::CreateProjectMemberOutcomeCallable WedataClient::CreateProjectMemb
         const WedataClient*,
         const CreateProjectMemberRequest&,
         CreateProjectMemberOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::CreateQualityRuleGroupOutcome WedataClient::CreateQualityRuleGroup(const CreateQualityRuleGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateQualityRuleGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateQualityRuleGroupResponse rsp = CreateQualityRuleGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateQualityRuleGroupOutcome(rsp);
+        else
+            return CreateQualityRuleGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateQualityRuleGroupOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::CreateQualityRuleGroupAsync(const CreateQualityRuleGroupRequest& request, const CreateQualityRuleGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateQualityRuleGroupRequest&;
+    using Resp = CreateQualityRuleGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateQualityRuleGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::CreateQualityRuleGroupOutcomeCallable WedataClient::CreateQualityRuleGroupCallable(const CreateQualityRuleGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateQualityRuleGroupOutcome>>();
+    CreateQualityRuleGroupAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateQualityRuleGroupRequest&,
+        CreateQualityRuleGroupOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -790,6 +940,156 @@ WedataClient::CreateTaskOutcomeCallable WedataClient::CreateTaskCallable(const C
     return prom->get_future();
 }
 
+WedataClient::CreateTaskFolderOutcome WedataClient::CreateTaskFolder(const CreateTaskFolderRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTaskFolder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTaskFolderResponse rsp = CreateTaskFolderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTaskFolderOutcome(rsp);
+        else
+            return CreateTaskFolderOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTaskFolderOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::CreateTaskFolderAsync(const CreateTaskFolderRequest& request, const CreateTaskFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateTaskFolderRequest&;
+    using Resp = CreateTaskFolderResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateTaskFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::CreateTaskFolderOutcomeCallable WedataClient::CreateTaskFolderCallable(const CreateTaskFolderRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateTaskFolderOutcome>>();
+    CreateTaskFolderAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateTaskFolderRequest&,
+        CreateTaskFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::CreateTriggerTaskOutcome WedataClient::CreateTriggerTask(const CreateTriggerTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTriggerTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTriggerTaskResponse rsp = CreateTriggerTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTriggerTaskOutcome(rsp);
+        else
+            return CreateTriggerTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTriggerTaskOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::CreateTriggerTaskAsync(const CreateTriggerTaskRequest& request, const CreateTriggerTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateTriggerTaskRequest&;
+    using Resp = CreateTriggerTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateTriggerTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::CreateTriggerTaskOutcomeCallable WedataClient::CreateTriggerTaskCallable(const CreateTriggerTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateTriggerTaskOutcome>>();
+    CreateTriggerTaskAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateTriggerTaskRequest&,
+        CreateTriggerTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::CreateTriggerWorkflowOutcome WedataClient::CreateTriggerWorkflow(const CreateTriggerWorkflowRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTriggerWorkflow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTriggerWorkflowResponse rsp = CreateTriggerWorkflowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTriggerWorkflowOutcome(rsp);
+        else
+            return CreateTriggerWorkflowOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTriggerWorkflowOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::CreateTriggerWorkflowAsync(const CreateTriggerWorkflowRequest& request, const CreateTriggerWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateTriggerWorkflowRequest&;
+    using Resp = CreateTriggerWorkflowResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateTriggerWorkflow", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::CreateTriggerWorkflowOutcomeCallable WedataClient::CreateTriggerWorkflowCallable(const CreateTriggerWorkflowRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateTriggerWorkflowOutcome>>();
+    CreateTriggerWorkflowAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateTriggerWorkflowRequest&,
+        CreateTriggerWorkflowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::CreateWorkflowOutcome WedataClient::CreateWorkflow(const CreateWorkflowRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateWorkflow");
@@ -890,6 +1190,56 @@ WedataClient::CreateWorkflowFolderOutcomeCallable WedataClient::CreateWorkflowFo
     return prom->get_future();
 }
 
+WedataClient::CreateWorkflowPermissionsOutcome WedataClient::CreateWorkflowPermissions(const CreateWorkflowPermissionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWorkflowPermissions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWorkflowPermissionsResponse rsp = CreateWorkflowPermissionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWorkflowPermissionsOutcome(rsp);
+        else
+            return CreateWorkflowPermissionsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWorkflowPermissionsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::CreateWorkflowPermissionsAsync(const CreateWorkflowPermissionsRequest& request, const CreateWorkflowPermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateWorkflowPermissionsRequest&;
+    using Resp = CreateWorkflowPermissionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateWorkflowPermissions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::CreateWorkflowPermissionsOutcomeCallable WedataClient::CreateWorkflowPermissionsCallable(const CreateWorkflowPermissionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateWorkflowPermissionsOutcome>>();
+    CreateWorkflowPermissionsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateWorkflowPermissionsRequest&,
+        CreateWorkflowPermissionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::DeleteCodeFileOutcome WedataClient::DeleteCodeFile(const DeleteCodeFileRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCodeFile");
@@ -982,6 +1332,106 @@ WedataClient::DeleteCodeFolderOutcomeCallable WedataClient::DeleteCodeFolderCall
         const WedataClient*,
         const DeleteCodeFolderRequest&,
         DeleteCodeFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::DeleteCodePermissionsOutcome WedataClient::DeleteCodePermissions(const DeleteCodePermissionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCodePermissions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCodePermissionsResponse rsp = DeleteCodePermissionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCodePermissionsOutcome(rsp);
+        else
+            return DeleteCodePermissionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCodePermissionsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DeleteCodePermissionsAsync(const DeleteCodePermissionsRequest& request, const DeleteCodePermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCodePermissionsRequest&;
+    using Resp = DeleteCodePermissionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCodePermissions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::DeleteCodePermissionsOutcomeCallable WedataClient::DeleteCodePermissionsCallable(const DeleteCodePermissionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCodePermissionsOutcome>>();
+    DeleteCodePermissionsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteCodePermissionsRequest&,
+        DeleteCodePermissionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::DeleteDataBackfillPlanAsyncOutcome WedataClient::DeleteDataBackfillPlanAsync(const DeleteDataBackfillPlanAsyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDataBackfillPlanAsync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDataBackfillPlanAsyncResponse rsp = DeleteDataBackfillPlanAsyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDataBackfillPlanAsyncOutcome(rsp);
+        else
+            return DeleteDataBackfillPlanAsyncOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDataBackfillPlanAsyncOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DeleteDataBackfillPlanAsyncAsync(const DeleteDataBackfillPlanAsyncRequest& request, const DeleteDataBackfillPlanAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDataBackfillPlanAsyncRequest&;
+    using Resp = DeleteDataBackfillPlanAsyncResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDataBackfillPlanAsync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::DeleteDataBackfillPlanAsyncOutcomeCallable WedataClient::DeleteDataBackfillPlanAsyncCallable(const DeleteDataBackfillPlanAsyncRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDataBackfillPlanAsyncOutcome>>();
+    DeleteDataBackfillPlanAsyncAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteDataBackfillPlanAsyncRequest&,
+        DeleteDataBackfillPlanAsyncOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1182,6 +1632,106 @@ WedataClient::DeleteProjectMemberOutcomeCallable WedataClient::DeleteProjectMemb
         const WedataClient*,
         const DeleteProjectMemberRequest&,
         DeleteProjectMemberOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::DeleteQualityRuleOutcome WedataClient::DeleteQualityRule(const DeleteQualityRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteQualityRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteQualityRuleResponse rsp = DeleteQualityRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteQualityRuleOutcome(rsp);
+        else
+            return DeleteQualityRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteQualityRuleOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DeleteQualityRuleAsync(const DeleteQualityRuleRequest& request, const DeleteQualityRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteQualityRuleRequest&;
+    using Resp = DeleteQualityRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteQualityRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::DeleteQualityRuleOutcomeCallable WedataClient::DeleteQualityRuleCallable(const DeleteQualityRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteQualityRuleOutcome>>();
+    DeleteQualityRuleAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteQualityRuleRequest&,
+        DeleteQualityRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::DeleteQualityRuleGroupOutcome WedataClient::DeleteQualityRuleGroup(const DeleteQualityRuleGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteQualityRuleGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteQualityRuleGroupResponse rsp = DeleteQualityRuleGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteQualityRuleGroupOutcome(rsp);
+        else
+            return DeleteQualityRuleGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteQualityRuleGroupOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DeleteQualityRuleGroupAsync(const DeleteQualityRuleGroupRequest& request, const DeleteQualityRuleGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteQualityRuleGroupRequest&;
+    using Resp = DeleteQualityRuleGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteQualityRuleGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::DeleteQualityRuleGroupOutcomeCallable WedataClient::DeleteQualityRuleGroupCallable(const DeleteQualityRuleGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteQualityRuleGroupOutcome>>();
+    DeleteQualityRuleGroupAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteQualityRuleGroupRequest&,
+        DeleteQualityRuleGroupOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1490,6 +2040,156 @@ WedataClient::DeleteTaskOutcomeCallable WedataClient::DeleteTaskCallable(const D
     return prom->get_future();
 }
 
+WedataClient::DeleteTaskFolderOutcome WedataClient::DeleteTaskFolder(const DeleteTaskFolderRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTaskFolder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTaskFolderResponse rsp = DeleteTaskFolderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTaskFolderOutcome(rsp);
+        else
+            return DeleteTaskFolderOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTaskFolderOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DeleteTaskFolderAsync(const DeleteTaskFolderRequest& request, const DeleteTaskFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteTaskFolderRequest&;
+    using Resp = DeleteTaskFolderResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteTaskFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::DeleteTaskFolderOutcomeCallable WedataClient::DeleteTaskFolderCallable(const DeleteTaskFolderRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteTaskFolderOutcome>>();
+    DeleteTaskFolderAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteTaskFolderRequest&,
+        DeleteTaskFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::DeleteTriggerTaskOutcome WedataClient::DeleteTriggerTask(const DeleteTriggerTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTriggerTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTriggerTaskResponse rsp = DeleteTriggerTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTriggerTaskOutcome(rsp);
+        else
+            return DeleteTriggerTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTriggerTaskOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DeleteTriggerTaskAsync(const DeleteTriggerTaskRequest& request, const DeleteTriggerTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteTriggerTaskRequest&;
+    using Resp = DeleteTriggerTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteTriggerTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::DeleteTriggerTaskOutcomeCallable WedataClient::DeleteTriggerTaskCallable(const DeleteTriggerTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteTriggerTaskOutcome>>();
+    DeleteTriggerTaskAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteTriggerTaskRequest&,
+        DeleteTriggerTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::DeleteTriggerWorkflowOutcome WedataClient::DeleteTriggerWorkflow(const DeleteTriggerWorkflowRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTriggerWorkflow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTriggerWorkflowResponse rsp = DeleteTriggerWorkflowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTriggerWorkflowOutcome(rsp);
+        else
+            return DeleteTriggerWorkflowOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTriggerWorkflowOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DeleteTriggerWorkflowAsync(const DeleteTriggerWorkflowRequest& request, const DeleteTriggerWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteTriggerWorkflowRequest&;
+    using Resp = DeleteTriggerWorkflowResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteTriggerWorkflow", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::DeleteTriggerWorkflowOutcomeCallable WedataClient::DeleteTriggerWorkflowCallable(const DeleteTriggerWorkflowRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteTriggerWorkflowOutcome>>();
+    DeleteTriggerWorkflowAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteTriggerWorkflowRequest&,
+        DeleteTriggerWorkflowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::DeleteWorkflowOutcome WedataClient::DeleteWorkflow(const DeleteWorkflowRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteWorkflow");
@@ -1582,6 +2282,106 @@ WedataClient::DeleteWorkflowFolderOutcomeCallable WedataClient::DeleteWorkflowFo
         const WedataClient*,
         const DeleteWorkflowFolderRequest&,
         DeleteWorkflowFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::DeleteWorkflowPermissionsOutcome WedataClient::DeleteWorkflowPermissions(const DeleteWorkflowPermissionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteWorkflowPermissions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteWorkflowPermissionsResponse rsp = DeleteWorkflowPermissionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteWorkflowPermissionsOutcome(rsp);
+        else
+            return DeleteWorkflowPermissionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteWorkflowPermissionsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DeleteWorkflowPermissionsAsync(const DeleteWorkflowPermissionsRequest& request, const DeleteWorkflowPermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteWorkflowPermissionsRequest&;
+    using Resp = DeleteWorkflowPermissionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteWorkflowPermissions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::DeleteWorkflowPermissionsOutcomeCallable WedataClient::DeleteWorkflowPermissionsCallable(const DeleteWorkflowPermissionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteWorkflowPermissionsOutcome>>();
+    DeleteWorkflowPermissionsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteWorkflowPermissionsRequest&,
+        DeleteWorkflowPermissionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::DescribeDataSourceAuthorityOutcome WedataClient::DescribeDataSourceAuthority(const DescribeDataSourceAuthorityRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataSourceAuthority");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataSourceAuthorityResponse rsp = DescribeDataSourceAuthorityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataSourceAuthorityOutcome(rsp);
+        else
+            return DescribeDataSourceAuthorityOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataSourceAuthorityOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeDataSourceAuthorityAsync(const DescribeDataSourceAuthorityRequest& request, const DescribeDataSourceAuthorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDataSourceAuthorityRequest&;
+    using Resp = DescribeDataSourceAuthorityResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDataSourceAuthority", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::DescribeDataSourceAuthorityOutcomeCallable WedataClient::DescribeDataSourceAuthorityCallable(const DescribeDataSourceAuthorityRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDataSourceAuthorityOutcome>>();
+    DescribeDataSourceAuthorityAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DescribeDataSourceAuthorityRequest&,
+        DescribeDataSourceAuthorityOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2040,6 +2840,106 @@ WedataClient::GetDataSourceRelatedTasksOutcomeCallable WedataClient::GetDataSour
     return prom->get_future();
 }
 
+WedataClient::GetMyCodeMaxPermissionOutcome WedataClient::GetMyCodeMaxPermission(const GetMyCodeMaxPermissionRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetMyCodeMaxPermission");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetMyCodeMaxPermissionResponse rsp = GetMyCodeMaxPermissionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetMyCodeMaxPermissionOutcome(rsp);
+        else
+            return GetMyCodeMaxPermissionOutcome(o.GetError());
+    }
+    else
+    {
+        return GetMyCodeMaxPermissionOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::GetMyCodeMaxPermissionAsync(const GetMyCodeMaxPermissionRequest& request, const GetMyCodeMaxPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetMyCodeMaxPermissionRequest&;
+    using Resp = GetMyCodeMaxPermissionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetMyCodeMaxPermission", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::GetMyCodeMaxPermissionOutcomeCallable WedataClient::GetMyCodeMaxPermissionCallable(const GetMyCodeMaxPermissionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetMyCodeMaxPermissionOutcome>>();
+    GetMyCodeMaxPermissionAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetMyCodeMaxPermissionRequest&,
+        GetMyCodeMaxPermissionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::GetMyWorkflowMaxPermissionOutcome WedataClient::GetMyWorkflowMaxPermission(const GetMyWorkflowMaxPermissionRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetMyWorkflowMaxPermission");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetMyWorkflowMaxPermissionResponse rsp = GetMyWorkflowMaxPermissionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetMyWorkflowMaxPermissionOutcome(rsp);
+        else
+            return GetMyWorkflowMaxPermissionOutcome(o.GetError());
+    }
+    else
+    {
+        return GetMyWorkflowMaxPermissionOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::GetMyWorkflowMaxPermissionAsync(const GetMyWorkflowMaxPermissionRequest& request, const GetMyWorkflowMaxPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetMyWorkflowMaxPermissionRequest&;
+    using Resp = GetMyWorkflowMaxPermissionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetMyWorkflowMaxPermission", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::GetMyWorkflowMaxPermissionOutcomeCallable WedataClient::GetMyWorkflowMaxPermissionCallable(const GetMyWorkflowMaxPermissionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetMyWorkflowMaxPermissionOutcome>>();
+    GetMyWorkflowMaxPermissionAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetMyWorkflowMaxPermissionRequest&,
+        GetMyWorkflowMaxPermissionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::GetOpsAlarmRuleOutcome WedataClient::GetOpsAlarmRule(const GetOpsAlarmRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "GetOpsAlarmRule");
@@ -2240,6 +3140,56 @@ WedataClient::GetOpsTaskCodeOutcomeCallable WedataClient::GetOpsTaskCodeCallable
     return prom->get_future();
 }
 
+WedataClient::GetOpsTriggerWorkflowOutcome WedataClient::GetOpsTriggerWorkflow(const GetOpsTriggerWorkflowRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetOpsTriggerWorkflow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetOpsTriggerWorkflowResponse rsp = GetOpsTriggerWorkflowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetOpsTriggerWorkflowOutcome(rsp);
+        else
+            return GetOpsTriggerWorkflowOutcome(o.GetError());
+    }
+    else
+    {
+        return GetOpsTriggerWorkflowOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::GetOpsTriggerWorkflowAsync(const GetOpsTriggerWorkflowRequest& request, const GetOpsTriggerWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetOpsTriggerWorkflowRequest&;
+    using Resp = GetOpsTriggerWorkflowResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetOpsTriggerWorkflow", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::GetOpsTriggerWorkflowOutcomeCallable WedataClient::GetOpsTriggerWorkflowCallable(const GetOpsTriggerWorkflowRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetOpsTriggerWorkflowOutcome>>();
+    GetOpsTriggerWorkflowAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetOpsTriggerWorkflowRequest&,
+        GetOpsTriggerWorkflowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::GetOpsWorkflowOutcome WedataClient::GetOpsWorkflow(const GetOpsWorkflowRequest &request)
 {
     auto outcome = MakeRequest(request, "GetOpsWorkflow");
@@ -2382,6 +3332,56 @@ WedataClient::GetResourceFileOutcomeCallable WedataClient::GetResourceFileCallab
         const WedataClient*,
         const GetResourceFileRequest&,
         GetResourceFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::GetResourceFolderOutcome WedataClient::GetResourceFolder(const GetResourceFolderRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetResourceFolder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetResourceFolderResponse rsp = GetResourceFolderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetResourceFolderOutcome(rsp);
+        else
+            return GetResourceFolderOutcome(o.GetError());
+    }
+    else
+    {
+        return GetResourceFolderOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::GetResourceFolderAsync(const GetResourceFolderRequest& request, const GetResourceFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetResourceFolderRequest&;
+    using Resp = GetResourceFolderResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetResourceFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::GetResourceFolderOutcomeCallable WedataClient::GetResourceFolderCallable(const GetResourceFolderRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetResourceFolderOutcome>>();
+    GetResourceFolderAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetResourceFolderRequest&,
+        GetResourceFolderOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2740,6 +3740,56 @@ WedataClient::GetTaskCodeOutcomeCallable WedataClient::GetTaskCodeCallable(const
     return prom->get_future();
 }
 
+WedataClient::GetTaskFolderOutcome WedataClient::GetTaskFolder(const GetTaskFolderRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTaskFolder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTaskFolderResponse rsp = GetTaskFolderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTaskFolderOutcome(rsp);
+        else
+            return GetTaskFolderOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTaskFolderOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::GetTaskFolderAsync(const GetTaskFolderRequest& request, const GetTaskFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetTaskFolderRequest&;
+    using Resp = GetTaskFolderResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetTaskFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::GetTaskFolderOutcomeCallable WedataClient::GetTaskFolderCallable(const GetTaskFolderRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetTaskFolderOutcome>>();
+    GetTaskFolderAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetTaskFolderRequest&,
+        GetTaskFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::GetTaskInstanceOutcome WedataClient::GetTaskInstance(const GetTaskInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "GetTaskInstance");
@@ -2890,6 +3940,306 @@ WedataClient::GetTaskVersionOutcomeCallable WedataClient::GetTaskVersionCallable
     return prom->get_future();
 }
 
+WedataClient::GetTriggerTaskOutcome WedataClient::GetTriggerTask(const GetTriggerTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTriggerTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTriggerTaskResponse rsp = GetTriggerTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTriggerTaskOutcome(rsp);
+        else
+            return GetTriggerTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTriggerTaskOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::GetTriggerTaskAsync(const GetTriggerTaskRequest& request, const GetTriggerTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetTriggerTaskRequest&;
+    using Resp = GetTriggerTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetTriggerTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::GetTriggerTaskOutcomeCallable WedataClient::GetTriggerTaskCallable(const GetTriggerTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetTriggerTaskOutcome>>();
+    GetTriggerTaskAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetTriggerTaskRequest&,
+        GetTriggerTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::GetTriggerTaskCodeOutcome WedataClient::GetTriggerTaskCode(const GetTriggerTaskCodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTriggerTaskCode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTriggerTaskCodeResponse rsp = GetTriggerTaskCodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTriggerTaskCodeOutcome(rsp);
+        else
+            return GetTriggerTaskCodeOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTriggerTaskCodeOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::GetTriggerTaskCodeAsync(const GetTriggerTaskCodeRequest& request, const GetTriggerTaskCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetTriggerTaskCodeRequest&;
+    using Resp = GetTriggerTaskCodeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetTriggerTaskCode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::GetTriggerTaskCodeOutcomeCallable WedataClient::GetTriggerTaskCodeCallable(const GetTriggerTaskCodeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetTriggerTaskCodeOutcome>>();
+    GetTriggerTaskCodeAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetTriggerTaskCodeRequest&,
+        GetTriggerTaskCodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::GetTriggerTaskRunOutcome WedataClient::GetTriggerTaskRun(const GetTriggerTaskRunRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTriggerTaskRun");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTriggerTaskRunResponse rsp = GetTriggerTaskRunResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTriggerTaskRunOutcome(rsp);
+        else
+            return GetTriggerTaskRunOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTriggerTaskRunOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::GetTriggerTaskRunAsync(const GetTriggerTaskRunRequest& request, const GetTriggerTaskRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetTriggerTaskRunRequest&;
+    using Resp = GetTriggerTaskRunResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetTriggerTaskRun", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::GetTriggerTaskRunOutcomeCallable WedataClient::GetTriggerTaskRunCallable(const GetTriggerTaskRunRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetTriggerTaskRunOutcome>>();
+    GetTriggerTaskRunAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetTriggerTaskRunRequest&,
+        GetTriggerTaskRunOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::GetTriggerTaskVersionOutcome WedataClient::GetTriggerTaskVersion(const GetTriggerTaskVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTriggerTaskVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTriggerTaskVersionResponse rsp = GetTriggerTaskVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTriggerTaskVersionOutcome(rsp);
+        else
+            return GetTriggerTaskVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTriggerTaskVersionOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::GetTriggerTaskVersionAsync(const GetTriggerTaskVersionRequest& request, const GetTriggerTaskVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetTriggerTaskVersionRequest&;
+    using Resp = GetTriggerTaskVersionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetTriggerTaskVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::GetTriggerTaskVersionOutcomeCallable WedataClient::GetTriggerTaskVersionCallable(const GetTriggerTaskVersionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetTriggerTaskVersionOutcome>>();
+    GetTriggerTaskVersionAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetTriggerTaskVersionRequest&,
+        GetTriggerTaskVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::GetTriggerWorkflowOutcome WedataClient::GetTriggerWorkflow(const GetTriggerWorkflowRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTriggerWorkflow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTriggerWorkflowResponse rsp = GetTriggerWorkflowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTriggerWorkflowOutcome(rsp);
+        else
+            return GetTriggerWorkflowOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTriggerWorkflowOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::GetTriggerWorkflowAsync(const GetTriggerWorkflowRequest& request, const GetTriggerWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetTriggerWorkflowRequest&;
+    using Resp = GetTriggerWorkflowResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetTriggerWorkflow", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::GetTriggerWorkflowOutcomeCallable WedataClient::GetTriggerWorkflowCallable(const GetTriggerWorkflowRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetTriggerWorkflowOutcome>>();
+    GetTriggerWorkflowAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetTriggerWorkflowRequest&,
+        GetTriggerWorkflowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::GetTriggerWorkflowRunOutcome WedataClient::GetTriggerWorkflowRun(const GetTriggerWorkflowRunRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTriggerWorkflowRun");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTriggerWorkflowRunResponse rsp = GetTriggerWorkflowRunResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTriggerWorkflowRunOutcome(rsp);
+        else
+            return GetTriggerWorkflowRunOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTriggerWorkflowRunOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::GetTriggerWorkflowRunAsync(const GetTriggerWorkflowRunRequest& request, const GetTriggerWorkflowRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetTriggerWorkflowRunRequest&;
+    using Resp = GetTriggerWorkflowRunResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetTriggerWorkflowRun", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::GetTriggerWorkflowRunOutcomeCallable WedataClient::GetTriggerWorkflowRunCallable(const GetTriggerWorkflowRunRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetTriggerWorkflowRunOutcome>>();
+    GetTriggerWorkflowRunAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetTriggerWorkflowRunRequest&,
+        GetTriggerWorkflowRunOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::GetWorkflowOutcome WedataClient::GetWorkflow(const GetWorkflowRequest &request)
 {
     auto outcome = MakeRequest(request, "GetWorkflow");
@@ -2932,6 +4282,56 @@ WedataClient::GetWorkflowOutcomeCallable WedataClient::GetWorkflowCallable(const
         const WedataClient*,
         const GetWorkflowRequest&,
         GetWorkflowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::GetWorkflowFolderOutcome WedataClient::GetWorkflowFolder(const GetWorkflowFolderRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetWorkflowFolder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetWorkflowFolderResponse rsp = GetWorkflowFolderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetWorkflowFolderOutcome(rsp);
+        else
+            return GetWorkflowFolderOutcome(o.GetError());
+    }
+    else
+    {
+        return GetWorkflowFolderOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::GetWorkflowFolderAsync(const GetWorkflowFolderRequest& request, const GetWorkflowFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetWorkflowFolderRequest&;
+    using Resp = GetWorkflowFolderResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetWorkflowFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::GetWorkflowFolderOutcomeCallable WedataClient::GetWorkflowFolderCallable(const GetWorkflowFolderRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetWorkflowFolderOutcome>>();
+    GetWorkflowFolderAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetWorkflowFolderRequest&,
+        GetWorkflowFolderOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3032,6 +4432,56 @@ WedataClient::KillTaskInstancesAsyncOutcomeCallable WedataClient::KillTaskInstan
         const WedataClient*,
         const KillTaskInstancesAsyncRequest&,
         KillTaskInstancesAsyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::KillTriggerWorkflowRunsOutcome WedataClient::KillTriggerWorkflowRuns(const KillTriggerWorkflowRunsRequest &request)
+{
+    auto outcome = MakeRequest(request, "KillTriggerWorkflowRuns");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        KillTriggerWorkflowRunsResponse rsp = KillTriggerWorkflowRunsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return KillTriggerWorkflowRunsOutcome(rsp);
+        else
+            return KillTriggerWorkflowRunsOutcome(o.GetError());
+    }
+    else
+    {
+        return KillTriggerWorkflowRunsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::KillTriggerWorkflowRunsAsync(const KillTriggerWorkflowRunsRequest& request, const KillTriggerWorkflowRunsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const KillTriggerWorkflowRunsRequest&;
+    using Resp = KillTriggerWorkflowRunsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "KillTriggerWorkflowRuns", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::KillTriggerWorkflowRunsOutcomeCallable WedataClient::KillTriggerWorkflowRunsCallable(const KillTriggerWorkflowRunsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<KillTriggerWorkflowRunsOutcome>>();
+    KillTriggerWorkflowRunsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const KillTriggerWorkflowRunsRequest&,
+        KillTriggerWorkflowRunsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3182,6 +4632,56 @@ WedataClient::ListCodeFolderContentsOutcomeCallable WedataClient::ListCodeFolder
         const WedataClient*,
         const ListCodeFolderContentsRequest&,
         ListCodeFolderContentsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::ListCodePermissionsOutcome WedataClient::ListCodePermissions(const ListCodePermissionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListCodePermissions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListCodePermissionsResponse rsp = ListCodePermissionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListCodePermissionsOutcome(rsp);
+        else
+            return ListCodePermissionsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListCodePermissionsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ListCodePermissionsAsync(const ListCodePermissionsRequest& request, const ListCodePermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListCodePermissionsRequest&;
+    using Resp = ListCodePermissionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListCodePermissions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::ListCodePermissionsOutcomeCallable WedataClient::ListCodePermissionsCallable(const ListCodePermissionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListCodePermissionsOutcome>>();
+    ListCodePermissionsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListCodePermissionsRequest&,
+        ListCodePermissionsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3540,6 +5040,56 @@ WedataClient::ListDownstreamTasksOutcomeCallable WedataClient::ListDownstreamTas
     return prom->get_future();
 }
 
+WedataClient::ListDownstreamTriggerTasksOutcome WedataClient::ListDownstreamTriggerTasks(const ListDownstreamTriggerTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListDownstreamTriggerTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListDownstreamTriggerTasksResponse rsp = ListDownstreamTriggerTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListDownstreamTriggerTasksOutcome(rsp);
+        else
+            return ListDownstreamTriggerTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return ListDownstreamTriggerTasksOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ListDownstreamTriggerTasksAsync(const ListDownstreamTriggerTasksRequest& request, const ListDownstreamTriggerTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListDownstreamTriggerTasksRequest&;
+    using Resp = ListDownstreamTriggerTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListDownstreamTriggerTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::ListDownstreamTriggerTasksOutcomeCallable WedataClient::ListDownstreamTriggerTasksCallable(const ListDownstreamTriggerTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListDownstreamTriggerTasksOutcome>>();
+    ListDownstreamTriggerTasksAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListDownstreamTriggerTasksRequest&,
+        ListDownstreamTriggerTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::ListLineageOutcome WedataClient::ListLineage(const ListLineageRequest &request)
 {
     auto outcome = MakeRequest(request, "ListLineage");
@@ -3682,6 +5232,56 @@ WedataClient::ListOpsTasksOutcomeCallable WedataClient::ListOpsTasksCallable(con
         const WedataClient*,
         const ListOpsTasksRequest&,
         ListOpsTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::ListOpsTriggerWorkflowsOutcome WedataClient::ListOpsTriggerWorkflows(const ListOpsTriggerWorkflowsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListOpsTriggerWorkflows");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListOpsTriggerWorkflowsResponse rsp = ListOpsTriggerWorkflowsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListOpsTriggerWorkflowsOutcome(rsp);
+        else
+            return ListOpsTriggerWorkflowsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListOpsTriggerWorkflowsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ListOpsTriggerWorkflowsAsync(const ListOpsTriggerWorkflowsRequest& request, const ListOpsTriggerWorkflowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListOpsTriggerWorkflowsRequest&;
+    using Resp = ListOpsTriggerWorkflowsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListOpsTriggerWorkflows", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::ListOpsTriggerWorkflowsOutcomeCallable WedataClient::ListOpsTriggerWorkflowsCallable(const ListOpsTriggerWorkflowsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListOpsTriggerWorkflowsOutcome>>();
+    ListOpsTriggerWorkflowsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListOpsTriggerWorkflowsRequest&,
+        ListOpsTriggerWorkflowsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3932,6 +5532,206 @@ WedataClient::ListProjectsOutcomeCallable WedataClient::ListProjectsCallable(con
         const WedataClient*,
         const ListProjectsRequest&,
         ListProjectsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::ListQualityRuleGroupExecResultsByPageOutcome WedataClient::ListQualityRuleGroupExecResultsByPage(const ListQualityRuleGroupExecResultsByPageRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListQualityRuleGroupExecResultsByPage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListQualityRuleGroupExecResultsByPageResponse rsp = ListQualityRuleGroupExecResultsByPageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListQualityRuleGroupExecResultsByPageOutcome(rsp);
+        else
+            return ListQualityRuleGroupExecResultsByPageOutcome(o.GetError());
+    }
+    else
+    {
+        return ListQualityRuleGroupExecResultsByPageOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ListQualityRuleGroupExecResultsByPageAsync(const ListQualityRuleGroupExecResultsByPageRequest& request, const ListQualityRuleGroupExecResultsByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListQualityRuleGroupExecResultsByPageRequest&;
+    using Resp = ListQualityRuleGroupExecResultsByPageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListQualityRuleGroupExecResultsByPage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::ListQualityRuleGroupExecResultsByPageOutcomeCallable WedataClient::ListQualityRuleGroupExecResultsByPageCallable(const ListQualityRuleGroupExecResultsByPageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListQualityRuleGroupExecResultsByPageOutcome>>();
+    ListQualityRuleGroupExecResultsByPageAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListQualityRuleGroupExecResultsByPageRequest&,
+        ListQualityRuleGroupExecResultsByPageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::ListQualityRuleGroupsTableOutcome WedataClient::ListQualityRuleGroupsTable(const ListQualityRuleGroupsTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListQualityRuleGroupsTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListQualityRuleGroupsTableResponse rsp = ListQualityRuleGroupsTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListQualityRuleGroupsTableOutcome(rsp);
+        else
+            return ListQualityRuleGroupsTableOutcome(o.GetError());
+    }
+    else
+    {
+        return ListQualityRuleGroupsTableOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ListQualityRuleGroupsTableAsync(const ListQualityRuleGroupsTableRequest& request, const ListQualityRuleGroupsTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListQualityRuleGroupsTableRequest&;
+    using Resp = ListQualityRuleGroupsTableResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListQualityRuleGroupsTable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::ListQualityRuleGroupsTableOutcomeCallable WedataClient::ListQualityRuleGroupsTableCallable(const ListQualityRuleGroupsTableRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListQualityRuleGroupsTableOutcome>>();
+    ListQualityRuleGroupsTableAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListQualityRuleGroupsTableRequest&,
+        ListQualityRuleGroupsTableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::ListQualityRuleTemplatesOutcome WedataClient::ListQualityRuleTemplates(const ListQualityRuleTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListQualityRuleTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListQualityRuleTemplatesResponse rsp = ListQualityRuleTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListQualityRuleTemplatesOutcome(rsp);
+        else
+            return ListQualityRuleTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListQualityRuleTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ListQualityRuleTemplatesAsync(const ListQualityRuleTemplatesRequest& request, const ListQualityRuleTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListQualityRuleTemplatesRequest&;
+    using Resp = ListQualityRuleTemplatesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListQualityRuleTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::ListQualityRuleTemplatesOutcomeCallable WedataClient::ListQualityRuleTemplatesCallable(const ListQualityRuleTemplatesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListQualityRuleTemplatesOutcome>>();
+    ListQualityRuleTemplatesAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListQualityRuleTemplatesRequest&,
+        ListQualityRuleTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::ListQualityRulesOutcome WedataClient::ListQualityRules(const ListQualityRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListQualityRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListQualityRulesResponse rsp = ListQualityRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListQualityRulesOutcome(rsp);
+        else
+            return ListQualityRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListQualityRulesOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ListQualityRulesAsync(const ListQualityRulesRequest& request, const ListQualityRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListQualityRulesRequest&;
+    using Resp = ListQualityRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListQualityRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::ListQualityRulesOutcomeCallable WedataClient::ListQualityRulesCallable(const ListQualityRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListQualityRulesOutcome>>();
+    ListQualityRulesAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListQualityRulesRequest&,
+        ListQualityRulesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4290,6 +6090,56 @@ WedataClient::ListTableOutcomeCallable WedataClient::ListTableCallable(const Lis
     return prom->get_future();
 }
 
+WedataClient::ListTaskFoldersOutcome WedataClient::ListTaskFolders(const ListTaskFoldersRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTaskFolders");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTaskFoldersResponse rsp = ListTaskFoldersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTaskFoldersOutcome(rsp);
+        else
+            return ListTaskFoldersOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTaskFoldersOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ListTaskFoldersAsync(const ListTaskFoldersRequest& request, const ListTaskFoldersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListTaskFoldersRequest&;
+    using Resp = ListTaskFoldersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListTaskFolders", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::ListTaskFoldersOutcomeCallable WedataClient::ListTaskFoldersCallable(const ListTaskFoldersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListTaskFoldersOutcome>>();
+    ListTaskFoldersAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListTaskFoldersRequest&,
+        ListTaskFoldersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::ListTaskInstanceExecutionsOutcome WedataClient::ListTaskInstanceExecutions(const ListTaskInstanceExecutionsRequest &request)
 {
     auto outcome = MakeRequest(request, "ListTaskInstanceExecutions");
@@ -4540,6 +6390,206 @@ WedataClient::ListTenantRolesOutcomeCallable WedataClient::ListTenantRolesCallab
     return prom->get_future();
 }
 
+WedataClient::ListTriggerTaskVersionsOutcome WedataClient::ListTriggerTaskVersions(const ListTriggerTaskVersionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTriggerTaskVersions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTriggerTaskVersionsResponse rsp = ListTriggerTaskVersionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTriggerTaskVersionsOutcome(rsp);
+        else
+            return ListTriggerTaskVersionsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTriggerTaskVersionsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ListTriggerTaskVersionsAsync(const ListTriggerTaskVersionsRequest& request, const ListTriggerTaskVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListTriggerTaskVersionsRequest&;
+    using Resp = ListTriggerTaskVersionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListTriggerTaskVersions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::ListTriggerTaskVersionsOutcomeCallable WedataClient::ListTriggerTaskVersionsCallable(const ListTriggerTaskVersionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListTriggerTaskVersionsOutcome>>();
+    ListTriggerTaskVersionsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListTriggerTaskVersionsRequest&,
+        ListTriggerTaskVersionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::ListTriggerTasksOutcome WedataClient::ListTriggerTasks(const ListTriggerTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTriggerTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTriggerTasksResponse rsp = ListTriggerTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTriggerTasksOutcome(rsp);
+        else
+            return ListTriggerTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTriggerTasksOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ListTriggerTasksAsync(const ListTriggerTasksRequest& request, const ListTriggerTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListTriggerTasksRequest&;
+    using Resp = ListTriggerTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListTriggerTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::ListTriggerTasksOutcomeCallable WedataClient::ListTriggerTasksCallable(const ListTriggerTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListTriggerTasksOutcome>>();
+    ListTriggerTasksAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListTriggerTasksRequest&,
+        ListTriggerTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::ListTriggerWorkflowRunsOutcome WedataClient::ListTriggerWorkflowRuns(const ListTriggerWorkflowRunsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTriggerWorkflowRuns");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTriggerWorkflowRunsResponse rsp = ListTriggerWorkflowRunsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTriggerWorkflowRunsOutcome(rsp);
+        else
+            return ListTriggerWorkflowRunsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTriggerWorkflowRunsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ListTriggerWorkflowRunsAsync(const ListTriggerWorkflowRunsRequest& request, const ListTriggerWorkflowRunsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListTriggerWorkflowRunsRequest&;
+    using Resp = ListTriggerWorkflowRunsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListTriggerWorkflowRuns", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::ListTriggerWorkflowRunsOutcomeCallable WedataClient::ListTriggerWorkflowRunsCallable(const ListTriggerWorkflowRunsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListTriggerWorkflowRunsOutcome>>();
+    ListTriggerWorkflowRunsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListTriggerWorkflowRunsRequest&,
+        ListTriggerWorkflowRunsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::ListTriggerWorkflowsOutcome WedataClient::ListTriggerWorkflows(const ListTriggerWorkflowsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTriggerWorkflows");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTriggerWorkflowsResponse rsp = ListTriggerWorkflowsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTriggerWorkflowsOutcome(rsp);
+        else
+            return ListTriggerWorkflowsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTriggerWorkflowsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ListTriggerWorkflowsAsync(const ListTriggerWorkflowsRequest& request, const ListTriggerWorkflowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListTriggerWorkflowsRequest&;
+    using Resp = ListTriggerWorkflowsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListTriggerWorkflows", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::ListTriggerWorkflowsOutcomeCallable WedataClient::ListTriggerWorkflowsCallable(const ListTriggerWorkflowsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListTriggerWorkflowsOutcome>>();
+    ListTriggerWorkflowsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListTriggerWorkflowsRequest&,
+        ListTriggerWorkflowsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::ListUpstreamOpsTasksOutcome WedataClient::ListUpstreamOpsTasks(const ListUpstreamOpsTasksRequest &request)
 {
     auto outcome = MakeRequest(request, "ListUpstreamOpsTasks");
@@ -4690,6 +6740,56 @@ WedataClient::ListUpstreamTasksOutcomeCallable WedataClient::ListUpstreamTasksCa
     return prom->get_future();
 }
 
+WedataClient::ListUpstreamTriggerTasksOutcome WedataClient::ListUpstreamTriggerTasks(const ListUpstreamTriggerTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListUpstreamTriggerTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListUpstreamTriggerTasksResponse rsp = ListUpstreamTriggerTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListUpstreamTriggerTasksOutcome(rsp);
+        else
+            return ListUpstreamTriggerTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return ListUpstreamTriggerTasksOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ListUpstreamTriggerTasksAsync(const ListUpstreamTriggerTasksRequest& request, const ListUpstreamTriggerTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListUpstreamTriggerTasksRequest&;
+    using Resp = ListUpstreamTriggerTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListUpstreamTriggerTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::ListUpstreamTriggerTasksOutcomeCallable WedataClient::ListUpstreamTriggerTasksCallable(const ListUpstreamTriggerTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListUpstreamTriggerTasksOutcome>>();
+    ListUpstreamTriggerTasksAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListUpstreamTriggerTasksRequest&,
+        ListUpstreamTriggerTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::ListWorkflowFoldersOutcome WedataClient::ListWorkflowFolders(const ListWorkflowFoldersRequest &request)
 {
     auto outcome = MakeRequest(request, "ListWorkflowFolders");
@@ -4740,6 +6840,56 @@ WedataClient::ListWorkflowFoldersOutcomeCallable WedataClient::ListWorkflowFolde
     return prom->get_future();
 }
 
+WedataClient::ListWorkflowPermissionsOutcome WedataClient::ListWorkflowPermissions(const ListWorkflowPermissionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListWorkflowPermissions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListWorkflowPermissionsResponse rsp = ListWorkflowPermissionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListWorkflowPermissionsOutcome(rsp);
+        else
+            return ListWorkflowPermissionsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListWorkflowPermissionsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ListWorkflowPermissionsAsync(const ListWorkflowPermissionsRequest& request, const ListWorkflowPermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListWorkflowPermissionsRequest&;
+    using Resp = ListWorkflowPermissionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListWorkflowPermissions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::ListWorkflowPermissionsOutcomeCallable WedataClient::ListWorkflowPermissionsCallable(const ListWorkflowPermissionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListWorkflowPermissionsOutcome>>();
+    ListWorkflowPermissionsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListWorkflowPermissionsRequest&,
+        ListWorkflowPermissionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::ListWorkflowsOutcome WedataClient::ListWorkflows(const ListWorkflowsRequest &request)
 {
     auto outcome = MakeRequest(request, "ListWorkflows");
@@ -4782,6 +6932,106 @@ WedataClient::ListWorkflowsOutcomeCallable WedataClient::ListWorkflowsCallable(c
         const WedataClient*,
         const ListWorkflowsRequest&,
         ListWorkflowsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::ModifyQualityRuleOutcome WedataClient::ModifyQualityRule(const ModifyQualityRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyQualityRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyQualityRuleResponse rsp = ModifyQualityRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyQualityRuleOutcome(rsp);
+        else
+            return ModifyQualityRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyQualityRuleOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ModifyQualityRuleAsync(const ModifyQualityRuleRequest& request, const ModifyQualityRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyQualityRuleRequest&;
+    using Resp = ModifyQualityRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyQualityRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::ModifyQualityRuleOutcomeCallable WedataClient::ModifyQualityRuleCallable(const ModifyQualityRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyQualityRuleOutcome>>();
+    ModifyQualityRuleAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ModifyQualityRuleRequest&,
+        ModifyQualityRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::ModifyQualityRuleGroupOutcome WedataClient::ModifyQualityRuleGroup(const ModifyQualityRuleGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyQualityRuleGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyQualityRuleGroupResponse rsp = ModifyQualityRuleGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyQualityRuleGroupOutcome(rsp);
+        else
+            return ModifyQualityRuleGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyQualityRuleGroupOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ModifyQualityRuleGroupAsync(const ModifyQualityRuleGroupRequest& request, const ModifyQualityRuleGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyQualityRuleGroupRequest&;
+    using Resp = ModifyQualityRuleGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyQualityRuleGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::ModifyQualityRuleGroupOutcomeCallable WedataClient::ModifyQualityRuleGroupCallable(const ModifyQualityRuleGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyQualityRuleGroupOutcome>>();
+    ModifyQualityRuleGroupAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ModifyQualityRuleGroupRequest&,
+        ModifyQualityRuleGroupOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4982,6 +7232,106 @@ WedataClient::RerunTaskInstancesAsyncOutcomeCallable WedataClient::RerunTaskInst
         const WedataClient*,
         const RerunTaskInstancesAsyncRequest&,
         RerunTaskInstancesAsyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::RerunTriggerWorkflowRunAsyncOutcome WedataClient::RerunTriggerWorkflowRunAsync(const RerunTriggerWorkflowRunAsyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "RerunTriggerWorkflowRunAsync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RerunTriggerWorkflowRunAsyncResponse rsp = RerunTriggerWorkflowRunAsyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RerunTriggerWorkflowRunAsyncOutcome(rsp);
+        else
+            return RerunTriggerWorkflowRunAsyncOutcome(o.GetError());
+    }
+    else
+    {
+        return RerunTriggerWorkflowRunAsyncOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::RerunTriggerWorkflowRunAsyncAsync(const RerunTriggerWorkflowRunAsyncRequest& request, const RerunTriggerWorkflowRunAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RerunTriggerWorkflowRunAsyncRequest&;
+    using Resp = RerunTriggerWorkflowRunAsyncResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RerunTriggerWorkflowRunAsync", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::RerunTriggerWorkflowRunAsyncOutcomeCallable WedataClient::RerunTriggerWorkflowRunAsyncCallable(const RerunTriggerWorkflowRunAsyncRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RerunTriggerWorkflowRunAsyncOutcome>>();
+    RerunTriggerWorkflowRunAsyncAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const RerunTriggerWorkflowRunAsyncRequest&,
+        RerunTriggerWorkflowRunAsyncOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::RevokeDataSourceAuthorizationOutcome WedataClient::RevokeDataSourceAuthorization(const RevokeDataSourceAuthorizationRequest &request)
+{
+    auto outcome = MakeRequest(request, "RevokeDataSourceAuthorization");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RevokeDataSourceAuthorizationResponse rsp = RevokeDataSourceAuthorizationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RevokeDataSourceAuthorizationOutcome(rsp);
+        else
+            return RevokeDataSourceAuthorizationOutcome(o.GetError());
+    }
+    else
+    {
+        return RevokeDataSourceAuthorizationOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::RevokeDataSourceAuthorizationAsync(const RevokeDataSourceAuthorizationRequest& request, const RevokeDataSourceAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RevokeDataSourceAuthorizationRequest&;
+    using Resp = RevokeDataSourceAuthorizationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RevokeDataSourceAuthorization", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::RevokeDataSourceAuthorizationOutcomeCallable WedataClient::RevokeDataSourceAuthorizationCallable(const RevokeDataSourceAuthorizationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RevokeDataSourceAuthorizationOutcome>>();
+    RevokeDataSourceAuthorizationAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const RevokeDataSourceAuthorizationRequest&,
+        RevokeDataSourceAuthorizationOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5290,6 +7640,56 @@ WedataClient::SubmitTaskOutcomeCallable WedataClient::SubmitTaskCallable(const S
     return prom->get_future();
 }
 
+WedataClient::SubmitTriggerTaskOutcome WedataClient::SubmitTriggerTask(const SubmitTriggerTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitTriggerTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitTriggerTaskResponse rsp = SubmitTriggerTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitTriggerTaskOutcome(rsp);
+        else
+            return SubmitTriggerTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitTriggerTaskOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::SubmitTriggerTaskAsync(const SubmitTriggerTaskRequest& request, const SubmitTriggerTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SubmitTriggerTaskRequest&;
+    using Resp = SubmitTriggerTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SubmitTriggerTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::SubmitTriggerTaskOutcomeCallable WedataClient::SubmitTriggerTaskCallable(const SubmitTriggerTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SubmitTriggerTaskOutcome>>();
+    SubmitTriggerTaskAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const SubmitTriggerTaskRequest&,
+        SubmitTriggerTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::UpdateCodeFileOutcome WedataClient::UpdateCodeFile(const UpdateCodeFileRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateCodeFile");
@@ -5532,6 +7932,56 @@ WedataClient::UpdateOpsTasksOwnerOutcomeCallable WedataClient::UpdateOpsTasksOwn
         const WedataClient*,
         const UpdateOpsTasksOwnerRequest&,
         UpdateOpsTasksOwnerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::UpdateOpsTriggerTasksOwnerOutcome WedataClient::UpdateOpsTriggerTasksOwner(const UpdateOpsTriggerTasksOwnerRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateOpsTriggerTasksOwner");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateOpsTriggerTasksOwnerResponse rsp = UpdateOpsTriggerTasksOwnerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateOpsTriggerTasksOwnerOutcome(rsp);
+        else
+            return UpdateOpsTriggerTasksOwnerOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateOpsTriggerTasksOwnerOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::UpdateOpsTriggerTasksOwnerAsync(const UpdateOpsTriggerTasksOwnerRequest& request, const UpdateOpsTriggerTasksOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateOpsTriggerTasksOwnerRequest&;
+    using Resp = UpdateOpsTriggerTasksOwnerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateOpsTriggerTasksOwner", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::UpdateOpsTriggerTasksOwnerOutcomeCallable WedataClient::UpdateOpsTriggerTasksOwnerCallable(const UpdateOpsTriggerTasksOwnerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateOpsTriggerTasksOwnerOutcome>>();
+    UpdateOpsTriggerTasksOwnerAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const UpdateOpsTriggerTasksOwnerRequest&,
+        UpdateOpsTriggerTasksOwnerOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5882,6 +8332,306 @@ WedataClient::UpdateTaskOutcomeCallable WedataClient::UpdateTaskCallable(const U
         const WedataClient*,
         const UpdateTaskRequest&,
         UpdateTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::UpdateTaskFolderOutcome WedataClient::UpdateTaskFolder(const UpdateTaskFolderRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateTaskFolder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateTaskFolderResponse rsp = UpdateTaskFolderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateTaskFolderOutcome(rsp);
+        else
+            return UpdateTaskFolderOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateTaskFolderOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::UpdateTaskFolderAsync(const UpdateTaskFolderRequest& request, const UpdateTaskFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateTaskFolderRequest&;
+    using Resp = UpdateTaskFolderResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateTaskFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::UpdateTaskFolderOutcomeCallable WedataClient::UpdateTaskFolderCallable(const UpdateTaskFolderRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateTaskFolderOutcome>>();
+    UpdateTaskFolderAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const UpdateTaskFolderRequest&,
+        UpdateTaskFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::UpdateTaskPartiallyOutcome WedataClient::UpdateTaskPartially(const UpdateTaskPartiallyRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateTaskPartially");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateTaskPartiallyResponse rsp = UpdateTaskPartiallyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateTaskPartiallyOutcome(rsp);
+        else
+            return UpdateTaskPartiallyOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateTaskPartiallyOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::UpdateTaskPartiallyAsync(const UpdateTaskPartiallyRequest& request, const UpdateTaskPartiallyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateTaskPartiallyRequest&;
+    using Resp = UpdateTaskPartiallyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateTaskPartially", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::UpdateTaskPartiallyOutcomeCallable WedataClient::UpdateTaskPartiallyCallable(const UpdateTaskPartiallyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateTaskPartiallyOutcome>>();
+    UpdateTaskPartiallyAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const UpdateTaskPartiallyRequest&,
+        UpdateTaskPartiallyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::UpdateTriggerTaskOutcome WedataClient::UpdateTriggerTask(const UpdateTriggerTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateTriggerTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateTriggerTaskResponse rsp = UpdateTriggerTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateTriggerTaskOutcome(rsp);
+        else
+            return UpdateTriggerTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateTriggerTaskOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::UpdateTriggerTaskAsync(const UpdateTriggerTaskRequest& request, const UpdateTriggerTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateTriggerTaskRequest&;
+    using Resp = UpdateTriggerTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateTriggerTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::UpdateTriggerTaskOutcomeCallable WedataClient::UpdateTriggerTaskCallable(const UpdateTriggerTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateTriggerTaskOutcome>>();
+    UpdateTriggerTaskAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const UpdateTriggerTaskRequest&,
+        UpdateTriggerTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::UpdateTriggerTaskPartiallyOutcome WedataClient::UpdateTriggerTaskPartially(const UpdateTriggerTaskPartiallyRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateTriggerTaskPartially");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateTriggerTaskPartiallyResponse rsp = UpdateTriggerTaskPartiallyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateTriggerTaskPartiallyOutcome(rsp);
+        else
+            return UpdateTriggerTaskPartiallyOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateTriggerTaskPartiallyOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::UpdateTriggerTaskPartiallyAsync(const UpdateTriggerTaskPartiallyRequest& request, const UpdateTriggerTaskPartiallyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateTriggerTaskPartiallyRequest&;
+    using Resp = UpdateTriggerTaskPartiallyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateTriggerTaskPartially", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::UpdateTriggerTaskPartiallyOutcomeCallable WedataClient::UpdateTriggerTaskPartiallyCallable(const UpdateTriggerTaskPartiallyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateTriggerTaskPartiallyOutcome>>();
+    UpdateTriggerTaskPartiallyAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const UpdateTriggerTaskPartiallyRequest&,
+        UpdateTriggerTaskPartiallyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::UpdateTriggerWorkflowOutcome WedataClient::UpdateTriggerWorkflow(const UpdateTriggerWorkflowRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateTriggerWorkflow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateTriggerWorkflowResponse rsp = UpdateTriggerWorkflowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateTriggerWorkflowOutcome(rsp);
+        else
+            return UpdateTriggerWorkflowOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateTriggerWorkflowOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::UpdateTriggerWorkflowAsync(const UpdateTriggerWorkflowRequest& request, const UpdateTriggerWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateTriggerWorkflowRequest&;
+    using Resp = UpdateTriggerWorkflowResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateTriggerWorkflow", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::UpdateTriggerWorkflowOutcomeCallable WedataClient::UpdateTriggerWorkflowCallable(const UpdateTriggerWorkflowRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateTriggerWorkflowOutcome>>();
+    UpdateTriggerWorkflowAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const UpdateTriggerWorkflowRequest&,
+        UpdateTriggerWorkflowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::UpdateTriggerWorkflowPartiallyOutcome WedataClient::UpdateTriggerWorkflowPartially(const UpdateTriggerWorkflowPartiallyRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateTriggerWorkflowPartially");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateTriggerWorkflowPartiallyResponse rsp = UpdateTriggerWorkflowPartiallyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateTriggerWorkflowPartiallyOutcome(rsp);
+        else
+            return UpdateTriggerWorkflowPartiallyOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateTriggerWorkflowPartiallyOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::UpdateTriggerWorkflowPartiallyAsync(const UpdateTriggerWorkflowPartiallyRequest& request, const UpdateTriggerWorkflowPartiallyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateTriggerWorkflowPartiallyRequest&;
+    using Resp = UpdateTriggerWorkflowPartiallyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateTriggerWorkflowPartially", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::UpdateTriggerWorkflowPartiallyOutcomeCallable WedataClient::UpdateTriggerWorkflowPartiallyCallable(const UpdateTriggerWorkflowPartiallyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateTriggerWorkflowPartiallyOutcome>>();
+    UpdateTriggerWorkflowPartiallyAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const UpdateTriggerWorkflowPartiallyRequest&,
+        UpdateTriggerWorkflowPartiallyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

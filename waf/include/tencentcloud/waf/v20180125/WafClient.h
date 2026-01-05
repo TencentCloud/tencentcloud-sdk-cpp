@@ -137,6 +137,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeAutoDenyIPResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeBatchIpAccessControlRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeBatchIpAccessControlResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeBotIdRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeBotIdRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeBotSceneListRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeBotSceneListResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeBotSceneOverviewRequest.h>
@@ -600,6 +602,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBatchIpAccessControlResponse> DescribeBatchIpAccessControlOutcome;
                 typedef std::future<DescribeBatchIpAccessControlOutcome> DescribeBatchIpAccessControlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeBatchIpAccessControlRequest&, DescribeBatchIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchIpAccessControlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBotIdRuleResponse> DescribeBotIdRuleOutcome;
+                typedef std::future<DescribeBotIdRuleOutcome> DescribeBotIdRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeBotIdRuleRequest&, DescribeBotIdRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBotIdRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBotSceneListResponse> DescribeBotSceneListOutcome;
                 typedef std::future<DescribeBotSceneListOutcome> DescribeBotSceneListOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeBotSceneListRequest&, DescribeBotSceneListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBotSceneListAsyncHandler;
@@ -1532,6 +1537,15 @@ namespace TencentCloud
                 DescribeBatchIpAccessControlOutcome DescribeBatchIpAccessControl(const Model::DescribeBatchIpAccessControlRequest &request);
                 void DescribeBatchIpAccessControlAsync(const Model::DescribeBatchIpAccessControlRequest& request, const DescribeBatchIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBatchIpAccessControlOutcomeCallable DescribeBatchIpAccessControlCallable(const Model::DescribeBatchIpAccessControlRequest& request);
+
+                /**
+                 *获取BotId规则列表1
+                 * @param req DescribeBotIdRuleRequest
+                 * @return DescribeBotIdRuleOutcome
+                 */
+                DescribeBotIdRuleOutcome DescribeBotIdRule(const Model::DescribeBotIdRuleRequest &request);
+                void DescribeBotIdRuleAsync(const Model::DescribeBotIdRuleRequest& request, const DescribeBotIdRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBotIdRuleOutcomeCallable DescribeBotIdRuleCallable(const Model::DescribeBotIdRuleRequest& request);
 
                 /**
                  *获取BOT场景列表与概览

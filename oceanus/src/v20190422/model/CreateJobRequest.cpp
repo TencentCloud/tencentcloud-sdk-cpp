@@ -34,7 +34,9 @@ CreateJobRequest::CreateJobRequest() :
     m_workSpaceIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_openJobDefaultAlarmHasBeenSet(false)
+    m_openJobDefaultAlarmHasBeenSet(false),
+    m_uidHasBeenSet(false),
+    m_jdkVersionHasBeenSet(false)
 {
 }
 
@@ -146,6 +148,22 @@ string CreateJobRequest::ToJsonString() const
         string key = "OpenJobDefaultAlarm";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_openJobDefaultAlarm, allocator);
+    }
+
+    if (m_uidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_uid, allocator);
+    }
+
+    if (m_jdkVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JdkVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jdkVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -346,6 +364,38 @@ void CreateJobRequest::SetOpenJobDefaultAlarm(const int64_t& _openJobDefaultAlar
 bool CreateJobRequest::OpenJobDefaultAlarmHasBeenSet() const
 {
     return m_openJobDefaultAlarmHasBeenSet;
+}
+
+int64_t CreateJobRequest::GetUid() const
+{
+    return m_uid;
+}
+
+void CreateJobRequest::SetUid(const int64_t& _uid)
+{
+    m_uid = _uid;
+    m_uidHasBeenSet = true;
+}
+
+bool CreateJobRequest::UidHasBeenSet() const
+{
+    return m_uidHasBeenSet;
+}
+
+string CreateJobRequest::GetJdkVersion() const
+{
+    return m_jdkVersion;
+}
+
+void CreateJobRequest::SetJdkVersion(const string& _jdkVersion)
+{
+    m_jdkVersion = _jdkVersion;
+    m_jdkVersionHasBeenSet = true;
+}
+
+bool CreateJobRequest::JdkVersionHasBeenSet() const
+{
+    return m_jdkVersionHasBeenSet;
 }
 
 
