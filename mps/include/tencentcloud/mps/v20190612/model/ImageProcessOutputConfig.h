@@ -141,6 +141,27 @@ namespace TencentCloud
                      */
                     bool ImageWidthHasBeenSet() const;
 
+                    /**
+                     * 获取图片输出分辨率，取值：1K/2K/4K。
+                     * @return ImageSize 图片输出分辨率，取值：1K/2K/4K。
+                     * 
+                     */
+                    std::string GetImageSize() const;
+
+                    /**
+                     * 设置图片输出分辨率，取值：1K/2K/4K。
+                     * @param _imageSize 图片输出分辨率，取值：1K/2K/4K。
+                     * 
+                     */
+                    void SetImageSize(const std::string& _imageSize);
+
+                    /**
+                     * 判断参数 ImageSize 是否已赋值
+                     * @return ImageSize 是否已赋值
+                     * 
+                     */
+                    bool ImageSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -168,6 +189,12 @@ namespace TencentCloud
                      */
                     int64_t m_imageWidth;
                     bool m_imageWidthHasBeenSet;
+
+                    /**
+                     * 图片输出分辨率，取值：1K/2K/4K。
+                     */
+                    std::string m_imageSize;
+                    bool m_imageSizeHasBeenSet;
 
                 };
             }

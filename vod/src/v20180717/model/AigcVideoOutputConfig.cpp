@@ -32,7 +32,8 @@ AigcVideoOutputConfig::AigcVideoOutputConfig() :
     m_personGenerationHasBeenSet(false),
     m_inputComplianceCheckHasBeenSet(false),
     m_outputComplianceCheckHasBeenSet(false),
-    m_enhanceSwitchHasBeenSet(false)
+    m_enhanceSwitchHasBeenSet(false),
+    m_frameInterpolateHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome AigcVideoOutputConfig::Deserialize(const rapidjson::Value &v
         m_enhanceSwitchHasBeenSet = true;
     }
 
+    if (value.HasMember("FrameInterpolate") && !value["FrameInterpolate"].IsNull())
+    {
+        if (!value["FrameInterpolate"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoOutputConfig.FrameInterpolate` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_frameInterpolate = string(value["FrameInterpolate"].GetString());
+        m_frameInterpolateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void AigcVideoOutputConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "EnhanceSwitch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_enhanceSwitch.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_frameInterpolateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FrameInterpolate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_frameInterpolate.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void AigcVideoOutputConfig::SetEnhanceSwitch(const string& _enhanceSwitch)
 bool AigcVideoOutputConfig::EnhanceSwitchHasBeenSet() const
 {
     return m_enhanceSwitchHasBeenSet;
+}
+
+string AigcVideoOutputConfig::GetFrameInterpolate() const
+{
+    return m_frameInterpolate;
+}
+
+void AigcVideoOutputConfig::SetFrameInterpolate(const string& _frameInterpolate)
+{
+    m_frameInterpolate = _frameInterpolate;
+    m_frameInterpolateHasBeenSet = true;
+}
+
+bool AigcVideoOutputConfig::FrameInterpolateHasBeenSet() const
+{
+    return m_frameInterpolateHasBeenSet;
 }
 

@@ -24,7 +24,8 @@ GatewayQos::GatewayQos() :
     m_vpcIdHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_inBandwidthHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome GatewayQos::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("InBandwidth") && !value["InBandwidth"].IsNull())
+    {
+        if (!value["InBandwidth"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayQos.InBandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_inBandwidth = value["InBandwidth"].GetInt64();
+        m_inBandwidthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void GatewayQos::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inBandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InBandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_inBandwidth, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void GatewayQos::SetCreateTime(const string& _createTime)
 bool GatewayQos::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+int64_t GatewayQos::GetInBandwidth() const
+{
+    return m_inBandwidth;
+}
+
+void GatewayQos::SetInBandwidth(const int64_t& _inBandwidth)
+{
+    m_inBandwidth = _inBandwidth;
+    m_inBandwidthHasBeenSet = true;
+}
+
+bool GatewayQos::InBandwidthHasBeenSet() const
+{
+    return m_inBandwidthHasBeenSet;
 }
 

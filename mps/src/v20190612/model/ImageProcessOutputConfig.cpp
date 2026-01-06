@@ -23,7 +23,8 @@ using namespace std;
 ImageProcessOutputConfig::ImageProcessOutputConfig() :
     m_aspectRatioHasBeenSet(false),
     m_imageHeightHasBeenSet(false),
-    m_imageWidthHasBeenSet(false)
+    m_imageWidthHasBeenSet(false),
+    m_imageSizeHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome ImageProcessOutputConfig::Deserialize(const rapidjson::Value
         m_imageWidthHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageSize") && !value["ImageSize"].IsNull())
+    {
+        if (!value["ImageSize"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageProcessOutputConfig.ImageSize` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageSize = string(value["ImageSize"].GetString());
+        m_imageSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void ImageProcessOutputConfig::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "ImageWidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_imageWidth, allocator);
+    }
+
+    if (m_imageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageSize.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void ImageProcessOutputConfig::SetImageWidth(const int64_t& _imageWidth)
 bool ImageProcessOutputConfig::ImageWidthHasBeenSet() const
 {
     return m_imageWidthHasBeenSet;
+}
+
+string ImageProcessOutputConfig::GetImageSize() const
+{
+    return m_imageSize;
+}
+
+void ImageProcessOutputConfig::SetImageSize(const string& _imageSize)
+{
+    m_imageSize = _imageSize;
+    m_imageSizeHasBeenSet = true;
+}
+
+bool ImageProcessOutputConfig::ImageSizeHasBeenSet() const
+{
+    return m_imageSizeHasBeenSet;
 }
 

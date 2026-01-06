@@ -362,6 +362,27 @@ namespace TencentCloud
                      */
                     bool EnhanceSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启vidu智能插帧。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+                     * @return FrameInterpolate 是否开启vidu智能插帧。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+                     * 
+                     */
+                    std::string GetFrameInterpolate() const;
+
+                    /**
+                     * 设置是否开启vidu智能插帧。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+                     * @param _frameInterpolate 是否开启vidu智能插帧。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+                     * 
+                     */
+                    void SetFrameInterpolate(const std::string& _frameInterpolate);
+
+                    /**
+                     * 判断参数 FrameInterpolate 是否已赋值
+                     * @return FrameInterpolate 是否已赋值
+                     * 
+                     */
+                    bool FrameInterpolateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -451,6 +472,12 @@ namespace TencentCloud
                      */
                     std::string m_enhanceSwitch;
                     bool m_enhanceSwitchHasBeenSet;
+
+                    /**
+                     * 是否开启vidu智能插帧。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+                     */
+                    std::string m_frameInterpolate;
+                    bool m_frameInterpolateHasBeenSet;
 
                 };
             }

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取获取的下一页的Token值，如果当前是最后一页，返回为空
-                     * @return PaginationToken 获取的下一页的Token值，如果当前是最后一页，返回为空
+                     * 获取<p>获取的下一页的Token值，如果当前是最后一页，返回为空</p>
+                     * @return PaginationToken <p>获取的下一页的Token值，如果当前是最后一页，返回为空</p>
                      * 
                      */
                     std::string GetPaginationToken() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool PaginationTokenHasBeenSet() const;
 
                     /**
-                     * 获取标签键信息。
-                     * @return TagKeys 标签键信息。
+                     * 获取<p>标签键信息。</p>
+                     * @return TagKeys <p>标签键信息。</p>
                      * 
                      */
                     std::vector<std::string> GetTagKeys() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 获取的下一页的Token值，如果当前是最后一页，返回为空
+                     * <p>获取的下一页的Token值，如果当前是最后一页，返回为空</p>
                      */
                     std::string m_paginationToken;
                     bool m_paginationTokenHasBeenSet;
 
                     /**
-                     * 标签键信息。
+                     * <p>标签键信息。</p>
                      */
                     std::vector<std::string> m_tagKeys;
                     bool m_tagKeysHasBeenSet;

@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool IsDemoHasBeenSet() const;
 
+                    /**
+                     * 获取项目 ID 列表
+                     * @return IDList 项目 ID 列表
+                     * 
+                     */
+                    std::vector<int64_t> GetIDList() const;
+
+                    /**
+                     * 设置项目 ID 列表
+                     * @param _iDList 项目 ID 列表
+                     * 
+                     */
+                    void SetIDList(const std::vector<int64_t>& _iDList);
+
+                    /**
+                     * 判断参数 IDList 是否已赋值
+                     * @return IDList 是否已赋值
+                     * 
+                     */
+                    bool IDListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     int64_t m_isDemo;
                     bool m_isDemoHasBeenSet;
+
+                    /**
+                     * 项目 ID 列表
+                     */
+                    std::vector<int64_t> m_iDList;
+                    bool m_iDListHasBeenSet;
 
                 };
             }

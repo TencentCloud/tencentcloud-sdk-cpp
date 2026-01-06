@@ -214,18 +214,22 @@ back：后视图；
 
                     /**
                      * 获取生成3D模型的面数，默认值为500000。
-可支持生成面数范围，参考值：40000-1500000。
+可支持生成面数范围，参考值：10000-1500000。
+GenerateType中选择LowPoly时，参考值：3000-1500000。
                      * @return FaceCount 生成3D模型的面数，默认值为500000。
-可支持生成面数范围，参考值：40000-1500000。
+可支持生成面数范围，参考值：10000-1500000。
+GenerateType中选择LowPoly时，参考值：3000-1500000。
                      * 
                      */
                     int64_t GetFaceCount() const;
 
                     /**
                      * 设置生成3D模型的面数，默认值为500000。
-可支持生成面数范围，参考值：40000-1500000。
+可支持生成面数范围，参考值：10000-1500000。
+GenerateType中选择LowPoly时，参考值：3000-1500000。
                      * @param _faceCount 生成3D模型的面数，默认值为500000。
-可支持生成面数范围，参考值：40000-1500000。
+可支持生成面数范围，参考值：10000-1500000。
+GenerateType中选择LowPoly时，参考值：3000-1500000。
                      * 
                      */
                     void SetFaceCount(const int64_t& _faceCount);
@@ -240,12 +244,12 @@ back：后视图；
                     /**
                      * 获取生成任务类型，默认Normal，参考值：
 Normal：可生成带纹理的几何模型。
-LowPoly：可生成智能减面后的模型。
+LowPoly：可生成智能拓扑后的模型，选择此参数时，面数最低可到达3000面。
 Geometry：可生成不带纹理的几何模型（白模），选择此任务时，EnablePBR参数不生效。
 Sketch：可输入草图或线稿图生成模型，此模式下prompt和ImageUrl/ImageBase64可一起输入。
                      * @return GenerateType 生成任务类型，默认Normal，参考值：
 Normal：可生成带纹理的几何模型。
-LowPoly：可生成智能减面后的模型。
+LowPoly：可生成智能拓扑后的模型，选择此参数时，面数最低可到达3000面。
 Geometry：可生成不带纹理的几何模型（白模），选择此任务时，EnablePBR参数不生效。
 Sketch：可输入草图或线稿图生成模型，此模式下prompt和ImageUrl/ImageBase64可一起输入。
                      * 
@@ -255,12 +259,12 @@ Sketch：可输入草图或线稿图生成模型，此模式下prompt和ImageUrl
                     /**
                      * 设置生成任务类型，默认Normal，参考值：
 Normal：可生成带纹理的几何模型。
-LowPoly：可生成智能减面后的模型。
+LowPoly：可生成智能拓扑后的模型，选择此参数时，面数最低可到达3000面。
 Geometry：可生成不带纹理的几何模型（白模），选择此任务时，EnablePBR参数不生效。
 Sketch：可输入草图或线稿图生成模型，此模式下prompt和ImageUrl/ImageBase64可一起输入。
                      * @param _generateType 生成任务类型，默认Normal，参考值：
 Normal：可生成带纹理的几何模型。
-LowPoly：可生成智能减面后的模型。
+LowPoly：可生成智能拓扑后的模型，选择此参数时，面数最低可到达3000面。
 Geometry：可生成不带纹理的几何模型（白模），选择此任务时，EnablePBR参数不生效。
 Sketch：可输入草图或线稿图生成模型，此模式下prompt和ImageUrl/ImageBase64可一起输入。
                      * 
@@ -382,7 +386,8 @@ back：后视图；
 
                     /**
                      * 生成3D模型的面数，默认值为500000。
-可支持生成面数范围，参考值：40000-1500000。
+可支持生成面数范围，参考值：10000-1500000。
+GenerateType中选择LowPoly时，参考值：3000-1500000。
                      */
                     int64_t m_faceCount;
                     bool m_faceCountHasBeenSet;
@@ -390,7 +395,7 @@ back：后视图；
                     /**
                      * 生成任务类型，默认Normal，参考值：
 Normal：可生成带纹理的几何模型。
-LowPoly：可生成智能减面后的模型。
+LowPoly：可生成智能拓扑后的模型，选择此参数时，面数最低可到达3000面。
 Geometry：可生成不带纹理的几何模型（白模），选择此任务时，EnablePBR参数不生效。
 Sketch：可输入草图或线稿图生成模型，此模式下prompt和ImageUrl/ImageBase64可一起输入。
                      */

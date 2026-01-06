@@ -1590,6 +1590,56 @@ WedataClient::DeleteOpsAlarmRuleOutcomeCallable WedataClient::DeleteOpsAlarmRule
     return prom->get_future();
 }
 
+WedataClient::DeleteProjectOutcome WedataClient::DeleteProject(const DeleteProjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteProject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteProjectResponse rsp = DeleteProjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteProjectOutcome(rsp);
+        else
+            return DeleteProjectOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteProjectOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteProjectRequest&;
+    using Resp = DeleteProjectResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::DeleteProjectOutcomeCallable WedataClient::DeleteProjectCallable(const DeleteProjectRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteProjectOutcome>>();
+    DeleteProjectAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DeleteProjectRequest&,
+        DeleteProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::DeleteProjectMemberOutcome WedataClient::DeleteProjectMember(const DeleteProjectMemberRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteProjectMember");

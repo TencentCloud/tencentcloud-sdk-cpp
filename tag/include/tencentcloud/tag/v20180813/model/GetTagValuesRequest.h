@@ -43,23 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标签键。
-返回所有标签键列表对应的标签值。
-最大长度：20
-                     * @return TagKeys 标签键。
-返回所有标签键列表对应的标签值。
-最大长度：20
+                     * 获取<p>标签键。返回所有标签键列表对应的标签值。最大长度：20</p>
+                     * @return TagKeys <p>标签键。返回所有标签键列表对应的标签值。最大长度：20</p>
                      * 
                      */
                     std::vector<std::string> GetTagKeys() const;
 
                     /**
-                     * 设置标签键。
-返回所有标签键列表对应的标签值。
-最大长度：20
-                     * @param _tagKeys 标签键。
-返回所有标签键列表对应的标签值。
-最大长度：20
+                     * 设置<p>标签键。返回所有标签键列表对应的标签值。最大长度：20</p>
+                     * @param _tagKeys <p>标签键。返回所有标签键列表对应的标签值。最大长度：20</p>
                      * 
                      */
                     void SetTagKeys(const std::vector<std::string>& _tagKeys);
@@ -72,19 +64,15 @@ namespace TencentCloud
                     bool TagKeysHasBeenSet() const;
 
                     /**
-                     * 获取从上一页的响应中获取的下一页的Token值。
-如果是第一次请求，设置为空。
-                     * @return PaginationToken 从上一页的响应中获取的下一页的Token值。
-如果是第一次请求，设置为空。
+                     * 获取<p>从上一页的响应中获取的下一页的Token值。如果是第一次请求，设置为空。</p>
+                     * @return PaginationToken <p>从上一页的响应中获取的下一页的Token值。如果是第一次请求，设置为空。</p>
                      * 
                      */
                     std::string GetPaginationToken() const;
 
                     /**
-                     * 设置从上一页的响应中获取的下一页的Token值。
-如果是第一次请求，设置为空。
-                     * @param _paginationToken 从上一页的响应中获取的下一页的Token值。
-如果是第一次请求，设置为空。
+                     * 设置<p>从上一页的响应中获取的下一页的Token值。如果是第一次请求，设置为空。</p>
+                     * @param _paginationToken <p>从上一页的响应中获取的下一页的Token值。如果是第一次请求，设置为空。</p>
                      * 
                      */
                     void SetPaginationToken(const std::string& _paginationToken);
@@ -97,19 +85,15 @@ namespace TencentCloud
                     bool PaginationTokenHasBeenSet() const;
 
                     /**
-                     * 获取每一页返回的数据最大条数，最大1000。
-缺省值：50。
-                     * @return MaxResults 每一页返回的数据最大条数，最大1000。
-缺省值：50。
+                     * 获取<p>每一页返回的数据最大条数，最大1000。缺省值：50。</p>
+                     * @return MaxResults <p>每一页返回的数据最大条数，最大1000。缺省值：50。</p>
                      * 
                      */
                     uint64_t GetMaxResults() const;
 
                     /**
-                     * 设置每一页返回的数据最大条数，最大1000。
-缺省值：50。
-                     * @param _maxResults 每一页返回的数据最大条数，最大1000。
-缺省值：50。
+                     * 设置<p>每一页返回的数据最大条数，最大1000。缺省值：50。</p>
+                     * @param _maxResults <p>每一页返回的数据最大条数，最大1000。缺省值：50。</p>
                      * 
                      */
                     void SetMaxResults(const uint64_t& _maxResults);
@@ -122,15 +106,15 @@ namespace TencentCloud
                     bool MaxResultsHasBeenSet() const;
 
                     /**
-                     * 获取标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
-                     * @return Category 标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
+                     * 获取<p>标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。</p>
+                     * @return Category <p>标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。</p>
                      * 
                      */
                     std::string GetCategory() const;
 
                     /**
-                     * 设置标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
-                     * @param _category 标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
+                     * 设置<p>标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。</p>
+                     * @param _category <p>标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。</p>
                      * 
                      */
                     void SetCategory(const std::string& _category);
@@ -145,29 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标签键。
-返回所有标签键列表对应的标签值。
-最大长度：20
+                     * <p>标签键。返回所有标签键列表对应的标签值。最大长度：20</p>
                      */
                     std::vector<std::string> m_tagKeys;
                     bool m_tagKeysHasBeenSet;
 
                     /**
-                     * 从上一页的响应中获取的下一页的Token值。
-如果是第一次请求，设置为空。
+                     * <p>从上一页的响应中获取的下一页的Token值。如果是第一次请求，设置为空。</p>
                      */
                     std::string m_paginationToken;
                     bool m_paginationTokenHasBeenSet;
 
                     /**
-                     * 每一页返回的数据最大条数，最大1000。
-缺省值：50。
+                     * <p>每一页返回的数据最大条数，最大1000。缺省值：50。</p>
                      */
                     uint64_t m_maxResults;
                     bool m_maxResultsHasBeenSet;
 
                     /**
-                     * 标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
+                     * <p>标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。</p>
                      */
                     std::string m_category;
                     bool m_categoryHasBeenSet;

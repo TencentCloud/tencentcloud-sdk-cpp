@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool IpAddressHasBeenSet() const;
 
                     /**
-                     * 获取流控带宽值。
-                     * @return Bandwidth 流控带宽值。
+                     * 获取网关流控出方向带宽值，当值为-1时，代表未限速；当值大于等于0时，限速带宽上限为返回值。
+                     * @return Bandwidth 网关流控出方向带宽值，当值为-1时，代表未限速；当值大于等于0时，限速带宽上限为返回值。
                      * 
                      */
                     int64_t GetBandwidth() const;
 
                     /**
-                     * 设置流控带宽值。
-                     * @param _bandwidth 流控带宽值。
+                     * 设置网关流控出方向带宽值，当值为-1时，代表未限速；当值大于等于0时，限速带宽上限为返回值。
+                     * @param _bandwidth 网关流控出方向带宽值，当值为-1时，代表未限速；当值大于等于0时，限速带宽上限为返回值。
                      * 
                      */
                     void SetBandwidth(const int64_t& _bandwidth);
@@ -130,6 +130,27 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取网关流控入方向带宽值，当值为-1时，代表未限速；当值大于等于0时，限速带宽上限为返回值。
+                     * @return InBandwidth 网关流控入方向带宽值，当值为-1时，代表未限速；当值大于等于0时，限速带宽上限为返回值。
+                     * 
+                     */
+                    int64_t GetInBandwidth() const;
+
+                    /**
+                     * 设置网关流控入方向带宽值，当值为-1时，代表未限速；当值大于等于0时，限速带宽上限为返回值。
+                     * @param _inBandwidth 网关流控入方向带宽值，当值为-1时，代表未限速；当值大于等于0时，限速带宽上限为返回值。
+                     * 
+                     */
+                    void SetInBandwidth(const int64_t& _inBandwidth);
+
+                    /**
+                     * 判断参数 InBandwidth 是否已赋值
+                     * @return InBandwidth 是否已赋值
+                     * 
+                     */
+                    bool InBandwidthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -145,7 +166,7 @@ namespace TencentCloud
                     bool m_ipAddressHasBeenSet;
 
                     /**
-                     * 流控带宽值。
+                     * 网关流控出方向带宽值，当值为-1时，代表未限速；当值大于等于0时，限速带宽上限为返回值。
                      */
                     int64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
@@ -155,6 +176,12 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 网关流控入方向带宽值，当值为-1时，代表未限速；当值大于等于0时，限速带宽上限为返回值。
+                     */
+                    int64_t m_inBandwidth;
+                    bool m_inBandwidthHasBeenSet;
 
                 };
             }

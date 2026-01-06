@@ -118,6 +118,27 @@ namespace TencentCloud
                      */
                     bool SignedUrlHasBeenSet() const;
 
+                    /**
+                     * 获取图生文任务的处理结果。
+                     * @return Content 图生文任务的处理结果。
+                     * 
+                     */
+                    std::string GetContent() const;
+
+                    /**
+                     * 设置图生文任务的处理结果。
+                     * @param _content 图生文任务的处理结果。
+                     * 
+                     */
+                    void SetContent(const std::string& _content);
+
+                    /**
+                     * 判断参数 Content 是否已赋值
+                     * @return Content 是否已赋值
+                     * 
+                     */
+                    bool ContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +160,12 @@ namespace TencentCloud
                      */
                     std::string m_signedUrl;
                     bool m_signedUrlHasBeenSet;
+
+                    /**
+                     * 图生文任务的处理结果。
+                     */
+                    std::string m_content;
+                    bool m_contentHasBeenSet;
 
                 };
             }

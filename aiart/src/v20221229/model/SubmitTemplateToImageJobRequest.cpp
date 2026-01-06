@@ -25,6 +25,7 @@ using namespace std;
 SubmitTemplateToImageJobRequest::SubmitTemplateToImageJobRequest() :
     m_imageHasBeenSet(false),
     m_styleHasBeenSet(false),
+    m_modeHasBeenSet(false),
     m_logoAddHasBeenSet(false),
     m_logoParamHasBeenSet(false)
 {
@@ -52,6 +53,14 @@ string SubmitTemplateToImageJobRequest::ToJsonString() const
         string key = "Style";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_style.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_mode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_logoAddHasBeenSet)
@@ -109,6 +118,22 @@ void SubmitTemplateToImageJobRequest::SetStyle(const string& _style)
 bool SubmitTemplateToImageJobRequest::StyleHasBeenSet() const
 {
     return m_styleHasBeenSet;
+}
+
+string SubmitTemplateToImageJobRequest::GetMode() const
+{
+    return m_mode;
+}
+
+void SubmitTemplateToImageJobRequest::SetMode(const string& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool SubmitTemplateToImageJobRequest::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
 }
 
 int64_t SubmitTemplateToImageJobRequest::GetLogoAdd() const

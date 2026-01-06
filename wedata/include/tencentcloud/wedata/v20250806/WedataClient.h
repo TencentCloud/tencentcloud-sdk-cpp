@@ -85,6 +85,8 @@
 #include <tencentcloud/wedata/v20250806/model/DeleteLineageResponse.h>
 #include <tencentcloud/wedata/v20250806/model/DeleteOpsAlarmRuleRequest.h>
 #include <tencentcloud/wedata/v20250806/model/DeleteOpsAlarmRuleResponse.h>
+#include <tencentcloud/wedata/v20250806/model/DeleteProjectRequest.h>
+#include <tencentcloud/wedata/v20250806/model/DeleteProjectResponse.h>
 #include <tencentcloud/wedata/v20250806/model/DeleteProjectMemberRequest.h>
 #include <tencentcloud/wedata/v20250806/model/DeleteProjectMemberResponse.h>
 #include <tencentcloud/wedata/v20250806/model/DeleteQualityRuleRequest.h>
@@ -478,6 +480,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteOpsAlarmRuleResponse> DeleteOpsAlarmRuleOutcome;
                 typedef std::future<DeleteOpsAlarmRuleOutcome> DeleteOpsAlarmRuleOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteOpsAlarmRuleRequest&, DeleteOpsAlarmRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOpsAlarmRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteProjectResponse> DeleteProjectOutcome;
+                typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DeleteProjectRequest&, DeleteProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProjectAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteProjectMemberResponse> DeleteProjectMemberOutcome;
                 typedef std::future<DeleteProjectMemberOutcome> DeleteProjectMemberOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteProjectMemberRequest&, DeleteProjectMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProjectMemberAsyncHandler;
@@ -1188,6 +1193,15 @@ namespace TencentCloud
                 DeleteOpsAlarmRuleOutcome DeleteOpsAlarmRule(const Model::DeleteOpsAlarmRuleRequest &request);
                 void DeleteOpsAlarmRuleAsync(const Model::DeleteOpsAlarmRuleRequest& request, const DeleteOpsAlarmRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteOpsAlarmRuleOutcomeCallable DeleteOpsAlarmRuleCallable(const Model::DeleteOpsAlarmRuleRequest& request);
+
+                /**
+                 *删除项目
+                 * @param req DeleteProjectRequest
+                 * @return DeleteProjectOutcome
+                 */
+                DeleteProjectOutcome DeleteProject(const Model::DeleteProjectRequest &request);
+                void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteProjectOutcomeCallable DeleteProjectCallable(const Model::DeleteProjectRequest& request);
 
                 /**
                  *删除项目用户

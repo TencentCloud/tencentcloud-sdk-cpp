@@ -95,6 +95,27 @@ Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
                     bool StyleHasBeenSet() const;
 
                     /**
+                     * 获取特效模式，默认使用人像模式。 Person：人像模式，仅支持上传人像图片，人像生成效果更好【这里需要加非人脸的拦截】。 Pet：宠物模式，支持宠物等非人像图片。 示例值：Person
+                     * @return Mode 特效模式，默认使用人像模式。 Person：人像模式，仅支持上传人像图片，人像生成效果更好【这里需要加非人脸的拦截】。 Pet：宠物模式，支持宠物等非人像图片。 示例值：Person
+                     * 
+                     */
+                    std::string GetMode() const;
+
+                    /**
+                     * 设置特效模式，默认使用人像模式。 Person：人像模式，仅支持上传人像图片，人像生成效果更好【这里需要加非人脸的拦截】。 Pet：宠物模式，支持宠物等非人像图片。 示例值：Person
+                     * @param _mode 特效模式，默认使用人像模式。 Person：人像模式，仅支持上传人像图片，人像生成效果更好【这里需要加非人脸的拦截】。 Pet：宠物模式，支持宠物等非人像图片。 示例值：Person
+                     * 
+                     */
+                    void SetMode(const std::string& _mode);
+
+                    /**
+                     * 判断参数 Mode 是否已赋值
+                     * @return Mode 是否已赋值
+                     * 
+                     */
+                    bool ModeHasBeenSet() const;
+
+                    /**
                      * 获取为生成结果图添加显式水印标识的开关，默认为1。  
 1：添加。  
 0：不添加。  
@@ -171,6 +192,12 @@ Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
                      */
                     std::string m_style;
                     bool m_styleHasBeenSet;
+
+                    /**
+                     * 特效模式，默认使用人像模式。 Person：人像模式，仅支持上传人像图片，人像生成效果更好【这里需要加非人脸的拦截】。 Pet：宠物模式，支持宠物等非人像图片。 示例值：Person
+                     */
+                    std::string m_mode;
+                    bool m_modeHasBeenSet;
 
                     /**
                      * 为生成结果图添加显式水印标识的开关，默认为1。  
