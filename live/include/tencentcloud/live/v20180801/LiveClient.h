@@ -349,6 +349,8 @@
 #include <tencentcloud/live/v20180801/model/ForbidLiveDomainResponse.h>
 #include <tencentcloud/live/v20180801/model/ForbidLiveStreamRequest.h>
 #include <tencentcloud/live/v20180801/model/ForbidLiveStreamResponse.h>
+#include <tencentcloud/live/v20180801/model/InsertTaskTemporaryFilesRequest.h>
+#include <tencentcloud/live/v20180801/model/InsertTaskTemporaryFilesResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyCasterRequest.h>
 #include <tencentcloud/live/v20180801/model/ModifyCasterResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyCasterInputInfoRequest.h>
@@ -928,6 +930,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ForbidLiveStreamResponse> ForbidLiveStreamOutcome;
                 typedef std::future<ForbidLiveStreamOutcome> ForbidLiveStreamOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ForbidLiveStreamRequest&, ForbidLiveStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ForbidLiveStreamAsyncHandler;
+                typedef Outcome<Core::Error, Model::InsertTaskTemporaryFilesResponse> InsertTaskTemporaryFilesOutcome;
+                typedef std::future<InsertTaskTemporaryFilesOutcome> InsertTaskTemporaryFilesOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::InsertTaskTemporaryFilesRequest&, InsertTaskTemporaryFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InsertTaskTemporaryFilesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCasterResponse> ModifyCasterOutcome;
                 typedef std::future<ModifyCasterOutcome> ModifyCasterOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ModifyCasterRequest&, ModifyCasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCasterAsyncHandler;
@@ -2631,6 +2636,18 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 ForbidLiveStreamOutcome ForbidLiveStream(const Model::ForbidLiveStreamRequest &request);
                 void ForbidLiveStreamAsync(const Model::ForbidLiveStreamRequest& request, const ForbidLiveStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ForbidLiveStreamOutcomeCallable ForbidLiveStreamCallable(const Model::ForbidLiveStreamRequest& request);
+
+                /**
+                 *可通过调用该接口，对点播源的直播拉流任务进行插播操作。
+注意：
+1. 仅支持对有效且运行中的点播源任务进行插播操作。
+2. 拉转推插播文件时，事件及回调中的索引均保持为插播前的值。
+                 * @param req InsertTaskTemporaryFilesRequest
+                 * @return InsertTaskTemporaryFilesOutcome
+                 */
+                InsertTaskTemporaryFilesOutcome InsertTaskTemporaryFiles(const Model::InsertTaskTemporaryFilesRequest &request);
+                void InsertTaskTemporaryFilesAsync(const Model::InsertTaskTemporaryFilesRequest& request, const InsertTaskTemporaryFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InsertTaskTemporaryFilesOutcomeCallable InsertTaskTemporaryFilesCallable(const Model::InsertTaskTemporaryFilesRequest& request);
 
                 /**
                  *该接口用来设置导播台的描述、名称、录制模板id等参数。

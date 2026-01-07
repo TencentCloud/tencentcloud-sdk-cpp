@@ -147,6 +147,48 @@ namespace TencentCloud
                      */
                     bool KnowledgeBaseDescHasBeenSet() const;
 
+                    /**
+                     * 获取1仅自己使用，2指定用户，0全员
+                     * @return UseScope 1仅自己使用，2指定用户，0全员
+                     * 
+                     */
+                    int64_t GetUseScope() const;
+
+                    /**
+                     * 设置1仅自己使用，2指定用户，0全员
+                     * @param _useScope 1仅自己使用，2指定用户，0全员
+                     * 
+                     */
+                    void SetUseScope(const int64_t& _useScope);
+
+                    /**
+                     * 判断参数 UseScope 是否已赋值
+                     * @return UseScope 是否已赋值
+                     * 
+                     */
+                    bool UseScopeHasBeenSet() const;
+
+                    /**
+                     * 获取可使用用户列表
+                     * @return AuthorityUins 可使用用户列表
+                     * 
+                     */
+                    std::vector<std::string> GetAuthorityUins() const;
+
+                    /**
+                     * 设置可使用用户列表
+                     * @param _authorityUins 可使用用户列表
+                     * 
+                     */
+                    void SetAuthorityUins(const std::vector<std::string>& _authorityUins);
+
+                    /**
+                     * 判断参数 AuthorityUins 是否已赋值
+                     * @return AuthorityUins 是否已赋值
+                     * 
+                     */
+                    bool AuthorityUinsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +220,18 @@ namespace TencentCloud
                      */
                     std::string m_knowledgeBaseDesc;
                     bool m_knowledgeBaseDescHasBeenSet;
+
+                    /**
+                     * 1仅自己使用，2指定用户，0全员
+                     */
+                    int64_t m_useScope;
+                    bool m_useScopeHasBeenSet;
+
+                    /**
+                     * 可使用用户列表
+                     */
+                    std::vector<std::string> m_authorityUins;
+                    bool m_authorityUinsHasBeenSet;
 
                 };
             }

@@ -193,6 +193,27 @@ namespace TencentCloud
                      */
                     bool GracefulStopSecondsHasBeenSet() const;
 
+                    /**
+                     * 获取场景最大执行次数
+                     * @return IterationCount 场景最大执行次数
+                     * 
+                     */
+                    int64_t GetIterationCount() const;
+
+                    /**
+                     * 设置场景最大执行次数
+                     * @param _iterationCount 场景最大执行次数
+                     * 
+                     */
+                    void SetIterationCount(const int64_t& _iterationCount);
+
+                    /**
+                     * 判断参数 IterationCount 是否已赋值
+                     * @return IterationCount 是否已赋值
+                     * 
+                     */
+                    bool IterationCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +257,12 @@ namespace TencentCloud
                      */
                     int64_t m_gracefulStopSeconds;
                     bool m_gracefulStopSecondsHasBeenSet;
+
+                    /**
+                     * 场景最大执行次数
+                     */
+                    int64_t m_iterationCount;
+                    bool m_iterationCountHasBeenSet;
 
                 };
             }

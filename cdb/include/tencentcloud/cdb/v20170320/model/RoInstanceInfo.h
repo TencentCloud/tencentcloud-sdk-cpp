@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取RO可用区的正式名称，如ap-shanghai-1
-                     * @return Zone RO可用区的正式名称，如ap-shanghai-1
+                     * 获取RO可用区的正式名称，如 ap-shanghai-2
+                     * @return Zone RO可用区的正式名称，如 ap-shanghai-2
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置RO可用区的正式名称，如ap-shanghai-1
-                     * @param _zone RO可用区的正式名称，如ap-shanghai-1
+                     * 设置RO可用区的正式名称，如 ap-shanghai-2
+                     * @param _zone RO可用区的正式名称，如 ap-shanghai-2
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -583,7 +583,7 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * RO可用区的正式名称，如ap-shanghai-1
+                     * RO可用区的正式名称，如 ap-shanghai-2
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;

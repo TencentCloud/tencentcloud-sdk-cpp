@@ -84,6 +84,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/ResourceGroupInfo.h
   include/tencentcloud/tione/v20211111/model/CreateNotebookRequest.h
   include/tencentcloud/tione/v20211111/model/CreatePresignedNotebookUrlResponse.h
+  include/tencentcloud/tione/v20211111/model/ModifyNotebookRequest.h
   include/tencentcloud/tione/v20211111/model/HorizontalPodAutoscaler.h
   include/tencentcloud/tione/v20211111/model/ResourceConfigInfo.h
   include/tencentcloud/tione/v20211111/model/PublicDataSourceFS.h
@@ -121,6 +122,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/ImageInfo.h
   include/tencentcloud/tione/v20211111/model/Tag.h
   include/tencentcloud/tione/v20211111/model/ServiceInfo.h
+  include/tencentcloud/tione/v20211111/model/StopNotebookResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceRequest.h
   include/tencentcloud/tione/v20211111/model/CreateTrainingTaskResponse.h
   include/tencentcloud/tione/v20211111/model/ModifyModelServiceAuthTokenResponse.h
@@ -130,7 +132,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/CreateTrainingTaskRequest.h
   include/tencentcloud/tione/v20211111/model/Message.h
   include/tencentcloud/tione/v20211111/model/CreatePresignedNotebookUrlRequest.h
-  include/tencentcloud/tione/v20211111/model/StopNotebookResponse.h
+  include/tencentcloud/tione/v20211111/model/ModifyNotebookResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeBuildInImagesResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeDatasetsResponse.h
@@ -368,6 +370,7 @@ set(tione_src
   src/v20211111/model/ResourceGroupInfo.cpp
   src/v20211111/model/CreateNotebookRequest.cpp
   src/v20211111/model/CreatePresignedNotebookUrlResponse.cpp
+  src/v20211111/model/ModifyNotebookRequest.cpp
   src/v20211111/model/HorizontalPodAutoscaler.cpp
   src/v20211111/model/ResourceConfigInfo.cpp
   src/v20211111/model/PublicDataSourceFS.cpp
@@ -405,6 +408,7 @@ set(tione_src
   src/v20211111/model/ImageInfo.cpp
   src/v20211111/model/Tag.cpp
   src/v20211111/model/ServiceInfo.cpp
+  src/v20211111/model/StopNotebookResponse.cpp
   src/v20211111/model/DescribeModelServiceRequest.cpp
   src/v20211111/model/CreateTrainingTaskResponse.cpp
   src/v20211111/model/ModifyModelServiceAuthTokenResponse.cpp
@@ -414,7 +418,7 @@ set(tione_src
   src/v20211111/model/CreateTrainingTaskRequest.cpp
   src/v20211111/model/Message.cpp
   src/v20211111/model/CreatePresignedNotebookUrlRequest.cpp
-  src/v20211111/model/StopNotebookResponse.cpp
+  src/v20211111/model/ModifyNotebookResponse.cpp
   src/v20211111/model/DescribeModelServiceResponse.cpp
   src/v20211111/model/DescribeBuildInImagesResponse.cpp
   src/v20211111/model/DescribeDatasetsResponse.cpp

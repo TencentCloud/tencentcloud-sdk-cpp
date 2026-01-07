@@ -2390,6 +2390,56 @@ TioneClient::ModifyModelServiceAuthorizationOutcomeCallable TioneClient::ModifyM
     return prom->get_future();
 }
 
+TioneClient::ModifyNotebookOutcome TioneClient::ModifyNotebook(const ModifyNotebookRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNotebook");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNotebookResponse rsp = ModifyNotebookResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNotebookOutcome(rsp);
+        else
+            return ModifyNotebookOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNotebookOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::ModifyNotebookAsync(const ModifyNotebookRequest& request, const ModifyNotebookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyNotebookRequest&;
+    using Resp = ModifyNotebookResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyNotebook", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::ModifyNotebookOutcomeCallable TioneClient::ModifyNotebookCallable(const ModifyNotebookRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyNotebookOutcome>>();
+    ModifyNotebookAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const ModifyNotebookRequest&,
+        ModifyNotebookOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TioneClient::ModifyNotebookTagsOutcome TioneClient::ModifyNotebookTags(const ModifyNotebookTagsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyNotebookTags");

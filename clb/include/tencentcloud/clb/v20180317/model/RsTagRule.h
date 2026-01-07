@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡监听器 ID。
-                     * @return ListenerId 负载均衡监听器 ID。
+                     * 获取<p>负载均衡监听器 ID。</p>
+                     * @return ListenerId <p>负载均衡监听器 ID。</p>
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置负载均衡监听器 ID。
-                     * @param _listenerId 负载均衡监听器 ID。
+                     * 设置<p>负载均衡监听器 ID。</p>
+                     * @param _listenerId <p>负载均衡监听器 ID。</p>
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取要修改标签的后端机器列表。
-                     * @return Targets 要修改标签的后端机器列表。
+                     * 获取<p>要修改标签的后端机器列表。</p>
+                     * @return Targets <p>要修改标签的后端机器列表。</p>
                      * 
                      */
                     std::vector<Target> GetTargets() const;
 
                     /**
-                     * 设置要修改标签的后端机器列表。
-                     * @param _targets 要修改标签的后端机器列表。
+                     * 设置<p>要修改标签的后端机器列表。</p>
+                     * @param _targets <p>要修改标签的后端机器列表。</p>
                      * 
                      */
                     void SetTargets(const std::vector<Target>& _targets);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool TargetsHasBeenSet() const;
 
                     /**
-                     * 获取转发规则的ID，七层规则时需要此参数，4层规则不需要。
-                     * @return LocationId 转发规则的ID，七层规则时需要此参数，4层规则不需要。
+                     * 获取<p>转发规则的ID，七层规则时需要此参数，4层规则不需要。</p>
+                     * @return LocationId <p>转发规则的ID，七层规则时需要此参数，4层规则不需要。</p>
                      * 
                      */
                     std::string GetLocationId() const;
 
                     /**
-                     * 设置转发规则的ID，七层规则时需要此参数，4层规则不需要。
-                     * @param _locationId 转发规则的ID，七层规则时需要此参数，4层规则不需要。
+                     * 设置<p>转发规则的ID，七层规则时需要此参数，4层规则不需要。</p>
+                     * @param _locationId <p>转发规则的ID，七层规则时需要此参数，4层规则不需要。</p>
                      * 
                      */
                     void SetLocationId(const std::string& _locationId);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool LocationIdHasBeenSet() const;
 
                     /**
-                     * 获取后端服务修改后的标签。此参数的优先级低于前述[Target](https://cloud.tencent.com/document/api/214/30694#Target)中的Tag参数，即最终的标签以Target中的Tag参数值为准，仅当Target中的Tag参数为空时，才以RsTagRule中的Tag参数为准。
-                     * @return Tag 后端服务修改后的标签。此参数的优先级低于前述[Target](https://cloud.tencent.com/document/api/214/30694#Target)中的Tag参数，即最终的标签以Target中的Tag参数值为准，仅当Target中的Tag参数为空时，才以RsTagRule中的Tag参数为准。
+                     * 获取<p>后端服务修改后的标签。此参数的优先级低于前述<a href="https://cloud.tencent.com/document/api/214/30694#Target">Target</a>中的Tag参数，即最终的标签以Target中的Tag参数值为准，仅当Target中的Tag参数为空时，才以RsTagRule中的Tag参数为准。</p>
+                     * @return Tag <p>后端服务修改后的标签。此参数的优先级低于前述<a href="https://cloud.tencent.com/document/api/214/30694#Target">Target</a>中的Tag参数，即最终的标签以Target中的Tag参数值为准，仅当Target中的Tag参数为空时，才以RsTagRule中的Tag参数为准。</p>
                      * 
                      */
                     std::string GetTag() const;
 
                     /**
-                     * 设置后端服务修改后的标签。此参数的优先级低于前述[Target](https://cloud.tencent.com/document/api/214/30694#Target)中的Tag参数，即最终的标签以Target中的Tag参数值为准，仅当Target中的Tag参数为空时，才以RsTagRule中的Tag参数为准。
-                     * @param _tag 后端服务修改后的标签。此参数的优先级低于前述[Target](https://cloud.tencent.com/document/api/214/30694#Target)中的Tag参数，即最终的标签以Target中的Tag参数值为准，仅当Target中的Tag参数为空时，才以RsTagRule中的Tag参数为准。
+                     * 设置<p>后端服务修改后的标签。此参数的优先级低于前述<a href="https://cloud.tencent.com/document/api/214/30694#Target">Target</a>中的Tag参数，即最终的标签以Target中的Tag参数值为准，仅当Target中的Tag参数为空时，才以RsTagRule中的Tag参数为准。</p>
+                     * @param _tag <p>后端服务修改后的标签。此参数的优先级低于前述<a href="https://cloud.tencent.com/document/api/214/30694#Target">Target</a>中的Tag参数，即最终的标签以Target中的Tag参数值为准，仅当Target中的Tag参数为空时，才以RsTagRule中的Tag参数为准。</p>
                      * 
                      */
                     void SetTag(const std::string& _tag);
@@ -134,25 +134,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡监听器 ID。
+                     * <p>负载均衡监听器 ID。</p>
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 要修改标签的后端机器列表。
+                     * <p>要修改标签的后端机器列表。</p>
                      */
                     std::vector<Target> m_targets;
                     bool m_targetsHasBeenSet;
 
                     /**
-                     * 转发规则的ID，七层规则时需要此参数，4层规则不需要。
+                     * <p>转发规则的ID，七层规则时需要此参数，4层规则不需要。</p>
                      */
                     std::string m_locationId;
                     bool m_locationIdHasBeenSet;
 
                     /**
-                     * 后端服务修改后的标签。此参数的优先级低于前述[Target](https://cloud.tencent.com/document/api/214/30694#Target)中的Tag参数，即最终的标签以Target中的Tag参数值为准，仅当Target中的Tag参数为空时，才以RsTagRule中的Tag参数为准。
+                     * <p>后端服务修改后的标签。此参数的优先级低于前述<a href="https://cloud.tencent.com/document/api/214/30694#Target">Target</a>中的Tag参数，即最终的标签以Target中的Tag参数值为准，仅当Target中的Tag参数为空时，才以RsTagRule中的Tag参数为准。</p>
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;

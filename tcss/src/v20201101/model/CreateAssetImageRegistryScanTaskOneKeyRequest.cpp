@@ -27,6 +27,7 @@ CreateAssetImageRegistryScanTaskOneKeyRequest::CreateAssetImageRegistryScanTaskO
     m_imagesHasBeenSet(false),
     m_scanTypeHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_excludeIDsHasBeenSet(false),
     m_isLatestHasBeenSet(false),
     m_scanScopeHasBeenSet(false),
     m_registryTypeHasBeenSet(false),
@@ -87,6 +88,19 @@ string CreateAssetImageRegistryScanTaskOneKeyRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_id.begin(); itr != m_id.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_excludeIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludeIDs.begin(); itr != m_excludeIDs.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
@@ -220,6 +234,22 @@ void CreateAssetImageRegistryScanTaskOneKeyRequest::SetId(const vector<uint64_t>
 bool CreateAssetImageRegistryScanTaskOneKeyRequest::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+vector<uint64_t> CreateAssetImageRegistryScanTaskOneKeyRequest::GetExcludeIDs() const
+{
+    return m_excludeIDs;
+}
+
+void CreateAssetImageRegistryScanTaskOneKeyRequest::SetExcludeIDs(const vector<uint64_t>& _excludeIDs)
+{
+    m_excludeIDs = _excludeIDs;
+    m_excludeIDsHasBeenSet = true;
+}
+
+bool CreateAssetImageRegistryScanTaskOneKeyRequest::ExcludeIDsHasBeenSet() const
+{
+    return m_excludeIDsHasBeenSet;
 }
 
 bool CreateAssetImageRegistryScanTaskOneKeyRequest::GetIsLatest() const

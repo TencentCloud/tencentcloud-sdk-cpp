@@ -8190,6 +8190,56 @@ LiveClient::ForbidLiveStreamOutcomeCallable LiveClient::ForbidLiveStreamCallable
     return prom->get_future();
 }
 
+LiveClient::InsertTaskTemporaryFilesOutcome LiveClient::InsertTaskTemporaryFiles(const InsertTaskTemporaryFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "InsertTaskTemporaryFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InsertTaskTemporaryFilesResponse rsp = InsertTaskTemporaryFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InsertTaskTemporaryFilesOutcome(rsp);
+        else
+            return InsertTaskTemporaryFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return InsertTaskTemporaryFilesOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::InsertTaskTemporaryFilesAsync(const InsertTaskTemporaryFilesRequest& request, const InsertTaskTemporaryFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const InsertTaskTemporaryFilesRequest&;
+    using Resp = InsertTaskTemporaryFilesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "InsertTaskTemporaryFiles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::InsertTaskTemporaryFilesOutcomeCallable LiveClient::InsertTaskTemporaryFilesCallable(const InsertTaskTemporaryFilesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<InsertTaskTemporaryFilesOutcome>>();
+    InsertTaskTemporaryFilesAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const InsertTaskTemporaryFilesRequest&,
+        InsertTaskTemporaryFilesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LiveClient::ModifyCasterOutcome LiveClient::ModifyCaster(const ModifyCasterRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCaster");

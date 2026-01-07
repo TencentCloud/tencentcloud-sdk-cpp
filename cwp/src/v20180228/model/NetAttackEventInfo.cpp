@@ -44,7 +44,8 @@ NetAttackEventInfo::NetAttackEventInfo() :
     m_typeHasBeenSet(false),
     m_hostOpTypeHasBeenSet(false),
     m_hostOpProcessTreeHasBeenSet(false),
-    m_iPAnalyseHasBeenSet(false)
+    m_iPAnalyseHasBeenSet(false),
+    m_netResponsePayloadHasBeenSet(false)
 {
 }
 
@@ -307,6 +308,16 @@ CoreInternalOutcome NetAttackEventInfo::Deserialize(const rapidjson::Value &valu
         m_iPAnalyseHasBeenSet = true;
     }
 
+    if (value.HasMember("NetResponsePayload") && !value["NetResponsePayload"].IsNull())
+    {
+        if (!value["NetResponsePayload"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetAttackEventInfo.NetResponsePayload` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_netResponsePayload = string(value["NetResponsePayload"].GetString());
+        m_netResponsePayloadHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -506,6 +517,14 @@ void NetAttackEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_iPAnalyse.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_netResponsePayloadHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetResponsePayload";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_netResponsePayload.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -893,5 +912,21 @@ void NetAttackEventInfo::SetIPAnalyse(const IPAnalyse& _iPAnalyse)
 bool NetAttackEventInfo::IPAnalyseHasBeenSet() const
 {
     return m_iPAnalyseHasBeenSet;
+}
+
+string NetAttackEventInfo::GetNetResponsePayload() const
+{
+    return m_netResponsePayload;
+}
+
+void NetAttackEventInfo::SetNetResponsePayload(const string& _netResponsePayload)
+{
+    m_netResponsePayload = _netResponsePayload;
+    m_netResponsePayloadHasBeenSet = true;
+}
+
+bool NetAttackEventInfo::NetResponsePayloadHasBeenSet() const
+{
+    return m_netResponsePayloadHasBeenSet;
 }
 

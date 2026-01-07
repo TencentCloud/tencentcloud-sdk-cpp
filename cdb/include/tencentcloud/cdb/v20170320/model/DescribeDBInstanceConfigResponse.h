@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool DeployModeHasBeenSet() const;
 
                     /**
-                     * 获取实例可用区信息，格式如 "ap-shanghai-1"。
-                     * @return Zone 实例可用区信息，格式如 "ap-shanghai-1"。
+                     * 获取实例可用区信息，格式如 "ap-shanghai-2"。
+                     * @return Zone 实例可用区信息，格式如 "ap-shanghai-2"。
                      * 
                      */
                     std::string GetZone() const;
@@ -148,7 +148,7 @@ namespace TencentCloud
                     bool m_deployModeHasBeenSet;
 
                     /**
-                     * 实例可用区信息，格式如 "ap-shanghai-1"。
+                     * 实例可用区信息，格式如 "ap-shanghai-2"。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;

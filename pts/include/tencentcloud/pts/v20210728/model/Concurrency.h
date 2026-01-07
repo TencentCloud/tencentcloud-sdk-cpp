@@ -156,6 +156,27 @@ namespace TencentCloud
                      */
                     bool ResourcesHasBeenSet() const;
 
+                    /**
+                     * 获取压力模型
+                     * @return Mode 压力模型
+                     * 
+                     */
+                    std::string GetMode() const;
+
+                    /**
+                     * 设置压力模型
+                     * @param _mode 压力模型
+                     * 
+                     */
+                    void SetMode(const std::string& _mode);
+
+                    /**
+                     * 判断参数 Mode 是否已赋值
+                     * @return Mode 是否已赋值
+                     * 
+                     */
+                    bool ModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +209,12 @@ namespace TencentCloud
                      */
                     int64_t m_resources;
                     bool m_resourcesHasBeenSet;
+
+                    /**
+                     * 压力模型
+                     */
+                    std::string m_mode;
+                    bool m_modeHasBeenSet;
 
                 };
             }

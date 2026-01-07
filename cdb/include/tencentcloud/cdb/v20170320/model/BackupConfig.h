@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ReplicationModeHasBeenSet() const;
 
                     /**
-                     * 获取第二个从库可用区的正式名称，如ap-shanghai-1
-                     * @return Zone 第二个从库可用区的正式名称，如ap-shanghai-1
+                     * 获取第二个从库可用区的正式名称，如 ap-shanghai-2
+                     * @return Zone 第二个从库可用区的正式名称，如 ap-shanghai-2
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置第二个从库可用区的正式名称，如ap-shanghai-1
-                     * @param _zone 第二个从库可用区的正式名称，如ap-shanghai-1
+                     * 设置第二个从库可用区的正式名称，如 ap-shanghai-2
+                     * @param _zone 第二个从库可用区的正式名称，如 ap-shanghai-2
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -139,7 +139,7 @@ namespace TencentCloud
                     bool m_replicationModeHasBeenSet;
 
                     /**
-                     * 第二个从库可用区的正式名称，如ap-shanghai-1
+                     * 第二个从库可用区的正式名称，如 ap-shanghai-2
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;

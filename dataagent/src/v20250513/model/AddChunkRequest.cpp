@@ -28,7 +28,8 @@ AddChunkRequest::AddChunkRequest() :
     m_beforeChunkIdHasBeenSet(false),
     m_insertPosHasBeenSet(false),
     m_contentHasBeenSet(false),
-    m_afterChunkIdHasBeenSet(false)
+    m_afterChunkIdHasBeenSet(false),
+    m_knowledgeBaseIdHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string AddChunkRequest::ToJsonString() const
         string key = "AfterChunkId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_afterChunkId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_knowledgeBaseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeBaseId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_knowledgeBaseId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void AddChunkRequest::SetAfterChunkId(const string& _afterChunkId)
 bool AddChunkRequest::AfterChunkIdHasBeenSet() const
 {
     return m_afterChunkIdHasBeenSet;
+}
+
+string AddChunkRequest::GetKnowledgeBaseId() const
+{
+    return m_knowledgeBaseId;
+}
+
+void AddChunkRequest::SetKnowledgeBaseId(const string& _knowledgeBaseId)
+{
+    m_knowledgeBaseId = _knowledgeBaseId;
+    m_knowledgeBaseIdHasBeenSet = true;
+}
+
+bool AddChunkRequest::KnowledgeBaseIdHasBeenSet() const
+{
+    return m_knowledgeBaseIdHasBeenSet;
 }
 
 

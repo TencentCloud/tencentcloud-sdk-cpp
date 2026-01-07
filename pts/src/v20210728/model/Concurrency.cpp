@@ -25,7 +25,8 @@ Concurrency::Concurrency() :
     m_iterationCountHasBeenSet(false),
     m_maxRequestsPerSecondHasBeenSet(false),
     m_gracefulStopSecondsHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
+    m_resourcesHasBeenSet(false),
+    m_modeHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome Concurrency::Deserialize(const rapidjson::Value &value)
         m_resourcesHasBeenSet = true;
     }
 
+    if (value.HasMember("Mode") && !value["Mode"].IsNull())
+    {
+        if (!value["Mode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Concurrency.Mode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mode = string(value["Mode"].GetString());
+        m_modeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -146,6 +157,14 @@ void Concurrency::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Resources";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resources, allocator);
+    }
+
+    if (m_modeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -229,5 +248,21 @@ void Concurrency::SetResources(const int64_t& _resources)
 bool Concurrency::ResourcesHasBeenSet() const
 {
     return m_resourcesHasBeenSet;
+}
+
+string Concurrency::GetMode() const
+{
+    return m_mode;
+}
+
+void Concurrency::SetMode(const string& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool Concurrency::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
 }
 

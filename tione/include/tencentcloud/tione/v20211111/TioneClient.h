@@ -117,6 +117,8 @@
 #include <tencentcloud/tione/v20211111/model/ModifyModelServiceAuthTokenResponse.h>
 #include <tencentcloud/tione/v20211111/model/ModifyModelServiceAuthorizationRequest.h>
 #include <tencentcloud/tione/v20211111/model/ModifyModelServiceAuthorizationResponse.h>
+#include <tencentcloud/tione/v20211111/model/ModifyNotebookRequest.h>
+#include <tencentcloud/tione/v20211111/model/ModifyNotebookResponse.h>
 #include <tencentcloud/tione/v20211111/model/ModifyNotebookTagsRequest.h>
 #include <tencentcloud/tione/v20211111/model/ModifyNotebookTagsResponse.h>
 #include <tencentcloud/tione/v20211111/model/PushTrainingMetricsRequest.h>
@@ -286,6 +288,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyModelServiceAuthorizationResponse> ModifyModelServiceAuthorizationOutcome;
                 typedef std::future<ModifyModelServiceAuthorizationOutcome> ModifyModelServiceAuthorizationOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::ModifyModelServiceAuthorizationRequest&, ModifyModelServiceAuthorizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModelServiceAuthorizationAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyNotebookResponse> ModifyNotebookOutcome;
+                typedef std::future<ModifyNotebookOutcome> ModifyNotebookOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::ModifyNotebookRequest&, ModifyNotebookOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNotebookAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyNotebookTagsResponse> ModifyNotebookTagsOutcome;
                 typedef std::future<ModifyNotebookTagsOutcome> ModifyNotebookTagsOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::ModifyNotebookTagsRequest&, ModifyNotebookTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNotebookTagsAsyncHandler;
@@ -737,6 +742,15 @@ https://cloud.tencent.com/document/product/1278/85305
                 ModifyModelServiceAuthorizationOutcome ModifyModelServiceAuthorization(const Model::ModifyModelServiceAuthorizationRequest &request);
                 void ModifyModelServiceAuthorizationAsync(const Model::ModifyModelServiceAuthorizationRequest& request, const ModifyModelServiceAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyModelServiceAuthorizationOutcomeCallable ModifyModelServiceAuthorizationCallable(const Model::ModifyModelServiceAuthorizationRequest& request);
+
+                /**
+                 *修改Notebook
+                 * @param req ModifyNotebookRequest
+                 * @return ModifyNotebookOutcome
+                 */
+                ModifyNotebookOutcome ModifyNotebook(const Model::ModifyNotebookRequest &request);
+                void ModifyNotebookAsync(const Model::ModifyNotebookRequest& request, const ModifyNotebookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNotebookOutcomeCallable ModifyNotebookCallable(const Model::ModifyNotebookRequest& request);
 
                 /**
                  *修改Notebook标签

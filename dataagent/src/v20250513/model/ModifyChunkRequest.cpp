@@ -26,7 +26,8 @@ ModifyChunkRequest::ModifyChunkRequest() :
     m_instanceIdHasBeenSet(false),
     m_fileIdHasBeenSet(false),
     m_chunkIdHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_knowledgeBaseIdHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string ModifyChunkRequest::ToJsonString() const
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_knowledgeBaseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeBaseId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_knowledgeBaseId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void ModifyChunkRequest::SetContent(const string& _content)
 bool ModifyChunkRequest::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+string ModifyChunkRequest::GetKnowledgeBaseId() const
+{
+    return m_knowledgeBaseId;
+}
+
+void ModifyChunkRequest::SetKnowledgeBaseId(const string& _knowledgeBaseId)
+{
+    m_knowledgeBaseId = _knowledgeBaseId;
+    m_knowledgeBaseIdHasBeenSet = true;
+}
+
+bool ModifyChunkRequest::KnowledgeBaseIdHasBeenSet() const
+{
+    return m_knowledgeBaseIdHasBeenSet;
 }
 
 

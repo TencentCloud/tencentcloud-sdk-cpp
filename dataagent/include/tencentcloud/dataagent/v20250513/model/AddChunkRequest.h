@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool AfterChunkIdHasBeenSet() const;
 
+                    /**
+                     * 获取知识库id
+                     * @return KnowledgeBaseId 知识库id
+                     * 
+                     */
+                    std::string GetKnowledgeBaseId() const;
+
+                    /**
+                     * 设置知识库id
+                     * @param _knowledgeBaseId 知识库id
+                     * 
+                     */
+                    void SetKnowledgeBaseId(const std::string& _knowledgeBaseId);
+
+                    /**
+                     * 判断参数 KnowledgeBaseId 是否已赋值
+                     * @return KnowledgeBaseId 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeBaseIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     std::string m_afterChunkId;
                     bool m_afterChunkIdHasBeenSet;
+
+                    /**
+                     * 知识库id
+                     */
+                    std::string m_knowledgeBaseId;
+                    bool m_knowledgeBaseIdHasBeenSet;
 
                 };
             }

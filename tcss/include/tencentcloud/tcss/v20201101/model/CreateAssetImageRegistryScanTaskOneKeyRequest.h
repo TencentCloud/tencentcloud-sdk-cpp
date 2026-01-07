@@ -128,6 +128,27 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
+                     * 获取剔除扫描的镜像id列表
+                     * @return ExcludeIDs 剔除扫描的镜像id列表
+                     * 
+                     */
+                    std::vector<uint64_t> GetExcludeIDs() const;
+
+                    /**
+                     * 设置剔除扫描的镜像id列表
+                     * @param _excludeIDs 剔除扫描的镜像id列表
+                     * 
+                     */
+                    void SetExcludeIDs(const std::vector<uint64_t>& _excludeIDs);
+
+                    /**
+                     * 判断参数 ExcludeIDs 是否已赋值
+                     * @return ExcludeIDs 是否已赋值
+                     * 
+                     */
+                    bool ExcludeIDsHasBeenSet() const;
+
+                    /**
                      * 获取是否最新镜像
                      * @return IsLatest 是否最新镜像
                      * 
@@ -278,6 +299,12 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * 剔除扫描的镜像id列表
+                     */
+                    std::vector<uint64_t> m_excludeIDs;
+                    bool m_excludeIDsHasBeenSet;
 
                     /**
                      * 是否最新镜像
