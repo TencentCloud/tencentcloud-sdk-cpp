@@ -39,7 +39,8 @@ StarRocksQueryInfo::StarRocksQueryInfo() :
     m_beginTimeHasBeenSet(false),
     m_executionStateHasBeenSet(false),
     m_executionStatementHasBeenSet(false),
-    m_userHasBeenSet(false)
+    m_userHasBeenSet(false),
+    m_errorCodeHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,16 @@ CoreInternalOutcome StarRocksQueryInfo::Deserialize(const rapidjson::Value &valu
         m_userHasBeenSet = true;
     }
 
+    if (value.HasMember("ErrorCode") && !value["ErrorCode"].IsNull())
+    {
+        if (!value["ErrorCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StarRocksQueryInfo.ErrorCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorCode = string(value["ErrorCode"].GetString());
+        m_errorCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +406,14 @@ void StarRocksQueryInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "User";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_user.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errorCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -702,5 +721,21 @@ void StarRocksQueryInfo::SetUser(const string& _user)
 bool StarRocksQueryInfo::UserHasBeenSet() const
 {
     return m_userHasBeenSet;
+}
+
+string StarRocksQueryInfo::GetErrorCode() const
+{
+    return m_errorCode;
+}
+
+void StarRocksQueryInfo::SetErrorCode(const string& _errorCode)
+{
+    m_errorCode = _errorCode;
+    m_errorCodeHasBeenSet = true;
+}
+
+bool StarRocksQueryInfo::ErrorCodeHasBeenSet() const
+{
+    return m_errorCodeHasBeenSet;
 }
 

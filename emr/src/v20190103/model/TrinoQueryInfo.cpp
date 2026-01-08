@@ -39,7 +39,8 @@ TrinoQueryInfo::TrinoQueryInfo() :
     m_stateHasBeenSet(false),
     m_statementHasBeenSet(false),
     m_userHasBeenSet(false),
-    m_writtenBytesHasBeenSet(false)
+    m_writtenBytesHasBeenSet(false),
+    m_errorMessageHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,16 @@ CoreInternalOutcome TrinoQueryInfo::Deserialize(const rapidjson::Value &value)
         m_writtenBytesHasBeenSet = true;
     }
 
+    if (value.HasMember("ErrorMessage") && !value["ErrorMessage"].IsNull())
+    {
+        if (!value["ErrorMessage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrinoQueryInfo.ErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorMessage = string(value["ErrorMessage"].GetString());
+        m_errorMessageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +406,14 @@ void TrinoQueryInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "WrittenBytes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_writtenBytes, allocator);
+    }
+
+    if (m_errorMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorMessage.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -702,5 +721,21 @@ void TrinoQueryInfo::SetWrittenBytes(const int64_t& _writtenBytes)
 bool TrinoQueryInfo::WrittenBytesHasBeenSet() const
 {
     return m_writtenBytesHasBeenSet;
+}
+
+string TrinoQueryInfo::GetErrorMessage() const
+{
+    return m_errorMessage;
+}
+
+void TrinoQueryInfo::SetErrorMessage(const string& _errorMessage)
+{
+    m_errorMessage = _errorMessage;
+    m_errorMessageHasBeenSet = true;
+}
+
+bool TrinoQueryInfo::ErrorMessageHasBeenSet() const
+{
+    return m_errorMessageHasBeenSet;
 }
 

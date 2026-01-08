@@ -28,6 +28,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/GetWorkflowFolderRequest.h
   include/tencentcloud/wedata/v20250806/model/WorkflowInfo.h
   include/tencentcloud/wedata/v20250806/model/ListTableResponse.h
+  include/tencentcloud/wedata/v20250806/model/CreateQualityRuleRequest.h
   include/tencentcloud/wedata/v20250806/model/CreateDataSourceRequest.h
   include/tencentcloud/wedata/v20250806/model/GetResourceGroupMetricsResponse.h
   include/tencentcloud/wedata/v20250806/model/DeleteWorkflowResponse.h
@@ -190,6 +191,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/GetTriggerWorkflowRunResponse.h
   include/tencentcloud/wedata/v20250806/model/RegisterLineageResponse.h
   include/tencentcloud/wedata/v20250806/model/ListTriggerWorkflowRunsResponse.h
+  include/tencentcloud/wedata/v20250806/model/ListQualityRuleGroupsResponse.h
   include/tencentcloud/wedata/v20250806/model/CreateCodeFileResponse.h
   include/tencentcloud/wedata/v20250806/model/ListResourceGroupsResponse.h
   include/tencentcloud/wedata/v20250806/model/UpdateResourceFolderRequest.h
@@ -203,11 +205,14 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/AuthorizeDataSourceRequest.h
   include/tencentcloud/wedata/v20250806/model/ExploreAuthorizeSubject.h
   include/tencentcloud/wedata/v20250806/model/GetTriggerTaskRunRequest.h
+  include/tencentcloud/wedata/v20250806/model/QualityRuleGroupPage.h
   include/tencentcloud/wedata/v20250806/model/SubmitTriggerTaskResponse.h
   include/tencentcloud/wedata/v20250806/model/ListQualityRuleGroupExecResultsByPageResponse.h
+  include/tencentcloud/wedata/v20250806/model/CreateQualityRuleVO.h
   include/tencentcloud/wedata/v20250806/model/GetSQLFolderRequest.h
   include/tencentcloud/wedata/v20250806/model/TaskFolder.h
   include/tencentcloud/wedata/v20250806/model/AlarmWayWebHook.h
+  include/tencentcloud/wedata/v20250806/model/CreateQualityRuleResponse.h
   include/tencentcloud/wedata/v20250806/model/GetResourceFileResponse.h
   include/tencentcloud/wedata/v20250806/model/GetTaskCodeRequest.h
   include/tencentcloud/wedata/v20250806/model/CreateSQLScriptResponse.h
@@ -295,6 +300,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/RerunTriggerWorkflowRunAsyncRequest.h
   include/tencentcloud/wedata/v20250806/model/QualityRuleTemplatePage.h
   include/tencentcloud/wedata/v20250806/model/LineageProperty.h
+  include/tencentcloud/wedata/v20250806/model/QualityRuleGroup.h
   include/tencentcloud/wedata/v20250806/model/KillTriggerWorkflowRunsResponse.h
   include/tencentcloud/wedata/v20250806/model/CreateTaskResponse.h
   include/tencentcloud/wedata/v20250806/model/CreateWorkflowPermissionsResult.h
@@ -559,6 +565,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/DeleteLineageRequest.h
   include/tencentcloud/wedata/v20250806/model/CreateOpsAlarmRuleRequest.h
   include/tencentcloud/wedata/v20250806/model/TaskDataRegistry.h
+  include/tencentcloud/wedata/v20250806/model/QualityRuleInfo.h
   include/tencentcloud/wedata/v20250806/model/SetSuccessTaskInstancesAsyncResponse.h
   include/tencentcloud/wedata/v20250806/model/UpdateSQLScriptRequest.h
   include/tencentcloud/wedata/v20250806/model/ParamInfo.h
@@ -574,6 +581,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/KillTaskInstancesAsyncRequest.h
   include/tencentcloud/wedata/v20250806/model/ListDataBackfillInstancesRequest.h
   include/tencentcloud/wedata/v20250806/model/CodeStudioFolderActionResult.h
+  include/tencentcloud/wedata/v20250806/model/ListQualityRuleGroupsRequest.h
   include/tencentcloud/wedata/v20250806/model/TriggerTaskVersionDetail.h
   include/tencentcloud/wedata/v20250806/model/UpdateTriggerTaskPartiallyResponse.h
   include/tencentcloud/wedata/v20250806/model/Filter.h
@@ -584,6 +592,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/WorkflowMaxPermission.h
   include/tencentcloud/wedata/v20250806/model/TaskSchedulerConfiguration.h
   include/tencentcloud/wedata/v20250806/model/QualitySqlExpression.h
+  include/tencentcloud/wedata/v20250806/model/QualityRuleCreateResult.h
   include/tencentcloud/wedata/v20250806/model/UpdateWorkflowFolderResponse.h
   include/tencentcloud/wedata/v20250806/model/DeleteDataSourceRequest.h
   include/tencentcloud/wedata/v20250806/model/UpdateTaskBaseAttributePart.h
@@ -1609,6 +1618,7 @@ set(wedata_src
   src/v20250806/model/GetWorkflowFolderRequest.cpp
   src/v20250806/model/WorkflowInfo.cpp
   src/v20250806/model/ListTableResponse.cpp
+  src/v20250806/model/CreateQualityRuleRequest.cpp
   src/v20250806/model/CreateDataSourceRequest.cpp
   src/v20250806/model/GetResourceGroupMetricsResponse.cpp
   src/v20250806/model/DeleteWorkflowResponse.cpp
@@ -1771,6 +1781,7 @@ set(wedata_src
   src/v20250806/model/GetTriggerWorkflowRunResponse.cpp
   src/v20250806/model/RegisterLineageResponse.cpp
   src/v20250806/model/ListTriggerWorkflowRunsResponse.cpp
+  src/v20250806/model/ListQualityRuleGroupsResponse.cpp
   src/v20250806/model/CreateCodeFileResponse.cpp
   src/v20250806/model/ListResourceGroupsResponse.cpp
   src/v20250806/model/UpdateResourceFolderRequest.cpp
@@ -1784,11 +1795,14 @@ set(wedata_src
   src/v20250806/model/AuthorizeDataSourceRequest.cpp
   src/v20250806/model/ExploreAuthorizeSubject.cpp
   src/v20250806/model/GetTriggerTaskRunRequest.cpp
+  src/v20250806/model/QualityRuleGroupPage.cpp
   src/v20250806/model/SubmitTriggerTaskResponse.cpp
   src/v20250806/model/ListQualityRuleGroupExecResultsByPageResponse.cpp
+  src/v20250806/model/CreateQualityRuleVO.cpp
   src/v20250806/model/GetSQLFolderRequest.cpp
   src/v20250806/model/TaskFolder.cpp
   src/v20250806/model/AlarmWayWebHook.cpp
+  src/v20250806/model/CreateQualityRuleResponse.cpp
   src/v20250806/model/GetResourceFileResponse.cpp
   src/v20250806/model/GetTaskCodeRequest.cpp
   src/v20250806/model/CreateSQLScriptResponse.cpp
@@ -1876,6 +1890,7 @@ set(wedata_src
   src/v20250806/model/RerunTriggerWorkflowRunAsyncRequest.cpp
   src/v20250806/model/QualityRuleTemplatePage.cpp
   src/v20250806/model/LineageProperty.cpp
+  src/v20250806/model/QualityRuleGroup.cpp
   src/v20250806/model/KillTriggerWorkflowRunsResponse.cpp
   src/v20250806/model/CreateTaskResponse.cpp
   src/v20250806/model/CreateWorkflowPermissionsResult.cpp
@@ -2140,6 +2155,7 @@ set(wedata_src
   src/v20250806/model/DeleteLineageRequest.cpp
   src/v20250806/model/CreateOpsAlarmRuleRequest.cpp
   src/v20250806/model/TaskDataRegistry.cpp
+  src/v20250806/model/QualityRuleInfo.cpp
   src/v20250806/model/SetSuccessTaskInstancesAsyncResponse.cpp
   src/v20250806/model/UpdateSQLScriptRequest.cpp
   src/v20250806/model/ParamInfo.cpp
@@ -2155,6 +2171,7 @@ set(wedata_src
   src/v20250806/model/KillTaskInstancesAsyncRequest.cpp
   src/v20250806/model/ListDataBackfillInstancesRequest.cpp
   src/v20250806/model/CodeStudioFolderActionResult.cpp
+  src/v20250806/model/ListQualityRuleGroupsRequest.cpp
   src/v20250806/model/TriggerTaskVersionDetail.cpp
   src/v20250806/model/UpdateTriggerTaskPartiallyResponse.cpp
   src/v20250806/model/Filter.cpp
@@ -2165,6 +2182,7 @@ set(wedata_src
   src/v20250806/model/WorkflowMaxPermission.cpp
   src/v20250806/model/TaskSchedulerConfiguration.cpp
   src/v20250806/model/QualitySqlExpression.cpp
+  src/v20250806/model/QualityRuleCreateResult.cpp
   src/v20250806/model/UpdateWorkflowFolderResponse.cpp
   src/v20250806/model/DeleteDataSourceRequest.cpp
   src/v20250806/model/UpdateTaskBaseAttributePart.cpp

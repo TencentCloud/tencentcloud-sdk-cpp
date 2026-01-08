@@ -169,6 +169,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeCasterResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeCasterDisplayInfoRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeCasterDisplayInfoResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterEmergencyStatusRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeCasterEmergencyStatusResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeCasterInputInfosRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeCasterInputInfosResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeCasterLayoutInfosRequest.h>
@@ -423,6 +425,8 @@
 #include <tencentcloud/live/v20180801/model/StopScreenshotTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/SwitchBackupStreamRequest.h>
 #include <tencentcloud/live/v20180801/model/SwitchBackupStreamResponse.h>
+#include <tencentcloud/live/v20180801/model/SwitchCasterToEmergencyRequest.h>
+#include <tencentcloud/live/v20180801/model/SwitchCasterToEmergencyResponse.h>
 #include <tencentcloud/live/v20180801/model/UnBindLiveDomainCertRequest.h>
 #include <tencentcloud/live/v20180801/model/UnBindLiveDomainCertResponse.h>
 #include <tencentcloud/live/v20180801/model/UpdateLiveWatermarkRequest.h>
@@ -660,6 +664,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCasterDisplayInfoResponse> DescribeCasterDisplayInfoOutcome;
                 typedef std::future<DescribeCasterDisplayInfoOutcome> DescribeCasterDisplayInfoOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeCasterDisplayInfoRequest&, DescribeCasterDisplayInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterDisplayInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCasterEmergencyStatusResponse> DescribeCasterEmergencyStatusOutcome;
+                typedef std::future<DescribeCasterEmergencyStatusOutcome> DescribeCasterEmergencyStatusOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeCasterEmergencyStatusRequest&, DescribeCasterEmergencyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterEmergencyStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCasterInputInfosResponse> DescribeCasterInputInfosOutcome;
                 typedef std::future<DescribeCasterInputInfosOutcome> DescribeCasterInputInfosOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeCasterInputInfosRequest&, DescribeCasterInputInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCasterInputInfosAsyncHandler;
@@ -1041,6 +1048,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SwitchBackupStreamResponse> SwitchBackupStreamOutcome;
                 typedef std::future<SwitchBackupStreamOutcome> SwitchBackupStreamOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::SwitchBackupStreamRequest&, SwitchBackupStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchBackupStreamAsyncHandler;
+                typedef Outcome<Core::Error, Model::SwitchCasterToEmergencyResponse> SwitchCasterToEmergencyOutcome;
+                typedef std::future<SwitchCasterToEmergencyOutcome> SwitchCasterToEmergencyOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::SwitchCasterToEmergencyRequest&, SwitchCasterToEmergencyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchCasterToEmergencyAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnBindLiveDomainCertResponse> UnBindLiveDomainCertOutcome;
                 typedef std::future<UnBindLiveDomainCertOutcome> UnBindLiveDomainCertOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::UnBindLiveDomainCertRequest&, UnBindLiveDomainCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnBindLiveDomainCertAsyncHandler;
@@ -1776,6 +1786,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeCasterDisplayInfoOutcome DescribeCasterDisplayInfo(const Model::DescribeCasterDisplayInfoRequest &request);
                 void DescribeCasterDisplayInfoAsync(const Model::DescribeCasterDisplayInfoRequest& request, const DescribeCasterDisplayInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCasterDisplayInfoOutcomeCallable DescribeCasterDisplayInfoCallable(const Model::DescribeCasterDisplayInfoRequest& request);
+
+                /**
+                 *该接口用查询导播台的备播状态
+                 * @param req DescribeCasterEmergencyStatusRequest
+                 * @return DescribeCasterEmergencyStatusOutcome
+                 */
+                DescribeCasterEmergencyStatusOutcome DescribeCasterEmergencyStatus(const Model::DescribeCasterEmergencyStatusRequest &request);
+                void DescribeCasterEmergencyStatusAsync(const Model::DescribeCasterEmergencyStatusRequest& request, const DescribeCasterEmergencyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCasterEmergencyStatusOutcomeCallable DescribeCasterEmergencyStatusCallable(const Model::DescribeCasterEmergencyStatusRequest& request);
 
                 /**
                  *该接口用来查询导播台的输入源信息列表。
@@ -2984,6 +3003,16 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 SwitchBackupStreamOutcome SwitchBackupStream(const Model::SwitchBackupStreamRequest &request);
                 void SwitchBackupStreamAsync(const Model::SwitchBackupStreamRequest& request, const SwitchBackupStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SwitchBackupStreamOutcomeCallable SwitchBackupStreamCallable(const Model::SwitchBackupStreamRequest& request);
+
+                /**
+                 *该接口用来将导播台切换到备播状态。
+该接口使用时，主监任务需处于运行状态。
+                 * @param req SwitchCasterToEmergencyRequest
+                 * @return SwitchCasterToEmergencyOutcome
+                 */
+                SwitchCasterToEmergencyOutcome SwitchCasterToEmergency(const Model::SwitchCasterToEmergencyRequest &request);
+                void SwitchCasterToEmergencyAsync(const Model::SwitchCasterToEmergencyRequest& request, const SwitchCasterToEmergencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SwitchCasterToEmergencyOutcomeCallable SwitchCasterToEmergencyCallable(const Model::SwitchCasterToEmergencyRequest& request);
 
                 /**
                  *解绑域名证书

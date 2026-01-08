@@ -20190,6 +20190,56 @@ VpcClient::ReplaceRoutesOutcomeCallable VpcClient::ReplaceRoutesCallable(const R
     return prom->get_future();
 }
 
+VpcClient::ReplaceRoutesWithRoutePolicyOutcome VpcClient::ReplaceRoutesWithRoutePolicy(const ReplaceRoutesWithRoutePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReplaceRoutesWithRoutePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReplaceRoutesWithRoutePolicyResponse rsp = ReplaceRoutesWithRoutePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReplaceRoutesWithRoutePolicyOutcome(rsp);
+        else
+            return ReplaceRoutesWithRoutePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ReplaceRoutesWithRoutePolicyOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ReplaceRoutesWithRoutePolicyAsync(const ReplaceRoutesWithRoutePolicyRequest& request, const ReplaceRoutesWithRoutePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ReplaceRoutesWithRoutePolicyRequest&;
+    using Resp = ReplaceRoutesWithRoutePolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ReplaceRoutesWithRoutePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VpcClient::ReplaceRoutesWithRoutePolicyOutcomeCallable VpcClient::ReplaceRoutesWithRoutePolicyCallable(const ReplaceRoutesWithRoutePolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ReplaceRoutesWithRoutePolicyOutcome>>();
+    ReplaceRoutesWithRoutePolicyAsync(
+    request,
+    [prom](
+        const VpcClient*,
+        const ReplaceRoutesWithRoutePolicyRequest&,
+        ReplaceRoutesWithRoutePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VpcClient::ReplaceSecurityGroupPoliciesOutcome VpcClient::ReplaceSecurityGroupPolicies(const ReplaceSecurityGroupPoliciesRequest &request)
 {
     auto outcome = MakeRequest(request, "ReplaceSecurityGroupPolicies");

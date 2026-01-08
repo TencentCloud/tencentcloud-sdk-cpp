@@ -140,6 +140,56 @@ CarClient::CreateSessionOutcomeCallable CarClient::CreateSessionCallable(const C
     return prom->get_future();
 }
 
+CarClient::DescribeConcurrentCountOutcome CarClient::DescribeConcurrentCount(const DescribeConcurrentCountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConcurrentCount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConcurrentCountResponse rsp = DescribeConcurrentCountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConcurrentCountOutcome(rsp);
+        else
+            return DescribeConcurrentCountOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConcurrentCountOutcome(outcome.GetError());
+    }
+}
+
+void CarClient::DescribeConcurrentCountAsync(const DescribeConcurrentCountRequest& request, const DescribeConcurrentCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeConcurrentCountRequest&;
+    using Resp = DescribeConcurrentCountResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeConcurrentCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CarClient::DescribeConcurrentCountOutcomeCallable CarClient::DescribeConcurrentCountCallable(const DescribeConcurrentCountRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeConcurrentCountOutcome>>();
+    DescribeConcurrentCountAsync(
+    request,
+    [prom](
+        const CarClient*,
+        const DescribeConcurrentCountRequest&,
+        DescribeConcurrentCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CarClient::DestroySessionOutcome CarClient::DestroySession(const DestroySessionRequest &request)
 {
     auto outcome = MakeRequest(request, "DestroySession");

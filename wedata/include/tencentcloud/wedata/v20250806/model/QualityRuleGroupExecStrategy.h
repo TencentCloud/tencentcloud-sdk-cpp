@@ -796,18 +796,18 @@ RERUN：重跑
                     bool EngineParamHasBeenSet() const;
 
                     /**
-                     * 获取数据目录名称，不填默认为DataLakeCatalog
+                     * 获取数据目录名称，不填默认为DataLakeCatalog（更新质量监控时该参数无效）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CatalogName 数据目录名称，不填默认为DataLakeCatalog
+                     * @return CatalogName 数据目录名称，不填默认为DataLakeCatalog（更新质量监控时该参数无效）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCatalogName() const;
 
                     /**
-                     * 设置数据目录名称，不填默认为DataLakeCatalog
+                     * 设置数据目录名称，不填默认为DataLakeCatalog（更新质量监控时该参数无效）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _catalogName 数据目录名称，不填默认为DataLakeCatalog
+                     * @param _catalogName 数据目录名称，不填默认为DataLakeCatalog（更新质量监控时该参数无效）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1030,7 +1030,7 @@ RERUN：重跑
                     bool m_engineParamHasBeenSet;
 
                     /**
-                     * 数据目录名称，不填默认为DataLakeCatalog
+                     * 数据目录名称，不填默认为DataLakeCatalog（更新质量监控时该参数无效）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_catalogName;

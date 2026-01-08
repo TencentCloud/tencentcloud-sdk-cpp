@@ -126,13 +126,9 @@ namespace TencentCloud
                      * 获取是否开启 IPv6 访问，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-
-
                      * @return Ipv6 是否开启 IPv6 访问，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-
-
                      * 
                      */
                     std::string GetIpv6() const;
@@ -141,13 +137,9 @@ namespace TencentCloud
                      * 设置是否开启 IPv6 访问，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-
-
                      * @param _ipv6 是否开启 IPv6 访问，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-
-
                      * 
                      */
                     void SetIpv6(const std::string& _ipv6);
@@ -163,11 +155,9 @@ namespace TencentCloud
                      * 获取是否开启固定 IP，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-
                      * @return StaticIp 是否开启固定 IP，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-
                      * 
                      */
                     std::string GetStaticIp() const;
@@ -176,11 +166,9 @@ namespace TencentCloud
                      * 设置是否开启固定 IP，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-
                      * @param _staticIp 是否开启固定 IP，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-
                      * 
                      */
                     void SetStaticIp(const std::string& _staticIp);
@@ -196,11 +184,9 @@ namespace TencentCloud
                      * 获取是否开启中国大陆网络优化，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-
                      * @return AccelerateMainland 是否开启中国大陆网络优化，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-
                      * 
                      */
                     std::string GetAccelerateMainland() const;
@@ -209,11 +195,9 @@ namespace TencentCloud
                      * 设置是否开启中国大陆网络优化，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-
                      * @param _accelerateMainland 是否开启中国大陆网络优化，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-
                      * 
                      */
                     void SetAccelerateMainland(const std::string& _accelerateMainland);
@@ -227,22 +211,26 @@ namespace TencentCloud
 
                     /**
                      * 获取L3/L4 DDoS 防护配置，不填写时默认使用平台默认防护选项。详情参考 [独立 DDoS 防护](https://cloud.tencent.com/document/product/1552/95994)。
+本字段已废弃，请使用 DDosProtectionId 字段指定关联的DDoS防护配置。
                      * @return DDosProtectionConfig L3/L4 DDoS 防护配置，不填写时默认使用平台默认防护选项。详情参考 [独立 DDoS 防护](https://cloud.tencent.com/document/product/1552/95994)。
-                     * 
+本字段已废弃，请使用 DDosProtectionId 字段指定关联的DDoS防护配置。
+                     * @deprecated
                      */
                     DDosProtectionConfig GetDDosProtectionConfig() const;
 
                     /**
                      * 设置L3/L4 DDoS 防护配置，不填写时默认使用平台默认防护选项。详情参考 [独立 DDoS 防护](https://cloud.tencent.com/document/product/1552/95994)。
+本字段已废弃，请使用 DDosProtectionId 字段指定关联的DDoS防护配置。
                      * @param _dDosProtectionConfig L3/L4 DDoS 防护配置，不填写时默认使用平台默认防护选项。详情参考 [独立 DDoS 防护](https://cloud.tencent.com/document/product/1552/95994)。
-                     * 
+本字段已废弃，请使用 DDosProtectionId 字段指定关联的DDoS防护配置。
+                     * @deprecated
                      */
                     void SetDDosProtectionConfig(const DDosProtectionConfig& _dDosProtectionConfig);
 
                     /**
                      * 判断参数 DDosProtectionConfig 是否已赋值
                      * @return DDosProtectionConfig 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DDosProtectionConfigHasBeenSet() const;
 
@@ -274,8 +262,6 @@ namespace TencentCloud
                      * 是否开启 IPv6 访问，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-
-
                      */
                     std::string m_ipv6;
                     bool m_ipv6HasBeenSet;
@@ -284,7 +270,6 @@ namespace TencentCloud
                      * 是否开启固定 IP，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-
                      */
                     std::string m_staticIp;
                     bool m_staticIpHasBeenSet;
@@ -293,13 +278,13 @@ namespace TencentCloud
                      * 是否开启中国大陆网络优化，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-
                      */
                     std::string m_accelerateMainland;
                     bool m_accelerateMainlandHasBeenSet;
 
                     /**
                      * L3/L4 DDoS 防护配置，不填写时默认使用平台默认防护选项。详情参考 [独立 DDoS 防护](https://cloud.tencent.com/document/product/1552/95994)。
+本字段已废弃，请使用 DDosProtectionId 字段指定关联的DDoS防护配置。
                      */
                     DDosProtectionConfig m_dDosProtectionConfig;
                     bool m_dDosProtectionConfigHasBeenSet;

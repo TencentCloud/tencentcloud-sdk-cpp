@@ -31,7 +31,9 @@ NetworkAclQuintupleEntry::NetworkAclQuintupleEntry() :
     m_networkAclQuintupleEntryIdHasBeenSet(false),
     m_priorityHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_networkAclDirectionHasBeenSet(false)
+    m_networkAclDirectionHasBeenSet(false),
+    m_sourceIPv6CidrHasBeenSet(false),
+    m_destinationIPv6CidrHasBeenSet(false)
 {
 }
 
@@ -150,6 +152,26 @@ CoreInternalOutcome NetworkAclQuintupleEntry::Deserialize(const rapidjson::Value
         m_networkAclDirectionHasBeenSet = true;
     }
 
+    if (value.HasMember("SourceIPv6Cidr") && !value["SourceIPv6Cidr"].IsNull())
+    {
+        if (!value["SourceIPv6Cidr"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetworkAclQuintupleEntry.SourceIPv6Cidr` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceIPv6Cidr = string(value["SourceIPv6Cidr"].GetString());
+        m_sourceIPv6CidrHasBeenSet = true;
+    }
+
+    if (value.HasMember("DestinationIPv6Cidr") && !value["DestinationIPv6Cidr"].IsNull())
+    {
+        if (!value["DestinationIPv6Cidr"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetworkAclQuintupleEntry.DestinationIPv6Cidr` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_destinationIPv6Cidr = string(value["DestinationIPv6Cidr"].GetString());
+        m_destinationIPv6CidrHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +265,22 @@ void NetworkAclQuintupleEntry::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "NetworkAclDirection";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_networkAclDirection.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceIPv6CidrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceIPv6Cidr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceIPv6Cidr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_destinationIPv6CidrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DestinationIPv6Cidr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_destinationIPv6Cidr.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +460,37 @@ void NetworkAclQuintupleEntry::SetNetworkAclDirection(const string& _networkAclD
 bool NetworkAclQuintupleEntry::NetworkAclDirectionHasBeenSet() const
 {
     return m_networkAclDirectionHasBeenSet;
+}
+
+string NetworkAclQuintupleEntry::GetSourceIPv6Cidr() const
+{
+    return m_sourceIPv6Cidr;
+}
+
+void NetworkAclQuintupleEntry::SetSourceIPv6Cidr(const string& _sourceIPv6Cidr)
+{
+    m_sourceIPv6Cidr = _sourceIPv6Cidr;
+    m_sourceIPv6CidrHasBeenSet = true;
+}
+
+bool NetworkAclQuintupleEntry::SourceIPv6CidrHasBeenSet() const
+{
+    return m_sourceIPv6CidrHasBeenSet;
+}
+
+string NetworkAclQuintupleEntry::GetDestinationIPv6Cidr() const
+{
+    return m_destinationIPv6Cidr;
+}
+
+void NetworkAclQuintupleEntry::SetDestinationIPv6Cidr(const string& _destinationIPv6Cidr)
+{
+    m_destinationIPv6Cidr = _destinationIPv6Cidr;
+    m_destinationIPv6CidrHasBeenSet = true;
+}
+
+bool NetworkAclQuintupleEntry::DestinationIPv6CidrHasBeenSet() const
+{
+    return m_destinationIPv6CidrHasBeenSet;
 }
 

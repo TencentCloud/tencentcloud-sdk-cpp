@@ -43,7 +43,8 @@ EdgeIpInfo::EdgeIpInfo() :
     m_switchModeHasBeenSet(false),
     m_switchWeightHasBeenSet(false),
     m_domainHasBeenSet(false),
-    m_overUsedStatusHasBeenSet(false)
+    m_overUsedStatusHasBeenSet(false),
+    m_switchSupportTypeHasBeenSet(false)
 {
 }
 
@@ -282,6 +283,16 @@ CoreInternalOutcome EdgeIpInfo::Deserialize(const rapidjson::Value &value)
         m_overUsedStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("SwitchSupportType") && !value["SwitchSupportType"].IsNull())
+    {
+        if (!value["SwitchSupportType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdgeIpInfo.SwitchSupportType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_switchSupportType = value["SwitchSupportType"].GetInt64();
+        m_switchSupportTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -471,6 +482,14 @@ void EdgeIpInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "OverUsedStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_overUsedStatus, allocator);
+    }
+
+    if (m_switchSupportTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SwitchSupportType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_switchSupportType, allocator);
     }
 
 }
@@ -842,5 +861,21 @@ void EdgeIpInfo::SetOverUsedStatus(const int64_t& _overUsedStatus)
 bool EdgeIpInfo::OverUsedStatusHasBeenSet() const
 {
     return m_overUsedStatusHasBeenSet;
+}
+
+int64_t EdgeIpInfo::GetSwitchSupportType() const
+{
+    return m_switchSupportType;
+}
+
+void EdgeIpInfo::SetSwitchSupportType(const int64_t& _switchSupportType)
+{
+    m_switchSupportType = _switchSupportType;
+    m_switchSupportTypeHasBeenSet = true;
+}
+
+bool EdgeIpInfo::SwitchSupportTypeHasBeenSet() const
+{
+    return m_switchSupportTypeHasBeenSet;
 }
 

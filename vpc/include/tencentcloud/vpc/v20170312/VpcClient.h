@@ -829,6 +829,8 @@
 #include <tencentcloud/vpc/v20170312/model/ReplaceRouteTableAssociationResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ReplaceRoutesWithRoutePolicyRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ReplaceRoutesWithRoutePolicyResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceSecurityGroupPoliciesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceSecurityGroupPoliciesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceSecurityGroupPolicyRequest.h>
@@ -2110,6 +2112,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ReplaceRoutesResponse> ReplaceRoutesOutcome;
                 typedef std::future<ReplaceRoutesOutcome> ReplaceRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ReplaceRoutesRequest&, ReplaceRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceRoutesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReplaceRoutesWithRoutePolicyResponse> ReplaceRoutesWithRoutePolicyOutcome;
+                typedef std::future<ReplaceRoutesWithRoutePolicyOutcome> ReplaceRoutesWithRoutePolicyOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ReplaceRoutesWithRoutePolicyRequest&, ReplaceRoutesWithRoutePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceRoutesWithRoutePolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReplaceSecurityGroupPoliciesResponse> ReplaceSecurityGroupPoliciesOutcome;
                 typedef std::future<ReplaceSecurityGroupPoliciesOutcome> ReplaceSecurityGroupPoliciesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ReplaceSecurityGroupPoliciesRequest&, ReplaceSecurityGroupPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceSecurityGroupPoliciesAsyncHandler;
@@ -6164,6 +6169,15 @@ LimitTypes取值范围：
                 ReplaceRoutesOutcome ReplaceRoutes(const Model::ReplaceRoutesRequest &request);
                 void ReplaceRoutesAsync(const Model::ReplaceRoutesRequest& request, const ReplaceRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReplaceRoutesOutcomeCallable ReplaceRoutesCallable(const Model::ReplaceRoutesRequest& request);
+
+                /**
+                 *本接口（ReplaceRoutes）根据路由策略ID（RouteId）修改指定的路由策略（Route），支持批量修改。
+                 * @param req ReplaceRoutesWithRoutePolicyRequest
+                 * @return ReplaceRoutesWithRoutePolicyOutcome
+                 */
+                ReplaceRoutesWithRoutePolicyOutcome ReplaceRoutesWithRoutePolicy(const Model::ReplaceRoutesWithRoutePolicyRequest &request);
+                void ReplaceRoutesWithRoutePolicyAsync(const Model::ReplaceRoutesWithRoutePolicyRequest& request, const ReplaceRoutesWithRoutePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReplaceRoutesWithRoutePolicyOutcomeCallable ReplaceRoutesWithRoutePolicyCallable(const Model::ReplaceRoutesWithRoutePolicyRequest& request);
 
                 /**
                  *本接口（ReplaceSecurityGroupPolicies）用于批量修改安全组规则（SecurityGroupPolicy）。

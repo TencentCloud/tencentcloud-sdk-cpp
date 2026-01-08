@@ -76,7 +76,8 @@ ApmInstanceDetail::ApmInstanceDetail() :
     m_isDeserializationAnalysisHasBeenSet(false),
     m_tokenHasBeenSet(false),
     m_urlLongSegmentThresholdHasBeenSet(false),
-    m_urlNumberSegmentThresholdHasBeenSet(false)
+    m_urlNumberSegmentThresholdHasBeenSet(false),
+    m_logSpanIdKeyHasBeenSet(false)
 {
 }
 
@@ -658,6 +659,16 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         m_urlNumberSegmentThresholdHasBeenSet = true;
     }
 
+    if (value.HasMember("LogSpanIdKey") && !value["LogSpanIdKey"].IsNull())
+    {
+        if (!value["LogSpanIdKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.LogSpanIdKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logSpanIdKey = string(value["LogSpanIdKey"].GetString());
+        m_logSpanIdKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1123,6 +1134,14 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "UrlNumberSegmentThreshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_urlNumberSegmentThreshold, allocator);
+    }
+
+    if (m_logSpanIdKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogSpanIdKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logSpanIdKey.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2022,5 +2041,21 @@ void ApmInstanceDetail::SetUrlNumberSegmentThreshold(const int64_t& _urlNumberSe
 bool ApmInstanceDetail::UrlNumberSegmentThresholdHasBeenSet() const
 {
     return m_urlNumberSegmentThresholdHasBeenSet;
+}
+
+string ApmInstanceDetail::GetLogSpanIdKey() const
+{
+    return m_logSpanIdKey;
+}
+
+void ApmInstanceDetail::SetLogSpanIdKey(const string& _logSpanIdKey)
+{
+    m_logSpanIdKey = _logSpanIdKey;
+    m_logSpanIdKeyHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::LogSpanIdKeyHasBeenSet() const
+{
+    return m_logSpanIdKeyHasBeenSet;
 }
 

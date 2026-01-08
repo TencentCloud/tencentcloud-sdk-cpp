@@ -445,6 +445,27 @@ namespace TencentCloud
                      */
                     bool UserHasBeenSet() const;
 
+                    /**
+                     * 获取错误码
+                     * @return ErrorCode 错误码
+                     * 
+                     */
+                    std::string GetErrorCode() const;
+
+                    /**
+                     * 设置错误码
+                     * @param _errorCode 错误码
+                     * 
+                     */
+                    void SetErrorCode(const std::string& _errorCode);
+
+                    /**
+                     * 判断参数 ErrorCode 是否已赋值
+                     * @return ErrorCode 是否已赋值
+                     * 
+                     */
+                    bool ErrorCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -560,6 +581,12 @@ namespace TencentCloud
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
+
+                    /**
+                     * 错误码
+                     */
+                    std::string m_errorCode;
+                    bool m_errorCodeHasBeenSet;
 
                 };
             }

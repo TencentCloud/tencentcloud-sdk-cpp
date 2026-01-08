@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取比较类型 1.固定值  2.波动值  3.数值范围比较  4.枚举范围比较  5.不用比较
+                     * 获取比较类型【入参必填】，1.固定值  2.波动值  3.数值范围比较  4.枚举范围比较  5.不用比较   6.字段数据相关性  7.公平性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CompareType 比较类型 1.固定值  2.波动值  3.数值范围比较  4.枚举范围比较  5.不用比较
+                     * @return CompareType 比较类型【入参必填】，1.固定值  2.波动值  3.数值范围比较  4.枚举范围比较  5.不用比较   6.字段数据相关性  7.公平性
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCompareType() const;
 
                     /**
-                     * 设置比较类型 1.固定值  2.波动值  3.数值范围比较  4.枚举范围比较  5.不用比较
+                     * 设置比较类型【入参必填】，1.固定值  2.波动值  3.数值范围比较  4.枚举范围比较  5.不用比较   6.字段数据相关性  7.公平性
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _compareType 比较类型 1.固定值  2.波动值  3.数值范围比较  4.枚举范围比较  5.不用比较
+                     * @param _compareType 比较类型【入参必填】，1.固定值  2.波动值  3.数值范围比较  4.枚举范围比较  5.不用比较   6.字段数据相关性  7.公平性
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,7 +73,7 @@ namespace TencentCloud
                     bool CompareTypeHasBeenSet() const;
 
                     /**
-                     * 获取比较操作类型
+                     * 获取比较操作类型【入参条件必填】，CompareType ∈ {1,2,6,7} 时必填
 <  <=  ==  =>  > !=
 IRLCRO:在区间内(左闭右开)
 IRLORC:在区间内(左开右闭)
@@ -84,7 +84,7 @@ NRLORC:不在区间内(左开右闭)
 NRLCRC:不在区间内(左闭右闭)
 NRLORO:不在区间内(左开右开)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Operator 比较操作类型
+                     * @return Operator 比较操作类型【入参条件必填】，CompareType ∈ {1,2,6,7} 时必填
 <  <=  ==  =>  > !=
 IRLCRO:在区间内(左闭右开)
 IRLORC:在区间内(左开右闭)
@@ -100,7 +100,7 @@ NRLORO:不在区间内(左开右开)
                     std::string GetOperator() const;
 
                     /**
-                     * 设置比较操作类型
+                     * 设置比较操作类型【入参条件必填】，CompareType ∈ {1,2,6,7} 时必填
 <  <=  ==  =>  > !=
 IRLCRO:在区间内(左闭右开)
 IRLORC:在区间内(左开右闭)
@@ -111,7 +111,7 @@ NRLORC:不在区间内(左开右闭)
 NRLCRC:不在区间内(左闭右闭)
 NRLORO:不在区间内(左开右开)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operator 比较操作类型
+                     * @param _operator 比较操作类型【入参条件必填】，CompareType ∈ {1,2,6,7} 时必填
 <  <=  ==  =>  > !=
 IRLCRO:在区间内(左闭右开)
 IRLORC:在区间内(左开右闭)
@@ -134,18 +134,70 @@ NRLORO:不在区间内(左开右开)
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取质量统计值类型 1.绝对值  2.上升 3. 下降  4._C包含   5. N_C不包含
+                     * 获取质量统计值类型【入参条件必填】，当 CompareType ∈ {2,3,7} 时必填
+可选值：
+当 compareType = 2(波动值) 时：
+  - 1 = 绝对值(ABS)
+  - 2 = 上升(ASCEND)
+  - 3 = 下降(DESCEND)
+
+当 compareType = 3(数值范围) 时：
+  - 4 = 范围内(WITH_IN_RANGE)
+  - 5 = 范围外(OUT_OF_RANGE)
+
+当 compareType = 7(公平性) 时：
+  - 6 = 公平率(FAIRNESS_RATE)
+  - 7 = 公平差(FAIRNESS_GAP)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ValueComputeType 质量统计值类型 1.绝对值  2.上升 3. 下降  4._C包含   5. N_C不包含
+                     * @return ValueComputeType 质量统计值类型【入参条件必填】，当 CompareType ∈ {2,3,7} 时必填
+可选值：
+当 compareType = 2(波动值) 时：
+  - 1 = 绝对值(ABS)
+  - 2 = 上升(ASCEND)
+  - 3 = 下降(DESCEND)
+
+当 compareType = 3(数值范围) 时：
+  - 4 = 范围内(WITH_IN_RANGE)
+  - 5 = 范围外(OUT_OF_RANGE)
+
+当 compareType = 7(公平性) 时：
+  - 6 = 公平率(FAIRNESS_RATE)
+  - 7 = 公平差(FAIRNESS_GAP)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetValueComputeType() const;
 
                     /**
-                     * 设置质量统计值类型 1.绝对值  2.上升 3. 下降  4._C包含   5. N_C不包含
+                     * 设置质量统计值类型【入参条件必填】，当 CompareType ∈ {2,3,7} 时必填
+可选值：
+当 compareType = 2(波动值) 时：
+  - 1 = 绝对值(ABS)
+  - 2 = 上升(ASCEND)
+  - 3 = 下降(DESCEND)
+
+当 compareType = 3(数值范围) 时：
+  - 4 = 范围内(WITH_IN_RANGE)
+  - 5 = 范围外(OUT_OF_RANGE)
+
+当 compareType = 7(公平性) 时：
+  - 6 = 公平率(FAIRNESS_RATE)
+  - 7 = 公平差(FAIRNESS_GAP)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _valueComputeType 质量统计值类型 1.绝对值  2.上升 3. 下降  4._C包含   5. N_C不包含
+                     * @param _valueComputeType 质量统计值类型【入参条件必填】，当 CompareType ∈ {2,3,7} 时必填
+可选值：
+当 compareType = 2(波动值) 时：
+  - 1 = 绝对值(ABS)
+  - 2 = 上升(ASCEND)
+  - 3 = 下降(DESCEND)
+
+当 compareType = 3(数值范围) 时：
+  - 4 = 范围内(WITH_IN_RANGE)
+  - 5 = 范围外(OUT_OF_RANGE)
+
+当 compareType = 7(公平性) 时：
+  - 6 = 公平率(FAIRNESS_RATE)
+  - 7 = 公平差(FAIRNESS_GAP)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -159,18 +211,18 @@ NRLORO:不在区间内(左开右开)
                     bool ValueComputeTypeHasBeenSet() const;
 
                     /**
-                     * 获取比较阈值列表
+                     * 获取比较阈值列表【入参必填】
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ValueList 比较阈值列表
+                     * @return ValueList 比较阈值列表【入参必填】
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<QualityThresholdValue> GetValueList() const;
 
                     /**
-                     * 设置比较阈值列表
+                     * 设置比较阈值列表【入参必填】
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _valueList 比较阈值列表
+                     * @param _valueList 比较阈值列表【入参必填】
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -186,14 +238,14 @@ NRLORO:不在区间内(左开右开)
                 private:
 
                     /**
-                     * 比较类型 1.固定值  2.波动值  3.数值范围比较  4.枚举范围比较  5.不用比较
+                     * 比较类型【入参必填】，1.固定值  2.波动值  3.数值范围比较  4.枚举范围比较  5.不用比较   6.字段数据相关性  7.公平性
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_compareType;
                     bool m_compareTypeHasBeenSet;
 
                     /**
-                     * 比较操作类型
+                     * 比较操作类型【入参条件必填】，CompareType ∈ {1,2,6,7} 时必填
 <  <=  ==  =>  > !=
 IRLCRO:在区间内(左闭右开)
 IRLORC:在区间内(左开右闭)
@@ -209,14 +261,27 @@ NRLORO:不在区间内(左开右开)
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 质量统计值类型 1.绝对值  2.上升 3. 下降  4._C包含   5. N_C不包含
+                     * 质量统计值类型【入参条件必填】，当 CompareType ∈ {2,3,7} 时必填
+可选值：
+当 compareType = 2(波动值) 时：
+  - 1 = 绝对值(ABS)
+  - 2 = 上升(ASCEND)
+  - 3 = 下降(DESCEND)
+
+当 compareType = 3(数值范围) 时：
+  - 4 = 范围内(WITH_IN_RANGE)
+  - 5 = 范围外(OUT_OF_RANGE)
+
+当 compareType = 7(公平性) 时：
+  - 6 = 公平率(FAIRNESS_RATE)
+  - 7 = 公平差(FAIRNESS_GAP)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_valueComputeType;
                     bool m_valueComputeTypeHasBeenSet;
 
                     /**
-                     * 比较阈值列表
+                     * 比较阈值列表【入参必填】
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<QualityThresholdValue> m_valueList;

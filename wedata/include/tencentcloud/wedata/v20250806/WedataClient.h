@@ -45,6 +45,8 @@
 #include <tencentcloud/wedata/v20250806/model/CreateProjectResponse.h>
 #include <tencentcloud/wedata/v20250806/model/CreateProjectMemberRequest.h>
 #include <tencentcloud/wedata/v20250806/model/CreateProjectMemberResponse.h>
+#include <tencentcloud/wedata/v20250806/model/CreateQualityRuleRequest.h>
+#include <tencentcloud/wedata/v20250806/model/CreateQualityRuleResponse.h>
 #include <tencentcloud/wedata/v20250806/model/CreateQualityRuleGroupRequest.h>
 #include <tencentcloud/wedata/v20250806/model/CreateQualityRuleGroupResponse.h>
 #include <tencentcloud/wedata/v20250806/model/CreateResourceFileRequest.h>
@@ -247,6 +249,8 @@
 #include <tencentcloud/wedata/v20250806/model/ListProjectsResponse.h>
 #include <tencentcloud/wedata/v20250806/model/ListQualityRuleGroupExecResultsByPageRequest.h>
 #include <tencentcloud/wedata/v20250806/model/ListQualityRuleGroupExecResultsByPageResponse.h>
+#include <tencentcloud/wedata/v20250806/model/ListQualityRuleGroupsRequest.h>
+#include <tencentcloud/wedata/v20250806/model/ListQualityRuleGroupsResponse.h>
 #include <tencentcloud/wedata/v20250806/model/ListQualityRuleGroupsTableRequest.h>
 #include <tencentcloud/wedata/v20250806/model/ListQualityRuleGroupsTableResponse.h>
 #include <tencentcloud/wedata/v20250806/model/ListQualityRuleTemplatesRequest.h>
@@ -420,6 +424,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateProjectMemberResponse> CreateProjectMemberOutcome;
                 typedef std::future<CreateProjectMemberOutcome> CreateProjectMemberOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateProjectMemberRequest&, CreateProjectMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectMemberAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateQualityRuleResponse> CreateQualityRuleOutcome;
+                typedef std::future<CreateQualityRuleOutcome> CreateQualityRuleOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CreateQualityRuleRequest&, CreateQualityRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateQualityRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateQualityRuleGroupResponse> CreateQualityRuleGroupOutcome;
                 typedef std::future<CreateQualityRuleGroupOutcome> CreateQualityRuleGroupOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateQualityRuleGroupRequest&, CreateQualityRuleGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateQualityRuleGroupAsyncHandler;
@@ -723,6 +730,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListQualityRuleGroupExecResultsByPageResponse> ListQualityRuleGroupExecResultsByPageOutcome;
                 typedef std::future<ListQualityRuleGroupExecResultsByPageOutcome> ListQualityRuleGroupExecResultsByPageOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::ListQualityRuleGroupExecResultsByPageRequest&, ListQualityRuleGroupExecResultsByPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListQualityRuleGroupExecResultsByPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListQualityRuleGroupsResponse> ListQualityRuleGroupsOutcome;
+                typedef std::future<ListQualityRuleGroupsOutcome> ListQualityRuleGroupsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ListQualityRuleGroupsRequest&, ListQualityRuleGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListQualityRuleGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListQualityRuleGroupsTableResponse> ListQualityRuleGroupsTableOutcome;
                 typedef std::future<ListQualityRuleGroupsTableOutcome> ListQualityRuleGroupsTableOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::ListQualityRuleGroupsTableRequest&, ListQualityRuleGroupsTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListQualityRuleGroupsTableAsyncHandler;
@@ -1013,6 +1023,15 @@ namespace TencentCloud
                 CreateProjectMemberOutcome CreateProjectMember(const Model::CreateProjectMemberRequest &request);
                 void CreateProjectMemberAsync(const Model::CreateProjectMemberRequest& request, const CreateProjectMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateProjectMemberOutcomeCallable CreateProjectMemberCallable(const Model::CreateProjectMemberRequest& request);
+
+                /**
+                 *创建质量规则接口
+                 * @param req CreateQualityRuleRequest
+                 * @return CreateQualityRuleOutcome
+                 */
+                CreateQualityRuleOutcome CreateQualityRule(const Model::CreateQualityRuleRequest &request);
+                void CreateQualityRuleAsync(const Model::CreateQualityRuleRequest& request, const CreateQualityRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateQualityRuleOutcomeCallable CreateQualityRuleCallable(const Model::CreateQualityRuleRequest& request);
 
                 /**
                  *创建监控任务
@@ -1922,6 +1941,18 @@ namespace TencentCloud
                 ListQualityRuleGroupExecResultsByPageOutcome ListQualityRuleGroupExecResultsByPage(const Model::ListQualityRuleGroupExecResultsByPageRequest &request);
                 void ListQualityRuleGroupExecResultsByPageAsync(const Model::ListQualityRuleGroupExecResultsByPageRequest& request, const ListQualityRuleGroupExecResultsByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListQualityRuleGroupExecResultsByPageOutcomeCallable ListQualityRuleGroupExecResultsByPageCallable(const Model::ListQualityRuleGroupExecResultsByPageRequest& request);
+
+                /**
+                 *【过滤条件】
+{表idTableId,支持匹配}       {任务负责人Operator,支持匹配}    
+【必要字段】
+{数据来源TableId}
+                 * @param req ListQualityRuleGroupsRequest
+                 * @return ListQualityRuleGroupsOutcome
+                 */
+                ListQualityRuleGroupsOutcome ListQualityRuleGroups(const Model::ListQualityRuleGroupsRequest &request);
+                void ListQualityRuleGroupsAsync(const Model::ListQualityRuleGroupsRequest& request, const ListQualityRuleGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListQualityRuleGroupsOutcomeCallable ListQualityRuleGroupsCallable(const Model::ListQualityRuleGroupsRequest& request);
 
                 /**
                  *查询监控列表

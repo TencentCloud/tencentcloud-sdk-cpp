@@ -592,6 +592,27 @@ namespace TencentCloud
                      */
                     bool ModifyTimeHasBeenSet() const;
 
+                    /**
+                     * 获取告警数量
+                     * @return Count 告警数量
+                     * 
+                     */
+                    int64_t GetCount() const;
+
+                    /**
+                     * 设置告警数量
+                     * @param _count 告警数量
+                     * 
+                     */
+                    void SetCount(const int64_t& _count);
+
+                    /**
+                     * 判断参数 Count 是否已赋值
+                     * @return Count 是否已赋值
+                     * 
+                     */
+                    bool CountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -749,6 +770,12 @@ namespace TencentCloud
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
+
+                    /**
+                     * 告警数量
+                     */
+                    int64_t m_count;
+                    bool m_countHasBeenSet;
 
                 };
             }

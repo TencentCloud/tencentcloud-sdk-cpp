@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取阈值类型  1.低阈值  2.高阈值   3.普通阈值  4.枚举值
+                     * 获取阈值类型【入参必填】  1.低阈值  2.高阈值   3.普通阈值  4.枚举值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ValueType 阈值类型  1.低阈值  2.高阈值   3.普通阈值  4.枚举值
+                     * @return ValueType 阈值类型【入参必填】  1.低阈值  2.高阈值   3.普通阈值  4.枚举值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetValueType() const;
 
                     /**
-                     * 设置阈值类型  1.低阈值  2.高阈值   3.普通阈值  4.枚举值
+                     * 设置阈值类型【入参必填】  1.低阈值  2.高阈值   3.普通阈值  4.枚举值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _valueType 阈值类型  1.低阈值  2.高阈值   3.普通阈值  4.枚举值
+                     * @param _valueType 阈值类型【入参必填】  1.低阈值  2.高阈值   3.普通阈值  4.枚举值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool ValueTypeHasBeenSet() const;
 
                     /**
-                     * 获取阈值
+                     * 获取阈值【入参必填】
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Value 阈值
+                     * @return Value 阈值【入参必填】
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置阈值
+                     * 设置阈值【入参必填】
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _value 阈值
+                     * @param _value 阈值【入参必填】
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,14 +99,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 阈值类型  1.低阈值  2.高阈值   3.普通阈值  4.枚举值
+                     * 阈值类型【入参必填】  1.低阈值  2.高阈值   3.普通阈值  4.枚举值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_valueType;
                     bool m_valueTypeHasBeenSet;
 
                     /**
-                     * 阈值
+                     * 阈值【入参必填】
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;

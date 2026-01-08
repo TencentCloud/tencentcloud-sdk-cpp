@@ -277,6 +277,48 @@ namespace TencentCloud
                      */
                     bool NetworkAclDirectionHasBeenSet() const;
 
+                    /**
+                     * 获取IPv6源CIDR。
+                     * @return SourceIPv6Cidr IPv6源CIDR。
+                     * 
+                     */
+                    std::string GetSourceIPv6Cidr() const;
+
+                    /**
+                     * 设置IPv6源CIDR。
+                     * @param _sourceIPv6Cidr IPv6源CIDR。
+                     * 
+                     */
+                    void SetSourceIPv6Cidr(const std::string& _sourceIPv6Cidr);
+
+                    /**
+                     * 判断参数 SourceIPv6Cidr 是否已赋值
+                     * @return SourceIPv6Cidr 是否已赋值
+                     * 
+                     */
+                    bool SourceIPv6CidrHasBeenSet() const;
+
+                    /**
+                     * 获取IPv6目的CIDR。
+                     * @return DestinationIPv6Cidr IPv6目的CIDR。
+                     * 
+                     */
+                    std::string GetDestinationIPv6Cidr() const;
+
+                    /**
+                     * 设置IPv6目的CIDR。
+                     * @param _destinationIPv6Cidr IPv6目的CIDR。
+                     * 
+                     */
+                    void SetDestinationIPv6Cidr(const std::string& _destinationIPv6Cidr);
+
+                    /**
+                     * 判断参数 DestinationIPv6Cidr 是否已赋值
+                     * @return DestinationIPv6Cidr 是否已赋值
+                     * 
+                     */
+                    bool DestinationIPv6CidrHasBeenSet() const;
+
                 private:
 
                     /**
@@ -344,6 +386,18 @@ namespace TencentCloud
                      */
                     std::string m_networkAclDirection;
                     bool m_networkAclDirectionHasBeenSet;
+
+                    /**
+                     * IPv6源CIDR。
+                     */
+                    std::string m_sourceIPv6Cidr;
+                    bool m_sourceIPv6CidrHasBeenSet;
+
+                    /**
+                     * IPv6目的CIDR。
+                     */
+                    std::string m_destinationIPv6Cidr;
+                    bool m_destinationIPv6CidrHasBeenSet;
 
                 };
             }

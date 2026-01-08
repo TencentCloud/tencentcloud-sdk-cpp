@@ -3690,6 +3690,56 @@ LiveClient::DescribeCasterDisplayInfoOutcomeCallable LiveClient::DescribeCasterD
     return prom->get_future();
 }
 
+LiveClient::DescribeCasterEmergencyStatusOutcome LiveClient::DescribeCasterEmergencyStatus(const DescribeCasterEmergencyStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCasterEmergencyStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCasterEmergencyStatusResponse rsp = DescribeCasterEmergencyStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCasterEmergencyStatusOutcome(rsp);
+        else
+            return DescribeCasterEmergencyStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCasterEmergencyStatusOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeCasterEmergencyStatusAsync(const DescribeCasterEmergencyStatusRequest& request, const DescribeCasterEmergencyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCasterEmergencyStatusRequest&;
+    using Resp = DescribeCasterEmergencyStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCasterEmergencyStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DescribeCasterEmergencyStatusOutcomeCallable LiveClient::DescribeCasterEmergencyStatusCallable(const DescribeCasterEmergencyStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCasterEmergencyStatusOutcome>>();
+    DescribeCasterEmergencyStatusAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DescribeCasterEmergencyStatusRequest&,
+        DescribeCasterEmergencyStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LiveClient::DescribeCasterInputInfosOutcome LiveClient::DescribeCasterInputInfos(const DescribeCasterInputInfosRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCasterInputInfos");
@@ -10032,6 +10082,56 @@ LiveClient::SwitchBackupStreamOutcomeCallable LiveClient::SwitchBackupStreamCall
         const LiveClient*,
         const SwitchBackupStreamRequest&,
         SwitchBackupStreamOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::SwitchCasterToEmergencyOutcome LiveClient::SwitchCasterToEmergency(const SwitchCasterToEmergencyRequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchCasterToEmergency");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchCasterToEmergencyResponse rsp = SwitchCasterToEmergencyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchCasterToEmergencyOutcome(rsp);
+        else
+            return SwitchCasterToEmergencyOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchCasterToEmergencyOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::SwitchCasterToEmergencyAsync(const SwitchCasterToEmergencyRequest& request, const SwitchCasterToEmergencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SwitchCasterToEmergencyRequest&;
+    using Resp = SwitchCasterToEmergencyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SwitchCasterToEmergency", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::SwitchCasterToEmergencyOutcomeCallable LiveClient::SwitchCasterToEmergencyCallable(const SwitchCasterToEmergencyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SwitchCasterToEmergencyOutcome>>();
+    SwitchCasterToEmergencyAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const SwitchCasterToEmergencyRequest&,
+        SwitchCasterToEmergencyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

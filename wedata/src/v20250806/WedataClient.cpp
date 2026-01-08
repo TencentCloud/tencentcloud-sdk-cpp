@@ -590,6 +590,56 @@ WedataClient::CreateProjectMemberOutcomeCallable WedataClient::CreateProjectMemb
     return prom->get_future();
 }
 
+WedataClient::CreateQualityRuleOutcome WedataClient::CreateQualityRule(const CreateQualityRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateQualityRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateQualityRuleResponse rsp = CreateQualityRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateQualityRuleOutcome(rsp);
+        else
+            return CreateQualityRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateQualityRuleOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::CreateQualityRuleAsync(const CreateQualityRuleRequest& request, const CreateQualityRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateQualityRuleRequest&;
+    using Resp = CreateQualityRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateQualityRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::CreateQualityRuleOutcomeCallable WedataClient::CreateQualityRuleCallable(const CreateQualityRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateQualityRuleOutcome>>();
+    CreateQualityRuleAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateQualityRuleRequest&,
+        CreateQualityRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::CreateQualityRuleGroupOutcome WedataClient::CreateQualityRuleGroup(const CreateQualityRuleGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateQualityRuleGroup");
@@ -5632,6 +5682,56 @@ WedataClient::ListQualityRuleGroupExecResultsByPageOutcomeCallable WedataClient:
         const WedataClient*,
         const ListQualityRuleGroupExecResultsByPageRequest&,
         ListQualityRuleGroupExecResultsByPageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::ListQualityRuleGroupsOutcome WedataClient::ListQualityRuleGroups(const ListQualityRuleGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListQualityRuleGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListQualityRuleGroupsResponse rsp = ListQualityRuleGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListQualityRuleGroupsOutcome(rsp);
+        else
+            return ListQualityRuleGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListQualityRuleGroupsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ListQualityRuleGroupsAsync(const ListQualityRuleGroupsRequest& request, const ListQualityRuleGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListQualityRuleGroupsRequest&;
+    using Resp = ListQualityRuleGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListQualityRuleGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::ListQualityRuleGroupsOutcomeCallable WedataClient::ListQualityRuleGroupsCallable(const ListQualityRuleGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListQualityRuleGroupsOutcome>>();
+    ListQualityRuleGroupsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListQualityRuleGroupsRequest&,
+        ListQualityRuleGroupsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

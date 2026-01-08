@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取视频片段的开始时间，单位：秒
-                     * @return EndTimeOffset 视频片段的开始时间，单位：秒
+                     * 获取视频片段的结束时间，单位：秒
+                     * @return EndTimeOffset 视频片段的结束时间，单位：秒
                      * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
-                     * 设置视频片段的开始时间，单位：秒
-                     * @param _endTimeOffset 视频片段的开始时间，单位：秒
+                     * 设置视频片段的结束时间，单位：秒
+                     * @param _endTimeOffset 视频片段的结束时间，单位：秒
                      * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
@@ -151,7 +151,7 @@ namespace TencentCloud
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
-                     * 视频片段的开始时间，单位：秒
+                     * 视频片段的结束时间，单位：秒
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;

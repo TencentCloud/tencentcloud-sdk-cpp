@@ -40,7 +40,8 @@ PrivilegeEscalationProcess::PrivilegeEscalationProcess() :
     m_createTimeHasBeenSet(false),
     m_machineNameHasBeenSet(false),
     m_machineExtraInfoHasBeenSet(false),
-    m_pidHasBeenSet(false)
+    m_pidHasBeenSet(false),
+    m_countHasBeenSet(false)
 {
 }
 
@@ -256,6 +257,16 @@ CoreInternalOutcome PrivilegeEscalationProcess::Deserialize(const rapidjson::Val
         m_pidHasBeenSet = true;
     }
 
+    if (value.HasMember("Count") && !value["Count"].IsNull())
+    {
+        if (!value["Count"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrivilegeEscalationProcess.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_count = value["Count"].GetInt64();
+        m_countHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -422,6 +433,14 @@ void PrivilegeEscalationProcess::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "Pid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pid, allocator);
+    }
+
+    if (m_countHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Count";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_count, allocator);
     }
 
 }
@@ -745,5 +764,21 @@ void PrivilegeEscalationProcess::SetPid(const int64_t& _pid)
 bool PrivilegeEscalationProcess::PidHasBeenSet() const
 {
     return m_pidHasBeenSet;
+}
+
+int64_t PrivilegeEscalationProcess::GetCount() const
+{
+    return m_count;
+}
+
+void PrivilegeEscalationProcess::SetCount(const int64_t& _count)
+{
+    m_count = _count;
+    m_countHasBeenSet = true;
+}
+
+bool PrivilegeEscalationProcess::CountHasBeenSet() const
+{
+    return m_countHasBeenSet;
 }
 

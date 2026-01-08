@@ -1158,6 +1158,27 @@ namespace TencentCloud
                      */
                     bool DesensitizationRuleHasBeenSet() const;
 
+                    /**
+                     * 获取spanId的索引key: 当CLS索引类型为键值索引时生效
+                     * @return LogSpanIdKey spanId的索引key: 当CLS索引类型为键值索引时生效
+                     * 
+                     */
+                    std::string GetLogSpanIdKey() const;
+
+                    /**
+                     * 设置spanId的索引key: 当CLS索引类型为键值索引时生效
+                     * @param _logSpanIdKey spanId的索引key: 当CLS索引类型为键值索引时生效
+                     * 
+                     */
+                    void SetLogSpanIdKey(const std::string& _logSpanIdKey);
+
+                    /**
+                     * 判断参数 LogSpanIdKey 是否已赋值
+                     * @return LogSpanIdKey 是否已赋值
+                     * 
+                     */
+                    bool LogSpanIdKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1477,6 +1498,12 @@ namespace TencentCloud
                      */
                     std::string m_desensitizationRule;
                     bool m_desensitizationRuleHasBeenSet;
+
+                    /**
+                     * spanId的索引key: 当CLS索引类型为键值索引时生效
+                     */
+                    std::string m_logSpanIdKey;
+                    bool m_logSpanIdKeyHasBeenSet;
 
                 };
             }

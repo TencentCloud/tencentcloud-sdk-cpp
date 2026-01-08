@@ -23,14 +23,16 @@ set(car_public_header_model
   include/tencentcloud/car/v20220110/model/StopPublishStreamRequest.h
   include/tencentcloud/car/v20220110/model/StartPublishStreamWithURLResponse.h
   include/tencentcloud/car/v20220110/model/StopPublishStreamResponse.h
-  include/tencentcloud/car/v20220110/model/StartPublishStreamWithURLRequest.h
   include/tencentcloud/car/v20220110/model/DestroySessionResponse.h
-  include/tencentcloud/car/v20220110/model/StartPublishStreamResponse.h
+  include/tencentcloud/car/v20220110/model/StartPublishStreamWithURLRequest.h
   include/tencentcloud/car/v20220110/model/ApplyConcurrentResponse.h
-  include/tencentcloud/car/v20220110/model/ApplyConcurrentRequest.h
-  include/tencentcloud/car/v20220110/model/DestroySessionRequest.h
-  include/tencentcloud/car/v20220110/model/StartPublishStreamRequest.h
+  include/tencentcloud/car/v20220110/model/StartPublishStreamResponse.h
   include/tencentcloud/car/v20220110/model/CreateSessionRequest.h
+  include/tencentcloud/car/v20220110/model/ApplyConcurrentRequest.h
+  include/tencentcloud/car/v20220110/model/DescribeConcurrentCountResponse.h
+  include/tencentcloud/car/v20220110/model/DestroySessionRequest.h
+  include/tencentcloud/car/v20220110/model/DescribeConcurrentCountRequest.h
+  include/tencentcloud/car/v20220110/model/StartPublishStreamRequest.h
   )
 
 set(car_src
@@ -39,14 +41,16 @@ set(car_src
   src/v20220110/model/StopPublishStreamRequest.cpp
   src/v20220110/model/StartPublishStreamWithURLResponse.cpp
   src/v20220110/model/StopPublishStreamResponse.cpp
-  src/v20220110/model/StartPublishStreamWithURLRequest.cpp
   src/v20220110/model/DestroySessionResponse.cpp
-  src/v20220110/model/StartPublishStreamResponse.cpp
+  src/v20220110/model/StartPublishStreamWithURLRequest.cpp
   src/v20220110/model/ApplyConcurrentResponse.cpp
-  src/v20220110/model/ApplyConcurrentRequest.cpp
-  src/v20220110/model/DestroySessionRequest.cpp
-  src/v20220110/model/StartPublishStreamRequest.cpp
+  src/v20220110/model/StartPublishStreamResponse.cpp
   src/v20220110/model/CreateSessionRequest.cpp
+  src/v20220110/model/ApplyConcurrentRequest.cpp
+  src/v20220110/model/DescribeConcurrentCountResponse.cpp
+  src/v20220110/model/DestroySessionRequest.cpp
+  src/v20220110/model/DescribeConcurrentCountRequest.cpp
+  src/v20220110/model/StartPublishStreamRequest.cpp
   )
 
 set(car_include

@@ -311,26 +311,30 @@ namespace TencentCloud
 
                     /**
                      * 获取安全防护配置。
+本字段已废弃。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DDosProtectionConfig 安全防护配置。
+本字段已废弃。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     DDosProtectionConfig GetDDosProtectionConfig() const;
 
                     /**
                      * 设置安全防护配置。
+本字段已废弃。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dDosProtectionConfig 安全防护配置。
+本字段已废弃。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetDDosProtectionConfig(const DDosProtectionConfig& _dDosProtectionConfig);
 
                     /**
                      * 判断参数 DDosProtectionConfig 是否已赋值
                      * @return DDosProtectionConfig 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DDosProtectionConfigHasBeenSet() const;
 
@@ -453,6 +457,7 @@ namespace TencentCloud
 
                     /**
                      * 安全防护配置。
+本字段已废弃。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DDosProtectionConfig m_dDosProtectionConfig;

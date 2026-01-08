@@ -46,7 +46,8 @@ ListQaItem::ListQaItem() :
     m_isDisabledHasBeenSet(false),
     m_staffNameHasBeenSet(false),
     m_enableScopeHasBeenSet(false),
-    m_docEnableScopeHasBeenSet(false)
+    m_docEnableScopeHasBeenSet(false),
+    m_qaSizeHasBeenSet(false)
 {
 }
 
@@ -325,6 +326,16 @@ CoreInternalOutcome ListQaItem::Deserialize(const rapidjson::Value &value)
         m_docEnableScopeHasBeenSet = true;
     }
 
+    if (value.HasMember("QaSize") && !value["QaSize"].IsNull())
+    {
+        if (!value["QaSize"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListQaItem.QaSize` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_qaSize = string(value["QaSize"].GetString());
+        m_qaSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -545,6 +556,14 @@ void ListQaItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "DocEnableScope";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_docEnableScope, allocator);
+    }
+
+    if (m_qaSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QaSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_qaSize.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -964,5 +983,21 @@ void ListQaItem::SetDocEnableScope(const int64_t& _docEnableScope)
 bool ListQaItem::DocEnableScopeHasBeenSet() const
 {
     return m_docEnableScopeHasBeenSet;
+}
+
+string ListQaItem::GetQaSize() const
+{
+    return m_qaSize;
+}
+
+void ListQaItem::SetQaSize(const string& _qaSize)
+{
+    m_qaSize = _qaSize;
+    m_qaSizeHasBeenSet = true;
+}
+
+bool ListQaItem::QaSizeHasBeenSet() const
+{
+    return m_qaSizeHasBeenSet;
 }
 

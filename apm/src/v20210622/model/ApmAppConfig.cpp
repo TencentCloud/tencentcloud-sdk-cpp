@@ -76,7 +76,8 @@ ApmAppConfig::ApmAppConfig() :
     m_dbStatementParametersEnabledHasBeenSet(false),
     m_slowSQLThresholdsHasBeenSet(false),
     m_enableDesensitizationRuleHasBeenSet(false),
-    m_desensitizationRuleHasBeenSet(false)
+    m_desensitizationRuleHasBeenSet(false),
+    m_logSpanIdKeyHasBeenSet(false)
 {
 }
 
@@ -672,6 +673,16 @@ CoreInternalOutcome ApmAppConfig::Deserialize(const rapidjson::Value &value)
         m_desensitizationRuleHasBeenSet = true;
     }
 
+    if (value.HasMember("LogSpanIdKey") && !value["LogSpanIdKey"].IsNull())
+    {
+        if (!value["LogSpanIdKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmAppConfig.LogSpanIdKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logSpanIdKey = string(value["LogSpanIdKey"].GetString());
+        m_logSpanIdKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1140,6 +1151,14 @@ void ApmAppConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DesensitizationRule";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_desensitizationRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logSpanIdKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogSpanIdKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logSpanIdKey.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2039,5 +2058,21 @@ void ApmAppConfig::SetDesensitizationRule(const string& _desensitizationRule)
 bool ApmAppConfig::DesensitizationRuleHasBeenSet() const
 {
     return m_desensitizationRuleHasBeenSet;
+}
+
+string ApmAppConfig::GetLogSpanIdKey() const
+{
+    return m_logSpanIdKey;
+}
+
+void ApmAppConfig::SetLogSpanIdKey(const string& _logSpanIdKey)
+{
+    m_logSpanIdKey = _logSpanIdKey;
+    m_logSpanIdKeyHasBeenSet = true;
+}
+
+bool ApmAppConfig::LogSpanIdKeyHasBeenSet() const
+{
+    return m_logSpanIdKeyHasBeenSet;
 }
 

@@ -928,18 +928,18 @@ namespace TencentCloud
                     bool StaffNameHasBeenSet() const;
 
                     /**
-                     * 获取文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     * 获取文档生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EnableScope 文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     * @return EnableScope 文档生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEnableScope() const;
 
                     /**
-                     * 设置文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     * 设置文档生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _enableScope 文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     * @param _enableScope 文档生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -951,6 +951,27 @@ namespace TencentCloud
                      * 
                      */
                     bool EnableScopeHasBeenSet() const;
+
+                    /**
+                     * 获取文档大小，单位：字节
+                     * @return DocSize 文档大小，单位：字节
+                     * 
+                     */
+                    std::string GetDocSize() const;
+
+                    /**
+                     * 设置文档大小，单位：字节
+                     * @param _docSize 文档大小，单位：字节
+                     * 
+                     */
+                    void SetDocSize(const std::string& _docSize);
+
+                    /**
+                     * 判断参数 DocSize 是否已赋值
+                     * @return DocSize 是否已赋值
+                     * 
+                     */
+                    bool DocSizeHasBeenSet() const;
 
                 private:
 
@@ -1202,11 +1223,17 @@ namespace TencentCloud
                     bool m_staffNameHasBeenSet;
 
                     /**
-                     * 文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域
+                     * 文档生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_enableScope;
                     bool m_enableScopeHasBeenSet;
+
+                    /**
+                     * 文档大小，单位：字节
+                     */
+                    std::string m_docSize;
+                    bool m_docSizeHasBeenSet;
 
                 };
             }

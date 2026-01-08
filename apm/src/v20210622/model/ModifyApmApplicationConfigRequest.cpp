@@ -75,7 +75,8 @@ ModifyApmApplicationConfigRequest::ModifyApmApplicationConfigRequest() :
     m_dbStatementParametersEnabledHasBeenSet(false),
     m_slowSQLThresholdsHasBeenSet(false),
     m_enableDesensitizationRuleHasBeenSet(false),
-    m_desensitizationRuleHasBeenSet(false)
+    m_desensitizationRuleHasBeenSet(false),
+    m_logSpanIdKeyHasBeenSet(false)
 {
 }
 
@@ -523,6 +524,14 @@ string ModifyApmApplicationConfigRequest::ToJsonString() const
         string key = "DesensitizationRule";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_desensitizationRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logSpanIdKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogSpanIdKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logSpanIdKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1379,6 +1388,22 @@ void ModifyApmApplicationConfigRequest::SetDesensitizationRule(const string& _de
 bool ModifyApmApplicationConfigRequest::DesensitizationRuleHasBeenSet() const
 {
     return m_desensitizationRuleHasBeenSet;
+}
+
+string ModifyApmApplicationConfigRequest::GetLogSpanIdKey() const
+{
+    return m_logSpanIdKey;
+}
+
+void ModifyApmApplicationConfigRequest::SetLogSpanIdKey(const string& _logSpanIdKey)
+{
+    m_logSpanIdKey = _logSpanIdKey;
+    m_logSpanIdKeyHasBeenSet = true;
+}
+
+bool ModifyApmApplicationConfigRequest::LogSpanIdKeyHasBeenSet() const
+{
+    return m_logSpanIdKeyHasBeenSet;
 }
 
 

@@ -57,7 +57,8 @@ ListDocItem::ListDocItem() :
     m_attributeFlagsHasBeenSet(false),
     m_isDisabledHasBeenSet(false),
     m_staffNameHasBeenSet(false),
-    m_enableScopeHasBeenSet(false)
+    m_enableScopeHasBeenSet(false),
+    m_docSizeHasBeenSet(false)
 {
 }
 
@@ -452,6 +453,16 @@ CoreInternalOutcome ListDocItem::Deserialize(const rapidjson::Value &value)
         m_enableScopeHasBeenSet = true;
     }
 
+    if (value.HasMember("DocSize") && !value["DocSize"].IsNull())
+    {
+        if (!value["DocSize"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListDocItem.DocSize` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_docSize = string(value["DocSize"].GetString());
+        m_docSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -770,6 +781,14 @@ void ListDocItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "EnableScope";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableScope, allocator);
+    }
+
+    if (m_docSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DocSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_docSize.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1365,5 +1384,21 @@ void ListDocItem::SetEnableScope(const int64_t& _enableScope)
 bool ListDocItem::EnableScopeHasBeenSet() const
 {
     return m_enableScopeHasBeenSet;
+}
+
+string ListDocItem::GetDocSize() const
+{
+    return m_docSize;
+}
+
+void ListDocItem::SetDocSize(const string& _docSize)
+{
+    m_docSize = _docSize;
+    m_docSizeHasBeenSet = true;
+}
+
+bool ListDocItem::DocSizeHasBeenSet() const
+{
+    return m_docSizeHasBeenSet;
 }
 

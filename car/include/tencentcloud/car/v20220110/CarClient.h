@@ -27,6 +27,8 @@
 #include <tencentcloud/car/v20220110/model/ApplyConcurrentResponse.h>
 #include <tencentcloud/car/v20220110/model/CreateSessionRequest.h>
 #include <tencentcloud/car/v20220110/model/CreateSessionResponse.h>
+#include <tencentcloud/car/v20220110/model/DescribeConcurrentCountRequest.h>
+#include <tencentcloud/car/v20220110/model/DescribeConcurrentCountResponse.h>
 #include <tencentcloud/car/v20220110/model/DestroySessionRequest.h>
 #include <tencentcloud/car/v20220110/model/DestroySessionResponse.h>
 #include <tencentcloud/car/v20220110/model/StartPublishStreamRequest.h>
@@ -55,6 +57,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSessionResponse> CreateSessionOutcome;
                 typedef std::future<CreateSessionOutcome> CreateSessionOutcomeCallable;
                 typedef std::function<void(const CarClient*, const Model::CreateSessionRequest&, CreateSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSessionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConcurrentCountResponse> DescribeConcurrentCountOutcome;
+                typedef std::future<DescribeConcurrentCountOutcome> DescribeConcurrentCountOutcomeCallable;
+                typedef std::function<void(const CarClient*, const Model::DescribeConcurrentCountRequest&, DescribeConcurrentCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConcurrentCountAsyncHandler;
                 typedef Outcome<Core::Error, Model::DestroySessionResponse> DestroySessionOutcome;
                 typedef std::future<DestroySessionOutcome> DestroySessionOutcomeCallable;
                 typedef std::function<void(const CarClient*, const Model::DestroySessionRequest&, DestroySessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroySessionAsyncHandler;
@@ -87,6 +92,15 @@ namespace TencentCloud
                 CreateSessionOutcome CreateSession(const Model::CreateSessionRequest &request);
                 void CreateSessionAsync(const Model::CreateSessionRequest& request, const CreateSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSessionOutcomeCallable CreateSessionCallable(const Model::CreateSessionRequest& request);
+
+                /**
+                 *获取并发计数
+                 * @param req DescribeConcurrentCountRequest
+                 * @return DescribeConcurrentCountOutcome
+                 */
+                DescribeConcurrentCountOutcome DescribeConcurrentCount(const Model::DescribeConcurrentCountRequest &request);
+                void DescribeConcurrentCountAsync(const Model::DescribeConcurrentCountRequest& request, const DescribeConcurrentCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConcurrentCountOutcomeCallable DescribeConcurrentCountCallable(const Model::DescribeConcurrentCountRequest& request);
 
                 /**
                  *销毁会话。如果该会话开启了云端推流，那么销毁会话时会结束云端推流。

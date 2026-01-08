@@ -46,7 +46,8 @@ PrivilegeEventInfo::PrivilegeEventInfo() :
     m_machineWanIpHasBeenSet(false),
     m_newCapsHasBeenSet(false),
     m_machineStatusHasBeenSet(false),
-    m_modifyTimeHasBeenSet(false)
+    m_modifyTimeHasBeenSet(false),
+    m_countHasBeenSet(false)
 {
 }
 
@@ -321,6 +322,16 @@ CoreInternalOutcome PrivilegeEventInfo::Deserialize(const rapidjson::Value &valu
         m_modifyTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Count") && !value["Count"].IsNull())
+    {
+        if (!value["Count"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrivilegeEventInfo.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_count = value["Count"].GetInt64();
+        m_countHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -544,6 +555,14 @@ void PrivilegeEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "ModifyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_countHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Count";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_count, allocator);
     }
 
 }
@@ -963,5 +982,21 @@ void PrivilegeEventInfo::SetModifyTime(const string& _modifyTime)
 bool PrivilegeEventInfo::ModifyTimeHasBeenSet() const
 {
     return m_modifyTimeHasBeenSet;
+}
+
+int64_t PrivilegeEventInfo::GetCount() const
+{
+    return m_count;
+}
+
+void PrivilegeEventInfo::SetCount(const int64_t& _count)
+{
+    m_count = _count;
+    m_countHasBeenSet = true;
+}
+
+bool PrivilegeEventInfo::CountHasBeenSet() const
+{
+    return m_countHasBeenSet;
 }
 
