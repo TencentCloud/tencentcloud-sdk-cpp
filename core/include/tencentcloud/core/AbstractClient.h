@@ -23,6 +23,7 @@
 #include <tencentcloud/core/http/HttpClient.h>
 #include "AbstractModel.h"
 #include <map>
+#include <unordered_map>
 
 namespace TencentCloud
 {
