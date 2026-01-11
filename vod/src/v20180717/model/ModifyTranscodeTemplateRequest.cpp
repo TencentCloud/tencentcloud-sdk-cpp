@@ -33,6 +33,7 @@ ModifyTranscodeTemplateRequest::ModifyTranscodeTemplateRequest() :
     m_videoTemplateHasBeenSet(false),
     m_audioTemplateHasBeenSet(false),
     m_tEHDConfigHasBeenSet(false),
+    m_enhanceConfigHasBeenSet(false),
     m_segmentTypeHasBeenSet(false)
 {
 }
@@ -125,6 +126,15 @@ string ModifyTranscodeTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tEHDConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_enhanceConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnhanceConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_enhanceConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_segmentTypeHasBeenSet)
@@ -301,6 +311,22 @@ void ModifyTranscodeTemplateRequest::SetTEHDConfig(const TEHDConfigForUpdate& _t
 bool ModifyTranscodeTemplateRequest::TEHDConfigHasBeenSet() const
 {
     return m_tEHDConfigHasBeenSet;
+}
+
+EnhanceConfigForUpdate ModifyTranscodeTemplateRequest::GetEnhanceConfig() const
+{
+    return m_enhanceConfig;
+}
+
+void ModifyTranscodeTemplateRequest::SetEnhanceConfig(const EnhanceConfigForUpdate& _enhanceConfig)
+{
+    m_enhanceConfig = _enhanceConfig;
+    m_enhanceConfigHasBeenSet = true;
+}
+
+bool ModifyTranscodeTemplateRequest::EnhanceConfigHasBeenSet() const
+{
+    return m_enhanceConfigHasBeenSet;
 }
 
 string ModifyTranscodeTemplateRequest::GetSegmentType() const

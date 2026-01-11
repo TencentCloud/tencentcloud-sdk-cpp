@@ -160,6 +160,31 @@ namespace TencentCloud
                      */
                     bool AspectRatioHasBeenSet() const;
 
+                    /**
+                     * 获取错峰模型，目前仅支持Vidu模型。
+错峰模式下提交的任务，会在48小时内生成，未能完成的任务会被自动取消。
+                     * @return OffPeak 错峰模型，目前仅支持Vidu模型。
+错峰模式下提交的任务，会在48小时内生成，未能完成的任务会被自动取消。
+                     * 
+                     */
+                    bool GetOffPeak() const;
+
+                    /**
+                     * 设置错峰模型，目前仅支持Vidu模型。
+错峰模式下提交的任务，会在48小时内生成，未能完成的任务会被自动取消。
+                     * @param _offPeak 错峰模型，目前仅支持Vidu模型。
+错峰模式下提交的任务，会在48小时内生成，未能完成的任务会被自动取消。
+                     * 
+                     */
+                    void SetOffPeak(const bool& _offPeak);
+
+                    /**
+                     * 判断参数 OffPeak 是否已赋值
+                     * @return OffPeak 是否已赋值
+                     * 
+                     */
+                    bool OffPeakHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +216,13 @@ namespace TencentCloud
                      */
                     std::string m_aspectRatio;
                     bool m_aspectRatioHasBeenSet;
+
+                    /**
+                     * 错峰模型，目前仅支持Vidu模型。
+错峰模式下提交的任务，会在48小时内生成，未能完成的任务会被自动取消。
+                     */
+                    bool m_offPeak;
+                    bool m_offPeakHasBeenSet;
 
                 };
             }

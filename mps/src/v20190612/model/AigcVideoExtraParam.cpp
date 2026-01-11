@@ -22,7 +22,8 @@ using namespace std;
 
 AigcVideoExtraParam::AigcVideoExtraParam() :
     m_resolutionHasBeenSet(false),
-    m_aspectRatioHasBeenSet(false)
+    m_aspectRatioHasBeenSet(false),
+    m_offPeakHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome AigcVideoExtraParam::Deserialize(const rapidjson::Value &val
         m_aspectRatioHasBeenSet = true;
     }
 
+    if (value.HasMember("OffPeak") && !value["OffPeak"].IsNull())
+    {
+        if (!value["OffPeak"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoExtraParam.OffPeak` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_offPeak = value["OffPeak"].GetBool();
+        m_offPeakHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void AigcVideoExtraParam::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "AspectRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_aspectRatio.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offPeakHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OffPeak";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_offPeak, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void AigcVideoExtraParam::SetAspectRatio(const string& _aspectRatio)
 bool AigcVideoExtraParam::AspectRatioHasBeenSet() const
 {
     return m_aspectRatioHasBeenSet;
+}
+
+bool AigcVideoExtraParam::GetOffPeak() const
+{
+    return m_offPeak;
+}
+
+void AigcVideoExtraParam::SetOffPeak(const bool& _offPeak)
+{
+    m_offPeak = _offPeak;
+    m_offPeakHasBeenSet = true;
+}
+
+bool AigcVideoExtraParam::OffPeakHasBeenSet() const
+{
+    return m_offPeakHasBeenSet;
 }
 

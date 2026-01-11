@@ -640,6 +640,56 @@ DataagentClient::ModifyKnowledgeBaseOutcomeCallable DataagentClient::ModifyKnowl
     return prom->get_future();
 }
 
+DataagentClient::ModifyUserAuthorityOutcome DataagentClient::ModifyUserAuthority(const ModifyUserAuthorityRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserAuthority");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserAuthorityResponse rsp = ModifyUserAuthorityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserAuthorityOutcome(rsp);
+        else
+            return ModifyUserAuthorityOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserAuthorityOutcome(outcome.GetError());
+    }
+}
+
+void DataagentClient::ModifyUserAuthorityAsync(const ModifyUserAuthorityRequest& request, const ModifyUserAuthorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyUserAuthorityRequest&;
+    using Resp = ModifyUserAuthorityResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyUserAuthority", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DataagentClient::ModifyUserAuthorityOutcomeCallable DataagentClient::ModifyUserAuthorityCallable(const ModifyUserAuthorityRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyUserAuthorityOutcome>>();
+    ModifyUserAuthorityAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const ModifyUserAuthorityRequest&,
+        ModifyUserAuthorityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DataagentClient::QueryChunkListOutcome DataagentClient::QueryChunkList(const QueryChunkListRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryChunkList");
@@ -682,6 +732,56 @@ DataagentClient::QueryChunkListOutcomeCallable DataagentClient::QueryChunkListCa
         const DataagentClient*,
         const QueryChunkListRequest&,
         QueryChunkListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DataagentClient::QueryUserAuthorityOutcome DataagentClient::QueryUserAuthority(const QueryUserAuthorityRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryUserAuthority");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryUserAuthorityResponse rsp = QueryUserAuthorityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryUserAuthorityOutcome(rsp);
+        else
+            return QueryUserAuthorityOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryUserAuthorityOutcome(outcome.GetError());
+    }
+}
+
+void DataagentClient::QueryUserAuthorityAsync(const QueryUserAuthorityRequest& request, const QueryUserAuthorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const QueryUserAuthorityRequest&;
+    using Resp = QueryUserAuthorityResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "QueryUserAuthority", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DataagentClient::QueryUserAuthorityOutcomeCallable DataagentClient::QueryUserAuthorityCallable(const QueryUserAuthorityRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<QueryUserAuthorityOutcome>>();
+    QueryUserAuthorityAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const QueryUserAuthorityRequest&,
+        QueryUserAuthorityOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

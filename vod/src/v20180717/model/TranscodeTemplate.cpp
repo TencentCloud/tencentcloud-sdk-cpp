@@ -31,6 +31,7 @@ TranscodeTemplate::TranscodeTemplate() :
     m_videoTemplateHasBeenSet(false),
     m_audioTemplateHasBeenSet(false),
     m_tEHDConfigHasBeenSet(false),
+    m_enhanceConfigHasBeenSet(false),
     m_containerTypeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
@@ -164,6 +165,23 @@ CoreInternalOutcome TranscodeTemplate::Deserialize(const rapidjson::Value &value
         m_tEHDConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("EnhanceConfig") && !value["EnhanceConfig"].IsNull())
+    {
+        if (!value["EnhanceConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TranscodeTemplate.EnhanceConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_enhanceConfig.Deserialize(value["EnhanceConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_enhanceConfigHasBeenSet = true;
+    }
+
     if (value.HasMember("ContainerType") && !value["ContainerType"].IsNull())
     {
         if (!value["ContainerType"].IsString())
@@ -292,6 +310,15 @@ void TranscodeTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tEHDConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_enhanceConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnhanceConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_enhanceConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_containerTypeHasBeenSet)
@@ -487,6 +514,22 @@ void TranscodeTemplate::SetTEHDConfig(const TEHDConfig& _tEHDConfig)
 bool TranscodeTemplate::TEHDConfigHasBeenSet() const
 {
     return m_tEHDConfigHasBeenSet;
+}
+
+EnhanceConfig TranscodeTemplate::GetEnhanceConfig() const
+{
+    return m_enhanceConfig;
+}
+
+void TranscodeTemplate::SetEnhanceConfig(const EnhanceConfig& _enhanceConfig)
+{
+    m_enhanceConfig = _enhanceConfig;
+    m_enhanceConfigHasBeenSet = true;
+}
+
+bool TranscodeTemplate::EnhanceConfigHasBeenSet() const
+{
+    return m_enhanceConfigHasBeenSet;
 }
 
 string TranscodeTemplate::GetContainerType() const

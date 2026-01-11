@@ -44,19 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品版本。
-14：当前仅支持混合存储版。
-                     * @return TypeId 产品版本。
-14：当前仅支持混合存储版。
+                     * 获取<p>产品版本。14：极速版。</p>
+                     * @return TypeId <p>产品版本。14：极速版。</p>
                      * 
                      */
                     uint64_t GetTypeId() const;
 
                     /**
-                     * 设置产品版本。
-14：当前仅支持混合存储版。
-                     * @param _typeId 产品版本。
-14：当前仅支持混合存储版。
+                     * 设置<p>产品版本。14：极速版。</p>
+                     * @param _typeId <p>产品版本。14：极速版。</p>
                      * 
                      */
                     void SetTypeId(const uint64_t& _typeId);
@@ -69,19 +65,15 @@ namespace TencentCloud
                     bool TypeIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络唯一ID。
-请登录控制台在私有网络列表查询，如：vpc-azlk3***。
-                     * @return UniqVpcId 私有网络唯一ID。
-请登录控制台在私有网络列表查询，如：vpc-azlk3***。
+                     * 获取<p>私有网络唯一ID。请登录控制台在私有网络列表查询，如：vpc-azlk3***。</p>
+                     * @return UniqVpcId <p>私有网络唯一ID。请登录控制台在私有网络列表查询，如：vpc-azlk3***。</p>
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
-                     * 设置私有网络唯一ID。
-请登录控制台在私有网络列表查询，如：vpc-azlk3***。
-                     * @param _uniqVpcId 私有网络唯一ID。
-请登录控制台在私有网络列表查询，如：vpc-azlk3***。
+                     * 设置<p>私有网络唯一ID。请登录控制台在私有网络列表查询，如：vpc-azlk3***。</p>
+                     * @param _uniqVpcId <p>私有网络唯一ID。请登录控制台在私有网络列表查询，如：vpc-azlk3***。</p>
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -94,19 +86,15 @@ namespace TencentCloud
                     bool UniqVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络所属子网唯一ID。
-请登录控制台在私有网络列表查询，如：subnet-8abje***。
-                     * @return UniqSubnetId 私有网络所属子网唯一ID。
-请登录控制台在私有网络列表查询，如：subnet-8abje***。
+                     * 获取<p>私有网络所属子网唯一ID。请登录控制台在私有网络列表查询，如：subnet-8abje***。</p>
+                     * @return UniqSubnetId <p>私有网络所属子网唯一ID。请登录控制台在私有网络列表查询，如：subnet-8abje***。</p>
                      * 
                      */
                     std::string GetUniqSubnetId() const;
 
                     /**
-                     * 设置私有网络所属子网唯一ID。
-请登录控制台在私有网络列表查询，如：subnet-8abje***。
-                     * @param _uniqSubnetId 私有网络所属子网唯一ID。
-请登录控制台在私有网络列表查询，如：subnet-8abje***。
+                     * 设置<p>私有网络所属子网唯一ID。请登录控制台在私有网络列表查询，如：subnet-8abje***。</p>
+                     * @param _uniqSubnetId <p>私有网络所属子网唯一ID。请登录控制台在私有网络列表查询，如：subnet-8abje***。</p>
                      * 
                      */
                     void SetUniqSubnetId(const std::string& _uniqSubnetId);
@@ -119,15 +107,15 @@ namespace TencentCloud
                     bool UniqSubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取计费模式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul>
-                     * @return BillingMode 计费模式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul>
+                     * 获取<p>计费模式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul></p>
+                     * @return BillingMode <p>计费模式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul></p>
                      * 
                      */
                     int64_t GetBillingMode() const;
 
                     /**
-                     * 设置计费模式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul>
-                     * @param _billingMode 计费模式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul>
+                     * 设置<p>计费模式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul></p>
+                     * @param _billingMode <p>计费模式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul></p>
                      * 
                      */
                     void SetBillingMode(const int64_t& _billingMode);
@@ -140,15 +128,15 @@ namespace TencentCloud
                     bool BillingModeHasBeenSet() const;
 
                     /**
-                     * 获取实例数量，单次最大购买数量以查询产品售卖规格返回的数量为准。
-                     * @return GoodsNum 实例数量，单次最大购买数量以查询产品售卖规格返回的数量为准。
+                     * 获取<p>实例数量，单次最大购买数量以查询产品售卖规格返回的数量为准。</p>
+                     * @return GoodsNum <p>实例数量，单次最大购买数量以查询产品售卖规格返回的数量为准。</p>
                      * 
                      */
                     uint64_t GetGoodsNum() const;
 
                     /**
-                     * 设置实例数量，单次最大购买数量以查询产品售卖规格返回的数量为准。
-                     * @param _goodsNum 实例数量，单次最大购买数量以查询产品售卖规格返回的数量为准。
+                     * 设置<p>实例数量，单次最大购买数量以查询产品售卖规格返回的数量为准。</p>
+                     * @param _goodsNum <p>实例数量，单次最大购买数量以查询产品售卖规格返回的数量为准。</p>
                      * 
                      */
                     void SetGoodsNum(const uint64_t& _goodsNum);
@@ -161,15 +149,15 @@ namespace TencentCloud
                     bool GoodsNumHasBeenSet() const;
 
                     /**
-                     * 获取选择包年包月计费模式（BillingMode 设置为1）时，您需要选择购买实例的时长。单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。按量计费（BillingMode 设置为0）实例该参数设置为1即可。
-                     * @return Period 选择包年包月计费模式（BillingMode 设置为1）时，您需要选择购买实例的时长。单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。按量计费（BillingMode 设置为0）实例该参数设置为1即可。
+                     * 获取<p>选择包年包月计费模式（BillingMode 设置为1）时，您需要选择购买实例的时长。单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。按量计费（BillingMode 设置为0）实例该参数设置为1即可。</p>
+                     * @return Period <p>选择包年包月计费模式（BillingMode 设置为1）时，您需要选择购买实例的时长。单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。按量计费（BillingMode 设置为0）实例该参数设置为1即可。</p>
                      * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
-                     * 设置选择包年包月计费模式（BillingMode 设置为1）时，您需要选择购买实例的时长。单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。按量计费（BillingMode 设置为0）实例该参数设置为1即可。
-                     * @param _period 选择包年包月计费模式（BillingMode 设置为1）时，您需要选择购买实例的时长。单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。按量计费（BillingMode 设置为0）实例该参数设置为1即可。
+                     * 设置<p>选择包年包月计费模式（BillingMode 设置为1）时，您需要选择购买实例的时长。单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。按量计费（BillingMode 设置为0）实例该参数设置为1即可。</p>
+                     * @param _period <p>选择包年包月计费模式（BillingMode 设置为1）时，您需要选择购买实例的时长。单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。按量计费（BillingMode 设置为0）实例该参数设置为1即可。</p>
                      * 
                      */
                     void SetPeriod(const uint64_t& _period);
@@ -182,15 +170,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取分片数量，支持选择3、5、6、8、9、10、12、15、16、18、20、21、24、25、27、30、32、33、35、36、39、40、42、45、48、50、51、54、55、56、57、60、63、64分片。
-                     * @return ShardNum 分片数量，支持选择3、5、6、8、9、10、12、15、16、18、20、21、24、25、27、30、32、33、35、36、39、40、42、45、48、50、51、54、55、56、57、60、63、64分片。
+                     * 获取<p>分片数量，支持选择3、5、6、8、9、10、12、15、16、18、20、21、24、25、27、30、32、33、35、36、39、40、42、45、48、50、51、54、55、56、57、60、63、64分片。</p>
+                     * @return ShardNum <p>分片数量，支持选择3、5、6、8、9、10、12、15、16、18、20、21、24、25、27、30、32、33、35、36、39、40、42、45、48、50、51、54、55、56、57、60、63、64分片。</p>
                      * 
                      */
                     int64_t GetShardNum() const;
 
                     /**
-                     * 设置分片数量，支持选择3、5、6、8、9、10、12、15、16、18、20、21、24、25、27、30、32、33、35、36、39、40、42、45、48、50、51、54、55、56、57、60、63、64分片。
-                     * @param _shardNum 分片数量，支持选择3、5、6、8、9、10、12、15、16、18、20、21、24、25、27、30、32、33、35、36、39、40、42、45、48、50、51、54、55、56、57、60、63、64分片。
+                     * 设置<p>分片数量，支持选择3、5、6、8、9、10、12、15、16、18、20、21、24、25、27、30、32、33、35、36、39、40、42、45、48、50、51、54、55、56、57、60、63、64分片。</p>
+                     * @param _shardNum <p>分片数量，支持选择3、5、6、8、9、10、12、15、16、18、20、21、24、25、27、30、32、33、35、36、39、40、42、45、48、50、51、54、55、56、57、60、63、64分片。</p>
                      * 
                      */
                     void SetShardNum(const int64_t& _shardNum);
@@ -203,15 +191,15 @@ namespace TencentCloud
                     bool ShardNumHasBeenSet() const;
 
                     /**
-                     * 获取副本数。当前仅支持设置1个副本节点，即每一个分片仅包含1个主节点与1个副本节点，数据主从实时热备。
-                     * @return ReplicasNum 副本数。当前仅支持设置1个副本节点，即每一个分片仅包含1个主节点与1个副本节点，数据主从实时热备。
+                     * 获取<p>副本数。当前仅支持设置1个副本节点，即每一个分片仅包含1个主节点与1个副本节点，数据主从实时热备。</p>
+                     * @return ReplicasNum <p>副本数。当前仅支持设置1个副本节点，即每一个分片仅包含1个主节点与1个副本节点，数据主从实时热备。</p>
                      * 
                      */
                     int64_t GetReplicasNum() const;
 
                     /**
-                     * 设置副本数。当前仅支持设置1个副本节点，即每一个分片仅包含1个主节点与1个副本节点，数据主从实时热备。
-                     * @param _replicasNum 副本数。当前仅支持设置1个副本节点，即每一个分片仅包含1个主节点与1个副本节点，数据主从实时热备。
+                     * 设置<p>副本数。当前仅支持设置1个副本节点，即每一个分片仅包含1个主节点与1个副本节点，数据主从实时热备。</p>
+                     * @param _replicasNum <p>副本数。当前仅支持设置1个副本节点，即每一个分片仅包含1个主节点与1个副本节点，数据主从实时热备。</p>
                      * 
                      */
                     void SetReplicasNum(const int64_t& _replicasNum);
@@ -224,19 +212,15 @@ namespace TencentCloud
                     bool ReplicasNumHasBeenSet() const;
 
                     /**
-                     * 获取实例内存容量，单位：GB。
-KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
-                     * @return MachineMemory 实例内存容量，单位：GB。
-KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
+                     * 获取<p>实例内存容量，单位：GB。KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见<a href="https://cloud.tencent.com/document/product/1520/80808">产品规格</a>。</p>
+                     * @return MachineMemory <p>实例内存容量，单位：GB。KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见<a href="https://cloud.tencent.com/document/product/1520/80808">产品规格</a>。</p>
                      * 
                      */
                     int64_t GetMachineMemory() const;
 
                     /**
-                     * 设置实例内存容量，单位：GB。
-KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
-                     * @param _machineMemory 实例内存容量，单位：GB。
-KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
+                     * 设置<p>实例内存容量，单位：GB。KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见<a href="https://cloud.tencent.com/document/product/1520/80808">产品规格</a>。</p>
+                     * @param _machineMemory <p>实例内存容量，单位：GB。KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见<a href="https://cloud.tencent.com/document/product/1520/80808">产品规格</a>。</p>
                      * 
                      */
                     void SetMachineMemory(const int64_t& _machineMemory);
@@ -249,15 +233,15 @@ KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为�
                     bool MachineMemoryHasBeenSet() const;
 
                     /**
-                     * 获取实例所属的可用区ID。<ul><li>具体取值，请参见[地域和可用区](https://cloud.tencent.com/document/product/239/4106)获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul>
-                     * @return ZoneId 实例所属的可用区ID。<ul><li>具体取值，请参见[地域和可用区](https://cloud.tencent.com/document/product/239/4106)获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul>
+                     * 获取<p>实例所属的可用区ID。<ul><li>具体取值，请参见<a href="https://cloud.tencent.com/document/product/239/4106">地域和可用区</a>获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul></p>
+                     * @return ZoneId <p>实例所属的可用区ID。<ul><li>具体取值，请参见<a href="https://cloud.tencent.com/document/product/239/4106">地域和可用区</a>获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul></p>
                      * 
                      */
                     uint64_t GetZoneId() const;
 
                     /**
-                     * 设置实例所属的可用区ID。<ul><li>具体取值，请参见[地域和可用区](https://cloud.tencent.com/document/product/239/4106)获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul>
-                     * @param _zoneId 实例所属的可用区ID。<ul><li>具体取值，请参见[地域和可用区](https://cloud.tencent.com/document/product/239/4106)获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul>
+                     * 设置<p>实例所属的可用区ID。<ul><li>具体取值，请参见<a href="https://cloud.tencent.com/document/product/239/4106">地域和可用区</a>获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul></p>
+                     * @param _zoneId <p>实例所属的可用区ID。<ul><li>具体取值，请参见<a href="https://cloud.tencent.com/document/product/239/4106">地域和可用区</a>获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul></p>
                      * 
                      */
                     void SetZoneId(const uint64_t& _zoneId);
@@ -270,15 +254,15 @@ KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为�
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取实例所属的可用区名称。<ul><li>具体取值，请参见[地域和可用区](https://cloud.tencent.com/document/product/239/4106)获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul>
-                     * @return ZoneName 实例所属的可用区名称。<ul><li>具体取值，请参见[地域和可用区](https://cloud.tencent.com/document/product/239/4106)获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul>
+                     * 获取<p>实例所属的可用区名称。<ul><li>具体取值，请参见<a href="https://cloud.tencent.com/document/product/239/4106">地域和可用区</a>获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul></p>
+                     * @return ZoneName <p>实例所属的可用区名称。<ul><li>具体取值，请参见<a href="https://cloud.tencent.com/document/product/239/4106">地域和可用区</a>获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul></p>
                      * 
                      */
                     std::string GetZoneName() const;
 
                     /**
-                     * 设置实例所属的可用区名称。<ul><li>具体取值，请参见[地域和可用区](https://cloud.tencent.com/document/product/239/4106)获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul>
-                     * @param _zoneName 实例所属的可用区名称。<ul><li>具体取值，请参见[地域和可用区](https://cloud.tencent.com/document/product/239/4106)获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul>
+                     * 设置<p>实例所属的可用区名称。<ul><li>具体取值，请参见<a href="https://cloud.tencent.com/document/product/239/4106">地域和可用区</a>获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul></p>
+                     * @param _zoneName <p>实例所属的可用区名称。<ul><li>具体取值，请参见<a href="https://cloud.tencent.com/document/product/239/4106">地域和可用区</a>获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul></p>
                      * 
                      */
                     void SetZoneName(const std::string& _zoneName);
@@ -291,19 +275,15 @@ KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为�
                     bool ZoneNameHasBeenSet() const;
 
                     /**
-                     * 获取创建实例的名称。
-仅支持长度小于60的中文、英文或者数字，短划线"-"、下划线"_"。
-                     * @return InstanceName 创建实例的名称。
-仅支持长度小于60的中文、英文或者数字，短划线"-"、下划线"_"。
+                     * 获取<p>创建实例的名称。仅支持长度小于60的中文、英文或者数字，短划线"-"、下划线"_"。</p>
+                     * @return InstanceName <p>创建实例的名称。仅支持长度小于60的中文、英文或者数字，短划线"-"、下划线"_"。</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置创建实例的名称。
-仅支持长度小于60的中文、英文或者数字，短划线"-"、下划线"_"。
-                     * @param _instanceName 创建实例的名称。
-仅支持长度小于60的中文、英文或者数字，短划线"-"、下划线"_"。
+                     * 设置<p>创建实例的名称。仅支持长度小于60的中文、英文或者数字，短划线"-"、下划线"_"。</p>
+                     * @param _instanceName <p>创建实例的名称。仅支持长度小于60的中文、英文或者数字，短划线"-"、下划线"_"。</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -316,15 +296,15 @@ KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为�
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取指明创建的实例是否需要支持免密访问。<ul><li>true：免密实例。</li><li>false：非免密实例，默认为非免密实例。此时，需要设置访问密码。</li></ul>
-                     * @return NoAuth 指明创建的实例是否需要支持免密访问。<ul><li>true：免密实例。</li><li>false：非免密实例，默认为非免密实例。此时，需要设置访问密码。</li></ul>
+                     * 获取<p>指明创建的实例是否需要支持免密访问。<ul><li>true：免密实例。</li><li>false：非免密实例，默认为非免密实例。此时，需要设置访问密码。</li></ul></p>
+                     * @return NoAuth <p>指明创建的实例是否需要支持免密访问。<ul><li>true：免密实例。</li><li>false：非免密实例，默认为非免密实例。此时，需要设置访问密码。</li></ul></p>
                      * 
                      */
                     bool GetNoAuth() const;
 
                     /**
-                     * 设置指明创建的实例是否需要支持免密访问。<ul><li>true：免密实例。</li><li>false：非免密实例，默认为非免密实例。此时，需要设置访问密码。</li></ul>
-                     * @param _noAuth 指明创建的实例是否需要支持免密访问。<ul><li>true：免密实例。</li><li>false：非免密实例，默认为非免密实例。此时，需要设置访问密码。</li></ul>
+                     * 设置<p>指明创建的实例是否需要支持免密访问。<ul><li>true：免密实例。</li><li>false：非免密实例，默认为非免密实例。此时，需要设置访问密码。</li></ul></p>
+                     * @param _noAuth <p>指明创建的实例是否需要支持免密访问。<ul><li>true：免密实例。</li><li>false：非免密实例，默认为非免密实例。此时，需要设置访问密码。</li></ul></p>
                      * 
                      */
                     void SetNoAuth(const bool& _noAuth);
@@ -337,19 +317,15 @@ KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为�
                     bool NoAuthHasBeenSet() const;
 
                     /**
-                     * 获取实例访问密码。<ul><li>当参数<b>NoAuth</b>为<b>true</b>时，Password为无需设置，否则Password为必填参数。</li>
-<li>密码复杂度要求：<ul><li>8-30个字符。</li><li>至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种。</li><li>不能以"/"开头。</li></ul></li></ul>
-                     * @return Password 实例访问密码。<ul><li>当参数<b>NoAuth</b>为<b>true</b>时，Password为无需设置，否则Password为必填参数。</li>
-<li>密码复杂度要求：<ul><li>8-30个字符。</li><li>至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种。</li><li>不能以"/"开头。</li></ul></li></ul>
+                     * 获取<p>实例访问密码。<ul><li>当参数<b>NoAuth</b>为<b>true</b>时，Password为无需设置，否则Password为必填参数。</li><li>密码复杂度要求：<ul><li>8-30个字符。</li><li>至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&amp;*-+=_|{}[]:;&lt;&gt;,.?/ 中的2种。</li><li>不能以"/"开头。</li></ul></li></ul></p>
+                     * @return Password <p>实例访问密码。<ul><li>当参数<b>NoAuth</b>为<b>true</b>时，Password为无需设置，否则Password为必填参数。</li><li>密码复杂度要求：<ul><li>8-30个字符。</li><li>至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&amp;*-+=_|{}[]:;&lt;&gt;,.?/ 中的2种。</li><li>不能以"/"开头。</li></ul></li></ul></p>
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置实例访问密码。<ul><li>当参数<b>NoAuth</b>为<b>true</b>时，Password为无需设置，否则Password为必填参数。</li>
-<li>密码复杂度要求：<ul><li>8-30个字符。</li><li>至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种。</li><li>不能以"/"开头。</li></ul></li></ul>
-                     * @param _password 实例访问密码。<ul><li>当参数<b>NoAuth</b>为<b>true</b>时，Password为无需设置，否则Password为必填参数。</li>
-<li>密码复杂度要求：<ul><li>8-30个字符。</li><li>至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种。</li><li>不能以"/"开头。</li></ul></li></ul>
+                     * 设置<p>实例访问密码。<ul><li>当参数<b>NoAuth</b>为<b>true</b>时，Password为无需设置，否则Password为必填参数。</li><li>密码复杂度要求：<ul><li>8-30个字符。</li><li>至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&amp;*-+=_|{}[]:;&lt;&gt;,.?/ 中的2种。</li><li>不能以"/"开头。</li></ul></li></ul></p>
+                     * @param _password <p>实例访问密码。<ul><li>当参数<b>NoAuth</b>为<b>true</b>时，Password为无需设置，否则Password为必填参数。</li><li>密码复杂度要求：<ul><li>8-30个字符。</li><li>至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&amp;*-+=_|{}[]:;&lt;&gt;,.?/ 中的2种。</li><li>不能以"/"开头。</li></ul></li></ul></p>
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -362,15 +338,15 @@ KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为�
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取自定义端口。默认为6379，范围[1024,65535]。
-                     * @return VPort 自定义端口。默认为6379，范围[1024,65535]。
+                     * 获取<p>自定义端口。默认为6379，范围[1024,65535]。</p>
+                     * @return VPort <p>自定义端口。默认为6379，范围[1024,65535]。</p>
                      * 
                      */
                     uint64_t GetVPort() const;
 
                     /**
-                     * 设置自定义端口。默认为6379，范围[1024,65535]。
-                     * @param _vPort 自定义端口。默认为6379，范围[1024,65535]。
+                     * 设置<p>自定义端口。默认为6379，范围[1024,65535]。</p>
+                     * @param _vPort <p>自定义端口。默认为6379，范围[1024,65535]。</p>
                      * 
                      */
                     void SetVPort(const uint64_t& _vPort);
@@ -383,15 +359,15 @@ KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为�
                     bool VPortHasBeenSet() const;
 
                     /**
-                     * 获取包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</li></ul>
-                     * @return AutoRenew 包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</li></ul>
+                     * 获取<p>包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</li></ul></p>
+                     * @return AutoRenew <p>包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</li></ul></p>
                      * 
                      */
                     uint64_t GetAutoRenew() const;
 
                     /**
-                     * 设置包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</li></ul>
-                     * @param _autoRenew 包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</li></ul>
+                     * 设置<p>包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</li></ul></p>
+                     * @param _autoRenew <p>包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</li></ul></p>
                      * 
                      */
                     void SetAutoRenew(const uint64_t& _autoRenew);
@@ -404,15 +380,15 @@ KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为�
                     bool AutoRenewHasBeenSet() const;
 
                     /**
-                     * 获取给实例设置安全组 ID 数组。
-                     * @return SecurityGroupIdList 给实例设置安全组 ID 数组。
+                     * 获取<p>给实例设置安全组 ID 数组。</p>
+                     * @return SecurityGroupIdList <p>给实例设置安全组 ID 数组。</p>
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIdList() const;
 
                     /**
-                     * 设置给实例设置安全组 ID 数组。
-                     * @param _securityGroupIdList 给实例设置安全组 ID 数组。
+                     * 设置<p>给实例设置安全组 ID 数组。</p>
+                     * @param _securityGroupIdList <p>给实例设置安全组 ID 数组。</p>
                      * 
                      */
                     void SetSecurityGroupIdList(const std::vector<std::string>& _securityGroupIdList);
@@ -425,15 +401,15 @@ KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为�
                     bool SecurityGroupIdListHasBeenSet() const;
 
                     /**
-                     * 获取给实例绑定标签。
-                     * @return ResourceTags 给实例绑定标签。
+                     * 获取<p>给实例绑定标签。</p>
+                     * @return ResourceTags <p>给实例绑定标签。</p>
                      * 
                      */
                     std::vector<ResourceTag> GetResourceTags() const;
 
                     /**
-                     * 设置给实例绑定标签。
-                     * @param _resourceTags 给实例绑定标签。
+                     * 设置<p>给实例绑定标签。</p>
+                     * @param _resourceTags <p>给实例绑定标签。</p>
                      * 
                      */
                     void SetResourceTags(const std::vector<ResourceTag>& _resourceTags);
@@ -446,19 +422,15 @@ KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为�
                     bool ResourceTagsHasBeenSet() const;
 
                     /**
-                     * 获取混合存储版，单分片持久化内存容量，单位：GB。
-KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
-                     * @return MemSize 混合存储版，单分片持久化内存容量，单位：GB。
-KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
+                     * 获取<p>混合存储版，单分片持久化内存容量，单位：GB。KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见<a href="https://cloud.tencent.com/document/product/1520/80808">产品规格</a>。</p>
+                     * @return MemSize <p>混合存储版，单分片持久化内存容量，单位：GB。KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见<a href="https://cloud.tencent.com/document/product/1520/80808">产品规格</a>。</p>
                      * 
                      */
                     int64_t GetMemSize() const;
 
                     /**
-                     * 设置混合存储版，单分片持久化内存容量，单位：GB。
-KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
-                     * @param _memSize 混合存储版，单分片持久化内存容量，单位：GB。
-KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
+                     * 设置<p>混合存储版，单分片持久化内存容量，单位：GB。KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见<a href="https://cloud.tencent.com/document/product/1520/80808">产品规格</a>。</p>
+                     * @param _memSize <p>混合存储版，单分片持久化内存容量，单位：GB。KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见<a href="https://cloud.tencent.com/document/product/1520/80808">产品规格</a>。</p>
                      * 
                      */
                     void SetMemSize(const int64_t& _memSize);
@@ -471,19 +443,15 @@ KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为�
                     bool MemSizeHasBeenSet() const;
 
                     /**
-                     * 获取每个分片硬盘的容量。单位：GB。
-每一缓存分片容量，对应的磁盘容量范围不同。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
-                     * @return DiskSize 每个分片硬盘的容量。单位：GB。
-每一缓存分片容量，对应的磁盘容量范围不同。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
+                     * 获取<p>每个分片硬盘的容量。单位：GB。每一缓存分片容量，对应的磁盘容量范围不同。具体信息，请参见<a href="https://cloud.tencent.com/document/product/1520/80808">产品规格</a>。</p>
+                     * @return DiskSize <p>每个分片硬盘的容量。单位：GB。每一缓存分片容量，对应的磁盘容量范围不同。具体信息，请参见<a href="https://cloud.tencent.com/document/product/1520/80808">产品规格</a>。</p>
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置每个分片硬盘的容量。单位：GB。
-每一缓存分片容量，对应的磁盘容量范围不同。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
-                     * @param _diskSize 每个分片硬盘的容量。单位：GB。
-每一缓存分片容量，对应的磁盘容量范围不同。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
+                     * 设置<p>每个分片硬盘的容量。单位：GB。每一缓存分片容量，对应的磁盘容量范围不同。具体信息，请参见<a href="https://cloud.tencent.com/document/product/1520/80808">产品规格</a>。</p>
+                     * @param _diskSize <p>每个分片硬盘的容量。单位：GB。每一缓存分片容量，对应的磁盘容量范围不同。具体信息，请参见<a href="https://cloud.tencent.com/document/product/1520/80808">产品规格</a>。</p>
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -496,15 +464,15 @@ KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为�
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取计算 CPU 核数，可忽略不传。CPU 核数与内存为固定搭配，具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
-                     * @return MachineCpu 计算 CPU 核数，可忽略不传。CPU 核数与内存为固定搭配，具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
+                     * 获取<p>计算 CPU 核数，可忽略不传。CPU 核数与内存为固定搭配，具体信息，请参见<a href="https://cloud.tencent.com/document/product/1520/80808">产品规格</a>。</p>
+                     * @return MachineCpu <p>计算 CPU 核数，可忽略不传。CPU 核数与内存为固定搭配，具体信息，请参见<a href="https://cloud.tencent.com/document/product/1520/80808">产品规格</a>。</p>
                      * 
                      */
                     int64_t GetMachineCpu() const;
 
                     /**
-                     * 设置计算 CPU 核数，可忽略不传。CPU 核数与内存为固定搭配，具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
-                     * @param _machineCpu 计算 CPU 核数，可忽略不传。CPU 核数与内存为固定搭配，具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
+                     * 设置<p>计算 CPU 核数，可忽略不传。CPU 核数与内存为固定搭配，具体信息，请参见<a href="https://cloud.tencent.com/document/product/1520/80808">产品规格</a>。</p>
+                     * @param _machineCpu <p>计算 CPU 核数，可忽略不传。CPU 核数与内存为固定搭配，具体信息，请参见<a href="https://cloud.tencent.com/document/product/1520/80808">产品规格</a>。</p>
                      * 
                      */
                     void SetMachineCpu(const int64_t& _machineCpu);
@@ -517,15 +485,15 @@ KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为�
                     bool MachineCpuHasBeenSet() const;
 
                     /**
-                     * 获取项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准。
-                     * @return ProjectId 项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准。
+                     * 获取<p>项目id，取值以用户账户&gt;用户账户相关接口查询&gt;项目列表返回的projectId为准。</p>
+                     * @return ProjectId <p>项目id，取值以用户账户&gt;用户账户相关接口查询&gt;项目列表返回的projectId为准。</p>
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准。
-                     * @param _projectId 项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准。
+                     * 设置<p>项目id，取值以用户账户&gt;用户账户相关接口查询&gt;项目列表返回的projectId为准。</p>
+                     * @param _projectId <p>项目id，取值以用户账户&gt;用户账户相关接口查询&gt;项目列表返回的projectId为准。</p>
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -538,15 +506,15 @@ KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为�
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取数据压缩开关。<ul><li>ON：开启，默认开启压缩。</li><li>OFF：关闭。</li></ul>
-                     * @return Compression 数据压缩开关。<ul><li>ON：开启，默认开启压缩。</li><li>OFF：关闭。</li></ul>
+                     * 获取<p>数据压缩开关。<ul><li>ON：开启，默认开启压缩。</li><li>OFF：关闭。</li></ul></p>
+                     * @return Compression <p>数据压缩开关。<ul><li>ON：开启，默认开启压缩。</li><li>OFF：关闭。</li></ul></p>
                      * 
                      */
                     std::string GetCompression() const;
 
                     /**
-                     * 设置数据压缩开关。<ul><li>ON：开启，默认开启压缩。</li><li>OFF：关闭。</li></ul>
-                     * @param _compression 数据压缩开关。<ul><li>ON：开启，默认开启压缩。</li><li>OFF：关闭。</li></ul>
+                     * 设置<p>数据压缩开关。<ul><li>ON：开启，默认开启压缩。</li><li>OFF：关闭。</li></ul></p>
+                     * @param _compression <p>数据压缩开关。<ul><li>ON：开启，默认开启压缩。</li><li>OFF：关闭。</li></ul></p>
                      * 
                      */
                     void SetCompression(const std::string& _compression);
@@ -561,147 +529,139 @@ KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为�
                 private:
 
                     /**
-                     * 产品版本。
-14：当前仅支持混合存储版。
+                     * <p>产品版本。14：极速版。</p>
                      */
                     uint64_t m_typeId;
                     bool m_typeIdHasBeenSet;
 
                     /**
-                     * 私有网络唯一ID。
-请登录控制台在私有网络列表查询，如：vpc-azlk3***。
+                     * <p>私有网络唯一ID。请登录控制台在私有网络列表查询，如：vpc-azlk3***。</p>
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
-                     * 私有网络所属子网唯一ID。
-请登录控制台在私有网络列表查询，如：subnet-8abje***。
+                     * <p>私有网络所属子网唯一ID。请登录控制台在私有网络列表查询，如：subnet-8abje***。</p>
                      */
                     std::string m_uniqSubnetId;
                     bool m_uniqSubnetIdHasBeenSet;
 
                     /**
-                     * 计费模式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul>
+                     * <p>计费模式。<ul><li>0：按量计费。</li><li>1：包年包月。</li></ul></p>
                      */
                     int64_t m_billingMode;
                     bool m_billingModeHasBeenSet;
 
                     /**
-                     * 实例数量，单次最大购买数量以查询产品售卖规格返回的数量为准。
+                     * <p>实例数量，单次最大购买数量以查询产品售卖规格返回的数量为准。</p>
                      */
                     uint64_t m_goodsNum;
                     bool m_goodsNumHasBeenSet;
 
                     /**
-                     * 选择包年包月计费模式（BillingMode 设置为1）时，您需要选择购买实例的时长。单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。按量计费（BillingMode 设置为0）实例该参数设置为1即可。
+                     * <p>选择包年包月计费模式（BillingMode 设置为1）时，您需要选择购买实例的时长。单位：月，取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。按量计费（BillingMode 设置为0）实例该参数设置为1即可。</p>
                      */
                     uint64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 分片数量，支持选择3、5、6、8、9、10、12、15、16、18、20、21、24、25、27、30、32、33、35、36、39、40、42、45、48、50、51、54、55、56、57、60、63、64分片。
+                     * <p>分片数量，支持选择3、5、6、8、9、10、12、15、16、18、20、21、24、25、27、30、32、33、35、36、39、40、42、45、48、50、51、54、55、56、57、60、63、64分片。</p>
                      */
                     int64_t m_shardNum;
                     bool m_shardNumHasBeenSet;
 
                     /**
-                     * 副本数。当前仅支持设置1个副本节点，即每一个分片仅包含1个主节点与1个副本节点，数据主从实时热备。
+                     * <p>副本数。当前仅支持设置1个副本节点，即每一个分片仅包含1个主节点与1个副本节点，数据主从实时热备。</p>
                      */
                     int64_t m_replicasNum;
                     bool m_replicasNumHasBeenSet;
 
                     /**
-                     * 实例内存容量，单位：GB。
-KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
+                     * <p>实例内存容量，单位：GB。KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见<a href="https://cloud.tencent.com/document/product/1520/80808">产品规格</a>。</p>
                      */
                     int64_t m_machineMemory;
                     bool m_machineMemoryHasBeenSet;
 
                     /**
-                     * 实例所属的可用区ID。<ul><li>具体取值，请参见[地域和可用区](https://cloud.tencent.com/document/product/239/4106)获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul>
+                     * <p>实例所属的可用区ID。<ul><li>具体取值，请参见<a href="https://cloud.tencent.com/document/product/239/4106">地域和可用区</a>获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul></p>
                      */
                     uint64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 实例所属的可用区名称。<ul><li>具体取值，请参见[地域和可用区](https://cloud.tencent.com/document/product/239/4106)获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul>
+                     * <p>实例所属的可用区名称。<ul><li>具体取值，请参见<a href="https://cloud.tencent.com/document/product/239/4106">地域和可用区</a>获取。</li><li>参数<b>ZoneId</b>和<b>ZoneName</b>至少配置其中一个。</li></ul></p>
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;
 
                     /**
-                     * 创建实例的名称。
-仅支持长度小于60的中文、英文或者数字，短划线"-"、下划线"_"。
+                     * <p>创建实例的名称。仅支持长度小于60的中文、英文或者数字，短划线"-"、下划线"_"。</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 指明创建的实例是否需要支持免密访问。<ul><li>true：免密实例。</li><li>false：非免密实例，默认为非免密实例。此时，需要设置访问密码。</li></ul>
+                     * <p>指明创建的实例是否需要支持免密访问。<ul><li>true：免密实例。</li><li>false：非免密实例，默认为非免密实例。此时，需要设置访问密码。</li></ul></p>
                      */
                     bool m_noAuth;
                     bool m_noAuthHasBeenSet;
 
                     /**
-                     * 实例访问密码。<ul><li>当参数<b>NoAuth</b>为<b>true</b>时，Password为无需设置，否则Password为必填参数。</li>
-<li>密码复杂度要求：<ul><li>8-30个字符。</li><li>至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种。</li><li>不能以"/"开头。</li></ul></li></ul>
+                     * <p>实例访问密码。<ul><li>当参数<b>NoAuth</b>为<b>true</b>时，Password为无需设置，否则Password为必填参数。</li><li>密码复杂度要求：<ul><li>8-30个字符。</li><li>至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&amp;*-+=_|{}[]:;&lt;&gt;,.?/ 中的2种。</li><li>不能以"/"开头。</li></ul></li></ul></p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 自定义端口。默认为6379，范围[1024,65535]。
+                     * <p>自定义端口。默认为6379，范围[1024,65535]。</p>
                      */
                     uint64_t m_vPort;
                     bool m_vPortHasBeenSet;
 
                     /**
-                     * 包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</li></ul>
+                     * <p>包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</li></ul></p>
                      */
                     uint64_t m_autoRenew;
                     bool m_autoRenewHasBeenSet;
 
                     /**
-                     * 给实例设置安全组 ID 数组。
+                     * <p>给实例设置安全组 ID 数组。</p>
                      */
                     std::vector<std::string> m_securityGroupIdList;
                     bool m_securityGroupIdListHasBeenSet;
 
                     /**
-                     * 给实例绑定标签。
+                     * <p>给实例绑定标签。</p>
                      */
                     std::vector<ResourceTag> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;
 
                     /**
-                     * 混合存储版，单分片持久化内存容量，单位：GB。
-KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
+                     * <p>混合存储版，单分片持久化内存容量，单位：GB。KeeWiDB 内存容量<b>MachineMemory</b>与持久内存容量<b>MemSize</b>为固定搭配，即2GB内存，固定分配8GB的持久内存，不可选择。具体信息，请参见<a href="https://cloud.tencent.com/document/product/1520/80808">产品规格</a>。</p>
                      */
                     int64_t m_memSize;
                     bool m_memSizeHasBeenSet;
 
                     /**
-                     * 每个分片硬盘的容量。单位：GB。
-每一缓存分片容量，对应的磁盘容量范围不同。具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
+                     * <p>每个分片硬盘的容量。单位：GB。每一缓存分片容量，对应的磁盘容量范围不同。具体信息，请参见<a href="https://cloud.tencent.com/document/product/1520/80808">产品规格</a>。</p>
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 计算 CPU 核数，可忽略不传。CPU 核数与内存为固定搭配，具体信息，请参见[产品规格](https://cloud.tencent.com/document/product/1520/80808)。
+                     * <p>计算 CPU 核数，可忽略不传。CPU 核数与内存为固定搭配，具体信息，请参见<a href="https://cloud.tencent.com/document/product/1520/80808">产品规格</a>。</p>
                      */
                     int64_t m_machineCpu;
                     bool m_machineCpuHasBeenSet;
 
                     /**
-                     * 项目id，取值以用户账户>用户账户相关接口查询>项目列表返回的projectId为准。
+                     * <p>项目id，取值以用户账户&gt;用户账户相关接口查询&gt;项目列表返回的projectId为准。</p>
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 数据压缩开关。<ul><li>ON：开启，默认开启压缩。</li><li>OFF：关闭。</li></ul>
+                     * <p>数据压缩开关。<ul><li>ON：开启，默认开启压缩。</li><li>OFF：关闭。</li></ul></p>
                      */
                     std::string m_compression;
                     bool m_compressionHasBeenSet;

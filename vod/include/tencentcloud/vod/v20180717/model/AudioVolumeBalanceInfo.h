@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_AUDIODENOISEINFO_H_
-#define TENCENTCLOUD_VOD_V20180717_MODEL_AUDIODENOISEINFO_H_
+#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_AUDIOVOLUMEBALANCEINFO_H_
+#define TENCENTCLOUD_VOD_V20180717_MODEL_AUDIOVOLUMEBALANCEINFO_H_
 
 #include <string>
 #include <vector>
@@ -35,35 +35,35 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 音频降噪控制信息
+                * 音量均衡配置。
                 */
-                class AudioDenoiseInfo : public AbstractModel
+                class AudioVolumeBalanceInfo : public AbstractModel
                 {
                 public:
-                    AudioDenoiseInfo();
-                    ~AudioDenoiseInfo() = default;
+                    AudioVolumeBalanceInfo();
+                    ~AudioVolumeBalanceInfo() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取音频降噪控制开关，可选值：
-<li>ON：开启音频降噪；</li>
-<li>OFF：关闭音频降噪。</li>
-                     * @return Switch 音频降噪控制开关，可选值：
-<li>ON：开启音频降噪；</li>
-<li>OFF：关闭音频降噪。</li>
+                     * 获取音量均衡控制开关，可选值：
+<li>ON：开启音量均衡；</li>
+<li>OFF：关闭音量均衡。</li>
+                     * @return Switch 音量均衡控制开关，可选值：
+<li>ON：开启音量均衡；</li>
+<li>OFF：关闭音量均衡。</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置音频降噪控制开关，可选值：
-<li>ON：开启音频降噪；</li>
-<li>OFF：关闭音频降噪。</li>
-                     * @param _switch 音频降噪控制开关，可选值：
-<li>ON：开启音频降噪；</li>
-<li>OFF：关闭音频降噪。</li>
+                     * 设置音量均衡控制开关，可选值：
+<li>ON：开启音量均衡；</li>
+<li>OFF：关闭音量均衡。</li>
+                     * @param _switch 音量均衡控制开关，可选值：
+<li>ON：开启音量均衡；</li>
+<li>OFF：关闭音量均衡。</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,23 +76,27 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取音频降噪类型，仅当音频降噪控制开关为 ON 时有效，可选值：
-<li>normal：正常音频降噪；</li>
-默认值：normal。
-                     * @return Type 音频降噪类型，仅当音频降噪控制开关为 ON 时有效，可选值：
-<li>normal：正常音频降噪；</li>
-默认值：normal。
+                     * 获取类型，可选值：
+<li>loudNorm：响度标准化</li>
+<li>gainControl：减小突变</li>
+默认值：loudNorm。
+                     * @return Type 类型，可选值：
+<li>loudNorm：响度标准化</li>
+<li>gainControl：减小突变</li>
+默认值：loudNorm。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置音频降噪类型，仅当音频降噪控制开关为 ON 时有效，可选值：
-<li>normal：正常音频降噪；</li>
-默认值：normal。
-                     * @param _type 音频降噪类型，仅当音频降噪控制开关为 ON 时有效，可选值：
-<li>normal：正常音频降噪；</li>
-默认值：normal。
+                     * 设置类型，可选值：
+<li>loudNorm：响度标准化</li>
+<li>gainControl：减小突变</li>
+默认值：loudNorm。
+                     * @param _type 类型，可选值：
+<li>loudNorm：响度标准化</li>
+<li>gainControl：减小突变</li>
+默认值：loudNorm。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -107,17 +111,18 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 音频降噪控制开关，可选值：
-<li>ON：开启音频降噪；</li>
-<li>OFF：关闭音频降噪。</li>
+                     * 音量均衡控制开关，可选值：
+<li>ON：开启音量均衡；</li>
+<li>OFF：关闭音量均衡。</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 音频降噪类型，仅当音频降噪控制开关为 ON 时有效，可选值：
-<li>normal：正常音频降噪；</li>
-默认值：normal。
+                     * 类型，可选值：
+<li>loudNorm：响度标准化</li>
+<li>gainControl：减小突变</li>
+默认值：loudNorm。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -128,4 +133,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_AUDIODENOISEINFO_H_
+#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_AUDIOVOLUMEBALANCEINFO_H_

@@ -24,6 +24,7 @@
 #include <tencentcloud/vod/v20180717/model/VideoTemplateInfoForUpdate.h>
 #include <tencentcloud/vod/v20180717/model/AudioTemplateInfoForUpdate.h>
 #include <tencentcloud/vod/v20180717/model/TEHDConfigForUpdate.h>
+#include <tencentcloud/vod/v20180717/model/EnhanceConfigForUpdate.h>
 
 
 namespace TencentCloud
@@ -272,6 +273,27 @@ namespace TencentCloud
                     bool TEHDConfigHasBeenSet() const;
 
                     /**
+                     * 获取音视频增强配置。
+                     * @return EnhanceConfig 音视频增强配置。
+                     * 
+                     */
+                    EnhanceConfigForUpdate GetEnhanceConfig() const;
+
+                    /**
+                     * 设置音视频增强配置。
+                     * @param _enhanceConfig 音视频增强配置。
+                     * 
+                     */
+                    void SetEnhanceConfig(const EnhanceConfigForUpdate& _enhanceConfig);
+
+                    /**
+                     * 判断参数 EnhanceConfig 是否已赋值
+                     * @return EnhanceConfig 是否已赋值
+                     * 
+                     */
+                    bool EnhanceConfigHasBeenSet() const;
+
+                    /**
                      * 获取切片类型，当 Container 为 hls 时有效，可选值：
 <li>ts：ts 切片；</li>
 <li>fmp4：fmp4 切片。</li>
@@ -365,6 +387,12 @@ namespace TencentCloud
                      */
                     TEHDConfigForUpdate m_tEHDConfig;
                     bool m_tEHDConfigHasBeenSet;
+
+                    /**
+                     * 音视频增强配置。
+                     */
+                    EnhanceConfigForUpdate m_enhanceConfig;
+                    bool m_enhanceConfigHasBeenSet;
 
                     /**
                      * 切片类型，当 Container 为 hls 时有效，可选值：

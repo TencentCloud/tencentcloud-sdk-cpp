@@ -29,7 +29,9 @@ DescribeTranscodeTemplatesRequest::DescribeTranscodeTemplatesRequest() :
     m_containerTypeHasBeenSet(false),
     m_tEHDTypeHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_enhanceTypeHasBeenSet(false),
+    m_enhanceScenarioTypeHasBeenSet(false)
 {
 }
 
@@ -99,6 +101,22 @@ string DescribeTranscodeTemplatesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_enhanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnhanceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_enhanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enhanceScenarioTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnhanceScenarioType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_enhanceScenarioType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -219,6 +237,38 @@ void DescribeTranscodeTemplatesRequest::SetLimit(const uint64_t& _limit)
 bool DescribeTranscodeTemplatesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeTranscodeTemplatesRequest::GetEnhanceType() const
+{
+    return m_enhanceType;
+}
+
+void DescribeTranscodeTemplatesRequest::SetEnhanceType(const string& _enhanceType)
+{
+    m_enhanceType = _enhanceType;
+    m_enhanceTypeHasBeenSet = true;
+}
+
+bool DescribeTranscodeTemplatesRequest::EnhanceTypeHasBeenSet() const
+{
+    return m_enhanceTypeHasBeenSet;
+}
+
+string DescribeTranscodeTemplatesRequest::GetEnhanceScenarioType() const
+{
+    return m_enhanceScenarioType;
+}
+
+void DescribeTranscodeTemplatesRequest::SetEnhanceScenarioType(const string& _enhanceScenarioType)
+{
+    m_enhanceScenarioType = _enhanceScenarioType;
+    m_enhanceScenarioTypeHasBeenSet = true;
+}
+
+bool DescribeTranscodeTemplatesRequest::EnhanceScenarioTypeHasBeenSet() const
+{
+    return m_enhanceScenarioTypeHasBeenSet;
 }
 
 

@@ -47,8 +47,12 @@
 #include <tencentcloud/dataagent/v20250513/model/ModifyChunkResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/ModifyKnowledgeBaseRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/ModifyKnowledgeBaseResponse.h>
+#include <tencentcloud/dataagent/v20250513/model/ModifyUserAuthorityRequest.h>
+#include <tencentcloud/dataagent/v20250513/model/ModifyUserAuthorityResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/QueryChunkListRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/QueryChunkListResponse.h>
+#include <tencentcloud/dataagent/v20250513/model/QueryUserAuthorityRequest.h>
+#include <tencentcloud/dataagent/v20250513/model/QueryUserAuthorityResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/StopChatAIRequest.h>
 #include <tencentcloud/dataagent/v20250513/model/StopChatAIResponse.h>
 #include <tencentcloud/dataagent/v20250513/model/UploadAndCommitFileRequest.h>
@@ -103,9 +107,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyKnowledgeBaseResponse> ModifyKnowledgeBaseOutcome;
                 typedef std::future<ModifyKnowledgeBaseOutcome> ModifyKnowledgeBaseOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::ModifyKnowledgeBaseRequest&, ModifyKnowledgeBaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyKnowledgeBaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyUserAuthorityResponse> ModifyUserAuthorityOutcome;
+                typedef std::future<ModifyUserAuthorityOutcome> ModifyUserAuthorityOutcomeCallable;
+                typedef std::function<void(const DataagentClient*, const Model::ModifyUserAuthorityRequest&, ModifyUserAuthorityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserAuthorityAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryChunkListResponse> QueryChunkListOutcome;
                 typedef std::future<QueryChunkListOutcome> QueryChunkListOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::QueryChunkListRequest&, QueryChunkListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryChunkListAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryUserAuthorityResponse> QueryUserAuthorityOutcome;
+                typedef std::future<QueryUserAuthorityOutcome> QueryUserAuthorityOutcomeCallable;
+                typedef std::function<void(const DataagentClient*, const Model::QueryUserAuthorityRequest&, QueryUserAuthorityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryUserAuthorityAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopChatAIResponse> StopChatAIOutcome;
                 typedef std::future<StopChatAIOutcome> StopChatAIOutcomeCallable;
                 typedef std::function<void(const DataagentClient*, const Model::StopChatAIRequest&, StopChatAIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopChatAIAsyncHandler;
@@ -224,6 +234,15 @@ namespace TencentCloud
                 ModifyKnowledgeBaseOutcomeCallable ModifyKnowledgeBaseCallable(const Model::ModifyKnowledgeBaseRequest& request);
 
                 /**
+                 *修改对象权限
+                 * @param req ModifyUserAuthorityRequest
+                 * @return ModifyUserAuthorityOutcome
+                 */
+                ModifyUserAuthorityOutcome ModifyUserAuthority(const Model::ModifyUserAuthorityRequest &request);
+                void ModifyUserAuthorityAsync(const Model::ModifyUserAuthorityRequest& request, const ModifyUserAuthorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyUserAuthorityOutcomeCallable ModifyUserAuthorityCallable(const Model::ModifyUserAuthorityRequest& request);
+
+                /**
                  *文档切片查询
                  * @param req QueryChunkListRequest
                  * @return QueryChunkListOutcome
@@ -231,6 +250,15 @@ namespace TencentCloud
                 QueryChunkListOutcome QueryChunkList(const Model::QueryChunkListRequest &request);
                 void QueryChunkListAsync(const Model::QueryChunkListRequest& request, const QueryChunkListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryChunkListOutcomeCallable QueryChunkListCallable(const Model::QueryChunkListRequest& request);
+
+                /**
+                 *查询对象权限
+                 * @param req QueryUserAuthorityRequest
+                 * @return QueryUserAuthorityOutcome
+                 */
+                QueryUserAuthorityOutcome QueryUserAuthority(const Model::QueryUserAuthorityRequest &request);
+                void QueryUserAuthorityAsync(const Model::QueryUserAuthorityRequest& request, const QueryUserAuthorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryUserAuthorityOutcomeCallable QueryUserAuthorityCallable(const Model::QueryUserAuthorityRequest& request);
 
                 /**
                  *中断DataAgent的回答输出

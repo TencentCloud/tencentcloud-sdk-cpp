@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_AUDIODENOISEINFO_H_
-#define TENCENTCLOUD_VOD_V20180717_MODEL_AUDIODENOISEINFO_H_
+#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_DIFFUSIONENHANCEINFO_H_
+#define TENCENTCLOUD_VOD_V20180717_MODEL_DIFFUSIONENHANCEINFO_H_
 
 #include <string>
 #include <vector>
@@ -35,35 +35,35 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 音频降噪控制信息
+                * 大模型增强配置。
                 */
-                class AudioDenoiseInfo : public AbstractModel
+                class DiffusionEnhanceInfo : public AbstractModel
                 {
                 public:
-                    AudioDenoiseInfo();
-                    ~AudioDenoiseInfo() = default;
+                    DiffusionEnhanceInfo();
+                    ~DiffusionEnhanceInfo() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取音频降噪控制开关，可选值：
-<li>ON：开启音频降噪；</li>
-<li>OFF：关闭音频降噪。</li>
-                     * @return Switch 音频降噪控制开关，可选值：
-<li>ON：开启音频降噪；</li>
-<li>OFF：关闭音频降噪。</li>
+                     * 获取大模型增强开关，可选值：
+<li>ON：开启；</li>
+<li>OFF：关闭。</li>
+                     * @return Switch 大模型增强开关，可选值：
+<li>ON：开启；</li>
+<li>OFF：关闭。</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置音频降噪控制开关，可选值：
-<li>ON：开启音频降噪；</li>
-<li>OFF：关闭音频降噪。</li>
-                     * @param _switch 音频降噪控制开关，可选值：
-<li>ON：开启音频降噪；</li>
-<li>OFF：关闭音频降噪。</li>
+                     * 设置大模型增强开关，可选值：
+<li>ON：开启；</li>
+<li>OFF：关闭。</li>
+                     * @param _switch 大模型增强开关，可选值：
+<li>ON：开启；</li>
+<li>OFF：关闭。</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,22 +76,30 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取音频降噪类型，仅当音频降噪控制开关为 ON 时有效，可选值：
-<li>normal：正常音频降噪；</li>
+                     * 获取强度类型，仅当大模型增强控制开关为 ON 时有效，可选值：
+<li>weak：弱；</li>
+<li>normal：正常；</li>
+<li>strong：强。</li>
 默认值：normal。
-                     * @return Type 音频降噪类型，仅当音频降噪控制开关为 ON 时有效，可选值：
-<li>normal：正常音频降噪；</li>
+                     * @return Type 强度类型，仅当大模型增强控制开关为 ON 时有效，可选值：
+<li>weak：弱；</li>
+<li>normal：正常；</li>
+<li>strong：强。</li>
 默认值：normal。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置音频降噪类型，仅当音频降噪控制开关为 ON 时有效，可选值：
-<li>normal：正常音频降噪；</li>
+                     * 设置强度类型，仅当大模型增强控制开关为 ON 时有效，可选值：
+<li>weak：弱；</li>
+<li>normal：正常；</li>
+<li>strong：强。</li>
 默认值：normal。
-                     * @param _type 音频降噪类型，仅当音频降噪控制开关为 ON 时有效，可选值：
-<li>normal：正常音频降噪；</li>
+                     * @param _type 强度类型，仅当大模型增强控制开关为 ON 时有效，可选值：
+<li>weak：弱；</li>
+<li>normal：正常；</li>
+<li>strong：强。</li>
 默认值：normal。
                      * 
                      */
@@ -107,16 +115,18 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 音频降噪控制开关，可选值：
-<li>ON：开启音频降噪；</li>
-<li>OFF：关闭音频降噪。</li>
+                     * 大模型增强开关，可选值：
+<li>ON：开启；</li>
+<li>OFF：关闭。</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 音频降噪类型，仅当音频降噪控制开关为 ON 时有效，可选值：
-<li>normal：正常音频降噪；</li>
+                     * 强度类型，仅当大模型增强控制开关为 ON 时有效，可选值：
+<li>weak：弱；</li>
+<li>normal：正常；</li>
+<li>strong：强。</li>
 默认值：normal。
                      */
                     std::string m_type;
@@ -128,4 +138,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_AUDIODENOISEINFO_H_
+#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_DIFFUSIONENHANCEINFO_H_

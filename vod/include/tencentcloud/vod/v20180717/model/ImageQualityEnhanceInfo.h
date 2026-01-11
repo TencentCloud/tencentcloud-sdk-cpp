@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_AUDIODENOISEINFO_H_
-#define TENCENTCLOUD_VOD_V20180717_MODEL_AUDIODENOISEINFO_H_
+#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_IMAGEQUALITYENHANCEINFO_H_
+#define TENCENTCLOUD_VOD_V20180717_MODEL_IMAGEQUALITYENHANCEINFO_H_
 
 #include <string>
 #include <vector>
@@ -35,35 +35,35 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 音频降噪控制信息
+                * 综合增强控制
                 */
-                class AudioDenoiseInfo : public AbstractModel
+                class ImageQualityEnhanceInfo : public AbstractModel
                 {
                 public:
-                    AudioDenoiseInfo();
-                    ~AudioDenoiseInfo() = default;
+                    ImageQualityEnhanceInfo();
+                    ~ImageQualityEnhanceInfo() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取音频降噪控制开关，可选值：
-<li>ON：开启音频降噪；</li>
-<li>OFF：关闭音频降噪。</li>
-                     * @return Switch 音频降噪控制开关，可选值：
-<li>ON：开启音频降噪；</li>
-<li>OFF：关闭音频降噪。</li>
+                     * 获取综合增强控制开关，可选值：
+<li>ON：开启综合增强；</li>
+<li>OFF：关闭综合增强。</li>
+                     * @return Switch 综合增强控制开关，可选值：
+<li>ON：开启综合增强；</li>
+<li>OFF：关闭综合增强。</li>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置音频降噪控制开关，可选值：
-<li>ON：开启音频降噪；</li>
-<li>OFF：关闭音频降噪。</li>
-                     * @param _switch 音频降噪控制开关，可选值：
-<li>ON：开启音频降噪；</li>
-<li>OFF：关闭音频降噪。</li>
+                     * 设置综合增强控制开关，可选值：
+<li>ON：开启综合增强；</li>
+<li>OFF：关闭综合增强。</li>
+                     * @param _switch 综合增强控制开关，可选值：
+<li>ON：开启综合增强；</li>
+<li>OFF：关闭综合增强。</li>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -76,23 +76,31 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取音频降噪类型，仅当音频降噪控制开关为 ON 时有效，可选值：
-<li>normal：正常音频降噪；</li>
-默认值：normal。
-                     * @return Type 音频降噪类型，仅当音频降噪控制开关为 ON 时有效，可选值：
-<li>normal：正常音频降噪；</li>
-默认值：normal。
+                     * 获取综合增强类型，仅当综合增强控制开关为 ON 时有效，可选值：
+<li>weak：轻综合增强；</li>
+<li>normal：正常综合增强；</li>
+<li>strong：强综合增强。</li>
+默认值：weak。
+                     * @return Type 综合增强类型，仅当综合增强控制开关为 ON 时有效，可选值：
+<li>weak：轻综合增强；</li>
+<li>normal：正常综合增强；</li>
+<li>strong：强综合增强。</li>
+默认值：weak。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置音频降噪类型，仅当音频降噪控制开关为 ON 时有效，可选值：
-<li>normal：正常音频降噪；</li>
-默认值：normal。
-                     * @param _type 音频降噪类型，仅当音频降噪控制开关为 ON 时有效，可选值：
-<li>normal：正常音频降噪；</li>
-默认值：normal。
+                     * 设置综合增强类型，仅当综合增强控制开关为 ON 时有效，可选值：
+<li>weak：轻综合增强；</li>
+<li>normal：正常综合增强；</li>
+<li>strong：强综合增强。</li>
+默认值：weak。
+                     * @param _type 综合增强类型，仅当综合增强控制开关为 ON 时有效，可选值：
+<li>weak：轻综合增强；</li>
+<li>normal：正常综合增强；</li>
+<li>strong：强综合增强。</li>
+默认值：weak。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -107,17 +115,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 音频降噪控制开关，可选值：
-<li>ON：开启音频降噪；</li>
-<li>OFF：关闭音频降噪。</li>
+                     * 综合增强控制开关，可选值：
+<li>ON：开启综合增强；</li>
+<li>OFF：关闭综合增强。</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 音频降噪类型，仅当音频降噪控制开关为 ON 时有效，可选值：
-<li>normal：正常音频降噪；</li>
-默认值：normal。
+                     * 综合增强类型，仅当综合增强控制开关为 ON 时有效，可选值：
+<li>weak：轻综合增强；</li>
+<li>normal：正常综合增强；</li>
+<li>strong：强综合增强。</li>
+默认值：weak。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -128,4 +138,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_AUDIODENOISEINFO_H_
+#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_IMAGEQUALITYENHANCEINFO_H_

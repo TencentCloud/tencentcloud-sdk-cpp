@@ -50,11 +50,9 @@ namespace TencentCloud
                      * 获取画面超分控制开关，可选值：
 <li>ON：开启画面超分；</li>
 <li>OFF：关闭画面超分。</li>
-当开启画面超分时，默认2倍超分。
                      * @return Switch 画面超分控制开关，可选值：
 <li>ON：开启画面超分；</li>
 <li>OFF：关闭画面超分。</li>
-当开启画面超分时，默认2倍超分。
                      * 
                      */
                     std::string GetSwitch() const;
@@ -63,11 +61,9 @@ namespace TencentCloud
                      * 设置画面超分控制开关，可选值：
 <li>ON：开启画面超分；</li>
 <li>OFF：关闭画面超分。</li>
-当开启画面超分时，默认2倍超分。
                      * @param _switch 画面超分控制开关，可选值：
 <li>ON：开启画面超分；</li>
 <li>OFF：关闭画面超分。</li>
-当开启画面超分时，默认2倍超分。
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -143,7 +139,6 @@ namespace TencentCloud
                      * 画面超分控制开关，可选值：
 <li>ON：开启画面超分；</li>
 <li>OFF：关闭画面超分。</li>
-当开启画面超分时，默认2倍超分。
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
