@@ -640,6 +640,90 @@ namespace TencentCloud
                      */
                     bool EnableDeletionProtectionHasBeenSet() const;
 
+                    /**
+                     * 获取是否有vhost未开启镜像队列风险
+                     * @return MirroredQueueRisk 是否有vhost未开启镜像队列风险
+                     * 
+                     */
+                    bool GetMirroredQueueRisk() const;
+
+                    /**
+                     * 设置是否有vhost未开启镜像队列风险
+                     * @param _mirroredQueueRisk 是否有vhost未开启镜像队列风险
+                     * 
+                     */
+                    void SetMirroredQueueRisk(const bool& _mirroredQueueRisk);
+
+                    /**
+                     * 判断参数 MirroredQueueRisk 是否已赋值
+                     * @return MirroredQueueRisk 是否已赋值
+                     * 
+                     */
+                    bool MirroredQueueRiskHasBeenSet() const;
+
+                    /**
+                     * 获取是否提示风险
+                     * @return EnableRiskWarning 是否提示风险
+                     * 
+                     */
+                    bool GetEnableRiskWarning() const;
+
+                    /**
+                     * 设置是否提示风险
+                     * @param _enableRiskWarning 是否提示风险
+                     * 
+                     */
+                    void SetEnableRiskWarning(const bool& _enableRiskWarning);
+
+                    /**
+                     * 判断参数 EnableRiskWarning 是否已赋值
+                     * @return EnableRiskWarning 是否已赋值
+                     * 
+                     */
+                    bool EnableRiskWarningHasBeenSet() const;
+
+                    /**
+                     * 获取消费超时时间
+                     * @return ConsumeTimeout 消费超时时间
+                     * 
+                     */
+                    uint64_t GetConsumeTimeout() const;
+
+                    /**
+                     * 设置消费超时时间
+                     * @param _consumeTimeout 消费超时时间
+                     * 
+                     */
+                    void SetConsumeTimeout(const uint64_t& _consumeTimeout);
+
+                    /**
+                     * 判断参数 ConsumeTimeout 是否已赋值
+                     * @return ConsumeTimeout 是否已赋值
+                     * 
+                     */
+                    bool ConsumeTimeoutHasBeenSet() const;
+
+                    /**
+                     * 获取最大Channel数
+                     * @return ChannelMax 最大Channel数
+                     * 
+                     */
+                    uint64_t GetChannelMax() const;
+
+                    /**
+                     * 设置最大Channel数
+                     * @param _channelMax 最大Channel数
+                     * 
+                     */
+                    void SetChannelMax(const uint64_t& _channelMax);
+
+                    /**
+                     * 判断参数 ChannelMax 是否已赋值
+                     * @return ChannelMax 是否已赋值
+                     * 
+                     */
+                    bool ChannelMaxHasBeenSet() const;
+
                 private:
 
                     /**
@@ -810,6 +894,30 @@ namespace TencentCloud
                      */
                     bool m_enableDeletionProtection;
                     bool m_enableDeletionProtectionHasBeenSet;
+
+                    /**
+                     * 是否有vhost未开启镜像队列风险
+                     */
+                    bool m_mirroredQueueRisk;
+                    bool m_mirroredQueueRiskHasBeenSet;
+
+                    /**
+                     * 是否提示风险
+                     */
+                    bool m_enableRiskWarning;
+                    bool m_enableRiskWarningHasBeenSet;
+
+                    /**
+                     * 消费超时时间
+                     */
+                    uint64_t m_consumeTimeout;
+                    bool m_consumeTimeoutHasBeenSet;
+
+                    /**
+                     * 最大Channel数
+                     */
+                    uint64_t m_channelMax;
+                    bool m_channelMaxHasBeenSet;
 
                 };
             }

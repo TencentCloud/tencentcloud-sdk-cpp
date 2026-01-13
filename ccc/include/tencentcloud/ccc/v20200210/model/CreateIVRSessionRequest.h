@@ -169,6 +169,27 @@ namespace TencentCloud
                      */
                     bool UUIHasBeenSet() const;
 
+                    /**
+                     * 获取最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数
+                     * @return MaxRingTimeoutSecond 最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数
+                     * 
+                     */
+                    int64_t GetMaxRingTimeoutSecond() const;
+
+                    /**
+                     * 设置最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数
+                     * @param _maxRingTimeoutSecond 最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数
+                     * 
+                     */
+                    void SetMaxRingTimeoutSecond(const int64_t& _maxRingTimeoutSecond);
+
+                    /**
+                     * 判断参数 MaxRingTimeoutSecond 是否已赋值
+                     * @return MaxRingTimeoutSecond 是否已赋值
+                     * 
+                     */
+                    bool MaxRingTimeoutSecondHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +227,12 @@ namespace TencentCloud
                      */
                     std::string m_uUI;
                     bool m_uUIHasBeenSet;
+
+                    /**
+                     * 最大振铃时长，达到时长阈值自动挂断。 仅自携号码支持当前参数
+                     */
+                    int64_t m_maxRingTimeoutSecond;
+                    bool m_maxRingTimeoutSecondHasBeenSet;
 
                 };
             }

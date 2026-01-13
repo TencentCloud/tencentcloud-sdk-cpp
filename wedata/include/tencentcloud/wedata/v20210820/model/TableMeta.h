@@ -655,31 +655,6 @@ namespace TencentCloud
                     bool HasFavoriteHasBeenSet() const;
 
                     /**
-                     * 获取生命周期
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LifeCycleTime 生命周期
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetLifeCycleTime() const;
-
-                    /**
-                     * 设置生命周期
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lifeCycleTime 生命周期
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetLifeCycleTime(const int64_t& _lifeCycleTime);
-
-                    /**
-                     * 判断参数 LifeCycleTime 是否已赋值
-                     * @return LifeCycleTime 是否已赋值
-                     * 
-                     */
-                    bool LifeCycleTimeHasBeenSet() const;
-
-                    /**
                      * 获取存储量，已转为适合的单位展示
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageSizeWithUnit 存储量，已转为适合的单位展示
@@ -1309,6 +1284,31 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                     bool LocationHasBeenSet() const;
 
                     /**
+                     * 获取生命周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LifeCycleTime 生命周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetLifeCycleTime() const;
+
+                    /**
+                     * 设置生命周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lifeCycleTime 生命周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLifeCycleTime(const int64_t& _lifeCycleTime);
+
+                    /**
+                     * 判断参数 LifeCycleTime 是否已赋值
+                     * @return LifeCycleTime 是否已赋值
+                     * 
+                     */
+                    bool LifeCycleTimeHasBeenSet() const;
+
+                    /**
                      * 获取判断是否是分区表1 是 0否
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsPartitionTable 判断是否是分区表1 是 0否
@@ -1357,6 +1357,31 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                      * 
                      */
                     bool PartitionColumnsHasBeenSet() const;
+
+                    /**
+                     * 获取分区时间格式：yyyy-MM-dd
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DateFormat 分区时间格式：yyyy-MM-dd
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDateFormat() const;
+
+                    /**
+                     * 设置分区时间格式：yyyy-MM-dd
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dateFormat 分区时间格式：yyyy-MM-dd
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDateFormat(const std::string& _dateFormat);
+
+                    /**
+                     * 判断参数 DateFormat 是否已赋值
+                     * @return DateFormat 是否已赋值
+                     * 
+                     */
+                    bool DateFormatHasBeenSet() const;
 
                     /**
                      * 获取生命周期-分区保留天数【分区保留策略时有效】
@@ -2229,13 +2254,6 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                     bool m_hasFavoriteHasBeenSet;
 
                     /**
-                     * 生命周期
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_lifeCycleTime;
-                    bool m_lifeCycleTimeHasBeenSet;
-
-                    /**
                      * 存储量，已转为适合的单位展示
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -2412,6 +2430,13 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                     bool m_locationHasBeenSet;
 
                     /**
+                     * 生命周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_lifeCycleTime;
+                    bool m_lifeCycleTimeHasBeenSet;
+
+                    /**
                      * 判断是否是分区表1 是 0否
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -2424,6 +2449,13 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                      */
                     std::vector<std::string> m_partitionColumns;
                     bool m_partitionColumnsHasBeenSet;
+
+                    /**
+                     * 分区时间格式：yyyy-MM-dd
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dateFormat;
+                    bool m_dateFormatHasBeenSet;
 
                     /**
                      * 生命周期-分区保留天数【分区保留策略时有效】

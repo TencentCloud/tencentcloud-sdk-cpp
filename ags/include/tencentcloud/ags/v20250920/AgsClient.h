@@ -27,6 +27,8 @@
 #include <tencentcloud/ags/v20250920/model/AcquireSandboxInstanceTokenResponse.h>
 #include <tencentcloud/ags/v20250920/model/CreateAPIKeyRequest.h>
 #include <tencentcloud/ags/v20250920/model/CreateAPIKeyResponse.h>
+#include <tencentcloud/ags/v20250920/model/CreatePreCacheImageTaskRequest.h>
+#include <tencentcloud/ags/v20250920/model/CreatePreCacheImageTaskResponse.h>
 #include <tencentcloud/ags/v20250920/model/CreateSandboxToolRequest.h>
 #include <tencentcloud/ags/v20250920/model/CreateSandboxToolResponse.h>
 #include <tencentcloud/ags/v20250920/model/DeleteAPIKeyRequest.h>
@@ -35,6 +37,8 @@
 #include <tencentcloud/ags/v20250920/model/DeleteSandboxToolResponse.h>
 #include <tencentcloud/ags/v20250920/model/DescribeAPIKeyListRequest.h>
 #include <tencentcloud/ags/v20250920/model/DescribeAPIKeyListResponse.h>
+#include <tencentcloud/ags/v20250920/model/DescribePreCacheImageTaskRequest.h>
+#include <tencentcloud/ags/v20250920/model/DescribePreCacheImageTaskResponse.h>
 #include <tencentcloud/ags/v20250920/model/DescribeSandboxInstanceListRequest.h>
 #include <tencentcloud/ags/v20250920/model/DescribeSandboxInstanceListResponse.h>
 #include <tencentcloud/ags/v20250920/model/DescribeSandboxToolListRequest.h>
@@ -67,6 +71,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAPIKeyResponse> CreateAPIKeyOutcome;
                 typedef std::future<CreateAPIKeyOutcome> CreateAPIKeyOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::CreateAPIKeyRequest&, CreateAPIKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAPIKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePreCacheImageTaskResponse> CreatePreCacheImageTaskOutcome;
+                typedef std::future<CreatePreCacheImageTaskOutcome> CreatePreCacheImageTaskOutcomeCallable;
+                typedef std::function<void(const AgsClient*, const Model::CreatePreCacheImageTaskRequest&, CreatePreCacheImageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePreCacheImageTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSandboxToolResponse> CreateSandboxToolOutcome;
                 typedef std::future<CreateSandboxToolOutcome> CreateSandboxToolOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::CreateSandboxToolRequest&, CreateSandboxToolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSandboxToolAsyncHandler;
@@ -79,6 +86,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAPIKeyListResponse> DescribeAPIKeyListOutcome;
                 typedef std::future<DescribeAPIKeyListOutcome> DescribeAPIKeyListOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::DescribeAPIKeyListRequest&, DescribeAPIKeyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAPIKeyListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePreCacheImageTaskResponse> DescribePreCacheImageTaskOutcome;
+                typedef std::future<DescribePreCacheImageTaskOutcome> DescribePreCacheImageTaskOutcomeCallable;
+                typedef std::function<void(const AgsClient*, const Model::DescribePreCacheImageTaskRequest&, DescribePreCacheImageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePreCacheImageTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSandboxInstanceListResponse> DescribeSandboxInstanceListOutcome;
                 typedef std::future<DescribeSandboxInstanceListOutcome> DescribeSandboxInstanceListOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::DescribeSandboxInstanceListRequest&, DescribeSandboxInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxInstanceListAsyncHandler;
@@ -120,6 +130,15 @@ namespace TencentCloud
                 CreateAPIKeyOutcomeCallable CreateAPIKeyCallable(const Model::CreateAPIKeyRequest& request);
 
                 /**
+                 *创建镜像预热任务
+                 * @param req CreatePreCacheImageTaskRequest
+                 * @return CreatePreCacheImageTaskOutcome
+                 */
+                CreatePreCacheImageTaskOutcome CreatePreCacheImageTask(const Model::CreatePreCacheImageTaskRequest &request);
+                void CreatePreCacheImageTaskAsync(const Model::CreatePreCacheImageTaskRequest& request, const CreatePreCacheImageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePreCacheImageTaskOutcomeCallable CreatePreCacheImageTaskCallable(const Model::CreatePreCacheImageTaskRequest& request);
+
+                /**
                  *创建沙箱工具
                  * @param req CreateSandboxToolRequest
                  * @return CreateSandboxToolOutcome
@@ -154,6 +173,15 @@ namespace TencentCloud
                 DescribeAPIKeyListOutcome DescribeAPIKeyList(const Model::DescribeAPIKeyListRequest &request);
                 void DescribeAPIKeyListAsync(const Model::DescribeAPIKeyListRequest& request, const DescribeAPIKeyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAPIKeyListOutcomeCallable DescribeAPIKeyListCallable(const Model::DescribeAPIKeyListRequest& request);
+
+                /**
+                 *查询镜像预热任务信息
+                 * @param req DescribePreCacheImageTaskRequest
+                 * @return DescribePreCacheImageTaskOutcome
+                 */
+                DescribePreCacheImageTaskOutcome DescribePreCacheImageTask(const Model::DescribePreCacheImageTaskRequest &request);
+                void DescribePreCacheImageTaskAsync(const Model::DescribePreCacheImageTaskRequest& request, const DescribePreCacheImageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePreCacheImageTaskOutcomeCallable DescribePreCacheImageTaskCallable(const Model::DescribePreCacheImageTaskRequest& request);
 
                 /**
                  *查询沙箱实例列表

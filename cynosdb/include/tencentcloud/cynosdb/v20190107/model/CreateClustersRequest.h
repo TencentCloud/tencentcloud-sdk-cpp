@@ -1087,6 +1087,27 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     bool AutoArchiveDelayHoursHasBeenSet() const;
 
+                    /**
+                     * 获取内核小版本号
+                     * @return CynosVersion 内核小版本号
+                     * 
+                     */
+                    std::string GetCynosVersion() const;
+
+                    /**
+                     * 设置内核小版本号
+                     * @param _cynosVersion 内核小版本号
+                     * 
+                     */
+                    void SetCynosVersion(const std::string& _cynosVersion);
+
+                    /**
+                     * 判断参数 CynosVersion 是否已赋值
+                     * @return CynosVersion 是否已赋值
+                     * 
+                     */
+                    bool CynosVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1382,6 +1403,12 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     int64_t m_autoArchiveDelayHours;
                     bool m_autoArchiveDelayHoursHasBeenSet;
+
+                    /**
+                     * 内核小版本号
+                     */
+                    std::string m_cynosVersion;
+                    bool m_cynosVersionHasBeenSet;
 
                 };
             }

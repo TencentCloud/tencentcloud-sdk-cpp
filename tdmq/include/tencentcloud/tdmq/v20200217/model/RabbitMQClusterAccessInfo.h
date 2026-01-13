@@ -392,6 +392,69 @@ OFF/ON/CREATING/DELETING
                      */
                     bool PublicIpReusedHasBeenSet() const;
 
+                    /**
+                     * 获取公网控制台接入点操作的错误信息
+                     * @return PublicWebConsoleErrorMessage 公网控制台接入点操作的错误信息
+                     * 
+                     */
+                    std::string GetPublicWebConsoleErrorMessage() const;
+
+                    /**
+                     * 设置公网控制台接入点操作的错误信息
+                     * @param _publicWebConsoleErrorMessage 公网控制台接入点操作的错误信息
+                     * 
+                     */
+                    void SetPublicWebConsoleErrorMessage(const std::string& _publicWebConsoleErrorMessage);
+
+                    /**
+                     * 判断参数 PublicWebConsoleErrorMessage 是否已赋值
+                     * @return PublicWebConsoleErrorMessage 是否已赋值
+                     * 
+                     */
+                    bool PublicWebConsoleErrorMessageHasBeenSet() const;
+
+                    /**
+                     * 获取内网控制台接入点操作的错误信息
+                     * @return VpcWebConsoleErrorMessage 内网控制台接入点操作的错误信息
+                     * 
+                     */
+                    std::string GetVpcWebConsoleErrorMessage() const;
+
+                    /**
+                     * 设置内网控制台接入点操作的错误信息
+                     * @param _vpcWebConsoleErrorMessage 内网控制台接入点操作的错误信息
+                     * 
+                     */
+                    void SetVpcWebConsoleErrorMessage(const std::string& _vpcWebConsoleErrorMessage);
+
+                    /**
+                     * 判断参数 VpcWebConsoleErrorMessage 是否已赋值
+                     * @return VpcWebConsoleErrorMessage 是否已赋值
+                     * 
+                     */
+                    bool VpcWebConsoleErrorMessageHasBeenSet() const;
+
+                    /**
+                     * 获取公网接入点操作的错误信息
+                     * @return PublicDataStreamErrorMessage 公网接入点操作的错误信息
+                     * 
+                     */
+                    std::string GetPublicDataStreamErrorMessage() const;
+
+                    /**
+                     * 设置公网接入点操作的错误信息
+                     * @param _publicDataStreamErrorMessage 公网接入点操作的错误信息
+                     * 
+                     */
+                    void SetPublicDataStreamErrorMessage(const std::string& _publicDataStreamErrorMessage);
+
+                    /**
+                     * 判断参数 PublicDataStreamErrorMessage 是否已赋值
+                     * @return PublicDataStreamErrorMessage 是否已赋值
+                     * 
+                     */
+                    bool PublicDataStreamErrorMessageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -491,6 +554,24 @@ OFF/ON/CREATING/DELETING
                      */
                     bool m_publicIpReused;
                     bool m_publicIpReusedHasBeenSet;
+
+                    /**
+                     * 公网控制台接入点操作的错误信息
+                     */
+                    std::string m_publicWebConsoleErrorMessage;
+                    bool m_publicWebConsoleErrorMessageHasBeenSet;
+
+                    /**
+                     * 内网控制台接入点操作的错误信息
+                     */
+                    std::string m_vpcWebConsoleErrorMessage;
+                    bool m_vpcWebConsoleErrorMessageHasBeenSet;
+
+                    /**
+                     * 公网接入点操作的错误信息
+                     */
+                    std::string m_publicDataStreamErrorMessage;
+                    bool m_publicDataStreamErrorMessageHasBeenSet;
 
                 };
             }

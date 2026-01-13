@@ -151,6 +151,27 @@ namespace TencentCloud
                      */
                     bool VpcTlsEndpointHasBeenSet() const;
 
+                    /**
+                     * 获取VPC 接入点操作失败的错误信息
+                     * @return VpcErrorMessage VPC 接入点操作失败的错误信息
+                     * 
+                     */
+                    std::string GetVpcErrorMessage() const;
+
+                    /**
+                     * 设置VPC 接入点操作失败的错误信息
+                     * @param _vpcErrorMessage VPC 接入点操作失败的错误信息
+                     * 
+                     */
+                    void SetVpcErrorMessage(const std::string& _vpcErrorMessage);
+
+                    /**
+                     * 判断参数 VpcErrorMessage 是否已赋值
+                     * @return VpcErrorMessage 是否已赋值
+                     * 
+                     */
+                    bool VpcErrorMessageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +203,12 @@ namespace TencentCloud
                      */
                     std::string m_vpcTlsEndpoint;
                     bool m_vpcTlsEndpointHasBeenSet;
+
+                    /**
+                     * VPC 接入点操作失败的错误信息
+                     */
+                    std::string m_vpcErrorMessage;
+                    bool m_vpcErrorMessageHasBeenSet;
 
                 };
             }

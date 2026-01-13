@@ -179,6 +179,27 @@ namespace TencentCloud
                      */
                     bool ProtocolHasBeenSet() const;
 
+                    /**
+                     * 获取用于带宽包内添加IP资源时指定IP带宽值。<p>说明：当前功能处于内测中，如需使用，请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</p>
+                     * @return InternetMaxBandwidthOut 用于带宽包内添加IP资源时指定IP带宽值。<p>说明：当前功能处于内测中，如需使用，请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</p>
+                     * 
+                     */
+                    uint64_t GetInternetMaxBandwidthOut() const;
+
+                    /**
+                     * 设置用于带宽包内添加IP资源时指定IP带宽值。<p>说明：当前功能处于内测中，如需使用，请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</p>
+                     * @param _internetMaxBandwidthOut 用于带宽包内添加IP资源时指定IP带宽值。<p>说明：当前功能处于内测中，如需使用，请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</p>
+                     * 
+                     */
+                    void SetInternetMaxBandwidthOut(const uint64_t& _internetMaxBandwidthOut);
+
+                    /**
+                     * 判断参数 InternetMaxBandwidthOut 是否已赋值
+                     * @return InternetMaxBandwidthOut 是否已赋值
+                     * 
+                     */
+                    bool InternetMaxBandwidthOutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -218,6 +239,12 @@ namespace TencentCloud
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
+
+                    /**
+                     * 用于带宽包内添加IP资源时指定IP带宽值。<p>说明：当前功能处于内测中，如需使用，请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</p>
+                     */
+                    uint64_t m_internetMaxBandwidthOut;
+                    bool m_internetMaxBandwidthOutHasBeenSet;
 
                 };
             }

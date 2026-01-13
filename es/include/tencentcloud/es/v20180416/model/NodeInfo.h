@@ -283,18 +283,18 @@ namespace TencentCloud
                     bool MemSizeHasBeenSet() const;
 
                     /**
-                     * 获取/
+                     * 获取硬盘额外性能
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DiskEnhance /
+                     * @return DiskEnhance 硬盘额外性能
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDiskEnhance() const;
 
                     /**
-                     * 设置/
+                     * 设置硬盘额外性能
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _diskEnhance /
+                     * @param _diskEnhance 硬盘额外性能
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -401,7 +401,7 @@ namespace TencentCloud
                     bool m_memSizeHasBeenSet;
 
                     /**
-                     * /
+                     * 硬盘额外性能
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_diskEnhance;

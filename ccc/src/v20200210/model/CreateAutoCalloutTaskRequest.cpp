@@ -38,7 +38,8 @@ CreateAutoCalloutTaskRequest::CreateAutoCalloutTaskRequest() :
     m_timeZoneHasBeenSet(false),
     m_availableTimeHasBeenSet(false),
     m_aIAgentIdHasBeenSet(false),
-    m_retryIntervalHasBeenSet(false)
+    m_retryIntervalHasBeenSet(false),
+    m_maxRingTimeoutSecondHasBeenSet(false)
 {
 }
 
@@ -206,6 +207,14 @@ string CreateAutoCalloutTaskRequest::ToJsonString() const
         string key = "RetryInterval";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_retryInterval, allocator);
+    }
+
+    if (m_maxRingTimeoutSecondHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxRingTimeoutSecond";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxRingTimeoutSecond, allocator);
     }
 
 
@@ -470,6 +479,22 @@ void CreateAutoCalloutTaskRequest::SetRetryInterval(const int64_t& _retryInterva
 bool CreateAutoCalloutTaskRequest::RetryIntervalHasBeenSet() const
 {
     return m_retryIntervalHasBeenSet;
+}
+
+int64_t CreateAutoCalloutTaskRequest::GetMaxRingTimeoutSecond() const
+{
+    return m_maxRingTimeoutSecond;
+}
+
+void CreateAutoCalloutTaskRequest::SetMaxRingTimeoutSecond(const int64_t& _maxRingTimeoutSecond)
+{
+    m_maxRingTimeoutSecond = _maxRingTimeoutSecond;
+    m_maxRingTimeoutSecondHasBeenSet = true;
+}
+
+bool CreateAutoCalloutTaskRequest::MaxRingTimeoutSecondHasBeenSet() const
+{
+    return m_maxRingTimeoutSecondHasBeenSet;
 }
 
 

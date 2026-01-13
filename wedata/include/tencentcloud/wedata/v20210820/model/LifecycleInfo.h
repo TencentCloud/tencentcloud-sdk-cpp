@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取生命周期值
+                     * 获取生命周期值，如果PartitionLifeCycle=custom时，表示自定义生命周期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Lifecycle 生命周期值
+                     * @return Lifecycle 生命周期值，如果PartitionLifeCycle=custom时，表示自定义生命周期
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLifecycle() const;
 
                     /**
-                     * 设置生命周期值
+                     * 设置生命周期值，如果PartitionLifeCycle=custom时，表示自定义生命周期
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lifecycle 生命周期值
+                     * @param _lifecycle 生命周期值，如果PartitionLifeCycle=custom时，表示自定义生命周期
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,7 +124,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 生命周期值
+                     * 生命周期值，如果PartitionLifeCycle=custom时，表示自定义生命周期
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_lifecycle;

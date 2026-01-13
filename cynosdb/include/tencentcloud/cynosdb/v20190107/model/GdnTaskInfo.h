@@ -193,6 +193,90 @@ namespace TencentCloud
                      */
                     bool StandbyClusterNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否已强切
+                     * @return ForceSwitchGdn 是否已强切
+                     * 
+                     */
+                    std::string GetForceSwitchGdn() const;
+
+                    /**
+                     * 设置是否已强切
+                     * @param _forceSwitchGdn 是否已强切
+                     * 
+                     */
+                    void SetForceSwitchGdn(const std::string& _forceSwitchGdn);
+
+                    /**
+                     * 判断参数 ForceSwitchGdn 是否已赋值
+                     * @return ForceSwitchGdn 是否已赋值
+                     * 
+                     */
+                    bool ForceSwitchGdnHasBeenSet() const;
+
+                    /**
+                     * 获取返回码
+                     * @return Code 返回码
+                     * 
+                     */
+                    int64_t GetCode() const;
+
+                    /**
+                     * 设置返回码
+                     * @param _code 返回码
+                     * 
+                     */
+                    void SetCode(const int64_t& _code);
+
+                    /**
+                     * 判断参数 Code 是否已赋值
+                     * @return Code 是否已赋值
+                     * 
+                     */
+                    bool CodeHasBeenSet() const;
+
+                    /**
+                     * 获取提示信息
+                     * @return Message 提示信息
+                     * 
+                     */
+                    std::string GetMessage() const;
+
+                    /**
+                     * 设置提示信息
+                     * @param _message 提示信息
+                     * 
+                     */
+                    void SetMessage(const std::string& _message);
+
+                    /**
+                     * 判断参数 Message 是否已赋值
+                     * @return Message 是否已赋值
+                     * 
+                     */
+                    bool MessageHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持强切
+                     * @return IsSupportForce 是否支持强切
+                     * 
+                     */
+                    std::string GetIsSupportForce() const;
+
+                    /**
+                     * 设置是否支持强切
+                     * @param _isSupportForce 是否支持强切
+                     * 
+                     */
+                    void SetIsSupportForce(const std::string& _isSupportForce);
+
+                    /**
+                     * 判断参数 IsSupportForce 是否已赋值
+                     * @return IsSupportForce 是否已赋值
+                     * 
+                     */
+                    bool IsSupportForceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +320,30 @@ namespace TencentCloud
                      */
                     std::string m_standbyClusterName;
                     bool m_standbyClusterNameHasBeenSet;
+
+                    /**
+                     * 是否已强切
+                     */
+                    std::string m_forceSwitchGdn;
+                    bool m_forceSwitchGdnHasBeenSet;
+
+                    /**
+                     * 返回码
+                     */
+                    int64_t m_code;
+                    bool m_codeHasBeenSet;
+
+                    /**
+                     * 提示信息
+                     */
+                    std::string m_message;
+                    bool m_messageHasBeenSet;
+
+                    /**
+                     * 是否支持强切
+                     */
+                    std::string m_isSupportForce;
+                    bool m_isSupportForceHasBeenSet;
 
                 };
             }

@@ -48,7 +48,11 @@ RabbitMQClusterInfo::RabbitMQClusterInfo() :
     m_isolatedTimeHasBeenSet(false),
     m_containerHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_enableDeletionProtectionHasBeenSet(false)
+    m_enableDeletionProtectionHasBeenSet(false),
+    m_mirroredQueueRiskHasBeenSet(false),
+    m_enableRiskWarningHasBeenSet(false),
+    m_consumeTimeoutHasBeenSet(false),
+    m_channelMaxHasBeenSet(false)
 {
 }
 
@@ -360,6 +364,46 @@ CoreInternalOutcome RabbitMQClusterInfo::Deserialize(const rapidjson::Value &val
         m_enableDeletionProtectionHasBeenSet = true;
     }
 
+    if (value.HasMember("MirroredQueueRisk") && !value["MirroredQueueRisk"].IsNull())
+    {
+        if (!value["MirroredQueueRisk"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterInfo.MirroredQueueRisk` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_mirroredQueueRisk = value["MirroredQueueRisk"].GetBool();
+        m_mirroredQueueRiskHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableRiskWarning") && !value["EnableRiskWarning"].IsNull())
+    {
+        if (!value["EnableRiskWarning"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterInfo.EnableRiskWarning` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableRiskWarning = value["EnableRiskWarning"].GetBool();
+        m_enableRiskWarningHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConsumeTimeout") && !value["ConsumeTimeout"].IsNull())
+    {
+        if (!value["ConsumeTimeout"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterInfo.ConsumeTimeout` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_consumeTimeout = value["ConsumeTimeout"].GetUint64();
+        m_consumeTimeoutHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChannelMax") && !value["ChannelMax"].IsNull())
+    {
+        if (!value["ChannelMax"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterInfo.ChannelMax` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_channelMax = value["ChannelMax"].GetUint64();
+        m_channelMaxHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -608,6 +652,38 @@ void RabbitMQClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "EnableDeletionProtection";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableDeletionProtection, allocator);
+    }
+
+    if (m_mirroredQueueRiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MirroredQueueRisk";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mirroredQueueRisk, allocator);
+    }
+
+    if (m_enableRiskWarningHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableRiskWarning";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableRiskWarning, allocator);
+    }
+
+    if (m_consumeTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumeTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_consumeTimeout, allocator);
+    }
+
+    if (m_channelMaxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelMax";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_channelMax, allocator);
     }
 
 }
@@ -1059,5 +1135,69 @@ void RabbitMQClusterInfo::SetEnableDeletionProtection(const bool& _enableDeletio
 bool RabbitMQClusterInfo::EnableDeletionProtectionHasBeenSet() const
 {
     return m_enableDeletionProtectionHasBeenSet;
+}
+
+bool RabbitMQClusterInfo::GetMirroredQueueRisk() const
+{
+    return m_mirroredQueueRisk;
+}
+
+void RabbitMQClusterInfo::SetMirroredQueueRisk(const bool& _mirroredQueueRisk)
+{
+    m_mirroredQueueRisk = _mirroredQueueRisk;
+    m_mirroredQueueRiskHasBeenSet = true;
+}
+
+bool RabbitMQClusterInfo::MirroredQueueRiskHasBeenSet() const
+{
+    return m_mirroredQueueRiskHasBeenSet;
+}
+
+bool RabbitMQClusterInfo::GetEnableRiskWarning() const
+{
+    return m_enableRiskWarning;
+}
+
+void RabbitMQClusterInfo::SetEnableRiskWarning(const bool& _enableRiskWarning)
+{
+    m_enableRiskWarning = _enableRiskWarning;
+    m_enableRiskWarningHasBeenSet = true;
+}
+
+bool RabbitMQClusterInfo::EnableRiskWarningHasBeenSet() const
+{
+    return m_enableRiskWarningHasBeenSet;
+}
+
+uint64_t RabbitMQClusterInfo::GetConsumeTimeout() const
+{
+    return m_consumeTimeout;
+}
+
+void RabbitMQClusterInfo::SetConsumeTimeout(const uint64_t& _consumeTimeout)
+{
+    m_consumeTimeout = _consumeTimeout;
+    m_consumeTimeoutHasBeenSet = true;
+}
+
+bool RabbitMQClusterInfo::ConsumeTimeoutHasBeenSet() const
+{
+    return m_consumeTimeoutHasBeenSet;
+}
+
+uint64_t RabbitMQClusterInfo::GetChannelMax() const
+{
+    return m_channelMax;
+}
+
+void RabbitMQClusterInfo::SetChannelMax(const uint64_t& _channelMax)
+{
+    m_channelMax = _channelMax;
+    m_channelMaxHasBeenSet = true;
+}
+
+bool RabbitMQClusterInfo::ChannelMaxHasBeenSet() const
+{
+    return m_channelMaxHasBeenSet;
 }
 

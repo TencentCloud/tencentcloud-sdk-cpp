@@ -1482,6 +1482,27 @@ HoaiMy
                      */
                     bool LLMExtraBodyHasBeenSet() const;
 
+                    /**
+                     * 获取最大通话时长， 默认不限制。单位毫秒(ms)
+                     * @return MaxCallDurationMs 最大通话时长， 默认不限制。单位毫秒(ms)
+                     * 
+                     */
+                    uint64_t GetMaxCallDurationMs() const;
+
+                    /**
+                     * 设置最大通话时长， 默认不限制。单位毫秒(ms)
+                     * @param _maxCallDurationMs 最大通话时长， 默认不限制。单位毫秒(ms)
+                     * 
+                     */
+                    void SetMaxCallDurationMs(const uint64_t& _maxCallDurationMs);
+
+                    /**
+                     * 判断参数 MaxCallDurationMs 是否已赋值
+                     * @return MaxCallDurationMs 是否已赋值
+                     * 
+                     */
+                    bool MaxCallDurationMsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1869,6 +1890,12 @@ HoaiMy
                      */
                     std::string m_lLMExtraBody;
                     bool m_lLMExtraBodyHasBeenSet;
+
+                    /**
+                     * 最大通话时长， 默认不限制。单位毫秒(ms)
+                     */
+                    uint64_t m_maxCallDurationMs;
+                    bool m_maxCallDurationMsHasBeenSet;
 
                 };
             }

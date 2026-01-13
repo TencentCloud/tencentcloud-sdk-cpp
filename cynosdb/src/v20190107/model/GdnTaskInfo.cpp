@@ -27,7 +27,11 @@ GdnTaskInfo::GdnTaskInfo() :
     m_primaryClusterRegionHasBeenSet(false),
     m_standbyClusterRegionHasBeenSet(false),
     m_standbyClusterIdHasBeenSet(false),
-    m_standbyClusterNameHasBeenSet(false)
+    m_standbyClusterNameHasBeenSet(false),
+    m_forceSwitchGdnHasBeenSet(false),
+    m_codeHasBeenSet(false),
+    m_messageHasBeenSet(false),
+    m_isSupportForceHasBeenSet(false)
 {
 }
 
@@ -106,6 +110,46 @@ CoreInternalOutcome GdnTaskInfo::Deserialize(const rapidjson::Value &value)
         m_standbyClusterNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ForceSwitchGdn") && !value["ForceSwitchGdn"].IsNull())
+    {
+        if (!value["ForceSwitchGdn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GdnTaskInfo.ForceSwitchGdn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_forceSwitchGdn = string(value["ForceSwitchGdn"].GetString());
+        m_forceSwitchGdnHasBeenSet = true;
+    }
+
+    if (value.HasMember("Code") && !value["Code"].IsNull())
+    {
+        if (!value["Code"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GdnTaskInfo.Code` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_code = value["Code"].GetInt64();
+        m_codeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Message") && !value["Message"].IsNull())
+    {
+        if (!value["Message"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GdnTaskInfo.Message` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_message = string(value["Message"].GetString());
+        m_messageHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsSupportForce") && !value["IsSupportForce"].IsNull())
+    {
+        if (!value["IsSupportForce"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GdnTaskInfo.IsSupportForce` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportForce = string(value["IsSupportForce"].GetString());
+        m_isSupportForceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +211,38 @@ void GdnTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "StandbyClusterName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_standbyClusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forceSwitchGdnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForceSwitchGdn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_forceSwitchGdn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_codeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Code";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_code, allocator);
+    }
+
+    if (m_messageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Message";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isSupportForceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportForce";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isSupportForce.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +358,69 @@ void GdnTaskInfo::SetStandbyClusterName(const string& _standbyClusterName)
 bool GdnTaskInfo::StandbyClusterNameHasBeenSet() const
 {
     return m_standbyClusterNameHasBeenSet;
+}
+
+string GdnTaskInfo::GetForceSwitchGdn() const
+{
+    return m_forceSwitchGdn;
+}
+
+void GdnTaskInfo::SetForceSwitchGdn(const string& _forceSwitchGdn)
+{
+    m_forceSwitchGdn = _forceSwitchGdn;
+    m_forceSwitchGdnHasBeenSet = true;
+}
+
+bool GdnTaskInfo::ForceSwitchGdnHasBeenSet() const
+{
+    return m_forceSwitchGdnHasBeenSet;
+}
+
+int64_t GdnTaskInfo::GetCode() const
+{
+    return m_code;
+}
+
+void GdnTaskInfo::SetCode(const int64_t& _code)
+{
+    m_code = _code;
+    m_codeHasBeenSet = true;
+}
+
+bool GdnTaskInfo::CodeHasBeenSet() const
+{
+    return m_codeHasBeenSet;
+}
+
+string GdnTaskInfo::GetMessage() const
+{
+    return m_message;
+}
+
+void GdnTaskInfo::SetMessage(const string& _message)
+{
+    m_message = _message;
+    m_messageHasBeenSet = true;
+}
+
+bool GdnTaskInfo::MessageHasBeenSet() const
+{
+    return m_messageHasBeenSet;
+}
+
+string GdnTaskInfo::GetIsSupportForce() const
+{
+    return m_isSupportForce;
+}
+
+void GdnTaskInfo::SetIsSupportForce(const string& _isSupportForce)
+{
+    m_isSupportForce = _isSupportForce;
+    m_isSupportForceHasBeenSet = true;
+}
+
+bool GdnTaskInfo::IsSupportForceHasBeenSet() const
+{
+    return m_isSupportForceHasBeenSet;
 }
 

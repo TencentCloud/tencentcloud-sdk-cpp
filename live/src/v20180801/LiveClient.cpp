@@ -590,6 +590,56 @@ LiveClient::CopyCasterOutcomeCallable LiveClient::CopyCasterCallable(const CopyC
     return prom->get_future();
 }
 
+LiveClient::CreateAuditKeywordLibOutcome LiveClient::CreateAuditKeywordLib(const CreateAuditKeywordLibRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAuditKeywordLib");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAuditKeywordLibResponse rsp = CreateAuditKeywordLibResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAuditKeywordLibOutcome(rsp);
+        else
+            return CreateAuditKeywordLibOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAuditKeywordLibOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateAuditKeywordLibAsync(const CreateAuditKeywordLibRequest& request, const CreateAuditKeywordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAuditKeywordLibRequest&;
+    using Resp = CreateAuditKeywordLibResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAuditKeywordLib", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::CreateAuditKeywordLibOutcomeCallable LiveClient::CreateAuditKeywordLibCallable(const CreateAuditKeywordLibRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAuditKeywordLibOutcome>>();
+    CreateAuditKeywordLibAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const CreateAuditKeywordLibRequest&,
+        CreateAuditKeywordLibOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LiveClient::CreateAuditKeywordsOutcome LiveClient::CreateAuditKeywords(const CreateAuditKeywordsRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAuditKeywords");

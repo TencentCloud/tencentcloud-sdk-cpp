@@ -36,7 +36,10 @@ RabbitMQClusterAccessInfo::RabbitMQClusterAccessInfo() :
     m_webConsoleDomainEndpointHasBeenSet(false),
     m_controlPlaneEndpointInfoHasBeenSet(false),
     m_publicTlsAccessEndpointHasBeenSet(false),
-    m_publicIpReusedHasBeenSet(false)
+    m_publicIpReusedHasBeenSet(false),
+    m_publicWebConsoleErrorMessageHasBeenSet(false),
+    m_vpcWebConsoleErrorMessageHasBeenSet(false),
+    m_publicDataStreamErrorMessageHasBeenSet(false)
 {
 }
 
@@ -219,6 +222,36 @@ CoreInternalOutcome RabbitMQClusterAccessInfo::Deserialize(const rapidjson::Valu
         m_publicIpReusedHasBeenSet = true;
     }
 
+    if (value.HasMember("PublicWebConsoleErrorMessage") && !value["PublicWebConsoleErrorMessage"].IsNull())
+    {
+        if (!value["PublicWebConsoleErrorMessage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterAccessInfo.PublicWebConsoleErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicWebConsoleErrorMessage = string(value["PublicWebConsoleErrorMessage"].GetString());
+        m_publicWebConsoleErrorMessageHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcWebConsoleErrorMessage") && !value["VpcWebConsoleErrorMessage"].IsNull())
+    {
+        if (!value["VpcWebConsoleErrorMessage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterAccessInfo.VpcWebConsoleErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcWebConsoleErrorMessage = string(value["VpcWebConsoleErrorMessage"].GetString());
+        m_vpcWebConsoleErrorMessageHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublicDataStreamErrorMessage") && !value["PublicDataStreamErrorMessage"].IsNull())
+    {
+        if (!value["PublicDataStreamErrorMessage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterAccessInfo.PublicDataStreamErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicDataStreamErrorMessage = string(value["PublicDataStreamErrorMessage"].GetString());
+        m_publicDataStreamErrorMessageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -354,6 +387,30 @@ void RabbitMQClusterAccessInfo::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "PublicIpReused";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_publicIpReused, allocator);
+    }
+
+    if (m_publicWebConsoleErrorMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicWebConsoleErrorMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicWebConsoleErrorMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcWebConsoleErrorMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcWebConsoleErrorMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcWebConsoleErrorMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicDataStreamErrorMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicDataStreamErrorMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicDataStreamErrorMessage.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -613,5 +670,53 @@ void RabbitMQClusterAccessInfo::SetPublicIpReused(const bool& _publicIpReused)
 bool RabbitMQClusterAccessInfo::PublicIpReusedHasBeenSet() const
 {
     return m_publicIpReusedHasBeenSet;
+}
+
+string RabbitMQClusterAccessInfo::GetPublicWebConsoleErrorMessage() const
+{
+    return m_publicWebConsoleErrorMessage;
+}
+
+void RabbitMQClusterAccessInfo::SetPublicWebConsoleErrorMessage(const string& _publicWebConsoleErrorMessage)
+{
+    m_publicWebConsoleErrorMessage = _publicWebConsoleErrorMessage;
+    m_publicWebConsoleErrorMessageHasBeenSet = true;
+}
+
+bool RabbitMQClusterAccessInfo::PublicWebConsoleErrorMessageHasBeenSet() const
+{
+    return m_publicWebConsoleErrorMessageHasBeenSet;
+}
+
+string RabbitMQClusterAccessInfo::GetVpcWebConsoleErrorMessage() const
+{
+    return m_vpcWebConsoleErrorMessage;
+}
+
+void RabbitMQClusterAccessInfo::SetVpcWebConsoleErrorMessage(const string& _vpcWebConsoleErrorMessage)
+{
+    m_vpcWebConsoleErrorMessage = _vpcWebConsoleErrorMessage;
+    m_vpcWebConsoleErrorMessageHasBeenSet = true;
+}
+
+bool RabbitMQClusterAccessInfo::VpcWebConsoleErrorMessageHasBeenSet() const
+{
+    return m_vpcWebConsoleErrorMessageHasBeenSet;
+}
+
+string RabbitMQClusterAccessInfo::GetPublicDataStreamErrorMessage() const
+{
+    return m_publicDataStreamErrorMessage;
+}
+
+void RabbitMQClusterAccessInfo::SetPublicDataStreamErrorMessage(const string& _publicDataStreamErrorMessage)
+{
+    m_publicDataStreamErrorMessage = _publicDataStreamErrorMessage;
+    m_publicDataStreamErrorMessageHasBeenSet = true;
+}
+
+bool RabbitMQClusterAccessInfo::PublicDataStreamErrorMessageHasBeenSet() const
+{
+    return m_publicDataStreamErrorMessageHasBeenSet;
 }
 

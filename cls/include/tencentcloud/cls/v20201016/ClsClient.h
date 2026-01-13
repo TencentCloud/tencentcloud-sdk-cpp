@@ -55,6 +55,8 @@
 #include <tencentcloud/cls/v20201016/model/CreateConsumerGroupResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateCosRechargeRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateCosRechargeResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateDashboardRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateDashboardResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateDashboardSubscribeRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateDashboardSubscribeResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateDataTransformRequest.h>
@@ -115,6 +117,8 @@
 #include <tencentcloud/cls/v20201016/model/DeleteConsumerGroupResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteCosRechargeRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteCosRechargeResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteDashboardRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteDashboardResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteDashboardSubscribeRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteDashboardSubscribeResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteDataTransformRequest.h>
@@ -283,6 +287,8 @@
 #include <tencentcloud/cls/v20201016/model/ModifyConsumerGroupResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyCosRechargeRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyCosRechargeResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyDashboardRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyDashboardResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyDashboardSubscribeRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyDashboardSubscribeResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyDataTransformRequest.h>
@@ -405,6 +411,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCosRechargeResponse> CreateCosRechargeOutcome;
                 typedef std::future<CreateCosRechargeOutcome> CreateCosRechargeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateCosRechargeRequest&, CreateCosRechargeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCosRechargeAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDashboardResponse> CreateDashboardOutcome;
+                typedef std::future<CreateDashboardOutcome> CreateDashboardOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateDashboardRequest&, CreateDashboardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDashboardAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDashboardSubscribeResponse> CreateDashboardSubscribeOutcome;
                 typedef std::future<CreateDashboardSubscribeOutcome> CreateDashboardSubscribeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateDashboardSubscribeRequest&, CreateDashboardSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDashboardSubscribeAsyncHandler;
@@ -495,6 +504,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCosRechargeResponse> DeleteCosRechargeOutcome;
                 typedef std::future<DeleteCosRechargeOutcome> DeleteCosRechargeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteCosRechargeRequest&, DeleteCosRechargeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCosRechargeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDashboardResponse> DeleteDashboardOutcome;
+                typedef std::future<DeleteDashboardOutcome> DeleteDashboardOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteDashboardRequest&, DeleteDashboardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDashboardAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDashboardSubscribeResponse> DeleteDashboardSubscribeOutcome;
                 typedef std::future<DeleteDashboardSubscribeOutcome> DeleteDashboardSubscribeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteDashboardSubscribeRequest&, DeleteDashboardSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDashboardSubscribeAsyncHandler;
@@ -747,6 +759,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCosRechargeResponse> ModifyCosRechargeOutcome;
                 typedef std::future<ModifyCosRechargeOutcome> ModifyCosRechargeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyCosRechargeRequest&, ModifyCosRechargeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCosRechargeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDashboardResponse> ModifyDashboardOutcome;
+                typedef std::future<ModifyDashboardOutcome> ModifyDashboardOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyDashboardRequest&, ModifyDashboardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDashboardAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDashboardSubscribeResponse> ModifyDashboardSubscribeOutcome;
                 typedef std::future<ModifyDashboardSubscribeOutcome> ModifyDashboardSubscribeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyDashboardSubscribeRequest&, ModifyDashboardSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDashboardSubscribeAsyncHandler;
@@ -990,6 +1005,15 @@ namespace TencentCloud
                 CreateCosRechargeOutcome CreateCosRecharge(const Model::CreateCosRechargeRequest &request);
                 void CreateCosRechargeAsync(const Model::CreateCosRechargeRequest& request, const CreateCosRechargeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCosRechargeOutcomeCallable CreateCosRechargeCallable(const Model::CreateCosRechargeRequest& request);
+
+                /**
+                 *本接口用于创建仪表盘
+                 * @param req CreateDashboardRequest
+                 * @return CreateDashboardOutcome
+                 */
+                CreateDashboardOutcome CreateDashboard(const Model::CreateDashboardRequest &request);
+                void CreateDashboardAsync(const Model::CreateDashboardRequest& request, const CreateDashboardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDashboardOutcomeCallable CreateDashboardCallable(const Model::CreateDashboardRequest& request);
 
                 /**
                  *此接口用于创建仪表盘订阅
@@ -1260,6 +1284,15 @@ namespace TencentCloud
                 DeleteCosRechargeOutcome DeleteCosRecharge(const Model::DeleteCosRechargeRequest &request);
                 void DeleteCosRechargeAsync(const Model::DeleteCosRechargeRequest& request, const DeleteCosRechargeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteCosRechargeOutcomeCallable DeleteCosRechargeCallable(const Model::DeleteCosRechargeRequest& request);
+
+                /**
+                 *本接口用于删除仪表盘
+                 * @param req DeleteDashboardRequest
+                 * @return DeleteDashboardOutcome
+                 */
+                DeleteDashboardOutcome DeleteDashboard(const Model::DeleteDashboardRequest &request);
+                void DeleteDashboardAsync(const Model::DeleteDashboardRequest& request, const DeleteDashboardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDashboardOutcomeCallable DeleteDashboardCallable(const Model::DeleteDashboardRequest& request);
 
                 /**
                  *此接口用于删除仪表盘订阅
@@ -2017,6 +2050,15 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 ModifyCosRechargeOutcome ModifyCosRecharge(const Model::ModifyCosRechargeRequest &request);
                 void ModifyCosRechargeAsync(const Model::ModifyCosRechargeRequest& request, const ModifyCosRechargeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCosRechargeOutcomeCallable ModifyCosRechargeCallable(const Model::ModifyCosRechargeRequest& request);
+
+                /**
+                 *本接口用于修改仪表盘
+                 * @param req ModifyDashboardRequest
+                 * @return ModifyDashboardOutcome
+                 */
+                ModifyDashboardOutcome ModifyDashboard(const Model::ModifyDashboardRequest &request);
+                void ModifyDashboardAsync(const Model::ModifyDashboardRequest& request, const ModifyDashboardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDashboardOutcomeCallable ModifyDashboardCallable(const Model::ModifyDashboardRequest& request);
 
                 /**
                  *此接口用于修改仪表盘订阅

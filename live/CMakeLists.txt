@@ -330,6 +330,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/DeleteLiveTimeShiftRuleRequest.h
   include/tencentcloud/live/v20180801/model/CommonMixInputParam.h
   include/tencentcloud/live/v20180801/model/CreateLiveCallbackTemplateRequest.h
+  include/tencentcloud/live/v20180801/model/CreateAuditKeywordLibResponse.h
   include/tencentcloud/live/v20180801/model/StreamEventInfo.h
   include/tencentcloud/live/v20180801/model/DeleteRecordTaskResponse.h
   include/tencentcloud/live/v20180801/model/CreateLiveTranscodeRuleRequest.h
@@ -396,6 +397,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/DropLiveStreamResponse.h
   include/tencentcloud/live/v20180801/model/DescribeAuditKeywordsRequest.h
   include/tencentcloud/live/v20180801/model/DescribeLiveRecordTemplatesRequest.h
+  include/tencentcloud/live/v20180801/model/CreateAuditKeywordLibRequest.h
   include/tencentcloud/live/v20180801/model/DescribeTimeShiftRecordDetailRequest.h
   include/tencentcloud/live/v20180801/model/PullStreamTaskInfo.h
   include/tencentcloud/live/v20180801/model/CreateLiveTimeShiftTemplateResponse.h
@@ -846,6 +848,7 @@ set(live_src
   src/v20180801/model/DeleteLiveTimeShiftRuleRequest.cpp
   src/v20180801/model/CommonMixInputParam.cpp
   src/v20180801/model/CreateLiveCallbackTemplateRequest.cpp
+  src/v20180801/model/CreateAuditKeywordLibResponse.cpp
   src/v20180801/model/StreamEventInfo.cpp
   src/v20180801/model/DeleteRecordTaskResponse.cpp
   src/v20180801/model/CreateLiveTranscodeRuleRequest.cpp
@@ -912,6 +915,7 @@ set(live_src
   src/v20180801/model/DropLiveStreamResponse.cpp
   src/v20180801/model/DescribeAuditKeywordsRequest.cpp
   src/v20180801/model/DescribeLiveRecordTemplatesRequest.cpp
+  src/v20180801/model/CreateAuditKeywordLibRequest.cpp
   src/v20180801/model/DescribeTimeShiftRecordDetailRequest.cpp
   src/v20180801/model/PullStreamTaskInfo.cpp
   src/v20180801/model/CreateLiveTimeShiftTemplateResponse.cpp

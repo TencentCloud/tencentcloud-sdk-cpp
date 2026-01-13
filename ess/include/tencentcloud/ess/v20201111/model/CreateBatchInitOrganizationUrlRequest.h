@@ -76,6 +76,7 @@ namespace TencentCloud
 <li>AUTH_JOIN_ORGANIZATION_GROUP : 加入集团企业</li>
 <li>OPEN_AUTO_SIGN :开通企业自动签署</li>
 <li>PARTNER_AUTO_SIGN_AUTH :合作方企业授权自动签</li>
+<li>CHANGE_SUB_ORGANIZATION_ADMIN_AUTH :变更子企业超管授权(**授权后，主企业可变更子企业超管，此功能需联系客户经理开通白名单使用**)</li>
 </ul>
                      * @return OperateTypes 初始化操作类型
 <ul>
@@ -83,6 +84,7 @@ namespace TencentCloud
 <li>AUTH_JOIN_ORGANIZATION_GROUP : 加入集团企业</li>
 <li>OPEN_AUTO_SIGN :开通企业自动签署</li>
 <li>PARTNER_AUTO_SIGN_AUTH :合作方企业授权自动签</li>
+<li>CHANGE_SUB_ORGANIZATION_ADMIN_AUTH :变更子企业超管授权(**授权后，主企业可变更子企业超管，此功能需联系客户经理开通白名单使用**)</li>
 </ul>
                      * 
                      */
@@ -95,6 +97,7 @@ namespace TencentCloud
 <li>AUTH_JOIN_ORGANIZATION_GROUP : 加入集团企业</li>
 <li>OPEN_AUTO_SIGN :开通企业自动签署</li>
 <li>PARTNER_AUTO_SIGN_AUTH :合作方企业授权自动签</li>
+<li>CHANGE_SUB_ORGANIZATION_ADMIN_AUTH :变更子企业超管授权(**授权后，主企业可变更子企业超管，此功能需联系客户经理开通白名单使用**)</li>
 </ul>
                      * @param _operateTypes 初始化操作类型
 <ul>
@@ -102,6 +105,7 @@ namespace TencentCloud
 <li>AUTH_JOIN_ORGANIZATION_GROUP : 加入集团企业</li>
 <li>OPEN_AUTO_SIGN :开通企业自动签署</li>
 <li>PARTNER_AUTO_SIGN_AUTH :合作方企业授权自动签</li>
+<li>CHANGE_SUB_ORGANIZATION_ADMIN_AUTH :变更子企业超管授权(**授权后，主企业可变更子企业超管，此功能需联系客户经理开通白名单使用**)</li>
 </ul>
                      * 
                      */
@@ -193,6 +197,27 @@ namespace TencentCloud
                      */
                     bool AuthorizedOrganizationIdHasBeenSet() const;
 
+                    /**
+                     * 获取初始化操作类型里含有CHANGE_SUB_ORGANIZATION_ADMIN_AUTH（变更子企业超管授权）操作类型时，授权协议中主企业的签署方是否使用自动签（需操作人有自动签授权）
+                     * @return ChangeAdminAuthAutoSign 初始化操作类型里含有CHANGE_SUB_ORGANIZATION_ADMIN_AUTH（变更子企业超管授权）操作类型时，授权协议中主企业的签署方是否使用自动签（需操作人有自动签授权）
+                     * 
+                     */
+                    bool GetChangeAdminAuthAutoSign() const;
+
+                    /**
+                     * 设置初始化操作类型里含有CHANGE_SUB_ORGANIZATION_ADMIN_AUTH（变更子企业超管授权）操作类型时，授权协议中主企业的签署方是否使用自动签（需操作人有自动签授权）
+                     * @param _changeAdminAuthAutoSign 初始化操作类型里含有CHANGE_SUB_ORGANIZATION_ADMIN_AUTH（变更子企业超管授权）操作类型时，授权协议中主企业的签署方是否使用自动签（需操作人有自动签授权）
+                     * 
+                     */
+                    void SetChangeAdminAuthAutoSign(const bool& _changeAdminAuthAutoSign);
+
+                    /**
+                     * 判断参数 ChangeAdminAuthAutoSign 是否已赋值
+                     * @return ChangeAdminAuthAutoSign 是否已赋值
+                     * 
+                     */
+                    bool ChangeAdminAuthAutoSignHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +234,7 @@ namespace TencentCloud
 <li>AUTH_JOIN_ORGANIZATION_GROUP : 加入集团企业</li>
 <li>OPEN_AUTO_SIGN :开通企业自动签署</li>
 <li>PARTNER_AUTO_SIGN_AUTH :合作方企业授权自动签</li>
+<li>CHANGE_SUB_ORGANIZATION_ADMIN_AUTH :变更子企业超管授权(**授权后，主企业可变更子企业超管，此功能需联系客户经理开通白名单使用**)</li>
 </ul>
                      */
                     std::vector<std::string> m_operateTypes;
@@ -235,6 +261,12 @@ namespace TencentCloud
                      */
                     std::string m_authorizedOrganizationId;
                     bool m_authorizedOrganizationIdHasBeenSet;
+
+                    /**
+                     * 初始化操作类型里含有CHANGE_SUB_ORGANIZATION_ADMIN_AUTH（变更子企业超管授权）操作类型时，授权协议中主企业的签署方是否使用自动签（需操作人有自动签授权）
+                     */
+                    bool m_changeAdminAuthAutoSign;
+                    bool m_changeAdminAuthAutoSignHasBeenSet;
 
                 };
             }

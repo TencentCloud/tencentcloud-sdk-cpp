@@ -23,12 +23,13 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 DescribeTimingL7OriginPullDataRequest::DescribeTimingL7OriginPullDataRequest() :
+    m_zoneIdsHasBeenSet(false),
+    m_metricNamesHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_metricNamesHasBeenSet(false),
-    m_zoneIdsHasBeenSet(false),
     m_intervalHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_dimensionNameHasBeenSet(false)
 {
 }
 
@@ -39,20 +40,17 @@ string DescribeTimingL7OriginPullDataRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_startTimeHasBeenSet)
+    if (m_zoneIdsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StartTime";
+        string key = "ZoneIds";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
-    }
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-    if (m_endTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EndTime";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+        for (auto itr = m_zoneIds.begin(); itr != m_zoneIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_metricNamesHasBeenSet)
@@ -68,17 +66,20 @@ string DescribeTimingL7OriginPullDataRequest::ToJsonString() const
         }
     }
 
-    if (m_zoneIdsHasBeenSet)
+    if (m_startTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ZoneIds";
+        string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
 
-        for (auto itr = m_zoneIds.begin(); itr != m_zoneIds.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_intervalHasBeenSet)
@@ -104,6 +105,14 @@ string DescribeTimingL7OriginPullDataRequest::ToJsonString() const
         }
     }
 
+    if (m_dimensionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DimensionName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dimensionName.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -111,6 +120,38 @@ string DescribeTimingL7OriginPullDataRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> DescribeTimingL7OriginPullDataRequest::GetZoneIds() const
+{
+    return m_zoneIds;
+}
+
+void DescribeTimingL7OriginPullDataRequest::SetZoneIds(const vector<string>& _zoneIds)
+{
+    m_zoneIds = _zoneIds;
+    m_zoneIdsHasBeenSet = true;
+}
+
+bool DescribeTimingL7OriginPullDataRequest::ZoneIdsHasBeenSet() const
+{
+    return m_zoneIdsHasBeenSet;
+}
+
+vector<string> DescribeTimingL7OriginPullDataRequest::GetMetricNames() const
+{
+    return m_metricNames;
+}
+
+void DescribeTimingL7OriginPullDataRequest::SetMetricNames(const vector<string>& _metricNames)
+{
+    m_metricNames = _metricNames;
+    m_metricNamesHasBeenSet = true;
+}
+
+bool DescribeTimingL7OriginPullDataRequest::MetricNamesHasBeenSet() const
+{
+    return m_metricNamesHasBeenSet;
+}
 
 string DescribeTimingL7OriginPullDataRequest::GetStartTime() const
 {
@@ -144,38 +185,6 @@ bool DescribeTimingL7OriginPullDataRequest::EndTimeHasBeenSet() const
     return m_endTimeHasBeenSet;
 }
 
-vector<string> DescribeTimingL7OriginPullDataRequest::GetMetricNames() const
-{
-    return m_metricNames;
-}
-
-void DescribeTimingL7OriginPullDataRequest::SetMetricNames(const vector<string>& _metricNames)
-{
-    m_metricNames = _metricNames;
-    m_metricNamesHasBeenSet = true;
-}
-
-bool DescribeTimingL7OriginPullDataRequest::MetricNamesHasBeenSet() const
-{
-    return m_metricNamesHasBeenSet;
-}
-
-vector<string> DescribeTimingL7OriginPullDataRequest::GetZoneIds() const
-{
-    return m_zoneIds;
-}
-
-void DescribeTimingL7OriginPullDataRequest::SetZoneIds(const vector<string>& _zoneIds)
-{
-    m_zoneIds = _zoneIds;
-    m_zoneIdsHasBeenSet = true;
-}
-
-bool DescribeTimingL7OriginPullDataRequest::ZoneIdsHasBeenSet() const
-{
-    return m_zoneIdsHasBeenSet;
-}
-
 string DescribeTimingL7OriginPullDataRequest::GetInterval() const
 {
     return m_interval;
@@ -206,6 +215,22 @@ void DescribeTimingL7OriginPullDataRequest::SetFilters(const vector<QueryConditi
 bool DescribeTimingL7OriginPullDataRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeTimingL7OriginPullDataRequest::GetDimensionName() const
+{
+    return m_dimensionName;
+}
+
+void DescribeTimingL7OriginPullDataRequest::SetDimensionName(const string& _dimensionName)
+{
+    m_dimensionName = _dimensionName;
+    m_dimensionNameHasBeenSet = true;
+}
+
+bool DescribeTimingL7OriginPullDataRequest::DimensionNameHasBeenSet() const
+{
+    return m_dimensionNameHasBeenSet;
 }
 
 

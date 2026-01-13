@@ -90,6 +90,56 @@ EsClient::CheckMigrateIndexMetaDataOutcomeCallable EsClient::CheckMigrateIndexMe
     return prom->get_future();
 }
 
+EsClient::CreateAutoBackUpStrategyOutcome EsClient::CreateAutoBackUpStrategy(const CreateAutoBackUpStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAutoBackUpStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAutoBackUpStrategyResponse rsp = CreateAutoBackUpStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAutoBackUpStrategyOutcome(rsp);
+        else
+            return CreateAutoBackUpStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAutoBackUpStrategyOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::CreateAutoBackUpStrategyAsync(const CreateAutoBackUpStrategyRequest& request, const CreateAutoBackUpStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAutoBackUpStrategyRequest&;
+    using Resp = CreateAutoBackUpStrategyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAutoBackUpStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::CreateAutoBackUpStrategyOutcomeCallable EsClient::CreateAutoBackUpStrategyCallable(const CreateAutoBackUpStrategyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAutoBackUpStrategyOutcome>>();
+    CreateAutoBackUpStrategyAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const CreateAutoBackUpStrategyRequest&,
+        CreateAutoBackUpStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EsClient::CreateClusterSnapshotOutcome EsClient::CreateClusterSnapshot(const CreateClusterSnapshotRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateClusterSnapshot");
@@ -440,6 +490,56 @@ EsClient::CreateServerlessSpaceV2OutcomeCallable EsClient::CreateServerlessSpace
     return prom->get_future();
 }
 
+EsClient::DeleteAutoBackUpStrategyOutcome EsClient::DeleteAutoBackUpStrategy(const DeleteAutoBackUpStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAutoBackUpStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAutoBackUpStrategyResponse rsp = DeleteAutoBackUpStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAutoBackUpStrategyOutcome(rsp);
+        else
+            return DeleteAutoBackUpStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAutoBackUpStrategyOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DeleteAutoBackUpStrategyAsync(const DeleteAutoBackUpStrategyRequest& request, const DeleteAutoBackUpStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAutoBackUpStrategyRequest&;
+    using Resp = DeleteAutoBackUpStrategyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAutoBackUpStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::DeleteAutoBackUpStrategyOutcomeCallable EsClient::DeleteAutoBackUpStrategyCallable(const DeleteAutoBackUpStrategyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAutoBackUpStrategyOutcome>>();
+    DeleteAutoBackUpStrategyAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DeleteAutoBackUpStrategyRequest&,
+        DeleteAutoBackUpStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EsClient::DeleteClusterSnapshotOutcome EsClient::DeleteClusterSnapshot(const DeleteClusterSnapshotRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteClusterSnapshot");
@@ -782,6 +882,56 @@ EsClient::DeleteServerlessSpaceUserOutcomeCallable EsClient::DeleteServerlessSpa
         const EsClient*,
         const DeleteServerlessSpaceUserRequest&,
         DeleteServerlessSpaceUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EsClient::DescribeAutoBackUpStrategyOutcome EsClient::DescribeAutoBackUpStrategy(const DescribeAutoBackUpStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAutoBackUpStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAutoBackUpStrategyResponse rsp = DescribeAutoBackUpStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAutoBackUpStrategyOutcome(rsp);
+        else
+            return DescribeAutoBackUpStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAutoBackUpStrategyOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeAutoBackUpStrategyAsync(const DescribeAutoBackUpStrategyRequest& request, const DescribeAutoBackUpStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAutoBackUpStrategyRequest&;
+    using Resp = DescribeAutoBackUpStrategyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAutoBackUpStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::DescribeAutoBackUpStrategyOutcomeCallable EsClient::DescribeAutoBackUpStrategyCallable(const DescribeAutoBackUpStrategyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAutoBackUpStrategyOutcome>>();
+    DescribeAutoBackUpStrategyAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const DescribeAutoBackUpStrategyRequest&,
+        DescribeAutoBackUpStrategyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2082,6 +2232,106 @@ EsClient::InstallInstanceModelOutcomeCallable EsClient::InstallInstanceModelCall
         const EsClient*,
         const InstallInstanceModelRequest&,
         InstallInstanceModelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EsClient::ModifyAutoBackUpCommonInfoOutcome EsClient::ModifyAutoBackUpCommonInfo(const ModifyAutoBackUpCommonInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAutoBackUpCommonInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAutoBackUpCommonInfoResponse rsp = ModifyAutoBackUpCommonInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAutoBackUpCommonInfoOutcome(rsp);
+        else
+            return ModifyAutoBackUpCommonInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAutoBackUpCommonInfoOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::ModifyAutoBackUpCommonInfoAsync(const ModifyAutoBackUpCommonInfoRequest& request, const ModifyAutoBackUpCommonInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyAutoBackUpCommonInfoRequest&;
+    using Resp = ModifyAutoBackUpCommonInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyAutoBackUpCommonInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::ModifyAutoBackUpCommonInfoOutcomeCallable EsClient::ModifyAutoBackUpCommonInfoCallable(const ModifyAutoBackUpCommonInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyAutoBackUpCommonInfoOutcome>>();
+    ModifyAutoBackUpCommonInfoAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const ModifyAutoBackUpCommonInfoRequest&,
+        ModifyAutoBackUpCommonInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EsClient::ModifyAutoBackUpStrategyOutcome EsClient::ModifyAutoBackUpStrategy(const ModifyAutoBackUpStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAutoBackUpStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAutoBackUpStrategyResponse rsp = ModifyAutoBackUpStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAutoBackUpStrategyOutcome(rsp);
+        else
+            return ModifyAutoBackUpStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAutoBackUpStrategyOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::ModifyAutoBackUpStrategyAsync(const ModifyAutoBackUpStrategyRequest& request, const ModifyAutoBackUpStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyAutoBackUpStrategyRequest&;
+    using Resp = ModifyAutoBackUpStrategyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyAutoBackUpStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::ModifyAutoBackUpStrategyOutcomeCallable EsClient::ModifyAutoBackUpStrategyCallable(const ModifyAutoBackUpStrategyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyAutoBackUpStrategyOutcome>>();
+    ModifyAutoBackUpStrategyAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const ModifyAutoBackUpStrategyRequest&,
+        ModifyAutoBackUpStrategyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

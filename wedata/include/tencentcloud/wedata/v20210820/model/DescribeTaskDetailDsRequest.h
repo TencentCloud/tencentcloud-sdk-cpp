@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务Id
-                     * @return TaskId 任务Id
+                     * 获取任务ID
+                     * @return TaskId 任务ID
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务Id
-                     * @param _taskId 任务Id
+                     * 设置任务ID
+                     * @param _taskId 任务ID
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取项目Id
-                     * @return ProjectId 项目Id
+                     * 获取项目ID （必填属性）
+                     * @return ProjectId 项目ID （必填属性）
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目Id
-                     * @param _projectId 项目Id
+                     * 设置项目ID （必填属性）
+                     * @param _projectId 项目ID （必填属性）
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -108,13 +108,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务Id
+                     * 任务ID
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 项目Id
+                     * 项目ID （必填属性）
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;

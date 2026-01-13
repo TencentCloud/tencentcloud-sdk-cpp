@@ -28,7 +28,8 @@ CreateIVRSessionRequest::CreateIVRSessionRequest() :
     m_iVRIdHasBeenSet(false),
     m_callersHasBeenSet(false),
     m_variablesHasBeenSet(false),
-    m_uUIHasBeenSet(false)
+    m_uUIHasBeenSet(false),
+    m_maxRingTimeoutSecondHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,14 @@ string CreateIVRSessionRequest::ToJsonString() const
         string key = "UUI";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_uUI.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxRingTimeoutSecondHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxRingTimeoutSecond";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxRingTimeoutSecond, allocator);
     }
 
 
@@ -201,6 +210,22 @@ void CreateIVRSessionRequest::SetUUI(const string& _uUI)
 bool CreateIVRSessionRequest::UUIHasBeenSet() const
 {
     return m_uUIHasBeenSet;
+}
+
+int64_t CreateIVRSessionRequest::GetMaxRingTimeoutSecond() const
+{
+    return m_maxRingTimeoutSecond;
+}
+
+void CreateIVRSessionRequest::SetMaxRingTimeoutSecond(const int64_t& _maxRingTimeoutSecond)
+{
+    m_maxRingTimeoutSecond = _maxRingTimeoutSecond;
+    m_maxRingTimeoutSecondHasBeenSet = true;
+}
+
+bool CreateIVRSessionRequest::MaxRingTimeoutSecondHasBeenSet() const
+{
+    return m_maxRingTimeoutSecondHasBeenSet;
 }
 
 

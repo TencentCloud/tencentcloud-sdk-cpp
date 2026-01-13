@@ -216,6 +216,27 @@ namespace TencentCloud
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
+                     * 获取计量类型
+                     * @return InstanceMeteringType 计量类型
+                     * 
+                     */
+                    std::string GetInstanceMeteringType() const;
+
+                    /**
+                     * 设置计量类型
+                     * @param _instanceMeteringType 计量类型
+                     * 
+                     */
+                    void SetInstanceMeteringType(const std::string& _instanceMeteringType);
+
+                    /**
+                     * 判断参数 InstanceMeteringType 是否已赋值
+                     * @return InstanceMeteringType 是否已赋值
+                     * 
+                     */
+                    bool InstanceMeteringTypeHasBeenSet() const;
+
+                    /**
                      * 获取限速类型，`INTER_REGION_LIMIT` 为地域间限速；`OUTER_REGION_LIMIT` 为地域出口限速。
                      * @return BandwidthLimitType 限速类型，`INTER_REGION_LIMIT` 为地域间限速；`OUTER_REGION_LIMIT` 为地域出口限速。
                      * 
@@ -621,6 +642,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
+
+                    /**
+                     * 计量类型
+                     */
+                    std::string m_instanceMeteringType;
+                    bool m_instanceMeteringTypeHasBeenSet;
 
                     /**
                      * 限速类型，`INTER_REGION_LIMIT` 为地域间限速；`OUTER_REGION_LIMIT` 为地域出口限速。

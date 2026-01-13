@@ -29,6 +29,7 @@ CCN::CCN() :
     m_stateHasBeenSet(false),
     m_qosLevelHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
+    m_instanceMeteringTypeHasBeenSet(false),
     m_bandwidthLimitTypeHasBeenSet(false),
     m_tagSetHasBeenSet(false),
     m_routePriorityFlagHasBeenSet(false),
@@ -132,6 +133,16 @@ CoreInternalOutcome CCN::Deserialize(const rapidjson::Value &value)
         }
         m_instanceChargeType = string(value["InstanceChargeType"].GetString());
         m_instanceChargeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceMeteringType") && !value["InstanceMeteringType"].IsNull())
+    {
+        if (!value["InstanceMeteringType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCN.InstanceMeteringType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceMeteringType = string(value["InstanceMeteringType"].GetString());
+        m_instanceMeteringTypeHasBeenSet = true;
     }
 
     if (value.HasMember("BandwidthLimitType") && !value["BandwidthLimitType"].IsNull())
@@ -383,6 +394,14 @@ void CCN::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "InstanceChargeType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceChargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceMeteringTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceMeteringType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceMeteringType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bandwidthLimitTypeHasBeenSet)
@@ -657,6 +676,22 @@ void CCN::SetInstanceChargeType(const string& _instanceChargeType)
 bool CCN::InstanceChargeTypeHasBeenSet() const
 {
     return m_instanceChargeTypeHasBeenSet;
+}
+
+string CCN::GetInstanceMeteringType() const
+{
+    return m_instanceMeteringType;
+}
+
+void CCN::SetInstanceMeteringType(const string& _instanceMeteringType)
+{
+    m_instanceMeteringType = _instanceMeteringType;
+    m_instanceMeteringTypeHasBeenSet = true;
+}
+
+bool CCN::InstanceMeteringTypeHasBeenSet() const
+{
+    return m_instanceMeteringTypeHasBeenSet;
 }
 
 string CCN::GetBandwidthLimitType() const

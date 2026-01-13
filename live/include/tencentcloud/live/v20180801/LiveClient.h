@@ -45,6 +45,8 @@
 #include <tencentcloud/live/v20180801/model/CancelCommonMixStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/CopyCasterRequest.h>
 #include <tencentcloud/live/v20180801/model/CopyCasterResponse.h>
+#include <tencentcloud/live/v20180801/model/CreateAuditKeywordLibRequest.h>
+#include <tencentcloud/live/v20180801/model/CreateAuditKeywordLibResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateAuditKeywordsRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateAuditKeywordsResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateCasterRequest.h>
@@ -478,6 +480,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CopyCasterResponse> CopyCasterOutcome;
                 typedef std::future<CopyCasterOutcome> CopyCasterOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CopyCasterRequest&, CopyCasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopyCasterAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAuditKeywordLibResponse> CreateAuditKeywordLibOutcome;
+                typedef std::future<CreateAuditKeywordLibOutcome> CreateAuditKeywordLibOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::CreateAuditKeywordLibRequest&, CreateAuditKeywordLibOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuditKeywordLibAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAuditKeywordsResponse> CreateAuditKeywordsOutcome;
                 typedef std::future<CreateAuditKeywordsOutcome> CreateAuditKeywordsOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateAuditKeywordsRequest&, CreateAuditKeywordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuditKeywordsAsyncHandler;
@@ -1160,6 +1165,15 @@ namespace TencentCloud
                 CopyCasterOutcome CopyCaster(const Model::CopyCasterRequest &request);
                 void CopyCasterAsync(const Model::CopyCasterRequest& request, const CopyCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CopyCasterOutcomeCallable CopyCasterCallable(const Model::CopyCasterRequest& request);
+
+                /**
+                 *创建关键词库，直播审核功能使用。
+                 * @param req CreateAuditKeywordLibRequest
+                 * @return CreateAuditKeywordLibOutcome
+                 */
+                CreateAuditKeywordLibOutcome CreateAuditKeywordLib(const Model::CreateAuditKeywordLibRequest &request);
+                void CreateAuditKeywordLibAsync(const Model::CreateAuditKeywordLibRequest& request, const CreateAuditKeywordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAuditKeywordLibOutcomeCallable CreateAuditKeywordLibCallable(const Model::CreateAuditKeywordLibRequest& request);
 
                 /**
                  *创建关键词，并关联到关键词库。

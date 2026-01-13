@@ -90,6 +90,56 @@ DataagentClient::AddChunkOutcomeCallable DataagentClient::AddChunkCallable(const
     return prom->get_future();
 }
 
+DataagentClient::AddSceneOutcome DataagentClient::AddScene(const AddSceneRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddScene");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddSceneResponse rsp = AddSceneResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddSceneOutcome(rsp);
+        else
+            return AddSceneOutcome(o.GetError());
+    }
+    else
+    {
+        return AddSceneOutcome(outcome.GetError());
+    }
+}
+
+void DataagentClient::AddSceneAsync(const AddSceneRequest& request, const AddSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddSceneRequest&;
+    using Resp = AddSceneResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddScene", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DataagentClient::AddSceneOutcomeCallable DataagentClient::AddSceneCallable(const AddSceneRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddSceneOutcome>>();
+    AddSceneAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const AddSceneRequest&,
+        AddSceneOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DataagentClient::ChatAIOutcome DataagentClient::ChatAI(const ChatAIRequest &request)
 {
     auto outcome = MakeRequest(request, "ChatAI");
@@ -282,6 +332,56 @@ DataagentClient::DeleteDataAgentSessionOutcomeCallable DataagentClient::DeleteDa
         const DataagentClient*,
         const DeleteDataAgentSessionRequest&,
         DeleteDataAgentSessionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DataagentClient::DeleteSceneOutcome DataagentClient::DeleteScene(const DeleteSceneRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteScene");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSceneResponse rsp = DeleteSceneResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSceneOutcome(rsp);
+        else
+            return DeleteSceneOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSceneOutcome(outcome.GetError());
+    }
+}
+
+void DataagentClient::DeleteSceneAsync(const DeleteSceneRequest& request, const DeleteSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteSceneRequest&;
+    using Resp = DeleteSceneResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteScene", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DataagentClient::DeleteSceneOutcomeCallable DataagentClient::DeleteSceneCallable(const DeleteSceneRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteSceneOutcome>>();
+    DeleteSceneAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const DeleteSceneRequest&,
+        DeleteSceneOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -740,6 +840,56 @@ DataagentClient::QueryChunkListOutcomeCallable DataagentClient::QueryChunkListCa
     return prom->get_future();
 }
 
+DataagentClient::QuerySceneListOutcome DataagentClient::QuerySceneList(const QuerySceneListRequest &request)
+{
+    auto outcome = MakeRequest(request, "QuerySceneList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QuerySceneListResponse rsp = QuerySceneListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QuerySceneListOutcome(rsp);
+        else
+            return QuerySceneListOutcome(o.GetError());
+    }
+    else
+    {
+        return QuerySceneListOutcome(outcome.GetError());
+    }
+}
+
+void DataagentClient::QuerySceneListAsync(const QuerySceneListRequest& request, const QuerySceneListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const QuerySceneListRequest&;
+    using Resp = QuerySceneListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "QuerySceneList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DataagentClient::QuerySceneListOutcomeCallable DataagentClient::QuerySceneListCallable(const QuerySceneListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<QuerySceneListOutcome>>();
+    QuerySceneListAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const QuerySceneListRequest&,
+        QuerySceneListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DataagentClient::QueryUserAuthorityOutcome DataagentClient::QueryUserAuthority(const QueryUserAuthorityRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryUserAuthority");
@@ -832,6 +982,56 @@ DataagentClient::StopChatAIOutcomeCallable DataagentClient::StopChatAICallable(c
         const DataagentClient*,
         const StopChatAIRequest&,
         StopChatAIOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DataagentClient::UpdateSceneOutcome DataagentClient::UpdateScene(const UpdateSceneRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateScene");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateSceneResponse rsp = UpdateSceneResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateSceneOutcome(rsp);
+        else
+            return UpdateSceneOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateSceneOutcome(outcome.GetError());
+    }
+}
+
+void DataagentClient::UpdateSceneAsync(const UpdateSceneRequest& request, const UpdateSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateSceneRequest&;
+    using Resp = UpdateSceneResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateScene", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DataagentClient::UpdateSceneOutcomeCallable DataagentClient::UpdateSceneCallable(const UpdateSceneRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateSceneOutcome>>();
+    UpdateSceneAsync(
+    request,
+    [prom](
+        const DataagentClient*,
+        const UpdateSceneRequest&,
+        UpdateSceneOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

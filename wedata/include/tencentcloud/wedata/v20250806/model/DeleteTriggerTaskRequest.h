@@ -118,31 +118,15 @@ false：不通知
                     bool OperateInformHasBeenSet() const;
 
                     /**
-                     * 获取任务删除方式
-true：不针对下游任务实例进行强制失败
-false：针对下游任务实例进行强制失败
-不传默认false
-
-                     * @return DeleteMode 任务删除方式
-true：不针对下游任务实例进行强制失败
-false：针对下游任务实例进行强制失败
-不传默认false
-
+                     * 获取(本参数暂不生效)当前删除上游任务时，不会针对下游任务实例进行强制失败
+                     * @return DeleteMode (本参数暂不生效)当前删除上游任务时，不会针对下游任务实例进行强制失败
                      * 
                      */
                     bool GetDeleteMode() const;
 
                     /**
-                     * 设置任务删除方式
-true：不针对下游任务实例进行强制失败
-false：针对下游任务实例进行强制失败
-不传默认false
-
-                     * @param _deleteMode 任务删除方式
-true：不针对下游任务实例进行强制失败
-false：针对下游任务实例进行强制失败
-不传默认false
-
+                     * 设置(本参数暂不生效)当前删除上游任务时，不会针对下游任务实例进行强制失败
+                     * @param _deleteMode (本参数暂不生效)当前删除上游任务时，不会针对下游任务实例进行强制失败
                      * 
                      */
                     void SetDeleteMode(const bool& _deleteMode);
@@ -178,11 +162,7 @@ false：不通知
                     bool m_operateInformHasBeenSet;
 
                     /**
-                     * 任务删除方式
-true：不针对下游任务实例进行强制失败
-false：针对下游任务实例进行强制失败
-不传默认false
-
+                     * (本参数暂不生效)当前删除上游任务时，不会针对下游任务实例进行强制失败
                      */
                     bool m_deleteMode;
                     bool m_deleteModeHasBeenSet;

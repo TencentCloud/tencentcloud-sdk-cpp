@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标准带宽。指购买实例时，系统为每个节点分配的带宽。
-                     * @return BaseBandwidth 标准带宽。指购买实例时，系统为每个节点分配的带宽。
+                     * 获取<p>标准带宽。指购买实例时，系统为每个节点分配的带宽。</p>单位： MB/s。
+                     * @return BaseBandwidth <p>标准带宽。指购买实例时，系统为每个节点分配的带宽。</p>单位： MB/s。
                      * 
                      */
                     int64_t GetBaseBandwidth() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool BaseBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取指实例的附加带宽。标准带宽不满足需求的情况下，用户可自行增加的带宽。<ul><li>开启副本只读时，实例总带宽 = 附加带宽 * 分片数 + 标准带宽 * 分片数 * Max ([只读副本数量, 1])，标准架构的分片数 = 1。</li><li>没有开启副本只读时，实例总带宽 = 附加带宽 * 分片数 + 标准带宽 * 分片数，标准架构的分片数 = 1。</li></ul>
-                     * @return AddBandwidth 指实例的附加带宽。标准带宽不满足需求的情况下，用户可自行增加的带宽。<ul><li>开启副本只读时，实例总带宽 = 附加带宽 * 分片数 + 标准带宽 * 分片数 * Max ([只读副本数量, 1])，标准架构的分片数 = 1。</li><li>没有开启副本只读时，实例总带宽 = 附加带宽 * 分片数 + 标准带宽 * 分片数，标准架构的分片数 = 1。</li></ul>
+                     * 获取<p>指实例的附加带宽。标准带宽不满足需求的情况下，用户可自行增加的带宽。</p><ul><li>开启副本只读时，实例总带宽 = 附加带宽 * 分片数 + 标准带宽 * 分片数 * Max ([只读副本数量, 1])，标准架构的分片数 = 1。</li><li>没有开启副本只读时，实例总带宽 = 附加带宽 * 分片数 + 标准带宽 * 分片数，标准架构的分片数 = 1。</li></ul>单位： MB/s。
+                     * @return AddBandwidth <p>指实例的附加带宽。标准带宽不满足需求的情况下，用户可自行增加的带宽。</p><ul><li>开启副本只读时，实例总带宽 = 附加带宽 * 分片数 + 标准带宽 * 分片数 * Max ([只读副本数量, 1])，标准架构的分片数 = 1。</li><li>没有开启副本只读时，实例总带宽 = 附加带宽 * 分片数 + 标准带宽 * 分片数，标准架构的分片数 = 1。</li></ul>单位： MB/s。
                      * 
                      */
                     int64_t GetAddBandwidth() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool AddBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取附加带宽设置下限。
-                     * @return MinAddBandwidth 附加带宽设置下限。
+                     * 获取<p>附加带宽设置下限。</p>单位： MB/s。
+                     * @return MinAddBandwidth <p>附加带宽设置下限。</p>单位： MB/s。
                      * 
                      */
                     int64_t GetMinAddBandwidth() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool MinAddBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取附加带宽设置上限。
-                     * @return MaxAddBandwidth 附加带宽设置上限。
+                     * 获取<p>附加带宽设置上限。</p>单位： MB/s。
+                     * @return MaxAddBandwidth <p>附加带宽设置上限。</p>单位： MB/s。
                      * 
                      */
                     int64_t GetMaxAddBandwidth() const;
@@ -102,25 +102,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标准带宽。指购买实例时，系统为每个节点分配的带宽。
+                     * <p>标准带宽。指购买实例时，系统为每个节点分配的带宽。</p>单位： MB/s。
                      */
                     int64_t m_baseBandwidth;
                     bool m_baseBandwidthHasBeenSet;
 
                     /**
-                     * 指实例的附加带宽。标准带宽不满足需求的情况下，用户可自行增加的带宽。<ul><li>开启副本只读时，实例总带宽 = 附加带宽 * 分片数 + 标准带宽 * 分片数 * Max ([只读副本数量, 1])，标准架构的分片数 = 1。</li><li>没有开启副本只读时，实例总带宽 = 附加带宽 * 分片数 + 标准带宽 * 分片数，标准架构的分片数 = 1。</li></ul>
+                     * <p>指实例的附加带宽。标准带宽不满足需求的情况下，用户可自行增加的带宽。</p><ul><li>开启副本只读时，实例总带宽 = 附加带宽 * 分片数 + 标准带宽 * 分片数 * Max ([只读副本数量, 1])，标准架构的分片数 = 1。</li><li>没有开启副本只读时，实例总带宽 = 附加带宽 * 分片数 + 标准带宽 * 分片数，标准架构的分片数 = 1。</li></ul>单位： MB/s。
                      */
                     int64_t m_addBandwidth;
                     bool m_addBandwidthHasBeenSet;
 
                     /**
-                     * 附加带宽设置下限。
+                     * <p>附加带宽设置下限。</p>单位： MB/s。
                      */
                     int64_t m_minAddBandwidth;
                     bool m_minAddBandwidthHasBeenSet;
 
                     /**
-                     * 附加带宽设置上限。
+                     * <p>附加带宽设置上限。</p>单位： MB/s。
                      */
                     int64_t m_maxAddBandwidth;
                     bool m_maxAddBandwidthHasBeenSet;

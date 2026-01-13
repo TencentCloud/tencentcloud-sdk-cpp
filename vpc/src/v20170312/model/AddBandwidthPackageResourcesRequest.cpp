@@ -27,7 +27,8 @@ AddBandwidthPackageResourcesRequest::AddBandwidthPackageResourcesRequest() :
     m_bandwidthPackageIdHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_protocolHasBeenSet(false)
+    m_protocolHasBeenSet(false),
+    m_internetMaxBandwidthOutHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string AddBandwidthPackageResourcesRequest::ToJsonString() const
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_internetMaxBandwidthOutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InternetMaxBandwidthOut";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_internetMaxBandwidthOut, allocator);
     }
 
 
@@ -169,6 +178,22 @@ void AddBandwidthPackageResourcesRequest::SetProtocol(const string& _protocol)
 bool AddBandwidthPackageResourcesRequest::ProtocolHasBeenSet() const
 {
     return m_protocolHasBeenSet;
+}
+
+uint64_t AddBandwidthPackageResourcesRequest::GetInternetMaxBandwidthOut() const
+{
+    return m_internetMaxBandwidthOut;
+}
+
+void AddBandwidthPackageResourcesRequest::SetInternetMaxBandwidthOut(const uint64_t& _internetMaxBandwidthOut)
+{
+    m_internetMaxBandwidthOut = _internetMaxBandwidthOut;
+    m_internetMaxBandwidthOutHasBeenSet = true;
+}
+
+bool AddBandwidthPackageResourcesRequest::InternetMaxBandwidthOutHasBeenSet() const
+{
+    return m_internetMaxBandwidthOutHasBeenSet;
 }
 
 

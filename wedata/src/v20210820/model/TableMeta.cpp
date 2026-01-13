@@ -45,7 +45,6 @@ TableMeta::TableMeta() :
     m_bizCatalogIdsHasBeenSet(false),
     m_bizCatalogNamesHasBeenSet(false),
     m_hasFavoriteHasBeenSet(false),
-    m_lifeCycleTimeHasBeenSet(false),
     m_storageSizeWithUnitHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_technologyTypeHasBeenSet(false),
@@ -71,8 +70,10 @@ TableMeta::TableMeta() :
     m_metaCrawlTypeHasBeenSet(false),
     m_isViewHasBeenSet(false),
     m_locationHasBeenSet(false),
+    m_lifeCycleTimeHasBeenSet(false),
     m_isPartitionTableHasBeenSet(false),
     m_partitionColumnsHasBeenSet(false),
+    m_dateFormatHasBeenSet(false),
     m_partitionExpireDaysHasBeenSet(false),
     m_tablePropertiesHasBeenSet(false),
     m_environmentHasBeenSet(false),
@@ -355,16 +356,6 @@ CoreInternalOutcome TableMeta::Deserialize(const rapidjson::Value &value)
         m_hasFavoriteHasBeenSet = true;
     }
 
-    if (value.HasMember("LifeCycleTime") && !value["LifeCycleTime"].IsNull())
-    {
-        if (!value["LifeCycleTime"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TableMeta.LifeCycleTime` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_lifeCycleTime = value["LifeCycleTime"].GetInt64();
-        m_lifeCycleTimeHasBeenSet = true;
-    }
-
     if (value.HasMember("StorageSizeWithUnit") && !value["StorageSizeWithUnit"].IsNull())
     {
         if (!value["StorageSizeWithUnit"].IsString())
@@ -639,6 +630,16 @@ CoreInternalOutcome TableMeta::Deserialize(const rapidjson::Value &value)
         m_locationHasBeenSet = true;
     }
 
+    if (value.HasMember("LifeCycleTime") && !value["LifeCycleTime"].IsNull())
+    {
+        if (!value["LifeCycleTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.LifeCycleTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lifeCycleTime = value["LifeCycleTime"].GetInt64();
+        m_lifeCycleTimeHasBeenSet = true;
+    }
+
     if (value.HasMember("IsPartitionTable") && !value["IsPartitionTable"].IsNull())
     {
         if (!value["IsPartitionTable"].IsInt64())
@@ -660,6 +661,16 @@ CoreInternalOutcome TableMeta::Deserialize(const rapidjson::Value &value)
             m_partitionColumns.push_back((*itr).GetString());
         }
         m_partitionColumnsHasBeenSet = true;
+    }
+
+    if (value.HasMember("DateFormat") && !value["DateFormat"].IsNull())
+    {
+        if (!value["DateFormat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.DateFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dateFormat = string(value["DateFormat"].GetString());
+        m_dateFormatHasBeenSet = true;
     }
 
     if (value.HasMember("PartitionExpireDays") && !value["PartitionExpireDays"].IsNull())
@@ -1198,14 +1209,6 @@ void TableMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, m_hasFavorite, allocator);
     }
 
-    if (m_lifeCycleTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LifeCycleTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_lifeCycleTime, allocator);
-    }
-
     if (m_storageSizeWithUnitHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -1415,6 +1418,14 @@ void TableMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, rapidjson::Value(m_location.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_lifeCycleTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LifeCycleTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lifeCycleTime, allocator);
+    }
+
     if (m_isPartitionTableHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -1434,6 +1445,14 @@ void TableMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_dateFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DateFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dateFormat.c_str(), allocator).Move(), allocator);
     }
 
     if (m_partitionExpireDaysHasBeenSet)
@@ -2076,22 +2095,6 @@ bool TableMeta::HasFavoriteHasBeenSet() const
     return m_hasFavoriteHasBeenSet;
 }
 
-int64_t TableMeta::GetLifeCycleTime() const
-{
-    return m_lifeCycleTime;
-}
-
-void TableMeta::SetLifeCycleTime(const int64_t& _lifeCycleTime)
-{
-    m_lifeCycleTime = _lifeCycleTime;
-    m_lifeCycleTimeHasBeenSet = true;
-}
-
-bool TableMeta::LifeCycleTimeHasBeenSet() const
-{
-    return m_lifeCycleTimeHasBeenSet;
-}
-
 string TableMeta::GetStorageSizeWithUnit() const
 {
     return m_storageSizeWithUnit;
@@ -2492,6 +2495,22 @@ bool TableMeta::LocationHasBeenSet() const
     return m_locationHasBeenSet;
 }
 
+int64_t TableMeta::GetLifeCycleTime() const
+{
+    return m_lifeCycleTime;
+}
+
+void TableMeta::SetLifeCycleTime(const int64_t& _lifeCycleTime)
+{
+    m_lifeCycleTime = _lifeCycleTime;
+    m_lifeCycleTimeHasBeenSet = true;
+}
+
+bool TableMeta::LifeCycleTimeHasBeenSet() const
+{
+    return m_lifeCycleTimeHasBeenSet;
+}
+
 int64_t TableMeta::GetIsPartitionTable() const
 {
     return m_isPartitionTable;
@@ -2522,6 +2541,22 @@ void TableMeta::SetPartitionColumns(const vector<string>& _partitionColumns)
 bool TableMeta::PartitionColumnsHasBeenSet() const
 {
     return m_partitionColumnsHasBeenSet;
+}
+
+string TableMeta::GetDateFormat() const
+{
+    return m_dateFormat;
+}
+
+void TableMeta::SetDateFormat(const string& _dateFormat)
+{
+    m_dateFormat = _dateFormat;
+    m_dateFormatHasBeenSet = true;
+}
+
+bool TableMeta::DateFormatHasBeenSet() const
+{
+    return m_dateFormatHasBeenSet;
 }
 
 int64_t TableMeta::GetPartitionExpireDays() const

@@ -169,6 +169,27 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启集群风险提示
+                     * @return EnableRiskWarning 是否开启集群风险提示
+                     * 
+                     */
+                    bool GetEnableRiskWarning() const;
+
+                    /**
+                     * 设置是否开启集群风险提示
+                     * @param _enableRiskWarning 是否开启集群风险提示
+                     * 
+                     */
+                    void SetEnableRiskWarning(const bool& _enableRiskWarning);
+
+                    /**
+                     * 判断参数 EnableRiskWarning 是否已赋值
+                     * @return EnableRiskWarning 是否已赋值
+                     * 
+                     */
+                    bool EnableRiskWarningHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +227,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 是否开启集群风险提示
+                     */
+                    bool m_enableRiskWarning;
+                    bool m_enableRiskWarningHasBeenSet;
 
                 };
             }

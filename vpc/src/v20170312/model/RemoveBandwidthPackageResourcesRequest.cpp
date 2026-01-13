@@ -25,7 +25,9 @@ using namespace std;
 RemoveBandwidthPackageResourcesRequest::RemoveBandwidthPackageResourcesRequest() :
     m_resourceIdsHasBeenSet(false),
     m_bandwidthPackageIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_internetMaxBandwidthOutHasBeenSet(false),
+    m_internetChargeTypeHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,22 @@ string RemoveBandwidthPackageResourcesRequest::ToJsonString() const
         string key = "ResourceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_internetMaxBandwidthOutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InternetMaxBandwidthOut";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_internetMaxBandwidthOut, allocator);
+    }
+
+    if (m_internetChargeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InternetChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_internetChargeType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +137,38 @@ void RemoveBandwidthPackageResourcesRequest::SetResourceType(const string& _reso
 bool RemoveBandwidthPackageResourcesRequest::ResourceTypeHasBeenSet() const
 {
     return m_resourceTypeHasBeenSet;
+}
+
+uint64_t RemoveBandwidthPackageResourcesRequest::GetInternetMaxBandwidthOut() const
+{
+    return m_internetMaxBandwidthOut;
+}
+
+void RemoveBandwidthPackageResourcesRequest::SetInternetMaxBandwidthOut(const uint64_t& _internetMaxBandwidthOut)
+{
+    m_internetMaxBandwidthOut = _internetMaxBandwidthOut;
+    m_internetMaxBandwidthOutHasBeenSet = true;
+}
+
+bool RemoveBandwidthPackageResourcesRequest::InternetMaxBandwidthOutHasBeenSet() const
+{
+    return m_internetMaxBandwidthOutHasBeenSet;
+}
+
+string RemoveBandwidthPackageResourcesRequest::GetInternetChargeType() const
+{
+    return m_internetChargeType;
+}
+
+void RemoveBandwidthPackageResourcesRequest::SetInternetChargeType(const string& _internetChargeType)
+{
+    m_internetChargeType = _internetChargeType;
+    m_internetChargeTypeHasBeenSet = true;
+}
+
+bool RemoveBandwidthPackageResourcesRequest::InternetChargeTypeHasBeenSet() const
+{
+    return m_internetChargeTypeHasBeenSet;
 }
 
 

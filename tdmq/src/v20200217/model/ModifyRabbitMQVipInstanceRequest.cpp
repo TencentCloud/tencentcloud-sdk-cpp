@@ -28,7 +28,8 @@ ModifyRabbitMQVipInstanceRequest::ModifyRabbitMQVipInstanceRequest() :
     m_remarkHasBeenSet(false),
     m_enableDeletionProtectionHasBeenSet(false),
     m_removeAllTagsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_enableRiskWarningHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string ModifyRabbitMQVipInstanceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_enableRiskWarningHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableRiskWarning";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableRiskWarning, allocator);
     }
 
 
@@ -196,6 +205,22 @@ void ModifyRabbitMQVipInstanceRequest::SetTags(const vector<Tag>& _tags)
 bool ModifyRabbitMQVipInstanceRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+bool ModifyRabbitMQVipInstanceRequest::GetEnableRiskWarning() const
+{
+    return m_enableRiskWarning;
+}
+
+void ModifyRabbitMQVipInstanceRequest::SetEnableRiskWarning(const bool& _enableRiskWarning)
+{
+    m_enableRiskWarning = _enableRiskWarning;
+    m_enableRiskWarningHasBeenSet = true;
+}
+
+bool ModifyRabbitMQVipInstanceRequest::EnableRiskWarningHasBeenSet() const
+{
+    return m_enableRiskWarningHasBeenSet;
 }
 
 

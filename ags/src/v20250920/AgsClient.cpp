@@ -140,6 +140,56 @@ AgsClient::CreateAPIKeyOutcomeCallable AgsClient::CreateAPIKeyCallable(const Cre
     return prom->get_future();
 }
 
+AgsClient::CreatePreCacheImageTaskOutcome AgsClient::CreatePreCacheImageTask(const CreatePreCacheImageTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePreCacheImageTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePreCacheImageTaskResponse rsp = CreatePreCacheImageTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePreCacheImageTaskOutcome(rsp);
+        else
+            return CreatePreCacheImageTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePreCacheImageTaskOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::CreatePreCacheImageTaskAsync(const CreatePreCacheImageTaskRequest& request, const CreatePreCacheImageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreatePreCacheImageTaskRequest&;
+    using Resp = CreatePreCacheImageTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreatePreCacheImageTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::CreatePreCacheImageTaskOutcomeCallable AgsClient::CreatePreCacheImageTaskCallable(const CreatePreCacheImageTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreatePreCacheImageTaskOutcome>>();
+    CreatePreCacheImageTaskAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const CreatePreCacheImageTaskRequest&,
+        CreatePreCacheImageTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AgsClient::CreateSandboxToolOutcome AgsClient::CreateSandboxTool(const CreateSandboxToolRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSandboxTool");
@@ -332,6 +382,56 @@ AgsClient::DescribeAPIKeyListOutcomeCallable AgsClient::DescribeAPIKeyListCallab
         const AgsClient*,
         const DescribeAPIKeyListRequest&,
         DescribeAPIKeyListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AgsClient::DescribePreCacheImageTaskOutcome AgsClient::DescribePreCacheImageTask(const DescribePreCacheImageTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePreCacheImageTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePreCacheImageTaskResponse rsp = DescribePreCacheImageTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePreCacheImageTaskOutcome(rsp);
+        else
+            return DescribePreCacheImageTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePreCacheImageTaskOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::DescribePreCacheImageTaskAsync(const DescribePreCacheImageTaskRequest& request, const DescribePreCacheImageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePreCacheImageTaskRequest&;
+    using Resp = DescribePreCacheImageTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePreCacheImageTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::DescribePreCacheImageTaskOutcomeCallable AgsClient::DescribePreCacheImageTaskCallable(const DescribePreCacheImageTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePreCacheImageTaskOutcome>>();
+    DescribePreCacheImageTaskAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const DescribePreCacheImageTaskRequest&,
+        DescribePreCacheImageTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

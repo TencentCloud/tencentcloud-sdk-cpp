@@ -113,6 +113,48 @@ namespace TencentCloud
                      */
                     bool ResourceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取用于移除带宽包内IP资源时指定IP的带宽值。<p>说明：当前功能处于内测中，如需使用，请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</p>
+                     * @return InternetMaxBandwidthOut 用于移除带宽包内IP资源时指定IP的带宽值。<p>说明：当前功能处于内测中，如需使用，请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</p>
+                     * 
+                     */
+                    uint64_t GetInternetMaxBandwidthOut() const;
+
+                    /**
+                     * 设置用于移除带宽包内IP资源时指定IP的带宽值。<p>说明：当前功能处于内测中，如需使用，请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</p>
+                     * @param _internetMaxBandwidthOut 用于移除带宽包内IP资源时指定IP的带宽值。<p>说明：当前功能处于内测中，如需使用，请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</p>
+                     * 
+                     */
+                    void SetInternetMaxBandwidthOut(const uint64_t& _internetMaxBandwidthOut);
+
+                    /**
+                     * 判断参数 InternetMaxBandwidthOut 是否已赋值
+                     * @return InternetMaxBandwidthOut 是否已赋值
+                     * 
+                     */
+                    bool InternetMaxBandwidthOutHasBeenSet() const;
+
+                    /**
+                     * 获取用于移除带宽包内IP资源时指定资源移除后的计费模式。<li>小时流量：TRAFFIC_POSTPAID_BY_HOUR；</li><li>小时带宽：BANDWIDTH_POSTPAID_BY_HOUR</li><p>说明：当前功能处于内测中，如需使用，请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</p>
+                     * @return InternetChargeType 用于移除带宽包内IP资源时指定资源移除后的计费模式。<li>小时流量：TRAFFIC_POSTPAID_BY_HOUR；</li><li>小时带宽：BANDWIDTH_POSTPAID_BY_HOUR</li><p>说明：当前功能处于内测中，如需使用，请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</p>
+                     * 
+                     */
+                    std::string GetInternetChargeType() const;
+
+                    /**
+                     * 设置用于移除带宽包内IP资源时指定资源移除后的计费模式。<li>小时流量：TRAFFIC_POSTPAID_BY_HOUR；</li><li>小时带宽：BANDWIDTH_POSTPAID_BY_HOUR</li><p>说明：当前功能处于内测中，如需使用，请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</p>
+                     * @param _internetChargeType 用于移除带宽包内IP资源时指定资源移除后的计费模式。<li>小时流量：TRAFFIC_POSTPAID_BY_HOUR；</li><li>小时带宽：BANDWIDTH_POSTPAID_BY_HOUR</li><p>说明：当前功能处于内测中，如需使用，请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</p>
+                     * 
+                     */
+                    void SetInternetChargeType(const std::string& _internetChargeType);
+
+                    /**
+                     * 判断参数 InternetChargeType 是否已赋值
+                     * @return InternetChargeType 是否已赋值
+                     * 
+                     */
+                    bool InternetChargeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +176,18 @@ namespace TencentCloud
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
+
+                    /**
+                     * 用于移除带宽包内IP资源时指定IP的带宽值。<p>说明：当前功能处于内测中，如需使用，请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</p>
+                     */
+                    uint64_t m_internetMaxBandwidthOut;
+                    bool m_internetMaxBandwidthOutHasBeenSet;
+
+                    /**
+                     * 用于移除带宽包内IP资源时指定资源移除后的计费模式。<li>小时流量：TRAFFIC_POSTPAID_BY_HOUR；</li><li>小时带宽：BANDWIDTH_POSTPAID_BY_HOUR</li><p>说明：当前功能处于内测中，如需使用，请提交[工单申请](https://console.cloud.tencent.com/workorder/category)。</p>
+                     */
+                    std::string m_internetChargeType;
+                    bool m_internetChargeTypeHasBeenSet;
 
                 };
             }

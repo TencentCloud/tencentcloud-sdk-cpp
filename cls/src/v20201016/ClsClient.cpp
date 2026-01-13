@@ -840,6 +840,56 @@ ClsClient::CreateCosRechargeOutcomeCallable ClsClient::CreateCosRechargeCallable
     return prom->get_future();
 }
 
+ClsClient::CreateDashboardOutcome ClsClient::CreateDashboard(const CreateDashboardRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDashboard");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDashboardResponse rsp = CreateDashboardResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDashboardOutcome(rsp);
+        else
+            return CreateDashboardOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDashboardOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateDashboardAsync(const CreateDashboardRequest& request, const CreateDashboardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateDashboardRequest&;
+    using Resp = CreateDashboardResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateDashboard", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::CreateDashboardOutcomeCallable ClsClient::CreateDashboardCallable(const CreateDashboardRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateDashboardOutcome>>();
+    CreateDashboardAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const CreateDashboardRequest&,
+        CreateDashboardOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::CreateDashboardSubscribeOutcome ClsClient::CreateDashboardSubscribe(const CreateDashboardSubscribeRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDashboardSubscribe");
@@ -2332,6 +2382,56 @@ ClsClient::DeleteCosRechargeOutcomeCallable ClsClient::DeleteCosRechargeCallable
         const ClsClient*,
         const DeleteCosRechargeRequest&,
         DeleteCosRechargeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DeleteDashboardOutcome ClsClient::DeleteDashboard(const DeleteDashboardRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDashboard");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDashboardResponse rsp = DeleteDashboardResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDashboardOutcome(rsp);
+        else
+            return DeleteDashboardOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDashboardOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteDashboardAsync(const DeleteDashboardRequest& request, const DeleteDashboardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDashboardRequest&;
+    using Resp = DeleteDashboardResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDashboard", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DeleteDashboardOutcomeCallable ClsClient::DeleteDashboardCallable(const DeleteDashboardRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDashboardOutcome>>();
+    DeleteDashboardAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DeleteDashboardRequest&,
+        DeleteDashboardOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -6532,6 +6632,56 @@ ClsClient::ModifyCosRechargeOutcomeCallable ClsClient::ModifyCosRechargeCallable
         const ClsClient*,
         const ModifyCosRechargeRequest&,
         ModifyCosRechargeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::ModifyDashboardOutcome ClsClient::ModifyDashboard(const ModifyDashboardRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDashboard");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDashboardResponse rsp = ModifyDashboardResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDashboardOutcome(rsp);
+        else
+            return ModifyDashboardOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDashboardOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyDashboardAsync(const ModifyDashboardRequest& request, const ModifyDashboardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDashboardRequest&;
+    using Resp = ModifyDashboardResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDashboard", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::ModifyDashboardOutcomeCallable ClsClient::ModifyDashboardCallable(const ModifyDashboardRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDashboardOutcome>>();
+    ModifyDashboardAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const ModifyDashboardRequest&,
+        ModifyDashboardOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

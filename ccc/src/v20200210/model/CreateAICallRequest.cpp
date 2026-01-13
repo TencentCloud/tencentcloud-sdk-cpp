@@ -58,7 +58,8 @@ CreateAICallRequest::CreateAICallRequest() :
     m_enableComplianceAudioHasBeenSet(false),
     m_enableVoicemailDetectionHasBeenSet(false),
     m_voicemailActionHasBeenSet(false),
-    m_lLMExtraBodyHasBeenSet(false)
+    m_lLMExtraBodyHasBeenSet(false),
+    m_maxCallDurationMsHasBeenSet(false)
 {
 }
 
@@ -394,6 +395,14 @@ string CreateAICallRequest::ToJsonString() const
         string key = "LLMExtraBody";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_lLMExtraBody.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxCallDurationMsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxCallDurationMs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxCallDurationMs, allocator);
     }
 
 
@@ -978,6 +987,22 @@ void CreateAICallRequest::SetLLMExtraBody(const string& _lLMExtraBody)
 bool CreateAICallRequest::LLMExtraBodyHasBeenSet() const
 {
     return m_lLMExtraBodyHasBeenSet;
+}
+
+uint64_t CreateAICallRequest::GetMaxCallDurationMs() const
+{
+    return m_maxCallDurationMs;
+}
+
+void CreateAICallRequest::SetMaxCallDurationMs(const uint64_t& _maxCallDurationMs)
+{
+    m_maxCallDurationMs = _maxCallDurationMs;
+    m_maxCallDurationMsHasBeenSet = true;
+}
+
+bool CreateAICallRequest::MaxCallDurationMsHasBeenSet() const
+{
+    return m_maxCallDurationMsHasBeenSet;
 }
 
 
