@@ -25,6 +25,8 @@ using namespace std;
 SearchAuditLogRequest::SearchAuditLogRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
+    m_operationSetHasBeenSet(false),
+    m_protocolSetHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
 {
@@ -51,6 +53,32 @@ string SearchAuditLogRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_operationSet.begin(); itr != m_operationSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_protocolSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtocolSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_protocolSet.begin(); itr != m_protocolSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_offsetHasBeenSet)
@@ -107,6 +135,38 @@ void SearchAuditLogRequest::SetEndTime(const string& _endTime)
 bool SearchAuditLogRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+vector<uint64_t> SearchAuditLogRequest::GetOperationSet() const
+{
+    return m_operationSet;
+}
+
+void SearchAuditLogRequest::SetOperationSet(const vector<uint64_t>& _operationSet)
+{
+    m_operationSet = _operationSet;
+    m_operationSetHasBeenSet = true;
+}
+
+bool SearchAuditLogRequest::OperationSetHasBeenSet() const
+{
+    return m_operationSetHasBeenSet;
+}
+
+vector<string> SearchAuditLogRequest::GetProtocolSet() const
+{
+    return m_protocolSet;
+}
+
+void SearchAuditLogRequest::SetProtocolSet(const vector<string>& _protocolSet)
+{
+    m_protocolSet = _protocolSet;
+    m_protocolSetHasBeenSet = true;
+}
+
+bool SearchAuditLogRequest::ProtocolSetHasBeenSet() const
+{
+    return m_protocolSetHasBeenSet;
 }
 
 uint64_t SearchAuditLogRequest::GetOffset() const

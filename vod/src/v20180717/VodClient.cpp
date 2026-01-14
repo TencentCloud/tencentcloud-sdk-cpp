@@ -440,6 +440,56 @@ VodClient::CreateAdaptiveDynamicStreamingTemplateOutcomeCallable VodClient::Crea
     return prom->get_future();
 }
 
+VodClient::CreateAigcCustomElementOutcome VodClient::CreateAigcCustomElement(const CreateAigcCustomElementRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcCustomElement");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcCustomElementResponse rsp = CreateAigcCustomElementResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcCustomElementOutcome(rsp);
+        else
+            return CreateAigcCustomElementOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcCustomElementOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateAigcCustomElementAsync(const CreateAigcCustomElementRequest& request, const CreateAigcCustomElementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcCustomElementRequest&;
+    using Resp = CreateAigcCustomElementResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcCustomElement", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateAigcCustomElementOutcomeCallable VodClient::CreateAigcCustomElementCallable(const CreateAigcCustomElementRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcCustomElementOutcome>>();
+    CreateAigcCustomElementAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAigcCustomElementRequest&,
+        CreateAigcCustomElementOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::CreateAigcImageTaskOutcome VodClient::CreateAigcImageTask(const CreateAigcImageTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAigcImageTask");
@@ -1582,6 +1632,56 @@ VodClient::CreateSceneAigcImageTaskOutcomeCallable VodClient::CreateSceneAigcIma
         const VodClient*,
         const CreateSceneAigcImageTaskRequest&,
         CreateSceneAigcImageTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::CreateSceneAigcVideoTaskOutcome VodClient::CreateSceneAigcVideoTask(const CreateSceneAigcVideoTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSceneAigcVideoTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSceneAigcVideoTaskResponse rsp = CreateSceneAigcVideoTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSceneAigcVideoTaskOutcome(rsp);
+        else
+            return CreateSceneAigcVideoTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSceneAigcVideoTaskOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateSceneAigcVideoTaskAsync(const CreateSceneAigcVideoTaskRequest& request, const CreateSceneAigcVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateSceneAigcVideoTaskRequest&;
+    using Resp = CreateSceneAigcVideoTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateSceneAigcVideoTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateSceneAigcVideoTaskOutcomeCallable VodClient::CreateSceneAigcVideoTaskCallable(const CreateSceneAigcVideoTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateSceneAigcVideoTaskOutcome>>();
+    CreateSceneAigcVideoTaskAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateSceneAigcVideoTaskRequest&,
+        CreateSceneAigcVideoTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

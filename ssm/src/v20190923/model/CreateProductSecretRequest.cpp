@@ -35,7 +35,8 @@ CreateProductSecretRequest::CreateProductSecretRequest() :
     m_rotationBeginTimeHasBeenSet(false),
     m_enableRotationHasBeenSet(false),
     m_rotationFrequencyHasBeenSet(false),
-    m_kmsHsmClusterIdHasBeenSet(false)
+    m_kmsHsmClusterIdHasBeenSet(false),
+    m_accountRemarkHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,14 @@ string CreateProductSecretRequest::ToJsonString() const
         string key = "KmsHsmClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_kmsHsmClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accountRemarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountRemark";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accountRemark.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -383,6 +392,22 @@ void CreateProductSecretRequest::SetKmsHsmClusterId(const string& _kmsHsmCluster
 bool CreateProductSecretRequest::KmsHsmClusterIdHasBeenSet() const
 {
     return m_kmsHsmClusterIdHasBeenSet;
+}
+
+string CreateProductSecretRequest::GetAccountRemark() const
+{
+    return m_accountRemark;
+}
+
+void CreateProductSecretRequest::SetAccountRemark(const string& _accountRemark)
+{
+    m_accountRemark = _accountRemark;
+    m_accountRemarkHasBeenSet = true;
+}
+
+bool CreateProductSecretRequest::AccountRemarkHasBeenSet() const
+{
+    return m_accountRemarkHasBeenSet;
 }
 
 

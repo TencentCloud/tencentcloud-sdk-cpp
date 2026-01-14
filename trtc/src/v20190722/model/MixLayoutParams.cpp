@@ -32,7 +32,8 @@ MixLayoutParams::MixLayoutParams() :
     m_defaultSubBackgroundImageHasBeenSet(false),
     m_waterMarkListHasBeenSet(false),
     m_renderModeHasBeenSet(false),
-    m_maxResolutionUserAlignHasBeenSet(false)
+    m_maxResolutionUserAlignHasBeenSet(false),
+    m_pureAudioDisableLayoutHasBeenSet(false)
 {
 }
 
@@ -181,6 +182,16 @@ CoreInternalOutcome MixLayoutParams::Deserialize(const rapidjson::Value &value)
         m_maxResolutionUserAlignHasBeenSet = true;
     }
 
+    if (value.HasMember("PureAudioDisableLayout") && !value["PureAudioDisableLayout"].IsNull())
+    {
+        if (!value["PureAudioDisableLayout"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `MixLayoutParams.PureAudioDisableLayout` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_pureAudioDisableLayout = value["PureAudioDisableLayout"].GetBool();
+        m_pureAudioDisableLayoutHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -296,6 +307,14 @@ void MixLayoutParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "MaxResolutionUserAlign";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxResolutionUserAlign, allocator);
+    }
+
+    if (m_pureAudioDisableLayoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PureAudioDisableLayout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pureAudioDisableLayout, allocator);
     }
 
 }
@@ -491,5 +510,21 @@ void MixLayoutParams::SetMaxResolutionUserAlign(const uint64_t& _maxResolutionUs
 bool MixLayoutParams::MaxResolutionUserAlignHasBeenSet() const
 {
     return m_maxResolutionUserAlignHasBeenSet;
+}
+
+bool MixLayoutParams::GetPureAudioDisableLayout() const
+{
+    return m_pureAudioDisableLayout;
+}
+
+void MixLayoutParams::SetPureAudioDisableLayout(const bool& _pureAudioDisableLayout)
+{
+    m_pureAudioDisableLayout = _pureAudioDisableLayout;
+    m_pureAudioDisableLayoutHasBeenSet = true;
+}
+
+bool MixLayoutParams::PureAudioDisableLayoutHasBeenSet() const
+{
+    return m_pureAudioDisableLayoutHasBeenSet;
 }
 

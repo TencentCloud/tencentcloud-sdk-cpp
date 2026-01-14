@@ -23,6 +23,7 @@ using namespace TencentCloud::Ai3d::V20250513::Model;
 using namespace std;
 
 SubmitHunyuanTo3DProJobRequest::SubmitHunyuanTo3DProJobRequest() :
+    m_modelHasBeenSet(false),
     m_promptHasBeenSet(false),
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
@@ -41,6 +42,14 @@ string SubmitHunyuanTo3DProJobRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_modelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Model";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_model.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_promptHasBeenSet)
     {
@@ -128,6 +137,22 @@ string SubmitHunyuanTo3DProJobRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string SubmitHunyuanTo3DProJobRequest::GetModel() const
+{
+    return m_model;
+}
+
+void SubmitHunyuanTo3DProJobRequest::SetModel(const string& _model)
+{
+    m_model = _model;
+    m_modelHasBeenSet = true;
+}
+
+bool SubmitHunyuanTo3DProJobRequest::ModelHasBeenSet() const
+{
+    return m_modelHasBeenSet;
+}
 
 string SubmitHunyuanTo3DProJobRequest::GetPrompt() const
 {

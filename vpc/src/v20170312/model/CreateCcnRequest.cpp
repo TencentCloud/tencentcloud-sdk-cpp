@@ -27,6 +27,7 @@ CreateCcnRequest::CreateCcnRequest() :
     m_ccnDescriptionHasBeenSet(false),
     m_qosLevelHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
+    m_instanceMeteringTypeHasBeenSet(false),
     m_bandwidthLimitTypeHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -69,6 +70,14 @@ string CreateCcnRequest::ToJsonString() const
         string key = "InstanceChargeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceChargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceMeteringTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceMeteringType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceMeteringType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bandwidthLimitTypeHasBeenSet)
@@ -164,6 +173,22 @@ void CreateCcnRequest::SetInstanceChargeType(const string& _instanceChargeType)
 bool CreateCcnRequest::InstanceChargeTypeHasBeenSet() const
 {
     return m_instanceChargeTypeHasBeenSet;
+}
+
+string CreateCcnRequest::GetInstanceMeteringType() const
+{
+    return m_instanceMeteringType;
+}
+
+void CreateCcnRequest::SetInstanceMeteringType(const string& _instanceMeteringType)
+{
+    m_instanceMeteringType = _instanceMeteringType;
+    m_instanceMeteringTypeHasBeenSet = true;
+}
+
+bool CreateCcnRequest::InstanceMeteringTypeHasBeenSet() const
+{
+    return m_instanceMeteringTypeHasBeenSet;
 }
 
 string CreateCcnRequest::GetBandwidthLimitType() const

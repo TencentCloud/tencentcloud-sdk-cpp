@@ -44,6 +44,31 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取混元生3D生成模型版本，默认为3.0，可选项：3.0，3.1
+选择3.1版本时，LowPoly参数不可用。
+                     * @return Model 混元生3D生成模型版本，默认为3.0，可选项：3.0，3.1
+选择3.1版本时，LowPoly参数不可用。
+                     * 
+                     */
+                    std::string GetModel() const;
+
+                    /**
+                     * 设置混元生3D生成模型版本，默认为3.0，可选项：3.0，3.1
+选择3.1版本时，LowPoly参数不可用。
+                     * @param _model 混元生3D生成模型版本，默认为3.0，可选项：3.0，3.1
+选择3.1版本时，LowPoly参数不可用。
+                     * 
+                     */
+                    void SetModel(const std::string& _model);
+
+                    /**
+                     * 判断参数 Model 是否已赋值
+                     * @return Model 是否已赋值
+                     * 
+                     */
+                    bool ModelHasBeenSet() const;
+
+                    /**
                      * 获取文生3D，3D内容的描述，中文正向提示词。
 最多支持1024个 utf-8 字符。
 ImageBase64、ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。
@@ -143,6 +168,10 @@ lmageBase64、lmageUr和 Prompt必填其一，且Prompt和lmageBase64/mageUr不�
 left：左视图；
 right：右视图；
 back：后视图；
+top：顶视图（仅3.1版本支持）；
+bottom：底视图（仅3.1版本支持）；
+left_front：左前45°视图（仅3.1版本支持）；
+right_front：右前45°视图（仅3.1版本支持）；
 
 每个视角仅限制一张图片。
 ●图片大小限制：编码后所有图片大小总和不可超过8M。（base64编码下图片大小总和不超过6M，因base64编码后图片大小会大30%左右）
@@ -152,6 +181,10 @@ back：后视图；
 left：左视图；
 right：右视图；
 back：后视图；
+top：顶视图（仅3.1版本支持）；
+bottom：底视图（仅3.1版本支持）；
+left_front：左前45°视图（仅3.1版本支持）；
+right_front：右前45°视图（仅3.1版本支持）；
 
 每个视角仅限制一张图片。
 ●图片大小限制：编码后所有图片大小总和不可超过8M。（base64编码下图片大小总和不超过6M，因base64编码后图片大小会大30%左右）
@@ -166,6 +199,10 @@ back：后视图；
 left：左视图；
 right：右视图；
 back：后视图；
+top：顶视图（仅3.1版本支持）；
+bottom：底视图（仅3.1版本支持）；
+left_front：左前45°视图（仅3.1版本支持）；
+right_front：右前45°视图（仅3.1版本支持）；
 
 每个视角仅限制一张图片。
 ●图片大小限制：编码后所有图片大小总和不可超过8M。（base64编码下图片大小总和不超过6M，因base64编码后图片大小会大30%左右）
@@ -175,6 +212,10 @@ back：后视图；
 left：左视图；
 right：右视图；
 back：后视图；
+top：顶视图（仅3.1版本支持）；
+bottom：底视图（仅3.1版本支持）；
+left_front：左前45°视图（仅3.1版本支持）；
+right_front：右前45°视图（仅3.1版本支持）；
 
 每个视角仅限制一张图片。
 ●图片大小限制：编码后所有图片大小总和不可超过8M。（base64编码下图片大小总和不超过6M，因base64编码后图片大小会大30%左右）
@@ -339,6 +380,13 @@ quadrilateral: 四边形面与三角形面混合生成。
                 private:
 
                     /**
+                     * 混元生3D生成模型版本，默认为3.0，可选项：3.0，3.1
+选择3.1版本时，LowPoly参数不可用。
+                     */
+                    std::string m_model;
+                    bool m_modelHasBeenSet;
+
+                    /**
                      * 文生3D，3D内容的描述，中文正向提示词。
 最多支持1024个 utf-8 字符。
 ImageBase64、ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。
@@ -369,6 +417,10 @@ lmageBase64、lmageUr和 Prompt必填其一，且Prompt和lmageBase64/mageUr不�
 left：左视图；
 right：右视图；
 back：后视图；
+top：顶视图（仅3.1版本支持）；
+bottom：底视图（仅3.1版本支持）；
+left_front：左前45°视图（仅3.1版本支持）；
+right_front：右前45°视图（仅3.1版本支持）；
 
 每个视角仅限制一张图片。
 ●图片大小限制：编码后所有图片大小总和不可超过8M。（base64编码下图片大小总和不超过6M，因base64编码后图片大小会大30%左右）

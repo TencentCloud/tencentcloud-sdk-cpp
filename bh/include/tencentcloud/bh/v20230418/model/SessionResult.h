@@ -571,6 +571,90 @@ namespace TencentCloud
                      */
                     bool PodNameHasBeenSet() const;
 
+                    /**
+                     * 获取访问方式 1-直链 2-客户端 3-web 大部分情况下是2
+                     * @return Mode 访问方式 1-直链 2-客户端 3-web 大部分情况下是2
+                     * 
+                     */
+                    uint64_t GetMode() const;
+
+                    /**
+                     * 设置访问方式 1-直链 2-客户端 3-web 大部分情况下是2
+                     * @param _mode 访问方式 1-直链 2-客户端 3-web 大部分情况下是2
+                     * 
+                     */
+                    void SetMode(const uint64_t& _mode);
+
+                    /**
+                     * 判断参数 Mode 是否已赋值
+                     * @return Mode 是否已赋值
+                     * 
+                     */
+                    bool ModeHasBeenSet() const;
+
+                    /**
+                     * 获取是否禁用会话监控。0-不禁用；1-禁用会话，仅展示中断；2-禁用会话，不展示中断
+                     * @return DisableMonitor 是否禁用会话监控。0-不禁用；1-禁用会话，仅展示中断；2-禁用会话，不展示中断
+                     * 
+                     */
+                    int64_t GetDisableMonitor() const;
+
+                    /**
+                     * 设置是否禁用会话监控。0-不禁用；1-禁用会话，仅展示中断；2-禁用会话，不展示中断
+                     * @param _disableMonitor 是否禁用会话监控。0-不禁用；1-禁用会话，仅展示中断；2-禁用会话，不展示中断
+                     * 
+                     */
+                    void SetDisableMonitor(const int64_t& _disableMonitor);
+
+                    /**
+                     * 判断参数 DisableMonitor 是否已赋值
+                     * @return DisableMonitor 是否已赋值
+                     * 
+                     */
+                    bool DisableMonitorHasBeenSet() const;
+
+                    /**
+                     * 获取实时入带宽，单位Mbps
+                     * @return RealTimeBandwidthIn 实时入带宽，单位Mbps
+                     * 
+                     */
+                    double GetRealTimeBandwidthIn() const;
+
+                    /**
+                     * 设置实时入带宽，单位Mbps
+                     * @param _realTimeBandwidthIn 实时入带宽，单位Mbps
+                     * 
+                     */
+                    void SetRealTimeBandwidthIn(const double& _realTimeBandwidthIn);
+
+                    /**
+                     * 判断参数 RealTimeBandwidthIn 是否已赋值
+                     * @return RealTimeBandwidthIn 是否已赋值
+                     * 
+                     */
+                    bool RealTimeBandwidthInHasBeenSet() const;
+
+                    /**
+                     * 获取实时出带宽，单位Mbps
+                     * @return RealTimeBandwidthOut 实时出带宽，单位Mbps
+                     * 
+                     */
+                    double GetRealTimeBandwidthOut() const;
+
+                    /**
+                     * 设置实时出带宽，单位Mbps
+                     * @param _realTimeBandwidthOut 实时出带宽，单位Mbps
+                     * 
+                     */
+                    void SetRealTimeBandwidthOut(const double& _realTimeBandwidthOut);
+
+                    /**
+                     * 判断参数 RealTimeBandwidthOut 是否已赋值
+                     * @return RealTimeBandwidthOut 是否已赋值
+                     * 
+                     */
+                    bool RealTimeBandwidthOutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -722,6 +806,30 @@ namespace TencentCloud
                      */
                     std::string m_podName;
                     bool m_podNameHasBeenSet;
+
+                    /**
+                     * 访问方式 1-直链 2-客户端 3-web 大部分情况下是2
+                     */
+                    uint64_t m_mode;
+                    bool m_modeHasBeenSet;
+
+                    /**
+                     * 是否禁用会话监控。0-不禁用；1-禁用会话，仅展示中断；2-禁用会话，不展示中断
+                     */
+                    int64_t m_disableMonitor;
+                    bool m_disableMonitorHasBeenSet;
+
+                    /**
+                     * 实时入带宽，单位Mbps
+                     */
+                    double m_realTimeBandwidthIn;
+                    bool m_realTimeBandwidthInHasBeenSet;
+
+                    /**
+                     * 实时出带宽，单位Mbps
+                     */
+                    double m_realTimeBandwidthOut;
+                    bool m_realTimeBandwidthOutHasBeenSet;
 
                 };
             }

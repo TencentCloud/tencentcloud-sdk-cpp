@@ -173,6 +173,8 @@
 #include <tencentcloud/tke/v20180525/model/DeleteRollOutSequenceResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteTKEEdgeClusterRequest.h>
 #include <tencentcloud/tke/v20180525/model/DeleteTKEEdgeClusterResponse.h>
+#include <tencentcloud/tke/v20180525/model/DeleteUserPermissionsRequest.h>
+#include <tencentcloud/tke/v20180525/model/DeleteUserPermissionsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeAddonRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeAddonResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeAddonValuesRequest.h>
@@ -377,6 +379,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeUpgradeTaskDetailResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeUpgradeTasksRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeUpgradeTasksResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeUserPermissionsRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeUserPermissionsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeVersionsRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeVersionsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeVpcCniPodLimitsRequest.h>
@@ -417,6 +421,8 @@
 #include <tencentcloud/tke/v20180525/model/GetTkeAppChartListResponse.h>
 #include <tencentcloud/tke/v20180525/model/GetUpgradeInstanceProgressRequest.h>
 #include <tencentcloud/tke/v20180525/model/GetUpgradeInstanceProgressResponse.h>
+#include <tencentcloud/tke/v20180525/model/GrantUserPermissionsRequest.h>
+#include <tencentcloud/tke/v20180525/model/GrantUserPermissionsResponse.h>
 #include <tencentcloud/tke/v20180525/model/InstallAddonRequest.h>
 #include <tencentcloud/tke/v20180525/model/InstallAddonResponse.h>
 #include <tencentcloud/tke/v20180525/model/InstallEdgeLogAgentRequest.h>
@@ -772,6 +778,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTKEEdgeClusterResponse> DeleteTKEEdgeClusterOutcome;
                 typedef std::future<DeleteTKEEdgeClusterOutcome> DeleteTKEEdgeClusterOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DeleteTKEEdgeClusterRequest&, DeleteTKEEdgeClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTKEEdgeClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteUserPermissionsResponse> DeleteUserPermissionsOutcome;
+                typedef std::future<DeleteUserPermissionsOutcome> DeleteUserPermissionsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DeleteUserPermissionsRequest&, DeleteUserPermissionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserPermissionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAddonResponse> DescribeAddonOutcome;
                 typedef std::future<DescribeAddonOutcome> DescribeAddonOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeAddonRequest&, DescribeAddonOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAddonAsyncHandler;
@@ -1078,6 +1087,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUpgradeTasksResponse> DescribeUpgradeTasksOutcome;
                 typedef std::future<DescribeUpgradeTasksOutcome> DescribeUpgradeTasksOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeUpgradeTasksRequest&, DescribeUpgradeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUpgradeTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserPermissionsResponse> DescribeUserPermissionsOutcome;
+                typedef std::future<DescribeUserPermissionsOutcome> DescribeUserPermissionsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeUserPermissionsRequest&, DescribeUserPermissionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserPermissionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVersionsResponse> DescribeVersionsOutcome;
                 typedef std::future<DescribeVersionsOutcome> DescribeVersionsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeVersionsRequest&, DescribeVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVersionsAsyncHandler;
@@ -1138,6 +1150,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetUpgradeInstanceProgressResponse> GetUpgradeInstanceProgressOutcome;
                 typedef std::future<GetUpgradeInstanceProgressOutcome> GetUpgradeInstanceProgressOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::GetUpgradeInstanceProgressRequest&, GetUpgradeInstanceProgressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUpgradeInstanceProgressAsyncHandler;
+                typedef Outcome<Core::Error, Model::GrantUserPermissionsResponse> GrantUserPermissionsOutcome;
+                typedef std::future<GrantUserPermissionsOutcome> GrantUserPermissionsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::GrantUserPermissionsRequest&, GrantUserPermissionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GrantUserPermissionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::InstallAddonResponse> InstallAddonOutcome;
                 typedef std::future<InstallAddonOutcome> InstallAddonOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::InstallAddonRequest&, InstallAddonOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstallAddonAsyncHandler;
@@ -1989,6 +2004,15 @@ namespace TencentCloud
                 DeleteTKEEdgeClusterOutcome DeleteTKEEdgeCluster(const Model::DeleteTKEEdgeClusterRequest &request);
                 void DeleteTKEEdgeClusterAsync(const Model::DeleteTKEEdgeClusterRequest& request, const DeleteTKEEdgeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTKEEdgeClusterOutcomeCallable DeleteTKEEdgeClusterCallable(const Model::DeleteTKEEdgeClusterRequest& request);
+
+                /**
+                 *使用请求中提供的权限集合，删除用户对应的权限
+                 * @param req DeleteUserPermissionsRequest
+                 * @return DeleteUserPermissionsOutcome
+                 */
+                DeleteUserPermissionsOutcome DeleteUserPermissions(const Model::DeleteUserPermissionsRequest &request);
+                void DeleteUserPermissionsAsync(const Model::DeleteUserPermissionsRequest& request, const DeleteUserPermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteUserPermissionsOutcomeCallable DeleteUserPermissionsCallable(const Model::DeleteUserPermissionsRequest& request);
 
                 /**
                  *获取addon列表
@@ -2909,6 +2933,15 @@ namespace TencentCloud
                 DescribeUpgradeTasksOutcomeCallable DescribeUpgradeTasksCallable(const Model::DescribeUpgradeTasksRequest& request);
 
                 /**
+                 *查询一个指定用户在当前地域下所有 TKE 集群中的聚合权限信息。返回用户在各集群中的 ClusterRoleBinding 和 RoleBinding 信息。
+                 * @param req DescribeUserPermissionsRequest
+                 * @return DescribeUserPermissionsOutcome
+                 */
+                DescribeUserPermissionsOutcome DescribeUserPermissions(const Model::DescribeUserPermissionsRequest &request);
+                void DescribeUserPermissionsAsync(const Model::DescribeUserPermissionsRequest& request, const DescribeUserPermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserPermissionsOutcomeCallable DescribeUserPermissionsCallable(const Model::DescribeUserPermissionsRequest& request);
+
+                /**
                  *获取集群版本信息
                  * @param req DescribeVersionsRequest
                  * @return DescribeVersionsOutcome
@@ -3087,6 +3120,15 @@ namespace TencentCloud
                 GetUpgradeInstanceProgressOutcome GetUpgradeInstanceProgress(const Model::GetUpgradeInstanceProgressRequest &request);
                 void GetUpgradeInstanceProgressAsync(const Model::GetUpgradeInstanceProgressRequest& request, const GetUpgradeInstanceProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetUpgradeInstanceProgressOutcomeCallable GetUpgradeInstanceProgressCallable(const Model::GetUpgradeInstanceProgressRequest& request);
+
+                /**
+                 *使用请求中提供的权限集合，为用户授予对应的 RBAC 权限。
+                 * @param req GrantUserPermissionsRequest
+                 * @return GrantUserPermissionsOutcome
+                 */
+                GrantUserPermissionsOutcome GrantUserPermissions(const Model::GrantUserPermissionsRequest &request);
+                void GrantUserPermissionsAsync(const Model::GrantUserPermissionsRequest& request, const GrantUserPermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GrantUserPermissionsOutcomeCallable GrantUserPermissionsCallable(const Model::GrantUserPermissionsRequest& request);
 
                 /**
                  *为目标集群安装一个addon

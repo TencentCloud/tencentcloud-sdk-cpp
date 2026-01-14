@@ -29,7 +29,8 @@ RecordParams::RecordParams() :
     m_avMergeHasBeenSet(false),
     m_maxMediaFileDurationHasBeenSet(false),
     m_mediaIdHasBeenSet(false),
-    m_fillTypeHasBeenSet(false)
+    m_fillTypeHasBeenSet(false),
+    m_subscribeAbilityHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,16 @@ CoreInternalOutcome RecordParams::Deserialize(const rapidjson::Value &value)
         m_fillTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SubscribeAbility") && !value["SubscribeAbility"].IsNull())
+    {
+        if (!value["SubscribeAbility"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordParams.SubscribeAbility` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subscribeAbility = value["SubscribeAbility"].GetUint64();
+        m_subscribeAbilityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +224,14 @@ void RecordParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "FillType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fillType, allocator);
+    }
+
+    if (m_subscribeAbilityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubscribeAbility";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subscribeAbility, allocator);
     }
 
 }
@@ -360,5 +379,21 @@ void RecordParams::SetFillType(const uint64_t& _fillType)
 bool RecordParams::FillTypeHasBeenSet() const
 {
     return m_fillTypeHasBeenSet;
+}
+
+uint64_t RecordParams::GetSubscribeAbility() const
+{
+    return m_subscribeAbility;
+}
+
+void RecordParams::SetSubscribeAbility(const uint64_t& _subscribeAbility)
+{
+    m_subscribeAbility = _subscribeAbility;
+    m_subscribeAbilityHasBeenSet = true;
+}
+
+bool RecordParams::SubscribeAbilityHasBeenSet() const
+{
+    return m_subscribeAbilityHasBeenSet;
 }
 

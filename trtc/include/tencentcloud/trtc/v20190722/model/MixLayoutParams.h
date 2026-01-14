@@ -360,6 +360,27 @@ namespace TencentCloud
                      */
                     bool MaxResolutionUserAlignHasBeenSet() const;
 
+                    /**
+                     * 获取控制房间内纯音频用户是否占据混流布局，只在混流录制，模板布局生效。true: 代表纯音频用户不占位，false: 代表纯音频用户占位（默认为false）。
+                     * @return PureAudioDisableLayout 控制房间内纯音频用户是否占据混流布局，只在混流录制，模板布局生效。true: 代表纯音频用户不占位，false: 代表纯音频用户占位（默认为false）。
+                     * 
+                     */
+                    bool GetPureAudioDisableLayout() const;
+
+                    /**
+                     * 设置控制房间内纯音频用户是否占据混流布局，只在混流录制，模板布局生效。true: 代表纯音频用户不占位，false: 代表纯音频用户占位（默认为false）。
+                     * @param _pureAudioDisableLayout 控制房间内纯音频用户是否占据混流布局，只在混流录制，模板布局生效。true: 代表纯音频用户不占位，false: 代表纯音频用户占位（默认为false）。
+                     * 
+                     */
+                    void SetPureAudioDisableLayout(const bool& _pureAudioDisableLayout);
+
+                    /**
+                     * 判断参数 PureAudioDisableLayout 是否已赋值
+                     * @return PureAudioDisableLayout 是否已赋值
+                     * 
+                     */
+                    bool PureAudioDisableLayoutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -448,6 +469,12 @@ namespace TencentCloud
                      */
                     uint64_t m_maxResolutionUserAlign;
                     bool m_maxResolutionUserAlignHasBeenSet;
+
+                    /**
+                     * 控制房间内纯音频用户是否占据混流布局，只在混流录制，模板布局生效。true: 代表纯音频用户不占位，false: 代表纯音频用户占位（默认为false）。
+                     */
+                    bool m_pureAudioDisableLayout;
+                    bool m_pureAudioDisableLayoutHasBeenSet;
 
                 };
             }

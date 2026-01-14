@@ -85,6 +85,48 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
+                     * 获取操作类型
+                     * @return OperationSet 操作类型
+                     * 
+                     */
+                    std::vector<uint64_t> GetOperationSet() const;
+
+                    /**
+                     * 设置操作类型
+                     * @param _operationSet 操作类型
+                     * 
+                     */
+                    void SetOperationSet(const std::vector<uint64_t>& _operationSet);
+
+                    /**
+                     * 判断参数 OperationSet 是否已赋值
+                     * @return OperationSet 是否已赋值
+                     * 
+                     */
+                    bool OperationSetHasBeenSet() const;
+
+                    /**
+                     * 获取会话类型
+                     * @return ProtocolSet 会话类型
+                     * 
+                     */
+                    std::vector<std::string> GetProtocolSet() const;
+
+                    /**
+                     * 设置会话类型
+                     * @param _protocolSet 会话类型
+                     * 
+                     */
+                    void SetProtocolSet(const std::vector<std::string>& _protocolSet);
+
+                    /**
+                     * 判断参数 ProtocolSet 是否已赋值
+                     * @return ProtocolSet 是否已赋值
+                     * 
+                     */
+                    bool ProtocolSetHasBeenSet() const;
+
+                    /**
                      * 获取偏移量
                      * @return Offset 偏移量
                      * 
@@ -139,6 +181,18 @@ namespace TencentCloud
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 操作类型
+                     */
+                    std::vector<uint64_t> m_operationSet;
+                    bool m_operationSetHasBeenSet;
+
+                    /**
+                     * 会话类型
+                     */
+                    std::vector<std::string> m_protocolSet;
+                    bool m_protocolSetHasBeenSet;
 
                     /**
                      * 偏移量

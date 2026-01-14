@@ -365,6 +365,27 @@ False -- 不开启
                      */
                     bool KmsHsmClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取账户备注
+                     * @return AccountRemark 账户备注
+                     * 
+                     */
+                    std::string GetAccountRemark() const;
+
+                    /**
+                     * 设置账户备注
+                     * @param _accountRemark 账户备注
+                     * 
+                     */
+                    void SetAccountRemark(const std::string& _accountRemark);
+
+                    /**
+                     * 判断参数 AccountRemark 是否已赋值
+                     * @return AccountRemark 是否已赋值
+                     * 
+                     */
+                    bool AccountRemarkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -456,6 +477,12 @@ False -- 不开启
                      */
                     std::string m_kmsHsmClusterId;
                     bool m_kmsHsmClusterIdHasBeenSet;
+
+                    /**
+                     * 账户备注
+                     */
+                    std::string m_accountRemark;
+                    bool m_accountRemarkHasBeenSet;
 
                 };
             }

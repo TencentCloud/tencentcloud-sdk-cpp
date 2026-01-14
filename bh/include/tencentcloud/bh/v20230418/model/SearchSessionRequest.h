@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取状态，1为活跃，2为结束，3为强制离线，4为其他错误
-                     * @return Status 状态，1为活跃，2为结束，3为强制离线，4为其他错误
+                     * 获取状态，1为活跃，2为结束，3为强制离线，4为其他错误，5暂停会话
+                     * @return Status 状态，1为活跃，2为结束，3为强制离线，4为其他错误，5暂停会话
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置状态，1为活跃，2为结束，3为强制离线，4为其他错误
-                     * @param _status 状态，1为活跃，2为结束，3为强制离线，4为其他错误
+                     * 设置状态，1为活跃，2为结束，3为强制离线，4为其他错误，5暂停会话
+                     * @param _status 状态，1为活跃，2为结束，3为强制离线，4为其他错误，5暂停会话
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -516,7 +516,7 @@ namespace TencentCloud
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 状态，1为活跃，2为结束，3为强制离线，4为其他错误
+                     * 状态，1为活跃，2为结束，3为强制离线，4为其他错误，5暂停会话
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

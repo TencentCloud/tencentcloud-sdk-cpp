@@ -25,7 +25,14 @@ ProductPrivilegeUnit::ProductPrivilegeUnit() :
     m_privilegesHasBeenSet(false),
     m_databaseHasBeenSet(false),
     m_tableNameHasBeenSet(false),
-    m_columnNameHasBeenSet(false)
+    m_columnNameHasBeenSet(false),
+    m_schemaNameHasBeenSet(false),
+    m_sequenceNameHasBeenSet(false),
+    m_procedureNameHasBeenSet(false),
+    m_typeNameHasBeenSet(false),
+    m_functionNameHasBeenSet(false),
+    m_viewNameHasBeenSet(false),
+    m_matviewNameHasBeenSet(false)
 {
 }
 
@@ -87,6 +94,76 @@ CoreInternalOutcome ProductPrivilegeUnit::Deserialize(const rapidjson::Value &va
         m_columnNameHasBeenSet = true;
     }
 
+    if (value.HasMember("SchemaName") && !value["SchemaName"].IsNull())
+    {
+        if (!value["SchemaName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductPrivilegeUnit.SchemaName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schemaName = string(value["SchemaName"].GetString());
+        m_schemaNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SequenceName") && !value["SequenceName"].IsNull())
+    {
+        if (!value["SequenceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductPrivilegeUnit.SequenceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sequenceName = string(value["SequenceName"].GetString());
+        m_sequenceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProcedureName") && !value["ProcedureName"].IsNull())
+    {
+        if (!value["ProcedureName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductPrivilegeUnit.ProcedureName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_procedureName = string(value["ProcedureName"].GetString());
+        m_procedureNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TypeName") && !value["TypeName"].IsNull())
+    {
+        if (!value["TypeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductPrivilegeUnit.TypeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_typeName = string(value["TypeName"].GetString());
+        m_typeNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("FunctionName") && !value["FunctionName"].IsNull())
+    {
+        if (!value["FunctionName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductPrivilegeUnit.FunctionName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_functionName = string(value["FunctionName"].GetString());
+        m_functionNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ViewName") && !value["ViewName"].IsNull())
+    {
+        if (!value["ViewName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductPrivilegeUnit.ViewName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_viewName = string(value["ViewName"].GetString());
+        m_viewNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("MatviewName") && !value["MatviewName"].IsNull())
+    {
+        if (!value["MatviewName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductPrivilegeUnit.MatviewName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_matviewName = string(value["MatviewName"].GetString());
+        m_matviewNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +214,62 @@ void ProductPrivilegeUnit::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "ColumnName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_columnName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sequenceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SequenceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sequenceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_procedureNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcedureName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_procedureName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TypeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_typeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_functionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FunctionName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_functionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_viewNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ViewName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_viewName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_matviewNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MatviewName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matviewName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -220,5 +353,117 @@ void ProductPrivilegeUnit::SetColumnName(const string& _columnName)
 bool ProductPrivilegeUnit::ColumnNameHasBeenSet() const
 {
     return m_columnNameHasBeenSet;
+}
+
+string ProductPrivilegeUnit::GetSchemaName() const
+{
+    return m_schemaName;
+}
+
+void ProductPrivilegeUnit::SetSchemaName(const string& _schemaName)
+{
+    m_schemaName = _schemaName;
+    m_schemaNameHasBeenSet = true;
+}
+
+bool ProductPrivilegeUnit::SchemaNameHasBeenSet() const
+{
+    return m_schemaNameHasBeenSet;
+}
+
+string ProductPrivilegeUnit::GetSequenceName() const
+{
+    return m_sequenceName;
+}
+
+void ProductPrivilegeUnit::SetSequenceName(const string& _sequenceName)
+{
+    m_sequenceName = _sequenceName;
+    m_sequenceNameHasBeenSet = true;
+}
+
+bool ProductPrivilegeUnit::SequenceNameHasBeenSet() const
+{
+    return m_sequenceNameHasBeenSet;
+}
+
+string ProductPrivilegeUnit::GetProcedureName() const
+{
+    return m_procedureName;
+}
+
+void ProductPrivilegeUnit::SetProcedureName(const string& _procedureName)
+{
+    m_procedureName = _procedureName;
+    m_procedureNameHasBeenSet = true;
+}
+
+bool ProductPrivilegeUnit::ProcedureNameHasBeenSet() const
+{
+    return m_procedureNameHasBeenSet;
+}
+
+string ProductPrivilegeUnit::GetTypeName() const
+{
+    return m_typeName;
+}
+
+void ProductPrivilegeUnit::SetTypeName(const string& _typeName)
+{
+    m_typeName = _typeName;
+    m_typeNameHasBeenSet = true;
+}
+
+bool ProductPrivilegeUnit::TypeNameHasBeenSet() const
+{
+    return m_typeNameHasBeenSet;
+}
+
+string ProductPrivilegeUnit::GetFunctionName() const
+{
+    return m_functionName;
+}
+
+void ProductPrivilegeUnit::SetFunctionName(const string& _functionName)
+{
+    m_functionName = _functionName;
+    m_functionNameHasBeenSet = true;
+}
+
+bool ProductPrivilegeUnit::FunctionNameHasBeenSet() const
+{
+    return m_functionNameHasBeenSet;
+}
+
+string ProductPrivilegeUnit::GetViewName() const
+{
+    return m_viewName;
+}
+
+void ProductPrivilegeUnit::SetViewName(const string& _viewName)
+{
+    m_viewName = _viewName;
+    m_viewNameHasBeenSet = true;
+}
+
+bool ProductPrivilegeUnit::ViewNameHasBeenSet() const
+{
+    return m_viewNameHasBeenSet;
+}
+
+string ProductPrivilegeUnit::GetMatviewName() const
+{
+    return m_matviewName;
+}
+
+void ProductPrivilegeUnit::SetMatviewName(const string& _matviewName)
+{
+    m_matviewName = _matviewName;
+    m_matviewNameHasBeenSet = true;
+}
+
+bool ProductPrivilegeUnit::MatviewNameHasBeenSet() const
+{
+    return m_matviewNameHasBeenSet;
 }
 

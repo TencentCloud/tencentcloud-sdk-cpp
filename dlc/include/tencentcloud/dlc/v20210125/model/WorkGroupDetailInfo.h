@@ -242,6 +242,48 @@ namespace TencentCloud
                      */
                     bool CatalogPolicyInfoHasBeenSet() const;
 
+                    /**
+                     * 获取数据目录权限
+                     * @return DataCatalogPolicyInfo 数据目录权限
+                     * 
+                     */
+                    Policys GetDataCatalogPolicyInfo() const;
+
+                    /**
+                     * 设置数据目录权限
+                     * @param _dataCatalogPolicyInfo 数据目录权限
+                     * 
+                     */
+                    void SetDataCatalogPolicyInfo(const Policys& _dataCatalogPolicyInfo);
+
+                    /**
+                     * 判断参数 DataCatalogPolicyInfo 是否已赋值
+                     * @return DataCatalogPolicyInfo 是否已赋值
+                     * 
+                     */
+                    bool DataCatalogPolicyInfoHasBeenSet() const;
+
+                    /**
+                     * 获取模型权限
+                     * @return ModelPolicyInfo 模型权限
+                     * 
+                     */
+                    Policys GetModelPolicyInfo() const;
+
+                    /**
+                     * 设置模型权限
+                     * @param _modelPolicyInfo 模型权限
+                     * 
+                     */
+                    void SetModelPolicyInfo(const Policys& _modelPolicyInfo);
+
+                    /**
+                     * 判断参数 ModelPolicyInfo 是否已赋值
+                     * @return ModelPolicyInfo 是否已赋值
+                     * 
+                     */
+                    bool ModelPolicyInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -298,6 +340,18 @@ namespace TencentCloud
                      */
                     Policy m_catalogPolicyInfo;
                     bool m_catalogPolicyInfoHasBeenSet;
+
+                    /**
+                     * 数据目录权限
+                     */
+                    Policys m_dataCatalogPolicyInfo;
+                    bool m_dataCatalogPolicyInfoHasBeenSet;
+
+                    /**
+                     * 模型权限
+                     */
+                    Policys m_modelPolicyInfo;
+                    bool m_modelPolicyInfoHasBeenSet;
 
                 };
             }

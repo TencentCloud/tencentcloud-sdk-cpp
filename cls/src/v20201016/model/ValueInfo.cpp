@@ -25,7 +25,9 @@ ValueInfo::ValueInfo() :
     m_tokenizerHasBeenSet(false),
     m_sqlFlagHasBeenSet(false),
     m_containZHHasBeenSet(false),
-    m_aliasHasBeenSet(false)
+    m_aliasHasBeenSet(false),
+    m_openIndexForChildOnlyHasBeenSet(false),
+    m_childNodeHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,36 @@ CoreInternalOutcome ValueInfo::Deserialize(const rapidjson::Value &value)
         m_aliasHasBeenSet = true;
     }
 
+    if (value.HasMember("OpenIndexForChildOnly") && !value["OpenIndexForChildOnly"].IsNull())
+    {
+        if (!value["OpenIndexForChildOnly"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ValueInfo.OpenIndexForChildOnly` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_openIndexForChildOnly = value["OpenIndexForChildOnly"].GetBool();
+        m_openIndexForChildOnlyHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChildNode") && !value["ChildNode"].IsNull())
+    {
+        if (!value["ChildNode"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ValueInfo.ChildNode` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ChildNode"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KeyValueInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_childNode.push_back(item);
+        }
+        m_childNodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +161,29 @@ void ValueInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Alias";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_alias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_openIndexForChildOnlyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenIndexForChildOnly";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_openIndexForChildOnly, allocator);
+    }
+
+    if (m_childNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChildNode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_childNode.begin(); itr != m_childNode.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -212,5 +267,37 @@ void ValueInfo::SetAlias(const string& _alias)
 bool ValueInfo::AliasHasBeenSet() const
 {
     return m_aliasHasBeenSet;
+}
+
+bool ValueInfo::GetOpenIndexForChildOnly() const
+{
+    return m_openIndexForChildOnly;
+}
+
+void ValueInfo::SetOpenIndexForChildOnly(const bool& _openIndexForChildOnly)
+{
+    m_openIndexForChildOnly = _openIndexForChildOnly;
+    m_openIndexForChildOnlyHasBeenSet = true;
+}
+
+bool ValueInfo::OpenIndexForChildOnlyHasBeenSet() const
+{
+    return m_openIndexForChildOnlyHasBeenSet;
+}
+
+vector<KeyValueInfo> ValueInfo::GetChildNode() const
+{
+    return m_childNode;
+}
+
+void ValueInfo::SetChildNode(const vector<KeyValueInfo>& _childNode)
+{
+    m_childNode = _childNode;
+    m_childNodeHasBeenSet = true;
+}
+
+bool ValueInfo::ChildNodeHasBeenSet() const
+{
+    return m_childNodeHasBeenSet;
 }
 

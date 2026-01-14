@@ -123,6 +123,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeGuideScanInfoResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeIPStatusListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeIPStatusListResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeIpsModeSwitchRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeIpsModeSwitchResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeLogStorageStatisticRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeLogStorageStatisticResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeLogsRequest.h>
@@ -207,6 +209,8 @@
 #include <tencentcloud/cfw/v20190904/model/ModifyEnterpriseSecurityGroupRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyFwGroupSwitchRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyFwGroupSwitchResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyIpsModeSwitchRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyIpsModeSwitchResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyNatAcRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyNatAcRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyNatFwReSelectRequest.h>
@@ -431,6 +435,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIPStatusListResponse> DescribeIPStatusListOutcome;
                 typedef std::future<DescribeIPStatusListOutcome> DescribeIPStatusListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeIPStatusListRequest&, DescribeIPStatusListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIPStatusListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIpsModeSwitchResponse> DescribeIpsModeSwitchOutcome;
+                typedef std::future<DescribeIpsModeSwitchOutcome> DescribeIpsModeSwitchOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeIpsModeSwitchRequest&, DescribeIpsModeSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpsModeSwitchAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLogStorageStatisticResponse> DescribeLogStorageStatisticOutcome;
                 typedef std::future<DescribeLogStorageStatisticOutcome> DescribeLogStorageStatisticOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeLogStorageStatisticRequest&, DescribeLogStorageStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogStorageStatisticAsyncHandler;
@@ -557,6 +564,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyFwGroupSwitchResponse> ModifyFwGroupSwitchOutcome;
                 typedef std::future<ModifyFwGroupSwitchOutcome> ModifyFwGroupSwitchOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyFwGroupSwitchRequest&, ModifyFwGroupSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFwGroupSwitchAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyIpsModeSwitchResponse> ModifyIpsModeSwitchOutcome;
+                typedef std::future<ModifyIpsModeSwitchOutcome> ModifyIpsModeSwitchOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyIpsModeSwitchRequest&, ModifyIpsModeSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIpsModeSwitchAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyNatAcRuleResponse> ModifyNatAcRuleOutcome;
                 typedef std::future<ModifyNatAcRuleOutcome> ModifyNatAcRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyNatAcRuleRequest&, ModifyNatAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNatAcRuleAsyncHandler;
@@ -1103,6 +1113,15 @@ namespace TencentCloud
                 DescribeIPStatusListOutcomeCallable DescribeIPStatusListCallable(const Model::DescribeIPStatusListRequest& request);
 
                 /**
+                 *获取入侵防御防护模式
+                 * @param req DescribeIpsModeSwitchRequest
+                 * @return DescribeIpsModeSwitchOutcome
+                 */
+                DescribeIpsModeSwitchOutcome DescribeIpsModeSwitch(const Model::DescribeIpsModeSwitchRequest &request);
+                void DescribeIpsModeSwitchAsync(const Model::DescribeIpsModeSwitchRequest& request, const DescribeIpsModeSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIpsModeSwitchOutcomeCallable DescribeIpsModeSwitchCallable(const Model::DescribeIpsModeSwitchRequest& request);
+
+                /**
                  *租户日志存储统计
                  * @param req DescribeLogStorageStatisticRequest
                  * @return DescribeLogStorageStatisticOutcome
@@ -1483,6 +1502,15 @@ VPC间规则需指定EdgeId。Nat边界规则需指定地域Region与Direction�
                 ModifyFwGroupSwitchOutcome ModifyFwGroupSwitch(const Model::ModifyFwGroupSwitchRequest &request);
                 void ModifyFwGroupSwitchAsync(const Model::ModifyFwGroupSwitchRequest& request, const ModifyFwGroupSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyFwGroupSwitchOutcomeCallable ModifyFwGroupSwitchCallable(const Model::ModifyFwGroupSwitchRequest& request);
+
+                /**
+                 *修改入侵防御防护模式
+                 * @param req ModifyIpsModeSwitchRequest
+                 * @return ModifyIpsModeSwitchOutcome
+                 */
+                ModifyIpsModeSwitchOutcome ModifyIpsModeSwitch(const Model::ModifyIpsModeSwitchRequest &request);
+                void ModifyIpsModeSwitchAsync(const Model::ModifyIpsModeSwitchRequest& request, const ModifyIpsModeSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyIpsModeSwitchOutcomeCallable ModifyIpsModeSwitchCallable(const Model::ModifyIpsModeSwitchRequest& request);
 
                 /**
                  *修改NAT访问控制规则

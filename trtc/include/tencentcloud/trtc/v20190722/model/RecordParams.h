@@ -268,6 +268,27 @@ Hls 格式录制此参数不生效。
                      */
                     bool FillTypeHasBeenSet() const;
 
+                    /**
+                     * 获取控制录制任务是否订阅混流回推机器人，1是订阅，0是不订阅，默认是0。如果是混流录制任务，建议用订阅白名单控制订阅用户，防止同时订阅混流回推机器人和上行主播，以避免混音效果。
+                     * @return SubscribeAbility 控制录制任务是否订阅混流回推机器人，1是订阅，0是不订阅，默认是0。如果是混流录制任务，建议用订阅白名单控制订阅用户，防止同时订阅混流回推机器人和上行主播，以避免混音效果。
+                     * 
+                     */
+                    uint64_t GetSubscribeAbility() const;
+
+                    /**
+                     * 设置控制录制任务是否订阅混流回推机器人，1是订阅，0是不订阅，默认是0。如果是混流录制任务，建议用订阅白名单控制订阅用户，防止同时订阅混流回推机器人和上行主播，以避免混音效果。
+                     * @param _subscribeAbility 控制录制任务是否订阅混流回推机器人，1是订阅，0是不订阅，默认是0。如果是混流录制任务，建议用订阅白名单控制订阅用户，防止同时订阅混流回推机器人和上行主播，以避免混音效果。
+                     * 
+                     */
+                    void SetSubscribeAbility(const uint64_t& _subscribeAbility);
+
+                    /**
+                     * 判断参数 SubscribeAbility 是否已赋值
+                     * @return SubscribeAbility 是否已赋值
+                     * 
+                     */
+                    bool SubscribeAbilityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -331,6 +352,12 @@ Hls 格式录制此参数不生效。
                      */
                     uint64_t m_fillType;
                     bool m_fillTypeHasBeenSet;
+
+                    /**
+                     * 控制录制任务是否订阅混流回推机器人，1是订阅，0是不订阅，默认是0。如果是混流录制任务，建议用订阅白名单控制订阅用户，防止同时订阅混流回推机器人和上行主播，以避免混音效果。
+                     */
+                    uint64_t m_subscribeAbility;
+                    bool m_subscribeAbilityHasBeenSet;
 
                 };
             }

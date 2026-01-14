@@ -140,6 +140,56 @@ ClsClient::ApplyConfigToMachineGroupOutcomeCallable ClsClient::ApplyConfigToMach
     return prom->get_future();
 }
 
+ClsClient::CancelRebuildIndexTaskOutcome ClsClient::CancelRebuildIndexTask(const CancelRebuildIndexTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelRebuildIndexTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelRebuildIndexTaskResponse rsp = CancelRebuildIndexTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelRebuildIndexTaskOutcome(rsp);
+        else
+            return CancelRebuildIndexTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelRebuildIndexTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CancelRebuildIndexTaskAsync(const CancelRebuildIndexTaskRequest& request, const CancelRebuildIndexTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CancelRebuildIndexTaskRequest&;
+    using Resp = CancelRebuildIndexTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CancelRebuildIndexTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::CancelRebuildIndexTaskOutcomeCallable ClsClient::CancelRebuildIndexTaskCallable(const CancelRebuildIndexTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CancelRebuildIndexTaskOutcome>>();
+    CancelRebuildIndexTaskAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const CancelRebuildIndexTaskRequest&,
+        CancelRebuildIndexTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::CheckFunctionOutcome ClsClient::CheckFunction(const CheckFunctionRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckFunction");
@@ -1582,6 +1632,56 @@ ClsClient::CreateNoticeContentOutcomeCallable ClsClient::CreateNoticeContentCall
         const ClsClient*,
         const CreateNoticeContentRequest&,
         CreateNoticeContentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::CreateRebuildIndexTaskOutcome ClsClient::CreateRebuildIndexTask(const CreateRebuildIndexTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRebuildIndexTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRebuildIndexTaskResponse rsp = CreateRebuildIndexTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRebuildIndexTaskOutcome(rsp);
+        else
+            return CreateRebuildIndexTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRebuildIndexTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateRebuildIndexTaskAsync(const CreateRebuildIndexTaskRequest& request, const CreateRebuildIndexTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateRebuildIndexTaskRequest&;
+    using Resp = CreateRebuildIndexTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateRebuildIndexTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::CreateRebuildIndexTaskOutcomeCallable ClsClient::CreateRebuildIndexTaskCallable(const CreateRebuildIndexTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateRebuildIndexTaskOutcome>>();
+    CreateRebuildIndexTaskAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const CreateRebuildIndexTaskRequest&,
+        CreateRebuildIndexTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5540,6 +5640,56 @@ ClsClient::DescribePartitionsOutcomeCallable ClsClient::DescribePartitionsCallab
     return prom->get_future();
 }
 
+ClsClient::DescribeRebuildIndexTasksOutcome ClsClient::DescribeRebuildIndexTasks(const DescribeRebuildIndexTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRebuildIndexTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRebuildIndexTasksResponse rsp = DescribeRebuildIndexTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRebuildIndexTasksOutcome(rsp);
+        else
+            return DescribeRebuildIndexTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRebuildIndexTasksOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeRebuildIndexTasksAsync(const DescribeRebuildIndexTasksRequest& request, const DescribeRebuildIndexTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRebuildIndexTasksRequest&;
+    using Resp = DescribeRebuildIndexTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRebuildIndexTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeRebuildIndexTasksOutcomeCallable ClsClient::DescribeRebuildIndexTasksCallable(const DescribeRebuildIndexTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRebuildIndexTasksOutcome>>();
+    DescribeRebuildIndexTasksAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeRebuildIndexTasksRequest&,
+        DescribeRebuildIndexTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::DescribeScheduledSqlInfoOutcome ClsClient::DescribeScheduledSqlInfo(const DescribeScheduledSqlInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeScheduledSqlInfo");
@@ -5982,6 +6132,56 @@ ClsClient::DescribeWebCallbacksOutcomeCallable ClsClient::DescribeWebCallbacksCa
         const ClsClient*,
         const DescribeWebCallbacksRequest&,
         DescribeWebCallbacksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::EstimateRebuildIndexTaskOutcome ClsClient::EstimateRebuildIndexTask(const EstimateRebuildIndexTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "EstimateRebuildIndexTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EstimateRebuildIndexTaskResponse rsp = EstimateRebuildIndexTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EstimateRebuildIndexTaskOutcome(rsp);
+        else
+            return EstimateRebuildIndexTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return EstimateRebuildIndexTaskOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::EstimateRebuildIndexTaskAsync(const EstimateRebuildIndexTaskRequest& request, const EstimateRebuildIndexTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EstimateRebuildIndexTaskRequest&;
+    using Resp = EstimateRebuildIndexTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EstimateRebuildIndexTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::EstimateRebuildIndexTaskOutcomeCallable ClsClient::EstimateRebuildIndexTaskCallable(const EstimateRebuildIndexTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EstimateRebuildIndexTaskOutcome>>();
+    EstimateRebuildIndexTaskAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const EstimateRebuildIndexTaskRequest&,
+        EstimateRebuildIndexTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

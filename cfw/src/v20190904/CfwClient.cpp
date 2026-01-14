@@ -2540,6 +2540,56 @@ CfwClient::DescribeIPStatusListOutcomeCallable CfwClient::DescribeIPStatusListCa
     return prom->get_future();
 }
 
+CfwClient::DescribeIpsModeSwitchOutcome CfwClient::DescribeIpsModeSwitch(const DescribeIpsModeSwitchRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIpsModeSwitch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIpsModeSwitchResponse rsp = DescribeIpsModeSwitchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIpsModeSwitchOutcome(rsp);
+        else
+            return DescribeIpsModeSwitchOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIpsModeSwitchOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeIpsModeSwitchAsync(const DescribeIpsModeSwitchRequest& request, const DescribeIpsModeSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeIpsModeSwitchRequest&;
+    using Resp = DescribeIpsModeSwitchResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeIpsModeSwitch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeIpsModeSwitchOutcomeCallable CfwClient::DescribeIpsModeSwitchCallable(const DescribeIpsModeSwitchRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeIpsModeSwitchOutcome>>();
+    DescribeIpsModeSwitchAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeIpsModeSwitchRequest&,
+        DescribeIpsModeSwitchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::DescribeLogStorageStatisticOutcome CfwClient::DescribeLogStorageStatistic(const DescribeLogStorageStatisticRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLogStorageStatistic");
@@ -4632,6 +4682,56 @@ CfwClient::ModifyFwGroupSwitchOutcomeCallable CfwClient::ModifyFwGroupSwitchCall
         const CfwClient*,
         const ModifyFwGroupSwitchRequest&,
         ModifyFwGroupSwitchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::ModifyIpsModeSwitchOutcome CfwClient::ModifyIpsModeSwitch(const ModifyIpsModeSwitchRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyIpsModeSwitch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyIpsModeSwitchResponse rsp = ModifyIpsModeSwitchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyIpsModeSwitchOutcome(rsp);
+        else
+            return ModifyIpsModeSwitchOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyIpsModeSwitchOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ModifyIpsModeSwitchAsync(const ModifyIpsModeSwitchRequest& request, const ModifyIpsModeSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyIpsModeSwitchRequest&;
+    using Resp = ModifyIpsModeSwitchResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyIpsModeSwitch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::ModifyIpsModeSwitchOutcomeCallable CfwClient::ModifyIpsModeSwitchCallable(const ModifyIpsModeSwitchRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyIpsModeSwitchOutcome>>();
+    ModifyIpsModeSwitchAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const ModifyIpsModeSwitchRequest&,
+        ModifyIpsModeSwitchOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

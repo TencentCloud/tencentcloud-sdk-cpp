@@ -45,7 +45,11 @@ SessionResult::SessionResult() :
     m_deviceKindHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_workloadHasBeenSet(false),
-    m_podNameHasBeenSet(false)
+    m_podNameHasBeenSet(false),
+    m_modeHasBeenSet(false),
+    m_disableMonitorHasBeenSet(false),
+    m_realTimeBandwidthInHasBeenSet(false),
+    m_realTimeBandwidthOutHasBeenSet(false)
 {
 }
 
@@ -304,6 +308,46 @@ CoreInternalOutcome SessionResult::Deserialize(const rapidjson::Value &value)
         m_podNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Mode") && !value["Mode"].IsNull())
+    {
+        if (!value["Mode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionResult.Mode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_mode = value["Mode"].GetUint64();
+        m_modeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DisableMonitor") && !value["DisableMonitor"].IsNull())
+    {
+        if (!value["DisableMonitor"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionResult.DisableMonitor` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_disableMonitor = value["DisableMonitor"].GetInt64();
+        m_disableMonitorHasBeenSet = true;
+    }
+
+    if (value.HasMember("RealTimeBandwidthIn") && !value["RealTimeBandwidthIn"].IsNull())
+    {
+        if (!value["RealTimeBandwidthIn"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionResult.RealTimeBandwidthIn` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_realTimeBandwidthIn = value["RealTimeBandwidthIn"].GetDouble();
+        m_realTimeBandwidthInHasBeenSet = true;
+    }
+
+    if (value.HasMember("RealTimeBandwidthOut") && !value["RealTimeBandwidthOut"].IsNull())
+    {
+        if (!value["RealTimeBandwidthOut"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionResult.RealTimeBandwidthOut` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_realTimeBandwidthOut = value["RealTimeBandwidthOut"].GetDouble();
+        m_realTimeBandwidthOutHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -509,6 +553,38 @@ void SessionResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "PodName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_podName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mode, allocator);
+    }
+
+    if (m_disableMonitorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableMonitor";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_disableMonitor, allocator);
+    }
+
+    if (m_realTimeBandwidthInHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealTimeBandwidthIn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_realTimeBandwidthIn, allocator);
+    }
+
+    if (m_realTimeBandwidthOutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealTimeBandwidthOut";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_realTimeBandwidthOut, allocator);
     }
 
 }
@@ -912,5 +988,69 @@ void SessionResult::SetPodName(const string& _podName)
 bool SessionResult::PodNameHasBeenSet() const
 {
     return m_podNameHasBeenSet;
+}
+
+uint64_t SessionResult::GetMode() const
+{
+    return m_mode;
+}
+
+void SessionResult::SetMode(const uint64_t& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool SessionResult::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
+}
+
+int64_t SessionResult::GetDisableMonitor() const
+{
+    return m_disableMonitor;
+}
+
+void SessionResult::SetDisableMonitor(const int64_t& _disableMonitor)
+{
+    m_disableMonitor = _disableMonitor;
+    m_disableMonitorHasBeenSet = true;
+}
+
+bool SessionResult::DisableMonitorHasBeenSet() const
+{
+    return m_disableMonitorHasBeenSet;
+}
+
+double SessionResult::GetRealTimeBandwidthIn() const
+{
+    return m_realTimeBandwidthIn;
+}
+
+void SessionResult::SetRealTimeBandwidthIn(const double& _realTimeBandwidthIn)
+{
+    m_realTimeBandwidthIn = _realTimeBandwidthIn;
+    m_realTimeBandwidthInHasBeenSet = true;
+}
+
+bool SessionResult::RealTimeBandwidthInHasBeenSet() const
+{
+    return m_realTimeBandwidthInHasBeenSet;
+}
+
+double SessionResult::GetRealTimeBandwidthOut() const
+{
+    return m_realTimeBandwidthOut;
+}
+
+void SessionResult::SetRealTimeBandwidthOut(const double& _realTimeBandwidthOut)
+{
+    m_realTimeBandwidthOut = _realTimeBandwidthOut;
+    m_realTimeBandwidthOutHasBeenSet = true;
+}
+
+bool SessionResult::RealTimeBandwidthOutHasBeenSet() const
+{
+    return m_realTimeBandwidthOutHasBeenSet;
 }
 

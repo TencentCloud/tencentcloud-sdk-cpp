@@ -3790,6 +3790,56 @@ TkeClient::DeleteTKEEdgeClusterOutcomeCallable TkeClient::DeleteTKEEdgeClusterCa
     return prom->get_future();
 }
 
+TkeClient::DeleteUserPermissionsOutcome TkeClient::DeleteUserPermissions(const DeleteUserPermissionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteUserPermissions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteUserPermissionsResponse rsp = DeleteUserPermissionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteUserPermissionsOutcome(rsp);
+        else
+            return DeleteUserPermissionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteUserPermissionsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteUserPermissionsAsync(const DeleteUserPermissionsRequest& request, const DeleteUserPermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteUserPermissionsRequest&;
+    using Resp = DeleteUserPermissionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteUserPermissions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DeleteUserPermissionsOutcomeCallable TkeClient::DeleteUserPermissionsCallable(const DeleteUserPermissionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteUserPermissionsOutcome>>();
+    DeleteUserPermissionsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteUserPermissionsRequest&,
+        DeleteUserPermissionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::DescribeAddonOutcome TkeClient::DescribeAddon(const DescribeAddonRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAddon");
@@ -8890,6 +8940,56 @@ TkeClient::DescribeUpgradeTasksOutcomeCallable TkeClient::DescribeUpgradeTasksCa
     return prom->get_future();
 }
 
+TkeClient::DescribeUserPermissionsOutcome TkeClient::DescribeUserPermissions(const DescribeUserPermissionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserPermissions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserPermissionsResponse rsp = DescribeUserPermissionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserPermissionsOutcome(rsp);
+        else
+            return DescribeUserPermissionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserPermissionsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeUserPermissionsAsync(const DescribeUserPermissionsRequest& request, const DescribeUserPermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeUserPermissionsRequest&;
+    using Resp = DescribeUserPermissionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserPermissions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DescribeUserPermissionsOutcomeCallable TkeClient::DescribeUserPermissionsCallable(const DescribeUserPermissionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeUserPermissionsOutcome>>();
+    DescribeUserPermissionsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeUserPermissionsRequest&,
+        DescribeUserPermissionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::DescribeVersionsOutcome TkeClient::DescribeVersions(const DescribeVersionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVersions");
@@ -9882,6 +9982,56 @@ TkeClient::GetUpgradeInstanceProgressOutcomeCallable TkeClient::GetUpgradeInstan
         const TkeClient*,
         const GetUpgradeInstanceProgressRequest&,
         GetUpgradeInstanceProgressOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TkeClient::GrantUserPermissionsOutcome TkeClient::GrantUserPermissions(const GrantUserPermissionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "GrantUserPermissions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GrantUserPermissionsResponse rsp = GrantUserPermissionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GrantUserPermissionsOutcome(rsp);
+        else
+            return GrantUserPermissionsOutcome(o.GetError());
+    }
+    else
+    {
+        return GrantUserPermissionsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::GrantUserPermissionsAsync(const GrantUserPermissionsRequest& request, const GrantUserPermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GrantUserPermissionsRequest&;
+    using Resp = GrantUserPermissionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GrantUserPermissions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::GrantUserPermissionsOutcomeCallable TkeClient::GrantUserPermissionsCallable(const GrantUserPermissionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GrantUserPermissionsOutcome>>();
+    GrantUserPermissionsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const GrantUserPermissionsRequest&,
+        GrantUserPermissionsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

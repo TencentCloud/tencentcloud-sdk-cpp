@@ -27,6 +27,8 @@
 #include <tencentcloud/cls/v20201016/model/AddMachineGroupInfoResponse.h>
 #include <tencentcloud/cls/v20201016/model/ApplyConfigToMachineGroupRequest.h>
 #include <tencentcloud/cls/v20201016/model/ApplyConfigToMachineGroupResponse.h>
+#include <tencentcloud/cls/v20201016/model/CancelRebuildIndexTaskRequest.h>
+#include <tencentcloud/cls/v20201016/model/CancelRebuildIndexTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/CheckFunctionRequest.h>
 #include <tencentcloud/cls/v20201016/model/CheckFunctionResponse.h>
 #include <tencentcloud/cls/v20201016/model/CheckRechargeKafkaServerRequest.h>
@@ -85,6 +87,8 @@
 #include <tencentcloud/cls/v20201016/model/CreateMetricSubscribeResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateNoticeContentRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateNoticeContentResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateRebuildIndexTaskRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateRebuildIndexTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateScheduledSqlRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateScheduledSqlResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateShipperRequest.h>
@@ -243,6 +247,8 @@
 #include <tencentcloud/cls/v20201016/model/DescribeNoticeContentsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribePartitionsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribePartitionsResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeRebuildIndexTasksRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeRebuildIndexTasksResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeScheduledSqlInfoRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeScheduledSqlInfoResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeShipperTasksRequest.h>
@@ -261,6 +267,8 @@
 #include <tencentcloud/cls/v20201016/model/DescribeTopicsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeWebCallbacksRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeWebCallbacksResponse.h>
+#include <tencentcloud/cls/v20201016/model/EstimateRebuildIndexTaskRequest.h>
+#include <tencentcloud/cls/v20201016/model/EstimateRebuildIndexTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/GetAlarmLogRequest.h>
 #include <tencentcloud/cls/v20201016/model/GetAlarmLogResponse.h>
 #include <tencentcloud/cls/v20201016/model/GetMetricLabelValuesRequest.h>
@@ -369,6 +377,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ApplyConfigToMachineGroupResponse> ApplyConfigToMachineGroupOutcome;
                 typedef std::future<ApplyConfigToMachineGroupOutcome> ApplyConfigToMachineGroupOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ApplyConfigToMachineGroupRequest&, ApplyConfigToMachineGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyConfigToMachineGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CancelRebuildIndexTaskResponse> CancelRebuildIndexTaskOutcome;
+                typedef std::future<CancelRebuildIndexTaskOutcome> CancelRebuildIndexTaskOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CancelRebuildIndexTaskRequest&, CancelRebuildIndexTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelRebuildIndexTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckFunctionResponse> CheckFunctionOutcome;
                 typedef std::future<CheckFunctionOutcome> CheckFunctionOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CheckFunctionRequest&, CheckFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckFunctionAsyncHandler;
@@ -456,6 +467,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateNoticeContentResponse> CreateNoticeContentOutcome;
                 typedef std::future<CreateNoticeContentOutcome> CreateNoticeContentOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateNoticeContentRequest&, CreateNoticeContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNoticeContentAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRebuildIndexTaskResponse> CreateRebuildIndexTaskOutcome;
+                typedef std::future<CreateRebuildIndexTaskOutcome> CreateRebuildIndexTaskOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateRebuildIndexTaskRequest&, CreateRebuildIndexTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRebuildIndexTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateScheduledSqlResponse> CreateScheduledSqlOutcome;
                 typedef std::future<CreateScheduledSqlOutcome> CreateScheduledSqlOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateScheduledSqlRequest&, CreateScheduledSqlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScheduledSqlAsyncHandler;
@@ -693,6 +707,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePartitionsResponse> DescribePartitionsOutcome;
                 typedef std::future<DescribePartitionsOutcome> DescribePartitionsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribePartitionsRequest&, DescribePartitionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePartitionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRebuildIndexTasksResponse> DescribeRebuildIndexTasksOutcome;
+                typedef std::future<DescribeRebuildIndexTasksOutcome> DescribeRebuildIndexTasksOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeRebuildIndexTasksRequest&, DescribeRebuildIndexTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRebuildIndexTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScheduledSqlInfoResponse> DescribeScheduledSqlInfoOutcome;
                 typedef std::future<DescribeScheduledSqlInfoOutcome> DescribeScheduledSqlInfoOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeScheduledSqlInfoRequest&, DescribeScheduledSqlInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScheduledSqlInfoAsyncHandler;
@@ -720,6 +737,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeWebCallbacksResponse> DescribeWebCallbacksOutcome;
                 typedef std::future<DescribeWebCallbacksOutcome> DescribeWebCallbacksOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeWebCallbacksRequest&, DescribeWebCallbacksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebCallbacksAsyncHandler;
+                typedef Outcome<Core::Error, Model::EstimateRebuildIndexTaskResponse> EstimateRebuildIndexTaskOutcome;
+                typedef std::future<EstimateRebuildIndexTaskOutcome> EstimateRebuildIndexTaskOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::EstimateRebuildIndexTaskRequest&, EstimateRebuildIndexTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EstimateRebuildIndexTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetAlarmLogResponse> GetAlarmLogOutcome;
                 typedef std::future<GetAlarmLogOutcome> GetAlarmLogOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::GetAlarmLogRequest&, GetAlarmLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAlarmLogAsyncHandler;
@@ -872,6 +892,15 @@ namespace TencentCloud
                 ApplyConfigToMachineGroupOutcome ApplyConfigToMachineGroup(const Model::ApplyConfigToMachineGroupRequest &request);
                 void ApplyConfigToMachineGroupAsync(const Model::ApplyConfigToMachineGroupRequest& request, const ApplyConfigToMachineGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ApplyConfigToMachineGroupOutcomeCallable ApplyConfigToMachineGroupCallable(const Model::ApplyConfigToMachineGroupRequest& request);
+
+                /**
+                 *取消重建索引任务
+                 * @param req CancelRebuildIndexTaskRequest
+                 * @return CancelRebuildIndexTaskOutcome
+                 */
+                CancelRebuildIndexTaskOutcome CancelRebuildIndexTask(const Model::CancelRebuildIndexTaskRequest &request);
+                void CancelRebuildIndexTaskAsync(const Model::CancelRebuildIndexTaskRequest& request, const CancelRebuildIndexTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelRebuildIndexTaskOutcomeCallable CancelRebuildIndexTaskCallable(const Model::CancelRebuildIndexTaskRequest& request);
 
                 /**
                  *本接口用于数据加工DSL函数的语法校验。
@@ -1140,6 +1169,21 @@ namespace TencentCloud
                 CreateNoticeContentOutcome CreateNoticeContent(const Model::CreateNoticeContentRequest &request);
                 void CreateNoticeContentAsync(const Model::CreateNoticeContentRequest& request, const CreateNoticeContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateNoticeContentOutcomeCallable CreateNoticeContentCallable(const Model::CreateNoticeContentRequest& request);
+
+                /**
+                 *创建重建索引任务
+注意：
+- 单个日志主题同时仅允许运行一个重建索引任务，单个日志主题最多同时拥有10个重建索引任务记录，需删除不再需要的任务记录后才能新建索引任务。
+- 同一时间范围内的日志，仅允许重建一次索引，需删除之前的任务记录后才能再次重建。
+- 删除重建索引任务记录将恢复重建索引前的索引数据。
+- 所选时间范围对应日志写流量不能超出5TB。
+- 重建索引时间范围以日志时间为准，日志上传时间与重建索引时间范围有超过1小时的偏差时（例如16:00上传了一条02:00的日志到 CLS，重建00:00～12:00的日志索引）不会被重建且后续无法进行检索。新上报一条日志到已经被重建的日志时间范围时，也不会被重建且后续无法进行检索。
+                 * @param req CreateRebuildIndexTaskRequest
+                 * @return CreateRebuildIndexTaskOutcome
+                 */
+                CreateRebuildIndexTaskOutcome CreateRebuildIndexTask(const Model::CreateRebuildIndexTaskRequest &request);
+                void CreateRebuildIndexTaskAsync(const Model::CreateRebuildIndexTaskRequest& request, const CreateRebuildIndexTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRebuildIndexTaskOutcomeCallable CreateRebuildIndexTaskCallable(const Model::CreateRebuildIndexTaskRequest& request);
 
                 /**
                  *本接口用于创建定时SQL分析任务
@@ -1854,6 +1898,15 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 DescribePartitionsOutcomeCallable DescribePartitionsCallable(const Model::DescribePartitionsRequest& request);
 
                 /**
+                 *获取重建索引任务列表
+                 * @param req DescribeRebuildIndexTasksRequest
+                 * @return DescribeRebuildIndexTasksOutcome
+                 */
+                DescribeRebuildIndexTasksOutcome DescribeRebuildIndexTasks(const Model::DescribeRebuildIndexTasksRequest &request);
+                void DescribeRebuildIndexTasksAsync(const Model::DescribeRebuildIndexTasksRequest& request, const DescribeRebuildIndexTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRebuildIndexTasksOutcomeCallable DescribeRebuildIndexTasksCallable(const Model::DescribeRebuildIndexTasksRequest& request);
+
+                /**
                  *本接口用于获取定时SQL分析任务列表
                  * @param req DescribeScheduledSqlInfoRequest
                  * @return DescribeScheduledSqlInfoOutcome
@@ -1933,6 +1986,15 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 DescribeWebCallbacksOutcome DescribeWebCallbacks(const Model::DescribeWebCallbacksRequest &request);
                 void DescribeWebCallbacksAsync(const Model::DescribeWebCallbacksRequest& request, const DescribeWebCallbacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeWebCallbacksOutcomeCallable DescribeWebCallbacksCallable(const Model::DescribeWebCallbacksRequest& request);
+
+                /**
+                 *预估重建索引任务
+                 * @param req EstimateRebuildIndexTaskRequest
+                 * @return EstimateRebuildIndexTaskOutcome
+                 */
+                EstimateRebuildIndexTaskOutcome EstimateRebuildIndexTask(const Model::EstimateRebuildIndexTaskRequest &request);
+                void EstimateRebuildIndexTaskAsync(const Model::EstimateRebuildIndexTaskRequest& request, const EstimateRebuildIndexTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EstimateRebuildIndexTaskOutcomeCallable EstimateRebuildIndexTaskCallable(const Model::EstimateRebuildIndexTaskRequest& request);
 
                 /**
                  *本接口用于获取告警策略执行详情

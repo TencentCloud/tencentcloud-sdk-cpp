@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cls/v20201016/model/KeyValueInfo.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取字段类型，目前支持的类型有：long、text、double
-                     * @return Type 字段类型，目前支持的类型有：long、text、double
+                     * 获取字段类型，支持的类型有：long、text、double、json
+注意：json 类型目前仅部分用户或日志主题支持，如需使用请联系我们开启功能白名单
+                     * @return Type 字段类型，支持的类型有：long、text、double、json
+注意：json 类型目前仅部分用户或日志主题支持，如需使用请联系我们开启功能白名单
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置字段类型，目前支持的类型有：long、text、double
-                     * @param _type 字段类型，目前支持的类型有：long、text、double
+                     * 设置字段类型，支持的类型有：long、text、double、json
+注意：json 类型目前仅部分用户或日志主题支持，如需使用请联系我们开启功能白名单
+                     * @param _type 字段类型，支持的类型有：long、text、double、json
+注意：json 类型目前仅部分用户或日志主题支持，如需使用请联系我们开启功能白名单
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -163,10 +168,61 @@ long及double类型字段需为空；
                      */
                     bool AliasHasBeenSet() const;
 
+                    /**
+                     * 获取仅为子节点开启索引，本字段不开启。
+注意：仅json类型字段可配置该参数
+                     * @return OpenIndexForChildOnly 仅为子节点开启索引，本字段不开启。
+注意：仅json类型字段可配置该参数
+                     * 
+                     */
+                    bool GetOpenIndexForChildOnly() const;
+
+                    /**
+                     * 设置仅为子节点开启索引，本字段不开启。
+注意：仅json类型字段可配置该参数
+                     * @param _openIndexForChildOnly 仅为子节点开启索引，本字段不开启。
+注意：仅json类型字段可配置该参数
+                     * 
+                     */
+                    void SetOpenIndexForChildOnly(const bool& _openIndexForChildOnly);
+
+                    /**
+                     * 判断参数 OpenIndexForChildOnly 是否已赋值
+                     * @return OpenIndexForChildOnly 是否已赋值
+                     * 
+                     */
+                    bool OpenIndexForChildOnlyHasBeenSet() const;
+
+                    /**
+                     * 获取json子节点列表
+注意：仅json类型字段可配置该参数
+                     * @return ChildNode json子节点列表
+注意：仅json类型字段可配置该参数
+                     * 
+                     */
+                    std::vector<KeyValueInfo> GetChildNode() const;
+
+                    /**
+                     * 设置json子节点列表
+注意：仅json类型字段可配置该参数
+                     * @param _childNode json子节点列表
+注意：仅json类型字段可配置该参数
+                     * 
+                     */
+                    void SetChildNode(const std::vector<KeyValueInfo>& _childNode);
+
+                    /**
+                     * 判断参数 ChildNode 是否已赋值
+                     * @return ChildNode 是否已赋值
+                     * 
+                     */
+                    bool ChildNodeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 字段类型，目前支持的类型有：long、text、double
+                     * 字段类型，支持的类型有：long、text、double、json
+注意：json 类型目前仅部分用户或日志主题支持，如需使用请联系我们开启功能白名单
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -197,6 +253,20 @@ long及double类型字段需为空；
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
+
+                    /**
+                     * 仅为子节点开启索引，本字段不开启。
+注意：仅json类型字段可配置该参数
+                     */
+                    bool m_openIndexForChildOnly;
+                    bool m_openIndexForChildOnlyHasBeenSet;
+
+                    /**
+                     * json子节点列表
+注意：仅json类型字段可配置该参数
+                     */
+                    std::vector<KeyValueInfo> m_childNode;
+                    bool m_childNodeHasBeenSet;
 
                 };
             }

@@ -251,6 +251,181 @@ TableName - 显式指明所在表
                      */
                     bool ColumnNameHasBeenSet() const;
 
+                    /**
+                     * 获取仅当PrivilegeName为SchemaPrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * @return SchemaName 仅当PrivilegeName为SchemaPrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * 
+                     */
+                    std::string GetSchemaName() const;
+
+                    /**
+                     * 设置仅当PrivilegeName为SchemaPrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * @param _schemaName 仅当PrivilegeName为SchemaPrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * 
+                     */
+                    void SetSchemaName(const std::string& _schemaName);
+
+                    /**
+                     * 判断参数 SchemaName 是否已赋值
+                     * @return SchemaName 是否已赋值
+                     * 
+                     */
+                    bool SchemaNameHasBeenSet() const;
+
+                    /**
+                     * 获取仅当PrivilegeName为SequencePrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * @return SequenceName 仅当PrivilegeName为SequencePrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * 
+                     */
+                    std::string GetSequenceName() const;
+
+                    /**
+                     * 设置仅当PrivilegeName为SequencePrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * @param _sequenceName 仅当PrivilegeName为SequencePrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * 
+                     */
+                    void SetSequenceName(const std::string& _sequenceName);
+
+                    /**
+                     * 判断参数 SequenceName 是否已赋值
+                     * @return SequenceName 是否已赋值
+                     * 
+                     */
+                    bool SequenceNameHasBeenSet() const;
+
+                    /**
+                     * 获取仅当PrivilegeName为ProcedurePrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * @return ProcedureName 仅当PrivilegeName为ProcedurePrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * 
+                     */
+                    std::string GetProcedureName() const;
+
+                    /**
+                     * 设置仅当PrivilegeName为ProcedurePrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * @param _procedureName 仅当PrivilegeName为ProcedurePrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * 
+                     */
+                    void SetProcedureName(const std::string& _procedureName);
+
+                    /**
+                     * 判断参数 ProcedureName 是否已赋值
+                     * @return ProcedureName 是否已赋值
+                     * 
+                     */
+                    bool ProcedureNameHasBeenSet() const;
+
+                    /**
+                     * 获取仅当PrivilegeName为TypePrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * @return TypeName 仅当PrivilegeName为TypePrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * 
+                     */
+                    std::string GetTypeName() const;
+
+                    /**
+                     * 设置仅当PrivilegeName为TypePrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * @param _typeName 仅当PrivilegeName为TypePrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * 
+                     */
+                    void SetTypeName(const std::string& _typeName);
+
+                    /**
+                     * 判断参数 TypeName 是否已赋值
+                     * @return TypeName 是否已赋值
+                     * 
+                     */
+                    bool TypeNameHasBeenSet() const;
+
+                    /**
+                     * 获取仅当PrivilegeName为FunctionPrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * @return FunctionName 仅当PrivilegeName为FunctionPrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * 
+                     */
+                    std::string GetFunctionName() const;
+
+                    /**
+                     * 设置仅当PrivilegeName为FunctionPrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * @param _functionName 仅当PrivilegeName为FunctionPrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * 
+                     */
+                    void SetFunctionName(const std::string& _functionName);
+
+                    /**
+                     * 判断参数 FunctionName 是否已赋值
+                     * @return FunctionName 是否已赋值
+                     * 
+                     */
+                    bool FunctionNameHasBeenSet() const;
+
+                    /**
+                     * 获取仅当PrivilegeName为ViewPrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * @return ViewName 仅当PrivilegeName为ViewPrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * 
+                     */
+                    std::string GetViewName() const;
+
+                    /**
+                     * 设置仅当PrivilegeName为ViewPrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * @param _viewName 仅当PrivilegeName为ViewPrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * 
+                     */
+                    void SetViewName(const std::string& _viewName);
+
+                    /**
+                     * 判断参数 ViewName 是否已赋值
+                     * @return ViewName 是否已赋值
+                     * 
+                     */
+                    bool ViewNameHasBeenSet() const;
+
+                    /**
+                     * 获取仅当PrivilegeName为MatviewPrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * @return MatviewName 仅当PrivilegeName为MatviewPrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * 
+                     */
+                    std::string GetMatviewName() const;
+
+                    /**
+                     * 设置仅当PrivilegeName为MatviewPrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * @param _matviewName 仅当PrivilegeName为MatviewPrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     * 
+                     */
+                    void SetMatviewName(const std::string& _matviewName);
+
+                    /**
+                     * 判断参数 MatviewName 是否已赋值
+                     * @return MatviewName 是否已赋值
+                     * 
+                     */
+                    bool MatviewNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -307,6 +482,55 @@ TableName - 显式指明所在表
                      */
                     std::string m_columnName;
                     bool m_columnNameHasBeenSet;
+
+                    /**
+                     * 仅当PrivilegeName为SchemaPrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     */
+                    std::string m_schemaName;
+                    bool m_schemaNameHasBeenSet;
+
+                    /**
+                     * 仅当PrivilegeName为SequencePrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     */
+                    std::string m_sequenceName;
+                    bool m_sequenceNameHasBeenSet;
+
+                    /**
+                     * 仅当PrivilegeName为ProcedurePrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     */
+                    std::string m_procedureName;
+                    bool m_procedureNameHasBeenSet;
+
+                    /**
+                     * 仅当PrivilegeName为TypePrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     */
+                    std::string m_typeName;
+                    bool m_typeNameHasBeenSet;
+
+                    /**
+                     * 仅当PrivilegeName为FunctionPrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     */
+                    std::string m_functionName;
+                    bool m_functionNameHasBeenSet;
+
+                    /**
+                     * 仅当PrivilegeName为ViewPrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     */
+                    std::string m_viewName;
+                    bool m_viewNameHasBeenSet;
+
+                    /**
+                     * 仅当PrivilegeName为MatviewPrivileges时这个值才生效，并且此时必须填充：
+目前仅postgresSQL需要
+                     */
+                    std::string m_matviewName;
+                    bool m_matviewNameHasBeenSet;
 
                 };
             }
