@@ -38,7 +38,9 @@ License::License() :
     m_expirationDateHasBeenSet(false),
     m_lifeSpanUnitHasBeenSet(false),
     m_licenseTypeHasBeenSet(false),
-    m_licenseLevelHasBeenSet(false)
+    m_licenseLevelHasBeenSet(false),
+    m_licenseDataHasBeenSet(false),
+    m_issueURLHasBeenSet(false)
 {
 }
 
@@ -237,6 +239,33 @@ CoreInternalOutcome License::Deserialize(const rapidjson::Value &value)
         m_licenseLevelHasBeenSet = true;
     }
 
+    if (value.HasMember("LicenseData") && !value["LicenseData"].IsNull())
+    {
+        if (!value["LicenseData"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `License.LicenseData` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_licenseData.Deserialize(value["LicenseData"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_licenseDataHasBeenSet = true;
+    }
+
+    if (value.HasMember("IssueURL") && !value["IssueURL"].IsNull())
+    {
+        if (!value["IssueURL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `License.IssueURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_issueURL = string(value["IssueURL"].GetString());
+        m_issueURLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -393,6 +422,23 @@ void License::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "LicenseLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_licenseLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_licenseDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LicenseData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_licenseData.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_issueURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IssueURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_issueURL.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -684,5 +730,37 @@ void License::SetLicenseLevel(const string& _licenseLevel)
 bool License::LicenseLevelHasBeenSet() const
 {
     return m_licenseLevelHasBeenSet;
+}
+
+LicenseData License::GetLicenseData() const
+{
+    return m_licenseData;
+}
+
+void License::SetLicenseData(const LicenseData& _licenseData)
+{
+    m_licenseData = _licenseData;
+    m_licenseDataHasBeenSet = true;
+}
+
+bool License::LicenseDataHasBeenSet() const
+{
+    return m_licenseDataHasBeenSet;
+}
+
+string License::GetIssueURL() const
+{
+    return m_issueURL;
+}
+
+void License::SetIssueURL(const string& _issueURL)
+{
+    m_issueURL = _issueURL;
+    m_issueURLHasBeenSet = true;
+}
+
+bool License::IssueURLHasBeenSet() const
+{
+    return m_issueURLHasBeenSet;
 }
 

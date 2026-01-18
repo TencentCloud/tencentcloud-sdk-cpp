@@ -4940,6 +4940,56 @@ TcrClient::ModifyInstanceOutcomeCallable TcrClient::ModifyInstanceCallable(const
     return prom->get_future();
 }
 
+TcrClient::ModifyInstanceStorageOutcome TcrClient::ModifyInstanceStorage(const ModifyInstanceStorageRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceStorage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceStorageResponse rsp = ModifyInstanceStorageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceStorageOutcome(rsp);
+        else
+            return ModifyInstanceStorageOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceStorageOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::ModifyInstanceStorageAsync(const ModifyInstanceStorageRequest& request, const ModifyInstanceStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyInstanceStorageRequest&;
+    using Resp = ModifyInstanceStorageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceStorage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcrClient::ModifyInstanceStorageOutcomeCallable TcrClient::ModifyInstanceStorageCallable(const ModifyInstanceStorageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyInstanceStorageOutcome>>();
+    ModifyInstanceStorageAsync(
+    request,
+    [prom](
+        const TcrClient*,
+        const ModifyInstanceStorageRequest&,
+        ModifyInstanceStorageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcrClient::ModifyInstanceTokenOutcome TcrClient::ModifyInstanceToken(const ModifyInstanceTokenRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyInstanceToken");
@@ -5532,6 +5582,56 @@ TcrClient::RenewInstanceOutcomeCallable TcrClient::RenewInstanceCallable(const R
         const TcrClient*,
         const RenewInstanceRequest&,
         RenewInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcrClient::TerminateGCJobOutcome TcrClient::TerminateGCJob(const TerminateGCJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "TerminateGCJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TerminateGCJobResponse rsp = TerminateGCJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TerminateGCJobOutcome(rsp);
+        else
+            return TerminateGCJobOutcome(o.GetError());
+    }
+    else
+    {
+        return TerminateGCJobOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::TerminateGCJobAsync(const TerminateGCJobRequest& request, const TerminateGCJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const TerminateGCJobRequest&;
+    using Resp = TerminateGCJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "TerminateGCJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcrClient::TerminateGCJobOutcomeCallable TcrClient::TerminateGCJobCallable(const TerminateGCJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<TerminateGCJobOutcome>>();
+    TerminateGCJobAsync(
+    request,
+    [prom](
+        const TcrClient*,
+        const TerminateGCJobRequest&,
+        TerminateGCJobOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

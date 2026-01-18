@@ -279,6 +279,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DeleteDataEngineResponse.h
   include/tencentcloud/dlc/v20210125/model/CosPermission.h
   include/tencentcloud/dlc/v20210125/model/IpPortPair.h
+  include/tencentcloud/dlc/v20210125/model/PrestoMonitorMetrics.h
   include/tencentcloud/dlc/v20210125/model/DescribeTasksAnalysisResponse.h
   include/tencentcloud/dlc/v20210125/model/RestartDataEngineResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeNativeSparkSessionsResponse.h
@@ -326,6 +327,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeViewsRequest.h
   include/tencentcloud/dlc/v20210125/model/StandardEngineResourceGroupInfo.h
   include/tencentcloud/dlc/v20210125/model/CreateStandardEngineResourceGroupResponse.h
+  include/tencentcloud/dlc/v20210125/model/CreateDatasourceConnectionRequest.h
   include/tencentcloud/dlc/v20210125/model/GrantDLCCatalogAccessRequest.h
   include/tencentcloud/dlc/v20210125/model/ReportHeartbeatMetaDataRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeEngineNetworksResponse.h
@@ -403,7 +405,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/UserDetailInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeTaskResultResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeDatasourceConnectionResponse.h
-  include/tencentcloud/dlc/v20210125/model/PrestoMonitorMetrics.h
+  include/tencentcloud/dlc/v20210125/model/CreateDatasourceConnectionResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionStatementRequest.h
   include/tencentcloud/dlc/v20210125/model/ModifyDataEngineDescriptionRequest.h
   include/tencentcloud/dlc/v20210125/model/UpdateNetworkConnectionRequest.h
@@ -801,6 +803,7 @@ set(dlc_src
   src/v20210125/model/DeleteDataEngineResponse.cpp
   src/v20210125/model/CosPermission.cpp
   src/v20210125/model/IpPortPair.cpp
+  src/v20210125/model/PrestoMonitorMetrics.cpp
   src/v20210125/model/DescribeTasksAnalysisResponse.cpp
   src/v20210125/model/RestartDataEngineResponse.cpp
   src/v20210125/model/DescribeNativeSparkSessionsResponse.cpp
@@ -848,6 +851,7 @@ set(dlc_src
   src/v20210125/model/DescribeViewsRequest.cpp
   src/v20210125/model/StandardEngineResourceGroupInfo.cpp
   src/v20210125/model/CreateStandardEngineResourceGroupResponse.cpp
+  src/v20210125/model/CreateDatasourceConnectionRequest.cpp
   src/v20210125/model/GrantDLCCatalogAccessRequest.cpp
   src/v20210125/model/ReportHeartbeatMetaDataRequest.cpp
   src/v20210125/model/DescribeEngineNetworksResponse.cpp
@@ -925,7 +929,7 @@ set(dlc_src
   src/v20210125/model/UserDetailInfo.cpp
   src/v20210125/model/DescribeTaskResultResponse.cpp
   src/v20210125/model/DescribeDatasourceConnectionResponse.cpp
-  src/v20210125/model/PrestoMonitorMetrics.cpp
+  src/v20210125/model/CreateDatasourceConnectionResponse.cpp
   src/v20210125/model/DescribeNotebookSessionStatementRequest.cpp
   src/v20210125/model/ModifyDataEngineDescriptionRequest.cpp
   src/v20210125/model/UpdateNetworkConnectionRequest.cpp

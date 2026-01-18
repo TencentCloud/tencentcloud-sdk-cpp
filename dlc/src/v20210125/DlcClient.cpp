@@ -1390,6 +1390,56 @@ DlcClient::CreateDatabaseOutcomeCallable DlcClient::CreateDatabaseCallable(const
     return prom->get_future();
 }
 
+DlcClient::CreateDatasourceConnectionOutcome DlcClient::CreateDatasourceConnection(const CreateDatasourceConnectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDatasourceConnection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDatasourceConnectionResponse rsp = CreateDatasourceConnectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDatasourceConnectionOutcome(rsp);
+        else
+            return CreateDatasourceConnectionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDatasourceConnectionOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateDatasourceConnectionAsync(const CreateDatasourceConnectionRequest& request, const CreateDatasourceConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateDatasourceConnectionRequest&;
+    using Resp = CreateDatasourceConnectionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateDatasourceConnection", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CreateDatasourceConnectionOutcomeCallable DlcClient::CreateDatasourceConnectionCallable(const CreateDatasourceConnectionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateDatasourceConnectionOutcome>>();
+    CreateDatasourceConnectionAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CreateDatasourceConnectionRequest&,
+        CreateDatasourceConnectionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::CreateExportTaskOutcome DlcClient::CreateExportTask(const CreateExportTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateExportTask");

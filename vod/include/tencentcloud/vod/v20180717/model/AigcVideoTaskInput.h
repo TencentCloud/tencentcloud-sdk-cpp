@@ -133,6 +133,39 @@ namespace TencentCloud
                     bool LastFrameFileIdHasBeenSet() const;
 
                     /**
+                     * 获取用于作为尾帧画面来生成视频的媒体文件 URL。说明：
+1. 只支持模型 GV 、Kling、Vidu，其他模型暂不支持。当 ModelName 为 GV 时，如果指定该参数，则需同时指定 FileInfos 作为待生成视频的首帧。当 ModelName 为 Kling 、ModelVersion 为 2.1 并且指定输出分辨率 Resolution 为 1080P 时，才能指定该参数。当 ModelName 为 Vidu、ModelVersion 为 q2-pro、q2-turbo 时，才能指定该参数。
+2. 图片大小需小于5M。
+3. 3. 图片格式的取值为：jpeg，jpg, png, webp。
+                     * @return LastFrameUrl 用于作为尾帧画面来生成视频的媒体文件 URL。说明：
+1. 只支持模型 GV 、Kling、Vidu，其他模型暂不支持。当 ModelName 为 GV 时，如果指定该参数，则需同时指定 FileInfos 作为待生成视频的首帧。当 ModelName 为 Kling 、ModelVersion 为 2.1 并且指定输出分辨率 Resolution 为 1080P 时，才能指定该参数。当 ModelName 为 Vidu、ModelVersion 为 q2-pro、q2-turbo 时，才能指定该参数。
+2. 图片大小需小于5M。
+3. 3. 图片格式的取值为：jpeg，jpg, png, webp。
+                     * 
+                     */
+                    std::string GetLastFrameUrl() const;
+
+                    /**
+                     * 设置用于作为尾帧画面来生成视频的媒体文件 URL。说明：
+1. 只支持模型 GV 、Kling、Vidu，其他模型暂不支持。当 ModelName 为 GV 时，如果指定该参数，则需同时指定 FileInfos 作为待生成视频的首帧。当 ModelName 为 Kling 、ModelVersion 为 2.1 并且指定输出分辨率 Resolution 为 1080P 时，才能指定该参数。当 ModelName 为 Vidu、ModelVersion 为 q2-pro、q2-turbo 时，才能指定该参数。
+2. 图片大小需小于5M。
+3. 3. 图片格式的取值为：jpeg，jpg, png, webp。
+                     * @param _lastFrameUrl 用于作为尾帧画面来生成视频的媒体文件 URL。说明：
+1. 只支持模型 GV 、Kling、Vidu，其他模型暂不支持。当 ModelName 为 GV 时，如果指定该参数，则需同时指定 FileInfos 作为待生成视频的首帧。当 ModelName 为 Kling 、ModelVersion 为 2.1 并且指定输出分辨率 Resolution 为 1080P 时，才能指定该参数。当 ModelName 为 Vidu、ModelVersion 为 q2-pro、q2-turbo 时，才能指定该参数。
+2. 图片大小需小于5M。
+3. 3. 图片格式的取值为：jpeg，jpg, png, webp。
+                     * 
+                     */
+                    void SetLastFrameUrl(const std::string& _lastFrameUrl);
+
+                    /**
+                     * 判断参数 LastFrameUrl 是否已赋值
+                     * @return LastFrameUrl 是否已赋值
+                     * 
+                     */
+                    bool LastFrameUrlHasBeenSet() const;
+
+                    /**
                      * 获取生成视频的提示词。最大支持1000字符，当 FileInfos 为空时，此参数必填。
                      * @return Prompt 生成视频的提示词。最大支持1000字符，当 FileInfos 为空时，此参数必填。
                      * 
@@ -237,6 +270,48 @@ namespace TencentCloud
                      */
                     bool OutputConfigHasBeenSet() const;
 
+                    /**
+                     * 获取输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。
+                     * @return InputRegion 输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。
+                     * 
+                     */
+                    std::string GetInputRegion() const;
+
+                    /**
+                     * 设置输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。
+                     * @param _inputRegion 输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。
+                     * 
+                     */
+                    void SetInputRegion(const std::string& _inputRegion);
+
+                    /**
+                     * 判断参数 InputRegion 是否已赋值
+                     * @return InputRegion 是否已赋值
+                     * 
+                     */
+                    bool InputRegionHasBeenSet() const;
+
+                    /**
+                     * 获取场景类型。取值如下：<li>当 ModelName 为 Kling 时，取值 motion_control 表示动作控制；</li><li>其他 ModelName 暂不支持。</li>
+                     * @return SceneType 场景类型。取值如下：<li>当 ModelName 为 Kling 时，取值 motion_control 表示动作控制；</li><li>其他 ModelName 暂不支持。</li>
+                     * 
+                     */
+                    std::string GetSceneType() const;
+
+                    /**
+                     * 设置场景类型。取值如下：<li>当 ModelName 为 Kling 时，取值 motion_control 表示动作控制；</li><li>其他 ModelName 暂不支持。</li>
+                     * @param _sceneType 场景类型。取值如下：<li>当 ModelName 为 Kling 时，取值 motion_control 表示动作控制；</li><li>其他 ModelName 暂不支持。</li>
+                     * 
+                     */
+                    void SetSceneType(const std::string& _sceneType);
+
+                    /**
+                     * 判断参数 SceneType 是否已赋值
+                     * @return SceneType 是否已赋值
+                     * 
+                     */
+                    bool SceneTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -262,6 +337,15 @@ namespace TencentCloud
                      */
                     std::string m_lastFrameFileId;
                     bool m_lastFrameFileIdHasBeenSet;
+
+                    /**
+                     * 用于作为尾帧画面来生成视频的媒体文件 URL。说明：
+1. 只支持模型 GV 、Kling、Vidu，其他模型暂不支持。当 ModelName 为 GV 时，如果指定该参数，则需同时指定 FileInfos 作为待生成视频的首帧。当 ModelName 为 Kling 、ModelVersion 为 2.1 并且指定输出分辨率 Resolution 为 1080P 时，才能指定该参数。当 ModelName 为 Vidu、ModelVersion 为 q2-pro、q2-turbo 时，才能指定该参数。
+2. 图片大小需小于5M。
+3. 3. 图片格式的取值为：jpeg，jpg, png, webp。
+                     */
+                    std::string m_lastFrameUrl;
+                    bool m_lastFrameUrlHasBeenSet;
 
                     /**
                      * 生成视频的提示词。最大支持1000字符，当 FileInfos 为空时，此参数必填。
@@ -292,6 +376,18 @@ namespace TencentCloud
                      */
                     AigcVideoOutputConfig m_outputConfig;
                     bool m_outputConfigHasBeenSet;
+
+                    /**
+                     * 输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。
+                     */
+                    std::string m_inputRegion;
+                    bool m_inputRegionHasBeenSet;
+
+                    /**
+                     * 场景类型。取值如下：<li>当 ModelName 为 Kling 时，取值 motion_control 表示动作控制；</li><li>其他 ModelName 暂不支持。</li>
+                     */
+                    std::string m_sceneType;
+                    bool m_sceneTypeHasBeenSet;
 
                 };
             }

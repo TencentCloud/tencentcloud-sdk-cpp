@@ -108,24 +108,24 @@ namespace TencentCloud
                     bool ModelVersionHasBeenSet() const;
 
                     /**
-                     * 获取最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。
+                     * 获取最多包含三张素材资源文件的列表，用于描述模型在生成视频时要使用的资源文件。
 
-首尾帧视频生成：用FileInfos第一张表示首帧（此时FileInfos最多包含一张图片），LastFrameFileId或者LastFrameUrl表示尾帧。
+首尾帧视频生成：用 FileInfos 第一张表示首帧（此时 FileInfos 最多包含一张图片），LastFrameFileId 或者 LastFrameUrl 表示尾帧。
 
 支持多图输入的模型：
-1. GV，使用多图输入时，不可使用LastFrameFileId和LastFrameUrl。
-2. Vidu，支持多图参考生视频。q2模型1-7张图片，可通过FileInfos里面的ObjectId作为主体id来传入。
+1. GV，使用多图输入时，不可使用 LastFrameFileId 和 LastFrameUrl。
+2. Vidu，支持多图参考生视频。q2 模型1-7张图片，可通过 FileInfos 里面的 ObjectId 作为主体 id 来传入。
 
 注意：
 1. 图片大小不超过10M。
 2. 支持的图片格式：jpeg、png。
-                     * @return FileInfos 最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。
+                     * @return FileInfos 最多包含三张素材资源文件的列表，用于描述模型在生成视频时要使用的资源文件。
 
-首尾帧视频生成：用FileInfos第一张表示首帧（此时FileInfos最多包含一张图片），LastFrameFileId或者LastFrameUrl表示尾帧。
+首尾帧视频生成：用 FileInfos 第一张表示首帧（此时 FileInfos 最多包含一张图片），LastFrameFileId 或者 LastFrameUrl 表示尾帧。
 
 支持多图输入的模型：
-1. GV，使用多图输入时，不可使用LastFrameFileId和LastFrameUrl。
-2. Vidu，支持多图参考生视频。q2模型1-7张图片，可通过FileInfos里面的ObjectId作为主体id来传入。
+1. GV，使用多图输入时，不可使用 LastFrameFileId 和 LastFrameUrl。
+2. Vidu，支持多图参考生视频。q2 模型1-7张图片，可通过 FileInfos 里面的 ObjectId 作为主体 id 来传入。
 
 注意：
 1. 图片大小不超过10M。
@@ -135,24 +135,24 @@ namespace TencentCloud
                     std::vector<AigcVideoTaskInputFileInfo> GetFileInfos() const;
 
                     /**
-                     * 设置最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。
+                     * 设置最多包含三张素材资源文件的列表，用于描述模型在生成视频时要使用的资源文件。
 
-首尾帧视频生成：用FileInfos第一张表示首帧（此时FileInfos最多包含一张图片），LastFrameFileId或者LastFrameUrl表示尾帧。
+首尾帧视频生成：用 FileInfos 第一张表示首帧（此时 FileInfos 最多包含一张图片），LastFrameFileId 或者 LastFrameUrl 表示尾帧。
 
 支持多图输入的模型：
-1. GV，使用多图输入时，不可使用LastFrameFileId和LastFrameUrl。
-2. Vidu，支持多图参考生视频。q2模型1-7张图片，可通过FileInfos里面的ObjectId作为主体id来传入。
+1. GV，使用多图输入时，不可使用 LastFrameFileId 和 LastFrameUrl。
+2. Vidu，支持多图参考生视频。q2 模型1-7张图片，可通过 FileInfos 里面的 ObjectId 作为主体 id 来传入。
 
 注意：
 1. 图片大小不超过10M。
 2. 支持的图片格式：jpeg、png。
-                     * @param _fileInfos 最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。
+                     * @param _fileInfos 最多包含三张素材资源文件的列表，用于描述模型在生成视频时要使用的资源文件。
 
-首尾帧视频生成：用FileInfos第一张表示首帧（此时FileInfos最多包含一张图片），LastFrameFileId或者LastFrameUrl表示尾帧。
+首尾帧视频生成：用 FileInfos 第一张表示首帧（此时 FileInfos 最多包含一张图片），LastFrameFileId 或者 LastFrameUrl 表示尾帧。
 
 支持多图输入的模型：
-1. GV，使用多图输入时，不可使用LastFrameFileId和LastFrameUrl。
-2. Vidu，支持多图参考生视频。q2模型1-7张图片，可通过FileInfos里面的ObjectId作为主体id来传入。
+1. GV，使用多图输入时，不可使用 LastFrameFileId 和 LastFrameUrl。
+2. Vidu，支持多图参考生视频。q2 模型1-7张图片，可通过 FileInfos 里面的 ObjectId 作为主体 id 来传入。
 
 注意：
 1. 图片大小不超过10M。
@@ -323,6 +323,56 @@ namespace TencentCloud
                     bool OutputConfigHasBeenSet() const;
 
                     /**
+                     * 获取输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。
+                     * @return InputRegion 输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。
+                     * 
+                     */
+                    std::string GetInputRegion() const;
+
+                    /**
+                     * 设置输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。
+                     * @param _inputRegion 输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。
+                     * 
+                     */
+                    void SetInputRegion(const std::string& _inputRegion);
+
+                    /**
+                     * 判断参数 InputRegion 是否已赋值
+                     * @return InputRegion 是否已赋值
+                     * 
+                     */
+                    bool InputRegionHasBeenSet() const;
+
+                    /**
+                     * 获取场景类型。取值如下：
+<li>当 ModelName 为 Kling 时，取值 motion_control 表示动作控制；</li>
+<li>其他 ModelName 暂不支持。</li>
+                     * @return SceneType 场景类型。取值如下：
+<li>当 ModelName 为 Kling 时，取值 motion_control 表示动作控制；</li>
+<li>其他 ModelName 暂不支持。</li>
+                     * 
+                     */
+                    std::string GetSceneType() const;
+
+                    /**
+                     * 设置场景类型。取值如下：
+<li>当 ModelName 为 Kling 时，取值 motion_control 表示动作控制；</li>
+<li>其他 ModelName 暂不支持。</li>
+                     * @param _sceneType 场景类型。取值如下：
+<li>当 ModelName 为 Kling 时，取值 motion_control 表示动作控制；</li>
+<li>其他 ModelName 暂不支持。</li>
+                     * 
+                     */
+                    void SetSceneType(const std::string& _sceneType);
+
+                    /**
+                     * 判断参数 SceneType 是否已赋值
+                     * @return SceneType 是否已赋值
+                     * 
+                     */
+                    bool SceneTypeHasBeenSet() const;
+
+                    /**
                      * 获取用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
                      * @return SessionId 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
                      * 
@@ -406,27 +456,6 @@ namespace TencentCloud
                      */
                     bool ExtInfoHasBeenSet() const;
 
-                    /**
-                     * 获取输入图片的区域信息。当图片url是国外地址时候，可选Oversea。默认Mainland。
-                     * @return InputRegion 输入图片的区域信息。当图片url是国外地址时候，可选Oversea。默认Mainland。
-                     * 
-                     */
-                    std::string GetInputRegion() const;
-
-                    /**
-                     * 设置输入图片的区域信息。当图片url是国外地址时候，可选Oversea。默认Mainland。
-                     * @param _inputRegion 输入图片的区域信息。当图片url是国外地址时候，可选Oversea。默认Mainland。
-                     * 
-                     */
-                    void SetInputRegion(const std::string& _inputRegion);
-
-                    /**
-                     * 判断参数 InputRegion 是否已赋值
-                     * @return InputRegion 是否已赋值
-                     * 
-                     */
-                    bool InputRegionHasBeenSet() const;
-
                 private:
 
                     /**
@@ -448,13 +477,13 @@ namespace TencentCloud
                     bool m_modelVersionHasBeenSet;
 
                     /**
-                     * 最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。
+                     * 最多包含三张素材资源文件的列表，用于描述模型在生成视频时要使用的资源文件。
 
-首尾帧视频生成：用FileInfos第一张表示首帧（此时FileInfos最多包含一张图片），LastFrameFileId或者LastFrameUrl表示尾帧。
+首尾帧视频生成：用 FileInfos 第一张表示首帧（此时 FileInfos 最多包含一张图片），LastFrameFileId 或者 LastFrameUrl 表示尾帧。
 
 支持多图输入的模型：
-1. GV，使用多图输入时，不可使用LastFrameFileId和LastFrameUrl。
-2. Vidu，支持多图参考生视频。q2模型1-7张图片，可通过FileInfos里面的ObjectId作为主体id来传入。
+1. GV，使用多图输入时，不可使用 LastFrameFileId 和 LastFrameUrl。
+2. Vidu，支持多图参考生视频。q2 模型1-7张图片，可通过 FileInfos 里面的 ObjectId 作为主体 id 来传入。
 
 注意：
 1. 图片大小不超过10M。
@@ -507,6 +536,20 @@ namespace TencentCloud
                     bool m_outputConfigHasBeenSet;
 
                     /**
+                     * 输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。
+                     */
+                    std::string m_inputRegion;
+                    bool m_inputRegionHasBeenSet;
+
+                    /**
+                     * 场景类型。取值如下：
+<li>当 ModelName 为 Kling 时，取值 motion_control 表示动作控制；</li>
+<li>其他 ModelName 暂不支持。</li>
+                     */
+                    std::string m_sceneType;
+                    bool m_sceneTypeHasBeenSet;
+
+                    /**
                      * 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
                      */
                     std::string m_sessionId;
@@ -529,12 +572,6 @@ namespace TencentCloud
                      */
                     std::string m_extInfo;
                     bool m_extInfoHasBeenSet;
-
-                    /**
-                     * 输入图片的区域信息。当图片url是国外地址时候，可选Oversea。默认Mainland。
-                     */
-                    std::string m_inputRegion;
-                    bool m_inputRegionHasBeenSet;
 
                 };
             }

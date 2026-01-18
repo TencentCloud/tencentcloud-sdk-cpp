@@ -26,6 +26,7 @@ using namespace std;
 SearchProResponse::SearchProResponse() :
     m_queryHasBeenSet(false),
     m_pagesHasBeenSet(false),
+    m_versionHasBeenSet(false),
     m_msgHasBeenSet(false)
 {
 }
@@ -87,6 +88,16 @@ CoreInternalOutcome SearchProResponse::Deserialize(const string &payload)
         m_pagesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Version") && !rsp["Version"].IsNull())
+    {
+        if (!rsp["Version"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Version` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = string(rsp["Version"].GetString());
+        m_versionHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Msg") && !rsp["Msg"].IsNull())
     {
         if (!rsp["Msg"].IsString())
@@ -128,6 +139,14 @@ string SearchProResponse::ToJsonString() const
         }
     }
 
+    if (m_versionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_msgHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -166,6 +185,16 @@ vector<string> SearchProResponse::GetPages() const
 bool SearchProResponse::PagesHasBeenSet() const
 {
     return m_pagesHasBeenSet;
+}
+
+string SearchProResponse::GetVersion() const
+{
+    return m_version;
+}
+
+bool SearchProResponse::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
 }
 
 string SearchProResponse::GetMsg() const

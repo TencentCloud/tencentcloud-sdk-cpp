@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cloudapp/v20220530/model/SaleParam.h>
+#include <tencentcloud/cloudapp/v20220530/model/LicenseData.h>
 
 
 namespace TencentCloud
@@ -433,6 +434,48 @@ namespace TencentCloud
                      */
                     bool LicenseLevelHasBeenSet() const;
 
+                    /**
+                     * 获取<p>License 内容信息</p>
+                     * @return LicenseData <p>License 内容信息</p>
+                     * 
+                     */
+                    LicenseData GetLicenseData() const;
+
+                    /**
+                     * 设置<p>License 内容信息</p>
+                     * @param _licenseData <p>License 内容信息</p>
+                     * 
+                     */
+                    void SetLicenseData(const LicenseData& _licenseData);
+
+                    /**
+                     * 判断参数 LicenseData 是否已赋值
+                     * @return LicenseData 是否已赋值
+                     * 
+                     */
+                    bool LicenseDataHasBeenSet() const;
+
+                    /**
+                     * 获取<p>License 颁发地址</p>
+                     * @return IssueURL <p>License 颁发地址</p>
+                     * 
+                     */
+                    std::string GetIssueURL() const;
+
+                    /**
+                     * 设置<p>License 颁发地址</p>
+                     * @param _issueURL <p>License 颁发地址</p>
+                     * 
+                     */
+                    void SetIssueURL(const std::string& _issueURL);
+
+                    /**
+                     * 判断参数 IssueURL 是否已赋值
+                     * @return IssueURL 是否已赋值
+                     * 
+                     */
+                    bool IssueURLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -544,6 +587,18 @@ namespace TencentCloud
                      */
                     std::string m_licenseLevel;
                     bool m_licenseLevelHasBeenSet;
+
+                    /**
+                     * <p>License 内容信息</p>
+                     */
+                    LicenseData m_licenseData;
+                    bool m_licenseDataHasBeenSet;
+
+                    /**
+                     * <p>License 颁发地址</p>
+                     */
+                    std::string m_issueURL;
+                    bool m_issueURLHasBeenSet;
 
                 };
             }

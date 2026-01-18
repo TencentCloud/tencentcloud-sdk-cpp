@@ -59,7 +59,8 @@ CreateAICallRequest::CreateAICallRequest() :
     m_enableVoicemailDetectionHasBeenSet(false),
     m_voicemailActionHasBeenSet(false),
     m_lLMExtraBodyHasBeenSet(false),
-    m_maxCallDurationMsHasBeenSet(false)
+    m_maxCallDurationMsHasBeenSet(false),
+    m_maxRingTimeoutSecondHasBeenSet(false)
 {
 }
 
@@ -403,6 +404,14 @@ string CreateAICallRequest::ToJsonString() const
         string key = "MaxCallDurationMs";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxCallDurationMs, allocator);
+    }
+
+    if (m_maxRingTimeoutSecondHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxRingTimeoutSecond";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxRingTimeoutSecond, allocator);
     }
 
 
@@ -1003,6 +1012,22 @@ void CreateAICallRequest::SetMaxCallDurationMs(const uint64_t& _maxCallDurationM
 bool CreateAICallRequest::MaxCallDurationMsHasBeenSet() const
 {
     return m_maxCallDurationMsHasBeenSet;
+}
+
+int64_t CreateAICallRequest::GetMaxRingTimeoutSecond() const
+{
+    return m_maxRingTimeoutSecond;
+}
+
+void CreateAICallRequest::SetMaxRingTimeoutSecond(const int64_t& _maxRingTimeoutSecond)
+{
+    m_maxRingTimeoutSecond = _maxRingTimeoutSecond;
+    m_maxRingTimeoutSecondHasBeenSet = true;
+}
+
+bool CreateAICallRequest::MaxRingTimeoutSecondHasBeenSet() const
+{
+    return m_maxRingTimeoutSecondHasBeenSet;
 }
 
 

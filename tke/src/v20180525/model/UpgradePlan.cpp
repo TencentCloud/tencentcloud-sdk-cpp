@@ -24,6 +24,7 @@ UpgradePlan::UpgradePlan() :
     m_iDHasBeenSet(false),
     m_clusterIDHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
+    m_regionHasBeenSet(false),
     m_planedStartAtHasBeenSet(false),
     m_upgradeStartAtHasBeenSet(false),
     m_upgradeEndAtHasBeenSet(false),
@@ -65,6 +66,16 @@ CoreInternalOutcome UpgradePlan::Deserialize(const rapidjson::Value &value)
         }
         m_clusterName = string(value["ClusterName"].GetString());
         m_clusterNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpgradePlan.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
     }
 
     if (value.HasMember("PlanedStartAt") && !value["PlanedStartAt"].IsNull())
@@ -146,6 +157,14 @@ void UpgradePlan::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ClusterName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
     if (m_planedStartAtHasBeenSet)
@@ -237,6 +256,22 @@ void UpgradePlan::SetClusterName(const string& _clusterName)
 bool UpgradePlan::ClusterNameHasBeenSet() const
 {
     return m_clusterNameHasBeenSet;
+}
+
+string UpgradePlan::GetRegion() const
+{
+    return m_region;
+}
+
+void UpgradePlan::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool UpgradePlan::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
 }
 
 string UpgradePlan::GetPlanedStartAt() const

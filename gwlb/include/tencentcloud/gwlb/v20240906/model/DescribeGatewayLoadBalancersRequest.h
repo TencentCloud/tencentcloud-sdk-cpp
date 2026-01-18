@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网关负载均衡实例ID。支持批量筛选的实例ID数量上限为20个。
-                     * @return LoadBalancerIds 网关负载均衡实例ID。支持批量筛选的实例ID数量上限为20个。
+                     * 获取<p>网关负载均衡实例ID。支持批量筛选的实例ID数量上限为20个。</p>
+                     * @return LoadBalancerIds <p>网关负载均衡实例ID。支持批量筛选的实例ID数量上限为20个。</p>
                      * 
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
 
                     /**
-                     * 设置网关负载均衡实例ID。支持批量筛选的实例ID数量上限为20个。
-                     * @param _loadBalancerIds 网关负载均衡实例ID。支持批量筛选的实例ID数量上限为20个。
+                     * 设置<p>网关负载均衡实例ID。支持批量筛选的实例ID数量上限为20个。</p>
+                     * @param _loadBalancerIds <p>网关负载均衡实例ID。支持批量筛选的实例ID数量上限为20个。</p>
                      * 
                      */
                     void SetLoadBalancerIds(const std::vector<std::string>& _loadBalancerIds);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool LoadBalancerIdsHasBeenSet() const;
 
                     /**
-                     * 获取一次批量返回网关负载均衡实例的数量，默认为20，最大值为100。
-                     * @return Limit 一次批量返回网关负载均衡实例的数量，默认为20，最大值为100。
+                     * 获取<p>一次批量返回网关负载均衡实例的数量，默认为20，最大值为100。</p>
+                     * @return Limit <p>一次批量返回网关负载均衡实例的数量，默认为20，最大值为100。</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置一次批量返回网关负载均衡实例的数量，默认为20，最大值为100。
-                     * @param _limit 一次批量返回网关负载均衡实例的数量，默认为20，最大值为100。
+                     * 设置<p>一次批量返回网关负载均衡实例的数量，默认为20，最大值为100。</p>
+                     * @param _limit <p>一次批量返回网关负载均衡实例的数量，默认为20，最大值为100。</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取返回网关负载均衡实例列表的起始偏移量，默认0。
-                     * @return Offset 返回网关负载均衡实例列表的起始偏移量，默认0。
+                     * 获取<p>返回网关负载均衡实例列表的起始偏移量，默认0。</p>
+                     * @return Offset <p>返回网关负载均衡实例列表的起始偏移量，默认0。</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置返回网关负载均衡实例列表的起始偏移量，默认0。
-                     * @param _offset 返回网关负载均衡实例列表的起始偏移量，默认0。
+                     * 设置<p>返回网关负载均衡实例列表的起始偏移量，默认0。</p>
+                     * @param _offset <p>返回网关负载均衡实例列表的起始偏移量，默认0。</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -107,35 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询负载均衡详细信息列表的过滤条件，每次请求的Filters的上限为10，Filter.Values的上限为100。
-Filter.Name和Filter.Values皆为必填项。详细的过滤条件如下：
-- VpcId - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“vpc-bhqk****”。
-- Vips - String  - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“10.1.1.1”
-- tag:tag-key - String - 是否必填：否 - （过滤条件）按照GWLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。
-
-                     * @return Filters 查询负载均衡详细信息列表的过滤条件，每次请求的Filters的上限为10，Filter.Values的上限为100。
-Filter.Name和Filter.Values皆为必填项。详细的过滤条件如下：
-- VpcId - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“vpc-bhqk****”。
-- Vips - String  - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“10.1.1.1”
-- tag:tag-key - String - 是否必填：否 - （过滤条件）按照GWLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。
-
+                     * 获取<p>查询负载均衡详细信息列表的过滤条件，每次请求的Filters的上限为10，Filter.Values的上限为100。Filter.Name和Filter.Values皆为必填项。详细的过滤条件如下：- VpcId - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“vpc-bhqk****”。- Vips - String  - 是否必填：否 - （过滤条件）按照网关负载均衡实例的VIP进行过滤，如“10.1.1.1”- tag:tag-key - String - 是否必填：否 - （过滤条件）按照GWLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。</p>
+                     * @return Filters <p>查询负载均衡详细信息列表的过滤条件，每次请求的Filters的上限为10，Filter.Values的上限为100。Filter.Name和Filter.Values皆为必填项。详细的过滤条件如下：- VpcId - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“vpc-bhqk****”。- Vips - String  - 是否必填：否 - （过滤条件）按照网关负载均衡实例的VIP进行过滤，如“10.1.1.1”- tag:tag-key - String - 是否必填：否 - （过滤条件）按照GWLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置查询负载均衡详细信息列表的过滤条件，每次请求的Filters的上限为10，Filter.Values的上限为100。
-Filter.Name和Filter.Values皆为必填项。详细的过滤条件如下：
-- VpcId - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“vpc-bhqk****”。
-- Vips - String  - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“10.1.1.1”
-- tag:tag-key - String - 是否必填：否 - （过滤条件）按照GWLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。
-
-                     * @param _filters 查询负载均衡详细信息列表的过滤条件，每次请求的Filters的上限为10，Filter.Values的上限为100。
-Filter.Name和Filter.Values皆为必填项。详细的过滤条件如下：
-- VpcId - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“vpc-bhqk****”。
-- Vips - String  - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“10.1.1.1”
-- tag:tag-key - String - 是否必填：否 - （过滤条件）按照GWLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。
-
+                     * 设置<p>查询负载均衡详细信息列表的过滤条件，每次请求的Filters的上限为10，Filter.Values的上限为100。Filter.Name和Filter.Values皆为必填项。详细的过滤条件如下：- VpcId - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“vpc-bhqk****”。- Vips - String  - 是否必填：否 - （过滤条件）按照网关负载均衡实例的VIP进行过滤，如“10.1.1.1”- tag:tag-key - String - 是否必填：否 - （过滤条件）按照GWLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。</p>
+                     * @param _filters <p>查询负载均衡详细信息列表的过滤条件，每次请求的Filters的上限为10，Filter.Values的上限为100。Filter.Name和Filter.Values皆为必填项。详细的过滤条件如下：- VpcId - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“vpc-bhqk****”。- Vips - String  - 是否必填：否 - （过滤条件）按照网关负载均衡实例的VIP进行过滤，如“10.1.1.1”- tag:tag-key - String - 是否必填：否 - （过滤条件）按照GWLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -148,15 +128,15 @@ Filter.Name和Filter.Values皆为必填项。详细的过滤条件如下：
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取搜索字段，模糊匹配名称、VIP。
-                     * @return SearchKey 搜索字段，模糊匹配名称、VIP。
+                     * 获取<p>搜索字段，模糊匹配名称、VIP。</p>
+                     * @return SearchKey <p>搜索字段，模糊匹配名称、VIP。</p>
                      * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
-                     * 设置搜索字段，模糊匹配名称、VIP。
-                     * @param _searchKey 搜索字段，模糊匹配名称、VIP。
+                     * 设置<p>搜索字段，模糊匹配名称、VIP。</p>
+                     * @param _searchKey <p>搜索字段，模糊匹配名称、VIP。</p>
                      * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
@@ -171,36 +151,31 @@ Filter.Name和Filter.Values皆为必填项。详细的过滤条件如下：
                 private:
 
                     /**
-                     * 网关负载均衡实例ID。支持批量筛选的实例ID数量上限为20个。
+                     * <p>网关负载均衡实例ID。支持批量筛选的实例ID数量上限为20个。</p>
                      */
                     std::vector<std::string> m_loadBalancerIds;
                     bool m_loadBalancerIdsHasBeenSet;
 
                     /**
-                     * 一次批量返回网关负载均衡实例的数量，默认为20，最大值为100。
+                     * <p>一次批量返回网关负载均衡实例的数量，默认为20，最大值为100。</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 返回网关负载均衡实例列表的起始偏移量，默认0。
+                     * <p>返回网关负载均衡实例列表的起始偏移量，默认0。</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询负载均衡详细信息列表的过滤条件，每次请求的Filters的上限为10，Filter.Values的上限为100。
-Filter.Name和Filter.Values皆为必填项。详细的过滤条件如下：
-- VpcId - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“vpc-bhqk****”。
-- Vips - String  - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“10.1.1.1”
-- tag:tag-key - String - 是否必填：否 - （过滤条件）按照GWLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。
-
+                     * <p>查询负载均衡详细信息列表的过滤条件，每次请求的Filters的上限为10，Filter.Values的上限为100。Filter.Name和Filter.Values皆为必填项。详细的过滤条件如下：- VpcId - String - 是否必填：否 - （过滤条件）按照网关负载均衡实例所属的私有网络过滤，如“vpc-bhqk****”。- Vips - String  - 是否必填：否 - （过滤条件）按照网关负载均衡实例的VIP进行过滤，如“10.1.1.1”- tag:tag-key - String - 是否必填：否 - （过滤条件）按照GWLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 搜索字段，模糊匹配名称、VIP。
+                     * <p>搜索字段，模糊匹配名称、VIP。</p>
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;

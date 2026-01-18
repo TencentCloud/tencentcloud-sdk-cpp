@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通道组统计数据
-                     * @return StatisticsData 通道组统计数据
+                     * 获取<p>通道组统计数据</p>
+                     * @return StatisticsData <p>通道组统计数据</p>
                      * 
                      */
                     std::vector<MetricStatisticsInfo> GetStatisticsData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通道组统计数据
+                     * <p>通道组统计数据</p>
                      */
                     std::vector<MetricStatisticsInfo> m_statisticsData;
                     bool m_statisticsDataHasBeenSet;

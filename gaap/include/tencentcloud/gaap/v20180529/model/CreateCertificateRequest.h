@@ -43,35 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取证书类型。其中：
-0，表示基础认证配置；
-1，表示客户端CA证书；
-2，服务器SSL证书；
-3，表示源站CA证书；
-4，表示通道SSL证书。
-                     * @return CertificateType 证书类型。其中：
-0，表示基础认证配置；
-1，表示客户端CA证书；
-2，服务器SSL证书；
-3，表示源站CA证书；
-4，表示通道SSL证书。
+                     * 获取<p>证书类型。其中：0，表示基础认证配置；1，表示客户端CA证书；2，服务器SSL证书；3，表示源站CA证书；4，表示通道SSL证书。</p>
+                     * @return CertificateType <p>证书类型。其中：0，表示基础认证配置；1，表示客户端CA证书；2，服务器SSL证书；3，表示源站CA证书；4，表示通道SSL证书。</p>
                      * 
                      */
                     int64_t GetCertificateType() const;
 
                     /**
-                     * 设置证书类型。其中：
-0，表示基础认证配置；
-1，表示客户端CA证书；
-2，服务器SSL证书；
-3，表示源站CA证书；
-4，表示通道SSL证书。
-                     * @param _certificateType 证书类型。其中：
-0，表示基础认证配置；
-1，表示客户端CA证书；
-2，服务器SSL证书；
-3，表示源站CA证书；
-4，表示通道SSL证书。
+                     * 设置<p>证书类型。其中：0，表示基础认证配置；1，表示客户端CA证书；2，服务器SSL证书；3，表示源站CA证书；4，表示通道SSL证书。</p>
+                     * @param _certificateType <p>证书类型。其中：0，表示基础认证配置；1，表示客户端CA证书；2，服务器SSL证书；3，表示源站CA证书；4，表示通道SSL证书。</p>
                      * 
                      */
                     void SetCertificateType(const int64_t& _certificateType);
@@ -84,23 +64,15 @@ namespace TencentCloud
                     bool CertificateTypeHasBeenSet() const;
 
                     /**
-                     * 获取证书内容。采用url编码。其中：
-当证书类型为基础认证配置时，该参数填写用户名/密码对。格式：“用户名：密码”，例如：root:FSGdT。其中密码使用htpasswd或者openssl，例如：openssl passwd -crypt 123456。
-当证书类型为CA/SSL证书时，该参数填写证书内容，格式为pem。
-                     * @return CertificateContent 证书内容。采用url编码。其中：
-当证书类型为基础认证配置时，该参数填写用户名/密码对。格式：“用户名：密码”，例如：root:FSGdT。其中密码使用htpasswd或者openssl，例如：openssl passwd -crypt 123456。
-当证书类型为CA/SSL证书时，该参数填写证书内容，格式为pem。
+                     * 获取<p>证书内容。采用url编码。其中：当证书类型为基础认证配置时，该参数填写用户名/密码对。格式：“用户名：密码”，例如：root:FSGdT。其中密码使用htpasswd或者openssl，例如：openssl passwd -crypt 123456。当证书类型为CA/SSL证书时，该参数填写证书内容，格式为pem。</p>
+                     * @return CertificateContent <p>证书内容。采用url编码。其中：当证书类型为基础认证配置时，该参数填写用户名/密码对。格式：“用户名：密码”，例如：root:FSGdT。其中密码使用htpasswd或者openssl，例如：openssl passwd -crypt 123456。当证书类型为CA/SSL证书时，该参数填写证书内容，格式为pem。</p>
                      * 
                      */
                     std::string GetCertificateContent() const;
 
                     /**
-                     * 设置证书内容。采用url编码。其中：
-当证书类型为基础认证配置时，该参数填写用户名/密码对。格式：“用户名：密码”，例如：root:FSGdT。其中密码使用htpasswd或者openssl，例如：openssl passwd -crypt 123456。
-当证书类型为CA/SSL证书时，该参数填写证书内容，格式为pem。
-                     * @param _certificateContent 证书内容。采用url编码。其中：
-当证书类型为基础认证配置时，该参数填写用户名/密码对。格式：“用户名：密码”，例如：root:FSGdT。其中密码使用htpasswd或者openssl，例如：openssl passwd -crypt 123456。
-当证书类型为CA/SSL证书时，该参数填写证书内容，格式为pem。
+                     * 设置<p>证书内容。采用url编码。其中：当证书类型为基础认证配置时，该参数填写用户名/密码对。格式：“用户名：密码”，例如：root:FSGdT。其中密码使用htpasswd或者openssl，例如：openssl passwd -crypt 123456。当证书类型为CA/SSL证书时，该参数填写证书内容，格式为pem。</p>
+                     * @param _certificateContent <p>证书内容。采用url编码。其中：当证书类型为基础认证配置时，该参数填写用户名/密码对。格式：“用户名：密码”，例如：root:FSGdT。其中密码使用htpasswd或者openssl，例如：openssl passwd -crypt 123456。当证书类型为CA/SSL证书时，该参数填写证书内容，格式为pem。</p>
                      * 
                      */
                     void SetCertificateContent(const std::string& _certificateContent);
@@ -113,15 +85,15 @@ namespace TencentCloud
                     bool CertificateContentHasBeenSet() const;
 
                     /**
-                     * 获取证书名称
-                     * @return CertificateAlias 证书名称
+                     * 获取<p>证书名称</p>
+                     * @return CertificateAlias <p>证书名称</p>
                      * 
                      */
                     std::string GetCertificateAlias() const;
 
                     /**
-                     * 设置证书名称
-                     * @param _certificateAlias 证书名称
+                     * 设置<p>证书名称</p>
+                     * @param _certificateAlias <p>证书名称</p>
                      * 
                      */
                     void SetCertificateAlias(const std::string& _certificateAlias);
@@ -134,15 +106,15 @@ namespace TencentCloud
                     bool CertificateAliasHasBeenSet() const;
 
                     /**
-                     * 获取密钥内容。采用url编码。仅当证书类型为SSL证书时，需要填写该参数。格式为pem。
-                     * @return CertificateKey 密钥内容。采用url编码。仅当证书类型为SSL证书时，需要填写该参数。格式为pem。
+                     * 获取<p>密钥内容。采用url编码。仅当证书类型为SSL证书时，需要填写该参数。格式为pem。</p>
+                     * @return CertificateKey <p>密钥内容。采用url编码。仅当证书类型为SSL证书时，需要填写该参数。格式为pem。</p>
                      * 
                      */
                     std::string GetCertificateKey() const;
 
                     /**
-                     * 设置密钥内容。采用url编码。仅当证书类型为SSL证书时，需要填写该参数。格式为pem。
-                     * @param _certificateKey 密钥内容。采用url编码。仅当证书类型为SSL证书时，需要填写该参数。格式为pem。
+                     * 设置<p>密钥内容。采用url编码。仅当证书类型为SSL证书时，需要填写该参数。格式为pem。</p>
+                     * @param _certificateKey <p>密钥内容。采用url编码。仅当证书类型为SSL证书时，需要填写该参数。格式为pem。</p>
                      * 
                      */
                     void SetCertificateKey(const std::string& _certificateKey);
@@ -157,32 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 证书类型。其中：
-0，表示基础认证配置；
-1，表示客户端CA证书；
-2，服务器SSL证书；
-3，表示源站CA证书；
-4，表示通道SSL证书。
+                     * <p>证书类型。其中：0，表示基础认证配置；1，表示客户端CA证书；2，服务器SSL证书；3，表示源站CA证书；4，表示通道SSL证书。</p>
                      */
                     int64_t m_certificateType;
                     bool m_certificateTypeHasBeenSet;
 
                     /**
-                     * 证书内容。采用url编码。其中：
-当证书类型为基础认证配置时，该参数填写用户名/密码对。格式：“用户名：密码”，例如：root:FSGdT。其中密码使用htpasswd或者openssl，例如：openssl passwd -crypt 123456。
-当证书类型为CA/SSL证书时，该参数填写证书内容，格式为pem。
+                     * <p>证书内容。采用url编码。其中：当证书类型为基础认证配置时，该参数填写用户名/密码对。格式：“用户名：密码”，例如：root:FSGdT。其中密码使用htpasswd或者openssl，例如：openssl passwd -crypt 123456。当证书类型为CA/SSL证书时，该参数填写证书内容，格式为pem。</p>
                      */
                     std::string m_certificateContent;
                     bool m_certificateContentHasBeenSet;
 
                     /**
-                     * 证书名称
+                     * <p>证书名称</p>
                      */
                     std::string m_certificateAlias;
                     bool m_certificateAliasHasBeenSet;
 
                     /**
-                     * 密钥内容。采用url编码。仅当证书类型为SSL证书时，需要填写该参数。格式为pem。
+                     * <p>密钥内容。采用url编码。仅当证书类型为SSL证书时，需要填写该参数。格式为pem。</p>
                      */
                     std::string m_certificateKey;
                     bool m_certificateKeyHasBeenSet;

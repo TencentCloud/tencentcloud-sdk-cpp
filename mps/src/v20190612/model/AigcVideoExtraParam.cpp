@@ -23,6 +23,8 @@ using namespace std;
 AigcVideoExtraParam::AigcVideoExtraParam() :
     m_resolutionHasBeenSet(false),
     m_aspectRatioHasBeenSet(false),
+    m_logoAddHasBeenSet(false),
+    m_enableAudioHasBeenSet(false),
     m_offPeakHasBeenSet(false)
 {
 }
@@ -50,6 +52,26 @@ CoreInternalOutcome AigcVideoExtraParam::Deserialize(const rapidjson::Value &val
         }
         m_aspectRatio = string(value["AspectRatio"].GetString());
         m_aspectRatioHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogoAdd") && !value["LogoAdd"].IsNull())
+    {
+        if (!value["LogoAdd"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoExtraParam.LogoAdd` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_logoAdd = value["LogoAdd"].GetInt64();
+        m_logoAddHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableAudio") && !value["EnableAudio"].IsNull())
+    {
+        if (!value["EnableAudio"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoExtraParam.EnableAudio` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableAudio = value["EnableAudio"].GetBool();
+        m_enableAudioHasBeenSet = true;
     }
 
     if (value.HasMember("OffPeak") && !value["OffPeak"].IsNull())
@@ -83,6 +105,22 @@ void AigcVideoExtraParam::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "AspectRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_aspectRatio.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logoAddHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogoAdd";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_logoAdd, allocator);
+    }
+
+    if (m_enableAudioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableAudio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableAudio, allocator);
     }
 
     if (m_offPeakHasBeenSet)
@@ -126,6 +164,38 @@ void AigcVideoExtraParam::SetAspectRatio(const string& _aspectRatio)
 bool AigcVideoExtraParam::AspectRatioHasBeenSet() const
 {
     return m_aspectRatioHasBeenSet;
+}
+
+int64_t AigcVideoExtraParam::GetLogoAdd() const
+{
+    return m_logoAdd;
+}
+
+void AigcVideoExtraParam::SetLogoAdd(const int64_t& _logoAdd)
+{
+    m_logoAdd = _logoAdd;
+    m_logoAddHasBeenSet = true;
+}
+
+bool AigcVideoExtraParam::LogoAddHasBeenSet() const
+{
+    return m_logoAddHasBeenSet;
+}
+
+bool AigcVideoExtraParam::GetEnableAudio() const
+{
+    return m_enableAudio;
+}
+
+void AigcVideoExtraParam::SetEnableAudio(const bool& _enableAudio)
+{
+    m_enableAudio = _enableAudio;
+    m_enableAudioHasBeenSet = true;
+}
+
+bool AigcVideoExtraParam::EnableAudioHasBeenSet() const
+{
+    return m_enableAudioHasBeenSet;
 }
 
 bool AigcVideoExtraParam::GetOffPeak() const

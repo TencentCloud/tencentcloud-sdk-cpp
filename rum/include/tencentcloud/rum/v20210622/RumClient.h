@@ -73,6 +73,8 @@
 #include <tencentcloud/rum/v20210622/model/DescribeDataPvUrlInfoResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsV2Request.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsV2Response.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataReportCountRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataReportCountResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataSetUrlStatisticsRequest.h>
@@ -220,6 +222,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDataPvUrlStatisticsResponse> DescribeDataPvUrlStatisticsOutcome;
                 typedef std::future<DescribeDataPvUrlStatisticsOutcome> DescribeDataPvUrlStatisticsOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataPvUrlStatisticsRequest&, DescribeDataPvUrlStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataPvUrlStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataPvUrlStatisticsV2Response> DescribeDataPvUrlStatisticsV2Outcome;
+                typedef std::future<DescribeDataPvUrlStatisticsV2Outcome> DescribeDataPvUrlStatisticsV2OutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeDataPvUrlStatisticsV2Request&, DescribeDataPvUrlStatisticsV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataPvUrlStatisticsV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataReportCountResponse> DescribeDataReportCountOutcome;
                 typedef std::future<DescribeDataReportCountOutcome> DescribeDataReportCountOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataReportCountRequest&, DescribeDataReportCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataReportCountAsyncHandler;
@@ -534,6 +539,15 @@ namespace TencentCloud
                 DescribeDataPvUrlStatisticsOutcome DescribeDataPvUrlStatistics(const Model::DescribeDataPvUrlStatisticsRequest &request);
                 void DescribeDataPvUrlStatisticsAsync(const Model::DescribeDataPvUrlStatisticsRequest& request, const DescribeDataPvUrlStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDataPvUrlStatisticsOutcomeCallable DescribeDataPvUrlStatisticsCallable(const Model::DescribeDataPvUrlStatisticsRequest& request);
+
+                /**
+                 *获取DescribeDataPvUrlStatistics信息
+                 * @param req DescribeDataPvUrlStatisticsV2Request
+                 * @return DescribeDataPvUrlStatisticsV2Outcome
+                 */
+                DescribeDataPvUrlStatisticsV2Outcome DescribeDataPvUrlStatisticsV2(const Model::DescribeDataPvUrlStatisticsV2Request &request);
+                void DescribeDataPvUrlStatisticsV2Async(const Model::DescribeDataPvUrlStatisticsV2Request& request, const DescribeDataPvUrlStatisticsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataPvUrlStatisticsV2OutcomeCallable DescribeDataPvUrlStatisticsV2Callable(const Model::DescribeDataPvUrlStatisticsV2Request& request);
 
                 /**
                  *获取项目上报量

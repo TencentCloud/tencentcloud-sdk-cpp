@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询能否创建给定配置的通道，1可以创建，0不可创建。
-                     * @return CheckFlag 查询能否创建给定配置的通道，1可以创建，0不可创建。
+                     * 获取<p>查询能否创建给定配置的通道，1可以创建，0不可创建。</p>
+                     * @return CheckFlag <p>查询能否创建给定配置的通道，1可以创建，0不可创建。</p>
                      * 
                      */
                     uint64_t GetCheckFlag() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询能否创建给定配置的通道，1可以创建，0不可创建。
+                     * <p>查询能否创建给定配置的通道，1可以创建，0不可创建。</p>
                      */
                     uint64_t m_checkFlag;
                     bool m_checkFlagHasBeenSet;

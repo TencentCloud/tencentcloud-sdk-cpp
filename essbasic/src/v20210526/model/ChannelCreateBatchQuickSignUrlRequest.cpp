@@ -36,7 +36,8 @@ ChannelCreateBatchQuickSignUrlRequest::ChannelCreateBatchQuickSignUrlRequest() :
     m_videoVerifyTimesLimitHasBeenSet(false),
     m_cacheApproverInfoHasBeenSet(false),
     m_canBatchRejectHasBeenSet(false),
-    m_presetApproverInfoHasBeenSet(false)
+    m_presetApproverInfoHasBeenSet(false),
+    m_canSkipReadFlowHasBeenSet(false)
 {
 }
 
@@ -177,6 +178,14 @@ string ChannelCreateBatchQuickSignUrlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_presetApproverInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_canSkipReadFlowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanSkipReadFlow";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_canSkipReadFlow, allocator);
     }
 
 
@@ -409,6 +418,22 @@ void ChannelCreateBatchQuickSignUrlRequest::SetPresetApproverInfo(const PresetAp
 bool ChannelCreateBatchQuickSignUrlRequest::PresetApproverInfoHasBeenSet() const
 {
     return m_presetApproverInfoHasBeenSet;
+}
+
+bool ChannelCreateBatchQuickSignUrlRequest::GetCanSkipReadFlow() const
+{
+    return m_canSkipReadFlow;
+}
+
+void ChannelCreateBatchQuickSignUrlRequest::SetCanSkipReadFlow(const bool& _canSkipReadFlow)
+{
+    m_canSkipReadFlow = _canSkipReadFlow;
+    m_canSkipReadFlowHasBeenSet = true;
+}
+
+bool ChannelCreateBatchQuickSignUrlRequest::CanSkipReadFlowHasBeenSet() const
+{
+    return m_canSkipReadFlowHasBeenSet;
 }
 
 

@@ -55,7 +55,8 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_aigcImageTaskHasBeenSet(false),
     m_aigcVideoTaskHasBeenSet(false),
     m_importMediaKnowledgeHasBeenSet(false),
-    m_sceneAigcImageTaskHasBeenSet(false)
+    m_sceneAigcImageTaskHasBeenSet(false),
+    m_sceneAigcVideoTaskHasBeenSet(false)
 {
 }
 
@@ -602,6 +603,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_sceneAigcImageTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SceneAigcVideoTask") && !rsp["SceneAigcVideoTask"].IsNull())
+    {
+        if (!rsp["SceneAigcVideoTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SceneAigcVideoTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_sceneAigcVideoTask.Deserialize(rsp["SceneAigcVideoTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_sceneAigcVideoTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -893,6 +911,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sceneAigcImageTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_sceneAigcVideoTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneAigcVideoTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sceneAigcVideoTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1225,6 +1252,16 @@ SceneAigcImageTask DescribeTaskDetailResponse::GetSceneAigcImageTask() const
 bool DescribeTaskDetailResponse::SceneAigcImageTaskHasBeenSet() const
 {
     return m_sceneAigcImageTaskHasBeenSet;
+}
+
+SceneAigcVideoTask DescribeTaskDetailResponse::GetSceneAigcVideoTask() const
+{
+    return m_sceneAigcVideoTask;
+}
+
+bool DescribeTaskDetailResponse::SceneAigcVideoTaskHasBeenSet() const
+{
+    return m_sceneAigcVideoTaskHasBeenSet;
 }
 
 

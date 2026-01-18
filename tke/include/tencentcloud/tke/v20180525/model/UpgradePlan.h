@@ -110,6 +110,27 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
+                     * 获取集群地域
+                     * @return Region 集群地域
+                     * 
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置集群地域
+                     * @param _region 集群地域
+                     * 
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     * 
+                     */
+                    bool RegionHasBeenSet() const;
+
+                    /**
                      * 获取预计开始时间
                      * @return PlanedStartAt 预计开始时间
                      * 
@@ -233,6 +254,12 @@ namespace TencentCloud
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * 集群地域
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
 
                     /**
                      * 预计开始时间

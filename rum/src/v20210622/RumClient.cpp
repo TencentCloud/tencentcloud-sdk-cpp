@@ -1290,6 +1290,56 @@ RumClient::DescribeDataPvUrlStatisticsOutcomeCallable RumClient::DescribeDataPvU
     return prom->get_future();
 }
 
+RumClient::DescribeDataPvUrlStatisticsV2Outcome RumClient::DescribeDataPvUrlStatisticsV2(const DescribeDataPvUrlStatisticsV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataPvUrlStatisticsV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataPvUrlStatisticsV2Response rsp = DescribeDataPvUrlStatisticsV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataPvUrlStatisticsV2Outcome(rsp);
+        else
+            return DescribeDataPvUrlStatisticsV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataPvUrlStatisticsV2Outcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeDataPvUrlStatisticsV2Async(const DescribeDataPvUrlStatisticsV2Request& request, const DescribeDataPvUrlStatisticsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDataPvUrlStatisticsV2Request&;
+    using Resp = DescribeDataPvUrlStatisticsV2Response;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDataPvUrlStatisticsV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeDataPvUrlStatisticsV2OutcomeCallable RumClient::DescribeDataPvUrlStatisticsV2Callable(const DescribeDataPvUrlStatisticsV2Request &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDataPvUrlStatisticsV2Outcome>>();
+    DescribeDataPvUrlStatisticsV2Async(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeDataPvUrlStatisticsV2Request&,
+        DescribeDataPvUrlStatisticsV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 RumClient::DescribeDataReportCountOutcome RumClient::DescribeDataReportCount(const DescribeDataReportCountRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDataReportCount");

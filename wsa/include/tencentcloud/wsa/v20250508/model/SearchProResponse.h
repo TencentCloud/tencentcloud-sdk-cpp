@@ -90,6 +90,20 @@ favicon：网站图标链接，部分不知名站点结果可能为空
                     bool PagesHasBeenSet() const;
 
                     /**
+                     * 获取用户版本：standard/premium/lite
+                     * @return Version 用户版本：standard/premium/lite
+                     * 
+                     */
+                    std::string GetVersion() const;
+
+                    /**
+                     * 判断参数 Version 是否已赋值
+                     * @return Version 是否已赋值
+                     * 
+                     */
+                    bool VersionHasBeenSet() const;
+
+                    /**
                      * 获取提示信息
                      * @return Msg 提示信息
                      * 
@@ -125,6 +139,12 @@ favicon：网站图标链接，部分不知名站点结果可能为空
                      */
                     std::vector<std::string> m_pages;
                     bool m_pagesHasBeenSet;
+
+                    /**
+                     * 用户版本：standard/premium/lite
+                     */
+                    std::string m_version;
+                    bool m_versionHasBeenSet;
 
                     /**
                      * 提示信息

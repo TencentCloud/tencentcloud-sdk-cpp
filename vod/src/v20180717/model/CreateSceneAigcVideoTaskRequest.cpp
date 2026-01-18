@@ -30,7 +30,8 @@ CreateSceneAigcVideoTaskRequest::CreateSceneAigcVideoTaskRequest() :
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
     m_tasksPriorityHasBeenSet(false),
-    m_extInfoHasBeenSet(false)
+    m_extInfoHasBeenSet(false),
+    m_promptHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string CreateSceneAigcVideoTaskRequest::ToJsonString() const
         string key = "ExtInfo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_promptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Prompt";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_prompt.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -248,6 +257,22 @@ void CreateSceneAigcVideoTaskRequest::SetExtInfo(const string& _extInfo)
 bool CreateSceneAigcVideoTaskRequest::ExtInfoHasBeenSet() const
 {
     return m_extInfoHasBeenSet;
+}
+
+string CreateSceneAigcVideoTaskRequest::GetPrompt() const
+{
+    return m_prompt;
+}
+
+void CreateSceneAigcVideoTaskRequest::SetPrompt(const string& _prompt)
+{
+    m_prompt = _prompt;
+    m_promptHasBeenSet = true;
+}
+
+bool CreateSceneAigcVideoTaskRequest::PromptHasBeenSet() const
+{
+    return m_promptHasBeenSet;
 }
 
 

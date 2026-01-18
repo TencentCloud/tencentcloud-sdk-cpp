@@ -101,6 +101,8 @@
 #include <tencentcloud/tione/v20211111/model/DescribeNotebooksResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribePlatformImagesRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribePlatformImagesResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeSubAccountLinuxUserInfosRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeSubAccountLinuxUserInfosResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionsRequest.h>
@@ -133,6 +135,8 @@
 #include <tencentcloud/tione/v20211111/model/StopNotebookResponse.h>
 #include <tencentcloud/tione/v20211111/model/StopTrainingTaskRequest.h>
 #include <tencentcloud/tione/v20211111/model/StopTrainingTaskResponse.h>
+#include <tencentcloud/tione/v20211111/model/UpdateSubAccountLinuxUserInfoRequest.h>
+#include <tencentcloud/tione/v20211111/model/UpdateSubAccountLinuxUserInfoResponse.h>
 
 
 namespace TencentCloud
@@ -264,6 +268,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePlatformImagesResponse> DescribePlatformImagesOutcome;
                 typedef std::future<DescribePlatformImagesOutcome> DescribePlatformImagesOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribePlatformImagesRequest&, DescribePlatformImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlatformImagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSubAccountLinuxUserInfosResponse> DescribeSubAccountLinuxUserInfosOutcome;
+                typedef std::future<DescribeSubAccountLinuxUserInfosOutcome> DescribeSubAccountLinuxUserInfosOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeSubAccountLinuxUserInfosRequest&, DescribeSubAccountLinuxUserInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubAccountLinuxUserInfosAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTrainingModelVersionResponse> DescribeTrainingModelVersionOutcome;
                 typedef std::future<DescribeTrainingModelVersionOutcome> DescribeTrainingModelVersionOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeTrainingModelVersionRequest&, DescribeTrainingModelVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrainingModelVersionAsyncHandler;
@@ -312,6 +319,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopTrainingTaskResponse> StopTrainingTaskOutcome;
                 typedef std::future<StopTrainingTaskOutcome> StopTrainingTaskOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::StopTrainingTaskRequest&, StopTrainingTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopTrainingTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateSubAccountLinuxUserInfoResponse> UpdateSubAccountLinuxUserInfoOutcome;
+                typedef std::future<UpdateSubAccountLinuxUserInfoOutcome> UpdateSubAccountLinuxUserInfoOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::UpdateSubAccountLinuxUserInfoRequest&, UpdateSubAccountLinuxUserInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSubAccountLinuxUserInfoAsyncHandler;
 
 
 
@@ -672,6 +682,15 @@ https://cloud.tencent.com/document/product/1278/85305
                 DescribePlatformImagesOutcomeCallable DescribePlatformImagesCallable(const Model::DescribePlatformImagesRequest& request);
 
                 /**
+                 *批量查询子账号Linux用户信息
+                 * @param req DescribeSubAccountLinuxUserInfosRequest
+                 * @return DescribeSubAccountLinuxUserInfosOutcome
+                 */
+                DescribeSubAccountLinuxUserInfosOutcome DescribeSubAccountLinuxUserInfos(const Model::DescribeSubAccountLinuxUserInfosRequest &request);
+                void DescribeSubAccountLinuxUserInfosAsync(const Model::DescribeSubAccountLinuxUserInfosRequest& request, const DescribeSubAccountLinuxUserInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSubAccountLinuxUserInfosOutcomeCallable DescribeSubAccountLinuxUserInfosCallable(const Model::DescribeSubAccountLinuxUserInfosRequest& request);
+
+                /**
                  *查询模型版本
                  * @param req DescribeTrainingModelVersionRequest
                  * @return DescribeTrainingModelVersionOutcome
@@ -814,6 +833,15 @@ https://cloud.tencent.com/document/product/1278/85305
                 StopTrainingTaskOutcome StopTrainingTask(const Model::StopTrainingTaskRequest &request);
                 void StopTrainingTaskAsync(const Model::StopTrainingTaskRequest& request, const StopTrainingTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopTrainingTaskOutcomeCallable StopTrainingTaskCallable(const Model::StopTrainingTaskRequest& request);
+
+                /**
+                 *更新子账号Linux用户信息
+                 * @param req UpdateSubAccountLinuxUserInfoRequest
+                 * @return UpdateSubAccountLinuxUserInfoOutcome
+                 */
+                UpdateSubAccountLinuxUserInfoOutcome UpdateSubAccountLinuxUserInfo(const Model::UpdateSubAccountLinuxUserInfoRequest &request);
+                void UpdateSubAccountLinuxUserInfoAsync(const Model::UpdateSubAccountLinuxUserInfoRequest& request, const UpdateSubAccountLinuxUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateSubAccountLinuxUserInfoOutcomeCallable UpdateSubAccountLinuxUserInfoCallable(const Model::UpdateSubAccountLinuxUserInfoRequest& request);
 
             };
         }

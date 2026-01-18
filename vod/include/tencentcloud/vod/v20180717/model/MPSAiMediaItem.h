@@ -48,15 +48,79 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取MPS智能处理任务类型
-                     * @return TaskType MPS智能处理任务类型
+                     * 获取MPS智能处理任务类型，可取值：
+<li>AiAnalysis.ClassificationTask：智能分类任务。</li>
+<li>AiAnalysis.CoverTask：智能封面任务。</li>
+<li>AiAnalysis.TagTask：智能标签任务。</li>
+<li>AiAnalysis.FrameTagTask：智能按帧标签任务。</li>
+<li>AiAnalysis.HighlightTask：智能高光任务。</li>
+<li>AiAnalysis.SegmentTask：智能拆条任务。</li>
+<li>AiAnalysis.HeadTailTask：智能片头片尾任务。</li>
+<li>AiAnalysis.DescriptionTask：智能摘要任务。</li>
+<li>AiAnalysis.HorizontalToVerticalTask：智能横转竖任务。</li>
+<li>AiAnalysis.DubbingTask：智能译制任务。</li>
+<li>AiAnalysis.VideoRemakeTask：智能去重任务。</li>
+<li>AiAnalysis.VideoComprehensionTask：视频理解任务。</li>
+<li>SmartSubtitle.AsrFullTextTask：智能语音全文识别任务。</li>
+<li>SmartSubtitle.TransTextTask：	翻译结果。</li>
+<li>SmartSubtitle.PureSubtitleTransTask：返回纯字幕文件翻译结果。</li>
+<li>SmartSubtitle.OcrFullTextTask：智能文字提取字幕任务。</li>
+                     * @return TaskType MPS智能处理任务类型，可取值：
+<li>AiAnalysis.ClassificationTask：智能分类任务。</li>
+<li>AiAnalysis.CoverTask：智能封面任务。</li>
+<li>AiAnalysis.TagTask：智能标签任务。</li>
+<li>AiAnalysis.FrameTagTask：智能按帧标签任务。</li>
+<li>AiAnalysis.HighlightTask：智能高光任务。</li>
+<li>AiAnalysis.SegmentTask：智能拆条任务。</li>
+<li>AiAnalysis.HeadTailTask：智能片头片尾任务。</li>
+<li>AiAnalysis.DescriptionTask：智能摘要任务。</li>
+<li>AiAnalysis.HorizontalToVerticalTask：智能横转竖任务。</li>
+<li>AiAnalysis.DubbingTask：智能译制任务。</li>
+<li>AiAnalysis.VideoRemakeTask：智能去重任务。</li>
+<li>AiAnalysis.VideoComprehensionTask：视频理解任务。</li>
+<li>SmartSubtitle.AsrFullTextTask：智能语音全文识别任务。</li>
+<li>SmartSubtitle.TransTextTask：	翻译结果。</li>
+<li>SmartSubtitle.PureSubtitleTransTask：返回纯字幕文件翻译结果。</li>
+<li>SmartSubtitle.OcrFullTextTask：智能文字提取字幕任务。</li>
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置MPS智能处理任务类型
-                     * @param _taskType MPS智能处理任务类型
+                     * 设置MPS智能处理任务类型，可取值：
+<li>AiAnalysis.ClassificationTask：智能分类任务。</li>
+<li>AiAnalysis.CoverTask：智能封面任务。</li>
+<li>AiAnalysis.TagTask：智能标签任务。</li>
+<li>AiAnalysis.FrameTagTask：智能按帧标签任务。</li>
+<li>AiAnalysis.HighlightTask：智能高光任务。</li>
+<li>AiAnalysis.SegmentTask：智能拆条任务。</li>
+<li>AiAnalysis.HeadTailTask：智能片头片尾任务。</li>
+<li>AiAnalysis.DescriptionTask：智能摘要任务。</li>
+<li>AiAnalysis.HorizontalToVerticalTask：智能横转竖任务。</li>
+<li>AiAnalysis.DubbingTask：智能译制任务。</li>
+<li>AiAnalysis.VideoRemakeTask：智能去重任务。</li>
+<li>AiAnalysis.VideoComprehensionTask：视频理解任务。</li>
+<li>SmartSubtitle.AsrFullTextTask：智能语音全文识别任务。</li>
+<li>SmartSubtitle.TransTextTask：	翻译结果。</li>
+<li>SmartSubtitle.PureSubtitleTransTask：返回纯字幕文件翻译结果。</li>
+<li>SmartSubtitle.OcrFullTextTask：智能文字提取字幕任务。</li>
+                     * @param _taskType MPS智能处理任务类型，可取值：
+<li>AiAnalysis.ClassificationTask：智能分类任务。</li>
+<li>AiAnalysis.CoverTask：智能封面任务。</li>
+<li>AiAnalysis.TagTask：智能标签任务。</li>
+<li>AiAnalysis.FrameTagTask：智能按帧标签任务。</li>
+<li>AiAnalysis.HighlightTask：智能高光任务。</li>
+<li>AiAnalysis.SegmentTask：智能拆条任务。</li>
+<li>AiAnalysis.HeadTailTask：智能片头片尾任务。</li>
+<li>AiAnalysis.DescriptionTask：智能摘要任务。</li>
+<li>AiAnalysis.HorizontalToVerticalTask：智能横转竖任务。</li>
+<li>AiAnalysis.DubbingTask：智能译制任务。</li>
+<li>AiAnalysis.VideoRemakeTask：智能去重任务。</li>
+<li>AiAnalysis.VideoComprehensionTask：视频理解任务。</li>
+<li>SmartSubtitle.AsrFullTextTask：智能语音全文识别任务。</li>
+<li>SmartSubtitle.TransTextTask：	翻译结果。</li>
+<li>SmartSubtitle.PureSubtitleTransTask：返回纯字幕文件翻译结果。</li>
+<li>SmartSubtitle.OcrFullTextTask：智能文字提取字幕任务。</li>
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -69,15 +133,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取MPS 智能媒资任务输出
-                     * @return AiMediaTasks MPS 智能媒资任务输出
+                     * 获取MPS 智能处理任务结果集合
+                     * @return AiMediaTasks MPS 智能处理任务结果集合
                      * 
                      */
                     std::vector<MPSAiMediaTask> GetAiMediaTasks() const;
 
                     /**
-                     * 设置MPS 智能媒资任务输出
-                     * @param _aiMediaTasks MPS 智能媒资任务输出
+                     * 设置MPS 智能处理任务结果集合
+                     * @param _aiMediaTasks MPS 智能处理任务结果集合
                      * 
                      */
                     void SetAiMediaTasks(const std::vector<MPSAiMediaTask>& _aiMediaTasks);
@@ -92,13 +156,29 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * MPS智能处理任务类型
+                     * MPS智能处理任务类型，可取值：
+<li>AiAnalysis.ClassificationTask：智能分类任务。</li>
+<li>AiAnalysis.CoverTask：智能封面任务。</li>
+<li>AiAnalysis.TagTask：智能标签任务。</li>
+<li>AiAnalysis.FrameTagTask：智能按帧标签任务。</li>
+<li>AiAnalysis.HighlightTask：智能高光任务。</li>
+<li>AiAnalysis.SegmentTask：智能拆条任务。</li>
+<li>AiAnalysis.HeadTailTask：智能片头片尾任务。</li>
+<li>AiAnalysis.DescriptionTask：智能摘要任务。</li>
+<li>AiAnalysis.HorizontalToVerticalTask：智能横转竖任务。</li>
+<li>AiAnalysis.DubbingTask：智能译制任务。</li>
+<li>AiAnalysis.VideoRemakeTask：智能去重任务。</li>
+<li>AiAnalysis.VideoComprehensionTask：视频理解任务。</li>
+<li>SmartSubtitle.AsrFullTextTask：智能语音全文识别任务。</li>
+<li>SmartSubtitle.TransTextTask：	翻译结果。</li>
+<li>SmartSubtitle.PureSubtitleTransTask：返回纯字幕文件翻译结果。</li>
+<li>SmartSubtitle.OcrFullTextTask：智能文字提取字幕任务。</li>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * MPS 智能媒资任务输出
+                     * MPS 智能处理任务结果集合
                      */
                     std::vector<MPSAiMediaTask> m_aiMediaTasks;
                     bool m_aiMediaTasksHasBeenSet;

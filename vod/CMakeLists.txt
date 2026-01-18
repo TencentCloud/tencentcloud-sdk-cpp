@@ -322,6 +322,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/RebuildMediaTargetAudioStream.h
   include/tencentcloud/vod/v20180717/model/ConcatFileInfo2017.h
   include/tencentcloud/vod/v20180717/model/ContentReviewResult.h
+  include/tencentcloud/vod/v20180717/model/SceneAigcVideoTaskInput.h
   include/tencentcloud/vod/v20180717/model/MediaProcessTaskImageSpriteResult.h
   include/tencentcloud/vod/v20180717/model/DescribeJustInTimeTranscodeTemplatesResponse.h
   include/tencentcloud/vod/v20180717/model/CrashScreenConfigureInfo.h
@@ -384,6 +385,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskAsrTranslateResultInput.h
   include/tencentcloud/vod/v20180717/model/WebPageRecordInfo.h
   include/tencentcloud/vod/v20180717/model/DescribeCDNUsageDataResponse.h
+  include/tencentcloud/vod/v20180717/model/SceneAigcVideoTaskOutput.h
   include/tencentcloud/vod/v20180717/model/ModifyWordSampleRequest.h
   include/tencentcloud/vod/v20180717/model/EditMediaTask.h
   include/tencentcloud/vod/v20180717/model/CreateJustInTimeTranscodeTemplateResponse.h
@@ -684,6 +686,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/MPSAiMediaInfo.h
   include/tencentcloud/vod/v20180717/model/AiReviewPornTaskOutput.h
   include/tencentcloud/vod/v20180717/model/SDMCDrmKeyProviderInfo.h
+  include/tencentcloud/vod/v20180717/model/SceneAigcVideoTask.h
   include/tencentcloud/vod/v20180717/model/CreateSceneAigcVideoTaskResponse.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskAsrFullTextResult.h
   include/tencentcloud/vod/v20180717/model/DeleteQualityInspectTemplateResponse.h
@@ -1255,6 +1258,7 @@ set(vod_src
   src/v20180717/model/RebuildMediaTargetAudioStream.cpp
   src/v20180717/model/ConcatFileInfo2017.cpp
   src/v20180717/model/ContentReviewResult.cpp
+  src/v20180717/model/SceneAigcVideoTaskInput.cpp
   src/v20180717/model/MediaProcessTaskImageSpriteResult.cpp
   src/v20180717/model/DescribeJustInTimeTranscodeTemplatesResponse.cpp
   src/v20180717/model/CrashScreenConfigureInfo.cpp
@@ -1317,6 +1321,7 @@ set(vod_src
   src/v20180717/model/AiRecognitionTaskAsrTranslateResultInput.cpp
   src/v20180717/model/WebPageRecordInfo.cpp
   src/v20180717/model/DescribeCDNUsageDataResponse.cpp
+  src/v20180717/model/SceneAigcVideoTaskOutput.cpp
   src/v20180717/model/ModifyWordSampleRequest.cpp
   src/v20180717/model/EditMediaTask.cpp
   src/v20180717/model/CreateJustInTimeTranscodeTemplateResponse.cpp
@@ -1617,6 +1622,7 @@ set(vod_src
   src/v20180717/model/MPSAiMediaInfo.cpp
   src/v20180717/model/AiReviewPornTaskOutput.cpp
   src/v20180717/model/SDMCDrmKeyProviderInfo.cpp
+  src/v20180717/model/SceneAigcVideoTask.cpp
   src/v20180717/model/CreateSceneAigcVideoTaskResponse.cpp
   src/v20180717/model/AiRecognitionTaskAsrFullTextResult.cpp
   src/v20180717/model/DeleteQualityInspectTemplateResponse.cpp

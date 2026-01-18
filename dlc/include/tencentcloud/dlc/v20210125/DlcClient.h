@@ -77,6 +77,8 @@
 #include <tencentcloud/dlc/v20210125/model/CreateDataMaskStrategyResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateDatabaseRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateDatabaseResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateDatasourceConnectionRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateDatasourceConnectionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateExportTaskRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateExportTaskResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateImportTaskRequest.h>
@@ -488,6 +490,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDatabaseResponse> CreateDatabaseOutcome;
                 typedef std::future<CreateDatabaseOutcome> CreateDatabaseOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateDatabaseRequest&, CreateDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatabaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDatasourceConnectionResponse> CreateDatasourceConnectionOutcome;
+                typedef std::future<CreateDatasourceConnectionOutcome> CreateDatasourceConnectionOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateDatasourceConnectionRequest&, CreateDatasourceConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatasourceConnectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateExportTaskResponse> CreateExportTaskOutcome;
                 typedef std::future<CreateExportTaskOutcome> CreateExportTaskOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateExportTaskRequest&, CreateExportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExportTaskAsyncHandler;
@@ -1207,6 +1212,15 @@ namespace TencentCloud
                 CreateDatabaseOutcome CreateDatabase(const Model::CreateDatabaseRequest &request);
                 void CreateDatabaseAsync(const Model::CreateDatabaseRequest& request, const CreateDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDatabaseOutcomeCallable CreateDatabaseCallable(const Model::CreateDatabaseRequest& request);
+
+                /**
+                 *创建数据源
+                 * @param req CreateDatasourceConnectionRequest
+                 * @return CreateDatasourceConnectionOutcome
+                 */
+                CreateDatasourceConnectionOutcome CreateDatasourceConnection(const Model::CreateDatasourceConnectionRequest &request);
+                void CreateDatasourceConnectionAsync(const Model::CreateDatasourceConnectionRequest& request, const CreateDatasourceConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDatasourceConnectionOutcomeCallable CreateDatasourceConnectionCallable(const Model::CreateDatasourceConnectionRequest& request);
 
                 /**
                  *该接口（CreateExportTask）用于创建导出任务

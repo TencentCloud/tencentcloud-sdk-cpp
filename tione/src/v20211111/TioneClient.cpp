@@ -1990,6 +1990,56 @@ TioneClient::DescribePlatformImagesOutcomeCallable TioneClient::DescribePlatform
     return prom->get_future();
 }
 
+TioneClient::DescribeSubAccountLinuxUserInfosOutcome TioneClient::DescribeSubAccountLinuxUserInfos(const DescribeSubAccountLinuxUserInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSubAccountLinuxUserInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSubAccountLinuxUserInfosResponse rsp = DescribeSubAccountLinuxUserInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSubAccountLinuxUserInfosOutcome(rsp);
+        else
+            return DescribeSubAccountLinuxUserInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSubAccountLinuxUserInfosOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeSubAccountLinuxUserInfosAsync(const DescribeSubAccountLinuxUserInfosRequest& request, const DescribeSubAccountLinuxUserInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSubAccountLinuxUserInfosRequest&;
+    using Resp = DescribeSubAccountLinuxUserInfosResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSubAccountLinuxUserInfos", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DescribeSubAccountLinuxUserInfosOutcomeCallable TioneClient::DescribeSubAccountLinuxUserInfosCallable(const DescribeSubAccountLinuxUserInfosRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSubAccountLinuxUserInfosOutcome>>();
+    DescribeSubAccountLinuxUserInfosAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DescribeSubAccountLinuxUserInfosRequest&,
+        DescribeSubAccountLinuxUserInfosOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TioneClient::DescribeTrainingModelVersionOutcome TioneClient::DescribeTrainingModelVersion(const DescribeTrainingModelVersionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTrainingModelVersion");
@@ -2782,6 +2832,56 @@ TioneClient::StopTrainingTaskOutcomeCallable TioneClient::StopTrainingTaskCallab
         const TioneClient*,
         const StopTrainingTaskRequest&,
         StopTrainingTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TioneClient::UpdateSubAccountLinuxUserInfoOutcome TioneClient::UpdateSubAccountLinuxUserInfo(const UpdateSubAccountLinuxUserInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateSubAccountLinuxUserInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateSubAccountLinuxUserInfoResponse rsp = UpdateSubAccountLinuxUserInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateSubAccountLinuxUserInfoOutcome(rsp);
+        else
+            return UpdateSubAccountLinuxUserInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateSubAccountLinuxUserInfoOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::UpdateSubAccountLinuxUserInfoAsync(const UpdateSubAccountLinuxUserInfoRequest& request, const UpdateSubAccountLinuxUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateSubAccountLinuxUserInfoRequest&;
+    using Resp = UpdateSubAccountLinuxUserInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateSubAccountLinuxUserInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::UpdateSubAccountLinuxUserInfoOutcomeCallable TioneClient::UpdateSubAccountLinuxUserInfoCallable(const UpdateSubAccountLinuxUserInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateSubAccountLinuxUserInfoOutcome>>();
+    UpdateSubAccountLinuxUserInfoAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const UpdateSubAccountLinuxUserInfoRequest&,
+        UpdateSubAccountLinuxUserInfoOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

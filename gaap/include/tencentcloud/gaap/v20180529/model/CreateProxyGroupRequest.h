@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通道组所属项目ID
-                     * @return ProjectId 通道组所属项目ID
+                     * 获取<p>通道组所属项目ID</p>
+                     * @return ProjectId <p>通道组所属项目ID</p>
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置通道组所属项目ID
-                     * @param _projectId 通道组所属项目ID
+                     * 设置<p>通道组所属项目ID</p>
+                     * @param _projectId <p>通道组所属项目ID</p>
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取通道组别名
-                     * @return GroupName 通道组别名
+                     * 获取<p>通道组别名</p>
+                     * @return GroupName <p>通道组别名</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置通道组别名
-                     * @param _groupName 通道组别名
+                     * 设置<p>通道组别名</p>
+                     * @param _groupName <p>通道组别名</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取源站地域，参考接口 [https://cloud.tencent.com/document/api/608/36964] 返回参数RegionDetail中的RegionId
-                     * @return RealServerRegion 源站地域，参考接口 [https://cloud.tencent.com/document/api/608/36964] 返回参数RegionDetail中的RegionId
+                     * 获取<p>源站地域，参考接口 [https://cloud.tencent.com/document/api/608/36964] 返回参数RegionDetail中的RegionId</p>
+                     * @return RealServerRegion <p>源站地域，参考接口 [https://cloud.tencent.com/document/api/608/36964] 返回参数RegionDetail中的RegionId</p>
                      * 
                      */
                     std::string GetRealServerRegion() const;
 
                     /**
-                     * 设置源站地域，参考接口 [https://cloud.tencent.com/document/api/608/36964] 返回参数RegionDetail中的RegionId
-                     * @param _realServerRegion 源站地域，参考接口 [https://cloud.tencent.com/document/api/608/36964] 返回参数RegionDetail中的RegionId
+                     * 设置<p>源站地域，参考接口 [https://cloud.tencent.com/document/api/608/36964] 返回参数RegionDetail中的RegionId</p>
+                     * @param _realServerRegion <p>源站地域，参考接口 [https://cloud.tencent.com/document/api/608/36964] 返回参数RegionDetail中的RegionId</p>
                      * 
                      */
                     void SetRealServerRegion(const std::string& _realServerRegion);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool RealServerRegionHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return TagSet 标签列表
+                     * 获取<p>标签列表</p>
+                     * @return TagSet <p>标签列表</p>
                      * 
                      */
                     std::vector<TagPair> GetTagSet() const;
 
                     /**
-                     * 设置标签列表
-                     * @param _tagSet 标签列表
+                     * 设置<p>标签列表</p>
+                     * @param _tagSet <p>标签列表</p>
                      * 
                      */
                     void SetTagSet(const std::vector<TagPair>& _tagSet);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool TagSetHasBeenSet() const;
 
                     /**
-                     * 获取加速地域列表，包括加速地域名，及该地域对应的带宽和并发配置。
-                     * @return AccessRegionSet 加速地域列表，包括加速地域名，及该地域对应的带宽和并发配置。
+                     * 获取<p>加速地域列表，包括加速地域名，及该地域对应的带宽和并发配置。</p>
+                     * @return AccessRegionSet <p>加速地域列表，包括加速地域名，及该地域对应的带宽和并发配置。</p>
                      * 
                      */
                     std::vector<AccessConfiguration> GetAccessRegionSet() const;
 
                     /**
-                     * 设置加速地域列表，包括加速地域名，及该地域对应的带宽和并发配置。
-                     * @param _accessRegionSet 加速地域列表，包括加速地域名，及该地域对应的带宽和并发配置。
+                     * 设置<p>加速地域列表，包括加速地域名，及该地域对应的带宽和并发配置。</p>
+                     * @param _accessRegionSet <p>加速地域列表，包括加速地域名，及该地域对应的带宽和并发配置。</p>
                      * 
                      */
                     void SetAccessRegionSet(const std::vector<AccessConfiguration>& _accessRegionSet);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool AccessRegionSetHasBeenSet() const;
 
                     /**
-                     * 获取IP版本，可取值：IPv4、IPv6，默认值IPv4
-                     * @return IPAddressVersion IP版本，可取值：IPv4、IPv6，默认值IPv4
+                     * 获取<p>IP版本，可取值：IPv4、IPv6，默认值IPv4</p>
+                     * @return IPAddressVersion <p>IP版本，可取值：IPv4、IPv6，默认值IPv4</p>
                      * 
                      */
                     std::string GetIPAddressVersion() const;
 
                     /**
-                     * 设置IP版本，可取值：IPv4、IPv6，默认值IPv4
-                     * @param _iPAddressVersion IP版本，可取值：IPv4、IPv6，默认值IPv4
+                     * 设置<p>IP版本，可取值：IPv4、IPv6，默认值IPv4</p>
+                     * @param _iPAddressVersion <p>IP版本，可取值：IPv4、IPv6，默认值IPv4</p>
                      * 
                      */
                     void SetIPAddressVersion(const std::string& _iPAddressVersion);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool IPAddressVersionHasBeenSet() const;
 
                     /**
-                     * 获取通道组套餐类型，可取值：Thunder、Accelerator，默认值Thunder
-                     * @return PackageType 通道组套餐类型，可取值：Thunder、Accelerator，默认值Thunder
+                     * 获取<p>通道组套餐类型，可取值：Thunder、Accelerator，默认值Thunder</p>
+                     * @return PackageType <p>通道组套餐类型，可取值：Thunder、Accelerator，默认值Thunder</p>
                      * 
                      */
                     std::string GetPackageType() const;
 
                     /**
-                     * 设置通道组套餐类型，可取值：Thunder、Accelerator，默认值Thunder
-                     * @param _packageType 通道组套餐类型，可取值：Thunder、Accelerator，默认值Thunder
+                     * 设置<p>通道组套餐类型，可取值：Thunder、Accelerator，默认值Thunder</p>
+                     * @param _packageType <p>通道组套餐类型，可取值：Thunder、Accelerator，默认值Thunder</p>
                      * 
                      */
                     void SetPackageType(const std::string& _packageType);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool PackageTypeHasBeenSet() const;
 
                     /**
-                     * 获取该字段已废弃，当IPAddressVersion为IPv4时，所创建的通道组默认支持Http3.0；当为IPv6，默认不支持Http3.0。
-                     * @return Http3Supported 该字段已废弃，当IPAddressVersion为IPv4时，所创建的通道组默认支持Http3.0；当为IPv6，默认不支持Http3.0。
+                     * 获取<p>该字段已废弃，当IPAddressVersion为IPv4时，所创建的通道组默认支持Http3.0；当为IPv6，默认不支持Http3.0。</p>
+                     * @return Http3Supported <p>该字段已废弃，当IPAddressVersion为IPv4时，所创建的通道组默认支持Http3.0；当为IPv6，默认不支持Http3.0。</p>
                      * 
                      */
                     int64_t GetHttp3Supported() const;
 
                     /**
-                     * 设置该字段已废弃，当IPAddressVersion为IPv4时，所创建的通道组默认支持Http3.0；当为IPv6，默认不支持Http3.0。
-                     * @param _http3Supported 该字段已废弃，当IPAddressVersion为IPv4时，所创建的通道组默认支持Http3.0；当为IPv6，默认不支持Http3.0。
+                     * 设置<p>该字段已废弃，当IPAddressVersion为IPv4时，所创建的通道组默认支持Http3.0；当为IPv6，默认不支持Http3.0。</p>
+                     * @param _http3Supported <p>该字段已废弃，当IPAddressVersion为IPv4时，所创建的通道组默认支持Http3.0；当为IPv6，默认不支持Http3.0。</p>
                      * 
                      */
                     void SetHttp3Supported(const int64_t& _http3Supported);
@@ -215,49 +215,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通道组所属项目ID
+                     * <p>通道组所属项目ID</p>
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 通道组别名
+                     * <p>通道组别名</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 源站地域，参考接口 [https://cloud.tencent.com/document/api/608/36964] 返回参数RegionDetail中的RegionId
+                     * <p>源站地域，参考接口 [https://cloud.tencent.com/document/api/608/36964] 返回参数RegionDetail中的RegionId</p>
                      */
                     std::string m_realServerRegion;
                     bool m_realServerRegionHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * <p>标签列表</p>
                      */
                     std::vector<TagPair> m_tagSet;
                     bool m_tagSetHasBeenSet;
 
                     /**
-                     * 加速地域列表，包括加速地域名，及该地域对应的带宽和并发配置。
+                     * <p>加速地域列表，包括加速地域名，及该地域对应的带宽和并发配置。</p>
                      */
                     std::vector<AccessConfiguration> m_accessRegionSet;
                     bool m_accessRegionSetHasBeenSet;
 
                     /**
-                     * IP版本，可取值：IPv4、IPv6，默认值IPv4
+                     * <p>IP版本，可取值：IPv4、IPv6，默认值IPv4</p>
                      */
                     std::string m_iPAddressVersion;
                     bool m_iPAddressVersionHasBeenSet;
 
                     /**
-                     * 通道组套餐类型，可取值：Thunder、Accelerator，默认值Thunder
+                     * <p>通道组套餐类型，可取值：Thunder、Accelerator，默认值Thunder</p>
                      */
                     std::string m_packageType;
                     bool m_packageTypeHasBeenSet;
 
                     /**
-                     * 该字段已废弃，当IPAddressVersion为IPv4时，所创建的通道组默认支持Http3.0；当为IPv6，默认不支持Http3.0。
+                     * <p>该字段已废弃，当IPAddressVersion为IPv4时，所创建的通道组默认支持Http3.0；当为IPv6，默认不支持Http3.0。</p>
                      */
                     int64_t m_http3Supported;
                     bool m_http3SupportedHasBeenSet;

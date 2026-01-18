@@ -485,6 +485,27 @@ namespace TencentCloud
                      */
                     bool PresetApproverInfoHasBeenSet() const;
 
+                    /**
+                     * 获取是否允许此链接中签署方批量确认已读文件。 <ul><li>false (默认): 不允许批量确认已读文件。</li> <li>true : 允许批量确认已读文件。</li></ul>注：`1. 此功能为白名单功能，使用前请联系对应客户经理进行开通。2. 若批量签署的合同中第一份待签署合同所选择的印章或者签名无法完全覆盖后续合同要求，或者当前签署人没有指定印章使用权限，则无法使用此功能，会自动退化为逐份确认。`
+                     * @return CanSkipReadFlow 是否允许此链接中签署方批量确认已读文件。 <ul><li>false (默认): 不允许批量确认已读文件。</li> <li>true : 允许批量确认已读文件。</li></ul>注：`1. 此功能为白名单功能，使用前请联系对应客户经理进行开通。2. 若批量签署的合同中第一份待签署合同所选择的印章或者签名无法完全覆盖后续合同要求，或者当前签署人没有指定印章使用权限，则无法使用此功能，会自动退化为逐份确认。`
+                     * 
+                     */
+                    bool GetCanSkipReadFlow() const;
+
+                    /**
+                     * 设置是否允许此链接中签署方批量确认已读文件。 <ul><li>false (默认): 不允许批量确认已读文件。</li> <li>true : 允许批量确认已读文件。</li></ul>注：`1. 此功能为白名单功能，使用前请联系对应客户经理进行开通。2. 若批量签署的合同中第一份待签署合同所选择的印章或者签名无法完全覆盖后续合同要求，或者当前签署人没有指定印章使用权限，则无法使用此功能，会自动退化为逐份确认。`
+                     * @param _canSkipReadFlow 是否允许此链接中签署方批量确认已读文件。 <ul><li>false (默认): 不允许批量确认已读文件。</li> <li>true : 允许批量确认已读文件。</li></ul>注：`1. 此功能为白名单功能，使用前请联系对应客户经理进行开通。2. 若批量签署的合同中第一份待签署合同所选择的印章或者签名无法完全覆盖后续合同要求，或者当前签署人没有指定印章使用权限，则无法使用此功能，会自动退化为逐份确认。`
+                     * 
+                     */
+                    void SetCanSkipReadFlow(const bool& _canSkipReadFlow);
+
+                    /**
+                     * 判断参数 CanSkipReadFlow 是否已赋值
+                     * @return CanSkipReadFlow 是否已赋值
+                     * 
+                     */
+                    bool CanSkipReadFlowHasBeenSet() const;
+
                 private:
 
                     /**
@@ -606,6 +627,12 @@ namespace TencentCloud
                      */
                     PresetApproverInfo m_presetApproverInfo;
                     bool m_presetApproverInfoHasBeenSet;
+
+                    /**
+                     * 是否允许此链接中签署方批量确认已读文件。 <ul><li>false (默认): 不允许批量确认已读文件。</li> <li>true : 允许批量确认已读文件。</li></ul>注：`1. 此功能为白名单功能，使用前请联系对应客户经理进行开通。2. 若批量签署的合同中第一份待签署合同所选择的印章或者签名无法完全覆盖后续合同要求，或者当前签署人没有指定印章使用权限，则无法使用此功能，会自动退化为逐份确认。`
+                     */
+                    bool m_canSkipReadFlow;
+                    bool m_canSkipReadFlowHasBeenSet;
 
                 };
             }

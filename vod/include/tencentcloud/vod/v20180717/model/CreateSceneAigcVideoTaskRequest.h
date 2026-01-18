@@ -221,6 +221,27 @@ namespace TencentCloud
                      */
                     bool ExtInfoHasBeenSet() const;
 
+                    /**
+                     * 获取用户自定义prompt
+                     * @return Prompt 用户自定义prompt
+                     * 
+                     */
+                    std::string GetPrompt() const;
+
+                    /**
+                     * 设置用户自定义prompt
+                     * @param _prompt 用户自定义prompt
+                     * 
+                     */
+                    void SetPrompt(const std::string& _prompt);
+
+                    /**
+                     * 判断参数 Prompt 是否已赋值
+                     * @return Prompt 是否已赋值
+                     * 
+                     */
+                    bool PromptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -272,6 +293,12 @@ namespace TencentCloud
                      */
                     std::string m_extInfo;
                     bool m_extInfoHasBeenSet;
+
+                    /**
+                     * 用户自定义prompt
+                     */
+                    std::string m_prompt;
+                    bool m_promptHasBeenSet;
 
                 };
             }

@@ -68,6 +68,35 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
+                     * 获取文件分类。取值为：
+<li>Image: 图片；</li>
+<li>Video: 视频。</li>
+                     * @return Category 文件分类。取值为：
+<li>Image: 图片；</li>
+<li>Video: 视频。</li>
+                     * 
+                     */
+                    std::string GetCategory() const;
+
+                    /**
+                     * 设置文件分类。取值为：
+<li>Image: 图片；</li>
+<li>Video: 视频。</li>
+                     * @param _category 文件分类。取值为：
+<li>Image: 图片；</li>
+<li>Video: 视频。</li>
+                     * 
+                     */
+                    void SetCategory(const std::string& _category);
+
+                    /**
+                     * 判断参数 Category 是否已赋值
+                     * @return Category 是否已赋值
+                     * 
+                     */
+                    bool CategoryHasBeenSet() const;
+
+                    /**
                      * 获取媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。当 Type 取值为 File 时，本参数有效。说明：
 1. 推荐使用小于10M的图片；
 2. 图片格式的取值为：jpeg，jpg, png。
@@ -223,6 +252,14 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 文件分类。取值为：
+<li>Image: 图片；</li>
+<li>Video: 视频。</li>
+                     */
+                    std::string m_category;
+                    bool m_categoryHasBeenSet;
 
                     /**
                      * 媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。当 Type 取值为 File 时，本参数有效。说明：

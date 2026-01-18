@@ -171,14 +171,14 @@ namespace TencentCloud
                      * @return SubOrganizationIds 集团角色的话，需要传递集团子企业列表，如果是全选，则传1
                      * 
                      */
-                    std::string GetSubOrganizationIds() const;
+                    std::vector<std::string> GetSubOrganizationIds() const;
 
                     /**
                      * 设置集团角色的话，需要传递集团子企业列表，如果是全选，则传1
                      * @param _subOrganizationIds 集团角色的话，需要传递集团子企业列表，如果是全选，则传1
                      * 
                      */
-                    void SetSubOrganizationIds(const std::string& _subOrganizationIds);
+                    void SetSubOrganizationIds(const std::vector<std::string>& _subOrganizationIds);
 
                     /**
                      * 判断参数 SubOrganizationIds 是否已赋值
@@ -251,7 +251,7 @@ namespace TencentCloud
                     /**
                      * 集团角色的话，需要传递集团子企业列表，如果是全选，则传1
                      */
-                    std::string m_subOrganizationIds;
+                    std::vector<std::string> m_subOrganizationIds;
                     bool m_subOrganizationIdsHasBeenSet;
 
                     /**

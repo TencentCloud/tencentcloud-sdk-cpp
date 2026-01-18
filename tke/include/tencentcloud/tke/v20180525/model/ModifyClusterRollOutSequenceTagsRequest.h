@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterID 集群ID
+                     * 获取集群ID，可以从容器服务集群控制台获取（https://console.cloud.tencent.com/tke2/cluster）。
+                     * @return ClusterID 集群ID，可以从容器服务集群控制台获取（https://console.cloud.tencent.com/tke2/cluster）。
                      * 
                      */
                     std::string GetClusterID() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterID 集群ID
+                     * 设置集群ID，可以从容器服务集群控制台获取（https://console.cloud.tencent.com/tke2/cluster）。
+                     * @param _clusterID 集群ID，可以从容器服务集群控制台获取（https://console.cloud.tencent.com/tke2/cluster）。
                      * 
                      */
                     void SetClusterID(const std::string& _clusterID);
@@ -65,15 +65,23 @@ namespace TencentCloud
                     bool ClusterIDHasBeenSet() const;
 
                     /**
-                     * 获取集群发布序列标签（为空时表示移除集群标签）
-                     * @return Tags 集群发布序列标签（为空时表示移除集群标签）
+                     * 获取集群发布序列标签（为空时表示移除集群标签）。支持以下集群标签：
+- 标签键："Env"，支持的标签值：["Test","Pre-Production","Production"]
+- 标签键："Protection-Level"，支持的标签值：["Low","Medium","High"]
+                     * @return Tags 集群发布序列标签（为空时表示移除集群标签）。支持以下集群标签：
+- 标签键："Env"，支持的标签值：["Test","Pre-Production","Production"]
+- 标签键："Protection-Level"，支持的标签值：["Low","Medium","High"]
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置集群发布序列标签（为空时表示移除集群标签）
-                     * @param _tags 集群发布序列标签（为空时表示移除集群标签）
+                     * 设置集群发布序列标签（为空时表示移除集群标签）。支持以下集群标签：
+- 标签键："Env"，支持的标签值：["Test","Pre-Production","Production"]
+- 标签键："Protection-Level"，支持的标签值：["Low","Medium","High"]
+                     * @param _tags 集群发布序列标签（为空时表示移除集群标签）。支持以下集群标签：
+- 标签键："Env"，支持的标签值：["Test","Pre-Production","Production"]
+- 标签键："Protection-Level"，支持的标签值：["Low","Medium","High"]
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -88,13 +96,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 集群ID，可以从容器服务集群控制台获取（https://console.cloud.tencent.com/tke2/cluster）。
                      */
                     std::string m_clusterID;
                     bool m_clusterIDHasBeenSet;
 
                     /**
-                     * 集群发布序列标签（为空时表示移除集群标签）
+                     * 集群发布序列标签（为空时表示移除集群标签）。支持以下集群标签：
+- 标签键："Env"，支持的标签值：["Test","Pre-Production","Production"]
+- 标签键："Protection-Level"，支持的标签值：["Low","Medium","High"]
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

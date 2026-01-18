@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取监听器ID
-                     * @return ListenerId 监听器ID
+                     * 获取<p>监听器ID</p>
+                     * @return ListenerId <p>监听器ID</p>
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置监听器ID
-                     * @param _listenerId 监听器ID
+                     * 设置<p>监听器ID</p>
+                     * @param _listenerId <p>监听器ID</p>
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取域名
-                     * @return Domain 域名
+                     * 获取<p>域名</p>
+                     * @return Domain <p>域名</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置域名
-                     * @param _domain 域名
+                     * 设置<p>域名</p>
+                     * @param _domain <p>域名</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取原始错误码
-                     * @return ErrorNos 原始错误码
+                     * 获取<p>原始错误码</p>
+                     * @return ErrorNos <p>原始错误码</p>
                      * 
                      */
                     std::vector<int64_t> GetErrorNos() const;
 
                     /**
-                     * 设置原始错误码
-                     * @param _errorNos 原始错误码
+                     * 设置<p>原始错误码</p>
+                     * @param _errorNos <p>原始错误码</p>
                      * 
                      */
                     void SetErrorNos(const std::vector<int64_t>& _errorNos);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool ErrorNosHasBeenSet() const;
 
                     /**
-                     * 获取新的响应包体
-                     * @return Body 新的响应包体
+                     * 获取<p>新的响应包体</p>
+                     * @return Body <p>新的响应包体</p>
                      * 
                      */
                     std::string GetBody() const;
 
                     /**
-                     * 设置新的响应包体
-                     * @param _body 新的响应包体
+                     * 设置<p>新的响应包体</p>
+                     * @param _body <p>新的响应包体</p>
                      * 
                      */
                     void SetBody(const std::string& _body);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool BodyHasBeenSet() const;
 
                     /**
-                     * 获取新错误码
-                     * @return NewErrorNo 新错误码
+                     * 获取<p>新错误码</p>
+                     * @return NewErrorNo <p>新错误码</p>
                      * 
                      */
                     int64_t GetNewErrorNo() const;
 
                     /**
-                     * 设置新错误码
-                     * @param _newErrorNo 新错误码
+                     * 设置<p>新错误码</p>
+                     * @param _newErrorNo <p>新错误码</p>
                      * 
                      */
                     void SetNewErrorNo(const int64_t& _newErrorNo);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool NewErrorNoHasBeenSet() const;
 
                     /**
-                     * 获取需要删除的响应头
-                     * @return ClearHeaders 需要删除的响应头
+                     * 获取<p>需要删除的响应头</p>
+                     * @return ClearHeaders <p>需要删除的响应头</p>
                      * 
                      */
                     std::vector<std::string> GetClearHeaders() const;
 
                     /**
-                     * 设置需要删除的响应头
-                     * @param _clearHeaders 需要删除的响应头
+                     * 设置<p>需要删除的响应头</p>
+                     * @param _clearHeaders <p>需要删除的响应头</p>
                      * 
                      */
                     void SetClearHeaders(const std::vector<std::string>& _clearHeaders);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool ClearHeadersHasBeenSet() const;
 
                     /**
-                     * 获取需要设置的响应头
-                     * @return SetHeaders 需要设置的响应头
+                     * 获取<p>需要设置的响应头</p>
+                     * @return SetHeaders <p>需要设置的响应头</p>
                      * 
                      */
                     std::vector<HttpHeaderParam> GetSetHeaders() const;
 
                     /**
-                     * 设置需要设置的响应头
-                     * @param _setHeaders 需要设置的响应头
+                     * 设置<p>需要设置的响应头</p>
+                     * @param _setHeaders <p>需要设置的响应头</p>
                      * 
                      */
                     void SetSetHeaders(const std::vector<HttpHeaderParam>& _setHeaders);
@@ -193,43 +193,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 监听器ID
+                     * <p>监听器ID</p>
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 域名
+                     * <p>域名</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 原始错误码
+                     * <p>原始错误码</p>
                      */
                     std::vector<int64_t> m_errorNos;
                     bool m_errorNosHasBeenSet;
 
                     /**
-                     * 新的响应包体
+                     * <p>新的响应包体</p>
                      */
                     std::string m_body;
                     bool m_bodyHasBeenSet;
 
                     /**
-                     * 新错误码
+                     * <p>新错误码</p>
                      */
                     int64_t m_newErrorNo;
                     bool m_newErrorNoHasBeenSet;
 
                     /**
-                     * 需要删除的响应头
+                     * <p>需要删除的响应头</p>
                      */
                     std::vector<std::string> m_clearHeaders;
                     bool m_clearHeadersHasBeenSet;
 
                     /**
-                     * 需要设置的响应头
+                     * <p>需要设置的响应头</p>
                      */
                     std::vector<HttpHeaderParam> m_setHeaders;
                     bool m_setHeadersHasBeenSet;

@@ -334,6 +334,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/ModifyWordSampleRequest.h
   include/tencentcloud/mps/v20190612/model/EditMediaTask.h
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskFaceSegmentItem.h
+  include/tencentcloud/mps/v20190612/model/ImageResizeConfig.h
   include/tencentcloud/mps/v20190612/model/CreateMediaEvaluationResponse.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskTagResult.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskDelLogoInput.h
@@ -656,6 +657,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/MediaAiAnalysisFrameTagSegmentItem.h
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskAsrWordsResultItem.h
   include/tencentcloud/mps/v20190612/model/DescribeStreamLinkRegionsRequest.h
+  include/tencentcloud/mps/v20190612/model/ImageTransformConfig.h
   include/tencentcloud/mps/v20190612/model/ModifyStreamLinkInputResponse.h
   include/tencentcloud/mps/v20190612/model/HeadTailParameter.h
   include/tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowMediaStatisticsRequest.h
@@ -1183,6 +1185,7 @@ set(mps_src
   src/v20190612/model/ModifyWordSampleRequest.cpp
   src/v20190612/model/EditMediaTask.cpp
   src/v20190612/model/AiRecognitionTaskFaceSegmentItem.cpp
+  src/v20190612/model/ImageResizeConfig.cpp
   src/v20190612/model/CreateMediaEvaluationResponse.cpp
   src/v20190612/model/AiAnalysisTaskTagResult.cpp
   src/v20190612/model/AiAnalysisTaskDelLogoInput.cpp
@@ -1505,6 +1508,7 @@ set(mps_src
   src/v20190612/model/MediaAiAnalysisFrameTagSegmentItem.cpp
   src/v20190612/model/AiRecognitionTaskAsrWordsResultItem.cpp
   src/v20190612/model/DescribeStreamLinkRegionsRequest.cpp
+  src/v20190612/model/ImageTransformConfig.cpp
   src/v20190612/model/ModifyStreamLinkInputResponse.cpp
   src/v20190612/model/HeadTailParameter.cpp
   src/v20190612/model/DescribeStreamLinkFlowMediaStatisticsRequest.cpp

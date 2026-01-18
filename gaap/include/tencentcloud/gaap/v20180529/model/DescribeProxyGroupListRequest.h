@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取偏移量，默认值为0。
-                     * @return Offset 偏移量，默认值为0。
+                     * 获取<p>偏移量，默认值为0。</p>
+                     * @return Offset <p>偏移量，默认值为0。</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认值为0。
-                     * @param _offset 偏移量，默认值为0。
+                     * 设置<p>偏移量，默认值为0。</p>
+                     * @param _offset <p>偏移量，默认值为0。</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认值为20，最大值为100。
-                     * @return Limit 返回数量，默认值为20，最大值为100。
+                     * 获取<p>返回数量，默认值为20，最大值为100。</p>
+                     * @return Limit <p>返回数量，默认值为20，最大值为100。</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认值为20，最大值为100。
-                     * @param _limit 返回数量，默认值为20，最大值为100。
+                     * 设置<p>返回数量，默认值为20，最大值为100。</p>
+                     * @param _limit <p>返回数量，默认值为20，最大值为100。</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -87,27 +87,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取项目ID。取值范围：
--1，该用户下所有项目
-0，默认项目
-其他值，指定的项目
-                     * @return ProjectId 项目ID。取值范围：
--1，该用户下所有项目
-0，默认项目
-其他值，指定的项目
+                     * 获取<p>项目ID。取值范围：-1，该用户下所有项目0，默认项目其他值，指定的项目</p>
+                     * @return ProjectId <p>项目ID。取值范围：-1，该用户下所有项目0，默认项目其他值，指定的项目</p>
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID。取值范围：
--1，该用户下所有项目
-0，默认项目
-其他值，指定的项目
-                     * @param _projectId 项目ID。取值范围：
--1，该用户下所有项目
-0，默认项目
-其他值，指定的项目
+                     * 设置<p>项目ID。取值范围：-1，该用户下所有项目0，默认项目其他值，指定的项目</p>
+                     * @param _projectId <p>项目ID。取值范围：-1，该用户下所有项目0，默认项目其他值，指定的项目</p>
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -120,27 +108,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件。   
-每次请求的Filter.Values的上限为5。
-RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。
-PackageType - String - 是否必填：否 - （过滤条件）通道组类型，Thunder表示标准通道组，Accelerator表示银牌加速通道组。
-                     * @return Filters 过滤条件。   
-每次请求的Filter.Values的上限为5。
-RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。
-PackageType - String - 是否必填：否 - （过滤条件）通道组类型，Thunder表示标准通道组，Accelerator表示银牌加速通道组。
+                     * 获取<p>过滤条件。 <br />每次请求的Filter.Values的上限为5。RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。PackageType - String - 是否必填：否 - （过滤条件）通道组类型，Thunder表示标准通道组，Accelerator表示银牌加速通道组。</p>
+                     * @return Filters <p>过滤条件。 <br />每次请求的Filter.Values的上限为5。RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。PackageType - String - 是否必填：否 - （过滤条件）通道组类型，Thunder表示标准通道组，Accelerator表示银牌加速通道组。</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件。   
-每次请求的Filter.Values的上限为5。
-RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。
-PackageType - String - 是否必填：否 - （过滤条件）通道组类型，Thunder表示标准通道组，Accelerator表示银牌加速通道组。
-                     * @param _filters 过滤条件。   
-每次请求的Filter.Values的上限为5。
-RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。
-PackageType - String - 是否必填：否 - （过滤条件）通道组类型，Thunder表示标准通道组，Accelerator表示银牌加速通道组。
+                     * 设置<p>过滤条件。 <br />每次请求的Filter.Values的上限为5。RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。PackageType - String - 是否必填：否 - （过滤条件）通道组类型，Thunder表示标准通道组，Accelerator表示银牌加速通道组。</p>
+                     * @param _filters <p>过滤条件。 <br />每次请求的Filter.Values的上限为5。RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。PackageType - String - 是否必填：否 - （过滤条件）通道组类型，Thunder表示标准通道组，Accelerator表示银牌加速通道组。</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -153,19 +129,15 @@ PackageType - String - 是否必填：否 - （过滤条件）通道组类型，
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取标签列表，当存在该字段时，拉取对应标签下的资源列表。
-最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，该通道组会被拉取出来。
-                     * @return TagSet 标签列表，当存在该字段时，拉取对应标签下的资源列表。
-最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，该通道组会被拉取出来。
+                     * 获取<p>标签列表，当存在该字段时，拉取对应标签下的资源列表。最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，该通道组会被拉取出来。</p>
+                     * @return TagSet <p>标签列表，当存在该字段时，拉取对应标签下的资源列表。最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，该通道组会被拉取出来。</p>
                      * 
                      */
                     std::vector<TagPair> GetTagSet() const;
 
                     /**
-                     * 设置标签列表，当存在该字段时，拉取对应标签下的资源列表。
-最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，该通道组会被拉取出来。
-                     * @param _tagSet 标签列表，当存在该字段时，拉取对应标签下的资源列表。
-最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，该通道组会被拉取出来。
+                     * 设置<p>标签列表，当存在该字段时，拉取对应标签下的资源列表。最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，该通道组会被拉取出来。</p>
+                     * @param _tagSet <p>标签列表，当存在该字段时，拉取对应标签下的资源列表。最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，该通道组会被拉取出来。</p>
                      * 
                      */
                     void SetTagSet(const std::vector<TagPair>& _tagSet);
@@ -180,38 +152,31 @@ PackageType - String - 是否必填：否 - （过滤条件）通道组类型，
                 private:
 
                     /**
-                     * 偏移量，默认值为0。
+                     * <p>偏移量，默认值为0。</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，默认值为20，最大值为100。
+                     * <p>返回数量，默认值为20，最大值为100。</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 项目ID。取值范围：
--1，该用户下所有项目
-0，默认项目
-其他值，指定的项目
+                     * <p>项目ID。取值范围：-1，该用户下所有项目0，默认项目其他值，指定的项目</p>
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 过滤条件。   
-每次请求的Filter.Values的上限为5。
-RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。
-PackageType - String - 是否必填：否 - （过滤条件）通道组类型，Thunder表示标准通道组，Accelerator表示银牌加速通道组。
+                     * <p>过滤条件。 <br />每次请求的Filter.Values的上限为5。RealServerRegion - String - 是否必填：否 -（过滤条件）按照源站地域过滤，可参考DescribeDestRegions接口返回结果中的RegionId。PackageType - String - 是否必填：否 - （过滤条件）通道组类型，Thunder表示标准通道组，Accelerator表示银牌加速通道组。</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 标签列表，当存在该字段时，拉取对应标签下的资源列表。
-最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，该通道组会被拉取出来。
+                     * <p>标签列表，当存在该字段时，拉取对应标签下的资源列表。最多支持5个标签，当存在两个或两个以上的标签时，满足其中任意一个标签时，该通道组会被拉取出来。</p>
                      */
                     std::vector<TagPair> m_tagSet;
                     bool m_tagSetHasBeenSet;

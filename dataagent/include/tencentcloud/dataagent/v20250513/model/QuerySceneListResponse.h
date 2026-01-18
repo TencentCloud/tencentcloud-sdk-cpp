@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dataagent/v20250513/model/Scene.h>
 
 
 namespace TencentCloud
@@ -44,6 +45,20 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取场景列表
+                     * @return Datas 场景列表
+                     * 
+                     */
+                    std::vector<Scene> GetDatas() const;
+
+                    /**
+                     * 判断参数 Datas 是否已赋值
+                     * @return Datas 是否已赋值
+                     * 
+                     */
+                    bool DatasHasBeenSet() const;
+
+                    /**
                      * 获取总数
                      * @return Total 总数
                      * 
@@ -58,6 +73,12 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 场景列表
+                     */
+                    std::vector<Scene> m_datas;
+                    bool m_datasHasBeenSet;
 
                     /**
                      * 总数

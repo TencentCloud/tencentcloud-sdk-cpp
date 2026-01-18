@@ -219,6 +219,8 @@
 #include <tencentcloud/tcr/v20190924/model/ModifyImmutableTagRulesResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyInstanceRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyInstanceResponse.h>
+#include <tencentcloud/tcr/v20190924/model/ModifyInstanceStorageRequest.h>
+#include <tencentcloud/tcr/v20190924/model/ModifyInstanceStorageResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyInstanceTokenRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyInstanceTokenResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyNamespaceRequest.h>
@@ -243,6 +245,8 @@
 #include <tencentcloud/tcr/v20190924/model/ModifyWebhookTriggerResponse.h>
 #include <tencentcloud/tcr/v20190924/model/RenewInstanceRequest.h>
 #include <tencentcloud/tcr/v20190924/model/RenewInstanceResponse.h>
+#include <tencentcloud/tcr/v20190924/model/TerminateGCJobRequest.h>
+#include <tencentcloud/tcr/v20190924/model/TerminateGCJobResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ValidateNamespaceExistPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ValidateNamespaceExistPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ValidateRepositoryExistPersonalRequest.h>
@@ -555,6 +559,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInstanceResponse> ModifyInstanceOutcome;
                 typedef std::future<ModifyInstanceOutcome> ModifyInstanceOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ModifyInstanceRequest&, ModifyInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceStorageResponse> ModifyInstanceStorageOutcome;
+                typedef std::future<ModifyInstanceStorageOutcome> ModifyInstanceStorageOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::ModifyInstanceStorageRequest&, ModifyInstanceStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceStorageAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstanceTokenResponse> ModifyInstanceTokenOutcome;
                 typedef std::future<ModifyInstanceTokenOutcome> ModifyInstanceTokenOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ModifyInstanceTokenRequest&, ModifyInstanceTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceTokenAsyncHandler;
@@ -591,6 +598,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RenewInstanceResponse> RenewInstanceOutcome;
                 typedef std::future<RenewInstanceOutcome> RenewInstanceOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::RenewInstanceRequest&, RenewInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::TerminateGCJobResponse> TerminateGCJobOutcome;
+                typedef std::future<TerminateGCJobOutcome> TerminateGCJobOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::TerminateGCJobRequest&, TerminateGCJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateGCJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::ValidateNamespaceExistPersonalResponse> ValidateNamespaceExistPersonalOutcome;
                 typedef std::future<ValidateNamespaceExistPersonalOutcome> ValidateNamespaceExistPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ValidateNamespaceExistPersonalRequest&, ValidateNamespaceExistPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ValidateNamespaceExistPersonalAsyncHandler;
@@ -1485,6 +1495,15 @@ namespace TencentCloud
                 ModifyInstanceOutcomeCallable ModifyInstanceCallable(const Model::ModifyInstanceRequest& request);
 
                 /**
+                 *TCR实例存储桶切换
+                 * @param req ModifyInstanceStorageRequest
+                 * @return ModifyInstanceStorageOutcome
+                 */
+                ModifyInstanceStorageOutcome ModifyInstanceStorage(const Model::ModifyInstanceStorageRequest &request);
+                void ModifyInstanceStorageAsync(const Model::ModifyInstanceStorageRequest& request, const ModifyInstanceStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceStorageOutcomeCallable ModifyInstanceStorageCallable(const Model::ModifyInstanceStorageRequest& request);
+
+                /**
                  *更新实例内指定长期访问凭证的启用状态
                  * @param req ModifyInstanceTokenRequest
                  * @return ModifyInstanceTokenOutcome
@@ -1591,6 +1610,15 @@ namespace TencentCloud
                 RenewInstanceOutcome RenewInstance(const Model::RenewInstanceRequest &request);
                 void RenewInstanceAsync(const Model::RenewInstanceRequest& request, const RenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RenewInstanceOutcomeCallable RenewInstanceCallable(const Model::RenewInstanceRequest& request);
+
+                /**
+                 *终止制品清理任务
+                 * @param req TerminateGCJobRequest
+                 * @return TerminateGCJobOutcome
+                 */
+                TerminateGCJobOutcome TerminateGCJob(const Model::TerminateGCJobRequest &request);
+                void TerminateGCJobAsync(const Model::TerminateGCJobRequest& request, const TerminateGCJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TerminateGCJobOutcomeCallable TerminateGCJobCallable(const Model::TerminateGCJobRequest& request);
 
                 /**
                  *查询个人版用户命名空间是否存在

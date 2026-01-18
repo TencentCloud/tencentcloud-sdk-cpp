@@ -1090,6 +1090,56 @@ LiveClient::CreateLiveCallbackTemplateOutcomeCallable LiveClient::CreateLiveCall
     return prom->get_future();
 }
 
+LiveClient::CreateLiveCloudEffectOutcome LiveClient::CreateLiveCloudEffect(const CreateLiveCloudEffectRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLiveCloudEffect");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLiveCloudEffectResponse rsp = CreateLiveCloudEffectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLiveCloudEffectOutcome(rsp);
+        else
+            return CreateLiveCloudEffectOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLiveCloudEffectOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateLiveCloudEffectAsync(const CreateLiveCloudEffectRequest& request, const CreateLiveCloudEffectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateLiveCloudEffectRequest&;
+    using Resp = CreateLiveCloudEffectResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateLiveCloudEffect", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::CreateLiveCloudEffectOutcomeCallable LiveClient::CreateLiveCloudEffectCallable(const CreateLiveCloudEffectRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateLiveCloudEffectOutcome>>();
+    CreateLiveCloudEffectAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const CreateLiveCloudEffectRequest&,
+        CreateLiveCloudEffectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LiveClient::CreateLivePadRuleOutcome LiveClient::CreateLivePadRule(const CreateLivePadRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateLivePadRule");

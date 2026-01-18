@@ -82,12 +82,14 @@ namespace TencentCloud
                     /**
                      * 获取类型，可选值：
 <li>standard：通用超分</li>
-<li>super：高级超分。</li>
+<li>super：高级超分super版。</li>
+<li>ultra：高级超分ultra版。</li>
 默认值：standard。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型，可选值：
 <li>standard：通用超分</li>
-<li>super：高级超分。</li>
+<li>super：高级超分super版。</li>
+<li>ultra：高级超分ultra版。</li>
 默认值：standard。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -97,12 +99,14 @@ namespace TencentCloud
                     /**
                      * 设置类型，可选值：
 <li>standard：通用超分</li>
-<li>super：高级超分。</li>
+<li>super：高级超分super版。</li>
+<li>ultra：高级超分ultra版。</li>
 默认值：standard。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 类型，可选值：
 <li>standard：通用超分</li>
-<li>super：高级超分。</li>
+<li>super：高级超分super版。</li>
+<li>ultra：高级超分ultra版。</li>
 默认值：standard。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -155,8 +159,10 @@ namespace TencentCloud
 
                     /**
                      * 获取超分倍率，可以为小数。
+注意：当Mode等于percent时使用。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Percent 超分倍率，可以为小数。
+注意：当Mode等于percent时使用。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -164,8 +170,10 @@ namespace TencentCloud
 
                     /**
                      * 设置超分倍率，可以为小数。
+注意：当Mode等于percent时使用。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _percent 超分倍率，可以为小数。
+注意：当Mode等于percent时使用。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -180,8 +188,10 @@ namespace TencentCloud
 
                     /**
                      * 获取目标图片宽度，不能超过4096。
+注意：当Mode等于aspect或fixed时，优先使用此配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Width 目标图片宽度，不能超过4096。
+注意：当Mode等于aspect或fixed时，优先使用此配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -189,8 +199,10 @@ namespace TencentCloud
 
                     /**
                      * 设置目标图片宽度，不能超过4096。
+注意：当Mode等于aspect或fixed时，优先使用此配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _width 目标图片宽度，不能超过4096。
+注意：当Mode等于aspect或fixed时，优先使用此配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -205,8 +217,10 @@ namespace TencentCloud
 
                     /**
                      * 获取目标图片高度，不能超过4096。
+注意：当Mode等于aspect或fixed时，优先使用此配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Height 目标图片高度，不能超过4096。
+注意：当Mode等于aspect或fixed时，优先使用此配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -214,8 +228,10 @@ namespace TencentCloud
 
                     /**
                      * 设置目标图片高度，不能超过4096。
+注意：当Mode等于aspect或fixed时，优先使用此配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _height 目标图片高度，不能超过4096。
+注意：当Mode等于aspect或fixed时，优先使用此配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -227,6 +243,64 @@ namespace TencentCloud
                      * 
                      */
                     bool HeightHasBeenSet() const;
+
+                    /**
+                     * 获取目标图片长边长度，不能超过4096。
+注意：当Mode等于aspect或fixed，且未配置Width和Height字段时使用此配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LongSide 目标图片长边长度，不能超过4096。
+注意：当Mode等于aspect或fixed，且未配置Width和Height字段时使用此配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetLongSide() const;
+
+                    /**
+                     * 设置目标图片长边长度，不能超过4096。
+注意：当Mode等于aspect或fixed，且未配置Width和Height字段时使用此配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _longSide 目标图片长边长度，不能超过4096。
+注意：当Mode等于aspect或fixed，且未配置Width和Height字段时使用此配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLongSide(const int64_t& _longSide);
+
+                    /**
+                     * 判断参数 LongSide 是否已赋值
+                     * @return LongSide 是否已赋值
+                     * 
+                     */
+                    bool LongSideHasBeenSet() const;
+
+                    /**
+                     * 获取目标图片短边长度，不能超过4096。
+注意：当Mode等于aspect或fixed，且未配置Width和Height字段时使用此配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShortSide 目标图片短边长度，不能超过4096。
+注意：当Mode等于aspect或fixed，且未配置Width和Height字段时使用此配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetShortSide() const;
+
+                    /**
+                     * 设置目标图片短边长度，不能超过4096。
+注意：当Mode等于aspect或fixed，且未配置Width和Height字段时使用此配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _shortSide 目标图片短边长度，不能超过4096。
+注意：当Mode等于aspect或fixed，且未配置Width和Height字段时使用此配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetShortSide(const int64_t& _shortSide);
+
+                    /**
+                     * 判断参数 ShortSide 是否已赋值
+                     * @return ShortSide 是否已赋值
+                     * 
+                     */
+                    bool ShortSideHasBeenSet() const;
 
                 private:
 
@@ -242,7 +316,8 @@ namespace TencentCloud
                     /**
                      * 类型，可选值：
 <li>standard：通用超分</li>
-<li>super：高级超分。</li>
+<li>super：高级超分super版。</li>
+<li>ultra：高级超分ultra版。</li>
 默认值：standard。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -261,6 +336,7 @@ namespace TencentCloud
 
                     /**
                      * 超分倍率，可以为小数。
+注意：当Mode等于percent时使用。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_percent;
@@ -268,6 +344,7 @@ namespace TencentCloud
 
                     /**
                      * 目标图片宽度，不能超过4096。
+注意：当Mode等于aspect或fixed时，优先使用此配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_width;
@@ -275,10 +352,27 @@ namespace TencentCloud
 
                     /**
                      * 目标图片高度，不能超过4096。
+注意：当Mode等于aspect或fixed时，优先使用此配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
+
+                    /**
+                     * 目标图片长边长度，不能超过4096。
+注意：当Mode等于aspect或fixed，且未配置Width和Height字段时使用此配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_longSide;
+                    bool m_longSideHasBeenSet;
+
+                    /**
+                     * 目标图片短边长度，不能超过4096。
+注意：当Mode等于aspect或fixed，且未配置Width和Height字段时使用此配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_shortSide;
+                    bool m_shortSideHasBeenSet;
 
                 };
             }

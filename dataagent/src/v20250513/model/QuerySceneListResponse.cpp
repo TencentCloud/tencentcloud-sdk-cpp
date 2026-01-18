@@ -24,6 +24,7 @@ using namespace TencentCloud::Dataagent::V20250513::Model;
 using namespace std;
 
 QuerySceneListResponse::QuerySceneListResponse() :
+    m_datasHasBeenSet(false),
     m_totalHasBeenSet(false)
 {
 }
@@ -62,6 +63,26 @@ CoreInternalOutcome QuerySceneListResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("Datas") && !rsp["Datas"].IsNull())
+    {
+        if (!rsp["Datas"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Datas` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Datas"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Scene item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_datas.push_back(item);
+        }
+        m_datasHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
     {
         if (!rsp["Total"].IsInt64())
@@ -82,6 +103,21 @@ string QuerySceneListResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
+    if (m_datasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Datas";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_datas.begin(); itr != m_datas.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_totalHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -101,6 +137,16 @@ string QuerySceneListResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<Scene> QuerySceneListResponse::GetDatas() const
+{
+    return m_datas;
+}
+
+bool QuerySceneListResponse::DatasHasBeenSet() const
+{
+    return m_datasHasBeenSet;
+}
 
 int64_t QuerySceneListResponse::GetTotal() const
 {

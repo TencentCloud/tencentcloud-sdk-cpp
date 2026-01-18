@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通道组ID
-                     * @return GroupId 通道组ID
+                     * 获取<p>通道组ID</p>
+                     * @return GroupId <p>通道组ID</p>
                      * 
                      */
                     std::string GetGroupId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通道组ID
+                     * <p>通道组ID</p>
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

@@ -107,15 +107,47 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取维护周期（一周中的哪几天）
-                     * @return DayOfWeek 维护周期（一周中的哪几天）
+                     * 获取维护周期（一周中的哪几天），支持的参数值如下：
+
+- MO：周一
+- TU：周二
+- WE：周三
+- TH：周四
+- FR：周五
+- SA：周六
+- SU：周日
+                     * @return DayOfWeek 维护周期（一周中的哪几天），支持的参数值如下：
+
+- MO：周一
+- TU：周二
+- WE：周三
+- TH：周四
+- FR：周五
+- SA：周六
+- SU：周日
                      * 
                      */
                     std::vector<std::string> GetDayOfWeek() const;
 
                     /**
-                     * 设置维护周期（一周中的哪几天）
-                     * @param _dayOfWeek 维护周期（一周中的哪几天）
+                     * 设置维护周期（一周中的哪几天），支持的参数值如下：
+
+- MO：周一
+- TU：周二
+- WE：周三
+- TH：周四
+- FR：周五
+- SA：周六
+- SU：周日
+                     * @param _dayOfWeek 维护周期（一周中的哪几天），支持的参数值如下：
+
+- MO：周一
+- TU：周二
+- WE：周三
+- TH：周四
+- FR：周五
+- SA：周六
+- SU：周日
                      * 
                      */
                     void SetDayOfWeek(const std::vector<std::string>& _dayOfWeek);
@@ -169,7 +201,15 @@ namespace TencentCloud
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 维护周期（一周中的哪几天）
+                     * 维护周期（一周中的哪几天），支持的参数值如下：
+
+- MO：周一
+- TU：周二
+- WE：周三
+- TH：周四
+- FR：周五
+- SA：周六
+- SU：周日
                      */
                     std::vector<std::string> m_dayOfWeek;
                     bool m_dayOfWeekHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取解析记录ID
-                     * @return DnsRecordId 解析记录ID
+                     * 获取<p>解析记录ID</p>
+                     * @return DnsRecordId <p>解析记录ID</p>
                      * 
                      */
                     uint64_t GetDnsRecordId() const;
 
                     /**
-                     * 设置解析记录ID
-                     * @param _dnsRecordId 解析记录ID
+                     * 设置<p>解析记录ID</p>
+                     * @param _dnsRecordId <p>解析记录ID</p>
                      * 
                      */
                     void SetDnsRecordId(const uint64_t& _dnsRecordId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DnsRecordIdHasBeenSet() const;
 
                     /**
-                     * 获取域名ID
-                     * @return DomainId 域名ID
+                     * 获取<p>域名ID</p>
+                     * @return DomainId <p>域名ID</p>
                      * 
                      */
                     std::string GetDomainId() const;
 
                     /**
-                     * 设置域名ID
-                     * @param _domainId 域名ID
+                     * 设置<p>域名ID</p>
+                     * @param _domainId <p>域名ID</p>
                      * 
                      */
                     void SetDomainId(const std::string& _domainId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DomainIdHasBeenSet() const;
 
                     /**
-                     * 获取国家ID列表
-                     * @return NationCountryInnerCodes 国家ID列表
+                     * 获取<p>国家ID列表</p>
+                     * @return NationCountryInnerCodes <p>国家ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetNationCountryInnerCodes() const;
 
                     /**
-                     * 设置国家ID列表
-                     * @param _nationCountryInnerCodes 国家ID列表
+                     * 设置<p>国家ID列表</p>
+                     * @param _nationCountryInnerCodes <p>国家ID列表</p>
                      * 
                      */
                     void SetNationCountryInnerCodes(const std::vector<std::string>& _nationCountryInnerCodes);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NationCountryInnerCodesHasBeenSet() const;
 
                     /**
-                     * 获取通道ID列表
-                     * @return ProxyIdList 通道ID列表
+                     * 获取<p>通道ID列表</p>
+                     * @return ProxyIdList <p>通道ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetProxyIdList() const;
 
                     /**
-                     * 设置通道ID列表
-                     * @param _proxyIdList 通道ID列表
+                     * 设置<p>通道ID列表</p>
+                     * @param _proxyIdList <p>通道ID列表</p>
                      * 
                      */
                     void SetProxyIdList(const std::vector<std::string>& _proxyIdList);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 解析记录ID
+                     * <p>解析记录ID</p>
                      */
                     uint64_t m_dnsRecordId;
                     bool m_dnsRecordIdHasBeenSet;
 
                     /**
-                     * 域名ID
+                     * <p>域名ID</p>
                      */
                     std::string m_domainId;
                     bool m_domainIdHasBeenSet;
 
                     /**
-                     * 国家ID列表
+                     * <p>国家ID列表</p>
                      */
                     std::vector<std::string> m_nationCountryInnerCodes;
                     bool m_nationCountryInnerCodesHasBeenSet;
 
                     /**
-                     * 通道ID列表
+                     * <p>通道ID列表</p>
                      */
                     std::vector<std::string> m_proxyIdList;
                     bool m_proxyIdListHasBeenSet;

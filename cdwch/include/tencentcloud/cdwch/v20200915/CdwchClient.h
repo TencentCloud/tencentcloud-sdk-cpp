@@ -45,6 +45,8 @@
 #include <tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeClusterConfigsRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeClusterConfigsResponse.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeEventTasksRequest.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeEventTasksResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeInstanceRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeInstanceResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeInstanceClustersRequest.h>
@@ -128,6 +130,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterConfigsResponse> DescribeClusterConfigsOutcome;
                 typedef std::future<DescribeClusterConfigsOutcome> DescribeClusterConfigsOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::DescribeClusterConfigsRequest&, DescribeClusterConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterConfigsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEventTasksResponse> DescribeEventTasksOutcome;
+                typedef std::future<DescribeEventTasksOutcome> DescribeEventTasksOutcomeCallable;
+                typedef std::function<void(const CdwchClient*, const Model::DescribeEventTasksRequest&, DescribeEventTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceResponse> DescribeInstanceOutcome;
                 typedef std::future<DescribeInstanceOutcome> DescribeInstanceOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::DescribeInstanceRequest&, DescribeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAsyncHandler;
@@ -283,6 +288,15 @@ namespace TencentCloud
                 DescribeClusterConfigsOutcome DescribeClusterConfigs(const Model::DescribeClusterConfigsRequest &request);
                 void DescribeClusterConfigsAsync(const Model::DescribeClusterConfigsRequest& request, const DescribeClusterConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClusterConfigsOutcomeCallable DescribeClusterConfigsCallable(const Model::DescribeClusterConfigsRequest& request);
+
+                /**
+                 *获取产生的事件
+                 * @param req DescribeEventTasksRequest
+                 * @return DescribeEventTasksOutcome
+                 */
+                DescribeEventTasksOutcome DescribeEventTasks(const Model::DescribeEventTasksRequest &request);
+                void DescribeEventTasksAsync(const Model::DescribeEventTasksRequest& request, const DescribeEventTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEventTasksOutcomeCallable DescribeEventTasksCallable(const Model::DescribeEventTasksRequest& request);
 
                 /**
                  *根据实例ID查询某个实例的具体信息

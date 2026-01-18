@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通道组总数。
-                     * @return TotalCount 通道组总数。
+                     * 获取<p>通道组总数。</p>
+                     * @return TotalCount <p>通道组总数。</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取通道组列表。
-                     * @return ProxyGroupList 通道组列表。
+                     * 获取<p>通道组列表。</p>
+                     * @return ProxyGroupList <p>通道组列表。</p>
                      * 
                      */
                     std::vector<ProxyGroupInfo> GetProxyGroupList() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通道组总数。
+                     * <p>通道组总数。</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 通道组列表。
+                     * <p>通道组列表。</p>
                      */
                     std::vector<ProxyGroupInfo> m_proxyGroupList;
                     bool m_proxyGroupListHasBeenSet;

@@ -590,6 +590,56 @@ CdwchClient::DescribeClusterConfigsOutcomeCallable CdwchClient::DescribeClusterC
     return prom->get_future();
 }
 
+CdwchClient::DescribeEventTasksOutcome CdwchClient::DescribeEventTasks(const DescribeEventTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEventTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEventTasksResponse rsp = DescribeEventTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEventTasksOutcome(rsp);
+        else
+            return DescribeEventTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEventTasksOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::DescribeEventTasksAsync(const DescribeEventTasksRequest& request, const DescribeEventTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeEventTasksRequest&;
+    using Resp = DescribeEventTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeEventTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CdwchClient::DescribeEventTasksOutcomeCallable CdwchClient::DescribeEventTasksCallable(const DescribeEventTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeEventTasksOutcome>>();
+    DescribeEventTasksAsync(
+    request,
+    [prom](
+        const CdwchClient*,
+        const DescribeEventTasksRequest&,
+        DescribeEventTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CdwchClient::DescribeInstanceOutcome CdwchClient::DescribeInstance(const DescribeInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstance");

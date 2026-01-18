@@ -913,7 +913,7 @@ HoaiMy
         &quot;APIUrl&quot;: &quot;https://api.minimax.chat/v1/t2a_v2&quot;,
         &quot;APIKey&quot;: &quot;eyxxxx&quot;,
         &quot;GroupId&quot;: &quot;181000000000000&quot;,
-        &quot;VoiceType&quot;:&quot;female-tianmei-jingpin&quot;,
+        &quot;VoiceType&quot;:&quot;female-tianmei&quot;,
         &quot;Speed&quot;: 1.2
 }
 </code></pre>
@@ -987,7 +987,7 @@ HoaiMy
         &quot;APIUrl&quot;: &quot;https://api.minimax.chat/v1/t2a_v2&quot;,
         &quot;APIKey&quot;: &quot;eyxxxx&quot;,
         &quot;GroupId&quot;: &quot;181000000000000&quot;,
-        &quot;VoiceType&quot;:&quot;female-tianmei-jingpin&quot;,
+        &quot;VoiceType&quot;:&quot;female-tianmei&quot;,
         &quot;Speed&quot;: 1.2
 }
 </code></pre>
@@ -1066,7 +1066,7 @@ HoaiMy
         &quot;APIUrl&quot;: &quot;https://api.minimax.chat/v1/t2a_v2&quot;,
         &quot;APIKey&quot;: &quot;eyxxxx&quot;,
         &quot;GroupId&quot;: &quot;181000000000000&quot;,
-        &quot;VoiceType&quot;:&quot;female-tianmei-jingpin&quot;,
+        &quot;VoiceType&quot;:&quot;female-tianmei&quot;,
         &quot;Speed&quot;: 1.2
 }
 </code></pre>
@@ -1140,7 +1140,7 @@ HoaiMy
         &quot;APIUrl&quot;: &quot;https://api.minimax.chat/v1/t2a_v2&quot;,
         &quot;APIKey&quot;: &quot;eyxxxx&quot;,
         &quot;GroupId&quot;: &quot;181000000000000&quot;,
-        &quot;VoiceType&quot;:&quot;female-tianmei-jingpin&quot;,
+        &quot;VoiceType&quot;:&quot;female-tianmei&quot;,
         &quot;Speed&quot;: 1.2
 }
 </code></pre>
@@ -1503,6 +1503,27 @@ HoaiMy
                      */
                     bool MaxCallDurationMsHasBeenSet() const;
 
+                    /**
+                     * 获取最大振铃时长，达到时长阈值自动挂断。 **仅自携号码支持当前参数**
+                     * @return MaxRingTimeoutSecond 最大振铃时长，达到时长阈值自动挂断。 **仅自携号码支持当前参数**
+                     * 
+                     */
+                    int64_t GetMaxRingTimeoutSecond() const;
+
+                    /**
+                     * 设置最大振铃时长，达到时长阈值自动挂断。 **仅自携号码支持当前参数**
+                     * @param _maxRingTimeoutSecond 最大振铃时长，达到时长阈值自动挂断。 **仅自携号码支持当前参数**
+                     * 
+                     */
+                    void SetMaxRingTimeoutSecond(const int64_t& _maxRingTimeoutSecond);
+
+                    /**
+                     * 判断参数 MaxRingTimeoutSecond 是否已赋值
+                     * @return MaxRingTimeoutSecond 是否已赋值
+                     * 
+                     */
+                    bool MaxRingTimeoutSecondHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1760,7 +1781,7 @@ HoaiMy
         &quot;APIUrl&quot;: &quot;https://api.minimax.chat/v1/t2a_v2&quot;,
         &quot;APIKey&quot;: &quot;eyxxxx&quot;,
         &quot;GroupId&quot;: &quot;181000000000000&quot;,
-        &quot;VoiceType&quot;:&quot;female-tianmei-jingpin&quot;,
+        &quot;VoiceType&quot;:&quot;female-tianmei&quot;,
         &quot;Speed&quot;: 1.2
 }
 </code></pre>
@@ -1896,6 +1917,12 @@ HoaiMy
                      */
                     uint64_t m_maxCallDurationMs;
                     bool m_maxCallDurationMsHasBeenSet;
+
+                    /**
+                     * 最大振铃时长，达到时长阈值自动挂断。 **仅自携号码支持当前参数**
+                     */
+                    int64_t m_maxRingTimeoutSecond;
+                    bool m_maxRingTimeoutSecondHasBeenSet;
 
                 };
             }

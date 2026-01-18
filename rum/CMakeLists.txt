@@ -46,6 +46,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeDataCustomUrlRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeUvListResponse.h
   include/tencentcloud/rum/v20210622/model/Tag.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsV2Request.h
   include/tencentcloud/rum/v20210622/model/DescribeRumGroupLogResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataStaticUrlRequest.h
   include/tencentcloud/rum/v20210622/model/ModifyInstanceResponse.h
@@ -84,6 +85,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlInfoRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataCustomUrlResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsV2Response.h
   include/tencentcloud/rum/v20210622/model/RumAreaInfo.h
   include/tencentcloud/rum/v20210622/model/DescribeDataSetUrlStatisticsRequest.h
   include/tencentcloud/rum/v20210622/model/ResumeInstanceResponse.h
@@ -170,6 +172,7 @@ set(rum_src
   src/v20210622/model/DescribeDataCustomUrlRequest.cpp
   src/v20210622/model/DescribeUvListResponse.cpp
   src/v20210622/model/Tag.cpp
+  src/v20210622/model/DescribeDataPvUrlStatisticsV2Request.cpp
   src/v20210622/model/DescribeRumGroupLogResponse.cpp
   src/v20210622/model/DescribeDataStaticUrlRequest.cpp
   src/v20210622/model/ModifyInstanceResponse.cpp
@@ -208,6 +211,7 @@ set(rum_src
   src/v20210622/model/DescribeDataPvUrlStatisticsResponse.cpp
   src/v20210622/model/DescribeDataLogUrlInfoRequest.cpp
   src/v20210622/model/DescribeDataCustomUrlResponse.cpp
+  src/v20210622/model/DescribeDataPvUrlStatisticsV2Response.cpp
   src/v20210622/model/RumAreaInfo.cpp
   src/v20210622/model/DescribeDataSetUrlStatisticsRequest.cpp
   src/v20210622/model/ResumeInstanceResponse.cpp

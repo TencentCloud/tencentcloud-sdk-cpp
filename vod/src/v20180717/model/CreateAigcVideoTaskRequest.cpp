@@ -33,11 +33,12 @@ CreateAigcVideoTaskRequest::CreateAigcVideoTaskRequest() :
     m_negativePromptHasBeenSet(false),
     m_enhancePromptHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
+    m_inputRegionHasBeenSet(false),
+    m_sceneTypeHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
     m_tasksPriorityHasBeenSet(false),
-    m_extInfoHasBeenSet(false),
-    m_inputRegionHasBeenSet(false)
+    m_extInfoHasBeenSet(false)
 {
 }
 
@@ -136,6 +137,22 @@ string CreateAigcVideoTaskRequest::ToJsonString() const
         m_outputConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_inputRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_inputRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sceneTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sceneType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_sessionIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -166,14 +183,6 @@ string CreateAigcVideoTaskRequest::ToJsonString() const
         string key = "ExtInfo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_inputRegionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InputRegion";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_inputRegion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -344,6 +353,38 @@ bool CreateAigcVideoTaskRequest::OutputConfigHasBeenSet() const
     return m_outputConfigHasBeenSet;
 }
 
+string CreateAigcVideoTaskRequest::GetInputRegion() const
+{
+    return m_inputRegion;
+}
+
+void CreateAigcVideoTaskRequest::SetInputRegion(const string& _inputRegion)
+{
+    m_inputRegion = _inputRegion;
+    m_inputRegionHasBeenSet = true;
+}
+
+bool CreateAigcVideoTaskRequest::InputRegionHasBeenSet() const
+{
+    return m_inputRegionHasBeenSet;
+}
+
+string CreateAigcVideoTaskRequest::GetSceneType() const
+{
+    return m_sceneType;
+}
+
+void CreateAigcVideoTaskRequest::SetSceneType(const string& _sceneType)
+{
+    m_sceneType = _sceneType;
+    m_sceneTypeHasBeenSet = true;
+}
+
+bool CreateAigcVideoTaskRequest::SceneTypeHasBeenSet() const
+{
+    return m_sceneTypeHasBeenSet;
+}
+
 string CreateAigcVideoTaskRequest::GetSessionId() const
 {
     return m_sessionId;
@@ -406,22 +447,6 @@ void CreateAigcVideoTaskRequest::SetExtInfo(const string& _extInfo)
 bool CreateAigcVideoTaskRequest::ExtInfoHasBeenSet() const
 {
     return m_extInfoHasBeenSet;
-}
-
-string CreateAigcVideoTaskRequest::GetInputRegion() const
-{
-    return m_inputRegion;
-}
-
-void CreateAigcVideoTaskRequest::SetInputRegion(const string& _inputRegion)
-{
-    m_inputRegion = _inputRegion;
-    m_inputRegionHasBeenSet = true;
-}
-
-bool CreateAigcVideoTaskRequest::InputRegionHasBeenSet() const
-{
-    return m_inputRegionHasBeenSet;
 }
 
 

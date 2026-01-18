@@ -1197,6 +1197,48 @@ Modify 集群变更中；
                      */
                     bool UpgradeZkVersionsHasBeenSet() const;
 
+                    /**
+                     * 获取是否显示rip
+                     * @return ShowRip 是否显示rip
+                     * 
+                     */
+                    std::string GetShowRip() const;
+
+                    /**
+                     * 设置是否显示rip
+                     * @param _showRip 是否显示rip
+                     * 
+                     */
+                    void SetShowRip(const std::string& _showRip);
+
+                    /**
+                     * 判断参数 ShowRip 是否已赋值
+                     * @return ShowRip 是否已赋值
+                     * 
+                     */
+                    bool ShowRipHasBeenSet() const;
+
+                    /**
+                     * 获取实例类型：标准型 standard，无keeper节点类型noKeeper；
+                     * @return InstanceType 实例类型：标准型 standard，无keeper节点类型noKeeper；
+                     * 
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置实例类型：标准型 standard，无keeper节点类型noKeeper；
+                     * @param _instanceType 实例类型：标准型 standard，无keeper节点类型noKeeper；
+                     * 
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     * 
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1525,6 +1567,18 @@ Modify 集群变更中；
                      */
                     std::string m_upgradeZkVersions;
                     bool m_upgradeZkVersionsHasBeenSet;
+
+                    /**
+                     * 是否显示rip
+                     */
+                    std::string m_showRip;
+                    bool m_showRipHasBeenSet;
+
+                    /**
+                     * 实例类型：标准型 standard，无keeper节点类型noKeeper；
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
 
                 };
             }

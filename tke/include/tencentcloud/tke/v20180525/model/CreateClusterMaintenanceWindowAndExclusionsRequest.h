@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterID 集群ID
+                     * 获取集群ID，可以从容器服务集群控制台获取（https://console.cloud.tencent.com/tke2/cluster）。
+                     * @return ClusterID 集群ID，可以从容器服务集群控制台获取（https://console.cloud.tencent.com/tke2/cluster）。
                      * 
                      */
                     std::string GetClusterID() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterID 集群ID
+                     * 设置集群ID，可以从容器服务集群控制台获取（https://console.cloud.tencent.com/tke2/cluster）。
+                     * @param _clusterID 集群ID，可以从容器服务集群控制台获取（https://console.cloud.tencent.com/tke2/cluster）。
                      * 
                      */
                     void SetClusterID(const std::string& _clusterID);
@@ -107,15 +107,47 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取维护周期（一周中的哪几天）
-                     * @return DayOfWeek 维护周期（一周中的哪几天）
+                     * 获取维护周期（一周中的哪几天），支持的参数值如下：
+
+- MO：周一
+- TU：周二
+- WE：周三
+- TH：周四
+- FR：周五
+- SA：周六
+- SU：周日
+                     * @return DayOfWeek 维护周期（一周中的哪几天），支持的参数值如下：
+
+- MO：周一
+- TU：周二
+- WE：周三
+- TH：周四
+- FR：周五
+- SA：周六
+- SU：周日
                      * 
                      */
                     std::vector<std::string> GetDayOfWeek() const;
 
                     /**
-                     * 设置维护周期（一周中的哪几天）
-                     * @param _dayOfWeek 维护周期（一周中的哪几天）
+                     * 设置维护周期（一周中的哪几天），支持的参数值如下：
+
+- MO：周一
+- TU：周二
+- WE：周三
+- TH：周四
+- FR：周五
+- SA：周六
+- SU：周日
+                     * @param _dayOfWeek 维护周期（一周中的哪几天），支持的参数值如下：
+
+- MO：周一
+- TU：周二
+- WE：周三
+- TH：周四
+- FR：周五
+- SA：周六
+- SU：周日
                      * 
                      */
                     void SetDayOfWeek(const std::vector<std::string>& _dayOfWeek);
@@ -151,7 +183,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 集群ID，可以从容器服务集群控制台获取（https://console.cloud.tencent.com/tke2/cluster）。
                      */
                     std::string m_clusterID;
                     bool m_clusterIDHasBeenSet;
@@ -169,7 +201,15 @@ namespace TencentCloud
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 维护周期（一周中的哪几天）
+                     * 维护周期（一周中的哪几天），支持的参数值如下：
+
+- MO：周一
+- TU：周二
+- WE：周三
+- TH：周四
+- FR：周五
+- SA：周六
+- SU：周日
                      */
                     std::vector<std::string> m_dayOfWeek;
                     bool m_dayOfWeekHasBeenSet;

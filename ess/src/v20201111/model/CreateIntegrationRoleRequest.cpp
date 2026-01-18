@@ -93,7 +93,12 @@ string CreateIntegrationRoleRequest::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubOrganizationIds";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_subOrganizationIds.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_subOrganizationIds.begin(); itr != m_subOrganizationIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_agentHasBeenSet)
@@ -193,12 +198,12 @@ bool CreateIntegrationRoleRequest::PermissionGroupsHasBeenSet() const
     return m_permissionGroupsHasBeenSet;
 }
 
-string CreateIntegrationRoleRequest::GetSubOrganizationIds() const
+vector<string> CreateIntegrationRoleRequest::GetSubOrganizationIds() const
 {
     return m_subOrganizationIds;
 }
 
-void CreateIntegrationRoleRequest::SetSubOrganizationIds(const string& _subOrganizationIds)
+void CreateIntegrationRoleRequest::SetSubOrganizationIds(const vector<string>& _subOrganizationIds)
 {
     m_subOrganizationIds = _subOrganizationIds;
     m_subOrganizationIdsHasBeenSet = true;

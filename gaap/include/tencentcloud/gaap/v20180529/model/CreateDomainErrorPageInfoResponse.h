@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取错误定制响应的配置ID
-                     * @return ErrorPageId 错误定制响应的配置ID
+                     * 获取<p>错误定制响应的配置ID</p>
+                     * @return ErrorPageId <p>错误定制响应的配置ID</p>
                      * 
                      */
                     std::string GetErrorPageId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 错误定制响应的配置ID
+                     * <p>错误定制响应的配置ID</p>
                      */
                     std::string m_errorPageId;
                     bool m_errorPageIdHasBeenSet;

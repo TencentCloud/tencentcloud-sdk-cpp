@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取监听器名称
-                     * @return ListenerName 监听器名称
+                     * 获取<p>监听器名称</p>
+                     * @return ListenerName <p>监听器名称</p>
                      * 
                      */
                     std::string GetListenerName() const;
 
                     /**
-                     * 设置监听器名称
-                     * @param _listenerName 监听器名称
+                     * 设置<p>监听器名称</p>
+                     * @param _listenerName <p>监听器名称</p>
                      * 
                      */
                     void SetListenerName(const std::string& _listenerName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ListenerNameHasBeenSet() const;
 
                     /**
-                     * 获取监听器端口，基于同种传输层协议（TCP 或 UDP）的监听器，端口不可重复
-                     * @return Port 监听器端口，基于同种传输层协议（TCP 或 UDP）的监听器，端口不可重复
+                     * 获取<p>监听器端口，基于同种传输层协议（TCP 或 UDP）的监听器，端口不可重复</p>
+                     * @return Port <p>监听器端口，基于同种传输层协议（TCP 或 UDP）的监听器，端口不可重复</p>
                      * 
                      */
                     uint64_t GetPort() const;
 
                     /**
-                     * 设置监听器端口，基于同种传输层协议（TCP 或 UDP）的监听器，端口不可重复
-                     * @param _port 监听器端口，基于同种传输层协议（TCP 或 UDP）的监听器，端口不可重复
+                     * 设置<p>监听器端口，基于同种传输层协议（TCP 或 UDP）的监听器，端口不可重复</p>
+                     * @param _port <p>监听器端口，基于同种传输层协议（TCP 或 UDP）的监听器，端口不可重复</p>
                      * 
                      */
                     void SetPort(const uint64_t& _port);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取通道ID，与GroupId不能同时设置，对应为通道创建监听器
-                     * @return ProxyId 通道ID，与GroupId不能同时设置，对应为通道创建监听器
+                     * 获取<p>通道ID，与GroupId不能同时设置，对应为通道创建监听器</p>
+                     * @return ProxyId <p>通道ID，与GroupId不能同时设置，对应为通道创建监听器</p>
                      * 
                      */
                     std::string GetProxyId() const;
 
                     /**
-                     * 设置通道ID，与GroupId不能同时设置，对应为通道创建监听器
-                     * @param _proxyId 通道ID，与GroupId不能同时设置，对应为通道创建监听器
+                     * 设置<p>通道ID，与GroupId不能同时设置，对应为通道创建监听器</p>
+                     * @param _proxyId <p>通道ID，与GroupId不能同时设置，对应为通道创建监听器</p>
                      * 
                      */
                     void SetProxyId(const std::string& _proxyId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ProxyIdHasBeenSet() const;
 
                     /**
-                     * 获取通道组ID，与ProxyId不能同时设置，对应为通道组创建监听器
-                     * @return GroupId 通道组ID，与ProxyId不能同时设置，对应为通道组创建监听器
+                     * 获取<p>通道组ID，与ProxyId不能同时设置，对应为通道组创建监听器</p>
+                     * @return GroupId <p>通道组ID，与ProxyId不能同时设置，对应为通道组创建监听器</p>
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置通道组ID，与ProxyId不能同时设置，对应为通道组创建监听器
-                     * @param _groupId 通道组ID，与ProxyId不能同时设置，对应为通道组创建监听器
+                     * 设置<p>通道组ID，与ProxyId不能同时设置，对应为通道组创建监听器</p>
+                     * @param _groupId <p>通道组ID，与ProxyId不能同时设置，对应为通道组创建监听器</p>
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 监听器名称
+                     * <p>监听器名称</p>
                      */
                     std::string m_listenerName;
                     bool m_listenerNameHasBeenSet;
 
                     /**
-                     * 监听器端口，基于同种传输层协议（TCP 或 UDP）的监听器，端口不可重复
+                     * <p>监听器端口，基于同种传输层协议（TCP 或 UDP）的监听器，端口不可重复</p>
                      */
                     uint64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 通道ID，与GroupId不能同时设置，对应为通道创建监听器
+                     * <p>通道ID，与GroupId不能同时设置，对应为通道创建监听器</p>
                      */
                     std::string m_proxyId;
                     bool m_proxyIdHasBeenSet;
 
                     /**
-                     * 通道组ID，与ProxyId不能同时设置，对应为通道组创建监听器
+                     * <p>通道组ID，与ProxyId不能同时设置，对应为通道组创建监听器</p>
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

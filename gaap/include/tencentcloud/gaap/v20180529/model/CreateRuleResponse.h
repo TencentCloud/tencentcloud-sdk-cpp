@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建转发规则成功返回规则ID
-                     * @return RuleId 创建转发规则成功返回规则ID
+                     * 获取<p>创建转发规则成功返回规则ID</p>
+                     * @return RuleId <p>创建转发规则成功返回规则ID</p>
                      * 
                      */
                     std::string GetRuleId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建转发规则成功返回规则ID
+                     * <p>创建转发规则成功返回规则ID</p>
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;

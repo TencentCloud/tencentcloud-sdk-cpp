@@ -25,7 +25,8 @@ ImageTaskInput::ImageTaskInput() :
     m_enhanceConfigHasBeenSet(false),
     m_eraseConfigHasBeenSet(false),
     m_blindWatermarkConfigHasBeenSet(false),
-    m_beautyConfigHasBeenSet(false)
+    m_beautyConfigHasBeenSet(false),
+    m_transformConfigHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,23 @@ CoreInternalOutcome ImageTaskInput::Deserialize(const rapidjson::Value &value)
         m_beautyConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("TransformConfig") && !value["TransformConfig"].IsNull())
+    {
+        if (!value["TransformConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageTaskInput.TransformConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_transformConfig.Deserialize(value["TransformConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_transformConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -169,6 +187,15 @@ void ImageTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_beautyConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_transformConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransformConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_transformConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -252,5 +279,21 @@ void ImageTaskInput::SetBeautyConfig(const BeautyConfig& _beautyConfig)
 bool ImageTaskInput::BeautyConfigHasBeenSet() const
 {
     return m_beautyConfigHasBeenSet;
+}
+
+ImageTransformConfig ImageTaskInput::GetTransformConfig() const
+{
+    return m_transformConfig;
+}
+
+void ImageTaskInput::SetTransformConfig(const ImageTransformConfig& _transformConfig)
+{
+    m_transformConfig = _transformConfig;
+    m_transformConfigHasBeenSet = true;
+}
+
+bool ImageTaskInput::TransformConfigHasBeenSet() const
+{
+    return m_transformConfigHasBeenSet;
 }
 

@@ -161,6 +161,76 @@ namespace TencentCloud
                     bool AspectRatioHasBeenSet() const;
 
                     /**
+                     * 获取是否添加图标水印。
+1. Hailuo 支持此参数。
+2. Kling 支持此参数。
+3. Vidu 支持此参数。
+                     * @return LogoAdd 是否添加图标水印。
+1. Hailuo 支持此参数。
+2. Kling 支持此参数。
+3. Vidu 支持此参数。
+                     * 
+                     */
+                    int64_t GetLogoAdd() const;
+
+                    /**
+                     * 设置是否添加图标水印。
+1. Hailuo 支持此参数。
+2. Kling 支持此参数。
+3. Vidu 支持此参数。
+                     * @param _logoAdd 是否添加图标水印。
+1. Hailuo 支持此参数。
+2. Kling 支持此参数。
+3. Vidu 支持此参数。
+                     * 
+                     */
+                    void SetLogoAdd(const int64_t& _logoAdd);
+
+                    /**
+                     * 判断参数 LogoAdd 是否已赋值
+                     * @return LogoAdd 是否已赋值
+                     * 
+                     */
+                    bool LogoAddHasBeenSet() const;
+
+                    /**
+                     * 获取为视频生成音频。接受的值包括 true 或 false。 
+
+支持此参数的模型：
+1. GV，默认true。
+2. OS，默认true。
+                     * @return EnableAudio 为视频生成音频。接受的值包括 true 或 false。 
+
+支持此参数的模型：
+1. GV，默认true。
+2. OS，默认true。
+                     * 
+                     */
+                    bool GetEnableAudio() const;
+
+                    /**
+                     * 设置为视频生成音频。接受的值包括 true 或 false。 
+
+支持此参数的模型：
+1. GV，默认true。
+2. OS，默认true。
+                     * @param _enableAudio 为视频生成音频。接受的值包括 true 或 false。 
+
+支持此参数的模型：
+1. GV，默认true。
+2. OS，默认true。
+                     * 
+                     */
+                    void SetEnableAudio(const bool& _enableAudio);
+
+                    /**
+                     * 判断参数 EnableAudio 是否已赋值
+                     * @return EnableAudio 是否已赋值
+                     * 
+                     */
+                    bool EnableAudioHasBeenSet() const;
+
+                    /**
                      * 获取错峰模型，目前仅支持Vidu模型。
 错峰模式下提交的任务，会在48小时内生成，未能完成的任务会被自动取消。
                      * @return OffPeak 错峰模型，目前仅支持Vidu模型。
@@ -216,6 +286,25 @@ namespace TencentCloud
                      */
                     std::string m_aspectRatio;
                     bool m_aspectRatioHasBeenSet;
+
+                    /**
+                     * 是否添加图标水印。
+1. Hailuo 支持此参数。
+2. Kling 支持此参数。
+3. Vidu 支持此参数。
+                     */
+                    int64_t m_logoAdd;
+                    bool m_logoAddHasBeenSet;
+
+                    /**
+                     * 为视频生成音频。接受的值包括 true 或 false。 
+
+支持此参数的模型：
+1. GV，默认true。
+2. OS，默认true。
+                     */
+                    bool m_enableAudio;
+                    bool m_enableAudioHasBeenSet;
 
                     /**
                      * 错峰模型，目前仅支持Vidu模型。

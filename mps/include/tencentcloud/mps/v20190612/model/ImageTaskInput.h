@@ -29,6 +29,7 @@
 #include <tencentcloud/mps/v20190612/model/ImageEraseConfig.h>
 #include <tencentcloud/mps/v20190612/model/BlindWatermarkConfig.h>
 #include <tencentcloud/mps/v20190612/model/BeautyConfig.h>
+#include <tencentcloud/mps/v20190612/model/ImageTransformConfig.h>
 
 
 namespace TencentCloud
@@ -172,6 +173,27 @@ namespace TencentCloud
                      */
                     bool BeautyConfigHasBeenSet() const;
 
+                    /**
+                     * 获取图片基础转换能力。
+                     * @return TransformConfig 图片基础转换能力。
+                     * 
+                     */
+                    ImageTransformConfig GetTransformConfig() const;
+
+                    /**
+                     * 设置图片基础转换能力。
+                     * @param _transformConfig 图片基础转换能力。
+                     * 
+                     */
+                    void SetTransformConfig(const ImageTransformConfig& _transformConfig);
+
+                    /**
+                     * 判断参数 TransformConfig 是否已赋值
+                     * @return TransformConfig 是否已赋值
+                     * 
+                     */
+                    bool TransformConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +229,12 @@ namespace TencentCloud
                      */
                     BeautyConfig m_beautyConfig;
                     bool m_beautyConfigHasBeenSet;
+
+                    /**
+                     * 图片基础转换能力。
+                     */
+                    ImageTransformConfig m_transformConfig;
+                    bool m_transformConfigHasBeenSet;
 
                 };
             }

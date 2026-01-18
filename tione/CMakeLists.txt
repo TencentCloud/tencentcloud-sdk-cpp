@@ -115,8 +115,9 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/ServiceCallInfo.h
   include/tencentcloud/tione/v20211111/model/CosPathInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupsResponse.h
-  include/tencentcloud/tione/v20211111/model/SpecPrice.h
+  include/tencentcloud/tione/v20211111/model/DescribeTrainingTaskRequest.h
   include/tencentcloud/tione/v20211111/model/StartNotebookResponse.h
+  include/tencentcloud/tione/v20211111/model/ModelInputInfo.h
   include/tencentcloud/tione/v20211111/model/CFSTurbo.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionRequest.h
   include/tencentcloud/tione/v20211111/model/ResourceInstanceRunningJobInfo.h
@@ -184,6 +185,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/TagFilter.h
   include/tencentcloud/tione/v20211111/model/PodSSHInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceGroupsRequest.h
+  include/tencentcloud/tione/v20211111/model/SubAccountInfo.h
   include/tencentcloud/tione/v20211111/model/ImageInfo.h
   include/tencentcloud/tione/v20211111/model/Tag.h
   include/tencentcloud/tione/v20211111/model/ServiceInfo.h
@@ -207,6 +209,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/IntranetCallInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingSpecsPriceRequest.h
   include/tencentcloud/tione/v20211111/model/Instance.h
+  include/tencentcloud/tione/v20211111/model/SpecPrice.h
   include/tencentcloud/tione/v20211111/model/CreateExportRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingSpecsResponse.h
   include/tencentcloud/tione/v20211111/model/DeleteTrainingTaskResponse.h
@@ -246,6 +249,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/HostPath.h
   include/tencentcloud/tione/v20211111/model/StopModelAccelerateTaskResponse.h
   include/tencentcloud/tione/v20211111/model/IngressPrivateLinkInfo.h
+  include/tencentcloud/tione/v20211111/model/UpdateSubAccountLinuxUserInfoResponse.h
   include/tencentcloud/tione/v20211111/model/ServiceEIPInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTasksResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeModelAccelerateTaskRequest.h
@@ -254,6 +258,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/ExecAction.h
   include/tencentcloud/tione/v20211111/model/TrainingTaskDetail.h
   include/tencentcloud/tione/v20211111/model/DescribeExportRequest.h
+  include/tencentcloud/tione/v20211111/model/UpdateSubAccountLinuxUserInfoRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeNotebookRequest.h
   include/tencentcloud/tione/v20211111/model/LocalDisk.h
   include/tencentcloud/tione/v20211111/model/DescribeLogsResponse.h
@@ -265,13 +270,13 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/Spec.h
   include/tencentcloud/tione/v20211111/model/ServiceCallInfoV2.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupRequest.h
-  include/tencentcloud/tione/v20211111/model/DescribeTrainingTaskRequest.h
+  include/tencentcloud/tione/v20211111/model/DescribeSubAccountLinuxUserInfosRequest.h
   include/tencentcloud/tione/v20211111/model/ChatCompletionResponse.h
   include/tencentcloud/tione/v20211111/model/GooseFSx.h
   include/tencentcloud/tione/v20211111/model/DescribePlatformImagesResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTaskPodsRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionsResponse.h
-  include/tencentcloud/tione/v20211111/model/ModelInputInfo.h
+  include/tencentcloud/tione/v20211111/model/DescribeSubAccountLinuxUserInfosResponse.h
   include/tencentcloud/tione/v20211111/model/DeleteDatasetRequest.h
   include/tencentcloud/tione/v20211111/model/DataConfig.h
   include/tencentcloud/tione/v20211111/model/ResourceConf.h
@@ -401,8 +406,9 @@ set(tione_src
   src/v20211111/model/ServiceCallInfo.cpp
   src/v20211111/model/CosPathInfo.cpp
   src/v20211111/model/DescribeBillingResourceGroupsResponse.cpp
-  src/v20211111/model/SpecPrice.cpp
+  src/v20211111/model/DescribeTrainingTaskRequest.cpp
   src/v20211111/model/StartNotebookResponse.cpp
+  src/v20211111/model/ModelInputInfo.cpp
   src/v20211111/model/CFSTurbo.cpp
   src/v20211111/model/DescribeTrainingModelVersionRequest.cpp
   src/v20211111/model/ResourceInstanceRunningJobInfo.cpp
@@ -470,6 +476,7 @@ set(tione_src
   src/v20211111/model/TagFilter.cpp
   src/v20211111/model/PodSSHInfo.cpp
   src/v20211111/model/DescribeModelServiceGroupsRequest.cpp
+  src/v20211111/model/SubAccountInfo.cpp
   src/v20211111/model/ImageInfo.cpp
   src/v20211111/model/Tag.cpp
   src/v20211111/model/ServiceInfo.cpp
@@ -493,6 +500,7 @@ set(tione_src
   src/v20211111/model/IntranetCallInfo.cpp
   src/v20211111/model/DescribeBillingSpecsPriceRequest.cpp
   src/v20211111/model/Instance.cpp
+  src/v20211111/model/SpecPrice.cpp
   src/v20211111/model/CreateExportRequest.cpp
   src/v20211111/model/DescribeBillingSpecsResponse.cpp
   src/v20211111/model/DeleteTrainingTaskResponse.cpp
@@ -532,6 +540,7 @@ set(tione_src
   src/v20211111/model/HostPath.cpp
   src/v20211111/model/StopModelAccelerateTaskResponse.cpp
   src/v20211111/model/IngressPrivateLinkInfo.cpp
+  src/v20211111/model/UpdateSubAccountLinuxUserInfoResponse.cpp
   src/v20211111/model/ServiceEIPInfo.cpp
   src/v20211111/model/DescribeTrainingTasksResponse.cpp
   src/v20211111/model/DescribeModelAccelerateTaskRequest.cpp
@@ -540,6 +549,7 @@ set(tione_src
   src/v20211111/model/ExecAction.cpp
   src/v20211111/model/TrainingTaskDetail.cpp
   src/v20211111/model/DescribeExportRequest.cpp
+  src/v20211111/model/UpdateSubAccountLinuxUserInfoRequest.cpp
   src/v20211111/model/DescribeNotebookRequest.cpp
   src/v20211111/model/LocalDisk.cpp
   src/v20211111/model/DescribeLogsResponse.cpp
@@ -551,13 +561,13 @@ set(tione_src
   src/v20211111/model/Spec.cpp
   src/v20211111/model/ServiceCallInfoV2.cpp
   src/v20211111/model/DescribeBillingResourceGroupRequest.cpp
-  src/v20211111/model/DescribeTrainingTaskRequest.cpp
+  src/v20211111/model/DescribeSubAccountLinuxUserInfosRequest.cpp
   src/v20211111/model/ChatCompletionResponse.cpp
   src/v20211111/model/GooseFSx.cpp
   src/v20211111/model/DescribePlatformImagesResponse.cpp
   src/v20211111/model/DescribeTrainingTaskPodsRequest.cpp
   src/v20211111/model/DescribeTrainingModelVersionsResponse.cpp
-  src/v20211111/model/ModelInputInfo.cpp
+  src/v20211111/model/DescribeSubAccountLinuxUserInfosResponse.cpp
   src/v20211111/model/DeleteDatasetRequest.cpp
   src/v20211111/model/DataConfig.cpp
   src/v20211111/model/ResourceConf.cpp

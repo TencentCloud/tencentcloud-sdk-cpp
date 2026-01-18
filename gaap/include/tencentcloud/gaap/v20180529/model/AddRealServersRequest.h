@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取源站对应的项目ID
-                     * @return ProjectId 源站对应的项目ID
+                     * 获取<p>源站对应的项目ID</p>
+                     * @return ProjectId <p>源站对应的项目ID</p>
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置源站对应的项目ID
-                     * @param _projectId 源站对应的项目ID
+                     * 设置<p>源站对应的项目ID</p>
+                     * @param _projectId <p>源站对应的项目ID</p>
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取源站对应的IP或域名
-                     * @return RealServerIP 源站对应的IP或域名
+                     * 获取<p>源站对应的IP或域名</p>
+                     * @return RealServerIP <p>源站对应的IP或域名</p>
                      * 
                      */
                     std::vector<std::string> GetRealServerIP() const;
 
                     /**
-                     * 设置源站对应的IP或域名
-                     * @param _realServerIP 源站对应的IP或域名
+                     * 设置<p>源站对应的IP或域名</p>
+                     * @param _realServerIP <p>源站对应的IP或域名</p>
                      * 
                      */
                     void SetRealServerIP(const std::vector<std::string>& _realServerIP);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool RealServerIPHasBeenSet() const;
 
                     /**
-                     * 获取源站名称
-                     * @return RealServerName 源站名称
+                     * 获取<p>源站名称</p>
+                     * @return RealServerName <p>源站名称</p>
                      * 
                      */
                     std::string GetRealServerName() const;
 
                     /**
-                     * 设置源站名称
-                     * @param _realServerName 源站名称
+                     * 设置<p>源站名称</p>
+                     * @param _realServerName <p>源站名称</p>
                      * 
                      */
                     void SetRealServerName(const std::string& _realServerName);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool RealServerNameHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return TagSet 标签列表
+                     * 获取<p>标签列表</p>
+                     * @return TagSet <p>标签列表</p>
                      * 
                      */
                     std::vector<TagPair> GetTagSet() const;
 
                     /**
-                     * 设置标签列表
-                     * @param _tagSet 标签列表
+                     * 设置<p>标签列表</p>
+                     * @param _tagSet <p>标签列表</p>
                      * 
                      */
                     void SetTagSet(const std::vector<TagPair>& _tagSet);
@@ -130,25 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 源站对应的项目ID
+                     * <p>源站对应的项目ID</p>
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 源站对应的IP或域名
+                     * <p>源站对应的IP或域名</p>
                      */
                     std::vector<std::string> m_realServerIP;
                     bool m_realServerIPHasBeenSet;
 
                     /**
-                     * 源站名称
+                     * <p>源站名称</p>
                      */
                     std::string m_realServerName;
                     bool m_realServerNameHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * <p>标签列表</p>
                      */
                     std::vector<TagPair> m_tagSet;
                     bool m_tagSetHasBeenSet;
