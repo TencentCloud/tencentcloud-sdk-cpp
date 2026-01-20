@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cls/v20201016/model/FilterStatistics.h>
 
 
 namespace TencentCloud
@@ -44,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取预览结果
-                     * @return PreviewInfos 预览结果
+                     * 获取<p>预览结果</p>
+                     * @return PreviewInfos <p>预览结果</p>
                      * 
                      */
                     std::vector<std::string> GetPreviewInfos() const;
@@ -57,13 +58,33 @@ namespace TencentCloud
                      */
                     bool PreviewInfosHasBeenSet() const;
 
+                    /**
+                     * 获取<p>数据过滤结果</p>
+                     * @return FilterStats <p>数据过滤结果</p>
+                     * 
+                     */
+                    FilterStatistics GetFilterStats() const;
+
+                    /**
+                     * 判断参数 FilterStats 是否已赋值
+                     * @return FilterStats 是否已赋值
+                     * 
+                     */
+                    bool FilterStatsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 预览结果
+                     * <p>预览结果</p>
                      */
                     std::vector<std::string> m_previewInfos;
                     bool m_previewInfosHasBeenSet;
+
+                    /**
+                     * <p>数据过滤结果</p>
+                     */
+                    FilterStatistics m_filterStats;
+                    bool m_filterStatsHasBeenSet;
 
                 };
             }

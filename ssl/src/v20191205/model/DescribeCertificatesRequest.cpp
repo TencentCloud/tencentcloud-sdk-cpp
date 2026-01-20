@@ -39,7 +39,8 @@ DescribeCertificatesRequest::DescribeCertificatesRequest() :
     m_hostableHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_isPendingIssueHasBeenSet(false),
-    m_certIdsHasBeenSet(false)
+    m_certIdsHasBeenSet(false),
+    m_serviceIdHasBeenSet(false)
 {
 }
 
@@ -201,6 +202,14 @@ string DescribeCertificatesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_serviceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -481,6 +490,22 @@ void DescribeCertificatesRequest::SetCertIds(const vector<string>& _certIds)
 bool DescribeCertificatesRequest::CertIdsHasBeenSet() const
 {
     return m_certIdsHasBeenSet;
+}
+
+string DescribeCertificatesRequest::GetServiceId() const
+{
+    return m_serviceId;
+}
+
+void DescribeCertificatesRequest::SetServiceId(const string& _serviceId)
+{
+    m_serviceId = _serviceId;
+    m_serviceIdHasBeenSet = true;
+}
+
+bool DescribeCertificatesRequest::ServiceIdHasBeenSet() const
+{
+    return m_serviceIdHasBeenSet;
 }
 
 

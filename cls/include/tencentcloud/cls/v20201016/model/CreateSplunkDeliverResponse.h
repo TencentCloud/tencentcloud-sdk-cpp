@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取splunk投递任务id
-                     * @return TaskId splunk投递任务id
+                     * 获取<p>splunk投递任务id</p>
+                     * @return TaskId <p>splunk投递任务id</p>
                      * 
                      */
                     std::string GetTaskId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * splunk投递任务id
+                     * <p>splunk投递任务id</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

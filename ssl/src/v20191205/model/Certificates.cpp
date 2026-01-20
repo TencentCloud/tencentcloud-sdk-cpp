@@ -77,7 +77,11 @@ Certificates::Certificates() :
     m_certRevokedTimeHasBeenSet(false),
     m_hostingResourceTypesHasBeenSet(false),
     m_hostingConfigHasBeenSet(false),
-    m_isHostingUploadRenewCertHasBeenSet(false)
+    m_isHostingUploadRenewCertHasBeenSet(false),
+    m_serviceIdHasBeenSet(false),
+    m_serviceStatusHasBeenSet(false),
+    m_certServiceBeginTimeHasBeenSet(false),
+    m_certServiceEndTimeHasBeenSet(false)
 {
 }
 
@@ -722,6 +726,46 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
         m_isHostingUploadRenewCertHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceId") && !value["ServiceId"].IsNull())
+    {
+        if (!value["ServiceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificates.ServiceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceId = string(value["ServiceId"].GetString());
+        m_serviceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServiceStatus") && !value["ServiceStatus"].IsNull())
+    {
+        if (!value["ServiceStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificates.ServiceStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceStatus = string(value["ServiceStatus"].GetString());
+        m_serviceStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("CertServiceBeginTime") && !value["CertServiceBeginTime"].IsNull())
+    {
+        if (!value["CertServiceBeginTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificates.CertServiceBeginTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_certServiceBeginTime = string(value["CertServiceBeginTime"].GetString());
+        m_certServiceBeginTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CertServiceEndTime") && !value["CertServiceEndTime"].IsNull())
+    {
+        if (!value["CertServiceEndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificates.CertServiceEndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_certServiceEndTime = string(value["CertServiceEndTime"].GetString());
+        m_certServiceEndTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1230,6 +1274,38 @@ void Certificates::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "IsHostingUploadRenewCert";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isHostingUploadRenewCert, allocator);
+    }
+
+    if (m_serviceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certServiceBeginTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertServiceBeginTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certServiceBeginTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certServiceEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertServiceEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certServiceEndTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2145,5 +2221,69 @@ void Certificates::SetIsHostingUploadRenewCert(const bool& _isHostingUploadRenew
 bool Certificates::IsHostingUploadRenewCertHasBeenSet() const
 {
     return m_isHostingUploadRenewCertHasBeenSet;
+}
+
+string Certificates::GetServiceId() const
+{
+    return m_serviceId;
+}
+
+void Certificates::SetServiceId(const string& _serviceId)
+{
+    m_serviceId = _serviceId;
+    m_serviceIdHasBeenSet = true;
+}
+
+bool Certificates::ServiceIdHasBeenSet() const
+{
+    return m_serviceIdHasBeenSet;
+}
+
+string Certificates::GetServiceStatus() const
+{
+    return m_serviceStatus;
+}
+
+void Certificates::SetServiceStatus(const string& _serviceStatus)
+{
+    m_serviceStatus = _serviceStatus;
+    m_serviceStatusHasBeenSet = true;
+}
+
+bool Certificates::ServiceStatusHasBeenSet() const
+{
+    return m_serviceStatusHasBeenSet;
+}
+
+string Certificates::GetCertServiceBeginTime() const
+{
+    return m_certServiceBeginTime;
+}
+
+void Certificates::SetCertServiceBeginTime(const string& _certServiceBeginTime)
+{
+    m_certServiceBeginTime = _certServiceBeginTime;
+    m_certServiceBeginTimeHasBeenSet = true;
+}
+
+bool Certificates::CertServiceBeginTimeHasBeenSet() const
+{
+    return m_certServiceBeginTimeHasBeenSet;
+}
+
+string Certificates::GetCertServiceEndTime() const
+{
+    return m_certServiceEndTime;
+}
+
+void Certificates::SetCertServiceEndTime(const string& _certServiceEndTime)
+{
+    m_certServiceEndTime = _certServiceEndTime;
+    m_certServiceEndTimeHasBeenSet = true;
+}
+
+bool Certificates::CertServiceEndTimeHasBeenSet() const
+{
+    return m_certServiceEndTimeHasBeenSet;
 }
 

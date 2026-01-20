@@ -190,6 +190,56 @@ EvtClient::DeleteRoleUserOutcomeCallable EvtClient::DeleteRoleUserCallable(const
     return prom->get_future();
 }
 
+EvtClient::PutEventOutcome EvtClient::PutEvent(const PutEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "PutEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PutEventResponse rsp = PutEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PutEventOutcome(rsp);
+        else
+            return PutEventOutcome(o.GetError());
+    }
+    else
+    {
+        return PutEventOutcome(outcome.GetError());
+    }
+}
+
+void EvtClient::PutEventAsync(const PutEventRequest& request, const PutEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const PutEventRequest&;
+    using Resp = PutEventResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "PutEvent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EvtClient::PutEventOutcomeCallable EvtClient::PutEventCallable(const PutEventRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<PutEventOutcome>>();
+    PutEventAsync(
+    request,
+    [prom](
+        const EvtClient*,
+        const PutEventRequest&,
+        PutEventOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EvtClient::PutMessageOutcome EvtClient::PutMessage(const PutMessageRequest &request)
 {
     auto outcome = MakeRequest(request, "PutMessage");

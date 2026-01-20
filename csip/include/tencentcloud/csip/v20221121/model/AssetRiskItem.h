@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 资产视角风险项
+                * 资产视角风险信息
                 */
                 class AssetRiskItem : public AbstractModel
                 {
@@ -383,6 +383,27 @@ namespace TencentCloud
                      */
                     bool StandardTermsHasBeenSet() const;
 
+                    /**
+                     * 获取资产类型
+                     * @return AssetType 资产类型
+                     * 
+                     */
+                    std::string GetAssetType() const;
+
+                    /**
+                     * 设置资产类型
+                     * @param _assetType 资产类型
+                     * 
+                     */
+                    void SetAssetType(const std::string& _assetType);
+
+                    /**
+                     * 判断参数 AssetType 是否已赋值
+                     * @return AssetType 是否已赋值
+                     * 
+                     */
+                    bool AssetTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -480,6 +501,12 @@ namespace TencentCloud
                      */
                     std::vector<StandardTerm> m_standardTerms;
                     bool m_standardTermsHasBeenSet;
+
+                    /**
+                     * 资产类型
+                     */
+                    std::string m_assetType;
+                    bool m_assetTypeHasBeenSet;
 
                 };
             }

@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务id
-                     * @return TaskId 任务id
+                     * 获取<p>任务id</p>
+                     * @return TaskId <p>任务id</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务id
-                     * @param _taskId 任务id
+                     * 设置<p>任务id</p>
+                     * @param _taskId <p>任务id</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -66,19 +66,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取日志主题id
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
-                     * @return TopicId 日志主题id
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * 获取<p>日志主题id- 通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</p>
+                     * @return TopicId <p>日志主题id- 通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</p>
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题id
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
-                     * @param _topicId 日志主题id
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * 设置<p>日志主题id- 通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</p>
+                     * @param _topicId <p>日志主题id- 通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</p>
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -91,31 +87,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取投递任务名称
-name有以下限制：
-- 不能为空
-- 长度不大于64
-- 只能包含aA-zZ、下划线、-、0-9
-                     * @return Name 投递任务名称
-name有以下限制：
-- 不能为空
-- 长度不大于64
-- 只能包含aA-zZ、下划线、-、0-9
+                     * 获取<p>投递任务名称name有以下限制：- 不能为空- 长度不大于64- 只能包含aA-zZ、下划线、-、0-9</p>
+                     * @return Name <p>投递任务名称name有以下限制：- 不能为空- 长度不大于64- 只能包含aA-zZ、下划线、-、0-9</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置投递任务名称
-name有以下限制：
-- 不能为空
-- 长度不大于64
-- 只能包含aA-zZ、下划线、-、0-9
-                     * @param _name 投递任务名称
-name有以下限制：
-- 不能为空
-- 长度不大于64
-- 只能包含aA-zZ、下划线、-、0-9
+                     * 设置<p>投递任务名称name有以下限制：- 不能为空- 长度不大于64- 只能包含aA-zZ、下划线、-、0-9</p>
+                     * @param _name <p>投递任务名称name有以下限制：- 不能为空- 长度不大于64- 只能包含aA-zZ、下划线、-、0-9</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -128,15 +108,15 @@ name有以下限制：
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取投递任务启用状态；0:禁用；1:启用
-                     * @return Enable 投递任务启用状态；0:禁用；1:启用
+                     * 获取<p>投递任务启用状态；0:禁用；1:启用</p>
+                     * @return Enable <p>投递任务启用状态；0:禁用；1:启用</p>
                      * 
                      */
                     int64_t GetEnable() const;
 
                     /**
-                     * 设置投递任务启用状态；0:禁用；1:启用
-                     * @param _enable 投递任务启用状态；0:禁用；1:启用
+                     * 设置<p>投递任务启用状态；0:禁用；1:启用</p>
+                     * @param _enable <p>投递任务启用状态；0:禁用；1:启用</p>
                      * 
                      */
                     void SetEnable(const int64_t& _enable);
@@ -149,15 +129,15 @@ name有以下限制：
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取splunk投递任务-目标配置
-                     * @return NetInfo splunk投递任务-目标配置
+                     * 获取<p>splunk投递任务-目标配置</p>
+                     * @return NetInfo <p>splunk投递任务-目标配置</p>
                      * 
                      */
                     NetInfo GetNetInfo() const;
 
                     /**
-                     * 设置splunk投递任务-目标配置
-                     * @param _netInfo splunk投递任务-目标配置
+                     * 设置<p>splunk投递任务-目标配置</p>
+                     * @param _netInfo <p>splunk投递任务-目标配置</p>
                      * 
                      */
                     void SetNetInfo(const NetInfo& _netInfo);
@@ -170,15 +150,15 @@ name有以下限制：
                     bool NetInfoHasBeenSet() const;
 
                     /**
-                     * 获取splunk投递任务元信息
-                     * @return MetadataInfo splunk投递任务元信息
+                     * 获取<p>splunk投递任务元信息</p>
+                     * @return MetadataInfo <p>splunk投递任务元信息</p>
                      * 
                      */
                     MetadataInfo GetMetadataInfo() const;
 
                     /**
-                     * 设置splunk投递任务元信息
-                     * @param _metadataInfo splunk投递任务元信息
+                     * 设置<p>splunk投递任务元信息</p>
+                     * @param _metadataInfo <p>splunk投递任务元信息</p>
                      * 
                      */
                     void SetMetadataInfo(const MetadataInfo& _metadataInfo);
@@ -191,15 +171,15 @@ name有以下限制：
                     bool MetadataInfoHasBeenSet() const;
 
                     /**
-                     * 获取是否启用服务日志；1:关闭；2:开启
-                     * @return HasServiceLog 是否启用服务日志；1:关闭；2:开启
+                     * 获取<p>是否启用服务日志；1:关闭；2:开启</p>
+                     * @return HasServiceLog <p>是否启用服务日志；1:关闭；2:开启</p>
                      * 
                      */
                     int64_t GetHasServiceLog() const;
 
                     /**
-                     * 设置是否启用服务日志；1:关闭；2:开启
-                     * @param _hasServiceLog 是否启用服务日志；1:关闭；2:开启
+                     * 设置<p>是否启用服务日志；1:关闭；2:开启</p>
+                     * @param _hasServiceLog <p>是否启用服务日志；1:关闭；2:开启</p>
                      * 
                      */
                     void SetHasServiceLog(const int64_t& _hasServiceLog);
@@ -212,19 +192,15 @@ name有以下限制：
                     bool HasServiceLogHasBeenSet() const;
 
                     /**
-                     * 获取高级配置-是否启用索引器;
-1-不开启；2-开启；默认为：1
-                     * @return IndexAck 高级配置-是否启用索引器;
-1-不开启；2-开启；默认为：1
+                     * 获取<p>高级配置-是否启用索引器;1-不开启；2-开启；默认为：1</p>
+                     * @return IndexAck <p>高级配置-是否启用索引器;1-不开启；2-开启；默认为：1</p>
                      * 
                      */
                     int64_t GetIndexAck() const;
 
                     /**
-                     * 设置高级配置-是否启用索引器;
-1-不开启；2-开启；默认为：1
-                     * @param _indexAck 高级配置-是否启用索引器;
-1-不开启；2-开启；默认为：1
+                     * 设置<p>高级配置-是否启用索引器;1-不开启；2-开启；默认为：1</p>
+                     * @param _indexAck <p>高级配置-是否启用索引器;1-不开启；2-开启；默认为：1</p>
                      * 
                      */
                     void SetIndexAck(const int64_t& _indexAck);
@@ -237,15 +213,15 @@ name有以下限制：
                     bool IndexAckHasBeenSet() const;
 
                     /**
-                     * 获取高级配置-数据来源；不超过64个字符
-                     * @return Source 高级配置-数据来源；不超过64个字符
+                     * 获取<p>高级配置-数据来源；不超过64个字符</p>
+                     * @return Source <p>高级配置-数据来源；不超过64个字符</p>
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
-                     * 设置高级配置-数据来源；不超过64个字符
-                     * @param _source 高级配置-数据来源；不超过64个字符
+                     * 设置<p>高级配置-数据来源；不超过64个字符</p>
+                     * @param _source <p>高级配置-数据来源；不超过64个字符</p>
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -258,15 +234,15 @@ name有以下限制：
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取高级配置-数据来源类型；不超过64个字符
-                     * @return SourceType 高级配置-数据来源类型；不超过64个字符
+                     * 获取<p>高级配置-数据来源类型；不超过64个字符</p>
+                     * @return SourceType <p>高级配置-数据来源类型；不超过64个字符</p>
                      * 
                      */
                     std::string GetSourceType() const;
 
                     /**
-                     * 设置高级配置-数据来源类型；不超过64个字符
-                     * @param _sourceType 高级配置-数据来源类型；不超过64个字符
+                     * 设置<p>高级配置-数据来源类型；不超过64个字符</p>
+                     * @param _sourceType <p>高级配置-数据来源类型；不超过64个字符</p>
                      * 
                      */
                     void SetSourceType(const std::string& _sourceType);
@@ -279,15 +255,15 @@ name有以下限制：
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取高级配置-Splunk写入的索引；不超过64个字符
-                     * @return Index 高级配置-Splunk写入的索引；不超过64个字符
+                     * 获取<p>高级配置-Splunk写入的索引；不超过64个字符</p>
+                     * @return Index <p>高级配置-Splunk写入的索引；不超过64个字符</p>
                      * 
                      */
                     std::string GetIndex() const;
 
                     /**
-                     * 设置高级配置-Splunk写入的索引；不超过64个字符
-                     * @param _index 高级配置-Splunk写入的索引；不超过64个字符
+                     * 设置<p>高级配置-Splunk写入的索引；不超过64个字符</p>
+                     * @param _index <p>高级配置-Splunk写入的索引；不超过64个字符</p>
                      * 
                      */
                     void SetIndex(const std::string& _index);
@@ -300,19 +276,15 @@ name有以下限制：
                     bool IndexHasBeenSet() const;
 
                     /**
-                     * 获取高级配置-通道。
-需满足限制：如果启用索引器，该值不能为空
-                     * @return Channel 高级配置-通道。
-需满足限制：如果启用索引器，该值不能为空
+                     * 获取<p>高级配置-通道。需满足限制：如果启用索引器，该值不能为空</p>
+                     * @return Channel <p>高级配置-通道。需满足限制：如果启用索引器，该值不能为空</p>
                      * 
                      */
                     std::string GetChannel() const;
 
                     /**
-                     * 设置高级配置-通道。
-需满足限制：如果启用索引器，该值不能为空
-                     * @param _channel 高级配置-通道。
-需满足限制：如果启用索引器，该值不能为空
+                     * 设置<p>高级配置-通道。需满足限制：如果启用索引器，该值不能为空</p>
+                     * @param _channel <p>高级配置-通道。需满足限制：如果启用索引器，该值不能为空</p>
                      * 
                      */
                     void SetChannel(const std::string& _channel);
@@ -324,86 +296,106 @@ name有以下限制：
                      */
                     bool ChannelHasBeenSet() const;
 
+                    /**
+                     * 获取<p>预过滤处理-对写入 Splunk 原始数据进行预过滤处理</p>
+                     * @return DSLFilter <p>预过滤处理-对写入 Splunk 原始数据进行预过滤处理</p>
+                     * 
+                     */
+                    std::string GetDSLFilter() const;
+
+                    /**
+                     * 设置<p>预过滤处理-对写入 Splunk 原始数据进行预过滤处理</p>
+                     * @param _dSLFilter <p>预过滤处理-对写入 Splunk 原始数据进行预过滤处理</p>
+                     * 
+                     */
+                    void SetDSLFilter(const std::string& _dSLFilter);
+
+                    /**
+                     * 判断参数 DSLFilter 是否已赋值
+                     * @return DSLFilter 是否已赋值
+                     * 
+                     */
+                    bool DSLFilterHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务id
+                     * <p>任务id</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 日志主题id
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * <p>日志主题id- 通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</p>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 投递任务名称
-name有以下限制：
-- 不能为空
-- 长度不大于64
-- 只能包含aA-zZ、下划线、-、0-9
+                     * <p>投递任务名称name有以下限制：- 不能为空- 长度不大于64- 只能包含aA-zZ、下划线、-、0-9</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 投递任务启用状态；0:禁用；1:启用
+                     * <p>投递任务启用状态；0:禁用；1:启用</p>
                      */
                     int64_t m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * splunk投递任务-目标配置
+                     * <p>splunk投递任务-目标配置</p>
                      */
                     NetInfo m_netInfo;
                     bool m_netInfoHasBeenSet;
 
                     /**
-                     * splunk投递任务元信息
+                     * <p>splunk投递任务元信息</p>
                      */
                     MetadataInfo m_metadataInfo;
                     bool m_metadataInfoHasBeenSet;
 
                     /**
-                     * 是否启用服务日志；1:关闭；2:开启
+                     * <p>是否启用服务日志；1:关闭；2:开启</p>
                      */
                     int64_t m_hasServiceLog;
                     bool m_hasServiceLogHasBeenSet;
 
                     /**
-                     * 高级配置-是否启用索引器;
-1-不开启；2-开启；默认为：1
+                     * <p>高级配置-是否启用索引器;1-不开启；2-开启；默认为：1</p>
                      */
                     int64_t m_indexAck;
                     bool m_indexAckHasBeenSet;
 
                     /**
-                     * 高级配置-数据来源；不超过64个字符
+                     * <p>高级配置-数据来源；不超过64个字符</p>
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 高级配置-数据来源类型；不超过64个字符
+                     * <p>高级配置-数据来源类型；不超过64个字符</p>
                      */
                     std::string m_sourceType;
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 高级配置-Splunk写入的索引；不超过64个字符
+                     * <p>高级配置-Splunk写入的索引；不超过64个字符</p>
                      */
                     std::string m_index;
                     bool m_indexHasBeenSet;
 
                     /**
-                     * 高级配置-通道。
-需满足限制：如果启用索引器，该值不能为空
+                     * <p>高级配置-通道。需满足限制：如果启用索引器，该值不能为空</p>
                      */
                     std::string m_channel;
                     bool m_channelHasBeenSet;
+
+                    /**
+                     * <p>预过滤处理-对写入 Splunk 原始数据进行预过滤处理</p>
+                     */
+                    std::string m_dSLFilter;
+                    bool m_dSLFilterHasBeenSet;
 
                 };
             }

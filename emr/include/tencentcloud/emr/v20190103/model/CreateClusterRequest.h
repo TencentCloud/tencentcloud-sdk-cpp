@@ -652,6 +652,27 @@ namespace TencentCloud
                      */
                     bool NeedCdbAuditHasBeenSet() const;
 
+                    /**
+                     * 获取安全指定来源ip
+                     * @return SgIP 安全指定来源ip
+                     * 
+                     */
+                    std::string GetSgIP() const;
+
+                    /**
+                     * 设置安全指定来源ip
+                     * @param _sgIP 安全指定来源ip
+                     * 
+                     */
+                    void SetSgIP(const std::string& _sgIP);
+
+                    /**
+                     * 判断参数 SgIP 是否已赋值
+                     * @return SgIP 是否已赋值
+                     * 
+                     */
+                    bool SgIPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -822,6 +843,12 @@ namespace TencentCloud
                      */
                     int64_t m_needCdbAudit;
                     bool m_needCdbAuditHasBeenSet;
+
+                    /**
+                     * 安全指定来源ip
+                     */
+                    std::string m_sgIP;
+                    bool m_sgIPHasBeenSet;
 
                 };
             }

@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cls/v20201016/model/DescribeSplunkPreviewResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveCloudEffectConfigResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cls::V20201016::Model;
+using namespace TencentCloud::Live::V20180801::Model;
 using namespace std;
 
-DescribeSplunkPreviewResponse::DescribeSplunkPreviewResponse() :
-    m_previewInfosHasBeenSet(false),
-    m_filterStatsHasBeenSet(false)
+DescribeLiveCloudEffectConfigResponse::DescribeLiveCloudEffectConfigResponse() :
+    m_effectTemplateListHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeSplunkPreviewResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeLiveCloudEffectConfigResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,66 +62,49 @@ CoreInternalOutcome DescribeSplunkPreviewResponse::Deserialize(const string &pay
     }
 
 
-    if (rsp.HasMember("PreviewInfos") && !rsp["PreviewInfos"].IsNull())
+    if (rsp.HasMember("EffectTemplateList") && !rsp["EffectTemplateList"].IsNull())
     {
-        if (!rsp["PreviewInfos"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `PreviewInfos` is not array type"));
+        if (!rsp["EffectTemplateList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EffectTemplateList` is not array type"));
 
-        const rapidjson::Value &tmpValue = rsp["PreviewInfos"];
+        const rapidjson::Value &tmpValue = rsp["EffectTemplateList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            m_previewInfos.push_back((*itr).GetString());
+            CloudEffectTemplateInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_effectTemplateList.push_back(item);
         }
-        m_previewInfosHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("FilterStats") && !rsp["FilterStats"].IsNull())
-    {
-        if (!rsp["FilterStats"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `FilterStats` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_filterStats.Deserialize(rsp["FilterStats"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_filterStatsHasBeenSet = true;
+        m_effectTemplateListHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeSplunkPreviewResponse::ToJsonString() const
+string DescribeLiveCloudEffectConfigResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_previewInfosHasBeenSet)
+    if (m_effectTemplateListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PreviewInfos";
+        string key = "EffectTemplateList";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-        for (auto itr = m_previewInfos.begin(); itr != m_previewInfos.end(); ++itr)
+        int i=0;
+        for (auto itr = m_effectTemplateList.begin(); itr != m_effectTemplateList.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_filterStatsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FilterStats";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_filterStats.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -137,24 +119,14 @@ string DescribeSplunkPreviewResponse::ToJsonString() const
 }
 
 
-vector<string> DescribeSplunkPreviewResponse::GetPreviewInfos() const
+vector<CloudEffectTemplateInfo> DescribeLiveCloudEffectConfigResponse::GetEffectTemplateList() const
 {
-    return m_previewInfos;
+    return m_effectTemplateList;
 }
 
-bool DescribeSplunkPreviewResponse::PreviewInfosHasBeenSet() const
+bool DescribeLiveCloudEffectConfigResponse::EffectTemplateListHasBeenSet() const
 {
-    return m_previewInfosHasBeenSet;
-}
-
-FilterStatistics DescribeSplunkPreviewResponse::GetFilterStats() const
-{
-    return m_filterStats;
-}
-
-bool DescribeSplunkPreviewResponse::FilterStatsHasBeenSet() const
-{
-    return m_filterStatsHasBeenSet;
+    return m_effectTemplateListHasBeenSet;
 }
 
 

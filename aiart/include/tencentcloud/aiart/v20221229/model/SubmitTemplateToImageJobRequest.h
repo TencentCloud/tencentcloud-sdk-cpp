@@ -45,23 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取算法将根据输入的图片，结合文本描述智能生成与之相关的图像。
-Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
-图片限制：单边分辨率小于5000且大于50，转成 Base64 字符串后小于 8MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
-                     * @return Image 算法将根据输入的图片，结合文本描述智能生成与之相关的图像。
-Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
-图片限制：单边分辨率小于5000且大于50，转成 Base64 字符串后小于 8MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+                     * 获取<p>算法将根据输入的图片，结合文本描述智能生成与之相关的图像。Base64 和 Url 必须提供一个，如果都提供以 Url 为准。图片限制：单边分辨率小于5000且大于50，转成 Base64 字符串后小于 8MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
+                     * @return Image <p>算法将根据输入的图片，结合文本描述智能生成与之相关的图像。Base64 和 Url 必须提供一个，如果都提供以 Url 为准。图片限制：单边分辨率小于5000且大于50，转成 Base64 字符串后小于 8MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
                      * 
                      */
                     Image GetImage() const;
 
                     /**
-                     * 设置算法将根据输入的图片，结合文本描述智能生成与之相关的图像。
-Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
-图片限制：单边分辨率小于5000且大于50，转成 Base64 字符串后小于 8MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
-                     * @param _image 算法将根据输入的图片，结合文本描述智能生成与之相关的图像。
-Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
-图片限制：单边分辨率小于5000且大于50，转成 Base64 字符串后小于 8MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+                     * 设置<p>算法将根据输入的图片，结合文本描述智能生成与之相关的图像。Base64 和 Url 必须提供一个，如果都提供以 Url 为准。图片限制：单边分辨率小于5000且大于50，转成 Base64 字符串后小于 8MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
+                     * @param _image <p>算法将根据输入的图片，结合文本描述智能生成与之相关的图像。Base64 和 Url 必须提供一个，如果都提供以 Url 为准。图片限制：单边分辨率小于5000且大于50，转成 Base64 字符串后小于 8MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
                      * 
                      */
                     void SetImage(const Image& _image);
@@ -74,15 +66,15 @@ Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
                     bool ImageHasBeenSet() const;
 
                     /**
-                     * 获取绘画风格当前仅支持美术馆风格（gallerying）。
-                     * @return Style 绘画风格当前仅支持美术馆风格（gallerying）。
+                     * 获取<p>绘画风格当前仅支持美术馆风格（gallerying）。</p>
+                     * @return Style <p>绘画风格当前仅支持美术馆风格（gallerying）。</p>
                      * 
                      */
                     std::string GetStyle() const;
 
                     /**
-                     * 设置绘画风格当前仅支持美术馆风格（gallerying）。
-                     * @param _style 绘画风格当前仅支持美术馆风格（gallerying）。
+                     * 设置<p>绘画风格当前仅支持美术馆风格（gallerying）。</p>
+                     * @param _style <p>绘画风格当前仅支持美术馆风格（gallerying）。</p>
                      * 
                      */
                     void SetStyle(const std::string& _style);
@@ -95,15 +87,15 @@ Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
                     bool StyleHasBeenSet() const;
 
                     /**
-                     * 获取特效模式，默认使用人像模式。 Person：人像模式，仅支持上传人像图片，人像生成效果更好【这里需要加非人脸的拦截】。 Pet：宠物模式，支持宠物等非人像图片。 示例值：Person
-                     * @return Mode 特效模式，默认使用人像模式。 Person：人像模式，仅支持上传人像图片，人像生成效果更好【这里需要加非人脸的拦截】。 Pet：宠物模式，支持宠物等非人像图片。 示例值：Person
+                     * 获取<p>特效模式，默认使用人像模式。</p>枚举值：<ul><li> Person： 人像模式，仅支持上传人像图片。</li><li> Pet： 宠物模式，支持宠物等非人像图片。</li></ul>默认值：Person
+                     * @return Mode <p>特效模式，默认使用人像模式。</p>枚举值：<ul><li> Person： 人像模式，仅支持上传人像图片。</li><li> Pet： 宠物模式，支持宠物等非人像图片。</li></ul>默认值：Person
                      * 
                      */
                     std::string GetMode() const;
 
                     /**
-                     * 设置特效模式，默认使用人像模式。 Person：人像模式，仅支持上传人像图片，人像生成效果更好【这里需要加非人脸的拦截】。 Pet：宠物模式，支持宠物等非人像图片。 示例值：Person
-                     * @param _mode 特效模式，默认使用人像模式。 Person：人像模式，仅支持上传人像图片，人像生成效果更好【这里需要加非人脸的拦截】。 Pet：宠物模式，支持宠物等非人像图片。 示例值：Person
+                     * 设置<p>特效模式，默认使用人像模式。</p>枚举值：<ul><li> Person： 人像模式，仅支持上传人像图片。</li><li> Pet： 宠物模式，支持宠物等非人像图片。</li></ul>默认值：Person
+                     * @param _mode <p>特效模式，默认使用人像模式。</p>枚举值：<ul><li> Person： 人像模式，仅支持上传人像图片。</li><li> Pet： 宠物模式，支持宠物等非人像图片。</li></ul>默认值：Person
                      * 
                      */
                     void SetMode(const std::string& _mode);
@@ -116,31 +108,15 @@ Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取为生成结果图添加显式水印标识的开关，默认为1。  
-1：添加。  
-0：不添加。  
-其他数值：默认按1处理。  
-建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。
-                     * @return LogoAdd 为生成结果图添加显式水印标识的开关，默认为1。  
-1：添加。  
-0：不添加。  
-其他数值：默认按1处理。  
-建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。
+                     * 获取<p>为生成结果图添加显式水印标识的开关，默认为1。<br />1：添加。<br />0：不添加。<br />其他数值：默认按1处理。<br />建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。</p>
+                     * @return LogoAdd <p>为生成结果图添加显式水印标识的开关，默认为1。<br />1：添加。<br />0：不添加。<br />其他数值：默认按1处理。<br />建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。</p>
                      * 
                      */
                     int64_t GetLogoAdd() const;
 
                     /**
-                     * 设置为生成结果图添加显式水印标识的开关，默认为1。  
-1：添加。  
-0：不添加。  
-其他数值：默认按1处理。  
-建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。
-                     * @param _logoAdd 为生成结果图添加显式水印标识的开关，默认为1。  
-1：添加。  
-0：不添加。  
-其他数值：默认按1处理。  
-建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。
+                     * 设置<p>为生成结果图添加显式水印标识的开关，默认为1。<br />1：添加。<br />0：不添加。<br />其他数值：默认按1处理。<br />建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。</p>
+                     * @param _logoAdd <p>为生成结果图添加显式水印标识的开关，默认为1。<br />1：添加。<br />0：不添加。<br />其他数值：默认按1处理。<br />建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。</p>
                      * 
                      */
                     void SetLogoAdd(const int64_t& _logoAdd);
@@ -153,19 +129,15 @@ Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
                     bool LogoAddHasBeenSet() const;
 
                     /**
-                     * 获取标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
-                     * @return LogoParam 标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * 获取<p>标识内容设置。默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。</p>
+                     * @return LogoParam <p>标识内容设置。默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。</p>
                      * 
                      */
                     LogoParam GetLogoParam() const;
 
                     /**
-                     * 设置标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
-                     * @param _logoParam 标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * 设置<p>标识内容设置。默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。</p>
+                     * @param _logoParam <p>标识内容设置。默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。</p>
                      * 
                      */
                     void SetLogoParam(const LogoParam& _logoParam);
@@ -180,38 +152,31 @@ Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
                 private:
 
                     /**
-                     * 算法将根据输入的图片，结合文本描述智能生成与之相关的图像。
-Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
-图片限制：单边分辨率小于5000且大于50，转成 Base64 字符串后小于 8MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。
+                     * <p>算法将根据输入的图片，结合文本描述智能生成与之相关的图像。Base64 和 Url 必须提供一个，如果都提供以 Url 为准。图片限制：单边分辨率小于5000且大于50，转成 Base64 字符串后小于 8MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。</p>
                      */
                     Image m_image;
                     bool m_imageHasBeenSet;
 
                     /**
-                     * 绘画风格当前仅支持美术馆风格（gallerying）。
+                     * <p>绘画风格当前仅支持美术馆风格（gallerying）。</p>
                      */
                     std::string m_style;
                     bool m_styleHasBeenSet;
 
                     /**
-                     * 特效模式，默认使用人像模式。 Person：人像模式，仅支持上传人像图片，人像生成效果更好【这里需要加非人脸的拦截】。 Pet：宠物模式，支持宠物等非人像图片。 示例值：Person
+                     * <p>特效模式，默认使用人像模式。</p>枚举值：<ul><li> Person： 人像模式，仅支持上传人像图片。</li><li> Pet： 宠物模式，支持宠物等非人像图片。</li></ul>默认值：Person
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 为生成结果图添加显式水印标识的开关，默认为1。  
-1：添加。  
-0：不添加。  
-其他数值：默认按1处理。  
-建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。
+                     * <p>为生成结果图添加显式水印标识的开关，默认为1。<br />1：添加。<br />0：不添加。<br />其他数值：默认按1处理。<br />建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。</p>
                      */
                     int64_t m_logoAdd;
                     bool m_logoAddHasBeenSet;
 
                     /**
-                     * 标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * <p>标识内容设置。默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。</p>
                      */
                     LogoParam m_logoParam;
                     bool m_logoParamHasBeenSet;

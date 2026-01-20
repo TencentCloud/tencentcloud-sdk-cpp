@@ -21,6 +21,7 @@ set(cls_public_header
 set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/AlarmInfo.h
   include/tencentcloud/cls/v20201016/model/DescribeLogHistogramRequest.h
+  include/tencentcloud/cls/v20201016/model/FilterStatistics.h
   include/tencentcloud/cls/v20201016/model/DeleteShipperRequest.h
   include/tencentcloud/cls/v20201016/model/ScheduledSqlResouceInfo.h
   include/tencentcloud/cls/v20201016/model/DynamicIndex.h
@@ -507,6 +508,7 @@ set(cls_src
   src/v20201016/ClsClient.cpp
   src/v20201016/model/AlarmInfo.cpp
   src/v20201016/model/DescribeLogHistogramRequest.cpp
+  src/v20201016/model/FilterStatistics.cpp
   src/v20201016/model/DeleteShipperRequest.cpp
   src/v20201016/model/ScheduledSqlResouceInfo.cpp
   src/v20201016/model/DynamicIndex.cpp

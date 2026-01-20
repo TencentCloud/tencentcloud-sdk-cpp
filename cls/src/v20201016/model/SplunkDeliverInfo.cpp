@@ -36,7 +36,8 @@ SplunkDeliverInfo::SplunkDeliverInfo() :
     m_sourceTypeHasBeenSet(false),
     m_indexHasBeenSet(false),
     m_indexAckHasBeenSet(false),
-    m_channelHasBeenSet(false)
+    m_channelHasBeenSet(false),
+    m_dSLFilterHasBeenSet(false)
 {
 }
 
@@ -219,6 +220,16 @@ CoreInternalOutcome SplunkDeliverInfo::Deserialize(const rapidjson::Value &value
         m_channelHasBeenSet = true;
     }
 
+    if (value.HasMember("DSLFilter") && !value["DSLFilter"].IsNull())
+    {
+        if (!value["DSLFilter"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SplunkDeliverInfo.DSLFilter` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dSLFilter = string(value["DSLFilter"].GetString());
+        m_dSLFilterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -354,6 +365,14 @@ void SplunkDeliverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Channel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_channel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dSLFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DSLFilter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dSLFilter.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -613,5 +632,21 @@ void SplunkDeliverInfo::SetChannel(const string& _channel)
 bool SplunkDeliverInfo::ChannelHasBeenSet() const
 {
     return m_channelHasBeenSet;
+}
+
+string SplunkDeliverInfo::GetDSLFilter() const
+{
+    return m_dSLFilter;
+}
+
+void SplunkDeliverInfo::SetDSLFilter(const string& _dSLFilter)
+{
+    m_dSLFilter = _dSLFilter;
+    m_dSLFilterHasBeenSet = true;
+}
+
+bool SplunkDeliverInfo::DSLFilterHasBeenSet() const
+{
+    return m_dSLFilterHasBeenSet;
 }
 

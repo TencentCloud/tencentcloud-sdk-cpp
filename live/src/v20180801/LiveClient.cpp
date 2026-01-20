@@ -4790,6 +4790,56 @@ LiveClient::DescribeLiveCertsOutcomeCallable LiveClient::DescribeLiveCertsCallab
     return prom->get_future();
 }
 
+LiveClient::DescribeLiveCloudEffectConfigOutcome LiveClient::DescribeLiveCloudEffectConfig(const DescribeLiveCloudEffectConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLiveCloudEffectConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLiveCloudEffectConfigResponse rsp = DescribeLiveCloudEffectConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLiveCloudEffectConfigOutcome(rsp);
+        else
+            return DescribeLiveCloudEffectConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLiveCloudEffectConfigOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLiveCloudEffectConfigAsync(const DescribeLiveCloudEffectConfigRequest& request, const DescribeLiveCloudEffectConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLiveCloudEffectConfigRequest&;
+    using Resp = DescribeLiveCloudEffectConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLiveCloudEffectConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DescribeLiveCloudEffectConfigOutcomeCallable LiveClient::DescribeLiveCloudEffectConfigCallable(const DescribeLiveCloudEffectConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLiveCloudEffectConfigOutcome>>();
+    DescribeLiveCloudEffectConfigAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DescribeLiveCloudEffectConfigRequest&,
+        DescribeLiveCloudEffectConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LiveClient::DescribeLiveCloudEffectListOutcome LiveClient::DescribeLiveCloudEffectList(const DescribeLiveCloudEffectListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLiveCloudEffectList");

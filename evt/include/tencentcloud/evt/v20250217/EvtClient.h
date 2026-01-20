@@ -29,6 +29,8 @@
 #include <tencentcloud/evt/v20250217/model/CreateRoleUserResponse.h>
 #include <tencentcloud/evt/v20250217/model/DeleteRoleUserRequest.h>
 #include <tencentcloud/evt/v20250217/model/DeleteRoleUserResponse.h>
+#include <tencentcloud/evt/v20250217/model/PutEventRequest.h>
+#include <tencentcloud/evt/v20250217/model/PutEventResponse.h>
 #include <tencentcloud/evt/v20250217/model/PutMessageRequest.h>
 #include <tencentcloud/evt/v20250217/model/PutMessageResponse.h>
 
@@ -54,6 +56,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRoleUserResponse> DeleteRoleUserOutcome;
                 typedef std::future<DeleteRoleUserOutcome> DeleteRoleUserOutcomeCallable;
                 typedef std::function<void(const EvtClient*, const Model::DeleteRoleUserRequest&, DeleteRoleUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoleUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::PutEventResponse> PutEventOutcome;
+                typedef std::future<PutEventOutcome> PutEventOutcomeCallable;
+                typedef std::function<void(const EvtClient*, const Model::PutEventRequest&, PutEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutEventAsyncHandler;
                 typedef Outcome<Core::Error, Model::PutMessageResponse> PutMessageOutcome;
                 typedef std::future<PutMessageOutcome> PutMessageOutcomeCallable;
                 typedef std::function<void(const EvtClient*, const Model::PutMessageRequest&, PutMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutMessageAsyncHandler;
@@ -86,6 +91,15 @@ namespace TencentCloud
                 DeleteRoleUserOutcome DeleteRoleUser(const Model::DeleteRoleUserRequest &request);
                 void DeleteRoleUserAsync(const Model::DeleteRoleUserRequest& request, const DeleteRoleUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteRoleUserOutcomeCallable DeleteRoleUserCallable(const Model::DeleteRoleUserRequest& request);
+
+                /**
+                 *推送事件数据
+                 * @param req PutEventRequest
+                 * @return PutEventOutcome
+                 */
+                PutEventOutcome PutEvent(const Model::PutEventRequest &request);
+                void PutEventAsync(const Model::PutEventRequest& request, const PutEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PutEventOutcomeCallable PutEventCallable(const Model::PutEventRequest& request);
 
                 /**
                  *推送事件数据

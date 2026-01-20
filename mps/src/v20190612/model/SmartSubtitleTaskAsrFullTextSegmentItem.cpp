@@ -25,7 +25,8 @@ SmartSubtitleTaskAsrFullTextSegmentItem::SmartSubtitleTaskAsrFullTextSegmentItem
     m_startTimeOffsetHasBeenSet(false),
     m_endTimeOffsetHasBeenSet(false),
     m_textHasBeenSet(false),
-    m_wordlistHasBeenSet(false)
+    m_wordlistHasBeenSet(false),
+    m_speakerIdHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome SmartSubtitleTaskAsrFullTextSegmentItem::Deserialize(const r
         m_wordlistHasBeenSet = true;
     }
 
+    if (value.HasMember("SpeakerId") && !value["SpeakerId"].IsNull())
+    {
+        if (!value["SpeakerId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmartSubtitleTaskAsrFullTextSegmentItem.SpeakerId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_speakerId = string(value["SpeakerId"].GetString());
+        m_speakerIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -146,6 +157,14 @@ void SmartSubtitleTaskAsrFullTextSegmentItem::ToJsonObject(rapidjson::Value &val
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_speakerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpeakerId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_speakerId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -229,5 +248,21 @@ void SmartSubtitleTaskAsrFullTextSegmentItem::SetWordlist(const vector<WordResul
 bool SmartSubtitleTaskAsrFullTextSegmentItem::WordlistHasBeenSet() const
 {
     return m_wordlistHasBeenSet;
+}
+
+string SmartSubtitleTaskAsrFullTextSegmentItem::GetSpeakerId() const
+{
+    return m_speakerId;
+}
+
+void SmartSubtitleTaskAsrFullTextSegmentItem::SetSpeakerId(const string& _speakerId)
+{
+    m_speakerId = _speakerId;
+    m_speakerIdHasBeenSet = true;
+}
+
+bool SmartSubtitleTaskAsrFullTextSegmentItem::SpeakerIdHasBeenSet() const
+{
+    return m_speakerIdHasBeenSet;
 }
 

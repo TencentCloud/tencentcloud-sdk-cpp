@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务id
-                     * @return TaskId 任务id
+                     * 获取<p>任务id</p>
+                     * @return TaskId <p>任务id</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务id
-                     * @param _taskId 任务id
+                     * 设置<p>任务id</p>
+                     * @param _taskId <p>任务id</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务名称
-                     * @return Name 任务名称
+                     * 获取<p>任务名称</p>
+                     * @return Name <p>任务名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置任务名称
-                     * @param _name 任务名称
+                     * 设置<p>任务名称</p>
+                     * @param _name <p>任务名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取用户id
-                     * @return Uin 用户id
+                     * 获取<p>用户id</p>
+                     * @return Uin <p>用户id</p>
                      * 
                      */
                     uint64_t GetUin() const;
 
                     /**
-                     * 设置用户id
-                     * @param _uin 用户id
+                     * 设置<p>用户id</p>
+                     * @param _uin <p>用户id</p>
                      * 
                      */
                     void SetUin(const uint64_t& _uin);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取日志主题id
-                     * @return TopicId 日志主题id
+                     * 获取<p>日志主题id</p>
+                     * @return TopicId <p>日志主题id</p>
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题id
-                     * @param _topicId 日志主题id
+                     * 设置<p>日志主题id</p>
+                     * @param _topicId <p>日志主题id</p>
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取任务状态；1.运行中；2:暂停；3：异常
-                     * @return Status 任务状态；1.运行中；2:暂停；3：异常
+                     * 获取<p>任务状态；1.运行中；2:暂停；3：异常</p>
+                     * @return Status <p>任务状态；1.运行中；2:暂停；3：异常</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置任务状态；1.运行中；2:暂停；3：异常
-                     * @param _status 任务状态；1.运行中；2:暂停；3：异常
+                     * 设置<p>任务状态；1.运行中；2:暂停；3：异常</p>
+                     * @param _status <p>任务状态；1.运行中；2:暂停；3：异常</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取启用状态；0:禁用；1:启用
-                     * @return Enable 启用状态；0:禁用；1:启用
+                     * 获取<p>启用状态；0:禁用；1:启用</p>
+                     * @return Enable <p>启用状态；0:禁用；1:启用</p>
                      * 
                      */
                     int64_t GetEnable() const;
 
                     /**
-                     * 设置启用状态；0:禁用；1:启用
-                     * @param _enable 启用状态；0:禁用；1:启用
+                     * 设置<p>启用状态；0:禁用；1:启用</p>
+                     * @param _enable <p>启用状态；0:禁用；1:启用</p>
                      * 
                      */
                     void SetEnable(const int64_t& _enable);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取创建时间；单位：秒
-                     * @return CreateTime 创建时间；单位：秒
+                     * 获取<p>创建时间；单位：秒</p>
+                     * @return CreateTime <p>创建时间；单位：秒</p>
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
-                     * 设置创建时间；单位：秒
-                     * @param _createTime 创建时间；单位：秒
+                     * 设置<p>创建时间；单位：秒</p>
+                     * @param _createTime <p>创建时间；单位：秒</p>
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间；单位：秒
-                     * @return UpdateTime 更新时间；单位：秒
+                     * 获取<p>更新时间；单位：秒</p>
+                     * @return UpdateTime <p>更新时间；单位：秒</p>
                      * 
                      */
                     uint64_t GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间；单位：秒
-                     * @param _updateTime 更新时间；单位：秒
+                     * 设置<p>更新时间；单位：秒</p>
+                     * @param _updateTime <p>更新时间；单位：秒</p>
                      * 
                      */
                     void SetUpdateTime(const uint64_t& _updateTime);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取splunk投递任务-目标配置
-                     * @return NetInfo splunk投递任务-目标配置
+                     * 获取<p>splunk投递任务-目标配置</p>
+                     * @return NetInfo <p>splunk投递任务-目标配置</p>
                      * 
                      */
                     NetInfo GetNetInfo() const;
 
                     /**
-                     * 设置splunk投递任务-目标配置
-                     * @param _netInfo splunk投递任务-目标配置
+                     * 设置<p>splunk投递任务-目标配置</p>
+                     * @param _netInfo <p>splunk投递任务-目标配置</p>
                      * 
                      */
                     void SetNetInfo(const NetInfo& _netInfo);
@@ -238,15 +238,15 @@ namespace TencentCloud
                     bool NetInfoHasBeenSet() const;
 
                     /**
-                     * 获取splunk投递任务元信息
-                     * @return Metadata splunk投递任务元信息
+                     * 获取<p>splunk投递任务元信息</p>
+                     * @return Metadata <p>splunk投递任务元信息</p>
                      * 
                      */
                     MetadataInfo GetMetadata() const;
 
                     /**
-                     * 设置splunk投递任务元信息
-                     * @param _metadata splunk投递任务元信息
+                     * 设置<p>splunk投递任务元信息</p>
+                     * @param _metadata <p>splunk投递任务元信息</p>
                      * 
                      */
                     void SetMetadata(const MetadataInfo& _metadata);
@@ -259,15 +259,15 @@ namespace TencentCloud
                     bool MetadataHasBeenSet() const;
 
                     /**
-                     * 获取是否启用服务日志；1:关闭；2:开启
-                     * @return HasServiceLog 是否启用服务日志；1:关闭；2:开启
+                     * 获取<p>是否启用服务日志；1:关闭；2:开启</p>
+                     * @return HasServiceLog <p>是否启用服务日志；1:关闭；2:开启</p>
                      * 
                      */
                     int64_t GetHasServiceLog() const;
 
                     /**
-                     * 设置是否启用服务日志；1:关闭；2:开启
-                     * @param _hasServiceLog 是否启用服务日志；1:关闭；2:开启
+                     * 设置<p>是否启用服务日志；1:关闭；2:开启</p>
+                     * @param _hasServiceLog <p>是否启用服务日志；1:关闭；2:开启</p>
                      * 
                      */
                     void SetHasServiceLog(const int64_t& _hasServiceLog);
@@ -280,15 +280,15 @@ namespace TencentCloud
                     bool HasServiceLogHasBeenSet() const;
 
                     /**
-                     * 获取高级配置-数据来源；
-                     * @return Source 高级配置-数据来源；
+                     * 获取<p>高级配置-数据来源；</p>
+                     * @return Source <p>高级配置-数据来源；</p>
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
-                     * 设置高级配置-数据来源；
-                     * @param _source 高级配置-数据来源；
+                     * 设置<p>高级配置-数据来源；</p>
+                     * @param _source <p>高级配置-数据来源；</p>
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -301,15 +301,15 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取高级配置-数据来源类型；
-                     * @return SourceType 高级配置-数据来源类型；
+                     * 获取<p>高级配置-数据来源类型；</p>
+                     * @return SourceType <p>高级配置-数据来源类型；</p>
                      * 
                      */
                     std::string GetSourceType() const;
 
                     /**
-                     * 设置高级配置-数据来源类型；
-                     * @param _sourceType 高级配置-数据来源类型；
+                     * 设置<p>高级配置-数据来源类型；</p>
+                     * @param _sourceType <p>高级配置-数据来源类型；</p>
                      * 
                      */
                     void SetSourceType(const std::string& _sourceType);
@@ -322,15 +322,15 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取高级配置-Splunk写入的索引
-                     * @return Index 高级配置-Splunk写入的索引
+                     * 获取<p>高级配置-Splunk写入的索引</p>
+                     * @return Index <p>高级配置-Splunk写入的索引</p>
                      * 
                      */
                     std::string GetIndex() const;
 
                     /**
-                     * 设置高级配置-Splunk写入的索引
-                     * @param _index 高级配置-Splunk写入的索引
+                     * 设置<p>高级配置-Splunk写入的索引</p>
+                     * @param _index <p>高级配置-Splunk写入的索引</p>
                      * 
                      */
                     void SetIndex(const std::string& _index);
@@ -343,15 +343,15 @@ namespace TencentCloud
                     bool IndexHasBeenSet() const;
 
                     /**
-                     * 获取高级配置-是否启用索引器；1-不开启；2-开启；
-                     * @return IndexAck 高级配置-是否启用索引器；1-不开启；2-开启；
+                     * 获取<p>高级配置-是否启用索引器；1-不开启；2-开启；</p>
+                     * @return IndexAck <p>高级配置-是否启用索引器；1-不开启；2-开启；</p>
                      * 
                      */
                     int64_t GetIndexAck() const;
 
                     /**
-                     * 设置高级配置-是否启用索引器；1-不开启；2-开启；
-                     * @param _indexAck 高级配置-是否启用索引器；1-不开启；2-开启；
+                     * 设置<p>高级配置-是否启用索引器；1-不开启；2-开启；</p>
+                     * @param _indexAck <p>高级配置-是否启用索引器；1-不开启；2-开启；</p>
                      * 
                      */
                     void SetIndexAck(const int64_t& _indexAck);
@@ -364,15 +364,15 @@ namespace TencentCloud
                     bool IndexAckHasBeenSet() const;
 
                     /**
-                     * 获取高级配置-通道
-                     * @return Channel 高级配置-通道
+                     * 获取<p>高级配置-通道</p>
+                     * @return Channel <p>高级配置-通道</p>
                      * 
                      */
                     std::string GetChannel() const;
 
                     /**
-                     * 设置高级配置-通道
-                     * @param _channel 高级配置-通道
+                     * 设置<p>高级配置-通道</p>
+                     * @param _channel <p>高级配置-通道</p>
                      * 
                      */
                     void SetChannel(const std::string& _channel);
@@ -384,103 +384,130 @@ namespace TencentCloud
                      */
                     bool ChannelHasBeenSet() const;
 
+                    /**
+                     * 获取<p>预过滤处理-对写入 Splunk 原始数据进行预过滤处理语句</p>
+                     * @return DSLFilter <p>预过滤处理-对写入 Splunk 原始数据进行预过滤处理语句</p>
+                     * 
+                     */
+                    std::string GetDSLFilter() const;
+
+                    /**
+                     * 设置<p>预过滤处理-对写入 Splunk 原始数据进行预过滤处理语句</p>
+                     * @param _dSLFilter <p>预过滤处理-对写入 Splunk 原始数据进行预过滤处理语句</p>
+                     * 
+                     */
+                    void SetDSLFilter(const std::string& _dSLFilter);
+
+                    /**
+                     * 判断参数 DSLFilter 是否已赋值
+                     * @return DSLFilter 是否已赋值
+                     * 
+                     */
+                    bool DSLFilterHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务id
+                     * <p>任务id</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务名称
+                     * <p>任务名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 用户id
+                     * <p>用户id</p>
                      */
                     uint64_t m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 日志主题id
+                     * <p>日志主题id</p>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 任务状态；1.运行中；2:暂停；3：异常
+                     * <p>任务状态；1.运行中；2:暂停；3：异常</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 启用状态；0:禁用；1:启用
+                     * <p>启用状态；0:禁用；1:启用</p>
                      */
                     int64_t m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 创建时间；单位：秒
+                     * <p>创建时间；单位：秒</p>
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间；单位：秒
+                     * <p>更新时间；单位：秒</p>
                      */
                     uint64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * splunk投递任务-目标配置
+                     * <p>splunk投递任务-目标配置</p>
                      */
                     NetInfo m_netInfo;
                     bool m_netInfoHasBeenSet;
 
                     /**
-                     * splunk投递任务元信息
+                     * <p>splunk投递任务元信息</p>
                      */
                     MetadataInfo m_metadata;
                     bool m_metadataHasBeenSet;
 
                     /**
-                     * 是否启用服务日志；1:关闭；2:开启
+                     * <p>是否启用服务日志；1:关闭；2:开启</p>
                      */
                     int64_t m_hasServiceLog;
                     bool m_hasServiceLogHasBeenSet;
 
                     /**
-                     * 高级配置-数据来源；
+                     * <p>高级配置-数据来源；</p>
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 高级配置-数据来源类型；
+                     * <p>高级配置-数据来源类型；</p>
                      */
                     std::string m_sourceType;
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 高级配置-Splunk写入的索引
+                     * <p>高级配置-Splunk写入的索引</p>
                      */
                     std::string m_index;
                     bool m_indexHasBeenSet;
 
                     /**
-                     * 高级配置-是否启用索引器；1-不开启；2-开启；
+                     * <p>高级配置-是否启用索引器；1-不开启；2-开启；</p>
                      */
                     int64_t m_indexAck;
                     bool m_indexAckHasBeenSet;
 
                     /**
-                     * 高级配置-通道
+                     * <p>高级配置-通道</p>
                      */
                     std::string m_channel;
                     bool m_channelHasBeenSet;
+
+                    /**
+                     * <p>预过滤处理-对写入 Splunk 原始数据进行预过滤处理语句</p>
+                     */
+                    std::string m_dSLFilter;
+                    bool m_dSLFilterHasBeenSet;
 
                 };
             }

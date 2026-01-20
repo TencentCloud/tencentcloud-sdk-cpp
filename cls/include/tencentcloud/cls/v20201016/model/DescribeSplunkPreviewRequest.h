@@ -44,19 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志主题id。
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
-                     * @return TopicId 日志主题id。
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * 获取<p>日志主题id。- 通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</p>
+                     * @return TopicId <p>日志主题id。- 通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</p>
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题id。
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
-                     * @param _topicId 日志主题id。
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * 设置<p>日志主题id。- 通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</p>
+                     * @param _topicId <p>日志主题id。- 通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</p>
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -69,15 +65,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取splunk投递任务-元信息
-                     * @return MetadataInfo splunk投递任务-元信息
+                     * 获取<p>splunk投递任务-元信息</p>
+                     * @return MetadataInfo <p>splunk投递任务-元信息</p>
                      * 
                      */
                     MetadataInfo GetMetadataInfo() const;
 
                     /**
-                     * 设置splunk投递任务-元信息
-                     * @param _metadataInfo splunk投递任务-元信息
+                     * 设置<p>splunk投递任务-元信息</p>
+                     * @param _metadataInfo <p>splunk投递任务-元信息</p>
                      * 
                      */
                     void SetMetadataInfo(const MetadataInfo& _metadataInfo);
@@ -89,20 +85,46 @@ namespace TencentCloud
                      */
                     bool MetadataInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>splunk投递任务-投递 splunk过滤原始日志语句</p>
+                     * @return DSLFilter <p>splunk投递任务-投递 splunk过滤原始日志语句</p>
+                     * 
+                     */
+                    std::string GetDSLFilter() const;
+
+                    /**
+                     * 设置<p>splunk投递任务-投递 splunk过滤原始日志语句</p>
+                     * @param _dSLFilter <p>splunk投递任务-投递 splunk过滤原始日志语句</p>
+                     * 
+                     */
+                    void SetDSLFilter(const std::string& _dSLFilter);
+
+                    /**
+                     * 判断参数 DSLFilter 是否已赋值
+                     * @return DSLFilter 是否已赋值
+                     * 
+                     */
+                    bool DSLFilterHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 日志主题id。
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * <p>日志主题id。- 通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</p>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * splunk投递任务-元信息
+                     * <p>splunk投递任务-元信息</p>
                      */
                     MetadataInfo m_metadataInfo;
                     bool m_metadataInfoHasBeenSet;
+
+                    /**
+                     * <p>splunk投递任务-投递 splunk过滤原始日志语句</p>
+                     */
+                    std::string m_dSLFilter;
+                    bool m_dSLFilterHasBeenSet;
 
                 };
             }

@@ -156,6 +156,27 @@ namespace TencentCloud
                      */
                     bool WordlistHasBeenSet() const;
 
+                    /**
+                     * 获取说话人ID（如启用说话人识别）
+                     * @return SpeakerId 说话人ID（如启用说话人识别）
+                     * 
+                     */
+                    std::string GetSpeakerId() const;
+
+                    /**
+                     * 设置说话人ID（如启用说话人识别）
+                     * @param _speakerId 说话人ID（如启用说话人识别）
+                     * 
+                     */
+                    void SetSpeakerId(const std::string& _speakerId);
+
+                    /**
+                     * 判断参数 SpeakerId 是否已赋值
+                     * @return SpeakerId 是否已赋值
+                     * 
+                     */
+                    bool SpeakerIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +209,12 @@ namespace TencentCloud
                      */
                     std::vector<WordResult> m_wordlist;
                     bool m_wordlistHasBeenSet;
+
+                    /**
+                     * 说话人ID（如启用说话人识别）
+                     */
+                    std::string m_speakerId;
+                    bool m_speakerIdHasBeenSet;
 
                 };
             }

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总数量。
-                     * @return TotalCount 总数量。
+                     * 获取<p>总数量。</p>
+                     * @return TotalCount <p>总数量。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取列表。
-                     * @return Certificates 列表。
+                     * 获取<p>列表。</p>
+                     * @return Certificates <p>列表。</p>
                      * 
                      */
                     std::vector<Certificates> GetCertificates() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总数量。
+                     * <p>总数量。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 列表。
+                     * <p>列表。</p>
                      */
                     std::vector<Certificates> m_certificates;
                     bool m_certificatesHasBeenSet;

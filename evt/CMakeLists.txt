@@ -24,7 +24,9 @@ set(evt_public_header_model
   include/tencentcloud/evt/v20250217/model/DeleteRoleUserRequest.h
   include/tencentcloud/evt/v20250217/model/UserAttribute.h
   include/tencentcloud/evt/v20250217/model/DeleteRoleUserResponse.h
+  include/tencentcloud/evt/v20250217/model/PutEventResponse.h
   include/tencentcloud/evt/v20250217/model/CreateRoleUserResponse.h
+  include/tencentcloud/evt/v20250217/model/PutEventRequest.h
   include/tencentcloud/evt/v20250217/model/CompleteApprovalResponse.h
   include/tencentcloud/evt/v20250217/model/PutMessageResponse.h
   include/tencentcloud/evt/v20250217/model/PutMessageRequest.h
@@ -37,7 +39,9 @@ set(evt_src
   src/v20250217/model/DeleteRoleUserRequest.cpp
   src/v20250217/model/UserAttribute.cpp
   src/v20250217/model/DeleteRoleUserResponse.cpp
+  src/v20250217/model/PutEventResponse.cpp
   src/v20250217/model/CreateRoleUserResponse.cpp
+  src/v20250217/model/PutEventRequest.cpp
   src/v20250217/model/CompleteApprovalResponse.cpp
   src/v20250217/model/PutMessageResponse.cpp
   src/v20250217/model/PutMessageRequest.cpp

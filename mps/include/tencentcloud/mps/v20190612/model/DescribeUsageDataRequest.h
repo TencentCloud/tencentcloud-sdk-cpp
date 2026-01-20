@@ -99,6 +99,7 @@ namespace TencentCloud
 <li>AddBlindWatermark: 添加基础版权数字水印</li>
 <li>AddNagraWatermark: 添加NAGRA数字水印</li>
 <li>ExtractBlindWatermark: 提取基础版权数字水印</li>
+<li>AIGC: AIGC</li>
                      * @return Types 查询媒体处理任务类型，默认查询转码。
 <li>Transcode：转码</li>
 <li>Enhance：增强</li>
@@ -113,6 +114,7 @@ namespace TencentCloud
 <li>AddBlindWatermark: 添加基础版权数字水印</li>
 <li>AddNagraWatermark: 添加NAGRA数字水印</li>
 <li>ExtractBlindWatermark: 提取基础版权数字水印</li>
+<li>AIGC: AIGC</li>
                      * 
                      */
                     std::vector<std::string> GetTypes() const;
@@ -132,6 +134,7 @@ namespace TencentCloud
 <li>AddBlindWatermark: 添加基础版权数字水印</li>
 <li>AddNagraWatermark: 添加NAGRA数字水印</li>
 <li>ExtractBlindWatermark: 提取基础版权数字水印</li>
+<li>AIGC: AIGC</li>
                      * @param _types 查询媒体处理任务类型，默认查询转码。
 <li>Transcode：转码</li>
 <li>Enhance：增强</li>
@@ -146,6 +149,7 @@ namespace TencentCloud
 <li>AddBlindWatermark: 添加基础版权数字水印</li>
 <li>AddNagraWatermark: 添加NAGRA数字水印</li>
 <li>ExtractBlindWatermark: 提取基础版权数字水印</li>
+<li>AIGC: AIGC</li>
                      * 
                      */
                     void SetTypes(const std::vector<std::string>& _types);
@@ -271,6 +275,7 @@ namespace TencentCloud
 <li>AddBlindWatermark: 添加基础版权数字水印</li>
 <li>AddNagraWatermark: 添加NAGRA数字水印</li>
 <li>ExtractBlindWatermark: 提取基础版权数字水印</li>
+<li>AIGC: AIGC</li>
                      */
                     std::vector<std::string> m_types;
                     bool m_typesHasBeenSet;

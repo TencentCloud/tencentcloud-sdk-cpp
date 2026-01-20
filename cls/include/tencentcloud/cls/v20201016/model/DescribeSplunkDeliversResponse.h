@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Splunk投递任务信息列表
-                     * @return Infos Splunk投递任务信息列表
+                     * 获取<p>Splunk投递任务信息列表</p>
+                     * @return Infos <p>Splunk投递任务信息列表</p>
                      * 
                      */
                     std::vector<SplunkDeliverInfo> GetInfos() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool InfosHasBeenSet() const;
 
                     /**
-                     * 获取符合条件的任务总数。
-                     * @return Total 符合条件的任务总数。
+                     * 获取<p>符合条件的任务总数。</p>
+                     * @return Total <p>符合条件的任务总数。</p>
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Splunk投递任务信息列表
+                     * <p>Splunk投递任务信息列表</p>
                      */
                     std::vector<SplunkDeliverInfo> m_infos;
                     bool m_infosHasBeenSet;
 
                     /**
-                     * 符合条件的任务总数。
+                     * <p>符合条件的任务总数。</p>
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;

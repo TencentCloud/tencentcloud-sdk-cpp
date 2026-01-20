@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeSplunkPreviewRequest::DescribeSplunkPreviewRequest() :
     m_topicIdHasBeenSet(false),
-    m_metadataInfoHasBeenSet(false)
+    m_metadataInfoHasBeenSet(false),
+    m_dSLFilterHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string DescribeSplunkPreviewRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_metadataInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_dSLFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DSLFilter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dSLFilter.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void DescribeSplunkPreviewRequest::SetMetadataInfo(const MetadataInfo& _metadata
 bool DescribeSplunkPreviewRequest::MetadataInfoHasBeenSet() const
 {
     return m_metadataInfoHasBeenSet;
+}
+
+string DescribeSplunkPreviewRequest::GetDSLFilter() const
+{
+    return m_dSLFilter;
+}
+
+void DescribeSplunkPreviewRequest::SetDSLFilter(const string& _dSLFilter)
+{
+    m_dSLFilter = _dSLFilter;
+    m_dSLFilterHasBeenSet = true;
+}
+
+bool DescribeSplunkPreviewRequest::DSLFilterHasBeenSet() const
+{
+    return m_dSLFilterHasBeenSet;
 }
 
 

@@ -34,7 +34,8 @@ ModifySplunkDeliverRequest::ModifySplunkDeliverRequest() :
     m_sourceHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
     m_indexHasBeenSet(false),
-    m_channelHasBeenSet(false)
+    m_channelHasBeenSet(false),
+    m_dSLFilterHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,14 @@ string ModifySplunkDeliverRequest::ToJsonString() const
         string key = "Channel";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_channel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dSLFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DSLFilter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dSLFilter.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -341,6 +350,22 @@ void ModifySplunkDeliverRequest::SetChannel(const string& _channel)
 bool ModifySplunkDeliverRequest::ChannelHasBeenSet() const
 {
     return m_channelHasBeenSet;
+}
+
+string ModifySplunkDeliverRequest::GetDSLFilter() const
+{
+    return m_dSLFilter;
+}
+
+void ModifySplunkDeliverRequest::SetDSLFilter(const string& _dSLFilter)
+{
+    m_dSLFilter = _dSLFilter;
+    m_dSLFilterHasBeenSet = true;
+}
+
+bool ModifySplunkDeliverRequest::DSLFilterHasBeenSet() const
+{
+    return m_dSLFilterHasBeenSet;
 }
 
 

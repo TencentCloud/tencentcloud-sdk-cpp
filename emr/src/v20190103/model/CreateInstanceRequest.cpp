@@ -59,7 +59,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_nodeMarksHasBeenSet(false),
     m_loadBalancerIdHasBeenSet(false),
     m_defaultMetaVersionHasBeenSet(false),
-    m_needCdbAuditHasBeenSet(false)
+    m_needCdbAuditHasBeenSet(false),
+    m_sgIPHasBeenSet(false)
 {
 }
 
@@ -415,6 +416,14 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "NeedCdbAudit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needCdbAudit, allocator);
+    }
+
+    if (m_sgIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SgIP";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sgIP.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1015,6 +1024,22 @@ void CreateInstanceRequest::SetNeedCdbAudit(const int64_t& _needCdbAudit)
 bool CreateInstanceRequest::NeedCdbAuditHasBeenSet() const
 {
     return m_needCdbAuditHasBeenSet;
+}
+
+string CreateInstanceRequest::GetSgIP() const
+{
+    return m_sgIP;
+}
+
+void CreateInstanceRequest::SetSgIP(const string& _sgIP)
+{
+    m_sgIP = _sgIP;
+    m_sgIPHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::SgIPHasBeenSet() const
+{
+    return m_sgIPHasBeenSet;
 }
 
 

@@ -26,6 +26,7 @@ SubmitImageToVideoGeneralJobRequest::SubmitImageToVideoGeneralJobRequest() :
     m_imageHasBeenSet(false),
     m_promptHasBeenSet(false),
     m_resolutionHasBeenSet(false),
+    m_fpsHasBeenSet(false),
     m_logoAddHasBeenSet(false),
     m_logoParamHasBeenSet(false)
 {
@@ -61,6 +62,14 @@ string SubmitImageToVideoGeneralJobRequest::ToJsonString() const
         string key = "Resolution";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resolution.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Fps";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_fps, allocator);
     }
 
     if (m_logoAddHasBeenSet)
@@ -134,6 +143,22 @@ void SubmitImageToVideoGeneralJobRequest::SetResolution(const string& _resolutio
 bool SubmitImageToVideoGeneralJobRequest::ResolutionHasBeenSet() const
 {
     return m_resolutionHasBeenSet;
+}
+
+int64_t SubmitImageToVideoGeneralJobRequest::GetFps() const
+{
+    return m_fps;
+}
+
+void SubmitImageToVideoGeneralJobRequest::SetFps(const int64_t& _fps)
+{
+    m_fps = _fps;
+    m_fpsHasBeenSet = true;
+}
+
+bool SubmitImageToVideoGeneralJobRequest::FpsHasBeenSet() const
+{
+    return m_fpsHasBeenSet;
 }
 
 int64_t SubmitImageToVideoGeneralJobRequest::GetLogoAdd() const

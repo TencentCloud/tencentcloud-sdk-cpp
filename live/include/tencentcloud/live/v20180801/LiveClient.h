@@ -213,6 +213,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeLiveCertResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveCertsRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveCertsResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveCloudEffectConfigRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveCloudEffectConfigResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveCloudEffectListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveCloudEffectListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveDelayInfoListRequest.h>
@@ -734,6 +736,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLiveCertsResponse> DescribeLiveCertsOutcome;
                 typedef std::future<DescribeLiveCertsOutcome> DescribeLiveCertsOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveCertsRequest&, DescribeLiveCertsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveCertsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLiveCloudEffectConfigResponse> DescribeLiveCloudEffectConfigOutcome;
+                typedef std::future<DescribeLiveCloudEffectConfigOutcome> DescribeLiveCloudEffectConfigOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeLiveCloudEffectConfigRequest&, DescribeLiveCloudEffectConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveCloudEffectConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLiveCloudEffectListResponse> DescribeLiveCloudEffectListOutcome;
                 typedef std::future<DescribeLiveCloudEffectListOutcome> DescribeLiveCloudEffectListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveCloudEffectListRequest&, DescribeLiveCloudEffectListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveCloudEffectListAsyncHandler;
@@ -1998,6 +2003,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeLiveCertsOutcome DescribeLiveCerts(const Model::DescribeLiveCertsRequest &request);
                 void DescribeLiveCertsAsync(const Model::DescribeLiveCertsRequest& request, const DescribeLiveCertsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLiveCertsOutcomeCallable DescribeLiveCertsCallable(const Model::DescribeLiveCertsRequest& request);
+
+                /**
+                 *使用该接口查询云端特效配置信息。
+                 * @param req DescribeLiveCloudEffectConfigRequest
+                 * @return DescribeLiveCloudEffectConfigOutcome
+                 */
+                DescribeLiveCloudEffectConfigOutcome DescribeLiveCloudEffectConfig(const Model::DescribeLiveCloudEffectConfigRequest &request);
+                void DescribeLiveCloudEffectConfigAsync(const Model::DescribeLiveCloudEffectConfigRequest& request, const DescribeLiveCloudEffectConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLiveCloudEffectConfigOutcomeCallable DescribeLiveCloudEffectConfigCallable(const Model::DescribeLiveCloudEffectConfigRequest& request);
 
                 /**
                  *使用该接口查询云端特效列表，特效列表中包含一部分官方精品特效，同时包含用户自定义生成的特效。

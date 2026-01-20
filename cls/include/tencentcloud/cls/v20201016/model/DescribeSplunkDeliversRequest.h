@@ -44,19 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志主题Id
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
-                     * @return TopicId 日志主题Id
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * 获取<p>日志主题Id- 通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</p>
+                     * @return TopicId <p>日志主题Id- 通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</p>
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题Id
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
-                     * @param _topicId 日志主题Id
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * 设置<p>日志主题Id- 通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</p>
+                     * @param _topicId <p>日志主题Id- 通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</p>
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -69,27 +65,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取- taskId 按照【任务id】进行过滤。 类型：String 必选：否  
-- name 按照【任务名称】进行过滤。 类型：String 必选：否  
-- statusFlag 按照【状态】进行过滤。 类型：String 必选：否  
- 每次请求的Filters的上限为10，Filter.Values的上限为10。
-                     * @return Filters - taskId 按照【任务id】进行过滤。 类型：String 必选：否  
-- name 按照【任务名称】进行过滤。 类型：String 必选：否  
-- statusFlag 按照【状态】进行过滤。 类型：String 必选：否  
- 每次请求的Filters的上限为10，Filter.Values的上限为10。
+                     * 获取<ul><li>taskId 按照【任务id】进行过滤。 类型：String 必选：否  </li><li>name 按照【任务名称】进行过滤。 类型：String 必选：否  </li><li>statusFlag 按照【状态】进行过滤。 类型：String 必选：否<br /> 每次请求的Filters的上限为10，Filter.Values的上限为10。</li></ul>
+                     * @return Filters <ul><li>taskId 按照【任务id】进行过滤。 类型：String 必选：否  </li><li>name 按照【任务名称】进行过滤。 类型：String 必选：否  </li><li>statusFlag 按照【状态】进行过滤。 类型：String 必选：否<br /> 每次请求的Filters的上限为10，Filter.Values的上限为10。</li></ul>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置- taskId 按照【任务id】进行过滤。 类型：String 必选：否  
-- name 按照【任务名称】进行过滤。 类型：String 必选：否  
-- statusFlag 按照【状态】进行过滤。 类型：String 必选：否  
- 每次请求的Filters的上限为10，Filter.Values的上限为10。
-                     * @param _filters - taskId 按照【任务id】进行过滤。 类型：String 必选：否  
-- name 按照【任务名称】进行过滤。 类型：String 必选：否  
-- statusFlag 按照【状态】进行过滤。 类型：String 必选：否  
- 每次请求的Filters的上限为10，Filter.Values的上限为10。
+                     * 设置<ul><li>taskId 按照【任务id】进行过滤。 类型：String 必选：否  </li><li>name 按照【任务名称】进行过滤。 类型：String 必选：否  </li><li>statusFlag 按照【状态】进行过滤。 类型：String 必选：否<br /> 每次请求的Filters的上限为10，Filter.Values的上限为10。</li></ul>
+                     * @param _filters <ul><li>taskId 按照【任务id】进行过滤。 类型：String 必选：否  </li><li>name 按照【任务名称】进行过滤。 类型：String 必选：否  </li><li>statusFlag 按照【状态】进行过滤。 类型：String 必选：否<br /> 每次请求的Filters的上限为10，Filter.Values的上限为10。</li></ul>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -102,15 +86,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取分页的偏移量，默认值为0。
-                     * @return Offset 分页的偏移量，默认值为0。
+                     * 获取<p>分页的偏移量，默认值为0。</p>
+                     * @return Offset <p>分页的偏移量，默认值为0。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页的偏移量，默认值为0。
-                     * @param _offset 分页的偏移量，默认值为0。
+                     * 设置<p>分页的偏移量，默认值为0。</p>
+                     * @param _offset <p>分页的偏移量，默认值为0。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -123,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页单页限制数目，默认值为20，最大值100。
-                     * @return Limit 分页单页限制数目，默认值为20，最大值100。
+                     * 获取<p>分页单页限制数目，默认值为20，最大值100。</p>
+                     * @return Limit <p>分页单页限制数目，默认值为20，最大值100。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页单页限制数目，默认值为20，最大值100。
-                     * @param _limit 分页单页限制数目，默认值为20，最大值100。
+                     * 设置<p>分页单页限制数目，默认值为20，最大值100。</p>
+                     * @param _limit <p>分页单页限制数目，默认值为20，最大值100。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -146,29 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志主题Id
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * <p>日志主题Id- 通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</p>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * - taskId 按照【任务id】进行过滤。 类型：String 必选：否  
-- name 按照【任务名称】进行过滤。 类型：String 必选：否  
-- statusFlag 按照【状态】进行过滤。 类型：String 必选：否  
- 每次请求的Filters的上限为10，Filter.Values的上限为10。
+                     * <ul><li>taskId 按照【任务id】进行过滤。 类型：String 必选：否  </li><li>name 按照【任务名称】进行过滤。 类型：String 必选：否  </li><li>statusFlag 按照【状态】进行过滤。 类型：String 必选：否<br /> 每次请求的Filters的上限为10，Filter.Values的上限为10。</li></ul>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 分页的偏移量，默认值为0。
+                     * <p>分页的偏移量，默认值为0。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页单页限制数目，默认值为20，最大值100。
+                     * <p>分页单页限制数目，默认值为20，最大值100。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
