@@ -23,8 +23,9 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 EnhanceMediaQualityRequest::EnhanceMediaQualityRequest() :
-    m_fileIdHasBeenSet(false),
     m_definitionHasBeenSet(false),
+    m_fileIdHasBeenSet(false),
+    m_mediaStoragePathHasBeenSet(false),
     m_subAppIdHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
@@ -40,6 +41,14 @@ string EnhanceMediaQualityRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_definitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Definition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_definition, allocator);
+    }
+
     if (m_fileIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -48,12 +57,12 @@ string EnhanceMediaQualityRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_definitionHasBeenSet)
+    if (m_mediaStoragePathHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Definition";
+        string key = "MediaStoragePath";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_definition, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_mediaStoragePath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subAppIdHasBeenSet)
@@ -105,6 +114,22 @@ string EnhanceMediaQualityRequest::ToJsonString() const
 }
 
 
+uint64_t EnhanceMediaQualityRequest::GetDefinition() const
+{
+    return m_definition;
+}
+
+void EnhanceMediaQualityRequest::SetDefinition(const uint64_t& _definition)
+{
+    m_definition = _definition;
+    m_definitionHasBeenSet = true;
+}
+
+bool EnhanceMediaQualityRequest::DefinitionHasBeenSet() const
+{
+    return m_definitionHasBeenSet;
+}
+
 string EnhanceMediaQualityRequest::GetFileId() const
 {
     return m_fileId;
@@ -121,20 +146,20 @@ bool EnhanceMediaQualityRequest::FileIdHasBeenSet() const
     return m_fileIdHasBeenSet;
 }
 
-uint64_t EnhanceMediaQualityRequest::GetDefinition() const
+string EnhanceMediaQualityRequest::GetMediaStoragePath() const
 {
-    return m_definition;
+    return m_mediaStoragePath;
 }
 
-void EnhanceMediaQualityRequest::SetDefinition(const uint64_t& _definition)
+void EnhanceMediaQualityRequest::SetMediaStoragePath(const string& _mediaStoragePath)
 {
-    m_definition = _definition;
-    m_definitionHasBeenSet = true;
+    m_mediaStoragePath = _mediaStoragePath;
+    m_mediaStoragePathHasBeenSet = true;
 }
 
-bool EnhanceMediaQualityRequest::DefinitionHasBeenSet() const
+bool EnhanceMediaQualityRequest::MediaStoragePathHasBeenSet() const
 {
-    return m_definitionHasBeenSet;
+    return m_mediaStoragePathHasBeenSet;
 }
 
 uint64_t EnhanceMediaQualityRequest::GetSubAppId() const

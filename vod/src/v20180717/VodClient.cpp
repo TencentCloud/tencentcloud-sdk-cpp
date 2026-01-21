@@ -6790,6 +6790,56 @@ VodClient::InspectMediaQualityOutcomeCallable VodClient::InspectMediaQualityCall
     return prom->get_future();
 }
 
+VodClient::ListFilesOutcome VodClient::ListFiles(const ListFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListFilesResponse rsp = ListFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListFilesOutcome(rsp);
+        else
+            return ListFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListFilesOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ListFilesAsync(const ListFilesRequest& request, const ListFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListFilesRequest&;
+    using Resp = ListFilesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListFiles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::ListFilesOutcomeCallable VodClient::ListFilesCallable(const ListFilesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListFilesOutcome>>();
+    ListFilesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ListFilesRequest&,
+        ListFilesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::LiveRealTimeClipOutcome VodClient::LiveRealTimeClip(const LiveRealTimeClipRequest &request)
 {
     auto outcome = MakeRequest(request, "LiveRealTimeClip");

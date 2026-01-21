@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取队列名称。
-                     * @return QueueName 队列名称。
+                     * 获取<p>队列名称。</p>
+                     * @return QueueName <p>队列名称。</p>
                      * 
                      */
                     std::string GetQueueName() const;
 
                     /**
-                     * 设置队列名称。
-                     * @param _queueName 队列名称。
+                     * 设置<p>队列名称。</p>
+                     * @param _queueName <p>队列名称。</p>
                      * 
                      */
                     void SetQueueName(const std::string& _queueName);
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool QueueNameHasBeenSet() const;
 
                     /**
-                     * 获取队列中弹性节点数量最小值。取值范围0～200。
-                     * @return MinSize 队列中弹性节点数量最小值。取值范围0～200。
+                     * 获取<p>队列中弹性节点数量最小值。取值范围0～200。</p>
+                     * @return MinSize <p>队列中弹性节点数量最小值。取值范围0～200。</p>
                      * 
                      */
                     uint64_t GetMinSize() const;
 
                     /**
-                     * 设置队列中弹性节点数量最小值。取值范围0～200。
-                     * @param _minSize 队列中弹性节点数量最小值。取值范围0～200。
+                     * 设置<p>队列中弹性节点数量最小值。取值范围0～200。</p>
+                     * @param _minSize <p>队列中弹性节点数量最小值。取值范围0～200。</p>
                      * 
                      */
                     void SetMinSize(const uint64_t& _minSize);
@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool MinSizeHasBeenSet() const;
 
                     /**
-                     * 获取队列中弹性节点数量最大值。取值范围0～200。
-                     * @return MaxSize 队列中弹性节点数量最大值。取值范围0～200。
+                     * 获取<p>队列中弹性节点数量最大值。取值范围0～200。</p>
+                     * @return MaxSize <p>队列中弹性节点数量最大值。取值范围0～200。</p>
                      * 
                      */
                     uint64_t GetMaxSize() const;
 
                     /**
-                     * 设置队列中弹性节点数量最大值。取值范围0～200。
-                     * @param _maxSize 队列中弹性节点数量最大值。取值范围0～200。
+                     * 设置<p>队列中弹性节点数量最大值。取值范围0～200。</p>
+                     * @param _maxSize <p>队列中弹性节点数量最大值。取值范围0～200。</p>
                      * 
                      */
                     void SetMaxSize(const uint64_t& _maxSize);
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool MaxSizeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启自动扩容。
-                     * @return EnableAutoExpansion 是否开启自动扩容。
+                     * 获取<p>是否开启自动扩容。</p>
+                     * @return EnableAutoExpansion <p>是否开启自动扩容。</p>
                      * 
                      */
                     bool GetEnableAutoExpansion() const;
 
                     /**
-                     * 设置是否开启自动扩容。
-                     * @param _enableAutoExpansion 是否开启自动扩容。
+                     * 设置<p>是否开启自动扩容。</p>
+                     * @param _enableAutoExpansion <p>是否开启自动扩容。</p>
                      * 
                      */
                     void SetEnableAutoExpansion(const bool& _enableAutoExpansion);
@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool EnableAutoExpansionHasBeenSet() const;
 
                     /**
-                     * 获取是否开启自动缩容。
-                     * @return EnableAutoShrink 是否开启自动缩容。
+                     * 获取<p>是否开启自动缩容。</p>
+                     * @return EnableAutoShrink <p>是否开启自动缩容。</p>
                      * 
                      */
                     bool GetEnableAutoShrink() const;
 
                     /**
-                     * 设置是否开启自动缩容。
-                     * @param _enableAutoShrink 是否开启自动缩容。
+                     * 设置<p>是否开启自动缩容。</p>
+                     * @param _enableAutoShrink <p>是否开启自动缩容。</p>
                      * 
                      */
                     void SetEnableAutoShrink(const bool& _enableAutoShrink);
@@ -156,15 +156,15 @@ namespace TencentCloud
                     bool EnableAutoShrinkHasBeenSet() const;
 
                     /**
-                     * 获取指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜和特定自定义镜像。
-                     * @return ImageId 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜和特定自定义镜像。
+                     * 获取<p>指定有效的<a href="https://cloud.tencent.com/document/product/213/4940">镜像</a>ID，格式形如<code>img-xxx</code>。目前仅支持公有镜和特定自定义镜像。</p>
+                     * @return ImageId <p>指定有效的<a href="https://cloud.tencent.com/document/product/213/4940">镜像</a>ID，格式形如<code>img-xxx</code>。目前仅支持公有镜和特定自定义镜像。</p>
                      * 
                      */
                     std::string GetImageId() const;
 
                     /**
-                     * 设置指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜和特定自定义镜像。
-                     * @param _imageId 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜和特定自定义镜像。
+                     * 设置<p>指定有效的<a href="https://cloud.tencent.com/document/product/213/4940">镜像</a>ID，格式形如<code>img-xxx</code>。目前仅支持公有镜和特定自定义镜像。</p>
+                     * @param _imageId <p>指定有效的<a href="https://cloud.tencent.com/document/product/213/4940">镜像</a>ID，格式形如<code>img-xxx</code>。目前仅支持公有镜和特定自定义镜像。</p>
                      * 
                      */
                     void SetImageId(const std::string& _imageId);
@@ -177,15 +177,15 @@ namespace TencentCloud
                     bool ImageIdHasBeenSet() const;
 
                     /**
-                     * 获取节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。
-                     * @return SystemDisk 节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。
+                     * 获取<p>节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。</p>
+                     * @return SystemDisk <p>节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。</p>
                      * 
                      */
                     SystemDisk GetSystemDisk() const;
 
                     /**
-                     * 设置节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。
-                     * @param _systemDisk 节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。
+                     * 设置<p>节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。</p>
+                     * @param _systemDisk <p>节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。</p>
                      * 
                      */
                     void SetSystemDisk(const SystemDisk& _systemDisk);
@@ -198,15 +198,15 @@ namespace TencentCloud
                     bool SystemDiskHasBeenSet() const;
 
                     /**
-                     * 获取节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。
-                     * @return DataDisks 节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。
+                     * 获取<p>节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。</p>
+                     * @return DataDisks <p>节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。</p>
                      * 
                      */
                     std::vector<DataDisk> GetDataDisks() const;
 
                     /**
-                     * 设置节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。
-                     * @param _dataDisks 节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。
+                     * 设置<p>节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。</p>
+                     * @param _dataDisks <p>节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。</p>
                      * 
                      */
                     void SetDataDisks(const std::vector<DataDisk>& _dataDisks);
@@ -219,15 +219,15 @@ namespace TencentCloud
                     bool DataDisksHasBeenSet() const;
 
                     /**
-                     * 获取公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。
-                     * @return InternetAccessible 公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。
+                     * 获取<p>公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。</p>
+                     * @return InternetAccessible <p>公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。</p>
                      * 
                      */
                     InternetAccessible GetInternetAccessible() const;
 
                     /**
-                     * 设置公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。
-                     * @param _internetAccessible 公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。
+                     * 设置<p>公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。</p>
+                     * @param _internetAccessible <p>公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。</p>
                      * 
                      */
                     void SetInternetAccessible(const InternetAccessible& _internetAccessible);
@@ -240,15 +240,15 @@ namespace TencentCloud
                     bool InternetAccessibleHasBeenSet() const;
 
                     /**
-                     * 获取扩容节点配置信息。
-                     * @return ExpansionNodeConfigs 扩容节点配置信息。
+                     * 获取<p>扩容节点配置信息。</p>
+                     * @return ExpansionNodeConfigs <p>扩容节点配置信息。</p>
                      * 
                      */
                     std::vector<ExpansionNodeConfig> GetExpansionNodeConfigs() const;
 
                     /**
-                     * 设置扩容节点配置信息。
-                     * @param _expansionNodeConfigs 扩容节点配置信息。
+                     * 设置<p>扩容节点配置信息。</p>
+                     * @param _expansionNodeConfigs <p>扩容节点配置信息。</p>
                      * 
                      */
                     void SetExpansionNodeConfigs(const std::vector<ExpansionNodeConfig>& _expansionNodeConfigs);
@@ -260,67 +260,94 @@ namespace TencentCloud
                      */
                     bool ExpansionNodeConfigsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>扩容实例模板，可以在cvm侧进行设置</p>
+                     * @return LaunchTemplateIds <p>扩容实例模板，可以在cvm侧进行设置</p>
+                     * 
+                     */
+                    std::vector<std::string> GetLaunchTemplateIds() const;
+
+                    /**
+                     * 设置<p>扩容实例模板，可以在cvm侧进行设置</p>
+                     * @param _launchTemplateIds <p>扩容实例模板，可以在cvm侧进行设置</p>
+                     * 
+                     */
+                    void SetLaunchTemplateIds(const std::vector<std::string>& _launchTemplateIds);
+
+                    /**
+                     * 判断参数 LaunchTemplateIds 是否已赋值
+                     * @return LaunchTemplateIds 是否已赋值
+                     * 
+                     */
+                    bool LaunchTemplateIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 队列名称。
+                     * <p>队列名称。</p>
                      */
                     std::string m_queueName;
                     bool m_queueNameHasBeenSet;
 
                     /**
-                     * 队列中弹性节点数量最小值。取值范围0～200。
+                     * <p>队列中弹性节点数量最小值。取值范围0～200。</p>
                      */
                     uint64_t m_minSize;
                     bool m_minSizeHasBeenSet;
 
                     /**
-                     * 队列中弹性节点数量最大值。取值范围0～200。
+                     * <p>队列中弹性节点数量最大值。取值范围0～200。</p>
                      */
                     uint64_t m_maxSize;
                     bool m_maxSizeHasBeenSet;
 
                     /**
-                     * 是否开启自动扩容。
+                     * <p>是否开启自动扩容。</p>
                      */
                     bool m_enableAutoExpansion;
                     bool m_enableAutoExpansionHasBeenSet;
 
                     /**
-                     * 是否开启自动缩容。
+                     * <p>是否开启自动缩容。</p>
                      */
                     bool m_enableAutoShrink;
                     bool m_enableAutoShrinkHasBeenSet;
 
                     /**
-                     * 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜和特定自定义镜像。
+                     * <p>指定有效的<a href="https://cloud.tencent.com/document/product/213/4940">镜像</a>ID，格式形如<code>img-xxx</code>。目前仅支持公有镜和特定自定义镜像。</p>
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;
 
                     /**
-                     * 节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。
+                     * <p>节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。</p>
                      */
                     SystemDisk m_systemDisk;
                     bool m_systemDiskHasBeenSet;
 
                     /**
-                     * 节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。
+                     * <p>节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。</p>
                      */
                     std::vector<DataDisk> m_dataDisks;
                     bool m_dataDisksHasBeenSet;
 
                     /**
-                     * 公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。
+                     * <p>公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。</p>
                      */
                     InternetAccessible m_internetAccessible;
                     bool m_internetAccessibleHasBeenSet;
 
                     /**
-                     * 扩容节点配置信息。
+                     * <p>扩容节点配置信息。</p>
                      */
                     std::vector<ExpansionNodeConfig> m_expansionNodeConfigs;
                     bool m_expansionNodeConfigsHasBeenSet;
+
+                    /**
+                     * <p>扩容实例模板，可以在cvm侧进行设置</p>
+                     */
+                    std::vector<std::string> m_launchTemplateIds;
+                    bool m_launchTemplateIdsHasBeenSet;
 
                 };
             }

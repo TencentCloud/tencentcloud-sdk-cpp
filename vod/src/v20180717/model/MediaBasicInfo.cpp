@@ -34,6 +34,7 @@ MediaBasicInfo::MediaBasicInfo() :
     m_mediaUrlHasBeenSet(false),
     m_sourceInfoHasBeenSet(false),
     m_storageRegionHasBeenSet(false),
+    m_storagePathHasBeenSet(false),
     m_tagSetHasBeenSet(false),
     m_vidHasBeenSet(false),
     m_categoryHasBeenSet(false),
@@ -182,6 +183,16 @@ CoreInternalOutcome MediaBasicInfo::Deserialize(const rapidjson::Value &value)
         }
         m_storageRegion = string(value["StorageRegion"].GetString());
         m_storageRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("StoragePath") && !value["StoragePath"].IsNull())
+    {
+        if (!value["StoragePath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaBasicInfo.StoragePath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storagePath = string(value["StoragePath"].GetString());
+        m_storagePathHasBeenSet = true;
     }
 
     if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
@@ -347,6 +358,14 @@ void MediaBasicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "StorageRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_storageRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storagePathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StoragePath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storagePath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagSetHasBeenSet)
@@ -603,6 +622,22 @@ void MediaBasicInfo::SetStorageRegion(const string& _storageRegion)
 bool MediaBasicInfo::StorageRegionHasBeenSet() const
 {
     return m_storageRegionHasBeenSet;
+}
+
+string MediaBasicInfo::GetStoragePath() const
+{
+    return m_storagePath;
+}
+
+void MediaBasicInfo::SetStoragePath(const string& _storagePath)
+{
+    m_storagePath = _storagePath;
+    m_storagePathHasBeenSet = true;
+}
+
+bool MediaBasicInfo::StoragePathHasBeenSet() const
+{
+    return m_storagePathHasBeenSet;
 }
 
 vector<string> MediaBasicInfo::GetTagSet() const

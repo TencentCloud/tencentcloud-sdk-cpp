@@ -474,6 +474,27 @@ MetaDB信息，当MetaType选择EMR_NEW_META时，MetaDataJdbcUrl MetaDataUser M
                      */
                     bool NeedCdbAuditHasBeenSet() const;
 
+                    /**
+                     * 获取安全组来源IP
+                     * @return SgIP 安全组来源IP
+                     * 
+                     */
+                    std::string GetSgIP() const;
+
+                    /**
+                     * 设置安全组来源IP
+                     * @param _sgIP 安全组来源IP
+                     * 
+                     */
+                    void SetSgIP(const std::string& _sgIP);
+
+                    /**
+                     * 判断参数 SgIP 是否已赋值
+                     * @return SgIP 是否已赋值
+                     * 
+                     */
+                    bool SgIPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -595,6 +616,12 @@ MetaDB信息，当MetaType选择EMR_NEW_META时，MetaDataJdbcUrl MetaDataUser M
                      */
                     int64_t m_needCdbAudit;
                     bool m_needCdbAuditHasBeenSet;
+
+                    /**
+                     * 安全组来源IP
+                     */
+                    std::string m_sgIP;
+                    bool m_sgIPHasBeenSet;
 
                 };
             }

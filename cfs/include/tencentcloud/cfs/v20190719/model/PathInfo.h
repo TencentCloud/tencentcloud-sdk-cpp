@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool PathHasBeenSet() const;
 
+                    /**
+                     * 获取数据流动Id
+                     * @return DataFlowId 数据流动Id
+                     * 
+                     */
+                    std::string GetDataFlowId() const;
+
+                    /**
+                     * 设置数据流动Id
+                     * @param _dataFlowId 数据流动Id
+                     * 
+                     */
+                    void SetDataFlowId(const std::string& _dataFlowId);
+
+                    /**
+                     * 判断参数 DataFlowId 是否已赋值
+                     * @return DataFlowId 是否已赋值
+                     * 
+                     */
+                    bool DataFlowIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
+
+                    /**
+                     * 数据流动Id
+                     */
+                    std::string m_dataFlowId;
+                    bool m_dataFlowIdHasBeenSet;
 
                 };
             }

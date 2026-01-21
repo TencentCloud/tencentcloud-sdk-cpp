@@ -123,6 +123,8 @@
 #include <tencentcloud/tione/v20211111/model/ModifyNotebookResponse.h>
 #include <tencentcloud/tione/v20211111/model/ModifyNotebookTagsRequest.h>
 #include <tencentcloud/tione/v20211111/model/ModifyNotebookTagsResponse.h>
+#include <tencentcloud/tione/v20211111/model/ModifyServiceGroupWeightsRequest.h>
+#include <tencentcloud/tione/v20211111/model/ModifyServiceGroupWeightsResponse.h>
 #include <tencentcloud/tione/v20211111/model/PushTrainingMetricsRequest.h>
 #include <tencentcloud/tione/v20211111/model/PushTrainingMetricsResponse.h>
 #include <tencentcloud/tione/v20211111/model/StartNotebookRequest.h>
@@ -301,6 +303,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyNotebookTagsResponse> ModifyNotebookTagsOutcome;
                 typedef std::future<ModifyNotebookTagsOutcome> ModifyNotebookTagsOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::ModifyNotebookTagsRequest&, ModifyNotebookTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNotebookTagsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyServiceGroupWeightsResponse> ModifyServiceGroupWeightsOutcome;
+                typedef std::future<ModifyServiceGroupWeightsOutcome> ModifyServiceGroupWeightsOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::ModifyServiceGroupWeightsRequest&, ModifyServiceGroupWeightsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyServiceGroupWeightsAsyncHandler;
                 typedef Outcome<Core::Error, Model::PushTrainingMetricsResponse> PushTrainingMetricsOutcome;
                 typedef std::future<PushTrainingMetricsOutcome> PushTrainingMetricsOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::PushTrainingMetricsRequest&, PushTrainingMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PushTrainingMetricsAsyncHandler;
@@ -779,6 +784,15 @@ https://cloud.tencent.com/document/product/1278/85305
                 ModifyNotebookTagsOutcome ModifyNotebookTags(const Model::ModifyNotebookTagsRequest &request);
                 void ModifyNotebookTagsAsync(const Model::ModifyNotebookTagsRequest& request, const ModifyNotebookTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyNotebookTagsOutcomeCallable ModifyNotebookTagsCallable(const Model::ModifyNotebookTagsRequest& request);
+
+                /**
+                 *更新推理服务组流量分配
+                 * @param req ModifyServiceGroupWeightsRequest
+                 * @return ModifyServiceGroupWeightsOutcome
+                 */
+                ModifyServiceGroupWeightsOutcome ModifyServiceGroupWeights(const Model::ModifyServiceGroupWeightsRequest &request);
+                void ModifyServiceGroupWeightsAsync(const Model::ModifyServiceGroupWeightsRequest& request, const ModifyServiceGroupWeightsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyServiceGroupWeightsOutcomeCallable ModifyServiceGroupWeightsCallable(const Model::ModifyServiceGroupWeightsRequest& request);
 
                 /**
                  *上报训练自定义指标

@@ -89,23 +89,23 @@ namespace TencentCloud
                     bool ExpirationHasBeenSet() const;
 
                     /**
-                     * 获取是否删表
-                     * @return DropTable 是否删表
-                     * 
+                     * 获取是否删表，该字段废弃已使用，用TableExpiration策略替代
+                     * @return DropTable 是否删表，该字段废弃已使用，用TableExpiration策略替代
+                     * @deprecated
                      */
                     bool GetDropTable() const;
 
                     /**
-                     * 设置是否删表
-                     * @param _dropTable 是否删表
-                     * 
+                     * 设置是否删表，该字段废弃已使用，用TableExpiration策略替代
+                     * @param _dropTable 是否删表，该字段废弃已使用，用TableExpiration策略替代
+                     * @deprecated
                      */
                     void SetDropTable(const bool& _dropTable);
 
                     /**
                      * 判断参数 DropTable 是否已赋值
                      * @return DropTable 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DropTableHasBeenSet() const;
 
@@ -166,7 +166,7 @@ namespace TencentCloud
                     bool m_expirationHasBeenSet;
 
                     /**
-                     * 是否删表
+                     * 是否删表，该字段废弃已使用，用TableExpiration策略替代
                      */
                     bool m_dropTable;
                     bool m_dropTableHasBeenSet;

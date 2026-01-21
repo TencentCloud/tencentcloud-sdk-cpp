@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体文件 ID，即该文件在云点播上的全局唯一标识符。本接口要求媒体文件必须是图片格式。
-                     * @return FileId 媒体文件 ID，即该文件在云点播上的全局唯一标识符。本接口要求媒体文件必须是图片格式。
-                     * 
-                     */
-                    std::string GetFileId() const;
-
-                    /**
-                     * 设置媒体文件 ID，即该文件在云点播上的全局唯一标识符。本接口要求媒体文件必须是图片格式。
-                     * @param _fileId 媒体文件 ID，即该文件在云点播上的全局唯一标识符。本接口要求媒体文件必须是图片格式。
-                     * 
-                     */
-                    void SetFileId(const std::string& _fileId);
-
-                    /**
-                     * 判断参数 FileId 是否已赋值
-                     * @return FileId 是否已赋值
-                     * 
-                     */
-                    bool FileIdHasBeenSet() const;
-
-                    /**
                      * 获取图片审核模板 ID，取值范围：
 <li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴力（Terror）和不适宜的信息（Polity）。</li>
                      * @return Definition 图片审核模板 ID，取值范围：
@@ -89,6 +68,56 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
+                     * 获取媒体文件 ID，即该文件在云点播上的全局唯一标识符。本接口要求媒体文件必须是图片格式。
+FileId和MediaStoragePath必须提供其中一个。
+                     * @return FileId 媒体文件 ID，即该文件在云点播上的全局唯一标识符。本接口要求媒体文件必须是图片格式。
+FileId和MediaStoragePath必须提供其中一个。
+                     * 
+                     */
+                    std::string GetFileId() const;
+
+                    /**
+                     * 设置媒体文件 ID，即该文件在云点播上的全局唯一标识符。本接口要求媒体文件必须是图片格式。
+FileId和MediaStoragePath必须提供其中一个。
+                     * @param _fileId 媒体文件 ID，即该文件在云点播上的全局唯一标识符。本接口要求媒体文件必须是图片格式。
+FileId和MediaStoragePath必须提供其中一个。
+                     * 
+                     */
+                    void SetFileId(const std::string& _fileId);
+
+                    /**
+                     * 判断参数 FileId 是否已赋值
+                     * @return FileId 是否已赋值
+                     * 
+                     */
+                    bool FileIdHasBeenSet() const;
+
+                    /**
+                     * 获取媒体的存储路径。
+FileId和MediaStoragePath必须提供其中一个。
+                     * @return MediaStoragePath 媒体的存储路径。
+FileId和MediaStoragePath必须提供其中一个。
+                     * 
+                     */
+                    std::string GetMediaStoragePath() const;
+
+                    /**
+                     * 设置媒体的存储路径。
+FileId和MediaStoragePath必须提供其中一个。
+                     * @param _mediaStoragePath 媒体的存储路径。
+FileId和MediaStoragePath必须提供其中一个。
+                     * 
+                     */
+                    void SetMediaStoragePath(const std::string& _mediaStoragePath);
+
+                    /**
+                     * 判断参数 MediaStoragePath 是否已赋值
+                     * @return MediaStoragePath 是否已赋值
+                     * 
+                     */
+                    bool MediaStoragePathHasBeenSet() const;
+
+                    /**
                      * 获取<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
                      * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
                      * 
@@ -112,17 +141,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒体文件 ID，即该文件在云点播上的全局唯一标识符。本接口要求媒体文件必须是图片格式。
-                     */
-                    std::string m_fileId;
-                    bool m_fileIdHasBeenSet;
-
-                    /**
                      * 图片审核模板 ID，取值范围：
 <li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴力（Terror）和不适宜的信息（Polity）。</li>
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
+
+                    /**
+                     * 媒体文件 ID，即该文件在云点播上的全局唯一标识符。本接口要求媒体文件必须是图片格式。
+FileId和MediaStoragePath必须提供其中一个。
+                     */
+                    std::string m_fileId;
+                    bool m_fileIdHasBeenSet;
+
+                    /**
+                     * 媒体的存储路径。
+FileId和MediaStoragePath必须提供其中一个。
+                     */
+                    std::string m_mediaStoragePath;
+                    bool m_mediaStoragePathHasBeenSet;
 
                     /**
                      * <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>

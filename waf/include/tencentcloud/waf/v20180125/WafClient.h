@@ -277,6 +277,8 @@
 #include <tencentcloud/waf/v20180125/model/GetAttackTotalCountResponse.h>
 #include <tencentcloud/waf/v20180125/model/GetInstanceQpsLimitRequest.h>
 #include <tencentcloud/waf/v20180125/model/GetInstanceQpsLimitResponse.h>
+#include <tencentcloud/waf/v20180125/model/GetOrganizationRoleRequest.h>
+#include <tencentcloud/waf/v20180125/model/GetOrganizationRoleResponse.h>
 #include <tencentcloud/waf/v20180125/model/ImportIpAccessControlRequest.h>
 #include <tencentcloud/waf/v20180125/model/ImportIpAccessControlResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAntiFakeUrlRequest.h>
@@ -812,6 +814,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetInstanceQpsLimitResponse> GetInstanceQpsLimitOutcome;
                 typedef std::future<GetInstanceQpsLimitOutcome> GetInstanceQpsLimitOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::GetInstanceQpsLimitRequest&, GetInstanceQpsLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceQpsLimitAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetOrganizationRoleResponse> GetOrganizationRoleOutcome;
+                typedef std::future<GetOrganizationRoleOutcome> GetOrganizationRoleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::GetOrganizationRoleRequest&, GetOrganizationRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetOrganizationRoleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ImportIpAccessControlResponse> ImportIpAccessControlOutcome;
                 typedef std::future<ImportIpAccessControlOutcome> ImportIpAccessControlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ImportIpAccessControlRequest&, ImportIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportIpAccessControlAsyncHandler;
@@ -2169,6 +2174,15 @@ namespace TencentCloud
                 GetInstanceQpsLimitOutcome GetInstanceQpsLimit(const Model::GetInstanceQpsLimitRequest &request);
                 void GetInstanceQpsLimitAsync(const Model::GetInstanceQpsLimitRequest& request, const GetInstanceQpsLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetInstanceQpsLimitOutcomeCallable GetInstanceQpsLimitCallable(const Model::GetInstanceQpsLimitRequest& request);
+
+                /**
+                 *获取集团账号角色
+                 * @param req GetOrganizationRoleRequest
+                 * @return GetOrganizationRoleOutcome
+                 */
+                GetOrganizationRoleOutcome GetOrganizationRole(const Model::GetOrganizationRoleRequest &request);
+                void GetOrganizationRoleAsync(const Model::GetOrganizationRoleRequest& request, const GetOrganizationRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetOrganizationRoleOutcomeCallable GetOrganizationRoleCallable(const Model::GetOrganizationRoleRequest& request);
 
                 /**
                  *导入IP黑白名单

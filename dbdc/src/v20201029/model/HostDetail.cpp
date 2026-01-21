@@ -44,7 +44,8 @@ HostDetail::HostDetail() :
     m_machineTypeHasBeenSet(false),
     m_pidTagHasBeenSet(false),
     m_pidHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_zonesHasBeenSet(false)
 {
 }
 
@@ -293,6 +294,19 @@ CoreInternalOutcome HostDetail::Deserialize(const rapidjson::Value &value)
         m_instanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Zones") && !value["Zones"].IsNull())
+    {
+        if (!value["Zones"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `HostDetail.Zones` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Zones"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_zones.push_back((*itr).GetString());
+        }
+        m_zonesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -490,6 +504,19 @@ void HostDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zones";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zones.begin(); itr != m_zones.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -877,5 +904,21 @@ void HostDetail::SetInstanceId(const string& _instanceId)
 bool HostDetail::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+vector<string> HostDetail::GetZones() const
+{
+    return m_zones;
+}
+
+void HostDetail::SetZones(const vector<string>& _zones)
+{
+    m_zones = _zones;
+    m_zonesHasBeenSet = true;
+}
+
+bool HostDetail::ZonesHasBeenSet() const
+{
+    return m_zonesHasBeenSet;
 }
 

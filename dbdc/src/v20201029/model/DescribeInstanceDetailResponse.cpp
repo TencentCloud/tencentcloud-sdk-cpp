@@ -51,7 +51,8 @@ DescribeInstanceDetailResponse::DescribeInstanceDetailResponse() :
     m_fenceIdHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
-    m_cpuTypeHasBeenSet(false)
+    m_cpuTypeHasBeenSet(false),
+    m_zonesHasBeenSet(false)
 {
 }
 
@@ -379,6 +380,19 @@ CoreInternalOutcome DescribeInstanceDetailResponse::Deserialize(const string &pa
         m_cpuTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Zones") && !rsp["Zones"].IsNull())
+    {
+        if (!rsp["Zones"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Zones` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Zones"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_zones.push_back((*itr).GetString());
+        }
+        m_zonesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -618,6 +632,19 @@ string DescribeInstanceDetailResponse::ToJsonString() const
         string key = "CpuType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cpuType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zones";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zones.begin(); itr != m_zones.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -910,6 +937,16 @@ string DescribeInstanceDetailResponse::GetCpuType() const
 bool DescribeInstanceDetailResponse::CpuTypeHasBeenSet() const
 {
     return m_cpuTypeHasBeenSet;
+}
+
+vector<string> DescribeInstanceDetailResponse::GetZones() const
+{
+    return m_zones;
+}
+
+bool DescribeInstanceDetailResponse::ZonesHasBeenSet() const
+{
+    return m_zonesHasBeenSet;
 }
 
 

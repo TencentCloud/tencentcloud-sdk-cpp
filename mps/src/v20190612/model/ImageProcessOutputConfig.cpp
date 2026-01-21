@@ -24,7 +24,9 @@ ImageProcessOutputConfig::ImageProcessOutputConfig() :
     m_aspectRatioHasBeenSet(false),
     m_imageHeightHasBeenSet(false),
     m_imageWidthHasBeenSet(false),
-    m_imageSizeHasBeenSet(false)
+    m_imageSizeHasBeenSet(false),
+    m_formatHasBeenSet(false),
+    m_qualityHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome ImageProcessOutputConfig::Deserialize(const rapidjson::Value
         m_imageSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("Format") && !value["Format"].IsNull())
+    {
+        if (!value["Format"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageProcessOutputConfig.Format` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_format = string(value["Format"].GetString());
+        m_formatHasBeenSet = true;
+    }
+
+    if (value.HasMember("Quality") && !value["Quality"].IsNull())
+    {
+        if (!value["Quality"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageProcessOutputConfig.Quality` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_quality = value["Quality"].GetInt64();
+        m_qualityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void ImageProcessOutputConfig::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "ImageSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_imageSize.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_formatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Format";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_format.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_qualityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Quality";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_quality, allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void ImageProcessOutputConfig::SetImageSize(const string& _imageSize)
 bool ImageProcessOutputConfig::ImageSizeHasBeenSet() const
 {
     return m_imageSizeHasBeenSet;
+}
+
+string ImageProcessOutputConfig::GetFormat() const
+{
+    return m_format;
+}
+
+void ImageProcessOutputConfig::SetFormat(const string& _format)
+{
+    m_format = _format;
+    m_formatHasBeenSet = true;
+}
+
+bool ImageProcessOutputConfig::FormatHasBeenSet() const
+{
+    return m_formatHasBeenSet;
+}
+
+int64_t ImageProcessOutputConfig::GetQuality() const
+{
+    return m_quality;
+}
+
+void ImageProcessOutputConfig::SetQuality(const int64_t& _quality)
+{
+    m_quality = _quality;
+    m_qualityHasBeenSet = true;
+}
+
+bool ImageProcessOutputConfig::QualityHasBeenSet() const
+{
+    return m_qualityHasBeenSet;
 }
 

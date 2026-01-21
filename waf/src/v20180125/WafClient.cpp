@@ -6390,6 +6390,56 @@ WafClient::GetInstanceQpsLimitOutcomeCallable WafClient::GetInstanceQpsLimitCall
     return prom->get_future();
 }
 
+WafClient::GetOrganizationRoleOutcome WafClient::GetOrganizationRole(const GetOrganizationRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetOrganizationRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetOrganizationRoleResponse rsp = GetOrganizationRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetOrganizationRoleOutcome(rsp);
+        else
+            return GetOrganizationRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return GetOrganizationRoleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::GetOrganizationRoleAsync(const GetOrganizationRoleRequest& request, const GetOrganizationRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetOrganizationRoleRequest&;
+    using Resp = GetOrganizationRoleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetOrganizationRole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::GetOrganizationRoleOutcomeCallable WafClient::GetOrganizationRoleCallable(const GetOrganizationRoleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetOrganizationRoleOutcome>>();
+    GetOrganizationRoleAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const GetOrganizationRoleRequest&,
+        GetOrganizationRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::ImportIpAccessControlOutcome WafClient::ImportIpAccessControl(const ImportIpAccessControlRequest &request)
 {
     auto outcome = MakeRequest(request, "ImportIpAccessControl");

@@ -46,7 +46,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/ListDocCateRequest.h
   include/tencentcloud/lke/v20231130/model/DescribeDocResponse.h
   include/tencentcloud/lke/v20231130/model/Label.h
-  include/tencentcloud/lke/v20231130/model/DeleteVarResponse.h
+  include/tencentcloud/lke/v20231130/model/StrValue.h
   include/tencentcloud/lke/v20231130/model/ListQACateResponse.h
   include/tencentcloud/lke/v20231130/model/CreateSharedKnowledgeResponse.h
   include/tencentcloud/lke/v20231130/model/QAList.h
@@ -176,7 +176,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/ToolAdvanceConfig.h
   include/tencentcloud/lke/v20231130/model/FileInfo.h
   include/tencentcloud/lke/v20231130/model/ModifyAppRequest.h
-  include/tencentcloud/lke/v20231130/model/StrValue.h
+  include/tencentcloud/lke/v20231130/model/DeleteVarResponse.h
   include/tencentcloud/lke/v20231130/model/AgentInputUserInputValue.h
   include/tencentcloud/lke/v20231130/model/ParameterConfig.h
   include/tencentcloud/lke/v20231130/model/DeleteDocCateRequest.h
@@ -193,6 +193,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/DeleteQAResponse.h
   include/tencentcloud/lke/v20231130/model/UpdateSharedKnowledgeRequest.h
   include/tencentcloud/lke/v20231130/model/GetMsgRecordRequest.h
+  include/tencentcloud/lke/v20231130/model/AudioTranscript.h
   include/tencentcloud/lke/v20231130/model/InputBoxConfig.h
   include/tencentcloud/lke/v20231130/model/ReleaseConfigs.h
   include/tencentcloud/lke/v20231130/model/DescribeSearchStatsGraphResponse.h
@@ -379,6 +380,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/Context.h
   include/tencentcloud/lke/v20231130/model/ModifyQACateResponse.h
   include/tencentcloud/lke/v20231130/model/CheckAttributeLabelReferResponse.h
+  include/tencentcloud/lke/v20231130/model/Audio.h
   include/tencentcloud/lke/v20231130/model/ReleaseRejectedQuestion.h
   include/tencentcloud/lke/v20231130/model/DescribeSegmentsRequest.h
   include/tencentcloud/lke/v20231130/model/Filters.h
@@ -415,7 +417,7 @@ set(lke_src
   src/v20231130/model/ListDocCateRequest.cpp
   src/v20231130/model/DescribeDocResponse.cpp
   src/v20231130/model/Label.cpp
-  src/v20231130/model/DeleteVarResponse.cpp
+  src/v20231130/model/StrValue.cpp
   src/v20231130/model/ListQACateResponse.cpp
   src/v20231130/model/CreateSharedKnowledgeResponse.cpp
   src/v20231130/model/QAList.cpp
@@ -545,7 +547,7 @@ set(lke_src
   src/v20231130/model/ToolAdvanceConfig.cpp
   src/v20231130/model/FileInfo.cpp
   src/v20231130/model/ModifyAppRequest.cpp
-  src/v20231130/model/StrValue.cpp
+  src/v20231130/model/DeleteVarResponse.cpp
   src/v20231130/model/AgentInputUserInputValue.cpp
   src/v20231130/model/ParameterConfig.cpp
   src/v20231130/model/DeleteDocCateRequest.cpp
@@ -562,6 +564,7 @@ set(lke_src
   src/v20231130/model/DeleteQAResponse.cpp
   src/v20231130/model/UpdateSharedKnowledgeRequest.cpp
   src/v20231130/model/GetMsgRecordRequest.cpp
+  src/v20231130/model/AudioTranscript.cpp
   src/v20231130/model/InputBoxConfig.cpp
   src/v20231130/model/ReleaseConfigs.cpp
   src/v20231130/model/DescribeSearchStatsGraphResponse.cpp
@@ -748,6 +751,7 @@ set(lke_src
   src/v20231130/model/Context.cpp
   src/v20231130/model/ModifyQACateResponse.cpp
   src/v20231130/model/CheckAttributeLabelReferResponse.cpp
+  src/v20231130/model/Audio.cpp
   src/v20231130/model/ReleaseRejectedQuestion.cpp
   src/v20231130/model/DescribeSegmentsRequest.cpp
   src/v20231130/model/Filters.cpp

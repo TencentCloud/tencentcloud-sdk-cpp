@@ -23,6 +23,7 @@ using namespace std;
 AiAnalysisTaskDubbingOutput::AiAnalysisTaskDubbingOutput() :
     m_videoPathHasBeenSet(false),
     m_speakerPathHasBeenSet(false),
+    m_voiceIdHasBeenSet(false),
     m_outputStorageHasBeenSet(false)
 {
 }
@@ -50,6 +51,16 @@ CoreInternalOutcome AiAnalysisTaskDubbingOutput::Deserialize(const rapidjson::Va
         }
         m_speakerPath = string(value["SpeakerPath"].GetString());
         m_speakerPathHasBeenSet = true;
+    }
+
+    if (value.HasMember("VoiceId") && !value["VoiceId"].IsNull())
+    {
+        if (!value["VoiceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskDubbingOutput.VoiceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_voiceId = string(value["VoiceId"].GetString());
+        m_voiceIdHasBeenSet = true;
     }
 
     if (value.HasMember("OutputStorage") && !value["OutputStorage"].IsNull())
@@ -90,6 +101,14 @@ void AiAnalysisTaskDubbingOutput::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "SpeakerPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_speakerPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_voiceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoiceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_voiceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_outputStorageHasBeenSet)
@@ -134,6 +153,22 @@ void AiAnalysisTaskDubbingOutput::SetSpeakerPath(const string& _speakerPath)
 bool AiAnalysisTaskDubbingOutput::SpeakerPathHasBeenSet() const
 {
     return m_speakerPathHasBeenSet;
+}
+
+string AiAnalysisTaskDubbingOutput::GetVoiceId() const
+{
+    return m_voiceId;
+}
+
+void AiAnalysisTaskDubbingOutput::SetVoiceId(const string& _voiceId)
+{
+    m_voiceId = _voiceId;
+    m_voiceIdHasBeenSet = true;
+}
+
+bool AiAnalysisTaskDubbingOutput::VoiceIdHasBeenSet() const
+{
+    return m_voiceIdHasBeenSet;
 }
 
 TaskOutputStorage AiAnalysisTaskDubbingOutput::GetOutputStorage() const

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID。
-                     * @return ClusterId 集群ID。
+                     * 获取<p>集群ID。</p>
+                     * @return ClusterId <p>集群ID。</p>
                      * 
                      */
                     std::string GetClusterId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID。
+                     * <p>集群ID。</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;

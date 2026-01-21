@@ -58,6 +58,22 @@ namespace TencentCloud
                      */
                     bool ListHasBeenSet() const;
 
+                    /**
+                     * 获取共享知识库数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Total 共享知识库数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTotal() const;
+
+                    /**
+                     * 判断参数 Total 是否已赋值
+                     * @return Total 是否已赋值
+                     * 
+                     */
+                    bool TotalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +81,13 @@ namespace TencentCloud
                      */
                     std::vector<KnowledgeBaseInfo> m_list;
                     bool m_listHasBeenSet;
+
+                    /**
+                     * 共享知识库数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_total;
+                    bool m_totalHasBeenSet;
 
                 };
             }

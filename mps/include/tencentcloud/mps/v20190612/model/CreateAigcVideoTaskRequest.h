@@ -136,6 +136,43 @@ GV。
                     bool ModelVersionHasBeenSet() const;
 
                     /**
+                     * 获取指定场景生视频。
+注意：仅部分模型支持指定场景。
+1. Kling支持动作控制，motion_control。
+2. Mingmou支持横转竖，land2port。
+3. Vidu支持特效模板，template_effect。
+                     * @return SceneType 指定场景生视频。
+注意：仅部分模型支持指定场景。
+1. Kling支持动作控制，motion_control。
+2. Mingmou支持横转竖，land2port。
+3. Vidu支持特效模板，template_effect。
+                     * 
+                     */
+                    std::string GetSceneType() const;
+
+                    /**
+                     * 设置指定场景生视频。
+注意：仅部分模型支持指定场景。
+1. Kling支持动作控制，motion_control。
+2. Mingmou支持横转竖，land2port。
+3. Vidu支持特效模板，template_effect。
+                     * @param _sceneType 指定场景生视频。
+注意：仅部分模型支持指定场景。
+1. Kling支持动作控制，motion_control。
+2. Mingmou支持横转竖，land2port。
+3. Vidu支持特效模板，template_effect。
+                     * 
+                     */
+                    void SetSceneType(const std::string& _sceneType);
+
+                    /**
+                     * 判断参数 SceneType 是否已赋值
+                     * @return SceneType 是否已赋值
+                     * 
+                     */
+                    bool SceneTypeHasBeenSet() const;
+
+                    /**
                      * 获取生成视频的描述。(注：最大支持2000字符)。当未传入图片时，此参数必填。
                      * @return Prompt 生成视频的描述。(注：最大支持2000字符)。当未传入图片时，此参数必填。
                      * 
@@ -523,6 +560,16 @@ GV。
                      */
                     std::string m_modelVersion;
                     bool m_modelVersionHasBeenSet;
+
+                    /**
+                     * 指定场景生视频。
+注意：仅部分模型支持指定场景。
+1. Kling支持动作控制，motion_control。
+2. Mingmou支持横转竖，land2port。
+3. Vidu支持特效模板，template_effect。
+                     */
+                    std::string m_sceneType;
+                    bool m_sceneTypeHasBeenSet;
 
                     /**
                      * 生成视频的描述。(注：最大支持2000字符)。当未传入图片时，此参数必填。

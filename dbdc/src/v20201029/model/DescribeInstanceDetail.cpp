@@ -48,7 +48,8 @@ DescribeInstanceDetail::DescribeInstanceDetail() :
     m_fenceIdHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
-    m_cpuTypeHasBeenSet(false)
+    m_cpuTypeHasBeenSet(false),
+    m_zonesHasBeenSet(false)
 {
 }
 
@@ -347,6 +348,19 @@ CoreInternalOutcome DescribeInstanceDetail::Deserialize(const rapidjson::Value &
         m_cpuTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Zones") && !value["Zones"].IsNull())
+    {
+        if (!value["Zones"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeInstanceDetail.Zones` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Zones"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_zones.push_back((*itr).GetString());
+        }
+        m_zonesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -583,6 +597,19 @@ void DescribeInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "CpuType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cpuType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zones";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zones.begin(); itr != m_zones.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1034,5 +1061,21 @@ void DescribeInstanceDetail::SetCpuType(const string& _cpuType)
 bool DescribeInstanceDetail::CpuTypeHasBeenSet() const
 {
     return m_cpuTypeHasBeenSet;
+}
+
+vector<string> DescribeInstanceDetail::GetZones() const
+{
+    return m_zones;
+}
+
+void DescribeInstanceDetail::SetZones(const vector<string>& _zones)
+{
+    m_zones = _zones;
+    m_zonesHasBeenSet = true;
+}
+
+bool DescribeInstanceDetail::ZonesHasBeenSet() const
+{
+    return m_zonesHasBeenSet;
 }
 

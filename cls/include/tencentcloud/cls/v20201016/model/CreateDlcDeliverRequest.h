@@ -44,19 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志主题id。
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
-                     * @return TopicId 日志主题id。
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * 获取<p>日志主题id。</p><ul><li>通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</li></ul>
+                     * @return TopicId <p>日志主题id。</p><ul><li>通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</li></ul>
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题id。
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
-                     * @param _topicId 日志主题id。
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * 设置<p>日志主题id。</p><ul><li>通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</li></ul>
+                     * @param _topicId <p>日志主题id。</p><ul><li>通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</li></ul>
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -69,15 +65,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取名称：长度不超过64字符，以字母开头，接受0-9,a-z,A-Z, _,-,中文字符。
-                     * @return Name 名称：长度不超过64字符，以字母开头，接受0-9,a-z,A-Z, _,-,中文字符。
+                     * 获取<p>名称：长度不超过64字符，以字母开头，接受0-9,a-z,A-Z, _,-,中文字符。</p>
+                     * @return Name <p>名称：长度不超过64字符，以字母开头，接受0-9,a-z,A-Z, _,-,中文字符。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称：长度不超过64字符，以字母开头，接受0-9,a-z,A-Z, _,-,中文字符。
-                     * @param _name 名称：长度不超过64字符，以字母开头，接受0-9,a-z,A-Z, _,-,中文字符。
+                     * 设置<p>名称：长度不超过64字符，以字母开头，接受0-9,a-z,A-Z, _,-,中文字符。</p>
+                     * @param _name <p>名称：长度不超过64字符，以字母开头，接受0-9,a-z,A-Z, _,-,中文字符。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,15 +86,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取投递类型。0:批投递,1:实时投递
-                     * @return DeliverType 投递类型。0:批投递,1:实时投递
+                     * 获取<p>投递类型。0:批投递,1:实时投递</p>
+                     * @return DeliverType <p>投递类型。0:批投递,1:实时投递</p>
                      * 
                      */
                     uint64_t GetDeliverType() const;
 
                     /**
-                     * 设置投递类型。0:批投递,1:实时投递
-                     * @param _deliverType 投递类型。0:批投递,1:实时投递
+                     * 设置<p>投递类型。0:批投递,1:实时投递</p>
+                     * @param _deliverType <p>投递类型。0:批投递,1:实时投递</p>
                      * 
                      */
                     void SetDeliverType(const uint64_t& _deliverType);
@@ -111,15 +107,15 @@ namespace TencentCloud
                     bool DeliverTypeHasBeenSet() const;
 
                     /**
-                     * 获取投递时间范围的开始时间
-                     * @return StartTime 投递时间范围的开始时间
+                     * 获取<p>投递时间范围的开始时间</p>
+                     * @return StartTime <p>投递时间范围的开始时间</p>
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置投递时间范围的开始时间
-                     * @param _startTime 投递时间范围的开始时间
+                     * 设置<p>投递时间范围的开始时间</p>
+                     * @param _startTime <p>投递时间范围的开始时间</p>
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -132,15 +128,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取dlc配置信息
-                     * @return DlcInfo dlc配置信息
+                     * 获取<p>dlc配置信息</p>
+                     * @return DlcInfo <p>dlc配置信息</p>
                      * 
                      */
                     DlcInfo GetDlcInfo() const;
 
                     /**
-                     * 设置dlc配置信息
-                     * @param _dlcInfo dlc配置信息
+                     * 设置<p>dlc配置信息</p>
+                     * @param _dlcInfo <p>dlc配置信息</p>
                      * 
                      */
                     void SetDlcInfo(const DlcInfo& _dlcInfo);
@@ -153,15 +149,15 @@ namespace TencentCloud
                     bool DlcInfoHasBeenSet() const;
 
                     /**
-                     * 获取投递文件大小,单位MB。 DeliverType=0时必填，范围 5<= MaxSize <= 256。
-                     * @return MaxSize 投递文件大小,单位MB。 DeliverType=0时必填，范围 5<= MaxSize <= 256。
+                     * 获取<p>投递文件大小,单位MB。 DeliverType=0时必填，范围 5&lt;= MaxSize &lt;= 256。</p>
+                     * @return MaxSize <p>投递文件大小,单位MB。 DeliverType=0时必填，范围 5&lt;= MaxSize &lt;= 256。</p>
                      * 
                      */
                     uint64_t GetMaxSize() const;
 
                     /**
-                     * 设置投递文件大小,单位MB。 DeliverType=0时必填，范围 5<= MaxSize <= 256。
-                     * @param _maxSize 投递文件大小,单位MB。 DeliverType=0时必填，范围 5<= MaxSize <= 256。
+                     * 设置<p>投递文件大小,单位MB。 DeliverType=0时必填，范围 5&lt;= MaxSize &lt;= 256。</p>
+                     * @param _maxSize <p>投递文件大小,单位MB。 DeliverType=0时必填，范围 5&lt;= MaxSize &lt;= 256。</p>
                      * 
                      */
                     void SetMaxSize(const uint64_t& _maxSize);
@@ -174,15 +170,15 @@ namespace TencentCloud
                     bool MaxSizeHasBeenSet() const;
 
                     /**
-                     * 获取投递间隔，单位秒。 DeliverType=0时必填，范围 300<= Interval <=900。
-                     * @return Interval 投递间隔，单位秒。 DeliverType=0时必填，范围 300<= Interval <=900。
+                     * 获取<p>投递间隔，单位秒。 DeliverType=0时必填，范围 300&lt;= Interval &lt;=900。</p>
+                     * @return Interval <p>投递间隔，单位秒。 DeliverType=0时必填，范围 300&lt;= Interval &lt;=900。</p>
                      * 
                      */
                     uint64_t GetInterval() const;
 
                     /**
-                     * 设置投递间隔，单位秒。 DeliverType=0时必填，范围 300<= Interval <=900。
-                     * @param _interval 投递间隔，单位秒。 DeliverType=0时必填，范围 300<= Interval <=900。
+                     * 设置<p>投递间隔，单位秒。 DeliverType=0时必填，范围 300&lt;= Interval &lt;=900。</p>
+                     * @param _interval <p>投递间隔，单位秒。 DeliverType=0时必填，范围 300&lt;= Interval &lt;=900。</p>
                      * 
                      */
                     void SetInterval(const uint64_t& _interval);
@@ -195,15 +191,15 @@ namespace TencentCloud
                     bool IntervalHasBeenSet() const;
 
                     /**
-                     * 获取投递时间范围的结束时间。 如果为空，则表示不限时。EndTime不为空时，需要大于StartTime。
-                     * @return EndTime 投递时间范围的结束时间。 如果为空，则表示不限时。EndTime不为空时，需要大于StartTime。
+                     * 获取<p>投递时间范围的结束时间。 如果为空，则表示不限时。EndTime不为空时，需要大于StartTime。</p>
+                     * @return EndTime <p>投递时间范围的结束时间。 如果为空，则表示不限时。EndTime不为空时，需要大于StartTime。</p>
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置投递时间范围的结束时间。 如果为空，则表示不限时。EndTime不为空时，需要大于StartTime。
-                     * @param _endTime 投递时间范围的结束时间。 如果为空，则表示不限时。EndTime不为空时，需要大于StartTime。
+                     * 设置<p>投递时间范围的结束时间。 如果为空，则表示不限时。EndTime不为空时，需要大于StartTime。</p>
+                     * @param _endTime <p>投递时间范围的结束时间。 如果为空，则表示不限时。EndTime不为空时，需要大于StartTime。</p>
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -216,15 +212,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启投递服务日志。1关闭，2开启。默认开启
-                     * @return HasServicesLog 是否开启投递服务日志。1关闭，2开启。默认开启
+                     * 获取<p>是否开启投递服务日志。1关闭，2开启。默认开启</p>
+                     * @return HasServicesLog <p>是否开启投递服务日志。1关闭，2开启。默认开启</p>
                      * 
                      */
                     uint64_t GetHasServicesLog() const;
 
                     /**
-                     * 设置是否开启投递服务日志。1关闭，2开启。默认开启
-                     * @param _hasServicesLog 是否开启投递服务日志。1关闭，2开启。默认开启
+                     * 设置<p>是否开启投递服务日志。1关闭，2开启。默认开启</p>
+                     * @param _hasServicesLog <p>是否开启投递服务日志。1关闭，2开启。默认开启</p>
                      * 
                      */
                     void SetHasServicesLog(const uint64_t& _hasServicesLog);
@@ -239,56 +235,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志主题id。
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * <p>日志主题id。</p><ul><li>通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</li></ul>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 名称：长度不超过64字符，以字母开头，接受0-9,a-z,A-Z, _,-,中文字符。
+                     * <p>名称：长度不超过64字符，以字母开头，接受0-9,a-z,A-Z, _,-,中文字符。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 投递类型。0:批投递,1:实时投递
+                     * <p>投递类型。0:批投递,1:实时投递</p>
                      */
                     uint64_t m_deliverType;
                     bool m_deliverTypeHasBeenSet;
 
                     /**
-                     * 投递时间范围的开始时间
+                     * <p>投递时间范围的开始时间</p>
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * dlc配置信息
+                     * <p>dlc配置信息</p>
                      */
                     DlcInfo m_dlcInfo;
                     bool m_dlcInfoHasBeenSet;
 
                     /**
-                     * 投递文件大小,单位MB。 DeliverType=0时必填，范围 5<= MaxSize <= 256。
+                     * <p>投递文件大小,单位MB。 DeliverType=0时必填，范围 5&lt;= MaxSize &lt;= 256。</p>
                      */
                     uint64_t m_maxSize;
                     bool m_maxSizeHasBeenSet;
 
                     /**
-                     * 投递间隔，单位秒。 DeliverType=0时必填，范围 300<= Interval <=900。
+                     * <p>投递间隔，单位秒。 DeliverType=0时必填，范围 300&lt;= Interval &lt;=900。</p>
                      */
                     uint64_t m_interval;
                     bool m_intervalHasBeenSet;
 
                     /**
-                     * 投递时间范围的结束时间。 如果为空，则表示不限时。EndTime不为空时，需要大于StartTime。
+                     * <p>投递时间范围的结束时间。 如果为空，则表示不限时。EndTime不为空时，需要大于StartTime。</p>
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 是否开启投递服务日志。1关闭，2开启。默认开启
+                     * <p>是否开启投递服务日志。1关闭，2开启。默认开启</p>
                      */
                     uint64_t m_hasServicesLog;
                     bool m_hasServicesLogHasBeenSet;

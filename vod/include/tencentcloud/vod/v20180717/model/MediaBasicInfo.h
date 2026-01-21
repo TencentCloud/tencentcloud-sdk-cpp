@@ -325,6 +325,27 @@ namespace TencentCloud
                     bool StorageRegionHasBeenSet() const;
 
                     /**
+                     * 获取媒体的存储路径。
+                     * @return StoragePath 媒体的存储路径。
+                     * 
+                     */
+                    std::string GetStoragePath() const;
+
+                    /**
+                     * 设置媒体的存储路径。
+                     * @param _storagePath 媒体的存储路径。
+                     * 
+                     */
+                    void SetStoragePath(const std::string& _storagePath);
+
+                    /**
+                     * 判断参数 StoragePath 是否已赋值
+                     * @return StoragePath 是否已赋值
+                     * 
+                     */
+                    bool StoragePathHasBeenSet() const;
+
+                    /**
                      * 获取媒体文件的标签信息。
                      * @return TagSet 媒体文件的标签信息。
                      * 
@@ -537,6 +558,12 @@ namespace TencentCloud
                      */
                     std::string m_storageRegion;
                     bool m_storageRegionHasBeenSet;
+
+                    /**
+                     * 媒体的存储路径。
+                     */
+                    std::string m_storagePath;
+                    bool m_storagePathHasBeenSet;
 
                     /**
                      * 媒体文件的标签信息。

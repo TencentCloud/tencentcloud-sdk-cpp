@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
-                     * @return InstanceId 实例ID，请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * 获取<p>实例ID，请登录 <a href="https://console.cloud.tencent.com/redis/instance/list">Redis 控制台</a>在实例列表复制实例 ID。</p>
+                     * @return InstanceId <p>实例ID，请登录 <a href="https://console.cloud.tencent.com/redis/instance/list">Redis 控制台</a>在实例列表复制实例 ID。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
-                     * @param _instanceId 实例ID，请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * 设置<p>实例ID，请登录 <a href="https://console.cloud.tencent.com/redis/instance/list">Redis 控制台</a>在实例列表复制实例 ID。</p>
+                     * @param _instanceId <p>实例ID，请登录 <a href="https://console.cloud.tencent.com/redis/instance/list">Redis 控制台</a>在实例列表复制实例 ID。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,23 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取升级多可用区之后是否支持就近访问功能。
-- true：支持就近访问功能。升级过程，需同时升级 Proxy 版本和 Redis 内核小版本，涉及数据搬迁，可能会长达数小时。
-- false：无需支持就近访问功能。升级多可用区仅涉及管理元数据迁移，对服务没有影响，升级过程通常在3分钟内完成。默认为 false。
-                     * @return UpgradeProxyAndRedisServer 升级多可用区之后是否支持就近访问功能。
-- true：支持就近访问功能。升级过程，需同时升级 Proxy 版本和 Redis 内核小版本，涉及数据搬迁，可能会长达数小时。
-- false：无需支持就近访问功能。升级多可用区仅涉及管理元数据迁移，对服务没有影响，升级过程通常在3分钟内完成。默认为 false。
+                     * 获取<p>升级多可用区之后是否支持就近访问功能。- true：支持就近访问功能。升级过程，需同时升级 Proxy 版本和 Redis 内核小版本，涉及数据搬迁，可能会长达数小时。- false：无需支持就近访问功能。升级多可用区仅涉及管理元数据迁移，对服务没有影响，升级过程通常在3分钟内完成。默认为 false。</p>
+                     * @return UpgradeProxyAndRedisServer <p>升级多可用区之后是否支持就近访问功能。- true：支持就近访问功能。升级过程，需同时升级 Proxy 版本和 Redis 内核小版本，涉及数据搬迁，可能会长达数小时。- false：无需支持就近访问功能。升级多可用区仅涉及管理元数据迁移，对服务没有影响，升级过程通常在3分钟内完成。默认为 false。</p>
                      * 
                      */
                     bool GetUpgradeProxyAndRedisServer() const;
 
                     /**
-                     * 设置升级多可用区之后是否支持就近访问功能。
-- true：支持就近访问功能。升级过程，需同时升级 Proxy 版本和 Redis 内核小版本，涉及数据搬迁，可能会长达数小时。
-- false：无需支持就近访问功能。升级多可用区仅涉及管理元数据迁移，对服务没有影响，升级过程通常在3分钟内完成。默认为 false。
-                     * @param _upgradeProxyAndRedisServer 升级多可用区之后是否支持就近访问功能。
-- true：支持就近访问功能。升级过程，需同时升级 Proxy 版本和 Redis 内核小版本，涉及数据搬迁，可能会长达数小时。
-- false：无需支持就近访问功能。升级多可用区仅涉及管理元数据迁移，对服务没有影响，升级过程通常在3分钟内完成。默认为 false。
+                     * 设置<p>升级多可用区之后是否支持就近访问功能。- true：支持就近访问功能。升级过程，需同时升级 Proxy 版本和 Redis 内核小版本，涉及数据搬迁，可能会长达数小时。- false：无需支持就近访问功能。升级多可用区仅涉及管理元数据迁移，对服务没有影响，升级过程通常在3分钟内完成。默认为 false。</p>
+                     * @param _upgradeProxyAndRedisServer <p>升级多可用区之后是否支持就近访问功能。- true：支持就近访问功能。升级过程，需同时升级 Proxy 版本和 Redis 内核小版本，涉及数据搬迁，可能会长达数小时。- false：无需支持就近访问功能。升级多可用区仅涉及管理元数据迁移，对服务没有影响，升级过程通常在3分钟内完成。默认为 false。</p>
                      * 
                      */
                     void SetUpgradeProxyAndRedisServer(const bool& _upgradeProxyAndRedisServer);
@@ -95,15 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * <p>实例ID，请登录 <a href="https://console.cloud.tencent.com/redis/instance/list">Redis 控制台</a>在实例列表复制实例 ID。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 升级多可用区之后是否支持就近访问功能。
-- true：支持就近访问功能。升级过程，需同时升级 Proxy 版本和 Redis 内核小版本，涉及数据搬迁，可能会长达数小时。
-- false：无需支持就近访问功能。升级多可用区仅涉及管理元数据迁移，对服务没有影响，升级过程通常在3分钟内完成。默认为 false。
+                     * <p>升级多可用区之后是否支持就近访问功能。- true：支持就近访问功能。升级过程，需同时升级 Proxy 版本和 Redis 内核小版本，涉及数据搬迁，可能会长达数小时。- false：无需支持就近访问功能。升级多可用区仅涉及管理元数据迁移，对服务没有影响，升级过程通常在3分钟内完成。默认为 false。</p>
                      */
                     bool m_upgradeProxyAndRedisServer;
                     bool m_upgradeProxyAndRedisServerHasBeenSet;

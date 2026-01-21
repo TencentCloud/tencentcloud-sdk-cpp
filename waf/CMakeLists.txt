@@ -209,6 +209,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/EnableRateLimitsV2Request.h
   include/tencentcloud/waf/v20180125/model/ModifyBotStatusRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyHostFlowModeRequest.h
+  include/tencentcloud/waf/v20180125/model/GetOrganizationRoleResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeLogHistogramResponse.h
   include/tencentcloud/waf/v20180125/model/CreateHostRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyInstanceAttackLogPostRequest.h
@@ -361,6 +362,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/UserDomainInfo.h
   include/tencentcloud/waf/v20180125/model/DescribeAntiFakeRulesResponse.h
   include/tencentcloud/waf/v20180125/model/BotMonitorPkg.h
+  include/tencentcloud/waf/v20180125/model/GetOrganizationRoleRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeTopicsRequest.h
   include/tencentcloud/waf/v20180125/model/BatchDomainResult.h
   include/tencentcloud/waf/v20180125/model/ApiNameOp.h
@@ -786,6 +788,7 @@ set(waf_src
   src/v20180125/model/EnableRateLimitsV2Request.cpp
   src/v20180125/model/ModifyBotStatusRequest.cpp
   src/v20180125/model/ModifyHostFlowModeRequest.cpp
+  src/v20180125/model/GetOrganizationRoleResponse.cpp
   src/v20180125/model/DescribeLogHistogramResponse.cpp
   src/v20180125/model/CreateHostRequest.cpp
   src/v20180125/model/ModifyInstanceAttackLogPostRequest.cpp
@@ -938,6 +941,7 @@ set(waf_src
   src/v20180125/model/UserDomainInfo.cpp
   src/v20180125/model/DescribeAntiFakeRulesResponse.cpp
   src/v20180125/model/BotMonitorPkg.cpp
+  src/v20180125/model/GetOrganizationRoleRequest.cpp
   src/v20180125/model/DescribeTopicsRequest.cpp
   src/v20180125/model/BatchDomainResult.cpp
   src/v20180125/model/ApiNameOp.cpp

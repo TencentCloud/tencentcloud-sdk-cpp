@@ -23,8 +23,9 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 ProcessMediaByProcedureRequest::ProcessMediaByProcedureRequest() :
-    m_fileIdHasBeenSet(false),
     m_procedureNameHasBeenSet(false),
+    m_fileIdHasBeenSet(false),
+    m_mediaStoragePathHasBeenSet(false),
     m_subAppIdHasBeenSet(false),
     m_tasksPriorityHasBeenSet(false),
     m_tasksNotifyModeHasBeenSet(false),
@@ -41,6 +42,14 @@ string ProcessMediaByProcedureRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_procedureNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcedureName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_procedureName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_fileIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -49,12 +58,12 @@ string ProcessMediaByProcedureRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_procedureNameHasBeenSet)
+    if (m_mediaStoragePathHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProcedureName";
+        string key = "MediaStoragePath";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_procedureName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_mediaStoragePath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subAppIdHasBeenSet)
@@ -113,6 +122,22 @@ string ProcessMediaByProcedureRequest::ToJsonString() const
 }
 
 
+string ProcessMediaByProcedureRequest::GetProcedureName() const
+{
+    return m_procedureName;
+}
+
+void ProcessMediaByProcedureRequest::SetProcedureName(const string& _procedureName)
+{
+    m_procedureName = _procedureName;
+    m_procedureNameHasBeenSet = true;
+}
+
+bool ProcessMediaByProcedureRequest::ProcedureNameHasBeenSet() const
+{
+    return m_procedureNameHasBeenSet;
+}
+
 string ProcessMediaByProcedureRequest::GetFileId() const
 {
     return m_fileId;
@@ -129,20 +154,20 @@ bool ProcessMediaByProcedureRequest::FileIdHasBeenSet() const
     return m_fileIdHasBeenSet;
 }
 
-string ProcessMediaByProcedureRequest::GetProcedureName() const
+string ProcessMediaByProcedureRequest::GetMediaStoragePath() const
 {
-    return m_procedureName;
+    return m_mediaStoragePath;
 }
 
-void ProcessMediaByProcedureRequest::SetProcedureName(const string& _procedureName)
+void ProcessMediaByProcedureRequest::SetMediaStoragePath(const string& _mediaStoragePath)
 {
-    m_procedureName = _procedureName;
-    m_procedureNameHasBeenSet = true;
+    m_mediaStoragePath = _mediaStoragePath;
+    m_mediaStoragePathHasBeenSet = true;
 }
 
-bool ProcessMediaByProcedureRequest::ProcedureNameHasBeenSet() const
+bool ProcessMediaByProcedureRequest::MediaStoragePathHasBeenSet() const
 {
-    return m_procedureNameHasBeenSet;
+    return m_mediaStoragePathHasBeenSet;
 }
 
 uint64_t ProcessMediaByProcedureRequest::GetSubAppId() const

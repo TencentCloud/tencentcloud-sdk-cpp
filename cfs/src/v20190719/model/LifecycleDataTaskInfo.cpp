@@ -38,7 +38,8 @@ LifecycleDataTaskInfo::LifecycleDataTaskInfo() :
     m_taskNameHasBeenSet(false),
     m_taskPathHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_dataFlowIdHasBeenSet(false)
+    m_dataFlowIdHasBeenSet(false),
+    m_isOverwriteHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,16 @@ CoreInternalOutcome LifecycleDataTaskInfo::Deserialize(const rapidjson::Value &v
         m_dataFlowIdHasBeenSet = true;
     }
 
+    if (value.HasMember("IsOverwrite") && !value["IsOverwrite"].IsNull())
+    {
+        if (!value["IsOverwrite"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `LifecycleDataTaskInfo.IsOverwrite` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isOverwrite = value["IsOverwrite"].GetBool();
+        m_isOverwriteHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +387,14 @@ void LifecycleDataTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "DataFlowId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dataFlowId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isOverwriteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOverwrite";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isOverwrite, allocator);
     }
 
 }
@@ -667,5 +686,21 @@ void LifecycleDataTaskInfo::SetDataFlowId(const string& _dataFlowId)
 bool LifecycleDataTaskInfo::DataFlowIdHasBeenSet() const
 {
     return m_dataFlowIdHasBeenSet;
+}
+
+bool LifecycleDataTaskInfo::GetIsOverwrite() const
+{
+    return m_isOverwrite;
+}
+
+void LifecycleDataTaskInfo::SetIsOverwrite(const bool& _isOverwrite)
+{
+    m_isOverwrite = _isOverwrite;
+    m_isOverwriteHasBeenSet = true;
+}
+
+bool LifecycleDataTaskInfo::IsOverwriteHasBeenSet() const
+{
+    return m_isOverwriteHasBeenSet;
 }
 

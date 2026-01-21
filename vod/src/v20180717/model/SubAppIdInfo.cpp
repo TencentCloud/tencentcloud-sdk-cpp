@@ -26,7 +26,10 @@ SubAppIdInfo::SubAppIdInfo() :
     m_descriptionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_modeHasBeenSet(false),
+    m_storageRegionsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -95,6 +98,49 @@ CoreInternalOutcome SubAppIdInfo::Deserialize(const rapidjson::Value &value)
         m_nameHasBeenSet = true;
     }
 
+    if (value.HasMember("Mode") && !value["Mode"].IsNull())
+    {
+        if (!value["Mode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubAppIdInfo.Mode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mode = string(value["Mode"].GetString());
+        m_modeHasBeenSet = true;
+    }
+
+    if (value.HasMember("StorageRegions") && !value["StorageRegions"].IsNull())
+    {
+        if (!value["StorageRegions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SubAppIdInfo.StorageRegions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["StorageRegions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_storageRegions.push_back((*itr).GetString());
+        }
+        m_storageRegionsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SubAppIdInfo.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ResourceTag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +194,42 @@ void SubAppIdInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageRegionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageRegions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_storageRegions.begin(); itr != m_storageRegions.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -247,5 +329,53 @@ void SubAppIdInfo::SetName(const string& _name)
 bool SubAppIdInfo::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string SubAppIdInfo::GetMode() const
+{
+    return m_mode;
+}
+
+void SubAppIdInfo::SetMode(const string& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool SubAppIdInfo::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
+}
+
+vector<string> SubAppIdInfo::GetStorageRegions() const
+{
+    return m_storageRegions;
+}
+
+void SubAppIdInfo::SetStorageRegions(const vector<string>& _storageRegions)
+{
+    m_storageRegions = _storageRegions;
+    m_storageRegionsHasBeenSet = true;
+}
+
+bool SubAppIdInfo::StorageRegionsHasBeenSet() const
+{
+    return m_storageRegionsHasBeenSet;
+}
+
+vector<ResourceTag> SubAppIdInfo::GetTags() const
+{
+    return m_tags;
+}
+
+void SubAppIdInfo::SetTags(const vector<ResourceTag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool SubAppIdInfo::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

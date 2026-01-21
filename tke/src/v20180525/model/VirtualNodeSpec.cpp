@@ -23,7 +23,8 @@ using namespace std;
 VirtualNodeSpec::VirtualNodeSpec() :
     m_displayNameHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_quotaHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,23 @@ CoreInternalOutcome VirtualNodeSpec::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("Quota") && !value["Quota"].IsNull())
+    {
+        if (!value["Quota"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirtualNodeSpec.Quota` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_quota.Deserialize(value["Quota"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_quotaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +126,15 @@ void VirtualNodeSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_quotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Quota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_quota.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -159,5 +186,21 @@ void VirtualNodeSpec::SetTags(const vector<Tag>& _tags)
 bool VirtualNodeSpec::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+SuperNodeResource VirtualNodeSpec::GetQuota() const
+{
+    return m_quota;
+}
+
+void VirtualNodeSpec::SetQuota(const SuperNodeResource& _quota)
+{
+    m_quota = _quota;
+    m_quotaHasBeenSet = true;
+}
+
+bool VirtualNodeSpec::QuotaHasBeenSet() const
+{
+    return m_quotaHasBeenSet;
 }
 

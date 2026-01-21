@@ -184,6 +184,114 @@ namespace TencentCloud
                      */
                     bool FileMinSizeHasBeenSet() const;
 
+                    /**
+                     * 获取策略类型
+                     * @return PolicyType 策略类型
+                     * 
+                     */
+                    std::string GetPolicyType() const;
+
+                    /**
+                     * 设置策略类型
+                     * @param _policyType 策略类型
+                     * 
+                     */
+                    void SetPolicyType(const std::string& _policyType);
+
+                    /**
+                     * 判断参数 PolicyType 是否已赋值
+                     * @return PolicyType 是否已赋值
+                     * 
+                     */
+                    bool PolicyTypeHasBeenSet() const;
+
+                    /**
+                     * 获取阈值范围[10-90]
+                     * @return ExpireThreshold 阈值范围[10-90]
+                     * 
+                     */
+                    uint64_t GetExpireThreshold() const;
+
+                    /**
+                     * 设置阈值范围[10-90]
+                     * @param _expireThreshold 阈值范围[10-90]
+                     * 
+                     */
+                    void SetExpireThreshold(const uint64_t& _expireThreshold);
+
+                    /**
+                     * 判断参数 ExpireThreshold 是否已赋值
+                     * @return ExpireThreshold 是否已赋值
+                     * 
+                     */
+                    bool ExpireThresholdHasBeenSet() const;
+
+                    /**
+                     * 获取阈值范围[10-90]
+                     * @return TargetThreshold 阈值范围[10-90]
+                     * 
+                     */
+                    uint64_t GetTargetThreshold() const;
+
+                    /**
+                     * 设置阈值范围[10-90]
+                     * @param _targetThreshold 阈值范围[10-90]
+                     * 
+                     */
+                    void SetTargetThreshold(const uint64_t& _targetThreshold);
+
+                    /**
+                     * 判断参数 TargetThreshold 是否已赋值
+                     * @return TargetThreshold 是否已赋值
+                     * 
+                     */
+                    bool TargetThresholdHasBeenSet() const;
+
+                    /**
+                     * 获取当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。
+
+ture：覆盖
+
+false：不覆盖（同时也不会释放热存数据）
+
+为空时，默认为false
+                     * @return IsOverwrite 当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。
+
+ture：覆盖
+
+false：不覆盖（同时也不会释放热存数据）
+
+为空时，默认为false
+                     * 
+                     */
+                    bool GetIsOverwrite() const;
+
+                    /**
+                     * 设置当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。
+
+ture：覆盖
+
+false：不覆盖（同时也不会释放热存数据）
+
+为空时，默认为false
+                     * @param _isOverwrite 当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。
+
+ture：覆盖
+
+false：不覆盖（同时也不会释放热存数据）
+
+为空时，默认为false
+                     * 
+                     */
+                    void SetIsOverwrite(const bool& _isOverwrite);
+
+                    /**
+                     * 判断参数 IsOverwrite 是否已赋值
+                     * @return IsOverwrite 是否已赋值
+                     * 
+                     */
+                    bool IsOverwriteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -224,6 +332,36 @@ namespace TencentCloud
                      */
                     std::string m_fileMinSize;
                     bool m_fileMinSizeHasBeenSet;
+
+                    /**
+                     * 策略类型
+                     */
+                    std::string m_policyType;
+                    bool m_policyTypeHasBeenSet;
+
+                    /**
+                     * 阈值范围[10-90]
+                     */
+                    uint64_t m_expireThreshold;
+                    bool m_expireThresholdHasBeenSet;
+
+                    /**
+                     * 阈值范围[10-90]
+                     */
+                    uint64_t m_targetThreshold;
+                    bool m_targetThresholdHasBeenSet;
+
+                    /**
+                     * 当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。
+
+ture：覆盖
+
+false：不覆盖（同时也不会释放热存数据）
+
+为空时，默认为false
+                     */
+                    bool m_isOverwrite;
+                    bool m_isOverwriteHasBeenSet;
 
                 };
             }

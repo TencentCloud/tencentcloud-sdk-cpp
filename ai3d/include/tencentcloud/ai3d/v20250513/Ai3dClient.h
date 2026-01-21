@@ -27,6 +27,8 @@
 #include <tencentcloud/ai3d/v20250513/model/Convert3DFormatResponse.h>
 #include <tencentcloud/ai3d/v20250513/model/DescribeHunyuanTo3DUVJobRequest.h>
 #include <tencentcloud/ai3d/v20250513/model/DescribeHunyuanTo3DUVJobResponse.h>
+#include <tencentcloud/ai3d/v20250513/model/DescribeProfileTo3DJobRequest.h>
+#include <tencentcloud/ai3d/v20250513/model/DescribeProfileTo3DJobResponse.h>
 #include <tencentcloud/ai3d/v20250513/model/DescribeReduceFaceJobRequest.h>
 #include <tencentcloud/ai3d/v20250513/model/DescribeReduceFaceJobResponse.h>
 #include <tencentcloud/ai3d/v20250513/model/DescribeTextureTo3DJobRequest.h>
@@ -45,6 +47,8 @@
 #include <tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DRapidJobResponse.h>
 #include <tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DUVJobRequest.h>
 #include <tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DUVJobResponse.h>
+#include <tencentcloud/ai3d/v20250513/model/SubmitProfileTo3DJobRequest.h>
+#include <tencentcloud/ai3d/v20250513/model/SubmitProfileTo3DJobResponse.h>
 #include <tencentcloud/ai3d/v20250513/model/SubmitReduceFaceJobRequest.h>
 #include <tencentcloud/ai3d/v20250513/model/SubmitReduceFaceJobResponse.h>
 #include <tencentcloud/ai3d/v20250513/model/SubmitTextureTo3DJobRequest.h>
@@ -69,6 +73,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeHunyuanTo3DUVJobResponse> DescribeHunyuanTo3DUVJobOutcome;
                 typedef std::future<DescribeHunyuanTo3DUVJobOutcome> DescribeHunyuanTo3DUVJobOutcomeCallable;
                 typedef std::function<void(const Ai3dClient*, const Model::DescribeHunyuanTo3DUVJobRequest&, DescribeHunyuanTo3DUVJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHunyuanTo3DUVJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProfileTo3DJobResponse> DescribeProfileTo3DJobOutcome;
+                typedef std::future<DescribeProfileTo3DJobOutcome> DescribeProfileTo3DJobOutcomeCallable;
+                typedef std::function<void(const Ai3dClient*, const Model::DescribeProfileTo3DJobRequest&, DescribeProfileTo3DJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProfileTo3DJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeReduceFaceJobResponse> DescribeReduceFaceJobOutcome;
                 typedef std::future<DescribeReduceFaceJobOutcome> DescribeReduceFaceJobOutcomeCallable;
                 typedef std::function<void(const Ai3dClient*, const Model::DescribeReduceFaceJobRequest&, DescribeReduceFaceJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReduceFaceJobAsyncHandler;
@@ -96,6 +103,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SubmitHunyuanTo3DUVJobResponse> SubmitHunyuanTo3DUVJobOutcome;
                 typedef std::future<SubmitHunyuanTo3DUVJobOutcome> SubmitHunyuanTo3DUVJobOutcomeCallable;
                 typedef std::function<void(const Ai3dClient*, const Model::SubmitHunyuanTo3DUVJobRequest&, SubmitHunyuanTo3DUVJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitHunyuanTo3DUVJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitProfileTo3DJobResponse> SubmitProfileTo3DJobOutcome;
+                typedef std::future<SubmitProfileTo3DJobOutcome> SubmitProfileTo3DJobOutcomeCallable;
+                typedef std::function<void(const Ai3dClient*, const Model::SubmitProfileTo3DJobRequest&, SubmitProfileTo3DJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitProfileTo3DJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitReduceFaceJobResponse> SubmitReduceFaceJobOutcome;
                 typedef std::future<SubmitReduceFaceJobOutcome> SubmitReduceFaceJobOutcomeCallable;
                 typedef std::function<void(const Ai3dClient*, const Model::SubmitReduceFaceJobRequest&, SubmitReduceFaceJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitReduceFaceJobAsyncHandler;
@@ -122,6 +132,16 @@ namespace TencentCloud
                 DescribeHunyuanTo3DUVJobOutcome DescribeHunyuanTo3DUVJob(const Model::DescribeHunyuanTo3DUVJobRequest &request);
                 void DescribeHunyuanTo3DUVJobAsync(const Model::DescribeHunyuanTo3DUVJobRequest& request, const DescribeHunyuanTo3DUVJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeHunyuanTo3DUVJobOutcomeCallable DescribeHunyuanTo3DUVJobCallable(const Model::DescribeHunyuanTo3DUVJobRequest& request);
+
+                /**
+                 *混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。
+默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。
+                 * @param req DescribeProfileTo3DJobRequest
+                 * @return DescribeProfileTo3DJobOutcome
+                 */
+                DescribeProfileTo3DJobOutcome DescribeProfileTo3DJob(const Model::DescribeProfileTo3DJobRequest &request);
+                void DescribeProfileTo3DJobAsync(const Model::DescribeProfileTo3DJobRequest& request, const DescribeProfileTo3DJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProfileTo3DJobOutcomeCallable DescribeProfileTo3DJobCallable(const Model::DescribeProfileTo3DJobRequest& request);
 
                 /**
                  *混元生3D接口，采用 Polygon 1.5模型，输入3D 高模后，可生成布线规整，较低面数的3D 模型。
@@ -209,6 +229,16 @@ namespace TencentCloud
                 SubmitHunyuanTo3DUVJobOutcome SubmitHunyuanTo3DUVJob(const Model::SubmitHunyuanTo3DUVJobRequest &request);
                 void SubmitHunyuanTo3DUVJobAsync(const Model::SubmitHunyuanTo3DUVJobRequest& request, const SubmitHunyuanTo3DUVJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SubmitHunyuanTo3DUVJobOutcomeCallable SubmitHunyuanTo3DUVJobCallable(const Model::SubmitHunyuanTo3DUVJobRequest& request);
+
+                /**
+                 *混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。
+默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。
+                 * @param req SubmitProfileTo3DJobRequest
+                 * @return SubmitProfileTo3DJobOutcome
+                 */
+                SubmitProfileTo3DJobOutcome SubmitProfileTo3DJob(const Model::SubmitProfileTo3DJobRequest &request);
+                void SubmitProfileTo3DJobAsync(const Model::SubmitProfileTo3DJobRequest& request, const SubmitProfileTo3DJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitProfileTo3DJobOutcomeCallable SubmitProfileTo3DJobCallable(const Model::SubmitProfileTo3DJobRequest& request);
 
                 /**
                  *混元生3D接口，采用 Polygon 1.5模型，输入3D 高模后，可生成布线规整，较低面数的3D 模型。

@@ -450,6 +450,52 @@ namespace TencentCloud
                      */
                     bool SendReceiveRatioHasBeenSet() const;
 
+                    /**
+                     * 获取收发 TPS 峰值上限
+                     * @return TpsLimit 收发 TPS 峰值上限
+                     * 
+                     */
+                    int64_t GetTpsLimit() const;
+
+                    /**
+                     * 设置收发 TPS 峰值上限
+                     * @param _tpsLimit 收发 TPS 峰值上限
+                     * 
+                     */
+                    void SetTpsLimit(const int64_t& _tpsLimit);
+
+                    /**
+                     * 判断参数 TpsLimit 是否已赋值
+                     * @return TpsLimit 是否已赋值
+                     * 
+                     */
+                    bool TpsLimitHasBeenSet() const;
+
+                    /**
+                     * 获取通用集群规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GeneralSkuCode 通用集群规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGeneralSkuCode() const;
+
+                    /**
+                     * 设置通用集群规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _generalSkuCode 通用集群规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGeneralSkuCode(const std::string& _generalSkuCode);
+
+                    /**
+                     * 判断参数 GeneralSkuCode 是否已赋值
+                     * @return GeneralSkuCode 是否已赋值
+                     * 
+                     */
+                    bool GeneralSkuCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -565,6 +611,19 @@ namespace TencentCloud
                      */
                     double m_sendReceiveRatio;
                     bool m_sendReceiveRatioHasBeenSet;
+
+                    /**
+                     * 收发 TPS 峰值上限
+                     */
+                    int64_t m_tpsLimit;
+                    bool m_tpsLimitHasBeenSet;
+
+                    /**
+                     * 通用集群规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_generalSkuCode;
+                    bool m_generalSkuCodeHasBeenSet;
 
                 };
             }

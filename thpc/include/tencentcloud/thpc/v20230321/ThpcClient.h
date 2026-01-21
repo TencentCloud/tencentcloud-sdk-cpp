@@ -73,6 +73,8 @@
 #include <tencentcloud/thpc/v20230321/model/ModifyClusterDeletionProtectionResponse.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyInitNodeScriptsRequest.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyInitNodeScriptsResponse.h>
+#include <tencentcloud/thpc/v20230321/model/ModifyNodeAttributeRequest.h>
+#include <tencentcloud/thpc/v20230321/model/ModifyNodeAttributeResponse.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyWorkspacesAttributeRequest.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyWorkspacesAttributeResponse.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyWorkspacesRenewFlagRequest.h>
@@ -174,6 +176,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInitNodeScriptsResponse> ModifyInitNodeScriptsOutcome;
                 typedef std::future<ModifyInitNodeScriptsOutcome> ModifyInitNodeScriptsOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::ModifyInitNodeScriptsRequest&, ModifyInitNodeScriptsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInitNodeScriptsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyNodeAttributeResponse> ModifyNodeAttributeOutcome;
+                typedef std::future<ModifyNodeAttributeOutcome> ModifyNodeAttributeOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::ModifyNodeAttributeRequest&, ModifyNodeAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNodeAttributeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyWorkspacesAttributeResponse> ModifyWorkspacesAttributeOutcome;
                 typedef std::future<ModifyWorkspacesAttributeOutcome> ModifyWorkspacesAttributeOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::ModifyWorkspacesAttributeRequest&, ModifyWorkspacesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWorkspacesAttributeAsyncHandler;
@@ -426,6 +431,15 @@ namespace TencentCloud
                 ModifyInitNodeScriptsOutcome ModifyInitNodeScripts(const Model::ModifyInitNodeScriptsRequest &request);
                 void ModifyInitNodeScriptsAsync(const Model::ModifyInitNodeScriptsRequest& request, const ModifyInitNodeScriptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyInitNodeScriptsOutcomeCallable ModifyInitNodeScriptsCallable(const Model::ModifyInitNodeScriptsRequest& request);
+
+                /**
+                 *本接口用于修改节点属性
+                 * @param req ModifyNodeAttributeRequest
+                 * @return ModifyNodeAttributeOutcome
+                 */
+                ModifyNodeAttributeOutcome ModifyNodeAttribute(const Model::ModifyNodeAttributeRequest &request);
+                void ModifyNodeAttributeAsync(const Model::ModifyNodeAttributeRequest& request, const ModifyNodeAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNodeAttributeOutcomeCallable ModifyNodeAttributeCallable(const Model::ModifyNodeAttributeRequest& request);
 
                 /**
                  *本接口 (ModifyWorkspacesAttribute) 用于修改工作空间的属性（目前只支持修改工作空间的名称）。

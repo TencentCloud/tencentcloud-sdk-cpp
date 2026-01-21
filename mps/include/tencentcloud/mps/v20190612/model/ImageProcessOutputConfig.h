@@ -162,6 +162,48 @@ namespace TencentCloud
                      */
                     bool ImageSizeHasBeenSet() const;
 
+                    /**
+                     * 获取图片输出编码格式，可取值：PNG、JPG、WEBP、HEIF、AVIF。
+                     * @return Format 图片输出编码格式，可取值：PNG、JPG、WEBP、HEIF、AVIF。
+                     * 
+                     */
+                    std::string GetFormat() const;
+
+                    /**
+                     * 设置图片输出编码格式，可取值：PNG、JPG、WEBP、HEIF、AVIF。
+                     * @param _format 图片输出编码格式，可取值：PNG、JPG、WEBP、HEIF、AVIF。
+                     * 
+                     */
+                    void SetFormat(const std::string& _format);
+
+                    /**
+                     * 判断参数 Format 是否已赋值
+                     * @return Format 是否已赋值
+                     * 
+                     */
+                    bool FormatHasBeenSet() const;
+
+                    /**
+                     * 获取图片质量，对于某些输出格式可用，只有Format 有效的情况下生效，取值范围 0-100。
+                     * @return Quality 图片质量，对于某些输出格式可用，只有Format 有效的情况下生效，取值范围 0-100。
+                     * 
+                     */
+                    int64_t GetQuality() const;
+
+                    /**
+                     * 设置图片质量，对于某些输出格式可用，只有Format 有效的情况下生效，取值范围 0-100。
+                     * @param _quality 图片质量，对于某些输出格式可用，只有Format 有效的情况下生效，取值范围 0-100。
+                     * 
+                     */
+                    void SetQuality(const int64_t& _quality);
+
+                    /**
+                     * 判断参数 Quality 是否已赋值
+                     * @return Quality 是否已赋值
+                     * 
+                     */
+                    bool QualityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -195,6 +237,18 @@ namespace TencentCloud
                      */
                     std::string m_imageSize;
                     bool m_imageSizeHasBeenSet;
+
+                    /**
+                     * 图片输出编码格式，可取值：PNG、JPG、WEBP、HEIF、AVIF。
+                     */
+                    std::string m_format;
+                    bool m_formatHasBeenSet;
+
+                    /**
+                     * 图片质量，对于某些输出格式可用，只有Format 有效的情况下生效，取值范围 0-100。
+                     */
+                    int64_t m_quality;
+                    bool m_qualityHasBeenSet;
 
                 };
             }

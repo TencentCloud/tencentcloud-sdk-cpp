@@ -25,6 +25,7 @@ using namespace std;
 CreateAigcVideoTaskRequest::CreateAigcVideoTaskRequest() :
     m_modelNameHasBeenSet(false),
     m_modelVersionHasBeenSet(false),
+    m_sceneTypeHasBeenSet(false),
     m_promptHasBeenSet(false),
     m_negativePromptHasBeenSet(false),
     m_enhancePromptHasBeenSet(false),
@@ -60,6 +61,14 @@ string CreateAigcVideoTaskRequest::ToJsonString() const
         string key = "ModelVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_modelVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sceneTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sceneType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_promptHasBeenSet)
@@ -197,6 +206,22 @@ void CreateAigcVideoTaskRequest::SetModelVersion(const string& _modelVersion)
 bool CreateAigcVideoTaskRequest::ModelVersionHasBeenSet() const
 {
     return m_modelVersionHasBeenSet;
+}
+
+string CreateAigcVideoTaskRequest::GetSceneType() const
+{
+    return m_sceneType;
+}
+
+void CreateAigcVideoTaskRequest::SetSceneType(const string& _sceneType)
+{
+    m_sceneType = _sceneType;
+    m_sceneTypeHasBeenSet = true;
+}
+
+bool CreateAigcVideoTaskRequest::SceneTypeHasBeenSet() const
+{
+    return m_sceneTypeHasBeenSet;
 }
 
 string CreateAigcVideoTaskRequest::GetPrompt() const

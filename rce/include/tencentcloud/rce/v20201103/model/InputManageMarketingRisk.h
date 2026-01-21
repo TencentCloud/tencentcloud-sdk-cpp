@@ -567,14 +567,18 @@ namespace TencentCloud
 
                     /**
                      * 获取数据授权信息。
+注意：新接入通用业务欺诈保护（RCE）服务的客户该字段【必传】。
                      * @return DataAuthorization 数据授权信息。
+注意：新接入通用业务欺诈保护（RCE）服务的客户该字段【必传】。
                      * 
                      */
                     DataAuthorizationInfo GetDataAuthorization() const;
 
                     /**
                      * 设置数据授权信息。
+注意：新接入通用业务欺诈保护（RCE）服务的客户该字段【必传】。
                      * @param _dataAuthorization 数据授权信息。
+注意：新接入通用业务欺诈保护（RCE）服务的客户该字段【必传】。
                      * 
                      */
                     void SetDataAuthorization(const DataAuthorizationInfo& _dataAuthorization);
@@ -735,6 +739,7 @@ namespace TencentCloud
 
                     /**
                      * 数据授权信息。
+注意：新接入通用业务欺诈保护（RCE）服务的客户该字段【必传】。
                      */
                     DataAuthorizationInfo m_dataAuthorization;
                     bool m_dataAuthorizationHasBeenSet;

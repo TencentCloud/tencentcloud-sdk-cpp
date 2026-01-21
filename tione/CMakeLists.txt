@@ -95,6 +95,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/NotebookSetItem.h
   include/tencentcloud/tione/v20211111/model/ModifyNotebookTagsRequest.h
   include/tencentcloud/tione/v20211111/model/SSHConfig.h
+  include/tencentcloud/tione/v20211111/model/ModifyServiceGroupWeightsResponse.h
   include/tencentcloud/tione/v20211111/model/Usage.h
   include/tencentcloud/tione/v20211111/model/AuthTokenBase.h
   include/tencentcloud/tione/v20211111/model/DeleteNotebookRequest.h
@@ -106,6 +107,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/Service.h
   include/tencentcloud/tione/v20211111/model/CrossTenantENIInfo.h
   include/tencentcloud/tione/v20211111/model/HyperParameter.h
+  include/tencentcloud/tione/v20211111/model/ModifyServiceGroupWeightsRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTasksRequest.h
   include/tencentcloud/tione/v20211111/model/RollingUpdate.h
   include/tencentcloud/tione/v20211111/model/VolumeMount.h
@@ -208,6 +210,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/CreateNotebookResponse.h
   include/tencentcloud/tione/v20211111/model/IntranetCallInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingSpecsPriceRequest.h
+  include/tencentcloud/tione/v20211111/model/WeightEntry.h
   include/tencentcloud/tione/v20211111/model/Instance.h
   include/tencentcloud/tione/v20211111/model/SpecPrice.h
   include/tencentcloud/tione/v20211111/model/CreateExportRequest.h
@@ -386,6 +389,7 @@ set(tione_src
   src/v20211111/model/NotebookSetItem.cpp
   src/v20211111/model/ModifyNotebookTagsRequest.cpp
   src/v20211111/model/SSHConfig.cpp
+  src/v20211111/model/ModifyServiceGroupWeightsResponse.cpp
   src/v20211111/model/Usage.cpp
   src/v20211111/model/AuthTokenBase.cpp
   src/v20211111/model/DeleteNotebookRequest.cpp
@@ -397,6 +401,7 @@ set(tione_src
   src/v20211111/model/Service.cpp
   src/v20211111/model/CrossTenantENIInfo.cpp
   src/v20211111/model/HyperParameter.cpp
+  src/v20211111/model/ModifyServiceGroupWeightsRequest.cpp
   src/v20211111/model/DescribeTrainingTasksRequest.cpp
   src/v20211111/model/RollingUpdate.cpp
   src/v20211111/model/VolumeMount.cpp
@@ -499,6 +504,7 @@ set(tione_src
   src/v20211111/model/CreateNotebookResponse.cpp
   src/v20211111/model/IntranetCallInfo.cpp
   src/v20211111/model/DescribeBillingSpecsPriceRequest.cpp
+  src/v20211111/model/WeightEntry.cpp
   src/v20211111/model/Instance.cpp
   src/v20211111/model/SpecPrice.cpp
   src/v20211111/model/CreateExportRequest.cpp

@@ -540,6 +540,56 @@ LcicClient::CreateDocumentOutcomeCallable LcicClient::CreateDocumentCallable(con
     return prom->get_future();
 }
 
+LcicClient::CreateGroupLiveCodesOutcome LcicClient::CreateGroupLiveCodes(const CreateGroupLiveCodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGroupLiveCodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGroupLiveCodesResponse rsp = CreateGroupLiveCodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGroupLiveCodesOutcome(rsp);
+        else
+            return CreateGroupLiveCodesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGroupLiveCodesOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::CreateGroupLiveCodesAsync(const CreateGroupLiveCodesRequest& request, const CreateGroupLiveCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateGroupLiveCodesRequest&;
+    using Resp = CreateGroupLiveCodesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateGroupLiveCodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LcicClient::CreateGroupLiveCodesOutcomeCallable LcicClient::CreateGroupLiveCodesCallable(const CreateGroupLiveCodesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateGroupLiveCodesOutcome>>();
+    CreateGroupLiveCodesAsync(
+    request,
+    [prom](
+        const LcicClient*,
+        const CreateGroupLiveCodesRequest&,
+        CreateGroupLiveCodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LcicClient::CreateGroupWithMembersOutcome LcicClient::CreateGroupWithMembers(const CreateGroupWithMembersRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateGroupWithMembers");
@@ -1632,6 +1682,56 @@ LcicClient::DescribeGroupListOutcomeCallable LcicClient::DescribeGroupListCallab
         const LcicClient*,
         const DescribeGroupListRequest&,
         DescribeGroupListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LcicClient::DescribeGroupLiveCodesOutcome LcicClient::DescribeGroupLiveCodes(const DescribeGroupLiveCodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGroupLiveCodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGroupLiveCodesResponse rsp = DescribeGroupLiveCodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGroupLiveCodesOutcome(rsp);
+        else
+            return DescribeGroupLiveCodesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGroupLiveCodesOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DescribeGroupLiveCodesAsync(const DescribeGroupLiveCodesRequest& request, const DescribeGroupLiveCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeGroupLiveCodesRequest&;
+    using Resp = DescribeGroupLiveCodesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeGroupLiveCodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LcicClient::DescribeGroupLiveCodesOutcomeCallable LcicClient::DescribeGroupLiveCodesCallable(const DescribeGroupLiveCodesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeGroupLiveCodesOutcome>>();
+    DescribeGroupLiveCodesAsync(
+    request,
+    [prom](
+        const LcicClient*,
+        const DescribeGroupLiveCodesRequest&,
+        DescribeGroupLiveCodesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

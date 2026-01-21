@@ -26,7 +26,11 @@ LifecycleRule::LifecycleRule() :
     m_actionHasBeenSet(false),
     m_intervalHasBeenSet(false),
     m_fileMaxSizeHasBeenSet(false),
-    m_fileMinSizeHasBeenSet(false)
+    m_fileMinSizeHasBeenSet(false),
+    m_policyTypeHasBeenSet(false),
+    m_expireThresholdHasBeenSet(false),
+    m_targetThresholdHasBeenSet(false),
+    m_isOverwriteHasBeenSet(false)
 {
 }
 
@@ -95,6 +99,46 @@ CoreInternalOutcome LifecycleRule::Deserialize(const rapidjson::Value &value)
         m_fileMinSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("PolicyType") && !value["PolicyType"].IsNull())
+    {
+        if (!value["PolicyType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LifecycleRule.PolicyType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_policyType = string(value["PolicyType"].GetString());
+        m_policyTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpireThreshold") && !value["ExpireThreshold"].IsNull())
+    {
+        if (!value["ExpireThreshold"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LifecycleRule.ExpireThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireThreshold = value["ExpireThreshold"].GetUint64();
+        m_expireThresholdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetThreshold") && !value["TargetThreshold"].IsNull())
+    {
+        if (!value["TargetThreshold"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LifecycleRule.TargetThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetThreshold = value["TargetThreshold"].GetUint64();
+        m_targetThresholdHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsOverwrite") && !value["IsOverwrite"].IsNull())
+    {
+        if (!value["IsOverwrite"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `LifecycleRule.IsOverwrite` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isOverwrite = value["IsOverwrite"].GetBool();
+        m_isOverwriteHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +192,38 @@ void LifecycleRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "FileMinSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fileMinSize.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_policyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_policyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expireThreshold, allocator);
+    }
+
+    if (m_targetThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_targetThreshold, allocator);
+    }
+
+    if (m_isOverwriteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOverwrite";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isOverwrite, allocator);
     }
 
 }
@@ -247,5 +323,69 @@ void LifecycleRule::SetFileMinSize(const string& _fileMinSize)
 bool LifecycleRule::FileMinSizeHasBeenSet() const
 {
     return m_fileMinSizeHasBeenSet;
+}
+
+string LifecycleRule::GetPolicyType() const
+{
+    return m_policyType;
+}
+
+void LifecycleRule::SetPolicyType(const string& _policyType)
+{
+    m_policyType = _policyType;
+    m_policyTypeHasBeenSet = true;
+}
+
+bool LifecycleRule::PolicyTypeHasBeenSet() const
+{
+    return m_policyTypeHasBeenSet;
+}
+
+uint64_t LifecycleRule::GetExpireThreshold() const
+{
+    return m_expireThreshold;
+}
+
+void LifecycleRule::SetExpireThreshold(const uint64_t& _expireThreshold)
+{
+    m_expireThreshold = _expireThreshold;
+    m_expireThresholdHasBeenSet = true;
+}
+
+bool LifecycleRule::ExpireThresholdHasBeenSet() const
+{
+    return m_expireThresholdHasBeenSet;
+}
+
+uint64_t LifecycleRule::GetTargetThreshold() const
+{
+    return m_targetThreshold;
+}
+
+void LifecycleRule::SetTargetThreshold(const uint64_t& _targetThreshold)
+{
+    m_targetThreshold = _targetThreshold;
+    m_targetThresholdHasBeenSet = true;
+}
+
+bool LifecycleRule::TargetThresholdHasBeenSet() const
+{
+    return m_targetThresholdHasBeenSet;
+}
+
+bool LifecycleRule::GetIsOverwrite() const
+{
+    return m_isOverwrite;
+}
+
+void LifecycleRule::SetIsOverwrite(const bool& _isOverwrite)
+{
+    m_isOverwrite = _isOverwrite;
+    m_isOverwriteHasBeenSet = true;
+}
+
+bool LifecycleRule::IsOverwriteHasBeenSet() const
+{
+    return m_isOverwriteHasBeenSet;
 }
 

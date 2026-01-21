@@ -27,17 +27,21 @@ set(ai3d_public_header_model
   include/tencentcloud/ai3d/v20250513/model/QueryHunyuan3DPartJobResponse.h
   include/tencentcloud/ai3d/v20250513/model/QueryHunyuanTo3DRapidJobResponse.h
   include/tencentcloud/ai3d/v20250513/model/SubmitTextureTo3DJobRequest.h
+  include/tencentcloud/ai3d/v20250513/model/ViewImage.h
   include/tencentcloud/ai3d/v20250513/model/DescribeReduceFaceJobRequest.h
   include/tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DRapidJobResponse.h
   include/tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DUVJobRequest.h
   include/tencentcloud/ai3d/v20250513/model/File3D.h
+  include/tencentcloud/ai3d/v20250513/model/SubmitProfileTo3DJobRequest.h
   include/tencentcloud/ai3d/v20250513/model/DescribeTextureTo3DJobResponse.h
+  include/tencentcloud/ai3d/v20250513/model/DescribeProfileTo3DJobRequest.h
   include/tencentcloud/ai3d/v20250513/model/InputFile3D.h
-  include/tencentcloud/ai3d/v20250513/model/ViewImage.h
+  include/tencentcloud/ai3d/v20250513/model/SubmitProfileTo3DJobResponse.h
   include/tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DRapidJobRequest.h
   include/tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DUVJobResponse.h
   include/tencentcloud/ai3d/v20250513/model/SubmitHunyuan3DPartJobResponse.h
   include/tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DProJobRequest.h
+  include/tencentcloud/ai3d/v20250513/model/DescribeProfileTo3DJobResponse.h
   include/tencentcloud/ai3d/v20250513/model/DescribeHunyuanTo3DUVJobResponse.h
   include/tencentcloud/ai3d/v20250513/model/SubmitReduceFaceJobRequest.h
   include/tencentcloud/ai3d/v20250513/model/DescribeTextureTo3DJobRequest.h
@@ -61,17 +65,21 @@ set(ai3d_src
   src/v20250513/model/QueryHunyuan3DPartJobResponse.cpp
   src/v20250513/model/QueryHunyuanTo3DRapidJobResponse.cpp
   src/v20250513/model/SubmitTextureTo3DJobRequest.cpp
+  src/v20250513/model/ViewImage.cpp
   src/v20250513/model/DescribeReduceFaceJobRequest.cpp
   src/v20250513/model/SubmitHunyuanTo3DRapidJobResponse.cpp
   src/v20250513/model/SubmitHunyuanTo3DUVJobRequest.cpp
   src/v20250513/model/File3D.cpp
+  src/v20250513/model/SubmitProfileTo3DJobRequest.cpp
   src/v20250513/model/DescribeTextureTo3DJobResponse.cpp
+  src/v20250513/model/DescribeProfileTo3DJobRequest.cpp
   src/v20250513/model/InputFile3D.cpp
-  src/v20250513/model/ViewImage.cpp
+  src/v20250513/model/SubmitProfileTo3DJobResponse.cpp
   src/v20250513/model/SubmitHunyuanTo3DRapidJobRequest.cpp
   src/v20250513/model/SubmitHunyuanTo3DUVJobResponse.cpp
   src/v20250513/model/SubmitHunyuan3DPartJobResponse.cpp
   src/v20250513/model/SubmitHunyuanTo3DProJobRequest.cpp
+  src/v20250513/model/DescribeProfileTo3DJobResponse.cpp
   src/v20250513/model/DescribeHunyuanTo3DUVJobResponse.cpp
   src/v20250513/model/SubmitReduceFaceJobRequest.cpp
   src/v20250513/model/DescribeTextureTo3DJobRequest.cpp

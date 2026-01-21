@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/AddOnImageInput.h>
 #include <tencentcloud/mps/v20190612/model/ImageProcessOutputConfig.h>
+#include <tencentcloud/mps/v20190612/model/ImageProcessPrompt.h>
 
 
 namespace TencentCloud
@@ -90,6 +91,27 @@ namespace TencentCloud
                      */
                     bool OutputConfigHasBeenSet() const;
 
+                    /**
+                     * 获取图片处理附加 prompt，只针对某些场景可用。
+                     * @return ExtPrompt 图片处理附加 prompt，只针对某些场景可用。
+                     * 
+                     */
+                    std::vector<ImageProcessPrompt> GetExtPrompt() const;
+
+                    /**
+                     * 设置图片处理附加 prompt，只针对某些场景可用。
+                     * @param _extPrompt 图片处理附加 prompt，只针对某些场景可用。
+                     * 
+                     */
+                    void SetExtPrompt(const std::vector<ImageProcessPrompt>& _extPrompt);
+
+                    /**
+                     * 判断参数 ExtPrompt 是否已赋值
+                     * @return ExtPrompt 是否已赋值
+                     * 
+                     */
+                    bool ExtPromptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -103,6 +125,12 @@ namespace TencentCloud
                      */
                     ImageProcessOutputConfig m_outputConfig;
                     bool m_outputConfigHasBeenSet;
+
+                    /**
+                     * 图片处理附加 prompt，只针对某些场景可用。
+                     */
+                    std::vector<ImageProcessPrompt> m_extPrompt;
+                    bool m_extPromptHasBeenSet;
 
                 };
             }

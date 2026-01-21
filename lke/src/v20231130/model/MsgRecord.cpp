@@ -48,7 +48,8 @@ MsgRecord::MsgRecord() :
     m_extraInfoHasBeenSet(false),
     m_workFlowHasBeenSet(false),
     m_widgetsHasBeenSet(false),
-    m_widgetActionHasBeenSet(false)
+    m_widgetActionHasBeenSet(false),
+    m_audiosHasBeenSet(false)
 {
 }
 
@@ -428,6 +429,26 @@ CoreInternalOutcome MsgRecord::Deserialize(const rapidjson::Value &value)
         m_widgetActionHasBeenSet = true;
     }
 
+    if (value.HasMember("Audios") && !value["Audios"].IsNull())
+    {
+        if (!value["Audios"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MsgRecord.Audios` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Audios"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Audio item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_audios.push_back(item);
+        }
+        m_audiosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -706,6 +727,21 @@ void MsgRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_widgetAction.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_audiosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Audios";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_audios.begin(); itr != m_audios.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1157,5 +1193,21 @@ void MsgRecord::SetWidgetAction(const WidgetAction& _widgetAction)
 bool MsgRecord::WidgetActionHasBeenSet() const
 {
     return m_widgetActionHasBeenSet;
+}
+
+vector<Audio> MsgRecord::GetAudios() const
+{
+    return m_audios;
+}
+
+void MsgRecord::SetAudios(const vector<Audio>& _audios)
+{
+    m_audios = _audios;
+    m_audiosHasBeenSet = true;
+}
+
+bool MsgRecord::AudiosHasBeenSet() const
+{
+    return m_audiosHasBeenSet;
 }
 

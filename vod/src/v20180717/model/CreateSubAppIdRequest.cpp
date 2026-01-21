@@ -25,7 +25,10 @@ using namespace std;
 CreateSubAppIdRequest::CreateSubAppIdRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_modeHasBeenSet(false),
+    m_storageRegionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -58,6 +61,37 @@ string CreateSubAppIdRequest::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_mode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_storageRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -114,6 +148,54 @@ void CreateSubAppIdRequest::SetType(const string& _type)
 bool CreateSubAppIdRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string CreateSubAppIdRequest::GetMode() const
+{
+    return m_mode;
+}
+
+void CreateSubAppIdRequest::SetMode(const string& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool CreateSubAppIdRequest::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
+}
+
+string CreateSubAppIdRequest::GetStorageRegion() const
+{
+    return m_storageRegion;
+}
+
+void CreateSubAppIdRequest::SetStorageRegion(const string& _storageRegion)
+{
+    m_storageRegion = _storageRegion;
+    m_storageRegionHasBeenSet = true;
+}
+
+bool CreateSubAppIdRequest::StorageRegionHasBeenSet() const
+{
+    return m_storageRegionHasBeenSet;
+}
+
+vector<ResourceTag> CreateSubAppIdRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateSubAppIdRequest::SetTags(const vector<ResourceTag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateSubAppIdRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

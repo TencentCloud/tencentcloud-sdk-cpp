@@ -170,6 +170,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesRequest.h
   include/tencentcloud/ess/v20201111/model/FailedUpdateStaffData.h
   include/tencentcloud/ess/v20201111/model/GetTaskResultApiRequest.h
+  include/tencentcloud/ess/v20201111/model/Checklist.h
   include/tencentcloud/ess/v20201111/model/DynamicSignOption.h
   include/tencentcloud/ess/v20201111/model/FlowDetailInfo.h
   include/tencentcloud/ess/v20201111/model/CreatePersonAuthCertificateImageRequest.h
@@ -224,6 +225,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/WebUrlOption.h
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationVerifyStatusResponse.h
   include/tencentcloud/ess/v20201111/model/DeleteExtendedServiceAuthInfosResponse.h
+  include/tencentcloud/ess/v20201111/model/DescribeEnterpriseContractReviewChecklistsResponse.h
   include/tencentcloud/ess/v20201111/model/AuthInfoDetail.h
   include/tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoResponse.h
   include/tencentcloud/ess/v20201111/model/RiskIdentificationRoleInfo.h
@@ -244,6 +246,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CallbackInfo.h
   include/tencentcloud/ess/v20201111/model/DescribeBatchOrganizationRegistrationUrlsRequest.h
   include/tencentcloud/ess/v20201111/model/TemplateInfo.h
+  include/tencentcloud/ess/v20201111/model/DescribeEnterpriseContractReviewChecklistsRequest.h
   include/tencentcloud/ess/v20201111/model/CreateDocumentResponse.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationUserRolesResponse.h
   include/tencentcloud/ess/v20201111/model/CreateEmbedWebUrlResponse.h
@@ -572,6 +575,7 @@ set(ess_src
   src/v20201111/model/DeleteIntegrationEmployeesRequest.cpp
   src/v20201111/model/FailedUpdateStaffData.cpp
   src/v20201111/model/GetTaskResultApiRequest.cpp
+  src/v20201111/model/Checklist.cpp
   src/v20201111/model/DynamicSignOption.cpp
   src/v20201111/model/FlowDetailInfo.cpp
   src/v20201111/model/CreatePersonAuthCertificateImageRequest.cpp
@@ -626,6 +630,7 @@ set(ess_src
   src/v20201111/model/WebUrlOption.cpp
   src/v20201111/model/DescribeOrganizationVerifyStatusResponse.cpp
   src/v20201111/model/DeleteExtendedServiceAuthInfosResponse.cpp
+  src/v20201111/model/DescribeEnterpriseContractReviewChecklistsResponse.cpp
   src/v20201111/model/AuthInfoDetail.cpp
   src/v20201111/model/ModifyApplicationCallbackInfoResponse.cpp
   src/v20201111/model/RiskIdentificationRoleInfo.cpp
@@ -646,6 +651,7 @@ set(ess_src
   src/v20201111/model/CallbackInfo.cpp
   src/v20201111/model/DescribeBatchOrganizationRegistrationUrlsRequest.cpp
   src/v20201111/model/TemplateInfo.cpp
+  src/v20201111/model/DescribeEnterpriseContractReviewChecklistsRequest.cpp
   src/v20201111/model/CreateDocumentResponse.cpp
   src/v20201111/model/CreateIntegrationUserRolesResponse.cpp
   src/v20201111/model/CreateEmbedWebUrlResponse.cpp

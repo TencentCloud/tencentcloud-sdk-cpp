@@ -1290,6 +1290,56 @@ ThpcClient::ModifyInitNodeScriptsOutcomeCallable ThpcClient::ModifyInitNodeScrip
     return prom->get_future();
 }
 
+ThpcClient::ModifyNodeAttributeOutcome ThpcClient::ModifyNodeAttribute(const ModifyNodeAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNodeAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNodeAttributeResponse rsp = ModifyNodeAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNodeAttributeOutcome(rsp);
+        else
+            return ModifyNodeAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNodeAttributeOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::ModifyNodeAttributeAsync(const ModifyNodeAttributeRequest& request, const ModifyNodeAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyNodeAttributeRequest&;
+    using Resp = ModifyNodeAttributeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyNodeAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ThpcClient::ModifyNodeAttributeOutcomeCallable ThpcClient::ModifyNodeAttributeCallable(const ModifyNodeAttributeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyNodeAttributeOutcome>>();
+    ModifyNodeAttributeAsync(
+    request,
+    [prom](
+        const ThpcClient*,
+        const ModifyNodeAttributeRequest&,
+        ModifyNodeAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ThpcClient::ModifyWorkspacesAttributeOutcome ThpcClient::ModifyWorkspacesAttribute(const ModifyWorkspacesAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyWorkspacesAttribute");

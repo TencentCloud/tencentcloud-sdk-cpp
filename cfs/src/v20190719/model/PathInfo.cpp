@@ -22,7 +22,8 @@ using namespace std;
 
 PathInfo::PathInfo() :
     m_fileSystemIdHasBeenSet(false),
-    m_pathHasBeenSet(false)
+    m_pathHasBeenSet(false),
+    m_dataFlowIdHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome PathInfo::Deserialize(const rapidjson::Value &value)
         m_pathHasBeenSet = true;
     }
 
+    if (value.HasMember("DataFlowId") && !value["DataFlowId"].IsNull())
+    {
+        if (!value["DataFlowId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PathInfo.DataFlowId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataFlowId = string(value["DataFlowId"].GetString());
+        m_dataFlowIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void PathInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Path";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataFlowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataFlowId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataFlowId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void PathInfo::SetPath(const string& _path)
 bool PathInfo::PathHasBeenSet() const
 {
     return m_pathHasBeenSet;
+}
+
+string PathInfo::GetDataFlowId() const
+{
+    return m_dataFlowId;
+}
+
+void PathInfo::SetDataFlowId(const string& _dataFlowId)
+{
+    m_dataFlowId = _dataFlowId;
+    m_dataFlowIdHasBeenSet = true;
+}
+
+bool PathInfo::DataFlowIdHasBeenSet() const
+{
+    return m_dataFlowIdHasBeenSet;
 }
 

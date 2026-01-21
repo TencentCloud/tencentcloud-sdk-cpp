@@ -383,6 +383,35 @@ namespace TencentCloud
                      */
                     bool HostServerSerialNumberHasBeenSet() const;
 
+                    /**
+                     * 获取服务状态。
+IDLE：未连接
+ESTABLISHED：连接中
+                     * @return ServiceStatus 服务状态。
+IDLE：未连接
+ESTABLISHED：连接中
+                     * 
+                     */
+                    std::string GetServiceStatus() const;
+
+                    /**
+                     * 设置服务状态。
+IDLE：未连接
+ESTABLISHED：连接中
+                     * @param _serviceStatus 服务状态。
+IDLE：未连接
+ESTABLISHED：连接中
+                     * 
+                     */
+                    void SetServiceStatus(const std::string& _serviceStatus);
+
+                    /**
+                     * 判断参数 ServiceStatus 是否已赋值
+                     * @return ServiceStatus 是否已赋值
+                     * 
+                     */
+                    bool ServiceStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -480,6 +509,14 @@ namespace TencentCloud
                      */
                     std::string m_hostServerSerialNumber;
                     bool m_hostServerSerialNumberHasBeenSet;
+
+                    /**
+                     * 服务状态。
+IDLE：未连接
+ESTABLISHED：连接中
+                     */
+                    std::string m_serviceStatus;
+                    bool m_serviceStatusHasBeenSet;
 
                 };
             }

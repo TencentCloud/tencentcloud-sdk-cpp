@@ -94,6 +94,27 @@ namespace TencentCloud
                     bool SpeakerPathHasBeenSet() const;
 
                     /**
+                     * 获取音色id
+                     * @return VoiceId 音色id
+                     * 
+                     */
+                    std::string GetVoiceId() const;
+
+                    /**
+                     * 设置音色id
+                     * @param _voiceId 音色id
+                     * 
+                     */
+                    void SetVoiceId(const std::string& _voiceId);
+
+                    /**
+                     * 判断参数 VoiceId 是否已赋值
+                     * @return VoiceId 是否已赋值
+                     * 
+                     */
+                    bool VoiceIdHasBeenSet() const;
+
+                    /**
                      * 获取译制视频存储位置。
                      * @return OutputStorage 译制视频存储位置。
                      * 
@@ -128,6 +149,12 @@ namespace TencentCloud
                      */
                     std::string m_speakerPath;
                     bool m_speakerPathHasBeenSet;
+
+                    /**
+                     * 音色id
+                     */
+                    std::string m_voiceId;
+                    bool m_voiceIdHasBeenSet;
 
                     /**
                      * 译制视频存储位置。

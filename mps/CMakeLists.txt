@@ -806,6 +806,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/TextTranslationResponse.h
   include/tencentcloud/mps/v20190612/model/ModifyStreamLinkSecurityGroupResponse.h
   include/tencentcloud/mps/v20190612/model/ModifyLiveRecordTemplateRequest.h
+  include/tencentcloud/mps/v20190612/model/ImageProcessPrompt.h
   include/tencentcloud/mps/v20190612/model/ModifySmartSubtitleTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskInput.h
   include/tencentcloud/mps/v20190612/model/DeleteAnimatedGraphicsTemplateRequest.h
@@ -1657,6 +1658,7 @@ set(mps_src
   src/v20190612/model/TextTranslationResponse.cpp
   src/v20190612/model/ModifyStreamLinkSecurityGroupResponse.cpp
   src/v20190612/model/ModifyLiveRecordTemplateRequest.cpp
+  src/v20190612/model/ImageProcessPrompt.cpp
   src/v20190612/model/ModifySmartSubtitleTemplateRequest.cpp
   src/v20190612/model/AiAnalysisTaskInput.cpp
   src/v20190612/model/DeleteAnimatedGraphicsTemplateRequest.cpp

@@ -88,27 +88,6 @@ namespace TencentCloud
                     bool SpecHasBeenSet() const;
 
                     /**
-                     * 获取节点数量，最小2，最大20
-                     * @return NodeCount 节点数量，最小2，最大20
-                     * 
-                     */
-                    int64_t GetNodeCount() const;
-
-                    /**
-                     * 设置节点数量，最小2，最大20
-                     * @param _nodeCount 节点数量，最小2，最大20
-                     * 
-                     */
-                    void SetNodeCount(const int64_t& _nodeCount);
-
-                    /**
-                     * 判断参数 NodeCount 是否已赋值
-                     * @return NodeCount 是否已赋值
-                     * 
-                     */
-                    bool NodeCountHasBeenSet() const;
-
-                    /**
                      * 获取单节点存储空间，GB为单位，最低200GB
                      * @return StorageSize 单节点存储空间，GB为单位，最低200GB
                      * 
@@ -191,6 +170,48 @@ namespace TencentCloud
                      * 
                      */
                     bool TimeSpanHasBeenSet() const;
+
+                    /**
+                     * 获取节点数量，创建专享集群时必填
+                     * @return NodeCount 节点数量，创建专享集群时必填
+                     * 
+                     */
+                    int64_t GetNodeCount() const;
+
+                    /**
+                     * 设置节点数量，创建专享集群时必填
+                     * @param _nodeCount 节点数量，创建专享集群时必填
+                     * 
+                     */
+                    void SetNodeCount(const int64_t& _nodeCount);
+
+                    /**
+                     * 判断参数 NodeCount 是否已赋值
+                     * @return NodeCount 是否已赋值
+                     * 
+                     */
+                    bool NodeCountHasBeenSet() const;
+
+                    /**
+                     * 获取通用集群规格标识，新购通用集群时必填，从 [DescribeRocketMQGeneralSKUs](https://cloud.tencent.com/document/api/1179/127066) 接口返回的 [GeneralSKU](https://cloud.tencent.com/document/api/1179/46089#GeneralSKU) 字段获取。
+                     * @return GeneralSkuCode 通用集群规格标识，新购通用集群时必填，从 [DescribeRocketMQGeneralSKUs](https://cloud.tencent.com/document/api/1179/127066) 接口返回的 [GeneralSKU](https://cloud.tencent.com/document/api/1179/46089#GeneralSKU) 字段获取。
+                     * 
+                     */
+                    std::string GetGeneralSkuCode() const;
+
+                    /**
+                     * 设置通用集群规格标识，新购通用集群时必填，从 [DescribeRocketMQGeneralSKUs](https://cloud.tencent.com/document/api/1179/127066) 接口返回的 [GeneralSKU](https://cloud.tencent.com/document/api/1179/46089#GeneralSKU) 字段获取。
+                     * @param _generalSkuCode 通用集群规格标识，新购通用集群时必填，从 [DescribeRocketMQGeneralSKUs](https://cloud.tencent.com/document/api/1179/127066) 接口返回的 [GeneralSKU](https://cloud.tencent.com/document/api/1179/46089#GeneralSKU) 字段获取。
+                     * 
+                     */
+                    void SetGeneralSkuCode(const std::string& _generalSkuCode);
+
+                    /**
+                     * 判断参数 GeneralSkuCode 是否已赋值
+                     * @return GeneralSkuCode 是否已赋值
+                     * 
+                     */
+                    bool GeneralSkuCodeHasBeenSet() const;
 
                     /**
                      * 获取是否用于迁移上云，默认为false
@@ -312,12 +333,6 @@ namespace TencentCloud
                     bool m_specHasBeenSet;
 
                     /**
-                     * 节点数量，最小2，最大20
-                     */
-                    int64_t m_nodeCount;
-                    bool m_nodeCountHasBeenSet;
-
-                    /**
                      * 单节点存储空间，GB为单位，最低200GB
                      */
                     int64_t m_storageSize;
@@ -340,6 +355,18 @@ namespace TencentCloud
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
+
+                    /**
+                     * 节点数量，创建专享集群时必填
+                     */
+                    int64_t m_nodeCount;
+                    bool m_nodeCountHasBeenSet;
+
+                    /**
+                     * 通用集群规格标识，新购通用集群时必填，从 [DescribeRocketMQGeneralSKUs](https://cloud.tencent.com/document/api/1179/127066) 接口返回的 [GeneralSKU](https://cloud.tencent.com/document/api/1179/46089#GeneralSKU) 字段获取。
+                     */
+                    std::string m_generalSkuCode;
+                    bool m_generalSkuCodeHasBeenSet;
 
                     /**
                      * 是否用于迁移上云，默认为false

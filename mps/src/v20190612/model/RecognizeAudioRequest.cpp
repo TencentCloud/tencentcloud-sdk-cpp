@@ -26,6 +26,7 @@ RecognizeAudioRequest::RecognizeAudioRequest() :
     m_audioDataHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_audioFormatHasBeenSet(false),
+    m_sampleRateHasBeenSet(false),
     m_userExtParaHasBeenSet(false)
 {
 }
@@ -59,6 +60,14 @@ string RecognizeAudioRequest::ToJsonString() const
         string key = "AudioFormat";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_audioFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sampleRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SampleRate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sampleRate, allocator);
     }
 
     if (m_userExtParaHasBeenSet)
@@ -123,6 +132,22 @@ void RecognizeAudioRequest::SetAudioFormat(const string& _audioFormat)
 bool RecognizeAudioRequest::AudioFormatHasBeenSet() const
 {
     return m_audioFormatHasBeenSet;
+}
+
+int64_t RecognizeAudioRequest::GetSampleRate() const
+{
+    return m_sampleRate;
+}
+
+void RecognizeAudioRequest::SetSampleRate(const int64_t& _sampleRate)
+{
+    m_sampleRate = _sampleRate;
+    m_sampleRateHasBeenSet = true;
+}
+
+bool RecognizeAudioRequest::SampleRateHasBeenSet() const
+{
+    return m_sampleRateHasBeenSet;
 }
 
 string RecognizeAudioRequest::GetUserExtPara() const

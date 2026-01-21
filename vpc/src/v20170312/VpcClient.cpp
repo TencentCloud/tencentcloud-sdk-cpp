@@ -21640,6 +21640,56 @@ VpcClient::UpdateTrafficMirrorDirectionOutcomeCallable VpcClient::UpdateTrafficM
     return prom->get_future();
 }
 
+VpcClient::UpgradeNatGatewayProductVersionOutcome VpcClient::UpgradeNatGatewayProductVersion(const UpgradeNatGatewayProductVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeNatGatewayProductVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeNatGatewayProductVersionResponse rsp = UpgradeNatGatewayProductVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeNatGatewayProductVersionOutcome(rsp);
+        else
+            return UpgradeNatGatewayProductVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeNatGatewayProductVersionOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::UpgradeNatGatewayProductVersionAsync(const UpgradeNatGatewayProductVersionRequest& request, const UpgradeNatGatewayProductVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpgradeNatGatewayProductVersionRequest&;
+    using Resp = UpgradeNatGatewayProductVersionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpgradeNatGatewayProductVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VpcClient::UpgradeNatGatewayProductVersionOutcomeCallable VpcClient::UpgradeNatGatewayProductVersionCallable(const UpgradeNatGatewayProductVersionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpgradeNatGatewayProductVersionOutcome>>();
+    UpgradeNatGatewayProductVersionAsync(
+    request,
+    [prom](
+        const VpcClient*,
+        const UpgradeNatGatewayProductVersionRequest&,
+        UpgradeNatGatewayProductVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VpcClient::WithdrawNotifyRoutesOutcome VpcClient::WithdrawNotifyRoutes(const WithdrawNotifyRoutesRequest &request)
 {
     auto outcome = MakeRequest(request, "WithdrawNotifyRoutes");

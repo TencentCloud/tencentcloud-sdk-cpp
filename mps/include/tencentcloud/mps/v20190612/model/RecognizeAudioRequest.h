@@ -415,10 +415,14 @@ zu: 祖鲁语
                     /**
                      * 获取音频数据格式，默认为 pcm
 
-支持的格式：pcm (16k 采样率的单声道 16 位采样 pcm 数据)
+支持的格式：
+pcm (16000 采样率的单声道 16 位采样 pcm 数据)
+ogg-opus (16000 / 24000 / 48000 采样率的单声道 opus 编码的 ogg 数据)
                      * @return AudioFormat 音频数据格式，默认为 pcm
 
-支持的格式：pcm (16k 采样率的单声道 16 位采样 pcm 数据)
+支持的格式：
+pcm (16000 采样率的单声道 16 位采样 pcm 数据)
+ogg-opus (16000 / 24000 / 48000 采样率的单声道 opus 编码的 ogg 数据)
                      * 
                      */
                     std::string GetAudioFormat() const;
@@ -426,10 +430,14 @@ zu: 祖鲁语
                     /**
                      * 设置音频数据格式，默认为 pcm
 
-支持的格式：pcm (16k 采样率的单声道 16 位采样 pcm 数据)
+支持的格式：
+pcm (16000 采样率的单声道 16 位采样 pcm 数据)
+ogg-opus (16000 / 24000 / 48000 采样率的单声道 opus 编码的 ogg 数据)
                      * @param _audioFormat 音频数据格式，默认为 pcm
 
-支持的格式：pcm (16k 采样率的单声道 16 位采样 pcm 数据)
+支持的格式：
+pcm (16000 采样率的单声道 16 位采样 pcm 数据)
+ogg-opus (16000 / 24000 / 48000 采样率的单声道 opus 编码的 ogg 数据)
                      * 
                      */
                     void SetAudioFormat(const std::string& _audioFormat);
@@ -440,6 +448,43 @@ zu: 祖鲁语
                      * 
                      */
                     bool AudioFormatHasBeenSet() const;
+
+                    /**
+                     * 获取音频的采样率
+
+支持的采样率：
+pcm 16000
+ogg-opus 16000 / 24000 / 48000
+                     * @return SampleRate 音频的采样率
+
+支持的采样率：
+pcm 16000
+ogg-opus 16000 / 24000 / 48000
+                     * 
+                     */
+                    int64_t GetSampleRate() const;
+
+                    /**
+                     * 设置音频的采样率
+
+支持的采样率：
+pcm 16000
+ogg-opus 16000 / 24000 / 48000
+                     * @param _sampleRate 音频的采样率
+
+支持的采样率：
+pcm 16000
+ogg-opus 16000 / 24000 / 48000
+                     * 
+                     */
+                    void SetSampleRate(const int64_t& _sampleRate);
+
+                    /**
+                     * 判断参数 SampleRate 是否已赋值
+                     * @return SampleRate 是否已赋值
+                     * 
+                     */
+                    bool SampleRateHasBeenSet() const;
 
                     /**
                      * 获取扩展参数，默认不填，特殊需求使用
@@ -561,10 +606,22 @@ zu: 祖鲁语
                     /**
                      * 音频数据格式，默认为 pcm
 
-支持的格式：pcm (16k 采样率的单声道 16 位采样 pcm 数据)
+支持的格式：
+pcm (16000 采样率的单声道 16 位采样 pcm 数据)
+ogg-opus (16000 / 24000 / 48000 采样率的单声道 opus 编码的 ogg 数据)
                      */
                     std::string m_audioFormat;
                     bool m_audioFormatHasBeenSet;
+
+                    /**
+                     * 音频的采样率
+
+支持的采样率：
+pcm 16000
+ogg-opus 16000 / 24000 / 48000
+                     */
+                    int64_t m_sampleRate;
+                    bool m_sampleRateHasBeenSet;
 
                     /**
                      * 扩展参数，默认不填，特殊需求使用

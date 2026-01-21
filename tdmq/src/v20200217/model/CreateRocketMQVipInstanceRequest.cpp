@@ -25,11 +25,12 @@ using namespace std;
 CreateRocketMQVipInstanceRequest::CreateRocketMQVipInstanceRequest() :
     m_nameHasBeenSet(false),
     m_specHasBeenSet(false),
-    m_nodeCountHasBeenSet(false),
     m_storageSizeHasBeenSet(false),
     m_zoneIdsHasBeenSet(false),
     m_vpcInfoHasBeenSet(false),
     m_timeSpanHasBeenSet(false),
+    m_nodeCountHasBeenSet(false),
+    m_generalSkuCodeHasBeenSet(false),
     m_supportsMigrateToCloudHasBeenSet(false),
     m_enablePublicHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
@@ -59,14 +60,6 @@ string CreateRocketMQVipInstanceRequest::ToJsonString() const
         string key = "Spec";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_spec.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_nodeCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NodeCount";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_nodeCount, allocator);
     }
 
     if (m_storageSizeHasBeenSet)
@@ -105,6 +98,22 @@ string CreateRocketMQVipInstanceRequest::ToJsonString() const
         string key = "TimeSpan";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_timeSpan, allocator);
+    }
+
+    if (m_nodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_nodeCount, allocator);
+    }
+
+    if (m_generalSkuCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GeneralSkuCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_generalSkuCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_supportsMigrateToCloudHasBeenSet)
@@ -201,22 +210,6 @@ bool CreateRocketMQVipInstanceRequest::SpecHasBeenSet() const
     return m_specHasBeenSet;
 }
 
-int64_t CreateRocketMQVipInstanceRequest::GetNodeCount() const
-{
-    return m_nodeCount;
-}
-
-void CreateRocketMQVipInstanceRequest::SetNodeCount(const int64_t& _nodeCount)
-{
-    m_nodeCount = _nodeCount;
-    m_nodeCountHasBeenSet = true;
-}
-
-bool CreateRocketMQVipInstanceRequest::NodeCountHasBeenSet() const
-{
-    return m_nodeCountHasBeenSet;
-}
-
 int64_t CreateRocketMQVipInstanceRequest::GetStorageSize() const
 {
     return m_storageSize;
@@ -279,6 +272,38 @@ void CreateRocketMQVipInstanceRequest::SetTimeSpan(const int64_t& _timeSpan)
 bool CreateRocketMQVipInstanceRequest::TimeSpanHasBeenSet() const
 {
     return m_timeSpanHasBeenSet;
+}
+
+int64_t CreateRocketMQVipInstanceRequest::GetNodeCount() const
+{
+    return m_nodeCount;
+}
+
+void CreateRocketMQVipInstanceRequest::SetNodeCount(const int64_t& _nodeCount)
+{
+    m_nodeCount = _nodeCount;
+    m_nodeCountHasBeenSet = true;
+}
+
+bool CreateRocketMQVipInstanceRequest::NodeCountHasBeenSet() const
+{
+    return m_nodeCountHasBeenSet;
+}
+
+string CreateRocketMQVipInstanceRequest::GetGeneralSkuCode() const
+{
+    return m_generalSkuCode;
+}
+
+void CreateRocketMQVipInstanceRequest::SetGeneralSkuCode(const string& _generalSkuCode)
+{
+    m_generalSkuCode = _generalSkuCode;
+    m_generalSkuCodeHasBeenSet = true;
+}
+
+bool CreateRocketMQVipInstanceRequest::GeneralSkuCodeHasBeenSet() const
+{
+    return m_generalSkuCodeHasBeenSet;
 }
 
 bool CreateRocketMQVipInstanceRequest::GetSupportsMigrateToCloud() const

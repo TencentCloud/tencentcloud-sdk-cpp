@@ -4490,6 +4490,56 @@ EssClient::DescribeContractReviewWebUrlOutcomeCallable EssClient::DescribeContra
     return prom->get_future();
 }
 
+EssClient::DescribeEnterpriseContractReviewChecklistsOutcome EssClient::DescribeEnterpriseContractReviewChecklists(const DescribeEnterpriseContractReviewChecklistsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEnterpriseContractReviewChecklists");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEnterpriseContractReviewChecklistsResponse rsp = DescribeEnterpriseContractReviewChecklistsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEnterpriseContractReviewChecklistsOutcome(rsp);
+        else
+            return DescribeEnterpriseContractReviewChecklistsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEnterpriseContractReviewChecklistsOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeEnterpriseContractReviewChecklistsAsync(const DescribeEnterpriseContractReviewChecklistsRequest& request, const DescribeEnterpriseContractReviewChecklistsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeEnterpriseContractReviewChecklistsRequest&;
+    using Resp = DescribeEnterpriseContractReviewChecklistsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeEnterpriseContractReviewChecklists", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssClient::DescribeEnterpriseContractReviewChecklistsOutcomeCallable EssClient::DescribeEnterpriseContractReviewChecklistsCallable(const DescribeEnterpriseContractReviewChecklistsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeEnterpriseContractReviewChecklistsOutcome>>();
+    DescribeEnterpriseContractReviewChecklistsAsync(
+    request,
+    [prom](
+        const EssClient*,
+        const DescribeEnterpriseContractReviewChecklistsRequest&,
+        DescribeEnterpriseContractReviewChecklistsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EssClient::DescribeExtendedServiceAuthDetailOutcome EssClient::DescribeExtendedServiceAuthDetail(const DescribeExtendedServiceAuthDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExtendedServiceAuthDetail");

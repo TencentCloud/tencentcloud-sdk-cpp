@@ -352,6 +352,27 @@ namespace TencentCloud
                      */
                     bool SourceContextHasBeenSet() const;
 
+                    /**
+                     * 获取媒体存储路径，以/开头。
+                     * @return MediaStoragePath 媒体存储路径，以/开头。
+                     * 
+                     */
+                    std::string GetMediaStoragePath() const;
+
+                    /**
+                     * 设置媒体存储路径，以/开头。
+                     * @param _mediaStoragePath 媒体存储路径，以/开头。
+                     * 
+                     */
+                    void SetMediaStoragePath(const std::string& _mediaStoragePath);
+
+                    /**
+                     * 判断参数 MediaStoragePath 是否已赋值
+                     * @return MediaStoragePath 是否已赋值
+                     * 
+                     */
+                    bool MediaStoragePathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -441,6 +462,12 @@ namespace TencentCloud
                      */
                     std::string m_sourceContext;
                     bool m_sourceContextHasBeenSet;
+
+                    /**
+                     * 媒体存储路径，以/开头。
+                     */
+                    std::string m_mediaStoragePath;
+                    bool m_mediaStoragePathHasBeenSet;
 
                 };
             }

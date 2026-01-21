@@ -484,6 +484,48 @@ namespace TencentCloud
                      */
                     bool ToolAdvanceConfigHasBeenSet() const;
 
+                    /**
+                     * 获取授权模式； 0-开发者授权；1-使用者授权
+                     * @return AuthMode 授权模式； 0-开发者授权；1-使用者授权
+                     * 
+                     */
+                    int64_t GetAuthMode() const;
+
+                    /**
+                     * 设置授权模式； 0-开发者授权；1-使用者授权
+                     * @param _authMode 授权模式； 0-开发者授权；1-使用者授权
+                     * 
+                     */
+                    void SetAuthMode(const int64_t& _authMode);
+
+                    /**
+                     * 判断参数 AuthMode 是否已赋值
+                     * @return AuthMode 是否已赋值
+                     * 
+                     */
+                    bool AuthModeHasBeenSet() const;
+
+                    /**
+                     * 获取授权类型; 0-无鉴权；1-APIKey；2-CAM授权；3-Oauth2.0授权；
+                     * @return AuthType 授权类型; 0-无鉴权；1-APIKey；2-CAM授权；3-Oauth2.0授权；
+                     * 
+                     */
+                    int64_t GetAuthType() const;
+
+                    /**
+                     * 设置授权类型; 0-无鉴权；1-APIKey；2-CAM授权；3-Oauth2.0授权；
+                     * @param _authType 授权类型; 0-无鉴权；1-APIKey；2-CAM授权；3-Oauth2.0授权；
+                     * 
+                     */
+                    void SetAuthType(const int64_t& _authType);
+
+                    /**
+                     * 判断参数 AuthType 是否已赋值
+                     * @return AuthType 是否已赋值
+                     * 
+                     */
+                    bool AuthTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -608,6 +650,18 @@ namespace TencentCloud
                      */
                     ToolAdvanceConfig m_toolAdvanceConfig;
                     bool m_toolAdvanceConfigHasBeenSet;
+
+                    /**
+                     * 授权模式； 0-开发者授权；1-使用者授权
+                     */
+                    int64_t m_authMode;
+                    bool m_authModeHasBeenSet;
+
+                    /**
+                     * 授权类型; 0-无鉴权；1-APIKey；2-CAM授权；3-Oauth2.0授权；
+                     */
+                    int64_t m_authType;
+                    bool m_authTypeHasBeenSet;
 
                 };
             }

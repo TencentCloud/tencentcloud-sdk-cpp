@@ -140,6 +140,56 @@ Ai3dClient::DescribeHunyuanTo3DUVJobOutcomeCallable Ai3dClient::DescribeHunyuanT
     return prom->get_future();
 }
 
+Ai3dClient::DescribeProfileTo3DJobOutcome Ai3dClient::DescribeProfileTo3DJob(const DescribeProfileTo3DJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProfileTo3DJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProfileTo3DJobResponse rsp = DescribeProfileTo3DJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProfileTo3DJobOutcome(rsp);
+        else
+            return DescribeProfileTo3DJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProfileTo3DJobOutcome(outcome.GetError());
+    }
+}
+
+void Ai3dClient::DescribeProfileTo3DJobAsync(const DescribeProfileTo3DJobRequest& request, const DescribeProfileTo3DJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeProfileTo3DJobRequest&;
+    using Resp = DescribeProfileTo3DJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeProfileTo3DJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ai3dClient::DescribeProfileTo3DJobOutcomeCallable Ai3dClient::DescribeProfileTo3DJobCallable(const DescribeProfileTo3DJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeProfileTo3DJobOutcome>>();
+    DescribeProfileTo3DJobAsync(
+    request,
+    [prom](
+        const Ai3dClient*,
+        const DescribeProfileTo3DJobRequest&,
+        DescribeProfileTo3DJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 Ai3dClient::DescribeReduceFaceJobOutcome Ai3dClient::DescribeReduceFaceJob(const DescribeReduceFaceJobRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeReduceFaceJob");
@@ -582,6 +632,56 @@ Ai3dClient::SubmitHunyuanTo3DUVJobOutcomeCallable Ai3dClient::SubmitHunyuanTo3DU
         const Ai3dClient*,
         const SubmitHunyuanTo3DUVJobRequest&,
         SubmitHunyuanTo3DUVJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+Ai3dClient::SubmitProfileTo3DJobOutcome Ai3dClient::SubmitProfileTo3DJob(const SubmitProfileTo3DJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitProfileTo3DJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitProfileTo3DJobResponse rsp = SubmitProfileTo3DJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitProfileTo3DJobOutcome(rsp);
+        else
+            return SubmitProfileTo3DJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitProfileTo3DJobOutcome(outcome.GetError());
+    }
+}
+
+void Ai3dClient::SubmitProfileTo3DJobAsync(const SubmitProfileTo3DJobRequest& request, const SubmitProfileTo3DJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SubmitProfileTo3DJobRequest&;
+    using Resp = SubmitProfileTo3DJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SubmitProfileTo3DJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ai3dClient::SubmitProfileTo3DJobOutcomeCallable Ai3dClient::SubmitProfileTo3DJobCallable(const SubmitProfileTo3DJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SubmitProfileTo3DJobOutcome>>();
+    SubmitProfileTo3DJobAsync(
+    request,
+    [prom](
+        const Ai3dClient*,
+        const SubmitProfileTo3DJobRequest&,
+        SubmitProfileTo3DJobOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

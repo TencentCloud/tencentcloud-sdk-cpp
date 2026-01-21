@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/ResourceTag.h>
 
 
 namespace TencentCloud
@@ -105,6 +106,81 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取此应用的模式，可选值为：
+- fileid：仅FileID模式
+- fileid+path：FileID & Path模式
+留空时默认选择仅FileID模式
+                     * @return Mode 此应用的模式，可选值为：
+- fileid：仅FileID模式
+- fileid+path：FileID & Path模式
+留空时默认选择仅FileID模式
+                     * 
+                     */
+                    std::string GetMode() const;
+
+                    /**
+                     * 设置此应用的模式，可选值为：
+- fileid：仅FileID模式
+- fileid+path：FileID & Path模式
+留空时默认选择仅FileID模式
+                     * @param _mode 此应用的模式，可选值为：
+- fileid：仅FileID模式
+- fileid+path：FileID & Path模式
+留空时默认选择仅FileID模式
+                     * 
+                     */
+                    void SetMode(const std::string& _mode);
+
+                    /**
+                     * 判断参数 Mode 是否已赋值
+                     * @return Mode 是否已赋值
+                     * 
+                     */
+                    bool ModeHasBeenSet() const;
+
+                    /**
+                     * 获取存储地域
+                     * @return StorageRegion 存储地域
+                     * 
+                     */
+                    std::string GetStorageRegion() const;
+
+                    /**
+                     * 设置存储地域
+                     * @param _storageRegion 存储地域
+                     * 
+                     */
+                    void SetStorageRegion(const std::string& _storageRegion);
+
+                    /**
+                     * 判断参数 StorageRegion 是否已赋值
+                     * @return StorageRegion 是否已赋值
+                     * 
+                     */
+                    bool StorageRegionHasBeenSet() const;
+
+                    /**
+                     * 获取此应用需要绑定的tag
+                     * @return Tags 此应用需要绑定的tag
+                     * 
+                     */
+                    std::vector<ResourceTag> GetTags() const;
+
+                    /**
+                     * 设置此应用需要绑定的tag
+                     * @param _tags 此应用需要绑定的tag
+                     * 
+                     */
+                    void SetTags(const std::vector<ResourceTag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +200,27 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 此应用的模式，可选值为：
+- fileid：仅FileID模式
+- fileid+path：FileID & Path模式
+留空时默认选择仅FileID模式
+                     */
+                    std::string m_mode;
+                    bool m_modeHasBeenSet;
+
+                    /**
+                     * 存储地域
+                     */
+                    std::string m_storageRegion;
+                    bool m_storageRegionHasBeenSet;
+
+                    /**
+                     * 此应用需要绑定的tag
+                     */
+                    std::vector<ResourceTag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

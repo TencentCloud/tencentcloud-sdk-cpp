@@ -2540,6 +2540,56 @@ TioneClient::ModifyNotebookTagsOutcomeCallable TioneClient::ModifyNotebookTagsCa
     return prom->get_future();
 }
 
+TioneClient::ModifyServiceGroupWeightsOutcome TioneClient::ModifyServiceGroupWeights(const ModifyServiceGroupWeightsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyServiceGroupWeights");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyServiceGroupWeightsResponse rsp = ModifyServiceGroupWeightsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyServiceGroupWeightsOutcome(rsp);
+        else
+            return ModifyServiceGroupWeightsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyServiceGroupWeightsOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::ModifyServiceGroupWeightsAsync(const ModifyServiceGroupWeightsRequest& request, const ModifyServiceGroupWeightsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyServiceGroupWeightsRequest&;
+    using Resp = ModifyServiceGroupWeightsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyServiceGroupWeights", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::ModifyServiceGroupWeightsOutcomeCallable TioneClient::ModifyServiceGroupWeightsCallable(const ModifyServiceGroupWeightsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyServiceGroupWeightsOutcome>>();
+    ModifyServiceGroupWeightsAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const ModifyServiceGroupWeightsRequest&,
+        ModifyServiceGroupWeightsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TioneClient::PushTrainingMetricsOutcome TioneClient::PushTrainingMetrics(const PushTrainingMetricsRequest &request)
 {
     auto outcome = MakeRequest(request, "PushTrainingMetrics");

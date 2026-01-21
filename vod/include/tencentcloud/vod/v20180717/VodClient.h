@@ -293,6 +293,8 @@
 #include <tencentcloud/vod/v20180717/model/ImportMediaKnowledgeResponse.h>
 #include <tencentcloud/vod/v20180717/model/InspectMediaQualityRequest.h>
 #include <tencentcloud/vod/v20180717/model/InspectMediaQualityResponse.h>
+#include <tencentcloud/vod/v20180717/model/ListFilesRequest.h>
+#include <tencentcloud/vod/v20180717/model/ListFilesResponse.h>
 #include <tencentcloud/vod/v20180717/model/LiveRealTimeClipRequest.h>
 #include <tencentcloud/vod/v20180717/model/LiveRealTimeClipResponse.h>
 #include <tencentcloud/vod/v20180717/model/ManageTaskRequest.h>
@@ -830,6 +832,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InspectMediaQualityResponse> InspectMediaQualityOutcome;
                 typedef std::future<InspectMediaQualityOutcome> InspectMediaQualityOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::InspectMediaQualityRequest&, InspectMediaQualityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InspectMediaQualityAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListFilesResponse> ListFilesOutcome;
+                typedef std::future<ListFilesOutcome> ListFilesOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ListFilesRequest&, ListFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListFilesAsyncHandler;
                 typedef Outcome<Core::Error, Model::LiveRealTimeClipResponse> LiveRealTimeClipOutcome;
                 typedef std::future<LiveRealTimeClipOutcome> LiveRealTimeClipOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::LiveRealTimeClipRequest&, LiveRealTimeClipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LiveRealTimeClipAsyncHandler;
@@ -2393,6 +2398,17 @@ namespace TencentCloud
                 InspectMediaQualityOutcome InspectMediaQuality(const Model::InspectMediaQualityRequest &request);
                 void InspectMediaQualityAsync(const Model::InspectMediaQualityRequest& request, const InspectMediaQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InspectMediaQualityOutcomeCallable InspectMediaQualityCallable(const Model::InspectMediaQualityRequest& request);
+
+                /**
+                 *用于列出子应用下存储的文件条目。
+
+**此API只在“FileID+Path模式”下可用**
+                 * @param req ListFilesRequest
+                 * @return ListFilesOutcome
+                 */
+                ListFilesOutcome ListFiles(const Model::ListFilesRequest &request);
+                void ListFilesAsync(const Model::ListFilesRequest& request, const ListFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListFilesOutcomeCallable ListFilesCallable(const Model::ListFilesRequest& request);
 
                 /**
                  *直播即时剪辑，是指在直播过程中（即直播尚未结束时），客户可以在过往直播内容中选择一段，实时生成一个新的视频（HLS 格式），开发者可以将其立即分享出去，或者长久保存起来。

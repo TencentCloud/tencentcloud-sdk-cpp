@@ -34,6 +34,7 @@
 #include <tencentcloud/lke/v20231130/model/WorkflowInfo.h>
 #include <tencentcloud/lke/v20231130/model/Widget.h>
 #include <tencentcloud/lke/v20231130/model/WidgetAction.h>
+#include <tencentcloud/lke/v20231130/model/Audio.h>
 
 
 namespace TencentCloud
@@ -756,6 +757,31 @@ namespace TencentCloud
                      */
                     bool WidgetActionHasBeenSet() const;
 
+                    /**
+                     * 获取音频信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Audios 音频信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Audio> GetAudios() const;
+
+                    /**
+                     * 设置音频信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _audios 音频信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAudios(const std::vector<Audio>& _audios);
+
+                    /**
+                     * 判断参数 Audios 是否已赋值
+                     * @return Audios 是否已赋值
+                     * 
+                     */
+                    bool AudiosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -953,6 +979,13 @@ namespace TencentCloud
                      */
                     WidgetAction m_widgetAction;
                     bool m_widgetActionHasBeenSet;
+
+                    /**
+                     * 音频信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Audio> m_audios;
+                    bool m_audiosHasBeenSet;
 
                 };
             }

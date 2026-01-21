@@ -460,6 +460,47 @@ running：执行中，finished：已完成
                      */
                     bool DataFlowIdHasBeenSet() const;
 
+                    /**
+                     * 获取当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。
+
+ture：覆盖
+
+false：不覆盖（同时也不会释放热存数据）
+为空时，默认为false
+                     * @return IsOverwrite 当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。
+
+ture：覆盖
+
+false：不覆盖（同时也不会释放热存数据）
+为空时，默认为false
+                     * 
+                     */
+                    bool GetIsOverwrite() const;
+
+                    /**
+                     * 设置当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。
+
+ture：覆盖
+
+false：不覆盖（同时也不会释放热存数据）
+为空时，默认为false
+                     * @param _isOverwrite 当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。
+
+ture：覆盖
+
+false：不覆盖（同时也不会释放热存数据）
+为空时，默认为false
+                     * 
+                     */
+                    void SetIsOverwrite(const bool& _isOverwrite);
+
+                    /**
+                     * 判断参数 IsOverwrite 是否已赋值
+                     * @return IsOverwrite 是否已赋值
+                     * 
+                     */
+                    bool IsOverwriteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -578,6 +619,17 @@ running：执行中，finished：已完成
                      */
                     std::string m_dataFlowId;
                     bool m_dataFlowIdHasBeenSet;
+
+                    /**
+                     * 当CFSTurbo内的文件和外置存储存在同名情况时，是否覆盖。
+
+ture：覆盖
+
+false：不覆盖（同时也不会释放热存数据）
+为空时，默认为false
+                     */
+                    bool m_isOverwrite;
+                    bool m_isOverwriteHasBeenSet;
 
                 };
             }

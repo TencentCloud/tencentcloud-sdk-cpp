@@ -24,7 +24,8 @@ using namespace TencentCloud::Lke::V20231130::Model;
 using namespace std;
 
 ListReferShareKnowledgeResponse::ListReferShareKnowledgeResponse() :
-    m_listHasBeenSet(false)
+    m_listHasBeenSet(false),
+    m_totalHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,16 @@ CoreInternalOutcome ListReferShareKnowledgeResponse::Deserialize(const string &p
         m_listHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    {
+        if (!rsp["Total"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Total` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_total = string(rsp["Total"].GetString());
+        m_totalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string ListReferShareKnowledgeResponse::ToJsonString() const
         }
     }
 
+    if (m_totalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Total";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_total.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +146,16 @@ vector<KnowledgeBaseInfo> ListReferShareKnowledgeResponse::GetList() const
 bool ListReferShareKnowledgeResponse::ListHasBeenSet() const
 {
     return m_listHasBeenSet;
+}
+
+string ListReferShareKnowledgeResponse::GetTotal() const
+{
+    return m_total;
+}
+
+bool ListReferShareKnowledgeResponse::TotalHasBeenSet() const
+{
+    return m_totalHasBeenSet;
 }
 
 

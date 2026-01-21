@@ -887,6 +887,8 @@
 #include <tencentcloud/vpc/v20170312/model/UpdateTrafficMirrorAllFilterResponse.h>
 #include <tencentcloud/vpc/v20170312/model/UpdateTrafficMirrorDirectionRequest.h>
 #include <tencentcloud/vpc/v20170312/model/UpdateTrafficMirrorDirectionResponse.h>
+#include <tencentcloud/vpc/v20170312/model/UpgradeNatGatewayProductVersionRequest.h>
+#include <tencentcloud/vpc/v20170312/model/UpgradeNatGatewayProductVersionResponse.h>
 #include <tencentcloud/vpc/v20170312/model/WithdrawNotifyRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/WithdrawNotifyRoutesResponse.h>
 
@@ -2199,6 +2201,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateTrafficMirrorDirectionResponse> UpdateTrafficMirrorDirectionOutcome;
                 typedef std::future<UpdateTrafficMirrorDirectionOutcome> UpdateTrafficMirrorDirectionOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::UpdateTrafficMirrorDirectionRequest&, UpdateTrafficMirrorDirectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTrafficMirrorDirectionAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpgradeNatGatewayProductVersionResponse> UpgradeNatGatewayProductVersionOutcome;
+                typedef std::future<UpgradeNatGatewayProductVersionOutcome> UpgradeNatGatewayProductVersionOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::UpgradeNatGatewayProductVersionRequest&, UpgradeNatGatewayProductVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeNatGatewayProductVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::WithdrawNotifyRoutesResponse> WithdrawNotifyRoutesOutcome;
                 typedef std::future<WithdrawNotifyRoutesOutcome> WithdrawNotifyRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::WithdrawNotifyRoutesRequest&, WithdrawNotifyRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> WithdrawNotifyRoutesAsyncHandler;
@@ -6448,6 +6453,15 @@ LimitTypes取值范围：
                 UpdateTrafficMirrorDirectionOutcome UpdateTrafficMirrorDirection(const Model::UpdateTrafficMirrorDirectionRequest &request);
                 void UpdateTrafficMirrorDirectionAsync(const Model::UpdateTrafficMirrorDirectionRequest& request, const UpdateTrafficMirrorDirectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateTrafficMirrorDirectionOutcomeCallable UpdateTrafficMirrorDirectionCallable(const Model::UpdateTrafficMirrorDirectionRequest& request);
+
+                /**
+                 *本接口（UpgradeNatGatewayProductVersion）用于升级NAT实例产品版本，将传统型NAT实例升级到标准型NAT。
+                 * @param req UpgradeNatGatewayProductVersionRequest
+                 * @return UpgradeNatGatewayProductVersionOutcome
+                 */
+                UpgradeNatGatewayProductVersionOutcome UpgradeNatGatewayProductVersion(const Model::UpgradeNatGatewayProductVersionRequest &request);
+                void UpgradeNatGatewayProductVersionAsync(const Model::UpgradeNatGatewayProductVersionRequest& request, const UpgradeNatGatewayProductVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeNatGatewayProductVersionOutcomeCallable UpgradeNatGatewayProductVersionCallable(const Model::UpgradeNatGatewayProductVersionRequest& request);
 
                 /**
                  *本接口（WithdrawNotifyRoutes）用于撤销已发布到云联网的路由。路由表列表页操作增加“从云联网撤销”。

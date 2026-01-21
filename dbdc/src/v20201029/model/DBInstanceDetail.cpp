@@ -41,7 +41,8 @@ DBInstanceDetail::DBInstanceDetail() :
     m_dbHostsHasBeenSet(false),
     m_hostRoleHasBeenSet(false),
     m_dbEngineHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_zonesHasBeenSet(false)
 {
 }
 
@@ -260,6 +261,19 @@ CoreInternalOutcome DBInstanceDetail::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Zones") && !value["Zones"].IsNull())
+    {
+        if (!value["Zones"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DBInstanceDetail.Zones` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Zones"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_zones.push_back((*itr).GetString());
+        }
+        m_zonesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +447,19 @@ void DBInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zones";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zones.begin(); itr != m_zones.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -772,5 +799,21 @@ void DBInstanceDetail::SetCreateTime(const string& _createTime)
 bool DBInstanceDetail::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+vector<string> DBInstanceDetail::GetZones() const
+{
+    return m_zones;
+}
+
+void DBInstanceDetail::SetZones(const vector<string>& _zones)
+{
+    m_zones = _zones;
+    m_zonesHasBeenSet = true;
+}
+
+bool DBInstanceDetail::ZonesHasBeenSet() const
+{
+    return m_zonesHasBeenSet;
 }
 

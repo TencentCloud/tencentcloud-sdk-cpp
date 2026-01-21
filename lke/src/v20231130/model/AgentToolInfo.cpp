@@ -40,7 +40,9 @@ AgentToolInfo::AgentToolInfo() :
     m_financeStatusHasBeenSet(false),
     m_toolSourceHasBeenSet(false),
     m_financeTypeHasBeenSet(false),
-    m_toolAdvanceConfigHasBeenSet(false)
+    m_toolAdvanceConfigHasBeenSet(false),
+    m_authModeHasBeenSet(false),
+    m_authTypeHasBeenSet(false)
 {
 }
 
@@ -303,6 +305,26 @@ CoreInternalOutcome AgentToolInfo::Deserialize(const rapidjson::Value &value)
         m_toolAdvanceConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("AuthMode") && !value["AuthMode"].IsNull())
+    {
+        if (!value["AuthMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentToolInfo.AuthMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_authMode = value["AuthMode"].GetInt64();
+        m_authModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AuthType") && !value["AuthType"].IsNull())
+    {
+        if (!value["AuthType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentToolInfo.AuthType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_authType = value["AuthType"].GetInt64();
+        m_authTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -498,6 +520,22 @@ void AgentToolInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_toolAdvanceConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_authModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_authMode, allocator);
+    }
+
+    if (m_authTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_authType, allocator);
     }
 
 }
@@ -821,5 +859,37 @@ void AgentToolInfo::SetToolAdvanceConfig(const ToolAdvanceConfig& _toolAdvanceCo
 bool AgentToolInfo::ToolAdvanceConfigHasBeenSet() const
 {
     return m_toolAdvanceConfigHasBeenSet;
+}
+
+int64_t AgentToolInfo::GetAuthMode() const
+{
+    return m_authMode;
+}
+
+void AgentToolInfo::SetAuthMode(const int64_t& _authMode)
+{
+    m_authMode = _authMode;
+    m_authModeHasBeenSet = true;
+}
+
+bool AgentToolInfo::AuthModeHasBeenSet() const
+{
+    return m_authModeHasBeenSet;
+}
+
+int64_t AgentToolInfo::GetAuthType() const
+{
+    return m_authType;
+}
+
+void AgentToolInfo::SetAuthType(const int64_t& _authType)
+{
+    m_authType = _authType;
+    m_authTypeHasBeenSet = true;
+}
+
+bool AgentToolInfo::AuthTypeHasBeenSet() const
+{
+    return m_authTypeHasBeenSet;
 }
 

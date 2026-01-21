@@ -84,6 +84,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20220401/model/DeleteQueueResponse.h
   include/tencentcloud/thpc/v20220401/model/AddNodesResponse.h
   include/tencentcloud/thpc/v20230321/model/ClusterOverview.h
+  include/tencentcloud/thpc/v20230321/model/ModifyNodeAttributeResponse.h
   include/tencentcloud/thpc/v20230321/model/NodeOverview.h
   include/tencentcloud/thpc/v20230321/model/DescribeInitNodeScriptsRequest.h
   include/tencentcloud/thpc/v20230321/model/AddNodesResponse.h
@@ -123,6 +124,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/DescribeNodesResponse.h
   include/tencentcloud/thpc/v20230321/model/GooseFSOptionOverview.h
   include/tencentcloud/thpc/v20230321/model/CFSOption.h
+  include/tencentcloud/thpc/v20230321/model/ModifyNodeAttributeRequest.h
   include/tencentcloud/thpc/v20230321/model/DeleteClusterStorageOptionRequest.h
   include/tencentcloud/thpc/v20230321/model/RunMonitorServiceEnabled.h
   include/tencentcloud/thpc/v20230321/model/ExpansionNodeConfigOverview.h
@@ -295,6 +297,7 @@ set(thpc_src
   src/v20220401/model/DeleteQueueResponse.cpp
   src/v20220401/model/AddNodesResponse.cpp
   src/v20230321/model/ClusterOverview.cpp
+  src/v20230321/model/ModifyNodeAttributeResponse.cpp
   src/v20230321/model/NodeOverview.cpp
   src/v20230321/model/DescribeInitNodeScriptsRequest.cpp
   src/v20230321/model/AddNodesResponse.cpp
@@ -334,6 +337,7 @@ set(thpc_src
   src/v20230321/model/DescribeNodesResponse.cpp
   src/v20230321/model/GooseFSOptionOverview.cpp
   src/v20230321/model/CFSOption.cpp
+  src/v20230321/model/ModifyNodeAttributeRequest.cpp
   src/v20230321/model/DeleteClusterStorageOptionRequest.cpp
   src/v20230321/model/RunMonitorServiceEnabled.cpp
   src/v20230321/model/ExpansionNodeConfigOverview.cpp

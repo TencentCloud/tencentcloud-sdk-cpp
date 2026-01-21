@@ -43,6 +43,8 @@
 #include <tencentcloud/lcic/v20220817/model/BindDocumentToRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/CreateDocumentRequest.h>
 #include <tencentcloud/lcic/v20220817/model/CreateDocumentResponse.h>
+#include <tencentcloud/lcic/v20220817/model/CreateGroupLiveCodesRequest.h>
+#include <tencentcloud/lcic/v20220817/model/CreateGroupLiveCodesResponse.h>
 #include <tencentcloud/lcic/v20220817/model/CreateGroupWithMembersRequest.h>
 #include <tencentcloud/lcic/v20220817/model/CreateGroupWithMembersResponse.h>
 #include <tencentcloud/lcic/v20220817/model/CreateGroupWithSubGroupRequest.h>
@@ -87,6 +89,8 @@
 #include <tencentcloud/lcic/v20220817/model/DescribeGroupResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeGroupListRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeGroupListResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeGroupLiveCodesRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeGroupLiveCodesResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeGroupMemberListRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeGroupMemberListResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeMarqueeRequest.h>
@@ -209,6 +213,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDocumentResponse> CreateDocumentOutcome;
                 typedef std::future<CreateDocumentOutcome> CreateDocumentOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::CreateDocumentRequest&, CreateDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDocumentAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateGroupLiveCodesResponse> CreateGroupLiveCodesOutcome;
+                typedef std::future<CreateGroupLiveCodesOutcome> CreateGroupLiveCodesOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::CreateGroupLiveCodesRequest&, CreateGroupLiveCodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGroupLiveCodesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateGroupWithMembersResponse> CreateGroupWithMembersOutcome;
                 typedef std::future<CreateGroupWithMembersOutcome> CreateGroupWithMembersOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::CreateGroupWithMembersRequest&, CreateGroupWithMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGroupWithMembersAsyncHandler;
@@ -275,6 +282,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGroupListResponse> DescribeGroupListOutcome;
                 typedef std::future<DescribeGroupListOutcome> DescribeGroupListOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeGroupListRequest&, DescribeGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGroupLiveCodesResponse> DescribeGroupLiveCodesOutcome;
+                typedef std::future<DescribeGroupLiveCodesOutcome> DescribeGroupLiveCodesOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DescribeGroupLiveCodesRequest&, DescribeGroupLiveCodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupLiveCodesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGroupMemberListResponse> DescribeGroupMemberListOutcome;
                 typedef std::future<DescribeGroupMemberListOutcome> DescribeGroupMemberListOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeGroupMemberListRequest&, DescribeGroupMemberListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupMemberListAsyncHandler;
@@ -506,6 +516,15 @@ namespace TencentCloud
                 CreateDocumentOutcomeCallable CreateDocumentCallable(const Model::CreateDocumentRequest& request);
 
                 /**
+                 *创建分组直播参加码
+                 * @param req CreateGroupLiveCodesRequest
+                 * @return CreateGroupLiveCodesOutcome
+                 */
+                CreateGroupLiveCodesOutcome CreateGroupLiveCodes(const Model::CreateGroupLiveCodesRequest &request);
+                void CreateGroupLiveCodesAsync(const Model::CreateGroupLiveCodesRequest& request, const CreateGroupLiveCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGroupLiveCodesOutcomeCallable CreateGroupLiveCodesCallable(const Model::CreateGroupLiveCodesRequest& request);
+
+                /**
                  *此接口根据成员列表创建群组
                  * @param req CreateGroupWithMembersRequest
                  * @return CreateGroupWithMembersOutcome
@@ -705,6 +724,15 @@ namespace TencentCloud
                 DescribeGroupListOutcome DescribeGroupList(const Model::DescribeGroupListRequest &request);
                 void DescribeGroupListAsync(const Model::DescribeGroupListRequest& request, const DescribeGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGroupListOutcomeCallable DescribeGroupListCallable(const Model::DescribeGroupListRequest& request);
+
+                /**
+                 *获取分组直播参加码
+                 * @param req DescribeGroupLiveCodesRequest
+                 * @return DescribeGroupLiveCodesOutcome
+                 */
+                DescribeGroupLiveCodesOutcome DescribeGroupLiveCodes(const Model::DescribeGroupLiveCodesRequest &request);
+                void DescribeGroupLiveCodesAsync(const Model::DescribeGroupLiveCodesRequest& request, const DescribeGroupLiveCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGroupLiveCodesOutcomeCallable DescribeGroupLiveCodesCallable(const Model::DescribeGroupLiveCodesRequest& request);
 
                 /**
                  *此接口用于获取群组成员列表

@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool InheritHasBeenSet() const;
 
                     /**
-                     * 获取ResourceInfo
+                     * 获取数据治理资源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Resources ResourceInfo
+                     * @return Resources 数据治理资源
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ResourceInfo> GetResources() const;
 
                     /**
-                     * 设置ResourceInfo
+                     * 设置数据治理资源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resources ResourceInfo
+                     * @param _resources 数据治理资源
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool ResourcesHasBeenSet() const;
 
                     /**
-                     * 获取SmartOptimizerWrittenPolicy
+                     * 获取数据重写策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Written SmartOptimizerWrittenPolicy
+                     * @return Written 数据重写策略
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SmartOptimizerWrittenPolicy GetWritten() const;
 
                     /**
-                     * 设置SmartOptimizerWrittenPolicy
+                     * 设置数据重写策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _written SmartOptimizerWrittenPolicy
+                     * @param _written 数据重写策略
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool WrittenHasBeenSet() const;
 
                     /**
-                     * 获取SmartOptimizerLifecyclePolicy
+                     * 获取数据过期策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Lifecycle SmartOptimizerLifecyclePolicy
+                     * @return Lifecycle 数据过期策略
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SmartOptimizerLifecyclePolicy GetLifecycle() const;
 
                     /**
-                     * 设置SmartOptimizerLifecyclePolicy
+                     * 设置数据过期策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lifecycle SmartOptimizerLifecyclePolicy
+                     * @param _lifecycle 数据过期策略
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -206,21 +206,21 @@ namespace TencentCloud
                     bool m_inheritHasBeenSet;
 
                     /**
-                     * ResourceInfo
+                     * 数据治理资源
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ResourceInfo> m_resources;
                     bool m_resourcesHasBeenSet;
 
                     /**
-                     * SmartOptimizerWrittenPolicy
+                     * 数据重写策略
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SmartOptimizerWrittenPolicy m_written;
                     bool m_writtenHasBeenSet;
 
                     /**
-                     * SmartOptimizerLifecyclePolicy
+                     * 数据过期策略
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SmartOptimizerLifecyclePolicy m_lifecycle;

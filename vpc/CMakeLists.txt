@@ -79,6 +79,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/CreatePrivateNatGatewayDestinationIpPortTranslationNatRuleRequest.h
   include/tencentcloud/vpc/v20170312/model/NatDirectConnectGatewayRoute.h
   include/tencentcloud/vpc/v20170312/model/IpField.h
+  include/tencentcloud/vpc/v20170312/model/UpgradeNatGatewayProductVersionRequest.h
   include/tencentcloud/vpc/v20170312/model/DescribeReserveIpAddressesRequest.h
   include/tencentcloud/vpc/v20170312/model/AddBandwidthPackageResourcesRequest.h
   include/tencentcloud/vpc/v20170312/model/ReplaceRoutePolicyEntriesRequest.h
@@ -535,6 +536,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DescribeRoutesRequest.h
   include/tencentcloud/vpc/v20170312/model/ModifyHighPriorityRouteTableAttributeRequest.h
   include/tencentcloud/vpc/v20170312/model/CreateVpcEndPointServiceRequest.h
+  include/tencentcloud/vpc/v20170312/model/UpgradeNatGatewayProductVersionResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribePrivateNatGatewaysRequest.h
   include/tencentcloud/vpc/v20170312/model/Ipv6Address.h
   include/tencentcloud/vpc/v20170312/model/DescribePrivateNatGatewayTranslationAclRulesResponse.h
@@ -1130,6 +1132,7 @@ set(vpc_src
   src/v20170312/model/CreatePrivateNatGatewayDestinationIpPortTranslationNatRuleRequest.cpp
   src/v20170312/model/NatDirectConnectGatewayRoute.cpp
   src/v20170312/model/IpField.cpp
+  src/v20170312/model/UpgradeNatGatewayProductVersionRequest.cpp
   src/v20170312/model/DescribeReserveIpAddressesRequest.cpp
   src/v20170312/model/AddBandwidthPackageResourcesRequest.cpp
   src/v20170312/model/ReplaceRoutePolicyEntriesRequest.cpp
@@ -1586,6 +1589,7 @@ set(vpc_src
   src/v20170312/model/DescribeRoutesRequest.cpp
   src/v20170312/model/ModifyHighPriorityRouteTableAttributeRequest.cpp
   src/v20170312/model/CreateVpcEndPointServiceRequest.cpp
+  src/v20170312/model/UpgradeNatGatewayProductVersionResponse.cpp
   src/v20170312/model/DescribePrivateNatGatewaysRequest.cpp
   src/v20170312/model/Ipv6Address.cpp
   src/v20170312/model/DescribePrivateNatGatewayTranslationAclRulesResponse.cpp

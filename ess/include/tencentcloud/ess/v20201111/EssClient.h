@@ -201,6 +201,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeContractReviewTaskListWebUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeContractReviewWebUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeContractReviewWebUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeEnterpriseContractReviewChecklistsRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeEnterpriseContractReviewChecklistsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthDetailRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthDetailResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthInfosRequest.h>
@@ -572,6 +574,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeContractReviewWebUrlResponse> DescribeContractReviewWebUrlOutcome;
                 typedef std::future<DescribeContractReviewWebUrlOutcome> DescribeContractReviewWebUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeContractReviewWebUrlRequest&, DescribeContractReviewWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContractReviewWebUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEnterpriseContractReviewChecklistsResponse> DescribeEnterpriseContractReviewChecklistsOutcome;
+                typedef std::future<DescribeEnterpriseContractReviewChecklistsOutcome> DescribeEnterpriseContractReviewChecklistsOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeEnterpriseContractReviewChecklistsRequest&, DescribeEnterpriseContractReviewChecklistsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnterpriseContractReviewChecklistsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExtendedServiceAuthDetailResponse> DescribeExtendedServiceAuthDetailOutcome;
                 typedef std::future<DescribeExtendedServiceAuthDetailOutcome> DescribeExtendedServiceAuthDetailOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeExtendedServiceAuthDetailRequest&, DescribeExtendedServiceAuthDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtendedServiceAuthDetailAsyncHandler;
@@ -2320,6 +2325,15 @@ namespace TencentCloud
                 DescribeContractReviewWebUrlOutcome DescribeContractReviewWebUrl(const Model::DescribeContractReviewWebUrlRequest &request);
                 void DescribeContractReviewWebUrlAsync(const Model::DescribeContractReviewWebUrlRequest& request, const DescribeContractReviewWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeContractReviewWebUrlOutcomeCallable DescribeContractReviewWebUrlCallable(const Model::DescribeContractReviewWebUrlRequest& request);
+
+                /**
+                 *本接口（DescribeEnterpriseContractReviewChecklists）用于获取企业全部审查要点清单。
+                 * @param req DescribeEnterpriseContractReviewChecklistsRequest
+                 * @return DescribeEnterpriseContractReviewChecklistsOutcome
+                 */
+                DescribeEnterpriseContractReviewChecklistsOutcome DescribeEnterpriseContractReviewChecklists(const Model::DescribeEnterpriseContractReviewChecklistsRequest &request);
+                void DescribeEnterpriseContractReviewChecklistsAsync(const Model::DescribeEnterpriseContractReviewChecklistsRequest& request, const DescribeEnterpriseContractReviewChecklistsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEnterpriseContractReviewChecklistsOutcomeCallable DescribeEnterpriseContractReviewChecklistsCallable(const Model::DescribeEnterpriseContractReviewChecklistsRequest& request);
 
                 /**
                  *查询企业扩展服务的授权详情（列表），当前支持查询以下内容：

@@ -27,7 +27,8 @@ UpdateExporterIntegrationRequest::UpdateExporterIntegrationRequest() :
     m_kindHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_kubeTypeHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_disableHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string UpdateExporterIntegrationRequest::ToJsonString() const
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Disable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_disable, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void UpdateExporterIntegrationRequest::SetClusterId(const string& _clusterId)
 bool UpdateExporterIntegrationRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+bool UpdateExporterIntegrationRequest::GetDisable() const
+{
+    return m_disable;
+}
+
+void UpdateExporterIntegrationRequest::SetDisable(const bool& _disable)
+{
+    m_disable = _disable;
+    m_disableHasBeenSet = true;
+}
+
+bool UpdateExporterIntegrationRequest::DisableHasBeenSet() const
+{
+    return m_disableHasBeenSet;
 }
 
 
