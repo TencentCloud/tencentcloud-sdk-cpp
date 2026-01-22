@@ -91,8 +91,10 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体的存储路径。
+只有[FileID + Path 模式](https://cloud.tencent.com/document/product/266/126825)的子应用可以通过MediaStoragePath发起任务。
 FileId和MediaStoragePath必须提供其中一个。
                      * @return MediaStoragePath 媒体的存储路径。
+只有[FileID + Path 模式](https://cloud.tencent.com/document/product/266/126825)的子应用可以通过MediaStoragePath发起任务。
 FileId和MediaStoragePath必须提供其中一个。
                      * 
                      */
@@ -100,8 +102,10 @@ FileId和MediaStoragePath必须提供其中一个。
 
                     /**
                      * 设置媒体的存储路径。
+只有[FileID + Path 模式](https://cloud.tencent.com/document/product/266/126825)的子应用可以通过MediaStoragePath发起任务。
 FileId和MediaStoragePath必须提供其中一个。
                      * @param _mediaStoragePath 媒体的存储路径。
+只有[FileID + Path 模式](https://cloud.tencent.com/document/product/266/126825)的子应用可以通过MediaStoragePath发起任务。
 FileId和MediaStoragePath必须提供其中一个。
                      * 
                      */
@@ -236,6 +240,7 @@ FileId和MediaStoragePath必须提供其中一个。
 
                     /**
                      * 媒体的存储路径。
+只有[FileID + Path 模式](https://cloud.tencent.com/document/product/266/126825)的子应用可以通过MediaStoragePath发起任务。
 FileId和MediaStoragePath必须提供其中一个。
                      */
                     std::string m_mediaStoragePath;

@@ -145,8 +145,8 @@ namespace TencentCloud
                     bool IvrIdHasBeenSet() const;
 
                     /**
-                     * 获取任务状态 0初始 1运行中 2已完成 3结束中 4已终止
-                     * @return State 任务状态 0初始 1运行中 2已完成 3结束中 4已终止
+                     * 获取任务状态 0初始 1运行中 2已完成 3结束中 4已终止 5已暂停
+                     * @return State 任务状态 0初始 1运行中 2已完成 3结束中 4已终止 5已暂停
                      * 
                      */
                     uint64_t GetState() const;
@@ -218,7 +218,7 @@ namespace TencentCloud
                     bool m_ivrIdHasBeenSet;
 
                     /**
-                     * 任务状态 0初始 1运行中 2已完成 3结束中 4已终止
+                     * 任务状态 0初始 1运行中 2已完成 3结束中 4已终止 5已暂停
                      */
                     uint64_t m_state;
                     bool m_stateHasBeenSet;

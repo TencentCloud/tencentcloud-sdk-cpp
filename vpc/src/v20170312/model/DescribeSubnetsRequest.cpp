@@ -26,7 +26,9 @@ DescribeSubnetsRequest::DescribeSubnetsRequest() :
     m_subnetIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_maxResultsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
 }
 
@@ -79,6 +81,22 @@ string DescribeSubnetsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_limit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxResults";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxResults, allocator);
+    }
+
+    if (m_nextTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NextToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_nextToken.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -151,6 +169,38 @@ void DescribeSubnetsRequest::SetLimit(const string& _limit)
 bool DescribeSubnetsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+uint64_t DescribeSubnetsRequest::GetMaxResults() const
+{
+    return m_maxResults;
+}
+
+void DescribeSubnetsRequest::SetMaxResults(const uint64_t& _maxResults)
+{
+    m_maxResults = _maxResults;
+    m_maxResultsHasBeenSet = true;
+}
+
+bool DescribeSubnetsRequest::MaxResultsHasBeenSet() const
+{
+    return m_maxResultsHasBeenSet;
+}
+
+string DescribeSubnetsRequest::GetNextToken() const
+{
+    return m_nextToken;
+}
+
+void DescribeSubnetsRequest::SetNextToken(const string& _nextToken)
+{
+    m_nextToken = _nextToken;
+    m_nextTokenHasBeenSet = true;
+}
+
+bool DescribeSubnetsRequest::NextTokenHasBeenSet() const
+{
+    return m_nextTokenHasBeenSet;
 }
 
 

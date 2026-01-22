@@ -201,15 +201,15 @@ ownerUin=使用者账号
                     bool DimensionsHasBeenSet() const;
 
                     /**
-                     * 获取费用类型：cost-总费用，totalCost-原价费用
-                     * @return FeeType 费用类型：cost-总费用，totalCost-原价费用
+                     * 获取费用类型：cost-折后总费用，totalCost-原价费用
+                     * @return FeeType 费用类型：cost-折后总费用，totalCost-原价费用
                      * 
                      */
                     std::string GetFeeType() const;
 
                     /**
-                     * 设置费用类型：cost-总费用，totalCost-原价费用
-                     * @param _feeType 费用类型：cost-总费用，totalCost-原价费用
+                     * 设置费用类型：cost-折后总费用，totalCost-原价费用
+                     * @param _feeType 费用类型：cost-折后总费用，totalCost-原价费用
                      * 
                      */
                     void SetFeeType(const std::string& _feeType);
@@ -372,7 +372,7 @@ ownerUin=使用者账号
                     bool m_dimensionsHasBeenSet;
 
                     /**
-                     * 费用类型：cost-总费用，totalCost-原价费用
+                     * 费用类型：cost-折后总费用，totalCost-原价费用
                      */
                     std::string m_feeType;
                     bool m_feeTypeHasBeenSet;

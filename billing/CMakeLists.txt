@@ -33,6 +33,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/CreateAllocationRuleResponse.h
   include/tencentcloud/billing/v20180709/model/BillTagInfo.h
   include/tencentcloud/billing/v20180709/model/AllocationOverviewTotal.h
+  include/tencentcloud/billing/v20180709/model/CreateInstanceResponse.h
   include/tencentcloud/billing/v20180709/model/BudgetExtend.h
   include/tencentcloud/billing/v20180709/model/BillTransactionInfo.h
   include/tencentcloud/billing/v20180709/model/ConditionBusiness.h
@@ -144,6 +145,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/BusinessSummaryTotal.h
   include/tencentcloud/billing/v20180709/model/DescribeAllocationBillConditionsResponse.h
   include/tencentcloud/billing/v20180709/model/CostComponentSet.h
+  include/tencentcloud/billing/v20180709/model/RenewInstanceResponse.h
   include/tencentcloud/billing/v20180709/model/AnalyseHeaderDetail.h
   include/tencentcloud/billing/v20180709/model/DescribeAllocationMonthOverviewRequest.h
   include/tencentcloud/billing/v20180709/model/JsonObject.h
@@ -155,6 +157,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/AnalyseOwnerUinDetail.h
   include/tencentcloud/billing/v20180709/model/Conditions.h
   include/tencentcloud/billing/v20180709/model/AnalyseTimeDetail.h
+  include/tencentcloud/billing/v20180709/model/RefundInstanceRequest.h
   include/tencentcloud/billing/v20180709/model/BillOwnerUin.h
   include/tencentcloud/billing/v20180709/model/AllocationRule.h
   include/tencentcloud/billing/v20180709/model/RegionSummaryOverviewItem.h
@@ -168,6 +171,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/DescribeAllocationUnitDetailRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeBillSummaryForOrganizationRequest.h
   include/tencentcloud/billing/v20180709/model/AllocationSummaryByBusiness.h
+  include/tencentcloud/billing/v20180709/model/CreateInstanceRequest.h
   include/tencentcloud/billing/v20180709/model/AllocationStat.h
   include/tencentcloud/billing/v20180709/model/ModifyBudgetRequest.h
   include/tencentcloud/billing/v20180709/model/BillProject.h
@@ -183,6 +187,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/DescribeCostSummaryByRegionResponse.h
   include/tencentcloud/billing/v20180709/model/DescribeCostDetailRequest.h
   include/tencentcloud/billing/v20180709/model/BudgetSendInfoDto.h
+  include/tencentcloud/billing/v20180709/model/RenewInstanceRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeBillSummaryForOrganizationResponse.h
   include/tencentcloud/billing/v20180709/model/BillOperateUin.h
   include/tencentcloud/billing/v20180709/model/DescribeTagListRequest.h
@@ -243,6 +248,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/DescribeDosageCosDetailByDateResponse.h
   include/tencentcloud/billing/v20180709/model/BillItem.h
   include/tencentcloud/billing/v20180709/model/DeleteAllocationUnitRequest.h
+  include/tencentcloud/billing/v20180709/model/RefundInstanceResponse.h
   include/tencentcloud/billing/v20180709/model/AllocationRuleExpression.h
   include/tencentcloud/billing/v20180709/model/BillProduct.h
   include/tencentcloud/billing/v20180709/model/DeleteAllocationUnitResponse.h
@@ -277,6 +283,7 @@ set(billing_src
   src/v20180709/model/CreateAllocationRuleResponse.cpp
   src/v20180709/model/BillTagInfo.cpp
   src/v20180709/model/AllocationOverviewTotal.cpp
+  src/v20180709/model/CreateInstanceResponse.cpp
   src/v20180709/model/BudgetExtend.cpp
   src/v20180709/model/BillTransactionInfo.cpp
   src/v20180709/model/ConditionBusiness.cpp
@@ -388,6 +395,7 @@ set(billing_src
   src/v20180709/model/BusinessSummaryTotal.cpp
   src/v20180709/model/DescribeAllocationBillConditionsResponse.cpp
   src/v20180709/model/CostComponentSet.cpp
+  src/v20180709/model/RenewInstanceResponse.cpp
   src/v20180709/model/AnalyseHeaderDetail.cpp
   src/v20180709/model/DescribeAllocationMonthOverviewRequest.cpp
   src/v20180709/model/JsonObject.cpp
@@ -399,6 +407,7 @@ set(billing_src
   src/v20180709/model/AnalyseOwnerUinDetail.cpp
   src/v20180709/model/Conditions.cpp
   src/v20180709/model/AnalyseTimeDetail.cpp
+  src/v20180709/model/RefundInstanceRequest.cpp
   src/v20180709/model/BillOwnerUin.cpp
   src/v20180709/model/AllocationRule.cpp
   src/v20180709/model/RegionSummaryOverviewItem.cpp
@@ -412,6 +421,7 @@ set(billing_src
   src/v20180709/model/DescribeAllocationUnitDetailRequest.cpp
   src/v20180709/model/DescribeBillSummaryForOrganizationRequest.cpp
   src/v20180709/model/AllocationSummaryByBusiness.cpp
+  src/v20180709/model/CreateInstanceRequest.cpp
   src/v20180709/model/AllocationStat.cpp
   src/v20180709/model/ModifyBudgetRequest.cpp
   src/v20180709/model/BillProject.cpp
@@ -427,6 +437,7 @@ set(billing_src
   src/v20180709/model/DescribeCostSummaryByRegionResponse.cpp
   src/v20180709/model/DescribeCostDetailRequest.cpp
   src/v20180709/model/BudgetSendInfoDto.cpp
+  src/v20180709/model/RenewInstanceRequest.cpp
   src/v20180709/model/DescribeBillSummaryForOrganizationResponse.cpp
   src/v20180709/model/BillOperateUin.cpp
   src/v20180709/model/DescribeTagListRequest.cpp
@@ -487,6 +498,7 @@ set(billing_src
   src/v20180709/model/DescribeDosageCosDetailByDateResponse.cpp
   src/v20180709/model/BillItem.cpp
   src/v20180709/model/DeleteAllocationUnitRequest.cpp
+  src/v20180709/model/RefundInstanceResponse.cpp
   src/v20180709/model/AllocationRuleExpression.cpp
   src/v20180709/model/BillProduct.cpp
   src/v20180709/model/DeleteAllocationUnitResponse.cpp

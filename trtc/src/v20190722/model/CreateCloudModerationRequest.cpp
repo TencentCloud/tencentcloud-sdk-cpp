@@ -26,8 +26,8 @@ CreateCloudModerationRequest::CreateCloudModerationRequest() :
     m_sdkAppIdHasBeenSet(false),
     m_roomIdHasBeenSet(false),
     m_userIdHasBeenSet(false),
-    m_userSigHasBeenSet(false),
     m_moderationParamsHasBeenSet(false),
+    m_userSigHasBeenSet(false),
     m_moderationStorageParamsHasBeenSet(false),
     m_roomIdTypeHasBeenSet(false),
     m_resourceExpiredHourHasBeenSet(false)
@@ -65,14 +65,6 @@ string CreateCloudModerationRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_userSigHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "UserSig";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_userSig.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_moderationParamsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -80,6 +72,14 @@ string CreateCloudModerationRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_moderationParams.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_userSigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserSig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userSig.c_str(), allocator).Move(), allocator);
     }
 
     if (m_moderationStorageParamsHasBeenSet)
@@ -163,22 +163,6 @@ bool CreateCloudModerationRequest::UserIdHasBeenSet() const
     return m_userIdHasBeenSet;
 }
 
-string CreateCloudModerationRequest::GetUserSig() const
-{
-    return m_userSig;
-}
-
-void CreateCloudModerationRequest::SetUserSig(const string& _userSig)
-{
-    m_userSig = _userSig;
-    m_userSigHasBeenSet = true;
-}
-
-bool CreateCloudModerationRequest::UserSigHasBeenSet() const
-{
-    return m_userSigHasBeenSet;
-}
-
 ModerationParams CreateCloudModerationRequest::GetModerationParams() const
 {
     return m_moderationParams;
@@ -193,6 +177,22 @@ void CreateCloudModerationRequest::SetModerationParams(const ModerationParams& _
 bool CreateCloudModerationRequest::ModerationParamsHasBeenSet() const
 {
     return m_moderationParamsHasBeenSet;
+}
+
+string CreateCloudModerationRequest::GetUserSig() const
+{
+    return m_userSig;
+}
+
+void CreateCloudModerationRequest::SetUserSig(const string& _userSig)
+{
+    m_userSig = _userSig;
+    m_userSigHasBeenSet = true;
+}
+
+bool CreateCloudModerationRequest::UserSigHasBeenSet() const
+{
+    return m_userSigHasBeenSet;
 }
 
 ModerationStorageParams CreateCloudModerationRequest::GetModerationStorageParams() const

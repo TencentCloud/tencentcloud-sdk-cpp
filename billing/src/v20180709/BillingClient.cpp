@@ -290,6 +290,56 @@ BillingClient::CreateGatherRuleOutcomeCallable BillingClient::CreateGatherRuleCa
     return prom->get_future();
 }
 
+BillingClient::CreateInstanceOutcome BillingClient::CreateInstance(const CreateInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInstanceResponse rsp = CreateInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInstanceOutcome(rsp);
+        else
+            return CreateInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInstanceOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::CreateInstanceAsync(const CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateInstanceRequest&;
+    using Resp = CreateInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BillingClient::CreateInstanceOutcomeCallable BillingClient::CreateInstanceCallable(const CreateInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateInstanceOutcome>>();
+    CreateInstanceAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const CreateInstanceRequest&,
+        CreateInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 BillingClient::DeleteAllocationRuleOutcome BillingClient::DeleteAllocationRule(const DeleteAllocationRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAllocationRule");
@@ -3182,6 +3232,106 @@ BillingClient::PayDealsOutcomeCallable BillingClient::PayDealsCallable(const Pay
         const BillingClient*,
         const PayDealsRequest&,
         PayDealsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BillingClient::RefundInstanceOutcome BillingClient::RefundInstance(const RefundInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "RefundInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RefundInstanceResponse rsp = RefundInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RefundInstanceOutcome(rsp);
+        else
+            return RefundInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return RefundInstanceOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::RefundInstanceAsync(const RefundInstanceRequest& request, const RefundInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RefundInstanceRequest&;
+    using Resp = RefundInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RefundInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BillingClient::RefundInstanceOutcomeCallable BillingClient::RefundInstanceCallable(const RefundInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RefundInstanceOutcome>>();
+    RefundInstanceAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const RefundInstanceRequest&,
+        RefundInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BillingClient::RenewInstanceOutcome BillingClient::RenewInstance(const RenewInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenewInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenewInstanceResponse rsp = RenewInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenewInstanceOutcome(rsp);
+        else
+            return RenewInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return RenewInstanceOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::RenewInstanceAsync(const RenewInstanceRequest& request, const RenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RenewInstanceRequest&;
+    using Resp = RenewInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RenewInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BillingClient::RenewInstanceOutcomeCallable BillingClient::RenewInstanceCallable(const RenewInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RenewInstanceOutcome>>();
+    RenewInstanceAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const RenewInstanceRequest&,
+        RenewInstanceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

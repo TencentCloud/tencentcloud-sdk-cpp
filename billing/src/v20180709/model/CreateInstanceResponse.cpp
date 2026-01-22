@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/vpc/v20170312/model/DescribeSubnetsResponse.h>
+#include <tencentcloud/billing/v20180709/model/CreateInstanceResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Vpc::V20170312::Model;
+using namespace TencentCloud::Billing::V20180709::Model;
 using namespace std;
 
-DescribeSubnetsResponse::DescribeSubnetsResponse() :
-    m_totalCountHasBeenSet(false),
-    m_subnetSetHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+CreateInstanceResponse::CreateInstanceResponse() :
+    m_orderIdHasBeenSet(false),
+    m_instanceIdListHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeSubnetsResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateInstanceResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,85 +63,58 @@ CoreInternalOutcome DescribeSubnetsResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    if (rsp.HasMember("OrderId") && !rsp["OrderId"].IsNull())
     {
-        if (!rsp["TotalCount"].IsUint64())
+        if (!rsp["OrderId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OrderId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_totalCount = rsp["TotalCount"].GetUint64();
-        m_totalCountHasBeenSet = true;
+        m_orderId = string(rsp["OrderId"].GetString());
+        m_orderIdHasBeenSet = true;
     }
 
-    if (rsp.HasMember("SubnetSet") && !rsp["SubnetSet"].IsNull())
+    if (rsp.HasMember("InstanceIdList") && !rsp["InstanceIdList"].IsNull())
     {
-        if (!rsp["SubnetSet"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `SubnetSet` is not array type"));
+        if (!rsp["InstanceIdList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceIdList` is not array type"));
 
-        const rapidjson::Value &tmpValue = rsp["SubnetSet"];
+        const rapidjson::Value &tmpValue = rsp["InstanceIdList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            Subnet item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_subnetSet.push_back(item);
+            m_instanceIdList.push_back((*itr).GetString());
         }
-        m_subnetSetHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("NextToken") && !rsp["NextToken"].IsNull())
-    {
-        if (!rsp["NextToken"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `NextToken` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_nextToken = string(rsp["NextToken"].GetString());
-        m_nextTokenHasBeenSet = true;
+        m_instanceIdListHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeSubnetsResponse::ToJsonString() const
+string CreateInstanceResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_totalCountHasBeenSet)
+    if (m_orderIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
+        string key = "OrderId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orderId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_subnetSetHasBeenSet)
+    if (m_instanceIdListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubnetSet";
+        string key = "InstanceIdList";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-        int i=0;
-        for (auto itr = m_subnetSet.begin(); itr != m_subnetSet.end(); ++itr, ++i)
+        for (auto itr = m_instanceIdList.begin(); itr != m_instanceIdList.end(); ++itr)
         {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
-    }
-
-    if (m_nextTokenHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NextToken";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_nextToken.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -157,34 +129,24 @@ string DescribeSubnetsResponse::ToJsonString() const
 }
 
 
-uint64_t DescribeSubnetsResponse::GetTotalCount() const
+string CreateInstanceResponse::GetOrderId() const
 {
-    return m_totalCount;
+    return m_orderId;
 }
 
-bool DescribeSubnetsResponse::TotalCountHasBeenSet() const
+bool CreateInstanceResponse::OrderIdHasBeenSet() const
 {
-    return m_totalCountHasBeenSet;
+    return m_orderIdHasBeenSet;
 }
 
-vector<Subnet> DescribeSubnetsResponse::GetSubnetSet() const
+vector<string> CreateInstanceResponse::GetInstanceIdList() const
 {
-    return m_subnetSet;
+    return m_instanceIdList;
 }
 
-bool DescribeSubnetsResponse::SubnetSetHasBeenSet() const
+bool CreateInstanceResponse::InstanceIdListHasBeenSet() const
 {
-    return m_subnetSetHasBeenSet;
-}
-
-string DescribeSubnetsResponse::GetNextToken() const
-{
-    return m_nextToken;
-}
-
-bool DescribeSubnetsResponse::NextTokenHasBeenSet() const
-{
-    return m_nextTokenHasBeenSet;
+    return m_instanceIdListHasBeenSet;
 }
 
 

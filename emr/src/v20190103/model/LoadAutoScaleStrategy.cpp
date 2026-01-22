@@ -43,7 +43,8 @@ LoadAutoScaleStrategy::LoadAutoScaleStrategy() :
     m_softDeployInfoHasBeenSet(false),
     m_loadMetricsConditionsHasBeenSet(false),
     m_groupIdHasBeenSet(false),
-    m_softHasBeenSet(false)
+    m_softHasBeenSet(false),
+    m_graceDownProtectTimeHasBeenSet(false)
 {
 }
 
@@ -308,6 +309,16 @@ CoreInternalOutcome LoadAutoScaleStrategy::Deserialize(const rapidjson::Value &v
         m_softHasBeenSet = true;
     }
 
+    if (value.HasMember("GraceDownProtectTime") && !value["GraceDownProtectTime"].IsNull())
+    {
+        if (!value["GraceDownProtectTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadAutoScaleStrategy.GraceDownProtectTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_graceDownProtectTime = value["GraceDownProtectTime"].GetInt64();
+        m_graceDownProtectTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -520,6 +531,14 @@ void LoadAutoScaleStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Soft";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_soft.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_graceDownProtectTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GraceDownProtectTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_graceDownProtectTime, allocator);
     }
 
 }
@@ -891,5 +910,21 @@ void LoadAutoScaleStrategy::SetSoft(const string& _soft)
 bool LoadAutoScaleStrategy::SoftHasBeenSet() const
 {
     return m_softHasBeenSet;
+}
+
+int64_t LoadAutoScaleStrategy::GetGraceDownProtectTime() const
+{
+    return m_graceDownProtectTime;
+}
+
+void LoadAutoScaleStrategy::SetGraceDownProtectTime(const int64_t& _graceDownProtectTime)
+{
+    m_graceDownProtectTime = _graceDownProtectTime;
+    m_graceDownProtectTimeHasBeenSet = true;
+}
+
+bool LoadAutoScaleStrategy::GraceDownProtectTimeHasBeenSet() const
+{
+    return m_graceDownProtectTimeHasBeenSet;
 }
 

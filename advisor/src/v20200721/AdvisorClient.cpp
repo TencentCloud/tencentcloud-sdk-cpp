@@ -40,6 +40,56 @@ AdvisorClient::AdvisorClient(const Credential &credential, const string &region,
 }
 
 
+AdvisorClient::CreateAdvisorAuthorizationOutcome AdvisorClient::CreateAdvisorAuthorization(const CreateAdvisorAuthorizationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAdvisorAuthorization");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAdvisorAuthorizationResponse rsp = CreateAdvisorAuthorizationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAdvisorAuthorizationOutcome(rsp);
+        else
+            return CreateAdvisorAuthorizationOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAdvisorAuthorizationOutcome(outcome.GetError());
+    }
+}
+
+void AdvisorClient::CreateAdvisorAuthorizationAsync(const CreateAdvisorAuthorizationRequest& request, const CreateAdvisorAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAdvisorAuthorizationRequest&;
+    using Resp = CreateAdvisorAuthorizationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAdvisorAuthorization", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdvisorClient::CreateAdvisorAuthorizationOutcomeCallable AdvisorClient::CreateAdvisorAuthorizationCallable(const CreateAdvisorAuthorizationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAdvisorAuthorizationOutcome>>();
+    CreateAdvisorAuthorizationAsync(
+    request,
+    [prom](
+        const AdvisorClient*,
+        const CreateAdvisorAuthorizationRequest&,
+        CreateAdvisorAuthorizationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdvisorClient::DescribeStrategiesOutcome AdvisorClient::DescribeStrategies(const DescribeStrategiesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeStrategies");

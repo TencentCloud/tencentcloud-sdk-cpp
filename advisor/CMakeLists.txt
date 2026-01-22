@@ -21,9 +21,11 @@ set(advisor_public_header
 set(advisor_public_header_model
   include/tencentcloud/advisor/v20200721/model/DescribeStrategiesResponse.h
   include/tencentcloud/advisor/v20200721/model/DescribeTaskStrategyRisksRequest.h
+  include/tencentcloud/advisor/v20200721/model/CreateAdvisorAuthorizationResponse.h
+  include/tencentcloud/advisor/v20200721/model/RiskFieldsDesc.h
   include/tencentcloud/advisor/v20200721/model/DescribeTaskStrategyRisksResponse.h
   include/tencentcloud/advisor/v20200721/model/KeyValue.h
-  include/tencentcloud/advisor/v20200721/model/RiskFieldsDesc.h
+  include/tencentcloud/advisor/v20200721/model/CreateAdvisorAuthorizationRequest.h
   include/tencentcloud/advisor/v20200721/model/Strategies.h
   include/tencentcloud/advisor/v20200721/model/Conditions.h
   include/tencentcloud/advisor/v20200721/model/DescribeStrategiesRequest.h
@@ -33,9 +35,11 @@ set(advisor_src
   src/v20200721/AdvisorClient.cpp
   src/v20200721/model/DescribeStrategiesResponse.cpp
   src/v20200721/model/DescribeTaskStrategyRisksRequest.cpp
+  src/v20200721/model/CreateAdvisorAuthorizationResponse.cpp
+  src/v20200721/model/RiskFieldsDesc.cpp
   src/v20200721/model/DescribeTaskStrategyRisksResponse.cpp
   src/v20200721/model/KeyValue.cpp
-  src/v20200721/model/RiskFieldsDesc.cpp
+  src/v20200721/model/CreateAdvisorAuthorizationRequest.cpp
   src/v20200721/model/Strategies.cpp
   src/v20200721/model/Conditions.cpp
   src/v20200721/model/DescribeStrategiesRequest.cpp

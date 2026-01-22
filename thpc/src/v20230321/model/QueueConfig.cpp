@@ -37,7 +37,8 @@ QueueConfig::QueueConfig() :
     m_scaleOutNodeThresholdHasBeenSet(false),
     m_maxNodesPerCycleHasBeenSet(false),
     m_scaleUpMemRatioHasBeenSet(false),
-    m_enhancedServiceHasBeenSet(false)
+    m_enhancedServiceHasBeenSet(false),
+    m_launchTemplateIdsHasBeenSet(false)
 {
 }
 
@@ -257,6 +258,19 @@ CoreInternalOutcome QueueConfig::Deserialize(const rapidjson::Value &value)
         m_enhancedServiceHasBeenSet = true;
     }
 
+    if (value.HasMember("LaunchTemplateIds") && !value["LaunchTemplateIds"].IsNull())
+    {
+        if (!value["LaunchTemplateIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `QueueConfig.LaunchTemplateIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["LaunchTemplateIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_launchTemplateIds.push_back((*itr).GetString());
+        }
+        m_launchTemplateIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -415,6 +429,19 @@ void QueueConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_enhancedService.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_launchTemplateIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LaunchTemplateIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_launchTemplateIds.begin(); itr != m_launchTemplateIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -690,5 +717,21 @@ void QueueConfig::SetEnhancedService(const EnhancedService& _enhancedService)
 bool QueueConfig::EnhancedServiceHasBeenSet() const
 {
     return m_enhancedServiceHasBeenSet;
+}
+
+vector<string> QueueConfig::GetLaunchTemplateIds() const
+{
+    return m_launchTemplateIds;
+}
+
+void QueueConfig::SetLaunchTemplateIds(const vector<string>& _launchTemplateIds)
+{
+    m_launchTemplateIds = _launchTemplateIds;
+    m_launchTemplateIdsHasBeenSet = true;
+}
+
+bool QueueConfig::LaunchTemplateIdsHasBeenSet() const
+{
+    return m_launchTemplateIdsHasBeenSet;
 }
 

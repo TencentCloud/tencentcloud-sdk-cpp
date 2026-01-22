@@ -33,6 +33,8 @@
 #include <tencentcloud/billing/v20180709/model/CreateBudgetResponse.h>
 #include <tencentcloud/billing/v20180709/model/CreateGatherRuleRequest.h>
 #include <tencentcloud/billing/v20180709/model/CreateGatherRuleResponse.h>
+#include <tencentcloud/billing/v20180709/model/CreateInstanceRequest.h>
+#include <tencentcloud/billing/v20180709/model/CreateInstanceResponse.h>
 #include <tencentcloud/billing/v20180709/model/DeleteAllocationRuleRequest.h>
 #include <tencentcloud/billing/v20180709/model/DeleteAllocationRuleResponse.h>
 #include <tencentcloud/billing/v20180709/model/DeleteAllocationTagRequest.h>
@@ -149,6 +151,10 @@
 #include <tencentcloud/billing/v20180709/model/ModifyGatherRuleResponse.h>
 #include <tencentcloud/billing/v20180709/model/PayDealsRequest.h>
 #include <tencentcloud/billing/v20180709/model/PayDealsResponse.h>
+#include <tencentcloud/billing/v20180709/model/RefundInstanceRequest.h>
+#include <tencentcloud/billing/v20180709/model/RefundInstanceResponse.h>
+#include <tencentcloud/billing/v20180709/model/RenewInstanceRequest.h>
+#include <tencentcloud/billing/v20180709/model/RenewInstanceResponse.h>
 
 
 namespace TencentCloud
@@ -178,6 +184,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateGatherRuleResponse> CreateGatherRuleOutcome;
                 typedef std::future<CreateGatherRuleOutcome> CreateGatherRuleOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::CreateGatherRuleRequest&, CreateGatherRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGatherRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateInstanceResponse> CreateInstanceOutcome;
+                typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::CreateInstanceRequest&, CreateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAllocationRuleResponse> DeleteAllocationRuleOutcome;
                 typedef std::future<DeleteAllocationRuleOutcome> DeleteAllocationRuleOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DeleteAllocationRuleRequest&, DeleteAllocationRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAllocationRuleAsyncHandler;
@@ -352,6 +361,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PayDealsResponse> PayDealsOutcome;
                 typedef std::future<PayDealsOutcome> PayDealsOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::PayDealsRequest&, PayDealsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PayDealsAsyncHandler;
+                typedef Outcome<Core::Error, Model::RefundInstanceResponse> RefundInstanceOutcome;
+                typedef std::future<RefundInstanceOutcome> RefundInstanceOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::RefundInstanceRequest&, RefundInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefundInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::RenewInstanceResponse> RenewInstanceOutcome;
+                typedef std::future<RenewInstanceOutcome> RenewInstanceOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::RenewInstanceRequest&, RenewInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstanceAsyncHandler;
 
 
 
@@ -399,6 +414,15 @@ namespace TencentCloud
                 CreateGatherRuleOutcome CreateGatherRule(const Model::CreateGatherRuleRequest &request);
                 void CreateGatherRuleAsync(const Model::CreateGatherRuleRequest& request, const CreateGatherRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateGatherRuleOutcomeCallable CreateGatherRuleCallable(const Model::CreateGatherRuleRequest& request);
+
+                /**
+                 *创建一个实例资源，会创建一个新购实例资源的订单，并通过腾讯云账户余额自动支付。调用该接口的账号需要授予finace:trade的权限，否则无法支付成功。目前已接入并支持购买的产品包括：T-Sec-Web应用防火墙、云防火墙、主机安全、主机容器、云安全中心、T-Sec-密钥管理系统。
+                 * @param req CreateInstanceRequest
+                 * @return CreateInstanceOutcome
+                 */
+                CreateInstanceOutcome CreateInstance(const Model::CreateInstanceRequest &request);
+                void CreateInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInstanceOutcomeCallable CreateInstanceCallable(const Model::CreateInstanceRequest& request);
 
                 /**
                  *公摊规则删除接口
@@ -928,6 +952,24 @@ namespace TencentCloud
                 PayDealsOutcome PayDeals(const Model::PayDealsRequest &request);
                 void PayDealsAsync(const Model::PayDealsRequest& request, const PayDealsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PayDealsOutcomeCallable PayDealsCallable(const Model::PayDealsRequest& request);
+
+                /**
+                 *退订不再需要的实例，只退还实付金额的部分，已使用的代金券不退还，退还的实付金额默认退到腾讯云账户余额中。调用该接口的账号需要授予finace:RefundInstance的权限，否则无法支付成功。目前已接入并支持退订的产品包括：T-Sec-Web应用防火墙、云防火墙、主机安全、主机容器、云安全中心、T-Sec-密钥管理系统。
+                 * @param req RefundInstanceRequest
+                 * @return RefundInstanceOutcome
+                 */
+                RefundInstanceOutcome RefundInstance(const Model::RefundInstanceRequest &request);
+                void RefundInstanceAsync(const Model::RefundInstanceRequest& request, const RefundInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RefundInstanceOutcomeCallable RefundInstanceCallable(const Model::RefundInstanceRequest& request);
+
+                /**
+                 *续费一台实例，调用该接口续费服务器时，您需要确保您的腾讯云账户余额充足，否则会续费失败。调用该接口的账号需要授予finace:trade的权限，否则无法续费成功。目前已接入并支持续费的产品包括：T-Sec-Web应用防火墙、云防火墙、主机安全、主机容器、云安全中心、T-Sec-密钥管理系统。
+                 * @param req RenewInstanceRequest
+                 * @return RenewInstanceOutcome
+                 */
+                RenewInstanceOutcome RenewInstance(const Model::RenewInstanceRequest &request);
+                void RenewInstanceAsync(const Model::RenewInstanceRequest& request, const RenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenewInstanceOutcomeCallable RenewInstanceCallable(const Model::RenewInstanceRequest& request);
 
             };
         }

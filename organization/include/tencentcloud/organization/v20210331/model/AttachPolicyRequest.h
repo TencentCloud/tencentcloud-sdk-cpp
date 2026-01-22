@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取绑定策略目标ID。成员Uin或部门ID
-                     * @return TargetId 绑定策略目标ID。成员Uin或部门ID
+                     * 获取<p>绑定策略目标ID。成员Uin或部门ID</p>
+                     * @return TargetId <p>绑定策略目标ID。成员Uin或部门ID</p>
                      * 
                      */
                     uint64_t GetTargetId() const;
 
                     /**
-                     * 设置绑定策略目标ID。成员Uin或部门ID
-                     * @param _targetId 绑定策略目标ID。成员Uin或部门ID
+                     * 设置<p>绑定策略目标ID。成员Uin或部门ID</p>
+                     * @param _targetId <p>绑定策略目标ID。成员Uin或部门ID</p>
                      * 
                      */
                     void SetTargetId(const uint64_t& _targetId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TargetIdHasBeenSet() const;
 
                     /**
-                     * 获取目标类型。取值范围：NODE-部门、MEMBER-成员
-                     * @return TargetType 目标类型。取值范围：NODE-部门、MEMBER-成员
+                     * 获取<p>目标类型。取值范围：NODE-部门、MEMBER-成员</p>
+                     * @return TargetType <p>目标类型。取值范围：NODE-部门、MEMBER-成员</p>
                      * 
                      */
                     std::string GetTargetType() const;
 
                     /**
-                     * 设置目标类型。取值范围：NODE-部门、MEMBER-成员
-                     * @param _targetType 目标类型。取值范围：NODE-部门、MEMBER-成员
+                     * 设置<p>目标类型。取值范围：NODE-部门、MEMBER-成员</p>
+                     * @param _targetType <p>目标类型。取值范围：NODE-部门、MEMBER-成员</p>
                      * 
                      */
                     void SetTargetType(const std::string& _targetType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TargetTypeHasBeenSet() const;
 
                     /**
-                     * 获取策略ID。
-                     * @return PolicyId 策略ID。
+                     * 获取<p>策略Id。可以调用<a href="https://cloud.tencent.com/document/product/850/105311">ListPolicies</a>获取</p>
+                     * @return PolicyId <p>策略Id。可以调用<a href="https://cloud.tencent.com/document/product/850/105311">ListPolicies</a>获取</p>
                      * 
                      */
                     uint64_t GetPolicyId() const;
 
                     /**
-                     * 设置策略ID。
-                     * @param _policyId 策略ID。
+                     * 设置<p>策略Id。可以调用<a href="https://cloud.tencent.com/document/product/850/105311">ListPolicies</a>获取</p>
+                     * @param _policyId <p>策略Id。可以调用<a href="https://cloud.tencent.com/document/product/850/105311">ListPolicies</a>获取</p>
                      * 
                      */
                     void SetPolicyId(const uint64_t& _policyId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略
-                     * @return Type 策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略
+                     * 获取<p>策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略</p>
+                     * @return Type <p>策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略
-                     * @param _type 策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略
+                     * 设置<p>策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略</p>
+                     * @param _type <p>策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 绑定策略目标ID。成员Uin或部门ID
+                     * <p>绑定策略目标ID。成员Uin或部门ID</p>
                      */
                     uint64_t m_targetId;
                     bool m_targetIdHasBeenSet;
 
                     /**
-                     * 目标类型。取值范围：NODE-部门、MEMBER-成员
+                     * <p>目标类型。取值范围：NODE-部门、MEMBER-成员</p>
                      */
                     std::string m_targetType;
                     bool m_targetTypeHasBeenSet;
 
                     /**
-                     * 策略ID。
+                     * <p>策略Id。可以调用<a href="https://cloud.tencent.com/document/product/850/105311">ListPolicies</a>获取</p>
                      */
                     uint64_t m_policyId;
                     bool m_policyIdHasBeenSet;
 
                     /**
-                     * 策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略
+                     * <p>策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
