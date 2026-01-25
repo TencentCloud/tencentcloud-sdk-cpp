@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件系统Id
-                     * @return FileSystemId 文件系统Id
+                     * 获取文件系统 ID。当前仅 Turbo 系列文件系统支持调用此接口，通用系列文件系统（含增强型）不支持调用。
+                     * @return FileSystemId 文件系统 ID。当前仅 Turbo 系列文件系统支持调用此接口，通用系列文件系统（含增强型）不支持调用。
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置文件系统Id
-                     * @param _fileSystemId 文件系统Id
+                     * 设置文件系统 ID。当前仅 Turbo 系列文件系统支持调用此接口，通用系列文件系统（含增强型）不支持调用。
+                     * @param _fileSystemId 文件系统 ID。当前仅 Turbo 系列文件系统支持调用此接口，通用系列文件系统（含增强型）不支持调用。
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -114,15 +114,15 @@ move：对文件/目录进行重命名，等同于mv。
                     bool DirectoryPathHasBeenSet() const;
 
                     /**
-                     * 获取创建目录的权限，若不传，默认为0755  若Operation Type为check，此值无实际意义
-                     * @return Mode 创建目录的权限，若不传，默认为0755  若Operation Type为check，此值无实际意义
+                     * 获取创建目录的权限，若不传，默认为0755。若OperationType为 check，此值无实际意义。
+                     * @return Mode 创建目录的权限，若不传，默认为0755。若OperationType为 check，此值无实际意义。
                      * 
                      */
                     std::string GetMode() const;
 
                     /**
-                     * 设置创建目录的权限，若不传，默认为0755  若Operation Type为check，此值无实际意义
-                     * @param _mode 创建目录的权限，若不传，默认为0755  若Operation Type为check，此值无实际意义
+                     * 设置创建目录的权限，若不传，默认为0755。若OperationType为 check，此值无实际意义。
+                     * @param _mode 创建目录的权限，若不传，默认为0755。若OperationType为 check，此值无实际意义。
                      * 
                      */
                     void SetMode(const std::string& _mode);
@@ -135,15 +135,15 @@ move：对文件/目录进行重命名，等同于mv。
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取mv操作的目标目录名称；如果是turbo文件系统必须以/cfs/开头
-                     * @return DestPath mv操作的目标目录名称；如果是turbo文件系统必须以/cfs/开头
+                     * 获取mv 操作的目标目录名称。路径必须以/cfs/开头
+                     * @return DestPath mv 操作的目标目录名称。路径必须以/cfs/开头
                      * 
                      */
                     std::string GetDestPath() const;
 
                     /**
-                     * 设置mv操作的目标目录名称；如果是turbo文件系统必须以/cfs/开头
-                     * @param _destPath mv操作的目标目录名称；如果是turbo文件系统必须以/cfs/开头
+                     * 设置mv 操作的目标目录名称。路径必须以/cfs/开头
+                     * @param _destPath mv 操作的目标目录名称。路径必须以/cfs/开头
                      * 
                      */
                     void SetDestPath(const std::string& _destPath);
@@ -158,7 +158,7 @@ move：对文件/目录进行重命名，等同于mv。
                 private:
 
                     /**
-                     * 文件系统Id
+                     * 文件系统 ID。当前仅 Turbo 系列文件系统支持调用此接口，通用系列文件系统（含增强型）不支持调用。
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;
@@ -178,13 +178,13 @@ move：对文件/目录进行重命名，等同于mv。
                     bool m_directoryPathHasBeenSet;
 
                     /**
-                     * 创建目录的权限，若不传，默认为0755  若Operation Type为check，此值无实际意义
+                     * 创建目录的权限，若不传，默认为0755。若OperationType为 check，此值无实际意义。
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * mv操作的目标目录名称；如果是turbo文件系统必须以/cfs/开头
+                     * mv 操作的目标目录名称。路径必须以/cfs/开头
                      */
                     std::string m_destPath;
                     bool m_destPathHasBeenSet;

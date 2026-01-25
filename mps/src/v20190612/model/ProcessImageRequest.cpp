@@ -31,7 +31,8 @@ ProcessImageRequest::ProcessImageRequest() :
     m_resourceIdHasBeenSet(false),
     m_imageTaskHasBeenSet(false),
     m_scheduleIdHasBeenSet(false),
-    m_addOnParameterHasBeenSet(false)
+    m_addOnParameterHasBeenSet(false),
+    m_stdExtInfoHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,14 @@ string ProcessImageRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_addOnParameter.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_stdExtInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StdExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_stdExtInfo.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -268,6 +277,22 @@ void ProcessImageRequest::SetAddOnParameter(const AddOnParameter& _addOnParamete
 bool ProcessImageRequest::AddOnParameterHasBeenSet() const
 {
     return m_addOnParameterHasBeenSet;
+}
+
+string ProcessImageRequest::GetStdExtInfo() const
+{
+    return m_stdExtInfo;
+}
+
+void ProcessImageRequest::SetStdExtInfo(const string& _stdExtInfo)
+{
+    m_stdExtInfo = _stdExtInfo;
+    m_stdExtInfoHasBeenSet = true;
+}
+
+bool ProcessImageRequest::StdExtInfoHasBeenSet() const
+{
+    return m_stdExtInfoHasBeenSet;
 }
 
 

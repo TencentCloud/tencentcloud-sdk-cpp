@@ -144,15 +144,15 @@ namespace TencentCloud
                     bool OrderByTypeHasBeenSet() const;
 
                     /**
-                     * 获取搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
-                     * @return Filters 搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
+                     * 获取搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。目前支持的搜索字段：Status、ProxyNodeId、ClusterId、OssProxyNodeName。
+                     * @return Filters 搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。目前支持的搜索字段：Status、ProxyNodeId、ClusterId、OssProxyNodeName。
                      * 
                      */
                     std::vector<QueryFilter> GetFilters() const;
 
                     /**
-                     * 设置搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
-                     * @param _filters 搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
+                     * 设置搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。目前支持的搜索字段：Status、ProxyNodeId、ClusterId、OssProxyNodeName。
+                     * @param _filters 搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。目前支持的搜索字段：Status、ProxyNodeId、ClusterId、OssProxyNodeName。
                      * 
                      */
                     void SetFilters(const std::vector<QueryFilter>& _filters);
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_orderByTypeHasBeenSet;
 
                     /**
-                     * 搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
+                     * 搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。目前支持的搜索字段：Status、ProxyNodeId、ClusterId、OssProxyNodeName。
                      */
                     std::vector<QueryFilter> m_filters;
                     bool m_filtersHasBeenSet;

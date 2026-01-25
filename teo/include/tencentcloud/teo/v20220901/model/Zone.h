@@ -32,6 +32,7 @@
 #include <tencentcloud/teo/v20220901/model/OwnershipVerification.h>
 #include <tencentcloud/teo/v20220901/model/VanityNameServers.h>
 #include <tencentcloud/teo/v20220901/model/VanityNameServersIps.h>
+#include <tencentcloud/teo/v20220901/model/ConfigGroupWorkModeInfo.h>
 
 
 namespace TencentCloud
@@ -662,6 +663,27 @@ namespace TencentCloud
                      */
                     bool VanityNameServersIpsHasBeenSet() const;
 
+                    /**
+                     * 获取版本管理配置组工作模式。站点各配置模块可按照配置组维度开启「版本管理模式」或「即时生效模式」，详情请参考 [版本管理](https://cloud.tencent.com/document/product/1552/113690)。
+                     * @return WorkModeInfos 版本管理配置组工作模式。站点各配置模块可按照配置组维度开启「版本管理模式」或「即时生效模式」，详情请参考 [版本管理](https://cloud.tencent.com/document/product/1552/113690)。
+                     * 
+                     */
+                    std::vector<ConfigGroupWorkModeInfo> GetWorkModeInfos() const;
+
+                    /**
+                     * 设置版本管理配置组工作模式。站点各配置模块可按照配置组维度开启「版本管理模式」或「即时生效模式」，详情请参考 [版本管理](https://cloud.tencent.com/document/product/1552/113690)。
+                     * @param _workModeInfos 版本管理配置组工作模式。站点各配置模块可按照配置组维度开启「版本管理模式」或「即时生效模式」，详情请参考 [版本管理](https://cloud.tencent.com/document/product/1552/113690)。
+                     * 
+                     */
+                    void SetWorkModeInfos(const std::vector<ConfigGroupWorkModeInfo>& _workModeInfos);
+
+                    /**
+                     * 判断参数 WorkModeInfos 是否已赋值
+                     * @return WorkModeInfos 是否已赋值
+                     * 
+                     */
+                    bool WorkModeInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -833,6 +855,12 @@ namespace TencentCloud
                      */
                     std::vector<VanityNameServersIps> m_vanityNameServersIps;
                     bool m_vanityNameServersIpsHasBeenSet;
+
+                    /**
+                     * 版本管理配置组工作模式。站点各配置模块可按照配置组维度开启「版本管理模式」或「即时生效模式」，详情请参考 [版本管理](https://cloud.tencent.com/document/product/1552/113690)。
+                     */
+                    std::vector<ConfigGroupWorkModeInfo> m_workModeInfos;
+                    bool m_workModeInfosHasBeenSet;
 
                 };
             }

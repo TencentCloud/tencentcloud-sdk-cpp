@@ -44,7 +44,8 @@ Zone::Zone() :
     m_originalNameServersHasBeenSet(false),
     m_nameServersHasBeenSet(false),
     m_vanityNameServersHasBeenSet(false),
-    m_vanityNameServersIpsHasBeenSet(false)
+    m_vanityNameServersIpsHasBeenSet(false),
+    m_workModeInfosHasBeenSet(false)
 {
 }
 
@@ -364,6 +365,26 @@ CoreInternalOutcome Zone::Deserialize(const rapidjson::Value &value)
         m_vanityNameServersIpsHasBeenSet = true;
     }
 
+    if (value.HasMember("WorkModeInfos") && !value["WorkModeInfos"].IsNull())
+    {
+        if (!value["WorkModeInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Zone.WorkModeInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["WorkModeInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ConfigGroupWorkModeInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_workModeInfos.push_back(item);
+        }
+        m_workModeInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -593,6 +614,21 @@ void Zone::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
 
         int i=0;
         for (auto itr = m_vanityNameServersIps.begin(); itr != m_vanityNameServersIps.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_workModeInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkModeInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_workModeInfos.begin(); itr != m_workModeInfos.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -984,5 +1020,21 @@ void Zone::SetVanityNameServersIps(const vector<VanityNameServersIps>& _vanityNa
 bool Zone::VanityNameServersIpsHasBeenSet() const
 {
     return m_vanityNameServersIpsHasBeenSet;
+}
+
+vector<ConfigGroupWorkModeInfo> Zone::GetWorkModeInfos() const
+{
+    return m_workModeInfos;
+}
+
+void Zone::SetWorkModeInfos(const vector<ConfigGroupWorkModeInfo>& _workModeInfos)
+{
+    m_workModeInfos = _workModeInfos;
+    m_workModeInfosHasBeenSet = true;
+}
+
+bool Zone::WorkModeInfosHasBeenSet() const
+{
+    return m_workModeInfosHasBeenSet;
 }
 

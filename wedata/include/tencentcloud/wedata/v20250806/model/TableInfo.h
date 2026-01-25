@@ -298,6 +298,81 @@ namespace TencentCloud
                      */
                     bool BusinessMetadataHasBeenSet() const;
 
+                    /**
+                     * 获取数据目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CatalogName 数据目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCatalogName() const;
+
+                    /**
+                     * 设置数据目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _catalogName 数据目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCatalogName(const std::string& _catalogName);
+
+                    /**
+                     * 判断参数 CatalogName 是否已赋值
+                     * @return CatalogName 是否已赋值
+                     * 
+                     */
+                    bool CatalogNameHasBeenSet() const;
+
+                    /**
+                     * 获取数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatasourceId 数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetDatasourceId() const;
+
+                    /**
+                     * 设置数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _datasourceId 数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatasourceId(const int64_t& _datasourceId);
+
+                    /**
+                     * 判断参数 DatasourceId 是否已赋值
+                     * @return DatasourceId 是否已赋值
+                     * 
+                     */
+                    bool DatasourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatasourceType 数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatasourceType() const;
+
+                    /**
+                     * 设置数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _datasourceType 数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatasourceType(const std::string& _datasourceType);
+
+                    /**
+                     * 判断参数 DatasourceType 是否已赋值
+                     * @return DatasourceType 是否已赋值
+                     * 
+                     */
+                    bool DatasourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -369,6 +444,27 @@ namespace TencentCloud
                      */
                     BusinessMetadata m_businessMetadata;
                     bool m_businessMetadataHasBeenSet;
+
+                    /**
+                     * 数据目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_catalogName;
+                    bool m_catalogNameHasBeenSet;
+
+                    /**
+                     * 数据源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_datasourceId;
+                    bool m_datasourceIdHasBeenSet;
+
+                    /**
+                     * 数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_datasourceType;
+                    bool m_datasourceTypeHasBeenSet;
 
                 };
             }

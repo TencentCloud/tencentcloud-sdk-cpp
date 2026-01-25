@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取父目录ID
-                     * @return ParentCatalogId 父目录ID
+                     * 获取父目录ID(此参数还未支持)
+                     * @return ParentCatalogId 父目录ID(此参数还未支持)
                      * 
                      */
                     std::string GetParentCatalogId() const;
 
                     /**
-                     * 设置父目录ID
-                     * @param _parentCatalogId 父目录ID
+                     * 设置父目录ID(此参数还未支持)
+                     * @param _parentCatalogId 父目录ID(此参数还未支持)
                      * 
                      */
                     void SetParentCatalogId(const std::string& _parentCatalogId);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 父目录ID
+                     * 父目录ID(此参数还未支持)
                      */
                     std::string m_parentCatalogId;
                     bool m_parentCatalogIdHasBeenSet;

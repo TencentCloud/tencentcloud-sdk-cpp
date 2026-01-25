@@ -9690,6 +9690,56 @@ TeoClient::ModifyZoneStatusOutcomeCallable TeoClient::ModifyZoneStatusCallable(c
     return prom->get_future();
 }
 
+TeoClient::ModifyZoneWorkModeOutcome TeoClient::ModifyZoneWorkMode(const ModifyZoneWorkModeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyZoneWorkMode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyZoneWorkModeResponse rsp = ModifyZoneWorkModeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyZoneWorkModeOutcome(rsp);
+        else
+            return ModifyZoneWorkModeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyZoneWorkModeOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyZoneWorkModeAsync(const ModifyZoneWorkModeRequest& request, const ModifyZoneWorkModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyZoneWorkModeRequest&;
+    using Resp = ModifyZoneWorkModeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyZoneWorkMode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::ModifyZoneWorkModeOutcomeCallable TeoClient::ModifyZoneWorkModeCallable(const ModifyZoneWorkModeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyZoneWorkModeOutcome>>();
+    ModifyZoneWorkModeAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const ModifyZoneWorkModeRequest&,
+        ModifyZoneWorkModeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TeoClient::RefreshMultiPathGatewaySecretKeyOutcome TeoClient::RefreshMultiPathGatewaySecretKey(const RefreshMultiPathGatewaySecretKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "RefreshMultiPathGatewaySecretKey");

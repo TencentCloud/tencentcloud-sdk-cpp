@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool MaxNamespacesHasBeenSet() const;
 
                     /**
-                     * 获取最大主题分区数
-                     * @return MaxTopics 最大主题分区数
+                     * 获取可以创建的最大主题数
+                     * @return MaxTopics 可以创建的最大主题数
                      * 
                      */
                     uint64_t GetMaxTopics() const;
 
                     /**
-                     * 设置最大主题分区数
-                     * @param _maxTopics 最大主题分区数
+                     * 设置可以创建的最大主题数
+                     * @param _maxTopics 可以创建的最大主题数
                      * 
                      */
                     void SetMaxTopics(const uint64_t& _maxTopics);
@@ -206,15 +206,15 @@ namespace TencentCloud
                     bool MaxPartitionsHasBeenSet() const;
 
                     /**
-                     * 获取商品最大延迟消息数量。0代表没有限制	
-                     * @return MaxDelayedMessages 商品最大延迟消息数量。0代表没有限制	
+                     * 获取最大延迟消息数量。0代表没有限制	
+                     * @return MaxDelayedMessages 最大延迟消息数量。0代表没有限制	
                      * 
                      */
                     int64_t GetMaxDelayedMessages() const;
 
                     /**
-                     * 设置商品最大延迟消息数量。0代表没有限制	
-                     * @param _maxDelayedMessages 商品最大延迟消息数量。0代表没有限制	
+                     * 设置最大延迟消息数量。0代表没有限制	
+                     * @param _maxDelayedMessages 最大延迟消息数量。0代表没有限制	
                      * 
                      */
                     void SetMaxDelayedMessages(const int64_t& _maxDelayedMessages);
@@ -225,6 +225,90 @@ namespace TencentCloud
                      * 
                      */
                     bool MaxDelayedMessagesHasBeenSet() const;
+
+                    /**
+                     * 获取可以创建的最大主题分区数
+                     * @return MaxTopicsPartitioned 可以创建的最大主题分区数
+                     * 
+                     */
+                    int64_t GetMaxTopicsPartitioned() const;
+
+                    /**
+                     * 设置可以创建的最大主题分区数
+                     * @param _maxTopicsPartitioned 可以创建的最大主题分区数
+                     * 
+                     */
+                    void SetMaxTopicsPartitioned(const int64_t& _maxTopicsPartitioned);
+
+                    /**
+                     * 判断参数 MaxTopicsPartitioned 是否已赋值
+                     * @return MaxTopicsPartitioned 是否已赋值
+                     * 
+                     */
+                    bool MaxTopicsPartitionedHasBeenSet() const;
+
+                    /**
+                     * 获取单broker最大链接数
+                     * @return BrokerMaxConnections 单broker最大链接数
+                     * 
+                     */
+                    int64_t GetBrokerMaxConnections() const;
+
+                    /**
+                     * 设置单broker最大链接数
+                     * @param _brokerMaxConnections 单broker最大链接数
+                     * 
+                     */
+                    void SetBrokerMaxConnections(const int64_t& _brokerMaxConnections);
+
+                    /**
+                     * 判断参数 BrokerMaxConnections 是否已赋值
+                     * @return BrokerMaxConnections 是否已赋值
+                     * 
+                     */
+                    bool BrokerMaxConnectionsHasBeenSet() const;
+
+                    /**
+                     * 获取单IP最大链接数
+                     * @return BrokerMaxConnectionsPerIp 单IP最大链接数
+                     * 
+                     */
+                    int64_t GetBrokerMaxConnectionsPerIp() const;
+
+                    /**
+                     * 设置单IP最大链接数
+                     * @param _brokerMaxConnectionsPerIp 单IP最大链接数
+                     * 
+                     */
+                    void SetBrokerMaxConnectionsPerIp(const int64_t& _brokerMaxConnectionsPerIp);
+
+                    /**
+                     * 判断参数 BrokerMaxConnectionsPerIp 是否已赋值
+                     * @return BrokerMaxConnectionsPerIp 是否已赋值
+                     * 
+                     */
+                    bool BrokerMaxConnectionsPerIpHasBeenSet() const;
+
+                    /**
+                     * 获取弹性存储集群最大存储规格；固定存储该值为0
+                     * @return MaximumElasticStorage 弹性存储集群最大存储规格；固定存储该值为0
+                     * 
+                     */
+                    int64_t GetMaximumElasticStorage() const;
+
+                    /**
+                     * 设置弹性存储集群最大存储规格；固定存储该值为0
+                     * @param _maximumElasticStorage 弹性存储集群最大存储规格；固定存储该值为0
+                     * 
+                     */
+                    void SetMaximumElasticStorage(const int64_t& _maximumElasticStorage);
+
+                    /**
+                     * 判断参数 MaximumElasticStorage 是否已赋值
+                     * @return MaximumElasticStorage 是否已赋值
+                     * 
+                     */
+                    bool MaximumElasticStorageHasBeenSet() const;
 
                 private:
 
@@ -253,7 +337,7 @@ namespace TencentCloud
                     bool m_maxNamespacesHasBeenSet;
 
                     /**
-                     * 最大主题分区数
+                     * 可以创建的最大主题数
                      */
                     uint64_t m_maxTopics;
                     bool m_maxTopicsHasBeenSet;
@@ -274,10 +358,34 @@ namespace TencentCloud
                     bool m_maxPartitionsHasBeenSet;
 
                     /**
-                     * 商品最大延迟消息数量。0代表没有限制	
+                     * 最大延迟消息数量。0代表没有限制	
                      */
                     int64_t m_maxDelayedMessages;
                     bool m_maxDelayedMessagesHasBeenSet;
+
+                    /**
+                     * 可以创建的最大主题分区数
+                     */
+                    int64_t m_maxTopicsPartitioned;
+                    bool m_maxTopicsPartitionedHasBeenSet;
+
+                    /**
+                     * 单broker最大链接数
+                     */
+                    int64_t m_brokerMaxConnections;
+                    bool m_brokerMaxConnectionsHasBeenSet;
+
+                    /**
+                     * 单IP最大链接数
+                     */
+                    int64_t m_brokerMaxConnectionsPerIp;
+                    bool m_brokerMaxConnectionsPerIpHasBeenSet;
+
+                    /**
+                     * 弹性存储集群最大存储规格；固定存储该值为0
+                     */
+                    int64_t m_maximumElasticStorage;
+                    bool m_maximumElasticStorageHasBeenSet;
 
                 };
             }

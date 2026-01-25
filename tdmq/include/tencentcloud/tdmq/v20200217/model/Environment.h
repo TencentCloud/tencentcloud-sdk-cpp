@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tdmq/v20200217/model/RetentionPolicy.h>
+#include <tencentcloud/tdmq/v20200217/model/Tag.h>
 
 
 namespace TencentCloud
@@ -311,6 +312,27 @@ namespace TencentCloud
                      */
                     bool SubscriptionExpirationTimeEnableHasBeenSet() const;
 
+                    /**
+                     * 获取命名空间标签
+                     * @return Tags 命名空间标签
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置命名空间标签
+                     * @param _tags 命名空间标签
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -387,6 +409,12 @@ namespace TencentCloud
                      */
                     bool m_subscriptionExpirationTimeEnable;
                     bool m_subscriptionExpirationTimeEnableHasBeenSet;
+
+                    /**
+                     * 命名空间标签
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

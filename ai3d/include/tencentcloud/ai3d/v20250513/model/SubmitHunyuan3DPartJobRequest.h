@@ -64,6 +64,27 @@ namespace TencentCloud
                      */
                     bool FileHasBeenSet() const;
 
+                    /**
+                     * 获取组件生成模型版本，默认为1.0，可选项：1.0，1.5；
+                     * @return Model 组件生成模型版本，默认为1.0，可选项：1.0，1.5；
+                     * 
+                     */
+                    std::string GetModel() const;
+
+                    /**
+                     * 设置组件生成模型版本，默认为1.0，可选项：1.0，1.5；
+                     * @param _model 组件生成模型版本，默认为1.0，可选项：1.0，1.5；
+                     * 
+                     */
+                    void SetModel(const std::string& _model);
+
+                    /**
+                     * 判断参数 Model 是否已赋值
+                     * @return Model 是否已赋值
+                     * 
+                     */
+                    bool ModelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -71,6 +92,12 @@ namespace TencentCloud
                      */
                     InputFile3D m_file;
                     bool m_fileHasBeenSet;
+
+                    /**
+                     * 组件生成模型版本，默认为1.0，可选项：1.0，1.5；
+                     */
+                    std::string m_model;
+                    bool m_modelHasBeenSet;
 
                 };
             }

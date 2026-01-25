@@ -31,7 +31,8 @@ ModifyTopicRequest::ModifyTopicRequest() :
     m_msgTTLHasBeenSet(false),
     m_unackPolicyHasBeenSet(false),
     m_isolateConsumerEnableHasBeenSet(false),
-    m_ackTimeOutHasBeenSet(false)
+    m_ackTimeOutHasBeenSet(false),
+    m_delayMessagePolicyHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string ModifyTopicRequest::ToJsonString() const
         string key = "AckTimeOut";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ackTimeOut, allocator);
+    }
+
+    if (m_delayMessagePolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DelayMessagePolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_delayMessagePolicy.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +273,22 @@ void ModifyTopicRequest::SetAckTimeOut(const int64_t& _ackTimeOut)
 bool ModifyTopicRequest::AckTimeOutHasBeenSet() const
 {
     return m_ackTimeOutHasBeenSet;
+}
+
+string ModifyTopicRequest::GetDelayMessagePolicy() const
+{
+    return m_delayMessagePolicy;
+}
+
+void ModifyTopicRequest::SetDelayMessagePolicy(const string& _delayMessagePolicy)
+{
+    m_delayMessagePolicy = _delayMessagePolicy;
+    m_delayMessagePolicyHasBeenSet = true;
+}
+
+bool ModifyTopicRequest::DelayMessagePolicyHasBeenSet() const
+{
+    return m_delayMessagePolicyHasBeenSet;
 }
 
 

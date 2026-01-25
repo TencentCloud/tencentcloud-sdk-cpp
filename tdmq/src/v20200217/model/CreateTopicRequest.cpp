@@ -34,7 +34,9 @@ CreateTopicRequest::CreateTopicRequest() :
     m_unackPolicyHasBeenSet(false),
     m_isolateConsumerEnableHasBeenSet(false),
     m_ackTimeOutHasBeenSet(false),
-    m_pulsarTopicMessageTypeHasBeenSet(false)
+    m_pulsarTopicMessageTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_delayMessagePolicyHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,29 @@ string CreateTopicRequest::ToJsonString() const
         string key = "PulsarTopicMessageType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pulsarTopicMessageType, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_delayMessagePolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DelayMessagePolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_delayMessagePolicy.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -339,6 +364,38 @@ void CreateTopicRequest::SetPulsarTopicMessageType(const int64_t& _pulsarTopicMe
 bool CreateTopicRequest::PulsarTopicMessageTypeHasBeenSet() const
 {
     return m_pulsarTopicMessageTypeHasBeenSet;
+}
+
+vector<Tag> CreateTopicRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateTopicRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateTopicRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+string CreateTopicRequest::GetDelayMessagePolicy() const
+{
+    return m_delayMessagePolicy;
+}
+
+void CreateTopicRequest::SetDelayMessagePolicy(const string& _delayMessagePolicy)
+{
+    m_delayMessagePolicy = _delayMessagePolicy;
+    m_delayMessagePolicyHasBeenSet = true;
+}
+
+bool CreateTopicRequest::DelayMessagePolicyHasBeenSet() const
+{
+    return m_delayMessagePolicyHasBeenSet;
 }
 
 

@@ -28,7 +28,11 @@ PulsarProClusterSpecInfo::PulsarProClusterSpecInfo() :
     m_maxTopicsHasBeenSet(false),
     m_scalableTpsHasBeenSet(false),
     m_maxPartitionsHasBeenSet(false),
-    m_maxDelayedMessagesHasBeenSet(false)
+    m_maxDelayedMessagesHasBeenSet(false),
+    m_maxTopicsPartitionedHasBeenSet(false),
+    m_brokerMaxConnectionsHasBeenSet(false),
+    m_brokerMaxConnectionsPerIpHasBeenSet(false),
+    m_maximumElasticStorageHasBeenSet(false)
 {
 }
 
@@ -117,6 +121,46 @@ CoreInternalOutcome PulsarProClusterSpecInfo::Deserialize(const rapidjson::Value
         m_maxDelayedMessagesHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxTopicsPartitioned") && !value["MaxTopicsPartitioned"].IsNull())
+    {
+        if (!value["MaxTopicsPartitioned"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarProClusterSpecInfo.MaxTopicsPartitioned` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxTopicsPartitioned = value["MaxTopicsPartitioned"].GetInt64();
+        m_maxTopicsPartitionedHasBeenSet = true;
+    }
+
+    if (value.HasMember("BrokerMaxConnections") && !value["BrokerMaxConnections"].IsNull())
+    {
+        if (!value["BrokerMaxConnections"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarProClusterSpecInfo.BrokerMaxConnections` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_brokerMaxConnections = value["BrokerMaxConnections"].GetInt64();
+        m_brokerMaxConnectionsHasBeenSet = true;
+    }
+
+    if (value.HasMember("BrokerMaxConnectionsPerIp") && !value["BrokerMaxConnectionsPerIp"].IsNull())
+    {
+        if (!value["BrokerMaxConnectionsPerIp"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarProClusterSpecInfo.BrokerMaxConnectionsPerIp` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_brokerMaxConnectionsPerIp = value["BrokerMaxConnectionsPerIp"].GetInt64();
+        m_brokerMaxConnectionsPerIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaximumElasticStorage") && !value["MaximumElasticStorage"].IsNull())
+    {
+        if (!value["MaximumElasticStorage"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarProClusterSpecInfo.MaximumElasticStorage` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maximumElasticStorage = value["MaximumElasticStorage"].GetInt64();
+        m_maximumElasticStorageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +230,38 @@ void PulsarProClusterSpecInfo::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "MaxDelayedMessages";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxDelayedMessages, allocator);
+    }
+
+    if (m_maxTopicsPartitionedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxTopicsPartitioned";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxTopicsPartitioned, allocator);
+    }
+
+    if (m_brokerMaxConnectionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BrokerMaxConnections";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_brokerMaxConnections, allocator);
+    }
+
+    if (m_brokerMaxConnectionsPerIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BrokerMaxConnectionsPerIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_brokerMaxConnectionsPerIp, allocator);
+    }
+
+    if (m_maximumElasticStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaximumElasticStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maximumElasticStorage, allocator);
     }
 
 }
@@ -317,5 +393,69 @@ void PulsarProClusterSpecInfo::SetMaxDelayedMessages(const int64_t& _maxDelayedM
 bool PulsarProClusterSpecInfo::MaxDelayedMessagesHasBeenSet() const
 {
     return m_maxDelayedMessagesHasBeenSet;
+}
+
+int64_t PulsarProClusterSpecInfo::GetMaxTopicsPartitioned() const
+{
+    return m_maxTopicsPartitioned;
+}
+
+void PulsarProClusterSpecInfo::SetMaxTopicsPartitioned(const int64_t& _maxTopicsPartitioned)
+{
+    m_maxTopicsPartitioned = _maxTopicsPartitioned;
+    m_maxTopicsPartitionedHasBeenSet = true;
+}
+
+bool PulsarProClusterSpecInfo::MaxTopicsPartitionedHasBeenSet() const
+{
+    return m_maxTopicsPartitionedHasBeenSet;
+}
+
+int64_t PulsarProClusterSpecInfo::GetBrokerMaxConnections() const
+{
+    return m_brokerMaxConnections;
+}
+
+void PulsarProClusterSpecInfo::SetBrokerMaxConnections(const int64_t& _brokerMaxConnections)
+{
+    m_brokerMaxConnections = _brokerMaxConnections;
+    m_brokerMaxConnectionsHasBeenSet = true;
+}
+
+bool PulsarProClusterSpecInfo::BrokerMaxConnectionsHasBeenSet() const
+{
+    return m_brokerMaxConnectionsHasBeenSet;
+}
+
+int64_t PulsarProClusterSpecInfo::GetBrokerMaxConnectionsPerIp() const
+{
+    return m_brokerMaxConnectionsPerIp;
+}
+
+void PulsarProClusterSpecInfo::SetBrokerMaxConnectionsPerIp(const int64_t& _brokerMaxConnectionsPerIp)
+{
+    m_brokerMaxConnectionsPerIp = _brokerMaxConnectionsPerIp;
+    m_brokerMaxConnectionsPerIpHasBeenSet = true;
+}
+
+bool PulsarProClusterSpecInfo::BrokerMaxConnectionsPerIpHasBeenSet() const
+{
+    return m_brokerMaxConnectionsPerIpHasBeenSet;
+}
+
+int64_t PulsarProClusterSpecInfo::GetMaximumElasticStorage() const
+{
+    return m_maximumElasticStorage;
+}
+
+void PulsarProClusterSpecInfo::SetMaximumElasticStorage(const int64_t& _maximumElasticStorage)
+{
+    m_maximumElasticStorage = _maximumElasticStorage;
+    m_maximumElasticStorageHasBeenSet = true;
+}
+
+bool PulsarProClusterSpecInfo::MaximumElasticStorageHasBeenSet() const
+{
+    return m_maximumElasticStorageHasBeenSet;
 }
 

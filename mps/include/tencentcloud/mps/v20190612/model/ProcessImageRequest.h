@@ -283,6 +283,27 @@ namespace TencentCloud
                      */
                     bool AddOnParameterHasBeenSet() const;
 
+                    /**
+                     * 获取图片处理拓展参数。
+                     * @return StdExtInfo 图片处理拓展参数。
+                     * 
+                     */
+                    std::string GetStdExtInfo() const;
+
+                    /**
+                     * 设置图片处理拓展参数。
+                     * @param _stdExtInfo 图片处理拓展参数。
+                     * 
+                     */
+                    void SetStdExtInfo(const std::string& _stdExtInfo);
+
+                    /**
+                     * 判断参数 StdExtInfo 是否已赋值
+                     * @return StdExtInfo 是否已赋值
+                     * 
+                     */
+                    bool StdExtInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -350,6 +371,12 @@ namespace TencentCloud
                      */
                     AddOnParameter m_addOnParameter;
                     bool m_addOnParameterHasBeenSet;
+
+                    /**
+                     * 图片处理拓展参数。
+                     */
+                    std::string m_stdExtInfo;
+                    bool m_stdExtInfoHasBeenSet;
 
                 };
             }

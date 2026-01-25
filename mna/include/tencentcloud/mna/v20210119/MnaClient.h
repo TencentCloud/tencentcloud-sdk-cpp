@@ -45,6 +45,8 @@
 #include <tencentcloud/mna/v20210119/model/DownloadActiveDeviceCountResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetActiveDeviceCountRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetActiveDeviceCountResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetDestIPByNameRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetDestIPByNameResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetDeviceRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetDeviceResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetDevicePayModeRequest.h>
@@ -59,6 +61,8 @@
 #include <tencentcloud/mna/v20210119/model/GetFlowStatisticResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetFlowStatisticByGroupRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetFlowStatisticByGroupResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetFlowStatisticByNameRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetFlowStatisticByNameResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetFlowStatisticByRegionRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetFlowStatisticByRegionResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetGroupDetailRequest.h>
@@ -69,14 +73,20 @@
 #include <tencentcloud/mna/v20210119/model/GetHardwareListResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetL3ConnListRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetL3ConnListResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetMonitorDataByNameRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetMonitorDataByNameResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetMultiFlowStatisticRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetMultiFlowStatisticResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetNetMonitorRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetNetMonitorResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetNetMonitorByNameRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetNetMonitorByNameResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetPublicKeyRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetPublicKeyResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetStatisticDataRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetStatisticDataResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetStatisticDataByNameRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetStatisticDataByNameResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetVendorHardwareRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetVendorHardwareResponse.h>
 #include <tencentcloud/mna/v20210119/model/GroupAddDeviceRequest.h>
@@ -152,6 +162,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetActiveDeviceCountResponse> GetActiveDeviceCountOutcome;
                 typedef std::future<GetActiveDeviceCountOutcome> GetActiveDeviceCountOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetActiveDeviceCountRequest&, GetActiveDeviceCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetActiveDeviceCountAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetDestIPByNameResponse> GetDestIPByNameOutcome;
+                typedef std::future<GetDestIPByNameOutcome> GetDestIPByNameOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetDestIPByNameRequest&, GetDestIPByNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDestIPByNameAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetDeviceResponse> GetDeviceOutcome;
                 typedef std::future<GetDeviceOutcome> GetDeviceOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetDeviceRequest&, GetDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceAsyncHandler;
@@ -173,6 +186,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetFlowStatisticByGroupResponse> GetFlowStatisticByGroupOutcome;
                 typedef std::future<GetFlowStatisticByGroupOutcome> GetFlowStatisticByGroupOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetFlowStatisticByGroupRequest&, GetFlowStatisticByGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFlowStatisticByGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetFlowStatisticByNameResponse> GetFlowStatisticByNameOutcome;
+                typedef std::future<GetFlowStatisticByNameOutcome> GetFlowStatisticByNameOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetFlowStatisticByNameRequest&, GetFlowStatisticByNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFlowStatisticByNameAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetFlowStatisticByRegionResponse> GetFlowStatisticByRegionOutcome;
                 typedef std::future<GetFlowStatisticByRegionOutcome> GetFlowStatisticByRegionOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetFlowStatisticByRegionRequest&, GetFlowStatisticByRegionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFlowStatisticByRegionAsyncHandler;
@@ -188,18 +204,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetL3ConnListResponse> GetL3ConnListOutcome;
                 typedef std::future<GetL3ConnListOutcome> GetL3ConnListOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetL3ConnListRequest&, GetL3ConnListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetL3ConnListAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetMonitorDataByNameResponse> GetMonitorDataByNameOutcome;
+                typedef std::future<GetMonitorDataByNameOutcome> GetMonitorDataByNameOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetMonitorDataByNameRequest&, GetMonitorDataByNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMonitorDataByNameAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetMultiFlowStatisticResponse> GetMultiFlowStatisticOutcome;
                 typedef std::future<GetMultiFlowStatisticOutcome> GetMultiFlowStatisticOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetMultiFlowStatisticRequest&, GetMultiFlowStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMultiFlowStatisticAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetNetMonitorResponse> GetNetMonitorOutcome;
                 typedef std::future<GetNetMonitorOutcome> GetNetMonitorOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetNetMonitorRequest&, GetNetMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetNetMonitorAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetNetMonitorByNameResponse> GetNetMonitorByNameOutcome;
+                typedef std::future<GetNetMonitorByNameOutcome> GetNetMonitorByNameOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetNetMonitorByNameRequest&, GetNetMonitorByNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetNetMonitorByNameAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetPublicKeyResponse> GetPublicKeyOutcome;
                 typedef std::future<GetPublicKeyOutcome> GetPublicKeyOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetPublicKeyRequest&, GetPublicKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPublicKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetStatisticDataResponse> GetStatisticDataOutcome;
                 typedef std::future<GetStatisticDataOutcome> GetStatisticDataOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetStatisticDataRequest&, GetStatisticDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetStatisticDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetStatisticDataByNameResponse> GetStatisticDataByNameOutcome;
+                typedef std::future<GetStatisticDataByNameOutcome> GetStatisticDataByNameOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetStatisticDataByNameRequest&, GetStatisticDataByNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetStatisticDataByNameAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetVendorHardwareResponse> GetVendorHardwareOutcome;
                 typedef std::future<GetVendorHardwareOutcome> GetVendorHardwareOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetVendorHardwareRequest&, GetVendorHardwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetVendorHardwareAsyncHandler;
@@ -345,6 +370,15 @@ namespace TencentCloud
                 GetActiveDeviceCountOutcomeCallable GetActiveDeviceCountCallable(const Model::GetActiveDeviceCountRequest& request);
 
                 /**
+                 *统计单个设备访问目标IP地址信息
+                 * @param req GetDestIPByNameRequest
+                 * @return GetDestIPByNameOutcome
+                 */
+                GetDestIPByNameOutcome GetDestIPByName(const Model::GetDestIPByNameRequest &request);
+                void GetDestIPByNameAsync(const Model::GetDestIPByNameRequest& request, const GetDestIPByNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetDestIPByNameOutcomeCallable GetDestIPByNameCallable(const Model::GetDestIPByNameRequest& request);
+
+                /**
                  *通过指定设备的ID查找设备详细信息
                  * @param req GetDeviceRequest
                  * @return GetDeviceOutcome
@@ -408,6 +442,15 @@ namespace TencentCloud
                 GetFlowStatisticByGroupOutcomeCallable GetFlowStatisticByGroupCallable(const Model::GetFlowStatisticByGroupRequest& request);
 
                 /**
+                 *获取指定设备Id，指定时间点数据流量使用情况
+                 * @param req GetFlowStatisticByNameRequest
+                 * @return GetFlowStatisticByNameOutcome
+                 */
+                GetFlowStatisticByNameOutcome GetFlowStatisticByName(const Model::GetFlowStatisticByNameRequest &request);
+                void GetFlowStatisticByNameAsync(const Model::GetFlowStatisticByNameRequest& request, const GetFlowStatisticByNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetFlowStatisticByNameOutcomeCallable GetFlowStatisticByNameCallable(const Model::GetFlowStatisticByNameRequest& request);
+
+                /**
                  *获取指定区域，指定时间点数据流量使用情况
                  * @param req GetFlowStatisticByRegionRequest
                  * @return GetFlowStatisticByRegionOutcome
@@ -453,6 +496,15 @@ namespace TencentCloud
                 GetL3ConnListOutcomeCallable GetL3ConnListCallable(const Model::GetL3ConnListRequest& request);
 
                 /**
+                 *获取单个设备所有监控指标的下载文件链接
+                 * @param req GetMonitorDataByNameRequest
+                 * @return GetMonitorDataByNameOutcome
+                 */
+                GetMonitorDataByNameOutcome GetMonitorDataByName(const Model::GetMonitorDataByNameRequest &request);
+                void GetMonitorDataByNameAsync(const Model::GetMonitorDataByNameRequest& request, const GetMonitorDataByNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetMonitorDataByNameOutcomeCallable GetMonitorDataByNameCallable(const Model::GetMonitorDataByNameRequest& request);
+
+                /**
                  *批量获取设备流量统计曲线
                  * @param req GetMultiFlowStatisticRequest
                  * @return GetMultiFlowStatisticOutcome
@@ -471,6 +523,15 @@ namespace TencentCloud
                 GetNetMonitorOutcomeCallable GetNetMonitorCallable(const Model::GetNetMonitorRequest& request);
 
                 /**
+                 *获取单设备的实时流量统计指标
+                 * @param req GetNetMonitorByNameRequest
+                 * @return GetNetMonitorByNameOutcome
+                 */
+                GetNetMonitorByNameOutcome GetNetMonitorByName(const Model::GetNetMonitorByNameRequest &request);
+                void GetNetMonitorByNameAsync(const Model::GetNetMonitorByNameRequest& request, const GetNetMonitorByNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetNetMonitorByNameOutcomeCallable GetNetMonitorByNameCallable(const Model::GetNetMonitorByNameRequest& request);
+
+                /**
                  *获取公钥用于验签
                  * @param req GetPublicKeyRequest
                  * @return GetPublicKeyOutcome
@@ -487,6 +548,15 @@ namespace TencentCloud
                 GetStatisticDataOutcome GetStatisticData(const Model::GetStatisticDataRequest &request);
                 void GetStatisticDataAsync(const Model::GetStatisticDataRequest& request, const GetStatisticDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetStatisticDataOutcomeCallable GetStatisticDataCallable(const Model::GetStatisticDataRequest& request);
+
+                /**
+                 *在用量统计页面下载流量数据
+                 * @param req GetStatisticDataByNameRequest
+                 * @return GetStatisticDataByNameOutcome
+                 */
+                GetStatisticDataByNameOutcome GetStatisticDataByName(const Model::GetStatisticDataByNameRequest &request);
+                void GetStatisticDataByNameAsync(const Model::GetStatisticDataByNameRequest& request, const GetStatisticDataByNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetStatisticDataByNameOutcomeCallable GetStatisticDataByNameCallable(const Model::GetStatisticDataByNameRequest& request);
 
                 /**
                  *获取厂商硬件设备列表

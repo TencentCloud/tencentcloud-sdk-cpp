@@ -26,7 +26,9 @@ DatabaseInfo::DatabaseInfo() :
     m_catalogNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_locationHasBeenSet(false),
-    m_storageSizeHasBeenSet(false)
+    m_storageSizeHasBeenSet(false),
+    m_datasourceIdHasBeenSet(false),
+    m_datasourceTypeHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome DatabaseInfo::Deserialize(const rapidjson::Value &value)
         m_storageSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("DatasourceId") && !value["DatasourceId"].IsNull())
+    {
+        if (!value["DatasourceId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseInfo.DatasourceId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceId = value["DatasourceId"].GetInt64();
+        m_datasourceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasourceType") && !value["DatasourceType"].IsNull())
+    {
+        if (!value["DatasourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseInfo.DatasourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceType = string(value["DatasourceType"].GetString());
+        m_datasourceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void DatabaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "StorageSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_storageSize, allocator);
+    }
+
+    if (m_datasourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_datasourceId, allocator);
+    }
+
+    if (m_datasourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datasourceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void DatabaseInfo::SetStorageSize(const int64_t& _storageSize)
 bool DatabaseInfo::StorageSizeHasBeenSet() const
 {
     return m_storageSizeHasBeenSet;
+}
+
+int64_t DatabaseInfo::GetDatasourceId() const
+{
+    return m_datasourceId;
+}
+
+void DatabaseInfo::SetDatasourceId(const int64_t& _datasourceId)
+{
+    m_datasourceId = _datasourceId;
+    m_datasourceIdHasBeenSet = true;
+}
+
+bool DatabaseInfo::DatasourceIdHasBeenSet() const
+{
+    return m_datasourceIdHasBeenSet;
+}
+
+string DatabaseInfo::GetDatasourceType() const
+{
+    return m_datasourceType;
+}
+
+void DatabaseInfo::SetDatasourceType(const string& _datasourceType)
+{
+    m_datasourceType = _datasourceType;
+    m_datasourceTypeHasBeenSet = true;
+}
+
+bool DatabaseInfo::DatasourceTypeHasBeenSet() const
+{
+    return m_datasourceTypeHasBeenSet;
 }
 

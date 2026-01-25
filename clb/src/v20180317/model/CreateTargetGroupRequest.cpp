@@ -36,7 +36,8 @@ CreateTargetGroupRequest::CreateTargetGroupRequest() :
     m_fullListenSwitchHasBeenSet(false),
     m_keepaliveEnableHasBeenSet(false),
     m_sessionExpireTimeHasBeenSet(false),
-    m_ipVersionHasBeenSet(false)
+    m_ipVersionHasBeenSet(false),
+    m_snatEnableHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,14 @@ string CreateTargetGroupRequest::ToJsonString() const
         string key = "IpVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ipVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_snatEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnatEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_snatEnable, allocator);
     }
 
 
@@ -404,6 +413,22 @@ void CreateTargetGroupRequest::SetIpVersion(const string& _ipVersion)
 bool CreateTargetGroupRequest::IpVersionHasBeenSet() const
 {
     return m_ipVersionHasBeenSet;
+}
+
+bool CreateTargetGroupRequest::GetSnatEnable() const
+{
+    return m_snatEnable;
+}
+
+void CreateTargetGroupRequest::SetSnatEnable(const bool& _snatEnable)
+{
+    m_snatEnable = _snatEnable;
+    m_snatEnableHasBeenSet = true;
+}
+
+bool CreateTargetGroupRequest::SnatEnableHasBeenSet() const
+{
+    return m_snatEnableHasBeenSet;
 }
 
 

@@ -30,7 +30,10 @@ TableInfo::TableInfo() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_technicalMetadataHasBeenSet(false),
-    m_businessMetadataHasBeenSet(false)
+    m_businessMetadataHasBeenSet(false),
+    m_catalogNameHasBeenSet(false),
+    m_datasourceIdHasBeenSet(false),
+    m_datasourceTypeHasBeenSet(false)
 {
 }
 
@@ -153,6 +156,36 @@ CoreInternalOutcome TableInfo::Deserialize(const rapidjson::Value &value)
         m_businessMetadataHasBeenSet = true;
     }
 
+    if (value.HasMember("CatalogName") && !value["CatalogName"].IsNull())
+    {
+        if (!value["CatalogName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableInfo.CatalogName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_catalogName = string(value["CatalogName"].GetString());
+        m_catalogNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasourceId") && !value["DatasourceId"].IsNull())
+    {
+        if (!value["DatasourceId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableInfo.DatasourceId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceId = value["DatasourceId"].GetInt64();
+        m_datasourceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasourceType") && !value["DatasourceType"].IsNull())
+    {
+        if (!value["DatasourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableInfo.DatasourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceType = string(value["DatasourceType"].GetString());
+        m_datasourceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +273,30 @@ void TableInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_businessMetadata.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_catalogNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CatalogName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_catalogName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_datasourceId, allocator);
+    }
+
+    if (m_datasourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datasourceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -403,5 +460,53 @@ void TableInfo::SetBusinessMetadata(const BusinessMetadata& _businessMetadata)
 bool TableInfo::BusinessMetadataHasBeenSet() const
 {
     return m_businessMetadataHasBeenSet;
+}
+
+string TableInfo::GetCatalogName() const
+{
+    return m_catalogName;
+}
+
+void TableInfo::SetCatalogName(const string& _catalogName)
+{
+    m_catalogName = _catalogName;
+    m_catalogNameHasBeenSet = true;
+}
+
+bool TableInfo::CatalogNameHasBeenSet() const
+{
+    return m_catalogNameHasBeenSet;
+}
+
+int64_t TableInfo::GetDatasourceId() const
+{
+    return m_datasourceId;
+}
+
+void TableInfo::SetDatasourceId(const int64_t& _datasourceId)
+{
+    m_datasourceId = _datasourceId;
+    m_datasourceIdHasBeenSet = true;
+}
+
+bool TableInfo::DatasourceIdHasBeenSet() const
+{
+    return m_datasourceIdHasBeenSet;
+}
+
+string TableInfo::GetDatasourceType() const
+{
+    return m_datasourceType;
+}
+
+void TableInfo::SetDatasourceType(const string& _datasourceType)
+{
+    m_datasourceType = _datasourceType;
+    m_datasourceTypeHasBeenSet = true;
+}
+
+bool TableInfo::DatasourceTypeHasBeenSet() const
+{
+    return m_datasourceTypeHasBeenSet;
 }
 

@@ -23,7 +23,8 @@ using namespace TencentCloud::Ai3d::V20250513::Model;
 using namespace std;
 
 SubmitHunyuan3DPartJobRequest::SubmitHunyuan3DPartJobRequest() :
-    m_fileHasBeenSet(false)
+    m_fileHasBeenSet(false),
+    m_modelHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,14 @@ string SubmitHunyuan3DPartJobRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_file.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_modelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Model";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_model.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -65,6 +74,22 @@ void SubmitHunyuan3DPartJobRequest::SetFile(const InputFile3D& _file)
 bool SubmitHunyuan3DPartJobRequest::FileHasBeenSet() const
 {
     return m_fileHasBeenSet;
+}
+
+string SubmitHunyuan3DPartJobRequest::GetModel() const
+{
+    return m_model;
+}
+
+void SubmitHunyuan3DPartJobRequest::SetModel(const string& _model)
+{
+    m_model = _model;
+    m_modelHasBeenSet = true;
+}
+
+bool SubmitHunyuan3DPartJobRequest::ModelHasBeenSet() const
+{
+    return m_modelHasBeenSet;
 }
 
 
