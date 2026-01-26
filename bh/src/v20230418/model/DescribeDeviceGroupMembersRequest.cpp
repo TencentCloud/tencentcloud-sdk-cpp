@@ -27,11 +27,13 @@ DescribeDeviceGroupMembersRequest::DescribeDeviceGroupMembersRequest() :
     m_idHasBeenSet(false),
     m_idSetHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_resourceIdSetHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_kindHasBeenSet(false),
     m_kindSetHasBeenSet(false),
     m_departmentIdHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_tagFiltersHasBeenSet(false)
 {
 }
@@ -80,6 +82,19 @@ string DescribeDeviceGroupMembersRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_resourceIdSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceIdSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_resourceIdSet.begin(); itr != m_resourceIdSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_offsetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -123,6 +138,21 @@ string DescribeDeviceGroupMembersRequest::ToJsonString() const
         string key = "DepartmentId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_departmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_tagFiltersHasBeenSet)
@@ -212,6 +242,22 @@ bool DescribeDeviceGroupMembersRequest::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
+vector<string> DescribeDeviceGroupMembersRequest::GetResourceIdSet() const
+{
+    return m_resourceIdSet;
+}
+
+void DescribeDeviceGroupMembersRequest::SetResourceIdSet(const vector<string>& _resourceIdSet)
+{
+    m_resourceIdSet = _resourceIdSet;
+    m_resourceIdSetHasBeenSet = true;
+}
+
+bool DescribeDeviceGroupMembersRequest::ResourceIdSetHasBeenSet() const
+{
+    return m_resourceIdSetHasBeenSet;
+}
+
 uint64_t DescribeDeviceGroupMembersRequest::GetOffset() const
 {
     return m_offset;
@@ -290,6 +336,22 @@ void DescribeDeviceGroupMembersRequest::SetDepartmentId(const string& _departmen
 bool DescribeDeviceGroupMembersRequest::DepartmentIdHasBeenSet() const
 {
     return m_departmentIdHasBeenSet;
+}
+
+vector<Filter> DescribeDeviceGroupMembersRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeDeviceGroupMembersRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeDeviceGroupMembersRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 vector<TagFilter> DescribeDeviceGroupMembersRequest::GetTagFilters() const

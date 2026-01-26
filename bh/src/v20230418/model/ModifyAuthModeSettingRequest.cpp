@@ -24,6 +24,7 @@ using namespace std;
 
 ModifyAuthModeSettingRequest::ModifyAuthModeSettingRequest() :
     m_authModeHasBeenSet(false),
+    m_authModeGMHasBeenSet(false),
     m_resourceTypeHasBeenSet(false)
 {
 }
@@ -41,6 +42,14 @@ string ModifyAuthModeSettingRequest::ToJsonString() const
         string key = "AuthMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_authMode, allocator);
+    }
+
+    if (m_authModeGMHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthModeGM";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_authModeGM, allocator);
     }
 
     if (m_resourceTypeHasBeenSet)
@@ -73,6 +82,22 @@ void ModifyAuthModeSettingRequest::SetAuthMode(const uint64_t& _authMode)
 bool ModifyAuthModeSettingRequest::AuthModeHasBeenSet() const
 {
     return m_authModeHasBeenSet;
+}
+
+uint64_t ModifyAuthModeSettingRequest::GetAuthModeGM() const
+{
+    return m_authModeGM;
+}
+
+void ModifyAuthModeSettingRequest::SetAuthModeGM(const uint64_t& _authModeGM)
+{
+    m_authModeGM = _authModeGM;
+    m_authModeGMHasBeenSet = true;
+}
+
+bool ModifyAuthModeSettingRequest::AuthModeGMHasBeenSet() const
+{
+    return m_authModeGMHasBeenSet;
 }
 
 int64_t ModifyAuthModeSettingRequest::GetResourceType() const

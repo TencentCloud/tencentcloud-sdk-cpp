@@ -98,6 +98,48 @@ namespace TencentCloud
                      */
                     bool RelationHasBeenSet() const;
 
+                    /**
+                     * 获取上游数量
+                     * @return DownStreamCount 上游数量
+                     * 
+                     */
+                    int64_t GetDownStreamCount() const;
+
+                    /**
+                     * 设置上游数量
+                     * @param _downStreamCount 上游数量
+                     * 
+                     */
+                    void SetDownStreamCount(const int64_t& _downStreamCount);
+
+                    /**
+                     * 判断参数 DownStreamCount 是否已赋值
+                     * @return DownStreamCount 是否已赋值
+                     * 
+                     */
+                    bool DownStreamCountHasBeenSet() const;
+
+                    /**
+                     * 获取下游数量
+                     * @return UpStreamCount 下游数量
+                     * 
+                     */
+                    int64_t GetUpStreamCount() const;
+
+                    /**
+                     * 设置下游数量
+                     * @param _upStreamCount 下游数量
+                     * 
+                     */
+                    void SetUpStreamCount(const int64_t& _upStreamCount);
+
+                    /**
+                     * 判断参数 UpStreamCount 是否已赋值
+                     * @return UpStreamCount 是否已赋值
+                     * 
+                     */
+                    bool UpStreamCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -113,6 +155,18 @@ namespace TencentCloud
                      */
                     LineageRelation m_relation;
                     bool m_relationHasBeenSet;
+
+                    /**
+                     * 上游数量
+                     */
+                    int64_t m_downStreamCount;
+                    bool m_downStreamCountHasBeenSet;
+
+                    /**
+                     * 下游数量
+                     */
+                    int64_t m_upStreamCount;
+                    bool m_upStreamCountHasBeenSet;
 
                 };
             }

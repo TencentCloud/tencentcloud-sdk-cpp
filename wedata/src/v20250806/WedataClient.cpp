@@ -190,6 +190,56 @@ WedataClient::AuthorizeDataSourceOutcomeCallable WedataClient::AuthorizeDataSour
     return prom->get_future();
 }
 
+WedataClient::AuthorizePrivilegesOutcome WedataClient::AuthorizePrivileges(const AuthorizePrivilegesRequest &request)
+{
+    auto outcome = MakeRequest(request, "AuthorizePrivileges");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AuthorizePrivilegesResponse rsp = AuthorizePrivilegesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AuthorizePrivilegesOutcome(rsp);
+        else
+            return AuthorizePrivilegesOutcome(o.GetError());
+    }
+    else
+    {
+        return AuthorizePrivilegesOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::AuthorizePrivilegesAsync(const AuthorizePrivilegesRequest& request, const AuthorizePrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AuthorizePrivilegesRequest&;
+    using Resp = AuthorizePrivilegesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AuthorizePrivileges", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::AuthorizePrivilegesOutcomeCallable WedataClient::AuthorizePrivilegesCallable(const AuthorizePrivilegesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AuthorizePrivilegesOutcome>>();
+    AuthorizePrivilegesAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const AuthorizePrivilegesRequest&,
+        AuthorizePrivilegesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::CreateCodeFileOutcome WedataClient::CreateCodeFile(const CreateCodeFileRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCodeFile");
@@ -5440,6 +5490,56 @@ WedataClient::ListOpsWorkflowsOutcomeCallable WedataClient::ListOpsWorkflowsCall
     return prom->get_future();
 }
 
+WedataClient::ListPermissionsOutcome WedataClient::ListPermissions(const ListPermissionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListPermissions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListPermissionsResponse rsp = ListPermissionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListPermissionsOutcome(rsp);
+        else
+            return ListPermissionsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListPermissionsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ListPermissionsAsync(const ListPermissionsRequest& request, const ListPermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListPermissionsRequest&;
+    using Resp = ListPermissionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListPermissions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::ListPermissionsOutcomeCallable WedataClient::ListPermissionsCallable(const ListPermissionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListPermissionsOutcome>>();
+    ListPermissionsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const ListPermissionsRequest&,
+        ListPermissionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::ListProcessLineageOutcome WedataClient::ListProcessLineage(const ListProcessLineageRequest &request)
 {
     auto outcome = MakeRequest(request, "ListProcessLineage");
@@ -7482,6 +7582,56 @@ WedataClient::RevokeDataSourceAuthorizationOutcomeCallable WedataClient::RevokeD
         const WedataClient*,
         const RevokeDataSourceAuthorizationRequest&,
         RevokeDataSourceAuthorizationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WedataClient::RevokePrivilegesOutcome WedataClient::RevokePrivileges(const RevokePrivilegesRequest &request)
+{
+    auto outcome = MakeRequest(request, "RevokePrivileges");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RevokePrivilegesResponse rsp = RevokePrivilegesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RevokePrivilegesOutcome(rsp);
+        else
+            return RevokePrivilegesOutcome(o.GetError());
+    }
+    else
+    {
+        return RevokePrivilegesOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::RevokePrivilegesAsync(const RevokePrivilegesRequest& request, const RevokePrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RevokePrivilegesRequest&;
+    using Resp = RevokePrivilegesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RevokePrivileges", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::RevokePrivilegesOutcomeCallable WedataClient::RevokePrivilegesCallable(const RevokePrivilegesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RevokePrivilegesOutcome>>();
+    RevokePrivilegesAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const RevokePrivilegesRequest&,
+        RevokePrivilegesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -405,6 +405,8 @@
 #include <tencentcloud/tke/v20180525/model/EnableClusterDeletionProtectionResponse.h>
 #include <tencentcloud/tke/v20180525/model/EnableControlPlaneLogsRequest.h>
 #include <tencentcloud/tke/v20180525/model/EnableControlPlaneLogsResponse.h>
+#include <tencentcloud/tke/v20180525/model/EnableEksEventPersistenceRequest.h>
+#include <tencentcloud/tke/v20180525/model/EnableEksEventPersistenceResponse.h>
 #include <tencentcloud/tke/v20180525/model/EnableEncryptionProtectionRequest.h>
 #include <tencentcloud/tke/v20180525/model/EnableEncryptionProtectionResponse.h>
 #include <tencentcloud/tke/v20180525/model/EnableEventPersistenceRequest.h>
@@ -1126,6 +1128,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnableControlPlaneLogsResponse> EnableControlPlaneLogsOutcome;
                 typedef std::future<EnableControlPlaneLogsOutcome> EnableControlPlaneLogsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::EnableControlPlaneLogsRequest&, EnableControlPlaneLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableControlPlaneLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableEksEventPersistenceResponse> EnableEksEventPersistenceOutcome;
+                typedef std::future<EnableEksEventPersistenceOutcome> EnableEksEventPersistenceOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::EnableEksEventPersistenceRequest&, EnableEksEventPersistenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableEksEventPersistenceAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableEncryptionProtectionResponse> EnableEncryptionProtectionOutcome;
                 typedef std::future<EnableEncryptionProtectionOutcome> EnableEncryptionProtectionOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::EnableEncryptionProtectionRequest&, EnableEncryptionProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableEncryptionProtectionAsyncHandler;
@@ -3048,6 +3053,15 @@ namespace TencentCloud
                 EnableControlPlaneLogsOutcome EnableControlPlaneLogs(const Model::EnableControlPlaneLogsRequest &request);
                 void EnableControlPlaneLogsAsync(const Model::EnableControlPlaneLogsRequest& request, const EnableControlPlaneLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableControlPlaneLogsOutcomeCallable EnableControlPlaneLogsCallable(const Model::EnableControlPlaneLogsRequest& request);
+
+                /**
+                 *Eks集群开启事件持久化功能
+                 * @param req EnableEksEventPersistenceRequest
+                 * @return EnableEksEventPersistenceOutcome
+                 */
+                EnableEksEventPersistenceOutcome EnableEksEventPersistence(const Model::EnableEksEventPersistenceRequest &request);
+                void EnableEksEventPersistenceAsync(const Model::EnableEksEventPersistenceRequest& request, const EnableEksEventPersistenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableEksEventPersistenceOutcomeCallable EnableEksEventPersistenceCallable(const Model::EnableEksEventPersistenceRequest& request);
 
                 /**
                  *开启加密数据保护，需要先开启KMS能力，完成KMS授权

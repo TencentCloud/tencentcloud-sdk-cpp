@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取双因子认证，0-不开启，1-OTP，2-短信，3-USB Key
-                     * @return AuthMode 双因子认证，0-不开启，1-OTP，2-短信，3-USB Key
+                     * 获取双因子认证，0-不开启（暂停使用），1-OTP，2-短信，3-USB Key（只有ResourceType=1且AuthModeGM不传时有效，其他情况不能为3）    
+备注：AuthMode和AuthModeGM至少有一个有效传参
+                     * @return AuthMode 双因子认证，0-不开启（暂停使用），1-OTP，2-短信，3-USB Key（只有ResourceType=1且AuthModeGM不传时有效，其他情况不能为3）    
+备注：AuthMode和AuthModeGM至少有一个有效传参
                      * 
                      */
                     uint64_t GetAuthMode() const;
 
                     /**
-                     * 设置双因子认证，0-不开启，1-OTP，2-短信，3-USB Key
-                     * @param _authMode 双因子认证，0-不开启，1-OTP，2-短信，3-USB Key
+                     * 设置双因子认证，0-不开启（暂停使用），1-OTP，2-短信，3-USB Key（只有ResourceType=1且AuthModeGM不传时有效，其他情况不能为3）    
+备注：AuthMode和AuthModeGM至少有一个有效传参
+                     * @param _authMode 双因子认证，0-不开启（暂停使用），1-OTP，2-短信，3-USB Key（只有ResourceType=1且AuthModeGM不传时有效，其他情况不能为3）    
+备注：AuthMode和AuthModeGM至少有一个有效传参
                      * 
                      */
                     void SetAuthMode(const uint64_t& _authMode);
@@ -64,15 +68,44 @@ namespace TencentCloud
                     bool AuthModeHasBeenSet() const;
 
                     /**
-                     * 获取资源类型，0：普通 1：国密
-                     * @return ResourceType 资源类型，0：普通 1：国密
+                     * 获取国密双因子认证，0-不开启（暂停使用），1-OTP，2-短信，3-USB Key
+备注：AuthMode和AuthModeGM至少有一个有效传参，AuthModeGM优先级高于ResourceType
+                     * @return AuthModeGM 国密双因子认证，0-不开启（暂停使用），1-OTP，2-短信，3-USB Key
+备注：AuthMode和AuthModeGM至少有一个有效传参，AuthModeGM优先级高于ResourceType
+                     * 
+                     */
+                    uint64_t GetAuthModeGM() const;
+
+                    /**
+                     * 设置国密双因子认证，0-不开启（暂停使用），1-OTP，2-短信，3-USB Key
+备注：AuthMode和AuthModeGM至少有一个有效传参，AuthModeGM优先级高于ResourceType
+                     * @param _authModeGM 国密双因子认证，0-不开启（暂停使用），1-OTP，2-短信，3-USB Key
+备注：AuthMode和AuthModeGM至少有一个有效传参，AuthModeGM优先级高于ResourceType
+                     * 
+                     */
+                    void SetAuthModeGM(const uint64_t& _authModeGM);
+
+                    /**
+                     * 判断参数 AuthModeGM 是否已赋值
+                     * @return AuthModeGM 是否已赋值
+                     * 
+                     */
+                    bool AuthModeGMHasBeenSet() const;
+
+                    /**
+                     * 获取资源类型，0：普通（暂停使用，由AuthMode和AuthModeGM传参决定） 1：国密
+
+                     * @return ResourceType 资源类型，0：普通（暂停使用，由AuthMode和AuthModeGM传参决定） 1：国密
+
                      * 
                      */
                     int64_t GetResourceType() const;
 
                     /**
-                     * 设置资源类型，0：普通 1：国密
-                     * @param _resourceType 资源类型，0：普通 1：国密
+                     * 设置资源类型，0：普通（暂停使用，由AuthMode和AuthModeGM传参决定） 1：国密
+
+                     * @param _resourceType 资源类型，0：普通（暂停使用，由AuthMode和AuthModeGM传参决定） 1：国密
+
                      * 
                      */
                     void SetResourceType(const int64_t& _resourceType);
@@ -87,13 +120,22 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 双因子认证，0-不开启，1-OTP，2-短信，3-USB Key
+                     * 双因子认证，0-不开启（暂停使用），1-OTP，2-短信，3-USB Key（只有ResourceType=1且AuthModeGM不传时有效，其他情况不能为3）    
+备注：AuthMode和AuthModeGM至少有一个有效传参
                      */
                     uint64_t m_authMode;
                     bool m_authModeHasBeenSet;
 
                     /**
-                     * 资源类型，0：普通 1：国密
+                     * 国密双因子认证，0-不开启（暂停使用），1-OTP，2-短信，3-USB Key
+备注：AuthMode和AuthModeGM至少有一个有效传参，AuthModeGM优先级高于ResourceType
+                     */
+                    uint64_t m_authModeGM;
+                    bool m_authModeGMHasBeenSet;
+
+                    /**
+                     * 资源类型，0：普通（暂停使用，由AuthMode和AuthModeGM传参决定） 1：国密
+
                      */
                     int64_t m_resourceType;
                     bool m_resourceTypeHasBeenSet;

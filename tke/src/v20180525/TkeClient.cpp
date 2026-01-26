@@ -9590,6 +9590,56 @@ TkeClient::EnableControlPlaneLogsOutcomeCallable TkeClient::EnableControlPlaneLo
     return prom->get_future();
 }
 
+TkeClient::EnableEksEventPersistenceOutcome TkeClient::EnableEksEventPersistence(const EnableEksEventPersistenceRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableEksEventPersistence");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableEksEventPersistenceResponse rsp = EnableEksEventPersistenceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableEksEventPersistenceOutcome(rsp);
+        else
+            return EnableEksEventPersistenceOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableEksEventPersistenceOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::EnableEksEventPersistenceAsync(const EnableEksEventPersistenceRequest& request, const EnableEksEventPersistenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EnableEksEventPersistenceRequest&;
+    using Resp = EnableEksEventPersistenceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EnableEksEventPersistence", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::EnableEksEventPersistenceOutcomeCallable TkeClient::EnableEksEventPersistenceCallable(const EnableEksEventPersistenceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EnableEksEventPersistenceOutcome>>();
+    EnableEksEventPersistenceAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const EnableEksEventPersistenceRequest&,
+        EnableEksEventPersistenceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::EnableEncryptionProtectionOutcome TkeClient::EnableEncryptionProtection(const EnableEncryptionProtectionRequest &request)
 {
     auto outcome = MakeRequest(request, "EnableEncryptionProtection");

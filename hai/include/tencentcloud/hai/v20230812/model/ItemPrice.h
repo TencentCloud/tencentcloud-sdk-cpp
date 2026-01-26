@@ -155,6 +155,48 @@ namespace TencentCloud
                      */
                     bool AmountHasBeenSet() const;
 
+                    /**
+                     * 获取原价
+                     * @return OriginPrice 原价
+                     * 
+                     */
+                    double GetOriginPrice() const;
+
+                    /**
+                     * 设置原价
+                     * @param _originPrice 原价
+                     * 
+                     */
+                    void SetOriginPrice(const double& _originPrice);
+
+                    /**
+                     * 判断参数 OriginPrice 是否已赋值
+                     * @return OriginPrice 是否已赋值
+                     * 
+                     */
+                    bool OriginPriceHasBeenSet() const;
+
+                    /**
+                     * 获取折扣价
+                     * @return DiscountPrice 折扣价
+                     * 
+                     */
+                    double GetDiscountPrice() const;
+
+                    /**
+                     * 设置折扣价
+                     * @param _discountPrice 折扣价
+                     * 
+                     */
+                    void SetDiscountPrice(const double& _discountPrice);
+
+                    /**
+                     * 判断参数 DiscountPrice 是否已赋值
+                     * @return DiscountPrice 是否已赋值
+                     * 
+                     */
+                    bool DiscountPriceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +229,18 @@ namespace TencentCloud
                      */
                     uint64_t m_amount;
                     bool m_amountHasBeenSet;
+
+                    /**
+                     * 原价
+                     */
+                    double m_originPrice;
+                    bool m_originPriceHasBeenSet;
+
+                    /**
+                     * 折扣价
+                     */
+                    double m_discountPrice;
+                    bool m_discountPriceHasBeenSet;
 
                 };
             }

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒资文件在系统中的ID
-                     * @return MediaId 媒资文件在系统中的ID
+                     * 获取<p>媒资文件在系统中的ID</p>
+                     * @return MediaId <p>媒资文件在系统中的ID</p>
                      * 
                      */
                     std::string GetMediaId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒资文件在系统中的ID
+                     * <p>媒资文件在系统中的ID</p>
                      */
                     std::string m_mediaId;
                     bool m_mediaIdHasBeenSet;

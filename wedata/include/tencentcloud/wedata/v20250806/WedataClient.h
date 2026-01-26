@@ -29,6 +29,8 @@
 #include <tencentcloud/wedata/v20250806/model/AssociateResourceGroupToProjectResponse.h>
 #include <tencentcloud/wedata/v20250806/model/AuthorizeDataSourceRequest.h>
 #include <tencentcloud/wedata/v20250806/model/AuthorizeDataSourceResponse.h>
+#include <tencentcloud/wedata/v20250806/model/AuthorizePrivilegesRequest.h>
+#include <tencentcloud/wedata/v20250806/model/AuthorizePrivilegesResponse.h>
 #include <tencentcloud/wedata/v20250806/model/CreateCodeFileRequest.h>
 #include <tencentcloud/wedata/v20250806/model/CreateCodeFileResponse.h>
 #include <tencentcloud/wedata/v20250806/model/CreateCodeFolderRequest.h>
@@ -239,6 +241,8 @@
 #include <tencentcloud/wedata/v20250806/model/ListOpsTriggerWorkflowsResponse.h>
 #include <tencentcloud/wedata/v20250806/model/ListOpsWorkflowsRequest.h>
 #include <tencentcloud/wedata/v20250806/model/ListOpsWorkflowsResponse.h>
+#include <tencentcloud/wedata/v20250806/model/ListPermissionsRequest.h>
+#include <tencentcloud/wedata/v20250806/model/ListPermissionsResponse.h>
 #include <tencentcloud/wedata/v20250806/model/ListProcessLineageRequest.h>
 #include <tencentcloud/wedata/v20250806/model/ListProcessLineageResponse.h>
 #include <tencentcloud/wedata/v20250806/model/ListProjectMembersRequest.h>
@@ -321,6 +325,8 @@
 #include <tencentcloud/wedata/v20250806/model/RerunTriggerWorkflowRunAsyncResponse.h>
 #include <tencentcloud/wedata/v20250806/model/RevokeDataSourceAuthorizationRequest.h>
 #include <tencentcloud/wedata/v20250806/model/RevokeDataSourceAuthorizationResponse.h>
+#include <tencentcloud/wedata/v20250806/model/RevokePrivilegesRequest.h>
+#include <tencentcloud/wedata/v20250806/model/RevokePrivilegesResponse.h>
 #include <tencentcloud/wedata/v20250806/model/RunSQLScriptRequest.h>
 #include <tencentcloud/wedata/v20250806/model/RunSQLScriptResponse.h>
 #include <tencentcloud/wedata/v20250806/model/SetSuccessTaskInstancesAsyncRequest.h>
@@ -400,6 +406,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AuthorizeDataSourceResponse> AuthorizeDataSourceOutcome;
                 typedef std::future<AuthorizeDataSourceOutcome> AuthorizeDataSourceOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::AuthorizeDataSourceRequest&, AuthorizeDataSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AuthorizeDataSourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::AuthorizePrivilegesResponse> AuthorizePrivilegesOutcome;
+                typedef std::future<AuthorizePrivilegesOutcome> AuthorizePrivilegesOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::AuthorizePrivilegesRequest&, AuthorizePrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AuthorizePrivilegesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCodeFileResponse> CreateCodeFileOutcome;
                 typedef std::future<CreateCodeFileOutcome> CreateCodeFileOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateCodeFileRequest&, CreateCodeFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCodeFileAsyncHandler;
@@ -715,6 +724,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListOpsWorkflowsResponse> ListOpsWorkflowsOutcome;
                 typedef std::future<ListOpsWorkflowsOutcome> ListOpsWorkflowsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::ListOpsWorkflowsRequest&, ListOpsWorkflowsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListOpsWorkflowsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListPermissionsResponse> ListPermissionsOutcome;
+                typedef std::future<ListPermissionsOutcome> ListPermissionsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ListPermissionsRequest&, ListPermissionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListPermissionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListProcessLineageResponse> ListProcessLineageOutcome;
                 typedef std::future<ListProcessLineageOutcome> ListProcessLineageOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::ListProcessLineageRequest&, ListProcessLineageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListProcessLineageAsyncHandler;
@@ -838,6 +850,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RevokeDataSourceAuthorizationResponse> RevokeDataSourceAuthorizationOutcome;
                 typedef std::future<RevokeDataSourceAuthorizationOutcome> RevokeDataSourceAuthorizationOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::RevokeDataSourceAuthorizationRequest&, RevokeDataSourceAuthorizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevokeDataSourceAuthorizationAsyncHandler;
+                typedef Outcome<Core::Error, Model::RevokePrivilegesResponse> RevokePrivilegesOutcome;
+                typedef std::future<RevokePrivilegesOutcome> RevokePrivilegesOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::RevokePrivilegesRequest&, RevokePrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RevokePrivilegesAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunSQLScriptResponse> RunSQLScriptOutcome;
                 typedef std::future<RunSQLScriptOutcome> RunSQLScriptOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::RunSQLScriptRequest&, RunSQLScriptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunSQLScriptAsyncHandler;
@@ -951,6 +966,15 @@ namespace TencentCloud
                 AuthorizeDataSourceOutcome AuthorizeDataSource(const Model::AuthorizeDataSourceRequest &request);
                 void AuthorizeDataSourceAsync(const Model::AuthorizeDataSourceRequest& request, const AuthorizeDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AuthorizeDataSourceOutcomeCallable AuthorizeDataSourceCallable(const Model::AuthorizeDataSourceRequest& request);
+
+                /**
+                 *Catalog模式下授权
+                 * @param req AuthorizePrivilegesRequest
+                 * @return AuthorizePrivilegesOutcome
+                 */
+                AuthorizePrivilegesOutcome AuthorizePrivileges(const Model::AuthorizePrivilegesRequest &request);
+                void AuthorizePrivilegesAsync(const Model::AuthorizePrivilegesRequest& request, const AuthorizePrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AuthorizePrivilegesOutcomeCallable AuthorizePrivilegesCallable(const Model::AuthorizePrivilegesRequest& request);
 
                 /**
                  *新建代码文件
@@ -1898,6 +1922,15 @@ namespace TencentCloud
                 ListOpsWorkflowsOutcomeCallable ListOpsWorkflowsCallable(const Model::ListOpsWorkflowsRequest& request);
 
                 /**
+                 *获取可授权权限详情
+                 * @param req ListPermissionsRequest
+                 * @return ListPermissionsOutcome
+                 */
+                ListPermissionsOutcome ListPermissions(const Model::ListPermissionsRequest &request);
+                void ListPermissionsAsync(const Model::ListPermissionsRequest& request, const ListPermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListPermissionsOutcomeCallable ListPermissionsCallable(const Model::ListPermissionsRequest& request);
+
+                /**
                  *获取资产血缘信息
                  * @param req ListProcessLineageRequest
                  * @return ListProcessLineageOutcome
@@ -2268,6 +2301,15 @@ namespace TencentCloud
                 RevokeDataSourceAuthorizationOutcome RevokeDataSourceAuthorization(const Model::RevokeDataSourceAuthorizationRequest &request);
                 void RevokeDataSourceAuthorizationAsync(const Model::RevokeDataSourceAuthorizationRequest& request, const RevokeDataSourceAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RevokeDataSourceAuthorizationOutcomeCallable RevokeDataSourceAuthorizationCallable(const Model::RevokeDataSourceAuthorizationRequest& request);
+
+                /**
+                 *Catalog模式下授权回收
+                 * @param req RevokePrivilegesRequest
+                 * @return RevokePrivilegesOutcome
+                 */
+                RevokePrivilegesOutcome RevokePrivileges(const Model::RevokePrivilegesRequest &request);
+                void RevokePrivilegesAsync(const Model::RevokePrivilegesRequest& request, const RevokePrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RevokePrivilegesOutcomeCallable RevokePrivilegesCallable(const Model::RevokePrivilegesRequest& request);
 
                 /**
                  *运行SQL脚本

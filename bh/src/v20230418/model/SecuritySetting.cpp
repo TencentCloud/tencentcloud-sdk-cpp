@@ -21,6 +21,11 @@ using namespace TencentCloud::Bh::V20230418::Model;
 using namespace std;
 
 SecuritySetting::SecuritySetting() :
+    m_authModeHasBeenSet(false),
+    m_passwordHasBeenSet(false),
+    m_loginHasBeenSet(false),
+    m_lDAPHasBeenSet(false),
+    m_oAuthHasBeenSet(false),
     m_authModeGMHasBeenSet(false),
     m_reconnectionHasBeenSet(false),
     m_envInternetAccessHasBeenSet(false)
@@ -31,6 +36,91 @@ CoreInternalOutcome SecuritySetting::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("AuthMode") && !value["AuthMode"].IsNull())
+    {
+        if (!value["AuthMode"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecuritySetting.AuthMode` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_authMode.Deserialize(value["AuthMode"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_authModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Password") && !value["Password"].IsNull())
+    {
+        if (!value["Password"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecuritySetting.Password` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_password.Deserialize(value["Password"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_passwordHasBeenSet = true;
+    }
+
+    if (value.HasMember("Login") && !value["Login"].IsNull())
+    {
+        if (!value["Login"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecuritySetting.Login` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_login.Deserialize(value["Login"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_loginHasBeenSet = true;
+    }
+
+    if (value.HasMember("LDAP") && !value["LDAP"].IsNull())
+    {
+        if (!value["LDAP"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecuritySetting.LDAP` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_lDAP.Deserialize(value["LDAP"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_lDAPHasBeenSet = true;
+    }
+
+    if (value.HasMember("OAuth") && !value["OAuth"].IsNull())
+    {
+        if (!value["OAuth"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecuritySetting.OAuth` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_oAuth.Deserialize(value["OAuth"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_oAuthHasBeenSet = true;
+    }
 
     if (value.HasMember("AuthModeGM") && !value["AuthModeGM"].IsNull())
     {
@@ -90,6 +180,51 @@ CoreInternalOutcome SecuritySetting::Deserialize(const rapidjson::Value &value)
 void SecuritySetting::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_authModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_authMode.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_passwordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Password";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_password.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_loginHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Login";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_login.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_lDAPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LDAP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_lDAP.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_oAuthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OAuth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_oAuth.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_authModeGMHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -119,6 +254,86 @@ void SecuritySetting::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
 
 }
 
+
+AuthModeSetting SecuritySetting::GetAuthMode() const
+{
+    return m_authMode;
+}
+
+void SecuritySetting::SetAuthMode(const AuthModeSetting& _authMode)
+{
+    m_authMode = _authMode;
+    m_authModeHasBeenSet = true;
+}
+
+bool SecuritySetting::AuthModeHasBeenSet() const
+{
+    return m_authModeHasBeenSet;
+}
+
+PasswordSetting SecuritySetting::GetPassword() const
+{
+    return m_password;
+}
+
+void SecuritySetting::SetPassword(const PasswordSetting& _password)
+{
+    m_password = _password;
+    m_passwordHasBeenSet = true;
+}
+
+bool SecuritySetting::PasswordHasBeenSet() const
+{
+    return m_passwordHasBeenSet;
+}
+
+LoginSetting SecuritySetting::GetLogin() const
+{
+    return m_login;
+}
+
+void SecuritySetting::SetLogin(const LoginSetting& _login)
+{
+    m_login = _login;
+    m_loginHasBeenSet = true;
+}
+
+bool SecuritySetting::LoginHasBeenSet() const
+{
+    return m_loginHasBeenSet;
+}
+
+LDAPSetting SecuritySetting::GetLDAP() const
+{
+    return m_lDAP;
+}
+
+void SecuritySetting::SetLDAP(const LDAPSetting& _lDAP)
+{
+    m_lDAP = _lDAP;
+    m_lDAPHasBeenSet = true;
+}
+
+bool SecuritySetting::LDAPHasBeenSet() const
+{
+    return m_lDAPHasBeenSet;
+}
+
+OAuthSetting SecuritySetting::GetOAuth() const
+{
+    return m_oAuth;
+}
+
+void SecuritySetting::SetOAuth(const OAuthSetting& _oAuth)
+{
+    m_oAuth = _oAuth;
+    m_oAuthHasBeenSet = true;
+}
+
+bool SecuritySetting::OAuthHasBeenSet() const
+{
+    return m_oAuthHasBeenSet;
+}
 
 AuthModeSetting SecuritySetting::GetAuthModeGM() const
 {

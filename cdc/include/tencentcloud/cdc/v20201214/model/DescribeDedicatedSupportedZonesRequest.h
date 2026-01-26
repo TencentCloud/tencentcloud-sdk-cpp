@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取传入region列表
-                     * @return Regions 传入region列表
+                     * 获取<p>传入region列表</p>
+                     * @return Regions <p>传入region列表</p>
                      * 
                      */
                     std::vector<int64_t> GetRegions() const;
 
                     /**
-                     * 设置传入region列表
-                     * @param _regions 传入region列表
+                     * 设置<p>传入region列表</p>
+                     * @param _regions <p>传入region列表</p>
                      * 
                      */
                     void SetRegions(const std::vector<int64_t>& _regions);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 传入region列表
+                     * <p>传入region列表</p>
                      */
                     std::vector<int64_t> m_regions;
                     bool m_regionsHasBeenSet;

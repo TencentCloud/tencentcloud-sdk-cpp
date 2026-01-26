@@ -133,6 +133,8 @@
 #include <tencentcloud/billing/v20180709/model/DescribeGatherResourceResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeGatherRuleDetailRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeGatherRuleDetailResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeRenewInstancesRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeRenewInstancesResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeSavingPlanResourceInfoRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeSavingPlanResourceInfoResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeTagListRequest.h>
@@ -334,6 +336,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGatherRuleDetailResponse> DescribeGatherRuleDetailOutcome;
                 typedef std::future<DescribeGatherRuleDetailOutcome> DescribeGatherRuleDetailOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeGatherRuleDetailRequest&, DescribeGatherRuleDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatherRuleDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRenewInstancesResponse> DescribeRenewInstancesOutcome;
+                typedef std::future<DescribeRenewInstancesOutcome> DescribeRenewInstancesOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeRenewInstancesRequest&, DescribeRenewInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRenewInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSavingPlanResourceInfoResponse> DescribeSavingPlanResourceInfoOutcome;
                 typedef std::future<DescribeSavingPlanResourceInfoOutcome> DescribeSavingPlanResourceInfoOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeSavingPlanResourceInfoRequest&, DescribeSavingPlanResourceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingPlanResourceInfoAsyncHandler;
@@ -871,6 +876,17 @@ namespace TencentCloud
                 DescribeGatherRuleDetailOutcome DescribeGatherRuleDetail(const Model::DescribeGatherRuleDetailRequest &request);
                 void DescribeGatherRuleDetailAsync(const Model::DescribeGatherRuleDetailRequest& request, const DescribeGatherRuleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGatherRuleDetailOutcomeCallable DescribeGatherRuleDetailCallable(const Model::DescribeGatherRuleDetailRequest& request);
+
+                /**
+                 *注意事项：
+1、本接口支持查询已接入续费管理页的包年包月实例，包括运行中、已隔离（部分产品不支持）
+2、子用户使用该接口时，应具备QcloudFinanceRenewManageFullAccess权限策略。
+                 * @param req DescribeRenewInstancesRequest
+                 * @return DescribeRenewInstancesOutcome
+                 */
+                DescribeRenewInstancesOutcome DescribeRenewInstances(const Model::DescribeRenewInstancesRequest &request);
+                void DescribeRenewInstancesAsync(const Model::DescribeRenewInstancesRequest& request, const DescribeRenewInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRenewInstancesOutcomeCallable DescribeRenewInstancesCallable(const Model::DescribeRenewInstancesRequest& request);
 
                 /**
                  *查询节省计划详情

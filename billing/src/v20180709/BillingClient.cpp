@@ -2790,6 +2790,56 @@ BillingClient::DescribeGatherRuleDetailOutcomeCallable BillingClient::DescribeGa
     return prom->get_future();
 }
 
+BillingClient::DescribeRenewInstancesOutcome BillingClient::DescribeRenewInstances(const DescribeRenewInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRenewInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRenewInstancesResponse rsp = DescribeRenewInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRenewInstancesOutcome(rsp);
+        else
+            return DescribeRenewInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRenewInstancesOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::DescribeRenewInstancesAsync(const DescribeRenewInstancesRequest& request, const DescribeRenewInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRenewInstancesRequest&;
+    using Resp = DescribeRenewInstancesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRenewInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BillingClient::DescribeRenewInstancesOutcomeCallable BillingClient::DescribeRenewInstancesCallable(const DescribeRenewInstancesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRenewInstancesOutcome>>();
+    DescribeRenewInstancesAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const DescribeRenewInstancesRequest&,
+        DescribeRenewInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 BillingClient::DescribeSavingPlanResourceInfoOutcome BillingClient::DescribeSavingPlanResourceInfo(const DescribeSavingPlanResourceInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSavingPlanResourceInfo");

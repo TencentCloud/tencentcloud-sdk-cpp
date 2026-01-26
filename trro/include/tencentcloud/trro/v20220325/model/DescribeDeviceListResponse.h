@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备信息列表
-                     * @return Devices 设备信息列表
+                     * 获取<p>设备信息列表</p>
+                     * @return Devices <p>设备信息列表</p>
                      * 
                      */
                     std::vector<DeviceInfo> GetDevices() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool DevicesHasBeenSet() const;
 
                     /**
-                     * 获取设备总数
-                     * @return Total 设备总数
+                     * 获取<p>设备总数</p>
+                     * @return Total <p>设备总数</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取本次返回的设备数
-                     * @return Num 本次返回的设备数
+                     * 获取<p>本次返回的设备数</p>
+                     * @return Num <p>本次返回的设备数</p>
                      * 
                      */
                     int64_t GetNum() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 设备信息列表
+                     * <p>设备信息列表</p>
                      */
                     std::vector<DeviceInfo> m_devices;
                     bool m_devicesHasBeenSet;
 
                     /**
-                     * 设备总数
+                     * <p>设备总数</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 本次返回的设备数
+                     * <p>本次返回的设备数</p>
                      */
                     int64_t m_num;
                     bool m_numHasBeenSet;

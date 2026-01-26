@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/bh/v20230418/model/Filter.h>
 #include <tencentcloud/bh/v20230418/model/TagFilter.h>
 
 
@@ -128,6 +129,27 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
+                     * 获取主机绑定的堡垒机服务ID集合  未绑定的通过Filters进行传递
+                     * @return ResourceIdSet 主机绑定的堡垒机服务ID集合  未绑定的通过Filters进行传递
+                     * 
+                     */
+                    std::vector<std::string> GetResourceIdSet() const;
+
+                    /**
+                     * 设置主机绑定的堡垒机服务ID集合  未绑定的通过Filters进行传递
+                     * @param _resourceIdSet 主机绑定的堡垒机服务ID集合  未绑定的通过Filters进行传递
+                     * 
+                     */
+                    void SetResourceIdSet(const std::vector<std::string>& _resourceIdSet);
+
+                    /**
+                     * 判断参数 ResourceIdSet 是否已赋值
+                     * @return ResourceIdSet 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdSetHasBeenSet() const;
+
+                    /**
                      * 获取分页偏移位置，默认值为0
                      * @return Offset 分页偏移位置，默认值为0
                      * 
@@ -233,6 +255,27 @@ namespace TencentCloud
                     bool DepartmentIdHasBeenSet() const;
 
                     /**
+                     * 获取过滤条件,支持 BindingStatus｜VpcId ｜InstanceId ｜DeviceAccount ｜ManageDimension｜DomainId｜Ip｜Name
+                     * @return Filters 过滤条件,支持 BindingStatus｜VpcId ｜InstanceId ｜DeviceAccount ｜ManageDimension｜DomainId｜Ip｜Name
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置过滤条件,支持 BindingStatus｜VpcId ｜InstanceId ｜DeviceAccount ｜ManageDimension｜DomainId｜Ip｜Name
+                     * @param _filters 过滤条件,支持 BindingStatus｜VpcId ｜InstanceId ｜DeviceAccount ｜ManageDimension｜DomainId｜Ip｜Name
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
+                    /**
                      * 获取过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系
                      * @return TagFilters 过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系
                      * 
@@ -280,6 +323,12 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
+                     * 主机绑定的堡垒机服务ID集合  未绑定的通过Filters进行传递
+                     */
+                    std::vector<std::string> m_resourceIdSet;
+                    bool m_resourceIdSetHasBeenSet;
+
+                    /**
                      * 分页偏移位置，默认值为0
                      */
                     uint64_t m_offset;
@@ -308,6 +357,12 @@ namespace TencentCloud
                      */
                     std::string m_departmentId;
                     bool m_departmentIdHasBeenSet;
+
+                    /**
+                     * 过滤条件,支持 BindingStatus｜VpcId ｜InstanceId ｜DeviceAccount ｜ManageDimension｜DomainId｜Ip｜Name
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                     /**
                      * 过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系

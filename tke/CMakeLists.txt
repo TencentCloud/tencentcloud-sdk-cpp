@@ -313,6 +313,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeOpenPolicyListRequest.h
   include/tencentcloud/tke/v20180525/model/PrometheusTemplateSyncTarget.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTemplatesRequest.h
+  include/tencentcloud/tke/v20180525/model/EnableEksEventPersistenceRequest.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusAlertPolicyResponse.h
   include/tencentcloud/tke/v20180525/model/EnableVpcCniNetworkTypeResponse.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusAlertRuleResponse.h
@@ -571,6 +572,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/EdgeArgsFlag.h
   include/tencentcloud/tke/v20180525/model/CheckInstancesUpgradeAbleResponse.h
   include/tencentcloud/tke/v20180525/model/CreatePrometheusTempRequest.h
+  include/tencentcloud/tke/v20180525/model/EnableEksEventPersistenceResponse.h
   include/tencentcloud/tke/v20180525/model/CreatePrometheusDashboardRequest.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterRouteTableResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeAddonValuesResponse.h
@@ -1109,6 +1111,7 @@ set(tke_src
   src/v20180525/model/DescribeOpenPolicyListRequest.cpp
   src/v20180525/model/PrometheusTemplateSyncTarget.cpp
   src/v20180525/model/DescribePrometheusTemplatesRequest.cpp
+  src/v20180525/model/EnableEksEventPersistenceRequest.cpp
   src/v20180525/model/DescribePrometheusAlertPolicyResponse.cpp
   src/v20180525/model/EnableVpcCniNetworkTypeResponse.cpp
   src/v20180525/model/DescribePrometheusAlertRuleResponse.cpp
@@ -1367,6 +1370,7 @@ set(tke_src
   src/v20180525/model/EdgeArgsFlag.cpp
   src/v20180525/model/CheckInstancesUpgradeAbleResponse.cpp
   src/v20180525/model/CreatePrometheusTempRequest.cpp
+  src/v20180525/model/EnableEksEventPersistenceResponse.cpp
   src/v20180525/model/CreatePrometheusDashboardRequest.cpp
   src/v20180525/model/DeleteClusterRouteTableResponse.cpp
   src/v20180525/model/DescribeAddonValuesResponse.cpp

@@ -22,7 +22,9 @@ using namespace std;
 
 LineageNodeInfo::LineageNodeInfo() :
     m_resourceHasBeenSet(false),
-    m_relationHasBeenSet(false)
+    m_relationHasBeenSet(false),
+    m_downStreamCountHasBeenSet(false),
+    m_upStreamCountHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,26 @@ CoreInternalOutcome LineageNodeInfo::Deserialize(const rapidjson::Value &value)
         m_relationHasBeenSet = true;
     }
 
+    if (value.HasMember("DownStreamCount") && !value["DownStreamCount"].IsNull())
+    {
+        if (!value["DownStreamCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LineageNodeInfo.DownStreamCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_downStreamCount = value["DownStreamCount"].GetInt64();
+        m_downStreamCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpStreamCount") && !value["UpStreamCount"].IsNull())
+    {
+        if (!value["UpStreamCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LineageNodeInfo.UpStreamCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_upStreamCount = value["UpStreamCount"].GetInt64();
+        m_upStreamCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +110,22 @@ void LineageNodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_relation.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_downStreamCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DownStreamCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_downStreamCount, allocator);
+    }
+
+    if (m_upStreamCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpStreamCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_upStreamCount, allocator);
     }
 
 }
@@ -123,5 +161,37 @@ void LineageNodeInfo::SetRelation(const LineageRelation& _relation)
 bool LineageNodeInfo::RelationHasBeenSet() const
 {
     return m_relationHasBeenSet;
+}
+
+int64_t LineageNodeInfo::GetDownStreamCount() const
+{
+    return m_downStreamCount;
+}
+
+void LineageNodeInfo::SetDownStreamCount(const int64_t& _downStreamCount)
+{
+    m_downStreamCount = _downStreamCount;
+    m_downStreamCountHasBeenSet = true;
+}
+
+bool LineageNodeInfo::DownStreamCountHasBeenSet() const
+{
+    return m_downStreamCountHasBeenSet;
+}
+
+int64_t LineageNodeInfo::GetUpStreamCount() const
+{
+    return m_upStreamCount;
+}
+
+void LineageNodeInfo::SetUpStreamCount(const int64_t& _upStreamCount)
+{
+    m_upStreamCount = _upStreamCount;
+    m_upStreamCountHasBeenSet = true;
+}
+
+bool LineageNodeInfo::UpStreamCountHasBeenSet() const
+{
+    return m_upStreamCountHasBeenSet;
 }
 
