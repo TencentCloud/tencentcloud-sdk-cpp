@@ -23,7 +23,7 @@ using namespace std;
 ConnectionStateTimeouts::ConnectionStateTimeouts() :
     m_uDPMappingTimeoutHasBeenSet(false),
     m_tCPEstablishedConnectionTimeoutHasBeenSet(false),
-    m_tcpTimeWaitTimeoutHasBeenSet(false)
+    m_tCPTimeWaitTimeoutHasBeenSet(false)
 {
 }
 
@@ -52,14 +52,14 @@ CoreInternalOutcome ConnectionStateTimeouts::Deserialize(const rapidjson::Value 
         m_tCPEstablishedConnectionTimeoutHasBeenSet = true;
     }
 
-    if (value.HasMember("TcpTimeWaitTimeout") && !value["TcpTimeWaitTimeout"].IsNull())
+    if (value.HasMember("TCPTimeWaitTimeout") && !value["TCPTimeWaitTimeout"].IsNull())
     {
-        if (!value["TcpTimeWaitTimeout"].IsUint64())
+        if (!value["TCPTimeWaitTimeout"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `ConnectionStateTimeouts.TcpTimeWaitTimeout` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ConnectionStateTimeouts.TCPTimeWaitTimeout` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_tcpTimeWaitTimeout = value["TcpTimeWaitTimeout"].GetUint64();
-        m_tcpTimeWaitTimeoutHasBeenSet = true;
+        m_tCPTimeWaitTimeout = value["TCPTimeWaitTimeout"].GetUint64();
+        m_tCPTimeWaitTimeoutHasBeenSet = true;
     }
 
 
@@ -85,12 +85,12 @@ void ConnectionStateTimeouts::ToJsonObject(rapidjson::Value &value, rapidjson::D
         value.AddMember(iKey, m_tCPEstablishedConnectionTimeout, allocator);
     }
 
-    if (m_tcpTimeWaitTimeoutHasBeenSet)
+    if (m_tCPTimeWaitTimeoutHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TcpTimeWaitTimeout";
+        string key = "TCPTimeWaitTimeout";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_tcpTimeWaitTimeout, allocator);
+        value.AddMember(iKey, m_tCPTimeWaitTimeout, allocator);
     }
 
 }
@@ -128,19 +128,19 @@ bool ConnectionStateTimeouts::TCPEstablishedConnectionTimeoutHasBeenSet() const
     return m_tCPEstablishedConnectionTimeoutHasBeenSet;
 }
 
-uint64_t ConnectionStateTimeouts::GetTcpTimeWaitTimeout() const
+uint64_t ConnectionStateTimeouts::GetTCPTimeWaitTimeout() const
 {
-    return m_tcpTimeWaitTimeout;
+    return m_tCPTimeWaitTimeout;
 }
 
-void ConnectionStateTimeouts::SetTcpTimeWaitTimeout(const uint64_t& _tcpTimeWaitTimeout)
+void ConnectionStateTimeouts::SetTCPTimeWaitTimeout(const uint64_t& _tCPTimeWaitTimeout)
 {
-    m_tcpTimeWaitTimeout = _tcpTimeWaitTimeout;
-    m_tcpTimeWaitTimeoutHasBeenSet = true;
+    m_tCPTimeWaitTimeout = _tCPTimeWaitTimeout;
+    m_tCPTimeWaitTimeoutHasBeenSet = true;
 }
 
-bool ConnectionStateTimeouts::TcpTimeWaitTimeoutHasBeenSet() const
+bool ConnectionStateTimeouts::TCPTimeWaitTimeoutHasBeenSet() const
 {
-    return m_tcpTimeWaitTimeoutHasBeenSet;
+    return m_tCPTimeWaitTimeoutHasBeenSet;
 }
 

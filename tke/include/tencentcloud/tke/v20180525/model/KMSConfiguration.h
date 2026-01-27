@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取kms id，可以在密钥管理控制台获取
-                     * @return KeyId kms id，可以在密钥管理控制台获取
+                     * 获取自定义密钥,当不指定KeyId时，采用默认生成密钥（TKE-KMS）
+                     * @return KeyId 自定义密钥,当不指定KeyId时，采用默认生成密钥（TKE-KMS）
                      * 
                      */
                     std::string GetKeyId() const;
 
                     /**
-                     * 设置kms id，可以在密钥管理控制台获取
-                     * @param _keyId kms id，可以在密钥管理控制台获取
+                     * 设置自定义密钥,当不指定KeyId时，采用默认生成密钥（TKE-KMS）
+                     * @param _keyId 自定义密钥,当不指定KeyId时，采用默认生成密钥（TKE-KMS）
                      * 
                      */
                     void SetKeyId(const std::string& _keyId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool KeyIdHasBeenSet() const;
 
                     /**
-                     * 获取kms 地域
-                     * @return KmsRegion kms 地域
+                     * 获取默认生成密钥或自定义密钥地域信息
+                     * @return KmsRegion 默认生成密钥或自定义密钥地域信息
                      * 
                      */
                     std::string GetKmsRegion() const;
 
                     /**
-                     * 设置kms 地域
-                     * @param _kmsRegion kms 地域
+                     * 设置默认生成密钥或自定义密钥地域信息
+                     * @param _kmsRegion 默认生成密钥或自定义密钥地域信息
                      * 
                      */
                     void SetKmsRegion(const std::string& _kmsRegion);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * kms id，可以在密钥管理控制台获取
+                     * 自定义密钥,当不指定KeyId时，采用默认生成密钥（TKE-KMS）
                      */
                     std::string m_keyId;
                     bool m_keyIdHasBeenSet;
 
                     /**
-                     * kms 地域
+                     * 默认生成密钥或自定义密钥地域信息
                      */
                     std::string m_kmsRegion;
                     bool m_kmsRegionHasBeenSet;

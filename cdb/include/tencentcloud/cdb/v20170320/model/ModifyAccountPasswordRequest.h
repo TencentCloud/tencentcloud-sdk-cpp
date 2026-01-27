@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool AccountsHasBeenSet() const;
 
                     /**
-                     * 获取是否跳过校验密码复杂度
-                     * @return SkipValidatePassword 是否跳过校验密码复杂度
+                     * 获取该字段已废弃。
+                     * @return SkipValidatePassword 该字段已废弃。
                      * @deprecated
                      */
                     bool GetSkipValidatePassword() const;
 
                     /**
-                     * 设置是否跳过校验密码复杂度
-                     * @param _skipValidatePassword 是否跳过校验密码复杂度
+                     * 设置该字段已废弃。
+                     * @param _skipValidatePassword 该字段已废弃。
                      * @deprecated
                      */
                     void SetSkipValidatePassword(const bool& _skipValidatePassword);
@@ -148,7 +148,7 @@ namespace TencentCloud
                     bool m_accountsHasBeenSet;
 
                     /**
-                     * 是否跳过校验密码复杂度
+                     * 该字段已废弃。
                      */
                     bool m_skipValidatePassword;
                     bool m_skipValidatePasswordHasBeenSet;

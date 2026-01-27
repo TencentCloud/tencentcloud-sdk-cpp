@@ -290,6 +290,56 @@ CbsClient::BindAutoSnapshotPolicyOutcomeCallable CbsClient::BindAutoSnapshotPoli
     return prom->get_future();
 }
 
+CbsClient::CopyAutoSnapshotPolicyCrossAccountOutcome CbsClient::CopyAutoSnapshotPolicyCrossAccount(const CopyAutoSnapshotPolicyCrossAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "CopyAutoSnapshotPolicyCrossAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CopyAutoSnapshotPolicyCrossAccountResponse rsp = CopyAutoSnapshotPolicyCrossAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CopyAutoSnapshotPolicyCrossAccountOutcome(rsp);
+        else
+            return CopyAutoSnapshotPolicyCrossAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return CopyAutoSnapshotPolicyCrossAccountOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::CopyAutoSnapshotPolicyCrossAccountAsync(const CopyAutoSnapshotPolicyCrossAccountRequest& request, const CopyAutoSnapshotPolicyCrossAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CopyAutoSnapshotPolicyCrossAccountRequest&;
+    using Resp = CopyAutoSnapshotPolicyCrossAccountResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CopyAutoSnapshotPolicyCrossAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CbsClient::CopyAutoSnapshotPolicyCrossAccountOutcomeCallable CbsClient::CopyAutoSnapshotPolicyCrossAccountCallable(const CopyAutoSnapshotPolicyCrossAccountRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CopyAutoSnapshotPolicyCrossAccountOutcome>>();
+    CopyAutoSnapshotPolicyCrossAccountAsync(
+    request,
+    [prom](
+        const CbsClient*,
+        const CopyAutoSnapshotPolicyCrossAccountRequest&,
+        CopyAutoSnapshotPolicyCrossAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CbsClient::CopySnapshotCrossRegionsOutcome CbsClient::CopySnapshotCrossRegions(const CopySnapshotCrossRegionsRequest &request)
 {
     auto outcome = MakeRequest(request, "CopySnapshotCrossRegions");

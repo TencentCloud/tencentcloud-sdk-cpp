@@ -26,7 +26,8 @@ IsolateClusterRequest::IsolateClusterRequest() :
     m_clusterIdHasBeenSet(false),
     m_dbTypeHasBeenSet(false),
     m_isolateReasonTypesHasBeenSet(false),
-    m_isolateReasonHasBeenSet(false)
+    m_isolateReasonHasBeenSet(false),
+    m_saveBackupHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,14 @@ string IsolateClusterRequest::ToJsonString() const
         string key = "IsolateReason";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_isolateReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_saveBackupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SaveBackup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_saveBackup, allocator);
     }
 
 
@@ -144,6 +153,22 @@ void IsolateClusterRequest::SetIsolateReason(const string& _isolateReason)
 bool IsolateClusterRequest::IsolateReasonHasBeenSet() const
 {
     return m_isolateReasonHasBeenSet;
+}
+
+bool IsolateClusterRequest::GetSaveBackup() const
+{
+    return m_saveBackup;
+}
+
+void IsolateClusterRequest::SetSaveBackup(const bool& _saveBackup)
+{
+    m_saveBackup = _saveBackup;
+    m_saveBackupHasBeenSet = true;
+}
+
+bool IsolateClusterRequest::SaveBackupHasBeenSet() const
+{
+    return m_saveBackupHasBeenSet;
 }
 
 

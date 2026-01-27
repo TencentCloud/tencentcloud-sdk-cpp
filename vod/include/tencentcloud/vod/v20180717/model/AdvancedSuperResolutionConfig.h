@@ -1,0 +1,264 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_ADVANCEDSUPERRESOLUTIONCONFIG_H_
+#define TENCENTCLOUD_VOD_V20180717_MODEL_ADVANCEDSUPERRESOLUTIONCONFIG_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Vod
+    {
+        namespace V20180717
+        {
+            namespace Model
+            {
+                /**
+                * 超分配置
+                */
+                class AdvancedSuperResolutionConfig : public AbstractModel
+                {
+                public:
+                    AdvancedSuperResolutionConfig();
+                    ~AdvancedSuperResolutionConfig() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取能力配置开关，可选值：
+<li>ON：开启；</li>
+<li>OFF：关闭。</li>
+默认值：ON。
+                     * @return Switch 能力配置开关，可选值：
+<li>ON：开启；</li>
+<li>OFF：关闭。</li>
+默认值：ON。
+                     * 
+                     */
+                    std::string GetSwitch() const;
+
+                    /**
+                     * 设置能力配置开关，可选值：
+<li>ON：开启；</li>
+<li>OFF：关闭。</li>
+默认值：ON。
+                     * @param _switch 能力配置开关，可选值：
+<li>ON：开启；</li>
+<li>OFF：关闭。</li>
+默认值：ON。
+                     * 
+                     */
+                    void SetSwitch(const std::string& _switch);
+
+                    /**
+                     * 判断参数 Switch 是否已赋值
+                     * @return Switch 是否已赋值
+                     * 
+                     */
+                    bool SwitchHasBeenSet() const;
+
+                    /**
+                     * 获取类型，可选值：
+<li>standard：通用超分</li>
+<li>super：高级超分。</li>
+默认值：standard。
+                     * @return Type 类型，可选值：
+<li>standard：通用超分</li>
+<li>super：高级超分。</li>
+默认值：standard。
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置类型，可选值：
+<li>standard：通用超分</li>
+<li>super：高级超分。</li>
+默认值：standard。
+                     * @param _type 类型，可选值：
+<li>standard：通用超分</li>
+<li>super：高级超分。</li>
+默认值：standard。
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取输出图片模式，默认percent。
+<li> aspect: 超分至指定宽高的较大矩形。</li>
+<li> fixed: 超分至固定宽高，强制缩放。</li>
+<li> percent: 超分倍率，可以为小数。</li>
+                     * @return Mode 输出图片模式，默认percent。
+<li> aspect: 超分至指定宽高的较大矩形。</li>
+<li> fixed: 超分至固定宽高，强制缩放。</li>
+<li> percent: 超分倍率，可以为小数。</li>
+                     * 
+                     */
+                    std::string GetMode() const;
+
+                    /**
+                     * 设置输出图片模式，默认percent。
+<li> aspect: 超分至指定宽高的较大矩形。</li>
+<li> fixed: 超分至固定宽高，强制缩放。</li>
+<li> percent: 超分倍率，可以为小数。</li>
+                     * @param _mode 输出图片模式，默认percent。
+<li> aspect: 超分至指定宽高的较大矩形。</li>
+<li> fixed: 超分至固定宽高，强制缩放。</li>
+<li> percent: 超分倍率，可以为小数。</li>
+                     * 
+                     */
+                    void SetMode(const std::string& _mode);
+
+                    /**
+                     * 判断参数 Mode 是否已赋值
+                     * @return Mode 是否已赋值
+                     * 
+                     */
+                    bool ModeHasBeenSet() const;
+
+                    /**
+                     * 获取超分倍率，可以为小数。
+                     * @return Percent 超分倍率，可以为小数。
+                     * 
+                     */
+                    double GetPercent() const;
+
+                    /**
+                     * 设置超分倍率，可以为小数。
+                     * @param _percent 超分倍率，可以为小数。
+                     * 
+                     */
+                    void SetPercent(const double& _percent);
+
+                    /**
+                     * 判断参数 Percent 是否已赋值
+                     * @return Percent 是否已赋值
+                     * 
+                     */
+                    bool PercentHasBeenSet() const;
+
+                    /**
+                     * 获取目标图片宽度，不能超过4096。
+                     * @return Width 目标图片宽度，不能超过4096。
+                     * 
+                     */
+                    int64_t GetWidth() const;
+
+                    /**
+                     * 设置目标图片宽度，不能超过4096。
+                     * @param _width 目标图片宽度，不能超过4096。
+                     * 
+                     */
+                    void SetWidth(const int64_t& _width);
+
+                    /**
+                     * 判断参数 Width 是否已赋值
+                     * @return Width 是否已赋值
+                     * 
+                     */
+                    bool WidthHasBeenSet() const;
+
+                    /**
+                     * 获取目标图片高度，不能超过4096。
+                     * @return Height 目标图片高度，不能超过4096。
+                     * 
+                     */
+                    int64_t GetHeight() const;
+
+                    /**
+                     * 设置目标图片高度，不能超过4096。
+                     * @param _height 目标图片高度，不能超过4096。
+                     * 
+                     */
+                    void SetHeight(const int64_t& _height);
+
+                    /**
+                     * 判断参数 Height 是否已赋值
+                     * @return Height 是否已赋值
+                     * 
+                     */
+                    bool HeightHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 能力配置开关，可选值：
+<li>ON：开启；</li>
+<li>OFF：关闭。</li>
+默认值：ON。
+                     */
+                    std::string m_switch;
+                    bool m_switchHasBeenSet;
+
+                    /**
+                     * 类型，可选值：
+<li>standard：通用超分</li>
+<li>super：高级超分。</li>
+默认值：standard。
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * 输出图片模式，默认percent。
+<li> aspect: 超分至指定宽高的较大矩形。</li>
+<li> fixed: 超分至固定宽高，强制缩放。</li>
+<li> percent: 超分倍率，可以为小数。</li>
+                     */
+                    std::string m_mode;
+                    bool m_modeHasBeenSet;
+
+                    /**
+                     * 超分倍率，可以为小数。
+                     */
+                    double m_percent;
+                    bool m_percentHasBeenSet;
+
+                    /**
+                     * 目标图片宽度，不能超过4096。
+                     */
+                    int64_t m_width;
+                    bool m_widthHasBeenSet;
+
+                    /**
+                     * 目标图片高度，不能超过4096。
+                     */
+                    int64_t m_height;
+                    bool m_heightHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_ADVANCEDSUPERRESOLUTIONCONFIG_H_

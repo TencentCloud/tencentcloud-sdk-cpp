@@ -25,12 +25,6 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/nlp/v20190408/model/AnalyzeSentimentRequest.h>
 #include <tencentcloud/nlp/v20190408/model/AnalyzeSentimentResponse.h>
-#include <tencentcloud/nlp/v20190408/model/ClassifyContentRequest.h>
-#include <tencentcloud/nlp/v20190408/model/ClassifyContentResponse.h>
-#include <tencentcloud/nlp/v20190408/model/ComposeCoupletRequest.h>
-#include <tencentcloud/nlp/v20190408/model/ComposeCoupletResponse.h>
-#include <tencentcloud/nlp/v20190408/model/EvaluateSentenceSimilarityRequest.h>
-#include <tencentcloud/nlp/v20190408/model/EvaluateSentenceSimilarityResponse.h>
 #include <tencentcloud/nlp/v20190408/model/ParseWordsRequest.h>
 #include <tencentcloud/nlp/v20190408/model/ParseWordsResponse.h>
 #include <tencentcloud/nlp/v20190408/model/SentenceCorrectionRequest.h>
@@ -52,15 +46,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AnalyzeSentimentResponse> AnalyzeSentimentOutcome;
                 typedef std::future<AnalyzeSentimentOutcome> AnalyzeSentimentOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::AnalyzeSentimentRequest&, AnalyzeSentimentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AnalyzeSentimentAsyncHandler;
-                typedef Outcome<Core::Error, Model::ClassifyContentResponse> ClassifyContentOutcome;
-                typedef std::future<ClassifyContentOutcome> ClassifyContentOutcomeCallable;
-                typedef std::function<void(const NlpClient*, const Model::ClassifyContentRequest&, ClassifyContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClassifyContentAsyncHandler;
-                typedef Outcome<Core::Error, Model::ComposeCoupletResponse> ComposeCoupletOutcome;
-                typedef std::future<ComposeCoupletOutcome> ComposeCoupletOutcomeCallable;
-                typedef std::function<void(const NlpClient*, const Model::ComposeCoupletRequest&, ComposeCoupletOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ComposeCoupletAsyncHandler;
-                typedef Outcome<Core::Error, Model::EvaluateSentenceSimilarityResponse> EvaluateSentenceSimilarityOutcome;
-                typedef std::future<EvaluateSentenceSimilarityOutcome> EvaluateSentenceSimilarityOutcomeCallable;
-                typedef std::function<void(const NlpClient*, const Model::EvaluateSentenceSimilarityRequest&, EvaluateSentenceSimilarityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EvaluateSentenceSimilarityAsyncHandler;
                 typedef Outcome<Core::Error, Model::ParseWordsResponse> ParseWordsOutcome;
                 typedef std::future<ParseWordsOutcome> ParseWordsOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::ParseWordsRequest&, ParseWordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ParseWordsAsyncHandler;
@@ -78,39 +63,6 @@ namespace TencentCloud
                 AnalyzeSentimentOutcome AnalyzeSentiment(const Model::AnalyzeSentimentRequest &request);
                 void AnalyzeSentimentAsync(const Model::AnalyzeSentimentRequest& request, const AnalyzeSentimentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AnalyzeSentimentOutcomeCallable AnalyzeSentimentCallable(const Model::AnalyzeSentimentRequest& request);
-
-                /**
-                 *NLP技术的句子相似度、相似词召回、文本分类、对联生成、诗词生成、词相似度、文本润色、句子生成和文本补全API接口将于2025年10月31日下线，届时将无法正常调用。为了避免对您的业务造成影响，请您尽快做好相关业务调整。如果您有NLP技术的产品需求，推荐您调用腾讯混元大模型（https://cloud.tencent.com/product/tclm）。
-
-文本分类接口能够对用户输入的文章进行自动分类，将其映射到具体的类目上，用户只需要提供待分类的文本，而无需关注具体实现。该功能定义了一套较为完备的[三级分类体系](https://cloud.tencent.com/document/product/271/94286)，积累了数百万的语料，经过多轮迭代优化打造了较先进的深度学习模型，以保证效果不断提升。
-                 * @param req ClassifyContentRequest
-                 * @return ClassifyContentOutcome
-                 */
-                ClassifyContentOutcome ClassifyContent(const Model::ClassifyContentRequest &request);
-                void ClassifyContentAsync(const Model::ClassifyContentRequest& request, const ClassifyContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ClassifyContentOutcomeCallable ClassifyContentCallable(const Model::ClassifyContentRequest& request);
-
-                /**
-                 *NLP技术的句子相似度、相似词召回、文本分类、对联生成、诗词生成、词相似度、文本润色、句子生成和文本补全API接口将于2025年10月31日下线，届时将无法正常调用。为了避免对您的业务造成影响，请您尽快做好相关业务调整。如果您有NLP技术的产品需求，推荐您调用腾讯混元大模型（https://cloud.tencent.com/product/tclm）。
-
-对联生成接口根据用户输入的命题关键词，智能生成一副完整的春联，包括上联、下联和横批。该接口利用先进的自然语言处理技术，确保生成的春联既符合传统对仗、对韵、对义的要求，又具有新意和创意，为用户提供独特的春节祝福。
-                 * @param req ComposeCoupletRequest
-                 * @return ComposeCoupletOutcome
-                 */
-                ComposeCoupletOutcome ComposeCouplet(const Model::ComposeCoupletRequest &request);
-                void ComposeCoupletAsync(const Model::ComposeCoupletRequest& request, const ComposeCoupletAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ComposeCoupletOutcomeCallable ComposeCoupletCallable(const Model::ComposeCoupletRequest& request);
-
-                /**
-                 *NLP技术的句子相似度、相似词召回、文本分类、对联生成、诗词生成、词相似度、文本润色、句子生成和文本补全API接口将于2025年10月31日下线，届时将无法正常调用。为了避免对您的业务造成影响，请您尽快做好相关业务调整。如果您有NLP技术的产品需求，推荐您调用腾讯混元大模型（https://cloud.tencent.com/product/tclm）。
-
-通过计算句子间的语义相似性，帮助您快速找到文本中重复或相似的句子，用于文本聚类、相似问题检索等应用场景。
-                 * @param req EvaluateSentenceSimilarityRequest
-                 * @return EvaluateSentenceSimilarityOutcome
-                 */
-                EvaluateSentenceSimilarityOutcome EvaluateSentenceSimilarity(const Model::EvaluateSentenceSimilarityRequest &request);
-                void EvaluateSentenceSimilarityAsync(const Model::EvaluateSentenceSimilarityRequest& request, const EvaluateSentenceSimilarityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                EvaluateSentenceSimilarityOutcomeCallable EvaluateSentenceSimilarityCallable(const Model::EvaluateSentenceSimilarityRequest& request);
 
                 /**
                  *通过精准地对文本进行分词、词性标注、命名实体识别等功能，助您更好地理解文本内容，挖掘出潜在的价值信息。

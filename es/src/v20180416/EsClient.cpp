@@ -190,6 +190,56 @@ EsClient::CreateClusterSnapshotOutcomeCallable EsClient::CreateClusterSnapshotCa
     return prom->get_future();
 }
 
+EsClient::CreateCollectorOutcome EsClient::CreateCollector(const CreateCollectorRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCollector");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCollectorResponse rsp = CreateCollectorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCollectorOutcome(rsp);
+        else
+            return CreateCollectorOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCollectorOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::CreateCollectorAsync(const CreateCollectorRequest& request, const CreateCollectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCollectorRequest&;
+    using Resp = CreateCollectorResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCollector", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EsClient::CreateCollectorOutcomeCallable EsClient::CreateCollectorCallable(const CreateCollectorRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCollectorOutcome>>();
+    CreateCollectorAsync(
+    request,
+    [prom](
+        const EsClient*,
+        const CreateCollectorRequest&,
+        CreateCollectorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EsClient::CreateCosMigrateToServerlessInstanceOutcome EsClient::CreateCosMigrateToServerlessInstance(const CreateCosMigrateToServerlessInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCosMigrateToServerlessInstance");

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主实例iD
-                     * @return RegistryId 主实例iD
+                     * 获取<p>主实例iD</p>
+                     * @return RegistryId <p>主实例iD</p>
                      * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
-                     * 设置主实例iD
-                     * @param _registryId 主实例iD
+                     * 设置<p>主实例iD</p>
+                     * @param _registryId <p>主实例iD</p>
                      * 
                      */
                     void SetRegistryId(const std::string& _registryId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool RegistryIdHasBeenSet() const;
 
                     /**
-                     * 获取命名空间的名称
-                     * @return NamespaceName 命名空间的名称
+                     * 获取<p>命名空间的名称</p>
+                     * @return NamespaceName <p>命名空间的名称</p>
                      * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
-                     * 设置命名空间的名称
-                     * @param _namespaceName 命名空间的名称
+                     * 设置<p>命名空间的名称</p>
+                     * @param _namespaceName <p>命名空间的名称</p>
                      * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NamespaceNameHasBeenSet() const;
 
                     /**
-                     * 获取分页PageSize
-                     * @return Limit 分页PageSize
+                     * 获取<p>分页PageSize</p>
+                     * @return Limit <p>分页PageSize</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页PageSize
-                     * @param _limit 分页PageSize
+                     * 设置<p>分页PageSize</p>
+                     * @param _limit <p>分页PageSize</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页Page
-                     * @return Offset 分页Page
+                     * 获取<p>分页Page</p>
+                     * @return Offset <p>分页Page</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页Page
-                     * @param _offset 分页Page
+                     * 设置<p>分页Page</p>
+                     * @param _offset <p>分页Page</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主实例iD
+                     * <p>主实例iD</p>
                      */
                     std::string m_registryId;
                     bool m_registryIdHasBeenSet;
 
                     /**
-                     * 命名空间的名称
+                     * <p>命名空间的名称</p>
                      */
                     std::string m_namespaceName;
                     bool m_namespaceNameHasBeenSet;
 
                     /**
-                     * 分页PageSize
+                     * <p>分页PageSize</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页Page
+                     * <p>分页Page</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

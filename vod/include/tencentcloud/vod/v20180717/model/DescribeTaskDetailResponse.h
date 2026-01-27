@@ -49,6 +49,7 @@
 #include <tencentcloud/vod/v20180717/model/ImportMediaKnowledgeTask.h>
 #include <tencentcloud/vod/v20180717/model/SceneAigcImageTask.h>
 #include <tencentcloud/vod/v20180717/model/SceneAigcVideoTask.h>
+#include <tencentcloud/vod/v20180717/model/ProcessImageAsync.h>
 
 
 namespace TencentCloud
@@ -585,6 +586,20 @@ namespace TencentCloud
                      */
                     bool SceneAigcVideoTaskHasBeenSet() const;
 
+                    /**
+                     * 获取图像异步处理任务信息，仅当 TaskType 为 ProcessImageAsync，该字段有值。
+                     * @return ProcessImageAsyncTask 图像异步处理任务信息，仅当 TaskType 为 ProcessImageAsync，该字段有值。
+                     * 
+                     */
+                    ProcessImageAsync GetProcessImageAsyncTask() const;
+
+                    /**
+                     * 判断参数 ProcessImageAsyncTask 是否已赋值
+                     * @return ProcessImageAsyncTask 是否已赋值
+                     * 
+                     */
+                    bool ProcessImageAsyncTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -810,6 +825,12 @@ namespace TencentCloud
                      */
                     SceneAigcVideoTask m_sceneAigcVideoTask;
                     bool m_sceneAigcVideoTaskHasBeenSet;
+
+                    /**
+                     * 图像异步处理任务信息，仅当 TaskType 为 ProcessImageAsync，该字段有值。
+                     */
+                    ProcessImageAsync m_processImageAsyncTask;
+                    bool m_processImageAsyncTaskHasBeenSet;
 
                 };
             }

@@ -1293,6 +1293,27 @@ pausing
                      */
                     bool ArchiveProgressHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启透明加密
+                     * @return IsOpenTDE 是否开启透明加密
+                     * 
+                     */
+                    bool GetIsOpenTDE() const;
+
+                    /**
+                     * 设置是否开启透明加密
+                     * @param _isOpenTDE 是否开启透明加密
+                     * 
+                     */
+                    void SetIsOpenTDE(const bool& _isOpenTDE);
+
+                    /**
+                     * 判断参数 IsOpenTDE 是否已赋值
+                     * @return IsOpenTDE 是否已赋值
+                     * 
+                     */
+                    bool IsOpenTDEHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1646,6 +1667,12 @@ pausing
                      */
                     int64_t m_archiveProgress;
                     bool m_archiveProgressHasBeenSet;
+
+                    /**
+                     * 是否开启透明加密
+                     */
+                    bool m_isOpenTDE;
+                    bool m_isOpenTDEHasBeenSet;
 
                 };
             }

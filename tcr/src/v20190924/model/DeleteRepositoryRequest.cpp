@@ -25,7 +25,8 @@ using namespace std;
 DeleteRepositoryRequest::DeleteRepositoryRequest() :
     m_registryIdHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false)
+    m_repositoryNameHasBeenSet(false),
+    m_forceDeleteHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DeleteRepositoryRequest::ToJsonString() const
         string key = "RepositoryName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_repositoryName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forceDeleteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForceDelete";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_forceDelete, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DeleteRepositoryRequest::SetRepositoryName(const string& _repositoryName)
 bool DeleteRepositoryRequest::RepositoryNameHasBeenSet() const
 {
     return m_repositoryNameHasBeenSet;
+}
+
+bool DeleteRepositoryRequest::GetForceDelete() const
+{
+    return m_forceDelete;
+}
+
+void DeleteRepositoryRequest::SetForceDelete(const bool& _forceDelete)
+{
+    m_forceDelete = _forceDelete;
+    m_forceDeleteHasBeenSet = true;
+}
+
+bool DeleteRepositoryRequest::ForceDeleteHasBeenSet() const
+{
+    return m_forceDeleteHasBeenSet;
 }
 
 

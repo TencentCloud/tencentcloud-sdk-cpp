@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志主题ID
-                     * @return TopicId 日志主题ID
+                     * 获取<p>日志主题ID</p>
+                     * @return TopicId <p>日志主题ID</p>
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题ID
-                     * @param _topicId 日志主题ID
+                     * 设置<p>日志主题ID</p>
+                     * @param _topicId <p>日志主题ID</p>
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取索引重建任务ID
-                     * @return TaskId 索引重建任务ID
+                     * 获取<p>索引重建任务ID</p>
+                     * @return TaskId <p>索引重建任务ID</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置索引重建任务ID
-                     * @param _taskId 索引重建任务ID
+                     * 设置<p>索引重建任务ID</p>
+                     * @param _taskId <p>索引重建任务ID</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取索引重建任务状态，不填返回所有状态任务列表，多种状态之间用逗号分隔，0:索引重建任务已创建，1:已创建索引重建资源，2:重建中，3:重建完成，4:重建成功（可检索），5:任务取消，6:元数据和索引已删除
-                     * @return Status 索引重建任务状态，不填返回所有状态任务列表，多种状态之间用逗号分隔，0:索引重建任务已创建，1:已创建索引重建资源，2:重建中，3:重建完成，4:重建成功（可检索），5:任务取消，6:元数据和索引已删除
+                     * 获取<p>索引重建任务状态，不填返回所有状态任务列表，多种状态之间用逗号分隔。</p><p>枚举值：</p><ul><li>0： 索引重建任务已创建</li><li>1： 正在创建索引重建资源</li><li>2： 已创建索引重建资源</li><li>3： 重建中</li><li>4： 暂停</li><li>5： 重建完成</li><li>6： 重建成功（可检索）</li><li>7： 重建失败</li><li>8： 任务取消</li><li>9： 元数据和索引已删除</li></ul>
+                     * @return Status <p>索引重建任务状态，不填返回所有状态任务列表，多种状态之间用逗号分隔。</p><p>枚举值：</p><ul><li>0： 索引重建任务已创建</li><li>1： 正在创建索引重建资源</li><li>2： 已创建索引重建资源</li><li>3： 重建中</li><li>4： 暂停</li><li>5： 重建完成</li><li>6： 重建成功（可检索）</li><li>7： 重建失败</li><li>8： 任务取消</li><li>9： 元数据和索引已删除</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置索引重建任务状态，不填返回所有状态任务列表，多种状态之间用逗号分隔，0:索引重建任务已创建，1:已创建索引重建资源，2:重建中，3:重建完成，4:重建成功（可检索），5:任务取消，6:元数据和索引已删除
-                     * @param _status 索引重建任务状态，不填返回所有状态任务列表，多种状态之间用逗号分隔，0:索引重建任务已创建，1:已创建索引重建资源，2:重建中，3:重建完成，4:重建成功（可检索），5:任务取消，6:元数据和索引已删除
+                     * 设置<p>索引重建任务状态，不填返回所有状态任务列表，多种状态之间用逗号分隔。</p><p>枚举值：</p><ul><li>0： 索引重建任务已创建</li><li>1： 正在创建索引重建资源</li><li>2： 已创建索引重建资源</li><li>3： 重建中</li><li>4： 暂停</li><li>5： 重建完成</li><li>6： 重建成功（可检索）</li><li>7： 重建失败</li><li>8： 任务取消</li><li>9： 元数据和索引已删除</li></ul>
+                     * @param _status <p>索引重建任务状态，不填返回所有状态任务列表，多种状态之间用逗号分隔。</p><p>枚举值：</p><ul><li>0： 索引重建任务已创建</li><li>1： 正在创建索引重建资源</li><li>2： 已创建索引重建资源</li><li>3： 重建中</li><li>4： 暂停</li><li>5： 重建完成</li><li>6： 重建成功（可检索）</li><li>7： 重建失败</li><li>8： 任务取消</li><li>9： 元数据和索引已删除</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取分页的偏移量，默认值为0。
-                     * @return Offset 分页的偏移量，默认值为0。
+                     * 获取<p>分页的偏移量，默认值为0。</p>
+                     * @return Offset <p>分页的偏移量，默认值为0。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页的偏移量，默认值为0。
-                     * @param _offset 分页的偏移量，默认值为0。
+                     * 设置<p>分页的偏移量，默认值为0。</p>
+                     * @param _offset <p>分页的偏移量，默认值为0。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页单页限制数目，默认值为10，最大值20。
-                     * @return Limit 分页单页限制数目，默认值为10，最大值20。
+                     * 获取<p>分页单页限制数目，默认值为10，最大值20。</p>
+                     * @return Limit <p>分页单页限制数目，默认值为10，最大值20。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页单页限制数目，默认值为10，最大值20。
-                     * @param _limit 分页单页限制数目，默认值为10，最大值20。
+                     * 设置<p>分页单页限制数目，默认值为10，最大值20。</p>
+                     * @param _limit <p>分页单页限制数目，默认值为10，最大值20。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志主题ID
+                     * <p>日志主题ID</p>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 索引重建任务ID
+                     * <p>索引重建任务ID</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 索引重建任务状态，不填返回所有状态任务列表，多种状态之间用逗号分隔，0:索引重建任务已创建，1:已创建索引重建资源，2:重建中，3:重建完成，4:重建成功（可检索），5:任务取消，6:元数据和索引已删除
+                     * <p>索引重建任务状态，不填返回所有状态任务列表，多种状态之间用逗号分隔。</p><p>枚举值：</p><ul><li>0： 索引重建任务已创建</li><li>1： 正在创建索引重建资源</li><li>2： 已创建索引重建资源</li><li>3： 重建中</li><li>4： 暂停</li><li>5： 重建完成</li><li>6： 重建成功（可检索）</li><li>7： 重建失败</li><li>8： 任务取消</li><li>9： 元数据和索引已删除</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 分页的偏移量，默认值为0。
+                     * <p>分页的偏移量，默认值为0。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页单页限制数目，默认值为10，最大值20。
+                     * <p>分页单页限制数目，默认值为10，最大值20。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

@@ -69,12 +69,14 @@ set(cbs_public_header_model
   include/tencentcloud/cbs/v20170312/model/DeleteDiskBackupsResponse.h
   include/tencentcloud/cbs/v20170312/model/DeleteSnapshotsRequest.h
   include/tencentcloud/cbs/v20170312/model/ModifyDisksRenewFlagResponse.h
+  include/tencentcloud/cbs/v20170312/model/CopyAutoSnapshotPolicyCrossAccountResponse.h
   include/tencentcloud/cbs/v20170312/model/DeleteAutoSnapshotPoliciesResponse.h
   include/tencentcloud/cbs/v20170312/model/DescribeDisksResponse.h
   include/tencentcloud/cbs/v20170312/model/Placement.h
   include/tencentcloud/cbs/v20170312/model/DeleteSnapshotsResponse.h
   include/tencentcloud/cbs/v20170312/model/ModifyDisksRenewFlagRequest.h
   include/tencentcloud/cbs/v20170312/model/ModifySnapshotAttributeResponse.h
+  include/tencentcloud/cbs/v20170312/model/CopyAutoSnapshotPolicyCrossAccountRequest.h
   include/tencentcloud/cbs/v20170312/model/ModifyDiskAttributesRequest.h
   include/tencentcloud/cbs/v20170312/model/GetSnapOverviewRequest.h
   include/tencentcloud/cbs/v20170312/model/Image.h
@@ -188,12 +190,14 @@ set(cbs_src
   src/v20170312/model/DeleteDiskBackupsResponse.cpp
   src/v20170312/model/DeleteSnapshotsRequest.cpp
   src/v20170312/model/ModifyDisksRenewFlagResponse.cpp
+  src/v20170312/model/CopyAutoSnapshotPolicyCrossAccountResponse.cpp
   src/v20170312/model/DeleteAutoSnapshotPoliciesResponse.cpp
   src/v20170312/model/DescribeDisksResponse.cpp
   src/v20170312/model/Placement.cpp
   src/v20170312/model/DeleteSnapshotsResponse.cpp
   src/v20170312/model/ModifyDisksRenewFlagRequest.cpp
   src/v20170312/model/ModifySnapshotAttributeResponse.cpp
+  src/v20170312/model/CopyAutoSnapshotPolicyCrossAccountRequest.cpp
   src/v20170312/model/ModifyDiskAttributesRequest.cpp
   src/v20170312/model/GetSnapOverviewRequest.cpp
   src/v20170312/model/Image.cpp

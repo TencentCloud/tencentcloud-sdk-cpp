@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取索引重建任务列表
-                     * @return RebuildTasks 索引重建任务列表
+                     * 获取<p>索引重建任务列表</p>
+                     * @return RebuildTasks <p>索引重建任务列表</p>
                      * 
                      */
                     std::vector<RebuildIndexTaskInfo> GetRebuildTasks() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 索引重建任务列表
+                     * <p>索引重建任务列表</p>
                      */
                     std::vector<RebuildIndexTaskInfo> m_rebuildTasks;
                     bool m_rebuildTasksHasBeenSet;

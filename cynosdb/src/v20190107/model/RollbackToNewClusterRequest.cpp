@@ -50,7 +50,8 @@ RollbackToNewClusterRequest::RollbackToNewClusterRequest() :
     m_rollbackTablesHasBeenSet(false),
     m_originalROInstanceListHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_autoArchiveHasBeenSet(false)
+    m_autoArchiveHasBeenSet(false),
+    m_fromSaveBackupHasBeenSet(false)
 {
 }
 
@@ -333,6 +334,14 @@ string RollbackToNewClusterRequest::ToJsonString() const
         string key = "AutoArchive";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_autoArchive.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fromSaveBackupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FromSaveBackup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_fromSaveBackup, allocator);
     }
 
 
@@ -789,6 +798,22 @@ void RollbackToNewClusterRequest::SetAutoArchive(const string& _autoArchive)
 bool RollbackToNewClusterRequest::AutoArchiveHasBeenSet() const
 {
     return m_autoArchiveHasBeenSet;
+}
+
+bool RollbackToNewClusterRequest::GetFromSaveBackup() const
+{
+    return m_fromSaveBackup;
+}
+
+void RollbackToNewClusterRequest::SetFromSaveBackup(const bool& _fromSaveBackup)
+{
+    m_fromSaveBackup = _fromSaveBackup;
+    m_fromSaveBackupHasBeenSet = true;
+}
+
+bool RollbackToNewClusterRequest::FromSaveBackupHasBeenSet() const
+{
+    return m_fromSaveBackupHasBeenSet;
 }
 
 

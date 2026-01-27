@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例Id
-                     * @return RegistryId 实例Id
+                     * 获取<p>实例Id</p>
+                     * @return RegistryId <p>实例Id</p>
                      * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
-                     * 设置实例Id
-                     * @param _registryId 实例Id
+                     * 设置<p>实例Id</p>
+                     * @param _registryId <p>实例Id</p>
                      * 
                      */
                     void SetRegistryId(const std::string& _registryId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool RegistryIdHasBeenSet() const;
 
                     /**
-                     * 获取命名空间的名称
-                     * @return NamespaceName 命名空间的名称
+                     * 获取<p>命名空间的名称</p>
+                     * @return NamespaceName <p>命名空间的名称</p>
                      * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
-                     * 设置命名空间的名称
-                     * @param _namespaceName 命名空间的名称
+                     * 设置<p>命名空间的名称</p>
+                     * @param _namespaceName <p>命名空间的名称</p>
                      * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NamespaceNameHasBeenSet() const;
 
                     /**
-                     * 获取镜像仓库的名称
-                     * @return RepositoryName 镜像仓库的名称
+                     * 获取<p>镜像仓库的名称</p>
+                     * @return RepositoryName <p>镜像仓库的名称</p>
                      * 
                      */
                     std::string GetRepositoryName() const;
 
                     /**
-                     * 设置镜像仓库的名称
-                     * @param _repositoryName 镜像仓库的名称
+                     * 设置<p>镜像仓库的名称</p>
+                     * @param _repositoryName <p>镜像仓库的名称</p>
                      * 
                      */
                     void SetRepositoryName(const std::string& _repositoryName);
@@ -105,25 +105,52 @@ namespace TencentCloud
                      */
                     bool RepositoryNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>默认值为true，表示无论仓库是否存在镜像都直接删除；false代表删除仓库前需检查是否存在镜像。</p>
+                     * @return ForceDelete <p>默认值为true，表示无论仓库是否存在镜像都直接删除；false代表删除仓库前需检查是否存在镜像。</p>
+                     * 
+                     */
+                    bool GetForceDelete() const;
+
+                    /**
+                     * 设置<p>默认值为true，表示无论仓库是否存在镜像都直接删除；false代表删除仓库前需检查是否存在镜像。</p>
+                     * @param _forceDelete <p>默认值为true，表示无论仓库是否存在镜像都直接删除；false代表删除仓库前需检查是否存在镜像。</p>
+                     * 
+                     */
+                    void SetForceDelete(const bool& _forceDelete);
+
+                    /**
+                     * 判断参数 ForceDelete 是否已赋值
+                     * @return ForceDelete 是否已赋值
+                     * 
+                     */
+                    bool ForceDeleteHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例Id
+                     * <p>实例Id</p>
                      */
                     std::string m_registryId;
                     bool m_registryIdHasBeenSet;
 
                     /**
-                     * 命名空间的名称
+                     * <p>命名空间的名称</p>
                      */
                     std::string m_namespaceName;
                     bool m_namespaceNameHasBeenSet;
 
                     /**
-                     * 镜像仓库的名称
+                     * <p>镜像仓库的名称</p>
                      */
                     std::string m_repositoryName;
                     bool m_repositoryNameHasBeenSet;
+
+                    /**
+                     * <p>默认值为true，表示无论仓库是否存在镜像都直接删除；false代表删除仓库前需检查是否存在镜像。</p>
+                     */
+                    bool m_forceDelete;
+                    bool m_forceDeleteHasBeenSet;
 
                 };
             }

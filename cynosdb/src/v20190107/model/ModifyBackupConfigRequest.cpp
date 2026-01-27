@@ -30,7 +30,8 @@ ModifyBackupConfigRequest::ModifyBackupConfigRequest() :
     m_backupFreqHasBeenSet(false),
     m_backupTypeHasBeenSet(false),
     m_logicBackupConfigHasBeenSet(false),
-    m_deleteAutoLogicBackupHasBeenSet(false)
+    m_deleteAutoLogicBackupHasBeenSet(false),
+    m_snapshotSecondaryBackupConfigHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,15 @@ string ModifyBackupConfigRequest::ToJsonString() const
         string key = "DeleteAutoLogicBackup";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deleteAutoLogicBackup, allocator);
+    }
+
+    if (m_snapshotSecondaryBackupConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnapshotSecondaryBackupConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_snapshotSecondaryBackupConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -245,6 +255,22 @@ void ModifyBackupConfigRequest::SetDeleteAutoLogicBackup(const bool& _deleteAuto
 bool ModifyBackupConfigRequest::DeleteAutoLogicBackupHasBeenSet() const
 {
     return m_deleteAutoLogicBackupHasBeenSet;
+}
+
+SnapshotBackupConfig ModifyBackupConfigRequest::GetSnapshotSecondaryBackupConfig() const
+{
+    return m_snapshotSecondaryBackupConfig;
+}
+
+void ModifyBackupConfigRequest::SetSnapshotSecondaryBackupConfig(const SnapshotBackupConfig& _snapshotSecondaryBackupConfig)
+{
+    m_snapshotSecondaryBackupConfig = _snapshotSecondaryBackupConfig;
+    m_snapshotSecondaryBackupConfigHasBeenSet = true;
+}
+
+bool ModifyBackupConfigRequest::SnapshotSecondaryBackupConfigHasBeenSet() const
+{
+    return m_snapshotSecondaryBackupConfigHasBeenSet;
 }
 
 

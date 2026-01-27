@@ -68,6 +68,27 @@ namespace TencentCloud
                      */
                     bool ClothesFileInfosHasBeenSet() const;
 
+                    /**
+                     * 获取AI换衣的提示词。
+                     * @return Prompt AI换衣的提示词。
+                     * 
+                     */
+                    std::string GetPrompt() const;
+
+                    /**
+                     * 设置AI换衣的提示词。
+                     * @param _prompt AI换衣的提示词。
+                     * 
+                     */
+                    void SetPrompt(const std::string& _prompt);
+
+                    /**
+                     * 判断参数 Prompt 是否已赋值
+                     * @return Prompt 是否已赋值
+                     * 
+                     */
+                    bool PromptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -75,6 +96,12 @@ namespace TencentCloud
                      */
                     std::vector<SceneAigcImageTaskInputFileInfo> m_clothesFileInfos;
                     bool m_clothesFileInfosHasBeenSet;
+
+                    /**
+                     * AI换衣的提示词。
+                     */
+                    std::string m_prompt;
+                    bool m_promptHasBeenSet;
 
                 };
             }

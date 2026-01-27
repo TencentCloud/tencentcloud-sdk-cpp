@@ -25,9 +25,10 @@ using namespace std;
 ModifyTagRetentionRuleRequest::ModifyTagRetentionRuleRequest() :
     m_registryIdHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
-    m_retentionRuleHasBeenSet(false),
     m_cronSettingHasBeenSet(false),
     m_retentionIdHasBeenSet(false),
+    m_retentionRuleHasBeenSet(false),
+    m_advancedRuleItemsHasBeenSet(false),
     m_disabledHasBeenSet(false)
 {
 }
@@ -55,15 +56,6 @@ string ModifyTagRetentionRuleRequest::ToJsonString() const
         d.AddMember(iKey, m_namespaceId, allocator);
     }
 
-    if (m_retentionRuleHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RetentionRule";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_retentionRule.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_cronSettingHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -78,6 +70,30 @@ string ModifyTagRetentionRuleRequest::ToJsonString() const
         string key = "RetentionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_retentionId, allocator);
+    }
+
+    if (m_retentionRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetentionRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_retentionRule.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_advancedRuleItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedRuleItems";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_advancedRuleItems.begin(); itr != m_advancedRuleItems.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_disabledHasBeenSet)
@@ -128,22 +144,6 @@ bool ModifyTagRetentionRuleRequest::NamespaceIdHasBeenSet() const
     return m_namespaceIdHasBeenSet;
 }
 
-RetentionRule ModifyTagRetentionRuleRequest::GetRetentionRule() const
-{
-    return m_retentionRule;
-}
-
-void ModifyTagRetentionRuleRequest::SetRetentionRule(const RetentionRule& _retentionRule)
-{
-    m_retentionRule = _retentionRule;
-    m_retentionRuleHasBeenSet = true;
-}
-
-bool ModifyTagRetentionRuleRequest::RetentionRuleHasBeenSet() const
-{
-    return m_retentionRuleHasBeenSet;
-}
-
 string ModifyTagRetentionRuleRequest::GetCronSetting() const
 {
     return m_cronSetting;
@@ -174,6 +174,38 @@ void ModifyTagRetentionRuleRequest::SetRetentionId(const int64_t& _retentionId)
 bool ModifyTagRetentionRuleRequest::RetentionIdHasBeenSet() const
 {
     return m_retentionIdHasBeenSet;
+}
+
+RetentionRule ModifyTagRetentionRuleRequest::GetRetentionRule() const
+{
+    return m_retentionRule;
+}
+
+void ModifyTagRetentionRuleRequest::SetRetentionRule(const RetentionRule& _retentionRule)
+{
+    m_retentionRule = _retentionRule;
+    m_retentionRuleHasBeenSet = true;
+}
+
+bool ModifyTagRetentionRuleRequest::RetentionRuleHasBeenSet() const
+{
+    return m_retentionRuleHasBeenSet;
+}
+
+vector<RetentionRuleItem> ModifyTagRetentionRuleRequest::GetAdvancedRuleItems() const
+{
+    return m_advancedRuleItems;
+}
+
+void ModifyTagRetentionRuleRequest::SetAdvancedRuleItems(const vector<RetentionRuleItem>& _advancedRuleItems)
+{
+    m_advancedRuleItems = _advancedRuleItems;
+    m_advancedRuleItemsHasBeenSet = true;
+}
+
+bool ModifyTagRetentionRuleRequest::AdvancedRuleItemsHasBeenSet() const
+{
+    return m_advancedRuleItemsHasBeenSet;
 }
 
 bool ModifyTagRetentionRuleRequest::GetDisabled() const

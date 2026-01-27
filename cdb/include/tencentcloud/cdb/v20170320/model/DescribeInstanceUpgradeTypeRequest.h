@@ -297,15 +297,15 @@ namespace TencentCloud
                     bool NodeDistributionHasBeenSet() const;
 
                     /**
-                     * 获取集群版的节点拓扑配置。Nodeld信息可通过 [DescribeClusterInfo](https://cloud.tencent.com/document/api/236/105116) 接口获取。
-                     * @return ClusterTopology 集群版的节点拓扑配置。Nodeld信息可通过 [DescribeClusterInfo](https://cloud.tencent.com/document/api/236/105116) 接口获取。
+                     * 获取云盘版的节点拓扑配置。Nodeld 信息可通过 [DescribeClusterInfo](https://cloud.tencent.com/document/api/236/105116) 接口获取。
+                     * @return ClusterTopology 云盘版的节点拓扑配置。Nodeld 信息可通过 [DescribeClusterInfo](https://cloud.tencent.com/document/api/236/105116) 接口获取。
                      * 
                      */
                     ClusterTopology GetClusterTopology() const;
 
                     /**
-                     * 设置集群版的节点拓扑配置。Nodeld信息可通过 [DescribeClusterInfo](https://cloud.tencent.com/document/api/236/105116) 接口获取。
-                     * @param _clusterTopology 集群版的节点拓扑配置。Nodeld信息可通过 [DescribeClusterInfo](https://cloud.tencent.com/document/api/236/105116) 接口获取。
+                     * 设置云盘版的节点拓扑配置。Nodeld 信息可通过 [DescribeClusterInfo](https://cloud.tencent.com/document/api/236/105116) 接口获取。
+                     * @param _clusterTopology 云盘版的节点拓扑配置。Nodeld 信息可通过 [DescribeClusterInfo](https://cloud.tencent.com/document/api/236/105116) 接口获取。
                      * 
                      */
                     void SetClusterTopology(const ClusterTopology& _clusterTopology);
@@ -392,7 +392,7 @@ namespace TencentCloud
                     bool m_nodeDistributionHasBeenSet;
 
                     /**
-                     * 集群版的节点拓扑配置。Nodeld信息可通过 [DescribeClusterInfo](https://cloud.tencent.com/document/api/236/105116) 接口获取。
+                     * 云盘版的节点拓扑配置。Nodeld 信息可通过 [DescribeClusterInfo](https://cloud.tencent.com/document/api/236/105116) 接口获取。
                      */
                     ClusterTopology m_clusterTopology;
                     bool m_clusterTopologyHasBeenSet;

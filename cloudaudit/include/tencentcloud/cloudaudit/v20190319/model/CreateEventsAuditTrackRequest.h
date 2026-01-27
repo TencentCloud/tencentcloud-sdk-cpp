@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符
-                     * @return Name 跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符
+                     * 获取<p>跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符</p>
+                     * @return Name <p>跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符
-                     * @param _name 跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符
+                     * 设置<p>跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符</p>
+                     * @param _name <p>跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取跟踪集状态（未开启：0；开启：1）
-                     * @return Status 跟踪集状态（未开启：0；开启：1）
+                     * 获取<p>跟踪集状态（未开启：0；开启：1）</p>
+                     * @return Status <p>跟踪集状态（未开启：0；开启：1）</p>
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置跟踪集状态（未开启：0；开启：1）
-                     * @param _status 跟踪集状态（未开启：0；开启：1）
+                     * 设置<p>跟踪集状态（未开启：0；开启：1）</p>
+                     * @param _status <p>跟踪集状态（未开启：0；开启：1）</p>
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取数据投递存储（目前支持 cos、cls）
-                     * @return Storage 数据投递存储（目前支持 cos、cls）
+                     * 获取<p>数据投递存储（目前支持 cos、cls、ckafka）</p>
+                     * @return Storage <p>数据投递存储（目前支持 cos、cls、ckafka）</p>
                      * 
                      */
                     Storage GetStorage() const;
 
                     /**
-                     * 设置数据投递存储（目前支持 cos、cls）
-                     * @param _storage 数据投递存储（目前支持 cos、cls）
+                     * 设置<p>数据投递存储（目前支持 cos、cls、ckafka）</p>
+                     * @param _storage <p>数据投递存储（目前支持 cos、cls、ckafka）</p>
                      * 
                      */
                     void SetStorage(const Storage& _storage);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool StorageHasBeenSet() const;
 
                     /**
-                     * 获取数据过滤条件
-                     * @return Filters 数据过滤条件
+                     * 获取<p>数据过滤条件</p>
+                     * @return Filters <p>数据过滤条件</p>
                      * 
                      */
                     Filter GetFilters() const;
 
                     /**
-                     * 设置数据过滤条件
-                     * @param _filters 数据过滤条件
+                     * 设置<p>数据过滤条件</p>
+                     * @param _filters <p>数据过滤条件</p>
                      * 
                      */
                     void SetFilters(const Filter& _filters);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能) 
-                     * @return TrackForAllMembers 是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能) 
+                     * 获取<p>是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)</p>
+                     * @return TrackForAllMembers <p>是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)</p>
                      * 
                      */
                     uint64_t GetTrackForAllMembers() const;
 
                     /**
-                     * 设置是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能) 
-                     * @param _trackForAllMembers 是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能) 
+                     * 设置<p>是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)</p>
+                     * @param _trackForAllMembers <p>是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)</p>
                      * 
                      */
                     void SetTrackForAllMembers(const uint64_t& _trackForAllMembers);
@@ -152,31 +152,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符
+                     * <p>跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 跟踪集状态（未开启：0；开启：1）
+                     * <p>跟踪集状态（未开启：0；开启：1）</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 数据投递存储（目前支持 cos、cls）
+                     * <p>数据投递存储（目前支持 cos、cls、ckafka）</p>
                      */
                     Storage m_storage;
                     bool m_storageHasBeenSet;
 
                     /**
-                     * 数据过滤条件
+                     * <p>数据过滤条件</p>
                      */
                     Filter m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能) 
+                     * <p>是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)</p>
                      */
                     uint64_t m_trackForAllMembers;
                     bool m_trackForAllMembersHasBeenSet;

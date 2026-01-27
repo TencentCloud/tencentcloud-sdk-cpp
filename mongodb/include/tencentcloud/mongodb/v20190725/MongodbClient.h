@@ -87,6 +87,8 @@
 #include <tencentcloud/mongodb/v20190725/model/DescribeLogDownloadTasksResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeMongodbLogsRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeMongodbLogsResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeSRVConnectionDomainRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeSRVConnectionDomainResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeSecurityGroupRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeSecurityGroupResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeSlowLogPatternsRequest.h>
@@ -97,8 +99,12 @@
 #include <tencentcloud/mongodb/v20190725/model/DescribeSpecInfoResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeTransparentDataEncryptionStatusRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeTransparentDataEncryptionStatusResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DisableSRVConnectionUrlRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DisableSRVConnectionUrlResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DropDBInstanceParamTplRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DropDBInstanceParamTplResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/EnableSRVConnectionUrlRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/EnableSRVConnectionUrlResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/EnableTransparentDataEncryptionRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/EnableTransparentDataEncryptionResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/FlashBackDBInstanceRequest.h>
@@ -129,6 +135,8 @@
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSpecResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyInstanceParamsRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyInstanceParamsResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/ModifySRVConnectionUrlRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/ModifySRVConnectionUrlResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/OfflineIsolatedDBInstanceRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/OfflineIsolatedDBInstanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/OpenAuditServiceRequest.h>
@@ -265,6 +273,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMongodbLogsResponse> DescribeMongodbLogsOutcome;
                 typedef std::future<DescribeMongodbLogsOutcome> DescribeMongodbLogsOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeMongodbLogsRequest&, DescribeMongodbLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMongodbLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSRVConnectionDomainResponse> DescribeSRVConnectionDomainOutcome;
+                typedef std::future<DescribeSRVConnectionDomainOutcome> DescribeSRVConnectionDomainOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeSRVConnectionDomainRequest&, DescribeSRVConnectionDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSRVConnectionDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSecurityGroupResponse> DescribeSecurityGroupOutcome;
                 typedef std::future<DescribeSecurityGroupOutcome> DescribeSecurityGroupOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeSecurityGroupRequest&, DescribeSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityGroupAsyncHandler;
@@ -280,9 +291,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTransparentDataEncryptionStatusResponse> DescribeTransparentDataEncryptionStatusOutcome;
                 typedef std::future<DescribeTransparentDataEncryptionStatusOutcome> DescribeTransparentDataEncryptionStatusOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeTransparentDataEncryptionStatusRequest&, DescribeTransparentDataEncryptionStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTransparentDataEncryptionStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisableSRVConnectionUrlResponse> DisableSRVConnectionUrlOutcome;
+                typedef std::future<DisableSRVConnectionUrlOutcome> DisableSRVConnectionUrlOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DisableSRVConnectionUrlRequest&, DisableSRVConnectionUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableSRVConnectionUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DropDBInstanceParamTplResponse> DropDBInstanceParamTplOutcome;
                 typedef std::future<DropDBInstanceParamTplOutcome> DropDBInstanceParamTplOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DropDBInstanceParamTplRequest&, DropDBInstanceParamTplOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DropDBInstanceParamTplAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableSRVConnectionUrlResponse> EnableSRVConnectionUrlOutcome;
+                typedef std::future<EnableSRVConnectionUrlOutcome> EnableSRVConnectionUrlOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::EnableSRVConnectionUrlRequest&, EnableSRVConnectionUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableSRVConnectionUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableTransparentDataEncryptionResponse> EnableTransparentDataEncryptionOutcome;
                 typedef std::future<EnableTransparentDataEncryptionOutcome> EnableTransparentDataEncryptionOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::EnableTransparentDataEncryptionRequest&, EnableTransparentDataEncryptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableTransparentDataEncryptionAsyncHandler;
@@ -328,6 +345,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInstanceParamsResponse> ModifyInstanceParamsOutcome;
                 typedef std::future<ModifyInstanceParamsOutcome> ModifyInstanceParamsOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::ModifyInstanceParamsRequest&, ModifyInstanceParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceParamsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySRVConnectionUrlResponse> ModifySRVConnectionUrlOutcome;
+                typedef std::future<ModifySRVConnectionUrlOutcome> ModifySRVConnectionUrlOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::ModifySRVConnectionUrlRequest&, ModifySRVConnectionUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySRVConnectionUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::OfflineIsolatedDBInstanceResponse> OfflineIsolatedDBInstanceOutcome;
                 typedef std::future<OfflineIsolatedDBInstanceOutcome> OfflineIsolatedDBInstanceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::OfflineIsolatedDBInstanceRequest&, OfflineIsolatedDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OfflineIsolatedDBInstanceAsyncHandler;
@@ -662,6 +682,15 @@ namespace TencentCloud
                 DescribeMongodbLogsOutcomeCallable DescribeMongodbLogsCallable(const Model::DescribeMongodbLogsRequest& request);
 
                 /**
+                 *本接口（DescribeSRVConnectionDomain）用于查询MongoDB数据库当前的域名信息。
+                 * @param req DescribeSRVConnectionDomainRequest
+                 * @return DescribeSRVConnectionDomainOutcome
+                 */
+                DescribeSRVConnectionDomainOutcome DescribeSRVConnectionDomain(const Model::DescribeSRVConnectionDomainRequest &request);
+                void DescribeSRVConnectionDomainAsync(const Model::DescribeSRVConnectionDomainRequest& request, const DescribeSRVConnectionDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSRVConnectionDomainOutcomeCallable DescribeSRVConnectionDomainCallable(const Model::DescribeSRVConnectionDomainRequest& request);
+
+                /**
                  *本接口（DescribeSecurityGroup）用于查询实例绑定的安全组。
                  * @param req DescribeSecurityGroupRequest
                  * @return DescribeSecurityGroupOutcome
@@ -707,6 +736,15 @@ namespace TencentCloud
                 DescribeTransparentDataEncryptionStatusOutcomeCallable DescribeTransparentDataEncryptionStatusCallable(const Model::DescribeTransparentDataEncryptionStatusRequest& request);
 
                 /**
+                 *本接口（DisableSRVConnectionUrl）用于关闭MongoDB数据库的SRV访问地址。
+                 * @param req DisableSRVConnectionUrlRequest
+                 * @return DisableSRVConnectionUrlOutcome
+                 */
+                DisableSRVConnectionUrlOutcome DisableSRVConnectionUrl(const Model::DisableSRVConnectionUrlRequest &request);
+                void DisableSRVConnectionUrlAsync(const Model::DisableSRVConnectionUrlRequest& request, const DisableSRVConnectionUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableSRVConnectionUrlOutcomeCallable DisableSRVConnectionUrlCallable(const Model::DisableSRVConnectionUrlRequest& request);
+
+                /**
                  *本接口(DropDBInstanceParamTpl )用于删除云数据库MongoDB实例的参数模板
 **说明：DropDBInstanceParamTpl  API正在公测中，在此期间，该接口仅对公测用户开放**
                  * @param req DropDBInstanceParamTplRequest
@@ -715,6 +753,15 @@ namespace TencentCloud
                 DropDBInstanceParamTplOutcome DropDBInstanceParamTpl(const Model::DropDBInstanceParamTplRequest &request);
                 void DropDBInstanceParamTplAsync(const Model::DropDBInstanceParamTplRequest& request, const DropDBInstanceParamTplAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DropDBInstanceParamTplOutcomeCallable DropDBInstanceParamTplCallable(const Model::DropDBInstanceParamTplRequest& request);
+
+                /**
+                 *本接口（EnableSRVConnectionUrl）用于开启MongoDB数据库的SRV访问地址。
+                 * @param req EnableSRVConnectionUrlRequest
+                 * @return EnableSRVConnectionUrlOutcome
+                 */
+                EnableSRVConnectionUrlOutcome EnableSRVConnectionUrl(const Model::EnableSRVConnectionUrlRequest &request);
+                void EnableSRVConnectionUrlAsync(const Model::EnableSRVConnectionUrlRequest& request, const EnableSRVConnectionUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableSRVConnectionUrlOutcomeCallable EnableSRVConnectionUrlCallable(const Model::EnableSRVConnectionUrlRequest& request);
 
                 /**
                  *本接口（EnableTransparentDataEncryption）用于开启云数据库 MongoDB 的透明加密能力。
@@ -852,6 +899,15 @@ namespace TencentCloud
                 ModifyInstanceParamsOutcome ModifyInstanceParams(const Model::ModifyInstanceParamsRequest &request);
                 void ModifyInstanceParamsAsync(const Model::ModifyInstanceParamsRequest& request, const ModifyInstanceParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyInstanceParamsOutcomeCallable ModifyInstanceParamsCallable(const Model::ModifyInstanceParamsRequest& request);
+
+                /**
+                 *本接口（DisableSRVConnectionUrl）用于修改MongoDB数据库的SRV访问地址的TTL时长。
+                 * @param req ModifySRVConnectionUrlRequest
+                 * @return ModifySRVConnectionUrlOutcome
+                 */
+                ModifySRVConnectionUrlOutcome ModifySRVConnectionUrl(const Model::ModifySRVConnectionUrlRequest &request);
+                void ModifySRVConnectionUrlAsync(const Model::ModifySRVConnectionUrlRequest& request, const ModifySRVConnectionUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySRVConnectionUrlOutcomeCallable ModifySRVConnectionUrlCallable(const Model::ModifySRVConnectionUrlRequest& request);
 
                 /**
                  *本接口(OfflineIsolatedDBInstance)用于立即下线隔离状态的云数据库实例。进行操作的实例状态必须为隔离状态。

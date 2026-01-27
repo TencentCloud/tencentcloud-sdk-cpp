@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool AndroidAppURLHasBeenSet() const;
 
+                    /**
+                     * 获取安卓应用MD5码值（32位小写十六进制字符串）
+                     * @return AndroidAppMD5 安卓应用MD5码值（32位小写十六进制字符串）
+                     * 
+                     */
+                    std::string GetAndroidAppMD5() const;
+
+                    /**
+                     * 设置安卓应用MD5码值（32位小写十六进制字符串）
+                     * @param _androidAppMD5 安卓应用MD5码值（32位小写十六进制字符串）
+                     * 
+                     */
+                    void SetAndroidAppMD5(const std::string& _androidAppMD5);
+
+                    /**
+                     * 判断参数 AndroidAppMD5 是否已赋值
+                     * @return AndroidAppMD5 是否已赋值
+                     * 
+                     */
+                    bool AndroidAppMD5HasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_androidAppURL;
                     bool m_androidAppURLHasBeenSet;
+
+                    /**
+                     * 安卓应用MD5码值（32位小写十六进制字符串）
+                     */
+                    std::string m_androidAppMD5;
+                    bool m_androidAppMD5HasBeenSet;
 
                 };
             }

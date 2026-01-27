@@ -1540,6 +1540,56 @@ CynosdbClient::DeleteClusterDatabaseOutcomeCallable CynosdbClient::DeleteCluster
     return prom->get_future();
 }
 
+CynosdbClient::DeleteClusterSaveBackupOutcome CynosdbClient::DeleteClusterSaveBackup(const DeleteClusterSaveBackupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteClusterSaveBackup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteClusterSaveBackupResponse rsp = DeleteClusterSaveBackupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteClusterSaveBackupOutcome(rsp);
+        else
+            return DeleteClusterSaveBackupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteClusterSaveBackupOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DeleteClusterSaveBackupAsync(const DeleteClusterSaveBackupRequest& request, const DeleteClusterSaveBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteClusterSaveBackupRequest&;
+    using Resp = DeleteClusterSaveBackupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteClusterSaveBackup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::DeleteClusterSaveBackupOutcomeCallable CynosdbClient::DeleteClusterSaveBackupCallable(const DeleteClusterSaveBackupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteClusterSaveBackupOutcome>>();
+    DeleteClusterSaveBackupAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DeleteClusterSaveBackupRequest&,
+        DeleteClusterSaveBackupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CynosdbClient::DeleteParamTemplateOutcome CynosdbClient::DeleteParamTemplate(const DeleteParamTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteParamTemplate");
@@ -4040,6 +4090,56 @@ CynosdbClient::DescribeProxySpecsOutcomeCallable CynosdbClient::DescribeProxySpe
     return prom->get_future();
 }
 
+CynosdbClient::DescribeRedoLogsOutcome CynosdbClient::DescribeRedoLogs(const DescribeRedoLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRedoLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRedoLogsResponse rsp = DescribeRedoLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRedoLogsOutcome(rsp);
+        else
+            return DescribeRedoLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRedoLogsOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeRedoLogsAsync(const DescribeRedoLogsRequest& request, const DescribeRedoLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRedoLogsRequest&;
+    using Resp = DescribeRedoLogsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRedoLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::DescribeRedoLogsOutcomeCallable CynosdbClient::DescribeRedoLogsCallable(const DescribeRedoLogsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRedoLogsOutcome>>();
+    DescribeRedoLogsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeRedoLogsRequest&,
+        DescribeRedoLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CynosdbClient::DescribeResourcePackageDetailOutcome CynosdbClient::DescribeResourcePackageDetail(const DescribeResourcePackageDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeResourcePackageDetail");
@@ -4332,6 +4432,56 @@ CynosdbClient::DescribeSSLStatusOutcomeCallable CynosdbClient::DescribeSSLStatus
         const CynosdbClient*,
         const DescribeSSLStatusRequest&,
         DescribeSSLStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CynosdbClient::DescribeSaveBackupClustersOutcome CynosdbClient::DescribeSaveBackupClusters(const DescribeSaveBackupClustersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSaveBackupClusters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSaveBackupClustersResponse rsp = DescribeSaveBackupClustersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSaveBackupClustersOutcome(rsp);
+        else
+            return DescribeSaveBackupClustersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSaveBackupClustersOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeSaveBackupClustersAsync(const DescribeSaveBackupClustersRequest& request, const DescribeSaveBackupClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSaveBackupClustersRequest&;
+    using Resp = DescribeSaveBackupClustersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSaveBackupClusters", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::DescribeSaveBackupClustersOutcomeCallable CynosdbClient::DescribeSaveBackupClustersCallable(const DescribeSaveBackupClustersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSaveBackupClustersOutcome>>();
+    DescribeSaveBackupClustersAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeSaveBackupClustersRequest&,
+        DescribeSaveBackupClustersOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -6782,6 +6932,56 @@ CynosdbClient::ModifyServerlessStrategyOutcomeCallable CynosdbClient::ModifyServ
         const CynosdbClient*,
         const ModifyServerlessStrategyRequest&,
         ModifyServerlessStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CynosdbClient::ModifySnapBackupCrossRegionConfigOutcome CynosdbClient::ModifySnapBackupCrossRegionConfig(const ModifySnapBackupCrossRegionConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySnapBackupCrossRegionConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySnapBackupCrossRegionConfigResponse rsp = ModifySnapBackupCrossRegionConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySnapBackupCrossRegionConfigOutcome(rsp);
+        else
+            return ModifySnapBackupCrossRegionConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySnapBackupCrossRegionConfigOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifySnapBackupCrossRegionConfigAsync(const ModifySnapBackupCrossRegionConfigRequest& request, const ModifySnapBackupCrossRegionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifySnapBackupCrossRegionConfigRequest&;
+    using Resp = ModifySnapBackupCrossRegionConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifySnapBackupCrossRegionConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::ModifySnapBackupCrossRegionConfigOutcomeCallable CynosdbClient::ModifySnapBackupCrossRegionConfigCallable(const ModifySnapBackupCrossRegionConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifySnapBackupCrossRegionConfigOutcome>>();
+    ModifySnapBackupCrossRegionConfigAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifySnapBackupCrossRegionConfigRequest&,
+        ModifySnapBackupCrossRegionConfigOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/ImageSceneAigcEncodeConfig.h>
 
 
 namespace TencentCloud
@@ -167,6 +168,27 @@ namespace TencentCloud
                      */
                     bool AspectRatioHasBeenSet() const;
 
+                    /**
+                     * 获取输出图片编码格式参数。**仅AI换衣场景有效。**
+                     * @return EncodeConfig 输出图片编码格式参数。**仅AI换衣场景有效。**
+                     * 
+                     */
+                    ImageSceneAigcEncodeConfig GetEncodeConfig() const;
+
+                    /**
+                     * 设置输出图片编码格式参数。**仅AI换衣场景有效。**
+                     * @param _encodeConfig 输出图片编码格式参数。**仅AI换衣场景有效。**
+                     * 
+                     */
+                    void SetEncodeConfig(const ImageSceneAigcEncodeConfig& _encodeConfig);
+
+                    /**
+                     * 判断参数 EncodeConfig 是否已赋值
+                     * @return EncodeConfig 是否已赋值
+                     * 
+                     */
+                    bool EncodeConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -202,6 +224,12 @@ namespace TencentCloud
                      */
                     std::string m_aspectRatio;
                     bool m_aspectRatioHasBeenSet;
+
+                    /**
+                     * 输出图片编码格式参数。**仅AI换衣场景有效。**
+                     */
+                    ImageSceneAigcEncodeConfig m_encodeConfig;
+                    bool m_encodeConfigHasBeenSet;
 
                 };
             }

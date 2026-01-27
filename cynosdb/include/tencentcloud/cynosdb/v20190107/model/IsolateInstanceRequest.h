@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool IsolateReasonHasBeenSet() const;
 
+                    /**
+                     * 获取保留备份
+                     * @return SaveBackup 保留备份
+                     * 
+                     */
+                    bool GetSaveBackup() const;
+
+                    /**
+                     * 设置保留备份
+                     * @param _saveBackup 保留备份
+                     * 
+                     */
+                    void SetSaveBackup(const bool& _saveBackup);
+
+                    /**
+                     * 判断参数 SaveBackup 是否已赋值
+                     * @return SaveBackup 是否已赋值
+                     * 
+                     */
+                    bool SaveBackupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_isolateReason;
                     bool m_isolateReasonHasBeenSet;
+
+                    /**
+                     * 保留备份
+                     */
+                    bool m_saveBackup;
+                    bool m_saveBackupHasBeenSet;
 
                 };
             }

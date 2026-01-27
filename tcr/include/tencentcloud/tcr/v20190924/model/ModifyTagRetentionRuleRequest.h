@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcr/v20190924/model/RetentionRule.h>
+#include <tencentcloud/tcr/v20190924/model/RetentionRuleItem.h>
 
 
 namespace TencentCloud
@@ -44,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主实例iD
-                     * @return RegistryId 主实例iD
+                     * 获取<p>主实例iD</p>
+                     * @return RegistryId <p>主实例iD</p>
                      * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
-                     * 设置主实例iD
-                     * @param _registryId 主实例iD
+                     * 设置<p>主实例iD</p>
+                     * @param _registryId <p>主实例iD</p>
                      * 
                      */
                     void SetRegistryId(const std::string& _registryId);
@@ -65,15 +66,15 @@ namespace TencentCloud
                     bool RegistryIdHasBeenSet() const;
 
                     /**
-                     * 获取命名空间的Id，必须填写原有的命名空间id
-                     * @return NamespaceId 命名空间的Id，必须填写原有的命名空间id
+                     * 获取<p>命名空间的Id，必须填写原有的命名空间id</p>
+                     * @return NamespaceId <p>命名空间的Id，必须填写原有的命名空间id</p>
                      * 
                      */
                     int64_t GetNamespaceId() const;
 
                     /**
-                     * 设置命名空间的Id，必须填写原有的命名空间id
-                     * @param _namespaceId 命名空间的Id，必须填写原有的命名空间id
+                     * 设置<p>命名空间的Id，必须填写原有的命名空间id</p>
+                     * @param _namespaceId <p>命名空间的Id，必须填写原有的命名空间id</p>
                      * 
                      */
                     void SetNamespaceId(const int64_t& _namespaceId);
@@ -86,36 +87,15 @@ namespace TencentCloud
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
-                     * 获取保留策略
-                     * @return RetentionRule 保留策略
-                     * 
-                     */
-                    RetentionRule GetRetentionRule() const;
-
-                    /**
-                     * 设置保留策略
-                     * @param _retentionRule 保留策略
-                     * 
-                     */
-                    void SetRetentionRule(const RetentionRule& _retentionRule);
-
-                    /**
-                     * 判断参数 RetentionRule 是否已赋值
-                     * @return RetentionRule 是否已赋值
-                     * 
-                     */
-                    bool RetentionRuleHasBeenSet() const;
-
-                    /**
-                     * 获取执行周期，必须填写为原来的设置
-                     * @return CronSetting 执行周期，必须填写为原来的设置
+                     * 获取<p>执行周期，必须填写为原来的设置</p>
+                     * @return CronSetting <p>执行周期，必须填写为原来的设置</p>
                      * 
                      */
                     std::string GetCronSetting() const;
 
                     /**
-                     * 设置执行周期，必须填写为原来的设置
-                     * @param _cronSetting 执行周期，必须填写为原来的设置
+                     * 设置<p>执行周期，必须填写为原来的设置</p>
+                     * @param _cronSetting <p>执行周期，必须填写为原来的设置</p>
                      * 
                      */
                     void SetCronSetting(const std::string& _cronSetting);
@@ -128,15 +108,15 @@ namespace TencentCloud
                     bool CronSettingHasBeenSet() const;
 
                     /**
-                     * 获取规则Id
-                     * @return RetentionId 规则Id
+                     * 获取<p>规则Id</p>
+                     * @return RetentionId <p>规则Id</p>
                      * 
                      */
                     int64_t GetRetentionId() const;
 
                     /**
-                     * 设置规则Id
-                     * @param _retentionId 规则Id
+                     * 设置<p>规则Id</p>
+                     * @param _retentionId <p>规则Id</p>
                      * 
                      */
                     void SetRetentionId(const int64_t& _retentionId);
@@ -149,15 +129,57 @@ namespace TencentCloud
                     bool RetentionIdHasBeenSet() const;
 
                     /**
-                     * 获取是否禁用规则
-                     * @return Disabled 是否禁用规则
+                     * 获取<p>保留策略，当基本保留策略和高级保留策略同时配置时，优先使用高级保留策略</p>
+                     * @return RetentionRule <p>保留策略，当基本保留策略和高级保留策略同时配置时，优先使用高级保留策略</p>
+                     * 
+                     */
+                    RetentionRule GetRetentionRule() const;
+
+                    /**
+                     * 设置<p>保留策略，当基本保留策略和高级保留策略同时配置时，优先使用高级保留策略</p>
+                     * @param _retentionRule <p>保留策略，当基本保留策略和高级保留策略同时配置时，优先使用高级保留策略</p>
+                     * 
+                     */
+                    void SetRetentionRule(const RetentionRule& _retentionRule);
+
+                    /**
+                     * 判断参数 RetentionRule 是否已赋值
+                     * @return RetentionRule 是否已赋值
+                     * 
+                     */
+                    bool RetentionRuleHasBeenSet() const;
+
+                    /**
+                     * 获取<p>高级保留策略，当基本保留策略和高级保留策略同时配置时，优先使用高级保留策略</p>
+                     * @return AdvancedRuleItems <p>高级保留策略，当基本保留策略和高级保留策略同时配置时，优先使用高级保留策略</p>
+                     * 
+                     */
+                    std::vector<RetentionRuleItem> GetAdvancedRuleItems() const;
+
+                    /**
+                     * 设置<p>高级保留策略，当基本保留策略和高级保留策略同时配置时，优先使用高级保留策略</p>
+                     * @param _advancedRuleItems <p>高级保留策略，当基本保留策略和高级保留策略同时配置时，优先使用高级保留策略</p>
+                     * 
+                     */
+                    void SetAdvancedRuleItems(const std::vector<RetentionRuleItem>& _advancedRuleItems);
+
+                    /**
+                     * 判断参数 AdvancedRuleItems 是否已赋值
+                     * @return AdvancedRuleItems 是否已赋值
+                     * 
+                     */
+                    bool AdvancedRuleItemsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否禁用规则</p>
+                     * @return Disabled <p>是否禁用规则</p>
                      * 
                      */
                     bool GetDisabled() const;
 
                     /**
-                     * 设置是否禁用规则
-                     * @param _disabled 是否禁用规则
+                     * 设置<p>是否禁用规则</p>
+                     * @param _disabled <p>是否禁用规则</p>
                      * 
                      */
                     void SetDisabled(const bool& _disabled);
@@ -172,37 +194,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主实例iD
+                     * <p>主实例iD</p>
                      */
                     std::string m_registryId;
                     bool m_registryIdHasBeenSet;
 
                     /**
-                     * 命名空间的Id，必须填写原有的命名空间id
+                     * <p>命名空间的Id，必须填写原有的命名空间id</p>
                      */
                     int64_t m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
 
                     /**
-                     * 保留策略
-                     */
-                    RetentionRule m_retentionRule;
-                    bool m_retentionRuleHasBeenSet;
-
-                    /**
-                     * 执行周期，必须填写为原来的设置
+                     * <p>执行周期，必须填写为原来的设置</p>
                      */
                     std::string m_cronSetting;
                     bool m_cronSettingHasBeenSet;
 
                     /**
-                     * 规则Id
+                     * <p>规则Id</p>
                      */
                     int64_t m_retentionId;
                     bool m_retentionIdHasBeenSet;
 
                     /**
-                     * 是否禁用规则
+                     * <p>保留策略，当基本保留策略和高级保留策略同时配置时，优先使用高级保留策略</p>
+                     */
+                    RetentionRule m_retentionRule;
+                    bool m_retentionRuleHasBeenSet;
+
+                    /**
+                     * <p>高级保留策略，当基本保留策略和高级保留策略同时配置时，优先使用高级保留策略</p>
+                     */
+                    std::vector<RetentionRuleItem> m_advancedRuleItems;
+                    bool m_advancedRuleItemsHasBeenSet;
+
+                    /**
+                     * <p>是否禁用规则</p>
                      */
                     bool m_disabled;
                     bool m_disabledHasBeenSet;

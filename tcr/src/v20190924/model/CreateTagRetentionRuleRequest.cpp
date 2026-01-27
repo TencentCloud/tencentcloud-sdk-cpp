@@ -25,8 +25,9 @@ using namespace std;
 CreateTagRetentionRuleRequest::CreateTagRetentionRuleRequest() :
     m_registryIdHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
-    m_retentionRuleHasBeenSet(false),
     m_cronSettingHasBeenSet(false),
+    m_retentionRuleHasBeenSet(false),
+    m_advancedRuleItemsHasBeenSet(false),
     m_disabledHasBeenSet(false)
 {
 }
@@ -54,6 +55,14 @@ string CreateTagRetentionRuleRequest::ToJsonString() const
         d.AddMember(iKey, m_namespaceId, allocator);
     }
 
+    if (m_cronSettingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CronSetting";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cronSetting.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_retentionRuleHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -63,12 +72,19 @@ string CreateTagRetentionRuleRequest::ToJsonString() const
         m_retentionRule.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_cronSettingHasBeenSet)
+    if (m_advancedRuleItemsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CronSetting";
+        string key = "AdvancedRuleItems";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_cronSetting.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_advancedRuleItems.begin(); itr != m_advancedRuleItems.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_disabledHasBeenSet)
@@ -119,6 +135,22 @@ bool CreateTagRetentionRuleRequest::NamespaceIdHasBeenSet() const
     return m_namespaceIdHasBeenSet;
 }
 
+string CreateTagRetentionRuleRequest::GetCronSetting() const
+{
+    return m_cronSetting;
+}
+
+void CreateTagRetentionRuleRequest::SetCronSetting(const string& _cronSetting)
+{
+    m_cronSetting = _cronSetting;
+    m_cronSettingHasBeenSet = true;
+}
+
+bool CreateTagRetentionRuleRequest::CronSettingHasBeenSet() const
+{
+    return m_cronSettingHasBeenSet;
+}
+
 RetentionRule CreateTagRetentionRuleRequest::GetRetentionRule() const
 {
     return m_retentionRule;
@@ -135,20 +167,20 @@ bool CreateTagRetentionRuleRequest::RetentionRuleHasBeenSet() const
     return m_retentionRuleHasBeenSet;
 }
 
-string CreateTagRetentionRuleRequest::GetCronSetting() const
+vector<RetentionRuleItem> CreateTagRetentionRuleRequest::GetAdvancedRuleItems() const
 {
-    return m_cronSetting;
+    return m_advancedRuleItems;
 }
 
-void CreateTagRetentionRuleRequest::SetCronSetting(const string& _cronSetting)
+void CreateTagRetentionRuleRequest::SetAdvancedRuleItems(const vector<RetentionRuleItem>& _advancedRuleItems)
 {
-    m_cronSetting = _cronSetting;
-    m_cronSettingHasBeenSet = true;
+    m_advancedRuleItems = _advancedRuleItems;
+    m_advancedRuleItemsHasBeenSet = true;
 }
 
-bool CreateTagRetentionRuleRequest::CronSettingHasBeenSet() const
+bool CreateTagRetentionRuleRequest::AdvancedRuleItemsHasBeenSet() const
 {
-    return m_cronSettingHasBeenSet;
+    return m_advancedRuleItemsHasBeenSet;
 }
 
 bool CreateTagRetentionRuleRequest::GetDisabled() const

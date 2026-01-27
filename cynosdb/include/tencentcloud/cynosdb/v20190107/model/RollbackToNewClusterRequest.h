@@ -671,6 +671,27 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     bool AutoArchiveHasBeenSet() const;
 
+                    /**
+                     * 获取是否从保存备份中恢复
+                     * @return FromSaveBackup 是否从保存备份中恢复
+                     * 
+                     */
+                    bool GetFromSaveBackup() const;
+
+                    /**
+                     * 设置是否从保存备份中恢复
+                     * @param _fromSaveBackup 是否从保存备份中恢复
+                     * 
+                     */
+                    void SetFromSaveBackup(const bool& _fromSaveBackup);
+
+                    /**
+                     * 判断参数 FromSaveBackup 是否已赋值
+                     * @return FromSaveBackup 是否已赋值
+                     * 
+                     */
+                    bool FromSaveBackupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -849,6 +870,12 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     std::string m_autoArchive;
                     bool m_autoArchiveHasBeenSet;
+
+                    /**
+                     * 是否从保存备份中恢复
+                     */
+                    bool m_fromSaveBackup;
+                    bool m_fromSaveBackupHasBeenSet;
 
                 };
             }

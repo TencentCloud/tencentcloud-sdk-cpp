@@ -25,7 +25,8 @@ SceneAigcImageOutputConfig::SceneAigcImageOutputConfig() :
     m_mediaNameHasBeenSet(false),
     m_classIdHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
-    m_aspectRatioHasBeenSet(false)
+    m_aspectRatioHasBeenSet(false),
+    m_encodeConfigHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,23 @@ CoreInternalOutcome SceneAigcImageOutputConfig::Deserialize(const rapidjson::Val
         m_aspectRatioHasBeenSet = true;
     }
 
+    if (value.HasMember("EncodeConfig") && !value["EncodeConfig"].IsNull())
+    {
+        if (!value["EncodeConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SceneAigcImageOutputConfig.EncodeConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_encodeConfig.Deserialize(value["EncodeConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_encodeConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +147,15 @@ void SceneAigcImageOutputConfig::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "AspectRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_aspectRatio.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encodeConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncodeConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_encodeConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -212,5 +239,21 @@ void SceneAigcImageOutputConfig::SetAspectRatio(const string& _aspectRatio)
 bool SceneAigcImageOutputConfig::AspectRatioHasBeenSet() const
 {
     return m_aspectRatioHasBeenSet;
+}
+
+ImageSceneAigcEncodeConfig SceneAigcImageOutputConfig::GetEncodeConfig() const
+{
+    return m_encodeConfig;
+}
+
+void SceneAigcImageOutputConfig::SetEncodeConfig(const ImageSceneAigcEncodeConfig& _encodeConfig)
+{
+    m_encodeConfig = _encodeConfig;
+    m_encodeConfigHasBeenSet = true;
+}
+
+bool SceneAigcImageOutputConfig::EncodeConfigHasBeenSet() const
+{
+    return m_encodeConfigHasBeenSet;
 }
 

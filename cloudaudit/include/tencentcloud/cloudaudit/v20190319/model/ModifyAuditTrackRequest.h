@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取跟踪集 ID
-                     * @return TrackId 跟踪集 ID
+                     * 获取<p>跟踪集 ID</p>
+                     * @return TrackId <p>跟踪集 ID</p>
                      * 
                      */
                     uint64_t GetTrackId() const;
 
                     /**
-                     * 设置跟踪集 ID
-                     * @param _trackId 跟踪集 ID
+                     * 设置<p>跟踪集 ID</p>
+                     * @param _trackId <p>跟踪集 ID</p>
                      * 
                      */
                     void SetTrackId(const uint64_t& _trackId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TrackIdHasBeenSet() const;
 
                     /**
-                     * 获取跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符
-                     * @return Name 跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符
+                     * 获取<p>跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符</p>
+                     * @return Name <p>跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符
-                     * @param _name 跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符
+                     * 设置<p>跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符</p>
+                     * @param _name <p>跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取跟踪事件类型（读：Read；写：Write；全部：*）
-                     * @return ActionType 跟踪事件类型（读：Read；写：Write；全部：*）
+                     * 获取<p>跟踪事件类型（读：Read；写：Write；全部：*）</p>
+                     * @return ActionType <p>跟踪事件类型（读：Read；写：Write；全部：*）</p>
                      * 
                      */
                     std::string GetActionType() const;
 
                     /**
-                     * 设置跟踪事件类型（读：Read；写：Write；全部：*）
-                     * @param _actionType 跟踪事件类型（读：Read；写：Write；全部：*）
+                     * 设置<p>跟踪事件类型（读：Read；写：Write；全部：*）</p>
+                     * @param _actionType <p>跟踪事件类型（读：Read；写：Write；全部：*）</p>
                      * 
                      */
                     void SetActionType(const std::string& _actionType);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool ActionTypeHasBeenSet() const;
 
                     /**
-                     * 获取跟踪事件所属产品（支持全部产品或单个产品，如：cos，全部：*）
-                     * @return ResourceType 跟踪事件所属产品（支持全部产品或单个产品，如：cos，全部：*）
+                     * 获取<p>跟踪事件所属产品（支持全部产品或单个产品，如：cos，全部：*）</p>
+                     * @return ResourceType <p>跟踪事件所属产品（支持全部产品或单个产品，如：cos，全部：*）</p>
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置跟踪事件所属产品（支持全部产品或单个产品，如：cos，全部：*）
-                     * @param _resourceType 跟踪事件所属产品（支持全部产品或单个产品，如：cos，全部：*）
+                     * 设置<p>跟踪事件所属产品（支持全部产品或单个产品，如：cos，全部：*）</p>
+                     * @param _resourceType <p>跟踪事件所属产品（支持全部产品或单个产品，如：cos，全部：*）</p>
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取跟踪集状态（未开启：0；开启：1）
-                     * @return Status 跟踪集状态（未开启：0；开启：1）
+                     * 获取<p>跟踪集状态（未开启：0；开启：1）</p>
+                     * @return Status <p>跟踪集状态（未开启：0；开启：1）</p>
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置跟踪集状态（未开启：0；开启：1）
-                     * @param _status 跟踪集状态（未开启：0；开启：1）
+                     * 设置<p>跟踪集状态（未开启：0；开启：1）</p>
+                     * @param _status <p>跟踪集状态（未开启：0；开启：1）</p>
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：["*"]；指定ResourceType时，支持全部接口：["*"]；支持部分接口：["cos", "cls"]，接口列表上限10个）
-                     * @return EventNames 跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：["*"]；指定ResourceType时，支持全部接口：["*"]；支持部分接口：["cos", "cls"]，接口列表上限10个）
+                     * 获取<p>跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[&quot;*&quot;]；指定ResourceType时，支持全部接口：[&quot;*&quot;]；支持部分接口：[&quot;cos&quot;, &quot;cls&quot;]，接口列表上限10个）</p>
+                     * @return EventNames <p>跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[&quot;*&quot;]；指定ResourceType时，支持全部接口：[&quot;*&quot;]；支持部分接口：[&quot;cos&quot;, &quot;cls&quot;]，接口列表上限10个）</p>
                      * 
                      */
                     std::vector<std::string> GetEventNames() const;
 
                     /**
-                     * 设置跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：["*"]；指定ResourceType时，支持全部接口：["*"]；支持部分接口：["cos", "cls"]，接口列表上限10个）
-                     * @param _eventNames 跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：["*"]；指定ResourceType时，支持全部接口：["*"]；支持部分接口：["cos", "cls"]，接口列表上限10个）
+                     * 设置<p>跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[&quot;*&quot;]；指定ResourceType时，支持全部接口：[&quot;*&quot;]；支持部分接口：[&quot;cos&quot;, &quot;cls&quot;]，接口列表上限10个）</p>
+                     * @param _eventNames <p>跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[&quot;*&quot;]；指定ResourceType时，支持全部接口：[&quot;*&quot;]；支持部分接口：[&quot;cos&quot;, &quot;cls&quot;]，接口列表上限10个）</p>
                      * 
                      */
                     void SetEventNames(const std::vector<std::string>& _eventNames);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool EventNamesHasBeenSet() const;
 
                     /**
-                     * 获取数据投递存储（目前支持 cos、cls）
-                     * @return Storage 数据投递存储（目前支持 cos、cls）
+                     * 获取<p>数据投递存储（目前支持 cos、cls、ckafka）</p>
+                     * @return Storage <p>数据投递存储（目前支持 cos、cls、ckafka）</p>
                      * 
                      */
                     Storage GetStorage() const;
 
                     /**
-                     * 设置数据投递存储（目前支持 cos、cls）
-                     * @param _storage 数据投递存储（目前支持 cos、cls）
+                     * 设置<p>数据投递存储（目前支持 cos、cls、ckafka）</p>
+                     * @param _storage <p>数据投递存储（目前支持 cos、cls、ckafka）</p>
                      * 
                      */
                     void SetStorage(const Storage& _storage);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool StorageHasBeenSet() const;
 
                     /**
-                     * 获取是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)
-                     * @return TrackForAllMembers 是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)
+                     * 获取<p>是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)</p>
+                     * @return TrackForAllMembers <p>是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)</p>
                      * 
                      */
                     uint64_t GetTrackForAllMembers() const;
 
                     /**
-                     * 设置是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)
-                     * @param _trackForAllMembers 是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)
+                     * 设置<p>是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)</p>
+                     * @param _trackForAllMembers <p>是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)</p>
                      * 
                      */
                     void SetTrackForAllMembers(const uint64_t& _trackForAllMembers);
@@ -214,49 +214,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 跟踪集 ID
+                     * <p>跟踪集 ID</p>
                      */
                     uint64_t m_trackId;
                     bool m_trackIdHasBeenSet;
 
                     /**
-                     * 跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符
+                     * <p>跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 跟踪事件类型（读：Read；写：Write；全部：*）
+                     * <p>跟踪事件类型（读：Read；写：Write；全部：*）</p>
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
 
                     /**
-                     * 跟踪事件所属产品（支持全部产品或单个产品，如：cos，全部：*）
+                     * <p>跟踪事件所属产品（支持全部产品或单个产品，如：cos，全部：*）</p>
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 跟踪集状态（未开启：0；开启：1）
+                     * <p>跟踪集状态（未开启：0；开启：1）</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：["*"]；指定ResourceType时，支持全部接口：["*"]；支持部分接口：["cos", "cls"]，接口列表上限10个）
+                     * <p>跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[&quot;*&quot;]；指定ResourceType时，支持全部接口：[&quot;*&quot;]；支持部分接口：[&quot;cos&quot;, &quot;cls&quot;]，接口列表上限10个）</p>
                      */
                     std::vector<std::string> m_eventNames;
                     bool m_eventNamesHasBeenSet;
 
                     /**
-                     * 数据投递存储（目前支持 cos、cls）
+                     * <p>数据投递存储（目前支持 cos、cls、ckafka）</p>
                      */
                     Storage m_storage;
                     bool m_storageHasBeenSet;
 
                     /**
-                     * 是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)
+                     * <p>是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号(0：未开启，1：开启，只能集团管理账号或者可信服务管理账号开启此项功能)</p>
                      */
                     uint64_t m_trackForAllMembers;
                     bool m_trackForAllMembersHasBeenSet;

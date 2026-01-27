@@ -19,15 +19,9 @@ set(nlp_public_header
   )
 
 set(nlp_public_header_model
-  include/tencentcloud/nlp/v20190408/model/Category.h
-  include/tencentcloud/nlp/v20190408/model/ComposeCoupletRequest.h
-  include/tencentcloud/nlp/v20190408/model/EvaluateSentenceSimilarityRequest.h
-  include/tencentcloud/nlp/v20190408/model/SentencePair.h
   include/tencentcloud/nlp/v20190408/model/SentenceCorrectionResponse.h
-  include/tencentcloud/nlp/v20190408/model/ClassifyContentRequest.h
+  include/tencentcloud/nlp/v20190408/model/ParseWordsRequest.h
   include/tencentcloud/nlp/v20190408/model/Entity.h
-  include/tencentcloud/nlp/v20190408/model/EvaluateSentenceSimilarityResponse.h
-  include/tencentcloud/nlp/v20190408/model/ClassifyContentResponse.h
   include/tencentcloud/nlp/v20190408/model/SentenceCorrectionRequest.h
   include/tencentcloud/nlp/v20190408/model/AnalyzeSentimentRequest.h
   include/tencentcloud/nlp/v20190408/model/AnalyzeSentimentResponse.h
@@ -35,21 +29,13 @@ set(nlp_public_header_model
   include/tencentcloud/nlp/v20190408/model/BasicParticiple.h
   include/tencentcloud/nlp/v20190408/model/CorrectionItem.h
   include/tencentcloud/nlp/v20190408/model/CompoundParticiple.h
-  include/tencentcloud/nlp/v20190408/model/ParseWordsRequest.h
-  include/tencentcloud/nlp/v20190408/model/ComposeCoupletResponse.h
   )
 
 set(nlp_src
   src/v20190408/NlpClient.cpp
-  src/v20190408/model/Category.cpp
-  src/v20190408/model/ComposeCoupletRequest.cpp
-  src/v20190408/model/EvaluateSentenceSimilarityRequest.cpp
-  src/v20190408/model/SentencePair.cpp
   src/v20190408/model/SentenceCorrectionResponse.cpp
-  src/v20190408/model/ClassifyContentRequest.cpp
+  src/v20190408/model/ParseWordsRequest.cpp
   src/v20190408/model/Entity.cpp
-  src/v20190408/model/EvaluateSentenceSimilarityResponse.cpp
-  src/v20190408/model/ClassifyContentResponse.cpp
   src/v20190408/model/SentenceCorrectionRequest.cpp
   src/v20190408/model/AnalyzeSentimentRequest.cpp
   src/v20190408/model/AnalyzeSentimentResponse.cpp
@@ -57,8 +43,6 @@ set(nlp_src
   src/v20190408/model/BasicParticiple.cpp
   src/v20190408/model/CorrectionItem.cpp
   src/v20190408/model/CompoundParticiple.cpp
-  src/v20190408/model/ParseWordsRequest.cpp
-  src/v20190408/model/ComposeCoupletResponse.cpp
   )
 
 set(nlp_include

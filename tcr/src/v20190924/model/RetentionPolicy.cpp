@@ -24,6 +24,7 @@ RetentionPolicy::RetentionPolicy() :
     m_retentionIdHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
     m_retentionRuleListHasBeenSet(false),
+    m_advancedRuleItemsHasBeenSet(false),
     m_cronSettingHasBeenSet(false),
     m_disabledHasBeenSet(false),
     m_nextExecutionTimeHasBeenSet(false)
@@ -73,6 +74,26 @@ CoreInternalOutcome RetentionPolicy::Deserialize(const rapidjson::Value &value)
             m_retentionRuleList.push_back(item);
         }
         m_retentionRuleListHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdvancedRuleItems") && !value["AdvancedRuleItems"].IsNull())
+    {
+        if (!value["AdvancedRuleItems"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RetentionPolicy.AdvancedRuleItems` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AdvancedRuleItems"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RetentionRuleItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_advancedRuleItems.push_back(item);
+        }
+        m_advancedRuleItemsHasBeenSet = true;
     }
 
     if (value.HasMember("CronSetting") && !value["CronSetting"].IsNull())
@@ -137,6 +158,21 @@ void RetentionPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
 
         int i=0;
         for (auto itr = m_retentionRuleList.begin(); itr != m_retentionRuleList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_advancedRuleItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedRuleItems";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_advancedRuleItems.begin(); itr != m_advancedRuleItems.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -216,6 +252,22 @@ void RetentionPolicy::SetRetentionRuleList(const vector<RetentionRule>& _retenti
 bool RetentionPolicy::RetentionRuleListHasBeenSet() const
 {
     return m_retentionRuleListHasBeenSet;
+}
+
+vector<RetentionRuleItem> RetentionPolicy::GetAdvancedRuleItems() const
+{
+    return m_advancedRuleItems;
+}
+
+void RetentionPolicy::SetAdvancedRuleItems(const vector<RetentionRuleItem>& _advancedRuleItems)
+{
+    m_advancedRuleItems = _advancedRuleItems;
+    m_advancedRuleItemsHasBeenSet = true;
+}
+
+bool RetentionPolicy::AdvancedRuleItemsHasBeenSet() const
+{
+    return m_advancedRuleItemsHasBeenSet;
 }
 
 string RetentionPolicy::GetCronSetting() const

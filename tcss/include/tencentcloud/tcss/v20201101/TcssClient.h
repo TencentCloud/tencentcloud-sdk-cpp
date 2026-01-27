@@ -1746,7 +1746,9 @@ namespace TencentCloud
 
 
                 /**
-                 *容器网络创建网络策略添加并发布任务
+                 *功能已下线待三合一重构
+
+容器网络创建网络策略添加并发布任务
                  * @param req AddAndPublishNetworkFirewallPolicyDetailRequest
                  * @return AddAndPublishNetworkFirewallPolicyDetailOutcome
                  */
@@ -1755,7 +1757,9 @@ namespace TencentCloud
                 AddAndPublishNetworkFirewallPolicyDetailOutcomeCallable AddAndPublishNetworkFirewallPolicyDetailCallable(const Model::AddAndPublishNetworkFirewallPolicyDetailRequest& request);
 
                 /**
-                 *容器网络创建Yaml网络策略并发布任务
+                 *功能已下线待三合一重构
+
+容器网络创建Yaml网络策略并发布任务
                  * @param req AddAndPublishNetworkFirewallPolicyYamlDetailRequest
                  * @return AddAndPublishNetworkFirewallPolicyYamlDetailOutcome
                  */
@@ -1874,7 +1878,9 @@ namespace TencentCloud
                 AddIgnoreVulOutcomeCallable AddIgnoreVulCallable(const Model::AddIgnoreVulRequest& request);
 
                 /**
-                 *容器网络创建网络策略添加任务
+                 *功能已下线待三合一重构
+
+容器网络创建网络策略添加任务
                  * @param req AddNetworkFirewallPolicyDetailRequest
                  * @return AddNetworkFirewallPolicyDetailOutcome
                  */
@@ -1883,7 +1889,9 @@ namespace TencentCloud
                 AddNetworkFirewallPolicyDetailOutcomeCallable AddNetworkFirewallPolicyDetailCallable(const Model::AddNetworkFirewallPolicyDetailRequest& request);
 
                 /**
-                 *容器网络创建Yaml网络策略添加任务
+                 *功能已下线待三合一重构
+
+容器网络创建Yaml网络策略添加任务
                  * @param req AddNetworkFirewallPolicyYamlDetailRequest
                  * @return AddNetworkFirewallPolicyYamlDetailOutcome
                  */
@@ -1892,7 +1900,9 @@ namespace TencentCloud
                 AddNetworkFirewallPolicyYamlDetailOutcomeCallable AddNetworkFirewallPolicyYamlDetailCallable(const Model::AddNetworkFirewallPolicyYamlDetailRequest& request);
 
                 /**
-                 *容器网络创建检查Yaml网络策略任务
+                 *功能已下线待三合一重构
+
+容器网络创建检查Yaml网络策略任务
                  * @param req CheckNetworkFirewallPolicyYamlRequest
                  * @return CheckNetworkFirewallPolicyYamlOutcome
                  */
@@ -1910,7 +1920,9 @@ namespace TencentCloud
                 CheckRepeatAssetImageRegistryOutcomeCallable CheckRepeatAssetImageRegistryCallable(const Model::CheckRepeatAssetImageRegistryRequest& request);
 
                 /**
-                 *容器网络创建网络策略确认任务
+                 *功能已下线待三合一重构
+
+容器网络创建网络策略确认任务
                  * @param req ConfirmNetworkFirewallPolicyRequest
                  * @return ConfirmNetworkFirewallPolicyOutcome
                  */
@@ -2117,7 +2129,9 @@ namespace TencentCloud
                 CreateK8sApiAbnormalRuleInfoOutcomeCallable CreateK8sApiAbnormalRuleInfoCallable(const Model::CreateK8sApiAbnormalRuleInfoRequest& request);
 
                 /**
-                 *容器网络集群下发刷新任务
+                 *功能已下线待三合一重构
+
+容器网络集群下发刷新任务
                  * @param req CreateNetworkFirewallClusterRefreshRequest
                  * @return CreateNetworkFirewallClusterRefreshOutcome
                  */
@@ -2126,7 +2140,9 @@ namespace TencentCloud
                 CreateNetworkFirewallClusterRefreshOutcomeCallable CreateNetworkFirewallClusterRefreshCallable(const Model::CreateNetworkFirewallClusterRefreshRequest& request);
 
                 /**
-                 *容器网络集群网络策略创建自动发现任务
+                 *功能已下线待三合一重构
+
+容器网络集群网络策略创建自动发现任务
                  * @param req CreateNetworkFirewallPolicyDiscoverRequest
                  * @return CreateNetworkFirewallPolicyDiscoverOutcome
                  */
@@ -2135,7 +2151,9 @@ namespace TencentCloud
                 CreateNetworkFirewallPolicyDiscoverOutcomeCallable CreateNetworkFirewallPolicyDiscoverCallable(const Model::CreateNetworkFirewallPolicyDiscoverRequest& request);
 
                 /**
-                 *容器网络创建网络策略发布任务
+                 *功能已下线待三合一重构
+
+容器网络创建网络策略发布任务
                  * @param req CreateNetworkFirewallPublishRequest
                  * @return CreateNetworkFirewallPublishOutcome
                  */
@@ -2144,7 +2162,9 @@ namespace TencentCloud
                 CreateNetworkFirewallPublishOutcomeCallable CreateNetworkFirewallPublishCallable(const Model::CreateNetworkFirewallPublishRequest& request);
 
                 /**
-                 *容器网络创建网络策略撤销任务
+                 *功能已下线待三合一重构
+
+容器网络创建网络策略撤销任务
                  * @param req CreateNetworkFirewallUndoPublishRequest
                  * @return CreateNetworkFirewallUndoPublishOutcome
                  */
@@ -2372,7 +2392,9 @@ namespace TencentCloud
                 DeleteMachineOutcomeCallable DeleteMachineCallable(const Model::DeleteMachineRequest& request);
 
                 /**
-                 *容器网络创建网络策略删除任务
+                 *功能已下线待三合一重构
+
+容器网络创建网络策略删除任务
                  * @param req DeleteNetworkFirewallPolicyDetailRequest
                  * @return DeleteNetworkFirewallPolicyDetailOutcome
                  */
@@ -3425,7 +3447,9 @@ namespace TencentCloud
                 DescribeLogStorageStatisticOutcomeCallable DescribeLogStorageStatisticCallable(const Model::DescribeLogStorageStatisticRequest& request);
 
                 /**
-                 *查询集群策略审计列表
+                 *功能已下线待三合一重构
+
+查询集群策略审计列表
                  * @param req DescribeNetworkFirewallAuditRecordRequest
                  * @return DescribeNetworkFirewallAuditRecordOutcome
                  */
@@ -3434,7 +3458,9 @@ namespace TencentCloud
                 DescribeNetworkFirewallAuditRecordOutcomeCallable DescribeNetworkFirewallAuditRecordCallable(const Model::DescribeNetworkFirewallAuditRecordRequest& request);
 
                 /**
-                 *查询集群策略列表
+                 *功能已下线待三合一重构
+
+查询集群策略列表
                  * @param req DescribeNetworkFirewallClusterListRequest
                  * @return DescribeNetworkFirewallClusterListOutcome
                  */
@@ -3443,7 +3469,9 @@ namespace TencentCloud
                 DescribeNetworkFirewallClusterListOutcomeCallable DescribeNetworkFirewallClusterListCallable(const Model::DescribeNetworkFirewallClusterListRequest& request);
 
                 /**
-                 *容器网络查询资产任务进度
+                 *功能已下线待三合一重构
+
+容器网络查询资产任务进度
                  * @param req DescribeNetworkFirewallClusterRefreshStatusRequest
                  * @return DescribeNetworkFirewallClusterRefreshStatusOutcome
                  */
@@ -3452,7 +3480,9 @@ namespace TencentCloud
                 DescribeNetworkFirewallClusterRefreshStatusOutcomeCallable DescribeNetworkFirewallClusterRefreshStatusCallable(const Model::DescribeNetworkFirewallClusterRefreshStatusRequest& request);
 
                 /**
-                 *查询集群网络空间标签列表
+                 *功能已下线待三合一重构
+
+查询集群网络空间标签列表
                  * @param req DescribeNetworkFirewallNamespaceLabelListRequest
                  * @return DescribeNetworkFirewallNamespaceLabelListOutcome
                  */
@@ -3461,7 +3491,9 @@ namespace TencentCloud
                 DescribeNetworkFirewallNamespaceLabelListOutcomeCallable DescribeNetworkFirewallNamespaceLabelListCallable(const Model::DescribeNetworkFirewallNamespaceLabelListRequest& request);
 
                 /**
-                 *查询集群网络空间列表
+                 *功能已下线待三合一重构
+
+查询集群网络空间列表
                  * @param req DescribeNetworkFirewallNamespaceListRequest
                  * @return DescribeNetworkFirewallNamespaceListOutcome
                  */
@@ -3470,7 +3502,9 @@ namespace TencentCloud
                 DescribeNetworkFirewallNamespaceListOutcomeCallable DescribeNetworkFirewallNamespaceListCallable(const Model::DescribeNetworkFirewallNamespaceListRequest& request);
 
                 /**
-                 *查询集群网络pod标签
+                 *功能已下线待三合一重构
+
+查询集群网络pod标签
                  * @param req DescribeNetworkFirewallPodLabelsListRequest
                  * @return DescribeNetworkFirewallPodLabelsListOutcome
                  */
@@ -3479,7 +3513,9 @@ namespace TencentCloud
                 DescribeNetworkFirewallPodLabelsListOutcomeCallable DescribeNetworkFirewallPodLabelsListCallable(const Model::DescribeNetworkFirewallPodLabelsListRequest& request);
 
                 /**
-                 *容器网络集群查看策略详情
+                 *功能已下线待三合一重构
+
+容器网络集群查看策略详情
                  * @param req DescribeNetworkFirewallPolicyDetailRequest
                  * @return DescribeNetworkFirewallPolicyDetailOutcome
                  */
@@ -3488,7 +3524,9 @@ namespace TencentCloud
                 DescribeNetworkFirewallPolicyDetailOutcomeCallable DescribeNetworkFirewallPolicyDetailCallable(const Model::DescribeNetworkFirewallPolicyDetailRequest& request);
 
                 /**
-                 *容器网络查询网络策略自动发现任务进度
+                 *功能已下线待三合一重构
+
+容器网络查询网络策略自动发现任务进度
                  * @param req DescribeNetworkFirewallPolicyDiscoverRequest
                  * @return DescribeNetworkFirewallPolicyDiscoverOutcome
                  */
@@ -3497,7 +3535,9 @@ namespace TencentCloud
                 DescribeNetworkFirewallPolicyDiscoverOutcomeCallable DescribeNetworkFirewallPolicyDiscoverCallable(const Model::DescribeNetworkFirewallPolicyDiscoverRequest& request);
 
                 /**
-                 *查询集群网络策略列表
+                 *功能已下线待三合一重构
+
+查询集群网络策略列表
                  * @param req DescribeNetworkFirewallPolicyListRequest
                  * @return DescribeNetworkFirewallPolicyListOutcome
                  */
@@ -3506,7 +3546,9 @@ namespace TencentCloud
                 DescribeNetworkFirewallPolicyListOutcomeCallable DescribeNetworkFirewallPolicyListCallable(const Model::DescribeNetworkFirewallPolicyListRequest& request);
 
                 /**
-                 *容器网络查询网络策略策略执行状态
+                 *功能已下线待三合一重构
+
+容器网络查询网络策略策略执行状态
                  * @param req DescribeNetworkFirewallPolicyStatusRequest
                  * @return DescribeNetworkFirewallPolicyStatusOutcome
                  */
@@ -3515,7 +3557,9 @@ namespace TencentCloud
                 DescribeNetworkFirewallPolicyStatusOutcomeCallable DescribeNetworkFirewallPolicyStatusCallable(const Model::DescribeNetworkFirewallPolicyStatusRequest& request);
 
                 /**
-                 *容器网络集群查看Yaml网络策略详情
+                 *功能已下线待三合一重构
+
+容器网络集群查看Yaml网络策略详情
                  * @param req DescribeNetworkFirewallPolicyYamlDetailRequest
                  * @return DescribeNetworkFirewallPolicyYamlDetailOutcome
                  */
@@ -4766,7 +4810,9 @@ namespace TencentCloud
                 UninstallClusterContainerSecurityOutcomeCallable UninstallClusterContainerSecurityCallable(const Model::UninstallClusterContainerSecurityRequest& request);
 
                 /**
-                 *容器网络创建网络策略更新并发布任务
+                 *功能已下线待三合一重构
+
+容器网络创建网络策略更新并发布任务
                  * @param req UpdateAndPublishNetworkFirewallPolicyDetailRequest
                  * @return UpdateAndPublishNetworkFirewallPolicyDetailOutcome
                  */
@@ -4775,7 +4821,9 @@ namespace TencentCloud
                 UpdateAndPublishNetworkFirewallPolicyDetailOutcomeCallable UpdateAndPublishNetworkFirewallPolicyDetailCallable(const Model::UpdateAndPublishNetworkFirewallPolicyDetailRequest& request);
 
                 /**
-                 *容器网络更新Yaml网络策略并发布任务
+                 *功能已下线待三合一重构
+
+容器网络更新Yaml网络策略并发布任务
                  * @param req UpdateAndPublishNetworkFirewallPolicyYamlDetailRequest
                  * @return UpdateAndPublishNetworkFirewallPolicyYamlDetailOutcome
                  */
@@ -4802,7 +4850,9 @@ namespace TencentCloud
                 UpdateImageRegistryTimingScanTaskOutcomeCallable UpdateImageRegistryTimingScanTaskCallable(const Model::UpdateImageRegistryTimingScanTaskRequest& request);
 
                 /**
-                 *容器网络创建网络策略更新任务
+                 *功能已下线待三合一重构
+
+容器网络创建网络策略更新任务
                  * @param req UpdateNetworkFirewallPolicyDetailRequest
                  * @return UpdateNetworkFirewallPolicyDetailOutcome
                  */
@@ -4811,7 +4861,9 @@ namespace TencentCloud
                 UpdateNetworkFirewallPolicyDetailOutcomeCallable UpdateNetworkFirewallPolicyDetailCallable(const Model::UpdateNetworkFirewallPolicyDetailRequest& request);
 
                 /**
-                 *容器网络更新Yaml网络策略任务
+                 *功能已下线待三合一重构
+
+容器网络更新Yaml网络策略任务
                  * @param req UpdateNetworkFirewallPolicyYamlDetailRequest
                  * @return UpdateNetworkFirewallPolicyYamlDetailOutcome
                  */

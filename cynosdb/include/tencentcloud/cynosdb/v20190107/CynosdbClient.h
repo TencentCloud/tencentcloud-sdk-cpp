@@ -83,6 +83,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DeleteCLSDeliveryResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteClusterDatabaseRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteClusterDatabaseResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DeleteClusterSaveBackupRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DeleteClusterSaveBackupResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteParamTemplateRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteParamTemplateResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeAccountAllGrantPrivilegesRequest.h>
@@ -183,6 +185,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeProxyNodesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeProxySpecsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeProxySpecsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeRedoLogsRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeRedoLogsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeResourcePackageDetailRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeResourcePackageDetailResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeResourcePackageListRequest.h>
@@ -195,6 +199,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeRollbackTimeRangeResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeSSLStatusRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeSSLStatusResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeSaveBackupClustersRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeSaveBackupClustersResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeServerlessInstanceSpecsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeServerlessInstanceSpecsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeServerlessStrategyRequest.h>
@@ -293,6 +299,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/ModifyResourcePackagesDeductionPriorityResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyServerlessStrategyRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyServerlessStrategyResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifySnapBackupCrossRegionConfigRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifySnapBackupCrossRegionConfigResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyVipVportRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyVipVportResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/OfflineClusterRequest.h>
@@ -467,6 +475,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteClusterDatabaseResponse> DeleteClusterDatabaseOutcome;
                 typedef std::future<DeleteClusterDatabaseOutcome> DeleteClusterDatabaseOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DeleteClusterDatabaseRequest&, DeleteClusterDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterDatabaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteClusterSaveBackupResponse> DeleteClusterSaveBackupOutcome;
+                typedef std::future<DeleteClusterSaveBackupOutcome> DeleteClusterSaveBackupOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DeleteClusterSaveBackupRequest&, DeleteClusterSaveBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterSaveBackupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteParamTemplateResponse> DeleteParamTemplateOutcome;
                 typedef std::future<DeleteParamTemplateOutcome> DeleteParamTemplateOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DeleteParamTemplateRequest&, DeleteParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteParamTemplateAsyncHandler;
@@ -617,6 +628,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProxySpecsResponse> DescribeProxySpecsOutcome;
                 typedef std::future<DescribeProxySpecsOutcome> DescribeProxySpecsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeProxySpecsRequest&, DescribeProxySpecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProxySpecsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRedoLogsResponse> DescribeRedoLogsOutcome;
+                typedef std::future<DescribeRedoLogsOutcome> DescribeRedoLogsOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeRedoLogsRequest&, DescribeRedoLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedoLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResourcePackageDetailResponse> DescribeResourcePackageDetailOutcome;
                 typedef std::future<DescribeResourcePackageDetailOutcome> DescribeResourcePackageDetailOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeResourcePackageDetailRequest&, DescribeResourcePackageDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourcePackageDetailAsyncHandler;
@@ -635,6 +649,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSSLStatusResponse> DescribeSSLStatusOutcome;
                 typedef std::future<DescribeSSLStatusOutcome> DescribeSSLStatusOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeSSLStatusRequest&, DescribeSSLStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSSLStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSaveBackupClustersResponse> DescribeSaveBackupClustersOutcome;
+                typedef std::future<DescribeSaveBackupClustersOutcome> DescribeSaveBackupClustersOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeSaveBackupClustersRequest&, DescribeSaveBackupClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSaveBackupClustersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeServerlessInstanceSpecsResponse> DescribeServerlessInstanceSpecsOutcome;
                 typedef std::future<DescribeServerlessInstanceSpecsOutcome> DescribeServerlessInstanceSpecsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeServerlessInstanceSpecsRequest&, DescribeServerlessInstanceSpecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerlessInstanceSpecsAsyncHandler;
@@ -782,6 +799,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyServerlessStrategyResponse> ModifyServerlessStrategyOutcome;
                 typedef std::future<ModifyServerlessStrategyOutcome> ModifyServerlessStrategyOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyServerlessStrategyRequest&, ModifyServerlessStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyServerlessStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySnapBackupCrossRegionConfigResponse> ModifySnapBackupCrossRegionConfigOutcome;
+                typedef std::future<ModifySnapBackupCrossRegionConfigOutcome> ModifySnapBackupCrossRegionConfigOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifySnapBackupCrossRegionConfigRequest&, ModifySnapBackupCrossRegionConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySnapBackupCrossRegionConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyVipVportResponse> ModifyVipVportOutcome;
                 typedef std::future<ModifyVipVportOutcome> ModifyVipVportOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyVipVportRequest&, ModifyVipVportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVipVportAsyncHandler;
@@ -1159,6 +1179,15 @@ namespace TencentCloud
                 DeleteClusterDatabaseOutcome DeleteClusterDatabase(const Model::DeleteClusterDatabaseRequest &request);
                 void DeleteClusterDatabaseAsync(const Model::DeleteClusterDatabaseRequest& request, const DeleteClusterDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteClusterDatabaseOutcomeCallable DeleteClusterDatabaseCallable(const Model::DeleteClusterDatabaseRequest& request);
+
+                /**
+                 *本接口（DeleteClusterSaveBackup）用于为集群删除遗留备份
+                 * @param req DeleteClusterSaveBackupRequest
+                 * @return DeleteClusterSaveBackupOutcome
+                 */
+                DeleteClusterSaveBackupOutcome DeleteClusterSaveBackup(const Model::DeleteClusterSaveBackupRequest &request);
+                void DeleteClusterSaveBackupAsync(const Model::DeleteClusterSaveBackupRequest& request, const DeleteClusterSaveBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteClusterSaveBackupOutcomeCallable DeleteClusterSaveBackupCallable(const Model::DeleteClusterSaveBackupRequest& request);
 
                 /**
                  *本接口（DeleteParamTemplate）用于删除用户创建的参数模板。
@@ -1611,6 +1640,15 @@ namespace TencentCloud
                 DescribeProxySpecsOutcomeCallable DescribeProxySpecsCallable(const Model::DescribeProxySpecsRequest& request);
 
                 /**
+                 *本接口（DescribeRedoLogs）用于查询redo日志列表。
+                 * @param req DescribeRedoLogsRequest
+                 * @return DescribeRedoLogsOutcome
+                 */
+                DescribeRedoLogsOutcome DescribeRedoLogs(const Model::DescribeRedoLogsRequest &request);
+                void DescribeRedoLogsAsync(const Model::DescribeRedoLogsRequest& request, const DescribeRedoLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRedoLogsOutcomeCallable DescribeRedoLogsCallable(const Model::DescribeRedoLogsRequest& request);
+
+                /**
                  *本接口（DescribeResourcePackageDetail）用于查询资源包使用详情。
                  * @param req DescribeResourcePackageDetailRequest
                  * @return DescribeResourcePackageDetailOutcome
@@ -1663,6 +1701,15 @@ namespace TencentCloud
                 DescribeSSLStatusOutcome DescribeSSLStatus(const Model::DescribeSSLStatusRequest &request);
                 void DescribeSSLStatusAsync(const Model::DescribeSSLStatusRequest& request, const DescribeSSLStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSSLStatusOutcomeCallable DescribeSSLStatusCallable(const Model::DescribeSSLStatusRequest& request);
+
+                /**
+                 *本接口（DescribeSaveBackupClusters）用于查询遗留备份集群信息。
+                 * @param req DescribeSaveBackupClustersRequest
+                 * @return DescribeSaveBackupClustersOutcome
+                 */
+                DescribeSaveBackupClustersOutcome DescribeSaveBackupClusters(const Model::DescribeSaveBackupClustersRequest &request);
+                void DescribeSaveBackupClustersAsync(const Model::DescribeSaveBackupClustersRequest& request, const DescribeSaveBackupClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSaveBackupClustersOutcomeCallable DescribeSaveBackupClustersCallable(const Model::DescribeSaveBackupClustersRequest& request);
 
                 /**
                  *查询Serverless实例可选规格
@@ -2104,6 +2151,15 @@ namespace TencentCloud
                 ModifyServerlessStrategyOutcome ModifyServerlessStrategy(const Model::ModifyServerlessStrategyRequest &request);
                 void ModifyServerlessStrategyAsync(const Model::ModifyServerlessStrategyRequest& request, const ModifyServerlessStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyServerlessStrategyOutcomeCallable ModifyServerlessStrategyCallable(const Model::ModifyServerlessStrategyRequest& request);
+
+                /**
+                 *本接口（ModifySnapBackupCrossRegionConfig）用于修改指定集群的快照备份跨地域配置。
+                 * @param req ModifySnapBackupCrossRegionConfigRequest
+                 * @return ModifySnapBackupCrossRegionConfigOutcome
+                 */
+                ModifySnapBackupCrossRegionConfigOutcome ModifySnapBackupCrossRegionConfig(const Model::ModifySnapBackupCrossRegionConfigRequest &request);
+                void ModifySnapBackupCrossRegionConfigAsync(const Model::ModifySnapBackupCrossRegionConfigRequest& request, const ModifySnapBackupCrossRegionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySnapBackupCrossRegionConfigOutcomeCallable ModifySnapBackupCrossRegionConfigCallable(const Model::ModifySnapBackupCrossRegionConfigRequest& request);
 
                 /**
                  *本接口（ModifyVipVport）用于修改实例组ip，端口。

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcr/v20190924/model/RetentionRule.h>
+#include <tencentcloud/tcr/v20190924/model/RetentionRuleItem.h>
 
 
 namespace TencentCloud
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取版本保留策略Id
-                     * @return RetentionId 版本保留策略Id
+                     * 获取<p>版本保留策略Id</p>
+                     * @return RetentionId <p>版本保留策略Id</p>
                      * 
                      */
                     int64_t GetRetentionId() const;
 
                     /**
-                     * 设置版本保留策略Id
-                     * @param _retentionId 版本保留策略Id
+                     * 设置<p>版本保留策略Id</p>
+                     * @param _retentionId <p>版本保留策略Id</p>
                      * 
                      */
                     void SetRetentionId(const int64_t& _retentionId);
@@ -69,15 +70,15 @@ namespace TencentCloud
                     bool RetentionIdHasBeenSet() const;
 
                     /**
-                     * 获取命名空间的名称
-                     * @return NamespaceName 命名空间的名称
+                     * 获取<p>命名空间的名称</p>
+                     * @return NamespaceName <p>命名空间的名称</p>
                      * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
-                     * 设置命名空间的名称
-                     * @param _namespaceName 命名空间的名称
+                     * 设置<p>命名空间的名称</p>
+                     * @param _namespaceName <p>命名空间的名称</p>
                      * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
@@ -90,15 +91,15 @@ namespace TencentCloud
                     bool NamespaceNameHasBeenSet() const;
 
                     /**
-                     * 获取规则列表
-                     * @return RetentionRuleList 规则列表
+                     * 获取<p>规则列表</p>
+                     * @return RetentionRuleList <p>规则列表</p>
                      * 
                      */
                     std::vector<RetentionRule> GetRetentionRuleList() const;
 
                     /**
-                     * 设置规则列表
-                     * @param _retentionRuleList 规则列表
+                     * 设置<p>规则列表</p>
+                     * @param _retentionRuleList <p>规则列表</p>
                      * 
                      */
                     void SetRetentionRuleList(const std::vector<RetentionRule>& _retentionRuleList);
@@ -111,15 +112,36 @@ namespace TencentCloud
                     bool RetentionRuleListHasBeenSet() const;
 
                     /**
-                     * 获取定期执行方式
-                     * @return CronSetting 定期执行方式
+                     * 获取<p>高级保留规则列表</p>
+                     * @return AdvancedRuleItems <p>高级保留规则列表</p>
+                     * 
+                     */
+                    std::vector<RetentionRuleItem> GetAdvancedRuleItems() const;
+
+                    /**
+                     * 设置<p>高级保留规则列表</p>
+                     * @param _advancedRuleItems <p>高级保留规则列表</p>
+                     * 
+                     */
+                    void SetAdvancedRuleItems(const std::vector<RetentionRuleItem>& _advancedRuleItems);
+
+                    /**
+                     * 判断参数 AdvancedRuleItems 是否已赋值
+                     * @return AdvancedRuleItems 是否已赋值
+                     * 
+                     */
+                    bool AdvancedRuleItemsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>定期执行方式</p>
+                     * @return CronSetting <p>定期执行方式</p>
                      * 
                      */
                     std::string GetCronSetting() const;
 
                     /**
-                     * 设置定期执行方式
-                     * @param _cronSetting 定期执行方式
+                     * 设置<p>定期执行方式</p>
+                     * @param _cronSetting <p>定期执行方式</p>
                      * 
                      */
                     void SetCronSetting(const std::string& _cronSetting);
@@ -132,15 +154,15 @@ namespace TencentCloud
                     bool CronSettingHasBeenSet() const;
 
                     /**
-                     * 获取是否启用规则
-                     * @return Disabled 是否启用规则
+                     * 获取<p>是否启用规则</p>
+                     * @return Disabled <p>是否启用规则</p>
                      * 
                      */
                     bool GetDisabled() const;
 
                     /**
-                     * 设置是否启用规则
-                     * @param _disabled 是否启用规则
+                     * 设置<p>是否启用规则</p>
+                     * @param _disabled <p>是否启用规则</p>
                      * 
                      */
                     void SetDisabled(const bool& _disabled);
@@ -153,15 +175,15 @@ namespace TencentCloud
                     bool DisabledHasBeenSet() const;
 
                     /**
-                     * 获取基于当前时间根据cronSetting后下一次任务要执行的时间，仅做参考使用
-                     * @return NextExecutionTime 基于当前时间根据cronSetting后下一次任务要执行的时间，仅做参考使用
+                     * 获取<p>基于当前时间根据cronSetting后下一次任务要执行的时间，仅做参考使用</p>
+                     * @return NextExecutionTime <p>基于当前时间根据cronSetting后下一次任务要执行的时间，仅做参考使用</p>
                      * 
                      */
                     std::string GetNextExecutionTime() const;
 
                     /**
-                     * 设置基于当前时间根据cronSetting后下一次任务要执行的时间，仅做参考使用
-                     * @param _nextExecutionTime 基于当前时间根据cronSetting后下一次任务要执行的时间，仅做参考使用
+                     * 设置<p>基于当前时间根据cronSetting后下一次任务要执行的时间，仅做参考使用</p>
+                     * @param _nextExecutionTime <p>基于当前时间根据cronSetting后下一次任务要执行的时间，仅做参考使用</p>
                      * 
                      */
                     void SetNextExecutionTime(const std::string& _nextExecutionTime);
@@ -176,37 +198,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 版本保留策略Id
+                     * <p>版本保留策略Id</p>
                      */
                     int64_t m_retentionId;
                     bool m_retentionIdHasBeenSet;
 
                     /**
-                     * 命名空间的名称
+                     * <p>命名空间的名称</p>
                      */
                     std::string m_namespaceName;
                     bool m_namespaceNameHasBeenSet;
 
                     /**
-                     * 规则列表
+                     * <p>规则列表</p>
                      */
                     std::vector<RetentionRule> m_retentionRuleList;
                     bool m_retentionRuleListHasBeenSet;
 
                     /**
-                     * 定期执行方式
+                     * <p>高级保留规则列表</p>
+                     */
+                    std::vector<RetentionRuleItem> m_advancedRuleItems;
+                    bool m_advancedRuleItemsHasBeenSet;
+
+                    /**
+                     * <p>定期执行方式</p>
                      */
                     std::string m_cronSetting;
                     bool m_cronSettingHasBeenSet;
 
                     /**
-                     * 是否启用规则
+                     * <p>是否启用规则</p>
                      */
                     bool m_disabled;
                     bool m_disabledHasBeenSet;
 
                     /**
-                     * 基于当前时间根据cronSetting后下一次任务要执行的时间，仅做参考使用
+                     * <p>基于当前时间根据cronSetting后下一次任务要执行的时间，仅做参考使用</p>
                      */
                     std::string m_nextExecutionTime;
                     bool m_nextExecutionTimeHasBeenSet;

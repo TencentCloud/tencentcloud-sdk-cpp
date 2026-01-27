@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取版本保留策略列表
-                     * @return RetentionPolicyList 版本保留策略列表
+                     * 获取<p>版本保留策略列表</p>
+                     * @return RetentionPolicyList <p>版本保留策略列表</p>
                      * 
                      */
                     std::vector<RetentionPolicy> GetRetentionPolicyList() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool RetentionPolicyListHasBeenSet() const;
 
                     /**
-                     * 获取版本保留策略总数
-                     * @return TotalCount 版本保留策略总数
+                     * 获取<p>版本保留策略总数</p>
+                     * @return TotalCount <p>版本保留策略总数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 版本保留策略列表
+                     * <p>版本保留策略列表</p>
                      */
                     std::vector<RetentionPolicy> m_retentionPolicyList;
                     bool m_retentionPolicyListHasBeenSet;
 
                     /**
-                     * 版本保留策略总数
+                     * <p>版本保留策略总数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

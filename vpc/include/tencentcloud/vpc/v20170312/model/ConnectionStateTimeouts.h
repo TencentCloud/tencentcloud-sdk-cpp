@@ -90,24 +90,24 @@ namespace TencentCloud
 
                     /**
                      * 获取TCP TIME_WAIT超时，指完全关闭的TCP连接在到期后保留在NAT映射中的秒数。取值范围为：10-600秒，默认为120秒。
-                     * @return TcpTimeWaitTimeout TCP TIME_WAIT超时，指完全关闭的TCP连接在到期后保留在NAT映射中的秒数。取值范围为：10-600秒，默认为120秒。
+                     * @return TCPTimeWaitTimeout TCP TIME_WAIT超时，指完全关闭的TCP连接在到期后保留在NAT映射中的秒数。取值范围为：10-600秒，默认为120秒。
                      * 
                      */
-                    uint64_t GetTcpTimeWaitTimeout() const;
+                    uint64_t GetTCPTimeWaitTimeout() const;
 
                     /**
                      * 设置TCP TIME_WAIT超时，指完全关闭的TCP连接在到期后保留在NAT映射中的秒数。取值范围为：10-600秒，默认为120秒。
-                     * @param _tcpTimeWaitTimeout TCP TIME_WAIT超时，指完全关闭的TCP连接在到期后保留在NAT映射中的秒数。取值范围为：10-600秒，默认为120秒。
+                     * @param _tCPTimeWaitTimeout TCP TIME_WAIT超时，指完全关闭的TCP连接在到期后保留在NAT映射中的秒数。取值范围为：10-600秒，默认为120秒。
                      * 
                      */
-                    void SetTcpTimeWaitTimeout(const uint64_t& _tcpTimeWaitTimeout);
+                    void SetTCPTimeWaitTimeout(const uint64_t& _tCPTimeWaitTimeout);
 
                     /**
-                     * 判断参数 TcpTimeWaitTimeout 是否已赋值
-                     * @return TcpTimeWaitTimeout 是否已赋值
+                     * 判断参数 TCPTimeWaitTimeout 是否已赋值
+                     * @return TCPTimeWaitTimeout 是否已赋值
                      * 
                      */
-                    bool TcpTimeWaitTimeoutHasBeenSet() const;
+                    bool TCPTimeWaitTimeoutHasBeenSet() const;
 
                 private:
 
@@ -126,8 +126,8 @@ namespace TencentCloud
                     /**
                      * TCP TIME_WAIT超时，指完全关闭的TCP连接在到期后保留在NAT映射中的秒数。取值范围为：10-600秒，默认为120秒。
                      */
-                    uint64_t m_tcpTimeWaitTimeout;
-                    bool m_tcpTimeWaitTimeoutHasBeenSet;
+                    uint64_t m_tCPTimeWaitTimeout;
+                    bool m_tCPTimeWaitTimeoutHasBeenSet;
 
                 };
             }

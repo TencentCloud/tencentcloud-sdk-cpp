@@ -24,7 +24,8 @@ using namespace std;
 
 InstallAndroidInstancesAppWithURLRequest::InstallAndroidInstancesAppWithURLRequest() :
     m_androidInstanceIdsHasBeenSet(false),
-    m_androidAppURLHasBeenSet(false)
+    m_androidAppURLHasBeenSet(false),
+    m_androidAppMD5HasBeenSet(false)
 {
 }
 
@@ -54,6 +55,14 @@ string InstallAndroidInstancesAppWithURLRequest::ToJsonString() const
         string key = "AndroidAppURL";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_androidAppURL.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_androidAppMD5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AndroidAppMD5";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_androidAppMD5.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -94,6 +103,22 @@ void InstallAndroidInstancesAppWithURLRequest::SetAndroidAppURL(const string& _a
 bool InstallAndroidInstancesAppWithURLRequest::AndroidAppURLHasBeenSet() const
 {
     return m_androidAppURLHasBeenSet;
+}
+
+string InstallAndroidInstancesAppWithURLRequest::GetAndroidAppMD5() const
+{
+    return m_androidAppMD5;
+}
+
+void InstallAndroidInstancesAppWithURLRequest::SetAndroidAppMD5(const string& _androidAppMD5)
+{
+    m_androidAppMD5 = _androidAppMD5;
+    m_androidAppMD5HasBeenSet = true;
+}
+
+bool InstallAndroidInstancesAppWithURLRequest::AndroidAppMD5HasBeenSet() const
+{
+    return m_androidAppMD5HasBeenSet;
 }
 
 

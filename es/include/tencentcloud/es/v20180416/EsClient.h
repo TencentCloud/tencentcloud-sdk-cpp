@@ -29,6 +29,8 @@
 #include <tencentcloud/es/v20180416/model/CreateAutoBackUpStrategyResponse.h>
 #include <tencentcloud/es/v20180416/model/CreateClusterSnapshotRequest.h>
 #include <tencentcloud/es/v20180416/model/CreateClusterSnapshotResponse.h>
+#include <tencentcloud/es/v20180416/model/CreateCollectorRequest.h>
+#include <tencentcloud/es/v20180416/model/CreateCollectorResponse.h>
 #include <tencentcloud/es/v20180416/model/CreateCosMigrateToServerlessInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/CreateCosMigrateToServerlessInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/CreateIndexRequest.h>
@@ -186,6 +188,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateClusterSnapshotResponse> CreateClusterSnapshotOutcome;
                 typedef std::future<CreateClusterSnapshotOutcome> CreateClusterSnapshotOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::CreateClusterSnapshotRequest&, CreateClusterSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterSnapshotAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCollectorResponse> CreateCollectorOutcome;
+                typedef std::future<CreateCollectorOutcome> CreateCollectorOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::CreateCollectorRequest&, CreateCollectorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCollectorAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCosMigrateToServerlessInstanceResponse> CreateCosMigrateToServerlessInstanceOutcome;
                 typedef std::future<CreateCosMigrateToServerlessInstanceOutcome> CreateCosMigrateToServerlessInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::CreateCosMigrateToServerlessInstanceRequest&, CreateCosMigrateToServerlessInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCosMigrateToServerlessInstanceAsyncHandler;
@@ -416,6 +421,15 @@ namespace TencentCloud
                 CreateClusterSnapshotOutcome CreateClusterSnapshot(const Model::CreateClusterSnapshotRequest &request);
                 void CreateClusterSnapshotAsync(const Model::CreateClusterSnapshotRequest& request, const CreateClusterSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateClusterSnapshotOutcomeCallable CreateClusterSnapshotCallable(const Model::CreateClusterSnapshotRequest& request);
+
+                /**
+                 *用于创建Beats采集器
+                 * @param req CreateCollectorRequest
+                 * @return CreateCollectorOutcome
+                 */
+                CreateCollectorOutcome CreateCollector(const Model::CreateCollectorRequest &request);
+                void CreateCollectorAsync(const Model::CreateCollectorRequest& request, const CreateCollectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCollectorOutcomeCallable CreateCollectorCallable(const Model::CreateCollectorRequest& request);
 
                 /**
                  *cos迁移流程

@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cynosdb/v20190107/model/LogicBackupConfigInfo.h>
+#include <tencentcloud/cynosdb/v20190107/model/SnapshotBackupConfig.h>
 
 
 namespace TencentCloud
@@ -211,6 +212,27 @@ namespace TencentCloud
                      */
                     bool DeleteAutoLogicBackupHasBeenSet() const;
 
+                    /**
+                     * 获取二级快照备份参数
+                     * @return SnapshotSecondaryBackupConfig 二级快照备份参数
+                     * 
+                     */
+                    SnapshotBackupConfig GetSnapshotSecondaryBackupConfig() const;
+
+                    /**
+                     * 设置二级快照备份参数
+                     * @param _snapshotSecondaryBackupConfig 二级快照备份参数
+                     * 
+                     */
+                    void SetSnapshotSecondaryBackupConfig(const SnapshotBackupConfig& _snapshotSecondaryBackupConfig);
+
+                    /**
+                     * 判断参数 SnapshotSecondaryBackupConfig 是否已赋值
+                     * @return SnapshotSecondaryBackupConfig 是否已赋值
+                     * 
+                     */
+                    bool SnapshotSecondaryBackupConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -260,6 +282,12 @@ namespace TencentCloud
                      */
                     bool m_deleteAutoLogicBackup;
                     bool m_deleteAutoLogicBackupHasBeenSet;
+
+                    /**
+                     * 二级快照备份参数
+                     */
+                    SnapshotBackupConfig m_snapshotSecondaryBackupConfig;
+                    bool m_snapshotSecondaryBackupConfigHasBeenSet;
 
                 };
             }

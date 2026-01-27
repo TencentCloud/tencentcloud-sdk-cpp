@@ -21,7 +21,8 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 ChangeClothesConfig::ChangeClothesConfig() :
-    m_clothesFileInfosHasBeenSet(false)
+    m_clothesFileInfosHasBeenSet(false),
+    m_promptHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,16 @@ CoreInternalOutcome ChangeClothesConfig::Deserialize(const rapidjson::Value &val
         m_clothesFileInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("Prompt") && !value["Prompt"].IsNull())
+    {
+        if (!value["Prompt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChangeClothesConfig.Prompt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_prompt = string(value["Prompt"].GetString());
+        m_promptHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void ChangeClothesConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         }
     }
 
+    if (m_promptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Prompt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_prompt.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -89,5 +108,21 @@ void ChangeClothesConfig::SetClothesFileInfos(const vector<SceneAigcImageTaskInp
 bool ChangeClothesConfig::ClothesFileInfosHasBeenSet() const
 {
     return m_clothesFileInfosHasBeenSet;
+}
+
+string ChangeClothesConfig::GetPrompt() const
+{
+    return m_prompt;
+}
+
+void ChangeClothesConfig::SetPrompt(const string& _prompt)
+{
+    m_prompt = _prompt;
+    m_promptHasBeenSet = true;
+}
+
+bool ChangeClothesConfig::PromptHasBeenSet() const
+{
+    return m_promptHasBeenSet;
 }
 

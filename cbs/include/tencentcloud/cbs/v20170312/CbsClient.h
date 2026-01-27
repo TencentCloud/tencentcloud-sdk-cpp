@@ -33,6 +33,8 @@
 #include <tencentcloud/cbs/v20170312/model/AttachDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/BindAutoSnapshotPolicyRequest.h>
 #include <tencentcloud/cbs/v20170312/model/BindAutoSnapshotPolicyResponse.h>
+#include <tencentcloud/cbs/v20170312/model/CopyAutoSnapshotPolicyCrossAccountRequest.h>
+#include <tencentcloud/cbs/v20170312/model/CopyAutoSnapshotPolicyCrossAccountResponse.h>
 #include <tencentcloud/cbs/v20170312/model/CopySnapshotCrossRegionsRequest.h>
 #include <tencentcloud/cbs/v20170312/model/CopySnapshotCrossRegionsResponse.h>
 #include <tencentcloud/cbs/v20170312/model/CreateAutoSnapshotPolicyRequest.h>
@@ -144,6 +146,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindAutoSnapshotPolicyResponse> BindAutoSnapshotPolicyOutcome;
                 typedef std::future<BindAutoSnapshotPolicyOutcome> BindAutoSnapshotPolicyOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::BindAutoSnapshotPolicyRequest&, BindAutoSnapshotPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindAutoSnapshotPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CopyAutoSnapshotPolicyCrossAccountResponse> CopyAutoSnapshotPolicyCrossAccountOutcome;
+                typedef std::future<CopyAutoSnapshotPolicyCrossAccountOutcome> CopyAutoSnapshotPolicyCrossAccountOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::CopyAutoSnapshotPolicyCrossAccountRequest&, CopyAutoSnapshotPolicyCrossAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopyAutoSnapshotPolicyCrossAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::CopySnapshotCrossRegionsResponse> CopySnapshotCrossRegionsOutcome;
                 typedef std::future<CopySnapshotCrossRegionsOutcome> CopySnapshotCrossRegionsOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::CopySnapshotCrossRegionsRequest&, CopySnapshotCrossRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopySnapshotCrossRegionsAsyncHandler;
@@ -331,6 +336,15 @@ namespace TencentCloud
                 BindAutoSnapshotPolicyOutcome BindAutoSnapshotPolicy(const Model::BindAutoSnapshotPolicyRequest &request);
                 void BindAutoSnapshotPolicyAsync(const Model::BindAutoSnapshotPolicyRequest& request, const BindAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BindAutoSnapshotPolicyOutcomeCallable BindAutoSnapshotPolicyCallable(const Model::BindAutoSnapshotPolicyRequest& request);
+
+                /**
+                 *针对白名单内用户实现自动快照策略的跨账号复制功能
+                 * @param req CopyAutoSnapshotPolicyCrossAccountRequest
+                 * @return CopyAutoSnapshotPolicyCrossAccountOutcome
+                 */
+                CopyAutoSnapshotPolicyCrossAccountOutcome CopyAutoSnapshotPolicyCrossAccount(const Model::CopyAutoSnapshotPolicyCrossAccountRequest &request);
+                void CopyAutoSnapshotPolicyCrossAccountAsync(const Model::CopyAutoSnapshotPolicyCrossAccountRequest& request, const CopyAutoSnapshotPolicyCrossAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CopyAutoSnapshotPolicyCrossAccountOutcomeCallable CopyAutoSnapshotPolicyCrossAccountCallable(const Model::CopyAutoSnapshotPolicyCrossAccountRequest& request);
 
                 /**
                  *本接口（CopySnapshotCrossRegions）用于快照跨地域复制。

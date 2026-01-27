@@ -27,7 +27,8 @@ IsolateInstanceRequest::IsolateInstanceRequest() :
     m_instanceIdListHasBeenSet(false),
     m_dbTypeHasBeenSet(false),
     m_isolateReasonTypesHasBeenSet(false),
-    m_isolateReasonHasBeenSet(false)
+    m_isolateReasonHasBeenSet(false),
+    m_saveBackupHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string IsolateInstanceRequest::ToJsonString() const
         string key = "IsolateReason";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_isolateReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_saveBackupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SaveBackup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_saveBackup, allocator);
     }
 
 
@@ -174,6 +183,22 @@ void IsolateInstanceRequest::SetIsolateReason(const string& _isolateReason)
 bool IsolateInstanceRequest::IsolateReasonHasBeenSet() const
 {
     return m_isolateReasonHasBeenSet;
+}
+
+bool IsolateInstanceRequest::GetSaveBackup() const
+{
+    return m_saveBackup;
+}
+
+void IsolateInstanceRequest::SetSaveBackup(const bool& _saveBackup)
+{
+    m_saveBackup = _saveBackup;
+    m_saveBackupHasBeenSet = true;
+}
+
+bool IsolateInstanceRequest::SaveBackupHasBeenSet() const
+{
+    return m_saveBackupHasBeenSet;
 }
 
 
