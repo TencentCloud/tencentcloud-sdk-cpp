@@ -18,6 +18,7 @@
 #define TENCENTCLOUD_CORE_NETWORKPROXY_H_
 
 #include <string>
+#include <cstdint>
 
 namespace TencentCloud
 {
