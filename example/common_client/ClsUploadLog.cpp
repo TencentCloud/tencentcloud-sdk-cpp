@@ -23,8 +23,8 @@
 #include <map>
 #include <malloc.h>
 #include <string.h>
-#include <fstream>  
-#include <streambuf> 
+#include <fstream>
+#include <streambuf>
 
 using namespace TencentCloud;
 using namespace std;
@@ -38,14 +38,14 @@ int main()
     Credential cred = Credential(cloud_secret_id, cloud_secret_key);
 
     HttpProfile httpProfile = HttpProfile();
-    // 域名首段必须和下文中CommonClient初始化的产品名严格匹配
+    // The first part of the domain name **must exactly match** the product name used when setting up the CommonClient below.
     httpProfile.SetEndpoint("cls.tencentcloudapi.com");
     httpProfile.SetReqTimeout(5);
     ClientProfile clientProfile = ClientProfile(httpProfile);
-    // 实例化要请求的common client对象，clientProfile是可选的。
+    // Create an instance of the Common Client object to make the request. clientProfile is optional (you don't have to use it).
     CommonClient common_client = CommonClient("cls", "2020-10-16", cred, "ap-guangzhou", clientProfile);
 
-    // 读取二进制文件内容
+    // Read the content of the binary file (a file with non-text data).
     std::string body;
     int buffer_len = 0;
     std::ifstream filein("../binary.data", std::ofstream::binary | std::ifstream::ate);
@@ -64,12 +64,12 @@ int main()
         body = buffer;
     }
     std::map<std::string, std::string> headers;
-    // 使用对应地域下真实存在的日志主题ID
+    // Use the real Log Topic ID that exists in the corresponding region (area).
     headers.insert(std::make_pair("X-CLS-TopicId", "f6c4fa6f-367a-4f14-8289-1ff6f77ed975"));
-    // 主题分区，https://cloud.tencent.com/document/product/614/39259
-    // 取值00000000000000000000000000000000，ffffffffffffffffffffffffffffffff
+    // Log Topic Partition (a way to divide the topic), see this link for more info: https://cloud.tencent.com/document/product/614/39259
+    // The value should be from '00000000000000000000000000000000' to 'ffffffffffffffffffffffffffffffff'
     headers.insert(std::make_pair("X-CLS-HashKey", "0fffffffffffffffffffffffffffffff"));
-    // 压缩类型
+    // The type of data compression used.
     headers.insert(std::make_pair("X-CLS-CompressType", ""));
 
     auto outcome = common_client.MakeRequestOctetStream("UploadLog", headers, body);
