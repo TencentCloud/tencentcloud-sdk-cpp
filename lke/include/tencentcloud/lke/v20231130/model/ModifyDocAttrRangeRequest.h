@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return BotBizId 应用ID
+                     * 获取应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * @return BotBizId 应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _botBizId 应用ID
+                     * 设置应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * @param _botBizId 应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool AttrRangeHasBeenSet() const;
 
                     /**
-                     * 获取属性标签引用
-                     * @return AttrLabels 属性标签引用
+                     * 获取属性标签引用，LabelBizIds可通过 DescribeAttributeLabel 接口获取
+                     * @return AttrLabels 属性标签引用，LabelBizIds可通过 DescribeAttributeLabel 接口获取
                      * 
                      */
                     std::vector<AttrLabelRefer> GetAttrLabels() const;
 
                     /**
-                     * 设置属性标签引用
-                     * @param _attrLabels 属性标签引用
+                     * 设置属性标签引用，LabelBizIds可通过 DescribeAttributeLabel 接口获取
+                     * @param _attrLabels 属性标签引用，LabelBizIds可通过 DescribeAttributeLabel 接口获取
                      * 
                      */
                     void SetAttrLabels(const std::vector<AttrLabelRefer>& _attrLabels);
@@ -130,7 +130,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID
+                     * 应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
@@ -148,7 +148,7 @@ namespace TencentCloud
                     bool m_attrRangeHasBeenSet;
 
                     /**
-                     * 属性标签引用
+                     * 属性标签引用，LabelBizIds可通过 DescribeAttributeLabel 接口获取
                      */
                     std::vector<AttrLabelRefer> m_attrLabels;
                     bool m_attrLabelsHasBeenSet;

@@ -497,6 +497,27 @@ namespace TencentCloud
                      */
                     bool ModelHasBeenSet() const;
 
+                    /**
+                     * 获取权限来源是否为管理员
+                     * @return IsAdminPolicy 权限来源是否为管理员
+                     * 
+                     */
+                    bool GetIsAdminPolicy() const;
+
+                    /**
+                     * 设置权限来源是否为管理员
+                     * @param _isAdminPolicy 权限来源是否为管理员
+                     * 
+                     */
+                    void SetIsAdminPolicy(const bool& _isAdminPolicy);
+
+                    /**
+                     * 判断参数 IsAdminPolicy 是否已赋值
+                     * @return IsAdminPolicy 是否已赋值
+                     * 
+                     */
+                    bool IsAdminPolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -625,6 +646,12 @@ namespace TencentCloud
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;
+
+                    /**
+                     * 权限来源是否为管理员
+                     */
+                    bool m_isAdminPolicy;
+                    bool m_isAdminPolicyHasBeenSet;
 
                 };
             }

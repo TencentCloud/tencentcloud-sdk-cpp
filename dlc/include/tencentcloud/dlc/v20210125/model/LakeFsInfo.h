@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -89,15 +90,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取容量
-                     * @return SpaceUsedSize 容量
+                     * 获取存储用量
+                     * @return SpaceUsedSize 存储用量
                      * 
                      */
                     double GetSpaceUsedSize() const;
 
                     /**
-                     * 设置容量
-                     * @param _spaceUsedSize 容量
+                     * 设置存储用量
+                     * @param _spaceUsedSize 存储用量
                      * 
                      */
                     void SetSpaceUsedSize(const double& _spaceUsedSize);
@@ -214,6 +215,27 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取托管存储桶标签列表
+                     * @return TagList 托管存储桶标签列表
+                     * 
+                     */
+                    std::vector<TagInfo> GetTagList() const;
+
+                    /**
+                     * 设置托管存储桶标签列表
+                     * @param _tagList 托管存储桶标签列表
+                     * 
+                     */
+                    void SetTagList(const std::vector<TagInfo>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     * 
+                     */
+                    bool TagListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -229,7 +251,7 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 容量
+                     * 存储用量
                      */
                     double m_spaceUsedSize;
                     bool m_spaceUsedSizeHasBeenSet;
@@ -263,6 +285,12 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 托管存储桶标签列表
+                     */
+                    std::vector<TagInfo> m_tagList;
+                    bool m_tagListHasBeenSet;
 
                 };
             }

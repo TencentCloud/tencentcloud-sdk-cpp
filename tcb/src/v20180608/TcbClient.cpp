@@ -540,6 +540,106 @@ TcbClient::CreateStaticStoreOutcomeCallable TcbClient::CreateStaticStoreCallable
     return prom->get_future();
 }
 
+TcbClient::CreateTableOutcome TcbClient::CreateTable(const CreateTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTableResponse rsp = CreateTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTableOutcome(rsp);
+        else
+            return CreateTableOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTableOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CreateTableAsync(const CreateTableRequest& request, const CreateTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateTableRequest&;
+    using Resp = CreateTableResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateTable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::CreateTableOutcomeCallable TcbClient::CreateTableCallable(const CreateTableRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateTableOutcome>>();
+    CreateTableAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CreateTableRequest&,
+        CreateTableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::CreateUserOutcome TcbClient::CreateUser(const CreateUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserResponse rsp = CreateUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserOutcome(rsp);
+        else
+            return CreateUserOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateUserRequest&;
+    using Resp = CreateUserResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::CreateUserOutcomeCallable TcbClient::CreateUserCallable(const CreateUserRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateUserOutcome>>();
+    CreateUserAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CreateUserRequest&,
+        CreateUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::DeleteCloudBaseProjectLatestVersionOutcome TcbClient::DeleteCloudBaseProjectLatestVersion(const DeleteCloudBaseProjectLatestVersionRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCloudBaseProjectLatestVersion");
@@ -682,6 +782,106 @@ TcbClient::DeleteGatewayVersionOutcomeCallable TcbClient::DeleteGatewayVersionCa
         const TcbClient*,
         const DeleteGatewayVersionRequest&,
         DeleteGatewayVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DeleteTableOutcome TcbClient::DeleteTable(const DeleteTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTableResponse rsp = DeleteTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTableOutcome(rsp);
+        else
+            return DeleteTableOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTableOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DeleteTableAsync(const DeleteTableRequest& request, const DeleteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteTableRequest&;
+    using Resp = DeleteTableResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteTable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DeleteTableOutcomeCallable TcbClient::DeleteTableCallable(const DeleteTableRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteTableOutcome>>();
+    DeleteTableAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DeleteTableRequest&,
+        DeleteTableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DeleteUsersOutcome TcbClient::DeleteUsers(const DeleteUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteUsersResponse rsp = DeleteUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteUsersOutcome(rsp);
+        else
+            return DeleteUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteUsersOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DeleteUsersAsync(const DeleteUsersRequest& request, const DeleteUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteUsersRequest&;
+    using Resp = DeleteUsersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteUsers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DeleteUsersOutcomeCallable TcbClient::DeleteUsersCallable(const DeleteUsersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteUsersOutcome>>();
+    DeleteUsersAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DeleteUsersRequest&,
+        DeleteUsersOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2390,6 +2590,106 @@ TcbClient::DescribeSpecialCostItemsOutcomeCallable TcbClient::DescribeSpecialCos
     return prom->get_future();
 }
 
+TcbClient::DescribeTableOutcome TcbClient::DescribeTable(const DescribeTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTableResponse rsp = DescribeTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTableOutcome(rsp);
+        else
+            return DescribeTableOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTableOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeTableAsync(const DescribeTableRequest& request, const DescribeTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTableRequest&;
+    using Resp = DescribeTableResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeTableOutcomeCallable TcbClient::DescribeTableCallable(const DescribeTableRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTableOutcome>>();
+    DescribeTableAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeTableRequest&,
+        DescribeTableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DescribeTablesOutcome TcbClient::DescribeTables(const DescribeTablesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTables");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTablesResponse rsp = DescribeTablesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTablesOutcome(rsp);
+        else
+            return DescribeTablesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTablesOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeTablesAsync(const DescribeTablesRequest& request, const DescribeTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTablesRequest&;
+    using Resp = DescribeTablesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTables", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeTablesOutcomeCallable TcbClient::DescribeTablesCallable(const DescribeTablesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTablesOutcome>>();
+    DescribeTablesAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeTablesRequest&,
+        DescribeTablesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::DescribeUserActivityInfoOutcome TcbClient::DescribeUserActivityInfo(const DescribeUserActivityInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserActivityInfo");
@@ -2432,6 +2732,56 @@ TcbClient::DescribeUserActivityInfoOutcomeCallable TcbClient::DescribeUserActivi
         const TcbClient*,
         const DescribeUserActivityInfoRequest&,
         DescribeUserActivityInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DescribeUserListOutcome TcbClient::DescribeUserList(const DescribeUserListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserListResponse rsp = DescribeUserListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserListOutcome(rsp);
+        else
+            return DescribeUserListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserListOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeUserListAsync(const DescribeUserListRequest& request, const DescribeUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeUserListRequest&;
+    using Resp = DescribeUserListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeUserListOutcomeCallable TcbClient::DescribeUserListCallable(const DescribeUserListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeUserListOutcome>>();
+    DescribeUserListAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeUserListRequest&,
+        DescribeUserListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2840,6 +3190,56 @@ TcbClient::FreezeCloudBaseRunServersOutcomeCallable TcbClient::FreezeCloudBaseRu
     return prom->get_future();
 }
 
+TcbClient::ListTablesOutcome TcbClient::ListTables(const ListTablesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTables");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTablesResponse rsp = ListTablesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTablesOutcome(rsp);
+        else
+            return ListTablesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTablesOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::ListTablesAsync(const ListTablesRequest& request, const ListTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListTablesRequest&;
+    using Resp = ListTablesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListTables", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::ListTablesOutcomeCallable TcbClient::ListTablesCallable(const ListTablesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListTablesOutcome>>();
+    ListTablesAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ListTablesRequest&,
+        ListTablesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::ModifyCloudBaseRunServerFlowConfOutcome TcbClient::ModifyCloudBaseRunServerFlowConf(const ModifyCloudBaseRunServerFlowConfRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCloudBaseRunServerFlowConf");
@@ -3140,6 +3540,56 @@ TcbClient::ModifyGatewayVersionTrafficOutcomeCallable TcbClient::ModifyGatewayVe
     return prom->get_future();
 }
 
+TcbClient::ModifyUserOutcome TcbClient::ModifyUser(const ModifyUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserResponse rsp = ModifyUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserOutcome(rsp);
+        else
+            return ModifyUserOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::ModifyUserAsync(const ModifyUserRequest& request, const ModifyUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyUserRequest&;
+    using Resp = ModifyUserResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::ModifyUserOutcomeCallable TcbClient::ModifyUserCallable(const ModifyUserRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyUserOutcome>>();
+    ModifyUserAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ModifyUserRequest&,
+        ModifyUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::ReinstateEnvOutcome TcbClient::ReinstateEnv(const ReinstateEnvRequest &request)
 {
     auto outcome = MakeRequest(request, "ReinstateEnv");
@@ -3332,6 +3782,56 @@ TcbClient::UnfreezeCloudBaseRunServersOutcomeCallable TcbClient::UnfreezeCloudBa
         const TcbClient*,
         const UnfreezeCloudBaseRunServersRequest&,
         UnfreezeCloudBaseRunServersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::UpdateTableOutcome TcbClient::UpdateTable(const UpdateTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateTableResponse rsp = UpdateTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateTableOutcome(rsp);
+        else
+            return UpdateTableOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateTableOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::UpdateTableAsync(const UpdateTableRequest& request, const UpdateTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateTableRequest&;
+    using Resp = UpdateTableResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateTable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::UpdateTableOutcomeCallable TcbClient::UpdateTableCallable(const UpdateTableRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateTableOutcome>>();
+    UpdateTableAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const UpdateTableRequest&,
+        UpdateTableOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

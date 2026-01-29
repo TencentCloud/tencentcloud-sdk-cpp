@@ -235,6 +235,27 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取OIDC公钥自动轮转开关（默认为0代表关闭，1代表开启）如果不传的话，会默认置0
+                     * @return AutoRotateKey OIDC公钥自动轮转开关（默认为0代表关闭，1代表开启）如果不传的话，会默认置0
+                     * 
+                     */
+                    uint64_t GetAutoRotateKey() const;
+
+                    /**
+                     * 设置OIDC公钥自动轮转开关（默认为0代表关闭，1代表开启）如果不传的话，会默认置0
+                     * @param _autoRotateKey OIDC公钥自动轮转开关（默认为0代表关闭，1代表开启）如果不传的话，会默认置0
+                     * 
+                     */
+                    void SetAutoRotateKey(const uint64_t& _autoRotateKey);
+
+                    /**
+                     * 判断参数 AutoRotateKey 是否已赋值
+                     * @return AutoRotateKey 是否已赋值
+                     * 
+                     */
+                    bool AutoRotateKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -291,6 +312,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * OIDC公钥自动轮转开关（默认为0代表关闭，1代表开启）如果不传的话，会默认置0
+                     */
+                    uint64_t m_autoRotateKey;
+                    bool m_autoRotateKeyHasBeenSet;
 
                 };
             }

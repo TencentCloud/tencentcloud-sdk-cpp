@@ -64,15 +64,43 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取新升级的数据库版本，当前仅支持MONGO_40_WT（MongoDB 4.0 WiredTiger存储引擎版本）及MONGO_42_WT（MongoDB 4.0 WiredTiger存储引擎版本）。
-                     * @return MongoVersion 新升级的数据库版本，当前仅支持MONGO_40_WT（MongoDB 4.0 WiredTiger存储引擎版本）及MONGO_42_WT（MongoDB 4.0 WiredTiger存储引擎版本）。
+                     * 获取新升级的数据库版本。当前支持版本如下所示，支持旧版本向高版本升级，不支持跨版本升级。
+- MONGO_40_WT：4.0 版本。
+- MONGO_42_WT：4.2 版本。
+- MONGO_44_WT：4.4 版本
+- MONGO_50_WT：5.0 版本
+- MONGO_60_WT：6.0 版本。
+- MONGO_70_WT：7.0 版本。
+- MONGO_80_WT：8.0 版本。
+                     * @return MongoVersion 新升级的数据库版本。当前支持版本如下所示，支持旧版本向高版本升级，不支持跨版本升级。
+- MONGO_40_WT：4.0 版本。
+- MONGO_42_WT：4.2 版本。
+- MONGO_44_WT：4.4 版本
+- MONGO_50_WT：5.0 版本
+- MONGO_60_WT：6.0 版本。
+- MONGO_70_WT：7.0 版本。
+- MONGO_80_WT：8.0 版本。
                      * 
                      */
                     std::string GetMongoVersion() const;
 
                     /**
-                     * 设置新升级的数据库版本，当前仅支持MONGO_40_WT（MongoDB 4.0 WiredTiger存储引擎版本）及MONGO_42_WT（MongoDB 4.0 WiredTiger存储引擎版本）。
-                     * @param _mongoVersion 新升级的数据库版本，当前仅支持MONGO_40_WT（MongoDB 4.0 WiredTiger存储引擎版本）及MONGO_42_WT（MongoDB 4.0 WiredTiger存储引擎版本）。
+                     * 设置新升级的数据库版本。当前支持版本如下所示，支持旧版本向高版本升级，不支持跨版本升级。
+- MONGO_40_WT：4.0 版本。
+- MONGO_42_WT：4.2 版本。
+- MONGO_44_WT：4.4 版本
+- MONGO_50_WT：5.0 版本
+- MONGO_60_WT：6.0 版本。
+- MONGO_70_WT：7.0 版本。
+- MONGO_80_WT：8.0 版本。
+                     * @param _mongoVersion 新升级的数据库版本。当前支持版本如下所示，支持旧版本向高版本升级，不支持跨版本升级。
+- MONGO_40_WT：4.0 版本。
+- MONGO_42_WT：4.2 版本。
+- MONGO_44_WT：4.4 版本
+- MONGO_50_WT：5.0 版本
+- MONGO_60_WT：6.0 版本。
+- MONGO_70_WT：7.0 版本。
+- MONGO_80_WT：8.0 版本。
                      * 
                      */
                     void SetMongoVersion(const std::string& _mongoVersion);
@@ -85,15 +113,23 @@ namespace TencentCloud
                     bool MongoVersionHasBeenSet() const;
 
                     /**
-                     * 获取是否在维护时间内升级。0-立即升级 1-维护时间内升级
-                     * @return InMaintenance 是否在维护时间内升级。0-立即升级 1-维护时间内升级
+                     * 获取指定升级操作是否在维护时间内进行。
+- 0：立即升级。
+- 1：维护时间窗升级。
+                     * @return InMaintenance 指定升级操作是否在维护时间内进行。
+- 0：立即升级。
+- 1：维护时间窗升级。
                      * 
                      */
                     int64_t GetInMaintenance() const;
 
                     /**
-                     * 设置是否在维护时间内升级。0-立即升级 1-维护时间内升级
-                     * @param _inMaintenance 是否在维护时间内升级。0-立即升级 1-维护时间内升级
+                     * 设置指定升级操作是否在维护时间内进行。
+- 0：立即升级。
+- 1：维护时间窗升级。
+                     * @param _inMaintenance 指定升级操作是否在维护时间内进行。
+- 0：立即升级。
+- 1：维护时间窗升级。
                      * 
                      */
                     void SetInMaintenance(const int64_t& _inMaintenance);
@@ -114,13 +150,22 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 新升级的数据库版本，当前仅支持MONGO_40_WT（MongoDB 4.0 WiredTiger存储引擎版本）及MONGO_42_WT（MongoDB 4.0 WiredTiger存储引擎版本）。
+                     * 新升级的数据库版本。当前支持版本如下所示，支持旧版本向高版本升级，不支持跨版本升级。
+- MONGO_40_WT：4.0 版本。
+- MONGO_42_WT：4.2 版本。
+- MONGO_44_WT：4.4 版本
+- MONGO_50_WT：5.0 版本
+- MONGO_60_WT：6.0 版本。
+- MONGO_70_WT：7.0 版本。
+- MONGO_80_WT：8.0 版本。
                      */
                     std::string m_mongoVersion;
                     bool m_mongoVersionHasBeenSet;
 
                     /**
-                     * 是否在维护时间内升级。0-立即升级 1-维护时间内升级
+                     * 指定升级操作是否在维护时间内进行。
+- 0：立即升级。
+- 1：维护时间窗升级。
                      */
                     int64_t m_inMaintenance;
                     bool m_inMaintenanceHasBeenSet;

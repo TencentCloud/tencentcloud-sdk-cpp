@@ -113,6 +113,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationSubOrganizationActiveRecordResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationUserRolesRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationUserRolesResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateLMInformationExtractionTaskFieldFeedbackRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateLMInformationExtractionTaskFieldFeedbackResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateLegalSealQrCodeRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateLegalSealQrCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateMiniAppPrepareFlowRequest.h>
@@ -143,6 +145,8 @@
 #include <tencentcloud/ess/v20201111/model/CreatePreparedPersonalEsignResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateReleaseFlowRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateReleaseFlowResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateRiskIdentificationTaskFeedbackRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateRiskIdentificationTaskFeedbackResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateSchemeUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateSchemeUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateSealRequest.h>
@@ -231,6 +235,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeIntegrationRolesRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeIntegrationRolesResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeLMInformationExtractionTaskFieldFeedbackRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeLMInformationExtractionTaskFieldFeedbackResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeOrganizationAuthStatusRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeOrganizationAuthStatusResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeOrganizationGroupOrganizationsRequest.h>
@@ -241,6 +247,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeOrganizationVerifyStatusResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribePersonCertificateRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribePersonCertificateResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeRiskIdentificationTaskFeedbackRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeRiskIdentificationTaskFeedbackResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeSignFaceVideoRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeSignFaceVideoResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeSingleSignOnEmployeesRequest.h>
@@ -442,6 +450,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateIntegrationUserRolesResponse> CreateIntegrationUserRolesOutcome;
                 typedef std::future<CreateIntegrationUserRolesOutcome> CreateIntegrationUserRolesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateIntegrationUserRolesRequest&, CreateIntegrationUserRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIntegrationUserRolesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLMInformationExtractionTaskFieldFeedbackResponse> CreateLMInformationExtractionTaskFieldFeedbackOutcome;
+                typedef std::future<CreateLMInformationExtractionTaskFieldFeedbackOutcome> CreateLMInformationExtractionTaskFieldFeedbackOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateLMInformationExtractionTaskFieldFeedbackRequest&, CreateLMInformationExtractionTaskFieldFeedbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLMInformationExtractionTaskFieldFeedbackAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateLegalSealQrCodeResponse> CreateLegalSealQrCodeOutcome;
                 typedef std::future<CreateLegalSealQrCodeOutcome> CreateLegalSealQrCodeOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateLegalSealQrCodeRequest&, CreateLegalSealQrCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLegalSealQrCodeAsyncHandler;
@@ -487,6 +498,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateReleaseFlowResponse> CreateReleaseFlowOutcome;
                 typedef std::future<CreateReleaseFlowOutcome> CreateReleaseFlowOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateReleaseFlowRequest&, CreateReleaseFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReleaseFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRiskIdentificationTaskFeedbackResponse> CreateRiskIdentificationTaskFeedbackOutcome;
+                typedef std::future<CreateRiskIdentificationTaskFeedbackOutcome> CreateRiskIdentificationTaskFeedbackOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateRiskIdentificationTaskFeedbackRequest&, CreateRiskIdentificationTaskFeedbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRiskIdentificationTaskFeedbackAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSchemeUrlResponse> CreateSchemeUrlOutcome;
                 typedef std::future<CreateSchemeUrlOutcome> CreateSchemeUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateSchemeUrlRequest&, CreateSchemeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSchemeUrlAsyncHandler;
@@ -619,6 +633,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIntegrationRolesResponse> DescribeIntegrationRolesOutcome;
                 typedef std::future<DescribeIntegrationRolesOutcome> DescribeIntegrationRolesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeIntegrationRolesRequest&, DescribeIntegrationRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntegrationRolesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLMInformationExtractionTaskFieldFeedbackResponse> DescribeLMInformationExtractionTaskFieldFeedbackOutcome;
+                typedef std::future<DescribeLMInformationExtractionTaskFieldFeedbackOutcome> DescribeLMInformationExtractionTaskFieldFeedbackOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeLMInformationExtractionTaskFieldFeedbackRequest&, DescribeLMInformationExtractionTaskFieldFeedbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLMInformationExtractionTaskFieldFeedbackAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOrganizationAuthStatusResponse> DescribeOrganizationAuthStatusOutcome;
                 typedef std::future<DescribeOrganizationAuthStatusOutcome> DescribeOrganizationAuthStatusOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeOrganizationAuthStatusRequest&, DescribeOrganizationAuthStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationAuthStatusAsyncHandler;
@@ -634,6 +651,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePersonCertificateResponse> DescribePersonCertificateOutcome;
                 typedef std::future<DescribePersonCertificateOutcome> DescribePersonCertificateOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribePersonCertificateRequest&, DescribePersonCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePersonCertificateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRiskIdentificationTaskFeedbackResponse> DescribeRiskIdentificationTaskFeedbackOutcome;
+                typedef std::future<DescribeRiskIdentificationTaskFeedbackOutcome> DescribeRiskIdentificationTaskFeedbackOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeRiskIdentificationTaskFeedbackRequest&, DescribeRiskIdentificationTaskFeedbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskIdentificationTaskFeedbackAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSignFaceVideoResponse> DescribeSignFaceVideoOutcome;
                 typedef std::future<DescribeSignFaceVideoOutcome> DescribeSignFaceVideoOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeSignFaceVideoRequest&, DescribeSignFaceVideoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSignFaceVideoAsyncHandler;
@@ -1688,6 +1708,15 @@ namespace TencentCloud
                 CreateIntegrationUserRolesOutcomeCallable CreateIntegrationUserRolesCallable(const Model::CreateIntegrationUserRolesRequest& request);
 
                 /**
+                 *此接口（CreateLMInformationExtractionTaskFieldFeedback）用于创建合同智能提取任务字段结果的反馈。
+                 * @param req CreateLMInformationExtractionTaskFieldFeedbackRequest
+                 * @return CreateLMInformationExtractionTaskFieldFeedbackOutcome
+                 */
+                CreateLMInformationExtractionTaskFieldFeedbackOutcome CreateLMInformationExtractionTaskFieldFeedback(const Model::CreateLMInformationExtractionTaskFieldFeedbackRequest &request);
+                void CreateLMInformationExtractionTaskFieldFeedbackAsync(const Model::CreateLMInformationExtractionTaskFieldFeedbackRequest& request, const CreateLMInformationExtractionTaskFieldFeedbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLMInformationExtractionTaskFieldFeedbackOutcomeCallable CreateLMInformationExtractionTaskFieldFeedbackCallable(const Model::CreateLMInformationExtractionTaskFieldFeedbackRequest& request);
+
+                /**
                  *该接口用于获取创建法人章的二维码，需要通过微信扫描。扫描后将跳转到腾讯电子签署，进入到创建法人章的流程。
 
 **注意**
@@ -1967,6 +1996,15 @@ namespace TencentCloud
                 CreateReleaseFlowOutcome CreateReleaseFlow(const Model::CreateReleaseFlowRequest &request);
                 void CreateReleaseFlowAsync(const Model::CreateReleaseFlowRequest& request, const CreateReleaseFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateReleaseFlowOutcomeCallable CreateReleaseFlowCallable(const Model::CreateReleaseFlowRequest& request);
+
+                /**
+                 *此接口（CreateRiskIdentificationTaskFeedback）用于创建合同审查任务结果反馈。
+                 * @param req CreateRiskIdentificationTaskFeedbackRequest
+                 * @return CreateRiskIdentificationTaskFeedbackOutcome
+                 */
+                CreateRiskIdentificationTaskFeedbackOutcome CreateRiskIdentificationTaskFeedback(const Model::CreateRiskIdentificationTaskFeedbackRequest &request);
+                void CreateRiskIdentificationTaskFeedbackAsync(const Model::CreateRiskIdentificationTaskFeedbackRequest& request, const CreateRiskIdentificationTaskFeedbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRiskIdentificationTaskFeedbackOutcomeCallable CreateRiskIdentificationTaskFeedbackCallable(const Model::CreateRiskIdentificationTaskFeedbackRequest& request);
 
                 /**
                  *获取跳转至腾讯电子签小程序的签署链接
@@ -2571,6 +2609,15 @@ namespace TencentCloud
                 DescribeIntegrationRolesOutcomeCallable DescribeIntegrationRolesCallable(const Model::DescribeIntegrationRolesRequest& request);
 
                 /**
+                 *此接口（DescribeLMInformationExtractionTaskFieldFeedback）用于查询合同智能提取任务字段反馈信息。
+                 * @param req DescribeLMInformationExtractionTaskFieldFeedbackRequest
+                 * @return DescribeLMInformationExtractionTaskFieldFeedbackOutcome
+                 */
+                DescribeLMInformationExtractionTaskFieldFeedbackOutcome DescribeLMInformationExtractionTaskFieldFeedback(const Model::DescribeLMInformationExtractionTaskFieldFeedbackRequest &request);
+                void DescribeLMInformationExtractionTaskFieldFeedbackAsync(const Model::DescribeLMInformationExtractionTaskFieldFeedbackRequest& request, const DescribeLMInformationExtractionTaskFieldFeedbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLMInformationExtractionTaskFieldFeedbackOutcomeCallable DescribeLMInformationExtractionTaskFieldFeedbackCallable(const Model::DescribeLMInformationExtractionTaskFieldFeedbackRequest& request);
+
+                /**
                  *查询企业认证状态- 仅通过[CreateOrganizationAuthUrl](https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthUrl) 和[CreateBatchOrganizationRegistrationTasks](https://qian.tencent.com/developers/companyApis/organizations/CreateBatchOrganizationRegistrationTasks)这两个接口进行引导认证的企业，调用方企业可以依据这个接口，查询认证状态。
                  * @param req DescribeOrganizationAuthStatusRequest
                  * @return DescribeOrganizationAuthStatusOutcome
@@ -2618,6 +2665,15 @@ namespace TencentCloud
                 DescribePersonCertificateOutcome DescribePersonCertificate(const Model::DescribePersonCertificateRequest &request);
                 void DescribePersonCertificateAsync(const Model::DescribePersonCertificateRequest& request, const DescribePersonCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePersonCertificateOutcomeCallable DescribePersonCertificateCallable(const Model::DescribePersonCertificateRequest& request);
+
+                /**
+                 *此接口（DescribeRiskIdentificationTaskFeedback）用于查询合同审查任务结果反馈信息
+                 * @param req DescribeRiskIdentificationTaskFeedbackRequest
+                 * @return DescribeRiskIdentificationTaskFeedbackOutcome
+                 */
+                DescribeRiskIdentificationTaskFeedbackOutcome DescribeRiskIdentificationTaskFeedback(const Model::DescribeRiskIdentificationTaskFeedbackRequest &request);
+                void DescribeRiskIdentificationTaskFeedbackAsync(const Model::DescribeRiskIdentificationTaskFeedbackRequest& request, const DescribeRiskIdentificationTaskFeedbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRiskIdentificationTaskFeedbackOutcomeCallable DescribeRiskIdentificationTaskFeedbackCallable(const Model::DescribeRiskIdentificationTaskFeedbackRequest& request);
 
                 /**
                  *该接口用于在使用视频认证方式签署合同后，获取用户的签署人脸认证视频。

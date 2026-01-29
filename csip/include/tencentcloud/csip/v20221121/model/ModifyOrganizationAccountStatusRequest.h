@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取修改集团账号状态，1 开启， 2关闭
-                     * @return Status 修改集团账号状态，1 开启， 2关闭
+                     * 获取修改集团账号状态，1 开启， 0关闭
+                     * @return Status 修改集团账号状态，1 开启， 0关闭
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置修改集团账号状态，1 开启， 2关闭
-                     * @param _status 修改集团账号状态，1 开启， 2关闭
+                     * 设置修改集团账号状态，1 开启， 0关闭
+                     * @param _status 修改集团账号状态，1 开启， 0关闭
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 修改集团账号状态，1 开启， 2关闭
+                     * 修改集团账号状态，1 开启， 0关闭
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

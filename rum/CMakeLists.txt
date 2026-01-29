@@ -53,9 +53,10 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DeleteStarProjectRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeWhitelistsRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeUvListRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeTawAreasResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataReportCountV2Request.h
   include/tencentcloud/rum/v20210622/model/DescribeDataRequest.h
   include/tencentcloud/rum/v20210622/model/StopProjectRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTawAreasResponse.h
   include/tencentcloud/rum/v20210622/model/ResumeProjectResponse.h
   include/tencentcloud/rum/v20210622/model/ModifyProjectLimitRequest.h
   include/tencentcloud/rum/v20210622/model/DeleteInstanceResponse.h
@@ -124,6 +125,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeRumGroupLogRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeWhitelistsResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeProjectsResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataReportCountV2Response.h
   include/tencentcloud/rum/v20210622/model/ModifyProjectResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataReportCountResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeRumLogExportResponse.h
@@ -179,9 +181,10 @@ set(rum_src
   src/v20210622/model/DeleteStarProjectRequest.cpp
   src/v20210622/model/DescribeWhitelistsRequest.cpp
   src/v20210622/model/DescribeUvListRequest.cpp
-  src/v20210622/model/DescribeTawAreasResponse.cpp
+  src/v20210622/model/DescribeDataReportCountV2Request.cpp
   src/v20210622/model/DescribeDataRequest.cpp
   src/v20210622/model/StopProjectRequest.cpp
+  src/v20210622/model/DescribeTawAreasResponse.cpp
   src/v20210622/model/ResumeProjectResponse.cpp
   src/v20210622/model/ModifyProjectLimitRequest.cpp
   src/v20210622/model/DeleteInstanceResponse.cpp
@@ -250,6 +253,7 @@ set(rum_src
   src/v20210622/model/DescribeRumGroupLogRequest.cpp
   src/v20210622/model/DescribeWhitelistsResponse.cpp
   src/v20210622/model/DescribeProjectsResponse.cpp
+  src/v20210622/model/DescribeDataReportCountV2Response.cpp
   src/v20210622/model/ModifyProjectResponse.cpp
   src/v20210622/model/DescribeDataReportCountResponse.cpp
   src/v20210622/model/DescribeRumLogExportResponse.cpp

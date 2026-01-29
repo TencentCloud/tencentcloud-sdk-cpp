@@ -601,23 +601,44 @@ namespace TencentCloud
                     /**
                      * 获取新产生的克隆实例主库的可用区信息，默认同源实例 Zone 的值。
                      * @return MasterZone 新产生的克隆实例主库的可用区信息，默认同源实例 Zone 的值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetMasterZone() const;
 
                     /**
                      * 设置新产生的克隆实例主库的可用区信息，默认同源实例 Zone 的值。
                      * @param _masterZone 新产生的克隆实例主库的可用区信息，默认同源实例 Zone 的值。
-                     * 
+                     * @deprecated
                      */
                     void SetMasterZone(const std::string& _masterZone);
 
                     /**
                      * 判断参数 MasterZone 是否已赋值
                      * @return MasterZone 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool MasterZoneHasBeenSet() const;
+
+                    /**
+                     * 获取新产生的克隆实例主库的可用区信息，默认同源实例 Zone 的值。
+                     * @return Zone 新产生的克隆实例主库的可用区信息，默认同源实例 Zone 的值。
+                     * 
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置新产生的克隆实例主库的可用区信息，默认同源实例 Zone 的值。
+                     * @param _zone 新产生的克隆实例主库的可用区信息，默认同源实例 Zone 的值。
+                     * 
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     * 
+                     */
+                    bool ZoneHasBeenSet() const;
 
                 private:
 
@@ -784,6 +805,12 @@ namespace TencentCloud
                      */
                     std::string m_masterZone;
                     bool m_masterZoneHasBeenSet;
+
+                    /**
+                     * 新产生的克隆实例主库的可用区信息，默认同源实例 Zone 的值。
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
 
                 };
             }

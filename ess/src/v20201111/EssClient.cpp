@@ -2290,6 +2290,56 @@ EssClient::CreateIntegrationUserRolesOutcomeCallable EssClient::CreateIntegratio
     return prom->get_future();
 }
 
+EssClient::CreateLMInformationExtractionTaskFieldFeedbackOutcome EssClient::CreateLMInformationExtractionTaskFieldFeedback(const CreateLMInformationExtractionTaskFieldFeedbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLMInformationExtractionTaskFieldFeedback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLMInformationExtractionTaskFieldFeedbackResponse rsp = CreateLMInformationExtractionTaskFieldFeedbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLMInformationExtractionTaskFieldFeedbackOutcome(rsp);
+        else
+            return CreateLMInformationExtractionTaskFieldFeedbackOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLMInformationExtractionTaskFieldFeedbackOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateLMInformationExtractionTaskFieldFeedbackAsync(const CreateLMInformationExtractionTaskFieldFeedbackRequest& request, const CreateLMInformationExtractionTaskFieldFeedbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateLMInformationExtractionTaskFieldFeedbackRequest&;
+    using Resp = CreateLMInformationExtractionTaskFieldFeedbackResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateLMInformationExtractionTaskFieldFeedback", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssClient::CreateLMInformationExtractionTaskFieldFeedbackOutcomeCallable EssClient::CreateLMInformationExtractionTaskFieldFeedbackCallable(const CreateLMInformationExtractionTaskFieldFeedbackRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateLMInformationExtractionTaskFieldFeedbackOutcome>>();
+    CreateLMInformationExtractionTaskFieldFeedbackAsync(
+    request,
+    [prom](
+        const EssClient*,
+        const CreateLMInformationExtractionTaskFieldFeedbackRequest&,
+        CreateLMInformationExtractionTaskFieldFeedbackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EssClient::CreateLegalSealQrCodeOutcome EssClient::CreateLegalSealQrCode(const CreateLegalSealQrCodeRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateLegalSealQrCode");
@@ -3032,6 +3082,56 @@ EssClient::CreateReleaseFlowOutcomeCallable EssClient::CreateReleaseFlowCallable
         const EssClient*,
         const CreateReleaseFlowRequest&,
         CreateReleaseFlowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EssClient::CreateRiskIdentificationTaskFeedbackOutcome EssClient::CreateRiskIdentificationTaskFeedback(const CreateRiskIdentificationTaskFeedbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRiskIdentificationTaskFeedback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRiskIdentificationTaskFeedbackResponse rsp = CreateRiskIdentificationTaskFeedbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRiskIdentificationTaskFeedbackOutcome(rsp);
+        else
+            return CreateRiskIdentificationTaskFeedbackOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRiskIdentificationTaskFeedbackOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateRiskIdentificationTaskFeedbackAsync(const CreateRiskIdentificationTaskFeedbackRequest& request, const CreateRiskIdentificationTaskFeedbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateRiskIdentificationTaskFeedbackRequest&;
+    using Resp = CreateRiskIdentificationTaskFeedbackResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateRiskIdentificationTaskFeedback", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssClient::CreateRiskIdentificationTaskFeedbackOutcomeCallable EssClient::CreateRiskIdentificationTaskFeedbackCallable(const CreateRiskIdentificationTaskFeedbackRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateRiskIdentificationTaskFeedbackOutcome>>();
+    CreateRiskIdentificationTaskFeedbackAsync(
+    request,
+    [prom](
+        const EssClient*,
+        const CreateRiskIdentificationTaskFeedbackRequest&,
+        CreateRiskIdentificationTaskFeedbackOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5240,6 +5340,56 @@ EssClient::DescribeIntegrationRolesOutcomeCallable EssClient::DescribeIntegratio
     return prom->get_future();
 }
 
+EssClient::DescribeLMInformationExtractionTaskFieldFeedbackOutcome EssClient::DescribeLMInformationExtractionTaskFieldFeedback(const DescribeLMInformationExtractionTaskFieldFeedbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLMInformationExtractionTaskFieldFeedback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLMInformationExtractionTaskFieldFeedbackResponse rsp = DescribeLMInformationExtractionTaskFieldFeedbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLMInformationExtractionTaskFieldFeedbackOutcome(rsp);
+        else
+            return DescribeLMInformationExtractionTaskFieldFeedbackOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLMInformationExtractionTaskFieldFeedbackOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeLMInformationExtractionTaskFieldFeedbackAsync(const DescribeLMInformationExtractionTaskFieldFeedbackRequest& request, const DescribeLMInformationExtractionTaskFieldFeedbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLMInformationExtractionTaskFieldFeedbackRequest&;
+    using Resp = DescribeLMInformationExtractionTaskFieldFeedbackResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLMInformationExtractionTaskFieldFeedback", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssClient::DescribeLMInformationExtractionTaskFieldFeedbackOutcomeCallable EssClient::DescribeLMInformationExtractionTaskFieldFeedbackCallable(const DescribeLMInformationExtractionTaskFieldFeedbackRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLMInformationExtractionTaskFieldFeedbackOutcome>>();
+    DescribeLMInformationExtractionTaskFieldFeedbackAsync(
+    request,
+    [prom](
+        const EssClient*,
+        const DescribeLMInformationExtractionTaskFieldFeedbackRequest&,
+        DescribeLMInformationExtractionTaskFieldFeedbackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EssClient::DescribeOrganizationAuthStatusOutcome EssClient::DescribeOrganizationAuthStatus(const DescribeOrganizationAuthStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOrganizationAuthStatus");
@@ -5482,6 +5632,56 @@ EssClient::DescribePersonCertificateOutcomeCallable EssClient::DescribePersonCer
         const EssClient*,
         const DescribePersonCertificateRequest&,
         DescribePersonCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EssClient::DescribeRiskIdentificationTaskFeedbackOutcome EssClient::DescribeRiskIdentificationTaskFeedback(const DescribeRiskIdentificationTaskFeedbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRiskIdentificationTaskFeedback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRiskIdentificationTaskFeedbackResponse rsp = DescribeRiskIdentificationTaskFeedbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRiskIdentificationTaskFeedbackOutcome(rsp);
+        else
+            return DescribeRiskIdentificationTaskFeedbackOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRiskIdentificationTaskFeedbackOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeRiskIdentificationTaskFeedbackAsync(const DescribeRiskIdentificationTaskFeedbackRequest& request, const DescribeRiskIdentificationTaskFeedbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRiskIdentificationTaskFeedbackRequest&;
+    using Resp = DescribeRiskIdentificationTaskFeedbackResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRiskIdentificationTaskFeedback", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssClient::DescribeRiskIdentificationTaskFeedbackOutcomeCallable EssClient::DescribeRiskIdentificationTaskFeedbackCallable(const DescribeRiskIdentificationTaskFeedbackRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRiskIdentificationTaskFeedbackOutcome>>();
+    DescribeRiskIdentificationTaskFeedbackAsync(
+    request,
+    [prom](
+        const EssClient*,
+        const DescribeRiskIdentificationTaskFeedbackRequest&,
+        DescribeRiskIdentificationTaskFeedbackOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

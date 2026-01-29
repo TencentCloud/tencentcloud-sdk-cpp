@@ -68,6 +68,7 @@ set(vclm_public_header_model
   include/tencentcloud/vclm/v20240523/model/DescribeImageAnimateJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribePortraitSingJobResponse.h
   include/tencentcloud/vclm/v20240523/model/DescribeHunyuanToVideoJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/VideoEditParam.h
   )
 
 set(vclm_src
@@ -121,6 +122,7 @@ set(vclm_src
   src/v20240523/model/DescribeImageAnimateJobRequest.cpp
   src/v20240523/model/DescribePortraitSingJobResponse.cpp
   src/v20240523/model/DescribeHunyuanToVideoJobResponse.cpp
+  src/v20240523/model/VideoEditParam.cpp
   )
 
 set(vclm_include

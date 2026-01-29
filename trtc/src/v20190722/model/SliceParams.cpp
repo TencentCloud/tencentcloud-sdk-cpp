@@ -26,6 +26,7 @@ SliceParams::SliceParams() :
     m_sliceAudioHasBeenSet(false),
     m_sliceVideoHasBeenSet(false),
     m_subscribeStreamUserIdsHasBeenSet(false),
+    m_sliceImageTypeHasBeenSet(false),
     m_sliceCallbackUrlHasBeenSet(false)
 {
 }
@@ -92,6 +93,16 @@ CoreInternalOutcome SliceParams::Deserialize(const rapidjson::Value &value)
         m_subscribeStreamUserIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("SliceImageType") && !value["SliceImageType"].IsNull())
+    {
+        if (!value["SliceImageType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SliceParams.SliceImageType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sliceImageType = value["SliceImageType"].GetUint64();
+        m_sliceImageTypeHasBeenSet = true;
+    }
+
     if (value.HasMember("SliceCallbackUrl") && !value["SliceCallbackUrl"].IsNull())
     {
         if (!value["SliceCallbackUrl"].IsString())
@@ -148,6 +159,14 @@ void SliceParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_subscribeStreamUserIds.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_sliceImageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SliceImageType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sliceImageType, allocator);
     }
 
     if (m_sliceCallbackUrlHasBeenSet)
@@ -239,6 +258,22 @@ void SliceParams::SetSubscribeStreamUserIds(const SubscribeStreamUserIds& _subsc
 bool SliceParams::SubscribeStreamUserIdsHasBeenSet() const
 {
     return m_subscribeStreamUserIdsHasBeenSet;
+}
+
+uint64_t SliceParams::GetSliceImageType() const
+{
+    return m_sliceImageType;
+}
+
+void SliceParams::SetSliceImageType(const uint64_t& _sliceImageType)
+{
+    m_sliceImageType = _sliceImageType;
+    m_sliceImageTypeHasBeenSet = true;
+}
+
+bool SliceParams::SliceImageTypeHasBeenSet() const
+{
+    return m_sliceImageTypeHasBeenSet;
 }
 
 string SliceParams::GetSliceCallbackUrl() const

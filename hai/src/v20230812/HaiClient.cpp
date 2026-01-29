@@ -540,6 +540,56 @@ HaiClient::InquirePriceRunInstancesOutcomeCallable HaiClient::InquirePriceRunIns
     return prom->get_future();
 }
 
+HaiClient::InquirePriceUpdateServiceConfigsOutcome HaiClient::InquirePriceUpdateServiceConfigs(const InquirePriceUpdateServiceConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePriceUpdateServiceConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePriceUpdateServiceConfigsResponse rsp = InquirePriceUpdateServiceConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePriceUpdateServiceConfigsOutcome(rsp);
+        else
+            return InquirePriceUpdateServiceConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePriceUpdateServiceConfigsOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::InquirePriceUpdateServiceConfigsAsync(const InquirePriceUpdateServiceConfigsRequest& request, const InquirePriceUpdateServiceConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const InquirePriceUpdateServiceConfigsRequest&;
+    using Resp = InquirePriceUpdateServiceConfigsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "InquirePriceUpdateServiceConfigs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+HaiClient::InquirePriceUpdateServiceConfigsOutcomeCallable HaiClient::InquirePriceUpdateServiceConfigsCallable(const InquirePriceUpdateServiceConfigsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<InquirePriceUpdateServiceConfigsOutcome>>();
+    InquirePriceUpdateServiceConfigsAsync(
+    request,
+    [prom](
+        const HaiClient*,
+        const InquirePriceUpdateServiceConfigsRequest&,
+        InquirePriceUpdateServiceConfigsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 HaiClient::ResetInstancesPasswordOutcome HaiClient::ResetInstancesPassword(const ResetInstancesPasswordRequest &request)
 {
     auto outcome = MakeRequest(request, "ResetInstancesPassword");

@@ -27,6 +27,7 @@ set(hai_public_header_model
   include/tencentcloud/hai/v20230812/model/DescribeInstanceNetworkStatusResponse.h
   include/tencentcloud/hai/v20230812/model/Instance.h
   include/tencentcloud/hai/v20230812/model/TerminateInstancesRequest.h
+  include/tencentcloud/hai/v20230812/model/InquirePriceUpdateServiceConfigsRequest.h
   include/tencentcloud/hai/v20230812/model/TerminateInstancesResponse.h
   include/tencentcloud/hai/v20230812/model/DescribeApplicationsResponse.h
   include/tencentcloud/hai/v20230812/model/StartInstanceRequest.h
@@ -37,6 +38,7 @@ set(hai_public_header_model
   include/tencentcloud/hai/v20230812/model/StopInstanceRequest.h
   include/tencentcloud/hai/v20230812/model/DescribeMuskPromptsRequest.h
   include/tencentcloud/hai/v20230812/model/DescribeScenesResponse.h
+  include/tencentcloud/hai/v20230812/model/ServicePriceDetail.h
   include/tencentcloud/hai/v20230812/model/DescribeApplicationsRequest.h
   include/tencentcloud/hai/v20230812/model/SceneInfo.h
   include/tencentcloud/hai/v20230812/model/CreateApplicationRequest.h
@@ -53,6 +55,7 @@ set(hai_public_header_model
   include/tencentcloud/hai/v20230812/model/DescribeScenesRequest.h
   include/tencentcloud/hai/v20230812/model/DescribeRegionsResponse.h
   include/tencentcloud/hai/v20230812/model/InquirePriceRunInstancesRequest.h
+  include/tencentcloud/hai/v20230812/model/InquirePriceUpdateServiceConfigsResponse.h
   include/tencentcloud/hai/v20230812/model/StartInstanceResponse.h
   include/tencentcloud/hai/v20230812/model/CreateMuskPromptResponse.h
   include/tencentcloud/hai/v20230812/model/DescribeServiceLoginSettingsRequest.h
@@ -79,6 +82,7 @@ set(hai_src
   src/v20230812/model/DescribeInstanceNetworkStatusResponse.cpp
   src/v20230812/model/Instance.cpp
   src/v20230812/model/TerminateInstancesRequest.cpp
+  src/v20230812/model/InquirePriceUpdateServiceConfigsRequest.cpp
   src/v20230812/model/TerminateInstancesResponse.cpp
   src/v20230812/model/DescribeApplicationsResponse.cpp
   src/v20230812/model/StartInstanceRequest.cpp
@@ -89,6 +93,7 @@ set(hai_src
   src/v20230812/model/StopInstanceRequest.cpp
   src/v20230812/model/DescribeMuskPromptsRequest.cpp
   src/v20230812/model/DescribeScenesResponse.cpp
+  src/v20230812/model/ServicePriceDetail.cpp
   src/v20230812/model/DescribeApplicationsRequest.cpp
   src/v20230812/model/SceneInfo.cpp
   src/v20230812/model/CreateApplicationRequest.cpp
@@ -105,6 +110,7 @@ set(hai_src
   src/v20230812/model/DescribeScenesRequest.cpp
   src/v20230812/model/DescribeRegionsResponse.cpp
   src/v20230812/model/InquirePriceRunInstancesRequest.cpp
+  src/v20230812/model/InquirePriceUpdateServiceConfigsResponse.cpp
   src/v20230812/model/StartInstanceResponse.cpp
   src/v20230812/model/CreateMuskPromptResponse.cpp
   src/v20230812/model/DescribeServiceLoginSettingsRequest.cpp

@@ -43,12 +43,20 @@
 #include <tencentcloud/tcb/v20180608/model/CreatePostpayPackageResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateStaticStoreRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateStaticStoreResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreateTableRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreateTableResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreateUserRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreateUserResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseProjectLatestVersionRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseProjectLatestVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseRunServerVersionRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseRunServerVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteGatewayVersionRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteGatewayVersionResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteTableRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteTableResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteUsersRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteUsersResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteWxGatewayRouteRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteWxGatewayRouteResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeActivityRecordRequest.h>
@@ -117,8 +125,14 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeSmsQuotasResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeSpecialCostItemsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeSpecialCostItemsResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeTableRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeTableResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeTablesRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeTablesResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeUserActivityInfoRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeUserActivityInfoResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeUserListRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeUserListResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeWxGatewayRoutesRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeWxGatewayRoutesResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeWxGatewaysRequest.h>
@@ -135,6 +149,8 @@
 #include <tencentcloud/tcb/v20180608/model/EstablishWxGatewayRouteResponse.h>
 #include <tencentcloud/tcb/v20180608/model/FreezeCloudBaseRunServersRequest.h>
 #include <tencentcloud/tcb/v20180608/model/FreezeCloudBaseRunServersResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ListTablesRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ListTablesResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerFlowConfRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerFlowConfResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerVersionRequest.h>
@@ -147,6 +163,8 @@
 #include <tencentcloud/tcb/v20180608/model/ModifyEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyGatewayVersionTrafficRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyGatewayVersionTrafficResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyUserRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyUserResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ReinstateEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ReinstateEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ReplaceActivityRecordRequest.h>
@@ -155,6 +173,8 @@
 #include <tencentcloud/tcb/v20180608/model/RunSqlResponse.h>
 #include <tencentcloud/tcb/v20180608/model/UnfreezeCloudBaseRunServersRequest.h>
 #include <tencentcloud/tcb/v20180608/model/UnfreezeCloudBaseRunServersResponse.h>
+#include <tencentcloud/tcb/v20180608/model/UpdateTableRequest.h>
+#include <tencentcloud/tcb/v20180608/model/UpdateTableResponse.h>
 
 
 namespace TencentCloud
@@ -199,6 +219,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateStaticStoreResponse> CreateStaticStoreOutcome;
                 typedef std::future<CreateStaticStoreOutcome> CreateStaticStoreOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateStaticStoreRequest&, CreateStaticStoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStaticStoreAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTableResponse> CreateTableOutcome;
+                typedef std::future<CreateTableOutcome> CreateTableOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreateTableRequest&, CreateTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTableAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUserResponse> CreateUserOutcome;
+                typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreateUserRequest&, CreateUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCloudBaseProjectLatestVersionResponse> DeleteCloudBaseProjectLatestVersionOutcome;
                 typedef std::future<DeleteCloudBaseProjectLatestVersionOutcome> DeleteCloudBaseProjectLatestVersionOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteCloudBaseProjectLatestVersionRequest&, DeleteCloudBaseProjectLatestVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudBaseProjectLatestVersionAsyncHandler;
@@ -208,6 +234,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteGatewayVersionResponse> DeleteGatewayVersionOutcome;
                 typedef std::future<DeleteGatewayVersionOutcome> DeleteGatewayVersionOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteGatewayVersionRequest&, DeleteGatewayVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGatewayVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTableResponse> DeleteTableOutcome;
+                typedef std::future<DeleteTableOutcome> DeleteTableOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DeleteTableRequest&, DeleteTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTableAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteUsersResponse> DeleteUsersOutcome;
+                typedef std::future<DeleteUsersOutcome> DeleteUsersOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DeleteUsersRequest&, DeleteUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUsersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteWxGatewayRouteResponse> DeleteWxGatewayRouteOutcome;
                 typedef std::future<DeleteWxGatewayRouteOutcome> DeleteWxGatewayRouteOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteWxGatewayRouteRequest&, DeleteWxGatewayRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWxGatewayRouteAsyncHandler;
@@ -310,9 +342,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSpecialCostItemsResponse> DescribeSpecialCostItemsOutcome;
                 typedef std::future<DescribeSpecialCostItemsOutcome> DescribeSpecialCostItemsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeSpecialCostItemsRequest&, DescribeSpecialCostItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpecialCostItemsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTableResponse> DescribeTableOutcome;
+                typedef std::future<DescribeTableOutcome> DescribeTableOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeTableRequest&, DescribeTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTablesResponse> DescribeTablesOutcome;
+                typedef std::future<DescribeTablesOutcome> DescribeTablesOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeTablesRequest&, DescribeTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTablesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserActivityInfoResponse> DescribeUserActivityInfoOutcome;
                 typedef std::future<DescribeUserActivityInfoOutcome> DescribeUserActivityInfoOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeUserActivityInfoRequest&, DescribeUserActivityInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserActivityInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserListResponse> DescribeUserListOutcome;
+                typedef std::future<DescribeUserListOutcome> DescribeUserListOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeUserListRequest&, DescribeUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWxGatewayRoutesResponse> DescribeWxGatewayRoutesOutcome;
                 typedef std::future<DescribeWxGatewayRoutesOutcome> DescribeWxGatewayRoutesOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeWxGatewayRoutesRequest&, DescribeWxGatewayRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWxGatewayRoutesAsyncHandler;
@@ -337,6 +378,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::FreezeCloudBaseRunServersResponse> FreezeCloudBaseRunServersOutcome;
                 typedef std::future<FreezeCloudBaseRunServersOutcome> FreezeCloudBaseRunServersOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::FreezeCloudBaseRunServersRequest&, FreezeCloudBaseRunServersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FreezeCloudBaseRunServersAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListTablesResponse> ListTablesOutcome;
+                typedef std::future<ListTablesOutcome> ListTablesOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ListTablesRequest&, ListTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTablesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCloudBaseRunServerFlowConfResponse> ModifyCloudBaseRunServerFlowConfOutcome;
                 typedef std::future<ModifyCloudBaseRunServerFlowConfOutcome> ModifyCloudBaseRunServerFlowConfOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyCloudBaseRunServerFlowConfRequest&, ModifyCloudBaseRunServerFlowConfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudBaseRunServerFlowConfAsyncHandler;
@@ -355,6 +399,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyGatewayVersionTrafficResponse> ModifyGatewayVersionTrafficOutcome;
                 typedef std::future<ModifyGatewayVersionTrafficOutcome> ModifyGatewayVersionTrafficOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyGatewayVersionTrafficRequest&, ModifyGatewayVersionTrafficOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGatewayVersionTrafficAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyUserResponse> ModifyUserOutcome;
+                typedef std::future<ModifyUserOutcome> ModifyUserOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ModifyUserRequest&, ModifyUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReinstateEnvResponse> ReinstateEnvOutcome;
                 typedef std::future<ReinstateEnvOutcome> ReinstateEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ReinstateEnvRequest&, ReinstateEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReinstateEnvAsyncHandler;
@@ -367,6 +414,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UnfreezeCloudBaseRunServersResponse> UnfreezeCloudBaseRunServersOutcome;
                 typedef std::future<UnfreezeCloudBaseRunServersOutcome> UnfreezeCloudBaseRunServersOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::UnfreezeCloudBaseRunServersRequest&, UnfreezeCloudBaseRunServersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnfreezeCloudBaseRunServersAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateTableResponse> UpdateTableOutcome;
+                typedef std::future<UpdateTableOutcome> UpdateTableOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::UpdateTableRequest&, UpdateTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTableAsyncHandler;
 
 
 
@@ -461,6 +511,24 @@ namespace TencentCloud
                 CreateStaticStoreOutcomeCallable CreateStaticStoreCallable(const Model::CreateStaticStoreRequest& request);
 
                 /**
+                 *本接口(CreateTable)用于创建表，支持创建capped类型集合，暂时不支持分片表
+                 * @param req CreateTableRequest
+                 * @return CreateTableOutcome
+                 */
+                CreateTableOutcome CreateTable(const Model::CreateTableRequest &request);
+                void CreateTableAsync(const Model::CreateTableRequest& request, const CreateTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTableOutcomeCallable CreateTableCallable(const Model::CreateTableRequest& request);
+
+                /**
+                 *创建tcb用户
+                 * @param req CreateUserRequest
+                 * @return CreateUserOutcome
+                 */
+                CreateUserOutcome CreateUser(const Model::CreateUserRequest &request);
+                void CreateUserAsync(const Model::CreateUserRequest& request, const CreateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request);
+
+                /**
                  *删除云项目
                  * @param req DeleteCloudBaseProjectLatestVersionRequest
                  * @return DeleteCloudBaseProjectLatestVersionOutcome
@@ -486,6 +554,24 @@ namespace TencentCloud
                 DeleteGatewayVersionOutcome DeleteGatewayVersion(const Model::DeleteGatewayVersionRequest &request);
                 void DeleteGatewayVersionAsync(const Model::DeleteGatewayVersionRequest& request, const DeleteGatewayVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteGatewayVersionOutcomeCallable DeleteGatewayVersionCallable(const Model::DeleteGatewayVersionRequest& request);
+
+                /**
+                 *本接口(DeleteTable)用于删除表，删除表后表中数据将会被删除且无法恢复，请谨慎操作
+                 * @param req DeleteTableRequest
+                 * @return DeleteTableOutcome
+                 */
+                DeleteTableOutcome DeleteTable(const Model::DeleteTableRequest &request);
+                void DeleteTableAsync(const Model::DeleteTableRequest& request, const DeleteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTableOutcomeCallable DeleteTableCallable(const Model::DeleteTableRequest& request);
+
+                /**
+                 *删除tcb用户
+                 * @param req DeleteUsersRequest
+                 * @return DeleteUsersOutcome
+                 */
+                DeleteUsersOutcome DeleteUsers(const Model::DeleteUsersRequest &request);
+                void DeleteUsersAsync(const Model::DeleteUsersRequest& request, const DeleteUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteUsersOutcomeCallable DeleteUsersCallable(const Model::DeleteUsersRequest& request);
 
                 /**
                  *删除安全网关路由
@@ -798,6 +884,24 @@ namespace TencentCloud
                 DescribeSpecialCostItemsOutcomeCallable DescribeSpecialCostItemsCallable(const Model::DescribeSpecialCostItemsRequest& request);
 
                 /**
+                 *查询表的相关信息，包括索引等信息
+                 * @param req DescribeTableRequest
+                 * @return DescribeTableOutcome
+                 */
+                DescribeTableOutcome DescribeTable(const Model::DescribeTableRequest &request);
+                void DescribeTableAsync(const Model::DescribeTableRequest& request, const DescribeTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTableOutcomeCallable DescribeTableCallable(const Model::DescribeTableRequest& request);
+
+                /**
+                 *本接口(ListTables)用于查询所有表信息，包括表名、表中数据条数、表中数据量、索引个数及索引的大小等
+                 * @param req DescribeTablesRequest
+                 * @return DescribeTablesOutcome
+                 */
+                DescribeTablesOutcome DescribeTables(const Model::DescribeTablesRequest &request);
+                void DescribeTablesAsync(const Model::DescribeTablesRequest& request, const DescribeTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTablesOutcomeCallable DescribeTablesCallable(const Model::DescribeTablesRequest& request);
+
+                /**
                  *查询用户活动信息
                  * @param req DescribeUserActivityInfoRequest
                  * @return DescribeUserActivityInfoOutcome
@@ -805,6 +909,15 @@ namespace TencentCloud
                 DescribeUserActivityInfoOutcome DescribeUserActivityInfo(const Model::DescribeUserActivityInfoRequest &request);
                 void DescribeUserActivityInfoAsync(const Model::DescribeUserActivityInfoRequest& request, const DescribeUserActivityInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserActivityInfoOutcomeCallable DescribeUserActivityInfoCallable(const Model::DescribeUserActivityInfoRequest& request);
+
+                /**
+                 *查询tcb用户列表
+                 * @param req DescribeUserListRequest
+                 * @return DescribeUserListOutcome
+                 */
+                DescribeUserListOutcome DescribeUserList(const Model::DescribeUserListRequest &request);
+                void DescribeUserListAsync(const Model::DescribeUserListRequest& request, const DescribeUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserListOutcomeCallable DescribeUserListCallable(const Model::DescribeUserListRequest& request);
 
                 /**
                  *查看安全网关路由
@@ -879,6 +992,15 @@ namespace TencentCloud
                 FreezeCloudBaseRunServersOutcomeCallable FreezeCloudBaseRunServersCallable(const Model::FreezeCloudBaseRunServersRequest& request);
 
                 /**
+                 *本接口(ListTables)用于查询所有表信息，包括表名、表中数据条数、表中数据量、索引个数及索引的大小等
+                 * @param req ListTablesRequest
+                 * @return ListTablesOutcome
+                 */
+                ListTablesOutcome ListTables(const Model::ListTablesRequest &request);
+                void ListTablesAsync(const Model::ListTablesRequest& request, const ListTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListTablesOutcomeCallable ListTablesCallable(const Model::ListTablesRequest& request);
+
+                /**
                  *修改容器内的版本流量配置
                  * @param req ModifyCloudBaseRunServerFlowConfRequest
                  * @return ModifyCloudBaseRunServerFlowConfOutcome
@@ -933,6 +1055,15 @@ namespace TencentCloud
                 ModifyGatewayVersionTrafficOutcomeCallable ModifyGatewayVersionTrafficCallable(const Model::ModifyGatewayVersionTrafficRequest& request);
 
                 /**
+                 *修改tcb用户
+                 * @param req ModifyUserRequest
+                 * @return ModifyUserOutcome
+                 */
+                ModifyUserOutcome ModifyUser(const Model::ModifyUserRequest &request);
+                void ModifyUserAsync(const Model::ModifyUserRequest& request, const ModifyUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyUserOutcomeCallable ModifyUserCallable(const Model::ModifyUserRequest& request);
+
+                /**
                  *针对已隔离的免费环境，可以通过本接口将其恢复访问。
                  * @param req ReinstateEnvRequest
                  * @return ReinstateEnvOutcome
@@ -967,6 +1098,15 @@ namespace TencentCloud
                 UnfreezeCloudBaseRunServersOutcome UnfreezeCloudBaseRunServers(const Model::UnfreezeCloudBaseRunServersRequest &request);
                 void UnfreezeCloudBaseRunServersAsync(const Model::UnfreezeCloudBaseRunServersRequest& request, const UnfreezeCloudBaseRunServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnfreezeCloudBaseRunServersOutcomeCallable UnfreezeCloudBaseRunServersCallable(const Model::UnfreezeCloudBaseRunServersRequest& request);
+
+                /**
+                 *本接口(UpdateTable)用于修改表信息，当前可以支持创建和删除索引
+                 * @param req UpdateTableRequest
+                 * @return UpdateTableOutcome
+                 */
+                UpdateTableOutcome UpdateTable(const Model::UpdateTableRequest &request);
+                void UpdateTableAsync(const Model::UpdateTableRequest& request, const UpdateTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateTableOutcomeCallable UpdateTableCallable(const Model::UpdateTableRequest& request);
 
             };
         }

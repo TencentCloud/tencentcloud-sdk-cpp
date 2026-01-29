@@ -29,6 +29,7 @@
 #include <tencentcloud/dlc/v20210125/model/SmartOptimizerLifecyclePolicy.h>
 #include <tencentcloud/dlc/v20210125/model/SmartOptimizerIndexPolicy.h>
 #include <tencentcloud/dlc/v20210125/model/SmartOptimizerChangeTablePolicy.h>
+#include <tencentcloud/dlc/v20210125/model/TableExpirationPolicy.h>
 
 
 namespace TencentCloud
@@ -197,6 +198,27 @@ namespace TencentCloud
                      */
                     bool ChangeTableHasBeenSet() const;
 
+                    /**
+                     * 获取表过期策略
+                     * @return TableExpiration 表过期策略
+                     * 
+                     */
+                    TableExpirationPolicy GetTableExpiration() const;
+
+                    /**
+                     * 设置表过期策略
+                     * @param _tableExpiration 表过期策略
+                     * 
+                     */
+                    void SetTableExpiration(const TableExpirationPolicy& _tableExpiration);
+
+                    /**
+                     * 判断参数 TableExpiration 是否已赋值
+                     * @return TableExpiration 是否已赋值
+                     * 
+                     */
+                    bool TableExpirationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +261,12 @@ namespace TencentCloud
                      */
                     SmartOptimizerChangeTablePolicy m_changeTable;
                     bool m_changeTableHasBeenSet;
+
+                    /**
+                     * 表过期策略
+                     */
+                    TableExpirationPolicy m_tableExpiration;
+                    bool m_tableExpirationHasBeenSet;
 
                 };
             }

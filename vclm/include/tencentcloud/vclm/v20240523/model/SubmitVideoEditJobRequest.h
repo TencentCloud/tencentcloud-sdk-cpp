@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vclm/v20240523/model/Image.h>
+#include <tencentcloud/vclm/v20240523/model/VideoEditParam.h>
 #include <tencentcloud/vclm/v20240523/model/LogoParam.h>
 
 
@@ -189,6 +190,27 @@ namespace TencentCloud
                     bool ImageHasBeenSet() const;
 
                     /**
+                     * 获取扩展字段。
+                     * @return VideoEditParam 扩展字段。
+                     * 
+                     */
+                    VideoEditParam GetVideoEditParam() const;
+
+                    /**
+                     * 设置扩展字段。
+                     * @param _videoEditParam 扩展字段。
+                     * 
+                     */
+                    void SetVideoEditParam(const VideoEditParam& _videoEditParam);
+
+                    /**
+                     * 判断参数 VideoEditParam 是否已赋值
+                     * @return VideoEditParam 是否已赋值
+                     * 
+                     */
+                    bool VideoEditParamHasBeenSet() const;
+
+                    /**
                      * 获取为生成视频添加标识的开关，默认为1。传0 需前往  [控制台](https://console.cloud.tencent.com/vtc/setting)  申请开启显式标识自主完成后方可生效。
 1：添加标识；
 0：不添加标识；
@@ -298,6 +320,12 @@ namespace TencentCloud
                      */
                     Image m_image;
                     bool m_imageHasBeenSet;
+
+                    /**
+                     * 扩展字段。
+                     */
+                    VideoEditParam m_videoEditParam;
+                    bool m_videoEditParamHasBeenSet;
 
                     /**
                      * 为生成视频添加标识的开关，默认为1。传0 需前往  [控制台](https://console.cloud.tencent.com/vtc/setting)  申请开启显式标识自主完成后方可生效。

@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool WaterMarkTypeHasBeenSet() const;
 
                     /**
-                     * 获取图片水印参数。WaterMarkType为0指定。
-                     * @return WaterMarkImage 图片水印参数。WaterMarkType为0指定。
+                     * 获取图片水印参数。WaterMarkType为0指定。图片分辨率限制不超过2K，图片大小限制不超过5MB。
+                     * @return WaterMarkImage 图片水印参数。WaterMarkType为0指定。图片分辨率限制不超过2K，图片大小限制不超过5MB。
                      * 
                      */
                     McuWaterMarkImage GetWaterMarkImage() const;
 
                     /**
-                     * 设置图片水印参数。WaterMarkType为0指定。
-                     * @param _waterMarkImage 图片水印参数。WaterMarkType为0指定。
+                     * 设置图片水印参数。WaterMarkType为0指定。图片分辨率限制不超过2K，图片大小限制不超过5MB。
+                     * @param _waterMarkImage 图片水印参数。WaterMarkType为0指定。图片分辨率限制不超过2K，图片大小限制不超过5MB。
                      * 
                      */
                     void SetWaterMarkImage(const McuWaterMarkImage& _waterMarkImage);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_waterMarkTypeHasBeenSet;
 
                     /**
-                     * 图片水印参数。WaterMarkType为0指定。
+                     * 图片水印参数。WaterMarkType为0指定。图片分辨率限制不超过2K，图片大小限制不超过5MB。
                      */
                     McuWaterMarkImage m_waterMarkImage;
                     bool m_waterMarkImageHasBeenSet;

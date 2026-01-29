@@ -53,14 +53,14 @@ ResourceUri，取决于 ResourceType，Metalake时固定为default，其他类�
 - Metalake，固定为default
 - Catalog，取catalogName
 - Schema，取catalogName.SchemaName
-- Table,，取catalogName.SchemaName.TableName
+- Table，取catalogName.SchemaName.TableName
                      * @return Resource 资源
 ResourceType：来源于TCCATALOG模块的GetGrantPrivilegesSTD接口中返回的ResourceType，并改为首字母大写，例如METALAKE对应Metalake
 ResourceUri，取决于 ResourceType，Metalake时固定为default，其他类别采用catalog的三段式结构，例如
 - Metalake，固定为default
 - Catalog，取catalogName
 - Schema，取catalogName.SchemaName
-- Table,，取catalogName.SchemaName.TableName
+- Table，取catalogName.SchemaName.TableName
                      * 
                      */
                     PrivilegeResource GetResource() const;
@@ -72,14 +72,14 @@ ResourceUri，取决于 ResourceType，Metalake时固定为default，其他类�
 - Metalake，固定为default
 - Catalog，取catalogName
 - Schema，取catalogName.SchemaName
-- Table,，取catalogName.SchemaName.TableName
+- Table，取catalogName.SchemaName.TableName
                      * @param _resource 资源
 ResourceType：来源于TCCATALOG模块的GetGrantPrivilegesSTD接口中返回的ResourceType，并改为首字母大写，例如METALAKE对应Metalake
 ResourceUri，取决于 ResourceType，Metalake时固定为default，其他类别采用catalog的三段式结构，例如
 - Metalake，固定为default
 - Catalog，取catalogName
 - Schema，取catalogName.SchemaName
-- Table,，取catalogName.SchemaName.TableName
+- Table，取catalogName.SchemaName.TableName
                      * 
                      */
                     void SetResource(const PrivilegeResource& _resource);
@@ -163,7 +163,7 @@ ResourceUri，取决于 ResourceType，Metalake时固定为default，其他类�
 - Metalake，固定为default
 - Catalog，取catalogName
 - Schema，取catalogName.SchemaName
-- Table,，取catalogName.SchemaName.TableName
+- Table，取catalogName.SchemaName.TableName
                      */
                     PrivilegeResource m_resource;
                     bool m_resourceHasBeenSet;

@@ -157,6 +157,8 @@
 #include <tencentcloud/billing/v20180709/model/RefundInstanceResponse.h>
 #include <tencentcloud/billing/v20180709/model/RenewInstanceRequest.h>
 #include <tencentcloud/billing/v20180709/model/RenewInstanceResponse.h>
+#include <tencentcloud/billing/v20180709/model/SetRenewalRequest.h>
+#include <tencentcloud/billing/v20180709/model/SetRenewalResponse.h>
 
 
 namespace TencentCloud
@@ -372,6 +374,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RenewInstanceResponse> RenewInstanceOutcome;
                 typedef std::future<RenewInstanceOutcome> RenewInstanceOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::RenewInstanceRequest&, RenewInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetRenewalResponse> SetRenewalOutcome;
+                typedef std::future<SetRenewalOutcome> SetRenewalOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::SetRenewalRequest&, SetRenewalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetRenewalAsyncHandler;
 
 
 
@@ -986,6 +991,18 @@ namespace TencentCloud
                 RenewInstanceOutcome RenewInstance(const Model::RenewInstanceRequest &request);
                 void RenewInstanceAsync(const Model::RenewInstanceRequest& request, const RenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RenewInstanceOutcomeCallable RenewInstanceCallable(const Model::RenewInstanceRequest& request);
+
+                /**
+                 *注意事项：
+1、本接口支持对包年包月实例设置自动续费模式及周期
+2、可通过实例查询接口获取到产品编码、地域编码
+3、子用户使用该接口时，应具备QcloudFinanceRenewManageFullAccess权限策略。
+                 * @param req SetRenewalRequest
+                 * @return SetRenewalOutcome
+                 */
+                SetRenewalOutcome SetRenewal(const Model::SetRenewalRequest &request);
+                void SetRenewalAsync(const Model::SetRenewalRequest& request, const SetRenewalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetRenewalOutcomeCallable SetRenewalCallable(const Model::SetRenewalRequest& request);
 
             };
         }

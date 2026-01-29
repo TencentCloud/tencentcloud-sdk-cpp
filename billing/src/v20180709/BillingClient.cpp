@@ -3390,3 +3390,53 @@ BillingClient::RenewInstanceOutcomeCallable BillingClient::RenewInstanceCallable
     return prom->get_future();
 }
 
+BillingClient::SetRenewalOutcome BillingClient::SetRenewal(const SetRenewalRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetRenewal");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetRenewalResponse rsp = SetRenewalResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetRenewalOutcome(rsp);
+        else
+            return SetRenewalOutcome(o.GetError());
+    }
+    else
+    {
+        return SetRenewalOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::SetRenewalAsync(const SetRenewalRequest& request, const SetRenewalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SetRenewalRequest&;
+    using Resp = SetRenewalResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SetRenewal", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BillingClient::SetRenewalOutcomeCallable BillingClient::SetRenewalCallable(const SetRenewalRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SetRenewalOutcome>>();
+    SetRenewalAsync(
+    request,
+    [prom](
+        const BillingClient*,
+        const SetRenewalRequest&,
+        SetRenewalOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+

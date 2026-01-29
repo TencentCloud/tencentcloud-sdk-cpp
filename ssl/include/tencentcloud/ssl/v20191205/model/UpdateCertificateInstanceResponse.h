@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云资源更新任务ID， DeployRecordId为0表示任务进行中， 重复请求这个接口， 当返回DeployRecordId大于0则表示任务创建成功。 未创建成功则会抛出异常
-                     * @return DeployRecordId 云资源更新任务ID， DeployRecordId为0表示任务进行中， 重复请求这个接口， 当返回DeployRecordId大于0则表示任务创建成功。 未创建成功则会抛出异常
+                     * 获取<p>云资源更新任务ID， DeployRecordId为0表示任务进行中， 重复请求这个接口， 当返回DeployRecordId大于0则表示任务创建成功。 未创建成功则会抛出异常</p>
+                     * @return DeployRecordId <p>云资源更新任务ID， DeployRecordId为0表示任务进行中， 重复请求这个接口， 当返回DeployRecordId大于0则表示任务创建成功。 未创建成功则会抛出异常</p>
                      * 
                      */
                     uint64_t GetDeployRecordId() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool DeployRecordIdHasBeenSet() const;
 
                     /**
-                     * 获取更新任务创建状态；1表示创建成功； 0表示当前存在更新中的任务，未创建新的更新任务；返回值DeployRecordId为更新中的任务ID
-                     * @return DeployStatus 更新任务创建状态；1表示创建成功； 0表示当前存在更新中的任务，未创建新的更新任务；返回值DeployRecordId为更新中的任务ID
+                     * 获取<p>更新任务创建状态；1表示创建成功； 0表示当前存在更新中的任务，未创建新的更新任务；返回值DeployRecordId为更新中的任务ID</p>
+                     * @return DeployStatus <p>更新任务创建状态；1表示创建成功； 0表示当前存在更新中的任务，未创建新的更新任务；返回值DeployRecordId为更新中的任务ID</p>
                      * 
                      */
                     int64_t GetDeployStatus() const;
@@ -73,9 +73,9 @@ namespace TencentCloud
                     bool DeployStatusHasBeenSet() const;
 
                     /**
-                     * 获取更新异步创建任务进度详情
+                     * 获取<p>更新异步创建任务进度详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateSyncProgress 更新异步创建任务进度详情
+                     * @return UpdateSyncProgress <p>更新异步创建任务进度详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -91,19 +91,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云资源更新任务ID， DeployRecordId为0表示任务进行中， 重复请求这个接口， 当返回DeployRecordId大于0则表示任务创建成功。 未创建成功则会抛出异常
+                     * <p>云资源更新任务ID， DeployRecordId为0表示任务进行中， 重复请求这个接口， 当返回DeployRecordId大于0则表示任务创建成功。 未创建成功则会抛出异常</p>
                      */
                     uint64_t m_deployRecordId;
                     bool m_deployRecordIdHasBeenSet;
 
                     /**
-                     * 更新任务创建状态；1表示创建成功； 0表示当前存在更新中的任务，未创建新的更新任务；返回值DeployRecordId为更新中的任务ID
+                     * <p>更新任务创建状态；1表示创建成功； 0表示当前存在更新中的任务，未创建新的更新任务；返回值DeployRecordId为更新中的任务ID</p>
                      */
                     int64_t m_deployStatus;
                     bool m_deployStatusHasBeenSet;
 
                     /**
-                     * 更新异步创建任务进度详情
+                     * <p>更新异步创建任务进度详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<UpdateSyncProgress> m_updateSyncProgress;

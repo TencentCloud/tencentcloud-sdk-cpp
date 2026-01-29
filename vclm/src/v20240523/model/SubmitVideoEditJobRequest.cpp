@@ -27,6 +27,7 @@ SubmitVideoEditJobRequest::SubmitVideoEditJobRequest() :
     m_promptHasBeenSet(false),
     m_imagesHasBeenSet(false),
     m_imageHasBeenSet(false),
+    m_videoEditParamHasBeenSet(false),
     m_logoAddHasBeenSet(false),
     m_logoParamHasBeenSet(false)
 {
@@ -77,6 +78,15 @@ string SubmitVideoEditJobRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_image.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_videoEditParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoEditParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_videoEditParam.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_logoAddHasBeenSet)
@@ -166,6 +176,22 @@ void SubmitVideoEditJobRequest::SetImage(const Image& _image)
 bool SubmitVideoEditJobRequest::ImageHasBeenSet() const
 {
     return m_imageHasBeenSet;
+}
+
+VideoEditParam SubmitVideoEditJobRequest::GetVideoEditParam() const
+{
+    return m_videoEditParam;
+}
+
+void SubmitVideoEditJobRequest::SetVideoEditParam(const VideoEditParam& _videoEditParam)
+{
+    m_videoEditParam = _videoEditParam;
+    m_videoEditParamHasBeenSet = true;
+}
+
+bool SubmitVideoEditJobRequest::VideoEditParamHasBeenSet() const
+{
+    return m_videoEditParamHasBeenSet;
 }
 
 int64_t SubmitVideoEditJobRequest::GetLogoAdd() const

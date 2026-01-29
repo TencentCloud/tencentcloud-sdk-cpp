@@ -28,7 +28,8 @@ LakeFsInfo::LakeFsInfo() :
     m_defaultBucketHasBeenSet(false),
     m_shortNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,26 @@ CoreInternalOutcome LakeFsInfo::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("TagList") && !value["TagList"].IsNull())
+    {
+        if (!value["TagList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LakeFsInfo.TagList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagList.push_back(item);
+        }
+        m_tagListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +207,21 @@ void LakeFsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -317,5 +353,21 @@ void LakeFsInfo::SetStatus(const string& _status)
 bool LakeFsInfo::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+vector<TagInfo> LakeFsInfo::GetTagList() const
+{
+    return m_tagList;
+}
+
+void LakeFsInfo::SetTagList(const vector<TagInfo>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool LakeFsInfo::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
 }
 

@@ -43,6 +43,8 @@
 #include <tencentcloud/hai/v20230812/model/DescribeServiceLoginSettingsResponse.h>
 #include <tencentcloud/hai/v20230812/model/InquirePriceRunInstancesRequest.h>
 #include <tencentcloud/hai/v20230812/model/InquirePriceRunInstancesResponse.h>
+#include <tencentcloud/hai/v20230812/model/InquirePriceUpdateServiceConfigsRequest.h>
+#include <tencentcloud/hai/v20230812/model/InquirePriceUpdateServiceConfigsResponse.h>
 #include <tencentcloud/hai/v20230812/model/ResetInstancesPasswordRequest.h>
 #include <tencentcloud/hai/v20230812/model/ResetInstancesPasswordResponse.h>
 #include <tencentcloud/hai/v20230812/model/ResizeInstanceDiskRequest.h>
@@ -101,6 +103,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquirePriceRunInstancesResponse> InquirePriceRunInstancesOutcome;
                 typedef std::future<InquirePriceRunInstancesOutcome> InquirePriceRunInstancesOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::InquirePriceRunInstancesRequest&, InquirePriceRunInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRunInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquirePriceUpdateServiceConfigsResponse> InquirePriceUpdateServiceConfigsOutcome;
+                typedef std::future<InquirePriceUpdateServiceConfigsOutcome> InquirePriceUpdateServiceConfigsOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::InquirePriceUpdateServiceConfigsRequest&, InquirePriceUpdateServiceConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceUpdateServiceConfigsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetInstancesPasswordResponse> ResetInstancesPasswordOutcome;
                 typedef std::future<ResetInstancesPasswordOutcome> ResetInstancesPasswordOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::ResetInstancesPasswordRequest&, ResetInstancesPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetInstancesPasswordAsyncHandler;
@@ -214,6 +219,15 @@ namespace TencentCloud
                 InquirePriceRunInstancesOutcome InquirePriceRunInstances(const Model::InquirePriceRunInstancesRequest &request);
                 void InquirePriceRunInstancesAsync(const Model::InquirePriceRunInstancesRequest& request, const InquirePriceRunInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquirePriceRunInstancesOutcomeCallable InquirePriceRunInstancesCallable(const Model::InquirePriceRunInstancesRequest& request);
+
+                /**
+                 *本接口(InquirePriceUpdateServiceConfigs)用于更新服务配置询价
+                 * @param req InquirePriceUpdateServiceConfigsRequest
+                 * @return InquirePriceUpdateServiceConfigsOutcome
+                 */
+                InquirePriceUpdateServiceConfigsOutcome InquirePriceUpdateServiceConfigs(const Model::InquirePriceUpdateServiceConfigsRequest &request);
+                void InquirePriceUpdateServiceConfigsAsync(const Model::InquirePriceUpdateServiceConfigsRequest& request, const InquirePriceUpdateServiceConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquirePriceUpdateServiceConfigsOutcomeCallable InquirePriceUpdateServiceConfigsCallable(const Model::InquirePriceUpdateServiceConfigsRequest& request);
 
                 /**
                  *本接口 (ResetInstancesPassword) 用于重置实例的用户密码。

@@ -177,6 +177,31 @@ namespace TencentCloud
                     bool SubscribeStreamUserIdsHasBeenSet() const;
 
                     /**
+                     * 获取知道图片格式类型：
+0 png, 1 jpg默认0
+                     * @return SliceImageType 知道图片格式类型：
+0 png, 1 jpg默认0
+                     * 
+                     */
+                    uint64_t GetSliceImageType() const;
+
+                    /**
+                     * 设置知道图片格式类型：
+0 png, 1 jpg默认0
+                     * @param _sliceImageType 知道图片格式类型：
+0 png, 1 jpg默认0
+                     * 
+                     */
+                    void SetSliceImageType(const uint64_t& _sliceImageType);
+
+                    /**
+                     * 判断参数 SliceImageType 是否已赋值
+                     * @return SliceImageType 是否已赋值
+                     * 
+                     */
+                    bool SliceImageTypeHasBeenSet() const;
+
+                    /**
                      * 获取已废弃，从控制台配置回调url
                      * @return SliceCallbackUrl 已废弃，从控制台配置回调url
                      * 
@@ -234,6 +259,13 @@ namespace TencentCloud
                      */
                     SubscribeStreamUserIds m_subscribeStreamUserIds;
                     bool m_subscribeStreamUserIdsHasBeenSet;
+
+                    /**
+                     * 知道图片格式类型：
+0 png, 1 jpg默认0
+                     */
+                    uint64_t m_sliceImageType;
+                    bool m_sliceImageTypeHasBeenSet;
 
                     /**
                      * 已废弃，从控制台配置回调url

@@ -31,7 +31,8 @@ CreateUserOIDCConfigRequest::CreateUserOIDCConfigRequest() :
     m_mappingFiledHasBeenSet(false),
     m_identityKeyHasBeenSet(false),
     m_scopeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_autoRotateKeyHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,14 @@ string CreateUserOIDCConfigRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRotateKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRotateKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRotateKey, allocator);
     }
 
 
@@ -269,6 +278,22 @@ void CreateUserOIDCConfigRequest::SetDescription(const string& _description)
 bool CreateUserOIDCConfigRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+uint64_t CreateUserOIDCConfigRequest::GetAutoRotateKey() const
+{
+    return m_autoRotateKey;
+}
+
+void CreateUserOIDCConfigRequest::SetAutoRotateKey(const uint64_t& _autoRotateKey)
+{
+    m_autoRotateKey = _autoRotateKey;
+    m_autoRotateKeyHasBeenSet = true;
+}
+
+bool CreateUserOIDCConfigRequest::AutoRotateKeyHasBeenSet() const
+{
+    return m_autoRotateKeyHasBeenSet;
 }
 
 
