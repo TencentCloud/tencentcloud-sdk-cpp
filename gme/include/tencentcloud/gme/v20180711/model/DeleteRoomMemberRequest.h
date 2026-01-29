@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要操作的房间id
-                     * @return RoomId 要操作的房间id
+                     * 获取<p>要操作的房间id</p>
+                     * @return RoomId <p>要操作的房间id</p>
                      * 
                      */
                     std::string GetRoomId() const;
 
                     /**
-                     * 设置要操作的房间id
-                     * @param _roomId 要操作的房间id
+                     * 设置<p>要操作的房间id</p>
+                     * @param _roomId <p>要操作的房间id</p>
                      * 
                      */
                     void SetRoomId(const std::string& _roomId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool RoomIdHasBeenSet() const;
 
                     /**
-                     * 获取剔除类型 1-删除房间 2-剔除用户
-                     * @return DeleteType 剔除类型 1-删除房间 2-剔除用户
+                     * 获取<p>剔除类型 1-删除房间 2-剔除用户</p>
+                     * @return DeleteType <p>剔除类型 1-删除房间 2-剔除用户</p>
                      * 
                      */
                     uint64_t GetDeleteType() const;
 
                     /**
-                     * 设置剔除类型 1-删除房间 2-剔除用户
-                     * @param _deleteType 剔除类型 1-删除房间 2-剔除用户
+                     * 设置<p>剔除类型 1-删除房间 2-剔除用户</p>
+                     * @param _deleteType <p>剔除类型 1-删除房间 2-剔除用户</p>
                      * 
                      */
                     void SetDeleteType(const uint64_t& _deleteType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DeleteTypeHasBeenSet() const;
 
                     /**
-                     * 获取应用id
-                     * @return BizId 应用id
+                     * 获取<p>应用id</p>
+                     * @return BizId <p>应用id</p>
                      * 
                      */
                     uint64_t GetBizId() const;
 
                     /**
-                     * 设置应用id
-                     * @param _bizId 应用id
+                     * 设置<p>应用id</p>
+                     * @param _bizId <p>应用id</p>
                      * 
                      */
                     void SetBizId(const uint64_t& _bizId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool BizIdHasBeenSet() const;
 
                     /**
-                     * 获取要剔除的用户列表（整型）
-                     * @return Uids 要剔除的用户列表（整型）
+                     * 获取<p>要剔除的用户列表（整型）</p>
+                     * @return Uids <p>要剔除的用户列表（整型）</p>
                      * 
                      */
                     std::vector<std::string> GetUids() const;
 
                     /**
-                     * 设置要剔除的用户列表（整型）
-                     * @param _uids 要剔除的用户列表（整型）
+                     * 设置<p>要剔除的用户列表（整型）</p>
+                     * @param _uids <p>要剔除的用户列表（整型）</p>
                      * 
                      */
                     void SetUids(const std::vector<std::string>& _uids);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool UidsHasBeenSet() const;
 
                     /**
-                     * 获取要剔除的用户列表（字符串类型）
-                     * @return StrUids 要剔除的用户列表（字符串类型）
+                     * 获取<p>要剔除的用户列表（字符串类型）</p>
+                     * @return StrUids <p>要剔除的用户列表（字符串类型）</p>
                      * 
                      */
                     std::vector<std::string> GetStrUids() const;
 
                     /**
-                     * 设置要剔除的用户列表（字符串类型）
-                     * @param _strUids 要剔除的用户列表（字符串类型）
+                     * 设置<p>要剔除的用户列表（字符串类型）</p>
+                     * @param _strUids <p>要剔除的用户列表（字符串类型）</p>
                      * 
                      */
                     void SetStrUids(const std::vector<std::string>& _strUids);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要操作的房间id
+                     * <p>要操作的房间id</p>
                      */
                     std::string m_roomId;
                     bool m_roomIdHasBeenSet;
 
                     /**
-                     * 剔除类型 1-删除房间 2-剔除用户
+                     * <p>剔除类型 1-删除房间 2-剔除用户</p>
                      */
                     uint64_t m_deleteType;
                     bool m_deleteTypeHasBeenSet;
 
                     /**
-                     * 应用id
+                     * <p>应用id</p>
                      */
                     uint64_t m_bizId;
                     bool m_bizIdHasBeenSet;
 
                     /**
-                     * 要剔除的用户列表（整型）
+                     * <p>要剔除的用户列表（整型）</p>
                      */
                     std::vector<std::string> m_uids;
                     bool m_uidsHasBeenSet;
 
                     /**
-                     * 要剔除的用户列表（字符串类型）
+                     * <p>要剔除的用户列表（字符串类型）</p>
                      */
                     std::vector<std::string> m_strUids;
                     bool m_strUidsHasBeenSet;

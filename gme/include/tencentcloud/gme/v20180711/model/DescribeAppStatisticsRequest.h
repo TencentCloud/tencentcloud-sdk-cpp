@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取GME应用ID
-                     * @return BizId GME应用ID
+                     * 获取<p>GME应用ID</p>
+                     * @return BizId <p>GME应用ID</p>
                      * 
                      */
                     uint64_t GetBizId() const;
 
                     /**
-                     * 设置GME应用ID
-                     * @param _bizId GME应用ID
+                     * 设置<p>GME应用ID</p>
+                     * @param _bizId <p>GME应用ID</p>
                      * 
                      */
                     void SetBizId(const uint64_t& _bizId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BizIdHasBeenSet() const;
 
                     /**
-                     * 获取数据开始时间，东八区时间，格式: 年-月-日，如: 2018-07-13
-                     * @return StartDate 数据开始时间，东八区时间，格式: 年-月-日，如: 2018-07-13
+                     * 获取<p>数据开始时间，东八区时间，格式: 年-月-日，如: 2018-07-13</p>
+                     * @return StartDate <p>数据开始时间，东八区时间，格式: 年-月-日，如: 2018-07-13</p>
                      * 
                      */
                     std::string GetStartDate() const;
 
                     /**
-                     * 设置数据开始时间，东八区时间，格式: 年-月-日，如: 2018-07-13
-                     * @param _startDate 数据开始时间，东八区时间，格式: 年-月-日，如: 2018-07-13
+                     * 设置<p>数据开始时间，东八区时间，格式: 年-月-日，如: 2018-07-13</p>
+                     * @param _startDate <p>数据开始时间，东八区时间，格式: 年-月-日，如: 2018-07-13</p>
                      * 
                      */
                     void SetStartDate(const std::string& _startDate);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartDateHasBeenSet() const;
 
                     /**
-                     * 获取数据结束时间，东八区时间，格式: 年-月-日，如: 2018-07-13
-                     * @return EndDate 数据结束时间，东八区时间，格式: 年-月-日，如: 2018-07-13
+                     * 获取<p>数据结束时间，东八区时间，格式: 年-月-日，如: 2018-07-13</p>
+                     * @return EndDate <p>数据结束时间，东八区时间，格式: 年-月-日，如: 2018-07-13</p>
                      * 
                      */
                     std::string GetEndDate() const;
 
                     /**
-                     * 设置数据结束时间，东八区时间，格式: 年-月-日，如: 2018-07-13
-                     * @param _endDate 数据结束时间，东八区时间，格式: 年-月-日，如: 2018-07-13
+                     * 设置<p>数据结束时间，东八区时间，格式: 年-月-日，如: 2018-07-13</p>
+                     * @param _endDate <p>数据结束时间，东八区时间，格式: 年-月-日，如: 2018-07-13</p>
                      * 
                      */
                     void SetEndDate(const std::string& _endDate);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndDateHasBeenSet() const;
 
                     /**
-                     * 获取要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter/SpeechToText
-                     * @return Services 要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter/SpeechToText
+                     * 获取<p>要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter/SpeechToText</p>
+                     * @return Services <p>要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter/SpeechToText</p>
                      * 
                      */
                     std::vector<std::string> GetServices() const;
 
                     /**
-                     * 设置要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter/SpeechToText
-                     * @param _services 要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter/SpeechToText
+                     * 设置<p>要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter/SpeechToText</p>
+                     * @param _services <p>要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter/SpeechToText</p>
                      * 
                      */
                     void SetServices(const std::vector<std::string>& _services);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * GME应用ID
+                     * <p>GME应用ID</p>
                      */
                     uint64_t m_bizId;
                     bool m_bizIdHasBeenSet;
 
                     /**
-                     * 数据开始时间，东八区时间，格式: 年-月-日，如: 2018-07-13
+                     * <p>数据开始时间，东八区时间，格式: 年-月-日，如: 2018-07-13</p>
                      */
                     std::string m_startDate;
                     bool m_startDateHasBeenSet;
 
                     /**
-                     * 数据结束时间，东八区时间，格式: 年-月-日，如: 2018-07-13
+                     * <p>数据结束时间，东八区时间，格式: 年-月-日，如: 2018-07-13</p>
                      */
                     std::string m_endDate;
                     bool m_endDateHasBeenSet;
 
                     /**
-                     * 要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter/SpeechToText
+                     * <p>要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter/SpeechToText</p>
                      */
                     std::vector<std::string> m_services;
                     bool m_servicesHasBeenSet;

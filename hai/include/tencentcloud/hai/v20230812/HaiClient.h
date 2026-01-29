@@ -55,6 +55,8 @@
 #include <tencentcloud/hai/v20230812/model/StopInstanceResponse.h>
 #include <tencentcloud/hai/v20230812/model/TerminateInstancesRequest.h>
 #include <tencentcloud/hai/v20230812/model/TerminateInstancesResponse.h>
+#include <tencentcloud/hai/v20230812/model/UpdateServiceConfigsRequest.h>
+#include <tencentcloud/hai/v20230812/model/UpdateServiceConfigsResponse.h>
 
 
 namespace TencentCloud
@@ -117,6 +119,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::TerminateInstancesResponse> TerminateInstancesOutcome;
                 typedef std::future<TerminateInstancesOutcome> TerminateInstancesOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::TerminateInstancesRequest&, TerminateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateServiceConfigsResponse> UpdateServiceConfigsOutcome;
+                typedef std::future<UpdateServiceConfigsOutcome> UpdateServiceConfigsOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::UpdateServiceConfigsRequest&, UpdateServiceConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateServiceConfigsAsyncHandler;
 
 
 
@@ -265,6 +270,15 @@ namespace TencentCloud
                 TerminateInstancesOutcome TerminateInstances(const Model::TerminateInstancesRequest &request);
                 void TerminateInstancesAsync(const Model::TerminateInstancesRequest& request, const TerminateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TerminateInstancesOutcomeCallable TerminateInstancesCallable(const Model::TerminateInstancesRequest& request);
+
+                /**
+                 *本接口(UpdateServiceConfigs)用于更新服务配置
+                 * @param req UpdateServiceConfigsRequest
+                 * @return UpdateServiceConfigsOutcome
+                 */
+                UpdateServiceConfigsOutcome UpdateServiceConfigs(const Model::UpdateServiceConfigsRequest &request);
+                void UpdateServiceConfigsAsync(const Model::UpdateServiceConfigsRequest& request, const UpdateServiceConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateServiceConfigsOutcomeCallable UpdateServiceConfigsCallable(const Model::UpdateServiceConfigsRequest& request);
 
             };
         }

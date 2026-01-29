@@ -3240,48 +3240,48 @@ TcbClient::ReplaceActivityRecordOutcomeCallable TcbClient::ReplaceActivityRecord
     return prom->get_future();
 }
 
-TcbClient::SearchClsLogOutcome TcbClient::SearchClsLog(const SearchClsLogRequest &request)
+TcbClient::RunSqlOutcome TcbClient::RunSql(const RunSqlRequest &request)
 {
-    auto outcome = MakeRequest(request, "SearchClsLog");
+    auto outcome = MakeRequest(request, "RunSql");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        SearchClsLogResponse rsp = SearchClsLogResponse();
+        RunSqlResponse rsp = RunSqlResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return SearchClsLogOutcome(rsp);
+            return RunSqlOutcome(rsp);
         else
-            return SearchClsLogOutcome(o.GetError());
+            return RunSqlOutcome(o.GetError());
     }
     else
     {
-        return SearchClsLogOutcome(outcome.GetError());
+        return RunSqlOutcome(outcome.GetError());
     }
 }
 
-void TcbClient::SearchClsLogAsync(const SearchClsLogRequest& request, const SearchClsLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void TcbClient::RunSqlAsync(const RunSqlRequest& request, const RunSqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
-    using Req = const SearchClsLogRequest&;
-    using Resp = SearchClsLogResponse;
+    using Req = const RunSqlRequest&;
+    using Resp = RunSqlResponse;
 
     DoRequestAsync<Req, Resp>(
-        "SearchClsLog", request, {{{"Content-Type", "application/json"}}},
+        "RunSql", request, {{{"Content-Type", "application/json"}}},
         [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
         {
             handler(this, req, std::move(resp), context);
         });
 }
 
-TcbClient::SearchClsLogOutcomeCallable TcbClient::SearchClsLogCallable(const SearchClsLogRequest &request)
+TcbClient::RunSqlOutcomeCallable TcbClient::RunSqlCallable(const RunSqlRequest &request)
 {
-    const auto prom = std::make_shared<std::promise<SearchClsLogOutcome>>();
-    SearchClsLogAsync(
+    const auto prom = std::make_shared<std::promise<RunSqlOutcome>>();
+    RunSqlAsync(
     request,
     [prom](
         const TcbClient*,
-        const SearchClsLogRequest&,
-        SearchClsLogOutcome resp,
+        const RunSqlRequest&,
+        RunSqlOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作结果, 0成功, 非0失败
-                     * @return Result 操作结果, 0成功, 非0失败
+                     * 获取<p>操作结果, 0成功, 非0失败</p>
+                     * @return Result <p>操作结果, 0成功, 非0失败</p>
                      * 
                      */
                     uint64_t GetResult() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ResultHasBeenSet() const;
 
                     /**
-                     * 获取房间用户信息
-                     * @return RoomUsers 房间用户信息
+                     * 获取<p>房间用户信息</p>
+                     * @return RoomUsers <p>房间用户信息</p>
                      * 
                      */
                     std::vector<RoomUser> GetRoomUsers() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作结果, 0成功, 非0失败
+                     * <p>操作结果, 0成功, 非0失败</p>
                      */
                     uint64_t m_result;
                     bool m_resultHasBeenSet;
 
                     /**
-                     * 房间用户信息
+                     * <p>房间用户信息</p>
                      */
                     std::vector<RoomUser> m_roomUsers;
                     bool m_roomUsersHasBeenSet;

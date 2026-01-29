@@ -34,7 +34,8 @@ TalkAIBotInfo::TalkAIBotInfo() :
     m_agentConfigHasBeenSet(false),
     m_productListHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_boundProductsHasBeenSet(false)
 {
 }
 
@@ -218,6 +219,26 @@ CoreInternalOutcome TalkAIBotInfo::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("BoundProducts") && !value["BoundProducts"].IsNull())
+    {
+        if (!value["BoundProducts"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TalkAIBotInfo.BoundProducts` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BoundProducts"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TalkProductInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_boundProducts.push_back(item);
+        }
+        m_boundProductsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -340,6 +361,21 @@ void TalkAIBotInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateTime, allocator);
+    }
+
+    if (m_boundProductsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BoundProducts";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_boundProducts.begin(); itr != m_boundProducts.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -567,5 +603,21 @@ void TalkAIBotInfo::SetUpdateTime(const int64_t& _updateTime)
 bool TalkAIBotInfo::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+vector<TalkProductInfo> TalkAIBotInfo::GetBoundProducts() const
+{
+    return m_boundProducts;
+}
+
+void TalkAIBotInfo::SetBoundProducts(const vector<TalkProductInfo>& _boundProducts)
+{
+    m_boundProducts = _boundProducts;
+    m_boundProductsHasBeenSet = true;
+}
+
+bool TalkAIBotInfo::BoundProductsHasBeenSet() const
+{
+    return m_boundProductsHasBeenSet;
 }
 

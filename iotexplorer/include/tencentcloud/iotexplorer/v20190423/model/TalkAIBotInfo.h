@@ -285,21 +285,21 @@ namespace TencentCloud
                     /**
                      * 获取产品信息列表
                      * @return ProductList 产品信息列表
-                     * 
+                     * @deprecated
                      */
                     TalkProductInfo GetProductList() const;
 
                     /**
                      * 设置产品信息列表
                      * @param _productList 产品信息列表
-                     * 
+                     * @deprecated
                      */
                     void SetProductList(const TalkProductInfo& _productList);
 
                     /**
                      * 判断参数 ProductList 是否已赋值
                      * @return ProductList 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ProductListHasBeenSet() const;
 
@@ -344,6 +344,27 @@ namespace TencentCloud
                      * 
                      */
                     bool UpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取已关联产品信息列表
+                     * @return BoundProducts 已关联产品信息列表
+                     * 
+                     */
+                    std::vector<TalkProductInfo> GetBoundProducts() const;
+
+                    /**
+                     * 设置已关联产品信息列表
+                     * @param _boundProducts 已关联产品信息列表
+                     * 
+                     */
+                    void SetBoundProducts(const std::vector<TalkProductInfo>& _boundProducts);
+
+                    /**
+                     * 判断参数 BoundProducts 是否已赋值
+                     * @return BoundProducts 是否已赋值
+                     * 
+                     */
+                    bool BoundProductsHasBeenSet() const;
 
                 private:
 
@@ -430,6 +451,12 @@ namespace TencentCloud
                      */
                     int64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 已关联产品信息列表
+                     */
+                    std::vector<TalkProductInfo> m_boundProducts;
+                    bool m_boundProductsHasBeenSet;
 
                 };
             }

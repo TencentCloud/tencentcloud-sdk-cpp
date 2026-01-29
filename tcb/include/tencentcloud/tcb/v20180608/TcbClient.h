@@ -151,8 +151,8 @@
 #include <tencentcloud/tcb/v20180608/model/ReinstateEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ReplaceActivityRecordRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ReplaceActivityRecordResponse.h>
-#include <tencentcloud/tcb/v20180608/model/SearchClsLogRequest.h>
-#include <tencentcloud/tcb/v20180608/model/SearchClsLogResponse.h>
+#include <tencentcloud/tcb/v20180608/model/RunSqlRequest.h>
+#include <tencentcloud/tcb/v20180608/model/RunSqlResponse.h>
 #include <tencentcloud/tcb/v20180608/model/UnfreezeCloudBaseRunServersRequest.h>
 #include <tencentcloud/tcb/v20180608/model/UnfreezeCloudBaseRunServersResponse.h>
 
@@ -361,9 +361,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ReplaceActivityRecordResponse> ReplaceActivityRecordOutcome;
                 typedef std::future<ReplaceActivityRecordOutcome> ReplaceActivityRecordOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ReplaceActivityRecordRequest&, ReplaceActivityRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceActivityRecordAsyncHandler;
-                typedef Outcome<Core::Error, Model::SearchClsLogResponse> SearchClsLogOutcome;
-                typedef std::future<SearchClsLogOutcome> SearchClsLogOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::SearchClsLogRequest&, SearchClsLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchClsLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::RunSqlResponse> RunSqlOutcome;
+                typedef std::future<RunSqlOutcome> RunSqlOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::RunSqlRequest&, RunSqlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunSqlAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnfreezeCloudBaseRunServersResponse> UnfreezeCloudBaseRunServersOutcome;
                 typedef std::future<UnfreezeCloudBaseRunServersOutcome> UnfreezeCloudBaseRunServersOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::UnfreezeCloudBaseRunServersRequest&, UnfreezeCloudBaseRunServersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnfreezeCloudBaseRunServersAsyncHandler;
@@ -951,13 +951,13 @@ namespace TencentCloud
                 ReplaceActivityRecordOutcomeCallable ReplaceActivityRecordCallable(const Model::ReplaceActivityRecordRequest& request);
 
                 /**
-                 *搜索CLS日志，TCB角色密钥访问
-                 * @param req SearchClsLogRequest
-                 * @return SearchClsLogOutcome
+                 *执行SQL语句
+                 * @param req RunSqlRequest
+                 * @return RunSqlOutcome
                  */
-                SearchClsLogOutcome SearchClsLog(const Model::SearchClsLogRequest &request);
-                void SearchClsLogAsync(const Model::SearchClsLogRequest& request, const SearchClsLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                SearchClsLogOutcomeCallable SearchClsLogCallable(const Model::SearchClsLogRequest& request);
+                RunSqlOutcome RunSql(const Model::RunSqlRequest &request);
+                void RunSqlAsync(const Model::RunSqlRequest& request, const RunSqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RunSqlOutcomeCallable RunSqlCallable(const Model::RunSqlRequest& request);
 
                 /**
                  *批量解冻服务

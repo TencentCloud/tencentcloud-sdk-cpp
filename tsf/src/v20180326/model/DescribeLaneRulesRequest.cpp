@@ -27,7 +27,8 @@ DescribeLaneRulesRequest::DescribeLaneRulesRequest() :
     m_offsetHasBeenSet(false),
     m_searchWordHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
-    m_ruleIdListHasBeenSet(false)
+    m_ruleIdListHasBeenSet(false),
+    m_queryAllHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string DescribeLaneRulesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_queryAllHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryAll";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_queryAll, allocator);
     }
 
 
@@ -169,6 +178,22 @@ void DescribeLaneRulesRequest::SetRuleIdList(const vector<string>& _ruleIdList)
 bool DescribeLaneRulesRequest::RuleIdListHasBeenSet() const
 {
     return m_ruleIdListHasBeenSet;
+}
+
+bool DescribeLaneRulesRequest::GetQueryAll() const
+{
+    return m_queryAll;
+}
+
+void DescribeLaneRulesRequest::SetQueryAll(const bool& _queryAll)
+{
+    m_queryAll = _queryAll;
+    m_queryAllHasBeenSet = true;
+}
+
+bool DescribeLaneRulesRequest::QueryAllHasBeenSet() const
+{
+    return m_queryAllHasBeenSet;
 }
 
 

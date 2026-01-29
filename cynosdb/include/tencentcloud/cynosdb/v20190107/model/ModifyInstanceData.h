@@ -174,14 +174,22 @@ namespace TencentCloud
 
                     /**
                      * 获取变配前实例机器类型
+1. common，通用型。
+2. exclusive，独享型。
                      * @return OldDeviceType 变配前实例机器类型
+1. common，通用型。
+2. exclusive，独享型。
                      * 
                      */
                     std::string GetOldDeviceType() const;
 
                     /**
                      * 设置变配前实例机器类型
+1. common，通用型。
+2. exclusive，独享型。
                      * @param _oldDeviceType 变配前实例机器类型
+1. common，通用型。
+2. exclusive，独享型。
                      * 
                      */
                     void SetOldDeviceType(const std::string& _oldDeviceType);
@@ -195,14 +203,22 @@ namespace TencentCloud
 
                     /**
                      * 获取变配后实例机器类型
+1. common，通用型。
+2. exclusive，独享型。
                      * @return DeviceType 变配后实例机器类型
+1. common，通用型。
+2. exclusive，独享型。
                      * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
                      * 设置变配后实例机器类型
+1. common，通用型。
+2. exclusive，独享型。
                      * @param _deviceType 变配后实例机器类型
+1. common，通用型。
+2. exclusive，独享型。
                      * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
@@ -317,12 +333,16 @@ namespace TencentCloud
 
                     /**
                      * 变配前实例机器类型
+1. common，通用型。
+2. exclusive，独享型。
                      */
                     std::string m_oldDeviceType;
                     bool m_oldDeviceTypeHasBeenSet;
 
                     /**
                      * 变配后实例机器类型
+1. common，通用型。
+2. exclusive，独享型。
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;

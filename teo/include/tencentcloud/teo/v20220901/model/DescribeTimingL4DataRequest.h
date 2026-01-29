@@ -87,38 +87,46 @@ namespace TencentCloud
 
                     /**
                      * 获取查询指标，取值有：
-<li>l4Flow_connections: 访问并发连接数；</li>
-<li>l4Flow_flux: 访问总流量；</li>
-<li>l4Flow_inFlux: 访问入流量；</li>
-<li>l4Flow_outFlux: 访问出流量；</li>
-<li>l4Flow_inBandwidth: 访问入向带宽峰值；</li>
-<li>l4Flow_outBandwidth: 访问出向带宽峰值。</li>
+<ul><li>**l4Flow_flux**: 访问总流量，单位：Byte，指标值类型：Integer；</li>
+<li>**l4Flow_inFlux**: 访问入流量，单位：Byte，指标值类型：Integer；</li>
+<li>**l4Flow_outFlux**: 访问出流量，单位：Byte，指标值类型：Integer；</li>
+<li>**l4Flow_inBandwidth**: 访问入向带宽峰值，单位：bps，指标值类型：Integer；</li>
+<li>**l4Flow_outBandwidth**: 访问出向带宽峰值，单位：bps，指标值类型：Integer；</li>
+<li>**l4Flow_connections**: 访问并发连接数，单位：个，指标值类型：Integer ；</li>
+<li>**l4Flow_newConnectionsRate**: 新建连接数速率，单位：个/秒，指标值类型： Float，保留两位小数。</li></ul>**注意**：<ul><li><code> Integer</code> 值类型的指标将从  <code>Data.N.TypeValue</code> 返回对应时序数据；</li>
+<li><code>Float</code> 值类型的指标将从 <code>Data.N.FloatTypeValue</code> 返回对应时序数据。</li></ul>
                      * @return MetricNames 查询指标，取值有：
-<li>l4Flow_connections: 访问并发连接数；</li>
-<li>l4Flow_flux: 访问总流量；</li>
-<li>l4Flow_inFlux: 访问入流量；</li>
-<li>l4Flow_outFlux: 访问出流量；</li>
-<li>l4Flow_inBandwidth: 访问入向带宽峰值；</li>
-<li>l4Flow_outBandwidth: 访问出向带宽峰值。</li>
+<ul><li>**l4Flow_flux**: 访问总流量，单位：Byte，指标值类型：Integer；</li>
+<li>**l4Flow_inFlux**: 访问入流量，单位：Byte，指标值类型：Integer；</li>
+<li>**l4Flow_outFlux**: 访问出流量，单位：Byte，指标值类型：Integer；</li>
+<li>**l4Flow_inBandwidth**: 访问入向带宽峰值，单位：bps，指标值类型：Integer；</li>
+<li>**l4Flow_outBandwidth**: 访问出向带宽峰值，单位：bps，指标值类型：Integer；</li>
+<li>**l4Flow_connections**: 访问并发连接数，单位：个，指标值类型：Integer ；</li>
+<li>**l4Flow_newConnectionsRate**: 新建连接数速率，单位：个/秒，指标值类型： Float，保留两位小数。</li></ul>**注意**：<ul><li><code> Integer</code> 值类型的指标将从  <code>Data.N.TypeValue</code> 返回对应时序数据；</li>
+<li><code>Float</code> 值类型的指标将从 <code>Data.N.FloatTypeValue</code> 返回对应时序数据。</li></ul>
                      * 
                      */
                     std::vector<std::string> GetMetricNames() const;
 
                     /**
                      * 设置查询指标，取值有：
-<li>l4Flow_connections: 访问并发连接数；</li>
-<li>l4Flow_flux: 访问总流量；</li>
-<li>l4Flow_inFlux: 访问入流量；</li>
-<li>l4Flow_outFlux: 访问出流量；</li>
-<li>l4Flow_inBandwidth: 访问入向带宽峰值；</li>
-<li>l4Flow_outBandwidth: 访问出向带宽峰值。</li>
+<ul><li>**l4Flow_flux**: 访问总流量，单位：Byte，指标值类型：Integer；</li>
+<li>**l4Flow_inFlux**: 访问入流量，单位：Byte，指标值类型：Integer；</li>
+<li>**l4Flow_outFlux**: 访问出流量，单位：Byte，指标值类型：Integer；</li>
+<li>**l4Flow_inBandwidth**: 访问入向带宽峰值，单位：bps，指标值类型：Integer；</li>
+<li>**l4Flow_outBandwidth**: 访问出向带宽峰值，单位：bps，指标值类型：Integer；</li>
+<li>**l4Flow_connections**: 访问并发连接数，单位：个，指标值类型：Integer ；</li>
+<li>**l4Flow_newConnectionsRate**: 新建连接数速率，单位：个/秒，指标值类型： Float，保留两位小数。</li></ul>**注意**：<ul><li><code> Integer</code> 值类型的指标将从  <code>Data.N.TypeValue</code> 返回对应时序数据；</li>
+<li><code>Float</code> 值类型的指标将从 <code>Data.N.FloatTypeValue</code> 返回对应时序数据。</li></ul>
                      * @param _metricNames 查询指标，取值有：
-<li>l4Flow_connections: 访问并发连接数；</li>
-<li>l4Flow_flux: 访问总流量；</li>
-<li>l4Flow_inFlux: 访问入流量；</li>
-<li>l4Flow_outFlux: 访问出流量；</li>
-<li>l4Flow_inBandwidth: 访问入向带宽峰值；</li>
-<li>l4Flow_outBandwidth: 访问出向带宽峰值。</li>
+<ul><li>**l4Flow_flux**: 访问总流量，单位：Byte，指标值类型：Integer；</li>
+<li>**l4Flow_inFlux**: 访问入流量，单位：Byte，指标值类型：Integer；</li>
+<li>**l4Flow_outFlux**: 访问出流量，单位：Byte，指标值类型：Integer；</li>
+<li>**l4Flow_inBandwidth**: 访问入向带宽峰值，单位：bps，指标值类型：Integer；</li>
+<li>**l4Flow_outBandwidth**: 访问出向带宽峰值，单位：bps，指标值类型：Integer；</li>
+<li>**l4Flow_connections**: 访问并发连接数，单位：个，指标值类型：Integer ；</li>
+<li>**l4Flow_newConnectionsRate**: 新建连接数速率，单位：个/秒，指标值类型： Float，保留两位小数。</li></ul>**注意**：<ul><li><code> Integer</code> 值类型的指标将从  <code>Data.N.TypeValue</code> 返回对应时序数据；</li>
+<li><code>Float</code> 值类型的指标将从 <code>Data.N.FloatTypeValue</code> 返回对应时序数据。</li></ul>
                      * 
                      */
                     void SetMetricNames(const std::vector<std::string>& _metricNames);
@@ -178,30 +186,30 @@ namespace TencentCloud
 
                     /**
                      * 获取查询时间粒度，取值有：
-<li>min: 1分钟 ；</li>
-<li>5min: 5分钟 ；</li>
-<li>hour: 1小时 ；</li>
-<li>day: 1天 。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：1小时范围内以min粒度查询，2天范围内以5min粒度查询，7天范围内以hour粒度查询，超过7天以day粒度查询。
+<ul><li>**min**: 1分钟 ；</li>
+<li>**5min**: 5分钟 ；</li>
+<li>**hour**: 1小时 ；</li>
+<li>**day**: 1天 。</li></ul>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：1小时范围内以 <code>min</code> 粒度查询，2天范围内以 <code>5min</code> 粒度查询，7天范围内以 <code>hour</code> 粒度查询，超过7天以 <code>day</code> 粒度查询。
                      * @return Interval 查询时间粒度，取值有：
-<li>min: 1分钟 ；</li>
-<li>5min: 5分钟 ；</li>
-<li>hour: 1小时 ；</li>
-<li>day: 1天 。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：1小时范围内以min粒度查询，2天范围内以5min粒度查询，7天范围内以hour粒度查询，超过7天以day粒度查询。
+<ul><li>**min**: 1分钟 ；</li>
+<li>**5min**: 5分钟 ；</li>
+<li>**hour**: 1小时 ；</li>
+<li>**day**: 1天 。</li></ul>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：1小时范围内以 <code>min</code> 粒度查询，2天范围内以 <code>5min</code> 粒度查询，7天范围内以 <code>hour</code> 粒度查询，超过7天以 <code>day</code> 粒度查询。
                      * 
                      */
                     std::string GetInterval() const;
 
                     /**
                      * 设置查询时间粒度，取值有：
-<li>min: 1分钟 ；</li>
-<li>5min: 5分钟 ；</li>
-<li>hour: 1小时 ；</li>
-<li>day: 1天 。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：1小时范围内以min粒度查询，2天范围内以5min粒度查询，7天范围内以hour粒度查询，超过7天以day粒度查询。
+<ul><li>**min**: 1分钟 ；</li>
+<li>**5min**: 5分钟 ；</li>
+<li>**hour**: 1小时 ；</li>
+<li>**day**: 1天 。</li></ul>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：1小时范围内以 <code>min</code> 粒度查询，2天范围内以 <code>5min</code> 粒度查询，7天范围内以 <code>hour</code> 粒度查询，超过7天以 <code>day</code> 粒度查询。
                      * @param _interval 查询时间粒度，取值有：
-<li>min: 1分钟 ；</li>
-<li>5min: 5分钟 ；</li>
-<li>hour: 1小时 ；</li>
-<li>day: 1天 。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：1小时范围内以min粒度查询，2天范围内以5min粒度查询，7天范围内以hour粒度查询，超过7天以day粒度查询。
+<ul><li>**min**: 1分钟 ；</li>
+<li>**5min**: 5分钟 ；</li>
+<li>**hour**: 1小时 ；</li>
+<li>**day**: 1天 。</li></ul>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：1小时范围内以 <code>min</code> 粒度查询，2天范围内以 <code>5min</code> 粒度查询，7天范围内以 <code>hour</code> 粒度查询，超过7天以 <code>day</code> 粒度查询。
                      * 
                      */
                     void SetInterval(const std::string& _interval);
@@ -215,22 +223,22 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件，详细的过滤条件Key值如下：
-<li>ruleId：按照转发规则 ID 进行过滤。</li>
-<li>proxyId：按照四层代理实例 ID 进行过滤。</li>
+<ul><li>**ruleId**：按照转发规则 ID 进行过滤。</li>
+<li>**proxyId**：按照四层代理实例 ID 进行过滤。</li></ul>
                      * @return Filters 过滤条件，详细的过滤条件Key值如下：
-<li>ruleId：按照转发规则 ID 进行过滤。</li>
-<li>proxyId：按照四层代理实例 ID 进行过滤。</li>
+<ul><li>**ruleId**：按照转发规则 ID 进行过滤。</li>
+<li>**proxyId**：按照四层代理实例 ID 进行过滤。</li></ul>
                      * 
                      */
                     std::vector<QueryCondition> GetFilters() const;
 
                     /**
                      * 设置过滤条件，详细的过滤条件Key值如下：
-<li>ruleId：按照转发规则 ID 进行过滤。</li>
-<li>proxyId：按照四层代理实例 ID 进行过滤。</li>
+<ul><li>**ruleId**：按照转发规则 ID 进行过滤。</li>
+<li>**proxyId**：按照四层代理实例 ID 进行过滤。</li></ul>
                      * @param _filters 过滤条件，详细的过滤条件Key值如下：
-<li>ruleId：按照转发规则 ID 进行过滤。</li>
-<li>proxyId：按照四层代理实例 ID 进行过滤。</li>
+<ul><li>**ruleId**：按照转发规则 ID 进行过滤。</li>
+<li>**proxyId**：按照四层代理实例 ID 进行过滤。</li></ul>
                      * 
                      */
                     void SetFilters(const std::vector<QueryCondition>& _filters);
@@ -245,21 +253,21 @@ namespace TencentCloud
                     /**
                      * 获取数据归属地区。该参数已废弃。请在 Filters.country 中按客户端地域过滤数据。
                      * @return Area 数据归属地区。该参数已废弃。请在 Filters.country 中按客户端地域过滤数据。
-                     * 
+                     * @deprecated
                      */
                     std::string GetArea() const;
 
                     /**
                      * 设置数据归属地区。该参数已废弃。请在 Filters.country 中按客户端地域过滤数据。
                      * @param _area 数据归属地区。该参数已废弃。请在 Filters.country 中按客户端地域过滤数据。
-                     * 
+                     * @deprecated
                      */
                     void SetArea(const std::string& _area);
 
                     /**
                      * 判断参数 Area 是否已赋值
                      * @return Area 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AreaHasBeenSet() const;
 
@@ -279,12 +287,14 @@ namespace TencentCloud
 
                     /**
                      * 查询指标，取值有：
-<li>l4Flow_connections: 访问并发连接数；</li>
-<li>l4Flow_flux: 访问总流量；</li>
-<li>l4Flow_inFlux: 访问入流量；</li>
-<li>l4Flow_outFlux: 访问出流量；</li>
-<li>l4Flow_inBandwidth: 访问入向带宽峰值；</li>
-<li>l4Flow_outBandwidth: 访问出向带宽峰值。</li>
+<ul><li>**l4Flow_flux**: 访问总流量，单位：Byte，指标值类型：Integer；</li>
+<li>**l4Flow_inFlux**: 访问入流量，单位：Byte，指标值类型：Integer；</li>
+<li>**l4Flow_outFlux**: 访问出流量，单位：Byte，指标值类型：Integer；</li>
+<li>**l4Flow_inBandwidth**: 访问入向带宽峰值，单位：bps，指标值类型：Integer；</li>
+<li>**l4Flow_outBandwidth**: 访问出向带宽峰值，单位：bps，指标值类型：Integer；</li>
+<li>**l4Flow_connections**: 访问并发连接数，单位：个，指标值类型：Integer ；</li>
+<li>**l4Flow_newConnectionsRate**: 新建连接数速率，单位：个/秒，指标值类型： Float，保留两位小数。</li></ul>**注意**：<ul><li><code> Integer</code> 值类型的指标将从  <code>Data.N.TypeValue</code> 返回对应时序数据；</li>
+<li><code>Float</code> 值类型的指标将从 <code>Data.N.FloatTypeValue</code> 返回对应时序数据。</li></ul>
                      */
                     std::vector<std::string> m_metricNames;
                     bool m_metricNamesHasBeenSet;
@@ -304,18 +314,18 @@ namespace TencentCloud
 
                     /**
                      * 查询时间粒度，取值有：
-<li>min: 1分钟 ；</li>
-<li>5min: 5分钟 ；</li>
-<li>hour: 1小时 ；</li>
-<li>day: 1天 。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：1小时范围内以min粒度查询，2天范围内以5min粒度查询，7天范围内以hour粒度查询，超过7天以day粒度查询。
+<ul><li>**min**: 1分钟 ；</li>
+<li>**5min**: 5分钟 ；</li>
+<li>**hour**: 1小时 ；</li>
+<li>**day**: 1天 。</li></ul>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：1小时范围内以 <code>min</code> 粒度查询，2天范围内以 <code>5min</code> 粒度查询，7天范围内以 <code>hour</code> 粒度查询，超过7天以 <code>day</code> 粒度查询。
                      */
                     std::string m_interval;
                     bool m_intervalHasBeenSet;
 
                     /**
                      * 过滤条件，详细的过滤条件Key值如下：
-<li>ruleId：按照转发规则 ID 进行过滤。</li>
-<li>proxyId：按照四层代理实例 ID 进行过滤。</li>
+<ul><li>**ruleId**：按照转发规则 ID 进行过滤。</li>
+<li>**proxyId**：按照四层代理实例 ID 进行过滤。</li></ul>
                      */
                     std::vector<QueryCondition> m_filters;
                     bool m_filtersHasBeenSet;

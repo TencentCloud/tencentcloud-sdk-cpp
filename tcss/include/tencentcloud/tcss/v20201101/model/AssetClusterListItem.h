@@ -238,6 +238,84 @@ CT_TKE_SERVERLESS:TKE Serverless集群;
                      */
                     bool CpuLimitHasBeenSet() const;
 
+                    /**
+                     * 获取集群审计开关状态：
+已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed
+                     * @return ClusterAuditStatus 集群审计开关状态：
+已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed
+                     * 
+                     */
+                    std::string GetClusterAuditStatus() const;
+
+                    /**
+                     * 设置集群审计开关状态：
+已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed
+                     * @param _clusterAuditStatus 集群审计开关状态：
+已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed
+                     * 
+                     */
+                    void SetClusterAuditStatus(const std::string& _clusterAuditStatus);
+
+                    /**
+                     * 判断参数 ClusterAuditStatus 是否已赋值
+                     * @return ClusterAuditStatus 是否已赋值
+                     * 
+                     */
+                    bool ClusterAuditStatusHasBeenSet() const;
+
+                    /**
+                     * 获取接入状态:
+未接入: AccessedNone
+已防护: AccessedDefended
+未防护: AccessedInstalled
+部分防护: AccessedPartialDefence
+接入异常: AccessedException
+卸载异常: AccessedUninstallException
+接入中: AccessedInstalling
+卸载中: AccessedUninstalling
+                     * @return AccessedStatus 接入状态:
+未接入: AccessedNone
+已防护: AccessedDefended
+未防护: AccessedInstalled
+部分防护: AccessedPartialDefence
+接入异常: AccessedException
+卸载异常: AccessedUninstallException
+接入中: AccessedInstalling
+卸载中: AccessedUninstalling
+                     * 
+                     */
+                    std::string GetAccessedStatus() const;
+
+                    /**
+                     * 设置接入状态:
+未接入: AccessedNone
+已防护: AccessedDefended
+未防护: AccessedInstalled
+部分防护: AccessedPartialDefence
+接入异常: AccessedException
+卸载异常: AccessedUninstallException
+接入中: AccessedInstalling
+卸载中: AccessedUninstalling
+                     * @param _accessedStatus 接入状态:
+未接入: AccessedNone
+已防护: AccessedDefended
+未防护: AccessedInstalled
+部分防护: AccessedPartialDefence
+接入异常: AccessedException
+卸载异常: AccessedUninstallException
+接入中: AccessedInstalling
+卸载中: AccessedUninstalling
+                     * 
+                     */
+                    void SetAccessedStatus(const std::string& _accessedStatus);
+
+                    /**
+                     * 判断参数 AccessedStatus 是否已赋值
+                     * @return AccessedStatus 是否已赋值
+                     * 
+                     */
+                    bool AccessedStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -293,6 +371,27 @@ CT_TKE_SERVERLESS:TKE Serverless集群;
                      */
                     int64_t m_cpuLimit;
                     bool m_cpuLimitHasBeenSet;
+
+                    /**
+                     * 集群审计开关状态：
+已关闭Closed/关闭中Closing/关闭失败CloseFailed/已开启Opened/开启中Opening/开启失败OpenFailed
+                     */
+                    std::string m_clusterAuditStatus;
+                    bool m_clusterAuditStatusHasBeenSet;
+
+                    /**
+                     * 接入状态:
+未接入: AccessedNone
+已防护: AccessedDefended
+未防护: AccessedInstalled
+部分防护: AccessedPartialDefence
+接入异常: AccessedException
+卸载异常: AccessedUninstallException
+接入中: AccessedInstalling
+卸载中: AccessedUninstalling
+                     */
+                    std::string m_accessedStatus;
+                    bool m_accessedStatusHasBeenSet;
 
                 };
             }

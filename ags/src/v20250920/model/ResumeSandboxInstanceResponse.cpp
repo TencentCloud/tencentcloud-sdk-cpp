@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tcb/v20180608/model/SearchClsLogResponse.h>
+#include <tencentcloud/ags/v20250920/model/ResumeSandboxInstanceResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tcb::V20180608::Model;
+using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
-SearchClsLogResponse::SearchClsLogResponse() :
-    m_logResultsHasBeenSet(false)
+ResumeSandboxInstanceResponse::ResumeSandboxInstanceResponse()
 {
 }
 
-CoreInternalOutcome SearchClsLogResponse::Deserialize(const string &payload)
+CoreInternalOutcome ResumeSandboxInstanceResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,41 +61,15 @@ CoreInternalOutcome SearchClsLogResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("LogResults") && !rsp["LogResults"].IsNull())
-    {
-        if (!rsp["LogResults"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `LogResults` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_logResults.Deserialize(rsp["LogResults"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_logResultsHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string SearchClsLogResponse::ToJsonString() const
+string ResumeSandboxInstanceResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_logResultsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LogResults";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_logResults.ToJsonObject(value[key.c_str()], allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -109,15 +82,5 @@ string SearchClsLogResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-LogResObject SearchClsLogResponse::GetLogResults() const
-{
-    return m_logResults;
-}
-
-bool SearchClsLogResponse::LogResultsHasBeenSet() const
-{
-    return m_logResultsHasBeenSet;
-}
 
 

@@ -476,6 +476,48 @@ namespace TencentCloud
                      */
                     bool IssueURLHasBeenSet() const;
 
+                    /**
+                     * 获取<p>商品供应商 UIN</p>
+                     * @return ProviderUin <p>商品供应商 UIN</p>
+                     * 
+                     */
+                    std::string GetProviderUin() const;
+
+                    /**
+                     * 设置<p>商品供应商 UIN</p>
+                     * @param _providerUin <p>商品供应商 UIN</p>
+                     * 
+                     */
+                    void SetProviderUin(const std::string& _providerUin);
+
+                    /**
+                     * 判断参数 ProviderUin 是否已赋值
+                     * @return ProviderUin 是否已赋值
+                     * 
+                     */
+                    bool ProviderUinHasBeenSet() const;
+
+                    /**
+                     * 获取<p>License 创建来源 ID</p>
+                     * @return CreateSource <p>License 创建来源 ID</p>
+                     * 
+                     */
+                    std::string GetCreateSource() const;
+
+                    /**
+                     * 设置<p>License 创建来源 ID</p>
+                     * @param _createSource <p>License 创建来源 ID</p>
+                     * 
+                     */
+                    void SetCreateSource(const std::string& _createSource);
+
+                    /**
+                     * 判断参数 CreateSource 是否已赋值
+                     * @return CreateSource 是否已赋值
+                     * 
+                     */
+                    bool CreateSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -599,6 +641,18 @@ namespace TencentCloud
                      */
                     std::string m_issueURL;
                     bool m_issueURLHasBeenSet;
+
+                    /**
+                     * <p>商品供应商 UIN</p>
+                     */
+                    std::string m_providerUin;
+                    bool m_providerUinHasBeenSet;
+
+                    /**
+                     * <p>License 创建来源 ID</p>
+                     */
+                    std::string m_createSource;
+                    bool m_createSourceHasBeenSet;
 
                 };
             }

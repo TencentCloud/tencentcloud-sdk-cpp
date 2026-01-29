@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_CANCELASSIGNTWECALLLICENSERESPONSE_H_
-#define TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_CANCELASSIGNTWECALLLICENSERESPONSE_H_
+#ifndef TENCENTCLOUD_AGS_V20250920_MODEL_RESUMESANDBOXINSTANCERESPONSE_H_
+#define TENCENTCLOUD_AGS_V20250920_MODEL_RESUMESANDBOXINSTANCERESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Iotexplorer
+    namespace Ags
     {
-        namespace V20190423
+        namespace V20250920
         {
             namespace Model
             {
                 /**
-                * CancelAssignTWeCallLicense返回参数结构体
+                * ResumeSandboxInstance返回参数结构体
                 */
-                class CancelAssignTWeCallLicenseResponse : public AbstractModel
+                class ResumeSandboxInstanceResponse : public AbstractModel
                 {
                 public:
-                    CancelAssignTWeCallLicenseResponse();
-                    ~CancelAssignTWeCallLicenseResponse() = default;
+                    ResumeSandboxInstanceResponse();
+                    ~ResumeSandboxInstanceResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
@@ -51,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_CANCELASSIGNTWECALLLICENSERESPONSE_H_
+#endif // !TENCENTCLOUD_AGS_V20250920_MODEL_RESUMESANDBOXINSTANCERESPONSE_H_

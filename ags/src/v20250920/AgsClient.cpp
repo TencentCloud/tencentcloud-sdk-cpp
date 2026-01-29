@@ -540,6 +540,106 @@ AgsClient::DescribeSandboxToolListOutcomeCallable AgsClient::DescribeSandboxTool
     return prom->get_future();
 }
 
+AgsClient::PauseSandboxInstanceOutcome AgsClient::PauseSandboxInstance(const PauseSandboxInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "PauseSandboxInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PauseSandboxInstanceResponse rsp = PauseSandboxInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PauseSandboxInstanceOutcome(rsp);
+        else
+            return PauseSandboxInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return PauseSandboxInstanceOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::PauseSandboxInstanceAsync(const PauseSandboxInstanceRequest& request, const PauseSandboxInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const PauseSandboxInstanceRequest&;
+    using Resp = PauseSandboxInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "PauseSandboxInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::PauseSandboxInstanceOutcomeCallable AgsClient::PauseSandboxInstanceCallable(const PauseSandboxInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<PauseSandboxInstanceOutcome>>();
+    PauseSandboxInstanceAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const PauseSandboxInstanceRequest&,
+        PauseSandboxInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AgsClient::ResumeSandboxInstanceOutcome AgsClient::ResumeSandboxInstance(const ResumeSandboxInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResumeSandboxInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResumeSandboxInstanceResponse rsp = ResumeSandboxInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResumeSandboxInstanceOutcome(rsp);
+        else
+            return ResumeSandboxInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ResumeSandboxInstanceOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::ResumeSandboxInstanceAsync(const ResumeSandboxInstanceRequest& request, const ResumeSandboxInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ResumeSandboxInstanceRequest&;
+    using Resp = ResumeSandboxInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ResumeSandboxInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::ResumeSandboxInstanceOutcomeCallable AgsClient::ResumeSandboxInstanceCallable(const ResumeSandboxInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ResumeSandboxInstanceOutcome>>();
+    ResumeSandboxInstanceAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const ResumeSandboxInstanceRequest&,
+        ResumeSandboxInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AgsClient::StartSandboxInstanceOutcome AgsClient::StartSandboxInstance(const StartSandboxInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "StartSandboxInstance");

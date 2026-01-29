@@ -25,7 +25,8 @@ using namespace std;
 CreateProcessImageTemplateRequest::CreateProcessImageTemplateRequest() :
     m_processImageTemplateHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_commentHasBeenSet(false)
+    m_commentHasBeenSet(false),
+    m_stdExtInfoHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string CreateProcessImageTemplateRequest::ToJsonString() const
         string key = "Comment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stdExtInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StdExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_stdExtInfo.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void CreateProcessImageTemplateRequest::SetComment(const string& _comment)
 bool CreateProcessImageTemplateRequest::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
+}
+
+string CreateProcessImageTemplateRequest::GetStdExtInfo() const
+{
+    return m_stdExtInfo;
+}
+
+void CreateProcessImageTemplateRequest::SetStdExtInfo(const string& _stdExtInfo)
+{
+    m_stdExtInfo = _stdExtInfo;
+    m_stdExtInfoHasBeenSet = true;
+}
+
+bool CreateProcessImageTemplateRequest::StdExtInfoHasBeenSet() const
+{
+    return m_stdExtInfoHasBeenSet;
 }
 
 

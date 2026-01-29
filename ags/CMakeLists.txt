@@ -19,6 +19,7 @@ set(ags_public_header
   )
 
 set(ags_public_header_model
+  include/tencentcloud/ags/v20250920/model/PauseSandboxInstanceResponse.h
   include/tencentcloud/ags/v20250920/model/CosStorageSource.h
   include/tencentcloud/ags/v20250920/model/StartSandboxInstanceRequest.h
   include/tencentcloud/ags/v20250920/model/SandboxInstance.h
@@ -29,6 +30,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/CreateSandboxToolRequest.h
   include/tencentcloud/ags/v20250920/model/HttpGetAction.h
   include/tencentcloud/ags/v20250920/model/DescribePreCacheImageTaskResponse.h
+  include/tencentcloud/ags/v20250920/model/ResumeSandboxInstanceRequest.h
   include/tencentcloud/ags/v20250920/model/DeleteAPIKeyResponse.h
   include/tencentcloud/ags/v20250920/model/APIKeyInfo.h
   include/tencentcloud/ags/v20250920/model/UpdateSandboxInstanceResponse.h
@@ -47,6 +49,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/CustomConfiguration.h
   include/tencentcloud/ags/v20250920/model/ImageStorageSource.h
   include/tencentcloud/ags/v20250920/model/AcquireSandboxInstanceTokenRequest.h
+  include/tencentcloud/ags/v20250920/model/PauseSandboxInstanceRequest.h
   include/tencentcloud/ags/v20250920/model/DescribeAPIKeyListResponse.h
   include/tencentcloud/ags/v20250920/model/CreatePreCacheImageTaskResponse.h
   include/tencentcloud/ags/v20250920/model/DescribeSandboxInstanceListRequest.h
@@ -62,6 +65,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/CreatePreCacheImageTaskRequest.h
   include/tencentcloud/ags/v20250920/model/Tag.h
   include/tencentcloud/ags/v20250920/model/UpdateSandboxToolRequest.h
+  include/tencentcloud/ags/v20250920/model/ResumeSandboxInstanceResponse.h
   include/tencentcloud/ags/v20250920/model/StorageMount.h
   include/tencentcloud/ags/v20250920/model/EnvVar.h
   include/tencentcloud/ags/v20250920/model/DescribeSandboxInstanceListResponse.h
@@ -70,6 +74,7 @@ set(ags_public_header_model
 
 set(ags_src
   src/v20250920/AgsClient.cpp
+  src/v20250920/model/PauseSandboxInstanceResponse.cpp
   src/v20250920/model/CosStorageSource.cpp
   src/v20250920/model/StartSandboxInstanceRequest.cpp
   src/v20250920/model/SandboxInstance.cpp
@@ -80,6 +85,7 @@ set(ags_src
   src/v20250920/model/CreateSandboxToolRequest.cpp
   src/v20250920/model/HttpGetAction.cpp
   src/v20250920/model/DescribePreCacheImageTaskResponse.cpp
+  src/v20250920/model/ResumeSandboxInstanceRequest.cpp
   src/v20250920/model/DeleteAPIKeyResponse.cpp
   src/v20250920/model/APIKeyInfo.cpp
   src/v20250920/model/UpdateSandboxInstanceResponse.cpp
@@ -98,6 +104,7 @@ set(ags_src
   src/v20250920/model/CustomConfiguration.cpp
   src/v20250920/model/ImageStorageSource.cpp
   src/v20250920/model/AcquireSandboxInstanceTokenRequest.cpp
+  src/v20250920/model/PauseSandboxInstanceRequest.cpp
   src/v20250920/model/DescribeAPIKeyListResponse.cpp
   src/v20250920/model/CreatePreCacheImageTaskResponse.cpp
   src/v20250920/model/DescribeSandboxInstanceListRequest.cpp
@@ -113,6 +120,7 @@ set(ags_src
   src/v20250920/model/CreatePreCacheImageTaskRequest.cpp
   src/v20250920/model/Tag.cpp
   src/v20250920/model/UpdateSandboxToolRequest.cpp
+  src/v20250920/model/ResumeSandboxInstanceResponse.cpp
   src/v20250920/model/StorageMount.cpp
   src/v20250920/model/EnvVar.cpp
   src/v20250920/model/DescribeSandboxInstanceListResponse.cpp

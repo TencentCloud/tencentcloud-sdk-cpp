@@ -540,56 +540,6 @@ IotexplorerClient::CallDeviceActionSyncOutcomeCallable IotexplorerClient::CallDe
     return prom->get_future();
 }
 
-IotexplorerClient::CancelAssignTWeCallLicenseOutcome IotexplorerClient::CancelAssignTWeCallLicense(const CancelAssignTWeCallLicenseRequest &request)
-{
-    auto outcome = MakeRequest(request, "CancelAssignTWeCallLicense");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CancelAssignTWeCallLicenseResponse rsp = CancelAssignTWeCallLicenseResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CancelAssignTWeCallLicenseOutcome(rsp);
-        else
-            return CancelAssignTWeCallLicenseOutcome(o.GetError());
-    }
-    else
-    {
-        return CancelAssignTWeCallLicenseOutcome(outcome.GetError());
-    }
-}
-
-void IotexplorerClient::CancelAssignTWeCallLicenseAsync(const CancelAssignTWeCallLicenseRequest& request, const CancelAssignTWeCallLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const CancelAssignTWeCallLicenseRequest&;
-    using Resp = CancelAssignTWeCallLicenseResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "CancelAssignTWeCallLicense", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-IotexplorerClient::CancelAssignTWeCallLicenseOutcomeCallable IotexplorerClient::CancelAssignTWeCallLicenseCallable(const CancelAssignTWeCallLicenseRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<CancelAssignTWeCallLicenseOutcome>>();
-    CancelAssignTWeCallLicenseAsync(
-    request,
-    [prom](
-        const IotexplorerClient*,
-        const CancelAssignTWeCallLicenseRequest&,
-        CancelAssignTWeCallLicenseOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 IotexplorerClient::ChangeP2PRouteOutcome IotexplorerClient::ChangeP2PRoute(const ChangeP2PRouteRequest &request)
 {
     auto outcome = MakeRequest(request, "ChangeP2PRoute");
@@ -1032,6 +982,56 @@ IotexplorerClient::CreateDeviceChannelOutcomeCallable IotexplorerClient::CreateD
         const IotexplorerClient*,
         const CreateDeviceChannelRequest&,
         CreateDeviceChannelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::CreateDeviceSDPAnswerOutcome IotexplorerClient::CreateDeviceSDPAnswer(const CreateDeviceSDPAnswerRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDeviceSDPAnswer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDeviceSDPAnswerResponse rsp = CreateDeviceSDPAnswerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDeviceSDPAnswerOutcome(rsp);
+        else
+            return CreateDeviceSDPAnswerOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDeviceSDPAnswerOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateDeviceSDPAnswerAsync(const CreateDeviceSDPAnswerRequest& request, const CreateDeviceSDPAnswerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateDeviceSDPAnswerRequest&;
+    using Resp = CreateDeviceSDPAnswerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateDeviceSDPAnswer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::CreateDeviceSDPAnswerOutcomeCallable IotexplorerClient::CreateDeviceSDPAnswerCallable(const CreateDeviceSDPAnswerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateDeviceSDPAnswerOutcome>>();
+    CreateDeviceSDPAnswerAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const CreateDeviceSDPAnswerRequest&,
+        CreateDeviceSDPAnswerOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取剔除房间或成员的操作结果
-                     * @return DeleteResult 剔除房间或成员的操作结果
+                     * 获取<p>剔除房间或成员的操作结果</p>
+                     * @return DeleteResult <p>剔除房间或成员的操作结果</p>
                      * 
                      */
                     DeleteResult GetDeleteResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 剔除房间或成员的操作结果
+                     * <p>剔除房间或成员的操作结果</p>
                      */
                     DeleteResult m_deleteResult;
                     bool m_deleteResultHasBeenSet;

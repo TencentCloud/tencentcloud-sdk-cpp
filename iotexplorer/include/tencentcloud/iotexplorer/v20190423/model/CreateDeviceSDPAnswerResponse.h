@@ -14,57 +14,56 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TCB_V20180608_MODEL_SEARCHCLSLOGRESPONSE_H_
-#define TENCENTCLOUD_TCB_V20180608_MODEL_SEARCHCLSLOGRESPONSE_H_
+#ifndef TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_CREATEDEVICESDPANSWERRESPONSE_H_
+#define TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_CREATEDEVICESDPANSWERRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tcb/v20180608/model/LogResObject.h>
 
 
 namespace TencentCloud
 {
-    namespace Tcb
+    namespace Iotexplorer
     {
-        namespace V20180608
+        namespace V20190423
         {
             namespace Model
             {
                 /**
-                * SearchClsLog返回参数结构体
+                * CreateDeviceSDPAnswer返回参数结构体
                 */
-                class SearchClsLogResponse : public AbstractModel
+                class CreateDeviceSDPAnswerResponse : public AbstractModel
                 {
                 public:
-                    SearchClsLogResponse();
-                    ~SearchClsLogResponse() = default;
+                    CreateDeviceSDPAnswerResponse();
+                    ~CreateDeviceSDPAnswerResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取日志内容结果
-                     * @return LogResults 日志内容结果
+                     * 获取SDP应答
+                     * @return SDPAnswer SDP应答
                      * 
                      */
-                    LogResObject GetLogResults() const;
+                    std::string GetSDPAnswer() const;
 
                     /**
-                     * 判断参数 LogResults 是否已赋值
-                     * @return LogResults 是否已赋值
+                     * 判断参数 SDPAnswer 是否已赋值
+                     * @return SDPAnswer 是否已赋值
                      * 
                      */
-                    bool LogResultsHasBeenSet() const;
+                    bool SDPAnswerHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 日志内容结果
+                     * SDP应答
                      */
-                    LogResObject m_logResults;
-                    bool m_logResultsHasBeenSet;
+                    std::string m_sDPAnswer;
+                    bool m_sDPAnswerHasBeenSet;
 
                 };
             }
@@ -72,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TCB_V20180608_MODEL_SEARCHCLSLOGRESPONSE_H_
+#endif // !TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_CREATEDEVICESDPANSWERRESPONSE_H_

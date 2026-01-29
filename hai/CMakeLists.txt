@@ -43,7 +43,9 @@ set(hai_public_header_model
   include/tencentcloud/hai/v20230812/model/ResetInstancesPasswordRequest.h
   include/tencentcloud/hai/v20230812/model/RunInstancesRequest.h
   include/tencentcloud/hai/v20230812/model/DescribeInstancesResponse.h
+  include/tencentcloud/hai/v20230812/model/UpdateServiceConfigsResponse.h
   include/tencentcloud/hai/v20230812/model/SystemDisk.h
+  include/tencentcloud/hai/v20230812/model/UpdateServiceConfigsRequest.h
   include/tencentcloud/hai/v20230812/model/RunInstancesResponse.h
   include/tencentcloud/hai/v20230812/model/DescribeInstancesRequest.h
   include/tencentcloud/hai/v20230812/model/Filter.h
@@ -93,7 +95,9 @@ set(hai_src
   src/v20230812/model/ResetInstancesPasswordRequest.cpp
   src/v20230812/model/RunInstancesRequest.cpp
   src/v20230812/model/DescribeInstancesResponse.cpp
+  src/v20230812/model/UpdateServiceConfigsResponse.cpp
   src/v20230812/model/SystemDisk.cpp
+  src/v20230812/model/UpdateServiceConfigsRequest.cpp
   src/v20230812/model/RunInstancesResponse.cpp
   src/v20230812/model/DescribeInstancesRequest.cpp
   src/v20230812/model/Filter.cpp

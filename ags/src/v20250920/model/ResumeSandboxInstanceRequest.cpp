@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/iotexplorer/v20190423/model/CancelAssignTWeCallLicenseRequest.h>
+#include <tencentcloud/ags/v20250920/model/ResumeSandboxInstanceRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Iotexplorer::V20190423::Model;
+using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
-CancelAssignTWeCallLicenseRequest::CancelAssignTWeCallLicenseRequest() :
-    m_pkgIdHasBeenSet(false)
+ResumeSandboxInstanceRequest::ResumeSandboxInstanceRequest() :
+    m_instanceIdHasBeenSet(false)
 {
 }
 
-string CancelAssignTWeCallLicenseRequest::ToJsonString() const
+string ResumeSandboxInstanceRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_pkgIdHasBeenSet)
+    if (m_instanceIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PkgId";
+        string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_pkgId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -50,20 +50,20 @@ string CancelAssignTWeCallLicenseRequest::ToJsonString() const
 }
 
 
-string CancelAssignTWeCallLicenseRequest::GetPkgId() const
+string ResumeSandboxInstanceRequest::GetInstanceId() const
 {
-    return m_pkgId;
+    return m_instanceId;
 }
 
-void CancelAssignTWeCallLicenseRequest::SetPkgId(const string& _pkgId)
+void ResumeSandboxInstanceRequest::SetInstanceId(const string& _instanceId)
 {
-    m_pkgId = _pkgId;
-    m_pkgIdHasBeenSet = true;
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
 }
 
-bool CancelAssignTWeCallLicenseRequest::PkgIdHasBeenSet() const
+bool ResumeSandboxInstanceRequest::InstanceIdHasBeenSet() const
 {
-    return m_pkgIdHasBeenSet;
+    return m_instanceIdHasBeenSet;
 }
 
 

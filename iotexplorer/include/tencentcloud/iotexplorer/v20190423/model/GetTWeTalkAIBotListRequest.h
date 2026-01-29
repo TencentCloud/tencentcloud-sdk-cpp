@@ -64,6 +64,27 @@ namespace TencentCloud
                     bool BotIdHasBeenSet() const;
 
                     /**
+                     * 获取智能体名称
+                     * @return Name 智能体名称
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置智能体名称
+                     * @param _name 智能体名称
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
                      * 获取产品ID
                      * @return ProductId 产品ID
                      * 
@@ -175,6 +196,12 @@ namespace TencentCloud
                      */
                     std::string m_botId;
                     bool m_botIdHasBeenSet;
+
+                    /**
+                     * 智能体名称
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                     /**
                      * 产品ID

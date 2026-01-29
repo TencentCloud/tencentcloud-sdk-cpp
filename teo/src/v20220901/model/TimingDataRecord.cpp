@@ -22,7 +22,8 @@ using namespace std;
 
 TimingDataRecord::TimingDataRecord() :
     m_typeKeyHasBeenSet(false),
-    m_typeValueHasBeenSet(false)
+    m_typeValueHasBeenSet(false),
+    m_floatTypeValueHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome TimingDataRecord::Deserialize(const rapidjson::Value &value)
         m_typeValueHasBeenSet = true;
     }
 
+    if (value.HasMember("FloatTypeValue") && !value["FloatTypeValue"].IsNull())
+    {
+        if (!value["FloatTypeValue"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TimingDataRecord.FloatTypeValue` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["FloatTypeValue"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FloatTimingTypeValue item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_floatTypeValue.push_back(item);
+        }
+        m_floatTypeValueHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -85,6 +106,21 @@ void TimingDataRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document
 
         int i=0;
         for (auto itr = m_typeValue.begin(); itr != m_typeValue.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_floatTypeValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FloatTypeValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_floatTypeValue.begin(); itr != m_floatTypeValue.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -124,5 +160,21 @@ void TimingDataRecord::SetTypeValue(const vector<TimingTypeValue>& _typeValue)
 bool TimingDataRecord::TypeValueHasBeenSet() const
 {
     return m_typeValueHasBeenSet;
+}
+
+vector<FloatTimingTypeValue> TimingDataRecord::GetFloatTypeValue() const
+{
+    return m_floatTypeValue;
+}
+
+void TimingDataRecord::SetFloatTypeValue(const vector<FloatTimingTypeValue>& _floatTypeValue)
+{
+    m_floatTypeValue = _floatTypeValue;
+    m_floatTypeValueHasBeenSet = true;
+}
+
+bool TimingDataRecord::FloatTypeValueHasBeenSet() const
+{
+    return m_floatTypeValueHasBeenSet;
 }
 

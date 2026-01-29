@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool RuleIdListHasBeenSet() const;
 
+                    /**
+                     * 获取查询全部标记
+                     * @return QueryAll 查询全部标记
+                     * 
+                     */
+                    bool GetQueryAll() const;
+
+                    /**
+                     * 设置查询全部标记
+                     * @param _queryAll 查询全部标记
+                     * 
+                     */
+                    void SetQueryAll(const bool& _queryAll);
+
+                    /**
+                     * 判断参数 QueryAll 是否已赋值
+                     * @return QueryAll 是否已赋值
+                     * 
+                     */
+                    bool QueryAllHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_ruleIdList;
                     bool m_ruleIdListHasBeenSet;
+
+                    /**
+                     * 查询全部标记
+                     */
+                    bool m_queryAll;
+                    bool m_queryAllHasBeenSet;
 
                 };
             }

@@ -24,6 +24,7 @@ using namespace std;
 
 GetTWeTalkAIBotListRequest::GetTWeTalkAIBotListRequest() :
     m_botIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_productIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_includeCredentialsHasBeenSet(false),
@@ -45,6 +46,14 @@ string GetTWeTalkAIBotListRequest::ToJsonString() const
         string key = "BotId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_botId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_productIdHasBeenSet)
@@ -109,6 +118,22 @@ void GetTWeTalkAIBotListRequest::SetBotId(const string& _botId)
 bool GetTWeTalkAIBotListRequest::BotIdHasBeenSet() const
 {
     return m_botIdHasBeenSet;
+}
+
+string GetTWeTalkAIBotListRequest::GetName() const
+{
+    return m_name;
+}
+
+void GetTWeTalkAIBotListRequest::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool GetTWeTalkAIBotListRequest::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 
 string GetTWeTalkAIBotListRequest::GetProductId() const

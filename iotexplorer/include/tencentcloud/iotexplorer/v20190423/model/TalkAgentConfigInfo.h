@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool NoiseFilterEnabledHasBeenSet() const;
 
                     /**
-                     * 获取是否开启长记忆，默认开启
-                     * @return LongTermMemoryEnabled 是否开启长记忆，默认开启
+                     * 获取是否开启长记忆，默认关闭
+                     * @return LongTermMemoryEnabled 是否开启长记忆，默认关闭
                      * 
                      */
                     bool GetLongTermMemoryEnabled() const;
 
                     /**
-                     * 设置是否开启长记忆，默认开启
-                     * @param _longTermMemoryEnabled 是否开启长记忆，默认开启
+                     * 设置是否开启长记忆，默认关闭
+                     * @param _longTermMemoryEnabled 是否开启长记忆，默认关闭
                      * 
                      */
                     void SetLongTermMemoryEnabled(const bool& _longTermMemoryEnabled);
@@ -398,7 +398,7 @@ namespace TencentCloud
                     bool m_noiseFilterEnabledHasBeenSet;
 
                     /**
-                     * 是否开启长记忆，默认开启
+                     * 是否开启长记忆，默认关闭
                      */
                     bool m_longTermMemoryEnabled;
                     bool m_longTermMemoryEnabledHasBeenSet;

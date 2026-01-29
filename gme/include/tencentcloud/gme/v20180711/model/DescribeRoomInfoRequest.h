@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID，登录[控制台 - 服务管理](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID
-                     * @return SdkAppId 应用ID，登录[控制台 - 服务管理](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID
+                     * 获取<p>应用ID，登录<a href="https://console.cloud.tencent.com/gamegme">控制台 - 服务管理</a>创建应用得到的AppID</p>
+                     * @return SdkAppId <p>应用ID，登录<a href="https://console.cloud.tencent.com/gamegme">控制台 - 服务管理</a>创建应用得到的AppID</p>
                      * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
-                     * 设置应用ID，登录[控制台 - 服务管理](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID
-                     * @param _sdkAppId 应用ID，登录[控制台 - 服务管理](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID
+                     * 设置<p>应用ID，登录<a href="https://console.cloud.tencent.com/gamegme">控制台 - 服务管理</a>创建应用得到的AppID</p>
+                     * @param _sdkAppId <p>应用ID，登录<a href="https://console.cloud.tencent.com/gamegme">控制台 - 服务管理</a>创建应用得到的AppID</p>
                      * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）
-                     * @return RoomIds 房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）
+                     * 获取<p>房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）</p>
+                     * @return RoomIds <p>房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）</p>
                      * 
                      */
                     std::vector<uint64_t> GetRoomIds() const;
 
                     /**
-                     * 设置房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）
-                     * @param _roomIds 房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）
+                     * 设置<p>房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）</p>
+                     * @param _roomIds <p>房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）</p>
                      * 
                      */
                     void SetRoomIds(const std::vector<uint64_t>& _roomIds);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RoomIdsHasBeenSet() const;
 
                     /**
-                     * 获取字符串类型房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）
-                     * @return StrRoomIds 字符串类型房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）
+                     * 获取<p>字符串类型房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）</p>
+                     * @return StrRoomIds <p>字符串类型房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）</p>
                      * 
                      */
                     std::vector<std::string> GetStrRoomIds() const;
 
                     /**
-                     * 设置字符串类型房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）
-                     * @param _strRoomIds 字符串类型房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）
+                     * 设置<p>字符串类型房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）</p>
+                     * @param _strRoomIds <p>字符串类型房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）</p>
                      * 
                      */
                     void SetStrRoomIds(const std::vector<std::string>& _strRoomIds);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID，登录[控制台 - 服务管理](https://console.cloud.tencent.com/gamegme)创建应用得到的AppID
+                     * <p>应用ID，登录<a href="https://console.cloud.tencent.com/gamegme">控制台 - 服务管理</a>创建应用得到的AppID</p>
                      */
                     uint64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）
+                     * <p>房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）</p>
                      */
                     std::vector<uint64_t> m_roomIds;
                     bool m_roomIdsHasBeenSet;
 
                     /**
-                     * 字符串类型房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）
+                     * <p>字符串类型房间号列表，最大不能超过10个（RoomIds、StrRoomIds必须填一个）</p>
                      */
                     std::vector<std::string> m_strRoomIds;
                     bool m_strRoomIdsHasBeenSet;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_CANCELASSIGNTWECALLLICENSEREQUEST_H_
-#define TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_CANCELASSIGNTWECALLLICENSEREQUEST_H_
+#ifndef TENCENTCLOUD_AGS_V20250920_MODEL_PAUSESANDBOXINSTANCEREQUEST_H_
+#define TENCENTCLOUD_AGS_V20250920_MODEL_PAUSESANDBOXINSTANCEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -25,51 +25,51 @@
 
 namespace TencentCloud
 {
-    namespace Iotexplorer
+    namespace Ags
     {
-        namespace V20190423
+        namespace V20250920
         {
             namespace Model
             {
                 /**
-                * CancelAssignTWeCallLicense请求参数结构体
+                * PauseSandboxInstance请求参数结构体
                 */
-                class CancelAssignTWeCallLicenseRequest : public AbstractModel
+                class PauseSandboxInstanceRequest : public AbstractModel
                 {
                 public:
-                    CancelAssignTWeCallLicenseRequest();
-                    ~CancelAssignTWeCallLicenseRequest() = default;
+                    PauseSandboxInstanceRequest();
+                    ~PauseSandboxInstanceRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取订单号
-                     * @return PkgId 订单号
+                     * 获取沙箱实例ID
+                     * @return InstanceId 沙箱实例ID
                      * 
                      */
-                    std::string GetPkgId() const;
+                    std::string GetInstanceId() const;
 
                     /**
-                     * 设置订单号
-                     * @param _pkgId 订单号
+                     * 设置沙箱实例ID
+                     * @param _instanceId 沙箱实例ID
                      * 
                      */
-                    void SetPkgId(const std::string& _pkgId);
+                    void SetInstanceId(const std::string& _instanceId);
 
                     /**
-                     * 判断参数 PkgId 是否已赋值
-                     * @return PkgId 是否已赋值
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
                      * 
                      */
-                    bool PkgIdHasBeenSet() const;
+                    bool InstanceIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 订单号
+                     * 沙箱实例ID
                      */
-                    std::string m_pkgId;
-                    bool m_pkgIdHasBeenSet;
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }
@@ -77,4 +77,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_CANCELASSIGNTWECALLLICENSEREQUEST_H_
+#endif // !TENCENTCLOUD_AGS_V20250920_MODEL_PAUSESANDBOXINSTANCEREQUEST_H_

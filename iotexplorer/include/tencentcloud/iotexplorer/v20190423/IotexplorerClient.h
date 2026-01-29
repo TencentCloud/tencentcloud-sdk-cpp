@@ -43,8 +43,6 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CallDeviceActionAsyncResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CallDeviceActionSyncRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CallDeviceActionSyncResponse.h>
-#include <tencentcloud/iotexplorer/v20190423/model/CancelAssignTWeCallLicenseRequest.h>
-#include <tencentcloud/iotexplorer/v20190423/model/CancelAssignTWeCallLicenseResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ChangeP2PRouteRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ChangeP2PRouteResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CheckFirmwareUpdateRequest.h>
@@ -63,6 +61,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceChannelRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceChannelResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceSDPAnswerRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceSDPAnswerResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateExternalSourceAIServiceTaskRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateExternalSourceAIServiceTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateFenceBindRequest.h>
@@ -467,9 +467,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CallDeviceActionSyncResponse> CallDeviceActionSyncOutcome;
                 typedef std::future<CallDeviceActionSyncOutcome> CallDeviceActionSyncOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CallDeviceActionSyncRequest&, CallDeviceActionSyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CallDeviceActionSyncAsyncHandler;
-                typedef Outcome<Core::Error, Model::CancelAssignTWeCallLicenseResponse> CancelAssignTWeCallLicenseOutcome;
-                typedef std::future<CancelAssignTWeCallLicenseOutcome> CancelAssignTWeCallLicenseOutcomeCallable;
-                typedef std::function<void(const IotexplorerClient*, const Model::CancelAssignTWeCallLicenseRequest&, CancelAssignTWeCallLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelAssignTWeCallLicenseAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChangeP2PRouteResponse> ChangeP2PRouteOutcome;
                 typedef std::future<ChangeP2PRouteOutcome> ChangeP2PRouteOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ChangeP2PRouteRequest&, ChangeP2PRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChangeP2PRouteAsyncHandler;
@@ -497,6 +494,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDeviceChannelResponse> CreateDeviceChannelOutcome;
                 typedef std::future<CreateDeviceChannelOutcome> CreateDeviceChannelOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateDeviceChannelRequest&, CreateDeviceChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDeviceSDPAnswerResponse> CreateDeviceSDPAnswerOutcome;
+                typedef std::future<CreateDeviceSDPAnswerOutcome> CreateDeviceSDPAnswerOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateDeviceSDPAnswerRequest&, CreateDeviceSDPAnswerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceSDPAnswerAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateExternalSourceAIServiceTaskResponse> CreateExternalSourceAIServiceTaskOutcome;
                 typedef std::future<CreateExternalSourceAIServiceTaskOutcome> CreateExternalSourceAIServiceTaskOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateExternalSourceAIServiceTaskRequest&, CreateExternalSourceAIServiceTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExternalSourceAIServiceTaskAsyncHandler;
@@ -1131,17 +1131,6 @@ namespace TencentCloud
                 CallDeviceActionSyncOutcomeCallable CallDeviceActionSyncCallable(const Model::CallDeviceActionSyncRequest& request);
 
                 /**
-                 *业务已下线
-
-取消分配
-                 * @param req CancelAssignTWeCallLicenseRequest
-                 * @return CancelAssignTWeCallLicenseOutcome
-                 */
-                CancelAssignTWeCallLicenseOutcome CancelAssignTWeCallLicense(const Model::CancelAssignTWeCallLicenseRequest &request);
-                void CancelAssignTWeCallLicenseAsync(const Model::CancelAssignTWeCallLicenseRequest& request, const CancelAssignTWeCallLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CancelAssignTWeCallLicenseOutcomeCallable CancelAssignTWeCallLicenseCallable(const Model::CancelAssignTWeCallLicenseRequest& request);
-
-                /**
                  *p2p路线切换（此接口目前处于内测接口，可以联系申请加白 ）
                  * @param req ChangeP2PRouteRequest
                  * @return ChangeP2PRouteOutcome
@@ -1221,6 +1210,15 @@ namespace TencentCloud
                 CreateDeviceChannelOutcome CreateDeviceChannel(const Model::CreateDeviceChannelRequest &request);
                 void CreateDeviceChannelAsync(const Model::CreateDeviceChannelRequest& request, const CreateDeviceChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDeviceChannelOutcomeCallable CreateDeviceChannelCallable(const Model::CreateDeviceChannelRequest& request);
+
+                /**
+                 *创建设备SDP应答
+                 * @param req CreateDeviceSDPAnswerRequest
+                 * @return CreateDeviceSDPAnswerOutcome
+                 */
+                CreateDeviceSDPAnswerOutcome CreateDeviceSDPAnswer(const Model::CreateDeviceSDPAnswerRequest &request);
+                void CreateDeviceSDPAnswerAsync(const Model::CreateDeviceSDPAnswerRequest& request, const CreateDeviceSDPAnswerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDeviceSDPAnswerOutcomeCallable CreateDeviceSDPAnswerCallable(const Model::CreateDeviceSDPAnswerRequest& request);
 
                 /**
                  *创建外部视频 AI 分析任务
