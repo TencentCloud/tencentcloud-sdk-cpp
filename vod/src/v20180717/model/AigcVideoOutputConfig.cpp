@@ -33,7 +33,8 @@ AigcVideoOutputConfig::AigcVideoOutputConfig() :
     m_inputComplianceCheckHasBeenSet(false),
     m_outputComplianceCheckHasBeenSet(false),
     m_enhanceSwitchHasBeenSet(false),
-    m_frameInterpolateHasBeenSet(false)
+    m_frameInterpolateHasBeenSet(false),
+    m_logoAddHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome AigcVideoOutputConfig::Deserialize(const rapidjson::Value &v
         m_frameInterpolateHasBeenSet = true;
     }
 
+    if (value.HasMember("LogoAdd") && !value["LogoAdd"].IsNull())
+    {
+        if (!value["LogoAdd"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoOutputConfig.LogoAdd` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logoAdd = string(value["LogoAdd"].GetString());
+        m_logoAddHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void AigcVideoOutputConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "FrameInterpolate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_frameInterpolate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logoAddHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogoAdd";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logoAdd.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void AigcVideoOutputConfig::SetFrameInterpolate(const string& _frameInterpolate)
 bool AigcVideoOutputConfig::FrameInterpolateHasBeenSet() const
 {
     return m_frameInterpolateHasBeenSet;
+}
+
+string AigcVideoOutputConfig::GetLogoAdd() const
+{
+    return m_logoAdd;
+}
+
+void AigcVideoOutputConfig::SetLogoAdd(const string& _logoAdd)
+{
+    m_logoAdd = _logoAdd;
+    m_logoAddHasBeenSet = true;
+}
+
+bool AigcVideoOutputConfig::LogoAddHasBeenSet() const
+{
+    return m_logoAddHasBeenSet;
 }
 

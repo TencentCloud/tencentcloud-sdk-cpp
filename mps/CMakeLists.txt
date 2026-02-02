@@ -402,6 +402,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/DescribeGroupAttachFlowsByIdRequest.h
   include/tencentcloud/mps/v20190612/model/DescribeWorkflowsResponse.h
   include/tencentcloud/mps/v20190612/model/AsrWordsConfigureInfoForUpdate.h
+  include/tencentcloud/mps/v20190612/model/SyncDubbingRequest.h
   include/tencentcloud/mps/v20190612/model/ScheduleSmartSubtitleTaskResult.h
   include/tencentcloud/mps/v20190612/model/DeleteImageSpriteTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/DescribeContentReviewTemplatesResponse.h
@@ -685,6 +686,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/BeautyEffectItemConfig.h
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskTransTextResultOutput.h
   include/tencentcloud/mps/v20190612/model/SmartSubtitlesResult.h
+  include/tencentcloud/mps/v20190612/model/SyncDubbingResponse.h
   include/tencentcloud/mps/v20190612/model/ModifySnapshotByTimeOffsetTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/AsrHotWordsConfigure.h
   include/tencentcloud/mps/v20190612/model/ImageAreaBoxInfo.h
@@ -1254,6 +1256,7 @@ set(mps_src
   src/v20190612/model/DescribeGroupAttachFlowsByIdRequest.cpp
   src/v20190612/model/DescribeWorkflowsResponse.cpp
   src/v20190612/model/AsrWordsConfigureInfoForUpdate.cpp
+  src/v20190612/model/SyncDubbingRequest.cpp
   src/v20190612/model/ScheduleSmartSubtitleTaskResult.cpp
   src/v20190612/model/DeleteImageSpriteTemplateResponse.cpp
   src/v20190612/model/DescribeContentReviewTemplatesResponse.cpp
@@ -1537,6 +1540,7 @@ set(mps_src
   src/v20190612/model/BeautyEffectItemConfig.cpp
   src/v20190612/model/AiRecognitionTaskTransTextResultOutput.cpp
   src/v20190612/model/SmartSubtitlesResult.cpp
+  src/v20190612/model/SyncDubbingResponse.cpp
   src/v20190612/model/ModifySnapshotByTimeOffsetTemplateRequest.cpp
   src/v20190612/model/AsrHotWordsConfigure.cpp
   src/v20190612/model/ImageAreaBoxInfo.cpp

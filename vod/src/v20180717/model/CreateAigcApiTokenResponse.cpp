@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/hunyuan/v20230901/model/Submit3DSmartTopologyJobResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcApiTokenResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Hunyuan::V20230901::Model;
+using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
-Submit3DSmartTopologyJobResponse::Submit3DSmartTopologyJobResponse() :
-    m_jobIdHasBeenSet(false)
+CreateAigcApiTokenResponse::CreateAigcApiTokenResponse() :
+    m_apiTokenHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome Submit3DSmartTopologyJobResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateAigcApiTokenResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +62,32 @@ CoreInternalOutcome Submit3DSmartTopologyJobResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("JobId") && !rsp["JobId"].IsNull())
+    if (rsp.HasMember("ApiToken") && !rsp["ApiToken"].IsNull())
     {
-        if (!rsp["JobId"].IsString())
+        if (!rsp["ApiToken"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `JobId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApiToken` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_jobId = string(rsp["JobId"].GetString());
-        m_jobIdHasBeenSet = true;
+        m_apiToken = string(rsp["ApiToken"].GetString());
+        m_apiTokenHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string Submit3DSmartTopologyJobResponse::ToJsonString() const
+string CreateAigcApiTokenResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_jobIdHasBeenSet)
+    if (m_apiTokenHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "JobId";
+        string key = "ApiToken";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apiToken.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +102,14 @@ string Submit3DSmartTopologyJobResponse::ToJsonString() const
 }
 
 
-string Submit3DSmartTopologyJobResponse::GetJobId() const
+string CreateAigcApiTokenResponse::GetApiToken() const
 {
-    return m_jobId;
+    return m_apiToken;
 }
 
-bool Submit3DSmartTopologyJobResponse::JobIdHasBeenSet() const
+bool CreateAigcApiTokenResponse::ApiTokenHasBeenSet() const
 {
-    return m_jobIdHasBeenSet;
+    return m_apiTokenHasBeenSet;
 }
 
 

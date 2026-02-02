@@ -27,6 +27,7 @@
 #include <tencentcloud/vod/v20180717/model/WatermarkInput.h>
 #include <tencentcloud/vod/v20180717/model/TraceWatermarkInput.h>
 #include <tencentcloud/vod/v20180717/model/CopyRightWatermarkInput.h>
+#include <tencentcloud/vod/v20180717/model/BlindWatermarkInput.h>
 
 
 namespace TencentCloud
@@ -134,6 +135,27 @@ namespace TencentCloud
                     bool CopyRightWatermarkHasBeenSet() const;
 
                     /**
+                     * 获取数字水印。
+                     * @return BlindWatermark 数字水印。
+                     * 
+                     */
+                    BlindWatermarkInput GetBlindWatermark() const;
+
+                    /**
+                     * 设置数字水印。
+                     * @param _blindWatermark 数字水印。
+                     * 
+                     */
+                    void SetBlindWatermark(const BlindWatermarkInput& _blindWatermark);
+
+                    /**
+                     * 判断参数 BlindWatermark 是否已赋值
+                     * @return BlindWatermark 是否已赋值
+                     * 
+                     */
+                    bool BlindWatermarkHasBeenSet() const;
+
+                    /**
                      * 获取字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。
                      * @return SubtitleSet 字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。
                      * 
@@ -179,6 +201,12 @@ namespace TencentCloud
                      */
                     CopyRightWatermarkInput m_copyRightWatermark;
                     bool m_copyRightWatermarkHasBeenSet;
+
+                    /**
+                     * 数字水印。
+                     */
+                    BlindWatermarkInput m_blindWatermark;
+                    bool m_blindWatermarkHasBeenSet;
 
                     /**
                      * 字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。

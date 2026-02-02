@@ -24,6 +24,7 @@ using namespace std;
 
 SubmitTextToImageJobRequest::SubmitTextToImageJobRequest() :
     m_promptHasBeenSet(false),
+    m_imagesHasBeenSet(false),
     m_resolutionHasBeenSet(false),
     m_seedHasBeenSet(false),
     m_logoAddHasBeenSet(false),
@@ -45,6 +46,19 @@ string SubmitTextToImageJobRequest::ToJsonString() const
         string key = "Prompt";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_prompt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Images";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_images.begin(); itr != m_images.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_resolutionHasBeenSet)
@@ -110,6 +124,22 @@ void SubmitTextToImageJobRequest::SetPrompt(const string& _prompt)
 bool SubmitTextToImageJobRequest::PromptHasBeenSet() const
 {
     return m_promptHasBeenSet;
+}
+
+vector<string> SubmitTextToImageJobRequest::GetImages() const
+{
+    return m_images;
+}
+
+void SubmitTextToImageJobRequest::SetImages(const vector<string>& _images)
+{
+    m_images = _images;
+    m_imagesHasBeenSet = true;
+}
+
+bool SubmitTextToImageJobRequest::ImagesHasBeenSet() const
+{
+    return m_imagesHasBeenSet;
 }
 
 string SubmitTextToImageJobRequest::GetResolution() const

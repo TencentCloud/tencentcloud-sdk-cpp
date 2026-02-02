@@ -110,35 +110,6 @@ namespace TencentCloud
                     bool FlowNameHasBeenSet() const;
 
                     /**
-                     * 获取合同流程的参与方列表，最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息，具体定义可以参考开发者中心的ApproverInfo结构体。
-
-如果合同流程是有序签署，Approvers列表中参与人的顺序就是默认的签署顺序，请确保列表中参与人的顺序符合实际签署顺序。
-                     * @return Approvers 合同流程的参与方列表，最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息，具体定义可以参考开发者中心的ApproverInfo结构体。
-
-如果合同流程是有序签署，Approvers列表中参与人的顺序就是默认的签署顺序，请确保列表中参与人的顺序符合实际签署顺序。
-                     * 
-                     */
-                    std::vector<ApproverInfo> GetApprovers() const;
-
-                    /**
-                     * 设置合同流程的参与方列表，最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息，具体定义可以参考开发者中心的ApproverInfo结构体。
-
-如果合同流程是有序签署，Approvers列表中参与人的顺序就是默认的签署顺序，请确保列表中参与人的顺序符合实际签署顺序。
-                     * @param _approvers 合同流程的参与方列表，最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息，具体定义可以参考开发者中心的ApproverInfo结构体。
-
-如果合同流程是有序签署，Approvers列表中参与人的顺序就是默认的签署顺序，请确保列表中参与人的顺序符合实际签署顺序。
-                     * 
-                     */
-                    void SetApprovers(const std::vector<ApproverInfo>& _approvers);
-
-                    /**
-                     * 判断参数 Approvers 是否已赋值
-                     * @return Approvers 是否已赋值
-                     * 
-                     */
-                    bool ApproversHasBeenSet() const;
-
-                    /**
                      * 获取本合同流程需包含的PDF文件资源编号列表，通过[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获取PDF文件资源编号。
 
 注:  `目前，此接口仅支持单个文件发起。`
@@ -166,6 +137,35 @@ namespace TencentCloud
                      * 
                      */
                     bool FileIdsHasBeenSet() const;
+
+                    /**
+                     * 获取合同流程的参与方列表，最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息，具体定义可以参考开发者中心的ApproverInfo结构体。
+
+如果合同流程是有序签署，Approvers列表中参与人的顺序就是默认的签署顺序，请确保列表中参与人的顺序符合实际签署顺序。
+                     * @return Approvers 合同流程的参与方列表，最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息，具体定义可以参考开发者中心的ApproverInfo结构体。
+
+如果合同流程是有序签署，Approvers列表中参与人的顺序就是默认的签署顺序，请确保列表中参与人的顺序符合实际签署顺序。
+                     * 
+                     */
+                    std::vector<ApproverInfo> GetApprovers() const;
+
+                    /**
+                     * 设置合同流程的参与方列表，最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息，具体定义可以参考开发者中心的ApproverInfo结构体。
+
+如果合同流程是有序签署，Approvers列表中参与人的顺序就是默认的签署顺序，请确保列表中参与人的顺序符合实际签署顺序。
+                     * @param _approvers 合同流程的参与方列表，最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息，具体定义可以参考开发者中心的ApproverInfo结构体。
+
+如果合同流程是有序签署，Approvers列表中参与人的顺序就是默认的签署顺序，请确保列表中参与人的顺序符合实际签署顺序。
+                     * 
+                     */
+                    void SetApprovers(const std::vector<ApproverInfo>& _approvers);
+
+                    /**
+                     * 判断参数 Approvers 是否已赋值
+                     * @return Approvers 是否已赋值
+                     * 
+                     */
+                    bool ApproversHasBeenSet() const;
 
                     /**
                      * 获取合同流程描述信息(可自定义此描述)，最大长度1000个字符。
@@ -790,23 +790,15 @@ namespace TencentCloud
                     bool FlowDisplayTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启动态签署合同：
-<ul><li> **true**：开启动态签署合同，可在签署过程中追加签署人（必须满足：1，发起方企业开启了模块化计费能力；2，发起方企业在企业应用管理中开启了动态签署人2.0能力）    。</li>
-<li> **false**：不开启动态签署合同。</li></ul>
-                     * @return OpenDynamicSignFlow 是否开启动态签署合同：
-<ul><li> **true**：开启动态签署合同，可在签署过程中追加签署人（必须满足：1，发起方企业开启了模块化计费能力；2，发起方企业在企业应用管理中开启了动态签署人2.0能力）    。</li>
-<li> **false**：不开启动态签署合同。</li></ul>
+                     * 获取是否开启动态签署合同：<ul><li> **true**：开启动态签署合同，可在发起时可以不传签署人，在签署过程中追加签署人（必须满足：1，发起方企业开启了模块化计费能力；2，发起方企业在企业应用管理中开启了动态签署人2.0能力）    。</li><li> **false**：不开启动态签署合同。</li></ul>
+                     * @return OpenDynamicSignFlow 是否开启动态签署合同：<ul><li> **true**：开启动态签署合同，可在发起时可以不传签署人，在签署过程中追加签署人（必须满足：1，发起方企业开启了模块化计费能力；2，发起方企业在企业应用管理中开启了动态签署人2.0能力）    。</li><li> **false**：不开启动态签署合同。</li></ul>
                      * 
                      */
                     bool GetOpenDynamicSignFlow() const;
 
                     /**
-                     * 设置是否开启动态签署合同：
-<ul><li> **true**：开启动态签署合同，可在签署过程中追加签署人（必须满足：1，发起方企业开启了模块化计费能力；2，发起方企业在企业应用管理中开启了动态签署人2.0能力）    。</li>
-<li> **false**：不开启动态签署合同。</li></ul>
-                     * @param _openDynamicSignFlow 是否开启动态签署合同：
-<ul><li> **true**：开启动态签署合同，可在签署过程中追加签署人（必须满足：1，发起方企业开启了模块化计费能力；2，发起方企业在企业应用管理中开启了动态签署人2.0能力）    。</li>
-<li> **false**：不开启动态签署合同。</li></ul>
+                     * 设置是否开启动态签署合同：<ul><li> **true**：开启动态签署合同，可在发起时可以不传签署人，在签署过程中追加签署人（必须满足：1，发起方企业开启了模块化计费能力；2，发起方企业在企业应用管理中开启了动态签署人2.0能力）    。</li><li> **false**：不开启动态签署合同。</li></ul>
+                     * @param _openDynamicSignFlow 是否开启动态签署合同：<ul><li> **true**：开启动态签署合同，可在发起时可以不传签署人，在签署过程中追加签署人（必须满足：1，发起方企业开启了模块化计费能力；2，发起方企业在企业应用管理中开启了动态签署人2.0能力）    。</li><li> **false**：不开启动态签署合同。</li></ul>
                      * 
                      */
                     void SetOpenDynamicSignFlow(const bool& _openDynamicSignFlow);
@@ -838,20 +830,20 @@ namespace TencentCloud
                     bool m_flowNameHasBeenSet;
 
                     /**
-                     * 合同流程的参与方列表，最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息，具体定义可以参考开发者中心的ApproverInfo结构体。
-
-如果合同流程是有序签署，Approvers列表中参与人的顺序就是默认的签署顺序，请确保列表中参与人的顺序符合实际签署顺序。
-                     */
-                    std::vector<ApproverInfo> m_approvers;
-                    bool m_approversHasBeenSet;
-
-                    /**
                      * 本合同流程需包含的PDF文件资源编号列表，通过[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获取PDF文件资源编号。
 
 注:  `目前，此接口仅支持单个文件发起。`
                      */
                     std::vector<std::string> m_fileIds;
                     bool m_fileIdsHasBeenSet;
+
+                    /**
+                     * 合同流程的参与方列表，最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息，具体定义可以参考开发者中心的ApproverInfo结构体。
+
+如果合同流程是有序签署，Approvers列表中参与人的顺序就是默认的签署顺序，请确保列表中参与人的顺序符合实际签署顺序。
+                     */
+                    std::vector<ApproverInfo> m_approvers;
+                    bool m_approversHasBeenSet;
 
                     /**
                      * 合同流程描述信息(可自定义此描述)，最大长度1000个字符。
@@ -1023,9 +1015,7 @@ namespace TencentCloud
                     bool m_flowDisplayTypeHasBeenSet;
 
                     /**
-                     * 是否开启动态签署合同：
-<ul><li> **true**：开启动态签署合同，可在签署过程中追加签署人（必须满足：1，发起方企业开启了模块化计费能力；2，发起方企业在企业应用管理中开启了动态签署人2.0能力）    。</li>
-<li> **false**：不开启动态签署合同。</li></ul>
+                     * 是否开启动态签署合同：<ul><li> **true**：开启动态签署合同，可在发起时可以不传签署人，在签署过程中追加签署人（必须满足：1，发起方企业开启了模块化计费能力；2，发起方企业在企业应用管理中开启了动态签署人2.0能力）    。</li><li> **false**：不开启动态签署合同。</li></ul>
                      */
                     bool m_openDynamicSignFlow;
                     bool m_openDynamicSignFlowHasBeenSet;

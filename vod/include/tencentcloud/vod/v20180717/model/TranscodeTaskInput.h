@@ -27,6 +27,7 @@
 #include <tencentcloud/vod/v20180717/model/WatermarkInput.h>
 #include <tencentcloud/vod/v20180717/model/TraceWatermarkInput.h>
 #include <tencentcloud/vod/v20180717/model/CopyRightWatermarkInput.h>
+#include <tencentcloud/vod/v20180717/model/BlindWatermarkInput.h>
 #include <tencentcloud/vod/v20180717/model/MosaicInput.h>
 #include <tencentcloud/vod/v20180717/model/HeadTailTaskInput.h>
 
@@ -134,6 +135,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CopyRightWatermarkHasBeenSet() const;
+
+                    /**
+                     * 获取数字水印。
+                     * @return BlindWatermark 数字水印。
+                     * 
+                     */
+                    BlindWatermarkInput GetBlindWatermark() const;
+
+                    /**
+                     * 设置数字水印。
+                     * @param _blindWatermark 数字水印。
+                     * 
+                     */
+                    void SetBlindWatermark(const BlindWatermarkInput& _blindWatermark);
+
+                    /**
+                     * 判断参数 BlindWatermark 是否已赋值
+                     * @return BlindWatermark 是否已赋值
+                     * 
+                     */
+                    bool BlindWatermarkHasBeenSet() const;
 
                     /**
                      * 获取马赛克列表，最大可支持 10 张。
@@ -268,6 +290,12 @@ namespace TencentCloud
                      */
                     CopyRightWatermarkInput m_copyRightWatermark;
                     bool m_copyRightWatermarkHasBeenSet;
+
+                    /**
+                     * 数字水印。
+                     */
+                    BlindWatermarkInput m_blindWatermark;
+                    bool m_blindWatermarkHasBeenSet;
 
                     /**
                      * 马赛克列表，最大可支持 10 张。

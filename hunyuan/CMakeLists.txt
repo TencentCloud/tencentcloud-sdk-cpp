@@ -28,7 +28,6 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageChatJobRequest.h
   include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageJobRequest.h
   include/tencentcloud/hunyuan/v20230901/model/PromptTokensDetails.h
-  include/tencentcloud/hunyuan/v20230901/model/File3D.h
   include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageChatJobRequest.h
   include/tencentcloud/hunyuan/v20230901/model/EmbeddingData.h
   include/tencentcloud/hunyuan/v20230901/model/SetPayModeResponse.h
@@ -45,7 +44,6 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/ChatCompletionsResponse.h
   include/tencentcloud/hunyuan/v20230901/model/VideoUrl.h
   include/tencentcloud/hunyuan/v20230901/model/GetThreadMessageListRequest.h
-  include/tencentcloud/hunyuan/v20230901/model/Submit3DSmartTopologyJobRequest.h
   include/tencentcloud/hunyuan/v20230901/model/GetThreadMessageRequest.h
   include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageChatJobResponse.h
   include/tencentcloud/hunyuan/v20230901/model/ChatTranslationsRequest.h
@@ -58,7 +56,6 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/ToolFunction.h
   include/tencentcloud/hunyuan/v20230901/model/ImageQuestionResponse.h
   include/tencentcloud/hunyuan/v20230901/model/ImageMessage.h
-  include/tencentcloud/hunyuan/v20230901/model/InputFile3D.h
   include/tencentcloud/hunyuan/v20230901/model/SetPayModeRequest.h
   include/tencentcloud/hunyuan/v20230901/model/GroupMessage.h
   include/tencentcloud/hunyuan/v20230901/model/RelevantEvent.h
@@ -70,10 +67,8 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/ThreadToolResources.h
   include/tencentcloud/hunyuan/v20230901/model/Replace.h
   include/tencentcloud/hunyuan/v20230901/model/CreateThreadRequest.h
-  include/tencentcloud/hunyuan/v20230901/model/Submit3DSmartTopologyJobResponse.h
   include/tencentcloud/hunyuan/v20230901/model/Message.h
   include/tencentcloud/hunyuan/v20230901/model/TranslationMessage.h
-  include/tencentcloud/hunyuan/v20230901/model/Describe3DSmartTopologyJobRequest.h
   include/tencentcloud/hunyuan/v20230901/model/ChatCompletionsRequest.h
   include/tencentcloud/hunyuan/v20230901/model/Knowledge.h
   include/tencentcloud/hunyuan/v20230901/model/FilesUploadsRequest.h
@@ -90,7 +85,6 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/TextToImageLiteRequest.h
   include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageJobResponse.h
   include/tencentcloud/hunyuan/v20230901/model/History.h
-  include/tencentcloud/hunyuan/v20230901/model/Describe3DSmartTopologyJobResponse.h
   include/tencentcloud/hunyuan/v20230901/model/UserLocation.h
   include/tencentcloud/hunyuan/v20230901/model/FilesListRequest.h
   include/tencentcloud/hunyuan/v20230901/model/GetTokenCountRequest.h
@@ -128,7 +122,6 @@ set(hunyuan_src
   src/v20230901/model/SubmitHunyuanImageChatJobRequest.cpp
   src/v20230901/model/QueryHunyuanImageJobRequest.cpp
   src/v20230901/model/PromptTokensDetails.cpp
-  src/v20230901/model/File3D.cpp
   src/v20230901/model/QueryHunyuanImageChatJobRequest.cpp
   src/v20230901/model/EmbeddingData.cpp
   src/v20230901/model/SetPayModeResponse.cpp
@@ -145,7 +138,6 @@ set(hunyuan_src
   src/v20230901/model/ChatCompletionsResponse.cpp
   src/v20230901/model/VideoUrl.cpp
   src/v20230901/model/GetThreadMessageListRequest.cpp
-  src/v20230901/model/Submit3DSmartTopologyJobRequest.cpp
   src/v20230901/model/GetThreadMessageRequest.cpp
   src/v20230901/model/SubmitHunyuanImageChatJobResponse.cpp
   src/v20230901/model/ChatTranslationsRequest.cpp
@@ -158,7 +150,6 @@ set(hunyuan_src
   src/v20230901/model/ToolFunction.cpp
   src/v20230901/model/ImageQuestionResponse.cpp
   src/v20230901/model/ImageMessage.cpp
-  src/v20230901/model/InputFile3D.cpp
   src/v20230901/model/SetPayModeRequest.cpp
   src/v20230901/model/GroupMessage.cpp
   src/v20230901/model/RelevantEvent.cpp
@@ -170,10 +161,8 @@ set(hunyuan_src
   src/v20230901/model/ThreadToolResources.cpp
   src/v20230901/model/Replace.cpp
   src/v20230901/model/CreateThreadRequest.cpp
-  src/v20230901/model/Submit3DSmartTopologyJobResponse.cpp
   src/v20230901/model/Message.cpp
   src/v20230901/model/TranslationMessage.cpp
-  src/v20230901/model/Describe3DSmartTopologyJobRequest.cpp
   src/v20230901/model/ChatCompletionsRequest.cpp
   src/v20230901/model/Knowledge.cpp
   src/v20230901/model/FilesUploadsRequest.cpp
@@ -190,7 +179,6 @@ set(hunyuan_src
   src/v20230901/model/TextToImageLiteRequest.cpp
   src/v20230901/model/QueryHunyuanImageJobResponse.cpp
   src/v20230901/model/History.cpp
-  src/v20230901/model/Describe3DSmartTopologyJobResponse.cpp
   src/v20230901/model/UserLocation.cpp
   src/v20230901/model/FilesListRequest.cpp
   src/v20230901/model/GetTokenCountRequest.cpp

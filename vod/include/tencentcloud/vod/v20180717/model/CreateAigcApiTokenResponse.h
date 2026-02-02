@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_HUNYUAN_V20230901_MODEL_SUBMIT3DSMARTTOPOLOGYJOBRESPONSE_H_
-#define TENCENTCLOUD_HUNYUAN_V20230901_MODEL_SUBMIT3DSMARTTOPOLOGYJOBRESPONSE_H_
+#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_CREATEAIGCAPITOKENRESPONSE_H_
+#define TENCENTCLOUD_VOD_V20180717_MODEL_CREATEAIGCAPITOKENRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,45 +25,45 @@
 
 namespace TencentCloud
 {
-    namespace Hunyuan
+    namespace Vod
     {
-        namespace V20230901
+        namespace V20180717
         {
             namespace Model
             {
                 /**
-                * Submit3DSmartTopologyJob返回参数结构体
+                * CreateAigcApiToken返回参数结构体
                 */
-                class Submit3DSmartTopologyJobResponse : public AbstractModel
+                class CreateAigcApiTokenResponse : public AbstractModel
                 {
                 public:
-                    Submit3DSmartTopologyJobResponse();
-                    ~Submit3DSmartTopologyJobResponse() = default;
+                    CreateAigcApiTokenResponse();
+                    ~CreateAigcApiTokenResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取任务ID。	
-                     * @return JobId 任务ID。	
+                     * 获取API的Token
+                     * @return ApiToken API的Token
                      * 
                      */
-                    std::string GetJobId() const;
+                    std::string GetApiToken() const;
 
                     /**
-                     * 判断参数 JobId 是否已赋值
-                     * @return JobId 是否已赋值
+                     * 判断参数 ApiToken 是否已赋值
+                     * @return ApiToken 是否已赋值
                      * 
                      */
-                    bool JobIdHasBeenSet() const;
+                    bool ApiTokenHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 任务ID。	
+                     * API的Token
                      */
-                    std::string m_jobId;
-                    bool m_jobIdHasBeenSet;
+                    std::string m_apiToken;
+                    bool m_apiTokenHasBeenSet;
 
                 };
             }
@@ -71,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_HUNYUAN_V20230901_MODEL_SUBMIT3DSMARTTOPOLOGYJOBRESPONSE_H_
+#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_CREATEAIGCAPITOKENRESPONSE_H_

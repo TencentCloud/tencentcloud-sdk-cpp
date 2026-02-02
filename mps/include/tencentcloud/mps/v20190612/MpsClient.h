@@ -323,6 +323,8 @@
 #include <tencentcloud/mps/v20190612/model/StartStreamLinkFlowResponse.h>
 #include <tencentcloud/mps/v20190612/model/StopStreamLinkFlowRequest.h>
 #include <tencentcloud/mps/v20190612/model/StopStreamLinkFlowResponse.h>
+#include <tencentcloud/mps/v20190612/model/SyncDubbingRequest.h>
+#include <tencentcloud/mps/v20190612/model/SyncDubbingResponse.h>
 #include <tencentcloud/mps/v20190612/model/TextTranslationRequest.h>
 #include <tencentcloud/mps/v20190612/model/TextTranslationResponse.h>
 #include <tencentcloud/mps/v20190612/model/WithdrawsWatermarkRequest.h>
@@ -791,6 +793,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopStreamLinkFlowResponse> StopStreamLinkFlowOutcome;
                 typedef std::future<StopStreamLinkFlowOutcome> StopStreamLinkFlowOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::StopStreamLinkFlowRequest&, StopStreamLinkFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopStreamLinkFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::SyncDubbingResponse> SyncDubbingOutcome;
+                typedef std::future<SyncDubbingOutcome> SyncDubbingOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::SyncDubbingRequest&, SyncDubbingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncDubbingAsyncHandler;
                 typedef Outcome<Core::Error, Model::TextTranslationResponse> TextTranslationOutcome;
                 typedef std::future<TextTranslationOutcome> TextTranslationOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::TextTranslationRequest&, TextTranslationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextTranslationAsyncHandler;
@@ -2224,6 +2229,17 @@ namespace TencentCloud
                 StopStreamLinkFlowOutcome StopStreamLinkFlow(const Model::StopStreamLinkFlowRequest &request);
                 void StopStreamLinkFlowAsync(const Model::StopStreamLinkFlowRequest& request, const StopStreamLinkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopStreamLinkFlowOutcomeCallable StopStreamLinkFlowCallable(const Model::StopStreamLinkFlowRequest& request);
+
+                /**
+                 *# 同步配音接口
+## 音色克隆
+## 语音合成
+                 * @param req SyncDubbingRequest
+                 * @return SyncDubbingOutcome
+                 */
+                SyncDubbingOutcome SyncDubbing(const Model::SyncDubbingRequest &request);
+                void SyncDubbingAsync(const Model::SyncDubbingRequest& request, const SyncDubbingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SyncDubbingOutcomeCallable SyncDubbingCallable(const Model::SyncDubbingRequest& request);
 
                 /**
                  *文本翻译

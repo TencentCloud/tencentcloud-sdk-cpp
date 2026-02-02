@@ -44,23 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文本描述。 
-算法将根据输入的文本智能生成与之相关的图像。 
-不能为空，推荐使用中文。最多可传1024个 utf-8 字符。
-                     * @return Prompt 文本描述。 
-算法将根据输入的文本智能生成与之相关的图像。 
-不能为空，推荐使用中文。最多可传1024个 utf-8 字符。
+                     * 获取<p>文本描述。<br>算法将根据输入的文本智能生成与之相关的图像。<br>不能为空，推荐使用中文。最多可传1024个 utf-8 字符。</p>
+                     * @return Prompt <p>文本描述。<br>算法将根据输入的文本智能生成与之相关的图像。<br>不能为空，推荐使用中文。最多可传1024个 utf-8 字符。</p>
                      * 
                      */
                     std::string GetPrompt() const;
 
                     /**
-                     * 设置文本描述。 
-算法将根据输入的文本智能生成与之相关的图像。 
-不能为空，推荐使用中文。最多可传1024个 utf-8 字符。
-                     * @param _prompt 文本描述。 
-算法将根据输入的文本智能生成与之相关的图像。 
-不能为空，推荐使用中文。最多可传1024个 utf-8 字符。
+                     * 设置<p>文本描述。<br>算法将根据输入的文本智能生成与之相关的图像。<br>不能为空，推荐使用中文。最多可传1024个 utf-8 字符。</p>
+                     * @param _prompt <p>文本描述。<br>算法将根据输入的文本智能生成与之相关的图像。<br>不能为空，推荐使用中文。最多可传1024个 utf-8 字符。</p>
                      * 
                      */
                     void SetPrompt(const std::string& _prompt);
@@ -73,23 +65,36 @@ namespace TencentCloud
                     bool PromptHasBeenSet() const;
 
                     /**
-                     * 获取生成图分辨率，默认1024:1024：
- - 宽高维度均在 [512, 2048] 像素范围内;
- - 宽高乘积（即图像面积）不超过 1024×1024 像素;
-                     * @return Resolution 生成图分辨率，默认1024:1024：
- - 宽高维度均在 [512, 2048] 像素范围内;
- - 宽高乘积（即图像面积）不超过 1024×1024 像素;
+                     * 获取<p>垫图url列表，大小不超过10MB，支持 jpg jpeg png webp格式，最多3张图</p>
+                     * @return Images <p>垫图url列表，大小不超过10MB，支持 jpg jpeg png webp格式，最多3张图</p>
+                     * 
+                     */
+                    std::vector<std::string> GetImages() const;
+
+                    /**
+                     * 设置<p>垫图url列表，大小不超过10MB，支持 jpg jpeg png webp格式，最多3张图</p>
+                     * @param _images <p>垫图url列表，大小不超过10MB，支持 jpg jpeg png webp格式，最多3张图</p>
+                     * 
+                     */
+                    void SetImages(const std::vector<std::string>& _images);
+
+                    /**
+                     * 判断参数 Images 是否已赋值
+                     * @return Images 是否已赋值
+                     * 
+                     */
+                    bool ImagesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>生成图分辨率，默认1024:1024：</p><ul><li>宽高维度均在 [512, 2048] 像素范围内;</li><li>宽高乘积（即图像面积）不超过 1024×1024 像素;</li></ul>
+                     * @return Resolution <p>生成图分辨率，默认1024:1024：</p><ul><li>宽高维度均在 [512, 2048] 像素范围内;</li><li>宽高乘积（即图像面积）不超过 1024×1024 像素;</li></ul>
                      * 
                      */
                     std::string GetResolution() const;
 
                     /**
-                     * 设置生成图分辨率，默认1024:1024：
- - 宽高维度均在 [512, 2048] 像素范围内;
- - 宽高乘积（即图像面积）不超过 1024×1024 像素;
-                     * @param _resolution 生成图分辨率，默认1024:1024：
- - 宽高维度均在 [512, 2048] 像素范围内;
- - 宽高乘积（即图像面积）不超过 1024×1024 像素;
+                     * 设置<p>生成图分辨率，默认1024:1024：</p><ul><li>宽高维度均在 [512, 2048] 像素范围内;</li><li>宽高乘积（即图像面积）不超过 1024×1024 像素;</li></ul>
+                     * @param _resolution <p>生成图分辨率，默认1024:1024：</p><ul><li>宽高维度均在 [512, 2048] 像素范围内;</li><li>宽高乘积（即图像面积）不超过 1024×1024 像素;</li></ul>
                      * 
                      */
                     void SetResolution(const std::string& _resolution);
@@ -102,27 +107,15 @@ namespace TencentCloud
                     bool ResolutionHasBeenSet() const;
 
                     /**
-                     * 获取随机种子，默认随机。
-不传：随机种子生成。
-正数：固定种子生成。
-扩写开启时固定种子不生效，将保持随机。
-                     * @return Seed 随机种子，默认随机。
-不传：随机种子生成。
-正数：固定种子生成。
-扩写开启时固定种子不生效，将保持随机。
+                     * 获取<p>随机种子，默认随机。<br>不传：随机种子生成。<br>正数：固定种子生成。<br>扩写开启时固定种子不生效，将保持随机。</p>
+                     * @return Seed <p>随机种子，默认随机。<br>不传：随机种子生成。<br>正数：固定种子生成。<br>扩写开启时固定种子不生效，将保持随机。</p>
                      * 
                      */
                     int64_t GetSeed() const;
 
                     /**
-                     * 设置随机种子，默认随机。
-不传：随机种子生成。
-正数：固定种子生成。
-扩写开启时固定种子不生效，将保持随机。
-                     * @param _seed 随机种子，默认随机。
-不传：随机种子生成。
-正数：固定种子生成。
-扩写开启时固定种子不生效，将保持随机。
+                     * 设置<p>随机种子，默认随机。<br>不传：随机种子生成。<br>正数：固定种子生成。<br>扩写开启时固定种子不生效，将保持随机。</p>
+                     * @param _seed <p>随机种子，默认随机。<br>不传：随机种子生成。<br>正数：固定种子生成。<br>扩写开启时固定种子不生效，将保持随机。</p>
                      * 
                      */
                     void SetSeed(const int64_t& _seed);
@@ -135,31 +128,15 @@ namespace TencentCloud
                     bool SeedHasBeenSet() const;
 
                     /**
-                     * 获取为生成结果图添加显式水印标识的开关，默认为1。  
-1：添加。  
-0：不添加。  
-其他数值：默认按1处理。  
-建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。
-                     * @return LogoAdd 为生成结果图添加显式水印标识的开关，默认为1。  
-1：添加。  
-0：不添加。  
-其他数值：默认按1处理。  
-建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。
+                     * 获取<p>为生成结果图添加显式水印标识的开关，默认为1。<br>1：添加。<br>0：不添加。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。</p>
+                     * @return LogoAdd <p>为生成结果图添加显式水印标识的开关，默认为1。<br>1：添加。<br>0：不添加。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。</p>
                      * 
                      */
                     int64_t GetLogoAdd() const;
 
                     /**
-                     * 设置为生成结果图添加显式水印标识的开关，默认为1。  
-1：添加。  
-0：不添加。  
-其他数值：默认按1处理。  
-建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。
-                     * @param _logoAdd 为生成结果图添加显式水印标识的开关，默认为1。  
-1：添加。  
-0：不添加。  
-其他数值：默认按1处理。  
-建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。
+                     * 设置<p>为生成结果图添加显式水印标识的开关，默认为1。<br>1：添加。<br>0：不添加。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。</p>
+                     * @param _logoAdd <p>为生成结果图添加显式水印标识的开关，默认为1。<br>1：添加。<br>0：不添加。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。</p>
                      * 
                      */
                     void SetLogoAdd(const int64_t& _logoAdd);
@@ -172,19 +149,15 @@ namespace TencentCloud
                     bool LogoAddHasBeenSet() const;
 
                     /**
-                     * 获取标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
-                     * @return LogoParam 标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * 获取<p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。</p>
+                     * @return LogoParam <p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。</p>
                      * 
                      */
                     LogoParam GetLogoParam() const;
 
                     /**
-                     * 设置标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
-                     * @param _logoParam 标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * 设置<p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。</p>
+                     * @param _logoParam <p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。</p>
                      * 
                      */
                     void SetLogoParam(const LogoParam& _logoParam);
@@ -197,31 +170,15 @@ namespace TencentCloud
                     bool LogoParamHasBeenSet() const;
 
                     /**
-                     * 获取是否开启prompt改写，为空时默认开启，改写预计会增加20s左右耗时。
-0：关闭改写
-1：开启改写
-建议默认开启，如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：[改写](https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE)
-示例值：1
-                     * @return Revise 是否开启prompt改写，为空时默认开启，改写预计会增加20s左右耗时。
-0：关闭改写
-1：开启改写
-建议默认开启，如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：[改写](https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE)
-示例值：1
+                     * 获取<p>是否开启prompt改写，为空时默认开启，改写预计会增加20s左右耗时。<br>0：关闭改写<br>1：开启改写<br>建议默认开启，如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：<a href="https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE">改写</a><br>示例值：1</p>
+                     * @return Revise <p>是否开启prompt改写，为空时默认开启，改写预计会增加20s左右耗时。<br>0：关闭改写<br>1：开启改写<br>建议默认开启，如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：<a href="https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE">改写</a><br>示例值：1</p>
                      * 
                      */
                     int64_t GetRevise() const;
 
                     /**
-                     * 设置是否开启prompt改写，为空时默认开启，改写预计会增加20s左右耗时。
-0：关闭改写
-1：开启改写
-建议默认开启，如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：[改写](https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE)
-示例值：1
-                     * @param _revise 是否开启prompt改写，为空时默认开启，改写预计会增加20s左右耗时。
-0：关闭改写
-1：开启改写
-建议默认开启，如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：[改写](https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE)
-示例值：1
+                     * 设置<p>是否开启prompt改写，为空时默认开启，改写预计会增加20s左右耗时。<br>0：关闭改写<br>1：开启改写<br>建议默认开启，如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：<a href="https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE">改写</a><br>示例值：1</p>
+                     * @param _revise <p>是否开启prompt改写，为空时默认开启，改写预计会增加20s左右耗时。<br>0：关闭改写<br>1：开启改写<br>建议默认开启，如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：<a href="https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE">改写</a><br>示例值：1</p>
                      * 
                      */
                     void SetRevise(const int64_t& _revise);
@@ -236,53 +193,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文本描述。 
-算法将根据输入的文本智能生成与之相关的图像。 
-不能为空，推荐使用中文。最多可传1024个 utf-8 字符。
+                     * <p>文本描述。<br>算法将根据输入的文本智能生成与之相关的图像。<br>不能为空，推荐使用中文。最多可传1024个 utf-8 字符。</p>
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
 
                     /**
-                     * 生成图分辨率，默认1024:1024：
- - 宽高维度均在 [512, 2048] 像素范围内;
- - 宽高乘积（即图像面积）不超过 1024×1024 像素;
+                     * <p>垫图url列表，大小不超过10MB，支持 jpg jpeg png webp格式，最多3张图</p>
+                     */
+                    std::vector<std::string> m_images;
+                    bool m_imagesHasBeenSet;
+
+                    /**
+                     * <p>生成图分辨率，默认1024:1024：</p><ul><li>宽高维度均在 [512, 2048] 像素范围内;</li><li>宽高乘积（即图像面积）不超过 1024×1024 像素;</li></ul>
                      */
                     std::string m_resolution;
                     bool m_resolutionHasBeenSet;
 
                     /**
-                     * 随机种子，默认随机。
-不传：随机种子生成。
-正数：固定种子生成。
-扩写开启时固定种子不生效，将保持随机。
+                     * <p>随机种子，默认随机。<br>不传：随机种子生成。<br>正数：固定种子生成。<br>扩写开启时固定种子不生效，将保持随机。</p>
                      */
                     int64_t m_seed;
                     bool m_seedHasBeenSet;
 
                     /**
-                     * 为生成结果图添加显式水印标识的开关，默认为1。  
-1：添加。  
-0：不添加。  
-其他数值：默认按1处理。  
-建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。
+                     * <p>为生成结果图添加显式水印标识的开关，默认为1。<br>1：添加。<br>0：不添加。<br>其他数值：默认按1处理。<br>建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。</p>
                      */
                     int64_t m_logoAdd;
                     bool m_logoAddHasBeenSet;
 
                     /**
-                     * 标识内容设置。
-默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * <p>标识内容设置。<br>默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。</p>
                      */
                     LogoParam m_logoParam;
                     bool m_logoParamHasBeenSet;
 
                     /**
-                     * 是否开启prompt改写，为空时默认开启，改写预计会增加20s左右耗时。
-0：关闭改写
-1：开启改写
-建议默认开启，如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：[改写](https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE)
-示例值：1
+                     * <p>是否开启prompt改写，为空时默认开启，改写预计会增加20s左右耗时。<br>0：关闭改写<br>1：开启改写<br>建议默认开启，如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：<a href="https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE">改写</a><br>示例值：1</p>
                      */
                     int64_t m_revise;
                     bool m_reviseHasBeenSet;

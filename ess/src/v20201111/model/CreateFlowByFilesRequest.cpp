@@ -25,8 +25,8 @@ using namespace std;
 CreateFlowByFilesRequest::CreateFlowByFilesRequest() :
     m_operatorHasBeenSet(false),
     m_flowNameHasBeenSet(false),
-    m_approversHasBeenSet(false),
     m_fileIdsHasBeenSet(false),
+    m_approversHasBeenSet(false),
     m_flowDescriptionHasBeenSet(false),
     m_flowTypeHasBeenSet(false),
     m_componentsHasBeenSet(false),
@@ -73,6 +73,19 @@ string CreateFlowByFilesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_flowName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_fileIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_fileIds.begin(); itr != m_fileIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_approversHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -85,19 +98,6 @@ string CreateFlowByFilesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_fileIdsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FileIds";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_fileIds.begin(); itr != m_fileIds.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -308,22 +308,6 @@ bool CreateFlowByFilesRequest::FlowNameHasBeenSet() const
     return m_flowNameHasBeenSet;
 }
 
-vector<ApproverInfo> CreateFlowByFilesRequest::GetApprovers() const
-{
-    return m_approvers;
-}
-
-void CreateFlowByFilesRequest::SetApprovers(const vector<ApproverInfo>& _approvers)
-{
-    m_approvers = _approvers;
-    m_approversHasBeenSet = true;
-}
-
-bool CreateFlowByFilesRequest::ApproversHasBeenSet() const
-{
-    return m_approversHasBeenSet;
-}
-
 vector<string> CreateFlowByFilesRequest::GetFileIds() const
 {
     return m_fileIds;
@@ -338,6 +322,22 @@ void CreateFlowByFilesRequest::SetFileIds(const vector<string>& _fileIds)
 bool CreateFlowByFilesRequest::FileIdsHasBeenSet() const
 {
     return m_fileIdsHasBeenSet;
+}
+
+vector<ApproverInfo> CreateFlowByFilesRequest::GetApprovers() const
+{
+    return m_approvers;
+}
+
+void CreateFlowByFilesRequest::SetApprovers(const vector<ApproverInfo>& _approvers)
+{
+    m_approvers = _approvers;
+    m_approversHasBeenSet = true;
+}
+
+bool CreateFlowByFilesRequest::ApproversHasBeenSet() const
+{
+    return m_approversHasBeenSet;
 }
 
 string CreateFlowByFilesRequest::GetFlowDescription() const

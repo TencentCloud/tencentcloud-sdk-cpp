@@ -7540,6 +7540,56 @@ MpsClient::StopStreamLinkFlowOutcomeCallable MpsClient::StopStreamLinkFlowCallab
     return prom->get_future();
 }
 
+MpsClient::SyncDubbingOutcome MpsClient::SyncDubbing(const SyncDubbingRequest &request)
+{
+    auto outcome = MakeRequest(request, "SyncDubbing");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SyncDubbingResponse rsp = SyncDubbingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SyncDubbingOutcome(rsp);
+        else
+            return SyncDubbingOutcome(o.GetError());
+    }
+    else
+    {
+        return SyncDubbingOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::SyncDubbingAsync(const SyncDubbingRequest& request, const SyncDubbingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SyncDubbingRequest&;
+    using Resp = SyncDubbingResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SyncDubbing", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::SyncDubbingOutcomeCallable MpsClient::SyncDubbingCallable(const SyncDubbingRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SyncDubbingOutcome>>();
+    SyncDubbingAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const SyncDubbingRequest&,
+        SyncDubbingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::TextTranslationOutcome MpsClient::TextTranslation(const TextTranslationRequest &request)
 {
     auto outcome = MakeRequest(request, "TextTranslation");

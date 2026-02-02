@@ -383,6 +383,31 @@ namespace TencentCloud
                      */
                     bool FrameInterpolateHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启图标水印。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+目前支持的模型有 Vidu，其他模型暂不支持。
+                     * @return LogoAdd 是否开启图标水印。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+目前支持的模型有 Vidu，其他模型暂不支持。
+                     * 
+                     */
+                    std::string GetLogoAdd() const;
+
+                    /**
+                     * 设置是否开启图标水印。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+目前支持的模型有 Vidu，其他模型暂不支持。
+                     * @param _logoAdd 是否开启图标水印。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+目前支持的模型有 Vidu，其他模型暂不支持。
+                     * 
+                     */
+                    void SetLogoAdd(const std::string& _logoAdd);
+
+                    /**
+                     * 判断参数 LogoAdd 是否已赋值
+                     * @return LogoAdd 是否已赋值
+                     * 
+                     */
+                    bool LogoAddHasBeenSet() const;
+
                 private:
 
                     /**
@@ -478,6 +503,13 @@ namespace TencentCloud
                      */
                     std::string m_frameInterpolate;
                     bool m_frameInterpolateHasBeenSet;
+
+                    /**
+                     * 是否开启图标水印。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+目前支持的模型有 Vidu，其他模型暂不支持。
+                     */
+                    std::string m_logoAdd;
+                    bool m_logoAddHasBeenSet;
 
                 };
             }

@@ -52,6 +52,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/AdaptiveFrequencyControl.h
   include/tencentcloud/teo/v20220901/model/SlowPostConfig.h
   include/tencentcloud/teo/v20220901/model/DescribeWebSecurityTemplatesRequest.h
+  include/tencentcloud/teo/v20220901/model/SecurityAction.h
   include/tencentcloud/teo/v20220901/model/IPReputation.h
   include/tencentcloud/teo/v20220901/model/CreateSecurityAPIServiceRequest.h
   include/tencentcloud/teo/v20220901/model/RateLimitingRules.h
@@ -165,7 +166,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DownloadL4LogsRequest.h
   include/tencentcloud/teo/v20220901/model/ZoneInfo.h
   include/tencentcloud/teo/v20220901/model/StatusCodeCacheParam.h
-  include/tencentcloud/teo/v20220901/model/SecurityAction.h
+  include/tencentcloud/teo/v20220901/model/CAPTCHAPageChallenge.h
   include/tencentcloud/teo/v20220901/model/ModifyZoneSettingRequest.h
   include/tencentcloud/teo/v20220901/model/DetectLengthLimitRule.h
   include/tencentcloud/teo/v20220901/model/OriginGroupHealthStatus.h
@@ -665,6 +666,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/StatusCodeCacheParameters.h
   include/tencentcloud/teo/v20220901/model/RewriteAction.h
   include/tencentcloud/teo/v20220901/model/TemplateScope.h
+  include/tencentcloud/teo/v20220901/model/AICrawlerDetection.h
   include/tencentcloud/teo/v20220901/model/ErrorPage.h
   include/tencentcloud/teo/v20220901/model/APIResource.h
   include/tencentcloud/teo/v20220901/model/HTTP2Parameters.h
@@ -684,6 +686,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DeleteSecurityAPIResourceResponse.h
   include/tencentcloud/teo/v20220901/model/BindZoneToPlanRequest.h
   include/tencentcloud/teo/v20220901/model/DeleteFunctionResponse.h
+  include/tencentcloud/teo/v20220901/model/BotManagementLite.h
   include/tencentcloud/teo/v20220901/model/IPWhitelist.h
   include/tencentcloud/teo/v20220901/model/ModifyDDoSProtectionRequest.h
   include/tencentcloud/teo/v20220901/model/ModifyL7AccSettingRequest.h
@@ -814,6 +817,7 @@ set(teo_src
   src/v20220901/model/AdaptiveFrequencyControl.cpp
   src/v20220901/model/SlowPostConfig.cpp
   src/v20220901/model/DescribeWebSecurityTemplatesRequest.cpp
+  src/v20220901/model/SecurityAction.cpp
   src/v20220901/model/IPReputation.cpp
   src/v20220901/model/CreateSecurityAPIServiceRequest.cpp
   src/v20220901/model/RateLimitingRules.cpp
@@ -927,7 +931,7 @@ set(teo_src
   src/v20220901/model/DownloadL4LogsRequest.cpp
   src/v20220901/model/ZoneInfo.cpp
   src/v20220901/model/StatusCodeCacheParam.cpp
-  src/v20220901/model/SecurityAction.cpp
+  src/v20220901/model/CAPTCHAPageChallenge.cpp
   src/v20220901/model/ModifyZoneSettingRequest.cpp
   src/v20220901/model/DetectLengthLimitRule.cpp
   src/v20220901/model/OriginGroupHealthStatus.cpp
@@ -1427,6 +1431,7 @@ set(teo_src
   src/v20220901/model/StatusCodeCacheParameters.cpp
   src/v20220901/model/RewriteAction.cpp
   src/v20220901/model/TemplateScope.cpp
+  src/v20220901/model/AICrawlerDetection.cpp
   src/v20220901/model/ErrorPage.cpp
   src/v20220901/model/APIResource.cpp
   src/v20220901/model/HTTP2Parameters.cpp
@@ -1446,6 +1451,7 @@ set(teo_src
   src/v20220901/model/DeleteSecurityAPIResourceResponse.cpp
   src/v20220901/model/BindZoneToPlanRequest.cpp
   src/v20220901/model/DeleteFunctionResponse.cpp
+  src/v20220901/model/BotManagementLite.cpp
   src/v20220901/model/IPWhitelist.cpp
   src/v20220901/model/ModifyDDoSProtectionRequest.cpp
   src/v20220901/model/ModifyL7AccSettingRequest.cpp

@@ -57,7 +57,8 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_importMediaKnowledgeHasBeenSet(false),
     m_sceneAigcImageTaskHasBeenSet(false),
     m_sceneAigcVideoTaskHasBeenSet(false),
-    m_processImageAsyncTaskHasBeenSet(false)
+    m_processImageAsyncTaskHasBeenSet(false),
+    m_extractBlindWatermarkTaskHasBeenSet(false)
 {
 }
 
@@ -638,6 +639,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_processImageAsyncTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExtractBlindWatermarkTask") && !rsp["ExtractBlindWatermarkTask"].IsNull())
+    {
+        if (!rsp["ExtractBlindWatermarkTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtractBlindWatermarkTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extractBlindWatermarkTask.Deserialize(rsp["ExtractBlindWatermarkTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extractBlindWatermarkTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -947,6 +965,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_processImageAsyncTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_extractBlindWatermarkTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtractBlindWatermarkTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extractBlindWatermarkTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1299,6 +1326,16 @@ ProcessImageAsync DescribeTaskDetailResponse::GetProcessImageAsyncTask() const
 bool DescribeTaskDetailResponse::ProcessImageAsyncTaskHasBeenSet() const
 {
     return m_processImageAsyncTaskHasBeenSet;
+}
+
+ExtractBlindWatermarkTask DescribeTaskDetailResponse::GetExtractBlindWatermarkTask() const
+{
+    return m_extractBlindWatermarkTask;
+}
+
+bool DescribeTaskDetailResponse::ExtractBlindWatermarkTaskHasBeenSet() const
+{
+    return m_extractBlindWatermarkTaskHasBeenSet;
 }
 
 

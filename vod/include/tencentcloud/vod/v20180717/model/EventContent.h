@@ -54,6 +54,9 @@
 #include <tencentcloud/vod/v20180717/model/ProcessMediaByMPS.h>
 #include <tencentcloud/vod/v20180717/model/AigcImageTask.h>
 #include <tencentcloud/vod/v20180717/model/AigcVideoTask.h>
+#include <tencentcloud/vod/v20180717/model/ExtractBlindWatermarkTask.h>
+#include <tencentcloud/vod/v20180717/model/SceneAigcImageTask.h>
+#include <tencentcloud/vod/v20180717/model/ProcessImageAsyncTask.h>
 
 
 namespace TencentCloud
@@ -968,6 +971,69 @@ namespace TencentCloud
                      */
                     bool AigcVideoCompleteEventHasBeenSet() const;
 
+                    /**
+                     * 获取提取数字水印信息，仅当 EventType 为 ExtractBlindWatermarkComplete 时有效。
+                     * @return ExtractBlindWatermarkComplete 提取数字水印信息，仅当 EventType 为 ExtractBlindWatermarkComplete 时有效。
+                     * 
+                     */
+                    ExtractBlindWatermarkTask GetExtractBlindWatermarkComplete() const;
+
+                    /**
+                     * 设置提取数字水印信息，仅当 EventType 为 ExtractBlindWatermarkComplete 时有效。
+                     * @param _extractBlindWatermarkComplete 提取数字水印信息，仅当 EventType 为 ExtractBlindWatermarkComplete 时有效。
+                     * 
+                     */
+                    void SetExtractBlindWatermarkComplete(const ExtractBlindWatermarkTask& _extractBlindWatermarkComplete);
+
+                    /**
+                     * 判断参数 ExtractBlindWatermarkComplete 是否已赋值
+                     * @return ExtractBlindWatermarkComplete 是否已赋值
+                     * 
+                     */
+                    bool ExtractBlindWatermarkCompleteHasBeenSet() const;
+
+                    /**
+                     * 获取AIGC 场景化生图任务信息，仅当 EventType 为 SceneAigcImageCompleteEvent 时有效。
+                     * @return SceneAigcImageCompleteEvent AIGC 场景化生图任务信息，仅当 EventType 为 SceneAigcImageCompleteEvent 时有效。
+                     * 
+                     */
+                    SceneAigcImageTask GetSceneAigcImageCompleteEvent() const;
+
+                    /**
+                     * 设置AIGC 场景化生图任务信息，仅当 EventType 为 SceneAigcImageCompleteEvent 时有效。
+                     * @param _sceneAigcImageCompleteEvent AIGC 场景化生图任务信息，仅当 EventType 为 SceneAigcImageCompleteEvent 时有效。
+                     * 
+                     */
+                    void SetSceneAigcImageCompleteEvent(const SceneAigcImageTask& _sceneAigcImageCompleteEvent);
+
+                    /**
+                     * 判断参数 SceneAigcImageCompleteEvent 是否已赋值
+                     * @return SceneAigcImageCompleteEvent 是否已赋值
+                     * 
+                     */
+                    bool SceneAigcImageCompleteEventHasBeenSet() const;
+
+                    /**
+                     * 获取图片异步处理任务信息，仅当 EventType 为 ProcessImageAsyncCompleteEvent 时有效。
+                     * @return ProcessImageAsyncCompleteEvent 图片异步处理任务信息，仅当 EventType 为 ProcessImageAsyncCompleteEvent 时有效。
+                     * 
+                     */
+                    ProcessImageAsyncTask GetProcessImageAsyncCompleteEvent() const;
+
+                    /**
+                     * 设置图片异步处理任务信息，仅当 EventType 为 ProcessImageAsyncCompleteEvent 时有效。
+                     * @param _processImageAsyncCompleteEvent 图片异步处理任务信息，仅当 EventType 为 ProcessImageAsyncCompleteEvent 时有效。
+                     * 
+                     */
+                    void SetProcessImageAsyncCompleteEvent(const ProcessImageAsyncTask& _processImageAsyncCompleteEvent);
+
+                    /**
+                     * 判断参数 ProcessImageAsyncCompleteEvent 是否已赋值
+                     * @return ProcessImageAsyncCompleteEvent 是否已赋值
+                     * 
+                     */
+                    bool ProcessImageAsyncCompleteEventHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1216,6 +1282,24 @@ namespace TencentCloud
                      */
                     AigcVideoTask m_aigcVideoCompleteEvent;
                     bool m_aigcVideoCompleteEventHasBeenSet;
+
+                    /**
+                     * 提取数字水印信息，仅当 EventType 为 ExtractBlindWatermarkComplete 时有效。
+                     */
+                    ExtractBlindWatermarkTask m_extractBlindWatermarkComplete;
+                    bool m_extractBlindWatermarkCompleteHasBeenSet;
+
+                    /**
+                     * AIGC 场景化生图任务信息，仅当 EventType 为 SceneAigcImageCompleteEvent 时有效。
+                     */
+                    SceneAigcImageTask m_sceneAigcImageCompleteEvent;
+                    bool m_sceneAigcImageCompleteEventHasBeenSet;
+
+                    /**
+                     * 图片异步处理任务信息，仅当 EventType 为 ProcessImageAsyncCompleteEvent 时有效。
+                     */
+                    ProcessImageAsyncTask m_processImageAsyncCompleteEvent;
+                    bool m_processImageAsyncCompleteEventHasBeenSet;
 
                 };
             }

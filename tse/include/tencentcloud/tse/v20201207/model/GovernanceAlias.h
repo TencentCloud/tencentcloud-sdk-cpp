@@ -238,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取元数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Metadatas 元数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Metadata> GetMetadatas() const;
 
                     /**
                      * 设置元数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metadatas 元数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetadatas(const std::vector<Metadata>& _metadatas);
@@ -319,7 +315,6 @@ namespace TencentCloud
 
                     /**
                      * 元数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Metadata> m_metadatas;
                     bool m_metadatasHasBeenSet;

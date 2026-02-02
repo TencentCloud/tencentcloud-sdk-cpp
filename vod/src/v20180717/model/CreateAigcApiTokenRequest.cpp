@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/hunyuan/v20230901/model/Describe3DSmartTopologyJobRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcApiTokenRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Hunyuan::V20230901::Model;
+using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
-Describe3DSmartTopologyJobRequest::Describe3DSmartTopologyJobRequest() :
-    m_jobIdHasBeenSet(false)
+CreateAigcApiTokenRequest::CreateAigcApiTokenRequest() :
+    m_subAppIdHasBeenSet(false)
 {
 }
 
-string Describe3DSmartTopologyJobRequest::ToJsonString() const
+string CreateAigcApiTokenRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_jobIdHasBeenSet)
+    if (m_subAppIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "JobId";
+        string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -50,20 +50,20 @@ string Describe3DSmartTopologyJobRequest::ToJsonString() const
 }
 
 
-string Describe3DSmartTopologyJobRequest::GetJobId() const
+uint64_t CreateAigcApiTokenRequest::GetSubAppId() const
 {
-    return m_jobId;
+    return m_subAppId;
 }
 
-void Describe3DSmartTopologyJobRequest::SetJobId(const string& _jobId)
+void CreateAigcApiTokenRequest::SetSubAppId(const uint64_t& _subAppId)
 {
-    m_jobId = _jobId;
-    m_jobIdHasBeenSet = true;
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
 }
 
-bool Describe3DSmartTopologyJobRequest::JobIdHasBeenSet() const
+bool CreateAigcApiTokenRequest::SubAppIdHasBeenSet() const
 {
-    return m_jobIdHasBeenSet;
+    return m_subAppIdHasBeenSet;
 }
 
 

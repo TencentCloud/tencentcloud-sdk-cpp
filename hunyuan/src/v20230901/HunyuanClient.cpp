@@ -240,56 +240,6 @@ HunyuanClient::CreateThreadOutcomeCallable HunyuanClient::CreateThreadCallable(c
     return prom->get_future();
 }
 
-HunyuanClient::Describe3DSmartTopologyJobOutcome HunyuanClient::Describe3DSmartTopologyJob(const Describe3DSmartTopologyJobRequest &request)
-{
-    auto outcome = MakeRequest(request, "Describe3DSmartTopologyJob");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        Describe3DSmartTopologyJobResponse rsp = Describe3DSmartTopologyJobResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return Describe3DSmartTopologyJobOutcome(rsp);
-        else
-            return Describe3DSmartTopologyJobOutcome(o.GetError());
-    }
-    else
-    {
-        return Describe3DSmartTopologyJobOutcome(outcome.GetError());
-    }
-}
-
-void HunyuanClient::Describe3DSmartTopologyJobAsync(const Describe3DSmartTopologyJobRequest& request, const Describe3DSmartTopologyJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const Describe3DSmartTopologyJobRequest&;
-    using Resp = Describe3DSmartTopologyJobResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "Describe3DSmartTopologyJob", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-HunyuanClient::Describe3DSmartTopologyJobOutcomeCallable HunyuanClient::Describe3DSmartTopologyJobCallable(const Describe3DSmartTopologyJobRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<Describe3DSmartTopologyJobOutcome>>();
-    Describe3DSmartTopologyJobAsync(
-    request,
-    [prom](
-        const HunyuanClient*,
-        const Describe3DSmartTopologyJobRequest&,
-        Describe3DSmartTopologyJobOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 HunyuanClient::FilesDeletionsOutcome HunyuanClient::FilesDeletions(const FilesDeletionsRequest &request)
 {
     auto outcome = MakeRequest(request, "FilesDeletions");
@@ -982,56 +932,6 @@ HunyuanClient::SetPayModeOutcomeCallable HunyuanClient::SetPayModeCallable(const
         const HunyuanClient*,
         const SetPayModeRequest&,
         SetPayModeOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-HunyuanClient::Submit3DSmartTopologyJobOutcome HunyuanClient::Submit3DSmartTopologyJob(const Submit3DSmartTopologyJobRequest &request)
-{
-    auto outcome = MakeRequest(request, "Submit3DSmartTopologyJob");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        Submit3DSmartTopologyJobResponse rsp = Submit3DSmartTopologyJobResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return Submit3DSmartTopologyJobOutcome(rsp);
-        else
-            return Submit3DSmartTopologyJobOutcome(o.GetError());
-    }
-    else
-    {
-        return Submit3DSmartTopologyJobOutcome(outcome.GetError());
-    }
-}
-
-void HunyuanClient::Submit3DSmartTopologyJobAsync(const Submit3DSmartTopologyJobRequest& request, const Submit3DSmartTopologyJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const Submit3DSmartTopologyJobRequest&;
-    using Resp = Submit3DSmartTopologyJobResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "Submit3DSmartTopologyJob", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-HunyuanClient::Submit3DSmartTopologyJobOutcomeCallable HunyuanClient::Submit3DSmartTopologyJobCallable(const Submit3DSmartTopologyJobRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<Submit3DSmartTopologyJobOutcome>>();
-    Submit3DSmartTopologyJobAsync(
-    request,
-    [prom](
-        const HunyuanClient*,
-        const Submit3DSmartTopologyJobRequest&,
-        Submit3DSmartTopologyJobOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

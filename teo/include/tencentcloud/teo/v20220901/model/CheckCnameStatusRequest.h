@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取加速域名列表。
-                     * @return RecordNames 加速域名列表。
+                     * 获取需要检测 CNAME 配置状态的域名列表，可以为：<li>加速域名;</li><li>别称域名。</li>
+                     * @return RecordNames 需要检测 CNAME 配置状态的域名列表，可以为：<li>加速域名;</li><li>别称域名。</li>
                      * 
                      */
                     std::vector<std::string> GetRecordNames() const;
 
                     /**
-                     * 设置加速域名列表。
-                     * @param _recordNames 加速域名列表。
+                     * 设置需要检测 CNAME 配置状态的域名列表，可以为：<li>加速域名;</li><li>别称域名。</li>
+                     * @param _recordNames 需要检测 CNAME 配置状态的域名列表，可以为：<li>加速域名;</li><li>别称域名。</li>
                      * 
                      */
                     void SetRecordNames(const std::vector<std::string>& _recordNames);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 加速域名列表。
+                     * 需要检测 CNAME 配置状态的域名列表，可以为：<li>加速域名;</li><li>别称域名。</li>
                      */
                     std::vector<std::string> m_recordNames;
                     bool m_recordNamesHasBeenSet;

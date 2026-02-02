@@ -31,8 +31,6 @@
 #include <tencentcloud/hunyuan/v20230901/model/ChatTranslationsResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/CreateThreadRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/CreateThreadResponse.h>
-#include <tencentcloud/hunyuan/v20230901/model/Describe3DSmartTopologyJobRequest.h>
-#include <tencentcloud/hunyuan/v20230901/model/Describe3DSmartTopologyJobResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/FilesDeletionsRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/FilesDeletionsResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/FilesListRequest.h>
@@ -61,8 +59,6 @@
 #include <tencentcloud/hunyuan/v20230901/model/RunThreadResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/SetPayModeRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/SetPayModeResponse.h>
-#include <tencentcloud/hunyuan/v20230901/model/Submit3DSmartTopologyJobRequest.h>
-#include <tencentcloud/hunyuan/v20230901/model/Submit3DSmartTopologyJobResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageChatJobRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageChatJobResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageJobRequest.h>
@@ -95,9 +91,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateThreadResponse> CreateThreadOutcome;
                 typedef std::future<CreateThreadOutcome> CreateThreadOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::CreateThreadRequest&, CreateThreadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateThreadAsyncHandler;
-                typedef Outcome<Core::Error, Model::Describe3DSmartTopologyJobResponse> Describe3DSmartTopologyJobOutcome;
-                typedef std::future<Describe3DSmartTopologyJobOutcome> Describe3DSmartTopologyJobOutcomeCallable;
-                typedef std::function<void(const HunyuanClient*, const Model::Describe3DSmartTopologyJobRequest&, Describe3DSmartTopologyJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> Describe3DSmartTopologyJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::FilesDeletionsResponse> FilesDeletionsOutcome;
                 typedef std::future<FilesDeletionsOutcome> FilesDeletionsOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::FilesDeletionsRequest&, FilesDeletionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FilesDeletionsAsyncHandler;
@@ -140,9 +133,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetPayModeResponse> SetPayModeOutcome;
                 typedef std::future<SetPayModeOutcome> SetPayModeOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::SetPayModeRequest&, SetPayModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetPayModeAsyncHandler;
-                typedef Outcome<Core::Error, Model::Submit3DSmartTopologyJobResponse> Submit3DSmartTopologyJobOutcome;
-                typedef std::future<Submit3DSmartTopologyJobOutcome> Submit3DSmartTopologyJobOutcomeCallable;
-                typedef std::function<void(const HunyuanClient*, const Model::Submit3DSmartTopologyJobRequest&, Submit3DSmartTopologyJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> Submit3DSmartTopologyJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitHunyuanImageChatJobResponse> SubmitHunyuanImageChatJobOutcome;
                 typedef std::future<SubmitHunyuanImageChatJobOutcome> SubmitHunyuanImageChatJobOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::SubmitHunyuanImageChatJobRequest&, SubmitHunyuanImageChatJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitHunyuanImageChatJobAsyncHandler;
@@ -207,16 +197,6 @@ namespace TencentCloud
                 CreateThreadOutcome CreateThread(const Model::CreateThreadRequest &request);
                 void CreateThreadAsync(const Model::CreateThreadRequest& request, const CreateThreadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateThreadOutcomeCallable CreateThreadCallable(const Model::CreateThreadRequest& request);
-
-                /**
-                 *混元生3D接口，采用 Polygon 1.5模型，输入3D 高模后，可生成布线规整，较低面数的3D 模型。
-默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。
-                 * @param req Describe3DSmartTopologyJobRequest
-                 * @return Describe3DSmartTopologyJobOutcome
-                 */
-                Describe3DSmartTopologyJobOutcome Describe3DSmartTopologyJob(const Model::Describe3DSmartTopologyJobRequest &request);
-                void Describe3DSmartTopologyJobAsync(const Model::Describe3DSmartTopologyJobRequest& request, const Describe3DSmartTopologyJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                Describe3DSmartTopologyJobOutcomeCallable Describe3DSmartTopologyJobCallable(const Model::Describe3DSmartTopologyJobRequest& request);
 
                 /**
                  *删除文件。
@@ -384,16 +364,6 @@ namespace TencentCloud
                 SetPayModeOutcome SetPayMode(const Model::SetPayModeRequest &request);
                 void SetPayModeAsync(const Model::SetPayModeRequest& request, const SetPayModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetPayModeOutcomeCallable SetPayModeCallable(const Model::SetPayModeRequest& request);
-
-                /**
-                 *混元生3D接口，采用 Polygon 1.5模型，输入3D 高模后，可生成布线规整，较低面数的3D 模型。
-默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。
-                 * @param req Submit3DSmartTopologyJobRequest
-                 * @return Submit3DSmartTopologyJobOutcome
-                 */
-                Submit3DSmartTopologyJobOutcome Submit3DSmartTopologyJob(const Model::Submit3DSmartTopologyJobRequest &request);
-                void Submit3DSmartTopologyJobAsync(const Model::Submit3DSmartTopologyJobRequest& request, const Submit3DSmartTopologyJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                Submit3DSmartTopologyJobOutcomeCallable Submit3DSmartTopologyJobCallable(const Model::Submit3DSmartTopologyJobRequest& request);
 
                 /**
                  *混元生图（多轮对话）接口基于混元大模型，将根据输入的文本描述生成图像，支持通过多轮对话的方式不断调整图像内容。分为提交任务和查询任务2个接口。

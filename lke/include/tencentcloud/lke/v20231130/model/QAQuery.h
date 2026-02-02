@@ -47,22 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取页码
+                     * 获取页码 从1开始
 
-
-                     * @return PageNumber 页码
-
+                     * @return PageNumber 页码 从1开始
 
                      * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
-                     * 设置页码
+                     * 设置页码 从1开始
 
-
-                     * @param _pageNumber 页码
-
+                     * @param _pageNumber 页码 从1开始
 
                      * 
                      */
@@ -76,18 +72,18 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取每页数量
+                     * 获取页大小 默认15 最大100
 
-                     * @return PageSize 每页数量
+                     * @return PageSize 页大小 默认15 最大100
 
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置每页数量
+                     * 设置页大小 默认15 最大100
 
-                     * @param _pageSize 每页数量
+                     * @param _pageSize 页大小 默认15 最大100
 
                      * 
                      */
@@ -172,18 +168,18 @@ namespace TencentCloud
                     bool CateBizIdHasBeenSet() const;
 
                     /**
-                     * 获取校验状态
+                     * 获取校验状态的枚举值
 
-                     * @return AcceptStatus 校验状态
+                     * @return AcceptStatus 校验状态的枚举值
 
                      * 
                      */
                     std::vector<uint64_t> GetAcceptStatus() const;
 
                     /**
-                     * 设置校验状态
+                     * 设置校验状态的枚举值
 
-                     * @param _acceptStatus 校验状态
+                     * @param _acceptStatus 校验状态的枚举值
 
                      * 
                      */
@@ -197,18 +193,18 @@ namespace TencentCloud
                     bool AcceptStatusHasBeenSet() const;
 
                     /**
-                     * 获取发布状态
+                     * 获取发布状态的枚举值
 
-                     * @return ReleaseStatus 发布状态
+                     * @return ReleaseStatus 发布状态的枚举值
 
                      * 
                      */
                     std::vector<uint64_t> GetReleaseStatus() const;
 
                     /**
-                     * 设置发布状态
+                     * 设置发布状态的枚举值
 
-                     * @param _releaseStatus 发布状态
+                     * @param _releaseStatus 发布状态的枚举值
 
                      * 
                      */
@@ -342,18 +338,42 @@ namespace TencentCloud
                      */
                     bool QueryTypeHasBeenSet() const;
 
+                    /**
+                     * 获取问答生效域检索，不检索不传。枚举值如下：
+1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。
+                     * @return EnableScope 问答生效域检索，不检索不传。枚举值如下：
+1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。
+                     * 
+                     */
+                    int64_t GetEnableScope() const;
+
+                    /**
+                     * 设置问答生效域检索，不检索不传。枚举值如下：
+1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。
+                     * @param _enableScope 问答生效域检索，不检索不传。枚举值如下：
+1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。
+                     * 
+                     */
+                    void SetEnableScope(const int64_t& _enableScope);
+
+                    /**
+                     * 判断参数 EnableScope 是否已赋值
+                     * @return EnableScope 是否已赋值
+                     * 
+                     */
+                    bool EnableScopeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 页码
-
+                     * 页码 从1开始
 
                      */
                     uint64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 每页数量
+                     * 页大小 默认15 最大100
 
                      */
                     uint64_t m_pageSize;
@@ -380,14 +400,14 @@ namespace TencentCloud
                     bool m_cateBizIdHasBeenSet;
 
                     /**
-                     * 校验状态
+                     * 校验状态的枚举值
 
                      */
                     std::vector<uint64_t> m_acceptStatus;
                     bool m_acceptStatusHasBeenSet;
 
                     /**
-                     * 发布状态
+                     * 发布状态的枚举值
 
                      */
                     std::vector<uint64_t> m_releaseStatus;
@@ -426,6 +446,13 @@ namespace TencentCloud
                      */
                     std::string m_queryType;
                     bool m_queryTypeHasBeenSet;
+
+                    /**
+                     * 问答生效域检索，不检索不传。枚举值如下：
+1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。
+                     */
+                    int64_t m_enableScope;
+                    bool m_enableScopeHasBeenSet;
 
                 };
             }
