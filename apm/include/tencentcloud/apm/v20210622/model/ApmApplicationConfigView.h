@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/apm/v20210622/model/Instrument.h>
 #include <tencentcloud/apm/v20210622/model/ApmTag.h>
+#include <tencentcloud/apm/v20210622/model/AutoProfilingConfig.h>
 
 
 namespace TencentCloud
@@ -573,6 +574,27 @@ namespace TencentCloud
                      */
                     bool DesensitizationRuleHasBeenSet() const;
 
+                    /**
+                     * 获取自动性能剖析任务配置
+                     * @return AutoProfilingConfig 自动性能剖析任务配置
+                     * 
+                     */
+                    AutoProfilingConfig GetAutoProfilingConfig() const;
+
+                    /**
+                     * 设置自动性能剖析任务配置
+                     * @param _autoProfilingConfig 自动性能剖析任务配置
+                     * 
+                     */
+                    void SetAutoProfilingConfig(const AutoProfilingConfig& _autoProfilingConfig);
+
+                    /**
+                     * 判断参数 AutoProfilingConfig 是否已赋值
+                     * @return AutoProfilingConfig 是否已赋值
+                     * 
+                     */
+                    bool AutoProfilingConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -724,6 +746,12 @@ namespace TencentCloud
                      */
                     std::string m_desensitizationRule;
                     bool m_desensitizationRuleHasBeenSet;
+
+                    /**
+                     * 自动性能剖析任务配置
+                     */
+                    AutoProfilingConfig m_autoProfilingConfig;
+                    bool m_autoProfilingConfigHasBeenSet;
 
                 };
             }

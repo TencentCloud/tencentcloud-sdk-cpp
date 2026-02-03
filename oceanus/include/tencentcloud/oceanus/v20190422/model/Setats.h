@@ -50,18 +50,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取setats serialId
+                     * 获取<p>setats serialId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SetatsSerialId setats serialId
+                     * @return SetatsSerialId <p>setats serialId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSetatsSerialId() const;
 
                     /**
-                     * 设置setats serialId
+                     * 设置<p>setats serialId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _setatsSerialId setats serialId
+                     * @param _setatsSerialId <p>setats serialId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -75,46 +75,18 @@ namespace TencentCloud
                     bool SetatsSerialIdHasBeenSet() const;
 
                     /**
-                     * 获取1  // 停止
-2  // 运行中
-3  // 初始化中
-4  // 扩容中
-5  // Warehoouse未配置
-6  // Warehoouse配置中
-7  // 重启中
--2 // 已删除(集群被销毁时更新为此状态)
+                     * 获取<p>1  // 停止<br>2  // 运行中<br>3  // 初始化中<br>4  // 扩容中<br>5  // Warehoouse未配置<br>6  // Warehoouse配置中<br>7  // 重启中<br>-2 // 已删除(集群被销毁时更新为此状态)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 1  // 停止
-2  // 运行中
-3  // 初始化中
-4  // 扩容中
-5  // Warehoouse未配置
-6  // Warehoouse配置中
-7  // 重启中
--2 // 已删除(集群被销毁时更新为此状态)
+                     * @return Status <p>1  // 停止<br>2  // 运行中<br>3  // 初始化中<br>4  // 扩容中<br>5  // Warehoouse未配置<br>6  // Warehoouse配置中<br>7  // 重启中<br>-2 // 已删除(集群被销毁时更新为此状态)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置1  // 停止
-2  // 运行中
-3  // 初始化中
-4  // 扩容中
-5  // Warehoouse未配置
-6  // Warehoouse配置中
-7  // 重启中
--2 // 已删除(集群被销毁时更新为此状态)
+                     * 设置<p>1  // 停止<br>2  // 运行中<br>3  // 初始化中<br>4  // 扩容中<br>5  // Warehoouse未配置<br>6  // Warehoouse配置中<br>7  // 重启中<br>-2 // 已删除(集群被销毁时更新为此状态)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 1  // 停止
-2  // 运行中
-3  // 初始化中
-4  // 扩容中
-5  // Warehoouse未配置
-6  // Warehoouse配置中
-7  // 重启中
--2 // 已删除(集群被销毁时更新为此状态)
+                     * @param _status <p>1  // 停止<br>2  // 运行中<br>3  // 初始化中<br>4  // 扩容中<br>5  // Warehoouse未配置<br>6  // Warehoouse配置中<br>7  // 重启中<br>-2 // 已删除(集群被销毁时更新为此状态)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -128,18 +100,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取setats warehouse
+                     * 获取<p>setats warehouse</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Warehouse setats warehouse
+                     * @return Warehouse <p>setats warehouse</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Warehouse GetWarehouse() const;
 
                     /**
-                     * 设置setats warehouse
+                     * 设置<p>setats warehouse</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _warehouse setats warehouse
+                     * @param _warehouse <p>setats warehouse</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -153,18 +125,18 @@ namespace TencentCloud
                     bool WarehouseHasBeenSet() const;
 
                     /**
-                     * 获取setats master 机器规格
+                     * 获取<p>setats master 机器规格</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MasterInfo setats master 机器规格
+                     * @return MasterInfo <p>setats master 机器规格</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SetatsCvmInfo GetMasterInfo() const;
 
                     /**
-                     * 设置setats master 机器规格
+                     * 设置<p>setats master 机器规格</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _masterInfo setats master 机器规格
+                     * @param _masterInfo <p>setats master 机器规格</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -178,18 +150,18 @@ namespace TencentCloud
                     bool MasterInfoHasBeenSet() const;
 
                     /**
-                     * 获取setats worker规格
+                     * 获取<p>setats worker规格</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkerInfo setats worker规格
+                     * @return WorkerInfo <p>setats worker规格</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SetatsCvmInfo GetWorkerInfo() const;
 
                     /**
-                     * 设置setats worker规格
+                     * 设置<p>setats worker规格</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workerInfo setats worker规格
+                     * @param _workerInfo <p>setats worker规格</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -203,18 +175,18 @@ namespace TencentCloud
                     bool WorkerInfoHasBeenSet() const;
 
                     /**
-                     * 获取标签
+                     * 获取<p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 标签
+                     * @return Tags <p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签
+                     * 设置<p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tags 标签
+                     * @param _tags <p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -228,18 +200,18 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取自动续费
+                     * 获取<p>自动续费</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AutoRenewFlag 自动续费
+                     * @return AutoRenewFlag <p>自动续费</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置自动续费
+                     * 设置<p>自动续费</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _autoRenewFlag 自动续费
+                     * @param _autoRenewFlag <p>自动续费</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -253,18 +225,18 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取过期时间
+                     * 获取<p>过期时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExpireTime 过期时间
+                     * @return ExpireTime <p>过期时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置过期时间
+                     * 设置<p>过期时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _expireTime 过期时间
+                     * @param _expireTime <p>过期时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -278,18 +250,18 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取过期时间 秒
+                     * 获取<p>过期时间 秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SecondsUntilExpiry 过期时间 秒
+                     * @return SecondsUntilExpiry <p>过期时间 秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecondsUntilExpiry() const;
 
                     /**
-                     * 设置过期时间 秒
+                     * 设置<p>过期时间 秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _secondsUntilExpiry 过期时间 秒
+                     * @param _secondsUntilExpiry <p>过期时间 秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -303,18 +275,18 @@ namespace TencentCloud
                     bool SecondsUntilExpiryHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间
+                     * @return CreateTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
+                     * 设置<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 创建时间
+                     * @param _createTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -328,18 +300,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取manager url
+                     * 获取<p>manager url</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ManagerUrl manager url
+                     * @return ManagerUrl <p>manager url</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetManagerUrl() const;
 
                     /**
-                     * 设置manager url
+                     * 设置<p>manager url</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _managerUrl manager url
+                     * @param _managerUrl <p>manager url</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -353,18 +325,18 @@ namespace TencentCloud
                     bool ManagerUrlHasBeenSet() const;
 
                     /**
-                     * 获取隔离时间
+                     * 获取<p>隔离时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsolatedTime 隔离时间
+                     * @return IsolatedTime <p>隔离时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsolatedTime() const;
 
                     /**
-                     * 设置隔离时间
+                     * 设置<p>隔离时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isolatedTime 隔离时间
+                     * @param _isolatedTime <p>隔离时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -377,98 +349,199 @@ namespace TencentCloud
                      */
                     bool IsolatedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Setats集群自己的id</p>
+                     * @return OwnerClusterGroupSerialId <p>Setats集群自己的id</p>
+                     * 
+                     */
+                    std::string GetOwnerClusterGroupSerialId() const;
+
+                    /**
+                     * 设置<p>Setats集群自己的id</p>
+                     * @param _ownerClusterGroupSerialId <p>Setats集群自己的id</p>
+                     * 
+                     */
+                    void SetOwnerClusterGroupSerialId(const std::string& _ownerClusterGroupSerialId);
+
+                    /**
+                     * 判断参数 OwnerClusterGroupSerialId 是否已赋值
+                     * @return OwnerClusterGroupSerialId 是否已赋值
+                     * 
+                     */
+                    bool OwnerClusterGroupSerialIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>setats 集群类型</p>
+                     * @return Type <p>setats 集群类型</p>
+                     * 
+                     */
+                    uint64_t GetType() const;
+
+                    /**
+                     * 设置<p>setats 集群类型</p>
+                     * @param _type <p>setats 集群类型</p>
+                     * 
+                     */
+                    void SetType(const uint64_t& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Setats UI url</p>
+                     * @return SetatsUiUrl <p>Setats UI url</p>
+                     * 
+                     */
+                    std::string GetSetatsUiUrl() const;
+
+                    /**
+                     * 设置<p>Setats UI url</p>
+                     * @param _setatsUiUrl <p>Setats UI url</p>
+                     * 
+                     */
+                    void SetSetatsUiUrl(const std::string& _setatsUiUrl);
+
+                    /**
+                     * 判断参数 SetatsUiUrl 是否已赋值
+                     * @return SetatsUiUrl 是否已赋值
+                     * 
+                     */
+                    bool SetatsUiUrlHasBeenSet() const;
+
+                    /**
+                     * 获取<p>setats镜像版本</p>
+                     * @return ImageVersion <p>setats镜像版本</p>
+                     * 
+                     */
+                    std::string GetImageVersion() const;
+
+                    /**
+                     * 设置<p>setats镜像版本</p>
+                     * @param _imageVersion <p>setats镜像版本</p>
+                     * 
+                     */
+                    void SetImageVersion(const std::string& _imageVersion);
+
+                    /**
+                     * 判断参数 ImageVersion 是否已赋值
+                     * @return ImageVersion 是否已赋值
+                     * 
+                     */
+                    bool ImageVersionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * setats serialId
+                     * <p>setats serialId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_setatsSerialId;
                     bool m_setatsSerialIdHasBeenSet;
 
                     /**
-                     * 1  // 停止
-2  // 运行中
-3  // 初始化中
-4  // 扩容中
-5  // Warehoouse未配置
-6  // Warehoouse配置中
-7  // 重启中
--2 // 已删除(集群被销毁时更新为此状态)
+                     * <p>1  // 停止<br>2  // 运行中<br>3  // 初始化中<br>4  // 扩容中<br>5  // Warehoouse未配置<br>6  // Warehoouse配置中<br>7  // 重启中<br>-2 // 已删除(集群被销毁时更新为此状态)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * setats warehouse
+                     * <p>setats warehouse</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Warehouse m_warehouse;
                     bool m_warehouseHasBeenSet;
 
                     /**
-                     * setats master 机器规格
+                     * <p>setats master 机器规格</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SetatsCvmInfo m_masterInfo;
                     bool m_masterInfoHasBeenSet;
 
                     /**
-                     * setats worker规格
+                     * <p>setats worker规格</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SetatsCvmInfo m_workerInfo;
                     bool m_workerInfoHasBeenSet;
 
                     /**
-                     * 标签
+                     * <p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 自动续费
+                     * <p>自动续费</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 过期时间
+                     * <p>过期时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 过期时间 秒
+                     * <p>过期时间 秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secondsUntilExpiry;
                     bool m_secondsUntilExpiryHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * manager url
+                     * <p>manager url</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_managerUrl;
                     bool m_managerUrlHasBeenSet;
 
                     /**
-                     * 隔离时间
+                     * <p>隔离时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isolatedTime;
                     bool m_isolatedTimeHasBeenSet;
+
+                    /**
+                     * <p>Setats集群自己的id</p>
+                     */
+                    std::string m_ownerClusterGroupSerialId;
+                    bool m_ownerClusterGroupSerialIdHasBeenSet;
+
+                    /**
+                     * <p>setats 集群类型</p>
+                     */
+                    uint64_t m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * <p>Setats UI url</p>
+                     */
+                    std::string m_setatsUiUrl;
+                    bool m_setatsUiUrlHasBeenSet;
+
+                    /**
+                     * <p>setats镜像版本</p>
+                     */
+                    std::string m_imageVersion;
+                    bool m_imageVersionHasBeenSet;
 
                 };
             }

@@ -23,6 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tcb/v20180608/model/BindCloudBaseAccessDomainRequest.h>
+#include <tencentcloud/tcb/v20180608/model/BindCloudBaseAccessDomainResponse.h>
+#include <tencentcloud/tcb/v20180608/model/BindCloudBaseGWDomainRequest.h>
+#include <tencentcloud/tcb/v20180608/model/BindCloudBaseGWDomainResponse.h>
 #include <tencentcloud/tcb/v20180608/model/BindEnvGatewayRequest.h>
 #include <tencentcloud/tcb/v20180608/model/BindEnvGatewayResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CheckTcbServiceRequest.h>
@@ -33,6 +37,10 @@
 #include <tencentcloud/tcb/v20180608/model/CreateAndDeployCloudBaseProjectResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateAuthDomainRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateAuthDomainResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreateBillDealRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreateBillDealResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreateCloudBaseGWAPIRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreateCloudBaseGWAPIResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateCloudBaseRunResourceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateCloudBaseRunResourceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateCloudBaseRunServerVersionRequest.h>
@@ -47,6 +55,10 @@
 #include <tencentcloud/tcb/v20180608/model/CreateTableResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateUserRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateUserResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseGWAPIRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseGWAPIResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseGWDomainRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseGWDomainResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseProjectLatestVersionRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseProjectLatestVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseRunServerVersionRequest.h>
@@ -71,6 +83,10 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeCbrServerVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseGWAPIRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseGWAPIResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseGWServiceRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseGWServiceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseProjectLatestVersionListRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseProjectLatestVersionListResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseProjectVersionListRequest.h>
@@ -93,6 +109,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeDatabaseACLResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeDownloadFileRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeDownloadFileResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeEnvAccountCircleRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeEnvAccountCircleResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvDealRegionRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvDealRegionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvFreeQuotaRequest.h>
@@ -121,10 +139,14 @@
 #include <tencentcloud/tcb/v20180608/model/DescribePostpayPackageFreeQuotasResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeQuotaDataRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeQuotaDataResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeSafeRuleRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeSafeRuleResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeSmsQuotasRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeSmsQuotasResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeSpecialCostItemsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeSpecialCostItemsResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeStaticStoreRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeStaticStoreResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeTableRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeTableResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeTablesRequest.h>
@@ -151,6 +173,8 @@
 #include <tencentcloud/tcb/v20180608/model/FreezeCloudBaseRunServersResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ListTablesRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ListTablesResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseGWAPIRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseGWAPIResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerFlowConfRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerFlowConfResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerVersionRequest.h>
@@ -171,6 +195,8 @@
 #include <tencentcloud/tcb/v20180608/model/ReplaceActivityRecordResponse.h>
 #include <tencentcloud/tcb/v20180608/model/RunSqlRequest.h>
 #include <tencentcloud/tcb/v20180608/model/RunSqlResponse.h>
+#include <tencentcloud/tcb/v20180608/model/SearchClsLogRequest.h>
+#include <tencentcloud/tcb/v20180608/model/SearchClsLogResponse.h>
 #include <tencentcloud/tcb/v20180608/model/UnfreezeCloudBaseRunServersRequest.h>
 #include <tencentcloud/tcb/v20180608/model/UnfreezeCloudBaseRunServersResponse.h>
 #include <tencentcloud/tcb/v20180608/model/UpdateTableRequest.h>
@@ -189,6 +215,12 @@ namespace TencentCloud
                 TcbClient(const Credential &credential, const std::string &region);
                 TcbClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::BindCloudBaseAccessDomainResponse> BindCloudBaseAccessDomainOutcome;
+                typedef std::future<BindCloudBaseAccessDomainOutcome> BindCloudBaseAccessDomainOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::BindCloudBaseAccessDomainRequest&, BindCloudBaseAccessDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindCloudBaseAccessDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::BindCloudBaseGWDomainResponse> BindCloudBaseGWDomainOutcome;
+                typedef std::future<BindCloudBaseGWDomainOutcome> BindCloudBaseGWDomainOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::BindCloudBaseGWDomainRequest&, BindCloudBaseGWDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindCloudBaseGWDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindEnvGatewayResponse> BindEnvGatewayOutcome;
                 typedef std::future<BindEnvGatewayOutcome> BindEnvGatewayOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::BindEnvGatewayRequest&, BindEnvGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindEnvGatewayAsyncHandler;
@@ -204,6 +236,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAuthDomainResponse> CreateAuthDomainOutcome;
                 typedef std::future<CreateAuthDomainOutcome> CreateAuthDomainOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateAuthDomainRequest&, CreateAuthDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuthDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBillDealResponse> CreateBillDealOutcome;
+                typedef std::future<CreateBillDealOutcome> CreateBillDealOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreateBillDealRequest&, CreateBillDealOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBillDealAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCloudBaseGWAPIResponse> CreateCloudBaseGWAPIOutcome;
+                typedef std::future<CreateCloudBaseGWAPIOutcome> CreateCloudBaseGWAPIOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreateCloudBaseGWAPIRequest&, CreateCloudBaseGWAPIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudBaseGWAPIAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCloudBaseRunResourceResponse> CreateCloudBaseRunResourceOutcome;
                 typedef std::future<CreateCloudBaseRunResourceOutcome> CreateCloudBaseRunResourceOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateCloudBaseRunResourceRequest&, CreateCloudBaseRunResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudBaseRunResourceAsyncHandler;
@@ -225,6 +263,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateUserResponse> CreateUserOutcome;
                 typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateUserRequest&, CreateUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCloudBaseGWAPIResponse> DeleteCloudBaseGWAPIOutcome;
+                typedef std::future<DeleteCloudBaseGWAPIOutcome> DeleteCloudBaseGWAPIOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DeleteCloudBaseGWAPIRequest&, DeleteCloudBaseGWAPIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudBaseGWAPIAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCloudBaseGWDomainResponse> DeleteCloudBaseGWDomainOutcome;
+                typedef std::future<DeleteCloudBaseGWDomainOutcome> DeleteCloudBaseGWDomainOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DeleteCloudBaseGWDomainRequest&, DeleteCloudBaseGWDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudBaseGWDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCloudBaseProjectLatestVersionResponse> DeleteCloudBaseProjectLatestVersionOutcome;
                 typedef std::future<DeleteCloudBaseProjectLatestVersionOutcome> DeleteCloudBaseProjectLatestVersionOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteCloudBaseProjectLatestVersionRequest&, DeleteCloudBaseProjectLatestVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudBaseProjectLatestVersionAsyncHandler;
@@ -261,6 +305,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudBaseBuildServiceResponse> DescribeCloudBaseBuildServiceOutcome;
                 typedef std::future<DescribeCloudBaseBuildServiceOutcome> DescribeCloudBaseBuildServiceOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseBuildServiceRequest&, DescribeCloudBaseBuildServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseBuildServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudBaseGWAPIResponse> DescribeCloudBaseGWAPIOutcome;
+                typedef std::future<DescribeCloudBaseGWAPIOutcome> DescribeCloudBaseGWAPIOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseGWAPIRequest&, DescribeCloudBaseGWAPIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseGWAPIAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudBaseGWServiceResponse> DescribeCloudBaseGWServiceOutcome;
+                typedef std::future<DescribeCloudBaseGWServiceOutcome> DescribeCloudBaseGWServiceOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseGWServiceRequest&, DescribeCloudBaseGWServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseGWServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudBaseProjectLatestVersionListResponse> DescribeCloudBaseProjectLatestVersionListOutcome;
                 typedef std::future<DescribeCloudBaseProjectLatestVersionListOutcome> DescribeCloudBaseProjectLatestVersionListOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseProjectLatestVersionListRequest&, DescribeCloudBaseProjectLatestVersionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseProjectLatestVersionListAsyncHandler;
@@ -294,6 +344,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDownloadFileResponse> DescribeDownloadFileOutcome;
                 typedef std::future<DescribeDownloadFileOutcome> DescribeDownloadFileOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeDownloadFileRequest&, DescribeDownloadFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDownloadFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEnvAccountCircleResponse> DescribeEnvAccountCircleOutcome;
+                typedef std::future<DescribeEnvAccountCircleOutcome> DescribeEnvAccountCircleOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeEnvAccountCircleRequest&, DescribeEnvAccountCircleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvAccountCircleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEnvDealRegionResponse> DescribeEnvDealRegionOutcome;
                 typedef std::future<DescribeEnvDealRegionOutcome> DescribeEnvDealRegionOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeEnvDealRegionRequest&, DescribeEnvDealRegionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvDealRegionAsyncHandler;
@@ -336,12 +389,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeQuotaDataResponse> DescribeQuotaDataOutcome;
                 typedef std::future<DescribeQuotaDataOutcome> DescribeQuotaDataOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeQuotaDataRequest&, DescribeQuotaDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQuotaDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSafeRuleResponse> DescribeSafeRuleOutcome;
+                typedef std::future<DescribeSafeRuleOutcome> DescribeSafeRuleOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeSafeRuleRequest&, DescribeSafeRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSafeRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSmsQuotasResponse> DescribeSmsQuotasOutcome;
                 typedef std::future<DescribeSmsQuotasOutcome> DescribeSmsQuotasOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeSmsQuotasRequest&, DescribeSmsQuotasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSmsQuotasAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSpecialCostItemsResponse> DescribeSpecialCostItemsOutcome;
                 typedef std::future<DescribeSpecialCostItemsOutcome> DescribeSpecialCostItemsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeSpecialCostItemsRequest&, DescribeSpecialCostItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpecialCostItemsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStaticStoreResponse> DescribeStaticStoreOutcome;
+                typedef std::future<DescribeStaticStoreOutcome> DescribeStaticStoreOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeStaticStoreRequest&, DescribeStaticStoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStaticStoreAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTableResponse> DescribeTableOutcome;
                 typedef std::future<DescribeTableOutcome> DescribeTableOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeTableRequest&, DescribeTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableAsyncHandler;
@@ -381,6 +440,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListTablesResponse> ListTablesOutcome;
                 typedef std::future<ListTablesOutcome> ListTablesOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ListTablesRequest&, ListTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTablesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCloudBaseGWAPIResponse> ModifyCloudBaseGWAPIOutcome;
+                typedef std::future<ModifyCloudBaseGWAPIOutcome> ModifyCloudBaseGWAPIOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ModifyCloudBaseGWAPIRequest&, ModifyCloudBaseGWAPIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudBaseGWAPIAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCloudBaseRunServerFlowConfResponse> ModifyCloudBaseRunServerFlowConfOutcome;
                 typedef std::future<ModifyCloudBaseRunServerFlowConfOutcome> ModifyCloudBaseRunServerFlowConfOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyCloudBaseRunServerFlowConfRequest&, ModifyCloudBaseRunServerFlowConfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudBaseRunServerFlowConfAsyncHandler;
@@ -411,6 +473,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RunSqlResponse> RunSqlOutcome;
                 typedef std::future<RunSqlOutcome> RunSqlOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::RunSqlRequest&, RunSqlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunSqlAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchClsLogResponse> SearchClsLogOutcome;
+                typedef std::future<SearchClsLogOutcome> SearchClsLogOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::SearchClsLogRequest&, SearchClsLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchClsLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnfreezeCloudBaseRunServersResponse> UnfreezeCloudBaseRunServersOutcome;
                 typedef std::future<UnfreezeCloudBaseRunServersOutcome> UnfreezeCloudBaseRunServersOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::UnfreezeCloudBaseRunServersRequest&, UnfreezeCloudBaseRunServersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnfreezeCloudBaseRunServersAsyncHandler;
@@ -419,6 +484,24 @@ namespace TencentCloud
                 typedef std::function<void(const TcbClient*, const Model::UpdateTableRequest&, UpdateTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTableAsyncHandler;
 
 
+
+                /**
+                 *绑定云开发自定义域名，用于云接入和静态托管
+                 * @param req BindCloudBaseAccessDomainRequest
+                 * @return BindCloudBaseAccessDomainOutcome
+                 */
+                BindCloudBaseAccessDomainOutcome BindCloudBaseAccessDomain(const Model::BindCloudBaseAccessDomainRequest &request);
+                void BindCloudBaseAccessDomainAsync(const Model::BindCloudBaseAccessDomainRequest& request, const BindCloudBaseAccessDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindCloudBaseAccessDomainOutcomeCallable BindCloudBaseAccessDomainCallable(const Model::BindCloudBaseAccessDomainRequest& request);
+
+                /**
+                 *绑定自定义域名
+                 * @param req BindCloudBaseGWDomainRequest
+                 * @return BindCloudBaseGWDomainOutcome
+                 */
+                BindCloudBaseGWDomainOutcome BindCloudBaseGWDomain(const Model::BindCloudBaseGWDomainRequest &request);
+                void BindCloudBaseGWDomainAsync(const Model::BindCloudBaseGWDomainRequest& request, const BindCloudBaseGWDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindCloudBaseGWDomainOutcomeCallable BindCloudBaseGWDomainCallable(const Model::BindCloudBaseGWDomainRequest& request);
 
                 /**
                  *绑定另外一个环境下的网关，callContainer请求可以访问到该网关
@@ -464,6 +547,24 @@ namespace TencentCloud
                 CreateAuthDomainOutcome CreateAuthDomain(const Model::CreateAuthDomainRequest &request);
                 void CreateAuthDomainAsync(const Model::CreateAuthDomainRequest& request, const CreateAuthDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAuthDomainOutcomeCallable CreateAuthDomainCallable(const Model::CreateAuthDomainRequest& request);
+
+                /**
+                 *创建云开发产品计费订单
+                 * @param req CreateBillDealRequest
+                 * @return CreateBillDealOutcome
+                 */
+                CreateBillDealOutcome CreateBillDeal(const Model::CreateBillDealRequest &request);
+                void CreateBillDealAsync(const Model::CreateBillDealRequest& request, const CreateBillDealAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBillDealOutcomeCallable CreateBillDealCallable(const Model::CreateBillDealRequest& request);
+
+                /**
+                 *创建云开发网关API
+                 * @param req CreateCloudBaseGWAPIRequest
+                 * @return CreateCloudBaseGWAPIOutcome
+                 */
+                CreateCloudBaseGWAPIOutcome CreateCloudBaseGWAPI(const Model::CreateCloudBaseGWAPIRequest &request);
+                void CreateCloudBaseGWAPIAsync(const Model::CreateCloudBaseGWAPIRequest& request, const CreateCloudBaseGWAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCloudBaseGWAPIOutcomeCallable CreateCloudBaseGWAPICallable(const Model::CreateCloudBaseGWAPIRequest& request);
 
                 /**
                  *开通容器托管的资源，包括集群创建，VPC配置，异步任务创建，镜像托管，Coding等，查看创建结果需要根据DescribeCloudBaseRunResource接口来查看
@@ -527,6 +628,24 @@ namespace TencentCloud
                 CreateUserOutcome CreateUser(const Model::CreateUserRequest &request);
                 void CreateUserAsync(const Model::CreateUserRequest& request, const CreateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request);
+
+                /**
+                 *删除网关API
+                 * @param req DeleteCloudBaseGWAPIRequest
+                 * @return DeleteCloudBaseGWAPIOutcome
+                 */
+                DeleteCloudBaseGWAPIOutcome DeleteCloudBaseGWAPI(const Model::DeleteCloudBaseGWAPIRequest &request);
+                void DeleteCloudBaseGWAPIAsync(const Model::DeleteCloudBaseGWAPIRequest& request, const DeleteCloudBaseGWAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCloudBaseGWAPIOutcomeCallable DeleteCloudBaseGWAPICallable(const Model::DeleteCloudBaseGWAPIRequest& request);
+
+                /**
+                 *删除网关域名
+                 * @param req DeleteCloudBaseGWDomainRequest
+                 * @return DeleteCloudBaseGWDomainOutcome
+                 */
+                DeleteCloudBaseGWDomainOutcome DeleteCloudBaseGWDomain(const Model::DeleteCloudBaseGWDomainRequest &request);
+                void DeleteCloudBaseGWDomainAsync(const Model::DeleteCloudBaseGWDomainRequest& request, const DeleteCloudBaseGWDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCloudBaseGWDomainOutcomeCallable DeleteCloudBaseGWDomainCallable(const Model::DeleteCloudBaseGWDomainRequest& request);
 
                 /**
                  *删除云项目
@@ -637,6 +756,24 @@ namespace TencentCloud
                 DescribeCloudBaseBuildServiceOutcomeCallable DescribeCloudBaseBuildServiceCallable(const Model::DescribeCloudBaseBuildServiceRequest& request);
 
                 /**
+                 *获取网关API列表
+                 * @param req DescribeCloudBaseGWAPIRequest
+                 * @return DescribeCloudBaseGWAPIOutcome
+                 */
+                DescribeCloudBaseGWAPIOutcome DescribeCloudBaseGWAPI(const Model::DescribeCloudBaseGWAPIRequest &request);
+                void DescribeCloudBaseGWAPIAsync(const Model::DescribeCloudBaseGWAPIRequest& request, const DescribeCloudBaseGWAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudBaseGWAPIOutcomeCallable DescribeCloudBaseGWAPICallable(const Model::DescribeCloudBaseGWAPIRequest& request);
+
+                /**
+                 *获取网关服务
+                 * @param req DescribeCloudBaseGWServiceRequest
+                 * @return DescribeCloudBaseGWServiceOutcome
+                 */
+                DescribeCloudBaseGWServiceOutcome DescribeCloudBaseGWService(const Model::DescribeCloudBaseGWServiceRequest &request);
+                void DescribeCloudBaseGWServiceAsync(const Model::DescribeCloudBaseGWServiceRequest& request, const DescribeCloudBaseGWServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudBaseGWServiceOutcomeCallable DescribeCloudBaseGWServiceCallable(const Model::DescribeCloudBaseGWServiceRequest& request);
+
+                /**
                  *获取云开发项目列表
                  * @param req DescribeCloudBaseProjectLatestVersionListRequest
                  * @return DescribeCloudBaseProjectLatestVersionListOutcome
@@ -734,6 +871,15 @@ namespace TencentCloud
                 DescribeDownloadFileOutcome DescribeDownloadFile(const Model::DescribeDownloadFileRequest &request);
                 void DescribeDownloadFileAsync(const Model::DescribeDownloadFileRequest& request, const DescribeDownloadFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDownloadFileOutcomeCallable DescribeDownloadFileCallable(const Model::DescribeDownloadFileRequest& request);
+
+                /**
+                 *查询环境计费周期
+                 * @param req DescribeEnvAccountCircleRequest
+                 * @return DescribeEnvAccountCircleOutcome
+                 */
+                DescribeEnvAccountCircleOutcome DescribeEnvAccountCircle(const Model::DescribeEnvAccountCircleRequest &request);
+                void DescribeEnvAccountCircleAsync(const Model::DescribeEnvAccountCircleRequest& request, const DescribeEnvAccountCircleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEnvAccountCircleOutcomeCallable DescribeEnvAccountCircleCallable(const Model::DescribeEnvAccountCircleRequest& request);
 
                 /**
                  *获取环境下单地域
@@ -863,6 +1009,15 @@ namespace TencentCloud
                 DescribeQuotaDataOutcomeCallable DescribeQuotaDataCallable(const Model::DescribeQuotaDataRequest& request);
 
                 /**
+                 *查询数据库安全规则
+                 * @param req DescribeSafeRuleRequest
+                 * @return DescribeSafeRuleOutcome
+                 */
+                DescribeSafeRuleOutcome DescribeSafeRule(const Model::DescribeSafeRuleRequest &request);
+                void DescribeSafeRuleAsync(const Model::DescribeSafeRuleRequest& request, const DescribeSafeRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSafeRuleOutcomeCallable DescribeSafeRuleCallable(const Model::DescribeSafeRuleRequest& request);
+
+                /**
                  *查询后付费短信资源量
 1 有免费包的返回SmsFreeQuota结构所有字段
 2 没有免费包，有付费包，付费返回复用SmsFreeQuota结构，其中只有 TodayUsedQuota 字段有效
@@ -882,6 +1037,15 @@ namespace TencentCloud
                 DescribeSpecialCostItemsOutcome DescribeSpecialCostItems(const Model::DescribeSpecialCostItemsRequest &request);
                 void DescribeSpecialCostItemsAsync(const Model::DescribeSpecialCostItemsRequest& request, const DescribeSpecialCostItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSpecialCostItemsOutcomeCallable DescribeSpecialCostItemsCallable(const Model::DescribeSpecialCostItemsRequest& request);
+
+                /**
+                 *查看当前环境下静态托管资源信息，根据返回结果判断静态资源的状态
+                 * @param req DescribeStaticStoreRequest
+                 * @return DescribeStaticStoreOutcome
+                 */
+                DescribeStaticStoreOutcome DescribeStaticStore(const Model::DescribeStaticStoreRequest &request);
+                void DescribeStaticStoreAsync(const Model::DescribeStaticStoreRequest& request, const DescribeStaticStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStaticStoreOutcomeCallable DescribeStaticStoreCallable(const Model::DescribeStaticStoreRequest& request);
 
                 /**
                  *查询表的相关信息，包括索引等信息
@@ -1001,6 +1165,15 @@ namespace TencentCloud
                 ListTablesOutcomeCallable ListTablesCallable(const Model::ListTablesRequest& request);
 
                 /**
+                 *修改云开发网关API
+                 * @param req ModifyCloudBaseGWAPIRequest
+                 * @return ModifyCloudBaseGWAPIOutcome
+                 */
+                ModifyCloudBaseGWAPIOutcome ModifyCloudBaseGWAPI(const Model::ModifyCloudBaseGWAPIRequest &request);
+                void ModifyCloudBaseGWAPIAsync(const Model::ModifyCloudBaseGWAPIRequest& request, const ModifyCloudBaseGWAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCloudBaseGWAPIOutcomeCallable ModifyCloudBaseGWAPICallable(const Model::ModifyCloudBaseGWAPIRequest& request);
+
+                /**
                  *修改容器内的版本流量配置
                  * @param req ModifyCloudBaseRunServerFlowConfRequest
                  * @return ModifyCloudBaseRunServerFlowConfOutcome
@@ -1089,6 +1262,15 @@ namespace TencentCloud
                 RunSqlOutcome RunSql(const Model::RunSqlRequest &request);
                 void RunSqlAsync(const Model::RunSqlRequest& request, const RunSqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RunSqlOutcomeCallable RunSqlCallable(const Model::RunSqlRequest& request);
+
+                /**
+                 *搜索CLS日志，TCB角色密钥访问
+                 * @param req SearchClsLogRequest
+                 * @return SearchClsLogOutcome
+                 */
+                SearchClsLogOutcome SearchClsLog(const Model::SearchClsLogRequest &request);
+                void SearchClsLogAsync(const Model::SearchClsLogRequest& request, const SearchClsLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchClsLogOutcomeCallable SearchClsLogCallable(const Model::SearchClsLogRequest& request);
 
                 /**
                  *批量解冻服务

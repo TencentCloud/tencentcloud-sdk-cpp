@@ -45,7 +45,8 @@ ApmApplicationConfigView::ApmApplicationConfigView() :
     m_dbStatementParametersEnabledHasBeenSet(false),
     m_slowSQLThresholdsHasBeenSet(false),
     m_enableDesensitizationRuleHasBeenSet(false),
-    m_desensitizationRuleHasBeenSet(false)
+    m_desensitizationRuleHasBeenSet(false),
+    m_autoProfilingConfigHasBeenSet(false)
 {
 }
 
@@ -324,6 +325,23 @@ CoreInternalOutcome ApmApplicationConfigView::Deserialize(const rapidjson::Value
         m_desensitizationRuleHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoProfilingConfig") && !value["AutoProfilingConfig"].IsNull())
+    {
+        if (!value["AutoProfilingConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmApplicationConfigView.AutoProfilingConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_autoProfilingConfig.Deserialize(value["AutoProfilingConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_autoProfilingConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -543,6 +561,15 @@ void ApmApplicationConfigView::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "DesensitizationRule";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_desensitizationRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoProfilingConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoProfilingConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_autoProfilingConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -946,5 +973,21 @@ void ApmApplicationConfigView::SetDesensitizationRule(const string& _desensitiza
 bool ApmApplicationConfigView::DesensitizationRuleHasBeenSet() const
 {
     return m_desensitizationRuleHasBeenSet;
+}
+
+AutoProfilingConfig ApmApplicationConfigView::GetAutoProfilingConfig() const
+{
+    return m_autoProfilingConfig;
+}
+
+void ApmApplicationConfigView::SetAutoProfilingConfig(const AutoProfilingConfig& _autoProfilingConfig)
+{
+    m_autoProfilingConfig = _autoProfilingConfig;
+    m_autoProfilingConfigHasBeenSet = true;
+}
+
+bool ApmApplicationConfigView::AutoProfilingConfigHasBeenSet() const
+{
+    return m_autoProfilingConfigHasBeenSet;
 }
 

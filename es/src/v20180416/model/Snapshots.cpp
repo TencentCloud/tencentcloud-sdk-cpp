@@ -49,7 +49,8 @@ Snapshots::Snapshots() :
     m_remoteCosRegionHasBeenSet(false),
     m_cosEncryptionHasBeenSet(false),
     m_kmsKeyHasBeenSet(false),
-    m_strategyNameHasBeenSet(false)
+    m_strategyNameHasBeenSet(false),
+    m_multiAzHasBeenSet(false)
 {
 }
 
@@ -364,6 +365,16 @@ CoreInternalOutcome Snapshots::Deserialize(const rapidjson::Value &value)
         m_strategyNameHasBeenSet = true;
     }
 
+    if (value.HasMember("MultiAz") && !value["MultiAz"].IsNull())
+    {
+        if (!value["MultiAz"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshots.MultiAz` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_multiAz = value["MultiAz"].GetUint64();
+        m_multiAzHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -618,6 +629,14 @@ void Snapshots::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "StrategyName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_strategyName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_multiAzHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiAz";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_multiAz, allocator);
     }
 
 }
@@ -1085,5 +1104,21 @@ void Snapshots::SetStrategyName(const string& _strategyName)
 bool Snapshots::StrategyNameHasBeenSet() const
 {
     return m_strategyNameHasBeenSet;
+}
+
+uint64_t Snapshots::GetMultiAz() const
+{
+    return m_multiAz;
+}
+
+void Snapshots::SetMultiAz(const uint64_t& _multiAz)
+{
+    m_multiAz = _multiAz;
+    m_multiAzHasBeenSet = true;
+}
+
+bool Snapshots::MultiAzHasBeenSet() const
+{
+    return m_multiAzHasBeenSet;
 }
 

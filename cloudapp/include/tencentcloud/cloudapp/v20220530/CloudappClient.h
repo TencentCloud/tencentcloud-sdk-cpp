@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cloudapp/v20220530/model/DescribeLicenseRequest.h>
 #include <tencentcloud/cloudapp/v20220530/model/DescribeLicenseResponse.h>
+#include <tencentcloud/cloudapp/v20220530/model/IssueLicenseRequest.h>
+#include <tencentcloud/cloudapp/v20220530/model/IssueLicenseResponse.h>
 #include <tencentcloud/cloudapp/v20220530/model/VerifyLicenseRequest.h>
 #include <tencentcloud/cloudapp/v20220530/model/VerifyLicenseResponse.h>
 
@@ -44,6 +46,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLicenseResponse> DescribeLicenseOutcome;
                 typedef std::future<DescribeLicenseOutcome> DescribeLicenseOutcomeCallable;
                 typedef std::function<void(const CloudappClient*, const Model::DescribeLicenseRequest&, DescribeLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLicenseAsyncHandler;
+                typedef Outcome<Core::Error, Model::IssueLicenseResponse> IssueLicenseOutcome;
+                typedef std::future<IssueLicenseOutcome> IssueLicenseOutcomeCallable;
+                typedef std::function<void(const CloudappClient*, const Model::IssueLicenseRequest&, IssueLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IssueLicenseAsyncHandler;
                 typedef Outcome<Core::Error, Model::VerifyLicenseResponse> VerifyLicenseOutcome;
                 typedef std::future<VerifyLicenseOutcome> VerifyLicenseOutcomeCallable;
                 typedef std::function<void(const CloudappClient*, const Model::VerifyLicenseRequest&, VerifyLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyLicenseAsyncHandler;
@@ -171,6 +176,15 @@ namespace TencentCloud
                 DescribeLicenseOutcome DescribeLicense(const Model::DescribeLicenseRequest &request);
                 void DescribeLicenseAsync(const Model::DescribeLicenseRequest& request, const DescribeLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLicenseOutcomeCallable DescribeLicenseCallable(const Model::DescribeLicenseRequest& request);
+
+                /**
+                 *颁发 License
+                 * @param req IssueLicenseRequest
+                 * @return IssueLicenseOutcome
+                 */
+                IssueLicenseOutcome IssueLicense(const Model::IssueLicenseRequest &request);
+                void IssueLicenseAsync(const Model::IssueLicenseRequest& request, const IssueLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                IssueLicenseOutcomeCallable IssueLicenseCallable(const Model::IssueLicenseRequest& request);
 
                 /**
                  *从软件进程读取 LICENSE。

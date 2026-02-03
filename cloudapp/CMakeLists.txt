@@ -22,12 +22,15 @@ set(cloudapp_public_header_model
   include/tencentcloud/cloudapp/v20220530/model/SaleParam.h
   include/tencentcloud/cloudapp/v20220530/model/DescribeLicenseResponse.h
   include/tencentcloud/cloudapp/v20220530/model/VerifyLicenseRequest.h
-  include/tencentcloud/cloudapp/v20220530/model/DisplayMetadata.h
   include/tencentcloud/cloudapp/v20220530/model/License.h
+  include/tencentcloud/cloudapp/v20220530/model/DisplayMetadata.h
+  include/tencentcloud/cloudapp/v20220530/model/IssueLicenseResponse.h
   include/tencentcloud/cloudapp/v20220530/model/Filter.h
   include/tencentcloud/cloudapp/v20220530/model/LicenseData.h
   include/tencentcloud/cloudapp/v20220530/model/VerifyLicenseResponse.h
   include/tencentcloud/cloudapp/v20220530/model/DescribeLicenseRequest.h
+  include/tencentcloud/cloudapp/v20220530/model/IssueLicenseRequest.h
+  include/tencentcloud/cloudapp/v20220530/model/PartnerLicenseData.h
   )
 
 set(cloudapp_src
@@ -35,12 +38,15 @@ set(cloudapp_src
   src/v20220530/model/SaleParam.cpp
   src/v20220530/model/DescribeLicenseResponse.cpp
   src/v20220530/model/VerifyLicenseRequest.cpp
-  src/v20220530/model/DisplayMetadata.cpp
   src/v20220530/model/License.cpp
+  src/v20220530/model/DisplayMetadata.cpp
+  src/v20220530/model/IssueLicenseResponse.cpp
   src/v20220530/model/Filter.cpp
   src/v20220530/model/LicenseData.cpp
   src/v20220530/model/VerifyLicenseResponse.cpp
   src/v20220530/model/DescribeLicenseRequest.cpp
+  src/v20220530/model/IssueLicenseRequest.cpp
+  src/v20220530/model/PartnerLicenseData.cpp
   )
 
 set(cloudapp_include

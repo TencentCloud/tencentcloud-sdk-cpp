@@ -33,6 +33,8 @@
 #include <tencentcloud/tcr/v20190924/model/CheckInstanceNameResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateApplicationTriggerPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateApplicationTriggerPersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/CreateGCJobRequest.h>
+#include <tencentcloud/tcr/v20190924/model/CreateGCJobResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateImageAccelerationServiceRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateImageAccelerationServiceResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateImmutableTagRulesRequest.h>
@@ -280,6 +282,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateApplicationTriggerPersonalResponse> CreateApplicationTriggerPersonalOutcome;
                 typedef std::future<CreateApplicationTriggerPersonalOutcome> CreateApplicationTriggerPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateApplicationTriggerPersonalRequest&, CreateApplicationTriggerPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationTriggerPersonalAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateGCJobResponse> CreateGCJobOutcome;
+                typedef std::future<CreateGCJobOutcome> CreateGCJobOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::CreateGCJobRequest&, CreateGCJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGCJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateImageAccelerationServiceResponse> CreateImageAccelerationServiceOutcome;
                 typedef std::future<CreateImageAccelerationServiceOutcome> CreateImageAccelerationServiceOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateImageAccelerationServiceRequest&, CreateImageAccelerationServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageAccelerationServiceAsyncHandler;
@@ -654,6 +659,15 @@ namespace TencentCloud
                 CreateApplicationTriggerPersonalOutcome CreateApplicationTriggerPersonal(const Model::CreateApplicationTriggerPersonalRequest &request);
                 void CreateApplicationTriggerPersonalAsync(const Model::CreateApplicationTriggerPersonalRequest& request, const CreateApplicationTriggerPersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateApplicationTriggerPersonalOutcomeCallable CreateApplicationTriggerPersonalCallable(const Model::CreateApplicationTriggerPersonalRequest& request);
+
+                /**
+                 *创建 GC 作业
+                 * @param req CreateGCJobRequest
+                 * @return CreateGCJobOutcome
+                 */
+                CreateGCJobOutcome CreateGCJob(const Model::CreateGCJobRequest &request);
+                void CreateGCJobAsync(const Model::CreateGCJobRequest& request, const CreateGCJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGCJobOutcomeCallable CreateGCJobCallable(const Model::CreateGCJobRequest& request);
 
                 /**
                  *创建镜像加速服务

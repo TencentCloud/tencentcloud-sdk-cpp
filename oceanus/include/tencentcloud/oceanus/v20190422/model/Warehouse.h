@@ -49,18 +49,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取状态
+                     * 获取<p>状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 状态
+                     * @return Status <p>状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态
+                     * 设置<p>状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 状态
+                     * @param _status <p>状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,18 +74,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取location
+                     * 获取<p>location</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Location location
+                     * @return Location <p>location</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocation() const;
 
                     /**
-                     * 设置location
+                     * 设置<p>location</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _location location
+                     * @param _location <p>location</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,18 +99,18 @@ namespace TencentCloud
                     bool LocationHasBeenSet() const;
 
                     /**
-                     * 获取catalogtype
+                     * 获取<p>catalogtype</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CatalogType catalogtype
+                     * @return CatalogType <p>catalogtype</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCatalogType() const;
 
                     /**
-                     * 设置catalogtype
+                     * 设置<p>catalogtype</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _catalogType catalogtype
+                     * @param _catalogType <p>catalogtype</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,18 +124,18 @@ namespace TencentCloud
                     bool CatalogTypeHasBeenSet() const;
 
                     /**
-                     * 获取uri
+                     * 获取<p>uri</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Uri uri
+                     * @return Uri <p>uri</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUri() const;
 
                     /**
-                     * 设置uri
+                     * 设置<p>uri</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _uri uri
+                     * @param _uri <p>uri</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -149,18 +149,18 @@ namespace TencentCloud
                     bool UriHasBeenSet() const;
 
                     /**
-                     * 获取warehouse url
+                     * 获取<p>warehouse url</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WarehouseUrl warehouse url
+                     * @return WarehouseUrl <p>warehouse url</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWarehouseUrl() const;
 
                     /**
-                     * 设置warehouse url
+                     * 设置<p>warehouse url</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _warehouseUrl warehouse url
+                     * @param _warehouseUrl <p>warehouse url</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -174,18 +174,18 @@ namespace TencentCloud
                     bool WarehouseUrlHasBeenSet() const;
 
                     /**
-                     * 获取认证方式
+                     * 获取<p>认证方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Authentication 认证方式
+                     * @return Authentication <p>认证方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuthentication() const;
 
                     /**
-                     * 设置认证方式
+                     * 设置<p>认证方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _authentication 认证方式
+                     * @param _authentication <p>认证方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -199,18 +199,18 @@ namespace TencentCloud
                     bool AuthenticationHasBeenSet() const;
 
                     /**
-                     * 获取资源
+                     * 获取<p>资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceRefs 资源
+                     * @return ResourceRefs <p>资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ResourceRefLatest> GetResourceRefs() const;
 
                     /**
-                     * 设置资源
+                     * 设置<p>资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourceRefs 资源
+                     * @param _resourceRefs <p>资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -224,18 +224,18 @@ namespace TencentCloud
                     bool ResourceRefsHasBeenSet() const;
 
                     /**
-                     * 获取hive warehouse uri
+                     * 获取<p>hive warehouse uri</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HiveUri hive warehouse uri
+                     * @return HiveUri <p>hive warehouse uri</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHiveUri() const;
 
                     /**
-                     * 设置hive warehouse uri
+                     * 设置<p>hive warehouse uri</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hiveUri hive warehouse uri
+                     * @param _hiveUri <p>hive warehouse uri</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -249,18 +249,18 @@ namespace TencentCloud
                     bool HiveUriHasBeenSet() const;
 
                     /**
-                     * 获取高级参数
+                     * 获取<p>高级参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Properties 高级参数
+                     * @return Properties <p>高级参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Property> GetProperties() const;
 
                     /**
-                     * 设置高级参数
+                     * 设置<p>高级参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _properties 高级参数
+                     * @param _properties <p>高级参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -273,70 +273,97 @@ namespace TencentCloud
                      */
                     bool PropertiesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>hive cata 类型</p>
+                     * @return HiveCatalogType <p>hive cata 类型</p>
+                     * 
+                     */
+                    uint64_t GetHiveCatalogType() const;
+
+                    /**
+                     * 设置<p>hive cata 类型</p>
+                     * @param _hiveCatalogType <p>hive cata 类型</p>
+                     * 
+                     */
+                    void SetHiveCatalogType(const uint64_t& _hiveCatalogType);
+
+                    /**
+                     * 判断参数 HiveCatalogType 是否已赋值
+                     * @return HiveCatalogType 是否已赋值
+                     * 
+                     */
+                    bool HiveCatalogTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 状态
+                     * <p>状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * location
+                     * <p>location</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_location;
                     bool m_locationHasBeenSet;
 
                     /**
-                     * catalogtype
+                     * <p>catalogtype</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_catalogType;
                     bool m_catalogTypeHasBeenSet;
 
                     /**
-                     * uri
+                     * <p>uri</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uri;
                     bool m_uriHasBeenSet;
 
                     /**
-                     * warehouse url
+                     * <p>warehouse url</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_warehouseUrl;
                     bool m_warehouseUrlHasBeenSet;
 
                     /**
-                     * 认证方式
+                     * <p>认证方式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_authentication;
                     bool m_authenticationHasBeenSet;
 
                     /**
-                     * 资源
+                     * <p>资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ResourceRefLatest> m_resourceRefs;
                     bool m_resourceRefsHasBeenSet;
 
                     /**
-                     * hive warehouse uri
+                     * <p>hive warehouse uri</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hiveUri;
                     bool m_hiveUriHasBeenSet;
 
                     /**
-                     * 高级参数
+                     * <p>高级参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Property> m_properties;
                     bool m_propertiesHasBeenSet;
+
+                    /**
+                     * <p>hive cata 类型</p>
+                     */
+                    uint64_t m_hiveCatalogType;
+                    bool m_hiveCatalogTypeHasBeenSet;
 
                 };
             }

@@ -29,6 +29,7 @@ AdaptiveDynamicStreamingInfoItem::AdaptiveDynamicStreamingInfoItem() :
     m_digitalWatermarkTypeHasBeenSet(false),
     m_subStreamSetHasBeenSet(false),
     m_copyRightWatermarkTextHasBeenSet(false),
+    m_blindWatermarkDefinitionHasBeenSet(false),
     m_subtitleSetHasBeenSet(false),
     m_defaultSubtitleIdHasBeenSet(false)
 {
@@ -127,6 +128,16 @@ CoreInternalOutcome AdaptiveDynamicStreamingInfoItem::Deserialize(const rapidjso
         }
         m_copyRightWatermarkText = string(value["CopyRightWatermarkText"].GetString());
         m_copyRightWatermarkTextHasBeenSet = true;
+    }
+
+    if (value.HasMember("BlindWatermarkDefinition") && !value["BlindWatermarkDefinition"].IsNull())
+    {
+        if (!value["BlindWatermarkDefinition"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingInfoItem.BlindWatermarkDefinition` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_blindWatermarkDefinition = value["BlindWatermarkDefinition"].GetInt64();
+        m_blindWatermarkDefinitionHasBeenSet = true;
     }
 
     if (value.HasMember("SubtitleSet") && !value["SubtitleSet"].IsNull())
@@ -235,6 +246,14 @@ void AdaptiveDynamicStreamingInfoItem::ToJsonObject(rapidjson::Value &value, rap
         string key = "CopyRightWatermarkText";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_copyRightWatermarkText.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_blindWatermarkDefinitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlindWatermarkDefinition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_blindWatermarkDefinition, allocator);
     }
 
     if (m_subtitleSetHasBeenSet)
@@ -389,6 +408,22 @@ void AdaptiveDynamicStreamingInfoItem::SetCopyRightWatermarkText(const string& _
 bool AdaptiveDynamicStreamingInfoItem::CopyRightWatermarkTextHasBeenSet() const
 {
     return m_copyRightWatermarkTextHasBeenSet;
+}
+
+int64_t AdaptiveDynamicStreamingInfoItem::GetBlindWatermarkDefinition() const
+{
+    return m_blindWatermarkDefinition;
+}
+
+void AdaptiveDynamicStreamingInfoItem::SetBlindWatermarkDefinition(const int64_t& _blindWatermarkDefinition)
+{
+    m_blindWatermarkDefinition = _blindWatermarkDefinition;
+    m_blindWatermarkDefinitionHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingInfoItem::BlindWatermarkDefinitionHasBeenSet() const
+{
+    return m_blindWatermarkDefinitionHasBeenSet;
 }
 
 vector<MediaSubtitleItem> AdaptiveDynamicStreamingInfoItem::GetSubtitleSet() const

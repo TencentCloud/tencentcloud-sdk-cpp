@@ -27,6 +27,7 @@ DescribeCallRecordRequest::DescribeCallRecordRequest() :
     m_accessKeyIDHasBeenSet(false),
     m_sourceIPIDHasBeenSet(false),
     m_accUinHasBeenSet(false),
+    m_accessKeyHasBeenSet(false),
     m_filterHasBeenSet(false)
 {
 }
@@ -73,6 +74,14 @@ string DescribeCallRecordRequest::ToJsonString() const
         string key = "AccUin";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_accUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accessKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_filterHasBeenSet)
@@ -154,6 +163,22 @@ void DescribeCallRecordRequest::SetAccUin(const string& _accUin)
 bool DescribeCallRecordRequest::AccUinHasBeenSet() const
 {
     return m_accUinHasBeenSet;
+}
+
+string DescribeCallRecordRequest::GetAccessKey() const
+{
+    return m_accessKey;
+}
+
+void DescribeCallRecordRequest::SetAccessKey(const string& _accessKey)
+{
+    m_accessKey = _accessKey;
+    m_accessKeyHasBeenSet = true;
+}
+
+bool DescribeCallRecordRequest::AccessKeyHasBeenSet() const
+{
+    return m_accessKeyHasBeenSet;
 }
 
 Filter DescribeCallRecordRequest::GetFilter() const

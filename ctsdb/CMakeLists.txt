@@ -19,34 +19,42 @@ set(ctsdb_public_header
   )
 
 set(ctsdb_public_header_model
+  include/tencentcloud/ctsdb/v20230202/model/Filter.h
+  include/tencentcloud/ctsdb/v20230202/model/Spec.h
   include/tencentcloud/ctsdb/v20230202/model/Tag.h
   include/tencentcloud/ctsdb/v20230202/model/Network.h
   include/tencentcloud/ctsdb/v20230202/model/DescribeClustersRequest.h
   include/tencentcloud/ctsdb/v20230202/model/Database.h
   include/tencentcloud/ctsdb/v20230202/model/DescribeDatabasesResponse.h
+  include/tencentcloud/ctsdb/v20230202/model/Component.h
   include/tencentcloud/ctsdb/v20230202/model/Period.h
   include/tencentcloud/ctsdb/v20230202/model/DescribeDatabasesRequest.h
-  include/tencentcloud/ctsdb/v20230202/model/Spec.h
-  include/tencentcloud/ctsdb/v20230202/model/Filter.h
+  include/tencentcloud/ctsdb/v20230202/model/DescribeClusterDetailRequest.h
+  include/tencentcloud/ctsdb/v20230202/model/DescribeClusterDetailResponse.h
   include/tencentcloud/ctsdb/v20230202/model/Cluster.h
   include/tencentcloud/ctsdb/v20230202/model/DescribeClustersResponse.h
+  include/tencentcloud/ctsdb/v20230202/model/ClusterDetail.h
   include/tencentcloud/ctsdb/v20230202/model/Order.h
   include/tencentcloud/ctsdb/v20230202/model/Tenant.h
   )
 
 set(ctsdb_src
   src/v20230202/CtsdbClient.cpp
+  src/v20230202/model/Filter.cpp
+  src/v20230202/model/Spec.cpp
   src/v20230202/model/Tag.cpp
   src/v20230202/model/Network.cpp
   src/v20230202/model/DescribeClustersRequest.cpp
   src/v20230202/model/Database.cpp
   src/v20230202/model/DescribeDatabasesResponse.cpp
+  src/v20230202/model/Component.cpp
   src/v20230202/model/Period.cpp
   src/v20230202/model/DescribeDatabasesRequest.cpp
-  src/v20230202/model/Spec.cpp
-  src/v20230202/model/Filter.cpp
+  src/v20230202/model/DescribeClusterDetailRequest.cpp
+  src/v20230202/model/DescribeClusterDetailResponse.cpp
   src/v20230202/model/Cluster.cpp
   src/v20230202/model/DescribeClustersResponse.cpp
+  src/v20230202/model/ClusterDetail.cpp
   src/v20230202/model/Order.cpp
   src/v20230202/model/Tenant.cpp
   )

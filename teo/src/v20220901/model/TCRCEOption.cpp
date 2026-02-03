@@ -21,7 +21,8 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 TCRCEOption::TCRCEOption() :
-    m_channelHasBeenSet(false)
+    m_channelHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome TCRCEOption::Deserialize(const rapidjson::Value &value)
         m_channelHasBeenSet = true;
     }
 
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TCRCEOption.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void TCRCEOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Channel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_channel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void TCRCEOption::SetChannel(const string& _channel)
 bool TCRCEOption::ChannelHasBeenSet() const
 {
     return m_channelHasBeenSet;
+}
+
+string TCRCEOption::GetRegion() const
+{
+    return m_region;
+}
+
+void TCRCEOption::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool TCRCEOption::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
 }
 

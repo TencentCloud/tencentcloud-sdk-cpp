@@ -25,6 +25,10 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cynosdb/v20190107/model/ActivateInstanceRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ActivateInstanceResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ActivateLibraDBClusterRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ActivateLibraDBClusterResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ActivateLibraDBInstanceRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ActivateLibraDBInstanceResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/AddClusterSlaveZoneRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/AddClusterSlaveZoneResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/AddInstancesRequest.h>
@@ -33,6 +37,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/AssociateSecurityGroupsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/BindClusterResourcePackagesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/BindClusterResourcePackagesResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/CheckCreateLibraDBInstanceRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/CheckCreateLibraDBInstanceResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CloseAuditServiceRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CloseAuditServiceResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CloseClusterPasswordComplexityRequest.h>
@@ -63,6 +69,10 @@
 #include <tencentcloud/cynosdb/v20190107/model/CreateClustersResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateIntegrateClusterRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateIntegrateClusterResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateLibraDBClusterAccountsRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateLibraDBClusterAccountsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateLibraDBClustersRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateLibraDBClustersResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateParamTemplateRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateParamTemplateResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateProxyRequest.h>
@@ -85,6 +95,10 @@
 #include <tencentcloud/cynosdb/v20190107/model/DeleteClusterDatabaseResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteClusterSaveBackupRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteClusterSaveBackupResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DeleteLibraDBClusterRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DeleteLibraDBClusterResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DeleteLibraDBClusterAccountsRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DeleteLibraDBClusterAccountsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteParamTemplateRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteParamTemplateResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeAccountAllGrantPrivilegesRequest.h>
@@ -171,6 +185,32 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeIntegrateTaskResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeIsolatedInstancesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeIsolatedInstancesResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBClusterAccountAllPrivilegesRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBClusterAccountAllPrivilegesResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBClusterAccountPrivilegesRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBClusterAccountPrivilegesResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBClusterAccountsRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBClusterAccountsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBClusterAutoMapRuleRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBClusterAutoMapRuleResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBClusterDetailRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBClusterDetailResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBClusterTableMappingRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBClusterTableMappingResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBClustersRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBClustersResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBDataSourceRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBDataSourceResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBForwardConfigRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBForwardConfigResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBInstanceDetailRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBInstanceDetailResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBInstanceSpecsRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBInstanceSpecsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBSlowLogsRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBSlowLogsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBVersionRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeLibraDBVersionResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeMaintainPeriodRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeMaintainPeriodResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeParamTemplateDetailRequest.h>
@@ -215,6 +255,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeZonesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DisassociateSecurityGroupsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DisassociateSecurityGroupsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DownloadLibraDBClusterListRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DownloadLibraDBClusterListResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ExportInstanceErrorLogsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ExportInstanceErrorLogsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ExportInstanceSlowQueriesRequest.h>
@@ -235,6 +277,10 @@
 #include <tencentcloud/cynosdb/v20190107/model/IsolateClusterResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/IsolateInstanceRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/IsolateInstanceResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/IsolateLibraDBClusterRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/IsolateLibraDBClusterResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/IsolateLibraDBInstanceRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/IsolateLibraDBInstanceResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyAccountDescriptionRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyAccountDescriptionResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyAccountHostRequest.h>
@@ -283,6 +329,22 @@
 #include <tencentcloud/cynosdb/v20190107/model/ModifyInstanceParamResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyInstanceUpgradeLimitDaysRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyInstanceUpgradeLimitDaysResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyLibraDBClusterAccountDescriptionRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyLibraDBClusterAccountDescriptionResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyLibraDBClusterAccountHostRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyLibraDBClusterAccountHostResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyLibraDBClusterAccountPrivilegeRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyLibraDBClusterAccountPrivilegeResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyLibraDBClusterDataSourceRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyLibraDBClusterDataSourceResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyLibraDBClusterNameRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyLibraDBClusterNameResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyLibraDBClusterProjectRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyLibraDBClusterProjectResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyLibraDBClusterReplicationObjectRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyLibraDBClusterReplicationObjectResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyLibraDBForwardConfigRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyLibraDBForwardConfigResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyMaintainPeriodConfigRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyMaintainPeriodConfigResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyParamTemplateRequest.h>
@@ -307,6 +369,10 @@
 #include <tencentcloud/cynosdb/v20190107/model/OfflineClusterResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/OfflineInstanceRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/OfflineInstanceResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/OfflineLibraDBClusterRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/OfflineLibraDBClusterResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/OfflineLibraDBInstanceRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/OfflineLibraDBInstanceResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/OpenAuditServiceRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/OpenAuditServiceResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/OpenClusterPasswordComplexityRequest.h>
@@ -331,12 +397,18 @@
 #include <tencentcloud/cynosdb/v20190107/model/RemoveClusterSlaveZoneResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/RenewClustersRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/RenewClustersResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/RenewLibraDBClustersRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/RenewLibraDBClustersResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ReplayInstanceAuditLogRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ReplayInstanceAuditLogResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ResetAccountPasswordRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ResetAccountPasswordResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ResetLibraDBClusterAccountPasswordRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ResetLibraDBClusterAccountPasswordResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/RestartInstanceRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/RestartInstanceResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/RestartLibraDBInstanceRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/RestartLibraDBInstanceResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ResumeServerlessRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ResumeServerlessResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/RevokeAccountPrivilegesRequest.h>
@@ -349,6 +421,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/SearchClusterDatabasesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/SearchClusterTablesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/SearchClusterTablesResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/SetLibraDBClusterRenewFlagRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/SetLibraDBClusterRenewFlagResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/SetRenewFlagRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/SetRenewFlagResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/StartCLSDeliveryRequest.h>
@@ -388,6 +462,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ActivateInstanceResponse> ActivateInstanceOutcome;
                 typedef std::future<ActivateInstanceOutcome> ActivateInstanceOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ActivateInstanceRequest&, ActivateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ActivateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ActivateLibraDBClusterResponse> ActivateLibraDBClusterOutcome;
+                typedef std::future<ActivateLibraDBClusterOutcome> ActivateLibraDBClusterOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ActivateLibraDBClusterRequest&, ActivateLibraDBClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ActivateLibraDBClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::ActivateLibraDBInstanceResponse> ActivateLibraDBInstanceOutcome;
+                typedef std::future<ActivateLibraDBInstanceOutcome> ActivateLibraDBInstanceOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ActivateLibraDBInstanceRequest&, ActivateLibraDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ActivateLibraDBInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddClusterSlaveZoneResponse> AddClusterSlaveZoneOutcome;
                 typedef std::future<AddClusterSlaveZoneOutcome> AddClusterSlaveZoneOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::AddClusterSlaveZoneRequest&, AddClusterSlaveZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddClusterSlaveZoneAsyncHandler;
@@ -400,6 +480,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindClusterResourcePackagesResponse> BindClusterResourcePackagesOutcome;
                 typedef std::future<BindClusterResourcePackagesOutcome> BindClusterResourcePackagesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::BindClusterResourcePackagesRequest&, BindClusterResourcePackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindClusterResourcePackagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckCreateLibraDBInstanceResponse> CheckCreateLibraDBInstanceOutcome;
+                typedef std::future<CheckCreateLibraDBInstanceOutcome> CheckCreateLibraDBInstanceOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::CheckCreateLibraDBInstanceRequest&, CheckCreateLibraDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckCreateLibraDBInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloseAuditServiceResponse> CloseAuditServiceOutcome;
                 typedef std::future<CloseAuditServiceOutcome> CloseAuditServiceOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CloseAuditServiceRequest&, CloseAuditServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseAuditServiceAsyncHandler;
@@ -445,6 +528,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateIntegrateClusterResponse> CreateIntegrateClusterOutcome;
                 typedef std::future<CreateIntegrateClusterOutcome> CreateIntegrateClusterOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CreateIntegrateClusterRequest&, CreateIntegrateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIntegrateClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLibraDBClusterAccountsResponse> CreateLibraDBClusterAccountsOutcome;
+                typedef std::future<CreateLibraDBClusterAccountsOutcome> CreateLibraDBClusterAccountsOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::CreateLibraDBClusterAccountsRequest&, CreateLibraDBClusterAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLibraDBClusterAccountsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLibraDBClustersResponse> CreateLibraDBClustersOutcome;
+                typedef std::future<CreateLibraDBClustersOutcome> CreateLibraDBClustersOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::CreateLibraDBClustersRequest&, CreateLibraDBClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLibraDBClustersAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateParamTemplateResponse> CreateParamTemplateOutcome;
                 typedef std::future<CreateParamTemplateOutcome> CreateParamTemplateOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CreateParamTemplateRequest&, CreateParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateParamTemplateAsyncHandler;
@@ -478,6 +567,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteClusterSaveBackupResponse> DeleteClusterSaveBackupOutcome;
                 typedef std::future<DeleteClusterSaveBackupOutcome> DeleteClusterSaveBackupOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DeleteClusterSaveBackupRequest&, DeleteClusterSaveBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterSaveBackupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLibraDBClusterResponse> DeleteLibraDBClusterOutcome;
+                typedef std::future<DeleteLibraDBClusterOutcome> DeleteLibraDBClusterOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DeleteLibraDBClusterRequest&, DeleteLibraDBClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLibraDBClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLibraDBClusterAccountsResponse> DeleteLibraDBClusterAccountsOutcome;
+                typedef std::future<DeleteLibraDBClusterAccountsOutcome> DeleteLibraDBClusterAccountsOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DeleteLibraDBClusterAccountsRequest&, DeleteLibraDBClusterAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLibraDBClusterAccountsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteParamTemplateResponse> DeleteParamTemplateOutcome;
                 typedef std::future<DeleteParamTemplateOutcome> DeleteParamTemplateOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DeleteParamTemplateRequest&, DeleteParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteParamTemplateAsyncHandler;
@@ -607,6 +702,45 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIsolatedInstancesResponse> DescribeIsolatedInstancesOutcome;
                 typedef std::future<DescribeIsolatedInstancesOutcome> DescribeIsolatedInstancesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeIsolatedInstancesRequest&, DescribeIsolatedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIsolatedInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLibraDBClusterAccountAllPrivilegesResponse> DescribeLibraDBClusterAccountAllPrivilegesOutcome;
+                typedef std::future<DescribeLibraDBClusterAccountAllPrivilegesOutcome> DescribeLibraDBClusterAccountAllPrivilegesOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeLibraDBClusterAccountAllPrivilegesRequest&, DescribeLibraDBClusterAccountAllPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLibraDBClusterAccountAllPrivilegesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLibraDBClusterAccountPrivilegesResponse> DescribeLibraDBClusterAccountPrivilegesOutcome;
+                typedef std::future<DescribeLibraDBClusterAccountPrivilegesOutcome> DescribeLibraDBClusterAccountPrivilegesOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeLibraDBClusterAccountPrivilegesRequest&, DescribeLibraDBClusterAccountPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLibraDBClusterAccountPrivilegesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLibraDBClusterAccountsResponse> DescribeLibraDBClusterAccountsOutcome;
+                typedef std::future<DescribeLibraDBClusterAccountsOutcome> DescribeLibraDBClusterAccountsOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeLibraDBClusterAccountsRequest&, DescribeLibraDBClusterAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLibraDBClusterAccountsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLibraDBClusterAutoMapRuleResponse> DescribeLibraDBClusterAutoMapRuleOutcome;
+                typedef std::future<DescribeLibraDBClusterAutoMapRuleOutcome> DescribeLibraDBClusterAutoMapRuleOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeLibraDBClusterAutoMapRuleRequest&, DescribeLibraDBClusterAutoMapRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLibraDBClusterAutoMapRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLibraDBClusterDetailResponse> DescribeLibraDBClusterDetailOutcome;
+                typedef std::future<DescribeLibraDBClusterDetailOutcome> DescribeLibraDBClusterDetailOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeLibraDBClusterDetailRequest&, DescribeLibraDBClusterDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLibraDBClusterDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLibraDBClusterTableMappingResponse> DescribeLibraDBClusterTableMappingOutcome;
+                typedef std::future<DescribeLibraDBClusterTableMappingOutcome> DescribeLibraDBClusterTableMappingOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeLibraDBClusterTableMappingRequest&, DescribeLibraDBClusterTableMappingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLibraDBClusterTableMappingAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLibraDBClustersResponse> DescribeLibraDBClustersOutcome;
+                typedef std::future<DescribeLibraDBClustersOutcome> DescribeLibraDBClustersOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeLibraDBClustersRequest&, DescribeLibraDBClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLibraDBClustersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLibraDBDataSourceResponse> DescribeLibraDBDataSourceOutcome;
+                typedef std::future<DescribeLibraDBDataSourceOutcome> DescribeLibraDBDataSourceOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeLibraDBDataSourceRequest&, DescribeLibraDBDataSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLibraDBDataSourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLibraDBForwardConfigResponse> DescribeLibraDBForwardConfigOutcome;
+                typedef std::future<DescribeLibraDBForwardConfigOutcome> DescribeLibraDBForwardConfigOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeLibraDBForwardConfigRequest&, DescribeLibraDBForwardConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLibraDBForwardConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLibraDBInstanceDetailResponse> DescribeLibraDBInstanceDetailOutcome;
+                typedef std::future<DescribeLibraDBInstanceDetailOutcome> DescribeLibraDBInstanceDetailOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeLibraDBInstanceDetailRequest&, DescribeLibraDBInstanceDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLibraDBInstanceDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLibraDBInstanceSpecsResponse> DescribeLibraDBInstanceSpecsOutcome;
+                typedef std::future<DescribeLibraDBInstanceSpecsOutcome> DescribeLibraDBInstanceSpecsOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeLibraDBInstanceSpecsRequest&, DescribeLibraDBInstanceSpecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLibraDBInstanceSpecsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLibraDBSlowLogsResponse> DescribeLibraDBSlowLogsOutcome;
+                typedef std::future<DescribeLibraDBSlowLogsOutcome> DescribeLibraDBSlowLogsOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeLibraDBSlowLogsRequest&, DescribeLibraDBSlowLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLibraDBSlowLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLibraDBVersionResponse> DescribeLibraDBVersionOutcome;
+                typedef std::future<DescribeLibraDBVersionOutcome> DescribeLibraDBVersionOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeLibraDBVersionRequest&, DescribeLibraDBVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLibraDBVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMaintainPeriodResponse> DescribeMaintainPeriodOutcome;
                 typedef std::future<DescribeMaintainPeriodOutcome> DescribeMaintainPeriodOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeMaintainPeriodRequest&, DescribeMaintainPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMaintainPeriodAsyncHandler;
@@ -673,6 +807,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisassociateSecurityGroupsResponse> DisassociateSecurityGroupsOutcome;
                 typedef std::future<DisassociateSecurityGroupsOutcome> DisassociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DisassociateSecurityGroupsRequest&, DisassociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DownloadLibraDBClusterListResponse> DownloadLibraDBClusterListOutcome;
+                typedef std::future<DownloadLibraDBClusterListOutcome> DownloadLibraDBClusterListOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DownloadLibraDBClusterListRequest&, DownloadLibraDBClusterListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadLibraDBClusterListAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExportInstanceErrorLogsResponse> ExportInstanceErrorLogsOutcome;
                 typedef std::future<ExportInstanceErrorLogsOutcome> ExportInstanceErrorLogsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ExportInstanceErrorLogsRequest&, ExportInstanceErrorLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportInstanceErrorLogsAsyncHandler;
@@ -703,6 +840,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::IsolateInstanceResponse> IsolateInstanceOutcome;
                 typedef std::future<IsolateInstanceOutcome> IsolateInstanceOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::IsolateInstanceRequest&, IsolateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::IsolateLibraDBClusterResponse> IsolateLibraDBClusterOutcome;
+                typedef std::future<IsolateLibraDBClusterOutcome> IsolateLibraDBClusterOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::IsolateLibraDBClusterRequest&, IsolateLibraDBClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateLibraDBClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::IsolateLibraDBInstanceResponse> IsolateLibraDBInstanceOutcome;
+                typedef std::future<IsolateLibraDBInstanceOutcome> IsolateLibraDBInstanceOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::IsolateLibraDBInstanceRequest&, IsolateLibraDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateLibraDBInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAccountDescriptionResponse> ModifyAccountDescriptionOutcome;
                 typedef std::future<ModifyAccountDescriptionOutcome> ModifyAccountDescriptionOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyAccountDescriptionRequest&, ModifyAccountDescriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountDescriptionAsyncHandler;
@@ -775,6 +918,30 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInstanceUpgradeLimitDaysResponse> ModifyInstanceUpgradeLimitDaysOutcome;
                 typedef std::future<ModifyInstanceUpgradeLimitDaysOutcome> ModifyInstanceUpgradeLimitDaysOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyInstanceUpgradeLimitDaysRequest&, ModifyInstanceUpgradeLimitDaysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceUpgradeLimitDaysAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLibraDBClusterAccountDescriptionResponse> ModifyLibraDBClusterAccountDescriptionOutcome;
+                typedef std::future<ModifyLibraDBClusterAccountDescriptionOutcome> ModifyLibraDBClusterAccountDescriptionOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyLibraDBClusterAccountDescriptionRequest&, ModifyLibraDBClusterAccountDescriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLibraDBClusterAccountDescriptionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLibraDBClusterAccountHostResponse> ModifyLibraDBClusterAccountHostOutcome;
+                typedef std::future<ModifyLibraDBClusterAccountHostOutcome> ModifyLibraDBClusterAccountHostOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyLibraDBClusterAccountHostRequest&, ModifyLibraDBClusterAccountHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLibraDBClusterAccountHostAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLibraDBClusterAccountPrivilegeResponse> ModifyLibraDBClusterAccountPrivilegeOutcome;
+                typedef std::future<ModifyLibraDBClusterAccountPrivilegeOutcome> ModifyLibraDBClusterAccountPrivilegeOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyLibraDBClusterAccountPrivilegeRequest&, ModifyLibraDBClusterAccountPrivilegeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLibraDBClusterAccountPrivilegeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLibraDBClusterDataSourceResponse> ModifyLibraDBClusterDataSourceOutcome;
+                typedef std::future<ModifyLibraDBClusterDataSourceOutcome> ModifyLibraDBClusterDataSourceOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyLibraDBClusterDataSourceRequest&, ModifyLibraDBClusterDataSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLibraDBClusterDataSourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLibraDBClusterNameResponse> ModifyLibraDBClusterNameOutcome;
+                typedef std::future<ModifyLibraDBClusterNameOutcome> ModifyLibraDBClusterNameOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyLibraDBClusterNameRequest&, ModifyLibraDBClusterNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLibraDBClusterNameAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLibraDBClusterProjectResponse> ModifyLibraDBClusterProjectOutcome;
+                typedef std::future<ModifyLibraDBClusterProjectOutcome> ModifyLibraDBClusterProjectOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyLibraDBClusterProjectRequest&, ModifyLibraDBClusterProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLibraDBClusterProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLibraDBClusterReplicationObjectResponse> ModifyLibraDBClusterReplicationObjectOutcome;
+                typedef std::future<ModifyLibraDBClusterReplicationObjectOutcome> ModifyLibraDBClusterReplicationObjectOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyLibraDBClusterReplicationObjectRequest&, ModifyLibraDBClusterReplicationObjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLibraDBClusterReplicationObjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLibraDBForwardConfigResponse> ModifyLibraDBForwardConfigOutcome;
+                typedef std::future<ModifyLibraDBForwardConfigOutcome> ModifyLibraDBForwardConfigOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyLibraDBForwardConfigRequest&, ModifyLibraDBForwardConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLibraDBForwardConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyMaintainPeriodConfigResponse> ModifyMaintainPeriodConfigOutcome;
                 typedef std::future<ModifyMaintainPeriodConfigOutcome> ModifyMaintainPeriodConfigOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyMaintainPeriodConfigRequest&, ModifyMaintainPeriodConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMaintainPeriodConfigAsyncHandler;
@@ -811,6 +978,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OfflineInstanceResponse> OfflineInstanceOutcome;
                 typedef std::future<OfflineInstanceOutcome> OfflineInstanceOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::OfflineInstanceRequest&, OfflineInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OfflineInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::OfflineLibraDBClusterResponse> OfflineLibraDBClusterOutcome;
+                typedef std::future<OfflineLibraDBClusterOutcome> OfflineLibraDBClusterOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::OfflineLibraDBClusterRequest&, OfflineLibraDBClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OfflineLibraDBClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::OfflineLibraDBInstanceResponse> OfflineLibraDBInstanceOutcome;
+                typedef std::future<OfflineLibraDBInstanceOutcome> OfflineLibraDBInstanceOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::OfflineLibraDBInstanceRequest&, OfflineLibraDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OfflineLibraDBInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::OpenAuditServiceResponse> OpenAuditServiceOutcome;
                 typedef std::future<OpenAuditServiceOutcome> OpenAuditServiceOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::OpenAuditServiceRequest&, OpenAuditServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenAuditServiceAsyncHandler;
@@ -847,15 +1020,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RenewClustersResponse> RenewClustersOutcome;
                 typedef std::future<RenewClustersOutcome> RenewClustersOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::RenewClustersRequest&, RenewClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewClustersAsyncHandler;
+                typedef Outcome<Core::Error, Model::RenewLibraDBClustersResponse> RenewLibraDBClustersOutcome;
+                typedef std::future<RenewLibraDBClustersOutcome> RenewLibraDBClustersOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::RenewLibraDBClustersRequest&, RenewLibraDBClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewLibraDBClustersAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReplayInstanceAuditLogResponse> ReplayInstanceAuditLogOutcome;
                 typedef std::future<ReplayInstanceAuditLogOutcome> ReplayInstanceAuditLogOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ReplayInstanceAuditLogRequest&, ReplayInstanceAuditLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplayInstanceAuditLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetAccountPasswordResponse> ResetAccountPasswordOutcome;
                 typedef std::future<ResetAccountPasswordOutcome> ResetAccountPasswordOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ResetAccountPasswordRequest&, ResetAccountPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetAccountPasswordAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetLibraDBClusterAccountPasswordResponse> ResetLibraDBClusterAccountPasswordOutcome;
+                typedef std::future<ResetLibraDBClusterAccountPasswordOutcome> ResetLibraDBClusterAccountPasswordOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ResetLibraDBClusterAccountPasswordRequest&, ResetLibraDBClusterAccountPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetLibraDBClusterAccountPasswordAsyncHandler;
                 typedef Outcome<Core::Error, Model::RestartInstanceResponse> RestartInstanceOutcome;
                 typedef std::future<RestartInstanceOutcome> RestartInstanceOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::RestartInstanceRequest&, RestartInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::RestartLibraDBInstanceResponse> RestartLibraDBInstanceOutcome;
+                typedef std::future<RestartLibraDBInstanceOutcome> RestartLibraDBInstanceOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::RestartLibraDBInstanceRequest&, RestartLibraDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartLibraDBInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResumeServerlessResponse> ResumeServerlessOutcome;
                 typedef std::future<ResumeServerlessOutcome> ResumeServerlessOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ResumeServerlessRequest&, ResumeServerlessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeServerlessAsyncHandler;
@@ -874,6 +1056,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SearchClusterTablesResponse> SearchClusterTablesOutcome;
                 typedef std::future<SearchClusterTablesOutcome> SearchClusterTablesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::SearchClusterTablesRequest&, SearchClusterTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchClusterTablesAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetLibraDBClusterRenewFlagResponse> SetLibraDBClusterRenewFlagOutcome;
+                typedef std::future<SetLibraDBClusterRenewFlagOutcome> SetLibraDBClusterRenewFlagOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::SetLibraDBClusterRenewFlagRequest&, SetLibraDBClusterRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetLibraDBClusterRenewFlagAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetRenewFlagResponse> SetRenewFlagOutcome;
                 typedef std::future<SetRenewFlagOutcome> SetRenewFlagOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::SetRenewFlagRequest&, SetRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetRenewFlagAsyncHandler;
@@ -920,6 +1105,24 @@ namespace TencentCloud
                 ActivateInstanceOutcomeCallable ActivateInstanceCallable(const Model::ActivateInstanceRequest& request);
 
                 /**
+                 *解除分析集群隔离状态
+                 * @param req ActivateLibraDBClusterRequest
+                 * @return ActivateLibraDBClusterOutcome
+                 */
+                ActivateLibraDBClusterOutcome ActivateLibraDBCluster(const Model::ActivateLibraDBClusterRequest &request);
+                void ActivateLibraDBClusterAsync(const Model::ActivateLibraDBClusterRequest& request, const ActivateLibraDBClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ActivateLibraDBClusterOutcomeCallable ActivateLibraDBClusterCallable(const Model::ActivateLibraDBClusterRequest& request);
+
+                /**
+                 *本接口（ActivateLibraDBInstance）用于解除已隔离的只读分析引擎实例。
+                 * @param req ActivateLibraDBInstanceRequest
+                 * @return ActivateLibraDBInstanceOutcome
+                 */
+                ActivateLibraDBInstanceOutcome ActivateLibraDBInstance(const Model::ActivateLibraDBInstanceRequest &request);
+                void ActivateLibraDBInstanceAsync(const Model::ActivateLibraDBInstanceRequest& request, const ActivateLibraDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ActivateLibraDBInstanceOutcomeCallable ActivateLibraDBInstanceCallable(const Model::ActivateLibraDBInstanceRequest& request);
+
+                /**
                  *本接口（AddClusterSlaveZone）用于对集群开启多可用区部署。
                  * @param req AddClusterSlaveZoneRequest
                  * @return AddClusterSlaveZoneOutcome
@@ -954,6 +1157,15 @@ namespace TencentCloud
                 BindClusterResourcePackagesOutcome BindClusterResourcePackages(const Model::BindClusterResourcePackagesRequest &request);
                 void BindClusterResourcePackagesAsync(const Model::BindClusterResourcePackagesRequest& request, const BindClusterResourcePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BindClusterResourcePackagesOutcomeCallable BindClusterResourcePackagesCallable(const Model::BindClusterResourcePackagesRequest& request);
+
+                /**
+                 *本接口（CheckCreateLibraDBInstance）用于校验集群是否可以添加只读分析引擎实例
+                 * @param req CheckCreateLibraDBInstanceRequest
+                 * @return CheckCreateLibraDBInstanceOutcome
+                 */
+                CheckCreateLibraDBInstanceOutcome CheckCreateLibraDBInstance(const Model::CheckCreateLibraDBInstanceRequest &request);
+                void CheckCreateLibraDBInstanceAsync(const Model::CheckCreateLibraDBInstanceRequest& request, const CheckCreateLibraDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckCreateLibraDBInstanceOutcomeCallable CheckCreateLibraDBInstanceCallable(const Model::CheckCreateLibraDBInstanceRequest& request);
 
                 /**
                  *本接口（CloseAuditService）用于关闭 TDSQL-C MySQL 实例的数据库审计服务。
@@ -1091,6 +1303,24 @@ namespace TencentCloud
                 CreateIntegrateClusterOutcomeCallable CreateIntegrateClusterCallable(const Model::CreateIntegrateClusterRequest& request);
 
                 /**
+                 *本接口（CreateLibraDBClusterAccounts）用于创建分析集群账号
+                 * @param req CreateLibraDBClusterAccountsRequest
+                 * @return CreateLibraDBClusterAccountsOutcome
+                 */
+                CreateLibraDBClusterAccountsOutcome CreateLibraDBClusterAccounts(const Model::CreateLibraDBClusterAccountsRequest &request);
+                void CreateLibraDBClusterAccountsAsync(const Model::CreateLibraDBClusterAccountsRequest& request, const CreateLibraDBClusterAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLibraDBClusterAccountsOutcomeCallable CreateLibraDBClusterAccountsCallable(const Model::CreateLibraDBClusterAccountsRequest& request);
+
+                /**
+                 *创建 TDSQL-C 分析集群
+                 * @param req CreateLibraDBClustersRequest
+                 * @return CreateLibraDBClustersOutcome
+                 */
+                CreateLibraDBClustersOutcome CreateLibraDBClusters(const Model::CreateLibraDBClustersRequest &request);
+                void CreateLibraDBClustersAsync(const Model::CreateLibraDBClustersRequest& request, const CreateLibraDBClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLibraDBClustersOutcomeCallable CreateLibraDBClustersCallable(const Model::CreateLibraDBClustersRequest& request);
+
+                /**
                  *本接口（CreateParamTemplate）用于创建参数模板。
                  * @param req CreateParamTemplateRequest
                  * @return CreateParamTemplateOutcome
@@ -1188,6 +1418,24 @@ namespace TencentCloud
                 DeleteClusterSaveBackupOutcome DeleteClusterSaveBackup(const Model::DeleteClusterSaveBackupRequest &request);
                 void DeleteClusterSaveBackupAsync(const Model::DeleteClusterSaveBackupRequest& request, const DeleteClusterSaveBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteClusterSaveBackupOutcomeCallable DeleteClusterSaveBackupCallable(const Model::DeleteClusterSaveBackupRequest& request);
+
+                /**
+                 *删除 TDSQL-C 分析集群
+                 * @param req DeleteLibraDBClusterRequest
+                 * @return DeleteLibraDBClusterOutcome
+                 */
+                DeleteLibraDBClusterOutcome DeleteLibraDBCluster(const Model::DeleteLibraDBClusterRequest &request);
+                void DeleteLibraDBClusterAsync(const Model::DeleteLibraDBClusterRequest& request, const DeleteLibraDBClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLibraDBClusterOutcomeCallable DeleteLibraDBClusterCallable(const Model::DeleteLibraDBClusterRequest& request);
+
+                /**
+                 *本接口（DeleteLibraDBClusterAccounts）用于删除分析集群账号
+                 * @param req DeleteLibraDBClusterAccountsRequest
+                 * @return DeleteLibraDBClusterAccountsOutcome
+                 */
+                DeleteLibraDBClusterAccountsOutcome DeleteLibraDBClusterAccounts(const Model::DeleteLibraDBClusterAccountsRequest &request);
+                void DeleteLibraDBClusterAccountsAsync(const Model::DeleteLibraDBClusterAccountsRequest& request, const DeleteLibraDBClusterAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLibraDBClusterAccountsOutcomeCallable DeleteLibraDBClusterAccountsCallable(const Model::DeleteLibraDBClusterAccountsRequest& request);
 
                 /**
                  *本接口（DeleteParamTemplate）用于删除用户创建的参数模板。
@@ -1577,6 +1825,123 @@ namespace TencentCloud
                 DescribeIsolatedInstancesOutcomeCallable DescribeIsolatedInstancesCallable(const Model::DescribeIsolatedInstancesRequest& request);
 
                 /**
+                 *本接口（DescribeLibraDBClusterAccountAllPrivileges）用于查询分析集群账号全部权限
+                 * @param req DescribeLibraDBClusterAccountAllPrivilegesRequest
+                 * @return DescribeLibraDBClusterAccountAllPrivilegesOutcome
+                 */
+                DescribeLibraDBClusterAccountAllPrivilegesOutcome DescribeLibraDBClusterAccountAllPrivileges(const Model::DescribeLibraDBClusterAccountAllPrivilegesRequest &request);
+                void DescribeLibraDBClusterAccountAllPrivilegesAsync(const Model::DescribeLibraDBClusterAccountAllPrivilegesRequest& request, const DescribeLibraDBClusterAccountAllPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLibraDBClusterAccountAllPrivilegesOutcomeCallable DescribeLibraDBClusterAccountAllPrivilegesCallable(const Model::DescribeLibraDBClusterAccountAllPrivilegesRequest& request);
+
+                /**
+                 *本接口（DescribeLibraDBClusterAccountPrivileges）用于查询分析集群账号权限
+                 * @param req DescribeLibraDBClusterAccountPrivilegesRequest
+                 * @return DescribeLibraDBClusterAccountPrivilegesOutcome
+                 */
+                DescribeLibraDBClusterAccountPrivilegesOutcome DescribeLibraDBClusterAccountPrivileges(const Model::DescribeLibraDBClusterAccountPrivilegesRequest &request);
+                void DescribeLibraDBClusterAccountPrivilegesAsync(const Model::DescribeLibraDBClusterAccountPrivilegesRequest& request, const DescribeLibraDBClusterAccountPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLibraDBClusterAccountPrivilegesOutcomeCallable DescribeLibraDBClusterAccountPrivilegesCallable(const Model::DescribeLibraDBClusterAccountPrivilegesRequest& request);
+
+                /**
+                 *本接口（DescribeLibraDBClusterAccounts）用于查询分析集群账号
+                 * @param req DescribeLibraDBClusterAccountsRequest
+                 * @return DescribeLibraDBClusterAccountsOutcome
+                 */
+                DescribeLibraDBClusterAccountsOutcome DescribeLibraDBClusterAccounts(const Model::DescribeLibraDBClusterAccountsRequest &request);
+                void DescribeLibraDBClusterAccountsAsync(const Model::DescribeLibraDBClusterAccountsRequest& request, const DescribeLibraDBClusterAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLibraDBClusterAccountsOutcomeCallable DescribeLibraDBClusterAccountsCallable(const Model::DescribeLibraDBClusterAccountsRequest& request);
+
+                /**
+                 *本接口（DescribeLibraDBClusterAutoMapRule）用于查看分析集群高级映射规则
+                 * @param req DescribeLibraDBClusterAutoMapRuleRequest
+                 * @return DescribeLibraDBClusterAutoMapRuleOutcome
+                 */
+                DescribeLibraDBClusterAutoMapRuleOutcome DescribeLibraDBClusterAutoMapRule(const Model::DescribeLibraDBClusterAutoMapRuleRequest &request);
+                void DescribeLibraDBClusterAutoMapRuleAsync(const Model::DescribeLibraDBClusterAutoMapRuleRequest& request, const DescribeLibraDBClusterAutoMapRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLibraDBClusterAutoMapRuleOutcomeCallable DescribeLibraDBClusterAutoMapRuleCallable(const Model::DescribeLibraDBClusterAutoMapRuleRequest& request);
+
+                /**
+                 *查询 TDSQL-C 分析集群信息
+                 * @param req DescribeLibraDBClusterDetailRequest
+                 * @return DescribeLibraDBClusterDetailOutcome
+                 */
+                DescribeLibraDBClusterDetailOutcome DescribeLibraDBClusterDetail(const Model::DescribeLibraDBClusterDetailRequest &request);
+                void DescribeLibraDBClusterDetailAsync(const Model::DescribeLibraDBClusterDetailRequest& request, const DescribeLibraDBClusterDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLibraDBClusterDetailOutcomeCallable DescribeLibraDBClusterDetailCallable(const Model::DescribeLibraDBClusterDetailRequest& request);
+
+                /**
+                 *本接口（ModifyLibraDBForwardConfig）用于查看分析集群库表映射关系
+                 * @param req DescribeLibraDBClusterTableMappingRequest
+                 * @return DescribeLibraDBClusterTableMappingOutcome
+                 */
+                DescribeLibraDBClusterTableMappingOutcome DescribeLibraDBClusterTableMapping(const Model::DescribeLibraDBClusterTableMappingRequest &request);
+                void DescribeLibraDBClusterTableMappingAsync(const Model::DescribeLibraDBClusterTableMappingRequest& request, const DescribeLibraDBClusterTableMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLibraDBClusterTableMappingOutcomeCallable DescribeLibraDBClusterTableMappingCallable(const Model::DescribeLibraDBClusterTableMappingRequest& request);
+
+                /**
+                 *查询分析集群列表
+                 * @param req DescribeLibraDBClustersRequest
+                 * @return DescribeLibraDBClustersOutcome
+                 */
+                DescribeLibraDBClustersOutcome DescribeLibraDBClusters(const Model::DescribeLibraDBClustersRequest &request);
+                void DescribeLibraDBClustersAsync(const Model::DescribeLibraDBClustersRequest& request, const DescribeLibraDBClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLibraDBClustersOutcomeCallable DescribeLibraDBClustersCallable(const Model::DescribeLibraDBClustersRequest& request);
+
+                /**
+                 *本接口（DescribeLibraDBDataSource）用于查询分析集群的源实例信息
+                 * @param req DescribeLibraDBDataSourceRequest
+                 * @return DescribeLibraDBDataSourceOutcome
+                 */
+                DescribeLibraDBDataSourceOutcome DescribeLibraDBDataSource(const Model::DescribeLibraDBDataSourceRequest &request);
+                void DescribeLibraDBDataSourceAsync(const Model::DescribeLibraDBDataSourceRequest& request, const DescribeLibraDBDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLibraDBDataSourceOutcomeCallable DescribeLibraDBDataSourceCallable(const Model::DescribeLibraDBDataSourceRequest& request);
+
+                /**
+                 *本接口（DescribeLibraDBForwardConfig）用于查询分析引擎转发参数
+                 * @param req DescribeLibraDBForwardConfigRequest
+                 * @return DescribeLibraDBForwardConfigOutcome
+                 */
+                DescribeLibraDBForwardConfigOutcome DescribeLibraDBForwardConfig(const Model::DescribeLibraDBForwardConfigRequest &request);
+                void DescribeLibraDBForwardConfigAsync(const Model::DescribeLibraDBForwardConfigRequest& request, const DescribeLibraDBForwardConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLibraDBForwardConfigOutcomeCallable DescribeLibraDBForwardConfigCallable(const Model::DescribeLibraDBForwardConfigRequest& request);
+
+                /**
+                 *本接口(DescribeLibraDBInstanceDetail)用于查询只读分析引擎详情
+                 * @param req DescribeLibraDBInstanceDetailRequest
+                 * @return DescribeLibraDBInstanceDetailOutcome
+                 */
+                DescribeLibraDBInstanceDetailOutcome DescribeLibraDBInstanceDetail(const Model::DescribeLibraDBInstanceDetailRequest &request);
+                void DescribeLibraDBInstanceDetailAsync(const Model::DescribeLibraDBInstanceDetailRequest& request, const DescribeLibraDBInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLibraDBInstanceDetailOutcomeCallable DescribeLibraDBInstanceDetailCallable(const Model::DescribeLibraDBInstanceDetailRequest& request);
+
+                /**
+                 *本接口(DescribeLibraDBInstanceSpecs)用于查询只读分析引擎在该地域支持的规格列表信息
+                 * @param req DescribeLibraDBInstanceSpecsRequest
+                 * @return DescribeLibraDBInstanceSpecsOutcome
+                 */
+                DescribeLibraDBInstanceSpecsOutcome DescribeLibraDBInstanceSpecs(const Model::DescribeLibraDBInstanceSpecsRequest &request);
+                void DescribeLibraDBInstanceSpecsAsync(const Model::DescribeLibraDBInstanceSpecsRequest& request, const DescribeLibraDBInstanceSpecsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLibraDBInstanceSpecsOutcomeCallable DescribeLibraDBInstanceSpecsCallable(const Model::DescribeLibraDBInstanceSpecsRequest& request);
+
+                /**
+                 *本接口（DescribeLibraDBSlowLogs）为只读分析引擎的慢 SQL 明细查询接口
+                 * @param req DescribeLibraDBSlowLogsRequest
+                 * @return DescribeLibraDBSlowLogsOutcome
+                 */
+                DescribeLibraDBSlowLogsOutcome DescribeLibraDBSlowLogs(const Model::DescribeLibraDBSlowLogsRequest &request);
+                void DescribeLibraDBSlowLogsAsync(const Model::DescribeLibraDBSlowLogsRequest& request, const DescribeLibraDBSlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLibraDBSlowLogsOutcomeCallable DescribeLibraDBSlowLogsCallable(const Model::DescribeLibraDBSlowLogsRequest& request);
+
+                /**
+                 *查询只读分析引擎支持的版本列表
+                 * @param req DescribeLibraDBVersionRequest
+                 * @return DescribeLibraDBVersionOutcome
+                 */
+                DescribeLibraDBVersionOutcome DescribeLibraDBVersion(const Model::DescribeLibraDBVersionRequest &request);
+                void DescribeLibraDBVersionAsync(const Model::DescribeLibraDBVersionRequest& request, const DescribeLibraDBVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLibraDBVersionOutcomeCallable DescribeLibraDBVersionCallable(const Model::DescribeLibraDBVersionRequest& request);
+
+                /**
                  *本接口（DescribeMaintainPeriod）用于查询实例维护时间窗。
                  * @param req DescribeMaintainPeriodRequest
                  * @return DescribeMaintainPeriodOutcome
@@ -1775,6 +2140,15 @@ namespace TencentCloud
                 DisassociateSecurityGroupsOutcomeCallable DisassociateSecurityGroupsCallable(const Model::DisassociateSecurityGroupsRequest& request);
 
                 /**
+                 *下载分析集群列表
+                 * @param req DownloadLibraDBClusterListRequest
+                 * @return DownloadLibraDBClusterListOutcome
+                 */
+                DownloadLibraDBClusterListOutcome DownloadLibraDBClusterList(const Model::DownloadLibraDBClusterListRequest &request);
+                void DownloadLibraDBClusterListAsync(const Model::DownloadLibraDBClusterListRequest& request, const DownloadLibraDBClusterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DownloadLibraDBClusterListOutcomeCallable DownloadLibraDBClusterListCallable(const Model::DownloadLibraDBClusterListRequest& request);
+
+                /**
                  *此接口（ExportInstanceErrorLogs）用于导出实例错误日志。
                  * @param req ExportInstanceErrorLogsRequest
                  * @return ExportInstanceErrorLogsOutcome
@@ -1863,6 +2237,24 @@ namespace TencentCloud
                 IsolateInstanceOutcome IsolateInstance(const Model::IsolateInstanceRequest &request);
                 void IsolateInstanceAsync(const Model::IsolateInstanceRequest& request, const IsolateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 IsolateInstanceOutcomeCallable IsolateInstanceCallable(const Model::IsolateInstanceRequest& request);
+
+                /**
+                 *隔离 TDSQL-C 分析集群
+                 * @param req IsolateLibraDBClusterRequest
+                 * @return IsolateLibraDBClusterOutcome
+                 */
+                IsolateLibraDBClusterOutcome IsolateLibraDBCluster(const Model::IsolateLibraDBClusterRequest &request);
+                void IsolateLibraDBClusterAsync(const Model::IsolateLibraDBClusterRequest& request, const IsolateLibraDBClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                IsolateLibraDBClusterOutcomeCallable IsolateLibraDBClusterCallable(const Model::IsolateLibraDBClusterRequest& request);
+
+                /**
+                 *本接口(IsolateLibraDBInstance)用于隔离的只读分析引擎实例。
+                 * @param req IsolateLibraDBInstanceRequest
+                 * @return IsolateLibraDBInstanceOutcome
+                 */
+                IsolateLibraDBInstanceOutcome IsolateLibraDBInstance(const Model::IsolateLibraDBInstanceRequest &request);
+                void IsolateLibraDBInstanceAsync(const Model::IsolateLibraDBInstanceRequest& request, const IsolateLibraDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                IsolateLibraDBInstanceOutcomeCallable IsolateLibraDBInstanceCallable(const Model::IsolateLibraDBInstanceRequest& request);
 
                 /**
                  *本接口(ModifyAccountDescription)用于修改数据库账号描述信息。
@@ -2081,6 +2473,78 @@ namespace TencentCloud
                 ModifyInstanceUpgradeLimitDaysOutcomeCallable ModifyInstanceUpgradeLimitDaysCallable(const Model::ModifyInstanceUpgradeLimitDaysRequest& request);
 
                 /**
+                 *本接口（ModifyLibraDBClusterAccountDescription）用于修改分析集群账号描述
+                 * @param req ModifyLibraDBClusterAccountDescriptionRequest
+                 * @return ModifyLibraDBClusterAccountDescriptionOutcome
+                 */
+                ModifyLibraDBClusterAccountDescriptionOutcome ModifyLibraDBClusterAccountDescription(const Model::ModifyLibraDBClusterAccountDescriptionRequest &request);
+                void ModifyLibraDBClusterAccountDescriptionAsync(const Model::ModifyLibraDBClusterAccountDescriptionRequest& request, const ModifyLibraDBClusterAccountDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLibraDBClusterAccountDescriptionOutcomeCallable ModifyLibraDBClusterAccountDescriptionCallable(const Model::ModifyLibraDBClusterAccountDescriptionRequest& request);
+
+                /**
+                 *本接口（ModifyLibraDBClusterAccountHost）用于修改分析集群账号的可登录主机信息
+                 * @param req ModifyLibraDBClusterAccountHostRequest
+                 * @return ModifyLibraDBClusterAccountHostOutcome
+                 */
+                ModifyLibraDBClusterAccountHostOutcome ModifyLibraDBClusterAccountHost(const Model::ModifyLibraDBClusterAccountHostRequest &request);
+                void ModifyLibraDBClusterAccountHostAsync(const Model::ModifyLibraDBClusterAccountHostRequest& request, const ModifyLibraDBClusterAccountHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLibraDBClusterAccountHostOutcomeCallable ModifyLibraDBClusterAccountHostCallable(const Model::ModifyLibraDBClusterAccountHostRequest& request);
+
+                /**
+                 *本接口（ModifyLibraDBClusterAccountPrivilege）用于修改分析集群账号权限
+                 * @param req ModifyLibraDBClusterAccountPrivilegeRequest
+                 * @return ModifyLibraDBClusterAccountPrivilegeOutcome
+                 */
+                ModifyLibraDBClusterAccountPrivilegeOutcome ModifyLibraDBClusterAccountPrivilege(const Model::ModifyLibraDBClusterAccountPrivilegeRequest &request);
+                void ModifyLibraDBClusterAccountPrivilegeAsync(const Model::ModifyLibraDBClusterAccountPrivilegeRequest& request, const ModifyLibraDBClusterAccountPrivilegeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLibraDBClusterAccountPrivilegeOutcomeCallable ModifyLibraDBClusterAccountPrivilegeCallable(const Model::ModifyLibraDBClusterAccountPrivilegeRequest& request);
+
+                /**
+                 *本接口（ModifyLibraDBClusterDataSource）用于修改 TDSQL-C 分析集群数据源
+                 * @param req ModifyLibraDBClusterDataSourceRequest
+                 * @return ModifyLibraDBClusterDataSourceOutcome
+                 */
+                ModifyLibraDBClusterDataSourceOutcome ModifyLibraDBClusterDataSource(const Model::ModifyLibraDBClusterDataSourceRequest &request);
+                void ModifyLibraDBClusterDataSourceAsync(const Model::ModifyLibraDBClusterDataSourceRequest& request, const ModifyLibraDBClusterDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLibraDBClusterDataSourceOutcomeCallable ModifyLibraDBClusterDataSourceCallable(const Model::ModifyLibraDBClusterDataSourceRequest& request);
+
+                /**
+                 *修改分析集群名称
+                 * @param req ModifyLibraDBClusterNameRequest
+                 * @return ModifyLibraDBClusterNameOutcome
+                 */
+                ModifyLibraDBClusterNameOutcome ModifyLibraDBClusterName(const Model::ModifyLibraDBClusterNameRequest &request);
+                void ModifyLibraDBClusterNameAsync(const Model::ModifyLibraDBClusterNameRequest& request, const ModifyLibraDBClusterNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLibraDBClusterNameOutcomeCallable ModifyLibraDBClusterNameCallable(const Model::ModifyLibraDBClusterNameRequest& request);
+
+                /**
+                 *修改分析集群项目 ID
+                 * @param req ModifyLibraDBClusterProjectRequest
+                 * @return ModifyLibraDBClusterProjectOutcome
+                 */
+                ModifyLibraDBClusterProjectOutcome ModifyLibraDBClusterProject(const Model::ModifyLibraDBClusterProjectRequest &request);
+                void ModifyLibraDBClusterProjectAsync(const Model::ModifyLibraDBClusterProjectRequest& request, const ModifyLibraDBClusterProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLibraDBClusterProjectOutcomeCallable ModifyLibraDBClusterProjectCallable(const Model::ModifyLibraDBClusterProjectRequest& request);
+
+                /**
+                 *本接口（ModifyLibraDBClusterReplicationObject）用于修改分析集群同步对象
+                 * @param req ModifyLibraDBClusterReplicationObjectRequest
+                 * @return ModifyLibraDBClusterReplicationObjectOutcome
+                 */
+                ModifyLibraDBClusterReplicationObjectOutcome ModifyLibraDBClusterReplicationObject(const Model::ModifyLibraDBClusterReplicationObjectRequest &request);
+                void ModifyLibraDBClusterReplicationObjectAsync(const Model::ModifyLibraDBClusterReplicationObjectRequest& request, const ModifyLibraDBClusterReplicationObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLibraDBClusterReplicationObjectOutcomeCallable ModifyLibraDBClusterReplicationObjectCallable(const Model::ModifyLibraDBClusterReplicationObjectRequest& request);
+
+                /**
+                 *本接口（ModifyLibraDBForwardConfig）用于修改只读分析实例自动转发参数
+                 * @param req ModifyLibraDBForwardConfigRequest
+                 * @return ModifyLibraDBForwardConfigOutcome
+                 */
+                ModifyLibraDBForwardConfigOutcome ModifyLibraDBForwardConfig(const Model::ModifyLibraDBForwardConfigRequest &request);
+                void ModifyLibraDBForwardConfigAsync(const Model::ModifyLibraDBForwardConfigRequest& request, const ModifyLibraDBForwardConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLibraDBForwardConfigOutcomeCallable ModifyLibraDBForwardConfigCallable(const Model::ModifyLibraDBForwardConfigRequest& request);
+
+                /**
                  *本接口（ModifyMaintainPeriodConfig）用于修改维护时间配置。
                  * @param req ModifyMaintainPeriodConfigRequest
                  * @return ModifyMaintainPeriodConfigOutcome
@@ -2187,6 +2651,24 @@ namespace TencentCloud
                 OfflineInstanceOutcome OfflineInstance(const Model::OfflineInstanceRequest &request);
                 void OfflineInstanceAsync(const Model::OfflineInstanceRequest& request, const OfflineInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OfflineInstanceOutcomeCallable OfflineInstanceCallable(const Model::OfflineInstanceRequest& request);
+
+                /**
+                 *下线分析集群
+                 * @param req OfflineLibraDBClusterRequest
+                 * @return OfflineLibraDBClusterOutcome
+                 */
+                OfflineLibraDBClusterOutcome OfflineLibraDBCluster(const Model::OfflineLibraDBClusterRequest &request);
+                void OfflineLibraDBClusterAsync(const Model::OfflineLibraDBClusterRequest& request, const OfflineLibraDBClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OfflineLibraDBClusterOutcomeCallable OfflineLibraDBClusterCallable(const Model::OfflineLibraDBClusterRequest& request);
+
+                /**
+                 *本接口(OfflineLibraDBInstance)用于下线的只读分析引擎实例。
+                 * @param req OfflineLibraDBInstanceRequest
+                 * @return OfflineLibraDBInstanceOutcome
+                 */
+                OfflineLibraDBInstanceOutcome OfflineLibraDBInstance(const Model::OfflineLibraDBInstanceRequest &request);
+                void OfflineLibraDBInstanceAsync(const Model::OfflineLibraDBInstanceRequest& request, const OfflineLibraDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OfflineLibraDBInstanceOutcomeCallable OfflineLibraDBInstanceCallable(const Model::OfflineLibraDBInstanceRequest& request);
 
                 /**
                  *本接口（OpenAuditService）用于为实例开通数据库审计服务。
@@ -2297,6 +2779,15 @@ namespace TencentCloud
                 RenewClustersOutcomeCallable RenewClustersCallable(const Model::RenewClustersRequest& request);
 
                 /**
+                 *续费分析集群
+                 * @param req RenewLibraDBClustersRequest
+                 * @return RenewLibraDBClustersOutcome
+                 */
+                RenewLibraDBClustersOutcome RenewLibraDBClusters(const Model::RenewLibraDBClustersRequest &request);
+                void RenewLibraDBClustersAsync(const Model::RenewLibraDBClustersRequest& request, const RenewLibraDBClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenewLibraDBClustersOutcomeCallable RenewLibraDBClustersCallable(const Model::RenewLibraDBClustersRequest& request);
+
+                /**
                  *回放实例审计日志
                  * @param req ReplayInstanceAuditLogRequest
                  * @return ReplayInstanceAuditLogOutcome
@@ -2315,6 +2806,15 @@ namespace TencentCloud
                 ResetAccountPasswordOutcomeCallable ResetAccountPasswordCallable(const Model::ResetAccountPasswordRequest& request);
 
                 /**
+                 *修改分析集群账号密码
+                 * @param req ResetLibraDBClusterAccountPasswordRequest
+                 * @return ResetLibraDBClusterAccountPasswordOutcome
+                 */
+                ResetLibraDBClusterAccountPasswordOutcome ResetLibraDBClusterAccountPassword(const Model::ResetLibraDBClusterAccountPasswordRequest &request);
+                void ResetLibraDBClusterAccountPasswordAsync(const Model::ResetLibraDBClusterAccountPasswordRequest& request, const ResetLibraDBClusterAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetLibraDBClusterAccountPasswordOutcomeCallable ResetLibraDBClusterAccountPasswordCallable(const Model::ResetLibraDBClusterAccountPasswordRequest& request);
+
+                /**
                  *本接口（RestartInstance）用于重启实例。
                  * @param req RestartInstanceRequest
                  * @return RestartInstanceOutcome
@@ -2322,6 +2822,15 @@ namespace TencentCloud
                 RestartInstanceOutcome RestartInstance(const Model::RestartInstanceRequest &request);
                 void RestartInstanceAsync(const Model::RestartInstanceRequest& request, const RestartInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RestartInstanceOutcomeCallable RestartInstanceCallable(const Model::RestartInstanceRequest& request);
+
+                /**
+                 *重启只读分析引擎
+                 * @param req RestartLibraDBInstanceRequest
+                 * @return RestartLibraDBInstanceOutcome
+                 */
+                RestartLibraDBInstanceOutcome RestartLibraDBInstance(const Model::RestartLibraDBInstanceRequest &request);
+                void RestartLibraDBInstanceAsync(const Model::RestartLibraDBInstanceRequest& request, const RestartLibraDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestartLibraDBInstanceOutcomeCallable RestartLibraDBInstanceCallable(const Model::RestartLibraDBInstanceRequest& request);
 
                 /**
                  *本接口（ResumeServerless）用于恢复 serverless 集群（启动暂停的集群）。
@@ -2376,6 +2885,15 @@ namespace TencentCloud
                 SearchClusterTablesOutcome SearchClusterTables(const Model::SearchClusterTablesRequest &request);
                 void SearchClusterTablesAsync(const Model::SearchClusterTablesRequest& request, const SearchClusterTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchClusterTablesOutcomeCallable SearchClusterTablesCallable(const Model::SearchClusterTablesRequest& request);
+
+                /**
+                 *设置 TDSQL-C 分析集群是否续费
+                 * @param req SetLibraDBClusterRenewFlagRequest
+                 * @return SetLibraDBClusterRenewFlagOutcome
+                 */
+                SetLibraDBClusterRenewFlagOutcome SetLibraDBClusterRenewFlag(const Model::SetLibraDBClusterRenewFlagRequest &request);
+                void SetLibraDBClusterRenewFlagAsync(const Model::SetLibraDBClusterRenewFlagRequest& request, const SetLibraDBClusterRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetLibraDBClusterRenewFlagOutcomeCallable SetLibraDBClusterRenewFlagCallable(const Model::SetLibraDBClusterRenewFlagRequest& request);
 
                 /**
                  *本接口（SetRenewFlag）用于设置实例的自动续费功能。

@@ -32,6 +32,7 @@
 #include <tencentcloud/es/v20180416/model/OutboundPublicAcl.h>
 #include <tencentcloud/es/v20180416/model/EnableScheduleOperationDuration.h>
 #include <tencentcloud/es/v20180416/model/AutoScaleDiskInfo.h>
+#include <tencentcloud/es/v20180416/model/OtherConfig.h>
 
 
 namespace TencentCloud
@@ -1103,6 +1104,27 @@ CLOSE 关闭
                      */
                     bool AutoScaleDiskDeleteNodeTypeListHasBeenSet() const;
 
+                    /**
+                     * 获取其他附加配置，jvm或者yml
+                     * @return OtherConfig 其他附加配置，jvm或者yml
+                     * 
+                     */
+                    OtherConfig GetOtherConfig() const;
+
+                    /**
+                     * 设置其他附加配置，jvm或者yml
+                     * @param _otherConfig 其他附加配置，jvm或者yml
+                     * 
+                     */
+                    void SetOtherConfig(const OtherConfig& _otherConfig);
+
+                    /**
+                     * 判断参数 OtherConfig 是否已赋值
+                     * @return OtherConfig 是否已赋值
+                     * 
+                     */
+                    bool OtherConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1401,6 +1423,12 @@ CLOSE 关闭
                      */
                     std::vector<std::string> m_autoScaleDiskDeleteNodeTypeList;
                     bool m_autoScaleDiskDeleteNodeTypeListHasBeenSet;
+
+                    /**
+                     * 其他附加配置，jvm或者yml
+                     */
+                    OtherConfig m_otherConfig;
+                    bool m_otherConfigHasBeenSet;
 
                 };
             }

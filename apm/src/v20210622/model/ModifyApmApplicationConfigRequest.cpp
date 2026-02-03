@@ -76,7 +76,8 @@ ModifyApmApplicationConfigRequest::ModifyApmApplicationConfigRequest() :
     m_slowSQLThresholdsHasBeenSet(false),
     m_enableDesensitizationRuleHasBeenSet(false),
     m_desensitizationRuleHasBeenSet(false),
-    m_logSpanIdKeyHasBeenSet(false)
+    m_logSpanIdKeyHasBeenSet(false),
+    m_autoProfilingConfigHasBeenSet(false)
 {
 }
 
@@ -532,6 +533,15 @@ string ModifyApmApplicationConfigRequest::ToJsonString() const
         string key = "LogSpanIdKey";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_logSpanIdKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoProfilingConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoProfilingConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_autoProfilingConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -1404,6 +1414,22 @@ void ModifyApmApplicationConfigRequest::SetLogSpanIdKey(const string& _logSpanId
 bool ModifyApmApplicationConfigRequest::LogSpanIdKeyHasBeenSet() const
 {
     return m_logSpanIdKeyHasBeenSet;
+}
+
+AutoProfilingConfig ModifyApmApplicationConfigRequest::GetAutoProfilingConfig() const
+{
+    return m_autoProfilingConfig;
+}
+
+void ModifyApmApplicationConfigRequest::SetAutoProfilingConfig(const AutoProfilingConfig& _autoProfilingConfig)
+{
+    m_autoProfilingConfig = _autoProfilingConfig;
+    m_autoProfilingConfigHasBeenSet = true;
+}
+
+bool ModifyApmApplicationConfigRequest::AutoProfilingConfigHasBeenSet() const
+{
+    return m_autoProfilingConfigHasBeenSet;
 }
 
 

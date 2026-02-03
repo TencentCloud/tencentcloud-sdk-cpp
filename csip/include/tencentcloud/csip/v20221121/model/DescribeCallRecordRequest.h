@@ -128,6 +128,27 @@ namespace TencentCloud
                     bool AccUinHasBeenSet() const;
 
                     /**
+                     * 获取访问密钥，注意：不支持临时密钥的情况
+                     * @return AccessKey 访问密钥，注意：不支持临时密钥的情况
+                     * 
+                     */
+                    std::string GetAccessKey() const;
+
+                    /**
+                     * 设置访问密钥，注意：不支持临时密钥的情况
+                     * @param _accessKey 访问密钥，注意：不支持临时密钥的情况
+                     * 
+                     */
+                    void SetAccessKey(const std::string& _accessKey);
+
+                    /**
+                     * 判断参数 AccessKey 是否已赋值
+                     * @return AccessKey 是否已赋值
+                     * 
+                     */
+                    bool AccessKeyHasBeenSet() const;
+
+                    /**
                      * 获取过滤器
                      * @return Filter 过滤器
                      * 
@@ -173,6 +194,12 @@ namespace TencentCloud
                      */
                     std::string m_accUin;
                     bool m_accUinHasBeenSet;
+
+                    /**
+                     * 访问密钥，注意：不支持临时密钥的情况
+                     */
+                    std::string m_accessKey;
+                    bool m_accessKeyHasBeenSet;
 
                     /**
                      * 过滤器

@@ -68,7 +68,8 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
     m_enableScheduleOperationDurationHasBeenSet(false),
     m_enableDestroyProtectionHasBeenSet(false),
     m_autoScaleDiskInfoListHasBeenSet(false),
-    m_autoScaleDiskDeleteNodeTypeListHasBeenSet(false)
+    m_autoScaleDiskDeleteNodeTypeListHasBeenSet(false),
+    m_otherConfigHasBeenSet(false)
 {
 }
 
@@ -485,6 +486,15 @@ string UpdateInstanceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_otherConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OtherConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_otherConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -1229,6 +1239,22 @@ void UpdateInstanceRequest::SetAutoScaleDiskDeleteNodeTypeList(const vector<stri
 bool UpdateInstanceRequest::AutoScaleDiskDeleteNodeTypeListHasBeenSet() const
 {
     return m_autoScaleDiskDeleteNodeTypeListHasBeenSet;
+}
+
+OtherConfig UpdateInstanceRequest::GetOtherConfig() const
+{
+    return m_otherConfig;
+}
+
+void UpdateInstanceRequest::SetOtherConfig(const OtherConfig& _otherConfig)
+{
+    m_otherConfig = _otherConfig;
+    m_otherConfigHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::OtherConfigHasBeenSet() const
+{
+    return m_otherConfigHasBeenSet;
 }
 
 

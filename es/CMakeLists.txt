@@ -24,6 +24,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/ServerlessSpaceUser.h
   include/tencentcloud/es/v20180416/model/ServerlessIndexSettingsField.h
   include/tencentcloud/es/v20180416/model/RestartLogstashInstanceRequest.h
+  include/tencentcloud/es/v20180416/model/OtherConfig.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceOperationsRequest.h
   include/tencentcloud/es/v20180416/model/LogstashInstanceInfo.h
   include/tencentcloud/es/v20180416/model/OperationDetail.h
@@ -299,6 +300,7 @@ set(es_src
   src/v20180416/model/ServerlessSpaceUser.cpp
   src/v20180416/model/ServerlessIndexSettingsField.cpp
   src/v20180416/model/RestartLogstashInstanceRequest.cpp
+  src/v20180416/model/OtherConfig.cpp
   src/v20180416/model/DescribeInstanceOperationsRequest.cpp
   src/v20180416/model/LogstashInstanceInfo.cpp
   src/v20180416/model/OperationDetail.cpp

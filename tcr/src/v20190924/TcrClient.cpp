@@ -290,6 +290,56 @@ TcrClient::CreateApplicationTriggerPersonalOutcomeCallable TcrClient::CreateAppl
     return prom->get_future();
 }
 
+TcrClient::CreateGCJobOutcome TcrClient::CreateGCJob(const CreateGCJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGCJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGCJobResponse rsp = CreateGCJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGCJobOutcome(rsp);
+        else
+            return CreateGCJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGCJobOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::CreateGCJobAsync(const CreateGCJobRequest& request, const CreateGCJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateGCJobRequest&;
+    using Resp = CreateGCJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateGCJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcrClient::CreateGCJobOutcomeCallable TcrClient::CreateGCJobCallable(const CreateGCJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateGCJobOutcome>>();
+    CreateGCJobAsync(
+    request,
+    [prom](
+        const TcrClient*,
+        const CreateGCJobRequest&,
+        CreateGCJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcrClient::CreateImageAccelerationServiceOutcome TcrClient::CreateImageAccelerationService(const CreateImageAccelerationServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateImageAccelerationService");

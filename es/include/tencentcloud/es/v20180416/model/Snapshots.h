@@ -804,6 +804,31 @@ SUCCESS     备份成功
                      */
                     bool StrategyNameHasBeenSet() const;
 
+                    /**
+                     * 获取cos多AZ备份 0 单AZ; 1 多AZ
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MultiAz cos多AZ备份 0 单AZ; 1 多AZ
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetMultiAz() const;
+
+                    /**
+                     * 设置cos多AZ备份 0 单AZ; 1 多AZ
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _multiAz cos多AZ备份 0 单AZ; 1 多AZ
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMultiAz(const uint64_t& _multiAz);
+
+                    /**
+                     * 判断参数 MultiAz 是否已赋值
+                     * @return MultiAz 是否已赋值
+                     * 
+                     */
+                    bool MultiAzHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1016,6 +1041,13 @@ SUCCESS     备份成功
                      */
                     std::string m_strategyName;
                     bool m_strategyNameHasBeenSet;
+
+                    /**
+                     * cos多AZ备份 0 单AZ; 1 多AZ
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_multiAz;
+                    bool m_multiAzHasBeenSet;
 
                 };
             }

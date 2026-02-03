@@ -77,6 +77,7 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/ApmTag.h
   include/tencentcloud/apm/v20210622/model/Filter.h
   include/tencentcloud/apm/v20210622/model/DescribeGeneralOTSpanListRequest.h
+  include/tencentcloud/apm/v20210622/model/AutoProfilingConfig.h
   include/tencentcloud/apm/v20210622/model/DescribeGeneralApmApplicationConfigResponse.h
   include/tencentcloud/apm/v20210622/model/CreateApmInstanceResponse.h
   include/tencentcloud/apm/v20210622/model/DeleteApmSampleConfigResponse.h
@@ -170,6 +171,7 @@ set(apm_src
   src/v20210622/model/ApmTag.cpp
   src/v20210622/model/Filter.cpp
   src/v20210622/model/DescribeGeneralOTSpanListRequest.cpp
+  src/v20210622/model/AutoProfilingConfig.cpp
   src/v20210622/model/DescribeGeneralApmApplicationConfigResponse.cpp
   src/v20210622/model/CreateApmInstanceResponse.cpp
   src/v20210622/model/DeleteApmSampleConfigResponse.cpp

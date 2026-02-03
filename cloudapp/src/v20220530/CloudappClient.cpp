@@ -90,6 +90,56 @@ CloudappClient::DescribeLicenseOutcomeCallable CloudappClient::DescribeLicenseCa
     return prom->get_future();
 }
 
+CloudappClient::IssueLicenseOutcome CloudappClient::IssueLicense(const IssueLicenseRequest &request)
+{
+    auto outcome = MakeRequest(request, "IssueLicense");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        IssueLicenseResponse rsp = IssueLicenseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return IssueLicenseOutcome(rsp);
+        else
+            return IssueLicenseOutcome(o.GetError());
+    }
+    else
+    {
+        return IssueLicenseOutcome(outcome.GetError());
+    }
+}
+
+void CloudappClient::IssueLicenseAsync(const IssueLicenseRequest& request, const IssueLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const IssueLicenseRequest&;
+    using Resp = IssueLicenseResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "IssueLicense", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CloudappClient::IssueLicenseOutcomeCallable CloudappClient::IssueLicenseCallable(const IssueLicenseRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<IssueLicenseOutcome>>();
+    IssueLicenseAsync(
+    request,
+    [prom](
+        const CloudappClient*,
+        const IssueLicenseRequest&,
+        IssueLicenseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CloudappClient::VerifyLicenseOutcome CloudappClient::VerifyLicense(const VerifyLicenseRequest &request)
 {
     auto outcome = MakeRequest(request, "VerifyLicense");

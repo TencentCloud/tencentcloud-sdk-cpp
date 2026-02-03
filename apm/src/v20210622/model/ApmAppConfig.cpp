@@ -77,7 +77,8 @@ ApmAppConfig::ApmAppConfig() :
     m_slowSQLThresholdsHasBeenSet(false),
     m_enableDesensitizationRuleHasBeenSet(false),
     m_desensitizationRuleHasBeenSet(false),
-    m_logSpanIdKeyHasBeenSet(false)
+    m_logSpanIdKeyHasBeenSet(false),
+    m_autoProfilingConfigHasBeenSet(false)
 {
 }
 
@@ -683,6 +684,23 @@ CoreInternalOutcome ApmAppConfig::Deserialize(const rapidjson::Value &value)
         m_logSpanIdKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoProfilingConfig") && !value["AutoProfilingConfig"].IsNull())
+    {
+        if (!value["AutoProfilingConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmAppConfig.AutoProfilingConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_autoProfilingConfig.Deserialize(value["AutoProfilingConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_autoProfilingConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1159,6 +1177,15 @@ void ApmAppConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "LogSpanIdKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logSpanIdKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoProfilingConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoProfilingConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_autoProfilingConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2074,5 +2101,21 @@ void ApmAppConfig::SetLogSpanIdKey(const string& _logSpanIdKey)
 bool ApmAppConfig::LogSpanIdKeyHasBeenSet() const
 {
     return m_logSpanIdKeyHasBeenSet;
+}
+
+AutoProfilingConfig ApmAppConfig::GetAutoProfilingConfig() const
+{
+    return m_autoProfilingConfig;
+}
+
+void ApmAppConfig::SetAutoProfilingConfig(const AutoProfilingConfig& _autoProfilingConfig)
+{
+    m_autoProfilingConfig = _autoProfilingConfig;
+    m_autoProfilingConfigHasBeenSet = true;
+}
+
+bool ApmAppConfig::AutoProfilingConfigHasBeenSet() const
+{
+    return m_autoProfilingConfigHasBeenSet;
 }
 

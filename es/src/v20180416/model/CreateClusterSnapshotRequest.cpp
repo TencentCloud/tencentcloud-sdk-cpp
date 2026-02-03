@@ -33,7 +33,8 @@ CreateClusterSnapshotRequest::CreateClusterSnapshotRequest() :
     m_retainUntilDateHasBeenSet(false),
     m_retentionGraceTimeHasBeenSet(false),
     m_remoteCosHasBeenSet(false),
-    m_remoteCosRegionHasBeenSet(false)
+    m_remoteCosRegionHasBeenSet(false),
+    m_multiAzHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,14 @@ string CreateClusterSnapshotRequest::ToJsonString() const
         string key = "RemoteCosRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remoteCosRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_multiAzHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiAz";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_multiAz, allocator);
     }
 
 
@@ -314,6 +323,22 @@ void CreateClusterSnapshotRequest::SetRemoteCosRegion(const string& _remoteCosRe
 bool CreateClusterSnapshotRequest::RemoteCosRegionHasBeenSet() const
 {
     return m_remoteCosRegionHasBeenSet;
+}
+
+uint64_t CreateClusterSnapshotRequest::GetMultiAz() const
+{
+    return m_multiAz;
+}
+
+void CreateClusterSnapshotRequest::SetMultiAz(const uint64_t& _multiAz)
+{
+    m_multiAz = _multiAz;
+    m_multiAzHasBeenSet = true;
+}
+
+bool CreateClusterSnapshotRequest::MultiAzHasBeenSet() const
+{
+    return m_multiAzHasBeenSet;
 }
 
 

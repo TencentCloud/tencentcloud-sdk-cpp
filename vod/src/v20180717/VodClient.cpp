@@ -690,6 +690,56 @@ VodClient::CreateAnimatedGraphicsTemplateOutcomeCallable VodClient::CreateAnimat
     return prom->get_future();
 }
 
+VodClient::CreateBlindWatermarkTemplateOutcome VodClient::CreateBlindWatermarkTemplate(const CreateBlindWatermarkTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBlindWatermarkTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBlindWatermarkTemplateResponse rsp = CreateBlindWatermarkTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBlindWatermarkTemplateOutcome(rsp);
+        else
+            return CreateBlindWatermarkTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBlindWatermarkTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateBlindWatermarkTemplateAsync(const CreateBlindWatermarkTemplateRequest& request, const CreateBlindWatermarkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateBlindWatermarkTemplateRequest&;
+    using Resp = CreateBlindWatermarkTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateBlindWatermarkTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateBlindWatermarkTemplateOutcomeCallable VodClient::CreateBlindWatermarkTemplateCallable(const CreateBlindWatermarkTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateBlindWatermarkTemplateOutcome>>();
+    CreateBlindWatermarkTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateBlindWatermarkTemplateRequest&,
+        CreateBlindWatermarkTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::CreateCLSLogsetOutcome VodClient::CreateCLSLogset(const CreateCLSLogsetRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCLSLogset");
@@ -2440,6 +2490,56 @@ VodClient::DeleteAnimatedGraphicsTemplateOutcomeCallable VodClient::DeleteAnimat
     return prom->get_future();
 }
 
+VodClient::DeleteBlindWatermarkTemplateOutcome VodClient::DeleteBlindWatermarkTemplate(const DeleteBlindWatermarkTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBlindWatermarkTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBlindWatermarkTemplateResponse rsp = DeleteBlindWatermarkTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBlindWatermarkTemplateOutcome(rsp);
+        else
+            return DeleteBlindWatermarkTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBlindWatermarkTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteBlindWatermarkTemplateAsync(const DeleteBlindWatermarkTemplateRequest& request, const DeleteBlindWatermarkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteBlindWatermarkTemplateRequest&;
+    using Resp = DeleteBlindWatermarkTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteBlindWatermarkTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DeleteBlindWatermarkTemplateOutcomeCallable VodClient::DeleteBlindWatermarkTemplateCallable(const DeleteBlindWatermarkTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteBlindWatermarkTemplateOutcome>>();
+    DeleteBlindWatermarkTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteBlindWatermarkTemplateRequest&,
+        DeleteBlindWatermarkTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::DeleteCLSTopicOutcome VodClient::DeleteCLSTopic(const DeleteCLSTopicRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCLSTopic");
@@ -4032,6 +4132,56 @@ VodClient::DescribeAnimatedGraphicsTemplatesOutcomeCallable VodClient::DescribeA
         const VodClient*,
         const DescribeAnimatedGraphicsTemplatesRequest&,
         DescribeAnimatedGraphicsTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::DescribeBlindWatermarkTemplatesOutcome VodClient::DescribeBlindWatermarkTemplates(const DescribeBlindWatermarkTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBlindWatermarkTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBlindWatermarkTemplatesResponse rsp = DescribeBlindWatermarkTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBlindWatermarkTemplatesOutcome(rsp);
+        else
+            return DescribeBlindWatermarkTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBlindWatermarkTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeBlindWatermarkTemplatesAsync(const DescribeBlindWatermarkTemplatesRequest& request, const DescribeBlindWatermarkTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBlindWatermarkTemplatesRequest&;
+    using Resp = DescribeBlindWatermarkTemplatesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBlindWatermarkTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeBlindWatermarkTemplatesOutcomeCallable VodClient::DescribeBlindWatermarkTemplatesCallable(const DescribeBlindWatermarkTemplatesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBlindWatermarkTemplatesOutcome>>();
+    DescribeBlindWatermarkTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeBlindWatermarkTemplatesRequest&,
+        DescribeBlindWatermarkTemplatesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -6790,6 +6940,56 @@ VodClient::ExecuteFunctionOutcomeCallable VodClient::ExecuteFunctionCallable(con
     return prom->get_future();
 }
 
+VodClient::ExtractBlindWatermarkOutcome VodClient::ExtractBlindWatermark(const ExtractBlindWatermarkRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExtractBlindWatermark");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExtractBlindWatermarkResponse rsp = ExtractBlindWatermarkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExtractBlindWatermarkOutcome(rsp);
+        else
+            return ExtractBlindWatermarkOutcome(o.GetError());
+    }
+    else
+    {
+        return ExtractBlindWatermarkOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ExtractBlindWatermarkAsync(const ExtractBlindWatermarkRequest& request, const ExtractBlindWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ExtractBlindWatermarkRequest&;
+    using Resp = ExtractBlindWatermarkResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ExtractBlindWatermark", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::ExtractBlindWatermarkOutcomeCallable VodClient::ExtractBlindWatermarkCallable(const ExtractBlindWatermarkRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ExtractBlindWatermarkOutcome>>();
+    ExtractBlindWatermarkAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ExtractBlindWatermarkRequest&,
+        ExtractBlindWatermarkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::ExtractCopyRightWatermarkOutcome VodClient::ExtractCopyRightWatermark(const ExtractCopyRightWatermarkRequest &request)
 {
     auto outcome = MakeRequest(request, "ExtractCopyRightWatermark");
@@ -7482,6 +7682,56 @@ VodClient::ModifyAnimatedGraphicsTemplateOutcomeCallable VodClient::ModifyAnimat
         const VodClient*,
         const ModifyAnimatedGraphicsTemplateRequest&,
         ModifyAnimatedGraphicsTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::ModifyBlindWatermarkTemplateOutcome VodClient::ModifyBlindWatermarkTemplate(const ModifyBlindWatermarkTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBlindWatermarkTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBlindWatermarkTemplateResponse rsp = ModifyBlindWatermarkTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBlindWatermarkTemplateOutcome(rsp);
+        else
+            return ModifyBlindWatermarkTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBlindWatermarkTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifyBlindWatermarkTemplateAsync(const ModifyBlindWatermarkTemplateRequest& request, const ModifyBlindWatermarkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyBlindWatermarkTemplateRequest&;
+    using Resp = ModifyBlindWatermarkTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyBlindWatermarkTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::ModifyBlindWatermarkTemplateOutcomeCallable VodClient::ModifyBlindWatermarkTemplateCallable(const ModifyBlindWatermarkTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyBlindWatermarkTemplateOutcome>>();
+    ModifyBlindWatermarkTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyBlindWatermarkTemplateRequest&,
+        ModifyBlindWatermarkTemplateOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -249,6 +249,27 @@ namespace TencentCloud
                     bool CopyRightWatermarkTextHasBeenSet() const;
 
                     /**
+                     * 获取数字水印模板id。
+                     * @return BlindWatermarkDefinition 数字水印模板id。
+                     * 
+                     */
+                    int64_t GetBlindWatermarkDefinition() const;
+
+                    /**
+                     * 设置数字水印模板id。
+                     * @param _blindWatermarkDefinition 数字水印模板id。
+                     * 
+                     */
+                    void SetBlindWatermarkDefinition(const int64_t& _blindWatermarkDefinition);
+
+                    /**
+                     * 判断参数 BlindWatermarkDefinition 是否已赋值
+                     * @return BlindWatermarkDefinition 是否已赋值
+                     * 
+                     */
+                    bool BlindWatermarkDefinitionHasBeenSet() const;
+
+                    /**
                      * 获取字幕信息列表。
                      * @return SubtitleSet 字幕信息列表。
                      * 
@@ -347,6 +368,12 @@ namespace TencentCloud
                      */
                     std::string m_copyRightWatermarkText;
                     bool m_copyRightWatermarkTextHasBeenSet;
+
+                    /**
+                     * 数字水印模板id。
+                     */
+                    int64_t m_blindWatermarkDefinition;
+                    bool m_blindWatermarkDefinitionHasBeenSet;
 
                     /**
                      * 字幕信息列表。

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否可以拒签 默认false-可以拒签 true-不可以拒签
-                     * @return NoRefuse 是否可以拒签 默认false-可以拒签 true-不可以拒签
+                     * 获取<p>是否可以拒签 默认false-可以拒签 true-不可以拒签</p>
+                     * @return NoRefuse <p>是否可以拒签 默认false-可以拒签 true-不可以拒签</p>
                      * 
                      */
                     bool GetNoRefuse() const;
 
                     /**
-                     * 设置是否可以拒签 默认false-可以拒签 true-不可以拒签
-                     * @param _noRefuse 是否可以拒签 默认false-可以拒签 true-不可以拒签
+                     * 设置<p>是否可以拒签 默认false-可以拒签 true-不可以拒签</p>
+                     * @param _noRefuse <p>是否可以拒签 默认false-可以拒签 true-不可以拒签</p>
                      * 
                      */
                     void SetNoRefuse(const bool& _noRefuse);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NoRefuseHasBeenSet() const;
 
                     /**
-                     * 获取是否可以转发 默认false-可以转发 true-不可以转发
-                     * @return NoTransfer 是否可以转发 默认false-可以转发 true-不可以转发
+                     * 获取<p>是否可以转发 默认false-可以转发 true-不可以转发</p>
+                     * @return NoTransfer <p>是否可以转发 默认false-可以转发 true-不可以转发</p>
                      * 
                      */
                     bool GetNoTransfer() const;
 
                     /**
-                     * 设置是否可以转发 默认false-可以转发 true-不可以转发
-                     * @param _noTransfer 是否可以转发 默认false-可以转发 true-不可以转发
+                     * 设置<p>是否可以转发 默认false-可以转发 true-不可以转发</p>
+                     * @param _noTransfer <p>是否可以转发 默认false-可以转发 true-不可以转发</p>
                      * 
                      */
                     void SetNoTransfer(const bool& _noTransfer);
@@ -89,27 +89,15 @@ namespace TencentCloud
                     bool NoTransferHasBeenSet() const;
 
                     /**
-                     * 获取当签署方有多个签署区时候，是否隐藏一键所有的签署区
-
-false：（默认）不隐藏
-true：隐藏，每个签署区要单独选择印章或者签名
-                     * @return HideOneKeySign 当签署方有多个签署区时候，是否隐藏一键所有的签署区
-
-false：（默认）不隐藏
-true：隐藏，每个签署区要单独选择印章或者签名
+                     * 获取<p>当签署方有多个签署区时候，是否隐藏一键所有的签署区</p><p>false：（默认）不隐藏<br>true：隐藏，每个签署区要单独选择印章或者签名</p>
+                     * @return HideOneKeySign <p>当签署方有多个签署区时候，是否隐藏一键所有的签署区</p><p>false：（默认）不隐藏<br>true：隐藏，每个签署区要单独选择印章或者签名</p>
                      * 
                      */
                     bool GetHideOneKeySign() const;
 
                     /**
-                     * 设置当签署方有多个签署区时候，是否隐藏一键所有的签署区
-
-false：（默认）不隐藏
-true：隐藏，每个签署区要单独选择印章或者签名
-                     * @param _hideOneKeySign 当签署方有多个签署区时候，是否隐藏一键所有的签署区
-
-false：（默认）不隐藏
-true：隐藏，每个签署区要单独选择印章或者签名
+                     * 设置<p>当签署方有多个签署区时候，是否隐藏一键所有的签署区</p><p>false：（默认）不隐藏<br>true：隐藏，每个签署区要单独选择印章或者签名</p>
+                     * @param _hideOneKeySign <p>当签署方有多个签署区时候，是否隐藏一键所有的签署区</p><p>false：（默认）不隐藏<br>true：隐藏，每个签署区要单独选择印章或者签名</p>
                      * 
                      */
                     void SetHideOneKeySign(const bool& _hideOneKeySign);
@@ -122,35 +110,15 @@ true：隐藏，每个签署区要单独选择印章或者签名
                     bool HideOneKeySignHasBeenSet() const;
 
                     /**
-                     * 获取签署人信息补充类型，默认无需补充。
-
-<ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li></ul>
-
-注：
-`使用动态签署人能力前，需登陆腾讯电子签控制台打开服务开关`
-                     * @return FillType 签署人信息补充类型，默认无需补充。
-
-<ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li></ul>
-
-注：
-`使用动态签署人能力前，需登陆腾讯电子签控制台打开服务开关`
+                     * 获取<p>签署人信息补充类型，默认无需补充。<ul><li> <strong>1</strong> :  动态签署人（可发起合同后再补充签署人信息）注：<code>企业自动签不支持动态补充</code></li></ul>注：<code>使用动态签署人能力前，需登录腾讯电子签控制台打开服务开关</code></p><p>枚举值：</p><ul><li>1： 动态签署人</li></ul>
+                     * @return FillType <p>签署人信息补充类型，默认无需补充。<ul><li> <strong>1</strong> :  动态签署人（可发起合同后再补充签署人信息）注：<code>企业自动签不支持动态补充</code></li></ul>注：<code>使用动态签署人能力前，需登录腾讯电子签控制台打开服务开关</code></p><p>枚举值：</p><ul><li>1： 动态签署人</li></ul>
                      * 
                      */
                     int64_t GetFillType() const;
 
                     /**
-                     * 设置签署人信息补充类型，默认无需补充。
-
-<ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li></ul>
-
-注：
-`使用动态签署人能力前，需登陆腾讯电子签控制台打开服务开关`
-                     * @param _fillType 签署人信息补充类型，默认无需补充。
-
-<ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li></ul>
-
-注：
-`使用动态签署人能力前，需登陆腾讯电子签控制台打开服务开关`
+                     * 设置<p>签署人信息补充类型，默认无需补充。<ul><li> <strong>1</strong> :  动态签署人（可发起合同后再补充签署人信息）注：<code>企业自动签不支持动态补充</code></li></ul>注：<code>使用动态签署人能力前，需登录腾讯电子签控制台打开服务开关</code></p><p>枚举值：</p><ul><li>1： 动态签署人</li></ul>
+                     * @param _fillType <p>签署人信息补充类型，默认无需补充。<ul><li> <strong>1</strong> :  动态签署人（可发起合同后再补充签署人信息）注：<code>企业自动签不支持动态补充</code></li></ul>注：<code>使用动态签署人能力前，需登录腾讯电子签控制台打开服务开关</code></p><p>枚举值：</p><ul><li>1： 动态签署人</li></ul>
                      * 
                      */
                     void SetFillType(const int64_t& _fillType);
@@ -163,43 +131,15 @@ true：隐藏，每个签署区要单独选择印章或者签名
                     bool FillTypeHasBeenSet() const;
 
                     /**
-                     * 获取签署人阅读合同限制参数
- <br/>取值：
-<ul>
-<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>
-<li> LimitReadTime，阅读合同仅限制阅读时长</li>
-<li> LimitBottom，阅读合同仅限制必须阅读到底</li>
-<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>
-</ul>
-                     * @return FlowReadLimit 签署人阅读合同限制参数
- <br/>取值：
-<ul>
-<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>
-<li> LimitReadTime，阅读合同仅限制阅读时长</li>
-<li> LimitBottom，阅读合同仅限制必须阅读到底</li>
-<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>
-</ul>
+                     * 获取<p>签署人阅读合同限制参数<br> <br>取值：</p><ul><li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li><li> LimitReadTime，阅读合同仅限制阅读时长</li><li> LimitBottom，阅读合同仅限制必须阅读到底</li><li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li></ul>
+                     * @return FlowReadLimit <p>签署人阅读合同限制参数<br> <br>取值：</p><ul><li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li><li> LimitReadTime，阅读合同仅限制阅读时长</li><li> LimitBottom，阅读合同仅限制必须阅读到底</li><li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li></ul>
                      * 
                      */
                     std::string GetFlowReadLimit() const;
 
                     /**
-                     * 设置签署人阅读合同限制参数
- <br/>取值：
-<ul>
-<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>
-<li> LimitReadTime，阅读合同仅限制阅读时长</li>
-<li> LimitBottom，阅读合同仅限制必须阅读到底</li>
-<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>
-</ul>
-                     * @param _flowReadLimit 签署人阅读合同限制参数
- <br/>取值：
-<ul>
-<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>
-<li> LimitReadTime，阅读合同仅限制阅读时长</li>
-<li> LimitBottom，阅读合同仅限制必须阅读到底</li>
-<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>
-</ul>
+                     * 设置<p>签署人阅读合同限制参数<br> <br>取值：</p><ul><li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li><li> LimitReadTime，阅读合同仅限制阅读时长</li><li> LimitBottom，阅读合同仅限制必须阅读到底</li><li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li></ul>
+                     * @param _flowReadLimit <p>签署人阅读合同限制参数<br> <br>取值：</p><ul><li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li><li> LimitReadTime，阅读合同仅限制阅读时长</li><li> LimitBottom，阅读合同仅限制必须阅读到底</li><li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li></ul>
                      * 
                      */
                     void SetFlowReadLimit(const std::string& _flowReadLimit);
@@ -212,35 +152,15 @@ true：隐藏，每个签署区要单独选择印章或者签名
                     bool FlowReadLimitHasBeenSet() const;
 
                     /**
-                     * 获取禁止在签署过程中添加签署日期控件
- <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
-<ul>
-<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
-<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
-</ul>
-                     * @return ForbidAddSignDate 禁止在签署过程中添加签署日期控件
- <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
-<ul>
-<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
-<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
-</ul>
+                     * 获取<p>禁止在签署过程中添加签署日期控件<br> <br>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：</p><ul><li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li><li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li></ul>
+                     * @return ForbidAddSignDate <p>禁止在签署过程中添加签署日期控件<br> <br>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：</p><ul><li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li><li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li></ul>
                      * 
                      */
                     bool GetForbidAddSignDate() const;
 
                     /**
-                     * 设置禁止在签署过程中添加签署日期控件
- <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
-<ul>
-<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
-<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
-</ul>
-                     * @param _forbidAddSignDate 禁止在签署过程中添加签署日期控件
- <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
-<ul>
-<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
-<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
-</ul>
+                     * 设置<p>禁止在签署过程中添加签署日期控件<br> <br>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：</p><ul><li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li><li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li></ul>
+                     * @param _forbidAddSignDate <p>禁止在签署过程中添加签署日期控件<br> <br>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：</p><ul><li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li><li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li></ul>
                      * 
                      */
                     void SetForbidAddSignDate(const bool& _forbidAddSignDate);
@@ -255,57 +175,37 @@ true：隐藏，每个签署区要单独选择印章或者签名
                 private:
 
                     /**
-                     * 是否可以拒签 默认false-可以拒签 true-不可以拒签
+                     * <p>是否可以拒签 默认false-可以拒签 true-不可以拒签</p>
                      */
                     bool m_noRefuse;
                     bool m_noRefuseHasBeenSet;
 
                     /**
-                     * 是否可以转发 默认false-可以转发 true-不可以转发
+                     * <p>是否可以转发 默认false-可以转发 true-不可以转发</p>
                      */
                     bool m_noTransfer;
                     bool m_noTransferHasBeenSet;
 
                     /**
-                     * 当签署方有多个签署区时候，是否隐藏一键所有的签署区
-
-false：（默认）不隐藏
-true：隐藏，每个签署区要单独选择印章或者签名
+                     * <p>当签署方有多个签署区时候，是否隐藏一键所有的签署区</p><p>false：（默认）不隐藏<br>true：隐藏，每个签署区要单独选择印章或者签名</p>
                      */
                     bool m_hideOneKeySign;
                     bool m_hideOneKeySignHasBeenSet;
 
                     /**
-                     * 签署人信息补充类型，默认无需补充。
-
-<ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li></ul>
-
-注：
-`使用动态签署人能力前，需登陆腾讯电子签控制台打开服务开关`
+                     * <p>签署人信息补充类型，默认无需补充。<ul><li> <strong>1</strong> :  动态签署人（可发起合同后再补充签署人信息）注：<code>企业自动签不支持动态补充</code></li></ul>注：<code>使用动态签署人能力前，需登录腾讯电子签控制台打开服务开关</code></p><p>枚举值：</p><ul><li>1： 动态签署人</li></ul>
                      */
                     int64_t m_fillType;
                     bool m_fillTypeHasBeenSet;
 
                     /**
-                     * 签署人阅读合同限制参数
- <br/>取值：
-<ul>
-<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>
-<li> LimitReadTime，阅读合同仅限制阅读时长</li>
-<li> LimitBottom，阅读合同仅限制必须阅读到底</li>
-<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>
-</ul>
+                     * <p>签署人阅读合同限制参数<br> <br>取值：</p><ul><li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li><li> LimitReadTime，阅读合同仅限制阅读时长</li><li> LimitBottom，阅读合同仅限制必须阅读到底</li><li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li></ul>
                      */
                     std::string m_flowReadLimit;
                     bool m_flowReadLimitHasBeenSet;
 
                     /**
-                     * 禁止在签署过程中添加签署日期控件
- <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
-<ul>
-<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
-<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
-</ul>
+                     * <p>禁止在签署过程中添加签署日期控件<br> <br>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：</p><ul><li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li><li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li></ul>
                      */
                     bool m_forbidAddSignDate;
                     bool m_forbidAddSignDateHasBeenSet;

@@ -29,6 +29,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DescribeReplicationInstanceCreateTasksResponse.h
   include/tencentcloud/tcr/v20190924/model/WebhookTriggerLog.h
   include/tencentcloud/tcr/v20190924/model/AccessVpc.h
+  include/tencentcloud/tcr/v20190924/model/DescribeInternalEndpointsRequest.h
   include/tencentcloud/tcr/v20190924/model/ModifyTagRetentionRuleRequest.h
   include/tencentcloud/tcr/v20190924/model/ReplicationPolicyInfo.h
   include/tencentcloud/tcr/v20190924/model/ManageExternalEndpointRequest.h
@@ -37,6 +38,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DescribeInstanceCustomizedDomainResponse.h
   include/tencentcloud/tcr/v20190924/model/TerminateGCJobResponse.h
   include/tencentcloud/tcr/v20190924/model/TriggerInvokePara.h
+  include/tencentcloud/tcr/v20190924/model/GCParameters.h
   include/tencentcloud/tcr/v20190924/model/TriggerLogResp.h
   include/tencentcloud/tcr/v20190924/model/DownloadHelmChartRequest.h
   include/tencentcloud/tcr/v20190924/model/DuplicateImagePersonalRequest.h
@@ -61,6 +63,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DeleteInstanceTokenResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeInstancesResponse.h
   include/tencentcloud/tcr/v20190924/model/CreateReplicationInstanceRequest.h
+  include/tencentcloud/tcr/v20190924/model/ValidateRepositoryExistPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/ModifyInstanceTokenResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeApplicationTriggerLogPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/FavorResp.h
@@ -80,7 +83,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DeleteRepositoryResponse.h
   include/tencentcloud/tcr/v20190924/model/DeleteImagePersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeWebhookTriggerLogResponse.h
-  include/tencentcloud/tcr/v20190924/model/DownloadHelmChartResponse.h
+  include/tencentcloud/tcr/v20190924/model/CreateGCJobRequest.h
   include/tencentcloud/tcr/v20190924/model/ManageReplicationRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteWebhookTriggerResponse.h
   include/tencentcloud/tcr/v20190924/model/DeleteImageLifecycleGlobalPersonalResponse.h
@@ -139,7 +142,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/CreateUserPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteServiceAccountResponse.h
   include/tencentcloud/tcr/v20190924/model/ModifyNamespaceResponse.h
-  include/tencentcloud/tcr/v20190924/model/ValidateRepositoryExistPersonalRequest.h
+  include/tencentcloud/tcr/v20190924/model/DownloadHelmChartResponse.h
   include/tencentcloud/tcr/v20190924/model/ModifyUserPasswordPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/TcrNamespaceInfo.h
   include/tencentcloud/tcr/v20190924/model/DescribeImagesResponse.h
@@ -267,7 +270,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DescribeSecurityPoliciesRequest.h
   include/tencentcloud/tcr/v20190924/model/ModifyInstanceResponse.h
   include/tencentcloud/tcr/v20190924/model/ReplicationRegistry.h
-  include/tencentcloud/tcr/v20190924/model/DescribeInternalEndpointsRequest.h
+  include/tencentcloud/tcr/v20190924/model/CreateGCJobResponse.h
   include/tencentcloud/tcr/v20190924/model/ValidateNamespaceExistPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/CheckInstanceRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeApplicationTriggerPersonalResp.h
@@ -328,6 +331,7 @@ set(tcr_src
   src/v20190924/model/DescribeReplicationInstanceCreateTasksResponse.cpp
   src/v20190924/model/WebhookTriggerLog.cpp
   src/v20190924/model/AccessVpc.cpp
+  src/v20190924/model/DescribeInternalEndpointsRequest.cpp
   src/v20190924/model/ModifyTagRetentionRuleRequest.cpp
   src/v20190924/model/ReplicationPolicyInfo.cpp
   src/v20190924/model/ManageExternalEndpointRequest.cpp
@@ -336,6 +340,7 @@ set(tcr_src
   src/v20190924/model/DescribeInstanceCustomizedDomainResponse.cpp
   src/v20190924/model/TerminateGCJobResponse.cpp
   src/v20190924/model/TriggerInvokePara.cpp
+  src/v20190924/model/GCParameters.cpp
   src/v20190924/model/TriggerLogResp.cpp
   src/v20190924/model/DownloadHelmChartRequest.cpp
   src/v20190924/model/DuplicateImagePersonalRequest.cpp
@@ -360,6 +365,7 @@ set(tcr_src
   src/v20190924/model/DeleteInstanceTokenResponse.cpp
   src/v20190924/model/DescribeInstancesResponse.cpp
   src/v20190924/model/CreateReplicationInstanceRequest.cpp
+  src/v20190924/model/ValidateRepositoryExistPersonalRequest.cpp
   src/v20190924/model/ModifyInstanceTokenResponse.cpp
   src/v20190924/model/DescribeApplicationTriggerLogPersonalResponse.cpp
   src/v20190924/model/FavorResp.cpp
@@ -379,7 +385,7 @@ set(tcr_src
   src/v20190924/model/DeleteRepositoryResponse.cpp
   src/v20190924/model/DeleteImagePersonalResponse.cpp
   src/v20190924/model/DescribeWebhookTriggerLogResponse.cpp
-  src/v20190924/model/DownloadHelmChartResponse.cpp
+  src/v20190924/model/CreateGCJobRequest.cpp
   src/v20190924/model/ManageReplicationRequest.cpp
   src/v20190924/model/DeleteWebhookTriggerResponse.cpp
   src/v20190924/model/DeleteImageLifecycleGlobalPersonalResponse.cpp
@@ -438,7 +444,7 @@ set(tcr_src
   src/v20190924/model/CreateUserPersonalRequest.cpp
   src/v20190924/model/DeleteServiceAccountResponse.cpp
   src/v20190924/model/ModifyNamespaceResponse.cpp
-  src/v20190924/model/ValidateRepositoryExistPersonalRequest.cpp
+  src/v20190924/model/DownloadHelmChartResponse.cpp
   src/v20190924/model/ModifyUserPasswordPersonalResponse.cpp
   src/v20190924/model/TcrNamespaceInfo.cpp
   src/v20190924/model/DescribeImagesResponse.cpp
@@ -566,7 +572,7 @@ set(tcr_src
   src/v20190924/model/DescribeSecurityPoliciesRequest.cpp
   src/v20190924/model/ModifyInstanceResponse.cpp
   src/v20190924/model/ReplicationRegistry.cpp
-  src/v20190924/model/DescribeInternalEndpointsRequest.cpp
+  src/v20190924/model/CreateGCJobResponse.cpp
   src/v20190924/model/ValidateNamespaceExistPersonalResponse.cpp
   src/v20190924/model/CheckInstanceRequest.cpp
   src/v20190924/model/DescribeApplicationTriggerPersonalResp.cpp

@@ -273,6 +273,27 @@ namespace TencentCloud
                      */
                     bool RemoteCosRegionHasBeenSet() const;
 
+                    /**
+                     * 获取cos多AZ备份 0 单AZ; 1 多AZ
+                     * @return MultiAz cos多AZ备份 0 单AZ; 1 多AZ
+                     * 
+                     */
+                    uint64_t GetMultiAz() const;
+
+                    /**
+                     * 设置cos多AZ备份 0 单AZ; 1 多AZ
+                     * @param _multiAz cos多AZ备份 0 单AZ; 1 多AZ
+                     * 
+                     */
+                    void SetMultiAz(const uint64_t& _multiAz);
+
+                    /**
+                     * 判断参数 MultiAz 是否已赋值
+                     * @return MultiAz 是否已赋值
+                     * 
+                     */
+                    bool MultiAzHasBeenSet() const;
+
                 private:
 
                     /**
@@ -340,6 +361,12 @@ namespace TencentCloud
                      */
                     std::string m_remoteCosRegion;
                     bool m_remoteCosRegionHasBeenSet;
+
+                    /**
+                     * cos多AZ备份 0 单AZ; 1 多AZ
+                     */
+                    uint64_t m_multiAz;
+                    bool m_multiAzHasBeenSet;
 
                 };
             }

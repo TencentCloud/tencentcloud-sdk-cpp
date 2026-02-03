@@ -32,7 +32,11 @@ Setats::Setats() :
     m_secondsUntilExpiryHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_managerUrlHasBeenSet(false),
-    m_isolatedTimeHasBeenSet(false)
+    m_isolatedTimeHasBeenSet(false),
+    m_ownerClusterGroupSerialIdHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_setatsUiUrlHasBeenSet(false),
+    m_imageVersionHasBeenSet(false)
 {
 }
 
@@ -192,6 +196,46 @@ CoreInternalOutcome Setats::Deserialize(const rapidjson::Value &value)
         m_isolatedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("OwnerClusterGroupSerialId") && !value["OwnerClusterGroupSerialId"].IsNull())
+    {
+        if (!value["OwnerClusterGroupSerialId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Setats.OwnerClusterGroupSerialId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerClusterGroupSerialId = string(value["OwnerClusterGroupSerialId"].GetString());
+        m_ownerClusterGroupSerialIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Setats.Type` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = value["Type"].GetUint64();
+        m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SetatsUiUrl") && !value["SetatsUiUrl"].IsNull())
+    {
+        if (!value["SetatsUiUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Setats.SetatsUiUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_setatsUiUrl = string(value["SetatsUiUrl"].GetString());
+        m_setatsUiUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("ImageVersion") && !value["ImageVersion"].IsNull())
+    {
+        if (!value["ImageVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Setats.ImageVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageVersion = string(value["ImageVersion"].GetString());
+        m_imageVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -303,6 +347,38 @@ void Setats::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "IsolatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_isolatedTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerClusterGroupSerialIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerClusterGroupSerialId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerClusterGroupSerialId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_type, allocator);
+    }
+
+    if (m_setatsUiUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SetatsUiUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_setatsUiUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -498,5 +574,69 @@ void Setats::SetIsolatedTime(const string& _isolatedTime)
 bool Setats::IsolatedTimeHasBeenSet() const
 {
     return m_isolatedTimeHasBeenSet;
+}
+
+string Setats::GetOwnerClusterGroupSerialId() const
+{
+    return m_ownerClusterGroupSerialId;
+}
+
+void Setats::SetOwnerClusterGroupSerialId(const string& _ownerClusterGroupSerialId)
+{
+    m_ownerClusterGroupSerialId = _ownerClusterGroupSerialId;
+    m_ownerClusterGroupSerialIdHasBeenSet = true;
+}
+
+bool Setats::OwnerClusterGroupSerialIdHasBeenSet() const
+{
+    return m_ownerClusterGroupSerialIdHasBeenSet;
+}
+
+uint64_t Setats::GetType() const
+{
+    return m_type;
+}
+
+void Setats::SetType(const uint64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool Setats::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+string Setats::GetSetatsUiUrl() const
+{
+    return m_setatsUiUrl;
+}
+
+void Setats::SetSetatsUiUrl(const string& _setatsUiUrl)
+{
+    m_setatsUiUrl = _setatsUiUrl;
+    m_setatsUiUrlHasBeenSet = true;
+}
+
+bool Setats::SetatsUiUrlHasBeenSet() const
+{
+    return m_setatsUiUrlHasBeenSet;
+}
+
+string Setats::GetImageVersion() const
+{
+    return m_imageVersion;
+}
+
+void Setats::SetImageVersion(const string& _imageVersion)
+{
+    m_imageVersion = _imageVersion;
+    m_imageVersionHasBeenSet = true;
+}
+
+bool Setats::ImageVersionHasBeenSet() const
+{
+    return m_imageVersionHasBeenSet;
 }
 
