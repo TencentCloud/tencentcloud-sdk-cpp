@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/waf/v20180125/model/JobDateTime.h>
 
 
 namespace TencentCloud
@@ -130,6 +131,69 @@ namespace TencentCloud
                      */
                     bool NoteHasBeenSet() const;
 
+                    /**
+                     * 获取任务类型（TimedJob/CronJob）
+                     * @return JobType 任务类型（TimedJob/CronJob）
+                     * 
+                     */
+                    std::string GetJobType() const;
+
+                    /**
+                     * 设置任务类型（TimedJob/CronJob）
+                     * @param _jobType 任务类型（TimedJob/CronJob）
+                     * 
+                     */
+                    void SetJobType(const std::string& _jobType);
+
+                    /**
+                     * 判断参数 JobType 是否已赋值
+                     * @return JobType 是否已赋值
+                     * 
+                     */
+                    bool JobTypeHasBeenSet() const;
+
+                    /**
+                     * 获取任务时间配置
+                     * @return JobDateTime 任务时间配置
+                     * 
+                     */
+                    JobDateTime GetJobDateTime() const;
+
+                    /**
+                     * 设置任务时间配置
+                     * @param _jobDateTime 任务时间配置
+                     * 
+                     */
+                    void SetJobDateTime(const JobDateTime& _jobDateTime);
+
+                    /**
+                     * 判断参数 JobDateTime 是否已赋值
+                     * @return JobDateTime 是否已赋值
+                     * 
+                     */
+                    bool JobDateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取生效状态
+                     * @return ValidStatus 生效状态
+                     * 
+                     */
+                    int64_t GetValidStatus() const;
+
+                    /**
+                     * 设置生效状态
+                     * @param _validStatus 生效状态
+                     * 
+                     */
+                    void SetValidStatus(const int64_t& _validStatus);
+
+                    /**
+                     * 判断参数 ValidStatus 是否已赋值
+                     * @return ValidStatus 是否已赋值
+                     * 
+                     */
+                    bool ValidStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +219,24 @@ namespace TencentCloud
                      */
                     std::string m_note;
                     bool m_noteHasBeenSet;
+
+                    /**
+                     * 任务类型（TimedJob/CronJob）
+                     */
+                    std::string m_jobType;
+                    bool m_jobTypeHasBeenSet;
+
+                    /**
+                     * 任务时间配置
+                     */
+                    JobDateTime m_jobDateTime;
+                    bool m_jobDateTimeHasBeenSet;
+
+                    /**
+                     * 生效状态
+                     */
+                    int64_t m_validStatus;
+                    bool m_validStatusHasBeenSet;
 
                 };
             }

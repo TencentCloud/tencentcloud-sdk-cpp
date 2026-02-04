@@ -29,13 +29,16 @@ OutputRisk::OutputRisk() :
     m_riskPresentationHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_positionsHasBeenSet(false),
+    m_isMarkHasBeenSet(false),
+    m_isIgnoreHasBeenSet(false),
     m_riskBasisHasBeenSet(false),
     m_riskLevelIdHasBeenSet(false),
     m_riskLabelsHasBeenSet(false),
     m_riskOriginHasBeenSet(false),
     m_creatorHasBeenSet(false),
     m_creatorIdHasBeenSet(false),
-    m_createdOnHasBeenSet(false)
+    m_createdOnHasBeenSet(false),
+    m_riskLevelAliasNameHasBeenSet(false)
 {
 }
 
@@ -137,6 +140,26 @@ CoreInternalOutcome OutputRisk::Deserialize(const rapidjson::Value &value)
         m_positionsHasBeenSet = true;
     }
 
+    if (value.HasMember("IsMark") && !value["IsMark"].IsNull())
+    {
+        if (!value["IsMark"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `OutputRisk.IsMark` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isMark = value["IsMark"].GetBool();
+        m_isMarkHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsIgnore") && !value["IsIgnore"].IsNull())
+    {
+        if (!value["IsIgnore"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `OutputRisk.IsIgnore` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isIgnore = value["IsIgnore"].GetBool();
+        m_isIgnoreHasBeenSet = true;
+    }
+
     if (value.HasMember("RiskBasis") && !value["RiskBasis"].IsNull())
     {
         if (!value["RiskBasis"].IsString())
@@ -208,6 +231,16 @@ CoreInternalOutcome OutputRisk::Deserialize(const rapidjson::Value &value)
         }
         m_createdOn = value["CreatedOn"].GetInt64();
         m_createdOnHasBeenSet = true;
+    }
+
+    if (value.HasMember("RiskLevelAliasName") && !value["RiskLevelAliasName"].IsNull())
+    {
+        if (!value["RiskLevelAliasName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OutputRisk.RiskLevelAliasName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskLevelAliasName = string(value["RiskLevelAliasName"].GetString());
+        m_riskLevelAliasNameHasBeenSet = true;
     }
 
 
@@ -293,6 +326,22 @@ void OutputRisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         }
     }
 
+    if (m_isMarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsMark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isMark, allocator);
+    }
+
+    if (m_isIgnoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsIgnore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isIgnore, allocator);
+    }
+
     if (m_riskBasisHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -352,6 +401,14 @@ void OutputRisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "CreatedOn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createdOn, allocator);
+    }
+
+    if (m_riskLevelAliasNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskLevelAliasName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_riskLevelAliasName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -485,6 +542,38 @@ bool OutputRisk::PositionsHasBeenSet() const
     return m_positionsHasBeenSet;
 }
 
+bool OutputRisk::GetIsMark() const
+{
+    return m_isMark;
+}
+
+void OutputRisk::SetIsMark(const bool& _isMark)
+{
+    m_isMark = _isMark;
+    m_isMarkHasBeenSet = true;
+}
+
+bool OutputRisk::IsMarkHasBeenSet() const
+{
+    return m_isMarkHasBeenSet;
+}
+
+bool OutputRisk::GetIsIgnore() const
+{
+    return m_isIgnore;
+}
+
+void OutputRisk::SetIsIgnore(const bool& _isIgnore)
+{
+    m_isIgnore = _isIgnore;
+    m_isIgnoreHasBeenSet = true;
+}
+
+bool OutputRisk::IsIgnoreHasBeenSet() const
+{
+    return m_isIgnoreHasBeenSet;
+}
+
 string OutputRisk::GetRiskBasis() const
 {
     return m_riskBasis;
@@ -595,5 +684,21 @@ void OutputRisk::SetCreatedOn(const int64_t& _createdOn)
 bool OutputRisk::CreatedOnHasBeenSet() const
 {
     return m_createdOnHasBeenSet;
+}
+
+string OutputRisk::GetRiskLevelAliasName() const
+{
+    return m_riskLevelAliasName;
+}
+
+void OutputRisk::SetRiskLevelAliasName(const string& _riskLevelAliasName)
+{
+    m_riskLevelAliasName = _riskLevelAliasName;
+    m_riskLevelAliasNameHasBeenSet = true;
+}
+
+bool OutputRisk::RiskLevelAliasNameHasBeenSet() const
+{
+    return m_riskLevelAliasNameHasBeenSet;
 }
 

@@ -600,6 +600,111 @@ namespace TencentCloud
                      */
                     bool AccessDetailsHasBeenSet() const;
 
+                    /**
+                     * 获取集群是否跨az，为0不跨az；为1跨az
+                     * @return IsAz 集群是否跨az，为0不跨az；为1跨az
+                     * 
+                     */
+                    int64_t GetIsAz() const;
+
+                    /**
+                     * 设置集群是否跨az，为0不跨az；为1跨az
+                     * @param _isAz 集群是否跨az，为0不跨az；为1跨az
+                     * 
+                     */
+                    void SetIsAz(const int64_t& _isAz);
+
+                    /**
+                     * 判断参数 IsAz 是否已赋值
+                     * @return IsAz 是否已赋值
+                     * 
+                     */
+                    bool IsAzHasBeenSet() const;
+
+                    /**
+                     * 获取备可用区
+                     * @return SecondaryZone 备可用区
+                     * 
+                     */
+                    std::string GetSecondaryZone() const;
+
+                    /**
+                     * 设置备可用区
+                     * @param _secondaryZone 备可用区
+                     * 
+                     */
+                    void SetSecondaryZone(const std::string& _secondaryZone);
+
+                    /**
+                     * 判断参数 SecondaryZone 是否已赋值
+                     * @return SecondaryZone 是否已赋值
+                     * 
+                     */
+                    bool SecondaryZoneHasBeenSet() const;
+
+                    /**
+                     * 获取备子网
+                     * @return SecondarySubnet 备子网
+                     * 
+                     */
+                    std::string GetSecondarySubnet() const;
+
+                    /**
+                     * 设置备子网
+                     * @param _secondarySubnet 备子网
+                     * 
+                     */
+                    void SetSecondarySubnet(const std::string& _secondarySubnet);
+
+                    /**
+                     * 判断参数 SecondarySubnet 是否已赋值
+                     * @return SecondarySubnet 是否已赋值
+                     * 
+                     */
+                    bool SecondarySubnetHasBeenSet() const;
+
+                    /**
+                     * 获取访问信息
+                     * @return AccessInfo 访问信息
+                     * 
+                     */
+                    std::string GetAccessInfo() const;
+
+                    /**
+                     * 设置访问信息
+                     * @param _accessInfo 访问信息
+                     * 
+                     */
+                    void SetAccessInfo(const std::string& _accessInfo);
+
+                    /**
+                     * 判断参数 AccessInfo 是否已赋值
+                     * @return AccessInfo 是否已赋值
+                     * 
+                     */
+                    bool AccessInfoHasBeenSet() const;
+
+                    /**
+                     * 获取GTM节点信息
+                     * @return GTMNodes GTM节点信息
+                     * 
+                     */
+                    std::vector<InstanceNodeGroup> GetGTMNodes() const;
+
+                    /**
+                     * 设置GTM节点信息
+                     * @param _gTMNodes GTM节点信息
+                     * 
+                     */
+                    void SetGTMNodes(const std::vector<InstanceNodeGroup>& _gTMNodes);
+
+                    /**
+                     * 判断参数 GTMNodes 是否已赋值
+                     * @return GTMNodes 是否已赋值
+                     * 
+                     */
+                    bool GTMNodesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -758,6 +863,36 @@ namespace TencentCloud
                      */
                     std::vector<AccessInfo> m_accessDetails;
                     bool m_accessDetailsHasBeenSet;
+
+                    /**
+                     * 集群是否跨az，为0不跨az；为1跨az
+                     */
+                    int64_t m_isAz;
+                    bool m_isAzHasBeenSet;
+
+                    /**
+                     * 备可用区
+                     */
+                    std::string m_secondaryZone;
+                    bool m_secondaryZoneHasBeenSet;
+
+                    /**
+                     * 备子网
+                     */
+                    std::string m_secondarySubnet;
+                    bool m_secondarySubnetHasBeenSet;
+
+                    /**
+                     * 访问信息
+                     */
+                    std::string m_accessInfo;
+                    bool m_accessInfoHasBeenSet;
+
+                    /**
+                     * GTM节点信息
+                     */
+                    std::vector<InstanceNodeGroup> m_gTMNodes;
+                    bool m_gTMNodesHasBeenSet;
 
                 };
             }

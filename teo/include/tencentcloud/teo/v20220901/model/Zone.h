@@ -157,13 +157,15 @@ namespace TencentCloud
 <li> partial：CNAME 接入类型；</li>
 <li> noDomainAccess：无域名接入类型；</li>
 <li>dnsPodAccess：DNSPod 托管类型，该类型要求您的域名已托管在腾讯云 DNSPod；</li>
-<li> pages：Pages 类型。</li>
+<li> pages：Pages 类型；</li>
+<li> ai：边缘推理接入类型。</li>
                      * @return Type 站点接入类型，取值有：
 <li> full：NS 接入类型；</li>
 <li> partial：CNAME 接入类型；</li>
 <li> noDomainAccess：无域名接入类型；</li>
 <li>dnsPodAccess：DNSPod 托管类型，该类型要求您的域名已托管在腾讯云 DNSPod；</li>
-<li> pages：Pages 类型。</li>
+<li> pages：Pages 类型；</li>
+<li> ai：边缘推理接入类型。</li>
                      * 
                      */
                     std::string GetType() const;
@@ -174,13 +176,15 @@ namespace TencentCloud
 <li> partial：CNAME 接入类型；</li>
 <li> noDomainAccess：无域名接入类型；</li>
 <li>dnsPodAccess：DNSPod 托管类型，该类型要求您的域名已托管在腾讯云 DNSPod；</li>
-<li> pages：Pages 类型。</li>
+<li> pages：Pages 类型；</li>
+<li> ai：边缘推理接入类型。</li>
                      * @param _type 站点接入类型，取值有：
 <li> full：NS 接入类型；</li>
 <li> partial：CNAME 接入类型；</li>
 <li> noDomainAccess：无域名接入类型；</li>
 <li>dnsPodAccess：DNSPod 托管类型，该类型要求您的域名已托管在腾讯云 DNSPod；</li>
-<li> pages：Pages 类型。</li>
+<li> pages：Pages 类型；</li>
+<li> ai：边缘推理接入类型。</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -719,7 +723,8 @@ namespace TencentCloud
 <li> partial：CNAME 接入类型；</li>
 <li> noDomainAccess：无域名接入类型；</li>
 <li>dnsPodAccess：DNSPod 托管类型，该类型要求您的域名已托管在腾讯云 DNSPod；</li>
-<li> pages：Pages 类型。</li>
+<li> pages：Pages 类型；</li>
+<li> ai：边缘推理接入类型。</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

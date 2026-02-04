@@ -58,6 +58,34 @@ namespace TencentCloud
                      */
                     bool BaseInfoHasBeenSet() const;
 
+                    /**
+                     * 获取创建规则的ruleID
+                     * @return LimitRuleID 创建规则的ruleID
+                     * 
+                     */
+                    int64_t GetLimitRuleID() const;
+
+                    /**
+                     * 判断参数 LimitRuleID 是否已赋值
+                     * @return LimitRuleID 是否已赋值
+                     * 
+                     */
+                    bool LimitRuleIDHasBeenSet() const;
+
+                    /**
+                     * 获取所属域名
+                     * @return Domain 所属域名
+                     * 
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     * 
+                     */
+                    bool DomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +93,18 @@ namespace TencentCloud
                      */
                     RateLimitCommonRsp m_baseInfo;
                     bool m_baseInfoHasBeenSet;
+
+                    /**
+                     * 创建规则的ruleID
+                     */
+                    int64_t m_limitRuleID;
+                    bool m_limitRuleIDHasBeenSet;
+
+                    /**
+                     * 所属域名
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
 
                 };
             }

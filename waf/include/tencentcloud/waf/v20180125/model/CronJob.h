@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool WDaysHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取开始时间戳
+                     * @return StartTime 开始时间戳
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置开始时间戳
+                     * @param _startTime 开始时间戳
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间戳
+                     * @return EndTime 结束时间戳
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置结束时间戳
+                     * @param _endTime 结束时间戳
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -145,13 +145,13 @@ namespace TencentCloud
                     bool m_wDaysHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * 开始时间戳
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间戳
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

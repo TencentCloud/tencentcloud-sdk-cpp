@@ -74,6 +74,20 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取错误信息
+                     * @return ErrorMsg 错误信息
+                     * 
+                     */
+                    std::string GetErrorMsg() const;
+
+                    /**
+                     * 判断参数 ErrorMsg 是否已赋值
+                     * @return ErrorMsg 是否已赋值
+                     * 
+                     */
+                    bool ErrorMsgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -88,6 +102,12 @@ namespace TencentCloud
                      */
                     std::string m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 错误信息
+                     */
+                    std::string m_errorMsg;
+                    bool m_errorMsgHasBeenSet;
 
                 };
             }

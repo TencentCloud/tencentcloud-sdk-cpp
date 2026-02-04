@@ -35,6 +35,8 @@
 #include <tencentcloud/apm/v20210622/model/DeleteApmSampleConfigResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmAgentRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmAgentResponse.h>
+#include <tencentcloud/apm/v20210622/model/DescribeApmAllVulCountRequest.h>
+#include <tencentcloud/apm/v20210622/model/DescribeApmAllVulCountResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmApplicationConfigRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmApplicationConfigResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmAssociationRequest.h>
@@ -47,6 +49,10 @@
 #include <tencentcloud/apm/v20210622/model/DescribeApmSampleConfigResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmServiceMetricRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmServiceMetricResponse.h>
+#include <tencentcloud/apm/v20210622/model/DescribeApmVulnerabilityCountRequest.h>
+#include <tencentcloud/apm/v20210622/model/DescribeApmVulnerabilityCountResponse.h>
+#include <tencentcloud/apm/v20210622/model/DescribeApmVulnerabilityDetailRequest.h>
+#include <tencentcloud/apm/v20210622/model/DescribeApmVulnerabilityDetailResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeGeneralApmApplicationConfigRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeGeneralApmApplicationConfigResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeGeneralMetricDataRequest.h>
@@ -57,6 +63,8 @@
 #include <tencentcloud/apm/v20210622/model/DescribeGeneralSpanListResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeMetricRecordsRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeMetricRecordsResponse.h>
+#include <tencentcloud/apm/v20210622/model/DescribeOPRAllVulCountRequest.h>
+#include <tencentcloud/apm/v20210622/model/DescribeOPRAllVulCountResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeServiceOverviewRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeServiceOverviewResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeTagValuesRequest.h>
@@ -109,6 +117,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApmAgentResponse> DescribeApmAgentOutcome;
                 typedef std::future<DescribeApmAgentOutcome> DescribeApmAgentOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeApmAgentRequest&, DescribeApmAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApmAgentAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeApmAllVulCountResponse> DescribeApmAllVulCountOutcome;
+                typedef std::future<DescribeApmAllVulCountOutcome> DescribeApmAllVulCountOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::DescribeApmAllVulCountRequest&, DescribeApmAllVulCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApmAllVulCountAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeApmApplicationConfigResponse> DescribeApmApplicationConfigOutcome;
                 typedef std::future<DescribeApmApplicationConfigOutcome> DescribeApmApplicationConfigOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeApmApplicationConfigRequest&, DescribeApmApplicationConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApmApplicationConfigAsyncHandler;
@@ -127,6 +138,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApmServiceMetricResponse> DescribeApmServiceMetricOutcome;
                 typedef std::future<DescribeApmServiceMetricOutcome> DescribeApmServiceMetricOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeApmServiceMetricRequest&, DescribeApmServiceMetricOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApmServiceMetricAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeApmVulnerabilityCountResponse> DescribeApmVulnerabilityCountOutcome;
+                typedef std::future<DescribeApmVulnerabilityCountOutcome> DescribeApmVulnerabilityCountOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::DescribeApmVulnerabilityCountRequest&, DescribeApmVulnerabilityCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApmVulnerabilityCountAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeApmVulnerabilityDetailResponse> DescribeApmVulnerabilityDetailOutcome;
+                typedef std::future<DescribeApmVulnerabilityDetailOutcome> DescribeApmVulnerabilityDetailOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::DescribeApmVulnerabilityDetailRequest&, DescribeApmVulnerabilityDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApmVulnerabilityDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGeneralApmApplicationConfigResponse> DescribeGeneralApmApplicationConfigOutcome;
                 typedef std::future<DescribeGeneralApmApplicationConfigOutcome> DescribeGeneralApmApplicationConfigOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeGeneralApmApplicationConfigRequest&, DescribeGeneralApmApplicationConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGeneralApmApplicationConfigAsyncHandler;
@@ -142,6 +159,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMetricRecordsResponse> DescribeMetricRecordsOutcome;
                 typedef std::future<DescribeMetricRecordsOutcome> DescribeMetricRecordsOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeMetricRecordsRequest&, DescribeMetricRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMetricRecordsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOPRAllVulCountResponse> DescribeOPRAllVulCountOutcome;
+                typedef std::future<DescribeOPRAllVulCountOutcome> DescribeOPRAllVulCountOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::DescribeOPRAllVulCountRequest&, DescribeOPRAllVulCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOPRAllVulCountAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeServiceOverviewResponse> DescribeServiceOverviewOutcome;
                 typedef std::future<DescribeServiceOverviewOutcome> DescribeServiceOverviewOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeServiceOverviewRequest&, DescribeServiceOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceOverviewAsyncHandler;
@@ -230,6 +250,15 @@ namespace TencentCloud
                 DescribeApmAgentOutcomeCallable DescribeApmAgentCallable(const Model::DescribeApmAgentRequest& request);
 
                 /**
+                 *查询用户所有漏洞信息
+                 * @param req DescribeApmAllVulCountRequest
+                 * @return DescribeApmAllVulCountOutcome
+                 */
+                DescribeApmAllVulCountOutcome DescribeApmAllVulCount(const Model::DescribeApmAllVulCountRequest &request);
+                void DescribeApmAllVulCountAsync(const Model::DescribeApmAllVulCountRequest& request, const DescribeApmAllVulCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApmAllVulCountOutcomeCallable DescribeApmAllVulCountCallable(const Model::DescribeApmAllVulCountRequest& request);
+
+                /**
                  *查询应用配置接口
                  * @param req DescribeApmApplicationConfigRequest
                  * @return DescribeApmApplicationConfigOutcome
@@ -282,6 +311,24 @@ namespace TencentCloud
                 DescribeApmServiceMetricOutcome DescribeApmServiceMetric(const Model::DescribeApmServiceMetricRequest &request);
                 void DescribeApmServiceMetricAsync(const Model::DescribeApmServiceMetricRequest& request, const DescribeApmServiceMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApmServiceMetricOutcomeCallable DescribeApmServiceMetricCallable(const Model::DescribeApmServiceMetricRequest& request);
+
+                /**
+                 *查询漏洞指标
+                 * @param req DescribeApmVulnerabilityCountRequest
+                 * @return DescribeApmVulnerabilityCountOutcome
+                 */
+                DescribeApmVulnerabilityCountOutcome DescribeApmVulnerabilityCount(const Model::DescribeApmVulnerabilityCountRequest &request);
+                void DescribeApmVulnerabilityCountAsync(const Model::DescribeApmVulnerabilityCountRequest& request, const DescribeApmVulnerabilityCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApmVulnerabilityCountOutcomeCallable DescribeApmVulnerabilityCountCallable(const Model::DescribeApmVulnerabilityCountRequest& request);
+
+                /**
+                 *查询漏洞详情
+                 * @param req DescribeApmVulnerabilityDetailRequest
+                 * @return DescribeApmVulnerabilityDetailOutcome
+                 */
+                DescribeApmVulnerabilityDetailOutcome DescribeApmVulnerabilityDetail(const Model::DescribeApmVulnerabilityDetailRequest &request);
+                void DescribeApmVulnerabilityDetailAsync(const Model::DescribeApmVulnerabilityDetailRequest& request, const DescribeApmVulnerabilityDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApmVulnerabilityDetailOutcomeCallable DescribeApmVulnerabilityDetailCallable(const Model::DescribeApmVulnerabilityDetailRequest& request);
 
                 /**
                  *查询应用配置信息
@@ -348,6 +395,15 @@ namespace TencentCloud
                 DescribeMetricRecordsOutcome DescribeMetricRecords(const Model::DescribeMetricRecordsRequest &request);
                 void DescribeMetricRecordsAsync(const Model::DescribeMetricRecordsRequest& request, const DescribeMetricRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMetricRecordsOutcomeCallable DescribeMetricRecordsCallable(const Model::DescribeMetricRecordsRequest& request);
+
+                /**
+                 *查询用户所有漏洞信息
+                 * @param req DescribeOPRAllVulCountRequest
+                 * @return DescribeOPRAllVulCountOutcome
+                 */
+                DescribeOPRAllVulCountOutcome DescribeOPRAllVulCount(const Model::DescribeOPRAllVulCountRequest &request);
+                void DescribeOPRAllVulCountAsync(const Model::DescribeOPRAllVulCountRequest& request, const DescribeOPRAllVulCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOPRAllVulCountOutcomeCallable DescribeOPRAllVulCountCallable(const Model::DescribeOPRAllVulCountRequest& request);
 
                 /**
                  *应用概览数据拉取

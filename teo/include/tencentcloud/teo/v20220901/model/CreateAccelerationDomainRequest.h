@@ -108,30 +108,26 @@ namespace TencentCloud
 
                     /**
                      * 获取回源协议，取值有：
-<li>FOLLOW: 协议跟随；</li>
-<li>HTTP: HTTP协议回源；</li>
-<li>HTTPS: HTTPS协议回源。</li>
-<li>不填默认为： FOLLOW。</li>
+<li>FOLLOW：协议跟随；</li>
+<li>HTTP：HTTP 协议回源；</li>
+<li>HTTPS：HTTPS 协议回源。</li>不填默认为：FOLLOW。
                      * @return OriginProtocol 回源协议，取值有：
-<li>FOLLOW: 协议跟随；</li>
-<li>HTTP: HTTP协议回源；</li>
-<li>HTTPS: HTTPS协议回源。</li>
-<li>不填默认为： FOLLOW。</li>
+<li>FOLLOW：协议跟随；</li>
+<li>HTTP：HTTP 协议回源；</li>
+<li>HTTPS：HTTPS 协议回源。</li>不填默认为：FOLLOW。
                      * 
                      */
                     std::string GetOriginProtocol() const;
 
                     /**
                      * 设置回源协议，取值有：
-<li>FOLLOW: 协议跟随；</li>
-<li>HTTP: HTTP协议回源；</li>
-<li>HTTPS: HTTPS协议回源。</li>
-<li>不填默认为： FOLLOW。</li>
+<li>FOLLOW：协议跟随；</li>
+<li>HTTP：HTTP 协议回源；</li>
+<li>HTTPS：HTTPS 协议回源。</li>不填默认为：FOLLOW。
                      * @param _originProtocol 回源协议，取值有：
-<li>FOLLOW: 协议跟随；</li>
-<li>HTTP: HTTP协议回源；</li>
-<li>HTTPS: HTTPS协议回源。</li>
-<li>不填默认为： FOLLOW。</li>
+<li>FOLLOW：协议跟随；</li>
+<li>HTTP：HTTP 协议回源；</li>
+<li>HTTPS：HTTPS 协议回源。</li>不填默认为：FOLLOW。
                      * 
                      */
                     void SetOriginProtocol(const std::string& _originProtocol);
@@ -144,15 +140,19 @@ namespace TencentCloud
                     bool OriginProtocolHasBeenSet() const;
 
                     /**
-                     * 获取HTTP回源端口，取值为1-65535，当OriginProtocol=FOLLOW/HTTP时生效, 不填默认为80。
-                     * @return HttpOriginPort HTTP回源端口，取值为1-65535，当OriginProtocol=FOLLOW/HTTP时生效, 不填默认为80。
+                     * 获取HTTP 回源端口，默认值80，取值：1～65535。
+当 OriginProtocol = FOLLOW 或 HTTP 时生效。
+                     * @return HttpOriginPort HTTP 回源端口，默认值80，取值：1～65535。
+当 OriginProtocol = FOLLOW 或 HTTP 时生效。
                      * 
                      */
                     uint64_t GetHttpOriginPort() const;
 
                     /**
-                     * 设置HTTP回源端口，取值为1-65535，当OriginProtocol=FOLLOW/HTTP时生效, 不填默认为80。
-                     * @param _httpOriginPort HTTP回源端口，取值为1-65535，当OriginProtocol=FOLLOW/HTTP时生效, 不填默认为80。
+                     * 设置HTTP 回源端口，默认值80，取值：1～65535。
+当 OriginProtocol = FOLLOW 或 HTTP 时生效。
+                     * @param _httpOriginPort HTTP 回源端口，默认值80，取值：1～65535。
+当 OriginProtocol = FOLLOW 或 HTTP 时生效。
                      * 
                      */
                     void SetHttpOriginPort(const uint64_t& _httpOriginPort);
@@ -165,15 +165,19 @@ namespace TencentCloud
                     bool HttpOriginPortHasBeenSet() const;
 
                     /**
-                     * 获取HTTPS回源端口，取值为1-65535，当OriginProtocol=FOLLOW/HTTPS时生效，不填默认为443。
-                     * @return HttpsOriginPort HTTPS回源端口，取值为1-65535，当OriginProtocol=FOLLOW/HTTPS时生效，不填默认为443。
+                     * 获取HTTPS 回源端口，默认值443，取值：1～65535。
+当 OriginProtocol = FOLLOW 或 HTTPS 时生效。
+                     * @return HttpsOriginPort HTTPS 回源端口，默认值443，取值：1～65535。
+当 OriginProtocol = FOLLOW 或 HTTPS 时生效。
                      * 
                      */
                     uint64_t GetHttpsOriginPort() const;
 
                     /**
-                     * 设置HTTPS回源端口，取值为1-65535，当OriginProtocol=FOLLOW/HTTPS时生效，不填默认为443。
-                     * @param _httpsOriginPort HTTPS回源端口，取值为1-65535，当OriginProtocol=FOLLOW/HTTPS时生效，不填默认为443。
+                     * 设置HTTPS 回源端口，默认值443，取值：1～65535。
+当 OriginProtocol = FOLLOW 或 HTTPS 时生效。
+                     * @param _httpsOriginPort HTTPS 回源端口，默认值443，取值：1～65535。
+当 OriginProtocol = FOLLOW 或 HTTPS 时生效。
                      * 
                      */
                     void SetHttpsOriginPort(const uint64_t& _httpsOriginPort);
@@ -186,31 +190,27 @@ namespace TencentCloud
                     bool HttpsOriginPortHasBeenSet() const;
 
                     /**
-                     * 获取IPv6状态，取值有：
-<li>follow：遵循站点IPv6配置；</li>
+                     * 获取IPv6 状态，取值有：
+<li>follow：遵循站点 IPv6 配置；</li>
 <li>on：开启状态；</li>
-<li>off：关闭状态。</li>
-<li>不填默认为：follow。</li>
-                     * @return IPv6Status IPv6状态，取值有：
-<li>follow：遵循站点IPv6配置；</li>
+<li>off：关闭状态。</li>不填默认为：follow。
+                     * @return IPv6Status IPv6 状态，取值有：
+<li>follow：遵循站点 IPv6 配置；</li>
 <li>on：开启状态；</li>
-<li>off：关闭状态。</li>
-<li>不填默认为：follow。</li>
+<li>off：关闭状态。</li>不填默认为：follow。
                      * 
                      */
                     std::string GetIPv6Status() const;
 
                     /**
-                     * 设置IPv6状态，取值有：
-<li>follow：遵循站点IPv6配置；</li>
+                     * 设置IPv6 状态，取值有：
+<li>follow：遵循站点 IPv6 配置；</li>
 <li>on：开启状态；</li>
-<li>off：关闭状态。</li>
-<li>不填默认为：follow。</li>
-                     * @param _iPv6Status IPv6状态，取值有：
-<li>follow：遵循站点IPv6配置；</li>
+<li>off：关闭状态。</li>不填默认为：follow。
+                     * @param _iPv6Status IPv6 状态，取值有：
+<li>follow：遵循站点 IPv6 配置；</li>
 <li>on：开启状态；</li>
-<li>off：关闭状态。</li>
-<li>不填默认为：follow。</li>
+<li>off：关闭状态。</li>不填默认为：follow。
                      * 
                      */
                     void SetIPv6Status(const std::string& _iPv6Status);
@@ -244,32 +244,32 @@ namespace TencentCloud
 
                     /**
                      * 回源协议，取值有：
-<li>FOLLOW: 协议跟随；</li>
-<li>HTTP: HTTP协议回源；</li>
-<li>HTTPS: HTTPS协议回源。</li>
-<li>不填默认为： FOLLOW。</li>
+<li>FOLLOW：协议跟随；</li>
+<li>HTTP：HTTP 协议回源；</li>
+<li>HTTPS：HTTPS 协议回源。</li>不填默认为：FOLLOW。
                      */
                     std::string m_originProtocol;
                     bool m_originProtocolHasBeenSet;
 
                     /**
-                     * HTTP回源端口，取值为1-65535，当OriginProtocol=FOLLOW/HTTP时生效, 不填默认为80。
+                     * HTTP 回源端口，默认值80，取值：1～65535。
+当 OriginProtocol = FOLLOW 或 HTTP 时生效。
                      */
                     uint64_t m_httpOriginPort;
                     bool m_httpOriginPortHasBeenSet;
 
                     /**
-                     * HTTPS回源端口，取值为1-65535，当OriginProtocol=FOLLOW/HTTPS时生效，不填默认为443。
+                     * HTTPS 回源端口，默认值443，取值：1～65535。
+当 OriginProtocol = FOLLOW 或 HTTPS 时生效。
                      */
                     uint64_t m_httpsOriginPort;
                     bool m_httpsOriginPortHasBeenSet;
 
                     /**
-                     * IPv6状态，取值有：
-<li>follow：遵循站点IPv6配置；</li>
+                     * IPv6 状态，取值有：
+<li>follow：遵循站点 IPv6 配置；</li>
 <li>on：开启状态；</li>
-<li>off：关闭状态。</li>
-<li>不填默认为：follow。</li>
+<li>off：关闭状态。</li>不填默认为：follow。
                      */
                     std::string m_iPv6Status;
                     bool m_iPv6StatusHasBeenSet;

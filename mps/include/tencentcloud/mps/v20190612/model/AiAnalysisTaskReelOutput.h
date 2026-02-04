@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 智能成片结果信息
+                * AI解说二创结果信息
                 */
                 class AiAnalysisTaskReelOutput : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取成片视频路径。
-                     * @return VideoPath 成片视频路径。
+                     * 获取解说视频路径。
+                     * @return VideoPath 解说视频路径。
                      * 
                      */
                     std::string GetVideoPath() const;
 
                     /**
-                     * 设置成片视频路径。
-                     * @param _videoPath 成片视频路径。
+                     * 设置解说视频路径。
+                     * @param _videoPath 解说视频路径。
                      * 
                      */
                     void SetVideoPath(const std::string& _videoPath);
@@ -67,6 +67,43 @@ namespace TencentCloud
                      * 
                      */
                     bool VideoPathHasBeenSet() const;
+
+                    /**
+                     * 获取解说视频路径列表。
+
+**注意**：
+1. 当返回一个文件时，`VideoPath `返回一个文件路径，`VideoPaths `也会填充同样路径的一个元素。
+2. 当返回多个文件时，`VideoPath `返回为空字符串，`VideoPaths `返回多文件路径列表。
+                     * @return VideoPaths 解说视频路径列表。
+
+**注意**：
+1. 当返回一个文件时，`VideoPath `返回一个文件路径，`VideoPaths `也会填充同样路径的一个元素。
+2. 当返回多个文件时，`VideoPath `返回为空字符串，`VideoPaths `返回多文件路径列表。
+                     * 
+                     */
+                    std::vector<std::string> GetVideoPaths() const;
+
+                    /**
+                     * 设置解说视频路径列表。
+
+**注意**：
+1. 当返回一个文件时，`VideoPath `返回一个文件路径，`VideoPaths `也会填充同样路径的一个元素。
+2. 当返回多个文件时，`VideoPath `返回为空字符串，`VideoPaths `返回多文件路径列表。
+                     * @param _videoPaths 解说视频路径列表。
+
+**注意**：
+1. 当返回一个文件时，`VideoPath `返回一个文件路径，`VideoPaths `也会填充同样路径的一个元素。
+2. 当返回多个文件时，`VideoPath `返回为空字符串，`VideoPaths `返回多文件路径列表。
+                     * 
+                     */
+                    void SetVideoPaths(const std::vector<std::string>& _videoPaths);
+
+                    /**
+                     * 判断参数 VideoPaths 是否已赋值
+                     * @return VideoPaths 是否已赋值
+                     * 
+                     */
+                    bool VideoPathsHasBeenSet() const;
 
                     /**
                      * 获取脚本文件路径
@@ -94,15 +131,15 @@ namespace TencentCloud
                     bool ScriptPathHasBeenSet() const;
 
                     /**
-                     * 获取成片视频存储位置。
-                     * @return OutputStorage 成片视频存储位置。
+                     * 获取解说视频存储位置。
+                     * @return OutputStorage 解说视频存储位置。
                      * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
-                     * 设置成片视频存储位置。
-                     * @param _outputStorage 成片视频存储位置。
+                     * 设置解说视频存储位置。
+                     * @param _outputStorage 解说视频存储位置。
                      * 
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
@@ -117,10 +154,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 成片视频路径。
+                     * 解说视频路径。
                      */
                     std::string m_videoPath;
                     bool m_videoPathHasBeenSet;
+
+                    /**
+                     * 解说视频路径列表。
+
+**注意**：
+1. 当返回一个文件时，`VideoPath `返回一个文件路径，`VideoPaths `也会填充同样路径的一个元素。
+2. 当返回多个文件时，`VideoPath `返回为空字符串，`VideoPaths `返回多文件路径列表。
+                     */
+                    std::vector<std::string> m_videoPaths;
+                    bool m_videoPathsHasBeenSet;
 
                     /**
                      * 脚本文件路径
@@ -130,7 +177,7 @@ namespace TencentCloud
                     bool m_scriptPathHasBeenSet;
 
                     /**
-                     * 成片视频存储位置。
+                     * 解说视频存储位置。
                      */
                     TaskOutputStorage m_outputStorage;
                     bool m_outputStorageHasBeenSet;

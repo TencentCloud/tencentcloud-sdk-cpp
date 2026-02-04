@@ -24,7 +24,10 @@ IpAccessControlParam::IpAccessControlParam() :
     m_ipListHasBeenSet(false),
     m_validTsHasBeenSet(false),
     m_actionTypeHasBeenSet(false),
-    m_noteHasBeenSet(false)
+    m_noteHasBeenSet(false),
+    m_jobTypeHasBeenSet(false),
+    m_jobDateTimeHasBeenSet(false),
+    m_validStatusHasBeenSet(false)
 {
 }
 
@@ -76,6 +79,43 @@ CoreInternalOutcome IpAccessControlParam::Deserialize(const rapidjson::Value &va
         m_noteHasBeenSet = true;
     }
 
+    if (value.HasMember("JobType") && !value["JobType"].IsNull())
+    {
+        if (!value["JobType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IpAccessControlParam.JobType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobType = string(value["JobType"].GetString());
+        m_jobTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("JobDateTime") && !value["JobDateTime"].IsNull())
+    {
+        if (!value["JobDateTime"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `IpAccessControlParam.JobDateTime` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_jobDateTime.Deserialize(value["JobDateTime"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_jobDateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ValidStatus") && !value["ValidStatus"].IsNull())
+    {
+        if (!value["ValidStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IpAccessControlParam.ValidStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_validStatus = value["ValidStatus"].GetInt64();
+        m_validStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +158,31 @@ void IpAccessControlParam::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Note";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_note.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobDateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobDateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_jobDateTime.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_validStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValidStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_validStatus, allocator);
     }
 
 }
@@ -185,5 +250,53 @@ void IpAccessControlParam::SetNote(const string& _note)
 bool IpAccessControlParam::NoteHasBeenSet() const
 {
     return m_noteHasBeenSet;
+}
+
+string IpAccessControlParam::GetJobType() const
+{
+    return m_jobType;
+}
+
+void IpAccessControlParam::SetJobType(const string& _jobType)
+{
+    m_jobType = _jobType;
+    m_jobTypeHasBeenSet = true;
+}
+
+bool IpAccessControlParam::JobTypeHasBeenSet() const
+{
+    return m_jobTypeHasBeenSet;
+}
+
+JobDateTime IpAccessControlParam::GetJobDateTime() const
+{
+    return m_jobDateTime;
+}
+
+void IpAccessControlParam::SetJobDateTime(const JobDateTime& _jobDateTime)
+{
+    m_jobDateTime = _jobDateTime;
+    m_jobDateTimeHasBeenSet = true;
+}
+
+bool IpAccessControlParam::JobDateTimeHasBeenSet() const
+{
+    return m_jobDateTimeHasBeenSet;
+}
+
+int64_t IpAccessControlParam::GetValidStatus() const
+{
+    return m_validStatus;
+}
+
+void IpAccessControlParam::SetValidStatus(const int64_t& _validStatus)
+{
+    m_validStatus = _validStatus;
+    m_validStatusHasBeenSet = true;
+}
+
+bool IpAccessControlParam::ValidStatusHasBeenSet() const
+{
+    return m_validStatusHasBeenSet;
 }
 

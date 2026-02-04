@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool ReserveDurationHasBeenSet() const;
 
                     /**
-                     * 获取动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
-                     * @return BackupTriggerStrategy 动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
+                     * 获取自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
+                     * @return BackupTriggerStrategy 自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
                      * 
                      */
                     std::string GetBackupTriggerStrategy() const;
 
                     /**
-                     * 设置动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
-                     * @param _backupTriggerStrategy 动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
+                     * 设置自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
+                     * @param _backupTriggerStrategy 自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
                      * 
                      */
                     void SetBackupTriggerStrategy(const std::string& _backupTriggerStrategy);
@@ -232,7 +232,7 @@ namespace TencentCloud
                     bool m_reserveDurationHasBeenSet;
 
                     /**
-                     * 动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
+                     * 自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
                      */
                     std::string m_backupTriggerStrategy;
                     bool m_backupTriggerStrategyHasBeenSet;

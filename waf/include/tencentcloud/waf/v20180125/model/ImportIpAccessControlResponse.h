@@ -43,7 +43,67 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取成功导入数量
+                     * @return SuccessCount 成功导入数量
+                     * 
+                     */
+                    int64_t GetSuccessCount() const;
+
+                    /**
+                     * 判断参数 SuccessCount 是否已赋值
+                     * @return SuccessCount 是否已赋值
+                     * 
+                     */
+                    bool SuccessCountHasBeenSet() const;
+
+                    /**
+                     * 获取导入数量
+                     * @return TotalCount 导入数量
+                     * 
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
+                    /**
+                     * 获取执行时间
+                     * @return Timestamp 执行时间
+                     * 
+                     */
+                    int64_t GetTimestamp() const;
+
+                    /**
+                     * 判断参数 Timestamp 是否已赋值
+                     * @return Timestamp 是否已赋值
+                     * 
+                     */
+                    bool TimestampHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 成功导入数量
+                     */
+                    int64_t m_successCount;
+                    bool m_successCountHasBeenSet;
+
+                    /**
+                     * 导入数量
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 执行时间
+                     */
+                    int64_t m_timestamp;
+                    bool m_timestampHasBeenSet;
 
                 };
             }

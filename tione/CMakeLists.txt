@@ -146,6 +146,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/StartCmdInfo.h
   include/tencentcloud/tione/v20211111/model/Event.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceGroupsResponse.h
+  include/tencentcloud/tione/v20211111/model/Spec.h
   include/tencentcloud/tione/v20211111/model/HTTPGetAction.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingResourceInstanceRunningJobsResponse.h
   include/tencentcloud/tione/v20211111/model/InferGatewayCallInfo.h
@@ -270,7 +271,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DeleteModelServiceGroupRequest.h
   include/tencentcloud/tione/v20211111/model/TrainingModelVersionDTO.h
   include/tencentcloud/tione/v20211111/model/CreateModelServiceAuthTokenRequest.h
-  include/tencentcloud/tione/v20211111/model/Spec.h
+  include/tencentcloud/tione/v20211111/model/ExposeNetworkConfig.h
   include/tencentcloud/tione/v20211111/model/ServiceCallInfoV2.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeSubAccountLinuxUserInfosRequest.h
@@ -440,6 +441,7 @@ set(tione_src
   src/v20211111/model/StartCmdInfo.cpp
   src/v20211111/model/Event.cpp
   src/v20211111/model/DescribeModelServiceGroupsResponse.cpp
+  src/v20211111/model/Spec.cpp
   src/v20211111/model/HTTPGetAction.cpp
   src/v20211111/model/DescribeBillingResourceInstanceRunningJobsResponse.cpp
   src/v20211111/model/InferGatewayCallInfo.cpp
@@ -564,7 +566,7 @@ set(tione_src
   src/v20211111/model/DeleteModelServiceGroupRequest.cpp
   src/v20211111/model/TrainingModelVersionDTO.cpp
   src/v20211111/model/CreateModelServiceAuthTokenRequest.cpp
-  src/v20211111/model/Spec.cpp
+  src/v20211111/model/ExposeNetworkConfig.cpp
   src/v20211111/model/ServiceCallInfoV2.cpp
   src/v20211111/model/DescribeBillingResourceGroupRequest.cpp
   src/v20211111/model/DescribeSubAccountLinuxUserInfosRequest.cpp

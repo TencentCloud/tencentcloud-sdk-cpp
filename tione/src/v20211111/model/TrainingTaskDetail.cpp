@@ -61,7 +61,8 @@ TrainingTaskDetail::TrainingTaskDetail() :
     m_messageHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
-    m_codeReposHasBeenSet(false)
+    m_codeReposHasBeenSet(false),
+    m_exposeNetworkConfigHasBeenSet(false)
 {
 }
 
@@ -555,6 +556,23 @@ CoreInternalOutcome TrainingTaskDetail::Deserialize(const rapidjson::Value &valu
         m_codeReposHasBeenSet = true;
     }
 
+    if (value.HasMember("ExposeNetworkConfig") && !value["ExposeNetworkConfig"].IsNull())
+    {
+        if (!value["ExposeNetworkConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingTaskDetail.ExposeNetworkConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_exposeNetworkConfig.Deserialize(value["ExposeNetworkConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_exposeNetworkConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -921,6 +939,15 @@ void TrainingTaskDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_exposeNetworkConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExposeNetworkConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_exposeNetworkConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1580,5 +1607,21 @@ void TrainingTaskDetail::SetCodeRepos(const vector<CodeRepoConfig>& _codeRepos)
 bool TrainingTaskDetail::CodeReposHasBeenSet() const
 {
     return m_codeReposHasBeenSet;
+}
+
+ExposeNetworkConfig TrainingTaskDetail::GetExposeNetworkConfig() const
+{
+    return m_exposeNetworkConfig;
+}
+
+void TrainingTaskDetail::SetExposeNetworkConfig(const ExposeNetworkConfig& _exposeNetworkConfig)
+{
+    m_exposeNetworkConfig = _exposeNetworkConfig;
+    m_exposeNetworkConfigHasBeenSet = true;
+}
+
+bool TrainingTaskDetail::ExposeNetworkConfigHasBeenSet() const
+{
+    return m_exposeNetworkConfigHasBeenSet;
 }
 

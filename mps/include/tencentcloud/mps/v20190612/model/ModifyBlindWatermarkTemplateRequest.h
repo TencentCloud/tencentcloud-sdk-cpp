@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool TextContentHasBeenSet() const;
 
+                    /**
+                     * 获取数字水印强度。 default: 默认，高清画质和抗性平衡 stronger:画质清晰，抗性较强 strongest:画质一般，抗性最强
+                     * @return Strength 数字水印强度。 default: 默认，高清画质和抗性平衡 stronger:画质清晰，抗性较强 strongest:画质一般，抗性最强
+                     * 
+                     */
+                    std::string GetStrength() const;
+
+                    /**
+                     * 设置数字水印强度。 default: 默认，高清画质和抗性平衡 stronger:画质清晰，抗性较强 strongest:画质一般，抗性最强
+                     * @param _strength 数字水印强度。 default: 默认，高清画质和抗性平衡 stronger:画质清晰，抗性较强 strongest:画质一般，抗性最强
+                     * 
+                     */
+                    void SetStrength(const std::string& _strength);
+
+                    /**
+                     * 判断参数 Strength 是否已赋值
+                     * @return Strength 是否已赋值
+                     * 
+                     */
+                    bool StrengthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_textContent;
                     bool m_textContentHasBeenSet;
+
+                    /**
+                     * 数字水印强度。 default: 默认，高清画质和抗性平衡 stronger:画质清晰，抗性较强 strongest:画质一般，抗性最强
+                     */
+                    std::string m_strength;
+                    bool m_strengthHasBeenSet;
 
                 };
             }

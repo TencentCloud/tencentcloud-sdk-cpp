@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取子任务Id
+                     * @return SubTaskId 子任务Id
+                     * 
+                     */
+                    std::string GetSubTaskId() const;
+
+                    /**
+                     * 判断参数 SubTaskId 是否已赋值
+                     * @return SubTaskId 是否已赋值
+                     * 
+                     */
+                    bool SubTaskIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 子任务Id
+                     */
+                    std::string m_subTaskId;
+                    bool m_subTaskIdHasBeenSet;
 
                 };
             }

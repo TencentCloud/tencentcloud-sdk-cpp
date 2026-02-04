@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeUpgradeListResponse::DescribeUpgradeListResponse() :
     m_upgradeItemsHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_errorMsgHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome DescribeUpgradeListResponse::Deserialize(const string &paylo
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ErrorMsg") && !rsp["ErrorMsg"].IsNull())
+    {
+        if (!rsp["ErrorMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorMsg = string(rsp["ErrorMsg"].GetString());
+        m_errorMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeUpgradeListResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_totalCount.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_errorMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ string DescribeUpgradeListResponse::GetTotalCount() const
 bool DescribeUpgradeListResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+string DescribeUpgradeListResponse::GetErrorMsg() const
+{
+    return m_errorMsg;
+}
+
+bool DescribeUpgradeListResponse::ErrorMsgHasBeenSet() const
+{
+    return m_errorMsgHasBeenSet;
 }
 
 

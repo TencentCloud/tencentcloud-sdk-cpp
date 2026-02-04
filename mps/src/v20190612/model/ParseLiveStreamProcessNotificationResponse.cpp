@@ -32,6 +32,7 @@ ParseLiveStreamProcessNotificationResponse::ParseLiveStreamProcessNotificationRe
     m_aiAnalysisResultInfoHasBeenSet(false),
     m_aiQualityControlResultInfoHasBeenSet(false),
     m_liveRecordResultInfoHasBeenSet(false),
+    m_aiSmartSubtitleResultInfoHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
     m_timestampHasBeenSet(false),
@@ -195,6 +196,23 @@ CoreInternalOutcome ParseLiveStreamProcessNotificationResponse::Deserialize(cons
         m_liveRecordResultInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AiSmartSubtitleResultInfo") && !rsp["AiSmartSubtitleResultInfo"].IsNull())
+    {
+        if (!rsp["AiSmartSubtitleResultInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiSmartSubtitleResultInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aiSmartSubtitleResultInfo.Deserialize(rsp["AiSmartSubtitleResultInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aiSmartSubtitleResultInfoHasBeenSet = true;
+    }
+
     if (rsp.HasMember("SessionId") && !rsp["SessionId"].IsNull())
     {
         if (!rsp["SessionId"].IsString())
@@ -313,6 +331,15 @@ string ParseLiveStreamProcessNotificationResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_liveRecordResultInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aiSmartSubtitleResultInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiSmartSubtitleResultInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aiSmartSubtitleResultInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_sessionIdHasBeenSet)
@@ -437,6 +464,16 @@ LiveStreamRecordResultInfo ParseLiveStreamProcessNotificationResponse::GetLiveRe
 bool ParseLiveStreamProcessNotificationResponse::LiveRecordResultInfoHasBeenSet() const
 {
     return m_liveRecordResultInfoHasBeenSet;
+}
+
+LiveStreamAiSmartSubtitleResultInfo ParseLiveStreamProcessNotificationResponse::GetAiSmartSubtitleResultInfo() const
+{
+    return m_aiSmartSubtitleResultInfo;
+}
+
+bool ParseLiveStreamProcessNotificationResponse::AiSmartSubtitleResultInfoHasBeenSet() const
+{
+    return m_aiSmartSubtitleResultInfoHasBeenSet;
 }
 
 string ParseLiveStreamProcessNotificationResponse::GetSessionId() const

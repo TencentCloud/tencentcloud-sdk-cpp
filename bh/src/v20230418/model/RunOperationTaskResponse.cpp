@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Bh::V20230418::Model;
 using namespace std;
 
-RunOperationTaskResponse::RunOperationTaskResponse()
+RunOperationTaskResponse::RunOperationTaskResponse() :
+    m_subTaskIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome RunOperationTaskResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("SubTaskId") && !rsp["SubTaskId"].IsNull())
+    {
+        if (!rsp["SubTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subTaskId = string(rsp["SubTaskId"].GetString());
+        m_subTaskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string RunOperationTaskResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_subTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subTaskId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string RunOperationTaskResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string RunOperationTaskResponse::GetSubTaskId() const
+{
+    return m_subTaskId;
+}
+
+bool RunOperationTaskResponse::SubTaskIdHasBeenSet() const
+{
+    return m_subTaskIdHasBeenSet;
+}
 
 

@@ -215,6 +215,27 @@ namespace TencentCloud
                      */
                     bool ParameterNameHasBeenSet() const;
 
+                    /**
+                     * 获取最新修改值
+                     * @return LatestValue 最新修改值
+                     * 
+                     */
+                    std::string GetLatestValue() const;
+
+                    /**
+                     * 设置最新修改值
+                     * @param _latestValue 最新修改值
+                     * 
+                     */
+                    void SetLatestValue(const std::string& _latestValue);
+
+                    /**
+                     * 判断参数 LatestValue 是否已赋值
+                     * @return LatestValue 是否已赋值
+                     * 
+                     */
+                    bool LatestValueHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +285,12 @@ namespace TencentCloud
                      */
                     std::string m_parameterName;
                     bool m_parameterNameHasBeenSet;
+
+                    /**
+                     * 最新修改值
+                     */
+                    std::string m_latestValue;
+                    bool m_latestValueHasBeenSet;
 
                 };
             }

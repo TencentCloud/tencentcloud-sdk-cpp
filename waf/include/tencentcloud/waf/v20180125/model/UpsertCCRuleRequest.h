@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/waf/v20180125/model/JobDateTime.h>
 
 
 namespace TencentCloud
@@ -567,6 +568,90 @@ namespace TencentCloud
                      */
                     bool SourceHasBeenSet() const;
 
+                    /**
+                     * 获取forever
+                     * @return JobType forever
+                     * 
+                     */
+                    std::string GetJobType() const;
+
+                    /**
+                     * 设置forever
+                     * @param _jobType forever
+                     * 
+                     */
+                    void SetJobType(const std::string& _jobType);
+
+                    /**
+                     * 判断参数 JobType 是否已赋值
+                     * @return JobType 是否已赋值
+                     * 
+                     */
+                    bool JobTypeHasBeenSet() const;
+
+                    /**
+                     * 获取无
+                     * @return JobDateTime 无
+                     * 
+                     */
+                    JobDateTime GetJobDateTime() const;
+
+                    /**
+                     * 设置无
+                     * @param _jobDateTime 无
+                     * 
+                     */
+                    void SetJobDateTime(const JobDateTime& _jobDateTime);
+
+                    /**
+                     * 判断参数 JobDateTime 是否已赋值
+                     * @return JobDateTime 是否已赋值
+                     * 
+                     */
+                    bool JobDateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取0
+                     * @return ExpireTime 0
+                     * 
+                     */
+                    uint64_t GetExpireTime() const;
+
+                    /**
+                     * 设置0
+                     * @param _expireTime 0
+                     * 
+                     */
+                    void SetExpireTime(const uint64_t& _expireTime);
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     * 
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
+                    /**
+                     * 获取有效性
+                     * @return ValidStatus 有效性
+                     * 
+                     */
+                    int64_t GetValidStatus() const;
+
+                    /**
+                     * 设置有效性
+                     * @param _validStatus 有效性
+                     * 
+                     */
+                    void SetValidStatus(const int64_t& _validStatus);
+
+                    /**
+                     * 判断参数 ValidStatus 是否已赋值
+                     * @return ValidStatus 是否已赋值
+                     * 
+                     */
+                    bool ValidStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -718,6 +803,30 @@ namespace TencentCloud
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
+
+                    /**
+                     * forever
+                     */
+                    std::string m_jobType;
+                    bool m_jobTypeHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    JobDateTime m_jobDateTime;
+                    bool m_jobDateTimeHasBeenSet;
+
+                    /**
+                     * 0
+                     */
+                    uint64_t m_expireTime;
+                    bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 有效性
+                     */
+                    int64_t m_validStatus;
+                    bool m_validStatusHasBeenSet;
 
                 };
             }

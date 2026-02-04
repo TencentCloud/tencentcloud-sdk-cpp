@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 视频抠图结果数据结构
+                * 视频智能抠图结果数据结构
                 */
                 class AiAnalysisTaskCutoutResult : public AbstractModel
                 {

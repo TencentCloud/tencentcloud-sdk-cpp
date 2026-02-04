@@ -28,7 +28,8 @@ CommonMixLayoutParams::CommonMixLayoutParams() :
     m_locationXHasBeenSet(false),
     m_locationYHasBeenSet(false),
     m_colorHasBeenSet(false),
-    m_watermarkIdHasBeenSet(false)
+    m_watermarkIdHasBeenSet(false),
+    m_webPageUrlHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome CommonMixLayoutParams::Deserialize(const rapidjson::Value &v
         m_watermarkIdHasBeenSet = true;
     }
 
+    if (value.HasMember("WebPageUrl") && !value["WebPageUrl"].IsNull())
+    {
+        if (!value["WebPageUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CommonMixLayoutParams.WebPageUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_webPageUrl = string(value["WebPageUrl"].GetString());
+        m_webPageUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void CommonMixLayoutParams::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "WatermarkId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_watermarkId, allocator);
+    }
+
+    if (m_webPageUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebPageUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_webPageUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void CommonMixLayoutParams::SetWatermarkId(const int64_t& _watermarkId)
 bool CommonMixLayoutParams::WatermarkIdHasBeenSet() const
 {
     return m_watermarkIdHasBeenSet;
+}
+
+string CommonMixLayoutParams::GetWebPageUrl() const
+{
+    return m_webPageUrl;
+}
+
+void CommonMixLayoutParams::SetWebPageUrl(const string& _webPageUrl)
+{
+    m_webPageUrl = _webPageUrl;
+    m_webPageUrlHasBeenSet = true;
+}
+
+bool CommonMixLayoutParams::WebPageUrlHasBeenSet() const
+{
+    return m_webPageUrlHasBeenSet;
 }
 

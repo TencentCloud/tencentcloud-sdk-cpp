@@ -53,7 +53,7 @@ namespace TencentCloud
 <li>COS：腾讯云 COS 对象存储源站；</li>
 <li>AWS_S3：AWS S3 对象存储源站；</li>
 <li>ORIGIN_GROUP：源站组类型源站；</li>
- <li>VOD：云点播；</li>
+<li>VOD：云点播；</li>
 <li>SPACE：源站卸载，当前仅白名单开放；</li>
 <li>LB：负载均衡，当前仅白名单开放。</li>
                      * @return OriginType 源站类型，取值有：
@@ -61,7 +61,7 @@ namespace TencentCloud
 <li>COS：腾讯云 COS 对象存储源站；</li>
 <li>AWS_S3：AWS S3 对象存储源站；</li>
 <li>ORIGIN_GROUP：源站组类型源站；</li>
- <li>VOD：云点播；</li>
+<li>VOD：云点播；</li>
 <li>SPACE：源站卸载，当前仅白名单开放；</li>
 <li>LB：负载均衡，当前仅白名单开放。</li>
                      * 
@@ -74,7 +74,7 @@ namespace TencentCloud
 <li>COS：腾讯云 COS 对象存储源站；</li>
 <li>AWS_S3：AWS S3 对象存储源站；</li>
 <li>ORIGIN_GROUP：源站组类型源站；</li>
- <li>VOD：云点播；</li>
+<li>VOD：云点播；</li>
 <li>SPACE：源站卸载，当前仅白名单开放；</li>
 <li>LB：负载均衡，当前仅白名单开放。</li>
                      * @param _originType 源站类型，取值有：
@@ -82,7 +82,7 @@ namespace TencentCloud
 <li>COS：腾讯云 COS 对象存储源站；</li>
 <li>AWS_S3：AWS S3 对象存储源站；</li>
 <li>ORIGIN_GROUP：源站组类型源站；</li>
- <li>VOD：云点播；</li>
+<li>VOD：云点播；</li>
 <li>SPACE：源站卸载，当前仅白名单开放；</li>
 <li>LB：负载均衡，当前仅白名单开放。</li>
                      * 
@@ -98,42 +98,42 @@ namespace TencentCloud
 
                     /**
                      * 获取源站地址，根据 OriginType 的取值分为以下情况：
-<li>当 OriginType = IP_DOMAIN 时，该参数请填写 IPv4、IPv6 地址或域名；</li>
-<li>当 OriginType = COS 时，该参数请填写 COS 桶的访问域名；</li>
-<li>当 OriginType = AWS_S3，该参数请填写 S3 桶的访问域名；</li>
-<li>当 OriginType = ORIGIN_GROUP 时，该参数请填写源站组 ID；</li>
-<li>当 OriginType = VOD 时，该参数请填写云点播应用 ID ；</li>
-<li>当 OriginType = LB 时，该参数请填写负载均衡实例 ID，该功能当前仅白名单开放；</li>
-<li>当 OriginType = SPACE 时，该参数请填写源站卸载空间 ID，该功能当前仅白名单开放。</li>
+<li>当 OriginType = IP_DOMAIN 时，该参数为 IPv4、IPv6 地址或域名；</li>
+<li>当 OriginType = COS 时，该参数为 COS 桶的访问域名；</li>
+<li>当 OriginType = AWS_S3，该参数为 S3 桶的访问域名；</li>
+<li>当 OriginType = ORIGIN_GROUP 时，该参数为源站组 ID；如果引用了其它站点的源站组，格式为{源站组 ID}@{ZoneID}。例如：og-testorigin@zone-38moq1z10wwwy；</li>
+<li>当 OriginType = VOD 时，该参数为云点播应用 ID；</li>
+<li>当 OriginType = LB 时，该参数为负载均衡实例 ID，该功能当前仅白名单开放；如果引用了其它站点的负载均衡，格式为{负载均衡 ID}@{ZoneID}。例如：lb-2rxpamcyqfzg@zone-38moq1z10wwwy；</li>
+<li>当 OriginType = SPACE 时，该参数为源站卸载空间 ID，该功能当前仅白名单开放。</li>
                      * @return Origin 源站地址，根据 OriginType 的取值分为以下情况：
-<li>当 OriginType = IP_DOMAIN 时，该参数请填写 IPv4、IPv6 地址或域名；</li>
-<li>当 OriginType = COS 时，该参数请填写 COS 桶的访问域名；</li>
-<li>当 OriginType = AWS_S3，该参数请填写 S3 桶的访问域名；</li>
-<li>当 OriginType = ORIGIN_GROUP 时，该参数请填写源站组 ID；</li>
-<li>当 OriginType = VOD 时，该参数请填写云点播应用 ID ；</li>
-<li>当 OriginType = LB 时，该参数请填写负载均衡实例 ID，该功能当前仅白名单开放；</li>
-<li>当 OriginType = SPACE 时，该参数请填写源站卸载空间 ID，该功能当前仅白名单开放。</li>
+<li>当 OriginType = IP_DOMAIN 时，该参数为 IPv4、IPv6 地址或域名；</li>
+<li>当 OriginType = COS 时，该参数为 COS 桶的访问域名；</li>
+<li>当 OriginType = AWS_S3，该参数为 S3 桶的访问域名；</li>
+<li>当 OriginType = ORIGIN_GROUP 时，该参数为源站组 ID；如果引用了其它站点的源站组，格式为{源站组 ID}@{ZoneID}。例如：og-testorigin@zone-38moq1z10wwwy；</li>
+<li>当 OriginType = VOD 时，该参数为云点播应用 ID；</li>
+<li>当 OriginType = LB 时，该参数为负载均衡实例 ID，该功能当前仅白名单开放；如果引用了其它站点的负载均衡，格式为{负载均衡 ID}@{ZoneID}。例如：lb-2rxpamcyqfzg@zone-38moq1z10wwwy；</li>
+<li>当 OriginType = SPACE 时，该参数为源站卸载空间 ID，该功能当前仅白名单开放。</li>
                      * 
                      */
                     std::string GetOrigin() const;
 
                     /**
                      * 设置源站地址，根据 OriginType 的取值分为以下情况：
-<li>当 OriginType = IP_DOMAIN 时，该参数请填写 IPv4、IPv6 地址或域名；</li>
-<li>当 OriginType = COS 时，该参数请填写 COS 桶的访问域名；</li>
-<li>当 OriginType = AWS_S3，该参数请填写 S3 桶的访问域名；</li>
-<li>当 OriginType = ORIGIN_GROUP 时，该参数请填写源站组 ID；</li>
-<li>当 OriginType = VOD 时，该参数请填写云点播应用 ID ；</li>
-<li>当 OriginType = LB 时，该参数请填写负载均衡实例 ID，该功能当前仅白名单开放；</li>
-<li>当 OriginType = SPACE 时，该参数请填写源站卸载空间 ID，该功能当前仅白名单开放。</li>
+<li>当 OriginType = IP_DOMAIN 时，该参数为 IPv4、IPv6 地址或域名；</li>
+<li>当 OriginType = COS 时，该参数为 COS 桶的访问域名；</li>
+<li>当 OriginType = AWS_S3，该参数为 S3 桶的访问域名；</li>
+<li>当 OriginType = ORIGIN_GROUP 时，该参数为源站组 ID；如果引用了其它站点的源站组，格式为{源站组 ID}@{ZoneID}。例如：og-testorigin@zone-38moq1z10wwwy；</li>
+<li>当 OriginType = VOD 时，该参数为云点播应用 ID；</li>
+<li>当 OriginType = LB 时，该参数为负载均衡实例 ID，该功能当前仅白名单开放；如果引用了其它站点的负载均衡，格式为{负载均衡 ID}@{ZoneID}。例如：lb-2rxpamcyqfzg@zone-38moq1z10wwwy；</li>
+<li>当 OriginType = SPACE 时，该参数为源站卸载空间 ID，该功能当前仅白名单开放。</li>
                      * @param _origin 源站地址，根据 OriginType 的取值分为以下情况：
-<li>当 OriginType = IP_DOMAIN 时，该参数请填写 IPv4、IPv6 地址或域名；</li>
-<li>当 OriginType = COS 时，该参数请填写 COS 桶的访问域名；</li>
-<li>当 OriginType = AWS_S3，该参数请填写 S3 桶的访问域名；</li>
-<li>当 OriginType = ORIGIN_GROUP 时，该参数请填写源站组 ID；</li>
-<li>当 OriginType = VOD 时，该参数请填写云点播应用 ID ；</li>
-<li>当 OriginType = LB 时，该参数请填写负载均衡实例 ID，该功能当前仅白名单开放；</li>
-<li>当 OriginType = SPACE 时，该参数请填写源站卸载空间 ID，该功能当前仅白名单开放。</li>
+<li>当 OriginType = IP_DOMAIN 时，该参数为 IPv4、IPv6 地址或域名；</li>
+<li>当 OriginType = COS 时，该参数为 COS 桶的访问域名；</li>
+<li>当 OriginType = AWS_S3，该参数为 S3 桶的访问域名；</li>
+<li>当 OriginType = ORIGIN_GROUP 时，该参数为源站组 ID；如果引用了其它站点的源站组，格式为{源站组 ID}@{ZoneID}。例如：og-testorigin@zone-38moq1z10wwwy；</li>
+<li>当 OriginType = VOD 时，该参数为云点播应用 ID；</li>
+<li>当 OriginType = LB 时，该参数为负载均衡实例 ID，该功能当前仅白名单开放；如果引用了其它站点的负载均衡，格式为{负载均衡 ID}@{ZoneID}。例如：lb-2rxpamcyqfzg@zone-38moq1z10wwwy；</li>
+<li>当 OriginType = SPACE 时，该参数为源站卸载空间 ID，该功能当前仅白名单开放。</li>
                      * 
                      */
                     void SetOrigin(const std::string& _origin);
@@ -169,12 +169,10 @@ namespace TencentCloud
                     /**
                      * 获取指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWS_S3 时会生效，取值有：
 <li>on：使用私有鉴权；</li>
-<li>off：不使用私有鉴权。</li>
-不填写时，默认值为off。
+<li>off：不使用私有鉴权。</li>不填写时，默认值为off。
                      * @return PrivateAccess 指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWS_S3 时会生效，取值有：
 <li>on：使用私有鉴权；</li>
-<li>off：不使用私有鉴权。</li>
-不填写时，默认值为off。
+<li>off：不使用私有鉴权。</li>不填写时，默认值为off。
                      * 
                      */
                     std::string GetPrivateAccess() const;
@@ -182,12 +180,10 @@ namespace TencentCloud
                     /**
                      * 设置指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWS_S3 时会生效，取值有：
 <li>on：使用私有鉴权；</li>
-<li>off：不使用私有鉴权。</li>
-不填写时，默认值为off。
+<li>off：不使用私有鉴权。</li>不填写时，默认值为off。
                      * @param _privateAccess 指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWS_S3 时会生效，取值有：
 <li>on：使用私有鉴权；</li>
-<li>off：不使用私有鉴权。</li>
-不填写时，默认值为off。
+<li>off：不使用私有鉴权。</li>不填写时，默认值为off。
                      * 
                      */
                     void SetPrivateAccess(const std::string& _privateAccess);
@@ -221,27 +217,27 @@ namespace TencentCloud
                     bool PrivateParametersHasBeenSet() const;
 
                     /**
-                     * 获取自定义回源 HOST 头，该参数仅当 OriginType=IP_DOMAIN 时生效。
-如果 OriginType=COS 或 AWS_S3 时，回源 HOST 头将与源站域名保持一致。
-如果OriginType=ORIGIN_GROUP 时，回源 HOST 头遵循源站组内配置，如果没有配置则默认为加速域名。
-如果 OriginType=VOD 或 SPACE 时，无需配置该头部，按对应的回源域名生效。
-                     * @return HostHeader 自定义回源 HOST 头，该参数仅当 OriginType=IP_DOMAIN 时生效。
-如果 OriginType=COS 或 AWS_S3 时，回源 HOST 头将与源站域名保持一致。
-如果OriginType=ORIGIN_GROUP 时，回源 HOST 头遵循源站组内配置，如果没有配置则默认为加速域名。
-如果 OriginType=VOD 或 SPACE 时，无需配置该头部，按对应的回源域名生效。
+                     * 获取自定义回源 HOST 头，该参数仅当 OriginType = IP_DOMAIN 时生效。当 OriginType 是其它类型源站时，不需要传入该参数，否则会报错。
+当 OriginType = COS 或 AWS_S3 时，回源 HOST 头将与源站域名保持一致。
+当 OriginType = ORIGIN_GROUP 时，回源 HOST 头遵循源站组内配置，如果没有配置则默认为加速域名。
+当 OriginType = VOD 或 SPACE 时，无需配置该头部，按对应的回源域名生效。
+                     * @return HostHeader 自定义回源 HOST 头，该参数仅当 OriginType = IP_DOMAIN 时生效。当 OriginType 是其它类型源站时，不需要传入该参数，否则会报错。
+当 OriginType = COS 或 AWS_S3 时，回源 HOST 头将与源站域名保持一致。
+当 OriginType = ORIGIN_GROUP 时，回源 HOST 头遵循源站组内配置，如果没有配置则默认为加速域名。
+当 OriginType = VOD 或 SPACE 时，无需配置该头部，按对应的回源域名生效。
                      * 
                      */
                     std::string GetHostHeader() const;
 
                     /**
-                     * 设置自定义回源 HOST 头，该参数仅当 OriginType=IP_DOMAIN 时生效。
-如果 OriginType=COS 或 AWS_S3 时，回源 HOST 头将与源站域名保持一致。
-如果OriginType=ORIGIN_GROUP 时，回源 HOST 头遵循源站组内配置，如果没有配置则默认为加速域名。
-如果 OriginType=VOD 或 SPACE 时，无需配置该头部，按对应的回源域名生效。
-                     * @param _hostHeader 自定义回源 HOST 头，该参数仅当 OriginType=IP_DOMAIN 时生效。
-如果 OriginType=COS 或 AWS_S3 时，回源 HOST 头将与源站域名保持一致。
-如果OriginType=ORIGIN_GROUP 时，回源 HOST 头遵循源站组内配置，如果没有配置则默认为加速域名。
-如果 OriginType=VOD 或 SPACE 时，无需配置该头部，按对应的回源域名生效。
+                     * 设置自定义回源 HOST 头，该参数仅当 OriginType = IP_DOMAIN 时生效。当 OriginType 是其它类型源站时，不需要传入该参数，否则会报错。
+当 OriginType = COS 或 AWS_S3 时，回源 HOST 头将与源站域名保持一致。
+当 OriginType = ORIGIN_GROUP 时，回源 HOST 头遵循源站组内配置，如果没有配置则默认为加速域名。
+当 OriginType = VOD 或 SPACE 时，无需配置该头部，按对应的回源域名生效。
+                     * @param _hostHeader 自定义回源 HOST 头，该参数仅当 OriginType = IP_DOMAIN 时生效。当 OriginType 是其它类型源站时，不需要传入该参数，否则会报错。
+当 OriginType = COS 或 AWS_S3 时，回源 HOST 头将与源站域名保持一致。
+当 OriginType = ORIGIN_GROUP 时，回源 HOST 头遵循源站组内配置，如果没有配置则默认为加速域名。
+当 OriginType = VOD 或 SPACE 时，无需配置该头部，按对应的回源域名生效。
                      * 
                      */
                     void SetHostHeader(const std::string& _hostHeader);
@@ -325,19 +321,15 @@ namespace TencentCloud
                     bool VodeoBucketIdHasBeenSet() const;
 
                     /**
-                     * 获取云点播回源范围，该参数当 OriginType = VOD 时生效。取值有：<li>all：当前源站对应的云点播应用内所有文件，默认值为 all；</li><li>bucket：当前源站对应的云点播应用下指定某一个存储桶内的文件。通过参数 VodBucketId 来指定存储桶。
-</li>
-                     * @return VodOriginScope 云点播回源范围，该参数当 OriginType = VOD 时生效。取值有：<li>all：当前源站对应的云点播应用内所有文件，默认值为 all；</li><li>bucket：当前源站对应的云点播应用下指定某一个存储桶内的文件。通过参数 VodBucketId 来指定存储桶。
-</li>
+                     * 获取云点播回源范围，该参数当 OriginType = VOD 时生效。取值有：<li>all：当前源站对应的云点播应用内所有文件；</li><li>bucket：当前源站对应的云点播应用下指定某一个存储桶内的文件，通过参数 VodBucketId 来指定存储桶。</li>不填写时，默认值为 all。
+                     * @return VodOriginScope 云点播回源范围，该参数当 OriginType = VOD 时生效。取值有：<li>all：当前源站对应的云点播应用内所有文件；</li><li>bucket：当前源站对应的云点播应用下指定某一个存储桶内的文件，通过参数 VodBucketId 来指定存储桶。</li>不填写时，默认值为 all。
                      * 
                      */
                     std::string GetVodOriginScope() const;
 
                     /**
-                     * 设置云点播回源范围，该参数当 OriginType = VOD 时生效。取值有：<li>all：当前源站对应的云点播应用内所有文件，默认值为 all；</li><li>bucket：当前源站对应的云点播应用下指定某一个存储桶内的文件。通过参数 VodBucketId 来指定存储桶。
-</li>
-                     * @param _vodOriginScope 云点播回源范围，该参数当 OriginType = VOD 时生效。取值有：<li>all：当前源站对应的云点播应用内所有文件，默认值为 all；</li><li>bucket：当前源站对应的云点播应用下指定某一个存储桶内的文件。通过参数 VodBucketId 来指定存储桶。
-</li>
+                     * 设置云点播回源范围，该参数当 OriginType = VOD 时生效。取值有：<li>all：当前源站对应的云点播应用内所有文件；</li><li>bucket：当前源站对应的云点播应用下指定某一个存储桶内的文件，通过参数 VodBucketId 来指定存储桶。</li>不填写时，默认值为 all。
+                     * @param _vodOriginScope 云点播回源范围，该参数当 OriginType = VOD 时生效。取值有：<li>all：当前源站对应的云点播应用内所有文件；</li><li>bucket：当前源站对应的云点播应用下指定某一个存储桶内的文件，通过参数 VodBucketId 来指定存储桶。</li>不填写时，默认值为 all。
                      * 
                      */
                     void SetVodOriginScope(const std::string& _vodOriginScope);
@@ -378,7 +370,7 @@ namespace TencentCloud
 <li>COS：腾讯云 COS 对象存储源站；</li>
 <li>AWS_S3：AWS S3 对象存储源站；</li>
 <li>ORIGIN_GROUP：源站组类型源站；</li>
- <li>VOD：云点播；</li>
+<li>VOD：云点播；</li>
 <li>SPACE：源站卸载，当前仅白名单开放；</li>
 <li>LB：负载均衡，当前仅白名单开放。</li>
                      */
@@ -387,13 +379,13 @@ namespace TencentCloud
 
                     /**
                      * 源站地址，根据 OriginType 的取值分为以下情况：
-<li>当 OriginType = IP_DOMAIN 时，该参数请填写 IPv4、IPv6 地址或域名；</li>
-<li>当 OriginType = COS 时，该参数请填写 COS 桶的访问域名；</li>
-<li>当 OriginType = AWS_S3，该参数请填写 S3 桶的访问域名；</li>
-<li>当 OriginType = ORIGIN_GROUP 时，该参数请填写源站组 ID；</li>
-<li>当 OriginType = VOD 时，该参数请填写云点播应用 ID ；</li>
-<li>当 OriginType = LB 时，该参数请填写负载均衡实例 ID，该功能当前仅白名单开放；</li>
-<li>当 OriginType = SPACE 时，该参数请填写源站卸载空间 ID，该功能当前仅白名单开放。</li>
+<li>当 OriginType = IP_DOMAIN 时，该参数为 IPv4、IPv6 地址或域名；</li>
+<li>当 OriginType = COS 时，该参数为 COS 桶的访问域名；</li>
+<li>当 OriginType = AWS_S3，该参数为 S3 桶的访问域名；</li>
+<li>当 OriginType = ORIGIN_GROUP 时，该参数为源站组 ID；如果引用了其它站点的源站组，格式为{源站组 ID}@{ZoneID}。例如：og-testorigin@zone-38moq1z10wwwy；</li>
+<li>当 OriginType = VOD 时，该参数为云点播应用 ID；</li>
+<li>当 OriginType = LB 时，该参数为负载均衡实例 ID，该功能当前仅白名单开放；如果引用了其它站点的负载均衡，格式为{负载均衡 ID}@{ZoneID}。例如：lb-2rxpamcyqfzg@zone-38moq1z10wwwy；</li>
+<li>当 OriginType = SPACE 时，该参数为源站卸载空间 ID，该功能当前仅白名单开放。</li>
                      */
                     std::string m_origin;
                     bool m_originHasBeenSet;
@@ -407,8 +399,7 @@ namespace TencentCloud
                     /**
                      * 指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWS_S3 时会生效，取值有：
 <li>on：使用私有鉴权；</li>
-<li>off：不使用私有鉴权。</li>
-不填写时，默认值为off。
+<li>off：不使用私有鉴权。</li>不填写时，默认值为off。
                      */
                     std::string m_privateAccess;
                     bool m_privateAccessHasBeenSet;
@@ -420,10 +411,10 @@ namespace TencentCloud
                     bool m_privateParametersHasBeenSet;
 
                     /**
-                     * 自定义回源 HOST 头，该参数仅当 OriginType=IP_DOMAIN 时生效。
-如果 OriginType=COS 或 AWS_S3 时，回源 HOST 头将与源站域名保持一致。
-如果OriginType=ORIGIN_GROUP 时，回源 HOST 头遵循源站组内配置，如果没有配置则默认为加速域名。
-如果 OriginType=VOD 或 SPACE 时，无需配置该头部，按对应的回源域名生效。
+                     * 自定义回源 HOST 头，该参数仅当 OriginType = IP_DOMAIN 时生效。当 OriginType 是其它类型源站时，不需要传入该参数，否则会报错。
+当 OriginType = COS 或 AWS_S3 时，回源 HOST 头将与源站域名保持一致。
+当 OriginType = ORIGIN_GROUP 时，回源 HOST 头遵循源站组内配置，如果没有配置则默认为加速域名。
+当 OriginType = VOD 或 SPACE 时，无需配置该头部，按对应的回源域名生效。
                      */
                     std::string m_hostHeader;
                     bool m_hostHeaderHasBeenSet;
@@ -449,8 +440,7 @@ namespace TencentCloud
                     bool m_vodeoBucketIdHasBeenSet;
 
                     /**
-                     * 云点播回源范围，该参数当 OriginType = VOD 时生效。取值有：<li>all：当前源站对应的云点播应用内所有文件，默认值为 all；</li><li>bucket：当前源站对应的云点播应用下指定某一个存储桶内的文件。通过参数 VodBucketId 来指定存储桶。
-</li>
+                     * 云点播回源范围，该参数当 OriginType = VOD 时生效。取值有：<li>all：当前源站对应的云点播应用内所有文件；</li><li>bucket：当前源站对应的云点播应用下指定某一个存储桶内的文件，通过参数 VodBucketId 来指定存储桶。</li>不填写时，默认值为 all。
                      */
                     std::string m_vodOriginScope;
                     bool m_vodOriginScopeHasBeenSet;

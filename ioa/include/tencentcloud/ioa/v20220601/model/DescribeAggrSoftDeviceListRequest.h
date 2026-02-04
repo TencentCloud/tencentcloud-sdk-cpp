@@ -106,6 +106,48 @@ namespace TencentCloud
                      */
                     bool OsTypeHasBeenSet() const;
 
+                    /**
+                     * 获取分组ID
+                     * @return GroupId 分组ID
+                     * 
+                     */
+                    int64_t GetGroupId() const;
+
+                    /**
+                     * 设置分组ID
+                     * @param _groupId 分组ID
+                     * 
+                     */
+                    void SetGroupId(const int64_t& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     * 
+                     */
+                    bool GroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取分组类型 1-终端分组 2-组织架构(账号分组) 3/4-虚拟分组
+                     * @return GroupType 分组类型 1-终端分组 2-组织架构(账号分组) 3/4-虚拟分组
+                     * 
+                     */
+                    int64_t GetGroupType() const;
+
+                    /**
+                     * 设置分组类型 1-终端分组 2-组织架构(账号分组) 3/4-虚拟分组
+                     * @param _groupType 分组类型 1-终端分组 2-组织架构(账号分组) 3/4-虚拟分组
+                     * 
+                     */
+                    void SetGroupType(const int64_t& _groupType);
+
+                    /**
+                     * 判断参数 GroupType 是否已赋值
+                     * @return GroupType 是否已赋值
+                     * 
+                     */
+                    bool GroupTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +167,18 @@ namespace TencentCloud
                      */
                     int64_t m_osType;
                     bool m_osTypeHasBeenSet;
+
+                    /**
+                     * 分组ID
+                     */
+                    int64_t m_groupId;
+                    bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 分组类型 1-终端分组 2-组织架构(账号分组) 3/4-虚拟分组
+                     */
+                    int64_t m_groupType;
+                    bool m_groupTypeHasBeenSet;
 
                 };
             }

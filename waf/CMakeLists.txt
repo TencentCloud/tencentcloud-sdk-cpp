@@ -291,6 +291,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/GetInstanceQpsLimitRequest.h
   include/tencentcloud/waf/v20180125/model/LLMMonPkg.h
   include/tencentcloud/waf/v20180125/model/ModifyHostRequest.h
+  include/tencentcloud/waf/v20180125/model/ApiSecExcludeRule.h
   include/tencentcloud/waf/v20180125/model/DestroyPostCKafkaFlowRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeHistogramResponse.h
   include/tencentcloud/waf/v20180125/model/DeleteSpartaProtectionResponse.h
@@ -475,6 +476,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/AccessLogItems.h
   include/tencentcloud/waf/v20180125/model/ModifyInstanceNameRequest.h
   include/tencentcloud/waf/v20180125/model/DescribePortsResponse.h
+  include/tencentcloud/waf/v20180125/model/DedicatedIPPkg.h
   include/tencentcloud/waf/v20180125/model/ModifyCustomRuleRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyOwaspRuleTypeLevelResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyDomainWhiteRuleRequest.h
@@ -870,6 +872,7 @@ set(waf_src
   src/v20180125/model/GetInstanceQpsLimitRequest.cpp
   src/v20180125/model/LLMMonPkg.cpp
   src/v20180125/model/ModifyHostRequest.cpp
+  src/v20180125/model/ApiSecExcludeRule.cpp
   src/v20180125/model/DestroyPostCKafkaFlowRequest.cpp
   src/v20180125/model/DescribeHistogramResponse.cpp
   src/v20180125/model/DeleteSpartaProtectionResponse.cpp
@@ -1054,6 +1057,7 @@ set(waf_src
   src/v20180125/model/AccessLogItems.cpp
   src/v20180125/model/ModifyInstanceNameRequest.cpp
   src/v20180125/model/DescribePortsResponse.cpp
+  src/v20180125/model/DedicatedIPPkg.cpp
   src/v20180125/model/ModifyCustomRuleRequest.cpp
   src/v20180125/model/ModifyOwaspRuleTypeLevelResponse.cpp
   src/v20180125/model/ModifyDomainWhiteRuleRequest.cpp

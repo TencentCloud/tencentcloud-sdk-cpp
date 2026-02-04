@@ -26,7 +26,8 @@ ModifyBlindWatermarkTemplateRequest::ModifyBlindWatermarkTemplateRequest() :
     m_definitionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_commentHasBeenSet(false),
-    m_textContentHasBeenSet(false)
+    m_textContentHasBeenSet(false),
+    m_strengthHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string ModifyBlindWatermarkTemplateRequest::ToJsonString() const
         string key = "TextContent";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_textContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_strengthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Strength";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_strength.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void ModifyBlindWatermarkTemplateRequest::SetTextContent(const string& _textCont
 bool ModifyBlindWatermarkTemplateRequest::TextContentHasBeenSet() const
 {
     return m_textContentHasBeenSet;
+}
+
+string ModifyBlindWatermarkTemplateRequest::GetStrength() const
+{
+    return m_strength;
+}
+
+void ModifyBlindWatermarkTemplateRequest::SetStrength(const string& _strength)
+{
+    m_strength = _strength;
+    m_strengthHasBeenSet = true;
+}
+
+bool ModifyBlindWatermarkTemplateRequest::StrengthHasBeenSet() const
+{
+    return m_strengthHasBeenSet;
 }
 
 

@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/aiart/v20221229/model/SubmitTemplateToImageJobResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeFlashSMSListResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Aiart::V20221229::Model;
+using namespace TencentCloud::Ccc::V20200210::Model;
 using namespace std;
 
-SubmitTemplateToImageJobResponse::SubmitTemplateToImageJobResponse() :
-    m_jobIdHasBeenSet(false)
+DescribeFlashSMSListResponse::DescribeFlashSMSListResponse() :
+    m_totalHasBeenSet(false),
+    m_flashSMSListHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome SubmitTemplateToImageJobResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeFlashSMSListResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +63,67 @@ CoreInternalOutcome SubmitTemplateToImageJobResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("JobId") && !rsp["JobId"].IsNull())
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
     {
-        if (!rsp["JobId"].IsString())
+        if (!rsp["Total"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `JobId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_jobId = string(rsp["JobId"].GetString());
-        m_jobIdHasBeenSet = true;
+        m_total = rsp["Total"].GetInt64();
+        m_totalHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FlashSMSList") && !rsp["FlashSMSList"].IsNull())
+    {
+        if (!rsp["FlashSMSList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FlashSMSList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["FlashSMSList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FlashSMSRecord item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_flashSMSList.push_back(item);
+        }
+        m_flashSMSListHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string SubmitTemplateToImageJobResponse::ToJsonString() const
+string DescribeFlashSMSListResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_jobIdHasBeenSet)
+    if (m_totalHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "JobId";
+        string key = "Total";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_total, allocator);
+    }
+
+    if (m_flashSMSListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlashSMSList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_flashSMSList.begin(); itr != m_flashSMSList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +138,24 @@ string SubmitTemplateToImageJobResponse::ToJsonString() const
 }
 
 
-string SubmitTemplateToImageJobResponse::GetJobId() const
+int64_t DescribeFlashSMSListResponse::GetTotal() const
 {
-    return m_jobId;
+    return m_total;
 }
 
-bool SubmitTemplateToImageJobResponse::JobIdHasBeenSet() const
+bool DescribeFlashSMSListResponse::TotalHasBeenSet() const
 {
-    return m_jobIdHasBeenSet;
+    return m_totalHasBeenSet;
+}
+
+vector<FlashSMSRecord> DescribeFlashSMSListResponse::GetFlashSMSList() const
+{
+    return m_flashSMSList;
+}
+
+bool DescribeFlashSMSListResponse::FlashSMSListHasBeenSet() const
+{
+    return m_flashSMSListHasBeenSet;
 }
 
 

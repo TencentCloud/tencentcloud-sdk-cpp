@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取说话人验证数据
-                     * @return Data 说话人验证数据
+                     * 获取<p>说话人验证数据</p>
+                     * @return Data <p>说话人验证数据</p>
                      * 
                      */
                     VoicePrintVerifyData GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 说话人验证数据
+                     * <p>说话人验证数据</p>
                      */
                     VoicePrintVerifyData m_data;
                     bool m_dataHasBeenSet;

@@ -32,6 +32,7 @@
 #include <tencentcloud/tione/v20211111/model/LogConfig.h>
 #include <tencentcloud/tione/v20211111/model/ImageInfo.h>
 #include <tencentcloud/tione/v20211111/model/CodeRepoConfig.h>
+#include <tencentcloud/tione/v20211111/model/ExposeNetworkConfig.h>
 
 
 namespace TencentCloud
@@ -1015,6 +1016,27 @@ namespace TencentCloud
                      */
                     bool CodeReposHasBeenSet() const;
 
+                    /**
+                     * 获取暴露网络配置
+                     * @return ExposeNetworkConfig 暴露网络配置
+                     * 
+                     */
+                    ExposeNetworkConfig GetExposeNetworkConfig() const;
+
+                    /**
+                     * 设置暴露网络配置
+                     * @param _exposeNetworkConfig 暴露网络配置
+                     * 
+                     */
+                    void SetExposeNetworkConfig(const ExposeNetworkConfig& _exposeNetworkConfig);
+
+                    /**
+                     * 判断参数 ExposeNetworkConfig 是否已赋值
+                     * @return ExposeNetworkConfig 是否已赋值
+                     * 
+                     */
+                    bool ExposeNetworkConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1287,6 +1309,12 @@ namespace TencentCloud
                      */
                     std::vector<CodeRepoConfig> m_codeRepos;
                     bool m_codeReposHasBeenSet;
+
+                    /**
+                     * 暴露网络配置
+                     */
+                    ExposeNetworkConfig m_exposeNetworkConfig;
+                    bool m_exposeNetworkConfigHasBeenSet;
 
                 };
             }

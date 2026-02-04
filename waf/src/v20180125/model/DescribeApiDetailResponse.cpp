@@ -25,6 +25,7 @@ using namespace std;
 
 DescribeApiDetailResponse::DescribeApiDetailResponse() :
     m_logHasBeenSet(false),
+    m_fullReqLogHasBeenSet(false),
     m_parameterListHasBeenSet(false),
     m_sceneHasBeenSet(false),
     m_sensitiveFieldsHasBeenSet(false),
@@ -82,6 +83,16 @@ CoreInternalOutcome DescribeApiDetailResponse::Deserialize(const string &payload
         }
         m_log = string(rsp["Log"].GetString());
         m_logHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FullReqLog") && !rsp["FullReqLog"].IsNull())
+    {
+        if (!rsp["FullReqLog"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FullReqLog` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fullReqLog = string(rsp["FullReqLog"].GetString());
+        m_fullReqLogHasBeenSet = true;
     }
 
     if (rsp.HasMember("ParameterList") && !rsp["ParameterList"].IsNull())
@@ -245,6 +256,14 @@ string DescribeApiDetailResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_log.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_fullReqLogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FullReqLog";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fullReqLog.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_parameterListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -380,6 +399,16 @@ string DescribeApiDetailResponse::GetLog() const
 bool DescribeApiDetailResponse::LogHasBeenSet() const
 {
     return m_logHasBeenSet;
+}
+
+string DescribeApiDetailResponse::GetFullReqLog() const
+{
+    return m_fullReqLog;
+}
+
+bool DescribeApiDetailResponse::FullReqLogHasBeenSet() const
+{
+    return m_fullReqLogHasBeenSet;
 }
 
 vector<ApiParameterType> DescribeApiDetailResponse::GetParameterList() const

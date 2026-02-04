@@ -71,7 +71,8 @@ InstanceInfo::InstanceInfo() :
     m_clusterInfoHasBeenSet(false),
     m_analysisNodeInfosHasBeenSet(false),
     m_deviceBandwidthHasBeenSet(false),
-    m_destroyProtectHasBeenSet(false)
+    m_destroyProtectHasBeenSet(false),
+    m_cpuModelHasBeenSet(false)
 {
 }
 
@@ -661,6 +662,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_destroyProtectHasBeenSet = true;
     }
 
+    if (value.HasMember("CpuModel") && !value["CpuModel"].IsNull())
+    {
+        if (!value["CpuModel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.CpuModel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpuModel = string(value["CpuModel"].GetString());
+        m_cpuModelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1112,6 +1123,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DestroyProtect";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_destroyProtect.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cpuModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuModel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cpuModel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1931,5 +1950,21 @@ void InstanceInfo::SetDestroyProtect(const string& _destroyProtect)
 bool InstanceInfo::DestroyProtectHasBeenSet() const
 {
     return m_destroyProtectHasBeenSet;
+}
+
+string InstanceInfo::GetCpuModel() const
+{
+    return m_cpuModel;
+}
+
+void InstanceInfo::SetCpuModel(const string& _cpuModel)
+{
+    m_cpuModel = _cpuModel;
+    m_cpuModelHasBeenSet = true;
+}
+
+bool InstanceInfo::CpuModelHasBeenSet() const
+{
+    return m_cpuModelHasBeenSet;
 }
 

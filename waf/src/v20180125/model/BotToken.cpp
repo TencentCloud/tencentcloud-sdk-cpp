@@ -31,7 +31,8 @@ BotToken::BotToken() :
     m_timestampHasBeenSet(false),
     m_sceneHasBeenSet(false),
     m_priorityHasBeenSet(false),
-    m_tokenValidationHasBeenSet(false)
+    m_tokenValidationHasBeenSet(false),
+    m_disableMultiJsonHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,16 @@ CoreInternalOutcome BotToken::Deserialize(const rapidjson::Value &value)
         m_tokenValidationHasBeenSet = true;
     }
 
+    if (value.HasMember("DisableMultiJson") && !value["DisableMultiJson"].IsNull())
+    {
+        if (!value["DisableMultiJson"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotToken.DisableMultiJson` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_disableMultiJson = value["DisableMultiJson"].GetUint64();
+        m_disableMultiJsonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +270,14 @@ void BotToken::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tokenValidation.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_disableMultiJsonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableMultiJson";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_disableMultiJson, allocator);
     }
 
 }
@@ -438,5 +457,21 @@ void BotToken::SetTokenValidation(const TokenValidation& _tokenValidation)
 bool BotToken::TokenValidationHasBeenSet() const
 {
     return m_tokenValidationHasBeenSet;
+}
+
+uint64_t BotToken::GetDisableMultiJson() const
+{
+    return m_disableMultiJson;
+}
+
+void BotToken::SetDisableMultiJson(const uint64_t& _disableMultiJson)
+{
+    m_disableMultiJson = _disableMultiJson;
+    m_disableMultiJsonHasBeenSet = true;
+}
+
+bool BotToken::DisableMultiJsonHasBeenSet() const
+{
+    return m_disableMultiJsonHasBeenSet;
 }
 

@@ -30,7 +30,8 @@ ModifyClusterAttributeRequest::ModifyClusterAttributeRequest() :
     m_clusterLevelHasBeenSet(false),
     m_autoUpgradeClusterLevelHasBeenSet(false),
     m_qGPUShareEnableHasBeenSet(false),
-    m_clusterPropertyHasBeenSet(false)
+    m_clusterPropertyHasBeenSet(false),
+    m_isHighAvailabilityHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,14 @@ string ModifyClusterAttributeRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_clusterProperty.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_isHighAvailabilityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsHighAvailability";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isHighAvailability, allocator);
     }
 
 
@@ -241,6 +250,22 @@ void ModifyClusterAttributeRequest::SetClusterProperty(const ClusterProperty& _c
 bool ModifyClusterAttributeRequest::ClusterPropertyHasBeenSet() const
 {
     return m_clusterPropertyHasBeenSet;
+}
+
+bool ModifyClusterAttributeRequest::GetIsHighAvailability() const
+{
+    return m_isHighAvailability;
+}
+
+void ModifyClusterAttributeRequest::SetIsHighAvailability(const bool& _isHighAvailability)
+{
+    m_isHighAvailability = _isHighAvailability;
+    m_isHighAvailabilityHasBeenSet = true;
+}
+
+bool ModifyClusterAttributeRequest::IsHighAvailabilityHasBeenSet() const
+{
+    return m_isHighAvailabilityHasBeenSet;
 }
 
 

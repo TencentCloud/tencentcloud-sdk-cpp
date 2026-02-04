@@ -109,6 +109,27 @@ namespace TencentCloud
                      */
                     bool RspLogHasBeenSet() const;
 
+                    /**
+                     * 获取完整请求样例
+                     * @return FullReqLog 完整请求样例
+                     * 
+                     */
+                    std::string GetFullReqLog() const;
+
+                    /**
+                     * 设置完整请求样例
+                     * @param _fullReqLog 完整请求样例
+                     * 
+                     */
+                    void SetFullReqLog(const std::string& _fullReqLog);
+
+                    /**
+                     * 判断参数 FullReqLog 是否已赋值
+                     * @return FullReqLog 是否已赋值
+                     * 
+                     */
+                    bool FullReqLogHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +149,12 @@ namespace TencentCloud
                      */
                     std::string m_rspLog;
                     bool m_rspLogHasBeenSet;
+
+                    /**
+                     * 完整请求样例
+                     */
+                    std::string m_fullReqLog;
+                    bool m_fullReqLogHasBeenSet;
 
                 };
             }

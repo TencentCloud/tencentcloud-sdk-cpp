@@ -47,7 +47,11 @@ UpsertCCRuleRequest::UpsertCCRuleRequest() :
     m_logicalOpHasBeenSet(false),
     m_pageIdHasBeenSet(false),
     m_actionRatioHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+    m_sourceHasBeenSet(false),
+    m_jobTypeHasBeenSet(false),
+    m_jobDateTimeHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
+    m_validStatusHasBeenSet(false)
 {
 }
 
@@ -261,6 +265,39 @@ string UpsertCCRuleRequest::ToJsonString() const
         string key = "Source";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_source.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jobType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobDateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobDateTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_jobDateTime.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_expireTime, allocator);
+    }
+
+    if (m_validStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValidStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_validStatus, allocator);
     }
 
 
@@ -669,6 +706,70 @@ void UpsertCCRuleRequest::SetSource(const string& _source)
 bool UpsertCCRuleRequest::SourceHasBeenSet() const
 {
     return m_sourceHasBeenSet;
+}
+
+string UpsertCCRuleRequest::GetJobType() const
+{
+    return m_jobType;
+}
+
+void UpsertCCRuleRequest::SetJobType(const string& _jobType)
+{
+    m_jobType = _jobType;
+    m_jobTypeHasBeenSet = true;
+}
+
+bool UpsertCCRuleRequest::JobTypeHasBeenSet() const
+{
+    return m_jobTypeHasBeenSet;
+}
+
+JobDateTime UpsertCCRuleRequest::GetJobDateTime() const
+{
+    return m_jobDateTime;
+}
+
+void UpsertCCRuleRequest::SetJobDateTime(const JobDateTime& _jobDateTime)
+{
+    m_jobDateTime = _jobDateTime;
+    m_jobDateTimeHasBeenSet = true;
+}
+
+bool UpsertCCRuleRequest::JobDateTimeHasBeenSet() const
+{
+    return m_jobDateTimeHasBeenSet;
+}
+
+uint64_t UpsertCCRuleRequest::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void UpsertCCRuleRequest::SetExpireTime(const uint64_t& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool UpsertCCRuleRequest::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
+int64_t UpsertCCRuleRequest::GetValidStatus() const
+{
+    return m_validStatus;
+}
+
+void UpsertCCRuleRequest::SetValidStatus(const int64_t& _validStatus)
+{
+    m_validStatus = _validStatus;
+    m_validStatusHasBeenSet = true;
+}
+
+bool UpsertCCRuleRequest::ValidStatusHasBeenSet() const
+{
+    return m_validStatusHasBeenSet;
 }
 
 

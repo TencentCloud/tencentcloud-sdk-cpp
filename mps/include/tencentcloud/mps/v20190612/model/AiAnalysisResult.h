@@ -456,18 +456,18 @@ namespace TencentCloud
                     bool VideoComprehensionTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析抠图任务的查询结果，当任务类型为Cutout时有效。
+                     * 获取视频内容分析智能抠图任务的查询结果，当任务类型为Cutout时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CutoutTask 视频内容分析抠图任务的查询结果，当任务类型为Cutout时有效。
+                     * @return CutoutTask 视频内容分析智能抠图任务的查询结果，当任务类型为Cutout时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskCutoutResult GetCutoutTask() const;
 
                     /**
-                     * 设置视频内容分析抠图任务的查询结果，当任务类型为Cutout时有效。
+                     * 设置视频内容分析智能抠图任务的查询结果，当任务类型为Cutout时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cutoutTask 视频内容分析抠图任务的查询结果，当任务类型为Cutout时有效。
+                     * @param _cutoutTask 视频内容分析智能抠图任务的查询结果，当任务类型为Cutout时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -481,18 +481,18 @@ namespace TencentCloud
                     bool CutoutTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析成片任务的查询结果，当任务类型为Reel时有效。
+                     * 获取视频内容分析AI解说二创任务的查询结果，当任务类型为Reel时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReelTask 视频内容分析成片任务的查询结果，当任务类型为Reel时有效。
+                     * @return ReelTask 视频内容分析AI解说二创任务的查询结果，当任务类型为Reel时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskReelResult GetReelTask() const;
 
                     /**
-                     * 设置视频内容分析成片任务的查询结果，当任务类型为Reel时有效。
+                     * 设置视频内容分析AI解说二创任务的查询结果，当任务类型为Reel时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _reelTask 视频内容分析成片任务的查询结果，当任务类型为Reel时有效。
+                     * @param _reelTask 视频内容分析AI解说二创任务的查询结果，当任务类型为Reel时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -617,14 +617,14 @@ namespace TencentCloud
                     bool m_videoComprehensionTaskHasBeenSet;
 
                     /**
-                     * 视频内容分析抠图任务的查询结果，当任务类型为Cutout时有效。
+                     * 视频内容分析智能抠图任务的查询结果，当任务类型为Cutout时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskCutoutResult m_cutoutTask;
                     bool m_cutoutTaskHasBeenSet;
 
                     /**
-                     * 视频内容分析成片任务的查询结果，当任务类型为Reel时有效。
+                     * 视频内容分析AI解说二创任务的查询结果，当任务类型为Reel时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskReelResult m_reelTask;

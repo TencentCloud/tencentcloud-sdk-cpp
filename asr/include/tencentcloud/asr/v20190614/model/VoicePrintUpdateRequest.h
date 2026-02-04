@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取音频格式 0: pcm, 1: wav
-                     * @return VoiceFormat 音频格式 0: pcm, 1: wav
+                     * 获取<p>音频格式 0: pcm, 1: wav</p>
+                     * @return VoiceFormat <p>音频格式 0: pcm, 1: wav</p>
                      * 
                      */
                     int64_t GetVoiceFormat() const;
 
                     /**
-                     * 设置音频格式 0: pcm, 1: wav
-                     * @param _voiceFormat 音频格式 0: pcm, 1: wav
+                     * 设置<p>音频格式 0: pcm, 1: wav</p>
+                     * @param _voiceFormat <p>音频格式 0: pcm, 1: wav</p>
                      * 
                      */
                     void SetVoiceFormat(const int64_t& _voiceFormat);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool VoiceFormatHasBeenSet() const;
 
                     /**
-                     * 获取音频采样率 目前仅支持16000 单位Hz
-                     * @return SampleRate 音频采样率 目前仅支持16000 单位Hz
+                     * 获取<p>音频采样率 目前仅支持16000 单位Hz</p>
+                     * @return SampleRate <p>音频采样率 目前仅支持16000 单位Hz</p>
                      * 
                      */
                     int64_t GetSampleRate() const;
 
                     /**
-                     * 设置音频采样率 目前仅支持16000 单位Hz
-                     * @param _sampleRate 音频采样率 目前仅支持16000 单位Hz
+                     * 设置<p>音频采样率 目前仅支持16000 单位Hz</p>
+                     * @param _sampleRate <p>音频采样率 目前仅支持16000 单位Hz</p>
                      * 
                      */
                     void SetSampleRate(const int64_t& _sampleRate);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SampleRateHasBeenSet() const;
 
                     /**
-                     * 获取说话人id， 说话人唯一标识
-                     * @return VoicePrintId 说话人id， 说话人唯一标识
+                     * 获取<p>说话人id， 说话人唯一标识</p>
+                     * @return VoicePrintId <p>说话人id， 说话人唯一标识</p>
                      * 
                      */
                     std::string GetVoicePrintId() const;
 
                     /**
-                     * 设置说话人id， 说话人唯一标识
-                     * @param _voicePrintId 说话人id， 说话人唯一标识
+                     * 设置<p>说话人id， 说话人唯一标识</p>
+                     * @param _voicePrintId <p>说话人id， 说话人唯一标识</p>
                      * 
                      */
                     void SetVoicePrintId(const std::string& _voicePrintId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool VoicePrintIdHasBeenSet() const;
 
                     /**
-                     * 获取音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M	
-                     * @return Data 音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M	
+                     * 获取<p>音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M</p>
+                     * @return Data <p>音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M</p>
                      * 
                      */
                     std::string GetData() const;
 
                     /**
-                     * 设置音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M	
-                     * @param _data 音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M	
+                     * 设置<p>音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M</p>
+                     * @param _data <p>音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M</p>
                      * 
                      */
                     void SetData(const std::string& _data);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取说话人昵称  不超过32字节
-                     * @return SpeakerNick 说话人昵称  不超过32字节
+                     * 获取<p>说话人昵称  不超过32字节</p>
+                     * @return SpeakerNick <p>说话人昵称  不超过32字节</p>
                      * 
                      */
                     std::string GetSpeakerNick() const;
 
                     /**
-                     * 设置说话人昵称  不超过32字节
-                     * @param _speakerNick 说话人昵称  不超过32字节
+                     * 设置<p>说话人昵称  不超过32字节</p>
+                     * @param _speakerNick <p>说话人昵称  不超过32字节</p>
                      * 
                      */
                     void SetSpeakerNick(const std::string& _speakerNick);
@@ -147,37 +147,64 @@ namespace TencentCloud
                      */
                     bool SpeakerNickHasBeenSet() const;
 
+                    /**
+                     * 获取<p>声纹cos url 注意:仅支持腾讯云cos url 地址</p>
+                     * @return AudioUrl <p>声纹cos url 注意:仅支持腾讯云cos url 地址</p>
+                     * 
+                     */
+                    std::string GetAudioUrl() const;
+
+                    /**
+                     * 设置<p>声纹cos url 注意:仅支持腾讯云cos url 地址</p>
+                     * @param _audioUrl <p>声纹cos url 注意:仅支持腾讯云cos url 地址</p>
+                     * 
+                     */
+                    void SetAudioUrl(const std::string& _audioUrl);
+
+                    /**
+                     * 判断参数 AudioUrl 是否已赋值
+                     * @return AudioUrl 是否已赋值
+                     * 
+                     */
+                    bool AudioUrlHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 音频格式 0: pcm, 1: wav
+                     * <p>音频格式 0: pcm, 1: wav</p>
                      */
                     int64_t m_voiceFormat;
                     bool m_voiceFormatHasBeenSet;
 
                     /**
-                     * 音频采样率 目前仅支持16000 单位Hz
+                     * <p>音频采样率 目前仅支持16000 单位Hz</p>
                      */
                     int64_t m_sampleRate;
                     bool m_sampleRateHasBeenSet;
 
                     /**
-                     * 说话人id， 说话人唯一标识
+                     * <p>说话人id， 说话人唯一标识</p>
                      */
                     std::string m_voicePrintId;
                     bool m_voicePrintIdHasBeenSet;
 
                     /**
-                     * 音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M	
+                     * <p>音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M</p>
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 说话人昵称  不超过32字节
+                     * <p>说话人昵称  不超过32字节</p>
                      */
                     std::string m_speakerNick;
                     bool m_speakerNickHasBeenSet;
+
+                    /**
+                     * <p>声纹cos url 注意:仅支持腾讯云cos url 地址</p>
+                     */
+                    std::string m_audioUrl;
+                    bool m_audioUrlHasBeenSet;
 
                 };
             }

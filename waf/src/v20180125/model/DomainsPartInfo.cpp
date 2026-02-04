@@ -77,7 +77,8 @@ DomainsPartInfo::DomainsPartInfo() :
     m_upstreamRulesHasBeenSet(false),
     m_useCaseHasBeenSet(false),
     m_gzipHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_privateVipStatusHasBeenSet(false)
 {
 }
 
@@ -691,6 +692,16 @@ CoreInternalOutcome DomainsPartInfo::Deserialize(const rapidjson::Value &value)
         m_stateHasBeenSet = true;
     }
 
+    if (value.HasMember("PrivateVipStatus") && !value["PrivateVipStatus"].IsNull())
+    {
+        if (!value["PrivateVipStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.PrivateVipStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_privateVipStatus = value["PrivateVipStatus"].GetInt64();
+        m_privateVipStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1191,6 +1202,14 @@ void DomainsPartInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_state, allocator);
+    }
+
+    if (m_privateVipStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrivateVipStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_privateVipStatus, allocator);
     }
 
 }
@@ -2106,5 +2125,21 @@ void DomainsPartInfo::SetState(const int64_t& _state)
 bool DomainsPartInfo::StateHasBeenSet() const
 {
     return m_stateHasBeenSet;
+}
+
+int64_t DomainsPartInfo::GetPrivateVipStatus() const
+{
+    return m_privateVipStatus;
+}
+
+void DomainsPartInfo::SetPrivateVipStatus(const int64_t& _privateVipStatus)
+{
+    m_privateVipStatus = _privateVipStatus;
+    m_privateVipStatusHasBeenSet = true;
+}
+
+bool DomainsPartInfo::PrivateVipStatusHasBeenSet() const
+{
+    return m_privateVipStatusHasBeenSet;
 }
 

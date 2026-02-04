@@ -27,6 +27,7 @@ set(ioa_public_header_model
   include/tencentcloud/ioa/v20220601/model/ComplexRule.h
   include/tencentcloud/ioa/v20220601/model/DescribeDeviceHardwareInfoListResponse.h
   include/tencentcloud/ioa/v20220601/model/DescribeDeviceHardwareInfoItem.h
+  include/tencentcloud/ioa/v20220601/model/RulePayloadItem.h
   include/tencentcloud/ioa/v20220601/model/DescribeDeviceDetailListData.h
   include/tencentcloud/ioa/v20220601/model/DescribeDevicesResponse.h
   include/tencentcloud/ioa/v20220601/model/DescribeAggrSoftDeviceListData.h
@@ -64,6 +65,7 @@ set(ioa_public_header_model
   include/tencentcloud/ioa/v20220601/model/DescribeAggrSoftCategorySoftListData.h
   include/tencentcloud/ioa/v20220601/model/Paging.h
   include/tencentcloud/ioa/v20220601/model/DescribeDLPEdgeNodesPageData.h
+  include/tencentcloud/ioa/v20220601/model/RulePayload.h
   include/tencentcloud/ioa/v20220601/model/DescribeDLPFileDetectTaskResultResponse.h
   include/tencentcloud/ioa/v20220601/model/CreateDLPFileDetectTaskResponse.h
   include/tencentcloud/ioa/v20220601/model/CreateDLPFileDetectTaskData.h
@@ -138,6 +140,7 @@ set(ioa_src
   src/v20220601/model/ComplexRule.cpp
   src/v20220601/model/DescribeDeviceHardwareInfoListResponse.cpp
   src/v20220601/model/DescribeDeviceHardwareInfoItem.cpp
+  src/v20220601/model/RulePayloadItem.cpp
   src/v20220601/model/DescribeDeviceDetailListData.cpp
   src/v20220601/model/DescribeDevicesResponse.cpp
   src/v20220601/model/DescribeAggrSoftDeviceListData.cpp
@@ -175,6 +178,7 @@ set(ioa_src
   src/v20220601/model/DescribeAggrSoftCategorySoftListData.cpp
   src/v20220601/model/Paging.cpp
   src/v20220601/model/DescribeDLPEdgeNodesPageData.cpp
+  src/v20220601/model/RulePayload.cpp
   src/v20220601/model/DescribeDLPFileDetectTaskResultResponse.cpp
   src/v20220601/model/CreateDLPFileDetectTaskResponse.cpp
   src/v20220601/model/CreateDLPFileDetectTaskData.cpp

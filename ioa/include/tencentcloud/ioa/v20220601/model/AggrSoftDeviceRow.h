@@ -526,6 +526,27 @@ namespace TencentCloud
                      */
                     bool OsTypeHasBeenSet() const;
 
+                    /**
+                     * 获取所有权
+                     * @return AssetType 所有权
+                     * 
+                     */
+                    std::string GetAssetType() const;
+
+                    /**
+                     * 设置所有权
+                     * @param _assetType 所有权
+                     * 
+                     */
+                    void SetAssetType(const std::string& _assetType);
+
+                    /**
+                     * 判断参数 AssetType 是否已赋值
+                     * @return AssetType 是否已赋值
+                     * 
+                     */
+                    bool AssetTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -662,6 +683,12 @@ namespace TencentCloud
                      */
                     int64_t m_osType;
                     bool m_osTypeHasBeenSet;
+
+                    /**
+                     * 所有权
+                     */
+                    std::string m_assetType;
+                    bool m_assetTypeHasBeenSet;
 
                 };
             }

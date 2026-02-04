@@ -25,8 +25,9 @@ using namespace std;
 VoicePrintVerifyRequest::VoicePrintVerifyRequest() :
     m_voiceFormatHasBeenSet(false),
     m_sampleRateHasBeenSet(false),
+    m_voicePrintIdHasBeenSet(false),
     m_dataHasBeenSet(false),
-    m_voicePrintIdHasBeenSet(false)
+    m_audioUrlHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,14 @@ string VoicePrintVerifyRequest::ToJsonString() const
         d.AddMember(iKey, m_sampleRate, allocator);
     }
 
+    if (m_voicePrintIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoicePrintId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_voicePrintId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -61,12 +70,12 @@ string VoicePrintVerifyRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_data.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_voicePrintIdHasBeenSet)
+    if (m_audioUrlHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "VoicePrintId";
+        string key = "AudioUrl";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_voicePrintId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_audioUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -109,6 +118,22 @@ bool VoicePrintVerifyRequest::SampleRateHasBeenSet() const
     return m_sampleRateHasBeenSet;
 }
 
+string VoicePrintVerifyRequest::GetVoicePrintId() const
+{
+    return m_voicePrintId;
+}
+
+void VoicePrintVerifyRequest::SetVoicePrintId(const string& _voicePrintId)
+{
+    m_voicePrintId = _voicePrintId;
+    m_voicePrintIdHasBeenSet = true;
+}
+
+bool VoicePrintVerifyRequest::VoicePrintIdHasBeenSet() const
+{
+    return m_voicePrintIdHasBeenSet;
+}
+
 string VoicePrintVerifyRequest::GetData() const
 {
     return m_data;
@@ -125,20 +150,20 @@ bool VoicePrintVerifyRequest::DataHasBeenSet() const
     return m_dataHasBeenSet;
 }
 
-string VoicePrintVerifyRequest::GetVoicePrintId() const
+string VoicePrintVerifyRequest::GetAudioUrl() const
 {
-    return m_voicePrintId;
+    return m_audioUrl;
 }
 
-void VoicePrintVerifyRequest::SetVoicePrintId(const string& _voicePrintId)
+void VoicePrintVerifyRequest::SetAudioUrl(const string& _audioUrl)
 {
-    m_voicePrintId = _voicePrintId;
-    m_voicePrintIdHasBeenSet = true;
+    m_audioUrl = _audioUrl;
+    m_audioUrlHasBeenSet = true;
 }
 
-bool VoicePrintVerifyRequest::VoicePrintIdHasBeenSet() const
+bool VoicePrintVerifyRequest::AudioUrlHasBeenSet() const
 {
-    return m_voicePrintIdHasBeenSet;
+    return m_audioUrlHasBeenSet;
 }
 
 

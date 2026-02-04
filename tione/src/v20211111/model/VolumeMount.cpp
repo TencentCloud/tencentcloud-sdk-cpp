@@ -23,7 +23,8 @@ using namespace std;
 VolumeMount::VolumeMount() :
     m_cFSConfigHasBeenSet(false),
     m_volumeSourceTypeHasBeenSet(false),
-    m_mountPathHasBeenSet(false)
+    m_mountPathHasBeenSet(false),
+    m_publicDataSourceHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,23 @@ CoreInternalOutcome VolumeMount::Deserialize(const rapidjson::Value &value)
         m_mountPathHasBeenSet = true;
     }
 
+    if (value.HasMember("PublicDataSource") && !value["PublicDataSource"].IsNull())
+    {
+        if (!value["PublicDataSource"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VolumeMount.PublicDataSource` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_publicDataSource.Deserialize(value["PublicDataSource"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_publicDataSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +117,15 @@ void VolumeMount::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "MountPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_mountPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicDataSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicDataSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_publicDataSource.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -150,5 +177,21 @@ void VolumeMount::SetMountPath(const string& _mountPath)
 bool VolumeMount::MountPathHasBeenSet() const
 {
     return m_mountPathHasBeenSet;
+}
+
+PublicDataSourceFS VolumeMount::GetPublicDataSource() const
+{
+    return m_publicDataSource;
+}
+
+void VolumeMount::SetPublicDataSource(const PublicDataSourceFS& _publicDataSource)
+{
+    m_publicDataSource = _publicDataSource;
+    m_publicDataSourceHasBeenSet = true;
+}
+
+bool VolumeMount::PublicDataSourceHasBeenSet() const
+{
+    return m_publicDataSourceHasBeenSet;
 }
 

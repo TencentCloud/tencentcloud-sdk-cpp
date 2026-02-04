@@ -27,7 +27,8 @@ VoicePrintUpdateRequest::VoicePrintUpdateRequest() :
     m_sampleRateHasBeenSet(false),
     m_voicePrintIdHasBeenSet(false),
     m_dataHasBeenSet(false),
-    m_speakerNickHasBeenSet(false)
+    m_speakerNickHasBeenSet(false),
+    m_audioUrlHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string VoicePrintUpdateRequest::ToJsonString() const
         string key = "SpeakerNick";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_speakerNick.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_audioUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_audioUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void VoicePrintUpdateRequest::SetSpeakerNick(const string& _speakerNick)
 bool VoicePrintUpdateRequest::SpeakerNickHasBeenSet() const
 {
     return m_speakerNickHasBeenSet;
+}
+
+string VoicePrintUpdateRequest::GetAudioUrl() const
+{
+    return m_audioUrl;
+}
+
+void VoicePrintUpdateRequest::SetAudioUrl(const string& _audioUrl)
+{
+    m_audioUrl = _audioUrl;
+    m_audioUrlHasBeenSet = true;
+}
+
+bool VoicePrintUpdateRequest::AudioUrlHasBeenSet() const
+{
+    return m_audioUrlHasBeenSet;
 }
 
 

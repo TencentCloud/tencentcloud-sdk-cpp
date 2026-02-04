@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取规则类型筛选
-                     * @return BotIdType 规则类型筛选
+                     * 获取规则类型筛选"cbe-01": "爬虫型BOT", 	"cbe-02": "刷量型BOT", 	"cbe-03": "账号穷举型BOT", 	"cbe-04": "恶意扫描型BOT", 	"cbe-05": "DDoS型BOT", 	"cbe-06": "垃圾邮件发送型BOT", 	"cbe-07": "社交媒体自动化型BOT", 	"cbe-08": "竞争对手数据收集型BOT", 	"cbe-09": "恶意软件传播型BOT"
+                     * @return BotIdType 规则类型筛选"cbe-01": "爬虫型BOT", 	"cbe-02": "刷量型BOT", 	"cbe-03": "账号穷举型BOT", 	"cbe-04": "恶意扫描型BOT", 	"cbe-05": "DDoS型BOT", 	"cbe-06": "垃圾邮件发送型BOT", 	"cbe-07": "社交媒体自动化型BOT", 	"cbe-08": "竞争对手数据收集型BOT", 	"cbe-09": "恶意软件传播型BOT"
                      * 
                      */
                     std::vector<std::string> GetBotIdType() const;
 
                     /**
-                     * 设置规则类型筛选
-                     * @param _botIdType 规则类型筛选
+                     * 设置规则类型筛选"cbe-01": "爬虫型BOT", 	"cbe-02": "刷量型BOT", 	"cbe-03": "账号穷举型BOT", 	"cbe-04": "恶意扫描型BOT", 	"cbe-05": "DDoS型BOT", 	"cbe-06": "垃圾邮件发送型BOT", 	"cbe-07": "社交媒体自动化型BOT", 	"cbe-08": "竞争对手数据收集型BOT", 	"cbe-09": "恶意软件传播型BOT"
+                     * @param _botIdType 规则类型筛选"cbe-01": "爬虫型BOT", 	"cbe-02": "刷量型BOT", 	"cbe-03": "账号穷举型BOT", 	"cbe-04": "恶意扫描型BOT", 	"cbe-05": "DDoS型BOT", 	"cbe-06": "垃圾邮件发送型BOT", 	"cbe-07": "社交媒体自动化型BOT", 	"cbe-08": "竞争对手数据收集型BOT", 	"cbe-09": "恶意软件传播型BOT"
                      * 
                      */
                     void SetBotIdType(const std::vector<std::string>& _botIdType);
@@ -243,7 +243,7 @@ namespace TencentCloud
                     bool m_levelHasBeenSet;
 
                     /**
-                     * 规则类型筛选
+                     * 规则类型筛选"cbe-01": "爬虫型BOT", 	"cbe-02": "刷量型BOT", 	"cbe-03": "账号穷举型BOT", 	"cbe-04": "恶意扫描型BOT", 	"cbe-05": "DDoS型BOT", 	"cbe-06": "垃圾邮件发送型BOT", 	"cbe-07": "社交媒体自动化型BOT", 	"cbe-08": "竞争对手数据收集型BOT", 	"cbe-09": "恶意软件传播型BOT"
                      */
                     std::vector<std::string> m_botIdType;
                     bool m_botIdTypeHasBeenSet;

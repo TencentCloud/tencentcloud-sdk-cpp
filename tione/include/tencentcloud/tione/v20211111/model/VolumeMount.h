@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tione/v20211111/model/CFSConfig.h>
+#include <tencentcloud/tione/v20211111/model/PublicDataSourceFS.h>
 
 
 namespace TencentCloud
@@ -69,15 +70,15 @@ namespace TencentCloud
                     bool CFSConfigHasBeenSet() const;
 
                     /**
-                     * 获取挂载源类型，CFS、COS，默认为CFS
-                     * @return VolumeSourceType 挂载源类型，CFS、COS，默认为CFS
+                     * 获取挂载源类型，CFS、COS、PUBLIC_DATA_SOURCE，默认为CFS
+                     * @return VolumeSourceType 挂载源类型，CFS、COS、PUBLIC_DATA_SOURCE，默认为CFS
                      * 
                      */
                     std::string GetVolumeSourceType() const;
 
                     /**
-                     * 设置挂载源类型，CFS、COS，默认为CFS
-                     * @param _volumeSourceType 挂载源类型，CFS、COS，默认为CFS
+                     * 设置挂载源类型，CFS、COS、PUBLIC_DATA_SOURCE，默认为CFS
+                     * @param _volumeSourceType 挂载源类型，CFS、COS、PUBLIC_DATA_SOURCE，默认为CFS
                      * 
                      */
                     void SetVolumeSourceType(const std::string& _volumeSourceType);
@@ -114,6 +115,27 @@ namespace TencentCloud
                      */
                     bool MountPathHasBeenSet() const;
 
+                    /**
+                     * 获取挂载数据源时的配置信息
+                     * @return PublicDataSource 挂载数据源时的配置信息
+                     * 
+                     */
+                    PublicDataSourceFS GetPublicDataSource() const;
+
+                    /**
+                     * 设置挂载数据源时的配置信息
+                     * @param _publicDataSource 挂载数据源时的配置信息
+                     * 
+                     */
+                    void SetPublicDataSource(const PublicDataSourceFS& _publicDataSource);
+
+                    /**
+                     * 判断参数 PublicDataSource 是否已赋值
+                     * @return PublicDataSource 是否已赋值
+                     * 
+                     */
+                    bool PublicDataSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -123,7 +145,7 @@ namespace TencentCloud
                     bool m_cFSConfigHasBeenSet;
 
                     /**
-                     * 挂载源类型，CFS、COS，默认为CFS
+                     * 挂载源类型，CFS、COS、PUBLIC_DATA_SOURCE，默认为CFS
                      */
                     std::string m_volumeSourceType;
                     bool m_volumeSourceTypeHasBeenSet;
@@ -134,6 +156,12 @@ namespace TencentCloud
                      */
                     std::string m_mountPath;
                     bool m_mountPathHasBeenSet;
+
+                    /**
+                     * 挂载数据源时的配置信息
+                     */
+                    PublicDataSourceFS m_publicDataSource;
+                    bool m_publicDataSourceHasBeenSet;
 
                 };
             }

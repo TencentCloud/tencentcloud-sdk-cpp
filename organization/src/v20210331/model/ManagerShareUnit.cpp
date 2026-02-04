@@ -30,7 +30,8 @@ ManagerShareUnit::ManagerShareUnit() :
     m_createTimeHasBeenSet(false),
     m_shareResourceNumHasBeenSet(false),
     m_shareMemberNumHasBeenSet(false),
-    m_shareScopeHasBeenSet(false)
+    m_shareScopeHasBeenSet(false),
+    m_shareNodeNumHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome ManagerShareUnit::Deserialize(const rapidjson::Value &value)
         m_shareScopeHasBeenSet = true;
     }
 
+    if (value.HasMember("ShareNodeNum") && !value["ShareNodeNum"].IsNull())
+    {
+        if (!value["ShareNodeNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ManagerShareUnit.ShareNodeNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_shareNodeNum = value["ShareNodeNum"].GetInt64();
+        m_shareNodeNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void ManagerShareUnit::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ShareScope";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shareScope, allocator);
+    }
+
+    if (m_shareNodeNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShareNodeNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_shareNodeNum, allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void ManagerShareUnit::SetShareScope(const uint64_t& _shareScope)
 bool ManagerShareUnit::ShareScopeHasBeenSet() const
 {
     return m_shareScopeHasBeenSet;
+}
+
+int64_t ManagerShareUnit::GetShareNodeNum() const
+{
+    return m_shareNodeNum;
+}
+
+void ManagerShareUnit::SetShareNodeNum(const int64_t& _shareNodeNum)
+{
+    m_shareNodeNum = _shareNodeNum;
+    m_shareNodeNumHasBeenSet = true;
+}
+
+bool ManagerShareUnit::ShareNodeNumHasBeenSet() const
+{
+    return m_shareNodeNumHasBeenSet;
 }
 

@@ -278,6 +278,27 @@ namespace TencentCloud
                      */
                     bool TokenValidationHasBeenSet() const;
 
+                    /**
+                     * 获取1表示开启了禁用嵌套功能
+                     * @return DisableMultiJson 1表示开启了禁用嵌套功能
+                     * 
+                     */
+                    uint64_t GetDisableMultiJson() const;
+
+                    /**
+                     * 设置1表示开启了禁用嵌套功能
+                     * @param _disableMultiJson 1表示开启了禁用嵌套功能
+                     * 
+                     */
+                    void SetDisableMultiJson(const uint64_t& _disableMultiJson);
+
+                    /**
+                     * 判断参数 DisableMultiJson 是否已赋值
+                     * @return DisableMultiJson 是否已赋值
+                     * 
+                     */
+                    bool DisableMultiJsonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -345,6 +366,12 @@ namespace TencentCloud
                      */
                     TokenValidation m_tokenValidation;
                     bool m_tokenValidationHasBeenSet;
+
+                    /**
+                     * 1表示开启了禁用嵌套功能
+                     */
+                    uint64_t m_disableMultiJson;
+                    bool m_disableMultiJsonHasBeenSet;
 
                 };
             }

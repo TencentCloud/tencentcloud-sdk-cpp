@@ -155,6 +155,20 @@ namespace TencentCloud
                      */
                     bool BackupStatusHasBeenSet() const;
 
+                    /**
+                     * 获取集群备份任务开启状态2
+                     * @return BackupOpenStatus 集群备份任务开启状态2
+                     * 
+                     */
+                    int64_t GetBackupOpenStatus() const;
+
+                    /**
+                     * 判断参数 BackupOpenStatus 是否已赋值
+                     * @return BackupOpenStatus 是否已赋值
+                     * 
+                     */
+                    bool BackupOpenStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -204,6 +218,12 @@ namespace TencentCloud
                      */
                     int64_t m_backupStatus;
                     bool m_backupStatusHasBeenSet;
+
+                    /**
+                     * 集群备份任务开启状态2
+                     */
+                    int64_t m_backupOpenStatus;
+                    bool m_backupOpenStatusHasBeenSet;
 
                 };
             }

@@ -26,6 +26,7 @@
 #include <tencentcloud/waf/v20180125/model/ApiSecPrivilegeRule.h>
 #include <tencentcloud/waf/v20180125/model/ApiSecSceneRule.h>
 #include <tencentcloud/waf/v20180125/model/ApiSecCustomEventRule.h>
+#include <tencentcloud/waf/v20180125/model/ApiSecExcludeRule.h>
 
 
 namespace TencentCloud
@@ -320,6 +321,48 @@ namespace TencentCloud
                      */
                     bool ApiSecCustomEventRuleRuleHasBeenSet() const;
 
+                    /**
+                     * 获取无效api排除规则
+                     * @return CustomApiExcludeRule 无效api排除规则
+                     * 
+                     */
+                    ApiSecExcludeRule GetCustomApiExcludeRule() const;
+
+                    /**
+                     * 设置无效api排除规则
+                     * @param _customApiExcludeRule 无效api排除规则
+                     * 
+                     */
+                    void SetCustomApiExcludeRule(const ApiSecExcludeRule& _customApiExcludeRule);
+
+                    /**
+                     * 判断参数 CustomApiExcludeRule 是否已赋值
+                     * @return CustomApiExcludeRule 是否已赋值
+                     * 
+                     */
+                    bool CustomApiExcludeRuleHasBeenSet() const;
+
+                    /**
+                     * 获取批量操作的时候的无效api排除规则
+                     * @return ApiExcludeRuleName 批量操作的时候的无效api排除规则
+                     * 
+                     */
+                    std::vector<std::string> GetApiExcludeRuleName() const;
+
+                    /**
+                     * 设置批量操作的时候的无效api排除规则
+                     * @param _apiExcludeRuleName 批量操作的时候的无效api排除规则
+                     * 
+                     */
+                    void SetApiExcludeRuleName(const std::vector<std::string>& _apiExcludeRuleName);
+
+                    /**
+                     * 判断参数 ApiExcludeRuleName 是否已赋值
+                     * @return ApiExcludeRuleName 是否已赋值
+                     * 
+                     */
+                    bool ApiExcludeRuleNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -399,6 +442,18 @@ namespace TencentCloud
                      */
                     ApiSecCustomEventRule m_apiSecCustomEventRuleRule;
                     bool m_apiSecCustomEventRuleRuleHasBeenSet;
+
+                    /**
+                     * 无效api排除规则
+                     */
+                    ApiSecExcludeRule m_customApiExcludeRule;
+                    bool m_customApiExcludeRuleHasBeenSet;
+
+                    /**
+                     * 批量操作的时候的无效api排除规则
+                     */
+                    std::vector<std::string> m_apiExcludeRuleName;
+                    bool m_apiExcludeRuleNameHasBeenSet;
 
                 };
             }

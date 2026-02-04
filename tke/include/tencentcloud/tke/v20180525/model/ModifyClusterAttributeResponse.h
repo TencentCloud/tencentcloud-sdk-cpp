@@ -143,6 +143,20 @@ namespace TencentCloud
                      */
                     bool ClusterPropertyHasBeenSet() const;
 
+                    /**
+                     * 获取集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行
+                     * @return IsHighAvailability 集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行
+                     * 
+                     */
+                    bool GetIsHighAvailability() const;
+
+                    /**
+                     * 判断参数 IsHighAvailability 是否已赋值
+                     * @return IsHighAvailability 是否已赋值
+                     * 
+                     */
+                    bool IsHighAvailabilityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -186,6 +200,12 @@ namespace TencentCloud
                      */
                     ClusterProperty m_clusterProperty;
                     bool m_clusterPropertyHasBeenSet;
+
+                    /**
+                     * 集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行
+                     */
+                    bool m_isHighAvailability;
+                    bool m_isHighAvailabilityHasBeenSet;
 
                 };
             }

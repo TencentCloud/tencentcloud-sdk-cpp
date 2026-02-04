@@ -25,7 +25,9 @@ using namespace std;
 DescribeAggrSoftDeviceListRequest::DescribeAggrSoftDeviceListRequest() :
     m_conditionHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_osTypeHasBeenSet(false)
+    m_osTypeHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
+    m_groupTypeHasBeenSet(false)
 {
 }
 
@@ -59,6 +61,22 @@ string DescribeAggrSoftDeviceListRequest::ToJsonString() const
         string key = "OsType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_osType, allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_groupId, allocator);
+    }
+
+    if (m_groupTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_groupType, allocator);
     }
 
 
@@ -115,6 +133,38 @@ void DescribeAggrSoftDeviceListRequest::SetOsType(const int64_t& _osType)
 bool DescribeAggrSoftDeviceListRequest::OsTypeHasBeenSet() const
 {
     return m_osTypeHasBeenSet;
+}
+
+int64_t DescribeAggrSoftDeviceListRequest::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void DescribeAggrSoftDeviceListRequest::SetGroupId(const int64_t& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool DescribeAggrSoftDeviceListRequest::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
+}
+
+int64_t DescribeAggrSoftDeviceListRequest::GetGroupType() const
+{
+    return m_groupType;
+}
+
+void DescribeAggrSoftDeviceListRequest::SetGroupType(const int64_t& _groupType)
+{
+    m_groupType = _groupType;
+    m_groupTypeHasBeenSet = true;
+}
+
+bool DescribeAggrSoftDeviceListRequest::GroupTypeHasBeenSet() const
+{
+    return m_groupTypeHasBeenSet;
 }
 
 

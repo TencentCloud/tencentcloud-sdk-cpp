@@ -90,56 +90,6 @@ AiartClient::ChangeClothesOutcomeCallable AiartClient::ChangeClothesCallable(con
     return prom->get_future();
 }
 
-AiartClient::DescribeTemplateToImageJobOutcome AiartClient::DescribeTemplateToImageJob(const DescribeTemplateToImageJobRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeTemplateToImageJob");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeTemplateToImageJobResponse rsp = DescribeTemplateToImageJobResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeTemplateToImageJobOutcome(rsp);
-        else
-            return DescribeTemplateToImageJobOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeTemplateToImageJobOutcome(outcome.GetError());
-    }
-}
-
-void AiartClient::DescribeTemplateToImageJobAsync(const DescribeTemplateToImageJobRequest& request, const DescribeTemplateToImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeTemplateToImageJobRequest&;
-    using Resp = DescribeTemplateToImageJobResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeTemplateToImageJob", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-AiartClient::DescribeTemplateToImageJobOutcomeCallable AiartClient::DescribeTemplateToImageJobCallable(const DescribeTemplateToImageJobRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeTemplateToImageJobOutcome>>();
-    DescribeTemplateToImageJobAsync(
-    request,
-    [prom](
-        const AiartClient*,
-        const DescribeTemplateToImageJobRequest&,
-        DescribeTemplateToImageJobOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 AiartClient::GenerateAvatarOutcome AiartClient::GenerateAvatar(const GenerateAvatarRequest &request)
 {
     auto outcome = MakeRequest(request, "GenerateAvatar");
@@ -932,56 +882,6 @@ AiartClient::SubmitMemeJobOutcomeCallable AiartClient::SubmitMemeJobCallable(con
         const AiartClient*,
         const SubmitMemeJobRequest&,
         SubmitMemeJobOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-AiartClient::SubmitTemplateToImageJobOutcome AiartClient::SubmitTemplateToImageJob(const SubmitTemplateToImageJobRequest &request)
-{
-    auto outcome = MakeRequest(request, "SubmitTemplateToImageJob");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        SubmitTemplateToImageJobResponse rsp = SubmitTemplateToImageJobResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return SubmitTemplateToImageJobOutcome(rsp);
-        else
-            return SubmitTemplateToImageJobOutcome(o.GetError());
-    }
-    else
-    {
-        return SubmitTemplateToImageJobOutcome(outcome.GetError());
-    }
-}
-
-void AiartClient::SubmitTemplateToImageJobAsync(const SubmitTemplateToImageJobRequest& request, const SubmitTemplateToImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const SubmitTemplateToImageJobRequest&;
-    using Resp = SubmitTemplateToImageJobResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "SubmitTemplateToImageJob", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-AiartClient::SubmitTemplateToImageJobOutcomeCallable AiartClient::SubmitTemplateToImageJobCallable(const SubmitTemplateToImageJobRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<SubmitTemplateToImageJobOutcome>>();
-    SubmitTemplateToImageJobAsync(
-    request,
-    [prom](
-        const AiartClient*,
-        const SubmitTemplateToImageJobRequest&,
-        SubmitTemplateToImageJobOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

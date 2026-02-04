@@ -27,6 +27,7 @@
 #include <tencentcloud/ioa/v20220601/model/Filter.h>
 #include <tencentcloud/ioa/v20220601/model/FilterGroup.h>
 #include <tencentcloud/ioa/v20220601/model/Sort.h>
+#include <tencentcloud/ioa/v20220601/model/RulePayload.h>
 
 
 namespace TencentCloud
@@ -154,6 +155,56 @@ namespace TencentCloud
                      */
                     bool PageNumHasBeenSet() const;
 
+                    /**
+                     * 获取复杂查询规则条件查询项（支持任意层级AND/OR组合）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RulePayload 复杂查询规则条件查询项（支持任意层级AND/OR组合）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    RulePayload GetRulePayload() const;
+
+                    /**
+                     * 设置复杂查询规则条件查询项（支持任意层级AND/OR组合）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _rulePayload 复杂查询规则条件查询项（支持任意层级AND/OR组合）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRulePayload(const RulePayload& _rulePayload);
+
+                    /**
+                     * 判断参数 RulePayload 是否已赋值
+                     * @return RulePayload 是否已赋值
+                     * 
+                     */
+                    bool RulePayloadHasBeenSet() const;
+
+                    /**
+                     * 获取规则模式：0-使用旧的FilterGroups，1-使用新的RulePayload
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RulePayloadMode 规则模式：0-使用旧的FilterGroups，1-使用新的RulePayload
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRulePayloadMode() const;
+
+                    /**
+                     * 设置规则模式：0-使用旧的FilterGroups，1-使用新的RulePayload
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _rulePayloadMode 规则模式：0-使用旧的FilterGroups，1-使用新的RulePayload
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRulePayloadMode(const int64_t& _rulePayloadMode);
+
+                    /**
+                     * 判断参数 RulePayloadMode 是否已赋值
+                     * @return RulePayloadMode 是否已赋值
+                     * 
+                     */
+                    bool RulePayloadModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -185,6 +236,20 @@ namespace TencentCloud
                      */
                     int64_t m_pageNum;
                     bool m_pageNumHasBeenSet;
+
+                    /**
+                     * 复杂查询规则条件查询项（支持任意层级AND/OR组合）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RulePayload m_rulePayload;
+                    bool m_rulePayloadHasBeenSet;
+
+                    /**
+                     * 规则模式：0-使用旧的FilterGroups，1-使用新的RulePayload
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_rulePayloadMode;
+                    bool m_rulePayloadModeHasBeenSet;
 
                 };
             }

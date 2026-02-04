@@ -553,6 +553,48 @@ namespace TencentCloud
                      */
                     bool DelayTimeHasBeenSet() const;
 
+                    /**
+                     * 获取是否为批量规则：0表示场景规则，1表示批量规则
+                     * @return Batch 是否为批量规则：0表示场景规则，1表示批量规则
+                     * 
+                     */
+                    int64_t GetBatch() const;
+
+                    /**
+                     * 设置是否为批量规则：0表示场景规则，1表示批量规则
+                     * @param _batch 是否为批量规则：0表示场景规则，1表示批量规则
+                     * 
+                     */
+                    void SetBatch(const int64_t& _batch);
+
+                    /**
+                     * 判断参数 Batch 是否已赋值
+                     * @return Batch 是否已赋值
+                     * 
+                     */
+                    bool BatchHasBeenSet() const;
+
+                    /**
+                     * 获取24小时内命中数
+                     * @return HitCount 24小时内命中数
+                     * 
+                     */
+                    uint64_t GetHitCount() const;
+
+                    /**
+                     * 设置24小时内命中数
+                     * @param _hitCount 24小时内命中数
+                     * 
+                     */
+                    void SetHitCount(const uint64_t& _hitCount);
+
+                    /**
+                     * 判断参数 HitCount 是否已赋值
+                     * @return HitCount 是否已赋值
+                     * 
+                     */
+                    bool HitCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -698,6 +740,18 @@ namespace TencentCloud
                      */
                     int64_t m_delayTime;
                     bool m_delayTimeHasBeenSet;
+
+                    /**
+                     * 是否为批量规则：0表示场景规则，1表示批量规则
+                     */
+                    int64_t m_batch;
+                    bool m_batchHasBeenSet;
+
+                    /**
+                     * 24小时内命中数
+                     */
+                    uint64_t m_hitCount;
+                    bool m_hitCountHasBeenSet;
 
                 };
             }

@@ -240,6 +240,48 @@ namespace TencentCloud
                     bool PositionsHasBeenSet() const;
 
                     /**
+                     * 获取是否已修订
+                     * @return IsMark 是否已修订
+                     * 
+                     */
+                    bool GetIsMark() const;
+
+                    /**
+                     * 设置是否已修订
+                     * @param _isMark 是否已修订
+                     * 
+                     */
+                    void SetIsMark(const bool& _isMark);
+
+                    /**
+                     * 判断参数 IsMark 是否已赋值
+                     * @return IsMark 是否已赋值
+                     * 
+                     */
+                    bool IsMarkHasBeenSet() const;
+
+                    /**
+                     * 获取是否已忽略
+                     * @return IsIgnore 是否已忽略
+                     * 
+                     */
+                    bool GetIsIgnore() const;
+
+                    /**
+                     * 设置是否已忽略
+                     * @param _isIgnore 是否已忽略
+                     * 
+                     */
+                    void SetIsIgnore(const bool& _isIgnore);
+
+                    /**
+                     * 判断参数 IsIgnore 是否已赋值
+                     * @return IsIgnore 是否已赋值
+                     * 
+                     */
+                    bool IsIgnoreHasBeenSet() const;
+
+                    /**
                      * 获取审查依据
                      * @return RiskBasis 审查依据
                      * 
@@ -386,6 +428,27 @@ namespace TencentCloud
                      */
                     bool CreatedOnHasBeenSet() const;
 
+                    /**
+                     * 获取风险等级别名
+                     * @return RiskLevelAliasName 风险等级别名
+                     * 
+                     */
+                    std::string GetRiskLevelAliasName() const;
+
+                    /**
+                     * 设置风险等级别名
+                     * @param _riskLevelAliasName 风险等级别名
+                     * 
+                     */
+                    void SetRiskLevelAliasName(const std::string& _riskLevelAliasName);
+
+                    /**
+                     * 判断参数 RiskLevelAliasName 是否已赋值
+                     * @return RiskLevelAliasName 是否已赋值
+                     * 
+                     */
+                    bool RiskLevelAliasNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -443,6 +506,18 @@ namespace TencentCloud
                     bool m_positionsHasBeenSet;
 
                     /**
+                     * 是否已修订
+                     */
+                    bool m_isMark;
+                    bool m_isMarkHasBeenSet;
+
+                    /**
+                     * 是否已忽略
+                     */
+                    bool m_isIgnore;
+                    bool m_isIgnoreHasBeenSet;
+
+                    /**
                      * 审查依据
                      */
                     std::string m_riskBasis;
@@ -483,6 +558,12 @@ namespace TencentCloud
                      */
                     int64_t m_createdOn;
                     bool m_createdOnHasBeenSet;
+
+                    /**
+                     * 风险等级别名
+                     */
+                    std::string m_riskLevelAliasName;
+                    bool m_riskLevelAliasNameHasBeenSet;
 
                 };
             }

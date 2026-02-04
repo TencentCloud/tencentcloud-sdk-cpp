@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 智能成片结果类型
+                * AI解说二创结果类型
                 */
                 class AiAnalysisTaskReelResult : public AbstractModel
                 {
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取智能成片任务输入。
-                     * @return Input 智能成片任务输入。
+                     * 获取AI解说二创任务输入。
+                     * @return Input AI解说二创任务输入。
                      * 
                      */
                     AiAnalysisTaskReelInput GetInput() const;
 
                     /**
-                     * 设置智能成片任务输入。
-                     * @param _input 智能成片任务输入。
+                     * 设置AI解说二创任务输入。
+                     * @param _input AI解说二创任务输入。
                      * 
                      */
                     void SetInput(const AiAnalysisTaskReelInput& _input);
@@ -133,18 +133,18 @@ namespace TencentCloud
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取智能成片任务输出。
+                     * 获取AI解说二创任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Output 智能成片任务输出。
+                     * @return Output AI解说二创任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskReelOutput GetOutput() const;
 
                     /**
-                     * 设置智能成片任务输出。
+                     * 设置AI解说二创任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _output 智能成片任务输出。
+                     * @param _output AI解说二创任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -278,13 +278,13 @@ namespace TencentCloud
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 智能成片任务输入。
+                     * AI解说二创任务输入。
                      */
                     AiAnalysisTaskReelInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * 智能成片任务输出。
+                     * AI解说二创任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskReelOutput m_output;

@@ -35,7 +35,9 @@ ModifyApiSecSensitiveRuleRequest::ModifyApiSecSensitiveRuleRequest() :
     m_apiSecSceneRuleNameListHasBeenSet(false),
     m_apiSecSceneRuleHasBeenSet(false),
     m_apiSecCustomEventRuleNameListHasBeenSet(false),
-    m_apiSecCustomEventRuleRuleHasBeenSet(false)
+    m_apiSecCustomEventRuleRuleHasBeenSet(false),
+    m_customApiExcludeRuleHasBeenSet(false),
+    m_apiExcludeRuleNameHasBeenSet(false)
 {
 }
 
@@ -178,6 +180,28 @@ string ModifyApiSecSensitiveRuleRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_apiSecCustomEventRuleRule.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_customApiExcludeRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomApiExcludeRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customApiExcludeRule.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_apiExcludeRuleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiExcludeRuleName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_apiExcludeRuleName.begin(); itr != m_apiExcludeRuleName.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -394,6 +418,38 @@ void ModifyApiSecSensitiveRuleRequest::SetApiSecCustomEventRuleRule(const ApiSec
 bool ModifyApiSecSensitiveRuleRequest::ApiSecCustomEventRuleRuleHasBeenSet() const
 {
     return m_apiSecCustomEventRuleRuleHasBeenSet;
+}
+
+ApiSecExcludeRule ModifyApiSecSensitiveRuleRequest::GetCustomApiExcludeRule() const
+{
+    return m_customApiExcludeRule;
+}
+
+void ModifyApiSecSensitiveRuleRequest::SetCustomApiExcludeRule(const ApiSecExcludeRule& _customApiExcludeRule)
+{
+    m_customApiExcludeRule = _customApiExcludeRule;
+    m_customApiExcludeRuleHasBeenSet = true;
+}
+
+bool ModifyApiSecSensitiveRuleRequest::CustomApiExcludeRuleHasBeenSet() const
+{
+    return m_customApiExcludeRuleHasBeenSet;
+}
+
+vector<string> ModifyApiSecSensitiveRuleRequest::GetApiExcludeRuleName() const
+{
+    return m_apiExcludeRuleName;
+}
+
+void ModifyApiSecSensitiveRuleRequest::SetApiExcludeRuleName(const vector<string>& _apiExcludeRuleName)
+{
+    m_apiExcludeRuleName = _apiExcludeRuleName;
+    m_apiExcludeRuleNameHasBeenSet = true;
+}
+
+bool ModifyApiSecSensitiveRuleRequest::ApiExcludeRuleNameHasBeenSet() const
+{
+    return m_apiExcludeRuleNameHasBeenSet;
 }
 
 

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/waf/v20180125/model/FieldWriteConfig.h>
 
 
 namespace TencentCloud
@@ -214,6 +215,27 @@ namespace TencentCloud
                      */
                     bool LogTopicIDHasBeenSet() const;
 
+                    /**
+                     * 获取写配置
+                     * @return WriteConfig 写配置
+                     * 
+                     */
+                    FieldWriteConfig GetWriteConfig() const;
+
+                    /**
+                     * 设置写配置
+                     * @param _writeConfig 写配置
+                     * 
+                     */
+                    void SetWriteConfig(const FieldWriteConfig& _writeConfig);
+
+                    /**
+                     * 判断参数 WriteConfig 是否已赋值
+                     * @return WriteConfig 是否已赋值
+                     * 
+                     */
+                    bool WriteConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +285,12 @@ namespace TencentCloud
                      */
                     std::string m_logTopicID;
                     bool m_logTopicIDHasBeenSet;
+
+                    /**
+                     * 写配置
+                     */
+                    FieldWriteConfig m_writeConfig;
+                    bool m_writeConfigHasBeenSet;
 
                 };
             }

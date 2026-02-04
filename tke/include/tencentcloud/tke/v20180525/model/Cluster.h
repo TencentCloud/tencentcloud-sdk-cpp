@@ -577,6 +577,27 @@ namespace TencentCloud
                      */
                     bool CdcIdHasBeenSet() const;
 
+                    /**
+                     * 获取集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行
+                     * @return IsHighAvailability 集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行
+                     * 
+                     */
+                    bool GetIsHighAvailability() const;
+
+                    /**
+                     * 设置集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行
+                     * @param _isHighAvailability 集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行
+                     * 
+                     */
+                    void SetIsHighAvailability(const bool& _isHighAvailability);
+
+                    /**
+                     * 判断参数 IsHighAvailability 是否已赋值
+                     * @return IsHighAvailability 是否已赋值
+                     * 
+                     */
+                    bool IsHighAvailabilityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -729,6 +750,12 @@ namespace TencentCloud
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
+
+                    /**
+                     * 集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行
+                     */
+                    bool m_isHighAvailability;
+                    bool m_isHighAvailabilityHasBeenSet;
 
                 };
             }

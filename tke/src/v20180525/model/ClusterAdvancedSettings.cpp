@@ -41,7 +41,8 @@ ClusterAdvancedSettings::ClusterAdvancedSettings() :
     m_nodeNameTypeHasBeenSet(false),
     m_qGPUShareEnableHasBeenSet(false),
     m_runtimeVersionHasBeenSet(false),
-    m_vpcCniTypeHasBeenSet(false)
+    m_vpcCniTypeHasBeenSet(false),
+    m_isHighAvailabilityHasBeenSet(false)
 {
 }
 
@@ -277,6 +278,16 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const rapidjson::Value 
         m_vpcCniTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsHighAvailability") && !value["IsHighAvailability"].IsNull())
+    {
+        if (!value["IsHighAvailability"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterAdvancedSettings.IsHighAvailability` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isHighAvailability = value["IsHighAvailability"].GetBool();
+        m_isHighAvailabilityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -458,6 +469,14 @@ void ClusterAdvancedSettings::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "VpcCniType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_vpcCniType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isHighAvailabilityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsHighAvailability";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isHighAvailability, allocator);
     }
 
 }
@@ -797,5 +816,21 @@ void ClusterAdvancedSettings::SetVpcCniType(const string& _vpcCniType)
 bool ClusterAdvancedSettings::VpcCniTypeHasBeenSet() const
 {
     return m_vpcCniTypeHasBeenSet;
+}
+
+bool ClusterAdvancedSettings::GetIsHighAvailability() const
+{
+    return m_isHighAvailability;
+}
+
+void ClusterAdvancedSettings::SetIsHighAvailability(const bool& _isHighAvailability)
+{
+    m_isHighAvailability = _isHighAvailability;
+    m_isHighAvailabilityHasBeenSet = true;
+}
+
+bool ClusterAdvancedSettings::IsHighAvailabilityHasBeenSet() const
+{
+    return m_isHighAvailabilityHasBeenSet;
 }
 

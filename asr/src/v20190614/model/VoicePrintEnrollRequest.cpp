@@ -27,7 +27,8 @@ VoicePrintEnrollRequest::VoicePrintEnrollRequest() :
     m_sampleRateHasBeenSet(false),
     m_dataHasBeenSet(false),
     m_speakerNickHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+    m_groupIdHasBeenSet(false),
+    m_audioUrlHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string VoicePrintEnrollRequest::ToJsonString() const
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_audioUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_audioUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void VoicePrintEnrollRequest::SetGroupId(const string& _groupId)
 bool VoicePrintEnrollRequest::GroupIdHasBeenSet() const
 {
     return m_groupIdHasBeenSet;
+}
+
+string VoicePrintEnrollRequest::GetAudioUrl() const
+{
+    return m_audioUrl;
+}
+
+void VoicePrintEnrollRequest::SetAudioUrl(const string& _audioUrl)
+{
+    m_audioUrl = _audioUrl;
+    m_audioUrlHasBeenSet = true;
+}
+
+bool VoicePrintEnrollRequest::AudioUrlHasBeenSet() const
+{
+    return m_audioUrlHasBeenSet;
 }
 
 

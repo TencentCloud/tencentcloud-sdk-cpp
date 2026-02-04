@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取共享单元ID。
-                     * @return UnitId 共享单元ID。
+                     * 获取<p>共享单元ID。</p>
+                     * @return UnitId <p>共享单元ID。</p>
                      * 
                      */
                     std::string GetUnitId() const;
 
                     /**
-                     * 设置共享单元ID。
-                     * @param _unitId 共享单元ID。
+                     * 设置<p>共享单元ID。</p>
+                     * @param _unitId <p>共享单元ID。</p>
                      * 
                      */
                     void SetUnitId(const std::string& _unitId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool UnitIdHasBeenSet() const;
 
                     /**
-                     * 获取共享单元名称。
-                     * @return Name 共享单元名称。
+                     * 获取<p>共享单元名称。</p>
+                     * @return Name <p>共享单元名称。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置共享单元名称。
-                     * @param _name 共享单元名称。
+                     * 设置<p>共享单元名称。</p>
+                     * @param _name <p>共享单元名称。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取共享单元管理员Uin。
-                     * @return Uin 共享单元管理员Uin。
+                     * 获取<p>共享单元管理员Uin。</p>
+                     * @return Uin <p>共享单元管理员Uin。</p>
                      * 
                      */
                     int64_t GetUin() const;
 
                     /**
-                     * 设置共享单元管理员Uin。
-                     * @param _uin 共享单元管理员Uin。
+                     * 设置<p>共享单元管理员Uin。</p>
+                     * @param _uin <p>共享单元管理员Uin。</p>
                      * 
                      */
                     void SetUin(const int64_t& _uin);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取共享单元管理员OwnerUin。
-                     * @return OwnerUin 共享单元管理员OwnerUin。
+                     * 获取<p>共享单元管理员OwnerUin。</p>
+                     * @return OwnerUin <p>共享单元管理员OwnerUin。</p>
                      * 
                      */
                     int64_t GetOwnerUin() const;
 
                     /**
-                     * 设置共享单元管理员OwnerUin。
-                     * @param _ownerUin 共享单元管理员OwnerUin。
+                     * 设置<p>共享单元管理员OwnerUin。</p>
+                     * @param _ownerUin <p>共享单元管理员OwnerUin。</p>
                      * 
                      */
                     void SetOwnerUin(const int64_t& _ownerUin);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool OwnerUinHasBeenSet() const;
 
                     /**
-                     * 获取共享单元地域。
-                     * @return Area 共享单元地域。
+                     * 获取<p>共享单元地域。</p>
+                     * @return Area <p>共享单元地域。</p>
                      * 
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置共享单元地域。
-                     * @param _area 共享单元地域。
+                     * 设置<p>共享单元地域。</p>
+                     * @param _area <p>共享单元地域。</p>
                      * 
                      */
                     void SetArea(const std::string& _area);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取描述。
-                     * @return Description 描述。
+                     * 获取<p>描述。</p>
+                     * @return Description <p>描述。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述。
-                     * @param _description 描述。
+                     * 设置<p>描述。</p>
+                     * @param _description <p>描述。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreateTime 创建时间。
+                     * 获取<p>创建时间。</p>
+                     * @return CreateTime <p>创建时间。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createTime 创建时间。
+                     * 设置<p>创建时间。</p>
+                     * @param _createTime <p>创建时间。</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取共享单元资源数。
-                     * @return ShareResourceNum 共享单元资源数。
+                     * 获取<p>共享单元资源数。</p>
+                     * @return ShareResourceNum <p>共享单元资源数。</p>
                      * 
                      */
                     int64_t GetShareResourceNum() const;
 
                     /**
-                     * 设置共享单元资源数。
-                     * @param _shareResourceNum 共享单元资源数。
+                     * 设置<p>共享单元资源数。</p>
+                     * @param _shareResourceNum <p>共享单元资源数。</p>
                      * 
                      */
                     void SetShareResourceNum(const int64_t& _shareResourceNum);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ShareResourceNumHasBeenSet() const;
 
                     /**
-                     * 获取共享单元成员数。
-                     * @return ShareMemberNum 共享单元成员数。
+                     * 获取<p>共享单元成员数。</p>
+                     * @return ShareMemberNum <p>共享单元成员数。</p>
                      * 
                      */
                     int64_t GetShareMemberNum() const;
 
                     /**
-                     * 设置共享单元成员数。
-                     * @param _shareMemberNum 共享单元成员数。
+                     * 设置<p>共享单元成员数。</p>
+                     * @param _shareMemberNum <p>共享单元成员数。</p>
                      * 
                      */
                     void SetShareMemberNum(const int64_t& _shareMemberNum);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool ShareMemberNumHasBeenSet() const;
 
                     /**
-                     * 获取共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号
-                     * @return ShareScope 共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号
+                     * 获取<p>共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号</p>
+                     * @return ShareScope <p>共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号</p>
                      * 
                      */
                     uint64_t GetShareScope() const;
 
                     /**
-                     * 设置共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号
-                     * @param _shareScope 共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号
+                     * 设置<p>共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号</p>
+                     * @param _shareScope <p>共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号</p>
                      * 
                      */
                     void SetShareScope(const uint64_t& _shareScope);
@@ -256,67 +256,94 @@ namespace TencentCloud
                      */
                     bool ShareScopeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>共享单元部门数。</p>
+                     * @return ShareNodeNum <p>共享单元部门数。</p>
+                     * 
+                     */
+                    int64_t GetShareNodeNum() const;
+
+                    /**
+                     * 设置<p>共享单元部门数。</p>
+                     * @param _shareNodeNum <p>共享单元部门数。</p>
+                     * 
+                     */
+                    void SetShareNodeNum(const int64_t& _shareNodeNum);
+
+                    /**
+                     * 判断参数 ShareNodeNum 是否已赋值
+                     * @return ShareNodeNum 是否已赋值
+                     * 
+                     */
+                    bool ShareNodeNumHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 共享单元ID。
+                     * <p>共享单元ID。</p>
                      */
                     std::string m_unitId;
                     bool m_unitIdHasBeenSet;
 
                     /**
-                     * 共享单元名称。
+                     * <p>共享单元名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 共享单元管理员Uin。
+                     * <p>共享单元管理员Uin。</p>
                      */
                     int64_t m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 共享单元管理员OwnerUin。
+                     * <p>共享单元管理员OwnerUin。</p>
                      */
                     int64_t m_ownerUin;
                     bool m_ownerUinHasBeenSet;
 
                     /**
-                     * 共享单元地域。
+                     * <p>共享单元地域。</p>
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
 
                     /**
-                     * 描述。
+                     * <p>描述。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * <p>创建时间。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 共享单元资源数。
+                     * <p>共享单元资源数。</p>
                      */
                     int64_t m_shareResourceNum;
                     bool m_shareResourceNumHasBeenSet;
 
                     /**
-                     * 共享单元成员数。
+                     * <p>共享单元成员数。</p>
                      */
                     int64_t m_shareMemberNum;
                     bool m_shareMemberNumHasBeenSet;
 
                     /**
-                     * 共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号
+                     * <p>共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号</p>
                      */
                     uint64_t m_shareScope;
                     bool m_shareScopeHasBeenSet;
+
+                    /**
+                     * <p>共享单元部门数。</p>
+                     */
+                    int64_t m_shareNodeNum;
+                    bool m_shareNodeNumHasBeenSet;
 
                 };
             }

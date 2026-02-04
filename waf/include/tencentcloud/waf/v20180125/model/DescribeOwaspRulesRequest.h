@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，支持 RuleId, UpdateTime
-                     * @return By 排序字段，支持 RuleId, UpdateTime
+                     * 获取排序字段，支持 RuleId, ModifyTime
+                     * @return By 排序字段，支持 RuleId, ModifyTime
                      * 
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置排序字段，支持 RuleId, UpdateTime
-                     * @param _by 排序字段，支持 RuleId, UpdateTime
+                     * 设置排序字段，支持 RuleId, ModifyTime
+                     * @param _by 排序字段，支持 RuleId, ModifyTime
                      * 
                      */
                     void SetBy(const std::string& _by);
@@ -190,7 +190,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 排序字段，支持 RuleId, UpdateTime
+                     * 排序字段，支持 RuleId, ModifyTime
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;

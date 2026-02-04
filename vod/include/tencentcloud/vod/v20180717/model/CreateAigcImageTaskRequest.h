@@ -70,10 +70,14 @@ namespace TencentCloud
 <li>GEM：Gemini；</li>
 <li>Qwen：千问。</li>
 <li>Hunyuan：混元。</li>
+<li>Vidu：生数。</li>
+<li>Kling：可灵。</li>
                      * @return ModelName 模型名称。取值：
 <li>GEM：Gemini；</li>
 <li>Qwen：千问。</li>
 <li>Hunyuan：混元。</li>
+<li>Vidu：生数。</li>
+<li>Kling：可灵。</li>
                      * 
                      */
                     std::string GetModelName() const;
@@ -83,10 +87,14 @@ namespace TencentCloud
 <li>GEM：Gemini；</li>
 <li>Qwen：千问。</li>
 <li>Hunyuan：混元。</li>
+<li>Vidu：生数。</li>
+<li>Kling：可灵。</li>
                      * @param _modelName 模型名称。取值：
 <li>GEM：Gemini；</li>
 <li>Qwen：千问。</li>
 <li>Hunyuan：混元。</li>
+<li>Vidu：生数。</li>
+<li>Kling：可灵。</li>
                      * 
                      */
                     void SetModelName(const std::string& _modelName);
@@ -103,10 +111,14 @@ namespace TencentCloud
 <li>当 ModelName 是 GEM，可选值为 2.5、3.0；</li>
 <li>当 ModelName 是 Qwen，可选值为 0925；</li>
 <li>当 ModelName 是 Hunyuan，可选值为 3.0；</li>
+<li>当 ModelName 是 Vidu，可选值为 q2；</li>
+<li>当 ModelName 是 Kling，可选值为 2.1；</li>
                      * @return ModelVersion 模型版本。取值：
 <li>当 ModelName 是 GEM，可选值为 2.5、3.0；</li>
 <li>当 ModelName 是 Qwen，可选值为 0925；</li>
 <li>当 ModelName 是 Hunyuan，可选值为 3.0；</li>
+<li>当 ModelName 是 Vidu，可选值为 q2；</li>
+<li>当 ModelName 是 Kling，可选值为 2.1；</li>
                      * 
                      */
                     std::string GetModelVersion() const;
@@ -116,10 +128,14 @@ namespace TencentCloud
 <li>当 ModelName 是 GEM，可选值为 2.5、3.0；</li>
 <li>当 ModelName 是 Qwen，可选值为 0925；</li>
 <li>当 ModelName 是 Hunyuan，可选值为 3.0；</li>
+<li>当 ModelName 是 Vidu，可选值为 q2；</li>
+<li>当 ModelName 是 Kling，可选值为 2.1；</li>
                      * @param _modelVersion 模型版本。取值：
 <li>当 ModelName 是 GEM，可选值为 2.5、3.0；</li>
 <li>当 ModelName 是 Qwen，可选值为 0925；</li>
 <li>当 ModelName 是 Hunyuan，可选值为 3.0；</li>
+<li>当 ModelName 是 Vidu，可选值为 q2；</li>
+<li>当 ModelName 是 Kling，可选值为 2.1；</li>
                      * 
                      */
                     void SetModelVersion(const std::string& _modelVersion);
@@ -132,15 +148,27 @@ namespace TencentCloud
                     bool ModelVersionHasBeenSet() const;
 
                     /**
-                     * 获取AIGC 生图任务的输入图片的文件信息。默认只支持指定1个，使用模型 GEM 时，版本2.5最多指定3个，版本3.0最多指定14个。
-                     * @return FileInfos AIGC 生图任务的输入图片的文件信息。默认只支持指定1个，使用模型 GEM 时，版本2.5最多指定3个，版本3.0最多指定14个。
+                     * 获取AIGC 生图任务的输入图片的文件信息。默认只支持指定1个。下列模型可传多张参考图：
+* GEM 2.5：0～3张图片；
+* GEM 3.0：0～14张图片；
+* Vidu q2：0～7张图片，图片支持 png、jpeg、jpg、webp格式，图片像素不能小于 128x128，且比例需要小于1:4或4:1；
+                     * @return FileInfos AIGC 生图任务的输入图片的文件信息。默认只支持指定1个。下列模型可传多张参考图：
+* GEM 2.5：0～3张图片；
+* GEM 3.0：0～14张图片；
+* Vidu q2：0～7张图片，图片支持 png、jpeg、jpg、webp格式，图片像素不能小于 128x128，且比例需要小于1:4或4:1；
                      * 
                      */
                     std::vector<AigcImageTaskInputFileInfo> GetFileInfos() const;
 
                     /**
-                     * 设置AIGC 生图任务的输入图片的文件信息。默认只支持指定1个，使用模型 GEM 时，版本2.5最多指定3个，版本3.0最多指定14个。
-                     * @param _fileInfos AIGC 生图任务的输入图片的文件信息。默认只支持指定1个，使用模型 GEM 时，版本2.5最多指定3个，版本3.0最多指定14个。
+                     * 设置AIGC 生图任务的输入图片的文件信息。默认只支持指定1个。下列模型可传多张参考图：
+* GEM 2.5：0～3张图片；
+* GEM 3.0：0～14张图片；
+* Vidu q2：0～7张图片，图片支持 png、jpeg、jpg、webp格式，图片像素不能小于 128x128，且比例需要小于1:4或4:1；
+                     * @param _fileInfos AIGC 生图任务的输入图片的文件信息。默认只支持指定1个。下列模型可传多张参考图：
+* GEM 2.5：0～3张图片；
+* GEM 3.0：0～14张图片；
+* Vidu q2：0～7张图片，图片支持 png、jpeg、jpg、webp格式，图片像素不能小于 128x128，且比例需要小于1:4或4:1；
                      * 
                      */
                     void SetFileInfos(const std::vector<AigcImageTaskInputFileInfo>& _fileInfos);
@@ -333,6 +361,8 @@ namespace TencentCloud
 <li>GEM：Gemini；</li>
 <li>Qwen：千问。</li>
 <li>Hunyuan：混元。</li>
+<li>Vidu：生数。</li>
+<li>Kling：可灵。</li>
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;
@@ -342,12 +372,17 @@ namespace TencentCloud
 <li>当 ModelName 是 GEM，可选值为 2.5、3.0；</li>
 <li>当 ModelName 是 Qwen，可选值为 0925；</li>
 <li>当 ModelName 是 Hunyuan，可选值为 3.0；</li>
+<li>当 ModelName 是 Vidu，可选值为 q2；</li>
+<li>当 ModelName 是 Kling，可选值为 2.1；</li>
                      */
                     std::string m_modelVersion;
                     bool m_modelVersionHasBeenSet;
 
                     /**
-                     * AIGC 生图任务的输入图片的文件信息。默认只支持指定1个，使用模型 GEM 时，版本2.5最多指定3个，版本3.0最多指定14个。
+                     * AIGC 生图任务的输入图片的文件信息。默认只支持指定1个。下列模型可传多张参考图：
+* GEM 2.5：0～3张图片；
+* GEM 3.0：0～14张图片；
+* Vidu q2：0～7张图片，图片支持 png、jpeg、jpg、webp格式，图片像素不能小于 128x128，且比例需要小于1:4或4:1；
                      */
                     std::vector<AigcImageTaskInputFileInfo> m_fileInfos;
                     bool m_fileInfosHasBeenSet;

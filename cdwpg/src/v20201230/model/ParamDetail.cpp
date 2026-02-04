@@ -28,7 +28,8 @@ ParamDetail::ParamDetail() :
     m_valueRangeHasBeenSet(false),
     m_unitHasBeenSet(false),
     m_shortDescHasBeenSet(false),
-    m_parameterNameHasBeenSet(false)
+    m_parameterNameHasBeenSet(false),
+    m_latestValueHasBeenSet(false)
 {
 }
 
@@ -124,6 +125,16 @@ CoreInternalOutcome ParamDetail::Deserialize(const rapidjson::Value &value)
         m_parameterNameHasBeenSet = true;
     }
 
+    if (value.HasMember("LatestValue") && !value["LatestValue"].IsNull())
+    {
+        if (!value["LatestValue"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParamDetail.LatestValue` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestValue = string(value["LatestValue"].GetString());
+        m_latestValueHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +205,14 @@ void ParamDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ParameterName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_parameterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latestValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestValue.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -325,5 +344,21 @@ void ParamDetail::SetParameterName(const string& _parameterName)
 bool ParamDetail::ParameterNameHasBeenSet() const
 {
     return m_parameterNameHasBeenSet;
+}
+
+string ParamDetail::GetLatestValue() const
+{
+    return m_latestValue;
+}
+
+void ParamDetail::SetLatestValue(const string& _latestValue)
+{
+    m_latestValue = _latestValue;
+    m_latestValueHasBeenSet = true;
+}
+
+bool ParamDetail::LatestValueHasBeenSet() const
+{
+    return m_latestValueHasBeenSet;
 }
 

@@ -48,12 +48,14 @@ namespace TencentCloud
 <li>partial：CNAME 接入；</li>
 <li>full：NS 接入；</li>
 <li>noDomainAccess：无域名接入；</li>
-<li>dnsPodAccess：DNSPod 托管接入，该接入模式要求您的域名已托管在 DNSPod 内。</li>
+<li>dnsPodAccess：DNSPod 托管接入，该接入模式要求您的域名已托管在 DNSPod 内；</li>
+<li>ai：边缘推理接入。</li>
                      * @return Type 站点接入类型。该参数取值如下，不填写时默认为 partial：
 <li>partial：CNAME 接入；</li>
 <li>full：NS 接入；</li>
 <li>noDomainAccess：无域名接入；</li>
-<li>dnsPodAccess：DNSPod 托管接入，该接入模式要求您的域名已托管在 DNSPod 内。</li>
+<li>dnsPodAccess：DNSPod 托管接入，该接入模式要求您的域名已托管在 DNSPod 内；</li>
+<li>ai：边缘推理接入。</li>
                      * 
                      */
                     std::string GetType() const;
@@ -63,12 +65,14 @@ namespace TencentCloud
 <li>partial：CNAME 接入；</li>
 <li>full：NS 接入；</li>
 <li>noDomainAccess：无域名接入；</li>
-<li>dnsPodAccess：DNSPod 托管接入，该接入模式要求您的域名已托管在 DNSPod 内。</li>
+<li>dnsPodAccess：DNSPod 托管接入，该接入模式要求您的域名已托管在 DNSPod 内；</li>
+<li>ai：边缘推理接入。</li>
                      * @param _type 站点接入类型。该参数取值如下，不填写时默认为 partial：
 <li>partial：CNAME 接入；</li>
 <li>full：NS 接入；</li>
 <li>noDomainAccess：无域名接入；</li>
-<li>dnsPodAccess：DNSPod 托管接入，该接入模式要求您的域名已托管在 DNSPod 内。</li>
+<li>dnsPodAccess：DNSPod 托管接入，该接入模式要求您的域名已托管在 DNSPod 内；</li>
+<li>ai：边缘推理接入。</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -266,7 +270,8 @@ namespace TencentCloud
 <li>partial：CNAME 接入；</li>
 <li>full：NS 接入；</li>
 <li>noDomainAccess：无域名接入；</li>
-<li>dnsPodAccess：DNSPod 托管接入，该接入模式要求您的域名已托管在 DNSPod 内。</li>
+<li>dnsPodAccess：DNSPod 托管接入，该接入模式要求您的域名已托管在 DNSPod 内；</li>
+<li>ai：边缘推理接入。</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

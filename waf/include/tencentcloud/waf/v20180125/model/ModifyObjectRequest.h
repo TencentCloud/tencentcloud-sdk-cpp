@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OpTypeHasBeenSet() const;
 
                     /**
-                     * 获取新的Waf开关状态，如果和已有状态相同认为修改成功
-                     * @return Status 新的Waf开关状态，如果和已有状态相同认为修改成功
+                     * 获取新的Waf开关状态，如果和已有状态相同认为修改成功。状态可以为0或1
+                     * @return Status 新的Waf开关状态，如果和已有状态相同认为修改成功。状态可以为0或1
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置新的Waf开关状态，如果和已有状态相同认为修改成功
-                     * @param _status 新的Waf开关状态，如果和已有状态相同认为修改成功
+                     * 设置新的Waf开关状态，如果和已有状态相同认为修改成功。状态可以为0或1
+                     * @param _status 新的Waf开关状态，如果和已有状态相同认为修改成功。状态可以为0或1
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -225,7 +225,7 @@ namespace TencentCloud
                     bool m_opTypeHasBeenSet;
 
                     /**
-                     * 新的Waf开关状态，如果和已有状态相同认为修改成功
+                     * 新的Waf开关状态，如果和已有状态相同认为修改成功。状态可以为0或1
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

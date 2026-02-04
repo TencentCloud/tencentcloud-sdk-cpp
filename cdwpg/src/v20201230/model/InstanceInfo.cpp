@@ -46,7 +46,12 @@ InstanceInfo::InstanceInfo() :
     m_payModeHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_accessDetailsHasBeenSet(false)
+    m_accessDetailsHasBeenSet(false),
+    m_isAzHasBeenSet(false),
+    m_secondaryZoneHasBeenSet(false),
+    m_secondarySubnetHasBeenSet(false),
+    m_accessInfoHasBeenSet(false),
+    m_gTMNodesHasBeenSet(false)
 {
 }
 
@@ -362,6 +367,66 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_accessDetailsHasBeenSet = true;
     }
 
+    if (value.HasMember("IsAz") && !value["IsAz"].IsNull())
+    {
+        if (!value["IsAz"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.IsAz` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAz = value["IsAz"].GetInt64();
+        m_isAzHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecondaryZone") && !value["SecondaryZone"].IsNull())
+    {
+        if (!value["SecondaryZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.SecondaryZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_secondaryZone = string(value["SecondaryZone"].GetString());
+        m_secondaryZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecondarySubnet") && !value["SecondarySubnet"].IsNull())
+    {
+        if (!value["SecondarySubnet"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.SecondarySubnet` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_secondarySubnet = string(value["SecondarySubnet"].GetString());
+        m_secondarySubnetHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccessInfo") && !value["AccessInfo"].IsNull())
+    {
+        if (!value["AccessInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.AccessInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessInfo = string(value["AccessInfo"].GetString());
+        m_accessInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("GTMNodes") && !value["GTMNodes"].IsNull())
+    {
+        if (!value["GTMNodes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.GTMNodes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["GTMNodes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            InstanceNodeGroup item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_gTMNodes.push_back(item);
+        }
+        m_gTMNodesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -600,6 +665,53 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
 
         int i=0;
         for (auto itr = m_accessDetails.begin(); itr != m_accessDetails.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_isAzHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAz";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAz, allocator);
+    }
+
+    if (m_secondaryZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecondaryZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secondaryZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secondarySubnetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecondarySubnet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secondarySubnet.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gTMNodesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GTMNodes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_gTMNodes.begin(); itr != m_gTMNodes.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -1023,5 +1135,85 @@ void InstanceInfo::SetAccessDetails(const vector<AccessInfo>& _accessDetails)
 bool InstanceInfo::AccessDetailsHasBeenSet() const
 {
     return m_accessDetailsHasBeenSet;
+}
+
+int64_t InstanceInfo::GetIsAz() const
+{
+    return m_isAz;
+}
+
+void InstanceInfo::SetIsAz(const int64_t& _isAz)
+{
+    m_isAz = _isAz;
+    m_isAzHasBeenSet = true;
+}
+
+bool InstanceInfo::IsAzHasBeenSet() const
+{
+    return m_isAzHasBeenSet;
+}
+
+string InstanceInfo::GetSecondaryZone() const
+{
+    return m_secondaryZone;
+}
+
+void InstanceInfo::SetSecondaryZone(const string& _secondaryZone)
+{
+    m_secondaryZone = _secondaryZone;
+    m_secondaryZoneHasBeenSet = true;
+}
+
+bool InstanceInfo::SecondaryZoneHasBeenSet() const
+{
+    return m_secondaryZoneHasBeenSet;
+}
+
+string InstanceInfo::GetSecondarySubnet() const
+{
+    return m_secondarySubnet;
+}
+
+void InstanceInfo::SetSecondarySubnet(const string& _secondarySubnet)
+{
+    m_secondarySubnet = _secondarySubnet;
+    m_secondarySubnetHasBeenSet = true;
+}
+
+bool InstanceInfo::SecondarySubnetHasBeenSet() const
+{
+    return m_secondarySubnetHasBeenSet;
+}
+
+string InstanceInfo::GetAccessInfo() const
+{
+    return m_accessInfo;
+}
+
+void InstanceInfo::SetAccessInfo(const string& _accessInfo)
+{
+    m_accessInfo = _accessInfo;
+    m_accessInfoHasBeenSet = true;
+}
+
+bool InstanceInfo::AccessInfoHasBeenSet() const
+{
+    return m_accessInfoHasBeenSet;
+}
+
+vector<InstanceNodeGroup> InstanceInfo::GetGTMNodes() const
+{
+    return m_gTMNodes;
+}
+
+void InstanceInfo::SetGTMNodes(const vector<InstanceNodeGroup>& _gTMNodes)
+{
+    m_gTMNodes = _gTMNodes;
+    m_gTMNodesHasBeenSet = true;
+}
+
+bool InstanceInfo::GTMNodesHasBeenSet() const
+{
+    return m_gTMNodesHasBeenSet;
 }
 

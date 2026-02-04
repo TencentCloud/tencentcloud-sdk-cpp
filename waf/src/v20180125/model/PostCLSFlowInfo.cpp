@@ -28,7 +28,8 @@ PostCLSFlowInfo::PostCLSFlowInfo() :
     m_logsetNameHasBeenSet(false),
     m_logsetIDHasBeenSet(false),
     m_logTopicNameHasBeenSet(false),
-    m_logTopicIDHasBeenSet(false)
+    m_logTopicIDHasBeenSet(false),
+    m_writeConfigHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,23 @@ CoreInternalOutcome PostCLSFlowInfo::Deserialize(const rapidjson::Value &value)
         m_logTopicIDHasBeenSet = true;
     }
 
+    if (value.HasMember("WriteConfig") && !value["WriteConfig"].IsNull())
+    {
+        if (!value["WriteConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostCLSFlowInfo.WriteConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_writeConfig.Deserialize(value["WriteConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_writeConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +204,15 @@ void PostCLSFlowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "LogTopicID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logTopicID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_writeConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WriteConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_writeConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -317,5 +344,21 @@ void PostCLSFlowInfo::SetLogTopicID(const string& _logTopicID)
 bool PostCLSFlowInfo::LogTopicIDHasBeenSet() const
 {
     return m_logTopicIDHasBeenSet;
+}
+
+FieldWriteConfig PostCLSFlowInfo::GetWriteConfig() const
+{
+    return m_writeConfig;
+}
+
+void PostCLSFlowInfo::SetWriteConfig(const FieldWriteConfig& _writeConfig)
+{
+    m_writeConfig = _writeConfig;
+    m_writeConfigHasBeenSet = true;
+}
+
+bool PostCLSFlowInfo::WriteConfigHasBeenSet() const
+{
+    return m_writeConfigHasBeenSet;
 }
 

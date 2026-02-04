@@ -23,7 +23,8 @@ using namespace std;
 FieldWriteConfig::FieldWriteConfig() :
     m_enableHeadersHasBeenSet(false),
     m_enableBodyHasBeenSet(false),
-    m_enableBotHasBeenSet(false)
+    m_enableBotHasBeenSet(false),
+    m_enableResponseHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome FieldWriteConfig::Deserialize(const rapidjson::Value &value)
         m_enableBotHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableResponse") && !value["EnableResponse"].IsNull())
+    {
+        if (!value["EnableResponse"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FieldWriteConfig.EnableResponse` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableResponse = value["EnableResponse"].GetInt64();
+        m_enableResponseHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void FieldWriteConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "EnableBot";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableBot, allocator);
+    }
+
+    if (m_enableResponseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableResponse";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableResponse, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void FieldWriteConfig::SetEnableBot(const int64_t& _enableBot)
 bool FieldWriteConfig::EnableBotHasBeenSet() const
 {
     return m_enableBotHasBeenSet;
+}
+
+int64_t FieldWriteConfig::GetEnableResponse() const
+{
+    return m_enableResponse;
+}
+
+void FieldWriteConfig::SetEnableResponse(const int64_t& _enableResponse)
+{
+    m_enableResponse = _enableResponse;
+    m_enableResponseHasBeenSet = true;
+}
+
+bool FieldWriteConfig::EnableResponseHasBeenSet() const
+{
+    return m_enableResponseHasBeenSet;
 }
 

@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeInstanceOperationsResponse::DescribeInstanceOperationsResponse() :
     m_totalCountHasBeenSet(false),
-    m_operationsHasBeenSet(false)
+    m_operationsHasBeenSet(false),
+    m_errorMsgHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome DescribeInstanceOperationsResponse::Deserialize(const string
         m_operationsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ErrorMsg") && !rsp["ErrorMsg"].IsNull())
+    {
+        if (!rsp["ErrorMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorMsg = string(rsp["ErrorMsg"].GetString());
+        m_errorMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeInstanceOperationsResponse::ToJsonString() const
         }
     }
 
+    if (m_errorMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ vector<InstanceOperation> DescribeInstanceOperationsResponse::GetOperations() co
 bool DescribeInstanceOperationsResponse::OperationsHasBeenSet() const
 {
     return m_operationsHasBeenSet;
+}
+
+string DescribeInstanceOperationsResponse::GetErrorMsg() const
+{
+    return m_errorMsg;
+}
+
+bool DescribeInstanceOperationsResponse::ErrorMsgHasBeenSet() const
+{
+    return m_errorMsgHasBeenSet;
 }
 
 

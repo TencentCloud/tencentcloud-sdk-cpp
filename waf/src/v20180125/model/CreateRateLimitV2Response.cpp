@@ -24,7 +24,9 @@ using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
 CreateRateLimitV2Response::CreateRateLimitV2Response() :
-    m_baseInfoHasBeenSet(false)
+    m_baseInfoHasBeenSet(false),
+    m_limitRuleIDHasBeenSet(false),
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -79,6 +81,26 @@ CoreInternalOutcome CreateRateLimitV2Response::Deserialize(const string &payload
         m_baseInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LimitRuleID") && !rsp["LimitRuleID"].IsNull())
+    {
+        if (!rsp["LimitRuleID"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LimitRuleID` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_limitRuleID = rsp["LimitRuleID"].GetInt64();
+        m_limitRuleIDHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Domain") && !rsp["Domain"].IsNull())
+    {
+        if (!rsp["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(rsp["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +118,22 @@ string CreateRateLimitV2Response::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_baseInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_limitRuleIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LimitRuleID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_limitRuleID, allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +156,26 @@ RateLimitCommonRsp CreateRateLimitV2Response::GetBaseInfo() const
 bool CreateRateLimitV2Response::BaseInfoHasBeenSet() const
 {
     return m_baseInfoHasBeenSet;
+}
+
+int64_t CreateRateLimitV2Response::GetLimitRuleID() const
+{
+    return m_limitRuleID;
+}
+
+bool CreateRateLimitV2Response::LimitRuleIDHasBeenSet() const
+{
+    return m_limitRuleIDHasBeenSet;
+}
+
+string CreateRateLimitV2Response::GetDomain() const
+{
+    return m_domain;
+}
+
+bool CreateRateLimitV2Response::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
 }
 
 

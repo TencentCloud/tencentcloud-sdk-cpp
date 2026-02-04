@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标组ID
-                     * @return TargetGroupId 目标组ID
+                     * 获取<p>目标组ID</p>
+                     * @return TargetGroupId <p>目标组ID</p>
                      * 
                      */
                     std::string GetTargetGroupId() const;
 
                     /**
-                     * 设置目标组ID
-                     * @param _targetGroupId 目标组ID
+                     * 设置<p>目标组ID</p>
+                     * @param _targetGroupId <p>目标组ID</p>
                      * 
                      */
                     void SetTargetGroupId(const std::string& _targetGroupId);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool TargetGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取目标组的vpcid
-                     * @return VpcId 目标组的vpcid
+                     * 获取<p>目标组的vpcid</p>
+                     * @return VpcId <p>目标组的vpcid</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置目标组的vpcid
-                     * @param _vpcId 目标组的vpcid
+                     * 设置<p>目标组的vpcid</p>
+                     * @param _vpcId <p>目标组的vpcid</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取目标组的名字
-                     * @return TargetGroupName 目标组的名字
+                     * 获取<p>目标组的名字</p>
+                     * @return TargetGroupName <p>目标组的名字</p>
                      * 
                      */
                     std::string GetTargetGroupName() const;
 
                     /**
-                     * 设置目标组的名字
-                     * @param _targetGroupName 目标组的名字
+                     * 设置<p>目标组的名字</p>
+                     * @param _targetGroupName <p>目标组的名字</p>
                      * 
                      */
                     void SetTargetGroupName(const std::string& _targetGroupName);
@@ -113,18 +113,18 @@ namespace TencentCloud
                     bool TargetGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取目标组的默认端口，全监听目标组此字段返回0，表示无效端口。
+                     * 获取<p>目标组的默认端口，全监听目标组此字段返回0，表示无效端口。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Port 目标组的默认端口，全监听目标组此字段返回0，表示无效端口。
+                     * @return Port <p>目标组的默认端口，全监听目标组此字段返回0，表示无效端口。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPort() const;
 
                     /**
-                     * 设置目标组的默认端口，全监听目标组此字段返回0，表示无效端口。
+                     * 设置<p>目标组的默认端口，全监听目标组此字段返回0，表示无效端口。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _port 目标组的默认端口，全监听目标组此字段返回0，表示无效端口。
+                     * @param _port <p>目标组的默认端口，全监听目标组此字段返回0，表示无效端口。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -138,15 +138,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取目标组的创建时间
-                     * @return CreatedTime 目标组的创建时间
+                     * 获取<p>目标组的创建时间</p>
+                     * @return CreatedTime <p>目标组的创建时间</p>
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置目标组的创建时间
-                     * @param _createdTime 目标组的创建时间
+                     * 设置<p>目标组的创建时间</p>
+                     * @param _createdTime <p>目标组的创建时间</p>
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -159,15 +159,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取目标组的修改时间
-                     * @return UpdatedTime 目标组的修改时间
+                     * 获取<p>目标组的修改时间</p>
+                     * @return UpdatedTime <p>目标组的修改时间</p>
                      * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
-                     * 设置目标组的修改时间
-                     * @param _updatedTime 目标组的修改时间
+                     * 设置<p>目标组的修改时间</p>
+                     * @param _updatedTime <p>目标组的修改时间</p>
                      * 
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
@@ -180,18 +180,18 @@ namespace TencentCloud
                     bool UpdatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取关联到的规则数组。在DescribeTargetGroupList接口调用时无法获取到该参数。
+                     * 获取<p>关联到的规则数组。在DescribeTargetGroupList接口调用时无法获取到该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AssociatedRule 关联到的规则数组。在DescribeTargetGroupList接口调用时无法获取到该参数。
+                     * @return AssociatedRule <p>关联到的规则数组。在DescribeTargetGroupList接口调用时无法获取到该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssociationItem> GetAssociatedRule() const;
 
                     /**
-                     * 设置关联到的规则数组。在DescribeTargetGroupList接口调用时无法获取到该参数。
+                     * 设置<p>关联到的规则数组。在DescribeTargetGroupList接口调用时无法获取到该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _associatedRule 关联到的规则数组。在DescribeTargetGroupList接口调用时无法获取到该参数。
+                     * @param _associatedRule <p>关联到的规则数组。在DescribeTargetGroupList接口调用时无法获取到该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -205,18 +205,18 @@ namespace TencentCloud
                     bool AssociatedRuleHasBeenSet() const;
 
                     /**
-                     * 获取目标组后端转发协议, 仅v2新版目标组返回有效值。
+                     * 获取<p>目标组后端转发协议, 仅v2新版目标组返回有效值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Protocol 目标组后端转发协议, 仅v2新版目标组返回有效值。
+                     * @return Protocol <p>目标组后端转发协议, 仅v2新版目标组返回有效值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置目标组后端转发协议, 仅v2新版目标组返回有效值。
+                     * 设置<p>目标组后端转发协议, 仅v2新版目标组返回有效值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _protocol 目标组后端转发协议, 仅v2新版目标组返回有效值。
+                     * @param _protocol <p>目标组后端转发协议, 仅v2新版目标组返回有效值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -230,42 +230,18 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取调度算法，仅后端转发协议为(HTTP、HTTPS、GRPC)的目标组返回有效值， 可选值：
-<ur>
-<li>WRR:按权重轮询。</li>
-<li>LEAST_CONN:最小连接数。</li>
-<li>IP_HASH:按IP哈希。</li>
-</ur>
-
+                     * 获取<p>调度算法，仅后端转发协议为(HTTP、HTTPS、GRPC)的目标组返回有效值， 可选值：<br><ur></p><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li></ur>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScheduleAlgorithm 调度算法，仅后端转发协议为(HTTP、HTTPS、GRPC)的目标组返回有效值， 可选值：
-<ur>
-<li>WRR:按权重轮询。</li>
-<li>LEAST_CONN:最小连接数。</li>
-<li>IP_HASH:按IP哈希。</li>
-</ur>
-
+                     * @return ScheduleAlgorithm <p>调度算法，仅后端转发协议为(HTTP、HTTPS、GRPC)的目标组返回有效值， 可选值：<br><ur></p><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li></ur>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScheduleAlgorithm() const;
 
                     /**
-                     * 设置调度算法，仅后端转发协议为(HTTP、HTTPS、GRPC)的目标组返回有效值， 可选值：
-<ur>
-<li>WRR:按权重轮询。</li>
-<li>LEAST_CONN:最小连接数。</li>
-<li>IP_HASH:按IP哈希。</li>
-</ur>
-
+                     * 设置<p>调度算法，仅后端转发协议为(HTTP、HTTPS、GRPC)的目标组返回有效值， 可选值：<br><ur></p><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li></ur>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scheduleAlgorithm 调度算法，仅后端转发协议为(HTTP、HTTPS、GRPC)的目标组返回有效值， 可选值：
-<ur>
-<li>WRR:按权重轮询。</li>
-<li>LEAST_CONN:最小连接数。</li>
-<li>IP_HASH:按IP哈希。</li>
-</ur>
-
+                     * @param _scheduleAlgorithm <p>调度算法，仅后端转发协议为(HTTP、HTTPS、GRPC)的目标组返回有效值， 可选值：<br><ur></p><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li></ur>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -279,18 +255,18 @@ namespace TencentCloud
                     bool ScheduleAlgorithmHasBeenSet() const;
 
                     /**
-                     * 获取健康检查详情。
+                     * 获取<p>健康检查详情。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HealthCheck 健康检查详情。
+                     * @return HealthCheck <p>健康检查详情。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TargetGroupHealthCheck GetHealthCheck() const;
 
                     /**
-                     * 设置健康检查详情。
+                     * 设置<p>健康检查详情。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _healthCheck 健康检查详情。
+                     * @param _healthCheck <p>健康检查详情。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -304,15 +280,15 @@ namespace TencentCloud
                     bool HealthCheckHasBeenSet() const;
 
                     /**
-                     * 获取目标组类型，当前支持v1(旧版目标组), v2(新版目标组)。默认为v1旧版目标组。
-                     * @return TargetGroupType 目标组类型，当前支持v1(旧版目标组), v2(新版目标组)。默认为v1旧版目标组。
+                     * 获取<p>目标组类型，当前支持v1(旧版目标组), v2(新版目标组)。默认为v1旧版目标组。</p>
+                     * @return TargetGroupType <p>目标组类型，当前支持v1(旧版目标组), v2(新版目标组)。默认为v1旧版目标组。</p>
                      * 
                      */
                     std::string GetTargetGroupType() const;
 
                     /**
-                     * 设置目标组类型，当前支持v1(旧版目标组), v2(新版目标组)。默认为v1旧版目标组。
-                     * @param _targetGroupType 目标组类型，当前支持v1(旧版目标组), v2(新版目标组)。默认为v1旧版目标组。
+                     * 设置<p>目标组类型，当前支持v1(旧版目标组), v2(新版目标组)。默认为v1旧版目标组。</p>
+                     * @param _targetGroupType <p>目标组类型，当前支持v1(旧版目标组), v2(新版目标组)。默认为v1旧版目标组。</p>
                      * 
                      */
                     void SetTargetGroupType(const std::string& _targetGroupType);
@@ -325,15 +301,15 @@ namespace TencentCloud
                     bool TargetGroupTypeHasBeenSet() const;
 
                     /**
-                     * 获取目标组已关联的规则数。
-                     * @return AssociatedRuleCount 目标组已关联的规则数。
+                     * 获取<p>目标组已关联的规则数。</p>
+                     * @return AssociatedRuleCount <p>目标组已关联的规则数。</p>
                      * 
                      */
                     int64_t GetAssociatedRuleCount() const;
 
                     /**
-                     * 设置目标组已关联的规则数。
-                     * @param _associatedRuleCount 目标组已关联的规则数。
+                     * 设置<p>目标组已关联的规则数。</p>
+                     * @param _associatedRuleCount <p>目标组已关联的规则数。</p>
                      * 
                      */
                     void SetAssociatedRuleCount(const int64_t& _associatedRuleCount);
@@ -346,15 +322,15 @@ namespace TencentCloud
                     bool AssociatedRuleCountHasBeenSet() const;
 
                     /**
-                     * 获取目标组内的实例数量。
-                     * @return RegisteredInstancesCount 目标组内的实例数量。
+                     * 获取<p>目标组内的实例数量。</p>
+                     * @return RegisteredInstancesCount <p>目标组内的实例数量。</p>
                      * 
                      */
                     int64_t GetRegisteredInstancesCount() const;
 
                     /**
-                     * 设置目标组内的实例数量。
-                     * @param _registeredInstancesCount 目标组内的实例数量。
+                     * 设置<p>目标组内的实例数量。</p>
+                     * @param _registeredInstancesCount <p>目标组内的实例数量。</p>
                      * 
                      */
                     void SetRegisteredInstancesCount(const int64_t& _registeredInstancesCount);
@@ -367,15 +343,15 @@ namespace TencentCloud
                     bool RegisteredInstancesCountHasBeenSet() const;
 
                     /**
-                     * 获取标签。
-                     * @return Tag 标签。
+                     * 获取<p>标签。</p>
+                     * @return Tag <p>标签。</p>
                      * 
                      */
                     std::vector<TagInfo> GetTag() const;
 
                     /**
-                     * 设置标签。
-                     * @param _tag 标签。
+                     * 设置<p>标签。</p>
+                     * @param _tag <p>标签。</p>
                      * 
                      */
                     void SetTag(const std::vector<TagInfo>& _tag);
@@ -388,18 +364,18 @@ namespace TencentCloud
                     bool TagHasBeenSet() const;
 
                     /**
-                     * 获取默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。
+                     * 获取<p>默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Weight 默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。
+                     * @return Weight <p>默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
-                     * 设置默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。
+                     * 设置<p>默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _weight 默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。
+                     * @param _weight <p>默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -413,15 +389,15 @@ namespace TencentCloud
                     bool WeightHasBeenSet() const;
 
                     /**
-                     * 获取是否全监听目标组。
-                     * @return FullListenSwitch 是否全监听目标组。
+                     * 获取<p>是否全监听目标组。</p>
+                     * @return FullListenSwitch <p>是否全监听目标组。</p>
                      * 
                      */
                     bool GetFullListenSwitch() const;
 
                     /**
-                     * 设置是否全监听目标组。
-                     * @param _fullListenSwitch 是否全监听目标组。
+                     * 设置<p>是否全监听目标组。</p>
+                     * @param _fullListenSwitch <p>是否全监听目标组。</p>
                      * 
                      */
                     void SetFullListenSwitch(const bool& _fullListenSwitch);
@@ -434,15 +410,15 @@ namespace TencentCloud
                     bool FullListenSwitchHasBeenSet() const;
 
                     /**
-                     * 获取是否开启长连接,  仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。
-                     * @return KeepaliveEnable 是否开启长连接,  仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。
+                     * 获取<p>是否开启长连接,  仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。</p>
+                     * @return KeepaliveEnable <p>是否开启长连接,  仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。</p>
                      * 
                      */
                     bool GetKeepaliveEnable() const;
 
                     /**
-                     * 设置是否开启长连接,  仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。
-                     * @param _keepaliveEnable 是否开启长连接,  仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。
+                     * 设置<p>是否开启长连接,  仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。</p>
+                     * @param _keepaliveEnable <p>是否开启长连接,  仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。</p>
                      * 
                      */
                     void SetKeepaliveEnable(const bool& _keepaliveEnable);
@@ -455,15 +431,15 @@ namespace TencentCloud
                     bool KeepaliveEnableHasBeenSet() const;
 
                     /**
-                     * 获取会话保持时间，仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。
-                     * @return SessionExpireTime 会话保持时间，仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。
+                     * 获取<p>会话保持时间，仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。</p>
+                     * @return SessionExpireTime <p>会话保持时间，仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。</p>
                      * 
                      */
                     int64_t GetSessionExpireTime() const;
 
                     /**
-                     * 设置会话保持时间，仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。
-                     * @param _sessionExpireTime 会话保持时间，仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。
+                     * 设置<p>会话保持时间，仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。</p>
+                     * @param _sessionExpireTime <p>会话保持时间，仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。</p>
                      * 
                      */
                     void SetSessionExpireTime(const int64_t& _sessionExpireTime);
@@ -476,15 +452,15 @@ namespace TencentCloud
                     bool SessionExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取IP版本。
-                     * @return IpVersion IP版本。
+                     * 获取<p>IP版本。</p>
+                     * @return IpVersion <p>IP版本。</p>
                      * 
                      */
                     std::string GetIpVersion() const;
 
                     /**
-                     * 设置IP版本。
-                     * @param _ipVersion IP版本。
+                     * 设置<p>IP版本。</p>
+                     * @param _ipVersion <p>IP版本。</p>
                      * 
                      */
                     void SetIpVersion(const std::string& _ipVersion);
@@ -499,127 +475,121 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标组ID
+                     * <p>目标组ID</p>
                      */
                     std::string m_targetGroupId;
                     bool m_targetGroupIdHasBeenSet;
 
                     /**
-                     * 目标组的vpcid
+                     * <p>目标组的vpcid</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 目标组的名字
+                     * <p>目标组的名字</p>
                      */
                     std::string m_targetGroupName;
                     bool m_targetGroupNameHasBeenSet;
 
                     /**
-                     * 目标组的默认端口，全监听目标组此字段返回0，表示无效端口。
+                     * <p>目标组的默认端口，全监听目标组此字段返回0，表示无效端口。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 目标组的创建时间
+                     * <p>目标组的创建时间</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 目标组的修改时间
+                     * <p>目标组的修改时间</p>
                      */
                     std::string m_updatedTime;
                     bool m_updatedTimeHasBeenSet;
 
                     /**
-                     * 关联到的规则数组。在DescribeTargetGroupList接口调用时无法获取到该参数。
+                     * <p>关联到的规则数组。在DescribeTargetGroupList接口调用时无法获取到该参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssociationItem> m_associatedRule;
                     bool m_associatedRuleHasBeenSet;
 
                     /**
-                     * 目标组后端转发协议, 仅v2新版目标组返回有效值。
+                     * <p>目标组后端转发协议, 仅v2新版目标组返回有效值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 调度算法，仅后端转发协议为(HTTP、HTTPS、GRPC)的目标组返回有效值， 可选值：
-<ur>
-<li>WRR:按权重轮询。</li>
-<li>LEAST_CONN:最小连接数。</li>
-<li>IP_HASH:按IP哈希。</li>
-</ur>
-
+                     * <p>调度算法，仅后端转发协议为(HTTP、HTTPS、GRPC)的目标组返回有效值， 可选值：<br><ur></p><li>WRR:按权重轮询。</li><li>LEAST_CONN:最小连接数。</li><li>IP_HASH:按IP哈希。</li></ur>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scheduleAlgorithm;
                     bool m_scheduleAlgorithmHasBeenSet;
 
                     /**
-                     * 健康检查详情。
+                     * <p>健康检查详情。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TargetGroupHealthCheck m_healthCheck;
                     bool m_healthCheckHasBeenSet;
 
                     /**
-                     * 目标组类型，当前支持v1(旧版目标组), v2(新版目标组)。默认为v1旧版目标组。
+                     * <p>目标组类型，当前支持v1(旧版目标组), v2(新版目标组)。默认为v1旧版目标组。</p>
                      */
                     std::string m_targetGroupType;
                     bool m_targetGroupTypeHasBeenSet;
 
                     /**
-                     * 目标组已关联的规则数。
+                     * <p>目标组已关联的规则数。</p>
                      */
                     int64_t m_associatedRuleCount;
                     bool m_associatedRuleCountHasBeenSet;
 
                     /**
-                     * 目标组内的实例数量。
+                     * <p>目标组内的实例数量。</p>
                      */
                     int64_t m_registeredInstancesCount;
                     bool m_registeredInstancesCountHasBeenSet;
 
                     /**
-                     * 标签。
+                     * <p>标签。</p>
                      */
                     std::vector<TagInfo> m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
-                     * 默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。
+                     * <p>默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;
 
                     /**
-                     * 是否全监听目标组。
+                     * <p>是否全监听目标组。</p>
                      */
                     bool m_fullListenSwitch;
                     bool m_fullListenSwitchHasBeenSet;
 
                     /**
-                     * 是否开启长连接,  仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。
+                     * <p>是否开启长连接,  仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。</p>
                      */
                     bool m_keepaliveEnable;
                     bool m_keepaliveEnableHasBeenSet;
 
                     /**
-                     * 会话保持时间，仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。
+                     * <p>会话保持时间，仅后端转发协议为HTTP/HTTPS/GRPC目标组返回有效值。</p>
                      */
                     int64_t m_sessionExpireTime;
                     bool m_sessionExpireTimeHasBeenSet;
 
                     /**
-                     * IP版本。
+                     * <p>IP版本。</p>
                      */
                     std::string m_ipVersion;
                     bool m_ipVersionHasBeenSet;

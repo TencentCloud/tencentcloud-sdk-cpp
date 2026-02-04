@@ -214,6 +214,27 @@ namespace TencentCloud
                      */
                     bool BillingItemHasBeenSet() const;
 
+                    /**
+                     * 获取小程序网关类型 1新网关；0老网关
+                     * @return GatewayType 小程序网关类型 1新网关；0老网关
+                     * 
+                     */
+                    uint64_t GetGatewayType() const;
+
+                    /**
+                     * 设置小程序网关类型 1新网关；0老网关
+                     * @param _gatewayType 小程序网关类型 1新网关；0老网关
+                     * 
+                     */
+                    void SetGatewayType(const uint64_t& _gatewayType);
+
+                    /**
+                     * 判断参数 GatewayType 是否已赋值
+                     * @return GatewayType 是否已赋值
+                     * 
+                     */
+                    bool GatewayTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +284,12 @@ namespace TencentCloud
                      */
                     std::string m_billingItem;
                     bool m_billingItemHasBeenSet;
+
+                    /**
+                     * 小程序网关类型 1新网关；0老网关
+                     */
+                    uint64_t m_gatewayType;
+                    bool m_gatewayTypeHasBeenSet;
 
                 };
             }

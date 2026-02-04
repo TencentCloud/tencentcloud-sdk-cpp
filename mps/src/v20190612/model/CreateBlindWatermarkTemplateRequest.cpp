@@ -26,7 +26,8 @@ CreateBlindWatermarkTemplateRequest::CreateBlindWatermarkTemplateRequest() :
     m_typeHasBeenSet(false),
     m_textContentHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_commentHasBeenSet(false)
+    m_commentHasBeenSet(false),
+    m_strengthHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string CreateBlindWatermarkTemplateRequest::ToJsonString() const
         string key = "Comment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_strengthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Strength";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_strength.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void CreateBlindWatermarkTemplateRequest::SetComment(const string& _comment)
 bool CreateBlindWatermarkTemplateRequest::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
+}
+
+string CreateBlindWatermarkTemplateRequest::GetStrength() const
+{
+    return m_strength;
+}
+
+void CreateBlindWatermarkTemplateRequest::SetStrength(const string& _strength)
+{
+    m_strength = _strength;
+    m_strengthHasBeenSet = true;
+}
+
+bool CreateBlindWatermarkTemplateRequest::StrengthHasBeenSet() const
+{
+    return m_strengthHasBeenSet;
 }
 
 

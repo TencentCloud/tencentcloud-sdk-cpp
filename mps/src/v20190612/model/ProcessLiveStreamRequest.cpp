@@ -31,6 +31,7 @@ ProcessLiveStreamRequest::ProcessLiveStreamRequest() :
     m_aiRecognitionTaskHasBeenSet(false),
     m_aiAnalysisTaskHasBeenSet(false),
     m_aiQualityControlTaskHasBeenSet(false),
+    m_smartSubtitlesTaskHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
     m_scheduleIdHasBeenSet(false)
@@ -112,6 +113,15 @@ string ProcessLiveStreamRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_aiQualityControlTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_smartSubtitlesTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartSubtitlesTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_smartSubtitlesTask.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_sessionIdHasBeenSet)
@@ -272,6 +282,22 @@ void ProcessLiveStreamRequest::SetAiQualityControlTask(const AiQualityControlTas
 bool ProcessLiveStreamRequest::AiQualityControlTaskHasBeenSet() const
 {
     return m_aiQualityControlTaskHasBeenSet;
+}
+
+LiveSmartSubtitlesTaskInput ProcessLiveStreamRequest::GetSmartSubtitlesTask() const
+{
+    return m_smartSubtitlesTask;
+}
+
+void ProcessLiveStreamRequest::SetSmartSubtitlesTask(const LiveSmartSubtitlesTaskInput& _smartSubtitlesTask)
+{
+    m_smartSubtitlesTask = _smartSubtitlesTask;
+    m_smartSubtitlesTaskHasBeenSet = true;
+}
+
+bool ProcessLiveStreamRequest::SmartSubtitlesTaskHasBeenSet() const
+{
+    return m_smartSubtitlesTaskHasBeenSet;
 }
 
 string ProcessLiveStreamRequest::GetSessionId() const

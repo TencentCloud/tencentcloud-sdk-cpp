@@ -22,7 +22,8 @@ using namespace std;
 
 AIAgentInfo::AIAgentInfo() :
     m_aIAgentIdHasBeenSet(false),
-    m_aIAgentNameHasBeenSet(false)
+    m_aIAgentNameHasBeenSet(false),
+    m_variableNamesHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,19 @@ CoreInternalOutcome AIAgentInfo::Deserialize(const rapidjson::Value &value)
         m_aIAgentNameHasBeenSet = true;
     }
 
+    if (value.HasMember("VariableNames") && !value["VariableNames"].IsNull())
+    {
+        if (!value["VariableNames"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AIAgentInfo.VariableNames` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["VariableNames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_variableNames.push_back((*itr).GetString());
+        }
+        m_variableNamesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +86,19 @@ void AIAgentInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "AIAgentName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_aIAgentName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_variableNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VariableNames";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_variableNames.begin(); itr != m_variableNames.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -107,5 +134,21 @@ void AIAgentInfo::SetAIAgentName(const string& _aIAgentName)
 bool AIAgentInfo::AIAgentNameHasBeenSet() const
 {
     return m_aIAgentNameHasBeenSet;
+}
+
+vector<string> AIAgentInfo::GetVariableNames() const
+{
+    return m_variableNames;
+}
+
+void AIAgentInfo::SetVariableNames(const vector<string>& _variableNames)
+{
+    m_variableNames = _variableNames;
+    m_variableNamesHasBeenSet = true;
+}
+
+bool AIAgentInfo::VariableNamesHasBeenSet() const
+{
+    return m_variableNamesHasBeenSet;
 }
 

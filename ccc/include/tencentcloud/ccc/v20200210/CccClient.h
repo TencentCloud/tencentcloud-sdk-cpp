@@ -105,6 +105,8 @@
 #include <tencentcloud/ccc/v20200210/model/DescribeExtensionResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeExtensionsRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeExtensionsResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeFlashSMSListRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeFlashSMSListResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeIMCdrListRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeIMCdrListResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeIMCdrsRequest.h>
@@ -324,6 +326,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeExtensionsResponse> DescribeExtensionsOutcome;
                 typedef std::future<DescribeExtensionsOutcome> DescribeExtensionsOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeExtensionsRequest&, DescribeExtensionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtensionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFlashSMSListResponse> DescribeFlashSMSListOutcome;
+                typedef std::future<DescribeFlashSMSListOutcome> DescribeFlashSMSListOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeFlashSMSListRequest&, DescribeFlashSMSListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlashSMSListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIMCdrListResponse> DescribeIMCdrListOutcome;
                 typedef std::future<DescribeIMCdrListOutcome> DescribeIMCdrListOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeIMCdrListRequest&, DescribeIMCdrListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIMCdrListAsyncHandler;
@@ -835,6 +840,15 @@ namespace TencentCloud
                 DescribeExtensionsOutcome DescribeExtensions(const Model::DescribeExtensionsRequest &request);
                 void DescribeExtensionsAsync(const Model::DescribeExtensionsRequest& request, const DescribeExtensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeExtensionsOutcomeCallable DescribeExtensionsCallable(const Model::DescribeExtensionsRequest& request);
+
+                /**
+                 *获取闪信记录列表
+                 * @param req DescribeFlashSMSListRequest
+                 * @return DescribeFlashSMSListOutcome
+                 */
+                DescribeFlashSMSListOutcome DescribeFlashSMSList(const Model::DescribeFlashSMSListRequest &request);
+                void DescribeFlashSMSListAsync(const Model::DescribeFlashSMSListRequest& request, const DescribeFlashSMSListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFlashSMSListOutcomeCallable DescribeFlashSMSListCallable(const Model::DescribeFlashSMSListRequest& request);
 
                 /**
                  *获取包括全媒体和文本会话两种类型的服务记录。

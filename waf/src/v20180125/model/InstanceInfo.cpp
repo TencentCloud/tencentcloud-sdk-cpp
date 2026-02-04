@@ -74,7 +74,9 @@ InstanceInfo::InstanceInfo() :
     m_lLMMonPkgHasBeenSet(false),
     m_regionIdHasBeenSet(false),
     m_botSecurityPkgHasBeenSet(false),
-    m_botMonitorPkgHasBeenSet(false)
+    m_botMonitorPkgHasBeenSet(false),
+    m_dedicatedIPPkgHasBeenSet(false),
+    m_dedicatedIPCountHasBeenSet(false)
 {
 }
 
@@ -742,6 +744,33 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_botMonitorPkgHasBeenSet = true;
     }
 
+    if (value.HasMember("DedicatedIPPkg") && !value["DedicatedIPPkg"].IsNull())
+    {
+        if (!value["DedicatedIPPkg"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.DedicatedIPPkg` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dedicatedIPPkg.Deserialize(value["DedicatedIPPkg"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dedicatedIPPkgHasBeenSet = true;
+    }
+
+    if (value.HasMember("DedicatedIPCount") && !value["DedicatedIPCount"].IsNull())
+    {
+        if (!value["DedicatedIPCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.DedicatedIPCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dedicatedIPCount = value["DedicatedIPCount"].GetInt64();
+        m_dedicatedIPCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1196,6 +1225,23 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_botMonitorPkg.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dedicatedIPPkgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DedicatedIPPkg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dedicatedIPPkg.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dedicatedIPCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DedicatedIPCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dedicatedIPCount, allocator);
     }
 
 }
@@ -2063,5 +2109,37 @@ void InstanceInfo::SetBotMonitorPkg(const BotMonitorPkg& _botMonitorPkg)
 bool InstanceInfo::BotMonitorPkgHasBeenSet() const
 {
     return m_botMonitorPkgHasBeenSet;
+}
+
+DedicatedIPPkg InstanceInfo::GetDedicatedIPPkg() const
+{
+    return m_dedicatedIPPkg;
+}
+
+void InstanceInfo::SetDedicatedIPPkg(const DedicatedIPPkg& _dedicatedIPPkg)
+{
+    m_dedicatedIPPkg = _dedicatedIPPkg;
+    m_dedicatedIPPkgHasBeenSet = true;
+}
+
+bool InstanceInfo::DedicatedIPPkgHasBeenSet() const
+{
+    return m_dedicatedIPPkgHasBeenSet;
+}
+
+int64_t InstanceInfo::GetDedicatedIPCount() const
+{
+    return m_dedicatedIPCount;
+}
+
+void InstanceInfo::SetDedicatedIPCount(const int64_t& _dedicatedIPCount)
+{
+    m_dedicatedIPCount = _dedicatedIPCount;
+    m_dedicatedIPCountHasBeenSet = true;
+}
+
+bool InstanceInfo::DedicatedIPCountHasBeenSet() const
+{
+    return m_dedicatedIPCountHasBeenSet;
 }
 

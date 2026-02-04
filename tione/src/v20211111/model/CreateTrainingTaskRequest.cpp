@@ -46,7 +46,8 @@ CreateTrainingTaskRequest::CreateTrainingTaskRequest() :
     m_dataSourceHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
     m_encodedStartCmdInfoHasBeenSet(false),
-    m_codeReposHasBeenSet(false)
+    m_codeReposHasBeenSet(false),
+    m_exposeNetworkConfigHasBeenSet(false)
 {
 }
 
@@ -281,6 +282,15 @@ string CreateTrainingTaskRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_exposeNetworkConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExposeNetworkConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_exposeNetworkConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -673,6 +683,22 @@ void CreateTrainingTaskRequest::SetCodeRepos(const vector<CodeRepoConfig>& _code
 bool CreateTrainingTaskRequest::CodeReposHasBeenSet() const
 {
     return m_codeReposHasBeenSet;
+}
+
+ExposeNetworkConfig CreateTrainingTaskRequest::GetExposeNetworkConfig() const
+{
+    return m_exposeNetworkConfig;
+}
+
+void CreateTrainingTaskRequest::SetExposeNetworkConfig(const ExposeNetworkConfig& _exposeNetworkConfig)
+{
+    m_exposeNetworkConfig = _exposeNetworkConfig;
+    m_exposeNetworkConfigHasBeenSet = true;
+}
+
+bool CreateTrainingTaskRequest::ExposeNetworkConfigHasBeenSet() const
+{
+    return m_exposeNetworkConfigHasBeenSet;
 }
 
 

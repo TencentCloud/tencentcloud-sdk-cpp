@@ -109,6 +109,31 @@ namespace TencentCloud
                      */
                     bool EnableBotHasBeenSet() const;
 
+                    /**
+                     * 获取响应方向body
+1:开启 0:不开启
+                     * @return EnableResponse 响应方向body
+1:开启 0:不开启
+                     * 
+                     */
+                    int64_t GetEnableResponse() const;
+
+                    /**
+                     * 设置响应方向body
+1:开启 0:不开启
+                     * @param _enableResponse 响应方向body
+1:开启 0:不开启
+                     * 
+                     */
+                    void SetEnableResponse(const int64_t& _enableResponse);
+
+                    /**
+                     * 判断参数 EnableResponse 是否已赋值
+                     * @return EnableResponse 是否已赋值
+                     * 
+                     */
+                    bool EnableResponseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +153,13 @@ namespace TencentCloud
                      */
                     int64_t m_enableBot;
                     bool m_enableBotHasBeenSet;
+
+                    /**
+                     * 响应方向body
+1:开启 0:不开启
+                     */
+                    int64_t m_enableResponse;
+                    bool m_enableResponseHasBeenSet;
 
                 };
             }

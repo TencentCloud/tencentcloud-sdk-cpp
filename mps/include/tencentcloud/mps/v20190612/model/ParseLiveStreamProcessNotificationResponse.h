@@ -27,6 +27,7 @@
 #include <tencentcloud/mps/v20190612/model/LiveStreamAiAnalysisResultInfo.h>
 #include <tencentcloud/mps/v20190612/model/LiveStreamAiQualityControlResultInfo.h>
 #include <tencentcloud/mps/v20190612/model/LiveStreamRecordResultInfo.h>
+#include <tencentcloud/mps/v20190612/model/LiveStreamAiSmartSubtitleResultInfo.h>
 
 
 namespace TencentCloud
@@ -56,6 +57,7 @@ namespace TencentCloud
 <li>LiveRecordResult：直播录制结果；</li>
 <li>AiQualityControlResult：媒体质检结果；</li>
 <li>AiAnalysisResult：内容分析结果；</li>
+<li>AiSmartSubtitleResult：智能字幕结果；</li>
 <li>ProcessEof：直播流处理结束。</li>
                      * @return NotificationType 直播流处理结果类型，包含：
 <li>AiReviewResult：内容审核结果；</li>
@@ -63,6 +65,7 @@ namespace TencentCloud
 <li>LiveRecordResult：直播录制结果；</li>
 <li>AiQualityControlResult：媒体质检结果；</li>
 <li>AiAnalysisResult：内容分析结果；</li>
+<li>AiSmartSubtitleResult：智能字幕结果；</li>
 <li>ProcessEof：直播流处理结束。</li>
                      * 
                      */
@@ -186,6 +189,20 @@ namespace TencentCloud
                     bool LiveRecordResultInfoHasBeenSet() const;
 
                     /**
+                     * 获取智能字幕结果，当 NotificationType 为 AiSmartSubtitleResult 时有效。
+                     * @return AiSmartSubtitleResultInfo 智能字幕结果，当 NotificationType 为 AiSmartSubtitleResult 时有效。
+                     * 
+                     */
+                    LiveStreamAiSmartSubtitleResultInfo GetAiSmartSubtitleResultInfo() const;
+
+                    /**
+                     * 判断参数 AiSmartSubtitleResultInfo 是否已赋值
+                     * @return AiSmartSubtitleResultInfo 是否已赋值
+                     * 
+                     */
+                    bool AiSmartSubtitleResultInfoHasBeenSet() const;
+
+                    /**
                      * 获取用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长50个字符，不带或者带空字符串表示不做去重。
                      * @return SessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长50个字符，不带或者带空字符串表示不做去重。
                      * 
@@ -250,6 +267,7 @@ namespace TencentCloud
 <li>LiveRecordResult：直播录制结果；</li>
 <li>AiQualityControlResult：媒体质检结果；</li>
 <li>AiAnalysisResult：内容分析结果；</li>
+<li>AiSmartSubtitleResult：智能字幕结果；</li>
 <li>ProcessEof：直播流处理结束。</li>
                      */
                     std::string m_notificationType;
@@ -302,6 +320,12 @@ namespace TencentCloud
                      */
                     LiveStreamRecordResultInfo m_liveRecordResultInfo;
                     bool m_liveRecordResultInfoHasBeenSet;
+
+                    /**
+                     * 智能字幕结果，当 NotificationType 为 AiSmartSubtitleResult 时有效。
+                     */
+                    LiveStreamAiSmartSubtitleResultInfo m_aiSmartSubtitleResultInfo;
+                    bool m_aiSmartSubtitleResultInfoHasBeenSet;
 
                     /**
                      * 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长50个字符，不带或者带空字符串表示不做去重。

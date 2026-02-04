@@ -25,8 +25,6 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/aiart/v20221229/model/ChangeClothesRequest.h>
 #include <tencentcloud/aiart/v20221229/model/ChangeClothesResponse.h>
-#include <tencentcloud/aiart/v20221229/model/DescribeTemplateToImageJobRequest.h>
-#include <tencentcloud/aiart/v20221229/model/DescribeTemplateToImageJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/GenerateAvatarRequest.h>
 #include <tencentcloud/aiart/v20221229/model/GenerateAvatarResponse.h>
 #include <tencentcloud/aiart/v20221229/model/ImageInpaintingRemovalRequest.h>
@@ -59,8 +57,6 @@
 #include <tencentcloud/aiart/v20221229/model/SubmitGlamPicJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitMemeJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitMemeJobResponse.h>
-#include <tencentcloud/aiart/v20221229/model/SubmitTemplateToImageJobRequest.h>
-#include <tencentcloud/aiart/v20221229/model/SubmitTemplateToImageJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitTextToImageJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitTextToImageJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitTextToImageProJobRequest.h>
@@ -90,9 +86,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChangeClothesResponse> ChangeClothesOutcome;
                 typedef std::future<ChangeClothesOutcome> ChangeClothesOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::ChangeClothesRequest&, ChangeClothesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChangeClothesAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeTemplateToImageJobResponse> DescribeTemplateToImageJobOutcome;
-                typedef std::future<DescribeTemplateToImageJobOutcome> DescribeTemplateToImageJobOutcomeCallable;
-                typedef std::function<void(const AiartClient*, const Model::DescribeTemplateToImageJobRequest&, DescribeTemplateToImageJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTemplateToImageJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::GenerateAvatarResponse> GenerateAvatarOutcome;
                 typedef std::future<GenerateAvatarOutcome> GenerateAvatarOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::GenerateAvatarRequest&, GenerateAvatarOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateAvatarAsyncHandler;
@@ -141,9 +134,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SubmitMemeJobResponse> SubmitMemeJobOutcome;
                 typedef std::future<SubmitMemeJobOutcome> SubmitMemeJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::SubmitMemeJobRequest&, SubmitMemeJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitMemeJobAsyncHandler;
-                typedef Outcome<Core::Error, Model::SubmitTemplateToImageJobResponse> SubmitTemplateToImageJobOutcome;
-                typedef std::future<SubmitTemplateToImageJobOutcome> SubmitTemplateToImageJobOutcomeCallable;
-                typedef std::function<void(const AiartClient*, const Model::SubmitTemplateToImageJobRequest&, SubmitTemplateToImageJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTemplateToImageJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitTextToImageJobResponse> SubmitTextToImageJobOutcome;
                 typedef std::future<SubmitTextToImageJobOutcome> SubmitTextToImageJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::SubmitTextToImageJobRequest&, SubmitTextToImageJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTextToImageJobAsyncHandler;
@@ -175,15 +165,6 @@ namespace TencentCloud
                 ChangeClothesOutcome ChangeClothes(const Model::ChangeClothesRequest &request);
                 void ChangeClothesAsync(const Model::ChangeClothesRequest& request, const ChangeClothesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChangeClothesOutcomeCallable ChangeClothesCallable(const Model::ChangeClothesRequest& request);
-
-                /**
-                 *查询图片特效任务
-                 * @param req DescribeTemplateToImageJobRequest
-                 * @return DescribeTemplateToImageJobOutcome
-                 */
-                DescribeTemplateToImageJobOutcome DescribeTemplateToImageJob(const Model::DescribeTemplateToImageJobRequest &request);
-                void DescribeTemplateToImageJobAsync(const Model::DescribeTemplateToImageJobRequest& request, const DescribeTemplateToImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeTemplateToImageJobOutcomeCallable DescribeTemplateToImageJobCallable(const Model::DescribeTemplateToImageJobRequest& request);
 
                 /**
                  *百变头像接口将根据输入的人像照片，生成风格百变的头像。
@@ -378,15 +359,6 @@ AI 美照默认提供1个并发，代表最多能同时处理1个已提交的任
                 SubmitMemeJobOutcome SubmitMemeJob(const Model::SubmitMemeJobRequest &request);
                 void SubmitMemeJobAsync(const Model::SubmitMemeJobRequest& request, const SubmitMemeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SubmitMemeJobOutcomeCallable SubmitMemeJobCallable(const Model::SubmitMemeJobRequest& request);
-
-                /**
-                 *提交图片特效任务
-                 * @param req SubmitTemplateToImageJobRequest
-                 * @return SubmitTemplateToImageJobOutcome
-                 */
-                SubmitTemplateToImageJobOutcome SubmitTemplateToImageJob(const Model::SubmitTemplateToImageJobRequest &request);
-                void SubmitTemplateToImageJobAsync(const Model::SubmitTemplateToImageJobRequest& request, const SubmitTemplateToImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                SubmitTemplateToImageJobOutcomeCallable SubmitTemplateToImageJobCallable(const Model::SubmitTemplateToImageJobRequest& request);
 
                 /**
                  *混元生图接口，基于混元大模型，根据输入的文本描述快速生成图片。

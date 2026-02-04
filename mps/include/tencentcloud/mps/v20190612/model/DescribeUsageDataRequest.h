@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @return StartTime 起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 获取起始日期。使用 ISO 日期格式。
+                     * @return StartTime 起始日期。使用 ISO 日期格式。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @param _startTime 起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 设置起始日期。使用 ISO 日期格式。
+                     * @param _startTime 起始日期。使用 ISO 日期格式。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -249,7 +249,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 起始日期。使用 ISO 日期格式。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;

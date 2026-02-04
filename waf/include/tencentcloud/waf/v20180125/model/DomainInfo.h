@@ -1168,6 +1168,27 @@ public：公有云域名
                      */
                     bool LabelsHasBeenSet() const;
 
+                    /**
+                     * 获取saaswaf独享ip状态，0是关闭，1是开启，2是开启中
+                     * @return PrivateVipStatus saaswaf独享ip状态，0是关闭，1是开启，2是开启中
+                     * 
+                     */
+                    int64_t GetPrivateVipStatus() const;
+
+                    /**
+                     * 设置saaswaf独享ip状态，0是关闭，1是开启，2是开启中
+                     * @param _privateVipStatus saaswaf独享ip状态，0是关闭，1是开启，2是开启中
+                     * 
+                     */
+                    void SetPrivateVipStatus(const int64_t& _privateVipStatus);
+
+                    /**
+                     * 判断参数 PrivateVipStatus 是否已赋值
+                     * @return PrivateVipStatus 是否已赋值
+                     * 
+                     */
+                    bool PrivateVipStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1476,6 +1497,12 @@ public：公有云域名
                      */
                     std::vector<std::string> m_labels;
                     bool m_labelsHasBeenSet;
+
+                    /**
+                     * saaswaf独享ip状态，0是关闭，1是开启，2是开启中
+                     */
+                    int64_t m_privateVipStatus;
+                    bool m_privateVipStatusHasBeenSet;
 
                 };
             }

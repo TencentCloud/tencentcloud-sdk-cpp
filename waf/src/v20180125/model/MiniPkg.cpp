@@ -28,7 +28,8 @@ MiniPkg::MiniPkg() :
     m_endTimeHasBeenSet(false),
     m_countHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
-    m_billingItemHasBeenSet(false)
+    m_billingItemHasBeenSet(false),
+    m_gatewayTypeHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome MiniPkg::Deserialize(const rapidjson::Value &value)
         m_billingItemHasBeenSet = true;
     }
 
+    if (value.HasMember("GatewayType") && !value["GatewayType"].IsNull())
+    {
+        if (!value["GatewayType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MiniPkg.GatewayType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gatewayType = value["GatewayType"].GetUint64();
+        m_gatewayTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void MiniPkg::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "BillingItem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_billingItem.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gatewayTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gatewayType, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void MiniPkg::SetBillingItem(const string& _billingItem)
 bool MiniPkg::BillingItemHasBeenSet() const
 {
     return m_billingItemHasBeenSet;
+}
+
+uint64_t MiniPkg::GetGatewayType() const
+{
+    return m_gatewayType;
+}
+
+void MiniPkg::SetGatewayType(const uint64_t& _gatewayType)
+{
+    m_gatewayType = _gatewayType;
+    m_gatewayTypeHasBeenSet = true;
+}
+
+bool MiniPkg::GatewayTypeHasBeenSet() const
+{
+    return m_gatewayTypeHasBeenSet;
 }
 

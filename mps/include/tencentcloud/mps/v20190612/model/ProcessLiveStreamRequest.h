@@ -27,6 +27,7 @@
 #include <tencentcloud/mps/v20190612/model/AiRecognitionTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/AiQualityControlTaskInput.h>
+#include <tencentcloud/mps/v20190612/model/LiveSmartSubtitlesTaskInput.h>
 
 
 namespace TencentCloud
@@ -49,39 +50,63 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取直播流 URL（必须是直播文件地址，支持 rtmp，hls 和 flv, trtc 等）。
+                     * 获取直播流 URL（必须是直播流地址，支持 rtmp，hls 和 flv, trtc,webrtc,srt等）。
 trtc地址如下：
  trtc: //trtc.rtc.qq.com/mps/`<roomid>`?sdkappid=`<sdkappid>`&userid=`<userid>`&usersig=<`usersig>`
 `<roomid>` 为trtc的房间号id, 为数字
 `<sdkappid>` 为trtc的sdk app id
 `<userid>` 为服务进入房间的用户id,可以区分谁是机器人
 <`usersig>` 为trtc 用户的签名
-                     * @return Url 直播流 URL（必须是直播文件地址，支持 rtmp，hls 和 flv, trtc 等）。
+
+webrtc 支持[LEB](https://cloud.tencent.com/product/leb)的直播流，地址获取请[参考](https://cloud.tencent.com/document/product/267/32720)
+
+srt支持地址请[参考](https://ffmpeg.org/ffmpeg-protocols.html#srt)
+
+
+                     * @return Url 直播流 URL（必须是直播流地址，支持 rtmp，hls 和 flv, trtc,webrtc,srt等）。
 trtc地址如下：
  trtc: //trtc.rtc.qq.com/mps/`<roomid>`?sdkappid=`<sdkappid>`&userid=`<userid>`&usersig=<`usersig>`
 `<roomid>` 为trtc的房间号id, 为数字
 `<sdkappid>` 为trtc的sdk app id
 `<userid>` 为服务进入房间的用户id,可以区分谁是机器人
 <`usersig>` 为trtc 用户的签名
+
+webrtc 支持[LEB](https://cloud.tencent.com/product/leb)的直播流，地址获取请[参考](https://cloud.tencent.com/document/product/267/32720)
+
+srt支持地址请[参考](https://ffmpeg.org/ffmpeg-protocols.html#srt)
+
+
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置直播流 URL（必须是直播文件地址，支持 rtmp，hls 和 flv, trtc 等）。
+                     * 设置直播流 URL（必须是直播流地址，支持 rtmp，hls 和 flv, trtc,webrtc,srt等）。
 trtc地址如下：
  trtc: //trtc.rtc.qq.com/mps/`<roomid>`?sdkappid=`<sdkappid>`&userid=`<userid>`&usersig=<`usersig>`
 `<roomid>` 为trtc的房间号id, 为数字
 `<sdkappid>` 为trtc的sdk app id
 `<userid>` 为服务进入房间的用户id,可以区分谁是机器人
 <`usersig>` 为trtc 用户的签名
-                     * @param _url 直播流 URL（必须是直播文件地址，支持 rtmp，hls 和 flv, trtc 等）。
+
+webrtc 支持[LEB](https://cloud.tencent.com/product/leb)的直播流，地址获取请[参考](https://cloud.tencent.com/document/product/267/32720)
+
+srt支持地址请[参考](https://ffmpeg.org/ffmpeg-protocols.html#srt)
+
+
+                     * @param _url 直播流 URL（必须是直播流地址，支持 rtmp，hls 和 flv, trtc,webrtc,srt等）。
 trtc地址如下：
  trtc: //trtc.rtc.qq.com/mps/`<roomid>`?sdkappid=`<sdkappid>`&userid=`<userid>`&usersig=<`usersig>`
 `<roomid>` 为trtc的房间号id, 为数字
 `<sdkappid>` 为trtc的sdk app id
 `<userid>` 为服务进入房间的用户id,可以区分谁是机器人
 <`usersig>` 为trtc 用户的签名
+
+webrtc 支持[LEB](https://cloud.tencent.com/product/leb)的直播流，地址获取请[参考](https://cloud.tencent.com/document/product/267/32720)
+
+srt支持地址请[参考](https://ffmpeg.org/ffmpeg-protocols.html#srt)
+
+
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -241,6 +266,27 @@ trtc地址如下：
                     bool AiQualityControlTaskHasBeenSet() const;
 
                     /**
+                     * 获取智能字幕任务参数。
+                     * @return SmartSubtitlesTask 智能字幕任务参数。
+                     * 
+                     */
+                    LiveSmartSubtitlesTaskInput GetSmartSubtitlesTask() const;
+
+                    /**
+                     * 设置智能字幕任务参数。
+                     * @param _smartSubtitlesTask 智能字幕任务参数。
+                     * 
+                     */
+                    void SetSmartSubtitlesTask(const LiveSmartSubtitlesTaskInput& _smartSubtitlesTask);
+
+                    /**
+                     * 判断参数 SmartSubtitlesTask 是否已赋值
+                     * @return SmartSubtitlesTask 是否已赋值
+                     * 
+                     */
+                    bool SmartSubtitlesTaskHasBeenSet() const;
+
+                    /**
                      * 获取用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
                      * @return SessionId 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
                      * 
@@ -322,13 +368,19 @@ trtc地址如下：
                 private:
 
                     /**
-                     * 直播流 URL（必须是直播文件地址，支持 rtmp，hls 和 flv, trtc 等）。
+                     * 直播流 URL（必须是直播流地址，支持 rtmp，hls 和 flv, trtc,webrtc,srt等）。
 trtc地址如下：
  trtc: //trtc.rtc.qq.com/mps/`<roomid>`?sdkappid=`<sdkappid>`&userid=`<userid>`&usersig=<`usersig>`
 `<roomid>` 为trtc的房间号id, 为数字
 `<sdkappid>` 为trtc的sdk app id
 `<userid>` 为服务进入房间的用户id,可以区分谁是机器人
 <`usersig>` 为trtc 用户的签名
+
+webrtc 支持[LEB](https://cloud.tencent.com/product/leb)的直播流，地址获取请[参考](https://cloud.tencent.com/document/product/267/32720)
+
+srt支持地址请[参考](https://ffmpeg.org/ffmpeg-protocols.html#srt)
+
+
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
@@ -374,6 +426,12 @@ trtc地址如下：
                      */
                     AiQualityControlTaskInput m_aiQualityControlTask;
                     bool m_aiQualityControlTaskHasBeenSet;
+
+                    /**
+                     * 智能字幕任务参数。
+                     */
+                    LiveSmartSubtitlesTaskInput m_smartSubtitlesTask;
+                    bool m_smartSubtitlesTaskHasBeenSet;
 
                     /**
                      * 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。

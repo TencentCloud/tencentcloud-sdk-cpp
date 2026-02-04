@@ -525,6 +525,27 @@ ipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf
                      */
                     bool VpcCniTypeHasBeenSet() const;
 
+                    /**
+                     * 获取集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行，默认为true
+                     * @return IsHighAvailability 集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行，默认为true
+                     * 
+                     */
+                    bool GetIsHighAvailability() const;
+
+                    /**
+                     * 设置集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行，默认为true
+                     * @param _isHighAvailability 集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行，默认为true
+                     * 
+                     */
+                    void SetIsHighAvailability(const bool& _isHighAvailability);
+
+                    /**
+                     * 判断参数 IsHighAvailability 是否已赋值
+                     * @return IsHighAvailability 是否已赋值
+                     * 
+                     */
+                    bool IsHighAvailabilityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -661,6 +682,12 @@ ipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf
                      */
                     std::string m_vpcCniType;
                     bool m_vpcCniTypeHasBeenSet;
+
+                    /**
+                     * 集群是否启用高可用模式。用于指导跨可用区资源打散等高可用策略的执行，默认为true
+                     */
+                    bool m_isHighAvailability;
+                    bool m_isHighAvailabilityHasBeenSet;
 
                 };
             }

@@ -60,6 +60,20 @@ namespace TencentCloud
                     bool LogHasBeenSet() const;
 
                     /**
+                     * 获取完整请求样例
+                     * @return FullReqLog 完整请求样例
+                     * 
+                     */
+                    std::string GetFullReqLog() const;
+
+                    /**
+                     * 判断参数 FullReqLog 是否已赋值
+                     * @return FullReqLog 是否已赋值
+                     * 
+                     */
+                    bool FullReqLogHasBeenSet() const;
+
+                    /**
                      * 获取请求参数样例列表
                      * @return ParameterList 请求参数样例列表
                      * 
@@ -234,6 +248,12 @@ namespace TencentCloud
                      */
                     std::string m_log;
                     bool m_logHasBeenSet;
+
+                    /**
+                     * 完整请求样例
+                     */
+                    std::string m_fullReqLog;
+                    bool m_fullReqLogHasBeenSet;
 
                     /**
                      * 请求参数样例列表

@@ -23,7 +23,8 @@ using namespace std;
 ApiDetailSampleHistory::ApiDetailSampleHistory() :
     m_sampleNmeHasBeenSet(false),
     m_repLogHasBeenSet(false),
-    m_rspLogHasBeenSet(false)
+    m_rspLogHasBeenSet(false),
+    m_fullReqLogHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome ApiDetailSampleHistory::Deserialize(const rapidjson::Value &
         m_rspLogHasBeenSet = true;
     }
 
+    if (value.HasMember("FullReqLog") && !value["FullReqLog"].IsNull())
+    {
+        if (!value["FullReqLog"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiDetailSampleHistory.FullReqLog` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fullReqLog = string(value["FullReqLog"].GetString());
+        m_fullReqLogHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void ApiDetailSampleHistory::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "RspLog";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_rspLog.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fullReqLogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FullReqLog";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fullReqLog.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void ApiDetailSampleHistory::SetRspLog(const string& _rspLog)
 bool ApiDetailSampleHistory::RspLogHasBeenSet() const
 {
     return m_rspLogHasBeenSet;
+}
+
+string ApiDetailSampleHistory::GetFullReqLog() const
+{
+    return m_fullReqLog;
+}
+
+void ApiDetailSampleHistory::SetFullReqLog(const string& _fullReqLog)
+{
+    m_fullReqLog = _fullReqLog;
+    m_fullReqLogHasBeenSet = true;
+}
+
+bool ApiDetailSampleHistory::FullReqLogHasBeenSet() const
+{
+    return m_fullReqLogHasBeenSet;
 }
 

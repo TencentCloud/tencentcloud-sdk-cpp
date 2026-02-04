@@ -22,6 +22,7 @@ using namespace std;
 
 AiAnalysisTaskReelOutput::AiAnalysisTaskReelOutput() :
     m_videoPathHasBeenSet(false),
+    m_videoPathsHasBeenSet(false),
     m_scriptPathHasBeenSet(false),
     m_outputStorageHasBeenSet(false)
 {
@@ -40,6 +41,19 @@ CoreInternalOutcome AiAnalysisTaskReelOutput::Deserialize(const rapidjson::Value
         }
         m_videoPath = string(value["VideoPath"].GetString());
         m_videoPathHasBeenSet = true;
+    }
+
+    if (value.HasMember("VideoPaths") && !value["VideoPaths"].IsNull())
+    {
+        if (!value["VideoPaths"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskReelOutput.VideoPaths` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["VideoPaths"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_videoPaths.push_back((*itr).GetString());
+        }
+        m_videoPathsHasBeenSet = true;
     }
 
     if (value.HasMember("ScriptPath") && !value["ScriptPath"].IsNull())
@@ -84,6 +98,19 @@ void AiAnalysisTaskReelOutput::ToJsonObject(rapidjson::Value &value, rapidjson::
         value.AddMember(iKey, rapidjson::Value(m_videoPath.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_videoPathsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoPaths";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_videoPaths.begin(); itr != m_videoPaths.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_scriptPathHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +145,22 @@ void AiAnalysisTaskReelOutput::SetVideoPath(const string& _videoPath)
 bool AiAnalysisTaskReelOutput::VideoPathHasBeenSet() const
 {
     return m_videoPathHasBeenSet;
+}
+
+vector<string> AiAnalysisTaskReelOutput::GetVideoPaths() const
+{
+    return m_videoPaths;
+}
+
+void AiAnalysisTaskReelOutput::SetVideoPaths(const vector<string>& _videoPaths)
+{
+    m_videoPaths = _videoPaths;
+    m_videoPathsHasBeenSet = true;
+}
+
+bool AiAnalysisTaskReelOutput::VideoPathsHasBeenSet() const
+{
+    return m_videoPathsHasBeenSet;
 }
 
 string AiAnalysisTaskReelOutput::GetScriptPath() const
