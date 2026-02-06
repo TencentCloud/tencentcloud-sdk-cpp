@@ -45,12 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取录音文件识别的请求返回结果，包含结果查询需要的TaskId。
-**注意：TaskId有效期为24小时，不同日期可能出现重复TaskId，请不要依赖TaskId作为您业务系统里的唯一ID。**
-
-                     * @return Data 录音文件识别的请求返回结果，包含结果查询需要的TaskId。
-**注意：TaskId有效期为24小时，不同日期可能出现重复TaskId，请不要依赖TaskId作为您业务系统里的唯一ID。**
-
+                     * 获取<p>录音文件识别的请求返回结果，包含结果查询需要的TaskId。<br><strong>注意：TaskId有效期为24小时，不同日期可能出现重复TaskId，请不要依赖TaskId作为您业务系统里的唯一ID。</strong></p>
+                     * @return Data <p>录音文件识别的请求返回结果，包含结果查询需要的TaskId。<br><strong>注意：TaskId有效期为24小时，不同日期可能出现重复TaskId，请不要依赖TaskId作为您业务系统里的唯一ID。</strong></p>
                      * 
                      */
                     Task GetData() const;
@@ -65,9 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 录音文件识别的请求返回结果，包含结果查询需要的TaskId。
-**注意：TaskId有效期为24小时，不同日期可能出现重复TaskId，请不要依赖TaskId作为您业务系统里的唯一ID。**
-
+                     * <p>录音文件识别的请求返回结果，包含结果查询需要的TaskId。<br><strong>注意：TaskId有效期为24小时，不同日期可能出现重复TaskId，请不要依赖TaskId作为您业务系统里的唯一ID。</strong></p>
                      */
                     Task m_data;
                     bool m_dataHasBeenSet;

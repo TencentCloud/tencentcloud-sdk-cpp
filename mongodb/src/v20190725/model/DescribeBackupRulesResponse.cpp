@@ -25,8 +25,17 @@ using namespace std;
 
 DescribeBackupRulesResponse::DescribeBackupRulesResponse() :
     m_backupSaveTimeHasBeenSet(false),
+    m_backupFrequencyHasBeenSet(false),
     m_backupTimeHasBeenSet(false),
-    m_backupMethodHasBeenSet(false)
+    m_backupMethodHasBeenSet(false),
+    m_activeWeekdaysHasBeenSet(false),
+    m_longTermIntervalHasBeenSet(false),
+    m_longTermActiveDaysHasBeenSet(false),
+    m_longTermExpiredDaysHasBeenSet(false),
+    m_oplogExpiredDaysHasBeenSet(false),
+    m_backupVersionHasBeenSet(false),
+    m_backupTotalSizeHasBeenSet(false),
+    m_alertThresholdHasBeenSet(false)
 {
 }
 
@@ -74,6 +83,16 @@ CoreInternalOutcome DescribeBackupRulesResponse::Deserialize(const string &paylo
         m_backupSaveTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BackupFrequency") && !rsp["BackupFrequency"].IsNull())
+    {
+        if (!rsp["BackupFrequency"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupFrequency` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupFrequency = rsp["BackupFrequency"].GetInt64();
+        m_backupFrequencyHasBeenSet = true;
+    }
+
     if (rsp.HasMember("BackupTime") && !rsp["BackupTime"].IsNull())
     {
         if (!rsp["BackupTime"].IsUint64())
@@ -94,6 +113,93 @@ CoreInternalOutcome DescribeBackupRulesResponse::Deserialize(const string &paylo
         m_backupMethodHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ActiveWeekdays") && !rsp["ActiveWeekdays"].IsNull())
+    {
+        if (!rsp["ActiveWeekdays"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActiveWeekdays` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_activeWeekdays = string(rsp["ActiveWeekdays"].GetString());
+        m_activeWeekdaysHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LongTermInterval") && !rsp["LongTermInterval"].IsNull())
+    {
+        if (!rsp["LongTermInterval"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LongTermInterval` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_longTermInterval = string(rsp["LongTermInterval"].GetString());
+        m_longTermIntervalHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LongTermActiveDays") && !rsp["LongTermActiveDays"].IsNull())
+    {
+        if (!rsp["LongTermActiveDays"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LongTermActiveDays` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_longTermActiveDays = string(rsp["LongTermActiveDays"].GetString());
+        m_longTermActiveDaysHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LongTermExpiredDays") && !rsp["LongTermExpiredDays"].IsNull())
+    {
+        if (!rsp["LongTermExpiredDays"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LongTermExpiredDays` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_longTermExpiredDays = rsp["LongTermExpiredDays"].GetInt64();
+        m_longTermExpiredDaysHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("OplogExpiredDays") && !rsp["OplogExpiredDays"].IsNull())
+    {
+        if (!rsp["OplogExpiredDays"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OplogExpiredDays` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_oplogExpiredDays = rsp["OplogExpiredDays"].GetInt64();
+        m_oplogExpiredDaysHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("BackupVersion") && !rsp["BackupVersion"].IsNull())
+    {
+        if (!rsp["BackupVersion"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupVersion = rsp["BackupVersion"].GetInt64();
+        m_backupVersionHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("BackupTotalSize") && !rsp["BackupTotalSize"].IsNull())
+    {
+        if (!rsp["BackupTotalSize"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupTotalSize` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_backupTotalSize.Deserialize(rsp["BackupTotalSize"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_backupTotalSizeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AlertThreshold") && !rsp["AlertThreshold"].IsNull())
+    {
+        if (!rsp["AlertThreshold"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_alertThreshold = rsp["AlertThreshold"].GetInt64();
+        m_alertThresholdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -112,6 +218,14 @@ string DescribeBackupRulesResponse::ToJsonString() const
         value.AddMember(iKey, m_backupSaveTime, allocator);
     }
 
+    if (m_backupFrequencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupFrequency";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupFrequency, allocator);
+    }
+
     if (m_backupTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -126,6 +240,71 @@ string DescribeBackupRulesResponse::ToJsonString() const
         string key = "BackupMethod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_backupMethod, allocator);
+    }
+
+    if (m_activeWeekdaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActiveWeekdays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_activeWeekdays.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_longTermIntervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LongTermInterval";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_longTermInterval.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_longTermActiveDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LongTermActiveDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_longTermActiveDays.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_longTermExpiredDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LongTermExpiredDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_longTermExpiredDays, allocator);
+    }
+
+    if (m_oplogExpiredDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OplogExpiredDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_oplogExpiredDays, allocator);
+    }
+
+    if (m_backupVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupVersion, allocator);
+    }
+
+    if (m_backupTotalSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupTotalSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_backupTotalSize.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_alertThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlertThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_alertThreshold, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -150,6 +329,16 @@ bool DescribeBackupRulesResponse::BackupSaveTimeHasBeenSet() const
     return m_backupSaveTimeHasBeenSet;
 }
 
+int64_t DescribeBackupRulesResponse::GetBackupFrequency() const
+{
+    return m_backupFrequency;
+}
+
+bool DescribeBackupRulesResponse::BackupFrequencyHasBeenSet() const
+{
+    return m_backupFrequencyHasBeenSet;
+}
+
 uint64_t DescribeBackupRulesResponse::GetBackupTime() const
 {
     return m_backupTime;
@@ -168,6 +357,86 @@ uint64_t DescribeBackupRulesResponse::GetBackupMethod() const
 bool DescribeBackupRulesResponse::BackupMethodHasBeenSet() const
 {
     return m_backupMethodHasBeenSet;
+}
+
+string DescribeBackupRulesResponse::GetActiveWeekdays() const
+{
+    return m_activeWeekdays;
+}
+
+bool DescribeBackupRulesResponse::ActiveWeekdaysHasBeenSet() const
+{
+    return m_activeWeekdaysHasBeenSet;
+}
+
+string DescribeBackupRulesResponse::GetLongTermInterval() const
+{
+    return m_longTermInterval;
+}
+
+bool DescribeBackupRulesResponse::LongTermIntervalHasBeenSet() const
+{
+    return m_longTermIntervalHasBeenSet;
+}
+
+string DescribeBackupRulesResponse::GetLongTermActiveDays() const
+{
+    return m_longTermActiveDays;
+}
+
+bool DescribeBackupRulesResponse::LongTermActiveDaysHasBeenSet() const
+{
+    return m_longTermActiveDaysHasBeenSet;
+}
+
+int64_t DescribeBackupRulesResponse::GetLongTermExpiredDays() const
+{
+    return m_longTermExpiredDays;
+}
+
+bool DescribeBackupRulesResponse::LongTermExpiredDaysHasBeenSet() const
+{
+    return m_longTermExpiredDaysHasBeenSet;
+}
+
+int64_t DescribeBackupRulesResponse::GetOplogExpiredDays() const
+{
+    return m_oplogExpiredDays;
+}
+
+bool DescribeBackupRulesResponse::OplogExpiredDaysHasBeenSet() const
+{
+    return m_oplogExpiredDaysHasBeenSet;
+}
+
+int64_t DescribeBackupRulesResponse::GetBackupVersion() const
+{
+    return m_backupVersion;
+}
+
+bool DescribeBackupRulesResponse::BackupVersionHasBeenSet() const
+{
+    return m_backupVersionHasBeenSet;
+}
+
+BackupTotalSize DescribeBackupRulesResponse::GetBackupTotalSize() const
+{
+    return m_backupTotalSize;
+}
+
+bool DescribeBackupRulesResponse::BackupTotalSizeHasBeenSet() const
+{
+    return m_backupTotalSizeHasBeenSet;
+}
+
+int64_t DescribeBackupRulesResponse::GetAlertThreshold() const
+{
+    return m_alertThreshold;
+}
+
+bool DescribeBackupRulesResponse::AlertThresholdHasBeenSet() const
+{
+    return m_alertThresholdHasBeenSet;
 }
 
 

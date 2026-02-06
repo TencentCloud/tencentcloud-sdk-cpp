@@ -141,22 +141,38 @@ namespace TencentCloud
 
                     /**
                      * 获取指定所生成图片的宽高比。输入格式为 W:H。
-
-仅生商品图场景有效，可选值为：1:1、3:2、2:3、3:4、4:3、4:5、5:4、16:9、9:16、21:9
+本字段在以下场景有效：
+* 生商品图场景，可选值为：1:1、3:2、2:3、3:4、4:3、4:5、5:4、16:9、9:16、21:9
+* AI扩图场景。可选值为：1:1、3:2、2:3、3:4、4:3、4:5、5:4、9:16、16:9、21:9，可以配合 ImageWidth 和 ImageHeight 使用，规则如下： 
+    1. 仅指定 AspectRatio 时，根据原图输入进行自适应调整。
+    2. 指定 AspectRatio 和 ImageWidth 时，ImageHeight  由两者计算得出，反亦是如此。
+    3. 当AspectRatio、ImageWidth、ImageHeight 同时指定的时候，优先使用ImageWidth、ImageHeight。
                      * @return AspectRatio 指定所生成图片的宽高比。输入格式为 W:H。
-
-仅生商品图场景有效，可选值为：1:1、3:2、2:3、3:4、4:3、4:5、5:4、16:9、9:16、21:9
+本字段在以下场景有效：
+* 生商品图场景，可选值为：1:1、3:2、2:3、3:4、4:3、4:5、5:4、16:9、9:16、21:9
+* AI扩图场景。可选值为：1:1、3:2、2:3、3:4、4:3、4:5、5:4、9:16、16:9、21:9，可以配合 ImageWidth 和 ImageHeight 使用，规则如下： 
+    1. 仅指定 AspectRatio 时，根据原图输入进行自适应调整。
+    2. 指定 AspectRatio 和 ImageWidth 时，ImageHeight  由两者计算得出，反亦是如此。
+    3. 当AspectRatio、ImageWidth、ImageHeight 同时指定的时候，优先使用ImageWidth、ImageHeight。
                      * 
                      */
                     std::string GetAspectRatio() const;
 
                     /**
                      * 设置指定所生成图片的宽高比。输入格式为 W:H。
-
-仅生商品图场景有效，可选值为：1:1、3:2、2:3、3:4、4:3、4:5、5:4、16:9、9:16、21:9
+本字段在以下场景有效：
+* 生商品图场景，可选值为：1:1、3:2、2:3、3:4、4:3、4:5、5:4、16:9、9:16、21:9
+* AI扩图场景。可选值为：1:1、3:2、2:3、3:4、4:3、4:5、5:4、9:16、16:9、21:9，可以配合 ImageWidth 和 ImageHeight 使用，规则如下： 
+    1. 仅指定 AspectRatio 时，根据原图输入进行自适应调整。
+    2. 指定 AspectRatio 和 ImageWidth 时，ImageHeight  由两者计算得出，反亦是如此。
+    3. 当AspectRatio、ImageWidth、ImageHeight 同时指定的时候，优先使用ImageWidth、ImageHeight。
                      * @param _aspectRatio 指定所生成图片的宽高比。输入格式为 W:H。
-
-仅生商品图场景有效，可选值为：1:1、3:2、2:3、3:4、4:3、4:5、5:4、16:9、9:16、21:9
+本字段在以下场景有效：
+* 生商品图场景，可选值为：1:1、3:2、2:3、3:4、4:3、4:5、5:4、16:9、9:16、21:9
+* AI扩图场景。可选值为：1:1、3:2、2:3、3:4、4:3、4:5、5:4、9:16、16:9、21:9，可以配合 ImageWidth 和 ImageHeight 使用，规则如下： 
+    1. 仅指定 AspectRatio 时，根据原图输入进行自适应调整。
+    2. 指定 AspectRatio 和 ImageWidth 时，ImageHeight  由两者计算得出，反亦是如此。
+    3. 当AspectRatio、ImageWidth、ImageHeight 同时指定的时候，优先使用ImageWidth、ImageHeight。
                      * 
                      */
                     void SetAspectRatio(const std::string& _aspectRatio);
@@ -189,6 +205,48 @@ namespace TencentCloud
                      */
                     bool EncodeConfigHasBeenSet() const;
 
+                    /**
+                     * 获取输出图像宽度，**仅AI扩图场景有效**。
+                     * @return ImageWidth 输出图像宽度，**仅AI扩图场景有效**。
+                     * 
+                     */
+                    uint64_t GetImageWidth() const;
+
+                    /**
+                     * 设置输出图像宽度，**仅AI扩图场景有效**。
+                     * @param _imageWidth 输出图像宽度，**仅AI扩图场景有效**。
+                     * 
+                     */
+                    void SetImageWidth(const uint64_t& _imageWidth);
+
+                    /**
+                     * 判断参数 ImageWidth 是否已赋值
+                     * @return ImageWidth 是否已赋值
+                     * 
+                     */
+                    bool ImageWidthHasBeenSet() const;
+
+                    /**
+                     * 获取输出图像高度，**仅AI扩图场景有效**。
+                     * @return ImageHeight 输出图像高度，**仅AI扩图场景有效**。
+                     * 
+                     */
+                    uint64_t GetImageHeight() const;
+
+                    /**
+                     * 设置输出图像高度，**仅AI扩图场景有效**。
+                     * @param _imageHeight 输出图像高度，**仅AI扩图场景有效**。
+                     * 
+                     */
+                    void SetImageHeight(const uint64_t& _imageHeight);
+
+                    /**
+                     * 判断参数 ImageHeight 是否已赋值
+                     * @return ImageHeight 是否已赋值
+                     * 
+                     */
+                    bool ImageHeightHasBeenSet() const;
+
                 private:
 
                     /**
@@ -219,8 +277,12 @@ namespace TencentCloud
 
                     /**
                      * 指定所生成图片的宽高比。输入格式为 W:H。
-
-仅生商品图场景有效，可选值为：1:1、3:2、2:3、3:4、4:3、4:5、5:4、16:9、9:16、21:9
+本字段在以下场景有效：
+* 生商品图场景，可选值为：1:1、3:2、2:3、3:4、4:3、4:5、5:4、16:9、9:16、21:9
+* AI扩图场景。可选值为：1:1、3:2、2:3、3:4、4:3、4:5、5:4、9:16、16:9、21:9，可以配合 ImageWidth 和 ImageHeight 使用，规则如下： 
+    1. 仅指定 AspectRatio 时，根据原图输入进行自适应调整。
+    2. 指定 AspectRatio 和 ImageWidth 时，ImageHeight  由两者计算得出，反亦是如此。
+    3. 当AspectRatio、ImageWidth、ImageHeight 同时指定的时候，优先使用ImageWidth、ImageHeight。
                      */
                     std::string m_aspectRatio;
                     bool m_aspectRatioHasBeenSet;
@@ -230,6 +292,18 @@ namespace TencentCloud
                      */
                     ImageSceneAigcEncodeConfig m_encodeConfig;
                     bool m_encodeConfigHasBeenSet;
+
+                    /**
+                     * 输出图像宽度，**仅AI扩图场景有效**。
+                     */
+                    uint64_t m_imageWidth;
+                    bool m_imageWidthHasBeenSet;
+
+                    /**
+                     * 输出图像高度，**仅AI扩图场景有效**。
+                     */
+                    uint64_t m_imageHeight;
+                    bool m_imageHeightHasBeenSet;
 
                 };
             }

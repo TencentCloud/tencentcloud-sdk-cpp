@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取AIGC类型，取值有：<li> Video：视频。</li><li> Image：图片。</li>
-                     * @return AigcType AIGC类型，取值有：<li> Video：视频。</li><li> Image：图片。</li>
+                     * 获取AIGC类型，取值有：<li> Video：视频。</li><li> Image：图片。</li><li> Text：文本。</li>
+                     * @return AigcType AIGC类型，取值有：<li> Video：视频。</li><li> Image：图片。</li><li> Text：文本。</li>
                      * 
                      */
                     std::string GetAigcType() const;
 
                     /**
-                     * 设置AIGC类型，取值有：<li> Video：视频。</li><li> Image：图片。</li>
-                     * @param _aigcType AIGC类型，取值有：<li> Video：视频。</li><li> Image：图片。</li>
+                     * 设置AIGC类型，取值有：<li> Video：视频。</li><li> Image：图片。</li><li> Text：文本。</li>
+                     * @param _aigcType AIGC类型，取值有：<li> Video：视频。</li><li> Image：图片。</li><li> Text：文本。</li>
                      * 
                      */
                     void SetAigcType(const std::string& _aigcType);
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * AIGC类型，取值有：<li> Video：视频。</li><li> Image：图片。</li>
+                     * AIGC类型，取值有：<li> Video：视频。</li><li> Image：图片。</li><li> Text：文本。</li>
                      */
                     std::string m_aigcType;
                     bool m_aigcTypeHasBeenSet;

@@ -77,16 +77,12 @@
 #include <tencentcloud/trtc/v20190722/model/DescribeStreamIngestResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCMarketQualityDataRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCMarketQualityDataResponse.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeTRTCMarketQualityMetricDataRequest.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeTRTCMarketQualityMetricDataResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCMarketScaleDataRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCMarketScaleDataResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCMarketScaleMetricDataRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCMarketScaleMetricDataResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCRealTimeQualityDataRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCRealTimeQualityDataResponse.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeTRTCRealTimeQualityMetricDataRequest.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeTRTCRealTimeQualityMetricDataResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCRealTimeScaleDataRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCRealTimeScaleDataResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCRealTimeScaleMetricDataRequest.h>
@@ -262,9 +258,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTRTCMarketQualityDataResponse> DescribeTRTCMarketQualityDataOutcome;
                 typedef std::future<DescribeTRTCMarketQualityDataOutcome> DescribeTRTCMarketQualityDataOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeTRTCMarketQualityDataRequest&, DescribeTRTCMarketQualityDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTRTCMarketQualityDataAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeTRTCMarketQualityMetricDataResponse> DescribeTRTCMarketQualityMetricDataOutcome;
-                typedef std::future<DescribeTRTCMarketQualityMetricDataOutcome> DescribeTRTCMarketQualityMetricDataOutcomeCallable;
-                typedef std::function<void(const TrtcClient*, const Model::DescribeTRTCMarketQualityMetricDataRequest&, DescribeTRTCMarketQualityMetricDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTRTCMarketQualityMetricDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTRTCMarketScaleDataResponse> DescribeTRTCMarketScaleDataOutcome;
                 typedef std::future<DescribeTRTCMarketScaleDataOutcome> DescribeTRTCMarketScaleDataOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeTRTCMarketScaleDataRequest&, DescribeTRTCMarketScaleDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTRTCMarketScaleDataAsyncHandler;
@@ -274,9 +267,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTRTCRealTimeQualityDataResponse> DescribeTRTCRealTimeQualityDataOutcome;
                 typedef std::future<DescribeTRTCRealTimeQualityDataOutcome> DescribeTRTCRealTimeQualityDataOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeTRTCRealTimeQualityDataRequest&, DescribeTRTCRealTimeQualityDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTRTCRealTimeQualityDataAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeTRTCRealTimeQualityMetricDataResponse> DescribeTRTCRealTimeQualityMetricDataOutcome;
-                typedef std::future<DescribeTRTCRealTimeQualityMetricDataOutcome> DescribeTRTCRealTimeQualityMetricDataOutcomeCallable;
-                typedef std::function<void(const TrtcClient*, const Model::DescribeTRTCRealTimeQualityMetricDataRequest&, DescribeTRTCRealTimeQualityMetricDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTRTCRealTimeQualityMetricDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTRTCRealTimeScaleDataResponse> DescribeTRTCRealTimeScaleDataOutcome;
                 typedef std::future<DescribeTRTCRealTimeScaleDataOutcome> DescribeTRTCRealTimeScaleDataOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeTRTCRealTimeScaleDataRequest&, DescribeTRTCRealTimeScaleDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTRTCRealTimeScaleDataAsyncHandler;
@@ -706,25 +696,6 @@ networkDelay ：网络延迟率。
                 DescribeTRTCMarketQualityDataOutcomeCallable DescribeTRTCMarketQualityDataCallable(const Model::DescribeTRTCMarketQualityDataRequest& request);
 
                 /**
-                 *云监控monitor接口已下线，trtc同步下线接口
-
-查询TRTC监控仪表盘-数据大盘质量指标（包括下列指标）
-joinSuccessRate：加入频道成功率。
-joinSuccessIn5sRate：5s内加入频道成功率。
-audioFreezeRate：音频卡顿率。
-videoFreezeRate：视频卡顿率。
-networkDelay ：网络延迟率。
-注意：
-1.调用接口需开通监控仪表盘【基础版】和【进阶版】，监控仪表盘【免费版】不支持调用，监控仪表盘版本功能和计费说明：https://cloud.tencent.com/document/product/647/81331。
-2.查询时间范围根据监控仪表盘功能版本而定，【基础版】可查近30天，【进阶版】可查近60天。
-                 * @param req DescribeTRTCMarketQualityMetricDataRequest
-                 * @return DescribeTRTCMarketQualityMetricDataOutcome
-                 */
-                DescribeTRTCMarketQualityMetricDataOutcome DescribeTRTCMarketQualityMetricData(const Model::DescribeTRTCMarketQualityMetricDataRequest &request);
-                void DescribeTRTCMarketQualityMetricDataAsync(const Model::DescribeTRTCMarketQualityMetricDataRequest& request, const DescribeTRTCMarketQualityMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeTRTCMarketQualityMetricDataOutcomeCallable DescribeTRTCMarketQualityMetricDataCallable(const Model::DescribeTRTCMarketQualityMetricDataRequest& request);
-
-                /**
                  *查询TRTC监控仪表盘-数据大盘规模指标（会返回通话人数，通话房间数，峰值同时在线人数，峰值同时在线频道数）
 userCount：通话人数，
 roomCount：通话房间数，从有用户加入频道到所有用户离开频道计为一个通话频道。
@@ -773,22 +744,6 @@ peakCurrentUsers：峰值同时在线人数。
                 DescribeTRTCRealTimeQualityDataOutcomeCallable DescribeTRTCRealTimeQualityDataCallable(const Model::DescribeTRTCRealTimeQualityDataRequest& request);
 
                 /**
-                 *云监控monitor接口已下线，trtc同步下线接口
-
-查询TRTC监控仪表盘-实时监控质量指标（会返回下列指标）
--视频卡顿率
--音频卡顿率
-注意：
-1.调用接口需开通监控仪表盘【基础版】和【进阶版】，监控仪表盘【免费版】不支持调用，监控仪表盘版本功能和计费说明：https://cloud.tencent.com/document/product/647/81331。
-2.查询时间范围根据监控仪表盘功能版本而定，基础版可查近3小时，进阶版可查近12小时。
-                 * @param req DescribeTRTCRealTimeQualityMetricDataRequest
-                 * @return DescribeTRTCRealTimeQualityMetricDataOutcome
-                 */
-                DescribeTRTCRealTimeQualityMetricDataOutcome DescribeTRTCRealTimeQualityMetricData(const Model::DescribeTRTCRealTimeQualityMetricDataRequest &request);
-                void DescribeTRTCRealTimeQualityMetricDataAsync(const Model::DescribeTRTCRealTimeQualityMetricDataRequest& request, const DescribeTRTCRealTimeQualityMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeTRTCRealTimeQualityMetricDataOutcomeCallable DescribeTRTCRealTimeQualityMetricDataCallable(const Model::DescribeTRTCRealTimeQualityMetricDataRequest& request);
-
-                /**
                  *查询TRTC监控仪表盘-实时监控规模指标（会返回下列指标）
 -userCount（在线用户数）
 -roomCount（在线房间数）
@@ -803,7 +758,9 @@ peakCurrentUsers：峰值同时在线人数。
                 DescribeTRTCRealTimeScaleDataOutcomeCallable DescribeTRTCRealTimeScaleDataCallable(const Model::DescribeTRTCRealTimeScaleDataRequest& request);
 
                 /**
-                 *查询TRTC监控仪表盘-实时监控规模指标（会返回下列指标）
+                 *腾讯云可观测平台monitor接口已下线，TRTC同步下线接口
+
+查询TRTC监控仪表盘-实时监控规模指标（会返回下列指标）
 -userCount（在线用户数）
 -roomCount（在线房间数）
 注意：

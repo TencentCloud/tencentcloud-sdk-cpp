@@ -21,8 +21,29 @@ set(monitor_public_header
 
 set(monitor_public_header_model
   include/tencentcloud/monitor/v20230616/model/DescribeAlarmNotifyHistoriesRequest.h
-  include/tencentcloud/monitor/v20230616/model/DescribeAlarmNotifyHistoriesResponse.h
+  include/tencentcloud/monitor/v20230616/model/WebhookNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/TeamsRobotNoticeTmplMatcher.h
+  include/tencentcloud/monitor/v20230616/model/FeiShuRobotNoticeTmplMatcher.h
   include/tencentcloud/monitor/v20230616/model/PageByNoParams.h
+  include/tencentcloud/monitor/v20230616/model/PagerDutyRobotNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/WeWorkRobotNoticeTmplMatcher.h
+  include/tencentcloud/monitor/v20230616/model/NoticeContentTmplItem.h
+  include/tencentcloud/monitor/v20230616/model/QCloudYeheNoticeTmplItem.h
+  include/tencentcloud/monitor/v20230616/model/CreateNoticeContentTmplResponse.h
+  include/tencentcloud/monitor/v20230616/model/QCloudYeheWeChatNoticeTmplItem.h
+  include/tencentcloud/monitor/v20230616/model/PagerDutyRobotNoticeTmplHeader.h
+  include/tencentcloud/monitor/v20230616/model/DescribeAlarmNotifyHistoriesResponse.h
+  include/tencentcloud/monitor/v20230616/model/DingDingRobotNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/PagerDutyRobotNoticeTmplMatcher.h
+  include/tencentcloud/monitor/v20230616/model/WebhookNoticeTmplHeader.h
+  include/tencentcloud/monitor/v20230616/model/FeiShuRobotNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/DingDingRobotNoticeTmplMatcher.h
+  include/tencentcloud/monitor/v20230616/model/TeamsRobotNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/WeWorkRobotNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/QCloudYeheNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/CreateNoticeContentTmplRequest.h
+  include/tencentcloud/monitor/v20230616/model/QCloudYeheNoticeTmplMatcher.h
+  include/tencentcloud/monitor/v20230616/model/WebhookNoticeTmplMatcher.h
   include/tencentcloud/monitor/v20180724/model/DeleteAlarmShieldsRequest.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyInfoRequest.h
   include/tencentcloud/monitor/v20180724/model/AlarmPolicyTriggerTask.h
@@ -516,8 +537,29 @@ set(monitor_src
   src/v20230616/MonitorClient.cpp
   src/v20180724/MonitorClient.cpp
   src/v20230616/model/DescribeAlarmNotifyHistoriesRequest.cpp
-  src/v20230616/model/DescribeAlarmNotifyHistoriesResponse.cpp
+  src/v20230616/model/WebhookNoticeTmpl.cpp
+  src/v20230616/model/TeamsRobotNoticeTmplMatcher.cpp
+  src/v20230616/model/FeiShuRobotNoticeTmplMatcher.cpp
   src/v20230616/model/PageByNoParams.cpp
+  src/v20230616/model/PagerDutyRobotNoticeTmpl.cpp
+  src/v20230616/model/WeWorkRobotNoticeTmplMatcher.cpp
+  src/v20230616/model/NoticeContentTmplItem.cpp
+  src/v20230616/model/QCloudYeheNoticeTmplItem.cpp
+  src/v20230616/model/CreateNoticeContentTmplResponse.cpp
+  src/v20230616/model/QCloudYeheWeChatNoticeTmplItem.cpp
+  src/v20230616/model/PagerDutyRobotNoticeTmplHeader.cpp
+  src/v20230616/model/DescribeAlarmNotifyHistoriesResponse.cpp
+  src/v20230616/model/DingDingRobotNoticeTmpl.cpp
+  src/v20230616/model/PagerDutyRobotNoticeTmplMatcher.cpp
+  src/v20230616/model/WebhookNoticeTmplHeader.cpp
+  src/v20230616/model/FeiShuRobotNoticeTmpl.cpp
+  src/v20230616/model/DingDingRobotNoticeTmplMatcher.cpp
+  src/v20230616/model/TeamsRobotNoticeTmpl.cpp
+  src/v20230616/model/WeWorkRobotNoticeTmpl.cpp
+  src/v20230616/model/QCloudYeheNoticeTmpl.cpp
+  src/v20230616/model/CreateNoticeContentTmplRequest.cpp
+  src/v20230616/model/QCloudYeheNoticeTmplMatcher.cpp
+  src/v20230616/model/WebhookNoticeTmplMatcher.cpp
   src/v20180724/model/DeleteAlarmShieldsRequest.cpp
   src/v20180724/model/ModifyAlarmPolicyInfoRequest.cpp
   src/v20180724/model/AlarmPolicyTriggerTask.cpp

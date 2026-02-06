@@ -890,6 +890,56 @@ TdmqClient::CreateRocketMQGroupOutcomeCallable TdmqClient::CreateRocketMQGroupCa
     return prom->get_future();
 }
 
+TdmqClient::CreateRocketMQGroupV2Outcome TdmqClient::CreateRocketMQGroupV2(const CreateRocketMQGroupV2Request &request)
+{
+    auto outcome = MakeRequest(request, "CreateRocketMQGroupV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRocketMQGroupV2Response rsp = CreateRocketMQGroupV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRocketMQGroupV2Outcome(rsp);
+        else
+            return CreateRocketMQGroupV2Outcome(o.GetError());
+    }
+    else
+    {
+        return CreateRocketMQGroupV2Outcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::CreateRocketMQGroupV2Async(const CreateRocketMQGroupV2Request& request, const CreateRocketMQGroupV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateRocketMQGroupV2Request&;
+    using Resp = CreateRocketMQGroupV2Response;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateRocketMQGroupV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmqClient::CreateRocketMQGroupV2OutcomeCallable TdmqClient::CreateRocketMQGroupV2Callable(const CreateRocketMQGroupV2Request &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateRocketMQGroupV2Outcome>>();
+    CreateRocketMQGroupV2Async(
+    request,
+    [prom](
+        const TdmqClient*,
+        const CreateRocketMQGroupV2Request&,
+        CreateRocketMQGroupV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TdmqClient::CreateRocketMQNamespaceOutcome TdmqClient::CreateRocketMQNamespace(const CreateRocketMQNamespaceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRocketMQNamespace");

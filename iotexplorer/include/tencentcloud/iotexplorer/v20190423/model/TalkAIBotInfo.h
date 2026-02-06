@@ -366,6 +366,27 @@ namespace TencentCloud
                      */
                     bool BoundProductsHasBeenSet() const;
 
+                    /**
+                     * 获取自定义工具列表，最多可创建10个
+                     * @return CustomTools 自定义工具列表，最多可创建10个
+                     * 
+                     */
+                    std::string GetCustomTools() const;
+
+                    /**
+                     * 设置自定义工具列表，最多可创建10个
+                     * @param _customTools 自定义工具列表，最多可创建10个
+                     * 
+                     */
+                    void SetCustomTools(const std::string& _customTools);
+
+                    /**
+                     * 判断参数 CustomTools 是否已赋值
+                     * @return CustomTools 是否已赋值
+                     * 
+                     */
+                    bool CustomToolsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -457,6 +478,12 @@ namespace TencentCloud
                      */
                     std::vector<TalkProductInfo> m_boundProducts;
                     bool m_boundProductsHasBeenSet;
+
+                    /**
+                     * 自定义工具列表，最多可创建10个
+                     */
+                    std::string m_customTools;
+                    bool m_customToolsHasBeenSet;
 
                 };
             }

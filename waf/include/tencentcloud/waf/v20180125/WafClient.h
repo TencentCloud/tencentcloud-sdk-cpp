@@ -117,6 +117,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeAntiFakeRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakageRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakageRulesResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeApiAggregateTopNRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeApiAggregateTopNResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeApiDetailRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeApiDetailResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeApiListVersionTwoRequest.h>
@@ -574,6 +576,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAntiInfoLeakageRulesResponse> DescribeAntiInfoLeakageRulesOutcome;
                 typedef std::future<DescribeAntiInfoLeakageRulesOutcome> DescribeAntiInfoLeakageRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAntiInfoLeakageRulesRequest&, DescribeAntiInfoLeakageRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAntiInfoLeakageRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeApiAggregateTopNResponse> DescribeApiAggregateTopNOutcome;
+                typedef std::future<DescribeApiAggregateTopNOutcome> DescribeApiAggregateTopNOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeApiAggregateTopNRequest&, DescribeApiAggregateTopNOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiAggregateTopNAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeApiDetailResponse> DescribeApiDetailOutcome;
                 typedef std::future<DescribeApiDetailOutcome> DescribeApiDetailOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeApiDetailRequest&, DescribeApiDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiDetailAsyncHandler;
@@ -1452,6 +1457,15 @@ namespace TencentCloud
                 DescribeAntiInfoLeakageRulesOutcome DescribeAntiInfoLeakageRules(const Model::DescribeAntiInfoLeakageRulesRequest &request);
                 void DescribeAntiInfoLeakageRulesAsync(const Model::DescribeAntiInfoLeakageRulesRequest& request, const DescribeAntiInfoLeakageRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAntiInfoLeakageRulesOutcomeCallable DescribeAntiInfoLeakageRulesCallable(const Model::DescribeAntiInfoLeakageRulesRequest& request);
+
+                /**
+                 *获取Api安全模块的访问日志聚合topN
+                 * @param req DescribeApiAggregateTopNRequest
+                 * @return DescribeApiAggregateTopNOutcome
+                 */
+                DescribeApiAggregateTopNOutcome DescribeApiAggregateTopN(const Model::DescribeApiAggregateTopNRequest &request);
+                void DescribeApiAggregateTopNAsync(const Model::DescribeApiAggregateTopNRequest& request, const DescribeApiAggregateTopNAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApiAggregateTopNOutcomeCallable DescribeApiAggregateTopNCallable(const Model::DescribeApiAggregateTopNRequest& request);
 
                 /**
                  *获取Api请求详情信息

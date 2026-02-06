@@ -57,6 +57,8 @@
 #include <tencentcloud/tdmq/v20200217/model/CreateRocketMQEnvironmentRoleResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRocketMQGroupRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRocketMQGroupResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateRocketMQGroupV2Request.h>
+#include <tencentcloud/tdmq/v20200217/model/CreateRocketMQGroupV2Response.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRocketMQNamespaceRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRocketMQNamespaceResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateRocketMQRoleRequest.h>
@@ -388,6 +390,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRocketMQGroupResponse> CreateRocketMQGroupOutcome;
                 typedef std::future<CreateRocketMQGroupOutcome> CreateRocketMQGroupOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::CreateRocketMQGroupRequest&, CreateRocketMQGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRocketMQGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRocketMQGroupV2Response> CreateRocketMQGroupV2Outcome;
+                typedef std::future<CreateRocketMQGroupV2Outcome> CreateRocketMQGroupV2OutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::CreateRocketMQGroupV2Request&, CreateRocketMQGroupV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRocketMQGroupV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRocketMQNamespaceResponse> CreateRocketMQNamespaceOutcome;
                 typedef std::future<CreateRocketMQNamespaceOutcome> CreateRocketMQNamespaceOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::CreateRocketMQNamespaceRequest&, CreateRocketMQNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRocketMQNamespaceAsyncHandler;
@@ -945,6 +950,16 @@ namespace TencentCloud
                 CreateRocketMQGroupOutcome CreateRocketMQGroup(const Model::CreateRocketMQGroupRequest &request);
                 void CreateRocketMQGroupAsync(const Model::CreateRocketMQGroupRequest& request, const CreateRocketMQGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateRocketMQGroupOutcomeCallable CreateRocketMQGroupCallable(const Model::CreateRocketMQGroupRequest& request);
+
+                /**
+                 *创建 RocketMQ 消费组。
+当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。创建 5.x 集群消费组的接口文档见 [CreateConsumerGroup](https://cloud.tencent.com/document/api/1493/97943)。
+                 * @param req CreateRocketMQGroupV2Request
+                 * @return CreateRocketMQGroupV2Outcome
+                 */
+                CreateRocketMQGroupV2Outcome CreateRocketMQGroupV2(const Model::CreateRocketMQGroupV2Request &request);
+                void CreateRocketMQGroupV2Async(const Model::CreateRocketMQGroupV2Request& request, const CreateRocketMQGroupV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRocketMQGroupV2OutcomeCallable CreateRocketMQGroupV2Callable(const Model::CreateRocketMQGroupV2Request& request);
 
                 /**
                  *创建 RocketMQ 命名空间。

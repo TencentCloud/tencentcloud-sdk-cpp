@@ -179,6 +179,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/CreatePostCLSFlowResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeHostsResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeAccessIndexRequest.h
+  include/tencentcloud/waf/v20180125/model/BotDataFilter.h
   include/tencentcloud/waf/v20180125/model/DomainInfo.h
   include/tencentcloud/waf/v20180125/model/DescribeAreaBanAreasResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeDomainsResponse.h
@@ -363,6 +364,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/UserDomainInfo.h
   include/tencentcloud/waf/v20180125/model/DescribeAntiFakeRulesResponse.h
   include/tencentcloud/waf/v20180125/model/BotMonitorPkg.h
+  include/tencentcloud/waf/v20180125/model/DescribeApiAggregateTopNRequest.h
   include/tencentcloud/waf/v20180125/model/GetOrganizationRoleRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeTopicsRequest.h
   include/tencentcloud/waf/v20180125/model/BatchDomainResult.h
@@ -502,6 +504,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ModifyInstanceRenewFlagResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyOwaspRuleTypeStatusResponse.h
   include/tencentcloud/waf/v20180125/model/AddAttackWhiteRuleResponse.h
+  include/tencentcloud/waf/v20180125/model/DescribeApiAggregateTopNResponse.h
   include/tencentcloud/waf/v20180125/model/ImportIpAccessControlResponse.h
   include/tencentcloud/waf/v20180125/model/AddCustomWhiteRuleRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeTopicsResponse.h
@@ -570,6 +573,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DescribeVipInfoResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeApiDetailResponse.h
   include/tencentcloud/waf/v20180125/model/TokenVerifyRule.h
+  include/tencentcloud/waf/v20180125/model/BotTopItem.h
   include/tencentcloud/waf/v20180125/model/DescribeRuleLimitRequest.h
   include/tencentcloud/waf/v20180125/model/LimitMethod.h
   include/tencentcloud/waf/v20180125/model/ModifyDomainsCLSStatusRequest.h
@@ -760,6 +764,7 @@ set(waf_src
   src/v20180125/model/CreatePostCLSFlowResponse.cpp
   src/v20180125/model/DescribeHostsResponse.cpp
   src/v20180125/model/DescribeAccessIndexRequest.cpp
+  src/v20180125/model/BotDataFilter.cpp
   src/v20180125/model/DomainInfo.cpp
   src/v20180125/model/DescribeAreaBanAreasResponse.cpp
   src/v20180125/model/DescribeDomainsResponse.cpp
@@ -944,6 +949,7 @@ set(waf_src
   src/v20180125/model/UserDomainInfo.cpp
   src/v20180125/model/DescribeAntiFakeRulesResponse.cpp
   src/v20180125/model/BotMonitorPkg.cpp
+  src/v20180125/model/DescribeApiAggregateTopNRequest.cpp
   src/v20180125/model/GetOrganizationRoleRequest.cpp
   src/v20180125/model/DescribeTopicsRequest.cpp
   src/v20180125/model/BatchDomainResult.cpp
@@ -1083,6 +1089,7 @@ set(waf_src
   src/v20180125/model/ModifyInstanceRenewFlagResponse.cpp
   src/v20180125/model/ModifyOwaspRuleTypeStatusResponse.cpp
   src/v20180125/model/AddAttackWhiteRuleResponse.cpp
+  src/v20180125/model/DescribeApiAggregateTopNResponse.cpp
   src/v20180125/model/ImportIpAccessControlResponse.cpp
   src/v20180125/model/AddCustomWhiteRuleRequest.cpp
   src/v20180125/model/DescribeTopicsResponse.cpp
@@ -1151,6 +1158,7 @@ set(waf_src
   src/v20180125/model/DescribeVipInfoResponse.cpp
   src/v20180125/model/DescribeApiDetailResponse.cpp
   src/v20180125/model/TokenVerifyRule.cpp
+  src/v20180125/model/BotTopItem.cpp
   src/v20180125/model/DescribeRuleLimitRequest.cpp
   src/v20180125/model/LimitMethod.cpp
   src/v20180125/model/ModifyDomainsCLSStatusRequest.cpp

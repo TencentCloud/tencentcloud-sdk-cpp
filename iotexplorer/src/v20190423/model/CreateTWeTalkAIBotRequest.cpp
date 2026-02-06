@@ -30,7 +30,8 @@ CreateTWeTalkAIBotRequest::CreateTWeTalkAIBotRequest() :
     m_lLMConfigHasBeenSet(false),
     m_tTSConfigHasBeenSet(false),
     m_agentConfigHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_customToolsHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,14 @@ string CreateTWeTalkAIBotRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customToolsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomTools";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customTools.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -243,6 +252,22 @@ void CreateTWeTalkAIBotRequest::SetInstanceId(const string& _instanceId)
 bool CreateTWeTalkAIBotRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string CreateTWeTalkAIBotRequest::GetCustomTools() const
+{
+    return m_customTools;
+}
+
+void CreateTWeTalkAIBotRequest::SetCustomTools(const string& _customTools)
+{
+    m_customTools = _customTools;
+    m_customToolsHasBeenSet = true;
+}
+
+bool CreateTWeTalkAIBotRequest::CustomToolsHasBeenSet() const
+{
+    return m_customToolsHasBeenSet;
 }
 
 

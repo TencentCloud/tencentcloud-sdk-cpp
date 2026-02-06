@@ -1390,56 +1390,6 @@ TrtcClient::DescribeTRTCMarketQualityDataOutcomeCallable TrtcClient::DescribeTRT
     return prom->get_future();
 }
 
-TrtcClient::DescribeTRTCMarketQualityMetricDataOutcome TrtcClient::DescribeTRTCMarketQualityMetricData(const DescribeTRTCMarketQualityMetricDataRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeTRTCMarketQualityMetricData");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeTRTCMarketQualityMetricDataResponse rsp = DescribeTRTCMarketQualityMetricDataResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeTRTCMarketQualityMetricDataOutcome(rsp);
-        else
-            return DescribeTRTCMarketQualityMetricDataOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeTRTCMarketQualityMetricDataOutcome(outcome.GetError());
-    }
-}
-
-void TrtcClient::DescribeTRTCMarketQualityMetricDataAsync(const DescribeTRTCMarketQualityMetricDataRequest& request, const DescribeTRTCMarketQualityMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeTRTCMarketQualityMetricDataRequest&;
-    using Resp = DescribeTRTCMarketQualityMetricDataResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeTRTCMarketQualityMetricData", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TrtcClient::DescribeTRTCMarketQualityMetricDataOutcomeCallable TrtcClient::DescribeTRTCMarketQualityMetricDataCallable(const DescribeTRTCMarketQualityMetricDataRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeTRTCMarketQualityMetricDataOutcome>>();
-    DescribeTRTCMarketQualityMetricDataAsync(
-    request,
-    [prom](
-        const TrtcClient*,
-        const DescribeTRTCMarketQualityMetricDataRequest&,
-        DescribeTRTCMarketQualityMetricDataOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 TrtcClient::DescribeTRTCMarketScaleDataOutcome TrtcClient::DescribeTRTCMarketScaleData(const DescribeTRTCMarketScaleDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTRTCMarketScaleData");
@@ -1582,56 +1532,6 @@ TrtcClient::DescribeTRTCRealTimeQualityDataOutcomeCallable TrtcClient::DescribeT
         const TrtcClient*,
         const DescribeTRTCRealTimeQualityDataRequest&,
         DescribeTRTCRealTimeQualityDataOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-TrtcClient::DescribeTRTCRealTimeQualityMetricDataOutcome TrtcClient::DescribeTRTCRealTimeQualityMetricData(const DescribeTRTCRealTimeQualityMetricDataRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeTRTCRealTimeQualityMetricData");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeTRTCRealTimeQualityMetricDataResponse rsp = DescribeTRTCRealTimeQualityMetricDataResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeTRTCRealTimeQualityMetricDataOutcome(rsp);
-        else
-            return DescribeTRTCRealTimeQualityMetricDataOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeTRTCRealTimeQualityMetricDataOutcome(outcome.GetError());
-    }
-}
-
-void TrtcClient::DescribeTRTCRealTimeQualityMetricDataAsync(const DescribeTRTCRealTimeQualityMetricDataRequest& request, const DescribeTRTCRealTimeQualityMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeTRTCRealTimeQualityMetricDataRequest&;
-    using Resp = DescribeTRTCRealTimeQualityMetricDataResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeTRTCRealTimeQualityMetricData", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TrtcClient::DescribeTRTCRealTimeQualityMetricDataOutcomeCallable TrtcClient::DescribeTRTCRealTimeQualityMetricDataCallable(const DescribeTRTCRealTimeQualityMetricDataRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeTRTCRealTimeQualityMetricDataOutcome>>();
-    DescribeTRTCRealTimeQualityMetricDataAsync(
-    request,
-    [prom](
-        const TrtcClient*,
-        const DescribeTRTCRealTimeQualityMetricDataRequest&,
-        DescribeTRTCRealTimeQualityMetricDataOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

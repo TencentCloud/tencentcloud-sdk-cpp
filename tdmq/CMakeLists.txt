@@ -77,6 +77,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DeleteEnvironmentsRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQClustersRequest.h
   include/tencentcloud/tdmq/v20200217/model/SendRocketMQMessageRequest.h
+  include/tencentcloud/tdmq/v20200217/model/CreateRocketMQGroupV2Response.h
   include/tencentcloud/tdmq/v20200217/model/CreateClusterResponse.h
   include/tencentcloud/tdmq/v20200217/model/DeleteRocketMQNamespaceRequest.h
   include/tencentcloud/tdmq/v20200217/model/DeleteRabbitMQPermissionRequest.h
@@ -264,6 +265,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQMigratingTopicListResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentRolesResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQPublicAccessPointResponse.h
+  include/tencentcloud/tdmq/v20200217/model/CreateRocketMQGroupV2Request.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRabbitMQExchangesResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRabbitMQQueueDetailResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicMsgsResponse.h
@@ -478,6 +480,7 @@ set(tdmq_src
   src/v20200217/model/DeleteEnvironmentsRequest.cpp
   src/v20200217/model/DescribeRocketMQClustersRequest.cpp
   src/v20200217/model/SendRocketMQMessageRequest.cpp
+  src/v20200217/model/CreateRocketMQGroupV2Response.cpp
   src/v20200217/model/CreateClusterResponse.cpp
   src/v20200217/model/DeleteRocketMQNamespaceRequest.cpp
   src/v20200217/model/DeleteRabbitMQPermissionRequest.cpp
@@ -665,6 +668,7 @@ set(tdmq_src
   src/v20200217/model/DescribeRocketMQMigratingTopicListResponse.cpp
   src/v20200217/model/DescribeEnvironmentRolesResponse.cpp
   src/v20200217/model/DescribeRocketMQPublicAccessPointResponse.cpp
+  src/v20200217/model/CreateRocketMQGroupV2Request.cpp
   src/v20200217/model/DescribeRabbitMQExchangesResponse.cpp
   src/v20200217/model/DescribeRabbitMQQueueDetailResponse.cpp
   src/v20200217/model/DescribeRocketMQTopicMsgsResponse.cpp

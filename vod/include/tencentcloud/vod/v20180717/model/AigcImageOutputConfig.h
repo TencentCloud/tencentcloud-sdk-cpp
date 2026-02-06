@@ -141,18 +141,18 @@ namespace TencentCloud
                     /**
                      * 获取生成图片的分辨率。
 
-* GEM 2.5 可选值：1K、2K、4K；
-* GEM 3.0 可选值：1K、2K、4K；
+* GEM 2.5 可选值：1K、2K、4K，默认1K；
+* GEM 3.0 可选值：1K、2K、4K，默认1K；
 * Vidu q2 可选值：1080p、2K、4K，默认1080p；
-* Kling 2.1 可选值：1k、2k；
-* Hunyuan 3.0 可选值：768:768、768:1024、1024:768、1024:1024、720:1280、1280:720、768:1280、1280:768，不传默认使用1024:1024。
+* Kling 2.1 可选值：1k、2k，默认1k；
+* Hunyuan 3.0 可选值：720P、1080P、2K、4K。
                      * @return Resolution 生成图片的分辨率。
 
-* GEM 2.5 可选值：1K、2K、4K；
-* GEM 3.0 可选值：1K、2K、4K；
+* GEM 2.5 可选值：1K、2K、4K，默认1K；
+* GEM 3.0 可选值：1K、2K、4K，默认1K；
 * Vidu q2 可选值：1080p、2K、4K，默认1080p；
-* Kling 2.1 可选值：1k、2k；
-* Hunyuan 3.0 可选值：768:768、768:1024、1024:768、1024:1024、720:1280、1280:720、768:1280、1280:768，不传默认使用1024:1024。
+* Kling 2.1 可选值：1k、2k，默认1k；
+* Hunyuan 3.0 可选值：720P、1080P、2K、4K。
                      * 
                      */
                     std::string GetResolution() const;
@@ -160,18 +160,18 @@ namespace TencentCloud
                     /**
                      * 设置生成图片的分辨率。
 
-* GEM 2.5 可选值：1K、2K、4K；
-* GEM 3.0 可选值：1K、2K、4K；
+* GEM 2.5 可选值：1K、2K、4K，默认1K；
+* GEM 3.0 可选值：1K、2K、4K，默认1K；
 * Vidu q2 可选值：1080p、2K、4K，默认1080p；
-* Kling 2.1 可选值：1k、2k；
-* Hunyuan 3.0 可选值：768:768、768:1024、1024:768、1024:1024、720:1280、1280:720、768:1280、1280:768，不传默认使用1024:1024。
+* Kling 2.1 可选值：1k、2k，默认1k；
+* Hunyuan 3.0 可选值：720P、1080P、2K、4K。
                      * @param _resolution 生成图片的分辨率。
 
-* GEM 2.5 可选值：1K、2K、4K；
-* GEM 3.0 可选值：1K、2K、4K；
+* GEM 2.5 可选值：1K、2K、4K，默认1K；
+* GEM 3.0 可选值：1K、2K、4K，默认1K；
 * Vidu q2 可选值：1080p、2K、4K，默认1080p；
-* Kling 2.1 可选值：1k、2k；
-* Hunyuan 3.0 可选值：768:768、768:1024、1024:768、1024:1024、720:1280、1280:720、768:1280、1280:768，不传默认使用1024:1024。
+* Kling 2.1 可选值：1k、2k，默认1k；
+* Hunyuan 3.0 可选值：720P、1080P、2K、4K。
                      * 
                      */
                     void SetResolution(const std::string& _resolution);
@@ -187,13 +187,13 @@ namespace TencentCloud
                      * 获取指定所生成图片的宽高比。
 <li>当 ModelName 是 GEM，可选值是 1:1、3:2、2:3、3:4、4:3、4:5、5:4、9:16、16:9 和 21:9；</li>
 <li>当 ModelName 是 Qwen，则暂不支持。</li>
-<li>当 ModelName 是 Hunyuan，则暂不支持。</li>
+<li>当 ModelName 是 Hunyuan，可选值16:9、9:16、1:1、4:3、3:4、3:2、2:3、21:9。</li>
 <li>当 ModelName 是 Vidu，可选值16:9、9:16、1:1、3:4、4:3、21:9、2:3、3:2。</li>
 <li>当 ModelName 是 Kling，可选值16:9、9:16、1:1、4:3、3:4、3:2、2:3、21:9。</li>
                      * @return AspectRatio 指定所生成图片的宽高比。
 <li>当 ModelName 是 GEM，可选值是 1:1、3:2、2:3、3:4、4:3、4:5、5:4、9:16、16:9 和 21:9；</li>
 <li>当 ModelName 是 Qwen，则暂不支持。</li>
-<li>当 ModelName 是 Hunyuan，则暂不支持。</li>
+<li>当 ModelName 是 Hunyuan，可选值16:9、9:16、1:1、4:3、3:4、3:2、2:3、21:9。</li>
 <li>当 ModelName 是 Vidu，可选值16:9、9:16、1:1、3:4、4:3、21:9、2:3、3:2。</li>
 <li>当 ModelName 是 Kling，可选值16:9、9:16、1:1、4:3、3:4、3:2、2:3、21:9。</li>
                      * 
@@ -204,13 +204,13 @@ namespace TencentCloud
                      * 设置指定所生成图片的宽高比。
 <li>当 ModelName 是 GEM，可选值是 1:1、3:2、2:3、3:4、4:3、4:5、5:4、9:16、16:9 和 21:9；</li>
 <li>当 ModelName 是 Qwen，则暂不支持。</li>
-<li>当 ModelName 是 Hunyuan，则暂不支持。</li>
+<li>当 ModelName 是 Hunyuan，可选值16:9、9:16、1:1、4:3、3:4、3:2、2:3、21:9。</li>
 <li>当 ModelName 是 Vidu，可选值16:9、9:16、1:1、3:4、4:3、21:9、2:3、3:2。</li>
 <li>当 ModelName 是 Kling，可选值16:9、9:16、1:1、4:3、3:4、3:2、2:3、21:9。</li>
                      * @param _aspectRatio 指定所生成图片的宽高比。
 <li>当 ModelName 是 GEM，可选值是 1:1、3:2、2:3、3:4、4:3、4:5、5:4、9:16、16:9 和 21:9；</li>
 <li>当 ModelName 是 Qwen，则暂不支持。</li>
-<li>当 ModelName 是 Hunyuan，则暂不支持。</li>
+<li>当 ModelName 是 Hunyuan，可选值16:9、9:16、1:1、4:3、3:4、3:2、2:3、21:9。</li>
 <li>当 ModelName 是 Vidu，可选值16:9、9:16、1:1、3:4、4:3、21:9、2:3、3:2。</li>
 <li>当 ModelName 是 Kling，可选值16:9、9:16、1:1、4:3、3:4、3:2、2:3、21:9。</li>
                      * 
@@ -318,11 +318,11 @@ namespace TencentCloud
                     /**
                      * 生成图片的分辨率。
 
-* GEM 2.5 可选值：1K、2K、4K；
-* GEM 3.0 可选值：1K、2K、4K；
+* GEM 2.5 可选值：1K、2K、4K，默认1K；
+* GEM 3.0 可选值：1K、2K、4K，默认1K；
 * Vidu q2 可选值：1080p、2K、4K，默认1080p；
-* Kling 2.1 可选值：1k、2k；
-* Hunyuan 3.0 可选值：768:768、768:1024、1024:768、1024:1024、720:1280、1280:720、768:1280、1280:768，不传默认使用1024:1024。
+* Kling 2.1 可选值：1k、2k，默认1k；
+* Hunyuan 3.0 可选值：720P、1080P、2K、4K。
                      */
                     std::string m_resolution;
                     bool m_resolutionHasBeenSet;
@@ -331,7 +331,7 @@ namespace TencentCloud
                      * 指定所生成图片的宽高比。
 <li>当 ModelName 是 GEM，可选值是 1:1、3:2、2:3、3:4、4:3、4:5、5:4、9:16、16:9 和 21:9；</li>
 <li>当 ModelName 是 Qwen，则暂不支持。</li>
-<li>当 ModelName 是 Hunyuan，则暂不支持。</li>
+<li>当 ModelName 是 Hunyuan，可选值16:9、9:16、1:1、4:3、3:4、3:2、2:3、21:9。</li>
 <li>当 ModelName 是 Vidu，可选值16:9、9:16、1:1、3:4、4:3、21:9、2:3、3:2。</li>
 <li>当 ModelName 是 Kling，可选值16:9、9:16、1:1、4:3、3:4、3:2、2:3、21:9。</li>
                      */

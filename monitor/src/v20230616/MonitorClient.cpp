@@ -40,6 +40,56 @@ MonitorClient::MonitorClient(const Credential &credential, const string &region,
 }
 
 
+MonitorClient::CreateNoticeContentTmplOutcome MonitorClient::CreateNoticeContentTmpl(const CreateNoticeContentTmplRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNoticeContentTmpl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNoticeContentTmplResponse rsp = CreateNoticeContentTmplResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNoticeContentTmplOutcome(rsp);
+        else
+            return CreateNoticeContentTmplOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNoticeContentTmplOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreateNoticeContentTmplAsync(const CreateNoticeContentTmplRequest& request, const CreateNoticeContentTmplAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateNoticeContentTmplRequest&;
+    using Resp = CreateNoticeContentTmplResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateNoticeContentTmpl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::CreateNoticeContentTmplOutcomeCallable MonitorClient::CreateNoticeContentTmplCallable(const CreateNoticeContentTmplRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateNoticeContentTmplOutcome>>();
+    CreateNoticeContentTmplAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const CreateNoticeContentTmplRequest&,
+        CreateNoticeContentTmplOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MonitorClient::DescribeAlarmNotifyHistoriesOutcome MonitorClient::DescribeAlarmNotifyHistories(const DescribeAlarmNotifyHistoriesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAlarmNotifyHistories");

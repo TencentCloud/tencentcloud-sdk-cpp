@@ -23,6 +23,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/CosStorageSource.h
   include/tencentcloud/ags/v20250920/model/StartSandboxInstanceRequest.h
   include/tencentcloud/ags/v20250920/model/SandboxInstance.h
+  include/tencentcloud/ags/v20250920/model/CfsStorageSource.h
   include/tencentcloud/ags/v20250920/model/StopSandboxInstanceRequest.h
   include/tencentcloud/ags/v20250920/model/DescribeSandboxToolListResponse.h
   include/tencentcloud/ags/v20250920/model/CreateAPIKeyResponse.h
@@ -78,6 +79,7 @@ set(ags_src
   src/v20250920/model/CosStorageSource.cpp
   src/v20250920/model/StartSandboxInstanceRequest.cpp
   src/v20250920/model/SandboxInstance.cpp
+  src/v20250920/model/CfsStorageSource.cpp
   src/v20250920/model/StopSandboxInstanceRequest.cpp
   src/v20250920/model/DescribeSandboxToolListResponse.cpp
   src/v20250920/model/CreateAPIKeyResponse.cpp

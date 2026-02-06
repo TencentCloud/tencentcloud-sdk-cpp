@@ -52,9 +52,11 @@ namespace TencentCloud
                      * 获取AI生图场景类型，可选值：
 - change_clothes：AI换衣。
 - product_image：AI生商品图。
+- outpainting: AI扩图。
                      * @return Type AI生图场景类型，可选值：
 - change_clothes：AI换衣。
 - product_image：AI生商品图。
+- outpainting: AI扩图。
                      * 
                      */
                     std::string GetType() const;
@@ -63,9 +65,11 @@ namespace TencentCloud
                      * 设置AI生图场景类型，可选值：
 - change_clothes：AI换衣。
 - product_image：AI生商品图。
+- outpainting: AI扩图。
                      * @param _type AI生图场景类型，可选值：
 - change_clothes：AI换衣。
 - product_image：AI生商品图。
+- outpainting: AI扩图。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -125,6 +129,7 @@ namespace TencentCloud
                      * AI生图场景类型，可选值：
 - change_clothes：AI换衣。
 - product_image：AI生商品图。
+- outpainting: AI扩图。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

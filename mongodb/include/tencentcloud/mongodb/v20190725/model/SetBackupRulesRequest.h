@@ -250,27 +250,15 @@ namespace TencentCloud
                     bool ActiveWeekdaysHasBeenSet() const;
 
                     /**
-                     * 获取长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。
-- 不开启（默认）：不启用长期保留功能。
-- 按周保留： 指定为 weekly。
-- 按月保留： 指定为 monthly。
-                     * @return LongTermUnit 长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。
-- 不开启（默认）：不启用长期保留功能。
-- 按周保留： 指定为 weekly。
-- 按月保留： 指定为 monthly。
+                     * 获取长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。- 不开启（默认）：不启用长期保留功能。- 按周保留： 指定为 weekly。- 按月保留： 指定为 monthly。待废弃，使用LongTermInterval
+                     * @return LongTermUnit 长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。- 不开启（默认）：不启用长期保留功能。- 按周保留： 指定为 weekly。- 按月保留： 指定为 monthly。待废弃，使用LongTermInterval
                      * 
                      */
                     std::string GetLongTermUnit() const;
 
                     /**
-                     * 设置长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。
-- 不开启（默认）：不启用长期保留功能。
-- 按周保留： 指定为 weekly。
-- 按月保留： 指定为 monthly。
-                     * @param _longTermUnit 长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。
-- 不开启（默认）：不启用长期保留功能。
-- 按周保留： 指定为 weekly。
-- 按月保留： 指定为 monthly。
+                     * 设置长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。- 不开启（默认）：不启用长期保留功能。- 按周保留： 指定为 weekly。- 按月保留： 指定为 monthly。待废弃，使用LongTermInterval
+                     * @param _longTermUnit 长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。- 不开启（默认）：不启用长期保留功能。- 按周保留： 指定为 weekly。- 按月保留： 指定为 monthly。待废弃，使用LongTermInterval
                      * 
                      */
                     void SetLongTermUnit(const std::string& _longTermUnit);
@@ -395,27 +383,15 @@ namespace TencentCloud
                     bool BackupVersionHasBeenSet() const;
 
                     /**
-                     * 获取设置备份数据集存储空间使用率的告警阈值。
-- 单位：%。
--  默认值：100。
-- 取值范围：[50,300]。
-                     * @return AlarmWaterLevel 设置备份数据集存储空间使用率的告警阈值。
-- 单位：%。
--  默认值：100。
-- 取值范围：[50,300]。
+                     * 获取设置备份数据集存储空间使用率的告警阈值。- 单位：%。-  默认值：100。- 取值范围：[50,300]。待废弃,使用AlertThreshold
+                     * @return AlarmWaterLevel 设置备份数据集存储空间使用率的告警阈值。- 单位：%。-  默认值：100。- 取值范围：[50,300]。待废弃,使用AlertThreshold
                      * 
                      */
                     int64_t GetAlarmWaterLevel() const;
 
                     /**
-                     * 设置设置备份数据集存储空间使用率的告警阈值。
-- 单位：%。
--  默认值：100。
-- 取值范围：[50,300]。
-                     * @param _alarmWaterLevel 设置备份数据集存储空间使用率的告警阈值。
-- 单位：%。
--  默认值：100。
-- 取值范围：[50,300]。
+                     * 设置设置备份数据集存储空间使用率的告警阈值。- 单位：%。-  默认值：100。- 取值范围：[50,300]。待废弃,使用AlertThreshold
+                     * @param _alarmWaterLevel 设置备份数据集存储空间使用率的告警阈值。- 单位：%。-  默认值：100。- 取值范围：[50,300]。待废弃,使用AlertThreshold
                      * 
                      */
                     void SetAlarmWaterLevel(const int64_t& _alarmWaterLevel);
@@ -426,6 +402,48 @@ namespace TencentCloud
                      * 
                      */
                     bool AlarmWaterLevelHasBeenSet() const;
+
+                    /**
+                     * 获取长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。- 不开启（默认）：不启用长期保留功能。- 按周保留： 指定为 weekly。- 按月保留： 指定为 monthly。
+                     * @return LongTermInterval 长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。- 不开启（默认）：不启用长期保留功能。- 按周保留： 指定为 weekly。- 按月保留： 指定为 monthly。
+                     * 
+                     */
+                    std::string GetLongTermInterval() const;
+
+                    /**
+                     * 设置长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。- 不开启（默认）：不启用长期保留功能。- 按周保留： 指定为 weekly。- 按月保留： 指定为 monthly。
+                     * @param _longTermInterval 长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。- 不开启（默认）：不启用长期保留功能。- 按周保留： 指定为 weekly。- 按月保留： 指定为 monthly。
+                     * 
+                     */
+                    void SetLongTermInterval(const std::string& _longTermInterval);
+
+                    /**
+                     * 判断参数 LongTermInterval 是否已赋值
+                     * @return LongTermInterval 是否已赋值
+                     * 
+                     */
+                    bool LongTermIntervalHasBeenSet() const;
+
+                    /**
+                     * 获取设置备份数据集存储空间使用率的告警阈值。- 单位：%。-  默认值：100。- 取值范围：[50,300]。
+                     * @return AlertThreshold 设置备份数据集存储空间使用率的告警阈值。- 单位：%。-  默认值：100。- 取值范围：[50,300]。
+                     * 
+                     */
+                    int64_t GetAlertThreshold() const;
+
+                    /**
+                     * 设置设置备份数据集存储空间使用率的告警阈值。- 单位：%。-  默认值：100。- 取值范围：[50,300]。
+                     * @param _alertThreshold 设置备份数据集存储空间使用率的告警阈值。- 单位：%。-  默认值：100。- 取值范围：[50,300]。
+                     * 
+                     */
+                    void SetAlertThreshold(const int64_t& _alertThreshold);
+
+                    /**
+                     * 判断参数 AlertThreshold 是否已赋值
+                     * @return AlertThreshold 是否已赋值
+                     * 
+                     */
+                    bool AlertThresholdHasBeenSet() const;
 
                 private:
 
@@ -487,10 +505,7 @@ namespace TencentCloud
                     bool m_activeWeekdaysHasBeenSet;
 
                     /**
-                     * 长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。
-- 不开启（默认）：不启用长期保留功能。
-- 按周保留： 指定为 weekly。
-- 按月保留： 指定为 monthly。
+                     * 长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。- 不开启（默认）：不启用长期保留功能。- 按周保留： 指定为 weekly。- 按月保留： 指定为 monthly。待废弃，使用LongTermInterval
                      */
                     std::string m_longTermUnit;
                     bool m_longTermUnitHasBeenSet;
@@ -527,13 +542,22 @@ namespace TencentCloud
                     bool m_backupVersionHasBeenSet;
 
                     /**
-                     * 设置备份数据集存储空间使用率的告警阈值。
-- 单位：%。
--  默认值：100。
-- 取值范围：[50,300]。
+                     * 设置备份数据集存储空间使用率的告警阈值。- 单位：%。-  默认值：100。- 取值范围：[50,300]。待废弃,使用AlertThreshold
                      */
                     int64_t m_alarmWaterLevel;
                     bool m_alarmWaterLevelHasBeenSet;
+
+                    /**
+                     * 长期保留周期。支持按周或按月选择特定日期的备份（例如，每月1日、15日的备份数据），将其保留更长周期。- 不开启（默认）：不启用长期保留功能。- 按周保留： 指定为 weekly。- 按月保留： 指定为 monthly。
+                     */
+                    std::string m_longTermInterval;
+                    bool m_longTermIntervalHasBeenSet;
+
+                    /**
+                     * 设置备份数据集存储空间使用率的告警阈值。- 单位：%。-  默认值：100。- 取值范围：[50,300]。
+                     */
+                    int64_t m_alertThreshold;
+                    bool m_alertThresholdHasBeenSet;
 
                 };
             }

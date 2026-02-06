@@ -22,7 +22,8 @@ using namespace std;
 
 StorageSource::StorageSource() :
     m_cosHasBeenSet(false),
-    m_imageHasBeenSet(false)
+    m_imageHasBeenSet(false),
+    m_cfsHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,23 @@ CoreInternalOutcome StorageSource::Deserialize(const rapidjson::Value &value)
         m_imageHasBeenSet = true;
     }
 
+    if (value.HasMember("Cfs") && !value["Cfs"].IsNull())
+    {
+        if (!value["Cfs"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `StorageSource.Cfs` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cfs.Deserialize(value["Cfs"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cfsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +106,15 @@ void StorageSource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_image.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cfsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cfs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cfs.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -123,5 +150,21 @@ void StorageSource::SetImage(const ImageStorageSource& _image)
 bool StorageSource::ImageHasBeenSet() const
 {
     return m_imageHasBeenSet;
+}
+
+CfsStorageSource StorageSource::GetCfs() const
+{
+    return m_cfs;
+}
+
+void StorageSource::SetCfs(const CfsStorageSource& _cfs)
+{
+    m_cfs = _cfs;
+    m_cfsHasBeenSet = true;
+}
+
+bool StorageSource::CfsHasBeenSet() const
+{
+    return m_cfsHasBeenSet;
 }
 

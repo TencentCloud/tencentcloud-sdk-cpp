@@ -35,7 +35,9 @@ SetBackupRulesRequest::SetBackupRulesRequest() :
     m_longTermExpiredDaysHasBeenSet(false),
     m_oplogExpiredDaysHasBeenSet(false),
     m_backupVersionHasBeenSet(false),
-    m_alarmWaterLevelHasBeenSet(false)
+    m_alarmWaterLevelHasBeenSet(false),
+    m_longTermIntervalHasBeenSet(false),
+    m_alertThresholdHasBeenSet(false)
 {
 }
 
@@ -148,6 +150,22 @@ string SetBackupRulesRequest::ToJsonString() const
         string key = "AlarmWaterLevel";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_alarmWaterLevel, allocator);
+    }
+
+    if (m_longTermIntervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LongTermInterval";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_longTermInterval.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alertThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlertThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_alertThreshold, allocator);
     }
 
 
@@ -364,6 +382,38 @@ void SetBackupRulesRequest::SetAlarmWaterLevel(const int64_t& _alarmWaterLevel)
 bool SetBackupRulesRequest::AlarmWaterLevelHasBeenSet() const
 {
     return m_alarmWaterLevelHasBeenSet;
+}
+
+string SetBackupRulesRequest::GetLongTermInterval() const
+{
+    return m_longTermInterval;
+}
+
+void SetBackupRulesRequest::SetLongTermInterval(const string& _longTermInterval)
+{
+    m_longTermInterval = _longTermInterval;
+    m_longTermIntervalHasBeenSet = true;
+}
+
+bool SetBackupRulesRequest::LongTermIntervalHasBeenSet() const
+{
+    return m_longTermIntervalHasBeenSet;
+}
+
+int64_t SetBackupRulesRequest::GetAlertThreshold() const
+{
+    return m_alertThreshold;
+}
+
+void SetBackupRulesRequest::SetAlertThreshold(const int64_t& _alertThreshold)
+{
+    m_alertThreshold = _alertThreshold;
+    m_alertThresholdHasBeenSet = true;
+}
+
+bool SetBackupRulesRequest::AlertThresholdHasBeenSet() const
+{
+    return m_alertThresholdHasBeenSet;
 }
 
 

@@ -26,7 +26,9 @@ SceneAigcImageOutputConfig::SceneAigcImageOutputConfig() :
     m_classIdHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
     m_aspectRatioHasBeenSet(false),
-    m_encodeConfigHasBeenSet(false)
+    m_encodeConfigHasBeenSet(false),
+    m_imageWidthHasBeenSet(false),
+    m_imageHeightHasBeenSet(false)
 {
 }
 
@@ -102,6 +104,26 @@ CoreInternalOutcome SceneAigcImageOutputConfig::Deserialize(const rapidjson::Val
         m_encodeConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageWidth") && !value["ImageWidth"].IsNull())
+    {
+        if (!value["ImageWidth"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SceneAigcImageOutputConfig.ImageWidth` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageWidth = value["ImageWidth"].GetUint64();
+        m_imageWidthHasBeenSet = true;
+    }
+
+    if (value.HasMember("ImageHeight") && !value["ImageHeight"].IsNull())
+    {
+        if (!value["ImageHeight"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SceneAigcImageOutputConfig.ImageHeight` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageHeight = value["ImageHeight"].GetUint64();
+        m_imageHeightHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +178,22 @@ void SceneAigcImageOutputConfig::ToJsonObject(rapidjson::Value &value, rapidjson
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_encodeConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_imageWidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageWidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_imageWidth, allocator);
+    }
+
+    if (m_imageHeightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageHeight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_imageHeight, allocator);
     }
 
 }
@@ -255,5 +293,37 @@ void SceneAigcImageOutputConfig::SetEncodeConfig(const ImageSceneAigcEncodeConfi
 bool SceneAigcImageOutputConfig::EncodeConfigHasBeenSet() const
 {
     return m_encodeConfigHasBeenSet;
+}
+
+uint64_t SceneAigcImageOutputConfig::GetImageWidth() const
+{
+    return m_imageWidth;
+}
+
+void SceneAigcImageOutputConfig::SetImageWidth(const uint64_t& _imageWidth)
+{
+    m_imageWidth = _imageWidth;
+    m_imageWidthHasBeenSet = true;
+}
+
+bool SceneAigcImageOutputConfig::ImageWidthHasBeenSet() const
+{
+    return m_imageWidthHasBeenSet;
+}
+
+uint64_t SceneAigcImageOutputConfig::GetImageHeight() const
+{
+    return m_imageHeight;
+}
+
+void SceneAigcImageOutputConfig::SetImageHeight(const uint64_t& _imageHeight)
+{
+    m_imageHeight = _imageHeight;
+    m_imageHeightHasBeenSet = true;
+}
+
+bool SceneAigcImageOutputConfig::ImageHeightHasBeenSet() const
+{
+    return m_imageHeightHasBeenSet;
 }
 

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ags/v20250920/model/CosStorageSource.h>
 #include <tencentcloud/ags/v20250920/model/ImageStorageSource.h>
+#include <tencentcloud/ags/v20250920/model/CfsStorageSource.h>
 
 
 namespace TencentCloud
@@ -90,6 +91,27 @@ namespace TencentCloud
                      */
                     bool ImageHasBeenSet() const;
 
+                    /**
+                     * 获取文件存储配置
+                     * @return Cfs 文件存储配置
+                     * 
+                     */
+                    CfsStorageSource GetCfs() const;
+
+                    /**
+                     * 设置文件存储配置
+                     * @param _cfs 文件存储配置
+                     * 
+                     */
+                    void SetCfs(const CfsStorageSource& _cfs);
+
+                    /**
+                     * 判断参数 Cfs 是否已赋值
+                     * @return Cfs 是否已赋值
+                     * 
+                     */
+                    bool CfsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -103,6 +125,12 @@ namespace TencentCloud
                      */
                     ImageStorageSource m_image;
                     bool m_imageHasBeenSet;
+
+                    /**
+                     * 文件存储配置
+                     */
+                    CfsStorageSource m_cfs;
+                    bool m_cfsHasBeenSet;
 
                 };
             }

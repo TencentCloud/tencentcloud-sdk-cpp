@@ -133,6 +133,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/ParamTpl.h
   include/tencentcloud/mongodb/v20190725/model/InquirePriceModifyDBInstanceSpecResponse.h
   include/tencentcloud/mongodb/v20190725/model/SecurityGroupBound.h
+  include/tencentcloud/mongodb/v20190725/model/BackupTotalSize.h
   include/tencentcloud/mongodb/v20190725/model/DescribeDBInstanceNodePropertyResponse.h
   include/tencentcloud/mongodb/v20190725/model/InstanceInfo.h
   include/tencentcloud/mongodb/v20190725/model/DescribeDBInstanceParamTplDetailResponse.h
@@ -358,6 +359,7 @@ set(mongodb_src
   src/v20190725/model/ParamTpl.cpp
   src/v20190725/model/InquirePriceModifyDBInstanceSpecResponse.cpp
   src/v20190725/model/SecurityGroupBound.cpp
+  src/v20190725/model/BackupTotalSize.cpp
   src/v20190725/model/DescribeDBInstanceNodePropertyResponse.cpp
   src/v20190725/model/InstanceInfo.cpp
   src/v20190725/model/DescribeDBInstanceParamTplDetailResponse.cpp

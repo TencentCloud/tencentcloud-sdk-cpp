@@ -23,7 +23,9 @@ using namespace std;
 EyeItem::EyeItem() :
     m_leftHasBeenSet(false),
     m_rightHasBeenSet(false),
-    m_pdHasBeenSet(false)
+    m_pdHasBeenSet(false),
+    m_rightFinalHasBeenSet(false),
+    m_leftFinalHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,40 @@ CoreInternalOutcome EyeItem::Deserialize(const rapidjson::Value &value)
         m_pdHasBeenSet = true;
     }
 
+    if (value.HasMember("RightFinal") && !value["RightFinal"].IsNull())
+    {
+        if (!value["RightFinal"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EyeItem.RightFinal` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rightFinal.Deserialize(value["RightFinal"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rightFinalHasBeenSet = true;
+    }
+
+    if (value.HasMember("LeftFinal") && !value["LeftFinal"].IsNull())
+    {
+        if (!value["LeftFinal"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EyeItem.LeftFinal` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_leftFinal.Deserialize(value["LeftFinal"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_leftFinalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +151,24 @@ void EyeItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_pd.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_rightFinalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RightFinal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rightFinal.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_leftFinalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LeftFinal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_leftFinal.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -166,5 +220,37 @@ void EyeItem::SetPd(const BaseItem2& _pd)
 bool EyeItem::PdHasBeenSet() const
 {
     return m_pdHasBeenSet;
+}
+
+EyeFinalItem EyeItem::GetRightFinal() const
+{
+    return m_rightFinal;
+}
+
+void EyeItem::SetRightFinal(const EyeFinalItem& _rightFinal)
+{
+    m_rightFinal = _rightFinal;
+    m_rightFinalHasBeenSet = true;
+}
+
+bool EyeItem::RightFinalHasBeenSet() const
+{
+    return m_rightFinalHasBeenSet;
+}
+
+EyeFinalItem EyeItem::GetLeftFinal() const
+{
+    return m_leftFinal;
+}
+
+void EyeItem::SetLeftFinal(const EyeFinalItem& _leftFinal)
+{
+    m_leftFinal = _leftFinal;
+    m_leftFinalHasBeenSet = true;
+}
+
+bool EyeItem::LeftFinalHasBeenSet() const
+{
+    return m_leftFinalHasBeenSet;
 }
 

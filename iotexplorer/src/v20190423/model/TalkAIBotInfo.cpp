@@ -35,7 +35,8 @@ TalkAIBotInfo::TalkAIBotInfo() :
     m_productListHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_boundProductsHasBeenSet(false)
+    m_boundProductsHasBeenSet(false),
+    m_customToolsHasBeenSet(false)
 {
 }
 
@@ -239,6 +240,16 @@ CoreInternalOutcome TalkAIBotInfo::Deserialize(const rapidjson::Value &value)
         m_boundProductsHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomTools") && !value["CustomTools"].IsNull())
+    {
+        if (!value["CustomTools"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TalkAIBotInfo.CustomTools` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customTools = string(value["CustomTools"].GetString());
+        m_customToolsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +387,14 @@ void TalkAIBotInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_customToolsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomTools";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customTools.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -619,5 +638,21 @@ void TalkAIBotInfo::SetBoundProducts(const vector<TalkProductInfo>& _boundProduc
 bool TalkAIBotInfo::BoundProductsHasBeenSet() const
 {
     return m_boundProductsHasBeenSet;
+}
+
+string TalkAIBotInfo::GetCustomTools() const
+{
+    return m_customTools;
+}
+
+void TalkAIBotInfo::SetCustomTools(const string& _customTools)
+{
+    m_customTools = _customTools;
+    m_customToolsHasBeenSet = true;
+}
+
+bool TalkAIBotInfo::CustomToolsHasBeenSet() const
+{
+    return m_customToolsHasBeenSet;
 }
 
