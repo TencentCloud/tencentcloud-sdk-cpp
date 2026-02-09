@@ -32,15 +32,16 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CloudBaseClientQPSPolicy.h
   include/tencentcloud/tcb/v20180608/model/ModifyClsTopicResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateIndex.h
+  include/tencentcloud/tcb/v20180608/model/ClusterDetail.h
   include/tencentcloud/tcb/v20180608/model/DbInstance.h
-  include/tencentcloud/tcb/v20180608/model/EditAuthConfigResponse.h
+  include/tencentcloud/tcb/v20180608/model/DescribeMySQLClusterDetailResponse.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunSideSpec.h
   include/tencentcloud/tcb/v20180608/model/CommonServiceAPIResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeGraphDataResponse.h
   include/tencentcloud/tcb/v20180608/model/DeleteUsersResp.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvLimitRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceResponse.h
-  include/tencentcloud/tcb/v20180608/model/DescribeSpecialCostItemsRequest.h
+  include/tencentcloud/tcb/v20180608/model/DescribeMySQLTaskStatusRequest.h
   include/tencentcloud/tcb/v20180608/model/UnfreezeCloudBaseRunServersRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionRequest.h
   include/tencentcloud/tcb/v20180608/model/BanConfig.h
@@ -50,7 +51,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/BindCloudBaseAccessDomainResponse.h
   include/tencentcloud/tcb/v20180608/model/DestroyStaticStoreRequest.h
   include/tencentcloud/tcb/v20180608/model/ReplaceActivityRecordResponse.h
-  include/tencentcloud/tcb/v20180608/model/LogServiceInfo.h
+  include/tencentcloud/tcb/v20180608/model/DescribeSpecialCostItemsRequest.h
   include/tencentcloud/tcb/v20180608/model/CreatePostpayPackageRequest.h
   include/tencentcloud/tcb/v20180608/model/MongoConnector.h
   include/tencentcloud/tcb/v20180608/model/DescribeCurveDataResponse.h
@@ -81,6 +82,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/ModifyGatewayVersionTrafficRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeQuotaDataResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateBillDealResponse.h
+  include/tencentcloud/tcb/v20180608/model/CreateMySQLResult.h
   include/tencentcloud/tcb/v20180608/model/DescribeGatewayCurveDataResponse.h
   include/tencentcloud/tcb/v20180608/model/KVPair.h
   include/tencentcloud/tcb/v20180608/model/SmsFreeQuota.h
@@ -92,6 +94,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeActivityRecordResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateUserResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvAccountCircleRequest.h
+  include/tencentcloud/tcb/v20180608/model/DescribeMySQLClusterDetailRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateStaticStoreRequest.h
   include/tencentcloud/tcb/v20180608/model/DeleteCloudBaseProjectLatestVersionResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeGatewayCurveDataRequest.h
@@ -102,8 +105,10 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunVersionFlowItem.h
   include/tencentcloud/tcb/v20180608/model/ModifyDatabaseACLResponse.h
   include/tencentcloud/tcb/v20180608/model/DeleteWxGatewayRouteRequest.h
+  include/tencentcloud/tcb/v20180608/model/EditAuthConfigResponse.h
   include/tencentcloud/tcb/v20180608/model/EstablishWxGatewayRouteRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvPostpaidDeductRequest.h
+  include/tencentcloud/tcb/v20180608/model/DestroyMySQLResponse.h
   include/tencentcloud/tcb/v20180608/model/CustomHeader.h
   include/tencentcloud/tcb/v20180608/model/UpdateTableResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeExtraPkgBillingInfoRequest.h
@@ -112,8 +117,10 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeEnvFreeQuotaRequest.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseCapabilities.h
   include/tencentcloud/tcb/v20180608/model/DescribeExtensionUploadInfoRequest.h
+  include/tencentcloud/tcb/v20180608/model/DescribeCreateMySQLResultRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeBillingInfoRequest.h
   include/tencentcloud/tcb/v20180608/model/HpaPolicy.h
+  include/tencentcloud/tcb/v20180608/model/TkeClusterInfo.h
   include/tencentcloud/tcb/v20180608/model/CreateCloudBaseRunResourceResponse.h
   include/tencentcloud/tcb/v20180608/model/LogObject.h
   include/tencentcloud/tcb/v20180608/model/DestroyStaticStoreResponse.h
@@ -121,6 +128,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeUserListResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateTableRequest.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseEsInfo.h
+  include/tencentcloud/tcb/v20180608/model/CreateMySQLResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerFlowConfResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeDownloadFileResponse.h
   include/tencentcloud/tcb/v20180608/model/DeleteTableRequest.h
@@ -132,18 +140,20 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CodeSource.h
   include/tencentcloud/tcb/v20180608/model/RunSqlRequest.h
   include/tencentcloud/tcb/v20180608/model/User.h
+  include/tencentcloud/tcb/v20180608/model/DestroyMySQLRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvsResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribePostpayPackageFreeQuotasRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateAuthDomainRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvPostpaidDeductResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateHostingDomainResponse.h
-  include/tencentcloud/tcb/v20180608/model/TkeClusterInfo.h
+  include/tencentcloud/tcb/v20180608/model/MySQLTaskStatus.h
   include/tencentcloud/tcb/v20180608/model/RunSqlResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeActivityRecordRequest.h
   include/tencentcloud/tcb/v20180608/model/DeleteCloudBaseRunServerVersionRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateCloudBaseRunServerVersionRequest.h
   include/tencentcloud/tcb/v20180608/model/DeleteCloudBaseGWAPIRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateCloudBaseGWAPIResponse.h
+  include/tencentcloud/tcb/v20180608/model/DescribeCreateMySQLResultResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeSafeRuleRequest.h
   include/tencentcloud/tcb/v20180608/model/DeleteUsersRequest.h
   include/tencentcloud/tcb/v20180608/model/CbrRepoInfo.h
@@ -175,10 +185,11 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunResourceForExtendResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateAndDeployCloudBaseProjectRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerVersionRequest.h
+  include/tencentcloud/tcb/v20180608/model/DestroyMySQLResult.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseGWAPIResponse.h
   include/tencentcloud/tcb/v20180608/model/UnfreezeCloudBaseRunServersResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseGWAPIRequest.h
-  include/tencentcloud/tcb/v20180608/model/DescribeCbrServerVersionRequest.h
+  include/tencentcloud/tcb/v20180608/model/CreateMySQLRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeWxGatewayRoutesResponse.h
   include/tencentcloud/tcb/v20180608/model/DatabasesInfo.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseSecurityContext.h
@@ -190,6 +201,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CreateUserRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateCloudBaseRunServerVersionResponse.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunServerVersionItem.h
+  include/tencentcloud/tcb/v20180608/model/DescribeMySQLTaskStatusResponse.h
   include/tencentcloud/tcb/v20180608/model/TableInfo.h
   include/tencentcloud/tcb/v20180608/model/DeleteCloudBaseProjectLatestVersionRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseProjectLatestVersionListResponse.h
@@ -229,7 +241,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/AuthDomain.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseGWAPIQPSPolicy.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseProjectLatestVersionListRequest.h
-  include/tencentcloud/tcb/v20180608/model/PermissionInfo.h
+  include/tencentcloud/tcb/v20180608/model/LogServiceInfo.h
   include/tencentcloud/tcb/v20180608/model/FrequencyLimitConfig.h
   include/tencentcloud/tcb/v20180608/model/DescribeHostingDomainTaskResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeTableResponse.h
@@ -237,6 +249,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CloudBaseOption.h
   include/tencentcloud/tcb/v20180608/model/IndexInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionResponse.h
+  include/tencentcloud/tcb/v20180608/model/DescribeCbrServerVersionRequest.h
   include/tencentcloud/tcb/v20180608/model/SearchClsLogResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseGWServiceRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunResourceForExtendRequest.h
@@ -244,15 +257,19 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/SearchClsLogRequest.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseCodeRepoDetail.h
   include/tencentcloud/tcb/v20180608/model/CheckTcbServiceRequest.h
+  include/tencentcloud/tcb/v20180608/model/MySQLNetDetail.h
+  include/tencentcloud/tcb/v20180608/model/PermissionInfo.h
   include/tencentcloud/tcb/v20180608/model/Pager.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeDatabaseACLRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeUserActivityInfoRequest.h
+  include/tencentcloud/tcb/v20180608/model/DescribeCreateMySQLResult.h
   include/tencentcloud/tcb/v20180608/model/DeleteCloudBaseGWAPIResponse.h
   include/tencentcloud/tcb/v20180608/model/Tag.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionSnapshotResponse.h
   include/tencentcloud/tcb/v20180608/model/ReinstateEnvRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateCloudBaseRunResourceRequest.h
+  include/tencentcloud/tcb/v20180608/model/MySQLClusterDetail.h
   include/tencentcloud/tcb/v20180608/model/DescribeAuthDomainsRequest.h
   include/tencentcloud/tcb/v20180608/model/FreezeCloudBaseRunServersResponse.h
   include/tencentcloud/tcb/v20180608/model/CloudRunServiceVolume.h
@@ -297,15 +314,16 @@ set(tcb_src
   src/v20180608/model/CloudBaseClientQPSPolicy.cpp
   src/v20180608/model/ModifyClsTopicResponse.cpp
   src/v20180608/model/CreateIndex.cpp
+  src/v20180608/model/ClusterDetail.cpp
   src/v20180608/model/DbInstance.cpp
-  src/v20180608/model/EditAuthConfigResponse.cpp
+  src/v20180608/model/DescribeMySQLClusterDetailResponse.cpp
   src/v20180608/model/CloudBaseRunSideSpec.cpp
   src/v20180608/model/CommonServiceAPIResponse.cpp
   src/v20180608/model/DescribeGraphDataResponse.cpp
   src/v20180608/model/DeleteUsersResp.cpp
   src/v20180608/model/DescribeEnvLimitRequest.cpp
   src/v20180608/model/DescribeCloudBaseBuildServiceResponse.cpp
-  src/v20180608/model/DescribeSpecialCostItemsRequest.cpp
+  src/v20180608/model/DescribeMySQLTaskStatusRequest.cpp
   src/v20180608/model/UnfreezeCloudBaseRunServersRequest.cpp
   src/v20180608/model/DescribeCloudBaseRunVersionRequest.cpp
   src/v20180608/model/BanConfig.cpp
@@ -315,7 +333,7 @@ set(tcb_src
   src/v20180608/model/BindCloudBaseAccessDomainResponse.cpp
   src/v20180608/model/DestroyStaticStoreRequest.cpp
   src/v20180608/model/ReplaceActivityRecordResponse.cpp
-  src/v20180608/model/LogServiceInfo.cpp
+  src/v20180608/model/DescribeSpecialCostItemsRequest.cpp
   src/v20180608/model/CreatePostpayPackageRequest.cpp
   src/v20180608/model/MongoConnector.cpp
   src/v20180608/model/DescribeCurveDataResponse.cpp
@@ -346,6 +364,7 @@ set(tcb_src
   src/v20180608/model/ModifyGatewayVersionTrafficRequest.cpp
   src/v20180608/model/DescribeQuotaDataResponse.cpp
   src/v20180608/model/CreateBillDealResponse.cpp
+  src/v20180608/model/CreateMySQLResult.cpp
   src/v20180608/model/DescribeGatewayCurveDataResponse.cpp
   src/v20180608/model/KVPair.cpp
   src/v20180608/model/SmsFreeQuota.cpp
@@ -357,6 +376,7 @@ set(tcb_src
   src/v20180608/model/DescribeActivityRecordResponse.cpp
   src/v20180608/model/CreateUserResponse.cpp
   src/v20180608/model/DescribeEnvAccountCircleRequest.cpp
+  src/v20180608/model/DescribeMySQLClusterDetailRequest.cpp
   src/v20180608/model/CreateStaticStoreRequest.cpp
   src/v20180608/model/DeleteCloudBaseProjectLatestVersionResponse.cpp
   src/v20180608/model/DescribeGatewayCurveDataRequest.cpp
@@ -367,8 +387,10 @@ set(tcb_src
   src/v20180608/model/CloudBaseRunVersionFlowItem.cpp
   src/v20180608/model/ModifyDatabaseACLResponse.cpp
   src/v20180608/model/DeleteWxGatewayRouteRequest.cpp
+  src/v20180608/model/EditAuthConfigResponse.cpp
   src/v20180608/model/EstablishWxGatewayRouteRequest.cpp
   src/v20180608/model/DescribeEnvPostpaidDeductRequest.cpp
+  src/v20180608/model/DestroyMySQLResponse.cpp
   src/v20180608/model/CustomHeader.cpp
   src/v20180608/model/UpdateTableResponse.cpp
   src/v20180608/model/DescribeExtraPkgBillingInfoRequest.cpp
@@ -377,8 +399,10 @@ set(tcb_src
   src/v20180608/model/DescribeEnvFreeQuotaRequest.cpp
   src/v20180608/model/CloudBaseCapabilities.cpp
   src/v20180608/model/DescribeExtensionUploadInfoRequest.cpp
+  src/v20180608/model/DescribeCreateMySQLResultRequest.cpp
   src/v20180608/model/DescribeBillingInfoRequest.cpp
   src/v20180608/model/HpaPolicy.cpp
+  src/v20180608/model/TkeClusterInfo.cpp
   src/v20180608/model/CreateCloudBaseRunResourceResponse.cpp
   src/v20180608/model/LogObject.cpp
   src/v20180608/model/DestroyStaticStoreResponse.cpp
@@ -386,6 +410,7 @@ set(tcb_src
   src/v20180608/model/DescribeUserListResponse.cpp
   src/v20180608/model/CreateTableRequest.cpp
   src/v20180608/model/CloudBaseEsInfo.cpp
+  src/v20180608/model/CreateMySQLResponse.cpp
   src/v20180608/model/ModifyCloudBaseRunServerFlowConfResponse.cpp
   src/v20180608/model/DescribeDownloadFileResponse.cpp
   src/v20180608/model/DeleteTableRequest.cpp
@@ -397,18 +422,20 @@ set(tcb_src
   src/v20180608/model/CodeSource.cpp
   src/v20180608/model/RunSqlRequest.cpp
   src/v20180608/model/User.cpp
+  src/v20180608/model/DestroyMySQLRequest.cpp
   src/v20180608/model/DescribeEnvsResponse.cpp
   src/v20180608/model/DescribePostpayPackageFreeQuotasRequest.cpp
   src/v20180608/model/CreateAuthDomainRequest.cpp
   src/v20180608/model/DescribeEnvPostpaidDeductResponse.cpp
   src/v20180608/model/CreateHostingDomainResponse.cpp
-  src/v20180608/model/TkeClusterInfo.cpp
+  src/v20180608/model/MySQLTaskStatus.cpp
   src/v20180608/model/RunSqlResponse.cpp
   src/v20180608/model/DescribeActivityRecordRequest.cpp
   src/v20180608/model/DeleteCloudBaseRunServerVersionRequest.cpp
   src/v20180608/model/CreateCloudBaseRunServerVersionRequest.cpp
   src/v20180608/model/DeleteCloudBaseGWAPIRequest.cpp
   src/v20180608/model/CreateCloudBaseGWAPIResponse.cpp
+  src/v20180608/model/DescribeCreateMySQLResultResponse.cpp
   src/v20180608/model/DescribeSafeRuleRequest.cpp
   src/v20180608/model/DeleteUsersRequest.cpp
   src/v20180608/model/CbrRepoInfo.cpp
@@ -440,10 +467,11 @@ set(tcb_src
   src/v20180608/model/DescribeCloudBaseRunResourceForExtendResponse.cpp
   src/v20180608/model/CreateAndDeployCloudBaseProjectRequest.cpp
   src/v20180608/model/ModifyCloudBaseRunServerVersionRequest.cpp
+  src/v20180608/model/DestroyMySQLResult.cpp
   src/v20180608/model/DescribeCloudBaseGWAPIResponse.cpp
   src/v20180608/model/UnfreezeCloudBaseRunServersResponse.cpp
   src/v20180608/model/DescribeCloudBaseGWAPIRequest.cpp
-  src/v20180608/model/DescribeCbrServerVersionRequest.cpp
+  src/v20180608/model/CreateMySQLRequest.cpp
   src/v20180608/model/DescribeWxGatewayRoutesResponse.cpp
   src/v20180608/model/DatabasesInfo.cpp
   src/v20180608/model/CloudBaseSecurityContext.cpp
@@ -455,6 +483,7 @@ set(tcb_src
   src/v20180608/model/CreateUserRequest.cpp
   src/v20180608/model/CreateCloudBaseRunServerVersionResponse.cpp
   src/v20180608/model/CloudBaseRunServerVersionItem.cpp
+  src/v20180608/model/DescribeMySQLTaskStatusResponse.cpp
   src/v20180608/model/TableInfo.cpp
   src/v20180608/model/DeleteCloudBaseProjectLatestVersionRequest.cpp
   src/v20180608/model/DescribeCloudBaseProjectLatestVersionListResponse.cpp
@@ -494,7 +523,7 @@ set(tcb_src
   src/v20180608/model/AuthDomain.cpp
   src/v20180608/model/CloudBaseGWAPIQPSPolicy.cpp
   src/v20180608/model/DescribeCloudBaseProjectLatestVersionListRequest.cpp
-  src/v20180608/model/PermissionInfo.cpp
+  src/v20180608/model/LogServiceInfo.cpp
   src/v20180608/model/FrequencyLimitConfig.cpp
   src/v20180608/model/DescribeHostingDomainTaskResponse.cpp
   src/v20180608/model/DescribeTableResponse.cpp
@@ -502,6 +531,7 @@ set(tcb_src
   src/v20180608/model/CloudBaseOption.cpp
   src/v20180608/model/IndexInfo.cpp
   src/v20180608/model/DescribeCloudBaseRunVersionResponse.cpp
+  src/v20180608/model/DescribeCbrServerVersionRequest.cpp
   src/v20180608/model/SearchClsLogResponse.cpp
   src/v20180608/model/DescribeCloudBaseGWServiceRequest.cpp
   src/v20180608/model/DescribeCloudBaseRunResourceForExtendRequest.cpp
@@ -509,15 +539,19 @@ set(tcb_src
   src/v20180608/model/SearchClsLogRequest.cpp
   src/v20180608/model/CloudBaseCodeRepoDetail.cpp
   src/v20180608/model/CheckTcbServiceRequest.cpp
+  src/v20180608/model/MySQLNetDetail.cpp
+  src/v20180608/model/PermissionInfo.cpp
   src/v20180608/model/Pager.cpp
   src/v20180608/model/DescribeCloudBaseRunServerResponse.cpp
   src/v20180608/model/DescribeDatabaseACLRequest.cpp
   src/v20180608/model/DescribeUserActivityInfoRequest.cpp
+  src/v20180608/model/DescribeCreateMySQLResult.cpp
   src/v20180608/model/DeleteCloudBaseGWAPIResponse.cpp
   src/v20180608/model/Tag.cpp
   src/v20180608/model/DescribeCloudBaseRunVersionSnapshotResponse.cpp
   src/v20180608/model/ReinstateEnvRequest.cpp
   src/v20180608/model/CreateCloudBaseRunResourceRequest.cpp
+  src/v20180608/model/MySQLClusterDetail.cpp
   src/v20180608/model/DescribeAuthDomainsRequest.cpp
   src/v20180608/model/FreezeCloudBaseRunServersResponse.cpp
   src/v20180608/model/CloudRunServiceVolume.cpp

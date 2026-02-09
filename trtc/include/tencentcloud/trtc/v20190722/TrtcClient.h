@@ -85,8 +85,6 @@
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCRealTimeQualityDataResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCRealTimeScaleDataRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTRTCRealTimeScaleDataResponse.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeTRTCRealTimeScaleMetricDataRequest.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeTRTCRealTimeScaleMetricDataResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTrtcMcuTranscodeTimeRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTrtcMcuTranscodeTimeResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTrtcRoomUsageRequest.h>
@@ -270,9 +268,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTRTCRealTimeScaleDataResponse> DescribeTRTCRealTimeScaleDataOutcome;
                 typedef std::future<DescribeTRTCRealTimeScaleDataOutcome> DescribeTRTCRealTimeScaleDataOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeTRTCRealTimeScaleDataRequest&, DescribeTRTCRealTimeScaleDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTRTCRealTimeScaleDataAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeTRTCRealTimeScaleMetricDataResponse> DescribeTRTCRealTimeScaleMetricDataOutcome;
-                typedef std::future<DescribeTRTCRealTimeScaleMetricDataOutcome> DescribeTRTCRealTimeScaleMetricDataOutcomeCallable;
-                typedef std::function<void(const TrtcClient*, const Model::DescribeTRTCRealTimeScaleMetricDataRequest&, DescribeTRTCRealTimeScaleMetricDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTRTCRealTimeScaleMetricDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTrtcMcuTranscodeTimeResponse> DescribeTrtcMcuTranscodeTimeOutcome;
                 typedef std::future<DescribeTrtcMcuTranscodeTimeOutcome> DescribeTrtcMcuTranscodeTimeOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeTrtcMcuTranscodeTimeRequest&, DescribeTrtcMcuTranscodeTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrtcMcuTranscodeTimeAsyncHandler;
@@ -756,24 +751,6 @@ peakCurrentUsers：峰值同时在线人数。
                 DescribeTRTCRealTimeScaleDataOutcome DescribeTRTCRealTimeScaleData(const Model::DescribeTRTCRealTimeScaleDataRequest &request);
                 void DescribeTRTCRealTimeScaleDataAsync(const Model::DescribeTRTCRealTimeScaleDataRequest& request, const DescribeTRTCRealTimeScaleDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTRTCRealTimeScaleDataOutcomeCallable DescribeTRTCRealTimeScaleDataCallable(const Model::DescribeTRTCRealTimeScaleDataRequest& request);
-
-                /**
-                 *腾讯云可观测平台monitor接口已下线，TRTC同步下线接口
-
-查询TRTC监控仪表盘-实时监控规模指标（会返回下列指标）
--userCount（在线用户数）
--roomCount（在线房间数）
-注意：
-1.调用接口需开通监控仪表盘【基础版】和【进阶版】，监控仪表盘【免费版】不支持调用，监控仪表盘版本功能和计费说明：https://cloud.tencent.com/document/product/647/81331。
-2.查询时间范围根据监控仪表盘功能版本而定，基础版可查近3小时，进阶版可查近12小时。
-xa0
-3.除此之外您也可以通过订阅TRTC包月套餐(https://buy.cloud.tencent.com/trtc)尊享版或旗舰版解锁此接口（DescribeTRTCRealTimeScaleMetricData）的调用能力，请在开通包月套餐后，请提交工单联系售后解锁调用能力https://console.cloud.tencent.com/workorder/category
-                 * @param req DescribeTRTCRealTimeScaleMetricDataRequest
-                 * @return DescribeTRTCRealTimeScaleMetricDataOutcome
-                 */
-                DescribeTRTCRealTimeScaleMetricDataOutcome DescribeTRTCRealTimeScaleMetricData(const Model::DescribeTRTCRealTimeScaleMetricDataRequest &request);
-                void DescribeTRTCRealTimeScaleMetricDataAsync(const Model::DescribeTRTCRealTimeScaleMetricDataRequest& request, const DescribeTRTCRealTimeScaleMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeTRTCRealTimeScaleMetricDataOutcomeCallable DescribeTRTCRealTimeScaleMetricDataCallable(const Model::DescribeTRTCRealTimeScaleMetricDataRequest& request);
 
                 /**
                  *查询旁路转码计费时长。

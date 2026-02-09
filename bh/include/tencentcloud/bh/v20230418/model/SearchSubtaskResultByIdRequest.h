@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取运维父任务执行状态
-                     * @return Status 运维父任务执行状态
+                     * 获取运维父任务执行状态。1 - 执行中，2 - 成功，3 - 失败，4 - 超时
+                     * @return Status 运维父任务执行状态。1 - 执行中，2 - 成功，3 - 失败，4 - 超时
                      * 
                      */
                     std::vector<uint64_t> GetStatus() const;
 
                     /**
-                     * 设置运维父任务执行状态
-                     * @param _status 运维父任务执行状态
+                     * 设置运维父任务执行状态。1 - 执行中，2 - 成功，3 - 失败，4 - 超时
+                     * @param _status 运维父任务执行状态。1 - 执行中，2 - 成功，3 - 失败，4 - 超时
                      * 
                      */
                     void SetStatus(const std::vector<uint64_t>& _status);
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * 运维父任务执行状态
+                     * 运维父任务执行状态。1 - 执行中，2 - 成功，3 - 失败，4 - 超时
                      */
                     std::vector<uint64_t> m_status;
                     bool m_statusHasBeenSet;

@@ -45,7 +45,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/AbnormalEvent.h
   include/tencentcloud/trtc/v20190722/model/DeleteCloudSliceTaskRequest.h
   include/tencentcloud/trtc/v20190722/model/ScaleInfomation.h
-  include/tencentcloud/trtc/v20190722/model/DescribeTRTCRealTimeScaleMetricDataRequest.h
+  include/tencentcloud/trtc/v20190722/model/AgentParams.h
   include/tencentcloud/trtc/v20190722/model/ControlAIConversationResponse.h
   include/tencentcloud/trtc/v20190722/model/StopAITranscriptionRequest.h
   include/tencentcloud/trtc/v20190722/model/VideoEncodeParams.h
@@ -118,7 +118,6 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/DescribeUserInfoResponse.h
   include/tencentcloud/trtc/v20190722/model/RemoveUserByStrRoomIdResponse.h
   include/tencentcloud/trtc/v20190722/model/DescribeVoicePrintRequest.h
-  include/tencentcloud/trtc/v20190722/model/DescribeTRTCRealTimeScaleMetricDataResponse.h
   include/tencentcloud/trtc/v20190722/model/UpdateStreamIngestResponse.h
   include/tencentcloud/trtc/v20190722/model/StartMCUMixTranscodeRequest.h
   include/tencentcloud/trtc/v20190722/model/CloudModerationStorage.h
@@ -214,7 +213,6 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/SliceStorageParams.h
   include/tencentcloud/trtc/v20190722/model/MaxVideoUser.h
   include/tencentcloud/trtc/v20190722/model/AuditStorageParams.h
-  include/tencentcloud/trtc/v20190722/model/AgentParams.h
   include/tencentcloud/trtc/v20190722/model/VoiceCloneResponse.h
   include/tencentcloud/trtc/v20190722/model/TurnDetection.h
   include/tencentcloud/trtc/v20190722/model/UpdateStreamIngestRequest.h
@@ -287,7 +285,7 @@ set(trtc_src
   src/v20190722/model/AbnormalEvent.cpp
   src/v20190722/model/DeleteCloudSliceTaskRequest.cpp
   src/v20190722/model/ScaleInfomation.cpp
-  src/v20190722/model/DescribeTRTCRealTimeScaleMetricDataRequest.cpp
+  src/v20190722/model/AgentParams.cpp
   src/v20190722/model/ControlAIConversationResponse.cpp
   src/v20190722/model/StopAITranscriptionRequest.cpp
   src/v20190722/model/VideoEncodeParams.cpp
@@ -360,7 +358,6 @@ set(trtc_src
   src/v20190722/model/DescribeUserInfoResponse.cpp
   src/v20190722/model/RemoveUserByStrRoomIdResponse.cpp
   src/v20190722/model/DescribeVoicePrintRequest.cpp
-  src/v20190722/model/DescribeTRTCRealTimeScaleMetricDataResponse.cpp
   src/v20190722/model/UpdateStreamIngestResponse.cpp
   src/v20190722/model/StartMCUMixTranscodeRequest.cpp
   src/v20190722/model/CloudModerationStorage.cpp
@@ -456,7 +453,6 @@ set(trtc_src
   src/v20190722/model/SliceStorageParams.cpp
   src/v20190722/model/MaxVideoUser.cpp
   src/v20190722/model/AuditStorageParams.cpp
-  src/v20190722/model/AgentParams.cpp
   src/v20190722/model/VoiceCloneResponse.cpp
   src/v20190722/model/TurnDetection.cpp
   src/v20190722/model/UpdateStreamIngestRequest.cpp

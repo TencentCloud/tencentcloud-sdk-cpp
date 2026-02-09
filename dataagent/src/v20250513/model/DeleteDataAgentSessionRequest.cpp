@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteDataAgentSessionRequest::DeleteDataAgentSessionRequest() :
     m_instanceIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
+    m_sessionIdHasBeenSet(false),
+    m_sessionIdsHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,19 @@ string DeleteDataAgentSessionRequest::ToJsonString() const
         string key = "SessionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sessionIds.begin(); itr != m_sessionIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -89,6 +103,22 @@ void DeleteDataAgentSessionRequest::SetSessionId(const string& _sessionId)
 bool DeleteDataAgentSessionRequest::SessionIdHasBeenSet() const
 {
     return m_sessionIdHasBeenSet;
+}
+
+vector<string> DeleteDataAgentSessionRequest::GetSessionIds() const
+{
+    return m_sessionIds;
+}
+
+void DeleteDataAgentSessionRequest::SetSessionIds(const vector<string>& _sessionIds)
+{
+    m_sessionIds = _sessionIds;
+    m_sessionIdsHasBeenSet = true;
+}
+
+bool DeleteDataAgentSessionRequest::SessionIdsHasBeenSet() const
+{
+    return m_sessionIdsHasBeenSet;
 }
 
 

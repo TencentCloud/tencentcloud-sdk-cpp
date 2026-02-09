@@ -193,6 +193,35 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取镜像型号。
+YS1：基础型云手机
+GC0、GC1、GC2：三种性能型云手机
+                     * @return AndroidInstanceImageModel 镜像型号。
+YS1：基础型云手机
+GC0、GC1、GC2：三种性能型云手机
+                     * 
+                     */
+                    std::string GetAndroidInstanceImageModel() const;
+
+                    /**
+                     * 设置镜像型号。
+YS1：基础型云手机
+GC0、GC1、GC2：三种性能型云手机
+                     * @param _androidInstanceImageModel 镜像型号。
+YS1：基础型云手机
+GC0、GC1、GC2：三种性能型云手机
+                     * 
+                     */
+                    void SetAndroidInstanceImageModel(const std::string& _androidInstanceImageModel);
+
+                    /**
+                     * 判断参数 AndroidInstanceImageModel 是否已赋值
+                     * @return AndroidInstanceImageModel 是否已赋值
+                     * 
+                     */
+                    bool AndroidInstanceImageModelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +265,14 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 镜像型号。
+YS1：基础型云手机
+GC0、GC1、GC2：三种性能型云手机
+                     */
+                    std::string m_androidInstanceImageModel;
+                    bool m_androidInstanceImageModelHasBeenSet;
 
                 };
             }

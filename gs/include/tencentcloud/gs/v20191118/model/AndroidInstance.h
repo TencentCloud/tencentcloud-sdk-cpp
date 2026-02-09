@@ -412,6 +412,35 @@ ESTABLISHED：连接中
                      */
                     bool ServiceStatusHasBeenSet() const;
 
+                    /**
+                     * 获取安卓实例型号。
+YS1：默认值，基础型云手机
+GC0、GC1、GC2：三种性能型云手机
+                     * @return AndroidInstanceModel 安卓实例型号。
+YS1：默认值，基础型云手机
+GC0、GC1、GC2：三种性能型云手机
+                     * 
+                     */
+                    std::string GetAndroidInstanceModel() const;
+
+                    /**
+                     * 设置安卓实例型号。
+YS1：默认值，基础型云手机
+GC0、GC1、GC2：三种性能型云手机
+                     * @param _androidInstanceModel 安卓实例型号。
+YS1：默认值，基础型云手机
+GC0、GC1、GC2：三种性能型云手机
+                     * 
+                     */
+                    void SetAndroidInstanceModel(const std::string& _androidInstanceModel);
+
+                    /**
+                     * 判断参数 AndroidInstanceModel 是否已赋值
+                     * @return AndroidInstanceModel 是否已赋值
+                     * 
+                     */
+                    bool AndroidInstanceModelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -517,6 +546,14 @@ ESTABLISHED：连接中
                      */
                     std::string m_serviceStatus;
                     bool m_serviceStatusHasBeenSet;
+
+                    /**
+                     * 安卓实例型号。
+YS1：默认值，基础型云手机
+GC0、GC1、GC2：三种性能型云手机
+                     */
+                    std::string m_androidInstanceModel;
+                    bool m_androidInstanceModelHasBeenSet;
 
                 };
             }

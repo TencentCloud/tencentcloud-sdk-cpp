@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/trtc/v20190722/model/DescribeTRTCRealTimeScaleMetricDataResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeMySQLTaskStatusResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Trtc::V20190722::Model;
+using namespace TencentCloud::Tcb::V20180608::Model;
 using namespace std;
 
-DescribeTRTCRealTimeScaleMetricDataResponse::DescribeTRTCRealTimeScaleMetricDataResponse() :
+DescribeMySQLTaskStatusResponse::DescribeMySQLTaskStatusResponse() :
     m_dataHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeTRTCRealTimeScaleMetricDataResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeMySQLTaskStatusResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -83,7 +83,7 @@ CoreInternalOutcome DescribeTRTCRealTimeScaleMetricDataResponse::Deserialize(con
     return CoreInternalOutcome(true);
 }
 
-string DescribeTRTCRealTimeScaleMetricDataResponse::ToJsonString() const
+string DescribeMySQLTaskStatusResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
@@ -110,12 +110,12 @@ string DescribeTRTCRealTimeScaleMetricDataResponse::ToJsonString() const
 }
 
 
-TRTCDataResp DescribeTRTCRealTimeScaleMetricDataResponse::GetData() const
+MySQLTaskStatus DescribeMySQLTaskStatusResponse::GetData() const
 {
     return m_data;
 }
 
-bool DescribeTRTCRealTimeScaleMetricDataResponse::DataHasBeenSet() const
+bool DescribeMySQLTaskStatusResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
 }

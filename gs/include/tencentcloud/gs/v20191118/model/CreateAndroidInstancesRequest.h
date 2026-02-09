@@ -213,6 +213,27 @@ A6：六开
                      */
                     bool LabelsHasBeenSet() const;
 
+                    /**
+                     * 获取安卓实例型号。YS1：默认值，基础型云手机GC0、GC1、GC2：三种性能型云手机
+                     * @return Model 安卓实例型号。YS1：默认值，基础型云手机GC0、GC1、GC2：三种性能型云手机
+                     * 
+                     */
+                    std::string GetModel() const;
+
+                    /**
+                     * 设置安卓实例型号。YS1：默认值，基础型云手机GC0、GC1、GC2：三种性能型云手机
+                     * @param _model 安卓实例型号。YS1：默认值，基础型云手机GC0、GC1、GC2：三种性能型云手机
+                     * 
+                     */
+                    void SetModel(const std::string& _model);
+
+                    /**
+                     * 判断参数 Model 是否已赋值
+                     * @return Model 是否已赋值
+                     * 
+                     */
+                    bool ModelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,6 +282,12 @@ A6：六开
                      */
                     std::vector<AndroidInstanceLabel> m_labels;
                     bool m_labelsHasBeenSet;
+
+                    /**
+                     * 安卓实例型号。YS1：默认值，基础型云手机GC0、GC1、GC2：三种性能型云手机
+                     */
+                    std::string m_model;
+                    bool m_modelHasBeenSet;
 
                 };
             }

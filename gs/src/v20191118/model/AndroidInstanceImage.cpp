@@ -27,7 +27,8 @@ AndroidInstanceImage::AndroidInstanceImage() :
     m_androidInstanceImageZoneHasBeenSet(false),
     m_androidInstanceImageDescriptionHasBeenSet(false),
     m_androidVersionHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_androidInstanceImageModelHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome AndroidInstanceImage::Deserialize(const rapidjson::Value &va
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("AndroidInstanceImageModel") && !value["AndroidInstanceImageModel"].IsNull())
+    {
+        if (!value["AndroidInstanceImageModel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidInstanceImage.AndroidInstanceImageModel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_androidInstanceImageModel = string(value["AndroidInstanceImageModel"].GetString());
+        m_androidInstanceImageModelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void AndroidInstanceImage::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_androidInstanceImageModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AndroidInstanceImageModel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_androidInstanceImageModel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void AndroidInstanceImage::SetCreateTime(const string& _createTime)
 bool AndroidInstanceImage::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string AndroidInstanceImage::GetAndroidInstanceImageModel() const
+{
+    return m_androidInstanceImageModel;
+}
+
+void AndroidInstanceImage::SetAndroidInstanceImageModel(const string& _androidInstanceImageModel)
+{
+    m_androidInstanceImageModel = _androidInstanceImageModel;
+    m_androidInstanceImageModelHasBeenSet = true;
+}
+
+bool AndroidInstanceImage::AndroidInstanceImageModelHasBeenSet() const
+{
+    return m_androidInstanceImageModelHasBeenSet;
 }
 

@@ -129,10 +129,12 @@ namespace TencentCloud
 
                     /**
                      * 获取字段过滤器。Filter 的 Name 有以下值：
+ImageModel：镜像型号
 ImageName：镜像名称
 ImageState：镜像状态
 AndroidVersion：安卓版本
                      * @return Filters 字段过滤器。Filter 的 Name 有以下值：
+ImageModel：镜像型号
 ImageName：镜像名称
 ImageState：镜像状态
 AndroidVersion：安卓版本
@@ -142,10 +144,12 @@ AndroidVersion：安卓版本
 
                     /**
                      * 设置字段过滤器。Filter 的 Name 有以下值：
+ImageModel：镜像型号
 ImageName：镜像名称
 ImageState：镜像状态
 AndroidVersion：安卓版本
                      * @param _filters 字段过滤器。Filter 的 Name 有以下值：
+ImageModel：镜像型号
 ImageName：镜像名称
 ImageState：镜像状态
 AndroidVersion：安卓版本
@@ -188,6 +192,7 @@ AndroidVersion：安卓版本
 
                     /**
                      * 字段过滤器。Filter 的 Name 有以下值：
+ImageModel：镜像型号
 ImageName：镜像名称
 ImageState：镜像状态
 AndroidVersion：安卓版本

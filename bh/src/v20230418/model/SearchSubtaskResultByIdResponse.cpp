@@ -24,7 +24,8 @@ using namespace TencentCloud::Bh::V20230418::Model;
 using namespace std;
 
 SearchSubtaskResultByIdResponse::SearchSubtaskResultByIdResponse() :
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_subtaskResultHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,26 @@ CoreInternalOutcome SearchSubtaskResultByIdResponse::Deserialize(const string &p
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SubtaskResult") && !rsp["SubtaskResult"].IsNull())
+    {
+        if (!rsp["SubtaskResult"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SubtaskResult` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SubtaskResult"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SubtaskResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_subtaskResult.push_back(item);
+        }
+        m_subtaskResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +109,21 @@ string SearchSubtaskResultByIdResponse::ToJsonString() const
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_subtaskResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtaskResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_subtaskResult.begin(); itr != m_subtaskResult.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +146,16 @@ uint64_t SearchSubtaskResultByIdResponse::GetTotalCount() const
 bool SearchSubtaskResultByIdResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+vector<SubtaskResult> SearchSubtaskResultByIdResponse::GetSubtaskResult() const
+{
+    return m_subtaskResult;
+}
+
+bool SearchSubtaskResultByIdResponse::SubtaskResultHasBeenSet() const
+{
+    return m_subtaskResultHasBeenSet;
 }
 
 

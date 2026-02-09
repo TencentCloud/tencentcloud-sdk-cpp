@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool SessionIdHasBeenSet() const;
 
+                    /**
+                     * 获取批量删除 会话id 列表
+                     * @return SessionIds 批量删除 会话id 列表
+                     * 
+                     */
+                    std::vector<std::string> GetSessionIds() const;
+
+                    /**
+                     * 设置批量删除 会话id 列表
+                     * @param _sessionIds 批量删除 会话id 列表
+                     * 
+                     */
+                    void SetSessionIds(const std::vector<std::string>& _sessionIds);
+
+                    /**
+                     * 判断参数 SessionIds 是否已赋值
+                     * @return SessionIds 是否已赋值
+                     * 
+                     */
+                    bool SessionIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
+
+                    /**
+                     * 批量删除 会话id 列表
+                     */
+                    std::vector<std::string> m_sessionIds;
+                    bool m_sessionIdsHasBeenSet;
 
                 };
             }

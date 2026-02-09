@@ -47,6 +47,8 @@
 #include <tencentcloud/tcb/v20180608/model/CreateCloudBaseRunServerVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateHostingDomainRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateHostingDomainResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreateMySQLRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreateMySQLResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreatePostpayPackageRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreatePostpayPackageResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateStaticStoreRequest.h>
@@ -103,6 +105,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionSnapshotRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionSnapshotResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCreateMySQLResultRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCreateMySQLResultResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCurveDataRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCurveDataResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeDatabaseACLRequest.h>
@@ -133,6 +137,10 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeGraphDataResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeHostingDomainTaskRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeHostingDomainTaskResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeMySQLClusterDetailRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeMySQLClusterDetailResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeMySQLTaskStatusRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeMySQLTaskStatusResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribePostpayFreeQuotasRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribePostpayFreeQuotasResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribePostpayPackageFreeQuotasRequest.h>
@@ -161,6 +169,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeWxGatewaysResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyEnvResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DestroyMySQLRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DestroyMySQLResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreResponse.h>
 #include <tencentcloud/tcb/v20180608/model/EditAuthConfigRequest.h>
@@ -251,6 +261,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateHostingDomainResponse> CreateHostingDomainOutcome;
                 typedef std::future<CreateHostingDomainOutcome> CreateHostingDomainOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateHostingDomainRequest&, CreateHostingDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHostingDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMySQLResponse> CreateMySQLOutcome;
+                typedef std::future<CreateMySQLOutcome> CreateMySQLOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreateMySQLRequest&, CreateMySQLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMySQLAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePostpayPackageResponse> CreatePostpayPackageOutcome;
                 typedef std::future<CreatePostpayPackageOutcome> CreatePostpayPackageOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreatePostpayPackageRequest&, CreatePostpayPackageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePostpayPackageAsyncHandler;
@@ -335,6 +348,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudBaseRunVersionSnapshotResponse> DescribeCloudBaseRunVersionSnapshotOutcome;
                 typedef std::future<DescribeCloudBaseRunVersionSnapshotOutcome> DescribeCloudBaseRunVersionSnapshotOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseRunVersionSnapshotRequest&, DescribeCloudBaseRunVersionSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseRunVersionSnapshotAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCreateMySQLResultResponse> DescribeCreateMySQLResultOutcome;
+                typedef std::future<DescribeCreateMySQLResultOutcome> DescribeCreateMySQLResultOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeCreateMySQLResultRequest&, DescribeCreateMySQLResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCreateMySQLResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCurveDataResponse> DescribeCurveDataOutcome;
                 typedef std::future<DescribeCurveDataOutcome> DescribeCurveDataOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCurveDataRequest&, DescribeCurveDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCurveDataAsyncHandler;
@@ -380,6 +396,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeHostingDomainTaskResponse> DescribeHostingDomainTaskOutcome;
                 typedef std::future<DescribeHostingDomainTaskOutcome> DescribeHostingDomainTaskOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeHostingDomainTaskRequest&, DescribeHostingDomainTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostingDomainTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMySQLClusterDetailResponse> DescribeMySQLClusterDetailOutcome;
+                typedef std::future<DescribeMySQLClusterDetailOutcome> DescribeMySQLClusterDetailOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeMySQLClusterDetailRequest&, DescribeMySQLClusterDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMySQLClusterDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMySQLTaskStatusResponse> DescribeMySQLTaskStatusOutcome;
+                typedef std::future<DescribeMySQLTaskStatusOutcome> DescribeMySQLTaskStatusOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeMySQLTaskStatusRequest&, DescribeMySQLTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMySQLTaskStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePostpayFreeQuotasResponse> DescribePostpayFreeQuotasOutcome;
                 typedef std::future<DescribePostpayFreeQuotasOutcome> DescribePostpayFreeQuotasOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribePostpayFreeQuotasRequest&, DescribePostpayFreeQuotasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePostpayFreeQuotasAsyncHandler;
@@ -422,6 +444,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DestroyEnvResponse> DestroyEnvOutcome;
                 typedef std::future<DestroyEnvOutcome> DestroyEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DestroyEnvRequest&, DestroyEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyEnvAsyncHandler;
+                typedef Outcome<Core::Error, Model::DestroyMySQLResponse> DestroyMySQLOutcome;
+                typedef std::future<DestroyMySQLOutcome> DestroyMySQLOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DestroyMySQLRequest&, DestroyMySQLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyMySQLAsyncHandler;
                 typedef Outcome<Core::Error, Model::DestroyStaticStoreResponse> DestroyStaticStoreOutcome;
                 typedef std::future<DestroyStaticStoreOutcome> DestroyStaticStoreOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DestroyStaticStoreRequest&, DestroyStaticStoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyStaticStoreAsyncHandler;
@@ -592,6 +617,15 @@ namespace TencentCloud
                 CreateHostingDomainOutcome CreateHostingDomain(const Model::CreateHostingDomainRequest &request);
                 void CreateHostingDomainAsync(const Model::CreateHostingDomainRequest& request, const CreateHostingDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateHostingDomainOutcomeCallable CreateHostingDomainCallable(const Model::CreateHostingDomainRequest& request);
+
+                /**
+                 *开通Mysql
+                 * @param req CreateMySQLRequest
+                 * @return CreateMySQLOutcome
+                 */
+                CreateMySQLOutcome CreateMySQL(const Model::CreateMySQLRequest &request);
+                void CreateMySQLAsync(const Model::CreateMySQLRequest& request, const CreateMySQLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMySQLOutcomeCallable CreateMySQLCallable(const Model::CreateMySQLRequest& request);
 
                 /**
                  *开通后付费资源
@@ -846,6 +880,15 @@ namespace TencentCloud
                 DescribeCloudBaseRunVersionSnapshotOutcomeCallable DescribeCloudBaseRunVersionSnapshotCallable(const Model::DescribeCloudBaseRunVersionSnapshotRequest& request);
 
                 /**
+                 *查询开通Mysql结果
+                 * @param req DescribeCreateMySQLResultRequest
+                 * @return DescribeCreateMySQLResultOutcome
+                 */
+                DescribeCreateMySQLResultOutcome DescribeCreateMySQLResult(const Model::DescribeCreateMySQLResultRequest &request);
+                void DescribeCreateMySQLResultAsync(const Model::DescribeCreateMySQLResultRequest& request, const DescribeCreateMySQLResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCreateMySQLResultOutcomeCallable DescribeCreateMySQLResultCallable(const Model::DescribeCreateMySQLResultRequest& request);
+
+                /**
                  *根据用户传入的指标, 拉取一段时间内的监控数据。
                  * @param req DescribeCurveDataRequest
                  * @return DescribeCurveDataOutcome
@@ -982,6 +1025,24 @@ namespace TencentCloud
                 DescribeHostingDomainTaskOutcomeCallable DescribeHostingDomainTaskCallable(const Model::DescribeHostingDomainTaskRequest& request);
 
                 /**
+                 *销毁Mysql
+                 * @param req DescribeMySQLClusterDetailRequest
+                 * @return DescribeMySQLClusterDetailOutcome
+                 */
+                DescribeMySQLClusterDetailOutcome DescribeMySQLClusterDetail(const Model::DescribeMySQLClusterDetailRequest &request);
+                void DescribeMySQLClusterDetailAsync(const Model::DescribeMySQLClusterDetailRequest& request, const DescribeMySQLClusterDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMySQLClusterDetailOutcomeCallable DescribeMySQLClusterDetailCallable(const Model::DescribeMySQLClusterDetailRequest& request);
+
+                /**
+                 *查询Mysql任务状态
+                 * @param req DescribeMySQLTaskStatusRequest
+                 * @return DescribeMySQLTaskStatusOutcome
+                 */
+                DescribeMySQLTaskStatusOutcome DescribeMySQLTaskStatus(const Model::DescribeMySQLTaskStatusRequest &request);
+                void DescribeMySQLTaskStatusAsync(const Model::DescribeMySQLTaskStatusRequest& request, const DescribeMySQLTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMySQLTaskStatusOutcomeCallable DescribeMySQLTaskStatusCallable(const Model::DescribeMySQLTaskStatusRequest& request);
+
+                /**
                  *查询后付费资源免费量
                  * @param req DescribePostpayFreeQuotasRequest
                  * @return DescribePostpayFreeQuotasOutcome
@@ -1109,6 +1170,15 @@ namespace TencentCloud
                 DestroyEnvOutcome DestroyEnv(const Model::DestroyEnvRequest &request);
                 void DestroyEnvAsync(const Model::DestroyEnvRequest& request, const DestroyEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DestroyEnvOutcomeCallable DestroyEnvCallable(const Model::DestroyEnvRequest& request);
+
+                /**
+                 *销毁Mysql
+                 * @param req DestroyMySQLRequest
+                 * @return DestroyMySQLOutcome
+                 */
+                DestroyMySQLOutcome DestroyMySQL(const Model::DestroyMySQLRequest &request);
+                void DestroyMySQLAsync(const Model::DestroyMySQLRequest& request, const DestroyMySQLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DestroyMySQLOutcomeCallable DestroyMySQLCallable(const Model::DestroyMySQLRequest& request);
 
                 /**
                  *销毁静态托管资源，该接口创建异步销毁任务，资源最终状态可从DestroyStaticStore接口查看

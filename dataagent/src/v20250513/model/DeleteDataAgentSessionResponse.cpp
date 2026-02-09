@@ -24,7 +24,8 @@ using namespace TencentCloud::Dataagent::V20250513::Model;
 using namespace std;
 
 DeleteDataAgentSessionResponse::DeleteDataAgentSessionResponse() :
-    m_sessionIdHasBeenSet(false)
+    m_sessionIdHasBeenSet(false),
+    m_sessionIdsHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,19 @@ CoreInternalOutcome DeleteDataAgentSessionResponse::Deserialize(const string &pa
         m_sessionIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SessionIds") && !rsp["SessionIds"].IsNull())
+    {
+        if (!rsp["SessionIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SessionIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SessionIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_sessionIds.push_back((*itr).GetString());
+        }
+        m_sessionIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +102,19 @@ string DeleteDataAgentSessionResponse::ToJsonString() const
         string key = "SessionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sessionIds.begin(); itr != m_sessionIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +137,16 @@ string DeleteDataAgentSessionResponse::GetSessionId() const
 bool DeleteDataAgentSessionResponse::SessionIdHasBeenSet() const
 {
     return m_sessionIdHasBeenSet;
+}
+
+vector<string> DeleteDataAgentSessionResponse::GetSessionIds() const
+{
+    return m_sessionIds;
+}
+
+bool DeleteDataAgentSessionResponse::SessionIdsHasBeenSet() const
+{
+    return m_sessionIdsHasBeenSet;
 }
 
 

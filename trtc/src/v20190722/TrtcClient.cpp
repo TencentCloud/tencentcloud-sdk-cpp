@@ -1590,56 +1590,6 @@ TrtcClient::DescribeTRTCRealTimeScaleDataOutcomeCallable TrtcClient::DescribeTRT
     return prom->get_future();
 }
 
-TrtcClient::DescribeTRTCRealTimeScaleMetricDataOutcome TrtcClient::DescribeTRTCRealTimeScaleMetricData(const DescribeTRTCRealTimeScaleMetricDataRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeTRTCRealTimeScaleMetricData");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeTRTCRealTimeScaleMetricDataResponse rsp = DescribeTRTCRealTimeScaleMetricDataResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeTRTCRealTimeScaleMetricDataOutcome(rsp);
-        else
-            return DescribeTRTCRealTimeScaleMetricDataOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeTRTCRealTimeScaleMetricDataOutcome(outcome.GetError());
-    }
-}
-
-void TrtcClient::DescribeTRTCRealTimeScaleMetricDataAsync(const DescribeTRTCRealTimeScaleMetricDataRequest& request, const DescribeTRTCRealTimeScaleMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeTRTCRealTimeScaleMetricDataRequest&;
-    using Resp = DescribeTRTCRealTimeScaleMetricDataResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeTRTCRealTimeScaleMetricData", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TrtcClient::DescribeTRTCRealTimeScaleMetricDataOutcomeCallable TrtcClient::DescribeTRTCRealTimeScaleMetricDataCallable(const DescribeTRTCRealTimeScaleMetricDataRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeTRTCRealTimeScaleMetricDataOutcome>>();
-    DescribeTRTCRealTimeScaleMetricDataAsync(
-    request,
-    [prom](
-        const TrtcClient*,
-        const DescribeTRTCRealTimeScaleMetricDataRequest&,
-        DescribeTRTCRealTimeScaleMetricDataOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 TrtcClient::DescribeTrtcMcuTranscodeTimeOutcome TrtcClient::DescribeTrtcMcuTranscodeTime(const DescribeTrtcMcuTranscodeTimeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTrtcMcuTranscodeTime");

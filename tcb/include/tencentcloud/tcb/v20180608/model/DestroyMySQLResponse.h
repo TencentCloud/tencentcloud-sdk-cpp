@@ -14,44 +14,42 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TRTC_V20190722_MODEL_DESCRIBETRTCREALTIMESCALEMETRICDATARESPONSE_H_
-#define TENCENTCLOUD_TRTC_V20190722_MODEL_DESCRIBETRTCREALTIMESCALEMETRICDATARESPONSE_H_
+#ifndef TENCENTCLOUD_TCB_V20180608_MODEL_DESTROYMYSQLRESPONSE_H_
+#define TENCENTCLOUD_TCB_V20180608_MODEL_DESTROYMYSQLRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/trtc/v20190722/model/TRTCDataResp.h>
+#include <tencentcloud/tcb/v20180608/model/DestroyMySQLResult.h>
 
 
 namespace TencentCloud
 {
-    namespace Trtc
+    namespace Tcb
     {
-        namespace V20190722
+        namespace V20180608
         {
             namespace Model
             {
                 /**
-                * DescribeTRTCRealTimeScaleMetricData返回参数结构体
+                * DestroyMySQL返回参数结构体
                 */
-                class DescribeTRTCRealTimeScaleMetricDataResponse : public AbstractModel
+                class DestroyMySQLResponse : public AbstractModel
                 {
                 public:
-                    DescribeTRTCRealTimeScaleMetricDataResponse();
-                    ~DescribeTRTCRealTimeScaleMetricDataResponse() = default;
+                    DestroyMySQLResponse();
+                    ~DestroyMySQLResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取TRTC监控数据出参
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data TRTC监控数据出参
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取销毁结果
+                     * @return Data 销毁结果
                      * 
                      */
-                    TRTCDataResp GetData() const;
+                    DestroyMySQLResult GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
@@ -63,10 +61,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * TRTC监控数据出参
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 销毁结果
                      */
-                    TRTCDataResp m_data;
+                    DestroyMySQLResult m_data;
                     bool m_dataHasBeenSet;
 
                 };
@@ -75,4 +72,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TRTC_V20190722_MODEL_DESCRIBETRTCREALTIMESCALEMETRICDATARESPONSE_H_
+#endif // !TENCENTCLOUD_TCB_V20180608_MODEL_DESTROYMYSQLRESPONSE_H_

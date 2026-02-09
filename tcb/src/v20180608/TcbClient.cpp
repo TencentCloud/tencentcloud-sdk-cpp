@@ -640,6 +640,56 @@ TcbClient::CreateHostingDomainOutcomeCallable TcbClient::CreateHostingDomainCall
     return prom->get_future();
 }
 
+TcbClient::CreateMySQLOutcome TcbClient::CreateMySQL(const CreateMySQLRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMySQL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMySQLResponse rsp = CreateMySQLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMySQLOutcome(rsp);
+        else
+            return CreateMySQLOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMySQLOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CreateMySQLAsync(const CreateMySQLRequest& request, const CreateMySQLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMySQLRequest&;
+    using Resp = CreateMySQLResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMySQL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::CreateMySQLOutcomeCallable TcbClient::CreateMySQLCallable(const CreateMySQLRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMySQLOutcome>>();
+    CreateMySQLAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CreateMySQLRequest&,
+        CreateMySQLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::CreatePostpayPackageOutcome TcbClient::CreatePostpayPackage(const CreatePostpayPackageRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePostpayPackage");
@@ -2040,6 +2090,56 @@ TcbClient::DescribeCloudBaseRunVersionSnapshotOutcomeCallable TcbClient::Describ
     return prom->get_future();
 }
 
+TcbClient::DescribeCreateMySQLResultOutcome TcbClient::DescribeCreateMySQLResult(const DescribeCreateMySQLResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCreateMySQLResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCreateMySQLResultResponse rsp = DescribeCreateMySQLResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCreateMySQLResultOutcome(rsp);
+        else
+            return DescribeCreateMySQLResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCreateMySQLResultOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCreateMySQLResultAsync(const DescribeCreateMySQLResultRequest& request, const DescribeCreateMySQLResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCreateMySQLResultRequest&;
+    using Resp = DescribeCreateMySQLResultResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCreateMySQLResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeCreateMySQLResultOutcomeCallable TcbClient::DescribeCreateMySQLResultCallable(const DescribeCreateMySQLResultRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCreateMySQLResultOutcome>>();
+    DescribeCreateMySQLResultAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCreateMySQLResultRequest&,
+        DescribeCreateMySQLResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::DescribeCurveDataOutcome TcbClient::DescribeCurveData(const DescribeCurveDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCurveData");
@@ -2790,6 +2890,106 @@ TcbClient::DescribeHostingDomainTaskOutcomeCallable TcbClient::DescribeHostingDo
     return prom->get_future();
 }
 
+TcbClient::DescribeMySQLClusterDetailOutcome TcbClient::DescribeMySQLClusterDetail(const DescribeMySQLClusterDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMySQLClusterDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMySQLClusterDetailResponse rsp = DescribeMySQLClusterDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMySQLClusterDetailOutcome(rsp);
+        else
+            return DescribeMySQLClusterDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMySQLClusterDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeMySQLClusterDetailAsync(const DescribeMySQLClusterDetailRequest& request, const DescribeMySQLClusterDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMySQLClusterDetailRequest&;
+    using Resp = DescribeMySQLClusterDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMySQLClusterDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeMySQLClusterDetailOutcomeCallable TcbClient::DescribeMySQLClusterDetailCallable(const DescribeMySQLClusterDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMySQLClusterDetailOutcome>>();
+    DescribeMySQLClusterDetailAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeMySQLClusterDetailRequest&,
+        DescribeMySQLClusterDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DescribeMySQLTaskStatusOutcome TcbClient::DescribeMySQLTaskStatus(const DescribeMySQLTaskStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMySQLTaskStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMySQLTaskStatusResponse rsp = DescribeMySQLTaskStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMySQLTaskStatusOutcome(rsp);
+        else
+            return DescribeMySQLTaskStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMySQLTaskStatusOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeMySQLTaskStatusAsync(const DescribeMySQLTaskStatusRequest& request, const DescribeMySQLTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMySQLTaskStatusRequest&;
+    using Resp = DescribeMySQLTaskStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMySQLTaskStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeMySQLTaskStatusOutcomeCallable TcbClient::DescribeMySQLTaskStatusCallable(const DescribeMySQLTaskStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMySQLTaskStatusOutcome>>();
+    DescribeMySQLTaskStatusAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeMySQLTaskStatusRequest&,
+        DescribeMySQLTaskStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::DescribePostpayFreeQuotasOutcome TcbClient::DescribePostpayFreeQuotas(const DescribePostpayFreeQuotasRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePostpayFreeQuotas");
@@ -3482,6 +3682,56 @@ TcbClient::DestroyEnvOutcomeCallable TcbClient::DestroyEnvCallable(const Destroy
         const TcbClient*,
         const DestroyEnvRequest&,
         DestroyEnvOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DestroyMySQLOutcome TcbClient::DestroyMySQL(const DestroyMySQLRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyMySQL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyMySQLResponse rsp = DestroyMySQLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyMySQLOutcome(rsp);
+        else
+            return DestroyMySQLOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyMySQLOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DestroyMySQLAsync(const DestroyMySQLRequest& request, const DestroyMySQLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DestroyMySQLRequest&;
+    using Resp = DestroyMySQLResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DestroyMySQL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DestroyMySQLOutcomeCallable TcbClient::DestroyMySQLCallable(const DestroyMySQLRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DestroyMySQLOutcome>>();
+    DestroyMySQLAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DestroyMySQLRequest&,
+        DestroyMySQLOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

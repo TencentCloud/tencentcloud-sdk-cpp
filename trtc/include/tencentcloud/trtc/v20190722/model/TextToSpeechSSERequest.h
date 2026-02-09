@@ -171,15 +171,51 @@ namespace TencentCloud
                     bool ModelHasBeenSet() const;
 
                     /**
-                     * 获取 需要合成的语言（ISO 639-1），支持 zh（中文）、en（英文）、yue（粤语）、ja（日语）、ko（韩语），默认自动识别
-                     * @return Language  需要合成的语言（ISO 639-1），支持 zh（中文）、en（英文）、yue（粤语）、ja（日语）、ko（韩语），默认自动识别
+                     * 获取 需要合成的语言（ISO 639-1），默认自动识别，支持如下语言：
+- zh（中文）
+- en（英文）
+- yue（粤语）
+- ja（日语）
+- ko（韩语）
+- ar（阿拉伯语）
+- id（印尼语）
+- th（泰语）
+
+                     * @return Language  需要合成的语言（ISO 639-1），默认自动识别，支持如下语言：
+- zh（中文）
+- en（英文）
+- yue（粤语）
+- ja（日语）
+- ko（韩语）
+- ar（阿拉伯语）
+- id（印尼语）
+- th（泰语）
+
                      * 
                      */
                     std::string GetLanguage() const;
 
                     /**
-                     * 设置 需要合成的语言（ISO 639-1），支持 zh（中文）、en（英文）、yue（粤语）、ja（日语）、ko（韩语），默认自动识别
-                     * @param _language  需要合成的语言（ISO 639-1），支持 zh（中文）、en（英文）、yue（粤语）、ja（日语）、ko（韩语），默认自动识别
+                     * 设置 需要合成的语言（ISO 639-1），默认自动识别，支持如下语言：
+- zh（中文）
+- en（英文）
+- yue（粤语）
+- ja（日语）
+- ko（韩语）
+- ar（阿拉伯语）
+- id（印尼语）
+- th（泰语）
+
+                     * @param _language  需要合成的语言（ISO 639-1），默认自动识别，支持如下语言：
+- zh（中文）
+- en（英文）
+- yue（粤语）
+- ja（日语）
+- ko（韩语）
+- ar（阿拉伯语）
+- id（印尼语）
+- th（泰语）
+
                      * 
                      */
                     void SetLanguage(const std::string& _language);
@@ -230,7 +266,16 @@ namespace TencentCloud
                     bool m_modelHasBeenSet;
 
                     /**
-                     *  需要合成的语言（ISO 639-1），支持 zh（中文）、en（英文）、yue（粤语）、ja（日语）、ko（韩语），默认自动识别
+                     *  需要合成的语言（ISO 639-1），默认自动识别，支持如下语言：
+- zh（中文）
+- en（英文）
+- yue（粤语）
+- ja（日语）
+- ko（韩语）
+- ar（阿拉伯语）
+- id（印尼语）
+- th（泰语）
+
                      */
                     std::string m_language;
                     bool m_languageHasBeenSet;

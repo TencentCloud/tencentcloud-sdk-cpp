@@ -197,11 +197,13 @@ Name：实例名称
 UserId：实例用户ID
 HostSerialNumber：宿主机序列号
 HostServerSerialNumber：机箱序列号
+AndroidInstanceModel：实例型号
                      * @return Filters 字段过滤器。Filter 的 Name 有以下值：
 Name：实例名称
 UserId：实例用户ID
 HostSerialNumber：宿主机序列号
 HostServerSerialNumber：机箱序列号
+AndroidInstanceModel：实例型号
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
@@ -212,11 +214,13 @@ Name：实例名称
 UserId：实例用户ID
 HostSerialNumber：宿主机序列号
 HostServerSerialNumber：机箱序列号
+AndroidInstanceModel：实例型号
                      * @param _filters 字段过滤器。Filter 的 Name 有以下值：
 Name：实例名称
 UserId：实例用户ID
 HostSerialNumber：宿主机序列号
 HostServerSerialNumber：机箱序列号
+AndroidInstanceModel：实例型号
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -278,6 +282,7 @@ Name：实例名称
 UserId：实例用户ID
 HostSerialNumber：宿主机序列号
 HostServerSerialNumber：机箱序列号
+AndroidInstanceModel：实例型号
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

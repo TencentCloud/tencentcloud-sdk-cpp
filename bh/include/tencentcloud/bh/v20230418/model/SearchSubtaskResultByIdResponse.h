@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/bh/v20230418/model/SubtaskResult.h>
 
 
 namespace TencentCloud
@@ -57,6 +58,20 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取运维子任务执行结果
+                     * @return SubtaskResult 运维子任务执行结果
+                     * 
+                     */
+                    std::vector<SubtaskResult> GetSubtaskResult() const;
+
+                    /**
+                     * 判断参数 SubtaskResult 是否已赋值
+                     * @return SubtaskResult 是否已赋值
+                     * 
+                     */
+                    bool SubtaskResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +79,12 @@ namespace TencentCloud
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 运维子任务执行结果
+                     */
+                    std::vector<SubtaskResult> m_subtaskResult;
+                    bool m_subtaskResultHasBeenSet;
 
                 };
             }

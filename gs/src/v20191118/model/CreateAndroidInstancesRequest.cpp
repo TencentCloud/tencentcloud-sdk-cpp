@@ -28,7 +28,8 @@ CreateAndroidInstancesRequest::CreateAndroidInstancesRequest() :
     m_numberHasBeenSet(false),
     m_hostSerialNumbersHasBeenSet(false),
     m_imageIdHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+    m_labelsHasBeenSet(false),
+    m_modelHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,14 @@ string CreateAndroidInstancesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_modelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Model";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_model.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -201,6 +210,22 @@ void CreateAndroidInstancesRequest::SetLabels(const vector<AndroidInstanceLabel>
 bool CreateAndroidInstancesRequest::LabelsHasBeenSet() const
 {
     return m_labelsHasBeenSet;
+}
+
+string CreateAndroidInstancesRequest::GetModel() const
+{
+    return m_model;
+}
+
+void CreateAndroidInstancesRequest::SetModel(const string& _model)
+{
+    m_model = _model;
+    m_modelHasBeenSet = true;
+}
+
+bool CreateAndroidInstancesRequest::ModelHasBeenSet() const
+{
+    return m_modelHasBeenSet;
 }
 
 

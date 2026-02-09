@@ -249,6 +249,7 @@ set(bh_public_header_model
   include/tencentcloud/bh/v20230418/model/CheckLDAPConnectionResponse.h
   include/tencentcloud/bh/v20230418/model/ModifyReconnectionSettingRequest.h
   include/tencentcloud/bh/v20230418/model/RunOperationTaskRequest.h
+  include/tencentcloud/bh/v20230418/model/SubtaskResult.h
   include/tencentcloud/bh/v20230418/model/Acl.h
   include/tencentcloud/bh/v20230418/model/TagFilter.h
   include/tencentcloud/bh/v20230418/model/DescribeDevicesRequest.h
@@ -505,6 +506,7 @@ set(bh_src
   src/v20230418/model/CheckLDAPConnectionResponse.cpp
   src/v20230418/model/ModifyReconnectionSettingRequest.cpp
   src/v20230418/model/RunOperationTaskRequest.cpp
+  src/v20230418/model/SubtaskResult.cpp
   src/v20230418/model/Acl.cpp
   src/v20230418/model/TagFilter.cpp
   src/v20230418/model/DescribeDevicesRequest.cpp
