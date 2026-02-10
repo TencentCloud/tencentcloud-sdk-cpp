@@ -222,6 +222,51 @@ namespace TencentCloud
                      */
                     bool IPv6StatusHasBeenSet() const;
 
+                    /**
+                     * 获取指定域名绑定的共享 CNAME 地址，不传时使用默认 CNAME。
+绑定共享 CNAME 要求所有域名的调度策略保持一致，以下配置将影响调度策略，在不一致时绑定共享 CNAME 将按照以下方式处理：
+- IPv6 访问：不允许创建域名，请修改 IPv6Status 已保持与共享 CNAME 绑定的其余域名配置一致；
+- DDoS 防护：如果选择的共享 CNAME 已启用 DDoS 防护，则创建域名时，将默认为该域名启用 DDoS 防护。
+- 中国大陆网络优化（国际加速）：不允许创建域名，请保持当前域名的中国大陆网络优化（国际加速）配置与共享 CNAME 绑定的其余域名一致后重试。
+
+注：共享 CNAME 当前仍在内测中，如需使用，请联系我们开通。
+                     * @return SharedCNAME 指定域名绑定的共享 CNAME 地址，不传时使用默认 CNAME。
+绑定共享 CNAME 要求所有域名的调度策略保持一致，以下配置将影响调度策略，在不一致时绑定共享 CNAME 将按照以下方式处理：
+- IPv6 访问：不允许创建域名，请修改 IPv6Status 已保持与共享 CNAME 绑定的其余域名配置一致；
+- DDoS 防护：如果选择的共享 CNAME 已启用 DDoS 防护，则创建域名时，将默认为该域名启用 DDoS 防护。
+- 中国大陆网络优化（国际加速）：不允许创建域名，请保持当前域名的中国大陆网络优化（国际加速）配置与共享 CNAME 绑定的其余域名一致后重试。
+
+注：共享 CNAME 当前仍在内测中，如需使用，请联系我们开通。
+                     * 
+                     */
+                    std::string GetSharedCNAME() const;
+
+                    /**
+                     * 设置指定域名绑定的共享 CNAME 地址，不传时使用默认 CNAME。
+绑定共享 CNAME 要求所有域名的调度策略保持一致，以下配置将影响调度策略，在不一致时绑定共享 CNAME 将按照以下方式处理：
+- IPv6 访问：不允许创建域名，请修改 IPv6Status 已保持与共享 CNAME 绑定的其余域名配置一致；
+- DDoS 防护：如果选择的共享 CNAME 已启用 DDoS 防护，则创建域名时，将默认为该域名启用 DDoS 防护。
+- 中国大陆网络优化（国际加速）：不允许创建域名，请保持当前域名的中国大陆网络优化（国际加速）配置与共享 CNAME 绑定的其余域名一致后重试。
+
+注：共享 CNAME 当前仍在内测中，如需使用，请联系我们开通。
+                     * @param _sharedCNAME 指定域名绑定的共享 CNAME 地址，不传时使用默认 CNAME。
+绑定共享 CNAME 要求所有域名的调度策略保持一致，以下配置将影响调度策略，在不一致时绑定共享 CNAME 将按照以下方式处理：
+- IPv6 访问：不允许创建域名，请修改 IPv6Status 已保持与共享 CNAME 绑定的其余域名配置一致；
+- DDoS 防护：如果选择的共享 CNAME 已启用 DDoS 防护，则创建域名时，将默认为该域名启用 DDoS 防护。
+- 中国大陆网络优化（国际加速）：不允许创建域名，请保持当前域名的中国大陆网络优化（国际加速）配置与共享 CNAME 绑定的其余域名一致后重试。
+
+注：共享 CNAME 当前仍在内测中，如需使用，请联系我们开通。
+                     * 
+                     */
+                    void SetSharedCNAME(const std::string& _sharedCNAME);
+
+                    /**
+                     * 判断参数 SharedCNAME 是否已赋值
+                     * @return SharedCNAME 是否已赋值
+                     * 
+                     */
+                    bool SharedCNAMEHasBeenSet() const;
+
                 private:
 
                     /**
@@ -273,6 +318,18 @@ namespace TencentCloud
                      */
                     std::string m_iPv6Status;
                     bool m_iPv6StatusHasBeenSet;
+
+                    /**
+                     * 指定域名绑定的共享 CNAME 地址，不传时使用默认 CNAME。
+绑定共享 CNAME 要求所有域名的调度策略保持一致，以下配置将影响调度策略，在不一致时绑定共享 CNAME 将按照以下方式处理：
+- IPv6 访问：不允许创建域名，请修改 IPv6Status 已保持与共享 CNAME 绑定的其余域名配置一致；
+- DDoS 防护：如果选择的共享 CNAME 已启用 DDoS 防护，则创建域名时，将默认为该域名启用 DDoS 防护。
+- 中国大陆网络优化（国际加速）：不允许创建域名，请保持当前域名的中国大陆网络优化（国际加速）配置与共享 CNAME 绑定的其余域名一致后重试。
+
+注：共享 CNAME 当前仍在内测中，如需使用，请联系我们开通。
+                     */
+                    std::string m_sharedCNAME;
+                    bool m_sharedCNAMEHasBeenSet;
 
                 };
             }

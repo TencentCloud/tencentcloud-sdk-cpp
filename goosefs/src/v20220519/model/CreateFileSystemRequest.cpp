@@ -23,12 +23,12 @@ using namespace TencentCloud::Goosefs::V20220519::Model;
 using namespace std;
 
 CreateFileSystemRequest::CreateFileSystemRequest() :
-    m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_zoneHasBeenSet(false),
+    m_typeHasBeenSet(false),
     m_tagHasBeenSet(false),
     m_gooseFSxBuildElementsHasBeenSet(false),
     m_securityGroupIdHasBeenSet(false),
@@ -42,14 +42,6 @@ string CreateFileSystemRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_typeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Type";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_nameHasBeenSet)
     {
@@ -89,6 +81,14 @@ string CreateFileSystemRequest::ToJsonString() const
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagHasBeenSet)
@@ -138,22 +138,6 @@ string CreateFileSystemRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string CreateFileSystemRequest::GetType() const
-{
-    return m_type;
-}
-
-void CreateFileSystemRequest::SetType(const string& _type)
-{
-    m_type = _type;
-    m_typeHasBeenSet = true;
-}
-
-bool CreateFileSystemRequest::TypeHasBeenSet() const
-{
-    return m_typeHasBeenSet;
-}
 
 string CreateFileSystemRequest::GetName() const
 {
@@ -233,6 +217,22 @@ void CreateFileSystemRequest::SetZone(const string& _zone)
 bool CreateFileSystemRequest::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+string CreateFileSystemRequest::GetType() const
+{
+    return m_type;
+}
+
+void CreateFileSystemRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool CreateFileSystemRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 vector<Tag> CreateFileSystemRequest::GetTag() const

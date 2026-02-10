@@ -1290,6 +1290,56 @@ VodClient::CreateJustInTimeTranscodeTemplateOutcomeCallable VodClient::CreateJus
     return prom->get_future();
 }
 
+VodClient::CreateLLMComprehendTemplateOutcome VodClient::CreateLLMComprehendTemplate(const CreateLLMComprehendTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLLMComprehendTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLLMComprehendTemplateResponse rsp = CreateLLMComprehendTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLLMComprehendTemplateOutcome(rsp);
+        else
+            return CreateLLMComprehendTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLLMComprehendTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateLLMComprehendTemplateAsync(const CreateLLMComprehendTemplateRequest& request, const CreateLLMComprehendTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateLLMComprehendTemplateRequest&;
+    using Resp = CreateLLMComprehendTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateLLMComprehendTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateLLMComprehendTemplateOutcomeCallable VodClient::CreateLLMComprehendTemplateCallable(const CreateLLMComprehendTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateLLMComprehendTemplateOutcome>>();
+    CreateLLMComprehendTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateLLMComprehendTemplateRequest&,
+        CreateLLMComprehendTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::CreateMPSTemplateOutcome VodClient::CreateMPSTemplate(const CreateMPSTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateMPSTemplate");
@@ -2932,6 +2982,56 @@ VodClient::DeleteJustInTimeTranscodeTemplateOutcomeCallable VodClient::DeleteJus
         const VodClient*,
         const DeleteJustInTimeTranscodeTemplateRequest&,
         DeleteJustInTimeTranscodeTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::DeleteLLMComprehendTemplateOutcome VodClient::DeleteLLMComprehendTemplate(const DeleteLLMComprehendTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLLMComprehendTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLLMComprehendTemplateResponse rsp = DeleteLLMComprehendTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLLMComprehendTemplateOutcome(rsp);
+        else
+            return DeleteLLMComprehendTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLLMComprehendTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteLLMComprehendTemplateAsync(const DeleteLLMComprehendTemplateRequest& request, const DeleteLLMComprehendTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteLLMComprehendTemplateRequest&;
+    using Resp = DeleteLLMComprehendTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteLLMComprehendTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DeleteLLMComprehendTemplateOutcomeCallable VodClient::DeleteLLMComprehendTemplateCallable(const DeleteLLMComprehendTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteLLMComprehendTemplateOutcome>>();
+    DeleteLLMComprehendTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DeleteLLMComprehendTemplateRequest&,
+        DeleteLLMComprehendTemplateOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5382,6 +5482,56 @@ VodClient::DescribeJustInTimeTranscodeTemplatesOutcomeCallable VodClient::Descri
         const VodClient*,
         const DescribeJustInTimeTranscodeTemplatesRequest&,
         DescribeJustInTimeTranscodeTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::DescribeLLMComprehendTemplatesOutcome VodClient::DescribeLLMComprehendTemplates(const DescribeLLMComprehendTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLLMComprehendTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLLMComprehendTemplatesResponse rsp = DescribeLLMComprehendTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLLMComprehendTemplatesOutcome(rsp);
+        else
+            return DescribeLLMComprehendTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLLMComprehendTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeLLMComprehendTemplatesAsync(const DescribeLLMComprehendTemplatesRequest& request, const DescribeLLMComprehendTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLLMComprehendTemplatesRequest&;
+    using Resp = DescribeLLMComprehendTemplatesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLLMComprehendTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeLLMComprehendTemplatesOutcomeCallable VodClient::DescribeLLMComprehendTemplatesCallable(const DescribeLLMComprehendTemplatesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLLMComprehendTemplatesOutcome>>();
+    DescribeLLMComprehendTemplatesAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeLLMComprehendTemplatesRequest&,
+        DescribeLLMComprehendTemplatesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -8182,6 +8332,56 @@ VodClient::ModifyJustInTimeTranscodeTemplateOutcomeCallable VodClient::ModifyJus
         const VodClient*,
         const ModifyJustInTimeTranscodeTemplateRequest&,
         ModifyJustInTimeTranscodeTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::ModifyLLMComprehendTemplateOutcome VodClient::ModifyLLMComprehendTemplate(const ModifyLLMComprehendTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLLMComprehendTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLLMComprehendTemplateResponse rsp = ModifyLLMComprehendTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLLMComprehendTemplateOutcome(rsp);
+        else
+            return ModifyLLMComprehendTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLLMComprehendTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifyLLMComprehendTemplateAsync(const ModifyLLMComprehendTemplateRequest& request, const ModifyLLMComprehendTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyLLMComprehendTemplateRequest&;
+    using Resp = ModifyLLMComprehendTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyLLMComprehendTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::ModifyLLMComprehendTemplateOutcomeCallable VodClient::ModifyLLMComprehendTemplateCallable(const ModifyLLMComprehendTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyLLMComprehendTemplateOutcome>>();
+    ModifyLLMComprehendTemplateAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const ModifyLLMComprehendTemplateRequest&,
+        ModifyLLMComprehendTemplateOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

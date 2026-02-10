@@ -278,6 +278,27 @@ namespace TencentCloud
                      */
                     bool ReferencesHasBeenSet() const;
 
+                    /**
+                     * 获取关联的术语库 ID 列表，用于术语翻译，最大支持5个术语库
+                     * @return GlossaryIDs 关联的术语库 ID 列表，用于术语翻译，最大支持5个术语库
+                     * 
+                     */
+                    std::vector<std::string> GetGlossaryIDs() const;
+
+                    /**
+                     * 设置关联的术语库 ID 列表，用于术语翻译，最大支持5个术语库
+                     * @param _glossaryIDs 关联的术语库 ID 列表，用于术语翻译，最大支持5个术语库
+                     * 
+                     */
+                    void SetGlossaryIDs(const std::vector<std::string>& _glossaryIDs);
+
+                    /**
+                     * 判断参数 GlossaryIDs 是否已赋值
+                     * @return GlossaryIDs 是否已赋值
+                     * 
+                     */
+                    bool GlossaryIDsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -343,6 +364,12 @@ namespace TencentCloud
                      */
                     std::vector<Reference> m_references;
                     bool m_referencesHasBeenSet;
+
+                    /**
+                     * 关联的术语库 ID 列表，用于术语翻译，最大支持5个术语库
+                     */
+                    std::vector<std::string> m_glossaryIDs;
+                    bool m_glossaryIDsHasBeenSet;
 
                 };
             }

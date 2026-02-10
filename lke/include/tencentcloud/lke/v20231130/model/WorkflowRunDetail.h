@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lke/v20231130/model/CustomVariable.h>
+#include <tencentcloud/lke/v20231130/model/AsyncWorkflowMessage.h>
 
 
 namespace TencentCloud
@@ -404,6 +405,31 @@ namespace TencentCloud
                      */
                     bool WorkflowGraphHasBeenSet() const;
 
+                    /**
+                     * 获取当前的回复消息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LatestMessage 当前的回复消息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AsyncWorkflowMessage GetLatestMessage() const;
+
+                    /**
+                     * 设置当前的回复消息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _latestMessage 当前的回复消息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLatestMessage(const AsyncWorkflowMessage& _latestMessage);
+
+                    /**
+                     * 判断参数 LatestMessage 是否已赋值
+                     * @return LatestMessage 是否已赋值
+                     * 
+                     */
+                    bool LatestMessageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -507,6 +533,13 @@ namespace TencentCloud
                      */
                     std::string m_workflowGraph;
                     bool m_workflowGraphHasBeenSet;
+
+                    /**
+                     * 当前的回复消息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AsyncWorkflowMessage m_latestMessage;
+                    bool m_latestMessageHasBeenSet;
 
                 };
             }

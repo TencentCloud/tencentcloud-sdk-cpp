@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取创建成功返回的文件系统ID：
+                     * @return FileSystemId 创建成功返回的文件系统ID：
+                     * 
+                     */
+                    std::string GetFileSystemId() const;
+
+                    /**
+                     * 判断参数 FileSystemId 是否已赋值
+                     * @return FileSystemId 是否已赋值
+                     * 
+                     */
+                    bool FileSystemIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 创建成功返回的文件系统ID：
+                     */
+                    std::string m_fileSystemId;
+                    bool m_fileSystemIdHasBeenSet;
 
                 };
             }

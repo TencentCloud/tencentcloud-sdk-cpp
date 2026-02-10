@@ -1217,6 +1217,48 @@ NotExists
                      */
                     bool AIAgentNameHasBeenSet() const;
 
+                    /**
+                     * 获取接通后系统挂断原因，枚举类似
+                     * @return SysHangupReason 接通后系统挂断原因，枚举类似
+                     * 
+                     */
+                    int64_t GetSysHangupReason() const;
+
+                    /**
+                     * 设置接通后系统挂断原因，枚举类似
+                     * @param _sysHangupReason 接通后系统挂断原因，枚举类似
+                     * 
+                     */
+                    void SetSysHangupReason(const int64_t& _sysHangupReason);
+
+                    /**
+                     * 判断参数 SysHangupReason 是否已赋值
+                     * @return SysHangupReason 是否已赋值
+                     * 
+                     */
+                    bool SysHangupReasonHasBeenSet() const;
+
+                    /**
+                     * 获取接通后系统挂断原因，文字描述信息
+                     * @return SysHangupReasonString 接通后系统挂断原因，文字描述信息
+                     * 
+                     */
+                    std::string GetSysHangupReasonString() const;
+
+                    /**
+                     * 设置接通后系统挂断原因，文字描述信息
+                     * @param _sysHangupReasonString 接通后系统挂断原因，文字描述信息
+                     * 
+                     */
+                    void SetSysHangupReasonString(const std::string& _sysHangupReasonString);
+
+                    /**
+                     * 判断参数 SysHangupReasonString 是否已赋值
+                     * @return SysHangupReasonString 是否已赋值
+                     * 
+                     */
+                    bool SysHangupReasonStringHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1540,6 +1582,18 @@ NotExists
                      */
                     std::string m_aIAgentName;
                     bool m_aIAgentNameHasBeenSet;
+
+                    /**
+                     * 接通后系统挂断原因，枚举类似
+                     */
+                    int64_t m_sysHangupReason;
+                    bool m_sysHangupReasonHasBeenSet;
+
+                    /**
+                     * 接通后系统挂断原因，文字描述信息
+                     */
+                    std::string m_sysHangupReasonString;
+                    bool m_sysHangupReasonStringHasBeenSet;
 
                 };
             }

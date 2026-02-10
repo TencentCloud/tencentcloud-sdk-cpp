@@ -45,27 +45,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件系统类型, 可填goosefs和goosefsx
-                     * @return Type 文件系统类型, 可填goosefs和goosefsx
-                     * 
-                     */
-                    std::string GetType() const;
-
-                    /**
-                     * 设置文件系统类型, 可填goosefs和goosefsx
-                     * @param _type 文件系统类型, 可填goosefs和goosefsx
-                     * 
-                     */
-                    void SetType(const std::string& _type);
-
-                    /**
-                     * 判断参数 Type 是否已赋值
-                     * @return Type 是否已赋值
-                     * 
-                     */
-                    bool TypeHasBeenSet() const;
-
-                    /**
                      * 获取文件系统名
                      * @return Name 文件系统名
                      * 
@@ -171,6 +150,27 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
+                     * 获取文件系统类型, 可填goosefs和goosefsx
+                     * @return Type 文件系统类型, 可填goosefs和goosefsx
+                     * @deprecated
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置文件系统类型, 可填goosefs和goosefsx
+                     * @param _type 文件系统类型, 可填goosefs和goosefsx
+                     * @deprecated
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * @deprecated
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
                      * 获取文件系统关联的tag
                      * @return Tag 文件系统关联的tag
                      * 
@@ -257,12 +257,6 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件系统类型, 可填goosefs和goosefsx
-                     */
-                    std::string m_type;
-                    bool m_typeHasBeenSet;
-
-                    /**
                      * 文件系统名
                      */
                     std::string m_name;
@@ -291,6 +285,12 @@ namespace TencentCloud
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * 文件系统类型, 可填goosefs和goosefsx
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                     /**
                      * 文件系统关联的tag

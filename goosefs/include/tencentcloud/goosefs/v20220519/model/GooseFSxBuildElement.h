@@ -92,21 +92,21 @@ namespace TencentCloud
                     /**
                      * 获取要关联映射的bucket列表
                      * @return MappedBucketList 要关联映射的bucket列表
-                     * 
+                     * @deprecated
                      */
                     std::vector<MappedBucket> GetMappedBucketList() const;
 
                     /**
                      * 设置要关联映射的bucket列表
                      * @param _mappedBucketList 要关联映射的bucket列表
-                     * 
+                     * @deprecated
                      */
                     void SetMappedBucketList(const std::vector<MappedBucket>& _mappedBucketList);
 
                     /**
                      * 判断参数 MappedBucketList 是否已赋值
                      * @return MappedBucketList 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool MappedBucketListHasBeenSet() const;
 

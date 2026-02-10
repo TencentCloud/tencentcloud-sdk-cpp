@@ -48,22 +48,26 @@ namespace TencentCloud
 
                     /**
                      * 获取实时文档解析接口返回的 DocBizId
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DocBizId 实时文档解析接口返回的 DocBizId
-                     * 
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
                      */
                     uint64_t GetDocBizId() const;
 
                     /**
                      * 设置实时文档解析接口返回的 DocBizId
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _docBizId 实时文档解析接口返回的 DocBizId
-                     * 
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
                      */
                     void SetDocBizId(const uint64_t& _docBizId);
 
                     /**
                      * 判断参数 DocBizId 是否已赋值
                      * @return DocBizId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DocBizIdHasBeenSet() const;
 
@@ -167,10 +171,61 @@ namespace TencentCloud
                      */
                     bool FileUrlHasBeenSet() const;
 
+                    /**
+                     * 获取实时文档解析接口返回的 doc_id。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DocId 实时文档解析接口返回的 doc_id。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetDocId() const;
+
+                    /**
+                     * 设置实时文档解析接口返回的 doc_id。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _docId 实时文档解析接口返回的 doc_id。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDocId(const uint64_t& _docId);
+
+                    /**
+                     * 判断参数 DocId 是否已赋值
+                     * @return DocId 是否已赋值
+                     * 
+                     */
+                    bool DocIdHasBeenSet() const;
+
+                    /**
+                     * 获取文件创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 文件创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetCreateTime() const;
+
+                    /**
+                     * 设置文件创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createTime 文件创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreateTime(const uint64_t& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
                      * 实时文档解析接口返回的 DocBizId
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_docBizId;
                     bool m_docBizIdHasBeenSet;
@@ -202,6 +257,20 @@ namespace TencentCloud
                      */
                     std::string m_fileUrl;
                     bool m_fileUrlHasBeenSet;
+
+                    /**
+                     * 实时文档解析接口返回的 doc_id。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_docId;
+                    bool m_docIdHasBeenSet;
+
+                    /**
+                     * 文件创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

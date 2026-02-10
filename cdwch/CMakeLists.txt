@@ -85,12 +85,14 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisResponse.h
   include/tencentcloud/cdwch/v20200915/model/Charge.h
   include/tencentcloud/cdwch/v20200915/model/DescribeBackUpScheduleRequest.h
+  include/tencentcloud/cdwch/v20200915/model/RestartInstanceResponse.h
   include/tencentcloud/cdwch/v20200915/model/ScaleCNOutUpInstanceResponse.h
   include/tencentcloud/cdwch/v20200915/model/ResourceSpec.h
   include/tencentcloud/cdwch/v20200915/model/ClusterConfigsInfoFromEMR.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceClustersRequest.h
   include/tencentcloud/cdwch/v20200915/model/DescribeCNInstancesResponse.h
   include/tencentcloud/cdwch/v20200915/model/DestroyInstanceRequest.h
+  include/tencentcloud/cdwch/v20200915/model/RestartInstanceRequest.h
   include/tencentcloud/cdwch/v20200915/model/ServiceInfo.h
   include/tencentcloud/cdwch/v20200915/model/ModifyClusterConfigsResponse.h
   include/tencentcloud/cdwch/v20200915/model/DeleteBackUpDataResponse.h
@@ -179,12 +181,14 @@ set(cdwch_src
   src/v20200915/model/DescribeCkSqlApisResponse.cpp
   src/v20200915/model/Charge.cpp
   src/v20200915/model/DescribeBackUpScheduleRequest.cpp
+  src/v20200915/model/RestartInstanceResponse.cpp
   src/v20200915/model/ScaleCNOutUpInstanceResponse.cpp
   src/v20200915/model/ResourceSpec.cpp
   src/v20200915/model/ClusterConfigsInfoFromEMR.cpp
   src/v20200915/model/DescribeInstanceClustersRequest.cpp
   src/v20200915/model/DescribeCNInstancesResponse.cpp
   src/v20200915/model/DestroyInstanceRequest.cpp
+  src/v20200915/model/RestartInstanceRequest.cpp
   src/v20200915/model/ServiceInfo.cpp
   src/v20200915/model/ModifyClusterConfigsResponse.cpp
   src/v20200915/model/DeleteBackUpDataResponse.cpp

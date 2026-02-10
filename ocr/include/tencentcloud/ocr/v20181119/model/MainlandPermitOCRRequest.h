@@ -108,11 +108,11 @@ namespace TencentCloud
                     /**
                      * 获取图片正反面
 FRONT：正面
-BACK：反面
+BACK：反面 （仅支持来往内地通行证反面识别，不支持港澳台通行证反面识别）
 默认为FRONT
                      * @return CardSide 图片正反面
 FRONT：正面
-BACK：反面
+BACK：反面 （仅支持来往内地通行证反面识别，不支持港澳台通行证反面识别）
 默认为FRONT
                      * 
                      */
@@ -121,11 +121,11 @@ BACK：反面
                     /**
                      * 设置图片正反面
 FRONT：正面
-BACK：反面
+BACK：反面 （仅支持来往内地通行证反面识别，不支持港澳台通行证反面识别）
 默认为FRONT
                      * @param _cardSide 图片正反面
 FRONT：正面
-BACK：反面
+BACK：反面 （仅支持来往内地通行证反面识别，不支持港澳台通行证反面识别）
 默认为FRONT
                      * 
                      */
@@ -161,7 +161,7 @@ BACK：反面
                     /**
                      * 图片正反面
 FRONT：正面
-BACK：反面
+BACK：反面 （仅支持来往内地通行证反面识别，不支持港澳台通行证反面识别）
 默认为FRONT
                      */
                     std::string m_cardSide;

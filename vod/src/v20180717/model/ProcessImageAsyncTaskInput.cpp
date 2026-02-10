@@ -21,7 +21,8 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 ProcessImageAsyncTaskInput::ProcessImageAsyncTaskInput() :
-    m_definitionHasBeenSet(false)
+    m_definitionHasBeenSet(false),
+    m_extendedParameterHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,23 @@ CoreInternalOutcome ProcessImageAsyncTaskInput::Deserialize(const rapidjson::Val
         m_definitionHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtendedParameter") && !value["ExtendedParameter"].IsNull())
+    {
+        if (!value["ExtendedParameter"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessImageAsyncTaskInput.ExtendedParameter` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extendedParameter.Deserialize(value["ExtendedParameter"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extendedParameterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +71,15 @@ void ProcessImageAsyncTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_definition, allocator);
+    }
+
+    if (m_extendedParameterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtendedParameter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extendedParameter.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -72,5 +99,21 @@ void ProcessImageAsyncTaskInput::SetDefinition(const int64_t& _definition)
 bool ProcessImageAsyncTaskInput::DefinitionHasBeenSet() const
 {
     return m_definitionHasBeenSet;
+}
+
+ProcessImageAsyncInputExtendedParameter ProcessImageAsyncTaskInput::GetExtendedParameter() const
+{
+    return m_extendedParameter;
+}
+
+void ProcessImageAsyncTaskInput::SetExtendedParameter(const ProcessImageAsyncInputExtendedParameter& _extendedParameter)
+{
+    m_extendedParameter = _extendedParameter;
+    m_extendedParameterHasBeenSet = true;
+}
+
+bool ProcessImageAsyncTaskInput::ExtendedParameterHasBeenSet() const
+{
+    return m_extendedParameterHasBeenSet;
 }
 

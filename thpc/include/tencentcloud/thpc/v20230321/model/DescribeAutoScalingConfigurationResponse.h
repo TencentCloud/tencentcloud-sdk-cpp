@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID。
-                     * @return ClusterId 集群ID。
+                     * 获取<p>集群ID。</p>
+                     * @return ClusterId <p>集群ID。</p>
                      * 
                      */
                     std::string GetClusterId() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取任务连续等待时间，队列的任务处于连续等待的时间。单位秒。
-                     * @return ExpansionBusyTime 任务连续等待时间，队列的任务处于连续等待的时间。单位秒。
+                     * 获取<p>任务连续等待时间，队列的任务处于连续等待的时间。单位秒。</p>
+                     * @return ExpansionBusyTime <p>任务连续等待时间，队列的任务处于连续等待的时间。单位秒。</p>
                      * 
                      */
                     int64_t GetExpansionBusyTime() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool ExpansionBusyTimeHasBeenSet() const;
 
                     /**
-                     * 获取节点连续空闲（未运行作业）时间，一个节点连续处于空闲状态时间。
-                     * @return ShrinkIdleTime 节点连续空闲（未运行作业）时间，一个节点连续处于空闲状态时间。
+                     * 获取<p>节点连续空闲（未运行作业）时间，一个节点连续处于空闲状态时间。</p>
+                     * @return ShrinkIdleTime <p>节点连续空闲（未运行作业）时间，一个节点连续处于空闲状态时间。</p>
                      * 
                      */
                     int64_t GetShrinkIdleTime() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool ShrinkIdleTimeHasBeenSet() const;
 
                     /**
-                     * 获取扩容队列配置概览列表。
-                     * @return QueueConfigs 扩容队列配置概览列表。
+                     * 获取<p>扩容队列配置概览列表。</p>
+                     * @return QueueConfigs <p>扩容队列配置概览列表。</p>
                      * 
                      */
                     std::vector<QueueConfigOverview> GetQueueConfigs() const;
@@ -103,25 +103,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID。
+                     * <p>集群ID。</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 任务连续等待时间，队列的任务处于连续等待的时间。单位秒。
+                     * <p>任务连续等待时间，队列的任务处于连续等待的时间。单位秒。</p>
                      */
                     int64_t m_expansionBusyTime;
                     bool m_expansionBusyTimeHasBeenSet;
 
                     /**
-                     * 节点连续空闲（未运行作业）时间，一个节点连续处于空闲状态时间。
+                     * <p>节点连续空闲（未运行作业）时间，一个节点连续处于空闲状态时间。</p>
                      */
                     int64_t m_shrinkIdleTime;
                     bool m_shrinkIdleTimeHasBeenSet;
 
                     /**
-                     * 扩容队列配置概览列表。
+                     * <p>扩容队列配置概览列表。</p>
                      */
                     std::vector<QueueConfigOverview> m_queueConfigs;
                     bool m_queueConfigsHasBeenSet;

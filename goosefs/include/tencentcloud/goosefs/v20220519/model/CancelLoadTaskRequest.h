@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_GOOSEFS_V20220519_MODEL_DESCRIBECLUSTERROLESREQUEST_H_
-#define TENCENTCLOUD_GOOSEFS_V20220519_MODEL_DESCRIBECLUSTERROLESREQUEST_H_
+#ifndef TENCENTCLOUD_GOOSEFS_V20220519_MODEL_CANCELLOADTASKREQUEST_H_
+#define TENCENTCLOUD_GOOSEFS_V20220519_MODEL_CANCELLOADTASKREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -32,26 +32,26 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * DescribeClusterRoles请求参数结构体
+                * CancelLoadTask请求参数结构体
                 */
-                class DescribeClusterRolesRequest : public AbstractModel
+                class CancelLoadTaskRequest : public AbstractModel
                 {
                 public:
-                    DescribeClusterRolesRequest();
-                    ~DescribeClusterRolesRequest() = default;
+                    CancelLoadTaskRequest();
+                    ~CancelLoadTaskRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取集群 ID
+                     * @return ClusterId 集群 ID
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置集群 ID
+                     * @param _clusterId 集群 ID
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,39 +64,39 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取角色名
-                     * @return RoleName 角色名
+                     * 获取预热任务 ID
+                     * @return TaskId 预热任务 ID
                      * 
                      */
-                    std::string GetRoleName() const;
+                    std::string GetTaskId() const;
 
                     /**
-                     * 设置角色名
-                     * @param _roleName 角色名
+                     * 设置预热任务 ID
+                     * @param _taskId 预热任务 ID
                      * 
                      */
-                    void SetRoleName(const std::string& _roleName);
+                    void SetTaskId(const std::string& _taskId);
 
                     /**
-                     * 判断参数 RoleName 是否已赋值
-                     * @return RoleName 是否已赋值
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
                      * 
                      */
-                    bool RoleNameHasBeenSet() const;
+                    bool TaskIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 集群ID
+                     * 集群 ID
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 角色名
+                     * 预热任务 ID
                      */
-                    std::string m_roleName;
-                    bool m_roleNameHasBeenSet;
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }
@@ -104,4 +104,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_GOOSEFS_V20220519_MODEL_DESCRIBECLUSTERROLESREQUEST_H_
+#endif // !TENCENTCLOUD_GOOSEFS_V20220519_MODEL_CANCELLOADTASKREQUEST_H_

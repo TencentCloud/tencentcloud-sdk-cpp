@@ -28,6 +28,7 @@
 #include <tencentcloud/ags/v20250920/model/Tag.h>
 #include <tencentcloud/ags/v20250920/model/StorageMount.h>
 #include <tencentcloud/ags/v20250920/model/CustomConfigurationDetail.h>
+#include <tencentcloud/ags/v20250920/model/LogConfiguration.h>
 
 
 namespace TencentCloud
@@ -323,6 +324,27 @@ namespace TencentCloud
                      */
                     bool CustomConfigurationHasBeenSet() const;
 
+                    /**
+                     * 获取沙箱工具日志推送相关配置
+                     * @return LogConfiguration 沙箱工具日志推送相关配置
+                     * 
+                     */
+                    LogConfiguration GetLogConfiguration() const;
+
+                    /**
+                     * 设置沙箱工具日志推送相关配置
+                     * @param _logConfiguration 沙箱工具日志推送相关配置
+                     * 
+                     */
+                    void SetLogConfiguration(const LogConfiguration& _logConfiguration);
+
+                    /**
+                     * 判断参数 LogConfiguration 是否已赋值
+                     * @return LogConfiguration 是否已赋值
+                     * 
+                     */
+                    bool LogConfigurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -402,6 +424,12 @@ namespace TencentCloud
                      */
                     CustomConfigurationDetail m_customConfiguration;
                     bool m_customConfigurationHasBeenSet;
+
+                    /**
+                     * 沙箱工具日志推送相关配置
+                     */
+                    LogConfiguration m_logConfiguration;
+                    bool m_logConfigurationHasBeenSet;
 
                 };
             }

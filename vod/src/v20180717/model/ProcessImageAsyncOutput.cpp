@@ -21,7 +21,8 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 ProcessImageAsyncOutput::ProcessImageAsyncOutput() :
-    m_fileInfoHasBeenSet(false)
+    m_fileInfoHasBeenSet(false),
+    m_outputTextHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,16 @@ CoreInternalOutcome ProcessImageAsyncOutput::Deserialize(const rapidjson::Value 
         m_fileInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("OutputText") && !value["OutputText"].IsNull())
+    {
+        if (!value["OutputText"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessImageAsyncOutput.OutputText` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputText = string(value["OutputText"].GetString());
+        m_outputTextHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -61,6 +72,14 @@ void ProcessImageAsyncOutput::ToJsonObject(rapidjson::Value &value, rapidjson::D
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_fileInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_outputTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputText";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputText.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -80,5 +99,21 @@ void ProcessImageAsyncOutput::SetFileInfo(const ProcessImageAsyncOutputFileInfo&
 bool ProcessImageAsyncOutput::FileInfoHasBeenSet() const
 {
     return m_fileInfoHasBeenSet;
+}
+
+string ProcessImageAsyncOutput::GetOutputText() const
+{
+    return m_outputText;
+}
+
+void ProcessImageAsyncOutput::SetOutputText(const string& _outputText)
+{
+    m_outputText = _outputText;
+    m_outputTextHasBeenSet = true;
+}
+
+bool ProcessImageAsyncOutput::OutputTextHasBeenSet() const
+{
+    return m_outputTextHasBeenSet;
 }
 

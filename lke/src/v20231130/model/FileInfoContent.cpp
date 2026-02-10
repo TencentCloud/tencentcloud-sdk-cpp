@@ -25,7 +25,9 @@ FileInfoContent::FileInfoContent() :
     m_fileNameHasBeenSet(false),
     m_fileTypeHasBeenSet(false),
     m_fileSizeHasBeenSet(false),
-    m_fileUrlHasBeenSet(false)
+    m_fileUrlHasBeenSet(false),
+    m_docIdHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome FileInfoContent::Deserialize(const rapidjson::Value &value)
         m_fileUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("DocId") && !value["DocId"].IsNull())
+    {
+        if (!value["DocId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileInfoContent.DocId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_docId = value["DocId"].GetUint64();
+        m_docIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileInfoContent.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = value["CreateTime"].GetUint64();
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +151,22 @@ void FileInfoContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "FileUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fileUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_docIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DocId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_docId, allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTime, allocator);
     }
 
 }
@@ -212,5 +250,37 @@ void FileInfoContent::SetFileUrl(const string& _fileUrl)
 bool FileInfoContent::FileUrlHasBeenSet() const
 {
     return m_fileUrlHasBeenSet;
+}
+
+uint64_t FileInfoContent::GetDocId() const
+{
+    return m_docId;
+}
+
+void FileInfoContent::SetDocId(const uint64_t& _docId)
+{
+    m_docId = _docId;
+    m_docIdHasBeenSet = true;
+}
+
+bool FileInfoContent::DocIdHasBeenSet() const
+{
+    return m_docIdHasBeenSet;
+}
+
+uint64_t FileInfoContent::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void FileInfoContent::SetCreateTime(const uint64_t& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool FileInfoContent::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取密码
-                     * @return PassWord 密码
+                     * 获取base64加密后的密码
+                     * @return PassWord base64加密后的密码
                      * 
                      */
                     std::string GetPassWord() const;
 
                     /**
-                     * 设置密码
-                     * @param _passWord 密码
+                     * 设置base64加密后的密码
+                     * @param _passWord base64加密后的密码
                      * 
                      */
                     void SetPassWord(const std::string& _passWord);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool PassWordHasBeenSet() const;
 
                     /**
-                     * 获取用户链接来自的 IP
-                     * @return WhiteHost 用户链接来自的 IP
+                     * 获取用户链接来自的 IP地址
+                     * @return WhiteHost 用户链接来自的 IP地址
                      * 
                      */
                     std::string GetWhiteHost() const;
 
                     /**
-                     * 设置用户链接来自的 IP
-                     * @param _whiteHost 用户链接来自的 IP
+                     * 设置用户链接来自的 IP地址
+                     * @param _whiteHost 用户链接来自的 IP地址
                      * 
                      */
                     void SetWhiteHost(const std::string& _whiteHost);
@@ -271,13 +271,13 @@ namespace TencentCloud
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 密码
+                     * base64加密后的密码
                      */
                     std::string m_passWord;
                     bool m_passWordHasBeenSet;
 
                     /**
-                     * 用户链接来自的 IP
+                     * 用户链接来自的 IP地址
                      */
                     std::string m_whiteHost;
                     bool m_whiteHostHasBeenSet;

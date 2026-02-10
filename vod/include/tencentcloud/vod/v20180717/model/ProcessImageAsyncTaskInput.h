@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/ProcessImageAsyncInputExtendedParameter.h>
 
 
 namespace TencentCloud
@@ -67,6 +68,27 @@ namespace TencentCloud
                      */
                     bool DefinitionHasBeenSet() const;
 
+                    /**
+                     * 获取图片异步处理扩展参数。
+                     * @return ExtendedParameter 图片异步处理扩展参数。
+                     * 
+                     */
+                    ProcessImageAsyncInputExtendedParameter GetExtendedParameter() const;
+
+                    /**
+                     * 设置图片异步处理扩展参数。
+                     * @param _extendedParameter 图片异步处理扩展参数。
+                     * 
+                     */
+                    void SetExtendedParameter(const ProcessImageAsyncInputExtendedParameter& _extendedParameter);
+
+                    /**
+                     * 判断参数 ExtendedParameter 是否已赋值
+                     * @return ExtendedParameter 是否已赋值
+                     * 
+                     */
+                    bool ExtendedParameterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -74,6 +96,12 @@ namespace TencentCloud
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
+
+                    /**
+                     * 图片异步处理扩展参数。
+                     */
+                    ProcessImageAsyncInputExtendedParameter m_extendedParameter;
+                    bool m_extendedParameterHasBeenSet;
 
                 };
             }

@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Goosefs::V20220519::Model;
 using namespace std;
 
-CreateFileSystemResponse::CreateFileSystemResponse()
+CreateFileSystemResponse::CreateFileSystemResponse() :
+    m_fileSystemIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateFileSystemResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("FileSystemId") && !rsp["FileSystemId"].IsNull())
+    {
+        if (!rsp["FileSystemId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileSystemId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileSystemId = string(rsp["FileSystemId"].GetString());
+        m_fileSystemIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateFileSystemResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_fileSystemIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileSystemId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileSystemId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateFileSystemResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateFileSystemResponse::GetFileSystemId() const
+{
+    return m_fileSystemId;
+}
+
+bool CreateFileSystemResponse::FileSystemIdHasBeenSet() const
+{
+    return m_fileSystemIdHasBeenSet;
+}
 
 

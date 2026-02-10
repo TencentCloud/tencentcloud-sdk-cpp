@@ -526,6 +526,27 @@ namespace TencentCloud
                      */
                     bool AuthTypeHasBeenSet() const;
 
+                    /**
+                     * 获取工具授权配置状态；0：不需要授权，1：需要授权-未配置，2：需要授权-已配置
+                     * @return AuthConfigStatus 工具授权配置状态；0：不需要授权，1：需要授权-未配置，2：需要授权-已配置
+                     * 
+                     */
+                    int64_t GetAuthConfigStatus() const;
+
+                    /**
+                     * 设置工具授权配置状态；0：不需要授权，1：需要授权-未配置，2：需要授权-已配置
+                     * @param _authConfigStatus 工具授权配置状态；0：不需要授权，1：需要授权-未配置，2：需要授权-已配置
+                     * 
+                     */
+                    void SetAuthConfigStatus(const int64_t& _authConfigStatus);
+
+                    /**
+                     * 判断参数 AuthConfigStatus 是否已赋值
+                     * @return AuthConfigStatus 是否已赋值
+                     * 
+                     */
+                    bool AuthConfigStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -662,6 +683,12 @@ namespace TencentCloud
                      */
                     int64_t m_authType;
                     bool m_authTypeHasBeenSet;
+
+                    /**
+                     * 工具授权配置状态；0：不需要授权，1：需要授权-未配置，2：需要授权-已配置
+                     */
+                    int64_t m_authConfigStatus;
+                    bool m_authConfigStatusHasBeenSet;
 
                 };
             }

@@ -37,7 +37,8 @@ WorkflowRunDetail::WorkflowRunDetail() :
     m_queryHasBeenSet(false),
     m_mainModelNameHasBeenSet(false),
     m_customVariablesHasBeenSet(false),
-    m_workflowGraphHasBeenSet(false)
+    m_workflowGraphHasBeenSet(false),
+    m_latestMessageHasBeenSet(false)
 {
 }
 
@@ -226,6 +227,23 @@ CoreInternalOutcome WorkflowRunDetail::Deserialize(const rapidjson::Value &value
         m_workflowGraphHasBeenSet = true;
     }
 
+    if (value.HasMember("LatestMessage") && !value["LatestMessage"].IsNull())
+    {
+        if (!value["LatestMessage"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowRunDetail.LatestMessage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_latestMessage.Deserialize(value["LatestMessage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_latestMessageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -374,6 +392,15 @@ void WorkflowRunDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "WorkflowGraph";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_workflowGraph.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latestMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_latestMessage.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -649,5 +676,21 @@ void WorkflowRunDetail::SetWorkflowGraph(const string& _workflowGraph)
 bool WorkflowRunDetail::WorkflowGraphHasBeenSet() const
 {
     return m_workflowGraphHasBeenSet;
+}
+
+AsyncWorkflowMessage WorkflowRunDetail::GetLatestMessage() const
+{
+    return m_latestMessage;
+}
+
+void WorkflowRunDetail::SetLatestMessage(const AsyncWorkflowMessage& _latestMessage)
+{
+    m_latestMessage = _latestMessage;
+    m_latestMessageHasBeenSet = true;
+}
+
+bool WorkflowRunDetail::LatestMessageHasBeenSet() const
+{
+    return m_latestMessageHasBeenSet;
 }
 

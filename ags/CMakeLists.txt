@@ -64,6 +64,8 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/AcquireSandboxInstanceTokenResponse.h
   include/tencentcloud/ags/v20250920/model/ProbeConfiguration.h
   include/tencentcloud/ags/v20250920/model/CreatePreCacheImageTaskRequest.h
+  include/tencentcloud/ags/v20250920/model/CLSConfig.h
+  include/tencentcloud/ags/v20250920/model/LogConfiguration.h
   include/tencentcloud/ags/v20250920/model/Tag.h
   include/tencentcloud/ags/v20250920/model/UpdateSandboxToolRequest.h
   include/tencentcloud/ags/v20250920/model/ResumeSandboxInstanceResponse.h
@@ -120,6 +122,8 @@ set(ags_src
   src/v20250920/model/AcquireSandboxInstanceTokenResponse.cpp
   src/v20250920/model/ProbeConfiguration.cpp
   src/v20250920/model/CreatePreCacheImageTaskRequest.cpp
+  src/v20250920/model/CLSConfig.cpp
+  src/v20250920/model/LogConfiguration.cpp
   src/v20250920/model/Tag.cpp
   src/v20250920/model/UpdateSandboxToolRequest.cpp
   src/v20250920/model/ResumeSandboxInstanceResponse.cpp

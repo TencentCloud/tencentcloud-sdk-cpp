@@ -161,12 +161,12 @@ namespace TencentCloud
                     /**
                      * 获取参考类型，GV模型适用。
 注意：
-
-当使用GV模型时，可作为参考方式,可选asset(素材)、style(风格)。
+当使用 GV 模型时，可作为参考方式，可选值：asset 表示素材、style 表示风格；
+当使用 Kling 模型以及 Category 为 Video 时，可区分参考视频类型，feature 表示特征参考视频，base 表示待编辑视频。
                      * @return ReferenceType 参考类型，GV模型适用。
 注意：
-
-当使用GV模型时，可作为参考方式,可选asset(素材)、style(风格)。
+当使用 GV 模型时，可作为参考方式，可选值：asset 表示素材、style 表示风格；
+当使用 Kling 模型以及 Category 为 Video 时，可区分参考视频类型，feature 表示特征参考视频，base 表示待编辑视频。
                      * 
                      */
                     std::string GetReferenceType() const;
@@ -174,12 +174,12 @@ namespace TencentCloud
                     /**
                      * 设置参考类型，GV模型适用。
 注意：
-
-当使用GV模型时，可作为参考方式,可选asset(素材)、style(风格)。
+当使用 GV 模型时，可作为参考方式，可选值：asset 表示素材、style 表示风格；
+当使用 Kling 模型以及 Category 为 Video 时，可区分参考视频类型，feature 表示特征参考视频，base 表示待编辑视频。
                      * @param _referenceType 参考类型，GV模型适用。
 注意：
-
-当使用GV模型时，可作为参考方式,可选asset(素材)、style(风格)。
+当使用 GV 模型时，可作为参考方式，可选值：asset 表示素材、style 表示风格；
+当使用 Kling 模型以及 Category 为 Video 时，可区分参考视频类型，feature 表示特征参考视频，base 表示待编辑视频。
                      * 
                      */
                     void SetReferenceType(const std::string& _referenceType);
@@ -192,23 +192,23 @@ namespace TencentCloud
                     bool ReferenceTypeHasBeenSet() const;
 
                     /**
-                     * 获取主体id.
+                     * 获取主体 Id。
 适用模型：Vidu-q2.
-当需要对图片标识主体时，需要每个图片都带主体id，后续生成时可以通过@主体id的方式使用。
-                     * @return ObjectId 主体id.
+当需要对图片标识主体时，需要每个图片都带主体 Id，后续生成时可以通过@主体 Id 的方式使用。当 Category 为 Image 时有效。
+                     * @return ObjectId 主体 Id。
 适用模型：Vidu-q2.
-当需要对图片标识主体时，需要每个图片都带主体id，后续生成时可以通过@主体id的方式使用。
+当需要对图片标识主体时，需要每个图片都带主体 Id，后续生成时可以通过@主体 Id 的方式使用。当 Category 为 Image 时有效。
                      * 
                      */
                     std::string GetObjectId() const;
 
                     /**
-                     * 设置主体id.
+                     * 设置主体 Id。
 适用模型：Vidu-q2.
-当需要对图片标识主体时，需要每个图片都带主体id，后续生成时可以通过@主体id的方式使用。
-                     * @param _objectId 主体id.
+当需要对图片标识主体时，需要每个图片都带主体 Id，后续生成时可以通过@主体 Id 的方式使用。当 Category 为 Image 时有效。
+                     * @param _objectId 主体 Id。
 适用模型：Vidu-q2.
-当需要对图片标识主体时，需要每个图片都带主体id，后续生成时可以通过@主体id的方式使用。
+当需要对图片标识主体时，需要每个图片都带主体 Id，后续生成时可以通过@主体 Id 的方式使用。当 Category 为 Image 时有效。
                      * 
                      */
                     void SetObjectId(const std::string& _objectId);
@@ -221,19 +221,19 @@ namespace TencentCloud
                     bool ObjectIdHasBeenSet() const;
 
                     /**
-                     * 获取适用于Vidu-q2模型。
-当全部图片携带主体id时，可针对主体设置音色id。 音色列表：https://shengshu.feishu.cn/sheets/EgFvs6DShhiEBStmjzccr5gonOg
-                     * @return VoiceId 适用于Vidu-q2模型。
-当全部图片携带主体id时，可针对主体设置音色id。 音色列表：https://shengshu.feishu.cn/sheets/EgFvs6DShhiEBStmjzccr5gonOg
+                     * 获取适用于 Vidu-q2 模型。
+当全部图片携带主体 Id 时，可针对主体设置音色 Id。 当 Category 为 Image 时有效。音色列表：https://shengshu.feishu.cn/sheets/EgFvs6DShhiEBStmjzccr5gonOg
+                     * @return VoiceId 适用于 Vidu-q2 模型。
+当全部图片携带主体 Id 时，可针对主体设置音色 Id。 当 Category 为 Image 时有效。音色列表：https://shengshu.feishu.cn/sheets/EgFvs6DShhiEBStmjzccr5gonOg
                      * 
                      */
                     std::string GetVoiceId() const;
 
                     /**
-                     * 设置适用于Vidu-q2模型。
-当全部图片携带主体id时，可针对主体设置音色id。 音色列表：https://shengshu.feishu.cn/sheets/EgFvs6DShhiEBStmjzccr5gonOg
-                     * @param _voiceId 适用于Vidu-q2模型。
-当全部图片携带主体id时，可针对主体设置音色id。 音色列表：https://shengshu.feishu.cn/sheets/EgFvs6DShhiEBStmjzccr5gonOg
+                     * 设置适用于 Vidu-q2 模型。
+当全部图片携带主体 Id 时，可针对主体设置音色 Id。 当 Category 为 Image 时有效。音色列表：https://shengshu.feishu.cn/sheets/EgFvs6DShhiEBStmjzccr5gonOg
+                     * @param _voiceId 适用于 Vidu-q2 模型。
+当全部图片携带主体 Id 时，可针对主体设置音色 Id。 当 Category 为 Image 时有效。音色列表：https://shengshu.feishu.cn/sheets/EgFvs6DShhiEBStmjzccr5gonOg
                      * 
                      */
                     void SetVoiceId(const std::string& _voiceId);
@@ -244,6 +244,35 @@ namespace TencentCloud
                      * 
                      */
                     bool VoiceIdHasBeenSet() const;
+
+                    /**
+                     * 获取是否保留视频原声。当 Category 为 Video 时有效。取值如下：
+<li>Enabled：保留</li>
+<li>Disabled：不保留</li>
+                     * @return KeepOriginalSound 是否保留视频原声。当 Category 为 Video 时有效。取值如下：
+<li>Enabled：保留</li>
+<li>Disabled：不保留</li>
+                     * 
+                     */
+                    std::string GetKeepOriginalSound() const;
+
+                    /**
+                     * 设置是否保留视频原声。当 Category 为 Video 时有效。取值如下：
+<li>Enabled：保留</li>
+<li>Disabled：不保留</li>
+                     * @param _keepOriginalSound 是否保留视频原声。当 Category 为 Video 时有效。取值如下：
+<li>Enabled：保留</li>
+<li>Disabled：不保留</li>
+                     * 
+                     */
+                    void SetKeepOriginalSound(const std::string& _keepOriginalSound);
+
+                    /**
+                     * 判断参数 KeepOriginalSound 是否已赋值
+                     * @return KeepOriginalSound 是否已赋值
+                     * 
+                     */
+                    bool KeepOriginalSoundHasBeenSet() const;
 
                 private:
 
@@ -281,26 +310,34 @@ namespace TencentCloud
                     /**
                      * 参考类型，GV模型适用。
 注意：
-
-当使用GV模型时，可作为参考方式,可选asset(素材)、style(风格)。
+当使用 GV 模型时，可作为参考方式，可选值：asset 表示素材、style 表示风格；
+当使用 Kling 模型以及 Category 为 Video 时，可区分参考视频类型，feature 表示特征参考视频，base 表示待编辑视频。
                      */
                     std::string m_referenceType;
                     bool m_referenceTypeHasBeenSet;
 
                     /**
-                     * 主体id.
+                     * 主体 Id。
 适用模型：Vidu-q2.
-当需要对图片标识主体时，需要每个图片都带主体id，后续生成时可以通过@主体id的方式使用。
+当需要对图片标识主体时，需要每个图片都带主体 Id，后续生成时可以通过@主体 Id 的方式使用。当 Category 为 Image 时有效。
                      */
                     std::string m_objectId;
                     bool m_objectIdHasBeenSet;
 
                     /**
-                     * 适用于Vidu-q2模型。
-当全部图片携带主体id时，可针对主体设置音色id。 音色列表：https://shengshu.feishu.cn/sheets/EgFvs6DShhiEBStmjzccr5gonOg
+                     * 适用于 Vidu-q2 模型。
+当全部图片携带主体 Id 时，可针对主体设置音色 Id。 当 Category 为 Image 时有效。音色列表：https://shengshu.feishu.cn/sheets/EgFvs6DShhiEBStmjzccr5gonOg
                      */
                     std::string m_voiceId;
                     bool m_voiceIdHasBeenSet;
+
+                    /**
+                     * 是否保留视频原声。当 Category 为 Video 时有效。取值如下：
+<li>Enabled：保留</li>
+<li>Disabled：不保留</li>
+                     */
+                    std::string m_keepOriginalSound;
+                    bool m_keepOriginalSoundHasBeenSet;
 
                 };
             }

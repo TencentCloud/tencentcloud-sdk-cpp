@@ -143,8 +143,8 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取主号
-                     * @return CorpUin 主号
+                     * 获取企业主账号
+                     * @return CorpUin 企业主账号
                      * 
                      */
                     std::string GetCorpUin() const;
@@ -183,6 +183,34 @@ namespace TencentCloud
                      * 
                      */
                     bool UploadPathHasBeenSet() const;
+
+                    /**
+                     * 获取文件上传地址，使用put请求上传文件到该地址
+                     * @return UploadUrl 文件上传地址，使用put请求上传文件到该地址
+                     * 
+                     */
+                    std::string GetUploadUrl() const;
+
+                    /**
+                     * 判断参数 UploadUrl 是否已赋值
+                     * @return UploadUrl 是否已赋值
+                     * 
+                     */
+                    bool UploadUrlHasBeenSet() const;
+
+                    /**
+                     * 获取文件的预签名地址，支持下载
+                     * @return FileUrl 文件的预签名地址，支持下载
+                     * 
+                     */
+                    std::string GetFileUrl() const;
+
+                    /**
+                     * 判断参数 FileUrl 是否已赋值
+                     * @return FileUrl 是否已赋值
+                     * 
+                     */
+                    bool FileUrlHasBeenSet() const;
 
                 private:
 
@@ -229,7 +257,7 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 主号
+                     * 企业主账号
                      */
                     std::string m_corpUin;
                     bool m_corpUinHasBeenSet;
@@ -245,6 +273,18 @@ namespace TencentCloud
                      */
                     std::string m_uploadPath;
                     bool m_uploadPathHasBeenSet;
+
+                    /**
+                     * 文件上传地址，使用put请求上传文件到该地址
+                     */
+                    std::string m_uploadUrl;
+                    bool m_uploadUrlHasBeenSet;
+
+                    /**
+                     * 文件的预签名地址，支持下载
+                     */
+                    std::string m_fileUrl;
+                    bool m_fileUrlHasBeenSet;
 
                 };
             }

@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool CustomMountDirHasBeenSet() const;
 
+                    /**
+                     * 获取客户端集群ID
+                     * @return ClusterId 客户端集群ID
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置客户端集群ID
+                     * @param _clusterId 客户端集群ID
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_customMountDir;
                     bool m_customMountDirHasBeenSet;
+
+                    /**
+                     * 客户端集群ID
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                 };
             }

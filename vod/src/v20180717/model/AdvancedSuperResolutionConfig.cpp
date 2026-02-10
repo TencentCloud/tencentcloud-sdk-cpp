@@ -26,7 +26,9 @@ AdvancedSuperResolutionConfig::AdvancedSuperResolutionConfig() :
     m_modeHasBeenSet(false),
     m_percentHasBeenSet(false),
     m_widthHasBeenSet(false),
-    m_heightHasBeenSet(false)
+    m_heightHasBeenSet(false),
+    m_longSideHasBeenSet(false),
+    m_shortSideHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome AdvancedSuperResolutionConfig::Deserialize(const rapidjson::
         m_heightHasBeenSet = true;
     }
 
+    if (value.HasMember("LongSide") && !value["LongSide"].IsNull())
+    {
+        if (!value["LongSide"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdvancedSuperResolutionConfig.LongSide` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_longSide = value["LongSide"].GetInt64();
+        m_longSideHasBeenSet = true;
+    }
+
+    if (value.HasMember("ShortSide") && !value["ShortSide"].IsNull())
+    {
+        if (!value["ShortSide"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdvancedSuperResolutionConfig.ShortSide` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_shortSide = value["ShortSide"].GetInt64();
+        m_shortSideHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void AdvancedSuperResolutionConfig::ToJsonObject(rapidjson::Value &value, rapidj
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
+    }
+
+    if (m_longSideHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LongSide";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_longSide, allocator);
+    }
+
+    if (m_shortSideHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShortSide";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_shortSide, allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void AdvancedSuperResolutionConfig::SetHeight(const int64_t& _height)
 bool AdvancedSuperResolutionConfig::HeightHasBeenSet() const
 {
     return m_heightHasBeenSet;
+}
+
+int64_t AdvancedSuperResolutionConfig::GetLongSide() const
+{
+    return m_longSide;
+}
+
+void AdvancedSuperResolutionConfig::SetLongSide(const int64_t& _longSide)
+{
+    m_longSide = _longSide;
+    m_longSideHasBeenSet = true;
+}
+
+bool AdvancedSuperResolutionConfig::LongSideHasBeenSet() const
+{
+    return m_longSideHasBeenSet;
+}
+
+int64_t AdvancedSuperResolutionConfig::GetShortSide() const
+{
+    return m_shortSide;
+}
+
+void AdvancedSuperResolutionConfig::SetShortSide(const int64_t& _shortSide)
+{
+    m_shortSide = _shortSide;
+    m_shortSideHasBeenSet = true;
+}
+
+bool AdvancedSuperResolutionConfig::ShortSideHasBeenSet() const
+{
+    return m_shortSideHasBeenSet;
 }
 

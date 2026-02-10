@@ -627,15 +627,15 @@ namespace TencentCloud
                     bool AutoScalingHasBeenSet() const;
 
                     /**
-                     * 获取是否代答公网发给NAT网关上弹性公网IP的ICMP echo请求报文，当前适用于标准型NAT网关
-                     * @return ICMPProxy 是否代答公网发给NAT网关上弹性公网IP的ICMP echo请求报文，当前适用于标准型NAT网关
+                     * 获取是否代答公网发给NAT网关上弹性公网IP的ICMP echo请求报文，默认为true，应答请求报文；false代表不应答。
+                     * @return ICMPProxy 是否代答公网发给NAT网关上弹性公网IP的ICMP echo请求报文，默认为true，应答请求报文；false代表不应答。
                      * 
                      */
                     bool GetICMPProxy() const;
 
                     /**
-                     * 设置是否代答公网发给NAT网关上弹性公网IP的ICMP echo请求报文，当前适用于标准型NAT网关
-                     * @param _iCMPProxy 是否代答公网发给NAT网关上弹性公网IP的ICMP echo请求报文，当前适用于标准型NAT网关
+                     * 设置是否代答公网发给NAT网关上弹性公网IP的ICMP echo请求报文，默认为true，应答请求报文；false代表不应答。
+                     * @param _iCMPProxy 是否代答公网发给NAT网关上弹性公网IP的ICMP echo请求报文，默认为true，应答请求报文；false代表不应答。
                      * 
                      */
                     void SetICMPProxy(const bool& _iCMPProxy);
@@ -648,15 +648,15 @@ namespace TencentCloud
                     bool ICMPProxyHasBeenSet() const;
 
                     /**
-                     * 获取true代表同一个私网IP访问同一个公网目的IP时，固定使用同一个NAT网关上的弹性公网IP；false代表这种情况下使用的弹性公网IP不固定。默认为true。
-                     * @return PublicAddressAffinity true代表同一个私网IP访问同一个公网目的IP时，固定使用同一个NAT网关上的弹性公网IP；false代表这种情况下使用的弹性公网IP不固定。默认为true。
+                     * 获取同一个内网地址通过NAT网关访问同一个目的IP时，是否使用固定的弹性公网IP。默认为true，使用固定IP；false代表使用随机IP。
+                     * @return PublicAddressAffinity 同一个内网地址通过NAT网关访问同一个目的IP时，是否使用固定的弹性公网IP。默认为true，使用固定IP；false代表使用随机IP。
                      * 
                      */
                     bool GetPublicAddressAffinity() const;
 
                     /**
-                     * 设置true代表同一个私网IP访问同一个公网目的IP时，固定使用同一个NAT网关上的弹性公网IP；false代表这种情况下使用的弹性公网IP不固定。默认为true。
-                     * @param _publicAddressAffinity true代表同一个私网IP访问同一个公网目的IP时，固定使用同一个NAT网关上的弹性公网IP；false代表这种情况下使用的弹性公网IP不固定。默认为true。
+                     * 设置同一个内网地址通过NAT网关访问同一个目的IP时，是否使用固定的弹性公网IP。默认为true，使用固定IP；false代表使用随机IP。
+                     * @param _publicAddressAffinity 同一个内网地址通过NAT网关访问同一个目的IP时，是否使用固定的弹性公网IP。默认为true，使用固定IP；false代表使用随机IP。
                      * 
                      */
                     void SetPublicAddressAffinity(const bool& _publicAddressAffinity);
@@ -835,13 +835,13 @@ namespace TencentCloud
                     bool m_autoScalingHasBeenSet;
 
                     /**
-                     * 是否代答公网发给NAT网关上弹性公网IP的ICMP echo请求报文，当前适用于标准型NAT网关
+                     * 是否代答公网发给NAT网关上弹性公网IP的ICMP echo请求报文，默认为true，应答请求报文；false代表不应答。
                      */
                     bool m_iCMPProxy;
                     bool m_iCMPProxyHasBeenSet;
 
                     /**
-                     * true代表同一个私网IP访问同一个公网目的IP时，固定使用同一个NAT网关上的弹性公网IP；false代表这种情况下使用的弹性公网IP不固定。默认为true。
+                     * 同一个内网地址通过NAT网关访问同一个目的IP时，是否使用固定的弹性公网IP。默认为true，使用固定IP；false代表使用随机IP。
                      */
                     bool m_publicAddressAffinity;
                     bool m_publicAddressAffinityHasBeenSet;

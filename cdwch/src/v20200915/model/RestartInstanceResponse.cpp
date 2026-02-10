@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/goosefs/v20220519/model/DescribeClusterRolesResponse.h>
+#include <tencentcloud/cdwch/v20200915/model/RestartInstanceResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Goosefs::V20220519::Model;
+using namespace TencentCloud::Cdwch::V20200915::Model;
 using namespace std;
 
-DescribeClusterRolesResponse::DescribeClusterRolesResponse() :
-    m_clusterRolesHasBeenSet(false)
+RestartInstanceResponse::RestartInstanceResponse() :
+    m_flowIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeClusterRolesResponse::Deserialize(const string &payload)
+CoreInternalOutcome RestartInstanceResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,49 +62,32 @@ CoreInternalOutcome DescribeClusterRolesResponse::Deserialize(const string &payl
     }
 
 
-    if (rsp.HasMember("ClusterRoles") && !rsp["ClusterRoles"].IsNull())
+    if (rsp.HasMember("FlowId") && !rsp["FlowId"].IsNull())
     {
-        if (!rsp["ClusterRoles"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ClusterRoles` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["ClusterRoles"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["FlowId"].IsInt64())
         {
-            ClusterRole item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_clusterRoles.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_clusterRolesHasBeenSet = true;
+        m_flowId = rsp["FlowId"].GetInt64();
+        m_flowIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeClusterRolesResponse::ToJsonString() const
+string RestartInstanceResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_clusterRolesHasBeenSet)
+    if (m_flowIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterRoles";
+        string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_clusterRoles.begin(); itr != m_clusterRoles.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, m_flowId, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -119,14 +102,14 @@ string DescribeClusterRolesResponse::ToJsonString() const
 }
 
 
-vector<ClusterRole> DescribeClusterRolesResponse::GetClusterRoles() const
+int64_t RestartInstanceResponse::GetFlowId() const
 {
-    return m_clusterRoles;
+    return m_flowId;
 }
 
-bool DescribeClusterRolesResponse::ClusterRolesHasBeenSet() const
+bool RestartInstanceResponse::FlowIdHasBeenSet() const
 {
-    return m_clusterRolesHasBeenSet;
+    return m_flowIdHasBeenSet;
 }
 
 

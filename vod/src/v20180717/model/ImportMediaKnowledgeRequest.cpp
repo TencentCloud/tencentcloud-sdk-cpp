@@ -25,6 +25,7 @@ using namespace std;
 ImportMediaKnowledgeRequest::ImportMediaKnowledgeRequest() :
     m_subAppIdHasBeenSet(false),
     m_fileIdHasBeenSet(false),
+    m_definitionHasBeenSet(false),
     m_importTasksHasBeenSet(false)
 {
 }
@@ -50,6 +51,14 @@ string ImportMediaKnowledgeRequest::ToJsonString() const
         string key = "FileId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_definitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Definition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_definition, allocator);
     }
 
     if (m_importTasksHasBeenSet)
@@ -103,6 +112,22 @@ void ImportMediaKnowledgeRequest::SetFileId(const string& _fileId)
 bool ImportMediaKnowledgeRequest::FileIdHasBeenSet() const
 {
     return m_fileIdHasBeenSet;
+}
+
+int64_t ImportMediaKnowledgeRequest::GetDefinition() const
+{
+    return m_definition;
+}
+
+void ImportMediaKnowledgeRequest::SetDefinition(const int64_t& _definition)
+{
+    m_definition = _definition;
+    m_definitionHasBeenSet = true;
+}
+
+bool ImportMediaKnowledgeRequest::DefinitionHasBeenSet() const
+{
+    return m_definitionHasBeenSet;
 }
 
 vector<string> ImportMediaKnowledgeRequest::GetImportTasks() const

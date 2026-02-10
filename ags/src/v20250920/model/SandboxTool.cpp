@@ -33,7 +33,8 @@ SandboxTool::SandboxTool() :
     m_updateTimeHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_storageMountsHasBeenSet(false),
-    m_customConfigurationHasBeenSet(false)
+    m_customConfigurationHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false)
 {
 }
 
@@ -206,6 +207,23 @@ CoreInternalOutcome SandboxTool::Deserialize(const rapidjson::Value &value)
         m_customConfigurationHasBeenSet = true;
     }
 
+    if (value.HasMember("LogConfiguration") && !value["LogConfiguration"].IsNull())
+    {
+        if (!value["LogConfiguration"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SandboxTool.LogConfiguration` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_logConfiguration.Deserialize(value["LogConfiguration"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_logConfigurationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -331,6 +349,15 @@ void SandboxTool::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_customConfiguration.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_logConfigurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_logConfiguration.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -542,5 +569,21 @@ void SandboxTool::SetCustomConfiguration(const CustomConfigurationDetail& _custo
 bool SandboxTool::CustomConfigurationHasBeenSet() const
 {
     return m_customConfigurationHasBeenSet;
+}
+
+LogConfiguration SandboxTool::GetLogConfiguration() const
+{
+    return m_logConfiguration;
+}
+
+void SandboxTool::SetLogConfiguration(const LogConfiguration& _logConfiguration)
+{
+    m_logConfiguration = _logConfiguration;
+    m_logConfigurationHasBeenSet = true;
+}
+
+bool SandboxTool::LogConfigurationHasBeenSet() const
+{
+    return m_logConfigurationHasBeenSet;
 }
 

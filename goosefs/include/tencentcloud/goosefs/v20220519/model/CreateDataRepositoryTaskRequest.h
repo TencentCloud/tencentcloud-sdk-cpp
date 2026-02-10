@@ -189,6 +189,48 @@ namespace TencentCloud
                      */
                     bool TextLocationHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启自定义路径(暂时仅供预热使用)
+                     * @return EnableDataFlowSubPath 是否开启自定义路径(暂时仅供预热使用)
+                     * 
+                     */
+                    bool GetEnableDataFlowSubPath() const;
+
+                    /**
+                     * 设置是否开启自定义路径(暂时仅供预热使用)
+                     * @param _enableDataFlowSubPath 是否开启自定义路径(暂时仅供预热使用)
+                     * 
+                     */
+                    void SetEnableDataFlowSubPath(const bool& _enableDataFlowSubPath);
+
+                    /**
+                     * 判断参数 EnableDataFlowSubPath 是否已赋值
+                     * @return EnableDataFlowSubPath 是否已赋值
+                     * 
+                     */
+                    bool EnableDataFlowSubPathHasBeenSet() const;
+
+                    /**
+                     * 获取自定义路径(暂时仅供预热使用)
+                     * @return DataFlowSubPath 自定义路径(暂时仅供预热使用)
+                     * 
+                     */
+                    std::string GetDataFlowSubPath() const;
+
+                    /**
+                     * 设置自定义路径(暂时仅供预热使用)
+                     * @param _dataFlowSubPath 自定义路径(暂时仅供预热使用)
+                     * 
+                     */
+                    void SetDataFlowSubPath(const std::string& _dataFlowSubPath);
+
+                    /**
+                     * 判断参数 DataFlowSubPath 是否已赋值
+                     * @return DataFlowSubPath 是否已赋值
+                     * 
+                     */
+                    bool DataFlowSubPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +274,18 @@ namespace TencentCloud
                      */
                     std::string m_textLocation;
                     bool m_textLocationHasBeenSet;
+
+                    /**
+                     * 是否开启自定义路径(暂时仅供预热使用)
+                     */
+                    bool m_enableDataFlowSubPath;
+                    bool m_enableDataFlowSubPathHasBeenSet;
+
+                    /**
+                     * 自定义路径(暂时仅供预热使用)
+                     */
+                    std::string m_dataFlowSubPath;
+                    bool m_dataFlowSubPathHasBeenSet;
 
                 };
             }

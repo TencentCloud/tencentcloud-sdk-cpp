@@ -194,6 +194,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/UpdateSharedKnowledgeRequest.h
   include/tencentcloud/lke/v20231130/model/GetMsgRecordRequest.h
   include/tencentcloud/lke/v20231130/model/AudioTranscript.h
+  include/tencentcloud/lke/v20231130/model/UpdateSharedKnowledgeResponse.h
   include/tencentcloud/lke/v20231130/model/InputBoxConfig.h
   include/tencentcloud/lke/v20231130/model/ReleaseConfigs.h
   include/tencentcloud/lke/v20231130/model/DescribeSearchStatsGraphResponse.h
@@ -295,7 +296,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/ModifyDocResponse.h
   include/tencentcloud/lke/v20231130/model/AgentKnowledgeAttrLabel.h
   include/tencentcloud/lke/v20231130/model/PluginToolReqParam.h
-  include/tencentcloud/lke/v20231130/model/UpdateSharedKnowledgeResponse.h
+  include/tencentcloud/lke/v20231130/model/AsyncWorkflowMessage.h
   include/tencentcloud/lke/v20231130/model/DeleteAgentRequest.h
   include/tencentcloud/lke/v20231130/model/CheckAttributeLabelExistRequest.h
   include/tencentcloud/lke/v20231130/model/AppModelDetailInfo.h
@@ -565,6 +566,7 @@ set(lke_src
   src/v20231130/model/UpdateSharedKnowledgeRequest.cpp
   src/v20231130/model/GetMsgRecordRequest.cpp
   src/v20231130/model/AudioTranscript.cpp
+  src/v20231130/model/UpdateSharedKnowledgeResponse.cpp
   src/v20231130/model/InputBoxConfig.cpp
   src/v20231130/model/ReleaseConfigs.cpp
   src/v20231130/model/DescribeSearchStatsGraphResponse.cpp
@@ -666,7 +668,7 @@ set(lke_src
   src/v20231130/model/ModifyDocResponse.cpp
   src/v20231130/model/AgentKnowledgeAttrLabel.cpp
   src/v20231130/model/PluginToolReqParam.cpp
-  src/v20231130/model/UpdateSharedKnowledgeResponse.cpp
+  src/v20231130/model/AsyncWorkflowMessage.cpp
   src/v20231130/model/DeleteAgentRequest.cpp
   src/v20231130/model/CheckAttributeLabelExistRequest.cpp
   src/v20231130/model/AppModelDetailInfo.cpp

@@ -349,12 +349,18 @@ namespace TencentCloud
     motion_control 表示动作控制；
     avatar_i2v 表示数字人；
     lip_sync 表示对口型；</li>
+<li>当 ModelName 为 Vidu 时：
+    template_effect 表示特效模板；
+</li>
 <li>其他 ModelName 暂不支持。</li>
                      * @return SceneType 场景类型。取值如下：
 <li>当 ModelName 为 Kling 时：
     motion_control 表示动作控制；
     avatar_i2v 表示数字人；
     lip_sync 表示对口型；</li>
+<li>当 ModelName 为 Vidu 时：
+    template_effect 表示特效模板；
+</li>
 <li>其他 ModelName 暂不支持。</li>
                      * 
                      */
@@ -366,12 +372,18 @@ namespace TencentCloud
     motion_control 表示动作控制；
     avatar_i2v 表示数字人；
     lip_sync 表示对口型；</li>
+<li>当 ModelName 为 Vidu 时：
+    template_effect 表示特效模板；
+</li>
 <li>其他 ModelName 暂不支持。</li>
                      * @param _sceneType 场景类型。取值如下：
 <li>当 ModelName 为 Kling 时：
     motion_control 表示动作控制；
     avatar_i2v 表示数字人；
     lip_sync 表示对口型；</li>
+<li>当 ModelName 为 Vidu 时：
+    template_effect 表示特效模板；
+</li>
 <li>其他 ModelName 暂不支持。</li>
                      * 
                      */
@@ -559,6 +571,9 @@ namespace TencentCloud
     motion_control 表示动作控制；
     avatar_i2v 表示数字人；
     lip_sync 表示对口型；</li>
+<li>当 ModelName 为 Vidu 时：
+    template_effect 表示特效模板；
+</li>
 <li>其他 ModelName 暂不支持。</li>
                      */
                     std::string m_sceneType;

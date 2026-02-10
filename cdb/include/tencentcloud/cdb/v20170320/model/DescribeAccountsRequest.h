@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool OrderByHasBeenSet() const;
 
+                    /**
+                     * 获取匹配账号主机地址（Host）的正则表达式，规则同 MySQL 官网
+                     * @return HostRegexp 匹配账号主机地址（Host）的正则表达式，规则同 MySQL 官网
+                     * 
+                     */
+                    std::string GetHostRegexp() const;
+
+                    /**
+                     * 设置匹配账号主机地址（Host）的正则表达式，规则同 MySQL 官网
+                     * @param _hostRegexp 匹配账号主机地址（Host）的正则表达式，规则同 MySQL 官网
+                     * 
+                     */
+                    void SetHostRegexp(const std::string& _hostRegexp);
+
+                    /**
+                     * 判断参数 HostRegexp 是否已赋值
+                     * @return HostRegexp 是否已赋值
+                     * 
+                     */
+                    bool HostRegexpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
+
+                    /**
+                     * 匹配账号主机地址（Host）的正则表达式，规则同 MySQL 官网
+                     */
+                    std::string m_hostRegexp;
+                    bool m_hostRegexpHasBeenSet;
 
                 };
             }

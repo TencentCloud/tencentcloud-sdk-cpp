@@ -87,6 +87,20 @@ namespace TencentCloud
                      */
                     bool HandoffAdvancedSettingHasBeenSet() const;
 
+                    /**
+                     * 获取Agent数量上限
+                     * @return MaxAgentCount Agent数量上限
+                     * 
+                     */
+                    int64_t GetMaxAgentCount() const;
+
+                    /**
+                     * 判断参数 MaxAgentCount 是否已赋值
+                     * @return MaxAgentCount 是否已赋值
+                     * 
+                     */
+                    bool MaxAgentCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -106,6 +120,12 @@ namespace TencentCloud
                      */
                     AgentHandoffAdvancedSetting m_handoffAdvancedSetting;
                     bool m_handoffAdvancedSettingHasBeenSet;
+
+                    /**
+                     * Agent数量上限
+                     */
+                    int64_t m_maxAgentCount;
+                    bool m_maxAgentCountHasBeenSet;
 
                 };
             }

@@ -390,6 +390,56 @@ LcicClient::BatchDescribeDocumentOutcomeCallable LcicClient::BatchDescribeDocume
     return prom->get_future();
 }
 
+LcicClient::BatchGetPlaybackTokenOutcome LcicClient::BatchGetPlaybackToken(const BatchGetPlaybackTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchGetPlaybackToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchGetPlaybackTokenResponse rsp = BatchGetPlaybackTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchGetPlaybackTokenOutcome(rsp);
+        else
+            return BatchGetPlaybackTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchGetPlaybackTokenOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::BatchGetPlaybackTokenAsync(const BatchGetPlaybackTokenRequest& request, const BatchGetPlaybackTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const BatchGetPlaybackTokenRequest&;
+    using Resp = BatchGetPlaybackTokenResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "BatchGetPlaybackToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LcicClient::BatchGetPlaybackTokenOutcomeCallable LcicClient::BatchGetPlaybackTokenCallable(const BatchGetPlaybackTokenRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<BatchGetPlaybackTokenOutcome>>();
+    BatchGetPlaybackTokenAsync(
+    request,
+    [prom](
+        const LcicClient*,
+        const BatchGetPlaybackTokenRequest&,
+        BatchGetPlaybackTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LcicClient::BatchRegisterOutcome LcicClient::BatchRegister(const BatchRegisterRequest &request)
 {
     auto outcome = MakeRequest(request, "BatchRegister");
@@ -982,6 +1032,56 @@ LcicClient::DeleteGroupMemberOutcomeCallable LcicClient::DeleteGroupMemberCallab
         const LcicClient*,
         const DeleteGroupMemberRequest&,
         DeleteGroupMemberOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LcicClient::DeletePlaybackItemOutcome LcicClient::DeletePlaybackItem(const DeletePlaybackItemRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePlaybackItem");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePlaybackItemResponse rsp = DeletePlaybackItemResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePlaybackItemOutcome(rsp);
+        else
+            return DeletePlaybackItemOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePlaybackItemOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DeletePlaybackItemAsync(const DeletePlaybackItemRequest& request, const DeletePlaybackItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeletePlaybackItemRequest&;
+    using Resp = DeletePlaybackItemResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeletePlaybackItem", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LcicClient::DeletePlaybackItemOutcomeCallable LcicClient::DeletePlaybackItemCallable(const DeletePlaybackItemRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeletePlaybackItemOutcome>>();
+    DeletePlaybackItemAsync(
+    request,
+    [prom](
+        const LcicClient*,
+        const DeletePlaybackItemRequest&,
+        DeletePlaybackItemOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1840,6 +1940,106 @@ LcicClient::DescribeMarqueeOutcomeCallable LcicClient::DescribeMarqueeCallable(c
     return prom->get_future();
 }
 
+LcicClient::DescribePlayRecordsOutcome LcicClient::DescribePlayRecords(const DescribePlayRecordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePlayRecords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePlayRecordsResponse rsp = DescribePlayRecordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePlayRecordsOutcome(rsp);
+        else
+            return DescribePlayRecordsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePlayRecordsOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DescribePlayRecordsAsync(const DescribePlayRecordsRequest& request, const DescribePlayRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePlayRecordsRequest&;
+    using Resp = DescribePlayRecordsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePlayRecords", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LcicClient::DescribePlayRecordsOutcomeCallable LcicClient::DescribePlayRecordsCallable(const DescribePlayRecordsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePlayRecordsOutcome>>();
+    DescribePlayRecordsAsync(
+    request,
+    [prom](
+        const LcicClient*,
+        const DescribePlayRecordsRequest&,
+        DescribePlayRecordsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LcicClient::DescribePlaybackListOutcome LcicClient::DescribePlaybackList(const DescribePlaybackListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePlaybackList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePlaybackListResponse rsp = DescribePlaybackListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePlaybackListOutcome(rsp);
+        else
+            return DescribePlaybackListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePlaybackListOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DescribePlaybackListAsync(const DescribePlaybackListRequest& request, const DescribePlaybackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePlaybackListRequest&;
+    using Resp = DescribePlaybackListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePlaybackList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LcicClient::DescribePlaybackListOutcomeCallable LcicClient::DescribePlaybackListCallable(const DescribePlaybackListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePlaybackListOutcome>>();
+    DescribePlaybackListAsync(
+    request,
+    [prom](
+        const LcicClient*,
+        const DescribePlaybackListRequest&,
+        DescribePlaybackListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LcicClient::DescribeQuestionListOutcome LcicClient::DescribeQuestionList(const DescribeQuestionListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeQuestionList");
@@ -2582,6 +2782,56 @@ LcicClient::ForbidSendMsgOutcomeCallable LcicClient::ForbidSendMsgCallable(const
         const LcicClient*,
         const ForbidSendMsgRequest&,
         ForbidSendMsgOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LcicClient::GetPlaybackTokenOutcome LcicClient::GetPlaybackToken(const GetPlaybackTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetPlaybackToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetPlaybackTokenResponse rsp = GetPlaybackTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetPlaybackTokenOutcome(rsp);
+        else
+            return GetPlaybackTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return GetPlaybackTokenOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::GetPlaybackTokenAsync(const GetPlaybackTokenRequest& request, const GetPlaybackTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetPlaybackTokenRequest&;
+    using Resp = GetPlaybackTokenResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetPlaybackToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LcicClient::GetPlaybackTokenOutcomeCallable LcicClient::GetPlaybackTokenCallable(const GetPlaybackTokenRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetPlaybackTokenOutcome>>();
+    GetPlaybackTokenAsync(
+    request,
+    [prom](
+        const LcicClient*,
+        const GetPlaybackTokenRequest&,
+        GetPlaybackTokenOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

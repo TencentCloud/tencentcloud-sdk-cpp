@@ -85,13 +85,34 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
+                     * 获取大模型理解模板的唯一标识
+                     * @return Definition 大模型理解模板的唯一标识
+                     * 
+                     */
+                    int64_t GetDefinition() const;
+
+                    /**
+                     * 设置大模型理解模板的唯一标识
+                     * @param _definition 大模型理解模板的唯一标识
+                     * 
+                     */
+                    void SetDefinition(const int64_t& _definition);
+
+                    /**
+                     * 判断参数 Definition 是否已赋值
+                     * @return Definition 是否已赋值
+                     * 
+                     */
+                    bool DefinitionHasBeenSet() const;
+
+                    /**
                      * 获取需要导入知识库任务类型，可选值有：
 - AiAnalysis.DescriptionTask
 - SmartSubtitle.AsrFullTextTask
                      * @return ImportTasks 需要导入知识库任务类型，可选值有：
 - AiAnalysis.DescriptionTask
 - SmartSubtitle.AsrFullTextTask
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetImportTasks() const;
 
@@ -102,14 +123,14 @@ namespace TencentCloud
                      * @param _importTasks 需要导入知识库任务类型，可选值有：
 - AiAnalysis.DescriptionTask
 - SmartSubtitle.AsrFullTextTask
-                     * 
+                     * @deprecated
                      */
                     void SetImportTasks(const std::vector<std::string>& _importTasks);
 
                     /**
                      * 判断参数 ImportTasks 是否已赋值
                      * @return ImportTasks 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ImportTasksHasBeenSet() const;
 
@@ -126,6 +147,12 @@ namespace TencentCloud
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
+
+                    /**
+                     * 大模型理解模板的唯一标识
+                     */
+                    int64_t m_definition;
+                    bool m_definitionHasBeenSet;
 
                     /**
                      * 需要导入知识库任务类型，可选值有：

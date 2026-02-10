@@ -93,6 +93,31 @@ namespace TencentCloud
                     bool WidgetRunIdHasBeenSet() const;
 
                     /**
+                     * 获取Widget显示数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return View Widget显示数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetView() const;
+
+                    /**
+                     * 设置Widget显示数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _view Widget显示数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetView(const std::string& _view);
+
+                    /**
+                     * 判断参数 View 是否已赋值
+                     * @return View 是否已赋值
+                     * 
+                     */
+                    bool ViewHasBeenSet() const;
+
+                    /**
                      * 获取Widget状态数据
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return State Widget状态数据
@@ -206,6 +231,13 @@ namespace TencentCloud
                      */
                     std::string m_widgetRunId;
                     bool m_widgetRunIdHasBeenSet;
+
+                    /**
+                     * Widget显示数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_view;
+                    bool m_viewHasBeenSet;
 
                     /**
                      * Widget状态数据

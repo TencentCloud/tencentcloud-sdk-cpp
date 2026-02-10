@@ -265,6 +265,27 @@ namespace TencentCloud
                     bool OutputConfigHasBeenSet() const;
 
                     /**
+                     * 获取输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。
+                     * @return InputRegion 输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。
+                     * 
+                     */
+                    std::string GetInputRegion() const;
+
+                    /**
+                     * 设置输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。
+                     * @param _inputRegion 输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。
+                     * 
+                     */
+                    void SetInputRegion(const std::string& _inputRegion);
+
+                    /**
+                     * 判断参数 InputRegion 是否已赋值
+                     * @return InputRegion 是否已赋值
+                     * 
+                     */
+                    bool InputRegionHasBeenSet() const;
+
+                    /**
                      * 获取用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
                      * @return SessionId 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
                      * 
@@ -410,6 +431,12 @@ namespace TencentCloud
                      */
                     AigcImageOutputConfig m_outputConfig;
                     bool m_outputConfigHasBeenSet;
+
+                    /**
+                     * 输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。
+                     */
+                    std::string m_inputRegion;
+                    bool m_inputRegionHasBeenSet;
 
                     /**
                      * 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。

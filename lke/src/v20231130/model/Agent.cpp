@@ -34,7 +34,8 @@ Agent::Agent() :
     m_isStartingAgentHasBeenSet(false),
     m_agentTypeHasBeenSet(false),
     m_agentModeHasBeenSet(false),
-    m_advancedConfigHasBeenSet(false)
+    m_advancedConfigHasBeenSet(false),
+    m_maxToolCountHasBeenSet(false)
 {
 }
 
@@ -220,6 +221,16 @@ CoreInternalOutcome Agent::Deserialize(const rapidjson::Value &value)
         m_advancedConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxToolCount") && !value["MaxToolCount"].IsNull())
+    {
+        if (!value["MaxToolCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Agent.MaxToolCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxToolCount = value["MaxToolCount"].GetInt64();
+        m_maxToolCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -358,6 +369,14 @@ void Agent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_advancedConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_maxToolCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxToolCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxToolCount, allocator);
     }
 
 }
@@ -585,5 +604,21 @@ void Agent::SetAdvancedConfig(const AgentAdvancedConfig& _advancedConfig)
 bool Agent::AdvancedConfigHasBeenSet() const
 {
     return m_advancedConfigHasBeenSet;
+}
+
+int64_t Agent::GetMaxToolCount() const
+{
+    return m_maxToolCount;
+}
+
+void Agent::SetMaxToolCount(const int64_t& _maxToolCount)
+{
+    m_maxToolCount = _maxToolCount;
+    m_maxToolCountHasBeenSet = true;
+}
+
+bool Agent::MaxToolCountHasBeenSet() const
+{
+    return m_maxToolCountHasBeenSet;
 }
 

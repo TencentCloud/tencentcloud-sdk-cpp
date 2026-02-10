@@ -23,7 +23,8 @@ using namespace std;
 ClientClusterManagerNodeInfo::ClientClusterManagerNodeInfo() :
     m_nodeIpHasBeenSet(false),
     m_nodeInstanceIdHasBeenSet(false),
-    m_initialPasswordHasBeenSet(false)
+    m_initialPasswordHasBeenSet(false),
+    m_clusterIdHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome ClientClusterManagerNodeInfo::Deserialize(const rapidjson::V
         m_initialPasswordHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterId") && !value["ClusterId"].IsNull())
+    {
+        if (!value["ClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClientClusterManagerNodeInfo.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterId = string(value["ClusterId"].GetString());
+        m_clusterIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void ClientClusterManagerNodeInfo::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "InitialPassword";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_initialPassword.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void ClientClusterManagerNodeInfo::SetInitialPassword(const string& _initialPass
 bool ClientClusterManagerNodeInfo::InitialPasswordHasBeenSet() const
 {
     return m_initialPasswordHasBeenSet;
+}
+
+string ClientClusterManagerNodeInfo::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void ClientClusterManagerNodeInfo::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool ClientClusterManagerNodeInfo::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
 }
 

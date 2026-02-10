@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>文本描述。<br>算法将根据输入的文本智能生成与之相关的图像。<br>不能为空，推荐使用中文。最多可传1024个 utf-8 字符。</p>
-                     * @return Prompt <p>文本描述。<br>算法将根据输入的文本智能生成与之相关的图像。<br>不能为空，推荐使用中文。最多可传1024个 utf-8 字符。</p>
+                     * 获取<p>文本描述。<br>算法将根据输入的文本智能生成与之相关的图像。<br>不能为空，推荐使用中文。最多可传8192个 utf-8 字符。</p>
+                     * @return Prompt <p>文本描述。<br>算法将根据输入的文本智能生成与之相关的图像。<br>不能为空，推荐使用中文。最多可传8192个 utf-8 字符。</p>
                      * 
                      */
                     std::string GetPrompt() const;
 
                     /**
-                     * 设置<p>文本描述。<br>算法将根据输入的文本智能生成与之相关的图像。<br>不能为空，推荐使用中文。最多可传1024个 utf-8 字符。</p>
-                     * @param _prompt <p>文本描述。<br>算法将根据输入的文本智能生成与之相关的图像。<br>不能为空，推荐使用中文。最多可传1024个 utf-8 字符。</p>
+                     * 设置<p>文本描述。<br>算法将根据输入的文本智能生成与之相关的图像。<br>不能为空，推荐使用中文。最多可传8192个 utf-8 字符。</p>
+                     * @param _prompt <p>文本描述。<br>算法将根据输入的文本智能生成与之相关的图像。<br>不能为空，推荐使用中文。最多可传8192个 utf-8 字符。</p>
                      * 
                      */
                     void SetPrompt(const std::string& _prompt);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool PromptHasBeenSet() const;
 
                     /**
-                     * 获取<p>垫图url列表，大小不超过10MB，支持 jpg jpeg png webp格式，最多3张图</p>
-                     * @return Images <p>垫图url列表，大小不超过10MB，支持 jpg jpeg png webp格式，最多3张图</p>
+                     * 获取<p>垫图url列表，base64后大小不超过10MB，支持 jpg jpeg png webp格式，最多3张图</p>
+                     * @return Images <p>垫图url列表，base64后大小不超过10MB，支持 jpg jpeg png webp格式，最多3张图</p>
                      * 
                      */
                     std::vector<std::string> GetImages() const;
 
                     /**
-                     * 设置<p>垫图url列表，大小不超过10MB，支持 jpg jpeg png webp格式，最多3张图</p>
-                     * @param _images <p>垫图url列表，大小不超过10MB，支持 jpg jpeg png webp格式，最多3张图</p>
+                     * 设置<p>垫图url列表，base64后大小不超过10MB，支持 jpg jpeg png webp格式，最多3张图</p>
+                     * @param _images <p>垫图url列表，base64后大小不超过10MB，支持 jpg jpeg png webp格式，最多3张图</p>
                      * 
                      */
                     void SetImages(const std::vector<std::string>& _images);
@@ -193,13 +193,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>文本描述。<br>算法将根据输入的文本智能生成与之相关的图像。<br>不能为空，推荐使用中文。最多可传1024个 utf-8 字符。</p>
+                     * <p>文本描述。<br>算法将根据输入的文本智能生成与之相关的图像。<br>不能为空，推荐使用中文。最多可传8192个 utf-8 字符。</p>
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
 
                     /**
-                     * <p>垫图url列表，大小不超过10MB，支持 jpg jpeg png webp格式，最多3张图</p>
+                     * <p>垫图url列表，base64后大小不超过10MB，支持 jpg jpeg png webp格式，最多3张图</p>
                      */
                     std::vector<std::string> m_images;
                     bool m_imagesHasBeenSet;

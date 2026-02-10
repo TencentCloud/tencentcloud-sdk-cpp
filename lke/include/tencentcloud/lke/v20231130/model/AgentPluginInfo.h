@@ -94,14 +94,18 @@ namespace TencentCloud
 
                     /**
                      * 获取插件调用LLM时使用的模型配置，一般用于指定知识库问答插件的生成模型
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Model 插件调用LLM时使用的模型配置，一般用于指定知识库问答插件的生成模型
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AgentModelInfo GetModel() const;
 
                     /**
                      * 设置插件调用LLM时使用的模型配置，一般用于指定知识库问答插件的生成模型
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _model 插件调用LLM时使用的模型配置，一般用于指定知识库问答插件的生成模型
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModel(const AgentModelInfo& _model);
@@ -136,14 +140,18 @@ namespace TencentCloud
 
                     /**
                      * 获取知识库问答插件配置
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return KnowledgeQa 知识库问答插件配置
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AgentKnowledgeQAPlugin GetKnowledgeQa() const;
 
                     /**
                      * 设置知识库问答插件配置
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _knowledgeQa 知识库问答插件配置
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKnowledgeQa(const AgentKnowledgeQAPlugin& _knowledgeQa);
@@ -238,6 +246,7 @@ namespace TencentCloud
 
                     /**
                      * 插件调用LLM时使用的模型配置，一般用于指定知识库问答插件的生成模型
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AgentModelInfo m_model;
                     bool m_modelHasBeenSet;
@@ -250,6 +259,7 @@ namespace TencentCloud
 
                     /**
                      * 知识库问答插件配置
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AgentKnowledgeQAPlugin m_knowledgeQa;
                     bool m_knowledgeQaHasBeenSet;

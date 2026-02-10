@@ -26,7 +26,8 @@ SearchStrategy::SearchStrategy() :
     m_embeddingModelHasBeenSet(false),
     m_rerankModelSwitchHasBeenSet(false),
     m_rerankModelHasBeenSet(false),
-    m_natureLanguageToSqlModelConfigHasBeenSet(false)
+    m_natureLanguageToSqlModelConfigHasBeenSet(false),
+    m_graphRetrievalHasBeenSet(false)
 {
 }
 
@@ -102,6 +103,16 @@ CoreInternalOutcome SearchStrategy::Deserialize(const rapidjson::Value &value)
         m_natureLanguageToSqlModelConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("GraphRetrieval") && !value["GraphRetrieval"].IsNull())
+    {
+        if (!value["GraphRetrieval"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchStrategy.GraphRetrieval` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_graphRetrieval = value["GraphRetrieval"].GetBool();
+        m_graphRetrievalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +167,14 @@ void SearchStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_natureLanguageToSqlModelConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_graphRetrievalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GraphRetrieval";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_graphRetrieval, allocator);
     }
 
 }
@@ -255,5 +274,21 @@ void SearchStrategy::SetNatureLanguageToSqlModelConfig(const NL2SQLModelConfig& 
 bool SearchStrategy::NatureLanguageToSqlModelConfigHasBeenSet() const
 {
     return m_natureLanguageToSqlModelConfigHasBeenSet;
+}
+
+bool SearchStrategy::GetGraphRetrieval() const
+{
+    return m_graphRetrieval;
+}
+
+void SearchStrategy::SetGraphRetrieval(const bool& _graphRetrieval)
+{
+    m_graphRetrieval = _graphRetrieval;
+    m_graphRetrievalHasBeenSet = true;
+}
+
+bool SearchStrategy::GraphRetrievalHasBeenSet() const
+{
+    return m_graphRetrievalHasBeenSet;
 }
 

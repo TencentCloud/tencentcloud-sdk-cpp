@@ -14,57 +14,56 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_GOOSEFS_V20220519_MODEL_DESCRIBECLUSTERROLESRESPONSE_H_
-#define TENCENTCLOUD_GOOSEFS_V20220519_MODEL_DESCRIBECLUSTERROLESRESPONSE_H_
+#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_CREATELLMCOMPREHENDTEMPLATERESPONSE_H_
+#define TENCENTCLOUD_VOD_V20180717_MODEL_CREATELLMCOMPREHENDTEMPLATERESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/goosefs/v20220519/model/ClusterRole.h>
 
 
 namespace TencentCloud
 {
-    namespace Goosefs
+    namespace Vod
     {
-        namespace V20220519
+        namespace V20180717
         {
             namespace Model
             {
                 /**
-                * DescribeClusterRoles返回参数结构体
+                * CreateLLMComprehendTemplate返回参数结构体
                 */
-                class DescribeClusterRolesResponse : public AbstractModel
+                class CreateLLMComprehendTemplateResponse : public AbstractModel
                 {
                 public:
-                    DescribeClusterRolesResponse();
-                    ~DescribeClusterRolesResponse() = default;
+                    CreateLLMComprehendTemplateResponse();
+                    ~CreateLLMComprehendTemplateResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取集群角色
-                     * @return ClusterRoles 集群角色
+                     * 获取大模型理解模板的唯一标识
+                     * @return Definition 大模型理解模板的唯一标识
                      * 
                      */
-                    std::vector<ClusterRole> GetClusterRoles() const;
+                    int64_t GetDefinition() const;
 
                     /**
-                     * 判断参数 ClusterRoles 是否已赋值
-                     * @return ClusterRoles 是否已赋值
+                     * 判断参数 Definition 是否已赋值
+                     * @return Definition 是否已赋值
                      * 
                      */
-                    bool ClusterRolesHasBeenSet() const;
+                    bool DefinitionHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 集群角色
+                     * 大模型理解模板的唯一标识
                      */
-                    std::vector<ClusterRole> m_clusterRoles;
-                    bool m_clusterRolesHasBeenSet;
+                    int64_t m_definition;
+                    bool m_definitionHasBeenSet;
 
                 };
             }
@@ -72,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_GOOSEFS_V20220519_MODEL_DESCRIBECLUSTERROLESRESPONSE_H_
+#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_CREATELLMCOMPREHENDTEMPLATERESPONSE_H_

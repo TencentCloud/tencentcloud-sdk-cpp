@@ -37,6 +37,8 @@
 #include <tencentcloud/lcic/v20220817/model/BatchDeleteRecordResponse.h>
 #include <tencentcloud/lcic/v20220817/model/BatchDescribeDocumentRequest.h>
 #include <tencentcloud/lcic/v20220817/model/BatchDescribeDocumentResponse.h>
+#include <tencentcloud/lcic/v20220817/model/BatchGetPlaybackTokenRequest.h>
+#include <tencentcloud/lcic/v20220817/model/BatchGetPlaybackTokenResponse.h>
 #include <tencentcloud/lcic/v20220817/model/BatchRegisterRequest.h>
 #include <tencentcloud/lcic/v20220817/model/BatchRegisterResponse.h>
 #include <tencentcloud/lcic/v20220817/model/BindDocumentToRoomRequest.h>
@@ -61,6 +63,8 @@
 #include <tencentcloud/lcic/v20220817/model/DeleteGroupResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DeleteGroupMemberRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DeleteGroupMemberResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DeletePlaybackItemRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DeletePlaybackItemResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DeleteRecordRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DeleteRecordResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DeleteRoomRequest.h>
@@ -95,6 +99,10 @@
 #include <tencentcloud/lcic/v20220817/model/DescribeGroupMemberListResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeMarqueeRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeMarqueeResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DescribePlayRecordsRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DescribePlayRecordsResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DescribePlaybackListRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DescribePlaybackListResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeQuestionListRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeQuestionListResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeRecordRequest.h>
@@ -125,6 +133,8 @@
 #include <tencentcloud/lcic/v20220817/model/EndRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/ForbidSendMsgRequest.h>
 #include <tencentcloud/lcic/v20220817/model/ForbidSendMsgResponse.h>
+#include <tencentcloud/lcic/v20220817/model/GetPlaybackTokenRequest.h>
+#include <tencentcloud/lcic/v20220817/model/GetPlaybackTokenResponse.h>
 #include <tencentcloud/lcic/v20220817/model/GetRoomEventRequest.h>
 #include <tencentcloud/lcic/v20220817/model/GetRoomEventResponse.h>
 #include <tencentcloud/lcic/v20220817/model/GetRoomMessageRequest.h>
@@ -204,6 +214,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchDescribeDocumentResponse> BatchDescribeDocumentOutcome;
                 typedef std::future<BatchDescribeDocumentOutcome> BatchDescribeDocumentOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::BatchDescribeDocumentRequest&, BatchDescribeDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDescribeDocumentAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchGetPlaybackTokenResponse> BatchGetPlaybackTokenOutcome;
+                typedef std::future<BatchGetPlaybackTokenOutcome> BatchGetPlaybackTokenOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::BatchGetPlaybackTokenRequest&, BatchGetPlaybackTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchGetPlaybackTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::BatchRegisterResponse> BatchRegisterOutcome;
                 typedef std::future<BatchRegisterOutcome> BatchRegisterOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::BatchRegisterRequest&, BatchRegisterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchRegisterAsyncHandler;
@@ -240,6 +253,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteGroupMemberResponse> DeleteGroupMemberOutcome;
                 typedef std::future<DeleteGroupMemberOutcome> DeleteGroupMemberOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DeleteGroupMemberRequest&, DeleteGroupMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGroupMemberAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeletePlaybackItemResponse> DeletePlaybackItemOutcome;
+                typedef std::future<DeletePlaybackItemOutcome> DeletePlaybackItemOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DeletePlaybackItemRequest&, DeletePlaybackItemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePlaybackItemAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRecordResponse> DeleteRecordOutcome;
                 typedef std::future<DeleteRecordOutcome> DeleteRecordOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DeleteRecordRequest&, DeleteRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordAsyncHandler;
@@ -291,6 +307,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMarqueeResponse> DescribeMarqueeOutcome;
                 typedef std::future<DescribeMarqueeOutcome> DescribeMarqueeOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeMarqueeRequest&, DescribeMarqueeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMarqueeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePlayRecordsResponse> DescribePlayRecordsOutcome;
+                typedef std::future<DescribePlayRecordsOutcome> DescribePlayRecordsOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DescribePlayRecordsRequest&, DescribePlayRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlayRecordsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePlaybackListResponse> DescribePlaybackListOutcome;
+                typedef std::future<DescribePlaybackListOutcome> DescribePlaybackListOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DescribePlaybackListRequest&, DescribePlaybackListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlaybackListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeQuestionListResponse> DescribeQuestionListOutcome;
                 typedef std::future<DescribeQuestionListOutcome> DescribeQuestionListOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeQuestionListRequest&, DescribeQuestionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQuestionListAsyncHandler;
@@ -336,6 +358,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ForbidSendMsgResponse> ForbidSendMsgOutcome;
                 typedef std::future<ForbidSendMsgOutcome> ForbidSendMsgOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::ForbidSendMsgRequest&, ForbidSendMsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ForbidSendMsgAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetPlaybackTokenResponse> GetPlaybackTokenOutcome;
+                typedef std::future<GetPlaybackTokenOutcome> GetPlaybackTokenOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::GetPlaybackTokenRequest&, GetPlaybackTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPlaybackTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetRoomEventResponse> GetRoomEventOutcome;
                 typedef std::future<GetRoomEventOutcome> GetRoomEventOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::GetRoomEventRequest&, GetRoomEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRoomEventAsyncHandler;
@@ -469,6 +494,15 @@ namespace TencentCloud
                 BatchDescribeDocumentOutcomeCallable BatchDescribeDocumentCallable(const Model::BatchDescribeDocumentRequest& request);
 
                 /**
+                 *批量获取信令录制回放token，用于回放指定课堂时鉴权
+                 * @param req BatchGetPlaybackTokenRequest
+                 * @return BatchGetPlaybackTokenOutcome
+                 */
+                BatchGetPlaybackTokenOutcome BatchGetPlaybackToken(const Model::BatchGetPlaybackTokenRequest &request);
+                void BatchGetPlaybackTokenAsync(const Model::BatchGetPlaybackTokenRequest& request, const BatchGetPlaybackTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchGetPlaybackTokenOutcomeCallable BatchGetPlaybackTokenCallable(const Model::BatchGetPlaybackTokenRequest& request);
+
+                /**
                  *如果批量注册的用户已存在，则会被覆盖。一次最多注册1000个用户。默认请求频率限制：10次/秒
                  * @param req BatchRegisterRequest
                  * @return BatchRegisterOutcome
@@ -595,6 +629,15 @@ namespace TencentCloud
                 DeleteGroupMemberOutcome DeleteGroupMember(const Model::DeleteGroupMemberRequest &request);
                 void DeleteGroupMemberAsync(const Model::DeleteGroupMemberRequest& request, const DeleteGroupMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteGroupMemberOutcomeCallable DeleteGroupMemberCallable(const Model::DeleteGroupMemberRequest& request);
+
+                /**
+                 *删除该堂课的录制记录
+                 * @param req DeletePlaybackItemRequest
+                 * @return DeletePlaybackItemOutcome
+                 */
+                DeletePlaybackItemOutcome DeletePlaybackItem(const Model::DeletePlaybackItemRequest &request);
+                void DeletePlaybackItemAsync(const Model::DeletePlaybackItemRequest& request, const DeletePlaybackItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePlaybackItemOutcomeCallable DeletePlaybackItemCallable(const Model::DeletePlaybackItemRequest& request);
 
                 /**
                  *删除指定房间的录制文件
@@ -753,6 +796,24 @@ namespace TencentCloud
                 DescribeMarqueeOutcomeCallable DescribeMarqueeCallable(const Model::DescribeMarqueeRequest& request);
 
                 /**
+                 *信令录制视频观看记录查询接口，用于查询指定课堂在指定时间段内的用户播放记录。
+                 * @param req DescribePlayRecordsRequest
+                 * @return DescribePlayRecordsOutcome
+                 */
+                DescribePlayRecordsOutcome DescribePlayRecords(const Model::DescribePlayRecordsRequest &request);
+                void DescribePlayRecordsAsync(const Model::DescribePlayRecordsRequest& request, const DescribePlayRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePlayRecordsOutcomeCallable DescribePlayRecordsCallable(const Model::DescribePlayRecordsRequest& request);
+
+                /**
+                 *查询录制信息
+                 * @param req DescribePlaybackListRequest
+                 * @return DescribePlaybackListOutcome
+                 */
+                DescribePlaybackListOutcome DescribePlaybackList(const Model::DescribePlaybackListRequest &request);
+                void DescribePlaybackListAsync(const Model::DescribePlaybackListRequest& request, const DescribePlaybackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePlaybackListOutcomeCallable DescribePlaybackListCallable(const Model::DescribePlaybackListRequest& request);
+
+                /**
                  *获取房间提问列表
                  * @param req DescribeQuestionListRequest
                  * @return DescribeQuestionListOutcome
@@ -890,6 +951,15 @@ namespace TencentCloud
                 ForbidSendMsgOutcome ForbidSendMsg(const Model::ForbidSendMsgRequest &request);
                 void ForbidSendMsgAsync(const Model::ForbidSendMsgRequest& request, const ForbidSendMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ForbidSendMsgOutcomeCallable ForbidSendMsgCallable(const Model::ForbidSendMsgRequest& request);
+
+                /**
+                 *获取信令录制回放token，用于回放指定课堂时鉴权
+                 * @param req GetPlaybackTokenRequest
+                 * @return GetPlaybackTokenOutcome
+                 */
+                GetPlaybackTokenOutcome GetPlaybackToken(const Model::GetPlaybackTokenRequest &request);
+                void GetPlaybackTokenAsync(const Model::GetPlaybackTokenRequest& request, const GetPlaybackTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetPlaybackTokenOutcomeCallable GetPlaybackTokenCallable(const Model::GetPlaybackTokenRequest& request);
 
                 /**
                  *获取房间事件,仅在课堂结束1小时内有效。

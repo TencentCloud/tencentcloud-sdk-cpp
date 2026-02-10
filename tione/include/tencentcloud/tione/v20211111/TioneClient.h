@@ -505,7 +505,7 @@ https://cloud.tencent.com/document/product/1278/85305
                 DescribeBillingResourceGroupOutcomeCallable DescribeBillingResourceGroupCallable(const Model::DescribeBillingResourceGroupRequest& request);
 
                 /**
-                 *查询资源组详情
+                 *查询资源组列表
                  * @param req DescribeBillingResourceGroupsRequest
                  * @return DescribeBillingResourceGroupsOutcome
                  */

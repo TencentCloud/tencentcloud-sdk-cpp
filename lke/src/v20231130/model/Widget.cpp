@@ -23,6 +23,7 @@ using namespace std;
 Widget::Widget() :
     m_widgetIdHasBeenSet(false),
     m_widgetRunIdHasBeenSet(false),
+    m_viewHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_positionHasBeenSet(false),
     m_encodedWidgetHasBeenSet(false),
@@ -53,6 +54,16 @@ CoreInternalOutcome Widget::Deserialize(const rapidjson::Value &value)
         }
         m_widgetRunId = string(value["WidgetRunId"].GetString());
         m_widgetRunIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("View") && !value["View"].IsNull())
+    {
+        if (!value["View"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Widget.View` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_view = string(value["View"].GetString());
+        m_viewHasBeenSet = true;
     }
 
     if (value.HasMember("State") && !value["State"].IsNull())
@@ -116,6 +127,14 @@ void Widget::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "WidgetRunId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_widgetRunId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_viewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "View";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_view.c_str(), allocator).Move(), allocator);
     }
 
     if (m_stateHasBeenSet)
@@ -183,6 +202,22 @@ void Widget::SetWidgetRunId(const string& _widgetRunId)
 bool Widget::WidgetRunIdHasBeenSet() const
 {
     return m_widgetRunIdHasBeenSet;
+}
+
+string Widget::GetView() const
+{
+    return m_view;
+}
+
+void Widget::SetView(const string& _view)
+{
+    m_view = _view;
+    m_viewHasBeenSet = true;
+}
+
+bool Widget::ViewHasBeenSet() const
+{
+    return m_viewHasBeenSet;
 }
 
 string Widget::GetState() const

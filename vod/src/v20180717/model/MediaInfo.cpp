@@ -34,7 +34,8 @@ MediaInfo::MediaInfo() :
     m_subtitleInfoHasBeenSet(false),
     m_fileIdHasBeenSet(false),
     m_reviewInfoHasBeenSet(false),
-    m_mPSAiMediaInfoHasBeenSet(false)
+    m_mPSAiMediaInfoHasBeenSet(false),
+    m_imageUnderstandingInfoHasBeenSet(false)
 {
 }
 
@@ -274,6 +275,23 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
         m_mPSAiMediaInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageUnderstandingInfo") && !value["ImageUnderstandingInfo"].IsNull())
+    {
+        if (!value["ImageUnderstandingInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.ImageUnderstandingInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_imageUnderstandingInfo.Deserialize(value["ImageUnderstandingInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageUnderstandingInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -404,6 +422,15 @@ void MediaInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mPSAiMediaInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_imageUnderstandingInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageUnderstandingInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageUnderstandingInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -631,5 +658,21 @@ void MediaInfo::SetMPSAiMediaInfo(const MPSAiMediaInfo& _mPSAiMediaInfo)
 bool MediaInfo::MPSAiMediaInfoHasBeenSet() const
 {
     return m_mPSAiMediaInfoHasBeenSet;
+}
+
+ImageUnderstandingInfo MediaInfo::GetImageUnderstandingInfo() const
+{
+    return m_imageUnderstandingInfo;
+}
+
+void MediaInfo::SetImageUnderstandingInfo(const ImageUnderstandingInfo& _imageUnderstandingInfo)
+{
+    m_imageUnderstandingInfo = _imageUnderstandingInfo;
+    m_imageUnderstandingInfoHasBeenSet = true;
+}
+
+bool MediaInfo::ImageUnderstandingInfoHasBeenSet() const
+{
+    return m_imageUnderstandingInfoHasBeenSet;
 }
 

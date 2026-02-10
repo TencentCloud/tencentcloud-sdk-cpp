@@ -197,6 +197,27 @@ namespace TencentCloud
                      */
                     bool NatureLanguageToSqlModelConfigHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启图谱检索
+                     * @return GraphRetrieval 是否开启图谱检索
+                     * 
+                     */
+                    bool GetGraphRetrieval() const;
+
+                    /**
+                     * 设置是否开启图谱检索
+                     * @param _graphRetrieval 是否开启图谱检索
+                     * 
+                     */
+                    void SetGraphRetrieval(const bool& _graphRetrieval);
+
+                    /**
+                     * 判断参数 GraphRetrieval 是否已赋值
+                     * @return GraphRetrieval 是否已赋值
+                     * 
+                     */
+                    bool GraphRetrievalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -240,6 +261,12 @@ namespace TencentCloud
                      */
                     NL2SQLModelConfig m_natureLanguageToSqlModelConfig;
                     bool m_natureLanguageToSqlModelConfigHasBeenSet;
+
+                    /**
+                     * 是否开启图谱检索
+                     */
+                    bool m_graphRetrieval;
+                    bool m_graphRetrievalHasBeenSet;
 
                 };
             }

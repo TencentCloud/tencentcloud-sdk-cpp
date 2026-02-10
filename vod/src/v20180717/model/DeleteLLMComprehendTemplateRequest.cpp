@@ -14,41 +14,41 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/goosefs/v20220519/model/DescribeClusterRolesRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteLLMComprehendTemplateRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Goosefs::V20220519::Model;
+using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
-DescribeClusterRolesRequest::DescribeClusterRolesRequest() :
-    m_clusterIdHasBeenSet(false),
-    m_roleNameHasBeenSet(false)
+DeleteLLMComprehendTemplateRequest::DeleteLLMComprehendTemplateRequest() :
+    m_definitionHasBeenSet(false),
+    m_subAppIdHasBeenSet(false)
 {
 }
 
-string DescribeClusterRolesRequest::ToJsonString() const
+string DeleteLLMComprehendTemplateRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_clusterIdHasBeenSet)
+    if (m_definitionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterId";
+        string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_definition, allocator);
     }
 
-    if (m_roleNameHasBeenSet)
+    if (m_subAppIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RoleName";
+        string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_roleName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -59,36 +59,36 @@ string DescribeClusterRolesRequest::ToJsonString() const
 }
 
 
-string DescribeClusterRolesRequest::GetClusterId() const
+int64_t DeleteLLMComprehendTemplateRequest::GetDefinition() const
 {
-    return m_clusterId;
+    return m_definition;
 }
 
-void DescribeClusterRolesRequest::SetClusterId(const string& _clusterId)
+void DeleteLLMComprehendTemplateRequest::SetDefinition(const int64_t& _definition)
 {
-    m_clusterId = _clusterId;
-    m_clusterIdHasBeenSet = true;
+    m_definition = _definition;
+    m_definitionHasBeenSet = true;
 }
 
-bool DescribeClusterRolesRequest::ClusterIdHasBeenSet() const
+bool DeleteLLMComprehendTemplateRequest::DefinitionHasBeenSet() const
 {
-    return m_clusterIdHasBeenSet;
+    return m_definitionHasBeenSet;
 }
 
-string DescribeClusterRolesRequest::GetRoleName() const
+uint64_t DeleteLLMComprehendTemplateRequest::GetSubAppId() const
 {
-    return m_roleName;
+    return m_subAppId;
 }
 
-void DescribeClusterRolesRequest::SetRoleName(const string& _roleName)
+void DeleteLLMComprehendTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
 {
-    m_roleName = _roleName;
-    m_roleNameHasBeenSet = true;
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
 }
 
-bool DescribeClusterRolesRequest::RoleNameHasBeenSet() const
+bool DeleteLLMComprehendTemplateRequest::SubAppIdHasBeenSet() const
 {
-    return m_roleNameHasBeenSet;
+    return m_subAppIdHasBeenSet;
 }
 
 

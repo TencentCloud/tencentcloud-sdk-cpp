@@ -68,6 +68,27 @@ namespace TencentCloud
                      */
                     bool FileInfoHasBeenSet() const;
 
+                    /**
+                     * 获取图片理解结果。
+                     * @return OutputText 图片理解结果。
+                     * 
+                     */
+                    std::string GetOutputText() const;
+
+                    /**
+                     * 设置图片理解结果。
+                     * @param _outputText 图片理解结果。
+                     * 
+                     */
+                    void SetOutputText(const std::string& _outputText);
+
+                    /**
+                     * 判断参数 OutputText 是否已赋值
+                     * @return OutputText 是否已赋值
+                     * 
+                     */
+                    bool OutputTextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -75,6 +96,12 @@ namespace TencentCloud
                      */
                     ProcessImageAsyncOutputFileInfo m_fileInfo;
                     bool m_fileInfoHasBeenSet;
+
+                    /**
+                     * 图片理解结果。
+                     */
+                    std::string m_outputText;
+                    bool m_outputTextHasBeenSet;
 
                 };
             }

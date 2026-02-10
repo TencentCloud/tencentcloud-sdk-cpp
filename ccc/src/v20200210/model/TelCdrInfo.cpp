@@ -60,7 +60,9 @@ TelCdrInfo::TelCdrInfo() :
     m_voicemailRecordURLHasBeenSet(false),
     m_voicemailAsrURLHasBeenSet(false),
     m_aIAgentIdHasBeenSet(false),
-    m_aIAgentNameHasBeenSet(false)
+    m_aIAgentNameHasBeenSet(false),
+    m_sysHangupReasonHasBeenSet(false),
+    m_sysHangupReasonStringHasBeenSet(false)
 {
 }
 
@@ -515,6 +517,26 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
         m_aIAgentNameHasBeenSet = true;
     }
 
+    if (value.HasMember("SysHangupReason") && !value["SysHangupReason"].IsNull())
+    {
+        if (!value["SysHangupReason"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.SysHangupReason` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sysHangupReason = value["SysHangupReason"].GetInt64();
+        m_sysHangupReasonHasBeenSet = true;
+    }
+
+    if (value.HasMember("SysHangupReasonString") && !value["SysHangupReasonString"].IsNull())
+    {
+        if (!value["SysHangupReasonString"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.SysHangupReasonString` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sysHangupReasonString = string(value["SysHangupReasonString"].GetString());
+        m_sysHangupReasonStringHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -877,6 +899,22 @@ void TelCdrInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "AIAgentName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_aIAgentName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sysHangupReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SysHangupReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sysHangupReason, allocator);
+    }
+
+    if (m_sysHangupReasonStringHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SysHangupReasonString";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sysHangupReasonString.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1520,5 +1558,37 @@ void TelCdrInfo::SetAIAgentName(const string& _aIAgentName)
 bool TelCdrInfo::AIAgentNameHasBeenSet() const
 {
     return m_aIAgentNameHasBeenSet;
+}
+
+int64_t TelCdrInfo::GetSysHangupReason() const
+{
+    return m_sysHangupReason;
+}
+
+void TelCdrInfo::SetSysHangupReason(const int64_t& _sysHangupReason)
+{
+    m_sysHangupReason = _sysHangupReason;
+    m_sysHangupReasonHasBeenSet = true;
+}
+
+bool TelCdrInfo::SysHangupReasonHasBeenSet() const
+{
+    return m_sysHangupReasonHasBeenSet;
+}
+
+string TelCdrInfo::GetSysHangupReasonString() const
+{
+    return m_sysHangupReasonString;
+}
+
+void TelCdrInfo::SetSysHangupReasonString(const string& _sysHangupReasonString)
+{
+    m_sysHangupReasonString = _sysHangupReasonString;
+    m_sysHangupReasonStringHasBeenSet = true;
+}
+
+bool TelCdrInfo::SysHangupReasonStringHasBeenSet() const
+{
+    return m_sysHangupReasonStringHasBeenSet;
 }
 

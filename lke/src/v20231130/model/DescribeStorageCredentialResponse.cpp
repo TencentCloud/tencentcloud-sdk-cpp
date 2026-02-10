@@ -33,7 +33,9 @@ DescribeStorageCredentialResponse::DescribeStorageCredentialResponse() :
     m_typeHasBeenSet(false),
     m_corpUinHasBeenSet(false),
     m_imagePathHasBeenSet(false),
-    m_uploadPathHasBeenSet(false)
+    m_uploadPathHasBeenSet(false),
+    m_uploadUrlHasBeenSet(false),
+    m_fileUrlHasBeenSet(false)
 {
 }
 
@@ -178,6 +180,26 @@ CoreInternalOutcome DescribeStorageCredentialResponse::Deserialize(const string 
         m_uploadPathHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UploadUrl") && !rsp["UploadUrl"].IsNull())
+    {
+        if (!rsp["UploadUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UploadUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uploadUrl = string(rsp["UploadUrl"].GetString());
+        m_uploadUrlHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FileUrl") && !rsp["FileUrl"].IsNull())
+    {
+        if (!rsp["FileUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileUrl = string(rsp["FileUrl"].GetString());
+        m_fileUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -267,6 +289,22 @@ string DescribeStorageCredentialResponse::ToJsonString() const
         string key = "UploadPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uploadPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uploadUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UploadUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uploadUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileUrl.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -379,6 +417,26 @@ string DescribeStorageCredentialResponse::GetUploadPath() const
 bool DescribeStorageCredentialResponse::UploadPathHasBeenSet() const
 {
     return m_uploadPathHasBeenSet;
+}
+
+string DescribeStorageCredentialResponse::GetUploadUrl() const
+{
+    return m_uploadUrl;
+}
+
+bool DescribeStorageCredentialResponse::UploadUrlHasBeenSet() const
+{
+    return m_uploadUrlHasBeenSet;
+}
+
+string DescribeStorageCredentialResponse::GetFileUrl() const
+{
+    return m_fileUrl;
+}
+
+bool DescribeStorageCredentialResponse::FileUrlHasBeenSet() const
+{
+    return m_fileUrlHasBeenSet;
 }
 
 

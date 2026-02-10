@@ -290,6 +290,56 @@ GoosefsClient::BuildClientNodeMountCommandOutcomeCallable GoosefsClient::BuildCl
     return prom->get_future();
 }
 
+GoosefsClient::CancelLoadTaskOutcome GoosefsClient::CancelLoadTask(const CancelLoadTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelLoadTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelLoadTaskResponse rsp = CancelLoadTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelLoadTaskOutcome(rsp);
+        else
+            return CancelLoadTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelLoadTaskOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::CancelLoadTaskAsync(const CancelLoadTaskRequest& request, const CancelLoadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CancelLoadTaskRequest&;
+    using Resp = CancelLoadTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CancelLoadTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::CancelLoadTaskOutcomeCallable GoosefsClient::CancelLoadTaskCallable(const CancelLoadTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CancelLoadTaskOutcome>>();
+    CancelLoadTaskAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const CancelLoadTaskRequest&,
+        CancelLoadTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 GoosefsClient::CreateDataRepositoryTaskOutcome GoosefsClient::CreateDataRepositoryTask(const CreateDataRepositoryTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDataRepositoryTask");
@@ -432,6 +482,56 @@ GoosefsClient::CreateFilesetOutcomeCallable GoosefsClient::CreateFilesetCallable
         const GoosefsClient*,
         const CreateFilesetRequest&,
         CreateFilesetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+GoosefsClient::CreateLoadTaskOutcome GoosefsClient::CreateLoadTask(const CreateLoadTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLoadTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLoadTaskResponse rsp = CreateLoadTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLoadTaskOutcome(rsp);
+        else
+            return CreateLoadTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLoadTaskOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::CreateLoadTaskAsync(const CreateLoadTaskRequest& request, const CreateLoadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateLoadTaskRequest&;
+    using Resp = CreateLoadTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateLoadTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::CreateLoadTaskOutcomeCallable GoosefsClient::CreateLoadTaskCallable(const CreateLoadTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateLoadTaskOutcome>>();
+    CreateLoadTaskAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const CreateLoadTaskRequest&,
+        CreateLoadTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -740,56 +840,6 @@ GoosefsClient::DescribeClusterRoleTokenOutcomeCallable GoosefsClient::DescribeCl
     return prom->get_future();
 }
 
-GoosefsClient::DescribeClusterRolesOutcome GoosefsClient::DescribeClusterRoles(const DescribeClusterRolesRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeClusterRoles");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeClusterRolesResponse rsp = DescribeClusterRolesResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeClusterRolesOutcome(rsp);
-        else
-            return DescribeClusterRolesOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeClusterRolesOutcome(outcome.GetError());
-    }
-}
-
-void GoosefsClient::DescribeClusterRolesAsync(const DescribeClusterRolesRequest& request, const DescribeClusterRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeClusterRolesRequest&;
-    using Resp = DescribeClusterRolesResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeClusterRoles", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-GoosefsClient::DescribeClusterRolesOutcomeCallable GoosefsClient::DescribeClusterRolesCallable(const DescribeClusterRolesRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeClusterRolesOutcome>>();
-    DescribeClusterRolesAsync(
-    request,
-    [prom](
-        const GoosefsClient*,
-        const DescribeClusterRolesRequest&,
-        DescribeClusterRolesOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 GoosefsClient::DescribeDataRepositoryTaskStatusOutcome GoosefsClient::DescribeDataRepositoryTaskStatus(const DescribeDataRepositoryTaskStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDataRepositoryTaskStatus");
@@ -1040,6 +1090,56 @@ GoosefsClient::DescribeFilesetsOutcomeCallable GoosefsClient::DescribeFilesetsCa
     return prom->get_future();
 }
 
+GoosefsClient::DescribeLoadTaskOutcome GoosefsClient::DescribeLoadTask(const DescribeLoadTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLoadTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLoadTaskResponse rsp = DescribeLoadTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLoadTaskOutcome(rsp);
+        else
+            return DescribeLoadTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLoadTaskOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::DescribeLoadTaskAsync(const DescribeLoadTaskRequest& request, const DescribeLoadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLoadTaskRequest&;
+    using Resp = DescribeLoadTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLoadTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::DescribeLoadTaskOutcomeCallable GoosefsClient::DescribeLoadTaskCallable(const DescribeLoadTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLoadTaskOutcome>>();
+    DescribeLoadTaskAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const DescribeLoadTaskRequest&,
+        DescribeLoadTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 GoosefsClient::DetachFileSystemBucketOutcome GoosefsClient::DetachFileSystemBucket(const DetachFileSystemBucketRequest &request)
 {
     auto outcome = MakeRequest(request, "DetachFileSystemBucket");
@@ -1132,6 +1232,56 @@ GoosefsClient::ExpandCapacityOutcomeCallable GoosefsClient::ExpandCapacityCallab
         const GoosefsClient*,
         const ExpandCapacityRequest&,
         ExpandCapacityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+GoosefsClient::ListLoadTasksOutcome GoosefsClient::ListLoadTasks(const ListLoadTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListLoadTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListLoadTasksResponse rsp = ListLoadTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListLoadTasksOutcome(rsp);
+        else
+            return ListLoadTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return ListLoadTasksOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::ListLoadTasksAsync(const ListLoadTasksRequest& request, const ListLoadTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListLoadTasksRequest&;
+    using Resp = ListLoadTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListLoadTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::ListLoadTasksOutcomeCallable GoosefsClient::ListLoadTasksCallable(const ListLoadTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListLoadTasksOutcome>>();
+    ListLoadTasksAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const ListLoadTasksRequest&,
+        ListLoadTasksOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1382,6 +1532,56 @@ GoosefsClient::UpdateFilesetGeneralConfigOutcomeCallable GoosefsClient::UpdateFi
         const GoosefsClient*,
         const UpdateFilesetGeneralConfigRequest&,
         UpdateFilesetGeneralConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+GoosefsClient::UpdateLoadTaskPriorityOutcome GoosefsClient::UpdateLoadTaskPriority(const UpdateLoadTaskPriorityRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateLoadTaskPriority");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateLoadTaskPriorityResponse rsp = UpdateLoadTaskPriorityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateLoadTaskPriorityOutcome(rsp);
+        else
+            return UpdateLoadTaskPriorityOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateLoadTaskPriorityOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::UpdateLoadTaskPriorityAsync(const UpdateLoadTaskPriorityRequest& request, const UpdateLoadTaskPriorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateLoadTaskPriorityRequest&;
+    using Resp = UpdateLoadTaskPriorityResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateLoadTaskPriority", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::UpdateLoadTaskPriorityOutcomeCallable GoosefsClient::UpdateLoadTaskPriorityCallable(const UpdateLoadTaskPriorityRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateLoadTaskPriorityOutcome>>();
+    UpdateLoadTaskPriorityAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const UpdateLoadTaskPriorityRequest&,
+        UpdateLoadTaskPriorityOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

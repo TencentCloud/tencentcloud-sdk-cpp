@@ -32,7 +32,8 @@ CreateSandboxToolRequest::CreateSandboxToolRequest() :
     m_clientTokenHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_storageMountsHasBeenSet(false),
-    m_customConfigurationHasBeenSet(false)
+    m_customConfigurationHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,15 @@ string CreateSandboxToolRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_customConfiguration.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_logConfigurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogConfiguration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_logConfiguration.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -305,6 +315,22 @@ void CreateSandboxToolRequest::SetCustomConfiguration(const CustomConfiguration&
 bool CreateSandboxToolRequest::CustomConfigurationHasBeenSet() const
 {
     return m_customConfigurationHasBeenSet;
+}
+
+LogConfiguration CreateSandboxToolRequest::GetLogConfiguration() const
+{
+    return m_logConfiguration;
+}
+
+void CreateSandboxToolRequest::SetLogConfiguration(const LogConfiguration& _logConfiguration)
+{
+    m_logConfiguration = _logConfiguration;
+    m_logConfigurationHasBeenSet = true;
+}
+
+bool CreateSandboxToolRequest::LogConfigurationHasBeenSet() const
+{
+    return m_logConfigurationHasBeenSet;
 }
 
 

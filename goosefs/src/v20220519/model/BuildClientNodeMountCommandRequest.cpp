@@ -24,7 +24,8 @@ using namespace std;
 
 BuildClientNodeMountCommandRequest::BuildClientNodeMountCommandRequest() :
     m_fileSystemIdHasBeenSet(false),
-    m_customMountDirHasBeenSet(false)
+    m_customMountDirHasBeenSet(false),
+    m_clusterIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string BuildClientNodeMountCommandRequest::ToJsonString() const
         string key = "CustomMountDir";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_customMountDir.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void BuildClientNodeMountCommandRequest::SetCustomMountDir(const string& _custom
 bool BuildClientNodeMountCommandRequest::CustomMountDirHasBeenSet() const
 {
     return m_customMountDirHasBeenSet;
+}
+
+string BuildClientNodeMountCommandRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void BuildClientNodeMountCommandRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool BuildClientNodeMountCommandRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
 }
 
 

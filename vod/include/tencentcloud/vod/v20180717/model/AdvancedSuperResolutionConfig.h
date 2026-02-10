@@ -208,6 +208,56 @@ namespace TencentCloud
                      */
                     bool HeightHasBeenSet() const;
 
+                    /**
+                     * 获取目标图片长边长度，不能超过4096。
+注意：当Mode等于aspect或fixed，且未配置Width和Height字段时使用此配置。
+                     * @return LongSide 目标图片长边长度，不能超过4096。
+注意：当Mode等于aspect或fixed，且未配置Width和Height字段时使用此配置。
+                     * 
+                     */
+                    int64_t GetLongSide() const;
+
+                    /**
+                     * 设置目标图片长边长度，不能超过4096。
+注意：当Mode等于aspect或fixed，且未配置Width和Height字段时使用此配置。
+                     * @param _longSide 目标图片长边长度，不能超过4096。
+注意：当Mode等于aspect或fixed，且未配置Width和Height字段时使用此配置。
+                     * 
+                     */
+                    void SetLongSide(const int64_t& _longSide);
+
+                    /**
+                     * 判断参数 LongSide 是否已赋值
+                     * @return LongSide 是否已赋值
+                     * 
+                     */
+                    bool LongSideHasBeenSet() const;
+
+                    /**
+                     * 获取目标图片短边长度，不能超过4096。
+注意：当Mode等于aspect或fixed，且未配置Width和Height字段时使用此配置。
+                     * @return ShortSide 目标图片短边长度，不能超过4096。
+注意：当Mode等于aspect或fixed，且未配置Width和Height字段时使用此配置。
+                     * 
+                     */
+                    int64_t GetShortSide() const;
+
+                    /**
+                     * 设置目标图片短边长度，不能超过4096。
+注意：当Mode等于aspect或fixed，且未配置Width和Height字段时使用此配置。
+                     * @param _shortSide 目标图片短边长度，不能超过4096。
+注意：当Mode等于aspect或fixed，且未配置Width和Height字段时使用此配置。
+                     * 
+                     */
+                    void SetShortSide(const int64_t& _shortSide);
+
+                    /**
+                     * 判断参数 ShortSide 是否已赋值
+                     * @return ShortSide 是否已赋值
+                     * 
+                     */
+                    bool ShortSideHasBeenSet() const;
+
                 private:
 
                     /**
@@ -254,6 +304,20 @@ namespace TencentCloud
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
+
+                    /**
+                     * 目标图片长边长度，不能超过4096。
+注意：当Mode等于aspect或fixed，且未配置Width和Height字段时使用此配置。
+                     */
+                    int64_t m_longSide;
+                    bool m_longSideHasBeenSet;
+
+                    /**
+                     * 目标图片短边长度，不能超过4096。
+注意：当Mode等于aspect或fixed，且未配置Width和Height字段时使用此配置。
+                     */
+                    int64_t m_shortSide;
+                    bool m_shortSideHasBeenSet;
 
                 };
             }

@@ -23,7 +23,8 @@ using namespace TencentCloud::Thpc::V20230321::Model;
 using namespace std;
 
 DescribeAutoScalingConfigurationRequest::DescribeAutoScalingConfigurationRequest() :
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_queueNameHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeAutoScalingConfigurationRequest::ToJsonString() const
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queueNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeAutoScalingConfigurationRequest::SetClusterId(const string& _cluste
 bool DescribeAutoScalingConfigurationRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+string DescribeAutoScalingConfigurationRequest::GetQueueName() const
+{
+    return m_queueName;
+}
+
+void DescribeAutoScalingConfigurationRequest::SetQueueName(const string& _queueName)
+{
+    m_queueName = _queueName;
+    m_queueNameHasBeenSet = true;
+}
+
+bool DescribeAutoScalingConfigurationRequest::QueueNameHasBeenSet() const
+{
+    return m_queueNameHasBeenSet;
 }
 
 

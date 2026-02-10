@@ -1524,6 +1524,56 @@ HoaiMy
                      */
                     bool MaxRingTimeoutSecondHasBeenSet() const;
 
+                    /**
+                     * 获取环境音场景，没有的话不填。
+coffee_shops：咖啡店氛围，背景中有人聊天
+busy_office：客服中心
+                     * @return AmbientSoundType 环境音场景，没有的话不填。
+coffee_shops：咖啡店氛围，背景中有人聊天
+busy_office：客服中心
+                     * 
+                     */
+                    std::string GetAmbientSoundType() const;
+
+                    /**
+                     * 设置环境音场景，没有的话不填。
+coffee_shops：咖啡店氛围，背景中有人聊天
+busy_office：客服中心
+                     * @param _ambientSoundType 环境音场景，没有的话不填。
+coffee_shops：咖啡店氛围，背景中有人聊天
+busy_office：客服中心
+                     * 
+                     */
+                    void SetAmbientSoundType(const std::string& _ambientSoundType);
+
+                    /**
+                     * 判断参数 AmbientSoundType 是否已赋值
+                     * @return AmbientSoundType 是否已赋值
+                     * 
+                     */
+                    bool AmbientSoundTypeHasBeenSet() const;
+
+                    /**
+                     * 获取环境音音量。如果AmbientSoundType 为空，该字段不填。取值的范围是 [0,2]。值越低，环境音越小；值越高，环境音越响亮。如果未设置，则使用默认值 1。
+                     * @return AmbientSoundVolume 环境音音量。如果AmbientSoundType 为空，该字段不填。取值的范围是 [0,2]。值越低，环境音越小；值越高，环境音越响亮。如果未设置，则使用默认值 1。
+                     * 
+                     */
+                    double GetAmbientSoundVolume() const;
+
+                    /**
+                     * 设置环境音音量。如果AmbientSoundType 为空，该字段不填。取值的范围是 [0,2]。值越低，环境音越小；值越高，环境音越响亮。如果未设置，则使用默认值 1。
+                     * @param _ambientSoundVolume 环境音音量。如果AmbientSoundType 为空，该字段不填。取值的范围是 [0,2]。值越低，环境音越小；值越高，环境音越响亮。如果未设置，则使用默认值 1。
+                     * 
+                     */
+                    void SetAmbientSoundVolume(const double& _ambientSoundVolume);
+
+                    /**
+                     * 判断参数 AmbientSoundVolume 是否已赋值
+                     * @return AmbientSoundVolume 是否已赋值
+                     * 
+                     */
+                    bool AmbientSoundVolumeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1923,6 +1973,20 @@ HoaiMy
                      */
                     int64_t m_maxRingTimeoutSecond;
                     bool m_maxRingTimeoutSecondHasBeenSet;
+
+                    /**
+                     * 环境音场景，没有的话不填。
+coffee_shops：咖啡店氛围，背景中有人聊天
+busy_office：客服中心
+                     */
+                    std::string m_ambientSoundType;
+                    bool m_ambientSoundTypeHasBeenSet;
+
+                    /**
+                     * 环境音音量。如果AmbientSoundType 为空，该字段不填。取值的范围是 [0,2]。值越低，环境音越小；值越高，环境音越响亮。如果未设置，则使用默认值 1。
+                     */
+                    double m_ambientSoundVolume;
+                    bool m_ambientSoundVolumeHasBeenSet;
 
                 };
             }

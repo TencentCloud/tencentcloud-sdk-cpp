@@ -88,6 +88,69 @@ namespace TencentCloud
                      */
                     bool SubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取应用的集群；可以是集群id,也可以是All
+                     * @return UsedCluster 应用的集群；可以是集群id,也可以是All
+                     * 
+                     */
+                    std::string GetUsedCluster() const;
+
+                    /**
+                     * 设置应用的集群；可以是集群id,也可以是All
+                     * @param _usedCluster 应用的集群；可以是集群id,也可以是All
+                     * 
+                     */
+                    void SetUsedCluster(const std::string& _usedCluster);
+
+                    /**
+                     * 判断参数 UsedCluster 是否已赋值
+                     * @return UsedCluster 是否已赋值
+                     * 
+                     */
+                    bool UsedClusterHasBeenSet() const;
+
+                    /**
+                     * 获取cidr，只有当IsDirectConnect为true时才生效
+                     * @return CIDR cidr，只有当IsDirectConnect为true时才生效
+                     * 
+                     */
+                    std::string GetCIDR() const;
+
+                    /**
+                     * 设置cidr，只有当IsDirectConnect为true时才生效
+                     * @param _cIDR cidr，只有当IsDirectConnect为true时才生效
+                     * 
+                     */
+                    void SetCIDR(const std::string& _cIDR);
+
+                    /**
+                     * 判断参数 CIDR 是否已赋值
+                     * @return CIDR 是否已赋值
+                     * 
+                     */
+                    bool CIDRHasBeenSet() const;
+
+                    /**
+                     * 获取是否为专线接入场景
+                     * @return IsDirectConnect 是否为专线接入场景
+                     * 
+                     */
+                    bool GetIsDirectConnect() const;
+
+                    /**
+                     * 设置是否为专线接入场景
+                     * @param _isDirectConnect 是否为专线接入场景
+                     * 
+                     */
+                    void SetIsDirectConnect(const bool& _isDirectConnect);
+
+                    /**
+                     * 判断参数 IsDirectConnect 是否已赋值
+                     * @return IsDirectConnect 是否已赋值
+                     * 
+                     */
+                    bool IsDirectConnectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +164,24 @@ namespace TencentCloud
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 应用的集群；可以是集群id,也可以是All
+                     */
+                    std::string m_usedCluster;
+                    bool m_usedClusterHasBeenSet;
+
+                    /**
+                     * cidr，只有当IsDirectConnect为true时才生效
+                     */
+                    std::string m_cIDR;
+                    bool m_cIDRHasBeenSet;
+
+                    /**
+                     * 是否为专线接入场景
+                     */
+                    bool m_isDirectConnect;
+                    bool m_isDirectConnectHasBeenSet;
 
                 };
             }
