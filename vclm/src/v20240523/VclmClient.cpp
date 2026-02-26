@@ -90,6 +90,56 @@ VclmClient::CheckAnimateImageJobOutcomeCallable VclmClient::CheckAnimateImageJob
     return prom->get_future();
 }
 
+VclmClient::DescribeAigcVideoJobOutcome VclmClient::DescribeAigcVideoJob(const DescribeAigcVideoJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAigcVideoJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAigcVideoJobResponse rsp = DescribeAigcVideoJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAigcVideoJobOutcome(rsp);
+        else
+            return DescribeAigcVideoJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAigcVideoJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::DescribeAigcVideoJobAsync(const DescribeAigcVideoJobRequest& request, const DescribeAigcVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAigcVideoJobRequest&;
+    using Resp = DescribeAigcVideoJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAigcVideoJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::DescribeAigcVideoJobOutcomeCallable VclmClient::DescribeAigcVideoJobCallable(const DescribeAigcVideoJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAigcVideoJobOutcome>>();
+    DescribeAigcVideoJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const DescribeAigcVideoJobRequest&,
+        DescribeAigcVideoJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VclmClient::DescribeHumanActorJobOutcome VclmClient::DescribeHumanActorJob(const DescribeHumanActorJobRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeHumanActorJob");
@@ -582,6 +632,56 @@ VclmClient::DescribeVideoVoiceJobOutcomeCallable VclmClient::DescribeVideoVoiceJ
         const VclmClient*,
         const DescribeVideoVoiceJobRequest&,
         DescribeVideoVoiceJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VclmClient::SubmitAigcVideoJobOutcome VclmClient::SubmitAigcVideoJob(const SubmitAigcVideoJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitAigcVideoJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitAigcVideoJobResponse rsp = SubmitAigcVideoJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitAigcVideoJobOutcome(rsp);
+        else
+            return SubmitAigcVideoJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitAigcVideoJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::SubmitAigcVideoJobAsync(const SubmitAigcVideoJobRequest& request, const SubmitAigcVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SubmitAigcVideoJobRequest&;
+    using Resp = SubmitAigcVideoJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SubmitAigcVideoJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::SubmitAigcVideoJobOutcomeCallable VclmClient::SubmitAigcVideoJobCallable(const SubmitAigcVideoJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SubmitAigcVideoJobOutcome>>();
+    SubmitAigcVideoJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const SubmitAigcVideoJobRequest&,
+        SubmitAigcVideoJobOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

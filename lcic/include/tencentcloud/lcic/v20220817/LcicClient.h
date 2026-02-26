@@ -147,8 +147,12 @@
 #include <tencentcloud/lcic/v20220817/model/KickUserFromRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/LoginOriginIdRequest.h>
 #include <tencentcloud/lcic/v20220817/model/LoginOriginIdResponse.h>
+#include <tencentcloud/lcic/v20220817/model/LoginOriginIdWithRoomRequest.h>
+#include <tencentcloud/lcic/v20220817/model/LoginOriginIdWithRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/LoginUserRequest.h>
 #include <tencentcloud/lcic/v20220817/model/LoginUserResponse.h>
+#include <tencentcloud/lcic/v20220817/model/LoginUserWithRoomRequest.h>
+#include <tencentcloud/lcic/v20220817/model/LoginUserWithRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/ModifyAppRequest.h>
 #include <tencentcloud/lcic/v20220817/model/ModifyAppResponse.h>
 #include <tencentcloud/lcic/v20220817/model/ModifyGroupRequest.h>
@@ -379,9 +383,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::LoginOriginIdResponse> LoginOriginIdOutcome;
                 typedef std::future<LoginOriginIdOutcome> LoginOriginIdOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::LoginOriginIdRequest&, LoginOriginIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LoginOriginIdAsyncHandler;
+                typedef Outcome<Core::Error, Model::LoginOriginIdWithRoomResponse> LoginOriginIdWithRoomOutcome;
+                typedef std::future<LoginOriginIdWithRoomOutcome> LoginOriginIdWithRoomOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::LoginOriginIdWithRoomRequest&, LoginOriginIdWithRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LoginOriginIdWithRoomAsyncHandler;
                 typedef Outcome<Core::Error, Model::LoginUserResponse> LoginUserOutcome;
                 typedef std::future<LoginUserOutcome> LoginUserOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::LoginUserRequest&, LoginUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LoginUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::LoginUserWithRoomResponse> LoginUserWithRoomOutcome;
+                typedef std::future<LoginUserWithRoomOutcome> LoginUserWithRoomOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::LoginUserWithRoomRequest&, LoginUserWithRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LoginUserWithRoomAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAppResponse> ModifyAppOutcome;
                 typedef std::future<ModifyAppOutcome> ModifyAppOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::ModifyAppRequest&, ModifyAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAppAsyncHandler;
@@ -1016,6 +1026,15 @@ namespace TencentCloud
                 LoginOriginIdOutcomeCallable LoginOriginIdCallable(const Model::LoginOriginIdRequest& request);
 
                 /**
+                 *使用源账号登录课堂，源账号为注册时填入的originId
+                 * @param req LoginOriginIdWithRoomRequest
+                 * @return LoginOriginIdWithRoomOutcome
+                 */
+                LoginOriginIdWithRoomOutcome LoginOriginIdWithRoom(const Model::LoginOriginIdWithRoomRequest &request);
+                void LoginOriginIdWithRoomAsync(const Model::LoginOriginIdWithRoomRequest& request, const LoginOriginIdWithRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                LoginOriginIdWithRoomOutcomeCallable LoginOriginIdWithRoomCallable(const Model::LoginOriginIdWithRoomRequest& request);
+
+                /**
                  *登录
                  * @param req LoginUserRequest
                  * @return LoginUserOutcome
@@ -1023,6 +1042,15 @@ namespace TencentCloud
                 LoginUserOutcome LoginUser(const Model::LoginUserRequest &request);
                 void LoginUserAsync(const Model::LoginUserRequest& request, const LoginUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 LoginUserOutcomeCallable LoginUserCallable(const Model::LoginUserRequest& request);
+
+                /**
+                 *登录课堂
+                 * @param req LoginUserWithRoomRequest
+                 * @return LoginUserWithRoomOutcome
+                 */
+                LoginUserWithRoomOutcome LoginUserWithRoom(const Model::LoginUserWithRoomRequest &request);
+                void LoginUserWithRoomAsync(const Model::LoginUserWithRoomRequest& request, const LoginUserWithRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                LoginUserWithRoomOutcomeCallable LoginUserWithRoomCallable(const Model::LoginUserWithRoomRequest& request);
 
                 /**
                  *修改应用

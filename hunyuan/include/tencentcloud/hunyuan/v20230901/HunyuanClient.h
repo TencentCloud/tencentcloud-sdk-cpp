@@ -29,8 +29,16 @@
 #include <tencentcloud/hunyuan/v20230901/model/ChatCompletionsResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/ChatTranslationsRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/ChatTranslationsResponse.h>
+#include <tencentcloud/hunyuan/v20230901/model/CreateGlossaryRequest.h>
+#include <tencentcloud/hunyuan/v20230901/model/CreateGlossaryResponse.h>
+#include <tencentcloud/hunyuan/v20230901/model/CreateGlossaryEntryRequest.h>
+#include <tencentcloud/hunyuan/v20230901/model/CreateGlossaryEntryResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/CreateThreadRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/CreateThreadResponse.h>
+#include <tencentcloud/hunyuan/v20230901/model/DeleteGlossaryRequest.h>
+#include <tencentcloud/hunyuan/v20230901/model/DeleteGlossaryResponse.h>
+#include <tencentcloud/hunyuan/v20230901/model/DeleteGlossaryEntryRequest.h>
+#include <tencentcloud/hunyuan/v20230901/model/DeleteGlossaryEntryResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/FilesDeletionsRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/FilesDeletionsResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/FilesListRequest.h>
@@ -51,6 +59,10 @@
 #include <tencentcloud/hunyuan/v20230901/model/GroupChatCompletionsResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/ImageQuestionRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/ImageQuestionResponse.h>
+#include <tencentcloud/hunyuan/v20230901/model/ListGlossaryRequest.h>
+#include <tencentcloud/hunyuan/v20230901/model/ListGlossaryResponse.h>
+#include <tencentcloud/hunyuan/v20230901/model/ListGlossaryEntryRequest.h>
+#include <tencentcloud/hunyuan/v20230901/model/ListGlossaryEntryResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageChatJobRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageChatJobResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageJobRequest.h>
@@ -65,6 +77,8 @@
 #include <tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageJobResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/TextToImageLiteRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/TextToImageLiteResponse.h>
+#include <tencentcloud/hunyuan/v20230901/model/UpdateGlossaryEntryRequest.h>
+#include <tencentcloud/hunyuan/v20230901/model/UpdateGlossaryEntryResponse.h>
 
 
 namespace TencentCloud
@@ -88,9 +102,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChatTranslationsResponse> ChatTranslationsOutcome;
                 typedef std::future<ChatTranslationsOutcome> ChatTranslationsOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::ChatTranslationsRequest&, ChatTranslationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChatTranslationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateGlossaryResponse> CreateGlossaryOutcome;
+                typedef std::future<CreateGlossaryOutcome> CreateGlossaryOutcomeCallable;
+                typedef std::function<void(const HunyuanClient*, const Model::CreateGlossaryRequest&, CreateGlossaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGlossaryAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateGlossaryEntryResponse> CreateGlossaryEntryOutcome;
+                typedef std::future<CreateGlossaryEntryOutcome> CreateGlossaryEntryOutcomeCallable;
+                typedef std::function<void(const HunyuanClient*, const Model::CreateGlossaryEntryRequest&, CreateGlossaryEntryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGlossaryEntryAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateThreadResponse> CreateThreadOutcome;
                 typedef std::future<CreateThreadOutcome> CreateThreadOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::CreateThreadRequest&, CreateThreadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateThreadAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGlossaryResponse> DeleteGlossaryOutcome;
+                typedef std::future<DeleteGlossaryOutcome> DeleteGlossaryOutcomeCallable;
+                typedef std::function<void(const HunyuanClient*, const Model::DeleteGlossaryRequest&, DeleteGlossaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGlossaryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGlossaryEntryResponse> DeleteGlossaryEntryOutcome;
+                typedef std::future<DeleteGlossaryEntryOutcome> DeleteGlossaryEntryOutcomeCallable;
+                typedef std::function<void(const HunyuanClient*, const Model::DeleteGlossaryEntryRequest&, DeleteGlossaryEntryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGlossaryEntryAsyncHandler;
                 typedef Outcome<Core::Error, Model::FilesDeletionsResponse> FilesDeletionsOutcome;
                 typedef std::future<FilesDeletionsOutcome> FilesDeletionsOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::FilesDeletionsRequest&, FilesDeletionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FilesDeletionsAsyncHandler;
@@ -121,6 +147,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ImageQuestionResponse> ImageQuestionOutcome;
                 typedef std::future<ImageQuestionOutcome> ImageQuestionOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::ImageQuestionRequest&, ImageQuestionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageQuestionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListGlossaryResponse> ListGlossaryOutcome;
+                typedef std::future<ListGlossaryOutcome> ListGlossaryOutcomeCallable;
+                typedef std::function<void(const HunyuanClient*, const Model::ListGlossaryRequest&, ListGlossaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListGlossaryAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListGlossaryEntryResponse> ListGlossaryEntryOutcome;
+                typedef std::future<ListGlossaryEntryOutcome> ListGlossaryEntryOutcomeCallable;
+                typedef std::function<void(const HunyuanClient*, const Model::ListGlossaryEntryRequest&, ListGlossaryEntryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListGlossaryEntryAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryHunyuanImageChatJobResponse> QueryHunyuanImageChatJobOutcome;
                 typedef std::future<QueryHunyuanImageChatJobOutcome> QueryHunyuanImageChatJobOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::QueryHunyuanImageChatJobRequest&, QueryHunyuanImageChatJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryHunyuanImageChatJobAsyncHandler;
@@ -142,6 +174,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::TextToImageLiteResponse> TextToImageLiteOutcome;
                 typedef std::future<TextToImageLiteOutcome> TextToImageLiteOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::TextToImageLiteRequest&, TextToImageLiteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToImageLiteAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateGlossaryEntryResponse> UpdateGlossaryEntryOutcome;
+                typedef std::future<UpdateGlossaryEntryOutcome> UpdateGlossaryEntryOutcomeCallable;
+                typedef std::function<void(const HunyuanClient*, const Model::UpdateGlossaryEntryRequest&, UpdateGlossaryEntryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGlossaryEntryAsyncHandler;
 
 
 
@@ -185,6 +220,24 @@ namespace TencentCloud
                 ChatTranslationsOutcomeCallable ChatTranslationsCallable(const Model::ChatTranslationsRequest& request);
 
                 /**
+                 *创建自定义术语库，在翻译时自动将源语言术语替换为指定的目标语言译文，确保专业术语翻译的一致性和准确性。
+                 * @param req CreateGlossaryRequest
+                 * @return CreateGlossaryOutcome
+                 */
+                CreateGlossaryOutcome CreateGlossary(const Model::CreateGlossaryRequest &request);
+                void CreateGlossaryAsync(const Model::CreateGlossaryRequest& request, const CreateGlossaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGlossaryOutcomeCallable CreateGlossaryCallable(const Model::CreateGlossaryRequest& request);
+
+                /**
+                 *添加术语条目。
+                 * @param req CreateGlossaryEntryRequest
+                 * @return CreateGlossaryEntryOutcome
+                 */
+                CreateGlossaryEntryOutcome CreateGlossaryEntry(const Model::CreateGlossaryEntryRequest &request);
+                void CreateGlossaryEntryAsync(const Model::CreateGlossaryEntryRequest& request, const CreateGlossaryEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGlossaryEntryOutcomeCallable CreateGlossaryEntryCallable(const Model::CreateGlossaryEntryRequest& request);
+
+                /**
                  *腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。
 
  1. 本接口暂不支持返回图片内容。
@@ -197,6 +250,24 @@ namespace TencentCloud
                 CreateThreadOutcome CreateThread(const Model::CreateThreadRequest &request);
                 void CreateThreadAsync(const Model::CreateThreadRequest& request, const CreateThreadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateThreadOutcomeCallable CreateThreadCallable(const Model::CreateThreadRequest& request);
+
+                /**
+                 *删除术语库。
+                 * @param req DeleteGlossaryRequest
+                 * @return DeleteGlossaryOutcome
+                 */
+                DeleteGlossaryOutcome DeleteGlossary(const Model::DeleteGlossaryRequest &request);
+                void DeleteGlossaryAsync(const Model::DeleteGlossaryRequest& request, const DeleteGlossaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGlossaryOutcomeCallable DeleteGlossaryCallable(const Model::DeleteGlossaryRequest& request);
+
+                /**
+                 *删除术语条目。
+                 * @param req DeleteGlossaryEntryRequest
+                 * @return DeleteGlossaryEntryOutcome
+                 */
+                DeleteGlossaryEntryOutcome DeleteGlossaryEntry(const Model::DeleteGlossaryEntryRequest &request);
+                void DeleteGlossaryEntryAsync(const Model::DeleteGlossaryEntryRequest& request, const DeleteGlossaryEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGlossaryEntryOutcomeCallable DeleteGlossaryEntryCallable(const Model::DeleteGlossaryEntryRequest& request);
 
                 /**
                  *删除文件。
@@ -319,6 +390,24 @@ namespace TencentCloud
                 ImageQuestionOutcomeCallable ImageQuestionCallable(const Model::ImageQuestionRequest& request);
 
                 /**
+                 *查询术语库。
+                 * @param req ListGlossaryRequest
+                 * @return ListGlossaryOutcome
+                 */
+                ListGlossaryOutcome ListGlossary(const Model::ListGlossaryRequest &request);
+                void ListGlossaryAsync(const Model::ListGlossaryRequest& request, const ListGlossaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListGlossaryOutcomeCallable ListGlossaryCallable(const Model::ListGlossaryRequest& request);
+
+                /**
+                 *查询术语条目。
+                 * @param req ListGlossaryEntryRequest
+                 * @return ListGlossaryEntryOutcome
+                 */
+                ListGlossaryEntryOutcome ListGlossaryEntry(const Model::ListGlossaryEntryRequest &request);
+                void ListGlossaryEntryAsync(const Model::ListGlossaryEntryRequest& request, const ListGlossaryEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListGlossaryEntryOutcomeCallable ListGlossaryEntryCallable(const Model::ListGlossaryEntryRequest& request);
+
+                /**
                  *混元生图（多轮对话）接口基于混元大模型，将根据输入的文本描述生成图像，支持通过多轮对话的方式不断调整图像内容。分为提交任务和查询任务2个接口。
 提交任务：输入文本和前置对话 ID 等，提交一个混元生图多轮对话异步任务，获得任务 ID。
 查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得在上一轮对话基础上继续生成的图像结果。
@@ -398,6 +487,15 @@ namespace TencentCloud
                 TextToImageLiteOutcome TextToImageLite(const Model::TextToImageLiteRequest &request);
                 void TextToImageLiteAsync(const Model::TextToImageLiteRequest& request, const TextToImageLiteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TextToImageLiteOutcomeCallable TextToImageLiteCallable(const Model::TextToImageLiteRequest& request);
+
+                /**
+                 *更新术语条目。
+                 * @param req UpdateGlossaryEntryRequest
+                 * @return UpdateGlossaryEntryOutcome
+                 */
+                UpdateGlossaryEntryOutcome UpdateGlossaryEntry(const Model::UpdateGlossaryEntryRequest &request);
+                void UpdateGlossaryEntryAsync(const Model::UpdateGlossaryEntryRequest& request, const UpdateGlossaryEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateGlossaryEntryOutcomeCallable UpdateGlossaryEntryCallable(const Model::UpdateGlossaryEntryRequest& request);
 
             };
         }

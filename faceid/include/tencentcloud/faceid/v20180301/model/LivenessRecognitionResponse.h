@@ -44,11 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取验证通过后的视频最佳截图照片。
-- 照片为BASE64编码后的值，jpg格式。
+                     * 获取<p>验证通过后的视频最佳截图照片。</p><ul><li>照片为BASE64编码后的值，jpg格式。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BestFrameBase64 验证通过后的视频最佳截图照片。
-- 照片为BASE64编码后的值，jpg格式。
+                     * @return BestFrameBase64 <p>验证通过后的视频最佳截图照片。</p><ul><li>照片为BASE64编码后的值，jpg格式。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -62,12 +60,8 @@ namespace TencentCloud
                     bool BestFrameBase64HasBeenSet() const;
 
                     /**
-                     * 获取相似度。
-- 取值范围 [0.00, 100.00]。
-- 推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）
-                     * @return Sim 相似度。
-- 取值范围 [0.00, 100.00]。
-- 推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）
+                     * 获取<p>相似度。- 取值范围 [0.00, 100.00]。- 推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为万分之一）</p>
+                     * @return Sim <p>相似度。- 取值范围 [0.00, 100.00]。- 推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为万分之一）</p>
                      * 
                      */
                     double GetSim() const;
@@ -80,12 +74,8 @@ namespace TencentCloud
                     bool SimHasBeenSet() const;
 
                     /**
-                     * 获取业务错误码。
-- 成功情况返回Success。
-- 错误情况请参考下方错误码 列表中FailedOperation部分
-                     * @return Result 业务错误码。
-- 成功情况返回Success。
-- 错误情况请参考下方错误码 列表中FailedOperation部分
+                     * 获取<p>业务错误码。</p><ul><li>成功情况返回Success。</li><li>错误情况请参考下方错误码 列表中FailedOperation部分</li></ul>
+                     * @return Result <p>业务错误码。</p><ul><li>成功情况返回Success。</li><li>错误情况请参考下方错误码 列表中FailedOperation部分</li></ul>
                      * 
                      */
                     std::string GetResult() const;
@@ -98,8 +88,8 @@ namespace TencentCloud
                     bool ResultHasBeenSet() const;
 
                     /**
-                     * 获取业务结果描述。
-                     * @return Description 业务结果描述。
+                     * 获取<p>业务结果描述。</p>
+                     * @return Description <p>业务结果描述。</p>
                      * 
                      */
                     std::string GetDescription() const;
@@ -112,9 +102,9 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取最佳截图列表，仅在配置了返回多张最佳截图时返回。
+                     * 获取<p>最佳截图列表，仅在配置了返回多张最佳截图时返回。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BestFrameList 最佳截图列表，仅在配置了返回多张最佳截图时返回。
+                     * @return BestFrameList <p>最佳截图列表，仅在配置了返回多张最佳截图时返回。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -130,37 +120,32 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 验证通过后的视频最佳截图照片。
-- 照片为BASE64编码后的值，jpg格式。
+                     * <p>验证通过后的视频最佳截图照片。</p><ul><li>照片为BASE64编码后的值，jpg格式。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bestFrameBase64;
                     bool m_bestFrameBase64HasBeenSet;
 
                     /**
-                     * 相似度。
-- 取值范围 [0.00, 100.00]。
-- 推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）
+                     * <p>相似度。- 取值范围 [0.00, 100.00]。- 推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为万分之一）</p>
                      */
                     double m_sim;
                     bool m_simHasBeenSet;
 
                     /**
-                     * 业务错误码。
-- 成功情况返回Success。
-- 错误情况请参考下方错误码 列表中FailedOperation部分
+                     * <p>业务错误码。</p><ul><li>成功情况返回Success。</li><li>错误情况请参考下方错误码 列表中FailedOperation部分</li></ul>
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
 
                     /**
-                     * 业务结果描述。
+                     * <p>业务结果描述。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 最佳截图列表，仅在配置了返回多张最佳截图时返回。
+                     * <p>最佳截图列表，仅在配置了返回多张最佳截图时返回。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_bestFrameList;

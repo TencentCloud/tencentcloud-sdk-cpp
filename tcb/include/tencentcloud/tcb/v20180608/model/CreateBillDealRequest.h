@@ -86,15 +86,19 @@ namespace TencentCloud
                     bool ProductTypeHasBeenSet() const;
 
                     /**
-                     * 获取目标下单产品/套餐Id
-                     * @return PackageId 目标下单产品/套餐Id
+                     * 获取目标下单产品/套餐Id。
+对于云开发环境套餐，可通过 DescribeBaasPackageList 接口获取，对应其出参的PackageName
+                     * @return PackageId 目标下单产品/套餐Id。
+对于云开发环境套餐，可通过 DescribeBaasPackageList 接口获取，对应其出参的PackageName
                      * 
                      */
                     std::string GetPackageId() const;
 
                     /**
-                     * 设置目标下单产品/套餐Id
-                     * @param _packageId 目标下单产品/套餐Id
+                     * 设置目标下单产品/套餐Id。
+对于云开发环境套餐，可通过 DescribeBaasPackageList 接口获取，对应其出参的PackageName
+                     * @param _packageId 目标下单产品/套餐Id。
+对于云开发环境套餐，可通过 DescribeBaasPackageList 接口获取，对应其出参的PackageName
                      * 
                      */
                     void SetPackageId(const std::string& _packageId);
@@ -107,15 +111,19 @@ namespace TencentCloud
                     bool PackageIdHasBeenSet() const;
 
                     /**
-                     * 获取默认只下单不支付，为ture则下单并支付
-                     * @return CreateAndPay 默认只下单不支付，为ture则下单并支付
+                     * 获取默认只下单不支付，为ture则下单并支付。
+如果需要下单并支付，请确保账户下有足够的余额，否则会导致下单失败。
+                     * @return CreateAndPay 默认只下单不支付，为ture则下单并支付。
+如果需要下单并支付，请确保账户下有足够的余额，否则会导致下单失败。
                      * 
                      */
                     bool GetCreateAndPay() const;
 
                     /**
-                     * 设置默认只下单不支付，为ture则下单并支付
-                     * @param _createAndPay 默认只下单不支付，为ture则下单并支付
+                     * 设置默认只下单不支付，为ture则下单并支付。
+如果需要下单并支付，请确保账户下有足够的余额，否则会导致下单失败。
+                     * @param _createAndPay 默认只下单不支付，为ture则下单并支付。
+如果需要下单并支付，请确保账户下有足够的余额，否则会导致下单失败。
                      * 
                      */
                     void SetCreateAndPay(const bool& _createAndPay);
@@ -128,15 +136,15 @@ namespace TencentCloud
                     bool CreateAndPayHasBeenSet() const;
 
                     /**
-                     * 获取购买时长
-                     * @return TimeSpan 购买时长
+                     * 获取购买时长，与TimeUnit字段搭配使用。
+                     * @return TimeSpan 购买时长，与TimeUnit字段搭配使用。
                      * 
                      */
                     uint64_t GetTimeSpan() const;
 
                     /**
-                     * 设置购买时长
-                     * @param _timeSpan 购买时长
+                     * 设置购买时长，与TimeUnit字段搭配使用。
+                     * @param _timeSpan 购买时长，与TimeUnit字段搭配使用。
                      * 
                      */
                     void SetTimeSpan(const uint64_t& _timeSpan);
@@ -149,15 +157,19 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取购买时长单位,按各产品规则可选d(天),m(月),y(年),p(一次性)
-                     * @return TimeUnit 购买时长单位,按各产品规则可选d(天),m(月),y(年),p(一次性)
+                     * 获取购买时长单位,按各产品规则可选d(天),m(月),y(年),p(一次性)。
+对于 云开发环境的 新购和续费，目前仅支持 按月购买（即 TimeUnit=m）。
+                     * @return TimeUnit 购买时长单位,按各产品规则可选d(天),m(月),y(年),p(一次性)。
+对于 云开发环境的 新购和续费，目前仅支持 按月购买（即 TimeUnit=m）。
                      * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
-                     * 设置购买时长单位,按各产品规则可选d(天),m(月),y(年),p(一次性)
-                     * @param _timeUnit 购买时长单位,按各产品规则可选d(天),m(月),y(年),p(一次性)
+                     * 设置购买时长单位,按各产品规则可选d(天),m(月),y(年),p(一次性)。
+对于 云开发环境的 新购和续费，目前仅支持 按月购买（即 TimeUnit=m）。
+                     * @param _timeUnit 购买时长单位,按各产品规则可选d(天),m(月),y(年),p(一次性)。
+对于 云开发环境的 新购和续费，目前仅支持 按月购买（即 TimeUnit=m）。
                      * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
@@ -170,15 +182,19 @@ namespace TencentCloud
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取资源唯一标识
-                     * @return ResourceId 资源唯一标识
+                     * 获取资源唯一标识。
+在云开发环境 续费和变配 场景下必传，取值为环境ID。
+                     * @return ResourceId 资源唯一标识。
+在云开发环境 续费和变配 场景下必传，取值为环境ID。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源唯一标识
-                     * @param _resourceId 资源唯一标识
+                     * 设置资源唯一标识。
+在云开发环境 续费和变配 场景下必传，取值为环境ID。
+                     * @param _resourceId 资源唯一标识。
+在云开发环境 续费和变配 场景下必传，取值为环境ID。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -191,15 +207,23 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取来源可选[qcloud,miniapp]，默认qcloud
-                     * @return Source 来源可选[qcloud,miniapp]，默认qcloud
+                     * 获取来源可选[qcloud,miniapp]，默认qcloud。
+miniapp表示微信云开发，主要适用于[小程序云开发](https://developers.weixin.qq.com/miniprogram/dev/wxcloudservice/wxcloud/billing/price.html)。
+
+                     * @return Source 来源可选[qcloud,miniapp]，默认qcloud。
+miniapp表示微信云开发，主要适用于[小程序云开发](https://developers.weixin.qq.com/miniprogram/dev/wxcloudservice/wxcloud/billing/price.html)。
+
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
-                     * 设置来源可选[qcloud,miniapp]，默认qcloud
-                     * @param _source 来源可选[qcloud,miniapp]，默认qcloud
+                     * 设置来源可选[qcloud,miniapp]，默认qcloud。
+miniapp表示微信云开发，主要适用于[小程序云开发](https://developers.weixin.qq.com/miniprogram/dev/wxcloudservice/wxcloud/billing/price.html)。
+
+                     * @param _source 来源可选[qcloud,miniapp]，默认qcloud。
+miniapp表示微信云开发，主要适用于[小程序云开发](https://developers.weixin.qq.com/miniprogram/dev/wxcloudservice/wxcloud/billing/price.html)。
+
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -212,15 +236,43 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取资源别名
-                     * @return Alias 资源别名
+                     * 获取环境别名，用于新购云开发环境时，给云开发环境起别名。
+仅当 新购云开发环境（DealType=purchase 并且 ProductType=tcb-baas ）时有效。
+
+### 格式要求
+- 可选字符： 小写字母(a~z)、数字、减号(-)
+- 不能以 减号(-) 开头或结尾
+- 不能有连个连续的 减号(-)
+- 长度不超过20位
+                     * @return Alias 环境别名，用于新购云开发环境时，给云开发环境起别名。
+仅当 新购云开发环境（DealType=purchase 并且 ProductType=tcb-baas ）时有效。
+
+### 格式要求
+- 可选字符： 小写字母(a~z)、数字、减号(-)
+- 不能以 减号(-) 开头或结尾
+- 不能有连个连续的 减号(-)
+- 长度不超过20位
                      * 
                      */
                     std::string GetAlias() const;
 
                     /**
-                     * 设置资源别名
-                     * @param _alias 资源别名
+                     * 设置环境别名，用于新购云开发环境时，给云开发环境起别名。
+仅当 新购云开发环境（DealType=purchase 并且 ProductType=tcb-baas ）时有效。
+
+### 格式要求
+- 可选字符： 小写字母(a~z)、数字、减号(-)
+- 不能以 减号(-) 开头或结尾
+- 不能有连个连续的 减号(-)
+- 长度不超过20位
+                     * @param _alias 环境别名，用于新购云开发环境时，给云开发环境起别名。
+仅当 新购云开发环境（DealType=purchase 并且 ProductType=tcb-baas ）时有效。
+
+### 格式要求
+- 可选字符： 小写字母(a~z)、数字、减号(-)
+- 不能以 减号(-) 开头或结尾
+- 不能有连个连续的 减号(-)
+- 长度不超过20位
                      * 
                      */
                     void SetAlias(const std::string& _alias);
@@ -233,15 +285,15 @@ namespace TencentCloud
                     bool AliasHasBeenSet() const;
 
                     /**
-                     * 获取环境id
-                     * @return EnvId 环境id
+                     * 获取环境id，当购买资源包和大促包时（ProductType取值为tcb-promotion 或 tcb-package）必传，表示资源包在哪个环境下生效。
+                     * @return EnvId 环境id，当购买资源包和大促包时（ProductType取值为tcb-promotion 或 tcb-package）必传，表示资源包在哪个环境下生效。
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
-                     * 设置环境id
-                     * @param _envId 环境id
+                     * 设置环境id，当购买资源包和大促包时（ProductType取值为tcb-promotion 或 tcb-package）必传，表示资源包在哪个环境下生效。
+                     * @param _envId 环境id，当购买资源包和大促包时（ProductType取值为tcb-promotion 或 tcb-package）必传，表示资源包在哪个环境下生效。
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -254,15 +306,23 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
-                     * 获取开启超限按量
-                     * @return EnableExcess 开启超限按量
+                     * 获取开启超限按量。
+开启后，当 套餐内的资源点 和 资源包 都用尽后，会自动按量计费。
+详见 [计费说明](https://cloud.tencent.com/document/product/876/127357)。
+                     * @return EnableExcess 开启超限按量。
+开启后，当 套餐内的资源点 和 资源包 都用尽后，会自动按量计费。
+详见 [计费说明](https://cloud.tencent.com/document/product/876/127357)。
                      * 
                      */
                     bool GetEnableExcess() const;
 
                     /**
-                     * 设置开启超限按量
-                     * @param _enableExcess 开启超限按量
+                     * 设置开启超限按量。
+开启后，当 套餐内的资源点 和 资源包 都用尽后，会自动按量计费。
+详见 [计费说明](https://cloud.tencent.com/document/product/876/127357)。
+                     * @param _enableExcess 开启超限按量。
+开启后，当 套餐内的资源点 和 资源包 都用尽后，会自动按量计费。
+详见 [计费说明](https://cloud.tencent.com/document/product/876/127357)。
                      * 
                      */
                     void SetEnableExcess(const bool& _enableExcess);
@@ -275,15 +335,19 @@ namespace TencentCloud
                     bool EnableExcessHasBeenSet() const;
 
                     /**
-                     * 获取变配目标产品/套餐id
-                     * @return ModifyPackageId 变配目标产品/套餐id
+                     * 获取变配目标套餐id，对于云开发环境变配场景下必传。
+对于云开发环境套餐，可通过 DescribeBaasPackageList 接口获取，对应其出参的PackageName
+                     * @return ModifyPackageId 变配目标套餐id，对于云开发环境变配场景下必传。
+对于云开发环境套餐，可通过 DescribeBaasPackageList 接口获取，对应其出参的PackageName
                      * 
                      */
                     std::string GetModifyPackageId() const;
 
                     /**
-                     * 设置变配目标产品/套餐id
-                     * @param _modifyPackageId 变配目标产品/套餐id
+                     * 设置变配目标套餐id，对于云开发环境变配场景下必传。
+对于云开发环境套餐，可通过 DescribeBaasPackageList 接口获取，对应其出参的PackageName
+                     * @param _modifyPackageId 变配目标套餐id，对于云开发环境变配场景下必传。
+对于云开发环境套餐，可通过 DescribeBaasPackageList 接口获取，对应其出参的PackageName
                      * 
                      */
                     void SetModifyPackageId(const std::string& _modifyPackageId);
@@ -317,15 +381,15 @@ namespace TencentCloud
                     bool ExtensionHasBeenSet() const;
 
                     /**
-                     * 获取是否自动选择代金券支付
-                     * @return AutoVoucher 是否自动选择代金券支付
+                     * 获取是否自动选择代金券支付。
+                     * @return AutoVoucher 是否自动选择代金券支付。
                      * 
                      */
                     bool GetAutoVoucher() const;
 
                     /**
-                     * 设置是否自动选择代金券支付
-                     * @param _autoVoucher 是否自动选择代金券支付
+                     * 设置是否自动选择代金券支付。
+                     * @param _autoVoucher 是否自动选择代金券支付。
                      * 
                      */
                     void SetAutoVoucher(const bool& _autoVoucher);
@@ -414,61 +478,77 @@ namespace TencentCloud
                     bool m_productTypeHasBeenSet;
 
                     /**
-                     * 目标下单产品/套餐Id
+                     * 目标下单产品/套餐Id。
+对于云开发环境套餐，可通过 DescribeBaasPackageList 接口获取，对应其出参的PackageName
                      */
                     std::string m_packageId;
                     bool m_packageIdHasBeenSet;
 
                     /**
-                     * 默认只下单不支付，为ture则下单并支付
+                     * 默认只下单不支付，为ture则下单并支付。
+如果需要下单并支付，请确保账户下有足够的余额，否则会导致下单失败。
                      */
                     bool m_createAndPay;
                     bool m_createAndPayHasBeenSet;
 
                     /**
-                     * 购买时长
+                     * 购买时长，与TimeUnit字段搭配使用。
                      */
                     uint64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 购买时长单位,按各产品规则可选d(天),m(月),y(年),p(一次性)
+                     * 购买时长单位,按各产品规则可选d(天),m(月),y(年),p(一次性)。
+对于 云开发环境的 新购和续费，目前仅支持 按月购买（即 TimeUnit=m）。
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * 资源唯一标识
+                     * 资源唯一标识。
+在云开发环境 续费和变配 场景下必传，取值为环境ID。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 来源可选[qcloud,miniapp]，默认qcloud
+                     * 来源可选[qcloud,miniapp]，默认qcloud。
+miniapp表示微信云开发，主要适用于[小程序云开发](https://developers.weixin.qq.com/miniprogram/dev/wxcloudservice/wxcloud/billing/price.html)。
+
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 资源别名
+                     * 环境别名，用于新购云开发环境时，给云开发环境起别名。
+仅当 新购云开发环境（DealType=purchase 并且 ProductType=tcb-baas ）时有效。
+
+### 格式要求
+- 可选字符： 小写字母(a~z)、数字、减号(-)
+- 不能以 减号(-) 开头或结尾
+- 不能有连个连续的 减号(-)
+- 长度不超过20位
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
 
                     /**
-                     * 环境id
+                     * 环境id，当购买资源包和大促包时（ProductType取值为tcb-promotion 或 tcb-package）必传，表示资源包在哪个环境下生效。
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
 
                     /**
-                     * 开启超限按量
+                     * 开启超限按量。
+开启后，当 套餐内的资源点 和 资源包 都用尽后，会自动按量计费。
+详见 [计费说明](https://cloud.tencent.com/document/product/876/127357)。
                      */
                     bool m_enableExcess;
                     bool m_enableExcessHasBeenSet;
 
                     /**
-                     * 变配目标产品/套餐id
+                     * 变配目标套餐id，对于云开发环境变配场景下必传。
+对于云开发环境套餐，可通过 DescribeBaasPackageList 接口获取，对应其出参的PackageName
                      */
                     std::string m_modifyPackageId;
                     bool m_modifyPackageIdHasBeenSet;
@@ -480,7 +560,7 @@ namespace TencentCloud
                     bool m_extensionHasBeenSet;
 
                     /**
-                     * 是否自动选择代金券支付
+                     * 是否自动选择代金券支付。
                      */
                     bool m_autoVoucher;
                     bool m_autoVoucherHasBeenSet;

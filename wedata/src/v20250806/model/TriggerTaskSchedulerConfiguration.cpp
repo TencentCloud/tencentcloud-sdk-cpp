@@ -30,7 +30,8 @@ TriggerTaskSchedulerConfiguration::TriggerTaskSchedulerConfiguration() :
     m_allowRedoTypeHasBeenSet(false),
     m_paramTaskOutListHasBeenSet(false),
     m_paramTaskInListHasBeenSet(false),
-    m_taskOutputRegistryListHasBeenSet(false)
+    m_taskOutputRegistryListHasBeenSet(false),
+    m_dependencyTriggerPolicyHasBeenSet(false)
 {
 }
 
@@ -179,6 +180,16 @@ CoreInternalOutcome TriggerTaskSchedulerConfiguration::Deserialize(const rapidjs
         m_taskOutputRegistryListHasBeenSet = true;
     }
 
+    if (value.HasMember("DependencyTriggerPolicy") && !value["DependencyTriggerPolicy"].IsNull())
+    {
+        if (!value["DependencyTriggerPolicy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerTaskSchedulerConfiguration.DependencyTriggerPolicy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dependencyTriggerPolicy = string(value["DependencyTriggerPolicy"].GetString());
+        m_dependencyTriggerPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -292,6 +303,14 @@ void TriggerTaskSchedulerConfiguration::ToJsonObject(rapidjson::Value &value, ra
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dependencyTriggerPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DependencyTriggerPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dependencyTriggerPolicy.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -455,5 +474,21 @@ void TriggerTaskSchedulerConfiguration::SetTaskOutputRegistryList(const vector<T
 bool TriggerTaskSchedulerConfiguration::TaskOutputRegistryListHasBeenSet() const
 {
     return m_taskOutputRegistryListHasBeenSet;
+}
+
+string TriggerTaskSchedulerConfiguration::GetDependencyTriggerPolicy() const
+{
+    return m_dependencyTriggerPolicy;
+}
+
+void TriggerTaskSchedulerConfiguration::SetDependencyTriggerPolicy(const string& _dependencyTriggerPolicy)
+{
+    m_dependencyTriggerPolicy = _dependencyTriggerPolicy;
+    m_dependencyTriggerPolicyHasBeenSet = true;
+}
+
+bool TriggerTaskSchedulerConfiguration::DependencyTriggerPolicyHasBeenSet() const
+{
+    return m_dependencyTriggerPolicyHasBeenSet;
 }
 

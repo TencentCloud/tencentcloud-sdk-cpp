@@ -23,7 +23,8 @@ using namespace std;
 ForwardLoadBalancerIdentification::ForwardLoadBalancerIdentification() :
     m_loadBalancerIdHasBeenSet(false),
     m_listenerIdHasBeenSet(false),
-    m_locationIdHasBeenSet(false)
+    m_locationIdHasBeenSet(false),
+    m_portListHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,19 @@ CoreInternalOutcome ForwardLoadBalancerIdentification::Deserialize(const rapidjs
         m_locationIdHasBeenSet = true;
     }
 
+    if (value.HasMember("PortList") && !value["PortList"].IsNull())
+    {
+        if (!value["PortList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ForwardLoadBalancerIdentification.PortList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PortList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_portList.push_back((*itr).GetUint64());
+        }
+        m_portListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +105,19 @@ void ForwardLoadBalancerIdentification::ToJsonObject(rapidjson::Value &value, ra
         string key = "LocationId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_locationId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_portListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PortList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_portList.begin(); itr != m_portList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
 }
@@ -142,5 +169,21 @@ void ForwardLoadBalancerIdentification::SetLocationId(const string& _locationId)
 bool ForwardLoadBalancerIdentification::LocationIdHasBeenSet() const
 {
     return m_locationIdHasBeenSet;
+}
+
+vector<uint64_t> ForwardLoadBalancerIdentification::GetPortList() const
+{
+    return m_portList;
+}
+
+void ForwardLoadBalancerIdentification::SetPortList(const vector<uint64_t>& _portList)
+{
+    m_portList = _portList;
+    m_portListHasBeenSet = true;
+}
+
+bool ForwardLoadBalancerIdentification::PortListHasBeenSet() const
+{
+    return m_portListHasBeenSet;
 }
 

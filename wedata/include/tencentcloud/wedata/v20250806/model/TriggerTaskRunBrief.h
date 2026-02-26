@@ -447,6 +447,31 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
+                     * 获取计划调度时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScheduleTime 计划调度时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetScheduleTime() const;
+
+                    /**
+                     * 设置计划调度时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scheduleTime 计划调度时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScheduleTime(const std::string& _scheduleTime);
+
+                    /**
+                     * 判断参数 ScheduleTime 是否已赋值
+                     * @return ScheduleTime 是否已赋值
+                     * 
+                     */
+                    bool ScheduleTimeHasBeenSet() const;
+
+                    /**
                      * 获取更新时间戳
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间戳
@@ -1421,6 +1446,31 @@ namespace TencentCloud
                      */
                     bool ExecutionResultHasBeenSet() const;
 
+                    /**
+                     * 获取依赖策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DependencyTriggerPolicy 依赖策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDependencyTriggerPolicy() const;
+
+                    /**
+                     * 设置依赖策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dependencyTriggerPolicy 依赖策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDependencyTriggerPolicy(const std::string& _dependencyTriggerPolicy);
+
+                    /**
+                     * 判断参数 DependencyTriggerPolicy 是否已赋值
+                     * @return DependencyTriggerPolicy 是否已赋值
+                     * 
+                     */
+                    bool DependencyTriggerPolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1534,6 +1584,13 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 计划调度时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_scheduleTime;
+                    bool m_scheduleTimeHasBeenSet;
 
                     /**
                      * 更新时间戳
@@ -1807,6 +1864,13 @@ namespace TencentCloud
                      */
                     std::string m_executionResult;
                     bool m_executionResultHasBeenSet;
+
+                    /**
+                     * 依赖策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dependencyTriggerPolicy;
+                    bool m_dependencyTriggerPolicyHasBeenSet;
 
                 };
             }

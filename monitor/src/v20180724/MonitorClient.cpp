@@ -3990,6 +3990,56 @@ MonitorClient::DescribeMonitorTypesOutcomeCallable MonitorClient::DescribeMonito
     return prom->get_future();
 }
 
+MonitorClient::DescribeNotificationContentTemplateSupportsOutcome MonitorClient::DescribeNotificationContentTemplateSupports(const DescribeNotificationContentTemplateSupportsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNotificationContentTemplateSupports");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNotificationContentTemplateSupportsResponse rsp = DescribeNotificationContentTemplateSupportsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNotificationContentTemplateSupportsOutcome(rsp);
+        else
+            return DescribeNotificationContentTemplateSupportsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNotificationContentTemplateSupportsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeNotificationContentTemplateSupportsAsync(const DescribeNotificationContentTemplateSupportsRequest& request, const DescribeNotificationContentTemplateSupportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeNotificationContentTemplateSupportsRequest&;
+    using Resp = DescribeNotificationContentTemplateSupportsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeNotificationContentTemplateSupports", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribeNotificationContentTemplateSupportsOutcomeCallable MonitorClient::DescribeNotificationContentTemplateSupportsCallable(const DescribeNotificationContentTemplateSupportsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeNotificationContentTemplateSupportsOutcome>>();
+    DescribeNotificationContentTemplateSupportsAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribeNotificationContentTemplateSupportsRequest&,
+        DescribeNotificationContentTemplateSupportsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MonitorClient::DescribePhoneAlarmFlowTotalCountOutcome MonitorClient::DescribePhoneAlarmFlowTotalCount(const DescribePhoneAlarmFlowTotalCountRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePhoneAlarmFlowTotalCount");

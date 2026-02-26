@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool FailReasonHasBeenSet() const;
 
                     /**
-                     * 获取是否冻结
-                     * @return FreezeStatus 是否冻结
+                     * 获取是否已被冻结（只在 Status=success时有效）
+                     * @return FreezeStatus 是否已被冻结（只在 Status=success时有效）
                      * 
                      */
                     bool GetFreezeStatus() const;
 
                     /**
-                     * 设置是否冻结
-                     * @param _freezeStatus 是否冻结
+                     * 设置是否已被冻结（只在 Status=success时有效）
+                     * @param _freezeStatus 是否已被冻结（只在 Status=success时有效）
                      * 
                      */
                     void SetFreezeStatus(const bool& _freezeStatus);
@@ -129,7 +129,7 @@ namespace TencentCloud
                     bool m_failReasonHasBeenSet;
 
                     /**
-                     * 是否冻结
+                     * 是否已被冻结（只在 Status=success时有效）
                      */
                     bool m_freezeStatus;
                     bool m_freezeStatusHasBeenSet;

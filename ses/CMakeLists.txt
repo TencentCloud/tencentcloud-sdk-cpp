@@ -37,17 +37,18 @@ set(ses_public_header_model
   include/tencentcloud/ses/v20201002/model/CreateReceiverDetailWithDataRequest.h
   include/tencentcloud/ses/v20201002/model/TimedEmailParam.h
   include/tencentcloud/ses/v20201002/model/DNSAttributes.h
-  include/tencentcloud/ses/v20201002/model/GetEmailTemplateResponse.h
+  include/tencentcloud/ses/v20201002/model/SendEmailStatus.h
   include/tencentcloud/ses/v20201002/model/ListAddressUnsubscribeConfigResponse.h
   include/tencentcloud/ses/v20201002/model/SendEmailRequest.h
   include/tencentcloud/ses/v20201002/model/UpdateEmailIdentityRequest.h
   include/tencentcloud/ses/v20201002/model/DeleteEmailIdentityResponse.h
+  include/tencentcloud/ses/v20201002/model/DeleteBlackListRequest.h
   include/tencentcloud/ses/v20201002/model/DeleteEmailTemplateResponse.h
   include/tencentcloud/ses/v20201002/model/ListCustomBlacklistRequest.h
   include/tencentcloud/ses/v20201002/model/DeleteEmailTemplateRequest.h
-  include/tencentcloud/ses/v20201002/model/SendEmailStatus.h
+  include/tencentcloud/ses/v20201002/model/AbuseReport.h
   include/tencentcloud/ses/v20201002/model/ListEmailTemplatesRequest.h
-  include/tencentcloud/ses/v20201002/model/DeleteBlackListRequest.h
+  include/tencentcloud/ses/v20201002/model/GetAbuseReportResponse.h
   include/tencentcloud/ses/v20201002/model/ReceiverInputData.h
   include/tencentcloud/ses/v20201002/model/ReceiverDetail.h
   include/tencentcloud/ses/v20201002/model/ListBlackEmailAddressResponse.h
@@ -57,6 +58,7 @@ set(ses_public_header_model
   include/tencentcloud/ses/v20201002/model/DeleteCustomBlackListRequest.h
   include/tencentcloud/ses/v20201002/model/UpdateAddressUnsubscribeConfigRequest.h
   include/tencentcloud/ses/v20201002/model/ListEmailIdentitiesRequest.h
+  include/tencentcloud/ses/v20201002/model/GetEmailTemplateResponse.h
   include/tencentcloud/ses/v20201002/model/CreateReceiverResponse.h
   include/tencentcloud/ses/v20201002/model/UpdateEmailSmtpPassWordResponse.h
   include/tencentcloud/ses/v20201002/model/ListReceiversRequest.h
@@ -86,6 +88,7 @@ set(ses_public_header_model
   include/tencentcloud/ses/v20201002/model/ListReceiverDetailsRequest.h
   include/tencentcloud/ses/v20201002/model/CreateEmailIdentityResponse.h
   include/tencentcloud/ses/v20201002/model/CreateEmailAddressResponse.h
+  include/tencentcloud/ses/v20201002/model/GetAbuseReportRequest.h
   include/tencentcloud/ses/v20201002/model/DeleteAddressUnsubscribeConfigResponse.h
   include/tencentcloud/ses/v20201002/model/BatchSendEmailRequest.h
   include/tencentcloud/ses/v20201002/model/CreateCustomBlacklistRequest.h
@@ -131,17 +134,18 @@ set(ses_src
   src/v20201002/model/CreateReceiverDetailWithDataRequest.cpp
   src/v20201002/model/TimedEmailParam.cpp
   src/v20201002/model/DNSAttributes.cpp
-  src/v20201002/model/GetEmailTemplateResponse.cpp
+  src/v20201002/model/SendEmailStatus.cpp
   src/v20201002/model/ListAddressUnsubscribeConfigResponse.cpp
   src/v20201002/model/SendEmailRequest.cpp
   src/v20201002/model/UpdateEmailIdentityRequest.cpp
   src/v20201002/model/DeleteEmailIdentityResponse.cpp
+  src/v20201002/model/DeleteBlackListRequest.cpp
   src/v20201002/model/DeleteEmailTemplateResponse.cpp
   src/v20201002/model/ListCustomBlacklistRequest.cpp
   src/v20201002/model/DeleteEmailTemplateRequest.cpp
-  src/v20201002/model/SendEmailStatus.cpp
+  src/v20201002/model/AbuseReport.cpp
   src/v20201002/model/ListEmailTemplatesRequest.cpp
-  src/v20201002/model/DeleteBlackListRequest.cpp
+  src/v20201002/model/GetAbuseReportResponse.cpp
   src/v20201002/model/ReceiverInputData.cpp
   src/v20201002/model/ReceiverDetail.cpp
   src/v20201002/model/ListBlackEmailAddressResponse.cpp
@@ -151,6 +155,7 @@ set(ses_src
   src/v20201002/model/DeleteCustomBlackListRequest.cpp
   src/v20201002/model/UpdateAddressUnsubscribeConfigRequest.cpp
   src/v20201002/model/ListEmailIdentitiesRequest.cpp
+  src/v20201002/model/GetEmailTemplateResponse.cpp
   src/v20201002/model/CreateReceiverResponse.cpp
   src/v20201002/model/UpdateEmailSmtpPassWordResponse.cpp
   src/v20201002/model/ListReceiversRequest.cpp
@@ -180,6 +185,7 @@ set(ses_src
   src/v20201002/model/ListReceiverDetailsRequest.cpp
   src/v20201002/model/CreateEmailIdentityResponse.cpp
   src/v20201002/model/CreateEmailAddressResponse.cpp
+  src/v20201002/model/GetAbuseReportRequest.cpp
   src/v20201002/model/DeleteAddressUnsubscribeConfigResponse.cpp
   src/v20201002/model/BatchSendEmailRequest.cpp
   src/v20201002/model/CreateCustomBlacklistRequest.cpp

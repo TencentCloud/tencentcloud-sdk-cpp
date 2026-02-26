@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 获取<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @return SubAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @param _subAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 设置<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @param _subAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -66,35 +66,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取模型名称。取值：
-<li>GEM：Gemini；</li>
-<li>Qwen：千问。</li>
-<li>Hunyuan：混元。</li>
-<li>Vidu：生数。</li>
-<li>Kling：可灵。</li>
-                     * @return ModelName 模型名称。取值：
-<li>GEM：Gemini；</li>
-<li>Qwen：千问。</li>
-<li>Hunyuan：混元。</li>
-<li>Vidu：生数。</li>
-<li>Kling：可灵。</li>
+                     * 获取<p>模型名称。取值：</p><li>GEM：Gemini；</li><li>Qwen：千问。</li><li>Hunyuan：混元。</li><li>Vidu：生数。</li><li>Kling：可灵。</li>
+                     * @return ModelName <p>模型名称。取值：</p><li>GEM：Gemini；</li><li>Qwen：千问。</li><li>Hunyuan：混元。</li><li>Vidu：生数。</li><li>Kling：可灵。</li>
                      * 
                      */
                     std::string GetModelName() const;
 
                     /**
-                     * 设置模型名称。取值：
-<li>GEM：Gemini；</li>
-<li>Qwen：千问。</li>
-<li>Hunyuan：混元。</li>
-<li>Vidu：生数。</li>
-<li>Kling：可灵。</li>
-                     * @param _modelName 模型名称。取值：
-<li>GEM：Gemini；</li>
-<li>Qwen：千问。</li>
-<li>Hunyuan：混元。</li>
-<li>Vidu：生数。</li>
-<li>Kling：可灵。</li>
+                     * 设置<p>模型名称。取值：</p><li>GEM：Gemini；</li><li>Qwen：千问。</li><li>Hunyuan：混元。</li><li>Vidu：生数。</li><li>Kling：可灵。</li>
+                     * @param _modelName <p>模型名称。取值：</p><li>GEM：Gemini；</li><li>Qwen：千问。</li><li>Hunyuan：混元。</li><li>Vidu：生数。</li><li>Kling：可灵。</li>
                      * 
                      */
                     void SetModelName(const std::string& _modelName);
@@ -107,35 +87,15 @@ namespace TencentCloud
                     bool ModelNameHasBeenSet() const;
 
                     /**
-                     * 获取模型版本。取值：
-<li>当 ModelName 是 GEM，可选值为 2.5、3.0；</li>
-<li>当 ModelName 是 Qwen，可选值为 0925；</li>
-<li>当 ModelName 是 Hunyuan，可选值为 3.0；</li>
-<li>当 ModelName 是 Vidu，可选值为 q2；</li>
-<li>当 ModelName 是 Kling，可选值为 2.1；</li>
-                     * @return ModelVersion 模型版本。取值：
-<li>当 ModelName 是 GEM，可选值为 2.5、3.0；</li>
-<li>当 ModelName 是 Qwen，可选值为 0925；</li>
-<li>当 ModelName 是 Hunyuan，可选值为 3.0；</li>
-<li>当 ModelName 是 Vidu，可选值为 q2；</li>
-<li>当 ModelName 是 Kling，可选值为 2.1；</li>
+                     * 获取<p>模型版本。取值：<li>当 ModelName 是 GEM，可选值为 2.5；</li><li>当 ModelName 是 Qwen，可选值为 0925；</li><li>当 ModelName 是 Hunyuan，可选值为 3.0；</li><li>当 ModelName 是 Vidu，可选值为 q2；</li><li>当 ModelName 是 Kling，可选值为 2.1；</li></p>
+                     * @return ModelVersion <p>模型版本。取值：<li>当 ModelName 是 GEM，可选值为 2.5；</li><li>当 ModelName 是 Qwen，可选值为 0925；</li><li>当 ModelName 是 Hunyuan，可选值为 3.0；</li><li>当 ModelName 是 Vidu，可选值为 q2；</li><li>当 ModelName 是 Kling，可选值为 2.1；</li></p>
                      * 
                      */
                     std::string GetModelVersion() const;
 
                     /**
-                     * 设置模型版本。取值：
-<li>当 ModelName 是 GEM，可选值为 2.5、3.0；</li>
-<li>当 ModelName 是 Qwen，可选值为 0925；</li>
-<li>当 ModelName 是 Hunyuan，可选值为 3.0；</li>
-<li>当 ModelName 是 Vidu，可选值为 q2；</li>
-<li>当 ModelName 是 Kling，可选值为 2.1；</li>
-                     * @param _modelVersion 模型版本。取值：
-<li>当 ModelName 是 GEM，可选值为 2.5、3.0；</li>
-<li>当 ModelName 是 Qwen，可选值为 0925；</li>
-<li>当 ModelName 是 Hunyuan，可选值为 3.0；</li>
-<li>当 ModelName 是 Vidu，可选值为 q2；</li>
-<li>当 ModelName 是 Kling，可选值为 2.1；</li>
+                     * 设置<p>模型版本。取值：<li>当 ModelName 是 GEM，可选值为 2.5；</li><li>当 ModelName 是 Qwen，可选值为 0925；</li><li>当 ModelName 是 Hunyuan，可选值为 3.0；</li><li>当 ModelName 是 Vidu，可选值为 q2；</li><li>当 ModelName 是 Kling，可选值为 2.1；</li></p>
+                     * @param _modelVersion <p>模型版本。取值：<li>当 ModelName 是 GEM，可选值为 2.5；</li><li>当 ModelName 是 Qwen，可选值为 0925；</li><li>当 ModelName 是 Hunyuan，可选值为 3.0；</li><li>当 ModelName 是 Vidu，可选值为 q2；</li><li>当 ModelName 是 Kling，可选值为 2.1；</li></p>
                      * 
                      */
                     void SetModelVersion(const std::string& _modelVersion);
@@ -148,27 +108,15 @@ namespace TencentCloud
                     bool ModelVersionHasBeenSet() const;
 
                     /**
-                     * 获取AIGC 生图任务的输入图片的文件信息。默认只支持指定1个。下列模型可传多张参考图：
-* GEM 2.5：0～3张图片；
-* GEM 3.0：0～14张图片；
-* Vidu q2：0～7张图片，图片支持 png、jpeg、jpg、webp格式，图片像素不能小于 128x128，且比例需要小于1:4或4:1；
-                     * @return FileInfos AIGC 生图任务的输入图片的文件信息。默认只支持指定1个。下列模型可传多张参考图：
-* GEM 2.5：0～3张图片；
-* GEM 3.0：0～14张图片；
-* Vidu q2：0～7张图片，图片支持 png、jpeg、jpg、webp格式，图片像素不能小于 128x128，且比例需要小于1:4或4:1；
+                     * 获取<p>AIGC 生图任务的输入图片的文件信息。默认只支持指定1个。下列模型可传多张参考图：<li>GEM 2.5：0～3张图片；</li><li>Vidu q2：0～7张图片，图片支持 png、jpeg、jpg、webp格式，图片像素不能小于 128x128，且比例需要小于1:4或4:1；</li></p>
+                     * @return FileInfos <p>AIGC 生图任务的输入图片的文件信息。默认只支持指定1个。下列模型可传多张参考图：<li>GEM 2.5：0～3张图片；</li><li>Vidu q2：0～7张图片，图片支持 png、jpeg、jpg、webp格式，图片像素不能小于 128x128，且比例需要小于1:4或4:1；</li></p>
                      * 
                      */
                     std::vector<AigcImageTaskInputFileInfo> GetFileInfos() const;
 
                     /**
-                     * 设置AIGC 生图任务的输入图片的文件信息。默认只支持指定1个。下列模型可传多张参考图：
-* GEM 2.5：0～3张图片；
-* GEM 3.0：0～14张图片；
-* Vidu q2：0～7张图片，图片支持 png、jpeg、jpg、webp格式，图片像素不能小于 128x128，且比例需要小于1:4或4:1；
-                     * @param _fileInfos AIGC 生图任务的输入图片的文件信息。默认只支持指定1个。下列模型可传多张参考图：
-* GEM 2.5：0～3张图片；
-* GEM 3.0：0～14张图片；
-* Vidu q2：0～7张图片，图片支持 png、jpeg、jpg、webp格式，图片像素不能小于 128x128，且比例需要小于1:4或4:1；
+                     * 设置<p>AIGC 生图任务的输入图片的文件信息。默认只支持指定1个。下列模型可传多张参考图：<li>GEM 2.5：0～3张图片；</li><li>Vidu q2：0～7张图片，图片支持 png、jpeg、jpg、webp格式，图片像素不能小于 128x128，且比例需要小于1:4或4:1；</li></p>
+                     * @param _fileInfos <p>AIGC 生图任务的输入图片的文件信息。默认只支持指定1个。下列模型可传多张参考图：<li>GEM 2.5：0～3张图片；</li><li>Vidu q2：0～7张图片，图片支持 png、jpeg、jpg、webp格式，图片像素不能小于 128x128，且比例需要小于1:4或4:1；</li></p>
                      * 
                      */
                     void SetFileInfos(const std::vector<AigcImageTaskInputFileInfo>& _fileInfos);
@@ -181,15 +129,15 @@ namespace TencentCloud
                     bool FileInfosHasBeenSet() const;
 
                     /**
-                     * 获取生成图片的提示词。当 FileInfos 为空时，此参数必填。
-                     * @return Prompt 生成图片的提示词。当 FileInfos 为空时，此参数必填。
+                     * 获取<p>生成图片的提示词。当 FileInfos 为空时，此参数必填。</p>
+                     * @return Prompt <p>生成图片的提示词。当 FileInfos 为空时，此参数必填。</p>
                      * 
                      */
                     std::string GetPrompt() const;
 
                     /**
-                     * 设置生成图片的提示词。当 FileInfos 为空时，此参数必填。
-                     * @param _prompt 生成图片的提示词。当 FileInfos 为空时，此参数必填。
+                     * 设置<p>生成图片的提示词。当 FileInfos 为空时，此参数必填。</p>
+                     * @param _prompt <p>生成图片的提示词。当 FileInfos 为空时，此参数必填。</p>
                      * 
                      */
                     void SetPrompt(const std::string& _prompt);
@@ -202,15 +150,15 @@ namespace TencentCloud
                     bool PromptHasBeenSet() const;
 
                     /**
-                     * 获取要阻止模型生成图片的提示词。
-                     * @return NegativePrompt 要阻止模型生成图片的提示词。
+                     * 获取<p>要阻止模型生成图片的提示词。</p>
+                     * @return NegativePrompt <p>要阻止模型生成图片的提示词。</p>
                      * 
                      */
                     std::string GetNegativePrompt() const;
 
                     /**
-                     * 设置要阻止模型生成图片的提示词。
-                     * @param _negativePrompt 要阻止模型生成图片的提示词。
+                     * 设置<p>要阻止模型生成图片的提示词。</p>
+                     * @param _negativePrompt <p>要阻止模型生成图片的提示词。</p>
                      * 
                      */
                     void SetNegativePrompt(const std::string& _negativePrompt);
@@ -223,15 +171,15 @@ namespace TencentCloud
                     bool NegativePromptHasBeenSet() const;
 
                     /**
-                     * 获取是否自动优化提示词。开启时将自动优化传入的 Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
-                     * @return EnhancePrompt 是否自动优化提示词。开启时将自动优化传入的 Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+                     * 获取<p>是否自动优化提示词。开启时将自动优化传入的 Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
+                     * @return EnhancePrompt <p>是否自动优化提示词。开启时将自动优化传入的 Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
                      * 
                      */
                     std::string GetEnhancePrompt() const;
 
                     /**
-                     * 设置是否自动优化提示词。开启时将自动优化传入的 Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
-                     * @param _enhancePrompt 是否自动优化提示词。开启时将自动优化传入的 Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+                     * 设置<p>是否自动优化提示词。开启时将自动优化传入的 Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
+                     * @param _enhancePrompt <p>是否自动优化提示词。开启时将自动优化传入的 Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
                      * 
                      */
                     void SetEnhancePrompt(const std::string& _enhancePrompt);
@@ -244,15 +192,15 @@ namespace TencentCloud
                     bool EnhancePromptHasBeenSet() const;
 
                     /**
-                     * 获取生图任务的输出媒体文件配置。
-                     * @return OutputConfig 生图任务的输出媒体文件配置。
+                     * 获取<p>生图任务的输出媒体文件配置。</p>
+                     * @return OutputConfig <p>生图任务的输出媒体文件配置。</p>
                      * 
                      */
                     AigcImageOutputConfig GetOutputConfig() const;
 
                     /**
-                     * 设置生图任务的输出媒体文件配置。
-                     * @param _outputConfig 生图任务的输出媒体文件配置。
+                     * 设置<p>生图任务的输出媒体文件配置。</p>
+                     * @param _outputConfig <p>生图任务的输出媒体文件配置。</p>
                      * 
                      */
                     void SetOutputConfig(const AigcImageOutputConfig& _outputConfig);
@@ -265,15 +213,15 @@ namespace TencentCloud
                     bool OutputConfigHasBeenSet() const;
 
                     /**
-                     * 获取输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。
-                     * @return InputRegion 输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。
+                     * 获取<p>输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。</p>
+                     * @return InputRegion <p>输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。</p>
                      * 
                      */
                     std::string GetInputRegion() const;
 
                     /**
-                     * 设置输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。
-                     * @param _inputRegion 输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。
+                     * 设置<p>输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。</p>
+                     * @param _inputRegion <p>输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。</p>
                      * 
                      */
                     void SetInputRegion(const std::string& _inputRegion);
@@ -286,15 +234,15 @@ namespace TencentCloud
                     bool InputRegionHasBeenSet() const;
 
                     /**
-                     * 获取用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-                     * @return SessionId 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 获取<p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
+                     * @return SessionId <p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-                     * @param _sessionId 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 设置<p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
+                     * @param _sessionId <p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -307,15 +255,15 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。
-                     * @return SessionContext 来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。
+                     * 获取<p>来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。</p>
+                     * @return SessionContext <p>来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。</p>
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。
-                     * @param _sessionContext 来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。
+                     * 设置<p>来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。</p>
+                     * @param _sessionContext <p>来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。</p>
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -328,15 +276,15 @@ namespace TencentCloud
                     bool SessionContextHasBeenSet() const;
 
                     /**
-                     * 获取任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
-                     * @return TasksPriority 任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * 获取<p>任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。</p>
+                     * @return TasksPriority <p>任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。</p>
                      * 
                      */
                     int64_t GetTasksPriority() const;
 
                     /**
-                     * 设置任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
-                     * @param _tasksPriority 任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * 设置<p>任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。</p>
+                     * @param _tasksPriority <p>任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。</p>
                      * 
                      */
                     void SetTasksPriority(const int64_t& _tasksPriority);
@@ -349,15 +297,15 @@ namespace TencentCloud
                     bool TasksPriorityHasBeenSet() const;
 
                     /**
-                     * 获取保留字段，特殊用途时使用。
-                     * @return ExtInfo 保留字段，特殊用途时使用。
+                     * 获取<p>保留字段，特殊用途时使用。</p>
+                     * @return ExtInfo <p>保留字段，特殊用途时使用。</p>
                      * 
                      */
                     std::string GetExtInfo() const;
 
                     /**
-                     * 设置保留字段，特殊用途时使用。
-                     * @param _extInfo 保留字段，特殊用途时使用。
+                     * 设置<p>保留字段，特殊用途时使用。</p>
+                     * @param _extInfo <p>保留字段，特殊用途时使用。</p>
                      * 
                      */
                     void SetExtInfo(const std::string& _extInfo);
@@ -372,92 +320,79 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 模型名称。取值：
-<li>GEM：Gemini；</li>
-<li>Qwen：千问。</li>
-<li>Hunyuan：混元。</li>
-<li>Vidu：生数。</li>
-<li>Kling：可灵。</li>
+                     * <p>模型名称。取值：</p><li>GEM：Gemini；</li><li>Qwen：千问。</li><li>Hunyuan：混元。</li><li>Vidu：生数。</li><li>Kling：可灵。</li>
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;
 
                     /**
-                     * 模型版本。取值：
-<li>当 ModelName 是 GEM，可选值为 2.5、3.0；</li>
-<li>当 ModelName 是 Qwen，可选值为 0925；</li>
-<li>当 ModelName 是 Hunyuan，可选值为 3.0；</li>
-<li>当 ModelName 是 Vidu，可选值为 q2；</li>
-<li>当 ModelName 是 Kling，可选值为 2.1；</li>
+                     * <p>模型版本。取值：<li>当 ModelName 是 GEM，可选值为 2.5；</li><li>当 ModelName 是 Qwen，可选值为 0925；</li><li>当 ModelName 是 Hunyuan，可选值为 3.0；</li><li>当 ModelName 是 Vidu，可选值为 q2；</li><li>当 ModelName 是 Kling，可选值为 2.1；</li></p>
                      */
                     std::string m_modelVersion;
                     bool m_modelVersionHasBeenSet;
 
                     /**
-                     * AIGC 生图任务的输入图片的文件信息。默认只支持指定1个。下列模型可传多张参考图：
-* GEM 2.5：0～3张图片；
-* GEM 3.0：0～14张图片；
-* Vidu q2：0～7张图片，图片支持 png、jpeg、jpg、webp格式，图片像素不能小于 128x128，且比例需要小于1:4或4:1；
+                     * <p>AIGC 生图任务的输入图片的文件信息。默认只支持指定1个。下列模型可传多张参考图：<li>GEM 2.5：0～3张图片；</li><li>Vidu q2：0～7张图片，图片支持 png、jpeg、jpg、webp格式，图片像素不能小于 128x128，且比例需要小于1:4或4:1；</li></p>
                      */
                     std::vector<AigcImageTaskInputFileInfo> m_fileInfos;
                     bool m_fileInfosHasBeenSet;
 
                     /**
-                     * 生成图片的提示词。当 FileInfos 为空时，此参数必填。
+                     * <p>生成图片的提示词。当 FileInfos 为空时，此参数必填。</p>
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
 
                     /**
-                     * 要阻止模型生成图片的提示词。
+                     * <p>要阻止模型生成图片的提示词。</p>
                      */
                     std::string m_negativePrompt;
                     bool m_negativePromptHasBeenSet;
 
                     /**
-                     * 是否自动优化提示词。开启时将自动优化传入的 Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+                     * <p>是否自动优化提示词。开启时将自动优化传入的 Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
                      */
                     std::string m_enhancePrompt;
                     bool m_enhancePromptHasBeenSet;
 
                     /**
-                     * 生图任务的输出媒体文件配置。
+                     * <p>生图任务的输出媒体文件配置。</p>
                      */
                     AigcImageOutputConfig m_outputConfig;
                     bool m_outputConfigHasBeenSet;
 
                     /**
-                     * 输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。
+                     * <p>输入文件的区域信息。当文件url是国外地址时候，可选Oversea。默认Mainland。</p>
                      */
                     std::string m_inputRegion;
                     bool m_inputRegionHasBeenSet;
 
                     /**
-                     * 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * <p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。
+                     * <p>来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。</p>
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
 
                     /**
-                     * 任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * <p>任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。</p>
                      */
                     int64_t m_tasksPriority;
                     bool m_tasksPriorityHasBeenSet;
 
                     /**
-                     * 保留字段，特殊用途时使用。
+                     * <p>保留字段，特殊用途时使用。</p>
                      */
                     std::string m_extInfo;
                     bool m_extInfoHasBeenSet;

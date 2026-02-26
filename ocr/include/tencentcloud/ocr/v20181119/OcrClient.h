@@ -45,6 +45,8 @@
 #include <tencentcloud/ocr/v20181119/model/ClassifyStoreNameResponse.h>
 #include <tencentcloud/ocr/v20181119/model/DescribeExtractDocAgentJobRequest.h>
 #include <tencentcloud/ocr/v20181119/model/DescribeExtractDocAgentJobResponse.h>
+#include <tencentcloud/ocr/v20181119/model/DescribeMarkEssayAgentJobRequest.h>
+#include <tencentcloud/ocr/v20181119/model/DescribeMarkEssayAgentJobResponse.h>
 #include <tencentcloud/ocr/v20181119/model/DescribeQuestionMarkAgentJobRequest.h>
 #include <tencentcloud/ocr/v20181119/model/DescribeQuestionMarkAgentJobResponse.h>
 #include <tencentcloud/ocr/v20181119/model/DriverLicenseOCRRequest.h>
@@ -173,6 +175,8 @@
 #include <tencentcloud/ocr/v20181119/model/SmartStructuralOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/SubmitExtractDocAgentJobRequest.h>
 #include <tencentcloud/ocr/v20181119/model/SubmitExtractDocAgentJobResponse.h>
+#include <tencentcloud/ocr/v20181119/model/SubmitMarkEssayAgentJobRequest.h>
+#include <tencentcloud/ocr/v20181119/model/SubmitMarkEssayAgentJobResponse.h>
 #include <tencentcloud/ocr/v20181119/model/SubmitQuestionMarkAgentJobRequest.h>
 #include <tencentcloud/ocr/v20181119/model/SubmitQuestionMarkAgentJobResponse.h>
 #include <tencentcloud/ocr/v20181119/model/TableOCRRequest.h>
@@ -248,6 +252,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeExtractDocAgentJobResponse> DescribeExtractDocAgentJobOutcome;
                 typedef std::future<DescribeExtractDocAgentJobOutcome> DescribeExtractDocAgentJobOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::DescribeExtractDocAgentJobRequest&, DescribeExtractDocAgentJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtractDocAgentJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMarkEssayAgentJobResponse> DescribeMarkEssayAgentJobOutcome;
+                typedef std::future<DescribeMarkEssayAgentJobOutcome> DescribeMarkEssayAgentJobOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::DescribeMarkEssayAgentJobRequest&, DescribeMarkEssayAgentJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMarkEssayAgentJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeQuestionMarkAgentJobResponse> DescribeQuestionMarkAgentJobOutcome;
                 typedef std::future<DescribeQuestionMarkAgentJobOutcome> DescribeQuestionMarkAgentJobOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::DescribeQuestionMarkAgentJobRequest&, DescribeQuestionMarkAgentJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQuestionMarkAgentJobAsyncHandler;
@@ -440,6 +447,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SubmitExtractDocAgentJobResponse> SubmitExtractDocAgentJobOutcome;
                 typedef std::future<SubmitExtractDocAgentJobOutcome> SubmitExtractDocAgentJobOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::SubmitExtractDocAgentJobRequest&, SubmitExtractDocAgentJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitExtractDocAgentJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitMarkEssayAgentJobResponse> SubmitMarkEssayAgentJobOutcome;
+                typedef std::future<SubmitMarkEssayAgentJobOutcome> SubmitMarkEssayAgentJobOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::SubmitMarkEssayAgentJobRequest&, SubmitMarkEssayAgentJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitMarkEssayAgentJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitQuestionMarkAgentJobResponse> SubmitQuestionMarkAgentJobOutcome;
                 typedef std::future<SubmitQuestionMarkAgentJobOutcome> SubmitQuestionMarkAgentJobOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::SubmitQuestionMarkAgentJobRequest&, SubmitQuestionMarkAgentJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitQuestionMarkAgentJobAsyncHandler;
@@ -603,6 +613,17 @@ namespace TencentCloud
                 DescribeExtractDocAgentJobOutcome DescribeExtractDocAgentJob(const Model::DescribeExtractDocAgentJobRequest &request);
                 void DescribeExtractDocAgentJobAsync(const Model::DescribeExtractDocAgentJobRequest& request, const DescribeExtractDocAgentJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeExtractDocAgentJobOutcomeCallable DescribeExtractDocAgentJobCallable(const Model::DescribeExtractDocAgentJobRequest& request);
+
+                /**
+                 *用于作文批改Agent查询任务。基于业界领先的千亿参数多模态大模型技术，提供中英文手写作文的精准批改端到端服务。核心功能涵盖错别字智能识别、好词好句点评、错句纠错，并能够在原文中定位至具体段落与字符位置，同时提供详细的修改建议与优化内容。此能力是作业批改场景中的核心模块。
+
+默认接口请求并发限制：2次/分钟。
+                 * @param req DescribeMarkEssayAgentJobRequest
+                 * @return DescribeMarkEssayAgentJobOutcome
+                 */
+                DescribeMarkEssayAgentJobOutcome DescribeMarkEssayAgentJob(const Model::DescribeMarkEssayAgentJobRequest &request);
+                void DescribeMarkEssayAgentJobAsync(const Model::DescribeMarkEssayAgentJobRequest& request, const DescribeMarkEssayAgentJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMarkEssayAgentJobOutcomeCallable DescribeMarkEssayAgentJobCallable(const Model::DescribeMarkEssayAgentJobRequest& request);
 
                 /**
                  *用于试题批改Agent查询任务。主要面向K12的试题批改产品，支持整卷/单题端到端（试卷切题+题目批改+手写坐标回显）处理，主要聚焦的场景包括试题批改（含手写答案）、试题解析（不含手写答案），其中低年级算式批改效果比线上[数学作业批改](https://cloud.tencent.com/document/product/1004)效果更好。精准输出题目、正误判定、答案对比、错误及知识点等结构化评估结果。
@@ -1799,6 +1820,17 @@ namespace TencentCloud
                 SubmitExtractDocAgentJobOutcome SubmitExtractDocAgentJob(const Model::SubmitExtractDocAgentJobRequest &request);
                 void SubmitExtractDocAgentJobAsync(const Model::SubmitExtractDocAgentJobRequest& request, const SubmitExtractDocAgentJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SubmitExtractDocAgentJobOutcomeCallable SubmitExtractDocAgentJobCallable(const Model::SubmitExtractDocAgentJobRequest& request);
+
+                /**
+                 *用于作文批改Agent提交任务。基于业界领先的千亿参数多模态大模型技术，提供中英文手写作文的精准批改端到端服务。核心功能涵盖错别字智能识别、好词好句点评、错句纠错，并能够在原文中定位至具体段落与字符位置，同时提供详细的修改建议与优化内容。此能力是作业批改场景中的核心模块。
+
+默认接口请求并发限制：2次/分钟。
+                 * @param req SubmitMarkEssayAgentJobRequest
+                 * @return SubmitMarkEssayAgentJobOutcome
+                 */
+                SubmitMarkEssayAgentJobOutcome SubmitMarkEssayAgentJob(const Model::SubmitMarkEssayAgentJobRequest &request);
+                void SubmitMarkEssayAgentJobAsync(const Model::SubmitMarkEssayAgentJobRequest& request, const SubmitMarkEssayAgentJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitMarkEssayAgentJobOutcomeCallable SubmitMarkEssayAgentJobCallable(const Model::SubmitMarkEssayAgentJobRequest& request);
 
                 /**
                  *用于试题批改Agent提交任务。主要面向K12的试题批改产品，支持整卷/单题端到端（试卷切题+题目批改+手写坐标回显）处理，主要聚焦的场景包括试题批改（含手写答案）、试题解析（不含手写答案），其中低年级算式批改效果比线上[数学作业批改](https://cloud.tencent.com/document/product/1004)效果更好。精准输出题目、正误判定、答案对比、错误及知识点等结构化评估结果。

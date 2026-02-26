@@ -90,6 +90,56 @@ MonitorClient::CreateNoticeContentTmplOutcomeCallable MonitorClient::CreateNotic
     return prom->get_future();
 }
 
+MonitorClient::DeleteNoticeContentTmplsOutcome MonitorClient::DeleteNoticeContentTmpls(const DeleteNoticeContentTmplsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteNoticeContentTmpls");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteNoticeContentTmplsResponse rsp = DeleteNoticeContentTmplsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteNoticeContentTmplsOutcome(rsp);
+        else
+            return DeleteNoticeContentTmplsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteNoticeContentTmplsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DeleteNoticeContentTmplsAsync(const DeleteNoticeContentTmplsRequest& request, const DeleteNoticeContentTmplsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteNoticeContentTmplsRequest&;
+    using Resp = DeleteNoticeContentTmplsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteNoticeContentTmpls", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DeleteNoticeContentTmplsOutcomeCallable MonitorClient::DeleteNoticeContentTmplsCallable(const DeleteNoticeContentTmplsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteNoticeContentTmplsOutcome>>();
+    DeleteNoticeContentTmplsAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DeleteNoticeContentTmplsRequest&,
+        DeleteNoticeContentTmplsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MonitorClient::DescribeAlarmNotifyHistoriesOutcome MonitorClient::DescribeAlarmNotifyHistories(const DescribeAlarmNotifyHistoriesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAlarmNotifyHistories");
@@ -132,6 +182,106 @@ MonitorClient::DescribeAlarmNotifyHistoriesOutcomeCallable MonitorClient::Descri
         const MonitorClient*,
         const DescribeAlarmNotifyHistoriesRequest&,
         DescribeAlarmNotifyHistoriesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::DescribeNoticeContentTmplOutcome MonitorClient::DescribeNoticeContentTmpl(const DescribeNoticeContentTmplRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNoticeContentTmpl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNoticeContentTmplResponse rsp = DescribeNoticeContentTmplResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNoticeContentTmplOutcome(rsp);
+        else
+            return DescribeNoticeContentTmplOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNoticeContentTmplOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeNoticeContentTmplAsync(const DescribeNoticeContentTmplRequest& request, const DescribeNoticeContentTmplAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeNoticeContentTmplRequest&;
+    using Resp = DescribeNoticeContentTmplResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeNoticeContentTmpl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribeNoticeContentTmplOutcomeCallable MonitorClient::DescribeNoticeContentTmplCallable(const DescribeNoticeContentTmplRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeNoticeContentTmplOutcome>>();
+    DescribeNoticeContentTmplAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribeNoticeContentTmplRequest&,
+        DescribeNoticeContentTmplOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::ModifyNoticeContentTmplOutcome MonitorClient::ModifyNoticeContentTmpl(const ModifyNoticeContentTmplRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNoticeContentTmpl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNoticeContentTmplResponse rsp = ModifyNoticeContentTmplResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNoticeContentTmplOutcome(rsp);
+        else
+            return ModifyNoticeContentTmplOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNoticeContentTmplOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ModifyNoticeContentTmplAsync(const ModifyNoticeContentTmplRequest& request, const ModifyNoticeContentTmplAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyNoticeContentTmplRequest&;
+    using Resp = ModifyNoticeContentTmplResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyNoticeContentTmpl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::ModifyNoticeContentTmplOutcomeCallable MonitorClient::ModifyNoticeContentTmplCallable(const ModifyNoticeContentTmplRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyNoticeContentTmplOutcome>>();
+    ModifyNoticeContentTmplAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const ModifyNoticeContentTmplRequest&,
+        ModifyNoticeContentTmplOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

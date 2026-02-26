@@ -590,6 +590,56 @@ OcrClient::DescribeExtractDocAgentJobOutcomeCallable OcrClient::DescribeExtractD
     return prom->get_future();
 }
 
+OcrClient::DescribeMarkEssayAgentJobOutcome OcrClient::DescribeMarkEssayAgentJob(const DescribeMarkEssayAgentJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMarkEssayAgentJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMarkEssayAgentJobResponse rsp = DescribeMarkEssayAgentJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMarkEssayAgentJobOutcome(rsp);
+        else
+            return DescribeMarkEssayAgentJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMarkEssayAgentJobOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::DescribeMarkEssayAgentJobAsync(const DescribeMarkEssayAgentJobRequest& request, const DescribeMarkEssayAgentJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMarkEssayAgentJobRequest&;
+    using Resp = DescribeMarkEssayAgentJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMarkEssayAgentJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OcrClient::DescribeMarkEssayAgentJobOutcomeCallable OcrClient::DescribeMarkEssayAgentJobCallable(const DescribeMarkEssayAgentJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMarkEssayAgentJobOutcome>>();
+    DescribeMarkEssayAgentJobAsync(
+    request,
+    [prom](
+        const OcrClient*,
+        const DescribeMarkEssayAgentJobRequest&,
+        DescribeMarkEssayAgentJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OcrClient::DescribeQuestionMarkAgentJobOutcome OcrClient::DescribeQuestionMarkAgentJob(const DescribeQuestionMarkAgentJobRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeQuestionMarkAgentJob");
@@ -3782,6 +3832,56 @@ OcrClient::SubmitExtractDocAgentJobOutcomeCallable OcrClient::SubmitExtractDocAg
         const OcrClient*,
         const SubmitExtractDocAgentJobRequest&,
         SubmitExtractDocAgentJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+OcrClient::SubmitMarkEssayAgentJobOutcome OcrClient::SubmitMarkEssayAgentJob(const SubmitMarkEssayAgentJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitMarkEssayAgentJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitMarkEssayAgentJobResponse rsp = SubmitMarkEssayAgentJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitMarkEssayAgentJobOutcome(rsp);
+        else
+            return SubmitMarkEssayAgentJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitMarkEssayAgentJobOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::SubmitMarkEssayAgentJobAsync(const SubmitMarkEssayAgentJobRequest& request, const SubmitMarkEssayAgentJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SubmitMarkEssayAgentJobRequest&;
+    using Resp = SubmitMarkEssayAgentJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SubmitMarkEssayAgentJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OcrClient::SubmitMarkEssayAgentJobOutcomeCallable OcrClient::SubmitMarkEssayAgentJobCallable(const SubmitMarkEssayAgentJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SubmitMarkEssayAgentJobOutcome>>();
+    SubmitMarkEssayAgentJobAsync(
+    request,
+    [prom](
+        const OcrClient*,
+        const SubmitMarkEssayAgentJobRequest&,
+        SubmitMarkEssayAgentJobOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/AigcVideoReferenceImageInfo.h>
+#include <tencentcloud/mps/v20190612/model/AigcVideoReferenceVideoInfo.h>
 #include <tencentcloud/mps/v20190612/model/AigcVideoExtraParam.h>
 #include <tencentcloud/mps/v20190612/model/AigcStoreCosParam.h>
 
@@ -46,43 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型名称。
-当前支持的模型列表:
-Hunyuan,
-Hailuo，
-Kling，
-Vidu，
-OS，
-GV。
-                     * @return ModelName 模型名称。
-当前支持的模型列表:
-Hunyuan,
-Hailuo，
-Kling，
-Vidu，
-OS，
-GV。
+                     * 获取<p>模型名称。<br>当前支持的模型列表:<br>Hunyuan,<br>Hailuo，<br>Kling，<br>Vidu，<br>OS，<br>GV。</p>
+                     * @return ModelName <p>模型名称。<br>当前支持的模型列表:<br>Hunyuan,<br>Hailuo，<br>Kling，<br>Vidu，<br>OS，<br>GV。</p>
                      * 
                      */
                     std::string GetModelName() const;
 
                     /**
-                     * 设置模型名称。
-当前支持的模型列表:
-Hunyuan,
-Hailuo，
-Kling，
-Vidu，
-OS，
-GV。
-                     * @param _modelName 模型名称。
-当前支持的模型列表:
-Hunyuan,
-Hailuo，
-Kling，
-Vidu，
-OS，
-GV。
+                     * 设置<p>模型名称。<br>当前支持的模型列表:<br>Hunyuan,<br>Hailuo，<br>Kling，<br>Vidu，<br>OS，<br>GV。</p>
+                     * @param _modelName <p>模型名称。<br>当前支持的模型列表:<br>Hunyuan,<br>Hailuo，<br>Kling，<br>Vidu，<br>OS，<br>GV。</p>
                      * 
                      */
                     void SetModelName(const std::string& _modelName);
@@ -95,35 +68,15 @@ GV。
                     bool ModelNameHasBeenSet() const;
 
                     /**
-                     * 获取指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。
-1. Hailuo， 可选[02、2.3]。
-2. Kling，可选[2.0、2.1、2.5、O1、2.6]。
-3. Vidu,可选[q2、q2-pro、q2-turbo]。
-4. GV, 可选[3.1]。
-5. OS，可选[2.0]。
-                     * @return ModelVersion 指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。
-1. Hailuo， 可选[02、2.3]。
-2. Kling，可选[2.0、2.1、2.5、O1、2.6]。
-3. Vidu,可选[q2、q2-pro、q2-turbo]。
-4. GV, 可选[3.1]。
-5. OS，可选[2.0]。
+                     * 获取<p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。</p><ol><li>Hailuo， 可选[02、2.3]。</li><li>Kling，可选[2.0、2.1、2.5、O1、2.6、3.0、3.0-Omni]。</li><li>Vidu,可选[q2、q2-pro、q2-turbo、q3-pro、q3-turbo]。</li><li>GV, 可选[3.1]。</li><li>OS，可选[2.0]。</li></ol>
+                     * @return ModelVersion <p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。</p><ol><li>Hailuo， 可选[02、2.3]。</li><li>Kling，可选[2.0、2.1、2.5、O1、2.6、3.0、3.0-Omni]。</li><li>Vidu,可选[q2、q2-pro、q2-turbo、q3-pro、q3-turbo]。</li><li>GV, 可选[3.1]。</li><li>OS，可选[2.0]。</li></ol>
                      * 
                      */
                     std::string GetModelVersion() const;
 
                     /**
-                     * 设置指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。
-1. Hailuo， 可选[02、2.3]。
-2. Kling，可选[2.0、2.1、2.5、O1、2.6]。
-3. Vidu,可选[q2、q2-pro、q2-turbo]。
-4. GV, 可选[3.1]。
-5. OS，可选[2.0]。
-                     * @param _modelVersion 指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。
-1. Hailuo， 可选[02、2.3]。
-2. Kling，可选[2.0、2.1、2.5、O1、2.6]。
-3. Vidu,可选[q2、q2-pro、q2-turbo]。
-4. GV, 可选[3.1]。
-5. OS，可选[2.0]。
+                     * 设置<p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。</p><ol><li>Hailuo， 可选[02、2.3]。</li><li>Kling，可选[2.0、2.1、2.5、O1、2.6、3.0、3.0-Omni]。</li><li>Vidu,可选[q2、q2-pro、q2-turbo、q3-pro、q3-turbo]。</li><li>GV, 可选[3.1]。</li><li>OS，可选[2.0]。</li></ol>
+                     * @param _modelVersion <p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。</p><ol><li>Hailuo， 可选[02、2.3]。</li><li>Kling，可选[2.0、2.1、2.5、O1、2.6、3.0、3.0-Omni]。</li><li>Vidu,可选[q2、q2-pro、q2-turbo、q3-pro、q3-turbo]。</li><li>GV, 可选[3.1]。</li><li>OS，可选[2.0]。</li></ol>
                      * 
                      */
                     void SetModelVersion(const std::string& _modelVersion);
@@ -136,31 +89,15 @@ GV。
                     bool ModelVersionHasBeenSet() const;
 
                     /**
-                     * 获取指定场景生视频。
-注意：仅部分模型支持指定场景。
-1. Kling支持动作控制，motion_control。
-2. Mingmou支持横转竖，land2port。
-3. Vidu支持特效模板，template_effect。
-                     * @return SceneType 指定场景生视频。
-注意：仅部分模型支持指定场景。
-1. Kling支持动作控制，motion_control。
-2. Mingmou支持横转竖，land2port。
-3. Vidu支持特效模板，template_effect。
+                     * 获取<p>指定场景生视频。<br>注意：仅部分模型支持指定场景。</p><ol><li>Kling支持动作控制，motion_control。</li><li>Mingmou支持横转竖，land2port。</li><li>Vidu支持特效模板，template_effect。</li></ol>
+                     * @return SceneType <p>指定场景生视频。<br>注意：仅部分模型支持指定场景。</p><ol><li>Kling支持动作控制，motion_control。</li><li>Mingmou支持横转竖，land2port。</li><li>Vidu支持特效模板，template_effect。</li></ol>
                      * 
                      */
                     std::string GetSceneType() const;
 
                     /**
-                     * 设置指定场景生视频。
-注意：仅部分模型支持指定场景。
-1. Kling支持动作控制，motion_control。
-2. Mingmou支持横转竖，land2port。
-3. Vidu支持特效模板，template_effect。
-                     * @param _sceneType 指定场景生视频。
-注意：仅部分模型支持指定场景。
-1. Kling支持动作控制，motion_control。
-2. Mingmou支持横转竖，land2port。
-3. Vidu支持特效模板，template_effect。
+                     * 设置<p>指定场景生视频。<br>注意：仅部分模型支持指定场景。</p><ol><li>Kling支持动作控制，motion_control。</li><li>Mingmou支持横转竖，land2port。</li><li>Vidu支持特效模板，template_effect。</li></ol>
+                     * @param _sceneType <p>指定场景生视频。<br>注意：仅部分模型支持指定场景。</p><ol><li>Kling支持动作控制，motion_control。</li><li>Mingmou支持横转竖，land2port。</li><li>Vidu支持特效模板，template_effect。</li></ol>
                      * 
                      */
                     void SetSceneType(const std::string& _sceneType);
@@ -173,15 +110,15 @@ GV。
                     bool SceneTypeHasBeenSet() const;
 
                     /**
-                     * 获取生成视频的描述。(注：最大支持2000字符)。当未传入图片时，此参数必填。
-                     * @return Prompt 生成视频的描述。(注：最大支持2000字符)。当未传入图片时，此参数必填。
+                     * 获取<p>生成视频的描述。(注：最大支持2000字符)。当未传入图片时，此参数必填。</p>
+                     * @return Prompt <p>生成视频的描述。(注：最大支持2000字符)。当未传入图片时，此参数必填。</p>
                      * 
                      */
                     std::string GetPrompt() const;
 
                     /**
-                     * 设置生成视频的描述。(注：最大支持2000字符)。当未传入图片时，此参数必填。
-                     * @param _prompt 生成视频的描述。(注：最大支持2000字符)。当未传入图片时，此参数必填。
+                     * 设置<p>生成视频的描述。(注：最大支持2000字符)。当未传入图片时，此参数必填。</p>
+                     * @param _prompt <p>生成视频的描述。(注：最大支持2000字符)。当未传入图片时，此参数必填。</p>
                      * 
                      */
                     void SetPrompt(const std::string& _prompt);
@@ -194,35 +131,15 @@ GV。
                     bool PromptHasBeenSet() const;
 
                     /**
-                     * 获取用于描述您想要阻止模型生成的内容。
-注意：部分模型支持。
-例如：
-顶部照明、明亮的色彩
-人物、动物
-多辆汽车、风。
-                     * @return NegativePrompt 用于描述您想要阻止模型生成的内容。
-注意：部分模型支持。
-例如：
-顶部照明、明亮的色彩
-人物、动物
-多辆汽车、风。
+                     * 获取<p>用于描述您想要阻止模型生成的内容。<br>注意：部分模型支持。<br>例如：<br>顶部照明、明亮的色彩<br>人物、动物<br>多辆汽车、风。</p>
+                     * @return NegativePrompt <p>用于描述您想要阻止模型生成的内容。<br>注意：部分模型支持。<br>例如：<br>顶部照明、明亮的色彩<br>人物、动物<br>多辆汽车、风。</p>
                      * 
                      */
                     std::string GetNegativePrompt() const;
 
                     /**
-                     * 设置用于描述您想要阻止模型生成的内容。
-注意：部分模型支持。
-例如：
-顶部照明、明亮的色彩
-人物、动物
-多辆汽车、风。
-                     * @param _negativePrompt 用于描述您想要阻止模型生成的内容。
-注意：部分模型支持。
-例如：
-顶部照明、明亮的色彩
-人物、动物
-多辆汽车、风。
+                     * 设置<p>用于描述您想要阻止模型生成的内容。<br>注意：部分模型支持。<br>例如：<br>顶部照明、明亮的色彩<br>人物、动物<br>多辆汽车、风。</p>
+                     * @param _negativePrompt <p>用于描述您想要阻止模型生成的内容。<br>注意：部分模型支持。<br>例如：<br>顶部照明、明亮的色彩<br>人物、动物<br>多辆汽车、风。</p>
                      * 
                      */
                     void SetNegativePrompt(const std::string& _negativePrompt);
@@ -235,15 +152,15 @@ GV。
                     bool NegativePromptHasBeenSet() const;
 
                     /**
-                     * 获取默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。
-                     * @return EnhancePrompt 默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。
+                     * 获取<p>默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。</p>
+                     * @return EnhancePrompt <p>默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。</p>
                      * 
                      */
                     bool GetEnhancePrompt() const;
 
                     /**
-                     * 设置默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。
-                     * @param _enhancePrompt 默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。
+                     * 设置<p>默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。</p>
+                     * @param _enhancePrompt <p>默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。</p>
                      * 
                      */
                     void SetEnhancePrompt(const bool& _enhancePrompt);
@@ -256,31 +173,15 @@ GV。
                     bool EnhancePromptHasBeenSet() const;
 
                     /**
-                     * 获取用于指导视频生成的图片 URL。该URL需外网可访问。
-注意：
-1. 推荐图片大小不超过10M，不同模型大小限制不相同。
-2. 支持的图片格式：jpeg、png。
-3. 使用OS模型时，需输入图片尺寸为: 1280x720、720x1280。
-                     * @return ImageUrl 用于指导视频生成的图片 URL。该URL需外网可访问。
-注意：
-1. 推荐图片大小不超过10M，不同模型大小限制不相同。
-2. 支持的图片格式：jpeg、png。
-3. 使用OS模型时，需输入图片尺寸为: 1280x720、720x1280。
+                     * 获取<p>用于指导视频生成的图片 URL。该URL需外网可访问。<br>注意：</p><ol><li>推荐图片大小不超过10M，不同模型大小限制不相同。</li><li>支持的图片格式：jpeg、png。</li><li>使用OS模型时，需输入图片尺寸为: 1280x720、720x1280。</li></ol>
+                     * @return ImageUrl <p>用于指导视频生成的图片 URL。该URL需外网可访问。<br>注意：</p><ol><li>推荐图片大小不超过10M，不同模型大小限制不相同。</li><li>支持的图片格式：jpeg、png。</li><li>使用OS模型时，需输入图片尺寸为: 1280x720、720x1280。</li></ol>
                      * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
-                     * 设置用于指导视频生成的图片 URL。该URL需外网可访问。
-注意：
-1. 推荐图片大小不超过10M，不同模型大小限制不相同。
-2. 支持的图片格式：jpeg、png。
-3. 使用OS模型时，需输入图片尺寸为: 1280x720、720x1280。
-                     * @param _imageUrl 用于指导视频生成的图片 URL。该URL需外网可访问。
-注意：
-1. 推荐图片大小不超过10M，不同模型大小限制不相同。
-2. 支持的图片格式：jpeg、png。
-3. 使用OS模型时，需输入图片尺寸为: 1280x720、720x1280。
+                     * 设置<p>用于指导视频生成的图片 URL。该URL需外网可访问。<br>注意：</p><ol><li>推荐图片大小不超过10M，不同模型大小限制不相同。</li><li>支持的图片格式：jpeg、png。</li><li>使用OS模型时，需输入图片尺寸为: 1280x720、720x1280。</li></ol>
+                     * @param _imageUrl <p>用于指导视频生成的图片 URL。该URL需外网可访问。<br>注意：</p><ol><li>推荐图片大小不超过10M，不同模型大小限制不相同。</li><li>支持的图片格式：jpeg、png。</li><li>使用OS模型时，需输入图片尺寸为: 1280x720、720x1280。</li></ol>
                      * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
@@ -293,47 +194,15 @@ GV。
                     bool ImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取模型将以此参数传入的图片作为尾帧画面来生成视频。
-支持此参数的模型：
-1. GV，传入尾帧图片时，必须同时传入ImageUrl作为首帧。
-2. Kling， 在Resolution:1080P的情况下 2.1版本支持首尾帧。
-3. Vidu, q2-pro, q2-turbo 支持首尾帧。
-
-注意：
-1. 推荐图片大小不超过10M，各模型限制不同。
-2. 支持的图片格式：jpeg、png。
-                     * @return LastImageUrl 模型将以此参数传入的图片作为尾帧画面来生成视频。
-支持此参数的模型：
-1. GV，传入尾帧图片时，必须同时传入ImageUrl作为首帧。
-2. Kling， 在Resolution:1080P的情况下 2.1版本支持首尾帧。
-3. Vidu, q2-pro, q2-turbo 支持首尾帧。
-
-注意：
-1. 推荐图片大小不超过10M，各模型限制不同。
-2. 支持的图片格式：jpeg、png。
+                     * 获取<p>模型将以此参数传入的图片作为尾帧画面来生成视频。<br>支持此参数的模型：</p><ol><li>GV，传入尾帧图片时，必须同时传入ImageUrl作为首帧。</li><li>Kling， 在Resolution:1080P的情况下 2.1版本支持首尾帧。</li><li>Vidu, q2-pro, q2-turbo 支持首尾帧。</li></ol><p>注意：</p><ol><li>推荐图片大小不超过10M，各模型限制不同。</li><li>支持的图片格式：jpeg、png。</li></ol>
+                     * @return LastImageUrl <p>模型将以此参数传入的图片作为尾帧画面来生成视频。<br>支持此参数的模型：</p><ol><li>GV，传入尾帧图片时，必须同时传入ImageUrl作为首帧。</li><li>Kling， 在Resolution:1080P的情况下 2.1版本支持首尾帧。</li><li>Vidu, q2-pro, q2-turbo 支持首尾帧。</li></ol><p>注意：</p><ol><li>推荐图片大小不超过10M，各模型限制不同。</li><li>支持的图片格式：jpeg、png。</li></ol>
                      * 
                      */
                     std::string GetLastImageUrl() const;
 
                     /**
-                     * 设置模型将以此参数传入的图片作为尾帧画面来生成视频。
-支持此参数的模型：
-1. GV，传入尾帧图片时，必须同时传入ImageUrl作为首帧。
-2. Kling， 在Resolution:1080P的情况下 2.1版本支持首尾帧。
-3. Vidu, q2-pro, q2-turbo 支持首尾帧。
-
-注意：
-1. 推荐图片大小不超过10M，各模型限制不同。
-2. 支持的图片格式：jpeg、png。
-                     * @param _lastImageUrl 模型将以此参数传入的图片作为尾帧画面来生成视频。
-支持此参数的模型：
-1. GV，传入尾帧图片时，必须同时传入ImageUrl作为首帧。
-2. Kling， 在Resolution:1080P的情况下 2.1版本支持首尾帧。
-3. Vidu, q2-pro, q2-turbo 支持首尾帧。
-
-注意：
-1. 推荐图片大小不超过10M，各模型限制不同。
-2. 支持的图片格式：jpeg、png。
+                     * 设置<p>模型将以此参数传入的图片作为尾帧画面来生成视频。<br>支持此参数的模型：</p><ol><li>GV，传入尾帧图片时，必须同时传入ImageUrl作为首帧。</li><li>Kling， 在Resolution:1080P的情况下 2.1版本支持首尾帧。</li><li>Vidu, q2-pro, q2-turbo 支持首尾帧。</li></ol><p>注意：</p><ol><li>推荐图片大小不超过10M，各模型限制不同。</li><li>支持的图片格式：jpeg、png。</li></ol>
+                     * @param _lastImageUrl <p>模型将以此参数传入的图片作为尾帧画面来生成视频。<br>支持此参数的模型：</p><ol><li>GV，传入尾帧图片时，必须同时传入ImageUrl作为首帧。</li><li>Kling， 在Resolution:1080P的情况下 2.1版本支持首尾帧。</li><li>Vidu, q2-pro, q2-turbo 支持首尾帧。</li></ol><p>注意：</p><ol><li>推荐图片大小不超过10M，各模型限制不同。</li><li>支持的图片格式：jpeg、png。</li></ol>
                      * 
                      */
                     void SetLastImageUrl(const std::string& _lastImageUrl);
@@ -346,47 +215,15 @@ GV。
                     bool LastImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。
-
-支持多图输入的模型：
-1. GV，使用多图输入时，不可使用ImageUrl和LastImageUrl。
-2. Vidu，支持多图参考生视频。q2模型1-7张图片，可通过ImageInfos里面的ReferenceType作为主体id来传入。
-
-注意：
-1. 图片大小不超过10M。
-2. 支持的图片格式：jpeg、png。
-                     * @return ImageInfos 最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。
-
-支持多图输入的模型：
-1. GV，使用多图输入时，不可使用ImageUrl和LastImageUrl。
-2. Vidu，支持多图参考生视频。q2模型1-7张图片，可通过ImageInfos里面的ReferenceType作为主体id来传入。
-
-注意：
-1. 图片大小不超过10M。
-2. 支持的图片格式：jpeg、png。
+                     * 获取<p>最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。</p><p>支持多图输入的模型：</p><ol><li>GV，使用多图输入时，不可使用ImageUrl和LastImageUrl。</li><li>Vidu，支持多图参考生视频。q2模型1-7张图片，可通过ImageInfos里面的ReferenceType作为主体id来传入。</li></ol><p>注意：</p><ol><li>图片大小不超过10M。</li><li>支持的图片格式：jpeg、png。</li></ol>
+                     * @return ImageInfos <p>最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。</p><p>支持多图输入的模型：</p><ol><li>GV，使用多图输入时，不可使用ImageUrl和LastImageUrl。</li><li>Vidu，支持多图参考生视频。q2模型1-7张图片，可通过ImageInfos里面的ReferenceType作为主体id来传入。</li></ol><p>注意：</p><ol><li>图片大小不超过10M。</li><li>支持的图片格式：jpeg、png。</li></ol>
                      * 
                      */
                     std::vector<AigcVideoReferenceImageInfo> GetImageInfos() const;
 
                     /**
-                     * 设置最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。
-
-支持多图输入的模型：
-1. GV，使用多图输入时，不可使用ImageUrl和LastImageUrl。
-2. Vidu，支持多图参考生视频。q2模型1-7张图片，可通过ImageInfos里面的ReferenceType作为主体id来传入。
-
-注意：
-1. 图片大小不超过10M。
-2. 支持的图片格式：jpeg、png。
-                     * @param _imageInfos 最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。
-
-支持多图输入的模型：
-1. GV，使用多图输入时，不可使用ImageUrl和LastImageUrl。
-2. Vidu，支持多图参考生视频。q2模型1-7张图片，可通过ImageInfos里面的ReferenceType作为主体id来传入。
-
-注意：
-1. 图片大小不超过10M。
-2. 支持的图片格式：jpeg、png。
+                     * 设置<p>最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。</p><p>支持多图输入的模型：</p><ol><li>GV，使用多图输入时，不可使用ImageUrl和LastImageUrl。</li><li>Vidu，支持多图参考生视频。q2模型1-7张图片，可通过ImageInfos里面的ReferenceType作为主体id来传入。</li></ol><p>注意：</p><ol><li>图片大小不超过10M。</li><li>支持的图片格式：jpeg、png。</li></ol>
+                     * @param _imageInfos <p>最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。</p><p>支持多图输入的模型：</p><ol><li>GV，使用多图输入时，不可使用ImageUrl和LastImageUrl。</li><li>Vidu，支持多图参考生视频。q2模型1-7张图片，可通过ImageInfos里面的ReferenceType作为主体id来传入。</li></ol><p>注意：</p><ol><li>图片大小不超过10M。</li><li>支持的图片格式：jpeg、png。</li></ol>
                      * 
                      */
                     void SetImageInfos(const std::vector<AigcVideoReferenceImageInfo>& _imageInfos);
@@ -399,39 +236,36 @@ GV。
                     bool ImageInfosHasBeenSet() const;
 
                     /**
-                     * 获取生成视频的时长。
-注意：
-1. Kling支持 5、10秒。默认: 5秒。
-2. Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。
-3. Vidu支持1-10秒。
-4. GV支持 8秒。 默认：8秒。
-5. OS支持4、8、12秒。 默认：8秒。
-                     * @return Duration 生成视频的时长。
-注意：
-1. Kling支持 5、10秒。默认: 5秒。
-2. Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。
-3. Vidu支持1-10秒。
-4. GV支持 8秒。 默认：8秒。
-5. OS支持4、8、12秒。 默认：8秒。
+                     * 获取<p>目前仅Kling O1版本支持参考视频信息传入。<br>可作为特征参考视频，也可作为待编辑视频，默认为待编辑视频；可选择性保留视频原声。</p>
+                     * @return VideoInfos <p>目前仅Kling O1版本支持参考视频信息传入。<br>可作为特征参考视频，也可作为待编辑视频，默认为待编辑视频；可选择性保留视频原声。</p>
+                     * 
+                     */
+                    std::vector<AigcVideoReferenceVideoInfo> GetVideoInfos() const;
+
+                    /**
+                     * 设置<p>目前仅Kling O1版本支持参考视频信息传入。<br>可作为特征参考视频，也可作为待编辑视频，默认为待编辑视频；可选择性保留视频原声。</p>
+                     * @param _videoInfos <p>目前仅Kling O1版本支持参考视频信息传入。<br>可作为特征参考视频，也可作为待编辑视频，默认为待编辑视频；可选择性保留视频原声。</p>
+                     * 
+                     */
+                    void SetVideoInfos(const std::vector<AigcVideoReferenceVideoInfo>& _videoInfos);
+
+                    /**
+                     * 判断参数 VideoInfos 是否已赋值
+                     * @return VideoInfos 是否已赋值
+                     * 
+                     */
+                    bool VideoInfosHasBeenSet() const;
+
+                    /**
+                     * 获取<p>生成视频的时长。<br>注意：</p><ol><li>Kling支持 5、10秒。默认: 5秒。</li><li>Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。</li><li>Vidu支持1-10秒。</li><li>GV支持 8秒。 默认：8秒。</li><li>OS支持4、8、12秒。 默认：8秒。</li></ol>
+                     * @return Duration <p>生成视频的时长。<br>注意：</p><ol><li>Kling支持 5、10秒。默认: 5秒。</li><li>Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。</li><li>Vidu支持1-10秒。</li><li>GV支持 8秒。 默认：8秒。</li><li>OS支持4、8、12秒。 默认：8秒。</li></ol>
                      * 
                      */
                     int64_t GetDuration() const;
 
                     /**
-                     * 设置生成视频的时长。
-注意：
-1. Kling支持 5、10秒。默认: 5秒。
-2. Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。
-3. Vidu支持1-10秒。
-4. GV支持 8秒。 默认：8秒。
-5. OS支持4、8、12秒。 默认：8秒。
-                     * @param _duration 生成视频的时长。
-注意：
-1. Kling支持 5、10秒。默认: 5秒。
-2. Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。
-3. Vidu支持1-10秒。
-4. GV支持 8秒。 默认：8秒。
-5. OS支持4、8、12秒。 默认：8秒。
+                     * 设置<p>生成视频的时长。<br>注意：</p><ol><li>Kling支持 5、10秒。默认: 5秒。</li><li>Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。</li><li>Vidu支持1-10秒。</li><li>GV支持 8秒。 默认：8秒。</li><li>OS支持4、8、12秒。 默认：8秒。</li></ol>
+                     * @param _duration <p>生成视频的时长。<br>注意：</p><ol><li>Kling支持 5、10秒。默认: 5秒。</li><li>Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。</li><li>Vidu支持1-10秒。</li><li>GV支持 8秒。 默认：8秒。</li><li>OS支持4、8、12秒。 默认：8秒。</li></ol>
                      * 
                      */
                     void SetDuration(const int64_t& _duration);
@@ -444,15 +278,15 @@ GV。
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取用于传入要求的额外参数。
-                     * @return ExtraParameters 用于传入要求的额外参数。
+                     * 获取<p>用于传入要求的额外参数。</p>
+                     * @return ExtraParameters <p>用于传入要求的额外参数。</p>
                      * 
                      */
                     AigcVideoExtraParam GetExtraParameters() const;
 
                     /**
-                     * 设置用于传入要求的额外参数。
-                     * @param _extraParameters 用于传入要求的额外参数。
+                     * 设置<p>用于传入要求的额外参数。</p>
+                     * @param _extraParameters <p>用于传入要求的额外参数。</p>
                      * 
                      */
                     void SetExtraParameters(const AigcVideoExtraParam& _extraParameters);
@@ -465,15 +299,15 @@ GV。
                     bool ExtraParametersHasBeenSet() const;
 
                     /**
-                     * 获取文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。
-                     * @return StoreCosParam 文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。
+                     * 获取<p>文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。</p>
+                     * @return StoreCosParam <p>文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。</p>
                      * 
                      */
                     AigcStoreCosParam GetStoreCosParam() const;
 
                     /**
-                     * 设置文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。
-                     * @param _storeCosParam 文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。
+                     * 设置<p>文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。</p>
+                     * @param _storeCosParam <p>文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。</p>
                      * 
                      */
                     void SetStoreCosParam(const AigcStoreCosParam& _storeCosParam);
@@ -486,23 +320,15 @@ GV。
                     bool StoreCosParamHasBeenSet() const;
 
                     /**
-                     * 获取用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。
-示例：
-{\"camera_control\":{\"type\":\"simple\"}}
-                     * @return AdditionalParameters 用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。
-示例：
-{\"camera_control\":{\"type\":\"simple\"}}
+                     * 获取<p>用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。<br>示例：<br>{"camera_control":{"type":"simple"}}</p>
+                     * @return AdditionalParameters <p>用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。<br>示例：<br>{"camera_control":{"type":"simple"}}</p>
                      * 
                      */
                     std::string GetAdditionalParameters() const;
 
                     /**
-                     * 设置用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。
-示例：
-{\"camera_control\":{\"type\":\"simple\"}}
-                     * @param _additionalParameters 用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。
-示例：
-{\"camera_control\":{\"type\":\"simple\"}}
+                     * 设置<p>用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。<br>示例：<br>{"camera_control":{"type":"simple"}}</p>
+                     * @param _additionalParameters <p>用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。<br>示例：<br>{"camera_control":{"type":"simple"}}</p>
                      * 
                      */
                     void SetAdditionalParameters(const std::string& _additionalParameters);
@@ -515,15 +341,15 @@ GV。
                     bool AdditionalParametersHasBeenSet() const;
 
                     /**
-                     * 获取接口操作者名称。
-                     * @return Operator 接口操作者名称。
+                     * 获取<p>接口操作者名称。</p>
+                     * @return Operator <p>接口操作者名称。</p>
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置接口操作者名称。
-                     * @param _operator 接口操作者名称。
+                     * 设置<p>接口操作者名称。</p>
+                     * @param _operator <p>接口操作者名称。</p>
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -538,134 +364,91 @@ GV。
                 private:
 
                     /**
-                     * 模型名称。
-当前支持的模型列表:
-Hunyuan,
-Hailuo，
-Kling，
-Vidu，
-OS，
-GV。
+                     * <p>模型名称。<br>当前支持的模型列表:<br>Hunyuan,<br>Hailuo，<br>Kling，<br>Vidu，<br>OS，<br>GV。</p>
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;
 
                     /**
-                     * 指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。
-1. Hailuo， 可选[02、2.3]。
-2. Kling，可选[2.0、2.1、2.5、O1、2.6]。
-3. Vidu,可选[q2、q2-pro、q2-turbo]。
-4. GV, 可选[3.1]。
-5. OS，可选[2.0]。
+                     * <p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。</p><ol><li>Hailuo， 可选[02、2.3]。</li><li>Kling，可选[2.0、2.1、2.5、O1、2.6、3.0、3.0-Omni]。</li><li>Vidu,可选[q2、q2-pro、q2-turbo、q3-pro、q3-turbo]。</li><li>GV, 可选[3.1]。</li><li>OS，可选[2.0]。</li></ol>
                      */
                     std::string m_modelVersion;
                     bool m_modelVersionHasBeenSet;
 
                     /**
-                     * 指定场景生视频。
-注意：仅部分模型支持指定场景。
-1. Kling支持动作控制，motion_control。
-2. Mingmou支持横转竖，land2port。
-3. Vidu支持特效模板，template_effect。
+                     * <p>指定场景生视频。<br>注意：仅部分模型支持指定场景。</p><ol><li>Kling支持动作控制，motion_control。</li><li>Mingmou支持横转竖，land2port。</li><li>Vidu支持特效模板，template_effect。</li></ol>
                      */
                     std::string m_sceneType;
                     bool m_sceneTypeHasBeenSet;
 
                     /**
-                     * 生成视频的描述。(注：最大支持2000字符)。当未传入图片时，此参数必填。
+                     * <p>生成视频的描述。(注：最大支持2000字符)。当未传入图片时，此参数必填。</p>
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
 
                     /**
-                     * 用于描述您想要阻止模型生成的内容。
-注意：部分模型支持。
-例如：
-顶部照明、明亮的色彩
-人物、动物
-多辆汽车、风。
+                     * <p>用于描述您想要阻止模型生成的内容。<br>注意：部分模型支持。<br>例如：<br>顶部照明、明亮的色彩<br>人物、动物<br>多辆汽车、风。</p>
                      */
                     std::string m_negativePrompt;
                     bool m_negativePromptHasBeenSet;
 
                     /**
-                     * 默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。
+                     * <p>默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。</p>
                      */
                     bool m_enhancePrompt;
                     bool m_enhancePromptHasBeenSet;
 
                     /**
-                     * 用于指导视频生成的图片 URL。该URL需外网可访问。
-注意：
-1. 推荐图片大小不超过10M，不同模型大小限制不相同。
-2. 支持的图片格式：jpeg、png。
-3. 使用OS模型时，需输入图片尺寸为: 1280x720、720x1280。
+                     * <p>用于指导视频生成的图片 URL。该URL需外网可访问。<br>注意：</p><ol><li>推荐图片大小不超过10M，不同模型大小限制不相同。</li><li>支持的图片格式：jpeg、png。</li><li>使用OS模型时，需输入图片尺寸为: 1280x720、720x1280。</li></ol>
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
 
                     /**
-                     * 模型将以此参数传入的图片作为尾帧画面来生成视频。
-支持此参数的模型：
-1. GV，传入尾帧图片时，必须同时传入ImageUrl作为首帧。
-2. Kling， 在Resolution:1080P的情况下 2.1版本支持首尾帧。
-3. Vidu, q2-pro, q2-turbo 支持首尾帧。
-
-注意：
-1. 推荐图片大小不超过10M，各模型限制不同。
-2. 支持的图片格式：jpeg、png。
+                     * <p>模型将以此参数传入的图片作为尾帧画面来生成视频。<br>支持此参数的模型：</p><ol><li>GV，传入尾帧图片时，必须同时传入ImageUrl作为首帧。</li><li>Kling， 在Resolution:1080P的情况下 2.1版本支持首尾帧。</li><li>Vidu, q2-pro, q2-turbo 支持首尾帧。</li></ol><p>注意：</p><ol><li>推荐图片大小不超过10M，各模型限制不同。</li><li>支持的图片格式：jpeg、png。</li></ol>
                      */
                     std::string m_lastImageUrl;
                     bool m_lastImageUrlHasBeenSet;
 
                     /**
-                     * 最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。
-
-支持多图输入的模型：
-1. GV，使用多图输入时，不可使用ImageUrl和LastImageUrl。
-2. Vidu，支持多图参考生视频。q2模型1-7张图片，可通过ImageInfos里面的ReferenceType作为主体id来传入。
-
-注意：
-1. 图片大小不超过10M。
-2. 支持的图片格式：jpeg、png。
+                     * <p>最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。</p><p>支持多图输入的模型：</p><ol><li>GV，使用多图输入时，不可使用ImageUrl和LastImageUrl。</li><li>Vidu，支持多图参考生视频。q2模型1-7张图片，可通过ImageInfos里面的ReferenceType作为主体id来传入。</li></ol><p>注意：</p><ol><li>图片大小不超过10M。</li><li>支持的图片格式：jpeg、png。</li></ol>
                      */
                     std::vector<AigcVideoReferenceImageInfo> m_imageInfos;
                     bool m_imageInfosHasBeenSet;
 
                     /**
-                     * 生成视频的时长。
-注意：
-1. Kling支持 5、10秒。默认: 5秒。
-2. Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。
-3. Vidu支持1-10秒。
-4. GV支持 8秒。 默认：8秒。
-5. OS支持4、8、12秒。 默认：8秒。
+                     * <p>目前仅Kling O1版本支持参考视频信息传入。<br>可作为特征参考视频，也可作为待编辑视频，默认为待编辑视频；可选择性保留视频原声。</p>
+                     */
+                    std::vector<AigcVideoReferenceVideoInfo> m_videoInfos;
+                    bool m_videoInfosHasBeenSet;
+
+                    /**
+                     * <p>生成视频的时长。<br>注意：</p><ol><li>Kling支持 5、10秒。默认: 5秒。</li><li>Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。</li><li>Vidu支持1-10秒。</li><li>GV支持 8秒。 默认：8秒。</li><li>OS支持4、8、12秒。 默认：8秒。</li></ol>
                      */
                     int64_t m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 用于传入要求的额外参数。
+                     * <p>用于传入要求的额外参数。</p>
                      */
                     AigcVideoExtraParam m_extraParameters;
                     bool m_extraParametersHasBeenSet;
 
                     /**
-                     * 文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。
+                     * <p>文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。</p>
                      */
                     AigcStoreCosParam m_storeCosParam;
                     bool m_storeCosParamHasBeenSet;
 
                     /**
-                     * 用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。
-示例：
-{\"camera_control\":{\"type\":\"simple\"}}
+                     * <p>用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。<br>示例：<br>{"camera_control":{"type":"simple"}}</p>
                      */
                     std::string m_additionalParameters;
                     bool m_additionalParametersHasBeenSet;
 
                     /**
-                     * 接口操作者名称。
+                     * <p>接口操作者名称。</p>
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;

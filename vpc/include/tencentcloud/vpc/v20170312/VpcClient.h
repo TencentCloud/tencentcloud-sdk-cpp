@@ -103,6 +103,10 @@
 #include <tencentcloud/vpc/v20170312/model/CreateBandwidthPackageResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateCcnRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateCcnResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateCcnPolicyBasedRoutingNextHopRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateCcnPolicyBasedRoutingNextHopResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateCcnPolicyBasedRoutingRulesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateCcnPolicyBasedRoutingRulesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateCcnRouteTablesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateCcnRouteTablesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateCdcLDCXListRequest.h>
@@ -221,6 +225,10 @@
 #include <tencentcloud/vpc/v20170312/model/DeleteBandwidthPackageResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteCcnRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteCcnResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteCcnPolicyBasedRoutingNextHopRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteCcnPolicyBasedRoutingNextHopResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteCcnPolicyBasedRoutingRuleRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteCcnPolicyBasedRoutingRuleResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteCcnRouteTablesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteCcnRouteTablesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteCdcLDCXListRequest.h>
@@ -353,6 +361,10 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeBandwidthPackagesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCcnAttachedInstancesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCcnAttachedInstancesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeCcnPolicyBasedRoutingNextHopRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeCcnPolicyBasedRoutingNextHopResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeCcnPolicyBasedRoutingRuleRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeCcnPolicyBasedRoutingRuleResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCcnRegionBandwidthLimitsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCcnRegionBandwidthLimitsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCcnRouteTableBroadcastPolicysRequest.h>
@@ -671,6 +683,10 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyCcnAttachedInstancesAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyCcnAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyCcnAttributeResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyCcnPolicyBasedRoutingNextHopAttributeRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyCcnPolicyBasedRoutingNextHopAttributeResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyCcnPolicyBasedRoutingRuleAttributeRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyCcnPolicyBasedRoutingRuleAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyCcnRegionBandwidthLimitsTypeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyCcnRegionBandwidthLimitsTypeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyCcnRouteTablesRequest.h>
@@ -1025,6 +1041,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCcnResponse> CreateCcnOutcome;
                 typedef std::future<CreateCcnOutcome> CreateCcnOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateCcnRequest&, CreateCcnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCcnAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCcnPolicyBasedRoutingNextHopResponse> CreateCcnPolicyBasedRoutingNextHopOutcome;
+                typedef std::future<CreateCcnPolicyBasedRoutingNextHopOutcome> CreateCcnPolicyBasedRoutingNextHopOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateCcnPolicyBasedRoutingNextHopRequest&, CreateCcnPolicyBasedRoutingNextHopOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCcnPolicyBasedRoutingNextHopAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCcnPolicyBasedRoutingRulesResponse> CreateCcnPolicyBasedRoutingRulesOutcome;
+                typedef std::future<CreateCcnPolicyBasedRoutingRulesOutcome> CreateCcnPolicyBasedRoutingRulesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateCcnPolicyBasedRoutingRulesRequest&, CreateCcnPolicyBasedRoutingRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCcnPolicyBasedRoutingRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCcnRouteTablesResponse> CreateCcnRouteTablesOutcome;
                 typedef std::future<CreateCcnRouteTablesOutcome> CreateCcnRouteTablesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateCcnRouteTablesRequest&, CreateCcnRouteTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCcnRouteTablesAsyncHandler;
@@ -1202,6 +1224,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCcnResponse> DeleteCcnOutcome;
                 typedef std::future<DeleteCcnOutcome> DeleteCcnOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteCcnRequest&, DeleteCcnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCcnAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCcnPolicyBasedRoutingNextHopResponse> DeleteCcnPolicyBasedRoutingNextHopOutcome;
+                typedef std::future<DeleteCcnPolicyBasedRoutingNextHopOutcome> DeleteCcnPolicyBasedRoutingNextHopOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteCcnPolicyBasedRoutingNextHopRequest&, DeleteCcnPolicyBasedRoutingNextHopOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCcnPolicyBasedRoutingNextHopAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCcnPolicyBasedRoutingRuleResponse> DeleteCcnPolicyBasedRoutingRuleOutcome;
+                typedef std::future<DeleteCcnPolicyBasedRoutingRuleOutcome> DeleteCcnPolicyBasedRoutingRuleOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteCcnPolicyBasedRoutingRuleRequest&, DeleteCcnPolicyBasedRoutingRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCcnPolicyBasedRoutingRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCcnRouteTablesResponse> DeleteCcnRouteTablesOutcome;
                 typedef std::future<DeleteCcnRouteTablesOutcome> DeleteCcnRouteTablesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteCcnRouteTablesRequest&, DeleteCcnRouteTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCcnRouteTablesAsyncHandler;
@@ -1400,6 +1428,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCcnAttachedInstancesResponse> DescribeCcnAttachedInstancesOutcome;
                 typedef std::future<DescribeCcnAttachedInstancesOutcome> DescribeCcnAttachedInstancesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeCcnAttachedInstancesRequest&, DescribeCcnAttachedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCcnAttachedInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCcnPolicyBasedRoutingNextHopResponse> DescribeCcnPolicyBasedRoutingNextHopOutcome;
+                typedef std::future<DescribeCcnPolicyBasedRoutingNextHopOutcome> DescribeCcnPolicyBasedRoutingNextHopOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeCcnPolicyBasedRoutingNextHopRequest&, DescribeCcnPolicyBasedRoutingNextHopOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCcnPolicyBasedRoutingNextHopAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCcnPolicyBasedRoutingRuleResponse> DescribeCcnPolicyBasedRoutingRuleOutcome;
+                typedef std::future<DescribeCcnPolicyBasedRoutingRuleOutcome> DescribeCcnPolicyBasedRoutingRuleOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeCcnPolicyBasedRoutingRuleRequest&, DescribeCcnPolicyBasedRoutingRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCcnPolicyBasedRoutingRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCcnRegionBandwidthLimitsResponse> DescribeCcnRegionBandwidthLimitsOutcome;
                 typedef std::future<DescribeCcnRegionBandwidthLimitsOutcome> DescribeCcnRegionBandwidthLimitsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeCcnRegionBandwidthLimitsRequest&, DescribeCcnRegionBandwidthLimitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCcnRegionBandwidthLimitsAsyncHandler;
@@ -1877,6 +1911,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCcnAttributeResponse> ModifyCcnAttributeOutcome;
                 typedef std::future<ModifyCcnAttributeOutcome> ModifyCcnAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyCcnAttributeRequest&, ModifyCcnAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCcnAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCcnPolicyBasedRoutingNextHopAttributeResponse> ModifyCcnPolicyBasedRoutingNextHopAttributeOutcome;
+                typedef std::future<ModifyCcnPolicyBasedRoutingNextHopAttributeOutcome> ModifyCcnPolicyBasedRoutingNextHopAttributeOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyCcnPolicyBasedRoutingNextHopAttributeRequest&, ModifyCcnPolicyBasedRoutingNextHopAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCcnPolicyBasedRoutingNextHopAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCcnPolicyBasedRoutingRuleAttributeResponse> ModifyCcnPolicyBasedRoutingRuleAttributeOutcome;
+                typedef std::future<ModifyCcnPolicyBasedRoutingRuleAttributeOutcome> ModifyCcnPolicyBasedRoutingRuleAttributeOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyCcnPolicyBasedRoutingRuleAttributeRequest&, ModifyCcnPolicyBasedRoutingRuleAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCcnPolicyBasedRoutingRuleAttributeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCcnRegionBandwidthLimitsTypeResponse> ModifyCcnRegionBandwidthLimitsTypeOutcome;
                 typedef std::future<ModifyCcnRegionBandwidthLimitsTypeOutcome> ModifyCcnRegionBandwidthLimitsTypeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyCcnRegionBandwidthLimitsTypeRequest&, ModifyCcnRegionBandwidthLimitsTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCcnRegionBandwidthLimitsTypeAsyncHandler;
@@ -2635,6 +2675,24 @@ namespace TencentCloud
                 CreateCcnOutcomeCallable CreateCcnCallable(const Model::CreateCcnRequest& request);
 
                 /**
+                 *创建云联网策略路由下一跳
+                 * @param req CreateCcnPolicyBasedRoutingNextHopRequest
+                 * @return CreateCcnPolicyBasedRoutingNextHopOutcome
+                 */
+                CreateCcnPolicyBasedRoutingNextHopOutcome CreateCcnPolicyBasedRoutingNextHop(const Model::CreateCcnPolicyBasedRoutingNextHopRequest &request);
+                void CreateCcnPolicyBasedRoutingNextHopAsync(const Model::CreateCcnPolicyBasedRoutingNextHopRequest& request, const CreateCcnPolicyBasedRoutingNextHopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCcnPolicyBasedRoutingNextHopOutcomeCallable CreateCcnPolicyBasedRoutingNextHopCallable(const Model::CreateCcnPolicyBasedRoutingNextHopRequest& request);
+
+                /**
+                 *创建云联网策略路由匹配规则
+                 * @param req CreateCcnPolicyBasedRoutingRulesRequest
+                 * @return CreateCcnPolicyBasedRoutingRulesOutcome
+                 */
+                CreateCcnPolicyBasedRoutingRulesOutcome CreateCcnPolicyBasedRoutingRules(const Model::CreateCcnPolicyBasedRoutingRulesRequest &request);
+                void CreateCcnPolicyBasedRoutingRulesAsync(const Model::CreateCcnPolicyBasedRoutingRulesRequest& request, const CreateCcnPolicyBasedRoutingRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCcnPolicyBasedRoutingRulesOutcomeCallable CreateCcnPolicyBasedRoutingRulesCallable(const Model::CreateCcnPolicyBasedRoutingRulesRequest& request);
+
+                /**
                  *本接口（CreateCcnRouteTables）用于给指定的云联网实例新建路由表。
                  * @param req CreateCcnRouteTablesRequest
                  * @return CreateCcnRouteTablesOutcome
@@ -3242,6 +3300,24 @@ namespace TencentCloud
                 DeleteCcnOutcome DeleteCcn(const Model::DeleteCcnRequest &request);
                 void DeleteCcnAsync(const Model::DeleteCcnRequest& request, const DeleteCcnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteCcnOutcomeCallable DeleteCcnCallable(const Model::DeleteCcnRequest& request);
+
+                /**
+                 *删除云联网策略路由下一跳
+                 * @param req DeleteCcnPolicyBasedRoutingNextHopRequest
+                 * @return DeleteCcnPolicyBasedRoutingNextHopOutcome
+                 */
+                DeleteCcnPolicyBasedRoutingNextHopOutcome DeleteCcnPolicyBasedRoutingNextHop(const Model::DeleteCcnPolicyBasedRoutingNextHopRequest &request);
+                void DeleteCcnPolicyBasedRoutingNextHopAsync(const Model::DeleteCcnPolicyBasedRoutingNextHopRequest& request, const DeleteCcnPolicyBasedRoutingNextHopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCcnPolicyBasedRoutingNextHopOutcomeCallable DeleteCcnPolicyBasedRoutingNextHopCallable(const Model::DeleteCcnPolicyBasedRoutingNextHopRequest& request);
+
+                /**
+                 *删除云联网策略路由匹配规则
+                 * @param req DeleteCcnPolicyBasedRoutingRuleRequest
+                 * @return DeleteCcnPolicyBasedRoutingRuleOutcome
+                 */
+                DeleteCcnPolicyBasedRoutingRuleOutcome DeleteCcnPolicyBasedRoutingRule(const Model::DeleteCcnPolicyBasedRoutingRuleRequest &request);
+                void DeleteCcnPolicyBasedRoutingRuleAsync(const Model::DeleteCcnPolicyBasedRoutingRuleRequest& request, const DeleteCcnPolicyBasedRoutingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCcnPolicyBasedRoutingRuleOutcomeCallable DeleteCcnPolicyBasedRoutingRuleCallable(const Model::DeleteCcnPolicyBasedRoutingRuleRequest& request);
 
                 /**
                  *本接口（DeleteCcnRouteTables）用于删除云联网路由表。
@@ -3865,6 +3941,24 @@ namespace TencentCloud
                 DescribeCcnAttachedInstancesOutcome DescribeCcnAttachedInstances(const Model::DescribeCcnAttachedInstancesRequest &request);
                 void DescribeCcnAttachedInstancesAsync(const Model::DescribeCcnAttachedInstancesRequest& request, const DescribeCcnAttachedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCcnAttachedInstancesOutcomeCallable DescribeCcnAttachedInstancesCallable(const Model::DescribeCcnAttachedInstancesRequest& request);
+
+                /**
+                 *查询云联网策略路由下一跳
+                 * @param req DescribeCcnPolicyBasedRoutingNextHopRequest
+                 * @return DescribeCcnPolicyBasedRoutingNextHopOutcome
+                 */
+                DescribeCcnPolicyBasedRoutingNextHopOutcome DescribeCcnPolicyBasedRoutingNextHop(const Model::DescribeCcnPolicyBasedRoutingNextHopRequest &request);
+                void DescribeCcnPolicyBasedRoutingNextHopAsync(const Model::DescribeCcnPolicyBasedRoutingNextHopRequest& request, const DescribeCcnPolicyBasedRoutingNextHopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCcnPolicyBasedRoutingNextHopOutcomeCallable DescribeCcnPolicyBasedRoutingNextHopCallable(const Model::DescribeCcnPolicyBasedRoutingNextHopRequest& request);
+
+                /**
+                 *查询云联网策略路由匹配规则
+                 * @param req DescribeCcnPolicyBasedRoutingRuleRequest
+                 * @return DescribeCcnPolicyBasedRoutingRuleOutcome
+                 */
+                DescribeCcnPolicyBasedRoutingRuleOutcome DescribeCcnPolicyBasedRoutingRule(const Model::DescribeCcnPolicyBasedRoutingRuleRequest &request);
+                void DescribeCcnPolicyBasedRoutingRuleAsync(const Model::DescribeCcnPolicyBasedRoutingRuleRequest& request, const DescribeCcnPolicyBasedRoutingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCcnPolicyBasedRoutingRuleOutcomeCallable DescribeCcnPolicyBasedRoutingRuleCallable(const Model::DescribeCcnPolicyBasedRoutingRuleRequest& request);
 
                 /**
                  *本接口（DescribeCcnRegionBandwidthLimits）用于查询云联网各地域出带宽上限，该接口只返回已关联网络实例包含的地域。
@@ -5390,6 +5484,24 @@ LimitTypes取值范围：
                 ModifyCcnAttributeOutcome ModifyCcnAttribute(const Model::ModifyCcnAttributeRequest &request);
                 void ModifyCcnAttributeAsync(const Model::ModifyCcnAttributeRequest& request, const ModifyCcnAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCcnAttributeOutcomeCallable ModifyCcnAttributeCallable(const Model::ModifyCcnAttributeRequest& request);
+
+                /**
+                 *更新云联网策略路由下一跳参数
+                 * @param req ModifyCcnPolicyBasedRoutingNextHopAttributeRequest
+                 * @return ModifyCcnPolicyBasedRoutingNextHopAttributeOutcome
+                 */
+                ModifyCcnPolicyBasedRoutingNextHopAttributeOutcome ModifyCcnPolicyBasedRoutingNextHopAttribute(const Model::ModifyCcnPolicyBasedRoutingNextHopAttributeRequest &request);
+                void ModifyCcnPolicyBasedRoutingNextHopAttributeAsync(const Model::ModifyCcnPolicyBasedRoutingNextHopAttributeRequest& request, const ModifyCcnPolicyBasedRoutingNextHopAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCcnPolicyBasedRoutingNextHopAttributeOutcomeCallable ModifyCcnPolicyBasedRoutingNextHopAttributeCallable(const Model::ModifyCcnPolicyBasedRoutingNextHopAttributeRequest& request);
+
+                /**
+                 *更新云联网策略路由匹配规则参数
+                 * @param req ModifyCcnPolicyBasedRoutingRuleAttributeRequest
+                 * @return ModifyCcnPolicyBasedRoutingRuleAttributeOutcome
+                 */
+                ModifyCcnPolicyBasedRoutingRuleAttributeOutcome ModifyCcnPolicyBasedRoutingRuleAttribute(const Model::ModifyCcnPolicyBasedRoutingRuleAttributeRequest &request);
+                void ModifyCcnPolicyBasedRoutingRuleAttributeAsync(const Model::ModifyCcnPolicyBasedRoutingRuleAttributeRequest& request, const ModifyCcnPolicyBasedRoutingRuleAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCcnPolicyBasedRoutingRuleAttributeOutcomeCallable ModifyCcnPolicyBasedRoutingRuleAttributeCallable(const Model::ModifyCcnPolicyBasedRoutingRuleAttributeRequest& request);
 
                 /**
                  *本接口（ModifyCcnRegionBandwidthLimitsType）用于修改后付费云联网实例修改带宽限速策略。

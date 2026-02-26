@@ -25,8 +25,14 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/monitor/v20230616/model/CreateNoticeContentTmplRequest.h>
 #include <tencentcloud/monitor/v20230616/model/CreateNoticeContentTmplResponse.h>
+#include <tencentcloud/monitor/v20230616/model/DeleteNoticeContentTmplsRequest.h>
+#include <tencentcloud/monitor/v20230616/model/DeleteNoticeContentTmplsResponse.h>
 #include <tencentcloud/monitor/v20230616/model/DescribeAlarmNotifyHistoriesRequest.h>
 #include <tencentcloud/monitor/v20230616/model/DescribeAlarmNotifyHistoriesResponse.h>
+#include <tencentcloud/monitor/v20230616/model/DescribeNoticeContentTmplRequest.h>
+#include <tencentcloud/monitor/v20230616/model/DescribeNoticeContentTmplResponse.h>
+#include <tencentcloud/monitor/v20230616/model/ModifyNoticeContentTmplRequest.h>
+#include <tencentcloud/monitor/v20230616/model/ModifyNoticeContentTmplResponse.h>
 
 
 namespace TencentCloud
@@ -44,9 +50,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateNoticeContentTmplResponse> CreateNoticeContentTmplOutcome;
                 typedef std::future<CreateNoticeContentTmplOutcome> CreateNoticeContentTmplOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreateNoticeContentTmplRequest&, CreateNoticeContentTmplOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNoticeContentTmplAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteNoticeContentTmplsResponse> DeleteNoticeContentTmplsOutcome;
+                typedef std::future<DeleteNoticeContentTmplsOutcome> DeleteNoticeContentTmplsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DeleteNoticeContentTmplsRequest&, DeleteNoticeContentTmplsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNoticeContentTmplsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAlarmNotifyHistoriesResponse> DescribeAlarmNotifyHistoriesOutcome;
                 typedef std::future<DescribeAlarmNotifyHistoriesOutcome> DescribeAlarmNotifyHistoriesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeAlarmNotifyHistoriesRequest&, DescribeAlarmNotifyHistoriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmNotifyHistoriesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNoticeContentTmplResponse> DescribeNoticeContentTmplOutcome;
+                typedef std::future<DescribeNoticeContentTmplOutcome> DescribeNoticeContentTmplOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeNoticeContentTmplRequest&, DescribeNoticeContentTmplOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNoticeContentTmplAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyNoticeContentTmplResponse> ModifyNoticeContentTmplOutcome;
+                typedef std::future<ModifyNoticeContentTmplOutcome> ModifyNoticeContentTmplOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::ModifyNoticeContentTmplRequest&, ModifyNoticeContentTmplOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNoticeContentTmplAsyncHandler;
 
 
 
@@ -60,6 +75,15 @@ namespace TencentCloud
                 CreateNoticeContentTmplOutcomeCallable CreateNoticeContentTmplCallable(const Model::CreateNoticeContentTmplRequest& request);
 
                 /**
+                 *删除通知内容模板
+                 * @param req DeleteNoticeContentTmplsRequest
+                 * @return DeleteNoticeContentTmplsOutcome
+                 */
+                DeleteNoticeContentTmplsOutcome DeleteNoticeContentTmpls(const Model::DeleteNoticeContentTmplsRequest &request);
+                void DeleteNoticeContentTmplsAsync(const Model::DeleteNoticeContentTmplsRequest& request, const DeleteNoticeContentTmplsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteNoticeContentTmplsOutcomeCallable DeleteNoticeContentTmplsCallable(const Model::DeleteNoticeContentTmplsRequest& request);
+
+                /**
                  *按需查询告警的通知历史
                  * @param req DescribeAlarmNotifyHistoriesRequest
                  * @return DescribeAlarmNotifyHistoriesOutcome
@@ -67,6 +91,24 @@ namespace TencentCloud
                 DescribeAlarmNotifyHistoriesOutcome DescribeAlarmNotifyHistories(const Model::DescribeAlarmNotifyHistoriesRequest &request);
                 void DescribeAlarmNotifyHistoriesAsync(const Model::DescribeAlarmNotifyHistoriesRequest& request, const DescribeAlarmNotifyHistoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAlarmNotifyHistoriesOutcomeCallable DescribeAlarmNotifyHistoriesCallable(const Model::DescribeAlarmNotifyHistoriesRequest& request);
+
+                /**
+                 *根据查询条件获取自定义通知内容模板，若所有查询条件空，则获取账号下所有模板
+                 * @param req DescribeNoticeContentTmplRequest
+                 * @return DescribeNoticeContentTmplOutcome
+                 */
+                DescribeNoticeContentTmplOutcome DescribeNoticeContentTmpl(const Model::DescribeNoticeContentTmplRequest &request);
+                void DescribeNoticeContentTmplAsync(const Model::DescribeNoticeContentTmplRequest& request, const DescribeNoticeContentTmplAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNoticeContentTmplOutcomeCallable DescribeNoticeContentTmplCallable(const Model::DescribeNoticeContentTmplRequest& request);
+
+                /**
+                 *修改通知内容模板
+                 * @param req ModifyNoticeContentTmplRequest
+                 * @return ModifyNoticeContentTmplOutcome
+                 */
+                ModifyNoticeContentTmplOutcome ModifyNoticeContentTmpl(const Model::ModifyNoticeContentTmplRequest &request);
+                void ModifyNoticeContentTmplAsync(const Model::ModifyNoticeContentTmplRequest& request, const ModifyNoticeContentTmplAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNoticeContentTmplOutcomeCallable ModifyNoticeContentTmplCallable(const Model::ModifyNoticeContentTmplRequest& request);
 
             };
         }

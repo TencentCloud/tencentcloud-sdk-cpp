@@ -45,12 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取相似度。
-- 取值范围 [0.00, 100.00]。
-- 推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）。
-                     * @return Sim 相似度。
-- 取值范围 [0.00, 100.00]。
-- 推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）。
+                     * 获取<p>相似度。- 取值范围 [0.00, 100.00]。- 推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为万分之一）。</p>
+                     * @return Sim <p>相似度。- 取值范围 [0.00, 100.00]。- 推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为万分之一）。</p>
                      * 
                      */
                     double GetSim() const;
@@ -63,8 +59,8 @@ namespace TencentCloud
                     bool SimHasBeenSet() const;
 
                     /**
-                     * 获取业务错误码。- 成功情况返回Success。- 错误情况请参考下方错误码 列表中FailedOperation部分
-                     * @return Result 业务错误码。- 成功情况返回Success。- 错误情况请参考下方错误码 列表中FailedOperation部分
+                     * 获取<p>业务错误码。- 成功情况返回Success。- 错误情况请参考下方错误码 列表中FailedOperation部分</p>
+                     * @return Result <p>业务错误码。- 成功情况返回Success。- 错误情况请参考下方错误码 列表中FailedOperation部分</p>
                      * 
                      */
                     std::string GetResult() const;
@@ -77,8 +73,8 @@ namespace TencentCloud
                     bool ResultHasBeenSet() const;
 
                     /**
-                     * 获取业务结果描述。
-                     * @return Description 业务结果描述。
+                     * 获取<p>业务结果描述。</p>
+                     * @return Description <p>业务结果描述。</p>
                      * 
                      */
                     std::string GetDescription() const;
@@ -91,8 +87,8 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取姓名。
-                     * @return Name 姓名。
+                     * 获取<p>姓名。</p>
+                     * @return Name <p>姓名。</p>
                      * 
                      */
                     std::string GetName() const;
@@ -105,8 +101,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取性别。
-                     * @return Sex 性别。
+                     * 获取<p>性别。</p>
+                     * @return Sex <p>性别。</p>
                      * 
                      */
                     std::string GetSex() const;
@@ -119,8 +115,8 @@ namespace TencentCloud
                     bool SexHasBeenSet() const;
 
                     /**
-                     * 获取民族。
-                     * @return Nation 民族。
+                     * 获取<p>民族。</p>
+                     * @return Nation <p>民族。</p>
                      * 
                      */
                     std::string GetNation() const;
@@ -133,8 +129,8 @@ namespace TencentCloud
                     bool NationHasBeenSet() const;
 
                     /**
-                     * 获取出生日期。
-                     * @return Birth 出生日期。
+                     * 获取<p>出生日期。</p>
+                     * @return Birth <p>出生日期。</p>
                      * 
                      */
                     std::string GetBirth() const;
@@ -147,8 +143,8 @@ namespace TencentCloud
                     bool BirthHasBeenSet() const;
 
                     /**
-                     * 获取地址。
-                     * @return Address 地址。
+                     * 获取<p>地址。</p>
+                     * @return Address <p>地址。</p>
                      * 
                      */
                     std::string GetAddress() const;
@@ -161,8 +157,8 @@ namespace TencentCloud
                     bool AddressHasBeenSet() const;
 
                     /**
-                     * 获取身份证号。
-                     * @return IdNum 身份证号。
+                     * 获取<p>身份证号。</p>
+                     * @return IdNum <p>身份证号。</p>
                      * 
                      */
                     std::string GetIdNum() const;
@@ -175,8 +171,8 @@ namespace TencentCloud
                     bool IdNumHasBeenSet() const;
 
                     /**
-                     * 获取身份证头像照片的base64编码，如果抠图失败会拿整张身份证做比对并返回空。
-                     * @return Portrait 身份证头像照片的base64编码，如果抠图失败会拿整张身份证做比对并返回空。
+                     * 获取<p>身份证头像照片的base64编码，如果抠图失败会拿整张身份证做比对并返回空。</p>
+                     * @return Portrait <p>身份证头像照片的base64编码，如果抠图失败会拿整张身份证做比对并返回空。</p>
                      * 
                      */
                     std::string GetPortrait() const;
@@ -189,30 +185,8 @@ namespace TencentCloud
                     bool PortraitHasBeenSet() const;
 
                     /**
-                     * 获取告警信息。
-- 当在Config中配置了告警信息会停止人像比对，Result返回错误（FailedOperation.OcrWarningOccurred）并有此告警信息。
-- Code 告警码列表和释义：
-'-9101'：身份证边框不完整告警。
-'-9102'：身份证复印件告警。
-'-9103'：身份证翻拍告警。
-'-9105'：身份证框内遮挡告警。
-'-9104'：临时身份证告警。
-'-9106'：身份证 PS 告警（疑似存在PS痕迹）。
-'-8001'：图片模糊告警。
-
-- 多个会用“|” 隔开，如 "-9101|-9106|-9104"。
-                     * @return Warnings 告警信息。
-- 当在Config中配置了告警信息会停止人像比对，Result返回错误（FailedOperation.OcrWarningOccurred）并有此告警信息。
-- Code 告警码列表和释义：
-'-9101'：身份证边框不完整告警。
-'-9102'：身份证复印件告警。
-'-9103'：身份证翻拍告警。
-'-9105'：身份证框内遮挡告警。
-'-9104'：临时身份证告警。
-'-9106'：身份证 PS 告警（疑似存在PS痕迹）。
-'-8001'：图片模糊告警。
-
-- 多个会用“|” 隔开，如 "-9101|-9106|-9104"。
+                     * 获取<p>告警信息。</p><ul><li><p>当在Config中配置了告警信息会停止人像比对，Result返回错误（FailedOperation.OcrWarningOccurred）并有此告警信息。</p></li><li><p>Code 告警码列表和释义：<br>&#39;-9101&#39;：身份证边框不完整告警。<br>&#39;-9102&#39;：身份证复印件告警。<br>&#39;-9103&#39;：身份证翻拍告警。<br>&#39;-9105&#39;：身份证框内遮挡告警。<br>&#39;-9104&#39;：临时身份证告警。<br>&#39;-9106&#39;：身份证 PS 告警（疑似存在PS痕迹）。<br>&#39;-8001&#39;：图片模糊告警。</p></li><li><p>多个会用“|” 隔开，如 &quot;-9101|-9106|-9104&quot;。</p></li></ul>
+                     * @return Warnings <p>告警信息。</p><ul><li><p>当在Config中配置了告警信息会停止人像比对，Result返回错误（FailedOperation.OcrWarningOccurred）并有此告警信息。</p></li><li><p>Code 告警码列表和释义：<br>&#39;-9101&#39;：身份证边框不完整告警。<br>&#39;-9102&#39;：身份证复印件告警。<br>&#39;-9103&#39;：身份证翻拍告警。<br>&#39;-9105&#39;：身份证框内遮挡告警。<br>&#39;-9104&#39;：临时身份证告警。<br>&#39;-9106&#39;：身份证 PS 告警（疑似存在PS痕迹）。<br>&#39;-8001&#39;：图片模糊告警。</p></li><li><p>多个会用“|” 隔开，如 &quot;-9101|-9106|-9104&quot;。</p></li></ul>
                      * 
                      */
                     std::string GetWarnings() const;
@@ -225,12 +199,8 @@ namespace TencentCloud
                     bool WarningsHasBeenSet() const;
 
                     /**
-                     * 获取图片质量分数。
-- 当请求Config中配置图片模糊告警该参数才有意义。
-- 取值范围（0～100），目前默认阈值是50分，低于50分会触发模糊告警。
-                     * @return Quality 图片质量分数。
-- 当请求Config中配置图片模糊告警该参数才有意义。
-- 取值范围（0～100），目前默认阈值是50分，低于50分会触发模糊告警。
+                     * 获取<p>图片质量分数。</p><ul><li>当请求Config中配置图片模糊告警该参数才有意义。</li><li>取值范围（0～100），目前默认阈值是50分，低于50分会触发模糊告警。</li></ul>
+                     * @return Quality <p>图片质量分数。</p><ul><li>当请求Config中配置图片模糊告警该参数才有意义。</li><li>取值范围（0～100），目前默认阈值是50分，低于50分会触发模糊告警。</li></ul>
                      * 
                      */
                     double GetQuality() const;
@@ -243,9 +213,9 @@ namespace TencentCloud
                     bool QualityHasBeenSet() const;
 
                     /**
-                     * 获取敏感数据加密信息。
+                     * 获取<p>敏感数据加密信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Encryption 敏感数据加密信息。
+                     * @return Encryption <p>敏感数据加密信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -259,8 +229,8 @@ namespace TencentCloud
                     bool EncryptionHasBeenSet() const;
 
                     /**
-                     * 获取加密后的数据。
-                     * @return EncryptedBody 加密后的数据。
+                     * 获取<p>加密后的数据。</p>
+                     * @return EncryptedBody <p>加密后的数据。</p>
                      * 
                      */
                     std::string GetEncryptedBody() const;
@@ -275,101 +245,86 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 相似度。
-- 取值范围 [0.00, 100.00]。
-- 推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）。
+                     * <p>相似度。- 取值范围 [0.00, 100.00]。- 推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为万分之一）。</p>
                      */
                     double m_sim;
                     bool m_simHasBeenSet;
 
                     /**
-                     * 业务错误码。- 成功情况返回Success。- 错误情况请参考下方错误码 列表中FailedOperation部分
+                     * <p>业务错误码。- 成功情况返回Success。- 错误情况请参考下方错误码 列表中FailedOperation部分</p>
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
 
                     /**
-                     * 业务结果描述。
+                     * <p>业务结果描述。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 姓名。
+                     * <p>姓名。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 性别。
+                     * <p>性别。</p>
                      */
                     std::string m_sex;
                     bool m_sexHasBeenSet;
 
                     /**
-                     * 民族。
+                     * <p>民族。</p>
                      */
                     std::string m_nation;
                     bool m_nationHasBeenSet;
 
                     /**
-                     * 出生日期。
+                     * <p>出生日期。</p>
                      */
                     std::string m_birth;
                     bool m_birthHasBeenSet;
 
                     /**
-                     * 地址。
+                     * <p>地址。</p>
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;
 
                     /**
-                     * 身份证号。
+                     * <p>身份证号。</p>
                      */
                     std::string m_idNum;
                     bool m_idNumHasBeenSet;
 
                     /**
-                     * 身份证头像照片的base64编码，如果抠图失败会拿整张身份证做比对并返回空。
+                     * <p>身份证头像照片的base64编码，如果抠图失败会拿整张身份证做比对并返回空。</p>
                      */
                     std::string m_portrait;
                     bool m_portraitHasBeenSet;
 
                     /**
-                     * 告警信息。
-- 当在Config中配置了告警信息会停止人像比对，Result返回错误（FailedOperation.OcrWarningOccurred）并有此告警信息。
-- Code 告警码列表和释义：
-'-9101'：身份证边框不完整告警。
-'-9102'：身份证复印件告警。
-'-9103'：身份证翻拍告警。
-'-9105'：身份证框内遮挡告警。
-'-9104'：临时身份证告警。
-'-9106'：身份证 PS 告警（疑似存在PS痕迹）。
-'-8001'：图片模糊告警。
-
-- 多个会用“|” 隔开，如 "-9101|-9106|-9104"。
+                     * <p>告警信息。</p><ul><li><p>当在Config中配置了告警信息会停止人像比对，Result返回错误（FailedOperation.OcrWarningOccurred）并有此告警信息。</p></li><li><p>Code 告警码列表和释义：<br>&#39;-9101&#39;：身份证边框不完整告警。<br>&#39;-9102&#39;：身份证复印件告警。<br>&#39;-9103&#39;：身份证翻拍告警。<br>&#39;-9105&#39;：身份证框内遮挡告警。<br>&#39;-9104&#39;：临时身份证告警。<br>&#39;-9106&#39;：身份证 PS 告警（疑似存在PS痕迹）。<br>&#39;-8001&#39;：图片模糊告警。</p></li><li><p>多个会用“|” 隔开，如 &quot;-9101|-9106|-9104&quot;。</p></li></ul>
                      */
                     std::string m_warnings;
                     bool m_warningsHasBeenSet;
 
                     /**
-                     * 图片质量分数。
-- 当请求Config中配置图片模糊告警该参数才有意义。
-- 取值范围（0～100），目前默认阈值是50分，低于50分会触发模糊告警。
+                     * <p>图片质量分数。</p><ul><li>当请求Config中配置图片模糊告警该参数才有意义。</li><li>取值范围（0～100），目前默认阈值是50分，低于50分会触发模糊告警。</li></ul>
                      */
                     double m_quality;
                     bool m_qualityHasBeenSet;
 
                     /**
-                     * 敏感数据加密信息。
+                     * <p>敏感数据加密信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Encryption m_encryption;
                     bool m_encryptionHasBeenSet;
 
                     /**
-                     * 加密后的数据。
+                     * <p>加密后的数据。</p>
                      */
                     std::string m_encryptedBody;
                     bool m_encryptedBodyHasBeenSet;

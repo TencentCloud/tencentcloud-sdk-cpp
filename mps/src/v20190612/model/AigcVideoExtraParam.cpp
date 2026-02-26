@@ -25,7 +25,8 @@ AigcVideoExtraParam::AigcVideoExtraParam() :
     m_aspectRatioHasBeenSet(false),
     m_logoAddHasBeenSet(false),
     m_enableAudioHasBeenSet(false),
-    m_offPeakHasBeenSet(false)
+    m_offPeakHasBeenSet(false),
+    m_enableBgmHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome AigcVideoExtraParam::Deserialize(const rapidjson::Value &val
         m_offPeakHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableBgm") && !value["EnableBgm"].IsNull())
+    {
+        if (!value["EnableBgm"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoExtraParam.EnableBgm` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableBgm = value["EnableBgm"].GetBool();
+        m_enableBgmHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void AigcVideoExtraParam::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "OffPeak";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_offPeak, allocator);
+    }
+
+    if (m_enableBgmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableBgm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableBgm, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void AigcVideoExtraParam::SetOffPeak(const bool& _offPeak)
 bool AigcVideoExtraParam::OffPeakHasBeenSet() const
 {
     return m_offPeakHasBeenSet;
+}
+
+bool AigcVideoExtraParam::GetEnableBgm() const
+{
+    return m_enableBgm;
+}
+
+void AigcVideoExtraParam::SetEnableBgm(const bool& _enableBgm)
+{
+    m_enableBgm = _enableBgm;
+    m_enableBgmHasBeenSet = true;
+}
+
+bool AigcVideoExtraParam::EnableBgmHasBeenSet() const
+{
+    return m_enableBgmHasBeenSet;
 }
 

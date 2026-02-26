@@ -262,6 +262,81 @@ namespace TencentCloud
                      */
                     bool TableGuidHasBeenSet() const;
 
+                    /**
+                     * 获取Catalog名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CatalogName Catalog名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCatalogName() const;
+
+                    /**
+                     * 设置Catalog名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _catalogName Catalog名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCatalogName(const std::string& _catalogName);
+
+                    /**
+                     * 判断参数 CatalogName 是否已赋值
+                     * @return CatalogName 是否已赋值
+                     * 
+                     */
+                    bool CatalogNameHasBeenSet() const;
+
+                    /**
+                     * 获取数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatasourceName 数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatasourceName() const;
+
+                    /**
+                     * 设置数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _datasourceName 数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatasourceName(const std::string& _datasourceName);
+
+                    /**
+                     * 判断参数 DatasourceName 是否已赋值
+                     * @return DatasourceName 是否已赋值
+                     * 
+                     */
+                    bool DatasourceNameHasBeenSet() const;
+
+                    /**
+                     * 获取Catalog(如有).数据库(如有).表名名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QualifiedName Catalog(如有).数据库(如有).表名名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetQualifiedName() const;
+
+                    /**
+                     * 设置Catalog(如有).数据库(如有).表名名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _qualifiedName Catalog(如有).数据库(如有).表名名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetQualifiedName(const std::string& _qualifiedName);
+
+                    /**
+                     * 判断参数 QualifiedName 是否已赋值
+                     * @return QualifiedName 是否已赋值
+                     * 
+                     */
+                    bool QualifiedNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -323,6 +398,27 @@ namespace TencentCloud
                      */
                     std::string m_tableGuid;
                     bool m_tableGuidHasBeenSet;
+
+                    /**
+                     * Catalog名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_catalogName;
+                    bool m_catalogNameHasBeenSet;
+
+                    /**
+                     * 数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_datasourceName;
+                    bool m_datasourceNameHasBeenSet;
+
+                    /**
+                     * Catalog(如有).数据库(如有).表名名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_qualifiedName;
+                    bool m_qualifiedNameHasBeenSet;
 
                 };
             }

@@ -45,6 +45,8 @@
 #include <tencentcloud/tcb/v20180608/model/CreateCloudBaseRunResourceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateCloudBaseRunServerVersionRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateCloudBaseRunServerVersionResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreateEnvRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreateEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateHostingDomainRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateHostingDomainResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateMySQLRequest.h>
@@ -195,12 +197,16 @@
 #include <tencentcloud/tcb/v20180608/model/ModifyDatabaseACLResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyEnvResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyEnvPlanRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyEnvPlanResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyGatewayVersionTrafficRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyGatewayVersionTrafficResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyUserRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyUserResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ReinstateEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ReinstateEnvResponse.h>
+#include <tencentcloud/tcb/v20180608/model/RenewEnvRequest.h>
+#include <tencentcloud/tcb/v20180608/model/RenewEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ReplaceActivityRecordRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ReplaceActivityRecordResponse.h>
 #include <tencentcloud/tcb/v20180608/model/RunSqlRequest.h>
@@ -258,6 +264,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCloudBaseRunServerVersionResponse> CreateCloudBaseRunServerVersionOutcome;
                 typedef std::future<CreateCloudBaseRunServerVersionOutcome> CreateCloudBaseRunServerVersionOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateCloudBaseRunServerVersionRequest&, CreateCloudBaseRunServerVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudBaseRunServerVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateEnvResponse> CreateEnvOutcome;
+                typedef std::future<CreateEnvOutcome> CreateEnvOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreateEnvRequest&, CreateEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEnvAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateHostingDomainResponse> CreateHostingDomainOutcome;
                 typedef std::future<CreateHostingDomainOutcome> CreateHostingDomainOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateHostingDomainRequest&, CreateHostingDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHostingDomainAsyncHandler;
@@ -483,6 +492,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyEnvResponse> ModifyEnvOutcome;
                 typedef std::future<ModifyEnvOutcome> ModifyEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyEnvRequest&, ModifyEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyEnvPlanResponse> ModifyEnvPlanOutcome;
+                typedef std::future<ModifyEnvPlanOutcome> ModifyEnvPlanOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ModifyEnvPlanRequest&, ModifyEnvPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvPlanAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyGatewayVersionTrafficResponse> ModifyGatewayVersionTrafficOutcome;
                 typedef std::future<ModifyGatewayVersionTrafficOutcome> ModifyGatewayVersionTrafficOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyGatewayVersionTrafficRequest&, ModifyGatewayVersionTrafficOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGatewayVersionTrafficAsyncHandler;
@@ -492,6 +504,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ReinstateEnvResponse> ReinstateEnvOutcome;
                 typedef std::future<ReinstateEnvOutcome> ReinstateEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ReinstateEnvRequest&, ReinstateEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReinstateEnvAsyncHandler;
+                typedef Outcome<Core::Error, Model::RenewEnvResponse> RenewEnvOutcome;
+                typedef std::future<RenewEnvOutcome> RenewEnvOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::RenewEnvRequest&, RenewEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewEnvAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReplaceActivityRecordResponse> ReplaceActivityRecordOutcome;
                 typedef std::future<ReplaceActivityRecordOutcome> ReplaceActivityRecordOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ReplaceActivityRecordRequest&, ReplaceActivityRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceActivityRecordAsyncHandler;
@@ -565,7 +580,12 @@ namespace TencentCloud
                 CreateAndDeployCloudBaseProjectOutcomeCallable CreateAndDeployCloudBaseProjectCallable(const Model::CreateAndDeployCloudBaseProjectRequest& request);
 
                 /**
-                 *增加安全域名
+                 *增加安全域名。
+云开发会校验网页应用请求的来源域名，您需要将来源域名加入到WEB安全域名列表中。
+可以通过接口 [DescribeAuthDomains](https://cloud.tencent.com/document/product/876/42151) 获取当前已绑定生效的安全域名。
+
+注意⚠️
+  安全域名绑定成功之后，需要几分钟时间逐步生效。
                  * @param req CreateAuthDomainRequest
                  * @return CreateAuthDomainOutcome
                  */
@@ -574,7 +594,15 @@ namespace TencentCloud
                 CreateAuthDomainOutcomeCallable CreateAuthDomainCallable(const Model::CreateAuthDomainRequest& request);
 
                 /**
-                 *创建云开发产品计费订单
+                 *创建云开发产品计费订单，用于以下几种场景：
+1. 购买云开发环境
+2. 续费云开发环境
+3. 变更云开发环境套餐
+4. 购买云开发资源包
+5. 购买云开发大促包
+
+该接口支持下单并支付(CreateAndPay=true时)，此时会自动在腾讯云账户中扣除余额（余额不足会下单失败）。
+该接口支持自动扣除代金券（AutoVoucher=true时），符合条件的代金券会被自动扣除。
                  * @param req CreateBillDealRequest
                  * @return CreateBillDealOutcome
                  */
@@ -608,6 +636,19 @@ namespace TencentCloud
                 CreateCloudBaseRunServerVersionOutcome CreateCloudBaseRunServerVersion(const Model::CreateCloudBaseRunServerVersionRequest &request);
                 void CreateCloudBaseRunServerVersionAsync(const Model::CreateCloudBaseRunServerVersionRequest& request, const CreateCloudBaseRunServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCloudBaseRunServerVersionOutcomeCallable CreateCloudBaseRunServerVersionCallable(const Model::CreateCloudBaseRunServerVersionRequest& request);
+
+                /**
+                 *本接口用于购买云开发环境。
+该接口会自动下单并支付，会在腾讯云账户中扣除余额（余额不足会下单失败）。
+该接口支持自动扣除代金券（AutoVoucher=true时），符合条件的代金券会被自动扣除。
+环境下单成功之后会返回EnvId。EnvId是全局唯一表示。
+环境发货是异步行为，后续可以通过接口 [DescribeEnvs ](https://cloud.tencent.com/document/product/876/34820) 查询环境状态和各项资源信息；通过 [DescribeBillingInfo](https://cloud.tencent.com/document/product/876/94390) 查询环境套餐信息，包括 到期时间、当前套餐等。
+                 * @param req CreateEnvRequest
+                 * @return CreateEnvOutcome
+                 */
+                CreateEnvOutcome CreateEnv(const Model::CreateEnvRequest &request);
+                void CreateEnvAsync(const Model::CreateEnvRequest& request, const CreateEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEnvOutcomeCallable CreateEnvCallable(const Model::CreateEnvRequest& request);
 
                 /**
                  *创建托管域名
@@ -745,7 +786,9 @@ namespace TencentCloud
                 DescribeActivityRecordOutcomeCallable DescribeActivityRecordCallable(const Model::DescribeActivityRecordRequest& request);
 
                 /**
-                 *获取安全域名列表
+                 *本接口用于获取当前环境的安全域名列表。
+云开发会校验网页应用请求的来源域名，您需要将来源域名加入到WEB安全域名列表中。
+可以通过接口 [CreateAuthDomain](https://cloud.tencent.com/document/product/876/42764) 增加安全域名。
                  * @param req DescribeAuthDomainsRequest
                  * @return DescribeAuthDomainsOutcome
                  */
@@ -880,7 +923,7 @@ namespace TencentCloud
                 DescribeCloudBaseRunVersionSnapshotOutcomeCallable DescribeCloudBaseRunVersionSnapshotCallable(const Model::DescribeCloudBaseRunVersionSnapshotRequest& request);
 
                 /**
-                 *查询开通Mysql结果
+                 *查询开通Mysql结果，Mysql开通成功后，可通过接口设置数据库账号相关功能包括但不限于【创建账号、删除账号、查询可授权权限列表、查询账号已有权限、修改主机、修改配置、修改账号库表权限】、集群操作相关【查询集群参数、修改集群参数】，连接设置相关【关闭外网、开通外网、查询集群信息】，备份回档相关【创建手动回档、删除手动回档、修改自动备份配置信息、查询备份文件列表、集群回档、查询任务列表、获取table列表、获取集群数据库列表、查询备份下载地址】，相关功能接口文档：[TDSQL-C MySQL API文档](https://cloud.tencent.com/document/product/1003/48106)
                  * @param req DescribeCreateMySQLResultRequest
                  * @return DescribeCreateMySQLResultOutcome
                  */
@@ -916,7 +959,16 @@ namespace TencentCloud
                 DescribeDownloadFileOutcomeCallable DescribeDownloadFileCallable(const Model::DescribeDownloadFileRequest& request);
 
                 /**
-                 *查询环境计费周期
+                 *查询环境计费周期。
+云开发环境的资源点都是按月结算的，每个月都有一定的抵扣额度。
+
+例如：
+  某个环境在 2026-01-05 购买了3个月个人版(到期时间: 2026-04-05)，则他可以在以下3个周期内，分别享有40000资源点的额度：
+  1. 2026-01-05 ~ 2026-02-05 23:59:59
+  2. 2026-02-06 ~ 2026-03-05 23:59:59
+  3. 2026-03-06 ~ 2026-04-05 23:59:59
+
+本接口，用于获取环境当前属于哪个计费周期内。
                  * @param req DescribeEnvAccountCircleRequest
                  * @return DescribeEnvAccountCircleOutcome
                  */
@@ -1070,7 +1122,8 @@ namespace TencentCloud
                 DescribeQuotaDataOutcomeCallable DescribeQuotaDataCallable(const Model::DescribeQuotaDataRequest& request);
 
                 /**
-                 *查询数据库安全规则
+                 *查询数据库安全规则。
+安全规则，用于控制C端用户的访问权限。详见 [安全规则介绍](https://cloud.tencent.com/document/product/876/123478) 。
                  * @param req DescribeSafeRuleRequest
                  * @return DescribeSafeRuleOutcome
                  */
@@ -1163,7 +1216,16 @@ namespace TencentCloud
                 DescribeWxGatewaysOutcomeCallable DescribeWxGatewaysCallable(const Model::DescribeWxGatewaysRequest& request);
 
                 /**
-                 *销毁环境
+                 *本接口用于销毁云开发环境。
+云开发环境遵循腾讯云包年包月预付费产品生命周期，因此环境销毁需要分两步：
+1. 资源退费。此时会根据当前环境剩余有效期，自动退还相关费用(代金券不退)。退款后，环境进入隔离期。
+2. 环境删除。环境在进入隔离期后15天会自动删除。也可以通过本接口，指定 IsForce=true 来强制删除隔离期环境。
+
+**注意**⚠️
+  1. 环境退费后进入隔离期，则所有资源均无法访问，控制台无法操作和管理。
+  2. 环境被彻底删除后，所有数据均无法找回。请谨慎操作。
+
+可以通过接口 [tcb:DescribeBillingInfo](https://cloud.tencent.com/document/product/876/94390) 查询环境计费状态。
                  * @param req DestroyEnvRequest
                  * @return DestroyEnvOutcome
                  */
@@ -1289,6 +1351,17 @@ namespace TencentCloud
                 ModifyEnvOutcomeCallable ModifyEnvCallable(const Model::ModifyEnvRequest& request);
 
                 /**
+                 *本接口用于变更云开发环境套餐。
+该接口会自动下单并支付，会在腾讯云账户中扣除余额（余额不足会下单失败）。
+该接口支持自动扣除代金券（AutoVoucher=true时），符合条件的代金券会被自动扣除。
+                 * @param req ModifyEnvPlanRequest
+                 * @return ModifyEnvPlanOutcome
+                 */
+                ModifyEnvPlanOutcome ModifyEnvPlan(const Model::ModifyEnvPlanRequest &request);
+                void ModifyEnvPlanAsync(const Model::ModifyEnvPlanRequest& request, const ModifyEnvPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyEnvPlanOutcomeCallable ModifyEnvPlanCallable(const Model::ModifyEnvPlanRequest& request);
+
+                /**
                  *设置网关版本的流量比例
                  * @param req ModifyGatewayVersionTrafficRequest
                  * @return ModifyGatewayVersionTrafficOutcome
@@ -1316,6 +1389,17 @@ namespace TencentCloud
                 ReinstateEnvOutcomeCallable ReinstateEnvCallable(const Model::ReinstateEnvRequest& request);
 
                 /**
+                 *本接口用于云开发环境套餐续费。
+该接口会自动下单并支付，会在腾讯云账户中扣除余额（余额不足会下单失败）。
+该接口支持自动扣除代金券（AutoVoucher=true时），符合条件的代金券会被自动扣除。
+                 * @param req RenewEnvRequest
+                 * @return RenewEnvOutcome
+                 */
+                RenewEnvOutcome RenewEnv(const Model::RenewEnvRequest &request);
+                void RenewEnvAsync(const Model::RenewEnvRequest& request, const RenewEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenewEnvOutcomeCallable RenewEnvCallable(const Model::RenewEnvRequest& request);
+
+                /**
                  *更新活动详情
                  * @param req ReplaceActivityRecordRequest
                  * @return ReplaceActivityRecordOutcome
@@ -1334,7 +1418,7 @@ namespace TencentCloud
                 RunSqlOutcomeCallable RunSqlCallable(const Model::RunSqlRequest& request);
 
                 /**
-                 *搜索CLS日志，TCB角色密钥访问
+                 *搜索用户调用日志
                  * @param req SearchClsLogRequest
                  * @return SearchClsLogOutcome
                  */

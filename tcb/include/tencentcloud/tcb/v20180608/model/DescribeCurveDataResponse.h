@@ -141,6 +141,20 @@ namespace TencentCloud
                      */
                     bool NewValuesHasBeenSet() const;
 
+                    /**
+                     * 获取聚合方式
+                     * @return Statistics 聚合方式
+                     * 
+                     */
+                    std::string GetStatistics() const;
+
+                    /**
+                     * 判断参数 Statistics 是否已赋值
+                     * @return Statistics 是否已赋值
+                     * 
+                     */
+                    bool StatisticsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -184,6 +198,12 @@ namespace TencentCloud
                      */
                     std::vector<double> m_newValues;
                     bool m_newValuesHasBeenSet;
+
+                    /**
+                     * 聚合方式
+                     */
+                    std::string m_statistics;
+                    bool m_statisticsHasBeenSet;
 
                 };
             }

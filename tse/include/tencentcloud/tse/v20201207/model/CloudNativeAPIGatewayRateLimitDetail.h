@@ -181,6 +181,27 @@ ip service consumer credential path header
                     bool ExternalRedisHasBeenSet() const;
 
                     /**
+                     * 获取全局配置中的redis配置
+                     * @return GlobalConfigId 全局配置中的redis配置
+                     * 
+                     */
+                    std::string GetGlobalConfigId() const;
+
+                    /**
+                     * 设置全局配置中的redis配置
+                     * @param _globalConfigId 全局配置中的redis配置
+                     * 
+                     */
+                    void SetGlobalConfigId(const std::string& _globalConfigId);
+
+                    /**
+                     * 判断参数 GlobalConfigId 是否已赋值
+                     * @return GlobalConfigId 是否已赋值
+                     * 
+                     */
+                    bool GlobalConfigIdHasBeenSet() const;
+
+                    /**
                      * 获取计数器策略 
 local 单机
 redis  默认redis
@@ -451,6 +472,12 @@ ip service consumer credential path header
                      */
                     ExternalRedis m_externalRedis;
                     bool m_externalRedisHasBeenSet;
+
+                    /**
+                     * 全局配置中的redis配置
+                     */
+                    std::string m_globalConfigId;
+                    bool m_globalConfigIdHasBeenSet;
 
                     /**
                      * 计数器策略 

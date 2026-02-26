@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ImageUrlsHasBeenSet() const;
 
                     /**
-                     * 获取模版图人脸坐标。
-                     * @return TemplateFaceRect 模版图人脸坐标。
+                     * 获取模板图人脸坐标。
+                     * @return TemplateFaceRect 模板图人脸坐标。
                      * 
                      */
                     Rect GetTemplateFaceRect() const;
 
                     /**
-                     * 设置模版图人脸坐标。
-                     * @param _templateFaceRect 模版图人脸坐标。
+                     * 设置模板图人脸坐标。
+                     * @param _templateFaceRect 模板图人脸坐标。
                      * 
                      */
                     void SetTemplateFaceRect(const Rect& _templateFaceRect);
@@ -98,7 +98,7 @@ namespace TencentCloud
                     bool m_imageUrlsHasBeenSet;
 
                     /**
-                     * 模版图人脸坐标。
+                     * 模板图人脸坐标。
                      */
                     Rect m_templateFaceRect;
                     bool m_templateFaceRectHasBeenSet;

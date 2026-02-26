@@ -287,7 +287,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskHighlightOutput.h
   include/tencentcloud/mps/v20190612/model/StopStreamLinkFlowRequest.h
   include/tencentcloud/mps/v20190612/model/SmartSubtitleTaskResultInput.h
-  include/tencentcloud/mps/v20190612/model/DescribeAdaptiveDynamicStreamingTemplatesRequest.h
+  include/tencentcloud/mps/v20190612/model/BatchStartStreamLinkFlowRequest.h
   include/tencentcloud/mps/v20190612/model/ImageWatermarkInput.h
   include/tencentcloud/mps/v20190612/model/SRTFECSimpleOptions.h
   include/tencentcloud/mps/v20190612/model/BatchProcessMediaResponse.h
@@ -607,6 +607,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/WithdrawsWatermarkRequest.h
   include/tencentcloud/mps/v20190612/model/DeleteStreamLinkOutputRequest.h
   include/tencentcloud/mps/v20190612/model/ModifyPersonSampleRequest.h
+  include/tencentcloud/mps/v20190612/model/AigcVideoReferenceVideoInfo.h
   include/tencentcloud/mps/v20190612/model/AsrFullTextConfigureInfo.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskVideoRemakeResult.h
   include/tencentcloud/mps/v20190612/model/ArtifactRepairConfig.h
@@ -803,7 +804,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/LiveAiParagraphInfo.h
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskFaceResultOutput.h
   include/tencentcloud/mps/v20190612/model/PornImgReviewTemplateInfoForUpdate.h
-  include/tencentcloud/mps/v20190612/model/BatchStartStreamLinkFlowRequest.h
+  include/tencentcloud/mps/v20190612/model/DescribeAdaptiveDynamicStreamingTemplatesRequest.h
   include/tencentcloud/mps/v20190612/model/CreateWatermarkTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/PornImgReviewTemplateInfo.h
   include/tencentcloud/mps/v20190612/model/AiReviewPoliticalOcrTaskOutput.h
@@ -1145,7 +1146,7 @@ set(mps_src
   src/v20190612/model/AiAnalysisTaskHighlightOutput.cpp
   src/v20190612/model/StopStreamLinkFlowRequest.cpp
   src/v20190612/model/SmartSubtitleTaskResultInput.cpp
-  src/v20190612/model/DescribeAdaptiveDynamicStreamingTemplatesRequest.cpp
+  src/v20190612/model/BatchStartStreamLinkFlowRequest.cpp
   src/v20190612/model/ImageWatermarkInput.cpp
   src/v20190612/model/SRTFECSimpleOptions.cpp
   src/v20190612/model/BatchProcessMediaResponse.cpp
@@ -1465,6 +1466,7 @@ set(mps_src
   src/v20190612/model/WithdrawsWatermarkRequest.cpp
   src/v20190612/model/DeleteStreamLinkOutputRequest.cpp
   src/v20190612/model/ModifyPersonSampleRequest.cpp
+  src/v20190612/model/AigcVideoReferenceVideoInfo.cpp
   src/v20190612/model/AsrFullTextConfigureInfo.cpp
   src/v20190612/model/AiAnalysisTaskVideoRemakeResult.cpp
   src/v20190612/model/ArtifactRepairConfig.cpp
@@ -1661,7 +1663,7 @@ set(mps_src
   src/v20190612/model/LiveAiParagraphInfo.cpp
   src/v20190612/model/AiRecognitionTaskFaceResultOutput.cpp
   src/v20190612/model/PornImgReviewTemplateInfoForUpdate.cpp
-  src/v20190612/model/BatchStartStreamLinkFlowRequest.cpp
+  src/v20190612/model/DescribeAdaptiveDynamicStreamingTemplatesRequest.cpp
   src/v20190612/model/CreateWatermarkTemplateResponse.cpp
   src/v20190612/model/PornImgReviewTemplateInfo.cpp
   src/v20190612/model/AiReviewPoliticalOcrTaskOutput.cpp

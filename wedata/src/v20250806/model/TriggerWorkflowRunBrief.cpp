@@ -29,6 +29,7 @@ TriggerWorkflowRunBrief::TriggerWorkflowRunBrief() :
     m_triggerIdHasBeenSet(false),
     m_triggerTypeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
+    m_scheduleTimeHasBeenSet(false),
     m_executionStartTimeHasBeenSet(false),
     m_executionEndTimeHasBeenSet(false),
     m_executionCostTimeHasBeenSet(false),
@@ -138,6 +139,16 @@ CoreInternalOutcome TriggerWorkflowRunBrief::Deserialize(const rapidjson::Value 
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScheduleTime") && !value["ScheduleTime"].IsNull())
+    {
+        if (!value["ScheduleTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerWorkflowRunBrief.ScheduleTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleTime = string(value["ScheduleTime"].GetString());
+        m_scheduleTimeHasBeenSet = true;
     }
 
     if (value.HasMember("ExecutionStartTime") && !value["ExecutionStartTime"].IsNull())
@@ -442,6 +453,14 @@ void TriggerWorkflowRunBrief::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_executionStartTimeHasBeenSet)
@@ -762,6 +781,22 @@ void TriggerWorkflowRunBrief::SetCreateTime(const string& _createTime)
 bool TriggerWorkflowRunBrief::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string TriggerWorkflowRunBrief::GetScheduleTime() const
+{
+    return m_scheduleTime;
+}
+
+void TriggerWorkflowRunBrief::SetScheduleTime(const string& _scheduleTime)
+{
+    m_scheduleTime = _scheduleTime;
+    m_scheduleTimeHasBeenSet = true;
+}
+
+bool TriggerWorkflowRunBrief::ScheduleTimeHasBeenSet() const
+{
+    return m_scheduleTimeHasBeenSet;
 }
 
 string TriggerWorkflowRunBrief::GetExecutionStartTime() const

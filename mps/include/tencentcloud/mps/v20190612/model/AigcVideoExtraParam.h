@@ -47,51 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取生成视频的分辨率，分辨率与选择模型及设置的视频时长相关。 
-
-不同模型支持的分辨率选项:
-1. Kling 720P(默认), 1080P。
-2. Hailuo 768P(默认), 1080P。
-3. Vidu 720P(默认)，1080P。
-4. GV 720P(默认),1080P。
-5. OS 720P, 图片仅支持1280x720、720x1280，暂不支持指定。
-
-注意：除模型可支持的分辨率外，还可以生成 2K、4K分辨率。
-                     * @return Resolution 生成视频的分辨率，分辨率与选择模型及设置的视频时长相关。 
-
-不同模型支持的分辨率选项:
-1. Kling 720P(默认), 1080P。
-2. Hailuo 768P(默认), 1080P。
-3. Vidu 720P(默认)，1080P。
-4. GV 720P(默认),1080P。
-5. OS 720P, 图片仅支持1280x720、720x1280，暂不支持指定。
-
-注意：除模型可支持的分辨率外，还可以生成 2K、4K分辨率。
+                     * 获取<p>生成视频的分辨率，分辨率与选择模型及设置的视频时长相关。 </p><p>不同模型支持的分辨率选项:</p><ol><li>Kling 720P(默认), 1080P。</li><li>Hailuo 768P(默认), 1080P。</li><li>Vidu 720P(默认)，1080P。</li><li>GV 720P(默认),1080P。</li><li>OS 720P, 图片仅支持1280x720、720x1280，暂不支持指定。</li></ol><p>注意：除模型可支持的分辨率外，还可以生成 2K、4K分辨率。</p>
+                     * @return Resolution <p>生成视频的分辨率，分辨率与选择模型及设置的视频时长相关。 </p><p>不同模型支持的分辨率选项:</p><ol><li>Kling 720P(默认), 1080P。</li><li>Hailuo 768P(默认), 1080P。</li><li>Vidu 720P(默认)，1080P。</li><li>GV 720P(默认),1080P。</li><li>OS 720P, 图片仅支持1280x720、720x1280，暂不支持指定。</li></ol><p>注意：除模型可支持的分辨率外，还可以生成 2K、4K分辨率。</p>
                      * 
                      */
                     std::string GetResolution() const;
 
                     /**
-                     * 设置生成视频的分辨率，分辨率与选择模型及设置的视频时长相关。 
-
-不同模型支持的分辨率选项:
-1. Kling 720P(默认), 1080P。
-2. Hailuo 768P(默认), 1080P。
-3. Vidu 720P(默认)，1080P。
-4. GV 720P(默认),1080P。
-5. OS 720P, 图片仅支持1280x720、720x1280，暂不支持指定。
-
-注意：除模型可支持的分辨率外，还可以生成 2K、4K分辨率。
-                     * @param _resolution 生成视频的分辨率，分辨率与选择模型及设置的视频时长相关。 
-
-不同模型支持的分辨率选项:
-1. Kling 720P(默认), 1080P。
-2. Hailuo 768P(默认), 1080P。
-3. Vidu 720P(默认)，1080P。
-4. GV 720P(默认),1080P。
-5. OS 720P, 图片仅支持1280x720、720x1280，暂不支持指定。
-
-注意：除模型可支持的分辨率外，还可以生成 2K、4K分辨率。
+                     * 设置<p>生成视频的分辨率，分辨率与选择模型及设置的视频时长相关。 </p><p>不同模型支持的分辨率选项:</p><ol><li>Kling 720P(默认), 1080P。</li><li>Hailuo 768P(默认), 1080P。</li><li>Vidu 720P(默认)，1080P。</li><li>GV 720P(默认),1080P。</li><li>OS 720P, 图片仅支持1280x720、720x1280，暂不支持指定。</li></ol><p>注意：除模型可支持的分辨率外，还可以生成 2K、4K分辨率。</p>
+                     * @param _resolution <p>生成视频的分辨率，分辨率与选择模型及设置的视频时长相关。 </p><p>不同模型支持的分辨率选项:</p><ol><li>Kling 720P(默认), 1080P。</li><li>Hailuo 768P(默认), 1080P。</li><li>Vidu 720P(默认)，1080P。</li><li>GV 720P(默认),1080P。</li><li>OS 720P, 图片仅支持1280x720、720x1280，暂不支持指定。</li></ol><p>注意：除模型可支持的分辨率外，还可以生成 2K、4K分辨率。</p>
                      * 
                      */
                     void SetResolution(const std::string& _resolution);
@@ -104,51 +68,15 @@ namespace TencentCloud
                     bool ResolutionHasBeenSet() const;
 
                     /**
-                     * 获取指定所生成视频的宽高比。 
-
-不同模型对于此参数的支持：
-1. Kling 仅文生视频支持, 16:9(默认值)、9:16、 1:1。
-2. Hailuo 暂不支持。
-3. Vidu 仅文生和参考图生视频 支持[16:9、9:16、4:3、3:4、1:1]，其中仅q2支持4:3、3:4。
-4. GV 16:9(默认值)、9:16。
-5. OS 仅文生视频支持, 16:9(默认), 9:16。
-
-注：关于具体模型支持的宽高比例，可查看具体模型官网介绍获取更完整描述。
-                     * @return AspectRatio 指定所生成视频的宽高比。 
-
-不同模型对于此参数的支持：
-1. Kling 仅文生视频支持, 16:9(默认值)、9:16、 1:1。
-2. Hailuo 暂不支持。
-3. Vidu 仅文生和参考图生视频 支持[16:9、9:16、4:3、3:4、1:1]，其中仅q2支持4:3、3:4。
-4. GV 16:9(默认值)、9:16。
-5. OS 仅文生视频支持, 16:9(默认), 9:16。
-
-注：关于具体模型支持的宽高比例，可查看具体模型官网介绍获取更完整描述。
+                     * 获取<p>指定所生成视频的宽高比。 </p><p>不同模型对于此参数的支持：</p><ol><li>Kling 仅文生视频支持, 16:9(默认值)、9:16、 1:1。</li><li>Hailuo 暂不支持。</li><li>Vidu 仅文生和参考图生视频 支持[16:9、9:16、4:3、3:4、1:1]，其中仅q2支持4:3、3:4。</li><li>GV 16:9(默认值)、9:16。</li><li>OS 仅文生视频支持, 16:9(默认), 9:16。</li></ol><p>注：关于具体模型支持的宽高比例，可查看具体模型官网介绍获取更完整描述。</p>
+                     * @return AspectRatio <p>指定所生成视频的宽高比。 </p><p>不同模型对于此参数的支持：</p><ol><li>Kling 仅文生视频支持, 16:9(默认值)、9:16、 1:1。</li><li>Hailuo 暂不支持。</li><li>Vidu 仅文生和参考图生视频 支持[16:9、9:16、4:3、3:4、1:1]，其中仅q2支持4:3、3:4。</li><li>GV 16:9(默认值)、9:16。</li><li>OS 仅文生视频支持, 16:9(默认), 9:16。</li></ol><p>注：关于具体模型支持的宽高比例，可查看具体模型官网介绍获取更完整描述。</p>
                      * 
                      */
                     std::string GetAspectRatio() const;
 
                     /**
-                     * 设置指定所生成视频的宽高比。 
-
-不同模型对于此参数的支持：
-1. Kling 仅文生视频支持, 16:9(默认值)、9:16、 1:1。
-2. Hailuo 暂不支持。
-3. Vidu 仅文生和参考图生视频 支持[16:9、9:16、4:3、3:4、1:1]，其中仅q2支持4:3、3:4。
-4. GV 16:9(默认值)、9:16。
-5. OS 仅文生视频支持, 16:9(默认), 9:16。
-
-注：关于具体模型支持的宽高比例，可查看具体模型官网介绍获取更完整描述。
-                     * @param _aspectRatio 指定所生成视频的宽高比。 
-
-不同模型对于此参数的支持：
-1. Kling 仅文生视频支持, 16:9(默认值)、9:16、 1:1。
-2. Hailuo 暂不支持。
-3. Vidu 仅文生和参考图生视频 支持[16:9、9:16、4:3、3:4、1:1]，其中仅q2支持4:3、3:4。
-4. GV 16:9(默认值)、9:16。
-5. OS 仅文生视频支持, 16:9(默认), 9:16。
-
-注：关于具体模型支持的宽高比例，可查看具体模型官网介绍获取更完整描述。
+                     * 设置<p>指定所生成视频的宽高比。 </p><p>不同模型对于此参数的支持：</p><ol><li>Kling 仅文生视频支持, 16:9(默认值)、9:16、 1:1。</li><li>Hailuo 暂不支持。</li><li>Vidu 仅文生和参考图生视频 支持[16:9、9:16、4:3、3:4、1:1]，其中仅q2支持4:3、3:4。</li><li>GV 16:9(默认值)、9:16。</li><li>OS 仅文生视频支持, 16:9(默认), 9:16。</li></ol><p>注：关于具体模型支持的宽高比例，可查看具体模型官网介绍获取更完整描述。</p>
+                     * @param _aspectRatio <p>指定所生成视频的宽高比。 </p><p>不同模型对于此参数的支持：</p><ol><li>Kling 仅文生视频支持, 16:9(默认值)、9:16、 1:1。</li><li>Hailuo 暂不支持。</li><li>Vidu 仅文生和参考图生视频 支持[16:9、9:16、4:3、3:4、1:1]，其中仅q2支持4:3、3:4。</li><li>GV 16:9(默认值)、9:16。</li><li>OS 仅文生视频支持, 16:9(默认), 9:16。</li></ol><p>注：关于具体模型支持的宽高比例，可查看具体模型官网介绍获取更完整描述。</p>
                      * 
                      */
                     void SetAspectRatio(const std::string& _aspectRatio);
@@ -161,27 +89,15 @@ namespace TencentCloud
                     bool AspectRatioHasBeenSet() const;
 
                     /**
-                     * 获取是否添加图标水印。
-1. Hailuo 支持此参数。
-2. Kling 支持此参数。
-3. Vidu 支持此参数。
-                     * @return LogoAdd 是否添加图标水印。
-1. Hailuo 支持此参数。
-2. Kling 支持此参数。
-3. Vidu 支持此参数。
+                     * 获取<p>是否添加图标水印。</p><ol><li>Hailuo 支持此参数。</li><li>Kling 支持此参数。</li><li>Vidu 支持此参数。</li></ol>
+                     * @return LogoAdd <p>是否添加图标水印。</p><ol><li>Hailuo 支持此参数。</li><li>Kling 支持此参数。</li><li>Vidu 支持此参数。</li></ol>
                      * 
                      */
                     int64_t GetLogoAdd() const;
 
                     /**
-                     * 设置是否添加图标水印。
-1. Hailuo 支持此参数。
-2. Kling 支持此参数。
-3. Vidu 支持此参数。
-                     * @param _logoAdd 是否添加图标水印。
-1. Hailuo 支持此参数。
-2. Kling 支持此参数。
-3. Vidu 支持此参数。
+                     * 设置<p>是否添加图标水印。</p><ol><li>Hailuo 支持此参数。</li><li>Kling 支持此参数。</li><li>Vidu 支持此参数。</li></ol>
+                     * @param _logoAdd <p>是否添加图标水印。</p><ol><li>Hailuo 支持此参数。</li><li>Kling 支持此参数。</li><li>Vidu 支持此参数。</li></ol>
                      * 
                      */
                     void SetLogoAdd(const int64_t& _logoAdd);
@@ -194,31 +110,15 @@ namespace TencentCloud
                     bool LogoAddHasBeenSet() const;
 
                     /**
-                     * 获取为视频生成音频。接受的值包括 true 或 false。 
-
-支持此参数的模型：
-1. GV，默认true。
-2. OS，默认true。
-                     * @return EnableAudio 为视频生成音频。接受的值包括 true 或 false。 
-
-支持此参数的模型：
-1. GV，默认true。
-2. OS，默认true。
+                     * 获取<p>为视频生成音频。接受的值包括 true 或 false。 </p><p>支持此参数的模型：</p><ol><li>GV，默认true。</li><li>OS，默认true。</li></ol>
+                     * @return EnableAudio <p>为视频生成音频。接受的值包括 true 或 false。 </p><p>支持此参数的模型：</p><ol><li>GV，默认true。</li><li>OS，默认true。</li></ol>
                      * 
                      */
                     bool GetEnableAudio() const;
 
                     /**
-                     * 设置为视频生成音频。接受的值包括 true 或 false。 
-
-支持此参数的模型：
-1. GV，默认true。
-2. OS，默认true。
-                     * @param _enableAudio 为视频生成音频。接受的值包括 true 或 false。 
-
-支持此参数的模型：
-1. GV，默认true。
-2. OS，默认true。
+                     * 设置<p>为视频生成音频。接受的值包括 true 或 false。 </p><p>支持此参数的模型：</p><ol><li>GV，默认true。</li><li>OS，默认true。</li></ol>
+                     * @param _enableAudio <p>为视频生成音频。接受的值包括 true 或 false。 </p><p>支持此参数的模型：</p><ol><li>GV，默认true。</li><li>OS，默认true。</li></ol>
                      * 
                      */
                     void SetEnableAudio(const bool& _enableAudio);
@@ -231,19 +131,15 @@ namespace TencentCloud
                     bool EnableAudioHasBeenSet() const;
 
                     /**
-                     * 获取错峰模型，目前仅支持Vidu模型。
-错峰模式下提交的任务，会在48小时内生成，未能完成的任务会被自动取消。
-                     * @return OffPeak 错峰模型，目前仅支持Vidu模型。
-错峰模式下提交的任务，会在48小时内生成，未能完成的任务会被自动取消。
+                     * 获取<p>错峰模型，目前仅支持Vidu模型。<br>错峰模式下提交的任务，会在48小时内生成，未能完成的任务会被自动取消。</p>
+                     * @return OffPeak <p>错峰模型，目前仅支持Vidu模型。<br>错峰模式下提交的任务，会在48小时内生成，未能完成的任务会被自动取消。</p>
                      * 
                      */
                     bool GetOffPeak() const;
 
                     /**
-                     * 设置错峰模型，目前仅支持Vidu模型。
-错峰模式下提交的任务，会在48小时内生成，未能完成的任务会被自动取消。
-                     * @param _offPeak 错峰模型，目前仅支持Vidu模型。
-错峰模式下提交的任务，会在48小时内生成，未能完成的任务会被自动取消。
+                     * 设置<p>错峰模型，目前仅支持Vidu模型。<br>错峰模式下提交的任务，会在48小时内生成，未能完成的任务会被自动取消。</p>
+                     * @param _offPeak <p>错峰模型，目前仅支持Vidu模型。<br>错峰模式下提交的任务，会在48小时内生成，未能完成的任务会被自动取消。</p>
                      * 
                      */
                     void SetOffPeak(const bool& _offPeak);
@@ -255,63 +151,64 @@ namespace TencentCloud
                      */
                     bool OffPeakHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否为生成的视频添加背景音乐。默认：false，可选值 true 、false。<br>注意：部分模型的版本支持。</p>
+                     * @return EnableBgm <p>是否为生成的视频添加背景音乐。默认：false，可选值 true 、false。<br>注意：部分模型的版本支持。</p>
+                     * 
+                     */
+                    bool GetEnableBgm() const;
+
+                    /**
+                     * 设置<p>是否为生成的视频添加背景音乐。默认：false，可选值 true 、false。<br>注意：部分模型的版本支持。</p>
+                     * @param _enableBgm <p>是否为生成的视频添加背景音乐。默认：false，可选值 true 、false。<br>注意：部分模型的版本支持。</p>
+                     * 
+                     */
+                    void SetEnableBgm(const bool& _enableBgm);
+
+                    /**
+                     * 判断参数 EnableBgm 是否已赋值
+                     * @return EnableBgm 是否已赋值
+                     * 
+                     */
+                    bool EnableBgmHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 生成视频的分辨率，分辨率与选择模型及设置的视频时长相关。 
-
-不同模型支持的分辨率选项:
-1. Kling 720P(默认), 1080P。
-2. Hailuo 768P(默认), 1080P。
-3. Vidu 720P(默认)，1080P。
-4. GV 720P(默认),1080P。
-5. OS 720P, 图片仅支持1280x720、720x1280，暂不支持指定。
-
-注意：除模型可支持的分辨率外，还可以生成 2K、4K分辨率。
+                     * <p>生成视频的分辨率，分辨率与选择模型及设置的视频时长相关。 </p><p>不同模型支持的分辨率选项:</p><ol><li>Kling 720P(默认), 1080P。</li><li>Hailuo 768P(默认), 1080P。</li><li>Vidu 720P(默认)，1080P。</li><li>GV 720P(默认),1080P。</li><li>OS 720P, 图片仅支持1280x720、720x1280，暂不支持指定。</li></ol><p>注意：除模型可支持的分辨率外，还可以生成 2K、4K分辨率。</p>
                      */
                     std::string m_resolution;
                     bool m_resolutionHasBeenSet;
 
                     /**
-                     * 指定所生成视频的宽高比。 
-
-不同模型对于此参数的支持：
-1. Kling 仅文生视频支持, 16:9(默认值)、9:16、 1:1。
-2. Hailuo 暂不支持。
-3. Vidu 仅文生和参考图生视频 支持[16:9、9:16、4:3、3:4、1:1]，其中仅q2支持4:3、3:4。
-4. GV 16:9(默认值)、9:16。
-5. OS 仅文生视频支持, 16:9(默认), 9:16。
-
-注：关于具体模型支持的宽高比例，可查看具体模型官网介绍获取更完整描述。
+                     * <p>指定所生成视频的宽高比。 </p><p>不同模型对于此参数的支持：</p><ol><li>Kling 仅文生视频支持, 16:9(默认值)、9:16、 1:1。</li><li>Hailuo 暂不支持。</li><li>Vidu 仅文生和参考图生视频 支持[16:9、9:16、4:3、3:4、1:1]，其中仅q2支持4:3、3:4。</li><li>GV 16:9(默认值)、9:16。</li><li>OS 仅文生视频支持, 16:9(默认), 9:16。</li></ol><p>注：关于具体模型支持的宽高比例，可查看具体模型官网介绍获取更完整描述。</p>
                      */
                     std::string m_aspectRatio;
                     bool m_aspectRatioHasBeenSet;
 
                     /**
-                     * 是否添加图标水印。
-1. Hailuo 支持此参数。
-2. Kling 支持此参数。
-3. Vidu 支持此参数。
+                     * <p>是否添加图标水印。</p><ol><li>Hailuo 支持此参数。</li><li>Kling 支持此参数。</li><li>Vidu 支持此参数。</li></ol>
                      */
                     int64_t m_logoAdd;
                     bool m_logoAddHasBeenSet;
 
                     /**
-                     * 为视频生成音频。接受的值包括 true 或 false。 
-
-支持此参数的模型：
-1. GV，默认true。
-2. OS，默认true。
+                     * <p>为视频生成音频。接受的值包括 true 或 false。 </p><p>支持此参数的模型：</p><ol><li>GV，默认true。</li><li>OS，默认true。</li></ol>
                      */
                     bool m_enableAudio;
                     bool m_enableAudioHasBeenSet;
 
                     /**
-                     * 错峰模型，目前仅支持Vidu模型。
-错峰模式下提交的任务，会在48小时内生成，未能完成的任务会被自动取消。
+                     * <p>错峰模型，目前仅支持Vidu模型。<br>错峰模式下提交的任务，会在48小时内生成，未能完成的任务会被自动取消。</p>
                      */
                     bool m_offPeak;
                     bool m_offPeakHasBeenSet;
+
+                    /**
+                     * <p>是否为生成的视频添加背景音乐。默认：false，可选值 true 、false。<br>注意：部分模型的版本支持。</p>
+                     */
+                    bool m_enableBgm;
+                    bool m_enableBgmHasBeenSet;
 
                 };
             }

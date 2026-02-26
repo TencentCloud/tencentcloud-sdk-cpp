@@ -190,6 +190,106 @@ HunyuanClient::ChatTranslationsOutcomeCallable HunyuanClient::ChatTranslationsCa
     return prom->get_future();
 }
 
+HunyuanClient::CreateGlossaryOutcome HunyuanClient::CreateGlossary(const CreateGlossaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGlossary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGlossaryResponse rsp = CreateGlossaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGlossaryOutcome(rsp);
+        else
+            return CreateGlossaryOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGlossaryOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::CreateGlossaryAsync(const CreateGlossaryRequest& request, const CreateGlossaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateGlossaryRequest&;
+    using Resp = CreateGlossaryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateGlossary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+HunyuanClient::CreateGlossaryOutcomeCallable HunyuanClient::CreateGlossaryCallable(const CreateGlossaryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateGlossaryOutcome>>();
+    CreateGlossaryAsync(
+    request,
+    [prom](
+        const HunyuanClient*,
+        const CreateGlossaryRequest&,
+        CreateGlossaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+HunyuanClient::CreateGlossaryEntryOutcome HunyuanClient::CreateGlossaryEntry(const CreateGlossaryEntryRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGlossaryEntry");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGlossaryEntryResponse rsp = CreateGlossaryEntryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGlossaryEntryOutcome(rsp);
+        else
+            return CreateGlossaryEntryOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGlossaryEntryOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::CreateGlossaryEntryAsync(const CreateGlossaryEntryRequest& request, const CreateGlossaryEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateGlossaryEntryRequest&;
+    using Resp = CreateGlossaryEntryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateGlossaryEntry", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+HunyuanClient::CreateGlossaryEntryOutcomeCallable HunyuanClient::CreateGlossaryEntryCallable(const CreateGlossaryEntryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateGlossaryEntryOutcome>>();
+    CreateGlossaryEntryAsync(
+    request,
+    [prom](
+        const HunyuanClient*,
+        const CreateGlossaryEntryRequest&,
+        CreateGlossaryEntryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 HunyuanClient::CreateThreadOutcome HunyuanClient::CreateThread(const CreateThreadRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateThread");
@@ -232,6 +332,106 @@ HunyuanClient::CreateThreadOutcomeCallable HunyuanClient::CreateThreadCallable(c
         const HunyuanClient*,
         const CreateThreadRequest&,
         CreateThreadOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+HunyuanClient::DeleteGlossaryOutcome HunyuanClient::DeleteGlossary(const DeleteGlossaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGlossary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGlossaryResponse rsp = DeleteGlossaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGlossaryOutcome(rsp);
+        else
+            return DeleteGlossaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGlossaryOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::DeleteGlossaryAsync(const DeleteGlossaryRequest& request, const DeleteGlossaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteGlossaryRequest&;
+    using Resp = DeleteGlossaryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteGlossary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+HunyuanClient::DeleteGlossaryOutcomeCallable HunyuanClient::DeleteGlossaryCallable(const DeleteGlossaryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteGlossaryOutcome>>();
+    DeleteGlossaryAsync(
+    request,
+    [prom](
+        const HunyuanClient*,
+        const DeleteGlossaryRequest&,
+        DeleteGlossaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+HunyuanClient::DeleteGlossaryEntryOutcome HunyuanClient::DeleteGlossaryEntry(const DeleteGlossaryEntryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGlossaryEntry");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGlossaryEntryResponse rsp = DeleteGlossaryEntryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGlossaryEntryOutcome(rsp);
+        else
+            return DeleteGlossaryEntryOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGlossaryEntryOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::DeleteGlossaryEntryAsync(const DeleteGlossaryEntryRequest& request, const DeleteGlossaryEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteGlossaryEntryRequest&;
+    using Resp = DeleteGlossaryEntryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteGlossaryEntry", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+HunyuanClient::DeleteGlossaryEntryOutcomeCallable HunyuanClient::DeleteGlossaryEntryCallable(const DeleteGlossaryEntryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteGlossaryEntryOutcome>>();
+    DeleteGlossaryEntryAsync(
+    request,
+    [prom](
+        const HunyuanClient*,
+        const DeleteGlossaryEntryRequest&,
+        DeleteGlossaryEntryOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -740,6 +940,106 @@ HunyuanClient::ImageQuestionOutcomeCallable HunyuanClient::ImageQuestionCallable
     return prom->get_future();
 }
 
+HunyuanClient::ListGlossaryOutcome HunyuanClient::ListGlossary(const ListGlossaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListGlossary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListGlossaryResponse rsp = ListGlossaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListGlossaryOutcome(rsp);
+        else
+            return ListGlossaryOutcome(o.GetError());
+    }
+    else
+    {
+        return ListGlossaryOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::ListGlossaryAsync(const ListGlossaryRequest& request, const ListGlossaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListGlossaryRequest&;
+    using Resp = ListGlossaryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListGlossary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+HunyuanClient::ListGlossaryOutcomeCallable HunyuanClient::ListGlossaryCallable(const ListGlossaryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListGlossaryOutcome>>();
+    ListGlossaryAsync(
+    request,
+    [prom](
+        const HunyuanClient*,
+        const ListGlossaryRequest&,
+        ListGlossaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+HunyuanClient::ListGlossaryEntryOutcome HunyuanClient::ListGlossaryEntry(const ListGlossaryEntryRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListGlossaryEntry");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListGlossaryEntryResponse rsp = ListGlossaryEntryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListGlossaryEntryOutcome(rsp);
+        else
+            return ListGlossaryEntryOutcome(o.GetError());
+    }
+    else
+    {
+        return ListGlossaryEntryOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::ListGlossaryEntryAsync(const ListGlossaryEntryRequest& request, const ListGlossaryEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListGlossaryEntryRequest&;
+    using Resp = ListGlossaryEntryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListGlossaryEntry", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+HunyuanClient::ListGlossaryEntryOutcomeCallable HunyuanClient::ListGlossaryEntryCallable(const ListGlossaryEntryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListGlossaryEntryOutcome>>();
+    ListGlossaryEntryAsync(
+    request,
+    [prom](
+        const HunyuanClient*,
+        const ListGlossaryEntryRequest&,
+        ListGlossaryEntryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 HunyuanClient::QueryHunyuanImageChatJobOutcome HunyuanClient::QueryHunyuanImageChatJob(const QueryHunyuanImageChatJobRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryHunyuanImageChatJob");
@@ -1082,6 +1382,56 @@ HunyuanClient::TextToImageLiteOutcomeCallable HunyuanClient::TextToImageLiteCall
         const HunyuanClient*,
         const TextToImageLiteRequest&,
         TextToImageLiteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+HunyuanClient::UpdateGlossaryEntryOutcome HunyuanClient::UpdateGlossaryEntry(const UpdateGlossaryEntryRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateGlossaryEntry");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateGlossaryEntryResponse rsp = UpdateGlossaryEntryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateGlossaryEntryOutcome(rsp);
+        else
+            return UpdateGlossaryEntryOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateGlossaryEntryOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::UpdateGlossaryEntryAsync(const UpdateGlossaryEntryRequest& request, const UpdateGlossaryEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateGlossaryEntryRequest&;
+    using Resp = UpdateGlossaryEntryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateGlossaryEntry", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+HunyuanClient::UpdateGlossaryEntryOutcomeCallable HunyuanClient::UpdateGlossaryEntryCallable(const UpdateGlossaryEntryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateGlossaryEntryOutcome>>();
+    UpdateGlossaryEntryAsync(
+    request,
+    [prom](
+        const HunyuanClient*,
+        const UpdateGlossaryEntryRequest&,
+        UpdateGlossaryEntryOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

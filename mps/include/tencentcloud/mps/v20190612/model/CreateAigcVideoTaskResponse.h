@@ -44,10 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务创建成功后，返回的任务ID。
-调用查询接口，轮询获取任务进度及生成结果。
-                     * @return TaskId 任务创建成功后，返回的任务ID。
-调用查询接口，轮询获取任务进度及生成结果。
+                     * 获取<p>任务创建成功后，返回的任务ID。<br>调用查询接口，轮询获取任务进度及生成结果。</p>
+                     * @return TaskId <p>任务创建成功后，返回的任务ID。<br>调用查询接口，轮询获取任务进度及生成结果。</p>
                      * 
                      */
                     std::string GetTaskId() const;
@@ -62,8 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务创建成功后，返回的任务ID。
-调用查询接口，轮询获取任务进度及生成结果。
+                     * <p>任务创建成功后，返回的任务ID。<br>调用查询接口，轮询获取任务进度及生成结果。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

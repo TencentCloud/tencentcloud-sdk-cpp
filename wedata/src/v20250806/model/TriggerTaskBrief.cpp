@@ -34,7 +34,8 @@ TriggerTaskBrief::TriggerTaskBrief() :
     m_folderNameHasBeenSet(false),
     m_taskTypeIdHasBeenSet(false),
     m_executionStateHasBeenSet(false),
-    m_executionStartTimeHasBeenSet(false)
+    m_executionStartTimeHasBeenSet(false),
+    m_dependencyTriggerPolicyHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome TriggerTaskBrief::Deserialize(const rapidjson::Value &value)
         m_executionStartTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("DependencyTriggerPolicy") && !value["DependencyTriggerPolicy"].IsNull())
+    {
+        if (!value["DependencyTriggerPolicy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerTaskBrief.DependencyTriggerPolicy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dependencyTriggerPolicy = string(value["DependencyTriggerPolicy"].GetString());
+        m_dependencyTriggerPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +311,14 @@ void TriggerTaskBrief::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ExecutionStartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_executionStartTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dependencyTriggerPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DependencyTriggerPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dependencyTriggerPolicy.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +546,21 @@ void TriggerTaskBrief::SetExecutionStartTime(const string& _executionStartTime)
 bool TriggerTaskBrief::ExecutionStartTimeHasBeenSet() const
 {
     return m_executionStartTimeHasBeenSet;
+}
+
+string TriggerTaskBrief::GetDependencyTriggerPolicy() const
+{
+    return m_dependencyTriggerPolicy;
+}
+
+void TriggerTaskBrief::SetDependencyTriggerPolicy(const string& _dependencyTriggerPolicy)
+{
+    m_dependencyTriggerPolicy = _dependencyTriggerPolicy;
+    m_dependencyTriggerPolicyHasBeenSet = true;
+}
+
+bool TriggerTaskBrief::DependencyTriggerPolicyHasBeenSet() const
+{
+    return m_dependencyTriggerPolicyHasBeenSet;
 }
 

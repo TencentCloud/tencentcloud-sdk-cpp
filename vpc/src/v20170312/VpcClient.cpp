@@ -2040,6 +2040,106 @@ VpcClient::CreateCcnOutcomeCallable VpcClient::CreateCcnCallable(const CreateCcn
     return prom->get_future();
 }
 
+VpcClient::CreateCcnPolicyBasedRoutingNextHopOutcome VpcClient::CreateCcnPolicyBasedRoutingNextHop(const CreateCcnPolicyBasedRoutingNextHopRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCcnPolicyBasedRoutingNextHop");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCcnPolicyBasedRoutingNextHopResponse rsp = CreateCcnPolicyBasedRoutingNextHopResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCcnPolicyBasedRoutingNextHopOutcome(rsp);
+        else
+            return CreateCcnPolicyBasedRoutingNextHopOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCcnPolicyBasedRoutingNextHopOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateCcnPolicyBasedRoutingNextHopAsync(const CreateCcnPolicyBasedRoutingNextHopRequest& request, const CreateCcnPolicyBasedRoutingNextHopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCcnPolicyBasedRoutingNextHopRequest&;
+    using Resp = CreateCcnPolicyBasedRoutingNextHopResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCcnPolicyBasedRoutingNextHop", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VpcClient::CreateCcnPolicyBasedRoutingNextHopOutcomeCallable VpcClient::CreateCcnPolicyBasedRoutingNextHopCallable(const CreateCcnPolicyBasedRoutingNextHopRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCcnPolicyBasedRoutingNextHopOutcome>>();
+    CreateCcnPolicyBasedRoutingNextHopAsync(
+    request,
+    [prom](
+        const VpcClient*,
+        const CreateCcnPolicyBasedRoutingNextHopRequest&,
+        CreateCcnPolicyBasedRoutingNextHopOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VpcClient::CreateCcnPolicyBasedRoutingRulesOutcome VpcClient::CreateCcnPolicyBasedRoutingRules(const CreateCcnPolicyBasedRoutingRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCcnPolicyBasedRoutingRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCcnPolicyBasedRoutingRulesResponse rsp = CreateCcnPolicyBasedRoutingRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCcnPolicyBasedRoutingRulesOutcome(rsp);
+        else
+            return CreateCcnPolicyBasedRoutingRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCcnPolicyBasedRoutingRulesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateCcnPolicyBasedRoutingRulesAsync(const CreateCcnPolicyBasedRoutingRulesRequest& request, const CreateCcnPolicyBasedRoutingRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCcnPolicyBasedRoutingRulesRequest&;
+    using Resp = CreateCcnPolicyBasedRoutingRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCcnPolicyBasedRoutingRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VpcClient::CreateCcnPolicyBasedRoutingRulesOutcomeCallable VpcClient::CreateCcnPolicyBasedRoutingRulesCallable(const CreateCcnPolicyBasedRoutingRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCcnPolicyBasedRoutingRulesOutcome>>();
+    CreateCcnPolicyBasedRoutingRulesAsync(
+    request,
+    [prom](
+        const VpcClient*,
+        const CreateCcnPolicyBasedRoutingRulesRequest&,
+        CreateCcnPolicyBasedRoutingRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VpcClient::CreateCcnRouteTablesOutcome VpcClient::CreateCcnRouteTables(const CreateCcnRouteTablesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCcnRouteTables");
@@ -4982,6 +5082,106 @@ VpcClient::DeleteCcnOutcomeCallable VpcClient::DeleteCcnCallable(const DeleteCcn
         const VpcClient*,
         const DeleteCcnRequest&,
         DeleteCcnOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VpcClient::DeleteCcnPolicyBasedRoutingNextHopOutcome VpcClient::DeleteCcnPolicyBasedRoutingNextHop(const DeleteCcnPolicyBasedRoutingNextHopRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCcnPolicyBasedRoutingNextHop");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCcnPolicyBasedRoutingNextHopResponse rsp = DeleteCcnPolicyBasedRoutingNextHopResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCcnPolicyBasedRoutingNextHopOutcome(rsp);
+        else
+            return DeleteCcnPolicyBasedRoutingNextHopOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCcnPolicyBasedRoutingNextHopOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteCcnPolicyBasedRoutingNextHopAsync(const DeleteCcnPolicyBasedRoutingNextHopRequest& request, const DeleteCcnPolicyBasedRoutingNextHopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCcnPolicyBasedRoutingNextHopRequest&;
+    using Resp = DeleteCcnPolicyBasedRoutingNextHopResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCcnPolicyBasedRoutingNextHop", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VpcClient::DeleteCcnPolicyBasedRoutingNextHopOutcomeCallable VpcClient::DeleteCcnPolicyBasedRoutingNextHopCallable(const DeleteCcnPolicyBasedRoutingNextHopRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCcnPolicyBasedRoutingNextHopOutcome>>();
+    DeleteCcnPolicyBasedRoutingNextHopAsync(
+    request,
+    [prom](
+        const VpcClient*,
+        const DeleteCcnPolicyBasedRoutingNextHopRequest&,
+        DeleteCcnPolicyBasedRoutingNextHopOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VpcClient::DeleteCcnPolicyBasedRoutingRuleOutcome VpcClient::DeleteCcnPolicyBasedRoutingRule(const DeleteCcnPolicyBasedRoutingRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCcnPolicyBasedRoutingRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCcnPolicyBasedRoutingRuleResponse rsp = DeleteCcnPolicyBasedRoutingRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCcnPolicyBasedRoutingRuleOutcome(rsp);
+        else
+            return DeleteCcnPolicyBasedRoutingRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCcnPolicyBasedRoutingRuleOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteCcnPolicyBasedRoutingRuleAsync(const DeleteCcnPolicyBasedRoutingRuleRequest& request, const DeleteCcnPolicyBasedRoutingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCcnPolicyBasedRoutingRuleRequest&;
+    using Resp = DeleteCcnPolicyBasedRoutingRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCcnPolicyBasedRoutingRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VpcClient::DeleteCcnPolicyBasedRoutingRuleOutcomeCallable VpcClient::DeleteCcnPolicyBasedRoutingRuleCallable(const DeleteCcnPolicyBasedRoutingRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCcnPolicyBasedRoutingRuleOutcome>>();
+    DeleteCcnPolicyBasedRoutingRuleAsync(
+    request,
+    [prom](
+        const VpcClient*,
+        const DeleteCcnPolicyBasedRoutingRuleRequest&,
+        DeleteCcnPolicyBasedRoutingRuleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -8282,6 +8482,106 @@ VpcClient::DescribeCcnAttachedInstancesOutcomeCallable VpcClient::DescribeCcnAtt
         const VpcClient*,
         const DescribeCcnAttachedInstancesRequest&,
         DescribeCcnAttachedInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VpcClient::DescribeCcnPolicyBasedRoutingNextHopOutcome VpcClient::DescribeCcnPolicyBasedRoutingNextHop(const DescribeCcnPolicyBasedRoutingNextHopRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCcnPolicyBasedRoutingNextHop");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCcnPolicyBasedRoutingNextHopResponse rsp = DescribeCcnPolicyBasedRoutingNextHopResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCcnPolicyBasedRoutingNextHopOutcome(rsp);
+        else
+            return DescribeCcnPolicyBasedRoutingNextHopOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCcnPolicyBasedRoutingNextHopOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeCcnPolicyBasedRoutingNextHopAsync(const DescribeCcnPolicyBasedRoutingNextHopRequest& request, const DescribeCcnPolicyBasedRoutingNextHopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCcnPolicyBasedRoutingNextHopRequest&;
+    using Resp = DescribeCcnPolicyBasedRoutingNextHopResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCcnPolicyBasedRoutingNextHop", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VpcClient::DescribeCcnPolicyBasedRoutingNextHopOutcomeCallable VpcClient::DescribeCcnPolicyBasedRoutingNextHopCallable(const DescribeCcnPolicyBasedRoutingNextHopRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCcnPolicyBasedRoutingNextHopOutcome>>();
+    DescribeCcnPolicyBasedRoutingNextHopAsync(
+    request,
+    [prom](
+        const VpcClient*,
+        const DescribeCcnPolicyBasedRoutingNextHopRequest&,
+        DescribeCcnPolicyBasedRoutingNextHopOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VpcClient::DescribeCcnPolicyBasedRoutingRuleOutcome VpcClient::DescribeCcnPolicyBasedRoutingRule(const DescribeCcnPolicyBasedRoutingRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCcnPolicyBasedRoutingRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCcnPolicyBasedRoutingRuleResponse rsp = DescribeCcnPolicyBasedRoutingRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCcnPolicyBasedRoutingRuleOutcome(rsp);
+        else
+            return DescribeCcnPolicyBasedRoutingRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCcnPolicyBasedRoutingRuleOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeCcnPolicyBasedRoutingRuleAsync(const DescribeCcnPolicyBasedRoutingRuleRequest& request, const DescribeCcnPolicyBasedRoutingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCcnPolicyBasedRoutingRuleRequest&;
+    using Resp = DescribeCcnPolicyBasedRoutingRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCcnPolicyBasedRoutingRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VpcClient::DescribeCcnPolicyBasedRoutingRuleOutcomeCallable VpcClient::DescribeCcnPolicyBasedRoutingRuleCallable(const DescribeCcnPolicyBasedRoutingRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCcnPolicyBasedRoutingRuleOutcome>>();
+    DescribeCcnPolicyBasedRoutingRuleAsync(
+    request,
+    [prom](
+        const VpcClient*,
+        const DescribeCcnPolicyBasedRoutingRuleRequest&,
+        DescribeCcnPolicyBasedRoutingRuleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -16232,6 +16532,106 @@ VpcClient::ModifyCcnAttributeOutcomeCallable VpcClient::ModifyCcnAttributeCallab
         const VpcClient*,
         const ModifyCcnAttributeRequest&,
         ModifyCcnAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VpcClient::ModifyCcnPolicyBasedRoutingNextHopAttributeOutcome VpcClient::ModifyCcnPolicyBasedRoutingNextHopAttribute(const ModifyCcnPolicyBasedRoutingNextHopAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCcnPolicyBasedRoutingNextHopAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCcnPolicyBasedRoutingNextHopAttributeResponse rsp = ModifyCcnPolicyBasedRoutingNextHopAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCcnPolicyBasedRoutingNextHopAttributeOutcome(rsp);
+        else
+            return ModifyCcnPolicyBasedRoutingNextHopAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCcnPolicyBasedRoutingNextHopAttributeOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyCcnPolicyBasedRoutingNextHopAttributeAsync(const ModifyCcnPolicyBasedRoutingNextHopAttributeRequest& request, const ModifyCcnPolicyBasedRoutingNextHopAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyCcnPolicyBasedRoutingNextHopAttributeRequest&;
+    using Resp = ModifyCcnPolicyBasedRoutingNextHopAttributeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyCcnPolicyBasedRoutingNextHopAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VpcClient::ModifyCcnPolicyBasedRoutingNextHopAttributeOutcomeCallable VpcClient::ModifyCcnPolicyBasedRoutingNextHopAttributeCallable(const ModifyCcnPolicyBasedRoutingNextHopAttributeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyCcnPolicyBasedRoutingNextHopAttributeOutcome>>();
+    ModifyCcnPolicyBasedRoutingNextHopAttributeAsync(
+    request,
+    [prom](
+        const VpcClient*,
+        const ModifyCcnPolicyBasedRoutingNextHopAttributeRequest&,
+        ModifyCcnPolicyBasedRoutingNextHopAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VpcClient::ModifyCcnPolicyBasedRoutingRuleAttributeOutcome VpcClient::ModifyCcnPolicyBasedRoutingRuleAttribute(const ModifyCcnPolicyBasedRoutingRuleAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCcnPolicyBasedRoutingRuleAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCcnPolicyBasedRoutingRuleAttributeResponse rsp = ModifyCcnPolicyBasedRoutingRuleAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCcnPolicyBasedRoutingRuleAttributeOutcome(rsp);
+        else
+            return ModifyCcnPolicyBasedRoutingRuleAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCcnPolicyBasedRoutingRuleAttributeOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyCcnPolicyBasedRoutingRuleAttributeAsync(const ModifyCcnPolicyBasedRoutingRuleAttributeRequest& request, const ModifyCcnPolicyBasedRoutingRuleAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyCcnPolicyBasedRoutingRuleAttributeRequest&;
+    using Resp = ModifyCcnPolicyBasedRoutingRuleAttributeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyCcnPolicyBasedRoutingRuleAttribute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VpcClient::ModifyCcnPolicyBasedRoutingRuleAttributeOutcomeCallable VpcClient::ModifyCcnPolicyBasedRoutingRuleAttributeCallable(const ModifyCcnPolicyBasedRoutingRuleAttributeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyCcnPolicyBasedRoutingRuleAttributeOutcome>>();
+    ModifyCcnPolicyBasedRoutingRuleAttributeAsync(
+    request,
+    [prom](
+        const VpcClient*,
+        const ModifyCcnPolicyBasedRoutingRuleAttributeRequest&,
+        ModifyCcnPolicyBasedRoutingRuleAttributeOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

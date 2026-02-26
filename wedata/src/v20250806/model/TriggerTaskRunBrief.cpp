@@ -37,6 +37,7 @@ TriggerTaskRunBrief::TriggerTaskRunBrief() :
     m_createrUinHasBeenSet(false),
     m_jobIdHasBeenSet(false),
     m_createTimeHasBeenSet(false),
+    m_scheduleTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_dependenceFinishedTimeHasBeenSet(false),
     m_queueStartTimeHasBeenSet(false),
@@ -75,7 +76,8 @@ TriggerTaskRunBrief::TriggerTaskRunBrief() :
     m_workflowParamsHasBeenSet(false),
     m_supportRerunHasBeenSet(false),
     m_workflowExecutionStateHasBeenSet(false),
-    m_executionResultHasBeenSet(false)
+    m_executionResultHasBeenSet(false),
+    m_dependencyTriggerPolicyHasBeenSet(false)
 {
 }
 
@@ -242,6 +244,16 @@ CoreInternalOutcome TriggerTaskRunBrief::Deserialize(const rapidjson::Value &val
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScheduleTime") && !value["ScheduleTime"].IsNull())
+    {
+        if (!value["ScheduleTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerTaskRunBrief.ScheduleTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleTime = string(value["ScheduleTime"].GetString());
+        m_scheduleTimeHasBeenSet = true;
     }
 
     if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
@@ -637,6 +649,16 @@ CoreInternalOutcome TriggerTaskRunBrief::Deserialize(const rapidjson::Value &val
         m_executionResultHasBeenSet = true;
     }
 
+    if (value.HasMember("DependencyTriggerPolicy") && !value["DependencyTriggerPolicy"].IsNull())
+    {
+        if (!value["DependencyTriggerPolicy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerTaskRunBrief.DependencyTriggerPolicy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dependencyTriggerPolicy = string(value["DependencyTriggerPolicy"].GetString());
+        m_dependencyTriggerPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -770,6 +792,14 @@ void TriggerTaskRunBrief::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updateTimeHasBeenSet)
@@ -1089,6 +1119,14 @@ void TriggerTaskRunBrief::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         value.AddMember(iKey, rapidjson::Value(m_executionResult.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_dependencyTriggerPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DependencyTriggerPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dependencyTriggerPolicy.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -1346,6 +1384,22 @@ void TriggerTaskRunBrief::SetCreateTime(const string& _createTime)
 bool TriggerTaskRunBrief::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string TriggerTaskRunBrief::GetScheduleTime() const
+{
+    return m_scheduleTime;
+}
+
+void TriggerTaskRunBrief::SetScheduleTime(const string& _scheduleTime)
+{
+    m_scheduleTime = _scheduleTime;
+    m_scheduleTimeHasBeenSet = true;
+}
+
+bool TriggerTaskRunBrief::ScheduleTimeHasBeenSet() const
+{
+    return m_scheduleTimeHasBeenSet;
 }
 
 string TriggerTaskRunBrief::GetUpdateTime() const
@@ -1970,5 +2024,21 @@ void TriggerTaskRunBrief::SetExecutionResult(const string& _executionResult)
 bool TriggerTaskRunBrief::ExecutionResultHasBeenSet() const
 {
     return m_executionResultHasBeenSet;
+}
+
+string TriggerTaskRunBrief::GetDependencyTriggerPolicy() const
+{
+    return m_dependencyTriggerPolicy;
+}
+
+void TriggerTaskRunBrief::SetDependencyTriggerPolicy(const string& _dependencyTriggerPolicy)
+{
+    m_dependencyTriggerPolicy = _dependencyTriggerPolicy;
+    m_dependencyTriggerPolicyHasBeenSet = true;
+}
+
+bool TriggerTaskRunBrief::DependencyTriggerPolicyHasBeenSet() const
+{
+    return m_dependencyTriggerPolicyHasBeenSet;
 }
 

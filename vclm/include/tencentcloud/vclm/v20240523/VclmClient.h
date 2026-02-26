@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/vclm/v20240523/model/CheckAnimateImageJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/CheckAnimateImageJobResponse.h>
+#include <tencentcloud/vclm/v20240523/model/DescribeAigcVideoJobRequest.h>
+#include <tencentcloud/vclm/v20240523/model/DescribeAigcVideoJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeHumanActorJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeHumanActorJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeHunyuanToVideoJobRequest.h>
@@ -45,6 +47,8 @@
 #include <tencentcloud/vclm/v20240523/model/DescribeVideoStylizationJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeVideoVoiceJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/DescribeVideoVoiceJobResponse.h>
+#include <tencentcloud/vclm/v20240523/model/SubmitAigcVideoJobRequest.h>
+#include <tencentcloud/vclm/v20240523/model/SubmitAigcVideoJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitHumanActorJobRequest.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitHumanActorJobResponse.h>
 #include <tencentcloud/vclm/v20240523/model/SubmitHunyuanToVideoJobRequest.h>
@@ -82,6 +86,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckAnimateImageJobResponse> CheckAnimateImageJobOutcome;
                 typedef std::future<CheckAnimateImageJobOutcome> CheckAnimateImageJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::CheckAnimateImageJobRequest&, CheckAnimateImageJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckAnimateImageJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAigcVideoJobResponse> DescribeAigcVideoJobOutcome;
+                typedef std::future<DescribeAigcVideoJobOutcome> DescribeAigcVideoJobOutcomeCallable;
+                typedef std::function<void(const VclmClient*, const Model::DescribeAigcVideoJobRequest&, DescribeAigcVideoJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcVideoJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHumanActorJobResponse> DescribeHumanActorJobOutcome;
                 typedef std::future<DescribeHumanActorJobOutcome> DescribeHumanActorJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::DescribeHumanActorJobRequest&, DescribeHumanActorJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHumanActorJobAsyncHandler;
@@ -112,6 +119,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVideoVoiceJobResponse> DescribeVideoVoiceJobOutcome;
                 typedef std::future<DescribeVideoVoiceJobOutcome> DescribeVideoVoiceJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::DescribeVideoVoiceJobRequest&, DescribeVideoVoiceJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoVoiceJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitAigcVideoJobResponse> SubmitAigcVideoJobOutcome;
+                typedef std::future<SubmitAigcVideoJobOutcome> SubmitAigcVideoJobOutcomeCallable;
+                typedef std::function<void(const VclmClient*, const Model::SubmitAigcVideoJobRequest&, SubmitAigcVideoJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitAigcVideoJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitHumanActorJobResponse> SubmitHumanActorJobOutcome;
                 typedef std::future<SubmitHumanActorJobOutcome> SubmitHumanActorJobOutcomeCallable;
                 typedef std::function<void(const VclmClient*, const Model::SubmitHumanActorJobRequest&, SubmitHumanActorJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitHumanActorJobAsyncHandler;
@@ -153,6 +163,15 @@ namespace TencentCloud
                 CheckAnimateImageJobOutcome CheckAnimateImageJob(const Model::CheckAnimateImageJobRequest &request);
                 void CheckAnimateImageJobAsync(const Model::CheckAnimateImageJobRequest& request, const CheckAnimateImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckAnimateImageJobOutcomeCallable CheckAnimateImageJobCallable(const Model::CheckAnimateImageJobRequest& request);
+
+                /**
+                 *查询生视频任务
+                 * @param req DescribeAigcVideoJobRequest
+                 * @return DescribeAigcVideoJobOutcome
+                 */
+                DescribeAigcVideoJobOutcome DescribeAigcVideoJob(const Model::DescribeAigcVideoJobRequest &request);
+                void DescribeAigcVideoJobAsync(const Model::DescribeAigcVideoJobRequest& request, const DescribeAigcVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAigcVideoJobOutcomeCallable DescribeAigcVideoJobCallable(const Model::DescribeAigcVideoJobRequest& request);
 
                 /**
                  *通过JobId提交请求，获取人像驱动任务的结果信息。
@@ -244,6 +263,15 @@ namespace TencentCloud
                 DescribeVideoVoiceJobOutcome DescribeVideoVoiceJob(const Model::DescribeVideoVoiceJobRequest &request);
                 void DescribeVideoVoiceJobAsync(const Model::DescribeVideoVoiceJobRequest& request, const DescribeVideoVoiceJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVideoVoiceJobOutcomeCallable DescribeVideoVoiceJobCallable(const Model::DescribeVideoVoiceJobRequest& request);
+
+                /**
+                 *提交生视频任务
+                 * @param req SubmitAigcVideoJobRequest
+                 * @return SubmitAigcVideoJobOutcome
+                 */
+                SubmitAigcVideoJobOutcome SubmitAigcVideoJob(const Model::SubmitAigcVideoJobRequest &request);
+                void SubmitAigcVideoJobAsync(const Model::SubmitAigcVideoJobRequest& request, const SubmitAigcVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitAigcVideoJobOutcomeCallable SubmitAigcVideoJobCallable(const Model::SubmitAigcVideoJobRequest& request);
 
                 /**
                  *用于提交人像驱动任务

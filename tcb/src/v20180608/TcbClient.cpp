@@ -590,6 +590,56 @@ TcbClient::CreateCloudBaseRunServerVersionOutcomeCallable TcbClient::CreateCloud
     return prom->get_future();
 }
 
+TcbClient::CreateEnvOutcome TcbClient::CreateEnv(const CreateEnvRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEnv");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEnvResponse rsp = CreateEnvResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEnvOutcome(rsp);
+        else
+            return CreateEnvOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEnvOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CreateEnvAsync(const CreateEnvRequest& request, const CreateEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateEnvRequest&;
+    using Resp = CreateEnvResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateEnv", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::CreateEnvOutcomeCallable TcbClient::CreateEnvCallable(const CreateEnvRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateEnvOutcome>>();
+    CreateEnvAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CreateEnvRequest&,
+        CreateEnvOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::CreateHostingDomainOutcome TcbClient::CreateHostingDomain(const CreateHostingDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateHostingDomain");
@@ -4340,6 +4390,56 @@ TcbClient::ModifyEnvOutcomeCallable TcbClient::ModifyEnvCallable(const ModifyEnv
     return prom->get_future();
 }
 
+TcbClient::ModifyEnvPlanOutcome TcbClient::ModifyEnvPlan(const ModifyEnvPlanRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyEnvPlan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyEnvPlanResponse rsp = ModifyEnvPlanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyEnvPlanOutcome(rsp);
+        else
+            return ModifyEnvPlanOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyEnvPlanOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::ModifyEnvPlanAsync(const ModifyEnvPlanRequest& request, const ModifyEnvPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyEnvPlanRequest&;
+    using Resp = ModifyEnvPlanResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyEnvPlan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::ModifyEnvPlanOutcomeCallable TcbClient::ModifyEnvPlanCallable(const ModifyEnvPlanRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyEnvPlanOutcome>>();
+    ModifyEnvPlanAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ModifyEnvPlanRequest&,
+        ModifyEnvPlanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::ModifyGatewayVersionTrafficOutcome TcbClient::ModifyGatewayVersionTraffic(const ModifyGatewayVersionTrafficRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyGatewayVersionTraffic");
@@ -4482,6 +4582,56 @@ TcbClient::ReinstateEnvOutcomeCallable TcbClient::ReinstateEnvCallable(const Rei
         const TcbClient*,
         const ReinstateEnvRequest&,
         ReinstateEnvOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::RenewEnvOutcome TcbClient::RenewEnv(const RenewEnvRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenewEnv");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenewEnvResponse rsp = RenewEnvResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenewEnvOutcome(rsp);
+        else
+            return RenewEnvOutcome(o.GetError());
+    }
+    else
+    {
+        return RenewEnvOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::RenewEnvAsync(const RenewEnvRequest& request, const RenewEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RenewEnvRequest&;
+    using Resp = RenewEnvResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RenewEnv", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::RenewEnvOutcomeCallable TcbClient::RenewEnvCallable(const RenewEnvRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RenewEnvOutcome>>();
+    RenewEnvAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const RenewEnvRequest&,
+        RenewEnvOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

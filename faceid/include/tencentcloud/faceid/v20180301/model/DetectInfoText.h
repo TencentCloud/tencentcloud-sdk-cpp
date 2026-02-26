@@ -48,26 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取本次流程最终验证结果。
-- 取值范围：0为成功。
-- 仅包含活体人脸核身结果，不包含意愿核身结果。
+                     * 获取<p>本次流程最终验证结果。</p><ul><li>取值范围：0为成功。</li><li>仅包含活体人脸核身结果，不包含意愿核身结果。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrCode 本次流程最终验证结果。
-- 取值范围：0为成功。
-- 仅包含活体人脸核身结果，不包含意愿核身结果。
+                     * @return ErrCode <p>本次流程最终验证结果。</p><ul><li>取值范围：0为成功。</li><li>仅包含活体人脸核身结果，不包含意愿核身结果。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
-                     * 设置本次流程最终验证结果。
-- 取值范围：0为成功。
-- 仅包含活体人脸核身结果，不包含意愿核身结果。
+                     * 设置<p>本次流程最终验证结果。</p><ul><li>取值范围：0为成功。</li><li>仅包含活体人脸核身结果，不包含意愿核身结果。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _errCode 本次流程最终验证结果。
-- 取值范围：0为成功。
-- 仅包含活体人脸核身结果，不包含意愿核身结果。
+                     * @param _errCode <p>本次流程最终验证结果。</p><ul><li>取值范围：0为成功。</li><li>仅包含活体人脸核身结果，不包含意愿核身结果。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -81,22 +73,18 @@ namespace TencentCloud
                     bool ErrCodeHasBeenSet() const;
 
                     /**
-                     * 获取本次流程最终验证结果描述。
-- 仅描述用，文案更新时不会通知。
+                     * 获取<p>本次流程最终验证结果描述。</p><ul><li>仅描述用，文案更新时不会通知。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrMsg 本次流程最终验证结果描述。
-- 仅描述用，文案更新时不会通知。
+                     * @return ErrMsg <p>本次流程最终验证结果描述。</p><ul><li>仅描述用，文案更新时不会通知。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
-                     * 设置本次流程最终验证结果描述。
-- 仅描述用，文案更新时不会通知。
+                     * 设置<p>本次流程最终验证结果描述。</p><ul><li>仅描述用，文案更新时不会通知。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _errMsg 本次流程最终验证结果描述。
-- 仅描述用，文案更新时不会通知。
+                     * @param _errMsg <p>本次流程最终验证结果描述。</p><ul><li>仅描述用，文案更新时不会通知。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -110,18 +98,18 @@ namespace TencentCloud
                     bool ErrMsgHasBeenSet() const;
 
                     /**
-                     * 获取本次验证使用的身份证号。
+                     * 获取<p>本次验证使用的身份证号。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IdCard 本次验证使用的身份证号。
+                     * @return IdCard <p>本次验证使用的身份证号。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdCard() const;
 
                     /**
-                     * 设置本次验证使用的身份证号。
+                     * 设置<p>本次验证使用的身份证号。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _idCard 本次验证使用的身份证号。
+                     * @param _idCard <p>本次验证使用的身份证号。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -135,34 +123,18 @@ namespace TencentCloud
                     bool IdCardHasBeenSet() const;
 
                     /**
-                     * 获取用户认证时使用的证件号码类型。
-- 取值范围：
-    0：二代身份证的证件号码。
-    1：港澳台居住证的证件号码。
-    2：其他（核验使用的证件号码非合法身份号码）。
+                     * 获取<p>用户认证时使用的证件号码类型。</p><ul><li>取值范围：<br>  0：二代身份证的证件号码。<br>  1：港澳台居住证的证件号码。<br>  2：其他（核验使用的证件号码非合法身份号码）。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UseIDType 用户认证时使用的证件号码类型。
-- 取值范围：
-    0：二代身份证的证件号码。
-    1：港澳台居住证的证件号码。
-    2：其他（核验使用的证件号码非合法身份号码）。
+                     * @return UseIDType <p>用户认证时使用的证件号码类型。</p><ul><li>取值范围：<br>  0：二代身份证的证件号码。<br>  1：港澳台居住证的证件号码。<br>  2：其他（核验使用的证件号码非合法身份号码）。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUseIDType() const;
 
                     /**
-                     * 设置用户认证时使用的证件号码类型。
-- 取值范围：
-    0：二代身份证的证件号码。
-    1：港澳台居住证的证件号码。
-    2：其他（核验使用的证件号码非合法身份号码）。
+                     * 设置<p>用户认证时使用的证件号码类型。</p><ul><li>取值范围：<br>  0：二代身份证的证件号码。<br>  1：港澳台居住证的证件号码。<br>  2：其他（核验使用的证件号码非合法身份号码）。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _useIDType 用户认证时使用的证件号码类型。
-- 取值范围：
-    0：二代身份证的证件号码。
-    1：港澳台居住证的证件号码。
-    2：其他（核验使用的证件号码非合法身份号码）。
+                     * @param _useIDType <p>用户认证时使用的证件号码类型。</p><ul><li>取值范围：<br>  0：二代身份证的证件号码。<br>  1：港澳台居住证的证件号码。<br>  2：其他（核验使用的证件号码非合法身份号码）。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -176,18 +148,18 @@ namespace TencentCloud
                     bool UseIDTypeHasBeenSet() const;
 
                     /**
-                     * 获取本次验证使用的姓名。
+                     * 获取<p>本次验证使用的姓名。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 本次验证使用的姓名。
+                     * @return Name <p>本次验证使用的姓名。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置本次验证使用的姓名。
+                     * 设置<p>本次验证使用的姓名。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 本次验证使用的姓名。
+                     * @param _name <p>本次验证使用的姓名。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -201,18 +173,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取身份校验环节识别结果：民族。
+                     * 获取<p>身份校验环节识别结果：民族。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OcrNation 身份校验环节识别结果：民族。
+                     * @return OcrNation <p>身份校验环节识别结果：民族。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOcrNation() const;
 
                     /**
-                     * 设置身份校验环节识别结果：民族。
+                     * 设置<p>身份校验环节识别结果：民族。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ocrNation 身份校验环节识别结果：民族。
+                     * @param _ocrNation <p>身份校验环节识别结果：民族。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -226,18 +198,18 @@ namespace TencentCloud
                     bool OcrNationHasBeenSet() const;
 
                     /**
-                     * 获取身份校验环节识别结果：家庭住址。
+                     * 获取<p>身份校验环节识别结果：家庭住址。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OcrAddress 身份校验环节识别结果：家庭住址。
+                     * @return OcrAddress <p>身份校验环节识别结果：家庭住址。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOcrAddress() const;
 
                     /**
-                     * 设置身份校验环节识别结果：家庭住址。
+                     * 设置<p>身份校验环节识别结果：家庭住址。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ocrAddress 身份校验环节识别结果：家庭住址。
+                     * @param _ocrAddress <p>身份校验环节识别结果：家庭住址。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -251,22 +223,18 @@ namespace TencentCloud
                     bool OcrAddressHasBeenSet() const;
 
                     /**
-                     * 获取身份校验环节识别结果：生日。
-- 格式为：YYYY/M/D
+                     * 获取<p>身份校验环节识别结果：生日。</p><ul><li>格式为：YYYY/M/D</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OcrBirth 身份校验环节识别结果：生日。
-- 格式为：YYYY/M/D
+                     * @return OcrBirth <p>身份校验环节识别结果：生日。</p><ul><li>格式为：YYYY/M/D</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOcrBirth() const;
 
                     /**
-                     * 设置身份校验环节识别结果：生日。
-- 格式为：YYYY/M/D
+                     * 设置<p>身份校验环节识别结果：生日。</p><ul><li>格式为：YYYY/M/D</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ocrBirth 身份校验环节识别结果：生日。
-- 格式为：YYYY/M/D
+                     * @param _ocrBirth <p>身份校验环节识别结果：生日。</p><ul><li>格式为：YYYY/M/D</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -280,18 +248,18 @@ namespace TencentCloud
                     bool OcrBirthHasBeenSet() const;
 
                     /**
-                     * 获取身份校验环节识别结果：签发机关。
+                     * 获取<p>身份校验环节识别结果：签发机关。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OcrAuthority 身份校验环节识别结果：签发机关。
+                     * @return OcrAuthority <p>身份校验环节识别结果：签发机关。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOcrAuthority() const;
 
                     /**
-                     * 设置身份校验环节识别结果：签发机关。
+                     * 设置<p>身份校验环节识别结果：签发机关。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ocrAuthority 身份校验环节识别结果：签发机关。
+                     * @param _ocrAuthority <p>身份校验环节识别结果：签发机关。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -305,22 +273,18 @@ namespace TencentCloud
                     bool OcrAuthorityHasBeenSet() const;
 
                     /**
-                     * 获取身份校验环节识别结果：有效日期。
-- 格式为：YYYY.MM.DD-YYYY.MM.DD。
+                     * 获取<p>身份校验环节识别结果：有效日期。</p><ul><li>格式为：YYYY.MM.DD-YYYY.MM.DD。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OcrValidDate 身份校验环节识别结果：有效日期。
-- 格式为：YYYY.MM.DD-YYYY.MM.DD。
+                     * @return OcrValidDate <p>身份校验环节识别结果：有效日期。</p><ul><li>格式为：YYYY.MM.DD-YYYY.MM.DD。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOcrValidDate() const;
 
                     /**
-                     * 设置身份校验环节识别结果：有效日期。
-- 格式为：YYYY.MM.DD-YYYY.MM.DD。
+                     * 设置<p>身份校验环节识别结果：有效日期。</p><ul><li>格式为：YYYY.MM.DD-YYYY.MM.DD。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ocrValidDate 身份校验环节识别结果：有效日期。
-- 格式为：YYYY.MM.DD-YYYY.MM.DD。
+                     * @param _ocrValidDate <p>身份校验环节识别结果：有效日期。</p><ul><li>格式为：YYYY.MM.DD-YYYY.MM.DD。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -334,18 +298,18 @@ namespace TencentCloud
                     bool OcrValidDateHasBeenSet() const;
 
                     /**
-                     * 获取身份校验环节识别结果：姓名。
+                     * 获取<p>身份校验环节识别结果：姓名。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OcrName 身份校验环节识别结果：姓名。
+                     * @return OcrName <p>身份校验环节识别结果：姓名。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOcrName() const;
 
                     /**
-                     * 设置身份校验环节识别结果：姓名。
+                     * 设置<p>身份校验环节识别结果：姓名。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ocrName 身份校验环节识别结果：姓名。
+                     * @param _ocrName <p>身份校验环节识别结果：姓名。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -359,18 +323,18 @@ namespace TencentCloud
                     bool OcrNameHasBeenSet() const;
 
                     /**
-                     * 获取身份校验环节识别结果：身份证号。
+                     * 获取<p>身份校验环节识别结果：身份证号。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OcrIdCard 身份校验环节识别结果：身份证号。
+                     * @return OcrIdCard <p>身份校验环节识别结果：身份证号。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOcrIdCard() const;
 
                     /**
-                     * 设置身份校验环节识别结果：身份证号。
+                     * 设置<p>身份校验环节识别结果：身份证号。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ocrIdCard 身份校验环节识别结果：身份证号。
+                     * @param _ocrIdCard <p>身份校验环节识别结果：身份证号。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -384,18 +348,18 @@ namespace TencentCloud
                     bool OcrIdCardHasBeenSet() const;
 
                     /**
-                     * 获取身份校验环节识别结果：性别。
+                     * 获取<p>身份校验环节识别结果：性别。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OcrGender 身份校验环节识别结果：性别。
+                     * @return OcrGender <p>身份校验环节识别结果：性别。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOcrGender() const;
 
                     /**
-                     * 设置身份校验环节识别结果：性别。
+                     * 设置<p>身份校验环节识别结果：性别。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ocrGender 身份校验环节识别结果：性别。
+                     * @param _ocrGender <p>身份校验环节识别结果：性别。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -409,22 +373,18 @@ namespace TencentCloud
                     bool OcrGenderHasBeenSet() const;
 
                     /**
-                     * 获取身份校验环节采用的信息上传方式。
-- 取值有"NFC"、"OCR"、"手动输入"、"其他"
+                     * 获取<p>身份校验环节采用的信息上传方式。</p><ul><li>取值有&quot;NFC&quot;、&quot;OCR&quot;、&quot;手动输入&quot;、&quot;其他&quot;</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IdInfoFrom 身份校验环节采用的信息上传方式。
-- 取值有"NFC"、"OCR"、"手动输入"、"其他"
+                     * @return IdInfoFrom <p>身份校验环节采用的信息上传方式。</p><ul><li>取值有&quot;NFC&quot;、&quot;OCR&quot;、&quot;手动输入&quot;、&quot;其他&quot;</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdInfoFrom() const;
 
                     /**
-                     * 设置身份校验环节采用的信息上传方式。
-- 取值有"NFC"、"OCR"、"手动输入"、"其他"
+                     * 设置<p>身份校验环节采用的信息上传方式。</p><ul><li>取值有&quot;NFC&quot;、&quot;OCR&quot;、&quot;手动输入&quot;、&quot;其他&quot;</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _idInfoFrom 身份校验环节采用的信息上传方式。
-- 取值有"NFC"、"OCR"、"手动输入"、"其他"
+                     * @param _idInfoFrom <p>身份校验环节采用的信息上传方式。</p><ul><li>取值有&quot;NFC&quot;、&quot;OCR&quot;、&quot;手动输入&quot;、&quot;其他&quot;</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -438,22 +398,18 @@ namespace TencentCloud
                     bool IdInfoFromHasBeenSet() const;
 
                     /**
-                     * 获取本次流程最终活体结果。
-- 0为成功
+                     * 获取<p>本次流程最终活体结果。</p><ul><li>0为成功</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LiveStatus 本次流程最终活体结果。
-- 0为成功
+                     * @return LiveStatus <p>本次流程最终活体结果。</p><ul><li>0为成功</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLiveStatus() const;
 
                     /**
-                     * 设置本次流程最终活体结果。
-- 0为成功
+                     * 设置<p>本次流程最终活体结果。</p><ul><li>0为成功</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _liveStatus 本次流程最终活体结果。
-- 0为成功
+                     * @param _liveStatus <p>本次流程最终活体结果。</p><ul><li>0为成功</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -467,22 +423,18 @@ namespace TencentCloud
                     bool LiveStatusHasBeenSet() const;
 
                     /**
-                     * 获取本次流程最终活体结果描述。
-- 仅描述用，文案更新时不会通知。
+                     * 获取<p>本次流程最终活体结果描述。</p><ul><li>仅描述用，文案更新时不会通知。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LiveMsg 本次流程最终活体结果描述。
-- 仅描述用，文案更新时不会通知。
+                     * @return LiveMsg <p>本次流程最终活体结果描述。</p><ul><li>仅描述用，文案更新时不会通知。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLiveMsg() const;
 
                     /**
-                     * 设置本次流程最终活体结果描述。
-- 仅描述用，文案更新时不会通知。
+                     * 设置<p>本次流程最终活体结果描述。</p><ul><li>仅描述用，文案更新时不会通知。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _liveMsg 本次流程最终活体结果描述。
-- 仅描述用，文案更新时不会通知。
+                     * @param _liveMsg <p>本次流程最终活体结果描述。</p><ul><li>仅描述用，文案更新时不会通知。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -496,22 +448,18 @@ namespace TencentCloud
                     bool LiveMsgHasBeenSet() const;
 
                     /**
-                     * 获取本次流程最终一比一结果。
-- 0为成功
+                     * 获取<p>本次流程最终一比一结果。</p><ul><li>0为成功</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Comparestatus 本次流程最终一比一结果。
-- 0为成功
+                     * @return Comparestatus <p>本次流程最终一比一结果。</p><ul><li>0为成功</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetComparestatus() const;
 
                     /**
-                     * 设置本次流程最终一比一结果。
-- 0为成功
+                     * 设置<p>本次流程最终一比一结果。</p><ul><li>0为成功</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _comparestatus 本次流程最终一比一结果。
-- 0为成功
+                     * @param _comparestatus <p>本次流程最终一比一结果。</p><ul><li>0为成功</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -525,22 +473,18 @@ namespace TencentCloud
                     bool ComparestatusHasBeenSet() const;
 
                     /**
-                     * 获取本次流程最终一比一结果描述。
-- 仅描述用，文案更新时不会通知。
+                     * 获取<p>本次流程最终一比一结果描述。</p><ul><li>仅描述用，文案更新时不会通知。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Comparemsg 本次流程最终一比一结果描述。
-- 仅描述用，文案更新时不会通知。
+                     * @return Comparemsg <p>本次流程最终一比一结果描述。</p><ul><li>仅描述用，文案更新时不会通知。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComparemsg() const;
 
                     /**
-                     * 设置本次流程最终一比一结果描述。
-- 仅描述用，文案更新时不会通知。
+                     * 设置<p>本次流程最终一比一结果描述。</p><ul><li>仅描述用，文案更新时不会通知。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _comparemsg 本次流程最终一比一结果描述。
-- 仅描述用，文案更新时不会通知。
+                     * @param _comparemsg <p>本次流程最终一比一结果描述。</p><ul><li>仅描述用，文案更新时不会通知。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -554,30 +498,18 @@ namespace TencentCloud
                     bool ComparemsgHasBeenSet() const;
 
                     /**
-                     * 获取本次流程活体一比一的分数。
-- 取值范围 [0.00, 100.00]。
-- 相似度大于等于70时才判断为同一人，阈值不支持自定义。
-- 阈值70的误通过率为千分之一，阈值80的误通过率是万分之一。
+                     * 获取<p>本次流程活体一比一的分数。- 取值范围 [0.00, 100.00]。- 相似度大于等于70时才判断为同一人，阈值不支持自定义。- 阈值70的误通过率为万分之一。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Sim 本次流程活体一比一的分数。
-- 取值范围 [0.00, 100.00]。
-- 相似度大于等于70时才判断为同一人，阈值不支持自定义。
-- 阈值70的误通过率为千分之一，阈值80的误通过率是万分之一。
+                     * @return Sim <p>本次流程活体一比一的分数。- 取值范围 [0.00, 100.00]。- 相似度大于等于70时才判断为同一人，阈值不支持自定义。- 阈值70的误通过率为万分之一。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSim() const;
 
                     /**
-                     * 设置本次流程活体一比一的分数。
-- 取值范围 [0.00, 100.00]。
-- 相似度大于等于70时才判断为同一人，阈值不支持自定义。
-- 阈值70的误通过率为千分之一，阈值80的误通过率是万分之一。
+                     * 设置<p>本次流程活体一比一的分数。- 取值范围 [0.00, 100.00]。- 相似度大于等于70时才判断为同一人，阈值不支持自定义。- 阈值70的误通过率为万分之一。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sim 本次流程活体一比一的分数。
-- 取值范围 [0.00, 100.00]。
-- 相似度大于等于70时才判断为同一人，阈值不支持自定义。
-- 阈值70的误通过率为千分之一，阈值80的误通过率是万分之一。
+                     * @param _sim <p>本次流程活体一比一的分数。- 取值范围 [0.00, 100.00]。- 相似度大于等于70时才判断为同一人，阈值不支持自定义。- 阈值70的误通过率为万分之一。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -591,18 +523,18 @@ namespace TencentCloud
                     bool SimHasBeenSet() const;
 
                     /**
-                     * 获取地理位置经纬度。
+                     * 获取<p>地理位置经纬度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Location 地理位置经纬度。
+                     * @return Location <p>地理位置经纬度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocation() const;
 
                     /**
-                     * 设置地理位置经纬度。
+                     * 设置<p>地理位置经纬度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _location 地理位置经纬度。
+                     * @param _location <p>地理位置经纬度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -616,18 +548,18 @@ namespace TencentCloud
                     bool LocationHasBeenSet() const;
 
                     /**
-                     * 获取Auth接口带入额外信息。
+                     * 获取<p>Auth接口带入额外信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Extra Auth接口带入额外信息。
+                     * @return Extra <p>Auth接口带入额外信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExtra() const;
 
                     /**
-                     * 设置Auth接口带入额外信息。
+                     * 设置<p>Auth接口带入额外信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _extra Auth接口带入额外信息。
+                     * @param _extra <p>Auth接口带入额外信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -641,18 +573,18 @@ namespace TencentCloud
                     bool ExtraHasBeenSet() const;
 
                     /**
-                     * 获取本次流程进行的活体一比一流水。
+                     * 获取<p>本次流程进行的活体一比一流水。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LivenessDetail 本次流程进行的活体一比一流水。
+                     * @return LivenessDetail <p>本次流程进行的活体一比一流水。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DetectDetail> GetLivenessDetail() const;
 
                     /**
-                     * 设置本次流程进行的活体一比一流水。
+                     * 设置<p>本次流程进行的活体一比一流水。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _livenessDetail 本次流程进行的活体一比一流水。
+                     * @param _livenessDetail <p>本次流程进行的活体一比一流水。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -666,78 +598,18 @@ namespace TencentCloud
                     bool LivenessDetailHasBeenSet() const;
 
                     /**
-                     * 获取描述当前请求活体阶段被拒绝的详细原因，该参数仅限PLUS版本核身服务返回。
-- 详情如下：
-    01-用户全程闭眼
-    02-用户未完成指定动作
-    03-疑似翻拍攻击
-    04-疑似合成攻击
-    05-疑似黑产模版
-    06-疑似存在水印
-    07-反光校验未通过
-    08-疑似中途换人
-    09-人脸质量过差
-    10-距离校验不通过
-    11-疑似对抗样本攻击
-    12-嘴巴区域疑似存在攻击痕迹
-    13-眼睛区域疑似存在攻击痕迹
-    14-眼睛或嘴巴被遮挡
+                     * 获取<p>描述当前请求活体阶段被拒绝的详细原因，该参数仅限PLUS版本核身服务返回。</p><ul><li>详情如下：<br>  01-用户全程闭眼<br>  02-用户未完成指定动作<br>  03-疑似翻拍攻击<br>  04-疑似合成攻击<br>  05-疑似黑产模版<br>  06-疑似存在水印<br>  07-反光校验未通过<br>  08-疑似中途换人<br>  09-人脸质量过差<br>  10-距离校验不通过<br>  11-疑似对抗样本攻击<br>  12-嘴巴区域疑似存在攻击痕迹<br>  13-眼睛区域疑似存在攻击痕迹<br>  14-眼睛或嘴巴被遮挡</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LivenessInfoTag 描述当前请求活体阶段被拒绝的详细原因，该参数仅限PLUS版本核身服务返回。
-- 详情如下：
-    01-用户全程闭眼
-    02-用户未完成指定动作
-    03-疑似翻拍攻击
-    04-疑似合成攻击
-    05-疑似黑产模版
-    06-疑似存在水印
-    07-反光校验未通过
-    08-疑似中途换人
-    09-人脸质量过差
-    10-距离校验不通过
-    11-疑似对抗样本攻击
-    12-嘴巴区域疑似存在攻击痕迹
-    13-眼睛区域疑似存在攻击痕迹
-    14-眼睛或嘴巴被遮挡
+                     * @return LivenessInfoTag <p>描述当前请求活体阶段被拒绝的详细原因，该参数仅限PLUS版本核身服务返回。</p><ul><li>详情如下：<br>  01-用户全程闭眼<br>  02-用户未完成指定动作<br>  03-疑似翻拍攻击<br>  04-疑似合成攻击<br>  05-疑似黑产模版<br>  06-疑似存在水印<br>  07-反光校验未通过<br>  08-疑似中途换人<br>  09-人脸质量过差<br>  10-距离校验不通过<br>  11-疑似对抗样本攻击<br>  12-嘴巴区域疑似存在攻击痕迹<br>  13-眼睛区域疑似存在攻击痕迹<br>  14-眼睛或嘴巴被遮挡</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLivenessInfoTag() const;
 
                     /**
-                     * 设置描述当前请求活体阶段被拒绝的详细原因，该参数仅限PLUS版本核身服务返回。
-- 详情如下：
-    01-用户全程闭眼
-    02-用户未完成指定动作
-    03-疑似翻拍攻击
-    04-疑似合成攻击
-    05-疑似黑产模版
-    06-疑似存在水印
-    07-反光校验未通过
-    08-疑似中途换人
-    09-人脸质量过差
-    10-距离校验不通过
-    11-疑似对抗样本攻击
-    12-嘴巴区域疑似存在攻击痕迹
-    13-眼睛区域疑似存在攻击痕迹
-    14-眼睛或嘴巴被遮挡
+                     * 设置<p>描述当前请求活体阶段被拒绝的详细原因，该参数仅限PLUS版本核身服务返回。</p><ul><li>详情如下：<br>  01-用户全程闭眼<br>  02-用户未完成指定动作<br>  03-疑似翻拍攻击<br>  04-疑似合成攻击<br>  05-疑似黑产模版<br>  06-疑似存在水印<br>  07-反光校验未通过<br>  08-疑似中途换人<br>  09-人脸质量过差<br>  10-距离校验不通过<br>  11-疑似对抗样本攻击<br>  12-嘴巴区域疑似存在攻击痕迹<br>  13-眼睛区域疑似存在攻击痕迹<br>  14-眼睛或嘴巴被遮挡</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _livenessInfoTag 描述当前请求活体阶段被拒绝的详细原因，该参数仅限PLUS版本核身服务返回。
-- 详情如下：
-    01-用户全程闭眼
-    02-用户未完成指定动作
-    03-疑似翻拍攻击
-    04-疑似合成攻击
-    05-疑似黑产模版
-    06-疑似存在水印
-    07-反光校验未通过
-    08-疑似中途换人
-    09-人脸质量过差
-    10-距离校验不通过
-    11-疑似对抗样本攻击
-    12-嘴巴区域疑似存在攻击痕迹
-    13-眼睛区域疑似存在攻击痕迹
-    14-眼睛或嘴巴被遮挡
+                     * @param _livenessInfoTag <p>描述当前请求活体阶段被拒绝的详细原因，该参数仅限PLUS版本核身服务返回。</p><ul><li>详情如下：<br>  01-用户全程闭眼<br>  02-用户未完成指定动作<br>  03-疑似翻拍攻击<br>  04-疑似合成攻击<br>  05-疑似黑产模版<br>  06-疑似存在水印<br>  07-反光校验未通过<br>  08-疑似中途换人<br>  09-人脸质量过差<br>  10-距离校验不通过<br>  11-疑似对抗样本攻击<br>  12-嘴巴区域疑似存在攻击痕迹<br>  13-眼睛区域疑似存在攻击痕迹<br>  14-眼睛或嘴巴被遮挡</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -751,18 +623,18 @@ namespace TencentCloud
                     bool LivenessInfoTagHasBeenSet() const;
 
                     /**
-                     * 获取手机号码。
+                     * 获取<p>手机号码。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Mobile 手机号码。
+                     * @return Mobile <p>手机号码。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置手机号码。
+                     * 设置<p>手机号码。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mobile 手机号码。
+                     * @param _mobile <p>手机号码。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -776,38 +648,18 @@ namespace TencentCloud
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取本次流程最终比对库源类型。
-- 取值范围：
-    权威库。
-    业务方自有库（用户上传照片、客户的混合库、混合部署库）。
-    二次验证库。
-    人工审核库。
+                     * 获取<p>本次流程最终比对库源类型。</p><ul><li>取值范围：<br>  权威库。<br>  业务方自有库（用户上传照片、客户的混合库、混合部署库）。<br>  二次验证库。<br>  人工审核库。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CompareLibType 本次流程最终比对库源类型。
-- 取值范围：
-    权威库。
-    业务方自有库（用户上传照片、客户的混合库、混合部署库）。
-    二次验证库。
-    人工审核库。
+                     * @return CompareLibType <p>本次流程最终比对库源类型。</p><ul><li>取值范围：<br>  权威库。<br>  业务方自有库（用户上传照片、客户的混合库、混合部署库）。<br>  二次验证库。<br>  人工审核库。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCompareLibType() const;
 
                     /**
-                     * 设置本次流程最终比对库源类型。
-- 取值范围：
-    权威库。
-    业务方自有库（用户上传照片、客户的混合库、混合部署库）。
-    二次验证库。
-    人工审核库。
+                     * 设置<p>本次流程最终比对库源类型。</p><ul><li>取值范围：<br>  权威库。<br>  业务方自有库（用户上传照片、客户的混合库、混合部署库）。<br>  二次验证库。<br>  人工审核库。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _compareLibType 本次流程最终比对库源类型。
-- 取值范围：
-    权威库。
-    业务方自有库（用户上传照片、客户的混合库、混合部署库）。
-    二次验证库。
-    人工审核库。
+                     * @param _compareLibType <p>本次流程最终比对库源类型。</p><ul><li>取值范围：<br>  权威库。<br>  业务方自有库（用户上传照片、客户的混合库、混合部署库）。<br>  二次验证库。<br>  人工审核库。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -821,46 +673,18 @@ namespace TencentCloud
                     bool CompareLibTypeHasBeenSet() const;
 
                     /**
-                     * 获取本次流程最终活体类型。
-- 取值范围：
-    0：未知
-    1：数字活体
-    2：动作活体
-    3：静默活体
-    4：一闪活体（动作+光线）
-    5：远近活体
+                     * 获取<p>本次流程最终活体类型。</p><ul><li>取值范围：<br>  0：未知<br>  1：数字活体<br>  2：动作活体<br>  3：静默活体<br>  4：一闪活体（动作+光线）<br>  5：远近活体</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LivenessMode 本次流程最终活体类型。
-- 取值范围：
-    0：未知
-    1：数字活体
-    2：动作活体
-    3：静默活体
-    4：一闪活体（动作+光线）
-    5：远近活体
+                     * @return LivenessMode <p>本次流程最终活体类型。</p><ul><li>取值范围：<br>  0：未知<br>  1：数字活体<br>  2：动作活体<br>  3：静默活体<br>  4：一闪活体（动作+光线）<br>  5：远近活体</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLivenessMode() const;
 
                     /**
-                     * 设置本次流程最终活体类型。
-- 取值范围：
-    0：未知
-    1：数字活体
-    2：动作活体
-    3：静默活体
-    4：一闪活体（动作+光线）
-    5：远近活体
+                     * 设置<p>本次流程最终活体类型。</p><ul><li>取值范围：<br>  0：未知<br>  1：数字活体<br>  2：动作活体<br>  3：静默活体<br>  4：一闪活体（动作+光线）<br>  5：远近活体</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _livenessMode 本次流程最终活体类型。
-- 取值范围：
-    0：未知
-    1：数字活体
-    2：动作活体
-    3：静默活体
-    4：一闪活体（动作+光线）
-    5：远近活体
+                     * @param _livenessMode <p>本次流程最终活体类型。</p><ul><li>取值范围：<br>  0：未知<br>  1：数字活体<br>  2：动作活体<br>  3：静默活体<br>  4：一闪活体（动作+光线）<br>  5：远近活体</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -874,18 +698,18 @@ namespace TencentCloud
                     bool LivenessModeHasBeenSet() const;
 
                     /**
-                     * 获取nfc重复计费requestId列表。
+                     * 获取<p>nfc重复计费requestId列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NFCRequestIds nfc重复计费requestId列表。
+                     * @return NFCRequestIds <p>nfc重复计费requestId列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetNFCRequestIds() const;
 
                     /**
-                     * 设置nfc重复计费requestId列表。
+                     * 设置<p>nfc重复计费requestId列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nFCRequestIds nfc重复计费requestId列表。
+                     * @param _nFCRequestIds <p>nfc重复计费requestId列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -899,18 +723,18 @@ namespace TencentCloud
                     bool NFCRequestIdsHasBeenSet() const;
 
                     /**
-                     * 获取nfc重复计费计数。
+                     * 获取<p>nfc重复计费计数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NFCBillingCounts nfc重复计费计数。
+                     * @return NFCBillingCounts <p>nfc重复计费计数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNFCBillingCounts() const;
 
                     /**
-                     * 设置nfc重复计费计数。
+                     * 设置<p>nfc重复计费计数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nFCBillingCounts nfc重复计费计数。
+                     * @param _nFCBillingCounts <p>nfc重复计费计数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -924,18 +748,18 @@ namespace TencentCloud
                     bool NFCBillingCountsHasBeenSet() const;
 
                     /**
-                     * 获取港澳台居住证通行证号码。
+                     * 获取<p>港澳台居住证通行证号码。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PassNo 港澳台居住证通行证号码。
+                     * @return PassNo <p>港澳台居住证通行证号码。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPassNo() const;
 
                     /**
-                     * 设置港澳台居住证通行证号码。
+                     * 设置<p>港澳台居住证通行证号码。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _passNo 港澳台居住证通行证号码。
+                     * @param _passNo <p>港澳台居住证通行证号码。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -949,18 +773,18 @@ namespace TencentCloud
                     bool PassNoHasBeenSet() const;
 
                     /**
-                     * 获取港澳台居住证签发次数。
+                     * 获取<p>港澳台居住证签发次数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VisaNum 港澳台居住证签发次数。
+                     * @return VisaNum <p>港澳台居住证签发次数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVisaNum() const;
 
                     /**
-                     * 设置港澳台居住证签发次数。
+                     * 设置<p>港澳台居住证签发次数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _visaNum 港澳台居住证签发次数。
+                     * @param _visaNum <p>港澳台居住证签发次数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -974,50 +798,18 @@ namespace TencentCloud
                     bool VisaNumHasBeenSet() const;
 
                     /**
-                     * 获取活体检测的动作顺序，多动作以“,”分隔。
-输出格式如：“1,2”表示“张嘴+眨眼”。
-- 详细序列值含义如下： 
-   1：张嘴
-2：眨眼
-3：点头
-4：摇头
-5：静默
-注：仅浮层H5产品返回
+                     * 获取<p>活体检测的动作顺序，多动作以“,”分隔。<br>输出格式如：“1,2”表示“张嘴+眨眼”。</p><ul><li>详细序列值含义如下：<br> 1：张嘴<br>2：眨眼<br>3：点头<br>4：摇头<br>5：静默<br>注：仅浮层H5产品返回</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LivenessActionSequence 活体检测的动作顺序，多动作以“,”分隔。
-输出格式如：“1,2”表示“张嘴+眨眼”。
-- 详细序列值含义如下： 
-   1：张嘴
-2：眨眼
-3：点头
-4：摇头
-5：静默
-注：仅浮层H5产品返回
+                     * @return LivenessActionSequence <p>活体检测的动作顺序，多动作以“,”分隔。<br>输出格式如：“1,2”表示“张嘴+眨眼”。</p><ul><li>详细序列值含义如下：<br> 1：张嘴<br>2：眨眼<br>3：点头<br>4：摇头<br>5：静默<br>注：仅浮层H5产品返回</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLivenessActionSequence() const;
 
                     /**
-                     * 设置活体检测的动作顺序，多动作以“,”分隔。
-输出格式如：“1,2”表示“张嘴+眨眼”。
-- 详细序列值含义如下： 
-   1：张嘴
-2：眨眼
-3：点头
-4：摇头
-5：静默
-注：仅浮层H5产品返回
+                     * 设置<p>活体检测的动作顺序，多动作以“,”分隔。<br>输出格式如：“1,2”表示“张嘴+眨眼”。</p><ul><li>详细序列值含义如下：<br> 1：张嘴<br>2：眨眼<br>3：点头<br>4：摇头<br>5：静默<br>注：仅浮层H5产品返回</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _livenessActionSequence 活体检测的动作顺序，多动作以“,”分隔。
-输出格式如：“1,2”表示“张嘴+眨眼”。
-- 详细序列值含义如下： 
-   1：张嘴
-2：眨眼
-3：点头
-4：摇头
-5：静默
-注：仅浮层H5产品返回
+                     * @param _livenessActionSequence <p>活体检测的动作顺序，多动作以“,”分隔。<br>输出格式如：“1,2”表示“张嘴+眨眼”。</p><ul><li>详细序列值含义如下：<br> 1：张嘴<br>2：眨眼<br>3：点头<br>4：摇头<br>5：静默<br>注：仅浮层H5产品返回</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1033,269 +825,217 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 本次流程最终验证结果。
-- 取值范围：0为成功。
-- 仅包含活体人脸核身结果，不包含意愿核身结果。
+                     * <p>本次流程最终验证结果。</p><ul><li>取值范围：0为成功。</li><li>仅包含活体人脸核身结果，不包含意愿核身结果。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
-                     * 本次流程最终验证结果描述。
-- 仅描述用，文案更新时不会通知。
+                     * <p>本次流程最终验证结果描述。</p><ul><li>仅描述用，文案更新时不会通知。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errMsg;
                     bool m_errMsgHasBeenSet;
 
                     /**
-                     * 本次验证使用的身份证号。
+                     * <p>本次验证使用的身份证号。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_idCard;
                     bool m_idCardHasBeenSet;
 
                     /**
-                     * 用户认证时使用的证件号码类型。
-- 取值范围：
-    0：二代身份证的证件号码。
-    1：港澳台居住证的证件号码。
-    2：其他（核验使用的证件号码非合法身份号码）。
+                     * <p>用户认证时使用的证件号码类型。</p><ul><li>取值范围：<br>  0：二代身份证的证件号码。<br>  1：港澳台居住证的证件号码。<br>  2：其他（核验使用的证件号码非合法身份号码）。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_useIDType;
                     bool m_useIDTypeHasBeenSet;
 
                     /**
-                     * 本次验证使用的姓名。
+                     * <p>本次验证使用的姓名。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 身份校验环节识别结果：民族。
+                     * <p>身份校验环节识别结果：民族。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ocrNation;
                     bool m_ocrNationHasBeenSet;
 
                     /**
-                     * 身份校验环节识别结果：家庭住址。
+                     * <p>身份校验环节识别结果：家庭住址。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ocrAddress;
                     bool m_ocrAddressHasBeenSet;
 
                     /**
-                     * 身份校验环节识别结果：生日。
-- 格式为：YYYY/M/D
+                     * <p>身份校验环节识别结果：生日。</p><ul><li>格式为：YYYY/M/D</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ocrBirth;
                     bool m_ocrBirthHasBeenSet;
 
                     /**
-                     * 身份校验环节识别结果：签发机关。
+                     * <p>身份校验环节识别结果：签发机关。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ocrAuthority;
                     bool m_ocrAuthorityHasBeenSet;
 
                     /**
-                     * 身份校验环节识别结果：有效日期。
-- 格式为：YYYY.MM.DD-YYYY.MM.DD。
+                     * <p>身份校验环节识别结果：有效日期。</p><ul><li>格式为：YYYY.MM.DD-YYYY.MM.DD。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ocrValidDate;
                     bool m_ocrValidDateHasBeenSet;
 
                     /**
-                     * 身份校验环节识别结果：姓名。
+                     * <p>身份校验环节识别结果：姓名。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ocrName;
                     bool m_ocrNameHasBeenSet;
 
                     /**
-                     * 身份校验环节识别结果：身份证号。
+                     * <p>身份校验环节识别结果：身份证号。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ocrIdCard;
                     bool m_ocrIdCardHasBeenSet;
 
                     /**
-                     * 身份校验环节识别结果：性别。
+                     * <p>身份校验环节识别结果：性别。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ocrGender;
                     bool m_ocrGenderHasBeenSet;
 
                     /**
-                     * 身份校验环节采用的信息上传方式。
-- 取值有"NFC"、"OCR"、"手动输入"、"其他"
+                     * <p>身份校验环节采用的信息上传方式。</p><ul><li>取值有&quot;NFC&quot;、&quot;OCR&quot;、&quot;手动输入&quot;、&quot;其他&quot;</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_idInfoFrom;
                     bool m_idInfoFromHasBeenSet;
 
                     /**
-                     * 本次流程最终活体结果。
-- 0为成功
+                     * <p>本次流程最终活体结果。</p><ul><li>0为成功</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_liveStatus;
                     bool m_liveStatusHasBeenSet;
 
                     /**
-                     * 本次流程最终活体结果描述。
-- 仅描述用，文案更新时不会通知。
+                     * <p>本次流程最终活体结果描述。</p><ul><li>仅描述用，文案更新时不会通知。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_liveMsg;
                     bool m_liveMsgHasBeenSet;
 
                     /**
-                     * 本次流程最终一比一结果。
-- 0为成功
+                     * <p>本次流程最终一比一结果。</p><ul><li>0为成功</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_comparestatus;
                     bool m_comparestatusHasBeenSet;
 
                     /**
-                     * 本次流程最终一比一结果描述。
-- 仅描述用，文案更新时不会通知。
+                     * <p>本次流程最终一比一结果描述。</p><ul><li>仅描述用，文案更新时不会通知。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_comparemsg;
                     bool m_comparemsgHasBeenSet;
 
                     /**
-                     * 本次流程活体一比一的分数。
-- 取值范围 [0.00, 100.00]。
-- 相似度大于等于70时才判断为同一人，阈值不支持自定义。
-- 阈值70的误通过率为千分之一，阈值80的误通过率是万分之一。
+                     * <p>本次流程活体一比一的分数。- 取值范围 [0.00, 100.00]。- 相似度大于等于70时才判断为同一人，阈值不支持自定义。- 阈值70的误通过率为万分之一。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sim;
                     bool m_simHasBeenSet;
 
                     /**
-                     * 地理位置经纬度。
+                     * <p>地理位置经纬度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_location;
                     bool m_locationHasBeenSet;
 
                     /**
-                     * Auth接口带入额外信息。
+                     * <p>Auth接口带入额外信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_extra;
                     bool m_extraHasBeenSet;
 
                     /**
-                     * 本次流程进行的活体一比一流水。
+                     * <p>本次流程进行的活体一比一流水。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DetectDetail> m_livenessDetail;
                     bool m_livenessDetailHasBeenSet;
 
                     /**
-                     * 描述当前请求活体阶段被拒绝的详细原因，该参数仅限PLUS版本核身服务返回。
-- 详情如下：
-    01-用户全程闭眼
-    02-用户未完成指定动作
-    03-疑似翻拍攻击
-    04-疑似合成攻击
-    05-疑似黑产模版
-    06-疑似存在水印
-    07-反光校验未通过
-    08-疑似中途换人
-    09-人脸质量过差
-    10-距离校验不通过
-    11-疑似对抗样本攻击
-    12-嘴巴区域疑似存在攻击痕迹
-    13-眼睛区域疑似存在攻击痕迹
-    14-眼睛或嘴巴被遮挡
+                     * <p>描述当前请求活体阶段被拒绝的详细原因，该参数仅限PLUS版本核身服务返回。</p><ul><li>详情如下：<br>  01-用户全程闭眼<br>  02-用户未完成指定动作<br>  03-疑似翻拍攻击<br>  04-疑似合成攻击<br>  05-疑似黑产模版<br>  06-疑似存在水印<br>  07-反光校验未通过<br>  08-疑似中途换人<br>  09-人脸质量过差<br>  10-距离校验不通过<br>  11-疑似对抗样本攻击<br>  12-嘴巴区域疑似存在攻击痕迹<br>  13-眼睛区域疑似存在攻击痕迹<br>  14-眼睛或嘴巴被遮挡</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_livenessInfoTag;
                     bool m_livenessInfoTagHasBeenSet;
 
                     /**
-                     * 手机号码。
+                     * <p>手机号码。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 本次流程最终比对库源类型。
-- 取值范围：
-    权威库。
-    业务方自有库（用户上传照片、客户的混合库、混合部署库）。
-    二次验证库。
-    人工审核库。
+                     * <p>本次流程最终比对库源类型。</p><ul><li>取值范围：<br>  权威库。<br>  业务方自有库（用户上传照片、客户的混合库、混合部署库）。<br>  二次验证库。<br>  人工审核库。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_compareLibType;
                     bool m_compareLibTypeHasBeenSet;
 
                     /**
-                     * 本次流程最终活体类型。
-- 取值范围：
-    0：未知
-    1：数字活体
-    2：动作活体
-    3：静默活体
-    4：一闪活体（动作+光线）
-    5：远近活体
+                     * <p>本次流程最终活体类型。</p><ul><li>取值范围：<br>  0：未知<br>  1：数字活体<br>  2：动作活体<br>  3：静默活体<br>  4：一闪活体（动作+光线）<br>  5：远近活体</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_livenessMode;
                     bool m_livenessModeHasBeenSet;
 
                     /**
-                     * nfc重复计费requestId列表。
+                     * <p>nfc重复计费requestId列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_nFCRequestIds;
                     bool m_nFCRequestIdsHasBeenSet;
 
                     /**
-                     * nfc重复计费计数。
+                     * <p>nfc重复计费计数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_nFCBillingCounts;
                     bool m_nFCBillingCountsHasBeenSet;
 
                     /**
-                     * 港澳台居住证通行证号码。
+                     * <p>港澳台居住证通行证号码。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_passNo;
                     bool m_passNoHasBeenSet;
 
                     /**
-                     * 港澳台居住证签发次数。
+                     * <p>港澳台居住证签发次数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_visaNum;
                     bool m_visaNumHasBeenSet;
 
                     /**
-                     * 活体检测的动作顺序，多动作以“,”分隔。
-输出格式如：“1,2”表示“张嘴+眨眼”。
-- 详细序列值含义如下： 
-   1：张嘴
-2：眨眼
-3：点头
-4：摇头
-5：静默
-注：仅浮层H5产品返回
+                     * <p>活体检测的动作顺序，多动作以“,”分隔。<br>输出格式如：“1,2”表示“张嘴+眨眼”。</p><ul><li>详细序列值含义如下：<br> 1：张嘴<br>2：眨眼<br>3：点头<br>4：摇头<br>5：静默<br>注：仅浮层H5产品返回</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_livenessActionSequence;

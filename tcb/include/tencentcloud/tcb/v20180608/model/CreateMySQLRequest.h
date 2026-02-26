@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
-                     * 获取Db类型 1. FLEXDB 2.MYSQL
-                     * @return DbInstanceType Db类型 1. FLEXDB 2.MYSQL
+                     * 获取Db类型: MYSQL
+                     * @return DbInstanceType Db类型: MYSQL
                      * 
                      */
                     std::string GetDbInstanceType() const;
 
                     /**
-                     * 设置Db类型 1. FLEXDB 2.MYSQL
-                     * @param _dbInstanceType Db类型 1. FLEXDB 2.MYSQL
+                     * 设置Db类型: MYSQL
+                     * @param _dbInstanceType Db类型: MYSQL
                      * 
                      */
                     void SetDbInstanceType(const std::string& _dbInstanceType);
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_envIdHasBeenSet;
 
                     /**
-                     * Db类型 1. FLEXDB 2.MYSQL
+                     * Db类型: MYSQL
                      */
                     std::string m_dbInstanceType;
                     bool m_dbInstanceTypeHasBeenSet;

@@ -3140,6 +3140,56 @@ LcicClient::LoginOriginIdOutcomeCallable LcicClient::LoginOriginIdCallable(const
     return prom->get_future();
 }
 
+LcicClient::LoginOriginIdWithRoomOutcome LcicClient::LoginOriginIdWithRoom(const LoginOriginIdWithRoomRequest &request)
+{
+    auto outcome = MakeRequest(request, "LoginOriginIdWithRoom");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        LoginOriginIdWithRoomResponse rsp = LoginOriginIdWithRoomResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return LoginOriginIdWithRoomOutcome(rsp);
+        else
+            return LoginOriginIdWithRoomOutcome(o.GetError());
+    }
+    else
+    {
+        return LoginOriginIdWithRoomOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::LoginOriginIdWithRoomAsync(const LoginOriginIdWithRoomRequest& request, const LoginOriginIdWithRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const LoginOriginIdWithRoomRequest&;
+    using Resp = LoginOriginIdWithRoomResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "LoginOriginIdWithRoom", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LcicClient::LoginOriginIdWithRoomOutcomeCallable LcicClient::LoginOriginIdWithRoomCallable(const LoginOriginIdWithRoomRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<LoginOriginIdWithRoomOutcome>>();
+    LoginOriginIdWithRoomAsync(
+    request,
+    [prom](
+        const LcicClient*,
+        const LoginOriginIdWithRoomRequest&,
+        LoginOriginIdWithRoomOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LcicClient::LoginUserOutcome LcicClient::LoginUser(const LoginUserRequest &request)
 {
     auto outcome = MakeRequest(request, "LoginUser");
@@ -3182,6 +3232,56 @@ LcicClient::LoginUserOutcomeCallable LcicClient::LoginUserCallable(const LoginUs
         const LcicClient*,
         const LoginUserRequest&,
         LoginUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LcicClient::LoginUserWithRoomOutcome LcicClient::LoginUserWithRoom(const LoginUserWithRoomRequest &request)
+{
+    auto outcome = MakeRequest(request, "LoginUserWithRoom");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        LoginUserWithRoomResponse rsp = LoginUserWithRoomResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return LoginUserWithRoomOutcome(rsp);
+        else
+            return LoginUserWithRoomOutcome(o.GetError());
+    }
+    else
+    {
+        return LoginUserWithRoomOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::LoginUserWithRoomAsync(const LoginUserWithRoomRequest& request, const LoginUserWithRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const LoginUserWithRoomRequest&;
+    using Resp = LoginUserWithRoomResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "LoginUserWithRoom", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LcicClient::LoginUserWithRoomOutcomeCallable LcicClient::LoginUserWithRoomCallable(const LoginUserWithRoomRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<LoginUserWithRoomOutcome>>();
+    LoginUserWithRoomAsync(
+    request,
+    [prom](
+        const LcicClient*,
+        const LoginUserWithRoomRequest&,
+        LoginUserWithRoomOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

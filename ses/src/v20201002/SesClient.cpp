@@ -840,6 +840,56 @@ SesClient::DeleteReceiverOutcomeCallable SesClient::DeleteReceiverCallable(const
     return prom->get_future();
 }
 
+SesClient::GetAbuseReportOutcome SesClient::GetAbuseReport(const GetAbuseReportRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetAbuseReport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetAbuseReportResponse rsp = GetAbuseReportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetAbuseReportOutcome(rsp);
+        else
+            return GetAbuseReportOutcome(o.GetError());
+    }
+    else
+    {
+        return GetAbuseReportOutcome(outcome.GetError());
+    }
+}
+
+void SesClient::GetAbuseReportAsync(const GetAbuseReportRequest& request, const GetAbuseReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetAbuseReportRequest&;
+    using Resp = GetAbuseReportResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetAbuseReport", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+SesClient::GetAbuseReportOutcomeCallable SesClient::GetAbuseReportCallable(const GetAbuseReportRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetAbuseReportOutcome>>();
+    GetAbuseReportAsync(
+    request,
+    [prom](
+        const SesClient*,
+        const GetAbuseReportRequest&,
+        GetAbuseReportOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 SesClient::GetEmailIdentityOutcome SesClient::GetEmailIdentity(const GetEmailIdentityRequest &request)
 {
     auto outcome = MakeRequest(request, "GetEmailIdentity");

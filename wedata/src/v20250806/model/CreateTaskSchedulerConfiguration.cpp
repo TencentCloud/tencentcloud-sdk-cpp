@@ -49,7 +49,8 @@ CreateTaskSchedulerConfiguration::CreateTaskSchedulerConfiguration() :
     m_retryWaitMinuteHasBeenSet(false),
     m_maxRetryNumberHasBeenSet(false),
     m_executionTTLMinuteHasBeenSet(false),
-    m_waitExecutionTotalTTLMinuteHasBeenSet(false)
+    m_waitExecutionTotalTTLMinuteHasBeenSet(false),
+    m_dependencyTriggerPolicyHasBeenSet(false)
 {
 }
 
@@ -398,6 +399,16 @@ CoreInternalOutcome CreateTaskSchedulerConfiguration::Deserialize(const rapidjso
         m_waitExecutionTotalTTLMinuteHasBeenSet = true;
     }
 
+    if (value.HasMember("DependencyTriggerPolicy") && !value["DependencyTriggerPolicy"].IsNull())
+    {
+        if (!value["DependencyTriggerPolicy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateTaskSchedulerConfiguration.DependencyTriggerPolicy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dependencyTriggerPolicy = string(value["DependencyTriggerPolicy"].GetString());
+        m_dependencyTriggerPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -670,6 +681,14 @@ void CreateTaskSchedulerConfiguration::ToJsonObject(rapidjson::Value &value, rap
         string key = "WaitExecutionTotalTTLMinute";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_waitExecutionTotalTTLMinute, allocator);
+    }
+
+    if (m_dependencyTriggerPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DependencyTriggerPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dependencyTriggerPolicy.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1137,5 +1156,21 @@ void CreateTaskSchedulerConfiguration::SetWaitExecutionTotalTTLMinute(const int6
 bool CreateTaskSchedulerConfiguration::WaitExecutionTotalTTLMinuteHasBeenSet() const
 {
     return m_waitExecutionTotalTTLMinuteHasBeenSet;
+}
+
+string CreateTaskSchedulerConfiguration::GetDependencyTriggerPolicy() const
+{
+    return m_dependencyTriggerPolicy;
+}
+
+void CreateTaskSchedulerConfiguration::SetDependencyTriggerPolicy(const string& _dependencyTriggerPolicy)
+{
+    m_dependencyTriggerPolicy = _dependencyTriggerPolicy;
+    m_dependencyTriggerPolicyHasBeenSet = true;
+}
+
+bool CreateTaskSchedulerConfiguration::DependencyTriggerPolicyHasBeenSet() const
+{
+    return m_dependencyTriggerPolicyHasBeenSet;
 }
 

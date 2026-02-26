@@ -247,6 +247,31 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
+                     * 获取计划调度时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScheduleTime 计划调度时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetScheduleTime() const;
+
+                    /**
+                     * 设置计划调度时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scheduleTime 计划调度时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScheduleTime(const std::string& _scheduleTime);
+
+                    /**
+                     * 判断参数 ScheduleTime 是否已赋值
+                     * @return ScheduleTime 是否已赋值
+                     * 
+                     */
+                    bool ScheduleTimeHasBeenSet() const;
+
+                    /**
                      * 获取执行开始时间戳
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutionStartTime 执行开始时间戳
@@ -878,6 +903,13 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 计划调度时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_scheduleTime;
+                    bool m_scheduleTimeHasBeenSet;
 
                     /**
                      * 执行开始时间戳
