@@ -24,6 +24,7 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/DescribeApmVulnerabilityCountResponse.h
   include/tencentcloud/apm/v20210622/model/DescribeServiceOverviewResponse.h
   include/tencentcloud/apm/v20210622/model/ApmSampleConfig.h
+  include/tencentcloud/apm/v20210622/model/DescribeApmSQLInjectionDetailResponse.h
   include/tencentcloud/apm/v20210622/model/AgentOperationConfigView.h
   include/tencentcloud/apm/v20210622/model/SelectorView.h
   include/tencentcloud/apm/v20210622/model/DescribeApmSampleConfigRequest.h
@@ -81,6 +82,7 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/ModifyApmPrometheusRuleResponse.h
   include/tencentcloud/apm/v20210622/model/DescribeMetricRecordsResponse.h
   include/tencentcloud/apm/v20210622/model/ApmTag.h
+  include/tencentcloud/apm/v20210622/model/DescribeApmSQLInjectionDetailRequest.h
   include/tencentcloud/apm/v20210622/model/Filter.h
   include/tencentcloud/apm/v20210622/model/DescribeGeneralOTSpanListRequest.h
   include/tencentcloud/apm/v20210622/model/AutoProfilingConfig.h
@@ -127,6 +129,7 @@ set(apm_src
   src/v20210622/model/DescribeApmVulnerabilityCountResponse.cpp
   src/v20210622/model/DescribeServiceOverviewResponse.cpp
   src/v20210622/model/ApmSampleConfig.cpp
+  src/v20210622/model/DescribeApmSQLInjectionDetailResponse.cpp
   src/v20210622/model/AgentOperationConfigView.cpp
   src/v20210622/model/SelectorView.cpp
   src/v20210622/model/DescribeApmSampleConfigRequest.cpp
@@ -184,6 +187,7 @@ set(apm_src
   src/v20210622/model/ModifyApmPrometheusRuleResponse.cpp
   src/v20210622/model/DescribeMetricRecordsResponse.cpp
   src/v20210622/model/ApmTag.cpp
+  src/v20210622/model/DescribeApmSQLInjectionDetailRequest.cpp
   src/v20210622/model/Filter.cpp
   src/v20210622/model/DescribeGeneralOTSpanListRequest.cpp
   src/v20210622/model/AutoProfilingConfig.cpp

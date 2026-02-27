@@ -45,6 +45,8 @@
 #include <tencentcloud/apm/v20210622/model/DescribeApmInstancesResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmPrometheusRuleRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmPrometheusRuleResponse.h>
+#include <tencentcloud/apm/v20210622/model/DescribeApmSQLInjectionDetailRequest.h>
+#include <tencentcloud/apm/v20210622/model/DescribeApmSQLInjectionDetailResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmSampleConfigRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmSampleConfigResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmServiceMetricRequest.h>
@@ -132,6 +134,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApmPrometheusRuleResponse> DescribeApmPrometheusRuleOutcome;
                 typedef std::future<DescribeApmPrometheusRuleOutcome> DescribeApmPrometheusRuleOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeApmPrometheusRuleRequest&, DescribeApmPrometheusRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApmPrometheusRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeApmSQLInjectionDetailResponse> DescribeApmSQLInjectionDetailOutcome;
+                typedef std::future<DescribeApmSQLInjectionDetailOutcome> DescribeApmSQLInjectionDetailOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::DescribeApmSQLInjectionDetailRequest&, DescribeApmSQLInjectionDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApmSQLInjectionDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeApmSampleConfigResponse> DescribeApmSampleConfigOutcome;
                 typedef std::future<DescribeApmSampleConfigOutcome> DescribeApmSampleConfigOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeApmSampleConfigRequest&, DescribeApmSampleConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApmSampleConfigAsyncHandler;
@@ -293,6 +298,15 @@ namespace TencentCloud
                 DescribeApmPrometheusRuleOutcome DescribeApmPrometheusRule(const Model::DescribeApmPrometheusRuleRequest &request);
                 void DescribeApmPrometheusRuleAsync(const Model::DescribeApmPrometheusRuleRequest& request, const DescribeApmPrometheusRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApmPrometheusRuleOutcomeCallable DescribeApmPrometheusRuleCallable(const Model::DescribeApmPrometheusRuleRequest& request);
+
+                /**
+                 *查询SQL注入详情信息
+                 * @param req DescribeApmSQLInjectionDetailRequest
+                 * @return DescribeApmSQLInjectionDetailOutcome
+                 */
+                DescribeApmSQLInjectionDetailOutcome DescribeApmSQLInjectionDetail(const Model::DescribeApmSQLInjectionDetailRequest &request);
+                void DescribeApmSQLInjectionDetailAsync(const Model::DescribeApmSQLInjectionDetailRequest& request, const DescribeApmSQLInjectionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApmSQLInjectionDetailOutcomeCallable DescribeApmSQLInjectionDetailCallable(const Model::DescribeApmSQLInjectionDetailRequest& request);
 
                 /**
                  *查询采样配置接口

@@ -67,6 +67,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeCvmQuotaResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeDAGInfoRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeDAGInfoResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeEMREventListRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeEMREventListResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeEmrApplicationStaticsRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeEmrApplicationStaticsResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeEmrOverviewMetricsRequest.h>
@@ -287,6 +289,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDAGInfoResponse> DescribeDAGInfoOutcome;
                 typedef std::future<DescribeDAGInfoOutcome> DescribeDAGInfoOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeDAGInfoRequest&, DescribeDAGInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDAGInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEMREventListResponse> DescribeEMREventListOutcome;
+                typedef std::future<DescribeEMREventListOutcome> DescribeEMREventListOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeEMREventListRequest&, DescribeEMREventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEMREventListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEmrApplicationStaticsResponse> DescribeEmrApplicationStaticsOutcome;
                 typedef std::future<DescribeEmrApplicationStaticsOutcome> DescribeEmrApplicationStaticsOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeEmrApplicationStaticsRequest&, DescribeEmrApplicationStaticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEmrApplicationStaticsAsyncHandler;
@@ -700,6 +705,15 @@ namespace TencentCloud
                 DescribeDAGInfoOutcome DescribeDAGInfo(const Model::DescribeDAGInfoRequest &request);
                 void DescribeDAGInfoAsync(const Model::DescribeDAGInfoRequest& request, const DescribeDAGInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDAGInfoOutcomeCallable DescribeDAGInfoCallable(const Model::DescribeDAGInfoRequest& request);
+
+                /**
+                 *查询EMR事件监控数据
+                 * @param req DescribeEMREventListRequest
+                 * @return DescribeEMREventListOutcome
+                 */
+                DescribeEMREventListOutcome DescribeEMREventList(const Model::DescribeEMREventListRequest &request);
+                void DescribeEMREventListAsync(const Model::DescribeEMREventListRequest& request, const DescribeEMREventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEMREventListOutcomeCallable DescribeEMREventListCallable(const Model::DescribeEMREventListRequest& request);
 
                 /**
                  *yarn application 统计接口查询

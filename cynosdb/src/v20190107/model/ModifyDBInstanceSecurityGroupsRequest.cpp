@@ -25,7 +25,10 @@ using namespace std;
 ModifyDBInstanceSecurityGroupsRequest::ModifyDBInstanceSecurityGroupsRequest() :
     m_instanceIdHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
-    m_zoneHasBeenSet(false)
+    m_zoneHasBeenSet(false),
+    m_uniqVpcIdHasBeenSet(false),
+    m_vipHasBeenSet(false),
+    m_vportHasBeenSet(false)
 {
 }
 
@@ -63,6 +66,30 @@ string ModifyDBInstanceSecurityGroupsRequest::ToJsonString() const
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uniqVpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UniqVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_uniqVpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Vip";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vportHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Vport";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_vport, allocator);
     }
 
 
@@ -119,6 +146,54 @@ void ModifyDBInstanceSecurityGroupsRequest::SetZone(const string& _zone)
 bool ModifyDBInstanceSecurityGroupsRequest::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+string ModifyDBInstanceSecurityGroupsRequest::GetUniqVpcId() const
+{
+    return m_uniqVpcId;
+}
+
+void ModifyDBInstanceSecurityGroupsRequest::SetUniqVpcId(const string& _uniqVpcId)
+{
+    m_uniqVpcId = _uniqVpcId;
+    m_uniqVpcIdHasBeenSet = true;
+}
+
+bool ModifyDBInstanceSecurityGroupsRequest::UniqVpcIdHasBeenSet() const
+{
+    return m_uniqVpcIdHasBeenSet;
+}
+
+string ModifyDBInstanceSecurityGroupsRequest::GetVip() const
+{
+    return m_vip;
+}
+
+void ModifyDBInstanceSecurityGroupsRequest::SetVip(const string& _vip)
+{
+    m_vip = _vip;
+    m_vipHasBeenSet = true;
+}
+
+bool ModifyDBInstanceSecurityGroupsRequest::VipHasBeenSet() const
+{
+    return m_vipHasBeenSet;
+}
+
+int64_t ModifyDBInstanceSecurityGroupsRequest::GetVport() const
+{
+    return m_vport;
+}
+
+void ModifyDBInstanceSecurityGroupsRequest::SetVport(const int64_t& _vport)
+{
+    m_vport = _vport;
+    m_vportHasBeenSet = true;
+}
+
+bool ModifyDBInstanceSecurityGroupsRequest::VportHasBeenSet() const
+{
+    return m_vportHasBeenSet;
 }
 
 

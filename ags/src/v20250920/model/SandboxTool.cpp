@@ -34,7 +34,8 @@ SandboxTool::SandboxTool() :
     m_roleArnHasBeenSet(false),
     m_storageMountsHasBeenSet(false),
     m_customConfigurationHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false)
+    m_logConfigurationHasBeenSet(false),
+    m_statusReasonHasBeenSet(false)
 {
 }
 
@@ -224,6 +225,16 @@ CoreInternalOutcome SandboxTool::Deserialize(const rapidjson::Value &value)
         m_logConfigurationHasBeenSet = true;
     }
 
+    if (value.HasMember("StatusReason") && !value["StatusReason"].IsNull())
+    {
+        if (!value["StatusReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SandboxTool.StatusReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_statusReason = string(value["StatusReason"].GetString());
+        m_statusReasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -358,6 +369,14 @@ void SandboxTool::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_logConfiguration.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_statusReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_statusReason.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -585,5 +604,21 @@ void SandboxTool::SetLogConfiguration(const LogConfiguration& _logConfiguration)
 bool SandboxTool::LogConfigurationHasBeenSet() const
 {
     return m_logConfigurationHasBeenSet;
+}
+
+string SandboxTool::GetStatusReason() const
+{
+    return m_statusReason;
+}
+
+void SandboxTool::SetStatusReason(const string& _statusReason)
+{
+    m_statusReason = _statusReason;
+    m_statusReasonHasBeenSet = true;
+}
+
+bool SandboxTool::StatusReasonHasBeenSet() const
+{
+    return m_statusReasonHasBeenSet;
 }
 

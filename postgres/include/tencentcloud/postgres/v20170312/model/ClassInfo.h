@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规格ID
-                     * @return SpecCode 规格ID
+                     * 获取<p>规格ID</p>
+                     * @return SpecCode <p>规格ID</p>
                      * 
                      */
                     std::string GetSpecCode() const;
 
                     /**
-                     * 设置规格ID
-                     * @param _specCode 规格ID
+                     * 设置<p>规格ID</p>
+                     * @param _specCode <p>规格ID</p>
                      * 
                      */
                     void SetSpecCode(const std::string& _specCode);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool SpecCodeHasBeenSet() const;
 
                     /**
-                     * 获取CPU核数
-                     * @return CPU CPU核数
+                     * 获取<p>CPU核数</p>
+                     * @return CPU <p>CPU核数</p>
                      * 
                      */
                     uint64_t GetCPU() const;
 
                     /**
-                     * 设置CPU核数
-                     * @param _cPU CPU核数
+                     * 设置<p>CPU核数</p>
+                     * @param _cPU <p>CPU核数</p>
                      * 
                      */
                     void SetCPU(const uint64_t& _cPU);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool CPUHasBeenSet() const;
 
                     /**
-                     * 获取内存大小，单位：MB
-                     * @return Memory 内存大小，单位：MB
+                     * 获取<p>内存大小，单位：MB</p>
+                     * @return Memory <p>内存大小，单位：MB</p>
                      * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
-                     * 设置内存大小，单位：MB
-                     * @param _memory 内存大小，单位：MB
+                     * 设置<p>内存大小，单位：MB</p>
+                     * @param _memory <p>内存大小，单位：MB</p>
                      * 
                      */
                     void SetMemory(const uint64_t& _memory);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取该规格所支持最大存储容量，单位：GB
-                     * @return MaxStorage 该规格所支持最大存储容量，单位：GB
+                     * 获取<p>该规格所支持最大存储容量，单位：GB</p>
+                     * @return MaxStorage <p>该规格所支持最大存储容量，单位：GB</p>
                      * 
                      */
                     uint64_t GetMaxStorage() const;
 
                     /**
-                     * 设置该规格所支持最大存储容量，单位：GB
-                     * @param _maxStorage 该规格所支持最大存储容量，单位：GB
+                     * 设置<p>该规格所支持最大存储容量，单位：GB</p>
+                     * @param _maxStorage <p>该规格所支持最大存储容量，单位：GB</p>
                      * 
                      */
                     void SetMaxStorage(const uint64_t& _maxStorage);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool MaxStorageHasBeenSet() const;
 
                     /**
-                     * 获取该规格所支持最小存储容量，单位：GB
-                     * @return MinStorage 该规格所支持最小存储容量，单位：GB
+                     * 获取<p>该规格所支持最小存储容量，单位：GB</p>
+                     * @return MinStorage <p>该规格所支持最小存储容量，单位：GB</p>
                      * 
                      */
                     uint64_t GetMinStorage() const;
 
                     /**
-                     * 设置该规格所支持最小存储容量，单位：GB
-                     * @param _minStorage 该规格所支持最小存储容量，单位：GB
+                     * 设置<p>该规格所支持最小存储容量，单位：GB</p>
+                     * @param _minStorage <p>该规格所支持最小存储容量，单位：GB</p>
                      * 
                      */
                     void SetMinStorage(const uint64_t& _minStorage);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool MinStorageHasBeenSet() const;
 
                     /**
-                     * 获取该规格的预估QPS
-                     * @return QPS 该规格的预估QPS
+                     * 获取<p>该规格的预估QPS</p>
+                     * @return QPS <p>该规格的预估QPS</p>
                      * 
                      */
                     uint64_t GetQPS() const;
 
                     /**
-                     * 设置该规格的预估QPS
-                     * @param _qPS 该规格的预估QPS
+                     * 设置<p>该规格的预估QPS</p>
+                     * @param _qPS <p>该规格的预估QPS</p>
                      * 
                      */
                     void SetQPS(const uint64_t& _qPS);
@@ -175,37 +175,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规格ID
+                     * <p>规格ID</p>
                      */
                     std::string m_specCode;
                     bool m_specCodeHasBeenSet;
 
                     /**
-                     * CPU核数
+                     * <p>CPU核数</p>
                      */
                     uint64_t m_cPU;
                     bool m_cPUHasBeenSet;
 
                     /**
-                     * 内存大小，单位：MB
+                     * <p>内存大小，单位：MB</p>
                      */
                     uint64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 该规格所支持最大存储容量，单位：GB
+                     * <p>该规格所支持最大存储容量，单位：GB</p>
                      */
                     uint64_t m_maxStorage;
                     bool m_maxStorageHasBeenSet;
 
                     /**
-                     * 该规格所支持最小存储容量，单位：GB
+                     * <p>该规格所支持最小存储容量，单位：GB</p>
                      */
                     uint64_t m_minStorage;
                     bool m_minStorageHasBeenSet;
 
                     /**
-                     * 该规格的预估QPS
+                     * <p>该规格的预估QPS</p>
                      */
                     uint64_t m_qPS;
                     bool m_qPSHasBeenSet;

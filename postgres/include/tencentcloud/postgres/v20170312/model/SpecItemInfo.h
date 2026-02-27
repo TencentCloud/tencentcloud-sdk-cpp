@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规格ID
-                     * @return SpecCode 规格ID
+                     * 获取<p>规格ID</p>
+                     * @return SpecCode <p>规格ID</p>
                      * 
                      */
                     std::string GetSpecCode() const;
 
                     /**
-                     * 设置规格ID
-                     * @param _specCode 规格ID
+                     * 设置<p>规格ID</p>
+                     * @param _specCode <p>规格ID</p>
                      * 
                      */
                     void SetSpecCode(const std::string& _specCode);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool SpecCodeHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL的版本编号
-                     * @return Version PostgreSQL的版本编号
+                     * 获取<p>PostgreSQL的版本编号</p>
+                     * @return Version <p>PostgreSQL的版本编号</p>
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
-                     * 设置PostgreSQL的版本编号
-                     * @param _version PostgreSQL的版本编号
+                     * 设置<p>PostgreSQL的版本编号</p>
+                     * @param _version <p>PostgreSQL的版本编号</p>
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取内核编号对应的完整版本名称
-                     * @return VersionName 内核编号对应的完整版本名称
+                     * 获取<p>内核编号对应的完整版本名称</p>
+                     * @return VersionName <p>内核编号对应的完整版本名称</p>
                      * 
                      */
                     std::string GetVersionName() const;
 
                     /**
-                     * 设置内核编号对应的完整版本名称
-                     * @param _versionName 内核编号对应的完整版本名称
+                     * 设置<p>内核编号对应的完整版本名称</p>
+                     * @param _versionName <p>内核编号对应的完整版本名称</p>
                      * 
                      */
                     void SetVersionName(const std::string& _versionName);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool VersionNameHasBeenSet() const;
 
                     /**
-                     * 获取CPU核数
-                     * @return Cpu CPU核数
+                     * 获取<p>CPU核数</p>
+                     * @return Cpu <p>CPU核数</p>
                      * 
                      */
                     uint64_t GetCpu() const;
 
                     /**
-                     * 设置CPU核数
-                     * @param _cpu CPU核数
+                     * 设置<p>CPU核数</p>
+                     * @param _cpu <p>CPU核数</p>
                      * 
                      */
                     void SetCpu(const uint64_t& _cpu);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取内存大小，单位：MB
-                     * @return Memory 内存大小，单位：MB
+                     * 获取<p>内存大小，单位：MB</p>
+                     * @return Memory <p>内存大小，单位：MB</p>
                      * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
-                     * 设置内存大小，单位：MB
-                     * @param _memory 内存大小，单位：MB
+                     * 设置<p>内存大小，单位：MB</p>
+                     * @param _memory <p>内存大小，单位：MB</p>
                      * 
                      */
                     void SetMemory(const uint64_t& _memory);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取该规格所支持最大存储容量，单位：GB
-                     * @return MaxStorage 该规格所支持最大存储容量，单位：GB
+                     * 获取<p>该规格所支持最大存储容量，单位：GB</p>
+                     * @return MaxStorage <p>该规格所支持最大存储容量，单位：GB</p>
                      * 
                      */
                     uint64_t GetMaxStorage() const;
 
                     /**
-                     * 设置该规格所支持最大存储容量，单位：GB
-                     * @param _maxStorage 该规格所支持最大存储容量，单位：GB
+                     * 设置<p>该规格所支持最大存储容量，单位：GB</p>
+                     * @param _maxStorage <p>该规格所支持最大存储容量，单位：GB</p>
                      * 
                      */
                     void SetMaxStorage(const uint64_t& _maxStorage);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool MaxStorageHasBeenSet() const;
 
                     /**
-                     * 获取该规格所支持最小存储容量，单位：GB
-                     * @return MinStorage 该规格所支持最小存储容量，单位：GB
+                     * 获取<p>该规格所支持最小存储容量，单位：GB</p>
+                     * @return MinStorage <p>该规格所支持最小存储容量，单位：GB</p>
                      * 
                      */
                     uint64_t GetMinStorage() const;
 
                     /**
-                     * 设置该规格所支持最小存储容量，单位：GB
-                     * @param _minStorage 该规格所支持最小存储容量，单位：GB
+                     * 设置<p>该规格所支持最小存储容量，单位：GB</p>
+                     * @param _minStorage <p>该规格所支持最小存储容量，单位：GB</p>
                      * 
                      */
                     void SetMinStorage(const uint64_t& _minStorage);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool MinStorageHasBeenSet() const;
 
                     /**
-                     * 获取该规格的预估QPS
-                     * @return Qps 该规格的预估QPS
+                     * 获取<p>该规格的预估QPS</p>
+                     * @return Qps <p>该规格的预估QPS</p>
                      * 
                      */
                     uint64_t GetQps() const;
 
                     /**
-                     * 设置该规格的预估QPS
-                     * @param _qps 该规格的预估QPS
+                     * 设置<p>该规格的预估QPS</p>
+                     * @param _qps <p>该规格的预估QPS</p>
                      * 
                      */
                     void SetQps(const uint64_t& _qps);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool QpsHasBeenSet() const;
 
                     /**
-                     * 获取【该字段废弃】
-                     * @return Pid 【该字段废弃】
+                     * 获取<p>【该字段废弃】</p>
+                     * @return Pid <p>【该字段废弃】</p>
                      * 
                      */
                     uint64_t GetPid() const;
 
                     /**
-                     * 设置【该字段废弃】
-                     * @param _pid 【该字段废弃】
+                     * 设置<p>【该字段废弃】</p>
+                     * @param _pid <p>【该字段废弃】</p>
                      * 
                      */
                     void SetPid(const uint64_t& _pid);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool PidHasBeenSet() const;
 
                     /**
-                     * 获取机器类型
-                     * @return Type 机器类型
+                     * 获取<p>机器类型</p>
+                     * @return Type <p>机器类型</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置机器类型
-                     * @param _type 机器类型
+                     * 设置<p>机器类型</p>
+                     * @param _type <p>机器类型</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL的主要版本编号
-                     * @return MajorVersion PostgreSQL的主要版本编号
+                     * 获取<p>PostgreSQL的主要版本编号</p>
+                     * @return MajorVersion <p>PostgreSQL的主要版本编号</p>
                      * 
                      */
                     std::string GetMajorVersion() const;
 
                     /**
-                     * 设置PostgreSQL的主要版本编号
-                     * @param _majorVersion PostgreSQL的主要版本编号
+                     * 设置<p>PostgreSQL的主要版本编号</p>
+                     * @param _majorVersion <p>PostgreSQL的主要版本编号</p>
                      * 
                      */
                     void SetMajorVersion(const std::string& _majorVersion);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool MajorVersionHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL的内核版本编号
-                     * @return KernelVersion PostgreSQL的内核版本编号
+                     * 获取<p>PostgreSQL的内核版本编号</p>
+                     * @return KernelVersion <p>PostgreSQL的内核版本编号</p>
                      * 
                      */
                     std::string GetKernelVersion() const;
 
                     /**
-                     * 设置PostgreSQL的内核版本编号
-                     * @param _kernelVersion PostgreSQL的内核版本编号
+                     * 设置<p>PostgreSQL的内核版本编号</p>
+                     * @param _kernelVersion <p>PostgreSQL的内核版本编号</p>
                      * 
                      */
                     void SetKernelVersion(const std::string& _kernelVersion);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool KernelVersionHasBeenSet() const;
 
                     /**
-                     * 获取是否支持TDE数据加密功能，0-不支持，1-支持
-                     * @return IsSupportTDE 是否支持TDE数据加密功能，0-不支持，1-支持
+                     * 获取<p>是否支持TDE数据加密功能，0-不支持，1-支持</p>
+                     * @return IsSupportTDE <p>是否支持TDE数据加密功能，0-不支持，1-支持</p>
                      * 
                      */
                     int64_t GetIsSupportTDE() const;
 
                     /**
-                     * 设置是否支持TDE数据加密功能，0-不支持，1-支持
-                     * @param _isSupportTDE 是否支持TDE数据加密功能，0-不支持，1-支持
+                     * 设置<p>是否支持TDE数据加密功能，0-不支持，1-支持</p>
+                     * @param _isSupportTDE <p>是否支持TDE数据加密功能，0-不支持，1-支持</p>
                      * 
                      */
                     void SetIsSupportTDE(const int64_t& _isSupportTDE);
@@ -322,79 +322,79 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规格ID
+                     * <p>规格ID</p>
                      */
                     std::string m_specCode;
                     bool m_specCodeHasBeenSet;
 
                     /**
-                     * PostgreSQL的版本编号
+                     * <p>PostgreSQL的版本编号</p>
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 内核编号对应的完整版本名称
+                     * <p>内核编号对应的完整版本名称</p>
                      */
                     std::string m_versionName;
                     bool m_versionNameHasBeenSet;
 
                     /**
-                     * CPU核数
+                     * <p>CPU核数</p>
                      */
                     uint64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 内存大小，单位：MB
+                     * <p>内存大小，单位：MB</p>
                      */
                     uint64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 该规格所支持最大存储容量，单位：GB
+                     * <p>该规格所支持最大存储容量，单位：GB</p>
                      */
                     uint64_t m_maxStorage;
                     bool m_maxStorageHasBeenSet;
 
                     /**
-                     * 该规格所支持最小存储容量，单位：GB
+                     * <p>该规格所支持最小存储容量，单位：GB</p>
                      */
                     uint64_t m_minStorage;
                     bool m_minStorageHasBeenSet;
 
                     /**
-                     * 该规格的预估QPS
+                     * <p>该规格的预估QPS</p>
                      */
                     uint64_t m_qps;
                     bool m_qpsHasBeenSet;
 
                     /**
-                     * 【该字段废弃】
+                     * <p>【该字段废弃】</p>
                      */
                     uint64_t m_pid;
                     bool m_pidHasBeenSet;
 
                     /**
-                     * 机器类型
+                     * <p>机器类型</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * PostgreSQL的主要版本编号
+                     * <p>PostgreSQL的主要版本编号</p>
                      */
                     std::string m_majorVersion;
                     bool m_majorVersionHasBeenSet;
 
                     /**
-                     * PostgreSQL的内核版本编号
+                     * <p>PostgreSQL的内核版本编号</p>
                      */
                     std::string m_kernelVersion;
                     bool m_kernelVersionHasBeenSet;
 
                     /**
-                     * 是否支持TDE数据加密功能，0-不支持，1-支持
+                     * <p>是否支持TDE数据加密功能，0-不支持，1-支持</p>
                      */
                     int64_t m_isSupportTDE;
                     bool m_isSupportTDEHasBeenSet;

@@ -151,6 +151,27 @@ namespace TencentCloud
                      */
                     bool LinuxGidHasBeenSet() const;
 
+                    /**
+                     * 获取子账号在Linux下的用户名
+                     * @return LinuxUserName 子账号在Linux下的用户名
+                     * 
+                     */
+                    std::string GetLinuxUserName() const;
+
+                    /**
+                     * 设置子账号在Linux下的用户名
+                     * @param _linuxUserName 子账号在Linux下的用户名
+                     * 
+                     */
+                    void SetLinuxUserName(const std::string& _linuxUserName);
+
+                    /**
+                     * 判断参数 LinuxUserName 是否已赋值
+                     * @return LinuxUserName 是否已赋值
+                     * 
+                     */
+                    bool LinuxUserNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +203,12 @@ namespace TencentCloud
                      */
                     int64_t m_linuxGid;
                     bool m_linuxGidHasBeenSet;
+
+                    /**
+                     * 子账号在Linux下的用户名
+                     */
+                    std::string m_linuxUserName;
+                    bool m_linuxUserNameHasBeenSet;
 
                 };
             }

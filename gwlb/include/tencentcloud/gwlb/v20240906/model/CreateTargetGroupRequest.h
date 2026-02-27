@@ -256,48 +256,6 @@ namespace TencentCloud
                     bool ForwardingModeHasBeenSet() const;
 
                     /**
-                     * 获取<p>TCP协议连接空闲超时时间，可配置60s-6000s，默认350s。</p>
-                     * @return TcpIdleConnectTimeout <p>TCP协议连接空闲超时时间，可配置60s-6000s，默认350s。</p>
-                     * 
-                     */
-                    int64_t GetTcpIdleConnectTimeout() const;
-
-                    /**
-                     * 设置<p>TCP协议连接空闲超时时间，可配置60s-6000s，默认350s。</p>
-                     * @param _tcpIdleConnectTimeout <p>TCP协议连接空闲超时时间，可配置60s-6000s，默认350s。</p>
-                     * 
-                     */
-                    void SetTcpIdleConnectTimeout(const int64_t& _tcpIdleConnectTimeout);
-
-                    /**
-                     * 判断参数 TcpIdleConnectTimeout 是否已赋值
-                     * @return TcpIdleConnectTimeout 是否已赋值
-                     * 
-                     */
-                    bool TcpIdleConnectTimeoutHasBeenSet() const;
-
-                    /**
-                     * 获取<p>其他协议连接空闲超时时间，可配置5s-180s，默认120s</p>
-                     * @return OthersIdleConnectTimeout <p>其他协议连接空闲超时时间，可配置5s-180s，默认120s</p>
-                     * 
-                     */
-                    int64_t GetOthersIdleConnectTimeout() const;
-
-                    /**
-                     * 设置<p>其他协议连接空闲超时时间，可配置5s-180s，默认120s</p>
-                     * @param _othersIdleConnectTimeout <p>其他协议连接空闲超时时间，可配置5s-180s，默认120s</p>
-                     * 
-                     */
-                    void SetOthersIdleConnectTimeout(const int64_t& _othersIdleConnectTimeout);
-
-                    /**
-                     * 判断参数 OthersIdleConnectTimeout 是否已赋值
-                     * @return OthersIdleConnectTimeout 是否已赋值
-                     * 
-                     */
-                    bool OthersIdleConnectTimeoutHasBeenSet() const;
-
-                    /**
                      * 获取<p>重新调度功能内的解绑后端服务开关，开关打开后解绑后端服务会触发重新调度。</p>
                      * @return RescheduleUnbindRs <p>重新调度功能内的解绑后端服务开关，开关打开后解绑后端服务会触发重新调度。</p>
                      * 
@@ -442,18 +400,6 @@ namespace TencentCloud
                      */
                     std::string m_forwardingMode;
                     bool m_forwardingModeHasBeenSet;
-
-                    /**
-                     * <p>TCP协议连接空闲超时时间，可配置60s-6000s，默认350s。</p>
-                     */
-                    int64_t m_tcpIdleConnectTimeout;
-                    bool m_tcpIdleConnectTimeoutHasBeenSet;
-
-                    /**
-                     * <p>其他协议连接空闲超时时间，可配置5s-180s，默认120s</p>
-                     */
-                    int64_t m_othersIdleConnectTimeout;
-                    bool m_othersIdleConnectTimeoutHasBeenSet;
 
                     /**
                      * <p>重新调度功能内的解绑后端服务开关，开关打开后解绑后端服务会触发重新调度。</p>

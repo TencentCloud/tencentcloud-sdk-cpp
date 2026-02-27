@@ -27,8 +27,6 @@ ModifyTargetGroupAttributeRequest::ModifyTargetGroupAttributeRequest() :
     m_targetGroupNameHasBeenSet(false),
     m_healthCheckHasBeenSet(false),
     m_allDeadToAliveHasBeenSet(false),
-    m_tcpIdleConnectTimeoutHasBeenSet(false),
-    m_othersIdleConnectTimeoutHasBeenSet(false),
     m_rescheduleUnbindRsHasBeenSet(false),
     m_rescheduleUnbindRsStartTimeHasBeenSet(false),
     m_rescheduleUnhealthyHasBeenSet(false),
@@ -74,22 +72,6 @@ string ModifyTargetGroupAttributeRequest::ToJsonString() const
         string key = "AllDeadToAlive";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_allDeadToAlive, allocator);
-    }
-
-    if (m_tcpIdleConnectTimeoutHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TcpIdleConnectTimeout";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_tcpIdleConnectTimeout, allocator);
-    }
-
-    if (m_othersIdleConnectTimeoutHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OthersIdleConnectTimeout";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_othersIdleConnectTimeout, allocator);
     }
 
     if (m_rescheduleUnbindRsHasBeenSet)
@@ -194,38 +176,6 @@ void ModifyTargetGroupAttributeRequest::SetAllDeadToAlive(const bool& _allDeadTo
 bool ModifyTargetGroupAttributeRequest::AllDeadToAliveHasBeenSet() const
 {
     return m_allDeadToAliveHasBeenSet;
-}
-
-int64_t ModifyTargetGroupAttributeRequest::GetTcpIdleConnectTimeout() const
-{
-    return m_tcpIdleConnectTimeout;
-}
-
-void ModifyTargetGroupAttributeRequest::SetTcpIdleConnectTimeout(const int64_t& _tcpIdleConnectTimeout)
-{
-    m_tcpIdleConnectTimeout = _tcpIdleConnectTimeout;
-    m_tcpIdleConnectTimeoutHasBeenSet = true;
-}
-
-bool ModifyTargetGroupAttributeRequest::TcpIdleConnectTimeoutHasBeenSet() const
-{
-    return m_tcpIdleConnectTimeoutHasBeenSet;
-}
-
-int64_t ModifyTargetGroupAttributeRequest::GetOthersIdleConnectTimeout() const
-{
-    return m_othersIdleConnectTimeout;
-}
-
-void ModifyTargetGroupAttributeRequest::SetOthersIdleConnectTimeout(const int64_t& _othersIdleConnectTimeout)
-{
-    m_othersIdleConnectTimeout = _othersIdleConnectTimeout;
-    m_othersIdleConnectTimeoutHasBeenSet = true;
-}
-
-bool ModifyTargetGroupAttributeRequest::OthersIdleConnectTimeoutHasBeenSet() const
-{
-    return m_othersIdleConnectTimeoutHasBeenSet;
 }
 
 bool ModifyTargetGroupAttributeRequest::GetRescheduleUnbindRs() const

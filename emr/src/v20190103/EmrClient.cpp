@@ -1140,6 +1140,56 @@ EmrClient::DescribeDAGInfoOutcomeCallable EmrClient::DescribeDAGInfoCallable(con
     return prom->get_future();
 }
 
+EmrClient::DescribeEMREventListOutcome EmrClient::DescribeEMREventList(const DescribeEMREventListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEMREventList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEMREventListResponse rsp = DescribeEMREventListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEMREventListOutcome(rsp);
+        else
+            return DescribeEMREventListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEMREventListOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeEMREventListAsync(const DescribeEMREventListRequest& request, const DescribeEMREventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeEMREventListRequest&;
+    using Resp = DescribeEMREventListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeEMREventList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EmrClient::DescribeEMREventListOutcomeCallable EmrClient::DescribeEMREventListCallable(const DescribeEMREventListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeEMREventListOutcome>>();
+    DescribeEMREventListAsync(
+    request,
+    [prom](
+        const EmrClient*,
+        const DescribeEMREventListRequest&,
+        DescribeEMREventListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EmrClient::DescribeEmrApplicationStaticsOutcome EmrClient::DescribeEmrApplicationStatics(const DescribeEmrApplicationStaticsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEmrApplicationStatics");

@@ -590,6 +590,56 @@ ApmClient::DescribeApmPrometheusRuleOutcomeCallable ApmClient::DescribeApmPromet
     return prom->get_future();
 }
 
+ApmClient::DescribeApmSQLInjectionDetailOutcome ApmClient::DescribeApmSQLInjectionDetail(const DescribeApmSQLInjectionDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApmSQLInjectionDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApmSQLInjectionDetailResponse rsp = DescribeApmSQLInjectionDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApmSQLInjectionDetailOutcome(rsp);
+        else
+            return DescribeApmSQLInjectionDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApmSQLInjectionDetailOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::DescribeApmSQLInjectionDetailAsync(const DescribeApmSQLInjectionDetailRequest& request, const DescribeApmSQLInjectionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeApmSQLInjectionDetailRequest&;
+    using Resp = DescribeApmSQLInjectionDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeApmSQLInjectionDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ApmClient::DescribeApmSQLInjectionDetailOutcomeCallable ApmClient::DescribeApmSQLInjectionDetailCallable(const DescribeApmSQLInjectionDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeApmSQLInjectionDetailOutcome>>();
+    DescribeApmSQLInjectionDetailAsync(
+    request,
+    [prom](
+        const ApmClient*,
+        const DescribeApmSQLInjectionDetailRequest&,
+        DescribeApmSQLInjectionDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ApmClient::DescribeApmSampleConfigOutcome ApmClient::DescribeApmSampleConfig(const DescribeApmSampleConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeApmSampleConfig");

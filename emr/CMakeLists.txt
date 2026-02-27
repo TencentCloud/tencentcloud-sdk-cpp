@@ -22,6 +22,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/AddNodeResourceConfigRequest.h
   include/tencentcloud/emr/v20190103/model/SchedulerTaskInfo.h
   include/tencentcloud/emr/v20190103/model/TerminateTasksRequest.h
+  include/tencentcloud/emr/v20190103/model/DescribeEMREventListResponse.h
   include/tencentcloud/emr/v20190103/model/DiskSpecInfo.h
   include/tencentcloud/emr/v20190103/model/Step.h
   include/tencentcloud/emr/v20190103/model/NodeSpecFamily.h
@@ -158,6 +159,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/DiskGroup.h
   include/tencentcloud/emr/v20190103/model/DeleteUserManagerUserListRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeResourceScheduleResponse.h
+  include/tencentcloud/emr/v20190103/model/EMREventListItem.h
   include/tencentcloud/emr/v20190103/model/DescribeKyuubiQueryInfoRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeNodeResourceConfigFastResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeInsightListResponse.h
@@ -219,6 +221,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/DescribeAutoScaleGroupGlobalConfRequest.h
   include/tencentcloud/emr/v20190103/model/ModifyResourceScheduleConfigResponse.h
   include/tencentcloud/emr/v20190103/model/NodeDetailPriceResult.h
+  include/tencentcloud/emr/v20190103/model/DescribeEMREventListRequest.h
   include/tencentcloud/emr/v20190103/model/EmrListInstance.h
   include/tencentcloud/emr/v20190103/model/DescribeResourceScheduleDiffDetailResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeYarnQueueResponse.h
@@ -237,14 +240,14 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/Placement.h
   include/tencentcloud/emr/v20190103/model/DescribeUsersForUserManagerRequest.h
   include/tencentcloud/emr/v20190103/model/ConfigSetInfo.h
-  include/tencentcloud/emr/v20190103/model/DescribeInsightListRequest.h
+  include/tencentcloud/emr/v20190103/model/DescribeNodeSpecRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeYarnScheduleHistoryRequest.h
   include/tencentcloud/emr/v20190103/model/StartStopServiceOrMonitorResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeYarnQueueRequest.h
   include/tencentcloud/emr/v20190103/model/ModifyAutoRenewFlagResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeYarnScheduleHistoryResponse.h
-  include/tencentcloud/emr/v20190103/model/DescribeNodeSpecRequest.h
-  include/tencentcloud/emr/v20190103/model/TerminateInstanceRequest.h
+  include/tencentcloud/emr/v20190103/model/DescribeInsightListRequest.h
+  include/tencentcloud/emr/v20190103/model/MultiZoneSetting.h
   include/tencentcloud/emr/v20190103/model/PersistentVolumeContext.h
   include/tencentcloud/emr/v20190103/model/ScaleOutNodeConfig.h
   include/tencentcloud/emr/v20190103/model/ModifyResourcesTagsRequest.h
@@ -271,7 +274,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/AddUsersForUserManagerRequest.h
   include/tencentcloud/emr/v20190103/model/StorageSummaryDistribution.h
   include/tencentcloud/emr/v20190103/model/ApplicationStatics.h
-  include/tencentcloud/emr/v20190103/model/MultiZoneSetting.h
+  include/tencentcloud/emr/v20190103/model/TerminateInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeEmrOverviewMetricsRequest.h
   include/tencentcloud/emr/v20190103/model/ServiceProcessFunctionInfo.h
   include/tencentcloud/emr/v20190103/model/PreExecuteFileSettings.h
@@ -392,6 +395,7 @@ set(emr_src
   src/v20190103/model/AddNodeResourceConfigRequest.cpp
   src/v20190103/model/SchedulerTaskInfo.cpp
   src/v20190103/model/TerminateTasksRequest.cpp
+  src/v20190103/model/DescribeEMREventListResponse.cpp
   src/v20190103/model/DiskSpecInfo.cpp
   src/v20190103/model/Step.cpp
   src/v20190103/model/NodeSpecFamily.cpp
@@ -528,6 +532,7 @@ set(emr_src
   src/v20190103/model/DiskGroup.cpp
   src/v20190103/model/DeleteUserManagerUserListRequest.cpp
   src/v20190103/model/DescribeResourceScheduleResponse.cpp
+  src/v20190103/model/EMREventListItem.cpp
   src/v20190103/model/DescribeKyuubiQueryInfoRequest.cpp
   src/v20190103/model/DescribeNodeResourceConfigFastResponse.cpp
   src/v20190103/model/DescribeInsightListResponse.cpp
@@ -589,6 +594,7 @@ set(emr_src
   src/v20190103/model/DescribeAutoScaleGroupGlobalConfRequest.cpp
   src/v20190103/model/ModifyResourceScheduleConfigResponse.cpp
   src/v20190103/model/NodeDetailPriceResult.cpp
+  src/v20190103/model/DescribeEMREventListRequest.cpp
   src/v20190103/model/EmrListInstance.cpp
   src/v20190103/model/DescribeResourceScheduleDiffDetailResponse.cpp
   src/v20190103/model/DescribeYarnQueueResponse.cpp
@@ -607,14 +613,14 @@ set(emr_src
   src/v20190103/model/Placement.cpp
   src/v20190103/model/DescribeUsersForUserManagerRequest.cpp
   src/v20190103/model/ConfigSetInfo.cpp
-  src/v20190103/model/DescribeInsightListRequest.cpp
+  src/v20190103/model/DescribeNodeSpecRequest.cpp
   src/v20190103/model/DescribeYarnScheduleHistoryRequest.cpp
   src/v20190103/model/StartStopServiceOrMonitorResponse.cpp
   src/v20190103/model/DescribeYarnQueueRequest.cpp
   src/v20190103/model/ModifyAutoRenewFlagResponse.cpp
   src/v20190103/model/DescribeYarnScheduleHistoryResponse.cpp
-  src/v20190103/model/DescribeNodeSpecRequest.cpp
-  src/v20190103/model/TerminateInstanceRequest.cpp
+  src/v20190103/model/DescribeInsightListRequest.cpp
+  src/v20190103/model/MultiZoneSetting.cpp
   src/v20190103/model/PersistentVolumeContext.cpp
   src/v20190103/model/ScaleOutNodeConfig.cpp
   src/v20190103/model/ModifyResourcesTagsRequest.cpp
@@ -641,7 +647,7 @@ set(emr_src
   src/v20190103/model/AddUsersForUserManagerRequest.cpp
   src/v20190103/model/StorageSummaryDistribution.cpp
   src/v20190103/model/ApplicationStatics.cpp
-  src/v20190103/model/MultiZoneSetting.cpp
+  src/v20190103/model/TerminateInstanceRequest.cpp
   src/v20190103/model/DescribeEmrOverviewMetricsRequest.cpp
   src/v20190103/model/ServiceProcessFunctionInfo.cpp
   src/v20190103/model/PreExecuteFileSettings.cpp

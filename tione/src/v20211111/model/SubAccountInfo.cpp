@@ -25,7 +25,8 @@ SubAccountInfo::SubAccountInfo() :
     m_subUinHasBeenSet(false),
     m_subUinNameHasBeenSet(false),
     m_linuxUidHasBeenSet(false),
-    m_linuxGidHasBeenSet(false)
+    m_linuxGidHasBeenSet(false),
+    m_linuxUserNameHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome SubAccountInfo::Deserialize(const rapidjson::Value &value)
         m_linuxGidHasBeenSet = true;
     }
 
+    if (value.HasMember("LinuxUserName") && !value["LinuxUserName"].IsNull())
+    {
+        if (!value["LinuxUserName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubAccountInfo.LinuxUserName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_linuxUserName = string(value["LinuxUserName"].GetString());
+        m_linuxUserNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void SubAccountInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "LinuxGid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_linuxGid, allocator);
+    }
+
+    if (m_linuxUserNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LinuxUserName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_linuxUserName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void SubAccountInfo::SetLinuxGid(const int64_t& _linuxGid)
 bool SubAccountInfo::LinuxGidHasBeenSet() const
 {
     return m_linuxGidHasBeenSet;
+}
+
+string SubAccountInfo::GetLinuxUserName() const
+{
+    return m_linuxUserName;
+}
+
+void SubAccountInfo::SetLinuxUserName(const string& _linuxUserName)
+{
+    m_linuxUserName = _linuxUserName;
+    m_linuxUserNameHasBeenSet = true;
+}
+
+bool SubAccountInfo::LinuxUserNameHasBeenSet() const
+{
+    return m_linuxUserNameHasBeenSet;
 }
 
