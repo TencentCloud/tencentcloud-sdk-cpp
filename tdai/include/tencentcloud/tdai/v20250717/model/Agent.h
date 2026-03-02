@@ -110,6 +110,27 @@ namespace TencentCloud
                     bool AgentInternalNameHasBeenSet() const;
 
                     /**
+                     * 获取架构：共享版-intranet，企业版-userVpc
+                     * @return DeployPlace 架构：共享版-intranet，企业版-userVpc
+                     * 
+                     */
+                    std::string GetDeployPlace() const;
+
+                    /**
+                     * 设置架构：共享版-intranet，企业版-userVpc
+                     * @param _deployPlace 架构：共享版-intranet，企业版-userVpc
+                     * 
+                     */
+                    void SetDeployPlace(const std::string& _deployPlace);
+
+                    /**
+                     * 判断参数 DeployPlace 是否已赋值
+                     * @return DeployPlace 是否已赋值
+                     * 
+                     */
+                    bool DeployPlaceHasBeenSet() const;
+
+                    /**
                      * 获取智能体状态
                      * @return AgentStatus 智能体状态
                      * 
@@ -296,6 +317,12 @@ namespace TencentCloud
                      */
                     std::string m_agentInternalName;
                     bool m_agentInternalNameHasBeenSet;
+
+                    /**
+                     * 架构：共享版-intranet，企业版-userVpc
+                     */
+                    std::string m_deployPlace;
+                    bool m_deployPlaceHasBeenSet;
 
                     /**
                      * 智能体状态

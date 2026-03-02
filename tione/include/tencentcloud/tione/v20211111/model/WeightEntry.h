@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ServiceIdHasBeenSet() const;
 
                     /**
-                     * 获取流量权重值，同 ServiceGroup 下 总和应为 100
-                     * @return Weight 流量权重值，同 ServiceGroup 下 总和应为 100
+                     * 获取流量权重值，ServiceGroup 下，不同服务版本根据权重比例分配流量
+                     * @return Weight 流量权重值，ServiceGroup 下，不同服务版本根据权重比例分配流量
                      * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
-                     * 设置流量权重值，同 ServiceGroup 下 总和应为 100
-                     * @param _weight 流量权重值，同 ServiceGroup 下 总和应为 100
+                     * 设置流量权重值，ServiceGroup 下，不同服务版本根据权重比例分配流量
+                     * @param _weight 流量权重值，ServiceGroup 下，不同服务版本根据权重比例分配流量
                      * 
                      */
                     void SetWeight(const uint64_t& _weight);
@@ -97,7 +97,7 @@ namespace TencentCloud
                     bool m_serviceIdHasBeenSet;
 
                     /**
-                     * 流量权重值，同 ServiceGroup 下 总和应为 100
+                     * 流量权重值，ServiceGroup 下，不同服务版本根据权重比例分配流量
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;

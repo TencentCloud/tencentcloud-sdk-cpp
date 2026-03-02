@@ -145,6 +145,7 @@ namespace TencentCloud
 - TDENGINE
 - TDSQLC
 - FileSystem
+- TCLake
 
                      * @return Type 数据源类型:枚举值
 
@@ -205,6 +206,7 @@ namespace TencentCloud
 - TDENGINE
 - TDSQLC
 - FileSystem
+- TCLake
 
                      * 
                      */
@@ -270,6 +272,7 @@ namespace TencentCloud
 - TDENGINE
 - TDSQLC
 - FileSystem
+- TCLake
 
                      * @param _type 数据源类型:枚举值
 
@@ -330,6 +333,7 @@ namespace TencentCloud
 - TDENGINE
 - TDSQLC
 - FileSystem
+- TCLake
 
                      * 
                      */
@@ -994,6 +998,7 @@ cos:
 - TDENGINE
 - TDSQLC
 - FileSystem
+- TCLake
 
                      */
                     std::string m_type;

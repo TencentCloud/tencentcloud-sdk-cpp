@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。
-                     * @return InstanceId 实例ID。
+                     * 获取实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _instanceId 实例ID。
+                     * 设置实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取查询范围的开始时间，时间格式如：2019-09-10 12:13:14。
-                     * @return StartTime 查询范围的开始时间，时间格式如：2019-09-10 12:13:14。
+                     * 获取查询范围的开始时间，格式: "yyyy-MM-dd'T'HH:mm:ssXXX"。
+                     * @return StartTime 查询范围的开始时间，格式: "yyyy-MM-dd'T'HH:mm:ssXXX"。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置查询范围的开始时间，时间格式如：2019-09-10 12:13:14。
-                     * @param _startTime 查询范围的开始时间，时间格式如：2019-09-10 12:13:14。
+                     * 设置查询范围的开始时间，格式: "yyyy-MM-dd'T'HH:mm:ssXXX"。
+                     * @param _startTime 查询范围的开始时间，格式: "yyyy-MM-dd'T'HH:mm:ssXXX"。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询范围的结束时间，时间格式如：2019-09-10 12:13:14。
-                     * @return EndTime 查询范围的结束时间，时间格式如：2019-09-10 12:13:14。
+                     * 获取查询范围的结束时间，格式: "yyyy-MM-dd'T'HH:mm:ssXXX"。
+                     * @return EndTime 查询范围的结束时间，格式: "yyyy-MM-dd'T'HH:mm:ssXXX"。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置查询范围的结束时间，时间格式如：2019-09-10 12:13:14。
-                     * @param _endTime 查询范围的结束时间，时间格式如：2019-09-10 12:13:14。
+                     * 设置查询范围的结束时间，格式: "yyyy-MM-dd'T'HH:mm:ssXXX"。
+                     * @param _endTime 查询范围的结束时间，格式: "yyyy-MM-dd'T'HH:mm:ssXXX"。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -147,22 +147,64 @@ namespace TencentCloud
                      */
                     bool Md5HasBeenSet() const;
 
+                    /**
+                     * 获取仅Redis产品使用；实例Proxy ID。
+                     * @return InstanceProxyId 仅Redis产品使用；实例Proxy ID。
+                     * 
+                     */
+                    std::string GetInstanceProxyId() const;
+
+                    /**
+                     * 设置仅Redis产品使用；实例Proxy ID。
+                     * @param _instanceProxyId 仅Redis产品使用；实例Proxy ID。
+                     * 
+                     */
+                    void SetInstanceProxyId(const std::string& _instanceProxyId);
+
+                    /**
+                     * 判断参数 InstanceProxyId 是否已赋值
+                     * @return InstanceProxyId 是否已赋值
+                     * 
+                     */
+                    bool InstanceProxyIdHasBeenSet() const;
+
+                    /**
+                     * 获取仅Redis产品使用；命令。
+                     * @return Cmd 仅Redis产品使用；命令。
+                     * 
+                     */
+                    std::string GetCmd() const;
+
+                    /**
+                     * 设置仅Redis产品使用；命令。
+                     * @param _cmd 仅Redis产品使用；命令。
+                     * 
+                     */
+                    void SetCmd(const std::string& _cmd);
+
+                    /**
+                     * 判断参数 Cmd 是否已赋值
+                     * @return Cmd 是否已赋值
+                     * 
+                     */
+                    bool CmdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID。
+                     * 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 查询范围的开始时间，时间格式如：2019-09-10 12:13:14。
+                     * 查询范围的开始时间，格式: "yyyy-MM-dd'T'HH:mm:ssXXX"。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询范围的结束时间，时间格式如：2019-09-10 12:13:14。
+                     * 查询范围的结束时间，格式: "yyyy-MM-dd'T'HH:mm:ssXXX"。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -178,6 +220,18 @@ namespace TencentCloud
                      */
                     std::string m_md5;
                     bool m_md5HasBeenSet;
+
+                    /**
+                     * 仅Redis产品使用；实例Proxy ID。
+                     */
+                    std::string m_instanceProxyId;
+                    bool m_instanceProxyIdHasBeenSet;
+
+                    /**
+                     * 仅Redis产品使用；命令。
+                     */
+                    std::string m_cmd;
+                    bool m_cmdHasBeenSet;
 
                 };
             }

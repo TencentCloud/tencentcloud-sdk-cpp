@@ -32,7 +32,8 @@ DescribeLogsRequest::DescribeLogsRequest() :
     m_orderHasBeenSet(false),
     m_orderFieldHasBeenSet(false),
     m_contextHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,14 @@ string DescribeLogsRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -296,6 +305,22 @@ void DescribeLogsRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeLogsRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+uint64_t DescribeLogsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeLogsRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeLogsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

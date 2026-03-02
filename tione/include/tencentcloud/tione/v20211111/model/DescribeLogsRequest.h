@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取日志查询条数，默认值100，最大值100
-                     * @return Limit 日志查询条数，默认值100，最大值100
+                     * 获取日志查询条数，默认值100，最大值1000
+                     * @return Limit 日志查询条数，默认值100，最大值1000
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置日志查询条数，默认值100，最大值100
-                     * @param _limit 日志查询条数，默认值100，最大值100
+                     * 设置日志查询条数，默认值100，最大值1000
+                     * @param _limit 日志查询条数，默认值100，最大值1000
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -357,6 +357,27 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取使用OFFSET分页查询时，指定返回的数据偏移量，默认为0
+                     * @return Offset 使用OFFSET分页查询时，指定返回的数据偏移量，默认为0
+                     * 
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置使用OFFSET分页查询时，指定返回的数据偏移量，默认为0
+                     * @param _offset 使用OFFSET分页查询时，指定返回的数据偏移量，默认为0
+                     * 
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -383,7 +404,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 日志查询条数，默认值100，最大值100
+                     * 日志查询条数，默认值100，最大值1000
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -444,6 +465,12 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 使用OFFSET分页查询时，指定返回的数据偏移量，默认为0
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                 };
             }

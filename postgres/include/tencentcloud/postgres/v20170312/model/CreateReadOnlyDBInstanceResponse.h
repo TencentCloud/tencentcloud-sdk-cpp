@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订单号列表。每个实例对应一个订单号
-                     * @return DealNames 订单号列表。每个实例对应一个订单号
+                     * 获取<p>订单号列表。每个实例对应一个订单号</p>
+                     * @return DealNames <p>订单号列表。每个实例对应一个订单号</p>
                      * 
                      */
                     std::vector<std::string> GetDealNames() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool DealNamesHasBeenSet() const;
 
                     /**
-                     * 获取冻结流水号
-                     * @return BillId 冻结流水号
+                     * 获取<p>冻结流水号</p>
+                     * @return BillId <p>冻结流水号</p>
                      * 
                      */
                     std::string GetBillId() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool BillIdHasBeenSet() const;
 
                     /**
-                     * 获取创建成功的实例ID集合，只在后付费情景下有返回值
-                     * @return DBInstanceIdSet 创建成功的实例ID集合，只在后付费情景下有返回值
+                     * 获取<p>创建成功的实例ID集合，只在后付费情景下有返回值</p>
+                     * @return DBInstanceIdSet <p>创建成功的实例ID集合，只在后付费情景下有返回值</p>
                      * 
                      */
                     std::vector<std::string> GetDBInstanceIdSet() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool DBInstanceIdSetHasBeenSet() const;
 
                     /**
-                     * 获取入参有BillingParameters值时，出参才有值，值为商品下单的参数。
-                     * @return BillingParameters 入参有BillingParameters值时，出参才有值，值为商品下单的参数。
+                     * 获取<p>入参有BillingParameters值时，出参才有值，值为商品下单的参数。</p>
+                     * @return BillingParameters <p>入参有BillingParameters值时，出参才有值，值为商品下单的参数。</p>
                      * 
                      */
                     std::string GetBillingParameters() const;
@@ -102,25 +102,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订单号列表。每个实例对应一个订单号
+                     * <p>订单号列表。每个实例对应一个订单号</p>
                      */
                     std::vector<std::string> m_dealNames;
                     bool m_dealNamesHasBeenSet;
 
                     /**
-                     * 冻结流水号
+                     * <p>冻结流水号</p>
                      */
                     std::string m_billId;
                     bool m_billIdHasBeenSet;
 
                     /**
-                     * 创建成功的实例ID集合，只在后付费情景下有返回值
+                     * <p>创建成功的实例ID集合，只在后付费情景下有返回值</p>
                      */
                     std::vector<std::string> m_dBInstanceIdSet;
                     bool m_dBInstanceIdSetHasBeenSet;
 
                     /**
-                     * 入参有BillingParameters值时，出参才有值，值为商品下单的参数。
+                     * <p>入参有BillingParameters值时，出参才有值，值为商品下单的参数。</p>
                      */
                     std::string m_billingParameters;
                     bool m_billingParametersHasBeenSet;

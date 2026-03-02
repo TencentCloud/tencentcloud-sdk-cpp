@@ -25,6 +25,8 @@ using namespace std;
 SubmitTextToImageJobRequest::SubmitTextToImageJobRequest() :
     m_promptHasBeenSet(false),
     m_imagesHasBeenSet(false),
+    m_skillTypeHasBeenSet(false),
+    m_generatedImageCountHasBeenSet(false),
     m_resolutionHasBeenSet(false),
     m_seedHasBeenSet(false),
     m_logoAddHasBeenSet(false),
@@ -59,6 +61,22 @@ string SubmitTextToImageJobRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_skillTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkillType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_skillType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_generatedImageCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GeneratedImageCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_generatedImageCount, allocator);
     }
 
     if (m_resolutionHasBeenSet)
@@ -140,6 +158,38 @@ void SubmitTextToImageJobRequest::SetImages(const vector<string>& _images)
 bool SubmitTextToImageJobRequest::ImagesHasBeenSet() const
 {
     return m_imagesHasBeenSet;
+}
+
+string SubmitTextToImageJobRequest::GetSkillType() const
+{
+    return m_skillType;
+}
+
+void SubmitTextToImageJobRequest::SetSkillType(const string& _skillType)
+{
+    m_skillType = _skillType;
+    m_skillTypeHasBeenSet = true;
+}
+
+bool SubmitTextToImageJobRequest::SkillTypeHasBeenSet() const
+{
+    return m_skillTypeHasBeenSet;
+}
+
+int64_t SubmitTextToImageJobRequest::GetGeneratedImageCount() const
+{
+    return m_generatedImageCount;
+}
+
+void SubmitTextToImageJobRequest::SetGeneratedImageCount(const int64_t& _generatedImageCount)
+{
+    m_generatedImageCount = _generatedImageCount;
+    m_generatedImageCountHasBeenSet = true;
+}
+
+bool SubmitTextToImageJobRequest::GeneratedImageCountHasBeenSet() const
+{
+    return m_generatedImageCountHasBeenSet;
 }
 
 string SubmitTextToImageJobRequest::GetResolution() const

@@ -25,6 +25,7 @@ using namespace std;
 ProcessImageAsyncRequest::ProcessImageAsyncRequest() :
     m_subAppIdHasBeenSet(false),
     m_fileIdHasBeenSet(false),
+    m_urlHasBeenSet(false),
     m_imageTaskInputHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
@@ -55,6 +56,14 @@ string ProcessImageAsyncRequest::ToJsonString() const
         string key = "FileId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_urlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageTaskInputHasBeenSet)
@@ -145,6 +154,22 @@ void ProcessImageAsyncRequest::SetFileId(const string& _fileId)
 bool ProcessImageAsyncRequest::FileIdHasBeenSet() const
 {
     return m_fileIdHasBeenSet;
+}
+
+string ProcessImageAsyncRequest::GetUrl() const
+{
+    return m_url;
+}
+
+void ProcessImageAsyncRequest::SetUrl(const string& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool ProcessImageAsyncRequest::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
 }
 
 ProcessImageAsyncTaskInput ProcessImageAsyncRequest::GetImageTaskInput() const

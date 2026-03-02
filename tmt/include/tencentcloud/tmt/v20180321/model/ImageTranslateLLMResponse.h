@@ -45,10 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片数据的Base64字符串，输出格式为JPG。
-
-                     * @return Data 图片数据的Base64字符串，输出格式为JPG。
-
+                     * 获取<p>图片数据的Base64字符串，输出格式为JPG。</p>
+                     * @return Data <p>图片数据的Base64字符串，输出格式为JPG。</p>
                      * 
                      */
                     std::string GetData() const;
@@ -61,8 +59,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取原文本主要源语言。
-                     * @return Source 原文本主要源语言。
+                     * 获取<p>原文本主要源语言。</p>
+                     * @return Source <p>原文本主要源语言。</p>
                      * 
                      */
                     std::string GetSource() const;
@@ -75,8 +73,8 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取目标翻译语言。
-                     * @return Target 目标翻译语言。
+                     * 获取<p>目标翻译语言。</p>
+                     * @return Target <p>目标翻译语言。</p>
                      * 
                      */
                     std::string GetTarget() const;
@@ -89,8 +87,8 @@ namespace TencentCloud
                     bool TargetHasBeenSet() const;
 
                     /**
-                     * 获取图片中的全部原文本。
-                     * @return SourceText 图片中的全部原文本。
+                     * 获取<p>图片中的全部原文本。</p>
+                     * @return SourceText <p>图片中的全部原文本。</p>
                      * 
                      */
                     std::string GetSourceText() const;
@@ -103,8 +101,8 @@ namespace TencentCloud
                     bool SourceTextHasBeenSet() const;
 
                     /**
-                     * 获取图片中全部译文。
-                     * @return TargetText 图片中全部译文。
+                     * 获取<p>图片中全部译文。</p>
+                     * @return TargetText <p>图片中全部译文。</p>
                      * 
                      */
                     std::string GetTargetText() const;
@@ -117,8 +115,8 @@ namespace TencentCloud
                     bool TargetTextHasBeenSet() const;
 
                     /**
-                     * 获取逆时针图片角度，取值范围为0-359
-                     * @return Angle 逆时针图片角度，取值范围为0-359
+                     * 获取<p>逆时针图片角度，取值范围为0-359</p>
+                     * @return Angle <p>逆时针图片角度，取值范围为0-359</p>
                      * 
                      */
                     double GetAngle() const;
@@ -131,8 +129,8 @@ namespace TencentCloud
                     bool AngleHasBeenSet() const;
 
                     /**
-                     * 获取翻译详情信息
-                     * @return TransDetails 翻译详情信息
+                     * 获取<p>翻译详情信息</p>
+                     * @return TransDetails <p>翻译详情信息</p>
                      * 
                      */
                     std::vector<TransDetail> GetTransDetails() const;
@@ -147,44 +145,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 图片数据的Base64字符串，输出格式为JPG。
-
+                     * <p>图片数据的Base64字符串，输出格式为JPG。</p>
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 原文本主要源语言。
+                     * <p>原文本主要源语言。</p>
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 目标翻译语言。
+                     * <p>目标翻译语言。</p>
                      */
                     std::string m_target;
                     bool m_targetHasBeenSet;
 
                     /**
-                     * 图片中的全部原文本。
+                     * <p>图片中的全部原文本。</p>
                      */
                     std::string m_sourceText;
                     bool m_sourceTextHasBeenSet;
 
                     /**
-                     * 图片中全部译文。
+                     * <p>图片中全部译文。</p>
                      */
                     std::string m_targetText;
                     bool m_targetTextHasBeenSet;
 
                     /**
-                     * 逆时针图片角度，取值范围为0-359
+                     * <p>逆时针图片角度，取值范围为0-359</p>
                      */
                     double m_angle;
                     bool m_angleHasBeenSet;
 
                     /**
-                     * 翻译详情信息
+                     * <p>翻译详情信息</p>
                      */
                     std::vector<TransDetail> m_transDetails;
                     bool m_transDetailsHasBeenSet;

@@ -28,7 +28,8 @@ DescribeAgentsRequest::DescribeAgentsRequest() :
     m_agentIdHasBeenSet(false),
     m_agentNameHasBeenSet(false),
     m_agentInternalNameHasBeenSet(false),
-    m_agentStatusHasBeenSet(false)
+    m_agentStatusHasBeenSet(false),
+    m_deployPlaceHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string DescribeAgentsRequest::ToJsonString() const
         string key = "AgentStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_agentStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deployPlaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeployPlace";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deployPlace.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void DescribeAgentsRequest::SetAgentStatus(const string& _agentStatus)
 bool DescribeAgentsRequest::AgentStatusHasBeenSet() const
 {
     return m_agentStatusHasBeenSet;
+}
+
+string DescribeAgentsRequest::GetDeployPlace() const
+{
+    return m_deployPlace;
+}
+
+void DescribeAgentsRequest::SetDeployPlace(const string& _deployPlace)
+{
+    m_deployPlace = _deployPlace;
+    m_deployPlaceHasBeenSet = true;
+}
+
+bool DescribeAgentsRequest::DeployPlaceHasBeenSet() const
+{
+    return m_deployPlaceHasBeenSet;
 }
 
 

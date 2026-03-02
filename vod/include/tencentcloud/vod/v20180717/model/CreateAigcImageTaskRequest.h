@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>模型名称。取值：</p><li>GEM：Gemini；</li><li>Qwen：千问。</li><li>Hunyuan：混元。</li><li>Vidu：生数。</li><li>Kling：可灵。</li>
-                     * @return ModelName <p>模型名称。取值：</p><li>GEM：Gemini；</li><li>Qwen：千问。</li><li>Hunyuan：混元。</li><li>Vidu：生数。</li><li>Kling：可灵。</li>
+                     * 获取<p>模型名称。取值：</p><li>Qwen：千问。</li><li>Hunyuan：混元。</li><li>Vidu：生数。</li><li>Kling：可灵。</li>
+                     * @return ModelName <p>模型名称。取值：</p><li>Qwen：千问。</li><li>Hunyuan：混元。</li><li>Vidu：生数。</li><li>Kling：可灵。</li>
                      * 
                      */
                     std::string GetModelName() const;
 
                     /**
-                     * 设置<p>模型名称。取值：</p><li>GEM：Gemini；</li><li>Qwen：千问。</li><li>Hunyuan：混元。</li><li>Vidu：生数。</li><li>Kling：可灵。</li>
-                     * @param _modelName <p>模型名称。取值：</p><li>GEM：Gemini；</li><li>Qwen：千问。</li><li>Hunyuan：混元。</li><li>Vidu：生数。</li><li>Kling：可灵。</li>
+                     * 设置<p>模型名称。取值：</p><li>Qwen：千问。</li><li>Hunyuan：混元。</li><li>Vidu：生数。</li><li>Kling：可灵。</li>
+                     * @param _modelName <p>模型名称。取值：</p><li>Qwen：千问。</li><li>Hunyuan：混元。</li><li>Vidu：生数。</li><li>Kling：可灵。</li>
                      * 
                      */
                     void SetModelName(const std::string& _modelName);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool ModelNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>模型版本。取值：<li>当 ModelName 是 GEM，可选值为 2.5；</li><li>当 ModelName 是 Qwen，可选值为 0925；</li><li>当 ModelName 是 Hunyuan，可选值为 3.0；</li><li>当 ModelName 是 Vidu，可选值为 q2；</li><li>当 ModelName 是 Kling，可选值为 2.1；</li></p>
-                     * @return ModelVersion <p>模型版本。取值：<li>当 ModelName 是 GEM，可选值为 2.5；</li><li>当 ModelName 是 Qwen，可选值为 0925；</li><li>当 ModelName 是 Hunyuan，可选值为 3.0；</li><li>当 ModelName 是 Vidu，可选值为 q2；</li><li>当 ModelName 是 Kling，可选值为 2.1；</li></p>
+                     * 获取<p>模型版本。取值：<li>当 ModelName 是 Qwen，可选值为 0925；</li><li>当 ModelName 是 Hunyuan，可选值为 3.0；</li><li>当 ModelName 是 Vidu，可选值为 q2；</li><li>当 ModelName 是 Kling，可选值为 2.1；</li></p>
+                     * @return ModelVersion <p>模型版本。取值：<li>当 ModelName 是 Qwen，可选值为 0925；</li><li>当 ModelName 是 Hunyuan，可选值为 3.0；</li><li>当 ModelName 是 Vidu，可选值为 q2；</li><li>当 ModelName 是 Kling，可选值为 2.1；</li></p>
                      * 
                      */
                     std::string GetModelVersion() const;
 
                     /**
-                     * 设置<p>模型版本。取值：<li>当 ModelName 是 GEM，可选值为 2.5；</li><li>当 ModelName 是 Qwen，可选值为 0925；</li><li>当 ModelName 是 Hunyuan，可选值为 3.0；</li><li>当 ModelName 是 Vidu，可选值为 q2；</li><li>当 ModelName 是 Kling，可选值为 2.1；</li></p>
-                     * @param _modelVersion <p>模型版本。取值：<li>当 ModelName 是 GEM，可选值为 2.5；</li><li>当 ModelName 是 Qwen，可选值为 0925；</li><li>当 ModelName 是 Hunyuan，可选值为 3.0；</li><li>当 ModelName 是 Vidu，可选值为 q2；</li><li>当 ModelName 是 Kling，可选值为 2.1；</li></p>
+                     * 设置<p>模型版本。取值：<li>当 ModelName 是 Qwen，可选值为 0925；</li><li>当 ModelName 是 Hunyuan，可选值为 3.0；</li><li>当 ModelName 是 Vidu，可选值为 q2；</li><li>当 ModelName 是 Kling，可选值为 2.1；</li></p>
+                     * @param _modelVersion <p>模型版本。取值：<li>当 ModelName 是 Qwen，可选值为 0925；</li><li>当 ModelName 是 Hunyuan，可选值为 3.0；</li><li>当 ModelName 是 Vidu，可选值为 q2；</li><li>当 ModelName 是 Kling，可选值为 2.1；</li></p>
                      * 
                      */
                     void SetModelVersion(const std::string& _modelVersion);
@@ -326,13 +326,13 @@ namespace TencentCloud
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * <p>模型名称。取值：</p><li>GEM：Gemini；</li><li>Qwen：千问。</li><li>Hunyuan：混元。</li><li>Vidu：生数。</li><li>Kling：可灵。</li>
+                     * <p>模型名称。取值：</p><li>Qwen：千问。</li><li>Hunyuan：混元。</li><li>Vidu：生数。</li><li>Kling：可灵。</li>
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;
 
                     /**
-                     * <p>模型版本。取值：<li>当 ModelName 是 GEM，可选值为 2.5；</li><li>当 ModelName 是 Qwen，可选值为 0925；</li><li>当 ModelName 是 Hunyuan，可选值为 3.0；</li><li>当 ModelName 是 Vidu，可选值为 q2；</li><li>当 ModelName 是 Kling，可选值为 2.1；</li></p>
+                     * <p>模型版本。取值：<li>当 ModelName 是 Qwen，可选值为 0925；</li><li>当 ModelName 是 Hunyuan，可选值为 3.0；</li><li>当 ModelName 是 Vidu，可选值为 q2；</li><li>当 ModelName 是 Kling，可选值为 2.1；</li></p>
                      */
                     std::string m_modelVersion;
                     bool m_modelVersionHasBeenSet;

@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的一个或多个字段
+                     * 获取<p>在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的一个或多个字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EncryptList 在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的一个或多个字段
+                     * @return EncryptList <p>在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的一个或多个字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetEncryptList() const;
 
                     /**
-                     * 设置在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的一个或多个字段
+                     * 设置<p>在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的一个或多个字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _encryptList 在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的一个或多个字段
+                     * @param _encryptList <p>在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的一个或多个字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool EncryptListHasBeenSet() const;
 
                     /**
-                     * 获取加密后的对称密钥，关于密钥的生成和使用请查阅<a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
+                     * 获取<p>加密后的对称密钥，关于密钥的生成和使用请查阅<a href="https://www.tencentcloud.com/document/product/1061/77849">数据加密</a> 文档。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CiphertextBlob 加密后的对称密钥，关于密钥的生成和使用请查阅<a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
+                     * @return CiphertextBlob <p>加密后的对称密钥，关于密钥的生成和使用请查阅<a href="https://www.tencentcloud.com/document/product/1061/77849">数据加密</a> 文档。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCiphertextBlob() const;
 
                     /**
-                     * 设置加密后的对称密钥，关于密钥的生成和使用请查阅<a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
+                     * 设置<p>加密后的对称密钥，关于密钥的生成和使用请查阅<a href="https://www.tencentcloud.com/document/product/1061/77849">数据加密</a> 文档。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ciphertextBlob 加密后的对称密钥，关于密钥的生成和使用请查阅<a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
+                     * @param _ciphertextBlob <p>加密后的对称密钥，关于密钥的生成和使用请查阅<a href="https://www.tencentcloud.com/document/product/1061/77849">数据加密</a> 文档。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool CiphertextBlobHasBeenSet() const;
 
                     /**
-                     * 获取有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。
+                     * 获取<p>有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Iv 有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。
+                     * @return Iv <p>有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIv() const;
 
                     /**
-                     * 设置有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。
+                     * 设置<p>有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _iv 有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。
+                     * @param _iv <p>有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool IvHasBeenSet() const;
 
                     /**
-                     * 获取加密使用的算法（支持'AES-256-CBC'、'SM4-GCM'），不传默认为'AES-256-CBC'
+                     * 获取<p>加密使用的算法（支持&#39;AES-256-CBC&#39;、&#39;SM4-GCM&#39;），不传默认为&#39;AES-256-CBC&#39;</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Algorithm 加密使用的算法（支持'AES-256-CBC'、'SM4-GCM'），不传默认为'AES-256-CBC'
+                     * @return Algorithm <p>加密使用的算法（支持&#39;AES-256-CBC&#39;、&#39;SM4-GCM&#39;），不传默认为&#39;AES-256-CBC&#39;</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAlgorithm() const;
 
                     /**
-                     * 设置加密使用的算法（支持'AES-256-CBC'、'SM4-GCM'），不传默认为'AES-256-CBC'
+                     * 设置<p>加密使用的算法（支持&#39;AES-256-CBC&#39;、&#39;SM4-GCM&#39;），不传默认为&#39;AES-256-CBC&#39;</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _algorithm 加密使用的算法（支持'AES-256-CBC'、'SM4-GCM'），不传默认为'AES-256-CBC'
+                     * @param _algorithm <p>加密使用的算法（支持&#39;AES-256-CBC&#39;、&#39;SM4-GCM&#39;），不传默认为&#39;AES-256-CBC&#39;</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool AlgorithmHasBeenSet() const;
 
                     /**
-                     * 获取SM4-GCM算法生成的消息摘要（校验消息完整性时使用）
+                     * 获取<p>SM4-GCM算法生成的消息摘要（校验消息完整性时使用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TagList SM4-GCM算法生成的消息摘要（校验消息完整性时使用）
+                     * @return TagList <p>SM4-GCM算法生成的消息摘要（校验消息完整性时使用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTagList() const;
 
                     /**
-                     * 设置SM4-GCM算法生成的消息摘要（校验消息完整性时使用）
+                     * 设置<p>SM4-GCM算法生成的消息摘要（校验消息完整性时使用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tagList SM4-GCM算法生成的消息摘要（校验消息完整性时使用）
+                     * @param _tagList <p>SM4-GCM算法生成的消息摘要（校验消息完整性时使用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -174,35 +174,35 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的一个或多个字段
+                     * <p>在使用加密服务时，填入要被加密的字段。本接口中可填入加密后的一个或多个字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_encryptList;
                     bool m_encryptListHasBeenSet;
 
                     /**
-                     * 加密后的对称密钥，关于密钥的生成和使用请查阅<a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
+                     * <p>加密后的对称密钥，关于密钥的生成和使用请查阅<a href="https://www.tencentcloud.com/document/product/1061/77849">数据加密</a> 文档。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ciphertextBlob;
                     bool m_ciphertextBlobHasBeenSet;
 
                     /**
-                     * 有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。
+                     * <p>有加密需求的用户，传入CBC加密的初始向量（客户自定义字符串，长度16字符）。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iv;
                     bool m_ivHasBeenSet;
 
                     /**
-                     * 加密使用的算法（支持'AES-256-CBC'、'SM4-GCM'），不传默认为'AES-256-CBC'
+                     * <p>加密使用的算法（支持&#39;AES-256-CBC&#39;、&#39;SM4-GCM&#39;），不传默认为&#39;AES-256-CBC&#39;</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_algorithm;
                     bool m_algorithmHasBeenSet;
 
                     /**
-                     * SM4-GCM算法生成的消息摘要（校验消息完整性时使用）
+                     * <p>SM4-GCM算法生成的消息摘要（校验消息完整性时使用）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tagList;

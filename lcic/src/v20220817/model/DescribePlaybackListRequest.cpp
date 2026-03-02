@@ -24,6 +24,7 @@ using namespace std;
 
 DescribePlaybackListRequest::DescribePlaybackListRequest() :
     m_sdkAppIdHasBeenSet(false),
+    m_roomIdHasBeenSet(false),
     m_pageHasBeenSet(false),
     m_limitHasBeenSet(false)
 {
@@ -42,6 +43,14 @@ string DescribePlaybackListRequest::ToJsonString() const
         string key = "SdkAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sdkAppId, allocator);
+    }
+
+    if (m_roomIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoomId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_roomId, allocator);
     }
 
     if (m_pageHasBeenSet)
@@ -82,6 +91,22 @@ void DescribePlaybackListRequest::SetSdkAppId(const uint64_t& _sdkAppId)
 bool DescribePlaybackListRequest::SdkAppIdHasBeenSet() const
 {
     return m_sdkAppIdHasBeenSet;
+}
+
+uint64_t DescribePlaybackListRequest::GetRoomId() const
+{
+    return m_roomId;
+}
+
+void DescribePlaybackListRequest::SetRoomId(const uint64_t& _roomId)
+{
+    m_roomId = _roomId;
+    m_roomIdHasBeenSet = true;
+}
+
+bool DescribePlaybackListRequest::RoomIdHasBeenSet() const
+{
+    return m_roomIdHasBeenSet;
 }
 
 uint64_t DescribePlaybackListRequest::GetPage() const

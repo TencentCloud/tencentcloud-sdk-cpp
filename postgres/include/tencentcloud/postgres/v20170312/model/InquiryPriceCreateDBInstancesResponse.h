@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取刊例价，单位：分
-                     * @return OriginalPrice 刊例价，单位：分
+                     * 获取<p>刊例价，单位：分</p>
+                     * @return OriginalPrice <p>刊例价，单位：分</p>
                      * 
                      */
                     uint64_t GetOriginalPrice() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
-                     * 获取折后实际付款金额，单位：分
-                     * @return Price 折后实际付款金额，单位：分
+                     * 获取<p>折后实际付款金额，单位：分</p>
+                     * @return Price <p>折后实际付款金额，单位：分</p>
                      * 
                      */
                     uint64_t GetPrice() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool PriceHasBeenSet() const;
 
                     /**
-                     * 获取币种。例如，CNY：人民币。
-                     * @return Currency 币种。例如，CNY：人民币。
+                     * 获取<p>币种。例如，CNY：人民币。</p>
+                     * @return Currency <p>币种。例如，CNY：人民币。</p>
                      * 
                      */
                     std::string GetCurrency() const;
@@ -88,19 +88,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 刊例价，单位：分
+                     * <p>刊例价，单位：分</p>
                      */
                     uint64_t m_originalPrice;
                     bool m_originalPriceHasBeenSet;
 
                     /**
-                     * 折后实际付款金额，单位：分
+                     * <p>折后实际付款金额，单位：分</p>
                      */
                     uint64_t m_price;
                     bool m_priceHasBeenSet;
 
                     /**
-                     * 币种。例如，CNY：人民币。
+                     * <p>币种。例如，CNY：人民币。</p>
                      */
                     std::string m_currency;
                     bool m_currencyHasBeenSet;

@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool VendorHasBeenSet() const;
 
                     /**
-                     * 获取<p>模型版本。</p><p>按照【厂商-版本号】</p><p>枚举值：</p><p>● 当ModelName为Vidu时，可选值[q2, q2-pro, q2-turbo]</p><p>● 当ModelName为Kling时，可选值[v1.6, v2.0, v2.1, v2.5 , v2.6]</p><p>● 当ModelName为SA时，可选值[SA2]</p><p>● 当ModelName为VO时，可选值[V3, V3.1, V3-Fast, V3.1-Fast]</p><p>● 当ModelName为HY时，默认选择：v1.5</p><p>● 当ModelName为YT时，默认值选择：v2.0</p>
-                     * @return Model <p>模型版本。</p><p>按照【厂商-版本号】</p><p>枚举值：</p><p>● 当ModelName为Vidu时，可选值[q2, q2-pro, q2-turbo]</p><p>● 当ModelName为Kling时，可选值[v1.6, v2.0, v2.1, v2.5 , v2.6]</p><p>● 当ModelName为SA时，可选值[SA2]</p><p>● 当ModelName为VO时，可选值[V3, V3.1, V3-Fast, V3.1-Fast]</p><p>● 当ModelName为HY时，默认选择：v1.5</p><p>● 当ModelName为YT时，默认值选择：v2.0</p>
+                     * 获取<p>模型版本。</p><p>枚举值：</p><p>● 当Vendor为Vidu时，可选值[q2, q2-pro, q2-turbo]</p><p>● 当Vendor为Kling时，可选值[v1.6, v2.0, v2.1, v2.5, , v2.6, O1]</p><p>● 当Vendor为SA时，默认值[SA2]</p><p>● 当Vendor为VO时，可选值[V3, V3.1, V3-Fast, V3.1-Fast]</p><p>● 当Vendor为HY时，默认值：[v1.5]</p><p>● 当Vendor为YT时，默认值：[v2.0]</p>
+                     * @return Model <p>模型版本。</p><p>枚举值：</p><p>● 当Vendor为Vidu时，可选值[q2, q2-pro, q2-turbo]</p><p>● 当Vendor为Kling时，可选值[v1.6, v2.0, v2.1, v2.5, , v2.6, O1]</p><p>● 当Vendor为SA时，默认值[SA2]</p><p>● 当Vendor为VO时，可选值[V3, V3.1, V3-Fast, V3.1-Fast]</p><p>● 当Vendor为HY时，默认值：[v1.5]</p><p>● 当Vendor为YT时，默认值：[v2.0]</p>
                      * 
                      */
                     std::string GetModel() const;
 
                     /**
-                     * 设置<p>模型版本。</p><p>按照【厂商-版本号】</p><p>枚举值：</p><p>● 当ModelName为Vidu时，可选值[q2, q2-pro, q2-turbo]</p><p>● 当ModelName为Kling时，可选值[v1.6, v2.0, v2.1, v2.5 , v2.6]</p><p>● 当ModelName为SA时，可选值[SA2]</p><p>● 当ModelName为VO时，可选值[V3, V3.1, V3-Fast, V3.1-Fast]</p><p>● 当ModelName为HY时，默认选择：v1.5</p><p>● 当ModelName为YT时，默认值选择：v2.0</p>
-                     * @param _model <p>模型版本。</p><p>按照【厂商-版本号】</p><p>枚举值：</p><p>● 当ModelName为Vidu时，可选值[q2, q2-pro, q2-turbo]</p><p>● 当ModelName为Kling时，可选值[v1.6, v2.0, v2.1, v2.5 , v2.6]</p><p>● 当ModelName为SA时，可选值[SA2]</p><p>● 当ModelName为VO时，可选值[V3, V3.1, V3-Fast, V3.1-Fast]</p><p>● 当ModelName为HY时，默认选择：v1.5</p><p>● 当ModelName为YT时，默认值选择：v2.0</p>
+                     * 设置<p>模型版本。</p><p>枚举值：</p><p>● 当Vendor为Vidu时，可选值[q2, q2-pro, q2-turbo]</p><p>● 当Vendor为Kling时，可选值[v1.6, v2.0, v2.1, v2.5, , v2.6, O1]</p><p>● 当Vendor为SA时，默认值[SA2]</p><p>● 当Vendor为VO时，可选值[V3, V3.1, V3-Fast, V3.1-Fast]</p><p>● 当Vendor为HY时，默认值：[v1.5]</p><p>● 当Vendor为YT时，默认值：[v2.0]</p>
+                     * @param _model <p>模型版本。</p><p>枚举值：</p><p>● 当Vendor为Vidu时，可选值[q2, q2-pro, q2-turbo]</p><p>● 当Vendor为Kling时，可选值[v1.6, v2.0, v2.1, v2.5, , v2.6, O1]</p><p>● 当Vendor为SA时，默认值[SA2]</p><p>● 当Vendor为VO时，可选值[V3, V3.1, V3-Fast, V3.1-Fast]</p><p>● 当Vendor为HY时，默认值：[v1.5]</p><p>● 当Vendor为YT时，默认值：[v2.0]</p>
                      * 
                      */
                     void SetModel(const std::string& _model);
@@ -178,7 +178,7 @@ namespace TencentCloud
                     bool m_vendorHasBeenSet;
 
                     /**
-                     * <p>模型版本。</p><p>按照【厂商-版本号】</p><p>枚举值：</p><p>● 当ModelName为Vidu时，可选值[q2, q2-pro, q2-turbo]</p><p>● 当ModelName为Kling时，可选值[v1.6, v2.0, v2.1, v2.5 , v2.6]</p><p>● 当ModelName为SA时，可选值[SA2]</p><p>● 当ModelName为VO时，可选值[V3, V3.1, V3-Fast, V3.1-Fast]</p><p>● 当ModelName为HY时，默认选择：v1.5</p><p>● 当ModelName为YT时，默认值选择：v2.0</p>
+                     * <p>模型版本。</p><p>枚举值：</p><p>● 当Vendor为Vidu时，可选值[q2, q2-pro, q2-turbo]</p><p>● 当Vendor为Kling时，可选值[v1.6, v2.0, v2.1, v2.5, , v2.6, O1]</p><p>● 当Vendor为SA时，默认值[SA2]</p><p>● 当Vendor为VO时，可选值[V3, V3.1, V3-Fast, V3.1-Fast]</p><p>● 当Vendor为HY时，默认值：[v1.5]</p><p>● 当Vendor为YT时，默认值：[v2.0]</p>
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;

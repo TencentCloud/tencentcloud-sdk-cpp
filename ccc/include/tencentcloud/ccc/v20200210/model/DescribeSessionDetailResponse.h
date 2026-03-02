@@ -215,8 +215,8 @@ namespace TencentCloud
                     bool QueuedSkillGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取录音链接，带鉴权和有效期，获取之后请在短时间内拉取，不要持久化此链接
-                     * @return RecordURL 录音链接，带鉴权和有效期，获取之后请在短时间内拉取，不要持久化此链接
+                     * 获取录音链接，带鉴权和有效期，获取之后请在24 小时内拉取，不要持久化此链接。如此链接已过期，请重新调用此接口获取新的链接
+                     * @return RecordURL 录音链接，带鉴权和有效期，获取之后请在24 小时内拉取，不要持久化此链接。如此链接已过期，请重新调用此接口获取新的链接
                      * 
                      */
                     std::string GetRecordURL() const;
@@ -243,8 +243,8 @@ namespace TencentCloud
                     bool CustomRecordURLHasBeenSet() const;
 
                     /**
-                     * 获取录音文本信息链接，带鉴权和有效期，获取之后请在短时间内拉取，不要持久化此链接
-                     * @return AsrURL 录音文本信息链接，带鉴权和有效期，获取之后请在短时间内拉取，不要持久化此链接
+                     * 获取录音文本信息链接，带鉴权和有效期，获取之后请在24 小时拉取，不要持久化此链接。如此链接已过期，请重新调用此接口获取新的链接
+                     * @return AsrURL 录音文本信息链接，带鉴权和有效期，获取之后请在24 小时拉取，不要持久化此链接。如此链接已过期，请重新调用此接口获取新的链接
                      * 
                      */
                     std::string GetAsrURL() const;
@@ -443,7 +443,7 @@ namespace TencentCloud
                     bool m_queuedSkillGroupNameHasBeenSet;
 
                     /**
-                     * 录音链接，带鉴权和有效期，获取之后请在短时间内拉取，不要持久化此链接
+                     * 录音链接，带鉴权和有效期，获取之后请在24 小时内拉取，不要持久化此链接。如此链接已过期，请重新调用此接口获取新的链接
                      */
                     std::string m_recordURL;
                     bool m_recordURLHasBeenSet;
@@ -455,7 +455,7 @@ namespace TencentCloud
                     bool m_customRecordURLHasBeenSet;
 
                     /**
-                     * 录音文本信息链接，带鉴权和有效期，获取之后请在短时间内拉取，不要持久化此链接
+                     * 录音文本信息链接，带鉴权和有效期，获取之后请在24 小时拉取，不要持久化此链接。如此链接已过期，请重新调用此接口获取新的链接
                      */
                     std::string m_asrURL;
                     bool m_asrURLHasBeenSet;

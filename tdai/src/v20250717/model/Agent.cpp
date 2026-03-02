@@ -24,6 +24,7 @@ Agent::Agent() :
     m_agentIdHasBeenSet(false),
     m_agentNameHasBeenSet(false),
     m_agentInternalNameHasBeenSet(false),
+    m_deployPlaceHasBeenSet(false),
     m_agentStatusHasBeenSet(false),
     m_defaultVersionHasBeenSet(false),
     m_agentTypeHasBeenSet(false),
@@ -68,6 +69,16 @@ CoreInternalOutcome Agent::Deserialize(const rapidjson::Value &value)
         }
         m_agentInternalName = string(value["AgentInternalName"].GetString());
         m_agentInternalNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeployPlace") && !value["DeployPlace"].IsNull())
+    {
+        if (!value["DeployPlace"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Agent.DeployPlace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployPlace = string(value["DeployPlace"].GetString());
+        m_deployPlaceHasBeenSet = true;
     }
 
     if (value.HasMember("AgentStatus") && !value["AgentStatus"].IsNull())
@@ -179,6 +190,14 @@ void Agent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "AgentInternalName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_agentInternalName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deployPlaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeployPlace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deployPlace.c_str(), allocator).Move(), allocator);
     }
 
     if (m_agentStatusHasBeenSet)
@@ -294,6 +313,22 @@ void Agent::SetAgentInternalName(const string& _agentInternalName)
 bool Agent::AgentInternalNameHasBeenSet() const
 {
     return m_agentInternalNameHasBeenSet;
+}
+
+string Agent::GetDeployPlace() const
+{
+    return m_deployPlace;
+}
+
+void Agent::SetDeployPlace(const string& _deployPlace)
+{
+    m_deployPlace = _deployPlace;
+    m_deployPlaceHasBeenSet = true;
+}
+
+bool Agent::DeployPlaceHasBeenSet() const
+{
+    return m_deployPlaceHasBeenSet;
 }
 
 string Agent::GetAgentStatus() const

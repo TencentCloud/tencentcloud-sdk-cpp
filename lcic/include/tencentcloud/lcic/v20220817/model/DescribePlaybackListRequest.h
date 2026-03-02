@@ -64,6 +64,27 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
+                     * 获取<p>房间ID</p>
+                     * @return RoomId <p>房间ID</p>
+                     * 
+                     */
+                    uint64_t GetRoomId() const;
+
+                    /**
+                     * 设置<p>房间ID</p>
+                     * @param _roomId <p>房间ID</p>
+                     * 
+                     */
+                    void SetRoomId(const uint64_t& _roomId);
+
+                    /**
+                     * 判断参数 RoomId 是否已赋值
+                     * @return RoomId 是否已赋值
+                     * 
+                     */
+                    bool RoomIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>分页查询当前页数，从1开始递增</p>
                      * @return Page <p>分页查询当前页数，从1开始递增</p>
                      * 
@@ -112,6 +133,12 @@ namespace TencentCloud
                      */
                     uint64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
+
+                    /**
+                     * <p>房间ID</p>
+                     */
+                    uint64_t m_roomId;
+                    bool m_roomIdHasBeenSet;
 
                     /**
                      * <p>分页查询当前页数，从1开始递增</p>

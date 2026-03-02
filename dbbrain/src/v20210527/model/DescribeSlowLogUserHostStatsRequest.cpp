@@ -27,7 +27,9 @@ DescribeSlowLogUserHostStatsRequest::DescribeSlowLogUserHostStatsRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_productHasBeenSet(false),
-    m_md5HasBeenSet(false)
+    m_md5HasBeenSet(false),
+    m_instanceProxyIdHasBeenSet(false),
+    m_cmdHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,22 @@ string DescribeSlowLogUserHostStatsRequest::ToJsonString() const
         string key = "Md5";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_md5.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceProxyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceProxyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceProxyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cmdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cmd";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cmd.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +182,38 @@ void DescribeSlowLogUserHostStatsRequest::SetMd5(const string& _md5)
 bool DescribeSlowLogUserHostStatsRequest::Md5HasBeenSet() const
 {
     return m_md5HasBeenSet;
+}
+
+string DescribeSlowLogUserHostStatsRequest::GetInstanceProxyId() const
+{
+    return m_instanceProxyId;
+}
+
+void DescribeSlowLogUserHostStatsRequest::SetInstanceProxyId(const string& _instanceProxyId)
+{
+    m_instanceProxyId = _instanceProxyId;
+    m_instanceProxyIdHasBeenSet = true;
+}
+
+bool DescribeSlowLogUserHostStatsRequest::InstanceProxyIdHasBeenSet() const
+{
+    return m_instanceProxyIdHasBeenSet;
+}
+
+string DescribeSlowLogUserHostStatsRequest::GetCmd() const
+{
+    return m_cmd;
+}
+
+void DescribeSlowLogUserHostStatsRequest::SetCmd(const string& _cmd)
+{
+    m_cmd = _cmd;
+    m_cmdHasBeenSet = true;
+}
+
+bool DescribeSlowLogUserHostStatsRequest::CmdHasBeenSet() const
+{
+    return m_cmdHasBeenSet;
 }
 
 

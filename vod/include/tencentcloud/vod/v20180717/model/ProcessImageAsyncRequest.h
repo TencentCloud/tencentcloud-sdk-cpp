@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 获取<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @return SubAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @param _subAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 设置<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @param _subAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取需要进行图片处理的FileId。
-                     * @return FileId 需要进行图片处理的FileId。
+                     * 获取<p>需要进行图片处理的FileId。不能与Url同时输入。</p>
+                     * @return FileId <p>需要进行图片处理的FileId。不能与Url同时输入。</p>
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置需要进行图片处理的FileId。
-                     * @param _fileId 需要进行图片处理的FileId。
+                     * 设置<p>需要进行图片处理的FileId。不能与Url同时输入。</p>
+                     * @param _fileId <p>需要进行图片处理的FileId。不能与Url同时输入。</p>
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -87,15 +87,36 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取图片处理参数。
-                     * @return ImageTaskInput 图片处理参数。
+                     * 获取<p>需要进行图片处理的Url。不能与FileId同时输入。</p>
+                     * @return Url <p>需要进行图片处理的Url。不能与FileId同时输入。</p>
+                     * 
+                     */
+                    std::string GetUrl() const;
+
+                    /**
+                     * 设置<p>需要进行图片处理的Url。不能与FileId同时输入。</p>
+                     * @param _url <p>需要进行图片处理的Url。不能与FileId同时输入。</p>
+                     * 
+                     */
+                    void SetUrl(const std::string& _url);
+
+                    /**
+                     * 判断参数 Url 是否已赋值
+                     * @return Url 是否已赋值
+                     * 
+                     */
+                    bool UrlHasBeenSet() const;
+
+                    /**
+                     * 获取<p>图片处理参数。</p>
+                     * @return ImageTaskInput <p>图片处理参数。</p>
                      * 
                      */
                     ProcessImageAsyncTaskInput GetImageTaskInput() const;
 
                     /**
-                     * 设置图片处理参数。
-                     * @param _imageTaskInput 图片处理参数。
+                     * 设置<p>图片处理参数。</p>
+                     * @param _imageTaskInput <p>图片处理参数。</p>
                      * 
                      */
                     void SetImageTaskInput(const ProcessImageAsyncTaskInput& _imageTaskInput);
@@ -108,15 +129,15 @@ namespace TencentCloud
                     bool ImageTaskInputHasBeenSet() const;
 
                     /**
-                     * 获取图片处理任务的输出媒体文件配置。
-                     * @return OutputConfig 图片处理任务的输出媒体文件配置。
+                     * 获取<p>图片处理任务的输出媒体文件配置。</p>
+                     * @return OutputConfig <p>图片处理任务的输出媒体文件配置。</p>
                      * 
                      */
                     ProcessImageAsyncOutputConfig GetOutputConfig() const;
 
                     /**
-                     * 设置图片处理任务的输出媒体文件配置。
-                     * @param _outputConfig 图片处理任务的输出媒体文件配置。
+                     * 设置<p>图片处理任务的输出媒体文件配置。</p>
+                     * @param _outputConfig <p>图片处理任务的输出媒体文件配置。</p>
                      * 
                      */
                     void SetOutputConfig(const ProcessImageAsyncOutputConfig& _outputConfig);
@@ -129,15 +150,15 @@ namespace TencentCloud
                     bool OutputConfigHasBeenSet() const;
 
                     /**
-                     * 获取用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-                     * @return SessionId 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 获取<p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
+                     * @return SessionId <p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-                     * @param _sessionId 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 设置<p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
+                     * @param _sessionId <p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -150,15 +171,15 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。
-                     * @return SessionContext 来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。
+                     * 获取<p>来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。</p>
+                     * @return SessionContext <p>来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。</p>
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。
-                     * @param _sessionContext 来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。
+                     * 设置<p>来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。</p>
+                     * @param _sessionContext <p>来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。</p>
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -171,15 +192,15 @@ namespace TencentCloud
                     bool SessionContextHasBeenSet() const;
 
                     /**
-                     * 获取任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
-                     * @return TasksPriority 任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * 获取<p>任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。</p>
+                     * @return TasksPriority <p>任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。</p>
                      * 
                      */
                     int64_t GetTasksPriority() const;
 
                     /**
-                     * 设置任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
-                     * @param _tasksPriority 任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * 设置<p>任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。</p>
+                     * @param _tasksPriority <p>任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。</p>
                      * 
                      */
                     void SetTasksPriority(const int64_t& _tasksPriority);
@@ -192,15 +213,15 @@ namespace TencentCloud
                     bool TasksPriorityHasBeenSet() const;
 
                     /**
-                     * 获取保留字段，特殊用途时使用。
-                     * @return ExtInfo 保留字段，特殊用途时使用。
+                     * 获取<p>保留字段，特殊用途时使用。</p>
+                     * @return ExtInfo <p>保留字段，特殊用途时使用。</p>
                      * 
                      */
                     std::string GetExtInfo() const;
 
                     /**
-                     * 设置保留字段，特殊用途时使用。
-                     * @param _extInfo 保留字段，特殊用途时使用。
+                     * 设置<p>保留字段，特殊用途时使用。</p>
+                     * @param _extInfo <p>保留字段，特殊用途时使用。</p>
                      * 
                      */
                     void SetExtInfo(const std::string& _extInfo);
@@ -215,49 +236,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 需要进行图片处理的FileId。
+                     * <p>需要进行图片处理的FileId。不能与Url同时输入。</p>
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 图片处理参数。
+                     * <p>需要进行图片处理的Url。不能与FileId同时输入。</p>
+                     */
+                    std::string m_url;
+                    bool m_urlHasBeenSet;
+
+                    /**
+                     * <p>图片处理参数。</p>
                      */
                     ProcessImageAsyncTaskInput m_imageTaskInput;
                     bool m_imageTaskInputHasBeenSet;
 
                     /**
-                     * 图片处理任务的输出媒体文件配置。
+                     * <p>图片处理任务的输出媒体文件配置。</p>
                      */
                     ProcessImageAsyncOutputConfig m_outputConfig;
                     bool m_outputConfigHasBeenSet;
 
                     /**
-                     * 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * <p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。
+                     * <p>来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。</p>
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
 
                     /**
-                     * 任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
+                     * <p>任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。</p>
                      */
                     int64_t m_tasksPriority;
                     bool m_tasksPriorityHasBeenSet;
 
                     /**
-                     * 保留字段，特殊用途时使用。
+                     * <p>保留字段，特殊用途时使用。</p>
                      */
                     std::string m_extInfo;
                     bool m_extInfoHasBeenSet;
