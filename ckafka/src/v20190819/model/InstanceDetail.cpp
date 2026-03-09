@@ -52,7 +52,8 @@ InstanceDetail::InstanceDetail() :
     m_publicNetworkChargeTypeHasBeenSet(false),
     m_publicNetworkHasBeenSet(false),
     m_clusterTypeHasBeenSet(false),
-    m_featuresHasBeenSet(false)
+    m_featuresHasBeenSet(false),
+    m_retentionBytesHasBeenSet(false)
 {
 }
 
@@ -407,6 +408,16 @@ CoreInternalOutcome InstanceDetail::Deserialize(const rapidjson::Value &value)
         m_featuresHasBeenSet = true;
     }
 
+    if (value.HasMember("RetentionBytes") && !value["RetentionBytes"].IsNull())
+    {
+        if (!value["RetentionBytes"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.RetentionBytes` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_retentionBytes = value["RetentionBytes"].GetInt64();
+        m_retentionBytesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -692,6 +703,14 @@ void InstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_retentionBytesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetentionBytes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_retentionBytes, allocator);
     }
 
 }
@@ -1207,5 +1226,21 @@ void InstanceDetail::SetFeatures(const vector<string>& _features)
 bool InstanceDetail::FeaturesHasBeenSet() const
 {
     return m_featuresHasBeenSet;
+}
+
+int64_t InstanceDetail::GetRetentionBytes() const
+{
+    return m_retentionBytes;
+}
+
+void InstanceDetail::SetRetentionBytes(const int64_t& _retentionBytes)
+{
+    m_retentionBytes = _retentionBytes;
+    m_retentionBytesHasBeenSet = true;
+}
+
+bool InstanceDetail::RetentionBytesHasBeenSet() const
+{
+    return m_retentionBytesHasBeenSet;
 }
 

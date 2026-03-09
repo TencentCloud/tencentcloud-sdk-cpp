@@ -1590,6 +1590,56 @@ ClsClient::CreateMetricSubscribeOutcomeCallable ClsClient::CreateMetricSubscribe
     return prom->get_future();
 }
 
+ClsClient::CreateNetworkApplicationOutcome ClsClient::CreateNetworkApplication(const CreateNetworkApplicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNetworkApplication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNetworkApplicationResponse rsp = CreateNetworkApplicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNetworkApplicationOutcome(rsp);
+        else
+            return CreateNetworkApplicationOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNetworkApplicationOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateNetworkApplicationAsync(const CreateNetworkApplicationRequest& request, const CreateNetworkApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateNetworkApplicationRequest&;
+    using Resp = CreateNetworkApplicationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateNetworkApplication", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::CreateNetworkApplicationOutcomeCallable ClsClient::CreateNetworkApplicationCallable(const CreateNetworkApplicationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateNetworkApplicationOutcome>>();
+    CreateNetworkApplicationAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const CreateNetworkApplicationRequest&,
+        CreateNetworkApplicationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::CreateNoticeContentOutcome ClsClient::CreateNoticeContent(const CreateNoticeContentRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateNoticeContent");
@@ -3182,6 +3232,56 @@ ClsClient::DeleteMetricSubscribeOutcomeCallable ClsClient::DeleteMetricSubscribe
         const ClsClient*,
         const DeleteMetricSubscribeRequest&,
         DeleteMetricSubscribeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DeleteNetworkApplicationOutcome ClsClient::DeleteNetworkApplication(const DeleteNetworkApplicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteNetworkApplication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteNetworkApplicationResponse rsp = DeleteNetworkApplicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteNetworkApplicationOutcome(rsp);
+        else
+            return DeleteNetworkApplicationOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteNetworkApplicationOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteNetworkApplicationAsync(const DeleteNetworkApplicationRequest& request, const DeleteNetworkApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteNetworkApplicationRequest&;
+    using Resp = DeleteNetworkApplicationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteNetworkApplication", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DeleteNetworkApplicationOutcomeCallable ClsClient::DeleteNetworkApplicationCallable(const DeleteNetworkApplicationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteNetworkApplicationOutcome>>();
+    DeleteNetworkApplicationAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DeleteNetworkApplicationRequest&,
+        DeleteNetworkApplicationOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5540,6 +5640,106 @@ ClsClient::DescribeMetricSubscribesOutcomeCallable ClsClient::DescribeMetricSubs
     return prom->get_future();
 }
 
+ClsClient::DescribeNetworkApplicationDetailOutcome ClsClient::DescribeNetworkApplicationDetail(const DescribeNetworkApplicationDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNetworkApplicationDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNetworkApplicationDetailResponse rsp = DescribeNetworkApplicationDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNetworkApplicationDetailOutcome(rsp);
+        else
+            return DescribeNetworkApplicationDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNetworkApplicationDetailOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeNetworkApplicationDetailAsync(const DescribeNetworkApplicationDetailRequest& request, const DescribeNetworkApplicationDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeNetworkApplicationDetailRequest&;
+    using Resp = DescribeNetworkApplicationDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeNetworkApplicationDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeNetworkApplicationDetailOutcomeCallable ClsClient::DescribeNetworkApplicationDetailCallable(const DescribeNetworkApplicationDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeNetworkApplicationDetailOutcome>>();
+    DescribeNetworkApplicationDetailAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeNetworkApplicationDetailRequest&,
+        DescribeNetworkApplicationDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DescribeNetworkApplicationsOutcome ClsClient::DescribeNetworkApplications(const DescribeNetworkApplicationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNetworkApplications");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNetworkApplicationsResponse rsp = DescribeNetworkApplicationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNetworkApplicationsOutcome(rsp);
+        else
+            return DescribeNetworkApplicationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNetworkApplicationsOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeNetworkApplicationsAsync(const DescribeNetworkApplicationsRequest& request, const DescribeNetworkApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeNetworkApplicationsRequest&;
+    using Resp = DescribeNetworkApplicationsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeNetworkApplications", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeNetworkApplicationsOutcomeCallable ClsClient::DescribeNetworkApplicationsCallable(const DescribeNetworkApplicationsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeNetworkApplicationsOutcome>>();
+    DescribeNetworkApplicationsAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeNetworkApplicationsRequest&,
+        DescribeNetworkApplicationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::DescribeNoticeContentsOutcome ClsClient::DescribeNoticeContents(const DescribeNoticeContentsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNoticeContents");
@@ -7532,6 +7732,56 @@ ClsClient::ModifyMetricSubscribeOutcomeCallable ClsClient::ModifyMetricSubscribe
         const ClsClient*,
         const ModifyMetricSubscribeRequest&,
         ModifyMetricSubscribeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::ModifyNetworkApplicationOutcome ClsClient::ModifyNetworkApplication(const ModifyNetworkApplicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNetworkApplication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNetworkApplicationResponse rsp = ModifyNetworkApplicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNetworkApplicationOutcome(rsp);
+        else
+            return ModifyNetworkApplicationOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNetworkApplicationOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyNetworkApplicationAsync(const ModifyNetworkApplicationRequest& request, const ModifyNetworkApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyNetworkApplicationRequest&;
+    using Resp = ModifyNetworkApplicationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyNetworkApplication", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::ModifyNetworkApplicationOutcomeCallable ClsClient::ModifyNetworkApplicationCallable(const ModifyNetworkApplicationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyNetworkApplicationOutcome>>();
+    ModifyNetworkApplicationAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const ModifyNetworkApplicationRequest&,
+        ModifyNetworkApplicationOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

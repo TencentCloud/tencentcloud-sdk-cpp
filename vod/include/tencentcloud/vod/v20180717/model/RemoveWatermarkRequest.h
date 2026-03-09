@@ -150,21 +150,21 @@ namespace TencentCloud
                     /**
                      * 获取该字段已无效。
                      * @return TasksNotifyMode 该字段已无效。
-                     * 
+                     * @deprecated
                      */
                     std::string GetTasksNotifyMode() const;
 
                     /**
                      * 设置该字段已无效。
                      * @param _tasksNotifyMode 该字段已无效。
-                     * 
+                     * @deprecated
                      */
                     void SetTasksNotifyMode(const std::string& _tasksNotifyMode);
 
                     /**
                      * 判断参数 TasksNotifyMode 是否已赋值
                      * @return TasksNotifyMode 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TasksNotifyModeHasBeenSet() const;
 

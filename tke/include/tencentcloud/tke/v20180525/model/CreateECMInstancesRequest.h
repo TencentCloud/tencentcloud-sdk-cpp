@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取公网带宽
-                     * @return InternetMaxBandwidthOut 公网带宽
+                     * 获取公网带宽，单位为Mbps
+                     * @return InternetMaxBandwidthOut 公网带宽，单位为Mbps
                      * 
                      */
                     int64_t GetInternetMaxBandwidthOut() const;
 
                     /**
-                     * 设置公网带宽
-                     * @param _internetMaxBandwidthOut 公网带宽
+                     * 设置公网带宽，单位为Mbps
+                     * @param _internetMaxBandwidthOut 公网带宽，单位为Mbps
                      * 
                      */
                     void SetInternetMaxBandwidthOut(const int64_t& _internetMaxBandwidthOut);
@@ -323,7 +323,7 @@ namespace TencentCloud
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 公网带宽
+                     * 公网带宽，单位为Mbps
                      */
                     int64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;

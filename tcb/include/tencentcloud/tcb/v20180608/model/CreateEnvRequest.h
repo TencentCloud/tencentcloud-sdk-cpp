@@ -237,6 +237,47 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取自动续费标识。取值范围：
+- NOTIFY_AND_AUTO_RENEW：通知过期且自动续费
+- NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费（需要手动续费，可通过接口 [RenewEnv](https://cloud.tencent.com/document/product/876/128590) 来续费）
+
+默认取值：NOTIFY_AND_MANUAL_RENEW。
+若该参数指定为NOTIFY_AND_AUTO_RENEW（即：自动续费），在账户余额充足的情况下，实例到期后将按月自动续费；但如果账户余额不足，将无法自动续费。请留意腾讯云短信和邮件通知。
+                     * @return RenewFlag 自动续费标识。取值范围：
+- NOTIFY_AND_AUTO_RENEW：通知过期且自动续费
+- NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费（需要手动续费，可通过接口 [RenewEnv](https://cloud.tencent.com/document/product/876/128590) 来续费）
+
+默认取值：NOTIFY_AND_MANUAL_RENEW。
+若该参数指定为NOTIFY_AND_AUTO_RENEW（即：自动续费），在账户余额充足的情况下，实例到期后将按月自动续费；但如果账户余额不足，将无法自动续费。请留意腾讯云短信和邮件通知。
+                     * 
+                     */
+                    std::string GetRenewFlag() const;
+
+                    /**
+                     * 设置自动续费标识。取值范围：
+- NOTIFY_AND_AUTO_RENEW：通知过期且自动续费
+- NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费（需要手动续费，可通过接口 [RenewEnv](https://cloud.tencent.com/document/product/876/128590) 来续费）
+
+默认取值：NOTIFY_AND_MANUAL_RENEW。
+若该参数指定为NOTIFY_AND_AUTO_RENEW（即：自动续费），在账户余额充足的情况下，实例到期后将按月自动续费；但如果账户余额不足，将无法自动续费。请留意腾讯云短信和邮件通知。
+                     * @param _renewFlag 自动续费标识。取值范围：
+- NOTIFY_AND_AUTO_RENEW：通知过期且自动续费
+- NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费（需要手动续费，可通过接口 [RenewEnv](https://cloud.tencent.com/document/product/876/128590) 来续费）
+
+默认取值：NOTIFY_AND_MANUAL_RENEW。
+若该参数指定为NOTIFY_AND_AUTO_RENEW（即：自动续费），在账户余额充足的情况下，实例到期后将按月自动续费；但如果账户余额不足，将无法自动续费。请留意腾讯云短信和邮件通知。
+                     * 
+                     */
+                    void SetRenewFlag(const std::string& _renewFlag);
+
+                    /**
+                     * 判断参数 RenewFlag 是否已赋值
+                     * @return RenewFlag 是否已赋值
+                     * 
+                     */
+                    bool RenewFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -291,6 +332,17 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 自动续费标识。取值范围：
+- NOTIFY_AND_AUTO_RENEW：通知过期且自动续费
+- NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费（需要手动续费，可通过接口 [RenewEnv](https://cloud.tencent.com/document/product/876/128590) 来续费）
+
+默认取值：NOTIFY_AND_MANUAL_RENEW。
+若该参数指定为NOTIFY_AND_AUTO_RENEW（即：自动续费），在账户余额充足的情况下，实例到期后将按月自动续费；但如果账户余额不足，将无法自动续费。请留意腾讯云短信和邮件通知。
+                     */
+                    std::string m_renewFlag;
+                    bool m_renewFlagHasBeenSet;
 
                 };
             }

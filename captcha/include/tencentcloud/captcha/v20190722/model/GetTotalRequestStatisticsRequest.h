@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始时间字符串
-                     * @return StartTimeStr 开始时间字符串
+                     * 获取<p>开始时间字符串</p>
+                     * @return StartTimeStr <p>开始时间字符串</p>
                      * 
                      */
                     std::string GetStartTimeStr() const;
 
                     /**
-                     * 设置开始时间字符串
-                     * @param _startTimeStr 开始时间字符串
+                     * 设置<p>开始时间字符串</p>
+                     * @param _startTimeStr <p>开始时间字符串</p>
                      * 
                      */
                     void SetStartTimeStr(const std::string& _startTimeStr);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StartTimeStrHasBeenSet() const;
 
                     /**
-                     * 获取结束时间字符串
-                     * @return EndTimeStr 结束时间字符串
+                     * 获取<p>结束时间字符串</p>
+                     * @return EndTimeStr <p>结束时间字符串</p>
                      * 
                      */
                     std::string GetEndTimeStr() const;
 
                     /**
-                     * 设置结束时间字符串
-                     * @param _endTimeStr 结束时间字符串
+                     * 设置<p>结束时间字符串</p>
+                     * @param _endTimeStr <p>结束时间字符串</p>
                      * 
                      */
                     void SetEndTimeStr(const std::string& _endTimeStr);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EndTimeStrHasBeenSet() const;
 
                     /**
-                     * 获取查询粒度
-                     * @return Dimension 查询粒度
+                     * 获取<p>查询粒度</p>
+                     * @return Dimension <p>查询粒度</p>
                      * 
                      */
                     std::string GetDimension() const;
 
                     /**
-                     * 设置查询粒度
-                     * @param _dimension 查询粒度
+                     * 设置<p>查询粒度</p>
+                     * @param _dimension <p>查询粒度</p>
                      * 
                      */
                     void SetDimension(const std::string& _dimension);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开始时间字符串
+                     * <p>开始时间字符串</p>
                      */
                     std::string m_startTimeStr;
                     bool m_startTimeStrHasBeenSet;
 
                     /**
-                     * 结束时间字符串
+                     * <p>结束时间字符串</p>
                      */
                     std::string m_endTimeStr;
                     bool m_endTimeStrHasBeenSet;
 
                     /**
-                     * 查询粒度
+                     * <p>查询粒度</p>
                      */
                     std::string m_dimension;
                     bool m_dimensionHasBeenSet;

@@ -51,6 +51,8 @@
 #include <tencentcloud/vod/v20180717/model/SceneAigcVideoTask.h>
 #include <tencentcloud/vod/v20180717/model/ProcessImageAsync.h>
 #include <tencentcloud/vod/v20180717/model/ExtractBlindWatermarkTask.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcAdvancedCustomElementTask.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcCustomVoiceTask.h>
 
 
 namespace TencentCloud
@@ -74,8 +76,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务类型，取值：<li>Procedure：视频处理任务；</li><li>EditMedia：视频编辑任务；</li><li>SplitMedia：视频拆条任务；</li><li>ComposeMedia：制作媒体文件任务；</li><li>WechatPublish：微信发布任务；</li><li>WechatMiniProgramPublish：微信小程序视频发布任务；</li><li>PullUpload：拉取上传媒体文件任务；</li><li>FastClipMedia：快速剪辑任务；</li><li>RemoveWatermarkTask：智能去除水印任务；</li><li>DescribeFileAttributesTask：获取文件属性任务；</li><li>RebuildMedia：音画质重生任务（不推荐使用）；</li><li>ReviewAudioVideo：音视频审核任务；</li><li>ExtractTraceWatermark：提取溯源水印任务；</li><li>ExtractCopyRightWatermark：提取版权水印任务；</li><li>QualityInspect：音画质检测任务；</li><li>QualityEnhance：音画质重生任务；</li><li>ComplexAdaptiveDynamicStreaming：复杂自适应码流任务；</li><li>ProcessMediaByMPS：MPS 视频处理任务；</li><li>AigcImageTask：AIGC 生图任务；</li><li>SceneAigcImageTask：场景化 AIGC 生图任务；</li><li>AigcVideoTask：AIGC 生视频任务；</li><li>ImportMediaKnowledge：导入媒体知识任务。</li><li>SceneAigcVideoTask：场景化 AIGC 生视频任务；</li><li> ExtractBlindWatermark：提取数字水印任务。</li>
-                     * @return TaskType 任务类型，取值：<li>Procedure：视频处理任务；</li><li>EditMedia：视频编辑任务；</li><li>SplitMedia：视频拆条任务；</li><li>ComposeMedia：制作媒体文件任务；</li><li>WechatPublish：微信发布任务；</li><li>WechatMiniProgramPublish：微信小程序视频发布任务；</li><li>PullUpload：拉取上传媒体文件任务；</li><li>FastClipMedia：快速剪辑任务；</li><li>RemoveWatermarkTask：智能去除水印任务；</li><li>DescribeFileAttributesTask：获取文件属性任务；</li><li>RebuildMedia：音画质重生任务（不推荐使用）；</li><li>ReviewAudioVideo：音视频审核任务；</li><li>ExtractTraceWatermark：提取溯源水印任务；</li><li>ExtractCopyRightWatermark：提取版权水印任务；</li><li>QualityInspect：音画质检测任务；</li><li>QualityEnhance：音画质重生任务；</li><li>ComplexAdaptiveDynamicStreaming：复杂自适应码流任务；</li><li>ProcessMediaByMPS：MPS 视频处理任务；</li><li>AigcImageTask：AIGC 生图任务；</li><li>SceneAigcImageTask：场景化 AIGC 生图任务；</li><li>AigcVideoTask：AIGC 生视频任务；</li><li>ImportMediaKnowledge：导入媒体知识任务。</li><li>SceneAigcVideoTask：场景化 AIGC 生视频任务；</li><li> ExtractBlindWatermark：提取数字水印任务。</li>
+                     * 获取<p>任务类型，取值：<li>Procedure：视频处理任务；</li><li>EditMedia：视频编辑任务；</li><li>SplitMedia：视频拆条任务；</li><li>ComposeMedia：制作媒体文件任务；</li><li>WechatPublish：微信发布任务；</li><li>WechatMiniProgramPublish：微信小程序视频发布任务；</li><li>PullUpload：拉取上传媒体文件任务；</li><li>FastClipMedia：快速剪辑任务；</li><li>RemoveWatermarkTask：智能去除水印任务；</li><li>DescribeFileAttributesTask：获取文件属性任务；</li><li>RebuildMedia：音画质重生任务（不推荐使用）；</li><li>ReviewAudioVideo：音视频审核任务；</li><li>ExtractTraceWatermark：提取溯源水印任务；</li><li>ExtractCopyRightWatermark：提取版权水印任务；</li><li>QualityInspect：音画质检测任务；</li><li>QualityEnhance：音画质重生任务；</li><li>ComplexAdaptiveDynamicStreaming：复杂自适应码流任务；</li><li>ProcessMediaByMPS：MPS 视频处理任务；</li><li>AigcImageTask：AIGC 生图任务；</li><li>SceneAigcImageTask：场景化 AIGC 生图任务；</li><li>AigcVideoTask：AIGC 生视频任务；</li><li>ImportMediaKnowledge：导入媒体知识任务。</li><li>SceneAigcVideoTask：场景化 AIGC 生视频任务；</li><li> ExtractBlindWatermark：提取数字水印任务。</li></p>
+                     * @return TaskType <p>任务类型，取值：<li>Procedure：视频处理任务；</li><li>EditMedia：视频编辑任务；</li><li>SplitMedia：视频拆条任务；</li><li>ComposeMedia：制作媒体文件任务；</li><li>WechatPublish：微信发布任务；</li><li>WechatMiniProgramPublish：微信小程序视频发布任务；</li><li>PullUpload：拉取上传媒体文件任务；</li><li>FastClipMedia：快速剪辑任务；</li><li>RemoveWatermarkTask：智能去除水印任务；</li><li>DescribeFileAttributesTask：获取文件属性任务；</li><li>RebuildMedia：音画质重生任务（不推荐使用）；</li><li>ReviewAudioVideo：音视频审核任务；</li><li>ExtractTraceWatermark：提取溯源水印任务；</li><li>ExtractCopyRightWatermark：提取版权水印任务；</li><li>QualityInspect：音画质检测任务；</li><li>QualityEnhance：音画质重生任务；</li><li>ComplexAdaptiveDynamicStreaming：复杂自适应码流任务；</li><li>ProcessMediaByMPS：MPS 视频处理任务；</li><li>AigcImageTask：AIGC 生图任务；</li><li>SceneAigcImageTask：场景化 AIGC 生图任务；</li><li>AigcVideoTask：AIGC 生视频任务；</li><li>ImportMediaKnowledge：导入媒体知识任务。</li><li>SceneAigcVideoTask：场景化 AIGC 生视频任务；</li><li> ExtractBlindWatermark：提取数字水印任务。</li></p>
                      * 
                      */
                     std::string GetTaskType() const;
@@ -88,16 +90,8 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务状态，取值：
-<li>WAITING：等待中；</li>
-<li>PROCESSING：处理中；</li>
-<li>FINISH：已完成；</li>
-<li>ABORTED：已终止。</li>
-                     * @return Status 任务状态，取值：
-<li>WAITING：等待中；</li>
-<li>PROCESSING：处理中；</li>
-<li>FINISH：已完成；</li>
-<li>ABORTED：已终止。</li>
+                     * 获取<p>任务状态，取值：</p><li>WAITING：等待中；</li><li>PROCESSING：处理中；</li><li>FINISH：已完成；</li><li>ABORTED：已终止。</li>
+                     * @return Status <p>任务状态，取值：</p><li>WAITING：等待中；</li><li>PROCESSING：处理中；</li><li>FINISH：已完成；</li><li>ABORTED：已终止。</li>
                      * 
                      */
                     std::string GetStatus() const;
@@ -110,8 +104,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取任务的创建时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @return CreateTime 任务的创建时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 获取<p>任务的创建时间，采用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @return CreateTime <p>任务的创建时间，采用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
@@ -124,8 +118,8 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @return BeginProcessTime 任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 获取<p>任务开始执行的时间，采用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @return BeginProcessTime <p>任务开始执行的时间，采用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     std::string GetBeginProcessTime() const;
@@ -138,8 +132,8 @@ namespace TencentCloud
                     bool BeginProcessTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @return FinishTime 任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 获取<p>任务执行完毕的时间，采用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @return FinishTime <p>任务执行完毕的时间，采用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     std::string GetFinishTime() const;
@@ -152,9 +146,9 @@ namespace TencentCloud
                     bool FinishTimeHasBeenSet() const;
 
                     /**
-                     * 获取视频处理任务信息，仅当 TaskType 为 Procedure，该字段有值。
+                     * 获取<p>视频处理任务信息，仅当 TaskType 为 Procedure，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProcedureTask 视频处理任务信息，仅当 TaskType 为 Procedure，该字段有值。
+                     * @return ProcedureTask <p>视频处理任务信息，仅当 TaskType 为 Procedure，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -168,9 +162,9 @@ namespace TencentCloud
                     bool ProcedureTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频编辑任务信息，仅当 TaskType 为 EditMedia，该字段有值。
+                     * 获取<p>视频编辑任务信息，仅当 TaskType 为 EditMedia，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EditMediaTask 视频编辑任务信息，仅当 TaskType 为 EditMedia，该字段有值。
+                     * @return EditMediaTask <p>视频编辑任务信息，仅当 TaskType 为 EditMedia，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -184,9 +178,9 @@ namespace TencentCloud
                     bool EditMediaTaskHasBeenSet() const;
 
                     /**
-                     * 获取微信发布任务信息，仅当 TaskType 为 WechatPublish，该字段有值。
+                     * 获取<p>微信发布任务信息，仅当 TaskType 为 WechatPublish，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WechatPublishTask 微信发布任务信息，仅当 TaskType 为 WechatPublish，该字段有值。
+                     * @return WechatPublishTask <p>微信发布任务信息，仅当 TaskType 为 WechatPublish，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -200,9 +194,9 @@ namespace TencentCloud
                     bool WechatPublishTaskHasBeenSet() const;
 
                     /**
-                     * 获取制作媒体文件任务信息，仅当 TaskType 为 ComposeMedia，该字段有值。
+                     * 获取<p>制作媒体文件任务信息，仅当 TaskType 为 ComposeMedia，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ComposeMediaTask 制作媒体文件任务信息，仅当 TaskType 为 ComposeMedia，该字段有值。
+                     * @return ComposeMediaTask <p>制作媒体文件任务信息，仅当 TaskType 为 ComposeMedia，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -216,9 +210,9 @@ namespace TencentCloud
                     bool ComposeMediaTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频拆条任务信息，仅当 TaskType 为 SplitMedia，该字段有值。
+                     * 获取<p>视频拆条任务信息，仅当 TaskType 为 SplitMedia，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SplitMediaTask 视频拆条任务信息，仅当 TaskType 为 SplitMedia，该字段有值。
+                     * @return SplitMediaTask <p>视频拆条任务信息，仅当 TaskType 为 SplitMedia，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -232,9 +226,9 @@ namespace TencentCloud
                     bool SplitMediaTaskHasBeenSet() const;
 
                     /**
-                     * 获取微信小程序发布任务信息，仅当 TaskType 为 WechatMiniProgramPublish，该字段有值。
+                     * 获取<p>微信小程序发布任务信息，仅当 TaskType 为 WechatMiniProgramPublish，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WechatMiniProgramPublishTask 微信小程序发布任务信息，仅当 TaskType 为 WechatMiniProgramPublish，该字段有值。
+                     * @return WechatMiniProgramPublishTask <p>微信小程序发布任务信息，仅当 TaskType 为 WechatMiniProgramPublish，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -248,9 +242,9 @@ namespace TencentCloud
                     bool WechatMiniProgramPublishTaskHasBeenSet() const;
 
                     /**
-                     * 获取拉取上传媒体文件任务信息，仅当 TaskType 为 PullUpload，该字段有值。
+                     * 获取<p>拉取上传媒体文件任务信息，仅当 TaskType 为 PullUpload，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PullUploadTask 拉取上传媒体文件任务信息，仅当 TaskType 为 PullUpload，该字段有值。
+                     * @return PullUploadTask <p>拉取上传媒体文件任务信息，仅当 TaskType 为 PullUpload，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -264,9 +258,9 @@ namespace TencentCloud
                     bool PullUploadTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频转码任务信息，仅当 TaskType 为 Transcode，该字段有值。
+                     * 获取<p>视频转码任务信息，仅当 TaskType 为 Transcode，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TranscodeTask 视频转码任务信息，仅当 TaskType 为 Transcode，该字段有值。
+                     * @return TranscodeTask <p>视频转码任务信息，仅当 TaskType 为 Transcode，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -280,9 +274,9 @@ namespace TencentCloud
                     bool TranscodeTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频拼接任务信息，仅当 TaskType 为 Concat，该字段有值。
+                     * 获取<p>视频拼接任务信息，仅当 TaskType 为 Concat，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ConcatTask 视频拼接任务信息，仅当 TaskType 为 Concat，该字段有值。
+                     * @return ConcatTask <p>视频拼接任务信息，仅当 TaskType 为 Concat，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -296,9 +290,9 @@ namespace TencentCloud
                     bool ConcatTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频剪辑任务信息，仅当 TaskType 为 Clip，该字段有值。
+                     * 获取<p>视频剪辑任务信息，仅当 TaskType 为 Clip，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClipTask 视频剪辑任务信息，仅当 TaskType 为 Clip，该字段有值。
+                     * @return ClipTask <p>视频剪辑任务信息，仅当 TaskType 为 Clip，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -312,9 +306,9 @@ namespace TencentCloud
                     bool ClipTaskHasBeenSet() const;
 
                     /**
-                     * 获取截取雪碧图任务信息，仅当 TaskType 为 ImageSprite，该字段有值。
+                     * 获取<p>截取雪碧图任务信息，仅当 TaskType 为 ImageSprite，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateImageSpriteTask 截取雪碧图任务信息，仅当 TaskType 为 ImageSprite，该字段有值。
+                     * @return CreateImageSpriteTask <p>截取雪碧图任务信息，仅当 TaskType 为 ImageSprite，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -328,9 +322,9 @@ namespace TencentCloud
                     bool CreateImageSpriteTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频指定时间点截图任务信息，仅当 TaskType 为 SnapshotByTimeOffset，该字段有值。
+                     * 获取<p>视频指定时间点截图任务信息，仅当 TaskType 为 SnapshotByTimeOffset，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SnapshotByTimeOffsetTask 视频指定时间点截图任务信息，仅当 TaskType 为 SnapshotByTimeOffset，该字段有值。
+                     * @return SnapshotByTimeOffsetTask <p>视频指定时间点截图任务信息，仅当 TaskType 为 SnapshotByTimeOffset，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -344,9 +338,9 @@ namespace TencentCloud
                     bool SnapshotByTimeOffsetTaskHasBeenSet() const;
 
                     /**
-                     * 获取智能去除水印任务信息，仅当 TaskType 为 RemoveWatermark，该字段有值。
+                     * 获取<p>智能去除水印任务信息，仅当 TaskType 为 RemoveWatermark，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RemoveWatermarkTask 智能去除水印任务信息，仅当 TaskType 为 RemoveWatermark，该字段有值。
+                     * @return RemoveWatermarkTask <p>智能去除水印任务信息，仅当 TaskType 为 RemoveWatermark，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -360,9 +354,9 @@ namespace TencentCloud
                     bool RemoveWatermarkTaskHasBeenSet() const;
 
                     /**
-                     * 获取音画质重生任务信息，仅当 TaskType 为 RebuildMedia，该字段有值。
+                     * 获取<p>音画质重生任务信息，仅当 TaskType 为 RebuildMedia，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RebuildMediaTask 音画质重生任务信息，仅当 TaskType 为 RebuildMedia，该字段有值。
+                     * @return RebuildMediaTask <p>音画质重生任务信息，仅当 TaskType 为 RebuildMedia，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -376,9 +370,9 @@ namespace TencentCloud
                     bool RebuildMediaTaskHasBeenSet() const;
 
                     /**
-                     * 获取提取溯源水印任务信息，仅当 TaskType 为 ExtractTraceWatermark，该字段有值。
+                     * 获取<p>提取溯源水印任务信息，仅当 TaskType 为 ExtractTraceWatermark，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExtractTraceWatermarkTask 提取溯源水印任务信息，仅当 TaskType 为 ExtractTraceWatermark，该字段有值。
+                     * @return ExtractTraceWatermarkTask <p>提取溯源水印任务信息，仅当 TaskType 为 ExtractTraceWatermark，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -392,9 +386,9 @@ namespace TencentCloud
                     bool ExtractTraceWatermarkTaskHasBeenSet() const;
 
                     /**
-                     * 获取提取版权水印任务信息，仅当 TaskType 为 ExtractCopyRightWatermark，该字段有值。
+                     * 获取<p>提取版权水印任务信息，仅当 TaskType 为 ExtractCopyRightWatermark，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExtractCopyRightWatermarkTask 提取版权水印任务信息，仅当 TaskType 为 ExtractCopyRightWatermark，该字段有值。
+                     * @return ExtractCopyRightWatermarkTask <p>提取版权水印任务信息，仅当 TaskType 为 ExtractCopyRightWatermark，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -408,9 +402,9 @@ namespace TencentCloud
                     bool ExtractCopyRightWatermarkTaskHasBeenSet() const;
 
                     /**
-                     * 获取音视频审核任务信息，仅当 TaskType 为 ReviewAudioVideo，该字段有值。
+                     * 获取<p>音视频审核任务信息，仅当 TaskType 为 ReviewAudioVideo，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReviewAudioVideoTask 音视频审核任务信息，仅当 TaskType 为 ReviewAudioVideo，该字段有值。
+                     * @return ReviewAudioVideoTask <p>音视频审核任务信息，仅当 TaskType 为 ReviewAudioVideo，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -424,9 +418,9 @@ namespace TencentCloud
                     bool ReviewAudioVideoTaskHasBeenSet() const;
 
                     /**
-                     * 获取该字段已无效。
+                     * 获取<p>该字段已无效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReduceMediaBitrateTask 该字段已无效。
+                     * @return ReduceMediaBitrateTask <p>该字段已无效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -440,9 +434,9 @@ namespace TencentCloud
                     bool ReduceMediaBitrateTaskHasBeenSet() const;
 
                     /**
-                     * 获取获取文件属性任务信息，仅当 TaskType 为 DescribeFileAttributes，该字段有值。
+                     * 获取<p>获取文件属性任务信息，仅当 TaskType 为 DescribeFileAttributes，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DescribeFileAttributesTask 获取文件属性任务信息，仅当 TaskType 为 DescribeFileAttributes，该字段有值。
+                     * @return DescribeFileAttributesTask <p>获取文件属性任务信息，仅当 TaskType 为 DescribeFileAttributes，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -456,9 +450,9 @@ namespace TencentCloud
                     bool DescribeFileAttributesTaskHasBeenSet() const;
 
                     /**
-                     * 获取音画质检测任务信息，仅当 TaskType 为 QualityInspect 时该字段有值。
+                     * 获取<p>音画质检测任务信息，仅当 TaskType 为 QualityInspect 时该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QualityInspectTask 音画质检测任务信息，仅当 TaskType 为 QualityInspect 时该字段有值。
+                     * @return QualityInspectTask <p>音画质检测任务信息，仅当 TaskType 为 QualityInspect 时该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -472,9 +466,9 @@ namespace TencentCloud
                     bool QualityInspectTaskHasBeenSet() const;
 
                     /**
-                     * 获取音画质重生任务信息，仅当 TaskType 为 QualityEnhance，该字段有值。
+                     * 获取<p>音画质重生任务信息，仅当 TaskType 为 QualityEnhance，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QualityEnhanceTask 音画质重生任务信息，仅当 TaskType 为 QualityEnhance，该字段有值。
+                     * @return QualityEnhanceTask <p>音画质重生任务信息，仅当 TaskType 为 QualityEnhance，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -488,9 +482,9 @@ namespace TencentCloud
                     bool QualityEnhanceTaskHasBeenSet() const;
 
                     /**
-                     * 获取复杂自适应码流任务信息，仅当 TaskType 为 ComplexAdaptiveDynamicStreaming，该字段有值。
+                     * 获取<p>复杂自适应码流任务信息，仅当 TaskType 为 ComplexAdaptiveDynamicStreaming，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ComplexAdaptiveDynamicStreamingTask 复杂自适应码流任务信息，仅当 TaskType 为 ComplexAdaptiveDynamicStreaming，该字段有值。
+                     * @return ComplexAdaptiveDynamicStreamingTask <p>复杂自适应码流任务信息，仅当 TaskType 为 ComplexAdaptiveDynamicStreaming，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -504,8 +498,8 @@ namespace TencentCloud
                     bool ComplexAdaptiveDynamicStreamingTaskHasBeenSet() const;
 
                     /**
-                     * 获取MPS 视频处理任务信息，仅当 TaskType 为 ProcessMediaByMPS，该字段有值。
-                     * @return ProcessMediaByMPSTask MPS 视频处理任务信息，仅当 TaskType 为 ProcessMediaByMPS，该字段有值。
+                     * 获取<p>MPS 视频处理任务信息，仅当 TaskType 为 ProcessMediaByMPS，该字段有值。</p>
+                     * @return ProcessMediaByMPSTask <p>MPS 视频处理任务信息，仅当 TaskType 为 ProcessMediaByMPS，该字段有值。</p>
                      * 
                      */
                     ProcessMediaByMPS GetProcessMediaByMPSTask() const;
@@ -518,8 +512,8 @@ namespace TencentCloud
                     bool ProcessMediaByMPSTaskHasBeenSet() const;
 
                     /**
-                     * 获取AIGC 生图任务信息，仅当 TaskType 为 AigcImageTask，该字段有值。
-                     * @return AigcImageTask AIGC 生图任务信息，仅当 TaskType 为 AigcImageTask，该字段有值。
+                     * 获取<p>AIGC 生图任务信息，仅当 TaskType 为 AigcImageTask，该字段有值。</p>
+                     * @return AigcImageTask <p>AIGC 生图任务信息，仅当 TaskType 为 AigcImageTask，该字段有值。</p>
                      * 
                      */
                     AigcImageTask GetAigcImageTask() const;
@@ -532,8 +526,8 @@ namespace TencentCloud
                     bool AigcImageTaskHasBeenSet() const;
 
                     /**
-                     * 获取AIGC 生视频任务信息，仅当 TaskType 为 AigcVideoTask，该字段有值。
-                     * @return AigcVideoTask AIGC 生视频任务信息，仅当 TaskType 为 AigcVideoTask，该字段有值。
+                     * 获取<p>AIGC 生视频任务信息，仅当 TaskType 为 AigcVideoTask，该字段有值。</p>
+                     * @return AigcVideoTask <p>AIGC 生视频任务信息，仅当 TaskType 为 AigcVideoTask，该字段有值。</p>
                      * 
                      */
                     AigcVideoTask GetAigcVideoTask() const;
@@ -546,8 +540,8 @@ namespace TencentCloud
                     bool AigcVideoTaskHasBeenSet() const;
 
                     /**
-                     * 获取媒体导入知识库任务信息，仅当 TaskType 为 ImportMediaKnowledge，该字段有值。
-                     * @return ImportMediaKnowledge 媒体导入知识库任务信息，仅当 TaskType 为 ImportMediaKnowledge，该字段有值。
+                     * 获取<p>媒体导入知识库任务信息，仅当 TaskType 为 ImportMediaKnowledge，该字段有值。</p>
+                     * @return ImportMediaKnowledge <p>媒体导入知识库任务信息，仅当 TaskType 为 ImportMediaKnowledge，该字段有值。</p>
                      * 
                      */
                     ImportMediaKnowledgeTask GetImportMediaKnowledge() const;
@@ -560,8 +554,8 @@ namespace TencentCloud
                     bool ImportMediaKnowledgeHasBeenSet() const;
 
                     /**
-                     * 获取场景化 AIGC 生图任务信息，仅当 TaskType 为 SceneAigcImageTask，该字段有值。
-                     * @return SceneAigcImageTask 场景化 AIGC 生图任务信息，仅当 TaskType 为 SceneAigcImageTask，该字段有值。
+                     * 获取<p>场景化 AIGC 生图任务信息，仅当 TaskType 为 SceneAigcImageTask，该字段有值。</p>
+                     * @return SceneAigcImageTask <p>场景化 AIGC 生图任务信息，仅当 TaskType 为 SceneAigcImageTask，该字段有值。</p>
                      * 
                      */
                     SceneAigcImageTask GetSceneAigcImageTask() const;
@@ -574,8 +568,8 @@ namespace TencentCloud
                     bool SceneAigcImageTaskHasBeenSet() const;
 
                     /**
-                     * 获取场景化 AIGC 生视频任务信息，仅当 TaskType 为 SceneAigcVideoTask，该字段有值。
-                     * @return SceneAigcVideoTask 场景化 AIGC 生视频任务信息，仅当 TaskType 为 SceneAigcVideoTask，该字段有值。
+                     * 获取<p>场景化 AIGC 生视频任务信息，仅当 TaskType 为 SceneAigcVideoTask，该字段有值。</p>
+                     * @return SceneAigcVideoTask <p>场景化 AIGC 生视频任务信息，仅当 TaskType 为 SceneAigcVideoTask，该字段有值。</p>
                      * 
                      */
                     SceneAigcVideoTask GetSceneAigcVideoTask() const;
@@ -588,8 +582,8 @@ namespace TencentCloud
                     bool SceneAigcVideoTaskHasBeenSet() const;
 
                     /**
-                     * 获取图像异步处理任务信息，仅当 TaskType 为 ProcessImageAsync，该字段有值。
-                     * @return ProcessImageAsyncTask 图像异步处理任务信息，仅当 TaskType 为 ProcessImageAsync，该字段有值。
+                     * 获取<p>图像异步处理任务信息，仅当 TaskType 为 ProcessImageAsync，该字段有值。</p>
+                     * @return ProcessImageAsyncTask <p>图像异步处理任务信息，仅当 TaskType 为 ProcessImageAsync，该字段有值。</p>
                      * 
                      */
                     ProcessImageAsync GetProcessImageAsyncTask() const;
@@ -602,8 +596,8 @@ namespace TencentCloud
                     bool ProcessImageAsyncTaskHasBeenSet() const;
 
                     /**
-                     * 获取提取数字水印任务信息，仅当 TaskType 为 ExtractBlindWatermark，该字段有值。
-                     * @return ExtractBlindWatermarkTask 提取数字水印任务信息，仅当 TaskType 为 ExtractBlindWatermark，该字段有值。
+                     * 获取<p>提取数字水印任务信息，仅当 TaskType 为 ExtractBlindWatermark，该字段有值。</p>
+                     * @return ExtractBlindWatermarkTask <p>提取数字水印任务信息，仅当 TaskType 为 ExtractBlindWatermark，该字段有值。</p>
                      * 
                      */
                     ExtractBlindWatermarkTask GetExtractBlindWatermarkTask() const;
@@ -615,243 +609,279 @@ namespace TencentCloud
                      */
                     bool ExtractBlindWatermarkTaskHasBeenSet() const;
 
+                    /**
+                     * 获取<p>创建自定义主体信息，仅当 TaskType 为 CreateAigcAdvancedCustomElement，该字段有值。</p>
+                     * @return CreateAigcAdvancedCustomElementTask <p>创建自定义主体信息，仅当 TaskType 为 CreateAigcAdvancedCustomElement，该字段有值。</p>
+                     * 
+                     */
+                    CreateAigcAdvancedCustomElementTask GetCreateAigcAdvancedCustomElementTask() const;
+
+                    /**
+                     * 判断参数 CreateAigcAdvancedCustomElementTask 是否已赋值
+                     * @return CreateAigcAdvancedCustomElementTask 是否已赋值
+                     * 
+                     */
+                    bool CreateAigcAdvancedCustomElementTaskHasBeenSet() const;
+
+                    /**
+                     * 获取<p>创建自定义音色信息，仅当 TaskType 为 CreateAigcCustomVoice，该字段有值。</p>
+                     * @return CreateAigcCustomVoiceTask <p>创建自定义音色信息，仅当 TaskType 为 CreateAigcCustomVoice，该字段有值。</p>
+                     * 
+                     */
+                    CreateAigcCustomVoiceTask GetCreateAigcCustomVoiceTask() const;
+
+                    /**
+                     * 判断参数 CreateAigcCustomVoiceTask 是否已赋值
+                     * @return CreateAigcCustomVoiceTask 是否已赋值
+                     * 
+                     */
+                    bool CreateAigcCustomVoiceTaskHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务类型，取值：<li>Procedure：视频处理任务；</li><li>EditMedia：视频编辑任务；</li><li>SplitMedia：视频拆条任务；</li><li>ComposeMedia：制作媒体文件任务；</li><li>WechatPublish：微信发布任务；</li><li>WechatMiniProgramPublish：微信小程序视频发布任务；</li><li>PullUpload：拉取上传媒体文件任务；</li><li>FastClipMedia：快速剪辑任务；</li><li>RemoveWatermarkTask：智能去除水印任务；</li><li>DescribeFileAttributesTask：获取文件属性任务；</li><li>RebuildMedia：音画质重生任务（不推荐使用）；</li><li>ReviewAudioVideo：音视频审核任务；</li><li>ExtractTraceWatermark：提取溯源水印任务；</li><li>ExtractCopyRightWatermark：提取版权水印任务；</li><li>QualityInspect：音画质检测任务；</li><li>QualityEnhance：音画质重生任务；</li><li>ComplexAdaptiveDynamicStreaming：复杂自适应码流任务；</li><li>ProcessMediaByMPS：MPS 视频处理任务；</li><li>AigcImageTask：AIGC 生图任务；</li><li>SceneAigcImageTask：场景化 AIGC 生图任务；</li><li>AigcVideoTask：AIGC 生视频任务；</li><li>ImportMediaKnowledge：导入媒体知识任务。</li><li>SceneAigcVideoTask：场景化 AIGC 生视频任务；</li><li> ExtractBlindWatermark：提取数字水印任务。</li>
+                     * <p>任务类型，取值：<li>Procedure：视频处理任务；</li><li>EditMedia：视频编辑任务；</li><li>SplitMedia：视频拆条任务；</li><li>ComposeMedia：制作媒体文件任务；</li><li>WechatPublish：微信发布任务；</li><li>WechatMiniProgramPublish：微信小程序视频发布任务；</li><li>PullUpload：拉取上传媒体文件任务；</li><li>FastClipMedia：快速剪辑任务；</li><li>RemoveWatermarkTask：智能去除水印任务；</li><li>DescribeFileAttributesTask：获取文件属性任务；</li><li>RebuildMedia：音画质重生任务（不推荐使用）；</li><li>ReviewAudioVideo：音视频审核任务；</li><li>ExtractTraceWatermark：提取溯源水印任务；</li><li>ExtractCopyRightWatermark：提取版权水印任务；</li><li>QualityInspect：音画质检测任务；</li><li>QualityEnhance：音画质重生任务；</li><li>ComplexAdaptiveDynamicStreaming：复杂自适应码流任务；</li><li>ProcessMediaByMPS：MPS 视频处理任务；</li><li>AigcImageTask：AIGC 生图任务；</li><li>SceneAigcImageTask：场景化 AIGC 生图任务；</li><li>AigcVideoTask：AIGC 生视频任务；</li><li>ImportMediaKnowledge：导入媒体知识任务。</li><li>SceneAigcVideoTask：场景化 AIGC 生视频任务；</li><li> ExtractBlindWatermark：提取数字水印任务。</li></p>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 任务状态，取值：
-<li>WAITING：等待中；</li>
-<li>PROCESSING：处理中；</li>
-<li>FINISH：已完成；</li>
-<li>ABORTED：已终止。</li>
+                     * <p>任务状态，取值：</p><li>WAITING：等待中；</li><li>PROCESSING：处理中；</li><li>FINISH：已完成；</li><li>ABORTED：已终止。</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 任务的创建时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * <p>任务的创建时间，采用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * <p>任务开始执行的时间，采用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      */
                     std::string m_beginProcessTime;
                     bool m_beginProcessTimeHasBeenSet;
 
                     /**
-                     * 任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * <p>任务执行完毕的时间，采用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;
 
                     /**
-                     * 视频处理任务信息，仅当 TaskType 为 Procedure，该字段有值。
+                     * <p>视频处理任务信息，仅当 TaskType 为 Procedure，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ProcedureTask m_procedureTask;
                     bool m_procedureTaskHasBeenSet;
 
                     /**
-                     * 视频编辑任务信息，仅当 TaskType 为 EditMedia，该字段有值。
+                     * <p>视频编辑任务信息，仅当 TaskType 为 EditMedia，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EditMediaTask m_editMediaTask;
                     bool m_editMediaTaskHasBeenSet;
 
                     /**
-                     * 微信发布任务信息，仅当 TaskType 为 WechatPublish，该字段有值。
+                     * <p>微信发布任务信息，仅当 TaskType 为 WechatPublish，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WechatPublishTask m_wechatPublishTask;
                     bool m_wechatPublishTaskHasBeenSet;
 
                     /**
-                     * 制作媒体文件任务信息，仅当 TaskType 为 ComposeMedia，该字段有值。
+                     * <p>制作媒体文件任务信息，仅当 TaskType 为 ComposeMedia，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ComposeMediaTask m_composeMediaTask;
                     bool m_composeMediaTaskHasBeenSet;
 
                     /**
-                     * 视频拆条任务信息，仅当 TaskType 为 SplitMedia，该字段有值。
+                     * <p>视频拆条任务信息，仅当 TaskType 为 SplitMedia，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SplitMediaTask m_splitMediaTask;
                     bool m_splitMediaTaskHasBeenSet;
 
                     /**
-                     * 微信小程序发布任务信息，仅当 TaskType 为 WechatMiniProgramPublish，该字段有值。
+                     * <p>微信小程序发布任务信息，仅当 TaskType 为 WechatMiniProgramPublish，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WechatMiniProgramPublishTask m_wechatMiniProgramPublishTask;
                     bool m_wechatMiniProgramPublishTaskHasBeenSet;
 
                     /**
-                     * 拉取上传媒体文件任务信息，仅当 TaskType 为 PullUpload，该字段有值。
+                     * <p>拉取上传媒体文件任务信息，仅当 TaskType 为 PullUpload，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PullUploadTask m_pullUploadTask;
                     bool m_pullUploadTaskHasBeenSet;
 
                     /**
-                     * 视频转码任务信息，仅当 TaskType 为 Transcode，该字段有值。
+                     * <p>视频转码任务信息，仅当 TaskType 为 Transcode，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TranscodeTask2017 m_transcodeTask;
                     bool m_transcodeTaskHasBeenSet;
 
                     /**
-                     * 视频拼接任务信息，仅当 TaskType 为 Concat，该字段有值。
+                     * <p>视频拼接任务信息，仅当 TaskType 为 Concat，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ConcatTask2017 m_concatTask;
                     bool m_concatTaskHasBeenSet;
 
                     /**
-                     * 视频剪辑任务信息，仅当 TaskType 为 Clip，该字段有值。
+                     * <p>视频剪辑任务信息，仅当 TaskType 为 Clip，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ClipTask2017 m_clipTask;
                     bool m_clipTaskHasBeenSet;
 
                     /**
-                     * 截取雪碧图任务信息，仅当 TaskType 为 ImageSprite，该字段有值。
+                     * <p>截取雪碧图任务信息，仅当 TaskType 为 ImageSprite，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CreateImageSpriteTask2017 m_createImageSpriteTask;
                     bool m_createImageSpriteTaskHasBeenSet;
 
                     /**
-                     * 视频指定时间点截图任务信息，仅当 TaskType 为 SnapshotByTimeOffset，该字段有值。
+                     * <p>视频指定时间点截图任务信息，仅当 TaskType 为 SnapshotByTimeOffset，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SnapshotByTimeOffsetTask2017 m_snapshotByTimeOffsetTask;
                     bool m_snapshotByTimeOffsetTaskHasBeenSet;
 
                     /**
-                     * 智能去除水印任务信息，仅当 TaskType 为 RemoveWatermark，该字段有值。
+                     * <p>智能去除水印任务信息，仅当 TaskType 为 RemoveWatermark，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RemoveWatermarkTask m_removeWatermarkTask;
                     bool m_removeWatermarkTaskHasBeenSet;
 
                     /**
-                     * 音画质重生任务信息，仅当 TaskType 为 RebuildMedia，该字段有值。
+                     * <p>音画质重生任务信息，仅当 TaskType 为 RebuildMedia，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RebuildMediaTask m_rebuildMediaTask;
                     bool m_rebuildMediaTaskHasBeenSet;
 
                     /**
-                     * 提取溯源水印任务信息，仅当 TaskType 为 ExtractTraceWatermark，该字段有值。
+                     * <p>提取溯源水印任务信息，仅当 TaskType 为 ExtractTraceWatermark，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ExtractTraceWatermarkTask m_extractTraceWatermarkTask;
                     bool m_extractTraceWatermarkTaskHasBeenSet;
 
                     /**
-                     * 提取版权水印任务信息，仅当 TaskType 为 ExtractCopyRightWatermark，该字段有值。
+                     * <p>提取版权水印任务信息，仅当 TaskType 为 ExtractCopyRightWatermark，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ExtractCopyRightWatermarkTask m_extractCopyRightWatermarkTask;
                     bool m_extractCopyRightWatermarkTaskHasBeenSet;
 
                     /**
-                     * 音视频审核任务信息，仅当 TaskType 为 ReviewAudioVideo，该字段有值。
+                     * <p>音视频审核任务信息，仅当 TaskType 为 ReviewAudioVideo，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ReviewAudioVideoTask m_reviewAudioVideoTask;
                     bool m_reviewAudioVideoTaskHasBeenSet;
 
                     /**
-                     * 该字段已无效。
+                     * <p>该字段已无效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ReduceMediaBitrateTask m_reduceMediaBitrateTask;
                     bool m_reduceMediaBitrateTaskHasBeenSet;
 
                     /**
-                     * 获取文件属性任务信息，仅当 TaskType 为 DescribeFileAttributes，该字段有值。
+                     * <p>获取文件属性任务信息，仅当 TaskType 为 DescribeFileAttributes，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeFileAttributesTask m_describeFileAttributesTask;
                     bool m_describeFileAttributesTaskHasBeenSet;
 
                     /**
-                     * 音画质检测任务信息，仅当 TaskType 为 QualityInspect 时该字段有值。
+                     * <p>音画质检测任务信息，仅当 TaskType 为 QualityInspect 时该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     QualityInspectTask m_qualityInspectTask;
                     bool m_qualityInspectTaskHasBeenSet;
 
                     /**
-                     * 音画质重生任务信息，仅当 TaskType 为 QualityEnhance，该字段有值。
+                     * <p>音画质重生任务信息，仅当 TaskType 为 QualityEnhance，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     QualityEnhanceTask m_qualityEnhanceTask;
                     bool m_qualityEnhanceTaskHasBeenSet;
 
                     /**
-                     * 复杂自适应码流任务信息，仅当 TaskType 为 ComplexAdaptiveDynamicStreaming，该字段有值。
+                     * <p>复杂自适应码流任务信息，仅当 TaskType 为 ComplexAdaptiveDynamicStreaming，该字段有值。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ComplexAdaptiveDynamicStreamingTask m_complexAdaptiveDynamicStreamingTask;
                     bool m_complexAdaptiveDynamicStreamingTaskHasBeenSet;
 
                     /**
-                     * MPS 视频处理任务信息，仅当 TaskType 为 ProcessMediaByMPS，该字段有值。
+                     * <p>MPS 视频处理任务信息，仅当 TaskType 为 ProcessMediaByMPS，该字段有值。</p>
                      */
                     ProcessMediaByMPS m_processMediaByMPSTask;
                     bool m_processMediaByMPSTaskHasBeenSet;
 
                     /**
-                     * AIGC 生图任务信息，仅当 TaskType 为 AigcImageTask，该字段有值。
+                     * <p>AIGC 生图任务信息，仅当 TaskType 为 AigcImageTask，该字段有值。</p>
                      */
                     AigcImageTask m_aigcImageTask;
                     bool m_aigcImageTaskHasBeenSet;
 
                     /**
-                     * AIGC 生视频任务信息，仅当 TaskType 为 AigcVideoTask，该字段有值。
+                     * <p>AIGC 生视频任务信息，仅当 TaskType 为 AigcVideoTask，该字段有值。</p>
                      */
                     AigcVideoTask m_aigcVideoTask;
                     bool m_aigcVideoTaskHasBeenSet;
 
                     /**
-                     * 媒体导入知识库任务信息，仅当 TaskType 为 ImportMediaKnowledge，该字段有值。
+                     * <p>媒体导入知识库任务信息，仅当 TaskType 为 ImportMediaKnowledge，该字段有值。</p>
                      */
                     ImportMediaKnowledgeTask m_importMediaKnowledge;
                     bool m_importMediaKnowledgeHasBeenSet;
 
                     /**
-                     * 场景化 AIGC 生图任务信息，仅当 TaskType 为 SceneAigcImageTask，该字段有值。
+                     * <p>场景化 AIGC 生图任务信息，仅当 TaskType 为 SceneAigcImageTask，该字段有值。</p>
                      */
                     SceneAigcImageTask m_sceneAigcImageTask;
                     bool m_sceneAigcImageTaskHasBeenSet;
 
                     /**
-                     * 场景化 AIGC 生视频任务信息，仅当 TaskType 为 SceneAigcVideoTask，该字段有值。
+                     * <p>场景化 AIGC 生视频任务信息，仅当 TaskType 为 SceneAigcVideoTask，该字段有值。</p>
                      */
                     SceneAigcVideoTask m_sceneAigcVideoTask;
                     bool m_sceneAigcVideoTaskHasBeenSet;
 
                     /**
-                     * 图像异步处理任务信息，仅当 TaskType 为 ProcessImageAsync，该字段有值。
+                     * <p>图像异步处理任务信息，仅当 TaskType 为 ProcessImageAsync，该字段有值。</p>
                      */
                     ProcessImageAsync m_processImageAsyncTask;
                     bool m_processImageAsyncTaskHasBeenSet;
 
                     /**
-                     * 提取数字水印任务信息，仅当 TaskType 为 ExtractBlindWatermark，该字段有值。
+                     * <p>提取数字水印任务信息，仅当 TaskType 为 ExtractBlindWatermark，该字段有值。</p>
                      */
                     ExtractBlindWatermarkTask m_extractBlindWatermarkTask;
                     bool m_extractBlindWatermarkTaskHasBeenSet;
+
+                    /**
+                     * <p>创建自定义主体信息，仅当 TaskType 为 CreateAigcAdvancedCustomElement，该字段有值。</p>
+                     */
+                    CreateAigcAdvancedCustomElementTask m_createAigcAdvancedCustomElementTask;
+                    bool m_createAigcAdvancedCustomElementTaskHasBeenSet;
+
+                    /**
+                     * <p>创建自定义音色信息，仅当 TaskType 为 CreateAigcCustomVoice，该字段有值。</p>
+                     */
+                    CreateAigcCustomVoiceTask m_createAigcCustomVoiceTask;
+                    bool m_createAigcCustomVoiceTaskHasBeenSet;
 
                 };
             }

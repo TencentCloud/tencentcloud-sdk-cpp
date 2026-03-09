@@ -31,7 +31,10 @@ ModifyTWeTalkAIBotRequest::ModifyTWeTalkAIBotRequest() :
     m_lLMConfigHasBeenSet(false),
     m_tTSConfigHasBeenSet(false),
     m_agentConfigHasBeenSet(false),
-    m_customToolsHasBeenSet(false)
+    m_customToolsHasBeenSet(false),
+    m_webhookToolsHasBeenSet(false),
+    m_botTypeHasBeenSet(false),
+    m_rAGConfigHasBeenSet(false)
 {
 }
 
@@ -116,6 +119,30 @@ string ModifyTWeTalkAIBotRequest::ToJsonString() const
         string key = "CustomTools";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_customTools.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_webhookToolsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebhookTools";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_webhookTools.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_botTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BotType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_botType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rAGConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RAGConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_rAGConfig.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -268,6 +295,54 @@ void ModifyTWeTalkAIBotRequest::SetCustomTools(const string& _customTools)
 bool ModifyTWeTalkAIBotRequest::CustomToolsHasBeenSet() const
 {
     return m_customToolsHasBeenSet;
+}
+
+string ModifyTWeTalkAIBotRequest::GetWebhookTools() const
+{
+    return m_webhookTools;
+}
+
+void ModifyTWeTalkAIBotRequest::SetWebhookTools(const string& _webhookTools)
+{
+    m_webhookTools = _webhookTools;
+    m_webhookToolsHasBeenSet = true;
+}
+
+bool ModifyTWeTalkAIBotRequest::WebhookToolsHasBeenSet() const
+{
+    return m_webhookToolsHasBeenSet;
+}
+
+string ModifyTWeTalkAIBotRequest::GetBotType() const
+{
+    return m_botType;
+}
+
+void ModifyTWeTalkAIBotRequest::SetBotType(const string& _botType)
+{
+    m_botType = _botType;
+    m_botTypeHasBeenSet = true;
+}
+
+bool ModifyTWeTalkAIBotRequest::BotTypeHasBeenSet() const
+{
+    return m_botTypeHasBeenSet;
+}
+
+string ModifyTWeTalkAIBotRequest::GetRAGConfig() const
+{
+    return m_rAGConfig;
+}
+
+void ModifyTWeTalkAIBotRequest::SetRAGConfig(const string& _rAGConfig)
+{
+    m_rAGConfig = _rAGConfig;
+    m_rAGConfigHasBeenSet = true;
+}
+
+bool ModifyTWeTalkAIBotRequest::RAGConfigHasBeenSet() const
+{
+    return m_rAGConfigHasBeenSet;
 }
 
 

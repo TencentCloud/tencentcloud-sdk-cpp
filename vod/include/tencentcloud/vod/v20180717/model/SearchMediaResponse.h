@@ -45,10 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合搜索条件的记录总数。
-<li>最大值：5000。当命中记录数超过5000时，该字段将返回 5000，而非实际命中总数。</li>
-                     * @return TotalCount 符合搜索条件的记录总数。
-<li>最大值：5000。当命中记录数超过5000时，该字段将返回 5000，而非实际命中总数。</li>
+                     * 获取<p>符合搜索条件的记录总数。</p><li>最大值：5000。当命中记录数超过5000时，该字段将返回 5000，而非实际命中总数。</li>
+                     * @return TotalCount <p>符合搜索条件的记录总数。</p><li>最大值：5000。当命中记录数超过5000时，该字段将返回 5000，而非实际命中总数。</li>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -61,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取媒体文件信息列表。
-                     * @return MediaInfoSet 媒体文件信息列表。
+                     * 获取<p>媒体文件信息列表。</p>
+                     * @return MediaInfoSet <p>媒体文件信息列表。</p>
                      * 
                      */
                     std::vector<MediaInfo> GetMediaInfoSet() const;
@@ -77,14 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合搜索条件的记录总数。
-<li>最大值：5000。当命中记录数超过5000时，该字段将返回 5000，而非实际命中总数。</li>
+                     * <p>符合搜索条件的记录总数。</p><li>最大值：5000。当命中记录数超过5000时，该字段将返回 5000，而非实际命中总数。</li>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 媒体文件信息列表。
+                     * <p>媒体文件信息列表。</p>
                      */
                     std::vector<MediaInfo> m_mediaInfoSet;
                     bool m_mediaInfoSetHasBeenSet;

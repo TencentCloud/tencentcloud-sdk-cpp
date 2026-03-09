@@ -66,7 +66,9 @@ InstanceAttributesResponse::InstanceAttributesResponse() :
     m_elasticFloatBandwidthHasBeenSet(false),
     m_customCertIdHasBeenSet(false),
     m_uncleanLeaderElectionEnableHasBeenSet(false),
-    m_deleteProtectionEnableHasBeenSet(false)
+    m_deleteProtectionEnableHasBeenSet(false),
+    m_retentionBytesHasBeenSet(false),
+    m_transactionalIdExpirationMsHasBeenSet(false)
 {
 }
 
@@ -582,6 +584,26 @@ CoreInternalOutcome InstanceAttributesResponse::Deserialize(const rapidjson::Val
         m_deleteProtectionEnableHasBeenSet = true;
     }
 
+    if (value.HasMember("RetentionBytes") && !value["RetentionBytes"].IsNull())
+    {
+        if (!value["RetentionBytes"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.RetentionBytes` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_retentionBytes = value["RetentionBytes"].GetInt64();
+        m_retentionBytesHasBeenSet = true;
+    }
+
+    if (value.HasMember("TransactionalIdExpirationMs") && !value["TransactionalIdExpirationMs"].IsNull())
+    {
+        if (!value["TransactionalIdExpirationMs"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.TransactionalIdExpirationMs` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_transactionalIdExpirationMs = value["TransactionalIdExpirationMs"].GetInt64();
+        m_transactionalIdExpirationMsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -982,6 +1004,22 @@ void InstanceAttributesResponse::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "DeleteProtectionEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deleteProtectionEnable, allocator);
+    }
+
+    if (m_retentionBytesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetentionBytes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_retentionBytes, allocator);
+    }
+
+    if (m_transactionalIdExpirationMsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransactionalIdExpirationMs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_transactionalIdExpirationMs, allocator);
     }
 
 }
@@ -1721,5 +1759,37 @@ void InstanceAttributesResponse::SetDeleteProtectionEnable(const int64_t& _delet
 bool InstanceAttributesResponse::DeleteProtectionEnableHasBeenSet() const
 {
     return m_deleteProtectionEnableHasBeenSet;
+}
+
+int64_t InstanceAttributesResponse::GetRetentionBytes() const
+{
+    return m_retentionBytes;
+}
+
+void InstanceAttributesResponse::SetRetentionBytes(const int64_t& _retentionBytes)
+{
+    m_retentionBytes = _retentionBytes;
+    m_retentionBytesHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::RetentionBytesHasBeenSet() const
+{
+    return m_retentionBytesHasBeenSet;
+}
+
+int64_t InstanceAttributesResponse::GetTransactionalIdExpirationMs() const
+{
+    return m_transactionalIdExpirationMs;
+}
+
+void InstanceAttributesResponse::SetTransactionalIdExpirationMs(const int64_t& _transactionalIdExpirationMs)
+{
+    m_transactionalIdExpirationMs = _transactionalIdExpirationMs;
+    m_transactionalIdExpirationMsHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::TransactionalIdExpirationMsHasBeenSet() const
+{
+    return m_transactionalIdExpirationMsHasBeenSet;
 }
 

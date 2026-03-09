@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @return SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 获取<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
+                     * @return SdkAppId <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
-                     * 设置应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @param _sdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 设置<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
+                     * @param _sdkAppId <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取起始时间戳，Unix 秒级时间戳，最大支持近180天。
-                     * @return StartTimestamp 起始时间戳，Unix 秒级时间戳，最大支持近180天。
+                     * 获取<p>起始时间戳，Unix 秒级时间戳，最大支持近180天。</p>
+                     * @return StartTimestamp <p>起始时间戳，Unix 秒级时间戳，最大支持近180天。</p>
                      * 
                      */
                     int64_t GetStartTimestamp() const;
 
                     /**
-                     * 设置起始时间戳，Unix 秒级时间戳，最大支持近180天。
-                     * @param _startTimestamp 起始时间戳，Unix 秒级时间戳，最大支持近180天。
+                     * 设置<p>起始时间戳，Unix 秒级时间戳，最大支持近180天。</p>
+                     * @param _startTimestamp <p>起始时间戳，Unix 秒级时间戳，最大支持近180天。</p>
                      * 
                      */
                     void SetStartTimestamp(const int64_t& _startTimestamp);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimestampHasBeenSet() const;
 
                     /**
-                     * 获取结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。
-                     * @return EndTimestamp 结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。
+                     * 获取<p>结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。</p>
+                     * @return EndTimestamp <p>结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。</p>
                      * 
                      */
                     int64_t GetEndTimestamp() const;
 
                     /**
-                     * 设置结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。
-                     * @param _endTimestamp 结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。
+                     * 设置<p>结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。</p>
+                     * @param _endTimestamp <p>结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。</p>
                      * 
                      */
                     void SetEndTimestamp(const int64_t& _endTimestamp);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimestampHasBeenSet() const;
 
                     /**
-                     * 获取闪信投递号码（被叫号码）
-                     * @return DeliveryNumber 闪信投递号码（被叫号码）
+                     * 获取<p>闪信投递号码（被叫号码）</p>
+                     * @return DeliveryNumber <p>闪信投递号码（被叫号码）</p>
                      * 
                      */
                     std::string GetDeliveryNumber() const;
 
                     /**
-                     * 设置闪信投递号码（被叫号码）
-                     * @param _deliveryNumber 闪信投递号码（被叫号码）
+                     * 设置<p>闪信投递号码（被叫号码）</p>
+                     * @param _deliveryNumber <p>闪信投递号码（被叫号码）</p>
                      * 
                      */
                     void SetDeliveryNumber(const std::string& _deliveryNumber);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DeliveryNumberHasBeenSet() const;
 
                     /**
-                     * 获取呼叫关联的系统号码
-                     * @return ServingNumber 呼叫关联的系统号码
+                     * 获取<p>呼叫关联的系统号码</p>
+                     * @return ServingNumber <p>呼叫关联的系统号码</p>
                      * 
                      */
                     std::string GetServingNumber() const;
 
                     /**
-                     * 设置呼叫关联的系统号码
-                     * @param _servingNumber 呼叫关联的系统号码
+                     * 设置<p>呼叫关联的系统号码</p>
+                     * @param _servingNumber <p>呼叫关联的系统号码</p>
                      * 
                      */
                     void SetServingNumber(const std::string& _servingNumber);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ServingNumberHasBeenSet() const;
 
                     /**
-                     * 获取会话 ID
-                     * @return SessionId 会话 ID
+                     * 获取<p>会话 ID</p>
+                     * @return SessionId <p>会话 ID</p>
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置会话 ID
-                     * @param _sessionId 会话 ID
+                     * 设置<p>会话 ID</p>
+                     * @param _sessionId <p>会话 ID</p>
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取投递结果 1 为成功，其他为失败
-                     * @return DeliveryStatus 投递结果 1 为成功，其他为失败
+                     * 获取<p>投递结果 1 为成功，其他为失败</p>
+                     * @return DeliveryStatus <p>投递结果 1 为成功，其他为失败</p>
                      * 
                      */
                     int64_t GetDeliveryStatus() const;
 
                     /**
-                     * 设置投递结果 1 为成功，其他为失败
-                     * @param _deliveryStatus 投递结果 1 为成功，其他为失败
+                     * 设置<p>投递结果 1 为成功，其他为失败</p>
+                     * @param _deliveryStatus <p>投递结果 1 为成功，其他为失败</p>
                      * 
                      */
                     void SetDeliveryStatus(const int64_t& _deliveryStatus);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool DeliveryStatusHasBeenSet() const;
 
                     /**
-                     * 获取分页大小，默认 20，最大 100
-                     * @return PageSize 分页大小，默认 20，最大 100
+                     * 获取<p>分页大小，默认 20，最大 1000</p><p>取值范围：[20, 1000]</p><p>单位：条</p><p>默认值：20</p>
+                     * @return PageSize <p>分页大小，默认 20，最大 1000</p><p>取值范围：[20, 1000]</p><p>单位：条</p><p>默认值：20</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置分页大小，默认 20，最大 100
-                     * @param _pageSize 分页大小，默认 20，最大 100
+                     * 设置<p>分页大小，默认 20，最大 1000</p><p>取值范围：[20, 1000]</p><p>单位：条</p><p>默认值：20</p>
+                     * @param _pageSize <p>分页大小，默认 20，最大 1000</p><p>取值范围：[20, 1000]</p><p>单位：条</p><p>默认值：20</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取分页页码，从 0 开始
-                     * @return PageNumber 分页页码，从 0 开始
+                     * 获取<p>分页页码，从 0 开始</p>
+                     * @return PageNumber <p>分页页码，从 0 开始</p>
                      * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
-                     * 设置分页页码，从 0 开始
-                     * @param _pageNumber 分页页码，从 0 开始
+                     * 设置<p>分页页码，从 0 开始</p>
+                     * @param _pageNumber <p>分页页码，从 0 开始</p>
                      * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
@@ -234,55 +234,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      */
                     int64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 起始时间戳，Unix 秒级时间戳，最大支持近180天。
+                     * <p>起始时间戳，Unix 秒级时间戳，最大支持近180天。</p>
                      */
                     int64_t m_startTimestamp;
                     bool m_startTimestampHasBeenSet;
 
                     /**
-                     * 结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。
+                     * <p>结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。</p>
                      */
                     int64_t m_endTimestamp;
                     bool m_endTimestampHasBeenSet;
 
                     /**
-                     * 闪信投递号码（被叫号码）
+                     * <p>闪信投递号码（被叫号码）</p>
                      */
                     std::string m_deliveryNumber;
                     bool m_deliveryNumberHasBeenSet;
 
                     /**
-                     * 呼叫关联的系统号码
+                     * <p>呼叫关联的系统号码</p>
                      */
                     std::string m_servingNumber;
                     bool m_servingNumberHasBeenSet;
 
                     /**
-                     * 会话 ID
+                     * <p>会话 ID</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 投递结果 1 为成功，其他为失败
+                     * <p>投递结果 1 为成功，其他为失败</p>
                      */
                     int64_t m_deliveryStatus;
                     bool m_deliveryStatusHasBeenSet;
 
                     /**
-                     * 分页大小，默认 20，最大 100
+                     * <p>分页大小，默认 20，最大 1000</p><p>取值范围：[20, 1000]</p><p>单位：条</p><p>默认值：20</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 分页页码，从 0 开始
+                     * <p>分页页码，从 0 开始</p>
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;

@@ -58,7 +58,9 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_sceneAigcImageTaskHasBeenSet(false),
     m_sceneAigcVideoTaskHasBeenSet(false),
     m_processImageAsyncTaskHasBeenSet(false),
-    m_extractBlindWatermarkTaskHasBeenSet(false)
+    m_extractBlindWatermarkTaskHasBeenSet(false),
+    m_createAigcAdvancedCustomElementTaskHasBeenSet(false),
+    m_createAigcCustomVoiceTaskHasBeenSet(false)
 {
 }
 
@@ -656,6 +658,40 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_extractBlindWatermarkTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CreateAigcAdvancedCustomElementTask") && !rsp["CreateAigcAdvancedCustomElementTask"].IsNull())
+    {
+        if (!rsp["CreateAigcAdvancedCustomElementTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateAigcAdvancedCustomElementTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_createAigcAdvancedCustomElementTask.Deserialize(rsp["CreateAigcAdvancedCustomElementTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_createAigcAdvancedCustomElementTaskHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CreateAigcCustomVoiceTask") && !rsp["CreateAigcCustomVoiceTask"].IsNull())
+    {
+        if (!rsp["CreateAigcCustomVoiceTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateAigcCustomVoiceTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_createAigcCustomVoiceTask.Deserialize(rsp["CreateAigcCustomVoiceTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_createAigcCustomVoiceTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -974,6 +1010,24 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_extractBlindWatermarkTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_createAigcAdvancedCustomElementTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateAigcAdvancedCustomElementTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_createAigcAdvancedCustomElementTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_createAigcCustomVoiceTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateAigcCustomVoiceTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_createAigcCustomVoiceTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1336,6 +1390,26 @@ ExtractBlindWatermarkTask DescribeTaskDetailResponse::GetExtractBlindWatermarkTa
 bool DescribeTaskDetailResponse::ExtractBlindWatermarkTaskHasBeenSet() const
 {
     return m_extractBlindWatermarkTaskHasBeenSet;
+}
+
+CreateAigcAdvancedCustomElementTask DescribeTaskDetailResponse::GetCreateAigcAdvancedCustomElementTask() const
+{
+    return m_createAigcAdvancedCustomElementTask;
+}
+
+bool DescribeTaskDetailResponse::CreateAigcAdvancedCustomElementTaskHasBeenSet() const
+{
+    return m_createAigcAdvancedCustomElementTaskHasBeenSet;
+}
+
+CreateAigcCustomVoiceTask DescribeTaskDetailResponse::GetCreateAigcCustomVoiceTask() const
+{
+    return m_createAigcCustomVoiceTask;
+}
+
+bool DescribeTaskDetailResponse::CreateAigcCustomVoiceTaskHasBeenSet() const
+{
+    return m_createAigcCustomVoiceTaskHasBeenSet;
 }
 
 

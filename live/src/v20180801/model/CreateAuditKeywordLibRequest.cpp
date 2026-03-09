@@ -22,7 +22,11 @@
 using namespace TencentCloud::Live::V20180801::Model;
 using namespace std;
 
-CreateAuditKeywordLibRequest::CreateAuditKeywordLibRequest()
+CreateAuditKeywordLibRequest::CreateAuditKeywordLibRequest() :
+    m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_suggestionHasBeenSet(false),
+    m_matchTypeHasBeenSet(false)
 {
 }
 
@@ -33,6 +37,38 @@ string CreateAuditKeywordLibRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_suggestionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Suggestion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_suggestion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_matchTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MatchType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_matchType.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +76,69 @@ string CreateAuditKeywordLibRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateAuditKeywordLibRequest::GetName() const
+{
+    return m_name;
+}
+
+void CreateAuditKeywordLibRequest::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool CreateAuditKeywordLibRequest::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+string CreateAuditKeywordLibRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void CreateAuditKeywordLibRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool CreateAuditKeywordLibRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
+
+string CreateAuditKeywordLibRequest::GetSuggestion() const
+{
+    return m_suggestion;
+}
+
+void CreateAuditKeywordLibRequest::SetSuggestion(const string& _suggestion)
+{
+    m_suggestion = _suggestion;
+    m_suggestionHasBeenSet = true;
+}
+
+bool CreateAuditKeywordLibRequest::SuggestionHasBeenSet() const
+{
+    return m_suggestionHasBeenSet;
+}
+
+string CreateAuditKeywordLibRequest::GetMatchType() const
+{
+    return m_matchType;
+}
+
+void CreateAuditKeywordLibRequest::SetMatchType(const string& _matchType)
+{
+    m_matchType = _matchType;
+    m_matchTypeHasBeenSet = true;
+}
+
+bool CreateAuditKeywordLibRequest::MatchTypeHasBeenSet() const
+{
+    return m_matchTypeHasBeenSet;
+}
 
 

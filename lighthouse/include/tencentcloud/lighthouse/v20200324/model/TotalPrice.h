@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取原始总计价格。
-                     * @return OriginalPrice 原始总计价格。
+                     * 获取<p>原始总计价格。</p><p>单位：元</p>
+                     * @return OriginalPrice <p>原始总计价格。</p><p>单位：元</p>
                      * 
                      */
                     double GetOriginalPrice() const;
 
                     /**
-                     * 设置原始总计价格。
-                     * @param _originalPrice 原始总计价格。
+                     * 设置<p>原始总计价格。</p><p>单位：元</p>
+                     * @param _originalPrice <p>原始总计价格。</p><p>单位：元</p>
                      * 
                      */
                     void SetOriginalPrice(const double& _originalPrice);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
-                     * 获取折扣总计价格。
-                     * @return DiscountPrice 折扣总计价格。
+                     * 获取<p>折扣总计价格。</p><p>单位：元</p>
+                     * @return DiscountPrice <p>折扣总计价格。</p><p>单位：元</p>
                      * 
                      */
                     double GetDiscountPrice() const;
 
                     /**
-                     * 设置折扣总计价格。
-                     * @param _discountPrice 折扣总计价格。
+                     * 设置<p>折扣总计价格。</p><p>单位：元</p>
+                     * @param _discountPrice <p>折扣总计价格。</p><p>单位：元</p>
                      * 
                      */
                     void SetDiscountPrice(const double& _discountPrice);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 原始总计价格。
+                     * <p>原始总计价格。</p><p>单位：元</p>
                      */
                     double m_originalPrice;
                     bool m_originalPriceHasBeenSet;
 
                     /**
-                     * 折扣总计价格。
+                     * <p>折扣总计价格。</p><p>单位：元</p>
                      */
                     double m_discountPrice;
                     bool m_discountPriceHasBeenSet;

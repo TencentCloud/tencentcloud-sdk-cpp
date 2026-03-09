@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取业务系统 ID
-                     * @return InstanceId 业务系统 ID
+                     * 获取<p>业务系统 ID</p>
+                     * @return InstanceId <p>业务系统 ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置业务系统 ID
-                     * @param _instanceId 业务系统 ID
+                     * 设置<p>业务系统 ID</p>
+                     * @param _instanceId <p>业务系统 ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取应用名
-                     * @return ServiceName 应用名
+                     * 获取<p>应用名</p>
+                     * @return ServiceName <p>应用名</p>
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
-                     * 设置应用名
-                     * @param _serviceName 应用名
+                     * 设置<p>应用名</p>
+                     * @param _serviceName <p>应用名</p>
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ServiceNameHasBeenSet() const;
 
                     /**
-                     * 获取URL收敛开关,0 关 | 1 开
-                     * @return UrlConvergenceSwitch URL收敛开关,0 关 | 1 开
+                     * 获取<p>URL收敛开关,0 关 | 1 开</p>
+                     * @return UrlConvergenceSwitch <p>URL收敛开关,0 关 | 1 开</p>
                      * 
                      */
                     int64_t GetUrlConvergenceSwitch() const;
 
                     /**
-                     * 设置URL收敛开关,0 关 | 1 开
-                     * @param _urlConvergenceSwitch URL收敛开关,0 关 | 1 开
+                     * 设置<p>URL收敛开关,0 关 | 1 开</p>
+                     * @param _urlConvergenceSwitch <p>URL收敛开关,0 关 | 1 开</p>
                      * 
                      */
                     void SetUrlConvergenceSwitch(const int64_t& _urlConvergenceSwitch);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool UrlConvergenceSwitchHasBeenSet() const;
 
                     /**
-                     * 获取URL收敛阈值
-                     * @return UrlConvergenceThreshold URL收敛阈值
+                     * 获取<p>URL收敛阈值</p>
+                     * @return UrlConvergenceThreshold <p>URL收敛阈值</p>
                      * 
                      */
                     int64_t GetUrlConvergenceThreshold() const;
 
                     /**
-                     * 设置URL收敛阈值
-                     * @param _urlConvergenceThreshold URL收敛阈值
+                     * 设置<p>URL收敛阈值</p>
+                     * @param _urlConvergenceThreshold <p>URL收敛阈值</p>
                      * 
                      */
                     void SetUrlConvergenceThreshold(const int64_t& _urlConvergenceThreshold);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool UrlConvergenceThresholdHasBeenSet() const;
 
                     /**
-                     * 获取异常过滤正则规则，逗号分隔
-                     * @return ExceptionFilter 异常过滤正则规则，逗号分隔
+                     * 获取<p>异常过滤正则规则，逗号分隔</p>
+                     * @return ExceptionFilter <p>异常过滤正则规则，逗号分隔</p>
                      * 
                      */
                     std::string GetExceptionFilter() const;
 
                     /**
-                     * 设置异常过滤正则规则，逗号分隔
-                     * @param _exceptionFilter 异常过滤正则规则，逗号分隔
+                     * 设置<p>异常过滤正则规则，逗号分隔</p>
+                     * @param _exceptionFilter <p>异常过滤正则规则，逗号分隔</p>
                      * 
                      */
                     void SetExceptionFilter(const std::string& _exceptionFilter);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ExceptionFilterHasBeenSet() const;
 
                     /**
-                     * 获取URL收敛正则规则，逗号分隔
-                     * @return UrlConvergence URL收敛正则规则，逗号分隔
+                     * 获取<p>URL收敛正则规则，逗号分隔</p>
+                     * @return UrlConvergence <p>URL收敛正则规则，逗号分隔</p>
                      * 
                      */
                     std::string GetUrlConvergence() const;
 
                     /**
-                     * 设置URL收敛正则规则，逗号分隔
-                     * @param _urlConvergence URL收敛正则规则，逗号分隔
+                     * 设置<p>URL收敛正则规则，逗号分隔</p>
+                     * @param _urlConvergence <p>URL收敛正则规则，逗号分隔</p>
                      * 
                      */
                     void SetUrlConvergence(const std::string& _urlConvergence);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool UrlConvergenceHasBeenSet() const;
 
                     /**
-                     * 获取错误码过滤，逗号分隔
-                     * @return ErrorCodeFilter 错误码过滤，逗号分隔
+                     * 获取<p>错误码过滤，逗号分隔</p>
+                     * @return ErrorCodeFilter <p>错误码过滤，逗号分隔</p>
                      * 
                      */
                     std::string GetErrorCodeFilter() const;
 
                     /**
-                     * 设置错误码过滤，逗号分隔
-                     * @param _errorCodeFilter 错误码过滤，逗号分隔
+                     * 设置<p>错误码过滤，逗号分隔</p>
+                     * @param _errorCodeFilter <p>错误码过滤，逗号分隔</p>
                      * 
                      */
                     void SetErrorCodeFilter(const std::string& _errorCodeFilter);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool ErrorCodeFilterHasBeenSet() const;
 
                     /**
-                     * 获取URL排除正则规则，逗号分隔
-                     * @return UrlExclude URL排除正则规则，逗号分隔
+                     * 获取<p>URL排除正则规则，逗号分隔</p>
+                     * @return UrlExclude <p>URL排除正则规则，逗号分隔</p>
                      * 
                      */
                     std::string GetUrlExclude() const;
 
                     /**
-                     * 设置URL排除正则规则，逗号分隔
-                     * @param _urlExclude URL排除正则规则，逗号分隔
+                     * 设置<p>URL排除正则规则，逗号分隔</p>
+                     * @param _urlExclude <p>URL排除正则规则，逗号分隔</p>
                      * 
                      */
                     void SetUrlExclude(const std::string& _urlExclude);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool UrlExcludeHasBeenSet() const;
 
                     /**
-                     * 获取日志开关 0 关 1 开
-                     * @return IsRelatedLog 日志开关 0 关 1 开
+                     * 获取<p>日志开关 0 关 1 开</p>
+                     * @return IsRelatedLog <p>日志开关 0 关 1 开</p>
                      * 
                      */
                     int64_t GetIsRelatedLog() const;
 
                     /**
-                     * 设置日志开关 0 关 1 开
-                     * @param _isRelatedLog 日志开关 0 关 1 开
+                     * 设置<p>日志开关 0 关 1 开</p>
+                     * @param _isRelatedLog <p>日志开关 0 关 1 开</p>
                      * 
                      */
                     void SetIsRelatedLog(const int64_t& _isRelatedLog);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool IsRelatedLogHasBeenSet() const;
 
                     /**
-                     * 获取日志地域
-                     * @return LogRegion 日志地域
+                     * 获取<p>日志地域</p>
+                     * @return LogRegion <p>日志地域</p>
                      * 
                      */
                     std::string GetLogRegion() const;
 
                     /**
-                     * 设置日志地域
-                     * @param _logRegion 日志地域
+                     * 设置<p>日志地域</p>
+                     * @param _logRegion <p>日志地域</p>
                      * 
                      */
                     void SetLogRegion(const std::string& _logRegion);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool LogRegionHasBeenSet() const;
 
                     /**
-                     * 获取日志主题ID
-                     * @return LogTopicID 日志主题ID
+                     * 获取<p>日志主题ID</p>
+                     * @return LogTopicID <p>日志主题ID</p>
                      * 
                      */
                     std::string GetLogTopicID() const;
 
                     /**
-                     * 设置日志主题ID
-                     * @param _logTopicID 日志主题ID
+                     * 设置<p>日志主题ID</p>
+                     * @param _logTopicID <p>日志主题ID</p>
                      * 
                      */
                     void SetLogTopicID(const std::string& _logTopicID);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool LogTopicIDHasBeenSet() const;
 
                     /**
-                     * 获取CLS 日志集 | ES 集群ID
-                     * @return LogSet CLS 日志集 | ES 集群ID
+                     * 获取<p>CLS 日志集 | ES 集群ID</p>
+                     * @return LogSet <p>CLS 日志集 | ES 集群ID</p>
                      * 
                      */
                     std::string GetLogSet() const;
 
                     /**
-                     * 设置CLS 日志集 | ES 集群ID
-                     * @param _logSet CLS 日志集 | ES 集群ID
+                     * 设置<p>CLS 日志集 | ES 集群ID</p>
+                     * @param _logSet <p>CLS 日志集 | ES 集群ID</p>
                      * 
                      */
                     void SetLogSet(const std::string& _logSet);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool LogSetHasBeenSet() const;
 
                     /**
-                     * 获取日志来源 CLS | ES
-                     * @return LogSource 日志来源 CLS | ES
+                     * 获取<p>日志来源 CLS | ES</p>
+                     * @return LogSource <p>日志来源 CLS | ES</p>
                      * 
                      */
                     std::string GetLogSource() const;
 
                     /**
-                     * 设置日志来源 CLS | ES
-                     * @param _logSource 日志来源 CLS | ES
+                     * 设置<p>日志来源 CLS | ES</p>
+                     * @param _logSource <p>日志来源 CLS | ES</p>
                      * 
                      */
                     void SetLogSource(const std::string& _logSource);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool LogSourceHasBeenSet() const;
 
                     /**
-                     * 获取需过滤的接口
-                     * @return IgnoreOperationName 需过滤的接口
+                     * 获取<p>需过滤的接口</p>
+                     * @return IgnoreOperationName <p>需过滤的接口</p>
                      * 
                      */
                     std::string GetIgnoreOperationName() const;
 
                     /**
-                     * 设置需过滤的接口
-                     * @param _ignoreOperationName 需过滤的接口
+                     * 设置<p>需过滤的接口</p>
+                     * @param _ignoreOperationName <p>需过滤的接口</p>
                      * 
                      */
                     void SetIgnoreOperationName(const std::string& _ignoreOperationName);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool IgnoreOperationNameHasBeenSet() const;
 
                     /**
-                     * 获取是否开启线程剖析
-                     * @return EnableSnapshot 是否开启线程剖析
+                     * 获取<p>是否开启线程剖析</p>
+                     * @return EnableSnapshot <p>是否开启线程剖析</p>
                      * 
                      */
                     bool GetEnableSnapshot() const;
 
                     /**
-                     * 设置是否开启线程剖析
-                     * @param _enableSnapshot 是否开启线程剖析
+                     * 设置<p>是否开启线程剖析</p>
+                     * @param _enableSnapshot <p>是否开启线程剖析</p>
                      * 
                      */
                     void SetEnableSnapshot(const bool& _enableSnapshot);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool EnableSnapshotHasBeenSet() const;
 
                     /**
-                     * 获取线程剖析超时阈值
-                     * @return SnapshotTimeout 线程剖析超时阈值
+                     * 获取<p>线程剖析超时阈值</p>
+                     * @return SnapshotTimeout <p>线程剖析超时阈值</p>
                      * 
                      */
                     int64_t GetSnapshotTimeout() const;
 
                     /**
-                     * 设置线程剖析超时阈值
-                     * @param _snapshotTimeout 线程剖析超时阈值
+                     * 设置<p>线程剖析超时阈值</p>
+                     * @param _snapshotTimeout <p>线程剖析超时阈值</p>
                      * 
                      */
                     void SetSnapshotTimeout(const int64_t& _snapshotTimeout);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool SnapshotTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取是否开启agent
-                     * @return AgentEnable 是否开启agent
+                     * 获取<p>是否开启agent</p>
+                     * @return AgentEnable <p>是否开启agent</p>
                      * 
                      */
                     bool GetAgentEnable() const;
 
                     /**
-                     * 设置是否开启agent
-                     * @param _agentEnable 是否开启agent
+                     * 设置<p>是否开启agent</p>
+                     * @param _agentEnable <p>是否开启agent</p>
                      * 
                      */
                     void SetAgentEnable(const bool& _agentEnable);
@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool AgentEnableHasBeenSet() const;
 
                     /**
-                     * 获取是否开启链路压缩
-                     * @return TraceSquash 是否开启链路压缩
+                     * 获取<p>是否开启链路压缩</p>
+                     * @return TraceSquash <p>是否开启链路压缩</p>
                      * 
                      */
                     bool GetTraceSquash() const;
 
                     /**
-                     * 设置是否开启链路压缩
-                     * @param _traceSquash 是否开启链路压缩
+                     * 设置<p>是否开启链路压缩</p>
+                     * @param _traceSquash <p>是否开启链路压缩</p>
                      * 
                      */
                     void SetTraceSquash(const bool& _traceSquash);
@@ -425,15 +425,15 @@ namespace TencentCloud
                     bool TraceSquashHasBeenSet() const;
 
                     /**
-                     * 获取是否开启应用诊断的开关
-                     * @return EventEnable 是否开启应用诊断的开关
+                     * 获取<p>是否开启应用诊断的开关</p>
+                     * @return EventEnable <p>是否开启应用诊断的开关</p>
                      * 
                      */
                     bool GetEventEnable() const;
 
                     /**
-                     * 设置是否开启应用诊断的开关
-                     * @param _eventEnable 是否开启应用诊断的开关
+                     * 设置<p>是否开启应用诊断的开关</p>
+                     * @param _eventEnable <p>是否开启应用诊断的开关</p>
                      * 
                      */
                     void SetEventEnable(const bool& _eventEnable);
@@ -446,15 +446,15 @@ namespace TencentCloud
                     bool EventEnableHasBeenSet() const;
 
                     /**
-                     * 获取组件列表
-                     * @return InstrumentList 组件列表
+                     * 获取<p>组件列表</p>
+                     * @return InstrumentList <p>组件列表</p>
                      * 
                      */
                     std::vector<Instrument> GetInstrumentList() const;
 
                     /**
-                     * 设置组件列表
-                     * @param _instrumentList 组件列表
+                     * 设置<p>组件列表</p>
+                     * @param _instrumentList <p>组件列表</p>
                      * 
                      */
                     void SetInstrumentList(const std::vector<Instrument>& _instrumentList);
@@ -467,15 +467,15 @@ namespace TencentCloud
                     bool InstrumentListHasBeenSet() const;
 
                     /**
-                     * 获取探针接口相关配置
-                     * @return AgentOperationConfigView 探针接口相关配置
+                     * 获取<p>探针接口相关配置</p>
+                     * @return AgentOperationConfigView <p>探针接口相关配置</p>
                      * 
                      */
                     AgentOperationConfigView GetAgentOperationConfigView() const;
 
                     /**
-                     * 设置探针接口相关配置
-                     * @param _agentOperationConfigView 探针接口相关配置
+                     * 设置<p>探针接口相关配置</p>
+                     * @param _agentOperationConfigView <p>探针接口相关配置</p>
                      * 
                      */
                     void SetAgentOperationConfigView(const AgentOperationConfigView& _agentOperationConfigView);
@@ -488,15 +488,15 @@ namespace TencentCloud
                     bool AgentOperationConfigViewHasBeenSet() const;
 
                     /**
-                     * 获取是否开启应用日志配置
-                     * @return EnableLogConfig 是否开启应用日志配置
+                     * 获取<p>是否开启应用日志配置</p>
+                     * @return EnableLogConfig <p>是否开启应用日志配置</p>
                      * 
                      */
                     bool GetEnableLogConfig() const;
 
                     /**
-                     * 设置是否开启应用日志配置
-                     * @param _enableLogConfig 是否开启应用日志配置
+                     * 设置<p>是否开启应用日志配置</p>
+                     * @param _enableLogConfig <p>是否开启应用日志配置</p>
                      * 
                      */
                     void SetEnableLogConfig(const bool& _enableLogConfig);
@@ -509,15 +509,15 @@ namespace TencentCloud
                     bool EnableLogConfigHasBeenSet() const;
 
                     /**
-                     * 获取应用是否开启dashboard配置： false 关（与业务系统保持一致）/true 开（应用级配置）
-                     * @return EnableDashboardConfig 应用是否开启dashboard配置： false 关（与业务系统保持一致）/true 开（应用级配置）
+                     * 获取<p>应用是否开启dashboard配置： false 关（与业务系统保持一致）/true 开（应用级配置）</p>
+                     * @return EnableDashboardConfig <p>应用是否开启dashboard配置： false 关（与业务系统保持一致）/true 开（应用级配置）</p>
                      * 
                      */
                     bool GetEnableDashboardConfig() const;
 
                     /**
-                     * 设置应用是否开启dashboard配置： false 关（与业务系统保持一致）/true 开（应用级配置）
-                     * @param _enableDashboardConfig 应用是否开启dashboard配置： false 关（与业务系统保持一致）/true 开（应用级配置）
+                     * 设置<p>应用是否开启dashboard配置： false 关（与业务系统保持一致）/true 开（应用级配置）</p>
+                     * @param _enableDashboardConfig <p>应用是否开启dashboard配置： false 关（与业务系统保持一致）/true 开（应用级配置）</p>
                      * 
                      */
                     void SetEnableDashboardConfig(const bool& _enableDashboardConfig);
@@ -530,15 +530,15 @@ namespace TencentCloud
                     bool EnableDashboardConfigHasBeenSet() const;
 
                     /**
-                     * 获取是否关联dashboard： 0 关 1 开
-                     * @return IsRelatedDashboard 是否关联dashboard： 0 关 1 开
+                     * 获取<p>是否关联dashboard： 0 关 1 开</p>
+                     * @return IsRelatedDashboard <p>是否关联dashboard： 0 关 1 开</p>
                      * 
                      */
                     int64_t GetIsRelatedDashboard() const;
 
                     /**
-                     * 设置是否关联dashboard： 0 关 1 开
-                     * @param _isRelatedDashboard 是否关联dashboard： 0 关 1 开
+                     * 设置<p>是否关联dashboard： 0 关 1 开</p>
+                     * @param _isRelatedDashboard <p>是否关联dashboard： 0 关 1 开</p>
                      * 
                      */
                     void SetIsRelatedDashboard(const int64_t& _isRelatedDashboard);
@@ -551,15 +551,15 @@ namespace TencentCloud
                     bool IsRelatedDashboardHasBeenSet() const;
 
                     /**
-                     * 获取dashboard ID
-                     * @return DashboardTopicID dashboard ID
+                     * 获取<p>dashboard ID</p>
+                     * @return DashboardTopicID <p>dashboard ID</p>
                      * 
                      */
                     std::string GetDashboardTopicID() const;
 
                     /**
-                     * 设置dashboard ID
-                     * @param _dashboardTopicID dashboard ID
+                     * 设置<p>dashboard ID</p>
+                     * @param _dashboardTopicID <p>dashboard ID</p>
                      * 
                      */
                     void SetDashboardTopicID(const std::string& _dashboardTopicID);
@@ -572,15 +572,15 @@ namespace TencentCloud
                     bool DashboardTopicIDHasBeenSet() const;
 
                     /**
-                     * 获取CLS索引类型(0=全文索引，1=键值索引)
-                     * @return LogIndexType CLS索引类型(0=全文索引，1=键值索引)
+                     * 获取<p>CLS索引类型(0=全文索引，1=键值索引)</p>
+                     * @return LogIndexType <p>CLS索引类型(0=全文索引，1=键值索引)</p>
                      * 
                      */
                     int64_t GetLogIndexType() const;
 
                     /**
-                     * 设置CLS索引类型(0=全文索引，1=键值索引)
-                     * @param _logIndexType CLS索引类型(0=全文索引，1=键值索引)
+                     * 设置<p>CLS索引类型(0=全文索引，1=键值索引)</p>
+                     * @param _logIndexType <p>CLS索引类型(0=全文索引，1=键值索引)</p>
                      * 
                      */
                     void SetLogIndexType(const int64_t& _logIndexType);
@@ -593,15 +593,15 @@ namespace TencentCloud
                     bool LogIndexTypeHasBeenSet() const;
 
                     /**
-                     * 获取traceId的索引key: 当CLS索引类型为键值索引时生效
-                     * @return LogTraceIdKey traceId的索引key: 当CLS索引类型为键值索引时生效
+                     * 获取<p>traceId的索引key: 当CLS索引类型为键值索引时生效</p>
+                     * @return LogTraceIdKey <p>traceId的索引key: 当CLS索引类型为键值索引时生效</p>
                      * 
                      */
                     std::string GetLogTraceIdKey() const;
 
                     /**
-                     * 设置traceId的索引key: 当CLS索引类型为键值索引时生效
-                     * @param _logTraceIdKey traceId的索引key: 当CLS索引类型为键值索引时生效
+                     * 设置<p>traceId的索引key: 当CLS索引类型为键值索引时生效</p>
+                     * @param _logTraceIdKey <p>traceId的索引key: 当CLS索引类型为键值索引时生效</p>
                      * 
                      */
                     void SetLogTraceIdKey(const std::string& _logTraceIdKey);
@@ -614,15 +614,15 @@ namespace TencentCloud
                     bool LogTraceIdKeyHasBeenSet() const;
 
                     /**
-                     * 获取是否开启应用安全配置
-                     * @return EnableSecurityConfig 是否开启应用安全配置
+                     * 获取<p>是否开启应用安全配置</p>
+                     * @return EnableSecurityConfig <p>是否开启应用安全配置</p>
                      * 
                      */
                     bool GetEnableSecurityConfig() const;
 
                     /**
-                     * 设置是否开启应用安全配置
-                     * @param _enableSecurityConfig 是否开启应用安全配置
+                     * 设置<p>是否开启应用安全配置</p>
+                     * @param _enableSecurityConfig <p>是否开启应用安全配置</p>
                      * 
                      */
                     void SetEnableSecurityConfig(const bool& _enableSecurityConfig);
@@ -635,15 +635,15 @@ namespace TencentCloud
                     bool EnableSecurityConfigHasBeenSet() const;
 
                     /**
-                     * 获取是否开启SQL注入分析
-                     * @return IsSqlInjectionAnalysis 是否开启SQL注入分析
+                     * 获取<p>是否开启SQL注入分析</p>
+                     * @return IsSqlInjectionAnalysis <p>是否开启SQL注入分析</p>
                      * 
                      */
                     int64_t GetIsSqlInjectionAnalysis() const;
 
                     /**
-                     * 设置是否开启SQL注入分析
-                     * @param _isSqlInjectionAnalysis 是否开启SQL注入分析
+                     * 设置<p>是否开启SQL注入分析</p>
+                     * @param _isSqlInjectionAnalysis <p>是否开启SQL注入分析</p>
                      * 
                      */
                     void SetIsSqlInjectionAnalysis(const int64_t& _isSqlInjectionAnalysis);
@@ -656,15 +656,15 @@ namespace TencentCloud
                     bool IsSqlInjectionAnalysisHasBeenSet() const;
 
                     /**
-                     * 获取是否开启组件漏洞检测
-                     * @return IsInstrumentationVulnerabilityScan 是否开启组件漏洞检测
+                     * 获取<p>是否开启组件漏洞检测</p>
+                     * @return IsInstrumentationVulnerabilityScan <p>是否开启组件漏洞检测</p>
                      * 
                      */
                     int64_t GetIsInstrumentationVulnerabilityScan() const;
 
                     /**
-                     * 设置是否开启组件漏洞检测
-                     * @param _isInstrumentationVulnerabilityScan 是否开启组件漏洞检测
+                     * 设置<p>是否开启组件漏洞检测</p>
+                     * @param _isInstrumentationVulnerabilityScan <p>是否开启组件漏洞检测</p>
                      * 
                      */
                     void SetIsInstrumentationVulnerabilityScan(const int64_t& _isInstrumentationVulnerabilityScan);
@@ -677,15 +677,15 @@ namespace TencentCloud
                     bool IsInstrumentationVulnerabilityScanHasBeenSet() const;
 
                     /**
-                     * 获取是否开启远程命令检测
-                     * @return IsRemoteCommandExecutionAnalysis 是否开启远程命令检测
+                     * 获取<p>是否开启远程命令检测</p>
+                     * @return IsRemoteCommandExecutionAnalysis <p>是否开启远程命令检测</p>
                      * 
                      */
                     int64_t GetIsRemoteCommandExecutionAnalysis() const;
 
                     /**
-                     * 设置是否开启远程命令检测
-                     * @param _isRemoteCommandExecutionAnalysis 是否开启远程命令检测
+                     * 设置<p>是否开启远程命令检测</p>
+                     * @param _isRemoteCommandExecutionAnalysis <p>是否开启远程命令检测</p>
                      * 
                      */
                     void SetIsRemoteCommandExecutionAnalysis(const int64_t& _isRemoteCommandExecutionAnalysis);
@@ -698,15 +698,15 @@ namespace TencentCloud
                     bool IsRemoteCommandExecutionAnalysisHasBeenSet() const;
 
                     /**
-                     * 获取是否开启内存马检测
-                     * @return IsMemoryHijackingAnalysis 是否开启内存马检测
+                     * 获取<p>是否开启内存马检测</p>
+                     * @return IsMemoryHijackingAnalysis <p>是否开启内存马检测</p>
                      * 
                      */
                     int64_t GetIsMemoryHijackingAnalysis() const;
 
                     /**
-                     * 设置是否开启内存马检测
-                     * @param _isMemoryHijackingAnalysis 是否开启内存马检测
+                     * 设置<p>是否开启内存马检测</p>
+                     * @param _isMemoryHijackingAnalysis <p>是否开启内存马检测</p>
                      * 
                      */
                     void SetIsMemoryHijackingAnalysis(const int64_t& _isMemoryHijackingAnalysis);
@@ -719,15 +719,15 @@ namespace TencentCloud
                     bool IsMemoryHijackingAnalysisHasBeenSet() const;
 
                     /**
-                     * 获取是否开启删除任意文件检测（0-关闭，1-开启）
-                     * @return IsDeleteAnyFileAnalysis 是否开启删除任意文件检测（0-关闭，1-开启）
+                     * 获取<p>是否开启删除任意文件检测（0-关闭，1-开启）</p>
+                     * @return IsDeleteAnyFileAnalysis <p>是否开启删除任意文件检测（0-关闭，1-开启）</p>
                      * 
                      */
                     int64_t GetIsDeleteAnyFileAnalysis() const;
 
                     /**
-                     * 设置是否开启删除任意文件检测（0-关闭，1-开启）
-                     * @param _isDeleteAnyFileAnalysis 是否开启删除任意文件检测（0-关闭，1-开启）
+                     * 设置<p>是否开启删除任意文件检测（0-关闭，1-开启）</p>
+                     * @param _isDeleteAnyFileAnalysis <p>是否开启删除任意文件检测（0-关闭，1-开启）</p>
                      * 
                      */
                     void SetIsDeleteAnyFileAnalysis(const int64_t& _isDeleteAnyFileAnalysis);
@@ -740,15 +740,15 @@ namespace TencentCloud
                     bool IsDeleteAnyFileAnalysisHasBeenSet() const;
 
                     /**
-                     * 获取是否开启读取任意文件检测（0-关闭，1-开启）
-                     * @return IsReadAnyFileAnalysis 是否开启读取任意文件检测（0-关闭，1-开启）
+                     * 获取<p>是否开启读取任意文件检测（0-关闭，1-开启）</p>
+                     * @return IsReadAnyFileAnalysis <p>是否开启读取任意文件检测（0-关闭，1-开启）</p>
                      * 
                      */
                     int64_t GetIsReadAnyFileAnalysis() const;
 
                     /**
-                     * 设置是否开启读取任意文件检测（0-关闭，1-开启）
-                     * @param _isReadAnyFileAnalysis 是否开启读取任意文件检测（0-关闭，1-开启）
+                     * 设置<p>是否开启读取任意文件检测（0-关闭，1-开启）</p>
+                     * @param _isReadAnyFileAnalysis <p>是否开启读取任意文件检测（0-关闭，1-开启）</p>
                      * 
                      */
                     void SetIsReadAnyFileAnalysis(const int64_t& _isReadAnyFileAnalysis);
@@ -761,15 +761,15 @@ namespace TencentCloud
                     bool IsReadAnyFileAnalysisHasBeenSet() const;
 
                     /**
-                     * 获取是否开启上传任意文件检测（0-关闭，1-开启）
-                     * @return IsUploadAnyFileAnalysis 是否开启上传任意文件检测（0-关闭，1-开启）
+                     * 获取<p>是否开启上传任意文件检测（0-关闭，1-开启）</p>
+                     * @return IsUploadAnyFileAnalysis <p>是否开启上传任意文件检测（0-关闭，1-开启）</p>
                      * 
                      */
                     int64_t GetIsUploadAnyFileAnalysis() const;
 
                     /**
-                     * 设置是否开启上传任意文件检测（0-关闭，1-开启）
-                     * @param _isUploadAnyFileAnalysis 是否开启上传任意文件检测（0-关闭，1-开启）
+                     * 设置<p>是否开启上传任意文件检测（0-关闭，1-开启）</p>
+                     * @param _isUploadAnyFileAnalysis <p>是否开启上传任意文件检测（0-关闭，1-开启）</p>
                      * 
                      */
                     void SetIsUploadAnyFileAnalysis(const int64_t& _isUploadAnyFileAnalysis);
@@ -782,15 +782,15 @@ namespace TencentCloud
                     bool IsUploadAnyFileAnalysisHasBeenSet() const;
 
                     /**
-                     * 获取是否开启包含任意文件检测（0-关闭，1-开启）
-                     * @return IsIncludeAnyFileAnalysis 是否开启包含任意文件检测（0-关闭，1-开启）
+                     * 获取<p>是否开启包含任意文件检测（0-关闭，1-开启）</p>
+                     * @return IsIncludeAnyFileAnalysis <p>是否开启包含任意文件检测（0-关闭，1-开启）</p>
                      * 
                      */
                     int64_t GetIsIncludeAnyFileAnalysis() const;
 
                     /**
-                     * 设置是否开启包含任意文件检测（0-关闭，1-开启）
-                     * @param _isIncludeAnyFileAnalysis 是否开启包含任意文件检测（0-关闭，1-开启）
+                     * 设置<p>是否开启包含任意文件检测（0-关闭，1-开启）</p>
+                     * @param _isIncludeAnyFileAnalysis <p>是否开启包含任意文件检测（0-关闭，1-开启）</p>
                      * 
                      */
                     void SetIsIncludeAnyFileAnalysis(const int64_t& _isIncludeAnyFileAnalysis);
@@ -803,15 +803,15 @@ namespace TencentCloud
                     bool IsIncludeAnyFileAnalysisHasBeenSet() const;
 
                     /**
-                     * 获取是否开启目录遍历检测（0-关闭，1-开启）
-                     * @return IsDirectoryTraversalAnalysis 是否开启目录遍历检测（0-关闭，1-开启）
+                     * 获取<p>是否开启目录遍历检测（0-关闭，1-开启）</p>
+                     * @return IsDirectoryTraversalAnalysis <p>是否开启目录遍历检测（0-关闭，1-开启）</p>
                      * 
                      */
                     int64_t GetIsDirectoryTraversalAnalysis() const;
 
                     /**
-                     * 设置是否开启目录遍历检测（0-关闭，1-开启）
-                     * @param _isDirectoryTraversalAnalysis 是否开启目录遍历检测（0-关闭，1-开启）
+                     * 设置<p>是否开启目录遍历检测（0-关闭，1-开启）</p>
+                     * @param _isDirectoryTraversalAnalysis <p>是否开启目录遍历检测（0-关闭，1-开启）</p>
                      * 
                      */
                     void SetIsDirectoryTraversalAnalysis(const int64_t& _isDirectoryTraversalAnalysis);
@@ -824,15 +824,15 @@ namespace TencentCloud
                     bool IsDirectoryTraversalAnalysisHasBeenSet() const;
 
                     /**
-                     * 获取是否开启模板引擎注入检测（0-关闭，1-开启）
-                     * @return IsTemplateEngineInjectionAnalysis 是否开启模板引擎注入检测（0-关闭，1-开启）
+                     * 获取<p>是否开启模板引擎注入检测（0-关闭，1-开启）</p>
+                     * @return IsTemplateEngineInjectionAnalysis <p>是否开启模板引擎注入检测（0-关闭，1-开启）</p>
                      * 
                      */
                     int64_t GetIsTemplateEngineInjectionAnalysis() const;
 
                     /**
-                     * 设置是否开启模板引擎注入检测（0-关闭，1-开启）
-                     * @param _isTemplateEngineInjectionAnalysis 是否开启模板引擎注入检测（0-关闭，1-开启）
+                     * 设置<p>是否开启模板引擎注入检测（0-关闭，1-开启）</p>
+                     * @param _isTemplateEngineInjectionAnalysis <p>是否开启模板引擎注入检测（0-关闭，1-开启）</p>
                      * 
                      */
                     void SetIsTemplateEngineInjectionAnalysis(const int64_t& _isTemplateEngineInjectionAnalysis);
@@ -845,15 +845,15 @@ namespace TencentCloud
                     bool IsTemplateEngineInjectionAnalysisHasBeenSet() const;
 
                     /**
-                     * 获取是否开启脚本引擎注入检测（0-关闭，1-开启）
-                     * @return IsScriptEngineInjectionAnalysis 是否开启脚本引擎注入检测（0-关闭，1-开启）
+                     * 获取<p>是否开启脚本引擎注入检测（0-关闭，1-开启）</p>
+                     * @return IsScriptEngineInjectionAnalysis <p>是否开启脚本引擎注入检测（0-关闭，1-开启）</p>
                      * 
                      */
                     int64_t GetIsScriptEngineInjectionAnalysis() const;
 
                     /**
-                     * 设置是否开启脚本引擎注入检测（0-关闭，1-开启）
-                     * @param _isScriptEngineInjectionAnalysis 是否开启脚本引擎注入检测（0-关闭，1-开启）
+                     * 设置<p>是否开启脚本引擎注入检测（0-关闭，1-开启）</p>
+                     * @param _isScriptEngineInjectionAnalysis <p>是否开启脚本引擎注入检测（0-关闭，1-开启）</p>
                      * 
                      */
                     void SetIsScriptEngineInjectionAnalysis(const int64_t& _isScriptEngineInjectionAnalysis);
@@ -866,15 +866,15 @@ namespace TencentCloud
                     bool IsScriptEngineInjectionAnalysisHasBeenSet() const;
 
                     /**
-                     * 获取是否开启表达式注入检测（0-关闭，1-开启）
-                     * @return IsExpressionInjectionAnalysis 是否开启表达式注入检测（0-关闭，1-开启）
+                     * 获取<p>是否开启表达式注入检测（0-关闭，1-开启）</p>
+                     * @return IsExpressionInjectionAnalysis <p>是否开启表达式注入检测（0-关闭，1-开启）</p>
                      * 
                      */
                     int64_t GetIsExpressionInjectionAnalysis() const;
 
                     /**
-                     * 设置是否开启表达式注入检测（0-关闭，1-开启）
-                     * @param _isExpressionInjectionAnalysis 是否开启表达式注入检测（0-关闭，1-开启）
+                     * 设置<p>是否开启表达式注入检测（0-关闭，1-开启）</p>
+                     * @param _isExpressionInjectionAnalysis <p>是否开启表达式注入检测（0-关闭，1-开启）</p>
                      * 
                      */
                     void SetIsExpressionInjectionAnalysis(const int64_t& _isExpressionInjectionAnalysis);
@@ -887,15 +887,15 @@ namespace TencentCloud
                     bool IsExpressionInjectionAnalysisHasBeenSet() const;
 
                     /**
-                     * 获取是否开启JNDI注入检测（0-关闭，1-开启）
-                     * @return IsJNDIInjectionAnalysis 是否开启JNDI注入检测（0-关闭，1-开启）
+                     * 获取<p>是否开启JNDI注入检测（0-关闭，1-开启）</p>
+                     * @return IsJNDIInjectionAnalysis <p>是否开启JNDI注入检测（0-关闭，1-开启）</p>
                      * 
                      */
                     int64_t GetIsJNDIInjectionAnalysis() const;
 
                     /**
-                     * 设置是否开启JNDI注入检测（0-关闭，1-开启）
-                     * @param _isJNDIInjectionAnalysis 是否开启JNDI注入检测（0-关闭，1-开启）
+                     * 设置<p>是否开启JNDI注入检测（0-关闭，1-开启）</p>
+                     * @param _isJNDIInjectionAnalysis <p>是否开启JNDI注入检测（0-关闭，1-开启）</p>
                      * 
                      */
                     void SetIsJNDIInjectionAnalysis(const int64_t& _isJNDIInjectionAnalysis);
@@ -908,15 +908,15 @@ namespace TencentCloud
                     bool IsJNDIInjectionAnalysisHasBeenSet() const;
 
                     /**
-                     * 获取是否开启JNI注入检测（0-关闭，1-开启）
-                     * @return IsJNIInjectionAnalysis 是否开启JNI注入检测（0-关闭，1-开启）
+                     * 获取<p>是否开启JNI注入检测（0-关闭，1-开启）</p>
+                     * @return IsJNIInjectionAnalysis <p>是否开启JNI注入检测（0-关闭，1-开启）</p>
                      * 
                      */
                     int64_t GetIsJNIInjectionAnalysis() const;
 
                     /**
-                     * 设置是否开启JNI注入检测（0-关闭，1-开启）
-                     * @param _isJNIInjectionAnalysis 是否开启JNI注入检测（0-关闭，1-开启）
+                     * 设置<p>是否开启JNI注入检测（0-关闭，1-开启）</p>
+                     * @param _isJNIInjectionAnalysis <p>是否开启JNI注入检测（0-关闭，1-开启）</p>
                      * 
                      */
                     void SetIsJNIInjectionAnalysis(const int64_t& _isJNIInjectionAnalysis);
@@ -929,15 +929,15 @@ namespace TencentCloud
                     bool IsJNIInjectionAnalysisHasBeenSet() const;
 
                     /**
-                     * 获取是否开启Webshell后门检测（0-关闭，1-开启）
-                     * @return IsWebshellBackdoorAnalysis 是否开启Webshell后门检测（0-关闭，1-开启）
+                     * 获取<p>是否开启Webshell后门检测（0-关闭，1-开启）</p>
+                     * @return IsWebshellBackdoorAnalysis <p>是否开启Webshell后门检测（0-关闭，1-开启）</p>
                      * 
                      */
                     int64_t GetIsWebshellBackdoorAnalysis() const;
 
                     /**
-                     * 设置是否开启Webshell后门检测（0-关闭，1-开启）
-                     * @param _isWebshellBackdoorAnalysis 是否开启Webshell后门检测（0-关闭，1-开启）
+                     * 设置<p>是否开启Webshell后门检测（0-关闭，1-开启）</p>
+                     * @param _isWebshellBackdoorAnalysis <p>是否开启Webshell后门检测（0-关闭，1-开启）</p>
                      * 
                      */
                     void SetIsWebshellBackdoorAnalysis(const int64_t& _isWebshellBackdoorAnalysis);
@@ -950,15 +950,15 @@ namespace TencentCloud
                     bool IsWebshellBackdoorAnalysisHasBeenSet() const;
 
                     /**
-                     * 获取是否开启反序列化检测（0-关闭，1-开启）
-                     * @return IsDeserializationAnalysis 是否开启反序列化检测（0-关闭，1-开启）
+                     * 获取<p>是否开启反序列化检测（0-关闭，1-开启）</p>
+                     * @return IsDeserializationAnalysis <p>是否开启反序列化检测（0-关闭，1-开启）</p>
                      * 
                      */
                     int64_t GetIsDeserializationAnalysis() const;
 
                     /**
-                     * 设置是否开启反序列化检测（0-关闭，1-开启）
-                     * @param _isDeserializationAnalysis 是否开启反序列化检测（0-关闭，1-开启）
+                     * 设置<p>是否开启反序列化检测（0-关闭，1-开启）</p>
+                     * @param _isDeserializationAnalysis <p>是否开启反序列化检测（0-关闭，1-开启）</p>
                      * 
                      */
                     void SetIsDeserializationAnalysis(const int64_t& _isDeserializationAnalysis);
@@ -971,15 +971,15 @@ namespace TencentCloud
                     bool IsDeserializationAnalysisHasBeenSet() const;
 
                     /**
-                     * 获取接口自动收敛开关,0 关 | 1 开
-                     * @return UrlAutoConvergenceEnable 接口自动收敛开关,0 关 | 1 开
+                     * 获取<p>接口自动收敛开关,0 关 | 1 开</p>
+                     * @return UrlAutoConvergenceEnable <p>接口自动收敛开关,0 关 | 1 开</p>
                      * 
                      */
                     bool GetUrlAutoConvergenceEnable() const;
 
                     /**
-                     * 设置接口自动收敛开关,0 关 | 1 开
-                     * @param _urlAutoConvergenceEnable 接口自动收敛开关,0 关 | 1 开
+                     * 设置<p>接口自动收敛开关,0 关 | 1 开</p>
+                     * @param _urlAutoConvergenceEnable <p>接口自动收敛开关,0 关 | 1 开</p>
                      * 
                      */
                     void SetUrlAutoConvergenceEnable(const bool& _urlAutoConvergenceEnable);
@@ -992,15 +992,15 @@ namespace TencentCloud
                     bool UrlAutoConvergenceEnableHasBeenSet() const;
 
                     /**
-                     * 获取URL长分段收敛阈值
-                     * @return UrlLongSegmentThreshold URL长分段收敛阈值
+                     * 获取<p>URL长分段收敛阈值</p>
+                     * @return UrlLongSegmentThreshold <p>URL长分段收敛阈值</p>
                      * 
                      */
                     int64_t GetUrlLongSegmentThreshold() const;
 
                     /**
-                     * 设置URL长分段收敛阈值
-                     * @param _urlLongSegmentThreshold URL长分段收敛阈值
+                     * 设置<p>URL长分段收敛阈值</p>
+                     * @param _urlLongSegmentThreshold <p>URL长分段收敛阈值</p>
                      * 
                      */
                     void SetUrlLongSegmentThreshold(const int64_t& _urlLongSegmentThreshold);
@@ -1013,15 +1013,15 @@ namespace TencentCloud
                     bool UrlLongSegmentThresholdHasBeenSet() const;
 
                     /**
-                     * 获取URL数字分段收敛阈值
-                     * @return UrlNumberSegmentThreshold URL数字分段收敛阈值
+                     * 获取<p>URL数字分段收敛阈值</p>
+                     * @return UrlNumberSegmentThreshold <p>URL数字分段收敛阈值</p>
                      * 
                      */
                     int64_t GetUrlNumberSegmentThreshold() const;
 
                     /**
-                     * 设置URL数字分段收敛阈值
-                     * @param _urlNumberSegmentThreshold URL数字分段收敛阈值
+                     * 设置<p>URL数字分段收敛阈值</p>
+                     * @param _urlNumberSegmentThreshold <p>URL数字分段收敛阈值</p>
                      * 
                      */
                     void SetUrlNumberSegmentThreshold(const int64_t& _urlNumberSegmentThreshold);
@@ -1034,15 +1034,15 @@ namespace TencentCloud
                     bool UrlNumberSegmentThresholdHasBeenSet() const;
 
                     /**
-                     * 获取探针熔断内存阈值
-                     * @return DisableMemoryUsed 探针熔断内存阈值
+                     * 获取<p>探针熔断内存阈值</p>
+                     * @return DisableMemoryUsed <p>探针熔断内存阈值</p>
                      * 
                      */
                     int64_t GetDisableMemoryUsed() const;
 
                     /**
-                     * 设置探针熔断内存阈值
-                     * @param _disableMemoryUsed 探针熔断内存阈值
+                     * 设置<p>探针熔断内存阈值</p>
+                     * @param _disableMemoryUsed <p>探针熔断内存阈值</p>
                      * 
                      */
                     void SetDisableMemoryUsed(const int64_t& _disableMemoryUsed);
@@ -1055,15 +1055,15 @@ namespace TencentCloud
                     bool DisableMemoryUsedHasBeenSet() const;
 
                     /**
-                     * 获取探针熔断CPU阈值
-                     * @return DisableCpuUsed 探针熔断CPU阈值
+                     * 获取<p>探针熔断CPU阈值</p>
+                     * @return DisableCpuUsed <p>探针熔断CPU阈值</p>
                      * 
                      */
                     int64_t GetDisableCpuUsed() const;
 
                     /**
-                     * 设置探针熔断CPU阈值
-                     * @param _disableCpuUsed 探针熔断CPU阈值
+                     * 设置<p>探针熔断CPU阈值</p>
+                     * @param _disableCpuUsed <p>探针熔断CPU阈值</p>
                      * 
                      */
                     void SetDisableCpuUsed(const int64_t& _disableCpuUsed);
@@ -1076,15 +1076,15 @@ namespace TencentCloud
                     bool DisableCpuUsedHasBeenSet() const;
 
                     /**
-                     * 获取是否开启SQL参数获取
-                     * @return DbStatementParametersEnabled 是否开启SQL参数获取
+                     * 获取<p>是否开启SQL参数获取</p>
+                     * @return DbStatementParametersEnabled <p>是否开启SQL参数获取</p>
                      * 
                      */
                     bool GetDbStatementParametersEnabled() const;
 
                     /**
-                     * 设置是否开启SQL参数获取
-                     * @param _dbStatementParametersEnabled 是否开启SQL参数获取
+                     * 设置<p>是否开启SQL参数获取</p>
+                     * @param _dbStatementParametersEnabled <p>是否开启SQL参数获取</p>
                      * 
                      */
                     void SetDbStatementParametersEnabled(const bool& _dbStatementParametersEnabled);
@@ -1097,15 +1097,15 @@ namespace TencentCloud
                     bool DbStatementParametersEnabledHasBeenSet() const;
 
                     /**
-                     * 获取慢SQL阈值
-                     * @return SlowSQLThresholds 慢SQL阈值
+                     * 获取<p>慢SQL阈值</p>
+                     * @return SlowSQLThresholds <p>慢SQL阈值</p>
                      * 
                      */
                     std::vector<ApmTag> GetSlowSQLThresholds() const;
 
                     /**
-                     * 设置慢SQL阈值
-                     * @param _slowSQLThresholds 慢SQL阈值
+                     * 设置<p>慢SQL阈值</p>
+                     * @param _slowSQLThresholds <p>慢SQL阈值</p>
                      * 
                      */
                     void SetSlowSQLThresholds(const std::vector<ApmTag>& _slowSQLThresholds);
@@ -1118,15 +1118,15 @@ namespace TencentCloud
                     bool SlowSQLThresholdsHasBeenSet() const;
 
                     /**
-                     * 获取是否开启脱敏规则
-                     * @return EnableDesensitizationRule 是否开启脱敏规则
+                     * 获取<p>是否开启脱敏规则</p>
+                     * @return EnableDesensitizationRule <p>是否开启脱敏规则</p>
                      * 
                      */
                     int64_t GetEnableDesensitizationRule() const;
 
                     /**
-                     * 设置是否开启脱敏规则
-                     * @param _enableDesensitizationRule 是否开启脱敏规则
+                     * 设置<p>是否开启脱敏规则</p>
+                     * @param _enableDesensitizationRule <p>是否开启脱敏规则</p>
                      * 
                      */
                     void SetEnableDesensitizationRule(const int64_t& _enableDesensitizationRule);
@@ -1139,15 +1139,15 @@ namespace TencentCloud
                     bool EnableDesensitizationRuleHasBeenSet() const;
 
                     /**
-                     * 获取脱敏规则
-                     * @return DesensitizationRule 脱敏规则
+                     * 获取<p>脱敏规则</p>
+                     * @return DesensitizationRule <p>脱敏规则</p>
                      * 
                      */
                     std::string GetDesensitizationRule() const;
 
                     /**
-                     * 设置脱敏规则
-                     * @param _desensitizationRule 脱敏规则
+                     * 设置<p>脱敏规则</p>
+                     * @param _desensitizationRule <p>脱敏规则</p>
                      * 
                      */
                     void SetDesensitizationRule(const std::string& _desensitizationRule);
@@ -1160,15 +1160,15 @@ namespace TencentCloud
                     bool DesensitizationRuleHasBeenSet() const;
 
                     /**
-                     * 获取spanId的索引key: 当CLS索引类型为键值索引时生效
-                     * @return LogSpanIdKey spanId的索引key: 当CLS索引类型为键值索引时生效
+                     * 获取<p>spanId的索引key: 当CLS索引类型为键值索引时生效</p>
+                     * @return LogSpanIdKey <p>spanId的索引key: 当CLS索引类型为键值索引时生效</p>
                      * 
                      */
                     std::string GetLogSpanIdKey() const;
 
                     /**
-                     * 设置spanId的索引key: 当CLS索引类型为键值索引时生效
-                     * @param _logSpanIdKey spanId的索引key: 当CLS索引类型为键值索引时生效
+                     * 设置<p>spanId的索引key: 当CLS索引类型为键值索引时生效</p>
+                     * @param _logSpanIdKey <p>spanId的索引key: 当CLS索引类型为键值索引时生效</p>
                      * 
                      */
                     void SetLogSpanIdKey(const std::string& _logSpanIdKey);
@@ -1181,15 +1181,15 @@ namespace TencentCloud
                     bool LogSpanIdKeyHasBeenSet() const;
 
                     /**
-                     * 获取自动性能剖析任务配置
-                     * @return AutoProfilingConfig 自动性能剖析任务配置
+                     * 获取<p>自动性能剖析任务配置</p>
+                     * @return AutoProfilingConfig <p>自动性能剖析任务配置</p>
                      * 
                      */
                     AutoProfilingConfig GetAutoProfilingConfig() const;
 
                     /**
-                     * 设置自动性能剖析任务配置
-                     * @param _autoProfilingConfig 自动性能剖析任务配置
+                     * 设置<p>自动性能剖析任务配置</p>
+                     * @param _autoProfilingConfig <p>自动性能剖析任务配置</p>
                      * 
                      */
                     void SetAutoProfilingConfig(const AutoProfilingConfig& _autoProfilingConfig);
@@ -1201,337 +1201,418 @@ namespace TencentCloud
                      */
                     bool AutoProfilingConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>阈值配置开关。true 表示使用应用级阈值；false 表示使用业务系统级阈值</p>
+                     * @return EnableThresholdConfig <p>阈值配置开关。true 表示使用应用级阈值；false 表示使用业务系统级阈值</p>
+                     * 
+                     */
+                    bool GetEnableThresholdConfig() const;
+
+                    /**
+                     * 设置<p>阈值配置开关。true 表示使用应用级阈值；false 表示使用业务系统级阈值</p>
+                     * @param _enableThresholdConfig <p>阈值配置开关。true 表示使用应用级阈值；false 表示使用业务系统级阈值</p>
+                     * 
+                     */
+                    void SetEnableThresholdConfig(const bool& _enableThresholdConfig);
+
+                    /**
+                     * 判断参数 EnableThresholdConfig 是否已赋值
+                     * @return EnableThresholdConfig 是否已赋值
+                     * 
+                     */
+                    bool EnableThresholdConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>错误率阈值（%），用于判断应用健康状态为&quot;红色&quot;</p>
+                     * @return ErrRateThreshold <p>错误率阈值（%），用于判断应用健康状态为&quot;红色&quot;</p>
+                     * 
+                     */
+                    int64_t GetErrRateThreshold() const;
+
+                    /**
+                     * 设置<p>错误率阈值（%），用于判断应用健康状态为&quot;红色&quot;</p>
+                     * @param _errRateThreshold <p>错误率阈值（%），用于判断应用健康状态为&quot;红色&quot;</p>
+                     * 
+                     */
+                    void SetErrRateThreshold(const int64_t& _errRateThreshold);
+
+                    /**
+                     * 判断参数 ErrRateThreshold 是否已赋值
+                     * @return ErrRateThreshold 是否已赋值
+                     * 
+                     */
+                    bool ErrRateThresholdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>响应时间预警阈值（ms），用于判断应用健康状态为&quot;黄色&quot;</p>
+                     * @return ResponseDurationWarningThreshold <p>响应时间预警阈值（ms），用于判断应用健康状态为&quot;黄色&quot;</p>
+                     * 
+                     */
+                    int64_t GetResponseDurationWarningThreshold() const;
+
+                    /**
+                     * 设置<p>响应时间预警阈值（ms），用于判断应用健康状态为&quot;黄色&quot;</p>
+                     * @param _responseDurationWarningThreshold <p>响应时间预警阈值（ms），用于判断应用健康状态为&quot;黄色&quot;</p>
+                     * 
+                     */
+                    void SetResponseDurationWarningThreshold(const int64_t& _responseDurationWarningThreshold);
+
+                    /**
+                     * 判断参数 ResponseDurationWarningThreshold 是否已赋值
+                     * @return ResponseDurationWarningThreshold 是否已赋值
+                     * 
+                     */
+                    bool ResponseDurationWarningThresholdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 业务系统 ID
+                     * <p>业务系统 ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 应用名
+                     * <p>应用名</p>
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
 
                     /**
-                     * URL收敛开关,0 关 | 1 开
+                     * <p>URL收敛开关,0 关 | 1 开</p>
                      */
                     int64_t m_urlConvergenceSwitch;
                     bool m_urlConvergenceSwitchHasBeenSet;
 
                     /**
-                     * URL收敛阈值
+                     * <p>URL收敛阈值</p>
                      */
                     int64_t m_urlConvergenceThreshold;
                     bool m_urlConvergenceThresholdHasBeenSet;
 
                     /**
-                     * 异常过滤正则规则，逗号分隔
+                     * <p>异常过滤正则规则，逗号分隔</p>
                      */
                     std::string m_exceptionFilter;
                     bool m_exceptionFilterHasBeenSet;
 
                     /**
-                     * URL收敛正则规则，逗号分隔
+                     * <p>URL收敛正则规则，逗号分隔</p>
                      */
                     std::string m_urlConvergence;
                     bool m_urlConvergenceHasBeenSet;
 
                     /**
-                     * 错误码过滤，逗号分隔
+                     * <p>错误码过滤，逗号分隔</p>
                      */
                     std::string m_errorCodeFilter;
                     bool m_errorCodeFilterHasBeenSet;
 
                     /**
-                     * URL排除正则规则，逗号分隔
+                     * <p>URL排除正则规则，逗号分隔</p>
                      */
                     std::string m_urlExclude;
                     bool m_urlExcludeHasBeenSet;
 
                     /**
-                     * 日志开关 0 关 1 开
+                     * <p>日志开关 0 关 1 开</p>
                      */
                     int64_t m_isRelatedLog;
                     bool m_isRelatedLogHasBeenSet;
 
                     /**
-                     * 日志地域
+                     * <p>日志地域</p>
                      */
                     std::string m_logRegion;
                     bool m_logRegionHasBeenSet;
 
                     /**
-                     * 日志主题ID
+                     * <p>日志主题ID</p>
                      */
                     std::string m_logTopicID;
                     bool m_logTopicIDHasBeenSet;
 
                     /**
-                     * CLS 日志集 | ES 集群ID
+                     * <p>CLS 日志集 | ES 集群ID</p>
                      */
                     std::string m_logSet;
                     bool m_logSetHasBeenSet;
 
                     /**
-                     * 日志来源 CLS | ES
+                     * <p>日志来源 CLS | ES</p>
                      */
                     std::string m_logSource;
                     bool m_logSourceHasBeenSet;
 
                     /**
-                     * 需过滤的接口
+                     * <p>需过滤的接口</p>
                      */
                     std::string m_ignoreOperationName;
                     bool m_ignoreOperationNameHasBeenSet;
 
                     /**
-                     * 是否开启线程剖析
+                     * <p>是否开启线程剖析</p>
                      */
                     bool m_enableSnapshot;
                     bool m_enableSnapshotHasBeenSet;
 
                     /**
-                     * 线程剖析超时阈值
+                     * <p>线程剖析超时阈值</p>
                      */
                     int64_t m_snapshotTimeout;
                     bool m_snapshotTimeoutHasBeenSet;
 
                     /**
-                     * 是否开启agent
+                     * <p>是否开启agent</p>
                      */
                     bool m_agentEnable;
                     bool m_agentEnableHasBeenSet;
 
                     /**
-                     * 是否开启链路压缩
+                     * <p>是否开启链路压缩</p>
                      */
                     bool m_traceSquash;
                     bool m_traceSquashHasBeenSet;
 
                     /**
-                     * 是否开启应用诊断的开关
+                     * <p>是否开启应用诊断的开关</p>
                      */
                     bool m_eventEnable;
                     bool m_eventEnableHasBeenSet;
 
                     /**
-                     * 组件列表
+                     * <p>组件列表</p>
                      */
                     std::vector<Instrument> m_instrumentList;
                     bool m_instrumentListHasBeenSet;
 
                     /**
-                     * 探针接口相关配置
+                     * <p>探针接口相关配置</p>
                      */
                     AgentOperationConfigView m_agentOperationConfigView;
                     bool m_agentOperationConfigViewHasBeenSet;
 
                     /**
-                     * 是否开启应用日志配置
+                     * <p>是否开启应用日志配置</p>
                      */
                     bool m_enableLogConfig;
                     bool m_enableLogConfigHasBeenSet;
 
                     /**
-                     * 应用是否开启dashboard配置： false 关（与业务系统保持一致）/true 开（应用级配置）
+                     * <p>应用是否开启dashboard配置： false 关（与业务系统保持一致）/true 开（应用级配置）</p>
                      */
                     bool m_enableDashboardConfig;
                     bool m_enableDashboardConfigHasBeenSet;
 
                     /**
-                     * 是否关联dashboard： 0 关 1 开
+                     * <p>是否关联dashboard： 0 关 1 开</p>
                      */
                     int64_t m_isRelatedDashboard;
                     bool m_isRelatedDashboardHasBeenSet;
 
                     /**
-                     * dashboard ID
+                     * <p>dashboard ID</p>
                      */
                     std::string m_dashboardTopicID;
                     bool m_dashboardTopicIDHasBeenSet;
 
                     /**
-                     * CLS索引类型(0=全文索引，1=键值索引)
+                     * <p>CLS索引类型(0=全文索引，1=键值索引)</p>
                      */
                     int64_t m_logIndexType;
                     bool m_logIndexTypeHasBeenSet;
 
                     /**
-                     * traceId的索引key: 当CLS索引类型为键值索引时生效
+                     * <p>traceId的索引key: 当CLS索引类型为键值索引时生效</p>
                      */
                     std::string m_logTraceIdKey;
                     bool m_logTraceIdKeyHasBeenSet;
 
                     /**
-                     * 是否开启应用安全配置
+                     * <p>是否开启应用安全配置</p>
                      */
                     bool m_enableSecurityConfig;
                     bool m_enableSecurityConfigHasBeenSet;
 
                     /**
-                     * 是否开启SQL注入分析
+                     * <p>是否开启SQL注入分析</p>
                      */
                     int64_t m_isSqlInjectionAnalysis;
                     bool m_isSqlInjectionAnalysisHasBeenSet;
 
                     /**
-                     * 是否开启组件漏洞检测
+                     * <p>是否开启组件漏洞检测</p>
                      */
                     int64_t m_isInstrumentationVulnerabilityScan;
                     bool m_isInstrumentationVulnerabilityScanHasBeenSet;
 
                     /**
-                     * 是否开启远程命令检测
+                     * <p>是否开启远程命令检测</p>
                      */
                     int64_t m_isRemoteCommandExecutionAnalysis;
                     bool m_isRemoteCommandExecutionAnalysisHasBeenSet;
 
                     /**
-                     * 是否开启内存马检测
+                     * <p>是否开启内存马检测</p>
                      */
                     int64_t m_isMemoryHijackingAnalysis;
                     bool m_isMemoryHijackingAnalysisHasBeenSet;
 
                     /**
-                     * 是否开启删除任意文件检测（0-关闭，1-开启）
+                     * <p>是否开启删除任意文件检测（0-关闭，1-开启）</p>
                      */
                     int64_t m_isDeleteAnyFileAnalysis;
                     bool m_isDeleteAnyFileAnalysisHasBeenSet;
 
                     /**
-                     * 是否开启读取任意文件检测（0-关闭，1-开启）
+                     * <p>是否开启读取任意文件检测（0-关闭，1-开启）</p>
                      */
                     int64_t m_isReadAnyFileAnalysis;
                     bool m_isReadAnyFileAnalysisHasBeenSet;
 
                     /**
-                     * 是否开启上传任意文件检测（0-关闭，1-开启）
+                     * <p>是否开启上传任意文件检测（0-关闭，1-开启）</p>
                      */
                     int64_t m_isUploadAnyFileAnalysis;
                     bool m_isUploadAnyFileAnalysisHasBeenSet;
 
                     /**
-                     * 是否开启包含任意文件检测（0-关闭，1-开启）
+                     * <p>是否开启包含任意文件检测（0-关闭，1-开启）</p>
                      */
                     int64_t m_isIncludeAnyFileAnalysis;
                     bool m_isIncludeAnyFileAnalysisHasBeenSet;
 
                     /**
-                     * 是否开启目录遍历检测（0-关闭，1-开启）
+                     * <p>是否开启目录遍历检测（0-关闭，1-开启）</p>
                      */
                     int64_t m_isDirectoryTraversalAnalysis;
                     bool m_isDirectoryTraversalAnalysisHasBeenSet;
 
                     /**
-                     * 是否开启模板引擎注入检测（0-关闭，1-开启）
+                     * <p>是否开启模板引擎注入检测（0-关闭，1-开启）</p>
                      */
                     int64_t m_isTemplateEngineInjectionAnalysis;
                     bool m_isTemplateEngineInjectionAnalysisHasBeenSet;
 
                     /**
-                     * 是否开启脚本引擎注入检测（0-关闭，1-开启）
+                     * <p>是否开启脚本引擎注入检测（0-关闭，1-开启）</p>
                      */
                     int64_t m_isScriptEngineInjectionAnalysis;
                     bool m_isScriptEngineInjectionAnalysisHasBeenSet;
 
                     /**
-                     * 是否开启表达式注入检测（0-关闭，1-开启）
+                     * <p>是否开启表达式注入检测（0-关闭，1-开启）</p>
                      */
                     int64_t m_isExpressionInjectionAnalysis;
                     bool m_isExpressionInjectionAnalysisHasBeenSet;
 
                     /**
-                     * 是否开启JNDI注入检测（0-关闭，1-开启）
+                     * <p>是否开启JNDI注入检测（0-关闭，1-开启）</p>
                      */
                     int64_t m_isJNDIInjectionAnalysis;
                     bool m_isJNDIInjectionAnalysisHasBeenSet;
 
                     /**
-                     * 是否开启JNI注入检测（0-关闭，1-开启）
+                     * <p>是否开启JNI注入检测（0-关闭，1-开启）</p>
                      */
                     int64_t m_isJNIInjectionAnalysis;
                     bool m_isJNIInjectionAnalysisHasBeenSet;
 
                     /**
-                     * 是否开启Webshell后门检测（0-关闭，1-开启）
+                     * <p>是否开启Webshell后门检测（0-关闭，1-开启）</p>
                      */
                     int64_t m_isWebshellBackdoorAnalysis;
                     bool m_isWebshellBackdoorAnalysisHasBeenSet;
 
                     /**
-                     * 是否开启反序列化检测（0-关闭，1-开启）
+                     * <p>是否开启反序列化检测（0-关闭，1-开启）</p>
                      */
                     int64_t m_isDeserializationAnalysis;
                     bool m_isDeserializationAnalysisHasBeenSet;
 
                     /**
-                     * 接口自动收敛开关,0 关 | 1 开
+                     * <p>接口自动收敛开关,0 关 | 1 开</p>
                      */
                     bool m_urlAutoConvergenceEnable;
                     bool m_urlAutoConvergenceEnableHasBeenSet;
 
                     /**
-                     * URL长分段收敛阈值
+                     * <p>URL长分段收敛阈值</p>
                      */
                     int64_t m_urlLongSegmentThreshold;
                     bool m_urlLongSegmentThresholdHasBeenSet;
 
                     /**
-                     * URL数字分段收敛阈值
+                     * <p>URL数字分段收敛阈值</p>
                      */
                     int64_t m_urlNumberSegmentThreshold;
                     bool m_urlNumberSegmentThresholdHasBeenSet;
 
                     /**
-                     * 探针熔断内存阈值
+                     * <p>探针熔断内存阈值</p>
                      */
                     int64_t m_disableMemoryUsed;
                     bool m_disableMemoryUsedHasBeenSet;
 
                     /**
-                     * 探针熔断CPU阈值
+                     * <p>探针熔断CPU阈值</p>
                      */
                     int64_t m_disableCpuUsed;
                     bool m_disableCpuUsedHasBeenSet;
 
                     /**
-                     * 是否开启SQL参数获取
+                     * <p>是否开启SQL参数获取</p>
                      */
                     bool m_dbStatementParametersEnabled;
                     bool m_dbStatementParametersEnabledHasBeenSet;
 
                     /**
-                     * 慢SQL阈值
+                     * <p>慢SQL阈值</p>
                      */
                     std::vector<ApmTag> m_slowSQLThresholds;
                     bool m_slowSQLThresholdsHasBeenSet;
 
                     /**
-                     * 是否开启脱敏规则
+                     * <p>是否开启脱敏规则</p>
                      */
                     int64_t m_enableDesensitizationRule;
                     bool m_enableDesensitizationRuleHasBeenSet;
 
                     /**
-                     * 脱敏规则
+                     * <p>脱敏规则</p>
                      */
                     std::string m_desensitizationRule;
                     bool m_desensitizationRuleHasBeenSet;
 
                     /**
-                     * spanId的索引key: 当CLS索引类型为键值索引时生效
+                     * <p>spanId的索引key: 当CLS索引类型为键值索引时生效</p>
                      */
                     std::string m_logSpanIdKey;
                     bool m_logSpanIdKeyHasBeenSet;
 
                     /**
-                     * 自动性能剖析任务配置
+                     * <p>自动性能剖析任务配置</p>
                      */
                     AutoProfilingConfig m_autoProfilingConfig;
                     bool m_autoProfilingConfigHasBeenSet;
+
+                    /**
+                     * <p>阈值配置开关。true 表示使用应用级阈值；false 表示使用业务系统级阈值</p>
+                     */
+                    bool m_enableThresholdConfig;
+                    bool m_enableThresholdConfigHasBeenSet;
+
+                    /**
+                     * <p>错误率阈值（%），用于判断应用健康状态为&quot;红色&quot;</p>
+                     */
+                    int64_t m_errRateThreshold;
+                    bool m_errRateThresholdHasBeenSet;
+
+                    /**
+                     * <p>响应时间预警阈值（ms），用于判断应用健康状态为&quot;黄色&quot;</p>
+                     */
+                    int64_t m_responseDurationWarningThreshold;
+                    bool m_responseDurationWarningThresholdHasBeenSet;
 
                 };
             }

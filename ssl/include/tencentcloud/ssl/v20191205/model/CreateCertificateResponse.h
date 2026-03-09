@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取证书ID列表
-                     * @return CertificateIds 证书ID列表
+                     * 获取<p>证书ID列表</p>
+                     * @return CertificateIds <p>证书ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetCertificateIds() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool CertificateIdsHasBeenSet() const;
 
                     /**
-                     * 获取订单号列表
-                     * @return DealIds 订单号列表
+                     * 获取<p>订单号列表</p>
+                     * @return DealIds <p>订单号列表</p>
                      * 
                      */
                     std::vector<std::string> GetDealIds() const;
@@ -71,19 +71,39 @@ namespace TencentCloud
                      */
                     bool DealIdsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>资源ID列表</p>
+                     * @return ResourceIds <p>资源ID列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetResourceIds() const;
+
+                    /**
+                     * 判断参数 ResourceIds 是否已赋值
+                     * @return ResourceIds 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 证书ID列表
+                     * <p>证书ID列表</p>
                      */
                     std::vector<std::string> m_certificateIds;
                     bool m_certificateIdsHasBeenSet;
 
                     /**
-                     * 订单号列表
+                     * <p>订单号列表</p>
                      */
                     std::vector<std::string> m_dealIds;
                     bool m_dealIdsHasBeenSet;
+
+                    /**
+                     * <p>资源ID列表</p>
+                     */
+                    std::vector<std::string> m_resourceIds;
+                    bool m_resourceIdsHasBeenSet;
 
                 };
             }

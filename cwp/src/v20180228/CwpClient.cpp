@@ -12040,6 +12040,106 @@ CwpClient::DescribeOverviewStatisticsOutcomeCallable CwpClient::DescribeOverview
     return prom->get_future();
 }
 
+CwpClient::DescribePatchEffectHostListOutcome CwpClient::DescribePatchEffectHostList(const DescribePatchEffectHostListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePatchEffectHostList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePatchEffectHostListResponse rsp = DescribePatchEffectHostListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePatchEffectHostListOutcome(rsp);
+        else
+            return DescribePatchEffectHostListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePatchEffectHostListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribePatchEffectHostListAsync(const DescribePatchEffectHostListRequest& request, const DescribePatchEffectHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePatchEffectHostListRequest&;
+    using Resp = DescribePatchEffectHostListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePatchEffectHostList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribePatchEffectHostListOutcomeCallable CwpClient::DescribePatchEffectHostListCallable(const DescribePatchEffectHostListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePatchEffectHostListOutcome>>();
+    DescribePatchEffectHostListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribePatchEffectHostListRequest&,
+        DescribePatchEffectHostListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CwpClient::DescribePatchInfoOutcome CwpClient::DescribePatchInfo(const DescribePatchInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePatchInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePatchInfoResponse rsp = DescribePatchInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePatchInfoOutcome(rsp);
+        else
+            return DescribePatchInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePatchInfoOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribePatchInfoAsync(const DescribePatchInfoRequest& request, const DescribePatchInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePatchInfoRequest&;
+    using Resp = DescribePatchInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePatchInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribePatchInfoOutcomeCallable CwpClient::DescribePatchInfoCallable(const DescribePatchInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePatchInfoOutcome>>();
+    DescribePatchInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribePatchInfoRequest&,
+        DescribePatchInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CwpClient::DescribePrivilegeEventInfoOutcome CwpClient::DescribePrivilegeEventInfo(const DescribePrivilegeEventInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePrivilegeEventInfo");
@@ -17440,6 +17540,56 @@ CwpClient::DescribeWebPageServiceInfoOutcomeCallable CwpClient::DescribeWebPageS
     return prom->get_future();
 }
 
+CwpClient::DescribeWindowsPatchListOutcome CwpClient::DescribeWindowsPatchList(const DescribeWindowsPatchListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWindowsPatchList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWindowsPatchListResponse rsp = DescribeWindowsPatchListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWindowsPatchListOutcome(rsp);
+        else
+            return DescribeWindowsPatchListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWindowsPatchListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeWindowsPatchListAsync(const DescribeWindowsPatchListRequest& request, const DescribeWindowsPatchListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeWindowsPatchListRequest&;
+    using Resp = DescribeWindowsPatchListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeWindowsPatchList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribeWindowsPatchListOutcomeCallable CwpClient::DescribeWindowsPatchListCallable(const DescribeWindowsPatchListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeWindowsPatchListOutcome>>();
+    DescribeWindowsPatchListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeWindowsPatchListRequest&,
+        DescribeWindowsPatchListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CwpClient::DestroyOrderOutcome CwpClient::DestroyOrder(const DestroyOrderRequest &request)
 {
     auto outcome = MakeRequest(request, "DestroyOrder");
@@ -19740,6 +19890,56 @@ CwpClient::ExportNonlocalLoginPlacesOutcomeCallable CwpClient::ExportNonlocalLog
     return prom->get_future();
 }
 
+CwpClient::ExportPatchEffectHostListOutcome CwpClient::ExportPatchEffectHostList(const ExportPatchEffectHostListRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportPatchEffectHostList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportPatchEffectHostListResponse rsp = ExportPatchEffectHostListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportPatchEffectHostListOutcome(rsp);
+        else
+            return ExportPatchEffectHostListOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportPatchEffectHostListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ExportPatchEffectHostListAsync(const ExportPatchEffectHostListRequest& request, const ExportPatchEffectHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ExportPatchEffectHostListRequest&;
+    using Resp = ExportPatchEffectHostListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ExportPatchEffectHostList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::ExportPatchEffectHostListOutcomeCallable CwpClient::ExportPatchEffectHostListCallable(const ExportPatchEffectHostListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ExportPatchEffectHostListOutcome>>();
+    ExportPatchEffectHostListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportPatchEffectHostListRequest&,
+        ExportPatchEffectHostListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CwpClient::ExportPrivilegeEventsOutcome CwpClient::ExportPrivilegeEvents(const ExportPrivilegeEventsRequest &request)
 {
     auto outcome = MakeRequest(request, "ExportPrivilegeEvents");
@@ -20882,6 +21082,56 @@ CwpClient::ExportWebPageEventListOutcomeCallable CwpClient::ExportWebPageEventLi
         const CwpClient*,
         const ExportWebPageEventListRequest&,
         ExportWebPageEventListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CwpClient::ExportWindowsPatchListOutcome CwpClient::ExportWindowsPatchList(const ExportWindowsPatchListRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportWindowsPatchList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportWindowsPatchListResponse rsp = ExportWindowsPatchListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportWindowsPatchListOutcome(rsp);
+        else
+            return ExportWindowsPatchListOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportWindowsPatchListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ExportWindowsPatchListAsync(const ExportWindowsPatchListRequest& request, const ExportWindowsPatchListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ExportWindowsPatchListRequest&;
+    using Resp = ExportWindowsPatchListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ExportWindowsPatchList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::ExportWindowsPatchListOutcomeCallable CwpClient::ExportWindowsPatchListCallable(const ExportWindowsPatchListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ExportWindowsPatchListOutcome>>();
+    ExportWindowsPatchListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const ExportWindowsPatchListRequest&,
+        ExportWindowsPatchListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

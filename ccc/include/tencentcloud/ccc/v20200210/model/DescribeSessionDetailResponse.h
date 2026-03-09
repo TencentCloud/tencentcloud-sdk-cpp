@@ -47,8 +47,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主叫号码
-                     * @return Caller 主叫号码
+                     * 获取<p>主叫号码</p>
+                     * @return Caller <p>主叫号码</p>
                      * 
                      */
                     std::string GetCaller() const;
@@ -61,8 +61,8 @@ namespace TencentCloud
                     bool CallerHasBeenSet() const;
 
                     /**
-                     * 获取被叫号码
-                     * @return Callee 被叫号码
+                     * 获取<p>被叫号码</p>
+                     * @return Callee <p>被叫号码</p>
                      * 
                      */
                     std::string GetCallee() const;
@@ -75,8 +75,8 @@ namespace TencentCloud
                     bool CalleeHasBeenSet() const;
 
                     /**
-                     * 获取通话类型 1 呼出 2 呼入 3 音频呼入 5 预测式外呼 6 内线呼叫
-                     * @return CallType 通话类型 1 呼出 2 呼入 3 音频呼入 5 预测式外呼 6 内线呼叫
+                     * 获取<p>通话类型 1 呼出 2 呼入 3 音频呼入 5 预测式外呼 6 内线呼叫</p>
+                     * @return CallType <p>通话类型 1 呼出 2 呼入 3 音频呼入 5 预测式外呼 6 内线呼叫</p>
                      * 
                      */
                     int64_t GetCallType() const;
@@ -89,8 +89,8 @@ namespace TencentCloud
                     bool CallTypeHasBeenSet() const;
 
                     /**
-                     * 获取开始时间戳，Unix 秒级时间戳
-                     * @return StartTimeStamp 开始时间戳，Unix 秒级时间戳
+                     * 获取<p>开始时间戳，Unix 秒级时间戳</p>
+                     * @return StartTimeStamp <p>开始时间戳，Unix 秒级时间戳</p>
                      * 
                      */
                     int64_t GetStartTimeStamp() const;
@@ -103,8 +103,8 @@ namespace TencentCloud
                     bool StartTimeStampHasBeenSet() const;
 
                     /**
-                     * 获取振铃时间戳，UNIX 秒级时间戳
-                     * @return RingTimestamp 振铃时间戳，UNIX 秒级时间戳
+                     * 获取<p>振铃时间戳，UNIX 秒级时间戳</p>
+                     * @return RingTimestamp <p>振铃时间戳，UNIX 秒级时间戳</p>
                      * 
                      */
                     int64_t GetRingTimestamp() const;
@@ -117,8 +117,8 @@ namespace TencentCloud
                     bool RingTimestampHasBeenSet() const;
 
                     /**
-                     * 获取接听时间戳，UNIX 秒级时间戳
-                     * @return AcceptTimestamp 接听时间戳，UNIX 秒级时间戳
+                     * 获取<p>接听时间戳，UNIX 秒级时间戳</p>
+                     * @return AcceptTimestamp <p>接听时间戳，UNIX 秒级时间戳</p>
                      * 
                      */
                     int64_t GetAcceptTimestamp() const;
@@ -131,8 +131,8 @@ namespace TencentCloud
                     bool AcceptTimestampHasBeenSet() const;
 
                     /**
-                     * 获取结束时间戳，UNIX 秒级时间戳
-                     * @return EndedTimestamp 结束时间戳，UNIX 秒级时间戳
+                     * 获取<p>结束时间戳，UNIX 秒级时间戳</p>
+                     * @return EndedTimestamp <p>结束时间戳，UNIX 秒级时间戳</p>
                      * 
                      */
                     int64_t GetEndedTimestamp() const;
@@ -145,8 +145,8 @@ namespace TencentCloud
                     bool EndedTimestampHasBeenSet() const;
 
                     /**
-                     * 获取进入排队时间，Unix 秒级时间戳
-                     * @return QueuedTimestamp 进入排队时间，Unix 秒级时间戳
+                     * 获取<p>进入排队时间，Unix 秒级时间戳</p>
+                     * @return QueuedTimestamp <p>进入排队时间，Unix 秒级时间戳</p>
                      * 
                      */
                     int64_t GetQueuedTimestamp() const;
@@ -159,8 +159,8 @@ namespace TencentCloud
                     bool QueuedTimestampHasBeenSet() const;
 
                     /**
-                     * 获取座席账号
-                     * @return StaffUserId 座席账号
+                     * 获取<p>座席账号</p>
+                     * @return StaffUserId <p>座席账号</p>
                      * 
                      */
                     std::string GetStaffUserId() const;
@@ -173,8 +173,8 @@ namespace TencentCloud
                     bool StaffUserIdHasBeenSet() const;
 
                     /**
-                     * 获取参考 DescribeTelCdr 接口 EndStatus 字段
-                     * @return EndStatus 参考 DescribeTelCdr 接口 EndStatus 字段
+                     * 获取<p>参考 DescribeTelCdr 接口 EndStatus 字段</p>
+                     * @return EndStatus <p>参考 DescribeTelCdr 接口 EndStatus 字段</p>
                      * 
                      */
                     int64_t GetEndStatus() const;
@@ -187,8 +187,8 @@ namespace TencentCloud
                     bool EndStatusHasBeenSet() const;
 
                     /**
-                     * 获取排队技能组 ID
-                     * @return QueuedSkillGroupId 排队技能组 ID
+                     * 获取<p>排队技能组 ID</p>
+                     * @return QueuedSkillGroupId <p>排队技能组 ID</p>
                      * 
                      */
                     int64_t GetQueuedSkillGroupId() const;
@@ -201,8 +201,8 @@ namespace TencentCloud
                     bool QueuedSkillGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取排队技能组名称
-                     * @return QueuedSkillGroupName 排队技能组名称
+                     * 获取<p>排队技能组名称</p>
+                     * @return QueuedSkillGroupName <p>排队技能组名称</p>
                      * 
                      */
                     std::string GetQueuedSkillGroupName() const;
@@ -215,8 +215,8 @@ namespace TencentCloud
                     bool QueuedSkillGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取录音链接，带鉴权和有效期，获取之后请在24 小时内拉取，不要持久化此链接。如此链接已过期，请重新调用此接口获取新的链接
-                     * @return RecordURL 录音链接，带鉴权和有效期，获取之后请在24 小时内拉取，不要持久化此链接。如此链接已过期，请重新调用此接口获取新的链接
+                     * 获取<p>录音链接，带鉴权和有效期，获取之后请在24 小时内拉取，不要持久化此链接。如此链接已过期，请重新调用此接口获取新的链接</p>
+                     * @return RecordURL <p>录音链接，带鉴权和有效期，获取之后请在24 小时内拉取，不要持久化此链接。如此链接已过期，请重新调用此接口获取新的链接</p>
                      * 
                      */
                     std::string GetRecordURL() const;
@@ -229,8 +229,8 @@ namespace TencentCloud
                     bool RecordURLHasBeenSet() const;
 
                     /**
-                     * 获取录音转存第三方 COS 链接
-                     * @return CustomRecordURL 录音转存第三方 COS 链接
+                     * 获取<p>录音转存第三方 COS 链接</p>
+                     * @return CustomRecordURL <p>录音转存第三方 COS 链接</p>
                      * 
                      */
                     std::string GetCustomRecordURL() const;
@@ -243,8 +243,8 @@ namespace TencentCloud
                     bool CustomRecordURLHasBeenSet() const;
 
                     /**
-                     * 获取录音文本信息链接，带鉴权和有效期，获取之后请在24 小时拉取，不要持久化此链接。如此链接已过期，请重新调用此接口获取新的链接
-                     * @return AsrURL 录音文本信息链接，带鉴权和有效期，获取之后请在24 小时拉取，不要持久化此链接。如此链接已过期，请重新调用此接口获取新的链接
+                     * 获取<p>录音文本信息链接，带鉴权和有效期，获取之后请在24 小时拉取，不要持久化此链接。如此链接已过期，请重新调用此接口获取新的链接</p>
+                     * @return AsrURL <p>录音文本信息链接，带鉴权和有效期，获取之后请在24 小时拉取，不要持久化此链接。如此链接已过期，请重新调用此接口获取新的链接</p>
                      * 
                      */
                     std::string GetAsrURL() const;
@@ -257,8 +257,8 @@ namespace TencentCloud
                     bool AsrURLHasBeenSet() const;
 
                     /**
-                     * 获取语音留言录音链接
-                     * @return VoicemailRecordURL 语音留言录音链接
+                     * 获取<p>语音留言录音链接</p>
+                     * @return VoicemailRecordURL <p>语音留言录音链接</p>
                      * 
                      */
                     std::vector<std::string> GetVoicemailRecordURL() const;
@@ -271,8 +271,8 @@ namespace TencentCloud
                     bool VoicemailRecordURLHasBeenSet() const;
 
                     /**
-                     * 获取语音留言录音文本信息链接，需在控制台购买离线语音识别套餐包并开启离线语音识别开关
-                     * @return VoicemailAsrURL 语音留言录音文本信息链接，需在控制台购买离线语音识别套餐包并开启离线语音识别开关
+                     * 获取<p>语音留言录音文本信息链接，需在控制台购买离线语音识别套餐包并开启离线语音识别开关</p>
+                     * @return VoicemailAsrURL <p>语音留言录音文本信息链接，需在控制台购买离线语音识别套餐包并开启离线语音识别开关</p>
                      * 
                      */
                     std::vector<std::string> GetVoicemailAsrURL() const;
@@ -285,8 +285,8 @@ namespace TencentCloud
                     bool VoicemailAsrURLHasBeenSet() const;
 
                     /**
-                     * 获取IVR 按键信息
-                     * @return IVRKeyPressed IVR 按键信息
+                     * 获取<p>IVR 按键信息</p>
+                     * @return IVRKeyPressed <p>IVR 按键信息</p>
                      * 
                      */
                     std::vector<IVRKeyPressedElement> GetIVRKeyPressed() const;
@@ -299,8 +299,8 @@ namespace TencentCloud
                     bool IVRKeyPressedHasBeenSet() const;
 
                     /**
-                     * 获取满意度按键信息
-                     * @return PostIVRKeyPressed 满意度按键信息
+                     * 获取<p>满意度按键信息</p>
+                     * @return PostIVRKeyPressed <p>满意度按键信息</p>
                      * 
                      */
                     std::vector<IVRKeyPressedElement> GetPostIVRKeyPressed() const;
@@ -313,8 +313,8 @@ namespace TencentCloud
                     bool PostIVRKeyPressedHasBeenSet() const;
 
                     /**
-                     * 获取挂机方 seat 座席 user 用户 system 系统
-                     * @return HungUpSide 挂机方 seat 座席 user 用户 system 系统
+                     * 获取<p>挂机方 seat 座席 user 用户 system 系统</p>
+                     * @return HungUpSide <p>挂机方 seat 座席 user 用户 system 系统</p>
                      * 
                      */
                     std::string GetHungUpSide() const;
@@ -327,8 +327,8 @@ namespace TencentCloud
                     bool HungUpSideHasBeenSet() const;
 
                     /**
-                     * 获取客户自定义数据（User-to-User Interface）
-                     * @return UUI 客户自定义数据（User-to-User Interface）
+                     * 获取<p>客户自定义数据（User-to-User Interface）</p>
+                     * @return UUI <p>客户自定义数据（User-to-User Interface）</p>
                      * 
                      */
                     std::string GetUUI() const;
@@ -341,8 +341,8 @@ namespace TencentCloud
                     bool UUIHasBeenSet() const;
 
                     /**
-                     * 获取通话中的事件列表
-                     * @return Events 通话中的事件列表
+                     * 获取<p>通话中的事件列表</p>
+                     * @return Events <p>通话中的事件列表</p>
                      * 
                      */
                     std::vector<SessionEvent> GetEvents() const;
@@ -355,8 +355,8 @@ namespace TencentCloud
                     bool EventsHasBeenSet() const;
 
                     /**
-                     * 获取服务参与者列表
-                     * @return ServeParticipants 服务参与者列表
+                     * 获取<p>服务参与者列表</p>
+                     * @return ServeParticipants <p>服务参与者列表</p>
                      * 
                      */
                     std::vector<ServeParticipant> GetServeParticipants() const;
@@ -368,145 +368,185 @@ namespace TencentCloud
                      */
                     bool ServeParticipantsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>接通后系统挂断原因状态码</p><p><a href="https://cloud.tencent.com/document/product/679/123938">详见</a></p>
+                     * @return SysHangupReason <p>接通后系统挂断原因状态码</p><p><a href="https://cloud.tencent.com/document/product/679/123938">详见</a></p>
+                     * 
+                     */
+                    int64_t GetSysHangupReason() const;
+
+                    /**
+                     * 判断参数 SysHangupReason 是否已赋值
+                     * @return SysHangupReason 是否已赋值
+                     * 
+                     */
+                    bool SysHangupReasonHasBeenSet() const;
+
+                    /**
+                     * 获取<p>接通后系统挂断原因</p><p><a href="https://cloud.tencent.com/document/product/679/123938">详见</a></p>
+                     * @return SysHangupReasonString <p>接通后系统挂断原因</p><p><a href="https://cloud.tencent.com/document/product/679/123938">详见</a></p>
+                     * 
+                     */
+                    std::string GetSysHangupReasonString() const;
+
+                    /**
+                     * 判断参数 SysHangupReasonString 是否已赋值
+                     * @return SysHangupReasonString 是否已赋值
+                     * 
+                     */
+                    bool SysHangupReasonStringHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 主叫号码
+                     * <p>主叫号码</p>
                      */
                     std::string m_caller;
                     bool m_callerHasBeenSet;
 
                     /**
-                     * 被叫号码
+                     * <p>被叫号码</p>
                      */
                     std::string m_callee;
                     bool m_calleeHasBeenSet;
 
                     /**
-                     * 通话类型 1 呼出 2 呼入 3 音频呼入 5 预测式外呼 6 内线呼叫
+                     * <p>通话类型 1 呼出 2 呼入 3 音频呼入 5 预测式外呼 6 内线呼叫</p>
                      */
                     int64_t m_callType;
                     bool m_callTypeHasBeenSet;
 
                     /**
-                     * 开始时间戳，Unix 秒级时间戳
+                     * <p>开始时间戳，Unix 秒级时间戳</p>
                      */
                     int64_t m_startTimeStamp;
                     bool m_startTimeStampHasBeenSet;
 
                     /**
-                     * 振铃时间戳，UNIX 秒级时间戳
+                     * <p>振铃时间戳，UNIX 秒级时间戳</p>
                      */
                     int64_t m_ringTimestamp;
                     bool m_ringTimestampHasBeenSet;
 
                     /**
-                     * 接听时间戳，UNIX 秒级时间戳
+                     * <p>接听时间戳，UNIX 秒级时间戳</p>
                      */
                     int64_t m_acceptTimestamp;
                     bool m_acceptTimestampHasBeenSet;
 
                     /**
-                     * 结束时间戳，UNIX 秒级时间戳
+                     * <p>结束时间戳，UNIX 秒级时间戳</p>
                      */
                     int64_t m_endedTimestamp;
                     bool m_endedTimestampHasBeenSet;
 
                     /**
-                     * 进入排队时间，Unix 秒级时间戳
+                     * <p>进入排队时间，Unix 秒级时间戳</p>
                      */
                     int64_t m_queuedTimestamp;
                     bool m_queuedTimestampHasBeenSet;
 
                     /**
-                     * 座席账号
+                     * <p>座席账号</p>
                      */
                     std::string m_staffUserId;
                     bool m_staffUserIdHasBeenSet;
 
                     /**
-                     * 参考 DescribeTelCdr 接口 EndStatus 字段
+                     * <p>参考 DescribeTelCdr 接口 EndStatus 字段</p>
                      */
                     int64_t m_endStatus;
                     bool m_endStatusHasBeenSet;
 
                     /**
-                     * 排队技能组 ID
+                     * <p>排队技能组 ID</p>
                      */
                     int64_t m_queuedSkillGroupId;
                     bool m_queuedSkillGroupIdHasBeenSet;
 
                     /**
-                     * 排队技能组名称
+                     * <p>排队技能组名称</p>
                      */
                     std::string m_queuedSkillGroupName;
                     bool m_queuedSkillGroupNameHasBeenSet;
 
                     /**
-                     * 录音链接，带鉴权和有效期，获取之后请在24 小时内拉取，不要持久化此链接。如此链接已过期，请重新调用此接口获取新的链接
+                     * <p>录音链接，带鉴权和有效期，获取之后请在24 小时内拉取，不要持久化此链接。如此链接已过期，请重新调用此接口获取新的链接</p>
                      */
                     std::string m_recordURL;
                     bool m_recordURLHasBeenSet;
 
                     /**
-                     * 录音转存第三方 COS 链接
+                     * <p>录音转存第三方 COS 链接</p>
                      */
                     std::string m_customRecordURL;
                     bool m_customRecordURLHasBeenSet;
 
                     /**
-                     * 录音文本信息链接，带鉴权和有效期，获取之后请在24 小时拉取，不要持久化此链接。如此链接已过期，请重新调用此接口获取新的链接
+                     * <p>录音文本信息链接，带鉴权和有效期，获取之后请在24 小时拉取，不要持久化此链接。如此链接已过期，请重新调用此接口获取新的链接</p>
                      */
                     std::string m_asrURL;
                     bool m_asrURLHasBeenSet;
 
                     /**
-                     * 语音留言录音链接
+                     * <p>语音留言录音链接</p>
                      */
                     std::vector<std::string> m_voicemailRecordURL;
                     bool m_voicemailRecordURLHasBeenSet;
 
                     /**
-                     * 语音留言录音文本信息链接，需在控制台购买离线语音识别套餐包并开启离线语音识别开关
+                     * <p>语音留言录音文本信息链接，需在控制台购买离线语音识别套餐包并开启离线语音识别开关</p>
                      */
                     std::vector<std::string> m_voicemailAsrURL;
                     bool m_voicemailAsrURLHasBeenSet;
 
                     /**
-                     * IVR 按键信息
+                     * <p>IVR 按键信息</p>
                      */
                     std::vector<IVRKeyPressedElement> m_iVRKeyPressed;
                     bool m_iVRKeyPressedHasBeenSet;
 
                     /**
-                     * 满意度按键信息
+                     * <p>满意度按键信息</p>
                      */
                     std::vector<IVRKeyPressedElement> m_postIVRKeyPressed;
                     bool m_postIVRKeyPressedHasBeenSet;
 
                     /**
-                     * 挂机方 seat 座席 user 用户 system 系统
+                     * <p>挂机方 seat 座席 user 用户 system 系统</p>
                      */
                     std::string m_hungUpSide;
                     bool m_hungUpSideHasBeenSet;
 
                     /**
-                     * 客户自定义数据（User-to-User Interface）
+                     * <p>客户自定义数据（User-to-User Interface）</p>
                      */
                     std::string m_uUI;
                     bool m_uUIHasBeenSet;
 
                     /**
-                     * 通话中的事件列表
+                     * <p>通话中的事件列表</p>
                      */
                     std::vector<SessionEvent> m_events;
                     bool m_eventsHasBeenSet;
 
                     /**
-                     * 服务参与者列表
+                     * <p>服务参与者列表</p>
                      */
                     std::vector<ServeParticipant> m_serveParticipants;
                     bool m_serveParticipantsHasBeenSet;
+
+                    /**
+                     * <p>接通后系统挂断原因状态码</p><p><a href="https://cloud.tencent.com/document/product/679/123938">详见</a></p>
+                     */
+                    int64_t m_sysHangupReason;
+                    bool m_sysHangupReasonHasBeenSet;
+
+                    /**
+                     * <p>接通后系统挂断原因</p><p><a href="https://cloud.tencent.com/document/product/679/123938">详见</a></p>
+                     */
+                    std::string m_sysHangupReasonString;
+                    bool m_sysHangupReasonStringHasBeenSet;
 
                 };
             }

@@ -220,6 +220,27 @@ region：地域(ap-gaungzhou)
                      */
                     bool SequenceHasBeenSet() const;
 
+                    /**
+                     * 获取规则生效范围，SG安全组，LH轻量服务器
+                     * @return Scope 规则生效范围，SG安全组，LH轻量服务器
+                     * 
+                     */
+                    std::string GetScope() const;
+
+                    /**
+                     * 设置规则生效范围，SG安全组，LH轻量服务器
+                     * @param _scope 规则生效范围，SG安全组，LH轻量服务器
+                     * 
+                     */
+                    void SetScope(const std::string& _scope);
+
+                    /**
+                     * 判断参数 Scope 是否已赋值
+                     * @return Scope 是否已赋值
+                     * 
+                     */
+                    bool ScopeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -269,6 +290,12 @@ region：地域(ap-gaungzhou)
                      */
                     int64_t m_sequence;
                     bool m_sequenceHasBeenSet;
+
+                    /**
+                     * 规则生效范围，SG安全组，LH轻量服务器
+                     */
+                    std::string m_scope;
+                    bool m_scopeHasBeenSet;
 
                 };
             }

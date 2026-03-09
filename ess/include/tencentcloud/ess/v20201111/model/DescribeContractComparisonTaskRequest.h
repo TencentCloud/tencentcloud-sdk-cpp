@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
+#include <tencentcloud/ess/v20201111/model/Filter.h>
 
 
 namespace TencentCloud
@@ -114,6 +115,83 @@ namespace TencentCloud
                      */
                     bool ShowDetailHasBeenSet() const;
 
+                    /**
+                     * 获取搜索条件，具体参考Filter结构体。本接口取值：
+
+1. **format-type：**
+按照【 合同文本格式类型 】进行过滤；
+类型：String；
+是否必填项：否；
+类型如下：
+<ul><li> **0**：段落（正文）</li>
+<li> **1**：标点符号</li>
+<li> **2**：页眉页脚</li>
+<li> **3**：目录</li>
+<li> **4**：印章</li>
+<li> **5**：序号</li>
+<li> **7**：下划线内容（填写区）</li>
+</ul>
+                     * @return Filters 搜索条件，具体参考Filter结构体。本接口取值：
+
+1. **format-type：**
+按照【 合同文本格式类型 】进行过滤；
+类型：String；
+是否必填项：否；
+类型如下：
+<ul><li> **0**：段落（正文）</li>
+<li> **1**：标点符号</li>
+<li> **2**：页眉页脚</li>
+<li> **3**：目录</li>
+<li> **4**：印章</li>
+<li> **5**：序号</li>
+<li> **7**：下划线内容（填写区）</li>
+</ul>
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置搜索条件，具体参考Filter结构体。本接口取值：
+
+1. **format-type：**
+按照【 合同文本格式类型 】进行过滤；
+类型：String；
+是否必填项：否；
+类型如下：
+<ul><li> **0**：段落（正文）</li>
+<li> **1**：标点符号</li>
+<li> **2**：页眉页脚</li>
+<li> **3**：目录</li>
+<li> **4**：印章</li>
+<li> **5**：序号</li>
+<li> **7**：下划线内容（填写区）</li>
+</ul>
+                     * @param _filters 搜索条件，具体参考Filter结构体。本接口取值：
+
+1. **format-type：**
+按照【 合同文本格式类型 】进行过滤；
+类型：String；
+是否必填项：否；
+类型如下：
+<ul><li> **0**：段落（正文）</li>
+<li> **1**：标点符号</li>
+<li> **2**：页眉页脚</li>
+<li> **3**：目录</li>
+<li> **4**：印章</li>
+<li> **5**：序号</li>
+<li> **7**：下划线内容（填写区）</li>
+</ul>
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -135,6 +213,26 @@ namespace TencentCloud
                      */
                     bool m_showDetail;
                     bool m_showDetailHasBeenSet;
+
+                    /**
+                     * 搜索条件，具体参考Filter结构体。本接口取值：
+
+1. **format-type：**
+按照【 合同文本格式类型 】进行过滤；
+类型：String；
+是否必填项：否；
+类型如下：
+<ul><li> **0**：段落（正文）</li>
+<li> **1**：标点符号</li>
+<li> **2**：页眉页脚</li>
+<li> **3**：目录</li>
+<li> **4**：印章</li>
+<li> **5**：序号</li>
+<li> **7**：下划线内容（填写区）</li>
+</ul>
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

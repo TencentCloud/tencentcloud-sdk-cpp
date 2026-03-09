@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回地域枚举结果列表
-                     * @return Result 返回地域枚举结果列表
+                     * 获取<p>返回地域枚举结果列表</p>
+                     * @return Result <p>返回地域枚举结果列表</p>
                      * 
                      */
                     std::vector<Region> GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回地域枚举结果列表
+                     * <p>返回地域枚举结果列表</p>
                      */
                     std::vector<Region> m_result;
                     bool m_resultHasBeenSet;

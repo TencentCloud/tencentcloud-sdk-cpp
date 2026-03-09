@@ -46,7 +46,34 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取地域ID，如：ap-guangzhou。
+                     * @return Region 地域ID，如：ap-guangzhou。
+                     * 
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置地域ID，如：ap-guangzhou。
+                     * @param _region 地域ID，如：ap-guangzhou。
+                     * 
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     * 
+                     */
+                    bool RegionHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 地域ID，如：ap-guangzhou。
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
 
                 };
             }

@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取下一跳资源类型[HAVIP, GWLB_ENDPOINT]]
-                     * @return NextHopResourceType 下一跳资源类型[HAVIP, GWLB_ENDPOINT]]
+                     * 获取下一跳资源类型[HAVIP, GWLB_ENDPOINT]
+                     * @return NextHopResourceType 下一跳资源类型[HAVIP, GWLB_ENDPOINT]
                      * 
                      */
                     std::string GetNextHopResourceType() const;
 
                     /**
-                     * 设置下一跳资源类型[HAVIP, GWLB_ENDPOINT]]
-                     * @param _nextHopResourceType 下一跳资源类型[HAVIP, GWLB_ENDPOINT]]
+                     * 设置下一跳资源类型[HAVIP, GWLB_ENDPOINT]
+                     * @param _nextHopResourceType 下一跳资源类型[HAVIP, GWLB_ENDPOINT]
                      * 
                      */
                     void SetNextHopResourceType(const std::string& _nextHopResourceType);
@@ -276,7 +276,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 下一跳资源类型[HAVIP, GWLB_ENDPOINT]]
+                     * 下一跳资源类型[HAVIP, GWLB_ENDPOINT]
                      */
                     std::string m_nextHopResourceType;
                     bool m_nextHopResourceTypeHasBeenSet;

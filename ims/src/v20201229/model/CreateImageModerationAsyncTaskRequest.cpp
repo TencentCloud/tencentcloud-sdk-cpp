@@ -31,7 +31,8 @@ CreateImageModerationAsyncTaskRequest::CreateImageModerationAsyncTaskRequest() :
     m_intervalHasBeenSet(false),
     m_maxFramesHasBeenSet(false),
     m_userHasBeenSet(false),
-    m_deviceHasBeenSet(false)
+    m_deviceHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -114,6 +115,14 @@ string CreateImageModerationAsyncTaskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_device.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -266,6 +275,22 @@ void CreateImageModerationAsyncTaskRequest::SetDevice(const Device& _device)
 bool CreateImageModerationAsyncTaskRequest::DeviceHasBeenSet() const
 {
     return m_deviceHasBeenSet;
+}
+
+string CreateImageModerationAsyncTaskRequest::GetType() const
+{
+    return m_type;
+}
+
+void CreateImageModerationAsyncTaskRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool CreateImageModerationAsyncTaskRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 

@@ -341,6 +341,69 @@ namespace TencentCloud
                      */
                     bool FastVoiceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取实时字幕回调地址，支持HTTP/HTTPS
+                     * @return SubtitleCallbackUrl 实时字幕回调地址，支持HTTP/HTTPS
+                     * 
+                     */
+                    std::string GetSubtitleCallbackUrl() const;
+
+                    /**
+                     * 设置实时字幕回调地址，支持HTTP/HTTPS
+                     * @param _subtitleCallbackUrl 实时字幕回调地址，支持HTTP/HTTPS
+                     * 
+                     */
+                    void SetSubtitleCallbackUrl(const std::string& _subtitleCallbackUrl);
+
+                    /**
+                     * 判断参数 SubtitleCallbackUrl 是否已赋值
+                     * @return SubtitleCallbackUrl 是否已赋值
+                     * 
+                     */
+                    bool SubtitleCallbackUrlHasBeenSet() const;
+
+                    /**
+                     * 获取回调签名密钥，最大32字符，用于HMAC SHA256签名
+                     * @return SubtitleCallbackSignKey 回调签名密钥，最大32字符，用于HMAC SHA256签名
+                     * 
+                     */
+                    std::string GetSubtitleCallbackSignKey() const;
+
+                    /**
+                     * 设置回调签名密钥，最大32字符，用于HMAC SHA256签名
+                     * @param _subtitleCallbackSignKey 回调签名密钥，最大32字符，用于HMAC SHA256签名
+                     * 
+                     */
+                    void SetSubtitleCallbackSignKey(const std::string& _subtitleCallbackSignKey);
+
+                    /**
+                     * 判断参数 SubtitleCallbackSignKey 是否已赋值
+                     * @return SubtitleCallbackSignKey 是否已赋值
+                     * 
+                     */
+                    bool SubtitleCallbackSignKeyHasBeenSet() const;
+
+                    /**
+                     * 获取字幕推送超时时间（秒），参考TRTC规范
+                     * @return SubtitleCallbackTimeout 字幕推送超时时间（秒），参考TRTC规范
+                     * 
+                     */
+                    int64_t GetSubtitleCallbackTimeout() const;
+
+                    /**
+                     * 设置字幕推送超时时间（秒），参考TRTC规范
+                     * @param _subtitleCallbackTimeout 字幕推送超时时间（秒），参考TRTC规范
+                     * 
+                     */
+                    void SetSubtitleCallbackTimeout(const int64_t& _subtitleCallbackTimeout);
+
+                    /**
+                     * 判断参数 SubtitleCallbackTimeout 是否已赋值
+                     * @return SubtitleCallbackTimeout 是否已赋值
+                     * 
+                     */
+                    bool SubtitleCallbackTimeoutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -426,6 +489,24 @@ namespace TencentCloud
                      */
                     std::string m_fastVoiceType;
                     bool m_fastVoiceTypeHasBeenSet;
+
+                    /**
+                     * 实时字幕回调地址，支持HTTP/HTTPS
+                     */
+                    std::string m_subtitleCallbackUrl;
+                    bool m_subtitleCallbackUrlHasBeenSet;
+
+                    /**
+                     * 回调签名密钥，最大32字符，用于HMAC SHA256签名
+                     */
+                    std::string m_subtitleCallbackSignKey;
+                    bool m_subtitleCallbackSignKeyHasBeenSet;
+
+                    /**
+                     * 字幕推送超时时间（秒），参考TRTC规范
+                     */
+                    int64_t m_subtitleCallbackTimeout;
+                    bool m_subtitleCallbackTimeoutHasBeenSet;
 
                 };
             }

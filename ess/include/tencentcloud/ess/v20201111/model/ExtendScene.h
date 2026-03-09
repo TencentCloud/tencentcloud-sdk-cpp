@@ -48,14 +48,38 @@ namespace TencentCloud
 
                     /**
                      * 获取印章来源类型
+印章来源类型包括下面几种：
+<ul>
+<li>CREATE-客户上传图片创建</li>
+<li>GENERATE-系统模版印章生成</li>
+<li>SIST_SEAL-深圳电子印章</li>
+</ul>
                      * @return GenerateType 印章来源类型
+印章来源类型包括下面几种：
+<ul>
+<li>CREATE-客户上传图片创建</li>
+<li>GENERATE-系统模版印章生成</li>
+<li>SIST_SEAL-深圳电子印章</li>
+</ul>
                      * 
                      */
                     std::string GetGenerateType() const;
 
                     /**
                      * 设置印章来源类型
+印章来源类型包括下面几种：
+<ul>
+<li>CREATE-客户上传图片创建</li>
+<li>GENERATE-系统模版印章生成</li>
+<li>SIST_SEAL-深圳电子印章</li>
+</ul>
                      * @param _generateType 印章来源类型
+印章来源类型包括下面几种：
+<ul>
+<li>CREATE-客户上传图片创建</li>
+<li>GENERATE-系统模版印章生成</li>
+<li>SIST_SEAL-深圳电子印章</li>
+</ul>
                      * 
                      */
                     void SetGenerateType(const std::string& _generateType);
@@ -69,14 +93,18 @@ namespace TencentCloud
 
                     /**
                      * 获取印章来源类型描述
+
                      * @return GenerateTypeDesc 印章来源类型描述
+
                      * 
                      */
                     std::string GetGenerateTypeDesc() const;
 
                     /**
                      * 设置印章来源类型描述
+
                      * @param _generateTypeDesc 印章来源类型描述
+
                      * 
                      */
                     void SetGenerateTypeDesc(const std::string& _generateTypeDesc);
@@ -113,12 +141,19 @@ namespace TencentCloud
 
                     /**
                      * 印章来源类型
+印章来源类型包括下面几种：
+<ul>
+<li>CREATE-客户上传图片创建</li>
+<li>GENERATE-系统模版印章生成</li>
+<li>SIST_SEAL-深圳电子印章</li>
+</ul>
                      */
                     std::string m_generateType;
                     bool m_generateTypeHasBeenSet;
 
                     /**
                      * 印章来源类型描述
+
                      */
                     std::string m_generateTypeDesc;
                     bool m_generateTypeDescHasBeenSet;

@@ -33,7 +33,10 @@ ModifyInstanceAttributesRequest::ModifyInstanceAttributesRequest() :
     m_dynamicDiskConfigHasBeenSet(false),
     m_maxMessageByteHasBeenSet(false),
     m_uncleanLeaderElectionEnableHasBeenSet(false),
-    m_deleteProtectionEnableHasBeenSet(false)
+    m_deleteProtectionEnableHasBeenSet(false),
+    m_retentionBytesHasBeenSet(false),
+    m_adminSecurityHasBeenSet(false),
+    m_transactionalIdExpirationMsHasBeenSet(false)
 {
 }
 
@@ -133,6 +136,30 @@ string ModifyInstanceAttributesRequest::ToJsonString() const
         string key = "DeleteProtectionEnable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deleteProtectionEnable, allocator);
+    }
+
+    if (m_retentionBytesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetentionBytes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_retentionBytes, allocator);
+    }
+
+    if (m_adminSecurityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdminSecurity";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_adminSecurity, allocator);
+    }
+
+    if (m_transactionalIdExpirationMsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransactionalIdExpirationMs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_transactionalIdExpirationMs, allocator);
     }
 
 
@@ -317,6 +344,54 @@ void ModifyInstanceAttributesRequest::SetDeleteProtectionEnable(const int64_t& _
 bool ModifyInstanceAttributesRequest::DeleteProtectionEnableHasBeenSet() const
 {
     return m_deleteProtectionEnableHasBeenSet;
+}
+
+int64_t ModifyInstanceAttributesRequest::GetRetentionBytes() const
+{
+    return m_retentionBytes;
+}
+
+void ModifyInstanceAttributesRequest::SetRetentionBytes(const int64_t& _retentionBytes)
+{
+    m_retentionBytes = _retentionBytes;
+    m_retentionBytesHasBeenSet = true;
+}
+
+bool ModifyInstanceAttributesRequest::RetentionBytesHasBeenSet() const
+{
+    return m_retentionBytesHasBeenSet;
+}
+
+bool ModifyInstanceAttributesRequest::GetAdminSecurity() const
+{
+    return m_adminSecurity;
+}
+
+void ModifyInstanceAttributesRequest::SetAdminSecurity(const bool& _adminSecurity)
+{
+    m_adminSecurity = _adminSecurity;
+    m_adminSecurityHasBeenSet = true;
+}
+
+bool ModifyInstanceAttributesRequest::AdminSecurityHasBeenSet() const
+{
+    return m_adminSecurityHasBeenSet;
+}
+
+int64_t ModifyInstanceAttributesRequest::GetTransactionalIdExpirationMs() const
+{
+    return m_transactionalIdExpirationMs;
+}
+
+void ModifyInstanceAttributesRequest::SetTransactionalIdExpirationMs(const int64_t& _transactionalIdExpirationMs)
+{
+    m_transactionalIdExpirationMs = _transactionalIdExpirationMs;
+    m_transactionalIdExpirationMsHasBeenSet = true;
+}
+
+bool ModifyInstanceAttributesRequest::TransactionalIdExpirationMsHasBeenSet() const
+{
+    return m_transactionalIdExpirationMsHasBeenSet;
 }
 
 

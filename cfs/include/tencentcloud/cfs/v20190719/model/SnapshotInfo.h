@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建快照时间
-                     * @return CreationTime 创建快照时间
+                     * 获取<p>创建快照时间</p>
+                     * @return CreationTime <p>创建快照时间</p>
                      * 
                      */
                     std::string GetCreationTime() const;
 
                     /**
-                     * 设置创建快照时间
-                     * @param _creationTime 创建快照时间
+                     * 设置<p>创建快照时间</p>
+                     * @param _creationTime <p>创建快照时间</p>
                      * 
                      */
                     void SetCreationTime(const std::string& _creationTime);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool CreationTimeHasBeenSet() const;
 
                     /**
-                     * 获取快照名称
-                     * @return SnapshotName 快照名称
+                     * 获取<p>快照名称</p>
+                     * @return SnapshotName <p>快照名称</p>
                      * 
                      */
                     std::string GetSnapshotName() const;
 
                     /**
-                     * 设置快照名称
-                     * @param _snapshotName 快照名称
+                     * 设置<p>快照名称</p>
+                     * @param _snapshotName <p>快照名称</p>
                      * 
                      */
                     void SetSnapshotName(const std::string& _snapshotName);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool SnapshotNameHasBeenSet() const;
 
                     /**
-                     * 获取快照ID
-                     * @return SnapshotId 快照ID
+                     * 获取<p>快照ID</p>
+                     * @return SnapshotId <p>快照ID</p>
                      * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
-                     * 设置快照ID
-                     * @param _snapshotId 快照ID
+                     * 设置<p>快照ID</p>
+                     * @param _snapshotId <p>快照ID</p>
                      * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
-                     * 获取快照状态，creating-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败
-                     * @return Status 快照状态，creating-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败
+                     * 获取<p>快照状态，creating-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败</p>
+                     * @return Status <p>快照状态，creating-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置快照状态，creating-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败
-                     * @param _status 快照状态，creating-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败
+                     * 设置<p>快照状态，creating-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败</p>
+                     * @param _status <p>快照状态，creating-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取地域名称
-                     * @return RegionName 地域名称
+                     * 获取<p>地域名称</p>
+                     * @return RegionName <p>地域名称</p>
                      * 
                      */
                     std::string GetRegionName() const;
 
                     /**
-                     * 设置地域名称
-                     * @param _regionName 地域名称
+                     * 设置<p>地域名称</p>
+                     * @param _regionName <p>地域名称</p>
                      * 
                      */
                     void SetRegionName(const std::string& _regionName);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool RegionNameHasBeenSet() const;
 
                     /**
-                     * 获取文件系统ID
-                     * @return FileSystemId 文件系统ID
+                     * 获取<p>文件系统ID</p>
+                     * @return FileSystemId <p>文件系统ID</p>
                      * 
                      */
                     std::string GetFileSystemId() const;
 
                     /**
-                     * 设置文件系统ID
-                     * @param _fileSystemId 文件系统ID
+                     * 设置<p>文件系统ID</p>
+                     * @param _fileSystemId <p>文件系统ID</p>
                      * 
                      */
                     void SetFileSystemId(const std::string& _fileSystemId);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取快照大小
-                     * @return Size 快照大小
+                     * 获取<p>快照大小</p><p>单位：MiB</p>
+                     * @return Size <p>快照大小</p><p>单位：MiB</p>
                      * 
                      */
                     uint64_t GetSize() const;
 
                     /**
-                     * 设置快照大小
-                     * @param _size 快照大小
+                     * 设置<p>快照大小</p><p>单位：MiB</p>
+                     * @param _size <p>快照大小</p><p>单位：MiB</p>
                      * 
                      */
                     void SetSize(const uint64_t& _size);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool SizeHasBeenSet() const;
 
                     /**
-                     * 获取保留时长天
-                     * @return AliveDay 保留时长天
+                     * 获取<p>保留时长天</p>
+                     * @return AliveDay <p>保留时长天</p>
                      * 
                      */
                     uint64_t GetAliveDay() const;
 
                     /**
-                     * 设置保留时长天
-                     * @param _aliveDay 保留时长天
+                     * 设置<p>保留时长天</p>
+                     * @param _aliveDay <p>保留时长天</p>
                      * 
                      */
                     void SetAliveDay(const uint64_t& _aliveDay);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool AliveDayHasBeenSet() const;
 
                     /**
-                     * 获取快照进度百分比，1表示1% 范围1-100
-                     * @return Percent 快照进度百分比，1表示1% 范围1-100
+                     * 获取<p>快照进度百分比，1表示1% 范围1-100</p>
+                     * @return Percent <p>快照进度百分比，1表示1% 范围1-100</p>
                      * 
                      */
                     uint64_t GetPercent() const;
 
                     /**
-                     * 设置快照进度百分比，1表示1% 范围1-100
-                     * @param _percent 快照进度百分比，1表示1% 范围1-100
+                     * 设置<p>快照进度百分比，1表示1% 范围1-100</p>
+                     * @param _percent <p>快照进度百分比，1表示1% 范围1-100</p>
                      * 
                      */
                     void SetPercent(const uint64_t& _percent);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool PercentHasBeenSet() const;
 
                     /**
-                     * 获取账号ID
-                     * @return AppId 账号ID
+                     * 获取<p>账号ID</p>
+                     * @return AppId <p>账号ID</p>
                      * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
-                     * 设置账号ID
-                     * @param _appId 账号ID
+                     * 设置<p>账号ID</p>
+                     * @param _appId <p>账号ID</p>
                      * 
                      */
                     void SetAppId(const uint64_t& _appId);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取快照删除时间
-                     * @return DeleteTime 快照删除时间
+                     * 获取<p>快照删除时间</p>
+                     * @return DeleteTime <p>快照删除时间</p>
                      * 
                      */
                     std::string GetDeleteTime() const;
 
                     /**
-                     * 设置快照删除时间
-                     * @param _deleteTime 快照删除时间
+                     * 设置<p>快照删除时间</p>
+                     * @param _deleteTime <p>快照删除时间</p>
                      * 
                      */
                     void SetDeleteTime(const std::string& _deleteTime);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool DeleteTimeHasBeenSet() const;
 
                     /**
-                     * 获取文件系统名称
-                     * @return FsName 文件系统名称
+                     * 获取<p>文件系统名称</p>
+                     * @return FsName <p>文件系统名称</p>
                      * 
                      */
                     std::string GetFsName() const;
 
                     /**
-                     * 设置文件系统名称
-                     * @param _fsName 文件系统名称
+                     * 设置<p>文件系统名称</p>
+                     * @param _fsName <p>文件系统名称</p>
                      * 
                      */
                     void SetFsName(const std::string& _fsName);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool FsNameHasBeenSet() const;
 
                     /**
-                     * 获取快照标签
-                     * @return Tags 快照标签
+                     * 获取<p>快照标签</p>
+                     * @return Tags <p>快照标签</p>
                      * 
                      */
                     std::vector<TagInfo> GetTags() const;
 
                     /**
-                     * 设置快照标签
-                     * @param _tags 快照标签
+                     * 设置<p>快照标签</p>
+                     * @param _tags <p>快照标签</p>
                      * 
                      */
                     void SetTags(const std::vector<TagInfo>& _tags);
@@ -321,18 +321,18 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取快照类型，general为通用系列快照，turbo为Turbo系列快照
+                     * 获取<p>快照类型，general为通用系列快照，turbo为Turbo系列快照</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SnapshotType 快照类型，general为通用系列快照，turbo为Turbo系列快照
+                     * @return SnapshotType <p>快照类型，general为通用系列快照，turbo为Turbo系列快照</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSnapshotType() const;
 
                     /**
-                     * 设置快照类型，general为通用系列快照，turbo为Turbo系列快照
+                     * 设置<p>快照类型，general为通用系列快照，turbo为Turbo系列快照</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _snapshotType 快照类型，general为通用系列快照，turbo为Turbo系列快照
+                     * @param _snapshotType <p>快照类型，general为通用系列快照，turbo为Turbo系列快照</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -346,18 +346,18 @@ namespace TencentCloud
                     bool SnapshotTypeHasBeenSet() const;
 
                     /**
-                     * 获取实际快照时间，反映快照对应文件系统某个时刻的数据。
+                     * 获取<p>实际快照时间，反映快照对应文件系统某个时刻的数据。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SnapshotTime 实际快照时间，反映快照对应文件系统某个时刻的数据。
+                     * @return SnapshotTime <p>实际快照时间，反映快照对应文件系统某个时刻的数据。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSnapshotTime() const;
 
                     /**
-                     * 设置实际快照时间，反映快照对应文件系统某个时刻的数据。
+                     * 设置<p>实际快照时间，反映快照对应文件系统某个时刻的数据。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _snapshotTime 实际快照时间，反映快照对应文件系统某个时刻的数据。
+                     * @param _snapshotTime <p>实际快照时间，反映快照对应文件系统某个时刻的数据。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -373,92 +373,92 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建快照时间
+                     * <p>创建快照时间</p>
                      */
                     std::string m_creationTime;
                     bool m_creationTimeHasBeenSet;
 
                     /**
-                     * 快照名称
+                     * <p>快照名称</p>
                      */
                     std::string m_snapshotName;
                     bool m_snapshotNameHasBeenSet;
 
                     /**
-                     * 快照ID
+                     * <p>快照ID</p>
                      */
                     std::string m_snapshotId;
                     bool m_snapshotIdHasBeenSet;
 
                     /**
-                     * 快照状态，creating-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败
+                     * <p>快照状态，creating-创建中；available-运行中；deleting-删除中；rollbacking-new 创建新文件系统中；create-failed 创建失败</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 地域名称
+                     * <p>地域名称</p>
                      */
                     std::string m_regionName;
                     bool m_regionNameHasBeenSet;
 
                     /**
-                     * 文件系统ID
+                     * <p>文件系统ID</p>
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 快照大小
+                     * <p>快照大小</p><p>单位：MiB</p>
                      */
                     uint64_t m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
-                     * 保留时长天
+                     * <p>保留时长天</p>
                      */
                     uint64_t m_aliveDay;
                     bool m_aliveDayHasBeenSet;
 
                     /**
-                     * 快照进度百分比，1表示1% 范围1-100
+                     * <p>快照进度百分比，1表示1% 范围1-100</p>
                      */
                     uint64_t m_percent;
                     bool m_percentHasBeenSet;
 
                     /**
-                     * 账号ID
+                     * <p>账号ID</p>
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 快照删除时间
+                     * <p>快照删除时间</p>
                      */
                     std::string m_deleteTime;
                     bool m_deleteTimeHasBeenSet;
 
                     /**
-                     * 文件系统名称
+                     * <p>文件系统名称</p>
                      */
                     std::string m_fsName;
                     bool m_fsNameHasBeenSet;
 
                     /**
-                     * 快照标签
+                     * <p>快照标签</p>
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 快照类型，general为通用系列快照，turbo为Turbo系列快照
+                     * <p>快照类型，general为通用系列快照，turbo为Turbo系列快照</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_snapshotType;
                     bool m_snapshotTypeHasBeenSet;
 
                     /**
-                     * 实际快照时间，反映快照对应文件系统某个时刻的数据。
+                     * <p>实际快照时间，反映快照对应文件系统某个时刻的数据。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_snapshotTime;

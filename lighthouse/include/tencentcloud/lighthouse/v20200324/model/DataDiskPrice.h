@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云硬盘ID。
-                     * @return DiskId 云硬盘ID。
+                     * 获取<p>云硬盘ID。</p>
+                     * @return DiskId <p>云硬盘ID。</p>
                      * 
                      */
                     std::string GetDiskId() const;
 
                     /**
-                     * 设置云硬盘ID。
-                     * @param _diskId 云硬盘ID。
+                     * 设置<p>云硬盘ID。</p>
+                     * @param _diskId <p>云硬盘ID。</p>
                      * 
                      */
                     void SetDiskId(const std::string& _diskId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DiskIdHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘单价。
-                     * @return OriginalDiskPrice 云硬盘单价。
+                     * 获取<p>云硬盘单价。</p><p>单位：元</p>
+                     * @return OriginalDiskPrice <p>云硬盘单价。</p><p>单位：元</p>
                      * 
                      */
                     double GetOriginalDiskPrice() const;
 
                     /**
-                     * 设置云硬盘单价。
-                     * @param _originalDiskPrice 云硬盘单价。
+                     * 设置<p>云硬盘单价。</p><p>单位：元</p>
+                     * @param _originalDiskPrice <p>云硬盘单价。</p><p>单位：元</p>
                      * 
                      */
                     void SetOriginalDiskPrice(const double& _originalDiskPrice);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool OriginalDiskPriceHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘总价。
-                     * @return OriginalPrice 云硬盘总价。
+                     * 获取<p>云硬盘总价。</p><p>单位：元</p>
+                     * @return OriginalPrice <p>云硬盘总价。</p><p>单位：元</p>
                      * 
                      */
                     double GetOriginalPrice() const;
 
                     /**
-                     * 设置云硬盘总价。
-                     * @param _originalPrice 云硬盘总价。
+                     * 设置<p>云硬盘总价。</p><p>单位：元</p>
+                     * @param _originalPrice <p>云硬盘总价。</p><p>单位：元</p>
                      * 
                      */
                     void SetOriginalPrice(const double& _originalPrice);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
-                     * 获取折扣。
-                     * @return Discount 折扣。
+                     * 获取<p>折扣。</p>
+                     * @return Discount <p>折扣。</p>
                      * 
                      */
                     double GetDiscount() const;
 
                     /**
-                     * 设置折扣。
-                     * @param _discount 折扣。
+                     * 设置<p>折扣。</p>
+                     * @param _discount <p>折扣。</p>
                      * 
                      */
                     void SetDiscount(const double& _discount);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool DiscountHasBeenSet() const;
 
                     /**
-                     * 获取折后总价。
-                     * @return DiscountPrice 折后总价。
+                     * 获取<p>折后总价。</p><p>单位：元</p>
+                     * @return DiscountPrice <p>折后总价。</p><p>单位：元</p>
                      * 
                      */
                     double GetDiscountPrice() const;
 
                     /**
-                     * 设置折后总价。
-                     * @param _discountPrice 折后总价。
+                     * 设置<p>折后总价。</p><p>单位：元</p>
+                     * @param _discountPrice <p>折后总价。</p><p>单位：元</p>
                      * 
                      */
                     void SetDiscountPrice(const double& _discountPrice);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool DiscountPriceHasBeenSet() const;
 
                     /**
-                     * 获取数据盘挂载的实例ID。
-                     * @return InstanceId 数据盘挂载的实例ID。
+                     * 获取<p>数据盘挂载的实例ID。</p>
+                     * @return InstanceId <p>数据盘挂载的实例ID。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置数据盘挂载的实例ID。
-                     * @param _instanceId 数据盘挂载的实例ID。
+                     * 设置<p>数据盘挂载的实例ID。</p>
+                     * @param _instanceId <p>数据盘挂载的实例ID。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -175,37 +175,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云硬盘ID。
+                     * <p>云硬盘ID。</p>
                      */
                     std::string m_diskId;
                     bool m_diskIdHasBeenSet;
 
                     /**
-                     * 云硬盘单价。
+                     * <p>云硬盘单价。</p><p>单位：元</p>
                      */
                     double m_originalDiskPrice;
                     bool m_originalDiskPriceHasBeenSet;
 
                     /**
-                     * 云硬盘总价。
+                     * <p>云硬盘总价。</p><p>单位：元</p>
                      */
                     double m_originalPrice;
                     bool m_originalPriceHasBeenSet;
 
                     /**
-                     * 折扣。
+                     * <p>折扣。</p>
                      */
                     double m_discount;
                     bool m_discountHasBeenSet;
 
                     /**
-                     * 折后总价。
+                     * <p>折后总价。</p><p>单位：元</p>
                      */
                     double m_discountPrice;
                     bool m_discountPriceHasBeenSet;
 
                     /**
-                     * 数据盘挂载的实例ID。
+                     * <p>数据盘挂载的实例ID。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

@@ -503,6 +503,10 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeOpenPortStatisticsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeOverviewStatisticsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeOverviewStatisticsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribePatchEffectHostListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribePatchEffectHostListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribePatchInfoRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribePatchInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribePrivilegeEventInfoRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribePrivilegeEventInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribePrivilegeEventsRequest.h>
@@ -719,6 +723,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeWebPageProtectStatResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeWebPageServiceInfoRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeWebPageServiceInfoResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeWindowsPatchListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeWindowsPatchListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DestroyOrderRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DestroyOrderResponse.h>
 #include <tencentcloud/cwp/v20180228/model/EditBashRulesRequest.h>
@@ -811,6 +817,8 @@
 #include <tencentcloud/cwp/v20180228/model/ExportMalwaresResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ExportNonlocalLoginPlacesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ExportNonlocalLoginPlacesResponse.h>
+#include <tencentcloud/cwp/v20180228/model/ExportPatchEffectHostListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/ExportPatchEffectHostListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ExportPrivilegeEventsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ExportPrivilegeEventsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ExportProtectDirListRequest.h>
@@ -857,6 +865,8 @@
 #include <tencentcloud/cwp/v20180228/model/ExportVulListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ExportWebPageEventListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ExportWebPageEventListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/ExportWindowsPatchListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/ExportWindowsPatchListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/FixBaselineDetectRequest.h>
 #include <tencentcloud/cwp/v20180228/model/FixBaselineDetectResponse.h>
 #include <tencentcloud/cwp/v20180228/model/GetLocalStorageItemRequest.h>
@@ -1769,6 +1779,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOverviewStatisticsResponse> DescribeOverviewStatisticsOutcome;
                 typedef std::future<DescribeOverviewStatisticsOutcome> DescribeOverviewStatisticsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeOverviewStatisticsRequest&, DescribeOverviewStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOverviewStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePatchEffectHostListResponse> DescribePatchEffectHostListOutcome;
+                typedef std::future<DescribePatchEffectHostListOutcome> DescribePatchEffectHostListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribePatchEffectHostListRequest&, DescribePatchEffectHostListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePatchEffectHostListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePatchInfoResponse> DescribePatchInfoOutcome;
+                typedef std::future<DescribePatchInfoOutcome> DescribePatchInfoOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribePatchInfoRequest&, DescribePatchInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePatchInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePrivilegeEventInfoResponse> DescribePrivilegeEventInfoOutcome;
                 typedef std::future<DescribePrivilegeEventInfoOutcome> DescribePrivilegeEventInfoOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribePrivilegeEventInfoRequest&, DescribePrivilegeEventInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrivilegeEventInfoAsyncHandler;
@@ -2093,6 +2109,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeWebPageServiceInfoResponse> DescribeWebPageServiceInfoOutcome;
                 typedef std::future<DescribeWebPageServiceInfoOutcome> DescribeWebPageServiceInfoOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeWebPageServiceInfoRequest&, DescribeWebPageServiceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebPageServiceInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWindowsPatchListResponse> DescribeWindowsPatchListOutcome;
+                typedef std::future<DescribeWindowsPatchListOutcome> DescribeWindowsPatchListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeWindowsPatchListRequest&, DescribeWindowsPatchListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWindowsPatchListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DestroyOrderResponse> DestroyOrderOutcome;
                 typedef std::future<DestroyOrderOutcome> DestroyOrderOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DestroyOrderRequest&, DestroyOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyOrderAsyncHandler;
@@ -2231,6 +2250,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ExportNonlocalLoginPlacesResponse> ExportNonlocalLoginPlacesOutcome;
                 typedef std::future<ExportNonlocalLoginPlacesOutcome> ExportNonlocalLoginPlacesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ExportNonlocalLoginPlacesRequest&, ExportNonlocalLoginPlacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportNonlocalLoginPlacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportPatchEffectHostListResponse> ExportPatchEffectHostListOutcome;
+                typedef std::future<ExportPatchEffectHostListOutcome> ExportPatchEffectHostListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::ExportPatchEffectHostListRequest&, ExportPatchEffectHostListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportPatchEffectHostListAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExportPrivilegeEventsResponse> ExportPrivilegeEventsOutcome;
                 typedef std::future<ExportPrivilegeEventsOutcome> ExportPrivilegeEventsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ExportPrivilegeEventsRequest&, ExportPrivilegeEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportPrivilegeEventsAsyncHandler;
@@ -2300,6 +2322,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ExportWebPageEventListResponse> ExportWebPageEventListOutcome;
                 typedef std::future<ExportWebPageEventListOutcome> ExportWebPageEventListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ExportWebPageEventListRequest&, ExportWebPageEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportWebPageEventListAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportWindowsPatchListResponse> ExportWindowsPatchListOutcome;
+                typedef std::future<ExportWindowsPatchListOutcome> ExportWindowsPatchListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::ExportWindowsPatchListRequest&, ExportWindowsPatchListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportWindowsPatchListAsyncHandler;
                 typedef Outcome<Core::Error, Model::FixBaselineDetectResponse> FixBaselineDetectOutcome;
                 typedef std::future<FixBaselineDetectOutcome> FixBaselineDetectOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::FixBaselineDetectRequest&, FixBaselineDetectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FixBaselineDetectAsyncHandler;
@@ -4734,6 +4759,24 @@ namespace TencentCloud
                 DescribeOverviewStatisticsOutcomeCallable DescribeOverviewStatisticsCallable(const Model::DescribeOverviewStatisticsRequest& request);
 
                 /**
+                 *查询补丁影响的主机信息列表
+                 * @param req DescribePatchEffectHostListRequest
+                 * @return DescribePatchEffectHostListOutcome
+                 */
+                DescribePatchEffectHostListOutcome DescribePatchEffectHostList(const Model::DescribePatchEffectHostListRequest &request);
+                void DescribePatchEffectHostListAsync(const Model::DescribePatchEffectHostListRequest& request, const DescribePatchEffectHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePatchEffectHostListOutcomeCallable DescribePatchEffectHostListCallable(const Model::DescribePatchEffectHostListRequest& request);
+
+                /**
+                 *补丁详情
+                 * @param req DescribePatchInfoRequest
+                 * @return DescribePatchInfoOutcome
+                 */
+                DescribePatchInfoOutcome DescribePatchInfo(const Model::DescribePatchInfoRequest &request);
+                void DescribePatchInfoAsync(const Model::DescribePatchInfoRequest& request, const DescribePatchInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePatchInfoOutcomeCallable DescribePatchInfoCallable(const Model::DescribePatchInfoRequest& request);
+
+                /**
                  *本地提权信息详情
                  * @param req DescribePrivilegeEventInfoRequest
                  * @return DescribePrivilegeEventInfoOutcome
@@ -5706,6 +5749,15 @@ namespace TencentCloud
                 DescribeWebPageServiceInfoOutcomeCallable DescribeWebPageServiceInfoCallable(const Model::DescribeWebPageServiceInfoRequest& request);
 
                 /**
+                 *获取补丁信息列表
+                 * @param req DescribeWindowsPatchListRequest
+                 * @return DescribeWindowsPatchListOutcome
+                 */
+                DescribeWindowsPatchListOutcome DescribeWindowsPatchList(const Model::DescribeWindowsPatchListRequest &request);
+                void DescribeWindowsPatchListAsync(const Model::DescribeWindowsPatchListRequest& request, const DescribeWindowsPatchListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWindowsPatchListOutcomeCallable DescribeWindowsPatchListCallable(const Model::DescribeWindowsPatchListRequest& request);
+
+                /**
                  *DestroyOrder  该接口可以对资源销毁.
                  * @param req DestroyOrderRequest
                  * @return DestroyOrderOutcome
@@ -6120,6 +6172,15 @@ namespace TencentCloud
                 ExportNonlocalLoginPlacesOutcomeCallable ExportNonlocalLoginPlacesCallable(const Model::ExportNonlocalLoginPlacesRequest& request);
 
                 /**
+                 *导出补丁影响主机列表
+                 * @param req ExportPatchEffectHostListRequest
+                 * @return ExportPatchEffectHostListOutcome
+                 */
+                ExportPatchEffectHostListOutcome ExportPatchEffectHostList(const Model::ExportPatchEffectHostListRequest &request);
+                void ExportPatchEffectHostListAsync(const Model::ExportPatchEffectHostListRequest& request, const ExportPatchEffectHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportPatchEffectHostListOutcomeCallable ExportPatchEffectHostListCallable(const Model::ExportPatchEffectHostListRequest& request);
+
+                /**
                  *导出本地提权事件
                  * @param req ExportPrivilegeEventsRequest
                  * @return ExportPrivilegeEventsOutcome
@@ -6325,6 +6386,15 @@ namespace TencentCloud
                 ExportWebPageEventListOutcome ExportWebPageEventList(const Model::ExportWebPageEventListRequest &request);
                 void ExportWebPageEventListAsync(const Model::ExportWebPageEventListRequest& request, const ExportWebPageEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ExportWebPageEventListOutcomeCallable ExportWebPageEventListCallable(const Model::ExportWebPageEventListRequest& request);
+
+                /**
+                 *导出Windows补丁列表
+                 * @param req ExportWindowsPatchListRequest
+                 * @return ExportWindowsPatchListOutcome
+                 */
+                ExportWindowsPatchListOutcome ExportWindowsPatchList(const Model::ExportWindowsPatchListRequest &request);
+                void ExportWindowsPatchListAsync(const Model::ExportWindowsPatchListRequest& request, const ExportWindowsPatchListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportWindowsPatchListOutcomeCallable ExportWindowsPatchListCallable(const Model::ExportWindowsPatchListRequest& request);
 
                 /**
                  *修复基线检测

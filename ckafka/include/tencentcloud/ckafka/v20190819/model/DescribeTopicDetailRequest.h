@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
-                     * @return InstanceId ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * 获取<p>ckafka集群实例Id，可通过<a href="https://cloud.tencent.com/document/product/597/40835">DescribeInstances</a>接口获取</p>
+                     * @return InstanceId <p>ckafka集群实例Id，可通过<a href="https://cloud.tencent.com/document/product/597/40835">DescribeInstances</a>接口获取</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
-                     * @param _instanceId ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * 设置<p>ckafka集群实例Id，可通过<a href="https://cloud.tencent.com/document/product/597/40835">DescribeInstances</a>接口获取</p>
+                     * @param _instanceId <p>ckafka集群实例Id，可通过<a href="https://cloud.tencent.com/document/product/597/40835">DescribeInstances</a>接口获取</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取（过滤条件）按照topicName过滤，支持模糊查询
-                     * @return SearchWord （过滤条件）按照topicName过滤，支持模糊查询
+                     * 获取<p>（过滤条件）按照topicName过滤，支持模糊查询</p>
+                     * @return SearchWord <p>（过滤条件）按照topicName过滤，支持模糊查询</p>
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置（过滤条件）按照topicName过滤，支持模糊查询
-                     * @param _searchWord （过滤条件）按照topicName过滤，支持模糊查询
+                     * 设置<p>（过滤条件）按照topicName过滤，支持模糊查询</p>
+                     * @param _searchWord <p>（过滤条件）按照topicName过滤，支持模糊查询</p>
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，不填默认为0
-                     * @return Offset 偏移量，不填默认为0
+                     * 获取<p>偏移量，不填默认为0</p>
+                     * @return Offset <p>偏移量，不填默认为0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，不填默认为0
-                     * @param _offset 偏移量，不填默认为0
+                     * 设置<p>偏移量，不填默认为0</p>
+                     * @param _offset <p>偏移量，不填默认为0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，不填则默认 20，取值要大于0
-                     * @return Limit 返回数量，不填则默认 20，取值要大于0
+                     * 获取<p>返回数量，不填则默认 20，取值要大于0</p>
+                     * @return Limit <p>返回数量，不填则默认 20，取值要大于0</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，不填则默认 20，取值要大于0
-                     * @param _limit 返回数量，不填则默认 20，取值要大于0
+                     * 设置<p>返回数量，不填则默认 20，取值要大于0</p>
+                     * @param _limit <p>返回数量，不填则默认 20，取值要大于0</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取Acl预设策略名称
-                     * @return AclRuleName Acl预设策略名称
+                     * 获取<p>Acl预设策略名称</p>
+                     * @return AclRuleName <p>Acl预设策略名称</p>
                      * 
                      */
                     std::string GetAclRuleName() const;
 
                     /**
-                     * 设置Acl预设策略名称
-                     * @param _aclRuleName Acl预设策略名称
+                     * 设置<p>Acl预设策略名称</p>
+                     * @param _aclRuleName <p>Acl预设策略名称</p>
                      * 
                      */
                     void SetAclRuleName(const std::string& _aclRuleName);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool AclRuleNameHasBeenSet() const;
 
                     /**
-                     * 获取根据特定的属性排序(目前支持PartitionNum/CreateTime)，默认值为CreateTime。
-                     * @return OrderBy 根据特定的属性排序(目前支持PartitionNum/CreateTime)，默认值为CreateTime。
+                     * 获取<p>根据特定的属性排序(目前支持PartitionNum/CreateTime)，默认值为CreateTime。</p><p>该参数为空时，默认按CreateTime倒序排序</p>
+                     * @return OrderBy <p>根据特定的属性排序(目前支持PartitionNum/CreateTime)，默认值为CreateTime。</p><p>该参数为空时，默认按CreateTime倒序排序</p>
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置根据特定的属性排序(目前支持PartitionNum/CreateTime)，默认值为CreateTime。
-                     * @param _orderBy 根据特定的属性排序(目前支持PartitionNum/CreateTime)，默认值为CreateTime。
+                     * 设置<p>根据特定的属性排序(目前支持PartitionNum/CreateTime)，默认值为CreateTime。</p><p>该参数为空时，默认按CreateTime倒序排序</p>
+                     * @param _orderBy <p>根据特定的属性排序(目前支持PartitionNum/CreateTime)，默认值为CreateTime。</p><p>该参数为空时，默认按CreateTime倒序排序</p>
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取0-顺序、1-倒序，默认值为0。
-                     * @return OrderType 0-顺序、1-倒序，默认值为0。
+                     * 获取<p>0-顺序、1-倒序，默认值为0。</p>
+                     * @return OrderType <p>0-顺序、1-倒序，默认值为0。</p>
                      * 
                      */
                     int64_t GetOrderType() const;
 
                     /**
-                     * 设置0-顺序、1-倒序，默认值为0。
-                     * @param _orderType 0-顺序、1-倒序，默认值为0。
+                     * 设置<p>0-顺序、1-倒序，默认值为0。</p>
+                     * @param _orderType <p>0-顺序、1-倒序，默认值为0。</p>
                      * 
                      */
                     void SetOrderType(const int64_t& _orderType);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取目前支持 ReplicaNum （副本数）筛选
-                     * @return Filters 目前支持 ReplicaNum （副本数）筛选
+                     * 获取<p>目前支持 ReplicaNum （副本数）筛选</p>
+                     * @return Filters <p>目前支持 ReplicaNum （副本数）筛选</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置目前支持 ReplicaNum （副本数）筛选
-                     * @param _filters 目前支持 ReplicaNum （副本数）筛选
+                     * 设置<p>目前支持 ReplicaNum （副本数）筛选</p>
+                     * @param _filters <p>目前支持 ReplicaNum （副本数）筛选</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -214,49 +214,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * <p>ckafka集群实例Id，可通过<a href="https://cloud.tencent.com/document/product/597/40835">DescribeInstances</a>接口获取</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * （过滤条件）按照topicName过滤，支持模糊查询
+                     * <p>（过滤条件）按照topicName过滤，支持模糊查询</p>
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 偏移量，不填默认为0
+                     * <p>偏移量，不填默认为0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，不填则默认 20，取值要大于0
+                     * <p>返回数量，不填则默认 20，取值要大于0</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * Acl预设策略名称
+                     * <p>Acl预设策略名称</p>
                      */
                     std::string m_aclRuleName;
                     bool m_aclRuleNameHasBeenSet;
 
                     /**
-                     * 根据特定的属性排序(目前支持PartitionNum/CreateTime)，默认值为CreateTime。
+                     * <p>根据特定的属性排序(目前支持PartitionNum/CreateTime)，默认值为CreateTime。</p><p>该参数为空时，默认按CreateTime倒序排序</p>
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 0-顺序、1-倒序，默认值为0。
+                     * <p>0-顺序、1-倒序，默认值为0。</p>
                      */
                     int64_t m_orderType;
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 目前支持 ReplicaNum （副本数）筛选
+                     * <p>目前支持 ReplicaNum （副本数）筛选</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

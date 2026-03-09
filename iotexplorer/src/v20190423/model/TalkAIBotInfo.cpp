@@ -36,7 +36,10 @@ TalkAIBotInfo::TalkAIBotInfo() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_boundProductsHasBeenSet(false),
-    m_customToolsHasBeenSet(false)
+    m_customToolsHasBeenSet(false),
+    m_webhookToolsHasBeenSet(false),
+    m_botTypeHasBeenSet(false),
+    m_rAGConfigHasBeenSet(false)
 {
 }
 
@@ -250,6 +253,36 @@ CoreInternalOutcome TalkAIBotInfo::Deserialize(const rapidjson::Value &value)
         m_customToolsHasBeenSet = true;
     }
 
+    if (value.HasMember("WebhookTools") && !value["WebhookTools"].IsNull())
+    {
+        if (!value["WebhookTools"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TalkAIBotInfo.WebhookTools` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_webhookTools = string(value["WebhookTools"].GetString());
+        m_webhookToolsHasBeenSet = true;
+    }
+
+    if (value.HasMember("BotType") && !value["BotType"].IsNull())
+    {
+        if (!value["BotType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TalkAIBotInfo.BotType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_botType = string(value["BotType"].GetString());
+        m_botTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RAGConfig") && !value["RAGConfig"].IsNull())
+    {
+        if (!value["RAGConfig"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TalkAIBotInfo.RAGConfig` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rAGConfig = string(value["RAGConfig"].GetString());
+        m_rAGConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +428,30 @@ void TalkAIBotInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "CustomTools";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_customTools.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_webhookToolsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebhookTools";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_webhookTools.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_botTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BotType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_botType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rAGConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RAGConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rAGConfig.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -654,5 +711,53 @@ void TalkAIBotInfo::SetCustomTools(const string& _customTools)
 bool TalkAIBotInfo::CustomToolsHasBeenSet() const
 {
     return m_customToolsHasBeenSet;
+}
+
+string TalkAIBotInfo::GetWebhookTools() const
+{
+    return m_webhookTools;
+}
+
+void TalkAIBotInfo::SetWebhookTools(const string& _webhookTools)
+{
+    m_webhookTools = _webhookTools;
+    m_webhookToolsHasBeenSet = true;
+}
+
+bool TalkAIBotInfo::WebhookToolsHasBeenSet() const
+{
+    return m_webhookToolsHasBeenSet;
+}
+
+string TalkAIBotInfo::GetBotType() const
+{
+    return m_botType;
+}
+
+void TalkAIBotInfo::SetBotType(const string& _botType)
+{
+    m_botType = _botType;
+    m_botTypeHasBeenSet = true;
+}
+
+bool TalkAIBotInfo::BotTypeHasBeenSet() const
+{
+    return m_botTypeHasBeenSet;
+}
+
+string TalkAIBotInfo::GetRAGConfig() const
+{
+    return m_rAGConfig;
+}
+
+void TalkAIBotInfo::SetRAGConfig(const string& _rAGConfig)
+{
+    m_rAGConfig = _rAGConfig;
+    m_rAGConfigHasBeenSet = true;
+}
+
+bool TalkAIBotInfo::RAGConfigHasBeenSet() const
+{
+    return m_rAGConfigHasBeenSet;
 }
 

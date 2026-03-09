@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取挂载点ID
-                     * @return MountPointId 挂载点ID
+                     * 获取<p>挂载点ID</p>
+                     * @return MountPointId <p>挂载点ID</p>
                      * 
                      */
                     std::string GetMountPointId() const;
 
                     /**
-                     * 设置挂载点ID
-                     * @param _mountPointId 挂载点ID
+                     * 设置<p>挂载点ID</p>
+                     * @param _mountPointId <p>挂载点ID</p>
                      * 
                      */
                     void SetMountPointId(const std::string& _mountPointId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool MountPointIdHasBeenSet() const;
 
                     /**
-                     * 获取挂载点名称
-                     * @return MountPointName 挂载点名称
+                     * 获取<p>挂载点名称</p>
+                     * @return MountPointName <p>挂载点名称</p>
                      * 
                      */
                     std::string GetMountPointName() const;
 
                     /**
-                     * 设置挂载点名称
-                     * @param _mountPointName 挂载点名称
+                     * 设置<p>挂载点名称</p>
+                     * @param _mountPointName <p>挂载点名称</p>
                      * 
                      */
                     void SetMountPointName(const std::string& _mountPointName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool MountPointNameHasBeenSet() const;
 
                     /**
-                     * 获取挂载点状态
-                     * @return MountPointStatus 挂载点状态
+                     * 获取<p>挂载点状态</p><p>枚举值：</p><ul><li>1： 打开</li><li>2： 关闭</li></ul>
+                     * @return MountPointStatus <p>挂载点状态</p><p>枚举值：</p><ul><li>1： 打开</li><li>2： 关闭</li></ul>
                      * 
                      */
                     uint64_t GetMountPointStatus() const;
 
                     /**
-                     * 设置挂载点状态
-                     * @param _mountPointStatus 挂载点状态
+                     * 设置<p>挂载点状态</p><p>枚举值：</p><ul><li>1： 打开</li><li>2： 关闭</li></ul>
+                     * @param _mountPointStatus <p>挂载点状态</p><p>枚举值：</p><ul><li>1： 打开</li><li>2： 关闭</li></ul>
                      * 
                      */
                     void SetMountPointStatus(const uint64_t& _mountPointStatus);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 挂载点ID
+                     * <p>挂载点ID</p>
                      */
                     std::string m_mountPointId;
                     bool m_mountPointIdHasBeenSet;
 
                     /**
-                     * 挂载点名称
+                     * <p>挂载点名称</p>
                      */
                     std::string m_mountPointName;
                     bool m_mountPointNameHasBeenSet;
 
                     /**
-                     * 挂载点状态
+                     * <p>挂载点状态</p><p>枚举值：</p><ul><li>1： 打开</li><li>2： 关闭</li></ul>
                      */
                     uint64_t m_mountPointStatus;
                     bool m_mountPointStatusHasBeenSet;

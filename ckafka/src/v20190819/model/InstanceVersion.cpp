@@ -26,7 +26,8 @@ InstanceVersion::InstanceVersion() :
     m_latestBrokerVersionHasBeenSet(false),
     m_allowUpgradeHighVersionHasBeenSet(false),
     m_highVersionSetHasBeenSet(false),
-    m_allowAutoDeleteTimestampHasBeenSet(false)
+    m_allowAutoDeleteTimestampHasBeenSet(false),
+    m_allowModifyTxnIdExpirationHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,16 @@ CoreInternalOutcome InstanceVersion::Deserialize(const rapidjson::Value &value)
         m_allowAutoDeleteTimestampHasBeenSet = true;
     }
 
+    if (value.HasMember("AllowModifyTxnIdExpiration") && !value["AllowModifyTxnIdExpiration"].IsNull())
+    {
+        if (!value["AllowModifyTxnIdExpiration"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceVersion.AllowModifyTxnIdExpiration` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_allowModifyTxnIdExpiration = value["AllowModifyTxnIdExpiration"].GetBool();
+        m_allowModifyTxnIdExpirationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -173,6 +184,14 @@ void InstanceVersion::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "AllowAutoDeleteTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_allowAutoDeleteTimestamp, allocator);
+    }
+
+    if (m_allowModifyTxnIdExpirationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowModifyTxnIdExpiration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_allowModifyTxnIdExpiration, allocator);
     }
 
 }
@@ -272,5 +291,21 @@ void InstanceVersion::SetAllowAutoDeleteTimestamp(const bool& _allowAutoDeleteTi
 bool InstanceVersion::AllowAutoDeleteTimestampHasBeenSet() const
 {
     return m_allowAutoDeleteTimestampHasBeenSet;
+}
+
+bool InstanceVersion::GetAllowModifyTxnIdExpiration() const
+{
+    return m_allowModifyTxnIdExpiration;
+}
+
+void InstanceVersion::SetAllowModifyTxnIdExpiration(const bool& _allowModifyTxnIdExpiration)
+{
+    m_allowModifyTxnIdExpiration = _allowModifyTxnIdExpiration;
+    m_allowModifyTxnIdExpirationHasBeenSet = true;
+}
+
+bool InstanceVersion::AllowModifyTxnIdExpirationHasBeenSet() const
+{
+    return m_allowModifyTxnIdExpirationHasBeenSet;
 }
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @return SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 获取<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
+                     * @return SdkAppId <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
-                     * 设置应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @param _sdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 设置<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
+                     * @param _sdkAppId <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取通话的 session id
-                     * @return SessionId 通话的 session id
+                     * 获取<p>通话的 session id</p>
+                     * @return SessionId <p>通话的 session id</p>
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置通话的 session id
-                     * @param _sessionId 通话的 session id
+                     * 设置<p>通话的 session id</p>
+                     * @param _sessionId <p>通话的 session id</p>
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取起始时间戳，Unix 秒级时间戳，最大支持近180天。
-                     * @return StartTimestamp 起始时间戳，Unix 秒级时间戳，最大支持近180天。
+                     * 获取<p>起始时间戳，Unix 秒级时间戳，最大支持近180天。</p>
+                     * @return StartTimestamp <p>起始时间戳，Unix 秒级时间戳，最大支持近180天。</p>
                      * 
                      */
                     int64_t GetStartTimestamp() const;
 
                     /**
-                     * 设置起始时间戳，Unix 秒级时间戳，最大支持近180天。
-                     * @param _startTimestamp 起始时间戳，Unix 秒级时间戳，最大支持近180天。
+                     * 设置<p>起始时间戳，Unix 秒级时间戳，最大支持近180天。</p>
+                     * @param _startTimestamp <p>起始时间戳，Unix 秒级时间戳，最大支持近180天。</p>
                      * 
                      */
                     void SetStartTimestamp(const int64_t& _startTimestamp);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool StartTimestampHasBeenSet() const;
 
                     /**
-                     * 获取结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。
-                     * @return EndTimestamp 结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。
+                     * 获取<p>结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。</p>
+                     * @return EndTimestamp <p>结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。</p>
                      * 
                      */
                     int64_t GetEndTimestamp() const;
 
                     /**
-                     * 设置结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。
-                     * @param _endTimestamp 结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。
+                     * 设置<p>结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。</p>
+                     * @param _endTimestamp <p>结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。</p>
                      * 
                      */
                     void SetEndTimestamp(const int64_t& _endTimestamp);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      */
                     int64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 通话的 session id
+                     * <p>通话的 session id</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 起始时间戳，Unix 秒级时间戳，最大支持近180天。
+                     * <p>起始时间戳，Unix 秒级时间戳，最大支持近180天。</p>
                      */
                     int64_t m_startTimestamp;
                     bool m_startTimestampHasBeenSet;
 
                     /**
-                     * 结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。
+                     * <p>结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。</p>
                      */
                     int64_t m_endTimestamp;
                     bool m_endTimestampHasBeenSet;

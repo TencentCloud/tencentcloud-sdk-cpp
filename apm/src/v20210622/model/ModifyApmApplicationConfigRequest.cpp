@@ -77,7 +77,10 @@ ModifyApmApplicationConfigRequest::ModifyApmApplicationConfigRequest() :
     m_enableDesensitizationRuleHasBeenSet(false),
     m_desensitizationRuleHasBeenSet(false),
     m_logSpanIdKeyHasBeenSet(false),
-    m_autoProfilingConfigHasBeenSet(false)
+    m_autoProfilingConfigHasBeenSet(false),
+    m_enableThresholdConfigHasBeenSet(false),
+    m_errRateThresholdHasBeenSet(false),
+    m_responseDurationWarningThresholdHasBeenSet(false)
 {
 }
 
@@ -542,6 +545,30 @@ string ModifyApmApplicationConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_autoProfilingConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_enableThresholdConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableThresholdConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableThresholdConfig, allocator);
+    }
+
+    if (m_errRateThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrRateThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_errRateThreshold, allocator);
+    }
+
+    if (m_responseDurationWarningThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResponseDurationWarningThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_responseDurationWarningThreshold, allocator);
     }
 
 
@@ -1430,6 +1457,54 @@ void ModifyApmApplicationConfigRequest::SetAutoProfilingConfig(const AutoProfili
 bool ModifyApmApplicationConfigRequest::AutoProfilingConfigHasBeenSet() const
 {
     return m_autoProfilingConfigHasBeenSet;
+}
+
+bool ModifyApmApplicationConfigRequest::GetEnableThresholdConfig() const
+{
+    return m_enableThresholdConfig;
+}
+
+void ModifyApmApplicationConfigRequest::SetEnableThresholdConfig(const bool& _enableThresholdConfig)
+{
+    m_enableThresholdConfig = _enableThresholdConfig;
+    m_enableThresholdConfigHasBeenSet = true;
+}
+
+bool ModifyApmApplicationConfigRequest::EnableThresholdConfigHasBeenSet() const
+{
+    return m_enableThresholdConfigHasBeenSet;
+}
+
+int64_t ModifyApmApplicationConfigRequest::GetErrRateThreshold() const
+{
+    return m_errRateThreshold;
+}
+
+void ModifyApmApplicationConfigRequest::SetErrRateThreshold(const int64_t& _errRateThreshold)
+{
+    m_errRateThreshold = _errRateThreshold;
+    m_errRateThresholdHasBeenSet = true;
+}
+
+bool ModifyApmApplicationConfigRequest::ErrRateThresholdHasBeenSet() const
+{
+    return m_errRateThresholdHasBeenSet;
+}
+
+int64_t ModifyApmApplicationConfigRequest::GetResponseDurationWarningThreshold() const
+{
+    return m_responseDurationWarningThreshold;
+}
+
+void ModifyApmApplicationConfigRequest::SetResponseDurationWarningThreshold(const int64_t& _responseDurationWarningThreshold)
+{
+    m_responseDurationWarningThreshold = _responseDurationWarningThreshold;
+    m_responseDurationWarningThresholdHasBeenSet = true;
+}
+
+bool ModifyApmApplicationConfigRequest::ResponseDurationWarningThresholdHasBeenSet() const
+{
+    return m_responseDurationWarningThresholdHasBeenSet;
 }
 
 

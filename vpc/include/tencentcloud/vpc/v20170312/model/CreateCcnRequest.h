@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取计量模式
-                     * @return InstanceMeteringType 计量模式
+                     * 获取计量模式,`BANDWIDTH`：表示带宽,即带宽计量模式，`TRAFFIC`：表示流量,即流量计量模式。
+                     * @return InstanceMeteringType 计量模式,`BANDWIDTH`：表示带宽,即带宽计量模式，`TRAFFIC`：表示流量,即流量计量模式。
                      * 
                      */
                     std::string GetInstanceMeteringType() const;
 
                     /**
-                     * 设置计量模式
-                     * @param _instanceMeteringType 计量模式
+                     * 设置计量模式,`BANDWIDTH`：表示带宽,即带宽计量模式，`TRAFFIC`：表示流量,即流量计量模式。
+                     * @param _instanceMeteringType 计量模式,`BANDWIDTH`：表示带宽,即带宽计量模式，`TRAFFIC`：表示流量,即流量计量模式。
                      * 
                      */
                     void SetInstanceMeteringType(const std::string& _instanceMeteringType);
@@ -217,7 +217,7 @@ namespace TencentCloud
                     bool m_instanceChargeTypeHasBeenSet;
 
                     /**
-                     * 计量模式
+                     * 计量模式,`BANDWIDTH`：表示带宽,即带宽计量模式，`TRAFFIC`：表示流量,即流量计量模式。
                      */
                     std::string m_instanceMeteringType;
                     bool m_instanceMeteringTypeHasBeenSet;

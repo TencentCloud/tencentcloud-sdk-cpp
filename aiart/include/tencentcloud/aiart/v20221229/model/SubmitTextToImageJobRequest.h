@@ -86,48 +86,6 @@ namespace TencentCloud
                     bool ImagesHasBeenSet() const;
 
                     /**
-                     * 获取<p>选择适配的生图能力类型。</p><p>枚举值：</p><ul><li>default： 通用生图</li><li>cover： 文章封面</li><li>ppt： 幻灯片PPT</li><li>poster： 创意海报</li></ul><p>默认值：default</p>
-                     * @return SkillType <p>选择适配的生图能力类型。</p><p>枚举值：</p><ul><li>default： 通用生图</li><li>cover： 文章封面</li><li>ppt： 幻灯片PPT</li><li>poster： 创意海报</li></ul><p>默认值：default</p>
-                     * 
-                     */
-                    std::string GetSkillType() const;
-
-                    /**
-                     * 设置<p>选择适配的生图能力类型。</p><p>枚举值：</p><ul><li>default： 通用生图</li><li>cover： 文章封面</li><li>ppt： 幻灯片PPT</li><li>poster： 创意海报</li></ul><p>默认值：default</p>
-                     * @param _skillType <p>选择适配的生图能力类型。</p><p>枚举值：</p><ul><li>default： 通用生图</li><li>cover： 文章封面</li><li>ppt： 幻灯片PPT</li><li>poster： 创意海报</li></ul><p>默认值：default</p>
-                     * 
-                     */
-                    void SetSkillType(const std::string& _skillType);
-
-                    /**
-                     * 判断参数 SkillType 是否已赋值
-                     * @return SkillType 是否已赋值
-                     * 
-                     */
-                    bool SkillTypeHasBeenSet() const;
-
-                    /**
-                     * 获取<p>生成的结果图片数量<br>取值范围： </p><ul><li>default：通用生图任务（1）</li><li>cover:：封面（1）</li><li>ppt：幻灯片页数（1～20）</li><li>poster：生成图片张数（1）</li></ul><p>默认值：1</p>
-                     * @return GeneratedImageCount <p>生成的结果图片数量<br>取值范围： </p><ul><li>default：通用生图任务（1）</li><li>cover:：封面（1）</li><li>ppt：幻灯片页数（1～20）</li><li>poster：生成图片张数（1）</li></ul><p>默认值：1</p>
-                     * 
-                     */
-                    int64_t GetGeneratedImageCount() const;
-
-                    /**
-                     * 设置<p>生成的结果图片数量<br>取值范围： </p><ul><li>default：通用生图任务（1）</li><li>cover:：封面（1）</li><li>ppt：幻灯片页数（1～20）</li><li>poster：生成图片张数（1）</li></ul><p>默认值：1</p>
-                     * @param _generatedImageCount <p>生成的结果图片数量<br>取值范围： </p><ul><li>default：通用生图任务（1）</li><li>cover:：封面（1）</li><li>ppt：幻灯片页数（1～20）</li><li>poster：生成图片张数（1）</li></ul><p>默认值：1</p>
-                     * 
-                     */
-                    void SetGeneratedImageCount(const int64_t& _generatedImageCount);
-
-                    /**
-                     * 判断参数 GeneratedImageCount 是否已赋值
-                     * @return GeneratedImageCount 是否已赋值
-                     * 
-                     */
-                    bool GeneratedImageCountHasBeenSet() const;
-
-                    /**
                      * 获取<p>生成图分辨率，默认1024:1024：</p><ul><li>宽高维度均在 [512, 2048] 像素范围内;</li><li>宽高乘积（即图像面积）不超过 1024×1024 像素;</li></ul>
                      * @return Resolution <p>生成图分辨率，默认1024:1024：</p><ul><li>宽高维度均在 [512, 2048] 像素范围内;</li><li>宽高乘积（即图像面积）不超过 1024×1024 像素;</li></ul>
                      * 
@@ -245,18 +203,6 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_images;
                     bool m_imagesHasBeenSet;
-
-                    /**
-                     * <p>选择适配的生图能力类型。</p><p>枚举值：</p><ul><li>default： 通用生图</li><li>cover： 文章封面</li><li>ppt： 幻灯片PPT</li><li>poster： 创意海报</li></ul><p>默认值：default</p>
-                     */
-                    std::string m_skillType;
-                    bool m_skillTypeHasBeenSet;
-
-                    /**
-                     * <p>生成的结果图片数量<br>取值范围： </p><ul><li>default：通用生图任务（1）</li><li>cover:：封面（1）</li><li>ppt：幻灯片页数（1～20）</li><li>poster：生成图片张数（1）</li></ul><p>默认值：1</p>
-                     */
-                    int64_t m_generatedImageCount;
-                    bool m_generatedImageCountHasBeenSet;
 
                     /**
                      * <p>生成图分辨率，默认1024:1024：</p><ul><li>宽高维度均在 [512, 2048] 像素范围内;</li><li>宽高乘积（即图像面积）不超过 1024×1024 像素;</li></ul>

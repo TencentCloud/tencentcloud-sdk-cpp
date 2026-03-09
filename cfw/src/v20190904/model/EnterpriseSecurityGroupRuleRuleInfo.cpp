@@ -53,7 +53,9 @@ EnterpriseSecurityGroupRuleRuleInfo::EnterpriseSecurityGroupRuleRuleInfo() :
     m_idHasBeenSet(false),
     m_dnsParseCountHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_rulePartitionHasBeenSet(false),
+    m_scopeHasBeenSet(false)
 {
 }
 
@@ -409,6 +411,26 @@ CoreInternalOutcome EnterpriseSecurityGroupRuleRuleInfo::Deserialize(const rapid
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("RulePartition") && !value["RulePartition"].IsNull())
+    {
+        if (!value["RulePartition"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnterpriseSecurityGroupRuleRuleInfo.RulePartition` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rulePartition = value["RulePartition"].GetInt64();
+        m_rulePartitionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Scope") && !value["Scope"].IsNull())
+    {
+        if (!value["Scope"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnterpriseSecurityGroupRuleRuleInfo.Scope` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scope = string(value["Scope"].GetString());
+        m_scopeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -686,6 +708,22 @@ void EnterpriseSecurityGroupRuleRuleInfo::ToJsonObject(rapidjson::Value &value, 
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rulePartitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RulePartition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rulePartition, allocator);
+    }
+
+    if (m_scopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scope.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1217,5 +1255,37 @@ void EnterpriseSecurityGroupRuleRuleInfo::SetUpdateTime(const string& _updateTim
 bool EnterpriseSecurityGroupRuleRuleInfo::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+int64_t EnterpriseSecurityGroupRuleRuleInfo::GetRulePartition() const
+{
+    return m_rulePartition;
+}
+
+void EnterpriseSecurityGroupRuleRuleInfo::SetRulePartition(const int64_t& _rulePartition)
+{
+    m_rulePartition = _rulePartition;
+    m_rulePartitionHasBeenSet = true;
+}
+
+bool EnterpriseSecurityGroupRuleRuleInfo::RulePartitionHasBeenSet() const
+{
+    return m_rulePartitionHasBeenSet;
+}
+
+string EnterpriseSecurityGroupRuleRuleInfo::GetScope() const
+{
+    return m_scope;
+}
+
+void EnterpriseSecurityGroupRuleRuleInfo::SetScope(const string& _scope)
+{
+    m_scope = _scope;
+    m_scopeHasBeenSet = true;
+}
+
+bool EnterpriseSecurityGroupRuleRuleInfo::ScopeHasBeenSet() const
+{
+    return m_scopeHasBeenSet;
 }
 

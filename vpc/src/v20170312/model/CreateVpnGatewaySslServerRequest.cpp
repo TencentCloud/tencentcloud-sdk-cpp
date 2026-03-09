@@ -35,7 +35,8 @@ CreateVpnGatewaySslServerRequest::CreateVpnGatewaySslServerRequest() :
     m_ssoEnabledHasBeenSet(false),
     m_accessPolicyEnabledHasBeenSet(false),
     m_samlDataHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_dnsServersHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,15 @@ string CreateVpnGatewaySslServerRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dnsServersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DnsServers";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dnsServers.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -376,6 +386,22 @@ void CreateVpnGatewaySslServerRequest::SetTags(const vector<Tag>& _tags)
 bool CreateVpnGatewaySslServerRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+DnsServers CreateVpnGatewaySslServerRequest::GetDnsServers() const
+{
+    return m_dnsServers;
+}
+
+void CreateVpnGatewaySslServerRequest::SetDnsServers(const DnsServers& _dnsServers)
+{
+    m_dnsServers = _dnsServers;
+    m_dnsServersHasBeenSet = true;
+}
+
+bool CreateVpnGatewaySslServerRequest::DnsServersHasBeenSet() const
+{
+    return m_dnsServersHasBeenSet;
 }
 
 

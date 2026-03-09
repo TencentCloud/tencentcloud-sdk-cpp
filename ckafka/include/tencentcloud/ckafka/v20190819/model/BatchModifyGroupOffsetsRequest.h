@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取消费分组名称
-                     * @return GroupName 消费分组名称
+                     * 获取<p>消费分组名称</p>
+                     * @return GroupName <p>消费分组名称</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置消费分组名称
-                     * @param _groupName 消费分组名称
+                     * 设置<p>消费分组名称</p>
+                     * @param _groupName <p>消费分组名称</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取ckafka集群实例Id
-                     * @return InstanceId ckafka集群实例Id
+                     * 获取<p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
+                     * @return InstanceId <p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id
-                     * @param _instanceId ckafka集群实例Id
+                     * 设置<p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
+                     * @param _instanceId <p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取partition信息
-                     * @return Partitions partition信息
+                     * 获取<p>partition信息</p>
+                     * @return Partitions <p>partition信息</p>
                      * 
                      */
                     std::vector<Partitions> GetPartitions() const;
 
                     /**
-                     * 设置partition信息
-                     * @param _partitions partition信息
+                     * 设置<p>partition信息</p>
+                     * @param _partitions <p>partition信息</p>
                      * 
                      */
                     void SetPartitions(const std::vector<Partitions>& _partitions);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool PartitionsHasBeenSet() const;
 
                     /**
-                     * 获取指定topic，默认所有topic
-                     * @return TopicName 指定topic，默认所有topic
+                     * 获取<p>指定topic，默认所有topic</p>
+                     * @return TopicName <p>指定topic，默认所有topic</p>
                      * 
                      */
                     std::vector<std::string> GetTopicName() const;
 
                     /**
-                     * 设置指定topic，默认所有topic
-                     * @param _topicName 指定topic，默认所有topic
+                     * 设置<p>指定topic，默认所有topic</p>
+                     * @param _topicName <p>指定topic，默认所有topic</p>
                      * 
                      */
                     void SetTopicName(const std::vector<std::string>& _topicName);
@@ -130,25 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 消费分组名称
+                     * <p>消费分组名称</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * ckafka集群实例Id
+                     * <p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * partition信息
+                     * <p>partition信息</p>
                      */
                     std::vector<Partitions> m_partitions;
                     bool m_partitionsHasBeenSet;
 
                     /**
-                     * 指定topic，默认所有topic
+                     * <p>指定topic，默认所有topic</p>
                      */
                     std::vector<std::string> m_topicName;
                     bool m_topicNameHasBeenSet;

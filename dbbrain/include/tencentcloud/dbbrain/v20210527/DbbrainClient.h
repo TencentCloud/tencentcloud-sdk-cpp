@@ -45,6 +45,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/CreateKillTaskResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateMailProfileRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateMailProfileResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/CreateMongoDBKillTaskRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/CreateMongoDBKillTaskResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateProxySessionKillTaskRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateProxySessionKillTaskResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateRedisBigKeyAnalysisTaskRequest.h>
@@ -240,6 +242,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateMailProfileResponse> CreateMailProfileOutcome;
                 typedef std::future<CreateMailProfileOutcome> CreateMailProfileOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateMailProfileRequest&, CreateMailProfileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMailProfileAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMongoDBKillTaskResponse> CreateMongoDBKillTaskOutcome;
+                typedef std::future<CreateMongoDBKillTaskOutcome> CreateMongoDBKillTaskOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::CreateMongoDBKillTaskRequest&, CreateMongoDBKillTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMongoDBKillTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateProxySessionKillTaskResponse> CreateProxySessionKillTaskOutcome;
                 typedef std::future<CreateProxySessionKillTaskOutcome> CreateProxySessionKillTaskOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateProxySessionKillTaskRequest&, CreateProxySessionKillTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProxySessionKillTaskAsyncHandler;
@@ -563,6 +568,15 @@ namespace TencentCloud
                 CreateMailProfileOutcome CreateMailProfile(const Model::CreateMailProfileRequest &request);
                 void CreateMailProfileAsync(const Model::CreateMailProfileRequest& request, const CreateMailProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateMailProfileOutcomeCallable CreateMailProfileCallable(const Model::CreateMailProfileRequest& request);
+
+                /**
+                 *创建中断会话的任务。
+                 * @param req CreateMongoDBKillTaskRequest
+                 * @return CreateMongoDBKillTaskOutcome
+                 */
+                CreateMongoDBKillTaskOutcome CreateMongoDBKillTask(const Model::CreateMongoDBKillTaskRequest &request);
+                void CreateMongoDBKillTaskAsync(const Model::CreateMongoDBKillTaskRequest& request, const CreateMongoDBKillTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMongoDBKillTaskOutcomeCallable CreateMongoDBKillTaskCallable(const Model::CreateMongoDBKillTaskRequest& request);
 
                 /**
                  *创建中止所有代理节点连接会话的异步任务。当前仅支持 Redis。得到的返回值为异步任务 id，可以作为参数传入接口 DescribeProxySessionKillTasks 查询kill会话任务执行状态。

@@ -395,6 +395,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeCustomerGatewayVendorsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCustomerGatewaysRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCustomerGatewaysResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeDesignatedZonesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeDesignatedZonesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeDhcpIpsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeDhcpIpsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeDirectConnectGatewayCcnRoutesRequest.h>
@@ -1479,6 +1481,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCustomerGatewaysResponse> DescribeCustomerGatewaysOutcome;
                 typedef std::future<DescribeCustomerGatewaysOutcome> DescribeCustomerGatewaysOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeCustomerGatewaysRequest&, DescribeCustomerGatewaysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomerGatewaysAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDesignatedZonesResponse> DescribeDesignatedZonesOutcome;
+                typedef std::future<DescribeDesignatedZonesOutcome> DescribeDesignatedZonesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeDesignatedZonesRequest&, DescribeDesignatedZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDesignatedZonesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDhcpIpsResponse> DescribeDhcpIpsOutcome;
                 typedef std::future<DescribeDhcpIpsOutcome> DescribeDhcpIpsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeDhcpIpsRequest&, DescribeDhcpIpsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDhcpIpsAsyncHandler;
@@ -4097,6 +4102,15 @@ namespace TencentCloud
                 DescribeCustomerGatewaysOutcome DescribeCustomerGateways(const Model::DescribeCustomerGatewaysRequest &request);
                 void DescribeCustomerGatewaysAsync(const Model::DescribeCustomerGatewaysRequest& request, const DescribeCustomerGatewaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCustomerGatewaysOutcomeCallable DescribeCustomerGatewaysCallable(const Model::DescribeCustomerGatewaysRequest& request);
+
+                /**
+                 *用于查询用户创建带宽包时可指定的可用区信息
+                 * @param req DescribeDesignatedZonesRequest
+                 * @return DescribeDesignatedZonesOutcome
+                 */
+                DescribeDesignatedZonesOutcome DescribeDesignatedZones(const Model::DescribeDesignatedZonesRequest &request);
+                void DescribeDesignatedZonesAsync(const Model::DescribeDesignatedZonesRequest& request, const DescribeDesignatedZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDesignatedZonesOutcomeCallable DescribeDesignatedZonesCallable(const Model::DescribeDesignatedZonesRequest& request);
 
                 /**
                  *本接口（DescribeDhcpIps）用于查询DhcpIp列表

@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取大小。
-                     * @return Size 大小。
+                     * 获取<p>大小。</p>
+                     * @return Size <p>大小。</p>
                      * 
                      */
                     uint64_t GetSize() const;
 
                     /**
-                     * 设置大小。
-                     * @param _size 大小。
+                     * 设置<p>大小。</p>
+                     * @param _size <p>大小。</p>
                      * 
                      */
                     void SetSize(const uint64_t& _size);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool SizeHasBeenSet() const;
 
                     /**
-                     * 获取容器类型。
-                     * @return Container 容器类型。
+                     * 获取<p>容器类型。</p>
+                     * @return Container <p>容器类型。</p>
                      * 
                      */
                     std::string GetContainer() const;
 
                     /**
-                     * 设置容器类型。
-                     * @param _container 容器类型。
+                     * 设置<p>容器类型。</p>
+                     * @param _container <p>容器类型。</p>
                      * 
                      */
                     void SetContainer(const std::string& _container);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool ContainerHasBeenSet() const;
 
                     /**
-                     * 获取视频流码率平均值与音频流码率平均值之和，单位：bps。
-                     * @return Bitrate 视频流码率平均值与音频流码率平均值之和，单位：bps。
+                     * 获取<p>视频流码率平均值与音频流码率平均值之和，单位：bps。</p>
+                     * @return Bitrate <p>视频流码率平均值与音频流码率平均值之和，单位：bps。</p>
                      * 
                      */
                     uint64_t GetBitrate() const;
 
                     /**
-                     * 设置视频流码率平均值与音频流码率平均值之和，单位：bps。
-                     * @param _bitrate 视频流码率平均值与音频流码率平均值之和，单位：bps。
+                     * 设置<p>视频流码率平均值与音频流码率平均值之和，单位：bps。</p>
+                     * @param _bitrate <p>视频流码率平均值与音频流码率平均值之和，单位：bps。</p>
                      * 
                      */
                     void SetBitrate(const uint64_t& _bitrate);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool BitrateHasBeenSet() const;
 
                     /**
-                     * 获取视频流高度的最大值，单位：px。
-                     * @return Height 视频流高度的最大值，单位：px。
+                     * 获取<p>视频流高度的最大值，单位：px。</p>
+                     * @return Height <p>视频流高度的最大值，单位：px。</p>
                      * 
                      */
                     uint64_t GetHeight() const;
 
                     /**
-                     * 设置视频流高度的最大值，单位：px。
-                     * @param _height 视频流高度的最大值，单位：px。
+                     * 设置<p>视频流高度的最大值，单位：px。</p>
+                     * @param _height <p>视频流高度的最大值，单位：px。</p>
                      * 
                      */
                     void SetHeight(const uint64_t& _height);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取视频流宽度的最大值，单位：px。
-                     * @return Width 视频流宽度的最大值，单位：px。
+                     * 获取<p>视频流宽度的最大值，单位：px。</p>
+                     * @return Width <p>视频流宽度的最大值，单位：px。</p>
                      * 
                      */
                     uint64_t GetWidth() const;
 
                     /**
-                     * 设置视频流宽度的最大值，单位：px。
-                     * @param _width 视频流宽度的最大值，单位：px。
+                     * 设置<p>视频流宽度的最大值，单位：px。</p>
+                     * @param _width <p>视频流宽度的最大值，单位：px。</p>
                      * 
                      */
                     void SetWidth(const uint64_t& _width);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取时长，单位：秒。
-                     * @return Duration 时长，单位：秒。
+                     * 获取<p>时长，单位：秒。</p>
+                     * @return Duration <p>时长，单位：秒。</p>
                      * 
                      */
                     double GetDuration() const;
 
                     /**
-                     * 设置时长，单位：秒。
-                     * @param _duration 时长，单位：秒。
+                     * 设置<p>时长，单位：秒。</p>
+                     * @param _duration <p>时长，单位：秒。</p>
                      * 
                      */
                     void SetDuration(const double& _duration);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取视频拍摄时的选择角度，单位：度
-                     * @return Rotate 视频拍摄时的选择角度，单位：度
+                     * 获取<p>视频拍摄时的选择角度，单位：度</p>
+                     * @return Rotate <p>视频拍摄时的选择角度，单位：度</p>
                      * 
                      */
                     int64_t GetRotate() const;
 
                     /**
-                     * 设置视频拍摄时的选择角度，单位：度
-                     * @param _rotate 视频拍摄时的选择角度，单位：度
+                     * 设置<p>视频拍摄时的选择角度，单位：度</p>
+                     * @param _rotate <p>视频拍摄时的选择角度，单位：度</p>
                      * 
                      */
                     void SetRotate(const int64_t& _rotate);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool RotateHasBeenSet() const;
 
                     /**
-                     * 获取视频流信息。
-                     * @return VideoStreamInfoSet 视频流信息。
+                     * 获取<p>视频流信息。</p>
+                     * @return VideoStreamInfoSet <p>视频流信息。</p>
                      * 
                      */
                     std::vector<VideoStreamInfo> GetVideoStreamInfoSet() const;
 
                     /**
-                     * 设置视频流信息。
-                     * @param _videoStreamInfoSet 视频流信息。
+                     * 设置<p>视频流信息。</p>
+                     * @param _videoStreamInfoSet <p>视频流信息。</p>
                      * 
                      */
                     void SetVideoStreamInfoSet(const std::vector<VideoStreamInfo>& _videoStreamInfoSet);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool VideoStreamInfoSetHasBeenSet() const;
 
                     /**
-                     * 获取音频流信息。
-                     * @return AudioStreamInfoSet 音频流信息。
+                     * 获取<p>音频流信息。</p>
+                     * @return AudioStreamInfoSet <p>音频流信息。</p>
                      * 
                      */
                     std::vector<AudioStreamInfo> GetAudioStreamInfoSet() const;
 
                     /**
-                     * 设置音频流信息。
-                     * @param _audioStreamInfoSet 音频流信息。
+                     * 设置<p>音频流信息。</p>
+                     * @param _audioStreamInfoSet <p>音频流信息。</p>
                      * 
                      */
                     void SetAudioStreamInfoSet(const std::vector<AudioStreamInfo>& _audioStreamInfoSet);
@@ -240,55 +240,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 大小。
+                     * <p>大小。</p>
                      */
                     uint64_t m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
-                     * 容器类型。
+                     * <p>容器类型。</p>
                      */
                     std::string m_container;
                     bool m_containerHasBeenSet;
 
                     /**
-                     * 视频流码率平均值与音频流码率平均值之和，单位：bps。
+                     * <p>视频流码率平均值与音频流码率平均值之和，单位：bps。</p>
                      */
                     uint64_t m_bitrate;
                     bool m_bitrateHasBeenSet;
 
                     /**
-                     * 视频流高度的最大值，单位：px。
+                     * <p>视频流高度的最大值，单位：px。</p>
                      */
                     uint64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * 视频流宽度的最大值，单位：px。
+                     * <p>视频流宽度的最大值，单位：px。</p>
                      */
                     uint64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 时长，单位：秒。
+                     * <p>时长，单位：秒。</p>
                      */
                     double m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 视频拍摄时的选择角度，单位：度
+                     * <p>视频拍摄时的选择角度，单位：度</p>
                      */
                     int64_t m_rotate;
                     bool m_rotateHasBeenSet;
 
                     /**
-                     * 视频流信息。
+                     * <p>视频流信息。</p>
                      */
                     std::vector<VideoStreamInfo> m_videoStreamInfoSet;
                     bool m_videoStreamInfoSetHasBeenSet;
 
                     /**
-                     * 音频流信息。
+                     * <p>音频流信息。</p>
                      */
                     std::vector<AudioStreamInfo> m_audioStreamInfoSet;
                     bool m_audioStreamInfoSetHasBeenSet;

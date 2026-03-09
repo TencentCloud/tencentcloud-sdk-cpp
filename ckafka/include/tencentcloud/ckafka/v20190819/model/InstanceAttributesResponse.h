@@ -1017,6 +1017,48 @@ namespace TencentCloud
                      */
                     bool DeleteProtectionEnableHasBeenSet() const;
 
+                    /**
+                     * 获取<p>实例级别消息保留大小</p>单位：bytes<br>默认值：-1
+                     * @return RetentionBytes <p>实例级别消息保留大小</p>单位：bytes<br>默认值：-1
+                     * 
+                     */
+                    int64_t GetRetentionBytes() const;
+
+                    /**
+                     * 设置<p>实例级别消息保留大小</p>单位：bytes<br>默认值：-1
+                     * @param _retentionBytes <p>实例级别消息保留大小</p>单位：bytes<br>默认值：-1
+                     * 
+                     */
+                    void SetRetentionBytes(const int64_t& _retentionBytes);
+
+                    /**
+                     * 判断参数 RetentionBytes 是否已赋值
+                     * @return RetentionBytes 是否已赋值
+                     * 
+                     */
+                    bool RetentionBytesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>事务ID最大空闲时间，超时未提交的事务将被标记为过期</p>单位：ms
+                     * @return TransactionalIdExpirationMs <p>事务ID最大空闲时间，超时未提交的事务将被标记为过期</p>单位：ms
+                     * 
+                     */
+                    int64_t GetTransactionalIdExpirationMs() const;
+
+                    /**
+                     * 设置<p>事务ID最大空闲时间，超时未提交的事务将被标记为过期</p>单位：ms
+                     * @param _transactionalIdExpirationMs <p>事务ID最大空闲时间，超时未提交的事务将被标记为过期</p>单位：ms
+                     * 
+                     */
+                    void SetTransactionalIdExpirationMs(const int64_t& _transactionalIdExpirationMs);
+
+                    /**
+                     * 判断参数 TransactionalIdExpirationMs 是否已赋值
+                     * @return TransactionalIdExpirationMs 是否已赋值
+                     * 
+                     */
+                    bool TransactionalIdExpirationMsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1294,6 +1336,18 @@ namespace TencentCloud
                      */
                     int64_t m_deleteProtectionEnable;
                     bool m_deleteProtectionEnableHasBeenSet;
+
+                    /**
+                     * <p>实例级别消息保留大小</p>单位：bytes<br>默认值：-1
+                     */
+                    int64_t m_retentionBytes;
+                    bool m_retentionBytesHasBeenSet;
+
+                    /**
+                     * <p>事务ID最大空闲时间，超时未提交的事务将被标记为过期</p>单位：ms
+                     */
+                    int64_t m_transactionalIdExpirationMs;
+                    bool m_transactionalIdExpirationMsHasBeenSet;
 
                 };
             }

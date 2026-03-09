@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回数据
+                     * 获取<p>返回数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 返回数据
+                     * @return Data <p>返回数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,8 +61,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取返回码
-                     * @return CaptchaCode 返回码
+                     * 获取<p>返回码</p>
+                     * @return CaptchaCode <p>返回码</p>
                      * 
                      */
                     int64_t GetCaptchaCode() const;
@@ -75,8 +75,8 @@ namespace TencentCloud
                     bool CaptchaCodeHasBeenSet() const;
 
                     /**
-                     * 获取返回信息
-                     * @return CaptchaMsg 返回信息
+                     * 获取<p>返回信息</p>
+                     * @return CaptchaMsg <p>返回信息</p>
                      * 
                      */
                     std::string GetCaptchaMsg() const;
@@ -91,20 +91,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回数据
+                     * <p>返回数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CaptchaStatisticObj m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 返回码
+                     * <p>返回码</p>
                      */
                     int64_t m_captchaCode;
                     bool m_captchaCodeHasBeenSet;
 
                     /**
-                     * 返回信息
+                     * <p>返回信息</p>
                      */
                     std::string m_captchaMsg;
                     bool m_captchaMsgHasBeenSet;

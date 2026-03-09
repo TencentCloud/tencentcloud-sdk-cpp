@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id
-                     * @return InstanceId ckafka集群实例Id
+                     * 获取<p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
+                     * @return InstanceId <p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id
-                     * @param _instanceId ckafka集群实例Id
+                     * 设置<p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
+                     * @param _instanceId <p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取按照名称过滤
-                     * @return SearchWord 按照名称过滤
+                     * 获取<p>按照名称过滤</p><p>支持模糊匹配</p>
+                     * @return SearchWord <p>按照名称过滤</p><p>支持模糊匹配</p>
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置按照名称过滤
-                     * @param _searchWord 按照名称过滤
+                     * 设置<p>按照名称过滤</p><p>支持模糊匹配</p>
+                     * @param _searchWord <p>按照名称过滤</p><p>支持模糊匹配</p>
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取<p>偏移量</p>
+                     * @return Offset <p>偏移量</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置<p>偏移量</p>
+                     * @param _offset <p>偏移量</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量
-                     * @return Limit 返回数量
+                     * 获取<p>返回数量</p><p>默认值：20</p>
+                     * @return Limit <p>返回数量</p><p>默认值：20</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量
-                     * @param _limit 返回数量
+                     * 设置<p>返回数量</p><p>默认值：20</p>
+                     * @param _limit <p>返回数量</p><p>默认值：20</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka集群实例Id
+                     * <p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 按照名称过滤
+                     * <p>按照名称过滤</p><p>支持模糊匹配</p>
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * <p>偏移量</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量
+                     * <p>返回数量</p><p>默认值：20</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

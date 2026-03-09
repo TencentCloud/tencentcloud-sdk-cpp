@@ -28,7 +28,8 @@ CreateEnvRequest::CreateEnvRequest() :
     m_resourcesHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_renewFlagHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,14 @@ string CreateEnvRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_renewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_renewFlag.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -201,6 +210,22 @@ void CreateEnvRequest::SetTags(const vector<Tag>& _tags)
 bool CreateEnvRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateEnvRequest::GetRenewFlag() const
+{
+    return m_renewFlag;
+}
+
+void CreateEnvRequest::SetRenewFlag(const string& _renewFlag)
+{
+    m_renewFlag = _renewFlag;
+    m_renewFlagHasBeenSet = true;
+}
+
+bool CreateEnvRequest::RenewFlagHasBeenSet() const
+{
+    return m_renewFlagHasBeenSet;
 }
 
 

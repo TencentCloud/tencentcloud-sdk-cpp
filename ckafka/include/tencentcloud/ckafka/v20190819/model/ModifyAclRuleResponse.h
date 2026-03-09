@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则的唯一表示Key
-                     * @return Result 规则的唯一表示Key
+                     * 获取<p>规则的唯一表示Key</p>
+                     * @return Result <p>规则的唯一表示Key</p>
                      * 
                      */
                     int64_t GetResult() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规则的唯一表示Key
+                     * <p>规则的唯一表示Key</p>
                      */
                     int64_t m_result;
                     bool m_resultHasBeenSet;

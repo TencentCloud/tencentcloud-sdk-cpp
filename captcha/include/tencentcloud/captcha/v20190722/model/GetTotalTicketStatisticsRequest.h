@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始时间
-                     * @return StartTimeStr 开始时间
+                     * 获取<p>开始时间</p>
+                     * @return StartTimeStr <p>开始时间</p>
                      * 
                      */
                     std::string GetStartTimeStr() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTimeStr 开始时间
+                     * 设置<p>开始时间</p>
+                     * @param _startTimeStr <p>开始时间</p>
                      * 
                      */
                     void SetStartTimeStr(const std::string& _startTimeStr);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StartTimeStrHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTimeStr 结束时间
+                     * 获取<p>结束时间</p>
+                     * @return EndTimeStr <p>结束时间</p>
                      * 
                      */
                     std::string GetEndTimeStr() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTimeStr 结束时间
+                     * 设置<p>结束时间</p>
+                     * @param _endTimeStr <p>结束时间</p>
                      * 
                      */
                     void SetEndTimeStr(const std::string& _endTimeStr);
@@ -85,27 +85,15 @@ namespace TencentCloud
                     bool EndTimeStrHasBeenSet() const;
 
                     /**
-                     * 获取查询粒度
-分钟：“1”
-小时：“2”
-天：“3”
-                     * @return Dimension 查询粒度
-分钟：“1”
-小时：“2”
-天：“3”
+                     * 获取<p>查询粒度<br>分钟：“1”<br>小时：“2”<br>天：“3”</p>
+                     * @return Dimension <p>查询粒度<br>分钟：“1”<br>小时：“2”<br>天：“3”</p>
                      * 
                      */
                     std::string GetDimension() const;
 
                     /**
-                     * 设置查询粒度
-分钟：“1”
-小时：“2”
-天：“3”
-                     * @param _dimension 查询粒度
-分钟：“1”
-小时：“2”
-天：“3”
+                     * 设置<p>查询粒度<br>分钟：“1”<br>小时：“2”<br>天：“3”</p>
+                     * @param _dimension <p>查询粒度<br>分钟：“1”<br>小时：“2”<br>天：“3”</p>
                      * 
                      */
                     void SetDimension(const std::string& _dimension);
@@ -120,22 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开始时间
+                     * <p>开始时间</p>
                      */
                     std::string m_startTimeStr;
                     bool m_startTimeStrHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * <p>结束时间</p>
                      */
                     std::string m_endTimeStr;
                     bool m_endTimeStrHasBeenSet;
 
                     /**
-                     * 查询粒度
-分钟：“1”
-小时：“2”
-天：“3”
+                     * <p>查询粒度<br>分钟：“1”<br>小时：“2”<br>天：“3”</p>
                      */
                     std::string m_dimension;
                     bool m_dimensionHasBeenSet;

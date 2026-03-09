@@ -85,6 +85,8 @@
 #include <tencentcloud/cls/v20201016/model/CreateMetricConfigResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateMetricSubscribeRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateMetricSubscribeResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateNetworkApplicationRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateNetworkApplicationResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateNoticeContentRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateNoticeContentResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateRebuildIndexTaskRequest.h>
@@ -149,6 +151,8 @@
 #include <tencentcloud/cls/v20201016/model/DeleteMetricConfigResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteMetricSubscribeRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteMetricSubscribeResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteNetworkApplicationRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteNetworkApplicationResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteNoticeContentRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteNoticeContentResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteScheduledSqlRequest.h>
@@ -243,6 +247,10 @@
 #include <tencentcloud/cls/v20201016/model/DescribeMetricSubscribePreviewResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeMetricSubscribesRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeMetricSubscribesResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeNetworkApplicationDetailRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeNetworkApplicationDetailResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeNetworkApplicationsRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeNetworkApplicationsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeNoticeContentsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeNoticeContentsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribePartitionsRequest.h>
@@ -323,6 +331,8 @@
 #include <tencentcloud/cls/v20201016/model/ModifyMetricConfigResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyMetricSubscribeRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyMetricSubscribeResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyNetworkApplicationRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyNetworkApplicationResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyNoticeContentRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyNoticeContentResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyScheduledSqlRequest.h>
@@ -464,6 +474,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateMetricSubscribeResponse> CreateMetricSubscribeOutcome;
                 typedef std::future<CreateMetricSubscribeOutcome> CreateMetricSubscribeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateMetricSubscribeRequest&, CreateMetricSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMetricSubscribeAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateNetworkApplicationResponse> CreateNetworkApplicationOutcome;
+                typedef std::future<CreateNetworkApplicationOutcome> CreateNetworkApplicationOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateNetworkApplicationRequest&, CreateNetworkApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNetworkApplicationAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateNoticeContentResponse> CreateNoticeContentOutcome;
                 typedef std::future<CreateNoticeContentOutcome> CreateNoticeContentOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateNoticeContentRequest&, CreateNoticeContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNoticeContentAsyncHandler;
@@ -560,6 +573,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteMetricSubscribeResponse> DeleteMetricSubscribeOutcome;
                 typedef std::future<DeleteMetricSubscribeOutcome> DeleteMetricSubscribeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteMetricSubscribeRequest&, DeleteMetricSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMetricSubscribeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteNetworkApplicationResponse> DeleteNetworkApplicationOutcome;
+                typedef std::future<DeleteNetworkApplicationOutcome> DeleteNetworkApplicationOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteNetworkApplicationRequest&, DeleteNetworkApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNetworkApplicationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteNoticeContentResponse> DeleteNoticeContentOutcome;
                 typedef std::future<DeleteNoticeContentOutcome> DeleteNoticeContentOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteNoticeContentRequest&, DeleteNoticeContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNoticeContentAsyncHandler;
@@ -701,6 +717,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMetricSubscribesResponse> DescribeMetricSubscribesOutcome;
                 typedef std::future<DescribeMetricSubscribesOutcome> DescribeMetricSubscribesOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeMetricSubscribesRequest&, DescribeMetricSubscribesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMetricSubscribesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNetworkApplicationDetailResponse> DescribeNetworkApplicationDetailOutcome;
+                typedef std::future<DescribeNetworkApplicationDetailOutcome> DescribeNetworkApplicationDetailOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeNetworkApplicationDetailRequest&, DescribeNetworkApplicationDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNetworkApplicationDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNetworkApplicationsResponse> DescribeNetworkApplicationsOutcome;
+                typedef std::future<DescribeNetworkApplicationsOutcome> DescribeNetworkApplicationsOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeNetworkApplicationsRequest&, DescribeNetworkApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNetworkApplicationsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNoticeContentsResponse> DescribeNoticeContentsOutcome;
                 typedef std::future<DescribeNoticeContentsOutcome> DescribeNoticeContentsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeNoticeContentsRequest&, DescribeNoticeContentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNoticeContentsAsyncHandler;
@@ -821,6 +843,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyMetricSubscribeResponse> ModifyMetricSubscribeOutcome;
                 typedef std::future<ModifyMetricSubscribeOutcome> ModifyMetricSubscribeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyMetricSubscribeRequest&, ModifyMetricSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMetricSubscribeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyNetworkApplicationResponse> ModifyNetworkApplicationOutcome;
+                typedef std::future<ModifyNetworkApplicationOutcome> ModifyNetworkApplicationOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyNetworkApplicationRequest&, ModifyNetworkApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNetworkApplicationAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyNoticeContentResponse> ModifyNoticeContentOutcome;
                 typedef std::future<ModifyNoticeContentOutcome> ModifyNoticeContentOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyNoticeContentRequest&, ModifyNoticeContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNoticeContentAsyncHandler;
@@ -1162,6 +1187,15 @@ namespace TencentCloud
                 CreateMetricSubscribeOutcomeCallable CreateMetricSubscribeCallable(const Model::CreateMetricSubscribeRequest& request);
 
                 /**
+                 *创建网络应用
+                 * @param req CreateNetworkApplicationRequest
+                 * @return CreateNetworkApplicationOutcome
+                 */
+                CreateNetworkApplicationOutcome CreateNetworkApplication(const Model::CreateNetworkApplicationRequest &request);
+                void CreateNetworkApplicationAsync(const Model::CreateNetworkApplicationRequest& request, const CreateNetworkApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateNetworkApplicationOutcomeCallable CreateNetworkApplicationCallable(const Model::CreateNetworkApplicationRequest& request);
+
+                /**
                  *该接口用于创建通知内容。
                  * @param req CreateNoticeContentRequest
                  * @return CreateNoticeContentOutcome
@@ -1454,6 +1488,15 @@ namespace TencentCloud
                 DeleteMetricSubscribeOutcome DeleteMetricSubscribe(const Model::DeleteMetricSubscribeRequest &request);
                 void DeleteMetricSubscribeAsync(const Model::DeleteMetricSubscribeRequest& request, const DeleteMetricSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteMetricSubscribeOutcomeCallable DeleteMetricSubscribeCallable(const Model::DeleteMetricSubscribeRequest& request);
+
+                /**
+                 *删除网络应用
+                 * @param req DeleteNetworkApplicationRequest
+                 * @return DeleteNetworkApplicationOutcome
+                 */
+                DeleteNetworkApplicationOutcome DeleteNetworkApplication(const Model::DeleteNetworkApplicationRequest &request);
+                void DeleteNetworkApplicationAsync(const Model::DeleteNetworkApplicationRequest& request, const DeleteNetworkApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteNetworkApplicationOutcomeCallable DeleteNetworkApplicationCallable(const Model::DeleteNetworkApplicationRequest& request);
 
                 /**
                  *该接口用于删除通知内容配置
@@ -1880,6 +1923,24 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 DescribeMetricSubscribesOutcomeCallable DescribeMetricSubscribesCallable(const Model::DescribeMetricSubscribesRequest& request);
 
                 /**
+                 *获取网络应用详情
+                 * @param req DescribeNetworkApplicationDetailRequest
+                 * @return DescribeNetworkApplicationDetailOutcome
+                 */
+                DescribeNetworkApplicationDetailOutcome DescribeNetworkApplicationDetail(const Model::DescribeNetworkApplicationDetailRequest &request);
+                void DescribeNetworkApplicationDetailAsync(const Model::DescribeNetworkApplicationDetailRequest& request, const DescribeNetworkApplicationDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNetworkApplicationDetailOutcomeCallable DescribeNetworkApplicationDetailCallable(const Model::DescribeNetworkApplicationDetailRequest& request);
+
+                /**
+                 *获取网络应用列表
+                 * @param req DescribeNetworkApplicationsRequest
+                 * @return DescribeNetworkApplicationsOutcome
+                 */
+                DescribeNetworkApplicationsOutcome DescribeNetworkApplications(const Model::DescribeNetworkApplicationsRequest &request);
+                void DescribeNetworkApplicationsAsync(const Model::DescribeNetworkApplicationsRequest& request, const DescribeNetworkApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNetworkApplicationsOutcomeCallable DescribeNetworkApplicationsCallable(const Model::DescribeNetworkApplicationsRequest& request);
+
+                /**
                  *获取通知内容列表
                  * @param req DescribeNoticeContentsRequest
                  * @return DescribeNoticeContentsOutcome
@@ -2239,6 +2300,15 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 ModifyMetricSubscribeOutcome ModifyMetricSubscribe(const Model::ModifyMetricSubscribeRequest &request);
                 void ModifyMetricSubscribeAsync(const Model::ModifyMetricSubscribeRequest& request, const ModifyMetricSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyMetricSubscribeOutcomeCallable ModifyMetricSubscribeCallable(const Model::ModifyMetricSubscribeRequest& request);
+
+                /**
+                 *修改网络应用
+                 * @param req ModifyNetworkApplicationRequest
+                 * @return ModifyNetworkApplicationOutcome
+                 */
+                ModifyNetworkApplicationOutcome ModifyNetworkApplication(const Model::ModifyNetworkApplicationRequest &request);
+                void ModifyNetworkApplicationAsync(const Model::ModifyNetworkApplicationRequest& request, const ModifyNetworkApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNetworkApplicationOutcomeCallable ModifyNetworkApplicationCallable(const Model::ModifyNetworkApplicationRequest& request);
 
                 /**
                  *该接口用于修改通知内容配置

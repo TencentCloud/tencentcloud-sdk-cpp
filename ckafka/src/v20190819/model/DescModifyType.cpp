@@ -22,10 +22,7 @@ using namespace std;
 
 DescModifyType::DescModifyType() :
     m_modifyTypeHasBeenSet(false),
-    m_migrateFlagHasBeenSet(false),
-    m_migrateCostTimeHasBeenSet(false),
-    m_upgradeStrategyHasBeenSet(false),
-    m_migrateCostTimeHighSpeedHasBeenSet(false)
+    m_migrateFlagHasBeenSet(false)
 {
 }
 
@@ -54,36 +51,6 @@ CoreInternalOutcome DescModifyType::Deserialize(const rapidjson::Value &value)
         m_migrateFlagHasBeenSet = true;
     }
 
-    if (value.HasMember("MigrateCostTime") && !value["MigrateCostTime"].IsNull())
-    {
-        if (!value["MigrateCostTime"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `DescModifyType.MigrateCostTime` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_migrateCostTime = value["MigrateCostTime"].GetInt64();
-        m_migrateCostTimeHasBeenSet = true;
-    }
-
-    if (value.HasMember("UpgradeStrategy") && !value["UpgradeStrategy"].IsNull())
-    {
-        if (!value["UpgradeStrategy"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `DescModifyType.UpgradeStrategy` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_upgradeStrategy = value["UpgradeStrategy"].GetInt64();
-        m_upgradeStrategyHasBeenSet = true;
-    }
-
-    if (value.HasMember("MigrateCostTimeHighSpeed") && !value["MigrateCostTimeHighSpeed"].IsNull())
-    {
-        if (!value["MigrateCostTimeHighSpeed"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `DescModifyType.MigrateCostTimeHighSpeed` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_migrateCostTimeHighSpeed = value["MigrateCostTimeHighSpeed"].GetInt64();
-        m_migrateCostTimeHighSpeedHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -105,30 +72,6 @@ void DescModifyType::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "MigrateFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_migrateFlag, allocator);
-    }
-
-    if (m_migrateCostTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MigrateCostTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_migrateCostTime, allocator);
-    }
-
-    if (m_upgradeStrategyHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "UpgradeStrategy";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_upgradeStrategy, allocator);
-    }
-
-    if (m_migrateCostTimeHighSpeedHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MigrateCostTimeHighSpeed";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_migrateCostTimeHighSpeed, allocator);
     }
 
 }
@@ -164,53 +107,5 @@ void DescModifyType::SetMigrateFlag(const bool& _migrateFlag)
 bool DescModifyType::MigrateFlagHasBeenSet() const
 {
     return m_migrateFlagHasBeenSet;
-}
-
-int64_t DescModifyType::GetMigrateCostTime() const
-{
-    return m_migrateCostTime;
-}
-
-void DescModifyType::SetMigrateCostTime(const int64_t& _migrateCostTime)
-{
-    m_migrateCostTime = _migrateCostTime;
-    m_migrateCostTimeHasBeenSet = true;
-}
-
-bool DescModifyType::MigrateCostTimeHasBeenSet() const
-{
-    return m_migrateCostTimeHasBeenSet;
-}
-
-int64_t DescModifyType::GetUpgradeStrategy() const
-{
-    return m_upgradeStrategy;
-}
-
-void DescModifyType::SetUpgradeStrategy(const int64_t& _upgradeStrategy)
-{
-    m_upgradeStrategy = _upgradeStrategy;
-    m_upgradeStrategyHasBeenSet = true;
-}
-
-bool DescModifyType::UpgradeStrategyHasBeenSet() const
-{
-    return m_upgradeStrategyHasBeenSet;
-}
-
-int64_t DescModifyType::GetMigrateCostTimeHighSpeed() const
-{
-    return m_migrateCostTimeHighSpeed;
-}
-
-void DescModifyType::SetMigrateCostTimeHighSpeed(const int64_t& _migrateCostTimeHighSpeed)
-{
-    m_migrateCostTimeHighSpeed = _migrateCostTimeHighSpeed;
-    m_migrateCostTimeHighSpeedHasBeenSet = true;
-}
-
-bool DescModifyType::MigrateCostTimeHighSpeedHasBeenSet() const
-{
-    return m_migrateCostTimeHighSpeedHasBeenSet;
 }
 

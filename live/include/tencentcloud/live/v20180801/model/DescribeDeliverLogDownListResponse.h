@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志信息列表。
-                     * @return LogInfoList 日志信息列表。
+                     * 获取<p>日志信息列表。</p>
+                     * @return LogInfoList <p>日志信息列表。</p>
                      * 
                      */
                     std::vector<PushLogInfo> GetLogInfoList() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool LogInfoListHasBeenSet() const;
 
                     /**
-                     * 获取总条数。
-                     * @return TotalNum 总条数。
+                     * 获取<p>总条数。</p>
+                     * @return TotalNum <p>总条数。</p>
                      * 
                      */
                     uint64_t GetTotalNum() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志信息列表。
+                     * <p>日志信息列表。</p>
                      */
                     std::vector<PushLogInfo> m_logInfoList;
                     bool m_logInfoListHasBeenSet;
 
                     /**
-                     * 总条数。
+                     * <p>总条数。</p>
                      */
                     uint64_t m_totalNum;
                     bool m_totalNumHasBeenSet;

@@ -141,6 +141,7 @@ set(ctem_public_header_model
   include/tencentcloud/ctem/v20231128/model/CreateManageRequest.h
   include/tencentcloud/ctem/v20231128/model/DisplayJobRecord.h
   include/tencentcloud/ctem/v20231128/model/ModifySeedStatusRequest.h
+  include/tencentcloud/ctem/v20231128/model/Equity.h
   include/tencentcloud/ctem/v20231128/model/CreateCustomerRequest.h
   include/tencentcloud/ctem/v20231128/model/DeleteEnterprisesRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeLeakageDatasRequest.h
@@ -301,6 +302,7 @@ set(ctem_src
   src/v20231128/model/CreateManageRequest.cpp
   src/v20231128/model/DisplayJobRecord.cpp
   src/v20231128/model/ModifySeedStatusRequest.cpp
+  src/v20231128/model/Equity.cpp
   src/v20231128/model/CreateCustomerRequest.cpp
   src/v20231128/model/DeleteEnterprisesRequest.cpp
   src/v20231128/model/DescribeLeakageDatasRequest.cpp

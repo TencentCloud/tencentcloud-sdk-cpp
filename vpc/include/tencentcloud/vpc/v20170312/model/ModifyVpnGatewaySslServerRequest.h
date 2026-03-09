@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/DnsServers.h>
 
 
 namespace TencentCloud
@@ -273,6 +274,27 @@ namespace TencentCloud
                      */
                     bool SamlDataHasBeenSet() const;
 
+                    /**
+                     * 获取DNS Server地址
+                     * @return DnsServers DNS Server地址
+                     * 
+                     */
+                    DnsServers GetDnsServers() const;
+
+                    /**
+                     * 设置DNS Server地址
+                     * @param _dnsServers DNS Server地址
+                     * 
+                     */
+                    void SetDnsServers(const DnsServers& _dnsServers);
+
+                    /**
+                     * 判断参数 DnsServers 是否已赋值
+                     * @return DnsServers 是否已赋值
+                     * 
+                     */
+                    bool DnsServersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -340,6 +362,12 @@ namespace TencentCloud
                      */
                     std::string m_samlData;
                     bool m_samlDataHasBeenSet;
+
+                    /**
+                     * DNS Server地址
+                     */
+                    DnsServers m_dnsServers;
+                    bool m_dnsServersHasBeenSet;
 
                 };
             }

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取（过滤条件）按照实例ID过滤
-                     * @return InstanceId （过滤条件）按照实例ID过滤
+                     * 获取<p>（过滤条件）按照实例ID过滤</p>
+                     * @return InstanceId <p>（过滤条件）按照实例ID过滤</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置（过滤条件）按照实例ID过滤
-                     * @param _instanceId （过滤条件）按照实例ID过滤
+                     * 设置<p>（过滤条件）按照实例ID过滤</p>
+                     * @param _instanceId <p>（过滤条件）按照实例ID过滤</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取（过滤条件）按照实例名称过滤，支持模糊查询
-                     * @return SearchWord （过滤条件）按照实例名称过滤，支持模糊查询
+                     * 获取<p>（过滤条件）按照实例名称过滤，支持模糊查询</p>
+                     * @return SearchWord <p>（过滤条件）按照实例名称过滤，支持模糊查询</p>
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置（过滤条件）按照实例名称过滤，支持模糊查询
-                     * @param _searchWord （过滤条件）按照实例名称过滤，支持模糊查询
+                     * 设置<p>（过滤条件）按照实例名称过滤，支持模糊查询</p>
+                     * @param _searchWord <p>（过滤条件）按照实例名称过滤，支持模糊查询</p>
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取（过滤条件）实例的状态。0：创建中，1：运行中，2：删除中，不填默认返回全部
-                     * @return Status （过滤条件）实例的状态。0：创建中，1：运行中，2：删除中，不填默认返回全部
+                     * 获取<p>（过滤条件）实例的状态，不填默认返回全部</p><p>枚举值：</p><ul><li>-1： 创建失败</li><li>0： 创建中</li><li>1： 运行中</li><li>2： 删除中</li><li>3： 已删除</li><li>4： 删除失败</li><li>5： 隔离中</li><li>7： 升级中</li></ul>
+                     * @return Status <p>（过滤条件）实例的状态，不填默认返回全部</p><p>枚举值：</p><ul><li>-1： 创建失败</li><li>0： 创建中</li><li>1： 运行中</li><li>2： 删除中</li><li>3： 已删除</li><li>4： 删除失败</li><li>5： 隔离中</li><li>7： 升级中</li></ul>
                      * 
                      */
                     std::vector<int64_t> GetStatus() const;
 
                     /**
-                     * 设置（过滤条件）实例的状态。0：创建中，1：运行中，2：删除中，不填默认返回全部
-                     * @param _status （过滤条件）实例的状态。0：创建中，1：运行中，2：删除中，不填默认返回全部
+                     * 设置<p>（过滤条件）实例的状态，不填默认返回全部</p><p>枚举值：</p><ul><li>-1： 创建失败</li><li>0： 创建中</li><li>1： 运行中</li><li>2： 删除中</li><li>3： 已删除</li><li>4： 删除失败</li><li>5： 隔离中</li><li>7： 升级中</li></ul>
+                     * @param _status <p>（过滤条件）实例的状态，不填默认返回全部</p><p>枚举值：</p><ul><li>-1： 创建失败</li><li>0： 创建中</li><li>1： 运行中</li><li>2： 删除中</li><li>3： 已删除</li><li>4： 删除失败</li><li>5： 隔离中</li><li>7： 升级中</li></ul>
                      * 
                      */
                     void SetStatus(const std::vector<int64_t>& _status);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，不填默认为0
-                     * @return Offset 偏移量，不填默认为0
+                     * 获取<p>偏移量，不填默认为0</p>
+                     * @return Offset <p>偏移量，不填默认为0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，不填默认为0
-                     * @param _offset 偏移量，不填默认为0
+                     * 设置<p>偏移量，不填默认为0</p>
+                     * @param _offset <p>偏移量，不填默认为0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，不填则默认10，最大值100
-                     * @return Limit 返回数量，不填则默认10，最大值100
+                     * 获取<p>返回数量，不填则默认10，最大值100</p>
+                     * @return Limit <p>返回数量，不填则默认10，最大值100</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，不填则默认10，最大值100
-                     * @param _limit 返回数量，不填则默认10，最大值100
+                     * 设置<p>返回数量，不填则默认10，最大值100</p>
+                     * @param _limit <p>返回数量，不填则默认10，最大值100</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取匹配标签key值。
-                     * @return TagKey 匹配标签key值。
+                     * 获取<p>匹配标签key值。</p>
+                     * @return TagKey <p>匹配标签key值。</p>
                      * 
                      */
                     std::string GetTagKey() const;
 
                     /**
-                     * 设置匹配标签key值。
-                     * @param _tagKey 匹配标签key值。
+                     * 设置<p>匹配标签key值。</p>
+                     * @param _tagKey <p>匹配标签key值。</p>
                      * 
                      */
                     void SetTagKey(const std::string& _tagKey);
@@ -171,37 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * （过滤条件）按照实例ID过滤
+                     * <p>（过滤条件）按照实例ID过滤</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * （过滤条件）按照实例名称过滤，支持模糊查询
+                     * <p>（过滤条件）按照实例名称过滤，支持模糊查询</p>
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * （过滤条件）实例的状态。0：创建中，1：运行中，2：删除中，不填默认返回全部
+                     * <p>（过滤条件）实例的状态，不填默认返回全部</p><p>枚举值：</p><ul><li>-1： 创建失败</li><li>0： 创建中</li><li>1： 运行中</li><li>2： 删除中</li><li>3： 已删除</li><li>4： 删除失败</li><li>5： 隔离中</li><li>7： 升级中</li></ul>
                      */
                     std::vector<int64_t> m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 偏移量，不填默认为0
+                     * <p>偏移量，不填默认为0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，不填则默认10，最大值100
+                     * <p>返回数量，不填则默认10，最大值100</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 匹配标签key值。
+                     * <p>匹配标签key值。</p>
                      */
                     std::string m_tagKey;
                     bool m_tagKeyHasBeenSet;

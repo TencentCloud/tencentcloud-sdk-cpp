@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id
-                     * @return InstanceId ckafka集群实例Id
+                     * 获取<p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
+                     * @return InstanceId <p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id
-                     * @param _instanceId ckafka集群实例Id
+                     * 设置<p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
+                     * @param _instanceId <p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取主题名
-                     * @return Topic 主题名
+                     * 获取<p>主题名</p>
+                     * @return Topic <p>主题名</p>
                      * 
                      */
                     std::string GetTopic() const;
 
                     /**
-                     * 设置主题名
-                     * @param _topic 主题名
+                     * 设置<p>主题名</p>
+                     * @param _topic <p>主题名</p>
                      * 
                      */
                     void SetTopic(const std::string& _topic);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TopicHasBeenSet() const;
 
                     /**
-                     * 获取分区id
-                     * @return Partition 分区id
+                     * 获取<p>分区id</p>
+                     * @return Partition <p>分区id</p>
                      * 
                      */
                     int64_t GetPartition() const;
 
                     /**
-                     * 设置分区id
-                     * @param _partition 分区id
+                     * 设置<p>分区id</p>
+                     * @param _partition <p>分区id</p>
                      * 
                      */
                     void SetPartition(const int64_t& _partition);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PartitionHasBeenSet() const;
 
                     /**
-                     * 获取位点信息
-                     * @return Offset 位点信息
+                     * 获取<p>位点信息</p>
+                     * @return Offset <p>位点信息</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置位点信息
-                     * @param _offset 位点信息
+                     * 设置<p>位点信息</p>
+                     * @param _offset <p>位点信息</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取最大查询条数，默认20，最大20
-                     * @return SinglePartitionRecordNumber 最大查询条数，默认20，最大20
+                     * 获取<p>最大查询条数，默认20，最大20</p>
+                     * @return SinglePartitionRecordNumber <p>最大查询条数，默认20，最大20</p>
                      * 
                      */
                     int64_t GetSinglePartitionRecordNumber() const;
 
                     /**
-                     * 设置最大查询条数，默认20，最大20
-                     * @param _singlePartitionRecordNumber 最大查询条数，默认20，最大20
+                     * 设置<p>最大查询条数，默认20，最大20</p>
+                     * @param _singlePartitionRecordNumber <p>最大查询条数，默认20，最大20</p>
                      * 
                      */
                     void SetSinglePartitionRecordNumber(const int64_t& _singlePartitionRecordNumber);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka集群实例Id
+                     * <p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 主题名
+                     * <p>主题名</p>
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
 
                     /**
-                     * 分区id
+                     * <p>分区id</p>
                      */
                     int64_t m_partition;
                     bool m_partitionHasBeenSet;
 
                     /**
-                     * 位点信息
+                     * <p>位点信息</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 最大查询条数，默认20，最大20
+                     * <p>最大查询条数，默认20，最大20</p>
                      */
                     int64_t m_singlePartitionRecordNumber;
                     bool m_singlePartitionRecordNumberHasBeenSet;

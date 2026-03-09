@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回的主题详情实体
-                     * @return Result 返回的主题详情实体
+                     * 获取<p>返回的主题详情实体</p>
+                     * @return Result <p>返回的主题详情实体</p>
                      * 
                      */
                     TopicDetailResponse GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回的主题详情实体
+                     * <p>返回的主题详情实体</p>
                      */
                     TopicDetailResponse m_result;
                     bool m_resultHasBeenSet;

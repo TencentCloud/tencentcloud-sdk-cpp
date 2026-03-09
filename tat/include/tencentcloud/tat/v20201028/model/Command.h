@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取命令ID。
-                     * @return CommandId 命令ID。
+                     * 获取<p>命令ID。</p>
+                     * @return CommandId <p>命令ID。</p>
                      * 
                      */
                     std::string GetCommandId() const;
 
                     /**
-                     * 设置命令ID。
-                     * @param _commandId 命令ID。
+                     * 设置<p>命令ID。</p>
+                     * @param _commandId <p>命令ID。</p>
                      * 
                      */
                     void SetCommandId(const std::string& _commandId);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool CommandIdHasBeenSet() const;
 
                     /**
-                     * 获取命令名称。
-                     * @return CommandName 命令名称。
+                     * 获取<p>命令名称。</p>
+                     * @return CommandName <p>命令名称。</p>
                      * 
                      */
                     std::string GetCommandName() const;
 
                     /**
-                     * 设置命令名称。
-                     * @param _commandName 命令名称。
+                     * 设置<p>命令名称。</p>
+                     * @param _commandName <p>命令名称。</p>
                      * 
                      */
                     void SetCommandName(const std::string& _commandName);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool CommandNameHasBeenSet() const;
 
                     /**
-                     * 获取命令描述。
-                     * @return Description 命令描述。
+                     * 获取<p>命令描述。</p>
+                     * @return Description <p>命令描述。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置命令描述。
-                     * @param _description 命令描述。
+                     * 设置<p>命令描述。</p>
+                     * @param _description <p>命令描述。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取Base64编码后的命令内容。
-                     * @return Content Base64编码后的命令内容。
+                     * 获取<p>Base64编码后的命令内容。</p>
+                     * @return Content <p>Base64编码后的命令内容。</p>
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置Base64编码后的命令内容。
-                     * @param _content Base64编码后的命令内容。
+                     * 设置<p>Base64编码后的命令内容。</p>
+                     * @param _content <p>Base64编码后的命令内容。</p>
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取命令类型。取值为 SHELL、POWERSHELL、BAT 之一。
-                     * @return CommandType 命令类型。取值为 SHELL、POWERSHELL、BAT 之一。
+                     * 获取<p>命令类型。取值为 SHELL、POWERSHELL、BAT 之一。</p>
+                     * @return CommandType <p>命令类型。取值为 SHELL、POWERSHELL、BAT 之一。</p>
                      * 
                      */
                     std::string GetCommandType() const;
 
                     /**
-                     * 设置命令类型。取值为 SHELL、POWERSHELL、BAT 之一。
-                     * @param _commandType 命令类型。取值为 SHELL、POWERSHELL、BAT 之一。
+                     * 设置<p>命令类型。取值为 SHELL、POWERSHELL、BAT 之一。</p>
+                     * @param _commandType <p>命令类型。取值为 SHELL、POWERSHELL、BAT 之一。</p>
                      * 
                      */
                     void SetCommandType(const std::string& _commandType);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool CommandTypeHasBeenSet() const;
 
                     /**
-                     * 获取命令执行路径。
-                     * @return WorkingDirectory 命令执行路径。
+                     * 获取<p>命令执行路径。</p>
+                     * @return WorkingDirectory <p>命令执行路径。</p>
                      * 
                      */
                     std::string GetWorkingDirectory() const;
 
                     /**
-                     * 设置命令执行路径。
-                     * @param _workingDirectory 命令执行路径。
+                     * 设置<p>命令执行路径。</p>
+                     * @param _workingDirectory <p>命令执行路径。</p>
                      * 
                      */
                     void SetWorkingDirectory(const std::string& _workingDirectory);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool WorkingDirectoryHasBeenSet() const;
 
                     /**
-                     * 获取命令超时时间。
-                     * @return Timeout 命令超时时间。
+                     * 获取<p>命令超时时间。</p><p>单位：秒</p><p>指定 OutputCOSBucketUrl 参数时，超时时间将包含命令输出上传 COS 的耗时</p>
+                     * @return Timeout <p>命令超时时间。</p><p>单位：秒</p><p>指定 OutputCOSBucketUrl 参数时，超时时间将包含命令输出上传 COS 的耗时</p>
                      * 
                      */
                     uint64_t GetTimeout() const;
 
                     /**
-                     * 设置命令超时时间。
-                     * @param _timeout 命令超时时间。
+                     * 设置<p>命令超时时间。</p><p>单位：秒</p><p>指定 OutputCOSBucketUrl 参数时，超时时间将包含命令输出上传 COS 的耗时</p>
+                     * @param _timeout <p>命令超时时间。</p><p>单位：秒</p><p>指定 OutputCOSBucketUrl 参数时，超时时间将包含命令输出上传 COS 的耗时</p>
                      * 
                      */
                     void SetTimeout(const uint64_t& _timeout);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool TimeoutHasBeenSet() const;
 
                     /**
-                     * 获取命令创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
-                     * @return CreatedTime 命令创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * 获取<p>命令创建时间。格式为：YYYY-MM-DDThh:mm:ssZ</p>
+                     * @return CreatedTime <p>命令创建时间。格式为：YYYY-MM-DDThh:mm:ssZ</p>
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置命令创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
-                     * @param _createdTime 命令创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * 设置<p>命令创建时间。格式为：YYYY-MM-DDThh:mm:ssZ</p>
+                     * @param _createdTime <p>命令创建时间。格式为：YYYY-MM-DDThh:mm:ssZ</p>
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取命令更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
-                     * @return UpdatedTime 命令更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * 获取<p>命令更新时间。格式为：YYYY-MM-DDThh:mm:ssZ</p>
+                     * @return UpdatedTime <p>命令更新时间。格式为：YYYY-MM-DDThh:mm:ssZ</p>
                      * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
-                     * 设置命令更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
-                     * @param _updatedTime 命令更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * 设置<p>命令更新时间。格式为：YYYY-MM-DDThh:mm:ssZ</p>
+                     * @param _updatedTime <p>命令更新时间。格式为：YYYY-MM-DDThh:mm:ssZ</p>
                      * 
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
@@ -238,15 +238,15 @@ namespace TencentCloud
                     bool UpdatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否启用自定义参数功能。
-                     * @return EnableParameter 是否启用自定义参数功能。
+                     * 获取<p>是否启用自定义参数功能。</p>
+                     * @return EnableParameter <p>是否启用自定义参数功能。</p>
                      * 
                      */
                     bool GetEnableParameter() const;
 
                     /**
-                     * 设置是否启用自定义参数功能。
-                     * @param _enableParameter 是否启用自定义参数功能。
+                     * 设置<p>是否启用自定义参数功能。</p>
+                     * @param _enableParameter <p>是否启用自定义参数功能。</p>
                      * 
                      */
                     void SetEnableParameter(const bool& _enableParameter);
@@ -259,15 +259,15 @@ namespace TencentCloud
                     bool EnableParameterHasBeenSet() const;
 
                     /**
-                     * 获取自定义参数的默认取值。
-                     * @return DefaultParameters 自定义参数的默认取值。
+                     * 获取<p>自定义参数的默认取值。</p>
+                     * @return DefaultParameters <p>自定义参数的默认取值。</p>
                      * 
                      */
                     std::string GetDefaultParameters() const;
 
                     /**
-                     * 设置自定义参数的默认取值。
-                     * @param _defaultParameters 自定义参数的默认取值。
+                     * 设置<p>自定义参数的默认取值。</p>
+                     * @param _defaultParameters <p>自定义参数的默认取值。</p>
                      * 
                      */
                     void SetDefaultParameters(const std::string& _defaultParameters);
@@ -280,15 +280,15 @@ namespace TencentCloud
                     bool DefaultParametersHasBeenSet() const;
 
                     /**
-                     * 获取自定义参数的默认取值。
-                     * @return DefaultParameterConfs 自定义参数的默认取值。
+                     * 获取<p>自定义参数的默认取值。</p>
+                     * @return DefaultParameterConfs <p>自定义参数的默认取值。</p>
                      * 
                      */
                     std::vector<DefaultParameterConf> GetDefaultParameterConfs() const;
 
                     /**
-                     * 设置自定义参数的默认取值。
-                     * @param _defaultParameterConfs 自定义参数的默认取值。
+                     * 设置<p>自定义参数的默认取值。</p>
+                     * @param _defaultParameterConfs <p>自定义参数的默认取值。</p>
                      * 
                      */
                     void SetDefaultParameterConfs(const std::vector<DefaultParameterConf>& _defaultParameterConfs);
@@ -301,15 +301,15 @@ namespace TencentCloud
                     bool DefaultParameterConfsHasBeenSet() const;
 
                     /**
-                     * 获取命令关联的场景
-                     * @return Scenes 命令关联的场景
+                     * 获取<p>命令关联的场景</p>
+                     * @return Scenes <p>命令关联的场景</p>
                      * 
                      */
                     std::vector<std::string> GetScenes() const;
 
                     /**
-                     * 设置命令关联的场景
-                     * @param _scenes 命令关联的场景
+                     * 设置<p>命令关联的场景</p>
+                     * @param _scenes <p>命令关联的场景</p>
                      * 
                      */
                     void SetScenes(const std::vector<std::string>& _scenes);
@@ -322,15 +322,15 @@ namespace TencentCloud
                     bool ScenesHasBeenSet() const;
 
                     /**
-                     * 获取命令的结构化描述。公共命令有值，用户命令为空字符串。
-                     * @return FormattedDescription 命令的结构化描述。公共命令有值，用户命令为空字符串。
+                     * 获取<p>命令的结构化描述。公共命令有值，用户命令为空字符串。</p>
+                     * @return FormattedDescription <p>命令的结构化描述。公共命令有值，用户命令为空字符串。</p>
                      * 
                      */
                     std::string GetFormattedDescription() const;
 
                     /**
-                     * 设置命令的结构化描述。公共命令有值，用户命令为空字符串。
-                     * @param _formattedDescription 命令的结构化描述。公共命令有值，用户命令为空字符串。
+                     * 设置<p>命令的结构化描述。公共命令有值，用户命令为空字符串。</p>
+                     * @param _formattedDescription <p>命令的结构化描述。公共命令有值，用户命令为空字符串。</p>
                      * 
                      */
                     void SetFormattedDescription(const std::string& _formattedDescription);
@@ -343,15 +343,15 @@ namespace TencentCloud
                     bool FormattedDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取命令创建者。TAT 代表公共命令，USER 代表个人命令。
-                     * @return CreatedBy 命令创建者。TAT 代表公共命令，USER 代表个人命令。
+                     * 获取<p>命令创建者。</p><p>枚举值：</p><ul><li>TAT： 公共命令</li><li>USER： 个人创建的命令</li></ul>
+                     * @return CreatedBy <p>命令创建者。</p><p>枚举值：</p><ul><li>TAT： 公共命令</li><li>USER： 个人创建的命令</li></ul>
                      * 
                      */
                     std::string GetCreatedBy() const;
 
                     /**
-                     * 设置命令创建者。TAT 代表公共命令，USER 代表个人命令。
-                     * @param _createdBy 命令创建者。TAT 代表公共命令，USER 代表个人命令。
+                     * 设置<p>命令创建者。</p><p>枚举值：</p><ul><li>TAT： 公共命令</li><li>USER： 个人创建的命令</li></ul>
+                     * @param _createdBy <p>命令创建者。</p><p>枚举值：</p><ul><li>TAT： 公共命令</li><li>USER： 个人创建的命令</li></ul>
                      * 
                      */
                     void SetCreatedBy(const std::string& _createdBy);
@@ -364,15 +364,15 @@ namespace TencentCloud
                     bool CreatedByHasBeenSet() const;
 
                     /**
-                     * 获取命令关联的标签列表。
-                     * @return Tags 命令关联的标签列表。
+                     * 获取<p>命令关联的标签列表。</p>
+                     * @return Tags <p>命令关联的标签列表。</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置命令关联的标签列表。
-                     * @param _tags 命令关联的标签列表。
+                     * 设置<p>命令关联的标签列表。</p>
+                     * @param _tags <p>命令关联的标签列表。</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -385,15 +385,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取在实例上执行命令的用户名。
-                     * @return Username 在实例上执行命令的用户名。
+                     * 获取<p>在实例上执行命令的用户名。</p>
+                     * @return Username <p>在实例上执行命令的用户名。</p>
                      * 
                      */
                     std::string GetUsername() const;
 
                     /**
-                     * 设置在实例上执行命令的用户名。
-                     * @param _username 在实例上执行命令的用户名。
+                     * 设置<p>在实例上执行命令的用户名。</p>
+                     * @param _username <p>在实例上执行命令的用户名。</p>
                      * 
                      */
                     void SetUsername(const std::string& _username);
@@ -406,15 +406,15 @@ namespace TencentCloud
                     bool UsernameHasBeenSet() const;
 
                     /**
-                     * 获取日志上传的cos bucket 地址。
-                     * @return OutputCOSBucketUrl 日志上传的cos bucket 地址。
+                     * 获取<p>日志上传的cos bucket 地址。</p>
+                     * @return OutputCOSBucketUrl <p>日志上传的cos bucket 地址。</p>
                      * 
                      */
                     std::string GetOutputCOSBucketUrl() const;
 
                     /**
-                     * 设置日志上传的cos bucket 地址。
-                     * @param _outputCOSBucketUrl 日志上传的cos bucket 地址。
+                     * 设置<p>日志上传的cos bucket 地址。</p>
+                     * @param _outputCOSBucketUrl <p>日志上传的cos bucket 地址。</p>
                      * 
                      */
                     void SetOutputCOSBucketUrl(const std::string& _outputCOSBucketUrl);
@@ -427,15 +427,15 @@ namespace TencentCloud
                     bool OutputCOSBucketUrlHasBeenSet() const;
 
                     /**
-                     * 获取日志在cos bucket中的目录。
-                     * @return OutputCOSKeyPrefix 日志在cos bucket中的目录。
+                     * 获取<p>日志在cos bucket中的目录。</p>
+                     * @return OutputCOSKeyPrefix <p>日志在cos bucket中的目录。</p>
                      * 
                      */
                     std::string GetOutputCOSKeyPrefix() const;
 
                     /**
-                     * 设置日志在cos bucket中的目录。
-                     * @param _outputCOSKeyPrefix 日志在cos bucket中的目录。
+                     * 设置<p>日志在cos bucket中的目录。</p>
+                     * @param _outputCOSKeyPrefix <p>日志在cos bucket中的目录。</p>
                      * 
                      */
                     void SetOutputCOSKeyPrefix(const std::string& _outputCOSKeyPrefix);
@@ -450,115 +450,115 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 命令ID。
+                     * <p>命令ID。</p>
                      */
                     std::string m_commandId;
                     bool m_commandIdHasBeenSet;
 
                     /**
-                     * 命令名称。
+                     * <p>命令名称。</p>
                      */
                     std::string m_commandName;
                     bool m_commandNameHasBeenSet;
 
                     /**
-                     * 命令描述。
+                     * <p>命令描述。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * Base64编码后的命令内容。
+                     * <p>Base64编码后的命令内容。</p>
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 命令类型。取值为 SHELL、POWERSHELL、BAT 之一。
+                     * <p>命令类型。取值为 SHELL、POWERSHELL、BAT 之一。</p>
                      */
                     std::string m_commandType;
                     bool m_commandTypeHasBeenSet;
 
                     /**
-                     * 命令执行路径。
+                     * <p>命令执行路径。</p>
                      */
                     std::string m_workingDirectory;
                     bool m_workingDirectoryHasBeenSet;
 
                     /**
-                     * 命令超时时间。
+                     * <p>命令超时时间。</p><p>单位：秒</p><p>指定 OutputCOSBucketUrl 参数时，超时时间将包含命令输出上传 COS 的耗时</p>
                      */
                     uint64_t m_timeout;
                     bool m_timeoutHasBeenSet;
 
                     /**
-                     * 命令创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * <p>命令创建时间。格式为：YYYY-MM-DDThh:mm:ssZ</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 命令更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * <p>命令更新时间。格式为：YYYY-MM-DDThh:mm:ssZ</p>
                      */
                     std::string m_updatedTime;
                     bool m_updatedTimeHasBeenSet;
 
                     /**
-                     * 是否启用自定义参数功能。
+                     * <p>是否启用自定义参数功能。</p>
                      */
                     bool m_enableParameter;
                     bool m_enableParameterHasBeenSet;
 
                     /**
-                     * 自定义参数的默认取值。
+                     * <p>自定义参数的默认取值。</p>
                      */
                     std::string m_defaultParameters;
                     bool m_defaultParametersHasBeenSet;
 
                     /**
-                     * 自定义参数的默认取值。
+                     * <p>自定义参数的默认取值。</p>
                      */
                     std::vector<DefaultParameterConf> m_defaultParameterConfs;
                     bool m_defaultParameterConfsHasBeenSet;
 
                     /**
-                     * 命令关联的场景
+                     * <p>命令关联的场景</p>
                      */
                     std::vector<std::string> m_scenes;
                     bool m_scenesHasBeenSet;
 
                     /**
-                     * 命令的结构化描述。公共命令有值，用户命令为空字符串。
+                     * <p>命令的结构化描述。公共命令有值，用户命令为空字符串。</p>
                      */
                     std::string m_formattedDescription;
                     bool m_formattedDescriptionHasBeenSet;
 
                     /**
-                     * 命令创建者。TAT 代表公共命令，USER 代表个人命令。
+                     * <p>命令创建者。</p><p>枚举值：</p><ul><li>TAT： 公共命令</li><li>USER： 个人创建的命令</li></ul>
                      */
                     std::string m_createdBy;
                     bool m_createdByHasBeenSet;
 
                     /**
-                     * 命令关联的标签列表。
+                     * <p>命令关联的标签列表。</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 在实例上执行命令的用户名。
+                     * <p>在实例上执行命令的用户名。</p>
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
 
                     /**
-                     * 日志上传的cos bucket 地址。
+                     * <p>日志上传的cos bucket 地址。</p>
                      */
                     std::string m_outputCOSBucketUrl;
                     bool m_outputCOSBucketUrlHasBeenSet;
 
                     /**
-                     * 日志在cos bucket中的目录。
+                     * <p>日志在cos bucket中的目录。</p>
                      */
                     std::string m_outputCOSKeyPrefix;
                     bool m_outputCOSKeyPrefixHasBeenSet;

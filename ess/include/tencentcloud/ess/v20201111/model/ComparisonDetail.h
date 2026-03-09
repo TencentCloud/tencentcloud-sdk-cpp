@@ -183,6 +183,67 @@ namespace TencentCloud
                      */
                     bool DiffTextHasBeenSet() const;
 
+                    /**
+                     * 获取合同文本的格式类型。
+类型如下：
+<ul><li> **0**：段落（正文）</li>
+<li> **1**：标点符号</li>
+<li> **2**：页眉页脚</li>
+<li> **3**：目录</li>
+<li> **4**：印章</li>
+<li> **5**：序号</li>
+<li> **6**：水印</li>
+<li> **7**：下划线内容（填写区）</li>
+</ul>
+                     * @return FormatType 合同文本的格式类型。
+类型如下：
+<ul><li> **0**：段落（正文）</li>
+<li> **1**：标点符号</li>
+<li> **2**：页眉页脚</li>
+<li> **3**：目录</li>
+<li> **4**：印章</li>
+<li> **5**：序号</li>
+<li> **6**：水印</li>
+<li> **7**：下划线内容（填写区）</li>
+</ul>
+                     * 
+                     */
+                    int64_t GetFormatType() const;
+
+                    /**
+                     * 设置合同文本的格式类型。
+类型如下：
+<ul><li> **0**：段落（正文）</li>
+<li> **1**：标点符号</li>
+<li> **2**：页眉页脚</li>
+<li> **3**：目录</li>
+<li> **4**：印章</li>
+<li> **5**：序号</li>
+<li> **6**：水印</li>
+<li> **7**：下划线内容（填写区）</li>
+</ul>
+                     * @param _formatType 合同文本的格式类型。
+类型如下：
+<ul><li> **0**：段落（正文）</li>
+<li> **1**：标点符号</li>
+<li> **2**：页眉页脚</li>
+<li> **3**：目录</li>
+<li> **4**：印章</li>
+<li> **5**：序号</li>
+<li> **6**：水印</li>
+<li> **7**：下划线内容（填写区）</li>
+</ul>
+                     * 
+                     */
+                    void SetFormatType(const int64_t& _formatType);
+
+                    /**
+                     * 判断参数 FormatType 是否已赋值
+                     * @return FormatType 是否已赋值
+                     * 
+                     */
+                    bool FormatTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -222,6 +283,22 @@ namespace TencentCloud
                      */
                     std::string m_diffText;
                     bool m_diffTextHasBeenSet;
+
+                    /**
+                     * 合同文本的格式类型。
+类型如下：
+<ul><li> **0**：段落（正文）</li>
+<li> **1**：标点符号</li>
+<li> **2**：页眉页脚</li>
+<li> **3**：目录</li>
+<li> **4**：印章</li>
+<li> **5**：序号</li>
+<li> **6**：水印</li>
+<li> **7**：下划线内容（填写区）</li>
+</ul>
+                     */
+                    int64_t m_formatType;
+                    bool m_formatTypeHasBeenSet;
 
                 };
             }

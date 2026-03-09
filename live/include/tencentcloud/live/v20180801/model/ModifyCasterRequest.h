@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取<p>录制模板id。默认为0。当使用直播录制功能时，可将使用的录制模版填入。该接口仅保存字段，不涉及任何录制功能。</p>
-                     * @return RecordTemplateId <p>录制模板id。默认为0。当使用直播录制功能时，可将使用的录制模版填入。该接口仅保存字段，不涉及任何录制功能。</p>
+                     * 获取<p>录制模板id。默认为0。当使用直播录制功能时，可将使用的录制模板填入。该接口仅保存字段，不涉及任何录制功能。</p>
+                     * @return RecordTemplateId <p>录制模板id。默认为0。当使用直播录制功能时，可将使用的录制模板填入。该接口仅保存字段，不涉及任何录制功能。</p>
                      * 
                      */
                     uint64_t GetRecordTemplateId() const;
 
                     /**
-                     * 设置<p>录制模板id。默认为0。当使用直播录制功能时，可将使用的录制模版填入。该接口仅保存字段，不涉及任何录制功能。</p>
-                     * @param _recordTemplateId <p>录制模板id。默认为0。当使用直播录制功能时，可将使用的录制模版填入。该接口仅保存字段，不涉及任何录制功能。</p>
+                     * 设置<p>录制模板id。默认为0。当使用直播录制功能时，可将使用的录制模板填入。该接口仅保存字段，不涉及任何录制功能。</p>
+                     * @param _recordTemplateId <p>录制模板id。默认为0。当使用直播录制功能时，可将使用的录制模板填入。该接口仅保存字段，不涉及任何录制功能。</p>
                      * 
                      */
                     void SetRecordTemplateId(const uint64_t& _recordTemplateId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool RecordTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>录制状态，当调用录制接口后，可通过该字段保存录制状态。0：未录制 1：录制中该接口仅保存字段，不涉及任何录制处理。</p>
-                     * @return RecordStatus <p>录制状态，当调用录制接口后，可通过该字段保存录制状态。0：未录制 1：录制中该接口仅保存字段，不涉及任何录制处理。</p>
+                     * 获取<p>录制状态，当调用录制接口后，可通过该字段保存录制状态。<br>0：未录制<br>1：录制中<br>该接口仅保存字段，不涉及任何录制处理。</p>
+                     * @return RecordStatus <p>录制状态，当调用录制接口后，可通过该字段保存录制状态。<br>0：未录制<br>1：录制中<br>该接口仅保存字段，不涉及任何录制处理。</p>
                      * 
                      */
                     uint64_t GetRecordStatus() const;
 
                     /**
-                     * 设置<p>录制状态，当调用录制接口后，可通过该字段保存录制状态。0：未录制 1：录制中该接口仅保存字段，不涉及任何录制处理。</p>
-                     * @param _recordStatus <p>录制状态，当调用录制接口后，可通过该字段保存录制状态。0：未录制 1：录制中该接口仅保存字段，不涉及任何录制处理。</p>
+                     * 设置<p>录制状态，当调用录制接口后，可通过该字段保存录制状态。<br>0：未录制<br>1：录制中<br>该接口仅保存字段，不涉及任何录制处理。</p>
+                     * @param _recordStatus <p>录制状态，当调用录制接口后，可通过该字段保存录制状态。<br>0：未录制<br>1：录制中<br>该接口仅保存字段，不涉及任何录制处理。</p>
                      * 
                      */
                     void SetRecordStatus(const uint64_t& _recordStatus);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool RecordStatusHasBeenSet() const;
 
                     /**
-                     * 获取<p>导播台的过期时间戳。值为-1或unix时间戳。默认值为-1。 当值为-1时，表示该导播台永不过期。 当值为正常unix时间戳时，导播台将在该时间过期。导播台过期后，预监与主监画面将自动停止，转推自动停止。 点播、直播url将停止转拉，推流url需自行停止推流。</p>
-                     * @return ExpireTime <p>导播台的过期时间戳。值为-1或unix时间戳。默认值为-1。 当值为-1时，表示该导播台永不过期。 当值为正常unix时间戳时，导播台将在该时间过期。导播台过期后，预监与主监画面将自动停止，转推自动停止。 点播、直播url将停止转拉，推流url需自行停止推流。</p>
+                     * 获取<p>导播台的过期时间戳。值为-1或unix时间戳。<br>默认值为-1。<br>当值为-1时，表示该导播台永不过期。<br>当值为正常unix时间戳时，导播台将在该时间过期。<br>导播台过期后，预监与主监画面将自动停止，转推自动停止。<br>点播、直播url将停止转拉，推流url需自行停止推流。</p>
+                     * @return ExpireTime <p>导播台的过期时间戳。值为-1或unix时间戳。<br>默认值为-1。<br>当值为-1时，表示该导播台永不过期。<br>当值为正常unix时间戳时，导播台将在该时间过期。<br>导播台过期后，预监与主监画面将自动停止，转推自动停止。<br>点播、直播url将停止转拉，推流url需自行停止推流。</p>
                      * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
-                     * 设置<p>导播台的过期时间戳。值为-1或unix时间戳。默认值为-1。 当值为-1时，表示该导播台永不过期。 当值为正常unix时间戳时，导播台将在该时间过期。导播台过期后，预监与主监画面将自动停止，转推自动停止。 点播、直播url将停止转拉，推流url需自行停止推流。</p>
-                     * @param _expireTime <p>导播台的过期时间戳。值为-1或unix时间戳。默认值为-1。 当值为-1时，表示该导播台永不过期。 当值为正常unix时间戳时，导播台将在该时间过期。导播台过期后，预监与主监画面将自动停止，转推自动停止。 点播、直播url将停止转拉，推流url需自行停止推流。</p>
+                     * 设置<p>导播台的过期时间戳。值为-1或unix时间戳。<br>默认值为-1。<br>当值为-1时，表示该导播台永不过期。<br>当值为正常unix时间戳时，导播台将在该时间过期。<br>导播台过期后，预监与主监画面将自动停止，转推自动停止。<br>点播、直播url将停止转拉，推流url需自行停止推流。</p>
+                     * @param _expireTime <p>导播台的过期时间戳。值为-1或unix时间戳。<br>默认值为-1。<br>当值为-1时，表示该导播台永不过期。<br>当值为正常unix时间戳时，导播台将在该时间过期。<br>导播台过期后，预监与主监画面将自动停止，转推自动停止。<br>点播、直播url将停止转拉，推流url需自行停止推流。</p>
                      * 
                      */
                     void SetExpireTime(const int64_t& _expireTime);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>导播台延时播放时间，单位为秒。 默认为0，最大支持300秒</p>
-                     * @return DelayTime <p>导播台延时播放时间，单位为秒。 默认为0，最大支持300秒</p>
+                     * 获取<p>导播台延时播放时间，单位为秒。<br>默认为0，最大支持300秒</p>
+                     * @return DelayTime <p>导播台延时播放时间，单位为秒。<br>默认为0，最大支持300秒</p>
                      * 
                      */
                     uint64_t GetDelayTime() const;
 
                     /**
-                     * 设置<p>导播台延时播放时间，单位为秒。 默认为0，最大支持300秒</p>
-                     * @param _delayTime <p>导播台延时播放时间，单位为秒。 默认为0，最大支持300秒</p>
+                     * 设置<p>导播台延时播放时间，单位为秒。<br>默认为0，最大支持300秒</p>
+                     * @param _delayTime <p>导播台延时播放时间，单位为秒。<br>默认为0，最大支持300秒</p>
                      * 
                      */
                     void SetDelayTime(const uint64_t& _delayTime);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool DelayTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>导播台转场类型。 默认为空。 允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。</p>
-                     * @return TransitionType <p>导播台转场类型。 默认为空。 允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。</p>
+                     * 获取<p>导播台转场类型。<br>默认为空。<br>允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。</p>
+                     * @return TransitionType <p>导播台转场类型。<br>默认为空。<br>允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。</p>
                      * 
                      */
                     std::string GetTransitionType() const;
 
                     /**
-                     * 设置<p>导播台转场类型。 默认为空。 允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。</p>
-                     * @param _transitionType <p>导播台转场类型。 默认为空。 允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。</p>
+                     * 设置<p>导播台转场类型。<br>默认为空。<br>允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。</p>
+                     * @param _transitionType <p>导播台转场类型。<br>默认为空。<br>允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。</p>
                      * 
                      */
                     void SetTransitionType(const std::string& _transitionType);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool TransitionTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>导播台主监输出的宽度，单位为像素。 默认为1280，最大允许4096。</p>
-                     * @return PgmWidth <p>导播台主监输出的宽度，单位为像素。 默认为1280，最大允许4096。</p>
+                     * 获取<p>导播台主监输出的宽度，单位为像素。<br>默认为1280，最大允许4096。</p>
+                     * @return PgmWidth <p>导播台主监输出的宽度，单位为像素。<br>默认为1280，最大允许4096。</p>
                      * 
                      */
                     uint64_t GetPgmWidth() const;
 
                     /**
-                     * 设置<p>导播台主监输出的宽度，单位为像素。 默认为1280，最大允许4096。</p>
-                     * @param _pgmWidth <p>导播台主监输出的宽度，单位为像素。 默认为1280，最大允许4096。</p>
+                     * 设置<p>导播台主监输出的宽度，单位为像素。<br>默认为1280，最大允许4096。</p>
+                     * @param _pgmWidth <p>导播台主监输出的宽度，单位为像素。<br>默认为1280，最大允许4096。</p>
                      * 
                      */
                     void SetPgmWidth(const uint64_t& _pgmWidth);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool PgmWidthHasBeenSet() const;
 
                     /**
-                     * 获取<p>导播台主监输出的高度，单位为像素。 默认为720，最大允许2160。</p>
-                     * @return PgmHeight <p>导播台主监输出的高度，单位为像素。 默认为720，最大允许2160。</p>
+                     * 获取<p>导播台主监输出的高度，单位为像素。<br>默认为720，最大允许2160。</p>
+                     * @return PgmHeight <p>导播台主监输出的高度，单位为像素。<br>默认为720，最大允许2160。</p>
                      * 
                      */
                     uint64_t GetPgmHeight() const;
 
                     /**
-                     * 设置<p>导播台主监输出的高度，单位为像素。 默认为720，最大允许2160。</p>
-                     * @param _pgmHeight <p>导播台主监输出的高度，单位为像素。 默认为720，最大允许2160。</p>
+                     * 设置<p>导播台主监输出的高度，单位为像素。<br>默认为720，最大允许2160。</p>
+                     * @param _pgmHeight <p>导播台主监输出的高度，单位为像素。<br>默认为720，最大允许2160。</p>
                      * 
                      */
                     void SetPgmHeight(const uint64_t& _pgmHeight);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool PgmHeightHasBeenSet() const;
 
                     /**
-                     * 获取<p>导播台主监输出的帧率。 默认为0，表示随源输出。 最大支持60。</p>
-                     * @return PgmFps <p>导播台主监输出的帧率。 默认为0，表示随源输出。 最大支持60。</p>
+                     * 获取<p>导播台主监输出的帧率。<br>默认为0，表示随源输出。 最大支持60。</p>
+                     * @return PgmFps <p>导播台主监输出的帧率。<br>默认为0，表示随源输出。 最大支持60。</p>
                      * 
                      */
                     uint64_t GetPgmFps() const;
 
                     /**
-                     * 设置<p>导播台主监输出的帧率。 默认为0，表示随源输出。 最大支持60。</p>
-                     * @param _pgmFps <p>导播台主监输出的帧率。 默认为0，表示随源输出。 最大支持60。</p>
+                     * 设置<p>导播台主监输出的帧率。<br>默认为0，表示随源输出。 最大支持60。</p>
+                     * @param _pgmFps <p>导播台主监输出的帧率。<br>默认为0，表示随源输出。 最大支持60。</p>
                      * 
                      */
                     void SetPgmFps(const uint64_t& _pgmFps);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool PgmFpsHasBeenSet() const;
 
                     /**
-                     * 获取<p>导播台主监输出的码率，单位为kbps。 默认为0，表示随源的码率输出。 最大允许10000kbps。</p>
-                     * @return PgmBitRate <p>导播台主监输出的码率，单位为kbps。 默认为0，表示随源的码率输出。 最大允许10000kbps。</p>
+                     * 获取<p>导播台主监输出的码率，单位为kbps。<br>默认为0，表示随源的码率输出。<br>最大允许10000kbps。</p>
+                     * @return PgmBitRate <p>导播台主监输出的码率，单位为kbps。<br>默认为0，表示随源的码率输出。<br>最大允许10000kbps。</p>
                      * 
                      */
                     uint64_t GetPgmBitRate() const;
 
                     /**
-                     * 设置<p>导播台主监输出的码率，单位为kbps。 默认为0，表示随源的码率输出。 最大允许10000kbps。</p>
-                     * @param _pgmBitRate <p>导播台主监输出的码率，单位为kbps。 默认为0，表示随源的码率输出。 最大允许10000kbps。</p>
+                     * 设置<p>导播台主监输出的码率，单位为kbps。<br>默认为0，表示随源的码率输出。<br>最大允许10000kbps。</p>
+                     * @param _pgmBitRate <p>导播台主监输出的码率，单位为kbps。<br>默认为0，表示随源的码率输出。<br>最大允许10000kbps。</p>
                      * 
                      */
                     void SetPgmBitRate(const uint64_t& _pgmBitRate);
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool PgmBitRateHasBeenSet() const;
 
                     /**
-                     * 获取<p>导播台的计费类型。 0 通用型 1 播单型。 注： 本参数暂无作用。</p>
-                     * @return FeeType <p>导播台的计费类型。 0 通用型 1 播单型。 注： 本参数暂无作用。</p>
+                     * 获取<p>导播台的计费类型。<br>0 通用型<br>1 播单型。<br>注： 本参数暂无作用。</p>
+                     * @return FeeType <p>导播台的计费类型。<br>0 通用型<br>1 播单型。<br>注： 本参数暂无作用。</p>
                      * 
                      */
                     int64_t GetFeeType() const;
 
                     /**
-                     * 设置<p>导播台的计费类型。 0 通用型 1 播单型。 注： 本参数暂无作用。</p>
-                     * @param _feeType <p>导播台的计费类型。 0 通用型 1 播单型。 注： 本参数暂无作用。</p>
+                     * 设置<p>导播台的计费类型。<br>0 通用型<br>1 播单型。<br>注： 本参数暂无作用。</p>
+                     * @param _feeType <p>导播台的计费类型。<br>0 通用型<br>1 播单型。<br>注： 本参数暂无作用。</p>
                      * 
                      */
                     void SetFeeType(const int64_t& _feeType);
@@ -316,15 +316,15 @@ namespace TencentCloud
                     bool FeeTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>录制接口返回的taskid注：该接口只做字段保存，不涉及录制操作。</p>
-                     * @return RecordTaskId <p>录制接口返回的taskid注：该接口只做字段保存，不涉及录制操作。</p>
+                     * 获取<p>录制接口返回的taskid<br>注：该接口只做字段保存，不涉及录制操作。</p>
+                     * @return RecordTaskId <p>录制接口返回的taskid<br>注：该接口只做字段保存，不涉及录制操作。</p>
                      * 
                      */
                     std::string GetRecordTaskId() const;
 
                     /**
-                     * 设置<p>录制接口返回的taskid注：该接口只做字段保存，不涉及录制操作。</p>
-                     * @param _recordTaskId <p>录制接口返回的taskid注：该接口只做字段保存，不涉及录制操作。</p>
+                     * 设置<p>录制接口返回的taskid<br>注：该接口只做字段保存，不涉及录制操作。</p>
+                     * @param _recordTaskId <p>录制接口返回的taskid<br>注：该接口只做字段保存，不涉及录制操作。</p>
                      * 
                      */
                     void SetRecordTaskId(const std::string& _recordTaskId);
@@ -337,15 +337,15 @@ namespace TencentCloud
                     bool RecordTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>导播台主监输出的音频码率，单位为kbps。 可选项：[0, 128, 192, 256] 默认值为0，表示随源的音频码率输出。</p>
-                     * @return PgmAudioBitRate <p>导播台主监输出的音频码率，单位为kbps。 可选项：[0, 128, 192, 256] 默认值为0，表示随源的音频码率输出。</p>
+                     * 获取<p>导播台主监输出的音频码率，单位为kbps。<br>可选项：[0, 128, 192, 256]<br>默认值为0，表示随源的音频码率输出。</p>
+                     * @return PgmAudioBitRate <p>导播台主监输出的音频码率，单位为kbps。<br>可选项：[0, 128, 192, 256]<br>默认值为0，表示随源的音频码率输出。</p>
                      * 
                      */
                     uint64_t GetPgmAudioBitRate() const;
 
                     /**
-                     * 设置<p>导播台主监输出的音频码率，单位为kbps。 可选项：[0, 128, 192, 256] 默认值为0，表示随源的音频码率输出。</p>
-                     * @param _pgmAudioBitRate <p>导播台主监输出的音频码率，单位为kbps。 可选项：[0, 128, 192, 256] 默认值为0，表示随源的音频码率输出。</p>
+                     * 设置<p>导播台主监输出的音频码率，单位为kbps。<br>可选项：[0, 128, 192, 256]<br>默认值为0，表示随源的音频码率输出。</p>
+                     * @param _pgmAudioBitRate <p>导播台主监输出的音频码率，单位为kbps。<br>可选项：[0, 128, 192, 256]<br>默认值为0，表示随源的音频码率输出。</p>
                      * 
                      */
                     void SetPgmAudioBitRate(const uint64_t& _pgmAudioBitRate);
@@ -378,73 +378,73 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * <p>录制模板id。默认为0。当使用直播录制功能时，可将使用的录制模版填入。该接口仅保存字段，不涉及任何录制功能。</p>
+                     * <p>录制模板id。默认为0。当使用直播录制功能时，可将使用的录制模板填入。该接口仅保存字段，不涉及任何录制功能。</p>
                      */
                     uint64_t m_recordTemplateId;
                     bool m_recordTemplateIdHasBeenSet;
 
                     /**
-                     * <p>录制状态，当调用录制接口后，可通过该字段保存录制状态。0：未录制 1：录制中该接口仅保存字段，不涉及任何录制处理。</p>
+                     * <p>录制状态，当调用录制接口后，可通过该字段保存录制状态。<br>0：未录制<br>1：录制中<br>该接口仅保存字段，不涉及任何录制处理。</p>
                      */
                     uint64_t m_recordStatus;
                     bool m_recordStatusHasBeenSet;
 
                     /**
-                     * <p>导播台的过期时间戳。值为-1或unix时间戳。默认值为-1。 当值为-1时，表示该导播台永不过期。 当值为正常unix时间戳时，导播台将在该时间过期。导播台过期后，预监与主监画面将自动停止，转推自动停止。 点播、直播url将停止转拉，推流url需自行停止推流。</p>
+                     * <p>导播台的过期时间戳。值为-1或unix时间戳。<br>默认值为-1。<br>当值为-1时，表示该导播台永不过期。<br>当值为正常unix时间戳时，导播台将在该时间过期。<br>导播台过期后，预监与主监画面将自动停止，转推自动停止。<br>点播、直播url将停止转拉，推流url需自行停止推流。</p>
                      */
                     int64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * <p>导播台延时播放时间，单位为秒。 默认为0，最大支持300秒</p>
+                     * <p>导播台延时播放时间，单位为秒。<br>默认为0，最大支持300秒</p>
                      */
                     uint64_t m_delayTime;
                     bool m_delayTimeHasBeenSet;
 
                     /**
-                     * <p>导播台转场类型。 默认为空。 允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。</p>
+                     * <p>导播台转场类型。<br>默认为空。<br>允许使用通过DescribeCasterTransitionTypes接口中查询到的转场类型。</p>
                      */
                     std::string m_transitionType;
                     bool m_transitionTypeHasBeenSet;
 
                     /**
-                     * <p>导播台主监输出的宽度，单位为像素。 默认为1280，最大允许4096。</p>
+                     * <p>导播台主监输出的宽度，单位为像素。<br>默认为1280，最大允许4096。</p>
                      */
                     uint64_t m_pgmWidth;
                     bool m_pgmWidthHasBeenSet;
 
                     /**
-                     * <p>导播台主监输出的高度，单位为像素。 默认为720，最大允许2160。</p>
+                     * <p>导播台主监输出的高度，单位为像素。<br>默认为720，最大允许2160。</p>
                      */
                     uint64_t m_pgmHeight;
                     bool m_pgmHeightHasBeenSet;
 
                     /**
-                     * <p>导播台主监输出的帧率。 默认为0，表示随源输出。 最大支持60。</p>
+                     * <p>导播台主监输出的帧率。<br>默认为0，表示随源输出。 最大支持60。</p>
                      */
                     uint64_t m_pgmFps;
                     bool m_pgmFpsHasBeenSet;
 
                     /**
-                     * <p>导播台主监输出的码率，单位为kbps。 默认为0，表示随源的码率输出。 最大允许10000kbps。</p>
+                     * <p>导播台主监输出的码率，单位为kbps。<br>默认为0，表示随源的码率输出。<br>最大允许10000kbps。</p>
                      */
                     uint64_t m_pgmBitRate;
                     bool m_pgmBitRateHasBeenSet;
 
                     /**
-                     * <p>导播台的计费类型。 0 通用型 1 播单型。 注： 本参数暂无作用。</p>
+                     * <p>导播台的计费类型。<br>0 通用型<br>1 播单型。<br>注： 本参数暂无作用。</p>
                      */
                     int64_t m_feeType;
                     bool m_feeTypeHasBeenSet;
 
                     /**
-                     * <p>录制接口返回的taskid注：该接口只做字段保存，不涉及录制操作。</p>
+                     * <p>录制接口返回的taskid<br>注：该接口只做字段保存，不涉及录制操作。</p>
                      */
                     std::string m_recordTaskId;
                     bool m_recordTaskIdHasBeenSet;
 
                     /**
-                     * <p>导播台主监输出的音频码率，单位为kbps。 可选项：[0, 128, 192, 256] 默认值为0，表示随源的音频码率输出。</p>
+                     * <p>导播台主监输出的音频码率，单位为kbps。<br>可选项：[0, 128, 192, 256]<br>默认值为0，表示随源的音频码率输出。</p>
                      */
                     uint64_t m_pgmAudioBitRate;
                     bool m_pgmAudioBitRateHasBeenSet;

@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeJobRecordDetailsResponse::DescribeJobRecordDetailsResponse() :
     m_totalHasBeenSet(false),
-    m_listHasBeenSet(false)
+    m_listHasBeenSet(false),
+    m_enterpriseEquityPathHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,26 @@ CoreInternalOutcome DescribeJobRecordDetailsResponse::Deserialize(const string &
         m_listHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EnterpriseEquityPath") && !rsp["EnterpriseEquityPath"].IsNull())
+    {
+        if (!rsp["EnterpriseEquityPath"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EnterpriseEquityPath` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["EnterpriseEquityPath"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Equity item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_enterpriseEquityPath.push_back(item);
+        }
+        m_enterpriseEquityPathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -120,6 +141,21 @@ string DescribeJobRecordDetailsResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_list.begin(); itr != m_list.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_enterpriseEquityPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnterpriseEquityPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_enterpriseEquityPath.begin(); itr != m_enterpriseEquityPath.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -156,6 +192,16 @@ vector<DisplayJobRecordDetail> DescribeJobRecordDetailsResponse::GetList() const
 bool DescribeJobRecordDetailsResponse::ListHasBeenSet() const
 {
     return m_listHasBeenSet;
+}
+
+vector<Equity> DescribeJobRecordDetailsResponse::GetEnterpriseEquityPath() const
+{
+    return m_enterpriseEquityPath;
+}
+
+bool DescribeJobRecordDetailsResponse::EnterpriseEquityPathHasBeenSet() const
+{
+    return m_enterpriseEquityPathHasBeenSet;
 }
 
 

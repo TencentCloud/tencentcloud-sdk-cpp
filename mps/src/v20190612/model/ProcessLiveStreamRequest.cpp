@@ -34,7 +34,8 @@ ProcessLiveStreamRequest::ProcessLiveStreamRequest() :
     m_smartSubtitlesTaskHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
-    m_scheduleIdHasBeenSet(false)
+    m_scheduleIdHasBeenSet(false),
+    m_resourceIdHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,14 @@ string ProcessLiveStreamRequest::ToJsonString() const
         string key = "ScheduleId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_scheduleId, allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -346,6 +355,22 @@ void ProcessLiveStreamRequest::SetScheduleId(const int64_t& _scheduleId)
 bool ProcessLiveStreamRequest::ScheduleIdHasBeenSet() const
 {
     return m_scheduleIdHasBeenSet;
+}
+
+string ProcessLiveStreamRequest::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void ProcessLiveStreamRequest::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool ProcessLiveStreamRequest::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
 }
 
 

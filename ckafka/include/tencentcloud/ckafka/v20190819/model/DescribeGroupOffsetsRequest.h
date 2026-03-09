@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id
-                     * @return InstanceId ckafka集群实例Id
+                     * 获取<p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
+                     * @return InstanceId <p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id
-                     * @param _instanceId ckafka集群实例Id
+                     * 设置<p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
+                     * @param _instanceId <p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Kafka 消费分组
-                     * @return Group Kafka 消费分组
+                     * 获取<p>Kafka 消费分组</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40840">DescribeGroup</a></p>
+                     * @return Group <p>Kafka 消费分组</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40840">DescribeGroup</a></p>
                      * 
                      */
                     std::string GetGroup() const;
 
                     /**
-                     * 设置Kafka 消费分组
-                     * @param _group Kafka 消费分组
+                     * 设置<p>Kafka 消费分组</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40840">DescribeGroup</a></p>
+                     * @param _group <p>Kafka 消费分组</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40840">DescribeGroup</a></p>
                      * 
                      */
                     void SetGroup(const std::string& _group);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool GroupHasBeenSet() const;
 
                     /**
-                     * 获取group 订阅的主题名称数组，如果没有该数组，则表示指定的 group 下所有 topic 信息
-                     * @return Topics group 订阅的主题名称数组，如果没有该数组，则表示指定的 group 下所有 topic 信息
+                     * 获取<p>group 订阅的主题名称数组，如果没有该数组，则表示指定的 group 下所有 topic 信息</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40847">DescribeTopic</a></p>
+                     * @return Topics <p>group 订阅的主题名称数组，如果没有该数组，则表示指定的 group 下所有 topic 信息</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40847">DescribeTopic</a></p>
                      * 
                      */
                     std::vector<std::string> GetTopics() const;
 
                     /**
-                     * 设置group 订阅的主题名称数组，如果没有该数组，则表示指定的 group 下所有 topic 信息
-                     * @param _topics group 订阅的主题名称数组，如果没有该数组，则表示指定的 group 下所有 topic 信息
+                     * 设置<p>group 订阅的主题名称数组，如果没有该数组，则表示指定的 group 下所有 topic 信息</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40847">DescribeTopic</a></p>
+                     * @param _topics <p>group 订阅的主题名称数组，如果没有该数组，则表示指定的 group 下所有 topic 信息</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40847">DescribeTopic</a></p>
                      * 
                      */
                     void SetTopics(const std::vector<std::string>& _topics);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool TopicsHasBeenSet() const;
 
                     /**
-                     * 获取模糊匹配 topicName
-                     * @return SearchWord 模糊匹配 topicName
+                     * 获取<p>模糊匹配 topicName</p>
+                     * @return SearchWord <p>模糊匹配 topicName</p>
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置模糊匹配 topicName
-                     * @param _searchWord 模糊匹配 topicName
+                     * 设置<p>模糊匹配 topicName</p>
+                     * @param _searchWord <p>模糊匹配 topicName</p>
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取本次查询的偏移位置，默认为0
-                     * @return Offset 本次查询的偏移位置，默认为0
+                     * 获取<p>本次查询的偏移位置，默认为0</p>
+                     * @return Offset <p>本次查询的偏移位置，默认为0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置本次查询的偏移位置，默认为0
-                     * @param _offset 本次查询的偏移位置，默认为0
+                     * 设置<p>本次查询的偏移位置，默认为0</p>
+                     * @param _offset <p>本次查询的偏移位置，默认为0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取本次返回结果的最大个数，默认为50，最大值为50
-                     * @return Limit 本次返回结果的最大个数，默认为50，最大值为50
+                     * 获取<p>本次返回结果的最大个数，默认为50，最大值为50</p>
+                     * @return Limit <p>本次返回结果的最大个数，默认为50，最大值为50</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置本次返回结果的最大个数，默认为50，最大值为50
-                     * @param _limit 本次返回结果的最大个数，默认为50，最大值为50
+                     * 设置<p>本次返回结果的最大个数，默认为50，最大值为50</p>
+                     * @param _limit <p>本次返回结果的最大个数，默认为50，最大值为50</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -171,37 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka集群实例Id
+                     * <p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Kafka 消费分组
+                     * <p>Kafka 消费分组</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40840">DescribeGroup</a></p>
                      */
                     std::string m_group;
                     bool m_groupHasBeenSet;
 
                     /**
-                     * group 订阅的主题名称数组，如果没有该数组，则表示指定的 group 下所有 topic 信息
+                     * <p>group 订阅的主题名称数组，如果没有该数组，则表示指定的 group 下所有 topic 信息</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40847">DescribeTopic</a></p>
                      */
                     std::vector<std::string> m_topics;
                     bool m_topicsHasBeenSet;
 
                     /**
-                     * 模糊匹配 topicName
+                     * <p>模糊匹配 topicName</p>
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 本次查询的偏移位置，默认为0
+                     * <p>本次查询的偏移位置，默认为0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 本次返回结果的最大个数，默认为50，最大值为50
+                     * <p>本次返回结果的最大个数，默认为50，最大值为50</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

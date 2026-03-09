@@ -25,7 +25,8 @@ using namespace std;
 
 CreateCertificateResponse::CreateCertificateResponse() :
     m_certificateIdsHasBeenSet(false),
-    m_dealIdsHasBeenSet(false)
+    m_dealIdsHasBeenSet(false),
+    m_resourceIdsHasBeenSet(false)
 {
 }
 
@@ -89,6 +90,19 @@ CoreInternalOutcome CreateCertificateResponse::Deserialize(const string &payload
         m_dealIdsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ResourceIds") && !rsp["ResourceIds"].IsNull())
+    {
+        if (!rsp["ResourceIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ResourceIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ResourceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_resourceIds.push_back((*itr).GetString());
+        }
+        m_resourceIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -125,6 +139,19 @@ string CreateCertificateResponse::ToJsonString() const
         }
     }
 
+    if (m_resourceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_resourceIds.begin(); itr != m_resourceIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -155,6 +182,16 @@ vector<string> CreateCertificateResponse::GetDealIds() const
 bool CreateCertificateResponse::DealIdsHasBeenSet() const
 {
     return m_dealIdsHasBeenSet;
+}
+
+vector<string> CreateCertificateResponse::GetResourceIds() const
+{
+    return m_resourceIds;
+}
+
+bool CreateCertificateResponse::ResourceIdsHasBeenSet() const
+{
+    return m_resourceIdsHasBeenSet;
 }
 
 

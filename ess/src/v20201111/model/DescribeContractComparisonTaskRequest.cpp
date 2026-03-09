@@ -25,7 +25,8 @@ using namespace std;
 DescribeContractComparisonTaskRequest::DescribeContractComparisonTaskRequest() :
     m_operatorHasBeenSet(false),
     m_taskIdHasBeenSet(false),
-    m_showDetailHasBeenSet(false)
+    m_showDetailHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,21 @@ string DescribeContractComparisonTaskRequest::ToJsonString() const
         string key = "ShowDetail";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_showDetail, allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -115,6 +131,22 @@ void DescribeContractComparisonTaskRequest::SetShowDetail(const bool& _showDetai
 bool DescribeContractComparisonTaskRequest::ShowDetailHasBeenSet() const
 {
     return m_showDetailHasBeenSet;
+}
+
+vector<Filter> DescribeContractComparisonTaskRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeContractComparisonTaskRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeContractComparisonTaskRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

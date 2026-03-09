@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回的路由信息结果集
-                     * @return Result 返回的路由信息结果集
+                     * 获取<p>返回的路由信息结果集</p>
+                     * @return Result <p>返回的路由信息结果集</p>
                      * 
                      */
                     RouteResponse GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回的路由信息结果集
+                     * <p>返回的路由信息结果集</p>
                      */
                     RouteResponse m_result;
                     bool m_resultHasBeenSet;

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取记录总数
-                     * @return Total 记录总数
+                     * 获取<p>记录总数</p>
+                     * @return Total <p>记录总数</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取闪信记录列表
-                     * @return FlashSMSList 闪信记录列表
+                     * 获取<p>闪信记录列表</p>
+                     * @return FlashSMSList <p>闪信记录列表</p>
                      * 
                      */
                     std::vector<FlashSMSRecord> GetFlashSMSList() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 记录总数
+                     * <p>记录总数</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 闪信记录列表
+                     * <p>闪信记录列表</p>
                      */
                     std::vector<FlashSMSRecord> m_flashSMSList;
                     bool m_flashSMSListHasBeenSet;

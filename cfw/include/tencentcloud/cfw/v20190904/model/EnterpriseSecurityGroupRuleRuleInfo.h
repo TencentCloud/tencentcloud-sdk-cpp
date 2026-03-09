@@ -893,6 +893,48 @@ ANY:表示所有
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取规则分区，1最前分区，2中间分区，3最后分区
+                     * @return RulePartition 规则分区，1最前分区，2中间分区，3最后分区
+                     * 
+                     */
+                    int64_t GetRulePartition() const;
+
+                    /**
+                     * 设置规则分区，1最前分区，2中间分区，3最后分区
+                     * @param _rulePartition 规则分区，1最前分区，2中间分区，3最后分区
+                     * 
+                     */
+                    void SetRulePartition(const int64_t& _rulePartition);
+
+                    /**
+                     * 判断参数 RulePartition 是否已赋值
+                     * @return RulePartition 是否已赋值
+                     * 
+                     */
+                    bool RulePartitionHasBeenSet() const;
+
+                    /**
+                     * 获取规则生效范围，SG安全组，LH轻量服务器
+                     * @return Scope 规则生效范围，SG安全组，LH轻量服务器
+                     * 
+                     */
+                    std::string GetScope() const;
+
+                    /**
+                     * 设置规则生效范围，SG安全组，LH轻量服务器
+                     * @param _scope 规则生效范围，SG安全组，LH轻量服务器
+                     * 
+                     */
+                    void SetScope(const std::string& _scope);
+
+                    /**
+                     * 判断参数 Scope 是否已赋值
+                     * @return Scope 是否已赋值
+                     * 
+                     */
+                    bool ScopeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1130,6 +1172,18 @@ ANY:表示所有
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 规则分区，1最前分区，2中间分区，3最后分区
+                     */
+                    int64_t m_rulePartition;
+                    bool m_rulePartitionHasBeenSet;
+
+                    /**
+                     * 规则生效范围，SG安全组，LH轻量服务器
+                     */
+                    std::string m_scope;
+                    bool m_scopeHasBeenSet;
 
                 };
             }

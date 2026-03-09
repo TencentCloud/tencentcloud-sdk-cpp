@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id
-                     * @return InstanceId ckafka集群实例Id
+                     * 获取<p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
+                     * @return InstanceId <p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id
-                     * @param _instanceId ckafka集群实例Id
+                     * 设置<p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
+                     * @param _instanceId <p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取主题名
-                     * @return TopicName 主题名
+                     * 获取<p>主题名</p>
+                     * @return TopicName <p>主题名</p>
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置主题名
-                     * @param _topicName 主题名
+                     * 设置<p>主题名</p>
+                     * @param _topicName <p>主题名</p>
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取主题备注，是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线-。
-                     * @return Note 主题备注，是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线-。
+                     * 获取<p>主题备注</p><p>入参限制：不超过64个字符</p><p>默认值：&quot;&quot;</p>
+                     * @return Note <p>主题备注</p><p>入参限制：不超过64个字符</p><p>默认值：&quot;&quot;</p>
                      * 
                      */
                     std::string GetNote() const;
 
                     /**
-                     * 设置主题备注，是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线-。
-                     * @param _note 主题备注，是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线-。
+                     * 设置<p>主题备注</p><p>入参限制：不超过64个字符</p><p>默认值：&quot;&quot;</p>
+                     * @param _note <p>主题备注</p><p>入参限制：不超过64个字符</p><p>默认值：&quot;&quot;</p>
                      * 
                      */
                     void SetNote(const std::string& _note);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool NoteHasBeenSet() const;
 
                     /**
-                     * 获取IP 白名单开关，1：打开；0：关闭。
-                     * @return EnableWhiteList IP 白名单开关，1：打开；0：关闭。
+                     * 获取<p>IP 白名单开关，1：打开；0：关闭。</p>
+                     * @return EnableWhiteList <p>IP 白名单开关，1：打开；0：关闭。</p>
                      * 
                      */
                     int64_t GetEnableWhiteList() const;
 
                     /**
-                     * 设置IP 白名单开关，1：打开；0：关闭。
-                     * @param _enableWhiteList IP 白名单开关，1：打开；0：关闭。
+                     * 设置<p>IP 白名单开关，1：打开；0：关闭。</p>
+                     * @param _enableWhiteList <p>IP 白名单开关，1：打开；0：关闭。</p>
                      * 
                      */
                     void SetEnableWhiteList(const int64_t& _enableWhiteList);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool EnableWhiteListHasBeenSet() const;
 
                     /**
-                     * 获取默认为1。
-                     * @return MinInsyncReplicas 默认为1。
+                     * 获取<p>最小同步副本数</p><p>默认值：1</p><p>最小值为1</p>
+                     * @return MinInsyncReplicas <p>最小同步副本数</p><p>默认值：1</p><p>最小值为1</p>
                      * 
                      */
                     int64_t GetMinInsyncReplicas() const;
 
                     /**
-                     * 设置默认为1。
-                     * @param _minInsyncReplicas 默认为1。
+                     * 设置<p>最小同步副本数</p><p>默认值：1</p><p>最小值为1</p>
+                     * @param _minInsyncReplicas <p>最小同步副本数</p><p>默认值：1</p><p>最小值为1</p>
                      * 
                      */
                     void SetMinInsyncReplicas(const int64_t& _minInsyncReplicas);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool MinInsyncReplicasHasBeenSet() const;
 
                     /**
-                     * 获取默认为 0，0：false；1：true。
-                     * @return UncleanLeaderElectionEnable 默认为 0，0：false；1：true。
+                     * 获取<p>是否允许未同步的副本选为leader</p><p>枚举值：</p><ul><li>0： 不允许</li><li>1： 允许</li></ul><p>默认值：0</p>
+                     * @return UncleanLeaderElectionEnable <p>是否允许未同步的副本选为leader</p><p>枚举值：</p><ul><li>0： 不允许</li><li>1： 允许</li></ul><p>默认值：0</p>
                      * 
                      */
                     int64_t GetUncleanLeaderElectionEnable() const;
 
                     /**
-                     * 设置默认为 0，0：false；1：true。
-                     * @param _uncleanLeaderElectionEnable 默认为 0，0：false；1：true。
+                     * 设置<p>是否允许未同步的副本选为leader</p><p>枚举值：</p><ul><li>0： 不允许</li><li>1： 允许</li></ul><p>默认值：0</p>
+                     * @param _uncleanLeaderElectionEnable <p>是否允许未同步的副本选为leader</p><p>枚举值：</p><ul><li>0： 不允许</li><li>1： 允许</li></ul><p>默认值：0</p>
                      * 
                      */
                     void SetUncleanLeaderElectionEnable(const int64_t& _uncleanLeaderElectionEnable);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool UncleanLeaderElectionEnableHasBeenSet() const;
 
                     /**
-                     * 获取消息保留时间，单位：ms，当前最小值为60000ms。
-                     * @return RetentionMs 消息保留时间，单位：ms，当前最小值为60000ms。
+                     * 获取<p>Segment分片滚动的时长</p><p>单位：毫秒</p><p>默认值：86400000</p><p>最小值为86400000ms（1天）</p>
+                     * @return RetentionMs <p>Segment分片滚动的时长</p><p>单位：毫秒</p><p>默认值：86400000</p><p>最小值为86400000ms（1天）</p>
                      * 
                      */
                     int64_t GetRetentionMs() const;
 
                     /**
-                     * 设置消息保留时间，单位：ms，当前最小值为60000ms。
-                     * @param _retentionMs 消息保留时间，单位：ms，当前最小值为60000ms。
+                     * 设置<p>Segment分片滚动的时长</p><p>单位：毫秒</p><p>默认值：86400000</p><p>最小值为86400000ms（1天）</p>
+                     * @param _retentionMs <p>Segment分片滚动的时长</p><p>单位：毫秒</p><p>默认值：86400000</p><p>最小值为86400000ms（1天）</p>
                      * 
                      */
                     void SetRetentionMs(const int64_t& _retentionMs);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool RetentionMsHasBeenSet() const;
 
                     /**
-                     * 获取主题消息最大值，单位为 Byte，最大值为12582912Byte（即12MB）。
-                     * @return MaxMessageBytes 主题消息最大值，单位为 Byte，最大值为12582912Byte（即12MB）。
+                     * 获取<p>主题消息最大值</p><p>取值范围：[1024, 12582912]</p><p>单位：Bytes</p>
+                     * @return MaxMessageBytes <p>主题消息最大值</p><p>取值范围：[1024, 12582912]</p><p>单位：Bytes</p>
                      * 
                      */
                     int64_t GetMaxMessageBytes() const;
 
                     /**
-                     * 设置主题消息最大值，单位为 Byte，最大值为12582912Byte（即12MB）。
-                     * @param _maxMessageBytes 主题消息最大值，单位为 Byte，最大值为12582912Byte（即12MB）。
+                     * 设置<p>主题消息最大值</p><p>取值范围：[1024, 12582912]</p><p>单位：Bytes</p>
+                     * @param _maxMessageBytes <p>主题消息最大值</p><p>取值范围：[1024, 12582912]</p><p>单位：Bytes</p>
                      * 
                      */
                     void SetMaxMessageBytes(const int64_t& _maxMessageBytes);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool MaxMessageBytesHasBeenSet() const;
 
                     /**
-                     * 获取Segment 分片滚动的时长，单位：ms，当前最小值86400000ms。
-                     * @return SegmentMs Segment 分片滚动的时长，单位：ms，当前最小值86400000ms。
+                     * 获取<p>Segment 分片滚动的时长</p><p>单位：毫秒</p><p>最小值为86400000ms（1天）</p>
+                     * @return SegmentMs <p>Segment 分片滚动的时长</p><p>单位：毫秒</p><p>最小值为86400000ms（1天）</p>
                      * 
                      */
                     int64_t GetSegmentMs() const;
 
                     /**
-                     * 设置Segment 分片滚动的时长，单位：ms，当前最小值86400000ms。
-                     * @param _segmentMs Segment 分片滚动的时长，单位：ms，当前最小值86400000ms。
+                     * 设置<p>Segment 分片滚动的时长</p><p>单位：毫秒</p><p>最小值为86400000ms（1天）</p>
+                     * @param _segmentMs <p>Segment 分片滚动的时长</p><p>单位：毫秒</p><p>最小值为86400000ms（1天）</p>
                      * 
                      */
                     void SetSegmentMs(const int64_t& _segmentMs);
@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool SegmentMsHasBeenSet() const;
 
                     /**
-                     * 获取消息删除策略，可以选择delete 或者compact
-                     * @return CleanUpPolicy 消息删除策略，可以选择delete 或者compact
+                     * 获取<p>消息删除策略，可以选择delete 或者compact</p>
+                     * @return CleanUpPolicy <p>消息删除策略，可以选择delete 或者compact</p>
                      * 
                      */
                     std::string GetCleanUpPolicy() const;
 
                     /**
-                     * 设置消息删除策略，可以选择delete 或者compact
-                     * @param _cleanUpPolicy 消息删除策略，可以选择delete 或者compact
+                     * 设置<p>消息删除策略，可以选择delete 或者compact</p>
+                     * @param _cleanUpPolicy <p>消息删除策略，可以选择delete 或者compact</p>
                      * 
                      */
                     void SetCleanUpPolicy(const std::string& _cleanUpPolicy);
@@ -254,15 +254,15 @@ namespace TencentCloud
                     bool CleanUpPolicyHasBeenSet() const;
 
                     /**
-                     * 获取Ip白名单列表，配额限制，enableWhileList=1时必选
-                     * @return IpWhiteList Ip白名单列表，配额限制，enableWhileList=1时必选
+                     * 获取<p>Ip白名单列表，配额限制，enableWhileList=1时必选</p>
+                     * @return IpWhiteList <p>Ip白名单列表，配额限制，enableWhileList=1时必选</p>
                      * 
                      */
                     std::vector<std::string> GetIpWhiteList() const;
 
                     /**
-                     * 设置Ip白名单列表，配额限制，enableWhileList=1时必选
-                     * @param _ipWhiteList Ip白名单列表，配额限制，enableWhileList=1时必选
+                     * 设置<p>Ip白名单列表，配额限制，enableWhileList=1时必选</p>
+                     * @param _ipWhiteList <p>Ip白名单列表，配额限制，enableWhileList=1时必选</p>
                      * 
                      */
                     void SetIpWhiteList(const std::vector<std::string>& _ipWhiteList);
@@ -275,15 +275,15 @@ namespace TencentCloud
                     bool IpWhiteListHasBeenSet() const;
 
                     /**
-                     * 获取预设ACL规则, 1:打开  0:关闭，默认不打开
-                     * @return EnableAclRule 预设ACL规则, 1:打开  0:关闭，默认不打开
+                     * 获取<p>预设ACL规则, 1:打开  0:关闭，默认不打开</p>
+                     * @return EnableAclRule <p>预设ACL规则, 1:打开  0:关闭，默认不打开</p>
                      * 
                      */
                     int64_t GetEnableAclRule() const;
 
                     /**
-                     * 设置预设ACL规则, 1:打开  0:关闭，默认不打开
-                     * @param _enableAclRule 预设ACL规则, 1:打开  0:关闭，默认不打开
+                     * 设置<p>预设ACL规则, 1:打开  0:关闭，默认不打开</p>
+                     * @param _enableAclRule <p>预设ACL规则, 1:打开  0:关闭，默认不打开</p>
                      * 
                      */
                     void SetEnableAclRule(const int64_t& _enableAclRule);
@@ -296,15 +296,15 @@ namespace TencentCloud
                     bool EnableAclRuleHasBeenSet() const;
 
                     /**
-                     * 获取ACL规则名
-                     * @return AclRuleName ACL规则名
+                     * 获取<p>ACL规则名</p>
+                     * @return AclRuleName <p>ACL规则名</p>
                      * 
                      */
                     std::string GetAclRuleName() const;
 
                     /**
-                     * 设置ACL规则名
-                     * @param _aclRuleName ACL规则名
+                     * 设置<p>ACL规则名</p>
+                     * @param _aclRuleName <p>ACL规则名</p>
                      * 
                      */
                     void SetAclRuleName(const std::string& _aclRuleName);
@@ -317,15 +317,15 @@ namespace TencentCloud
                     bool AclRuleNameHasBeenSet() const;
 
                     /**
-                     * 获取可选, 保留文件大小. 默认为-1,单位bytes, 当前最小值为1048576B
-                     * @return RetentionBytes 可选, 保留文件大小. 默认为-1,单位bytes, 当前最小值为1048576B
+                     * 获取<p>可选, 保留文件大小</p><p>取值范围：[1073741824, 1099511627776]</p><p>单位：Bytes</p><p>默认值：-1</p><p>特殊值：-1表示无限制</p>
+                     * @return RetentionBytes <p>可选, 保留文件大小</p><p>取值范围：[1073741824, 1099511627776]</p><p>单位：Bytes</p><p>默认值：-1</p><p>特殊值：-1表示无限制</p>
                      * 
                      */
                     int64_t GetRetentionBytes() const;
 
                     /**
-                     * 设置可选, 保留文件大小. 默认为-1,单位bytes, 当前最小值为1048576B
-                     * @param _retentionBytes 可选, 保留文件大小. 默认为-1,单位bytes, 当前最小值为1048576B
+                     * 设置<p>可选, 保留文件大小</p><p>取值范围：[1073741824, 1099511627776]</p><p>单位：Bytes</p><p>默认值：-1</p><p>特殊值：-1表示无限制</p>
+                     * @param _retentionBytes <p>可选, 保留文件大小</p><p>取值范围：[1073741824, 1099511627776]</p><p>单位：Bytes</p><p>默认值：-1</p><p>特殊值：-1表示无限制</p>
                      * 
                      */
                     void SetRetentionBytes(const int64_t& _retentionBytes);
@@ -338,15 +338,15 @@ namespace TencentCloud
                     bool RetentionBytesHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return Tags 标签列表
+                     * 获取<p>标签列表</p>
+                     * @return Tags <p>标签列表</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签列表
-                     * @param _tags 标签列表
+                     * 设置<p>标签列表</p>
+                     * @param _tags <p>标签列表</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -359,15 +359,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取生产限流，单位 MB/s；设置为-1，则生产不限流
-                     * @return QuotaProducerByteRate 生产限流，单位 MB/s；设置为-1，则生产不限流
+                     * 获取<p>生产限流，单位 MB/s；设置为-1，则生产不限流</p>
+                     * @return QuotaProducerByteRate <p>生产限流，单位 MB/s；设置为-1，则生产不限流</p>
                      * 
                      */
                     int64_t GetQuotaProducerByteRate() const;
 
                     /**
-                     * 设置生产限流，单位 MB/s；设置为-1，则生产不限流
-                     * @param _quotaProducerByteRate 生产限流，单位 MB/s；设置为-1，则生产不限流
+                     * 设置<p>生产限流，单位 MB/s；设置为-1，则生产不限流</p>
+                     * @param _quotaProducerByteRate <p>生产限流，单位 MB/s；设置为-1，则生产不限流</p>
                      * 
                      */
                     void SetQuotaProducerByteRate(const int64_t& _quotaProducerByteRate);
@@ -380,15 +380,15 @@ namespace TencentCloud
                     bool QuotaProducerByteRateHasBeenSet() const;
 
                     /**
-                     * 获取消费限流，单位 MB/s；设置为-1，则消费不限流
-                     * @return QuotaConsumerByteRate 消费限流，单位 MB/s；设置为-1，则消费不限流
+                     * 获取<p>消费限流，单位 MB/s；设置为-1，则消费不限流</p>
+                     * @return QuotaConsumerByteRate <p>消费限流，单位 MB/s；设置为-1，则消费不限流</p>
                      * 
                      */
                     int64_t GetQuotaConsumerByteRate() const;
 
                     /**
-                     * 设置消费限流，单位 MB/s；设置为-1，则消费不限流
-                     * @param _quotaConsumerByteRate 消费限流，单位 MB/s；设置为-1，则消费不限流
+                     * 设置<p>消费限流，单位 MB/s；设置为-1，则消费不限流</p>
+                     * @param _quotaConsumerByteRate <p>消费限流，单位 MB/s；设置为-1，则消费不限流</p>
                      * 
                      */
                     void SetQuotaConsumerByteRate(const int64_t& _quotaConsumerByteRate);
@@ -401,15 +401,15 @@ namespace TencentCloud
                     bool QuotaConsumerByteRateHasBeenSet() const;
 
                     /**
-                     * 获取topic副本数  最小值 1,最大值 3
-                     * @return ReplicaNum topic副本数  最小值 1,最大值 3
+                     * 获取<p>topic副本数  最小值 1,最大值 3</p>
+                     * @return ReplicaNum <p>topic副本数  最小值 1,最大值 3</p>
                      * 
                      */
                     int64_t GetReplicaNum() const;
 
                     /**
-                     * 设置topic副本数  最小值 1,最大值 3
-                     * @param _replicaNum topic副本数  最小值 1,最大值 3
+                     * 设置<p>topic副本数  最小值 1,最大值 3</p>
+                     * @param _replicaNum <p>topic副本数  最小值 1,最大值 3</p>
                      * 
                      */
                     void SetReplicaNum(const int64_t& _replicaNum);
@@ -422,15 +422,15 @@ namespace TencentCloud
                     bool ReplicaNumHasBeenSet() const;
 
                     /**
-                     * 获取消息保存的时间类型：CreateTime/LogAppendTime
-                     * @return LogMsgTimestampType 消息保存的时间类型：CreateTime/LogAppendTime
+                     * 获取<p>消息保存的时间类型：CreateTime/LogAppendTime</p>
+                     * @return LogMsgTimestampType <p>消息保存的时间类型：CreateTime/LogAppendTime</p>
                      * 
                      */
                     std::string GetLogMsgTimestampType() const;
 
                     /**
-                     * 设置消息保存的时间类型：CreateTime/LogAppendTime
-                     * @param _logMsgTimestampType 消息保存的时间类型：CreateTime/LogAppendTime
+                     * 设置<p>消息保存的时间类型：CreateTime/LogAppendTime</p>
+                     * @param _logMsgTimestampType <p>消息保存的时间类型：CreateTime/LogAppendTime</p>
                      * 
                      */
                     void SetLogMsgTimestampType(const std::string& _logMsgTimestampType);
@@ -445,115 +445,115 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka集群实例Id
+                     * <p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 主题名
+                     * <p>主题名</p>
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 主题备注，是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线-。
+                     * <p>主题备注</p><p>入参限制：不超过64个字符</p><p>默认值：&quot;&quot;</p>
                      */
                     std::string m_note;
                     bool m_noteHasBeenSet;
 
                     /**
-                     * IP 白名单开关，1：打开；0：关闭。
+                     * <p>IP 白名单开关，1：打开；0：关闭。</p>
                      */
                     int64_t m_enableWhiteList;
                     bool m_enableWhiteListHasBeenSet;
 
                     /**
-                     * 默认为1。
+                     * <p>最小同步副本数</p><p>默认值：1</p><p>最小值为1</p>
                      */
                     int64_t m_minInsyncReplicas;
                     bool m_minInsyncReplicasHasBeenSet;
 
                     /**
-                     * 默认为 0，0：false；1：true。
+                     * <p>是否允许未同步的副本选为leader</p><p>枚举值：</p><ul><li>0： 不允许</li><li>1： 允许</li></ul><p>默认值：0</p>
                      */
                     int64_t m_uncleanLeaderElectionEnable;
                     bool m_uncleanLeaderElectionEnableHasBeenSet;
 
                     /**
-                     * 消息保留时间，单位：ms，当前最小值为60000ms。
+                     * <p>Segment分片滚动的时长</p><p>单位：毫秒</p><p>默认值：86400000</p><p>最小值为86400000ms（1天）</p>
                      */
                     int64_t m_retentionMs;
                     bool m_retentionMsHasBeenSet;
 
                     /**
-                     * 主题消息最大值，单位为 Byte，最大值为12582912Byte（即12MB）。
+                     * <p>主题消息最大值</p><p>取值范围：[1024, 12582912]</p><p>单位：Bytes</p>
                      */
                     int64_t m_maxMessageBytes;
                     bool m_maxMessageBytesHasBeenSet;
 
                     /**
-                     * Segment 分片滚动的时长，单位：ms，当前最小值86400000ms。
+                     * <p>Segment 分片滚动的时长</p><p>单位：毫秒</p><p>最小值为86400000ms（1天）</p>
                      */
                     int64_t m_segmentMs;
                     bool m_segmentMsHasBeenSet;
 
                     /**
-                     * 消息删除策略，可以选择delete 或者compact
+                     * <p>消息删除策略，可以选择delete 或者compact</p>
                      */
                     std::string m_cleanUpPolicy;
                     bool m_cleanUpPolicyHasBeenSet;
 
                     /**
-                     * Ip白名单列表，配额限制，enableWhileList=1时必选
+                     * <p>Ip白名单列表，配额限制，enableWhileList=1时必选</p>
                      */
                     std::vector<std::string> m_ipWhiteList;
                     bool m_ipWhiteListHasBeenSet;
 
                     /**
-                     * 预设ACL规则, 1:打开  0:关闭，默认不打开
+                     * <p>预设ACL规则, 1:打开  0:关闭，默认不打开</p>
                      */
                     int64_t m_enableAclRule;
                     bool m_enableAclRuleHasBeenSet;
 
                     /**
-                     * ACL规则名
+                     * <p>ACL规则名</p>
                      */
                     std::string m_aclRuleName;
                     bool m_aclRuleNameHasBeenSet;
 
                     /**
-                     * 可选, 保留文件大小. 默认为-1,单位bytes, 当前最小值为1048576B
+                     * <p>可选, 保留文件大小</p><p>取值范围：[1073741824, 1099511627776]</p><p>单位：Bytes</p><p>默认值：-1</p><p>特殊值：-1表示无限制</p>
                      */
                     int64_t m_retentionBytes;
                     bool m_retentionBytesHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * <p>标签列表</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 生产限流，单位 MB/s；设置为-1，则生产不限流
+                     * <p>生产限流，单位 MB/s；设置为-1，则生产不限流</p>
                      */
                     int64_t m_quotaProducerByteRate;
                     bool m_quotaProducerByteRateHasBeenSet;
 
                     /**
-                     * 消费限流，单位 MB/s；设置为-1，则消费不限流
+                     * <p>消费限流，单位 MB/s；设置为-1，则消费不限流</p>
                      */
                     int64_t m_quotaConsumerByteRate;
                     bool m_quotaConsumerByteRateHasBeenSet;
 
                     /**
-                     * topic副本数  最小值 1,最大值 3
+                     * <p>topic副本数  最小值 1,最大值 3</p>
                      */
                     int64_t m_replicaNum;
                     bool m_replicaNumHasBeenSet;
 
                     /**
-                     * 消息保存的时间类型：CreateTime/LogAppendTime
+                     * <p>消息保存的时间类型：CreateTime/LogAppendTime</p>
                      */
                     std::string m_logMsgTimestampType;
                     bool m_logMsgTimestampTypeHasBeenSet;

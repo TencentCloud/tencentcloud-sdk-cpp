@@ -65,7 +65,8 @@ CreateModelServiceRequest::CreateModelServiceRequest() :
     m_rollingUpdateHasBeenSet(false),
     m_sidecarHasBeenSet(false),
     m_volumeMountsHasBeenSet(false),
-    m_schedulingStrategyHasBeenSet(false)
+    m_schedulingStrategyHasBeenSet(false),
+    m_gatewayLogConfigHasBeenSet(false)
 {
 }
 
@@ -463,6 +464,15 @@ string CreateModelServiceRequest::ToJsonString() const
         string key = "SchedulingStrategy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_schedulingStrategy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gatewayLogConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayLogConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_gatewayLogConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -1159,6 +1169,22 @@ void CreateModelServiceRequest::SetSchedulingStrategy(const string& _schedulingS
 bool CreateModelServiceRequest::SchedulingStrategyHasBeenSet() const
 {
     return m_schedulingStrategyHasBeenSet;
+}
+
+LogConfig CreateModelServiceRequest::GetGatewayLogConfig() const
+{
+    return m_gatewayLogConfig;
+}
+
+void CreateModelServiceRequest::SetGatewayLogConfig(const LogConfig& _gatewayLogConfig)
+{
+    m_gatewayLogConfig = _gatewayLogConfig;
+    m_gatewayLogConfigHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::GatewayLogConfigHasBeenSet() const
+{
+    return m_gatewayLogConfigHasBeenSet;
 }
 
 

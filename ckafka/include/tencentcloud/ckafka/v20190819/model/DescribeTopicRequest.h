@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id
-                     * @return InstanceId ckafka集群实例Id
+                     * 获取<p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
+                     * @return InstanceId <p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id
-                     * @param _instanceId ckafka集群实例Id
+                     * 设置<p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
+                     * @param _instanceId <p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，按照 topicName 过滤，支持模糊查询
-                     * @return SearchWord 过滤条件，按照 topicName 过滤，支持模糊查询
+                     * 获取<p>过滤条件，按照 topicName 过滤，支持模糊查询</p>
+                     * @return SearchWord <p>过滤条件，按照 topicName 过滤，支持模糊查询</p>
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置过滤条件，按照 topicName 过滤，支持模糊查询
-                     * @param _searchWord 过滤条件，按照 topicName 过滤，支持模糊查询
+                     * 设置<p>过滤条件，按照 topicName 过滤，支持模糊查询</p>
+                     * @param _searchWord <p>过滤条件，按照 topicName 过滤，支持模糊查询</p>
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，不填默认为0
-                     * @return Offset 偏移量，不填默认为0
+                     * 获取<p>偏移量，不填默认为0</p>
+                     * @return Offset <p>偏移量，不填默认为0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，不填默认为0
-                     * @param _offset 偏移量，不填默认为0
+                     * 设置<p>偏移量，不填默认为0</p>
+                     * @param _offset <p>偏移量，不填默认为0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，不填则默认为20，最大值为50
-                     * @return Limit 返回数量，不填则默认为20，最大值为50
+                     * 获取<p>返回数量，不填则默认为20，最大值为50</p>
+                     * @return Limit <p>返回数量，不填则默认为20，最大值为50</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，不填则默认为20，最大值为50
-                     * @param _limit 返回数量，不填则默认为20，最大值为50
+                     * 设置<p>返回数量，不填则默认为20，最大值为50</p>
+                     * @param _limit <p>返回数量，不填则默认为20，最大值为50</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取Acl预设策略名称
-                     * @return AclRuleName Acl预设策略名称
+                     * 获取<p>Acl预设策略名称</p>
+                     * @return AclRuleName <p>Acl预设策略名称</p>
                      * 
                      */
                     std::string GetAclRuleName() const;
 
                     /**
-                     * 设置Acl预设策略名称
-                     * @param _aclRuleName Acl预设策略名称
+                     * 设置<p>Acl预设策略名称</p>
+                     * @param _aclRuleName <p>Acl预设策略名称</p>
                      * 
                      */
                     void SetAclRuleName(const std::string& _aclRuleName);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka集群实例Id
+                     * <p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 过滤条件，按照 topicName 过滤，支持模糊查询
+                     * <p>过滤条件，按照 topicName 过滤，支持模糊查询</p>
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 偏移量，不填默认为0
+                     * <p>偏移量，不填默认为0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，不填则默认为20，最大值为50
+                     * <p>返回数量，不填则默认为20，最大值为50</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * Acl预设策略名称
+                     * <p>Acl预设策略名称</p>
                      */
                     std::string m_aclRuleName;
                     bool m_aclRuleNameHasBeenSet;

@@ -235,6 +235,69 @@ namespace TencentCloud
                      */
                     bool CustomToolsHasBeenSet() const;
 
+                    /**
+                     * 获取WebHook工具配置(JSON字符串格式)
+                     * @return WebhookTools WebHook工具配置(JSON字符串格式)
+                     * 
+                     */
+                    std::string GetWebhookTools() const;
+
+                    /**
+                     * 设置WebHook工具配置(JSON字符串格式)
+                     * @param _webhookTools WebHook工具配置(JSON字符串格式)
+                     * 
+                     */
+                    void SetWebhookTools(const std::string& _webhookTools);
+
+                    /**
+                     * 判断参数 WebhookTools 是否已赋值
+                     * @return WebhookTools 是否已赋值
+                     * 
+                     */
+                    bool WebhookToolsHasBeenSet() const;
+
+                    /**
+                     * 获取智能体模板类型
+                     * @return BotType 智能体模板类型
+                     * 
+                     */
+                    std::string GetBotType() const;
+
+                    /**
+                     * 设置智能体模板类型
+                     * @param _botType 智能体模板类型
+                     * 
+                     */
+                    void SetBotType(const std::string& _botType);
+
+                    /**
+                     * 判断参数 BotType 是否已赋值
+                     * @return BotType 是否已赋值
+                     * 
+                     */
+                    bool BotTypeHasBeenSet() const;
+
+                    /**
+                     * 获取知识库相关配置(JSON字符串格式)
+                     * @return RAGConfig 知识库相关配置(JSON字符串格式)
+                     * 
+                     */
+                    std::string GetRAGConfig() const;
+
+                    /**
+                     * 设置知识库相关配置(JSON字符串格式)
+                     * @param _rAGConfig 知识库相关配置(JSON字符串格式)
+                     * 
+                     */
+                    void SetRAGConfig(const std::string& _rAGConfig);
+
+                    /**
+                     * 判断参数 RAGConfig 是否已赋值
+                     * @return RAGConfig 是否已赋值
+                     * 
+                     */
+                    bool RAGConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +353,24 @@ namespace TencentCloud
                      */
                     std::string m_customTools;
                     bool m_customToolsHasBeenSet;
+
+                    /**
+                     * WebHook工具配置(JSON字符串格式)
+                     */
+                    std::string m_webhookTools;
+                    bool m_webhookToolsHasBeenSet;
+
+                    /**
+                     * 智能体模板类型
+                     */
+                    std::string m_botType;
+                    bool m_botTypeHasBeenSet;
+
+                    /**
+                     * 知识库相关配置(JSON字符串格式)
+                     */
+                    std::string m_rAGConfig;
+                    bool m_rAGConfigHasBeenSet;
 
                 };
             }

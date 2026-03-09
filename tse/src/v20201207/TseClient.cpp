@@ -840,6 +840,56 @@ TseClient::CreateGovernanceInstancesOutcomeCallable TseClient::CreateGovernanceI
     return prom->get_future();
 }
 
+TseClient::CreateGovernanceLaneGroupsOutcome TseClient::CreateGovernanceLaneGroups(const CreateGovernanceLaneGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGovernanceLaneGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGovernanceLaneGroupsResponse rsp = CreateGovernanceLaneGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGovernanceLaneGroupsOutcome(rsp);
+        else
+            return CreateGovernanceLaneGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGovernanceLaneGroupsOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateGovernanceLaneGroupsAsync(const CreateGovernanceLaneGroupsRequest& request, const CreateGovernanceLaneGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateGovernanceLaneGroupsRequest&;
+    using Resp = CreateGovernanceLaneGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateGovernanceLaneGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::CreateGovernanceLaneGroupsOutcomeCallable TseClient::CreateGovernanceLaneGroupsCallable(const CreateGovernanceLaneGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateGovernanceLaneGroupsOutcome>>();
+    CreateGovernanceLaneGroupsAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const CreateGovernanceLaneGroupsRequest&,
+        CreateGovernanceLaneGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TseClient::CreateGovernanceNamespacesOutcome TseClient::CreateGovernanceNamespaces(const CreateGovernanceNamespacesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateGovernanceNamespaces");
@@ -2032,6 +2082,56 @@ TseClient::DeleteGovernanceInstancesByHostOutcomeCallable TseClient::DeleteGover
         const TseClient*,
         const DeleteGovernanceInstancesByHostRequest&,
         DeleteGovernanceInstancesByHostOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DeleteGovernanceLaneGroupsOutcome TseClient::DeleteGovernanceLaneGroups(const DeleteGovernanceLaneGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGovernanceLaneGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGovernanceLaneGroupsResponse rsp = DeleteGovernanceLaneGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGovernanceLaneGroupsOutcome(rsp);
+        else
+            return DeleteGovernanceLaneGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGovernanceLaneGroupsOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteGovernanceLaneGroupsAsync(const DeleteGovernanceLaneGroupsRequest& request, const DeleteGovernanceLaneGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteGovernanceLaneGroupsRequest&;
+    using Resp = DeleteGovernanceLaneGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteGovernanceLaneGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DeleteGovernanceLaneGroupsOutcomeCallable TseClient::DeleteGovernanceLaneGroupsCallable(const DeleteGovernanceLaneGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteGovernanceLaneGroupsOutcome>>();
+    DeleteGovernanceLaneGroupsAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DeleteGovernanceLaneGroupsRequest&,
+        DeleteGovernanceLaneGroupsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3740,6 +3840,56 @@ TseClient::DescribeGovernanceInstancesOutcomeCallable TseClient::DescribeGoverna
     return prom->get_future();
 }
 
+TseClient::DescribeGovernanceLaneGroupsOutcome TseClient::DescribeGovernanceLaneGroups(const DescribeGovernanceLaneGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGovernanceLaneGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGovernanceLaneGroupsResponse rsp = DescribeGovernanceLaneGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGovernanceLaneGroupsOutcome(rsp);
+        else
+            return DescribeGovernanceLaneGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGovernanceLaneGroupsOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeGovernanceLaneGroupsAsync(const DescribeGovernanceLaneGroupsRequest& request, const DescribeGovernanceLaneGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeGovernanceLaneGroupsRequest&;
+    using Resp = DescribeGovernanceLaneGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeGovernanceLaneGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DescribeGovernanceLaneGroupsOutcomeCallable TseClient::DescribeGovernanceLaneGroupsCallable(const DescribeGovernanceLaneGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeGovernanceLaneGroupsOutcome>>();
+    DescribeGovernanceLaneGroupsAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DescribeGovernanceLaneGroupsRequest&,
+        DescribeGovernanceLaneGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TseClient::DescribeGovernanceNamespacesOutcome TseClient::DescribeGovernanceNamespaces(const DescribeGovernanceNamespacesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGovernanceNamespaces");
@@ -5332,6 +5482,56 @@ TseClient::ModifyGovernanceInstancesOutcomeCallable TseClient::ModifyGovernanceI
         const TseClient*,
         const ModifyGovernanceInstancesRequest&,
         ModifyGovernanceInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::ModifyGovernanceLaneGroupsOutcome TseClient::ModifyGovernanceLaneGroups(const ModifyGovernanceLaneGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGovernanceLaneGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGovernanceLaneGroupsResponse rsp = ModifyGovernanceLaneGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGovernanceLaneGroupsOutcome(rsp);
+        else
+            return ModifyGovernanceLaneGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGovernanceLaneGroupsOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyGovernanceLaneGroupsAsync(const ModifyGovernanceLaneGroupsRequest& request, const ModifyGovernanceLaneGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyGovernanceLaneGroupsRequest&;
+    using Resp = ModifyGovernanceLaneGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyGovernanceLaneGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::ModifyGovernanceLaneGroupsOutcomeCallable TseClient::ModifyGovernanceLaneGroupsCallable(const ModifyGovernanceLaneGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyGovernanceLaneGroupsOutcome>>();
+    ModifyGovernanceLaneGroupsAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const ModifyGovernanceLaneGroupsRequest&,
+        ModifyGovernanceLaneGroupsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

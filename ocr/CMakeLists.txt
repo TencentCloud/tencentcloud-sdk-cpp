@@ -190,14 +190,13 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/LicensePlateOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/GeneralBasicOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/UsedVehicleInvoiceInfo.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeTableMultiOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/TextVehicleBack.h
   include/tencentcloud/ocr/v20181119/model/SubmitMarkEssayAgentJobResponse.h
   include/tencentcloud/ocr/v20181119/model/GeneralEfficientOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/AdvertiseOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/AirTicketInfo.h
   include/tencentcloud/ocr/v20181119/model/SubmitQuestionMarkAgentJobResponse.h
   include/tencentcloud/ocr/v20181119/model/RideHailingDriverLicenseOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/TextVehicleBack.h
   include/tencentcloud/ocr/v20181119/model/ImageEnhancementRequest.h
   include/tencentcloud/ocr/v20181119/model/ExtractDocBasicResponse.h
   include/tencentcloud/ocr/v20181119/model/EnterpriseLicenseOCRRequest.h
@@ -214,7 +213,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/TemporaryIDCardInfo.h
   include/tencentcloud/ocr/v20181119/model/VatInvoiceVerifyNewRequest.h
   include/tencentcloud/ocr/v20181119/model/CarInvoiceInfo.h
-  include/tencentcloud/ocr/v20181119/model/RecognizeTableMultiOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/TableCellInfo.h
   include/tencentcloud/ocr/v20181119/model/FlightInvoiceInfo.h
   include/tencentcloud/ocr/v20181119/model/DetailInformationOfAirTicketTupleList.h
   include/tencentcloud/ocr/v20181119/model/TextVehicleFront.h
@@ -338,7 +337,6 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/RideHailingTransportLicenseOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/VatInvoiceVerifyNewResponse.h
   include/tencentcloud/ocr/v20181119/model/MLIDCardOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/TableCellInfo.h
   include/tencentcloud/ocr/v20181119/model/RecognizeTableOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/EstateCertOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/SaleInventory.h
@@ -531,14 +529,13 @@ set(ocr_src
   src/v20181119/model/LicensePlateOCRRequest.cpp
   src/v20181119/model/GeneralBasicOCRRequest.cpp
   src/v20181119/model/UsedVehicleInvoiceInfo.cpp
-  src/v20181119/model/RecognizeTableMultiOCRRequest.cpp
+  src/v20181119/model/TextVehicleBack.cpp
   src/v20181119/model/SubmitMarkEssayAgentJobResponse.cpp
   src/v20181119/model/GeneralEfficientOCRRequest.cpp
   src/v20181119/model/AdvertiseOCRRequest.cpp
   src/v20181119/model/AirTicketInfo.cpp
   src/v20181119/model/SubmitQuestionMarkAgentJobResponse.cpp
   src/v20181119/model/RideHailingDriverLicenseOCRResponse.cpp
-  src/v20181119/model/TextVehicleBack.cpp
   src/v20181119/model/ImageEnhancementRequest.cpp
   src/v20181119/model/ExtractDocBasicResponse.cpp
   src/v20181119/model/EnterpriseLicenseOCRRequest.cpp
@@ -555,7 +552,7 @@ set(ocr_src
   src/v20181119/model/TemporaryIDCardInfo.cpp
   src/v20181119/model/VatInvoiceVerifyNewRequest.cpp
   src/v20181119/model/CarInvoiceInfo.cpp
-  src/v20181119/model/RecognizeTableMultiOCRResponse.cpp
+  src/v20181119/model/TableCellInfo.cpp
   src/v20181119/model/FlightInvoiceInfo.cpp
   src/v20181119/model/DetailInformationOfAirTicketTupleList.cpp
   src/v20181119/model/TextVehicleFront.cpp
@@ -679,7 +676,6 @@ set(ocr_src
   src/v20181119/model/RideHailingTransportLicenseOCRRequest.cpp
   src/v20181119/model/VatInvoiceVerifyNewResponse.cpp
   src/v20181119/model/MLIDCardOCRResponse.cpp
-  src/v20181119/model/TableCellInfo.cpp
   src/v20181119/model/RecognizeTableOCRRequest.cpp
   src/v20181119/model/EstateCertOCRRequest.cpp
   src/v20181119/model/SaleInventory.cpp

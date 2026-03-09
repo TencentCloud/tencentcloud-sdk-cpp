@@ -34,7 +34,10 @@ TalkAgentConfigInfo::TalkAgentConfigInfo() :
     m_systemPromptHasBeenSet(false),
     m_greetingMessageHasBeenSet(false),
     m_defaultVoiceTypeHasBeenSet(false),
-    m_fastVoiceTypeHasBeenSet(false)
+    m_fastVoiceTypeHasBeenSet(false),
+    m_subtitleCallbackUrlHasBeenSet(false),
+    m_subtitleCallbackSignKeyHasBeenSet(false),
+    m_subtitleCallbackTimeoutHasBeenSet(false)
 {
 }
 
@@ -190,6 +193,36 @@ CoreInternalOutcome TalkAgentConfigInfo::Deserialize(const rapidjson::Value &val
         m_fastVoiceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleCallbackUrl") && !value["SubtitleCallbackUrl"].IsNull())
+    {
+        if (!value["SubtitleCallbackUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TalkAgentConfigInfo.SubtitleCallbackUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitleCallbackUrl = string(value["SubtitleCallbackUrl"].GetString());
+        m_subtitleCallbackUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubtitleCallbackSignKey") && !value["SubtitleCallbackSignKey"].IsNull())
+    {
+        if (!value["SubtitleCallbackSignKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TalkAgentConfigInfo.SubtitleCallbackSignKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitleCallbackSignKey = string(value["SubtitleCallbackSignKey"].GetString());
+        m_subtitleCallbackSignKeyHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubtitleCallbackTimeout") && !value["SubtitleCallbackTimeout"].IsNull())
+    {
+        if (!value["SubtitleCallbackTimeout"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TalkAgentConfigInfo.SubtitleCallbackTimeout` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitleCallbackTimeout = value["SubtitleCallbackTimeout"].GetInt64();
+        m_subtitleCallbackTimeoutHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -308,6 +341,30 @@ void TalkAgentConfigInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "FastVoiceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fastVoiceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subtitleCallbackUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleCallbackUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subtitleCallbackUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subtitleCallbackSignKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleCallbackSignKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subtitleCallbackSignKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subtitleCallbackTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleCallbackTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subtitleCallbackTimeout, allocator);
     }
 
 }
@@ -535,5 +592,53 @@ void TalkAgentConfigInfo::SetFastVoiceType(const string& _fastVoiceType)
 bool TalkAgentConfigInfo::FastVoiceTypeHasBeenSet() const
 {
     return m_fastVoiceTypeHasBeenSet;
+}
+
+string TalkAgentConfigInfo::GetSubtitleCallbackUrl() const
+{
+    return m_subtitleCallbackUrl;
+}
+
+void TalkAgentConfigInfo::SetSubtitleCallbackUrl(const string& _subtitleCallbackUrl)
+{
+    m_subtitleCallbackUrl = _subtitleCallbackUrl;
+    m_subtitleCallbackUrlHasBeenSet = true;
+}
+
+bool TalkAgentConfigInfo::SubtitleCallbackUrlHasBeenSet() const
+{
+    return m_subtitleCallbackUrlHasBeenSet;
+}
+
+string TalkAgentConfigInfo::GetSubtitleCallbackSignKey() const
+{
+    return m_subtitleCallbackSignKey;
+}
+
+void TalkAgentConfigInfo::SetSubtitleCallbackSignKey(const string& _subtitleCallbackSignKey)
+{
+    m_subtitleCallbackSignKey = _subtitleCallbackSignKey;
+    m_subtitleCallbackSignKeyHasBeenSet = true;
+}
+
+bool TalkAgentConfigInfo::SubtitleCallbackSignKeyHasBeenSet() const
+{
+    return m_subtitleCallbackSignKeyHasBeenSet;
+}
+
+int64_t TalkAgentConfigInfo::GetSubtitleCallbackTimeout() const
+{
+    return m_subtitleCallbackTimeout;
+}
+
+void TalkAgentConfigInfo::SetSubtitleCallbackTimeout(const int64_t& _subtitleCallbackTimeout)
+{
+    m_subtitleCallbackTimeout = _subtitleCallbackTimeout;
+    m_subtitleCallbackTimeoutHasBeenSet = true;
+}
+
+bool TalkAgentConfigInfo::SubtitleCallbackTimeoutHasBeenSet() const
+{
+    return m_subtitleCallbackTimeoutHasBeenSet;
 }
 

@@ -46,7 +46,9 @@ DescribeSessionDetailResponse::DescribeSessionDetailResponse() :
     m_hungUpSideHasBeenSet(false),
     m_uUIHasBeenSet(false),
     m_eventsHasBeenSet(false),
-    m_serveParticipantsHasBeenSet(false)
+    m_serveParticipantsHasBeenSet(false),
+    m_sysHangupReasonHasBeenSet(false),
+    m_sysHangupReasonStringHasBeenSet(false)
 {
 }
 
@@ -360,6 +362,26 @@ CoreInternalOutcome DescribeSessionDetailResponse::Deserialize(const string &pay
         m_serveParticipantsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SysHangupReason") && !rsp["SysHangupReason"].IsNull())
+    {
+        if (!rsp["SysHangupReason"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SysHangupReason` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sysHangupReason = rsp["SysHangupReason"].GetInt64();
+        m_sysHangupReasonHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SysHangupReasonString") && !rsp["SysHangupReasonString"].IsNull())
+    {
+        if (!rsp["SysHangupReasonString"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SysHangupReasonString` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sysHangupReasonString = string(rsp["SysHangupReasonString"].GetString());
+        m_sysHangupReasonStringHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -590,6 +612,22 @@ string DescribeSessionDetailResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_sysHangupReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SysHangupReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sysHangupReason, allocator);
+    }
+
+    if (m_sysHangupReasonStringHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SysHangupReasonString";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sysHangupReasonString.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -832,6 +870,26 @@ vector<ServeParticipant> DescribeSessionDetailResponse::GetServeParticipants() c
 bool DescribeSessionDetailResponse::ServeParticipantsHasBeenSet() const
 {
     return m_serveParticipantsHasBeenSet;
+}
+
+int64_t DescribeSessionDetailResponse::GetSysHangupReason() const
+{
+    return m_sysHangupReason;
+}
+
+bool DescribeSessionDetailResponse::SysHangupReasonHasBeenSet() const
+{
+    return m_sysHangupReasonHasBeenSet;
+}
+
+string DescribeSessionDetailResponse::GetSysHangupReasonString() const
+{
+    return m_sysHangupReasonString;
+}
+
+bool DescribeSessionDetailResponse::SysHangupReasonStringHasBeenSet() const
+{
+    return m_sysHangupReasonStringHasBeenSet;
 }
 
 

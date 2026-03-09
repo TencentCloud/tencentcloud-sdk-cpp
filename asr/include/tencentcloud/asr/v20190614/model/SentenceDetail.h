@@ -49,18 +49,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取单句最终识别结果
+                     * 获取<p>单句最终识别结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FinalSentence 单句最终识别结果
+                     * @return FinalSentence <p>单句最终识别结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFinalSentence() const;
 
                     /**
-                     * 设置单句最终识别结果
+                     * 设置<p>单句最终识别结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _finalSentence 单句最终识别结果
+                     * @param _finalSentence <p>单句最终识别结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,18 +74,18 @@ namespace TencentCloud
                     bool FinalSentenceHasBeenSet() const;
 
                     /**
-                     * 获取单句中间识别结果，使用空格拆分为多个词
+                     * 获取<p>单句中间识别结果，使用空格拆分为多个词</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SliceSentence 单句中间识别结果，使用空格拆分为多个词
+                     * @return SliceSentence <p>单句中间识别结果，使用空格拆分为多个词</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSliceSentence() const;
 
                     /**
-                     * 设置单句中间识别结果，使用空格拆分为多个词
+                     * 设置<p>单句中间识别结果，使用空格拆分为多个词</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sliceSentence 单句中间识别结果，使用空格拆分为多个词
+                     * @param _sliceSentence <p>单句中间识别结果，使用空格拆分为多个词</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,18 +99,18 @@ namespace TencentCloud
                     bool SliceSentenceHasBeenSet() const;
 
                     /**
-                     * 获取口语转书面语结果，开启改功能才有值
+                     * 获取<p>口语转书面语结果，开启该功能才有值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WrittenText 口语转书面语结果，开启改功能才有值
+                     * @return WrittenText <p>口语转书面语结果，开启该功能才有值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWrittenText() const;
 
                     /**
-                     * 设置口语转书面语结果，开启改功能才有值
+                     * 设置<p>口语转书面语结果，开启该功能才有值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _writtenText 口语转书面语结果，开启改功能才有值
+                     * @param _writtenText <p>口语转书面语结果，开启该功能才有值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,18 +124,18 @@ namespace TencentCloud
                     bool WrittenTextHasBeenSet() const;
 
                     /**
-                     * 获取单句开始时间（毫秒）
+                     * 获取<p>单句开始时间（毫秒）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StartMs 单句开始时间（毫秒）
+                     * @return StartMs <p>单句开始时间（毫秒）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStartMs() const;
 
                     /**
-                     * 设置单句开始时间（毫秒）
+                     * 设置<p>单句开始时间（毫秒）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _startMs 单句开始时间（毫秒）
+                     * @param _startMs <p>单句开始时间（毫秒）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -149,18 +149,18 @@ namespace TencentCloud
                     bool StartMsHasBeenSet() const;
 
                     /**
-                     * 获取单句结束时间（毫秒）
+                     * 获取<p>单句结束时间（毫秒）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EndMs 单句结束时间（毫秒）
+                     * @return EndMs <p>单句结束时间（毫秒）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEndMs() const;
 
                     /**
-                     * 设置单句结束时间（毫秒）
+                     * 设置<p>单句结束时间（毫秒）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _endMs 单句结束时间（毫秒）
+                     * @param _endMs <p>单句结束时间（毫秒）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -174,18 +174,18 @@ namespace TencentCloud
                     bool EndMsHasBeenSet() const;
 
                     /**
-                     * 获取单句中词个数
+                     * 获取<p>单句中词个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WordsNum 单句中词个数
+                     * @return WordsNum <p>单句中词个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWordsNum() const;
 
                     /**
-                     * 设置单句中词个数
+                     * 设置<p>单句中词个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _wordsNum 单句中词个数
+                     * @param _wordsNum <p>单句中词个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -199,18 +199,18 @@ namespace TencentCloud
                     bool WordsNumHasBeenSet() const;
 
                     /**
-                     * 获取单句中词详情
+                     * 获取<p>单句中词详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Words 单句中词详情
+                     * @return Words <p>单句中词详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SentenceWords> GetWords() const;
 
                     /**
-                     * 设置单句中词详情
+                     * 设置<p>单句中词详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _words 单句中词详情
+                     * @param _words <p>单句中词详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -224,18 +224,18 @@ namespace TencentCloud
                     bool WordsHasBeenSet() const;
 
                     /**
-                     * 获取单句语速，单位：字数/秒
+                     * 获取<p>单句语速，单位：字数/秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SpeechSpeed 单句语速，单位：字数/秒
+                     * @return SpeechSpeed <p>单句语速，单位：字数/秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetSpeechSpeed() const;
 
                     /**
-                     * 设置单句语速，单位：字数/秒
+                     * 设置<p>单句语速，单位：字数/秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _speechSpeed 单句语速，单位：字数/秒
+                     * @param _speechSpeed <p>单句语速，单位：字数/秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -249,22 +249,18 @@ namespace TencentCloud
                     bool SpeechSpeedHasBeenSet() const;
 
                     /**
-                     * 获取声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）
-单声道话者分离时不同的值代表不同的说话人； 8k双声道话者分离时speakerId的值为0代表左声道，值为1代表右声道。
+                     * 获取<p>声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）<br>单声道话者分离时不同的值代表不同的说话人； 8k双声道话者分离时speakerId的值为0代表左声道，值为1代表右声道。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SpeakerId 声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）
-单声道话者分离时不同的值代表不同的说话人； 8k双声道话者分离时speakerId的值为0代表左声道，值为1代表右声道。
+                     * @return SpeakerId <p>声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）<br>单声道话者分离时不同的值代表不同的说话人； 8k双声道话者分离时speakerId的值为0代表左声道，值为1代表右声道。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSpeakerId() const;
 
                     /**
-                     * 设置声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）
-单声道话者分离时不同的值代表不同的说话人； 8k双声道话者分离时speakerId的值为0代表左声道，值为1代表右声道。
+                     * 设置<p>声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）<br>单声道话者分离时不同的值代表不同的说话人； 8k双声道话者分离时speakerId的值为0代表左声道，值为1代表右声道。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _speakerId 声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）
-单声道话者分离时不同的值代表不同的说话人； 8k双声道话者分离时speakerId的值为0代表左声道，值为1代表右声道。
+                     * @param _speakerId <p>声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）<br>单声道话者分离时不同的值代表不同的说话人； 8k双声道话者分离时speakerId的值为0代表左声道，值为1代表右声道。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -278,18 +274,18 @@ namespace TencentCloud
                     bool SpeakerIdHasBeenSet() const;
 
                     /**
-                     * 获取情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。
+                     * 获取<p>情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EmotionalEnergy 情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。
+                     * @return EmotionalEnergy <p>情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetEmotionalEnergy() const;
 
                     /**
-                     * 设置情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。
+                     * 设置<p>情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _emotionalEnergy 情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。
+                     * @param _emotionalEnergy <p>情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -303,18 +299,18 @@ namespace TencentCloud
                     bool EmotionalEnergyHasBeenSet() const;
 
                     /**
-                     * 获取本句与上一句之间的静音时长
+                     * 获取<p>本句与上一句之间的静音时长</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SilenceTime 本句与上一句之间的静音时长
+                     * @return SilenceTime <p>本句与上一句之间的静音时长</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSilenceTime() const;
 
                     /**
-                     * 设置本句与上一句之间的静音时长
+                     * 设置<p>本句与上一句之间的静音时长</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _silenceTime 本句与上一句之间的静音时长
+                     * @param _silenceTime <p>本句与上一句之间的静音时长</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -328,18 +324,18 @@ namespace TencentCloud
                     bool SilenceTimeHasBeenSet() const;
 
                     /**
-                     * 获取情绪类型（可能为空，有2种情况 1、没有对应资源包；2、情绪跟语音效果相关，如果情绪不够强烈时可能无法识别）
+                     * 获取<p>情绪类型（可能为空，有2种情况 1、没有对应资源包；2、情绪跟语音效果相关，如果情绪不够强烈时可能无法识别）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EmotionType 情绪类型（可能为空，有2种情况 1、没有对应资源包；2、情绪跟语音效果相关，如果情绪不够强烈时可能无法识别）
+                     * @return EmotionType <p>情绪类型（可能为空，有2种情况 1、没有对应资源包；2、情绪跟语音效果相关，如果情绪不够强烈时可能无法识别）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetEmotionType() const;
 
                     /**
-                     * 设置情绪类型（可能为空，有2种情况 1、没有对应资源包；2、情绪跟语音效果相关，如果情绪不够强烈时可能无法识别）
+                     * 设置<p>情绪类型（可能为空，有2种情况 1、没有对应资源包；2、情绪跟语音效果相关，如果情绪不够强烈时可能无法识别）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _emotionType 情绪类型（可能为空，有2种情况 1、没有对应资源包；2、情绪跟语音效果相关，如果情绪不够强烈时可能无法识别）
+                     * @param _emotionType <p>情绪类型（可能为空，有2种情况 1、没有对应资源包；2、情绪跟语音效果相关，如果情绪不够强烈时可能无法识别）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -353,18 +349,18 @@ namespace TencentCloud
                     bool EmotionTypeHasBeenSet() const;
 
                     /**
-                     * 获取关键词识别结果列表
+                     * 获取<p>关键词识别结果列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KeyWordResults 关键词识别结果列表
+                     * @return KeyWordResults <p>关键词识别结果列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KeyWordResult> GetKeyWordResults() const;
 
                     /**
-                     * 设置关键词识别结果列表
+                     * 设置<p>关键词识别结果列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _keyWordResults 关键词识别结果列表
+                     * @param _keyWordResults <p>关键词识别结果列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -377,99 +373,152 @@ namespace TencentCloud
                      */
                     bool KeyWordResultsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>多语言识别类型</p><ul><li>中文    chinese</li><li>英语    english</li><li>日语    japanese</li><li>韩语    korean</li><li>阿拉伯语    arabic</li><li>菲律宾语    filipino</li><li>法语    french</li><li>印地语    hindi</li><li>印尼语    indonesian</li><li>马来语    malay</li><li>葡萄牙语    portugal</li><li>西班牙语    spanish</li><li>泰语    thai</li><li>土耳其语    turkish</li><li>越南语    vietnam</li><li>德语    german</li></ul>
+                     * @return LangType <p>多语言识别类型</p><ul><li>中文    chinese</li><li>英语    english</li><li>日语    japanese</li><li>韩语    korean</li><li>阿拉伯语    arabic</li><li>菲律宾语    filipino</li><li>法语    french</li><li>印地语    hindi</li><li>印尼语    indonesian</li><li>马来语    malay</li><li>葡萄牙语    portugal</li><li>西班牙语    spanish</li><li>泰语    thai</li><li>土耳其语    turkish</li><li>越南语    vietnam</li><li>德语    german</li></ul>
+                     * 
+                     */
+                    std::string GetLangType() const;
+
+                    /**
+                     * 设置<p>多语言识别类型</p><ul><li>中文    chinese</li><li>英语    english</li><li>日语    japanese</li><li>韩语    korean</li><li>阿拉伯语    arabic</li><li>菲律宾语    filipino</li><li>法语    french</li><li>印地语    hindi</li><li>印尼语    indonesian</li><li>马来语    malay</li><li>葡萄牙语    portugal</li><li>西班牙语    spanish</li><li>泰语    thai</li><li>土耳其语    turkish</li><li>越南语    vietnam</li><li>德语    german</li></ul>
+                     * @param _langType <p>多语言识别类型</p><ul><li>中文    chinese</li><li>英语    english</li><li>日语    japanese</li><li>韩语    korean</li><li>阿拉伯语    arabic</li><li>菲律宾语    filipino</li><li>法语    french</li><li>印地语    hindi</li><li>印尼语    indonesian</li><li>马来语    malay</li><li>葡萄牙语    portugal</li><li>西班牙语    spanish</li><li>泰语    thai</li><li>土耳其语    turkish</li><li>越南语    vietnam</li><li>德语    german</li></ul>
+                     * 
+                     */
+                    void SetLangType(const std::string& _langType);
+
+                    /**
+                     * 判断参数 LangType 是否已赋值
+                     * @return LangType 是否已赋值
+                     * 
+                     */
+                    bool LangTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>说话人角色名称</p>
+                     * @return SpeakerRoleName <p>说话人角色名称</p>
+                     * 
+                     */
+                    std::string GetSpeakerRoleName() const;
+
+                    /**
+                     * 设置<p>说话人角色名称</p>
+                     * @param _speakerRoleName <p>说话人角色名称</p>
+                     * 
+                     */
+                    void SetSpeakerRoleName(const std::string& _speakerRoleName);
+
+                    /**
+                     * 判断参数 SpeakerRoleName 是否已赋值
+                     * @return SpeakerRoleName 是否已赋值
+                     * 
+                     */
+                    bool SpeakerRoleNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 单句最终识别结果
+                     * <p>单句最终识别结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_finalSentence;
                     bool m_finalSentenceHasBeenSet;
 
                     /**
-                     * 单句中间识别结果，使用空格拆分为多个词
+                     * <p>单句中间识别结果，使用空格拆分为多个词</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sliceSentence;
                     bool m_sliceSentenceHasBeenSet;
 
                     /**
-                     * 口语转书面语结果，开启改功能才有值
+                     * <p>口语转书面语结果，开启该功能才有值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_writtenText;
                     bool m_writtenTextHasBeenSet;
 
                     /**
-                     * 单句开始时间（毫秒）
+                     * <p>单句开始时间（毫秒）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_startMs;
                     bool m_startMsHasBeenSet;
 
                     /**
-                     * 单句结束时间（毫秒）
+                     * <p>单句结束时间（毫秒）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_endMs;
                     bool m_endMsHasBeenSet;
 
                     /**
-                     * 单句中词个数
+                     * <p>单句中词个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_wordsNum;
                     bool m_wordsNumHasBeenSet;
 
                     /**
-                     * 单句中词详情
+                     * <p>单句中词详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SentenceWords> m_words;
                     bool m_wordsHasBeenSet;
 
                     /**
-                     * 单句语速，单位：字数/秒
+                     * <p>单句语速，单位：字数/秒</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_speechSpeed;
                     bool m_speechSpeedHasBeenSet;
 
                     /**
-                     * 声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）
-单声道话者分离时不同的值代表不同的说话人； 8k双声道话者分离时speakerId的值为0代表左声道，值为1代表右声道。
+                     * <p>声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）<br>单声道话者分离时不同的值代表不同的说话人； 8k双声道话者分离时speakerId的值为0代表左声道，值为1代表右声道。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_speakerId;
                     bool m_speakerIdHasBeenSet;
 
                     /**
-                     * 情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。
+                     * <p>情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_emotionalEnergy;
                     bool m_emotionalEnergyHasBeenSet;
 
                     /**
-                     * 本句与上一句之间的静音时长
+                     * <p>本句与上一句之间的静音时长</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_silenceTime;
                     bool m_silenceTimeHasBeenSet;
 
                     /**
-                     * 情绪类型（可能为空，有2种情况 1、没有对应资源包；2、情绪跟语音效果相关，如果情绪不够强烈时可能无法识别）
+                     * <p>情绪类型（可能为空，有2种情况 1、没有对应资源包；2、情绪跟语音效果相关，如果情绪不够强烈时可能无法识别）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_emotionType;
                     bool m_emotionTypeHasBeenSet;
 
                     /**
-                     * 关键词识别结果列表
+                     * <p>关键词识别结果列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KeyWordResult> m_keyWordResults;
                     bool m_keyWordResultsHasBeenSet;
+
+                    /**
+                     * <p>多语言识别类型</p><ul><li>中文    chinese</li><li>英语    english</li><li>日语    japanese</li><li>韩语    korean</li><li>阿拉伯语    arabic</li><li>菲律宾语    filipino</li><li>法语    french</li><li>印地语    hindi</li><li>印尼语    indonesian</li><li>马来语    malay</li><li>葡萄牙语    portugal</li><li>西班牙语    spanish</li><li>泰语    thai</li><li>土耳其语    turkish</li><li>越南语    vietnam</li><li>德语    german</li></ul>
+                     */
+                    std::string m_langType;
+                    bool m_langTypeHasBeenSet;
+
+                    /**
+                     * <p>说话人角色名称</p>
+                     */
+                    std::string m_speakerRoleName;
+                    bool m_speakerRoleNameHasBeenSet;
 
                 };
             }

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取套餐单价原价。
-                     * @return OriginalBundlePrice 套餐单价原价。
+                     * 获取<p>套餐单价原价。</p><p>单位：元</p>
+                     * @return OriginalBundlePrice <p>套餐单价原价。</p><p>单位：元</p>
                      * 
                      */
                     double GetOriginalBundlePrice() const;
 
                     /**
-                     * 设置套餐单价原价。
-                     * @param _originalBundlePrice 套餐单价原价。
+                     * 设置<p>套餐单价原价。</p><p>单位：元</p>
+                     * @param _originalBundlePrice <p>套餐单价原价。</p><p>单位：元</p>
                      * 
                      */
                     void SetOriginalBundlePrice(const double& _originalBundlePrice);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool OriginalBundlePriceHasBeenSet() const;
 
                     /**
-                     * 获取原价。
-                     * @return OriginalPrice 原价。
+                     * 获取<p>原价。</p><p>单位：元</p>
+                     * @return OriginalPrice <p>原价。</p><p>单位：元</p>
                      * 
                      */
                     double GetOriginalPrice() const;
 
                     /**
-                     * 设置原价。
-                     * @param _originalPrice 原价。
+                     * 设置<p>原价。</p><p>单位：元</p>
+                     * @param _originalPrice <p>原价。</p><p>单位：元</p>
                      * 
                      */
                     void SetOriginalPrice(const double& _originalPrice);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
-                     * 获取折扣。
-                     * @return Discount 折扣。
+                     * 获取<p>折扣。</p>
+                     * @return Discount <p>折扣。</p>
                      * 
                      */
                     double GetDiscount() const;
 
                     /**
-                     * 设置折扣。
-                     * @param _discount 折扣。
+                     * 设置<p>折扣。</p>
+                     * @param _discount <p>折扣。</p>
                      * 
                      */
                     void SetDiscount(const double& _discount);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool DiscountHasBeenSet() const;
 
                     /**
-                     * 获取折后价。
-                     * @return DiscountPrice 折后价。
+                     * 获取<p>折后价。</p><p>单位：元</p>
+                     * @return DiscountPrice <p>折后价。</p><p>单位：元</p>
                      * 
                      */
                     double GetDiscountPrice() const;
 
                     /**
-                     * 设置折后价。
-                     * @param _discountPrice 折后价。
+                     * 设置<p>折后价。</p><p>单位：元</p>
+                     * @param _discountPrice <p>折后价。</p><p>单位：元</p>
                      * 
                      */
                     void SetDiscountPrice(const double& _discountPrice);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool DiscountPriceHasBeenSet() const;
 
                     /**
-                     * 获取价格货币单位。取值范围CNY:人民币。USD:美元。
-                     * @return Currency 价格货币单位。取值范围CNY:人民币。USD:美元。
+                     * 获取<p>价格货币单位。取值范围CNY:人民币。USD:美元。</p>
+                     * @return Currency <p>价格货币单位。取值范围CNY:人民币。USD:美元。</p>
                      * 
                      */
                     std::string GetCurrency() const;
 
                     /**
-                     * 设置价格货币单位。取值范围CNY:人民币。USD:美元。
-                     * @param _currency 价格货币单位。取值范围CNY:人民币。USD:美元。
+                     * 设置<p>价格货币单位。取值范围CNY:人民币。USD:美元。</p>
+                     * @param _currency <p>价格货币单位。取值范围CNY:人民币。USD:美元。</p>
                      * 
                      */
                     void SetCurrency(const std::string& _currency);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool CurrencyHasBeenSet() const;
 
                     /**
-                     * 获取计费项目明细。
-                     * @return DetailPrices 计费项目明细。
+                     * 获取<p>计费项目明细。</p>
+                     * @return DetailPrices <p>计费项目明细。</p>
                      * 
                      */
                     std::vector<DetailPrice> GetDetailPrices() const;
 
                     /**
-                     * 设置计费项目明细。
-                     * @param _detailPrices 计费项目明细。
+                     * 设置<p>计费项目明细。</p>
+                     * @param _detailPrices <p>计费项目明细。</p>
                      * 
                      */
                     void SetDetailPrices(const std::vector<DetailPrice>& _detailPrices);
@@ -176,37 +176,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 套餐单价原价。
+                     * <p>套餐单价原价。</p><p>单位：元</p>
                      */
                     double m_originalBundlePrice;
                     bool m_originalBundlePriceHasBeenSet;
 
                     /**
-                     * 原价。
+                     * <p>原价。</p><p>单位：元</p>
                      */
                     double m_originalPrice;
                     bool m_originalPriceHasBeenSet;
 
                     /**
-                     * 折扣。
+                     * <p>折扣。</p>
                      */
                     double m_discount;
                     bool m_discountHasBeenSet;
 
                     /**
-                     * 折后价。
+                     * <p>折后价。</p><p>单位：元</p>
                      */
                     double m_discountPrice;
                     bool m_discountPriceHasBeenSet;
 
                     /**
-                     * 价格货币单位。取值范围CNY:人民币。USD:美元。
+                     * <p>价格货币单位。取值范围CNY:人民币。USD:美元。</p>
                      */
                     std::string m_currency;
                     bool m_currencyHasBeenSet;
 
                     /**
-                     * 计费项目明细。
+                     * <p>计费项目明细。</p>
                      */
                     std::vector<DetailPrice> m_detailPrices;
                     bool m_detailPricesHasBeenSet;

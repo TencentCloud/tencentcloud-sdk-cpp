@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取云盘大小(G）
-                     * @return DiskSize 云盘大小(G）
+                     * 获取云盘大小 (G）
+                     * @return DiskSize 云盘大小 (G）
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置云盘大小(G）
-                     * @param _diskSize 云盘大小(G）
+                     * 设置云盘大小 (G）
+                     * @param _diskSize 云盘大小 (G）
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -176,6 +176,56 @@ namespace TencentCloud
                      */
                     bool DiskIdHasBeenSet() const;
 
+                    /**
+                     * 获取加密系统盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Encrypt 加密系统盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEncrypt() const;
+
+                    /**
+                     * 设置加密系统盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _encrypt 加密系统盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEncrypt(const std::string& _encrypt);
+
+                    /**
+                     * 判断参数 Encrypt 是否已赋值
+                     * @return Encrypt 是否已赋值
+                     * 
+                     */
+                    bool EncryptHasBeenSet() const;
+
+                    /**
+                     * 获取自定义 KMS ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KmsKeyId 自定义 KMS ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetKmsKeyId() const;
+
+                    /**
+                     * 设置自定义 KMS ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _kmsKeyId 自定义 KMS ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetKmsKeyId(const std::string& _kmsKeyId);
+
+                    /**
+                     * 判断参数 KmsKeyId 是否已赋值
+                     * @return KmsKeyId 是否已赋值
+                     * 
+                     */
+                    bool KmsKeyIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -185,7 +235,7 @@ namespace TencentCloud
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 云盘大小(G）
+                     * 云盘大小 (G）
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
@@ -214,6 +264,20 @@ namespace TencentCloud
                      */
                     std::string m_diskId;
                     bool m_diskIdHasBeenSet;
+
+                    /**
+                     * 加密系统盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_encrypt;
+                    bool m_encryptHasBeenSet;
+
+                    /**
+                     * 自定义 KMS ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_kmsKeyId;
+                    bool m_kmsKeyIdHasBeenSet;
 
                 };
             }

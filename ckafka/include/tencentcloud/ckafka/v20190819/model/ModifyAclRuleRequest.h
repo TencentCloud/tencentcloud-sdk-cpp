@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id
-                     * @return InstanceId ckafka集群实例Id
+                     * 获取<p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
+                     * @return InstanceId <p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id
-                     * @param _instanceId ckafka集群实例Id
+                     * 设置<p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
+                     * @param _instanceId <p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取ACL规则名
-                     * @return RuleName ACL规则名
+                     * 获取<p>ACL规则名</p>
+                     * @return RuleName <p>ACL规则名</p>
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置ACL规则名
-                     * @param _ruleName ACL规则名
+                     * 设置<p>ACL规则名</p>
+                     * @param _ruleName <p>ACL规则名</p>
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取修改预设规则时传入,是否应用到新增的Topic
-                     * @return IsApplied 修改预设规则时传入,是否应用到新增的Topic
+                     * 获取<p>修改预设规则时传入,是否应用到新增的Topic</p><p>枚举值：</p><ul><li>0： 不允许应用到新增的topic</li><li>1： 允许应用到新增的topic</li></ul><p>默认值：0</p>
+                     * @return IsApplied <p>修改预设规则时传入,是否应用到新增的Topic</p><p>枚举值：</p><ul><li>0： 不允许应用到新增的topic</li><li>1： 允许应用到新增的topic</li></ul><p>默认值：0</p>
                      * 
                      */
                     int64_t GetIsApplied() const;
 
                     /**
-                     * 设置修改预设规则时传入,是否应用到新增的Topic
-                     * @param _isApplied 修改预设规则时传入,是否应用到新增的Topic
+                     * 设置<p>修改预设规则时传入,是否应用到新增的Topic</p><p>枚举值：</p><ul><li>0： 不允许应用到新增的topic</li><li>1： 允许应用到新增的topic</li></ul><p>默认值：0</p>
+                     * @param _isApplied <p>修改预设规则时传入,是否应用到新增的Topic</p><p>枚举值：</p><ul><li>0： 不允许应用到新增的topic</li><li>1： 允许应用到新增的topic</li></ul><p>默认值：0</p>
                      * 
                      */
                     void SetIsApplied(const int64_t& _isApplied);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka集群实例Id
+                     * <p>ckafka集群实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * ACL规则名
+                     * <p>ACL规则名</p>
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 修改预设规则时传入,是否应用到新增的Topic
+                     * <p>修改预设规则时传入,是否应用到新增的Topic</p><p>枚举值：</p><ul><li>0： 不允许应用到新增的topic</li><li>1： 允许应用到新增的topic</li></ul><p>默认值：0</p>
                      */
                     int64_t m_isApplied;
                     bool m_isAppliedHasBeenSet;

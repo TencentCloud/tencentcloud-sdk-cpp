@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用区
-                     * @return ZoneId 可用区
+                     * 获取<p>可用区</p>
+                     * @return ZoneId <p>可用区</p>
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置可用区
-                     * @param _zoneId 可用区
+                     * 设置<p>可用区</p>
+                     * @param _zoneId <p>可用区</p>
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取是否内部APP
-                     * @return IsInternalApp 是否内部APP
+                     * 获取<p>是否内部APP</p><p>枚举值：</p><ul><li>0： 外部</li><li>1： 内部</li></ul><p>默认值：0</p>
+                     * @return IsInternalApp <p>是否内部APP</p><p>枚举值：</p><ul><li>0： 外部</li><li>1： 内部</li></ul><p>默认值：0</p>
                      * 
                      */
                     int64_t GetIsInternalApp() const;
 
                     /**
-                     * 设置是否内部APP
-                     * @param _isInternalApp 是否内部APP
+                     * 设置<p>是否内部APP</p><p>枚举值：</p><ul><li>0： 外部</li><li>1： 内部</li></ul><p>默认值：0</p>
+                     * @param _isInternalApp <p>是否内部APP</p><p>枚举值：</p><ul><li>0： 外部</li><li>1： 内部</li></ul><p>默认值：0</p>
                      * 
                      */
                     void SetIsInternalApp(const int64_t& _isInternalApp);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool IsInternalAppHasBeenSet() const;
 
                     /**
-                     * 获取应用标识
-                     * @return AppId 应用标识
+                     * 获取<p>应用标识</p>
+                     * @return AppId <p>应用标识</p>
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置应用标识
-                     * @param _appId 应用标识
+                     * 设置<p>应用标识</p>
+                     * @param _appId <p>应用标识</p>
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取可用区是否售罄标识，true表示已售罄，false表示未售罄。
-                     * @return Flag 可用区是否售罄标识，true表示已售罄，false表示未售罄。
+                     * 获取<p>可用区是否售罄标识，true表示已售罄，false表示未售罄。</p>
+                     * @return Flag <p>可用区是否售罄标识，true表示已售罄，false表示未售罄。</p>
                      * 
                      */
                     bool GetFlag() const;
 
                     /**
-                     * 设置可用区是否售罄标识，true表示已售罄，false表示未售罄。
-                     * @param _flag 可用区是否售罄标识，true表示已售罄，false表示未售罄。
+                     * 设置<p>可用区是否售罄标识，true表示已售罄，false表示未售罄。</p>
+                     * @param _flag <p>可用区是否售罄标识，true表示已售罄，false表示未售罄。</p>
                      * 
                      */
                     void SetFlag(const bool& _flag);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool FlagHasBeenSet() const;
 
                     /**
-                     * 获取可用区名称
-                     * @return ZoneName 可用区名称
+                     * 获取<p>可用区名称</p>
+                     * @return ZoneName <p>可用区名称</p>
                      * 
                      */
                     std::string GetZoneName() const;
 
                     /**
-                     * 设置可用区名称
-                     * @param _zoneName 可用区名称
+                     * 设置<p>可用区名称</p>
+                     * @param _zoneName <p>可用区名称</p>
                      * 
                      */
                     void SetZoneName(const std::string& _zoneName);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool ZoneNameHasBeenSet() const;
 
                     /**
-                     * 获取可用区状态  枚举示例:  3: 开启，4: 关闭;  可用区状态以SoldOut为准
-                     * @return ZoneStatus 可用区状态  枚举示例:  3: 开启，4: 关闭;  可用区状态以SoldOut为准
+                     * 获取<p>可用区状态</p><p>枚举值：</p><ul><li>3： 开启</li><li>4： 关闭</li></ul><p>可用区状态以SoldOut为准</p>
+                     * @return ZoneStatus <p>可用区状态</p><p>枚举值：</p><ul><li>3： 开启</li><li>4： 关闭</li></ul><p>可用区状态以SoldOut为准</p>
                      * 
                      */
                     int64_t GetZoneStatus() const;
 
                     /**
-                     * 设置可用区状态  枚举示例:  3: 开启，4: 关闭;  可用区状态以SoldOut为准
-                     * @param _zoneStatus 可用区状态  枚举示例:  3: 开启，4: 关闭;  可用区状态以SoldOut为准
+                     * 设置<p>可用区状态</p><p>枚举值：</p><ul><li>3： 开启</li><li>4： 关闭</li></ul><p>可用区状态以SoldOut为准</p>
+                     * @param _zoneStatus <p>可用区状态</p><p>枚举值：</p><ul><li>3： 开启</li><li>4： 关闭</li></ul><p>可用区状态以SoldOut为准</p>
                      * 
                      */
                     void SetZoneStatus(const int64_t& _zoneStatus);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool ZoneStatusHasBeenSet() const;
 
                     /**
-                     * 获取额外标识
-                     * @return Exflag 额外标识
+                     * 获取<p>额外标识</p>
+                     * @return Exflag <p>额外标识</p>
                      * @deprecated
                      */
                     std::string GetExflag() const;
 
                     /**
-                     * 设置额外标识
-                     * @param _exflag 额外标识
+                     * 设置<p>额外标识</p>
+                     * @param _exflag <p>额外标识</p>
                      * @deprecated
                      */
                     void SetExflag(const std::string& _exflag);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool ExflagHasBeenSet() const;
 
                     /**
-                     * 获取true为售罄，false为未售罄
-                     * @return SoldOut true为售罄，false为未售罄
+                     * 获取<p>true为售罄，false为未售罄</p>
+                     * @return SoldOut <p>true为售罄，false为未售罄</p>
                      * 
                      */
                     std::string GetSoldOut() const;
 
                     /**
-                     * 设置true为售罄，false为未售罄
-                     * @param _soldOut true为售罄，false为未售罄
+                     * 设置<p>true为售罄，false为未售罄</p>
+                     * @param _soldOut <p>true为售罄，false为未售罄</p>
                      * 
                      */
                     void SetSoldOut(const std::string& _soldOut);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool SoldOutHasBeenSet() const;
 
                     /**
-                     * 获取标准版售罄信息
-                     * @return SalesInfo 标准版售罄信息
+                     * 获取<p>标准版售罄信息</p>
+                     * @return SalesInfo <p>标准版售罄信息</p>
                      * 
                      */
                     std::vector<SaleInfo> GetSalesInfo() const;
 
                     /**
-                     * 设置标准版售罄信息
-                     * @param _salesInfo 标准版售罄信息
+                     * 设置<p>标准版售罄信息</p>
+                     * @param _salesInfo <p>标准版售罄信息</p>
                      * 
                      */
                     void SetSalesInfo(const std::vector<SaleInfo>& _salesInfo);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool SalesInfoHasBeenSet() const;
 
                     /**
-                     * 获取额外标识
-                     * @return ExtraFlag 额外标识
+                     * 获取<p>额外标识</p>
+                     * @return ExtraFlag <p>额外标识</p>
                      * 
                      */
                     std::string GetExtraFlag() const;
 
                     /**
-                     * 设置额外标识
-                     * @param _extraFlag 额外标识
+                     * 设置<p>额外标识</p>
+                     * @param _extraFlag <p>额外标识</p>
                      * 
                      */
                     void SetExtraFlag(const std::string& _extraFlag);
@@ -260,61 +260,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 可用区
+                     * <p>可用区</p>
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 是否内部APP
+                     * <p>是否内部APP</p><p>枚举值：</p><ul><li>0： 外部</li><li>1： 内部</li></ul><p>默认值：0</p>
                      */
                     int64_t m_isInternalApp;
                     bool m_isInternalAppHasBeenSet;
 
                     /**
-                     * 应用标识
+                     * <p>应用标识</p>
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 可用区是否售罄标识，true表示已售罄，false表示未售罄。
+                     * <p>可用区是否售罄标识，true表示已售罄，false表示未售罄。</p>
                      */
                     bool m_flag;
                     bool m_flagHasBeenSet;
 
                     /**
-                     * 可用区名称
+                     * <p>可用区名称</p>
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;
 
                     /**
-                     * 可用区状态  枚举示例:  3: 开启，4: 关闭;  可用区状态以SoldOut为准
+                     * <p>可用区状态</p><p>枚举值：</p><ul><li>3： 开启</li><li>4： 关闭</li></ul><p>可用区状态以SoldOut为准</p>
                      */
                     int64_t m_zoneStatus;
                     bool m_zoneStatusHasBeenSet;
 
                     /**
-                     * 额外标识
+                     * <p>额外标识</p>
                      */
                     std::string m_exflag;
                     bool m_exflagHasBeenSet;
 
                     /**
-                     * true为售罄，false为未售罄
+                     * <p>true为售罄，false为未售罄</p>
                      */
                     std::string m_soldOut;
                     bool m_soldOutHasBeenSet;
 
                     /**
-                     * 标准版售罄信息
+                     * <p>标准版售罄信息</p>
                      */
                     std::vector<SaleInfo> m_salesInfo;
                     bool m_salesInfoHasBeenSet;
 
                     /**
-                     * 额外标识
+                     * <p>额外标识</p>
                      */
                     std::string m_extraFlag;
                     bool m_extraFlagHasBeenSet;

@@ -1,0 +1,196 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_TCB_V20180608_MODEL_MODIFYSAFERULEREQUEST_H_
+#define TENCENTCLOUD_TCB_V20180608_MODEL_MODIFYSAFERULEREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Tcb
+    {
+        namespace V20180608
+        {
+            namespace Model
+            {
+                /**
+                * ModifySafeRule请求参数结构体
+                */
+                class ModifySafeRuleRequest : public AbstractModel
+                {
+                public:
+                    ModifySafeRuleRequest();
+                    ~ModifySafeRuleRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取环境ID
+                     * @return EnvId 环境ID
+                     * 
+                     */
+                    std::string GetEnvId() const;
+
+                    /**
+                     * 设置环境ID
+                     * @param _envId 环境ID
+                     * 
+                     */
+                    void SetEnvId(const std::string& _envId);
+
+                    /**
+                     * 判断参数 EnvId 是否已赋值
+                     * @return EnvId 是否已赋值
+                     * 
+                     */
+                    bool EnvIdHasBeenSet() const;
+
+                    /**
+                     * 获取集合名称
+                     * @return CollectionName 集合名称
+                     * 
+                     */
+                    std::string GetCollectionName() const;
+
+                    /**
+                     * 设置集合名称
+                     * @param _collectionName 集合名称
+                     * 
+                     */
+                    void SetCollectionName(const std::string& _collectionName);
+
+                    /**
+                     * 判断参数 CollectionName 是否已赋值
+                     * @return CollectionName 是否已赋值
+                     * 
+                     */
+                    bool CollectionNameHasBeenSet() const;
+
+                    /**
+                     * 获取权限标签。包含以下取值：
+<li> READONLY：所有用户可读，仅创建者和管理员可写</li>
+<li> PRIVATE：仅创建者及管理员可读写</li>
+<li> ADMINWRITE：所有用户可读，仅管理员可写</li>
+<li> ADMINONLY：仅管理员可读写</li>
+<li> CUSTOM：自定义安全规则</li>
+                     * @return AclTag 权限标签。包含以下取值：
+<li> READONLY：所有用户可读，仅创建者和管理员可写</li>
+<li> PRIVATE：仅创建者及管理员可读写</li>
+<li> ADMINWRITE：所有用户可读，仅管理员可写</li>
+<li> ADMINONLY：仅管理员可读写</li>
+<li> CUSTOM：自定义安全规则</li>
+                     * 
+                     */
+                    std::string GetAclTag() const;
+
+                    /**
+                     * 设置权限标签。包含以下取值：
+<li> READONLY：所有用户可读，仅创建者和管理员可写</li>
+<li> PRIVATE：仅创建者及管理员可读写</li>
+<li> ADMINWRITE：所有用户可读，仅管理员可写</li>
+<li> ADMINONLY：仅管理员可读写</li>
+<li> CUSTOM：自定义安全规则</li>
+                     * @param _aclTag 权限标签。包含以下取值：
+<li> READONLY：所有用户可读，仅创建者和管理员可写</li>
+<li> PRIVATE：仅创建者及管理员可读写</li>
+<li> ADMINWRITE：所有用户可读，仅管理员可写</li>
+<li> ADMINONLY：仅管理员可读写</li>
+<li> CUSTOM：自定义安全规则</li>
+                     * 
+                     */
+                    void SetAclTag(const std::string& _aclTag);
+
+                    /**
+                     * 判断参数 AclTag 是否已赋值
+                     * @return AclTag 是否已赋值
+                     * 
+                     */
+                    bool AclTagHasBeenSet() const;
+
+                    /**
+                     * 获取安全规则内容。
+当 AclTag=CUSTOM 时，此参数必填。
+详情参考：[文档型数据库安全规则](https://docs.cloudbase.net/database/security-rules)
+                     * @return Rule 安全规则内容。
+当 AclTag=CUSTOM 时，此参数必填。
+详情参考：[文档型数据库安全规则](https://docs.cloudbase.net/database/security-rules)
+                     * 
+                     */
+                    std::string GetRule() const;
+
+                    /**
+                     * 设置安全规则内容。
+当 AclTag=CUSTOM 时，此参数必填。
+详情参考：[文档型数据库安全规则](https://docs.cloudbase.net/database/security-rules)
+                     * @param _rule 安全规则内容。
+当 AclTag=CUSTOM 时，此参数必填。
+详情参考：[文档型数据库安全规则](https://docs.cloudbase.net/database/security-rules)
+                     * 
+                     */
+                    void SetRule(const std::string& _rule);
+
+                    /**
+                     * 判断参数 Rule 是否已赋值
+                     * @return Rule 是否已赋值
+                     * 
+                     */
+                    bool RuleHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 环境ID
+                     */
+                    std::string m_envId;
+                    bool m_envIdHasBeenSet;
+
+                    /**
+                     * 集合名称
+                     */
+                    std::string m_collectionName;
+                    bool m_collectionNameHasBeenSet;
+
+                    /**
+                     * 权限标签。包含以下取值：
+<li> READONLY：所有用户可读，仅创建者和管理员可写</li>
+<li> PRIVATE：仅创建者及管理员可读写</li>
+<li> ADMINWRITE：所有用户可读，仅管理员可写</li>
+<li> ADMINONLY：仅管理员可读写</li>
+<li> CUSTOM：自定义安全规则</li>
+                     */
+                    std::string m_aclTag;
+                    bool m_aclTagHasBeenSet;
+
+                    /**
+                     * 安全规则内容。
+当 AclTag=CUSTOM 时，此参数必填。
+详情参考：[文档型数据库安全规则](https://docs.cloudbase.net/database/security-rules)
+                     */
+                    std::string m_rule;
+                    bool m_ruleHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_TCB_V20180608_MODEL_MODIFYSAFERULEREQUEST_H_

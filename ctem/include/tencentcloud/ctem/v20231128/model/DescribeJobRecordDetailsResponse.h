@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ctem/v20231128/model/DisplayJobRecordDetail.h>
+#include <tencentcloud/ctem/v20231128/model/Equity.h>
 
 
 namespace TencentCloud
@@ -45,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总数
-                     * @return Total 总数
+                     * 获取<p>总数</p>
+                     * @return Total <p>总数</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -59,8 +60,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取数组
-                     * @return List 数组
+                     * 获取<p>数组</p>
+                     * @return List <p>数组</p>
                      * 
                      */
                     std::vector<DisplayJobRecordDetail> GetList() const;
@@ -72,19 +73,39 @@ namespace TencentCloud
                      */
                     bool ListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>持股路径</p>
+                     * @return EnterpriseEquityPath <p>持股路径</p>
+                     * 
+                     */
+                    std::vector<Equity> GetEnterpriseEquityPath() const;
+
+                    /**
+                     * 判断参数 EnterpriseEquityPath 是否已赋值
+                     * @return EnterpriseEquityPath 是否已赋值
+                     * 
+                     */
+                    bool EnterpriseEquityPathHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 总数
+                     * <p>总数</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 数组
+                     * <p>数组</p>
                      */
                     std::vector<DisplayJobRecordDetail> m_list;
                     bool m_listHasBeenSet;
+
+                    /**
+                     * <p>持股路径</p>
+                     */
+                    std::vector<Equity> m_enterpriseEquityPath;
+                    bool m_enterpriseEquityPathHasBeenSet;
 
                 };
             }

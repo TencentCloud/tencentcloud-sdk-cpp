@@ -20,7 +20,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
-NatRegionInfoWithArea::NatRegionInfoWithArea()
+NatRegionInfoWithArea::NatRegionInfoWithArea() :
+    m_regionHasBeenSet(false)
 {
 }
 
@@ -29,6 +30,16 @@ CoreInternalOutcome NatRegionInfoWithArea::Deserialize(const rapidjson::Value &v
     string requestId = "";
 
 
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatRegionInfoWithArea.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -36,6 +47,30 @@ CoreInternalOutcome NatRegionInfoWithArea::Deserialize(const rapidjson::Value &v
 void NatRegionInfoWithArea::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
+
+string NatRegionInfoWithArea::GetRegion() const
+{
+    return m_region;
+}
+
+void NatRegionInfoWithArea::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool NatRegionInfoWithArea::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
+}
 

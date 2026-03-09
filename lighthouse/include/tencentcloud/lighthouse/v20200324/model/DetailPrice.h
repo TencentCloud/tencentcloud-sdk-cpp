@@ -47,31 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取描述计费项目名称，目前取值
-<li>"DiskSpace"代表云硬盘空间收费项。</li>
-<li>"DiskBackupQuota"代表数据盘备份点配额收费项。</li>
-<li>"Instance"代表实例收费项。</li>
-<li>"SystemDiskBackupQuota"代表系统盘备份点配额收费项。</li>
-                     * @return PriceName 描述计费项目名称，目前取值
-<li>"DiskSpace"代表云硬盘空间收费项。</li>
-<li>"DiskBackupQuota"代表数据盘备份点配额收费项。</li>
-<li>"Instance"代表实例收费项。</li>
-<li>"SystemDiskBackupQuota"代表系统盘备份点配额收费项。</li>
+                     * 获取<p>描述计费项目名称，目前取值</p><li>"DiskSpace"代表云硬盘空间收费项。</li><li>"DiskBackupQuota"代表数据盘备份点配额收费项。</li><li>"Instance"代表实例收费项。</li><li>"SystemDiskBackupQuota"代表系统盘备份点配额收费项。</li>
+                     * @return PriceName <p>描述计费项目名称，目前取值</p><li>"DiskSpace"代表云硬盘空间收费项。</li><li>"DiskBackupQuota"代表数据盘备份点配额收费项。</li><li>"Instance"代表实例收费项。</li><li>"SystemDiskBackupQuota"代表系统盘备份点配额收费项。</li>
                      * 
                      */
                     std::string GetPriceName() const;
 
                     /**
-                     * 设置描述计费项目名称，目前取值
-<li>"DiskSpace"代表云硬盘空间收费项。</li>
-<li>"DiskBackupQuota"代表数据盘备份点配额收费项。</li>
-<li>"Instance"代表实例收费项。</li>
-<li>"SystemDiskBackupQuota"代表系统盘备份点配额收费项。</li>
-                     * @param _priceName 描述计费项目名称，目前取值
-<li>"DiskSpace"代表云硬盘空间收费项。</li>
-<li>"DiskBackupQuota"代表数据盘备份点配额收费项。</li>
-<li>"Instance"代表实例收费项。</li>
-<li>"SystemDiskBackupQuota"代表系统盘备份点配额收费项。</li>
+                     * 设置<p>描述计费项目名称，目前取值</p><li>"DiskSpace"代表云硬盘空间收费项。</li><li>"DiskBackupQuota"代表数据盘备份点配额收费项。</li><li>"Instance"代表实例收费项。</li><li>"SystemDiskBackupQuota"代表系统盘备份点配额收费项。</li>
+                     * @param _priceName <p>描述计费项目名称，目前取值</p><li>"DiskSpace"代表云硬盘空间收费项。</li><li>"DiskBackupQuota"代表数据盘备份点配额收费项。</li><li>"Instance"代表实例收费项。</li><li>"SystemDiskBackupQuota"代表系统盘备份点配额收费项。</li>
                      * 
                      */
                     void SetPriceName(const std::string& _priceName);
@@ -84,15 +68,15 @@ namespace TencentCloud
                     bool PriceNameHasBeenSet() const;
 
                     /**
-                     * 获取计费项维度单价。
-                     * @return OriginUnitPrice 计费项维度单价。
+                     * 获取<p>计费项维度单价。</p><p>单位：元</p>
+                     * @return OriginUnitPrice <p>计费项维度单价。</p><p>单位：元</p>
                      * 
                      */
                     double GetOriginUnitPrice() const;
 
                     /**
-                     * 设置计费项维度单价。
-                     * @param _originUnitPrice 计费项维度单价。
+                     * 设置<p>计费项维度单价。</p><p>单位：元</p>
+                     * @param _originUnitPrice <p>计费项维度单价。</p><p>单位：元</p>
                      * 
                      */
                     void SetOriginUnitPrice(const double& _originUnitPrice);
@@ -105,15 +89,15 @@ namespace TencentCloud
                     bool OriginUnitPriceHasBeenSet() const;
 
                     /**
-                     * 获取计费项维度总价。
-                     * @return OriginalPrice 计费项维度总价。
+                     * 获取<p>计费项维度总价。</p><p>单位：元</p>
+                     * @return OriginalPrice <p>计费项维度总价。</p><p>单位：元</p>
                      * 
                      */
                     double GetOriginalPrice() const;
 
                     /**
-                     * 设置计费项维度总价。
-                     * @param _originalPrice 计费项维度总价。
+                     * 设置<p>计费项维度总价。</p><p>单位：元</p>
+                     * @param _originalPrice <p>计费项维度总价。</p><p>单位：元</p>
                      * 
                      */
                     void SetOriginalPrice(const double& _originalPrice);
@@ -126,15 +110,15 @@ namespace TencentCloud
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
-                     * 获取计费项维度折扣。
-                     * @return Discount 计费项维度折扣。
+                     * 获取<p>计费项维度折扣。</p>
+                     * @return Discount <p>计费项维度折扣。</p>
                      * 
                      */
                     double GetDiscount() const;
 
                     /**
-                     * 设置计费项维度折扣。
-                     * @param _discount 计费项维度折扣。
+                     * 设置<p>计费项维度折扣。</p>
+                     * @param _discount <p>计费项维度折扣。</p>
                      * 
                      */
                     void SetDiscount(const double& _discount);
@@ -147,15 +131,15 @@ namespace TencentCloud
                     bool DiscountHasBeenSet() const;
 
                     /**
-                     * 获取计费项维度折后总价。
-                     * @return DiscountPrice 计费项维度折后总价。
+                     * 获取<p>计费项维度折后总价。</p><p>单位：元</p>
+                     * @return DiscountPrice <p>计费项维度折后总价。</p><p>单位：元</p>
                      * 
                      */
                     double GetDiscountPrice() const;
 
                     /**
-                     * 设置计费项维度折后总价。
-                     * @param _discountPrice 计费项维度折后总价。
+                     * 设置<p>计费项维度折后总价。</p><p>单位：元</p>
+                     * @param _discountPrice <p>计费项维度折后总价。</p><p>单位：元</p>
                      * 
                      */
                     void SetDiscountPrice(const double& _discountPrice);
@@ -170,35 +154,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 描述计费项目名称，目前取值
-<li>"DiskSpace"代表云硬盘空间收费项。</li>
-<li>"DiskBackupQuota"代表数据盘备份点配额收费项。</li>
-<li>"Instance"代表实例收费项。</li>
-<li>"SystemDiskBackupQuota"代表系统盘备份点配额收费项。</li>
+                     * <p>描述计费项目名称，目前取值</p><li>"DiskSpace"代表云硬盘空间收费项。</li><li>"DiskBackupQuota"代表数据盘备份点配额收费项。</li><li>"Instance"代表实例收费项。</li><li>"SystemDiskBackupQuota"代表系统盘备份点配额收费项。</li>
                      */
                     std::string m_priceName;
                     bool m_priceNameHasBeenSet;
 
                     /**
-                     * 计费项维度单价。
+                     * <p>计费项维度单价。</p><p>单位：元</p>
                      */
                     double m_originUnitPrice;
                     bool m_originUnitPriceHasBeenSet;
 
                     /**
-                     * 计费项维度总价。
+                     * <p>计费项维度总价。</p><p>单位：元</p>
                      */
                     double m_originalPrice;
                     bool m_originalPriceHasBeenSet;
 
                     /**
-                     * 计费项维度折扣。
+                     * <p>计费项维度折扣。</p>
                      */
                     double m_discount;
                     bool m_discountHasBeenSet;
 
                     /**
-                     * 计费项维度折后总价。
+                     * <p>计费项维度折后总价。</p><p>单位：元</p>
                      */
                     double m_discountPrice;
                     bool m_discountPriceHasBeenSet;

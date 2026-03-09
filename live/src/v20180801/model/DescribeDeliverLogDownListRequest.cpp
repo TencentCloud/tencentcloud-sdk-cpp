@@ -22,7 +22,10 @@
 using namespace TencentCloud::Live::V20180801::Model;
 using namespace std;
 
-DescribeDeliverLogDownListRequest::DescribeDeliverLogDownListRequest()
+DescribeDeliverLogDownListRequest::DescribeDeliverLogDownListRequest() :
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_deliverDomainsHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,35 @@ string DescribeDeliverLogDownListRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deliverDomainsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeliverDomains";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_deliverDomains.begin(); itr != m_deliverDomains.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +72,53 @@ string DescribeDeliverLogDownListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeDeliverLogDownListRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DescribeDeliverLogDownListRequest::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DescribeDeliverLogDownListRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+string DescribeDeliverLogDownListRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void DescribeDeliverLogDownListRequest::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool DescribeDeliverLogDownListRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
+}
+
+vector<string> DescribeDeliverLogDownListRequest::GetDeliverDomains() const
+{
+    return m_deliverDomains;
+}
+
+void DescribeDeliverLogDownListRequest::SetDeliverDomains(const vector<string>& _deliverDomains)
+{
+    m_deliverDomains = _deliverDomains;
+    m_deliverDomainsHasBeenSet = true;
+}
+
+bool DescribeDeliverLogDownListRequest::DeliverDomainsHasBeenSet() const
+{
+    return m_deliverDomainsHasBeenSet;
+}
 
 

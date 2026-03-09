@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例版本
-                     * @return KafkaVersion ckafka集群实例版本
+                     * 获取<p>ckafka集群实例版本</p>
+                     * @return KafkaVersion <p>ckafka集群实例版本</p>
                      * 
                      */
                     std::string GetKafkaVersion() const;
 
                     /**
-                     * 设置ckafka集群实例版本
-                     * @param _kafkaVersion ckafka集群实例版本
+                     * 设置<p>ckafka集群实例版本</p>
+                     * @param _kafkaVersion <p>ckafka集群实例版本</p>
                      * 
                      */
                     void SetKafkaVersion(const std::string& _kafkaVersion);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool KafkaVersionHasBeenSet() const;
 
                     /**
-                     * 获取broker版本信息
-                     * @return CurBrokerVersion broker版本信息
+                     * 获取<p>broker版本信息</p>
+                     * @return CurBrokerVersion <p>broker版本信息</p>
                      * 
                      */
                     std::string GetCurBrokerVersion() const;
 
                     /**
-                     * 设置broker版本信息
-                     * @param _curBrokerVersion broker版本信息
+                     * 设置<p>broker版本信息</p>
+                     * @param _curBrokerVersion <p>broker版本信息</p>
                      * 
                      */
                     void SetCurBrokerVersion(const std::string& _curBrokerVersion);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool CurBrokerVersionHasBeenSet() const;
 
                     /**
-                     * 获取最新版本信息
-                     * @return LatestBrokerVersion 最新版本信息
+                     * 获取<p>最新版本信息</p>
+                     * @return LatestBrokerVersion <p>最新版本信息</p>
                      * 
                      */
                     std::vector<LatestBrokerVersion> GetLatestBrokerVersion() const;
 
                     /**
-                     * 设置最新版本信息
-                     * @param _latestBrokerVersion 最新版本信息
+                     * 设置<p>最新版本信息</p>
+                     * @param _latestBrokerVersion <p>最新版本信息</p>
                      * 
                      */
                     void SetLatestBrokerVersion(const std::vector<LatestBrokerVersion>& _latestBrokerVersion);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool LatestBrokerVersionHasBeenSet() const;
 
                     /**
-                     * 获取允许跨大版本内核升级
-                     * @return AllowUpgradeHighVersion 允许跨大版本内核升级
+                     * 获取<p>允许跨大版本内核升级</p>
+                     * @return AllowUpgradeHighVersion <p>允许跨大版本内核升级</p>
                      * 
                      */
                     bool GetAllowUpgradeHighVersion() const;
 
                     /**
-                     * 设置允许跨大版本内核升级
-                     * @param _allowUpgradeHighVersion 允许跨大版本内核升级
+                     * 设置<p>允许跨大版本内核升级</p>
+                     * @param _allowUpgradeHighVersion <p>允许跨大版本内核升级</p>
                      * 
                      */
                     void SetAllowUpgradeHighVersion(const bool& _allowUpgradeHighVersion);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool AllowUpgradeHighVersionHasBeenSet() const;
 
                     /**
-                     * 获取允许升级的大版本
-                     * @return HighVersionSet 允许升级的大版本
+                     * 获取<p>允许升级的大版本</p>
+                     * @return HighVersionSet <p>允许升级的大版本</p>
                      * 
                      */
                     std::vector<std::string> GetHighVersionSet() const;
 
                     /**
-                     * 设置允许升级的大版本
-                     * @param _highVersionSet 允许升级的大版本
+                     * 设置<p>允许升级的大版本</p>
+                     * @param _highVersionSet <p>允许升级的大版本</p>
                      * 
                      */
                     void SetHighVersionSet(const std::vector<std::string>& _highVersionSet);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool HighVersionSetHasBeenSet() const;
 
                     /**
-                     * 获取允许小版本号配置自动删除消费者组
-                     * @return AllowAutoDeleteTimestamp 允许小版本号配置自动删除消费者组
+                     * 获取<p>允许小版本号配置自动删除消费者组</p>
+                     * @return AllowAutoDeleteTimestamp <p>允许小版本号配置自动删除消费者组</p>
                      * 
                      */
                     bool GetAllowAutoDeleteTimestamp() const;
 
                     /**
-                     * 设置允许小版本号配置自动删除消费者组
-                     * @param _allowAutoDeleteTimestamp 允许小版本号配置自动删除消费者组
+                     * 设置<p>允许小版本号配置自动删除消费者组</p>
+                     * @param _allowAutoDeleteTimestamp <p>允许小版本号配置自动删除消费者组</p>
                      * 
                      */
                     void SetAllowAutoDeleteTimestamp(const bool& _allowAutoDeleteTimestamp);
@@ -173,43 +173,70 @@ namespace TencentCloud
                      */
                     bool AllowAutoDeleteTimestampHasBeenSet() const;
 
+                    /**
+                     * 获取<p>允许修改事务ID过期时间配置</p>
+                     * @return AllowModifyTxnIdExpiration <p>允许修改事务ID过期时间配置</p>
+                     * 
+                     */
+                    bool GetAllowModifyTxnIdExpiration() const;
+
+                    /**
+                     * 设置<p>允许修改事务ID过期时间配置</p>
+                     * @param _allowModifyTxnIdExpiration <p>允许修改事务ID过期时间配置</p>
+                     * 
+                     */
+                    void SetAllowModifyTxnIdExpiration(const bool& _allowModifyTxnIdExpiration);
+
+                    /**
+                     * 判断参数 AllowModifyTxnIdExpiration 是否已赋值
+                     * @return AllowModifyTxnIdExpiration 是否已赋值
+                     * 
+                     */
+                    bool AllowModifyTxnIdExpirationHasBeenSet() const;
+
                 private:
 
                     /**
-                     * ckafka集群实例版本
+                     * <p>ckafka集群实例版本</p>
                      */
                     std::string m_kafkaVersion;
                     bool m_kafkaVersionHasBeenSet;
 
                     /**
-                     * broker版本信息
+                     * <p>broker版本信息</p>
                      */
                     std::string m_curBrokerVersion;
                     bool m_curBrokerVersionHasBeenSet;
 
                     /**
-                     * 最新版本信息
+                     * <p>最新版本信息</p>
                      */
                     std::vector<LatestBrokerVersion> m_latestBrokerVersion;
                     bool m_latestBrokerVersionHasBeenSet;
 
                     /**
-                     * 允许跨大版本内核升级
+                     * <p>允许跨大版本内核升级</p>
                      */
                     bool m_allowUpgradeHighVersion;
                     bool m_allowUpgradeHighVersionHasBeenSet;
 
                     /**
-                     * 允许升级的大版本
+                     * <p>允许升级的大版本</p>
                      */
                     std::vector<std::string> m_highVersionSet;
                     bool m_highVersionSetHasBeenSet;
 
                     /**
-                     * 允许小版本号配置自动删除消费者组
+                     * <p>允许小版本号配置自动删除消费者组</p>
                      */
                     bool m_allowAutoDeleteTimestamp;
                     bool m_allowAutoDeleteTimestampHasBeenSet;
+
+                    /**
+                     * <p>允许修改事务ID过期时间配置</p>
+                     */
+                    bool m_allowModifyTxnIdExpiration;
+                    bool m_allowModifyTxnIdExpirationHasBeenSet;
 
                 };
             }

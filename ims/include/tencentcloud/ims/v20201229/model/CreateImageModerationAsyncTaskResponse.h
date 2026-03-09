@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取该字段用于返回检测对象对应请求参数中的DataId。
-                     * @return DataId 该字段用于返回检测对象对应请求参数中的DataId。
+                     * 获取<p>该字段用于返回检测对象对应请求参数中的DataId。</p>
+                     * @return DataId <p>该字段用于返回检测对象对应请求参数中的DataId。</p>
                      * 
                      */
                     std::string GetDataId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 该字段用于返回检测对象对应请求参数中的DataId。
+                     * <p>该字段用于返回检测对象对应请求参数中的DataId。</p>
                      */
                     std::string m_dataId;
                     bool m_dataIdHasBeenSet;

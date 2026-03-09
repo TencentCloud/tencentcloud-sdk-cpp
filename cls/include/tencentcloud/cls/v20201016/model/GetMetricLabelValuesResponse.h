@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时序metric label values
-                     * @return Values 时序metric label values
+                     * 获取<p>时序metric label values</p>
+                     * @return Values <p>时序metric label values</p>
                      * 
                      */
                     std::vector<std::string> GetValues() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 时序metric label values
+                     * <p>时序metric label values</p>
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;

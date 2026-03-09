@@ -21,6 +21,8 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 LiveRecordInfo::LiveRecordInfo() :
+    m_domainHasBeenSet(false),
+    m_pathHasBeenSet(false),
     m_streamIdHasBeenSet(false),
     m_recordStartTimeHasBeenSet(false),
     m_recordEndTimeHasBeenSet(false)
@@ -31,6 +33,26 @@ CoreInternalOutcome LiveRecordInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    {
+        if (!value["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiveRecordInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(value["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
+    if (value.HasMember("Path") && !value["Path"].IsNull())
+    {
+        if (!value["Path"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiveRecordInfo.Path` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_path = string(value["Path"].GetString());
+        m_pathHasBeenSet = true;
+    }
 
     if (value.HasMember("StreamId") && !value["StreamId"].IsNull())
     {
@@ -69,6 +91,22 @@ CoreInternalOutcome LiveRecordInfo::Deserialize(const rapidjson::Value &value)
 void LiveRecordInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Path";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_streamIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -95,6 +133,38 @@ void LiveRecordInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
 
 }
 
+
+string LiveRecordInfo::GetDomain() const
+{
+    return m_domain;
+}
+
+void LiveRecordInfo::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool LiveRecordInfo::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
+}
+
+string LiveRecordInfo::GetPath() const
+{
+    return m_path;
+}
+
+void LiveRecordInfo::SetPath(const string& _path)
+{
+    m_path = _path;
+    m_pathHasBeenSet = true;
+}
+
+bool LiveRecordInfo::PathHasBeenSet() const
+{
+    return m_pathHasBeenSet;
+}
 
 string LiveRecordInfo::GetStreamId() const
 {

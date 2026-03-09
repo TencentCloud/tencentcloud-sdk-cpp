@@ -1052,6 +1052,27 @@ HYBRID_PAID:
                      */
                     bool SchedulingStrategyHasBeenSet() const;
 
+                    /**
+                     * 获取网关日志投递相关配置
+                     * @return GatewayLogConfig 网关日志投递相关配置
+                     * 
+                     */
+                    LogConfig GetGatewayLogConfig() const;
+
+                    /**
+                     * 设置网关日志投递相关配置
+                     * @param _gatewayLogConfig 网关日志投递相关配置
+                     * 
+                     */
+                    void SetGatewayLogConfig(const LogConfig& _gatewayLogConfig);
+
+                    /**
+                     * 判断参数 GatewayLogConfig 是否已赋值
+                     * @return GatewayLogConfig 是否已赋值
+                     * 
+                     */
+                    bool GatewayLogConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1334,6 +1355,12 @@ HYBRID_PAID:
                      */
                     std::string m_schedulingStrategy;
                     bool m_schedulingStrategyHasBeenSet;
+
+                    /**
+                     * 网关日志投递相关配置
+                     */
+                    LogConfig m_gatewayLogConfig;
+                    bool m_gatewayLogConfigHasBeenSet;
 
                 };
             }

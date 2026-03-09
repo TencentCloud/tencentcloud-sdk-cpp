@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取计算集群可用区。
-                     * @return Zone 计算集群可用区。
+                     * 获取<p>计算集群可用区。</p>
+                     * @return Zone <p>计算集群可用区。</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置计算集群可用区。
-                     * @param _zone 计算集群可用区。
+                     * 设置<p>计算集群可用区。</p>
+                     * @param _zone <p>计算集群可用区。</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -70,19 +70,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取计算集群类型，取值范围：
-- KUBERNETES
-                     * @return Type 计算集群类型，取值范围：
-- KUBERNETES
+                     * 获取<p>计算集群类型，取值范围：</p><ul><li>KUBERNETES</li></ul>
+                     * @return Type <p>计算集群类型，取值范围：</p><ul><li>KUBERNETES</li></ul>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置计算集群类型，取值范围：
-- KUBERNETES
-                     * @param _type 计算集群类型，取值范围：
-- KUBERNETES
+                     * 设置<p>计算集群类型，取值范围：</p><ul><li>KUBERNETES</li></ul>
+                     * @param _type <p>计算集群类型，取值范围：</p><ul><li>KUBERNETES</li></ul>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -95,15 +91,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取计算集群Service CIDR，不能与VPC网段重合。
-                     * @return ServiceCidr 计算集群Service CIDR，不能与VPC网段重合。
+                     * 获取<p>计算集群Service CIDR，不能与VPC网段重合。</p>
+                     * @return ServiceCidr <p>计算集群Service CIDR，不能与VPC网段重合。</p>
                      * 
                      */
                     std::string GetServiceCidr() const;
 
                     /**
-                     * 设置计算集群Service CIDR，不能与VPC网段重合。
-                     * @param _serviceCidr 计算集群Service CIDR，不能与VPC网段重合。
+                     * 设置<p>计算集群Service CIDR，不能与VPC网段重合。</p>
+                     * @param _serviceCidr <p>计算集群Service CIDR，不能与VPC网段重合。</p>
                      * 
                      */
                     void SetServiceCidr(const std::string& _serviceCidr);
@@ -116,15 +112,15 @@ namespace TencentCloud
                     bool ServiceCidrHasBeenSet() const;
 
                     /**
-                     * 获取资源配额。
-                     * @return ResourceQuota 资源配额。
+                     * 获取<p>资源配额。</p>
+                     * @return ResourceQuota <p>资源配额。</p>
                      * 
                      */
                     ResourceQuota GetResourceQuota() const;
 
                     /**
-                     * 设置资源配额。
-                     * @param _resourceQuota 资源配额。
+                     * 设置<p>资源配额。</p>
+                     * @param _resourceQuota <p>资源配额。</p>
                      * 
                      */
                     void SetResourceQuota(const ResourceQuota& _resourceQuota);
@@ -137,15 +133,15 @@ namespace TencentCloud
                     bool ResourceQuotaHasBeenSet() const;
 
                     /**
-                     * 获取限制范围。
-                     * @return LimitRange 限制范围。
+                     * 获取<p>限制范围。</p>
+                     * @return LimitRange <p>限制范围。</p>
                      * 
                      */
                     LimitRange GetLimitRange() const;
 
                     /**
-                     * 设置限制范围。
-                     * @param _limitRange 限制范围。
+                     * 设置<p>限制范围。</p>
+                     * @param _limitRange <p>限制范围。</p>
                      * 
                      */
                     void SetLimitRange(const LimitRange& _limitRange);
@@ -158,15 +154,15 @@ namespace TencentCloud
                     bool LimitRangeHasBeenSet() const;
 
                     /**
-                     * 获取系统节点池实例规格。
-                     * @return SystemNodeInstanceType 系统节点池实例规格。
+                     * 获取<p>系统节点池实例规格。详情参见<a href="https://cloud.tencent.com/document/product/213/11518">实例规格</a>描述</p>
+                     * @return SystemNodeInstanceType <p>系统节点池实例规格。详情参见<a href="https://cloud.tencent.com/document/product/213/11518">实例规格</a>描述</p>
                      * 
                      */
                     std::string GetSystemNodeInstanceType() const;
 
                     /**
-                     * 设置系统节点池实例规格。
-                     * @param _systemNodeInstanceType 系统节点池实例规格。
+                     * 设置<p>系统节点池实例规格。详情参见<a href="https://cloud.tencent.com/document/product/213/11518">实例规格</a>描述</p>
+                     * @param _systemNodeInstanceType <p>系统节点池实例规格。详情参见<a href="https://cloud.tencent.com/document/product/213/11518">实例规格</a>描述</p>
                      * 
                      */
                     void SetSystemNodeInstanceType(const std::string& _systemNodeInstanceType);
@@ -179,15 +175,15 @@ namespace TencentCloud
                     bool SystemNodeInstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取系统节点池实例数量。
-                     * @return SystemNodeCount 系统节点池实例数量。
+                     * 获取<p>系统节点池实例数量。</p>
+                     * @return SystemNodeCount <p>系统节点池实例数量。</p>
                      * 
                      */
                     uint64_t GetSystemNodeCount() const;
 
                     /**
-                     * 设置系统节点池实例数量。
-                     * @param _systemNodeCount 系统节点池实例数量。
+                     * 设置<p>系统节点池实例数量。</p>
+                     * @param _systemNodeCount <p>系统节点池实例数量。</p>
                      * 
                      */
                     void SetSystemNodeCount(const uint64_t& _systemNodeCount);
@@ -200,15 +196,15 @@ namespace TencentCloud
                     bool SystemNodeCountHasBeenSet() const;
 
                     /**
-                     * 获取纳管环境自动升配
-                     * @return AutoUpgradeClusterLevel 纳管环境自动升配
+                     * 获取<p>纳管环境自动升配</p>
+                     * @return AutoUpgradeClusterLevel <p>纳管环境自动升配</p>
                      * 
                      */
                     bool GetAutoUpgradeClusterLevel() const;
 
                     /**
-                     * 设置纳管环境自动升配
-                     * @param _autoUpgradeClusterLevel 纳管环境自动升配
+                     * 设置<p>纳管环境自动升配</p>
+                     * @param _autoUpgradeClusterLevel <p>纳管环境自动升配</p>
                      * 
                      */
                     void SetAutoUpgradeClusterLevel(const bool& _autoUpgradeClusterLevel);
@@ -223,50 +219,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 计算集群可用区。
+                     * <p>计算集群可用区。</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 计算集群类型，取值范围：
-- KUBERNETES
+                     * <p>计算集群类型，取值范围：</p><ul><li>KUBERNETES</li></ul>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 计算集群Service CIDR，不能与VPC网段重合。
+                     * <p>计算集群Service CIDR，不能与VPC网段重合。</p>
                      */
                     std::string m_serviceCidr;
                     bool m_serviceCidrHasBeenSet;
 
                     /**
-                     * 资源配额。
+                     * <p>资源配额。</p>
                      */
                     ResourceQuota m_resourceQuota;
                     bool m_resourceQuotaHasBeenSet;
 
                     /**
-                     * 限制范围。
+                     * <p>限制范围。</p>
                      */
                     LimitRange m_limitRange;
                     bool m_limitRangeHasBeenSet;
 
                     /**
-                     * 系统节点池实例规格。
+                     * <p>系统节点池实例规格。详情参见<a href="https://cloud.tencent.com/document/product/213/11518">实例规格</a>描述</p>
                      */
                     std::string m_systemNodeInstanceType;
                     bool m_systemNodeInstanceTypeHasBeenSet;
 
                     /**
-                     * 系统节点池实例数量。
+                     * <p>系统节点池实例数量。</p>
                      */
                     uint64_t m_systemNodeCount;
                     bool m_systemNodeCountHasBeenSet;
 
                     /**
-                     * 纳管环境自动升配
+                     * <p>纳管环境自动升配</p>
                      */
                     bool m_autoUpgradeClusterLevel;
                     bool m_autoUpgradeClusterLevelHasBeenSet;

@@ -27,6 +27,7 @@
 #include <tencentcloud/tione/v20211111/model/Service.h>
 #include <tencentcloud/tione/v20211111/model/Tag.h>
 #include <tencentcloud/tione/v20211111/model/AuthToken.h>
+#include <tencentcloud/tione/v20211111/model/LogConfig.h>
 
 
 namespace TencentCloud
@@ -669,6 +670,27 @@ UPDATING 更新中
                      */
                     bool SubUinNameHasBeenSet() const;
 
+                    /**
+                     * 获取网关日志投递相关配置
+                     * @return GatewayLogConfig 网关日志投递相关配置
+                     * 
+                     */
+                    LogConfig GetGatewayLogConfig() const;
+
+                    /**
+                     * 设置网关日志投递相关配置
+                     * @param _gatewayLogConfig 网关日志投递相关配置
+                     * 
+                     */
+                    void SetGatewayLogConfig(const LogConfig& _gatewayLogConfig);
+
+                    /**
+                     * 判断参数 GatewayLogConfig 是否已赋值
+                     * @return GatewayLogConfig 是否已赋值
+                     * 
+                     */
+                    bool GatewayLogConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -843,6 +865,12 @@ UPDATING 更新中
                      */
                     std::string m_subUinName;
                     bool m_subUinNameHasBeenSet;
+
+                    /**
+                     * 网关日志投递相关配置
+                     */
+                    LogConfig m_gatewayLogConfig;
+                    bool m_gatewayLogConfigHasBeenSet;
 
                 };
             }

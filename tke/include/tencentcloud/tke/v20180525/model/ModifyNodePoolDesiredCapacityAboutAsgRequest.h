@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NodePoolIdHasBeenSet() const;
 
                     /**
-                     * 获取节点池所关联的伸缩组的期望实例数
-                     * @return DesiredCapacity 节点池所关联的伸缩组的期望实例数
+                     * 获取节点池所关联的伸缩组的期望实例数，单位个
+                     * @return DesiredCapacity 节点池所关联的伸缩组的期望实例数，单位个
                      * 
                      */
                     int64_t GetDesiredCapacity() const;
 
                     /**
-                     * 设置节点池所关联的伸缩组的期望实例数
-                     * @param _desiredCapacity 节点池所关联的伸缩组的期望实例数
+                     * 设置节点池所关联的伸缩组的期望实例数，单位个
+                     * @param _desiredCapacity 节点池所关联的伸缩组的期望实例数，单位个
                      * 
                      */
                     void SetDesiredCapacity(const int64_t& _desiredCapacity);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_nodePoolIdHasBeenSet;
 
                     /**
-                     * 节点池所关联的伸缩组的期望实例数
+                     * 节点池所关联的伸缩组的期望实例数，单位个
                      */
                     int64_t m_desiredCapacity;
                     bool m_desiredCapacityHasBeenSet;

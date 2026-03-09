@@ -3240,56 +3240,6 @@ OcrClient::RecognizeTableAccurateOCROutcomeCallable OcrClient::RecognizeTableAcc
     return prom->get_future();
 }
 
-OcrClient::RecognizeTableMultiOCROutcome OcrClient::RecognizeTableMultiOCR(const RecognizeTableMultiOCRRequest &request)
-{
-    auto outcome = MakeRequest(request, "RecognizeTableMultiOCR");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        RecognizeTableMultiOCRResponse rsp = RecognizeTableMultiOCRResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return RecognizeTableMultiOCROutcome(rsp);
-        else
-            return RecognizeTableMultiOCROutcome(o.GetError());
-    }
-    else
-    {
-        return RecognizeTableMultiOCROutcome(outcome.GetError());
-    }
-}
-
-void OcrClient::RecognizeTableMultiOCRAsync(const RecognizeTableMultiOCRRequest& request, const RecognizeTableMultiOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const RecognizeTableMultiOCRRequest&;
-    using Resp = RecognizeTableMultiOCRResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "RecognizeTableMultiOCR", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-OcrClient::RecognizeTableMultiOCROutcomeCallable OcrClient::RecognizeTableMultiOCRCallable(const RecognizeTableMultiOCRRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<RecognizeTableMultiOCROutcome>>();
-    RecognizeTableMultiOCRAsync(
-    request,
-    [prom](
-        const OcrClient*,
-        const RecognizeTableMultiOCRRequest&,
-        RecognizeTableMultiOCROutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 OcrClient::RecognizeTableOCROutcome OcrClient::RecognizeTableOCR(const RecognizeTableOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizeTableOCR");

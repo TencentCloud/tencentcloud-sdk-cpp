@@ -132,14 +132,18 @@ namespace TencentCloud
 
                     /**
                      * 获取校验类型，枚举值：structureCheck-结构校验(目前仅postgresql支持)、full-全量校验、increment-增量校验(如果勾选了增量校验，Method只能选dataCheck)、advanceObject-数据库信息校验(目前仅mongodb支持) 
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompareMode 校验类型，枚举值：structureCheck-结构校验(目前仅postgresql支持)、full-全量校验、increment-增量校验(如果勾选了增量校验，Method只能选dataCheck)、advanceObject-数据库信息校验(目前仅mongodb支持) 
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCompareMode() const;
 
                     /**
                      * 设置校验类型，枚举值：structureCheck-结构校验(目前仅postgresql支持)、full-全量校验、increment-增量校验(如果勾选了增量校验，Method只能选dataCheck)、advanceObject-数据库信息校验(目前仅mongodb支持) 
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _compareMode 校验类型，枚举值：structureCheck-结构校验(目前仅postgresql支持)、full-全量校验、increment-增量校验(如果勾选了增量校验，Method只能选dataCheck)、advanceObject-数据库信息校验(目前仅mongodb支持) 
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCompareMode(const std::vector<std::string>& _compareMode);
@@ -221,6 +225,7 @@ namespace TencentCloud
 
                     /**
                      * 校验类型，枚举值：structureCheck-结构校验(目前仅postgresql支持)、full-全量校验、increment-增量校验(如果勾选了增量校验，Method只能选dataCheck)、advanceObject-数据库信息校验(目前仅mongodb支持) 
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_compareMode;
                     bool m_compareModeHasBeenSet;

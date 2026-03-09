@@ -31,7 +31,8 @@ EditMediaRequest::EditMediaRequest() :
     m_taskNotifyConfigHasBeenSet(false),
     m_tasksPriorityHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_sessionContextHasBeenSet(false)
+    m_sessionContextHasBeenSet(false),
+    m_resourceIdHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,14 @@ string EditMediaRequest::ToJsonString() const
         string key = "SessionContext";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sessionContext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -275,6 +284,22 @@ void EditMediaRequest::SetSessionContext(const string& _sessionContext)
 bool EditMediaRequest::SessionContextHasBeenSet() const
 {
     return m_sessionContextHasBeenSet;
+}
+
+string EditMediaRequest::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void EditMediaRequest::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool EditMediaRequest::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
 }
 
 

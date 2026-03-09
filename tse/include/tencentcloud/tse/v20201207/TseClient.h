@@ -55,6 +55,8 @@
 #include <tencentcloud/tse/v20201207/model/CreateGovernanceAliasResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateGovernanceInstancesRequest.h>
 #include <tencentcloud/tse/v20201207/model/CreateGovernanceInstancesResponse.h>
+#include <tencentcloud/tse/v20201207/model/CreateGovernanceLaneGroupsRequest.h>
+#include <tencentcloud/tse/v20201207/model/CreateGovernanceLaneGroupsResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateGovernanceNamespacesRequest.h>
 #include <tencentcloud/tse/v20201207/model/CreateGovernanceNamespacesResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateGovernanceServicesRequest.h>
@@ -103,6 +105,8 @@
 #include <tencentcloud/tse/v20201207/model/DeleteGovernanceInstancesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteGovernanceInstancesByHostRequest.h>
 #include <tencentcloud/tse/v20201207/model/DeleteGovernanceInstancesByHostResponse.h>
+#include <tencentcloud/tse/v20201207/model/DeleteGovernanceLaneGroupsRequest.h>
+#include <tencentcloud/tse/v20201207/model/DeleteGovernanceLaneGroupsResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteGovernanceNamespacesRequest.h>
 #include <tencentcloud/tse/v20201207/model/DeleteGovernanceNamespacesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteGovernanceServicesRequest.h>
@@ -171,6 +175,8 @@
 #include <tencentcloud/tse/v20201207/model/DescribeGovernanceAliasesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeGovernanceInstancesRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeGovernanceInstancesResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeGovernanceLaneGroupsRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeGovernanceLaneGroupsResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeGovernanceNamespacesRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeGovernanceNamespacesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeGovernanceServiceContractVersionsRequest.h>
@@ -235,6 +241,8 @@
 #include <tencentcloud/tse/v20201207/model/ModifyGovernanceAliasResponse.h>
 #include <tencentcloud/tse/v20201207/model/ModifyGovernanceInstancesRequest.h>
 #include <tencentcloud/tse/v20201207/model/ModifyGovernanceInstancesResponse.h>
+#include <tencentcloud/tse/v20201207/model/ModifyGovernanceLaneGroupsRequest.h>
+#include <tencentcloud/tse/v20201207/model/ModifyGovernanceLaneGroupsResponse.h>
 #include <tencentcloud/tse/v20201207/model/ModifyGovernanceNamespacesRequest.h>
 #include <tencentcloud/tse/v20201207/model/ModifyGovernanceNamespacesResponse.h>
 #include <tencentcloud/tse/v20201207/model/ModifyGovernanceServicesRequest.h>
@@ -331,6 +339,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateGovernanceInstancesResponse> CreateGovernanceInstancesOutcome;
                 typedef std::future<CreateGovernanceInstancesOutcome> CreateGovernanceInstancesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::CreateGovernanceInstancesRequest&, CreateGovernanceInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGovernanceInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateGovernanceLaneGroupsResponse> CreateGovernanceLaneGroupsOutcome;
+                typedef std::future<CreateGovernanceLaneGroupsOutcome> CreateGovernanceLaneGroupsOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::CreateGovernanceLaneGroupsRequest&, CreateGovernanceLaneGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGovernanceLaneGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateGovernanceNamespacesResponse> CreateGovernanceNamespacesOutcome;
                 typedef std::future<CreateGovernanceNamespacesOutcome> CreateGovernanceNamespacesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::CreateGovernanceNamespacesRequest&, CreateGovernanceNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGovernanceNamespacesAsyncHandler;
@@ -403,6 +414,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteGovernanceInstancesByHostResponse> DeleteGovernanceInstancesByHostOutcome;
                 typedef std::future<DeleteGovernanceInstancesByHostOutcome> DeleteGovernanceInstancesByHostOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DeleteGovernanceInstancesByHostRequest&, DeleteGovernanceInstancesByHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGovernanceInstancesByHostAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGovernanceLaneGroupsResponse> DeleteGovernanceLaneGroupsOutcome;
+                typedef std::future<DeleteGovernanceLaneGroupsOutcome> DeleteGovernanceLaneGroupsOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DeleteGovernanceLaneGroupsRequest&, DeleteGovernanceLaneGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGovernanceLaneGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteGovernanceNamespacesResponse> DeleteGovernanceNamespacesOutcome;
                 typedef std::future<DeleteGovernanceNamespacesOutcome> DeleteGovernanceNamespacesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DeleteGovernanceNamespacesRequest&, DeleteGovernanceNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGovernanceNamespacesAsyncHandler;
@@ -505,6 +519,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGovernanceInstancesResponse> DescribeGovernanceInstancesOutcome;
                 typedef std::future<DescribeGovernanceInstancesOutcome> DescribeGovernanceInstancesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeGovernanceInstancesRequest&, DescribeGovernanceInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGovernanceInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGovernanceLaneGroupsResponse> DescribeGovernanceLaneGroupsOutcome;
+                typedef std::future<DescribeGovernanceLaneGroupsOutcome> DescribeGovernanceLaneGroupsOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeGovernanceLaneGroupsRequest&, DescribeGovernanceLaneGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGovernanceLaneGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGovernanceNamespacesResponse> DescribeGovernanceNamespacesOutcome;
                 typedef std::future<DescribeGovernanceNamespacesOutcome> DescribeGovernanceNamespacesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeGovernanceNamespacesRequest&, DescribeGovernanceNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGovernanceNamespacesAsyncHandler;
@@ -601,6 +618,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyGovernanceInstancesResponse> ModifyGovernanceInstancesOutcome;
                 typedef std::future<ModifyGovernanceInstancesOutcome> ModifyGovernanceInstancesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::ModifyGovernanceInstancesRequest&, ModifyGovernanceInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGovernanceInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyGovernanceLaneGroupsResponse> ModifyGovernanceLaneGroupsOutcome;
+                typedef std::future<ModifyGovernanceLaneGroupsOutcome> ModifyGovernanceLaneGroupsOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::ModifyGovernanceLaneGroupsRequest&, ModifyGovernanceLaneGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGovernanceLaneGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyGovernanceNamespacesResponse> ModifyGovernanceNamespacesOutcome;
                 typedef std::future<ModifyGovernanceNamespacesOutcome> ModifyGovernanceNamespacesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::ModifyGovernanceNamespacesRequest&, ModifyGovernanceNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGovernanceNamespacesAsyncHandler;
@@ -798,6 +818,15 @@ namespace TencentCloud
                 CreateGovernanceInstancesOutcome CreateGovernanceInstances(const Model::CreateGovernanceInstancesRequest &request);
                 void CreateGovernanceInstancesAsync(const Model::CreateGovernanceInstancesRequest& request, const CreateGovernanceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateGovernanceInstancesOutcomeCallable CreateGovernanceInstancesCallable(const Model::CreateGovernanceInstancesRequest& request);
+
+                /**
+                 *创建泳道组
+                 * @param req CreateGovernanceLaneGroupsRequest
+                 * @return CreateGovernanceLaneGroupsOutcome
+                 */
+                CreateGovernanceLaneGroupsOutcome CreateGovernanceLaneGroups(const Model::CreateGovernanceLaneGroupsRequest &request);
+                void CreateGovernanceLaneGroupsAsync(const Model::CreateGovernanceLaneGroupsRequest& request, const CreateGovernanceLaneGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGovernanceLaneGroupsOutcomeCallable CreateGovernanceLaneGroupsCallable(const Model::CreateGovernanceLaneGroupsRequest& request);
 
                 /**
                  *创建治理中心命名空间
@@ -1014,6 +1043,15 @@ namespace TencentCloud
                 DeleteGovernanceInstancesByHostOutcome DeleteGovernanceInstancesByHost(const Model::DeleteGovernanceInstancesByHostRequest &request);
                 void DeleteGovernanceInstancesByHostAsync(const Model::DeleteGovernanceInstancesByHostRequest& request, const DeleteGovernanceInstancesByHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteGovernanceInstancesByHostOutcomeCallable DeleteGovernanceInstancesByHostCallable(const Model::DeleteGovernanceInstancesByHostRequest& request);
+
+                /**
+                 *删除泳道组
+                 * @param req DeleteGovernanceLaneGroupsRequest
+                 * @return DeleteGovernanceLaneGroupsOutcome
+                 */
+                DeleteGovernanceLaneGroupsOutcome DeleteGovernanceLaneGroups(const Model::DeleteGovernanceLaneGroupsRequest &request);
+                void DeleteGovernanceLaneGroupsAsync(const Model::DeleteGovernanceLaneGroupsRequest& request, const DeleteGovernanceLaneGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGovernanceLaneGroupsOutcomeCallable DeleteGovernanceLaneGroupsCallable(const Model::DeleteGovernanceLaneGroupsRequest& request);
 
                 /**
                  *删除治理中心命名空间
@@ -1322,6 +1360,15 @@ namespace TencentCloud
                 DescribeGovernanceInstancesOutcomeCallable DescribeGovernanceInstancesCallable(const Model::DescribeGovernanceInstancesRequest& request);
 
                 /**
+                 *查询泳道组列表
+                 * @param req DescribeGovernanceLaneGroupsRequest
+                 * @return DescribeGovernanceLaneGroupsOutcome
+                 */
+                DescribeGovernanceLaneGroupsOutcome DescribeGovernanceLaneGroups(const Model::DescribeGovernanceLaneGroupsRequest &request);
+                void DescribeGovernanceLaneGroupsAsync(const Model::DescribeGovernanceLaneGroupsRequest& request, const DescribeGovernanceLaneGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGovernanceLaneGroupsOutcomeCallable DescribeGovernanceLaneGroupsCallable(const Model::DescribeGovernanceLaneGroupsRequest& request);
+
+                /**
                  *查询服务治理中心命名空间列表
                  * @param req DescribeGovernanceNamespacesRequest
                  * @return DescribeGovernanceNamespacesOutcome
@@ -1608,6 +1655,15 @@ namespace TencentCloud
                 ModifyGovernanceInstancesOutcome ModifyGovernanceInstances(const Model::ModifyGovernanceInstancesRequest &request);
                 void ModifyGovernanceInstancesAsync(const Model::ModifyGovernanceInstancesRequest& request, const ModifyGovernanceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyGovernanceInstancesOutcomeCallable ModifyGovernanceInstancesCallable(const Model::ModifyGovernanceInstancesRequest& request);
+
+                /**
+                 *创建泳道组
+                 * @param req ModifyGovernanceLaneGroupsRequest
+                 * @return ModifyGovernanceLaneGroupsOutcome
+                 */
+                ModifyGovernanceLaneGroupsOutcome ModifyGovernanceLaneGroups(const Model::ModifyGovernanceLaneGroupsRequest &request);
+                void ModifyGovernanceLaneGroupsAsync(const Model::ModifyGovernanceLaneGroupsRequest& request, const ModifyGovernanceLaneGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyGovernanceLaneGroupsOutcomeCallable ModifyGovernanceLaneGroupsCallable(const Model::ModifyGovernanceLaneGroupsRequest& request);
 
                 /**
                  *修改治理中心命名空间

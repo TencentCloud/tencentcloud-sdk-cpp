@@ -47,27 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取封装格式，可选值：
-<li>mp4 </li>
-<li>mov </li>
-不填则使用视频导出编码配置。
-                     * @return Container 封装格式，可选值：
-<li>mp4 </li>
-<li>mov </li>
-不填则使用视频导出编码配置。
+                     * 获取<p>封装格式，可选值：</p><li>mp4 </li><li>mov </li>不填则使用视频导出编码配置。
+                     * @return Container <p>封装格式，可选值：</p><li>mp4 </li><li>mov </li>不填则使用视频导出编码配置。
                      * 
                      */
                     std::string GetContainer() const;
 
                     /**
-                     * 设置封装格式，可选值：
-<li>mp4 </li>
-<li>mov </li>
-不填则使用视频导出编码配置。
-                     * @param _container 封装格式，可选值：
-<li>mp4 </li>
-<li>mov </li>
-不填则使用视频导出编码配置。
+                     * 设置<p>封装格式，可选值：</p><li>mp4 </li><li>mov </li>不填则使用视频导出编码配置。
+                     * @param _container <p>封装格式，可选值：</p><li>mp4 </li><li>mov </li>不填则使用视频导出编码配置。
                      * 
                      */
                     void SetContainer(const std::string& _container);
@@ -80,35 +68,15 @@ namespace TencentCloud
                     bool ContainerHasBeenSet() const;
 
                     /**
-                     * 获取视频短边尺寸，取值范围： [128, 4096]，单位：px。
-视频最后的分辨率，根据短边尺寸和宽高比进行计算。
-例如：项目的宽高比是 16：9 ：
-<li>短边尺寸为 1080，则导出视频的分辨率为 1920 * 1080。</li>
-<li>短边尺寸为 720，则导出视频的分辨率为 1280 * 720</li>
-不填则使用视频导出编码配置。
-                     * @return ShortEdge 视频短边尺寸，取值范围： [128, 4096]，单位：px。
-视频最后的分辨率，根据短边尺寸和宽高比进行计算。
-例如：项目的宽高比是 16：9 ：
-<li>短边尺寸为 1080，则导出视频的分辨率为 1920 * 1080。</li>
-<li>短边尺寸为 720，则导出视频的分辨率为 1280 * 720</li>
-不填则使用视频导出编码配置。
+                     * 获取<p>视频短边尺寸，取值范围： [128, 4096]，单位：px。<br>视频最后的分辨率，根据短边尺寸和宽高比进行计算。<br>例如：项目的宽高比是 16：9 ：</p><li>短边尺寸为 1080，则导出视频的分辨率为 1920 * 1080。</li><li>短边尺寸为 720，则导出视频的分辨率为 1280 * 720</li>不填则使用视频导出编码配置。
+                     * @return ShortEdge <p>视频短边尺寸，取值范围： [128, 4096]，单位：px。<br>视频最后的分辨率，根据短边尺寸和宽高比进行计算。<br>例如：项目的宽高比是 16：9 ：</p><li>短边尺寸为 1080，则导出视频的分辨率为 1920 * 1080。</li><li>短边尺寸为 720，则导出视频的分辨率为 1280 * 720</li>不填则使用视频导出编码配置。
                      * 
                      */
                     uint64_t GetShortEdge() const;
 
                     /**
-                     * 设置视频短边尺寸，取值范围： [128, 4096]，单位：px。
-视频最后的分辨率，根据短边尺寸和宽高比进行计算。
-例如：项目的宽高比是 16：9 ：
-<li>短边尺寸为 1080，则导出视频的分辨率为 1920 * 1080。</li>
-<li>短边尺寸为 720，则导出视频的分辨率为 1280 * 720</li>
-不填则使用视频导出编码配置。
-                     * @param _shortEdge 视频短边尺寸，取值范围： [128, 4096]，单位：px。
-视频最后的分辨率，根据短边尺寸和宽高比进行计算。
-例如：项目的宽高比是 16：9 ：
-<li>短边尺寸为 1080，则导出视频的分辨率为 1920 * 1080。</li>
-<li>短边尺寸为 720，则导出视频的分辨率为 1280 * 720</li>
-不填则使用视频导出编码配置。
+                     * 设置<p>视频短边尺寸，取值范围： [128, 4096]，单位：px。<br>视频最后的分辨率，根据短边尺寸和宽高比进行计算。<br>例如：项目的宽高比是 16：9 ：</p><li>短边尺寸为 1080，则导出视频的分辨率为 1920 * 1080。</li><li>短边尺寸为 720，则导出视频的分辨率为 1280 * 720</li>不填则使用视频导出编码配置。
+                     * @param _shortEdge <p>视频短边尺寸，取值范围： [128, 4096]，单位：px。<br>视频最后的分辨率，根据短边尺寸和宽高比进行计算。<br>例如：项目的宽高比是 16：9 ：</p><li>短边尺寸为 1080，则导出视频的分辨率为 1920 * 1080。</li><li>短边尺寸为 720，则导出视频的分辨率为 1280 * 720</li>不填则使用视频导出编码配置。
                      * 
                      */
                     void SetShortEdge(const uint64_t& _shortEdge);
@@ -121,19 +89,15 @@ namespace TencentCloud
                     bool ShortEdgeHasBeenSet() const;
 
                     /**
-                     * 获取指定码率，单位 bps。当该参数为 0 时则不强制限定码率。
-不填则使用视频导出编码配置。
-                     * @return VideoBitrate 指定码率，单位 bps。当该参数为 0 时则不强制限定码率。
-不填则使用视频导出编码配置。
+                     * 获取<p>指定码率，单位 bps。当该参数为 0 时则不强制限定码率。<br>不填则使用视频导出编码配置。</p>
+                     * @return VideoBitrate <p>指定码率，单位 bps。当该参数为 0 时则不强制限定码率。<br>不填则使用视频导出编码配置。</p>
                      * 
                      */
                     uint64_t GetVideoBitrate() const;
 
                     /**
-                     * 设置指定码率，单位 bps。当该参数为 0 时则不强制限定码率。
-不填则使用视频导出编码配置。
-                     * @param _videoBitrate 指定码率，单位 bps。当该参数为 0 时则不强制限定码率。
-不填则使用视频导出编码配置。
+                     * 设置<p>指定码率，单位 bps。当该参数为 0 时则不强制限定码率。<br>不填则使用视频导出编码配置。</p>
+                     * @param _videoBitrate <p>指定码率，单位 bps。当该参数为 0 时则不强制限定码率。<br>不填则使用视频导出编码配置。</p>
                      * 
                      */
                     void SetVideoBitrate(const uint64_t& _videoBitrate);
@@ -146,15 +110,15 @@ namespace TencentCloud
                     bool VideoBitrateHasBeenSet() const;
 
                     /**
-                     * 获取帧率。取值范围：[15, 60]，不填默认值为 25。
-                     * @return FrameRate 帧率。取值范围：[15, 60]，不填默认值为 25。
+                     * 获取<p>帧率。取值范围：[15, 60]，不填默认值为 25。</p><p>单位：帧</p>
+                     * @return FrameRate <p>帧率。取值范围：[15, 60]，不填默认值为 25。</p><p>单位：帧</p>
                      * 
                      */
                     double GetFrameRate() const;
 
                     /**
-                     * 设置帧率。取值范围：[15, 60]，不填默认值为 25。
-                     * @param _frameRate 帧率。取值范围：[15, 60]，不填默认值为 25。
+                     * 设置<p>帧率。取值范围：[15, 60]，不填默认值为 25。</p><p>单位：帧</p>
+                     * @param _frameRate <p>帧率。取值范围：[15, 60]，不填默认值为 25。</p><p>单位：帧</p>
                      * 
                      */
                     void SetFrameRate(const double& _frameRate);
@@ -167,27 +131,15 @@ namespace TencentCloud
                     bool FrameRateHasBeenSet() const;
 
                     /**
-                     * 获取是否去除视频数据，可选值：
-<li>0：保留；</li>
-<li>1：去除。</li>
-不填则使用视频导出编码配置。
-                     * @return RemoveVideo 是否去除视频数据，可选值：
-<li>0：保留；</li>
-<li>1：去除。</li>
-不填则使用视频导出编码配置。
+                     * 获取<p>是否去除视频数据，可选值：</p><li>0：保留；</li><li>1：去除。</li>不填则使用视频导出编码配置。
+                     * @return RemoveVideo <p>是否去除视频数据，可选值：</p><li>0：保留；</li><li>1：去除。</li>不填则使用视频导出编码配置。
                      * 
                      */
                     int64_t GetRemoveVideo() const;
 
                     /**
-                     * 设置是否去除视频数据，可选值：
-<li>0：保留；</li>
-<li>1：去除。</li>
-不填则使用视频导出编码配置。
-                     * @param _removeVideo 是否去除视频数据，可选值：
-<li>0：保留；</li>
-<li>1：去除。</li>
-不填则使用视频导出编码配置。
+                     * 设置<p>是否去除视频数据，可选值：</p><li>0：保留；</li><li>1：去除。</li>不填则使用视频导出编码配置。
+                     * @param _removeVideo <p>是否去除视频数据，可选值：</p><li>0：保留；</li><li>1：去除。</li>不填则使用视频导出编码配置。
                      * 
                      */
                     void SetRemoveVideo(const int64_t& _removeVideo);
@@ -200,27 +152,15 @@ namespace TencentCloud
                     bool RemoveVideoHasBeenSet() const;
 
                     /**
-                     * 获取是否去除音频数据，可选值：
-<li>0：保留；</li>
-<li>1：去除。</li>
-不填则使用视频导出编码配置。
-                     * @return RemoveAudio 是否去除音频数据，可选值：
-<li>0：保留；</li>
-<li>1：去除。</li>
-不填则使用视频导出编码配置。
+                     * 获取<p>是否去除音频数据，可选值：</p><li>0：保留；</li><li>1：去除。</li>不填则使用视频导出编码配置。
+                     * @return RemoveAudio <p>是否去除音频数据，可选值：</p><li>0：保留；</li><li>1：去除。</li>不填则使用视频导出编码配置。
                      * 
                      */
                     int64_t GetRemoveAudio() const;
 
                     /**
-                     * 设置是否去除音频数据，可选值：
-<li>0：保留；</li>
-<li>1：去除。</li>
-不填则使用视频导出编码配置。
-                     * @param _removeAudio 是否去除音频数据，可选值：
-<li>0：保留；</li>
-<li>1：去除。</li>
-不填则使用视频导出编码配置。
+                     * 设置<p>是否去除音频数据，可选值：</p><li>0：保留；</li><li>1：去除。</li>不填则使用视频导出编码配置。
+                     * @param _removeAudio <p>是否去除音频数据，可选值：</p><li>0：保留；</li><li>1：去除。</li>不填则使用视频导出编码配置。
                      * 
                      */
                     void SetRemoveAudio(const int64_t& _removeAudio);
@@ -233,15 +173,15 @@ namespace TencentCloud
                     bool RemoveAudioHasBeenSet() const;
 
                     /**
-                     * 获取片段起始时间，单位：毫秒。
-                     * @return StartTime 片段起始时间，单位：毫秒。
+                     * 获取<p>片段起始时间，单位：毫秒。</p>
+                     * @return StartTime <p>片段起始时间，单位：毫秒。</p>
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置片段起始时间，单位：毫秒。
-                     * @param _startTime 片段起始时间，单位：毫秒。
+                     * 设置<p>片段起始时间，单位：毫秒。</p>
+                     * @param _startTime <p>片段起始时间，单位：毫秒。</p>
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -254,15 +194,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取片段结束时间，单位：毫秒。
-                     * @return EndTime 片段结束时间，单位：毫秒。
+                     * 获取<p>片段结束时间，单位：毫秒。</p>
+                     * @return EndTime <p>片段结束时间，单位：毫秒。</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置片段结束时间，单位：毫秒。
-                     * @param _endTime 片段结束时间，单位：毫秒。
+                     * 设置<p>片段结束时间，单位：毫秒。</p>
+                     * @param _endTime <p>片段结束时间，单位：毫秒。</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -277,64 +217,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 封装格式，可选值：
-<li>mp4 </li>
-<li>mov </li>
-不填则使用视频导出编码配置。
+                     * <p>封装格式，可选值：</p><li>mp4 </li><li>mov </li>不填则使用视频导出编码配置。
                      */
                     std::string m_container;
                     bool m_containerHasBeenSet;
 
                     /**
-                     * 视频短边尺寸，取值范围： [128, 4096]，单位：px。
-视频最后的分辨率，根据短边尺寸和宽高比进行计算。
-例如：项目的宽高比是 16：9 ：
-<li>短边尺寸为 1080，则导出视频的分辨率为 1920 * 1080。</li>
-<li>短边尺寸为 720，则导出视频的分辨率为 1280 * 720</li>
-不填则使用视频导出编码配置。
+                     * <p>视频短边尺寸，取值范围： [128, 4096]，单位：px。<br>视频最后的分辨率，根据短边尺寸和宽高比进行计算。<br>例如：项目的宽高比是 16：9 ：</p><li>短边尺寸为 1080，则导出视频的分辨率为 1920 * 1080。</li><li>短边尺寸为 720，则导出视频的分辨率为 1280 * 720</li>不填则使用视频导出编码配置。
                      */
                     uint64_t m_shortEdge;
                     bool m_shortEdgeHasBeenSet;
 
                     /**
-                     * 指定码率，单位 bps。当该参数为 0 时则不强制限定码率。
-不填则使用视频导出编码配置。
+                     * <p>指定码率，单位 bps。当该参数为 0 时则不强制限定码率。<br>不填则使用视频导出编码配置。</p>
                      */
                     uint64_t m_videoBitrate;
                     bool m_videoBitrateHasBeenSet;
 
                     /**
-                     * 帧率。取值范围：[15, 60]，不填默认值为 25。
+                     * <p>帧率。取值范围：[15, 60]，不填默认值为 25。</p><p>单位：帧</p>
                      */
                     double m_frameRate;
                     bool m_frameRateHasBeenSet;
 
                     /**
-                     * 是否去除视频数据，可选值：
-<li>0：保留；</li>
-<li>1：去除。</li>
-不填则使用视频导出编码配置。
+                     * <p>是否去除视频数据，可选值：</p><li>0：保留；</li><li>1：去除。</li>不填则使用视频导出编码配置。
                      */
                     int64_t m_removeVideo;
                     bool m_removeVideoHasBeenSet;
 
                     /**
-                     * 是否去除音频数据，可选值：
-<li>0：保留；</li>
-<li>1：去除。</li>
-不填则使用视频导出编码配置。
+                     * <p>是否去除音频数据，可选值：</p><li>0：保留；</li><li>1：去除。</li>不填则使用视频导出编码配置。
                      */
                     int64_t m_removeAudio;
                     bool m_removeAudioHasBeenSet;
 
                     /**
-                     * 片段起始时间，单位：毫秒。
+                     * <p>片段起始时间，单位：毫秒。</p>
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 片段结束时间，单位：毫秒。
+                     * <p>片段结束时间，单位：毫秒。</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;

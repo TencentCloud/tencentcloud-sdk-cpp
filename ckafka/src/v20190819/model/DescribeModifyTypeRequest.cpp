@@ -30,7 +30,8 @@ DescribeModifyTypeRequest::DescribeModifyTypeRequest() :
     m_partitionHasBeenSet(false),
     m_topicHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_modifyEntryHasBeenSet(false)
+    m_modifyEntryHasBeenSet(false),
+    m_modifyZoneHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string DescribeModifyTypeRequest::ToJsonString() const
         string key = "ModifyEntry";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_modifyEntry.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifyZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_modifyZone, allocator);
     }
 
 
@@ -239,6 +248,22 @@ void DescribeModifyTypeRequest::SetModifyEntry(const string& _modifyEntry)
 bool DescribeModifyTypeRequest::ModifyEntryHasBeenSet() const
 {
     return m_modifyEntryHasBeenSet;
+}
+
+bool DescribeModifyTypeRequest::GetModifyZone() const
+{
+    return m_modifyZone;
+}
+
+void DescribeModifyTypeRequest::SetModifyZone(const bool& _modifyZone)
+{
+    m_modifyZone = _modifyZone;
+    m_modifyZoneHasBeenSet = true;
+}
+
+bool DescribeModifyTypeRequest::ModifyZoneHasBeenSet() const
+{
+    return m_modifyZoneHasBeenSet;
 }
 
 

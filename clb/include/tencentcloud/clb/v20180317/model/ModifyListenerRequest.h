@@ -424,15 +424,15 @@ namespace TencentCloud
                     bool SnatEnableHasBeenSet() const;
 
                     /**
-                     * 获取<p>数据压缩模式</p>
-                     * @return DataCompressMode <p>数据压缩模式</p>
+                     * 获取<p>数据压缩模式</p><p>枚举值：</p><ul><li>transparent： 透明模式（默认值）</li><li>compatibility： 兼容模式（开启 gzip 兼容压缩配置）</li></ul>
+                     * @return DataCompressMode <p>数据压缩模式</p><p>枚举值：</p><ul><li>transparent： 透明模式（默认值）</li><li>compatibility： 兼容模式（开启 gzip 兼容压缩配置）</li></ul>
                      * 
                      */
                     std::string GetDataCompressMode() const;
 
                     /**
-                     * 设置<p>数据压缩模式</p>
-                     * @param _dataCompressMode <p>数据压缩模式</p>
+                     * 设置<p>数据压缩模式</p><p>枚举值：</p><ul><li>transparent： 透明模式（默认值）</li><li>compatibility： 兼容模式（开启 gzip 兼容压缩配置）</li></ul>
+                     * @param _dataCompressMode <p>数据压缩模式</p><p>枚举值：</p><ul><li>transparent： 透明模式（默认值）</li><li>compatibility： 兼容模式（开启 gzip 兼容压缩配置）</li></ul>
                      * 
                      */
                     void SetDataCompressMode(const std::string& _dataCompressMode);
@@ -660,7 +660,7 @@ namespace TencentCloud
                     bool m_snatEnableHasBeenSet;
 
                     /**
-                     * <p>数据压缩模式</p>
+                     * <p>数据压缩模式</p><p>枚举值：</p><ul><li>transparent： 透明模式（默认值）</li><li>compatibility： 兼容模式（开启 gzip 兼容压缩配置）</li></ul>
                      */
                     std::string m_dataCompressMode;
                     bool m_dataCompressModeHasBeenSet;

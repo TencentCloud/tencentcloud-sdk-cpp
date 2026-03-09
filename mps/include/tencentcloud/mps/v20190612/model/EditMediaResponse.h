@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取编辑视频的任务 ID，可以通过该 ID 查询编辑任务的状态。
-                     * @return TaskId 编辑视频的任务 ID，可以通过该 ID 查询编辑任务的状态。
+                     * 获取<p>编辑视频的任务 ID，可以通过该 ID 查询编辑任务的状态。</p>
+                     * @return TaskId <p>编辑视频的任务 ID，可以通过该 ID 查询编辑任务的状态。</p>
                      * 
                      */
                     std::string GetTaskId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 编辑视频的任务 ID，可以通过该 ID 查询编辑任务的状态。
+                     * <p>编辑视频的任务 ID，可以通过该 ID 查询编辑任务的状态。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取cls日志中的字段名
-                     * @return ClsField cls日志中的字段名
+                     * 获取<p>cls日志中的字段名</p>
+                     * @return ClsField <p>cls日志中的字段名</p>
                      * 
                      */
                     std::string GetClsField() const;
 
                     /**
-                     * 设置cls日志中的字段名
-                     * @param _clsField cls日志中的字段名
+                     * 设置<p>cls日志中的字段名</p>
+                     * @param _clsField <p>cls日志中的字段名</p>
                      * 
                      */
                     void SetClsField(const std::string& _clsField);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ClsFieldHasBeenSet() const;
 
                     /**
-                     * 获取数据湖计算服务表的列名
-                     * @return DlcField 数据湖计算服务表的列名
+                     * 获取<p>数据湖计算服务表的列名</p>
+                     * @return DlcField <p>数据湖计算服务表的列名</p>
                      * 
                      */
                     std::string GetDlcField() const;
 
                     /**
-                     * 设置数据湖计算服务表的列名
-                     * @param _dlcField 数据湖计算服务表的列名
+                     * 设置<p>数据湖计算服务表的列名</p>
+                     * @param _dlcField <p>数据湖计算服务表的列名</p>
                      * 
                      */
                     void SetDlcField(const std::string& _dlcField);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DlcFieldHasBeenSet() const;
 
                     /**
-                     * 获取数据湖计算服务字段类型
-                     * @return DlcFieldType 数据湖计算服务字段类型
+                     * 获取<p>数据湖计算服务字段类型</p><p>枚举值：</p><ul><li>int|string|struct等： 参考 <a href="https://cloud.tencent.com/document/product/1342/53778#Column">DLC  cloumn中的Type 定义 </a></li></ul>
+                     * @return DlcFieldType <p>数据湖计算服务字段类型</p><p>枚举值：</p><ul><li>int|string|struct等： 参考 <a href="https://cloud.tencent.com/document/product/1342/53778#Column">DLC  cloumn中的Type 定义 </a></li></ul>
                      * 
                      */
                     std::string GetDlcFieldType() const;
 
                     /**
-                     * 设置数据湖计算服务字段类型
-                     * @param _dlcFieldType 数据湖计算服务字段类型
+                     * 设置<p>数据湖计算服务字段类型</p><p>枚举值：</p><ul><li>int|string|struct等： 参考 <a href="https://cloud.tencent.com/document/product/1342/53778#Column">DLC  cloumn中的Type 定义 </a></li></ul>
+                     * @param _dlcFieldType <p>数据湖计算服务字段类型</p><p>枚举值：</p><ul><li>int|string|struct等： 参考 <a href="https://cloud.tencent.com/document/product/1342/53778#Column">DLC  cloumn中的Type 定义 </a></li></ul>
                      * 
                      */
                     void SetDlcFieldType(const std::string& _dlcFieldType);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DlcFieldTypeHasBeenSet() const;
 
                     /**
-                     * 获取解析失败填充字段
-                     * @return FillField 解析失败填充字段
+                     * 获取<p>解析失败填充字段</p>
+                     * @return FillField <p>解析失败填充字段</p>
                      * 
                      */
                     std::string GetFillField() const;
 
                     /**
-                     * 设置解析失败填充字段
-                     * @param _fillField 解析失败填充字段
+                     * 设置<p>解析失败填充字段</p>
+                     * @param _fillField <p>解析失败填充字段</p>
                      * 
                      */
                     void SetFillField(const std::string& _fillField);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool FillFieldHasBeenSet() const;
 
                     /**
-                     * 获取是否禁用
-                     * @return Disable 是否禁用
+                     * 获取<p>是否禁用</p>
+                     * @return Disable <p>是否禁用</p>
                      * 
                      */
                     bool GetDisable() const;
 
                     /**
-                     * 设置是否禁用
-                     * @param _disable 是否禁用
+                     * 设置<p>是否禁用</p>
+                     * @param _disable <p>是否禁用</p>
                      * 
                      */
                     void SetDisable(const bool& _disable);
@@ -154,31 +154,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * cls日志中的字段名
+                     * <p>cls日志中的字段名</p>
                      */
                     std::string m_clsField;
                     bool m_clsFieldHasBeenSet;
 
                     /**
-                     * 数据湖计算服务表的列名
+                     * <p>数据湖计算服务表的列名</p>
                      */
                     std::string m_dlcField;
                     bool m_dlcFieldHasBeenSet;
 
                     /**
-                     * 数据湖计算服务字段类型
+                     * <p>数据湖计算服务字段类型</p><p>枚举值：</p><ul><li>int|string|struct等： 参考 <a href="https://cloud.tencent.com/document/product/1342/53778#Column">DLC  cloumn中的Type 定义 </a></li></ul>
                      */
                     std::string m_dlcFieldType;
                     bool m_dlcFieldTypeHasBeenSet;
 
                     /**
-                     * 解析失败填充字段
+                     * <p>解析失败填充字段</p>
                      */
                     std::string m_fillField;
                     bool m_fillFieldHasBeenSet;
 
                     /**
-                     * 是否禁用
+                     * <p>是否禁用</p>
                      */
                     bool m_disable;
                     bool m_disableHasBeenSet;

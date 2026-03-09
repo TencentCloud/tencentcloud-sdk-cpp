@@ -9340,6 +9340,56 @@ VpcClient::DescribeCustomerGatewaysOutcomeCallable VpcClient::DescribeCustomerGa
     return prom->get_future();
 }
 
+VpcClient::DescribeDesignatedZonesOutcome VpcClient::DescribeDesignatedZones(const DescribeDesignatedZonesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDesignatedZones");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDesignatedZonesResponse rsp = DescribeDesignatedZonesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDesignatedZonesOutcome(rsp);
+        else
+            return DescribeDesignatedZonesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDesignatedZonesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeDesignatedZonesAsync(const DescribeDesignatedZonesRequest& request, const DescribeDesignatedZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDesignatedZonesRequest&;
+    using Resp = DescribeDesignatedZonesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDesignatedZones", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VpcClient::DescribeDesignatedZonesOutcomeCallable VpcClient::DescribeDesignatedZonesCallable(const DescribeDesignatedZonesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDesignatedZonesOutcome>>();
+    DescribeDesignatedZonesAsync(
+    request,
+    [prom](
+        const VpcClient*,
+        const DescribeDesignatedZonesRequest&,
+        DescribeDesignatedZonesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VpcClient::DescribeDhcpIpsOutcome VpcClient::DescribeDhcpIps(const DescribeDhcpIpsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDhcpIps");

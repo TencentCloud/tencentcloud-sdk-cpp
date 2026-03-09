@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例Id
-                     * @return InstanceId ckafka集群实例Id
+                     * 获取<p>ckafka集群实例Id</p>
+                     * @return InstanceId <p>ckafka集群实例Id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id
-                     * @param _instanceId ckafka集群实例Id
+                     * 设置<p>ckafka集群实例Id</p>
+                     * @param _instanceId <p>ckafka集群实例Id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取升配后的带宽，单位mb
-                     * @return BandWidth 升配后的带宽，单位mb
+                     * 获取<p>升配后的带宽，单位mb</p>
+                     * @return BandWidth <p>升配后的带宽，单位mb</p>
                      * 
                      */
                     int64_t GetBandWidth() const;
 
                     /**
-                     * 设置升配后的带宽，单位mb
-                     * @param _bandWidth 升配后的带宽，单位mb
+                     * 设置<p>升配后的带宽，单位mb</p>
+                     * @param _bandWidth <p>升配后的带宽，单位mb</p>
                      * 
                      */
                     void SetBandWidth(const int64_t& _bandWidth);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool BandWidthHasBeenSet() const;
 
                     /**
-                     * 获取升配后的磁盘，单位G
-                     * @return DiskSize 升配后的磁盘，单位G
+                     * 获取<p>升配后的磁盘，单位G</p>
+                     * @return DiskSize <p>升配后的磁盘，单位G</p>
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置升配后的磁盘，单位G
-                     * @param _diskSize 升配后的磁盘，单位G
+                     * 设置<p>升配后的磁盘，单位G</p>
+                     * @param _diskSize <p>升配后的磁盘，单位G</p>
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取磁盘类型，例如 CLOUD_PREMIUM
-                     * @return DiskType 磁盘类型，例如 CLOUD_PREMIUM
+                     * 获取<p>磁盘类型，例如 CLOUD_PREMIUM</p>
+                     * @return DiskType <p>磁盘类型，例如 CLOUD_PREMIUM</p>
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置磁盘类型，例如 CLOUD_PREMIUM
-                     * @param _diskType 磁盘类型，例如 CLOUD_PREMIUM
+                     * 设置<p>磁盘类型，例如 CLOUD_PREMIUM</p>
+                     * @param _diskType <p>磁盘类型，例如 CLOUD_PREMIUM</p>
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取分区数量
-                     * @return Partition 分区数量
+                     * 获取<p>分区数量</p>
+                     * @return Partition <p>分区数量</p>
                      * 
                      */
                     int64_t GetPartition() const;
 
                     /**
-                     * 设置分区数量
-                     * @param _partition 分区数量
+                     * 设置<p>分区数量</p>
+                     * @param _partition <p>分区数量</p>
                      * 
                      */
                     void SetPartition(const int64_t& _partition);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool PartitionHasBeenSet() const;
 
                     /**
-                     * 获取topic数量
-                     * @return Topic topic数量
+                     * 获取<p>topic数量</p>
+                     * @return Topic <p>topic数量</p>
                      * 
                      */
                     int64_t GetTopic() const;
 
                     /**
-                     * 设置topic数量
-                     * @param _topic topic数量
+                     * 设置<p>topic数量</p>
+                     * @param _topic <p>topic数量</p>
                      * 
                      */
                     void SetTopic(const int64_t& _topic);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool TopicHasBeenSet() const;
 
                     /**
-                     * 获取实例类型例如 sp_ckafka_profession
-                     * @return Type 实例类型例如 sp_ckafka_profession
+                     * 获取<p>实例类型例如 sp_ckafka_profession</p>
+                     * @return Type <p>实例类型例如 sp_ckafka_profession</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置实例类型例如 sp_ckafka_profession
-                     * @param _type 实例类型例如 sp_ckafka_profession
+                     * 设置<p>实例类型例如 sp_ckafka_profession</p>
+                     * @param _type <p>实例类型例如 sp_ckafka_profession</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取变配入口
-                     * @return ModifyEntry 变配入口
+                     * 获取<p>变配入口</p>
+                     * @return ModifyEntry <p>变配入口</p>
                      * 
                      */
                     std::string GetModifyEntry() const;
 
                     /**
-                     * 设置变配入口
-                     * @param _modifyEntry 变配入口
+                     * 设置<p>变配入口</p>
+                     * @param _modifyEntry <p>变配入口</p>
                      * 
                      */
                     void SetModifyEntry(const std::string& _modifyEntry);
@@ -210,55 +210,82 @@ namespace TencentCloud
                      */
                     bool ModifyEntryHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否可用区变更  false: 非可用区变更  true: 可用区变更  默认false</p>
+                     * @return ModifyZone <p>是否可用区变更  false: 非可用区变更  true: 可用区变更  默认false</p>
+                     * 
+                     */
+                    bool GetModifyZone() const;
+
+                    /**
+                     * 设置<p>是否可用区变更  false: 非可用区变更  true: 可用区变更  默认false</p>
+                     * @param _modifyZone <p>是否可用区变更  false: 非可用区变更  true: 可用区变更  默认false</p>
+                     * 
+                     */
+                    void SetModifyZone(const bool& _modifyZone);
+
+                    /**
+                     * 判断参数 ModifyZone 是否已赋值
+                     * @return ModifyZone 是否已赋值
+                     * 
+                     */
+                    bool ModifyZoneHasBeenSet() const;
+
                 private:
 
                     /**
-                     * ckafka集群实例Id
+                     * <p>ckafka集群实例Id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 升配后的带宽，单位mb
+                     * <p>升配后的带宽，单位mb</p>
                      */
                     int64_t m_bandWidth;
                     bool m_bandWidthHasBeenSet;
 
                     /**
-                     * 升配后的磁盘，单位G
+                     * <p>升配后的磁盘，单位G</p>
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 磁盘类型，例如 CLOUD_PREMIUM
+                     * <p>磁盘类型，例如 CLOUD_PREMIUM</p>
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 分区数量
+                     * <p>分区数量</p>
                      */
                     int64_t m_partition;
                     bool m_partitionHasBeenSet;
 
                     /**
-                     * topic数量
+                     * <p>topic数量</p>
                      */
                     int64_t m_topic;
                     bool m_topicHasBeenSet;
 
                     /**
-                     * 实例类型例如 sp_ckafka_profession
+                     * <p>实例类型例如 sp_ckafka_profession</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 变配入口
+                     * <p>变配入口</p>
                      */
                     std::string m_modifyEntry;
                     bool m_modifyEntryHasBeenSet;
+
+                    /**
+                     * <p>是否可用区变更  false: 非可用区变更  true: 可用区变更  默认false</p>
+                     */
+                    bool m_modifyZone;
+                    bool m_modifyZoneHasBeenSet;
 
                 };
             }

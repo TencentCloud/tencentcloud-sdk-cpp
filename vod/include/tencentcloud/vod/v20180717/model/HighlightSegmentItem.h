@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取置信度。
-                     * @return Confidence 置信度。
+                     * 获取<p>置信度。</p>
+                     * @return Confidence <p>置信度。</p>
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置置信度。
-                     * @param _confidence 置信度。
+                     * 设置<p>置信度。</p>
+                     * @param _confidence <p>置信度。</p>
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取片段起始时间偏移。
-                     * @return StartTimeOffset 片段起始时间偏移。
+                     * 获取<p>片段起始时间偏移。</p><p>单位：秒</p>
+                     * @return StartTimeOffset <p>片段起始时间偏移。</p><p>单位：秒</p>
                      * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
-                     * 设置片段起始时间偏移。
-                     * @param _startTimeOffset 片段起始时间偏移。
+                     * 设置<p>片段起始时间偏移。</p><p>单位：秒</p>
+                     * @param _startTimeOffset <p>片段起始时间偏移。</p><p>单位：秒</p>
                      * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取片段结束时间偏移。
-                     * @return EndTimeOffset 片段结束时间偏移。
+                     * 获取<p>片段结束时间偏移。</p><p>单位：秒</p>
+                     * @return EndTimeOffset <p>片段结束时间偏移。</p><p>单位：秒</p>
                      * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
-                     * 设置片段结束时间偏移。
-                     * @param _endTimeOffset 片段结束时间偏移。
+                     * 设置<p>片段结束时间偏移。</p><p>单位：秒</p>
+                     * @param _endTimeOffset <p>片段结束时间偏移。</p><p>单位：秒</p>
                      * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 置信度。
+                     * <p>置信度。</p>
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 片段起始时间偏移。
+                     * <p>片段起始时间偏移。</p><p>单位：秒</p>
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
-                     * 片段结束时间偏移。
+                     * <p>片段结束时间偏移。</p><p>单位：秒</p>
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;

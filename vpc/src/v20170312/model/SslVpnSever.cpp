@@ -40,7 +40,8 @@ SslVpnSever::SslVpnSever() :
     m_eiamApplicationIdHasBeenSet(false),
     m_accessPolicyEnabledHasBeenSet(false),
     m_accessPolicyHasBeenSet(false),
-    m_spNameHasBeenSet(false)
+    m_spNameHasBeenSet(false),
+    m_dnsServersHasBeenSet(false)
 {
 }
 
@@ -262,6 +263,23 @@ CoreInternalOutcome SslVpnSever::Deserialize(const rapidjson::Value &value)
         m_spNameHasBeenSet = true;
     }
 
+    if (value.HasMember("DnsServers") && !value["DnsServers"].IsNull())
+    {
+        if (!value["DnsServers"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SslVpnSever.DnsServers` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dnsServers.Deserialize(value["DnsServers"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dnsServersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -439,6 +457,15 @@ void SslVpnSever::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "SpName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_spName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dnsServersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DnsServers";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dnsServers.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -762,5 +789,21 @@ void SslVpnSever::SetSpName(const string& _spName)
 bool SslVpnSever::SpNameHasBeenSet() const
 {
     return m_spNameHasBeenSet;
+}
+
+DnsServers SslVpnSever::GetDnsServers() const
+{
+    return m_dnsServers;
+}
+
+void SslVpnSever::SetDnsServers(const DnsServers& _dnsServers)
+{
+    m_dnsServers = _dnsServers;
+    m_dnsServersHasBeenSet = true;
+}
+
+bool SslVpnSever::DnsServersHasBeenSet() const
+{
+    return m_dnsServersHasBeenSet;
 }
 

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取CreateInstancePre返回固定为0，不能作为CheckTaskStatus的查询条件。只是为了保证和后台数据结构对齐。
-                     * @return FlowId CreateInstancePre返回固定为0，不能作为CheckTaskStatus的查询条件。只是为了保证和后台数据结构对齐。
+                     * 获取<p>CreateInstancePre返回固定为0，不能作为CheckTaskStatus的查询条件。只是为了保证和后台数据结构对齐。</p>
+                     * @return FlowId <p>CreateInstancePre返回固定为0，不能作为CheckTaskStatus的查询条件。只是为了保证和后台数据结构对齐。</p>
                      * 
                      */
                     int64_t GetFlowId() const;
 
                     /**
-                     * 设置CreateInstancePre返回固定为0，不能作为CheckTaskStatus的查询条件。只是为了保证和后台数据结构对齐。
-                     * @param _flowId CreateInstancePre返回固定为0，不能作为CheckTaskStatus的查询条件。只是为了保证和后台数据结构对齐。
+                     * 设置<p>CreateInstancePre返回固定为0，不能作为CheckTaskStatus的查询条件。只是为了保证和后台数据结构对齐。</p>
+                     * @param _flowId <p>CreateInstancePre返回固定为0，不能作为CheckTaskStatus的查询条件。只是为了保证和后台数据结构对齐。</p>
                      * 
                      */
                     void SetFlowId(const int64_t& _flowId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取订单号列表
-                     * @return DealNames 订单号列表
+                     * 获取<p>订单号列表</p>
+                     * @return DealNames <p>订单号列表</p>
                      * 
                      */
                     std::vector<std::string> GetDealNames() const;
 
                     /**
-                     * 设置订单号列表
-                     * @param _dealNames 订单号列表
+                     * 设置<p>订单号列表</p>
+                     * @param _dealNames <p>订单号列表</p>
                      * 
                      */
                     void SetDealNames(const std::vector<std::string>& _dealNames);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool DealNamesHasBeenSet() const;
 
                     /**
-                     * 获取ckafka集群实例Id，当购买多个实例时，默认返回购买的第一个实例 id
-                     * @return InstanceId ckafka集群实例Id，当购买多个实例时，默认返回购买的第一个实例 id
+                     * 获取<p>ckafka集群实例Id，当购买多个实例时，默认返回购买的第一个实例 id</p>
+                     * @return InstanceId <p>ckafka集群实例Id，当购买多个实例时，默认返回购买的第一个实例 id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例Id，当购买多个实例时，默认返回购买的第一个实例 id
-                     * @param _instanceId ckafka集群实例Id，当购买多个实例时，默认返回购买的第一个实例 id
+                     * 设置<p>ckafka集群实例Id，当购买多个实例时，默认返回购买的第一个实例 id</p>
+                     * @param _instanceId <p>ckafka集群实例Id，当购买多个实例时，默认返回购买的第一个实例 id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取订单和购买实例对应映射列表
-                     * @return DealNameInstanceIdMapping 订单和购买实例对应映射列表
+                     * 获取<p>订单和购买实例对应映射列表</p>
+                     * @return DealNameInstanceIdMapping <p>订单和购买实例对应映射列表</p>
                      * 
                      */
                     std::vector<DealInstanceDTO> GetDealNameInstanceIdMapping() const;
 
                     /**
-                     * 设置订单和购买实例对应映射列表
-                     * @param _dealNameInstanceIdMapping 订单和购买实例对应映射列表
+                     * 设置<p>订单和购买实例对应映射列表</p>
+                     * @param _dealNameInstanceIdMapping <p>订单和购买实例对应映射列表</p>
                      * 
                      */
                     void SetDealNameInstanceIdMapping(const std::vector<DealInstanceDTO>& _dealNameInstanceIdMapping);
@@ -131,31 +131,58 @@ namespace TencentCloud
                      */
                     bool DealNameInstanceIdMappingHasBeenSet() const;
 
+                    /**
+                     * 获取<p>CAM鉴权返回的eventId</p>
+                     * @return EventId <p>CAM鉴权返回的eventId</p>
+                     * 
+                     */
+                    std::string GetEventId() const;
+
+                    /**
+                     * 设置<p>CAM鉴权返回的eventId</p>
+                     * @param _eventId <p>CAM鉴权返回的eventId</p>
+                     * 
+                     */
+                    void SetEventId(const std::string& _eventId);
+
+                    /**
+                     * 判断参数 EventId 是否已赋值
+                     * @return EventId 是否已赋值
+                     * 
+                     */
+                    bool EventIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * CreateInstancePre返回固定为0，不能作为CheckTaskStatus的查询条件。只是为了保证和后台数据结构对齐。
+                     * <p>CreateInstancePre返回固定为0，不能作为CheckTaskStatus的查询条件。只是为了保证和后台数据结构对齐。</p>
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 订单号列表
+                     * <p>订单号列表</p>
                      */
                     std::vector<std::string> m_dealNames;
                     bool m_dealNamesHasBeenSet;
 
                     /**
-                     * ckafka集群实例Id，当购买多个实例时，默认返回购买的第一个实例 id
+                     * <p>ckafka集群实例Id，当购买多个实例时，默认返回购买的第一个实例 id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 订单和购买实例对应映射列表
+                     * <p>订单和购买实例对应映射列表</p>
                      */
                     std::vector<DealInstanceDTO> m_dealNameInstanceIdMapping;
                     bool m_dealNameInstanceIdMappingHasBeenSet;
+
+                    /**
+                     * <p>CAM鉴权返回的eventId</p>
+                     */
+                    std::string m_eventId;
+                    bool m_eventIdHasBeenSet;
 
                 };
             }

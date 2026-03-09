@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云服务器可用区。
-                     * @return Zone 云服务器可用区。
+                     * 获取<p>云服务器可用区。</p>
+                     * @return Zone <p>云服务器可用区。</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置云服务器可用区。
-                     * @param _zone 云服务器可用区。
+                     * 设置<p>云服务器可用区。</p>
+                     * @param _zone <p>云服务器可用区。</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取云服务器实例规格。
-                     * @return InstanceType 云服务器实例规格。
+                     * 获取<p>云服务器实例规格。详情参见<a href="https://cloud.tencent.com/document/product/213/11518">实例规格</a>描述</p>
+                     * @return InstanceType <p>云服务器实例规格。详情参见<a href="https://cloud.tencent.com/document/product/213/11518">实例规格</a>描述</p>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置云服务器实例规格。
-                     * @param _instanceType 云服务器实例规格。
+                     * 设置<p>云服务器实例规格。详情参见<a href="https://cloud.tencent.com/document/product/213/11518">实例规格</a>描述</p>
+                     * @param _instanceType <p>云服务器实例规格。详情参见<a href="https://cloud.tencent.com/document/product/213/11518">实例规格</a>描述</p>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云服务器可用区。
+                     * <p>云服务器可用区。</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 云服务器实例规格。
+                     * <p>云服务器实例规格。详情参见<a href="https://cloud.tencent.com/document/product/213/11518">实例规格</a>描述</p>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;

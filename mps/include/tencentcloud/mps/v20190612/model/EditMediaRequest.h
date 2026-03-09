@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取输入的视频文件信息。
-                     * @return FileInfos 输入的视频文件信息。
+                     * 获取<p>输入的视频文件信息。</p>
+                     * @return FileInfos <p>输入的视频文件信息。</p>
                      * 
                      */
                     std::vector<EditMediaFileInfo> GetFileInfos() const;
 
                     /**
-                     * 设置输入的视频文件信息。
-                     * @param _fileInfos 输入的视频文件信息。
+                     * 设置<p>输入的视频文件信息。</p>
+                     * @param _fileInfos <p>输入的视频文件信息。</p>
                      * 
                      */
                     void SetFileInfos(const std::vector<EditMediaFileInfo>& _fileInfos);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool FileInfosHasBeenSet() const;
 
                     /**
-                     * 获取媒体处理输出文件的目标存储。
-                     * @return OutputStorage 媒体处理输出文件的目标存储。
+                     * 获取<p>媒体处理输出文件的目标存储。</p>
+                     * @return OutputStorage <p>媒体处理输出文件的目标存储。</p>
                      * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
-                     * 设置媒体处理输出文件的目标存储。
-                     * @param _outputStorage 媒体处理输出文件的目标存储。
+                     * 设置<p>媒体处理输出文件的目标存储。</p>
+                     * @param _outputStorage <p>媒体处理输出文件的目标存储。</p>
                      * 
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
@@ -90,27 +90,15 @@ namespace TencentCloud
                     bool OutputStorageHasBeenSet() const;
 
                     /**
-                     * 获取媒体处理输出文件的目标路径。
-
-注意：对于复杂合成任务，路径中的文件名只可为数字、字母、-、_ 的组合，最长 64 个字符。
-
-                     * @return OutputObjectPath 媒体处理输出文件的目标路径。
-
-注意：对于复杂合成任务，路径中的文件名只可为数字、字母、-、_ 的组合，最长 64 个字符。
-
+                     * 获取<p>媒体处理输出文件的目标路径。</p><p>注意：对于复杂合成任务，路径中的文件名只可为数字、字母、-、_ 的组合，最长 64 个字符。</p>
+                     * @return OutputObjectPath <p>媒体处理输出文件的目标路径。</p><p>注意：对于复杂合成任务，路径中的文件名只可为数字、字母、-、_ 的组合，最长 64 个字符。</p>
                      * 
                      */
                     std::string GetOutputObjectPath() const;
 
                     /**
-                     * 设置媒体处理输出文件的目标路径。
-
-注意：对于复杂合成任务，路径中的文件名只可为数字、字母、-、_ 的组合，最长 64 个字符。
-
-                     * @param _outputObjectPath 媒体处理输出文件的目标路径。
-
-注意：对于复杂合成任务，路径中的文件名只可为数字、字母、-、_ 的组合，最长 64 个字符。
-
+                     * 设置<p>媒体处理输出文件的目标路径。</p><p>注意：对于复杂合成任务，路径中的文件名只可为数字、字母、-、_ 的组合，最长 64 个字符。</p>
+                     * @param _outputObjectPath <p>媒体处理输出文件的目标路径。</p><p>注意：对于复杂合成任务，路径中的文件名只可为数字、字母、-、_ 的组合，最长 64 个字符。</p>
                      * 
                      */
                     void SetOutputObjectPath(const std::string& _outputObjectPath);
@@ -123,15 +111,15 @@ namespace TencentCloud
                     bool OutputObjectPathHasBeenSet() const;
 
                     /**
-                     * 获取【剪辑】任务生成的文件配置。
-                     * @return OutputConfig 【剪辑】任务生成的文件配置。
+                     * 获取<p>【剪辑】任务生成的文件配置。</p>
+                     * @return OutputConfig <p>【剪辑】任务生成的文件配置。</p>
                      * 
                      */
                     EditMediaOutputConfig GetOutputConfig() const;
 
                     /**
-                     * 设置【剪辑】任务生成的文件配置。
-                     * @param _outputConfig 【剪辑】任务生成的文件配置。
+                     * 设置<p>【剪辑】任务生成的文件配置。</p>
+                     * @param _outputConfig <p>【剪辑】任务生成的文件配置。</p>
                      * 
                      */
                     void SetOutputConfig(const EditMediaOutputConfig& _outputConfig);
@@ -144,23 +132,15 @@ namespace TencentCloud
                     bool OutputConfigHasBeenSet() const;
 
                     /**
-                     * 获取【合成】任务配置。
-
-注意：当其不为空时，认为是合成任务，否则按剪辑任务处理。
-                     * @return ComposeConfig 【合成】任务配置。
-
-注意：当其不为空时，认为是合成任务，否则按剪辑任务处理。
+                     * 获取<p>【合成】任务配置。</p><p>注意：当其不为空时，认为是合成任务，否则按剪辑任务处理。</p>
+                     * @return ComposeConfig <p>【合成】任务配置。</p><p>注意：当其不为空时，认为是合成任务，否则按剪辑任务处理。</p>
                      * 
                      */
                     ComposeMediaConfig GetComposeConfig() const;
 
                     /**
-                     * 设置【合成】任务配置。
-
-注意：当其不为空时，认为是合成任务，否则按剪辑任务处理。
-                     * @param _composeConfig 【合成】任务配置。
-
-注意：当其不为空时，认为是合成任务，否则按剪辑任务处理。
+                     * 设置<p>【合成】任务配置。</p><p>注意：当其不为空时，认为是合成任务，否则按剪辑任务处理。</p>
+                     * @param _composeConfig <p>【合成】任务配置。</p><p>注意：当其不为空时，认为是合成任务，否则按剪辑任务处理。</p>
                      * 
                      */
                     void SetComposeConfig(const ComposeMediaConfig& _composeConfig);
@@ -173,15 +153,15 @@ namespace TencentCloud
                     bool ComposeConfigHasBeenSet() const;
 
                     /**
-                     * 获取任务的事件通知信息，不填代表不获取事件通知。
-                     * @return TaskNotifyConfig 任务的事件通知信息，不填代表不获取事件通知。
+                     * 获取<p>任务的事件通知信息，不填代表不获取事件通知。</p>
+                     * @return TaskNotifyConfig <p>任务的事件通知信息，不填代表不获取事件通知。</p>
                      * 
                      */
                     TaskNotifyConfig GetTaskNotifyConfig() const;
 
                     /**
-                     * 设置任务的事件通知信息，不填代表不获取事件通知。
-                     * @param _taskNotifyConfig 任务的事件通知信息，不填代表不获取事件通知。
+                     * 设置<p>任务的事件通知信息，不填代表不获取事件通知。</p>
+                     * @param _taskNotifyConfig <p>任务的事件通知信息，不填代表不获取事件通知。</p>
                      * 
                      */
                     void SetTaskNotifyConfig(const TaskNotifyConfig& _taskNotifyConfig);
@@ -194,15 +174,15 @@ namespace TencentCloud
                     bool TaskNotifyConfigHasBeenSet() const;
 
                     /**
-                     * 获取任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
-                     * @return TasksPriority 任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
+                     * 获取<p>任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>
+                     * @return TasksPriority <p>任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>
                      * 
                      */
                     int64_t GetTasksPriority() const;
 
                     /**
-                     * 设置任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
-                     * @param _tasksPriority 任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
+                     * 设置<p>任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>
+                     * @param _tasksPriority <p>任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>
                      * 
                      */
                     void SetTasksPriority(const int64_t& _tasksPriority);
@@ -215,15 +195,15 @@ namespace TencentCloud
                     bool TasksPriorityHasBeenSet() const;
 
                     /**
-                     * 获取用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-                     * @return SessionId 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 获取<p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
+                     * @return SessionId <p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-                     * @param _sessionId 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 设置<p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
+                     * @param _sessionId <p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -236,15 +216,15 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @return SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 获取<p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
+                     * @return SessionContext <p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @param _sessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 设置<p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
+                     * @param _sessionContext <p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -256,66 +236,88 @@ namespace TencentCloud
                      */
                     bool SessionContextHasBeenSet() const;
 
+                    /**
+                     * 获取<p>资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。</p>
+                     * @return ResourceId <p>资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。</p>
+                     * 
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置<p>资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。</p>
+                     * @param _resourceId <p>资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。</p>
+                     * 
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 输入的视频文件信息。
+                     * <p>输入的视频文件信息。</p>
                      */
                     std::vector<EditMediaFileInfo> m_fileInfos;
                     bool m_fileInfosHasBeenSet;
 
                     /**
-                     * 媒体处理输出文件的目标存储。
+                     * <p>媒体处理输出文件的目标存储。</p>
                      */
                     TaskOutputStorage m_outputStorage;
                     bool m_outputStorageHasBeenSet;
 
                     /**
-                     * 媒体处理输出文件的目标路径。
-
-注意：对于复杂合成任务，路径中的文件名只可为数字、字母、-、_ 的组合，最长 64 个字符。
-
+                     * <p>媒体处理输出文件的目标路径。</p><p>注意：对于复杂合成任务，路径中的文件名只可为数字、字母、-、_ 的组合，最长 64 个字符。</p>
                      */
                     std::string m_outputObjectPath;
                     bool m_outputObjectPathHasBeenSet;
 
                     /**
-                     * 【剪辑】任务生成的文件配置。
+                     * <p>【剪辑】任务生成的文件配置。</p>
                      */
                     EditMediaOutputConfig m_outputConfig;
                     bool m_outputConfigHasBeenSet;
 
                     /**
-                     * 【合成】任务配置。
-
-注意：当其不为空时，认为是合成任务，否则按剪辑任务处理。
+                     * <p>【合成】任务配置。</p><p>注意：当其不为空时，认为是合成任务，否则按剪辑任务处理。</p>
                      */
                     ComposeMediaConfig m_composeConfig;
                     bool m_composeConfigHasBeenSet;
 
                     /**
-                     * 任务的事件通知信息，不填代表不获取事件通知。
+                     * <p>任务的事件通知信息，不填代表不获取事件通知。</p>
                      */
                     TaskNotifyConfig m_taskNotifyConfig;
                     bool m_taskNotifyConfigHasBeenSet;
 
                     /**
-                     * 任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
+                     * <p>任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>
                      */
                     int64_t m_tasksPriority;
                     bool m_tasksPriorityHasBeenSet;
 
                     /**
-                     * 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * <p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * <p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
+
+                    /**
+                     * <p>资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。</p>
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
 
                 };
             }

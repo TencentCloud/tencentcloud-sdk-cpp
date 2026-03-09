@@ -24,7 +24,8 @@ CreateInstancePreData::CreateInstancePreData() :
     m_flowIdHasBeenSet(false),
     m_dealNamesHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_dealNameInstanceIdMappingHasBeenSet(false)
+    m_dealNameInstanceIdMappingHasBeenSet(false),
+    m_eventIdHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,16 @@ CoreInternalOutcome CreateInstancePreData::Deserialize(const rapidjson::Value &v
         m_dealNameInstanceIdMappingHasBeenSet = true;
     }
 
+    if (value.HasMember("EventId") && !value["EventId"].IsNull())
+    {
+        if (!value["EventId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateInstancePreData.EventId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eventId = string(value["EventId"].GetString());
+        m_eventIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -135,6 +146,14 @@ void CreateInstancePreData::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_eventIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -202,5 +221,21 @@ void CreateInstancePreData::SetDealNameInstanceIdMapping(const vector<DealInstan
 bool CreateInstancePreData::DealNameInstanceIdMappingHasBeenSet() const
 {
     return m_dealNameInstanceIdMappingHasBeenSet;
+}
+
+string CreateInstancePreData::GetEventId() const
+{
+    return m_eventId;
+}
+
+void CreateInstancePreData::SetEventId(const string& _eventId)
+{
+    m_eventId = _eventId;
+    m_eventIdHasBeenSet = true;
+}
+
+bool CreateInstancePreData::EventIdHasBeenSet() const
+{
+    return m_eventIdHasBeenSet;
 }
 
