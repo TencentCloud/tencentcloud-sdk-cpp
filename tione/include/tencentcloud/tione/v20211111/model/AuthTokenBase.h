@@ -151,6 +151,27 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取token的唯一id，与value一一对应，重置后id也会一并变化
+                     * @return Id token的唯一id，与value一一对应，重置后id也会一并变化
+                     * 
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置token的唯一id，与value一一对应，重置后id也会一并变化
+                     * @param _id token的唯一id，与value一一对应，重置后id也会一并变化
+                     * 
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +203,12 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * token的唯一id，与value一一对应，重置后id也会一并变化
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
 
                 };
             }

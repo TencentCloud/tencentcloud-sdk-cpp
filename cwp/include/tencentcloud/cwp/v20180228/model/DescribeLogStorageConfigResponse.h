@@ -99,6 +99,20 @@ namespace TencentCloud
                      */
                     bool GranularityHasBeenSet() const;
 
+                    /**
+                     * 获取语言类型
+                     * @return MsgLanguage 语言类型
+                     * 
+                     */
+                    std::string GetMsgLanguage() const;
+
+                    /**
+                     * 判断参数 MsgLanguage 是否已赋值
+                     * @return MsgLanguage 是否已赋值
+                     * 
+                     */
+                    bool MsgLanguageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +138,12 @@ namespace TencentCloud
                      */
                     std::string m_granularity;
                     bool m_granularityHasBeenSet;
+
+                    /**
+                     * 语言类型
+                     */
+                    std::string m_msgLanguage;
+                    bool m_msgLanguageHasBeenSet;
 
                 };
             }

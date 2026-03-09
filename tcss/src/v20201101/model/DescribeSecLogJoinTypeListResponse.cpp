@@ -24,7 +24,8 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 DescribeSecLogJoinTypeListResponse::DescribeSecLogJoinTypeListResponse() :
-    m_listHasBeenSet(false)
+    m_listHasBeenSet(false),
+    m_msgLanguageHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,16 @@ CoreInternalOutcome DescribeSecLogJoinTypeListResponse::Deserialize(const string
         m_listHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MsgLanguage") && !rsp["MsgLanguage"].IsNull())
+    {
+        if (!rsp["MsgLanguage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsgLanguage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_msgLanguage = string(rsp["MsgLanguage"].GetString());
+        m_msgLanguageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string DescribeSecLogJoinTypeListResponse::ToJsonString() const
         }
     }
 
+    if (m_msgLanguageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MsgLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_msgLanguage.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +146,16 @@ vector<SecLogJoinInfo> DescribeSecLogJoinTypeListResponse::GetList() const
 bool DescribeSecLogJoinTypeListResponse::ListHasBeenSet() const
 {
     return m_listHasBeenSet;
+}
+
+string DescribeSecLogJoinTypeListResponse::GetMsgLanguage() const
+{
+    return m_msgLanguage;
+}
+
+bool DescribeSecLogJoinTypeListResponse::MsgLanguageHasBeenSet() const
+{
+    return m_msgLanguageHasBeenSet;
 }
 
 

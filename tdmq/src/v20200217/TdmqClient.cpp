@@ -190,56 +190,6 @@ TdmqClient::ClearCmqSubscriptionFilterTagsOutcomeCallable TdmqClient::ClearCmqSu
     return prom->get_future();
 }
 
-TdmqClient::CreateClusterOutcome TdmqClient::CreateCluster(const CreateClusterRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateCluster");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateClusterResponse rsp = CreateClusterResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateClusterOutcome(rsp);
-        else
-            return CreateClusterOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateClusterOutcome(outcome.GetError());
-    }
-}
-
-void TdmqClient::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const CreateClusterRequest&;
-    using Resp = CreateClusterResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "CreateCluster", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TdmqClient::CreateClusterOutcomeCallable TdmqClient::CreateClusterCallable(const CreateClusterRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<CreateClusterOutcome>>();
-    CreateClusterAsync(
-    request,
-    [prom](
-        const TdmqClient*,
-        const CreateClusterRequest&,
-        CreateClusterOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 TdmqClient::CreateCmqQueueOutcome TdmqClient::CreateCmqQueue(const CreateCmqQueueRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCmqQueue");

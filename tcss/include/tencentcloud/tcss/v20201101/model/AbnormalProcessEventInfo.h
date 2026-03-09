@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取进程目录
-                     * @return ProcessPath 进程目录
+                     * 获取<p>进程目录</p>
+                     * @return ProcessPath <p>进程目录</p>
                      * 
                      */
                     std::string GetProcessPath() const;
 
                     /**
-                     * 设置进程目录
-                     * @param _processPath 进程目录
+                     * 设置<p>进程目录</p>
+                     * @param _processPath <p>进程目录</p>
                      * 
                      */
                     void SetProcessPath(const std::string& _processPath);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ProcessPathHasBeenSet() const;
 
                     /**
-                     * 获取事件类型，MALICE_PROCESS_START:恶意进程启动
-                     * @return EventType 事件类型，MALICE_PROCESS_START:恶意进程启动
+                     * 获取<p>事件类型，MALICE_PROCESS_START:恶意进程启动</p>
+                     * @return EventType <p>事件类型，MALICE_PROCESS_START:恶意进程启动</p>
                      * 
                      */
                     std::string GetEventType() const;
 
                     /**
-                     * 设置事件类型，MALICE_PROCESS_START:恶意进程启动
-                     * @param _eventType 事件类型，MALICE_PROCESS_START:恶意进程启动
+                     * 设置<p>事件类型，MALICE_PROCESS_START:恶意进程启动</p>
+                     * @param _eventType <p>事件类型，MALICE_PROCESS_START:恶意进程启动</p>
                      * 
                      */
                     void SetEventType(const std::string& _eventType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool EventTypeHasBeenSet() const;
 
                     /**
-                     * 获取命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
-                     * @return MatchRuleName 命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
+                     * 获取<p>命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则</p>
+                     * @return MatchRuleName <p>命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则</p>
                      * 
                      */
                     std::string GetMatchRuleName() const;
 
                     /**
-                     * 设置命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
-                     * @param _matchRuleName 命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
+                     * 设置<p>命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则</p>
+                     * @param _matchRuleName <p>命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则</p>
                      * 
                      */
                     void SetMatchRuleName(const std::string& _matchRuleName);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool MatchRuleNameHasBeenSet() const;
 
                     /**
-                     * 获取生成时间
-                     * @return FoundTime 生成时间
+                     * 获取<p>生成时间</p>
+                     * @return FoundTime <p>生成时间</p>
                      * 
                      */
                     std::string GetFoundTime() const;
 
                     /**
-                     * 设置生成时间
-                     * @param _foundTime 生成时间
+                     * 设置<p>生成时间</p>
+                     * @param _foundTime <p>生成时间</p>
                      * 
                      */
                     void SetFoundTime(const std::string& _foundTime);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool FoundTimeHasBeenSet() const;
 
                     /**
-                     * 获取容器名
-                     * @return ContainerName 容器名
+                     * 获取<p>容器名</p>
+                     * @return ContainerName <p>容器名</p>
                      * 
                      */
                     std::string GetContainerName() const;
 
                     /**
-                     * 设置容器名
-                     * @param _containerName 容器名
+                     * 设置<p>容器名</p>
+                     * @param _containerName <p>容器名</p>
                      * 
                      */
                     void SetContainerName(const std::string& _containerName);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ContainerNameHasBeenSet() const;
 
                     /**
-                     * 获取镜像名
-                     * @return ImageName 镜像名
+                     * 获取<p>镜像名</p>
+                     * @return ImageName <p>镜像名</p>
                      * 
                      */
                     std::string GetImageName() const;
 
                     /**
-                     * 设置镜像名
-                     * @param _imageName 镜像名
+                     * 设置<p>镜像名</p>
+                     * @param _imageName <p>镜像名</p>
                      * 
                      */
                     void SetImageName(const std::string& _imageName);
@@ -173,31 +173,15 @@ namespace TencentCloud
                     bool ImageNameHasBeenSet() const;
 
                     /**
-                     * 获取动作执行结果，    BEHAVIOR_NONE: 无
-    BEHAVIOR_ALERT: 告警
-    BEHAVIOR_RELEASE：放行
-    BEHAVIOR_HOLDUP_FAILED:拦截失败
-    BEHAVIOR_HOLDUP_SUCCESSED：拦截失败
-                     * @return Behavior 动作执行结果，    BEHAVIOR_NONE: 无
-    BEHAVIOR_ALERT: 告警
-    BEHAVIOR_RELEASE：放行
-    BEHAVIOR_HOLDUP_FAILED:拦截失败
-    BEHAVIOR_HOLDUP_SUCCESSED：拦截失败
+                     * 获取<p>动作执行结果，    BEHAVIOR_NONE: 无<br>    BEHAVIOR_ALERT: 告警<br>    BEHAVIOR_RELEASE：放行<br>    BEHAVIOR_HOLDUP_FAILED:拦截失败<br>    BEHAVIOR_HOLDUP_SUCCESSED：拦截失败</p>
+                     * @return Behavior <p>动作执行结果，    BEHAVIOR_NONE: 无<br>    BEHAVIOR_ALERT: 告警<br>    BEHAVIOR_RELEASE：放行<br>    BEHAVIOR_HOLDUP_FAILED:拦截失败<br>    BEHAVIOR_HOLDUP_SUCCESSED：拦截失败</p>
                      * 
                      */
                     std::string GetBehavior() const;
 
                     /**
-                     * 设置动作执行结果，    BEHAVIOR_NONE: 无
-    BEHAVIOR_ALERT: 告警
-    BEHAVIOR_RELEASE：放行
-    BEHAVIOR_HOLDUP_FAILED:拦截失败
-    BEHAVIOR_HOLDUP_SUCCESSED：拦截失败
-                     * @param _behavior 动作执行结果，    BEHAVIOR_NONE: 无
-    BEHAVIOR_ALERT: 告警
-    BEHAVIOR_RELEASE：放行
-    BEHAVIOR_HOLDUP_FAILED:拦截失败
-    BEHAVIOR_HOLDUP_SUCCESSED：拦截失败
+                     * 设置<p>动作执行结果，    BEHAVIOR_NONE: 无<br>    BEHAVIOR_ALERT: 告警<br>    BEHAVIOR_RELEASE：放行<br>    BEHAVIOR_HOLDUP_FAILED:拦截失败<br>    BEHAVIOR_HOLDUP_SUCCESSED：拦截失败</p>
+                     * @param _behavior <p>动作执行结果，    BEHAVIOR_NONE: 无<br>    BEHAVIOR_ALERT: 告警<br>    BEHAVIOR_RELEASE：放行<br>    BEHAVIOR_HOLDUP_FAILED:拦截失败<br>    BEHAVIOR_HOLDUP_SUCCESSED：拦截失败</p>
                      * 
                      */
                     void SetBehavior(const std::string& _behavior);
@@ -210,23 +194,15 @@ namespace TencentCloud
                     bool BehaviorHasBeenSet() const;
 
                     /**
-                     * 获取状态，EVENT_UNDEAL:事件未处理
-    EVENT_DEALED:事件已经处理
-    EVENT_INGNORE：事件已经忽略
-                     * @return Status 状态，EVENT_UNDEAL:事件未处理
-    EVENT_DEALED:事件已经处理
-    EVENT_INGNORE：事件已经忽略
+                     * 获取<p>状态，EVENT_UNDEAL:事件未处理<br>    EVENT_DEALED:事件已经处理<br>    EVENT_INGNORE：事件已经忽略</p>
+                     * @return Status <p>状态，EVENT_UNDEAL:事件未处理<br>    EVENT_DEALED:事件已经处理<br>    EVENT_INGNORE：事件已经忽略</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态，EVENT_UNDEAL:事件未处理
-    EVENT_DEALED:事件已经处理
-    EVENT_INGNORE：事件已经忽略
-                     * @param _status 状态，EVENT_UNDEAL:事件未处理
-    EVENT_DEALED:事件已经处理
-    EVENT_INGNORE：事件已经忽略
+                     * 设置<p>状态，EVENT_UNDEAL:事件未处理<br>    EVENT_DEALED:事件已经处理<br>    EVENT_INGNORE：事件已经忽略</p>
+                     * @param _status <p>状态，EVENT_UNDEAL:事件未处理<br>    EVENT_DEALED:事件已经处理<br>    EVENT_INGNORE：事件已经忽略</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -239,15 +215,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取事件记录的唯一id
-                     * @return Id 事件记录的唯一id
+                     * 获取<p>事件记录的唯一id</p>
+                     * @return Id <p>事件记录的唯一id</p>
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置事件记录的唯一id
-                     * @param _id 事件记录的唯一id
+                     * 设置<p>事件记录的唯一id</p>
+                     * @param _id <p>事件记录的唯一id</p>
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -260,15 +236,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取镜像id，用于跳转
-                     * @return ImageId 镜像id，用于跳转
+                     * 获取<p>镜像id，用于跳转</p>
+                     * @return ImageId <p>镜像id，用于跳转</p>
                      * 
                      */
                     std::string GetImageId() const;
 
                     /**
-                     * 设置镜像id，用于跳转
-                     * @param _imageId 镜像id，用于跳转
+                     * 设置<p>镜像id，用于跳转</p>
+                     * @param _imageId <p>镜像id，用于跳转</p>
                      * 
                      */
                     void SetImageId(const std::string& _imageId);
@@ -281,15 +257,15 @@ namespace TencentCloud
                     bool ImageIdHasBeenSet() const;
 
                     /**
-                     * 获取容器id，用于跳转
-                     * @return ContainerId 容器id，用于跳转
+                     * 获取<p>容器id，用于跳转</p>
+                     * @return ContainerId <p>容器id，用于跳转</p>
                      * 
                      */
                     std::string GetContainerId() const;
 
                     /**
-                     * 设置容器id，用于跳转
-                     * @param _containerId 容器id，用于跳转
+                     * 设置<p>容器id，用于跳转</p>
+                     * @param _containerId <p>容器id，用于跳转</p>
                      * 
                      */
                     void SetContainerId(const std::string& _containerId);
@@ -302,15 +278,15 @@ namespace TencentCloud
                     bool ContainerIdHasBeenSet() const;
 
                     /**
-                     * 获取事件解决方案
-                     * @return Solution 事件解决方案
+                     * 获取<p>事件解决方案</p>
+                     * @return Solution <p>事件解决方案</p>
                      * 
                      */
                     std::string GetSolution() const;
 
                     /**
-                     * 设置事件解决方案
-                     * @param _solution 事件解决方案
+                     * 设置<p>事件解决方案</p>
+                     * @param _solution <p>事件解决方案</p>
                      * 
                      */
                     void SetSolution(const std::string& _solution);
@@ -323,15 +299,15 @@ namespace TencentCloud
                     bool SolutionHasBeenSet() const;
 
                     /**
-                     * 获取事件详细描述
-                     * @return Description 事件详细描述
+                     * 获取<p>事件详细描述</p>
+                     * @return Description <p>事件详细描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置事件详细描述
-                     * @param _description 事件详细描述
+                     * 设置<p>事件详细描述</p>
+                     * @param _description <p>事件详细描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -344,15 +320,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取命中策略id
-                     * @return MatchRuleId 命中策略id
+                     * 获取<p>命中策略id</p>
+                     * @return MatchRuleId <p>命中策略id</p>
                      * 
                      */
                     std::string GetMatchRuleId() const;
 
                     /**
-                     * 设置命中策略id
-                     * @param _matchRuleId 命中策略id
+                     * 设置<p>命中策略id</p>
+                     * @param _matchRuleId <p>命中策略id</p>
                      * 
                      */
                     void SetMatchRuleId(const std::string& _matchRuleId);
@@ -365,27 +341,15 @@ namespace TencentCloud
                     bool MatchRuleIdHasBeenSet() const;
 
                     /**
-                     * 获取命中规则行为：
-RULE_MODE_RELEASE 放行
-RULE_MODE_ALERT  告警
-RULE_MODE_HOLDUP 拦截
-                     * @return MatchAction 命中规则行为：
-RULE_MODE_RELEASE 放行
-RULE_MODE_ALERT  告警
-RULE_MODE_HOLDUP 拦截
+                     * 获取<p>命中规则行为：<br>RULE_MODE_RELEASE 放行<br>RULE_MODE_ALERT  告警<br>RULE_MODE_HOLDUP 拦截</p>
+                     * @return MatchAction <p>命中规则行为：<br>RULE_MODE_RELEASE 放行<br>RULE_MODE_ALERT  告警<br>RULE_MODE_HOLDUP 拦截</p>
                      * 
                      */
                     std::string GetMatchAction() const;
 
                     /**
-                     * 设置命中规则行为：
-RULE_MODE_RELEASE 放行
-RULE_MODE_ALERT  告警
-RULE_MODE_HOLDUP 拦截
-                     * @param _matchAction 命中规则行为：
-RULE_MODE_RELEASE 放行
-RULE_MODE_ALERT  告警
-RULE_MODE_HOLDUP 拦截
+                     * 设置<p>命中规则行为：<br>RULE_MODE_RELEASE 放行<br>RULE_MODE_ALERT  告警<br>RULE_MODE_HOLDUP 拦截</p>
+                     * @param _matchAction <p>命中规则行为：<br>RULE_MODE_RELEASE 放行<br>RULE_MODE_ALERT  告警<br>RULE_MODE_HOLDUP 拦截</p>
                      * 
                      */
                     void SetMatchAction(const std::string& _matchAction);
@@ -398,15 +362,15 @@ RULE_MODE_HOLDUP 拦截
                     bool MatchActionHasBeenSet() const;
 
                     /**
-                     * 获取命中规则进程信息
-                     * @return MatchProcessPath 命中规则进程信息
+                     * 获取<p>命中规则进程信息</p>
+                     * @return MatchProcessPath <p>命中规则进程信息</p>
                      * 
                      */
                     std::string GetMatchProcessPath() const;
 
                     /**
-                     * 设置命中规则进程信息
-                     * @param _matchProcessPath 命中规则进程信息
+                     * 设置<p>命中规则进程信息</p>
+                     * @param _matchProcessPath <p>命中规则进程信息</p>
                      * 
                      */
                     void SetMatchProcessPath(const std::string& _matchProcessPath);
@@ -419,15 +383,15 @@ RULE_MODE_HOLDUP 拦截
                     bool MatchProcessPathHasBeenSet() const;
 
                     /**
-                     * 获取规则是否存在
-                     * @return RuleExist 规则是否存在
+                     * 获取<p>规则是否存在</p>
+                     * @return RuleExist <p>规则是否存在</p>
                      * 
                      */
                     bool GetRuleExist() const;
 
                     /**
-                     * 设置规则是否存在
-                     * @param _ruleExist 规则是否存在
+                     * 设置<p>规则是否存在</p>
+                     * @param _ruleExist <p>规则是否存在</p>
                      * 
                      */
                     void SetRuleExist(const bool& _ruleExist);
@@ -440,15 +404,15 @@ RULE_MODE_HOLDUP 拦截
                     bool RuleExistHasBeenSet() const;
 
                     /**
-                     * 获取事件数量
-                     * @return EventCount 事件数量
+                     * 获取<p>事件数量</p>
+                     * @return EventCount <p>事件数量</p>
                      * 
                      */
                     int64_t GetEventCount() const;
 
                     /**
-                     * 设置事件数量
-                     * @param _eventCount 事件数量
+                     * 设置<p>事件数量</p>
+                     * @param _eventCount <p>事件数量</p>
                      * 
                      */
                     void SetEventCount(const int64_t& _eventCount);
@@ -461,15 +425,15 @@ RULE_MODE_HOLDUP 拦截
                     bool EventCountHasBeenSet() const;
 
                     /**
-                     * 获取最近生成时间
-                     * @return LatestFoundTime 最近生成时间
+                     * 获取<p>最近生成时间</p>
+                     * @return LatestFoundTime <p>最近生成时间</p>
                      * 
                      */
                     std::string GetLatestFoundTime() const;
 
                     /**
-                     * 设置最近生成时间
-                     * @param _latestFoundTime 最近生成时间
+                     * 设置<p>最近生成时间</p>
+                     * @param _latestFoundTime <p>最近生成时间</p>
                      * 
                      */
                     void SetLatestFoundTime(const std::string& _latestFoundTime);
@@ -482,15 +446,15 @@ RULE_MODE_HOLDUP 拦截
                     bool LatestFoundTimeHasBeenSet() const;
 
                     /**
-                     * 获取规则组Id
-                     * @return RuleId 规则组Id
+                     * 获取<p>规则组Id</p>
+                     * @return RuleId <p>规则组Id</p>
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置规则组Id
-                     * @param _ruleId 规则组Id
+                     * 设置<p>规则组Id</p>
+                     * @param _ruleId <p>规则组Id</p>
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -503,15 +467,15 @@ RULE_MODE_HOLDUP 拦截
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
-                     * @return MatchGroupName 命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
+                     * 获取<p>命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字</p>
+                     * @return MatchGroupName <p>命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字</p>
                      * 
                      */
                     std::string GetMatchGroupName() const;
 
                     /**
-                     * 设置命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
-                     * @param _matchGroupName 命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
+                     * 设置<p>命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字</p>
+                     * @param _matchGroupName <p>命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字</p>
                      * 
                      */
                     void SetMatchGroupName(const std::string& _matchGroupName);
@@ -524,15 +488,15 @@ RULE_MODE_HOLDUP 拦截
                     bool MatchGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。
-                     * @return MatchRuleLevel 命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。
+                     * 获取<p>命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。</p>
+                     * @return MatchRuleLevel <p>命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。</p>
                      * 
                      */
                     std::string GetMatchRuleLevel() const;
 
                     /**
-                     * 设置命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。
-                     * @param _matchRuleLevel 命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。
+                     * 设置<p>命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。</p>
+                     * @param _matchRuleLevel <p>命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。</p>
                      * 
                      */
                     void SetMatchRuleLevel(const std::string& _matchRuleLevel);
@@ -545,39 +509,15 @@ RULE_MODE_HOLDUP 拦截
                     bool MatchRuleLevelHasBeenSet() const;
 
                     /**
-                     * 获取网络状态
-未隔离  	NORMAL
-已隔离		ISOLATED
-隔离中		ISOLATING
-隔离失败	ISOLATE_FAILED
-解除隔离中  RESTORING
-解除隔离失败 RESTORE_FAILED
-                     * @return ContainerNetStatus 网络状态
-未隔离  	NORMAL
-已隔离		ISOLATED
-隔离中		ISOLATING
-隔离失败	ISOLATE_FAILED
-解除隔离中  RESTORING
-解除隔离失败 RESTORE_FAILED
+                     * 获取<p>网络状态<br>未隔离      NORMAL<br>已隔离        ISOLATED<br>隔离中        ISOLATING<br>隔离失败    ISOLATE_FAILED<br>解除隔离中  RESTORING<br>解除隔离失败 RESTORE_FAILED</p>
+                     * @return ContainerNetStatus <p>网络状态<br>未隔离      NORMAL<br>已隔离        ISOLATED<br>隔离中        ISOLATING<br>隔离失败    ISOLATE_FAILED<br>解除隔离中  RESTORING<br>解除隔离失败 RESTORE_FAILED</p>
                      * 
                      */
                     std::string GetContainerNetStatus() const;
 
                     /**
-                     * 设置网络状态
-未隔离  	NORMAL
-已隔离		ISOLATED
-隔离中		ISOLATING
-隔离失败	ISOLATE_FAILED
-解除隔离中  RESTORING
-解除隔离失败 RESTORE_FAILED
-                     * @param _containerNetStatus 网络状态
-未隔离  	NORMAL
-已隔离		ISOLATED
-隔离中		ISOLATING
-隔离失败	ISOLATE_FAILED
-解除隔离中  RESTORING
-解除隔离失败 RESTORE_FAILED
+                     * 设置<p>网络状态<br>未隔离      NORMAL<br>已隔离        ISOLATED<br>隔离中        ISOLATING<br>隔离失败    ISOLATE_FAILED<br>解除隔离中  RESTORING<br>解除隔离失败 RESTORE_FAILED</p>
+                     * @param _containerNetStatus <p>网络状态<br>未隔离      NORMAL<br>已隔离        ISOLATED<br>隔离中        ISOLATING<br>隔离失败    ISOLATE_FAILED<br>解除隔离中  RESTORING<br>解除隔离失败 RESTORE_FAILED</p>
                      * 
                      */
                     void SetContainerNetStatus(const std::string& _containerNetStatus);
@@ -590,43 +530,15 @@ RULE_MODE_HOLDUP 拦截
                     bool ContainerNetStatusHasBeenSet() const;
 
                     /**
-                     * 获取容器子状态
-"AGENT_OFFLINE"       //Agent离线
-"NODE_DESTROYED"      //节点已销毁
-"CONTAINER_EXITED"    //容器已退出
-"CONTAINER_DESTROYED" //容器已销毁
-"SHARED_HOST"         // 容器与主机共享网络
-"RESOURCE_LIMIT"      //隔离操作资源超限
-"UNKNOW"              // 原因未知
-                     * @return ContainerNetSubStatus 容器子状态
-"AGENT_OFFLINE"       //Agent离线
-"NODE_DESTROYED"      //节点已销毁
-"CONTAINER_EXITED"    //容器已退出
-"CONTAINER_DESTROYED" //容器已销毁
-"SHARED_HOST"         // 容器与主机共享网络
-"RESOURCE_LIMIT"      //隔离操作资源超限
-"UNKNOW"              // 原因未知
+                     * 获取<p>容器子状态<br>&quot;AGENT_OFFLINE&quot;       //Agent离线<br>&quot;NODE_DESTROYED&quot;      //节点已销毁<br>&quot;CONTAINER_EXITED&quot;    //容器已退出<br>&quot;CONTAINER_DESTROYED&quot; //容器已销毁<br>&quot;SHARED_HOST&quot;         // 容器与主机共享网络<br>&quot;RESOURCE_LIMIT&quot;      //隔离操作资源超限<br>&quot;UNKNOW&quot;              // 原因未知</p>
+                     * @return ContainerNetSubStatus <p>容器子状态<br>&quot;AGENT_OFFLINE&quot;       //Agent离线<br>&quot;NODE_DESTROYED&quot;      //节点已销毁<br>&quot;CONTAINER_EXITED&quot;    //容器已退出<br>&quot;CONTAINER_DESTROYED&quot; //容器已销毁<br>&quot;SHARED_HOST&quot;         // 容器与主机共享网络<br>&quot;RESOURCE_LIMIT&quot;      //隔离操作资源超限<br>&quot;UNKNOW&quot;              // 原因未知</p>
                      * 
                      */
                     std::string GetContainerNetSubStatus() const;
 
                     /**
-                     * 设置容器子状态
-"AGENT_OFFLINE"       //Agent离线
-"NODE_DESTROYED"      //节点已销毁
-"CONTAINER_EXITED"    //容器已退出
-"CONTAINER_DESTROYED" //容器已销毁
-"SHARED_HOST"         // 容器与主机共享网络
-"RESOURCE_LIMIT"      //隔离操作资源超限
-"UNKNOW"              // 原因未知
-                     * @param _containerNetSubStatus 容器子状态
-"AGENT_OFFLINE"       //Agent离线
-"NODE_DESTROYED"      //节点已销毁
-"CONTAINER_EXITED"    //容器已退出
-"CONTAINER_DESTROYED" //容器已销毁
-"SHARED_HOST"         // 容器与主机共享网络
-"RESOURCE_LIMIT"      //隔离操作资源超限
-"UNKNOW"              // 原因未知
+                     * 设置<p>容器子状态<br>&quot;AGENT_OFFLINE&quot;       //Agent离线<br>&quot;NODE_DESTROYED&quot;      //节点已销毁<br>&quot;CONTAINER_EXITED&quot;    //容器已退出<br>&quot;CONTAINER_DESTROYED&quot; //容器已销毁<br>&quot;SHARED_HOST&quot;         // 容器与主机共享网络<br>&quot;RESOURCE_LIMIT&quot;      //隔离操作资源超限<br>&quot;UNKNOW&quot;              // 原因未知</p>
+                     * @param _containerNetSubStatus <p>容器子状态<br>&quot;AGENT_OFFLINE&quot;       //Agent离线<br>&quot;NODE_DESTROYED&quot;      //节点已销毁<br>&quot;CONTAINER_EXITED&quot;    //容器已退出<br>&quot;CONTAINER_DESTROYED&quot; //容器已销毁<br>&quot;SHARED_HOST&quot;         // 容器与主机共享网络<br>&quot;RESOURCE_LIMIT&quot;      //隔离操作资源超限<br>&quot;UNKNOW&quot;              // 原因未知</p>
                      * 
                      */
                     void SetContainerNetSubStatus(const std::string& _containerNetSubStatus);
@@ -639,15 +551,15 @@ RULE_MODE_HOLDUP 拦截
                     bool ContainerNetSubStatusHasBeenSet() const;
 
                     /**
-                     * 获取容器隔离操作来源
-                     * @return ContainerIsolateOperationSrc 容器隔离操作来源
+                     * 获取<p>容器隔离操作来源</p>
+                     * @return ContainerIsolateOperationSrc <p>容器隔离操作来源</p>
                      * 
                      */
                     std::string GetContainerIsolateOperationSrc() const;
 
                     /**
-                     * 设置容器隔离操作来源
-                     * @param _containerIsolateOperationSrc 容器隔离操作来源
+                     * 设置<p>容器隔离操作来源</p>
+                     * @param _containerIsolateOperationSrc <p>容器隔离操作来源</p>
                      * 
                      */
                     void SetContainerIsolateOperationSrc(const std::string& _containerIsolateOperationSrc);
@@ -660,43 +572,15 @@ RULE_MODE_HOLDUP 拦截
                     bool ContainerIsolateOperationSrcHasBeenSet() const;
 
                     /**
-                     * 获取容器状态
-正在运行: RUNNING
-暂停: PAUSED
-停止: STOPPED
-已经创建: CREATED
-已经销毁: DESTROYED
-正在重启中: RESTARTING
-迁移中: REMOVING
-                     * @return ContainerStatus 容器状态
-正在运行: RUNNING
-暂停: PAUSED
-停止: STOPPED
-已经创建: CREATED
-已经销毁: DESTROYED
-正在重启中: RESTARTING
-迁移中: REMOVING
+                     * 获取<p>容器状态<br>正在运行: RUNNING<br>暂停: PAUSED<br>停止: STOPPED<br>已经创建: CREATED<br>已经销毁: DESTROYED<br>正在重启中: RESTARTING<br>迁移中: REMOVING</p>
+                     * @return ContainerStatus <p>容器状态<br>正在运行: RUNNING<br>暂停: PAUSED<br>停止: STOPPED<br>已经创建: CREATED<br>已经销毁: DESTROYED<br>正在重启中: RESTARTING<br>迁移中: REMOVING</p>
                      * 
                      */
                     std::string GetContainerStatus() const;
 
                     /**
-                     * 设置容器状态
-正在运行: RUNNING
-暂停: PAUSED
-停止: STOPPED
-已经创建: CREATED
-已经销毁: DESTROYED
-正在重启中: RESTARTING
-迁移中: REMOVING
-                     * @param _containerStatus 容器状态
-正在运行: RUNNING
-暂停: PAUSED
-停止: STOPPED
-已经创建: CREATED
-已经销毁: DESTROYED
-正在重启中: RESTARTING
-迁移中: REMOVING
+                     * 设置<p>容器状态<br>正在运行: RUNNING<br>暂停: PAUSED<br>停止: STOPPED<br>已经创建: CREATED<br>已经销毁: DESTROYED<br>正在重启中: RESTARTING<br>迁移中: REMOVING</p>
+                     * @param _containerStatus <p>容器状态<br>正在运行: RUNNING<br>暂停: PAUSED<br>停止: STOPPED<br>已经创建: CREATED<br>已经销毁: DESTROYED<br>正在重启中: RESTARTING<br>迁移中: REMOVING</p>
                      * 
                      */
                     void SetContainerStatus(const std::string& _containerStatus);
@@ -709,15 +593,15 @@ RULE_MODE_HOLDUP 拦截
                     bool ContainerStatusHasBeenSet() const;
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterID 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterID <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterID() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterID 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterID <p>集群ID</p>
                      * 
                      */
                     void SetClusterID(const std::string& _clusterID);
@@ -730,15 +614,15 @@ RULE_MODE_HOLDUP 拦截
                     bool ClusterIDHasBeenSet() const;
 
                     /**
-                     * 获取节点类型：NORMAL普通节点、SUPER超级节点
-                     * @return NodeType 节点类型：NORMAL普通节点、SUPER超级节点
+                     * 获取<p>节点类型：NORMAL普通节点、SUPER超级节点</p>
+                     * @return NodeType <p>节点类型：NORMAL普通节点、SUPER超级节点</p>
                      * 
                      */
                     std::string GetNodeType() const;
 
                     /**
-                     * 设置节点类型：NORMAL普通节点、SUPER超级节点
-                     * @param _nodeType 节点类型：NORMAL普通节点、SUPER超级节点
+                     * 设置<p>节点类型：NORMAL普通节点、SUPER超级节点</p>
+                     * @param _nodeType <p>节点类型：NORMAL普通节点、SUPER超级节点</p>
                      * 
                      */
                     void SetNodeType(const std::string& _nodeType);
@@ -751,15 +635,15 @@ RULE_MODE_HOLDUP 拦截
                     bool NodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取pod 名称
-                     * @return PodName pod 名称
+                     * 获取<p>pod 名称</p>
+                     * @return PodName <p>pod 名称</p>
                      * 
                      */
                     std::string GetPodName() const;
 
                     /**
-                     * 设置pod 名称
-                     * @param _podName pod 名称
+                     * 设置<p>pod 名称</p>
+                     * @param _podName <p>pod 名称</p>
                      * 
                      */
                     void SetPodName(const std::string& _podName);
@@ -772,15 +656,15 @@ RULE_MODE_HOLDUP 拦截
                     bool PodNameHasBeenSet() const;
 
                     /**
-                     * 获取pod ip
-                     * @return PodIP pod ip
+                     * 获取<p>pod ip</p>
+                     * @return PodIP <p>pod ip</p>
                      * 
                      */
                     std::string GetPodIP() const;
 
                     /**
-                     * 设置pod ip
-                     * @param _podIP pod ip
+                     * 设置<p>pod ip</p>
+                     * @param _podIP <p>pod ip</p>
                      * 
                      */
                     void SetPodIP(const std::string& _podIP);
@@ -793,15 +677,15 @@ RULE_MODE_HOLDUP 拦截
                     bool PodIPHasBeenSet() const;
 
                     /**
-                     * 获取集群id
-                     * @return NodeUniqueID 集群id
+                     * 获取<p>集群id</p>
+                     * @return NodeUniqueID <p>集群id</p>
                      * 
                      */
                     std::string GetNodeUniqueID() const;
 
                     /**
-                     * 设置集群id
-                     * @param _nodeUniqueID 集群id
+                     * 设置<p>集群id</p>
+                     * @param _nodeUniqueID <p>集群id</p>
                      * 
                      */
                     void SetNodeUniqueID(const std::string& _nodeUniqueID);
@@ -814,15 +698,15 @@ RULE_MODE_HOLDUP 拦截
                     bool NodeUniqueIDHasBeenSet() const;
 
                     /**
-                     * 获取节点公网ip
-                     * @return PublicIP 节点公网ip
+                     * 获取<p>节点公网ip</p>
+                     * @return PublicIP <p>节点公网ip</p>
                      * 
                      */
                     std::string GetPublicIP() const;
 
                     /**
-                     * 设置节点公网ip
-                     * @param _publicIP 节点公网ip
+                     * 设置<p>节点公网ip</p>
+                     * @param _publicIP <p>节点公网ip</p>
                      * 
                      */
                     void SetPublicIP(const std::string& _publicIP);
@@ -835,15 +719,15 @@ RULE_MODE_HOLDUP 拦截
                     bool PublicIPHasBeenSet() const;
 
                     /**
-                     * 获取节点名称
-                     * @return NodeName 节点名称
+                     * 获取<p>节点名称</p>
+                     * @return NodeName <p>节点名称</p>
                      * 
                      */
                     std::string GetNodeName() const;
 
                     /**
-                     * 设置节点名称
-                     * @param _nodeName 节点名称
+                     * 设置<p>节点名称</p>
+                     * @param _nodeName <p>节点名称</p>
                      * 
                      */
                     void SetNodeName(const std::string& _nodeName);
@@ -856,15 +740,15 @@ RULE_MODE_HOLDUP 拦截
                     bool NodeNameHasBeenSet() const;
 
                     /**
-                     * 获取节点id
-                     * @return NodeID 节点id
+                     * 获取<p>节点id</p>
+                     * @return NodeID <p>节点id</p>
                      * 
                      */
                     std::string GetNodeID() const;
 
                     /**
-                     * 设置节点id
-                     * @param _nodeID 节点id
+                     * 设置<p>节点id</p>
+                     * @param _nodeID <p>节点id</p>
                      * 
                      */
                     void SetNodeID(const std::string& _nodeID);
@@ -877,15 +761,15 @@ RULE_MODE_HOLDUP 拦截
                     bool NodeIDHasBeenSet() const;
 
                     /**
-                     * 获取uuid
-                     * @return HostID uuid
+                     * 获取<p>uuid</p>
+                     * @return HostID <p>uuid</p>
                      * 
                      */
                     std::string GetHostID() const;
 
                     /**
-                     * 设置uuid
-                     * @param _hostID uuid
+                     * 设置<p>uuid</p>
+                     * @param _hostID <p>uuid</p>
                      * 
                      */
                     void SetHostID(const std::string& _hostID);
@@ -898,15 +782,15 @@ RULE_MODE_HOLDUP 拦截
                     bool HostIDHasBeenSet() const;
 
                     /**
-                     * 获取节点内网ip
-                     * @return HostIP 节点内网ip
+                     * 获取<p>节点内网ip</p>
+                     * @return HostIP <p>节点内网ip</p>
                      * 
                      */
                     std::string GetHostIP() const;
 
                     /**
-                     * 设置节点内网ip
-                     * @param _hostIP 节点内网ip
+                     * 设置<p>节点内网ip</p>
+                     * @param _hostIP <p>节点内网ip</p>
                      * 
                      */
                     void SetHostIP(const std::string& _hostIP);
@@ -919,15 +803,15 @@ RULE_MODE_HOLDUP 拦截
                     bool HostIPHasBeenSet() const;
 
                     /**
-                     * 获取集群名称
-                     * @return ClusterName 集群名称
+                     * 获取<p>集群名称</p>
+                     * @return ClusterName <p>集群名称</p>
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置集群名称
-                     * @param _clusterName 集群名称
+                     * 设置<p>集群名称</p>
+                     * @param _clusterName <p>集群名称</p>
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -939,258 +823,256 @@ RULE_MODE_HOLDUP 拦截
                      */
                     bool ClusterNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>命令行参数</p>
+                     * @return CmdLine <p>命令行参数</p>
+                     * 
+                     */
+                    std::string GetCmdLine() const;
+
+                    /**
+                     * 设置<p>命令行参数</p>
+                     * @param _cmdLine <p>命令行参数</p>
+                     * 
+                     */
+                    void SetCmdLine(const std::string& _cmdLine);
+
+                    /**
+                     * 判断参数 CmdLine 是否已赋值
+                     * @return CmdLine 是否已赋值
+                     * 
+                     */
+                    bool CmdLineHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 进程目录
+                     * <p>进程目录</p>
                      */
                     std::string m_processPath;
                     bool m_processPathHasBeenSet;
 
                     /**
-                     * 事件类型，MALICE_PROCESS_START:恶意进程启动
+                     * <p>事件类型，MALICE_PROCESS_START:恶意进程启动</p>
                      */
                     std::string m_eventType;
                     bool m_eventTypeHasBeenSet;
 
                     /**
-                     * 命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
+                     * <p>命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则</p>
                      */
                     std::string m_matchRuleName;
                     bool m_matchRuleNameHasBeenSet;
 
                     /**
-                     * 生成时间
+                     * <p>生成时间</p>
                      */
                     std::string m_foundTime;
                     bool m_foundTimeHasBeenSet;
 
                     /**
-                     * 容器名
+                     * <p>容器名</p>
                      */
                     std::string m_containerName;
                     bool m_containerNameHasBeenSet;
 
                     /**
-                     * 镜像名
+                     * <p>镜像名</p>
                      */
                     std::string m_imageName;
                     bool m_imageNameHasBeenSet;
 
                     /**
-                     * 动作执行结果，    BEHAVIOR_NONE: 无
-    BEHAVIOR_ALERT: 告警
-    BEHAVIOR_RELEASE：放行
-    BEHAVIOR_HOLDUP_FAILED:拦截失败
-    BEHAVIOR_HOLDUP_SUCCESSED：拦截失败
+                     * <p>动作执行结果，    BEHAVIOR_NONE: 无<br>    BEHAVIOR_ALERT: 告警<br>    BEHAVIOR_RELEASE：放行<br>    BEHAVIOR_HOLDUP_FAILED:拦截失败<br>    BEHAVIOR_HOLDUP_SUCCESSED：拦截失败</p>
                      */
                     std::string m_behavior;
                     bool m_behaviorHasBeenSet;
 
                     /**
-                     * 状态，EVENT_UNDEAL:事件未处理
-    EVENT_DEALED:事件已经处理
-    EVENT_INGNORE：事件已经忽略
+                     * <p>状态，EVENT_UNDEAL:事件未处理<br>    EVENT_DEALED:事件已经处理<br>    EVENT_INGNORE：事件已经忽略</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 事件记录的唯一id
+                     * <p>事件记录的唯一id</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 镜像id，用于跳转
+                     * <p>镜像id，用于跳转</p>
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;
 
                     /**
-                     * 容器id，用于跳转
+                     * <p>容器id，用于跳转</p>
                      */
                     std::string m_containerId;
                     bool m_containerIdHasBeenSet;
 
                     /**
-                     * 事件解决方案
+                     * <p>事件解决方案</p>
                      */
                     std::string m_solution;
                     bool m_solutionHasBeenSet;
 
                     /**
-                     * 事件详细描述
+                     * <p>事件详细描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 命中策略id
+                     * <p>命中策略id</p>
                      */
                     std::string m_matchRuleId;
                     bool m_matchRuleIdHasBeenSet;
 
                     /**
-                     * 命中规则行为：
-RULE_MODE_RELEASE 放行
-RULE_MODE_ALERT  告警
-RULE_MODE_HOLDUP 拦截
+                     * <p>命中规则行为：<br>RULE_MODE_RELEASE 放行<br>RULE_MODE_ALERT  告警<br>RULE_MODE_HOLDUP 拦截</p>
                      */
                     std::string m_matchAction;
                     bool m_matchActionHasBeenSet;
 
                     /**
-                     * 命中规则进程信息
+                     * <p>命中规则进程信息</p>
                      */
                     std::string m_matchProcessPath;
                     bool m_matchProcessPathHasBeenSet;
 
                     /**
-                     * 规则是否存在
+                     * <p>规则是否存在</p>
                      */
                     bool m_ruleExist;
                     bool m_ruleExistHasBeenSet;
 
                     /**
-                     * 事件数量
+                     * <p>事件数量</p>
                      */
                     int64_t m_eventCount;
                     bool m_eventCountHasBeenSet;
 
                     /**
-                     * 最近生成时间
+                     * <p>最近生成时间</p>
                      */
                     std::string m_latestFoundTime;
                     bool m_latestFoundTimeHasBeenSet;
 
                     /**
-                     * 规则组Id
+                     * <p>规则组Id</p>
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * 命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
+                     * <p>命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字</p>
                      */
                     std::string m_matchGroupName;
                     bool m_matchGroupNameHasBeenSet;
 
                     /**
-                     * 命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。
+                     * <p>命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。</p>
                      */
                     std::string m_matchRuleLevel;
                     bool m_matchRuleLevelHasBeenSet;
 
                     /**
-                     * 网络状态
-未隔离  	NORMAL
-已隔离		ISOLATED
-隔离中		ISOLATING
-隔离失败	ISOLATE_FAILED
-解除隔离中  RESTORING
-解除隔离失败 RESTORE_FAILED
+                     * <p>网络状态<br>未隔离      NORMAL<br>已隔离        ISOLATED<br>隔离中        ISOLATING<br>隔离失败    ISOLATE_FAILED<br>解除隔离中  RESTORING<br>解除隔离失败 RESTORE_FAILED</p>
                      */
                     std::string m_containerNetStatus;
                     bool m_containerNetStatusHasBeenSet;
 
                     /**
-                     * 容器子状态
-"AGENT_OFFLINE"       //Agent离线
-"NODE_DESTROYED"      //节点已销毁
-"CONTAINER_EXITED"    //容器已退出
-"CONTAINER_DESTROYED" //容器已销毁
-"SHARED_HOST"         // 容器与主机共享网络
-"RESOURCE_LIMIT"      //隔离操作资源超限
-"UNKNOW"              // 原因未知
+                     * <p>容器子状态<br>&quot;AGENT_OFFLINE&quot;       //Agent离线<br>&quot;NODE_DESTROYED&quot;      //节点已销毁<br>&quot;CONTAINER_EXITED&quot;    //容器已退出<br>&quot;CONTAINER_DESTROYED&quot; //容器已销毁<br>&quot;SHARED_HOST&quot;         // 容器与主机共享网络<br>&quot;RESOURCE_LIMIT&quot;      //隔离操作资源超限<br>&quot;UNKNOW&quot;              // 原因未知</p>
                      */
                     std::string m_containerNetSubStatus;
                     bool m_containerNetSubStatusHasBeenSet;
 
                     /**
-                     * 容器隔离操作来源
+                     * <p>容器隔离操作来源</p>
                      */
                     std::string m_containerIsolateOperationSrc;
                     bool m_containerIsolateOperationSrcHasBeenSet;
 
                     /**
-                     * 容器状态
-正在运行: RUNNING
-暂停: PAUSED
-停止: STOPPED
-已经创建: CREATED
-已经销毁: DESTROYED
-正在重启中: RESTARTING
-迁移中: REMOVING
+                     * <p>容器状态<br>正在运行: RUNNING<br>暂停: PAUSED<br>停止: STOPPED<br>已经创建: CREATED<br>已经销毁: DESTROYED<br>正在重启中: RESTARTING<br>迁移中: REMOVING</p>
                      */
                     std::string m_containerStatus;
                     bool m_containerStatusHasBeenSet;
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterID;
                     bool m_clusterIDHasBeenSet;
 
                     /**
-                     * 节点类型：NORMAL普通节点、SUPER超级节点
+                     * <p>节点类型：NORMAL普通节点、SUPER超级节点</p>
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;
 
                     /**
-                     * pod 名称
+                     * <p>pod 名称</p>
                      */
                     std::string m_podName;
                     bool m_podNameHasBeenSet;
 
                     /**
-                     * pod ip
+                     * <p>pod ip</p>
                      */
                     std::string m_podIP;
                     bool m_podIPHasBeenSet;
 
                     /**
-                     * 集群id
+                     * <p>集群id</p>
                      */
                     std::string m_nodeUniqueID;
                     bool m_nodeUniqueIDHasBeenSet;
 
                     /**
-                     * 节点公网ip
+                     * <p>节点公网ip</p>
                      */
                     std::string m_publicIP;
                     bool m_publicIPHasBeenSet;
 
                     /**
-                     * 节点名称
+                     * <p>节点名称</p>
                      */
                     std::string m_nodeName;
                     bool m_nodeNameHasBeenSet;
 
                     /**
-                     * 节点id
+                     * <p>节点id</p>
                      */
                     std::string m_nodeID;
                     bool m_nodeIDHasBeenSet;
 
                     /**
-                     * uuid
+                     * <p>uuid</p>
                      */
                     std::string m_hostID;
                     bool m_hostIDHasBeenSet;
 
                     /**
-                     * 节点内网ip
+                     * <p>节点内网ip</p>
                      */
                     std::string m_hostIP;
                     bool m_hostIPHasBeenSet;
 
                     /**
-                     * 集群名称
+                     * <p>集群名称</p>
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * <p>命令行参数</p>
+                     */
+                    std::string m_cmdLine;
+                    bool m_cmdLineHasBeenSet;
 
                 };
             }

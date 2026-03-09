@@ -36,7 +36,8 @@ DescribeApiSecsRequest::DescribeApiSecsRequest() :
     m_customerIdListHasBeenSet(false),
     m_enterpriseUidListHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_customerIdHasBeenSet(false)
+    m_customerIdHasBeenSet(false),
+    m_orderByHasBeenSet(false)
 {
 }
 
@@ -174,6 +175,14 @@ string DescribeApiSecsRequest::ToJsonString() const
         string key = "CustomerId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_customerId, allocator);
+    }
+
+    if (m_orderByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderBy.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -406,6 +415,22 @@ void DescribeApiSecsRequest::SetCustomerId(const int64_t& _customerId)
 bool DescribeApiSecsRequest::CustomerIdHasBeenSet() const
 {
     return m_customerIdHasBeenSet;
+}
+
+string DescribeApiSecsRequest::GetOrderBy() const
+{
+    return m_orderBy;
+}
+
+void DescribeApiSecsRequest::SetOrderBy(const string& _orderBy)
+{
+    m_orderBy = _orderBy;
+    m_orderByHasBeenSet = true;
+}
+
+bool DescribeApiSecsRequest::OrderByHasBeenSet() const
+{
+    return m_orderByHasBeenSet;
 }
 
 

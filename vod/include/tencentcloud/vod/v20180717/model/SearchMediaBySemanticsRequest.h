@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 获取<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @return SubAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @param _subAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 设置<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @param _subAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取需要进行搜索的内容
-                     * @return Text 需要进行搜索的内容
+                     * 获取<p>需要进行搜索的内容</p>
+                     * @return Text <p>需要进行搜索的内容</p>
                      * 
                      */
                     std::string GetText() const;
 
                     /**
-                     * 设置需要进行搜索的内容
-                     * @param _text 需要进行搜索的内容
+                     * 设置<p>需要进行搜索的内容</p>
+                     * @param _text <p>需要进行搜索的内容</p>
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TextHasBeenSet() const;
 
                     /**
-                     * 获取返回的记录条数，默认值：20。
-                     * @return Limit 返回的记录条数，默认值：20。
+                     * 获取<p>返回的记录条数，默认值：20。</p><p>取值范围：[1, 100]</p>
+                     * @return Limit <p>返回的记录条数，默认值：20。</p><p>取值范围：[1, 100]</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回的记录条数，默认值：20。
-                     * @param _limit 返回的记录条数，默认值：20。
+                     * 设置<p>返回的记录条数，默认值：20。</p><p>取值范围：[1, 100]</p>
+                     * @param _limit <p>返回的记录条数，默认值：20。</p><p>取值范围：[1, 100]</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取文件类型。匹配集合中的任意元素： <li>Video: 视频文件</li> <li>Audio: 音频文件</li> <li>Image: 图片文件</li>
-                     * @return Categories 文件类型。匹配集合中的任意元素： <li>Video: 视频文件</li> <li>Audio: 音频文件</li> <li>Image: 图片文件</li>
+                     * 获取<p>文件类型。匹配集合中的任意元素： <li>Video: 视频文件</li> <li>Audio: 音频文件</li> <li>Image: 图片文件</li></p>
+                     * @return Categories <p>文件类型。匹配集合中的任意元素： <li>Video: 视频文件</li> <li>Audio: 音频文件</li> <li>Image: 图片文件</li></p>
                      * 
                      */
                     std::vector<std::string> GetCategories() const;
 
                     /**
-                     * 设置文件类型。匹配集合中的任意元素： <li>Video: 视频文件</li> <li>Audio: 音频文件</li> <li>Image: 图片文件</li>
-                     * @param _categories 文件类型。匹配集合中的任意元素： <li>Video: 视频文件</li> <li>Audio: 音频文件</li> <li>Image: 图片文件</li>
+                     * 设置<p>文件类型。匹配集合中的任意元素： <li>Video: 视频文件</li> <li>Audio: 音频文件</li> <li>Image: 图片文件</li></p>
+                     * @param _categories <p>文件类型。匹配集合中的任意元素： <li>Video: 视频文件</li> <li>Audio: 音频文件</li> <li>Image: 图片文件</li></p>
                      * 
                      */
                     void SetCategories(const std::vector<std::string>& _categories);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool CategoriesHasBeenSet() const;
 
                     /**
-                     * 获取标签集合，匹配集合中任意元素。 <li>单个标签长度限制：32个字符。</li> <li>数组长度限制：16。</li>
-                     * @return Tags 标签集合，匹配集合中任意元素。 <li>单个标签长度限制：32个字符。</li> <li>数组长度限制：16。</li>
+                     * 获取<p>标签集合，匹配集合中任意元素。</p><p>入参限制：单个标签长度限制：32个字符。数组长度限制：16。</p>
+                     * @return Tags <p>标签集合，匹配集合中任意元素。</p><p>入参限制：单个标签长度限制：32个字符。数组长度限制：16。</p>
                      * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
-                     * 设置标签集合，匹配集合中任意元素。 <li>单个标签长度限制：32个字符。</li> <li>数组长度限制：16。</li>
-                     * @param _tags 标签集合，匹配集合中任意元素。 <li>单个标签长度限制：32个字符。</li> <li>数组长度限制：16。</li>
+                     * 设置<p>标签集合，匹配集合中任意元素。</p><p>入参限制：单个标签长度限制：32个字符。数组长度限制：16。</p>
+                     * @param _tags <p>标签集合，匹配集合中任意元素。</p><p>入参限制：单个标签长度限制：32个字符。数组长度限制：16。</p>
                      * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
@@ -148,23 +148,36 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取搜索的任务类型，可选值有： 
-- AiAnalysis.DescriptionTask 
-- SmartSubtitle.AsrFullTextTask
-                     * @return TaskTypes 搜索的任务类型，可选值有： 
-- AiAnalysis.DescriptionTask 
-- SmartSubtitle.AsrFullTextTask
+                     * 获取<p>人物集合，匹配出现了所有传入人物的片段</p><p>入参限制：数组长度限制：16</p>
+                     * @return Persons <p>人物集合，匹配出现了所有传入人物的片段</p><p>入参限制：数组长度限制：16</p>
+                     * 
+                     */
+                    std::vector<std::string> GetPersons() const;
+
+                    /**
+                     * 设置<p>人物集合，匹配出现了所有传入人物的片段</p><p>入参限制：数组长度限制：16</p>
+                     * @param _persons <p>人物集合，匹配出现了所有传入人物的片段</p><p>入参限制：数组长度限制：16</p>
+                     * 
+                     */
+                    void SetPersons(const std::vector<std::string>& _persons);
+
+                    /**
+                     * 判断参数 Persons 是否已赋值
+                     * @return Persons 是否已赋值
+                     * 
+                     */
+                    bool PersonsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>搜索的任务类型，可选值有： </p><ul><li>AiAnalysis.DescriptionTask </li><li>SmartSubtitle.AsrFullTextTask</li></ul>
+                     * @return TaskTypes <p>搜索的任务类型，可选值有： </p><ul><li>AiAnalysis.DescriptionTask </li><li>SmartSubtitle.AsrFullTextTask</li></ul>
                      * 
                      */
                     std::vector<std::string> GetTaskTypes() const;
 
                     /**
-                     * 设置搜索的任务类型，可选值有： 
-- AiAnalysis.DescriptionTask 
-- SmartSubtitle.AsrFullTextTask
-                     * @param _taskTypes 搜索的任务类型，可选值有： 
-- AiAnalysis.DescriptionTask 
-- SmartSubtitle.AsrFullTextTask
+                     * 设置<p>搜索的任务类型，可选值有： </p><ul><li>AiAnalysis.DescriptionTask </li><li>SmartSubtitle.AsrFullTextTask</li></ul>
+                     * @param _taskTypes <p>搜索的任务类型，可选值有： </p><ul><li>AiAnalysis.DescriptionTask </li><li>SmartSubtitle.AsrFullTextTask</li></ul>
                      * 
                      */
                     void SetTaskTypes(const std::vector<std::string>& _taskTypes);
@@ -179,39 +192,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 需要进行搜索的内容
+                     * <p>需要进行搜索的内容</p>
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
-                     * 返回的记录条数，默认值：20。
+                     * <p>返回的记录条数，默认值：20。</p><p>取值范围：[1, 100]</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 文件类型。匹配集合中的任意元素： <li>Video: 视频文件</li> <li>Audio: 音频文件</li> <li>Image: 图片文件</li>
+                     * <p>文件类型。匹配集合中的任意元素： <li>Video: 视频文件</li> <li>Audio: 音频文件</li> <li>Image: 图片文件</li></p>
                      */
                     std::vector<std::string> m_categories;
                     bool m_categoriesHasBeenSet;
 
                     /**
-                     * 标签集合，匹配集合中任意元素。 <li>单个标签长度限制：32个字符。</li> <li>数组长度限制：16。</li>
+                     * <p>标签集合，匹配集合中任意元素。</p><p>入参限制：单个标签长度限制：32个字符。数组长度限制：16。</p>
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 搜索的任务类型，可选值有： 
-- AiAnalysis.DescriptionTask 
-- SmartSubtitle.AsrFullTextTask
+                     * <p>人物集合，匹配出现了所有传入人物的片段</p><p>入参限制：数组长度限制：16</p>
+                     */
+                    std::vector<std::string> m_persons;
+                    bool m_personsHasBeenSet;
+
+                    /**
+                     * <p>搜索的任务类型，可选值有： </p><ul><li>AiAnalysis.DescriptionTask </li><li>SmartSubtitle.AsrFullTextTask</li></ul>
                      */
                     std::vector<std::string> m_taskTypes;
                     bool m_taskTypesHasBeenSet;

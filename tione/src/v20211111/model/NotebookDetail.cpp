@@ -64,7 +64,8 @@ NotebookDetail::NotebookDetail() :
     m_resourceGroupInstanceIdHasBeenSet(false),
     m_subUinNameHasBeenSet(false),
     m_jobCreateTimeHasBeenSet(false),
-    m_appIdHasBeenSet(false)
+    m_appIdHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -581,6 +582,16 @@ CoreInternalOutcome NotebookDetail::Deserialize(const rapidjson::Value &value)
         m_appIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookDetail.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -968,6 +979,14 @@ void NotebookDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1675,5 +1694,21 @@ void NotebookDetail::SetAppId(const string& _appId)
 bool NotebookDetail::AppIdHasBeenSet() const
 {
     return m_appIdHasBeenSet;
+}
+
+string NotebookDetail::GetDescription() const
+{
+    return m_description;
+}
+
+void NotebookDetail::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool NotebookDetail::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 

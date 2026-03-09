@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/LLMComprehendSummary.h>
 #include <tencentcloud/vod/v20180717/model/LLMComprehendAsr.h>
+#include <tencentcloud/vod/v20180717/model/LLMComprehendFaceRecognition.h>
 
 
 namespace TencentCloud
@@ -45,23 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取解析级别，可选值为：
-- Audio: 音频级解析
-- Video: 视频级解析
-                     * @return Level 解析级别，可选值为：
-- Audio: 音频级解析
-- Video: 视频级解析
+                     * 获取<p>解析级别，可选值为：</p><ul><li>Audio: 音频级解析</li><li>Video: 视频级解析</li></ul>
+                     * @return Level <p>解析级别，可选值为：</p><ul><li>Audio: 音频级解析</li><li>Video: 视频级解析</li></ul>
                      * 
                      */
                     std::string GetLevel() const;
 
                     /**
-                     * 设置解析级别，可选值为：
-- Audio: 音频级解析
-- Video: 视频级解析
-                     * @param _level 解析级别，可选值为：
-- Audio: 音频级解析
-- Video: 视频级解析
+                     * 设置<p>解析级别，可选值为：</p><ul><li>Audio: 音频级解析</li><li>Video: 视频级解析</li></ul>
+                     * @param _level <p>解析级别，可选值为：</p><ul><li>Audio: 音频级解析</li><li>Video: 视频级解析</li></ul>
                      * 
                      */
                     void SetLevel(const std::string& _level);
@@ -74,15 +67,15 @@ namespace TencentCloud
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 获取<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @return SubAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @param _subAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 设置<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @param _subAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -95,15 +88,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取大模型解析模板名称，长度限制：64 个字符。
-                     * @return Name 大模型解析模板名称，长度限制：64 个字符。
+                     * 获取<p>大模型解析模板名称，长度限制：64 个字符。</p>
+                     * @return Name <p>大模型解析模板名称，长度限制：64 个字符。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置大模型解析模板名称，长度限制：64 个字符。
-                     * @param _name 大模型解析模板名称，长度限制：64 个字符。
+                     * 设置<p>大模型解析模板名称，长度限制：64 个字符。</p>
+                     * @param _name <p>大模型解析模板名称，长度限制：64 个字符。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -116,15 +109,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取大模型解析模板描述信息，长度限制：256 个字符。
-                     * @return Comment 大模型解析模板描述信息，长度限制：256 个字符。
+                     * 获取<p>大模型解析模板描述信息，长度限制：256 个字符。</p>
+                     * @return Comment <p>大模型解析模板描述信息，长度限制：256 个字符。</p>
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置大模型解析模板描述信息，长度限制：256 个字符。
-                     * @param _comment 大模型解析模板描述信息，长度限制：256 个字符。
+                     * 设置<p>大模型解析模板描述信息，长度限制：256 个字符。</p>
+                     * @param _comment <p>大模型解析模板描述信息，长度限制：256 个字符。</p>
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -137,15 +130,15 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取分段摘要解析配置
-                     * @return Summary 分段摘要解析配置
+                     * 获取<p>分段摘要解析配置</p>
+                     * @return Summary <p>分段摘要解析配置</p>
                      * 
                      */
                     LLMComprehendSummary GetSummary() const;
 
                     /**
-                     * 设置分段摘要解析配置
-                     * @param _summary 分段摘要解析配置
+                     * 设置<p>分段摘要解析配置</p>
+                     * @param _summary <p>分段摘要解析配置</p>
                      * 
                      */
                     void SetSummary(const LLMComprehendSummary& _summary);
@@ -158,15 +151,15 @@ namespace TencentCloud
                     bool SummaryHasBeenSet() const;
 
                     /**
-                     * 获取文本转录解析配置
-                     * @return Asr 文本转录解析配置
+                     * 获取<p>文本转录解析配置</p>
+                     * @return Asr <p>文本转录解析配置</p>
                      * 
                      */
                     LLMComprehendAsr GetAsr() const;
 
                     /**
-                     * 设置文本转录解析配置
-                     * @param _asr 文本转录解析配置
+                     * 设置<p>文本转录解析配置</p>
+                     * @param _asr <p>文本转录解析配置</p>
                      * 
                      */
                     void SetAsr(const LLMComprehendAsr& _asr);
@@ -178,45 +171,70 @@ namespace TencentCloud
                      */
                     bool AsrHasBeenSet() const;
 
+                    /**
+                     * 获取<p>人脸识别配置</p>
+                     * @return FaceRecognition <p>人脸识别配置</p>
+                     * 
+                     */
+                    LLMComprehendFaceRecognition GetFaceRecognition() const;
+
+                    /**
+                     * 设置<p>人脸识别配置</p>
+                     * @param _faceRecognition <p>人脸识别配置</p>
+                     * 
+                     */
+                    void SetFaceRecognition(const LLMComprehendFaceRecognition& _faceRecognition);
+
+                    /**
+                     * 判断参数 FaceRecognition 是否已赋值
+                     * @return FaceRecognition 是否已赋值
+                     * 
+                     */
+                    bool FaceRecognitionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 解析级别，可选值为：
-- Audio: 音频级解析
-- Video: 视频级解析
+                     * <p>解析级别，可选值为：</p><ul><li>Audio: 音频级解析</li><li>Video: 视频级解析</li></ul>
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;
 
                     /**
-                     * <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 大模型解析模板名称，长度限制：64 个字符。
+                     * <p>大模型解析模板名称，长度限制：64 个字符。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 大模型解析模板描述信息，长度限制：256 个字符。
+                     * <p>大模型解析模板描述信息，长度限制：256 个字符。</p>
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * 分段摘要解析配置
+                     * <p>分段摘要解析配置</p>
                      */
                     LLMComprehendSummary m_summary;
                     bool m_summaryHasBeenSet;
 
                     /**
-                     * 文本转录解析配置
+                     * <p>文本转录解析配置</p>
                      */
                     LLMComprehendAsr m_asr;
                     bool m_asrHasBeenSet;
+
+                    /**
+                     * <p>人脸识别配置</p>
+                     */
+                    LLMComprehendFaceRecognition m_faceRecognition;
+                    bool m_faceRecognitionHasBeenSet;
 
                 };
             }

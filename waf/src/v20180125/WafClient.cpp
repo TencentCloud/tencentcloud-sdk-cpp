@@ -2540,6 +2540,56 @@ WafClient::DescribeApiListVersionTwoOutcomeCallable WafClient::DescribeApiListVe
     return prom->get_future();
 }
 
+WafClient::DescribeApiSecSensitiveRuleListOutcome WafClient::DescribeApiSecSensitiveRuleList(const DescribeApiSecSensitiveRuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApiSecSensitiveRuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApiSecSensitiveRuleListResponse rsp = DescribeApiSecSensitiveRuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApiSecSensitiveRuleListOutcome(rsp);
+        else
+            return DescribeApiSecSensitiveRuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApiSecSensitiveRuleListOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeApiSecSensitiveRuleListAsync(const DescribeApiSecSensitiveRuleListRequest& request, const DescribeApiSecSensitiveRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeApiSecSensitiveRuleListRequest&;
+    using Resp = DescribeApiSecSensitiveRuleListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeApiSecSensitiveRuleList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DescribeApiSecSensitiveRuleListOutcomeCallable WafClient::DescribeApiSecSensitiveRuleListCallable(const DescribeApiSecSensitiveRuleListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeApiSecSensitiveRuleListOutcome>>();
+    DescribeApiSecSensitiveRuleListAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DescribeApiSecSensitiveRuleListRequest&,
+        DescribeApiSecSensitiveRuleListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::DescribeAreaBanAreasOutcome WafClient::DescribeAreaBanAreas(const DescribeAreaBanAreasRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAreaBanAreas");

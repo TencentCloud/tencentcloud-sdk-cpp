@@ -185,6 +185,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/DescribeCDNStatDetailsResponse.h
   include/tencentcloud/vod/v20180717/model/AttachMediaSubtitlesRequest.h
   include/tencentcloud/vod/v20180717/model/AiAnalysisTaskCoverResult.h
+  include/tencentcloud/vod/v20180717/model/LLMComprehendFaceRecognitionForUpdate.h
   include/tencentcloud/vod/v20180717/model/DescribeEventConfigRequest.h
   include/tencentcloud/vod/v20180717/model/MediaContentReviewOcrTextSegmentItem.h
   include/tencentcloud/vod/v20180717/model/ModifyLLMComprehendTemplateResponse.h
@@ -389,6 +390,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/DeleteMediaResponse.h
   include/tencentcloud/vod/v20180717/model/ModifySnapshotByTimeOffsetTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/DeleteHeadTailTemplateRequest.h
+  include/tencentcloud/vod/v20180717/model/LLMComprehendFaceRecognition.h
   include/tencentcloud/vod/v20180717/model/AiAnalysisTaskTagResult.h
   include/tencentcloud/vod/v20180717/model/SearchMediaResponse.h
   include/tencentcloud/vod/v20180717/model/ModifyAIAnalysisTemplateResponse.h
@@ -1197,6 +1199,7 @@ set(vod_src
   src/v20180717/model/DescribeCDNStatDetailsResponse.cpp
   src/v20180717/model/AttachMediaSubtitlesRequest.cpp
   src/v20180717/model/AiAnalysisTaskCoverResult.cpp
+  src/v20180717/model/LLMComprehendFaceRecognitionForUpdate.cpp
   src/v20180717/model/DescribeEventConfigRequest.cpp
   src/v20180717/model/MediaContentReviewOcrTextSegmentItem.cpp
   src/v20180717/model/ModifyLLMComprehendTemplateResponse.cpp
@@ -1401,6 +1404,7 @@ set(vod_src
   src/v20180717/model/DeleteMediaResponse.cpp
   src/v20180717/model/ModifySnapshotByTimeOffsetTemplateResponse.cpp
   src/v20180717/model/DeleteHeadTailTemplateRequest.cpp
+  src/v20180717/model/LLMComprehendFaceRecognition.cpp
   src/v20180717/model/AiAnalysisTaskTagResult.cpp
   src/v20180717/model/SearchMediaResponse.cpp
   src/v20180717/model/ModifyAIAnalysisTemplateResponse.cpp

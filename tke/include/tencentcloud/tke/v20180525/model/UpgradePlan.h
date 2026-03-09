@@ -194,15 +194,39 @@ namespace TencentCloud
                     bool UpgradeEndAtHasBeenSet() const;
 
                     /**
-                     * 获取升级状态
-                     * @return Status 升级状态
+                     * 获取升级状态，包括以下状态值：
+- Pending：等待中
+- Processing：升级配置处理中
+- Running：升级中
+- Succeed：升级成功
+- Failed：升级失败
+- Cancelled：已取消
+                     * @return Status 升级状态，包括以下状态值：
+- Pending：等待中
+- Processing：升级配置处理中
+- Running：升级中
+- Succeed：升级成功
+- Failed：升级失败
+- Cancelled：已取消
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置升级状态
-                     * @param _status 升级状态
+                     * 设置升级状态，包括以下状态值：
+- Pending：等待中
+- Processing：升级配置处理中
+- Running：升级中
+- Succeed：升级成功
+- Failed：升级失败
+- Cancelled：已取消
+                     * @param _status 升级状态，包括以下状态值：
+- Pending：等待中
+- Processing：升级配置处理中
+- Running：升级中
+- Succeed：升级成功
+- Failed：升级失败
+- Cancelled：已取消
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -280,7 +304,13 @@ namespace TencentCloud
                     bool m_upgradeEndAtHasBeenSet;
 
                     /**
-                     * 升级状态
+                     * 升级状态，包括以下状态值：
+- Pending：等待中
+- Processing：升级配置处理中
+- Running：升级中
+- Succeed：升级成功
+- Failed：升级失败
+- Cancelled：已取消
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

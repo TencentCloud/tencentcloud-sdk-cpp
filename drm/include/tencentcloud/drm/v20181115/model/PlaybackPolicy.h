@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取播放许可证的有效期
-                     * @return LicenseDurationSeconds 播放许可证的有效期
+                     * 获取<p>播放许可证的有效期</p><p>单位：秒</p>
+                     * @return LicenseDurationSeconds <p>播放许可证的有效期</p><p>单位：秒</p>
                      * 
                      */
                     uint64_t GetLicenseDurationSeconds() const;
 
                     /**
-                     * 设置播放许可证的有效期
-                     * @param _licenseDurationSeconds 播放许可证的有效期
+                     * 设置<p>播放许可证的有效期</p><p>单位：秒</p>
+                     * @param _licenseDurationSeconds <p>播放许可证的有效期</p><p>单位：秒</p>
                      * 
                      */
                     void SetLicenseDurationSeconds(const uint64_t& _licenseDurationSeconds);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool LicenseDurationSecondsHasBeenSet() const;
 
                     /**
-                     * 获取开始播放后，允许最长播放时间
-                     * @return PlaybackDurationSeconds 开始播放后，允许最长播放时间
+                     * 获取<p>开始播放后，允许最长播放时间</p><p>单位：秒</p>
+                     * @return PlaybackDurationSeconds <p>开始播放后，允许最长播放时间</p><p>单位：秒</p>
                      * 
                      */
                     uint64_t GetPlaybackDurationSeconds() const;
 
                     /**
-                     * 设置开始播放后，允许最长播放时间
-                     * @param _playbackDurationSeconds 开始播放后，允许最长播放时间
+                     * 设置<p>开始播放后，允许最长播放时间</p><p>单位：秒</p>
+                     * @param _playbackDurationSeconds <p>开始播放后，允许最长播放时间</p><p>单位：秒</p>
                      * 
                      */
                     void SetPlaybackDurationSeconds(const uint64_t& _playbackDurationSeconds);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 播放许可证的有效期
+                     * <p>播放许可证的有效期</p><p>单位：秒</p>
                      */
                     uint64_t m_licenseDurationSeconds;
                     bool m_licenseDurationSecondsHasBeenSet;
 
                     /**
-                     * 开始播放后，允许最长播放时间
+                     * <p>开始播放后，允许最长播放时间</p><p>单位：秒</p>
                      */
                     uint64_t m_playbackDurationSeconds;
                     bool m_playbackDurationSecondsHasBeenSet;

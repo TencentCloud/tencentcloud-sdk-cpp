@@ -171,7 +171,9 @@ namespace TencentCloud
 
 
                 /**
-                 *新增渠道活码接口
+                 *产品已经EOL
+
+新增渠道活码接口
                  * @param req CreateChannelCodeRequest
                  * @return CreateChannelCodeOutcome
                  */
@@ -191,7 +193,9 @@ namespace TencentCloud
                 CreateCorpTagOutcomeCallable CreateCorpTagCallable(const Model::CreateCorpTagRequest& request);
 
                 /**
-                 *线索回收接口
+                 *产品已经EOL
+
+线索回收接口
                  * @param req CreateLeadRequest
                  * @return CreateLeadOutcome
                  */
@@ -200,7 +204,9 @@ namespace TencentCloud
                 CreateLeadOutcomeCallable CreateLeadCallable(const Model::CreateLeadRequest& request);
 
                 /**
-                 *根据游标拉取活动参与列表信息
+                 *产品已经EOL
+
+根据游标拉取活动参与列表信息
                  * @param req QueryActivityJoinListRequest
                  * @return QueryActivityJoinListOutcome
                  */
@@ -209,7 +215,9 @@ namespace TencentCloud
                 QueryActivityJoinListOutcomeCallable QueryActivityJoinListCallable(const Model::QueryActivityJoinListRequest& request);
 
                 /**
-                 *根据游标拉取活动列表信息
+                 *产品已经EOL
+
+根据游标拉取活动列表信息
                  * @param req QueryActivityListRequest
                  * @return QueryActivityListOutcome
                  */
@@ -218,7 +226,9 @@ namespace TencentCloud
                 QueryActivityListOutcomeCallable QueryActivityListCallable(const Model::QueryActivityListRequest& request);
 
                 /**
-                 *根据游标拉取活动活码列表信息
+                 *产品已经EOL
+
+根据游标拉取活动活码列表信息
                  * @param req QueryActivityLiveCodeListRequest
                  * @return QueryActivityLiveCodeListOutcome
                  */
@@ -227,7 +237,9 @@ namespace TencentCloud
                 QueryActivityLiveCodeListOutcomeCallable QueryActivityLiveCodeListCallable(const Model::QueryActivityLiveCodeListRequest& request);
 
                 /**
-                 *查询指定时间范围内发生过到店的潜客到店信息
+                 *产品已经EOL
+
+查询指定时间范围内发生过到店的潜客到店信息
                  * @param req QueryArrivalListRequest
                  * @return QueryArrivalListOutcome
                  */
@@ -236,7 +248,9 @@ namespace TencentCloud
                 QueryArrivalListOutcomeCallable QueryArrivalListCallable(const Model::QueryArrivalListRequest& request);
 
                 /**
-                 *根据游标拉取渠道活码列表信息
+                 *产品已经EOL
+
+根据游标拉取渠道活码列表信息
                  * @param req QueryChannelCodeListRequest
                  * @return QueryChannelCodeListOutcome
                  */
@@ -245,7 +259,9 @@ namespace TencentCloud
                 QueryChannelCodeListOutcomeCallable QueryChannelCodeListCallable(const Model::QueryChannelCodeListRequest& request);
 
                 /**
-                 *根据游标拉取会话存档列表信息
+                 *产品已经EOL
+
+根据游标拉取会话存档列表信息
                  * @param req QueryChatArchivingListRequest
                  * @return QueryChatArchivingListOutcome
                  */
@@ -254,7 +270,9 @@ namespace TencentCloud
                 QueryChatArchivingListOutcomeCallable QueryChatArchivingListCallable(const Model::QueryChatArchivingListRequest& request);
 
                 /**
-                 *企业可通过此接口获取线索列表。
+                 *产品已经EOL
+
+企业可通过此接口获取线索列表。
                  * @param req QueryClueInfoListRequest
                  * @return QueryClueInfoListOutcome
                  */
@@ -263,7 +281,9 @@ namespace TencentCloud
                 QueryClueInfoListOutcomeCallable QueryClueInfoListCallable(const Model::QueryClueInfoListRequest& request);
 
                 /**
-                 *通过接口拉取租户/指定成员/部门在指定日期范围内的CRM跟进统计数据
+                 *产品已经EOL
+
+通过接口拉取租户/指定成员/部门在指定日期范围内的CRM跟进统计数据
                  * @param req QueryCrmStatisticsRequest
                  * @return QueryCrmStatisticsOutcome
                  */
@@ -272,7 +292,9 @@ namespace TencentCloud
                 QueryCrmStatisticsOutcomeCallable QueryCrmStatisticsCallable(const Model::QueryCrmStatisticsRequest& request);
 
                 /**
-                 *通过接口拉取SaaS内C端外部联系人在指定时间范围内的行为事件明细。此接口提供的数据以天为维度，查询的时间范围为[start_time,end_time]，即前后均为闭区间，支持的最大查询跨度为365天。
+                 *产品已经EOL
+
+通过接口拉取SaaS内C端外部联系人在指定时间范围内的行为事件明细。此接口提供的数据以天为维度，查询的时间范围为[start_time,end_time]，即前后均为闭区间，支持的最大查询跨度为365天。
                  * @param req QueryCustomerEventDetailStatisticsRequest
                  * @return QueryCustomerEventDetailStatisticsOutcome
                  */
@@ -281,7 +303,9 @@ namespace TencentCloud
                 QueryCustomerEventDetailStatisticsOutcomeCallable QueryCustomerEventDetailStatisticsCallable(const Model::QueryCustomerEventDetailStatisticsRequest& request);
 
                 /**
-                 *通过接口拉取租户已有潜客客户档案列表信息
+                 *产品已经EOL
+
+通过接口拉取租户已有潜客客户档案列表信息
                  * @param req QueryCustomerProfileListRequest
                  * @return QueryCustomerProfileListOutcome
                  */
@@ -290,7 +314,9 @@ namespace TencentCloud
                 QueryCustomerProfileListOutcomeCallable QueryCustomerProfileListCallable(const Model::QueryCustomerProfileListRequest& request);
 
                 /**
-                 *企业可通过此接口获取录入在企微SaaS平台上的经销商信息。
+                 *产品已经EOL
+
+企业可通过此接口获取录入在企微SaaS平台上的经销商信息。
                  * @param req QueryDealerInfoListRequest
                  * @return QueryDealerInfoListOutcome
                  */
@@ -299,7 +325,9 @@ namespace TencentCloud
                 QueryDealerInfoListOutcomeCallable QueryDealerInfoListCallable(const Model::QueryDealerInfoListRequest& request);
 
                 /**
-                 *企业可通过此接口，根据外部联系人的userid，拉取外部联系人详情
+                 *产品已经EOL
+
+企业可通过此接口，根据外部联系人的userid，拉取外部联系人详情
                  * @param req QueryExternalContactDetailRequest
                  * @return QueryExternalContactDetailOutcome
                  */
@@ -308,7 +336,9 @@ namespace TencentCloud
                 QueryExternalContactDetailOutcomeCallable QueryExternalContactDetailCallable(const Model::QueryExternalContactDetailRequest& request);
 
                 /**
-                 *企业可通过传入起始和结束时间，获取该时间段的外部联系人详情列表
+                 *产品已经EOL
+
+企业可通过传入起始和结束时间，获取该时间段的外部联系人详情列表
                  * @param req QueryExternalContactDetailByDateRequest
                  * @return QueryExternalContactDetailByDateOutcome
                  */
@@ -317,7 +347,9 @@ namespace TencentCloud
                 QueryExternalContactDetailByDateOutcomeCallable QueryExternalContactDetailByDateCallable(const Model::QueryExternalContactDetailByDateRequest& request);
 
                 /**
-                 *企业可通过此接口基于外部联系人获取指定成员添加的客户列表。客户是指配置了客户联系功能的成员所添加的外部联系人。没有配置客户联系功能的成员，所添加的外部联系人将不会作为客户返回。
+                 *产品已经EOL
+
+企业可通过此接口基于外部联系人获取指定成员添加的客户列表。客户是指配置了客户联系功能的成员所添加的外部联系人。没有配置客户联系功能的成员，所添加的外部联系人将不会作为客户返回。
                  * @param req QueryExternalContactListRequest
                  * @return QueryExternalContactListOutcome
                  */
@@ -326,7 +358,9 @@ namespace TencentCloud
                 QueryExternalContactListOutcomeCallable QueryExternalContactListCallable(const Model::QueryExternalContactListRequest& request);
 
                 /**
-                 *通过接口拉取租户在指定时间范围内的外部联系人添加/删除明细，此接口提供的数据以天为维度，查询的时间范围为[StarTime, EndTime]，即前后均为闭区间，支持的最大查询跨度为365天；
+                 *产品已经EOL
+
+通过接口拉取租户在指定时间范围内的外部联系人添加/删除明细，此接口提供的数据以天为维度，查询的时间范围为[StarTime, EndTime]，即前后均为闭区间，支持的最大查询跨度为365天；
                  * @param req QueryExternalUserEventListRequest
                  * @return QueryExternalUserEventListOutcome
                  */
@@ -335,7 +369,9 @@ namespace TencentCloud
                 QueryExternalUserEventListOutcomeCallable QueryExternalUserEventListCallable(const Model::QueryExternalUserEventListRequest& request);
 
                 /**
-                 *企业可通过此接口将企业主体对应的外部联系人id转换为乐销车应用主体对应的外部联系人。
+                 *产品已经EOL
+
+企业可通过此接口将企业主体对应的外部联系人id转换为乐销车应用主体对应的外部联系人。
                  * @param req QueryExternalUserMappingInfoRequest
                  * @return QueryExternalUserMappingInfoOutcome
                  */
@@ -344,7 +380,9 @@ namespace TencentCloud
                 QueryExternalUserMappingInfoOutcomeCallable QueryExternalUserMappingInfoCallable(const Model::QueryExternalUserMappingInfoRequest& request);
 
                 /**
-                 *查询指定时间范围内发生过跟进的潜客信息
+                 *产品已经EOL
+
+查询指定时间范围内发生过跟进的潜客信息
                  * @param req QueryFollowListRequest
                  * @return QueryFollowListOutcome
                  */
@@ -353,7 +391,9 @@ namespace TencentCloud
                 QueryFollowListOutcomeCallable QueryFollowListCallable(const Model::QueryFollowListRequest& request);
 
                 /**
-                 *该接口获取license对应的详细信息
+                 *产品已经EOL
+
+该接口获取license对应的详细信息
                  * @param req QueryLicenseInfoRequest
                  * @return QueryLicenseInfoOutcome
                  */
@@ -362,7 +402,9 @@ namespace TencentCloud
                 QueryLicenseInfoOutcomeCallable QueryLicenseInfoCallable(const Model::QueryLicenseInfoRequest& request);
 
                 /**
-                 *通过接口按类型拉取租户当前的素材列表及关键信息
+                 *产品已经EOL
+
+通过接口按类型拉取租户当前的素材列表及关键信息
                  * @param req QueryMaterialListRequest
                  * @return QueryMaterialListOutcome
                  */
@@ -371,7 +413,9 @@ namespace TencentCloud
                 QueryMaterialListOutcomeCallable QueryMaterialListCallable(const Model::QueryMaterialListRequest& request);
 
                 /**
-                 *查询小程序码列表接口
+                 *产品已经EOL
+
+查询小程序码列表接口
                  * @param req QueryMiniAppCodeListRequest
                  * @return QueryMiniAppCodeListOutcome
                  */
@@ -380,7 +424,9 @@ namespace TencentCloud
                 QueryMiniAppCodeListOutcomeCallable QueryMiniAppCodeListCallable(const Model::QueryMiniAppCodeListRequest& request);
 
                 /**
-                 *通过接口拉取SaaS内企业成员在指定时间范围内的行为事件明细。此接口提供的数据以天为维度，查询的时间范围为[start_time,end_time]，即前后均为闭区间，支持的最大查询跨度为365天。
+                 *产品已经EOL
+
+通过接口拉取SaaS内企业成员在指定时间范围内的行为事件明细。此接口提供的数据以天为维度，查询的时间范围为[start_time,end_time]，即前后均为闭区间，支持的最大查询跨度为365天。
                  * @param req QueryStaffEventDetailStatisticsRequest
                  * @return QueryStaffEventDetailStatisticsOutcome
                  */
@@ -389,7 +435,9 @@ namespace TencentCloud
                 QueryStaffEventDetailStatisticsOutcomeCallable QueryStaffEventDetailStatisticsCallable(const Model::QueryStaffEventDetailStatisticsRequest& request);
 
                 /**
-                 *查询企业成员信息列表接口
+                 *产品已经EOL
+
+查询企业成员信息列表接口
                  * @param req QueryUserInfoListRequest
                  * @return QueryUserInfoListOutcome
                  */
@@ -398,7 +446,9 @@ namespace TencentCloud
                 QueryUserInfoListOutcomeCallable QueryUserInfoListCallable(const Model::QueryUserInfoListRequest& request);
 
                 /**
-                 *企业可通过此接口获取企微SaaS平台上的车系车型信息。
+                 *产品已经EOL
+
+企业可通过此接口获取企微SaaS平台上的车系车型信息。
                  * @param req QueryVehicleInfoListRequest
                  * @return QueryVehicleInfoListOutcome
                  */

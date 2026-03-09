@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用区名称
-                     * @return Zone 可用区名称
+                     * 获取<p>可用区名称</p>
+                     * @return Zone <p>可用区名称</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区名称
-                     * @param _zone 可用区名称
+                     * 设置<p>可用区名称</p>
+                     * @param _zone <p>可用区名称</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -64,27 +64,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取数据库引擎，支持：
-1、postgresql（云数据库PostgreSQL）；
-2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
-如不指定默认使用postgresql。
-                     * @return DBEngine 数据库引擎，支持：
-1、postgresql（云数据库PostgreSQL）；
-2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
-如不指定默认使用postgresql。
+                     * 获取<p>数据库引擎，支持：<br>1、postgresql（云数据库PostgreSQL）；<br>2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；<br>如不指定默认使用postgresql。</p>
+                     * @return DBEngine <p>数据库引擎，支持：<br>1、postgresql（云数据库PostgreSQL）；<br>2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；<br>如不指定默认使用postgresql。</p>
                      * 
                      */
                     std::string GetDBEngine() const;
 
                     /**
-                     * 设置数据库引擎，支持：
-1、postgresql（云数据库PostgreSQL）；
-2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
-如不指定默认使用postgresql。
-                     * @param _dBEngine 数据库引擎，支持：
-1、postgresql（云数据库PostgreSQL）；
-2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
-如不指定默认使用postgresql。
+                     * 设置<p>数据库引擎，支持：<br>1、postgresql（云数据库PostgreSQL）；<br>2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；<br>如不指定默认使用postgresql。</p>
+                     * @param _dBEngine <p>数据库引擎，支持：<br>1、postgresql（云数据库PostgreSQL）；<br>2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；<br>如不指定默认使用postgresql。</p>
                      * 
                      */
                     void SetDBEngine(const std::string& _dBEngine);
@@ -99,16 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 可用区名称
+                     * <p>可用区名称</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 数据库引擎，支持：
-1、postgresql（云数据库PostgreSQL）；
-2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
-如不指定默认使用postgresql。
+                     * <p>数据库引擎，支持：<br>1、postgresql（云数据库PostgreSQL）；<br>2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；<br>如不指定默认使用postgresql。</p>
                      */
                     std::string m_dBEngine;
                     bool m_dBEngineHasBeenSet;

@@ -28,6 +28,7 @@ SearchMediaBySemanticsRequest::SearchMediaBySemanticsRequest() :
     m_limitHasBeenSet(false),
     m_categoriesHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_personsHasBeenSet(false),
     m_taskTypesHasBeenSet(false)
 {
 }
@@ -84,6 +85,19 @@ string SearchMediaBySemanticsRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_personsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Persons";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_persons.begin(); itr != m_persons.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -188,6 +202,22 @@ void SearchMediaBySemanticsRequest::SetTags(const vector<string>& _tags)
 bool SearchMediaBySemanticsRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+vector<string> SearchMediaBySemanticsRequest::GetPersons() const
+{
+    return m_persons;
+}
+
+void SearchMediaBySemanticsRequest::SetPersons(const vector<string>& _persons)
+{
+    m_persons = _persons;
+    m_personsHasBeenSet = true;
+}
+
+bool SearchMediaBySemanticsRequest::PersonsHasBeenSet() const
+{
+    return m_personsHasBeenSet;
 }
 
 vector<string> SearchMediaBySemanticsRequest::GetTaskTypes() const

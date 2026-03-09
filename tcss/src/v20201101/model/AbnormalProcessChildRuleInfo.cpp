@@ -24,7 +24,8 @@ AbnormalProcessChildRuleInfo::AbnormalProcessChildRuleInfo() :
     m_ruleModeHasBeenSet(false),
     m_processPathHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
-    m_ruleLevelHasBeenSet(false)
+    m_ruleLevelHasBeenSet(false),
+    m_cmdLineHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome AbnormalProcessChildRuleInfo::Deserialize(const rapidjson::V
         m_ruleLevelHasBeenSet = true;
     }
 
+    if (value.HasMember("CmdLine") && !value["CmdLine"].IsNull())
+    {
+        if (!value["CmdLine"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AbnormalProcessChildRuleInfo.CmdLine` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cmdLine = string(value["CmdLine"].GetString());
+        m_cmdLineHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void AbnormalProcessChildRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "RuleLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ruleLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cmdLineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CmdLine";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cmdLine.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void AbnormalProcessChildRuleInfo::SetRuleLevel(const string& _ruleLevel)
 bool AbnormalProcessChildRuleInfo::RuleLevelHasBeenSet() const
 {
     return m_ruleLevelHasBeenSet;
+}
+
+string AbnormalProcessChildRuleInfo::GetCmdLine() const
+{
+    return m_cmdLine;
+}
+
+void AbnormalProcessChildRuleInfo::SetCmdLine(const string& _cmdLine)
+{
+    m_cmdLine = _cmdLine;
+    m_cmdLineHasBeenSet = true;
+}
+
+bool AbnormalProcessChildRuleInfo::CmdLineHasBeenSet() const
+{
+    return m_cmdLineHasBeenSet;
 }
 

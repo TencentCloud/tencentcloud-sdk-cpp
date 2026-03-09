@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总数
-                     * @return Total 总数
+                     * 获取<p>总数</p>
+                     * @return Total <p>总数</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取API安全数组
-                     * @return List API安全数组
+                     * 获取<p>API安全数组</p>
+                     * @return List <p>API安全数组</p>
                      * 
                      */
                     std::vector<DisplayApiSec> GetList() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总数
+                     * <p>总数</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * API安全数组
+                     * <p>API安全数组</p>
                      */
                     std::vector<DisplayApiSec> m_list;
                     bool m_listHasBeenSet;

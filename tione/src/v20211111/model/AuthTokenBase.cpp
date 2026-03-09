@@ -25,7 +25,8 @@ AuthTokenBase::AuthTokenBase() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome AuthTokenBase::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuthTokenBase.Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void AuthTokenBase::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void AuthTokenBase::SetStatus(const string& _status)
 bool AuthTokenBase::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string AuthTokenBase::GetId() const
+{
+    return m_id;
+}
+
+void AuthTokenBase::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool AuthTokenBase::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 

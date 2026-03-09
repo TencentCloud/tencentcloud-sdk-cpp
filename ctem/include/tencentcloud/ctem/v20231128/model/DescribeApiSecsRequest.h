@@ -317,15 +317,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取企业ID
-                     * @return CustomerId 企业ID
+                     * 获取<p>企业ID</p>
+                     * @return CustomerId <p>企业ID</p>
                      * 
                      */
                     int64_t GetCustomerId() const;
 
                     /**
-                     * 设置企业ID
-                     * @param _customerId 企业ID
+                     * 设置<p>企业ID</p>
+                     * @param _customerId <p>企业ID</p>
                      * 
                      */
                     void SetCustomerId(const int64_t& _customerId);
@@ -336,6 +336,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CustomerIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>排序方式</p>
+                     * @return OrderBy <p>排序方式</p>
+                     * 
+                     */
+                    std::string GetOrderBy() const;
+
+                    /**
+                     * 设置<p>排序方式</p>
+                     * @param _orderBy <p>排序方式</p>
+                     * 
+                     */
+                    void SetOrderBy(const std::string& _orderBy);
+
+                    /**
+                     * 判断参数 OrderBy 是否已赋值
+                     * @return OrderBy 是否已赋值
+                     * 
+                     */
+                    bool OrderByHasBeenSet() const;
 
                 private:
 
@@ -418,10 +439,16 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 企业ID
+                     * <p>企业ID</p>
                      */
                     int64_t m_customerId;
                     bool m_customerIdHasBeenSet;
+
+                    /**
+                     * <p>排序方式</p>
+                     */
+                    std::string m_orderBy;
+                    bool m_orderByHasBeenSet;
 
                 };
             }

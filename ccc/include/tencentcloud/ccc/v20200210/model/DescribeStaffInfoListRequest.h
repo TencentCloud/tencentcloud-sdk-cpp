@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @return SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 获取<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
+                     * @return SdkAppId <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
-                     * 设置应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
-                     * @param _sdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * 设置<p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
+                     * @param _sdkAppId <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取分页尺寸，上限 9999
-                     * @return PageSize 分页尺寸，上限 9999
+                     * 获取<p>分页尺寸，上限 9999</p>
+                     * @return PageSize <p>分页尺寸，上限 9999</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置分页尺寸，上限 9999
-                     * @param _pageSize 分页尺寸，上限 9999
+                     * 设置<p>分页尺寸，上限 9999</p>
+                     * @param _pageSize <p>分页尺寸，上限 9999</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取分页页码，从 0 开始
-                     * @return PageNumber 分页页码，从 0 开始
+                     * 获取<p>分页页码，从 0 开始</p>
+                     * @return PageNumber <p>分页页码，从 0 开始</p>
                      * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
-                     * 设置分页页码，从 0 开始
-                     * @param _pageNumber 分页页码，从 0 开始
+                     * 设置<p>分页页码，从 0 开始</p>
+                     * @param _pageNumber <p>分页页码，从 0 开始</p>
                      * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取坐席账号，查询单个坐席时使用
-                     * @return StaffMail 坐席账号，查询单个坐席时使用
+                     * 获取<p>坐席账号，查询单个坐席时使用</p>
+                     * @return StaffMail <p>坐席账号，查询单个坐席时使用</p>
                      * 
                      */
                     std::string GetStaffMail() const;
 
                     /**
-                     * 设置坐席账号，查询单个坐席时使用
-                     * @param _staffMail 坐席账号，查询单个坐席时使用
+                     * 设置<p>坐席账号，查询单个坐席时使用</p>
+                     * @param _staffMail <p>坐席账号，查询单个坐席时使用</p>
                      * 
                      */
                     void SetStaffMail(const std::string& _staffMail);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool StaffMailHasBeenSet() const;
 
                     /**
-                     * 获取查询修改时间大于等于ModifiedTime的坐席时使用
-                     * @return ModifiedTime 查询修改时间大于等于ModifiedTime的坐席时使用
+                     * 获取<p>查询修改时间大于等于ModifiedTime的坐席时使用</p>
+                     * @return ModifiedTime <p>查询修改时间大于等于ModifiedTime的坐席时使用</p>
                      * 
                      */
                     int64_t GetModifiedTime() const;
 
                     /**
-                     * 设置查询修改时间大于等于ModifiedTime的坐席时使用
-                     * @param _modifiedTime 查询修改时间大于等于ModifiedTime的坐席时使用
+                     * 设置<p>查询修改时间大于等于ModifiedTime的坐席时使用</p>
+                     * @param _modifiedTime <p>查询修改时间大于等于ModifiedTime的坐席时使用</p>
                      * 
                      */
                     void SetModifiedTime(const int64_t& _modifiedTime);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ModifiedTimeHasBeenSet() const;
 
                     /**
-                     * 获取技能组ID
-                     * @return SkillGroupId 技能组ID
+                     * 获取<p>技能组ID</p>
+                     * @return SkillGroupId <p>技能组ID</p>
                      * 
                      */
                     int64_t GetSkillGroupId() const;
 
                     /**
-                     * 设置技能组ID
-                     * @param _skillGroupId 技能组ID
+                     * 设置<p>技能组ID</p>
+                     * @param _skillGroupId <p>技能组ID</p>
                      * 
                      */
                     void SetSkillGroupId(const int64_t& _skillGroupId);
@@ -171,37 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * <p>应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc</p>
                      */
                     int64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 分页尺寸，上限 9999
+                     * <p>分页尺寸，上限 9999</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 分页页码，从 0 开始
+                     * <p>分页页码，从 0 开始</p>
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 坐席账号，查询单个坐席时使用
+                     * <p>坐席账号，查询单个坐席时使用</p>
                      */
                     std::string m_staffMail;
                     bool m_staffMailHasBeenSet;
 
                     /**
-                     * 查询修改时间大于等于ModifiedTime的坐席时使用
+                     * <p>查询修改时间大于等于ModifiedTime的坐席时使用</p>
                      */
                     int64_t m_modifiedTime;
                     bool m_modifiedTimeHasBeenSet;
 
                     /**
-                     * 技能组ID
+                     * <p>技能组ID</p>
                      */
                     int64_t m_skillGroupId;
                     bool m_skillGroupIdHasBeenSet;

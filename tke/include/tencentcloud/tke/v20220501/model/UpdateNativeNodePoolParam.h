@@ -424,15 +424,15 @@ namespace TencentCloud
                     bool ReplicasHasBeenSet() const;
 
                     /**
-                     * 获取是否更新存量节点
-                     * @return UpdateExistedNode 是否更新存量节点
+                     * 获取是否更新存量节点MetaData(包括： metadata、annotation、label)
+                     * @return UpdateExistedNode 是否更新存量节点MetaData(包括： metadata、annotation、label)
                      * 
                      */
                     bool GetUpdateExistedNode() const;
 
                     /**
-                     * 设置是否更新存量节点
-                     * @param _updateExistedNode 是否更新存量节点
+                     * 设置是否更新存量节点MetaData(包括： metadata、annotation、label)
+                     * @param _updateExistedNode 是否更新存量节点MetaData(包括： metadata、annotation、label)
                      * 
                      */
                     void SetUpdateExistedNode(const bool& _updateExistedNode);
@@ -464,6 +464,35 @@ namespace TencentCloud
                      * 
                      */
                     bool DataDisksHasBeenSet() const;
+
+                    /**
+                     * 获取节点management参数存量更新开关，有enable（打开）、disable（关闭）两个状态可选
+
+management包括：nameserver、host、kubelet、kernel参数
+                     * @return UpdateMachineManagement 节点management参数存量更新开关，有enable（打开）、disable（关闭）两个状态可选
+
+management包括：nameserver、host、kubelet、kernel参数
+                     * 
+                     */
+                    std::string GetUpdateMachineManagement() const;
+
+                    /**
+                     * 设置节点management参数存量更新开关，有enable（打开）、disable（关闭）两个状态可选
+
+management包括：nameserver、host、kubelet、kernel参数
+                     * @param _updateMachineManagement 节点management参数存量更新开关，有enable（打开）、disable（关闭）两个状态可选
+
+management包括：nameserver、host、kubelet、kernel参数
+                     * 
+                     */
+                    void SetUpdateMachineManagement(const std::string& _updateMachineManagement);
+
+                    /**
+                     * 判断参数 UpdateMachineManagement 是否已赋值
+                     * @return UpdateMachineManagement 是否已赋值
+                     * 
+                     */
+                    bool UpdateMachineManagementHasBeenSet() const;
 
                     /**
                      * 获取ssh公钥id数组
@@ -678,7 +707,7 @@ namespace TencentCloud
                     bool m_replicasHasBeenSet;
 
                     /**
-                     * 是否更新存量节点
+                     * 是否更新存量节点MetaData(包括： metadata、annotation、label)
                      */
                     bool m_updateExistedNode;
                     bool m_updateExistedNodeHasBeenSet;
@@ -688,6 +717,14 @@ namespace TencentCloud
                      */
                     std::vector<DataDisk> m_dataDisks;
                     bool m_dataDisksHasBeenSet;
+
+                    /**
+                     * 节点management参数存量更新开关，有enable（打开）、disable（关闭）两个状态可选
+
+management包括：nameserver、host、kubelet、kernel参数
+                     */
+                    std::string m_updateMachineManagement;
+                    bool m_updateMachineManagementHasBeenSet;
 
                     /**
                      * ssh公钥id数组

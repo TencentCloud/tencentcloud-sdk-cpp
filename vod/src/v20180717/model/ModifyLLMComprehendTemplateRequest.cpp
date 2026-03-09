@@ -29,7 +29,8 @@ ModifyLLMComprehendTemplateRequest::ModifyLLMComprehendTemplateRequest() :
     m_commentHasBeenSet(false),
     m_modelHasBeenSet(false),
     m_summaryHasBeenSet(false),
-    m_asrHasBeenSet(false)
+    m_asrHasBeenSet(false),
+    m_faceRecognitionHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,15 @@ string ModifyLLMComprehendTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_asr.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_faceRecognitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FaceRecognition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_faceRecognition.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -216,6 +226,22 @@ void ModifyLLMComprehendTemplateRequest::SetAsr(const LLMComprehendAsrForUpdate&
 bool ModifyLLMComprehendTemplateRequest::AsrHasBeenSet() const
 {
     return m_asrHasBeenSet;
+}
+
+LLMComprehendFaceRecognitionForUpdate ModifyLLMComprehendTemplateRequest::GetFaceRecognition() const
+{
+    return m_faceRecognition;
+}
+
+void ModifyLLMComprehendTemplateRequest::SetFaceRecognition(const LLMComprehendFaceRecognitionForUpdate& _faceRecognition)
+{
+    m_faceRecognition = _faceRecognition;
+    m_faceRecognitionHasBeenSet = true;
+}
+
+bool ModifyLLMComprehendTemplateRequest::FaceRecognitionHasBeenSet() const
+{
+    return m_faceRecognitionHasBeenSet;
 }
 
 

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需进行组件生成的3D模型文件，仅支持FBX格式。
-                     * @return File 需进行组件生成的3D模型文件，仅支持FBX格式。
+                     * 获取<p>需进行组件生成的3D模型文件，仅支持FBX格式。</p>
+                     * @return File <p>需进行组件生成的3D模型文件，仅支持FBX格式。</p>
                      * 
                      */
                     InputFile3D GetFile() const;
 
                     /**
-                     * 设置需进行组件生成的3D模型文件，仅支持FBX格式。
-                     * @param _file 需进行组件生成的3D模型文件，仅支持FBX格式。
+                     * 设置<p>需进行组件生成的3D模型文件，仅支持FBX格式。</p>
+                     * @param _file <p>需进行组件生成的3D模型文件，仅支持FBX格式。</p>
                      * 
                      */
                     void SetFile(const InputFile3D& _file);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool FileHasBeenSet() const;
 
                     /**
-                     * 获取组件生成模型版本，默认为1.0，可选项：1.0，1.5；
-                     * @return Model 组件生成模型版本，默认为1.0，可选项：1.0，1.5；
+                     * 获取<p>组件生成模型版本，默认为1.5</p><p>枚举值：</p><ul><li>1.5： 1.5模型</li></ul><p>默认值：1.5</p>
+                     * @return Model <p>组件生成模型版本，默认为1.5</p><p>枚举值：</p><ul><li>1.5： 1.5模型</li></ul><p>默认值：1.5</p>
                      * 
                      */
                     std::string GetModel() const;
 
                     /**
-                     * 设置组件生成模型版本，默认为1.0，可选项：1.0，1.5；
-                     * @param _model 组件生成模型版本，默认为1.0，可选项：1.0，1.5；
+                     * 设置<p>组件生成模型版本，默认为1.5</p><p>枚举值：</p><ul><li>1.5： 1.5模型</li></ul><p>默认值：1.5</p>
+                     * @param _model <p>组件生成模型版本，默认为1.5</p><p>枚举值：</p><ul><li>1.5： 1.5模型</li></ul><p>默认值：1.5</p>
                      * 
                      */
                     void SetModel(const std::string& _model);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需进行组件生成的3D模型文件，仅支持FBX格式。
+                     * <p>需进行组件生成的3D模型文件，仅支持FBX格式。</p>
                      */
                     InputFile3D m_file;
                     bool m_fileHasBeenSet;
 
                     /**
-                     * 组件生成模型版本，默认为1.0，可选项：1.0，1.5；
+                     * <p>组件生成模型版本，默认为1.5</p><p>枚举值：</p><ul><li>1.5： 1.5模型</li></ul><p>默认值：1.5</p>
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;

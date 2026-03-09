@@ -599,6 +599,27 @@ POSTPAID_BY_HOUR：按小时后付费
                      */
                     bool EnvsHasBeenSet() const;
 
+                    /**
+                     * 获取描述
+                     * @return Description 描述
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置描述
+                     * @param _description 描述
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -756,6 +777,12 @@ POSTPAID_BY_HOUR：按小时后付费
                      */
                     std::vector<EnvVar> m_envs;
                     bool m_envsHasBeenSet;
+
+                    /**
+                     * 描述
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

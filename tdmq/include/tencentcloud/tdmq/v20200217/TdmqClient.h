@@ -29,8 +29,6 @@
 #include <tencentcloud/tdmq/v20200217/model/ClearCmqQueueResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ClearCmqSubscriptionFilterTagsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ClearCmqSubscriptionFilterTagsResponse.h>
-#include <tencentcloud/tdmq/v20200217/model/CreateClusterRequest.h>
-#include <tencentcloud/tdmq/v20200217/model/CreateClusterResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateCmqQueueRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateCmqQueueResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/CreateCmqSubscribeRequest.h>
@@ -348,9 +346,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ClearCmqSubscriptionFilterTagsResponse> ClearCmqSubscriptionFilterTagsOutcome;
                 typedef std::future<ClearCmqSubscriptionFilterTagsOutcome> ClearCmqSubscriptionFilterTagsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ClearCmqSubscriptionFilterTagsRequest&, ClearCmqSubscriptionFilterTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClearCmqSubscriptionFilterTagsAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateClusterResponse> CreateClusterOutcome;
-                typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
-                typedef std::function<void(const TdmqClient*, const Model::CreateClusterRequest&, CreateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCmqQueueResponse> CreateCmqQueueOutcome;
                 typedef std::future<CreateCmqQueueOutcome> CreateCmqQueueOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::CreateCmqQueueRequest&, CreateCmqQueueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCmqQueueAsyncHandler;
@@ -821,15 +816,6 @@ namespace TencentCloud
                 ClearCmqSubscriptionFilterTagsOutcome ClearCmqSubscriptionFilterTags(const Model::ClearCmqSubscriptionFilterTagsRequest &request);
                 void ClearCmqSubscriptionFilterTagsAsync(const Model::ClearCmqSubscriptionFilterTagsRequest& request, const ClearCmqSubscriptionFilterTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ClearCmqSubscriptionFilterTagsOutcomeCallable ClearCmqSubscriptionFilterTagsCallable(const Model::ClearCmqSubscriptionFilterTagsRequest& request);
-
-                /**
-                 *创建用户的集群
-                 * @param req CreateClusterRequest
-                 * @return CreateClusterOutcome
-                 */
-                CreateClusterOutcome CreateCluster(const Model::CreateClusterRequest &request);
-                void CreateClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateClusterOutcomeCallable CreateClusterCallable(const Model::CreateClusterRequest& request);
 
                 /**
                  *创建cmq队列接口

@@ -216,6 +216,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ModifyInstanceAttackLogPostRequest.h
   include/tencentcloud/waf/v20180125/model/GetInstanceQpsLimitResponse.h
   include/tencentcloud/waf/v20180125/model/CreateDealsRequest.h
+  include/tencentcloud/waf/v20180125/model/DescribeApiSecSensitiveRuleListRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyCustomWhiteRuleResponse.h
   include/tencentcloud/waf/v20180125/model/SearchItem.h
   include/tencentcloud/waf/v20180125/model/ApiPkg.h
@@ -251,7 +252,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/PortInfo.h
   include/tencentcloud/waf/v20180125/model/AddAttackWhiteRuleRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyProtectionLevelResponse.h
-  include/tencentcloud/waf/v20180125/model/FraudPkg.h
+  include/tencentcloud/waf/v20180125/model/ApiSecSensitiveRule.h
   include/tencentcloud/waf/v20180125/model/JWTConfig.h
   include/tencentcloud/waf/v20180125/model/UCBEntryValue.h
   include/tencentcloud/waf/v20180125/model/DescribeDomainDetailsClbResponse.h
@@ -338,6 +339,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/BotSceneActionRule.h
   include/tencentcloud/waf/v20180125/model/SessionItem.h
   include/tencentcloud/waf/v20180125/model/ModifyBatchIpAccessControlResponse.h
+  include/tencentcloud/waf/v20180125/model/FraudPkg.h
   include/tencentcloud/waf/v20180125/model/DescribeAccessExportsRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeCustomWhiteRuleRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteAntiFakeUrlResponse.h
@@ -522,6 +524,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/InOutputBotUCBRule.h
   include/tencentcloud/waf/v20180125/model/AttackLogInfo.h
   include/tencentcloud/waf/v20180125/model/ModifyHostStatusResponse.h
+  include/tencentcloud/waf/v20180125/model/DescribeApiSecSensitiveRuleListResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyOwaspRuleTypeStatusRequest.h
   include/tencentcloud/waf/v20180125/model/QPSPackageNew.h
   include/tencentcloud/waf/v20180125/model/LogHistogramInfo.h
@@ -801,6 +804,7 @@ set(waf_src
   src/v20180125/model/ModifyInstanceAttackLogPostRequest.cpp
   src/v20180125/model/GetInstanceQpsLimitResponse.cpp
   src/v20180125/model/CreateDealsRequest.cpp
+  src/v20180125/model/DescribeApiSecSensitiveRuleListRequest.cpp
   src/v20180125/model/ModifyCustomWhiteRuleResponse.cpp
   src/v20180125/model/SearchItem.cpp
   src/v20180125/model/ApiPkg.cpp
@@ -836,7 +840,7 @@ set(waf_src
   src/v20180125/model/PortInfo.cpp
   src/v20180125/model/AddAttackWhiteRuleRequest.cpp
   src/v20180125/model/ModifyProtectionLevelResponse.cpp
-  src/v20180125/model/FraudPkg.cpp
+  src/v20180125/model/ApiSecSensitiveRule.cpp
   src/v20180125/model/JWTConfig.cpp
   src/v20180125/model/UCBEntryValue.cpp
   src/v20180125/model/DescribeDomainDetailsClbResponse.cpp
@@ -923,6 +927,7 @@ set(waf_src
   src/v20180125/model/BotSceneActionRule.cpp
   src/v20180125/model/SessionItem.cpp
   src/v20180125/model/ModifyBatchIpAccessControlResponse.cpp
+  src/v20180125/model/FraudPkg.cpp
   src/v20180125/model/DescribeAccessExportsRequest.cpp
   src/v20180125/model/DescribeCustomWhiteRuleRequest.cpp
   src/v20180125/model/DeleteAntiFakeUrlResponse.cpp
@@ -1107,6 +1112,7 @@ set(waf_src
   src/v20180125/model/InOutputBotUCBRule.cpp
   src/v20180125/model/AttackLogInfo.cpp
   src/v20180125/model/ModifyHostStatusResponse.cpp
+  src/v20180125/model/DescribeApiSecSensitiveRuleListResponse.cpp
   src/v20180125/model/ModifyOwaspRuleTypeStatusRequest.cpp
   src/v20180125/model/QPSPackageNew.cpp
   src/v20180125/model/LogHistogramInfo.cpp

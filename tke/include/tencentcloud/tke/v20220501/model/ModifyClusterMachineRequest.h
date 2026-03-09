@@ -129,6 +129,27 @@ namespace TencentCloud
                     bool SystemDiskHasBeenSet() const;
 
                     /**
+                     * 获取安全组列表
+                     * @return SecurityGroupIDs 安全组列表
+                     * 
+                     */
+                    std::vector<std::string> GetSecurityGroupIDs() const;
+
+                    /**
+                     * 设置安全组列表
+                     * @param _securityGroupIDs 安全组列表
+                     * 
+                     */
+                    void SetSecurityGroupIDs(const std::vector<std::string>& _securityGroupIDs);
+
+                    /**
+                     * 判断参数 SecurityGroupIDs 是否已赋值
+                     * @return SecurityGroupIDs 是否已赋值
+                     * 
+                     */
+                    bool SecurityGroupIDsHasBeenSet() const;
+
+                    /**
                      * 获取节点预付费信息
                      * @return InstanceChargePrepaid 节点预付费信息
                      * 
@@ -174,6 +195,12 @@ namespace TencentCloud
                      */
                     Disk m_systemDisk;
                     bool m_systemDiskHasBeenSet;
+
+                    /**
+                     * 安全组列表
+                     */
+                    std::vector<std::string> m_securityGroupIDs;
+                    bool m_securityGroupIDsHasBeenSet;
 
                     /**
                      * 节点预付费信息

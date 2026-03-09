@@ -47,7 +47,8 @@ ModifyNotebookRequest::ModifyNotebookRequest() :
     m_imageInfoHasBeenSet(false),
     m_imageTypeHasBeenSet(false),
     m_sSHConfigHasBeenSet(false),
-    m_envsHasBeenSet(false)
+    m_envsHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -287,6 +288,14 @@ string ModifyNotebookRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -695,6 +704,22 @@ void ModifyNotebookRequest::SetEnvs(const vector<EnvVar>& _envs)
 bool ModifyNotebookRequest::EnvsHasBeenSet() const
 {
     return m_envsHasBeenSet;
+}
+
+string ModifyNotebookRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void ModifyNotebookRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool ModifyNotebookRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 

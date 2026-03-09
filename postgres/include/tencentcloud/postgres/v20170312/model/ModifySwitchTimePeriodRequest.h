@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取处于等待切换状态中的实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
-                     * @return DBInstanceId 处于等待切换状态中的实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * 获取<p>处于等待切换状态中的实例ID。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
+                     * @return DBInstanceId <p>处于等待切换状态中的实例ID。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置处于等待切换状态中的实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
-                     * @param _dBInstanceId 处于等待切换状态中的实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * 设置<p>处于等待切换状态中的实例ID。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
+                     * @param _dBInstanceId <p>处于等待切换状态中的实例ID。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取入参取值为 0 ，代表立即切换。
-                     * @return SwitchTag 入参取值为 0 ，代表立即切换。
+                     * 获取<p>入参取值为 0 ，代表立即切换。</p>
+                     * @return SwitchTag <p>入参取值为 0 ，代表立即切换。</p>
                      * 
                      */
                     uint64_t GetSwitchTag() const;
 
                     /**
-                     * 设置入参取值为 0 ，代表立即切换。
-                     * @param _switchTag 入参取值为 0 ，代表立即切换。
+                     * 设置<p>入参取值为 0 ，代表立即切换。</p>
+                     * @param _switchTag <p>入参取值为 0 ，代表立即切换。</p>
                      * 
                      */
                     void SetSwitchTag(const uint64_t& _switchTag);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 处于等待切换状态中的实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * <p>处于等待切换状态中的实例ID。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 入参取值为 0 ，代表立即切换。
+                     * <p>入参取值为 0 ，代表立即切换。</p>
                      */
                     uint64_t m_switchTag;
                     bool m_switchTagHasBeenSet;

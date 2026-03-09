@@ -40,6 +40,7 @@ UpdateNativeNodePoolParam::UpdateNativeNodePoolParam() :
     m_replicasHasBeenSet(false),
     m_updateExistedNodeHasBeenSet(false),
     m_dataDisksHasBeenSet(false),
+    m_updateMachineManagementHasBeenSet(false),
     m_keyIdsHasBeenSet(false),
     m_deletePolicyHasBeenSet(false),
     m_gPUConfigsHasBeenSet(false),
@@ -307,6 +308,16 @@ CoreInternalOutcome UpdateNativeNodePoolParam::Deserialize(const rapidjson::Valu
         m_dataDisksHasBeenSet = true;
     }
 
+    if (value.HasMember("UpdateMachineManagement") && !value["UpdateMachineManagement"].IsNull())
+    {
+        if (!value["UpdateMachineManagement"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateNativeNodePoolParam.UpdateMachineManagement` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateMachineManagement = string(value["UpdateMachineManagement"].GetString());
+        m_updateMachineManagementHasBeenSet = true;
+    }
+
     if (value.HasMember("KeyIds") && !value["KeyIds"].IsNull())
     {
         if (!value["KeyIds"].IsArray())
@@ -560,6 +571,14 @@ void UpdateNativeNodePoolParam::ToJsonObject(rapidjson::Value &value, rapidjson:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_updateMachineManagementHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateMachineManagement";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateMachineManagement.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keyIdsHasBeenSet)
@@ -919,6 +938,22 @@ void UpdateNativeNodePoolParam::SetDataDisks(const vector<DataDisk>& _dataDisks)
 bool UpdateNativeNodePoolParam::DataDisksHasBeenSet() const
 {
     return m_dataDisksHasBeenSet;
+}
+
+string UpdateNativeNodePoolParam::GetUpdateMachineManagement() const
+{
+    return m_updateMachineManagement;
+}
+
+void UpdateNativeNodePoolParam::SetUpdateMachineManagement(const string& _updateMachineManagement)
+{
+    m_updateMachineManagement = _updateMachineManagement;
+    m_updateMachineManagementHasBeenSet = true;
+}
+
+bool UpdateNativeNodePoolParam::UpdateMachineManagementHasBeenSet() const
+{
+    return m_updateMachineManagementHasBeenSet;
 }
 
 vector<string> UpdateNativeNodePoolParam::GetKeyIds() const

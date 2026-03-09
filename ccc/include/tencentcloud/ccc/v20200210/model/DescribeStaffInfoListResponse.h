@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取坐席用户总数
-                     * @return TotalCount 坐席用户总数
+                     * 获取<p>坐席用户总数</p>
+                     * @return TotalCount <p>坐席用户总数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取坐席用户信息列表
-                     * @return StaffList 坐席用户信息列表
+                     * 获取<p>坐席用户信息列表</p>
+                     * @return StaffList <p>坐席用户信息列表</p>
                      * 
                      */
                     std::vector<StaffInfo> GetStaffList() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 坐席用户总数
+                     * <p>坐席用户总数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 坐席用户信息列表
+                     * <p>坐席用户信息列表</p>
                      */
                     std::vector<StaffInfo> m_staffList;
                     bool m_staffListHasBeenSet;

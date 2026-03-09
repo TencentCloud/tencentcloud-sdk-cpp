@@ -46,7 +46,8 @@ CreateNotebookRequest::CreateNotebookRequest() :
     m_imageInfoHasBeenSet(false),
     m_imageTypeHasBeenSet(false),
     m_sSHConfigHasBeenSet(false),
-    m_volumeSourceGooseFSHasBeenSet(false)
+    m_volumeSourceGooseFSHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -272,6 +273,14 @@ string CreateNotebookRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_volumeSourceGooseFS.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -664,6 +673,22 @@ void CreateNotebookRequest::SetVolumeSourceGooseFS(const GooseFS& _volumeSourceG
 bool CreateNotebookRequest::VolumeSourceGooseFSHasBeenSet() const
 {
     return m_volumeSourceGooseFSHasBeenSet;
+}
+
+string CreateNotebookRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void CreateNotebookRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool CreateNotebookRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 

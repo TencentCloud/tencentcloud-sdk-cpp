@@ -123,6 +123,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeApiDetailResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeApiListVersionTwoRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeApiListVersionTwoResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeApiSecSensitiveRuleListRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeApiSecSensitiveRuleListResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAreaBanAreasRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAreaBanAreasResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAreaBanRuleRequest.h>
@@ -585,6 +587,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApiListVersionTwoResponse> DescribeApiListVersionTwoOutcome;
                 typedef std::future<DescribeApiListVersionTwoOutcome> DescribeApiListVersionTwoOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeApiListVersionTwoRequest&, DescribeApiListVersionTwoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiListVersionTwoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeApiSecSensitiveRuleListResponse> DescribeApiSecSensitiveRuleListOutcome;
+                typedef std::future<DescribeApiSecSensitiveRuleListOutcome> DescribeApiSecSensitiveRuleListOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeApiSecSensitiveRuleListRequest&, DescribeApiSecSensitiveRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiSecSensitiveRuleListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAreaBanAreasResponse> DescribeAreaBanAreasOutcome;
                 typedef std::future<DescribeAreaBanAreasOutcome> DescribeAreaBanAreasOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAreaBanAreasRequest&, DescribeAreaBanAreasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAreaBanAreasAsyncHandler;
@@ -1484,6 +1489,15 @@ namespace TencentCloud
                 DescribeApiListVersionTwoOutcome DescribeApiListVersionTwo(const Model::DescribeApiListVersionTwoRequest &request);
                 void DescribeApiListVersionTwoAsync(const Model::DescribeApiListVersionTwoRequest& request, const DescribeApiListVersionTwoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApiListVersionTwoOutcomeCallable DescribeApiListVersionTwoCallable(const Model::DescribeApiListVersionTwoRequest& request);
+
+                /**
+                 *获取api安全敏感规则列表
+                 * @param req DescribeApiSecSensitiveRuleListRequest
+                 * @return DescribeApiSecSensitiveRuleListOutcome
+                 */
+                DescribeApiSecSensitiveRuleListOutcome DescribeApiSecSensitiveRuleList(const Model::DescribeApiSecSensitiveRuleListRequest &request);
+                void DescribeApiSecSensitiveRuleListAsync(const Model::DescribeApiSecSensitiveRuleListRequest& request, const DescribeApiSecSensitiveRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApiSecSensitiveRuleListOutcomeCallable DescribeApiSecSensitiveRuleListCallable(const Model::DescribeApiSecSensitiveRuleListRequest& request);
 
                 /**
                  *获取地域封禁配置包括地域封禁开关，设置封禁的地区信息
