@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取导出文件类型。1  = 带风险批注文件; 2 = 审查结果＆摘要（.xIsx）
-                     * @return FileType 导出文件类型。1  = 带风险批注文件; 2 = 审查结果＆摘要（.xIsx）
+                     * 获取导出文件类型。1  = 带风险批注文件; 2 = 审查结果＆摘要（.xIsx）; 3 = 不带批注文件
+                     * @return FileType 导出文件类型。1  = 带风险批注文件; 2 = 审查结果＆摘要（.xIsx）; 3 = 不带批注文件
                      * 
                      */
                     int64_t GetFileType() const;
 
                     /**
-                     * 设置导出文件类型。1  = 带风险批注文件; 2 = 审查结果＆摘要（.xIsx）
-                     * @param _fileType 导出文件类型。1  = 带风险批注文件; 2 = 审查结果＆摘要（.xIsx）
+                     * 设置导出文件类型。1  = 带风险批注文件; 2 = 审查结果＆摘要（.xIsx）; 3 = 不带批注文件
+                     * @param _fileType 导出文件类型。1  = 带风险批注文件; 2 = 审查结果＆摘要（.xIsx）; 3 = 不带批注文件
                      * 
                      */
                     void SetFileType(const int64_t& _fileType);
@@ -152,7 +152,7 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 导出文件类型。1  = 带风险批注文件; 2 = 审查结果＆摘要（.xIsx）
+                     * 导出文件类型。1  = 带风险批注文件; 2 = 审查结果＆摘要（.xIsx）; 3 = 不带批注文件
                      */
                     int64_t m_fileType;
                     bool m_fileTypeHasBeenSet;

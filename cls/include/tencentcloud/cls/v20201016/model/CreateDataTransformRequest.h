@@ -97,12 +97,12 @@ namespace TencentCloud
 名称限制
 - 不能为空字符串
 - 不能包含字符'|'
-- 最长 255 个字符
+- 最长128 个字符
                      * @return Name 加工任务名称
 名称限制
 - 不能为空字符串
 - 不能包含字符'|'
-- 最长 255 个字符
+- 最长128 个字符
                      * 
                      */
                     std::string GetName() const;
@@ -112,12 +112,12 @@ namespace TencentCloud
 名称限制
 - 不能为空字符串
 - 不能包含字符'|'
-- 最长 255 个字符
+- 最长128 个字符
                      * @param _name 加工任务名称
 名称限制
 - 不能为空字符串
 - 不能包含字符'|'
-- 最长 255 个字符
+- 最长128 个字符
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -536,7 +536,7 @@ true：丢弃日志数据。
 名称限制
 - 不能为空字符串
 - 不能包含字符'|'
-- 最长 255 个字符
+- 最长128 个字符
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

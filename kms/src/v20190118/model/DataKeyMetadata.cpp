@@ -41,7 +41,10 @@ DataKeyMetadata::DataKeyMetadata() :
     m_syncMessagesHasBeenSet(false),
     m_syncStartTimeHasBeenSet(false),
     m_syncEndTimeHasBeenSet(false),
-    m_sourceHsmClusterIdHasBeenSet(false)
+    m_sourceHsmClusterIdHasBeenSet(false),
+    m_accountAppIdHasBeenSet(false),
+    m_accountUinHasBeenSet(false),
+    m_accountNameHasBeenSet(false)
 {
 }
 
@@ -260,6 +263,36 @@ CoreInternalOutcome DataKeyMetadata::Deserialize(const rapidjson::Value &value)
         m_sourceHsmClusterIdHasBeenSet = true;
     }
 
+    if (value.HasMember("AccountAppId") && !value["AccountAppId"].IsNull())
+    {
+        if (!value["AccountAppId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataKeyMetadata.AccountAppId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_accountAppId = value["AccountAppId"].GetUint64();
+        m_accountAppIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccountUin") && !value["AccountUin"].IsNull())
+    {
+        if (!value["AccountUin"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataKeyMetadata.AccountUin` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_accountUin = value["AccountUin"].GetUint64();
+        m_accountUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccountName") && !value["AccountName"].IsNull())
+    {
+        if (!value["AccountName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataKeyMetadata.AccountName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accountName = string(value["AccountName"].GetString());
+        m_accountNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +466,30 @@ void DataKeyMetadata::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "SourceHsmClusterId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sourceHsmClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accountAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountAppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_accountAppId, allocator);
+    }
+
+    if (m_accountUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_accountUin, allocator);
+    }
+
+    if (m_accountNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accountName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -772,5 +829,53 @@ void DataKeyMetadata::SetSourceHsmClusterId(const string& _sourceHsmClusterId)
 bool DataKeyMetadata::SourceHsmClusterIdHasBeenSet() const
 {
     return m_sourceHsmClusterIdHasBeenSet;
+}
+
+uint64_t DataKeyMetadata::GetAccountAppId() const
+{
+    return m_accountAppId;
+}
+
+void DataKeyMetadata::SetAccountAppId(const uint64_t& _accountAppId)
+{
+    m_accountAppId = _accountAppId;
+    m_accountAppIdHasBeenSet = true;
+}
+
+bool DataKeyMetadata::AccountAppIdHasBeenSet() const
+{
+    return m_accountAppIdHasBeenSet;
+}
+
+uint64_t DataKeyMetadata::GetAccountUin() const
+{
+    return m_accountUin;
+}
+
+void DataKeyMetadata::SetAccountUin(const uint64_t& _accountUin)
+{
+    m_accountUin = _accountUin;
+    m_accountUinHasBeenSet = true;
+}
+
+bool DataKeyMetadata::AccountUinHasBeenSet() const
+{
+    return m_accountUinHasBeenSet;
+}
+
+string DataKeyMetadata::GetAccountName() const
+{
+    return m_accountName;
+}
+
+void DataKeyMetadata::SetAccountName(const string& _accountName)
+{
+    m_accountName = _accountName;
+    m_accountNameHasBeenSet = true;
+}
+
+bool DataKeyMetadata::AccountNameHasBeenSet() const
+{
+    return m_accountNameHasBeenSet;
 }
 

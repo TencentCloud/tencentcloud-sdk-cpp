@@ -290,6 +290,56 @@ TrtcClient::CreateCloudSliceTaskOutcomeCallable TrtcClient::CreateCloudSliceTask
     return prom->get_future();
 }
 
+TrtcClient::CreateCloudTranscriptionOutcome TrtcClient::CreateCloudTranscription(const CreateCloudTranscriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudTranscription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudTranscriptionResponse rsp = CreateCloudTranscriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudTranscriptionOutcome(rsp);
+        else
+            return CreateCloudTranscriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudTranscriptionOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::CreateCloudTranscriptionAsync(const CreateCloudTranscriptionRequest& request, const CreateCloudTranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCloudTranscriptionRequest&;
+    using Resp = CreateCloudTranscriptionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCloudTranscription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::CreateCloudTranscriptionOutcomeCallable TrtcClient::CreateCloudTranscriptionCallable(const CreateCloudTranscriptionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCloudTranscriptionOutcome>>();
+    CreateCloudTranscriptionAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const CreateCloudTranscriptionRequest&,
+        CreateCloudTranscriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TrtcClient::CreatePictureOutcome TrtcClient::CreatePicture(const CreatePictureRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePicture");
@@ -532,6 +582,56 @@ TrtcClient::DeleteCloudSliceTaskOutcomeCallable TrtcClient::DeleteCloudSliceTask
         const TrtcClient*,
         const DeleteCloudSliceTaskRequest&,
         DeleteCloudSliceTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::DeleteCloudTranscriptionOutcome TrtcClient::DeleteCloudTranscription(const DeleteCloudTranscriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudTranscription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudTranscriptionResponse rsp = DeleteCloudTranscriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudTranscriptionOutcome(rsp);
+        else
+            return DeleteCloudTranscriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudTranscriptionOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DeleteCloudTranscriptionAsync(const DeleteCloudTranscriptionRequest& request, const DeleteCloudTranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCloudTranscriptionRequest&;
+    using Resp = DeleteCloudTranscriptionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCloudTranscription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DeleteCloudTranscriptionOutcomeCallable TrtcClient::DeleteCloudTranscriptionCallable(const DeleteCloudTranscriptionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCloudTranscriptionOutcome>>();
+    DeleteCloudTranscriptionAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DeleteCloudTranscriptionRequest&,
+        DeleteCloudTranscriptionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -932,6 +1032,56 @@ TrtcClient::DescribeCloudSliceTaskOutcomeCallable TrtcClient::DescribeCloudSlice
         const TrtcClient*,
         const DescribeCloudSliceTaskRequest&,
         DescribeCloudSliceTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::DescribeCloudTranscriptionOutcome TrtcClient::DescribeCloudTranscription(const DescribeCloudTranscriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudTranscription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudTranscriptionResponse rsp = DescribeCloudTranscriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudTranscriptionOutcome(rsp);
+        else
+            return DescribeCloudTranscriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudTranscriptionOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeCloudTranscriptionAsync(const DescribeCloudTranscriptionRequest& request, const DescribeCloudTranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudTranscriptionRequest&;
+    using Resp = DescribeCloudTranscriptionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudTranscription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DescribeCloudTranscriptionOutcomeCallable TrtcClient::DescribeCloudTranscriptionCallable(const DescribeCloudTranscriptionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudTranscriptionOutcome>>();
+    DescribeCloudTranscriptionAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeCloudTranscriptionRequest&,
+        DescribeCloudTranscriptionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

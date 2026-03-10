@@ -24,7 +24,8 @@ using namespace std;
 
 UpdateDataKeyDescriptionRequest::UpdateDataKeyDescriptionRequest() :
     m_dataKeyIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_memberAccountHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,15 @@ string UpdateDataKeyDescriptionRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_memberAccountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberAccount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_memberAccount.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -89,6 +99,22 @@ void UpdateDataKeyDescriptionRequest::SetDescription(const string& _description)
 bool UpdateDataKeyDescriptionRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+MemberAccount UpdateDataKeyDescriptionRequest::GetMemberAccount() const
+{
+    return m_memberAccount;
+}
+
+void UpdateDataKeyDescriptionRequest::SetMemberAccount(const MemberAccount& _memberAccount)
+{
+    m_memberAccount = _memberAccount;
+    m_memberAccountHasBeenSet = true;
+}
+
+bool UpdateDataKeyDescriptionRequest::MemberAccountHasBeenSet() const
+{
+    return m_memberAccountHasBeenSet;
 }
 
 

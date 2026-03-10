@@ -23,7 +23,8 @@ using namespace TencentCloud::Kms::V20190118::Model;
 using namespace std;
 
 CancelKeyArchiveRequest::CancelKeyArchiveRequest() :
-    m_keyIdHasBeenSet(false)
+    m_keyIdHasBeenSet(false),
+    m_memberAccountHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,15 @@ string CancelKeyArchiveRequest::ToJsonString() const
         string key = "KeyId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_keyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_memberAccountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberAccount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_memberAccount.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -64,6 +74,22 @@ void CancelKeyArchiveRequest::SetKeyId(const string& _keyId)
 bool CancelKeyArchiveRequest::KeyIdHasBeenSet() const
 {
     return m_keyIdHasBeenSet;
+}
+
+MemberAccount CancelKeyArchiveRequest::GetMemberAccount() const
+{
+    return m_memberAccount;
+}
+
+void CancelKeyArchiveRequest::SetMemberAccount(const MemberAccount& _memberAccount)
+{
+    m_memberAccount = _memberAccount;
+    m_memberAccountHasBeenSet = true;
+}
+
+bool CancelKeyArchiveRequest::MemberAccountHasBeenSet() const
+{
+    return m_memberAccountHasBeenSet;
 }
 
 

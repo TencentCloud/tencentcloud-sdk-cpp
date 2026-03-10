@@ -1,0 +1,107 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_ORGANIZATION_V20210331_MODEL_ADDSHAREUNITNODEREQUEST_H_
+#define TENCENTCLOUD_ORGANIZATION_V20210331_MODEL_ADDSHAREUNITNODEREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Organization
+    {
+        namespace V20210331
+        {
+            namespace Model
+            {
+                /**
+                * AddShareUnitNode请求参数结构体
+                */
+                class AddShareUnitNodeRequest : public AbstractModel
+                {
+                public:
+                    AddShareUnitNodeRequest();
+                    ~AddShareUnitNodeRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取<p>共享单元ID。</p>
+                     * @return UnitId <p>共享单元ID。</p>
+                     * 
+                     */
+                    std::string GetUnitId() const;
+
+                    /**
+                     * 设置<p>共享单元ID。</p>
+                     * @param _unitId <p>共享单元ID。</p>
+                     * 
+                     */
+                    void SetUnitId(const std::string& _unitId);
+
+                    /**
+                     * 判断参数 UnitId 是否已赋值
+                     * @return UnitId 是否已赋值
+                     * 
+                     */
+                    bool UnitIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>共享部门ID。</p>
+                     * @return NodeId <p>共享部门ID。</p>
+                     * 
+                     */
+                    int64_t GetNodeId() const;
+
+                    /**
+                     * 设置<p>共享部门ID。</p>
+                     * @param _nodeId <p>共享部门ID。</p>
+                     * 
+                     */
+                    void SetNodeId(const int64_t& _nodeId);
+
+                    /**
+                     * 判断参数 NodeId 是否已赋值
+                     * @return NodeId 是否已赋值
+                     * 
+                     */
+                    bool NodeIdHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * <p>共享单元ID。</p>
+                     */
+                    std::string m_unitId;
+                    bool m_unitIdHasBeenSet;
+
+                    /**
+                     * <p>共享部门ID。</p>
+                     */
+                    int64_t m_nodeId;
+                    bool m_nodeIdHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_ORGANIZATION_V20210331_MODEL_ADDSHAREUNITNODEREQUEST_H_

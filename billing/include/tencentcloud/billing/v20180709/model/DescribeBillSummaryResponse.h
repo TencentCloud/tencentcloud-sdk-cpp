@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）
-                     * @return Ready 数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）
+                     * 获取<p>数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）</p>
+                     * @return Ready <p>数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）</p>
                      * 
                      */
                     uint64_t GetReady() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ReadyHasBeenSet() const;
 
                     /**
-                     * 获取账单多维度汇总消费详情
-                     * @return SummaryDetail 账单多维度汇总消费详情
+                     * 获取<p>账单多维度汇总消费详情</p>
+                     * @return SummaryDetail <p>账单多维度汇总消费详情</p>
                      * 
                      */
                     std::vector<SummaryDetail> GetSummaryDetail() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）
+                     * <p>数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）</p>
                      */
                     uint64_t m_ready;
                     bool m_readyHasBeenSet;
 
                     /**
-                     * 账单多维度汇总消费详情
+                     * <p>账单多维度汇总消费详情</p>
                      */
                     std::vector<SummaryDetail> m_summaryDetail;
                     bool m_summaryDetailHasBeenSet;

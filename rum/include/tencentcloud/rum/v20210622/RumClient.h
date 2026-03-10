@@ -53,22 +53,34 @@
 #include <tencentcloud/rum/v20210622/model/DescribeAppSingleCaseListResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataBridgeUrlV2Request.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataBridgeUrlV2Response.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataCustomUrlRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataCustomUrlResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataCustomUrlV2Request.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataCustomUrlV2Response.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataEventUrlRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataEventUrlResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataEventUrlV2Request.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataEventUrlV2Response.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataFetchProjectRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataFetchProjectResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataFetchUrlRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataFetchUrlResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataFetchUrlInfoRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataFetchUrlInfoResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataFetchUrlV2Request.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataFetchUrlV2Response.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataLogUrlInfoRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataLogUrlInfoResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsV2Request.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsV2Response.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataPerformancePageRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataPerformancePageResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataPerformancePageV2Request.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataPerformancePageV2Response.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataPvUrlInfoRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataPvUrlInfoResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsRequest.h>
@@ -81,14 +93,24 @@
 #include <tencentcloud/rum/v20210622/model/DescribeDataReportCountV2Response.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataSetUrlStatisticsRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataSetUrlStatisticsResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataSetUrlStatisticsV2Request.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataSetUrlStatisticsV2Response.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataStaticProjectRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataStaticProjectResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataStaticProjectV2Request.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataStaticProjectV2Response.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataStaticResourceRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataStaticResourceResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataStaticResourceV2Request.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataStaticResourceV2Response.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataStaticUrlRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataStaticUrlResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataStaticUrlV2Request.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataStaticUrlV2Response.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataWebVitalsPageRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataWebVitalsPageResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataWebVitalsPageV2Request.h>
+#include <tencentcloud/rum/v20210622/model/DescribeDataWebVitalsPageV2Response.h>
 #include <tencentcloud/rum/v20210622/model/DescribeErrorRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeErrorResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeProjectLimitsRequest.h>
@@ -113,6 +135,8 @@
 #include <tencentcloud/rum/v20210622/model/DescribeRumStatsLogListResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeScoresRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeScoresResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeScoresV2Request.h>
+#include <tencentcloud/rum/v20210622/model/DescribeScoresV2Response.h>
 #include <tencentcloud/rum/v20210622/model/DescribeTawAreasRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeTawAreasResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeTawInstancesRequest.h>
@@ -194,12 +218,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDataResponse> DescribeDataOutcome;
                 typedef std::future<DescribeDataOutcome> DescribeDataOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataRequest&, DescribeDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataBridgeUrlV2Response> DescribeDataBridgeUrlV2Outcome;
+                typedef std::future<DescribeDataBridgeUrlV2Outcome> DescribeDataBridgeUrlV2OutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeDataBridgeUrlV2Request&, DescribeDataBridgeUrlV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataBridgeUrlV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataCustomUrlResponse> DescribeDataCustomUrlOutcome;
                 typedef std::future<DescribeDataCustomUrlOutcome> DescribeDataCustomUrlOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataCustomUrlRequest&, DescribeDataCustomUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataCustomUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataCustomUrlV2Response> DescribeDataCustomUrlV2Outcome;
+                typedef std::future<DescribeDataCustomUrlV2Outcome> DescribeDataCustomUrlV2OutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeDataCustomUrlV2Request&, DescribeDataCustomUrlV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataCustomUrlV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataEventUrlResponse> DescribeDataEventUrlOutcome;
                 typedef std::future<DescribeDataEventUrlOutcome> DescribeDataEventUrlOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataEventUrlRequest&, DescribeDataEventUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataEventUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataEventUrlV2Response> DescribeDataEventUrlV2Outcome;
+                typedef std::future<DescribeDataEventUrlV2Outcome> DescribeDataEventUrlV2OutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeDataEventUrlV2Request&, DescribeDataEventUrlV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataEventUrlV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataFetchProjectResponse> DescribeDataFetchProjectOutcome;
                 typedef std::future<DescribeDataFetchProjectOutcome> DescribeDataFetchProjectOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataFetchProjectRequest&, DescribeDataFetchProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataFetchProjectAsyncHandler;
@@ -209,15 +242,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDataFetchUrlInfoResponse> DescribeDataFetchUrlInfoOutcome;
                 typedef std::future<DescribeDataFetchUrlInfoOutcome> DescribeDataFetchUrlInfoOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataFetchUrlInfoRequest&, DescribeDataFetchUrlInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataFetchUrlInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataFetchUrlV2Response> DescribeDataFetchUrlV2Outcome;
+                typedef std::future<DescribeDataFetchUrlV2Outcome> DescribeDataFetchUrlV2OutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeDataFetchUrlV2Request&, DescribeDataFetchUrlV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataFetchUrlV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataLogUrlInfoResponse> DescribeDataLogUrlInfoOutcome;
                 typedef std::future<DescribeDataLogUrlInfoOutcome> DescribeDataLogUrlInfoOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataLogUrlInfoRequest&, DescribeDataLogUrlInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataLogUrlInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataLogUrlStatisticsResponse> DescribeDataLogUrlStatisticsOutcome;
                 typedef std::future<DescribeDataLogUrlStatisticsOutcome> DescribeDataLogUrlStatisticsOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataLogUrlStatisticsRequest&, DescribeDataLogUrlStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataLogUrlStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataLogUrlStatisticsV2Response> DescribeDataLogUrlStatisticsV2Outcome;
+                typedef std::future<DescribeDataLogUrlStatisticsV2Outcome> DescribeDataLogUrlStatisticsV2OutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeDataLogUrlStatisticsV2Request&, DescribeDataLogUrlStatisticsV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataLogUrlStatisticsV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataPerformancePageResponse> DescribeDataPerformancePageOutcome;
                 typedef std::future<DescribeDataPerformancePageOutcome> DescribeDataPerformancePageOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataPerformancePageRequest&, DescribeDataPerformancePageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataPerformancePageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataPerformancePageV2Response> DescribeDataPerformancePageV2Outcome;
+                typedef std::future<DescribeDataPerformancePageV2Outcome> DescribeDataPerformancePageV2OutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeDataPerformancePageV2Request&, DescribeDataPerformancePageV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataPerformancePageV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataPvUrlInfoResponse> DescribeDataPvUrlInfoOutcome;
                 typedef std::future<DescribeDataPvUrlInfoOutcome> DescribeDataPvUrlInfoOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataPvUrlInfoRequest&, DescribeDataPvUrlInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataPvUrlInfoAsyncHandler;
@@ -236,18 +278,33 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDataSetUrlStatisticsResponse> DescribeDataSetUrlStatisticsOutcome;
                 typedef std::future<DescribeDataSetUrlStatisticsOutcome> DescribeDataSetUrlStatisticsOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataSetUrlStatisticsRequest&, DescribeDataSetUrlStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataSetUrlStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataSetUrlStatisticsV2Response> DescribeDataSetUrlStatisticsV2Outcome;
+                typedef std::future<DescribeDataSetUrlStatisticsV2Outcome> DescribeDataSetUrlStatisticsV2OutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeDataSetUrlStatisticsV2Request&, DescribeDataSetUrlStatisticsV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataSetUrlStatisticsV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataStaticProjectResponse> DescribeDataStaticProjectOutcome;
                 typedef std::future<DescribeDataStaticProjectOutcome> DescribeDataStaticProjectOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataStaticProjectRequest&, DescribeDataStaticProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataStaticProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataStaticProjectV2Response> DescribeDataStaticProjectV2Outcome;
+                typedef std::future<DescribeDataStaticProjectV2Outcome> DescribeDataStaticProjectV2OutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeDataStaticProjectV2Request&, DescribeDataStaticProjectV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataStaticProjectV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataStaticResourceResponse> DescribeDataStaticResourceOutcome;
                 typedef std::future<DescribeDataStaticResourceOutcome> DescribeDataStaticResourceOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataStaticResourceRequest&, DescribeDataStaticResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataStaticResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataStaticResourceV2Response> DescribeDataStaticResourceV2Outcome;
+                typedef std::future<DescribeDataStaticResourceV2Outcome> DescribeDataStaticResourceV2OutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeDataStaticResourceV2Request&, DescribeDataStaticResourceV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataStaticResourceV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataStaticUrlResponse> DescribeDataStaticUrlOutcome;
                 typedef std::future<DescribeDataStaticUrlOutcome> DescribeDataStaticUrlOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataStaticUrlRequest&, DescribeDataStaticUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataStaticUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataStaticUrlV2Response> DescribeDataStaticUrlV2Outcome;
+                typedef std::future<DescribeDataStaticUrlV2Outcome> DescribeDataStaticUrlV2OutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeDataStaticUrlV2Request&, DescribeDataStaticUrlV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataStaticUrlV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataWebVitalsPageResponse> DescribeDataWebVitalsPageOutcome;
                 typedef std::future<DescribeDataWebVitalsPageOutcome> DescribeDataWebVitalsPageOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataWebVitalsPageRequest&, DescribeDataWebVitalsPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataWebVitalsPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataWebVitalsPageV2Response> DescribeDataWebVitalsPageV2Outcome;
+                typedef std::future<DescribeDataWebVitalsPageV2Outcome> DescribeDataWebVitalsPageV2OutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeDataWebVitalsPageV2Request&, DescribeDataWebVitalsPageV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataWebVitalsPageV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeErrorResponse> DescribeErrorOutcome;
                 typedef std::future<DescribeErrorOutcome> DescribeErrorOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeErrorRequest&, DescribeErrorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeErrorAsyncHandler;
@@ -284,6 +341,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeScoresResponse> DescribeScoresOutcome;
                 typedef std::future<DescribeScoresOutcome> DescribeScoresOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeScoresRequest&, DescribeScoresOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScoresAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeScoresV2Response> DescribeScoresV2Outcome;
+                typedef std::future<DescribeScoresV2Outcome> DescribeScoresV2OutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeScoresV2Request&, DescribeScoresV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScoresV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTawAreasResponse> DescribeTawAreasOutcome;
                 typedef std::future<DescribeTawAreasOutcome> DescribeTawAreasOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeTawAreasRequest&, DescribeTawAreasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTawAreasAsyncHandler;
@@ -456,6 +516,15 @@ namespace TencentCloud
                 DescribeDataOutcomeCallable DescribeDataCallable(const Model::DescribeDataRequest& request);
 
                 /**
+                 *获取DescribeDataBridgeUrl信息
+                 * @param req DescribeDataBridgeUrlV2Request
+                 * @return DescribeDataBridgeUrlV2Outcome
+                 */
+                DescribeDataBridgeUrlV2Outcome DescribeDataBridgeUrlV2(const Model::DescribeDataBridgeUrlV2Request &request);
+                void DescribeDataBridgeUrlV2Async(const Model::DescribeDataBridgeUrlV2Request& request, const DescribeDataBridgeUrlV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataBridgeUrlV2OutcomeCallable DescribeDataBridgeUrlV2Callable(const Model::DescribeDataBridgeUrlV2Request& request);
+
+                /**
                  *获取DescribeDataCustomUrl信息
                  * @param req DescribeDataCustomUrlRequest
                  * @return DescribeDataCustomUrlOutcome
@@ -465,6 +534,15 @@ namespace TencentCloud
                 DescribeDataCustomUrlOutcomeCallable DescribeDataCustomUrlCallable(const Model::DescribeDataCustomUrlRequest& request);
 
                 /**
+                 *获取DescribeDataCustomUrl信息
+                 * @param req DescribeDataCustomUrlV2Request
+                 * @return DescribeDataCustomUrlV2Outcome
+                 */
+                DescribeDataCustomUrlV2Outcome DescribeDataCustomUrlV2(const Model::DescribeDataCustomUrlV2Request &request);
+                void DescribeDataCustomUrlV2Async(const Model::DescribeDataCustomUrlV2Request& request, const DescribeDataCustomUrlV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataCustomUrlV2OutcomeCallable DescribeDataCustomUrlV2Callable(const Model::DescribeDataCustomUrlV2Request& request);
+
+                /**
                  *获取DescribeDataEventUrl信息
                  * @param req DescribeDataEventUrlRequest
                  * @return DescribeDataEventUrlOutcome
@@ -472,6 +550,15 @@ namespace TencentCloud
                 DescribeDataEventUrlOutcome DescribeDataEventUrl(const Model::DescribeDataEventUrlRequest &request);
                 void DescribeDataEventUrlAsync(const Model::DescribeDataEventUrlRequest& request, const DescribeDataEventUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDataEventUrlOutcomeCallable DescribeDataEventUrlCallable(const Model::DescribeDataEventUrlRequest& request);
+
+                /**
+                 *获取DescribeDataEventUrl信息
+                 * @param req DescribeDataEventUrlV2Request
+                 * @return DescribeDataEventUrlV2Outcome
+                 */
+                DescribeDataEventUrlV2Outcome DescribeDataEventUrlV2(const Model::DescribeDataEventUrlV2Request &request);
+                void DescribeDataEventUrlV2Async(const Model::DescribeDataEventUrlV2Request& request, const DescribeDataEventUrlV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataEventUrlV2OutcomeCallable DescribeDataEventUrlV2Callable(const Model::DescribeDataEventUrlV2Request& request);
 
                 /**
                  *获取DescribeDataFetchProject信息。已下线，请使用DescribeDataFetchUrl
@@ -501,6 +588,15 @@ namespace TencentCloud
                 DescribeDataFetchUrlInfoOutcomeCallable DescribeDataFetchUrlInfoCallable(const Model::DescribeDataFetchUrlInfoRequest& request);
 
                 /**
+                 *获取DescribeDataFetchUrl信息
+                 * @param req DescribeDataFetchUrlV2Request
+                 * @return DescribeDataFetchUrlV2Outcome
+                 */
+                DescribeDataFetchUrlV2Outcome DescribeDataFetchUrlV2(const Model::DescribeDataFetchUrlV2Request &request);
+                void DescribeDataFetchUrlV2Async(const Model::DescribeDataFetchUrlV2Request& request, const DescribeDataFetchUrlV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataFetchUrlV2OutcomeCallable DescribeDataFetchUrlV2Callable(const Model::DescribeDataFetchUrlV2Request& request);
+
+                /**
                  *获取loginfo信息
                  * @param req DescribeDataLogUrlInfoRequest
                  * @return DescribeDataLogUrlInfoOutcome
@@ -519,6 +615,15 @@ namespace TencentCloud
                 DescribeDataLogUrlStatisticsOutcomeCallable DescribeDataLogUrlStatisticsCallable(const Model::DescribeDataLogUrlStatisticsRequest& request);
 
                 /**
+                 *获取LogUrlStatistics信息
+                 * @param req DescribeDataLogUrlStatisticsV2Request
+                 * @return DescribeDataLogUrlStatisticsV2Outcome
+                 */
+                DescribeDataLogUrlStatisticsV2Outcome DescribeDataLogUrlStatisticsV2(const Model::DescribeDataLogUrlStatisticsV2Request &request);
+                void DescribeDataLogUrlStatisticsV2Async(const Model::DescribeDataLogUrlStatisticsV2Request& request, const DescribeDataLogUrlStatisticsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataLogUrlStatisticsV2OutcomeCallable DescribeDataLogUrlStatisticsV2Callable(const Model::DescribeDataLogUrlStatisticsV2Request& request);
+
+                /**
                  *获取PerformancePage信息
                  * @param req DescribeDataPerformancePageRequest
                  * @return DescribeDataPerformancePageOutcome
@@ -526,6 +631,15 @@ namespace TencentCloud
                 DescribeDataPerformancePageOutcome DescribeDataPerformancePage(const Model::DescribeDataPerformancePageRequest &request);
                 void DescribeDataPerformancePageAsync(const Model::DescribeDataPerformancePageRequest& request, const DescribeDataPerformancePageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDataPerformancePageOutcomeCallable DescribeDataPerformancePageCallable(const Model::DescribeDataPerformancePageRequest& request);
+
+                /**
+                 *获取PerformancePage信息
+                 * @param req DescribeDataPerformancePageV2Request
+                 * @return DescribeDataPerformancePageV2Outcome
+                 */
+                DescribeDataPerformancePageV2Outcome DescribeDataPerformancePageV2(const Model::DescribeDataPerformancePageV2Request &request);
+                void DescribeDataPerformancePageV2Async(const Model::DescribeDataPerformancePageV2Request& request, const DescribeDataPerformancePageV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataPerformancePageV2OutcomeCallable DescribeDataPerformancePageV2Callable(const Model::DescribeDataPerformancePageV2Request& request);
 
                 /**
                  *获取PvUrlInfo信息
@@ -582,6 +696,15 @@ namespace TencentCloud
                 DescribeDataSetUrlStatisticsOutcomeCallable DescribeDataSetUrlStatisticsCallable(const Model::DescribeDataSetUrlStatisticsRequest& request);
 
                 /**
+                 *获取DescribeDataSetUrlStatistics信息
+                 * @param req DescribeDataSetUrlStatisticsV2Request
+                 * @return DescribeDataSetUrlStatisticsV2Outcome
+                 */
+                DescribeDataSetUrlStatisticsV2Outcome DescribeDataSetUrlStatisticsV2(const Model::DescribeDataSetUrlStatisticsV2Request &request);
+                void DescribeDataSetUrlStatisticsV2Async(const Model::DescribeDataSetUrlStatisticsV2Request& request, const DescribeDataSetUrlStatisticsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataSetUrlStatisticsV2OutcomeCallable DescribeDataSetUrlStatisticsV2Callable(const Model::DescribeDataSetUrlStatisticsV2Request& request);
+
+                /**
                  *获取DescribeDataStaticProject信息
                  * @param req DescribeDataStaticProjectRequest
                  * @return DescribeDataStaticProjectOutcome
@@ -589,6 +712,15 @@ namespace TencentCloud
                 DescribeDataStaticProjectOutcome DescribeDataStaticProject(const Model::DescribeDataStaticProjectRequest &request);
                 void DescribeDataStaticProjectAsync(const Model::DescribeDataStaticProjectRequest& request, const DescribeDataStaticProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDataStaticProjectOutcomeCallable DescribeDataStaticProjectCallable(const Model::DescribeDataStaticProjectRequest& request);
+
+                /**
+                 *获取DescribeDataStaticProject信息
+                 * @param req DescribeDataStaticProjectV2Request
+                 * @return DescribeDataStaticProjectV2Outcome
+                 */
+                DescribeDataStaticProjectV2Outcome DescribeDataStaticProjectV2(const Model::DescribeDataStaticProjectV2Request &request);
+                void DescribeDataStaticProjectV2Async(const Model::DescribeDataStaticProjectV2Request& request, const DescribeDataStaticProjectV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataStaticProjectV2OutcomeCallable DescribeDataStaticProjectV2Callable(const Model::DescribeDataStaticProjectV2Request& request);
 
                 /**
                  *获取DescribeDataStaticResource信息
@@ -600,6 +732,15 @@ namespace TencentCloud
                 DescribeDataStaticResourceOutcomeCallable DescribeDataStaticResourceCallable(const Model::DescribeDataStaticResourceRequest& request);
 
                 /**
+                 *获取DescribeDataStaticResource信息
+                 * @param req DescribeDataStaticResourceV2Request
+                 * @return DescribeDataStaticResourceV2Outcome
+                 */
+                DescribeDataStaticResourceV2Outcome DescribeDataStaticResourceV2(const Model::DescribeDataStaticResourceV2Request &request);
+                void DescribeDataStaticResourceV2Async(const Model::DescribeDataStaticResourceV2Request& request, const DescribeDataStaticResourceV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataStaticResourceV2OutcomeCallable DescribeDataStaticResourceV2Callable(const Model::DescribeDataStaticResourceV2Request& request);
+
+                /**
                  *获取DescribeDataStaticUrl信息
                  * @param req DescribeDataStaticUrlRequest
                  * @return DescribeDataStaticUrlOutcome
@@ -607,6 +748,15 @@ namespace TencentCloud
                 DescribeDataStaticUrlOutcome DescribeDataStaticUrl(const Model::DescribeDataStaticUrlRequest &request);
                 void DescribeDataStaticUrlAsync(const Model::DescribeDataStaticUrlRequest& request, const DescribeDataStaticUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDataStaticUrlOutcomeCallable DescribeDataStaticUrlCallable(const Model::DescribeDataStaticUrlRequest& request);
+
+                /**
+                 *获取DescribeDataStaticUrl信息
+                 * @param req DescribeDataStaticUrlV2Request
+                 * @return DescribeDataStaticUrlV2Outcome
+                 */
+                DescribeDataStaticUrlV2Outcome DescribeDataStaticUrlV2(const Model::DescribeDataStaticUrlV2Request &request);
+                void DescribeDataStaticUrlV2Async(const Model::DescribeDataStaticUrlV2Request& request, const DescribeDataStaticUrlV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataStaticUrlV2OutcomeCallable DescribeDataStaticUrlV2Callable(const Model::DescribeDataStaticUrlV2Request& request);
 
                 /**
                  *获取DescribeDataWebVitalsPage信息，用户核心活动信息
@@ -617,6 +767,16 @@ namespace TencentCloud
                 DescribeDataWebVitalsPageOutcome DescribeDataWebVitalsPage(const Model::DescribeDataWebVitalsPageRequest &request);
                 void DescribeDataWebVitalsPageAsync(const Model::DescribeDataWebVitalsPageRequest& request, const DescribeDataWebVitalsPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDataWebVitalsPageOutcomeCallable DescribeDataWebVitalsPageCallable(const Model::DescribeDataWebVitalsPageRequest& request);
+
+                /**
+                 *获取DescribeDataWebVitalsPage信息，用户核心活动信息
+页面加载性能之Web Vitals。性能关键点
+                 * @param req DescribeDataWebVitalsPageV2Request
+                 * @return DescribeDataWebVitalsPageV2Outcome
+                 */
+                DescribeDataWebVitalsPageV2Outcome DescribeDataWebVitalsPageV2(const Model::DescribeDataWebVitalsPageV2Request &request);
+                void DescribeDataWebVitalsPageV2Async(const Model::DescribeDataWebVitalsPageV2Request& request, const DescribeDataWebVitalsPageV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataWebVitalsPageV2OutcomeCallable DescribeDataWebVitalsPageV2Callable(const Model::DescribeDataWebVitalsPageV2Request& request);
 
                 /**
                  *获取首页错误信息
@@ -725,6 +885,15 @@ namespace TencentCloud
                 DescribeScoresOutcome DescribeScores(const Model::DescribeScoresRequest &request);
                 void DescribeScoresAsync(const Model::DescribeScoresRequest& request, const DescribeScoresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeScoresOutcomeCallable DescribeScoresCallable(const Model::DescribeScoresRequest& request);
+
+                /**
+                 *获取首页分数列表
+                 * @param req DescribeScoresV2Request
+                 * @return DescribeScoresV2Outcome
+                 */
+                DescribeScoresV2Outcome DescribeScoresV2(const Model::DescribeScoresV2Request &request);
+                void DescribeScoresV2Async(const Model::DescribeScoresV2Request& request, const DescribeScoresV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScoresV2OutcomeCallable DescribeScoresV2Callable(const Model::DescribeScoresV2Request& request);
 
                 /**
                  *查询片区信息

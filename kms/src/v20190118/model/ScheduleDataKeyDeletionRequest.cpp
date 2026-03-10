@@ -24,7 +24,8 @@ using namespace std;
 
 ScheduleDataKeyDeletionRequest::ScheduleDataKeyDeletionRequest() :
     m_dataKeyIdHasBeenSet(false),
-    m_pendingWindowInDaysHasBeenSet(false)
+    m_pendingWindowInDaysHasBeenSet(false),
+    m_memberAccountHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,15 @@ string ScheduleDataKeyDeletionRequest::ToJsonString() const
         string key = "PendingWindowInDays";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pendingWindowInDays, allocator);
+    }
+
+    if (m_memberAccountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberAccount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_memberAccount.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -89,6 +99,22 @@ void ScheduleDataKeyDeletionRequest::SetPendingWindowInDays(const uint64_t& _pen
 bool ScheduleDataKeyDeletionRequest::PendingWindowInDaysHasBeenSet() const
 {
     return m_pendingWindowInDaysHasBeenSet;
+}
+
+MemberAccount ScheduleDataKeyDeletionRequest::GetMemberAccount() const
+{
+    return m_memberAccount;
+}
+
+void ScheduleDataKeyDeletionRequest::SetMemberAccount(const MemberAccount& _memberAccount)
+{
+    m_memberAccount = _memberAccount;
+    m_memberAccountHasBeenSet = true;
+}
+
+bool ScheduleDataKeyDeletionRequest::MemberAccountHasBeenSet() const
+{
+    return m_memberAccountHasBeenSet;
 }
 
 

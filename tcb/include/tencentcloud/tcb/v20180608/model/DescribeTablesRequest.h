@@ -148,6 +148,27 @@ namespace TencentCloud
                      */
                     bool MongoConnectorHasBeenSet() const;
 
+                    /**
+                     * 获取指定表名过滤，为空时返回所有表
+                     * @return TableNames 指定表名过滤，为空时返回所有表
+                     * 
+                     */
+                    std::vector<std::string> GetTableNames() const;
+
+                    /**
+                     * 设置指定表名过滤，为空时返回所有表
+                     * @param _tableNames 指定表名过滤，为空时返回所有表
+                     * 
+                     */
+                    void SetTableNames(const std::vector<std::string>& _tableNames);
+
+                    /**
+                     * 判断参数 TableNames 是否已赋值
+                     * @return TableNames 是否已赋值
+                     * 
+                     */
+                    bool TableNamesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +200,12 @@ namespace TencentCloud
                      */
                     MongoConnector m_mongoConnector;
                     bool m_mongoConnectorHasBeenSet;
+
+                    /**
+                     * 指定表名过滤，为空时返回所有表
+                     */
+                    std::vector<std::string> m_tableNames;
+                    bool m_tableNamesHasBeenSet;
 
                 };
             }

@@ -463,15 +463,15 @@ namespace TencentCloud
                     bool BrowserHasBeenSet() const;
 
                     /**
-                     * 获取耗时计算方式
-                     * @return CostType 耗时计算方式
+                     * 获取耗时口径："50"/"75"/"90"/"95"/"99"/"99.5" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；"avg" 表示均值（avg）。
+                     * @return CostType 耗时口径："50"/"75"/"90"/"95"/"99"/"99.5" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；"avg" 表示均值（avg）。
                      * 
                      */
                     std::string GetCostType() const;
 
                     /**
-                     * 设置耗时计算方式
-                     * @param _costType 耗时计算方式
+                     * 设置耗时口径："50"/"75"/"90"/"95"/"99"/"99.5" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；"avg" 表示均值（avg）。
+                     * @param _costType 耗时口径："50"/"75"/"90"/"95"/"99"/"99.5" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；"avg" 表示均值（avg）。
                      * 
                      */
                     void SetCostType(const std::string& _costType);
@@ -526,15 +526,15 @@ namespace TencentCloud
                     bool EnvHasBeenSet() const;
 
                     /**
-                     * 获取httpcode响应码
-                     * @return Status httpcode响应码
+                     * 获取HTTP 状态码（tag 值）：用于过滤字段 status；取值一般为 200/301/404/500 等，也可配合 4xx/5xx 统计逻辑使用
+                     * @return Status HTTP 状态码（tag 值）：用于过滤字段 status；取值一般为 200/301/404/500 等，也可配合 4xx/5xx 统计逻辑使用
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置httpcode响应码
-                     * @param _status httpcode响应码
+                     * 设置HTTP 状态码（tag 值）：用于过滤字段 status；取值一般为 200/301/404/500 等，也可配合 4xx/5xx 统计逻辑使用
+                     * @param _status HTTP 状态码（tag 值）：用于过滤字段 status；取值一般为 200/301/404/500 等，也可配合 4xx/5xx 统计逻辑使用
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -690,7 +690,7 @@ namespace TencentCloud
                     bool m_browserHasBeenSet;
 
                     /**
-                     * 耗时计算方式
+                     * 耗时口径："50"/"75"/"90"/"95"/"99"/"99.5" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；"avg" 表示均值（avg）。
                      */
                     std::string m_costType;
                     bool m_costTypeHasBeenSet;
@@ -708,7 +708,7 @@ namespace TencentCloud
                     bool m_envHasBeenSet;
 
                     /**
-                     * httpcode响应码
+                     * HTTP 状态码（tag 值）：用于过滤字段 status；取值一般为 200/301/404/500 等，也可配合 4xx/5xx 统计逻辑使用
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

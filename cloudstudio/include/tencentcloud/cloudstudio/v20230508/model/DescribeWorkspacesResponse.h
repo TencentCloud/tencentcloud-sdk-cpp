@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作空间列表
-                     * @return Data 工作空间列表
+                     * 获取<p>工作空间列表</p>
+                     * @return Data <p>工作空间列表</p>
                      * 
                      */
                     std::vector<WorkspaceStatusInfo> GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 工作空间列表
+                     * <p>工作空间列表</p>
                      */
                     std::vector<WorkspaceStatusInfo> m_data;
                     bool m_dataHasBeenSet;

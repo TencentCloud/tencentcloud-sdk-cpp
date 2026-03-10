@@ -65,15 +65,43 @@ namespace TencentCloud
                     bool TableIdHasBeenSet() const;
 
                     /**
-                     * 获取条数
-                     * @return Mode 条数
+                     * 获取模式。
+取值范围：
+- ALL：全部
+- Specify：指定
+- TAG：标签
+
+默认值：ALL
+示例值：ALL
+                     * @return Mode 模式。
+取值范围：
+- ALL：全部
+- Specify：指定
+- TAG：标签
+
+默认值：ALL
+示例值：ALL
                      * 
                      */
                     std::string GetMode() const;
 
                     /**
-                     * 设置条数
-                     * @param _mode 条数
+                     * 设置模式。
+取值范围：
+- ALL：全部
+- Specify：指定
+- TAG：标签
+
+默认值：ALL
+示例值：ALL
+                     * @param _mode 模式。
+取值范围：
+- ALL：全部
+- Specify：指定
+- TAG：标签
+
+默认值：ALL
+示例值：ALL
                      * 
                      */
                     void SetMode(const std::string& _mode);
@@ -86,15 +114,43 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取角色类型
-                     * @return RoleType 角色类型
+                     * 获取角色类型。
+取值范围：
+
+- ROLES：按角色
+- Others：其它
+
+默认值：Others
+示例值：Others
+                     * @return RoleType 角色类型。
+取值范围：
+
+- ROLES：按角色
+- Others：其它
+
+默认值：Others
+示例值：Others
                      * 
                      */
                     std::string GetRoleType() const;
 
                     /**
-                     * 设置角色类型
-                     * @param _roleType 角色类型
+                     * 设置角色类型。
+取值范围：
+
+- ROLES：按角色
+- Others：其它
+
+默认值：Others
+示例值：Others
+                     * @param _roleType 角色类型。
+取值范围：
+
+- ROLES：按角色
+- Others：其它
+
+默认值：Others
+示例值：Others
                      * 
                      */
                     void SetRoleType(const std::string& _roleType);
@@ -149,15 +205,43 @@ namespace TencentCloud
                     bool RulerInfoHasBeenSet() const;
 
                     /**
-                     * 获取类型
-                     * @return Type 类型
+                     * 获取类型。
+取值范围：
+
+- ROW：行权限
+- COLUMN：列权限
+
+默认值：ROW
+示例值：ROW
+                     * @return Type 类型。
+取值范围：
+
+- ROW：行权限
+- COLUMN：列权限
+
+默认值：ROW
+示例值：ROW
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型
-                     * @param _type 类型
+                     * 设置类型。
+取值范围：
+
+- ROW：行权限
+- COLUMN：列权限
+
+默认值：ROW
+示例值：ROW
+                     * @param _type 类型。
+取值范围：
+
+- ROW：行权限
+- COLUMN：列权限
+
+默认值：ROW
+示例值：ROW
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -170,15 +254,43 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return OpenStatus 状态
+                     * 获取开启状态。
+取值范围：
+
+- Open：开启
+- Close：关闭
+
+默认值：Close
+示例值：Close
+                     * @return OpenStatus 开启状态。
+取值范围：
+
+- Open：开启
+- Close：关闭
+
+默认值：Close
+示例值：Close
                      * 
                      */
                     std::string GetOpenStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param _openStatus 状态
+                     * 设置开启状态。
+取值范围：
+
+- Open：开启
+- Close：关闭
+
+默认值：Close
+示例值：Close
+                     * @param _openStatus 开启状态。
+取值范围：
+
+- Open：开启
+- Close：关闭
+
+默认值：Close
+示例值：Close
                      * 
                      */
                     void SetOpenStatus(const std::string& _openStatus);
@@ -241,13 +353,27 @@ namespace TencentCloud
                     bool m_tableIdHasBeenSet;
 
                     /**
-                     * 条数
+                     * 模式。
+取值范围：
+- ALL：全部
+- Specify：指定
+- TAG：标签
+
+默认值：ALL
+示例值：ALL
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 角色类型
+                     * 角色类型。
+取值范围：
+
+- ROLES：按角色
+- Others：其它
+
+默认值：Others
+示例值：Others
                      */
                     std::string m_roleType;
                     bool m_roleTypeHasBeenSet;
@@ -265,13 +391,27 @@ namespace TencentCloud
                     bool m_rulerInfoHasBeenSet;
 
                     /**
-                     * 类型
+                     * 类型。
+取值范围：
+
+- ROW：行权限
+- COLUMN：列权限
+
+默认值：ROW
+示例值：ROW
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 状态
+                     * 开启状态。
+取值范围：
+
+- Open：开启
+- Close：关闭
+
+默认值：Close
+示例值：Close
                      */
                     std::string m_openStatus;
                     bool m_openStatusHasBeenSet;

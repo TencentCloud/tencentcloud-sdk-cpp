@@ -27,7 +27,8 @@ DescribeTablesRequest::DescribeTablesRequest() :
     m_tagHasBeenSet(false),
     m_mgoOffsetHasBeenSet(false),
     m_envIdHasBeenSet(false),
-    m_mongoConnectorHasBeenSet(false)
+    m_mongoConnectorHasBeenSet(false),
+    m_tableNamesHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,19 @@ string DescribeTablesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mongoConnector.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tableNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tableNames.begin(); itr != m_tableNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -165,6 +179,22 @@ void DescribeTablesRequest::SetMongoConnector(const MongoConnector& _mongoConnec
 bool DescribeTablesRequest::MongoConnectorHasBeenSet() const
 {
     return m_mongoConnectorHasBeenSet;
+}
+
+vector<string> DescribeTablesRequest::GetTableNames() const
+{
+    return m_tableNames;
+}
+
+void DescribeTablesRequest::SetTableNames(const vector<string>& _tableNames)
+{
+    m_tableNames = _tableNames;
+    m_tableNamesHasBeenSet = true;
+}
+
+bool DescribeTablesRequest::TableNamesHasBeenSet() const
+{
+    return m_tableNamesHasBeenSet;
 }
 
 

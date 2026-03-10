@@ -149,14 +149,26 @@ namespace TencentCloud
 
                     /**
                      * 获取默认看板
+取值范围：
+1：项目看板 
+2：我的看板
                      * @return DefaultPanelType 默认看板
+取值范围：
+1：项目看板 
+2：我的看板
                      * 
                      */
                     int64_t GetDefaultPanelType() const;
 
                     /**
                      * 设置默认看板
+取值范围：
+1：项目看板 
+2：我的看板
                      * @param _defaultPanelType 默认看板
+取值范围：
+1：项目看板 
+2：我的看板
                      * 
                      */
                     void SetDefaultPanelType(const int64_t& _defaultPanelType);
@@ -223,6 +235,9 @@ namespace TencentCloud
 
                     /**
                      * 默认看板
+取值范围：
+1：项目看板 
+2：我的看板
                      */
                     int64_t m_defaultPanelType;
                     bool m_defaultPanelTypeHasBeenSet;

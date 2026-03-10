@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取结果总数
-                     * @return TotalCount 结果总数
+                     * 获取<p>结果总数</p>
+                     * @return TotalCount <p>结果总数</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取数据位移偏量
-                     * @return Offset 数据位移偏量
+                     * 获取<p>数据位移偏量</p>
+                     * @return Offset <p>数据位移偏量</p>
                      * 
                      */
                     uint64_t GetOffset() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页大小
-                     * @return Limit 每页大小
+                     * 获取<p>每页大小</p>
+                     * @return Limit <p>每页大小</p>
                      * 
                      */
                     uint64_t GetLimit() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return Tags 标签列表
+                     * 获取<p>标签列表</p>
+                     * @return Tags <p>标签列表</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
@@ -103,25 +103,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 结果总数
+                     * <p>结果总数</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 数据位移偏量
+                     * <p>数据位移偏量</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页大小
+                     * <p>每页大小</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * <p>标签列表</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

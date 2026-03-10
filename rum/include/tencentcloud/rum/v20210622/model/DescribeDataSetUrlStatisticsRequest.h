@@ -358,15 +358,15 @@ namespace TencentCloud
                     bool ExtFirstHasBeenSet() const;
 
                     /**
-                     * 获取网络类型
-                     * @return NetType 网络类型
+                     * 获取网络类型(tag 值):用于过滤/聚合字段 netType；枚举值：1(WiFi)、2(2G)、3(3G)、4(4G)、5(5G)、6(6G)、100(未知网络)。
+                     * @return NetType 网络类型(tag 值):用于过滤/聚合字段 netType；枚举值：1(WiFi)、2(2G)、3(3G)、4(4G)、5(5G)、6(6G)、100(未知网络)。
                      * 
                      */
                     std::string GetNetType() const;
 
                     /**
-                     * 设置网络类型
-                     * @param _netType 网络类型
+                     * 设置网络类型(tag 值):用于过滤/聚合字段 netType；枚举值：1(WiFi)、2(2G)、3(3G)、4(4G)、5(5G)、6(6G)、100(未知网络)。
+                     * @param _netType 网络类型(tag 值):用于过滤/聚合字段 netType；枚举值：1(WiFi)、2(2G)、3(3G)、4(4G)、5(5G)、6(6G)、100(未知网络)。
                      * 
                      */
                     void SetNetType(const std::string& _netType);
@@ -463,15 +463,15 @@ namespace TencentCloud
                     bool BrowserHasBeenSet() const;
 
                     /**
-                     * 获取耗时计算
-                     * @return CostType 耗时计算
+                     * 获取耗时/数据量口径："50"/"75"/"90"/"95"/"99"/"99.5" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；"avg" 表示均值（avg）。
+                     * @return CostType 耗时/数据量口径："50"/"75"/"90"/"95"/"99"/"99.5" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；"avg" 表示均值（avg）。
                      * 
                      */
                     std::string GetCostType() const;
 
                     /**
-                     * 设置耗时计算
-                     * @param _costType 耗时计算
+                     * 设置耗时/数据量口径："50"/"75"/"90"/"95"/"99"/"99.5" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；"avg" 表示均值（avg）。
+                     * @param _costType 耗时/数据量口径："50"/"75"/"90"/"95"/"99"/"99.5" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；"avg" 表示均值（avg）。
                      * 
                      */
                     void SetCostType(const std::string& _costType);
@@ -505,15 +505,15 @@ namespace TencentCloud
                     bool EnvHasBeenSet() const;
 
                     /**
-                     * 获取获取package
-                     * @return PackageType 获取package
+                     * 获取小程序包类型（tag 值）：用于过滤字段 type（请求参数名为 PackageType）；取值由上报数据决定，可通过 Type=condition（show tag values）获取可选值集合。
+                     * @return PackageType 小程序包类型（tag 值）：用于过滤字段 type（请求参数名为 PackageType）；取值由上报数据决定，可通过 Type=condition（show tag values）获取可选值集合。
                      * 
                      */
                     std::string GetPackageType() const;
 
                     /**
-                     * 设置获取package
-                     * @param _packageType 获取package
+                     * 设置小程序包类型（tag 值）：用于过滤字段 type（请求参数名为 PackageType）；取值由上报数据决定，可通过 Type=condition（show tag values）获取可选值集合。
+                     * @param _packageType 小程序包类型（tag 值）：用于过滤字段 type（请求参数名为 PackageType）；取值由上报数据决定，可通过 Type=condition（show tag values）获取可选值集合。
                      * 
                      */
                     void SetPackageType(const std::string& _packageType);
@@ -618,7 +618,7 @@ namespace TencentCloud
                     bool m_extFirstHasBeenSet;
 
                     /**
-                     * 网络类型
+                     * 网络类型(tag 值):用于过滤/聚合字段 netType；枚举值：1(WiFi)、2(2G)、3(3G)、4(4G)、5(5G)、6(6G)、100(未知网络)。
                      */
                     std::string m_netType;
                     bool m_netTypeHasBeenSet;
@@ -648,7 +648,7 @@ namespace TencentCloud
                     bool m_browserHasBeenSet;
 
                     /**
-                     * 耗时计算
+                     * 耗时/数据量口径："50"/"75"/"90"/"95"/"99"/"99.5" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；"avg" 表示均值（avg）。
                      */
                     std::string m_costType;
                     bool m_costTypeHasBeenSet;
@@ -660,7 +660,7 @@ namespace TencentCloud
                     bool m_envHasBeenSet;
 
                     /**
-                     * 获取package
+                     * 小程序包类型（tag 值）：用于过滤字段 type（请求参数名为 PackageType）；取值由上报数据决定，可通过 Type=condition（show tag values）获取可选值集合。
                      */
                     std::string m_packageType;
                     bool m_packageTypeHasBeenSet;

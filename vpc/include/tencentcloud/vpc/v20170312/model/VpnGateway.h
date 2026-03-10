@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取网关出带宽。
-                     * @return InternetMaxBandwidthOut 网关出带宽。
+                     * 获取网关出带宽，单位：Mbps。
+                     * @return InternetMaxBandwidthOut 网关出带宽，单位：Mbps。
                      * 
                      */
                     uint64_t GetInternetMaxBandwidthOut() const;
 
                     /**
-                     * 设置网关出带宽。
-                     * @param _internetMaxBandwidthOut 网关出带宽。
+                     * 设置网关出带宽，单位：Mbps。
+                     * @param _internetMaxBandwidthOut 网关出带宽，单位：Mbps。
                      * 
                      */
                     void SetInternetMaxBandwidthOut(const uint64_t& _internetMaxBandwidthOut);
@@ -539,7 +539,7 @@ namespace TencentCloud
                     bool m_instanceChargeTypeHasBeenSet;
 
                     /**
-                     * 网关出带宽。
+                     * 网关出带宽，单位：Mbps。
                      */
                     uint64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;

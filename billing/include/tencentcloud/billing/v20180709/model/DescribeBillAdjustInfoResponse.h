@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据总量
-                     * @return Total 数据总量
+                     * 获取<p>数据总量</p>
+                     * @return Total <p>数据总量</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取明细数据
-                     * @return Data 明细数据
+                     * 获取<p>明细数据</p>
+                     * @return Data <p>明细数据</p>
                      * 
                      */
                     std::vector<AdjustInfoDetail> GetData() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据总量
+                     * <p>数据总量</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 明细数据
+                     * <p>明细数据</p>
                      */
                     std::vector<AdjustInfoDetail> m_data;
                     bool m_dataHasBeenSet;

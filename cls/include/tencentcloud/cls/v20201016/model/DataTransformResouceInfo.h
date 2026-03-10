@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志主题ID
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
-                     * @return TopicId 日志主题ID
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * 获取<p>日志主题ID</p><ul><li>通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</li></ul>
+                     * @return TopicId <p>日志主题ID</p><ul><li>通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</li></ul>
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题ID
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
-                     * @param _topicId 日志主题ID
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * 设置<p>日志主题ID</p><ul><li>通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</li></ul>
+                     * @param _topicId <p>日志主题ID</p><ul><li>通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</li></ul>
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取别名
-限制：不能包含字符 |。
-                     * @return Alias 别名
-限制：不能包含字符 |。
+                     * 获取<p>别名<br>限制：不能包含字符 |。</p>
+                     * @return Alias <p>别名<br>限制：不能包含字符 |。</p>
                      * 
                      */
                     std::string GetAlias() const;
 
                     /**
-                     * 设置别名
-限制：不能包含字符 |。
-                     * @param _alias 别名
-限制：不能包含字符 |。
+                     * 设置<p>别名<br>限制：不能包含字符 |。</p>
+                     * @param _alias <p>别名<br>限制：不能包含字符 |。</p>
                      * 
                      */
                     void SetAlias(const std::string& _alias);
@@ -96,21 +88,154 @@ namespace TencentCloud
                      */
                     bool AliasHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否是跨账号主题，false不是跨账号主题，true是跨账号主题</p><p>默认值：false</p>
+                     * @return IsCrossAccount <p>是否是跨账号主题，false不是跨账号主题，true是跨账号主题</p><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetIsCrossAccount() const;
+
+                    /**
+                     * 设置<p>是否是跨账号主题，false不是跨账号主题，true是跨账号主题</p><p>默认值：false</p>
+                     * @param _isCrossAccount <p>是否是跨账号主题，false不是跨账号主题，true是跨账号主题</p><p>默认值：false</p>
+                     * 
+                     */
+                    void SetIsCrossAccount(const bool& _isCrossAccount);
+
+                    /**
+                     * 判断参数 IsCrossAccount 是否已赋值
+                     * @return IsCrossAccount 是否已赋值
+                     * 
+                     */
+                    bool IsCrossAccountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>跨账号场景下，被投递账号给投递账号创建的角色ARN值，在被投递账号的角色里查找</p>
+                     * @return RoleARN <p>跨账号场景下，被投递账号给投递账号创建的角色ARN值，在被投递账号的角色里查找</p>
+                     * 
+                     */
+                    std::string GetRoleARN() const;
+
+                    /**
+                     * 设置<p>跨账号场景下，被投递账号给投递账号创建的角色ARN值，在被投递账号的角色里查找</p>
+                     * @param _roleARN <p>跨账号场景下，被投递账号给投递账号创建的角色ARN值，在被投递账号的角色里查找</p>
+                     * 
+                     */
+                    void SetRoleARN(const std::string& _roleARN);
+
+                    /**
+                     * 判断参数 RoleARN 是否已赋值
+                     * @return RoleARN 是否已赋值
+                     * 
+                     */
+                    bool RoleARNHasBeenSet() const;
+
+                    /**
+                     * 获取<p>外部ID值，可以在被投递账号的角色-载体里找到该值</p>
+                     * @return ExternalId <p>外部ID值，可以在被投递账号的角色-载体里找到该值</p>
+                     * 
+                     */
+                    std::string GetExternalId() const;
+
+                    /**
+                     * 设置<p>外部ID值，可以在被投递账号的角色-载体里找到该值</p>
+                     * @param _externalId <p>外部ID值，可以在被投递账号的角色-载体里找到该值</p>
+                     * 
+                     */
+                    void SetExternalId(const std::string& _externalId);
+
+                    /**
+                     * 判断参数 ExternalId 是否已赋值
+                     * @return ExternalId 是否已赋值
+                     * 
+                     */
+                    bool ExternalIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>topic名称</p>
+                     * @return TopicName <p>topic名称</p>
+                     * 
+                     */
+                    std::string GetTopicName() const;
+
+                    /**
+                     * 设置<p>topic名称</p>
+                     * @param _topicName <p>topic名称</p>
+                     * 
+                     */
+                    void SetTopicName(const std::string& _topicName);
+
+                    /**
+                     * 判断参数 TopicName 是否已赋值
+                     * @return TopicName 是否已赋值
+                     * 
+                     */
+                    bool TopicNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>日志集的名称</p>
+                     * @return LogsetName <p>日志集的名称</p>
+                     * 
+                     */
+                    std::string GetLogsetName() const;
+
+                    /**
+                     * 设置<p>日志集的名称</p>
+                     * @param _logsetName <p>日志集的名称</p>
+                     * 
+                     */
+                    void SetLogsetName(const std::string& _logsetName);
+
+                    /**
+                     * 判断参数 LogsetName 是否已赋值
+                     * @return LogsetName 是否已赋值
+                     * 
+                     */
+                    bool LogsetNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 日志主题ID
-- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。
+                     * <p>日志主题ID</p><ul><li>通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</li></ul>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 别名
-限制：不能包含字符 |。
+                     * <p>别名<br>限制：不能包含字符 |。</p>
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
+
+                    /**
+                     * <p>是否是跨账号主题，false不是跨账号主题，true是跨账号主题</p><p>默认值：false</p>
+                     */
+                    bool m_isCrossAccount;
+                    bool m_isCrossAccountHasBeenSet;
+
+                    /**
+                     * <p>跨账号场景下，被投递账号给投递账号创建的角色ARN值，在被投递账号的角色里查找</p>
+                     */
+                    std::string m_roleARN;
+                    bool m_roleARNHasBeenSet;
+
+                    /**
+                     * <p>外部ID值，可以在被投递账号的角色-载体里找到该值</p>
+                     */
+                    std::string m_externalId;
+                    bool m_externalIdHasBeenSet;
+
+                    /**
+                     * <p>topic名称</p>
+                     */
+                    std::string m_topicName;
+                    bool m_topicNameHasBeenSet;
+
+                    /**
+                     * <p>日志集的名称</p>
+                     */
+                    std::string m_logsetName;
+                    bool m_logsetNameHasBeenSet;
 
                 };
             }

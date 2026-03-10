@@ -33,6 +33,8 @@
 #include <tencentcloud/trtc/v20190722/model/CreateCloudRecordingResponse.h>
 #include <tencentcloud/trtc/v20190722/model/CreateCloudSliceTaskRequest.h>
 #include <tencentcloud/trtc/v20190722/model/CreateCloudSliceTaskResponse.h>
+#include <tencentcloud/trtc/v20190722/model/CreateCloudTranscriptionRequest.h>
+#include <tencentcloud/trtc/v20190722/model/CreateCloudTranscriptionResponse.h>
 #include <tencentcloud/trtc/v20190722/model/CreatePictureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/CreatePictureResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DeleteBasicModerationRequest.h>
@@ -43,6 +45,8 @@
 #include <tencentcloud/trtc/v20190722/model/DeleteCloudRecordingResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DeleteCloudSliceTaskRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DeleteCloudSliceTaskResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DeleteCloudTranscriptionRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DeleteCloudTranscriptionResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DeletePictureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DeletePictureResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DeleteVoicePrintRequest.h>
@@ -59,6 +63,8 @@
 #include <tencentcloud/trtc/v20190722/model/DescribeCloudRecordingResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCloudSliceTaskRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCloudSliceTaskResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeCloudTranscriptionRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeCloudTranscriptionResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeMixTranscodingUsageRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeMixTranscodingUsageResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribePictureRequest.h>
@@ -190,6 +196,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCloudSliceTaskResponse> CreateCloudSliceTaskOutcome;
                 typedef std::future<CreateCloudSliceTaskOutcome> CreateCloudSliceTaskOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::CreateCloudSliceTaskRequest&, CreateCloudSliceTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudSliceTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCloudTranscriptionResponse> CreateCloudTranscriptionOutcome;
+                typedef std::future<CreateCloudTranscriptionOutcome> CreateCloudTranscriptionOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::CreateCloudTranscriptionRequest&, CreateCloudTranscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudTranscriptionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePictureResponse> CreatePictureOutcome;
                 typedef std::future<CreatePictureOutcome> CreatePictureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::CreatePictureRequest&, CreatePictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePictureAsyncHandler;
@@ -205,6 +214,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCloudSliceTaskResponse> DeleteCloudSliceTaskOutcome;
                 typedef std::future<DeleteCloudSliceTaskOutcome> DeleteCloudSliceTaskOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DeleteCloudSliceTaskRequest&, DeleteCloudSliceTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudSliceTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCloudTranscriptionResponse> DeleteCloudTranscriptionOutcome;
+                typedef std::future<DeleteCloudTranscriptionOutcome> DeleteCloudTranscriptionOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DeleteCloudTranscriptionRequest&, DeleteCloudTranscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudTranscriptionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeletePictureResponse> DeletePictureOutcome;
                 typedef std::future<DeletePictureOutcome> DeletePictureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DeletePictureRequest&, DeletePictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePictureAsyncHandler;
@@ -229,6 +241,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudSliceTaskResponse> DescribeCloudSliceTaskOutcome;
                 typedef std::future<DescribeCloudSliceTaskOutcome> DescribeCloudSliceTaskOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeCloudSliceTaskRequest&, DescribeCloudSliceTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudSliceTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudTranscriptionResponse> DescribeCloudTranscriptionOutcome;
+                typedef std::future<DescribeCloudTranscriptionOutcome> DescribeCloudTranscriptionOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeCloudTranscriptionRequest&, DescribeCloudTranscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudTranscriptionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMixTranscodingUsageResponse> DescribeMixTranscodingUsageOutcome;
                 typedef std::future<DescribeMixTranscodingUsageOutcome> DescribeMixTranscodingUsageOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeMixTranscodingUsageRequest&, DescribeMixTranscodingUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMixTranscodingUsageAsyncHandler;
@@ -454,6 +469,16 @@ namespace TencentCloud
                 CreateCloudSliceTaskOutcomeCallable CreateCloudSliceTaskCallable(const Model::CreateCloudSliceTaskRequest& request);
 
                 /**
+                 *接口说明：
+启动云端转录功能。
+                 * @param req CreateCloudTranscriptionRequest
+                 * @return CreateCloudTranscriptionOutcome
+                 */
+                CreateCloudTranscriptionOutcome CreateCloudTranscription(const Model::CreateCloudTranscriptionRequest &request);
+                void CreateCloudTranscriptionAsync(const Model::CreateCloudTranscriptionRequest& request, const CreateCloudTranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCloudTranscriptionOutcomeCallable CreateCloudTranscriptionCallable(const Model::CreateCloudTranscriptionRequest& request);
+
+                /**
                  *如果您需要在 [云端混流转码](https://cloud.tencent.com/document/product/647/16827) 时频繁新增自定义背景图或水印，可通过此接口上传新的图片素材。无需频繁新增图片的场景，建议直接在 [控制台 > 应用管理 > 素材管理](https://cloud.tencent.com/document/product/647/50769) 中操作。
                  * @param req CreatePictureRequest
                  * @return CreatePictureOutcome
@@ -497,6 +522,15 @@ namespace TencentCloud
                 DeleteCloudSliceTaskOutcome DeleteCloudSliceTask(const Model::DeleteCloudSliceTaskRequest &request);
                 void DeleteCloudSliceTaskAsync(const Model::DeleteCloudSliceTaskRequest& request, const DeleteCloudSliceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteCloudSliceTaskOutcomeCallable DeleteCloudSliceTaskCallable(const Model::DeleteCloudSliceTaskRequest& request);
+
+                /**
+                 *成功开启转录后，可以使用此接口来停止转录任务。
+                 * @param req DeleteCloudTranscriptionRequest
+                 * @return DeleteCloudTranscriptionOutcome
+                 */
+                DeleteCloudTranscriptionOutcome DeleteCloudTranscription(const Model::DeleteCloudTranscriptionRequest &request);
+                void DeleteCloudTranscriptionAsync(const Model::DeleteCloudTranscriptionRequest& request, const DeleteCloudTranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCloudTranscriptionOutcomeCallable DeleteCloudTranscriptionCallable(const Model::DeleteCloudTranscriptionRequest& request);
 
                 /**
                  *如果您需要在 [云端混流转码](https://cloud.tencent.com/document/product/647/16827) 时频繁删除自定义背景图或水印，可通过此接口删除已上传的图片。无需频繁删除图片的场景，建议直接在 [控制台 > 应用管理 > 素材管理](https://cloud.tencent.com/document/product/647/50769) 中操作。
@@ -575,6 +609,15 @@ namespace TencentCloud
                 DescribeCloudSliceTaskOutcome DescribeCloudSliceTask(const Model::DescribeCloudSliceTaskRequest &request);
                 void DescribeCloudSliceTaskAsync(const Model::DescribeCloudSliceTaskRequest& request, const DescribeCloudSliceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudSliceTaskOutcomeCallable DescribeCloudSliceTaskCallable(const Model::DescribeCloudSliceTaskRequest& request);
+
+                /**
+                 *成功开启转录后，可以使用此接口来查询录制状态。仅在转录任务进行时有效，转录退出后查询将会返回错误。
+                 * @param req DescribeCloudTranscriptionRequest
+                 * @return DescribeCloudTranscriptionOutcome
+                 */
+                DescribeCloudTranscriptionOutcome DescribeCloudTranscription(const Model::DescribeCloudTranscriptionRequest &request);
+                void DescribeCloudTranscriptionAsync(const Model::DescribeCloudTranscriptionRequest& request, const DescribeCloudTranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudTranscriptionOutcomeCallable DescribeCloudTranscriptionCallable(const Model::DescribeCloudTranscriptionRequest& request);
 
                 /**
                  *获取TRTC混流转码的用量明细。

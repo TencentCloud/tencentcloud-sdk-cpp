@@ -23,7 +23,8 @@ using namespace TencentCloud::Kms::V20190118::Model;
 using namespace std;
 
 EnableKeysRequest::EnableKeysRequest() :
-    m_keyIdsHasBeenSet(false)
+    m_keyIdsHasBeenSet(false),
+    m_memberAccountHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,15 @@ string EnableKeysRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_memberAccountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberAccount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_memberAccount.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -69,6 +79,22 @@ void EnableKeysRequest::SetKeyIds(const vector<string>& _keyIds)
 bool EnableKeysRequest::KeyIdsHasBeenSet() const
 {
     return m_keyIdsHasBeenSet;
+}
+
+MemberAccount EnableKeysRequest::GetMemberAccount() const
+{
+    return m_memberAccount;
+}
+
+void EnableKeysRequest::SetMemberAccount(const MemberAccount& _memberAccount)
+{
+    m_memberAccount = _memberAccount;
+    m_memberAccountHasBeenSet = true;
+}
+
+bool EnableKeysRequest::MemberAccountHasBeenSet() const
+{
+    return m_memberAccountHasBeenSet;
 }
 
 

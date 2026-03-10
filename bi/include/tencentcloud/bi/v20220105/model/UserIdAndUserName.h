@@ -164,18 +164,46 @@ namespace TencentCloud
                     bool LastLoginHasBeenSet() const;
 
                     /**
-                     * 获取停启用状态
+                     * 获取用户状态。
+取值范围：
+
+- 1：启用
+- 0：停用
+
+默认值：1
+示例值：1
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 停启用状态
+                     * @return Status 用户状态。
+取值范围：
+
+- 1：启用
+- 0：停用
+
+默认值：1
+示例值：1
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置停启用状态
+                     * 设置用户状态。
+取值范围：
+
+- 1：启用
+- 0：停用
+
+默认值：1
+示例值：1
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 停启用状态
+                     * @param _status 用户状态。
+取值范围：
+
+- 1：启用
+- 0：停用
+
+默认值：1
+示例值：1
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -649,7 +677,14 @@ namespace TencentCloud
                     bool m_lastLoginHasBeenSet;
 
                     /**
-                     * 停启用状态
+                     * 用户状态。
+取值范围：
+
+- 1：启用
+- 0：停用
+
+默认值：1
+示例值：1
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;

@@ -41,6 +41,8 @@
 #include <tencentcloud/hai/v20230812/model/DescribeScenesResponse.h>
 #include <tencentcloud/hai/v20230812/model/DescribeServiceLoginSettingsRequest.h>
 #include <tencentcloud/hai/v20230812/model/DescribeServiceLoginSettingsResponse.h>
+#include <tencentcloud/hai/v20230812/model/DescribeServicesRequest.h>
+#include <tencentcloud/hai/v20230812/model/DescribeServicesResponse.h>
 #include <tencentcloud/hai/v20230812/model/InquirePriceRunInstancesRequest.h>
 #include <tencentcloud/hai/v20230812/model/InquirePriceRunInstancesResponse.h>
 #include <tencentcloud/hai/v20230812/model/InquirePriceUpdateServiceConfigsRequest.h>
@@ -100,6 +102,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeServiceLoginSettingsResponse> DescribeServiceLoginSettingsOutcome;
                 typedef std::future<DescribeServiceLoginSettingsOutcome> DescribeServiceLoginSettingsOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::DescribeServiceLoginSettingsRequest&, DescribeServiceLoginSettingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceLoginSettingsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeServicesResponse> DescribeServicesOutcome;
+                typedef std::future<DescribeServicesOutcome> DescribeServicesOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::DescribeServicesRequest&, DescribeServicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServicesAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquirePriceRunInstancesResponse> InquirePriceRunInstancesOutcome;
                 typedef std::future<InquirePriceRunInstancesOutcome> InquirePriceRunInstancesOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::InquirePriceRunInstancesRequest&, InquirePriceRunInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRunInstancesAsyncHandler;
@@ -210,6 +215,15 @@ namespace TencentCloud
                 DescribeServiceLoginSettingsOutcome DescribeServiceLoginSettings(const Model::DescribeServiceLoginSettingsRequest &request);
                 void DescribeServiceLoginSettingsAsync(const Model::DescribeServiceLoginSettingsRequest& request, const DescribeServiceLoginSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeServiceLoginSettingsOutcomeCallable DescribeServiceLoginSettingsCallable(const Model::DescribeServiceLoginSettingsRequest& request);
+
+                /**
+                 *本接口 (DescribeServices) 用于查询一个或多个服务
+                 * @param req DescribeServicesRequest
+                 * @return DescribeServicesOutcome
+                 */
+                DescribeServicesOutcome DescribeServices(const Model::DescribeServicesRequest &request);
+                void DescribeServicesAsync(const Model::DescribeServicesRequest& request, const DescribeServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeServicesOutcomeCallable DescribeServicesCallable(const Model::DescribeServicesRequest& request);
 
                 /**
                  *本接口 (InquirePriceRunInstances) 用于实例询价。

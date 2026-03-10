@@ -23,7 +23,8 @@ using namespace TencentCloud::Kms::V20190118::Model;
 using namespace std;
 
 GetDataKeyCiphertextBlobRequest::GetDataKeyCiphertextBlobRequest() :
-    m_dataKeyIdHasBeenSet(false)
+    m_dataKeyIdHasBeenSet(false),
+    m_memberAccountHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,15 @@ string GetDataKeyCiphertextBlobRequest::ToJsonString() const
         string key = "DataKeyId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dataKeyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_memberAccountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberAccount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_memberAccount.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -64,6 +74,22 @@ void GetDataKeyCiphertextBlobRequest::SetDataKeyId(const string& _dataKeyId)
 bool GetDataKeyCiphertextBlobRequest::DataKeyIdHasBeenSet() const
 {
     return m_dataKeyIdHasBeenSet;
+}
+
+MemberAccount GetDataKeyCiphertextBlobRequest::GetMemberAccount() const
+{
+    return m_memberAccount;
+}
+
+void GetDataKeyCiphertextBlobRequest::SetMemberAccount(const MemberAccount& _memberAccount)
+{
+    m_memberAccount = _memberAccount;
+    m_memberAccountHasBeenSet = true;
+}
+
+bool GetDataKeyCiphertextBlobRequest::MemberAccountHasBeenSet() const
+{
+    return m_memberAccountHasBeenSet;
 }
 
 

@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/kms/v20190118/model/TagFilter.h>
+#include <tencentcloud/kms/v20190118/model/MemberAccount.h>
 
 
 namespace TencentCloud
@@ -253,6 +254,27 @@ namespace TencentCloud
                      */
                     bool HsmClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取可信服务成员账号信息数组
+                     * @return MemberAccounts 可信服务成员账号信息数组
+                     * 
+                     */
+                    std::vector<MemberAccount> GetMemberAccounts() const;
+
+                    /**
+                     * 设置可信服务成员账号信息数组
+                     * @param _memberAccounts 可信服务成员账号信息数组
+                     * 
+                     */
+                    void SetMemberAccounts(const std::vector<MemberAccount>& _memberAccounts);
+
+                    /**
+                     * 判断参数 MemberAccounts 是否已赋值
+                     * @return MemberAccounts 是否已赋值
+                     * 
+                     */
+                    bool MemberAccountsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -314,6 +336,12 @@ namespace TencentCloud
                      */
                     std::string m_hsmClusterId;
                     bool m_hsmClusterIdHasBeenSet;
+
+                    /**
+                     * 可信服务成员账号信息数组
+                     */
+                    std::vector<MemberAccount> m_memberAccounts;
+                    bool m_memberAccountsHasBeenSet;
 
                 };
             }

@@ -490,6 +490,56 @@ HaiClient::DescribeServiceLoginSettingsOutcomeCallable HaiClient::DescribeServic
     return prom->get_future();
 }
 
+HaiClient::DescribeServicesOutcome HaiClient::DescribeServices(const DescribeServicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServicesResponse rsp = DescribeServicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServicesOutcome(rsp);
+        else
+            return DescribeServicesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServicesOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::DescribeServicesAsync(const DescribeServicesRequest& request, const DescribeServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeServicesRequest&;
+    using Resp = DescribeServicesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeServices", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+HaiClient::DescribeServicesOutcomeCallable HaiClient::DescribeServicesCallable(const DescribeServicesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeServicesOutcome>>();
+    DescribeServicesAsync(
+    request,
+    [prom](
+        const HaiClient*,
+        const DescribeServicesRequest&,
+        DescribeServicesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 HaiClient::InquirePriceRunInstancesOutcome HaiClient::InquirePriceRunInstances(const InquirePriceRunInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "InquirePriceRunInstances");

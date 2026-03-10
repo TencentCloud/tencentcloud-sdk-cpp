@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool BuyingChannelHasBeenSet() const;
 
                     /**
-                     * 获取预付费资源包类型(仅预付费需要)
-                     * @return ResourcePackageType 预付费资源包类型(仅预付费需要)
+                     * 获取资源包类型：1=5百万/30天，2=10百万/30天，3=50百万/180天，4=100百万/180天，5=300百万/180天，6=500百万/180天，7=1000百万/180天，8=2500百万/180天，9=10000百万/360天（单位：上报量=百万条，周期=天）
+                     * @return ResourcePackageType 资源包类型：1=5百万/30天，2=10百万/30天，3=50百万/180天，4=100百万/180天，5=300百万/180天，6=500百万/180天，7=1000百万/180天，8=2500百万/180天，9=10000百万/360天（单位：上报量=百万条，周期=天）
                      * 
                      */
                     uint64_t GetResourcePackageType() const;
 
                     /**
-                     * 设置预付费资源包类型(仅预付费需要)
-                     * @param _resourcePackageType 预付费资源包类型(仅预付费需要)
+                     * 设置资源包类型：1=5百万/30天，2=10百万/30天，3=50百万/180天，4=100百万/180天，5=300百万/180天，6=500百万/180天，7=1000百万/180天，8=2500百万/180天，9=10000百万/360天（单位：上报量=百万条，周期=天）
+                     * @param _resourcePackageType 资源包类型：1=5百万/30天，2=10百万/30天，3=50百万/180天，4=100百万/180天，5=300百万/180天，6=500百万/180天，7=1000百万/180天，8=2500百万/180天，9=10000百万/360天（单位：上报量=百万条，周期=天）
                      * 
                      */
                     void SetResourcePackageType(const uint64_t& _resourcePackageType);
@@ -296,15 +296,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取自动续费类型
-                     * @return AutoRenewalType 自动续费类型
+                     * 获取自动续费类型：0=不自动续费，1=开启自动续费；开启时需填写 AutoRenewalThreshold（1~50%）；同一实例最多允许存在 1 个自动续费资源包。
+                     * @return AutoRenewalType 自动续费类型：0=不自动续费，1=开启自动续费；开启时需填写 AutoRenewalThreshold（1~50%）；同一实例最多允许存在 1 个自动续费资源包。
                      * 
                      */
                     int64_t GetAutoRenewalType() const;
 
                     /**
-                     * 设置自动续费类型
-                     * @param _autoRenewalType 自动续费类型
+                     * 设置自动续费类型：0=不自动续费，1=开启自动续费；开启时需填写 AutoRenewalThreshold（1~50%）；同一实例最多允许存在 1 个自动续费资源包。
+                     * @param _autoRenewalType 自动续费类型：0=不自动续费，1=开启自动续费；开启时需填写 AutoRenewalThreshold（1~50%）；同一实例最多允许存在 1 个自动续费资源包。
                      * 
                      */
                     void SetAutoRenewalType(const int64_t& _autoRenewalType);
@@ -394,7 +394,7 @@ namespace TencentCloud
                     bool m_buyingChannelHasBeenSet;
 
                     /**
-                     * 预付费资源包类型(仅预付费需要)
+                     * 资源包类型：1=5百万/30天，2=10百万/30天，3=50百万/180天，4=100百万/180天，5=300百万/180天，6=500百万/180天，7=1000百万/180天，8=2500百万/180天，9=10000百万/360天（单位：上报量=百万条，周期=天）
                      */
                     uint64_t m_resourcePackageType;
                     bool m_resourcePackageTypeHasBeenSet;
@@ -412,7 +412,7 @@ namespace TencentCloud
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 自动续费类型
+                     * 自动续费类型：0=不自动续费，1=开启自动续费；开启时需填写 AutoRenewalThreshold（1~50%）；同一实例最多允许存在 1 个自动续费资源包。
                      */
                     int64_t m_autoRenewalType;
                     bool m_autoRenewalTypeHasBeenSet;

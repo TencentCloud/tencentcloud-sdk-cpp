@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取类型
-                     * @return Type 类型
+                     * 获取查询类型（string）：当前后端实现固定按 from 聚合统计，未使用该字段（保留字段，传值不会影响结果）。
+                     * @return Type 查询类型（string）：当前后端实现固定按 from 聚合统计，未使用该字段（保留字段，传值不会影响结果）。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型
-                     * @param _type 类型
+                     * 设置查询类型（string）：当前后端实现固定按 from 聚合统计，未使用该字段（保留字段，传值不会影响结果）。
+                     * @param _type 查询类型（string）：当前后端实现固定按 from 聚合统计，未使用该字段（保留字段，传值不会影响结果）。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -358,15 +358,15 @@ namespace TencentCloud
                     bool ExtFirstHasBeenSet() const;
 
                     /**
-                     * 获取网络类型
-                     * @return NetType 网络类型
+                     * 获取网络类型(tag 值):用于过滤/聚合字段 netType；枚举值：1(WiFi)、2(2G)、3(3G)、4(4G)、5(5G)、6(6G)、100(未知网络)。
+                     * @return NetType 网络类型(tag 值):用于过滤/聚合字段 netType；枚举值：1(WiFi)、2(2G)、3(3G)、4(4G)、5(5G)、6(6G)、100(未知网络)。
                      * 
                      */
                     std::string GetNetType() const;
 
                     /**
-                     * 设置网络类型
-                     * @param _netType 网络类型
+                     * 设置网络类型(tag 值):用于过滤/聚合字段 netType；枚举值：1(WiFi)、2(2G)、3(3G)、4(4G)、5(5G)、6(6G)、100(未知网络)。
+                     * @param _netType 网络类型(tag 值):用于过滤/聚合字段 netType；枚举值：1(WiFi)、2(2G)、3(3G)、4(4G)、5(5G)、6(6G)、100(未知网络)。
                      * 
                      */
                     void SetNetType(const std::string& _netType);
@@ -492,7 +492,7 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 类型
+                     * 查询类型（string）：当前后端实现固定按 from 聚合统计，未使用该字段（保留字段，传值不会影响结果）。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -576,7 +576,7 @@ namespace TencentCloud
                     bool m_extFirstHasBeenSet;
 
                     /**
-                     * 网络类型
+                     * 网络类型(tag 值):用于过滤/聚合字段 netType；枚举值：1(WiFi)、2(2G)、3(3G)、4(4G)、5(5G)、6(6G)、100(未知网络)。
                      */
                     std::string m_netType;
                     bool m_netTypeHasBeenSet;

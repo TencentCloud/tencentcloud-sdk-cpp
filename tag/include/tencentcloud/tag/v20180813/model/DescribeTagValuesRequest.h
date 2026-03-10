@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标签键列表
-                     * @return TagKeys 标签键列表
+                     * 获取<p>标签键列表</p>
+                     * @return TagKeys <p>标签键列表</p>
                      * 
                      */
                     std::vector<std::string> GetTagKeys() const;
 
                     /**
-                     * 设置标签键列表
-                     * @param _tagKeys 标签键列表
+                     * 设置<p>标签键列表</p>
+                     * @param _tagKeys <p>标签键列表</p>
                      * 
                      */
                     void SetTagKeys(const std::vector<std::string>& _tagKeys);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TagKeysHasBeenSet() const;
 
                     /**
-                     * 获取创建者用户 Uin，不传或为空只将 Uin 作为条件查询
-                     * @return CreateUin 创建者用户 Uin，不传或为空只将 Uin 作为条件查询
+                     * 获取<p>创建者用户 Uin，不传或为空只将 Uin 作为条件查询</p>
+                     * @return CreateUin <p>创建者用户 Uin，不传或为空只将 Uin 作为条件查询</p>
                      * 
                      */
                     uint64_t GetCreateUin() const;
 
                     /**
-                     * 设置创建者用户 Uin，不传或为空只将 Uin 作为条件查询
-                     * @param _createUin 创建者用户 Uin，不传或为空只将 Uin 作为条件查询
+                     * 设置<p>创建者用户 Uin，不传或为空只将 Uin 作为条件查询</p>
+                     * @param _createUin <p>创建者用户 Uin，不传或为空只将 Uin 作为条件查询</p>
                      * 
                      */
                     void SetCreateUin(const uint64_t& _createUin);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool CreateUinHasBeenSet() const;
 
                     /**
-                     * 获取数据偏移量，默认为 0, 必须为Limit参数的整数倍
-                     * @return Offset 数据偏移量，默认为 0, 必须为Limit参数的整数倍
+                     * 获取<p>数据偏移量，默认为 0, 必须为Limit参数的整数倍</p>
+                     * @return Offset <p>数据偏移量，默认为 0, 必须为Limit参数的整数倍</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置数据偏移量，默认为 0, 必须为Limit参数的整数倍
-                     * @param _offset 数据偏移量，默认为 0, 必须为Limit参数的整数倍
+                     * 设置<p>数据偏移量，默认为 0, 必须为Limit参数的整数倍</p>
+                     * @param _offset <p>数据偏移量，默认为 0, 必须为Limit参数的整数倍</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页大小，默认为 15
-                     * @return Limit 每页大小，默认为 15
+                     * 获取<p>每页大小，默认为 15，最大1000</p>
+                     * @return Limit <p>每页大小，默认为 15，最大1000</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页大小，默认为 15
-                     * @param _limit 每页大小，默认为 15
+                     * 设置<p>每页大小，默认为 15，最大1000</p>
+                     * @param _limit <p>每页大小，默认为 15，最大1000</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
-                     * @return Category 标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
+                     * 获取<p>标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。</p>
+                     * @return Category <p>标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。</p>
                      * 
                      */
                     std::string GetCategory() const;
 
                     /**
-                     * 设置标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
-                     * @param _category 标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
+                     * 设置<p>标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。</p>
+                     * @param _category <p>标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。</p>
                      * 
                      */
                     void SetCategory(const std::string& _category);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标签键列表
+                     * <p>标签键列表</p>
                      */
                     std::vector<std::string> m_tagKeys;
                     bool m_tagKeysHasBeenSet;
 
                     /**
-                     * 创建者用户 Uin，不传或为空只将 Uin 作为条件查询
+                     * <p>创建者用户 Uin，不传或为空只将 Uin 作为条件查询</p>
                      */
                     uint64_t m_createUin;
                     bool m_createUinHasBeenSet;
 
                     /**
-                     * 数据偏移量，默认为 0, 必须为Limit参数的整数倍
+                     * <p>数据偏移量，默认为 0, 必须为Limit参数的整数倍</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页大小，默认为 15
+                     * <p>每页大小，默认为 15，最大1000</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。
+                     * <p>标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。</p>
                      */
                     std::string m_category;
                     bool m_categoryHasBeenSet;

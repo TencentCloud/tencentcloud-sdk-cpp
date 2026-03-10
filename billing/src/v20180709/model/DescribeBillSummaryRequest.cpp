@@ -26,7 +26,8 @@ DescribeBillSummaryRequest::DescribeBillSummaryRequest() :
     m_monthHasBeenSet(false),
     m_groupTypeHasBeenSet(false),
     m_tagKeyHasBeenSet(false),
-    m_operateUinHasBeenSet(false)
+    m_operateUinHasBeenSet(false),
+    m_payerUinHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,14 @@ string DescribeBillSummaryRequest::ToJsonString() const
         string key = "OperateUin";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_operateUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payerUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayerUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_payerUin.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -144,6 +153,22 @@ void DescribeBillSummaryRequest::SetOperateUin(const string& _operateUin)
 bool DescribeBillSummaryRequest::OperateUinHasBeenSet() const
 {
     return m_operateUinHasBeenSet;
+}
+
+string DescribeBillSummaryRequest::GetPayerUin() const
+{
+    return m_payerUin;
+}
+
+void DescribeBillSummaryRequest::SetPayerUin(const string& _payerUin)
+{
+    m_payerUin = _payerUin;
+    m_payerUinHasBeenSet = true;
+}
+
+bool DescribeBillSummaryRequest::PayerUinHasBeenSet() const
+{
+    return m_payerUinHasBeenSet;
 }
 
 

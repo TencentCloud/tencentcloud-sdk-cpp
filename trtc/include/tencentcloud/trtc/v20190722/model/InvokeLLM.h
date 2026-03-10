@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool InterruptHasBeenSet() const;
 
+                    /**
+                     * 获取实验性参数,联系后台使用
+                     * @return ExperimentalParams 实验性参数,联系后台使用
+                     * 
+                     */
+                    std::string GetExperimentalParams() const;
+
+                    /**
+                     * 设置实验性参数,联系后台使用
+                     * @param _experimentalParams 实验性参数,联系后台使用
+                     * 
+                     */
+                    void SetExperimentalParams(const std::string& _experimentalParams);
+
+                    /**
+                     * 判断参数 ExperimentalParams 是否已赋值
+                     * @return ExperimentalParams 是否已赋值
+                     * 
+                     */
+                    bool ExperimentalParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     bool m_interrupt;
                     bool m_interruptHasBeenSet;
+
+                    /**
+                     * 实验性参数,联系后台使用
+                     */
+                    std::string m_experimentalParams;
+                    bool m_experimentalParamsHasBeenSet;
 
                 };
             }

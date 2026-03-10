@@ -463,15 +463,15 @@ namespace TencentCloud
                     bool BrowserHasBeenSet() const;
 
                     /**
-                     * 获取耗时计算
-                     * @return CostType 耗时计算
+                     * 获取耗时口径："50"/"75"/"90"/"95"/"99"/"99.5" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；"avg" 表示均值（avg）。
+                     * @return CostType 耗时口径："50"/"75"/"90"/"95"/"99"/"99.5" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；"avg" 表示均值（avg）。
                      * 
                      */
                     std::string GetCostType() const;
 
                     /**
-                     * 设置耗时计算
-                     * @param _costType 耗时计算
+                     * 设置耗时口径："50"/"75"/"90"/"95"/"99"/"99.5" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；"avg" 表示均值（avg）。
+                     * @param _costType 耗时口径："50"/"75"/"90"/"95"/"99"/"99.5" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；"avg" 表示均值（avg）。
                      * 
                      */
                     void SetCostType(const std::string& _costType);
@@ -648,7 +648,7 @@ namespace TencentCloud
                     bool m_browserHasBeenSet;
 
                     /**
-                     * 耗时计算
+                     * 耗时口径："50"/"75"/"90"/"95"/"99"/"99.5" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；"avg" 表示均值（avg）。
                      */
                     std::string m_costType;
                     bool m_costTypeHasBeenSet;

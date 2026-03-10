@@ -43,19 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取格式：yyyy-MM
-账单月份，month和timeFrom&timeTo必传一个，如果有传timeFrom&timeTo则month字段无效
-                     * @return Month 格式：yyyy-MM
-账单月份，month和timeFrom&timeTo必传一个，如果有传timeFrom&timeTo则month字段无效
+                     * 获取<p>格式：yyyy-MM<br>账单月份，month和timeFrom&amp;timeTo必传一个，如果有传timeFrom&amp;timeTo则month字段无效</p>
+                     * @return Month <p>格式：yyyy-MM<br>账单月份，month和timeFrom&amp;timeTo必传一个，如果有传timeFrom&amp;timeTo则month字段无效</p>
                      * 
                      */
                     std::string GetMonth() const;
 
                     /**
-                     * 设置格式：yyyy-MM
-账单月份，month和timeFrom&timeTo必传一个，如果有传timeFrom&timeTo则month字段无效
-                     * @param _month 格式：yyyy-MM
-账单月份，month和timeFrom&timeTo必传一个，如果有传timeFrom&timeTo则month字段无效
+                     * 设置<p>格式：yyyy-MM<br>账单月份，month和timeFrom&amp;timeTo必传一个，如果有传timeFrom&amp;timeTo则month字段无效</p>
+                     * @param _month <p>格式：yyyy-MM<br>账单月份，month和timeFrom&amp;timeTo必传一个，如果有传timeFrom&amp;timeTo则month字段无效</p>
                      * 
                      */
                     void SetMonth(const std::string& _month);
@@ -68,19 +64,15 @@ namespace TencentCloud
                     bool MonthHasBeenSet() const;
 
                     /**
-                     * 获取格式：yyyy-MM-dd
-开始时间，month和timeFrom&timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据
-                     * @return TimeFrom 格式：yyyy-MM-dd
-开始时间，month和timeFrom&timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据
+                     * 获取<p>格式：yyyy-MM-dd<br>开始时间，month和timeFrom&amp;timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据</p>
+                     * @return TimeFrom <p>格式：yyyy-MM-dd<br>开始时间，month和timeFrom&amp;timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据</p>
                      * 
                      */
                     std::string GetTimeFrom() const;
 
                     /**
-                     * 设置格式：yyyy-MM-dd
-开始时间，month和timeFrom&timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据
-                     * @param _timeFrom 格式：yyyy-MM-dd
-开始时间，month和timeFrom&timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据
+                     * 设置<p>格式：yyyy-MM-dd<br>开始时间，month和timeFrom&amp;timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据</p>
+                     * @param _timeFrom <p>格式：yyyy-MM-dd<br>开始时间，month和timeFrom&amp;timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据</p>
                      * 
                      */
                     void SetTimeFrom(const std::string& _timeFrom);
@@ -93,19 +85,15 @@ namespace TencentCloud
                     bool TimeFromHasBeenSet() const;
 
                     /**
-                     * 获取格式：yyyy-MM-dd
-截止时间，month和timeFrom&timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据
-                     * @return TimeTo 格式：yyyy-MM-dd
-截止时间，month和timeFrom&timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据
+                     * 获取<p>格式：yyyy-MM-dd<br>截止时间，month和timeFrom&amp;timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据</p>
+                     * @return TimeTo <p>格式：yyyy-MM-dd<br>截止时间，month和timeFrom&amp;timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据</p>
                      * 
                      */
                     std::string GetTimeTo() const;
 
                     /**
-                     * 设置格式：yyyy-MM-dd
-截止时间，month和timeFrom&timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据
-                     * @param _timeTo 格式：yyyy-MM-dd
-截止时间，month和timeFrom&timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据
+                     * 设置<p>格式：yyyy-MM-dd<br>截止时间，month和timeFrom&amp;timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据</p>
+                     * @param _timeTo <p>格式：yyyy-MM-dd<br>截止时间，month和timeFrom&amp;timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据</p>
                      * 
                      */
                     void SetTimeTo(const std::string& _timeTo);
@@ -117,28 +105,52 @@ namespace TencentCloud
                      */
                     bool TimeToHasBeenSet() const;
 
+                    /**
+                     * 获取<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>
+                     * @return PayerUin <p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>
+                     * 
+                     */
+                    std::string GetPayerUin() const;
+
+                    /**
+                     * 设置<p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>
+                     * @param _payerUin <p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>
+                     * 
+                     */
+                    void SetPayerUin(const std::string& _payerUin);
+
+                    /**
+                     * 判断参数 PayerUin 是否已赋值
+                     * @return PayerUin 是否已赋值
+                     * 
+                     */
+                    bool PayerUinHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 格式：yyyy-MM
-账单月份，month和timeFrom&timeTo必传一个，如果有传timeFrom&timeTo则month字段无效
+                     * <p>格式：yyyy-MM<br>账单月份，month和timeFrom&amp;timeTo必传一个，如果有传timeFrom&amp;timeTo则month字段无效</p>
                      */
                     std::string m_month;
                     bool m_monthHasBeenSet;
 
                     /**
-                     * 格式：yyyy-MM-dd
-开始时间，month和timeFrom&timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据
+                     * <p>格式：yyyy-MM-dd<br>开始时间，month和timeFrom&amp;timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据</p>
                      */
                     std::string m_timeFrom;
                     bool m_timeFromHasBeenSet;
 
                     /**
-                     * 格式：yyyy-MM-dd
-截止时间，month和timeFrom&timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据
+                     * <p>格式：yyyy-MM-dd<br>截止时间，month和timeFrom&amp;timeTo必传一个，如果有该字段则month字段无效。timeFrom和timeTo必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据</p>
                      */
                     std::string m_timeTo;
                     bool m_timeToHasBeenSet;
+
+                    /**
+                     * <p>支付者的账号 ID（账号 ID 是用户在腾讯云的唯一账号标识），默认查询本账号账单，如集团管理账号需查询成员账号自付的账单，该字段需入参成员账号UIN</p>
+                     */
+                    std::string m_payerUin;
+                    bool m_payerUinHasBeenSet;
 
                 };
             }

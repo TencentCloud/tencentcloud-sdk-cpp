@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取带宽配额
-                     * @return Bandwidth 带宽配额
+                     * 获取带宽配额，单位：Mbps。
+                     * @return Bandwidth 带宽配额，单位：Mbps。
                      * 
                      */
                     uint64_t GetBandwidth() const;
 
                     /**
-                     * 设置带宽配额
-                     * @param _bandwidth 带宽配额
+                     * 设置带宽配额，单位：Mbps。
+                     * @param _bandwidth 带宽配额，单位：Mbps。
                      * 
                      */
                     void SetBandwidth(const uint64_t& _bandwidth);
@@ -112,7 +112,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 带宽配额
+                     * 带宽配额，单位：Mbps。
                      */
                     uint64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;

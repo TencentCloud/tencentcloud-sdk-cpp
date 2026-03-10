@@ -487,6 +487,69 @@ namespace TencentCloud
                      */
                     bool SourceHsmClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取成员账号appId
+                     * @return AccountAppId 成员账号appId
+                     * 
+                     */
+                    uint64_t GetAccountAppId() const;
+
+                    /**
+                     * 设置成员账号appId
+                     * @param _accountAppId 成员账号appId
+                     * 
+                     */
+                    void SetAccountAppId(const uint64_t& _accountAppId);
+
+                    /**
+                     * 判断参数 AccountAppId 是否已赋值
+                     * @return AccountAppId 是否已赋值
+                     * 
+                     */
+                    bool AccountAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取成员账号uin
+                     * @return AccountUin 成员账号uin
+                     * 
+                     */
+                    uint64_t GetAccountUin() const;
+
+                    /**
+                     * 设置成员账号uin
+                     * @param _accountUin 成员账号uin
+                     * 
+                     */
+                    void SetAccountUin(const uint64_t& _accountUin);
+
+                    /**
+                     * 判断参数 AccountUin 是否已赋值
+                     * @return AccountUin 是否已赋值
+                     * 
+                     */
+                    bool AccountUinHasBeenSet() const;
+
+                    /**
+                     * 获取成员账号名称
+                     * @return AccountName 成员账号名称
+                     * 
+                     */
+                    std::string GetAccountName() const;
+
+                    /**
+                     * 设置成员账号名称
+                     * @param _accountName 成员账号名称
+                     * 
+                     */
+                    void SetAccountName(const std::string& _accountName);
+
+                    /**
+                     * 判断参数 AccountName 是否已赋值
+                     * @return AccountName 是否已赋值
+                     * 
+                     */
+                    bool AccountNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -614,6 +677,24 @@ namespace TencentCloud
                      */
                     std::string m_sourceHsmClusterId;
                     bool m_sourceHsmClusterIdHasBeenSet;
+
+                    /**
+                     * 成员账号appId
+                     */
+                    uint64_t m_accountAppId;
+                    bool m_accountAppIdHasBeenSet;
+
+                    /**
+                     * 成员账号uin
+                     */
+                    uint64_t m_accountUin;
+                    bool m_accountUinHasBeenSet;
+
+                    /**
+                     * 成员账号名称
+                     */
+                    std::string m_accountName;
+                    bool m_accountNameHasBeenSet;
 
                 };
             }

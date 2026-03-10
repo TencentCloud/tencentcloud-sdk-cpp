@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/kms/v20190118/model/MemberAccount.h>
 
 
 namespace TencentCloud
@@ -63,6 +64,27 @@ namespace TencentCloud
                      */
                     bool KeyIdHasBeenSet() const;
 
+                    /**
+                     * 获取可信服务成员账号信息
+                     * @return MemberAccount 可信服务成员账号信息
+                     * 
+                     */
+                    MemberAccount GetMemberAccount() const;
+
+                    /**
+                     * 设置可信服务成员账号信息
+                     * @param _memberAccount 可信服务成员账号信息
+                     * 
+                     */
+                    void SetMemberAccount(const MemberAccount& _memberAccount);
+
+                    /**
+                     * 判断参数 MemberAccount 是否已赋值
+                     * @return MemberAccount 是否已赋值
+                     * 
+                     */
+                    bool MemberAccountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +92,12 @@ namespace TencentCloud
                      */
                     std::string m_keyId;
                     bool m_keyIdHasBeenSet;
+
+                    /**
+                     * 可信服务成员账号信息
+                     */
+                    MemberAccount m_memberAccount;
+                    bool m_memberAccountHasBeenSet;
 
                 };
             }

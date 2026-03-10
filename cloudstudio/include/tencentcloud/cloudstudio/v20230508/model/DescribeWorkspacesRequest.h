@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作空间名称过滤条件
-                     * @return Name 工作空间名称过滤条件
+                     * 获取<p>工作空间名称过滤条件</p>
+                     * @return Name <p>工作空间名称过滤条件</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置工作空间名称过滤条件
-                     * @param _name 工作空间名称过滤条件
+                     * 设置<p>工作空间名称过滤条件</p>
+                     * @param _name <p>工作空间名称过滤条件</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 工作空间名称过滤条件
+                     * <p>工作空间名称过滤条件</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

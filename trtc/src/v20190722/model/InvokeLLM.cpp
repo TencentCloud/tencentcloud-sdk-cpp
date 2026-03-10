@@ -22,7 +22,8 @@ using namespace std;
 
 InvokeLLM::InvokeLLM() :
     m_contentHasBeenSet(false),
-    m_interruptHasBeenSet(false)
+    m_interruptHasBeenSet(false),
+    m_experimentalParamsHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome InvokeLLM::Deserialize(const rapidjson::Value &value)
         m_interruptHasBeenSet = true;
     }
 
+    if (value.HasMember("ExperimentalParams") && !value["ExperimentalParams"].IsNull())
+    {
+        if (!value["ExperimentalParams"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InvokeLLM.ExperimentalParams` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_experimentalParams = string(value["ExperimentalParams"].GetString());
+        m_experimentalParamsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void InvokeLLM::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Interrupt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_interrupt, allocator);
+    }
+
+    if (m_experimentalParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExperimentalParams";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_experimentalParams.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void InvokeLLM::SetInterrupt(const bool& _interrupt)
 bool InvokeLLM::InterruptHasBeenSet() const
 {
     return m_interruptHasBeenSet;
+}
+
+string InvokeLLM::GetExperimentalParams() const
+{
+    return m_experimentalParams;
+}
+
+void InvokeLLM::SetExperimentalParams(const string& _experimentalParams)
+{
+    m_experimentalParams = _experimentalParams;
+    m_experimentalParamsHasBeenSet = true;
+}
+
+bool InvokeLLM::ExperimentalParamsHasBeenSet() const
+{
+    return m_experimentalParamsHasBeenSet;
 }
 

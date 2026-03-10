@@ -19,23 +19,29 @@ set(hai_public_header
   )
 
 set(hai_public_header_model
-  include/tencentcloud/hai/v20230812/model/NetworkStatus.h
+  include/tencentcloud/hai/v20230812/model/ComputeDetail.h
   include/tencentcloud/hai/v20230812/model/InquirePriceRunInstancesResponse.h
   include/tencentcloud/hai/v20230812/model/ResizeInstanceDiskResponse.h
+  include/tencentcloud/hai/v20230812/model/StorageInfo.h
   include/tencentcloud/hai/v20230812/model/DescribeServiceLoginSettingsResponse.h
   include/tencentcloud/hai/v20230812/model/ResetInstancesPasswordResponse.h
   include/tencentcloud/hai/v20230812/model/DescribeInstanceNetworkStatusResponse.h
-  include/tencentcloud/hai/v20230812/model/Instance.h
+  include/tencentcloud/hai/v20230812/model/ImageInfo.h
+  include/tencentcloud/hai/v20230812/model/UpdateServiceConfigsRequest.h
   include/tencentcloud/hai/v20230812/model/TerminateInstancesRequest.h
   include/tencentcloud/hai/v20230812/model/InquirePriceUpdateServiceConfigsRequest.h
+  include/tencentcloud/hai/v20230812/model/DescribeServicesResponse.h
   include/tencentcloud/hai/v20230812/model/TerminateInstancesResponse.h
+  include/tencentcloud/hai/v20230812/model/HiCacheInfo.h
   include/tencentcloud/hai/v20230812/model/DescribeApplicationsResponse.h
   include/tencentcloud/hai/v20230812/model/StartInstanceRequest.h
   include/tencentcloud/hai/v20230812/model/LoginSetting.h
-  include/tencentcloud/hai/v20230812/model/RegionInfo.h
+  include/tencentcloud/hai/v20230812/model/NetworkStatus.h
+  include/tencentcloud/hai/v20230812/model/HyperParam.h
   include/tencentcloud/hai/v20230812/model/ResizeInstanceDiskRequest.h
   include/tencentcloud/hai/v20230812/model/Price.h
   include/tencentcloud/hai/v20230812/model/StopInstanceRequest.h
+  include/tencentcloud/hai/v20230812/model/EnvParam.h
   include/tencentcloud/hai/v20230812/model/DescribeMuskPromptsRequest.h
   include/tencentcloud/hai/v20230812/model/DescribeScenesResponse.h
   include/tencentcloud/hai/v20230812/model/ServicePriceDetail.h
@@ -44,27 +50,33 @@ set(hai_public_header_model
   include/tencentcloud/hai/v20230812/model/CreateApplicationRequest.h
   include/tencentcloud/hai/v20230812/model/ResetInstancesPasswordRequest.h
   include/tencentcloud/hai/v20230812/model/RunInstancesRequest.h
+  include/tencentcloud/hai/v20230812/model/ContainerInfo.h
   include/tencentcloud/hai/v20230812/model/DescribeInstancesResponse.h
   include/tencentcloud/hai/v20230812/model/UpdateServiceConfigsResponse.h
   include/tencentcloud/hai/v20230812/model/SystemDisk.h
-  include/tencentcloud/hai/v20230812/model/UpdateServiceConfigsRequest.h
+  include/tencentcloud/hai/v20230812/model/ServiceDetail.h
   include/tencentcloud/hai/v20230812/model/RunInstancesResponse.h
+  include/tencentcloud/hai/v20230812/model/RegionInfo.h
   include/tencentcloud/hai/v20230812/model/DescribeInstancesRequest.h
-  include/tencentcloud/hai/v20230812/model/Filter.h
+  include/tencentcloud/hai/v20230812/model/COSStorage.h
+  include/tencentcloud/hai/v20230812/model/DescribeServiceLoginSettingsRequest.h
   include/tencentcloud/hai/v20230812/model/MuskPromptInfo.h
   include/tencentcloud/hai/v20230812/model/DescribeScenesRequest.h
   include/tencentcloud/hai/v20230812/model/DescribeRegionsResponse.h
-  include/tencentcloud/hai/v20230812/model/InquirePriceRunInstancesRequest.h
+  include/tencentcloud/hai/v20230812/model/DescribeServicesRequest.h
   include/tencentcloud/hai/v20230812/model/InquirePriceUpdateServiceConfigsResponse.h
+  include/tencentcloud/hai/v20230812/model/DeploymentConfig.h
   include/tencentcloud/hai/v20230812/model/StartInstanceResponse.h
   include/tencentcloud/hai/v20230812/model/CreateMuskPromptResponse.h
-  include/tencentcloud/hai/v20230812/model/DescribeServiceLoginSettingsRequest.h
+  include/tencentcloud/hai/v20230812/model/Filter.h
   include/tencentcloud/hai/v20230812/model/ApplicationInfo.h
   include/tencentcloud/hai/v20230812/model/CreateApplicationResponse.h
+  include/tencentcloud/hai/v20230812/model/Instance.h
   include/tencentcloud/hai/v20230812/model/ItemPriceDetail.h
   include/tencentcloud/hai/v20230812/model/CreateMuskPromptRequest.h
   include/tencentcloud/hai/v20230812/model/DescribeRegionsRequest.h
   include/tencentcloud/hai/v20230812/model/ItemPrice.h
+  include/tencentcloud/hai/v20230812/model/InquirePriceRunInstancesRequest.h
   include/tencentcloud/hai/v20230812/model/DescribeInstanceNetworkStatusRequest.h
   include/tencentcloud/hai/v20230812/model/LoginService.h
   include/tencentcloud/hai/v20230812/model/StopInstanceResponse.h
@@ -74,23 +86,29 @@ set(hai_public_header_model
 
 set(hai_src
   src/v20230812/HaiClient.cpp
-  src/v20230812/model/NetworkStatus.cpp
+  src/v20230812/model/ComputeDetail.cpp
   src/v20230812/model/InquirePriceRunInstancesResponse.cpp
   src/v20230812/model/ResizeInstanceDiskResponse.cpp
+  src/v20230812/model/StorageInfo.cpp
   src/v20230812/model/DescribeServiceLoginSettingsResponse.cpp
   src/v20230812/model/ResetInstancesPasswordResponse.cpp
   src/v20230812/model/DescribeInstanceNetworkStatusResponse.cpp
-  src/v20230812/model/Instance.cpp
+  src/v20230812/model/ImageInfo.cpp
+  src/v20230812/model/UpdateServiceConfigsRequest.cpp
   src/v20230812/model/TerminateInstancesRequest.cpp
   src/v20230812/model/InquirePriceUpdateServiceConfigsRequest.cpp
+  src/v20230812/model/DescribeServicesResponse.cpp
   src/v20230812/model/TerminateInstancesResponse.cpp
+  src/v20230812/model/HiCacheInfo.cpp
   src/v20230812/model/DescribeApplicationsResponse.cpp
   src/v20230812/model/StartInstanceRequest.cpp
   src/v20230812/model/LoginSetting.cpp
-  src/v20230812/model/RegionInfo.cpp
+  src/v20230812/model/NetworkStatus.cpp
+  src/v20230812/model/HyperParam.cpp
   src/v20230812/model/ResizeInstanceDiskRequest.cpp
   src/v20230812/model/Price.cpp
   src/v20230812/model/StopInstanceRequest.cpp
+  src/v20230812/model/EnvParam.cpp
   src/v20230812/model/DescribeMuskPromptsRequest.cpp
   src/v20230812/model/DescribeScenesResponse.cpp
   src/v20230812/model/ServicePriceDetail.cpp
@@ -99,27 +117,33 @@ set(hai_src
   src/v20230812/model/CreateApplicationRequest.cpp
   src/v20230812/model/ResetInstancesPasswordRequest.cpp
   src/v20230812/model/RunInstancesRequest.cpp
+  src/v20230812/model/ContainerInfo.cpp
   src/v20230812/model/DescribeInstancesResponse.cpp
   src/v20230812/model/UpdateServiceConfigsResponse.cpp
   src/v20230812/model/SystemDisk.cpp
-  src/v20230812/model/UpdateServiceConfigsRequest.cpp
+  src/v20230812/model/ServiceDetail.cpp
   src/v20230812/model/RunInstancesResponse.cpp
+  src/v20230812/model/RegionInfo.cpp
   src/v20230812/model/DescribeInstancesRequest.cpp
-  src/v20230812/model/Filter.cpp
+  src/v20230812/model/COSStorage.cpp
+  src/v20230812/model/DescribeServiceLoginSettingsRequest.cpp
   src/v20230812/model/MuskPromptInfo.cpp
   src/v20230812/model/DescribeScenesRequest.cpp
   src/v20230812/model/DescribeRegionsResponse.cpp
-  src/v20230812/model/InquirePriceRunInstancesRequest.cpp
+  src/v20230812/model/DescribeServicesRequest.cpp
   src/v20230812/model/InquirePriceUpdateServiceConfigsResponse.cpp
+  src/v20230812/model/DeploymentConfig.cpp
   src/v20230812/model/StartInstanceResponse.cpp
   src/v20230812/model/CreateMuskPromptResponse.cpp
-  src/v20230812/model/DescribeServiceLoginSettingsRequest.cpp
+  src/v20230812/model/Filter.cpp
   src/v20230812/model/ApplicationInfo.cpp
   src/v20230812/model/CreateApplicationResponse.cpp
+  src/v20230812/model/Instance.cpp
   src/v20230812/model/ItemPriceDetail.cpp
   src/v20230812/model/CreateMuskPromptRequest.cpp
   src/v20230812/model/DescribeRegionsRequest.cpp
   src/v20230812/model/ItemPrice.cpp
+  src/v20230812/model/InquirePriceRunInstancesRequest.cpp
   src/v20230812/model/DescribeInstanceNetworkStatusRequest.cpp
   src/v20230812/model/LoginService.cpp
   src/v20230812/model/StopInstanceResponse.cpp

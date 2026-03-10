@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签
-                     * @return TagKey 标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签
+                     * 获取<p>标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签</p>
+                     * @return TagKey <p>标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签</p>
                      * 
                      */
                     std::string GetTagKey() const;
 
                     /**
-                     * 设置标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签
-                     * @param _tagKey 标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签
+                     * 设置<p>标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签</p>
+                     * @param _tagKey <p>标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签</p>
                      * 
                      */
                     void SetTagKey(const std::string& _tagKey);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TagKeyHasBeenSet() const;
 
                     /**
-                     * 获取标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签
-                     * @return TagValue 标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签
+                     * 获取<p>标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签</p>
+                     * @return TagValue <p>标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签</p>
                      * 
                      */
                     std::string GetTagValue() const;
 
                     /**
-                     * 设置标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签
-                     * @param _tagValue 标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签
+                     * 设置<p>标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签</p>
+                     * @param _tagValue <p>标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签</p>
                      * 
                      */
                     void SetTagValue(const std::string& _tagValue);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TagValueHasBeenSet() const;
 
                     /**
-                     * 获取数据偏移量，默认为 0, 必须为Limit参数的整数倍
-                     * @return Offset 数据偏移量，默认为 0, 必须为Limit参数的整数倍
+                     * 获取<p>数据偏移量，默认为 0, 必须为Limit参数的整数倍</p>
+                     * @return Offset <p>数据偏移量，默认为 0, 必须为Limit参数的整数倍</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置数据偏移量，默认为 0, 必须为Limit参数的整数倍
-                     * @param _offset 数据偏移量，默认为 0, 必须为Limit参数的整数倍
+                     * 设置<p>数据偏移量，默认为 0, 必须为Limit参数的整数倍</p>
+                     * @param _offset <p>数据偏移量，默认为 0, 必须为Limit参数的整数倍</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页大小，默认为 15
-                     * @return Limit 每页大小，默认为 15
+                     * 获取<p>每页大小，默认为 15，最大1000</p>
+                     * @return Limit <p>每页大小，默认为 15，最大1000</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页大小，默认为 15
-                     * @param _limit 每页大小，默认为 15
+                     * 设置<p>每页大小，默认为 15，最大1000</p>
+                     * @param _limit <p>每页大小，默认为 15，最大1000</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取创建者用户 Uin，不传或为空只将 Uin 作为条件查询
-                     * @return CreateUin 创建者用户 Uin，不传或为空只将 Uin 作为条件查询
+                     * 获取<p>创建者用户 Uin，不传或为空只将 Uin 作为条件查询</p>
+                     * @return CreateUin <p>创建者用户 Uin，不传或为空只将 Uin 作为条件查询</p>
                      * 
                      */
                     uint64_t GetCreateUin() const;
 
                     /**
-                     * 设置创建者用户 Uin，不传或为空只将 Uin 作为条件查询
-                     * @param _createUin 创建者用户 Uin，不传或为空只将 Uin 作为条件查询
+                     * 设置<p>创建者用户 Uin，不传或为空只将 Uin 作为条件查询</p>
+                     * @param _createUin <p>创建者用户 Uin，不传或为空只将 Uin 作为条件查询</p>
                      * 
                      */
                     void SetCreateUin(const uint64_t& _createUin);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool CreateUinHasBeenSet() const;
 
                     /**
-                     * 获取标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值
-                     * @return TagKeys 标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值
+                     * 获取<p>标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值</p>
+                     * @return TagKeys <p>标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值</p>
                      * 
                      */
                     std::vector<std::string> GetTagKeys() const;
 
                     /**
-                     * 设置标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值
-                     * @param _tagKeys 标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值
+                     * 设置<p>标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值</p>
+                     * @param _tagKeys <p>标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值</p>
                      * 
                      */
                     void SetTagKeys(const std::vector<std::string>& _tagKeys);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool TagKeysHasBeenSet() const;
 
                     /**
-                     * 获取是否展现项目标签。1:展示  0:不展示
-                     * @return ShowProject 是否展现项目标签。1:展示  0:不展示
+                     * 获取<p>是否展现项目标签。1:展示  0:不展示</p>
+                     * @return ShowProject <p>是否展现项目标签。1:展示  0:不展示</p>
                      * 
                      */
                     uint64_t GetShowProject() const;
 
                     /**
-                     * 设置是否展现项目标签。1:展示  0:不展示
-                     * @param _showProject 是否展现项目标签。1:展示  0:不展示
+                     * 设置<p>是否展现项目标签。1:展示  0:不展示</p>
+                     * @param _showProject <p>是否展现项目标签。1:展示  0:不展示</p>
                      * 
                      */
                     void SetShowProject(const uint64_t& _showProject);
@@ -192,43 +192,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签
+                     * <p>标签键,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签</p>
                      */
                     std::string m_tagKey;
                     bool m_tagKeyHasBeenSet;
 
                     /**
-                     * 标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签
+                     * <p>标签值,与标签键同时存在或同时不存在，不存在时表示查询该用户所有标签</p>
                      */
                     std::string m_tagValue;
                     bool m_tagValueHasBeenSet;
 
                     /**
-                     * 数据偏移量，默认为 0, 必须为Limit参数的整数倍
+                     * <p>数据偏移量，默认为 0, 必须为Limit参数的整数倍</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页大小，默认为 15
+                     * <p>每页大小，默认为 15，最大1000</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 创建者用户 Uin，不传或为空只将 Uin 作为条件查询
+                     * <p>创建者用户 Uin，不传或为空只将 Uin 作为条件查询</p>
                      */
                     uint64_t m_createUin;
                     bool m_createUinHasBeenSet;
 
                     /**
-                     * 标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值
+                     * <p>标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值</p>
                      */
                     std::vector<std::string> m_tagKeys;
                     bool m_tagKeysHasBeenSet;
 
                     /**
-                     * 是否展现项目标签。1:展示  0:不展示
+                     * <p>是否展现项目标签。1:展示  0:不展示</p>
                      */
                     uint64_t m_showProject;
                     bool m_showProjectHasBeenSet;
