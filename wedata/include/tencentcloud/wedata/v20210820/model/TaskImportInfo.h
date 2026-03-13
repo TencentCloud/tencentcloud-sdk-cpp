@@ -221,6 +221,31 @@ namespace TencentCloud
                      */
                     bool TaskNameExistModeHasBeenSet() const;
 
+                    /**
+                     * 获取工作流所属目录路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkFlowFolderPath 工作流所属目录路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetWorkFlowFolderPath() const;
+
+                    /**
+                     * 设置工作流所属目录路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _workFlowFolderPath 工作流所属目录路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWorkFlowFolderPath(const std::string& _workFlowFolderPath);
+
+                    /**
+                     * 判断参数 WorkFlowFolderPath 是否已赋值
+                     * @return WorkFlowFolderPath 是否已赋值
+                     * 
+                     */
+                    bool WorkFlowFolderPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -271,6 +296,13 @@ namespace TencentCloud
                      */
                     uint64_t m_taskNameExistMode;
                     bool m_taskNameExistModeHasBeenSet;
+
+                    /**
+                     * 工作流所属目录路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_workFlowFolderPath;
+                    bool m_workFlowFolderPathHasBeenSet;
 
                 };
             }

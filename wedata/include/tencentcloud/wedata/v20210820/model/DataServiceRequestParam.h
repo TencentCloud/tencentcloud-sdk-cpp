@@ -271,6 +271,31 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取关联标准编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StdCode 关联标准编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStdCode() const;
+
+                    /**
+                     * 设置关联标准编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _stdCode 关联标准编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStdCode(const std::string& _stdCode);
+
+                    /**
+                     * 判断参数 StdCode 是否已赋值
+                     * @return StdCode 是否已赋值
+                     * 
+                     */
+                    bool StdCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -335,6 +360,13 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 关联标准编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_stdCode;
+                    bool m_stdCodeHasBeenSet;
 
                 };
             }

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取删除状态信息。
-                     * @return DeleteStatus 删除状态信息。
+                     * 获取<p>删除状态信息。</p>
+                     * @return DeleteStatus <p>删除状态信息。</p>
                      * 
                      */
                     std::string GetDeleteStatus() const;
 
                     /**
-                     * 设置删除状态信息。
-                     * @param _deleteStatus 删除状态信息。
+                     * 设置<p>删除状态信息。</p>
+                     * @param _deleteStatus <p>删除状态信息。</p>
                      * 
                      */
                     void SetDeleteStatus(const std::string& _deleteStatus);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DeleteStatusHasBeenSet() const;
 
                     /**
-                     * 获取删除时间，UNIX 时间戳（单位：秒）。
-                     * @return DeleteTime 删除时间，UNIX 时间戳（单位：秒）。
+                     * 获取<p>删除时间，UNIX 时间戳（单位：秒）。</p>
+                     * @return DeleteTime <p>删除时间，UNIX 时间戳（单位：秒）。</p>
                      * 
                      */
                     uint64_t GetDeleteTime() const;
 
                     /**
-                     * 设置删除时间，UNIX 时间戳（单位：秒）。
-                     * @param _deleteTime 删除时间，UNIX 时间戳（单位：秒）。
+                     * 设置<p>删除时间，UNIX 时间戳（单位：秒）。</p>
+                     * @param _deleteTime <p>删除时间，UNIX 时间戳（单位：秒）。</p>
                      * 
                      */
                     void SetDeleteTime(const uint64_t& _deleteTime);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 删除状态信息。
+                     * <p>删除状态信息。</p>
                      */
                     std::string m_deleteStatus;
                     bool m_deleteStatusHasBeenSet;
 
                     /**
-                     * 删除时间，UNIX 时间戳（单位：秒）。
+                     * <p>删除时间，UNIX 时间戳（单位：秒）。</p>
                      */
                     uint64_t m_deleteTime;
                     bool m_deleteTimeHasBeenSet;

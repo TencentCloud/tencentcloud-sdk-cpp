@@ -85,7 +85,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    TagVoteSum GetTagVoteSumList() const;
+                    std::vector<TagVoteSum> GetTagVoteSumList() const;
 
                     /**
                      * 判断参数 TagVoteSumList 是否已赋值
@@ -114,7 +114,7 @@ namespace TencentCloud
                      * 标签
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    TagVoteSum m_tagVoteSumList;
+                    std::vector<TagVoteSum> m_tagVoteSumList;
                     bool m_tagVoteSumListHasBeenSet;
 
                 };

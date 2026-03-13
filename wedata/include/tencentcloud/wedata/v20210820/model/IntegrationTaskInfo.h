@@ -1390,6 +1390,106 @@ namespace TencentCloud
                      */
                     bool ErrorMessageHasBeenSet() const;
 
+                    /**
+                     * 获取任务子状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskSubType 任务子状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTaskSubType() const;
+
+                    /**
+                     * 设置任务子状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskSubType 任务子状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskSubType(const int64_t& _taskSubType);
+
+                    /**
+                     * 判断参数 TaskSubType 是否已赋值
+                     * @return TaskSubType 是否已赋值
+                     * 
+                     */
+                    bool TaskSubTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否存在SavePoint, 0-存在, 1-不存在, null 为未知
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NotExistsCheckPoint 是否存在SavePoint, 0-存在, 1-不存在, null 为未知
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetNotExistsCheckPoint() const;
+
+                    /**
+                     * 设置是否存在SavePoint, 0-存在, 1-不存在, null 为未知
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _notExistsCheckPoint 是否存在SavePoint, 0-存在, 1-不存在, null 为未知
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNotExistsCheckPoint(const int64_t& _notExistsCheckPoint);
+
+                    /**
+                     * 判断参数 NotExistsCheckPoint 是否已赋值
+                     * @return NotExistsCheckPoint 是否已赋值
+                     * 
+                     */
+                    bool NotExistsCheckPointHasBeenSet() const;
+
+                    /**
+                     * 获取savepiontPath
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SavePointId savepiontPath
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSavePointId() const;
+
+                    /**
+                     * 设置savepiontPath
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _savePointId savepiontPath
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSavePointId(const std::string& _savePointId);
+
+                    /**
+                     * 判断参数 SavePointId 是否已赋值
+                     * @return SavePointId 是否已赋值
+                     * 
+                     */
+                    bool SavePointIdHasBeenSet() const;
+
+                    /**
+                     * 获取savepiontId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SavePointPath savepiontId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSavePointPath() const;
+
+                    /**
+                     * 设置savepiontId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _savePointPath savepiontId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSavePointPath(const std::string& _savePointPath);
+
+                    /**
+                     * 判断参数 SavePointPath 是否已赋值
+                     * @return SavePointPath 是否已赋值
+                     * 
+                     */
+                    bool SavePointPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1766,6 +1866,34 @@ namespace TencentCloud
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;
+
+                    /**
+                     * 任务子状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_taskSubType;
+                    bool m_taskSubTypeHasBeenSet;
+
+                    /**
+                     * 是否存在SavePoint, 0-存在, 1-不存在, null 为未知
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_notExistsCheckPoint;
+                    bool m_notExistsCheckPointHasBeenSet;
+
+                    /**
+                     * savepiontPath
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_savePointId;
+                    bool m_savePointIdHasBeenSet;
+
+                    /**
+                     * savepiontId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_savePointPath;
+                    bool m_savePointPathHasBeenSet;
 
                 };
             }

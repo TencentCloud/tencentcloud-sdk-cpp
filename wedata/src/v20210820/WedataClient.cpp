@@ -4040,6 +4040,56 @@ WedataClient::DescribeColumnsMetaOutcomeCallable WedataClient::DescribeColumnsMe
     return prom->get_future();
 }
 
+WedataClient::DescribeDataAssetsOutcome WedataClient::DescribeDataAssets(const DescribeDataAssetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataAssets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataAssetsResponse rsp = DescribeDataAssetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataAssetsOutcome(rsp);
+        else
+            return DescribeDataAssetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataAssetsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeDataAssetsAsync(const DescribeDataAssetsRequest& request, const DescribeDataAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDataAssetsRequest&;
+    using Resp = DescribeDataAssetsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDataAssets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::DescribeDataAssetsOutcomeCallable WedataClient::DescribeDataAssetsCallable(const DescribeDataAssetsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDataAssetsOutcome>>();
+    DescribeDataAssetsAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const DescribeDataAssetsRequest&,
+        DescribeDataAssetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::DescribeDataCheckStatOutcome WedataClient::DescribeDataCheckStat(const DescribeDataCheckStatRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDataCheckStat");

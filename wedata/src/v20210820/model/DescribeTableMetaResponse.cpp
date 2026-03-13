@@ -100,18 +100,21 @@ CoreInternalOutcome DescribeTableMetaResponse::Deserialize(const string &payload
 
     if (rsp.HasMember("TagVoteSumList") && !rsp["TagVoteSumList"].IsNull())
     {
-        if (!rsp["TagVoteSumList"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `TagVoteSumList` is not object type").SetRequestId(requestId));
-        }
+        if (!rsp["TagVoteSumList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TagVoteSumList` is not array type"));
 
-        CoreInternalOutcome outcome = m_tagVoteSumList.Deserialize(rsp["TagVoteSumList"]);
-        if (!outcome.IsSuccess())
+        const rapidjson::Value &tmpValue = rsp["TagVoteSumList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            TagVoteSum item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagVoteSumList.push_back(item);
         }
-
         m_tagVoteSumListHasBeenSet = true;
     }
 
@@ -148,8 +151,14 @@ string DescribeTableMetaResponse::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TagVoteSumList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_tagVoteSumList.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagVoteSumList.begin(); itr != m_tagVoteSumList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -184,7 +193,7 @@ bool DescribeTableMetaResponse::LifecycleInfoHasBeenSet() const
     return m_lifecycleInfoHasBeenSet;
 }
 
-TagVoteSum DescribeTableMetaResponse::GetTagVoteSumList() const
+vector<TagVoteSum> DescribeTableMetaResponse::GetTagVoteSumList() const
 {
     return m_tagVoteSumList;
 }

@@ -27,7 +27,8 @@ TaskImportInfo::TaskImportInfo() :
     m_workFlowFolderNameHasBeenSet(false),
     m_workFlowIdHasBeenSet(false),
     m_workFlowNameHasBeenSet(false),
-    m_taskNameExistModeHasBeenSet(false)
+    m_taskNameExistModeHasBeenSet(false),
+    m_workFlowFolderPathHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome TaskImportInfo::Deserialize(const rapidjson::Value &value)
         m_taskNameExistModeHasBeenSet = true;
     }
 
+    if (value.HasMember("WorkFlowFolderPath") && !value["WorkFlowFolderPath"].IsNull())
+    {
+        if (!value["WorkFlowFolderPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskImportInfo.WorkFlowFolderPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workFlowFolderPath = string(value["WorkFlowFolderPath"].GetString());
+        m_workFlowFolderPathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void TaskImportInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "TaskNameExistMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskNameExistMode, allocator);
+    }
+
+    if (m_workFlowFolderPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkFlowFolderPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workFlowFolderPath.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void TaskImportInfo::SetTaskNameExistMode(const uint64_t& _taskNameExistMode)
 bool TaskImportInfo::TaskNameExistModeHasBeenSet() const
 {
     return m_taskNameExistModeHasBeenSet;
+}
+
+string TaskImportInfo::GetWorkFlowFolderPath() const
+{
+    return m_workFlowFolderPath;
+}
+
+void TaskImportInfo::SetWorkFlowFolderPath(const string& _workFlowFolderPath)
+{
+    m_workFlowFolderPath = _workFlowFolderPath;
+    m_workFlowFolderPathHasBeenSet = true;
+}
+
+bool TaskImportInfo::WorkFlowFolderPathHasBeenSet() const
+{
+    return m_workFlowFolderPathHasBeenSet;
 }
 

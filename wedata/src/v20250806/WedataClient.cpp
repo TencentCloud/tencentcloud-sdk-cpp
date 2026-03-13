@@ -1190,6 +1190,56 @@ WedataClient::CreateTriggerWorkflowOutcomeCallable WedataClient::CreateTriggerWo
     return prom->get_future();
 }
 
+WedataClient::CreateTriggerWorkflowRunOutcome WedataClient::CreateTriggerWorkflowRun(const CreateTriggerWorkflowRunRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTriggerWorkflowRun");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTriggerWorkflowRunResponse rsp = CreateTriggerWorkflowRunResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTriggerWorkflowRunOutcome(rsp);
+        else
+            return CreateTriggerWorkflowRunOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTriggerWorkflowRunOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::CreateTriggerWorkflowRunAsync(const CreateTriggerWorkflowRunRequest& request, const CreateTriggerWorkflowRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateTriggerWorkflowRunRequest&;
+    using Resp = CreateTriggerWorkflowRunResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateTriggerWorkflowRun", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::CreateTriggerWorkflowRunOutcomeCallable WedataClient::CreateTriggerWorkflowRunCallable(const CreateTriggerWorkflowRunRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateTriggerWorkflowRunOutcome>>();
+    CreateTriggerWorkflowRunAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const CreateTriggerWorkflowRunRequest&,
+        CreateTriggerWorkflowRunOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::CreateWorkflowOutcome WedataClient::CreateWorkflow(const CreateWorkflowRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateWorkflow");

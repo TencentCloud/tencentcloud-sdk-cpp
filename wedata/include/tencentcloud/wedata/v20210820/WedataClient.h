@@ -183,6 +183,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeColumnLineageResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeColumnsMetaRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeColumnsMetaResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDataAssetsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDataAssetsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataCheckStatRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataCheckStatResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataServicePublishedApiDetailRequest.h>
@@ -875,6 +877,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeColumnsMetaResponse> DescribeColumnsMetaOutcome;
                 typedef std::future<DescribeColumnsMetaOutcome> DescribeColumnsMetaOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeColumnsMetaRequest&, DescribeColumnsMetaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeColumnsMetaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataAssetsResponse> DescribeDataAssetsOutcome;
+                typedef std::future<DescribeDataAssetsOutcome> DescribeDataAssetsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDataAssetsRequest&, DescribeDataAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataAssetsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataCheckStatResponse> DescribeDataCheckStatOutcome;
                 typedef std::future<DescribeDataCheckStatOutcome> DescribeDataCheckStatOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDataCheckStatRequest&, DescribeDataCheckStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataCheckStatAsyncHandler;
@@ -2254,6 +2259,15 @@ namespace TencentCloud
                 DescribeColumnsMetaOutcome DescribeColumnsMeta(const Model::DescribeColumnsMetaRequest &request);
                 void DescribeColumnsMetaAsync(const Model::DescribeColumnsMetaRequest& request, const DescribeColumnsMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeColumnsMetaOutcomeCallable DescribeColumnsMetaCallable(const Model::DescribeColumnsMetaRequest& request);
+
+                /**
+                 *查询数据资产列表
+                 * @param req DescribeDataAssetsRequest
+                 * @return DescribeDataAssetsOutcome
+                 */
+                DescribeDataAssetsOutcome DescribeDataAssets(const Model::DescribeDataAssetsRequest &request);
+                void DescribeDataAssetsAsync(const Model::DescribeDataAssetsRequest& request, const DescribeDataAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataAssetsOutcomeCallable DescribeDataAssetsCallable(const Model::DescribeDataAssetsRequest& request);
 
                 /**
                  *数据质量的概览页面数据监测情况接口

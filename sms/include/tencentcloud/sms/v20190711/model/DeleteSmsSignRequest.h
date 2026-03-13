@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待删除的签名 ID。
-                     * @return SignId 待删除的签名 ID。
+                     * 获取<p>待删除的签名 ID。</p>
+                     * @return SignId <p>待删除的签名 ID。</p>
                      * 
                      */
                     uint64_t GetSignId() const;
 
                     /**
-                     * 设置待删除的签名 ID。
-                     * @param _signId 待删除的签名 ID。
+                     * 设置<p>待删除的签名 ID。</p>
+                     * @param _signId <p>待删除的签名 ID。</p>
                      * 
                      */
                     void SetSignId(const uint64_t& _signId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待删除的签名 ID。
+                     * <p>待删除的签名 ID。</p>
                      */
                     uint64_t m_signId;
                     bool m_signIdHasBeenSet;

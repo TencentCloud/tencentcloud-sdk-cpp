@@ -123,7 +123,9 @@ TaskDsDTO::TaskDsDTO() :
     m_templateIdHasBeenSet(false),
     m_allowRedoTypeHasBeenSet(false),
     m_bundleIdHasBeenSet(false),
-    m_bundleInfoHasBeenSet(false)
+    m_bundleInfoHasBeenSet(false),
+    m_allowDownstreamDependencyHasBeenSet(false),
+    m_dependencyTriggerPolicyHasBeenSet(false)
 {
 }
 
@@ -1266,6 +1268,26 @@ CoreInternalOutcome TaskDsDTO::Deserialize(const rapidjson::Value &value)
         m_bundleInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("AllowDownstreamDependency") && !value["AllowDownstreamDependency"].IsNull())
+    {
+        if (!value["AllowDownstreamDependency"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskDsDTO.AllowDownstreamDependency` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_allowDownstreamDependency = value["AllowDownstreamDependency"].GetInt64();
+        m_allowDownstreamDependencyHasBeenSet = true;
+    }
+
+    if (value.HasMember("DependencyTriggerPolicy") && !value["DependencyTriggerPolicy"].IsNull())
+    {
+        if (!value["DependencyTriggerPolicy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskDsDTO.DependencyTriggerPolicy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dependencyTriggerPolicy = string(value["DependencyTriggerPolicy"].GetString());
+        m_dependencyTriggerPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -2160,6 +2182,22 @@ void TaskDsDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "BundleInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_bundleInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_allowDownstreamDependencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowDownstreamDependency";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_allowDownstreamDependency, allocator);
+    }
+
+    if (m_dependencyTriggerPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DependencyTriggerPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dependencyTriggerPolicy.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -3811,5 +3849,37 @@ void TaskDsDTO::SetBundleInfo(const string& _bundleInfo)
 bool TaskDsDTO::BundleInfoHasBeenSet() const
 {
     return m_bundleInfoHasBeenSet;
+}
+
+int64_t TaskDsDTO::GetAllowDownstreamDependency() const
+{
+    return m_allowDownstreamDependency;
+}
+
+void TaskDsDTO::SetAllowDownstreamDependency(const int64_t& _allowDownstreamDependency)
+{
+    m_allowDownstreamDependency = _allowDownstreamDependency;
+    m_allowDownstreamDependencyHasBeenSet = true;
+}
+
+bool TaskDsDTO::AllowDownstreamDependencyHasBeenSet() const
+{
+    return m_allowDownstreamDependencyHasBeenSet;
+}
+
+string TaskDsDTO::GetDependencyTriggerPolicy() const
+{
+    return m_dependencyTriggerPolicy;
+}
+
+void TaskDsDTO::SetDependencyTriggerPolicy(const string& _dependencyTriggerPolicy)
+{
+    m_dependencyTriggerPolicy = _dependencyTriggerPolicy;
+    m_dependencyTriggerPolicyHasBeenSet = true;
+}
+
+bool TaskDsDTO::DependencyTriggerPolicyHasBeenSet() const
+{
+    return m_dependencyTriggerPolicyHasBeenSet;
 }
 

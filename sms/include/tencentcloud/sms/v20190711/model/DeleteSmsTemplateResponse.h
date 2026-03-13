@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取删除模板响应
-                     * @return DeleteTemplateStatus 删除模板响应
+                     * 获取<p>删除模板响应</p>
+                     * @return DeleteTemplateStatus <p>删除模板响应</p>
                      * 
                      */
                     DeleteTemplateStatus GetDeleteTemplateStatus() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 删除模板响应
+                     * <p>删除模板响应</p>
                      */
                     DeleteTemplateStatus m_deleteTemplateStatus;
                     bool m_deleteTemplateStatusHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待修改的签名 ID。
-                     * @return SignId 待修改的签名 ID。
+                     * 获取<p>待修改的签名 ID。</p>
+                     * @return SignId <p>待修改的签名 ID。</p>
                      * 
                      */
                     uint64_t GetSignId() const;
 
                     /**
-                     * 设置待修改的签名 ID。
-                     * @param _signId 待修改的签名 ID。
+                     * 设置<p>待修改的签名 ID。</p>
+                     * @param _signId <p>待修改的签名 ID。</p>
                      * 
                      */
                     void SetSignId(const uint64_t& _signId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SignIdHasBeenSet() const;
 
                     /**
-                     * 获取签名名称。
-                     * @return SignName 签名名称。
+                     * 获取<p>签名名称。</p>
+                     * @return SignName <p>签名名称。</p>
                      * 
                      */
                     std::string GetSignName() const;
 
                     /**
-                     * 设置签名名称。
-                     * @param _signName 签名名称。
+                     * 设置<p>签名名称。</p>
+                     * @param _signName <p>签名名称。</p>
                      * 
                      */
                     void SetSignName(const std::string& _signName);
@@ -85,39 +85,15 @@ namespace TencentCloud
                     bool SignNameHasBeenSet() const;
 
                     /**
-                     * 获取签名类型。其中每种类型后面标注了其可选的 DocumentType（证明类型）：
-0：公司，可选 DocumentType 有（0，1）。
-1：APP，可选 DocumentType 有（0，1，2，3，4） 。
-4：商标，可选 DocumentType 有（7）。
-5：政府/机关事业单位/其他机构，可选 DocumentType 有（2，3）。
-注1：必须按照对应关系选择证明类型，否则会审核失败。
-注2：签名类型2（网站）、3（公众号）、6（小程序）已不再支持，具体可参考 [关于腾讯云短信签名申请规则更新的公告](https://cloud.tencent.com/document/product/382/116397)。
-                     * @return SignType 签名类型。其中每种类型后面标注了其可选的 DocumentType（证明类型）：
-0：公司，可选 DocumentType 有（0，1）。
-1：APP，可选 DocumentType 有（0，1，2，3，4） 。
-4：商标，可选 DocumentType 有（7）。
-5：政府/机关事业单位/其他机构，可选 DocumentType 有（2，3）。
-注1：必须按照对应关系选择证明类型，否则会审核失败。
-注2：签名类型2（网站）、3（公众号）、6（小程序）已不再支持，具体可参考 [关于腾讯云短信签名申请规则更新的公告](https://cloud.tencent.com/document/product/382/116397)。
+                     * 获取<p>签名类型。其中每种类型后面标注了其可选的 DocumentType（证明类型）：<br>0：公司，可选 DocumentType 有（0，1）。<br>1：APP，可选 DocumentType 有（0，1，2，3，4） 。<br>4：商标，可选 DocumentType 有（7）。<br>5：政府/机关事业单位/其他机构，可选 DocumentType 有（2，3）。<br>注1：必须按照对应关系选择证明类型，否则会审核失败。<br>注2：签名类型2（网站）、3（公众号）、6（小程序）已不再支持，具体可参考 <a href="https://cloud.tencent.com/document/product/382/116397">关于腾讯云短信签名申请规则更新的公告</a>。</p>
+                     * @return SignType <p>签名类型。其中每种类型后面标注了其可选的 DocumentType（证明类型）：<br>0：公司，可选 DocumentType 有（0，1）。<br>1：APP，可选 DocumentType 有（0，1，2，3，4） 。<br>4：商标，可选 DocumentType 有（7）。<br>5：政府/机关事业单位/其他机构，可选 DocumentType 有（2，3）。<br>注1：必须按照对应关系选择证明类型，否则会审核失败。<br>注2：签名类型2（网站）、3（公众号）、6（小程序）已不再支持，具体可参考 <a href="https://cloud.tencent.com/document/product/382/116397">关于腾讯云短信签名申请规则更新的公告</a>。</p>
                      * 
                      */
                     uint64_t GetSignType() const;
 
                     /**
-                     * 设置签名类型。其中每种类型后面标注了其可选的 DocumentType（证明类型）：
-0：公司，可选 DocumentType 有（0，1）。
-1：APP，可选 DocumentType 有（0，1，2，3，4） 。
-4：商标，可选 DocumentType 有（7）。
-5：政府/机关事业单位/其他机构，可选 DocumentType 有（2，3）。
-注1：必须按照对应关系选择证明类型，否则会审核失败。
-注2：签名类型2（网站）、3（公众号）、6（小程序）已不再支持，具体可参考 [关于腾讯云短信签名申请规则更新的公告](https://cloud.tencent.com/document/product/382/116397)。
-                     * @param _signType 签名类型。其中每种类型后面标注了其可选的 DocumentType（证明类型）：
-0：公司，可选 DocumentType 有（0，1）。
-1：APP，可选 DocumentType 有（0，1，2，3，4） 。
-4：商标，可选 DocumentType 有（7）。
-5：政府/机关事业单位/其他机构，可选 DocumentType 有（2，3）。
-注1：必须按照对应关系选择证明类型，否则会审核失败。
-注2：签名类型2（网站）、3（公众号）、6（小程序）已不再支持，具体可参考 [关于腾讯云短信签名申请规则更新的公告](https://cloud.tencent.com/document/product/382/116397)。
+                     * 设置<p>签名类型。其中每种类型后面标注了其可选的 DocumentType（证明类型）：<br>0：公司，可选 DocumentType 有（0，1）。<br>1：APP，可选 DocumentType 有（0，1，2，3，4） 。<br>4：商标，可选 DocumentType 有（7）。<br>5：政府/机关事业单位/其他机构，可选 DocumentType 有（2，3）。<br>注1：必须按照对应关系选择证明类型，否则会审核失败。<br>注2：签名类型2（网站）、3（公众号）、6（小程序）已不再支持，具体可参考 <a href="https://cloud.tencent.com/document/product/382/116397">关于腾讯云短信签名申请规则更新的公告</a>。</p>
+                     * @param _signType <p>签名类型。其中每种类型后面标注了其可选的 DocumentType（证明类型）：<br>0：公司，可选 DocumentType 有（0，1）。<br>1：APP，可选 DocumentType 有（0，1，2，3，4） 。<br>4：商标，可选 DocumentType 有（7）。<br>5：政府/机关事业单位/其他机构，可选 DocumentType 有（2，3）。<br>注1：必须按照对应关系选择证明类型，否则会审核失败。<br>注2：签名类型2（网站）、3（公众号）、6（小程序）已不再支持，具体可参考 <a href="https://cloud.tencent.com/document/product/382/116397">关于腾讯云短信签名申请规则更新的公告</a>。</p>
                      * 
                      */
                     void SetSignType(const uint64_t& _signType);
@@ -130,43 +106,15 @@ namespace TencentCloud
                     bool SignTypeHasBeenSet() const;
 
                     /**
-                     * 获取证明类型：
-0：三证合一。
-1：企业营业执照。
-2：组织机构代码证书。
-3：社会信用代码证书。
-4：应用后台管理截图（个人开发APP）。
-7：商标注册书。
-注：证明类型5（网站备案后台截图）、6（小程序设置页面截图）、8（公众号设置页面截图）已不再支持，具体可参考 [关于腾讯云短信签名申请规则更新的公告](https://cloud.tencent.com/document/product/382/116397)。
-                     * @return DocumentType 证明类型：
-0：三证合一。
-1：企业营业执照。
-2：组织机构代码证书。
-3：社会信用代码证书。
-4：应用后台管理截图（个人开发APP）。
-7：商标注册书。
-注：证明类型5（网站备案后台截图）、6（小程序设置页面截图）、8（公众号设置页面截图）已不再支持，具体可参考 [关于腾讯云短信签名申请规则更新的公告](https://cloud.tencent.com/document/product/382/116397)。
+                     * 获取<p>证明类型：<br>0：三证合一。<br>1：企业营业执照。<br>2：组织机构代码证书。<br>3：社会信用代码证书。<br>4：应用后台管理截图（个人开发APP）。<br>7：商标注册书。<br>注：证明类型5（网站备案后台截图）、6（小程序设置页面截图）、8（公众号设置页面截图）已不再支持，具体可参考 <a href="https://cloud.tencent.com/document/product/382/116397">关于腾讯云短信签名申请规则更新的公告</a>。</p>
+                     * @return DocumentType <p>证明类型：<br>0：三证合一。<br>1：企业营业执照。<br>2：组织机构代码证书。<br>3：社会信用代码证书。<br>4：应用后台管理截图（个人开发APP）。<br>7：商标注册书。<br>注：证明类型5（网站备案后台截图）、6（小程序设置页面截图）、8（公众号设置页面截图）已不再支持，具体可参考 <a href="https://cloud.tencent.com/document/product/382/116397">关于腾讯云短信签名申请规则更新的公告</a>。</p>
                      * 
                      */
                     uint64_t GetDocumentType() const;
 
                     /**
-                     * 设置证明类型：
-0：三证合一。
-1：企业营业执照。
-2：组织机构代码证书。
-3：社会信用代码证书。
-4：应用后台管理截图（个人开发APP）。
-7：商标注册书。
-注：证明类型5（网站备案后台截图）、6（小程序设置页面截图）、8（公众号设置页面截图）已不再支持，具体可参考 [关于腾讯云短信签名申请规则更新的公告](https://cloud.tencent.com/document/product/382/116397)。
-                     * @param _documentType 证明类型：
-0：三证合一。
-1：企业营业执照。
-2：组织机构代码证书。
-3：社会信用代码证书。
-4：应用后台管理截图（个人开发APP）。
-7：商标注册书。
-注：证明类型5（网站备案后台截图）、6（小程序设置页面截图）、8（公众号设置页面截图）已不再支持，具体可参考 [关于腾讯云短信签名申请规则更新的公告](https://cloud.tencent.com/document/product/382/116397)。
+                     * 设置<p>证明类型：<br>0：三证合一。<br>1：企业营业执照。<br>2：组织机构代码证书。<br>3：社会信用代码证书。<br>4：应用后台管理截图（个人开发APP）。<br>7：商标注册书。<br>注：证明类型5（网站备案后台截图）、6（小程序设置页面截图）、8（公众号设置页面截图）已不再支持，具体可参考 <a href="https://cloud.tencent.com/document/product/382/116397">关于腾讯云短信签名申请规则更新的公告</a>。</p>
+                     * @param _documentType <p>证明类型：<br>0：三证合一。<br>1：企业营业执照。<br>2：组织机构代码证书。<br>3：社会信用代码证书。<br>4：应用后台管理截图（个人开发APP）。<br>7：商标注册书。<br>注：证明类型5（网站备案后台截图）、6（小程序设置页面截图）、8（公众号设置页面截图）已不再支持，具体可参考 <a href="https://cloud.tencent.com/document/product/382/116397">关于腾讯云短信签名申请规则更新的公告</a>。</p>
                      * 
                      */
                     void SetDocumentType(const uint64_t& _documentType);
@@ -179,27 +127,15 @@ namespace TencentCloud
                     bool DocumentTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否国际/港澳台短信：
-0：表示国内短信。
-1：表示国际/港澳台短信。
-注：需要和待修改签名International值保持一致，该参数不能直接修改国内签名到国际签名。
-                     * @return International 是否国际/港澳台短信：
-0：表示国内短信。
-1：表示国际/港澳台短信。
-注：需要和待修改签名International值保持一致，该参数不能直接修改国内签名到国际签名。
+                     * 获取<p>是否国际/港澳台短信：<br>0：表示国内短信。<br>1：表示国际/港澳台短信。<br>注：需要和待修改签名International值保持一致，该参数不能直接修改国内签名到国际签名。</p>
+                     * @return International <p>是否国际/港澳台短信：<br>0：表示国内短信。<br>1：表示国际/港澳台短信。<br>注：需要和待修改签名International值保持一致，该参数不能直接修改国内签名到国际签名。</p>
                      * 
                      */
                     uint64_t GetInternational() const;
 
                     /**
-                     * 设置是否国际/港澳台短信：
-0：表示国内短信。
-1：表示国际/港澳台短信。
-注：需要和待修改签名International值保持一致，该参数不能直接修改国内签名到国际签名。
-                     * @param _international 是否国际/港澳台短信：
-0：表示国内短信。
-1：表示国际/港澳台短信。
-注：需要和待修改签名International值保持一致，该参数不能直接修改国内签名到国际签名。
+                     * 设置<p>是否国际/港澳台短信：<br>0：表示国内短信。<br>1：表示国际/港澳台短信。<br>注：需要和待修改签名International值保持一致，该参数不能直接修改国内签名到国际签名。</p>
+                     * @param _international <p>是否国际/港澳台短信：<br>0：表示国内短信。<br>1：表示国际/港澳台短信。<br>注：需要和待修改签名International值保持一致，该参数不能直接修改国内签名到国际签名。</p>
                      * 
                      */
                     void SetInternational(const uint64_t& _international);
@@ -212,23 +148,15 @@ namespace TencentCloud
                     bool InternationalHasBeenSet() const;
 
                     /**
-                     * 获取签名用途：
-0：自用。
-1：他用。
-                     * @return UsedMethod 签名用途：
-0：自用。
-1：他用。
+                     * 获取<p>签名用途：<br>0：自用。<br>1：他用。</p>
+                     * @return UsedMethod <p>签名用途：<br>0：自用。<br>1：他用。</p>
                      * 
                      */
                     uint64_t GetUsedMethod() const;
 
                     /**
-                     * 设置签名用途：
-0：自用。
-1：他用。
-                     * @param _usedMethod 签名用途：
-0：自用。
-1：他用。
+                     * 设置<p>签名用途：<br>0：自用。<br>1：他用。</p>
+                     * @param _usedMethod <p>签名用途：<br>0：自用。<br>1：他用。</p>
                      * 
                      */
                     void SetUsedMethod(const uint64_t& _usedMethod);
@@ -241,15 +169,15 @@ namespace TencentCloud
                     bool UsedMethodHasBeenSet() const;
 
                     /**
-                     * 获取签名对应的资质证明图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。
-                     * @return ProofImage 签名对应的资质证明图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。
+                     * 获取<p>签名对应的资质证明图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀<code>data:image/jpeg;base64,</code>再赋值给该参数。</p>
+                     * @return ProofImage <p>签名对应的资质证明图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀<code>data:image/jpeg;base64,</code>再赋值给该参数。</p>
                      * 
                      */
                     std::string GetProofImage() const;
 
                     /**
-                     * 设置签名对应的资质证明图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。
-                     * @param _proofImage 签名对应的资质证明图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。
+                     * 设置<p>签名对应的资质证明图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀<code>data:image/jpeg;base64,</code>再赋值给该参数。</p>
+                     * @param _proofImage <p>签名对应的资质证明图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀<code>data:image/jpeg;base64,</code>再赋值给该参数。</p>
                      * 
                      */
                     void SetProofImage(const std::string& _proofImage);
@@ -262,23 +190,15 @@ namespace TencentCloud
                     bool ProofImageHasBeenSet() const;
 
                     /**
-                     * 获取委托授权证明。选择 UsedMethod 为他用之后需要提交委托的授权证明。
-图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。
-注：只有 UsedMethod 在选择为 1（他用）时，这个字段才会生效。
-                     * @return CommissionImage 委托授权证明。选择 UsedMethod 为他用之后需要提交委托的授权证明。
-图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。
-注：只有 UsedMethod 在选择为 1（他用）时，这个字段才会生效。
+                     * 获取<p>委托授权证明。选择 UsedMethod 为他用之后需要提交委托的授权证明。<br>图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀<code>data:image/jpeg;base64,</code>再赋值给该参数。<br>注：只有 UsedMethod 在选择为 1（他用）时，这个字段才会生效。</p>
+                     * @return CommissionImage <p>委托授权证明。选择 UsedMethod 为他用之后需要提交委托的授权证明。<br>图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀<code>data:image/jpeg;base64,</code>再赋值给该参数。<br>注：只有 UsedMethod 在选择为 1（他用）时，这个字段才会生效。</p>
                      * 
                      */
                     std::string GetCommissionImage() const;
 
                     /**
-                     * 设置委托授权证明。选择 UsedMethod 为他用之后需要提交委托的授权证明。
-图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。
-注：只有 UsedMethod 在选择为 1（他用）时，这个字段才会生效。
-                     * @param _commissionImage 委托授权证明。选择 UsedMethod 为他用之后需要提交委托的授权证明。
-图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。
-注：只有 UsedMethod 在选择为 1（他用）时，这个字段才会生效。
+                     * 设置<p>委托授权证明。选择 UsedMethod 为他用之后需要提交委托的授权证明。<br>图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀<code>data:image/jpeg;base64,</code>再赋值给该参数。<br>注：只有 UsedMethod 在选择为 1（他用）时，这个字段才会生效。</p>
+                     * @param _commissionImage <p>委托授权证明。选择 UsedMethod 为他用之后需要提交委托的授权证明。<br>图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀<code>data:image/jpeg;base64,</code>再赋值给该参数。<br>注：只有 UsedMethod 在选择为 1（他用）时，这个字段才会生效。</p>
                      * 
                      */
                     void SetCommissionImage(const std::string& _commissionImage);
@@ -291,15 +211,15 @@ namespace TencentCloud
                     bool CommissionImageHasBeenSet() const;
 
                     /**
-                     * 获取签名的申请备注。
-                     * @return Remark 签名的申请备注。
+                     * 获取<p>签名的申请备注。</p>
+                     * @return Remark <p>签名的申请备注。</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置签名的申请备注。
-                     * @param _remark 签名的申请备注。
+                     * 设置<p>签名的申请备注。</p>
+                     * @param _remark <p>签名的申请备注。</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -312,15 +232,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取已审核通过的国内短信的资质 ID。资质 ID 信息可前往国内短信的 [实名资质管理](https://console.cloud.tencent.com/smsv2/enterprise) 页查看。<dx-alert infotype="notice" title="说明"><ul><li>国内短信需填写资质ID，国际短信无需填写。</li></ul></dx-alert>
-                     * @return QualificationId 已审核通过的国内短信的资质 ID。资质 ID 信息可前往国内短信的 [实名资质管理](https://console.cloud.tencent.com/smsv2/enterprise) 页查看。<dx-alert infotype="notice" title="说明"><ul><li>国内短信需填写资质ID，国际短信无需填写。</li></ul></dx-alert>
+                     * 获取<p>已审核通过的国内短信的资质 ID。资质 ID 信息可前往国内短信的 <a href="https://console.cloud.tencent.com/smsv2/enterprise">实名资质管理</a> 页查看。<blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">说明</div>        <div class="rno-document-tip-desc"><ul><li>国内短信需填写资质ID，国际短信无需填写。</li></ul></div>    </div></blockquote></p>
+                     * @return QualificationId <p>已审核通过的国内短信的资质 ID。资质 ID 信息可前往国内短信的 <a href="https://console.cloud.tencent.com/smsv2/enterprise">实名资质管理</a> 页查看。<blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">说明</div>        <div class="rno-document-tip-desc"><ul><li>国内短信需填写资质ID，国际短信无需填写。</li></ul></div>    </div></blockquote></p>
                      * 
                      */
                     uint64_t GetQualificationId() const;
 
                     /**
-                     * 设置已审核通过的国内短信的资质 ID。资质 ID 信息可前往国内短信的 [实名资质管理](https://console.cloud.tencent.com/smsv2/enterprise) 页查看。<dx-alert infotype="notice" title="说明"><ul><li>国内短信需填写资质ID，国际短信无需填写。</li></ul></dx-alert>
-                     * @param _qualificationId 已审核通过的国内短信的资质 ID。资质 ID 信息可前往国内短信的 [实名资质管理](https://console.cloud.tencent.com/smsv2/enterprise) 页查看。<dx-alert infotype="notice" title="说明"><ul><li>国内短信需填写资质ID，国际短信无需填写。</li></ul></dx-alert>
+                     * 设置<p>已审核通过的国内短信的资质 ID。资质 ID 信息可前往国内短信的 <a href="https://console.cloud.tencent.com/smsv2/enterprise">实名资质管理</a> 页查看。<blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">说明</div>        <div class="rno-document-tip-desc"><ul><li>国内短信需填写资质ID，国际短信无需填写。</li></ul></div>    </div></blockquote></p>
+                     * @param _qualificationId <p>已审核通过的国内短信的资质 ID。资质 ID 信息可前往国内短信的 <a href="https://console.cloud.tencent.com/smsv2/enterprise">实名资质管理</a> 页查看。<blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">说明</div>        <div class="rno-document-tip-desc"><ul><li>国内短信需填写资质ID，国际短信无需填写。</li></ul></div>    </div></blockquote></p>
                      * 
                      */
                     void SetQualificationId(const uint64_t& _qualificationId);
@@ -335,81 +255,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待修改的签名 ID。
+                     * <p>待修改的签名 ID。</p>
                      */
                     uint64_t m_signId;
                     bool m_signIdHasBeenSet;
 
                     /**
-                     * 签名名称。
+                     * <p>签名名称。</p>
                      */
                     std::string m_signName;
                     bool m_signNameHasBeenSet;
 
                     /**
-                     * 签名类型。其中每种类型后面标注了其可选的 DocumentType（证明类型）：
-0：公司，可选 DocumentType 有（0，1）。
-1：APP，可选 DocumentType 有（0，1，2，3，4） 。
-4：商标，可选 DocumentType 有（7）。
-5：政府/机关事业单位/其他机构，可选 DocumentType 有（2，3）。
-注1：必须按照对应关系选择证明类型，否则会审核失败。
-注2：签名类型2（网站）、3（公众号）、6（小程序）已不再支持，具体可参考 [关于腾讯云短信签名申请规则更新的公告](https://cloud.tencent.com/document/product/382/116397)。
+                     * <p>签名类型。其中每种类型后面标注了其可选的 DocumentType（证明类型）：<br>0：公司，可选 DocumentType 有（0，1）。<br>1：APP，可选 DocumentType 有（0，1，2，3，4） 。<br>4：商标，可选 DocumentType 有（7）。<br>5：政府/机关事业单位/其他机构，可选 DocumentType 有（2，3）。<br>注1：必须按照对应关系选择证明类型，否则会审核失败。<br>注2：签名类型2（网站）、3（公众号）、6（小程序）已不再支持，具体可参考 <a href="https://cloud.tencent.com/document/product/382/116397">关于腾讯云短信签名申请规则更新的公告</a>。</p>
                      */
                     uint64_t m_signType;
                     bool m_signTypeHasBeenSet;
 
                     /**
-                     * 证明类型：
-0：三证合一。
-1：企业营业执照。
-2：组织机构代码证书。
-3：社会信用代码证书。
-4：应用后台管理截图（个人开发APP）。
-7：商标注册书。
-注：证明类型5（网站备案后台截图）、6（小程序设置页面截图）、8（公众号设置页面截图）已不再支持，具体可参考 [关于腾讯云短信签名申请规则更新的公告](https://cloud.tencent.com/document/product/382/116397)。
+                     * <p>证明类型：<br>0：三证合一。<br>1：企业营业执照。<br>2：组织机构代码证书。<br>3：社会信用代码证书。<br>4：应用后台管理截图（个人开发APP）。<br>7：商标注册书。<br>注：证明类型5（网站备案后台截图）、6（小程序设置页面截图）、8（公众号设置页面截图）已不再支持，具体可参考 <a href="https://cloud.tencent.com/document/product/382/116397">关于腾讯云短信签名申请规则更新的公告</a>。</p>
                      */
                     uint64_t m_documentType;
                     bool m_documentTypeHasBeenSet;
 
                     /**
-                     * 是否国际/港澳台短信：
-0：表示国内短信。
-1：表示国际/港澳台短信。
-注：需要和待修改签名International值保持一致，该参数不能直接修改国内签名到国际签名。
+                     * <p>是否国际/港澳台短信：<br>0：表示国内短信。<br>1：表示国际/港澳台短信。<br>注：需要和待修改签名International值保持一致，该参数不能直接修改国内签名到国际签名。</p>
                      */
                     uint64_t m_international;
                     bool m_internationalHasBeenSet;
 
                     /**
-                     * 签名用途：
-0：自用。
-1：他用。
+                     * <p>签名用途：<br>0：自用。<br>1：他用。</p>
                      */
                     uint64_t m_usedMethod;
                     bool m_usedMethodHasBeenSet;
 
                     /**
-                     * 签名对应的资质证明图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。
+                     * <p>签名对应的资质证明图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀<code>data:image/jpeg;base64,</code>再赋值给该参数。</p>
                      */
                     std::string m_proofImage;
                     bool m_proofImageHasBeenSet;
 
                     /**
-                     * 委托授权证明。选择 UsedMethod 为他用之后需要提交委托的授权证明。
-图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。
-注：只有 UsedMethod 在选择为 1（他用）时，这个字段才会生效。
+                     * <p>委托授权证明。选择 UsedMethod 为他用之后需要提交委托的授权证明。<br>图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀<code>data:image/jpeg;base64,</code>再赋值给该参数。<br>注：只有 UsedMethod 在选择为 1（他用）时，这个字段才会生效。</p>
                      */
                     std::string m_commissionImage;
                     bool m_commissionImageHasBeenSet;
 
                     /**
-                     * 签名的申请备注。
+                     * <p>签名的申请备注。</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 已审核通过的国内短信的资质 ID。资质 ID 信息可前往国内短信的 [实名资质管理](https://console.cloud.tencent.com/smsv2/enterprise) 页查看。<dx-alert infotype="notice" title="说明"><ul><li>国内短信需填写资质ID，国际短信无需填写。</li></ul></dx-alert>
+                     * <p>已审核通过的国内短信的资质 ID。资质 ID 信息可前往国内短信的 <a href="https://console.cloud.tencent.com/smsv2/enterprise">实名资质管理</a> 页查看。<blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">说明</div>        <div class="rno-document-tip-desc"><ul><li>国内短信需填写资质ID，国际短信无需填写。</li></ul></div>    </div></blockquote></p>
                      */
                     uint64_t m_qualificationId;
                     bool m_qualificationIdHasBeenSet;

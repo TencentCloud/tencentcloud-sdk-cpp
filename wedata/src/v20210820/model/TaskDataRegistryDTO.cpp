@@ -37,7 +37,10 @@ TaskDataRegistryDTO::TaskDataRegistryDTO() :
     m_userUinHasBeenSet(false),
     m_ownerUinHasBeenSet(false),
     m_extHasBeenSet(false),
-    m_tablePhysicalIdHasBeenSet(false)
+    m_tablePhysicalIdHasBeenSet(false),
+    m_catalogNameHasBeenSet(false),
+    m_datasourceNameHasBeenSet(false),
+    m_qualifiedNameHasBeenSet(false)
 {
 }
 
@@ -216,6 +219,36 @@ CoreInternalOutcome TaskDataRegistryDTO::Deserialize(const rapidjson::Value &val
         m_tablePhysicalIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CatalogName") && !value["CatalogName"].IsNull())
+    {
+        if (!value["CatalogName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskDataRegistryDTO.CatalogName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_catalogName = string(value["CatalogName"].GetString());
+        m_catalogNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasourceName") && !value["DatasourceName"].IsNull())
+    {
+        if (!value["DatasourceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskDataRegistryDTO.DatasourceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceName = string(value["DatasourceName"].GetString());
+        m_datasourceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("QualifiedName") && !value["QualifiedName"].IsNull())
+    {
+        if (!value["QualifiedName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskDataRegistryDTO.QualifiedName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_qualifiedName = string(value["QualifiedName"].GetString());
+        m_qualifiedNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +390,30 @@ void TaskDataRegistryDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "TablePhysicalId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tablePhysicalId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_catalogNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CatalogName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_catalogName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datasourceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_qualifiedNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QualifiedName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_qualifiedName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -632,5 +689,53 @@ void TaskDataRegistryDTO::SetTablePhysicalId(const string& _tablePhysicalId)
 bool TaskDataRegistryDTO::TablePhysicalIdHasBeenSet() const
 {
     return m_tablePhysicalIdHasBeenSet;
+}
+
+string TaskDataRegistryDTO::GetCatalogName() const
+{
+    return m_catalogName;
+}
+
+void TaskDataRegistryDTO::SetCatalogName(const string& _catalogName)
+{
+    m_catalogName = _catalogName;
+    m_catalogNameHasBeenSet = true;
+}
+
+bool TaskDataRegistryDTO::CatalogNameHasBeenSet() const
+{
+    return m_catalogNameHasBeenSet;
+}
+
+string TaskDataRegistryDTO::GetDatasourceName() const
+{
+    return m_datasourceName;
+}
+
+void TaskDataRegistryDTO::SetDatasourceName(const string& _datasourceName)
+{
+    m_datasourceName = _datasourceName;
+    m_datasourceNameHasBeenSet = true;
+}
+
+bool TaskDataRegistryDTO::DatasourceNameHasBeenSet() const
+{
+    return m_datasourceNameHasBeenSet;
+}
+
+string TaskDataRegistryDTO::GetQualifiedName() const
+{
+    return m_qualifiedName;
+}
+
+void TaskDataRegistryDTO::SetQualifiedName(const string& _qualifiedName)
+{
+    m_qualifiedName = _qualifiedName;
+    m_qualifiedNameHasBeenSet = true;
+}
+
+bool TaskDataRegistryDTO::QualifiedNameHasBeenSet() const
+{
+    return m_qualifiedNameHasBeenSet;
 }
 

@@ -69,6 +69,8 @@
 #include <tencentcloud/wedata/v20250806/model/CreateTriggerTaskResponse.h>
 #include <tencentcloud/wedata/v20250806/model/CreateTriggerWorkflowRequest.h>
 #include <tencentcloud/wedata/v20250806/model/CreateTriggerWorkflowResponse.h>
+#include <tencentcloud/wedata/v20250806/model/CreateTriggerWorkflowRunRequest.h>
+#include <tencentcloud/wedata/v20250806/model/CreateTriggerWorkflowRunResponse.h>
 #include <tencentcloud/wedata/v20250806/model/CreateWorkflowRequest.h>
 #include <tencentcloud/wedata/v20250806/model/CreateWorkflowResponse.h>
 #include <tencentcloud/wedata/v20250806/model/CreateWorkflowFolderRequest.h>
@@ -466,6 +468,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTriggerWorkflowResponse> CreateTriggerWorkflowOutcome;
                 typedef std::future<CreateTriggerWorkflowOutcome> CreateTriggerWorkflowOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateTriggerWorkflowRequest&, CreateTriggerWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTriggerWorkflowAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTriggerWorkflowRunResponse> CreateTriggerWorkflowRunOutcome;
+                typedef std::future<CreateTriggerWorkflowRunOutcome> CreateTriggerWorkflowRunOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CreateTriggerWorkflowRunRequest&, CreateTriggerWorkflowRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTriggerWorkflowRunAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateWorkflowResponse> CreateWorkflowOutcome;
                 typedef std::future<CreateWorkflowOutcome> CreateWorkflowOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateWorkflowRequest&, CreateWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkflowAsyncHandler;
@@ -1146,6 +1151,15 @@ namespace TencentCloud
                 CreateTriggerWorkflowOutcome CreateTriggerWorkflow(const Model::CreateTriggerWorkflowRequest &request);
                 void CreateTriggerWorkflowAsync(const Model::CreateTriggerWorkflowRequest& request, const CreateTriggerWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTriggerWorkflowOutcomeCallable CreateTriggerWorkflowCallable(const Model::CreateTriggerWorkflowRequest& request);
+
+                /**
+                 *工作流调度模型下运行工作流
+                 * @param req CreateTriggerWorkflowRunRequest
+                 * @return CreateTriggerWorkflowRunOutcome
+                 */
+                CreateTriggerWorkflowRunOutcome CreateTriggerWorkflowRun(const Model::CreateTriggerWorkflowRunRequest &request);
+                void CreateTriggerWorkflowRunAsync(const Model::CreateTriggerWorkflowRunRequest& request, const CreateTriggerWorkflowRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTriggerWorkflowRunOutcomeCallable CreateTriggerWorkflowRunCallable(const Model::CreateTriggerWorkflowRunRequest& request);
 
                 /**
                  *创建工作流

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取套餐包创建时间，UNIX 时间戳（单位：秒）。
-                     * @return PackageCreateTime 套餐包创建时间，UNIX 时间戳（单位：秒）。
+                     * 获取<p>套餐包创建时间，UNIX 时间戳。</p><p>单位：秒</p>
+                     * @return PackageCreateTime <p>套餐包创建时间，UNIX 时间戳。</p><p>单位：秒</p>
                      * 
                      */
                     uint64_t GetPackageCreateTime() const;
 
                     /**
-                     * 设置套餐包创建时间，UNIX 时间戳（单位：秒）。
-                     * @param _packageCreateTime 套餐包创建时间，UNIX 时间戳（单位：秒）。
+                     * 设置<p>套餐包创建时间，UNIX 时间戳。</p><p>单位：秒</p>
+                     * @param _packageCreateTime <p>套餐包创建时间，UNIX 时间戳。</p><p>单位：秒</p>
                      * 
                      */
                     void SetPackageCreateTime(const uint64_t& _packageCreateTime);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PackageCreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取套餐包生效时间，UNIX 时间戳（单位：秒）。
-                     * @return PackageEffectiveTime 套餐包生效时间，UNIX 时间戳（单位：秒）。
+                     * 获取<p>套餐包生效时间，UNIX 时间戳。</p><p>单位：秒</p>
+                     * @return PackageEffectiveTime <p>套餐包生效时间，UNIX 时间戳。</p><p>单位：秒</p>
                      * 
                      */
                     uint64_t GetPackageEffectiveTime() const;
 
                     /**
-                     * 设置套餐包生效时间，UNIX 时间戳（单位：秒）。
-                     * @param _packageEffectiveTime 套餐包生效时间，UNIX 时间戳（单位：秒）。
+                     * 设置<p>套餐包生效时间，UNIX 时间戳。</p><p>单位：秒</p>
+                     * @param _packageEffectiveTime <p>套餐包生效时间，UNIX 时间戳。</p><p>单位：秒</p>
                      * 
                      */
                     void SetPackageEffectiveTime(const uint64_t& _packageEffectiveTime);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool PackageEffectiveTimeHasBeenSet() const;
 
                     /**
-                     * 获取套餐包过期时间，UNIX 时间戳（单位：秒）。
-                     * @return PackageExpiredTime 套餐包过期时间，UNIX 时间戳（单位：秒）。
+                     * 获取<p>套餐包过期时间，UNIX 时间戳。</p><p>单位：秒</p>
+                     * @return PackageExpiredTime <p>套餐包过期时间，UNIX 时间戳。</p><p>单位：秒</p>
                      * 
                      */
                     uint64_t GetPackageExpiredTime() const;
 
                     /**
-                     * 设置套餐包过期时间，UNIX 时间戳（单位：秒）。
-                     * @param _packageExpiredTime 套餐包过期时间，UNIX 时间戳（单位：秒）。
+                     * 设置<p>套餐包过期时间，UNIX 时间戳。</p><p>单位：秒</p>
+                     * @param _packageExpiredTime <p>套餐包过期时间，UNIX 时间戳。</p><p>单位：秒</p>
                      * 
                      */
                     void SetPackageExpiredTime(const uint64_t& _packageExpiredTime);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool PackageExpiredTimeHasBeenSet() const;
 
                     /**
-                     * 获取套餐包条数。
-                     * @return PackageAmount 套餐包条数。
+                     * 获取<p>套餐包条数。</p><p>单位：条</p>
+                     * @return PackageAmount <p>套餐包条数。</p><p>单位：条</p>
                      * 
                      */
                     uint64_t GetPackageAmount() const;
 
                     /**
-                     * 设置套餐包条数。
-                     * @param _packageAmount 套餐包条数。
+                     * 设置<p>套餐包条数。</p><p>单位：条</p>
+                     * @param _packageAmount <p>套餐包条数。</p><p>单位：条</p>
                      * 
                      */
                     void SetPackageAmount(const uint64_t& _packageAmount);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool PackageAmountHasBeenSet() const;
 
                     /**
-                     * 获取套餐包类别，0表示赠送套餐包，1表示购买套餐包。
-                     * @return PackageType 套餐包类别，0表示赠送套餐包，1表示购买套餐包。
+                     * 获取<p>套餐包类别。</p><p>枚举值：</p><ul><li>0： 赠送套餐</li><li>1： 购买套餐包</li></ul>
+                     * @return PackageType <p>套餐包类别。</p><p>枚举值：</p><ul><li>0： 赠送套餐</li><li>1： 购买套餐包</li></ul>
                      * 
                      */
                     uint64_t GetPackageType() const;
 
                     /**
-                     * 设置套餐包类别，0表示赠送套餐包，1表示购买套餐包。
-                     * @param _packageType 套餐包类别，0表示赠送套餐包，1表示购买套餐包。
+                     * 设置<p>套餐包类别。</p><p>枚举值：</p><ul><li>0： 赠送套餐</li><li>1： 购买套餐包</li></ul>
+                     * @param _packageType <p>套餐包类别。</p><p>枚举值：</p><ul><li>0： 赠送套餐</li><li>1： 购买套餐包</li></ul>
                      * 
                      */
                     void SetPackageType(const uint64_t& _packageType);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool PackageTypeHasBeenSet() const;
 
                     /**
-                     * 获取套餐包 ID。
-                     * @return PackageId 套餐包 ID。
+                     * 获取<p>套餐包 ID。</p>
+                     * @return PackageId <p>套餐包 ID。</p>
                      * 
                      */
                     uint64_t GetPackageId() const;
 
                     /**
-                     * 设置套餐包 ID。
-                     * @param _packageId 套餐包 ID。
+                     * 设置<p>套餐包 ID。</p>
+                     * @param _packageId <p>套餐包 ID。</p>
                      * 
                      */
                     void SetPackageId(const uint64_t& _packageId);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool PackageIdHasBeenSet() const;
 
                     /**
-                     * 获取当前使用套餐包条数。
-                     * @return CurrentUsage 当前使用套餐包条数。
+                     * 获取<p>当前使用套餐包条数。</p><p>单位：条</p>
+                     * @return CurrentUsage <p>当前使用套餐包条数。</p><p>单位：条</p>
                      * 
                      */
                     uint64_t GetCurrentUsage() const;
 
                     /**
-                     * 设置当前使用套餐包条数。
-                     * @param _currentUsage 当前使用套餐包条数。
+                     * 设置<p>当前使用套餐包条数。</p><p>单位：条</p>
+                     * @param _currentUsage <p>当前使用套餐包条数。</p><p>单位：条</p>
                      * 
                      */
                     void SetCurrentUsage(const uint64_t& _currentUsage);
@@ -196,43 +196,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 套餐包创建时间，UNIX 时间戳（单位：秒）。
+                     * <p>套餐包创建时间，UNIX 时间戳。</p><p>单位：秒</p>
                      */
                     uint64_t m_packageCreateTime;
                     bool m_packageCreateTimeHasBeenSet;
 
                     /**
-                     * 套餐包生效时间，UNIX 时间戳（单位：秒）。
+                     * <p>套餐包生效时间，UNIX 时间戳。</p><p>单位：秒</p>
                      */
                     uint64_t m_packageEffectiveTime;
                     bool m_packageEffectiveTimeHasBeenSet;
 
                     /**
-                     * 套餐包过期时间，UNIX 时间戳（单位：秒）。
+                     * <p>套餐包过期时间，UNIX 时间戳。</p><p>单位：秒</p>
                      */
                     uint64_t m_packageExpiredTime;
                     bool m_packageExpiredTimeHasBeenSet;
 
                     /**
-                     * 套餐包条数。
+                     * <p>套餐包条数。</p><p>单位：条</p>
                      */
                     uint64_t m_packageAmount;
                     bool m_packageAmountHasBeenSet;
 
                     /**
-                     * 套餐包类别，0表示赠送套餐包，1表示购买套餐包。
+                     * <p>套餐包类别。</p><p>枚举值：</p><ul><li>0： 赠送套餐</li><li>1： 购买套餐包</li></ul>
                      */
                     uint64_t m_packageType;
                     bool m_packageTypeHasBeenSet;
 
                     /**
-                     * 套餐包 ID。
+                     * <p>套餐包 ID。</p>
                      */
                     uint64_t m_packageId;
                     bool m_packageIdHasBeenSet;
 
                     /**
-                     * 当前使用套餐包条数。
+                     * <p>当前使用套餐包条数。</p><p>单位：条</p>
                      */
                     uint64_t m_currentUsage;
                     bool m_currentUsageHasBeenSet;
