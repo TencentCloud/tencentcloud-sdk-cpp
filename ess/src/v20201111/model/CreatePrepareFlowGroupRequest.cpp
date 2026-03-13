@@ -27,7 +27,8 @@ CreatePrepareFlowGroupRequest::CreatePrepareFlowGroupRequest() :
     m_flowGroupNameHasBeenSet(false),
     m_flowGroupInfosHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_agentHasBeenSet(false),
+    m_flowGroupOptionsHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,15 @@ string CreatePrepareFlowGroupRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_flowGroupOptionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowGroupOptions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_flowGroupOptions.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -173,6 +183,22 @@ void CreatePrepareFlowGroupRequest::SetAgent(const Agent& _agent)
 bool CreatePrepareFlowGroupRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+FlowGroupOptions CreatePrepareFlowGroupRequest::GetFlowGroupOptions() const
+{
+    return m_flowGroupOptions;
+}
+
+void CreatePrepareFlowGroupRequest::SetFlowGroupOptions(const FlowGroupOptions& _flowGroupOptions)
+{
+    m_flowGroupOptions = _flowGroupOptions;
+    m_flowGroupOptionsHasBeenSet = true;
+}
+
+bool CreatePrepareFlowGroupRequest::FlowGroupOptionsHasBeenSet() const
+{
+    return m_flowGroupOptionsHasBeenSet;
 }
 
 

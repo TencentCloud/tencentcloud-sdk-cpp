@@ -14,57 +14,56 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TMT_V20180321_MODEL_GETFILETRANSLATERESPONSE_H_
-#define TENCENTCLOUD_TMT_V20180321_MODEL_GETFILETRANSLATERESPONSE_H_
+#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_CREATEAIGCADVANCEDCUSTOMELEMENTRESPONSE_H_
+#define TENCENTCLOUD_VOD_V20180717_MODEL_CREATEAIGCADVANCEDCUSTOMELEMENTRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/tmt/v20180321/model/GetFileTranslateData.h>
 
 
 namespace TencentCloud
 {
-    namespace Tmt
+    namespace Vod
     {
-        namespace V20180321
+        namespace V20180717
         {
             namespace Model
             {
                 /**
-                * GetFileTranslate返回参数结构体
+                * CreateAigcAdvancedCustomElement返回参数结构体
                 */
-                class GetFileTranslateResponse : public AbstractModel
+                class CreateAigcAdvancedCustomElementResponse : public AbstractModel
                 {
                 public:
-                    GetFileTranslateResponse();
-                    ~GetFileTranslateResponse() = default;
+                    CreateAigcAdvancedCustomElementResponse();
+                    ~CreateAigcAdvancedCustomElementResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取任务id
-                     * @return Data 任务id
+                     * 获取<p>任务 ID。</p>
+                     * @return TaskId <p>任务 ID。</p>
                      * 
                      */
-                    GetFileTranslateData GetData() const;
+                    std::string GetTaskId() const;
 
                     /**
-                     * 判断参数 Data 是否已赋值
-                     * @return Data 是否已赋值
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
                      * 
                      */
-                    bool DataHasBeenSet() const;
+                    bool TaskIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 任务id
+                     * <p>任务 ID。</p>
                      */
-                    GetFileTranslateData m_data;
-                    bool m_dataHasBeenSet;
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }
@@ -72,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TMT_V20180321_MODEL_GETFILETRANSLATERESPONSE_H_
+#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_CREATEAIGCADVANCEDCUSTOMELEMENTRESPONSE_H_

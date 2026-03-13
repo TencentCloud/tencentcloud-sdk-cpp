@@ -810,6 +810,27 @@ namespace TencentCloud
                      */
                     bool OpenDynamicSignFlowHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启发起合同审批，默认：false（不开启），开启后，发起合同（StartFlow），会提交电子签内置的审批流
+                     * @return Workflow 是否开启发起合同审批，默认：false（不开启），开启后，发起合同（StartFlow），会提交电子签内置的审批流
+                     * 
+                     */
+                    bool GetWorkflow() const;
+
+                    /**
+                     * 设置是否开启发起合同审批，默认：false（不开启），开启后，发起合同（StartFlow），会提交电子签内置的审批流
+                     * @param _workflow 是否开启发起合同审批，默认：false（不开启），开启后，发起合同（StartFlow），会提交电子签内置的审批流
+                     * 
+                     */
+                    void SetWorkflow(const bool& _workflow);
+
+                    /**
+                     * 判断参数 Workflow 是否已赋值
+                     * @return Workflow 是否已赋值
+                     * 
+                     */
+                    bool WorkflowHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1019,6 +1040,12 @@ namespace TencentCloud
                      */
                     bool m_openDynamicSignFlow;
                     bool m_openDynamicSignFlowHasBeenSet;
+
+                    /**
+                     * 是否开启发起合同审批，默认：false（不开启），开启后，发起合同（StartFlow），会提交电子签内置的审批流
+                     */
+                    bool m_workflow;
+                    bool m_workflowHasBeenSet;
 
                 };
             }

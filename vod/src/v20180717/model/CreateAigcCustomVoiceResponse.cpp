@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/rum/v20210622/model/CreateTawInstanceResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcCustomVoiceResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Rum::V20210622::Model;
+using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
-CreateTawInstanceResponse::CreateTawInstanceResponse() :
-    m_instanceIdHasBeenSet(false),
-    m_dealNameHasBeenSet(false)
+CreateAigcCustomVoiceResponse::CreateAigcCustomVoiceResponse() :
+    m_taskIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateTawInstanceResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateAigcCustomVoiceResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,50 +62,32 @@ CoreInternalOutcome CreateTawInstanceResponse::Deserialize(const string &payload
     }
 
 
-    if (rsp.HasMember("InstanceId") && !rsp["InstanceId"].IsNull())
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
     {
-        if (!rsp["InstanceId"].IsString())
+        if (!rsp["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_instanceId = string(rsp["InstanceId"].GetString());
-        m_instanceIdHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("DealName") && !rsp["DealName"].IsNull())
-    {
-        if (!rsp["DealName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `DealName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_dealName = string(rsp["DealName"].GetString());
-        m_dealNameHasBeenSet = true;
+        m_taskId = string(rsp["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string CreateTawInstanceResponse::ToJsonString() const
+string CreateAigcCustomVoiceResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_instanceIdHasBeenSet)
+    if (m_taskIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceId";
+        string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_dealNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DealName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_dealName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -121,24 +102,14 @@ string CreateTawInstanceResponse::ToJsonString() const
 }
 
 
-string CreateTawInstanceResponse::GetInstanceId() const
+string CreateAigcCustomVoiceResponse::GetTaskId() const
 {
-    return m_instanceId;
+    return m_taskId;
 }
 
-bool CreateTawInstanceResponse::InstanceIdHasBeenSet() const
+bool CreateAigcCustomVoiceResponse::TaskIdHasBeenSet() const
 {
-    return m_instanceIdHasBeenSet;
-}
-
-string CreateTawInstanceResponse::GetDealName() const
-{
-    return m_dealName;
-}
-
-bool CreateTawInstanceResponse::DealNameHasBeenSet() const
-{
-    return m_dealNameHasBeenSet;
+    return m_taskIdHasBeenSet;
 }
 
 

@@ -32,7 +32,8 @@ DataConfig::DataConfig() :
     m_cFSTurboSourceHasBeenSet(false),
     m_localDiskSourceHasBeenSet(false),
     m_cBSSourceHasBeenSet(false),
-    m_hostPathSourceHasBeenSet(false)
+    m_hostPathSourceHasBeenSet(false),
+    m_publicDataSourceHasBeenSet(false)
 {
 }
 
@@ -224,6 +225,23 @@ CoreInternalOutcome DataConfig::Deserialize(const rapidjson::Value &value)
         m_hostPathSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("PublicDataSource") && !value["PublicDataSource"].IsNull())
+    {
+        if (!value["PublicDataSource"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataConfig.PublicDataSource` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_publicDataSource.Deserialize(value["PublicDataSource"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_publicDataSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -334,6 +352,15 @@ void DataConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hostPathSource.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_publicDataSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicDataSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_publicDataSource.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -529,5 +556,21 @@ void DataConfig::SetHostPathSource(const HostPath& _hostPathSource)
 bool DataConfig::HostPathSourceHasBeenSet() const
 {
     return m_hostPathSourceHasBeenSet;
+}
+
+PublicDataSourceFS DataConfig::GetPublicDataSource() const
+{
+    return m_publicDataSource;
+}
+
+void DataConfig::SetPublicDataSource(const PublicDataSourceFS& _publicDataSource)
+{
+    m_publicDataSource = _publicDataSource;
+    m_publicDataSourceHasBeenSet = true;
+}
+
+bool DataConfig::PublicDataSourceHasBeenSet() const
+{
+    return m_publicDataSourceHasBeenSet;
 }
 

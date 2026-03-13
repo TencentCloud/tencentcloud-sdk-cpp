@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取检测到的文本信息，具体内容请点击左侧链接。
+                     * 获取<p>检测到的文本信息，具体内容请点击左侧链接。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TableDetections 检测到的文本信息，具体内容请点击左侧链接。
+                     * @return TableDetections <p>检测到的文本信息，具体内容请点击左侧链接。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,8 +61,8 @@ namespace TencentCloud
                     bool TableDetectionsHasBeenSet() const;
 
                     /**
-                     * 获取Base64 编码后的 Excel 数据。
-                     * @return Data Base64 编码后的 Excel 数据。
+                     * 获取<p>Base64 编码后的 Excel 数据。</p>
+                     * @return Data <p>Base64 编码后的 Excel 数据。</p>
                      * 
                      */
                     std::string GetData() const;
@@ -75,9 +75,9 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取图片为PDF时，返回PDF的总页数，默认为0
+                     * 获取<p>图片为PDF时，返回PDF的总页数，默认为0</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PdfPageSize 图片为PDF时，返回PDF的总页数，默认为0
+                     * @return PdfPageSize <p>图片为PDF时，返回PDF的总页数，默认为0</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -91,9 +91,9 @@ namespace TencentCloud
                     bool PdfPageSizeHasBeenSet() const;
 
                     /**
-                     * 获取图片旋转角度（角度制），文本的水平方向为0°。
+                     * 获取<p>图片旋转角度（角度制），文本的水平方向为0°。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Angle 图片旋转角度（角度制），文本的水平方向为0°。
+                     * @return Angle <p>图片旋转角度（角度制），文本的水平方向为0°。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -109,27 +109,27 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 检测到的文本信息，具体内容请点击左侧链接。
+                     * <p>检测到的文本信息，具体内容请点击左侧链接。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TableInfo> m_tableDetections;
                     bool m_tableDetectionsHasBeenSet;
 
                     /**
-                     * Base64 编码后的 Excel 数据。
+                     * <p>Base64 编码后的 Excel 数据。</p>
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 图片为PDF时，返回PDF的总页数，默认为0
+                     * <p>图片为PDF时，返回PDF的总页数，默认为0</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pdfPageSize;
                     bool m_pdfPageSizeHasBeenSet;
 
                     /**
-                     * 图片旋转角度（角度制），文本的水平方向为0°。
+                     * <p>图片旋转角度（角度制），文本的水平方向为0°。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_angle;

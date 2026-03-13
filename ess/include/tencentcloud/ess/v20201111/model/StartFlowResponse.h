@@ -63,6 +63,20 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取发起审批流id，仅在CreateFlow时指定了WorkFlow=true时返回
+                     * @return WorkflowInstanceId 发起审批流id，仅在CreateFlow时指定了WorkFlow=true时返回
+                     * 
+                     */
+                    std::string GetWorkflowInstanceId() const;
+
+                    /**
+                     * 判断参数 WorkflowInstanceId 是否已赋值
+                     * @return WorkflowInstanceId 是否已赋值
+                     * 
+                     */
+                    bool WorkflowInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -73,6 +87,12 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 发起审批流id，仅在CreateFlow时指定了WorkFlow=true时返回
+                     */
+                    std::string m_workflowInstanceId;
+                    bool m_workflowInstanceIdHasBeenSet;
 
                 };
             }

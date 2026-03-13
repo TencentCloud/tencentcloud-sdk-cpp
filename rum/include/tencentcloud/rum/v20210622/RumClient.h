@@ -23,14 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
-#include <tencentcloud/rum/v20210622/model/CreateProjectRequest.h>
-#include <tencentcloud/rum/v20210622/model/CreateProjectResponse.h>
 #include <tencentcloud/rum/v20210622/model/CreateReleaseFileRequest.h>
 #include <tencentcloud/rum/v20210622/model/CreateReleaseFileResponse.h>
 #include <tencentcloud/rum/v20210622/model/CreateStarProjectRequest.h>
 #include <tencentcloud/rum/v20210622/model/CreateStarProjectResponse.h>
-#include <tencentcloud/rum/v20210622/model/CreateTawInstanceRequest.h>
-#include <tencentcloud/rum/v20210622/model/CreateTawInstanceResponse.h>
 #include <tencentcloud/rum/v20210622/model/CreateWhitelistRequest.h>
 #include <tencentcloud/rum/v20210622/model/CreateWhitelistResponse.h>
 #include <tencentcloud/rum/v20210622/model/DeleteInstanceRequest.h>
@@ -173,18 +169,12 @@ namespace TencentCloud
                 RumClient(const Credential &credential, const std::string &region);
                 RumClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Core::Error, Model::CreateProjectResponse> CreateProjectOutcome;
-                typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
-                typedef std::function<void(const RumClient*, const Model::CreateProjectRequest&, CreateProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateReleaseFileResponse> CreateReleaseFileOutcome;
                 typedef std::future<CreateReleaseFileOutcome> CreateReleaseFileOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::CreateReleaseFileRequest&, CreateReleaseFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReleaseFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateStarProjectResponse> CreateStarProjectOutcome;
                 typedef std::future<CreateStarProjectOutcome> CreateStarProjectOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::CreateStarProjectRequest&, CreateStarProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStarProjectAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateTawInstanceResponse> CreateTawInstanceOutcome;
-                typedef std::future<CreateTawInstanceOutcome> CreateTawInstanceOutcomeCallable;
-                typedef std::function<void(const RumClient*, const Model::CreateTawInstanceRequest&, CreateTawInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTawInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateWhitelistResponse> CreateWhitelistOutcome;
                 typedef std::future<CreateWhitelistOutcome> CreateWhitelistOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::CreateWhitelistRequest&, CreateWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWhitelistAsyncHandler;
@@ -381,15 +371,6 @@ namespace TencentCloud
 
 
                 /**
-                 *创建 RUM 应用（归属于某个团队）
-                 * @param req CreateProjectRequest
-                 * @return CreateProjectOutcome
-                 */
-                CreateProjectOutcome CreateProject(const Model::CreateProjectRequest &request);
-                void CreateProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateProjectOutcomeCallable CreateProjectCallable(const Model::CreateProjectRequest& request);
-
-                /**
                  *创建对应项目的文件记录
                  * @param req CreateReleaseFileRequest
                  * @return CreateReleaseFileOutcome
@@ -406,15 +387,6 @@ namespace TencentCloud
                 CreateStarProjectOutcome CreateStarProject(const Model::CreateStarProjectRequest &request);
                 void CreateStarProjectAsync(const Model::CreateStarProjectRequest& request, const CreateStarProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateStarProjectOutcomeCallable CreateStarProjectCallable(const Model::CreateStarProjectRequest& request);
-
-                /**
-                 *创建 RUM 业务系统
-                 * @param req CreateTawInstanceRequest
-                 * @return CreateTawInstanceOutcome
-                 */
-                CreateTawInstanceOutcome CreateTawInstance(const Model::CreateTawInstanceRequest &request);
-                void CreateTawInstanceAsync(const Model::CreateTawInstanceRequest& request, const CreateTawInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateTawInstanceOutcomeCallable CreateTawInstanceCallable(const Model::CreateTawInstanceRequest& request);
 
                 /**
                  *创建白名单

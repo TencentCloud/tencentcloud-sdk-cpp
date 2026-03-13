@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TMT_V20180321_MODEL_GETFILETRANSLATEREQUEST_H_
-#define TENCENTCLOUD_TMT_V20180321_MODEL_GETFILETRANSLATEREQUEST_H_
+#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_CREATEAIGCCUSTOMVOICERESPONSE_H_
+#define TENCENTCLOUD_VOD_V20180717_MODEL_CREATEAIGCCUSTOMVOICERESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,36 +25,30 @@
 
 namespace TencentCloud
 {
-    namespace Tmt
+    namespace Vod
     {
-        namespace V20180321
+        namespace V20180717
         {
             namespace Model
             {
                 /**
-                * GetFileTranslate请求参数结构体
+                * CreateAigcCustomVoice返回参数结构体
                 */
-                class GetFileTranslateRequest : public AbstractModel
+                class CreateAigcCustomVoiceResponse : public AbstractModel
                 {
                 public:
-                    GetFileTranslateRequest();
-                    ~GetFileTranslateRequest() = default;
+                    CreateAigcCustomVoiceResponse();
+                    ~CreateAigcCustomVoiceResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取任务ID
-                     * @return TaskId 任务ID
+                     * 获取<p>任务 ID。</p>
+                     * @return TaskId <p>任务 ID。</p>
                      * 
                      */
                     std::string GetTaskId() const;
-
-                    /**
-                     * 设置任务ID
-                     * @param _taskId 任务ID
-                     * 
-                     */
-                    void SetTaskId(const std::string& _taskId);
 
                     /**
                      * 判断参数 TaskId 是否已赋值
@@ -66,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务ID
+                     * <p>任务 ID。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
@@ -77,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TMT_V20180321_MODEL_GETFILETRANSLATEREQUEST_H_
+#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_CREATEAIGCCUSTOMVOICERESPONSE_H_

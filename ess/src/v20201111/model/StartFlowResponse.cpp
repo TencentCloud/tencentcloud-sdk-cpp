@@ -24,7 +24,8 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 StartFlowResponse::StartFlowResponse() :
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_workflowInstanceIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome StartFlowResponse::Deserialize(const string &payload)
         m_statusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("WorkflowInstanceId") && !rsp["WorkflowInstanceId"].IsNull())
+    {
+        if (!rsp["WorkflowInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workflowInstanceId = string(rsp["WorkflowInstanceId"].GetString());
+        m_workflowInstanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string StartFlowResponse::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workflowInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workflowInstanceId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ string StartFlowResponse::GetStatus() const
 bool StartFlowResponse::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string StartFlowResponse::GetWorkflowInstanceId() const
+{
+    return m_workflowInstanceId;
+}
+
+bool StartFlowResponse::WorkflowInstanceIdHasBeenSet() const
+{
+    return m_workflowInstanceIdHasBeenSet;
 }
 
 

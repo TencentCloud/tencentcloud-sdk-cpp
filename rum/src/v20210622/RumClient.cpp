@@ -40,56 +40,6 @@ RumClient::RumClient(const Credential &credential, const string &region, const C
 }
 
 
-RumClient::CreateProjectOutcome RumClient::CreateProject(const CreateProjectRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateProject");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateProjectResponse rsp = CreateProjectResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateProjectOutcome(rsp);
-        else
-            return CreateProjectOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateProjectOutcome(outcome.GetError());
-    }
-}
-
-void RumClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const CreateProjectRequest&;
-    using Resp = CreateProjectResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "CreateProject", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-RumClient::CreateProjectOutcomeCallable RumClient::CreateProjectCallable(const CreateProjectRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<CreateProjectOutcome>>();
-    CreateProjectAsync(
-    request,
-    [prom](
-        const RumClient*,
-        const CreateProjectRequest&,
-        CreateProjectOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 RumClient::CreateReleaseFileOutcome RumClient::CreateReleaseFile(const CreateReleaseFileRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateReleaseFile");
@@ -182,56 +132,6 @@ RumClient::CreateStarProjectOutcomeCallable RumClient::CreateStarProjectCallable
         const RumClient*,
         const CreateStarProjectRequest&,
         CreateStarProjectOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-RumClient::CreateTawInstanceOutcome RumClient::CreateTawInstance(const CreateTawInstanceRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateTawInstance");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateTawInstanceResponse rsp = CreateTawInstanceResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateTawInstanceOutcome(rsp);
-        else
-            return CreateTawInstanceOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateTawInstanceOutcome(outcome.GetError());
-    }
-}
-
-void RumClient::CreateTawInstanceAsync(const CreateTawInstanceRequest& request, const CreateTawInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const CreateTawInstanceRequest&;
-    using Resp = CreateTawInstanceResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "CreateTawInstance", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-RumClient::CreateTawInstanceOutcomeCallable RumClient::CreateTawInstanceCallable(const CreateTawInstanceRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<CreateTawInstanceOutcome>>();
-    CreateTawInstanceAsync(
-    request,
-    [prom](
-        const RumClient*,
-        const CreateTawInstanceRequest&,
-        CreateTawInstanceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

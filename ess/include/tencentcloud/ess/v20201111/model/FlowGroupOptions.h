@@ -137,6 +137,27 @@ namespace TencentCloud
                      */
                     bool OtherApproverNotifyTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启发起合同组的发起审批，默认：false(不开启)，开启后，发起合同组会提交电子签内置审批流
+                     * @return FlowGroupNeedWorkflow 是否开启发起合同组的发起审批，默认：false(不开启)，开启后，发起合同组会提交电子签内置审批流
+                     * 
+                     */
+                    bool GetFlowGroupNeedWorkflow() const;
+
+                    /**
+                     * 设置是否开启发起合同组的发起审批，默认：false(不开启)，开启后，发起合同组会提交电子签内置审批流
+                     * @param _flowGroupNeedWorkflow 是否开启发起合同组的发起审批，默认：false(不开启)，开启后，发起合同组会提交电子签内置审批流
+                     * 
+                     */
+                    void SetFlowGroupNeedWorkflow(const bool& _flowGroupNeedWorkflow);
+
+                    /**
+                     * 判断参数 FlowGroupNeedWorkflow 是否已赋值
+                     * @return FlowGroupNeedWorkflow 是否已赋值
+                     * 
+                     */
+                    bool FlowGroupNeedWorkflowHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +184,12 @@ namespace TencentCloud
                      */
                     std::string m_otherApproverNotifyType;
                     bool m_otherApproverNotifyTypeHasBeenSet;
+
+                    /**
+                     * 是否开启发起合同组的发起审批，默认：false(不开启)，开启后，发起合同组会提交电子签内置审批流
+                     */
+                    bool m_flowGroupNeedWorkflow;
+                    bool m_flowGroupNeedWorkflowHasBeenSet;
 
                 };
             }

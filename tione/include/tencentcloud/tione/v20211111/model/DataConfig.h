@@ -33,6 +33,7 @@
 #include <tencentcloud/tione/v20211111/model/LocalDisk.h>
 #include <tencentcloud/tione/v20211111/model/CBSConfig.h>
 #include <tencentcloud/tione/v20211111/model/HostPath.h>
+#include <tencentcloud/tione/v20211111/model/PublicDataSourceFS.h>
 
 
 namespace TencentCloud
@@ -351,6 +352,31 @@ namespace TencentCloud
                      */
                     bool HostPathSourceHasBeenSet() const;
 
+                    /**
+                     * 获取公有云数据源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublicDataSource 公有云数据源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    PublicDataSourceFS GetPublicDataSource() const;
+
+                    /**
+                     * 设置公有云数据源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _publicDataSource 公有云数据源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPublicDataSource(const PublicDataSourceFS& _publicDataSource);
+
+                    /**
+                     * 判断参数 PublicDataSource 是否已赋值
+                     * @return PublicDataSource 是否已赋值
+                     * 
+                     */
+                    bool PublicDataSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -435,6 +461,13 @@ namespace TencentCloud
                      */
                     HostPath m_hostPathSource;
                     bool m_hostPathSourceHasBeenSet;
+
+                    /**
+                     * 公有云数据源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PublicDataSourceFS m_publicDataSource;
+                    bool m_publicDataSourceHasBeenSet;
 
                 };
             }

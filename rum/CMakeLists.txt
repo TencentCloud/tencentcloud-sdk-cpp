@@ -19,10 +19,8 @@ set(rum_public_header
   )
 
 set(rum_public_header_model
-  include/tencentcloud/rum/v20210622/model/CreateTawInstanceRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataFetchProjectRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataResponse.h
-  include/tencentcloud/rum/v20210622/model/CreateTawInstanceResponse.h
   include/tencentcloud/rum/v20210622/model/DeleteProjectRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeProjectLimitsResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeTawInstancesRequest.h
@@ -55,7 +53,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/Tag.h
   include/tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsV2Request.h
   include/tencentcloud/rum/v20210622/model/DescribeDataFetchUrlV2Response.h
-  include/tencentcloud/rum/v20210622/model/CreateProjectRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumGroupLogResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataStaticUrlRequest.h
   include/tencentcloud/rum/v20210622/model/ModifyInstanceResponse.h
   include/tencentcloud/rum/v20210622/model/DeleteStarProjectRequest.h
@@ -79,7 +77,6 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeDataFetchUrlRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeRumLogExportRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsResponse.h
-  include/tencentcloud/rum/v20210622/model/CreateProjectResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsV2Response.h
   include/tencentcloud/rum/v20210622/model/DescribeDataCustomUrlResponse.h
   include/tencentcloud/rum/v20210622/model/CreateStarProjectResponse.h
@@ -93,7 +90,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeDataBridgeUrlV2Request.h
   include/tencentcloud/rum/v20210622/model/Kafka.h
   include/tencentcloud/rum/v20210622/model/ProjectLimit.h
-  include/tencentcloud/rum/v20210622/model/DescribeRumGroupLogResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeWhitelistsResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeRumStatsLogListResponse.h
   include/tencentcloud/rum/v20210622/model/CreateWhitelistRequest.h
   include/tencentcloud/rum/v20210622/model/StopInstanceResponse.h
@@ -143,7 +140,6 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/ResumeProjectRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeAppSingleCaseDetailListRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeRumGroupLogRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeWhitelistsResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataFetchUrlV2Request.h
   include/tencentcloud/rum/v20210622/model/DescribeProjectsResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataReportCountV2Response.h
@@ -172,10 +168,8 @@ set(rum_public_header_model
 
 set(rum_src
   src/v20210622/RumClient.cpp
-  src/v20210622/model/CreateTawInstanceRequest.cpp
   src/v20210622/model/DescribeDataFetchProjectRequest.cpp
   src/v20210622/model/DescribeDataResponse.cpp
-  src/v20210622/model/CreateTawInstanceResponse.cpp
   src/v20210622/model/DeleteProjectRequest.cpp
   src/v20210622/model/DescribeProjectLimitsResponse.cpp
   src/v20210622/model/DescribeTawInstancesRequest.cpp
@@ -208,7 +202,7 @@ set(rum_src
   src/v20210622/model/Tag.cpp
   src/v20210622/model/DescribeDataPvUrlStatisticsV2Request.cpp
   src/v20210622/model/DescribeDataFetchUrlV2Response.cpp
-  src/v20210622/model/CreateProjectRequest.cpp
+  src/v20210622/model/DescribeRumGroupLogResponse.cpp
   src/v20210622/model/DescribeDataStaticUrlRequest.cpp
   src/v20210622/model/ModifyInstanceResponse.cpp
   src/v20210622/model/DeleteStarProjectRequest.cpp
@@ -232,7 +226,6 @@ set(rum_src
   src/v20210622/model/DescribeDataFetchUrlRequest.cpp
   src/v20210622/model/DescribeRumLogExportRequest.cpp
   src/v20210622/model/DescribeDataLogUrlStatisticsResponse.cpp
-  src/v20210622/model/CreateProjectResponse.cpp
   src/v20210622/model/DescribeDataLogUrlStatisticsV2Response.cpp
   src/v20210622/model/DescribeDataCustomUrlResponse.cpp
   src/v20210622/model/CreateStarProjectResponse.cpp
@@ -246,7 +239,7 @@ set(rum_src
   src/v20210622/model/DescribeDataBridgeUrlV2Request.cpp
   src/v20210622/model/Kafka.cpp
   src/v20210622/model/ProjectLimit.cpp
-  src/v20210622/model/DescribeRumGroupLogResponse.cpp
+  src/v20210622/model/DescribeWhitelistsResponse.cpp
   src/v20210622/model/DescribeRumStatsLogListResponse.cpp
   src/v20210622/model/CreateWhitelistRequest.cpp
   src/v20210622/model/StopInstanceResponse.cpp
@@ -296,7 +289,6 @@ set(rum_src
   src/v20210622/model/ResumeProjectRequest.cpp
   src/v20210622/model/DescribeAppSingleCaseDetailListRequest.cpp
   src/v20210622/model/DescribeRumGroupLogRequest.cpp
-  src/v20210622/model/DescribeWhitelistsResponse.cpp
   src/v20210622/model/DescribeDataFetchUrlV2Request.cpp
   src/v20210622/model/DescribeProjectsResponse.cpp
   src/v20210622/model/DescribeDataReportCountV2Response.cpp

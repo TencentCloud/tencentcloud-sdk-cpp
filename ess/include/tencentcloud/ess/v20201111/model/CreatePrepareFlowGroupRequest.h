@@ -24,6 +24,7 @@
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
 #include <tencentcloud/ess/v20201111/model/FlowGroupInfo.h>
 #include <tencentcloud/ess/v20201111/model/Agent.h>
+#include <tencentcloud/ess/v20201111/model/FlowGroupOptions.h>
 
 
 namespace TencentCloud
@@ -158,6 +159,27 @@ namespace TencentCloud
                      */
                     bool AgentHasBeenSet() const;
 
+                    /**
+                     * 获取合同组发起控制参数，当前仅支持FlowGroupNeedWorkflow，表示开启嵌入式合同组发起审批
+                     * @return FlowGroupOptions 合同组发起控制参数，当前仅支持FlowGroupNeedWorkflow，表示开启嵌入式合同组发起审批
+                     * 
+                     */
+                    FlowGroupOptions GetFlowGroupOptions() const;
+
+                    /**
+                     * 设置合同组发起控制参数，当前仅支持FlowGroupNeedWorkflow，表示开启嵌入式合同组发起审批
+                     * @param _flowGroupOptions 合同组发起控制参数，当前仅支持FlowGroupNeedWorkflow，表示开启嵌入式合同组发起审批
+                     * 
+                     */
+                    void SetFlowGroupOptions(const FlowGroupOptions& _flowGroupOptions);
+
+                    /**
+                     * 判断参数 FlowGroupOptions 是否已赋值
+                     * @return FlowGroupOptions 是否已赋值
+                     * 
+                     */
+                    bool FlowGroupOptionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +213,12 @@ namespace TencentCloud
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * 合同组发起控制参数，当前仅支持FlowGroupNeedWorkflow，表示开启嵌入式合同组发起审批
+                     */
+                    FlowGroupOptions m_flowGroupOptions;
+                    bool m_flowGroupOptionsHasBeenSet;
 
                 };
             }

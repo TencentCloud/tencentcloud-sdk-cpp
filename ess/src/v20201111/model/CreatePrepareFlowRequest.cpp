@@ -43,7 +43,8 @@ CreatePrepareFlowRequest::CreatePrepareFlowRequest() :
     m_agentHasBeenSet(false),
     m_initiatorComponentsHasBeenSet(false),
     m_flowDisplayTypeHasBeenSet(false),
-    m_signComponentConfigHasBeenSet(false)
+    m_signComponentConfigHasBeenSet(false),
+    m_workflowHasBeenSet(false)
 {
 }
 
@@ -246,6 +247,14 @@ string CreatePrepareFlowRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_signComponentConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_workflowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Workflow";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_workflow, allocator);
     }
 
 
@@ -590,6 +599,22 @@ void CreatePrepareFlowRequest::SetSignComponentConfig(const SignComponentConfig&
 bool CreatePrepareFlowRequest::SignComponentConfigHasBeenSet() const
 {
     return m_signComponentConfigHasBeenSet;
+}
+
+bool CreatePrepareFlowRequest::GetWorkflow() const
+{
+    return m_workflow;
+}
+
+void CreatePrepareFlowRequest::SetWorkflow(const bool& _workflow)
+{
+    m_workflow = _workflow;
+    m_workflowHasBeenSet = true;
+}
+
+bool CreatePrepareFlowRequest::WorkflowHasBeenSet() const
+{
+    return m_workflowHasBeenSet;
 }
 
 

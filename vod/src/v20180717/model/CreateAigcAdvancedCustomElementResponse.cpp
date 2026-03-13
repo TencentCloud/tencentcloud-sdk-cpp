@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tmt/v20180321/model/LanguageDetectResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcAdvancedCustomElementResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tmt::V20180321::Model;
+using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
-LanguageDetectResponse::LanguageDetectResponse() :
-    m_langHasBeenSet(false)
+CreateAigcAdvancedCustomElementResponse::CreateAigcAdvancedCustomElementResponse() :
+    m_taskIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome LanguageDetectResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateAigcAdvancedCustomElementResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +62,32 @@ CoreInternalOutcome LanguageDetectResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Lang") && !rsp["Lang"].IsNull())
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
     {
-        if (!rsp["Lang"].IsString())
+        if (!rsp["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Lang` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_lang = string(rsp["Lang"].GetString());
-        m_langHasBeenSet = true;
+        m_taskId = string(rsp["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string LanguageDetectResponse::ToJsonString() const
+string CreateAigcAdvancedCustomElementResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_langHasBeenSet)
+    if (m_taskIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Lang";
+        string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_lang.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +102,14 @@ string LanguageDetectResponse::ToJsonString() const
 }
 
 
-string LanguageDetectResponse::GetLang() const
+string CreateAigcAdvancedCustomElementResponse::GetTaskId() const
 {
-    return m_lang;
+    return m_taskId;
 }
 
-bool LanguageDetectResponse::LangHasBeenSet() const
+bool CreateAigcAdvancedCustomElementResponse::TaskIdHasBeenSet() const
 {
-    return m_langHasBeenSet;
+    return m_taskIdHasBeenSet;
 }
 
 

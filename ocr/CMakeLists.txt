@@ -79,6 +79,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/ShipInvoiceInfo.h
   include/tencentcloud/ocr/v20181119/model/VehicleInvoiceInfo.h
   include/tencentcloud/ocr/v20181119/model/DriverLicenseOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/VerifyBizLicenseEnterprise4Response.h
   include/tencentcloud/ocr/v20181119/model/TollInvoiceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/OtherInvoiceItem.h
   include/tencentcloud/ocr/v20181119/model/TextDetection.h
@@ -272,6 +273,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/ShipInvoiceOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/RecognizeGeneralInvoiceResponse.h
   include/tencentcloud/ocr/v20181119/model/HandwritingEssayOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/VerifyBizLicenseEnterprise4Request.h
   include/tencentcloud/ocr/v20181119/model/InsuranceBillInfo.h
   include/tencentcloud/ocr/v20181119/model/MarkInfo.h
   include/tencentcloud/ocr/v20181119/model/AnswerInfo.h
@@ -418,6 +420,7 @@ set(ocr_src
   src/v20181119/model/ShipInvoiceInfo.cpp
   src/v20181119/model/VehicleInvoiceInfo.cpp
   src/v20181119/model/DriverLicenseOCRRequest.cpp
+  src/v20181119/model/VerifyBizLicenseEnterprise4Response.cpp
   src/v20181119/model/TollInvoiceOCRRequest.cpp
   src/v20181119/model/OtherInvoiceItem.cpp
   src/v20181119/model/TextDetection.cpp
@@ -611,6 +614,7 @@ set(ocr_src
   src/v20181119/model/ShipInvoiceOCRResponse.cpp
   src/v20181119/model/RecognizeGeneralInvoiceResponse.cpp
   src/v20181119/model/HandwritingEssayOCRResponse.cpp
+  src/v20181119/model/VerifyBizLicenseEnterprise4Request.cpp
   src/v20181119/model/InsuranceBillInfo.cpp
   src/v20181119/model/MarkInfo.cpp
   src/v20181119/model/AnswerInfo.cpp

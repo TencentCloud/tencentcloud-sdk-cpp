@@ -4390,6 +4390,56 @@ OcrClient::VehicleRegCertOCROutcomeCallable OcrClient::VehicleRegCertOCRCallable
     return prom->get_future();
 }
 
+OcrClient::VerifyBizLicenseEnterprise4Outcome OcrClient::VerifyBizLicenseEnterprise4(const VerifyBizLicenseEnterprise4Request &request)
+{
+    auto outcome = MakeRequest(request, "VerifyBizLicenseEnterprise4");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyBizLicenseEnterprise4Response rsp = VerifyBizLicenseEnterprise4Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyBizLicenseEnterprise4Outcome(rsp);
+        else
+            return VerifyBizLicenseEnterprise4Outcome(o.GetError());
+    }
+    else
+    {
+        return VerifyBizLicenseEnterprise4Outcome(outcome.GetError());
+    }
+}
+
+void OcrClient::VerifyBizLicenseEnterprise4Async(const VerifyBizLicenseEnterprise4Request& request, const VerifyBizLicenseEnterprise4AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const VerifyBizLicenseEnterprise4Request&;
+    using Resp = VerifyBizLicenseEnterprise4Response;
+
+    DoRequestAsync<Req, Resp>(
+        "VerifyBizLicenseEnterprise4", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OcrClient::VerifyBizLicenseEnterprise4OutcomeCallable OcrClient::VerifyBizLicenseEnterprise4Callable(const VerifyBizLicenseEnterprise4Request &request)
+{
+    const auto prom = std::make_shared<std::promise<VerifyBizLicenseEnterprise4Outcome>>();
+    VerifyBizLicenseEnterprise4Async(
+    request,
+    [prom](
+        const OcrClient*,
+        const VerifyBizLicenseEnterprise4Request&,
+        VerifyBizLicenseEnterprise4Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OcrClient::VerifyOfdVatInvoiceOCROutcome OcrClient::VerifyOfdVatInvoiceOCR(const VerifyOfdVatInvoiceOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "VerifyOfdVatInvoiceOCR");

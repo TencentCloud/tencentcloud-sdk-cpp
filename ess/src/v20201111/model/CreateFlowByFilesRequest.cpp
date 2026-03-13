@@ -45,7 +45,8 @@ CreateFlowByFilesRequest::CreateFlowByFilesRequest() :
     m_autoSignSceneHasBeenSet(false),
     m_needSignReviewHasBeenSet(false),
     m_flowDisplayTypeHasBeenSet(false),
-    m_openDynamicSignFlowHasBeenSet(false)
+    m_openDynamicSignFlowHasBeenSet(false),
+    m_workflowHasBeenSet(false)
 {
 }
 
@@ -266,6 +267,14 @@ string CreateFlowByFilesRequest::ToJsonString() const
         string key = "OpenDynamicSignFlow";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_openDynamicSignFlow, allocator);
+    }
+
+    if (m_workflowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Workflow";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_workflow, allocator);
     }
 
 
@@ -642,6 +651,22 @@ void CreateFlowByFilesRequest::SetOpenDynamicSignFlow(const bool& _openDynamicSi
 bool CreateFlowByFilesRequest::OpenDynamicSignFlowHasBeenSet() const
 {
     return m_openDynamicSignFlowHasBeenSet;
+}
+
+bool CreateFlowByFilesRequest::GetWorkflow() const
+{
+    return m_workflow;
+}
+
+void CreateFlowByFilesRequest::SetWorkflow(const bool& _workflow)
+{
+    m_workflow = _workflow;
+    m_workflowHasBeenSet = true;
+}
+
+bool CreateFlowByFilesRequest::WorkflowHasBeenSet() const
+{
+    return m_workflowHasBeenSet;
 }
 
 

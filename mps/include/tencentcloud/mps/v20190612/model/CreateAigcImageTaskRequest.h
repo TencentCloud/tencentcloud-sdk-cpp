@@ -46,31 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型名称。
-当前支持的模型列表：
-Hunyuan,
-GEM，
-Qwen。
-                     * @return ModelName 模型名称。
-当前支持的模型列表：
-Hunyuan,
-GEM，
-Qwen。
+                     * 获取<p>模型名称。<br>当前支持的模型列表：<br>Hunyuan,<br>GEM，<br>Qwen。</p>
+                     * @return ModelName <p>模型名称。<br>当前支持的模型列表：<br>Hunyuan,<br>GEM，<br>Qwen。</p>
                      * 
                      */
                     std::string GetModelName() const;
 
                     /**
-                     * 设置模型名称。
-当前支持的模型列表：
-Hunyuan,
-GEM，
-Qwen。
-                     * @param _modelName 模型名称。
-当前支持的模型列表：
-Hunyuan,
-GEM，
-Qwen。
+                     * 设置<p>模型名称。<br>当前支持的模型列表：<br>Hunyuan,<br>GEM，<br>Qwen。</p>
+                     * @param _modelName <p>模型名称。<br>当前支持的模型列表：<br>Hunyuan,<br>GEM，<br>Qwen。</p>
                      * 
                      */
                     void SetModelName(const std::string& _modelName);
@@ -83,23 +67,15 @@ Qwen。
                     bool ModelNameHasBeenSet() const;
 
                     /**
-                     * 获取指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。
-
-1. GEM， 可选[2.5,3.0]。
-                     * @return ModelVersion 指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。
-
-1. GEM， 可选[2.5,3.0]。
+                     * 获取<p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。</p><ol><li>GEM， 可选[2.5,3.0]。</li></ol>
+                     * @return ModelVersion <p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。</p><ol><li>GEM， 可选[2.5,3.0]。</li></ol>
                      * 
                      */
                     std::string GetModelVersion() const;
 
                     /**
-                     * 设置指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。
-
-1. GEM， 可选[2.5,3.0]。
-                     * @param _modelVersion 指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。
-
-1. GEM， 可选[2.5,3.0]。
+                     * 设置<p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。</p><ol><li>GEM， 可选[2.5,3.0]。</li></ol>
+                     * @param _modelVersion <p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。</p><ol><li>GEM， 可选[2.5,3.0]。</li></ol>
                      * 
                      */
                     void SetModelVersion(const std::string& _modelVersion);
@@ -112,15 +88,15 @@ Qwen。
                     bool ModelVersionHasBeenSet() const;
 
                     /**
-                     * 获取生成图片的描述。(注：最大支持1000字符)。当未传入参考图片时，此参数必填。
-                     * @return Prompt 生成图片的描述。(注：最大支持1000字符)。当未传入参考图片时，此参数必填。
+                     * 获取<p>生成图片的描述。(注：最大支持1000字符)。当未传入参考图片时，此参数必填。</p>
+                     * @return Prompt <p>生成图片的描述。(注：最大支持1000字符)。当未传入参考图片时，此参数必填。</p>
                      * 
                      */
                     std::string GetPrompt() const;
 
                     /**
-                     * 设置生成图片的描述。(注：最大支持1000字符)。当未传入参考图片时，此参数必填。
-                     * @param _prompt 生成图片的描述。(注：最大支持1000字符)。当未传入参考图片时，此参数必填。
+                     * 设置<p>生成图片的描述。(注：最大支持1000字符)。当未传入参考图片时，此参数必填。</p>
+                     * @param _prompt <p>生成图片的描述。(注：最大支持1000字符)。当未传入参考图片时，此参数必填。</p>
                      * 
                      */
                     void SetPrompt(const std::string& _prompt);
@@ -133,15 +109,15 @@ Qwen。
                     bool PromptHasBeenSet() const;
 
                     /**
-                     * 获取用于描述您想要阻止模型生成的内容。 注意：部分模型支持。 例如： 顶部照明、明亮的色彩 人物、动物 多辆汽车、风。
-                     * @return NegativePrompt 用于描述您想要阻止模型生成的内容。 注意：部分模型支持。 例如： 顶部照明、明亮的色彩 人物、动物 多辆汽车、风。
+                     * 获取<p>用于描述您想要阻止模型生成的内容。 注意：部分模型支持。 例如： 顶部照明、明亮的色彩 人物、动物 多辆汽车、风。</p>
+                     * @return NegativePrompt <p>用于描述您想要阻止模型生成的内容。 注意：部分模型支持。 例如： 顶部照明、明亮的色彩 人物、动物 多辆汽车、风。</p>
                      * 
                      */
                     std::string GetNegativePrompt() const;
 
                     /**
-                     * 设置用于描述您想要阻止模型生成的内容。 注意：部分模型支持。 例如： 顶部照明、明亮的色彩 人物、动物 多辆汽车、风。
-                     * @param _negativePrompt 用于描述您想要阻止模型生成的内容。 注意：部分模型支持。 例如： 顶部照明、明亮的色彩 人物、动物 多辆汽车、风。
+                     * 设置<p>用于描述您想要阻止模型生成的内容。 注意：部分模型支持。 例如： 顶部照明、明亮的色彩 人物、动物 多辆汽车、风。</p>
+                     * @param _negativePrompt <p>用于描述您想要阻止模型生成的内容。 注意：部分模型支持。 例如： 顶部照明、明亮的色彩 人物、动物 多辆汽车、风。</p>
                      * 
                      */
                     void SetNegativePrompt(const std::string& _negativePrompt);
@@ -154,15 +130,15 @@ Qwen。
                     bool NegativePromptHasBeenSet() const;
 
                     /**
-                     * 获取默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。
-                     * @return EnhancePrompt 默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。
+                     * 获取<p>默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。</p>
+                     * @return EnhancePrompt <p>默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。</p>
                      * 
                      */
                     bool GetEnhancePrompt() const;
 
                     /**
-                     * 设置默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。
-                     * @param _enhancePrompt 默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。
+                     * 设置<p>默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。</p>
+                     * @param _enhancePrompt <p>默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。</p>
                      * 
                      */
                     void SetEnhancePrompt(const bool& _enhancePrompt);
@@ -175,43 +151,15 @@ Qwen。
                     bool EnhancePromptHasBeenSet() const;
 
                     /**
-                     * 获取用于传入参考的资源图片信息，默认支持传入一张图片。
-
-支持多图输入的模型：
-1. GEM，可支持最多3张图片输入作为资源图。
-
-注意：
-1. 推荐图片小于7M，各模型限制不同。
-2. 图片格式支持：jpeg, png, webp。
-                     * @return ImageInfos 用于传入参考的资源图片信息，默认支持传入一张图片。
-
-支持多图输入的模型：
-1. GEM，可支持最多3张图片输入作为资源图。
-
-注意：
-1. 推荐图片小于7M，各模型限制不同。
-2. 图片格式支持：jpeg, png, webp。
+                     * 获取<p>用于传入参考的资源图片信息，默认支持传入一张图片。</p><p>支持多图输入的模型：</p><ol><li>GEM，可支持最多3张图片输入作为资源图。</li></ol><p>注意：</p><ol><li>推荐图片小于7M，各模型限制不同。</li><li>图片格式支持：jpeg, png, webp。</li></ol>
+                     * @return ImageInfos <p>用于传入参考的资源图片信息，默认支持传入一张图片。</p><p>支持多图输入的模型：</p><ol><li>GEM，可支持最多3张图片输入作为资源图。</li></ol><p>注意：</p><ol><li>推荐图片小于7M，各模型限制不同。</li><li>图片格式支持：jpeg, png, webp。</li></ol>
                      * 
                      */
                     std::vector<AigcImageInfo> GetImageInfos() const;
 
                     /**
-                     * 设置用于传入参考的资源图片信息，默认支持传入一张图片。
-
-支持多图输入的模型：
-1. GEM，可支持最多3张图片输入作为资源图。
-
-注意：
-1. 推荐图片小于7M，各模型限制不同。
-2. 图片格式支持：jpeg, png, webp。
-                     * @param _imageInfos 用于传入参考的资源图片信息，默认支持传入一张图片。
-
-支持多图输入的模型：
-1. GEM，可支持最多3张图片输入作为资源图。
-
-注意：
-1. 推荐图片小于7M，各模型限制不同。
-2. 图片格式支持：jpeg, png, webp。
+                     * 设置<p>用于传入参考的资源图片信息，默认支持传入一张图片。</p><p>支持多图输入的模型：</p><ol><li>GEM，可支持最多3张图片输入作为资源图。</li></ol><p>注意：</p><ol><li>推荐图片小于7M，各模型限制不同。</li><li>图片格式支持：jpeg, png, webp。</li></ol>
+                     * @param _imageInfos <p>用于传入参考的资源图片信息，默认支持传入一张图片。</p><p>支持多图输入的模型：</p><ol><li>GEM，可支持最多3张图片输入作为资源图。</li></ol><p>注意：</p><ol><li>推荐图片小于7M，各模型限制不同。</li><li>图片格式支持：jpeg, png, webp。</li></ol>
                      * 
                      */
                     void SetImageInfos(const std::vector<AigcImageInfo>& _imageInfos);
@@ -224,15 +172,15 @@ Qwen。
                     bool ImageInfosHasBeenSet() const;
 
                     /**
-                     * 获取用于传入模型要求的额外参数。
-                     * @return ExtraParameters 用于传入模型要求的额外参数。
+                     * 获取<p>用于传入模型要求的额外参数。</p>
+                     * @return ExtraParameters <p>用于传入模型要求的额外参数。</p>
                      * 
                      */
                     AigcImageExtraParam GetExtraParameters() const;
 
                     /**
-                     * 设置用于传入模型要求的额外参数。
-                     * @param _extraParameters 用于传入模型要求的额外参数。
+                     * 设置<p>用于传入模型要求的额外参数。</p>
+                     * @param _extraParameters <p>用于传入模型要求的额外参数。</p>
                      * 
                      */
                     void SetExtraParameters(const AigcImageExtraParam& _extraParameters);
@@ -245,15 +193,36 @@ Qwen。
                     bool ExtraParametersHasBeenSet() const;
 
                     /**
-                     * 获取文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。
-                     * @return StoreCosParam 文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。
+                     * 获取<p>用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。 示例： {"size":"2048x2048"}</p>
+                     * @return AdditionalParameters <p>用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。 示例： {"size":"2048x2048"}</p>
+                     * 
+                     */
+                    std::string GetAdditionalParameters() const;
+
+                    /**
+                     * 设置<p>用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。 示例： {"size":"2048x2048"}</p>
+                     * @param _additionalParameters <p>用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。 示例： {"size":"2048x2048"}</p>
+                     * 
+                     */
+                    void SetAdditionalParameters(const std::string& _additionalParameters);
+
+                    /**
+                     * 判断参数 AdditionalParameters 是否已赋值
+                     * @return AdditionalParameters 是否已赋值
+                     * 
+                     */
+                    bool AdditionalParametersHasBeenSet() const;
+
+                    /**
+                     * 获取<p>文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。</p>
+                     * @return StoreCosParam <p>文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。</p>
                      * 
                      */
                     AigcStoreCosParam GetStoreCosParam() const;
 
                     /**
-                     * 设置文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。
-                     * @param _storeCosParam 文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。
+                     * 设置<p>文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。</p>
+                     * @param _storeCosParam <p>文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。</p>
                      * 
                      */
                     void SetStoreCosParam(const AigcStoreCosParam& _storeCosParam);
@@ -266,15 +235,15 @@ Qwen。
                     bool StoreCosParamHasBeenSet() const;
 
                     /**
-                     * 获取接口操作者名称。
-                     * @return Operator 接口操作者名称。
+                     * 获取<p>接口操作者名称。</p>
+                     * @return Operator <p>接口操作者名称。</p>
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置接口操作者名称。
-                     * @param _operator 接口操作者名称。
+                     * 设置<p>接口操作者名称。</p>
+                     * @param _operator <p>接口操作者名称。</p>
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -289,68 +258,61 @@ Qwen。
                 private:
 
                     /**
-                     * 模型名称。
-当前支持的模型列表：
-Hunyuan,
-GEM，
-Qwen。
+                     * <p>模型名称。<br>当前支持的模型列表：<br>Hunyuan,<br>GEM，<br>Qwen。</p>
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;
 
                     /**
-                     * 指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。
-
-1. GEM， 可选[2.5,3.0]。
+                     * <p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。</p><ol><li>GEM， 可选[2.5,3.0]。</li></ol>
                      */
                     std::string m_modelVersion;
                     bool m_modelVersionHasBeenSet;
 
                     /**
-                     * 生成图片的描述。(注：最大支持1000字符)。当未传入参考图片时，此参数必填。
+                     * <p>生成图片的描述。(注：最大支持1000字符)。当未传入参考图片时，此参数必填。</p>
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
 
                     /**
-                     * 用于描述您想要阻止模型生成的内容。 注意：部分模型支持。 例如： 顶部照明、明亮的色彩 人物、动物 多辆汽车、风。
+                     * <p>用于描述您想要阻止模型生成的内容。 注意：部分模型支持。 例如： 顶部照明、明亮的色彩 人物、动物 多辆汽车、风。</p>
                      */
                     std::string m_negativePrompt;
                     bool m_negativePromptHasBeenSet;
 
                     /**
-                     * 默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。
+                     * <p>默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。</p>
                      */
                     bool m_enhancePrompt;
                     bool m_enhancePromptHasBeenSet;
 
                     /**
-                     * 用于传入参考的资源图片信息，默认支持传入一张图片。
-
-支持多图输入的模型：
-1. GEM，可支持最多3张图片输入作为资源图。
-
-注意：
-1. 推荐图片小于7M，各模型限制不同。
-2. 图片格式支持：jpeg, png, webp。
+                     * <p>用于传入参考的资源图片信息，默认支持传入一张图片。</p><p>支持多图输入的模型：</p><ol><li>GEM，可支持最多3张图片输入作为资源图。</li></ol><p>注意：</p><ol><li>推荐图片小于7M，各模型限制不同。</li><li>图片格式支持：jpeg, png, webp。</li></ol>
                      */
                     std::vector<AigcImageInfo> m_imageInfos;
                     bool m_imageInfosHasBeenSet;
 
                     /**
-                     * 用于传入模型要求的额外参数。
+                     * <p>用于传入模型要求的额外参数。</p>
                      */
                     AigcImageExtraParam m_extraParameters;
                     bool m_extraParametersHasBeenSet;
 
                     /**
-                     * 文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。
+                     * <p>用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。 示例： {"size":"2048x2048"}</p>
+                     */
+                    std::string m_additionalParameters;
+                    bool m_additionalParametersHasBeenSet;
+
+                    /**
+                     * <p>文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。</p>
                      */
                     AigcStoreCosParam m_storeCosParam;
                     bool m_storeCosParamHasBeenSet;
 
                     /**
-                     * 接口操作者名称。
+                     * <p>接口操作者名称。</p>
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;

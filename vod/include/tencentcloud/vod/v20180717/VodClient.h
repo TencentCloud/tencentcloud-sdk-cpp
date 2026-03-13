@@ -39,10 +39,14 @@
 #include <tencentcloud/vod/v20180717/model/CreateAIRecognitionTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAdaptiveDynamicStreamingTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateAdaptiveDynamicStreamingTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcAdvancedCustomElementRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcAdvancedCustomElementResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcApiTokenRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcApiTokenResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcCustomElementRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcCustomElementResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcCustomVoiceRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateAigcCustomVoiceResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcImageTaskRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcImageTaskResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAigcVideoTaskRequest.h>
@@ -487,12 +491,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAdaptiveDynamicStreamingTemplateResponse> CreateAdaptiveDynamicStreamingTemplateOutcome;
                 typedef std::future<CreateAdaptiveDynamicStreamingTemplateOutcome> CreateAdaptiveDynamicStreamingTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateAdaptiveDynamicStreamingTemplateRequest&, CreateAdaptiveDynamicStreamingTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAdaptiveDynamicStreamingTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAigcAdvancedCustomElementResponse> CreateAigcAdvancedCustomElementOutcome;
+                typedef std::future<CreateAigcAdvancedCustomElementOutcome> CreateAigcAdvancedCustomElementOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateAigcAdvancedCustomElementRequest&, CreateAigcAdvancedCustomElementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcAdvancedCustomElementAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAigcApiTokenResponse> CreateAigcApiTokenOutcome;
                 typedef std::future<CreateAigcApiTokenOutcome> CreateAigcApiTokenOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateAigcApiTokenRequest&, CreateAigcApiTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcApiTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAigcCustomElementResponse> CreateAigcCustomElementOutcome;
                 typedef std::future<CreateAigcCustomElementOutcome> CreateAigcCustomElementOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateAigcCustomElementRequest&, CreateAigcCustomElementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcCustomElementAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAigcCustomVoiceResponse> CreateAigcCustomVoiceOutcome;
+                typedef std::future<CreateAigcCustomVoiceOutcome> CreateAigcCustomVoiceOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateAigcCustomVoiceRequest&, CreateAigcCustomVoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcCustomVoiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAigcImageTaskResponse> CreateAigcImageTaskOutcome;
                 typedef std::future<CreateAigcImageTaskOutcome> CreateAigcImageTaskOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateAigcImageTaskRequest&, CreateAigcImageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAigcImageTaskAsyncHandler;
@@ -1193,6 +1203,15 @@ namespace TencentCloud
                 CreateAdaptiveDynamicStreamingTemplateOutcomeCallable CreateAdaptiveDynamicStreamingTemplateCallable(const Model::CreateAdaptiveDynamicStreamingTemplateRequest& request);
 
                 /**
+                 *该接口用于创建 AIGC 高级自定义主体。
+                 * @param req CreateAigcAdvancedCustomElementRequest
+                 * @return CreateAigcAdvancedCustomElementOutcome
+                 */
+                CreateAigcAdvancedCustomElementOutcome CreateAigcAdvancedCustomElement(const Model::CreateAigcAdvancedCustomElementRequest &request);
+                void CreateAigcAdvancedCustomElementAsync(const Model::CreateAigcAdvancedCustomElementRequest& request, const CreateAigcAdvancedCustomElementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAigcAdvancedCustomElementOutcomeCallable CreateAigcAdvancedCustomElementCallable(const Model::CreateAigcAdvancedCustomElementRequest& request);
+
+                /**
                  *创建AIGC调用API的Token。创建后数据同步有延时，约30秒后可查询或删除。
                  * @param req CreateAigcApiTokenRequest
                  * @return CreateAigcApiTokenOutcome
@@ -1209,6 +1228,15 @@ namespace TencentCloud
                 CreateAigcCustomElementOutcome CreateAigcCustomElement(const Model::CreateAigcCustomElementRequest &request);
                 void CreateAigcCustomElementAsync(const Model::CreateAigcCustomElementRequest& request, const CreateAigcCustomElementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAigcCustomElementOutcomeCallable CreateAigcCustomElementCallable(const Model::CreateAigcCustomElementRequest& request);
+
+                /**
+                 *该接口用于创建 AIGC 自定义音色。
+                 * @param req CreateAigcCustomVoiceRequest
+                 * @return CreateAigcCustomVoiceOutcome
+                 */
+                CreateAigcCustomVoiceOutcome CreateAigcCustomVoice(const Model::CreateAigcCustomVoiceRequest &request);
+                void CreateAigcCustomVoiceAsync(const Model::CreateAigcCustomVoiceRequest& request, const CreateAigcCustomVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAigcCustomVoiceOutcomeCallable CreateAigcCustomVoiceCallable(const Model::CreateAigcCustomVoiceRequest& request);
 
                 /**
                  *该接口用于[生成 AIGC 图片](https://cloud.tencent.com/document/product/266/124473)。<b>接口处于内测阶段，如需使用请[联系我们](https://cloud.tencent.com/online-service?from=sales_sales&source=PRESALE)，接口调用会产生实际费用，</b>请参考点播 [AIGC 生图片计费文档](https://cloud.tencent.com/document/product/266/95125#9c4dc6ff-4b3f-4b25-bf2d-393889dfb9ac)。该功能结算模式为[后付费](https://cloud.tencent.com/document/product/266/2838)，日结客户当天使用将在第二天出账，月结客户将在次月1日统一出上月使用费用。

@@ -23,7 +23,8 @@ using namespace std;
 FlowGroupOptions::FlowGroupOptions() :
     m_approverVerifyTypeHasBeenSet(false),
     m_selfOrganizationApproverNotifyTypeHasBeenSet(false),
-    m_otherApproverNotifyTypeHasBeenSet(false)
+    m_otherApproverNotifyTypeHasBeenSet(false),
+    m_flowGroupNeedWorkflowHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome FlowGroupOptions::Deserialize(const rapidjson::Value &value)
         m_otherApproverNotifyTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("FlowGroupNeedWorkflow") && !value["FlowGroupNeedWorkflow"].IsNull())
+    {
+        if (!value["FlowGroupNeedWorkflow"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowGroupOptions.FlowGroupNeedWorkflow` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowGroupNeedWorkflow = value["FlowGroupNeedWorkflow"].GetBool();
+        m_flowGroupNeedWorkflowHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void FlowGroupOptions::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "OtherApproverNotifyType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_otherApproverNotifyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowGroupNeedWorkflowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowGroupNeedWorkflow";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_flowGroupNeedWorkflow, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void FlowGroupOptions::SetOtherApproverNotifyType(const string& _otherApproverNo
 bool FlowGroupOptions::OtherApproverNotifyTypeHasBeenSet() const
 {
     return m_otherApproverNotifyTypeHasBeenSet;
+}
+
+bool FlowGroupOptions::GetFlowGroupNeedWorkflow() const
+{
+    return m_flowGroupNeedWorkflow;
+}
+
+void FlowGroupOptions::SetFlowGroupNeedWorkflow(const bool& _flowGroupNeedWorkflow)
+{
+    m_flowGroupNeedWorkflow = _flowGroupNeedWorkflow;
+    m_flowGroupNeedWorkflowHasBeenSet = true;
+}
+
+bool FlowGroupOptions::FlowGroupNeedWorkflowHasBeenSet() const
+{
+    return m_flowGroupNeedWorkflowHasBeenSet;
 }
 

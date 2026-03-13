@@ -30,6 +30,7 @@ CreateAigcImageTaskRequest::CreateAigcImageTaskRequest() :
     m_enhancePromptHasBeenSet(false),
     m_imageInfosHasBeenSet(false),
     m_extraParametersHasBeenSet(false),
+    m_additionalParametersHasBeenSet(false),
     m_storeCosParamHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
@@ -104,6 +105,14 @@ string CreateAigcImageTaskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_extraParameters.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_additionalParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdditionalParameters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_additionalParameters.c_str(), allocator).Move(), allocator);
     }
 
     if (m_storeCosParamHasBeenSet)
@@ -241,6 +250,22 @@ void CreateAigcImageTaskRequest::SetExtraParameters(const AigcImageExtraParam& _
 bool CreateAigcImageTaskRequest::ExtraParametersHasBeenSet() const
 {
     return m_extraParametersHasBeenSet;
+}
+
+string CreateAigcImageTaskRequest::GetAdditionalParameters() const
+{
+    return m_additionalParameters;
+}
+
+void CreateAigcImageTaskRequest::SetAdditionalParameters(const string& _additionalParameters)
+{
+    m_additionalParameters = _additionalParameters;
+    m_additionalParametersHasBeenSet = true;
+}
+
+bool CreateAigcImageTaskRequest::AdditionalParametersHasBeenSet() const
+{
+    return m_additionalParametersHasBeenSet;
 }
 
 AigcStoreCosParam CreateAigcImageTaskRequest::GetStoreCosParam() const

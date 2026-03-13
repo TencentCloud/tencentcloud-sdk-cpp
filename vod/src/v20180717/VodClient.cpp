@@ -440,6 +440,56 @@ VodClient::CreateAdaptiveDynamicStreamingTemplateOutcomeCallable VodClient::Crea
     return prom->get_future();
 }
 
+VodClient::CreateAigcAdvancedCustomElementOutcome VodClient::CreateAigcAdvancedCustomElement(const CreateAigcAdvancedCustomElementRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcAdvancedCustomElement");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcAdvancedCustomElementResponse rsp = CreateAigcAdvancedCustomElementResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcAdvancedCustomElementOutcome(rsp);
+        else
+            return CreateAigcAdvancedCustomElementOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcAdvancedCustomElementOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateAigcAdvancedCustomElementAsync(const CreateAigcAdvancedCustomElementRequest& request, const CreateAigcAdvancedCustomElementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcAdvancedCustomElementRequest&;
+    using Resp = CreateAigcAdvancedCustomElementResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcAdvancedCustomElement", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateAigcAdvancedCustomElementOutcomeCallable VodClient::CreateAigcAdvancedCustomElementCallable(const CreateAigcAdvancedCustomElementRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcAdvancedCustomElementOutcome>>();
+    CreateAigcAdvancedCustomElementAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAigcAdvancedCustomElementRequest&,
+        CreateAigcAdvancedCustomElementOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::CreateAigcApiTokenOutcome VodClient::CreateAigcApiToken(const CreateAigcApiTokenRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAigcApiToken");
@@ -532,6 +582,56 @@ VodClient::CreateAigcCustomElementOutcomeCallable VodClient::CreateAigcCustomEle
         const VodClient*,
         const CreateAigcCustomElementRequest&,
         CreateAigcCustomElementOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::CreateAigcCustomVoiceOutcome VodClient::CreateAigcCustomVoice(const CreateAigcCustomVoiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcCustomVoice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcCustomVoiceResponse rsp = CreateAigcCustomVoiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcCustomVoiceOutcome(rsp);
+        else
+            return CreateAigcCustomVoiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcCustomVoiceOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateAigcCustomVoiceAsync(const CreateAigcCustomVoiceRequest& request, const CreateAigcCustomVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcCustomVoiceRequest&;
+    using Resp = CreateAigcCustomVoiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcCustomVoice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateAigcCustomVoiceOutcomeCallable VodClient::CreateAigcCustomVoiceCallable(const CreateAigcCustomVoiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcCustomVoiceOutcome>>();
+    CreateAigcCustomVoiceAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAigcCustomVoiceRequest&,
+        CreateAigcCustomVoiceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

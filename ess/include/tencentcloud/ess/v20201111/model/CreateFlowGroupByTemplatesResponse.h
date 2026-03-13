@@ -86,6 +86,20 @@ namespace TencentCloud
                      */
                     bool ApproversHasBeenSet() const;
 
+                    /**
+                     * 获取FlowGroupNeedWorkflow
+                     * @return WorkflowInstanceId FlowGroupNeedWorkflow
+                     * 
+                     */
+                    std::string GetWorkflowInstanceId() const;
+
+                    /**
+                     * 判断参数 WorkflowInstanceId 是否已赋值
+                     * @return WorkflowInstanceId 是否已赋值
+                     * 
+                     */
+                    bool WorkflowInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,6 +119,12 @@ namespace TencentCloud
                      */
                     std::vector<FlowGroupApprovers> m_approvers;
                     bool m_approversHasBeenSet;
+
+                    /**
+                     * FlowGroupNeedWorkflow
+                     */
+                    std::string m_workflowInstanceId;
+                    bool m_workflowInstanceIdHasBeenSet;
 
                 };
             }

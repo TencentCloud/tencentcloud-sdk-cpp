@@ -702,6 +702,27 @@ namespace TencentCloud
                      */
                     bool SignComponentConfigHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启嵌入式合同发起时，提交发起审批流，默认：false（不开启），开启后，嵌入式合同发起后，会提交电子签内置审批流
+                     * @return Workflow 是否开启嵌入式合同发起时，提交发起审批流，默认：false（不开启），开启后，嵌入式合同发起后，会提交电子签内置审批流
+                     * 
+                     */
+                    bool GetWorkflow() const;
+
+                    /**
+                     * 设置是否开启嵌入式合同发起时，提交发起审批流，默认：false（不开启），开启后，嵌入式合同发起后，会提交电子签内置审批流
+                     * @param _workflow 是否开启嵌入式合同发起时，提交发起审批流，默认：false（不开启），开启后，嵌入式合同发起后，会提交电子签内置审批流
+                     * 
+                     */
+                    void SetWorkflow(const bool& _workflow);
+
+                    /**
+                     * 判断参数 Workflow 是否已赋值
+                     * @return Workflow 是否已赋值
+                     * 
+                     */
+                    bool WorkflowHasBeenSet() const;
+
                 private:
 
                     /**
@@ -882,6 +903,12 @@ namespace TencentCloud
                      */
                     SignComponentConfig m_signComponentConfig;
                     bool m_signComponentConfigHasBeenSet;
+
+                    /**
+                     * 是否开启嵌入式合同发起时，提交发起审批流，默认：false（不开启），开启后，嵌入式合同发起后，会提交电子签内置审批流
+                     */
+                    bool m_workflow;
+                    bool m_workflowHasBeenSet;
 
                 };
             }
