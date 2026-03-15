@@ -26,6 +26,7 @@ ProcessImageAsyncRequest::ProcessImageAsyncRequest() :
     m_subAppIdHasBeenSet(false),
     m_fileIdHasBeenSet(false),
     m_urlHasBeenSet(false),
+    m_base64HasBeenSet(false),
     m_imageTaskInputHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
@@ -64,6 +65,14 @@ string ProcessImageAsyncRequest::ToJsonString() const
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_base64HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Base64";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_base64.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageTaskInputHasBeenSet)
@@ -170,6 +179,22 @@ void ProcessImageAsyncRequest::SetUrl(const string& _url)
 bool ProcessImageAsyncRequest::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string ProcessImageAsyncRequest::GetBase64() const
+{
+    return m_base64;
+}
+
+void ProcessImageAsyncRequest::SetBase64(const string& _base64)
+{
+    m_base64 = _base64;
+    m_base64HasBeenSet = true;
+}
+
+bool ProcessImageAsyncRequest::Base64HasBeenSet() const
+{
+    return m_base64HasBeenSet;
 }
 
 ProcessImageAsyncTaskInput ProcessImageAsyncRequest::GetImageTaskInput() const

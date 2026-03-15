@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateBackupVaultItem.h>
 
 
 namespace TencentCloud
@@ -231,15 +232,15 @@ no-关闭
                     bool CrossRegionsHasBeenSet() const;
 
                     /**
-                     * 获取动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
-                     * @return BackupTriggerStrategy 动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
+                     * 获取自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
+                     * @return BackupTriggerStrategy 自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
                      * 
                      */
                     std::string GetBackupTriggerStrategy() const;
 
                     /**
-                     * 设置动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
-                     * @param _backupTriggerStrategy 动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
+                     * 设置自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
+                     * @param _backupTriggerStrategy 自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
                      * 
                      */
                     void SetBackupTriggerStrategy(const std::string& _backupTriggerStrategy);
@@ -250,6 +251,27 @@ no-关闭
                      * 
                      */
                     bool BackupTriggerStrategyHasBeenSet() const;
+
+                    /**
+                     * 获取备份投递关系
+                     * @return AutoCopyVaults 备份投递关系
+                     * 
+                     */
+                    std::vector<CreateBackupVaultItem> GetAutoCopyVaults() const;
+
+                    /**
+                     * 设置备份投递关系
+                     * @param _autoCopyVaults 备份投递关系
+                     * 
+                     */
+                    void SetAutoCopyVaults(const std::vector<CreateBackupVaultItem>& _autoCopyVaults);
+
+                    /**
+                     * 判断参数 AutoCopyVaults 是否已赋值
+                     * @return AutoCopyVaults 是否已赋值
+                     * 
+                     */
+                    bool AutoCopyVaultsHasBeenSet() const;
 
                 private:
 
@@ -306,10 +328,16 @@ no-关闭
                     bool m_crossRegionsHasBeenSet;
 
                     /**
-                     * 动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
+                     * 自动数据备份触发策略，periodically:自动周期备份,frequent:高频备份
                      */
                     std::string m_backupTriggerStrategy;
                     bool m_backupTriggerStrategyHasBeenSet;
+
+                    /**
+                     * 备份投递关系
+                     */
+                    std::vector<CreateBackupVaultItem> m_autoCopyVaults;
+                    bool m_autoCopyVaultsHasBeenSet;
 
                 };
             }

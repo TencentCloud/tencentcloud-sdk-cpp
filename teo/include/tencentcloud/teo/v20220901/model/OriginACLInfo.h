@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 七层加速域名/四层代理实例与回源 IP 网段的绑定关系，以及回源 IP 网段详情。
+                * 七层加速域名/四层代理实例与回源 IP 网段的绑定关系，同时包含回源 IP 网段详情和选择可切换的回源 IP 网段列表。
                 */
                 class OriginACLInfo : public AbstractModel
                 {
@@ -173,6 +173,27 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取源站防护回源ACL控制域。
+                     * @return OriginACLFamily 源站防护回源ACL控制域。
+                     * 
+                     */
+                    std::string GetOriginACLFamily() const;
+
+                    /**
+                     * 设置源站防护回源ACL控制域。
+                     * @param _originACLFamily 源站防护回源ACL控制域。
+                     * 
+                     */
+                    void SetOriginACLFamily(const std::string& _originACLFamily);
+
+                    /**
+                     * 判断参数 OriginACLFamily 是否已赋值
+                     * @return OriginACLFamily 是否已赋值
+                     * 
+                     */
+                    bool OriginACLFamilyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +230,12 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 源站防护回源ACL控制域。
+                     */
+                    std::string m_originACLFamily;
+                    bool m_originACLFamilyHasBeenSet;
 
                 };
             }

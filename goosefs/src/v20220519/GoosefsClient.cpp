@@ -290,6 +290,56 @@ GoosefsClient::BuildClientNodeMountCommandOutcomeCallable GoosefsClient::BuildCl
     return prom->get_future();
 }
 
+GoosefsClient::BuildCustomerClusterOutcome GoosefsClient::BuildCustomerCluster(const BuildCustomerClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "BuildCustomerCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BuildCustomerClusterResponse rsp = BuildCustomerClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BuildCustomerClusterOutcome(rsp);
+        else
+            return BuildCustomerClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return BuildCustomerClusterOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::BuildCustomerClusterAsync(const BuildCustomerClusterRequest& request, const BuildCustomerClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const BuildCustomerClusterRequest&;
+    using Resp = BuildCustomerClusterResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "BuildCustomerCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::BuildCustomerClusterOutcomeCallable GoosefsClient::BuildCustomerClusterCallable(const BuildCustomerClusterRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<BuildCustomerClusterOutcome>>();
+    BuildCustomerClusterAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const BuildCustomerClusterRequest&,
+        BuildCustomerClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 GoosefsClient::CancelLoadTaskOutcome GoosefsClient::CancelLoadTask(const CancelLoadTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CancelLoadTask");
@@ -590,6 +640,56 @@ GoosefsClient::DeleteCrossVpcSubnetSupportForClientNodeOutcomeCallable GoosefsCl
     return prom->get_future();
 }
 
+GoosefsClient::DeleteCustomerClusterOutcome GoosefsClient::DeleteCustomerCluster(const DeleteCustomerClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCustomerCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCustomerClusterResponse rsp = DeleteCustomerClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCustomerClusterOutcome(rsp);
+        else
+            return DeleteCustomerClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCustomerClusterOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::DeleteCustomerClusterAsync(const DeleteCustomerClusterRequest& request, const DeleteCustomerClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCustomerClusterRequest&;
+    using Resp = DeleteCustomerClusterResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCustomerCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::DeleteCustomerClusterOutcomeCallable GoosefsClient::DeleteCustomerClusterCallable(const DeleteCustomerClusterRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCustomerClusterOutcome>>();
+    DeleteCustomerClusterAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const DeleteCustomerClusterRequest&,
+        DeleteCustomerClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 GoosefsClient::DeleteFileSystemOutcome GoosefsClient::DeleteFileSystem(const DeleteFileSystemRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteFileSystem");
@@ -832,6 +932,56 @@ GoosefsClient::DescribeClusterRoleTokenOutcomeCallable GoosefsClient::DescribeCl
         const GoosefsClient*,
         const DescribeClusterRoleTokenRequest&,
         DescribeClusterRoleTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+GoosefsClient::DescribeCustomerClusterOutcome GoosefsClient::DescribeCustomerCluster(const DescribeCustomerClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCustomerCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCustomerClusterResponse rsp = DescribeCustomerClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCustomerClusterOutcome(rsp);
+        else
+            return DescribeCustomerClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCustomerClusterOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::DescribeCustomerClusterAsync(const DescribeCustomerClusterRequest& request, const DescribeCustomerClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCustomerClusterRequest&;
+    using Resp = DescribeCustomerClusterResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCustomerCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::DescribeCustomerClusterOutcomeCallable GoosefsClient::DescribeCustomerClusterCallable(const DescribeCustomerClusterRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCustomerClusterOutcome>>();
+    DescribeCustomerClusterAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const DescribeCustomerClusterRequest&,
+        DescribeCustomerClusterOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1332,6 +1482,106 @@ GoosefsClient::ModifyDataRepositoryBandwidthOutcomeCallable GoosefsClient::Modif
         const GoosefsClient*,
         const ModifyDataRepositoryBandwidthRequest&,
         ModifyDataRepositoryBandwidthOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+GoosefsClient::MountMultipleStorageFileSystemOutcome GoosefsClient::MountMultipleStorageFileSystem(const MountMultipleStorageFileSystemRequest &request)
+{
+    auto outcome = MakeRequest(request, "MountMultipleStorageFileSystem");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        MountMultipleStorageFileSystemResponse rsp = MountMultipleStorageFileSystemResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return MountMultipleStorageFileSystemOutcome(rsp);
+        else
+            return MountMultipleStorageFileSystemOutcome(o.GetError());
+    }
+    else
+    {
+        return MountMultipleStorageFileSystemOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::MountMultipleStorageFileSystemAsync(const MountMultipleStorageFileSystemRequest& request, const MountMultipleStorageFileSystemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const MountMultipleStorageFileSystemRequest&;
+    using Resp = MountMultipleStorageFileSystemResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "MountMultipleStorageFileSystem", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::MountMultipleStorageFileSystemOutcomeCallable GoosefsClient::MountMultipleStorageFileSystemCallable(const MountMultipleStorageFileSystemRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<MountMultipleStorageFileSystemOutcome>>();
+    MountMultipleStorageFileSystemAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const MountMultipleStorageFileSystemRequest&,
+        MountMultipleStorageFileSystemOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+GoosefsClient::QueryClientNodeMountCommandOutcome GoosefsClient::QueryClientNodeMountCommand(const QueryClientNodeMountCommandRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryClientNodeMountCommand");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryClientNodeMountCommandResponse rsp = QueryClientNodeMountCommandResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryClientNodeMountCommandOutcome(rsp);
+        else
+            return QueryClientNodeMountCommandOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryClientNodeMountCommandOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::QueryClientNodeMountCommandAsync(const QueryClientNodeMountCommandRequest& request, const QueryClientNodeMountCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const QueryClientNodeMountCommandRequest&;
+    using Resp = QueryClientNodeMountCommandResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "QueryClientNodeMountCommand", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::QueryClientNodeMountCommandOutcomeCallable GoosefsClient::QueryClientNodeMountCommandCallable(const QueryClientNodeMountCommandRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<QueryClientNodeMountCommandOutcome>>();
+    QueryClientNodeMountCommandAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const QueryClientNodeMountCommandRequest&,
+        QueryClientNodeMountCommandOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

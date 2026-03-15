@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyOriginACLRequest::ModifyOriginACLRequest() :
     m_zoneIdHasBeenSet(false),
-    m_originACLEntitiesHasBeenSet(false)
+    m_originACLEntitiesHasBeenSet(false),
+    m_originACLFamilyHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,14 @@ string ModifyOriginACLRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_originACLFamilyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginACLFamily";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_originACLFamily.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -96,6 +105,22 @@ void ModifyOriginACLRequest::SetOriginACLEntities(const vector<OriginACLEntity>&
 bool ModifyOriginACLRequest::OriginACLEntitiesHasBeenSet() const
 {
     return m_originACLEntitiesHasBeenSet;
+}
+
+string ModifyOriginACLRequest::GetOriginACLFamily() const
+{
+    return m_originACLFamily;
+}
+
+void ModifyOriginACLRequest::SetOriginACLFamily(const string& _originACLFamily)
+{
+    m_originACLFamily = _originACLFamily;
+    m_originACLFamilyHasBeenSet = true;
+}
+
+bool ModifyOriginACLRequest::OriginACLFamilyHasBeenSet() const
+{
+    return m_originACLFamilyHasBeenSet;
 }
 
 

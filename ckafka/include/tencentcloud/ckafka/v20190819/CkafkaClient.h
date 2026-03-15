@@ -1019,7 +1019,7 @@ namespace TencentCloud
                 DescribePrometheusOutcomeCallable DescribePrometheusCallable(const Model::DescribePrometheusRequest& request);
 
                 /**
-                 *枚举地域,只支持广州地域
+                 *枚举地域信息
                  * @param req DescribeRegionRequest
                  * @return DescribeRegionOutcome
                  */

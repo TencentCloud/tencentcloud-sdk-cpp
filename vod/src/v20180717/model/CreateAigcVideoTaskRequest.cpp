@@ -27,6 +27,7 @@ CreateAigcVideoTaskRequest::CreateAigcVideoTaskRequest() :
     m_modelNameHasBeenSet(false),
     m_modelVersionHasBeenSet(false),
     m_fileInfosHasBeenSet(false),
+    m_subjectInfosHasBeenSet(false),
     m_lastFrameFileIdHasBeenSet(false),
     m_lastFrameUrlHasBeenSet(false),
     m_promptHasBeenSet(false),
@@ -82,6 +83,21 @@ string CreateAigcVideoTaskRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_fileInfos.begin(); itr != m_fileInfos.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_subjectInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubjectInfos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_subjectInfos.begin(); itr != m_subjectInfos.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -255,6 +271,22 @@ void CreateAigcVideoTaskRequest::SetFileInfos(const vector<AigcVideoTaskInputFil
 bool CreateAigcVideoTaskRequest::FileInfosHasBeenSet() const
 {
     return m_fileInfosHasBeenSet;
+}
+
+vector<AigcVideoTaskInputSubjectInfo> CreateAigcVideoTaskRequest::GetSubjectInfos() const
+{
+    return m_subjectInfos;
+}
+
+void CreateAigcVideoTaskRequest::SetSubjectInfos(const vector<AigcVideoTaskInputSubjectInfo>& _subjectInfos)
+{
+    m_subjectInfos = _subjectInfos;
+    m_subjectInfosHasBeenSet = true;
+}
+
+bool CreateAigcVideoTaskRequest::SubjectInfosHasBeenSet() const
+{
+    return m_subjectInfosHasBeenSet;
 }
 
 string CreateAigcVideoTaskRequest::GetLastFrameFileId() const

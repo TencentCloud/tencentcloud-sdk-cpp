@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tdmysql/v20211122/model/ModifyBinlogStatusResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/QueryClientNodeMountCommandResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tdmysql::V20211122::Model;
+using namespace TencentCloud::Goosefs::V20220519::Model;
 using namespace std;
 
-ModifyBinlogStatusResponse::ModifyBinlogStatusResponse() :
-    m_flowIdHasBeenSet(false)
+QueryClientNodeMountCommandResponse::QueryClientNodeMountCommandResponse() :
+    m_commandHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ModifyBinlogStatusResponse::Deserialize(const string &payload)
+CoreInternalOutcome QueryClientNodeMountCommandResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +62,32 @@ CoreInternalOutcome ModifyBinlogStatusResponse::Deserialize(const string &payloa
     }
 
 
-    if (rsp.HasMember("FlowId") && !rsp["FlowId"].IsNull())
+    if (rsp.HasMember("Command") && !rsp["Command"].IsNull())
     {
-        if (!rsp["FlowId"].IsInt64())
+        if (!rsp["Command"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Command` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_flowId = rsp["FlowId"].GetInt64();
-        m_flowIdHasBeenSet = true;
+        m_command = string(rsp["Command"].GetString());
+        m_commandHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string ModifyBinlogStatusResponse::ToJsonString() const
+string QueryClientNodeMountCommandResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_flowIdHasBeenSet)
+    if (m_commandHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FlowId";
+        string key = "Command";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_flowId, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_command.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +102,14 @@ string ModifyBinlogStatusResponse::ToJsonString() const
 }
 
 
-int64_t ModifyBinlogStatusResponse::GetFlowId() const
+string QueryClientNodeMountCommandResponse::GetCommand() const
 {
-    return m_flowId;
+    return m_command;
 }
 
-bool ModifyBinlogStatusResponse::FlowIdHasBeenSet() const
+bool QueryClientNodeMountCommandResponse::CommandHasBeenSet() const
 {
-    return m_flowIdHasBeenSet;
+    return m_commandHasBeenSet;
 }
 
 

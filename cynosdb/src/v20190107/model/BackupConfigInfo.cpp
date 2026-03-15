@@ -29,7 +29,8 @@ BackupConfigInfo::BackupConfigInfo() :
     m_reserveDurationHasBeenSet(false),
     m_crossRegionsEnableHasBeenSet(false),
     m_crossRegionsHasBeenSet(false),
-    m_backupTriggerStrategyHasBeenSet(false)
+    m_backupTriggerStrategyHasBeenSet(false),
+    m_autoCopyVaultsHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,26 @@ CoreInternalOutcome BackupConfigInfo::Deserialize(const rapidjson::Value &value)
         m_backupTriggerStrategyHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoCopyVaults") && !value["AutoCopyVaults"].IsNull())
+    {
+        if (!value["AutoCopyVaults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BackupConfigInfo.AutoCopyVaults` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AutoCopyVaults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CreateBackupVaultItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_autoCopyVaults.push_back(item);
+        }
+        m_autoCopyVaultsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +242,21 @@ void BackupConfigInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "BackupTriggerStrategy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_backupTriggerStrategy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoCopyVaultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoCopyVaults";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_autoCopyVaults.begin(); itr != m_autoCopyVaults.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -368,5 +404,21 @@ void BackupConfigInfo::SetBackupTriggerStrategy(const string& _backupTriggerStra
 bool BackupConfigInfo::BackupTriggerStrategyHasBeenSet() const
 {
     return m_backupTriggerStrategyHasBeenSet;
+}
+
+vector<CreateBackupVaultItem> BackupConfigInfo::GetAutoCopyVaults() const
+{
+    return m_autoCopyVaults;
+}
+
+void BackupConfigInfo::SetAutoCopyVaults(const vector<CreateBackupVaultItem>& _autoCopyVaults)
+{
+    m_autoCopyVaults = _autoCopyVaults;
+    m_autoCopyVaultsHasBeenSet = true;
+}
+
+bool BackupConfigInfo::AutoCopyVaultsHasBeenSet() const
+{
+    return m_autoCopyVaultsHasBeenSet;
 }
 

@@ -690,6 +690,56 @@ VodClient::CreateAigcImageTaskOutcomeCallable VodClient::CreateAigcImageTaskCall
     return prom->get_future();
 }
 
+VodClient::CreateAigcSubjectOutcome VodClient::CreateAigcSubject(const CreateAigcSubjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAigcSubject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAigcSubjectResponse rsp = CreateAigcSubjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAigcSubjectOutcome(rsp);
+        else
+            return CreateAigcSubjectOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAigcSubjectOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateAigcSubjectAsync(const CreateAigcSubjectRequest& request, const CreateAigcSubjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAigcSubjectRequest&;
+    using Resp = CreateAigcSubjectResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAigcSubject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::CreateAigcSubjectOutcomeCallable VodClient::CreateAigcSubjectCallable(const CreateAigcSubjectRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAigcSubjectOutcome>>();
+    CreateAigcSubjectAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const CreateAigcSubjectRequest&,
+        CreateAigcSubjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::CreateAigcVideoTaskOutcome VodClient::CreateAigcVideoTask(const CreateAigcVideoTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAigcVideoTask");

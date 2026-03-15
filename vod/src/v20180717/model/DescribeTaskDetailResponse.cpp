@@ -60,7 +60,8 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_processImageAsyncTaskHasBeenSet(false),
     m_extractBlindWatermarkTaskHasBeenSet(false),
     m_createAigcAdvancedCustomElementTaskHasBeenSet(false),
-    m_createAigcCustomVoiceTaskHasBeenSet(false)
+    m_createAigcCustomVoiceTaskHasBeenSet(false),
+    m_createAigcSubjectTaskHasBeenSet(false)
 {
 }
 
@@ -692,6 +693,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_createAigcCustomVoiceTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CreateAigcSubjectTask") && !rsp["CreateAigcSubjectTask"].IsNull())
+    {
+        if (!rsp["CreateAigcSubjectTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateAigcSubjectTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_createAigcSubjectTask.Deserialize(rsp["CreateAigcSubjectTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_createAigcSubjectTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1028,6 +1046,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_createAigcCustomVoiceTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_createAigcSubjectTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateAigcSubjectTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_createAigcSubjectTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1410,6 +1437,16 @@ CreateAigcCustomVoiceTask DescribeTaskDetailResponse::GetCreateAigcCustomVoiceTa
 bool DescribeTaskDetailResponse::CreateAigcCustomVoiceTaskHasBeenSet() const
 {
     return m_createAigcCustomVoiceTaskHasBeenSet;
+}
+
+CreateAigcSubjectTask DescribeTaskDetailResponse::GetCreateAigcSubjectTask() const
+{
+    return m_createAigcSubjectTask;
+}
+
+bool DescribeTaskDetailResponse::CreateAigcSubjectTaskHasBeenSet() const
+{
+    return m_createAigcSubjectTaskHasBeenSet;
 }
 
 

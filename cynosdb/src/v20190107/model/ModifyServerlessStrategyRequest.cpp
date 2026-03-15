@@ -35,7 +35,8 @@ ModifyServerlessStrategyRequest::ModifyServerlessStrategyRequest() :
     m_minRoCountHasBeenSet(false),
     m_maxRoCountHasBeenSet(false),
     m_autoArchiveHasBeenSet(false),
-    m_upgradeTypeHasBeenSet(false)
+    m_upgradeTypeHasBeenSet(false),
+    m_securityGroupIdsForNewRoHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,19 @@ string ModifyServerlessStrategyRequest::ToJsonString() const
         string key = "UpgradeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_upgradeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityGroupIdsForNewRoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupIdsForNewRo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIdsForNewRo.begin(); itr != m_securityGroupIdsForNewRo.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -364,6 +378,22 @@ void ModifyServerlessStrategyRequest::SetUpgradeType(const string& _upgradeType)
 bool ModifyServerlessStrategyRequest::UpgradeTypeHasBeenSet() const
 {
     return m_upgradeTypeHasBeenSet;
+}
+
+vector<string> ModifyServerlessStrategyRequest::GetSecurityGroupIdsForNewRo() const
+{
+    return m_securityGroupIdsForNewRo;
+}
+
+void ModifyServerlessStrategyRequest::SetSecurityGroupIdsForNewRo(const vector<string>& _securityGroupIdsForNewRo)
+{
+    m_securityGroupIdsForNewRo = _securityGroupIdsForNewRo;
+    m_securityGroupIdsForNewRoHasBeenSet = true;
+}
+
+bool ModifyServerlessStrategyRequest::SecurityGroupIdsForNewRoHasBeenSet() const
+{
+    return m_securityGroupIdsForNewRoHasBeenSet;
 }
 
 

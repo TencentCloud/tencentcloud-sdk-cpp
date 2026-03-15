@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TDMYSQL_V20211122_MODEL_DESCRIBEBILLINGENABLERESPONSE_H_
-#define TENCENTCLOUD_TDMYSQL_V20211122_MODEL_DESCRIBEBILLINGENABLERESPONSE_H_
+#ifndef TENCENTCLOUD_GOOSEFS_V20220519_MODEL_DELETECUSTOMERCLUSTERRESPONSE_H_
+#define TENCENTCLOUD_GOOSEFS_V20220519_MODEL_DELETECUSTOMERCLUSTERRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Tdmysql
+    namespace Goosefs
     {
-        namespace V20211122
+        namespace V20220519
         {
             namespace Model
             {
                 /**
-                * DescribeBillingEnable返回参数结构体
+                * DeleteCustomerCluster返回参数结构体
                 */
-                class DescribeBillingEnableResponse : public AbstractModel
+                class DeleteCustomerClusterResponse : public AbstractModel
                 {
                 public:
-                    DescribeBillingEnableResponse();
-                    ~DescribeBillingEnableResponse() = default;
+                    DeleteCustomerClusterResponse();
+                    ~DeleteCustomerClusterResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
@@ -51,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TDMYSQL_V20211122_MODEL_DESCRIBEBILLINGENABLERESPONSE_H_
+#endif // !TENCENTCLOUD_GOOSEFS_V20220519_MODEL_DELETECUSTOMERCLUSTERRESPONSE_H_

@@ -85,6 +85,55 @@ namespace TencentCloud
                      */
                     bool OriginACLEntitiesHasBeenSet() const;
 
+                    /**
+                     * 获取源站防护回源ACL控制域，不填则默认不变；控制域信息可以通过DescribeAvailableOriginACLFamily接口查询获得。
+具体取值说明如下：
+<li>gaz：标准全球可用区控制域；</li>
+<li>mlc：标准中国大陆可用区控制域；</li>
+<li>emc：标准全球(不含中国大陆)可用区控制域；</li>
+<li>plat-gaz：精简全球可用区控制域；</li>
+<li>plat-mlc：精简中国大陆可用区控制域；</li>
+<li>plat-emc：精简全球(不含中国大陆)可用区控制域；</li>
+                     * @return OriginACLFamily 源站防护回源ACL控制域，不填则默认不变；控制域信息可以通过DescribeAvailableOriginACLFamily接口查询获得。
+具体取值说明如下：
+<li>gaz：标准全球可用区控制域；</li>
+<li>mlc：标准中国大陆可用区控制域；</li>
+<li>emc：标准全球(不含中国大陆)可用区控制域；</li>
+<li>plat-gaz：精简全球可用区控制域；</li>
+<li>plat-mlc：精简中国大陆可用区控制域；</li>
+<li>plat-emc：精简全球(不含中国大陆)可用区控制域；</li>
+                     * 
+                     */
+                    std::string GetOriginACLFamily() const;
+
+                    /**
+                     * 设置源站防护回源ACL控制域，不填则默认不变；控制域信息可以通过DescribeAvailableOriginACLFamily接口查询获得。
+具体取值说明如下：
+<li>gaz：标准全球可用区控制域；</li>
+<li>mlc：标准中国大陆可用区控制域；</li>
+<li>emc：标准全球(不含中国大陆)可用区控制域；</li>
+<li>plat-gaz：精简全球可用区控制域；</li>
+<li>plat-mlc：精简中国大陆可用区控制域；</li>
+<li>plat-emc：精简全球(不含中国大陆)可用区控制域；</li>
+                     * @param _originACLFamily 源站防护回源ACL控制域，不填则默认不变；控制域信息可以通过DescribeAvailableOriginACLFamily接口查询获得。
+具体取值说明如下：
+<li>gaz：标准全球可用区控制域；</li>
+<li>mlc：标准中国大陆可用区控制域；</li>
+<li>emc：标准全球(不含中国大陆)可用区控制域；</li>
+<li>plat-gaz：精简全球可用区控制域；</li>
+<li>plat-mlc：精简中国大陆可用区控制域；</li>
+<li>plat-emc：精简全球(不含中国大陆)可用区控制域；</li>
+                     * 
+                     */
+                    void SetOriginACLFamily(const std::string& _originACLFamily);
+
+                    /**
+                     * 判断参数 OriginACLFamily 是否已赋值
+                     * @return OriginACLFamily 是否已赋值
+                     * 
+                     */
+                    bool OriginACLFamilyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +147,19 @@ namespace TencentCloud
                      */
                     std::vector<OriginACLEntity> m_originACLEntities;
                     bool m_originACLEntitiesHasBeenSet;
+
+                    /**
+                     * 源站防护回源ACL控制域，不填则默认不变；控制域信息可以通过DescribeAvailableOriginACLFamily接口查询获得。
+具体取值说明如下：
+<li>gaz：标准全球可用区控制域；</li>
+<li>mlc：标准中国大陆可用区控制域；</li>
+<li>emc：标准全球(不含中国大陆)可用区控制域；</li>
+<li>plat-gaz：精简全球可用区控制域；</li>
+<li>plat-mlc：精简中国大陆可用区控制域；</li>
+<li>plat-emc：精简全球(不含中国大陆)可用区控制域；</li>
+                     */
+                    std::string m_originACLFamily;
+                    bool m_originACLFamilyHasBeenSet;
 
                 };
             }

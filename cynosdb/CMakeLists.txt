@@ -305,6 +305,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DisassociateSecurityGroupsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterDatabasesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/OfflineLibraDBInstanceResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/VaultInfo.h
   include/tencentcloud/cynosdb/v20190107/model/RemoveClusterSlaveZoneRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyResourcePackagesDeductionPriorityRequest.h
   include/tencentcloud/cynosdb/v20190107/model/OfflineLibraDBInstanceRequest.h
@@ -468,6 +469,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DeleteParamTemplateResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DownloadLibraDBClusterListRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ClusterInstanceDetail.h
+  include/tencentcloud/cynosdb/v20190107/model/CreateBackupVaultItem.h
   include/tencentcloud/cynosdb/v20190107/model/ClusterSlaveData.h
   include/tencentcloud/cynosdb/v20190107/model/OldAddrInfo.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeTasksResponse.h
@@ -888,6 +890,7 @@ set(cynosdb_src
   src/v20190107/model/DisassociateSecurityGroupsResponse.cpp
   src/v20190107/model/DescribeClusterDatabasesRequest.cpp
   src/v20190107/model/OfflineLibraDBInstanceResponse.cpp
+  src/v20190107/model/VaultInfo.cpp
   src/v20190107/model/RemoveClusterSlaveZoneRequest.cpp
   src/v20190107/model/ModifyResourcePackagesDeductionPriorityRequest.cpp
   src/v20190107/model/OfflineLibraDBInstanceRequest.cpp
@@ -1051,6 +1054,7 @@ set(cynosdb_src
   src/v20190107/model/DeleteParamTemplateResponse.cpp
   src/v20190107/model/DownloadLibraDBClusterListRequest.cpp
   src/v20190107/model/ClusterInstanceDetail.cpp
+  src/v20190107/model/CreateBackupVaultItem.cpp
   src/v20190107/model/ClusterSlaveData.cpp
   src/v20190107/model/OldAddrInfo.cpp
   src/v20190107/model/DescribeTasksResponse.cpp

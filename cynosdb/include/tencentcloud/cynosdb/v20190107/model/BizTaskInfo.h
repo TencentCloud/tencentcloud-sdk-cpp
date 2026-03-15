@@ -877,6 +877,48 @@ namespace TencentCloud
                      */
                     bool GdnTaskInfoHasBeenSet() const;
 
+                    /**
+                     * 获取保险箱id
+                     * @return VaultId 保险箱id
+                     * 
+                     */
+                    std::string GetVaultId() const;
+
+                    /**
+                     * 设置保险箱id
+                     * @param _vaultId 保险箱id
+                     * 
+                     */
+                    void SetVaultId(const std::string& _vaultId);
+
+                    /**
+                     * 判断参数 VaultId 是否已赋值
+                     * @return VaultId 是否已赋值
+                     * 
+                     */
+                    bool VaultIdHasBeenSet() const;
+
+                    /**
+                     * 获取保险箱名称
+                     * @return VaultName 保险箱名称
+                     * 
+                     */
+                    std::string GetVaultName() const;
+
+                    /**
+                     * 设置保险箱名称
+                     * @param _vaultName 保险箱名称
+                     * 
+                     */
+                    void SetVaultName(const std::string& _vaultName);
+
+                    /**
+                     * 判断参数 VaultName 是否已赋值
+                     * @return VaultName 是否已赋值
+                     * 
+                     */
+                    bool VaultNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1111,6 +1153,18 @@ namespace TencentCloud
                      */
                     GdnTaskInfo m_gdnTaskInfo;
                     bool m_gdnTaskInfoHasBeenSet;
+
+                    /**
+                     * 保险箱id
+                     */
+                    std::string m_vaultId;
+                    bool m_vaultIdHasBeenSet;
+
+                    /**
+                     * 保险箱名称
+                     */
+                    std::string m_vaultName;
+                    bool m_vaultNameHasBeenSet;
 
                 };
             }

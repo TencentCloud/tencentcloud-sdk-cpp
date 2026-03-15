@@ -26,7 +26,11 @@ BinlogItem::BinlogItem() :
     m_startTimeHasBeenSet(false),
     m_finishTimeHasBeenSet(false),
     m_binlogIdHasBeenSet(false),
-    m_crossRegionsHasBeenSet(false)
+    m_crossRegionsHasBeenSet(false),
+    m_copyStatusHasBeenSet(false),
+    m_vaultInfosHasBeenSet(false),
+    m_encryptKeyIdHasBeenSet(false),
+    m_encryptRegionHasBeenSet(false)
 {
 }
 
@@ -98,6 +102,56 @@ CoreInternalOutcome BinlogItem::Deserialize(const rapidjson::Value &value)
         m_crossRegionsHasBeenSet = true;
     }
 
+    if (value.HasMember("CopyStatus") && !value["CopyStatus"].IsNull())
+    {
+        if (!value["CopyStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BinlogItem.CopyStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_copyStatus = string(value["CopyStatus"].GetString());
+        m_copyStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("VaultInfos") && !value["VaultInfos"].IsNull())
+    {
+        if (!value["VaultInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BinlogItem.VaultInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["VaultInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VaultInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_vaultInfos.push_back(item);
+        }
+        m_vaultInfosHasBeenSet = true;
+    }
+
+    if (value.HasMember("EncryptKeyId") && !value["EncryptKeyId"].IsNull())
+    {
+        if (!value["EncryptKeyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BinlogItem.EncryptKeyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptKeyId = string(value["EncryptKeyId"].GetString());
+        m_encryptKeyIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("EncryptRegion") && !value["EncryptRegion"].IsNull())
+    {
+        if (!value["EncryptRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BinlogItem.EncryptRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptRegion = string(value["EncryptRegion"].GetString());
+        m_encryptRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +210,45 @@ void BinlogItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_copyStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CopyStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_copyStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vaultInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VaultInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_vaultInfos.begin(); itr != m_vaultInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_encryptKeyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryptKeyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryptRegion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -255,5 +348,69 @@ void BinlogItem::SetCrossRegions(const vector<string>& _crossRegions)
 bool BinlogItem::CrossRegionsHasBeenSet() const
 {
     return m_crossRegionsHasBeenSet;
+}
+
+string BinlogItem::GetCopyStatus() const
+{
+    return m_copyStatus;
+}
+
+void BinlogItem::SetCopyStatus(const string& _copyStatus)
+{
+    m_copyStatus = _copyStatus;
+    m_copyStatusHasBeenSet = true;
+}
+
+bool BinlogItem::CopyStatusHasBeenSet() const
+{
+    return m_copyStatusHasBeenSet;
+}
+
+vector<VaultInfo> BinlogItem::GetVaultInfos() const
+{
+    return m_vaultInfos;
+}
+
+void BinlogItem::SetVaultInfos(const vector<VaultInfo>& _vaultInfos)
+{
+    m_vaultInfos = _vaultInfos;
+    m_vaultInfosHasBeenSet = true;
+}
+
+bool BinlogItem::VaultInfosHasBeenSet() const
+{
+    return m_vaultInfosHasBeenSet;
+}
+
+string BinlogItem::GetEncryptKeyId() const
+{
+    return m_encryptKeyId;
+}
+
+void BinlogItem::SetEncryptKeyId(const string& _encryptKeyId)
+{
+    m_encryptKeyId = _encryptKeyId;
+    m_encryptKeyIdHasBeenSet = true;
+}
+
+bool BinlogItem::EncryptKeyIdHasBeenSet() const
+{
+    return m_encryptKeyIdHasBeenSet;
+}
+
+string BinlogItem::GetEncryptRegion() const
+{
+    return m_encryptRegion;
+}
+
+void BinlogItem::SetEncryptRegion(const string& _encryptRegion)
+{
+    m_encryptRegion = _encryptRegion;
+    m_encryptRegionHasBeenSet = true;
+}
+
+bool BinlogItem::EncryptRegionHasBeenSet() const
+{
+    return m_encryptRegionHasBeenSet;
 }
 

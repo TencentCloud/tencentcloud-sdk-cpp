@@ -108,6 +108,27 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
+                     * 获取<p>需要进行图片处理的Base64，要求图片文件小于4MB。使用 Base64 时，请不要添加任何前缀如 <code>data:image/png;base64,</code>，只需提供 Base64 编码字符串本身。</p>
+                     * @return Base64 <p>需要进行图片处理的Base64，要求图片文件小于4MB。使用 Base64 时，请不要添加任何前缀如 <code>data:image/png;base64,</code>，只需提供 Base64 编码字符串本身。</p>
+                     * 
+                     */
+                    std::string GetBase64() const;
+
+                    /**
+                     * 设置<p>需要进行图片处理的Base64，要求图片文件小于4MB。使用 Base64 时，请不要添加任何前缀如 <code>data:image/png;base64,</code>，只需提供 Base64 编码字符串本身。</p>
+                     * @param _base64 <p>需要进行图片处理的Base64，要求图片文件小于4MB。使用 Base64 时，请不要添加任何前缀如 <code>data:image/png;base64,</code>，只需提供 Base64 编码字符串本身。</p>
+                     * 
+                     */
+                    void SetBase64(const std::string& _base64);
+
+                    /**
+                     * 判断参数 Base64 是否已赋值
+                     * @return Base64 是否已赋值
+                     * 
+                     */
+                    bool Base64HasBeenSet() const;
+
+                    /**
                      * 获取<p>图片处理参数。</p>
                      * @return ImageTaskInput <p>图片处理参数。</p>
                      * 
@@ -252,6 +273,12 @@ namespace TencentCloud
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
+
+                    /**
+                     * <p>需要进行图片处理的Base64，要求图片文件小于4MB。使用 Base64 时，请不要添加任何前缀如 <code>data:image/png;base64,</code>，只需提供 Base64 编码字符串本身。</p>
+                     */
+                    std::string m_base64;
+                    bool m_base64HasBeenSet;
 
                     /**
                      * <p>图片处理参数。</p>

@@ -27,7 +27,8 @@ SnapshotBackupConfig::SnapshotBackupConfig() :
     m_backupWeekDaysHasBeenSet(false),
     m_backupIntervalTimeHasBeenSet(false),
     m_reserveDurationHasBeenSet(false),
-    m_backupTriggerStrategyHasBeenSet(false)
+    m_backupTriggerStrategyHasBeenSet(false),
+    m_autoCopyVaultsHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,26 @@ CoreInternalOutcome SnapshotBackupConfig::Deserialize(const rapidjson::Value &va
         m_backupTriggerStrategyHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoCopyVaults") && !value["AutoCopyVaults"].IsNull())
+    {
+        if (!value["AutoCopyVaults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SnapshotBackupConfig.AutoCopyVaults` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AutoCopyVaults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CreateBackupVaultItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_autoCopyVaults.push_back(item);
+        }
+        m_autoCopyVaultsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +196,21 @@ void SnapshotBackupConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "BackupTriggerStrategy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_backupTriggerStrategy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoCopyVaultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoCopyVaults";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_autoCopyVaults.begin(); itr != m_autoCopyVaults.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -290,5 +326,21 @@ void SnapshotBackupConfig::SetBackupTriggerStrategy(const string& _backupTrigger
 bool SnapshotBackupConfig::BackupTriggerStrategyHasBeenSet() const
 {
     return m_backupTriggerStrategyHasBeenSet;
+}
+
+vector<CreateBackupVaultItem> SnapshotBackupConfig::GetAutoCopyVaults() const
+{
+    return m_autoCopyVaults;
+}
+
+void SnapshotBackupConfig::SetAutoCopyVaults(const vector<CreateBackupVaultItem>& _autoCopyVaults)
+{
+    m_autoCopyVaults = _autoCopyVaults;
+    m_autoCopyVaultsHasBeenSet = true;
+}
+
+bool SnapshotBackupConfig::AutoCopyVaultsHasBeenSet() const
+{
+    return m_autoCopyVaultsHasBeenSet;
 }
 

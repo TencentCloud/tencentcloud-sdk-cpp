@@ -64,23 +64,23 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取七层加速域名开启源站防护的模式。
-<li>all：针对站点下的所有七层加速域名开启。</li>
-<li>specific：针对站点下指定的七层加速域名开启。</li>当参数为空时，默认为 specific。
-                     * @return L7EnableMode 七层加速域名开启源站防护的模式。
-<li>all：针对站点下的所有七层加速域名开启。</li>
-<li>specific：针对站点下指定的七层加速域名开启。</li>当参数为空时，默认为 specific。
+                     * 获取站点首次开启源站防护时，为七层加速域名配置特定回源 IP 网段的模式。
+<li>all：针对当前站点下的所有七层加速域名开启，当域名数量超过 200 时，请先通过 specific 模式启用 200 个域名，剩余资源通过 ModifyOriginACL 接口启用。</li>
+<li>specific：针对站点下指定的七层加速域名开启。</li>注意：当参数为空时，默认为 specific。后续新增七层加速域名/四层代理实例均请通过 ModifyOriginACL 接口配置。
+                     * @return L7EnableMode 站点首次开启源站防护时，为七层加速域名配置特定回源 IP 网段的模式。
+<li>all：针对当前站点下的所有七层加速域名开启，当域名数量超过 200 时，请先通过 specific 模式启用 200 个域名，剩余资源通过 ModifyOriginACL 接口启用。</li>
+<li>specific：针对站点下指定的七层加速域名开启。</li>注意：当参数为空时，默认为 specific。后续新增七层加速域名/四层代理实例均请通过 ModifyOriginACL 接口配置。
                      * 
                      */
                     std::string GetL7EnableMode() const;
 
                     /**
-                     * 设置七层加速域名开启源站防护的模式。
-<li>all：针对站点下的所有七层加速域名开启。</li>
-<li>specific：针对站点下指定的七层加速域名开启。</li>当参数为空时，默认为 specific。
-                     * @param _l7EnableMode 七层加速域名开启源站防护的模式。
-<li>all：针对站点下的所有七层加速域名开启。</li>
-<li>specific：针对站点下指定的七层加速域名开启。</li>当参数为空时，默认为 specific。
+                     * 设置站点首次开启源站防护时，为七层加速域名配置特定回源 IP 网段的模式。
+<li>all：针对当前站点下的所有七层加速域名开启，当域名数量超过 200 时，请先通过 specific 模式启用 200 个域名，剩余资源通过 ModifyOriginACL 接口启用。</li>
+<li>specific：针对站点下指定的七层加速域名开启。</li>注意：当参数为空时，默认为 specific。后续新增七层加速域名/四层代理实例均请通过 ModifyOriginACL 接口配置。
+                     * @param _l7EnableMode 站点首次开启源站防护时，为七层加速域名配置特定回源 IP 网段的模式。
+<li>all：针对当前站点下的所有七层加速域名开启，当域名数量超过 200 时，请先通过 specific 模式启用 200 个域名，剩余资源通过 ModifyOriginACL 接口启用。</li>
+<li>specific：针对站点下指定的七层加速域名开启。</li>注意：当参数为空时，默认为 specific。后续新增七层加速域名/四层代理实例均请通过 ModifyOriginACL 接口配置。
                      * 
                      */
                     void SetL7EnableMode(const std::string& _l7EnableMode);
@@ -114,23 +114,23 @@ namespace TencentCloud
                     bool L7HostsHasBeenSet() const;
 
                     /**
-                     * 获取四层代理实例开启源站防护的模式。
-<li>all：针对站点下的所有四层代理实例开启。</li>
-<li>specific：针对站点下指定的四层代理实例开启。</li>当参数为空时，默认为 specific。
-                     * @return L4EnableMode 四层代理实例开启源站防护的模式。
-<li>all：针对站点下的所有四层代理实例开启。</li>
-<li>specific：针对站点下指定的四层代理实例开启。</li>当参数为空时，默认为 specific。
+                     * 获取站点首次开启源站防护时，为四层代理实例配置特定回源 IP 网段的模式。
+<li>all：针对当前站点下的所有四层代理实例开启，当实例数量超过 100 时，请先通过 specific 模式启用 100 个域名，剩余资源通过 ModifyOriginACL 接口启用。</li>
+<li>specific：针对站点下指定的四层代理实例开启。</li>注意：当参数为空时，默认为 specific。后续新增七层加速域名/四层代理实例均请通过 ModifyOriginACL 接口配置。
+                     * @return L4EnableMode 站点首次开启源站防护时，为四层代理实例配置特定回源 IP 网段的模式。
+<li>all：针对当前站点下的所有四层代理实例开启，当实例数量超过 100 时，请先通过 specific 模式启用 100 个域名，剩余资源通过 ModifyOriginACL 接口启用。</li>
+<li>specific：针对站点下指定的四层代理实例开启。</li>注意：当参数为空时，默认为 specific。后续新增七层加速域名/四层代理实例均请通过 ModifyOriginACL 接口配置。
                      * 
                      */
                     std::string GetL4EnableMode() const;
 
                     /**
-                     * 设置四层代理实例开启源站防护的模式。
-<li>all：针对站点下的所有四层代理实例开启。</li>
-<li>specific：针对站点下指定的四层代理实例开启。</li>当参数为空时，默认为 specific。
-                     * @param _l4EnableMode 四层代理实例开启源站防护的模式。
-<li>all：针对站点下的所有四层代理实例开启。</li>
-<li>specific：针对站点下指定的四层代理实例开启。</li>当参数为空时，默认为 specific。
+                     * 设置站点首次开启源站防护时，为四层代理实例配置特定回源 IP 网段的模式。
+<li>all：针对当前站点下的所有四层代理实例开启，当实例数量超过 100 时，请先通过 specific 模式启用 100 个域名，剩余资源通过 ModifyOriginACL 接口启用。</li>
+<li>specific：针对站点下指定的四层代理实例开启。</li>注意：当参数为空时，默认为 specific。后续新增七层加速域名/四层代理实例均请通过 ModifyOriginACL 接口配置。
+                     * @param _l4EnableMode 站点首次开启源站防护时，为四层代理实例配置特定回源 IP 网段的模式。
+<li>all：针对当前站点下的所有四层代理实例开启，当实例数量超过 100 时，请先通过 specific 模式启用 100 个域名，剩余资源通过 ModifyOriginACL 接口启用。</li>
+<li>specific：针对站点下指定的四层代理实例开启。</li>注意：当参数为空时，默认为 specific。后续新增七层加速域名/四层代理实例均请通过 ModifyOriginACL 接口配置。
                      * 
                      */
                     void SetL4EnableMode(const std::string& _l4EnableMode);
@@ -163,6 +163,55 @@ namespace TencentCloud
                      */
                     bool L4ProxyIdsHasBeenSet() const;
 
+                    /**
+                     * 获取源站防护回源ACL控制域，不填则默认用标准全球控制域；可用控制域信息可以通过DescribeAvailableOriginACLFamily接口查询获得。
+具体取值说明如下：
+<li>gaz：标准全球可用区控制域；</li>
+<li>mlc：标准中国大陆可用区控制域；</li>
+<li>emc：标准全球(不含中国大陆)可用区控制域；</li>
+<li>plat-gaz：精简全球可用区控制域；</li>
+<li>plat-mlc：精简中国大陆可用区控制域；</li>
+<li>plat-emc：精简全球(不含中国大陆)可用区控制域；</li>
+                     * @return OriginACLFamily 源站防护回源ACL控制域，不填则默认用标准全球控制域；可用控制域信息可以通过DescribeAvailableOriginACLFamily接口查询获得。
+具体取值说明如下：
+<li>gaz：标准全球可用区控制域；</li>
+<li>mlc：标准中国大陆可用区控制域；</li>
+<li>emc：标准全球(不含中国大陆)可用区控制域；</li>
+<li>plat-gaz：精简全球可用区控制域；</li>
+<li>plat-mlc：精简中国大陆可用区控制域；</li>
+<li>plat-emc：精简全球(不含中国大陆)可用区控制域；</li>
+                     * 
+                     */
+                    std::string GetOriginACLFamily() const;
+
+                    /**
+                     * 设置源站防护回源ACL控制域，不填则默认用标准全球控制域；可用控制域信息可以通过DescribeAvailableOriginACLFamily接口查询获得。
+具体取值说明如下：
+<li>gaz：标准全球可用区控制域；</li>
+<li>mlc：标准中国大陆可用区控制域；</li>
+<li>emc：标准全球(不含中国大陆)可用区控制域；</li>
+<li>plat-gaz：精简全球可用区控制域；</li>
+<li>plat-mlc：精简中国大陆可用区控制域；</li>
+<li>plat-emc：精简全球(不含中国大陆)可用区控制域；</li>
+                     * @param _originACLFamily 源站防护回源ACL控制域，不填则默认用标准全球控制域；可用控制域信息可以通过DescribeAvailableOriginACLFamily接口查询获得。
+具体取值说明如下：
+<li>gaz：标准全球可用区控制域；</li>
+<li>mlc：标准中国大陆可用区控制域；</li>
+<li>emc：标准全球(不含中国大陆)可用区控制域；</li>
+<li>plat-gaz：精简全球可用区控制域；</li>
+<li>plat-mlc：精简中国大陆可用区控制域；</li>
+<li>plat-emc：精简全球(不含中国大陆)可用区控制域；</li>
+                     * 
+                     */
+                    void SetOriginACLFamily(const std::string& _originACLFamily);
+
+                    /**
+                     * 判断参数 OriginACLFamily 是否已赋值
+                     * @return OriginACLFamily 是否已赋值
+                     * 
+                     */
+                    bool OriginACLFamilyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -172,9 +221,9 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 七层加速域名开启源站防护的模式。
-<li>all：针对站点下的所有七层加速域名开启。</li>
-<li>specific：针对站点下指定的七层加速域名开启。</li>当参数为空时，默认为 specific。
+                     * 站点首次开启源站防护时，为七层加速域名配置特定回源 IP 网段的模式。
+<li>all：针对当前站点下的所有七层加速域名开启，当域名数量超过 200 时，请先通过 specific 模式启用 200 个域名，剩余资源通过 ModifyOriginACL 接口启用。</li>
+<li>specific：针对站点下指定的七层加速域名开启。</li>注意：当参数为空时，默认为 specific。后续新增七层加速域名/四层代理实例均请通过 ModifyOriginACL 接口配置。
                      */
                     std::string m_l7EnableMode;
                     bool m_l7EnableModeHasBeenSet;
@@ -186,9 +235,9 @@ namespace TencentCloud
                     bool m_l7HostsHasBeenSet;
 
                     /**
-                     * 四层代理实例开启源站防护的模式。
-<li>all：针对站点下的所有四层代理实例开启。</li>
-<li>specific：针对站点下指定的四层代理实例开启。</li>当参数为空时，默认为 specific。
+                     * 站点首次开启源站防护时，为四层代理实例配置特定回源 IP 网段的模式。
+<li>all：针对当前站点下的所有四层代理实例开启，当实例数量超过 100 时，请先通过 specific 模式启用 100 个域名，剩余资源通过 ModifyOriginACL 接口启用。</li>
+<li>specific：针对站点下指定的四层代理实例开启。</li>注意：当参数为空时，默认为 specific。后续新增七层加速域名/四层代理实例均请通过 ModifyOriginACL 接口配置。
                      */
                     std::string m_l4EnableMode;
                     bool m_l4EnableModeHasBeenSet;
@@ -198,6 +247,19 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_l4ProxyIds;
                     bool m_l4ProxyIdsHasBeenSet;
+
+                    /**
+                     * 源站防护回源ACL控制域，不填则默认用标准全球控制域；可用控制域信息可以通过DescribeAvailableOriginACLFamily接口查询获得。
+具体取值说明如下：
+<li>gaz：标准全球可用区控制域；</li>
+<li>mlc：标准中国大陆可用区控制域；</li>
+<li>emc：标准全球(不含中国大陆)可用区控制域；</li>
+<li>plat-gaz：精简全球可用区控制域；</li>
+<li>plat-mlc：精简中国大陆可用区控制域；</li>
+<li>plat-emc：精简全球(不含中国大陆)可用区控制域；</li>
+                     */
+                    std::string m_originACLFamily;
+                    bool m_originACLFamilyHasBeenSet;
 
                 };
             }

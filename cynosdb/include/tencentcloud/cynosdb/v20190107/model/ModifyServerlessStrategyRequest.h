@@ -323,6 +323,27 @@ namespace TencentCloud
                      */
                     bool UpgradeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取新增的只读实例需要绑定的安全组列表。仅仅针对于在这次调整策略过程中新产生的只读实例绑定安全组，存量的实例不绑定。
+                     * @return SecurityGroupIdsForNewRo 新增的只读实例需要绑定的安全组列表。仅仅针对于在这次调整策略过程中新产生的只读实例绑定安全组，存量的实例不绑定。
+                     * 
+                     */
+                    std::vector<std::string> GetSecurityGroupIdsForNewRo() const;
+
+                    /**
+                     * 设置新增的只读实例需要绑定的安全组列表。仅仅针对于在这次调整策略过程中新产生的只读实例绑定安全组，存量的实例不绑定。
+                     * @param _securityGroupIdsForNewRo 新增的只读实例需要绑定的安全组列表。仅仅针对于在这次调整策略过程中新产生的只读实例绑定安全组，存量的实例不绑定。
+                     * 
+                     */
+                    void SetSecurityGroupIdsForNewRo(const std::vector<std::string>& _securityGroupIdsForNewRo);
+
+                    /**
+                     * 判断参数 SecurityGroupIdsForNewRo 是否已赋值
+                     * @return SecurityGroupIdsForNewRo 是否已赋值
+                     * 
+                     */
+                    bool SecurityGroupIdsForNewRoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -404,6 +425,12 @@ namespace TencentCloud
                      */
                     std::string m_upgradeType;
                     bool m_upgradeTypeHasBeenSet;
+
+                    /**
+                     * 新增的只读实例需要绑定的安全组列表。仅仅针对于在这次调整策略过程中新产生的只读实例绑定安全组，存量的实例不绑定。
+                     */
+                    std::vector<std::string> m_securityGroupIdsForNewRo;
+                    bool m_securityGroupIdsForNewRoHasBeenSet;
 
                 };
             }

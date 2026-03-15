@@ -32,7 +32,11 @@ BackupFileInfo::BackupFileInfo() :
     m_snapshotTimeHasBeenSet(false),
     m_backupIdHasBeenSet(false),
     m_snapShotTypeHasBeenSet(false),
-    m_backupNameHasBeenSet(false)
+    m_backupNameHasBeenSet(false),
+    m_copyStatusHasBeenSet(false),
+    m_encryptKeyIdHasBeenSet(false),
+    m_encryptRegionHasBeenSet(false),
+    m_vaultInfosHasBeenSet(false)
 {
 }
 
@@ -161,6 +165,56 @@ CoreInternalOutcome BackupFileInfo::Deserialize(const rapidjson::Value &value)
         m_backupNameHasBeenSet = true;
     }
 
+    if (value.HasMember("CopyStatus") && !value["CopyStatus"].IsNull())
+    {
+        if (!value["CopyStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupFileInfo.CopyStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_copyStatus = string(value["CopyStatus"].GetString());
+        m_copyStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("EncryptKeyId") && !value["EncryptKeyId"].IsNull())
+    {
+        if (!value["EncryptKeyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupFileInfo.EncryptKeyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptKeyId = string(value["EncryptKeyId"].GetString());
+        m_encryptKeyIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("EncryptRegion") && !value["EncryptRegion"].IsNull())
+    {
+        if (!value["EncryptRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupFileInfo.EncryptRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptRegion = string(value["EncryptRegion"].GetString());
+        m_encryptRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("VaultInfos") && !value["VaultInfos"].IsNull())
+    {
+        if (!value["VaultInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BackupFileInfo.VaultInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["VaultInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VaultInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_vaultInfos.push_back(item);
+        }
+        m_vaultInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +316,45 @@ void BackupFileInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "BackupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_backupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_copyStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CopyStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_copyStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptKeyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryptKeyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryptRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vaultInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VaultInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_vaultInfos.begin(); itr != m_vaultInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -457,5 +550,69 @@ void BackupFileInfo::SetBackupName(const string& _backupName)
 bool BackupFileInfo::BackupNameHasBeenSet() const
 {
     return m_backupNameHasBeenSet;
+}
+
+string BackupFileInfo::GetCopyStatus() const
+{
+    return m_copyStatus;
+}
+
+void BackupFileInfo::SetCopyStatus(const string& _copyStatus)
+{
+    m_copyStatus = _copyStatus;
+    m_copyStatusHasBeenSet = true;
+}
+
+bool BackupFileInfo::CopyStatusHasBeenSet() const
+{
+    return m_copyStatusHasBeenSet;
+}
+
+string BackupFileInfo::GetEncryptKeyId() const
+{
+    return m_encryptKeyId;
+}
+
+void BackupFileInfo::SetEncryptKeyId(const string& _encryptKeyId)
+{
+    m_encryptKeyId = _encryptKeyId;
+    m_encryptKeyIdHasBeenSet = true;
+}
+
+bool BackupFileInfo::EncryptKeyIdHasBeenSet() const
+{
+    return m_encryptKeyIdHasBeenSet;
+}
+
+string BackupFileInfo::GetEncryptRegion() const
+{
+    return m_encryptRegion;
+}
+
+void BackupFileInfo::SetEncryptRegion(const string& _encryptRegion)
+{
+    m_encryptRegion = _encryptRegion;
+    m_encryptRegionHasBeenSet = true;
+}
+
+bool BackupFileInfo::EncryptRegionHasBeenSet() const
+{
+    return m_encryptRegionHasBeenSet;
+}
+
+vector<VaultInfo> BackupFileInfo::GetVaultInfos() const
+{
+    return m_vaultInfos;
+}
+
+void BackupFileInfo::SetVaultInfos(const vector<VaultInfo>& _vaultInfos)
+{
+    m_vaultInfos = _vaultInfos;
+    m_vaultInfosHasBeenSet = true;
+}
+
+bool BackupFileInfo::VaultInfosHasBeenSet() const
+{
+    return m_vaultInfosHasBeenSet;
 }
 

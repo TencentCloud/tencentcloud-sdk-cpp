@@ -14,56 +14,57 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TDMYSQL_V20211122_MODEL_MODIFYBINLOGSTATUSRESPONSE_H_
-#define TENCENTCLOUD_TDMYSQL_V20211122_MODEL_MODIFYBINLOGSTATUSRESPONSE_H_
+#ifndef TENCENTCLOUD_GOOSEFS_V20220519_MODEL_DESCRIBECUSTOMERCLUSTERRESPONSE_H_
+#define TENCENTCLOUD_GOOSEFS_V20220519_MODEL_DESCRIBECUSTOMERCLUSTERRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/goosefs/v20220519/model/CustomerClusterAttr.h>
 
 
 namespace TencentCloud
 {
-    namespace Tdmysql
+    namespace Goosefs
     {
-        namespace V20211122
+        namespace V20220519
         {
             namespace Model
             {
                 /**
-                * ModifyBinlogStatus返回参数结构体
+                * DescribeCustomerCluster返回参数结构体
                 */
-                class ModifyBinlogStatusResponse : public AbstractModel
+                class DescribeCustomerClusterResponse : public AbstractModel
                 {
                 public:
-                    ModifyBinlogStatusResponse();
-                    ~ModifyBinlogStatusResponse() = default;
+                    DescribeCustomerClusterResponse();
+                    ~DescribeCustomerClusterResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取flow的流程id
-                     * @return FlowId flow的流程id
+                     * 获取客户端集群列表
+                     * @return ClusterSet 客户端集群列表
                      * 
                      */
-                    int64_t GetFlowId() const;
+                    std::vector<CustomerClusterAttr> GetClusterSet() const;
 
                     /**
-                     * 判断参数 FlowId 是否已赋值
-                     * @return FlowId 是否已赋值
+                     * 判断参数 ClusterSet 是否已赋值
+                     * @return ClusterSet 是否已赋值
                      * 
                      */
-                    bool FlowIdHasBeenSet() const;
+                    bool ClusterSetHasBeenSet() const;
 
                 private:
 
                     /**
-                     * flow的流程id
+                     * 客户端集群列表
                      */
-                    int64_t m_flowId;
-                    bool m_flowIdHasBeenSet;
+                    std::vector<CustomerClusterAttr> m_clusterSet;
+                    bool m_clusterSetHasBeenSet;
 
                 };
             }
@@ -71,4 +72,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TDMYSQL_V20211122_MODEL_MODIFYBINLOGSTATUSRESPONSE_H_
+#endif // !TENCENTCLOUD_GOOSEFS_V20220519_MODEL_DESCRIBECUSTOMERCLUSTERRESPONSE_H_

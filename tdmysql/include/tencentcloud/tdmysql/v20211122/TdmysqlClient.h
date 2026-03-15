@@ -29,8 +29,6 @@
 #include <tencentcloud/tdmysql/v20211122/model/CreateDBSBackupResponse.h>
 #include <tencentcloud/tdmysql/v20211122/model/DeleteDBSBackupSetsRequest.h>
 #include <tencentcloud/tdmysql/v20211122/model/DeleteDBSBackupSetsResponse.h>
-#include <tencentcloud/tdmysql/v20211122/model/DescribeBillingEnableRequest.h>
-#include <tencentcloud/tdmysql/v20211122/model/DescribeBillingEnableResponse.h>
 #include <tencentcloud/tdmysql/v20211122/model/DescribeDBParametersRequest.h>
 #include <tencentcloud/tdmysql/v20211122/model/DescribeDBParametersResponse.h>
 #include <tencentcloud/tdmysql/v20211122/model/DescribeDBSAvailableRecoveryTimeRequest.h>
@@ -41,8 +39,6 @@
 #include <tencentcloud/tdmysql/v20211122/model/DescribeDBSecurityGroupsResponse.h>
 #include <tencentcloud/tdmysql/v20211122/model/DescribeDatabaseObjectsRequest.h>
 #include <tencentcloud/tdmysql/v20211122/model/DescribeDatabaseObjectsResponse.h>
-#include <tencentcloud/tdmysql/v20211122/model/DescribeDatabaseTableRequest.h>
-#include <tencentcloud/tdmysql/v20211122/model/DescribeDatabaseTableResponse.h>
 #include <tencentcloud/tdmysql/v20211122/model/DescribeFlowRequest.h>
 #include <tencentcloud/tdmysql/v20211122/model/DescribeFlowResponse.h>
 #include <tencentcloud/tdmysql/v20211122/model/DestroyInstancesRequest.h>
@@ -51,8 +47,6 @@
 #include <tencentcloud/tdmysql/v20211122/model/IsolateDBInstanceResponse.h>
 #include <tencentcloud/tdmysql/v20211122/model/ModifyAutoRenewFlagRequest.h>
 #include <tencentcloud/tdmysql/v20211122/model/ModifyAutoRenewFlagResponse.h>
-#include <tencentcloud/tdmysql/v20211122/model/ModifyBinlogStatusRequest.h>
-#include <tencentcloud/tdmysql/v20211122/model/ModifyBinlogStatusResponse.h>
 #include <tencentcloud/tdmysql/v20211122/model/ModifyDBInstanceSecurityGroupsRequest.h>
 #include <tencentcloud/tdmysql/v20211122/model/ModifyDBInstanceSecurityGroupsResponse.h>
 #include <tencentcloud/tdmysql/v20211122/model/ModifyDBParametersRequest.h>
@@ -86,9 +80,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDBSBackupSetsResponse> DeleteDBSBackupSetsOutcome;
                 typedef std::future<DeleteDBSBackupSetsOutcome> DeleteDBSBackupSetsOutcomeCallable;
                 typedef std::function<void(const TdmysqlClient*, const Model::DeleteDBSBackupSetsRequest&, DeleteDBSBackupSetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDBSBackupSetsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeBillingEnableResponse> DescribeBillingEnableOutcome;
-                typedef std::future<DescribeBillingEnableOutcome> DescribeBillingEnableOutcomeCallable;
-                typedef std::function<void(const TdmysqlClient*, const Model::DescribeBillingEnableRequest&, DescribeBillingEnableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillingEnableAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBParametersResponse> DescribeDBParametersOutcome;
                 typedef std::future<DescribeDBParametersOutcome> DescribeDBParametersOutcomeCallable;
                 typedef std::function<void(const TdmysqlClient*, const Model::DescribeDBParametersRequest&, DescribeDBParametersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBParametersAsyncHandler;
@@ -104,9 +95,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDatabaseObjectsResponse> DescribeDatabaseObjectsOutcome;
                 typedef std::future<DescribeDatabaseObjectsOutcome> DescribeDatabaseObjectsOutcomeCallable;
                 typedef std::function<void(const TdmysqlClient*, const Model::DescribeDatabaseObjectsRequest&, DescribeDatabaseObjectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseObjectsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeDatabaseTableResponse> DescribeDatabaseTableOutcome;
-                typedef std::future<DescribeDatabaseTableOutcome> DescribeDatabaseTableOutcomeCallable;
-                typedef std::function<void(const TdmysqlClient*, const Model::DescribeDatabaseTableRequest&, DescribeDatabaseTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseTableAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFlowResponse> DescribeFlowOutcome;
                 typedef std::future<DescribeFlowOutcome> DescribeFlowOutcomeCallable;
                 typedef std::function<void(const TdmysqlClient*, const Model::DescribeFlowRequest&, DescribeFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowAsyncHandler;
@@ -119,9 +107,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAutoRenewFlagResponse> ModifyAutoRenewFlagOutcome;
                 typedef std::future<ModifyAutoRenewFlagOutcome> ModifyAutoRenewFlagOutcomeCallable;
                 typedef std::function<void(const TdmysqlClient*, const Model::ModifyAutoRenewFlagRequest&, ModifyAutoRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoRenewFlagAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyBinlogStatusResponse> ModifyBinlogStatusOutcome;
-                typedef std::future<ModifyBinlogStatusOutcome> ModifyBinlogStatusOutcomeCallable;
-                typedef std::function<void(const TdmysqlClient*, const Model::ModifyBinlogStatusRequest&, ModifyBinlogStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBinlogStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceSecurityGroupsResponse> ModifyDBInstanceSecurityGroupsOutcome;
                 typedef std::future<ModifyDBInstanceSecurityGroupsOutcome> ModifyDBInstanceSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const TdmysqlClient*, const Model::ModifyDBInstanceSecurityGroupsRequest&, ModifyDBInstanceSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSecurityGroupsAsyncHandler;
@@ -166,17 +151,6 @@ namespace TencentCloud
                 DeleteDBSBackupSetsOutcome DeleteDBSBackupSets(const Model::DeleteDBSBackupSetsRequest &request);
                 void DeleteDBSBackupSetsAsync(const Model::DeleteDBSBackupSetsRequest& request, const DeleteDBSBackupSetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDBSBackupSetsOutcomeCallable DeleteDBSBackupSetsCallable(const Model::DeleteDBSBackupSetsRequest& request);
-
-                /**
-                 *已无地方调用
-
-本接口（DescribeBillingEnable）用于查询计费是否开启
-                 * @param req DescribeBillingEnableRequest
-                 * @return DescribeBillingEnableOutcome
-                 */
-                DescribeBillingEnableOutcome DescribeBillingEnable(const Model::DescribeBillingEnableRequest &request);
-                void DescribeBillingEnableAsync(const Model::DescribeBillingEnableRequest& request, const DescribeBillingEnableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeBillingEnableOutcomeCallable DescribeBillingEnableCallable(const Model::DescribeBillingEnableRequest& request);
 
                 /**
                  *本接口（DescribeDBParameters）用于获取实例的当前参数设置。
@@ -224,17 +198,6 @@ namespace TencentCloud
                 DescribeDatabaseObjectsOutcomeCallable DescribeDatabaseObjectsCallable(const Model::DescribeDatabaseObjectsRequest& request);
 
                 /**
-                 *冗余接口，无人调用
-
-本接口（DescribeDatabaseTable）用于查询云数据库实例的表信息。
-                 * @param req DescribeDatabaseTableRequest
-                 * @return DescribeDatabaseTableOutcome
-                 */
-                DescribeDatabaseTableOutcome DescribeDatabaseTable(const Model::DescribeDatabaseTableRequest &request);
-                void DescribeDatabaseTableAsync(const Model::DescribeDatabaseTableRequest& request, const DescribeDatabaseTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeDatabaseTableOutcomeCallable DescribeDatabaseTableCallable(const Model::DescribeDatabaseTableRequest& request);
-
-                /**
                  *本接口（DescribeFlow）用于查询异步任务流程状态
                  * @param req DescribeFlowRequest
                  * @return DescribeFlowOutcome
@@ -269,17 +232,6 @@ namespace TencentCloud
                 ModifyAutoRenewFlagOutcome ModifyAutoRenewFlag(const Model::ModifyAutoRenewFlagRequest &request);
                 void ModifyAutoRenewFlagAsync(const Model::ModifyAutoRenewFlagRequest& request, const ModifyAutoRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAutoRenewFlagOutcomeCallable ModifyAutoRenewFlagCallable(const Model::ModifyAutoRenewFlagRequest& request);
-
-                /**
-                 *接口功能已被 ModifyInstanceCdc 完全覆盖
-
-修改binlog状态
-                 * @param req ModifyBinlogStatusRequest
-                 * @return ModifyBinlogStatusOutcome
-                 */
-                ModifyBinlogStatusOutcome ModifyBinlogStatus(const Model::ModifyBinlogStatusRequest &request);
-                void ModifyBinlogStatusAsync(const Model::ModifyBinlogStatusRequest& request, const ModifyBinlogStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyBinlogStatusOutcomeCallable ModifyBinlogStatusCallable(const Model::ModifyBinlogStatusRequest& request);
 
                 /**
                  *本接口（ModifyDBInstanceSecurityGroups）用于修改云数据库安全组

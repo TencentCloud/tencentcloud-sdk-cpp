@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TDMYSQL_V20211122_MODEL_TABLECOLUMN_H_
-#define TENCENTCLOUD_TDMYSQL_V20211122_MODEL_TABLECOLUMN_H_
+#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_CREATEAIGCSUBJECTOUTPUT_H_
+#define TENCENTCLOUD_VOD_V20180717_MODEL_CREATEAIGCSUBJECTOUTPUT_H_
 
 #include <string>
 #include <vector>
@@ -28,79 +28,79 @@
 
 namespace TencentCloud
 {
-    namespace Tdmysql
+    namespace Vod
     {
-        namespace V20211122
+        namespace V20180717
         {
             namespace Model
             {
                 /**
-                * 数据库列信息
+                * 创建主体输出信息。
                 */
-                class TableColumn : public AbstractModel
+                class CreateAigcSubjectOutput : public AbstractModel
                 {
                 public:
-                    TableColumn();
-                    ~TableColumn() = default;
+                    CreateAigcSubjectOutput();
+                    ~CreateAigcSubjectOutput() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取列名称
-                     * @return Col 列名称
+                     * 获取<p>主体ID。</p>
+                     * @return SubjectId <p>主体ID。</p>
                      * 
                      */
-                    std::string GetCol() const;
+                    std::string GetSubjectId() const;
 
                     /**
-                     * 设置列名称
-                     * @param _col 列名称
+                     * 设置<p>主体ID。</p>
+                     * @param _subjectId <p>主体ID。</p>
                      * 
                      */
-                    void SetCol(const std::string& _col);
+                    void SetSubjectId(const std::string& _subjectId);
 
                     /**
-                     * 判断参数 Col 是否已赋值
-                     * @return Col 是否已赋值
+                     * 判断参数 SubjectId 是否已赋值
+                     * @return SubjectId 是否已赋值
                      * 
                      */
-                    bool ColHasBeenSet() const;
+                    bool SubjectIdHasBeenSet() const;
 
                     /**
-                     * 获取列类型
-                     * @return Type 列类型
+                     * 获取<p>主体信息。</p>
+                     * @return SubjectInfo <p>主体信息。</p>
                      * 
                      */
-                    std::string GetType() const;
+                    std::string GetSubjectInfo() const;
 
                     /**
-                     * 设置列类型
-                     * @param _type 列类型
+                     * 设置<p>主体信息。</p>
+                     * @param _subjectInfo <p>主体信息。</p>
                      * 
                      */
-                    void SetType(const std::string& _type);
+                    void SetSubjectInfo(const std::string& _subjectInfo);
 
                     /**
-                     * 判断参数 Type 是否已赋值
-                     * @return Type 是否已赋值
+                     * 判断参数 SubjectInfo 是否已赋值
+                     * @return SubjectInfo 是否已赋值
                      * 
                      */
-                    bool TypeHasBeenSet() const;
+                    bool SubjectInfoHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 列名称
+                     * <p>主体ID。</p>
                      */
-                    std::string m_col;
-                    bool m_colHasBeenSet;
+                    std::string m_subjectId;
+                    bool m_subjectIdHasBeenSet;
 
                     /**
-                     * 列类型
+                     * <p>主体信息。</p>
                      */
-                    std::string m_type;
-                    bool m_typeHasBeenSet;
+                    std::string m_subjectInfo;
+                    bool m_subjectInfoHasBeenSet;
 
                 };
             }
@@ -108,4 +108,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TDMYSQL_V20211122_MODEL_TABLECOLUMN_H_
+#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_CREATEAIGCSUBJECTOUTPUT_H_

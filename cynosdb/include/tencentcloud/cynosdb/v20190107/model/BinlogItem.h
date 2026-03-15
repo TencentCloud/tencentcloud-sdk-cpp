@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/VaultInfo.h>
 
 
 namespace TencentCloud
@@ -172,6 +173,90 @@ namespace TencentCloud
                      */
                     bool CrossRegionsHasBeenSet() const;
 
+                    /**
+                     * 获取备份投递状态
+                     * @return CopyStatus 备份投递状态
+                     * 
+                     */
+                    std::string GetCopyStatus() const;
+
+                    /**
+                     * 设置备份投递状态
+                     * @param _copyStatus 备份投递状态
+                     * 
+                     */
+                    void SetCopyStatus(const std::string& _copyStatus);
+
+                    /**
+                     * 判断参数 CopyStatus 是否已赋值
+                     * @return CopyStatus 是否已赋值
+                     * 
+                     */
+                    bool CopyStatusHasBeenSet() const;
+
+                    /**
+                     * 获取保险箱信息
+                     * @return VaultInfos 保险箱信息
+                     * 
+                     */
+                    std::vector<VaultInfo> GetVaultInfos() const;
+
+                    /**
+                     * 设置保险箱信息
+                     * @param _vaultInfos 保险箱信息
+                     * 
+                     */
+                    void SetVaultInfos(const std::vector<VaultInfo>& _vaultInfos);
+
+                    /**
+                     * 判断参数 VaultInfos 是否已赋值
+                     * @return VaultInfos 是否已赋值
+                     * 
+                     */
+                    bool VaultInfosHasBeenSet() const;
+
+                    /**
+                     * 获取加密秘钥key
+                     * @return EncryptKeyId 加密秘钥key
+                     * 
+                     */
+                    std::string GetEncryptKeyId() const;
+
+                    /**
+                     * 设置加密秘钥key
+                     * @param _encryptKeyId 加密秘钥key
+                     * 
+                     */
+                    void SetEncryptKeyId(const std::string& _encryptKeyId);
+
+                    /**
+                     * 判断参数 EncryptKeyId 是否已赋值
+                     * @return EncryptKeyId 是否已赋值
+                     * 
+                     */
+                    bool EncryptKeyIdHasBeenSet() const;
+
+                    /**
+                     * 获取加密秘钥地域
+                     * @return EncryptRegion 加密秘钥地域
+                     * 
+                     */
+                    std::string GetEncryptRegion() const;
+
+                    /**
+                     * 设置加密秘钥地域
+                     * @param _encryptRegion 加密秘钥地域
+                     * 
+                     */
+                    void SetEncryptRegion(const std::string& _encryptRegion);
+
+                    /**
+                     * 判断参数 EncryptRegion 是否已赋值
+                     * @return EncryptRegion 是否已赋值
+                     * 
+                     */
+                    bool EncryptRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +294,30 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_crossRegions;
                     bool m_crossRegionsHasBeenSet;
+
+                    /**
+                     * 备份投递状态
+                     */
+                    std::string m_copyStatus;
+                    bool m_copyStatusHasBeenSet;
+
+                    /**
+                     * 保险箱信息
+                     */
+                    std::vector<VaultInfo> m_vaultInfos;
+                    bool m_vaultInfosHasBeenSet;
+
+                    /**
+                     * 加密秘钥key
+                     */
+                    std::string m_encryptKeyId;
+                    bool m_encryptKeyIdHasBeenSet;
+
+                    /**
+                     * 加密秘钥地域
+                     */
+                    std::string m_encryptRegion;
+                    bool m_encryptRegionHasBeenSet;
 
                 };
             }

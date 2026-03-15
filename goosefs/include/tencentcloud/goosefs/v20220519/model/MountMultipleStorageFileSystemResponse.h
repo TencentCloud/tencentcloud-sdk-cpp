@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TDMYSQL_V20211122_MODEL_DESCRIBEBILLINGENABLEREQUEST_H_
-#define TENCENTCLOUD_TDMYSQL_V20211122_MODEL_DESCRIBEBILLINGENABLEREQUEST_H_
+#ifndef TENCENTCLOUD_GOOSEFS_V20220519_MODEL_MOUNTMULTIPLESTORAGEFILESYSTEMRESPONSE_H_
+#define TENCENTCLOUD_GOOSEFS_V20220519_MODEL_MOUNTMULTIPLESTORAGEFILESYSTEMRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,21 @@
 
 namespace TencentCloud
 {
-    namespace Tdmysql
+    namespace Goosefs
     {
-        namespace V20211122
+        namespace V20220519
         {
             namespace Model
             {
                 /**
-                * DescribeBillingEnable请求参数结构体
+                * MountMultipleStorageFileSystem返回参数结构体
                 */
-                class DescribeBillingEnableRequest : public AbstractModel
+                class MountMultipleStorageFileSystemResponse : public AbstractModel
                 {
                 public:
-                    DescribeBillingEnableRequest();
-                    ~DescribeBillingEnableRequest() = default;
+                    MountMultipleStorageFileSystemResponse();
+                    ~MountMultipleStorageFileSystemResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
@@ -50,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TDMYSQL_V20211122_MODEL_DESCRIBEBILLINGENABLEREQUEST_H_
+#endif // !TENCENTCLOUD_GOOSEFS_V20220519_MODEL_MOUNTMULTIPLESTORAGEFILESYSTEMRESPONSE_H_

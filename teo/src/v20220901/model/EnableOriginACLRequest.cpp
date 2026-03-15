@@ -27,7 +27,8 @@ EnableOriginACLRequest::EnableOriginACLRequest() :
     m_l7EnableModeHasBeenSet(false),
     m_l7HostsHasBeenSet(false),
     m_l4EnableModeHasBeenSet(false),
-    m_l4ProxyIdsHasBeenSet(false)
+    m_l4ProxyIdsHasBeenSet(false),
+    m_originACLFamilyHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string EnableOriginACLRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_originACLFamilyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginACLFamily";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_originACLFamily.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -174,6 +183,22 @@ void EnableOriginACLRequest::SetL4ProxyIds(const vector<string>& _l4ProxyIds)
 bool EnableOriginACLRequest::L4ProxyIdsHasBeenSet() const
 {
     return m_l4ProxyIdsHasBeenSet;
+}
+
+string EnableOriginACLRequest::GetOriginACLFamily() const
+{
+    return m_originACLFamily;
+}
+
+void EnableOriginACLRequest::SetOriginACLFamily(const string& _originACLFamily)
+{
+    m_originACLFamily = _originACLFamily;
+    m_originACLFamilyHasBeenSet = true;
+}
+
+bool EnableOriginACLRequest::OriginACLFamilyHasBeenSet() const
+{
+    return m_originACLFamilyHasBeenSet;
 }
 
 

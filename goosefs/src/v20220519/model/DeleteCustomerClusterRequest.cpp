@@ -14,41 +14,41 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tdmysql/v20211122/model/ModifyBinlogStatusRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/DeleteCustomerClusterRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Tdmysql::V20211122::Model;
+using namespace TencentCloud::Goosefs::V20220519::Model;
 using namespace std;
 
-ModifyBinlogStatusRequest::ModifyBinlogStatusRequest() :
-    m_instanceIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+DeleteCustomerClusterRequest::DeleteCustomerClusterRequest() :
+    m_fileSystemIdHasBeenSet(false),
+    m_clusterIdHasBeenSet(false)
 {
 }
 
-string ModifyBinlogStatusRequest::ToJsonString() const
+string DeleteCustomerClusterRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_instanceIdHasBeenSet)
+    if (m_fileSystemIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceId";
+        string key = "FileSystemId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileSystemId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_statusHasBeenSet)
+    if (m_clusterIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
+        string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_status, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -59,36 +59,36 @@ string ModifyBinlogStatusRequest::ToJsonString() const
 }
 
 
-string ModifyBinlogStatusRequest::GetInstanceId() const
+string DeleteCustomerClusterRequest::GetFileSystemId() const
 {
-    return m_instanceId;
+    return m_fileSystemId;
 }
 
-void ModifyBinlogStatusRequest::SetInstanceId(const string& _instanceId)
+void DeleteCustomerClusterRequest::SetFileSystemId(const string& _fileSystemId)
 {
-    m_instanceId = _instanceId;
-    m_instanceIdHasBeenSet = true;
+    m_fileSystemId = _fileSystemId;
+    m_fileSystemIdHasBeenSet = true;
 }
 
-bool ModifyBinlogStatusRequest::InstanceIdHasBeenSet() const
+bool DeleteCustomerClusterRequest::FileSystemIdHasBeenSet() const
 {
-    return m_instanceIdHasBeenSet;
+    return m_fileSystemIdHasBeenSet;
 }
 
-uint64_t ModifyBinlogStatusRequest::GetStatus() const
+string DeleteCustomerClusterRequest::GetClusterId() const
 {
-    return m_status;
+    return m_clusterId;
 }
 
-void ModifyBinlogStatusRequest::SetStatus(const uint64_t& _status)
+void DeleteCustomerClusterRequest::SetClusterId(const string& _clusterId)
 {
-    m_status = _status;
-    m_statusHasBeenSet = true;
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
 }
 
-bool ModifyBinlogStatusRequest::StatusHasBeenSet() const
+bool DeleteCustomerClusterRequest::ClusterIdHasBeenSet() const
 {
-    return m_statusHasBeenSet;
+    return m_clusterIdHasBeenSet;
 }
 
 

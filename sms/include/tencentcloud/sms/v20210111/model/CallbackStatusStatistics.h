@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>短信回执量统计。</p><p>单位：数</p>
-                     * @return CallbackCount <p>短信回执量统计。</p><p>单位：数</p>
+                     * 获取<p>短信回执量统计。</p><p>单位：个</p>
+                     * @return CallbackCount <p>短信回执量统计。</p><p>单位：个</p>
                      * 
                      */
                     uint64_t GetCallbackCount() const;
 
                     /**
-                     * 设置<p>短信回执量统计。</p><p>单位：数</p>
-                     * @param _callbackCount <p>短信回执量统计。</p><p>单位：数</p>
+                     * 设置<p>短信回执量统计。</p><p>单位：个</p>
+                     * @param _callbackCount <p>短信回执量统计。</p><p>单位：个</p>
                      * 
                      */
                     void SetCallbackCount(const uint64_t& _callbackCount);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CallbackCountHasBeenSet() const;
 
                     /**
-                     * 获取<p>短信提交成功量统计。</p><p>单位：数</p>
-                     * @return RequestSuccessCount <p>短信提交成功量统计。</p><p>单位：数</p>
+                     * 获取<p>短信提交成功量统计。</p><p>单位：个</p>
+                     * @return RequestSuccessCount <p>短信提交成功量统计。</p><p>单位：个</p>
                      * 
                      */
                     uint64_t GetRequestSuccessCount() const;
 
                     /**
-                     * 设置<p>短信提交成功量统计。</p><p>单位：数</p>
-                     * @param _requestSuccessCount <p>短信提交成功量统计。</p><p>单位：数</p>
+                     * 设置<p>短信提交成功量统计。</p><p>单位：个</p>
+                     * @param _requestSuccessCount <p>短信提交成功量统计。</p><p>单位：个</p>
                      * 
                      */
                     void SetRequestSuccessCount(const uint64_t& _requestSuccessCount);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool RequestSuccessCountHasBeenSet() const;
 
                     /**
-                     * 获取<p>短信回执失败量统计。</p><p>单位：数</p>
-                     * @return CallbackFailCount <p>短信回执失败量统计。</p><p>单位：数</p>
+                     * 获取<p>短信回执失败量统计。</p><p>单位：个</p>
+                     * @return CallbackFailCount <p>短信回执失败量统计。</p><p>单位：个</p>
                      * 
                      */
                     uint64_t GetCallbackFailCount() const;
 
                     /**
-                     * 设置<p>短信回执失败量统计。</p><p>单位：数</p>
-                     * @param _callbackFailCount <p>短信回执失败量统计。</p><p>单位：数</p>
+                     * 设置<p>短信回执失败量统计。</p><p>单位：个</p>
+                     * @param _callbackFailCount <p>短信回执失败量统计。</p><p>单位：个</p>
                      * 
                      */
                     void SetCallbackFailCount(const uint64_t& _callbackFailCount);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool CallbackFailCountHasBeenSet() const;
 
                     /**
-                     * 获取<p>短信回执成功量统计。</p><p>单位：数</p>
-                     * @return CallbackSuccessCount <p>短信回执成功量统计。</p><p>单位：数</p>
+                     * 获取<p>短信回执成功量统计。</p><p>单位：个</p>
+                     * @return CallbackSuccessCount <p>短信回执成功量统计。</p><p>单位：个</p>
                      * 
                      */
                     uint64_t GetCallbackSuccessCount() const;
 
                     /**
-                     * 设置<p>短信回执成功量统计。</p><p>单位：数</p>
-                     * @param _callbackSuccessCount <p>短信回执成功量统计。</p><p>单位：数</p>
+                     * 设置<p>短信回执成功量统计。</p><p>单位：个</p>
+                     * @param _callbackSuccessCount <p>短信回执成功量统计。</p><p>单位：个</p>
                      * 
                      */
                     void SetCallbackSuccessCount(const uint64_t& _callbackSuccessCount);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool CallbackSuccessCountHasBeenSet() const;
 
                     /**
-                     * 获取<p>运营商内部错误统计。</p><p>单位：数</p>
-                     * @return InternalErrorCount <p>运营商内部错误统计。</p><p>单位：数</p>
+                     * 获取<p>运营商内部错误统计。</p><p>单位：个</p>
+                     * @return InternalErrorCount <p>运营商内部错误统计。</p><p>单位：个</p>
                      * 
                      */
                     uint64_t GetInternalErrorCount() const;
 
                     /**
-                     * 设置<p>运营商内部错误统计。</p><p>单位：数</p>
-                     * @param _internalErrorCount <p>运营商内部错误统计。</p><p>单位：数</p>
+                     * 设置<p>运营商内部错误统计。</p><p>单位：个</p>
+                     * @param _internalErrorCount <p>运营商内部错误统计。</p><p>单位：个</p>
                      * 
                      */
                     void SetInternalErrorCount(const uint64_t& _internalErrorCount);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool InternalErrorCountHasBeenSet() const;
 
                     /**
-                     * 获取<p>号码无效或空号统计。</p><p>单位：数</p>
-                     * @return InvalidNumberCount <p>号码无效或空号统计。</p><p>单位：数</p>
+                     * 获取<p>号码无效或空号统计。</p><p>单位：个</p>
+                     * @return InvalidNumberCount <p>号码无效或空号统计。</p><p>单位：个</p>
                      * 
                      */
                     uint64_t GetInvalidNumberCount() const;
 
                     /**
-                     * 设置<p>号码无效或空号统计。</p><p>单位：数</p>
-                     * @param _invalidNumberCount <p>号码无效或空号统计。</p><p>单位：数</p>
+                     * 设置<p>号码无效或空号统计。</p><p>单位：个</p>
+                     * @param _invalidNumberCount <p>号码无效或空号统计。</p><p>单位：个</p>
                      * 
                      */
                     void SetInvalidNumberCount(const uint64_t& _invalidNumberCount);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool InvalidNumberCountHasBeenSet() const;
 
                     /**
-                     * 获取<p>停机、关机等错误统计。</p><p>单位：数</p>
-                     * @return ShutdownErrorCount <p>停机、关机等错误统计。</p><p>单位：数</p>
+                     * 获取<p>停机、关机等错误统计。</p><p>单位：个</p>
+                     * @return ShutdownErrorCount <p>停机、关机等错误统计。</p><p>单位：个</p>
                      * 
                      */
                     uint64_t GetShutdownErrorCount() const;
 
                     /**
-                     * 设置<p>停机、关机等错误统计。</p><p>单位：数</p>
-                     * @param _shutdownErrorCount <p>停机、关机等错误统计。</p><p>单位：数</p>
+                     * 设置<p>停机、关机等错误统计。</p><p>单位：个</p>
+                     * @param _shutdownErrorCount <p>停机、关机等错误统计。</p><p>单位：个</p>
                      * 
                      */
                     void SetShutdownErrorCount(const uint64_t& _shutdownErrorCount);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool ShutdownErrorCountHasBeenSet() const;
 
                     /**
-                     * 获取<p>号码拉入免打扰名单统计。</p><p>单位：数</p>
-                     * @return BlackListCount <p>号码拉入免打扰名单统计。</p><p>单位：数</p>
+                     * 获取<p>号码拉入免打扰名单统计。</p><p>单位：个</p>
+                     * @return BlackListCount <p>号码拉入免打扰名单统计。</p><p>单位：个</p>
                      * 
                      */
                     uint64_t GetBlackListCount() const;
 
                     /**
-                     * 设置<p>号码拉入免打扰名单统计。</p><p>单位：数</p>
-                     * @param _blackListCount <p>号码拉入免打扰名单统计。</p><p>单位：数</p>
+                     * 设置<p>号码拉入免打扰名单统计。</p><p>单位：个</p>
+                     * @param _blackListCount <p>号码拉入免打扰名单统计。</p><p>单位：个</p>
                      * 
                      */
                     void SetBlackListCount(const uint64_t& _blackListCount);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool BlackListCountHasBeenSet() const;
 
                     /**
-                     * 获取<p>运营商频率限制统计。</p><p>单位：数</p>
-                     * @return FrequencyLimitCount <p>运营商频率限制统计。</p><p>单位：数</p>
+                     * 获取<p>运营商频率限制统计。</p><p>单位：个</p>
+                     * @return FrequencyLimitCount <p>运营商频率限制统计。</p><p>单位：个</p>
                      * 
                      */
                     uint64_t GetFrequencyLimitCount() const;
 
                     /**
-                     * 设置<p>运营商频率限制统计。</p><p>单位：数</p>
-                     * @param _frequencyLimitCount <p>运营商频率限制统计。</p><p>单位：数</p>
+                     * 设置<p>运营商频率限制统计。</p><p>单位：个</p>
+                     * @param _frequencyLimitCount <p>运营商频率限制统计。</p><p>单位：个</p>
                      * 
                      */
                     void SetFrequencyLimitCount(const uint64_t& _frequencyLimitCount);
@@ -238,55 +238,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>短信回执量统计。</p><p>单位：数</p>
+                     * <p>短信回执量统计。</p><p>单位：个</p>
                      */
                     uint64_t m_callbackCount;
                     bool m_callbackCountHasBeenSet;
 
                     /**
-                     * <p>短信提交成功量统计。</p><p>单位：数</p>
+                     * <p>短信提交成功量统计。</p><p>单位：个</p>
                      */
                     uint64_t m_requestSuccessCount;
                     bool m_requestSuccessCountHasBeenSet;
 
                     /**
-                     * <p>短信回执失败量统计。</p><p>单位：数</p>
+                     * <p>短信回执失败量统计。</p><p>单位：个</p>
                      */
                     uint64_t m_callbackFailCount;
                     bool m_callbackFailCountHasBeenSet;
 
                     /**
-                     * <p>短信回执成功量统计。</p><p>单位：数</p>
+                     * <p>短信回执成功量统计。</p><p>单位：个</p>
                      */
                     uint64_t m_callbackSuccessCount;
                     bool m_callbackSuccessCountHasBeenSet;
 
                     /**
-                     * <p>运营商内部错误统计。</p><p>单位：数</p>
+                     * <p>运营商内部错误统计。</p><p>单位：个</p>
                      */
                     uint64_t m_internalErrorCount;
                     bool m_internalErrorCountHasBeenSet;
 
                     /**
-                     * <p>号码无效或空号统计。</p><p>单位：数</p>
+                     * <p>号码无效或空号统计。</p><p>单位：个</p>
                      */
                     uint64_t m_invalidNumberCount;
                     bool m_invalidNumberCountHasBeenSet;
 
                     /**
-                     * <p>停机、关机等错误统计。</p><p>单位：数</p>
+                     * <p>停机、关机等错误统计。</p><p>单位：个</p>
                      */
                     uint64_t m_shutdownErrorCount;
                     bool m_shutdownErrorCountHasBeenSet;
 
                     /**
-                     * <p>号码拉入免打扰名单统计。</p><p>单位：数</p>
+                     * <p>号码拉入免打扰名单统计。</p><p>单位：个</p>
                      */
                     uint64_t m_blackListCount;
                     bool m_blackListCountHasBeenSet;
 
                     /**
-                     * <p>运营商频率限制统计。</p><p>单位：数</p>
+                     * <p>运营商频率限制统计。</p><p>单位：个</p>
                      */
                     uint64_t m_frequencyLimitCount;
                     bool m_frequencyLimitCountHasBeenSet;

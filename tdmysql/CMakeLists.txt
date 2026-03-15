@@ -21,23 +21,17 @@ set(tdmysql_public_header
 set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/ArchiveLogInterval.h
   include/tencentcloud/tdmysql/v20211122/model/IsolateDBInstanceRequest.h
-  include/tencentcloud/tdmysql/v20211122/model/ModifyBinlogStatusResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeFlowRequest.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyDBSBackupSetCommentResponse.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyInstanceNameResponse.h
-  include/tencentcloud/tdmysql/v20211122/model/DescribeDatabaseTableRequest.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyDBInstanceSecurityGroupsResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBParametersRequest.h
-  include/tencentcloud/tdmysql/v20211122/model/DescribeDatabaseTableResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDatabaseObjectsResponse.h
   include/tencentcloud/tdmysql/v20211122/model/SecurityGroupBound.h
   include/tencentcloud/tdmysql/v20211122/model/CreateDBSBackupResponse.h
   include/tencentcloud/tdmysql/v20211122/model/CreateDBSBackupRequest.h
-  include/tencentcloud/tdmysql/v20211122/model/DescribeBillingEnableResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DestroyInstancesRequest.h
-  include/tencentcloud/tdmysql/v20211122/model/DescribeBillingEnableRequest.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBSecurityGroupsRequest.h
-  include/tencentcloud/tdmysql/v20211122/model/TableColumn.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyDBParametersResponse.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyInstanceNameRequest.h
   include/tencentcloud/tdmysql/v20211122/model/ParamDesc.h
@@ -68,7 +62,6 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/DatabaseProcedure.h
   include/tencentcloud/tdmysql/v20211122/model/DBParamValue.h
   include/tencentcloud/tdmysql/v20211122/model/ParamConstraint.h
-  include/tencentcloud/tdmysql/v20211122/model/ModifyBinlogStatusRequest.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyDBParametersRequest.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyDBInstanceSecurityGroupsRequest.h
   include/tencentcloud/tdmysql/v20211122/model/DeleteDBSBackupSetsRequest.h
@@ -79,23 +72,17 @@ set(tdmysql_src
   src/v20211122/TdmysqlClient.cpp
   src/v20211122/model/ArchiveLogInterval.cpp
   src/v20211122/model/IsolateDBInstanceRequest.cpp
-  src/v20211122/model/ModifyBinlogStatusResponse.cpp
   src/v20211122/model/DescribeFlowRequest.cpp
   src/v20211122/model/ModifyDBSBackupSetCommentResponse.cpp
   src/v20211122/model/ModifyInstanceNameResponse.cpp
-  src/v20211122/model/DescribeDatabaseTableRequest.cpp
   src/v20211122/model/ModifyDBInstanceSecurityGroupsResponse.cpp
   src/v20211122/model/DescribeDBParametersRequest.cpp
-  src/v20211122/model/DescribeDatabaseTableResponse.cpp
   src/v20211122/model/DescribeDatabaseObjectsResponse.cpp
   src/v20211122/model/SecurityGroupBound.cpp
   src/v20211122/model/CreateDBSBackupResponse.cpp
   src/v20211122/model/CreateDBSBackupRequest.cpp
-  src/v20211122/model/DescribeBillingEnableResponse.cpp
   src/v20211122/model/DestroyInstancesRequest.cpp
-  src/v20211122/model/DescribeBillingEnableRequest.cpp
   src/v20211122/model/DescribeDBSecurityGroupsRequest.cpp
-  src/v20211122/model/TableColumn.cpp
   src/v20211122/model/ModifyDBParametersResponse.cpp
   src/v20211122/model/ModifyInstanceNameRequest.cpp
   src/v20211122/model/ParamDesc.cpp
@@ -126,7 +113,6 @@ set(tdmysql_src
   src/v20211122/model/DatabaseProcedure.cpp
   src/v20211122/model/DBParamValue.cpp
   src/v20211122/model/ParamConstraint.cpp
-  src/v20211122/model/ModifyBinlogStatusRequest.cpp
   src/v20211122/model/ModifyDBParametersRequest.cpp
   src/v20211122/model/ModifyDBInstanceSecurityGroupsRequest.cpp
   src/v20211122/model/DeleteDBSBackupSetsRequest.cpp

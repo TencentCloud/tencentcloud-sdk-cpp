@@ -14,24 +14,33 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tdmysql/v20211122/model/DescribeBillingEnableRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/DescribeCustomerClusterRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Tdmysql::V20211122::Model;
+using namespace TencentCloud::Goosefs::V20220519::Model;
 using namespace std;
 
-DescribeBillingEnableRequest::DescribeBillingEnableRequest()
+DescribeCustomerClusterRequest::DescribeCustomerClusterRequest() :
+    m_fileSystemIdHasBeenSet(false)
 {
 }
 
-string DescribeBillingEnableRequest::ToJsonString() const
+string DescribeCustomerClusterRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_fileSystemIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileSystemId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileSystemId.c_str(), allocator).Move(), allocator);
+    }
 
 
     rapidjson::StringBuffer buffer;
@@ -40,5 +49,21 @@ string DescribeBillingEnableRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeCustomerClusterRequest::GetFileSystemId() const
+{
+    return m_fileSystemId;
+}
+
+void DescribeCustomerClusterRequest::SetFileSystemId(const string& _fileSystemId)
+{
+    m_fileSystemId = _fileSystemId;
+    m_fileSystemIdHasBeenSet = true;
+}
+
+bool DescribeCustomerClusterRequest::FileSystemIdHasBeenSet() const
+{
+    return m_fileSystemIdHasBeenSet;
+}
 
 

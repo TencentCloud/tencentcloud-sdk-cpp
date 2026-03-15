@@ -190,56 +190,6 @@ TdmysqlClient::DeleteDBSBackupSetsOutcomeCallable TdmysqlClient::DeleteDBSBackup
     return prom->get_future();
 }
 
-TdmysqlClient::DescribeBillingEnableOutcome TdmysqlClient::DescribeBillingEnable(const DescribeBillingEnableRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeBillingEnable");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeBillingEnableResponse rsp = DescribeBillingEnableResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeBillingEnableOutcome(rsp);
-        else
-            return DescribeBillingEnableOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeBillingEnableOutcome(outcome.GetError());
-    }
-}
-
-void TdmysqlClient::DescribeBillingEnableAsync(const DescribeBillingEnableRequest& request, const DescribeBillingEnableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeBillingEnableRequest&;
-    using Resp = DescribeBillingEnableResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeBillingEnable", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TdmysqlClient::DescribeBillingEnableOutcomeCallable TdmysqlClient::DescribeBillingEnableCallable(const DescribeBillingEnableRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeBillingEnableOutcome>>();
-    DescribeBillingEnableAsync(
-    request,
-    [prom](
-        const TdmysqlClient*,
-        const DescribeBillingEnableRequest&,
-        DescribeBillingEnableOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 TdmysqlClient::DescribeDBParametersOutcome TdmysqlClient::DescribeDBParameters(const DescribeDBParametersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBParameters");
@@ -490,56 +440,6 @@ TdmysqlClient::DescribeDatabaseObjectsOutcomeCallable TdmysqlClient::DescribeDat
     return prom->get_future();
 }
 
-TdmysqlClient::DescribeDatabaseTableOutcome TdmysqlClient::DescribeDatabaseTable(const DescribeDatabaseTableRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeDatabaseTable");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeDatabaseTableResponse rsp = DescribeDatabaseTableResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeDatabaseTableOutcome(rsp);
-        else
-            return DescribeDatabaseTableOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeDatabaseTableOutcome(outcome.GetError());
-    }
-}
-
-void TdmysqlClient::DescribeDatabaseTableAsync(const DescribeDatabaseTableRequest& request, const DescribeDatabaseTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeDatabaseTableRequest&;
-    using Resp = DescribeDatabaseTableResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeDatabaseTable", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TdmysqlClient::DescribeDatabaseTableOutcomeCallable TdmysqlClient::DescribeDatabaseTableCallable(const DescribeDatabaseTableRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeDatabaseTableOutcome>>();
-    DescribeDatabaseTableAsync(
-    request,
-    [prom](
-        const TdmysqlClient*,
-        const DescribeDatabaseTableRequest&,
-        DescribeDatabaseTableOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 TdmysqlClient::DescribeFlowOutcome TdmysqlClient::DescribeFlow(const DescribeFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFlow");
@@ -732,56 +632,6 @@ TdmysqlClient::ModifyAutoRenewFlagOutcomeCallable TdmysqlClient::ModifyAutoRenew
         const TdmysqlClient*,
         const ModifyAutoRenewFlagRequest&,
         ModifyAutoRenewFlagOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-TdmysqlClient::ModifyBinlogStatusOutcome TdmysqlClient::ModifyBinlogStatus(const ModifyBinlogStatusRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyBinlogStatus");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyBinlogStatusResponse rsp = ModifyBinlogStatusResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyBinlogStatusOutcome(rsp);
-        else
-            return ModifyBinlogStatusOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyBinlogStatusOutcome(outcome.GetError());
-    }
-}
-
-void TdmysqlClient::ModifyBinlogStatusAsync(const ModifyBinlogStatusRequest& request, const ModifyBinlogStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const ModifyBinlogStatusRequest&;
-    using Resp = ModifyBinlogStatusResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "ModifyBinlogStatus", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TdmysqlClient::ModifyBinlogStatusOutcomeCallable TdmysqlClient::ModifyBinlogStatusCallable(const ModifyBinlogStatusRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<ModifyBinlogStatusOutcome>>();
-    ModifyBinlogStatusAsync(
-    request,
-    [prom](
-        const TdmysqlClient*,
-        const ModifyBinlogStatusRequest&,
-        ModifyBinlogStatusOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

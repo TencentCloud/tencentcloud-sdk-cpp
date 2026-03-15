@@ -25,7 +25,8 @@ OriginACLInfo::OriginACLInfo() :
     m_l4ProxyIdsHasBeenSet(false),
     m_currentOriginACLHasBeenSet(false),
     m_nextOriginACLHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_originACLFamilyHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome OriginACLInfo::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("OriginACLFamily") && !value["OriginACLFamily"].IsNull())
+    {
+        if (!value["OriginACLFamily"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OriginACLInfo.OriginACLFamily` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originACLFamily = string(value["OriginACLFamily"].GetString());
+        m_originACLFamilyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -161,6 +172,14 @@ void OriginACLInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originACLFamilyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginACLFamily";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originACLFamily.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -244,5 +263,21 @@ void OriginACLInfo::SetStatus(const string& _status)
 bool OriginACLInfo::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string OriginACLInfo::GetOriginACLFamily() const
+{
+    return m_originACLFamily;
+}
+
+void OriginACLInfo::SetOriginACLFamily(const string& _originACLFamily)
+{
+    m_originACLFamily = _originACLFamily;
+    m_originACLFamilyHasBeenSet = true;
+}
+
+bool OriginACLInfo::OriginACLFamilyHasBeenSet() const
+{
+    return m_originACLFamilyHasBeenSet;
 }
 

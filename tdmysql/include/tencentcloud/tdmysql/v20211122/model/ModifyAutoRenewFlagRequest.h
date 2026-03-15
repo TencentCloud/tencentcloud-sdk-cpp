@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要修改的实例列表
-                     * @return InstanceIds 需要修改的实例列表
+                     * 获取<p>需要修改的实例列表</p>
+                     * @return InstanceIds <p>需要修改的实例列表</p>
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置需要修改的实例列表
-                     * @param _instanceIds 需要修改的实例列表
+                     * 设置<p>需要修改的实例列表</p>
+                     * @param _instanceIds <p>需要修改的实例列表</p>
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取1表示开启自动续费，0为关闭自动续费
-                     * @return AutoRenewFlag 1表示开启自动续费，0为关闭自动续费
+                     * 获取<p>1表示开启自动续费，0为关闭自动续费</p>
+                     * @return AutoRenewFlag <p>1表示开启自动续费，0为关闭自动续费</p>
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置1表示开启自动续费，0为关闭自动续费
-                     * @param _autoRenewFlag 1表示开启自动续费，0为关闭自动续费
+                     * 设置<p>1表示开启自动续费，0为关闭自动续费</p>
+                     * @param _autoRenewFlag <p>1表示开启自动续费，0为关闭自动续费</p>
                      * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要修改的实例列表
+                     * <p>需要修改的实例列表</p>
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 1表示开启自动续费，0为关闭自动续费
+                     * <p>1表示开启自动续费，0为关闭自动续费</p>
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;

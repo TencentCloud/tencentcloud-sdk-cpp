@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tdmysql/v20211122/model/DescribeBillingEnableResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/DeleteCustomerClusterResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tdmysql::V20211122::Model;
+using namespace TencentCloud::Goosefs::V20220519::Model;
 using namespace std;
 
-DescribeBillingEnableResponse::DescribeBillingEnableResponse()
+DeleteCustomerClusterResponse::DeleteCustomerClusterResponse()
 {
 }
 
-CoreInternalOutcome DescribeBillingEnableResponse::Deserialize(const string &payload)
+CoreInternalOutcome DeleteCustomerClusterResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -65,7 +65,7 @@ CoreInternalOutcome DescribeBillingEnableResponse::Deserialize(const string &pay
     return CoreInternalOutcome(true);
 }
 
-string DescribeBillingEnableResponse::ToJsonString() const
+string DeleteCustomerClusterResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();

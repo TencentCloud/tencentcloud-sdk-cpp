@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateBackupVaultItem.h>
 
 
 namespace TencentCloud
@@ -193,6 +194,27 @@ namespace TencentCloud
                      */
                     bool BackupTriggerStrategyHasBeenSet() const;
 
+                    /**
+                     * 获取保险箱信息
+                     * @return AutoCopyVaults 保险箱信息
+                     * 
+                     */
+                    std::vector<CreateBackupVaultItem> GetAutoCopyVaults() const;
+
+                    /**
+                     * 设置保险箱信息
+                     * @param _autoCopyVaults 保险箱信息
+                     * 
+                     */
+                    void SetAutoCopyVaults(const std::vector<CreateBackupVaultItem>& _autoCopyVaults);
+
+                    /**
+                     * 判断参数 AutoCopyVaults 是否已赋值
+                     * @return AutoCopyVaults 是否已赋值
+                     * 
+                     */
+                    bool AutoCopyVaultsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +258,12 @@ namespace TencentCloud
                      */
                     std::string m_backupTriggerStrategy;
                     bool m_backupTriggerStrategyHasBeenSet;
+
+                    /**
+                     * 保险箱信息
+                     */
+                    std::vector<CreateBackupVaultItem> m_autoCopyVaults;
+                    bool m_autoCopyVaultsHasBeenSet;
 
                 };
             }

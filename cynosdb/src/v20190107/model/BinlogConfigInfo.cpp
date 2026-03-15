@@ -23,7 +23,8 @@ using namespace std;
 BinlogConfigInfo::BinlogConfigInfo() :
     m_binlogSaveDaysHasBeenSet(false),
     m_binlogCrossRegionsEnableHasBeenSet(false),
-    m_binlogCrossRegionsHasBeenSet(false)
+    m_binlogCrossRegionsHasBeenSet(false),
+    m_autoCopyVaultsHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,26 @@ CoreInternalOutcome BinlogConfigInfo::Deserialize(const rapidjson::Value &value)
         m_binlogCrossRegionsHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoCopyVaults") && !value["AutoCopyVaults"].IsNull())
+    {
+        if (!value["AutoCopyVaults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BinlogConfigInfo.AutoCopyVaults` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AutoCopyVaults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CreateBackupVaultItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_autoCopyVaults.push_back(item);
+        }
+        m_autoCopyVaultsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -98,6 +119,21 @@ void BinlogConfigInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         for (auto itr = m_binlogCrossRegions.begin(); itr != m_binlogCrossRegions.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_autoCopyVaultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoCopyVaults";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_autoCopyVaults.begin(); itr != m_autoCopyVaults.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -150,5 +186,21 @@ void BinlogConfigInfo::SetBinlogCrossRegions(const vector<string>& _binlogCrossR
 bool BinlogConfigInfo::BinlogCrossRegionsHasBeenSet() const
 {
     return m_binlogCrossRegionsHasBeenSet;
+}
+
+vector<CreateBackupVaultItem> BinlogConfigInfo::GetAutoCopyVaults() const
+{
+    return m_autoCopyVaults;
+}
+
+void BinlogConfigInfo::SetAutoCopyVaults(const vector<CreateBackupVaultItem>& _autoCopyVaults)
+{
+    m_autoCopyVaults = _autoCopyVaults;
+    m_autoCopyVaultsHasBeenSet = true;
+}
+
+bool BinlogConfigInfo::AutoCopyVaultsHasBeenSet() const
+{
+    return m_autoCopyVaultsHasBeenSet;
 }
 

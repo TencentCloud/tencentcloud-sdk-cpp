@@ -24,6 +24,7 @@ AigcVideoTaskInput::AigcVideoTaskInput() :
     m_modelNameHasBeenSet(false),
     m_modelVersionHasBeenSet(false),
     m_fileInfosHasBeenSet(false),
+    m_subjectInfosHasBeenSet(false),
     m_lastFrameFileIdHasBeenSet(false),
     m_lastFrameUrlHasBeenSet(false),
     m_promptHasBeenSet(false),
@@ -79,6 +80,26 @@ CoreInternalOutcome AigcVideoTaskInput::Deserialize(const rapidjson::Value &valu
             m_fileInfos.push_back(item);
         }
         m_fileInfosHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubjectInfos") && !value["SubjectInfos"].IsNull())
+    {
+        if (!value["SubjectInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AigcVideoTaskInput.SubjectInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SubjectInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AigcVideoTaskInputSubjectInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_subjectInfos.push_back(item);
+        }
+        m_subjectInfosHasBeenSet = true;
     }
 
     if (value.HasMember("LastFrameFileId") && !value["LastFrameFileId"].IsNull())
@@ -216,6 +237,21 @@ void AigcVideoTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         }
     }
 
+    if (m_subjectInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubjectInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_subjectInfos.begin(); itr != m_subjectInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_lastFrameFileIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -338,6 +374,22 @@ void AigcVideoTaskInput::SetFileInfos(const vector<AigcVideoTaskInputFileInfo>& 
 bool AigcVideoTaskInput::FileInfosHasBeenSet() const
 {
     return m_fileInfosHasBeenSet;
+}
+
+vector<AigcVideoTaskInputSubjectInfo> AigcVideoTaskInput::GetSubjectInfos() const
+{
+    return m_subjectInfos;
+}
+
+void AigcVideoTaskInput::SetSubjectInfos(const vector<AigcVideoTaskInputSubjectInfo>& _subjectInfos)
+{
+    m_subjectInfos = _subjectInfos;
+    m_subjectInfosHasBeenSet = true;
+}
+
+bool AigcVideoTaskInput::SubjectInfosHasBeenSet() const
+{
+    return m_subjectInfosHasBeenSet;
 }
 
 string AigcVideoTaskInput::GetLastFrameFileId() const
