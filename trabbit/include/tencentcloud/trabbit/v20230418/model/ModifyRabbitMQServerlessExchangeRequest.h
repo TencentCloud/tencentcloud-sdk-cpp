@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取备用交换机
+                     * @return AlternateExchange 备用交换机
+                     * 
+                     */
+                    std::string GetAlternateExchange() const;
+
+                    /**
+                     * 设置备用交换机
+                     * @param _alternateExchange 备用交换机
+                     * 
+                     */
+                    void SetAlternateExchange(const std::string& _alternateExchange);
+
+                    /**
+                     * 判断参数 AlternateExchange 是否已赋值
+                     * @return AlternateExchange 是否已赋值
+                     * 
+                     */
+                    bool AlternateExchangeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 备用交换机
+                     */
+                    std::string m_alternateExchange;
+                    bool m_alternateExchangeHasBeenSet;
 
                 };
             }

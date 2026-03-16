@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功
-                     * @return Status 任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功
+                     * 获取<p>任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功</p>
+                     * @return Status <p>任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功</p>
                      * 
                      */
                     std::string GetStatus() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取错误码
-                     * @return ErrorCode 错误码
+                     * 获取<p>错误码</p>
+                     * @return ErrorCode <p>错误码</p>
                      * 
                      */
                     std::string GetErrorCode() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool ErrorCodeHasBeenSet() const;
 
                     /**
-                     * 获取错误信息
-                     * @return ErrorMessage 错误信息
+                     * 获取<p>错误信息</p>
+                     * @return ErrorMessage <p>错误信息</p>
                      * 
                      */
                     std::string GetErrorMessage() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool ErrorMessageHasBeenSet() const;
 
                     /**
-                     * 获取生成的3D文件数组。
-                     * @return ResultFile3Ds 生成的3D文件数组。
+                     * 获取<p>生成的3D文件数组。</p>
+                     * @return ResultFile3Ds <p>生成的3D文件数组。</p>
                      * 
                      */
                     std::vector<File3D> GetResultFile3Ds() const;
@@ -100,31 +100,71 @@ namespace TencentCloud
                      */
                     bool ResultFile3DsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>接口任务功能参数及积分详情，返回形式为字符串。Generate参数返回对应模式及消耗积分，如：Generate-Normal：20<br>附加参数返回参数名称及消耗积分，如：MultiViewImages：10</p>
+                     * @return ResultCreditDetails <p>接口任务功能参数及积分详情，返回形式为字符串。Generate参数返回对应模式及消耗积分，如：Generate-Normal：20<br>附加参数返回参数名称及消耗积分，如：MultiViewImages：10</p>
+                     * 
+                     */
+                    std::string GetResultCreditDetails() const;
+
+                    /**
+                     * 判断参数 ResultCreditDetails 是否已赋值
+                     * @return ResultCreditDetails 是否已赋值
+                     * 
+                     */
+                    bool ResultCreditDetailsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>任务总消耗积分。</p>
+                     * @return ResultCreditConsumed <p>任务总消耗积分。</p>
+                     * 
+                     */
+                    double GetResultCreditConsumed() const;
+
+                    /**
+                     * 判断参数 ResultCreditConsumed 是否已赋值
+                     * @return ResultCreditConsumed 是否已赋值
+                     * 
+                     */
+                    bool ResultCreditConsumedHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功
+                     * <p>任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 错误码
+                     * <p>错误码</p>
                      */
                     std::string m_errorCode;
                     bool m_errorCodeHasBeenSet;
 
                     /**
-                     * 错误信息
+                     * <p>错误信息</p>
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;
 
                     /**
-                     * 生成的3D文件数组。
+                     * <p>生成的3D文件数组。</p>
                      */
                     std::vector<File3D> m_resultFile3Ds;
                     bool m_resultFile3DsHasBeenSet;
+
+                    /**
+                     * <p>接口任务功能参数及积分详情，返回形式为字符串。Generate参数返回对应模式及消耗积分，如：Generate-Normal：20<br>附加参数返回参数名称及消耗积分，如：MultiViewImages：10</p>
+                     */
+                    std::string m_resultCreditDetails;
+                    bool m_resultCreditDetailsHasBeenSet;
+
+                    /**
+                     * <p>任务总消耗积分。</p>
+                     */
+                    double m_resultCreditConsumed;
+                    bool m_resultCreditConsumedHasBeenSet;
 
                 };
             }

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例Id
-                     * @return InstanceId 实例Id
+                     * 获取<p>实例Id</p>
+                     * @return InstanceId <p>实例Id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例Id
-                     * @param _instanceId 实例Id
+                     * 设置<p>实例Id</p>
+                     * @param _instanceId <p>实例Id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Vhost参数
-                     * @return VirtualHost Vhost参数
+                     * 获取<p>Vhost参数</p>
+                     * @return VirtualHost <p>Vhost参数</p>
                      * 
                      */
                     std::string GetVirtualHost() const;
 
                     /**
-                     * 设置Vhost参数
-                     * @param _virtualHost Vhost参数
+                     * 设置<p>Vhost参数</p>
+                     * @param _virtualHost <p>Vhost参数</p>
                      * 
                      */
                     void SetVirtualHost(const std::string& _virtualHost);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool VirtualHostHasBeenSet() const;
 
                     /**
-                     * 获取分页offset
-                     * @return Offset 分页offset
+                     * 获取<p>分页offset</p>
+                     * @return Offset <p>分页offset</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页offset
-                     * @param _offset 分页offset
+                     * 设置<p>分页offset</p>
+                     * @param _offset <p>分页offset</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页limit
-                     * @return Limit 分页limit
+                     * 获取<p>分页limit</p>
+                     * @return Limit <p>分页limit</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页limit
-                     * @param _limit 分页limit
+                     * 设置<p>分页limit</p>
+                     * @param _limit <p>分页limit</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取搜索关键词，根据源exchange名称/目标资源名称/绑定key进行模糊搜索
-                     * @return SearchWord 搜索关键词，根据源exchange名称/目标资源名称/绑定key进行模糊搜索
+                     * 获取<p>搜索关键词，根据源exchange名称/目标资源名称进行模糊搜索</p>
+                     * @return SearchWord <p>搜索关键词，根据源exchange名称/目标资源名称进行模糊搜索</p>
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置搜索关键词，根据源exchange名称/目标资源名称/绑定key进行模糊搜索
-                     * @param _searchWord 搜索关键词，根据源exchange名称/目标资源名称/绑定key进行模糊搜索
+                     * 设置<p>搜索关键词，根据源exchange名称/目标资源名称进行模糊搜索</p>
+                     * @param _searchWord <p>搜索关键词，根据源exchange名称/目标资源名称进行模糊搜索</p>
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取根据源Exchange精准搜索过滤
-                     * @return SourceExchange 根据源Exchange精准搜索过滤
+                     * 获取<p>根据源Exchange精准搜索过滤</p>
+                     * @return SourceExchange <p>根据源Exchange精准搜索过滤</p>
                      * 
                      */
                     std::string GetSourceExchange() const;
 
                     /**
-                     * 设置根据源Exchange精准搜索过滤
-                     * @param _sourceExchange 根据源Exchange精准搜索过滤
+                     * 设置<p>根据源Exchange精准搜索过滤</p>
+                     * @param _sourceExchange <p>根据源Exchange精准搜索过滤</p>
                      * 
                      */
                     void SetSourceExchange(const std::string& _sourceExchange);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool SourceExchangeHasBeenSet() const;
 
                     /**
-                     * 获取根据目标QueueName精准搜索过滤，和DestinationExchange过滤不可同时设置
-                     * @return QueueName 根据目标QueueName精准搜索过滤，和DestinationExchange过滤不可同时设置
+                     * 获取<p>根据目标QueueName精准搜索过滤，和DestinationExchange过滤不可同时设置</p>
+                     * @return QueueName <p>根据目标QueueName精准搜索过滤，和DestinationExchange过滤不可同时设置</p>
                      * 
                      */
                     std::string GetQueueName() const;
 
                     /**
-                     * 设置根据目标QueueName精准搜索过滤，和DestinationExchange过滤不可同时设置
-                     * @param _queueName 根据目标QueueName精准搜索过滤，和DestinationExchange过滤不可同时设置
+                     * 设置<p>根据目标QueueName精准搜索过滤，和DestinationExchange过滤不可同时设置</p>
+                     * @param _queueName <p>根据目标QueueName精准搜索过滤，和DestinationExchange过滤不可同时设置</p>
                      * 
                      */
                     void SetQueueName(const std::string& _queueName);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool QueueNameHasBeenSet() const;
 
                     /**
-                     * 获取根据目标Exchange精准搜索过滤，和QueueName过滤不可同时设置
-                     * @return DestinationExchange 根据目标Exchange精准搜索过滤，和QueueName过滤不可同时设置
+                     * 获取<p>根据目标Exchange精准搜索过滤，和QueueName过滤不可同时设置</p>
+                     * @return DestinationExchange <p>根据目标Exchange精准搜索过滤，和QueueName过滤不可同时设置</p>
                      * 
                      */
                     std::string GetDestinationExchange() const;
 
                     /**
-                     * 设置根据目标Exchange精准搜索过滤，和QueueName过滤不可同时设置
-                     * @param _destinationExchange 根据目标Exchange精准搜索过滤，和QueueName过滤不可同时设置
+                     * 设置<p>根据目标Exchange精准搜索过滤，和QueueName过滤不可同时设置</p>
+                     * @param _destinationExchange <p>根据目标Exchange精准搜索过滤，和QueueName过滤不可同时设置</p>
                      * 
                      */
                     void SetDestinationExchange(const std::string& _destinationExchange);
@@ -213,49 +213,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例Id
+                     * <p>实例Id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Vhost参数
+                     * <p>Vhost参数</p>
                      */
                     std::string m_virtualHost;
                     bool m_virtualHostHasBeenSet;
 
                     /**
-                     * 分页offset
+                     * <p>分页offset</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页limit
+                     * <p>分页limit</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 搜索关键词，根据源exchange名称/目标资源名称/绑定key进行模糊搜索
+                     * <p>搜索关键词，根据源exchange名称/目标资源名称进行模糊搜索</p>
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 根据源Exchange精准搜索过滤
+                     * <p>根据源Exchange精准搜索过滤</p>
                      */
                     std::string m_sourceExchange;
                     bool m_sourceExchangeHasBeenSet;
 
                     /**
-                     * 根据目标QueueName精准搜索过滤，和DestinationExchange过滤不可同时设置
+                     * <p>根据目标QueueName精准搜索过滤，和DestinationExchange过滤不可同时设置</p>
                      */
                     std::string m_queueName;
                     bool m_queueNameHasBeenSet;
 
                     /**
-                     * 根据目标Exchange精准搜索过滤，和QueueName过滤不可同时设置
+                     * <p>根据目标Exchange精准搜索过滤，和QueueName过滤不可同时设置</p>
                      */
                     std::string m_destinationExchange;
                     bool m_destinationExchangeHasBeenSet;

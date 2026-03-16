@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取枚举值，0创建中 1创建完成 2删除中 3删除完成
-                     * @return Status 枚举值，0创建中 1创建完成 2删除中 3删除完成
+                     * 获取<p>枚举值，0创建中 1创建完成 2删除中 3删除完成</p>
+                     * @return Status <p>枚举值，0创建中 1创建完成 2删除中 3删除完成</p>
                      * 
                      */
                     int64_t GetStatus() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 枚举值，0创建中 1创建完成 2删除中 3删除完成
+                     * <p>枚举值，0创建中 1创建完成 2删除中 3删除完成</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

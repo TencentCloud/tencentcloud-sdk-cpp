@@ -45,7 +45,8 @@ ServiceGroup::ServiceGroup() :
     m_authTokensHasBeenSet(false),
     m_monitorSourceHasBeenSet(false),
     m_subUinNameHasBeenSet(false),
-    m_gatewayLogConfigHasBeenSet(false)
+    m_gatewayLogConfigHasBeenSet(false),
+    m_gatewayConfigHasBeenSet(false)
 {
 }
 
@@ -341,6 +342,23 @@ CoreInternalOutcome ServiceGroup::Deserialize(const rapidjson::Value &value)
         m_gatewayLogConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("GatewayConfig") && !value["GatewayConfig"].IsNull())
+    {
+        if (!value["GatewayConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceGroup.GatewayConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_gatewayConfig.Deserialize(value["GatewayConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_gatewayConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -568,6 +586,15 @@ void ServiceGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_gatewayLogConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_gatewayConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_gatewayConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -971,5 +998,21 @@ void ServiceGroup::SetGatewayLogConfig(const LogConfig& _gatewayLogConfig)
 bool ServiceGroup::GatewayLogConfigHasBeenSet() const
 {
     return m_gatewayLogConfigHasBeenSet;
+}
+
+GatewayConfig ServiceGroup::GetGatewayConfig() const
+{
+    return m_gatewayConfig;
+}
+
+void ServiceGroup::SetGatewayConfig(const GatewayConfig& _gatewayConfig)
+{
+    m_gatewayConfig = _gatewayConfig;
+    m_gatewayConfigHasBeenSet = true;
+}
+
+bool ServiceGroup::GatewayConfigHasBeenSet() const
+{
+    return m_gatewayConfigHasBeenSet;
 }
 

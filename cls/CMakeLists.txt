@@ -283,6 +283,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/ModifyDataTransformResponse.h
   include/tencentcloud/cls/v20201016/model/DescribeDataTransformInfoResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyCosRechargeResponse.h
+  include/tencentcloud/cls/v20201016/model/ExternalRole.h
   include/tencentcloud/cls/v20201016/model/DescribeEsRechargePreviewRequest.h
   include/tencentcloud/cls/v20201016/model/MergePartitionResponse.h
   include/tencentcloud/cls/v20201016/model/CreateScheduledSqlRequest.h
@@ -782,6 +783,7 @@ set(cls_src
   src/v20201016/model/ModifyDataTransformResponse.cpp
   src/v20201016/model/DescribeDataTransformInfoResponse.cpp
   src/v20201016/model/ModifyCosRechargeResponse.cpp
+  src/v20201016/model/ExternalRole.cpp
   src/v20201016/model/DescribeEsRechargePreviewRequest.cpp
   src/v20201016/model/MergePartitionResponse.cpp
   src/v20201016/model/CreateScheduledSqlRequest.cpp

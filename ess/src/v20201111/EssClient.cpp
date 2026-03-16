@@ -2790,6 +2790,56 @@ EssClient::CreateOrganizationInfoChangeUrlOutcomeCallable EssClient::CreateOrgan
     return prom->get_future();
 }
 
+EssClient::CreatePartnerAuthorizationLinkOutcome EssClient::CreatePartnerAuthorizationLink(const CreatePartnerAuthorizationLinkRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePartnerAuthorizationLink");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePartnerAuthorizationLinkResponse rsp = CreatePartnerAuthorizationLinkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePartnerAuthorizationLinkOutcome(rsp);
+        else
+            return CreatePartnerAuthorizationLinkOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePartnerAuthorizationLinkOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreatePartnerAuthorizationLinkAsync(const CreatePartnerAuthorizationLinkRequest& request, const CreatePartnerAuthorizationLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreatePartnerAuthorizationLinkRequest&;
+    using Resp = CreatePartnerAuthorizationLinkResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreatePartnerAuthorizationLink", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssClient::CreatePartnerAuthorizationLinkOutcomeCallable EssClient::CreatePartnerAuthorizationLinkCallable(const CreatePartnerAuthorizationLinkRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreatePartnerAuthorizationLinkOutcome>>();
+    CreatePartnerAuthorizationLinkAsync(
+    request,
+    [prom](
+        const EssClient*,
+        const CreatePartnerAuthorizationLinkRequest&,
+        CreatePartnerAuthorizationLinkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EssClient::CreatePartnerAutoSignAuthUrlOutcome EssClient::CreatePartnerAutoSignAuthUrl(const CreatePartnerAutoSignAuthUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePartnerAutoSignAuthUrl");
@@ -6432,6 +6482,56 @@ EssClient::ModifyIntegrationRoleOutcomeCallable EssClient::ModifyIntegrationRole
         const EssClient*,
         const ModifyIntegrationRoleRequest&,
         ModifyIntegrationRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EssClient::ModifyPartnerAuthorizationOutcome EssClient::ModifyPartnerAuthorization(const ModifyPartnerAuthorizationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPartnerAuthorization");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPartnerAuthorizationResponse rsp = ModifyPartnerAuthorizationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPartnerAuthorizationOutcome(rsp);
+        else
+            return ModifyPartnerAuthorizationOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPartnerAuthorizationOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::ModifyPartnerAuthorizationAsync(const ModifyPartnerAuthorizationRequest& request, const ModifyPartnerAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyPartnerAuthorizationRequest&;
+    using Resp = ModifyPartnerAuthorizationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyPartnerAuthorization", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssClient::ModifyPartnerAuthorizationOutcomeCallable EssClient::ModifyPartnerAuthorizationCallable(const ModifyPartnerAuthorizationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyPartnerAuthorizationOutcome>>();
+    ModifyPartnerAuthorizationAsync(
+    request,
+    [prom](
+        const EssClient*,
+        const ModifyPartnerAuthorizationRequest&,
+        ModifyPartnerAuthorizationOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

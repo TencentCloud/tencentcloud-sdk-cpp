@@ -61,12 +61,16 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeAuthDomainsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeBaasPackageListRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeBaasPackageListResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeBillingInfoRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeBillingInfoResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseGWAPIRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseGWAPIResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseGWServiceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseGWServiceResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCreateMySQLResultRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCreateMySQLResultResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeDatabaseACLRequest.h>
@@ -202,6 +206,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBaasPackageListResponse> DescribeBaasPackageListOutcome;
                 typedef std::future<DescribeBaasPackageListOutcome> DescribeBaasPackageListOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeBaasPackageListRequest&, DescribeBaasPackageListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaasPackageListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBillingInfoResponse> DescribeBillingInfoOutcome;
+                typedef std::future<DescribeBillingInfoOutcome> DescribeBillingInfoOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeBillingInfoRequest&, DescribeBillingInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillingInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudBaseBuildServiceResponse> DescribeCloudBaseBuildServiceOutcome;
                 typedef std::future<DescribeCloudBaseBuildServiceOutcome> DescribeCloudBaseBuildServiceOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseBuildServiceRequest&, DescribeCloudBaseBuildServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseBuildServiceAsyncHandler;
@@ -211,6 +218,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudBaseGWServiceResponse> DescribeCloudBaseGWServiceOutcome;
                 typedef std::future<DescribeCloudBaseGWServiceOutcome> DescribeCloudBaseGWServiceOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseGWServiceRequest&, DescribeCloudBaseGWServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseGWServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudBaseRunServerVersionResponse> DescribeCloudBaseRunServerVersionOutcome;
+                typedef std::future<DescribeCloudBaseRunServerVersionOutcome> DescribeCloudBaseRunServerVersionOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseRunServerVersionRequest&, DescribeCloudBaseRunServerVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseRunServerVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCreateMySQLResultResponse> DescribeCreateMySQLResultOutcome;
                 typedef std::future<DescribeCreateMySQLResultOutcome> DescribeCreateMySQLResultOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCreateMySQLResultRequest&, DescribeCreateMySQLResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCreateMySQLResultAsyncHandler;
@@ -400,9 +410,9 @@ namespace TencentCloud
                 CreateHostingDomainOutcomeCallable CreateHostingDomainCallable(const Model::CreateHostingDomainRequest& request);
 
                 /**
-                 *开通Mysql型数据库
+                 *本接口（CreateMySQL）用于开通Mysql型数据库。
 
-开通后，可通过 [DescribeCreateMySQLResult ](https://cloud.tencent.com/document/api/876/128185) 查询开通结果，Mysql开通成功后，可通过接口设置数据库账号相关功能包括但不限于【创建账号、删除账号、查询可授权权限列表、查询账号已有权限、修改主机、修改配置、修改账号库表权限】、集群操作相关【查询集群参数、修改集群参数】，连接设置相关【关闭外网、开通外网、查询集群信息】，备份回档相关【创建手动回档、删除手动回档、修改自动备份配置信息、查询备份文件列表、集群回档、查询任务列表、获取table列表、获取集群数据库列表、查询备份下载地址】，相关功能接口文档：[TDSQL-C MySQL API文档](https://cloud.tencent.com/document/product/1003/48106)，可以通过 [RunSql](https://cloud.tencent.com/document/api/876/127880) 接口来执行 sql 命令，比如创建表格、插入数据、删除表格等 sql 命令
+开通后，可通过 [DescribeCreateMySQLResult ](https://cloud.tencent.com/document/api/876/128185) 查询开通结果，Mysql开通成功后，可通过接口设置数据库账号相关功能包括但不限于【创建账号、删除账号、查询可授权权限列表、查询账号已有权限、修改主机、修改配置、修改账号库表权限】、集群操作相关【查询集群参数、修改集群参数】，连接设置相关【关闭外网、开通外网、查询集群信息】，备份回档相关【创建手动回档、删除手动回档、修改自动备份配置信息、查询备份文件列表、集群回档、查询任务列表、获取table列表、获取集群数据库列表、查询备份下载地址】，相关功能接口文档：[TDSQL-C MySQL API文档](https://cloud.tencent.com/document/product/1003/48106)，可以通过 [RunSql](https://cloud.tencent.com/document/api/876/127880) 接口来执行 sql 命令，比如创建表格、插入数据、删除表格等 sql 命令。
                  * @param req CreateMySQLRequest
                  * @return CreateMySQLOutcome
                  */
@@ -420,7 +430,7 @@ namespace TencentCloud
                 CreateStaticStoreOutcomeCallable CreateStaticStoreCallable(const Model::CreateStaticStoreRequest& request);
 
                 /**
-                 *本接口(CreateTable)用于创建文档型数据库表，支持创建capped类型集合，暂时不支持分片表
+                 *本接口(CreateTable)用于创建文档型数据库表，支持创建capped类型集合，暂时不支持分片表。
                  * @param req CreateTableRequest
                  * @return CreateTableOutcome
                  */
@@ -470,9 +480,9 @@ namespace TencentCloud
                 DeleteCloudBaseGWDomainOutcomeCallable DeleteCloudBaseGWDomainCallable(const Model::DeleteCloudBaseGWDomainRequest& request);
 
                 /**
-                 *本接口(DeleteTable)用于删除文档型数据库表，删除表后表中数据将会被删除且无法恢复，请谨慎操作
+                 *本接口(DeleteTable)用于删除文档型数据库表，删除表后表中数据将会被删除且无法恢复，请谨慎操作。
 
-接口入参中的 Tag 为文档型数据库的实例 Id，可以通过 [DescribeEnvs](https://cloud.tencent.com/document/api/876/34820) 接口返回的 EnvList[0].Databases[0].InstanceId 获取
+接口入参中的 Tag 为文档型数据库的实例 Id，可以通过 [DescribeEnvs](https://cloud.tencent.com/document/api/876/34820) 接口返回的 EnvList[0].Databases[0].InstanceId 获取。
                  * @param req DeleteTableRequest
                  * @return DeleteTableOutcome
                  */
@@ -510,6 +520,15 @@ namespace TencentCloud
                 DescribeBaasPackageListOutcomeCallable DescribeBaasPackageListCallable(const Model::DescribeBaasPackageListRequest& request);
 
                 /**
+                 *获取计费相关信息
+                 * @param req DescribeBillingInfoRequest
+                 * @return DescribeBillingInfoOutcome
+                 */
+                DescribeBillingInfoOutcome DescribeBillingInfo(const Model::DescribeBillingInfoRequest &request);
+                void DescribeBillingInfoAsync(const Model::DescribeBillingInfoRequest& request, const DescribeBillingInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBillingInfoOutcomeCallable DescribeBillingInfoCallable(const Model::DescribeBillingInfoRequest& request);
+
+                /**
                  *获取云托管代码上传url
                  * @param req DescribeCloudBaseBuildServiceRequest
                  * @return DescribeCloudBaseBuildServiceOutcome
@@ -537,8 +556,19 @@ namespace TencentCloud
                 DescribeCloudBaseGWServiceOutcomeCallable DescribeCloudBaseGWServiceCallable(const Model::DescribeCloudBaseGWServiceRequest& request);
 
                 /**
-                 *查询开通Mysql结果，`Response.Data.Status = "notexist"` 表示未开通，如果未开通，可以调用 [CreateMySQL](https://cloud.tencent.com/document/api/876/128186) 来开通
- `Response.Data. Status = "success"` 表示开通成功，Mysql开通成功后，可通过接口设置数据库账号相关功能包括但不限于【创建账号、删除账号、查询可授权权限列表、查询账号已有权限、修改主机、修改配置、修改账号库表权限】、集群操作相关【查询集群参数、修改集群参数】，连接设置相关【关闭外网、开通外网、查询集群信息】，备份回档相关【创建手动回档、删除手动回档、修改自动备份配置信息、查询备份文件列表、集群回档、查询任务列表、获取table列表、获取集群数据库列表、查询备份下载地址】，相关功能接口文档：[TDSQL-C MySQL API文档](https://cloud.tencent.com/document/product/1003/48106)，可以通过 [RunSql](https://cloud.tencent.com/document/api/876/127880) 接口来执行 sql 命令，比如创建表格、插入数据、删除表格等 sql 命令
+                 *查询服务版本的详情，CPU和MEM  请使用CPUSize和MemSize
+                 * @param req DescribeCloudBaseRunServerVersionRequest
+                 * @return DescribeCloudBaseRunServerVersionOutcome
+                 */
+                DescribeCloudBaseRunServerVersionOutcome DescribeCloudBaseRunServerVersion(const Model::DescribeCloudBaseRunServerVersionRequest &request);
+                void DescribeCloudBaseRunServerVersionAsync(const Model::DescribeCloudBaseRunServerVersionRequest& request, const DescribeCloudBaseRunServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudBaseRunServerVersionOutcomeCallable DescribeCloudBaseRunServerVersionCallable(const Model::DescribeCloudBaseRunServerVersionRequest& request);
+
+                /**
+                 *本接口（DescribeCreateMySQLResult）用于查询开通Mysql结果。
+
+`Response.Data.Status = "notexist"` 表示未开通，如果未开通，可以调用 [CreateMySQL](https://cloud.tencent.com/document/api/876/128186) 来开通
+ `Response.Data. Status = "success"` 表示开通成功，Mysql开通成功后，可通过接口设置数据库账号相关功能包括但不限于【创建账号、删除账号、查询可授权权限列表、查询账号已有权限、修改主机、修改配置、修改账号库表权限】、集群操作相关【查询集群参数、修改集群参数】，连接设置相关【关闭外网、开通外网、查询集群信息】，备份回档相关【创建手动回档、删除手动回档、修改自动备份配置信息、查询备份文件列表、集群回档、查询任务列表、获取table列表、获取集群数据库列表、查询备份下载地址】，相关功能接口文档：[TDSQL-C MySQL API文档](https://cloud.tencent.com/document/product/1003/48106)，可以通过 [RunSql](https://cloud.tencent.com/document/api/876/127880) 接口来执行 sql 命令，比如创建表格、插入数据、删除表格等 MySql 命令。
                  * @param req DescribeCreateMySQLResultRequest
                  * @return DescribeCreateMySQLResultOutcome
                  */
@@ -547,7 +577,7 @@ namespace TencentCloud
                 DescribeCreateMySQLResultOutcomeCallable DescribeCreateMySQLResultCallable(const Model::DescribeCreateMySQLResultRequest& request);
 
                 /**
-                 *获取文档型数据库权限
+                 *本接口（DescribeDatabaseACL）获取文档型数据库权限。
                  * @param req DescribeDatabaseACLRequest
                  * @return DescribeDatabaseACLOutcome
                  */
@@ -601,9 +631,9 @@ namespace TencentCloud
                 DescribeHostingDomainTaskOutcomeCallable DescribeHostingDomainTaskCallable(const Model::DescribeHostingDomainTaskRequest& request);
 
                 /**
-                 *查询Mysql集群信息
+                 *本接口（DescribeMySQLClusterDetail）查询Mysql集群信息。
 
-调用该接口前需要先查询Mysql是否开通，可通过 [DescribeCreateMySQLResult ](https://cloud.tencent.com/document/api/876/128185) 查询，只有已开通的才能查到集群信息，Mysql开通成功后，可通过接口设置数据库账号相关功能包括但不限于【创建账号、删除账号、查询可授权权限列表、查询账号已有权限、修改主机、修改配置、修改账号库表权限】、集群操作相关【查询集群参数、修改集群参数】，连接设置相关【关闭外网、开通外网、查询集群信息】，备份回档相关【创建手动回档、删除手动回档、修改自动备份配置信息、查询备份文件列表、集群回档、查询任务列表、获取table列表、获取集群数据库列表、查询备份下载地址】，相关功能接口文档：[TDSQL-C MySQL API文档](https://cloud.tencent.com/document/product/1003/48106)，可以通过 [RunSql](https://cloud.tencent.com/document/api/876/127880) 接口来执行 sql 命令，比如创建表格、插入数据、删除表格等 sql 命令
+调用该接口前需要先查询Mysql是否开通，可通过 [DescribeCreateMySQLResult ](https://cloud.tencent.com/document/api/876/128185) 查询，只有已开通的才能查到集群信息，Mysql开通成功后，可通过接口设置数据库账号相关功能包括但不限于【创建账号、删除账号、查询可授权权限列表、查询账号已有权限、修改主机、修改配置、修改账号库表权限】、集群操作相关【查询集群参数、修改集群参数】，连接设置相关【关闭外网、开通外网、查询集群信息】，备份回档相关【创建手动回档、删除手动回档、修改自动备份配置信息、查询备份文件列表、集群回档、查询任务列表、获取table列表、获取集群数据库列表、查询备份下载地址】，相关功能接口文档：[TDSQL-C MySQL API文档](https://cloud.tencent.com/document/product/1003/48106)，可以通过 [RunSql](https://cloud.tencent.com/document/api/876/127880) 接口来执行 MySql 命令，比如创建表格、插入数据、删除表格等 MySql 命令。
                  * @param req DescribeMySQLClusterDetailRequest
                  * @return DescribeMySQLClusterDetailOutcome
                  */
@@ -612,7 +642,7 @@ namespace TencentCloud
                 DescribeMySQLClusterDetailOutcomeCallable DescribeMySQLClusterDetailCallable(const Model::DescribeMySQLClusterDetailRequest& request);
 
                 /**
-                 *查询Mysql任务状态
+                 *本接口（DescribeMySQLTaskStatus）用于查询Mysql任务状态。
                  * @param req DescribeMySQLTaskStatusRequest
                  * @return DescribeMySQLTaskStatusOutcome
                  */
@@ -649,9 +679,9 @@ namespace TencentCloud
                 DescribeStaticStoreOutcomeCallable DescribeStaticStoreCallable(const Model::DescribeStaticStoreRequest& request);
 
                 /**
-                 *查询文档型数据库表的相关信息，包括索引等信息
+                 *本接口（DescribeTable）用于查询文档型数据库表的相关信息，包括索引等信息。
 
-接口入参中的 Tag 为文档型数据库的实例 Id，可以通过 [DescribeEnvs](https://cloud.tencent.com/document/api/876/34820) 接口返回的 EnvList[0].Databases[0].InstanceId 获取
+接口入参中的 Tag 为文档型数据库的实例 Id，可以通过 [DescribeEnvs](https://cloud.tencent.com/document/api/876/34820) 接口返回的 EnvList[0].Databases[0].InstanceId 获取。
                  * @param req DescribeTableRequest
                  * @return DescribeTableOutcome
                  */
@@ -660,7 +690,7 @@ namespace TencentCloud
                 DescribeTableOutcomeCallable DescribeTableCallable(const Model::DescribeTableRequest& request);
 
                 /**
-                 *本接口(DescribeTables)用于查询文档型数据库所有表信息，包括表名、表中数据条数、表中数据量、索引个数及索引的大小等
+                 *本接口(DescribeTables)用于查询文档型数据库所有表信息，包括表名、表中数据条数、表中数据量、索引个数及索引的大小等。
                  * @param req DescribeTablesRequest
                  * @return DescribeTablesOutcome
                  */
@@ -696,9 +726,9 @@ namespace TencentCloud
                 DestroyEnvOutcomeCallable DestroyEnvCallable(const Model::DestroyEnvRequest& request);
 
                 /**
-                 *销毁Mysql
+                 *本接口（DestroyMySQL）用于销毁Mysql。
 
-销毁后可以通过 [DescribeMySQLTaskStatus](https://cloud.tencent.com/document/api/876/128183) 接口查询销毁结果，如果 `Response.Data. Status = FAILED ` 表示销毁失败，可以重新调用销毁接口重试
+销毁后可以通过 [DescribeMySQLTaskStatus](https://cloud.tencent.com/document/api/876/128183) 接口查询销毁结果，如果 `Response.Data. Status = FAILED ` 表示销毁失败，可以重新调用销毁接口重试。
                  * @param req DestroyMySQLRequest
                  * @return DestroyMySQLOutcome
                  */
@@ -725,9 +755,9 @@ namespace TencentCloud
                 EditAuthConfigOutcomeCallable EditAuthConfigCallable(const Model::EditAuthConfigRequest& request);
 
                 /**
-                 *本接口(ListTables)用于查询文档型数据库所有表信息，包括表名、表中数据条数、表中数据量、索引个数及索引的大小等
+                 *本接口(ListTables)用于查询文档型数据库所有表信息，包括表名、表中数据条数、表中数据量、索引个数及索引的大小等。
 
-该接口跟 [DescribeTables](https://cloud.tencent.com/document/api/876/127962) 接口功能一致，后续该接口可能会下线，请使用 [DescribeTable](https://cloud.tencent.com/document/api/876/127962)接口
+该接口跟 [DescribeTables](https://cloud.tencent.com/document/api/876/127962) 接口功能一致，后续该接口可能会下线，请使用 [DescribeTable](https://cloud.tencent.com/document/api/876/127962)接口。
                  * @param req ListTablesRequest
                  * @return ListTablesOutcome
                  */
@@ -754,7 +784,7 @@ namespace TencentCloud
                 ModifyClsTopicOutcomeCallable ModifyClsTopicCallable(const Model::ModifyClsTopicRequest& request);
 
                 /**
-                 *修改文档型数据库权限
+                 *本接口（ModifyDatabaseACL）用于修改文档型数据库权限。
                  * @param req ModifyDatabaseACLRequest
                  * @return ModifyDatabaseACLOutcome
                  */
@@ -822,7 +852,7 @@ namespace TencentCloud
                 RenewEnvOutcomeCallable RenewEnvCallable(const Model::RenewEnvRequest& request);
 
                 /**
-                 *本接口用于执行文档型数据库命令
+                 *本接口（RunCommands）用于执行文档型数据库命令。
                  * @param req RunCommandsRequest
                  * @return RunCommandsOutcome
                  */
@@ -831,11 +861,11 @@ namespace TencentCloud
                 RunCommandsOutcomeCallable RunCommandsCallable(const Model::RunCommandsRequest& request);
 
                 /**
-                 *执行MySQL语句
+                 *本接口（RunSql）用于执行MySQL语句。
 
-该接口用来执行 MySql 语句，比如创建表格、插入数据、修改数据、删除字段、添加索引等可以通过sql 语句实现的都可以使用该接口
+该接口用来执行 MySql 语句，比如创建表格、插入数据、修改数据、删除字段、添加索引等可以通过sql 语句实现的都可以使用该接口。
 
-调用该接口前需要先查询Mysql是否开通，可通过 [DescribeCreateMySQLResult ](https://cloud.tencent.com/document/api/876/128185) 查询，只有开通成功才能操作
+调用该接口前需要先查询Mysql是否开通，可通过 [DescribeCreateMySQLResult ](https://cloud.tencent.com/document/api/876/128185) 查询，只有开通成功才能操作。
                  * @param req RunSqlRequest
                  * @return RunSqlOutcome
                  */
@@ -853,7 +883,7 @@ namespace TencentCloud
                 SearchClsLogOutcomeCallable SearchClsLogCallable(const Model::SearchClsLogRequest& request);
 
                 /**
-                 *本接口(UpdateTable)用于修改文档型数据库表信息，当前可以支持创建和删除索引
+                 *本接口(UpdateTable)用于修改文档型数据库表信息，当前可以支持创建和删除索引。
                  * @param req UpdateTableRequest
                  * @return UpdateTableOutcome
                  */

@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取投递规则ID
-                     * @return ShipperId 投递规则ID
+                     * 获取<p>投递规则ID</p>
+                     * @return ShipperId <p>投递规则ID</p>
                      * 
                      */
                     std::string GetShipperId() const;
 
                     /**
-                     * 设置投递规则ID
-                     * @param _shipperId 投递规则ID
+                     * 设置<p>投递规则ID</p>
+                     * @param _shipperId <p>投递规则ID</p>
                      * 
                      */
                     void SetShipperId(const std::string& _shipperId);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool ShipperIdHasBeenSet() const;
 
                     /**
-                     * 获取日志主题ID
-                     * @return TopicId 日志主题ID
+                     * 获取<p>日志主题ID</p>
+                     * @return TopicId <p>日志主题ID</p>
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题ID
-                     * @param _topicId 日志主题ID
+                     * 设置<p>日志主题ID</p>
+                     * @param _topicId <p>日志主题ID</p>
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取投递的bucket地址
-                     * @return Bucket 投递的bucket地址
+                     * 获取<p>投递的bucket地址</p>
+                     * @return Bucket <p>投递的bucket地址</p>
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
-                     * 设置投递的bucket地址
-                     * @param _bucket 投递的bucket地址
+                     * 设置<p>投递的bucket地址</p>
+                     * @param _bucket <p>投递的bucket地址</p>
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool BucketHasBeenSet() const;
 
                     /**
-                     * 获取投递的前缀目录
-                     * @return Prefix 投递的前缀目录
+                     * 获取<p>投递的前缀目录</p>
+                     * @return Prefix <p>投递的前缀目录</p>
                      * 
                      */
                     std::string GetPrefix() const;
 
                     /**
-                     * 设置投递的前缀目录
-                     * @param _prefix 投递的前缀目录
+                     * 设置<p>投递的前缀目录</p>
+                     * @param _prefix <p>投递的前缀目录</p>
                      * 
                      */
                     void SetPrefix(const std::string& _prefix);
@@ -134,15 +134,15 @@ namespace TencentCloud
                     bool PrefixHasBeenSet() const;
 
                     /**
-                     * 获取投递规则的名字
-                     * @return ShipperName 投递规则的名字
+                     * 获取<p>投递规则的名字</p>
+                     * @return ShipperName <p>投递规则的名字</p>
                      * 
                      */
                     std::string GetShipperName() const;
 
                     /**
-                     * 设置投递规则的名字
-                     * @param _shipperName 投递规则的名字
+                     * 设置<p>投递规则的名字</p>
+                     * @param _shipperName <p>投递规则的名字</p>
                      * 
                      */
                     void SetShipperName(const std::string& _shipperName);
@@ -155,15 +155,15 @@ namespace TencentCloud
                     bool ShipperNameHasBeenSet() const;
 
                     /**
-                     * 获取投递的时间间隔，单位 秒
-                     * @return Interval 投递的时间间隔，单位 秒
+                     * 获取<p>投递的时间间隔，单位 秒</p>
+                     * @return Interval <p>投递的时间间隔，单位 秒</p>
                      * 
                      */
                     uint64_t GetInterval() const;
 
                     /**
-                     * 设置投递的时间间隔，单位 秒
-                     * @param _interval 投递的时间间隔，单位 秒
+                     * 设置<p>投递的时间间隔，单位 秒</p>
+                     * @param _interval <p>投递的时间间隔，单位 秒</p>
                      * 
                      */
                     void SetInterval(const uint64_t& _interval);
@@ -176,15 +176,15 @@ namespace TencentCloud
                     bool IntervalHasBeenSet() const;
 
                     /**
-                     * 获取投递的文件的最大值，单位 MB
-                     * @return MaxSize 投递的文件的最大值，单位 MB
+                     * 获取<p>投递的文件的最大值，单位 MB</p>
+                     * @return MaxSize <p>投递的文件的最大值，单位 MB</p>
                      * 
                      */
                     uint64_t GetMaxSize() const;
 
                     /**
-                     * 设置投递的文件的最大值，单位 MB
-                     * @param _maxSize 投递的文件的最大值，单位 MB
+                     * 设置<p>投递的文件的最大值，单位 MB</p>
+                     * @param _maxSize <p>投递的文件的最大值，单位 MB</p>
                      * 
                      */
                     void SetMaxSize(const uint64_t& _maxSize);
@@ -197,15 +197,15 @@ namespace TencentCloud
                     bool MaxSizeHasBeenSet() const;
 
                     /**
-                     * 获取是否生效
-                     * @return Status 是否生效
+                     * 获取<p>是否生效</p>
+                     * @return Status <p>是否生效</p>
                      * 
                      */
                     bool GetStatus() const;
 
                     /**
-                     * 设置是否生效
-                     * @param _status 是否生效
+                     * 设置<p>是否生效</p>
+                     * @param _status <p>是否生效</p>
                      * 
                      */
                     void SetStatus(const bool& _status);
@@ -218,15 +218,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取投递日志的过滤规则
-                     * @return FilterRules 投递日志的过滤规则
+                     * 获取<p>投递日志的过滤规则</p>
+                     * @return FilterRules <p>投递日志的过滤规则</p>
                      * 
                      */
                     std::vector<FilterRuleInfo> GetFilterRules() const;
 
                     /**
-                     * 设置投递日志的过滤规则
-                     * @param _filterRules 投递日志的过滤规则
+                     * 设置<p>投递日志的过滤规则</p>
+                     * @param _filterRules <p>投递日志的过滤规则</p>
                      * 
                      */
                     void SetFilterRules(const std::vector<FilterRuleInfo>& _filterRules);
@@ -239,15 +239,15 @@ namespace TencentCloud
                     bool FilterRulesHasBeenSet() const;
 
                     /**
-                     * 获取投递日志的分区规则，支持strftime的时间格式表示
-                     * @return Partition 投递日志的分区规则，支持strftime的时间格式表示
+                     * 获取<p>投递日志的分区规则，支持strftime的时间格式表示</p>
+                     * @return Partition <p>投递日志的分区规则，支持strftime的时间格式表示</p>
                      * 
                      */
                     std::string GetPartition() const;
 
                     /**
-                     * 设置投递日志的分区规则，支持strftime的时间格式表示
-                     * @param _partition 投递日志的分区规则，支持strftime的时间格式表示
+                     * 设置<p>投递日志的分区规则，支持strftime的时间格式表示</p>
+                     * @param _partition <p>投递日志的分区规则，支持strftime的时间格式表示</p>
                      * 
                      */
                     void SetPartition(const std::string& _partition);
@@ -260,15 +260,15 @@ namespace TencentCloud
                     bool PartitionHasBeenSet() const;
 
                     /**
-                     * 获取投递日志的压缩配置
-                     * @return Compress 投递日志的压缩配置
+                     * 获取<p>投递日志的压缩配置</p>
+                     * @return Compress <p>投递日志的压缩配置</p>
                      * 
                      */
                     CompressInfo GetCompress() const;
 
                     /**
-                     * 设置投递日志的压缩配置
-                     * @param _compress 投递日志的压缩配置
+                     * 设置<p>投递日志的压缩配置</p>
+                     * @param _compress <p>投递日志的压缩配置</p>
                      * 
                      */
                     void SetCompress(const CompressInfo& _compress);
@@ -281,15 +281,15 @@ namespace TencentCloud
                     bool CompressHasBeenSet() const;
 
                     /**
-                     * 获取投递日志的内容格式配置
-                     * @return Content 投递日志的内容格式配置
+                     * 获取<p>投递日志的内容格式配置</p>
+                     * @return Content <p>投递日志的内容格式配置</p>
                      * 
                      */
                     ContentInfo GetContent() const;
 
                     /**
-                     * 设置投递日志的内容格式配置
-                     * @param _content 投递日志的内容格式配置
+                     * 设置<p>投递日志的内容格式配置</p>
+                     * @param _content <p>投递日志的内容格式配置</p>
                      * 
                      */
                     void SetContent(const ContentInfo& _content);
@@ -302,15 +302,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取投递日志的创建时间。格式：YYYY-MM-DD HH:MM:SS
-                     * @return CreateTime 投递日志的创建时间。格式：YYYY-MM-DD HH:MM:SS
+                     * 获取<p>投递日志的创建时间。格式：YYYY-MM-DD HH:MM:SS</p>
+                     * @return CreateTime <p>投递日志的创建时间。格式：YYYY-MM-DD HH:MM:SS</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置投递日志的创建时间。格式：YYYY-MM-DD HH:MM:SS
-                     * @param _createTime 投递日志的创建时间。格式：YYYY-MM-DD HH:MM:SS
+                     * 设置<p>投递日志的创建时间。格式：YYYY-MM-DD HH:MM:SS</p>
+                     * @param _createTime <p>投递日志的创建时间。格式：YYYY-MM-DD HH:MM:SS</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -323,15 +323,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
-                     * @return FilenameMode 投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
+                     * 获取<p>投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）</p>
+                     * @return FilenameMode <p>投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）</p>
                      * 
                      */
                     uint64_t GetFilenameMode() const;
 
                     /**
-                     * 设置投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
-                     * @param _filenameMode 投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
+                     * 设置<p>投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）</p>
+                     * @param _filenameMode <p>投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）</p>
                      * 
                      */
                     void SetFilenameMode(const uint64_t& _filenameMode);
@@ -344,15 +344,15 @@ namespace TencentCloud
                     bool FilenameModeHasBeenSet() const;
 
                     /**
-                     * 获取投递数据范围的开始时间点
-                     * @return StartTime 投递数据范围的开始时间点
+                     * 获取<p>投递数据范围的开始时间点</p>
+                     * @return StartTime <p>投递数据范围的开始时间点</p>
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置投递数据范围的开始时间点
-                     * @param _startTime 投递数据范围的开始时间点
+                     * 设置<p>投递数据范围的开始时间点</p>
+                     * @param _startTime <p>投递数据范围的开始时间点</p>
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -365,15 +365,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取投递数据范围的结束时间点
-                     * @return EndTime 投递数据范围的结束时间点
+                     * 获取<p>投递数据范围的结束时间点</p>
+                     * @return EndTime <p>投递数据范围的结束时间点</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置投递数据范围的结束时间点
-                     * @param _endTime 投递数据范围的结束时间点
+                     * 设置<p>投递数据范围的结束时间点</p>
+                     * @param _endTime <p>投递数据范围的结束时间点</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -386,15 +386,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）
-                     * @return Progress 历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）
+                     * 获取<p>历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）</p>
+                     * @return Progress <p>历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）</p>
                      * 
                      */
                     double GetProgress() const;
 
                     /**
-                     * 设置历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）
-                     * @param _progress 历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）
+                     * 设置<p>历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）</p>
+                     * @param _progress <p>历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）</p>
                      * 
                      */
                     void SetProgress(const double& _progress);
@@ -407,15 +407,15 @@ namespace TencentCloud
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）
-                     * @return RemainTime 历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）
+                     * 获取<p>历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）</p><p>单位：秒</p>
+                     * @return RemainTime <p>历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）</p><p>单位：秒</p>
                      * 
                      */
                     int64_t GetRemainTime() const;
 
                     /**
-                     * 设置历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）
-                     * @param _remainTime 历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）
+                     * 设置<p>历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）</p><p>单位：秒</p>
+                     * @param _remainTime <p>历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）</p><p>单位：秒</p>
                      * 
                      */
                     void SetRemainTime(const int64_t& _remainTime);
@@ -428,35 +428,15 @@ namespace TencentCloud
                     bool RemainTimeHasBeenSet() const;
 
                     /**
-                     * 获取历史任务状态：
-0：实时任务
-1：任务准备中
-2：任务运行中
-3：任务运行异常
-4：任务运行结束
-                     * @return HistoryStatus 历史任务状态：
-0：实时任务
-1：任务准备中
-2：任务运行中
-3：任务运行异常
-4：任务运行结束
+                     * 获取<p>历史任务状态：<br>0：实时任务<br>1：任务准备中<br>2：任务运行中<br>3：任务运行异常<br>4：任务运行结束</p>
+                     * @return HistoryStatus <p>历史任务状态：<br>0：实时任务<br>1：任务准备中<br>2：任务运行中<br>3：任务运行异常<br>4：任务运行结束</p>
                      * 
                      */
                     int64_t GetHistoryStatus() const;
 
                     /**
-                     * 设置历史任务状态：
-0：实时任务
-1：任务准备中
-2：任务运行中
-3：任务运行异常
-4：任务运行结束
-                     * @param _historyStatus 历史任务状态：
-0：实时任务
-1：任务准备中
-2：任务运行中
-3：任务运行异常
-4：任务运行结束
+                     * 设置<p>历史任务状态：<br>0：实时任务<br>1：任务准备中<br>2：任务运行中<br>3：任务运行异常<br>4：任务运行结束</p>
+                     * @param _historyStatus <p>历史任务状态：<br>0：实时任务<br>1：任务准备中<br>2：任务运行中<br>3：任务运行异常<br>4：任务运行结束</p>
                      * 
                      */
                     void SetHistoryStatus(const int64_t& _historyStatus);
@@ -469,51 +449,15 @@ namespace TencentCloud
                     bool HistoryStatusHasBeenSet() const;
 
                     /**
-                     * 获取对象存储类型，默认值为 STANDARD。枚举值请参见[ 存储类型概述](https://cloud.tencent.com/document/product/436/33417) 文档。
-参考值有：
-STANDARD：标准存储
-STANDARD_IA：低频存储
-ARCHIVE：归档存储
-DEEP_ARCHIVE：深度归档存储
-MAZ_STANDARD：标准存储（多 AZ）
-MAZ_STANDARD_IA：低频存储（多 AZ）
-INTELLIGENT_TIERING：智能分层存储
-MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）
-                     * @return StorageType 对象存储类型，默认值为 STANDARD。枚举值请参见[ 存储类型概述](https://cloud.tencent.com/document/product/436/33417) 文档。
-参考值有：
-STANDARD：标准存储
-STANDARD_IA：低频存储
-ARCHIVE：归档存储
-DEEP_ARCHIVE：深度归档存储
-MAZ_STANDARD：标准存储（多 AZ）
-MAZ_STANDARD_IA：低频存储（多 AZ）
-INTELLIGENT_TIERING：智能分层存储
-MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）
+                     * 获取<p>对象存储类型，默认值为 STANDARD。枚举值请参见<a href="https://cloud.tencent.com/document/product/436/33417"> 存储类型概述</a> 文档。<br>参考值有：<br>STANDARD：标准存储<br>STANDARD_IA：低频存储<br>ARCHIVE：归档存储<br>DEEP_ARCHIVE：深度归档存储<br>MAZ_STANDARD：标准存储（多 AZ）<br>MAZ_STANDARD_IA：低频存储（多 AZ）<br>INTELLIGENT_TIERING：智能分层存储<br>MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）</p>
+                     * @return StorageType <p>对象存储类型，默认值为 STANDARD。枚举值请参见<a href="https://cloud.tencent.com/document/product/436/33417"> 存储类型概述</a> 文档。<br>参考值有：<br>STANDARD：标准存储<br>STANDARD_IA：低频存储<br>ARCHIVE：归档存储<br>DEEP_ARCHIVE：深度归档存储<br>MAZ_STANDARD：标准存储（多 AZ）<br>MAZ_STANDARD_IA：低频存储（多 AZ）<br>INTELLIGENT_TIERING：智能分层存储<br>MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）</p>
                      * 
                      */
                     std::string GetStorageType() const;
 
                     /**
-                     * 设置对象存储类型，默认值为 STANDARD。枚举值请参见[ 存储类型概述](https://cloud.tencent.com/document/product/436/33417) 文档。
-参考值有：
-STANDARD：标准存储
-STANDARD_IA：低频存储
-ARCHIVE：归档存储
-DEEP_ARCHIVE：深度归档存储
-MAZ_STANDARD：标准存储（多 AZ）
-MAZ_STANDARD_IA：低频存储（多 AZ）
-INTELLIGENT_TIERING：智能分层存储
-MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）
-                     * @param _storageType 对象存储类型，默认值为 STANDARD。枚举值请参见[ 存储类型概述](https://cloud.tencent.com/document/product/436/33417) 文档。
-参考值有：
-STANDARD：标准存储
-STANDARD_IA：低频存储
-ARCHIVE：归档存储
-DEEP_ARCHIVE：深度归档存储
-MAZ_STANDARD：标准存储（多 AZ）
-MAZ_STANDARD_IA：低频存储（多 AZ）
-INTELLIGENT_TIERING：智能分层存储
-MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）
+                     * 设置<p>对象存储类型，默认值为 STANDARD。枚举值请参见<a href="https://cloud.tencent.com/document/product/436/33417"> 存储类型概述</a> 文档。<br>参考值有：<br>STANDARD：标准存储<br>STANDARD_IA：低频存储<br>ARCHIVE：归档存储<br>DEEP_ARCHIVE：深度归档存储<br>MAZ_STANDARD：标准存储（多 AZ）<br>MAZ_STANDARD_IA：低频存储（多 AZ）<br>INTELLIGENT_TIERING：智能分层存储<br>MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）</p>
+                     * @param _storageType <p>对象存储类型，默认值为 STANDARD。枚举值请参见<a href="https://cloud.tencent.com/document/product/436/33417"> 存储类型概述</a> 文档。<br>参考值有：<br>STANDARD：标准存储<br>STANDARD_IA：低频存储<br>ARCHIVE：归档存储<br>DEEP_ARCHIVE：深度归档存储<br>MAZ_STANDARD：标准存储（多 AZ）<br>MAZ_STANDARD_IA：低频存储（多 AZ）<br>INTELLIGENT_TIERING：智能分层存储<br>MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）</p>
                      * 
                      */
                     void SetStorageType(const std::string& _storageType);
@@ -526,15 +470,15 @@ MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）
                     bool StorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)
-                     * @return RoleArn 角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)
+                     * 获取<p>角色访问描述名 <a href="https://cloud.tencent.com/document/product/598/19381">创建角色</a></p>
+                     * @return RoleArn <p>角色访问描述名 <a href="https://cloud.tencent.com/document/product/598/19381">创建角色</a></p>
                      * 
                      */
                     std::string GetRoleArn() const;
 
                     /**
-                     * 设置角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)
-                     * @param _roleArn 角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)
+                     * 设置<p>角色访问描述名 <a href="https://cloud.tencent.com/document/product/598/19381">创建角色</a></p>
+                     * @param _roleArn <p>角色访问描述名 <a href="https://cloud.tencent.com/document/product/598/19381">创建角色</a></p>
                      * 
                      */
                     void SetRoleArn(const std::string& _roleArn);
@@ -547,15 +491,15 @@ MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）
                     bool RoleArnHasBeenSet() const;
 
                     /**
-                     * 获取外部ID
-                     * @return ExternalId 外部ID
+                     * 获取<p>外部ID</p>
+                     * @return ExternalId <p>外部ID</p>
                      * 
                      */
                     std::string GetExternalId() const;
 
                     /**
-                     * 设置外部ID
-                     * @param _externalId 外部ID
+                     * 设置<p>外部ID</p>
+                     * @param _externalId <p>外部ID</p>
                      * 
                      */
                     void SetExternalId(const std::string& _externalId);
@@ -568,31 +512,15 @@ MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）
                     bool ExternalIdHasBeenSet() const;
 
                     /**
-                     * 获取任务运行状态。支持`0`,`1`,`2`
-
-- `0`: 停止
-- `1`: 运行中
-- `2`: 异常
-                     * @return TaskStatus 任务运行状态。支持`0`,`1`,`2`
-
-- `0`: 停止
-- `1`: 运行中
-- `2`: 异常
+                     * 获取<p>任务运行状态。支持<code>0</code>,<code>1</code>,<code>2</code></p><ul><li><code>0</code>: 停止</li><li><code>1</code>: 运行中</li><li><code>2</code>: 异常</li></ul>
+                     * @return TaskStatus <p>任务运行状态。支持<code>0</code>,<code>1</code>,<code>2</code></p><ul><li><code>0</code>: 停止</li><li><code>1</code>: 运行中</li><li><code>2</code>: 异常</li></ul>
                      * 
                      */
                     uint64_t GetTaskStatus() const;
 
                     /**
-                     * 设置任务运行状态。支持`0`,`1`,`2`
-
-- `0`: 停止
-- `1`: 运行中
-- `2`: 异常
-                     * @param _taskStatus 任务运行状态。支持`0`,`1`,`2`
-
-- `0`: 停止
-- `1`: 运行中
-- `2`: 异常
+                     * 设置<p>任务运行状态。支持<code>0</code>,<code>1</code>,<code>2</code></p><ul><li><code>0</code>: 停止</li><li><code>1</code>: 运行中</li><li><code>2</code>: 异常</li></ul>
+                     * @param _taskStatus <p>任务运行状态。支持<code>0</code>,<code>1</code>,<code>2</code></p><ul><li><code>0</code>: 停止</li><li><code>1</code>: 运行中</li><li><code>2</code>: 异常</li></ul>
                      * 
                      */
                     void SetTaskStatus(const uint64_t& _taskStatus);
@@ -607,157 +535,139 @@ MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）
                 private:
 
                     /**
-                     * 投递规则ID
+                     * <p>投递规则ID</p>
                      */
                     std::string m_shipperId;
                     bool m_shipperIdHasBeenSet;
 
                     /**
-                     * 日志主题ID
+                     * <p>日志主题ID</p>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 投递的bucket地址
+                     * <p>投递的bucket地址</p>
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
 
                     /**
-                     * 投递的前缀目录
+                     * <p>投递的前缀目录</p>
                      */
                     std::string m_prefix;
                     bool m_prefixHasBeenSet;
 
                     /**
-                     * 投递规则的名字
+                     * <p>投递规则的名字</p>
                      */
                     std::string m_shipperName;
                     bool m_shipperNameHasBeenSet;
 
                     /**
-                     * 投递的时间间隔，单位 秒
+                     * <p>投递的时间间隔，单位 秒</p>
                      */
                     uint64_t m_interval;
                     bool m_intervalHasBeenSet;
 
                     /**
-                     * 投递的文件的最大值，单位 MB
+                     * <p>投递的文件的最大值，单位 MB</p>
                      */
                     uint64_t m_maxSize;
                     bool m_maxSizeHasBeenSet;
 
                     /**
-                     * 是否生效
+                     * <p>是否生效</p>
                      */
                     bool m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 投递日志的过滤规则
+                     * <p>投递日志的过滤规则</p>
                      */
                     std::vector<FilterRuleInfo> m_filterRules;
                     bool m_filterRulesHasBeenSet;
 
                     /**
-                     * 投递日志的分区规则，支持strftime的时间格式表示
+                     * <p>投递日志的分区规则，支持strftime的时间格式表示</p>
                      */
                     std::string m_partition;
                     bool m_partitionHasBeenSet;
 
                     /**
-                     * 投递日志的压缩配置
+                     * <p>投递日志的压缩配置</p>
                      */
                     CompressInfo m_compress;
                     bool m_compressHasBeenSet;
 
                     /**
-                     * 投递日志的内容格式配置
+                     * <p>投递日志的内容格式配置</p>
                      */
                     ContentInfo m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 投递日志的创建时间。格式：YYYY-MM-DD HH:MM:SS
+                     * <p>投递日志的创建时间。格式：YYYY-MM-DD HH:MM:SS</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
+                     * <p>投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）</p>
                      */
                     uint64_t m_filenameMode;
                     bool m_filenameModeHasBeenSet;
 
                     /**
-                     * 投递数据范围的开始时间点
+                     * <p>投递数据范围的开始时间点</p>
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 投递数据范围的结束时间点
+                     * <p>投递数据范围的结束时间点</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）
+                     * <p>历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）</p>
                      */
                     double m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
-                     * 历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）
+                     * <p>历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）</p><p>单位：秒</p>
                      */
                     int64_t m_remainTime;
                     bool m_remainTimeHasBeenSet;
 
                     /**
-                     * 历史任务状态：
-0：实时任务
-1：任务准备中
-2：任务运行中
-3：任务运行异常
-4：任务运行结束
+                     * <p>历史任务状态：<br>0：实时任务<br>1：任务准备中<br>2：任务运行中<br>3：任务运行异常<br>4：任务运行结束</p>
                      */
                     int64_t m_historyStatus;
                     bool m_historyStatusHasBeenSet;
 
                     /**
-                     * 对象存储类型，默认值为 STANDARD。枚举值请参见[ 存储类型概述](https://cloud.tencent.com/document/product/436/33417) 文档。
-参考值有：
-STANDARD：标准存储
-STANDARD_IA：低频存储
-ARCHIVE：归档存储
-DEEP_ARCHIVE：深度归档存储
-MAZ_STANDARD：标准存储（多 AZ）
-MAZ_STANDARD_IA：低频存储（多 AZ）
-INTELLIGENT_TIERING：智能分层存储
-MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）
+                     * <p>对象存储类型，默认值为 STANDARD。枚举值请参见<a href="https://cloud.tencent.com/document/product/436/33417"> 存储类型概述</a> 文档。<br>参考值有：<br>STANDARD：标准存储<br>STANDARD_IA：低频存储<br>ARCHIVE：归档存储<br>DEEP_ARCHIVE：深度归档存储<br>MAZ_STANDARD：标准存储（多 AZ）<br>MAZ_STANDARD_IA：低频存储（多 AZ）<br>INTELLIGENT_TIERING：智能分层存储<br>MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）</p>
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;
 
                     /**
-                     * 角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)
+                     * <p>角色访问描述名 <a href="https://cloud.tencent.com/document/product/598/19381">创建角色</a></p>
                      */
                     std::string m_roleArn;
                     bool m_roleArnHasBeenSet;
 
                     /**
-                     * 外部ID
+                     * <p>外部ID</p>
                      */
                     std::string m_externalId;
                     bool m_externalIdHasBeenSet;
 
                     /**
-                     * 任务运行状态。支持`0`,`1`,`2`
-
-- `0`: 停止
-- `1`: 运行中
-- `2`: 异常
+                     * <p>任务运行状态。支持<code>0</code>,<code>1</code>,<code>2</code></p><ul><li><code>0</code>: 停止</li><li><code>1</code>: 运行中</li><li><code>2</code>: 异常</li></ul>
                      */
                     uint64_t m_taskStatus;
                     bool m_taskStatusHasBeenSet;

@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/NetInfo.h>
 #include <tencentcloud/cls/v20201016/model/MetadataInfo.h>
+#include <tencentcloud/cls/v20201016/model/ExternalRole.h>
 
 
 namespace TencentCloud
@@ -45,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>日志主题id- 通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</p>
-                     * @return TopicId <p>日志主题id- 通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</p>
+                     * 获取<p>日志主题id</p><ul><li>通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</li></ul>
+                     * @return TopicId <p>日志主题id</p><ul><li>通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</li></ul>
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置<p>日志主题id- 通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</p>
-                     * @param _topicId <p>日志主题id- 通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</p>
+                     * 设置<p>日志主题id</p><ul><li>通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</li></ul>
+                     * @param _topicId <p>日志主题id</p><ul><li>通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</li></ul>
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -66,15 +67,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>splunk投递任务名称；name有如下限制：- 不能为空- 长度不大于64- 只能包含aA-zZ、下划线、-、0-9</p>
-                     * @return Name <p>splunk投递任务名称；name有如下限制：- 不能为空- 长度不大于64- 只能包含aA-zZ、下划线、-、0-9</p>
+                     * 获取<p>splunk投递任务名称；<br>name有如下限制：</p><ul><li>不能为空</li><li>长度不大于64</li><li>只能包含aA-zZ、下划线、-、0-9</li></ul>
+                     * @return Name <p>splunk投递任务名称；<br>name有如下限制：</p><ul><li>不能为空</li><li>长度不大于64</li><li>只能包含aA-zZ、下划线、-、0-9</li></ul>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置<p>splunk投递任务名称；name有如下限制：- 不能为空- 长度不大于64- 只能包含aA-zZ、下划线、-、0-9</p>
-                     * @param _name <p>splunk投递任务名称；name有如下限制：- 不能为空- 长度不大于64- 只能包含aA-zZ、下划线、-、0-9</p>
+                     * 设置<p>splunk投递任务名称；<br>name有如下限制：</p><ul><li>不能为空</li><li>长度不大于64</li><li>只能包含aA-zZ、下划线、-、0-9</li></ul>
+                     * @param _name <p>splunk投递任务名称；<br>name有如下限制：</p><ul><li>不能为空</li><li>长度不大于64</li><li>只能包含aA-zZ、下划线、-、0-9</li></ul>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -150,15 +151,15 @@ namespace TencentCloud
                     bool HasServiceLogHasBeenSet() const;
 
                     /**
-                     * 获取<p>高级配置-是否启用索引器；1-不启用；2-启用；默认：1</p>
-                     * @return IndexAck <p>高级配置-是否启用索引器；1-不启用；2-启用；默认：1</p>
+                     * 获取<p>高级配置-是否启用索引器；1-不启用；2-启用；<br>默认：1</p>
+                     * @return IndexAck <p>高级配置-是否启用索引器；1-不启用；2-启用；<br>默认：1</p>
                      * 
                      */
                     int64_t GetIndexAck() const;
 
                     /**
-                     * 设置<p>高级配置-是否启用索引器；1-不启用；2-启用；默认：1</p>
-                     * @param _indexAck <p>高级配置-是否启用索引器；1-不启用；2-启用；默认：1</p>
+                     * 设置<p>高级配置-是否启用索引器；1-不启用；2-启用；<br>默认：1</p>
+                     * @param _indexAck <p>高级配置-是否启用索引器；1-不启用；2-启用；<br>默认：1</p>
                      * 
                      */
                     void SetIndexAck(const int64_t& _indexAck);
@@ -234,15 +235,15 @@ namespace TencentCloud
                     bool IndexHasBeenSet() const;
 
                     /**
-                     * 获取<p>高级配置-通道需满足限制：如果启用索引器，那么Channel必填</p>
-                     * @return Channel <p>高级配置-通道需满足限制：如果启用索引器，那么Channel必填</p>
+                     * 获取<p>高级配置-通道<br>需满足限制：如果启用索引器，那么Channel必填</p>
+                     * @return Channel <p>高级配置-通道<br>需满足限制：如果启用索引器，那么Channel必填</p>
                      * 
                      */
                     std::string GetChannel() const;
 
                     /**
-                     * 设置<p>高级配置-通道需满足限制：如果启用索引器，那么Channel必填</p>
-                     * @param _channel <p>高级配置-通道需满足限制：如果启用索引器，那么Channel必填</p>
+                     * 设置<p>高级配置-通道<br>需满足限制：如果启用索引器，那么Channel必填</p>
+                     * @param _channel <p>高级配置-通道<br>需满足限制：如果启用索引器，那么Channel必填</p>
                      * 
                      */
                     void SetChannel(const std::string& _channel);
@@ -275,16 +276,37 @@ namespace TencentCloud
                      */
                     bool DSLFilterHasBeenSet() const;
 
+                    /**
+                     * 获取<p>高级配置-跨账户投递用户角色授权信息</p><p>取值参考：<a href="https://console.cloud.tencent.com/cam/role/create?payloadType=account">新建自定义角色</a></p>
+                     * @return ExternalRole <p>高级配置-跨账户投递用户角色授权信息</p><p>取值参考：<a href="https://console.cloud.tencent.com/cam/role/create?payloadType=account">新建自定义角色</a></p>
+                     * 
+                     */
+                    ExternalRole GetExternalRole() const;
+
+                    /**
+                     * 设置<p>高级配置-跨账户投递用户角色授权信息</p><p>取值参考：<a href="https://console.cloud.tencent.com/cam/role/create?payloadType=account">新建自定义角色</a></p>
+                     * @param _externalRole <p>高级配置-跨账户投递用户角色授权信息</p><p>取值参考：<a href="https://console.cloud.tencent.com/cam/role/create?payloadType=account">新建自定义角色</a></p>
+                     * 
+                     */
+                    void SetExternalRole(const ExternalRole& _externalRole);
+
+                    /**
+                     * 判断参数 ExternalRole 是否已赋值
+                     * @return ExternalRole 是否已赋值
+                     * 
+                     */
+                    bool ExternalRoleHasBeenSet() const;
+
                 private:
 
                     /**
-                     * <p>日志主题id- 通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</p>
+                     * <p>日志主题id</p><ul><li>通过<a href="https://cloud.tencent.com/document/product/614/56454">获取日志主题列表</a>获取日志主题Id。</li></ul>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * <p>splunk投递任务名称；name有如下限制：- 不能为空- 长度不大于64- 只能包含aA-zZ、下划线、-、0-9</p>
+                     * <p>splunk投递任务名称；<br>name有如下限制：</p><ul><li>不能为空</li><li>长度不大于64</li><li>只能包含aA-zZ、下划线、-、0-9</li></ul>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -308,7 +330,7 @@ namespace TencentCloud
                     bool m_hasServiceLogHasBeenSet;
 
                     /**
-                     * <p>高级配置-是否启用索引器；1-不启用；2-启用；默认：1</p>
+                     * <p>高级配置-是否启用索引器；1-不启用；2-启用；<br>默认：1</p>
                      */
                     int64_t m_indexAck;
                     bool m_indexAckHasBeenSet;
@@ -332,7 +354,7 @@ namespace TencentCloud
                     bool m_indexHasBeenSet;
 
                     /**
-                     * <p>高级配置-通道需满足限制：如果启用索引器，那么Channel必填</p>
+                     * <p>高级配置-通道<br>需满足限制：如果启用索引器，那么Channel必填</p>
                      */
                     std::string m_channel;
                     bool m_channelHasBeenSet;
@@ -342,6 +364,12 @@ namespace TencentCloud
                      */
                     std::string m_dSLFilter;
                     bool m_dSLFilterHasBeenSet;
+
+                    /**
+                     * <p>高级配置-跨账户投递用户角色授权信息</p><p>取值参考：<a href="https://console.cloud.tencent.com/cam/role/create?payloadType=account">新建自定义角色</a></p>
+                     */
+                    ExternalRole m_externalRole;
+                    bool m_externalRoleHasBeenSet;
 
                 };
             }

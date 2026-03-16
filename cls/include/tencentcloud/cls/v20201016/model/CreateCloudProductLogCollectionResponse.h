@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志主题ID
-                     * @return TopicId 日志主题ID
+                     * 获取<p>日志主题ID</p>
+                     * @return TopicId <p>日志主题ID</p>
                      * 
                      */
                     std::string GetTopicId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取日志主题名称
-                     * @return TopicName 日志主题名称
+                     * 获取<p>日志主题名称</p>
+                     * @return TopicName <p>日志主题名称</p>
                      * 
                      */
                     std::string GetTopicName() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取日志集ID
-                     * @return LogsetId 日志集ID
+                     * 获取<p>日志集ID</p>
+                     * @return LogsetId <p>日志集ID</p>
                      * 
                      */
                     std::string GetLogsetId() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool LogsetIdHasBeenSet() const;
 
                     /**
-                     * 获取日志集名称
-                     * @return LogsetName 日志集名称
+                     * 获取<p>日志集名称</p>
+                     * @return LogsetName <p>日志集名称</p>
                      * 
                      */
                     std::string GetLogsetName() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool LogsetNameHasBeenSet() const;
 
                     /**
-                     * 获取-1 创建中，1创建完成 
-                     * @return Status -1 创建中，1创建完成 
+                     * 获取<p>-1 创建中，1创建完成</p>
+                     * @return Status <p>-1 创建中，1创建完成</p>
                      * 
                      */
                     int64_t GetStatus() const;
@@ -116,31 +116,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志主题ID
+                     * <p>日志主题ID</p>
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 日志主题名称
+                     * <p>日志主题名称</p>
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 日志集ID
+                     * <p>日志集ID</p>
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;
 
                     /**
-                     * 日志集名称
+                     * <p>日志集名称</p>
                      */
                     std::string m_logsetName;
                     bool m_logsetNameHasBeenSet;
 
                     /**
-                     * -1 创建中，1创建完成 
+                     * <p>-1 创建中，1创建完成</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

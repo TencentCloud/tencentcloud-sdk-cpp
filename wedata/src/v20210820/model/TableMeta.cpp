@@ -101,7 +101,8 @@ TableMeta::TableMeta() :
     m_labelValueSelectionsHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_metaFromHasBeenSet(false),
-    m_engineCreatorHasBeenSet(false)
+    m_engineCreatorHasBeenSet(false),
+    m_projectStatusHasBeenSet(false)
 {
 }
 
@@ -1000,6 +1001,16 @@ CoreInternalOutcome TableMeta::Deserialize(const rapidjson::Value &value)
         m_engineCreatorHasBeenSet = true;
     }
 
+    if (value.HasMember("ProjectStatus") && !value["ProjectStatus"].IsNull())
+    {
+        if (!value["ProjectStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.ProjectStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectStatus = value["ProjectStatus"].GetInt64();
+        m_projectStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1706,6 +1717,14 @@ void TableMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "EngineCreator";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_engineCreator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_projectStatus, allocator);
     }
 
 }
@@ -3005,5 +3024,21 @@ void TableMeta::SetEngineCreator(const string& _engineCreator)
 bool TableMeta::EngineCreatorHasBeenSet() const
 {
     return m_engineCreatorHasBeenSet;
+}
+
+int64_t TableMeta::GetProjectStatus() const
+{
+    return m_projectStatus;
+}
+
+void TableMeta::SetProjectStatus(const int64_t& _projectStatus)
+{
+    m_projectStatus = _projectStatus;
+    m_projectStatusHasBeenSet = true;
+}
+
+bool TableMeta::ProjectStatusHasBeenSet() const
+{
+    return m_projectStatusHasBeenSet;
 }
 

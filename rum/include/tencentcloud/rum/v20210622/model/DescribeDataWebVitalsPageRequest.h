@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取类型暂无
-                     * @return Type 类型暂无
+                     * 获取按页面来源分组（group by from），返回每个页面的 LCP/FID/CLS/FCP
+                     * @return Type 按页面来源分组（group by from），返回每个页面的 LCP/FID/CLS/FCP
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型暂无
-                     * @param _type 类型暂无
+                     * 设置按页面来源分组（group by from），返回每个页面的 LCP/FID/CLS/FCP
+                     * @param _type 按页面来源分组（group by from），返回每个页面的 LCP/FID/CLS/FCP
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -555,7 +555,7 @@ namespace TencentCloud
                     bool m_levelHasBeenSet;
 
                     /**
-                     * 类型暂无
+                     * 按页面来源分组（group by from），返回每个页面的 LCP/FID/CLS/FCP
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

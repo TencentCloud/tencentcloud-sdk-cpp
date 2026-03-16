@@ -26,7 +26,8 @@ ModifyRabbitMQServerlessExchangeRequest::ModifyRabbitMQServerlessExchangeRequest
     m_instanceIdHasBeenSet(false),
     m_virtualHostHasBeenSet(false),
     m_exchangeNameHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_alternateExchangeHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string ModifyRabbitMQServerlessExchangeRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alternateExchangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlternateExchange";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_alternateExchange.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void ModifyRabbitMQServerlessExchangeRequest::SetRemark(const string& _remark)
 bool ModifyRabbitMQServerlessExchangeRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string ModifyRabbitMQServerlessExchangeRequest::GetAlternateExchange() const
+{
+    return m_alternateExchange;
+}
+
+void ModifyRabbitMQServerlessExchangeRequest::SetAlternateExchange(const string& _alternateExchange)
+{
+    m_alternateExchange = _alternateExchange;
+    m_alternateExchangeHasBeenSet = true;
+}
+
+bool ModifyRabbitMQServerlessExchangeRequest::AlternateExchangeHasBeenSet() const
+{
+    return m_alternateExchangeHasBeenSet;
 }
 
 

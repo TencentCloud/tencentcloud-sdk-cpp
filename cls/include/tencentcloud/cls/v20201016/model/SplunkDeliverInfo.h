@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/NetInfo.h>
 #include <tencentcloud/cls/v20201016/model/MetadataInfo.h>
+#include <tencentcloud/cls/v20201016/model/ExternalRole.h>
 
 
 namespace TencentCloud
@@ -405,6 +406,27 @@ namespace TencentCloud
                      */
                     bool DSLFilterHasBeenSet() const;
 
+                    /**
+                     * 获取<p>高级配置-跨账户投递参数</p>
+                     * @return ExternalRole <p>高级配置-跨账户投递参数</p>
+                     * 
+                     */
+                    ExternalRole GetExternalRole() const;
+
+                    /**
+                     * 设置<p>高级配置-跨账户投递参数</p>
+                     * @param _externalRole <p>高级配置-跨账户投递参数</p>
+                     * 
+                     */
+                    void SetExternalRole(const ExternalRole& _externalRole);
+
+                    /**
+                     * 判断参数 ExternalRole 是否已赋值
+                     * @return ExternalRole 是否已赋值
+                     * 
+                     */
+                    bool ExternalRoleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -508,6 +530,12 @@ namespace TencentCloud
                      */
                     std::string m_dSLFilter;
                     bool m_dSLFilterHasBeenSet;
+
+                    /**
+                     * <p>高级配置-跨账户投递参数</p>
+                     */
+                    ExternalRole m_externalRole;
+                    bool m_externalRoleHasBeenSet;
 
                 };
             }

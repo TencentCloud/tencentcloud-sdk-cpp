@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取客户的SdkAppId
-                     * @return SdkAppId 客户的SdkAppId
+                     * 获取<p>客户的SdkAppId</p>
+                     * @return SdkAppId <p>客户的SdkAppId</p>
                      * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
-                     * 设置客户的SdkAppId
-                     * @param _sdkAppId 客户的SdkAppId
+                     * 设置<p>客户的SdkAppId</p>
+                     * @param _sdkAppId <p>客户的SdkAppId</p>
                      * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取经过URL编码后的转码文件地址。URL 编码会将字符转换为可通过因特网传输的格式，比如文档地址为http://example.com/测试.pdf，经过URL编码之后为http://example.com/%E6%B5%8B%E8%AF%95.pdf。为了提高URL解析的成功率，请对URL进行编码。
-                     * @return Url 经过URL编码后的转码文件地址。URL 编码会将字符转换为可通过因特网传输的格式，比如文档地址为http://example.com/测试.pdf，经过URL编码之后为http://example.com/%E6%B5%8B%E8%AF%95.pdf。为了提高URL解析的成功率，请对URL进行编码。
+                     * 获取<p>经过URL编码后的转码文件地址。URL 编码会将字符转换为可通过因特网传输的格式，比如文档地址为http://example.com/测试.pdf，经过URL编码之后为http://example.com/%E6%B5%8B%E8%AF%95.pdf。为了提高URL解析的成功率，请对URL进行编码。</p>
+                     * @return Url <p>经过URL编码后的转码文件地址。URL 编码会将字符转换为可通过因特网传输的格式，比如文档地址为http://example.com/测试.pdf，经过URL编码之后为http://example.com/%E6%B5%8B%E8%AF%95.pdf。为了提高URL解析的成功率，请对URL进行编码。</p>
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置经过URL编码后的转码文件地址。URL 编码会将字符转换为可通过因特网传输的格式，比如文档地址为http://example.com/测试.pdf，经过URL编码之后为http://example.com/%E6%B5%8B%E8%AF%95.pdf。为了提高URL解析的成功率，请对URL进行编码。
-                     * @param _url 经过URL编码后的转码文件地址。URL 编码会将字符转换为可通过因特网传输的格式，比如文档地址为http://example.com/测试.pdf，经过URL编码之后为http://example.com/%E6%B5%8B%E8%AF%95.pdf。为了提高URL解析的成功率，请对URL进行编码。
+                     * 设置<p>经过URL编码后的转码文件地址。URL 编码会将字符转换为可通过因特网传输的格式，比如文档地址为http://example.com/测试.pdf，经过URL编码之后为http://example.com/%E6%B5%8B%E8%AF%95.pdf。为了提高URL解析的成功率，请对URL进行编码。</p>
+                     * @param _url <p>经过URL编码后的转码文件地址。URL 编码会将字符转换为可通过因特网传输的格式，比如文档地址为http://example.com/测试.pdf，经过URL编码之后为http://example.com/%E6%B5%8B%E8%AF%95.pdf。为了提高URL解析的成功率，请对URL进行编码。</p>
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -86,19 +86,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取是否为静态PPT，默认为False；
-如果IsStaticPPT为False，后缀名为.ppt或.pptx的文档会动态转码成HTML5页面，其他格式的文档会静态转码成图片；如果IsStaticPPT为True，所有格式的文档会静态转码成图片；
-                     * @return IsStaticPPT 是否为静态PPT，默认为False；
-如果IsStaticPPT为False，后缀名为.ppt或.pptx的文档会动态转码成HTML5页面，其他格式的文档会静态转码成图片；如果IsStaticPPT为True，所有格式的文档会静态转码成图片；
+                     * 获取<p>是否为静态PPT，默认为False；<br>如果IsStaticPPT为False，后缀名为.ppt或.pptx的文档会动态转码成HTML5页面，其他格式的文档会静态转码成图片；如果IsStaticPPT为True，所有格式的文档会静态转码成图片；</p>
+                     * @return IsStaticPPT <p>是否为静态PPT，默认为False；<br>如果IsStaticPPT为False，后缀名为.ppt或.pptx的文档会动态转码成HTML5页面，其他格式的文档会静态转码成图片；如果IsStaticPPT为True，所有格式的文档会静态转码成图片；</p>
                      * 
                      */
                     bool GetIsStaticPPT() const;
 
                     /**
-                     * 设置是否为静态PPT，默认为False；
-如果IsStaticPPT为False，后缀名为.ppt或.pptx的文档会动态转码成HTML5页面，其他格式的文档会静态转码成图片；如果IsStaticPPT为True，所有格式的文档会静态转码成图片；
-                     * @param _isStaticPPT 是否为静态PPT，默认为False；
-如果IsStaticPPT为False，后缀名为.ppt或.pptx的文档会动态转码成HTML5页面，其他格式的文档会静态转码成图片；如果IsStaticPPT为True，所有格式的文档会静态转码成图片；
+                     * 设置<p>是否为静态PPT，默认为False；<br>如果IsStaticPPT为False，后缀名为.ppt或.pptx的文档会动态转码成HTML5页面，其他格式的文档会静态转码成图片；如果IsStaticPPT为True，所有格式的文档会静态转码成图片；</p>
+                     * @param _isStaticPPT <p>是否为静态PPT，默认为False；<br>如果IsStaticPPT为False，后缀名为.ppt或.pptx的文档会动态转码成HTML5页面，其他格式的文档会静态转码成图片；如果IsStaticPPT为True，所有格式的文档会静态转码成图片；</p>
                      * 
                      */
                     void SetIsStaticPPT(const bool& _isStaticPPT);
@@ -111,31 +107,15 @@ namespace TencentCloud
                     bool IsStaticPPTHasBeenSet() const;
 
                     /**
-                     * 获取注意: 该参数已废弃, 请使用最新的 [云API SDK](https://cloud.tencent.com/document/api/1137/40060#SDK) ，使用 MinScaleResolution字段传递分辨率
-
-转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
-
-示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
-                     * @return MinResolution 注意: 该参数已废弃, 请使用最新的 [云API SDK](https://cloud.tencent.com/document/api/1137/40060#SDK) ，使用 MinScaleResolution字段传递分辨率
-
-转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
-
-示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
+                     * 获取<p>注意: 该参数已废弃, 请使用最新的 <a href="https://cloud.tencent.com/document/api/1137/40060#SDK">云API SDK</a> ，使用 MinScaleResolution字段传递分辨率</p><p>转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率</p><p>示例：1280x720，注意分辨率宽高中间为英文字母&quot;xyz&quot;的&quot;x&quot;</p>
+                     * @return MinResolution <p>注意: 该参数已废弃, 请使用最新的 <a href="https://cloud.tencent.com/document/api/1137/40060#SDK">云API SDK</a> ，使用 MinScaleResolution字段传递分辨率</p><p>转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率</p><p>示例：1280x720，注意分辨率宽高中间为英文字母&quot;xyz&quot;的&quot;x&quot;</p>
                      * 
                      */
                     std::string GetMinResolution() const;
 
                     /**
-                     * 设置注意: 该参数已废弃, 请使用最新的 [云API SDK](https://cloud.tencent.com/document/api/1137/40060#SDK) ，使用 MinScaleResolution字段传递分辨率
-
-转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
-
-示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
-                     * @param _minResolution 注意: 该参数已废弃, 请使用最新的 [云API SDK](https://cloud.tencent.com/document/api/1137/40060#SDK) ，使用 MinScaleResolution字段传递分辨率
-
-转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
-
-示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
+                     * 设置<p>注意: 该参数已废弃, 请使用最新的 <a href="https://cloud.tencent.com/document/api/1137/40060#SDK">云API SDK</a> ，使用 MinScaleResolution字段传递分辨率</p><p>转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率</p><p>示例：1280x720，注意分辨率宽高中间为英文字母&quot;xyz&quot;的&quot;x&quot;</p>
+                     * @param _minResolution <p>注意: 该参数已废弃, 请使用最新的 <a href="https://cloud.tencent.com/document/api/1137/40060#SDK">云API SDK</a> ，使用 MinScaleResolution字段传递分辨率</p><p>转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率</p><p>示例：1280x720，注意分辨率宽高中间为英文字母&quot;xyz&quot;的&quot;x&quot;</p>
                      * 
                      */
                     void SetMinResolution(const std::string& _minResolution);
@@ -148,15 +128,15 @@ namespace TencentCloud
                     bool MinResolutionHasBeenSet() const;
 
                     /**
-                     * 获取动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution
-                     * @return ThumbnailResolution 动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution
+                     * 获取<p>动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution</p>
+                     * @return ThumbnailResolution <p>动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution</p>
                      * 
                      */
                     std::string GetThumbnailResolution() const;
 
                     /**
-                     * 设置动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution
-                     * @param _thumbnailResolution 动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution
+                     * 设置<p>动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution</p>
+                     * @param _thumbnailResolution <p>动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution</p>
                      * 
                      */
                     void SetThumbnailResolution(const std::string& _thumbnailResolution);
@@ -169,27 +149,15 @@ namespace TencentCloud
                     bool ThumbnailResolutionHasBeenSet() const;
 
                     /**
-                     * 获取转码文件压缩格式，不传、传空字符串或不是指定的格式则不生成压缩文件，目前支持如下压缩格式：
-
-zip： 生成`.zip`压缩包
-tar.gz： 生成`.tar.gz`压缩包
-                     * @return CompressFileType 转码文件压缩格式，不传、传空字符串或不是指定的格式则不生成压缩文件，目前支持如下压缩格式：
-
-zip： 生成`.zip`压缩包
-tar.gz： 生成`.tar.gz`压缩包
+                     * 获取<p>转码文件压缩格式，不传、传空字符串或不是指定的格式则不生成压缩文件，目前支持如下压缩格式：</p><p>zip： 生成<code>.zip</code>压缩包<br>tar.gz： 生成<code>.tar.gz</code>压缩包</p>
+                     * @return CompressFileType <p>转码文件压缩格式，不传、传空字符串或不是指定的格式则不生成压缩文件，目前支持如下压缩格式：</p><p>zip： 生成<code>.zip</code>压缩包<br>tar.gz： 生成<code>.tar.gz</code>压缩包</p>
                      * 
                      */
                     std::string GetCompressFileType() const;
 
                     /**
-                     * 设置转码文件压缩格式，不传、传空字符串或不是指定的格式则不生成压缩文件，目前支持如下压缩格式：
-
-zip： 生成`.zip`压缩包
-tar.gz： 生成`.tar.gz`压缩包
-                     * @param _compressFileType 转码文件压缩格式，不传、传空字符串或不是指定的格式则不生成压缩文件，目前支持如下压缩格式：
-
-zip： 生成`.zip`压缩包
-tar.gz： 生成`.tar.gz`压缩包
+                     * 设置<p>转码文件压缩格式，不传、传空字符串或不是指定的格式则不生成压缩文件，目前支持如下压缩格式：</p><p>zip： 生成<code>.zip</code>压缩包<br>tar.gz： 生成<code>.tar.gz</code>压缩包</p>
+                     * @param _compressFileType <p>转码文件压缩格式，不传、传空字符串或不是指定的格式则不生成压缩文件，目前支持如下压缩格式：</p><p>zip： 生成<code>.zip</code>压缩包<br>tar.gz： 生成<code>.tar.gz</code>压缩包</p>
                      * 
                      */
                     void SetCompressFileType(const std::string& _compressFileType);
@@ -202,15 +170,15 @@ tar.gz： 生成`.tar.gz`压缩包
                     bool CompressFileTypeHasBeenSet() const;
 
                     /**
-                     * 获取内部参数
-                     * @return ExtraData 内部参数
+                     * 获取<p>内部参数</p>
+                     * @return ExtraData <p>内部参数</p>
                      * 
                      */
                     std::string GetExtraData() const;
 
                     /**
-                     * 设置内部参数
-                     * @param _extraData 内部参数
+                     * 设置<p>内部参数</p>
+                     * @param _extraData <p>内部参数</p>
                      * 
                      */
                     void SetExtraData(const std::string& _extraData);
@@ -223,31 +191,15 @@ tar.gz： 生成`.tar.gz`压缩包
                     bool ExtraDataHasBeenSet() const;
 
                     /**
-                     * 获取文档转码优先级， 只有对于PPT动态转码生效，支持填入以下值：<br/>
-- low: 低优先级转码，对于动态转码，能支持500MB（下载超时时间10分钟）以及2000页文档，但资源有限可能会有比较长时间的排队，请酌情使用该功能。<br/>
-- 不填表示正常优先级转码，支持200MB文件（下载超时时间2分钟），500页以内的文档进行转码
-<br/>
-注意：对于PDF等静态文件转码，无论是正常优先级或者低优先级，最大只能支持200MB
-                     * @return Priority 文档转码优先级， 只有对于PPT动态转码生效，支持填入以下值：<br/>
-- low: 低优先级转码，对于动态转码，能支持500MB（下载超时时间10分钟）以及2000页文档，但资源有限可能会有比较长时间的排队，请酌情使用该功能。<br/>
-- 不填表示正常优先级转码，支持200MB文件（下载超时时间2分钟），500页以内的文档进行转码
-<br/>
-注意：对于PDF等静态文件转码，无论是正常优先级或者低优先级，最大只能支持200MB
+                     * 获取<p>文档转码优先级， 只有对于PPT动态转码生效，支持填入以下值：<br></p><ul><li>low: 低优先级转码，对于动态转码，能支持500MB（下载超时时间10分钟）以及2000页文档，但资源有限可能会有比较长时间的排队，请酌情使用该功能。<br></li><li>不填表示正常优先级转码，支持200MB文件（下载超时时间2分钟），500页以内的文档进行转码<br>注意：对于PDF等静态文件转码，无论是正常优先级或者低优先级，最大只能支持200MB</li></ul>
+                     * @return Priority <p>文档转码优先级， 只有对于PPT动态转码生效，支持填入以下值：<br></p><ul><li>low: 低优先级转码，对于动态转码，能支持500MB（下载超时时间10分钟）以及2000页文档，但资源有限可能会有比较长时间的排队，请酌情使用该功能。<br></li><li>不填表示正常优先级转码，支持200MB文件（下载超时时间2分钟），500页以内的文档进行转码<br>注意：对于PDF等静态文件转码，无论是正常优先级或者低优先级，最大只能支持200MB</li></ul>
                      * 
                      */
                     std::string GetPriority() const;
 
                     /**
-                     * 设置文档转码优先级， 只有对于PPT动态转码生效，支持填入以下值：<br/>
-- low: 低优先级转码，对于动态转码，能支持500MB（下载超时时间10分钟）以及2000页文档，但资源有限可能会有比较长时间的排队，请酌情使用该功能。<br/>
-- 不填表示正常优先级转码，支持200MB文件（下载超时时间2分钟），500页以内的文档进行转码
-<br/>
-注意：对于PDF等静态文件转码，无论是正常优先级或者低优先级，最大只能支持200MB
-                     * @param _priority 文档转码优先级， 只有对于PPT动态转码生效，支持填入以下值：<br/>
-- low: 低优先级转码，对于动态转码，能支持500MB（下载超时时间10分钟）以及2000页文档，但资源有限可能会有比较长时间的排队，请酌情使用该功能。<br/>
-- 不填表示正常优先级转码，支持200MB文件（下载超时时间2分钟），500页以内的文档进行转码
-<br/>
-注意：对于PDF等静态文件转码，无论是正常优先级或者低优先级，最大只能支持200MB
+                     * 设置<p>文档转码优先级， 只有对于PPT动态转码生效，支持填入以下值：<br></p><ul><li>low: 低优先级转码，对于动态转码，能支持500MB（下载超时时间10分钟）以及2000页文档，但资源有限可能会有比较长时间的排队，请酌情使用该功能。<br></li><li>不填表示正常优先级转码，支持200MB文件（下载超时时间2分钟），500页以内的文档进行转码<br>注意：对于PDF等静态文件转码，无论是正常优先级或者低优先级，最大只能支持200MB</li></ul>
+                     * @param _priority <p>文档转码优先级， 只有对于PPT动态转码生效，支持填入以下值：<br></p><ul><li>low: 低优先级转码，对于动态转码，能支持500MB（下载超时时间10分钟）以及2000页文档，但资源有限可能会有比较长时间的排队，请酌情使用该功能。<br></li><li>不填表示正常优先级转码，支持200MB文件（下载超时时间2分钟），500页以内的文档进行转码<br>注意：对于PDF等静态文件转码，无论是正常优先级或者低优先级，最大只能支持200MB</li></ul>
                      * 
                      */
                     void SetPriority(const std::string& _priority);
@@ -260,27 +212,15 @@ tar.gz： 生成`.tar.gz`压缩包
                     bool PriorityHasBeenSet() const;
 
                     /**
-                     * 获取转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率。
-分辨率越高，效果越清晰，转出来的图片资源体积会越大，课件加载耗时会变长，请根据实际使用场景配置此参数。
-
-示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
-                     * @return MinScaleResolution 转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率。
-分辨率越高，效果越清晰，转出来的图片资源体积会越大，课件加载耗时会变长，请根据实际使用场景配置此参数。
-
-示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
+                     * 获取<p>转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率。<br>分辨率越高，效果越清晰，转出来的图片资源体积会越大，课件加载耗时会变长，请根据实际使用场景配置此参数。</p><p>示例：1280x720，注意分辨率宽高中间为英文字母&quot;xyz&quot;的&quot;x&quot;</p>
+                     * @return MinScaleResolution <p>转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率。<br>分辨率越高，效果越清晰，转出来的图片资源体积会越大，课件加载耗时会变长，请根据实际使用场景配置此参数。</p><p>示例：1280x720，注意分辨率宽高中间为英文字母&quot;xyz&quot;的&quot;x&quot;</p>
                      * 
                      */
                     std::string GetMinScaleResolution() const;
 
                     /**
-                     * 设置转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率。
-分辨率越高，效果越清晰，转出来的图片资源体积会越大，课件加载耗时会变长，请根据实际使用场景配置此参数。
-
-示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
-                     * @param _minScaleResolution 转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率。
-分辨率越高，效果越清晰，转出来的图片资源体积会越大，课件加载耗时会变长，请根据实际使用场景配置此参数。
-
-示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
+                     * 设置<p>转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率。<br>分辨率越高，效果越清晰，转出来的图片资源体积会越大，课件加载耗时会变长，请根据实际使用场景配置此参数。</p><p>示例：1280x720，注意分辨率宽高中间为英文字母&quot;xyz&quot;的&quot;x&quot;</p>
+                     * @param _minScaleResolution <p>转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率。<br>分辨率越高，效果越清晰，转出来的图片资源体积会越大，课件加载耗时会变长，请根据实际使用场景配置此参数。</p><p>示例：1280x720，注意分辨率宽高中间为英文字母&quot;xyz&quot;的&quot;x&quot;</p>
                      * 
                      */
                     void SetMinScaleResolution(const std::string& _minScaleResolution);
@@ -293,39 +233,15 @@ tar.gz： 生成`.tar.gz`压缩包
                     bool MinScaleResolutionHasBeenSet() const;
 
                     /**
-                     * 获取此参数仅对动态转码生效。
-
-是否对不支持元素开启自动处理的功能，默认不开启。
-true -- 开启
-false -- 不开启
-
-当设置为`true`时，可配合`AutoHandleUnsupportedElementTypes`参数使用，具体有哪些不兼容元素类型，可参考`AutoHandleUnsupportedElementTypes`参数的说明。
-                     * @return AutoHandleUnsupportedElement 此参数仅对动态转码生效。
-
-是否对不支持元素开启自动处理的功能，默认不开启。
-true -- 开启
-false -- 不开启
-
-当设置为`true`时，可配合`AutoHandleUnsupportedElementTypes`参数使用，具体有哪些不兼容元素类型，可参考`AutoHandleUnsupportedElementTypes`参数的说明。
+                     * 获取<p>此参数仅对动态转码生效。</p><p>是否对不支持元素开启自动处理的功能，默认不开启。<br>true -- 开启<br>false -- 不开启</p><p>当设置为<code>true</code>时，可配合<code>AutoHandleUnsupportedElementTypes</code>参数使用，具体有哪些不兼容元素类型，可参考<code>AutoHandleUnsupportedElementTypes</code>参数的说明。</p>
+                     * @return AutoHandleUnsupportedElement <p>此参数仅对动态转码生效。</p><p>是否对不支持元素开启自动处理的功能，默认不开启。<br>true -- 开启<br>false -- 不开启</p><p>当设置为<code>true</code>时，可配合<code>AutoHandleUnsupportedElementTypes</code>参数使用，具体有哪些不兼容元素类型，可参考<code>AutoHandleUnsupportedElementTypes</code>参数的说明。</p>
                      * 
                      */
                     bool GetAutoHandleUnsupportedElement() const;
 
                     /**
-                     * 设置此参数仅对动态转码生效。
-
-是否对不支持元素开启自动处理的功能，默认不开启。
-true -- 开启
-false -- 不开启
-
-当设置为`true`时，可配合`AutoHandleUnsupportedElementTypes`参数使用，具体有哪些不兼容元素类型，可参考`AutoHandleUnsupportedElementTypes`参数的说明。
-                     * @param _autoHandleUnsupportedElement 此参数仅对动态转码生效。
-
-是否对不支持元素开启自动处理的功能，默认不开启。
-true -- 开启
-false -- 不开启
-
-当设置为`true`时，可配合`AutoHandleUnsupportedElementTypes`参数使用，具体有哪些不兼容元素类型，可参考`AutoHandleUnsupportedElementTypes`参数的说明。
+                     * 设置<p>此参数仅对动态转码生效。</p><p>是否对不支持元素开启自动处理的功能，默认不开启。<br>true -- 开启<br>false -- 不开启</p><p>当设置为<code>true</code>时，可配合<code>AutoHandleUnsupportedElementTypes</code>参数使用，具体有哪些不兼容元素类型，可参考<code>AutoHandleUnsupportedElementTypes</code>参数的说明。</p>
+                     * @param _autoHandleUnsupportedElement <p>此参数仅对动态转码生效。</p><p>是否对不支持元素开启自动处理的功能，默认不开启。<br>true -- 开启<br>false -- 不开启</p><p>当设置为<code>true</code>时，可配合<code>AutoHandleUnsupportedElementTypes</code>参数使用，具体有哪些不兼容元素类型，可参考<code>AutoHandleUnsupportedElementTypes</code>参数的说明。</p>
                      * 
                      */
                     void SetAutoHandleUnsupportedElement(const bool& _autoHandleUnsupportedElement);
@@ -338,195 +254,15 @@ false -- 不开启
                     bool AutoHandleUnsupportedElementHasBeenSet() const;
 
                     /**
-                     * 获取此参数仅在`AutoHandleUnsupportedElement`参数为`true`的情况下有效。
-
-指定需要自动处理的不兼容元素类型，默认对所有不兼容的元素进行自动处理。
-
-目前支持检测的不兼容元素类型及对应的自动处理方式如下：
-0: 不支持的墨迹类型
--- 自动处理方式：移除墨迹
-
-1: 自动翻页
--- 自动处理方式：移除自动翻页设置，并修改为单击切换
-
-2: 已损坏音视频
--- 自动处理方式：移除对损坏音视频的引用
-
-3: 不可访问资源
--- 自动处理方式：移除对不可访问的资源的引用
-
-4: 只读文件
--- 自动处理方式：移除只读设置
-
-5: 不支持的元素编辑锁定状态
--- 自动处理方式：移除锁定状态
-
-6: 可能有兼容问题的字体
--- 自动处理方式： 不支持处理
-
-7: 设置了柔化边缘的GIF图片
--- 自动处理方式：移除柔化边缘设置
-
-8: 存在不兼容的空格下划线
--- 自动处理方式：通过调整空格下划线前后文本的字体语言体系，保证空格下划线表现正常
-
-9: 存在设置了分段动画的数学公式和文本混合内容
--- 自动处理方式： 不支持处理
-
-10: 存在设置了分段动画的渐变色文本
--- 自动处理方式： 不支持处理
-
-11: 存在不兼容的分散对齐方式
--- 自动处理方式： 不支持处理
-
-12: 存在不兼容的多倍行距设置
--- 自动处理方式： 不支持处理
-
-13: 存在带有特殊符号内容的datetime类型的a:fld标签元素
--- 自动处理方式： a:fld标签替换为普通文本
-                     * @return AutoHandleUnsupportedElementTypes 此参数仅在`AutoHandleUnsupportedElement`参数为`true`的情况下有效。
-
-指定需要自动处理的不兼容元素类型，默认对所有不兼容的元素进行自动处理。
-
-目前支持检测的不兼容元素类型及对应的自动处理方式如下：
-0: 不支持的墨迹类型
--- 自动处理方式：移除墨迹
-
-1: 自动翻页
--- 自动处理方式：移除自动翻页设置，并修改为单击切换
-
-2: 已损坏音视频
--- 自动处理方式：移除对损坏音视频的引用
-
-3: 不可访问资源
--- 自动处理方式：移除对不可访问的资源的引用
-
-4: 只读文件
--- 自动处理方式：移除只读设置
-
-5: 不支持的元素编辑锁定状态
--- 自动处理方式：移除锁定状态
-
-6: 可能有兼容问题的字体
--- 自动处理方式： 不支持处理
-
-7: 设置了柔化边缘的GIF图片
--- 自动处理方式：移除柔化边缘设置
-
-8: 存在不兼容的空格下划线
--- 自动处理方式：通过调整空格下划线前后文本的字体语言体系，保证空格下划线表现正常
-
-9: 存在设置了分段动画的数学公式和文本混合内容
--- 自动处理方式： 不支持处理
-
-10: 存在设置了分段动画的渐变色文本
--- 自动处理方式： 不支持处理
-
-11: 存在不兼容的分散对齐方式
--- 自动处理方式： 不支持处理
-
-12: 存在不兼容的多倍行距设置
--- 自动处理方式： 不支持处理
-
-13: 存在带有特殊符号内容的datetime类型的a:fld标签元素
--- 自动处理方式： a:fld标签替换为普通文本
+                     * 获取<p>此参数仅在<code>AutoHandleUnsupportedElement</code>参数为<code>true</code>的情况下有效。</p><p>指定需要自动处理的不兼容元素类型，默认对所有不兼容的元素进行自动处理。</p><p>目前支持检测的不兼容元素类型及对应的自动处理方式如下：<br>0: 不支持的墨迹类型<br>-- 自动处理方式：移除墨迹</p><p>1: 自动翻页<br>-- 自动处理方式：移除自动翻页设置，并修改为单击切换</p><p>2: 已损坏音视频<br>-- 自动处理方式：移除对损坏音视频的引用</p><p>3: 不可访问资源<br>-- 自动处理方式：移除对不可访问的资源的引用</p><p>4: 只读文件<br>-- 自动处理方式：移除只读设置</p><p>5: 不支持的元素编辑锁定状态<br>-- 自动处理方式：移除锁定状态</p><p>6: 可能有兼容问题的字体<br>-- 自动处理方式： 不支持处理</p><p>7: 设置了柔化边缘的GIF图片<br>-- 自动处理方式：移除柔化边缘设置</p><p>8: 存在不兼容的空格下划线<br>-- 自动处理方式：通过调整空格下划线前后文本的字体语言体系，保证空格下划线表现正常</p><p>9: 存在设置了分段动画的数学公式和文本混合内容<br>-- 自动处理方式： 不支持处理</p><p>10: 存在设置了分段动画的渐变色文本<br>-- 自动处理方式： 不支持处理</p><p>11: 存在不兼容的分散对齐方式<br>-- 自动处理方式： 不支持处理</p><p>12: 存在不兼容的多倍行距设置<br>-- 自动处理方式： 不支持处理</p><p>13: 存在带有特殊符号内容的datetime类型的a:fld标签元素<br>-- 自动处理方式： a:fld标签替换为普通文本</p>
+                     * @return AutoHandleUnsupportedElementTypes <p>此参数仅在<code>AutoHandleUnsupportedElement</code>参数为<code>true</code>的情况下有效。</p><p>指定需要自动处理的不兼容元素类型，默认对所有不兼容的元素进行自动处理。</p><p>目前支持检测的不兼容元素类型及对应的自动处理方式如下：<br>0: 不支持的墨迹类型<br>-- 自动处理方式：移除墨迹</p><p>1: 自动翻页<br>-- 自动处理方式：移除自动翻页设置，并修改为单击切换</p><p>2: 已损坏音视频<br>-- 自动处理方式：移除对损坏音视频的引用</p><p>3: 不可访问资源<br>-- 自动处理方式：移除对不可访问的资源的引用</p><p>4: 只读文件<br>-- 自动处理方式：移除只读设置</p><p>5: 不支持的元素编辑锁定状态<br>-- 自动处理方式：移除锁定状态</p><p>6: 可能有兼容问题的字体<br>-- 自动处理方式： 不支持处理</p><p>7: 设置了柔化边缘的GIF图片<br>-- 自动处理方式：移除柔化边缘设置</p><p>8: 存在不兼容的空格下划线<br>-- 自动处理方式：通过调整空格下划线前后文本的字体语言体系，保证空格下划线表现正常</p><p>9: 存在设置了分段动画的数学公式和文本混合内容<br>-- 自动处理方式： 不支持处理</p><p>10: 存在设置了分段动画的渐变色文本<br>-- 自动处理方式： 不支持处理</p><p>11: 存在不兼容的分散对齐方式<br>-- 自动处理方式： 不支持处理</p><p>12: 存在不兼容的多倍行距设置<br>-- 自动处理方式： 不支持处理</p><p>13: 存在带有特殊符号内容的datetime类型的a:fld标签元素<br>-- 自动处理方式： a:fld标签替换为普通文本</p>
                      * 
                      */
                     std::vector<int64_t> GetAutoHandleUnsupportedElementTypes() const;
 
                     /**
-                     * 设置此参数仅在`AutoHandleUnsupportedElement`参数为`true`的情况下有效。
-
-指定需要自动处理的不兼容元素类型，默认对所有不兼容的元素进行自动处理。
-
-目前支持检测的不兼容元素类型及对应的自动处理方式如下：
-0: 不支持的墨迹类型
--- 自动处理方式：移除墨迹
-
-1: 自动翻页
--- 自动处理方式：移除自动翻页设置，并修改为单击切换
-
-2: 已损坏音视频
--- 自动处理方式：移除对损坏音视频的引用
-
-3: 不可访问资源
--- 自动处理方式：移除对不可访问的资源的引用
-
-4: 只读文件
--- 自动处理方式：移除只读设置
-
-5: 不支持的元素编辑锁定状态
--- 自动处理方式：移除锁定状态
-
-6: 可能有兼容问题的字体
--- 自动处理方式： 不支持处理
-
-7: 设置了柔化边缘的GIF图片
--- 自动处理方式：移除柔化边缘设置
-
-8: 存在不兼容的空格下划线
--- 自动处理方式：通过调整空格下划线前后文本的字体语言体系，保证空格下划线表现正常
-
-9: 存在设置了分段动画的数学公式和文本混合内容
--- 自动处理方式： 不支持处理
-
-10: 存在设置了分段动画的渐变色文本
--- 自动处理方式： 不支持处理
-
-11: 存在不兼容的分散对齐方式
--- 自动处理方式： 不支持处理
-
-12: 存在不兼容的多倍行距设置
--- 自动处理方式： 不支持处理
-
-13: 存在带有特殊符号内容的datetime类型的a:fld标签元素
--- 自动处理方式： a:fld标签替换为普通文本
-                     * @param _autoHandleUnsupportedElementTypes 此参数仅在`AutoHandleUnsupportedElement`参数为`true`的情况下有效。
-
-指定需要自动处理的不兼容元素类型，默认对所有不兼容的元素进行自动处理。
-
-目前支持检测的不兼容元素类型及对应的自动处理方式如下：
-0: 不支持的墨迹类型
--- 自动处理方式：移除墨迹
-
-1: 自动翻页
--- 自动处理方式：移除自动翻页设置，并修改为单击切换
-
-2: 已损坏音视频
--- 自动处理方式：移除对损坏音视频的引用
-
-3: 不可访问资源
--- 自动处理方式：移除对不可访问的资源的引用
-
-4: 只读文件
--- 自动处理方式：移除只读设置
-
-5: 不支持的元素编辑锁定状态
--- 自动处理方式：移除锁定状态
-
-6: 可能有兼容问题的字体
--- 自动处理方式： 不支持处理
-
-7: 设置了柔化边缘的GIF图片
--- 自动处理方式：移除柔化边缘设置
-
-8: 存在不兼容的空格下划线
--- 自动处理方式：通过调整空格下划线前后文本的字体语言体系，保证空格下划线表现正常
-
-9: 存在设置了分段动画的数学公式和文本混合内容
--- 自动处理方式： 不支持处理
-
-10: 存在设置了分段动画的渐变色文本
--- 自动处理方式： 不支持处理
-
-11: 存在不兼容的分散对齐方式
--- 自动处理方式： 不支持处理
-
-12: 存在不兼容的多倍行距设置
--- 自动处理方式： 不支持处理
-
-13: 存在带有特殊符号内容的datetime类型的a:fld标签元素
--- 自动处理方式： a:fld标签替换为普通文本
+                     * 设置<p>此参数仅在<code>AutoHandleUnsupportedElement</code>参数为<code>true</code>的情况下有效。</p><p>指定需要自动处理的不兼容元素类型，默认对所有不兼容的元素进行自动处理。</p><p>目前支持检测的不兼容元素类型及对应的自动处理方式如下：<br>0: 不支持的墨迹类型<br>-- 自动处理方式：移除墨迹</p><p>1: 自动翻页<br>-- 自动处理方式：移除自动翻页设置，并修改为单击切换</p><p>2: 已损坏音视频<br>-- 自动处理方式：移除对损坏音视频的引用</p><p>3: 不可访问资源<br>-- 自动处理方式：移除对不可访问的资源的引用</p><p>4: 只读文件<br>-- 自动处理方式：移除只读设置</p><p>5: 不支持的元素编辑锁定状态<br>-- 自动处理方式：移除锁定状态</p><p>6: 可能有兼容问题的字体<br>-- 自动处理方式： 不支持处理</p><p>7: 设置了柔化边缘的GIF图片<br>-- 自动处理方式：移除柔化边缘设置</p><p>8: 存在不兼容的空格下划线<br>-- 自动处理方式：通过调整空格下划线前后文本的字体语言体系，保证空格下划线表现正常</p><p>9: 存在设置了分段动画的数学公式和文本混合内容<br>-- 自动处理方式： 不支持处理</p><p>10: 存在设置了分段动画的渐变色文本<br>-- 自动处理方式： 不支持处理</p><p>11: 存在不兼容的分散对齐方式<br>-- 自动处理方式： 不支持处理</p><p>12: 存在不兼容的多倍行距设置<br>-- 自动处理方式： 不支持处理</p><p>13: 存在带有特殊符号内容的datetime类型的a:fld标签元素<br>-- 自动处理方式： a:fld标签替换为普通文本</p>
+                     * @param _autoHandleUnsupportedElementTypes <p>此参数仅在<code>AutoHandleUnsupportedElement</code>参数为<code>true</code>的情况下有效。</p><p>指定需要自动处理的不兼容元素类型，默认对所有不兼容的元素进行自动处理。</p><p>目前支持检测的不兼容元素类型及对应的自动处理方式如下：<br>0: 不支持的墨迹类型<br>-- 自动处理方式：移除墨迹</p><p>1: 自动翻页<br>-- 自动处理方式：移除自动翻页设置，并修改为单击切换</p><p>2: 已损坏音视频<br>-- 自动处理方式：移除对损坏音视频的引用</p><p>3: 不可访问资源<br>-- 自动处理方式：移除对不可访问的资源的引用</p><p>4: 只读文件<br>-- 自动处理方式：移除只读设置</p><p>5: 不支持的元素编辑锁定状态<br>-- 自动处理方式：移除锁定状态</p><p>6: 可能有兼容问题的字体<br>-- 自动处理方式： 不支持处理</p><p>7: 设置了柔化边缘的GIF图片<br>-- 自动处理方式：移除柔化边缘设置</p><p>8: 存在不兼容的空格下划线<br>-- 自动处理方式：通过调整空格下划线前后文本的字体语言体系，保证空格下划线表现正常</p><p>9: 存在设置了分段动画的数学公式和文本混合内容<br>-- 自动处理方式： 不支持处理</p><p>10: 存在设置了分段动画的渐变色文本<br>-- 自动处理方式： 不支持处理</p><p>11: 存在不兼容的分散对齐方式<br>-- 自动处理方式： 不支持处理</p><p>12: 存在不兼容的多倍行距设置<br>-- 自动处理方式： 不支持处理</p><p>13: 存在带有特殊符号内容的datetime类型的a:fld标签元素<br>-- 自动处理方式： a:fld标签替换为普通文本</p>
                      * 
                      */
                     void SetAutoHandleUnsupportedElementTypes(const std::vector<int64_t>& _autoHandleUnsupportedElementTypes);
@@ -539,15 +275,15 @@ false -- 不开启
                     bool AutoHandleUnsupportedElementTypesHasBeenSet() const;
 
                     /**
-                     * 获取Excel表格转码参数，可设置转码时表格纸张大小及纸张方向等参数（仅对转码文件为Excel表格文件的静态转码任务生效）
-                     * @return ExcelParam Excel表格转码参数，可设置转码时表格纸张大小及纸张方向等参数（仅对转码文件为Excel表格文件的静态转码任务生效）
+                     * 获取<p>Excel表格转码参数，可设置转码时表格纸张大小及纸张方向等参数（仅对转码文件为Excel表格文件的静态转码任务生效）</p>
+                     * @return ExcelParam <p>Excel表格转码参数，可设置转码时表格纸张大小及纸张方向等参数（仅对转码文件为Excel表格文件的静态转码任务生效）</p>
                      * 
                      */
                     ExcelParam GetExcelParam() const;
 
                     /**
-                     * 设置Excel表格转码参数，可设置转码时表格纸张大小及纸张方向等参数（仅对转码文件为Excel表格文件的静态转码任务生效）
-                     * @param _excelParam Excel表格转码参数，可设置转码时表格纸张大小及纸张方向等参数（仅对转码文件为Excel表格文件的静态转码任务生效）
+                     * 设置<p>Excel表格转码参数，可设置转码时表格纸张大小及纸张方向等参数（仅对转码文件为Excel表格文件的静态转码任务生效）</p>
+                     * @param _excelParam <p>Excel表格转码参数，可设置转码时表格纸张大小及纸张方向等参数（仅对转码文件为Excel表格文件的静态转码任务生效）</p>
                      * 
                      */
                     void SetExcelParam(const ExcelParam& _excelParam);
@@ -562,139 +298,73 @@ false -- 不开启
                 private:
 
                     /**
-                     * 客户的SdkAppId
+                     * <p>客户的SdkAppId</p>
                      */
                     int64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 经过URL编码后的转码文件地址。URL 编码会将字符转换为可通过因特网传输的格式，比如文档地址为http://example.com/测试.pdf，经过URL编码之后为http://example.com/%E6%B5%8B%E8%AF%95.pdf。为了提高URL解析的成功率，请对URL进行编码。
+                     * <p>经过URL编码后的转码文件地址。URL 编码会将字符转换为可通过因特网传输的格式，比如文档地址为http://example.com/测试.pdf，经过URL编码之后为http://example.com/%E6%B5%8B%E8%AF%95.pdf。为了提高URL解析的成功率，请对URL进行编码。</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 是否为静态PPT，默认为False；
-如果IsStaticPPT为False，后缀名为.ppt或.pptx的文档会动态转码成HTML5页面，其他格式的文档会静态转码成图片；如果IsStaticPPT为True，所有格式的文档会静态转码成图片；
+                     * <p>是否为静态PPT，默认为False；<br>如果IsStaticPPT为False，后缀名为.ppt或.pptx的文档会动态转码成HTML5页面，其他格式的文档会静态转码成图片；如果IsStaticPPT为True，所有格式的文档会静态转码成图片；</p>
                      */
                     bool m_isStaticPPT;
                     bool m_isStaticPPTHasBeenSet;
 
                     /**
-                     * 注意: 该参数已废弃, 请使用最新的 [云API SDK](https://cloud.tencent.com/document/api/1137/40060#SDK) ，使用 MinScaleResolution字段传递分辨率
-
-转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率
-
-示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
+                     * <p>注意: 该参数已废弃, 请使用最新的 <a href="https://cloud.tencent.com/document/api/1137/40060#SDK">云API SDK</a> ，使用 MinScaleResolution字段传递分辨率</p><p>转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率</p><p>示例：1280x720，注意分辨率宽高中间为英文字母&quot;xyz&quot;的&quot;x&quot;</p>
                      */
                     std::string m_minResolution;
                     bool m_minResolutionHasBeenSet;
 
                     /**
-                     * 动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution
+                     * <p>动态PPT转码可以为文件生成该分辨率的缩略图，不传、传空字符串或分辨率格式错误则不生成缩略图，分辨率格式同MinResolution</p>
                      */
                     std::string m_thumbnailResolution;
                     bool m_thumbnailResolutionHasBeenSet;
 
                     /**
-                     * 转码文件压缩格式，不传、传空字符串或不是指定的格式则不生成压缩文件，目前支持如下压缩格式：
-
-zip： 生成`.zip`压缩包
-tar.gz： 生成`.tar.gz`压缩包
+                     * <p>转码文件压缩格式，不传、传空字符串或不是指定的格式则不生成压缩文件，目前支持如下压缩格式：</p><p>zip： 生成<code>.zip</code>压缩包<br>tar.gz： 生成<code>.tar.gz</code>压缩包</p>
                      */
                     std::string m_compressFileType;
                     bool m_compressFileTypeHasBeenSet;
 
                     /**
-                     * 内部参数
+                     * <p>内部参数</p>
                      */
                     std::string m_extraData;
                     bool m_extraDataHasBeenSet;
 
                     /**
-                     * 文档转码优先级， 只有对于PPT动态转码生效，支持填入以下值：<br/>
-- low: 低优先级转码，对于动态转码，能支持500MB（下载超时时间10分钟）以及2000页文档，但资源有限可能会有比较长时间的排队，请酌情使用该功能。<br/>
-- 不填表示正常优先级转码，支持200MB文件（下载超时时间2分钟），500页以内的文档进行转码
-<br/>
-注意：对于PDF等静态文件转码，无论是正常优先级或者低优先级，最大只能支持200MB
+                     * <p>文档转码优先级， 只有对于PPT动态转码生效，支持填入以下值：<br></p><ul><li>low: 低优先级转码，对于动态转码，能支持500MB（下载超时时间10分钟）以及2000页文档，但资源有限可能会有比较长时间的排队，请酌情使用该功能。<br></li><li>不填表示正常优先级转码，支持200MB文件（下载超时时间2分钟），500页以内的文档进行转码<br>注意：对于PDF等静态文件转码，无论是正常优先级或者低优先级，最大只能支持200MB</li></ul>
                      */
                     std::string m_priority;
                     bool m_priorityHasBeenSet;
 
                     /**
-                     * 转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率。
-分辨率越高，效果越清晰，转出来的图片资源体积会越大，课件加载耗时会变长，请根据实际使用场景配置此参数。
-
-示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
+                     * <p>转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率。<br>分辨率越高，效果越清晰，转出来的图片资源体积会越大，课件加载耗时会变长，请根据实际使用场景配置此参数。</p><p>示例：1280x720，注意分辨率宽高中间为英文字母&quot;xyz&quot;的&quot;x&quot;</p>
                      */
                     std::string m_minScaleResolution;
                     bool m_minScaleResolutionHasBeenSet;
 
                     /**
-                     * 此参数仅对动态转码生效。
-
-是否对不支持元素开启自动处理的功能，默认不开启。
-true -- 开启
-false -- 不开启
-
-当设置为`true`时，可配合`AutoHandleUnsupportedElementTypes`参数使用，具体有哪些不兼容元素类型，可参考`AutoHandleUnsupportedElementTypes`参数的说明。
+                     * <p>此参数仅对动态转码生效。</p><p>是否对不支持元素开启自动处理的功能，默认不开启。<br>true -- 开启<br>false -- 不开启</p><p>当设置为<code>true</code>时，可配合<code>AutoHandleUnsupportedElementTypes</code>参数使用，具体有哪些不兼容元素类型，可参考<code>AutoHandleUnsupportedElementTypes</code>参数的说明。</p>
                      */
                     bool m_autoHandleUnsupportedElement;
                     bool m_autoHandleUnsupportedElementHasBeenSet;
 
                     /**
-                     * 此参数仅在`AutoHandleUnsupportedElement`参数为`true`的情况下有效。
-
-指定需要自动处理的不兼容元素类型，默认对所有不兼容的元素进行自动处理。
-
-目前支持检测的不兼容元素类型及对应的自动处理方式如下：
-0: 不支持的墨迹类型
--- 自动处理方式：移除墨迹
-
-1: 自动翻页
--- 自动处理方式：移除自动翻页设置，并修改为单击切换
-
-2: 已损坏音视频
--- 自动处理方式：移除对损坏音视频的引用
-
-3: 不可访问资源
--- 自动处理方式：移除对不可访问的资源的引用
-
-4: 只读文件
--- 自动处理方式：移除只读设置
-
-5: 不支持的元素编辑锁定状态
--- 自动处理方式：移除锁定状态
-
-6: 可能有兼容问题的字体
--- 自动处理方式： 不支持处理
-
-7: 设置了柔化边缘的GIF图片
--- 自动处理方式：移除柔化边缘设置
-
-8: 存在不兼容的空格下划线
--- 自动处理方式：通过调整空格下划线前后文本的字体语言体系，保证空格下划线表现正常
-
-9: 存在设置了分段动画的数学公式和文本混合内容
--- 自动处理方式： 不支持处理
-
-10: 存在设置了分段动画的渐变色文本
--- 自动处理方式： 不支持处理
-
-11: 存在不兼容的分散对齐方式
--- 自动处理方式： 不支持处理
-
-12: 存在不兼容的多倍行距设置
--- 自动处理方式： 不支持处理
-
-13: 存在带有特殊符号内容的datetime类型的a:fld标签元素
--- 自动处理方式： a:fld标签替换为普通文本
+                     * <p>此参数仅在<code>AutoHandleUnsupportedElement</code>参数为<code>true</code>的情况下有效。</p><p>指定需要自动处理的不兼容元素类型，默认对所有不兼容的元素进行自动处理。</p><p>目前支持检测的不兼容元素类型及对应的自动处理方式如下：<br>0: 不支持的墨迹类型<br>-- 自动处理方式：移除墨迹</p><p>1: 自动翻页<br>-- 自动处理方式：移除自动翻页设置，并修改为单击切换</p><p>2: 已损坏音视频<br>-- 自动处理方式：移除对损坏音视频的引用</p><p>3: 不可访问资源<br>-- 自动处理方式：移除对不可访问的资源的引用</p><p>4: 只读文件<br>-- 自动处理方式：移除只读设置</p><p>5: 不支持的元素编辑锁定状态<br>-- 自动处理方式：移除锁定状态</p><p>6: 可能有兼容问题的字体<br>-- 自动处理方式： 不支持处理</p><p>7: 设置了柔化边缘的GIF图片<br>-- 自动处理方式：移除柔化边缘设置</p><p>8: 存在不兼容的空格下划线<br>-- 自动处理方式：通过调整空格下划线前后文本的字体语言体系，保证空格下划线表现正常</p><p>9: 存在设置了分段动画的数学公式和文本混合内容<br>-- 自动处理方式： 不支持处理</p><p>10: 存在设置了分段动画的渐变色文本<br>-- 自动处理方式： 不支持处理</p><p>11: 存在不兼容的分散对齐方式<br>-- 自动处理方式： 不支持处理</p><p>12: 存在不兼容的多倍行距设置<br>-- 自动处理方式： 不支持处理</p><p>13: 存在带有特殊符号内容的datetime类型的a:fld标签元素<br>-- 自动处理方式： a:fld标签替换为普通文本</p>
                      */
                     std::vector<int64_t> m_autoHandleUnsupportedElementTypes;
                     bool m_autoHandleUnsupportedElementTypesHasBeenSet;
 
                     /**
-                     * Excel表格转码参数，可设置转码时表格纸张大小及纸张方向等参数（仅对转码文件为Excel表格文件的静态转码任务生效）
+                     * <p>Excel表格转码参数，可设置转码时表格纸张大小及纸张方向等参数（仅对转码文件为Excel表格文件的静态转码任务生效）</p>
                      */
                     ExcelParam m_excelParam;
                     bool m_excelParamHasBeenSet;

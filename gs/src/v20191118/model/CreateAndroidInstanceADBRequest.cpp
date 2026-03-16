@@ -23,7 +23,8 @@ using namespace TencentCloud::Gs::V20191118::Model;
 using namespace std;
 
 CreateAndroidInstanceADBRequest::CreateAndroidInstanceADBRequest() :
-    m_androidInstanceIdHasBeenSet(false)
+    m_androidInstanceIdHasBeenSet(false),
+    m_expiredTimeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string CreateAndroidInstanceADBRequest::ToJsonString() const
         string key = "AndroidInstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_androidInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expiredTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpiredTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_expiredTime.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void CreateAndroidInstanceADBRequest::SetAndroidInstanceId(const string& _androi
 bool CreateAndroidInstanceADBRequest::AndroidInstanceIdHasBeenSet() const
 {
     return m_androidInstanceIdHasBeenSet;
+}
+
+string CreateAndroidInstanceADBRequest::GetExpiredTime() const
+{
+    return m_expiredTime;
+}
+
+void CreateAndroidInstanceADBRequest::SetExpiredTime(const string& _expiredTime)
+{
+    m_expiredTime = _expiredTime;
+    m_expiredTimeHasBeenSet = true;
+}
+
+bool CreateAndroidInstanceADBRequest::ExpiredTimeHasBeenSet() const
+{
+    return m_expiredTimeHasBeenSet;
 }
 
 

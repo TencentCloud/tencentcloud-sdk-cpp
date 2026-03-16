@@ -990,6 +990,56 @@ TcbClient::DescribeBaasPackageListOutcomeCallable TcbClient::DescribeBaasPackage
     return prom->get_future();
 }
 
+TcbClient::DescribeBillingInfoOutcome TcbClient::DescribeBillingInfo(const DescribeBillingInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBillingInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBillingInfoResponse rsp = DescribeBillingInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBillingInfoOutcome(rsp);
+        else
+            return DescribeBillingInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBillingInfoOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeBillingInfoAsync(const DescribeBillingInfoRequest& request, const DescribeBillingInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBillingInfoRequest&;
+    using Resp = DescribeBillingInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBillingInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeBillingInfoOutcomeCallable TcbClient::DescribeBillingInfoCallable(const DescribeBillingInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBillingInfoOutcome>>();
+    DescribeBillingInfoAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeBillingInfoRequest&,
+        DescribeBillingInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::DescribeCloudBaseBuildServiceOutcome TcbClient::DescribeCloudBaseBuildService(const DescribeCloudBaseBuildServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudBaseBuildService");
@@ -1132,6 +1182,56 @@ TcbClient::DescribeCloudBaseGWServiceOutcomeCallable TcbClient::DescribeCloudBas
         const TcbClient*,
         const DescribeCloudBaseGWServiceRequest&,
         DescribeCloudBaseGWServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DescribeCloudBaseRunServerVersionOutcome TcbClient::DescribeCloudBaseRunServerVersion(const DescribeCloudBaseRunServerVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudBaseRunServerVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudBaseRunServerVersionResponse rsp = DescribeCloudBaseRunServerVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudBaseRunServerVersionOutcome(rsp);
+        else
+            return DescribeCloudBaseRunServerVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudBaseRunServerVersionOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCloudBaseRunServerVersionAsync(const DescribeCloudBaseRunServerVersionRequest& request, const DescribeCloudBaseRunServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudBaseRunServerVersionRequest&;
+    using Resp = DescribeCloudBaseRunServerVersionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudBaseRunServerVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeCloudBaseRunServerVersionOutcomeCallable TcbClient::DescribeCloudBaseRunServerVersionCallable(const DescribeCloudBaseRunServerVersionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudBaseRunServerVersionOutcome>>();
+    DescribeCloudBaseRunServerVersionAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCloudBaseRunServerVersionRequest&,
+        DescribeCloudBaseRunServerVersionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

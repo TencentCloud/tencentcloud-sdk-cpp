@@ -35,7 +35,8 @@ ModifySplunkDeliverRequest::ModifySplunkDeliverRequest() :
     m_sourceTypeHasBeenSet(false),
     m_indexHasBeenSet(false),
     m_channelHasBeenSet(false),
-    m_dSLFilterHasBeenSet(false)
+    m_dSLFilterHasBeenSet(false),
+    m_externalRoleHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,15 @@ string ModifySplunkDeliverRequest::ToJsonString() const
         string key = "DSLFilter";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dSLFilter.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalRoleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalRole";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_externalRole.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -366,6 +376,22 @@ void ModifySplunkDeliverRequest::SetDSLFilter(const string& _dSLFilter)
 bool ModifySplunkDeliverRequest::DSLFilterHasBeenSet() const
 {
     return m_dSLFilterHasBeenSet;
+}
+
+ExternalRole ModifySplunkDeliverRequest::GetExternalRole() const
+{
+    return m_externalRole;
+}
+
+void ModifySplunkDeliverRequest::SetExternalRole(const ExternalRole& _externalRole)
+{
+    m_externalRole = _externalRole;
+    m_externalRoleHasBeenSet = true;
+}
+
+bool ModifySplunkDeliverRequest::ExternalRoleHasBeenSet() const
+{
+    return m_externalRoleHasBeenSet;
 }
 
 

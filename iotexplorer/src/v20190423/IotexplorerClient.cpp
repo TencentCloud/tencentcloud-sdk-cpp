@@ -90,6 +90,56 @@ IotexplorerClient::ActivateTWeCallLicenseOutcomeCallable IotexplorerClient::Acti
     return prom->get_future();
 }
 
+IotexplorerClient::ActivateTWeTalkOutcome IotexplorerClient::ActivateTWeTalk(const ActivateTWeTalkRequest &request)
+{
+    auto outcome = MakeRequest(request, "ActivateTWeTalk");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ActivateTWeTalkResponse rsp = ActivateTWeTalkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ActivateTWeTalkOutcome(rsp);
+        else
+            return ActivateTWeTalkOutcome(o.GetError());
+    }
+    else
+    {
+        return ActivateTWeTalkOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ActivateTWeTalkAsync(const ActivateTWeTalkRequest& request, const ActivateTWeTalkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ActivateTWeTalkRequest&;
+    using Resp = ActivateTWeTalkResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ActivateTWeTalk", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::ActivateTWeTalkOutcomeCallable IotexplorerClient::ActivateTWeTalkCallable(const ActivateTWeTalkRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ActivateTWeTalkOutcome>>();
+    ActivateTWeTalkAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const ActivateTWeTalkRequest&,
+        ActivateTWeTalkOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::BatchCreateTWeSeeRecognitionTaskOutcome IotexplorerClient::BatchCreateTWeSeeRecognitionTask(const BatchCreateTWeSeeRecognitionTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "BatchCreateTWeSeeRecognitionTask");
@@ -6982,6 +7032,106 @@ IotexplorerClient::GetTWeTalkAIBotListOutcomeCallable IotexplorerClient::GetTWeT
         const IotexplorerClient*,
         const GetTWeTalkAIBotListRequest&,
         GetTWeTalkAIBotListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::GetTWeTalkActiveRecordListOutcome IotexplorerClient::GetTWeTalkActiveRecordList(const GetTWeTalkActiveRecordListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTWeTalkActiveRecordList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTWeTalkActiveRecordListResponse rsp = GetTWeTalkActiveRecordListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTWeTalkActiveRecordListOutcome(rsp);
+        else
+            return GetTWeTalkActiveRecordListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTWeTalkActiveRecordListOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::GetTWeTalkActiveRecordListAsync(const GetTWeTalkActiveRecordListRequest& request, const GetTWeTalkActiveRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetTWeTalkActiveRecordListRequest&;
+    using Resp = GetTWeTalkActiveRecordListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetTWeTalkActiveRecordList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::GetTWeTalkActiveRecordListOutcomeCallable IotexplorerClient::GetTWeTalkActiveRecordListCallable(const GetTWeTalkActiveRecordListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetTWeTalkActiveRecordListOutcome>>();
+    GetTWeTalkActiveRecordListAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const GetTWeTalkActiveRecordListRequest&,
+        GetTWeTalkActiveRecordListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::GetTWeTalkActiveStatusOutcome IotexplorerClient::GetTWeTalkActiveStatus(const GetTWeTalkActiveStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTWeTalkActiveStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTWeTalkActiveStatusResponse rsp = GetTWeTalkActiveStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTWeTalkActiveStatusOutcome(rsp);
+        else
+            return GetTWeTalkActiveStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTWeTalkActiveStatusOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::GetTWeTalkActiveStatusAsync(const GetTWeTalkActiveStatusRequest& request, const GetTWeTalkActiveStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetTWeTalkActiveStatusRequest&;
+    using Resp = GetTWeTalkActiveStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetTWeTalkActiveStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::GetTWeTalkActiveStatusOutcomeCallable IotexplorerClient::GetTWeTalkActiveStatusCallable(const GetTWeTalkActiveStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetTWeTalkActiveStatusOutcome>>();
+    GetTWeTalkActiveStatusAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const GetTWeTalkActiveStatusRequest&,
+        GetTWeTalkActiveStatusOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

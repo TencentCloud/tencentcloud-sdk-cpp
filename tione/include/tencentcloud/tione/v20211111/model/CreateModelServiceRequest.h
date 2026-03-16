@@ -36,6 +36,7 @@
 #include <tencentcloud/tione/v20211111/model/HealthProbe.h>
 #include <tencentcloud/tione/v20211111/model/RollingUpdate.h>
 #include <tencentcloud/tione/v20211111/model/SidecarSpec.h>
+#include <tencentcloud/tione/v20211111/model/GatewayConfig.h>
 
 
 namespace TencentCloud
@@ -1073,6 +1074,27 @@ HYBRID_PAID:
                      */
                     bool GatewayLogConfigHasBeenSet() const;
 
+                    /**
+                     * 获取网关相关配置
+                     * @return GatewayConfig 网关相关配置
+                     * 
+                     */
+                    GatewayConfig GetGatewayConfig() const;
+
+                    /**
+                     * 设置网关相关配置
+                     * @param _gatewayConfig 网关相关配置
+                     * 
+                     */
+                    void SetGatewayConfig(const GatewayConfig& _gatewayConfig);
+
+                    /**
+                     * 判断参数 GatewayConfig 是否已赋值
+                     * @return GatewayConfig 是否已赋值
+                     * 
+                     */
+                    bool GatewayConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1361,6 +1383,12 @@ HYBRID_PAID:
                      */
                     LogConfig m_gatewayLogConfig;
                     bool m_gatewayLogConfigHasBeenSet;
+
+                    /**
+                     * 网关相关配置
+                     */
+                    GatewayConfig m_gatewayConfig;
+                    bool m_gatewayConfigHasBeenSet;
 
                 };
             }

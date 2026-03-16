@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool AndroidInstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取过期时间。默认 1 小时，最长 30 天。格式为 2025-07-02T10:15:36Z
+                     * @return ExpiredTime 过期时间。默认 1 小时，最长 30 天。格式为 2025-07-02T10:15:36Z
+                     * 
+                     */
+                    std::string GetExpiredTime() const;
+
+                    /**
+                     * 设置过期时间。默认 1 小时，最长 30 天。格式为 2025-07-02T10:15:36Z
+                     * @param _expiredTime 过期时间。默认 1 小时，最长 30 天。格式为 2025-07-02T10:15:36Z
+                     * 
+                     */
+                    void SetExpiredTime(const std::string& _expiredTime);
+
+                    /**
+                     * 判断参数 ExpiredTime 是否已赋值
+                     * @return ExpiredTime 是否已赋值
+                     * 
+                     */
+                    bool ExpiredTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_androidInstanceId;
                     bool m_androidInstanceIdHasBeenSet;
+
+                    /**
+                     * 过期时间。默认 1 小时，最长 30 天。格式为 2025-07-02T10:15:36Z
+                     */
+                    std::string m_expiredTime;
+                    bool m_expiredTimeHasBeenSet;
 
                 };
             }

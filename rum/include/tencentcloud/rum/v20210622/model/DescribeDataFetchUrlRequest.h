@@ -568,15 +568,15 @@ namespace TencentCloud
                     bool RetHasBeenSet() const;
 
                     /**
-                     * 获取网络状态
-                     * @return NetStatus 网络状态
+                     * 获取网络状态(tag 值):用于过滤/聚合字段 netStatus；枚举值：0(正常)、1(弱网)、2(断网)、3(其他)。
+                     * @return NetStatus 网络状态(tag 值):用于过滤/聚合字段 netStatus；枚举值：0(正常)、1(弱网)、2(断网)、3(其他)。
                      * 
                      */
                     std::string GetNetStatus() const;
 
                     /**
-                     * 设置网络状态
-                     * @param _netStatus 网络状态
+                     * 设置网络状态(tag 值):用于过滤/聚合字段 netStatus；枚举值：0(正常)、1(弱网)、2(断网)、3(其他)。
+                     * @param _netStatus 网络状态(tag 值):用于过滤/聚合字段 netStatus；枚举值：0(正常)、1(弱网)、2(断网)、3(其他)。
                      * 
                      */
                     void SetNetStatus(const std::string& _netStatus);
@@ -741,7 +741,7 @@ namespace TencentCloud
                     bool m_retHasBeenSet;
 
                     /**
-                     * 网络状态
+                     * 网络状态(tag 值):用于过滤/聚合字段 netStatus；枚举值：0(正常)、1(弱网)、2(断网)、3(其他)。
                      */
                     std::string m_netStatus;
                     bool m_netStatusHasBeenSet;

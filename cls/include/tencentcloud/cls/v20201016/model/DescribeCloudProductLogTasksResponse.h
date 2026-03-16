@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志配置详情列表
-                     * @return Tasks 日志配置详情列表
+                     * 获取<p>日志配置详情列表</p>
+                     * @return Tasks <p>日志配置详情列表</p>
                      * 
                      */
                     std::vector<CloudProductLogTaskInfo> GetTasks() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TasksHasBeenSet() const;
 
                     /**
-                     * 获取日志配置总数
-                     * @return TotalCount 日志配置总数
+                     * 获取<p>日志配置总数</p>
+                     * @return TotalCount <p>日志配置总数</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志配置详情列表
+                     * <p>日志配置详情列表</p>
                      */
                     std::vector<CloudProductLogTaskInfo> m_tasks;
                     bool m_tasksHasBeenSet;
 
                     /**
-                     * 日志配置总数
+                     * <p>日志配置总数</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

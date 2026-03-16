@@ -28,6 +28,7 @@
 #include <tencentcloud/tione/v20211111/model/Tag.h>
 #include <tencentcloud/tione/v20211111/model/AuthToken.h>
 #include <tencentcloud/tione/v20211111/model/LogConfig.h>
+#include <tencentcloud/tione/v20211111/model/GatewayConfig.h>
 
 
 namespace TencentCloud
@@ -691,6 +692,27 @@ UPDATING 更新中
                      */
                     bool GatewayLogConfigHasBeenSet() const;
 
+                    /**
+                     * 获取网关路由相关配置
+                     * @return GatewayConfig 网关路由相关配置
+                     * 
+                     */
+                    GatewayConfig GetGatewayConfig() const;
+
+                    /**
+                     * 设置网关路由相关配置
+                     * @param _gatewayConfig 网关路由相关配置
+                     * 
+                     */
+                    void SetGatewayConfig(const GatewayConfig& _gatewayConfig);
+
+                    /**
+                     * 判断参数 GatewayConfig 是否已赋值
+                     * @return GatewayConfig 是否已赋值
+                     * 
+                     */
+                    bool GatewayConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -871,6 +893,12 @@ UPDATING 更新中
                      */
                     LogConfig m_gatewayLogConfig;
                     bool m_gatewayLogConfigHasBeenSet;
+
+                    /**
+                     * 网关路由相关配置
+                     */
+                    GatewayConfig m_gatewayConfig;
+                    bool m_gatewayConfigHasBeenSet;
 
                 };
             }

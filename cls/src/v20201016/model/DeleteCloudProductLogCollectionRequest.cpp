@@ -26,7 +26,9 @@ DeleteCloudProductLogCollectionRequest::DeleteCloudProductLogCollectionRequest()
     m_instanceIdHasBeenSet(false),
     m_assumerNameHasBeenSet(false),
     m_logTypeHasBeenSet(false),
-    m_cloudProductRegionHasBeenSet(false)
+    m_cloudProductRegionHasBeenSet(false),
+    m_isDeleteTopicHasBeenSet(false),
+    m_isDeleteLogsetHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,22 @@ string DeleteCloudProductLogCollectionRequest::ToJsonString() const
         string key = "CloudProductRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cloudProductRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDeleteTopicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDeleteTopic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isDeleteTopic, allocator);
+    }
+
+    if (m_isDeleteLogsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDeleteLogset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isDeleteLogset, allocator);
     }
 
 
@@ -139,6 +157,38 @@ void DeleteCloudProductLogCollectionRequest::SetCloudProductRegion(const string&
 bool DeleteCloudProductLogCollectionRequest::CloudProductRegionHasBeenSet() const
 {
     return m_cloudProductRegionHasBeenSet;
+}
+
+bool DeleteCloudProductLogCollectionRequest::GetIsDeleteTopic() const
+{
+    return m_isDeleteTopic;
+}
+
+void DeleteCloudProductLogCollectionRequest::SetIsDeleteTopic(const bool& _isDeleteTopic)
+{
+    m_isDeleteTopic = _isDeleteTopic;
+    m_isDeleteTopicHasBeenSet = true;
+}
+
+bool DeleteCloudProductLogCollectionRequest::IsDeleteTopicHasBeenSet() const
+{
+    return m_isDeleteTopicHasBeenSet;
+}
+
+bool DeleteCloudProductLogCollectionRequest::GetIsDeleteLogset() const
+{
+    return m_isDeleteLogset;
+}
+
+void DeleteCloudProductLogCollectionRequest::SetIsDeleteLogset(const bool& _isDeleteLogset)
+{
+    m_isDeleteLogset = _isDeleteLogset;
+    m_isDeleteLogsetHasBeenSet = true;
+}
+
+bool DeleteCloudProductLogCollectionRequest::IsDeleteLogsetHasBeenSet() const
+{
+    return m_isDeleteLogsetHasBeenSet;
 }
 
 

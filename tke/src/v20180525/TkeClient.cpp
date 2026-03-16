@@ -1440,6 +1440,56 @@ TkeClient::CreateEksLogConfigOutcomeCallable TkeClient::CreateEksLogConfigCallab
     return prom->get_future();
 }
 
+TkeClient::CreateExternalNodePoolOutcome TkeClient::CreateExternalNodePool(const CreateExternalNodePoolRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateExternalNodePool");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateExternalNodePoolResponse rsp = CreateExternalNodePoolResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateExternalNodePoolOutcome(rsp);
+        else
+            return CreateExternalNodePoolOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateExternalNodePoolOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateExternalNodePoolAsync(const CreateExternalNodePoolRequest& request, const CreateExternalNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateExternalNodePoolRequest&;
+    using Resp = CreateExternalNodePoolResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateExternalNodePool", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::CreateExternalNodePoolOutcomeCallable TkeClient::CreateExternalNodePoolCallable(const CreateExternalNodePoolRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateExternalNodePoolOutcome>>();
+    CreateExternalNodePoolAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const CreateExternalNodePoolRequest&,
+        CreateExternalNodePoolOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::CreateGlobalMaintenanceWindowAndExclusionsOutcome TkeClient::CreateGlobalMaintenanceWindowAndExclusions(const CreateGlobalMaintenanceWindowAndExclusionsRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateGlobalMaintenanceWindowAndExclusions");
@@ -3032,6 +3082,106 @@ TkeClient::DeleteEdgeClusterInstancesOutcomeCallable TkeClient::DeleteEdgeCluste
         const TkeClient*,
         const DeleteEdgeClusterInstancesRequest&,
         DeleteEdgeClusterInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TkeClient::DeleteExternalNodeOutcome TkeClient::DeleteExternalNode(const DeleteExternalNodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteExternalNode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteExternalNodeResponse rsp = DeleteExternalNodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteExternalNodeOutcome(rsp);
+        else
+            return DeleteExternalNodeOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteExternalNodeOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteExternalNodeAsync(const DeleteExternalNodeRequest& request, const DeleteExternalNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteExternalNodeRequest&;
+    using Resp = DeleteExternalNodeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteExternalNode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DeleteExternalNodeOutcomeCallable TkeClient::DeleteExternalNodeCallable(const DeleteExternalNodeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteExternalNodeOutcome>>();
+    DeleteExternalNodeAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteExternalNodeRequest&,
+        DeleteExternalNodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TkeClient::DeleteExternalNodePoolOutcome TkeClient::DeleteExternalNodePool(const DeleteExternalNodePoolRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteExternalNodePool");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteExternalNodePoolResponse rsp = DeleteExternalNodePoolResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteExternalNodePoolOutcome(rsp);
+        else
+            return DeleteExternalNodePoolOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteExternalNodePoolOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteExternalNodePoolAsync(const DeleteExternalNodePoolRequest& request, const DeleteExternalNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteExternalNodePoolRequest&;
+    using Resp = DeleteExternalNodePoolResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteExternalNodePool", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DeleteExternalNodePoolOutcomeCallable TkeClient::DeleteExternalNodePoolCallable(const DeleteExternalNodePoolRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteExternalNodePoolOutcome>>();
+    DeleteExternalNodePoolAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DeleteExternalNodePoolRequest&,
+        DeleteExternalNodePoolOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -6490,6 +6640,156 @@ TkeClient::DescribeExistedInstancesOutcomeCallable TkeClient::DescribeExistedIns
     return prom->get_future();
 }
 
+TkeClient::DescribeExternalNodeOutcome TkeClient::DescribeExternalNode(const DescribeExternalNodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExternalNode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExternalNodeResponse rsp = DescribeExternalNodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExternalNodeOutcome(rsp);
+        else
+            return DescribeExternalNodeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExternalNodeOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeExternalNodeAsync(const DescribeExternalNodeRequest& request, const DescribeExternalNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeExternalNodeRequest&;
+    using Resp = DescribeExternalNodeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeExternalNode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DescribeExternalNodeOutcomeCallable TkeClient::DescribeExternalNodeCallable(const DescribeExternalNodeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeExternalNodeOutcome>>();
+    DescribeExternalNodeAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeExternalNodeRequest&,
+        DescribeExternalNodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TkeClient::DescribeExternalNodePoolsOutcome TkeClient::DescribeExternalNodePools(const DescribeExternalNodePoolsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExternalNodePools");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExternalNodePoolsResponse rsp = DescribeExternalNodePoolsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExternalNodePoolsOutcome(rsp);
+        else
+            return DescribeExternalNodePoolsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExternalNodePoolsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeExternalNodePoolsAsync(const DescribeExternalNodePoolsRequest& request, const DescribeExternalNodePoolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeExternalNodePoolsRequest&;
+    using Resp = DescribeExternalNodePoolsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeExternalNodePools", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DescribeExternalNodePoolsOutcomeCallable TkeClient::DescribeExternalNodePoolsCallable(const DescribeExternalNodePoolsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeExternalNodePoolsOutcome>>();
+    DescribeExternalNodePoolsAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeExternalNodePoolsRequest&,
+        DescribeExternalNodePoolsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TkeClient::DescribeExternalNodeScriptOutcome TkeClient::DescribeExternalNodeScript(const DescribeExternalNodeScriptRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExternalNodeScript");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExternalNodeScriptResponse rsp = DescribeExternalNodeScriptResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExternalNodeScriptOutcome(rsp);
+        else
+            return DescribeExternalNodeScriptOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExternalNodeScriptOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeExternalNodeScriptAsync(const DescribeExternalNodeScriptRequest& request, const DescribeExternalNodeScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeExternalNodeScriptRequest&;
+    using Resp = DescribeExternalNodeScriptResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeExternalNodeScript", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DescribeExternalNodeScriptOutcomeCallable TkeClient::DescribeExternalNodeScriptCallable(const DescribeExternalNodeScriptRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeExternalNodeScriptOutcome>>();
+    DescribeExternalNodeScriptAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeExternalNodeScriptRequest&,
+        DescribeExternalNodeScriptOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::DescribeExternalNodeSupportConfigOutcome TkeClient::DescribeExternalNodeSupportConfig(const DescribeExternalNodeSupportConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExternalNodeSupportConfig");
@@ -9440,6 +9740,56 @@ TkeClient::DrainClusterVirtualNodeOutcomeCallable TkeClient::DrainClusterVirtual
     return prom->get_future();
 }
 
+TkeClient::DrainExternalNodeOutcome TkeClient::DrainExternalNode(const DrainExternalNodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DrainExternalNode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DrainExternalNodeResponse rsp = DrainExternalNodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DrainExternalNodeOutcome(rsp);
+        else
+            return DrainExternalNodeOutcome(o.GetError());
+    }
+    else
+    {
+        return DrainExternalNodeOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DrainExternalNodeAsync(const DrainExternalNodeRequest& request, const DrainExternalNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DrainExternalNodeRequest&;
+    using Resp = DrainExternalNodeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DrainExternalNode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DrainExternalNodeOutcomeCallable TkeClient::DrainExternalNodeCallable(const DrainExternalNodeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DrainExternalNodeOutcome>>();
+    DrainExternalNodeAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DrainExternalNodeRequest&,
+        DrainExternalNodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::EnableClusterAuditOutcome TkeClient::EnableClusterAudit(const EnableClusterAuditRequest &request)
 {
     auto outcome = MakeRequest(request, "EnableClusterAudit");
@@ -9732,6 +10082,56 @@ TkeClient::EnableEventPersistenceOutcomeCallable TkeClient::EnableEventPersisten
         const TkeClient*,
         const EnableEventPersistenceRequest&,
         EnableEventPersistenceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TkeClient::EnableExternalNodeSupportOutcome TkeClient::EnableExternalNodeSupport(const EnableExternalNodeSupportRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableExternalNodeSupport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableExternalNodeSupportResponse rsp = EnableExternalNodeSupportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableExternalNodeSupportOutcome(rsp);
+        else
+            return EnableExternalNodeSupportOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableExternalNodeSupportOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::EnableExternalNodeSupportAsync(const EnableExternalNodeSupportRequest& request, const EnableExternalNodeSupportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EnableExternalNodeSupportRequest&;
+    using Resp = EnableExternalNodeSupportResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EnableExternalNodeSupport", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::EnableExternalNodeSupportOutcomeCallable TkeClient::EnableExternalNodeSupportCallable(const EnableExternalNodeSupportRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EnableExternalNodeSupportOutcome>>();
+    EnableExternalNodeSupportAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const EnableExternalNodeSupportRequest&,
+        EnableExternalNodeSupportOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -11032,6 +11432,56 @@ TkeClient::ModifyClusterVirtualNodePoolOutcomeCallable TkeClient::ModifyClusterV
         const TkeClient*,
         const ModifyClusterVirtualNodePoolRequest&,
         ModifyClusterVirtualNodePoolOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TkeClient::ModifyExternalNodePoolOutcome TkeClient::ModifyExternalNodePool(const ModifyExternalNodePoolRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyExternalNodePool");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyExternalNodePoolResponse rsp = ModifyExternalNodePoolResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyExternalNodePoolOutcome(rsp);
+        else
+            return ModifyExternalNodePoolOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyExternalNodePoolOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyExternalNodePoolAsync(const ModifyExternalNodePoolRequest& request, const ModifyExternalNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyExternalNodePoolRequest&;
+    using Resp = ModifyExternalNodePoolResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyExternalNodePool", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::ModifyExternalNodePoolOutcomeCallable TkeClient::ModifyExternalNodePoolCallable(const ModifyExternalNodePoolRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyExternalNodePoolOutcome>>();
+    ModifyExternalNodePoolAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyExternalNodePoolRequest&,
+        ModifyExternalNodePoolOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

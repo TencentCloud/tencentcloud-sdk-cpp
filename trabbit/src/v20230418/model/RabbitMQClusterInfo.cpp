@@ -48,7 +48,11 @@ RabbitMQClusterInfo::RabbitMQClusterInfo() :
     m_messageRetainTimeHasBeenSet(false),
     m_sendReceiveRatioHasBeenSet(false),
     m_traceTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_elasticTpsFlagHasBeenSet(false),
+    m_elasticTpsRatioHasBeenSet(false),
+    m_maxRedeliverCountHasBeenSet(false),
+    m_consumerTimeoutHasBeenSet(false)
 {
 }
 
@@ -360,6 +364,46 @@ CoreInternalOutcome RabbitMQClusterInfo::Deserialize(const rapidjson::Value &val
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("ElasticTpsFlag") && !value["ElasticTpsFlag"].IsNull())
+    {
+        if (!value["ElasticTpsFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterInfo.ElasticTpsFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticTpsFlag = value["ElasticTpsFlag"].GetBool();
+        m_elasticTpsFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("ElasticTpsRatio") && !value["ElasticTpsRatio"].IsNull())
+    {
+        if (!value["ElasticTpsRatio"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterInfo.ElasticTpsRatio` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticTpsRatio = value["ElasticTpsRatio"].GetDouble();
+        m_elasticTpsRatioHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxRedeliverCount") && !value["MaxRedeliverCount"].IsNull())
+    {
+        if (!value["MaxRedeliverCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterInfo.MaxRedeliverCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxRedeliverCount = value["MaxRedeliverCount"].GetUint64();
+        m_maxRedeliverCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConsumerTimeout") && !value["ConsumerTimeout"].IsNull())
+    {
+        if (!value["ConsumerTimeout"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterInfo.ConsumerTimeout` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_consumerTimeout = value["ConsumerTimeout"].GetUint64();
+        m_consumerTimeoutHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -608,6 +652,38 @@ void RabbitMQClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_elasticTpsFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticTpsFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticTpsFlag, allocator);
+    }
+
+    if (m_elasticTpsRatioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticTpsRatio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticTpsRatio, allocator);
+    }
+
+    if (m_maxRedeliverCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxRedeliverCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxRedeliverCount, allocator);
+    }
+
+    if (m_consumerTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumerTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_consumerTimeout, allocator);
     }
 
 }
@@ -1059,5 +1135,69 @@ void RabbitMQClusterInfo::SetTags(const vector<RabbitMQServerlessTag>& _tags)
 bool RabbitMQClusterInfo::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+bool RabbitMQClusterInfo::GetElasticTpsFlag() const
+{
+    return m_elasticTpsFlag;
+}
+
+void RabbitMQClusterInfo::SetElasticTpsFlag(const bool& _elasticTpsFlag)
+{
+    m_elasticTpsFlag = _elasticTpsFlag;
+    m_elasticTpsFlagHasBeenSet = true;
+}
+
+bool RabbitMQClusterInfo::ElasticTpsFlagHasBeenSet() const
+{
+    return m_elasticTpsFlagHasBeenSet;
+}
+
+double RabbitMQClusterInfo::GetElasticTpsRatio() const
+{
+    return m_elasticTpsRatio;
+}
+
+void RabbitMQClusterInfo::SetElasticTpsRatio(const double& _elasticTpsRatio)
+{
+    m_elasticTpsRatio = _elasticTpsRatio;
+    m_elasticTpsRatioHasBeenSet = true;
+}
+
+bool RabbitMQClusterInfo::ElasticTpsRatioHasBeenSet() const
+{
+    return m_elasticTpsRatioHasBeenSet;
+}
+
+uint64_t RabbitMQClusterInfo::GetMaxRedeliverCount() const
+{
+    return m_maxRedeliverCount;
+}
+
+void RabbitMQClusterInfo::SetMaxRedeliverCount(const uint64_t& _maxRedeliverCount)
+{
+    m_maxRedeliverCount = _maxRedeliverCount;
+    m_maxRedeliverCountHasBeenSet = true;
+}
+
+bool RabbitMQClusterInfo::MaxRedeliverCountHasBeenSet() const
+{
+    return m_maxRedeliverCountHasBeenSet;
+}
+
+uint64_t RabbitMQClusterInfo::GetConsumerTimeout() const
+{
+    return m_consumerTimeout;
+}
+
+void RabbitMQClusterInfo::SetConsumerTimeout(const uint64_t& _consumerTimeout)
+{
+    m_consumerTimeout = _consumerTimeout;
+    m_consumerTimeoutHasBeenSet = true;
+}
+
+bool RabbitMQClusterInfo::ConsumerTimeoutHasBeenSet() const
+{
+    return m_consumerTimeoutHasBeenSet;
 }
 

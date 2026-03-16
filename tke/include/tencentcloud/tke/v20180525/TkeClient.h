@@ -79,6 +79,8 @@
 #include <tencentcloud/tke/v20180525/model/CreateEdgeLogConfigResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateEksLogConfigRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateEksLogConfigResponse.h>
+#include <tencentcloud/tke/v20180525/model/CreateExternalNodePoolRequest.h>
+#include <tencentcloud/tke/v20180525/model/CreateExternalNodePoolResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateGlobalMaintenanceWindowAndExclusionsRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateGlobalMaintenanceWindowAndExclusionsResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateImageCacheRequest.h>
@@ -143,6 +145,10 @@
 #include <tencentcloud/tke/v20180525/model/DeleteEdgeCVMInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteEdgeClusterInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DeleteEdgeClusterInstancesResponse.h>
+#include <tencentcloud/tke/v20180525/model/DeleteExternalNodeRequest.h>
+#include <tencentcloud/tke/v20180525/model/DeleteExternalNodeResponse.h>
+#include <tencentcloud/tke/v20180525/model/DeleteExternalNodePoolRequest.h>
+#include <tencentcloud/tke/v20180525/model/DeleteExternalNodePoolResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteGlobalMaintenanceWindowAndExclusionRequest.h>
 #include <tencentcloud/tke/v20180525/model/DeleteGlobalMaintenanceWindowAndExclusionResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteImageCachesRequest.h>
@@ -281,6 +287,12 @@
 #include <tencentcloud/tke/v20180525/model/DescribeEncryptionStatusResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeExistedInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeExistedInstancesResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeExternalNodeRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeExternalNodeResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeExternalNodePoolsRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeExternalNodePoolsResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeExternalNodeScriptRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeExternalNodeScriptResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeExternalNodeSupportConfigRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeExternalNodeSupportConfigResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeGlobalMaintenanceWindowAndExclusionsRequest.h>
@@ -399,6 +411,8 @@
 #include <tencentcloud/tke/v20180525/model/DisableVpcCniNetworkTypeResponse.h>
 #include <tencentcloud/tke/v20180525/model/DrainClusterVirtualNodeRequest.h>
 #include <tencentcloud/tke/v20180525/model/DrainClusterVirtualNodeResponse.h>
+#include <tencentcloud/tke/v20180525/model/DrainExternalNodeRequest.h>
+#include <tencentcloud/tke/v20180525/model/DrainExternalNodeResponse.h>
 #include <tencentcloud/tke/v20180525/model/EnableClusterAuditRequest.h>
 #include <tencentcloud/tke/v20180525/model/EnableClusterAuditResponse.h>
 #include <tencentcloud/tke/v20180525/model/EnableClusterDeletionProtectionRequest.h>
@@ -411,6 +425,8 @@
 #include <tencentcloud/tke/v20180525/model/EnableEncryptionProtectionResponse.h>
 #include <tencentcloud/tke/v20180525/model/EnableEventPersistenceRequest.h>
 #include <tencentcloud/tke/v20180525/model/EnableEventPersistenceResponse.h>
+#include <tencentcloud/tke/v20180525/model/EnableExternalNodeSupportRequest.h>
+#include <tencentcloud/tke/v20180525/model/EnableExternalNodeSupportResponse.h>
 #include <tencentcloud/tke/v20180525/model/EnableVpcCniNetworkTypeRequest.h>
 #include <tencentcloud/tke/v20180525/model/EnableVpcCniNetworkTypeResponse.h>
 #include <tencentcloud/tke/v20180525/model/ForwardTKEEdgeApplicationRequestV3Request.h>
@@ -463,6 +479,8 @@
 #include <tencentcloud/tke/v20180525/model/ModifyClusterTagsResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterVirtualNodePoolRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterVirtualNodePoolResponse.h>
+#include <tencentcloud/tke/v20180525/model/ModifyExternalNodePoolRequest.h>
+#include <tencentcloud/tke/v20180525/model/ModifyExternalNodePoolResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyGlobalMaintenanceWindowAndExclusionsRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyGlobalMaintenanceWindowAndExclusionsResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyMasterComponentRequest.h>
@@ -639,6 +657,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEksLogConfigResponse> CreateEksLogConfigOutcome;
                 typedef std::future<CreateEksLogConfigOutcome> CreateEksLogConfigOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateEksLogConfigRequest&, CreateEksLogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEksLogConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateExternalNodePoolResponse> CreateExternalNodePoolOutcome;
+                typedef std::future<CreateExternalNodePoolOutcome> CreateExternalNodePoolOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::CreateExternalNodePoolRequest&, CreateExternalNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExternalNodePoolAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateGlobalMaintenanceWindowAndExclusionsResponse> CreateGlobalMaintenanceWindowAndExclusionsOutcome;
                 typedef std::future<CreateGlobalMaintenanceWindowAndExclusionsOutcome> CreateGlobalMaintenanceWindowAndExclusionsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateGlobalMaintenanceWindowAndExclusionsRequest&, CreateGlobalMaintenanceWindowAndExclusionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGlobalMaintenanceWindowAndExclusionsAsyncHandler;
@@ -735,6 +756,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteEdgeClusterInstancesResponse> DeleteEdgeClusterInstancesOutcome;
                 typedef std::future<DeleteEdgeClusterInstancesOutcome> DeleteEdgeClusterInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DeleteEdgeClusterInstancesRequest&, DeleteEdgeClusterInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEdgeClusterInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteExternalNodeResponse> DeleteExternalNodeOutcome;
+                typedef std::future<DeleteExternalNodeOutcome> DeleteExternalNodeOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DeleteExternalNodeRequest&, DeleteExternalNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteExternalNodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteExternalNodePoolResponse> DeleteExternalNodePoolOutcome;
+                typedef std::future<DeleteExternalNodePoolOutcome> DeleteExternalNodePoolOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DeleteExternalNodePoolRequest&, DeleteExternalNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteExternalNodePoolAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteGlobalMaintenanceWindowAndExclusionResponse> DeleteGlobalMaintenanceWindowAndExclusionOutcome;
                 typedef std::future<DeleteGlobalMaintenanceWindowAndExclusionOutcome> DeleteGlobalMaintenanceWindowAndExclusionOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DeleteGlobalMaintenanceWindowAndExclusionRequest&, DeleteGlobalMaintenanceWindowAndExclusionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGlobalMaintenanceWindowAndExclusionAsyncHandler;
@@ -942,6 +969,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeExistedInstancesResponse> DescribeExistedInstancesOutcome;
                 typedef std::future<DescribeExistedInstancesOutcome> DescribeExistedInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeExistedInstancesRequest&, DescribeExistedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExistedInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExternalNodeResponse> DescribeExternalNodeOutcome;
+                typedef std::future<DescribeExternalNodeOutcome> DescribeExternalNodeOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeExternalNodeRequest&, DescribeExternalNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExternalNodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExternalNodePoolsResponse> DescribeExternalNodePoolsOutcome;
+                typedef std::future<DescribeExternalNodePoolsOutcome> DescribeExternalNodePoolsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeExternalNodePoolsRequest&, DescribeExternalNodePoolsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExternalNodePoolsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExternalNodeScriptResponse> DescribeExternalNodeScriptOutcome;
+                typedef std::future<DescribeExternalNodeScriptOutcome> DescribeExternalNodeScriptOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeExternalNodeScriptRequest&, DescribeExternalNodeScriptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExternalNodeScriptAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExternalNodeSupportConfigResponse> DescribeExternalNodeSupportConfigOutcome;
                 typedef std::future<DescribeExternalNodeSupportConfigOutcome> DescribeExternalNodeSupportConfigOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeExternalNodeSupportConfigRequest&, DescribeExternalNodeSupportConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExternalNodeSupportConfigAsyncHandler;
@@ -1119,6 +1155,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DrainClusterVirtualNodeResponse> DrainClusterVirtualNodeOutcome;
                 typedef std::future<DrainClusterVirtualNodeOutcome> DrainClusterVirtualNodeOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DrainClusterVirtualNodeRequest&, DrainClusterVirtualNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DrainClusterVirtualNodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DrainExternalNodeResponse> DrainExternalNodeOutcome;
+                typedef std::future<DrainExternalNodeOutcome> DrainExternalNodeOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DrainExternalNodeRequest&, DrainExternalNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DrainExternalNodeAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableClusterAuditResponse> EnableClusterAuditOutcome;
                 typedef std::future<EnableClusterAuditOutcome> EnableClusterAuditOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::EnableClusterAuditRequest&, EnableClusterAuditOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableClusterAuditAsyncHandler;
@@ -1137,6 +1176,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnableEventPersistenceResponse> EnableEventPersistenceOutcome;
                 typedef std::future<EnableEventPersistenceOutcome> EnableEventPersistenceOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::EnableEventPersistenceRequest&, EnableEventPersistenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableEventPersistenceAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableExternalNodeSupportResponse> EnableExternalNodeSupportOutcome;
+                typedef std::future<EnableExternalNodeSupportOutcome> EnableExternalNodeSupportOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::EnableExternalNodeSupportRequest&, EnableExternalNodeSupportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableExternalNodeSupportAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableVpcCniNetworkTypeResponse> EnableVpcCniNetworkTypeOutcome;
                 typedef std::future<EnableVpcCniNetworkTypeOutcome> EnableVpcCniNetworkTypeOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::EnableVpcCniNetworkTypeRequest&, EnableVpcCniNetworkTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableVpcCniNetworkTypeAsyncHandler;
@@ -1215,6 +1257,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyClusterVirtualNodePoolResponse> ModifyClusterVirtualNodePoolOutcome;
                 typedef std::future<ModifyClusterVirtualNodePoolOutcome> ModifyClusterVirtualNodePoolOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyClusterVirtualNodePoolRequest&, ModifyClusterVirtualNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterVirtualNodePoolAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyExternalNodePoolResponse> ModifyExternalNodePoolOutcome;
+                typedef std::future<ModifyExternalNodePoolOutcome> ModifyExternalNodePoolOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ModifyExternalNodePoolRequest&, ModifyExternalNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyExternalNodePoolAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyGlobalMaintenanceWindowAndExclusionsResponse> ModifyGlobalMaintenanceWindowAndExclusionsOutcome;
                 typedef std::future<ModifyGlobalMaintenanceWindowAndExclusionsOutcome> ModifyGlobalMaintenanceWindowAndExclusionsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyGlobalMaintenanceWindowAndExclusionsRequest&, ModifyGlobalMaintenanceWindowAndExclusionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGlobalMaintenanceWindowAndExclusionsAsyncHandler;
@@ -1588,6 +1633,15 @@ namespace TencentCloud
                 CreateEksLogConfigOutcomeCallable CreateEksLogConfigCallable(const Model::CreateEksLogConfigRequest& request);
 
                 /**
+                 *创建第三方节点池
+                 * @param req CreateExternalNodePoolRequest
+                 * @return CreateExternalNodePoolOutcome
+                 */
+                CreateExternalNodePoolOutcome CreateExternalNodePool(const Model::CreateExternalNodePoolRequest &request);
+                void CreateExternalNodePoolAsync(const Model::CreateExternalNodePoolRequest& request, const CreateExternalNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateExternalNodePoolOutcomeCallable CreateExternalNodePoolCallable(const Model::CreateExternalNodePoolRequest& request);
+
+                /**
                  *创建全局维护时间窗口和排除项
                  * @param req CreateGlobalMaintenanceWindowAndExclusionsRequest
                  * @return CreateGlobalMaintenanceWindowAndExclusionsOutcome
@@ -1874,6 +1928,24 @@ namespace TencentCloud
                 DeleteEdgeClusterInstancesOutcome DeleteEdgeClusterInstances(const Model::DeleteEdgeClusterInstancesRequest &request);
                 void DeleteEdgeClusterInstancesAsync(const Model::DeleteEdgeClusterInstancesRequest& request, const DeleteEdgeClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteEdgeClusterInstancesOutcomeCallable DeleteEdgeClusterInstancesCallable(const Model::DeleteEdgeClusterInstancesRequest& request);
+
+                /**
+                 *删除第三方节点
+                 * @param req DeleteExternalNodeRequest
+                 * @return DeleteExternalNodeOutcome
+                 */
+                DeleteExternalNodeOutcome DeleteExternalNode(const Model::DeleteExternalNodeRequest &request);
+                void DeleteExternalNodeAsync(const Model::DeleteExternalNodeRequest& request, const DeleteExternalNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteExternalNodeOutcomeCallable DeleteExternalNodeCallable(const Model::DeleteExternalNodeRequest& request);
+
+                /**
+                 *删除第三方节点池
+                 * @param req DeleteExternalNodePoolRequest
+                 * @return DeleteExternalNodePoolOutcome
+                 */
+                DeleteExternalNodePoolOutcome DeleteExternalNodePool(const Model::DeleteExternalNodePoolRequest &request);
+                void DeleteExternalNodePoolAsync(const Model::DeleteExternalNodePoolRequest& request, const DeleteExternalNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteExternalNodePoolOutcomeCallable DeleteExternalNodePoolCallable(const Model::DeleteExternalNodePoolRequest& request);
 
                 /**
                  *删除全集维护时间窗口和排除项
@@ -2497,6 +2569,33 @@ namespace TencentCloud
                 DescribeExistedInstancesOutcomeCallable DescribeExistedInstancesCallable(const Model::DescribeExistedInstancesRequest& request);
 
                 /**
+                 *查看第三方节点列表
+                 * @param req DescribeExternalNodeRequest
+                 * @return DescribeExternalNodeOutcome
+                 */
+                DescribeExternalNodeOutcome DescribeExternalNode(const Model::DescribeExternalNodeRequest &request);
+                void DescribeExternalNodeAsync(const Model::DescribeExternalNodeRequest& request, const DescribeExternalNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExternalNodeOutcomeCallable DescribeExternalNodeCallable(const Model::DescribeExternalNodeRequest& request);
+
+                /**
+                 *查看第三方节点池列表
+                 * @param req DescribeExternalNodePoolsRequest
+                 * @return DescribeExternalNodePoolsOutcome
+                 */
+                DescribeExternalNodePoolsOutcome DescribeExternalNodePools(const Model::DescribeExternalNodePoolsRequest &request);
+                void DescribeExternalNodePoolsAsync(const Model::DescribeExternalNodePoolsRequest& request, const DescribeExternalNodePoolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExternalNodePoolsOutcomeCallable DescribeExternalNodePoolsCallable(const Model::DescribeExternalNodePoolsRequest& request);
+
+                /**
+                 *获取第三方节点添加脚本
+                 * @param req DescribeExternalNodeScriptRequest
+                 * @return DescribeExternalNodeScriptOutcome
+                 */
+                DescribeExternalNodeScriptOutcome DescribeExternalNodeScript(const Model::DescribeExternalNodeScriptRequest &request);
+                void DescribeExternalNodeScriptAsync(const Model::DescribeExternalNodeScriptRequest& request, const DescribeExternalNodeScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExternalNodeScriptOutcomeCallable DescribeExternalNodeScriptCallable(const Model::DescribeExternalNodeScriptRequest& request);
+
+                /**
                  *查看开启第三方节点池配置信息
                  * @param req DescribeExternalNodeSupportConfigRequest
                  * @return DescribeExternalNodeSupportConfigOutcome
@@ -3028,6 +3127,15 @@ namespace TencentCloud
                 DrainClusterVirtualNodeOutcomeCallable DrainClusterVirtualNodeCallable(const Model::DrainClusterVirtualNodeRequest& request);
 
                 /**
+                 *驱逐第三方节点
+                 * @param req DrainExternalNodeRequest
+                 * @return DrainExternalNodeOutcome
+                 */
+                DrainExternalNodeOutcome DrainExternalNode(const Model::DrainExternalNodeRequest &request);
+                void DrainExternalNodeAsync(const Model::DrainExternalNodeRequest& request, const DrainExternalNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DrainExternalNodeOutcomeCallable DrainExternalNodeCallable(const Model::DrainExternalNodeRequest& request);
+
+                /**
                  *开启集群审计
                  * @param req EnableClusterAuditRequest
                  * @return EnableClusterAuditOutcome
@@ -3080,6 +3188,15 @@ namespace TencentCloud
                 EnableEventPersistenceOutcome EnableEventPersistence(const Model::EnableEventPersistenceRequest &request);
                 void EnableEventPersistenceAsync(const Model::EnableEventPersistenceRequest& request, const EnableEventPersistenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableEventPersistenceOutcomeCallable EnableEventPersistenceCallable(const Model::EnableEventPersistenceRequest& request);
+
+                /**
+                 *开启第三方节点池支持
+                 * @param req EnableExternalNodeSupportRequest
+                 * @return EnableExternalNodeSupportOutcome
+                 */
+                EnableExternalNodeSupportOutcome EnableExternalNodeSupport(const Model::EnableExternalNodeSupportRequest &request);
+                void EnableExternalNodeSupportAsync(const Model::EnableExternalNodeSupportRequest& request, const EnableExternalNodeSupportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableExternalNodeSupportOutcomeCallable EnableExternalNodeSupportCallable(const Model::EnableExternalNodeSupportRequest& request);
 
                 /**
                  *GR集群可以通过本接口附加vpc-cni容器网络插件，开启vpc-cni容器网络能力
@@ -3314,6 +3431,15 @@ namespace TencentCloud
                 ModifyClusterVirtualNodePoolOutcome ModifyClusterVirtualNodePool(const Model::ModifyClusterVirtualNodePoolRequest &request);
                 void ModifyClusterVirtualNodePoolAsync(const Model::ModifyClusterVirtualNodePoolRequest& request, const ModifyClusterVirtualNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyClusterVirtualNodePoolOutcomeCallable ModifyClusterVirtualNodePoolCallable(const Model::ModifyClusterVirtualNodePoolRequest& request);
+
+                /**
+                 *修改第三方节点池
+                 * @param req ModifyExternalNodePoolRequest
+                 * @return ModifyExternalNodePoolOutcome
+                 */
+                ModifyExternalNodePoolOutcome ModifyExternalNodePool(const Model::ModifyExternalNodePoolRequest &request);
+                void ModifyExternalNodePoolAsync(const Model::ModifyExternalNodePoolRequest& request, const ModifyExternalNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyExternalNodePoolOutcomeCallable ModifyExternalNodePoolCallable(const Model::ModifyExternalNodePoolRequest& request);
 
                 /**
                  *更新全局维护时间窗口和排除项

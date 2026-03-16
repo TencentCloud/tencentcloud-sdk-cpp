@@ -90,6 +90,56 @@ TioneClient::ChatCompletionOutcomeCallable TioneClient::ChatCompletionCallable(c
     return prom->get_future();
 }
 
+TioneClient::CreateDataSourceOutcome TioneClient::CreateDataSource(const CreateDataSourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDataSource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDataSourceResponse rsp = CreateDataSourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDataSourceOutcome(rsp);
+        else
+            return CreateDataSourceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDataSourceOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::CreateDataSourceAsync(const CreateDataSourceRequest& request, const CreateDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateDataSourceRequest&;
+    using Resp = CreateDataSourceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateDataSource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::CreateDataSourceOutcomeCallable TioneClient::CreateDataSourceCallable(const CreateDataSourceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateDataSourceOutcome>>();
+    CreateDataSourceAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const CreateDataSourceRequest&,
+        CreateDataSourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TioneClient::CreateDatasetOutcome TioneClient::CreateDataset(const CreateDatasetRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDataset");
@@ -290,6 +340,56 @@ TioneClient::CreateModelServiceAuthTokenOutcomeCallable TioneClient::CreateModel
     return prom->get_future();
 }
 
+TioneClient::CreateMountLimitOutcome TioneClient::CreateMountLimit(const CreateMountLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMountLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMountLimitResponse rsp = CreateMountLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMountLimitOutcome(rsp);
+        else
+            return CreateMountLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMountLimitOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::CreateMountLimitAsync(const CreateMountLimitRequest& request, const CreateMountLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMountLimitRequest&;
+    using Resp = CreateMountLimitResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMountLimit", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::CreateMountLimitOutcomeCallable TioneClient::CreateMountLimitCallable(const CreateMountLimitRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMountLimitOutcome>>();
+    CreateMountLimitAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const CreateMountLimitRequest&,
+        CreateMountLimitOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TioneClient::CreateNotebookOutcome TioneClient::CreateNotebook(const CreateNotebookRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateNotebook");
@@ -482,6 +582,56 @@ TioneClient::CreateTrainingTaskOutcomeCallable TioneClient::CreateTrainingTaskCa
         const TioneClient*,
         const CreateTrainingTaskRequest&,
         CreateTrainingTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TioneClient::DeleteDataSourceOutcome TioneClient::DeleteDataSource(const DeleteDataSourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDataSource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDataSourceResponse rsp = DeleteDataSourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDataSourceOutcome(rsp);
+        else
+            return DeleteDataSourceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDataSourceOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DeleteDataSourceAsync(const DeleteDataSourceRequest& request, const DeleteDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDataSourceRequest&;
+    using Resp = DeleteDataSourceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDataSource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DeleteDataSourceOutcomeCallable TioneClient::DeleteDataSourceCallable(const DeleteDataSourceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDataSourceOutcome>>();
+    DeleteDataSourceAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DeleteDataSourceRequest&,
+        DeleteDataSourceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -732,6 +882,56 @@ TioneClient::DeleteModelServiceGroupOutcomeCallable TioneClient::DeleteModelServ
         const TioneClient*,
         const DeleteModelServiceGroupRequest&,
         DeleteModelServiceGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TioneClient::DeleteMountLimitOutcome TioneClient::DeleteMountLimit(const DeleteMountLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteMountLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteMountLimitResponse rsp = DeleteMountLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteMountLimitOutcome(rsp);
+        else
+            return DeleteMountLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteMountLimitOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DeleteMountLimitAsync(const DeleteMountLimitRequest& request, const DeleteMountLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteMountLimitRequest&;
+    using Resp = DeleteMountLimitResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteMountLimit", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DeleteMountLimitOutcomeCallable TioneClient::DeleteMountLimitCallable(const DeleteMountLimitRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteMountLimitOutcome>>();
+    DeleteMountLimitAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DeleteMountLimitRequest&,
+        DeleteMountLimitOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1232,6 +1432,106 @@ TioneClient::DescribeBuildInImagesOutcomeCallable TioneClient::DescribeBuildInIm
         const TioneClient*,
         const DescribeBuildInImagesRequest&,
         DescribeBuildInImagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TioneClient::DescribeDataSourceOutcome TioneClient::DescribeDataSource(const DescribeDataSourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataSource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataSourceResponse rsp = DescribeDataSourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataSourceOutcome(rsp);
+        else
+            return DescribeDataSourceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataSourceOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeDataSourceAsync(const DescribeDataSourceRequest& request, const DescribeDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDataSourceRequest&;
+    using Resp = DescribeDataSourceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDataSource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DescribeDataSourceOutcomeCallable TioneClient::DescribeDataSourceCallable(const DescribeDataSourceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDataSourceOutcome>>();
+    DescribeDataSourceAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DescribeDataSourceRequest&,
+        DescribeDataSourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TioneClient::DescribeDataSourcesOutcome TioneClient::DescribeDataSources(const DescribeDataSourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataSources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataSourcesResponse rsp = DescribeDataSourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataSourcesOutcome(rsp);
+        else
+            return DescribeDataSourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataSourcesOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeDataSourcesAsync(const DescribeDataSourcesRequest& request, const DescribeDataSourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDataSourcesRequest&;
+    using Resp = DescribeDataSourcesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDataSources", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DescribeDataSourcesOutcomeCallable TioneClient::DescribeDataSourcesCallable(const DescribeDataSourcesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDataSourcesOutcome>>();
+    DescribeDataSourcesAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DescribeDataSourcesRequest&,
+        DescribeDataSourcesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1832,6 +2132,156 @@ TioneClient::DescribeModelServiceHotUpdatedOutcomeCallable TioneClient::Describe
         const TioneClient*,
         const DescribeModelServiceHotUpdatedRequest&,
         DescribeModelServiceHotUpdatedOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TioneClient::DescribeMountInstanceOutcome TioneClient::DescribeMountInstance(const DescribeMountInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMountInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMountInstanceResponse rsp = DescribeMountInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMountInstanceOutcome(rsp);
+        else
+            return DescribeMountInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMountInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeMountInstanceAsync(const DescribeMountInstanceRequest& request, const DescribeMountInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMountInstanceRequest&;
+    using Resp = DescribeMountInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMountInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DescribeMountInstanceOutcomeCallable TioneClient::DescribeMountInstanceCallable(const DescribeMountInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMountInstanceOutcome>>();
+    DescribeMountInstanceAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DescribeMountInstanceRequest&,
+        DescribeMountInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TioneClient::DescribeMountInstancesOutcome TioneClient::DescribeMountInstances(const DescribeMountInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMountInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMountInstancesResponse rsp = DescribeMountInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMountInstancesOutcome(rsp);
+        else
+            return DescribeMountInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMountInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeMountInstancesAsync(const DescribeMountInstancesRequest& request, const DescribeMountInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMountInstancesRequest&;
+    using Resp = DescribeMountInstancesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMountInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DescribeMountInstancesOutcomeCallable TioneClient::DescribeMountInstancesCallable(const DescribeMountInstancesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMountInstancesOutcome>>();
+    DescribeMountInstancesAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DescribeMountInstancesRequest&,
+        DescribeMountInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TioneClient::DescribeMountLimitsOutcome TioneClient::DescribeMountLimits(const DescribeMountLimitsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMountLimits");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMountLimitsResponse rsp = DescribeMountLimitsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMountLimitsOutcome(rsp);
+        else
+            return DescribeMountLimitsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMountLimitsOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeMountLimitsAsync(const DescribeMountLimitsRequest& request, const DescribeMountLimitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMountLimitsRequest&;
+    using Resp = DescribeMountLimitsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMountLimits", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DescribeMountLimitsOutcomeCallable TioneClient::DescribeMountLimitsCallable(const DescribeMountLimitsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMountLimitsOutcome>>();
+    DescribeMountLimitsAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DescribeMountLimitsRequest&,
+        DescribeMountLimitsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2882,6 +3332,106 @@ TioneClient::StopTrainingTaskOutcomeCallable TioneClient::StopTrainingTaskCallab
         const TioneClient*,
         const StopTrainingTaskRequest&,
         StopTrainingTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TioneClient::UpdateDataSourceOutcome TioneClient::UpdateDataSource(const UpdateDataSourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateDataSource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateDataSourceResponse rsp = UpdateDataSourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateDataSourceOutcome(rsp);
+        else
+            return UpdateDataSourceOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateDataSourceOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::UpdateDataSourceAsync(const UpdateDataSourceRequest& request, const UpdateDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateDataSourceRequest&;
+    using Resp = UpdateDataSourceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateDataSource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::UpdateDataSourceOutcomeCallable TioneClient::UpdateDataSourceCallable(const UpdateDataSourceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateDataSourceOutcome>>();
+    UpdateDataSourceAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const UpdateDataSourceRequest&,
+        UpdateDataSourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TioneClient::UpdateMountLimitOutcome TioneClient::UpdateMountLimit(const UpdateMountLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateMountLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateMountLimitResponse rsp = UpdateMountLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateMountLimitOutcome(rsp);
+        else
+            return UpdateMountLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateMountLimitOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::UpdateMountLimitAsync(const UpdateMountLimitRequest& request, const UpdateMountLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateMountLimitRequest&;
+    using Resp = UpdateMountLimitResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateMountLimit", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::UpdateMountLimitOutcomeCallable TioneClient::UpdateMountLimitCallable(const UpdateMountLimitRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateMountLimitOutcome>>();
+    UpdateMountLimitAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const UpdateMountLimitRequest&,
+        UpdateMountLimitOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

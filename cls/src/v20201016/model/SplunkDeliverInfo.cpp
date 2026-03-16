@@ -37,7 +37,8 @@ SplunkDeliverInfo::SplunkDeliverInfo() :
     m_indexHasBeenSet(false),
     m_indexAckHasBeenSet(false),
     m_channelHasBeenSet(false),
-    m_dSLFilterHasBeenSet(false)
+    m_dSLFilterHasBeenSet(false),
+    m_externalRoleHasBeenSet(false)
 {
 }
 
@@ -230,6 +231,23 @@ CoreInternalOutcome SplunkDeliverInfo::Deserialize(const rapidjson::Value &value
         m_dSLFilterHasBeenSet = true;
     }
 
+    if (value.HasMember("ExternalRole") && !value["ExternalRole"].IsNull())
+    {
+        if (!value["ExternalRole"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SplunkDeliverInfo.ExternalRole` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_externalRole.Deserialize(value["ExternalRole"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_externalRoleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -373,6 +391,15 @@ void SplunkDeliverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "DSLFilter";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dSLFilter.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalRoleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalRole";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_externalRole.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -648,5 +675,21 @@ void SplunkDeliverInfo::SetDSLFilter(const string& _dSLFilter)
 bool SplunkDeliverInfo::DSLFilterHasBeenSet() const
 {
     return m_dSLFilterHasBeenSet;
+}
+
+ExternalRole SplunkDeliverInfo::GetExternalRole() const
+{
+    return m_externalRole;
+}
+
+void SplunkDeliverInfo::SetExternalRole(const ExternalRole& _externalRole)
+{
+    m_externalRole = _externalRole;
+    m_externalRoleHasBeenSet = true;
+}
+
+bool SplunkDeliverInfo::ExternalRoleHasBeenSet() const
+{
+    return m_externalRoleHasBeenSet;
 }
 

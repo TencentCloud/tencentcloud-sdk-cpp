@@ -28,7 +28,8 @@ SceneAigcImageOutputConfig::SceneAigcImageOutputConfig() :
     m_aspectRatioHasBeenSet(false),
     m_encodeConfigHasBeenSet(false),
     m_imageWidthHasBeenSet(false),
-    m_imageHeightHasBeenSet(false)
+    m_imageHeightHasBeenSet(false),
+    m_resolutionHasBeenSet(false)
 {
 }
 
@@ -124,6 +125,16 @@ CoreInternalOutcome SceneAigcImageOutputConfig::Deserialize(const rapidjson::Val
         m_imageHeightHasBeenSet = true;
     }
 
+    if (value.HasMember("Resolution") && !value["Resolution"].IsNull())
+    {
+        if (!value["Resolution"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SceneAigcImageOutputConfig.Resolution` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resolution = string(value["Resolution"].GetString());
+        m_resolutionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +205,14 @@ void SceneAigcImageOutputConfig::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "ImageHeight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_imageHeight, allocator);
+    }
+
+    if (m_resolutionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Resolution";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resolution.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -325,5 +344,21 @@ void SceneAigcImageOutputConfig::SetImageHeight(const uint64_t& _imageHeight)
 bool SceneAigcImageOutputConfig::ImageHeightHasBeenSet() const
 {
     return m_imageHeightHasBeenSet;
+}
+
+string SceneAigcImageOutputConfig::GetResolution() const
+{
+    return m_resolution;
+}
+
+void SceneAigcImageOutputConfig::SetResolution(const string& _resolution)
+{
+    m_resolution = _resolution;
+    m_resolutionHasBeenSet = true;
+}
+
+bool SceneAigcImageOutputConfig::ResolutionHasBeenSet() const
+{
+    return m_resolutionHasBeenSet;
 }
 

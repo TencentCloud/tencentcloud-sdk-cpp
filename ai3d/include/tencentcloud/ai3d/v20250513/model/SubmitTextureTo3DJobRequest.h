@@ -45,19 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取源3D模型文件。
-Type可选值：OBJ，GLB
-                     * @return File3D 源3D模型文件。
-Type可选值：OBJ，GLB
+                     * 获取<p>源3D模型文件。<br>Type可选值：OBJ，GLB</p>
+                     * @return File3D <p>源3D模型文件。<br>Type可选值：OBJ，GLB</p>
                      * 
                      */
                     File3D GetFile3D() const;
 
                     /**
-                     * 设置源3D模型文件。
-Type可选值：OBJ，GLB
-                     * @param _file3D 源3D模型文件。
-Type可选值：OBJ，GLB
+                     * 设置<p>源3D模型文件。<br>Type可选值：OBJ，GLB</p>
+                     * @param _file3D <p>源3D模型文件。<br>Type可选值：OBJ，GLB</p>
                      * 
                      */
                     void SetFile3D(const File3D& _file3D);
@@ -70,23 +66,15 @@ Type可选值：OBJ，GLB
                     bool File3DHasBeenSet() const;
 
                     /**
-                     * 获取文生3D，3D内容的描述，中文正向提示词。
-最多支持200个 utf-8 字符。
-文生3D, image、image_url和 prompt必填其一，且prompt和image/image_url不能同时存在。
-                     * @return Prompt 文生3D，3D内容的描述，中文正向提示词。
-最多支持200个 utf-8 字符。
-文生3D, image、image_url和 prompt必填其一，且prompt和image/image_url不能同时存在。
+                     * 获取<p>文生3D，3D内容的描述，中文正向提示词。<br>最多支持200个 utf-8 字符。<br>文生3D, image、image_url和 prompt必填其一，且prompt和image/image_url不能同时存在。</p>
+                     * @return Prompt <p>文生3D，3D内容的描述，中文正向提示词。<br>最多支持200个 utf-8 字符。<br>文生3D, image、image_url和 prompt必填其一，且prompt和image/image_url不能同时存在。</p>
                      * 
                      */
                     std::string GetPrompt() const;
 
                     /**
-                     * 设置文生3D，3D内容的描述，中文正向提示词。
-最多支持200个 utf-8 字符。
-文生3D, image、image_url和 prompt必填其一，且prompt和image/image_url不能同时存在。
-                     * @param _prompt 文生3D，3D内容的描述，中文正向提示词。
-最多支持200个 utf-8 字符。
-文生3D, image、image_url和 prompt必填其一，且prompt和image/image_url不能同时存在。
+                     * 设置<p>文生3D，3D内容的描述，中文正向提示词。<br>最多支持200个 utf-8 字符。<br>文生3D, image、image_url和 prompt必填其一，且prompt和image/image_url不能同时存在。</p>
+                     * @param _prompt <p>文生3D，3D内容的描述，中文正向提示词。<br>最多支持200个 utf-8 字符。<br>文生3D, image、image_url和 prompt必填其一，且prompt和image/image_url不能同时存在。</p>
                      * 
                      */
                     void SetPrompt(const std::string& _prompt);
@@ -99,23 +87,15 @@ Type可选值：OBJ，GLB
                     bool PromptHasBeenSet() const;
 
                     /**
-                     * 获取3D模型纹理参考图 Base64 数据和参考图图 Url。
-- Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
-- 图片限制：单边分辨率小于4096且大于128，转成 Base64 字符串后小于 10MB，格式支持 jpg、jpeg、png。
-                     * @return Image 3D模型纹理参考图 Base64 数据和参考图图 Url。
-- Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
-- 图片限制：单边分辨率小于4096且大于128，转成 Base64 字符串后小于 10MB，格式支持 jpg、jpeg、png。
+                     * 获取<p>3D模型纹理参考图 Base64 数据和参考图 Url。</p><ul><li>Base64 和 Url 必须提供一个，如果都提供以 Url 为准。</li><li>图片限制：单边分辨率小于4096且大于128，转成 Base64 字符串后小于 10MB，格式支持 jpg、jpeg、png。</li></ul>
+                     * @return Image <p>3D模型纹理参考图 Base64 数据和参考图 Url。</p><ul><li>Base64 和 Url 必须提供一个，如果都提供以 Url 为准。</li><li>图片限制：单边分辨率小于4096且大于128，转成 Base64 字符串后小于 10MB，格式支持 jpg、jpeg、png。</li></ul>
                      * 
                      */
                     Image GetImage() const;
 
                     /**
-                     * 设置3D模型纹理参考图 Base64 数据和参考图图 Url。
-- Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
-- 图片限制：单边分辨率小于4096且大于128，转成 Base64 字符串后小于 10MB，格式支持 jpg、jpeg、png。
-                     * @param _image 3D模型纹理参考图 Base64 数据和参考图图 Url。
-- Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
-- 图片限制：单边分辨率小于4096且大于128，转成 Base64 字符串后小于 10MB，格式支持 jpg、jpeg、png。
+                     * 设置<p>3D模型纹理参考图 Base64 数据和参考图 Url。</p><ul><li>Base64 和 Url 必须提供一个，如果都提供以 Url 为准。</li><li>图片限制：单边分辨率小于4096且大于128，转成 Base64 字符串后小于 10MB，格式支持 jpg、jpeg、png。</li></ul>
+                     * @param _image <p>3D模型纹理参考图 Base64 数据和参考图 Url。</p><ul><li>Base64 和 Url 必须提供一个，如果都提供以 Url 为准。</li><li>图片限制：单边分辨率小于4096且大于128，转成 Base64 字符串后小于 10MB，格式支持 jpg、jpeg、png。</li></ul>
                      * 
                      */
                     void SetImage(const Image& _image);
@@ -128,15 +108,15 @@ Type可选值：OBJ，GLB
                     bool ImageHasBeenSet() const;
 
                     /**
-                     * 获取是否开启 PBR材质生成，默认 false。
-                     * @return EnablePBR 是否开启 PBR材质生成，默认 false。
+                     * 获取<p>是否开启 PBR材质生成，默认 false。</p>
+                     * @return EnablePBR <p>是否开启 PBR材质生成，默认 false。</p>
                      * 
                      */
                     bool GetEnablePBR() const;
 
                     /**
-                     * 设置是否开启 PBR材质生成，默认 false。
-                     * @param _enablePBR 是否开启 PBR材质生成，默认 false。
+                     * 设置<p>是否开启 PBR材质生成，默认 false。</p>
+                     * @param _enablePBR <p>是否开启 PBR材质生成，默认 false。</p>
                      * 
                      */
                     void SetEnablePBR(const bool& _enablePBR);
@@ -151,30 +131,25 @@ Type可选值：OBJ，GLB
                 private:
 
                     /**
-                     * 源3D模型文件。
-Type可选值：OBJ，GLB
+                     * <p>源3D模型文件。<br>Type可选值：OBJ，GLB</p>
                      */
                     File3D m_file3D;
                     bool m_file3DHasBeenSet;
 
                     /**
-                     * 文生3D，3D内容的描述，中文正向提示词。
-最多支持200个 utf-8 字符。
-文生3D, image、image_url和 prompt必填其一，且prompt和image/image_url不能同时存在。
+                     * <p>文生3D，3D内容的描述，中文正向提示词。<br>最多支持200个 utf-8 字符。<br>文生3D, image、image_url和 prompt必填其一，且prompt和image/image_url不能同时存在。</p>
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
 
                     /**
-                     * 3D模型纹理参考图 Base64 数据和参考图图 Url。
-- Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
-- 图片限制：单边分辨率小于4096且大于128，转成 Base64 字符串后小于 10MB，格式支持 jpg、jpeg、png。
+                     * <p>3D模型纹理参考图 Base64 数据和参考图 Url。</p><ul><li>Base64 和 Url 必须提供一个，如果都提供以 Url 为准。</li><li>图片限制：单边分辨率小于4096且大于128，转成 Base64 字符串后小于 10MB，格式支持 jpg、jpeg、png。</li></ul>
                      */
                     Image m_image;
                     bool m_imageHasBeenSet;
 
                     /**
-                     * 是否开启 PBR材质生成，默认 false。
+                     * <p>是否开启 PBR材质生成，默认 false。</p>
                      */
                     bool m_enablePBR;
                     bool m_enablePBRHasBeenSet;

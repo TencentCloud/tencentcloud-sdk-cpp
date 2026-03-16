@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ActivateTWeCallLicenseRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ActivateTWeCallLicenseResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ActivateTWeTalkRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ActivateTWeTalkResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BatchCreateTWeSeeRecognitionTaskRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BatchCreateTWeSeeRecognitionTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BatchInvokeTWeSeeRecognitionTaskRequest.h>
@@ -301,6 +303,10 @@
 #include <tencentcloud/iotexplorer/v20190423/model/GetTWeCallActiveStatusResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkAIBotListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkAIBotListResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkActiveRecordListRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkActiveRecordListResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkActiveStatusRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkActiveStatusResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkProductConfigListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkProductConfigListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkProductConfigListV2Request.h>
@@ -440,6 +446,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ActivateTWeCallLicenseResponse> ActivateTWeCallLicenseOutcome;
                 typedef std::future<ActivateTWeCallLicenseOutcome> ActivateTWeCallLicenseOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ActivateTWeCallLicenseRequest&, ActivateTWeCallLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ActivateTWeCallLicenseAsyncHandler;
+                typedef Outcome<Core::Error, Model::ActivateTWeTalkResponse> ActivateTWeTalkOutcome;
+                typedef std::future<ActivateTWeTalkOutcome> ActivateTWeTalkOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ActivateTWeTalkRequest&, ActivateTWeTalkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ActivateTWeTalkAsyncHandler;
                 typedef Outcome<Core::Error, Model::BatchCreateTWeSeeRecognitionTaskResponse> BatchCreateTWeSeeRecognitionTaskOutcome;
                 typedef std::future<BatchCreateTWeSeeRecognitionTaskOutcome> BatchCreateTWeSeeRecognitionTaskOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::BatchCreateTWeSeeRecognitionTaskRequest&, BatchCreateTWeSeeRecognitionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchCreateTWeSeeRecognitionTaskAsyncHandler;
@@ -854,6 +863,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetTWeTalkAIBotListResponse> GetTWeTalkAIBotListOutcome;
                 typedef std::future<GetTWeTalkAIBotListOutcome> GetTWeTalkAIBotListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetTWeTalkAIBotListRequest&, GetTWeTalkAIBotListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTWeTalkAIBotListAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetTWeTalkActiveRecordListResponse> GetTWeTalkActiveRecordListOutcome;
+                typedef std::future<GetTWeTalkActiveRecordListOutcome> GetTWeTalkActiveRecordListOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::GetTWeTalkActiveRecordListRequest&, GetTWeTalkActiveRecordListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTWeTalkActiveRecordListAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetTWeTalkActiveStatusResponse> GetTWeTalkActiveStatusOutcome;
+                typedef std::future<GetTWeTalkActiveStatusOutcome> GetTWeTalkActiveStatusOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::GetTWeTalkActiveStatusRequest&, GetTWeTalkActiveStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTWeTalkActiveStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetTWeTalkProductConfigListResponse> GetTWeTalkProductConfigListOutcome;
                 typedef std::future<GetTWeTalkProductConfigListOutcome> GetTWeTalkProductConfigListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetTWeTalkProductConfigListRequest&, GetTWeTalkProductConfigListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTWeTalkProductConfigListAsyncHandler;
@@ -1048,6 +1063,15 @@ namespace TencentCloud
                 ActivateTWeCallLicenseOutcome ActivateTWeCallLicense(const Model::ActivateTWeCallLicenseRequest &request);
                 void ActivateTWeCallLicenseAsync(const Model::ActivateTWeCallLicenseRequest& request, const ActivateTWeCallLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ActivateTWeCallLicenseOutcomeCallable ActivateTWeCallLicenseCallable(const Model::ActivateTWeCallLicenseRequest& request);
+
+                /**
+                 *TWeTalk设备激活接口。
+                 * @param req ActivateTWeTalkRequest
+                 * @return ActivateTWeTalkOutcome
+                 */
+                ActivateTWeTalkOutcome ActivateTWeTalk(const Model::ActivateTWeTalkRequest &request);
+                void ActivateTWeTalkAsync(const Model::ActivateTWeTalkRequest& request, const ActivateTWeTalkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ActivateTWeTalkOutcomeCallable ActivateTWeTalkCallable(const Model::ActivateTWeTalkRequest& request);
 
                 /**
                  *批量同步执行 TWeSee 语义理解任务
@@ -2290,6 +2314,24 @@ namespace TencentCloud
                 GetTWeTalkAIBotListOutcome GetTWeTalkAIBotList(const Model::GetTWeTalkAIBotListRequest &request);
                 void GetTWeTalkAIBotListAsync(const Model::GetTWeTalkAIBotListRequest& request, const GetTWeTalkAIBotListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetTWeTalkAIBotListOutcomeCallable GetTWeTalkAIBotListCallable(const Model::GetTWeTalkAIBotListRequest& request);
+
+                /**
+                 *TWeTalk消耗账单明细。
+                 * @param req GetTWeTalkActiveRecordListRequest
+                 * @return GetTWeTalkActiveRecordListOutcome
+                 */
+                GetTWeTalkActiveRecordListOutcome GetTWeTalkActiveRecordList(const Model::GetTWeTalkActiveRecordListRequest &request);
+                void GetTWeTalkActiveRecordListAsync(const Model::GetTWeTalkActiveRecordListRequest& request, const GetTWeTalkActiveRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetTWeTalkActiveRecordListOutcomeCallable GetTWeTalkActiveRecordListCallable(const Model::GetTWeTalkActiveRecordListRequest& request);
+
+                /**
+                 *查询TWeTalk设备激活状态。
+                 * @param req GetTWeTalkActiveStatusRequest
+                 * @return GetTWeTalkActiveStatusOutcome
+                 */
+                GetTWeTalkActiveStatusOutcome GetTWeTalkActiveStatus(const Model::GetTWeTalkActiveStatusRequest &request);
+                void GetTWeTalkActiveStatusAsync(const Model::GetTWeTalkActiveStatusRequest& request, const GetTWeTalkActiveStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetTWeTalkActiveStatusOutcomeCallable GetTWeTalkActiveStatusCallable(const Model::GetTWeTalkActiveStatusRequest& request);
 
                 /**
                  *用于获取TWeTalk服务连接产品配置信息列表。

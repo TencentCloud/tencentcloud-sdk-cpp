@@ -133,6 +133,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateOrganizationGroupInvitationLinkResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateOrganizationInfoChangeUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateOrganizationInfoChangeUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreatePartnerAuthorizationLinkRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreatePartnerAuthorizationLinkResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreatePartnerAutoSignAuthUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreatePartnerAutoSignAuthUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreatePersonAuthCertificateImageRequest.h>
@@ -279,6 +281,8 @@
 #include <tencentcloud/ess/v20201111/model/ModifyIntegrationDepartmentResponse.h>
 #include <tencentcloud/ess/v20201111/model/ModifyIntegrationRoleRequest.h>
 #include <tencentcloud/ess/v20201111/model/ModifyIntegrationRoleResponse.h>
+#include <tencentcloud/ess/v20201111/model/ModifyPartnerAuthorizationRequest.h>
+#include <tencentcloud/ess/v20201111/model/ModifyPartnerAuthorizationResponse.h>
 #include <tencentcloud/ess/v20201111/model/ModifyPartnerAutoSignAuthUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/ModifyPartnerAutoSignAuthUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/ModifySingleSignOnEmployeesRequest.h>
@@ -480,6 +484,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateOrganizationInfoChangeUrlResponse> CreateOrganizationInfoChangeUrlOutcome;
                 typedef std::future<CreateOrganizationInfoChangeUrlOutcome> CreateOrganizationInfoChangeUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateOrganizationInfoChangeUrlRequest&, CreateOrganizationInfoChangeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrganizationInfoChangeUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePartnerAuthorizationLinkResponse> CreatePartnerAuthorizationLinkOutcome;
+                typedef std::future<CreatePartnerAuthorizationLinkOutcome> CreatePartnerAuthorizationLinkOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreatePartnerAuthorizationLinkRequest&, CreatePartnerAuthorizationLinkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePartnerAuthorizationLinkAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePartnerAutoSignAuthUrlResponse> CreatePartnerAutoSignAuthUrlOutcome;
                 typedef std::future<CreatePartnerAutoSignAuthUrlOutcome> CreatePartnerAutoSignAuthUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreatePartnerAutoSignAuthUrlRequest&, CreatePartnerAutoSignAuthUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePartnerAutoSignAuthUrlAsyncHandler;
@@ -699,6 +706,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyIntegrationRoleResponse> ModifyIntegrationRoleOutcome;
                 typedef std::future<ModifyIntegrationRoleOutcome> ModifyIntegrationRoleOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::ModifyIntegrationRoleRequest&, ModifyIntegrationRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIntegrationRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPartnerAuthorizationResponse> ModifyPartnerAuthorizationOutcome;
+                typedef std::future<ModifyPartnerAuthorizationOutcome> ModifyPartnerAuthorizationOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::ModifyPartnerAuthorizationRequest&, ModifyPartnerAuthorizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPartnerAuthorizationAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyPartnerAutoSignAuthUrlResponse> ModifyPartnerAutoSignAuthUrlOutcome;
                 typedef std::future<ModifyPartnerAutoSignAuthUrlOutcome> ModifyPartnerAutoSignAuthUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::ModifyPartnerAutoSignAuthUrlRequest&, ModifyPartnerAutoSignAuthUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPartnerAutoSignAuthUrlAsyncHandler;
@@ -1898,6 +1908,25 @@ namespace TencentCloud
                 CreateOrganizationInfoChangeUrlOutcomeCallable CreateOrganizationInfoChangeUrlCallable(const Model::CreateOrganizationInfoChangeUrlRequest& request);
 
                 /**
+                 *获取他方企业第三方应用的创建及授权及企业用户初始化链接
+此链接在 7 天内有效，若失效请重新生成。
+若第一次初始化，打开此链接，会进行应用号的创建，子客的创建，打开此链接的人，必须是合作方企业的超管或者法人，否则无法认证成功。
+若传递了应用号Id，若之前的初始化还未创建子客成功，则可以继续创建子客企业。
+
+注: 
+1. BusinessId “集成方业务标记”唯一，不可变更， 此标记由电子签产品经理提供，请调用方保存。
+2. 若“第三方应用id”不为空，需要其“集成方业务标记”与接口一致。
+3. 不支持客户自己创建“已有第三方应用id”进行授权。（即“已有第三方应用id”的集成方业务标记为空，不能进行授权）。
+4. 创建的子客企业与合作企业一致，其中包括超管姓名，企业名称。
+5. 创建好的第三方应用号，不支持在页面进行修改编辑，只能通过接口的方式进行管理。
+                 * @param req CreatePartnerAuthorizationLinkRequest
+                 * @return CreatePartnerAuthorizationLinkOutcome
+                 */
+                CreatePartnerAuthorizationLinkOutcome CreatePartnerAuthorizationLink(const Model::CreatePartnerAuthorizationLinkRequest &request);
+                void CreatePartnerAuthorizationLinkAsync(const Model::CreatePartnerAuthorizationLinkRequest& request, const CreatePartnerAuthorizationLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePartnerAuthorizationLinkOutcomeCallable CreatePartnerAuthorizationLinkCallable(const Model::CreatePartnerAuthorizationLinkRequest& request);
+
+                /**
                  *创建一个用于他方自动签授权的链接（可选择他方授权或我方授权）。通过这个链接，合作方企业可以直接进入小程序，进行自动签授权操作。
 
 如果授权企业尚未开通企业自动签功能，该链接还将引导他们首先开通本企业的自动签服务
@@ -2887,6 +2916,20 @@ namespace TencentCloud
                 ModifyIntegrationRoleOutcome ModifyIntegrationRole(const Model::ModifyIntegrationRoleRequest &request);
                 void ModifyIntegrationRoleAsync(const Model::ModifyIntegrationRoleRequest& request, const ModifyIntegrationRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyIntegrationRoleOutcomeCallable ModifyIntegrationRoleCallable(const Model::ModifyIntegrationRoleRequest& request);
+
+                /**
+                 *管理他方企业授权的第三方应用
+
+注: 
+1. BusinessId “集成方业务标记”需要与“第三方应用id”一致
+2. 不支持客户自己创建“已有第三方应用id”进行变更。（即“已有第三方应用id”的集成方业务标记为空，不能进行变更）。
+3. 当前仅支持修改回调地址和加密key。
+                 * @param req ModifyPartnerAuthorizationRequest
+                 * @return ModifyPartnerAuthorizationOutcome
+                 */
+                ModifyPartnerAuthorizationOutcome ModifyPartnerAuthorization(const Model::ModifyPartnerAuthorizationRequest &request);
+                void ModifyPartnerAuthorizationAsync(const Model::ModifyPartnerAuthorizationRequest& request, const ModifyPartnerAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPartnerAuthorizationOutcomeCallable ModifyPartnerAuthorizationCallable(const Model::ModifyPartnerAuthorizationRequest& request);
 
                 /**
                  *创建一个用于更新他方自动签授权的链接（可选择他方授权或我方授权）。通过这个链接，合作方企业可以直接进入小程序，进行自动签授权的更新（更新印章）操作。

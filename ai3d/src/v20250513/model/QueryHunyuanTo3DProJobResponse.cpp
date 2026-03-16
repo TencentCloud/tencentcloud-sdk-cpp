@@ -27,7 +27,9 @@ QueryHunyuanTo3DProJobResponse::QueryHunyuanTo3DProJobResponse() :
     m_statusHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
-    m_resultFile3DsHasBeenSet(false)
+    m_resultFile3DsHasBeenSet(false),
+    m_resultCreditDetailsHasBeenSet(false),
+    m_resultCreditConsumedHasBeenSet(false)
 {
 }
 
@@ -115,6 +117,26 @@ CoreInternalOutcome QueryHunyuanTo3DProJobResponse::Deserialize(const string &pa
         m_resultFile3DsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ResultCreditDetails") && !rsp["ResultCreditDetails"].IsNull())
+    {
+        if (!rsp["ResultCreditDetails"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResultCreditDetails` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resultCreditDetails = string(rsp["ResultCreditDetails"].GetString());
+        m_resultCreditDetailsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ResultCreditConsumed") && !rsp["ResultCreditConsumed"].IsNull())
+    {
+        if (!rsp["ResultCreditConsumed"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResultCreditConsumed` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_resultCreditConsumed = rsp["ResultCreditConsumed"].GetDouble();
+        m_resultCreditConsumedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -162,6 +184,22 @@ string QueryHunyuanTo3DProJobResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_resultCreditDetailsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultCreditDetails";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resultCreditDetails.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resultCreditConsumedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultCreditConsumed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_resultCreditConsumed, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -214,6 +252,26 @@ vector<File3D> QueryHunyuanTo3DProJobResponse::GetResultFile3Ds() const
 bool QueryHunyuanTo3DProJobResponse::ResultFile3DsHasBeenSet() const
 {
     return m_resultFile3DsHasBeenSet;
+}
+
+string QueryHunyuanTo3DProJobResponse::GetResultCreditDetails() const
+{
+    return m_resultCreditDetails;
+}
+
+bool QueryHunyuanTo3DProJobResponse::ResultCreditDetailsHasBeenSet() const
+{
+    return m_resultCreditDetailsHasBeenSet;
+}
+
+double QueryHunyuanTo3DProJobResponse::GetResultCreditConsumed() const
+{
+    return m_resultCreditConsumed;
+}
+
+bool QueryHunyuanTo3DProJobResponse::ResultCreditConsumedHasBeenSet() const
+{
+    return m_resultCreditConsumedHasBeenSet;
 }
 
 

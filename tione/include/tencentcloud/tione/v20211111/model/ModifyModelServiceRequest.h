@@ -883,6 +883,27 @@ HYBRID_PAID:
                      */
                     bool SchedulingStrategyHasBeenSet() const;
 
+                    /**
+                     * 获取目标工作空间，不为0则进行迁移，源服务只允许在默认空间
+                     * @return TargetProjectId 目标工作空间，不为0则进行迁移，源服务只允许在默认空间
+                     * 
+                     */
+                    int64_t GetTargetProjectId() const;
+
+                    /**
+                     * 设置目标工作空间，不为0则进行迁移，源服务只允许在默认空间
+                     * @param _targetProjectId 目标工作空间，不为0则进行迁移，源服务只允许在默认空间
+                     * 
+                     */
+                    void SetTargetProjectId(const int64_t& _targetProjectId);
+
+                    /**
+                     * 判断参数 TargetProjectId 是否已赋值
+                     * @return TargetProjectId 是否已赋值
+                     * 
+                     */
+                    bool TargetProjectIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1117,6 +1138,12 @@ HYBRID_PAID:
                      */
                     std::string m_schedulingStrategy;
                     bool m_schedulingStrategyHasBeenSet;
+
+                    /**
+                     * 目标工作空间，不为0则进行迁移，源服务只允许在默认空间
+                     */
+                    int64_t m_targetProjectId;
+                    bool m_targetProjectIdHasBeenSet;
 
                 };
             }

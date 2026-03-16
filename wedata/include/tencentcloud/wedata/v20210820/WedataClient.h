@@ -3979,7 +3979,7 @@ namespace TencentCloud
                 ReportSchemaOutcomeCallable ReportSchemaCallable(const Model::ReportSchemaRequest& request);
 
                 /**
-                 *上报table元数据
+                 *上报table元数据,当前列数量限制在300
                  * @param req ReportTableRequest
                  * @return ReportTableOutcome
                  */

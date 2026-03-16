@@ -2083,6 +2083,31 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                      */
                     bool EngineCreatorHasBeenSet() const;
 
+                    /**
+                     * 获取项目状态：0：禁用，1：启用，-3:禁用中，2：启用中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProjectStatus 项目状态：0：禁用，1：启用，-3:禁用中，2：启用中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetProjectStatus() const;
+
+                    /**
+                     * 设置项目状态：0：禁用，1：启用，-3:禁用中，2：启用中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _projectStatus 项目状态：0：禁用，1：启用，-3:禁用中，2：启用中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProjectStatus(const int64_t& _projectStatus);
+
+                    /**
+                     * 判断参数 ProjectStatus 是否已赋值
+                     * @return ProjectStatus 是否已赋值
+                     * 
+                     */
+                    bool ProjectStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2652,6 +2677,13 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                      */
                     std::string m_engineCreator;
                     bool m_engineCreatorHasBeenSet;
+
+                    /**
+                     * 项目状态：0：禁用，1：启用，-3:禁用中，2：启用中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_projectStatus;
+                    bool m_projectStatusHasBeenSet;
 
                 };
             }

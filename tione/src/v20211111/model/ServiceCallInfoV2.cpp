@@ -27,7 +27,8 @@ ServiceCallInfoV2::ServiceCallInfoV2() :
     m_authTokenHasBeenSet(false),
     m_authTokensHasBeenSet(false),
     m_enableLimitHasBeenSet(false),
-    m_grpcHostHasBeenSet(false)
+    m_grpcHostHasBeenSet(false),
+    m_gatewayConfigHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,23 @@ CoreInternalOutcome ServiceCallInfoV2::Deserialize(const rapidjson::Value &value
         m_grpcHostHasBeenSet = true;
     }
 
+    if (value.HasMember("GatewayConfig") && !value["GatewayConfig"].IsNull())
+    {
+        if (!value["GatewayConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceCallInfoV2.GatewayConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_gatewayConfig.Deserialize(value["GatewayConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_gatewayConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +202,15 @@ void ServiceCallInfoV2::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "GrpcHost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_grpcHost.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gatewayConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_gatewayConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -299,5 +326,21 @@ void ServiceCallInfoV2::SetGrpcHost(const string& _grpcHost)
 bool ServiceCallInfoV2::GrpcHostHasBeenSet() const
 {
     return m_grpcHostHasBeenSet;
+}
+
+GatewayConfig ServiceCallInfoV2::GetGatewayConfig() const
+{
+    return m_gatewayConfig;
+}
+
+void ServiceCallInfoV2::SetGatewayConfig(const GatewayConfig& _gatewayConfig)
+{
+    m_gatewayConfig = _gatewayConfig;
+    m_gatewayConfigHasBeenSet = true;
+}
+
+bool ServiceCallInfoV2::GatewayConfigHasBeenSet() const
+{
+    return m_gatewayConfigHasBeenSet;
 }
 
