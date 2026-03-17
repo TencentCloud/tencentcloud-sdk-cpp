@@ -29,7 +29,10 @@ ServiceDetail::ServiceDetail() :
     m_serviceDescriptionHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_instanceNameHasBeenSet(false)
+    m_instanceNameHasBeenSet(false),
+    m_enableThresholdConfigHasBeenSet(false),
+    m_errRateThresholdHasBeenSet(false),
+    m_responseDurationWarningThresholdHasBeenSet(false)
 {
 }
 
@@ -138,6 +141,36 @@ CoreInternalOutcome ServiceDetail::Deserialize(const rapidjson::Value &value)
         m_instanceNameHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableThresholdConfig") && !value["EnableThresholdConfig"].IsNull())
+    {
+        if (!value["EnableThresholdConfig"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceDetail.EnableThresholdConfig` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableThresholdConfig = value["EnableThresholdConfig"].GetBool();
+        m_enableThresholdConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrRateThreshold") && !value["ErrRateThreshold"].IsNull())
+    {
+        if (!value["ErrRateThreshold"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceDetail.ErrRateThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_errRateThreshold = value["ErrRateThreshold"].GetInt64();
+        m_errRateThresholdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResponseDurationWarningThreshold") && !value["ResponseDurationWarningThreshold"].IsNull())
+    {
+        if (!value["ResponseDurationWarningThreshold"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceDetail.ResponseDurationWarningThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_responseDurationWarningThreshold = value["ResponseDurationWarningThreshold"].GetInt64();
+        m_responseDurationWarningThresholdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +255,30 @@ void ServiceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "InstanceName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableThresholdConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableThresholdConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableThresholdConfig, allocator);
+    }
+
+    if (m_errRateThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrRateThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_errRateThreshold, allocator);
+    }
+
+    if (m_responseDurationWarningThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResponseDurationWarningThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_responseDurationWarningThreshold, allocator);
     }
 
 }
@@ -369,5 +426,53 @@ void ServiceDetail::SetInstanceName(const string& _instanceName)
 bool ServiceDetail::InstanceNameHasBeenSet() const
 {
     return m_instanceNameHasBeenSet;
+}
+
+bool ServiceDetail::GetEnableThresholdConfig() const
+{
+    return m_enableThresholdConfig;
+}
+
+void ServiceDetail::SetEnableThresholdConfig(const bool& _enableThresholdConfig)
+{
+    m_enableThresholdConfig = _enableThresholdConfig;
+    m_enableThresholdConfigHasBeenSet = true;
+}
+
+bool ServiceDetail::EnableThresholdConfigHasBeenSet() const
+{
+    return m_enableThresholdConfigHasBeenSet;
+}
+
+int64_t ServiceDetail::GetErrRateThreshold() const
+{
+    return m_errRateThreshold;
+}
+
+void ServiceDetail::SetErrRateThreshold(const int64_t& _errRateThreshold)
+{
+    m_errRateThreshold = _errRateThreshold;
+    m_errRateThresholdHasBeenSet = true;
+}
+
+bool ServiceDetail::ErrRateThresholdHasBeenSet() const
+{
+    return m_errRateThresholdHasBeenSet;
+}
+
+int64_t ServiceDetail::GetResponseDurationWarningThreshold() const
+{
+    return m_responseDurationWarningThreshold;
+}
+
+void ServiceDetail::SetResponseDurationWarningThreshold(const int64_t& _responseDurationWarningThreshold)
+{
+    m_responseDurationWarningThreshold = _responseDurationWarningThreshold;
+    m_responseDurationWarningThresholdHasBeenSet = true;
+}
+
+bool ServiceDetail::ResponseDurationWarningThresholdHasBeenSet() const
+{
+    return m_responseDurationWarningThresholdHasBeenSet;
 }
 

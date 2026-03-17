@@ -41,7 +41,8 @@ CreateFlowRequest::CreateFlowRequest() :
     m_relatedFlowIdHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
     m_flowDisplayTypeHasBeenSet(false),
-    m_workflowHasBeenSet(false)
+    m_workflowHasBeenSet(false),
+    m_flowOperateLimitHasBeenSet(false)
 {
 }
 
@@ -218,6 +219,15 @@ string CreateFlowRequest::ToJsonString() const
         string key = "Workflow";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_workflow, allocator);
+    }
+
+    if (m_flowOperateLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowOperateLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_flowOperateLimit.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -530,6 +540,22 @@ void CreateFlowRequest::SetWorkflow(const bool& _workflow)
 bool CreateFlowRequest::WorkflowHasBeenSet() const
 {
     return m_workflowHasBeenSet;
+}
+
+FlowOperateLimit CreateFlowRequest::GetFlowOperateLimit() const
+{
+    return m_flowOperateLimit;
+}
+
+void CreateFlowRequest::SetFlowOperateLimit(const FlowOperateLimit& _flowOperateLimit)
+{
+    m_flowOperateLimit = _flowOperateLimit;
+    m_flowOperateLimitHasBeenSet = true;
+}
+
+bool CreateFlowRequest::FlowOperateLimitHasBeenSet() const
+{
+    return m_flowOperateLimitHasBeenSet;
 }
 
 

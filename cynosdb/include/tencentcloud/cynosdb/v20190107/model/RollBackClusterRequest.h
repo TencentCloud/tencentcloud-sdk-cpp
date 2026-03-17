@@ -220,6 +220,27 @@ namespace TencentCloud
                      */
                     bool RollbackModeHasBeenSet() const;
 
+                    /**
+                     * 获取保险箱id
+                     * @return VaultId 保险箱id
+                     * 
+                     */
+                    std::string GetVaultId() const;
+
+                    /**
+                     * 设置保险箱id
+                     * @param _vaultId 保险箱id
+                     * 
+                     */
+                    void SetVaultId(const std::string& _vaultId);
+
+                    /**
+                     * 判断参数 VaultId 是否已赋值
+                     * @return VaultId 是否已赋值
+                     * 
+                     */
+                    bool VaultIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -271,6 +292,12 @@ namespace TencentCloud
                      */
                     std::string m_rollbackMode;
                     bool m_rollbackModeHasBeenSet;
+
+                    /**
+                     * 保险箱id
+                     */
+                    std::string m_vaultId;
+                    bool m_vaultIdHasBeenSet;
 
                 };
             }

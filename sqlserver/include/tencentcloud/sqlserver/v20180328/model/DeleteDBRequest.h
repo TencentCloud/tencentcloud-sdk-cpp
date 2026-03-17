@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，形如mssql-rljoi3bf
-                     * @return InstanceId 实例ID，形如mssql-rljoi3bf
+                     * 获取<p>实例ID，形如mssql-rljoi3bf</p>
+                     * @return InstanceId <p>实例ID，形如mssql-rljoi3bf</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，形如mssql-rljoi3bf
-                     * @param _instanceId 实例ID，形如mssql-rljoi3bf
+                     * 设置<p>实例ID，形如mssql-rljoi3bf</p>
+                     * @param _instanceId <p>实例ID，形如mssql-rljoi3bf</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库名数组
-                     * @return Names 数据库名数组
+                     * 获取<p>数据库名数组</p>
+                     * @return Names <p>数据库名数组</p>
                      * 
                      */
                     std::vector<std::string> GetNames() const;
 
                     /**
-                     * 设置数据库名数组
-                     * @param _names 数据库名数组
+                     * 设置<p>数据库名数组</p>
+                     * @param _names <p>数据库名数组</p>
                      * 
                      */
                     void SetNames(const std::vector<std::string>& _names);
@@ -84,19 +84,46 @@ namespace TencentCloud
                      */
                     bool NamesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>删除数据库前是否创建备份。</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * @return NoDoBackup <p>删除数据库前是否创建备份。</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * 
+                     */
+                    uint64_t GetNoDoBackup() const;
+
+                    /**
+                     * 设置<p>删除数据库前是否创建备份。</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * @param _noDoBackup <p>删除数据库前是否创建备份。</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * 
+                     */
+                    void SetNoDoBackup(const uint64_t& _noDoBackup);
+
+                    /**
+                     * 判断参数 NoDoBackup 是否已赋值
+                     * @return NoDoBackup 是否已赋值
+                     * 
+                     */
+                    bool NoDoBackupHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID，形如mssql-rljoi3bf
+                     * <p>实例ID，形如mssql-rljoi3bf</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 数据库名数组
+                     * <p>数据库名数组</p>
                      */
                     std::vector<std::string> m_names;
                     bool m_namesHasBeenSet;
+
+                    /**
+                     * <p>删除数据库前是否创建备份。</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     */
+                    uint64_t m_noDoBackup;
+                    bool m_noDoBackupHasBeenSet;
 
                 };
             }

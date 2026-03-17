@@ -27,7 +27,9 @@ CreateBatchContractReviewTaskRequest::CreateBatchContractReviewTaskRequest() :
     m_resourceIdsHasBeenSet(false),
     m_policyTypeHasBeenSet(false),
     m_roleHasBeenSet(false),
+    m_rolesHasBeenSet(false),
     m_checklistIdHasBeenSet(false),
+    m_checklistIdsHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_userDataHasBeenSet(false),
@@ -81,12 +83,40 @@ string CreateBatchContractReviewTaskRequest::ToJsonString() const
         m_role.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_rolesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Roles";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_roles.begin(); itr != m_roles.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_checklistIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChecklistId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_checklistId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checklistIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChecklistIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_checklistIds.begin(); itr != m_checklistIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_agentHasBeenSet)
@@ -194,6 +224,22 @@ bool CreateBatchContractReviewTaskRequest::RoleHasBeenSet() const
     return m_roleHasBeenSet;
 }
 
+vector<RiskIdentificationRoleInfo> CreateBatchContractReviewTaskRequest::GetRoles() const
+{
+    return m_roles;
+}
+
+void CreateBatchContractReviewTaskRequest::SetRoles(const vector<RiskIdentificationRoleInfo>& _roles)
+{
+    m_roles = _roles;
+    m_rolesHasBeenSet = true;
+}
+
+bool CreateBatchContractReviewTaskRequest::RolesHasBeenSet() const
+{
+    return m_rolesHasBeenSet;
+}
+
 string CreateBatchContractReviewTaskRequest::GetChecklistId() const
 {
     return m_checklistId;
@@ -208,6 +254,22 @@ void CreateBatchContractReviewTaskRequest::SetChecklistId(const string& _checkli
 bool CreateBatchContractReviewTaskRequest::ChecklistIdHasBeenSet() const
 {
     return m_checklistIdHasBeenSet;
+}
+
+vector<string> CreateBatchContractReviewTaskRequest::GetChecklistIds() const
+{
+    return m_checklistIds;
+}
+
+void CreateBatchContractReviewTaskRequest::SetChecklistIds(const vector<string>& _checklistIds)
+{
+    m_checklistIds = _checklistIds;
+    m_checklistIdsHasBeenSet = true;
+}
+
+bool CreateBatchContractReviewTaskRequest::ChecklistIdsHasBeenSet() const
+{
+    return m_checklistIdsHasBeenSet;
 }
 
 Agent CreateBatchContractReviewTaskRequest::GetAgent() const

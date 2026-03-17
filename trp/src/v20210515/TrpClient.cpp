@@ -2740,3 +2740,53 @@ TrpClient::ReportBatchCallbackStatusOutcomeCallable TrpClient::ReportBatchCallba
     return prom->get_future();
 }
 
+TrpClient::ReportScanDetailOutcome TrpClient::ReportScanDetail(const ReportScanDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReportScanDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReportScanDetailResponse rsp = ReportScanDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReportScanDetailOutcome(rsp);
+        else
+            return ReportScanDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return ReportScanDetailOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::ReportScanDetailAsync(const ReportScanDetailRequest& request, const ReportScanDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ReportScanDetailRequest&;
+    using Resp = ReportScanDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ReportScanDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrpClient::ReportScanDetailOutcomeCallable TrpClient::ReportScanDetailCallable(const ReportScanDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ReportScanDetailOutcome>>();
+    ReportScanDetailAsync(
+    request,
+    [prom](
+        const TrpClient*,
+        const ReportScanDetailRequest&,
+        ReportScanDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+

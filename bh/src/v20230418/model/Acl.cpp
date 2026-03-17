@@ -55,7 +55,8 @@ Acl::Acl() :
     m_appAssetSetHasBeenSet(false),
     m_aclTypeHasBeenSet(false),
     m_ticketIdHasBeenSet(false),
-    m_ticketNameHasBeenSet(false)
+    m_ticketNameHasBeenSet(false),
+    m_maxAccessCredentialDurationHasBeenSet(false)
 {
 }
 
@@ -497,6 +498,16 @@ CoreInternalOutcome Acl::Deserialize(const rapidjson::Value &value)
         m_ticketNameHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxAccessCredentialDuration") && !value["MaxAccessCredentialDuration"].IsNull())
+    {
+        if (!value["MaxAccessCredentialDuration"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Acl.MaxAccessCredentialDuration` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxAccessCredentialDuration = value["MaxAccessCredentialDuration"].GetUint64();
+        m_maxAccessCredentialDurationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -842,6 +853,14 @@ void Acl::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "TicketName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ticketName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxAccessCredentialDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxAccessCredentialDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxAccessCredentialDuration, allocator);
     }
 
 }
@@ -1405,5 +1424,21 @@ void Acl::SetTicketName(const string& _ticketName)
 bool Acl::TicketNameHasBeenSet() const
 {
     return m_ticketNameHasBeenSet;
+}
+
+uint64_t Acl::GetMaxAccessCredentialDuration() const
+{
+    return m_maxAccessCredentialDuration;
+}
+
+void Acl::SetMaxAccessCredentialDuration(const uint64_t& _maxAccessCredentialDuration)
+{
+    m_maxAccessCredentialDuration = _maxAccessCredentialDuration;
+    m_maxAccessCredentialDurationHasBeenSet = true;
+}
+
+bool Acl::MaxAccessCredentialDurationHasBeenSet() const
+{
+    return m_maxAccessCredentialDurationHasBeenSet;
 }
 

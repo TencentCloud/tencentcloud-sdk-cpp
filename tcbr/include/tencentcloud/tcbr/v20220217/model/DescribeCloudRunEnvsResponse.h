@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境信息列表
-                     * @return EnvList 环境信息列表
+                     * 获取<p>环境信息列表</p>
+                     * @return EnvList <p>环境信息列表</p>
                      * 
                      */
                     std::vector<EnvInfo> GetEnvList() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 环境信息列表
+                     * <p>环境信息列表</p>
                      */
                     std::vector<EnvInfo> m_envList;
                     bool m_envListHasBeenSet;

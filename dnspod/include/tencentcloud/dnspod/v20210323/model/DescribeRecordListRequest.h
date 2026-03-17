@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名
-                     * @return Domain 域名
+                     * 获取<p>域名</p>
+                     * @return Domain <p>域名</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置域名
-                     * @param _domain 域名
+                     * 设置<p>域名</p>
+                     * @param _domain <p>域名</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
-                     * @return DomainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * 获取<p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>
+                     * @return DomainId <p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>
                      * 
                      */
                     uint64_t GetDomainId() const;
 
                     /**
-                     * 设置域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
-                     * @param _domainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * 设置<p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>
+                     * @param _domainId <p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>
                      * 
                      */
                     void SetDomainId(const uint64_t& _domainId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DomainIdHasBeenSet() const;
 
                     /**
-                     * 获取解析记录的主机头，如果传了此参数，则只会返回此主机头对应的解析记录
-                     * @return Subdomain 解析记录的主机头，如果传了此参数，则只会返回此主机头对应的解析记录
+                     * 获取<p>解析记录的主机头，如果传了此参数，则只会返回此主机头对应的解析记录</p>
+                     * @return Subdomain <p>解析记录的主机头，如果传了此参数，则只会返回此主机头对应的解析记录</p>
                      * 
                      */
                     std::string GetSubdomain() const;
 
                     /**
-                     * 设置解析记录的主机头，如果传了此参数，则只会返回此主机头对应的解析记录
-                     * @param _subdomain 解析记录的主机头，如果传了此参数，则只会返回此主机头对应的解析记录
+                     * 设置<p>解析记录的主机头，如果传了此参数，则只会返回此主机头对应的解析记录</p>
+                     * @param _subdomain <p>解析记录的主机头，如果传了此参数，则只会返回此主机头对应的解析记录</p>
                      * 
                      */
                     void SetSubdomain(const std::string& _subdomain);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool SubdomainHasBeenSet() const;
 
                     /**
-                     * 获取获取某种类型的解析记录，如 A，CNAME，NS，AAAA，显性URL，隐性URL，CAA，SPF等
-                     * @return RecordType 获取某种类型的解析记录，如 A，CNAME，NS，AAAA，显性URL，隐性URL，CAA，SPF等
+                     * 获取<p>获取某种类型的解析记录，如 A，CNAME，NS，AAAA，显性URL，隐性URL，CAA，SPF等</p>
+                     * @return RecordType <p>获取某种类型的解析记录，如 A，CNAME，NS，AAAA，显性URL，隐性URL，CAA，SPF等</p>
                      * 
                      */
                     std::string GetRecordType() const;
 
                     /**
-                     * 设置获取某种类型的解析记录，如 A，CNAME，NS，AAAA，显性URL，隐性URL，CAA，SPF等
-                     * @param _recordType 获取某种类型的解析记录，如 A，CNAME，NS，AAAA，显性URL，隐性URL，CAA，SPF等
+                     * 设置<p>获取某种类型的解析记录，如 A，CNAME，NS，AAAA，显性URL，隐性URL，CAA，SPF等</p>
+                     * @param _recordType <p>获取某种类型的解析记录，如 A，CNAME，NS，AAAA，显性URL，隐性URL，CAA，SPF等</p>
                      * 
                      */
                     void SetRecordType(const std::string& _recordType);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool RecordTypeHasBeenSet() const;
 
                     /**
-                     * 获取获取某条线路名称的解析记录。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息
-                     * @return RecordLine 获取某条线路名称的解析记录。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息
+                     * 获取<p>获取某条线路名称的解析记录。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息</p>
+                     * @return RecordLine <p>获取某条线路名称的解析记录。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息</p>
                      * 
                      */
                     std::string GetRecordLine() const;
 
                     /**
-                     * 设置获取某条线路名称的解析记录。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息
-                     * @param _recordLine 获取某条线路名称的解析记录。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息
+                     * 设置<p>获取某条线路名称的解析记录。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息</p>
+                     * @param _recordLine <p>获取某条线路名称的解析记录。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息</p>
                      * 
                      */
                     void SetRecordLine(const std::string& _recordLine);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool RecordLineHasBeenSet() const;
 
                     /**
-                     * 获取获取某个线路Id对应的解析记录，如果传RecordLineId，系统会忽略RecordLine参数。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息
-                     * @return RecordLineId 获取某个线路Id对应的解析记录，如果传RecordLineId，系统会忽略RecordLine参数。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息
+                     * 获取<p>获取某个线路Id对应的解析记录，如果传RecordLineId，系统会忽略RecordLine参数。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息</p>
+                     * @return RecordLineId <p>获取某个线路Id对应的解析记录，如果传RecordLineId，系统会忽略RecordLine参数。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息</p>
                      * 
                      */
                     std::string GetRecordLineId() const;
 
                     /**
-                     * 设置获取某个线路Id对应的解析记录，如果传RecordLineId，系统会忽略RecordLine参数。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息
-                     * @param _recordLineId 获取某个线路Id对应的解析记录，如果传RecordLineId，系统会忽略RecordLine参数。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息
+                     * 设置<p>获取某个线路Id对应的解析记录，如果传RecordLineId，系统会忽略RecordLine参数。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息</p>
+                     * @param _recordLineId <p>获取某个线路Id对应的解析记录，如果传RecordLineId，系统会忽略RecordLine参数。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息</p>
                      * 
                      */
                     void SetRecordLineId(const std::string& _recordLineId);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool RecordLineIdHasBeenSet() const;
 
                     /**
-                     * 获取获取某个分组下的解析记录时，传这个分组Id。可通过DescribeRecordGroupList接口获取所有分组
-                     * @return GroupId 获取某个分组下的解析记录时，传这个分组Id。可通过DescribeRecordGroupList接口获取所有分组
+                     * 获取<p>获取某个分组下的解析记录时，传这个分组Id。可通过DescribeRecordGroupList接口获取所有分组</p>
+                     * @return GroupId <p>获取某个分组下的解析记录时，传这个分组Id。可通过DescribeRecordGroupList接口获取所有分组</p>
                      * 
                      */
                     uint64_t GetGroupId() const;
 
                     /**
-                     * 设置获取某个分组下的解析记录时，传这个分组Id。可通过DescribeRecordGroupList接口获取所有分组
-                     * @param _groupId 获取某个分组下的解析记录时，传这个分组Id。可通过DescribeRecordGroupList接口获取所有分组
+                     * 设置<p>获取某个分组下的解析记录时，传这个分组Id。可通过DescribeRecordGroupList接口获取所有分组</p>
+                     * @param _groupId <p>获取某个分组下的解析记录时，传这个分组Id。可通过DescribeRecordGroupList接口获取所有分组</p>
                      * 
                      */
                     void SetGroupId(const uint64_t& _groupId);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取通过关键字搜索解析记录，当前支持搜索主机头和记录值
-                     * @return Keyword 通过关键字搜索解析记录，当前支持搜索主机头和记录值
+                     * 获取<p>通过关键字搜索解析记录，当前支持搜索主机头和记录值</p>
+                     * @return Keyword <p>通过关键字搜索解析记录，当前支持搜索主机头和记录值</p>
                      * 
                      */
                     std::string GetKeyword() const;
 
                     /**
-                     * 设置通过关键字搜索解析记录，当前支持搜索主机头和记录值
-                     * @param _keyword 通过关键字搜索解析记录，当前支持搜索主机头和记录值
+                     * 设置<p>通过关键字搜索解析记录，当前支持搜索主机头和记录值</p>
+                     * @param _keyword <p>通过关键字搜索解析记录，当前支持搜索主机头和记录值</p>
                      * 
                      */
                     void SetKeyword(const std::string& _keyword);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool KeywordHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。
-                     * @return SortField 排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。
+                     * 获取<p>排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。</p>
+                     * @return SortField <p>排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。</p>
                      * 
                      */
                     std::string GetSortField() const;
 
                     /**
-                     * 设置排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。
-                     * @param _sortField 排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。
+                     * 设置<p>排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。</p>
+                     * @param _sortField <p>排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。</p>
                      * 
                      */
                     void SetSortField(const std::string& _sortField);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool SortFieldHasBeenSet() const;
 
                     /**
-                     * 获取排序方式，正序：ASC，逆序：DESC。默认值为ASC。
-                     * @return SortType 排序方式，正序：ASC，逆序：DESC。默认值为ASC。
+                     * 获取<p>排序方式，正序：ASC，逆序：DESC。默认值为ASC。</p>
+                     * @return SortType <p>排序方式，正序：ASC，逆序：DESC。默认值为ASC。</p>
                      * 
                      */
                     std::string GetSortType() const;
 
                     /**
-                     * 设置排序方式，正序：ASC，逆序：DESC。默认值为ASC。
-                     * @param _sortType 排序方式，正序：ASC，逆序：DESC。默认值为ASC。
+                     * 设置<p>排序方式，正序：ASC，逆序：DESC。默认值为ASC。</p>
+                     * @param _sortType <p>排序方式，正序：ASC，逆序：DESC。默认值为ASC。</p>
                      * 
                      */
                     void SetSortType(const std::string& _sortType);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool SortTypeHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认值为0。
-                     * @return Offset 偏移量，默认值为0。
+                     * 获取<p>偏移量，默认值为0。</p>
+                     * @return Offset <p>偏移量，默认值为0。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认值为0。
-                     * @param _offset 偏移量，默认值为0。
+                     * 设置<p>偏移量，默认值为0。</p>
+                     * @param _offset <p>偏移量，默认值为0。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取限制数量，当前Limit最大支持3000。默认值为100。
-                     * @return Limit 限制数量，当前Limit最大支持3000。默认值为100。
+                     * 获取<p>限制数量，当前Limit最大支持3000。默认值为100。</p>
+                     * @return Limit <p>限制数量，当前Limit最大支持3000。默认值为100。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置限制数量，当前Limit最大支持3000。默认值为100。
-                     * @param _limit 限制数量，当前Limit最大支持3000。默认值为100。
+                     * 设置<p>限制数量，当前Limit最大支持3000。默认值为100。</p>
+                     * @param _limit <p>限制数量，当前Limit最大支持3000。默认值为100。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -294,79 +294,106 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取<p>查询不到数据时是否报错</p>枚举值：<ul><li> yes： 报错</li><li> no： 不报错，返回空列表</li></ul>默认值：yes
+                     * @return ErrorOnEmpty <p>查询不到数据时是否报错</p>枚举值：<ul><li> yes： 报错</li><li> no： 不报错，返回空列表</li></ul>默认值：yes
+                     * 
+                     */
+                    std::string GetErrorOnEmpty() const;
+
+                    /**
+                     * 设置<p>查询不到数据时是否报错</p>枚举值：<ul><li> yes： 报错</li><li> no： 不报错，返回空列表</li></ul>默认值：yes
+                     * @param _errorOnEmpty <p>查询不到数据时是否报错</p>枚举值：<ul><li> yes： 报错</li><li> no： 不报错，返回空列表</li></ul>默认值：yes
+                     * 
+                     */
+                    void SetErrorOnEmpty(const std::string& _errorOnEmpty);
+
+                    /**
+                     * 判断参数 ErrorOnEmpty 是否已赋值
+                     * @return ErrorOnEmpty 是否已赋值
+                     * 
+                     */
+                    bool ErrorOnEmptyHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 域名
+                     * <p>域名</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * <p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>
                      */
                     uint64_t m_domainId;
                     bool m_domainIdHasBeenSet;
 
                     /**
-                     * 解析记录的主机头，如果传了此参数，则只会返回此主机头对应的解析记录
+                     * <p>解析记录的主机头，如果传了此参数，则只会返回此主机头对应的解析记录</p>
                      */
                     std::string m_subdomain;
                     bool m_subdomainHasBeenSet;
 
                     /**
-                     * 获取某种类型的解析记录，如 A，CNAME，NS，AAAA，显性URL，隐性URL，CAA，SPF等
+                     * <p>获取某种类型的解析记录，如 A，CNAME，NS，AAAA，显性URL，隐性URL，CAA，SPF等</p>
                      */
                     std::string m_recordType;
                     bool m_recordTypeHasBeenSet;
 
                     /**
-                     * 获取某条线路名称的解析记录。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息
+                     * <p>获取某条线路名称的解析记录。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息</p>
                      */
                     std::string m_recordLine;
                     bool m_recordLineHasBeenSet;
 
                     /**
-                     * 获取某个线路Id对应的解析记录，如果传RecordLineId，系统会忽略RecordLine参数。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息
+                     * <p>获取某个线路Id对应的解析记录，如果传RecordLineId，系统会忽略RecordLine参数。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息</p>
                      */
                     std::string m_recordLineId;
                     bool m_recordLineIdHasBeenSet;
 
                     /**
-                     * 获取某个分组下的解析记录时，传这个分组Id。可通过DescribeRecordGroupList接口获取所有分组
+                     * <p>获取某个分组下的解析记录时，传这个分组Id。可通过DescribeRecordGroupList接口获取所有分组</p>
                      */
                     uint64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 通过关键字搜索解析记录，当前支持搜索主机头和记录值
+                     * <p>通过关键字搜索解析记录，当前支持搜索主机头和记录值</p>
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;
 
                     /**
-                     * 排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。
+                     * <p>排序字段，支持 name,line,type,value,weight,mx,ttl,updated_on 几个字段。</p>
                      */
                     std::string m_sortField;
                     bool m_sortFieldHasBeenSet;
 
                     /**
-                     * 排序方式，正序：ASC，逆序：DESC。默认值为ASC。
+                     * <p>排序方式，正序：ASC，逆序：DESC。默认值为ASC。</p>
                      */
                     std::string m_sortType;
                     bool m_sortTypeHasBeenSet;
 
                     /**
-                     * 偏移量，默认值为0。
+                     * <p>偏移量，默认值为0。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 限制数量，当前Limit最大支持3000。默认值为100。
+                     * <p>限制数量，当前Limit最大支持3000。默认值为100。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * <p>查询不到数据时是否报错</p>枚举值：<ul><li> yes： 报错</li><li> no： 不报错，返回空列表</li></ul>默认值：yes
+                     */
+                    std::string m_errorOnEmpty;
+                    bool m_errorOnEmptyHasBeenSet;
 
                 };
             }

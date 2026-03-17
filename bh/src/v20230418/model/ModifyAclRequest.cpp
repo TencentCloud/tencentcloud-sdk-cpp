@@ -52,7 +52,8 @@ ModifyAclRequest::ModifyAclRequest() :
     m_validateToHasBeenSet(false),
     m_departmentIdHasBeenSet(false),
     m_allowAccessCredentialHasBeenSet(false),
-    m_allowKeyboardLoggerHasBeenSet(false)
+    m_allowKeyboardLoggerHasBeenSet(false),
+    m_maxAccessCredentialDurationHasBeenSet(false)
 {
 }
 
@@ -341,6 +342,14 @@ string ModifyAclRequest::ToJsonString() const
         string key = "AllowKeyboardLogger";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_allowKeyboardLogger, allocator);
+    }
+
+    if (m_maxAccessCredentialDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxAccessCredentialDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxAccessCredentialDuration, allocator);
     }
 
 
@@ -829,6 +838,22 @@ void ModifyAclRequest::SetAllowKeyboardLogger(const bool& _allowKeyboardLogger)
 bool ModifyAclRequest::AllowKeyboardLoggerHasBeenSet() const
 {
     return m_allowKeyboardLoggerHasBeenSet;
+}
+
+uint64_t ModifyAclRequest::GetMaxAccessCredentialDuration() const
+{
+    return m_maxAccessCredentialDuration;
+}
+
+void ModifyAclRequest::SetMaxAccessCredentialDuration(const uint64_t& _maxAccessCredentialDuration)
+{
+    m_maxAccessCredentialDuration = _maxAccessCredentialDuration;
+    m_maxAccessCredentialDurationHasBeenSet = true;
+}
+
+bool ModifyAclRequest::MaxAccessCredentialDurationHasBeenSet() const
+{
+    return m_maxAccessCredentialDurationHasBeenSet;
 }
 
 

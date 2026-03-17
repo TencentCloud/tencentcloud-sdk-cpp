@@ -34,7 +34,8 @@ DescribeRecordListRequest::DescribeRecordListRequest() :
     m_sortFieldHasBeenSet(false),
     m_sortTypeHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_errorOnEmptyHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,14 @@ string DescribeRecordListRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_errorOnEmptyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorOnEmpty";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_errorOnEmpty.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -339,6 +348,22 @@ void DescribeRecordListRequest::SetLimit(const uint64_t& _limit)
 bool DescribeRecordListRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeRecordListRequest::GetErrorOnEmpty() const
+{
+    return m_errorOnEmpty;
+}
+
+void DescribeRecordListRequest::SetErrorOnEmpty(const string& _errorOnEmpty)
+{
+    m_errorOnEmpty = _errorOnEmpty;
+    m_errorOnEmptyHasBeenSet = true;
+}
+
+bool DescribeRecordListRequest::ErrorOnEmptyHasBeenSet() const
+{
+    return m_errorOnEmptyHasBeenSet;
 }
 
 

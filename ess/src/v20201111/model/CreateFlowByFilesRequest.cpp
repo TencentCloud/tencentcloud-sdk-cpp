@@ -46,7 +46,8 @@ CreateFlowByFilesRequest::CreateFlowByFilesRequest() :
     m_needSignReviewHasBeenSet(false),
     m_flowDisplayTypeHasBeenSet(false),
     m_openDynamicSignFlowHasBeenSet(false),
-    m_workflowHasBeenSet(false)
+    m_workflowHasBeenSet(false),
+    m_flowOperateLimitHasBeenSet(false)
 {
 }
 
@@ -275,6 +276,15 @@ string CreateFlowByFilesRequest::ToJsonString() const
         string key = "Workflow";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_workflow, allocator);
+    }
+
+    if (m_flowOperateLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowOperateLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_flowOperateLimit.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -667,6 +677,22 @@ void CreateFlowByFilesRequest::SetWorkflow(const bool& _workflow)
 bool CreateFlowByFilesRequest::WorkflowHasBeenSet() const
 {
     return m_workflowHasBeenSet;
+}
+
+FlowOperateLimit CreateFlowByFilesRequest::GetFlowOperateLimit() const
+{
+    return m_flowOperateLimit;
+}
+
+void CreateFlowByFilesRequest::SetFlowOperateLimit(const FlowOperateLimit& _flowOperateLimit)
+{
+    m_flowOperateLimit = _flowOperateLimit;
+    m_flowOperateLimitHasBeenSet = true;
+}
+
+bool CreateFlowByFilesRequest::FlowOperateLimitHasBeenSet() const
+{
+    return m_flowOperateLimitHasBeenSet;
 }
 
 

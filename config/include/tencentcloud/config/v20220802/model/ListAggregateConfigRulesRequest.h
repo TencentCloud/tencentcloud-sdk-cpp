@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取每页限制
-                     * @return Limit 每页限制
+                     * 获取<p>每页限制</p>
+                     * @return Limit <p>每页限制</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每页限制
-                     * @param _limit 每页限制
+                     * 设置<p>每页限制</p>
+                     * @param _limit <p>每页限制</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取<p>偏移量</p>
+                     * @return Offset <p>偏移量</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置<p>偏移量</p>
+                     * @param _offset <p>偏移量</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取账号组ID
-                     * @return AccountGroupId 账号组ID
+                     * 获取<p>账号组ID</p>
+                     * @return AccountGroupId <p>账号组ID</p>
                      * 
                      */
                     std::string GetAccountGroupId() const;
 
                     /**
-                     * 设置账号组ID
-                     * @param _accountGroupId 账号组ID
+                     * 设置<p>账号组ID</p>
+                     * @param _accountGroupId <p>账号组ID</p>
                      * 
                      */
                     void SetAccountGroupId(const std::string& _accountGroupId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool AccountGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取排序类型, 倒序：desc，顺序：asc
-                     * @return OrderType 排序类型, 倒序：desc，顺序：asc
+                     * 获取<p>排序类型, 倒序：desc，顺序：asc</p>
+                     * @return OrderType <p>排序类型, 倒序：desc，顺序：asc</p>
                      * 
                      */
                     std::string GetOrderType() const;
 
                     /**
-                     * 设置排序类型, 倒序：desc，顺序：asc
-                     * @param _orderType 排序类型, 倒序：desc，顺序：asc
+                     * 设置<p>排序类型, 倒序：desc，顺序：asc</p>
+                     * @param _orderType <p>排序类型, 倒序：desc，顺序：asc</p>
                      * 
                      */
                     void SetOrderType(const std::string& _orderType);
@@ -127,27 +127,15 @@ namespace TencentCloud
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取风险等级
-1：高风险。
-2：中风险。
-3：低风险。
-                     * @return RiskLevel 风险等级
-1：高风险。
-2：中风险。
-3：低风险。
+                     * 获取<p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>
+                     * @return RiskLevel <p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>
                      * 
                      */
                     std::vector<uint64_t> GetRiskLevel() const;
 
                     /**
-                     * 设置风险等级
-1：高风险。
-2：中风险。
-3：低风险。
-                     * @param _riskLevel 风险等级
-1：高风险。
-2：中风险。
-3：低风险。
+                     * 设置<p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>
+                     * @param _riskLevel <p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>
                      * 
                      */
                     void SetRiskLevel(const std::vector<uint64_t>& _riskLevel);
@@ -160,15 +148,15 @@ namespace TencentCloud
                     bool RiskLevelHasBeenSet() const;
 
                     /**
-                     * 获取规则状态
-                     * @return State 规则状态
+                     * 获取<p>规则状态</p>
+                     * @return State <p>规则状态</p>
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置规则状态
-                     * @param _state 规则状态
+                     * 设置<p>规则状态</p>
+                     * @param _state <p>规则状态</p>
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -181,15 +169,15 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取评估结果
-                     * @return ComplianceResult 评估结果
+                     * 获取<p>评估结果</p>
+                     * @return ComplianceResult <p>评估结果</p>
                      * 
                      */
                     std::vector<std::string> GetComplianceResult() const;
 
                     /**
-                     * 设置评估结果
-                     * @param _complianceResult 评估结果
+                     * 设置<p>评估结果</p>
+                     * @param _complianceResult <p>评估结果</p>
                      * 
                      */
                     void SetComplianceResult(const std::vector<std::string>& _complianceResult);
@@ -202,15 +190,15 @@ namespace TencentCloud
                     bool ComplianceResultHasBeenSet() const;
 
                     /**
-                     * 获取规则名
-                     * @return RuleName 规则名
+                     * 获取<p>规则名</p>
+                     * @return RuleName <p>规则名</p>
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置规则名
-                     * @param _ruleName 规则名
+                     * 设置<p>规则名</p>
+                     * @param _ruleName <p>规则名</p>
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -223,15 +211,15 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取规则所属账号ID
-                     * @return RuleOwnerId 规则所属账号ID
+                     * 获取<p>规则所属账号ID</p>
+                     * @return RuleOwnerId <p>规则所属账号ID</p>
                      * 
                      */
                     uint64_t GetRuleOwnerId() const;
 
                     /**
-                     * 设置规则所属账号ID
-                     * @param _ruleOwnerId 规则所属账号ID
+                     * 设置<p>规则所属账号ID</p>
+                     * @param _ruleOwnerId <p>规则所属账号ID</p>
                      * 
                      */
                     void SetRuleOwnerId(const uint64_t& _ruleOwnerId);
@@ -246,58 +234,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 每页限制
+                     * <p>每页限制</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * <p>偏移量</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 账号组ID
+                     * <p>账号组ID</p>
                      */
                     std::string m_accountGroupId;
                     bool m_accountGroupIdHasBeenSet;
 
                     /**
-                     * 排序类型, 倒序：desc，顺序：asc
+                     * <p>排序类型, 倒序：desc，顺序：asc</p>
                      */
                     std::string m_orderType;
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 风险等级
-1：高风险。
-2：中风险。
-3：低风险。
+                     * <p>风险等级<br>1：高风险。<br>2：中风险。<br>3：低风险。</p>
                      */
                     std::vector<uint64_t> m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
-                     * 规则状态
+                     * <p>规则状态</p>
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 评估结果
+                     * <p>评估结果</p>
                      */
                     std::vector<std::string> m_complianceResult;
                     bool m_complianceResultHasBeenSet;
 
                     /**
-                     * 规则名
+                     * <p>规则名</p>
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 规则所属账号ID
+                     * <p>规则所属账号ID</p>
                      */
                     uint64_t m_ruleOwnerId;
                     bool m_ruleOwnerIdHasBeenSet;

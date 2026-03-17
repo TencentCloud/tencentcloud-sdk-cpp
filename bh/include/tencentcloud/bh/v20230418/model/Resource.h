@@ -1181,6 +1181,90 @@ namespace TencentCloud
                      */
                     bool IOAResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取资源类型 免费版/标准版/专业版 /国密版 free/standard/pro/gm
+                     * @return ResourceEdition 资源类型 免费版/标准版/专业版 /国密版 free/standard/pro/gm
+                     * 
+                     */
+                    std::string GetResourceEdition() const;
+
+                    /**
+                     * 设置资源类型 免费版/标准版/专业版 /国密版 free/standard/pro/gm
+                     * @param _resourceEdition 资源类型 免费版/标准版/专业版 /国密版 free/standard/pro/gm
+                     * 
+                     */
+                    void SetResourceEdition(const std::string& _resourceEdition);
+
+                    /**
+                     * 判断参数 ResourceEdition 是否已赋值
+                     * @return ResourceEdition 是否已赋值
+                     * 
+                     */
+                    bool ResourceEditionHasBeenSet() const;
+
+                    /**
+                     * 获取计费周期 年：y，月：m，日：d，时：h，分：M，秒：s，一次性购买：p
+                     * @return TimeUnit 计费周期 年：y，月：m，日：d，时：h，分：M，秒：s，一次性购买：p
+                     * 
+                     */
+                    std::string GetTimeUnit() const;
+
+                    /**
+                     * 设置计费周期 年：y，月：m，日：d，时：h，分：M，秒：s，一次性购买：p
+                     * @param _timeUnit 计费周期 年：y，月：m，日：d，时：h，分：M，秒：s，一次性购买：p
+                     * 
+                     */
+                    void SetTimeUnit(const std::string& _timeUnit);
+
+                    /**
+                     * 判断参数 TimeUnit 是否已赋值
+                     * @return TimeUnit 是否已赋值
+                     * 
+                     */
+                    bool TimeUnitHasBeenSet() const;
+
+                    /**
+                     * 获取计费时长
+                     * @return TimeSpan 计费时长
+                     * 
+                     */
+                    uint64_t GetTimeSpan() const;
+
+                    /**
+                     * 设置计费时长
+                     * @param _timeSpan 计费时长
+                     * 
+                     */
+                    void SetTimeSpan(const uint64_t& _timeSpan);
+
+                    /**
+                     * 判断参数 TimeSpan 是否已赋值
+                     * @return TimeSpan 是否已赋值
+                     * 
+                     */
+                    bool TimeSpanHasBeenSet() const;
+
+                    /**
+                     * 获取计费模式 0后付费，1预付费
+                     * @return PayMode 计费模式 0后付费，1预付费
+                     * 
+                     */
+                    uint64_t GetPayMode() const;
+
+                    /**
+                     * 设置计费模式 0后付费，1预付费
+                     * @param _payMode 计费模式 0后付费，1预付费
+                     * 
+                     */
+                    void SetPayMode(const uint64_t& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     * 
+                     */
+                    bool PayModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1506,6 +1590,30 @@ namespace TencentCloud
                      */
                     std::string m_iOAResourceId;
                     bool m_iOAResourceIdHasBeenSet;
+
+                    /**
+                     * 资源类型 免费版/标准版/专业版 /国密版 free/standard/pro/gm
+                     */
+                    std::string m_resourceEdition;
+                    bool m_resourceEditionHasBeenSet;
+
+                    /**
+                     * 计费周期 年：y，月：m，日：d，时：h，分：M，秒：s，一次性购买：p
+                     */
+                    std::string m_timeUnit;
+                    bool m_timeUnitHasBeenSet;
+
+                    /**
+                     * 计费时长
+                     */
+                    uint64_t m_timeSpan;
+                    bool m_timeSpanHasBeenSet;
+
+                    /**
+                     * 计费模式 0后付费，1预付费
+                     */
+                    uint64_t m_payMode;
+                    bool m_payModeHasBeenSet;
 
                 };
             }

@@ -39,6 +39,8 @@
 #include <tencentcloud/tke/v20220501/model/DescribeClusterMachinesResponse.h>
 #include <tencentcloud/tke/v20220501/model/DescribeClustersRequest.h>
 #include <tencentcloud/tke/v20220501/model/DescribeClustersResponse.h>
+#include <tencentcloud/tke/v20220501/model/DescribeGPUInfoRequest.h>
+#include <tencentcloud/tke/v20220501/model/DescribeGPUInfoResponse.h>
 #include <tencentcloud/tke/v20220501/model/DescribeHealthCheckPoliciesRequest.h>
 #include <tencentcloud/tke/v20220501/model/DescribeHealthCheckPoliciesResponse.h>
 #include <tencentcloud/tke/v20220501/model/DescribeHealthCheckPolicyBindingsRequest.h>
@@ -47,6 +49,8 @@
 #include <tencentcloud/tke/v20220501/model/DescribeHealthCheckTemplateResponse.h>
 #include <tencentcloud/tke/v20220501/model/DescribeNodePoolsRequest.h>
 #include <tencentcloud/tke/v20220501/model/DescribeNodePoolsResponse.h>
+#include <tencentcloud/tke/v20220501/model/DescribeZoneInstanceConfigInfosRequest.h>
+#include <tencentcloud/tke/v20220501/model/DescribeZoneInstanceConfigInfosResponse.h>
 #include <tencentcloud/tke/v20220501/model/ModifyClusterMachineRequest.h>
 #include <tencentcloud/tke/v20220501/model/ModifyClusterMachineResponse.h>
 #include <tencentcloud/tke/v20220501/model/ModifyHealthCheckPolicyRequest.h>
@@ -99,6 +103,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClustersResponse> DescribeClustersOutcome;
                 typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClustersRequest&, DescribeClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGPUInfoResponse> DescribeGPUInfoOutcome;
+                typedef std::future<DescribeGPUInfoOutcome> DescribeGPUInfoOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeGPUInfoRequest&, DescribeGPUInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGPUInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHealthCheckPoliciesResponse> DescribeHealthCheckPoliciesOutcome;
                 typedef std::future<DescribeHealthCheckPoliciesOutcome> DescribeHealthCheckPoliciesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeHealthCheckPoliciesRequest&, DescribeHealthCheckPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHealthCheckPoliciesAsyncHandler;
@@ -111,6 +118,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNodePoolsResponse> DescribeNodePoolsOutcome;
                 typedef std::future<DescribeNodePoolsOutcome> DescribeNodePoolsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeNodePoolsRequest&, DescribeNodePoolsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodePoolsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeZoneInstanceConfigInfosResponse> DescribeZoneInstanceConfigInfosOutcome;
+                typedef std::future<DescribeZoneInstanceConfigInfosOutcome> DescribeZoneInstanceConfigInfosOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeZoneInstanceConfigInfosRequest&, DescribeZoneInstanceConfigInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZoneInstanceConfigInfosAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyClusterMachineResponse> ModifyClusterMachineOutcome;
                 typedef std::future<ModifyClusterMachineOutcome> ModifyClusterMachineOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyClusterMachineRequest&, ModifyClusterMachineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterMachineAsyncHandler;
@@ -208,6 +218,15 @@ namespace TencentCloud
                 DescribeClustersOutcomeCallable DescribeClustersCallable(const Model::DescribeClustersRequest& request);
 
                 /**
+                 *请求该接口，会返回所有适配该机型和操作系统组合的gpu驱动版本
+                 * @param req DescribeGPUInfoRequest
+                 * @return DescribeGPUInfoOutcome
+                 */
+                DescribeGPUInfoOutcome DescribeGPUInfo(const Model::DescribeGPUInfoRequest &request);
+                void DescribeGPUInfoAsync(const Model::DescribeGPUInfoRequest& request, const DescribeGPUInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGPUInfoOutcomeCallable DescribeGPUInfoCallable(const Model::DescribeGPUInfoRequest& request);
+
+                /**
                  *查询健康检测策略
                  * @param req DescribeHealthCheckPoliciesRequest
                  * @return DescribeHealthCheckPoliciesOutcome
@@ -242,6 +261,15 @@ namespace TencentCloud
                 DescribeNodePoolsOutcome DescribeNodePools(const Model::DescribeNodePoolsRequest &request);
                 void DescribeNodePoolsAsync(const Model::DescribeNodePoolsRequest& request, const DescribeNodePoolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNodePoolsOutcomeCallable DescribeNodePoolsCallable(const Model::DescribeNodePoolsRequest& request);
+
+                /**
+                 *查询原生节点机型配置
+                 * @param req DescribeZoneInstanceConfigInfosRequest
+                 * @return DescribeZoneInstanceConfigInfosOutcome
+                 */
+                DescribeZoneInstanceConfigInfosOutcome DescribeZoneInstanceConfigInfos(const Model::DescribeZoneInstanceConfigInfosRequest &request);
+                void DescribeZoneInstanceConfigInfosAsync(const Model::DescribeZoneInstanceConfigInfosRequest& request, const DescribeZoneInstanceConfigInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeZoneInstanceConfigInfosOutcomeCallable DescribeZoneInstanceConfigInfosCallable(const Model::DescribeZoneInstanceConfigInfosRequest& request);
 
                 /**
                  *修改原生节点

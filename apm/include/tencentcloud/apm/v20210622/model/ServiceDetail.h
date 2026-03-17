@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
+                     * 获取<p>应用ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServiceID 应用ID
+                     * @return ServiceID <p>应用ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceID() const;
 
                     /**
-                     * 设置应用ID
+                     * 设置<p>应用ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _serviceID 应用ID
+                     * @param _serviceID <p>应用ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool ServiceIDHasBeenSet() const;
 
                     /**
-                     * 获取业务系统ID
+                     * 获取<p>业务系统ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceKey 业务系统ID
+                     * @return InstanceKey <p>业务系统ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceKey() const;
 
                     /**
-                     * 设置业务系统ID
+                     * 设置<p>业务系统ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceKey 业务系统ID
+                     * @param _instanceKey <p>业务系统ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool InstanceKeyHasBeenSet() const;
 
                     /**
-                     * 获取用户appid
+                     * 获取<p>用户appid</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppID 用户appid
+                     * @return AppID <p>用户appid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAppID() const;
 
                     /**
-                     * 设置用户appid
+                     * 设置<p>用户appid</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _appID 用户appid
+                     * @param _appID <p>用户appid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool AppIDHasBeenSet() const;
 
                     /**
-                     * 获取主账号uin
+                     * 获取<p>主账号uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateUIN 主账号uin
+                     * @return CreateUIN <p>主账号uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateUIN() const;
 
                     /**
-                     * 设置主账号uin
+                     * 设置<p>主账号uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createUIN 主账号uin
+                     * @param _createUIN <p>主账号uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -148,18 +148,18 @@ namespace TencentCloud
                     bool CreateUINHasBeenSet() const;
 
                     /**
-                     * 获取应用名
+                     * 获取<p>应用名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServiceName 应用名
+                     * @return ServiceName <p>应用名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
-                     * 设置应用名
+                     * 设置<p>应用名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _serviceName 应用名
+                     * @param _serviceName <p>应用名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -173,18 +173,18 @@ namespace TencentCloud
                     bool ServiceNameHasBeenSet() const;
 
                     /**
-                     * 获取应用描述
+                     * 获取<p>应用描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServiceDescription 应用描述
+                     * @return ServiceDescription <p>应用描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceDescription() const;
 
                     /**
-                     * 设置应用描述
+                     * 设置<p>应用描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _serviceDescription 应用描述
+                     * @param _serviceDescription <p>应用描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -198,18 +198,18 @@ namespace TencentCloud
                     bool ServiceDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取地域
+                     * 获取<p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Region 地域
+                     * @return Region <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域
+                     * 设置<p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _region 地域
+                     * @param _region <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -223,18 +223,18 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取标签
+                     * 获取<p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 标签
+                     * @return Tags <p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ApmTag> GetTags() const;
 
                     /**
-                     * 设置标签
+                     * 设置<p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tags 标签
+                     * @param _tags <p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -248,15 +248,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取业务系统名称
-                     * @return InstanceName 业务系统名称
+                     * 获取<p>业务系统名称</p>
+                     * @return InstanceName <p>业务系统名称</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置业务系统名称
-                     * @param _instanceName 业务系统名称
+                     * 设置<p>业务系统名称</p>
+                     * @param _instanceName <p>业务系统名称</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -268,69 +268,165 @@ namespace TencentCloud
                      */
                     bool InstanceNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>阈值配置开关。true 表示使用应用级阈值；false 表示使用业务系统级阈值</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableThresholdConfig <p>阈值配置开关。true 表示使用应用级阈值；false 表示使用业务系统级阈值</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetEnableThresholdConfig() const;
+
+                    /**
+                     * 设置<p>阈值配置开关。true 表示使用应用级阈值；false 表示使用业务系统级阈值</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _enableThresholdConfig <p>阈值配置开关。true 表示使用应用级阈值；false 表示使用业务系统级阈值</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnableThresholdConfig(const bool& _enableThresholdConfig);
+
+                    /**
+                     * 判断参数 EnableThresholdConfig 是否已赋值
+                     * @return EnableThresholdConfig 是否已赋值
+                     * 
+                     */
+                    bool EnableThresholdConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>错误率阈值（%），用于判断应用健康状态为&quot;红色&quot;</p><p>单位：%</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ErrRateThreshold <p>错误率阈值（%），用于判断应用健康状态为&quot;红色&quot;</p><p>单位：%</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetErrRateThreshold() const;
+
+                    /**
+                     * 设置<p>错误率阈值（%），用于判断应用健康状态为&quot;红色&quot;</p><p>单位：%</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _errRateThreshold <p>错误率阈值（%），用于判断应用健康状态为&quot;红色&quot;</p><p>单位：%</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetErrRateThreshold(const int64_t& _errRateThreshold);
+
+                    /**
+                     * 判断参数 ErrRateThreshold 是否已赋值
+                     * @return ErrRateThreshold 是否已赋值
+                     * 
+                     */
+                    bool ErrRateThresholdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>响应时间预警阈值（ms），用于判断应用健康状态为&quot;黄色&quot;</p><p>单位：ms</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResponseDurationWarningThreshold <p>响应时间预警阈值（ms），用于判断应用健康状态为&quot;黄色&quot;</p><p>单位：ms</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetResponseDurationWarningThreshold() const;
+
+                    /**
+                     * 设置<p>响应时间预警阈值（ms），用于判断应用健康状态为&quot;黄色&quot;</p><p>单位：ms</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _responseDurationWarningThreshold <p>响应时间预警阈值（ms），用于判断应用健康状态为&quot;黄色&quot;</p><p>单位：ms</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResponseDurationWarningThreshold(const int64_t& _responseDurationWarningThreshold);
+
+                    /**
+                     * 判断参数 ResponseDurationWarningThreshold 是否已赋值
+                     * @return ResponseDurationWarningThreshold 是否已赋值
+                     * 
+                     */
+                    bool ResponseDurationWarningThresholdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 应用ID
+                     * <p>应用ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceID;
                     bool m_serviceIDHasBeenSet;
 
                     /**
-                     * 业务系统ID
+                     * <p>业务系统ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceKey;
                     bool m_instanceKeyHasBeenSet;
 
                     /**
-                     * 用户appid
+                     * <p>用户appid</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appID;
                     bool m_appIDHasBeenSet;
 
                     /**
-                     * 主账号uin
+                     * <p>主账号uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createUIN;
                     bool m_createUINHasBeenSet;
 
                     /**
-                     * 应用名
+                     * <p>应用名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
 
                     /**
-                     * 应用描述
+                     * <p>应用描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceDescription;
                     bool m_serviceDescriptionHasBeenSet;
 
                     /**
-                     * 地域
+                     * <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 标签
+                     * <p>标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApmTag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 业务系统名称
+                     * <p>业务系统名称</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
+
+                    /**
+                     * <p>阈值配置开关。true 表示使用应用级阈值；false 表示使用业务系统级阈值</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableThresholdConfig;
+                    bool m_enableThresholdConfigHasBeenSet;
+
+                    /**
+                     * <p>错误率阈值（%），用于判断应用健康状态为&quot;红色&quot;</p><p>单位：%</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_errRateThreshold;
+                    bool m_errRateThresholdHasBeenSet;
+
+                    /**
+                     * <p>响应时间预警阈值（ms），用于判断应用健康状态为&quot;黄色&quot;</p><p>单位：ms</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_responseDurationWarningThreshold;
+                    bool m_responseDurationWarningThresholdHasBeenSet;
 
                 };
             }

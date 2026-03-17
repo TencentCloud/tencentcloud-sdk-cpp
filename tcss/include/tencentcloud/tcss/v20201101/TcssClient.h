@@ -365,6 +365,18 @@
 #include <tencentcloud/tcss/v20201101/model/DescribeImageAutoAuthorizedTaskListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeImageComponentListRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeImageComponentListResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeImageDenyEventDetailRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeImageDenyEventDetailResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeImageDenyEventListRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeImageDenyEventListResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeImageDenyEventTendencyRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeImageDenyEventTendencyResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeImageDenyRuleDetailRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeImageDenyRuleDetailResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeImageDenyRuleListRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeImageDenyRuleListResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeImageDenyRuleSummaryRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeImageDenyRuleSummaryResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeImageRegistryNamespaceListRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeImageRegistryNamespaceListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeImageRegistryTimingScanTaskRequest.h>
@@ -395,6 +407,10 @@
 #include <tencentcloud/tcss/v20201101/model/DescribeK8sApiAbnormalTendencyResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeLogStorageStatisticRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeLogStorageStatisticResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeMaliciousConnectionBlackListRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeMaliciousConnectionBlackListResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeMaliciousConnectionWhiteListRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeMaliciousConnectionWhiteListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeNetworkFirewallAuditRecordRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeNetworkFirewallAuditRecordResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeNetworkFirewallClusterListRequest.h>
@@ -441,6 +457,10 @@
 #include <tencentcloud/tcss/v20201101/model/DescribeReverseShellEventsResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeReverseShellEventsExportRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeReverseShellEventsExportResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeReverseShellRegexpWhiteListRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeReverseShellRegexpWhiteListResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeReverseShellRegexpWhiteListInfoRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeReverseShellRegexpWhiteListInfoResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeReverseShellWhiteListDetailRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeReverseShellWhiteListDetailResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeReverseShellWhiteListsRequest.h>
@@ -1232,6 +1252,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeImageComponentListResponse> DescribeImageComponentListOutcome;
                 typedef std::future<DescribeImageComponentListOutcome> DescribeImageComponentListOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeImageComponentListRequest&, DescribeImageComponentListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageComponentListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageDenyEventDetailResponse> DescribeImageDenyEventDetailOutcome;
+                typedef std::future<DescribeImageDenyEventDetailOutcome> DescribeImageDenyEventDetailOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeImageDenyEventDetailRequest&, DescribeImageDenyEventDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageDenyEventDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageDenyEventListResponse> DescribeImageDenyEventListOutcome;
+                typedef std::future<DescribeImageDenyEventListOutcome> DescribeImageDenyEventListOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeImageDenyEventListRequest&, DescribeImageDenyEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageDenyEventListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageDenyEventTendencyResponse> DescribeImageDenyEventTendencyOutcome;
+                typedef std::future<DescribeImageDenyEventTendencyOutcome> DescribeImageDenyEventTendencyOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeImageDenyEventTendencyRequest&, DescribeImageDenyEventTendencyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageDenyEventTendencyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageDenyRuleDetailResponse> DescribeImageDenyRuleDetailOutcome;
+                typedef std::future<DescribeImageDenyRuleDetailOutcome> DescribeImageDenyRuleDetailOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeImageDenyRuleDetailRequest&, DescribeImageDenyRuleDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageDenyRuleDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageDenyRuleListResponse> DescribeImageDenyRuleListOutcome;
+                typedef std::future<DescribeImageDenyRuleListOutcome> DescribeImageDenyRuleListOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeImageDenyRuleListRequest&, DescribeImageDenyRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageDenyRuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageDenyRuleSummaryResponse> DescribeImageDenyRuleSummaryOutcome;
+                typedef std::future<DescribeImageDenyRuleSummaryOutcome> DescribeImageDenyRuleSummaryOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeImageDenyRuleSummaryRequest&, DescribeImageDenyRuleSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageDenyRuleSummaryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeImageRegistryNamespaceListResponse> DescribeImageRegistryNamespaceListOutcome;
                 typedef std::future<DescribeImageRegistryNamespaceListOutcome> DescribeImageRegistryNamespaceListOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeImageRegistryNamespaceListRequest&, DescribeImageRegistryNamespaceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageRegistryNamespaceListAsyncHandler;
@@ -1277,6 +1315,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLogStorageStatisticResponse> DescribeLogStorageStatisticOutcome;
                 typedef std::future<DescribeLogStorageStatisticOutcome> DescribeLogStorageStatisticOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeLogStorageStatisticRequest&, DescribeLogStorageStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogStorageStatisticAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMaliciousConnectionBlackListResponse> DescribeMaliciousConnectionBlackListOutcome;
+                typedef std::future<DescribeMaliciousConnectionBlackListOutcome> DescribeMaliciousConnectionBlackListOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeMaliciousConnectionBlackListRequest&, DescribeMaliciousConnectionBlackListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMaliciousConnectionBlackListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMaliciousConnectionWhiteListResponse> DescribeMaliciousConnectionWhiteListOutcome;
+                typedef std::future<DescribeMaliciousConnectionWhiteListOutcome> DescribeMaliciousConnectionWhiteListOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeMaliciousConnectionWhiteListRequest&, DescribeMaliciousConnectionWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMaliciousConnectionWhiteListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNetworkFirewallAuditRecordResponse> DescribeNetworkFirewallAuditRecordOutcome;
                 typedef std::future<DescribeNetworkFirewallAuditRecordOutcome> DescribeNetworkFirewallAuditRecordOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeNetworkFirewallAuditRecordRequest&, DescribeNetworkFirewallAuditRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNetworkFirewallAuditRecordAsyncHandler;
@@ -1346,6 +1390,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeReverseShellEventsExportResponse> DescribeReverseShellEventsExportOutcome;
                 typedef std::future<DescribeReverseShellEventsExportOutcome> DescribeReverseShellEventsExportOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeReverseShellEventsExportRequest&, DescribeReverseShellEventsExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReverseShellEventsExportAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeReverseShellRegexpWhiteListResponse> DescribeReverseShellRegexpWhiteListOutcome;
+                typedef std::future<DescribeReverseShellRegexpWhiteListOutcome> DescribeReverseShellRegexpWhiteListOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeReverseShellRegexpWhiteListRequest&, DescribeReverseShellRegexpWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReverseShellRegexpWhiteListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeReverseShellRegexpWhiteListInfoResponse> DescribeReverseShellRegexpWhiteListInfoOutcome;
+                typedef std::future<DescribeReverseShellRegexpWhiteListInfoOutcome> DescribeReverseShellRegexpWhiteListInfoOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeReverseShellRegexpWhiteListInfoRequest&, DescribeReverseShellRegexpWhiteListInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReverseShellRegexpWhiteListInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeReverseShellWhiteListDetailResponse> DescribeReverseShellWhiteListDetailOutcome;
                 typedef std::future<DescribeReverseShellWhiteListDetailOutcome> DescribeReverseShellWhiteListDetailOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeReverseShellWhiteListDetailRequest&, DescribeReverseShellWhiteListDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReverseShellWhiteListDetailAsyncHandler;
@@ -3312,6 +3362,60 @@ namespace TencentCloud
                 DescribeImageComponentListOutcomeCallable DescribeImageComponentListCallable(const Model::DescribeImageComponentListRequest& request);
 
                 /**
+                 *查询镜像拦截事件详情
+                 * @param req DescribeImageDenyEventDetailRequest
+                 * @return DescribeImageDenyEventDetailOutcome
+                 */
+                DescribeImageDenyEventDetailOutcome DescribeImageDenyEventDetail(const Model::DescribeImageDenyEventDetailRequest &request);
+                void DescribeImageDenyEventDetailAsync(const Model::DescribeImageDenyEventDetailRequest& request, const DescribeImageDenyEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageDenyEventDetailOutcomeCallable DescribeImageDenyEventDetailCallable(const Model::DescribeImageDenyEventDetailRequest& request);
+
+                /**
+                 *查询镜像拦截事件列表
+                 * @param req DescribeImageDenyEventListRequest
+                 * @return DescribeImageDenyEventListOutcome
+                 */
+                DescribeImageDenyEventListOutcome DescribeImageDenyEventList(const Model::DescribeImageDenyEventListRequest &request);
+                void DescribeImageDenyEventListAsync(const Model::DescribeImageDenyEventListRequest& request, const DescribeImageDenyEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageDenyEventListOutcomeCallable DescribeImageDenyEventListCallable(const Model::DescribeImageDenyEventListRequest& request);
+
+                /**
+                 *查询镜像拦截事件趋势
+                 * @param req DescribeImageDenyEventTendencyRequest
+                 * @return DescribeImageDenyEventTendencyOutcome
+                 */
+                DescribeImageDenyEventTendencyOutcome DescribeImageDenyEventTendency(const Model::DescribeImageDenyEventTendencyRequest &request);
+                void DescribeImageDenyEventTendencyAsync(const Model::DescribeImageDenyEventTendencyRequest& request, const DescribeImageDenyEventTendencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageDenyEventTendencyOutcomeCallable DescribeImageDenyEventTendencyCallable(const Model::DescribeImageDenyEventTendencyRequest& request);
+
+                /**
+                 *查询镜像拦截规则详情
+                 * @param req DescribeImageDenyRuleDetailRequest
+                 * @return DescribeImageDenyRuleDetailOutcome
+                 */
+                DescribeImageDenyRuleDetailOutcome DescribeImageDenyRuleDetail(const Model::DescribeImageDenyRuleDetailRequest &request);
+                void DescribeImageDenyRuleDetailAsync(const Model::DescribeImageDenyRuleDetailRequest& request, const DescribeImageDenyRuleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageDenyRuleDetailOutcomeCallable DescribeImageDenyRuleDetailCallable(const Model::DescribeImageDenyRuleDetailRequest& request);
+
+                /**
+                 *查询镜像拦截规则列表
+                 * @param req DescribeImageDenyRuleListRequest
+                 * @return DescribeImageDenyRuleListOutcome
+                 */
+                DescribeImageDenyRuleListOutcome DescribeImageDenyRuleList(const Model::DescribeImageDenyRuleListRequest &request);
+                void DescribeImageDenyRuleListAsync(const Model::DescribeImageDenyRuleListRequest& request, const DescribeImageDenyRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageDenyRuleListOutcomeCallable DescribeImageDenyRuleListCallable(const Model::DescribeImageDenyRuleListRequest& request);
+
+                /**
+                 *查询镜像拦截规则统计
+                 * @param req DescribeImageDenyRuleSummaryRequest
+                 * @return DescribeImageDenyRuleSummaryOutcome
+                 */
+                DescribeImageDenyRuleSummaryOutcome DescribeImageDenyRuleSummary(const Model::DescribeImageDenyRuleSummaryRequest &request);
+                void DescribeImageDenyRuleSummaryAsync(const Model::DescribeImageDenyRuleSummaryRequest& request, const DescribeImageDenyRuleSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageDenyRuleSummaryOutcomeCallable DescribeImageDenyRuleSummaryCallable(const Model::DescribeImageDenyRuleSummaryRequest& request);
+
+                /**
                  *查询用户镜像仓库下的命令空间列表
                  * @param req DescribeImageRegistryNamespaceListRequest
                  * @return DescribeImageRegistryNamespaceListOutcome
@@ -3445,6 +3549,24 @@ namespace TencentCloud
                 DescribeLogStorageStatisticOutcome DescribeLogStorageStatistic(const Model::DescribeLogStorageStatisticRequest &request);
                 void DescribeLogStorageStatisticAsync(const Model::DescribeLogStorageStatisticRequest& request, const DescribeLogStorageStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLogStorageStatisticOutcomeCallable DescribeLogStorageStatisticCallable(const Model::DescribeLogStorageStatisticRequest& request);
+
+                /**
+                 *查询恶意外连黑名单
+                 * @param req DescribeMaliciousConnectionBlackListRequest
+                 * @return DescribeMaliciousConnectionBlackListOutcome
+                 */
+                DescribeMaliciousConnectionBlackListOutcome DescribeMaliciousConnectionBlackList(const Model::DescribeMaliciousConnectionBlackListRequest &request);
+                void DescribeMaliciousConnectionBlackListAsync(const Model::DescribeMaliciousConnectionBlackListRequest& request, const DescribeMaliciousConnectionBlackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMaliciousConnectionBlackListOutcomeCallable DescribeMaliciousConnectionBlackListCallable(const Model::DescribeMaliciousConnectionBlackListRequest& request);
+
+                /**
+                 *查询恶意外连白名单
+                 * @param req DescribeMaliciousConnectionWhiteListRequest
+                 * @return DescribeMaliciousConnectionWhiteListOutcome
+                 */
+                DescribeMaliciousConnectionWhiteListOutcome DescribeMaliciousConnectionWhiteList(const Model::DescribeMaliciousConnectionWhiteListRequest &request);
+                void DescribeMaliciousConnectionWhiteListAsync(const Model::DescribeMaliciousConnectionWhiteListRequest& request, const DescribeMaliciousConnectionWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMaliciousConnectionWhiteListOutcomeCallable DescribeMaliciousConnectionWhiteListCallable(const Model::DescribeMaliciousConnectionWhiteListRequest& request);
 
                 /**
                  *功能已下线待三合一重构
@@ -3674,6 +3796,24 @@ namespace TencentCloud
                 DescribeReverseShellEventsExportOutcome DescribeReverseShellEventsExport(const Model::DescribeReverseShellEventsExportRequest &request);
                 void DescribeReverseShellEventsExportAsync(const Model::DescribeReverseShellEventsExportRequest& request, const DescribeReverseShellEventsExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeReverseShellEventsExportOutcomeCallable DescribeReverseShellEventsExportCallable(const Model::DescribeReverseShellEventsExportRequest& request);
+
+                /**
+                 *查询反弹shell正则白名单列表
+                 * @param req DescribeReverseShellRegexpWhiteListRequest
+                 * @return DescribeReverseShellRegexpWhiteListOutcome
+                 */
+                DescribeReverseShellRegexpWhiteListOutcome DescribeReverseShellRegexpWhiteList(const Model::DescribeReverseShellRegexpWhiteListRequest &request);
+                void DescribeReverseShellRegexpWhiteListAsync(const Model::DescribeReverseShellRegexpWhiteListRequest& request, const DescribeReverseShellRegexpWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReverseShellRegexpWhiteListOutcomeCallable DescribeReverseShellRegexpWhiteListCallable(const Model::DescribeReverseShellRegexpWhiteListRequest& request);
+
+                /**
+                 *查询反弹shell正则白名单详情
+                 * @param req DescribeReverseShellRegexpWhiteListInfoRequest
+                 * @return DescribeReverseShellRegexpWhiteListInfoOutcome
+                 */
+                DescribeReverseShellRegexpWhiteListInfoOutcome DescribeReverseShellRegexpWhiteListInfo(const Model::DescribeReverseShellRegexpWhiteListInfoRequest &request);
+                void DescribeReverseShellRegexpWhiteListInfoAsync(const Model::DescribeReverseShellRegexpWhiteListInfoRequest& request, const DescribeReverseShellRegexpWhiteListInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReverseShellRegexpWhiteListInfoOutcomeCallable DescribeReverseShellRegexpWhiteListInfoCallable(const Model::DescribeReverseShellRegexpWhiteListInfoRequest& request);
 
                 /**
                  *查询运行时反弹shell白名单详细信息

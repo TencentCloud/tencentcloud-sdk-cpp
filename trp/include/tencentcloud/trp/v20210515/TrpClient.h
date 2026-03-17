@@ -131,6 +131,8 @@
 #include <tencentcloud/trp/v20210515/model/ModifyTraceDataRanksResponse.h>
 #include <tencentcloud/trp/v20210515/model/ReportBatchCallbackStatusRequest.h>
 #include <tencentcloud/trp/v20210515/model/ReportBatchCallbackStatusResponse.h>
+#include <tencentcloud/trp/v20210515/model/ReportScanDetailRequest.h>
+#include <tencentcloud/trp/v20210515/model/ReportScanDetailResponse.h>
 
 
 namespace TencentCloud
@@ -307,6 +309,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ReportBatchCallbackStatusResponse> ReportBatchCallbackStatusOutcome;
                 typedef std::future<ReportBatchCallbackStatusOutcome> ReportBatchCallbackStatusOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::ReportBatchCallbackStatusRequest&, ReportBatchCallbackStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReportBatchCallbackStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReportScanDetailResponse> ReportScanDetailOutcome;
+                typedef std::future<ReportScanDetailOutcome> ReportScanDetailOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::ReportScanDetailRequest&, ReportScanDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReportScanDetailAsyncHandler;
 
 
 
@@ -799,6 +804,15 @@ namespace TencentCloud
                 ReportBatchCallbackStatusOutcome ReportBatchCallbackStatus(const Model::ReportBatchCallbackStatusRequest &request);
                 void ReportBatchCallbackStatusAsync(const Model::ReportBatchCallbackStatusRequest& request, const ReportBatchCallbackStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReportBatchCallbackStatusOutcomeCallable ReportBatchCallbackStatusCallable(const Model::ReportBatchCallbackStatusRequest& request);
+
+                /**
+                 *扫码数据上报
+                 * @param req ReportScanDetailRequest
+                 * @return ReportScanDetailOutcome
+                 */
+                ReportScanDetailOutcome ReportScanDetail(const Model::ReportScanDetailRequest &request);
+                void ReportScanDetailAsync(const Model::ReportScanDetailRequest& request, const ReportScanDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReportScanDetailOutcomeCallable ReportScanDetailCallable(const Model::ReportScanDetailRequest& request);
 
             };
         }

@@ -47,7 +47,9 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/DescribeNetworkFirewallNamespaceLabelListResponse.h
   include/tencentcloud/tcss/v20201101/model/ClusterCreateComponentItem.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetComponentListResponse.h
+  include/tencentcloud/tcss/v20201101/model/DescribeReverseShellRegexpWhiteListInfoRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeVulImageListRequest.h
+  include/tencentcloud/tcss/v20201101/model/DescribeReverseShellRegexpWhiteListResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageRegistryVulListResponse.h
   include/tencentcloud/tcss/v20201101/model/VulScanImageInfo.h
   include/tencentcloud/tcss/v20201101/model/AddAssetImageRegistryRegistryDetailResponse.h
@@ -119,9 +121,10 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageRiskListResponse.h
   include/tencentcloud/tcss/v20201101/model/CreateEmergencyVulExportJobResponse.h
   include/tencentcloud/tcss/v20201101/model/CreateVulDefenceEventExportJobRequest.h
+  include/tencentcloud/tcss/v20201101/model/DescribeReverseShellRegexpWhiteListInfoResponse.h
   include/tencentcloud/tcss/v20201101/model/ClusterCustomParameters.h
   include/tencentcloud/tcss/v20201101/model/DeleteIgnoreVulRequest.h
-  include/tencentcloud/tcss/v20201101/model/DescribeReverseShellEventsResponse.h
+  include/tencentcloud/tcss/v20201101/model/DescribeImageDenyEventListResponse.h
   include/tencentcloud/tcss/v20201101/model/ImageSimpleInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeComplianceAssetDetailInfoRequest.h
   include/tencentcloud/tcss/v20201101/model/NetworkPeer.h
@@ -137,6 +140,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/AddCompliancePolicyItemToWhitelistRequest.h
   include/tencentcloud/tcss/v20201101/model/ComplianceAssetSummary.h
   include/tencentcloud/tcss/v20201101/model/AbnormalProcessEventTendencyInfo.h
+  include/tencentcloud/tcss/v20201101/model/UninstallClusterContainerSecurityResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetClusterListResponse.h
   include/tencentcloud/tcss/v20201101/model/EscapeRule.h
   include/tencentcloud/tcss/v20201101/model/CompliancePeriodTask.h
@@ -158,6 +162,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/SetCheckModeRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageRiskListExportRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetSuperNodeListRequest.h
+  include/tencentcloud/tcss/v20201101/model/ImageDenyRule.h
   include/tencentcloud/tcss/v20201101/model/DescribeVulDefenceHostRequest.h
   include/tencentcloud/tcss/v20201101/model/EmergencyVulInfo.h
   include/tencentcloud/tcss/v20201101/model/ExportVirusListRequest.h
@@ -169,6 +174,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/PromotionActivityContent.h
   include/tencentcloud/tcss/v20201101/model/DescribeAffectedClusterCountRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageRegistryVulListExportRequest.h
+  include/tencentcloud/tcss/v20201101/model/DescribeMaliciousConnectionWhiteListRequest.h
   include/tencentcloud/tcss/v20201101/model/AddEditRiskSyscallWhiteListRequest.h
   include/tencentcloud/tcss/v20201101/model/K8sApiAbnormalRuleInfo.h
   include/tencentcloud/tcss/v20201101/model/ReverseShellEventInfo.h
@@ -202,12 +208,14 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/CheckRepeatAssetImageRegistryResponse.h
   include/tencentcloud/tcss/v20201101/model/VulDefenceEvent.h
   include/tencentcloud/tcss/v20201101/model/DescribeAccessControlEventsExportRequest.h
+  include/tencentcloud/tcss/v20201101/model/ModifyAssetResponse.h
   include/tencentcloud/tcss/v20201101/model/ExportVirusListResponse.h
   include/tencentcloud/tcss/v20201101/model/DeleteReverseShellWhiteListsResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeNetworkFirewallAuditRecordResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeSecLogCleanSettingInfoResponse.h
   include/tencentcloud/tcss/v20201101/model/UpdateNetworkFirewallPolicyYamlDetailResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageBindRuleInfoResponse.h
+  include/tencentcloud/tcss/v20201101/model/DescribeMaliciousConnectionBlackListResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeESHitsRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeTcssSummaryResponse.h
   include/tencentcloud/tcss/v20201101/model/DeleteRiskSyscallEventsRequest.h
@@ -224,7 +232,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/DescribeAssetPortListRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeComplianceTaskPolicyItemSummaryListResponse.h
   include/tencentcloud/tcss/v20201101/model/ComplianceContainerDetailInfo.h
-  include/tencentcloud/tcss/v20201101/model/DescribeReverseShellEventsRequest.h
+  include/tencentcloud/tcss/v20201101/model/DescribeImageDenyEventListRequest.h
   include/tencentcloud/tcss/v20201101/model/AddNetworkFirewallPolicyDetailResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeNetworkFirewallPolicyStatusRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeSecLogKafkaUINResponse.h
@@ -244,6 +252,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/NetworkCustomPolicy.h
   include/tencentcloud/tcss/v20201101/model/DeleteNetworkFirewallPolicyDetailRequest.h
   include/tencentcloud/tcss/v20201101/model/ModifyEscapeEventStatusRequest.h
+  include/tencentcloud/tcss/v20201101/model/DescribeSecLogDeliveryClsSettingRequest.h
   include/tencentcloud/tcss/v20201101/model/ImagesBindRuleInfo.h
   include/tencentcloud/tcss/v20201101/model/ImageHost.h
   include/tencentcloud/tcss/v20201101/model/AddComplianceAssetPolicySetToWhitelistResponse.h
@@ -279,6 +288,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/DescribeEscapeEventInfoResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeK8sApiAbnormalRuleInfoResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeESHitsResponse.h
+  include/tencentcloud/tcss/v20201101/model/DescribeImageDenyRuleListRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeImageRegistryTimingScanTaskResponse.h
   include/tencentcloud/tcss/v20201101/model/ClusterInfoItem.h
   include/tencentcloud/tcss/v20201101/model/DescribeComplianceScanFailedAssetListResponse.h
@@ -294,6 +304,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/DescribeSecLogAlertMsgResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeInspectionReportRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeAgentDaemonSetCmdRequest.h
+  include/tencentcloud/tcss/v20201101/model/DescribeImageDenyEventDetailResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeSecLogAlertMsgRequest.h
   include/tencentcloud/tcss/v20201101/model/AddNetworkFirewallPolicyYamlDetailResponse.h
   include/tencentcloud/tcss/v20201101/model/AccessControlEventInfo.h
@@ -387,12 +398,14 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/ModifySecLogJoinStateResponse.h
   include/tencentcloud/tcss/v20201101/model/ModifyAccessControlRuleStatusResponse.h
   include/tencentcloud/tcss/v20201101/model/ModifyAssetImageScanStopRequest.h
+  include/tencentcloud/tcss/v20201101/model/DescribeImageDenyRuleSummaryResponse.h
   include/tencentcloud/tcss/v20201101/model/CreateRefreshTaskRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeK8sApiAbnormalEventListResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeNewestVulRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeAbnormalProcessLevelSummaryResponse.h
   include/tencentcloud/tcss/v20201101/model/AddEscapeWhiteListRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeESAggregationsRequest.h
+  include/tencentcloud/tcss/v20201101/model/WhiteListRegexpExpressionInfo.h
   include/tencentcloud/tcss/v20201101/model/NetworkClusterPodInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageRiskListExportResponse.h
   include/tencentcloud/tcss/v20201101/model/ModifySecLogCleanSettingInfoRequest.h
@@ -413,10 +426,12 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/DescribeRiskSyscallNamesResponse.h
   include/tencentcloud/tcss/v20201101/model/AddEditReverseShellWhiteListResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeAbnormalProcessEventsResponse.h
+  include/tencentcloud/tcss/v20201101/model/DescribeImageDenyRuleListResponse.h
   include/tencentcloud/tcss/v20201101/model/InitializeUserComplianceEnvironmentResponse.h
   include/tencentcloud/tcss/v20201101/model/ReverseShellEventDescription.h
   include/tencentcloud/tcss/v20201101/model/DescribeImageRegistryNamespaceListResponse.h
   include/tencentcloud/tcss/v20201101/model/VulAffectedImageInfo.h
+  include/tencentcloud/tcss/v20201101/model/SuperNodePodListItem.h
   include/tencentcloud/tcss/v20201101/model/TagInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeK8sApiAbnormalRuleListResponse.h
   include/tencentcloud/tcss/v20201101/model/DeleteCompliancePolicyAssetSetFromWhitelistResponse.h
@@ -492,16 +507,18 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/CreateNetworkFirewallPublishRequest.h
   include/tencentcloud/tcss/v20201101/model/CreateHostExportJobResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeRiskDnsListResponse.h
+  include/tencentcloud/tcss/v20201101/model/DescribeImageDenyRuleSummaryRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeNetworkFirewallPolicyDiscoverRequest.h
   include/tencentcloud/tcss/v20201101/model/RiskDnsEventInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeK8sApiAbnormalRuleScopeListResponse.h
   include/tencentcloud/tcss/v20201101/model/CreateOrModifyPostPayCoresRequest.h
   include/tencentcloud/tcss/v20201101/model/ModifyImageAuthorizedRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageScanTaskRequest.h
-  include/tencentcloud/tcss/v20201101/model/DescribeSecLogDeliveryClsSettingRequest.h
+  include/tencentcloud/tcss/v20201101/model/DescribeReverseShellRegexpWhiteListRequest.h
   include/tencentcloud/tcss/v20201101/model/UpdateNetworkFirewallPolicyDetailResponse.h
   include/tencentcloud/tcss/v20201101/model/ModifySecLogKafkaUINResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeNetworkFirewallPodLabelsListRequest.h
+  include/tencentcloud/tcss/v20201101/model/ImageDenyEventTendency.h
   include/tencentcloud/tcss/v20201101/model/CreateVirusScanTaskResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeNetworkFirewallAuditRecordRequest.h
   include/tencentcloud/tcss/v20201101/model/VasInfoResourceDetail.h
@@ -510,6 +527,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/SecTendencyEventInfo.h
   include/tencentcloud/tcss/v20201101/model/EscapeEventInfo.h
   include/tencentcloud/tcss/v20201101/model/ModifyVirusScanTimeoutSettingResponse.h
+  include/tencentcloud/tcss/v20201101/model/DescribeReverseShellEventsRequest.h
   include/tencentcloud/tcss/v20201101/model/CreateAssetImageVirusExportJobRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageRegistryDetailRequest.h
   include/tencentcloud/tcss/v20201101/model/CreateAssetImageRegistryScanTaskRequest.h
@@ -527,11 +545,13 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/DescribeAgentInstallCommandRequest.h
   include/tencentcloud/tcss/v20201101/model/ResetSecLogTopicConfigRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageVirusListExportResponse.h
+  include/tencentcloud/tcss/v20201101/model/ModifyCompliancePeriodTaskRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeVirusScanSettingRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeRiskDnsEventDetailRequest.h
   include/tencentcloud/tcss/v20201101/model/CreateAccessControlsRuleExportJobRequest.h
   include/tencentcloud/tcss/v20201101/model/VirusAutoIsolateSampleInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeExportJobDownloadURLRequest.h
+  include/tencentcloud/tcss/v20201101/model/DescribeMaliciousConnectionBlackListRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeImageAutoAuthorizedRuleRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeVulIgnoreRegistryImageListResponse.h
   include/tencentcloud/tcss/v20201101/model/UpdateAndPublishNetworkFirewallPolicyDetailRequest.h
@@ -618,11 +638,11 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageScanTaskResponse.h
   include/tencentcloud/tcss/v20201101/model/AddEditAccessControlRuleRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeVulTopRankingRequest.h
-  include/tencentcloud/tcss/v20201101/model/UninstallClusterContainerSecurityResponse.h
+  include/tencentcloud/tcss/v20201101/model/RegexpRuleInfo.h
   include/tencentcloud/tcss/v20201101/model/ConfirmNetworkFirewallPolicyRequest.h
   include/tencentcloud/tcss/v20201101/model/ContainerMount.h
   include/tencentcloud/tcss/v20201101/model/DeleteSearchTemplateResponse.h
-  include/tencentcloud/tcss/v20201101/model/SuperNodePodListItem.h
+  include/tencentcloud/tcss/v20201101/model/DescribeImageDenyRuleDetailResponse.h
   include/tencentcloud/tcss/v20201101/model/AddComplianceAssetPolicySetToWhitelistRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeVirusAutoIsolateSampleDownloadURLResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeSecLogVasInfoRequest.h
@@ -654,6 +674,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/AddEditRiskSyscallWhiteListResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeVirusAutoIsolateSampleDownloadURLRequest.h
   include/tencentcloud/tcss/v20201101/model/ModifyAbnormalProcessStatusRequest.h
+  include/tencentcloud/tcss/v20201101/model/DescribeNewestVulResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeVulDetailRequest.h
   include/tencentcloud/tcss/v20201101/model/CreateEscapeWhiteListExportJobRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeSecLogJoinObjectListRequest.h
@@ -679,7 +700,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/RiskSyscallWhiteListBaseInfo.h
   include/tencentcloud/tcss/v20201101/model/DeleteAbnormalProcessRulesRequest.h
   include/tencentcloud/tcss/v20201101/model/CreateNetworkFirewallClusterRefreshRequest.h
-  include/tencentcloud/tcss/v20201101/model/ModifyCompliancePeriodTaskRequest.h
+  include/tencentcloud/tcss/v20201101/model/DescribeImageDenyEventDetailRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeNetworkFirewallNamespaceListRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeRiskSyscallEventsRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeRiskListResponse.h
@@ -703,6 +724,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/DescribeVirusSampleDownloadUrlRequest.h
   include/tencentcloud/tcss/v20201101/model/AddAndPublishNetworkFirewallPolicyYamlDetailResponse.h
   include/tencentcloud/tcss/v20201101/model/EventEscapeImageInfo.h
+  include/tencentcloud/tcss/v20201101/model/ImageDenyEvent.h
   include/tencentcloud/tcss/v20201101/model/DescribeRiskDnsEventDetailResponse.h
   include/tencentcloud/tcss/v20201101/model/AddAndPublishNetworkFirewallPolicyDetailRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeEscapeEventInfoRequest.h
@@ -729,10 +751,13 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageScanSettingResponse.h
   include/tencentcloud/tcss/v20201101/model/UninstallClusterContainerSecurityRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeReverseShellDetailResponse.h
+  include/tencentcloud/tcss/v20201101/model/DescribeReverseShellEventsResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeClusterSummaryRequest.h
   include/tencentcloud/tcss/v20201101/model/AddIgnoreVulRequest.h
   include/tencentcloud/tcss/v20201101/model/CreateEscapeWhiteListExportJobResponse.h
   include/tencentcloud/tcss/v20201101/model/ModifyAbnormalProcessStatusResponse.h
+  include/tencentcloud/tcss/v20201101/model/MaliciousConnectionRuleInfo.h
+  include/tencentcloud/tcss/v20201101/model/RegexpRuleListItem.h
   include/tencentcloud/tcss/v20201101/model/ExportJobInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeContainerAssetSummaryResponse.h
   include/tencentcloud/tcss/v20201101/model/CreateAssetImageScanTaskRequest.h
@@ -763,7 +788,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/ImageAutoAuthorizedTask.h
   include/tencentcloud/tcss/v20201101/model/AddEditWarningRulesRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeSearchLogsResponse.h
-  include/tencentcloud/tcss/v20201101/model/ModifyAssetResponse.h
+  include/tencentcloud/tcss/v20201101/model/DescribeImageDenyEventTendencyRequest.h
   include/tencentcloud/tcss/v20201101/model/NetworkClusterNamespaceInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeReverseShellEventsExportResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageBindRuleInfoRequest.h
@@ -774,10 +799,12 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/CreateEscapeEventsExportJobRequest.h
   include/tencentcloud/tcss/v20201101/model/ModifyVirusMonitorSettingResponse.h
   include/tencentcloud/tcss/v20201101/model/CheckNetworkFirewallPolicyYamlResponse.h
+  include/tencentcloud/tcss/v20201101/model/DescribeImageDenyEventTendencyResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeComplianceTaskAssetSummaryResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeWarningRulesResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeUserClusterRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeNetworkFirewallClusterRefreshStatusResponse.h
+  include/tencentcloud/tcss/v20201101/model/DescribeMaliciousConnectionWhiteListResponse.h
   include/tencentcloud/tcss/v20201101/model/VirusTaskInfo.h
   include/tencentcloud/tcss/v20201101/model/AffectedWorkloadItem.h
   include/tencentcloud/tcss/v20201101/model/AddAndPublishNetworkFirewallPolicyYamlDetailRequest.h
@@ -827,7 +854,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/DeleteNetworkFirewallPolicyDetailResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeK8sApiAbnormalTendencyRequest.h
   include/tencentcloud/tcss/v20201101/model/RiskSyscallWhiteListInfo.h
-  include/tencentcloud/tcss/v20201101/model/DescribeNewestVulResponse.h
+  include/tencentcloud/tcss/v20201101/model/DescribeImageDenyRuleDetailRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeCompliancePolicyItemAffectedAssetListResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeComplianceAssetPolicyItemListRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeABTestConfigResponse.h
@@ -902,7 +929,9 @@ set(tcss_src
   src/v20201101/model/DescribeNetworkFirewallNamespaceLabelListResponse.cpp
   src/v20201101/model/ClusterCreateComponentItem.cpp
   src/v20201101/model/DescribeAssetComponentListResponse.cpp
+  src/v20201101/model/DescribeReverseShellRegexpWhiteListInfoRequest.cpp
   src/v20201101/model/DescribeVulImageListRequest.cpp
+  src/v20201101/model/DescribeReverseShellRegexpWhiteListResponse.cpp
   src/v20201101/model/DescribeAssetImageRegistryVulListResponse.cpp
   src/v20201101/model/VulScanImageInfo.cpp
   src/v20201101/model/AddAssetImageRegistryRegistryDetailResponse.cpp
@@ -974,9 +1003,10 @@ set(tcss_src
   src/v20201101/model/DescribeAssetImageRiskListResponse.cpp
   src/v20201101/model/CreateEmergencyVulExportJobResponse.cpp
   src/v20201101/model/CreateVulDefenceEventExportJobRequest.cpp
+  src/v20201101/model/DescribeReverseShellRegexpWhiteListInfoResponse.cpp
   src/v20201101/model/ClusterCustomParameters.cpp
   src/v20201101/model/DeleteIgnoreVulRequest.cpp
-  src/v20201101/model/DescribeReverseShellEventsResponse.cpp
+  src/v20201101/model/DescribeImageDenyEventListResponse.cpp
   src/v20201101/model/ImageSimpleInfo.cpp
   src/v20201101/model/DescribeComplianceAssetDetailInfoRequest.cpp
   src/v20201101/model/NetworkPeer.cpp
@@ -992,6 +1022,7 @@ set(tcss_src
   src/v20201101/model/AddCompliancePolicyItemToWhitelistRequest.cpp
   src/v20201101/model/ComplianceAssetSummary.cpp
   src/v20201101/model/AbnormalProcessEventTendencyInfo.cpp
+  src/v20201101/model/UninstallClusterContainerSecurityResponse.cpp
   src/v20201101/model/DescribeAssetClusterListResponse.cpp
   src/v20201101/model/EscapeRule.cpp
   src/v20201101/model/CompliancePeriodTask.cpp
@@ -1013,6 +1044,7 @@ set(tcss_src
   src/v20201101/model/SetCheckModeRequest.cpp
   src/v20201101/model/DescribeAssetImageRiskListExportRequest.cpp
   src/v20201101/model/DescribeAssetSuperNodeListRequest.cpp
+  src/v20201101/model/ImageDenyRule.cpp
   src/v20201101/model/DescribeVulDefenceHostRequest.cpp
   src/v20201101/model/EmergencyVulInfo.cpp
   src/v20201101/model/ExportVirusListRequest.cpp
@@ -1024,6 +1056,7 @@ set(tcss_src
   src/v20201101/model/PromotionActivityContent.cpp
   src/v20201101/model/DescribeAffectedClusterCountRequest.cpp
   src/v20201101/model/DescribeAssetImageRegistryVulListExportRequest.cpp
+  src/v20201101/model/DescribeMaliciousConnectionWhiteListRequest.cpp
   src/v20201101/model/AddEditRiskSyscallWhiteListRequest.cpp
   src/v20201101/model/K8sApiAbnormalRuleInfo.cpp
   src/v20201101/model/ReverseShellEventInfo.cpp
@@ -1057,12 +1090,14 @@ set(tcss_src
   src/v20201101/model/CheckRepeatAssetImageRegistryResponse.cpp
   src/v20201101/model/VulDefenceEvent.cpp
   src/v20201101/model/DescribeAccessControlEventsExportRequest.cpp
+  src/v20201101/model/ModifyAssetResponse.cpp
   src/v20201101/model/ExportVirusListResponse.cpp
   src/v20201101/model/DeleteReverseShellWhiteListsResponse.cpp
   src/v20201101/model/DescribeNetworkFirewallAuditRecordResponse.cpp
   src/v20201101/model/DescribeSecLogCleanSettingInfoResponse.cpp
   src/v20201101/model/UpdateNetworkFirewallPolicyYamlDetailResponse.cpp
   src/v20201101/model/DescribeAssetImageBindRuleInfoResponse.cpp
+  src/v20201101/model/DescribeMaliciousConnectionBlackListResponse.cpp
   src/v20201101/model/DescribeESHitsRequest.cpp
   src/v20201101/model/DescribeTcssSummaryResponse.cpp
   src/v20201101/model/DeleteRiskSyscallEventsRequest.cpp
@@ -1079,7 +1114,7 @@ set(tcss_src
   src/v20201101/model/DescribeAssetPortListRequest.cpp
   src/v20201101/model/DescribeComplianceTaskPolicyItemSummaryListResponse.cpp
   src/v20201101/model/ComplianceContainerDetailInfo.cpp
-  src/v20201101/model/DescribeReverseShellEventsRequest.cpp
+  src/v20201101/model/DescribeImageDenyEventListRequest.cpp
   src/v20201101/model/AddNetworkFirewallPolicyDetailResponse.cpp
   src/v20201101/model/DescribeNetworkFirewallPolicyStatusRequest.cpp
   src/v20201101/model/DescribeSecLogKafkaUINResponse.cpp
@@ -1099,6 +1134,7 @@ set(tcss_src
   src/v20201101/model/NetworkCustomPolicy.cpp
   src/v20201101/model/DeleteNetworkFirewallPolicyDetailRequest.cpp
   src/v20201101/model/ModifyEscapeEventStatusRequest.cpp
+  src/v20201101/model/DescribeSecLogDeliveryClsSettingRequest.cpp
   src/v20201101/model/ImagesBindRuleInfo.cpp
   src/v20201101/model/ImageHost.cpp
   src/v20201101/model/AddComplianceAssetPolicySetToWhitelistResponse.cpp
@@ -1134,6 +1170,7 @@ set(tcss_src
   src/v20201101/model/DescribeEscapeEventInfoResponse.cpp
   src/v20201101/model/DescribeK8sApiAbnormalRuleInfoResponse.cpp
   src/v20201101/model/DescribeESHitsResponse.cpp
+  src/v20201101/model/DescribeImageDenyRuleListRequest.cpp
   src/v20201101/model/DescribeImageRegistryTimingScanTaskResponse.cpp
   src/v20201101/model/ClusterInfoItem.cpp
   src/v20201101/model/DescribeComplianceScanFailedAssetListResponse.cpp
@@ -1149,6 +1186,7 @@ set(tcss_src
   src/v20201101/model/DescribeSecLogAlertMsgResponse.cpp
   src/v20201101/model/DescribeInspectionReportRequest.cpp
   src/v20201101/model/DescribeAgentDaemonSetCmdRequest.cpp
+  src/v20201101/model/DescribeImageDenyEventDetailResponse.cpp
   src/v20201101/model/DescribeSecLogAlertMsgRequest.cpp
   src/v20201101/model/AddNetworkFirewallPolicyYamlDetailResponse.cpp
   src/v20201101/model/AccessControlEventInfo.cpp
@@ -1242,12 +1280,14 @@ set(tcss_src
   src/v20201101/model/ModifySecLogJoinStateResponse.cpp
   src/v20201101/model/ModifyAccessControlRuleStatusResponse.cpp
   src/v20201101/model/ModifyAssetImageScanStopRequest.cpp
+  src/v20201101/model/DescribeImageDenyRuleSummaryResponse.cpp
   src/v20201101/model/CreateRefreshTaskRequest.cpp
   src/v20201101/model/DescribeK8sApiAbnormalEventListResponse.cpp
   src/v20201101/model/DescribeNewestVulRequest.cpp
   src/v20201101/model/DescribeAbnormalProcessLevelSummaryResponse.cpp
   src/v20201101/model/AddEscapeWhiteListRequest.cpp
   src/v20201101/model/DescribeESAggregationsRequest.cpp
+  src/v20201101/model/WhiteListRegexpExpressionInfo.cpp
   src/v20201101/model/NetworkClusterPodInfo.cpp
   src/v20201101/model/DescribeAssetImageRiskListExportResponse.cpp
   src/v20201101/model/ModifySecLogCleanSettingInfoRequest.cpp
@@ -1268,10 +1308,12 @@ set(tcss_src
   src/v20201101/model/DescribeRiskSyscallNamesResponse.cpp
   src/v20201101/model/AddEditReverseShellWhiteListResponse.cpp
   src/v20201101/model/DescribeAbnormalProcessEventsResponse.cpp
+  src/v20201101/model/DescribeImageDenyRuleListResponse.cpp
   src/v20201101/model/InitializeUserComplianceEnvironmentResponse.cpp
   src/v20201101/model/ReverseShellEventDescription.cpp
   src/v20201101/model/DescribeImageRegistryNamespaceListResponse.cpp
   src/v20201101/model/VulAffectedImageInfo.cpp
+  src/v20201101/model/SuperNodePodListItem.cpp
   src/v20201101/model/TagInfo.cpp
   src/v20201101/model/DescribeK8sApiAbnormalRuleListResponse.cpp
   src/v20201101/model/DeleteCompliancePolicyAssetSetFromWhitelistResponse.cpp
@@ -1347,16 +1389,18 @@ set(tcss_src
   src/v20201101/model/CreateNetworkFirewallPublishRequest.cpp
   src/v20201101/model/CreateHostExportJobResponse.cpp
   src/v20201101/model/DescribeRiskDnsListResponse.cpp
+  src/v20201101/model/DescribeImageDenyRuleSummaryRequest.cpp
   src/v20201101/model/DescribeNetworkFirewallPolicyDiscoverRequest.cpp
   src/v20201101/model/RiskDnsEventInfo.cpp
   src/v20201101/model/DescribeK8sApiAbnormalRuleScopeListResponse.cpp
   src/v20201101/model/CreateOrModifyPostPayCoresRequest.cpp
   src/v20201101/model/ModifyImageAuthorizedRequest.cpp
   src/v20201101/model/DescribeAssetImageScanTaskRequest.cpp
-  src/v20201101/model/DescribeSecLogDeliveryClsSettingRequest.cpp
+  src/v20201101/model/DescribeReverseShellRegexpWhiteListRequest.cpp
   src/v20201101/model/UpdateNetworkFirewallPolicyDetailResponse.cpp
   src/v20201101/model/ModifySecLogKafkaUINResponse.cpp
   src/v20201101/model/DescribeNetworkFirewallPodLabelsListRequest.cpp
+  src/v20201101/model/ImageDenyEventTendency.cpp
   src/v20201101/model/CreateVirusScanTaskResponse.cpp
   src/v20201101/model/DescribeNetworkFirewallAuditRecordRequest.cpp
   src/v20201101/model/VasInfoResourceDetail.cpp
@@ -1365,6 +1409,7 @@ set(tcss_src
   src/v20201101/model/SecTendencyEventInfo.cpp
   src/v20201101/model/EscapeEventInfo.cpp
   src/v20201101/model/ModifyVirusScanTimeoutSettingResponse.cpp
+  src/v20201101/model/DescribeReverseShellEventsRequest.cpp
   src/v20201101/model/CreateAssetImageVirusExportJobRequest.cpp
   src/v20201101/model/DescribeAssetImageRegistryDetailRequest.cpp
   src/v20201101/model/CreateAssetImageRegistryScanTaskRequest.cpp
@@ -1382,11 +1427,13 @@ set(tcss_src
   src/v20201101/model/DescribeAgentInstallCommandRequest.cpp
   src/v20201101/model/ResetSecLogTopicConfigRequest.cpp
   src/v20201101/model/DescribeAssetImageVirusListExportResponse.cpp
+  src/v20201101/model/ModifyCompliancePeriodTaskRequest.cpp
   src/v20201101/model/DescribeVirusScanSettingRequest.cpp
   src/v20201101/model/DescribeRiskDnsEventDetailRequest.cpp
   src/v20201101/model/CreateAccessControlsRuleExportJobRequest.cpp
   src/v20201101/model/VirusAutoIsolateSampleInfo.cpp
   src/v20201101/model/DescribeExportJobDownloadURLRequest.cpp
+  src/v20201101/model/DescribeMaliciousConnectionBlackListRequest.cpp
   src/v20201101/model/DescribeImageAutoAuthorizedRuleRequest.cpp
   src/v20201101/model/DescribeVulIgnoreRegistryImageListResponse.cpp
   src/v20201101/model/UpdateAndPublishNetworkFirewallPolicyDetailRequest.cpp
@@ -1473,11 +1520,11 @@ set(tcss_src
   src/v20201101/model/DescribeAssetImageScanTaskResponse.cpp
   src/v20201101/model/AddEditAccessControlRuleRequest.cpp
   src/v20201101/model/DescribeVulTopRankingRequest.cpp
-  src/v20201101/model/UninstallClusterContainerSecurityResponse.cpp
+  src/v20201101/model/RegexpRuleInfo.cpp
   src/v20201101/model/ConfirmNetworkFirewallPolicyRequest.cpp
   src/v20201101/model/ContainerMount.cpp
   src/v20201101/model/DeleteSearchTemplateResponse.cpp
-  src/v20201101/model/SuperNodePodListItem.cpp
+  src/v20201101/model/DescribeImageDenyRuleDetailResponse.cpp
   src/v20201101/model/AddComplianceAssetPolicySetToWhitelistRequest.cpp
   src/v20201101/model/DescribeVirusAutoIsolateSampleDownloadURLResponse.cpp
   src/v20201101/model/DescribeSecLogVasInfoRequest.cpp
@@ -1509,6 +1556,7 @@ set(tcss_src
   src/v20201101/model/AddEditRiskSyscallWhiteListResponse.cpp
   src/v20201101/model/DescribeVirusAutoIsolateSampleDownloadURLRequest.cpp
   src/v20201101/model/ModifyAbnormalProcessStatusRequest.cpp
+  src/v20201101/model/DescribeNewestVulResponse.cpp
   src/v20201101/model/DescribeVulDetailRequest.cpp
   src/v20201101/model/CreateEscapeWhiteListExportJobRequest.cpp
   src/v20201101/model/DescribeSecLogJoinObjectListRequest.cpp
@@ -1534,7 +1582,7 @@ set(tcss_src
   src/v20201101/model/RiskSyscallWhiteListBaseInfo.cpp
   src/v20201101/model/DeleteAbnormalProcessRulesRequest.cpp
   src/v20201101/model/CreateNetworkFirewallClusterRefreshRequest.cpp
-  src/v20201101/model/ModifyCompliancePeriodTaskRequest.cpp
+  src/v20201101/model/DescribeImageDenyEventDetailRequest.cpp
   src/v20201101/model/DescribeNetworkFirewallNamespaceListRequest.cpp
   src/v20201101/model/DescribeRiskSyscallEventsRequest.cpp
   src/v20201101/model/DescribeRiskListResponse.cpp
@@ -1558,6 +1606,7 @@ set(tcss_src
   src/v20201101/model/DescribeVirusSampleDownloadUrlRequest.cpp
   src/v20201101/model/AddAndPublishNetworkFirewallPolicyYamlDetailResponse.cpp
   src/v20201101/model/EventEscapeImageInfo.cpp
+  src/v20201101/model/ImageDenyEvent.cpp
   src/v20201101/model/DescribeRiskDnsEventDetailResponse.cpp
   src/v20201101/model/AddAndPublishNetworkFirewallPolicyDetailRequest.cpp
   src/v20201101/model/DescribeEscapeEventInfoRequest.cpp
@@ -1584,10 +1633,13 @@ set(tcss_src
   src/v20201101/model/DescribeAssetImageScanSettingResponse.cpp
   src/v20201101/model/UninstallClusterContainerSecurityRequest.cpp
   src/v20201101/model/DescribeReverseShellDetailResponse.cpp
+  src/v20201101/model/DescribeReverseShellEventsResponse.cpp
   src/v20201101/model/DescribeClusterSummaryRequest.cpp
   src/v20201101/model/AddIgnoreVulRequest.cpp
   src/v20201101/model/CreateEscapeWhiteListExportJobResponse.cpp
   src/v20201101/model/ModifyAbnormalProcessStatusResponse.cpp
+  src/v20201101/model/MaliciousConnectionRuleInfo.cpp
+  src/v20201101/model/RegexpRuleListItem.cpp
   src/v20201101/model/ExportJobInfo.cpp
   src/v20201101/model/DescribeContainerAssetSummaryResponse.cpp
   src/v20201101/model/CreateAssetImageScanTaskRequest.cpp
@@ -1618,7 +1670,7 @@ set(tcss_src
   src/v20201101/model/ImageAutoAuthorizedTask.cpp
   src/v20201101/model/AddEditWarningRulesRequest.cpp
   src/v20201101/model/DescribeSearchLogsResponse.cpp
-  src/v20201101/model/ModifyAssetResponse.cpp
+  src/v20201101/model/DescribeImageDenyEventTendencyRequest.cpp
   src/v20201101/model/NetworkClusterNamespaceInfo.cpp
   src/v20201101/model/DescribeReverseShellEventsExportResponse.cpp
   src/v20201101/model/DescribeAssetImageBindRuleInfoRequest.cpp
@@ -1629,10 +1681,12 @@ set(tcss_src
   src/v20201101/model/CreateEscapeEventsExportJobRequest.cpp
   src/v20201101/model/ModifyVirusMonitorSettingResponse.cpp
   src/v20201101/model/CheckNetworkFirewallPolicyYamlResponse.cpp
+  src/v20201101/model/DescribeImageDenyEventTendencyResponse.cpp
   src/v20201101/model/DescribeComplianceTaskAssetSummaryResponse.cpp
   src/v20201101/model/DescribeWarningRulesResponse.cpp
   src/v20201101/model/DescribeUserClusterRequest.cpp
   src/v20201101/model/DescribeNetworkFirewallClusterRefreshStatusResponse.cpp
+  src/v20201101/model/DescribeMaliciousConnectionWhiteListResponse.cpp
   src/v20201101/model/VirusTaskInfo.cpp
   src/v20201101/model/AffectedWorkloadItem.cpp
   src/v20201101/model/AddAndPublishNetworkFirewallPolicyYamlDetailRequest.cpp
@@ -1682,7 +1736,7 @@ set(tcss_src
   src/v20201101/model/DeleteNetworkFirewallPolicyDetailResponse.cpp
   src/v20201101/model/DescribeK8sApiAbnormalTendencyRequest.cpp
   src/v20201101/model/RiskSyscallWhiteListInfo.cpp
-  src/v20201101/model/DescribeNewestVulResponse.cpp
+  src/v20201101/model/DescribeImageDenyRuleDetailRequest.cpp
   src/v20201101/model/DescribeCompliancePolicyItemAffectedAssetListResponse.cpp
   src/v20201101/model/DescribeComplianceAssetPolicyItemListRequest.cpp
   src/v20201101/model/DescribeABTestConfigResponse.cpp

@@ -73,6 +73,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCreateMySQLResultRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCreateMySQLResultResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCurveDataRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeCurveDataResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeDatabaseACLRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeDatabaseACLResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvAccountCircleRequest.h>
@@ -224,6 +226,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCreateMySQLResultResponse> DescribeCreateMySQLResultOutcome;
                 typedef std::future<DescribeCreateMySQLResultOutcome> DescribeCreateMySQLResultOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCreateMySQLResultRequest&, DescribeCreateMySQLResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCreateMySQLResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCurveDataResponse> DescribeCurveDataOutcome;
+                typedef std::future<DescribeCurveDataOutcome> DescribeCurveDataOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeCurveDataRequest&, DescribeCurveDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCurveDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDatabaseACLResponse> DescribeDatabaseACLOutcome;
                 typedef std::future<DescribeDatabaseACLOutcome> DescribeDatabaseACLOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeDatabaseACLRequest&, DescribeDatabaseACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseACLAsyncHandler;
@@ -575,6 +580,15 @@ namespace TencentCloud
                 DescribeCreateMySQLResultOutcome DescribeCreateMySQLResult(const Model::DescribeCreateMySQLResultRequest &request);
                 void DescribeCreateMySQLResultAsync(const Model::DescribeCreateMySQLResultRequest& request, const DescribeCreateMySQLResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCreateMySQLResultOutcomeCallable DescribeCreateMySQLResultCallable(const Model::DescribeCreateMySQLResultRequest& request);
+
+                /**
+                 *根据指定指标名称，查询某环境在指定时间范围内的监控数据，返回按统计粒度聚合后的时序数据。
+                 * @param req DescribeCurveDataRequest
+                 * @return DescribeCurveDataOutcome
+                 */
+                DescribeCurveDataOutcome DescribeCurveData(const Model::DescribeCurveDataRequest &request);
+                void DescribeCurveDataAsync(const Model::DescribeCurveDataRequest& request, const DescribeCurveDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCurveDataOutcomeCallable DescribeCurveDataCallable(const Model::DescribeCurveDataRequest& request);
 
                 /**
                  *本接口（DescribeDatabaseACL）获取文档型数据库权限。

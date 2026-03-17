@@ -23,7 +23,9 @@ using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
 DescribeRollbackTimeRangeRequest::DescribeRollbackTimeRangeRequest() :
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_vaultIdHasBeenSet(false),
+    m_vaultRegionHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,22 @@ string DescribeRollbackTimeRangeRequest::ToJsonString() const
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vaultIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VaultId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vaultId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vaultRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VaultRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vaultRegion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +82,38 @@ void DescribeRollbackTimeRangeRequest::SetClusterId(const string& _clusterId)
 bool DescribeRollbackTimeRangeRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+string DescribeRollbackTimeRangeRequest::GetVaultId() const
+{
+    return m_vaultId;
+}
+
+void DescribeRollbackTimeRangeRequest::SetVaultId(const string& _vaultId)
+{
+    m_vaultId = _vaultId;
+    m_vaultIdHasBeenSet = true;
+}
+
+bool DescribeRollbackTimeRangeRequest::VaultIdHasBeenSet() const
+{
+    return m_vaultIdHasBeenSet;
+}
+
+string DescribeRollbackTimeRangeRequest::GetVaultRegion() const
+{
+    return m_vaultRegion;
+}
+
+void DescribeRollbackTimeRangeRequest::SetVaultRegion(const string& _vaultRegion)
+{
+    m_vaultRegion = _vaultRegion;
+    m_vaultRegionHasBeenSet = true;
+}
+
+bool DescribeRollbackTimeRangeRequest::VaultRegionHasBeenSet() const
+{
+    return m_vaultRegionHasBeenSet;
 }
 
 

@@ -74,7 +74,11 @@ Resource::Resource() :
     m_iOAResourceHasBeenSet(false),
     m_packageIOAUserCountHasBeenSet(false),
     m_packageIOABandwidthHasBeenSet(false),
-    m_iOAResourceIdHasBeenSet(false)
+    m_iOAResourceIdHasBeenSet(false),
+    m_resourceEditionHasBeenSet(false),
+    m_timeUnitHasBeenSet(false),
+    m_timeSpanHasBeenSet(false),
+    m_payModeHasBeenSet(false)
 {
 }
 
@@ -645,6 +649,46 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         m_iOAResourceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceEdition") && !value["ResourceEdition"].IsNull())
+    {
+        if (!value["ResourceEdition"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.ResourceEdition` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceEdition = string(value["ResourceEdition"].GetString());
+        m_resourceEditionHasBeenSet = true;
+    }
+
+    if (value.HasMember("TimeUnit") && !value["TimeUnit"].IsNull())
+    {
+        if (!value["TimeUnit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.TimeUnit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeUnit = string(value["TimeUnit"].GetString());
+        m_timeUnitHasBeenSet = true;
+    }
+
+    if (value.HasMember("TimeSpan") && !value["TimeSpan"].IsNull())
+    {
+        if (!value["TimeSpan"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.TimeSpan` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeSpan = value["TimeSpan"].GetUint64();
+        m_timeSpanHasBeenSet = true;
+    }
+
+    if (value.HasMember("PayMode") && !value["PayMode"].IsNull())
+    {
+        if (!value["PayMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.PayMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_payMode = value["PayMode"].GetUint64();
+        m_payModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1109,6 +1153,38 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "IOAResourceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_iOAResourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceEditionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceEdition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceEdition.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeSpanHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeSpan";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_timeSpan, allocator);
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_payMode, allocator);
     }
 
 }
@@ -1976,5 +2052,69 @@ void Resource::SetIOAResourceId(const string& _iOAResourceId)
 bool Resource::IOAResourceIdHasBeenSet() const
 {
     return m_iOAResourceIdHasBeenSet;
+}
+
+string Resource::GetResourceEdition() const
+{
+    return m_resourceEdition;
+}
+
+void Resource::SetResourceEdition(const string& _resourceEdition)
+{
+    m_resourceEdition = _resourceEdition;
+    m_resourceEditionHasBeenSet = true;
+}
+
+bool Resource::ResourceEditionHasBeenSet() const
+{
+    return m_resourceEditionHasBeenSet;
+}
+
+string Resource::GetTimeUnit() const
+{
+    return m_timeUnit;
+}
+
+void Resource::SetTimeUnit(const string& _timeUnit)
+{
+    m_timeUnit = _timeUnit;
+    m_timeUnitHasBeenSet = true;
+}
+
+bool Resource::TimeUnitHasBeenSet() const
+{
+    return m_timeUnitHasBeenSet;
+}
+
+uint64_t Resource::GetTimeSpan() const
+{
+    return m_timeSpan;
+}
+
+void Resource::SetTimeSpan(const uint64_t& _timeSpan)
+{
+    m_timeSpan = _timeSpan;
+    m_timeSpanHasBeenSet = true;
+}
+
+bool Resource::TimeSpanHasBeenSet() const
+{
+    return m_timeSpanHasBeenSet;
+}
+
+uint64_t Resource::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void Resource::SetPayMode(const uint64_t& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool Resource::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
 }
 

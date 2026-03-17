@@ -796,6 +796,27 @@ namespace TencentCloud
                      */
                     bool TicketNameHasBeenSet() const;
 
+                    /**
+                     * 获取访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍
+                     * @return MaxAccessCredentialDuration 访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍
+                     * 
+                     */
+                    uint64_t GetMaxAccessCredentialDuration() const;
+
+                    /**
+                     * 设置访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍
+                     * @param _maxAccessCredentialDuration 访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍
+                     * 
+                     */
+                    void SetMaxAccessCredentialDuration(const uint64_t& _maxAccessCredentialDuration);
+
+                    /**
+                     * 判断参数 MaxAccessCredentialDuration 是否已赋值
+                     * @return MaxAccessCredentialDuration 是否已赋值
+                     * 
+                     */
+                    bool MaxAccessCredentialDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1009,6 +1030,12 @@ namespace TencentCloud
                      */
                     std::string m_ticketName;
                     bool m_ticketNameHasBeenSet;
+
+                    /**
+                     * 访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍
+                     */
+                    uint64_t m_maxAccessCredentialDuration;
+                    bool m_maxAccessCredentialDurationHasBeenSet;
 
                 };
             }

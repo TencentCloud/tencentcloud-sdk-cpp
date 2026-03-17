@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取记录的数量统计信息
-                     * @return RecordCountInfo 记录的数量统计信息
+                     * 获取<p>记录的数量统计信息</p>
+                     * @return RecordCountInfo <p>记录的数量统计信息</p>
                      * 
                      */
                     RecordCountInfo GetRecordCountInfo() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool RecordCountInfoHasBeenSet() const;
 
                     /**
-                     * 获取获取的记录列表
-                     * @return RecordList 获取的记录列表
+                     * 获取<p>获取的记录列表</p>
+                     * @return RecordList <p>获取的记录列表</p>
                      * 
                      */
                     std::vector<RecordListItem> GetRecordList() const;
@@ -76,13 +76,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 记录的数量统计信息
+                     * <p>记录的数量统计信息</p>
                      */
                     RecordCountInfo m_recordCountInfo;
                     bool m_recordCountInfoHasBeenSet;
 
                     /**
-                     * 获取的记录列表
+                     * <p>获取的记录列表</p>
                      */
                     std::vector<RecordListItem> m_recordList;
                     bool m_recordListHasBeenSet;

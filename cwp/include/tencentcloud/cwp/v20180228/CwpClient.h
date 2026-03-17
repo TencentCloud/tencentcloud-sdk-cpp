@@ -269,6 +269,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackTopResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackTrendsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackTrendsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAttackTypeRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAttackTypeResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackVulTypeListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackVulTypeListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBanModeRequest.h>
@@ -405,6 +407,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeIgnoreRuleEffectHostListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeImportMachineInfoRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeImportMachineInfoResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeInjectRiskyServiceSwitchRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeInjectRiskyServiceSwitchResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeJavaMemShellInfoRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeJavaMemShellInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeJavaMemShellListRequest.h>
@@ -443,6 +447,10 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeLogStorageStatisticResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeLogTypeRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeLogTypeResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeLoginTypeGlobalConfRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeLoginTypeGlobalConfResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeLoginTypeHostRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeLoginTypeHostResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeLoginWhiteCombinedListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeLoginWhiteCombinedListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeLoginWhiteHostListRequest.h>
@@ -495,6 +503,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeMalwareWhiteListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMalwareWhiteListAffectListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeMalwareWhiteListAffectListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeMemShellRulesRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeMemShellRulesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeNetAttackSettingRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeNetAttackSettingResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeNetAttackWhiteListRequest.h>
@@ -547,8 +557,24 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeRansomDefenseStrategyMachinesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeRansomDefenseTrendRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeRansomDefenseTrendResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRaspEventCWPRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRaspEventCWPResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRaspEventDetailCWPRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRaspEventDetailCWPResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRaspEventDetailTCSSRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRaspEventDetailTCSSResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRaspEventTCSSRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRaspEventTCSSResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRaspLicenseListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRaspLicenseListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeRaspMaxCpuRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeRaspMaxCpuResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRaspMemShellDetailTCSSRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRaspMemShellDetailTCSSResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRaspMemShellListTCSSRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRaspMemShellListTCSSResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRaspPluginListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRaspPluginListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeRaspRuleVulsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeRaspRuleVulsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeRaspRulesRequest.h>
@@ -561,6 +587,10 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeReverseShellEventsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeReverseShellRulesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeReverseShellRulesResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeReverseShellRulesAggregationRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeReverseShellRulesAggregationResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeReverseShellSystemPolicyConfigRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeReverseShellSystemPolicyConfigResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeRiskBatchStatusRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeRiskBatchStatusResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeRiskDnsEventInfoRequest.h>
@@ -633,6 +663,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeServerRelatedDirInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeServersAndRiskAndFirstInfoRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeServersAndRiskAndFirstInfoResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeShellPolicyListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeShellPolicyListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeStrategyExistRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeStrategyExistResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeTagMachinesRequest.h>
@@ -665,6 +697,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeVulDefenceListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulDefenceOverviewRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulDefenceOverviewResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeVulDefenceOverviewCountRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeVulDefenceOverviewCountResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulDefencePluginDetailRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulDefencePluginDetailResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulDefencePluginExceptionCountRequest.h>
@@ -673,6 +707,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeVulDefencePluginStatusResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulDefenceSettingRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulDefenceSettingResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeVulDefenceSettingListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeVulDefenceSettingListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulEffectHostListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulEffectHostListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulEffectModulesRequest.h>
@@ -725,6 +761,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeWebPageServiceInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeWindowsPatchListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeWindowsPatchListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeYDRaspBlackWhiteRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeYDRaspBlackWhiteResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DestroyOrderRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DestroyOrderResponse.h>
 #include <tencentcloud/cwp/v20180228/model/EditBashRulesRequest.h>
@@ -987,6 +1025,8 @@
 #include <tencentcloud/cwp/v20180228/model/ModifyWebPageProtectSwitchResponse.h>
 #include <tencentcloud/cwp/v20180228/model/RansomDefenseRollbackRequest.h>
 #include <tencentcloud/cwp/v20180228/model/RansomDefenseRollbackResponse.h>
+#include <tencentcloud/cwp/v20180228/model/RaspEventOverviewRequest.h>
+#include <tencentcloud/cwp/v20180228/model/RaspEventOverviewResponse.h>
 #include <tencentcloud/cwp/v20180228/model/RecoverMalwaresRequest.h>
 #include <tencentcloud/cwp/v20180228/model/RecoverMalwaresResponse.h>
 #include <tencentcloud/cwp/v20180228/model/RemoveLocalStorageItemRequest.h>
@@ -1428,6 +1468,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAttackTrendsResponse> DescribeAttackTrendsOutcome;
                 typedef std::future<DescribeAttackTrendsOutcome> DescribeAttackTrendsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAttackTrendsRequest&, DescribeAttackTrendsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackTrendsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAttackTypeResponse> DescribeAttackTypeOutcome;
+                typedef std::future<DescribeAttackTypeOutcome> DescribeAttackTypeOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAttackTypeRequest&, DescribeAttackTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackTypeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAttackVulTypeListResponse> DescribeAttackVulTypeListOutcome;
                 typedef std::future<DescribeAttackVulTypeListOutcome> DescribeAttackVulTypeListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAttackVulTypeListRequest&, DescribeAttackVulTypeListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackVulTypeListAsyncHandler;
@@ -1632,6 +1675,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeImportMachineInfoResponse> DescribeImportMachineInfoOutcome;
                 typedef std::future<DescribeImportMachineInfoOutcome> DescribeImportMachineInfoOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeImportMachineInfoRequest&, DescribeImportMachineInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImportMachineInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInjectRiskyServiceSwitchResponse> DescribeInjectRiskyServiceSwitchOutcome;
+                typedef std::future<DescribeInjectRiskyServiceSwitchOutcome> DescribeInjectRiskyServiceSwitchOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeInjectRiskyServiceSwitchRequest&, DescribeInjectRiskyServiceSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInjectRiskyServiceSwitchAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeJavaMemShellInfoResponse> DescribeJavaMemShellInfoOutcome;
                 typedef std::future<DescribeJavaMemShellInfoOutcome> DescribeJavaMemShellInfoOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeJavaMemShellInfoRequest&, DescribeJavaMemShellInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJavaMemShellInfoAsyncHandler;
@@ -1689,6 +1735,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLogTypeResponse> DescribeLogTypeOutcome;
                 typedef std::future<DescribeLogTypeOutcome> DescribeLogTypeOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeLogTypeRequest&, DescribeLogTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogTypeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLoginTypeGlobalConfResponse> DescribeLoginTypeGlobalConfOutcome;
+                typedef std::future<DescribeLoginTypeGlobalConfOutcome> DescribeLoginTypeGlobalConfOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeLoginTypeGlobalConfRequest&, DescribeLoginTypeGlobalConfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoginTypeGlobalConfAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLoginTypeHostResponse> DescribeLoginTypeHostOutcome;
+                typedef std::future<DescribeLoginTypeHostOutcome> DescribeLoginTypeHostOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeLoginTypeHostRequest&, DescribeLoginTypeHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoginTypeHostAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLoginWhiteCombinedListResponse> DescribeLoginWhiteCombinedListOutcome;
                 typedef std::future<DescribeLoginWhiteCombinedListOutcome> DescribeLoginWhiteCombinedListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeLoginWhiteCombinedListRequest&, DescribeLoginWhiteCombinedListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoginWhiteCombinedListAsyncHandler;
@@ -1767,6 +1819,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMalwareWhiteListAffectListResponse> DescribeMalwareWhiteListAffectListOutcome;
                 typedef std::future<DescribeMalwareWhiteListAffectListOutcome> DescribeMalwareWhiteListAffectListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeMalwareWhiteListAffectListRequest&, DescribeMalwareWhiteListAffectListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMalwareWhiteListAffectListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMemShellRulesResponse> DescribeMemShellRulesOutcome;
+                typedef std::future<DescribeMemShellRulesOutcome> DescribeMemShellRulesOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeMemShellRulesRequest&, DescribeMemShellRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMemShellRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNetAttackSettingResponse> DescribeNetAttackSettingOutcome;
                 typedef std::future<DescribeNetAttackSettingOutcome> DescribeNetAttackSettingOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeNetAttackSettingRequest&, DescribeNetAttackSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNetAttackSettingAsyncHandler;
@@ -1845,9 +1900,33 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRansomDefenseTrendResponse> DescribeRansomDefenseTrendOutcome;
                 typedef std::future<DescribeRansomDefenseTrendOutcome> DescribeRansomDefenseTrendOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeRansomDefenseTrendRequest&, DescribeRansomDefenseTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRansomDefenseTrendAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRaspEventCWPResponse> DescribeRaspEventCWPOutcome;
+                typedef std::future<DescribeRaspEventCWPOutcome> DescribeRaspEventCWPOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeRaspEventCWPRequest&, DescribeRaspEventCWPOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRaspEventCWPAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRaspEventDetailCWPResponse> DescribeRaspEventDetailCWPOutcome;
+                typedef std::future<DescribeRaspEventDetailCWPOutcome> DescribeRaspEventDetailCWPOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeRaspEventDetailCWPRequest&, DescribeRaspEventDetailCWPOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRaspEventDetailCWPAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRaspEventDetailTCSSResponse> DescribeRaspEventDetailTCSSOutcome;
+                typedef std::future<DescribeRaspEventDetailTCSSOutcome> DescribeRaspEventDetailTCSSOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeRaspEventDetailTCSSRequest&, DescribeRaspEventDetailTCSSOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRaspEventDetailTCSSAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRaspEventTCSSResponse> DescribeRaspEventTCSSOutcome;
+                typedef std::future<DescribeRaspEventTCSSOutcome> DescribeRaspEventTCSSOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeRaspEventTCSSRequest&, DescribeRaspEventTCSSOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRaspEventTCSSAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRaspLicenseListResponse> DescribeRaspLicenseListOutcome;
+                typedef std::future<DescribeRaspLicenseListOutcome> DescribeRaspLicenseListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeRaspLicenseListRequest&, DescribeRaspLicenseListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRaspLicenseListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRaspMaxCpuResponse> DescribeRaspMaxCpuOutcome;
                 typedef std::future<DescribeRaspMaxCpuOutcome> DescribeRaspMaxCpuOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeRaspMaxCpuRequest&, DescribeRaspMaxCpuOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRaspMaxCpuAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRaspMemShellDetailTCSSResponse> DescribeRaspMemShellDetailTCSSOutcome;
+                typedef std::future<DescribeRaspMemShellDetailTCSSOutcome> DescribeRaspMemShellDetailTCSSOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeRaspMemShellDetailTCSSRequest&, DescribeRaspMemShellDetailTCSSOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRaspMemShellDetailTCSSAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRaspMemShellListTCSSResponse> DescribeRaspMemShellListTCSSOutcome;
+                typedef std::future<DescribeRaspMemShellListTCSSOutcome> DescribeRaspMemShellListTCSSOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeRaspMemShellListTCSSRequest&, DescribeRaspMemShellListTCSSOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRaspMemShellListTCSSAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRaspPluginListResponse> DescribeRaspPluginListOutcome;
+                typedef std::future<DescribeRaspPluginListOutcome> DescribeRaspPluginListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeRaspPluginListRequest&, DescribeRaspPluginListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRaspPluginListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRaspRuleVulsResponse> DescribeRaspRuleVulsOutcome;
                 typedef std::future<DescribeRaspRuleVulsOutcome> DescribeRaspRuleVulsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeRaspRuleVulsRequest&, DescribeRaspRuleVulsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRaspRuleVulsAsyncHandler;
@@ -1866,6 +1945,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeReverseShellRulesResponse> DescribeReverseShellRulesOutcome;
                 typedef std::future<DescribeReverseShellRulesOutcome> DescribeReverseShellRulesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeReverseShellRulesRequest&, DescribeReverseShellRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReverseShellRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeReverseShellRulesAggregationResponse> DescribeReverseShellRulesAggregationOutcome;
+                typedef std::future<DescribeReverseShellRulesAggregationOutcome> DescribeReverseShellRulesAggregationOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeReverseShellRulesAggregationRequest&, DescribeReverseShellRulesAggregationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReverseShellRulesAggregationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeReverseShellSystemPolicyConfigResponse> DescribeReverseShellSystemPolicyConfigOutcome;
+                typedef std::future<DescribeReverseShellSystemPolicyConfigOutcome> DescribeReverseShellSystemPolicyConfigOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeReverseShellSystemPolicyConfigRequest&, DescribeReverseShellSystemPolicyConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReverseShellSystemPolicyConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRiskBatchStatusResponse> DescribeRiskBatchStatusOutcome;
                 typedef std::future<DescribeRiskBatchStatusOutcome> DescribeRiskBatchStatusOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeRiskBatchStatusRequest&, DescribeRiskBatchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskBatchStatusAsyncHandler;
@@ -1974,6 +2059,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeServersAndRiskAndFirstInfoResponse> DescribeServersAndRiskAndFirstInfoOutcome;
                 typedef std::future<DescribeServersAndRiskAndFirstInfoOutcome> DescribeServersAndRiskAndFirstInfoOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeServersAndRiskAndFirstInfoRequest&, DescribeServersAndRiskAndFirstInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServersAndRiskAndFirstInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeShellPolicyListResponse> DescribeShellPolicyListOutcome;
+                typedef std::future<DescribeShellPolicyListOutcome> DescribeShellPolicyListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeShellPolicyListRequest&, DescribeShellPolicyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeShellPolicyListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStrategyExistResponse> DescribeStrategyExistOutcome;
                 typedef std::future<DescribeStrategyExistOutcome> DescribeStrategyExistOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeStrategyExistRequest&, DescribeStrategyExistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStrategyExistAsyncHandler;
@@ -2022,6 +2110,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVulDefenceOverviewResponse> DescribeVulDefenceOverviewOutcome;
                 typedef std::future<DescribeVulDefenceOverviewOutcome> DescribeVulDefenceOverviewOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeVulDefenceOverviewRequest&, DescribeVulDefenceOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulDefenceOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVulDefenceOverviewCountResponse> DescribeVulDefenceOverviewCountOutcome;
+                typedef std::future<DescribeVulDefenceOverviewCountOutcome> DescribeVulDefenceOverviewCountOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeVulDefenceOverviewCountRequest&, DescribeVulDefenceOverviewCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulDefenceOverviewCountAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVulDefencePluginDetailResponse> DescribeVulDefencePluginDetailOutcome;
                 typedef std::future<DescribeVulDefencePluginDetailOutcome> DescribeVulDefencePluginDetailOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeVulDefencePluginDetailRequest&, DescribeVulDefencePluginDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulDefencePluginDetailAsyncHandler;
@@ -2034,6 +2125,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVulDefenceSettingResponse> DescribeVulDefenceSettingOutcome;
                 typedef std::future<DescribeVulDefenceSettingOutcome> DescribeVulDefenceSettingOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeVulDefenceSettingRequest&, DescribeVulDefenceSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulDefenceSettingAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVulDefenceSettingListResponse> DescribeVulDefenceSettingListOutcome;
+                typedef std::future<DescribeVulDefenceSettingListOutcome> DescribeVulDefenceSettingListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeVulDefenceSettingListRequest&, DescribeVulDefenceSettingListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulDefenceSettingListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVulEffectHostListResponse> DescribeVulEffectHostListOutcome;
                 typedef std::future<DescribeVulEffectHostListOutcome> DescribeVulEffectHostListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeVulEffectHostListRequest&, DescribeVulEffectHostListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulEffectHostListAsyncHandler;
@@ -2112,6 +2206,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeWindowsPatchListResponse> DescribeWindowsPatchListOutcome;
                 typedef std::future<DescribeWindowsPatchListOutcome> DescribeWindowsPatchListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeWindowsPatchListRequest&, DescribeWindowsPatchListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWindowsPatchListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeYDRaspBlackWhiteResponse> DescribeYDRaspBlackWhiteOutcome;
+                typedef std::future<DescribeYDRaspBlackWhiteOutcome> DescribeYDRaspBlackWhiteOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeYDRaspBlackWhiteRequest&, DescribeYDRaspBlackWhiteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeYDRaspBlackWhiteAsyncHandler;
                 typedef Outcome<Core::Error, Model::DestroyOrderResponse> DestroyOrderOutcome;
                 typedef std::future<DestroyOrderOutcome> DestroyOrderOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DestroyOrderRequest&, DestroyOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyOrderAsyncHandler;
@@ -2505,6 +2602,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RansomDefenseRollbackResponse> RansomDefenseRollbackOutcome;
                 typedef std::future<RansomDefenseRollbackOutcome> RansomDefenseRollbackOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::RansomDefenseRollbackRequest&, RansomDefenseRollbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RansomDefenseRollbackAsyncHandler;
+                typedef Outcome<Core::Error, Model::RaspEventOverviewResponse> RaspEventOverviewOutcome;
+                typedef std::future<RaspEventOverviewOutcome> RaspEventOverviewOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::RaspEventOverviewRequest&, RaspEventOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RaspEventOverviewAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecoverMalwaresResponse> RecoverMalwaresOutcome;
                 typedef std::future<RecoverMalwaresOutcome> RecoverMalwaresOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::RecoverMalwaresRequest&, RecoverMalwaresOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecoverMalwaresAsyncHandler;
@@ -3706,6 +3806,15 @@ namespace TencentCloud
                 DescribeAttackTrendsOutcomeCallable DescribeAttackTrendsCallable(const Model::DescribeAttackTrendsRequest& request);
 
                 /**
+                 *查询应用防护白名单攻击类型列表
+                 * @param req DescribeAttackTypeRequest
+                 * @return DescribeAttackTypeOutcome
+                 */
+                DescribeAttackTypeOutcome DescribeAttackType(const Model::DescribeAttackTypeRequest &request);
+                void DescribeAttackTypeAsync(const Model::DescribeAttackTypeRequest& request, const DescribeAttackTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAttackTypeOutcomeCallable DescribeAttackTypeCallable(const Model::DescribeAttackTypeRequest& request);
+
+                /**
                  *获取网络攻击威胁类型列表
                  * @param req DescribeAttackVulTypeListRequest
                  * @return DescribeAttackVulTypeListOutcome
@@ -4318,6 +4427,15 @@ namespace TencentCloud
                 DescribeImportMachineInfoOutcomeCallable DescribeImportMachineInfoCallable(const Model::DescribeImportMachineInfoRequest& request);
 
                 /**
+                 *查询java内存马和rasp的是否注入风险服务配置
+                 * @param req DescribeInjectRiskyServiceSwitchRequest
+                 * @return DescribeInjectRiskyServiceSwitchOutcome
+                 */
+                DescribeInjectRiskyServiceSwitchOutcome DescribeInjectRiskyServiceSwitch(const Model::DescribeInjectRiskyServiceSwitchRequest &request);
+                void DescribeInjectRiskyServiceSwitchAsync(const Model::DescribeInjectRiskyServiceSwitchRequest& request, const DescribeInjectRiskyServiceSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInjectRiskyServiceSwitchOutcomeCallable DescribeInjectRiskyServiceSwitchCallable(const Model::DescribeInjectRiskyServiceSwitchRequest& request);
+
+                /**
                  *查询java内存马事件详细信息
                  * @param req DescribeJavaMemShellInfoRequest
                  * @return DescribeJavaMemShellInfoOutcome
@@ -4487,6 +4605,24 @@ namespace TencentCloud
                 DescribeLogTypeOutcome DescribeLogType(const Model::DescribeLogTypeRequest &request);
                 void DescribeLogTypeAsync(const Model::DescribeLogTypeRequest& request, const DescribeLogTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLogTypeOutcomeCallable DescribeLogTypeCallable(const Model::DescribeLogTypeRequest& request);
+
+                /**
+                 *获取防卸载全局配置
+                 * @param req DescribeLoginTypeGlobalConfRequest
+                 * @return DescribeLoginTypeGlobalConfOutcome
+                 */
+                DescribeLoginTypeGlobalConfOutcome DescribeLoginTypeGlobalConf(const Model::DescribeLoginTypeGlobalConfRequest &request);
+                void DescribeLoginTypeGlobalConfAsync(const Model::DescribeLoginTypeGlobalConfRequest& request, const DescribeLoginTypeGlobalConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLoginTypeGlobalConfOutcomeCallable DescribeLoginTypeGlobalConfCallable(const Model::DescribeLoginTypeGlobalConfRequest& request);
+
+                /**
+                 *获取扫码登录主机列表
+                 * @param req DescribeLoginTypeHostRequest
+                 * @return DescribeLoginTypeHostOutcome
+                 */
+                DescribeLoginTypeHostOutcome DescribeLoginTypeHost(const Model::DescribeLoginTypeHostRequest &request);
+                void DescribeLoginTypeHostAsync(const Model::DescribeLoginTypeHostRequest& request, const DescribeLoginTypeHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLoginTypeHostOutcomeCallable DescribeLoginTypeHostCallable(const Model::DescribeLoginTypeHostRequest& request);
 
                 /**
                  *获取异地登录白名单合并后列表
@@ -4723,6 +4859,15 @@ namespace TencentCloud
                 DescribeMalwareWhiteListAffectListOutcomeCallable DescribeMalwareWhiteListAffectListCallable(const Model::DescribeMalwareWhiteListAffectListRequest& request);
 
                 /**
+                 *获取反弹Shell规则列表
+                 * @param req DescribeMemShellRulesRequest
+                 * @return DescribeMemShellRulesOutcome
+                 */
+                DescribeMemShellRulesOutcome DescribeMemShellRules(const Model::DescribeMemShellRulesRequest &request);
+                void DescribeMemShellRulesAsync(const Model::DescribeMemShellRulesRequest& request, const DescribeMemShellRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMemShellRulesOutcomeCallable DescribeMemShellRulesCallable(const Model::DescribeMemShellRulesRequest& request);
+
+                /**
                  *查询网络攻击设置
                  * @param req DescribeNetAttackSettingRequest
                  * @return DescribeNetAttackSettingOutcome
@@ -4957,6 +5102,51 @@ namespace TencentCloud
                 DescribeRansomDefenseTrendOutcomeCallable DescribeRansomDefenseTrendCallable(const Model::DescribeRansomDefenseTrendRequest& request);
 
                 /**
+                 *应用防护事件列表接口
+                 * @param req DescribeRaspEventCWPRequest
+                 * @return DescribeRaspEventCWPOutcome
+                 */
+                DescribeRaspEventCWPOutcome DescribeRaspEventCWP(const Model::DescribeRaspEventCWPRequest &request);
+                void DescribeRaspEventCWPAsync(const Model::DescribeRaspEventCWPRequest& request, const DescribeRaspEventCWPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRaspEventCWPOutcomeCallable DescribeRaspEventCWPCallable(const Model::DescribeRaspEventCWPRequest& request);
+
+                /**
+                 *应用防御事件详情
+                 * @param req DescribeRaspEventDetailCWPRequest
+                 * @return DescribeRaspEventDetailCWPOutcome
+                 */
+                DescribeRaspEventDetailCWPOutcome DescribeRaspEventDetailCWP(const Model::DescribeRaspEventDetailCWPRequest &request);
+                void DescribeRaspEventDetailCWPAsync(const Model::DescribeRaspEventDetailCWPRequest& request, const DescribeRaspEventDetailCWPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRaspEventDetailCWPOutcomeCallable DescribeRaspEventDetailCWPCallable(const Model::DescribeRaspEventDetailCWPRequest& request);
+
+                /**
+                 *应用防御事件详情
+                 * @param req DescribeRaspEventDetailTCSSRequest
+                 * @return DescribeRaspEventDetailTCSSOutcome
+                 */
+                DescribeRaspEventDetailTCSSOutcome DescribeRaspEventDetailTCSS(const Model::DescribeRaspEventDetailTCSSRequest &request);
+                void DescribeRaspEventDetailTCSSAsync(const Model::DescribeRaspEventDetailTCSSRequest& request, const DescribeRaspEventDetailTCSSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRaspEventDetailTCSSOutcomeCallable DescribeRaspEventDetailTCSSCallable(const Model::DescribeRaspEventDetailTCSSRequest& request);
+
+                /**
+                 *应用防护事件列表接口
+                 * @param req DescribeRaspEventTCSSRequest
+                 * @return DescribeRaspEventTCSSOutcome
+                 */
+                DescribeRaspEventTCSSOutcome DescribeRaspEventTCSS(const Model::DescribeRaspEventTCSSRequest &request);
+                void DescribeRaspEventTCSSAsync(const Model::DescribeRaspEventTCSSRequest& request, const DescribeRaspEventTCSSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRaspEventTCSSOutcomeCallable DescribeRaspEventTCSSCallable(const Model::DescribeRaspEventTCSSRequest& request);
+
+                /**
+                 *查询应用防护授权列表
+                 * @param req DescribeRaspLicenseListRequest
+                 * @return DescribeRaspLicenseListOutcome
+                 */
+                DescribeRaspLicenseListOutcome DescribeRaspLicenseList(const Model::DescribeRaspLicenseListRequest &request);
+                void DescribeRaspLicenseListAsync(const Model::DescribeRaspLicenseListRequest& request, const DescribeRaspLicenseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRaspLicenseListOutcomeCallable DescribeRaspLicenseListCallable(const Model::DescribeRaspLicenseListRequest& request);
+
+                /**
                  *查看漏洞防御最大cpu限制
                  * @param req DescribeRaspMaxCpuRequest
                  * @return DescribeRaspMaxCpuOutcome
@@ -4964,6 +5154,33 @@ namespace TencentCloud
                 DescribeRaspMaxCpuOutcome DescribeRaspMaxCpu(const Model::DescribeRaspMaxCpuRequest &request);
                 void DescribeRaspMaxCpuAsync(const Model::DescribeRaspMaxCpuRequest& request, const DescribeRaspMaxCpuAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRaspMaxCpuOutcomeCallable DescribeRaspMaxCpuCallable(const Model::DescribeRaspMaxCpuRequest& request);
+
+                /**
+                 *获取容器视角应用防护内存马扫描事件详情
+                 * @param req DescribeRaspMemShellDetailTCSSRequest
+                 * @return DescribeRaspMemShellDetailTCSSOutcome
+                 */
+                DescribeRaspMemShellDetailTCSSOutcome DescribeRaspMemShellDetailTCSS(const Model::DescribeRaspMemShellDetailTCSSRequest &request);
+                void DescribeRaspMemShellDetailTCSSAsync(const Model::DescribeRaspMemShellDetailTCSSRequest& request, const DescribeRaspMemShellDetailTCSSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRaspMemShellDetailTCSSOutcomeCallable DescribeRaspMemShellDetailTCSSCallable(const Model::DescribeRaspMemShellDetailTCSSRequest& request);
+
+                /**
+                 *获取容器视角内存马扫描事件列表
+                 * @param req DescribeRaspMemShellListTCSSRequest
+                 * @return DescribeRaspMemShellListTCSSOutcome
+                 */
+                DescribeRaspMemShellListTCSSOutcome DescribeRaspMemShellListTCSS(const Model::DescribeRaspMemShellListTCSSRequest &request);
+                void DescribeRaspMemShellListTCSSAsync(const Model::DescribeRaspMemShellListTCSSRequest& request, const DescribeRaspMemShellListTCSSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRaspMemShellListTCSSOutcomeCallable DescribeRaspMemShellListTCSSCallable(const Model::DescribeRaspMemShellListTCSSRequest& request);
+
+                /**
+                 *重保防护授权插件详情列表
+                 * @param req DescribeRaspPluginListRequest
+                 * @return DescribeRaspPluginListOutcome
+                 */
+                DescribeRaspPluginListOutcome DescribeRaspPluginList(const Model::DescribeRaspPluginListRequest &request);
+                void DescribeRaspPluginListAsync(const Model::DescribeRaspPluginListRequest& request, const DescribeRaspPluginListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRaspPluginListOutcomeCallable DescribeRaspPluginListCallable(const Model::DescribeRaspPluginListRequest& request);
 
                 /**
                  *获取漏洞防御白名单漏洞列表
@@ -5018,6 +5235,24 @@ namespace TencentCloud
                 DescribeReverseShellRulesOutcome DescribeReverseShellRules(const Model::DescribeReverseShellRulesRequest &request);
                 void DescribeReverseShellRulesAsync(const Model::DescribeReverseShellRulesRequest& request, const DescribeReverseShellRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeReverseShellRulesOutcomeCallable DescribeReverseShellRulesCallable(const Model::DescribeReverseShellRulesRequest& request);
+
+                /**
+                 *获取反弹Shell规则列表
+                 * @param req DescribeReverseShellRulesAggregationRequest
+                 * @return DescribeReverseShellRulesAggregationOutcome
+                 */
+                DescribeReverseShellRulesAggregationOutcome DescribeReverseShellRulesAggregation(const Model::DescribeReverseShellRulesAggregationRequest &request);
+                void DescribeReverseShellRulesAggregationAsync(const Model::DescribeReverseShellRulesAggregationRequest& request, const DescribeReverseShellRulesAggregationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReverseShellRulesAggregationOutcomeCallable DescribeReverseShellRulesAggregationCallable(const Model::DescribeReverseShellRulesAggregationRequest& request);
+
+                /**
+                 *查询反弹shell系统策略配置
+                 * @param req DescribeReverseShellSystemPolicyConfigRequest
+                 * @return DescribeReverseShellSystemPolicyConfigOutcome
+                 */
+                DescribeReverseShellSystemPolicyConfigOutcome DescribeReverseShellSystemPolicyConfig(const Model::DescribeReverseShellSystemPolicyConfigRequest &request);
+                void DescribeReverseShellSystemPolicyConfigAsync(const Model::DescribeReverseShellSystemPolicyConfigRequest& request, const DescribeReverseShellSystemPolicyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReverseShellSystemPolicyConfigOutcomeCallable DescribeReverseShellSystemPolicyConfigCallable(const Model::DescribeReverseShellSystemPolicyConfigRequest& request);
 
                 /**
                  *查询入侵检测事件更新状态任务是否完成
@@ -5344,6 +5579,15 @@ namespace TencentCloud
                 DescribeServersAndRiskAndFirstInfoOutcomeCallable DescribeServersAndRiskAndFirstInfoCallable(const Model::DescribeServersAndRiskAndFirstInfoRequest& request);
 
                 /**
+                 *查询反弹shell策略列表
+                 * @param req DescribeShellPolicyListRequest
+                 * @return DescribeShellPolicyListOutcome
+                 */
+                DescribeShellPolicyListOutcome DescribeShellPolicyList(const Model::DescribeShellPolicyListRequest &request);
+                void DescribeShellPolicyListAsync(const Model::DescribeShellPolicyListRequest& request, const DescribeShellPolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeShellPolicyListOutcomeCallable DescribeShellPolicyListCallable(const Model::DescribeShellPolicyListRequest& request);
+
+                /**
                  *根据策略名查询策略是否存在
                  * @param req DescribeStrategyExistRequest
                  * @return DescribeStrategyExistOutcome
@@ -5488,6 +5732,15 @@ namespace TencentCloud
                 DescribeVulDefenceOverviewOutcomeCallable DescribeVulDefenceOverviewCallable(const Model::DescribeVulDefenceOverviewRequest& request);
 
                 /**
+                 *获取漏洞防御策略和事件统计
+                 * @param req DescribeVulDefenceOverviewCountRequest
+                 * @return DescribeVulDefenceOverviewCountOutcome
+                 */
+                DescribeVulDefenceOverviewCountOutcome DescribeVulDefenceOverviewCount(const Model::DescribeVulDefenceOverviewCountRequest &request);
+                void DescribeVulDefenceOverviewCountAsync(const Model::DescribeVulDefenceOverviewCountRequest& request, const DescribeVulDefenceOverviewCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulDefenceOverviewCountOutcomeCallable DescribeVulDefenceOverviewCountCallable(const Model::DescribeVulDefenceOverviewCountRequest& request);
+
+                /**
                  *获取单台主机漏洞防御插件信息
                  * @param req DescribeVulDefencePluginDetailRequest
                  * @return DescribeVulDefencePluginDetailOutcome
@@ -5522,6 +5775,15 @@ namespace TencentCloud
                 DescribeVulDefenceSettingOutcome DescribeVulDefenceSetting(const Model::DescribeVulDefenceSettingRequest &request);
                 void DescribeVulDefenceSettingAsync(const Model::DescribeVulDefenceSettingRequest& request, const DescribeVulDefenceSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVulDefenceSettingOutcomeCallable DescribeVulDefenceSettingCallable(const Model::DescribeVulDefenceSettingRequest& request);
+
+                /**
+                 *查询漏洞防御设置列表
+                 * @param req DescribeVulDefenceSettingListRequest
+                 * @return DescribeVulDefenceSettingListOutcome
+                 */
+                DescribeVulDefenceSettingListOutcome DescribeVulDefenceSettingList(const Model::DescribeVulDefenceSettingListRequest &request);
+                void DescribeVulDefenceSettingListAsync(const Model::DescribeVulDefenceSettingListRequest& request, const DescribeVulDefenceSettingListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVulDefenceSettingListOutcomeCallable DescribeVulDefenceSettingListCallable(const Model::DescribeVulDefenceSettingListRequest& request);
 
                 /**
                  *漏洞影响主机列表
@@ -5756,6 +6018,15 @@ namespace TencentCloud
                 DescribeWindowsPatchListOutcome DescribeWindowsPatchList(const Model::DescribeWindowsPatchListRequest &request);
                 void DescribeWindowsPatchListAsync(const Model::DescribeWindowsPatchListRequest& request, const DescribeWindowsPatchListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeWindowsPatchListOutcomeCallable DescribeWindowsPatchListCallable(const Model::DescribeWindowsPatchListRequest& request);
+
+                /**
+                 *查询应用防护白名单规则
+                 * @param req DescribeYDRaspBlackWhiteRequest
+                 * @return DescribeYDRaspBlackWhiteOutcome
+                 */
+                DescribeYDRaspBlackWhiteOutcome DescribeYDRaspBlackWhite(const Model::DescribeYDRaspBlackWhiteRequest &request);
+                void DescribeYDRaspBlackWhiteAsync(const Model::DescribeYDRaspBlackWhiteRequest& request, const DescribeYDRaspBlackWhiteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeYDRaspBlackWhiteOutcomeCallable DescribeYDRaspBlackWhiteCallable(const Model::DescribeYDRaspBlackWhiteRequest& request);
 
                 /**
                  *DestroyOrder  该接口可以对资源销毁.
@@ -6938,6 +7209,15 @@ namespace TencentCloud
                 RansomDefenseRollbackOutcome RansomDefenseRollback(const Model::RansomDefenseRollbackRequest &request);
                 void RansomDefenseRollbackAsync(const Model::RansomDefenseRollbackRequest& request, const RansomDefenseRollbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RansomDefenseRollbackOutcomeCallable RansomDefenseRollbackCallable(const Model::RansomDefenseRollbackRequest& request);
+
+                /**
+                 *获取漏洞防御概览信息，包括事件趋势及插件开启情况
+                 * @param req RaspEventOverviewRequest
+                 * @return RaspEventOverviewOutcome
+                 */
+                RaspEventOverviewOutcome RaspEventOverview(const Model::RaspEventOverviewRequest &request);
+                void RaspEventOverviewAsync(const Model::RaspEventOverviewRequest& request, const RaspEventOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RaspEventOverviewOutcomeCallable RaspEventOverviewCallable(const Model::RaspEventOverviewRequest& request);
 
                 /**
                  *本接口（RecoverMalwares）用于批量恢复已经被隔离的木马文件。

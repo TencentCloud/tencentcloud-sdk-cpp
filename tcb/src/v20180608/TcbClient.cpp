@@ -1290,6 +1290,56 @@ TcbClient::DescribeCreateMySQLResultOutcomeCallable TcbClient::DescribeCreateMyS
     return prom->get_future();
 }
 
+TcbClient::DescribeCurveDataOutcome TcbClient::DescribeCurveData(const DescribeCurveDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCurveData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCurveDataResponse rsp = DescribeCurveDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCurveDataOutcome(rsp);
+        else
+            return DescribeCurveDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCurveDataOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeCurveDataAsync(const DescribeCurveDataRequest& request, const DescribeCurveDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCurveDataRequest&;
+    using Resp = DescribeCurveDataResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCurveData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeCurveDataOutcomeCallable TcbClient::DescribeCurveDataCallable(const DescribeCurveDataRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCurveDataOutcome>>();
+    DescribeCurveDataAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeCurveDataRequest&,
+        DescribeCurveDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::DescribeDatabaseACLOutcome TcbClient::DescribeDatabaseACL(const DescribeDatabaseACLRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDatabaseACL");

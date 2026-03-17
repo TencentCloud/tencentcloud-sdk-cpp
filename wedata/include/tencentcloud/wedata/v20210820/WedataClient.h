@@ -195,8 +195,12 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeDataSourceInfoListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataSourceListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataSourceListResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDatabaseByNameRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDatabaseByNameResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDatabaseInfoListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDatabaseInfoListResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDatabaseMetaRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDatabaseMetaResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDatabaseMetasRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDatabaseMetasResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDatasourceRequest.h>
@@ -273,6 +277,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationTasksResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationVersionNodesInfoRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationVersionNodesInfoResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeLineageColumnsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeLineageColumnsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeLineageInfoRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeLineageInfoResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeManualTriggerRecordPageRequest.h>
@@ -311,6 +317,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeRealTimeTaskMetricOverviewResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRealTimeTaskSpeedRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRealTimeTaskSpeedResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRealViewDatabasePageRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRealViewDatabasePageResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRealViewSchemaPageRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRealViewSchemaPageResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRelatedTasksByTaskIdRequest.h>
@@ -375,6 +383,10 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeSuccessorTaskInfoListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableBasicInfoRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableBasicInfoResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTableContentPreviewRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTableContentPreviewResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTableDdlRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTableDdlResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableInfoListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableInfoListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableLineageRequest.h>
@@ -393,6 +405,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeTableSchemaInfoResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableScoreTrendRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableScoreTrendResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTableSelectRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTableSelectResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskAlarmRegulationsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskAlarmRegulationsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskByCycleRequest.h>
@@ -895,9 +909,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDataSourceListResponse> DescribeDataSourceListOutcome;
                 typedef std::future<DescribeDataSourceListOutcome> DescribeDataSourceListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDataSourceListRequest&, DescribeDataSourceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataSourceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDatabaseByNameResponse> DescribeDatabaseByNameOutcome;
+                typedef std::future<DescribeDatabaseByNameOutcome> DescribeDatabaseByNameOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDatabaseByNameRequest&, DescribeDatabaseByNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseByNameAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDatabaseInfoListResponse> DescribeDatabaseInfoListOutcome;
                 typedef std::future<DescribeDatabaseInfoListOutcome> DescribeDatabaseInfoListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDatabaseInfoListRequest&, DescribeDatabaseInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseInfoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDatabaseMetaResponse> DescribeDatabaseMetaOutcome;
+                typedef std::future<DescribeDatabaseMetaOutcome> DescribeDatabaseMetaOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDatabaseMetaRequest&, DescribeDatabaseMetaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseMetaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDatabaseMetasResponse> DescribeDatabaseMetasOutcome;
                 typedef std::future<DescribeDatabaseMetasOutcome> DescribeDatabaseMetasOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDatabaseMetasRequest&, DescribeDatabaseMetasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseMetasAsyncHandler;
@@ -1012,6 +1032,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIntegrationVersionNodesInfoResponse> DescribeIntegrationVersionNodesInfoOutcome;
                 typedef std::future<DescribeIntegrationVersionNodesInfoOutcome> DescribeIntegrationVersionNodesInfoOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeIntegrationVersionNodesInfoRequest&, DescribeIntegrationVersionNodesInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntegrationVersionNodesInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLineageColumnsResponse> DescribeLineageColumnsOutcome;
+                typedef std::future<DescribeLineageColumnsOutcome> DescribeLineageColumnsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeLineageColumnsRequest&, DescribeLineageColumnsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLineageColumnsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLineageInfoResponse> DescribeLineageInfoOutcome;
                 typedef std::future<DescribeLineageInfoOutcome> DescribeLineageInfoOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeLineageInfoRequest&, DescribeLineageInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLineageInfoAsyncHandler;
@@ -1069,6 +1092,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRealTimeTaskSpeedResponse> DescribeRealTimeTaskSpeedOutcome;
                 typedef std::future<DescribeRealTimeTaskSpeedOutcome> DescribeRealTimeTaskSpeedOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeRealTimeTaskSpeedRequest&, DescribeRealTimeTaskSpeedOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealTimeTaskSpeedAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRealViewDatabasePageResponse> DescribeRealViewDatabasePageOutcome;
+                typedef std::future<DescribeRealViewDatabasePageOutcome> DescribeRealViewDatabasePageOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRealViewDatabasePageRequest&, DescribeRealViewDatabasePageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealViewDatabasePageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRealViewSchemaPageResponse> DescribeRealViewSchemaPageOutcome;
                 typedef std::future<DescribeRealViewSchemaPageOutcome> DescribeRealViewSchemaPageOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeRealViewSchemaPageRequest&, DescribeRealViewSchemaPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealViewSchemaPageAsyncHandler;
@@ -1165,6 +1191,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTableBasicInfoResponse> DescribeTableBasicInfoOutcome;
                 typedef std::future<DescribeTableBasicInfoOutcome> DescribeTableBasicInfoOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTableBasicInfoRequest&, DescribeTableBasicInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableBasicInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTableContentPreviewResponse> DescribeTableContentPreviewOutcome;
+                typedef std::future<DescribeTableContentPreviewOutcome> DescribeTableContentPreviewOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTableContentPreviewRequest&, DescribeTableContentPreviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableContentPreviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTableDdlResponse> DescribeTableDdlOutcome;
+                typedef std::future<DescribeTableDdlOutcome> DescribeTableDdlOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTableDdlRequest&, DescribeTableDdlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableDdlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTableInfoListResponse> DescribeTableInfoListOutcome;
                 typedef std::future<DescribeTableInfoListOutcome> DescribeTableInfoListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTableInfoListRequest&, DescribeTableInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableInfoListAsyncHandler;
@@ -1192,6 +1224,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTableScoreTrendResponse> DescribeTableScoreTrendOutcome;
                 typedef std::future<DescribeTableScoreTrendOutcome> DescribeTableScoreTrendOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTableScoreTrendRequest&, DescribeTableScoreTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableScoreTrendAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTableSelectResponse> DescribeTableSelectOutcome;
+                typedef std::future<DescribeTableSelectOutcome> DescribeTableSelectOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTableSelectRequest&, DescribeTableSelectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableSelectAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTaskAlarmRegulationsResponse> DescribeTaskAlarmRegulationsOutcome;
                 typedef std::future<DescribeTaskAlarmRegulationsOutcome> DescribeTaskAlarmRegulationsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTaskAlarmRegulationsRequest&, DescribeTaskAlarmRegulationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskAlarmRegulationsAsyncHandler;
@@ -2315,6 +2350,15 @@ namespace TencentCloud
                 DescribeDataSourceListOutcomeCallable DescribeDataSourceListCallable(const Model::DescribeDataSourceListRequest& request);
 
                 /**
+                 *根据数据库名称和数据源id获取数据库信息
+                 * @param req DescribeDatabaseByNameRequest
+                 * @return DescribeDatabaseByNameOutcome
+                 */
+                DescribeDatabaseByNameOutcome DescribeDatabaseByName(const Model::DescribeDatabaseByNameRequest &request);
+                void DescribeDatabaseByNameAsync(const Model::DescribeDatabaseByNameRequest& request, const DescribeDatabaseByNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDatabaseByNameOutcomeCallable DescribeDatabaseByNameCallable(const Model::DescribeDatabaseByNameRequest& request);
+
+                /**
                  *获取数据库信息
                  * @param req DescribeDatabaseInfoListRequest
                  * @return DescribeDatabaseInfoListOutcome
@@ -2322,6 +2366,15 @@ namespace TencentCloud
                 DescribeDatabaseInfoListOutcome DescribeDatabaseInfoList(const Model::DescribeDatabaseInfoListRequest &request);
                 void DescribeDatabaseInfoListAsync(const Model::DescribeDatabaseInfoListRequest& request, const DescribeDatabaseInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDatabaseInfoListOutcomeCallable DescribeDatabaseInfoListCallable(const Model::DescribeDatabaseInfoListRequest& request);
+
+                /**
+                 *根据数据库Id查询数据库元数据，带有数据源和项目信息
+                 * @param req DescribeDatabaseMetaRequest
+                 * @return DescribeDatabaseMetaOutcome
+                 */
+                DescribeDatabaseMetaOutcome DescribeDatabaseMeta(const Model::DescribeDatabaseMetaRequest &request);
+                void DescribeDatabaseMetaAsync(const Model::DescribeDatabaseMetaRequest& request, const DescribeDatabaseMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDatabaseMetaOutcomeCallable DescribeDatabaseMetaCallable(const Model::DescribeDatabaseMetaRequest& request);
 
                 /**
                  *查询数据库列表
@@ -2666,6 +2719,15 @@ namespace TencentCloud
                 DescribeIntegrationVersionNodesInfoOutcomeCallable DescribeIntegrationVersionNodesInfoCallable(const Model::DescribeIntegrationVersionNodesInfoRequest& request);
 
                 /**
+                 *列出血缘中心字段信息
+                 * @param req DescribeLineageColumnsRequest
+                 * @return DescribeLineageColumnsOutcome
+                 */
+                DescribeLineageColumnsOutcome DescribeLineageColumns(const Model::DescribeLineageColumnsRequest &request);
+                void DescribeLineageColumnsAsync(const Model::DescribeLineageColumnsRequest& request, const DescribeLineageColumnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLineageColumnsOutcomeCallable DescribeLineageColumnsCallable(const Model::DescribeLineageColumnsRequest& request);
+
+                /**
                  *通用血缘查询接口
                  * @param req DescribeLineageInfoRequest
                  * @return DescribeLineageInfoOutcome
@@ -2835,6 +2897,15 @@ namespace TencentCloud
                 DescribeRealTimeTaskSpeedOutcome DescribeRealTimeTaskSpeed(const Model::DescribeRealTimeTaskSpeedRequest &request);
                 void DescribeRealTimeTaskSpeedAsync(const Model::DescribeRealTimeTaskSpeedRequest& request, const DescribeRealTimeTaskSpeedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRealTimeTaskSpeedOutcomeCallable DescribeRealTimeTaskSpeedCallable(const Model::DescribeRealTimeTaskSpeedRequest& request);
+
+                /**
+                 *离线通过表名称获取表信息
+                 * @param req DescribeRealViewDatabasePageRequest
+                 * @return DescribeRealViewDatabasePageOutcome
+                 */
+                DescribeRealViewDatabasePageOutcome DescribeRealViewDatabasePage(const Model::DescribeRealViewDatabasePageRequest &request);
+                void DescribeRealViewDatabasePageAsync(const Model::DescribeRealViewDatabasePageRequest& request, const DescribeRealViewDatabasePageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRealViewDatabasePageOutcomeCallable DescribeRealViewDatabasePageCallable(const Model::DescribeRealViewDatabasePageRequest& request);
 
                 /**
                  *数据集成分页获取数据库SCHEMA信息
@@ -3128,6 +3199,24 @@ namespace TencentCloud
                 DescribeTableBasicInfoOutcomeCallable DescribeTableBasicInfoCallable(const Model::DescribeTableBasicInfoRequest& request);
 
                 /**
+                 *查询表的数据预览
+                 * @param req DescribeTableContentPreviewRequest
+                 * @return DescribeTableContentPreviewOutcome
+                 */
+                DescribeTableContentPreviewOutcome DescribeTableContentPreview(const Model::DescribeTableContentPreviewRequest &request);
+                void DescribeTableContentPreviewAsync(const Model::DescribeTableContentPreviewRequest& request, const DescribeTableContentPreviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTableContentPreviewOutcomeCallable DescribeTableContentPreviewCallable(const Model::DescribeTableContentPreviewRequest& request);
+
+                /**
+                 *查询表的DDL
+                 * @param req DescribeTableDdlRequest
+                 * @return DescribeTableDdlOutcome
+                 */
+                DescribeTableDdlOutcome DescribeTableDdl(const Model::DescribeTableDdlRequest &request);
+                void DescribeTableDdlAsync(const Model::DescribeTableDdlRequest& request, const DescribeTableDdlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTableDdlOutcomeCallable DescribeTableDdlCallable(const Model::DescribeTableDdlRequest& request);
+
+                /**
                  *获取数据表信息
                  * @param req DescribeTableInfoListRequest
                  * @return DescribeTableInfoListOutcome
@@ -3207,6 +3296,15 @@ namespace TencentCloud
                 DescribeTableScoreTrendOutcome DescribeTableScoreTrend(const Model::DescribeTableScoreTrendRequest &request);
                 void DescribeTableScoreTrendAsync(const Model::DescribeTableScoreTrendRequest& request, const DescribeTableScoreTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTableScoreTrendOutcomeCallable DescribeTableScoreTrendCallable(const Model::DescribeTableScoreTrendRequest& request);
+
+                /**
+                 *查询表的select语句
+                 * @param req DescribeTableSelectRequest
+                 * @return DescribeTableSelectOutcome
+                 */
+                DescribeTableSelectOutcome DescribeTableSelect(const Model::DescribeTableSelectRequest &request);
+                void DescribeTableSelectAsync(const Model::DescribeTableSelectRequest& request, const DescribeTableSelectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTableSelectOutcomeCallable DescribeTableSelectCallable(const Model::DescribeTableSelectRequest& request);
 
                 /**
                  *查询任务告警规则列表

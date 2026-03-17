@@ -27,7 +27,8 @@ CreateBackupRequest::CreateBackupRequest() :
     m_backupTypeHasBeenSet(false),
     m_backupDatabasesHasBeenSet(false),
     m_backupTablesHasBeenSet(false),
-    m_backupNameHasBeenSet(false)
+    m_backupNameHasBeenSet(false),
+    m_vaultsHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,21 @@ string CreateBackupRequest::ToJsonString() const
         string key = "BackupName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_backupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vaultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Vaults";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_vaults.begin(); itr != m_vaults.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -176,6 +192,22 @@ void CreateBackupRequest::SetBackupName(const string& _backupName)
 bool CreateBackupRequest::BackupNameHasBeenSet() const
 {
     return m_backupNameHasBeenSet;
+}
+
+vector<CreateBackupVaultItem> CreateBackupRequest::GetVaults() const
+{
+    return m_vaults;
+}
+
+void CreateBackupRequest::SetVaults(const vector<CreateBackupVaultItem>& _vaults)
+{
+    m_vaults = _vaults;
+    m_vaultsHasBeenSet = true;
+}
+
+bool CreateBackupRequest::VaultsHasBeenSet() const
+{
+    return m_vaultsHasBeenSet;
 }
 
 

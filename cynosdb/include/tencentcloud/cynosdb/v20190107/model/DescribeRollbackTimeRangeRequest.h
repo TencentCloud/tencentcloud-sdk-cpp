@@ -63,6 +63,48 @@ namespace TencentCloud
                      */
                     bool ClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取保险箱id
+                     * @return VaultId 保险箱id
+                     * 
+                     */
+                    std::string GetVaultId() const;
+
+                    /**
+                     * 设置保险箱id
+                     * @param _vaultId 保险箱id
+                     * 
+                     */
+                    void SetVaultId(const std::string& _vaultId);
+
+                    /**
+                     * 判断参数 VaultId 是否已赋值
+                     * @return VaultId 是否已赋值
+                     * 
+                     */
+                    bool VaultIdHasBeenSet() const;
+
+                    /**
+                     * 获取保险箱地域
+                     * @return VaultRegion 保险箱地域
+                     * 
+                     */
+                    std::string GetVaultRegion() const;
+
+                    /**
+                     * 设置保险箱地域
+                     * @param _vaultRegion 保险箱地域
+                     * 
+                     */
+                    void SetVaultRegion(const std::string& _vaultRegion);
+
+                    /**
+                     * 判断参数 VaultRegion 是否已赋值
+                     * @return VaultRegion 是否已赋值
+                     * 
+                     */
+                    bool VaultRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +112,18 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 保险箱id
+                     */
+                    std::string m_vaultId;
+                    bool m_vaultIdHasBeenSet;
+
+                    /**
+                     * 保险箱地域
+                     */
+                    std::string m_vaultRegion;
+                    bool m_vaultRegionHasBeenSet;
 
                 };
             }

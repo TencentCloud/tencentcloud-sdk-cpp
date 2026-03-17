@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteDBRequest::DeleteDBRequest() :
     m_instanceIdHasBeenSet(false),
-    m_namesHasBeenSet(false)
+    m_namesHasBeenSet(false),
+    m_noDoBackupHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,14 @@ string DeleteDBRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_noDoBackupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoDoBackup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_noDoBackup, allocator);
     }
 
 
@@ -94,6 +103,22 @@ void DeleteDBRequest::SetNames(const vector<string>& _names)
 bool DeleteDBRequest::NamesHasBeenSet() const
 {
     return m_namesHasBeenSet;
+}
+
+uint64_t DeleteDBRequest::GetNoDoBackup() const
+{
+    return m_noDoBackup;
+}
+
+void DeleteDBRequest::SetNoDoBackup(const uint64_t& _noDoBackup)
+{
+    m_noDoBackup = _noDoBackup;
+    m_noDoBackupHasBeenSet = true;
+}
+
+bool DeleteDBRequest::NoDoBackupHasBeenSet() const
+{
+    return m_noDoBackupHasBeenSet;
 }
 
 

@@ -26,6 +26,7 @@
 #include <tencentcloud/essbasic/v20210526/model/Component.h>
 #include <tencentcloud/essbasic/v20210526/model/CcInfo.h>
 #include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
+#include <tencentcloud/essbasic/v20210526/model/FlowOperateLimit.h>
 
 
 namespace TencentCloud
@@ -551,6 +552,27 @@ namespace TencentCloud
                      */
                     bool OpenDynamicSignFlowHasBeenSet() const;
 
+                    /**
+                     * 获取<p>发起合同流程时对合同流程的部分操作加以限制的配置。</p>
+                     * @return FlowOperateLimit <p>发起合同流程时对合同流程的部分操作加以限制的配置。</p>
+                     * 
+                     */
+                    FlowOperateLimit GetFlowOperateLimit() const;
+
+                    /**
+                     * 设置<p>发起合同流程时对合同流程的部分操作加以限制的配置。</p>
+                     * @param _flowOperateLimit <p>发起合同流程时对合同流程的部分操作加以限制的配置。</p>
+                     * 
+                     */
+                    void SetFlowOperateLimit(const FlowOperateLimit& _flowOperateLimit);
+
+                    /**
+                     * 判断参数 FlowOperateLimit 是否已赋值
+                     * @return FlowOperateLimit 是否已赋值
+                     * 
+                     */
+                    bool FlowOperateLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -696,6 +718,12 @@ namespace TencentCloud
                      */
                     bool m_openDynamicSignFlow;
                     bool m_openDynamicSignFlowHasBeenSet;
+
+                    /**
+                     * <p>发起合同流程时对合同流程的部分操作加以限制的配置。</p>
+                     */
+                    FlowOperateLimit m_flowOperateLimit;
+                    bool m_flowOperateLimitHasBeenSet;
 
                 };
             }

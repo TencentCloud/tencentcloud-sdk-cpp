@@ -100,7 +100,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/IntegrationDepartment.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationRolesResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeBillUsageDetailResponse.h
-  include/tencentcloud/ess/v20201111/model/ContractSummary.h
+  include/tencentcloud/ess/v20201111/model/FlowOperateLimit.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowBriefsResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeRiskIdentificationTaskFeedbackRequest.h
   include/tencentcloud/ess/v20201111/model/CreateBatchAdminChangeInvitationsRequest.h
@@ -151,6 +151,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationDepartmentResponse.h
   include/tencentcloud/ess/v20201111/model/AutoSignConfig.h
   include/tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeRequest.h
+  include/tencentcloud/ess/v20201111/model/ContractSummary.h
   include/tencentcloud/ess/v20201111/model/CreateBatchInitOrganizationUrlRequest.h
   include/tencentcloud/ess/v20201111/model/DeleteOrganizationAuthorizationsResponse.h
   include/tencentcloud/ess/v20201111/model/MiniAppCreateFlowPageOption.h
@@ -523,7 +524,7 @@ set(ess_src
   src/v20201111/model/IntegrationDepartment.cpp
   src/v20201111/model/DescribeIntegrationRolesResponse.cpp
   src/v20201111/model/DescribeBillUsageDetailResponse.cpp
-  src/v20201111/model/ContractSummary.cpp
+  src/v20201111/model/FlowOperateLimit.cpp
   src/v20201111/model/DescribeFlowBriefsResponse.cpp
   src/v20201111/model/DescribeRiskIdentificationTaskFeedbackRequest.cpp
   src/v20201111/model/CreateBatchAdminChangeInvitationsRequest.cpp
@@ -574,6 +575,7 @@ set(ess_src
   src/v20201111/model/DeleteIntegrationDepartmentResponse.cpp
   src/v20201111/model/AutoSignConfig.cpp
   src/v20201111/model/DescribeThirdPartyAuthCodeRequest.cpp
+  src/v20201111/model/ContractSummary.cpp
   src/v20201111/model/CreateBatchInitOrganizationUrlRequest.cpp
   src/v20201111/model/DeleteOrganizationAuthorizationsResponse.cpp
   src/v20201111/model/MiniAppCreateFlowPageOption.cpp

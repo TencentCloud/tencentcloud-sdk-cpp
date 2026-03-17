@@ -8590,6 +8590,306 @@ TcssClient::DescribeImageComponentListOutcomeCallable TcssClient::DescribeImageC
     return prom->get_future();
 }
 
+TcssClient::DescribeImageDenyEventDetailOutcome TcssClient::DescribeImageDenyEventDetail(const DescribeImageDenyEventDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageDenyEventDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageDenyEventDetailResponse rsp = DescribeImageDenyEventDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageDenyEventDetailOutcome(rsp);
+        else
+            return DescribeImageDenyEventDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageDenyEventDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeImageDenyEventDetailAsync(const DescribeImageDenyEventDetailRequest& request, const DescribeImageDenyEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageDenyEventDetailRequest&;
+    using Resp = DescribeImageDenyEventDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageDenyEventDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcssClient::DescribeImageDenyEventDetailOutcomeCallable TcssClient::DescribeImageDenyEventDetailCallable(const DescribeImageDenyEventDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageDenyEventDetailOutcome>>();
+    DescribeImageDenyEventDetailAsync(
+    request,
+    [prom](
+        const TcssClient*,
+        const DescribeImageDenyEventDetailRequest&,
+        DescribeImageDenyEventDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcssClient::DescribeImageDenyEventListOutcome TcssClient::DescribeImageDenyEventList(const DescribeImageDenyEventListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageDenyEventList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageDenyEventListResponse rsp = DescribeImageDenyEventListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageDenyEventListOutcome(rsp);
+        else
+            return DescribeImageDenyEventListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageDenyEventListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeImageDenyEventListAsync(const DescribeImageDenyEventListRequest& request, const DescribeImageDenyEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageDenyEventListRequest&;
+    using Resp = DescribeImageDenyEventListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageDenyEventList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcssClient::DescribeImageDenyEventListOutcomeCallable TcssClient::DescribeImageDenyEventListCallable(const DescribeImageDenyEventListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageDenyEventListOutcome>>();
+    DescribeImageDenyEventListAsync(
+    request,
+    [prom](
+        const TcssClient*,
+        const DescribeImageDenyEventListRequest&,
+        DescribeImageDenyEventListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcssClient::DescribeImageDenyEventTendencyOutcome TcssClient::DescribeImageDenyEventTendency(const DescribeImageDenyEventTendencyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageDenyEventTendency");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageDenyEventTendencyResponse rsp = DescribeImageDenyEventTendencyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageDenyEventTendencyOutcome(rsp);
+        else
+            return DescribeImageDenyEventTendencyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageDenyEventTendencyOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeImageDenyEventTendencyAsync(const DescribeImageDenyEventTendencyRequest& request, const DescribeImageDenyEventTendencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageDenyEventTendencyRequest&;
+    using Resp = DescribeImageDenyEventTendencyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageDenyEventTendency", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcssClient::DescribeImageDenyEventTendencyOutcomeCallable TcssClient::DescribeImageDenyEventTendencyCallable(const DescribeImageDenyEventTendencyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageDenyEventTendencyOutcome>>();
+    DescribeImageDenyEventTendencyAsync(
+    request,
+    [prom](
+        const TcssClient*,
+        const DescribeImageDenyEventTendencyRequest&,
+        DescribeImageDenyEventTendencyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcssClient::DescribeImageDenyRuleDetailOutcome TcssClient::DescribeImageDenyRuleDetail(const DescribeImageDenyRuleDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageDenyRuleDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageDenyRuleDetailResponse rsp = DescribeImageDenyRuleDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageDenyRuleDetailOutcome(rsp);
+        else
+            return DescribeImageDenyRuleDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageDenyRuleDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeImageDenyRuleDetailAsync(const DescribeImageDenyRuleDetailRequest& request, const DescribeImageDenyRuleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageDenyRuleDetailRequest&;
+    using Resp = DescribeImageDenyRuleDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageDenyRuleDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcssClient::DescribeImageDenyRuleDetailOutcomeCallable TcssClient::DescribeImageDenyRuleDetailCallable(const DescribeImageDenyRuleDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageDenyRuleDetailOutcome>>();
+    DescribeImageDenyRuleDetailAsync(
+    request,
+    [prom](
+        const TcssClient*,
+        const DescribeImageDenyRuleDetailRequest&,
+        DescribeImageDenyRuleDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcssClient::DescribeImageDenyRuleListOutcome TcssClient::DescribeImageDenyRuleList(const DescribeImageDenyRuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageDenyRuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageDenyRuleListResponse rsp = DescribeImageDenyRuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageDenyRuleListOutcome(rsp);
+        else
+            return DescribeImageDenyRuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageDenyRuleListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeImageDenyRuleListAsync(const DescribeImageDenyRuleListRequest& request, const DescribeImageDenyRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageDenyRuleListRequest&;
+    using Resp = DescribeImageDenyRuleListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageDenyRuleList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcssClient::DescribeImageDenyRuleListOutcomeCallable TcssClient::DescribeImageDenyRuleListCallable(const DescribeImageDenyRuleListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageDenyRuleListOutcome>>();
+    DescribeImageDenyRuleListAsync(
+    request,
+    [prom](
+        const TcssClient*,
+        const DescribeImageDenyRuleListRequest&,
+        DescribeImageDenyRuleListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcssClient::DescribeImageDenyRuleSummaryOutcome TcssClient::DescribeImageDenyRuleSummary(const DescribeImageDenyRuleSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageDenyRuleSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageDenyRuleSummaryResponse rsp = DescribeImageDenyRuleSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageDenyRuleSummaryOutcome(rsp);
+        else
+            return DescribeImageDenyRuleSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageDenyRuleSummaryOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeImageDenyRuleSummaryAsync(const DescribeImageDenyRuleSummaryRequest& request, const DescribeImageDenyRuleSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeImageDenyRuleSummaryRequest&;
+    using Resp = DescribeImageDenyRuleSummaryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeImageDenyRuleSummary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcssClient::DescribeImageDenyRuleSummaryOutcomeCallable TcssClient::DescribeImageDenyRuleSummaryCallable(const DescribeImageDenyRuleSummaryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeImageDenyRuleSummaryOutcome>>();
+    DescribeImageDenyRuleSummaryAsync(
+    request,
+    [prom](
+        const TcssClient*,
+        const DescribeImageDenyRuleSummaryRequest&,
+        DescribeImageDenyRuleSummaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcssClient::DescribeImageRegistryNamespaceListOutcome TcssClient::DescribeImageRegistryNamespaceList(const DescribeImageRegistryNamespaceListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeImageRegistryNamespaceList");
@@ -9332,6 +9632,106 @@ TcssClient::DescribeLogStorageStatisticOutcomeCallable TcssClient::DescribeLogSt
         const TcssClient*,
         const DescribeLogStorageStatisticRequest&,
         DescribeLogStorageStatisticOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcssClient::DescribeMaliciousConnectionBlackListOutcome TcssClient::DescribeMaliciousConnectionBlackList(const DescribeMaliciousConnectionBlackListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMaliciousConnectionBlackList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMaliciousConnectionBlackListResponse rsp = DescribeMaliciousConnectionBlackListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMaliciousConnectionBlackListOutcome(rsp);
+        else
+            return DescribeMaliciousConnectionBlackListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMaliciousConnectionBlackListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeMaliciousConnectionBlackListAsync(const DescribeMaliciousConnectionBlackListRequest& request, const DescribeMaliciousConnectionBlackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMaliciousConnectionBlackListRequest&;
+    using Resp = DescribeMaliciousConnectionBlackListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMaliciousConnectionBlackList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcssClient::DescribeMaliciousConnectionBlackListOutcomeCallable TcssClient::DescribeMaliciousConnectionBlackListCallable(const DescribeMaliciousConnectionBlackListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMaliciousConnectionBlackListOutcome>>();
+    DescribeMaliciousConnectionBlackListAsync(
+    request,
+    [prom](
+        const TcssClient*,
+        const DescribeMaliciousConnectionBlackListRequest&,
+        DescribeMaliciousConnectionBlackListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcssClient::DescribeMaliciousConnectionWhiteListOutcome TcssClient::DescribeMaliciousConnectionWhiteList(const DescribeMaliciousConnectionWhiteListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMaliciousConnectionWhiteList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMaliciousConnectionWhiteListResponse rsp = DescribeMaliciousConnectionWhiteListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMaliciousConnectionWhiteListOutcome(rsp);
+        else
+            return DescribeMaliciousConnectionWhiteListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMaliciousConnectionWhiteListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeMaliciousConnectionWhiteListAsync(const DescribeMaliciousConnectionWhiteListRequest& request, const DescribeMaliciousConnectionWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMaliciousConnectionWhiteListRequest&;
+    using Resp = DescribeMaliciousConnectionWhiteListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMaliciousConnectionWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcssClient::DescribeMaliciousConnectionWhiteListOutcomeCallable TcssClient::DescribeMaliciousConnectionWhiteListCallable(const DescribeMaliciousConnectionWhiteListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMaliciousConnectionWhiteListOutcome>>();
+    DescribeMaliciousConnectionWhiteListAsync(
+    request,
+    [prom](
+        const TcssClient*,
+        const DescribeMaliciousConnectionWhiteListRequest&,
+        DescribeMaliciousConnectionWhiteListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -10482,6 +10882,106 @@ TcssClient::DescribeReverseShellEventsExportOutcomeCallable TcssClient::Describe
         const TcssClient*,
         const DescribeReverseShellEventsExportRequest&,
         DescribeReverseShellEventsExportOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcssClient::DescribeReverseShellRegexpWhiteListOutcome TcssClient::DescribeReverseShellRegexpWhiteList(const DescribeReverseShellRegexpWhiteListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReverseShellRegexpWhiteList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReverseShellRegexpWhiteListResponse rsp = DescribeReverseShellRegexpWhiteListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReverseShellRegexpWhiteListOutcome(rsp);
+        else
+            return DescribeReverseShellRegexpWhiteListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReverseShellRegexpWhiteListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeReverseShellRegexpWhiteListAsync(const DescribeReverseShellRegexpWhiteListRequest& request, const DescribeReverseShellRegexpWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeReverseShellRegexpWhiteListRequest&;
+    using Resp = DescribeReverseShellRegexpWhiteListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeReverseShellRegexpWhiteList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcssClient::DescribeReverseShellRegexpWhiteListOutcomeCallable TcssClient::DescribeReverseShellRegexpWhiteListCallable(const DescribeReverseShellRegexpWhiteListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeReverseShellRegexpWhiteListOutcome>>();
+    DescribeReverseShellRegexpWhiteListAsync(
+    request,
+    [prom](
+        const TcssClient*,
+        const DescribeReverseShellRegexpWhiteListRequest&,
+        DescribeReverseShellRegexpWhiteListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcssClient::DescribeReverseShellRegexpWhiteListInfoOutcome TcssClient::DescribeReverseShellRegexpWhiteListInfo(const DescribeReverseShellRegexpWhiteListInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReverseShellRegexpWhiteListInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReverseShellRegexpWhiteListInfoResponse rsp = DescribeReverseShellRegexpWhiteListInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReverseShellRegexpWhiteListInfoOutcome(rsp);
+        else
+            return DescribeReverseShellRegexpWhiteListInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReverseShellRegexpWhiteListInfoOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeReverseShellRegexpWhiteListInfoAsync(const DescribeReverseShellRegexpWhiteListInfoRequest& request, const DescribeReverseShellRegexpWhiteListInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeReverseShellRegexpWhiteListInfoRequest&;
+    using Resp = DescribeReverseShellRegexpWhiteListInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeReverseShellRegexpWhiteListInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcssClient::DescribeReverseShellRegexpWhiteListInfoOutcomeCallable TcssClient::DescribeReverseShellRegexpWhiteListInfoCallable(const DescribeReverseShellRegexpWhiteListInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeReverseShellRegexpWhiteListInfoOutcome>>();
+    DescribeReverseShellRegexpWhiteListInfoAsync(
+    request,
+    [prom](
+        const TcssClient*,
+        const DescribeReverseShellRegexpWhiteListInfoRequest&,
+        DescribeReverseShellRegexpWhiteListInfoOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

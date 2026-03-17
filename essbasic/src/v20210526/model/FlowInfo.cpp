@@ -35,7 +35,8 @@ FlowInfo::FlowInfo() :
     m_needSignReviewHasBeenSet(false),
     m_ccNotifyTypeHasBeenSet(false),
     m_autoSignSceneHasBeenSet(false),
-    m_flowDisplayTypeHasBeenSet(false)
+    m_flowDisplayTypeHasBeenSet(false),
+    m_flowOperateLimitHasBeenSet(false)
 {
 }
 
@@ -224,6 +225,23 @@ CoreInternalOutcome FlowInfo::Deserialize(const rapidjson::Value &value)
         m_flowDisplayTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("FlowOperateLimit") && !value["FlowOperateLimit"].IsNull())
+    {
+        if (!value["FlowOperateLimit"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowInfo.FlowOperateLimit` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_flowOperateLimit.Deserialize(value["FlowOperateLimit"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_flowOperateLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -370,6 +388,15 @@ void FlowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "FlowDisplayType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_flowDisplayType, allocator);
+    }
+
+    if (m_flowOperateLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowOperateLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_flowOperateLimit.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -613,5 +640,21 @@ void FlowInfo::SetFlowDisplayType(const int64_t& _flowDisplayType)
 bool FlowInfo::FlowDisplayTypeHasBeenSet() const
 {
     return m_flowDisplayTypeHasBeenSet;
+}
+
+FlowOperateLimit FlowInfo::GetFlowOperateLimit() const
+{
+    return m_flowOperateLimit;
+}
+
+void FlowInfo::SetFlowOperateLimit(const FlowOperateLimit& _flowOperateLimit)
+{
+    m_flowOperateLimit = _flowOperateLimit;
+    m_flowOperateLimitHasBeenSet = true;
+}
+
+bool FlowInfo::FlowOperateLimitHasBeenSet() const
+{
+    return m_flowOperateLimitHasBeenSet;
 }
 

@@ -25,12 +25,14 @@ using namespace std;
 
 DescribeContractReviewTaskResponse::DescribeContractReviewTaskResponse() :
     m_checklistIdHasBeenSet(false),
+    m_checklistIdsHasBeenSet(false),
     m_createdOnHasBeenSet(false),
     m_finishedOnHasBeenSet(false),
     m_policyTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_risksHasBeenSet(false),
     m_roleHasBeenSet(false),
+    m_rolesHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_taskIdHasBeenSet(false),
     m_commentHasBeenSet(false),
@@ -84,6 +86,19 @@ CoreInternalOutcome DescribeContractReviewTaskResponse::Deserialize(const string
         }
         m_checklistId = string(rsp["ChecklistId"].GetString());
         m_checklistIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ChecklistIds") && !rsp["ChecklistIds"].IsNull())
+    {
+        if (!rsp["ChecklistIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ChecklistIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ChecklistIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_checklistIds.push_back((*itr).GetString());
+        }
+        m_checklistIdsHasBeenSet = true;
     }
 
     if (rsp.HasMember("CreatedOn") && !rsp["CreatedOn"].IsNull())
@@ -161,6 +176,26 @@ CoreInternalOutcome DescribeContractReviewTaskResponse::Deserialize(const string
         }
 
         m_roleHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Roles") && !rsp["Roles"].IsNull())
+    {
+        if (!rsp["Roles"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Roles` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Roles"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RiskIdentificationRoleInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_roles.push_back(item);
+        }
+        m_rolesHasBeenSet = true;
     }
 
     if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
@@ -281,6 +316,19 @@ string DescribeContractReviewTaskResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_checklistId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_checklistIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChecklistIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_checklistIds.begin(); itr != m_checklistIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_createdOnHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -335,6 +383,21 @@ string DescribeContractReviewTaskResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_role.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_rolesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Roles";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_roles.begin(); itr != m_roles.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_statusHasBeenSet)
@@ -437,6 +500,16 @@ bool DescribeContractReviewTaskResponse::ChecklistIdHasBeenSet() const
     return m_checklistIdHasBeenSet;
 }
 
+vector<string> DescribeContractReviewTaskResponse::GetChecklistIds() const
+{
+    return m_checklistIds;
+}
+
+bool DescribeContractReviewTaskResponse::ChecklistIdsHasBeenSet() const
+{
+    return m_checklistIdsHasBeenSet;
+}
+
 int64_t DescribeContractReviewTaskResponse::GetCreatedOn() const
 {
     return m_createdOn;
@@ -495,6 +568,16 @@ RiskIdentificationRoleInfo DescribeContractReviewTaskResponse::GetRole() const
 bool DescribeContractReviewTaskResponse::RoleHasBeenSet() const
 {
     return m_roleHasBeenSet;
+}
+
+vector<RiskIdentificationRoleInfo> DescribeContractReviewTaskResponse::GetRoles() const
+{
+    return m_roles;
+}
+
+bool DescribeContractReviewTaskResponse::RolesHasBeenSet() const
+{
+    return m_rolesHasBeenSet;
 }
 
 int64_t DescribeContractReviewTaskResponse::GetStatus() const

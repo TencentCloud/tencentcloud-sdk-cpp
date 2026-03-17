@@ -25,6 +25,7 @@
 #include <tencentcloud/ess/v20201111/model/FlowCreateApprover.h>
 #include <tencentcloud/ess/v20201111/model/Agent.h>
 #include <tencentcloud/ess/v20201111/model/CcInfo.h>
+#include <tencentcloud/ess/v20201111/model/FlowOperateLimit.h>
 
 
 namespace TencentCloud
@@ -653,6 +654,27 @@ namespace TencentCloud
                      */
                     bool WorkflowHasBeenSet() const;
 
+                    /**
+                     * 获取发起合同流程时对合同流程的部分操作加以限制的配置。
+                     * @return FlowOperateLimit 发起合同流程时对合同流程的部分操作加以限制的配置。
+                     * 
+                     */
+                    FlowOperateLimit GetFlowOperateLimit() const;
+
+                    /**
+                     * 设置发起合同流程时对合同流程的部分操作加以限制的配置。
+                     * @param _flowOperateLimit 发起合同流程时对合同流程的部分操作加以限制的配置。
+                     * 
+                     */
+                    void SetFlowOperateLimit(const FlowOperateLimit& _flowOperateLimit);
+
+                    /**
+                     * 判断参数 FlowOperateLimit 是否已赋值
+                     * @return FlowOperateLimit 是否已赋值
+                     * 
+                     */
+                    bool FlowOperateLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -820,6 +842,12 @@ namespace TencentCloud
                      */
                     bool m_workflow;
                     bool m_workflowHasBeenSet;
+
+                    /**
+                     * 发起合同流程时对合同流程的部分操作加以限制的配置。
+                     */
+                    FlowOperateLimit m_flowOperateLimit;
+                    bool m_flowOperateLimitHasBeenSet;
 
                 };
             }

@@ -46,7 +46,8 @@ ChannelCreateFlowByFilesRequest::ChannelCreateFlowByFilesRequest() :
     m_needPreviewHasBeenSet(false),
     m_previewTypeHasBeenSet(false),
     m_openDynamicFlowHasBeenSet(false),
-    m_openDynamicSignFlowHasBeenSet(false)
+    m_openDynamicSignFlowHasBeenSet(false),
+    m_flowOperateLimitHasBeenSet(false)
 {
 }
 
@@ -275,6 +276,15 @@ string ChannelCreateFlowByFilesRequest::ToJsonString() const
         string key = "OpenDynamicSignFlow";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_openDynamicSignFlow, allocator);
+    }
+
+    if (m_flowOperateLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowOperateLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_flowOperateLimit.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -667,6 +677,22 @@ void ChannelCreateFlowByFilesRequest::SetOpenDynamicSignFlow(const bool& _openDy
 bool ChannelCreateFlowByFilesRequest::OpenDynamicSignFlowHasBeenSet() const
 {
     return m_openDynamicSignFlowHasBeenSet;
+}
+
+FlowOperateLimit ChannelCreateFlowByFilesRequest::GetFlowOperateLimit() const
+{
+    return m_flowOperateLimit;
+}
+
+void ChannelCreateFlowByFilesRequest::SetFlowOperateLimit(const FlowOperateLimit& _flowOperateLimit)
+{
+    m_flowOperateLimit = _flowOperateLimit;
+    m_flowOperateLimitHasBeenSet = true;
+}
+
+bool ChannelCreateFlowByFilesRequest::FlowOperateLimitHasBeenSet() const
+{
+    return m_flowOperateLimitHasBeenSet;
 }
 
 

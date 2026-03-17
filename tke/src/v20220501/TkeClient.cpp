@@ -440,6 +440,56 @@ TkeClient::DescribeClustersOutcomeCallable TkeClient::DescribeClustersCallable(c
     return prom->get_future();
 }
 
+TkeClient::DescribeGPUInfoOutcome TkeClient::DescribeGPUInfo(const DescribeGPUInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGPUInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGPUInfoResponse rsp = DescribeGPUInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGPUInfoOutcome(rsp);
+        else
+            return DescribeGPUInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGPUInfoOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeGPUInfoAsync(const DescribeGPUInfoRequest& request, const DescribeGPUInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeGPUInfoRequest&;
+    using Resp = DescribeGPUInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeGPUInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DescribeGPUInfoOutcomeCallable TkeClient::DescribeGPUInfoCallable(const DescribeGPUInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeGPUInfoOutcome>>();
+    DescribeGPUInfoAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeGPUInfoRequest&,
+        DescribeGPUInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::DescribeHealthCheckPoliciesOutcome TkeClient::DescribeHealthCheckPolicies(const DescribeHealthCheckPoliciesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeHealthCheckPolicies");
@@ -632,6 +682,56 @@ TkeClient::DescribeNodePoolsOutcomeCallable TkeClient::DescribeNodePoolsCallable
         const TkeClient*,
         const DescribeNodePoolsRequest&,
         DescribeNodePoolsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TkeClient::DescribeZoneInstanceConfigInfosOutcome TkeClient::DescribeZoneInstanceConfigInfos(const DescribeZoneInstanceConfigInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeZoneInstanceConfigInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeZoneInstanceConfigInfosResponse rsp = DescribeZoneInstanceConfigInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeZoneInstanceConfigInfosOutcome(rsp);
+        else
+            return DescribeZoneInstanceConfigInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeZoneInstanceConfigInfosOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeZoneInstanceConfigInfosAsync(const DescribeZoneInstanceConfigInfosRequest& request, const DescribeZoneInstanceConfigInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeZoneInstanceConfigInfosRequest&;
+    using Resp = DescribeZoneInstanceConfigInfosResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeZoneInstanceConfigInfos", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DescribeZoneInstanceConfigInfosOutcomeCallable TkeClient::DescribeZoneInstanceConfigInfosCallable(const DescribeZoneInstanceConfigInfosRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeZoneInstanceConfigInfosOutcome>>();
+    DescribeZoneInstanceConfigInfosAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeZoneInstanceConfigInfosRequest&,
+        DescribeZoneInstanceConfigInfosOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

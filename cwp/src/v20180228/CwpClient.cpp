@@ -6190,6 +6190,56 @@ CwpClient::DescribeAttackTrendsOutcomeCallable CwpClient::DescribeAttackTrendsCa
     return prom->get_future();
 }
 
+CwpClient::DescribeAttackTypeOutcome CwpClient::DescribeAttackType(const DescribeAttackTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAttackType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAttackTypeResponse rsp = DescribeAttackTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAttackTypeOutcome(rsp);
+        else
+            return DescribeAttackTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAttackTypeOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAttackTypeAsync(const DescribeAttackTypeRequest& request, const DescribeAttackTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAttackTypeRequest&;
+    using Resp = DescribeAttackTypeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAttackType", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribeAttackTypeOutcomeCallable CwpClient::DescribeAttackTypeCallable(const DescribeAttackTypeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAttackTypeOutcome>>();
+    DescribeAttackTypeAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeAttackTypeRequest&,
+        DescribeAttackTypeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CwpClient::DescribeAttackVulTypeListOutcome CwpClient::DescribeAttackVulTypeList(const DescribeAttackVulTypeListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAttackVulTypeList");
@@ -9590,6 +9640,56 @@ CwpClient::DescribeImportMachineInfoOutcomeCallable CwpClient::DescribeImportMac
     return prom->get_future();
 }
 
+CwpClient::DescribeInjectRiskyServiceSwitchOutcome CwpClient::DescribeInjectRiskyServiceSwitch(const DescribeInjectRiskyServiceSwitchRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInjectRiskyServiceSwitch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInjectRiskyServiceSwitchResponse rsp = DescribeInjectRiskyServiceSwitchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInjectRiskyServiceSwitchOutcome(rsp);
+        else
+            return DescribeInjectRiskyServiceSwitchOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInjectRiskyServiceSwitchOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeInjectRiskyServiceSwitchAsync(const DescribeInjectRiskyServiceSwitchRequest& request, const DescribeInjectRiskyServiceSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeInjectRiskyServiceSwitchRequest&;
+    using Resp = DescribeInjectRiskyServiceSwitchResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeInjectRiskyServiceSwitch", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribeInjectRiskyServiceSwitchOutcomeCallable CwpClient::DescribeInjectRiskyServiceSwitchCallable(const DescribeInjectRiskyServiceSwitchRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeInjectRiskyServiceSwitchOutcome>>();
+    DescribeInjectRiskyServiceSwitchAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeInjectRiskyServiceSwitchRequest&,
+        DescribeInjectRiskyServiceSwitchOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CwpClient::DescribeJavaMemShellInfoOutcome CwpClient::DescribeJavaMemShellInfo(const DescribeJavaMemShellInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeJavaMemShellInfo");
@@ -10532,6 +10632,106 @@ CwpClient::DescribeLogTypeOutcomeCallable CwpClient::DescribeLogTypeCallable(con
         const CwpClient*,
         const DescribeLogTypeRequest&,
         DescribeLogTypeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CwpClient::DescribeLoginTypeGlobalConfOutcome CwpClient::DescribeLoginTypeGlobalConf(const DescribeLoginTypeGlobalConfRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLoginTypeGlobalConf");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLoginTypeGlobalConfResponse rsp = DescribeLoginTypeGlobalConfResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLoginTypeGlobalConfOutcome(rsp);
+        else
+            return DescribeLoginTypeGlobalConfOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLoginTypeGlobalConfOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeLoginTypeGlobalConfAsync(const DescribeLoginTypeGlobalConfRequest& request, const DescribeLoginTypeGlobalConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLoginTypeGlobalConfRequest&;
+    using Resp = DescribeLoginTypeGlobalConfResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLoginTypeGlobalConf", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribeLoginTypeGlobalConfOutcomeCallable CwpClient::DescribeLoginTypeGlobalConfCallable(const DescribeLoginTypeGlobalConfRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLoginTypeGlobalConfOutcome>>();
+    DescribeLoginTypeGlobalConfAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeLoginTypeGlobalConfRequest&,
+        DescribeLoginTypeGlobalConfOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CwpClient::DescribeLoginTypeHostOutcome CwpClient::DescribeLoginTypeHost(const DescribeLoginTypeHostRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLoginTypeHost");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLoginTypeHostResponse rsp = DescribeLoginTypeHostResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLoginTypeHostOutcome(rsp);
+        else
+            return DescribeLoginTypeHostOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLoginTypeHostOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeLoginTypeHostAsync(const DescribeLoginTypeHostRequest& request, const DescribeLoginTypeHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLoginTypeHostRequest&;
+    using Resp = DescribeLoginTypeHostResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLoginTypeHost", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribeLoginTypeHostOutcomeCallable CwpClient::DescribeLoginTypeHostCallable(const DescribeLoginTypeHostRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLoginTypeHostOutcome>>();
+    DescribeLoginTypeHostAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeLoginTypeHostRequest&,
+        DescribeLoginTypeHostOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -11840,6 +12040,56 @@ CwpClient::DescribeMalwareWhiteListAffectListOutcomeCallable CwpClient::Describe
     return prom->get_future();
 }
 
+CwpClient::DescribeMemShellRulesOutcome CwpClient::DescribeMemShellRules(const DescribeMemShellRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMemShellRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMemShellRulesResponse rsp = DescribeMemShellRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMemShellRulesOutcome(rsp);
+        else
+            return DescribeMemShellRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMemShellRulesOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeMemShellRulesAsync(const DescribeMemShellRulesRequest& request, const DescribeMemShellRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMemShellRulesRequest&;
+    using Resp = DescribeMemShellRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMemShellRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribeMemShellRulesOutcomeCallable CwpClient::DescribeMemShellRulesCallable(const DescribeMemShellRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMemShellRulesOutcome>>();
+    DescribeMemShellRulesAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeMemShellRulesRequest&,
+        DescribeMemShellRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CwpClient::DescribeNetAttackSettingOutcome CwpClient::DescribeNetAttackSetting(const DescribeNetAttackSettingRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNetAttackSetting");
@@ -13140,6 +13390,256 @@ CwpClient::DescribeRansomDefenseTrendOutcomeCallable CwpClient::DescribeRansomDe
     return prom->get_future();
 }
 
+CwpClient::DescribeRaspEventCWPOutcome CwpClient::DescribeRaspEventCWP(const DescribeRaspEventCWPRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRaspEventCWP");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRaspEventCWPResponse rsp = DescribeRaspEventCWPResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRaspEventCWPOutcome(rsp);
+        else
+            return DescribeRaspEventCWPOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRaspEventCWPOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeRaspEventCWPAsync(const DescribeRaspEventCWPRequest& request, const DescribeRaspEventCWPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRaspEventCWPRequest&;
+    using Resp = DescribeRaspEventCWPResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRaspEventCWP", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribeRaspEventCWPOutcomeCallable CwpClient::DescribeRaspEventCWPCallable(const DescribeRaspEventCWPRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRaspEventCWPOutcome>>();
+    DescribeRaspEventCWPAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRaspEventCWPRequest&,
+        DescribeRaspEventCWPOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CwpClient::DescribeRaspEventDetailCWPOutcome CwpClient::DescribeRaspEventDetailCWP(const DescribeRaspEventDetailCWPRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRaspEventDetailCWP");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRaspEventDetailCWPResponse rsp = DescribeRaspEventDetailCWPResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRaspEventDetailCWPOutcome(rsp);
+        else
+            return DescribeRaspEventDetailCWPOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRaspEventDetailCWPOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeRaspEventDetailCWPAsync(const DescribeRaspEventDetailCWPRequest& request, const DescribeRaspEventDetailCWPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRaspEventDetailCWPRequest&;
+    using Resp = DescribeRaspEventDetailCWPResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRaspEventDetailCWP", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribeRaspEventDetailCWPOutcomeCallable CwpClient::DescribeRaspEventDetailCWPCallable(const DescribeRaspEventDetailCWPRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRaspEventDetailCWPOutcome>>();
+    DescribeRaspEventDetailCWPAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRaspEventDetailCWPRequest&,
+        DescribeRaspEventDetailCWPOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CwpClient::DescribeRaspEventDetailTCSSOutcome CwpClient::DescribeRaspEventDetailTCSS(const DescribeRaspEventDetailTCSSRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRaspEventDetailTCSS");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRaspEventDetailTCSSResponse rsp = DescribeRaspEventDetailTCSSResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRaspEventDetailTCSSOutcome(rsp);
+        else
+            return DescribeRaspEventDetailTCSSOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRaspEventDetailTCSSOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeRaspEventDetailTCSSAsync(const DescribeRaspEventDetailTCSSRequest& request, const DescribeRaspEventDetailTCSSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRaspEventDetailTCSSRequest&;
+    using Resp = DescribeRaspEventDetailTCSSResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRaspEventDetailTCSS", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribeRaspEventDetailTCSSOutcomeCallable CwpClient::DescribeRaspEventDetailTCSSCallable(const DescribeRaspEventDetailTCSSRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRaspEventDetailTCSSOutcome>>();
+    DescribeRaspEventDetailTCSSAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRaspEventDetailTCSSRequest&,
+        DescribeRaspEventDetailTCSSOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CwpClient::DescribeRaspEventTCSSOutcome CwpClient::DescribeRaspEventTCSS(const DescribeRaspEventTCSSRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRaspEventTCSS");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRaspEventTCSSResponse rsp = DescribeRaspEventTCSSResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRaspEventTCSSOutcome(rsp);
+        else
+            return DescribeRaspEventTCSSOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRaspEventTCSSOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeRaspEventTCSSAsync(const DescribeRaspEventTCSSRequest& request, const DescribeRaspEventTCSSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRaspEventTCSSRequest&;
+    using Resp = DescribeRaspEventTCSSResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRaspEventTCSS", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribeRaspEventTCSSOutcomeCallable CwpClient::DescribeRaspEventTCSSCallable(const DescribeRaspEventTCSSRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRaspEventTCSSOutcome>>();
+    DescribeRaspEventTCSSAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRaspEventTCSSRequest&,
+        DescribeRaspEventTCSSOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CwpClient::DescribeRaspLicenseListOutcome CwpClient::DescribeRaspLicenseList(const DescribeRaspLicenseListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRaspLicenseList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRaspLicenseListResponse rsp = DescribeRaspLicenseListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRaspLicenseListOutcome(rsp);
+        else
+            return DescribeRaspLicenseListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRaspLicenseListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeRaspLicenseListAsync(const DescribeRaspLicenseListRequest& request, const DescribeRaspLicenseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRaspLicenseListRequest&;
+    using Resp = DescribeRaspLicenseListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRaspLicenseList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribeRaspLicenseListOutcomeCallable CwpClient::DescribeRaspLicenseListCallable(const DescribeRaspLicenseListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRaspLicenseListOutcome>>();
+    DescribeRaspLicenseListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRaspLicenseListRequest&,
+        DescribeRaspLicenseListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CwpClient::DescribeRaspMaxCpuOutcome CwpClient::DescribeRaspMaxCpu(const DescribeRaspMaxCpuRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRaspMaxCpu");
@@ -13182,6 +13682,156 @@ CwpClient::DescribeRaspMaxCpuOutcomeCallable CwpClient::DescribeRaspMaxCpuCallab
         const CwpClient*,
         const DescribeRaspMaxCpuRequest&,
         DescribeRaspMaxCpuOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CwpClient::DescribeRaspMemShellDetailTCSSOutcome CwpClient::DescribeRaspMemShellDetailTCSS(const DescribeRaspMemShellDetailTCSSRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRaspMemShellDetailTCSS");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRaspMemShellDetailTCSSResponse rsp = DescribeRaspMemShellDetailTCSSResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRaspMemShellDetailTCSSOutcome(rsp);
+        else
+            return DescribeRaspMemShellDetailTCSSOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRaspMemShellDetailTCSSOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeRaspMemShellDetailTCSSAsync(const DescribeRaspMemShellDetailTCSSRequest& request, const DescribeRaspMemShellDetailTCSSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRaspMemShellDetailTCSSRequest&;
+    using Resp = DescribeRaspMemShellDetailTCSSResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRaspMemShellDetailTCSS", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribeRaspMemShellDetailTCSSOutcomeCallable CwpClient::DescribeRaspMemShellDetailTCSSCallable(const DescribeRaspMemShellDetailTCSSRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRaspMemShellDetailTCSSOutcome>>();
+    DescribeRaspMemShellDetailTCSSAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRaspMemShellDetailTCSSRequest&,
+        DescribeRaspMemShellDetailTCSSOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CwpClient::DescribeRaspMemShellListTCSSOutcome CwpClient::DescribeRaspMemShellListTCSS(const DescribeRaspMemShellListTCSSRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRaspMemShellListTCSS");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRaspMemShellListTCSSResponse rsp = DescribeRaspMemShellListTCSSResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRaspMemShellListTCSSOutcome(rsp);
+        else
+            return DescribeRaspMemShellListTCSSOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRaspMemShellListTCSSOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeRaspMemShellListTCSSAsync(const DescribeRaspMemShellListTCSSRequest& request, const DescribeRaspMemShellListTCSSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRaspMemShellListTCSSRequest&;
+    using Resp = DescribeRaspMemShellListTCSSResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRaspMemShellListTCSS", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribeRaspMemShellListTCSSOutcomeCallable CwpClient::DescribeRaspMemShellListTCSSCallable(const DescribeRaspMemShellListTCSSRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRaspMemShellListTCSSOutcome>>();
+    DescribeRaspMemShellListTCSSAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRaspMemShellListTCSSRequest&,
+        DescribeRaspMemShellListTCSSOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CwpClient::DescribeRaspPluginListOutcome CwpClient::DescribeRaspPluginList(const DescribeRaspPluginListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRaspPluginList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRaspPluginListResponse rsp = DescribeRaspPluginListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRaspPluginListOutcome(rsp);
+        else
+            return DescribeRaspPluginListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRaspPluginListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeRaspPluginListAsync(const DescribeRaspPluginListRequest& request, const DescribeRaspPluginListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRaspPluginListRequest&;
+    using Resp = DescribeRaspPluginListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRaspPluginList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribeRaspPluginListOutcomeCallable CwpClient::DescribeRaspPluginListCallable(const DescribeRaspPluginListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRaspPluginListOutcome>>();
+    DescribeRaspPluginListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeRaspPluginListRequest&,
+        DescribeRaspPluginListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -13482,6 +14132,106 @@ CwpClient::DescribeReverseShellRulesOutcomeCallable CwpClient::DescribeReverseSh
         const CwpClient*,
         const DescribeReverseShellRulesRequest&,
         DescribeReverseShellRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CwpClient::DescribeReverseShellRulesAggregationOutcome CwpClient::DescribeReverseShellRulesAggregation(const DescribeReverseShellRulesAggregationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReverseShellRulesAggregation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReverseShellRulesAggregationResponse rsp = DescribeReverseShellRulesAggregationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReverseShellRulesAggregationOutcome(rsp);
+        else
+            return DescribeReverseShellRulesAggregationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReverseShellRulesAggregationOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeReverseShellRulesAggregationAsync(const DescribeReverseShellRulesAggregationRequest& request, const DescribeReverseShellRulesAggregationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeReverseShellRulesAggregationRequest&;
+    using Resp = DescribeReverseShellRulesAggregationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeReverseShellRulesAggregation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribeReverseShellRulesAggregationOutcomeCallable CwpClient::DescribeReverseShellRulesAggregationCallable(const DescribeReverseShellRulesAggregationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeReverseShellRulesAggregationOutcome>>();
+    DescribeReverseShellRulesAggregationAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeReverseShellRulesAggregationRequest&,
+        DescribeReverseShellRulesAggregationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CwpClient::DescribeReverseShellSystemPolicyConfigOutcome CwpClient::DescribeReverseShellSystemPolicyConfig(const DescribeReverseShellSystemPolicyConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReverseShellSystemPolicyConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReverseShellSystemPolicyConfigResponse rsp = DescribeReverseShellSystemPolicyConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReverseShellSystemPolicyConfigOutcome(rsp);
+        else
+            return DescribeReverseShellSystemPolicyConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReverseShellSystemPolicyConfigOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeReverseShellSystemPolicyConfigAsync(const DescribeReverseShellSystemPolicyConfigRequest& request, const DescribeReverseShellSystemPolicyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeReverseShellSystemPolicyConfigRequest&;
+    using Resp = DescribeReverseShellSystemPolicyConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeReverseShellSystemPolicyConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribeReverseShellSystemPolicyConfigOutcomeCallable CwpClient::DescribeReverseShellSystemPolicyConfigCallable(const DescribeReverseShellSystemPolicyConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeReverseShellSystemPolicyConfigOutcome>>();
+    DescribeReverseShellSystemPolicyConfigAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeReverseShellSystemPolicyConfigRequest&,
+        DescribeReverseShellSystemPolicyConfigOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -15290,6 +16040,56 @@ CwpClient::DescribeServersAndRiskAndFirstInfoOutcomeCallable CwpClient::Describe
     return prom->get_future();
 }
 
+CwpClient::DescribeShellPolicyListOutcome CwpClient::DescribeShellPolicyList(const DescribeShellPolicyListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeShellPolicyList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeShellPolicyListResponse rsp = DescribeShellPolicyListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeShellPolicyListOutcome(rsp);
+        else
+            return DescribeShellPolicyListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeShellPolicyListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeShellPolicyListAsync(const DescribeShellPolicyListRequest& request, const DescribeShellPolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeShellPolicyListRequest&;
+    using Resp = DescribeShellPolicyListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeShellPolicyList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribeShellPolicyListOutcomeCallable CwpClient::DescribeShellPolicyListCallable(const DescribeShellPolicyListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeShellPolicyListOutcome>>();
+    DescribeShellPolicyListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeShellPolicyListRequest&,
+        DescribeShellPolicyListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CwpClient::DescribeStrategyExistOutcome CwpClient::DescribeStrategyExist(const DescribeStrategyExistRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeStrategyExist");
@@ -16090,6 +16890,56 @@ CwpClient::DescribeVulDefenceOverviewOutcomeCallable CwpClient::DescribeVulDefen
     return prom->get_future();
 }
 
+CwpClient::DescribeVulDefenceOverviewCountOutcome CwpClient::DescribeVulDefenceOverviewCount(const DescribeVulDefenceOverviewCountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulDefenceOverviewCount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulDefenceOverviewCountResponse rsp = DescribeVulDefenceOverviewCountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulDefenceOverviewCountOutcome(rsp);
+        else
+            return DescribeVulDefenceOverviewCountOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulDefenceOverviewCountOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeVulDefenceOverviewCountAsync(const DescribeVulDefenceOverviewCountRequest& request, const DescribeVulDefenceOverviewCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeVulDefenceOverviewCountRequest&;
+    using Resp = DescribeVulDefenceOverviewCountResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulDefenceOverviewCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribeVulDefenceOverviewCountOutcomeCallable CwpClient::DescribeVulDefenceOverviewCountCallable(const DescribeVulDefenceOverviewCountRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeVulDefenceOverviewCountOutcome>>();
+    DescribeVulDefenceOverviewCountAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulDefenceOverviewCountRequest&,
+        DescribeVulDefenceOverviewCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CwpClient::DescribeVulDefencePluginDetailOutcome CwpClient::DescribeVulDefencePluginDetail(const DescribeVulDefencePluginDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVulDefencePluginDetail");
@@ -16282,6 +17132,56 @@ CwpClient::DescribeVulDefenceSettingOutcomeCallable CwpClient::DescribeVulDefenc
         const CwpClient*,
         const DescribeVulDefenceSettingRequest&,
         DescribeVulDefenceSettingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CwpClient::DescribeVulDefenceSettingListOutcome CwpClient::DescribeVulDefenceSettingList(const DescribeVulDefenceSettingListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulDefenceSettingList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulDefenceSettingListResponse rsp = DescribeVulDefenceSettingListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulDefenceSettingListOutcome(rsp);
+        else
+            return DescribeVulDefenceSettingListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulDefenceSettingListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeVulDefenceSettingListAsync(const DescribeVulDefenceSettingListRequest& request, const DescribeVulDefenceSettingListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeVulDefenceSettingListRequest&;
+    using Resp = DescribeVulDefenceSettingListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeVulDefenceSettingList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribeVulDefenceSettingListOutcomeCallable CwpClient::DescribeVulDefenceSettingListCallable(const DescribeVulDefenceSettingListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeVulDefenceSettingListOutcome>>();
+    DescribeVulDefenceSettingListAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeVulDefenceSettingListRequest&,
+        DescribeVulDefenceSettingListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -17582,6 +18482,56 @@ CwpClient::DescribeWindowsPatchListOutcomeCallable CwpClient::DescribeWindowsPat
         const CwpClient*,
         const DescribeWindowsPatchListRequest&,
         DescribeWindowsPatchListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CwpClient::DescribeYDRaspBlackWhiteOutcome CwpClient::DescribeYDRaspBlackWhite(const DescribeYDRaspBlackWhiteRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeYDRaspBlackWhite");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeYDRaspBlackWhiteResponse rsp = DescribeYDRaspBlackWhiteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeYDRaspBlackWhiteOutcome(rsp);
+        else
+            return DescribeYDRaspBlackWhiteOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeYDRaspBlackWhiteOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeYDRaspBlackWhiteAsync(const DescribeYDRaspBlackWhiteRequest& request, const DescribeYDRaspBlackWhiteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeYDRaspBlackWhiteRequest&;
+    using Resp = DescribeYDRaspBlackWhiteResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeYDRaspBlackWhite", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribeYDRaspBlackWhiteOutcomeCallable CwpClient::DescribeYDRaspBlackWhiteCallable(const DescribeYDRaspBlackWhiteRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeYDRaspBlackWhiteOutcome>>();
+    DescribeYDRaspBlackWhiteAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeYDRaspBlackWhiteRequest&,
+        DescribeYDRaspBlackWhiteOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -24132,6 +25082,56 @@ CwpClient::RansomDefenseRollbackOutcomeCallable CwpClient::RansomDefenseRollback
         const CwpClient*,
         const RansomDefenseRollbackRequest&,
         RansomDefenseRollbackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CwpClient::RaspEventOverviewOutcome CwpClient::RaspEventOverview(const RaspEventOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "RaspEventOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RaspEventOverviewResponse rsp = RaspEventOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RaspEventOverviewOutcome(rsp);
+        else
+            return RaspEventOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return RaspEventOverviewOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::RaspEventOverviewAsync(const RaspEventOverviewRequest& request, const RaspEventOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RaspEventOverviewRequest&;
+    using Resp = RaspEventOverviewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RaspEventOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::RaspEventOverviewOutcomeCallable CwpClient::RaspEventOverviewCallable(const RaspEventOverviewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RaspEventOverviewOutcome>>();
+    RaspEventOverviewAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const RaspEventOverviewRequest&,
+        RaspEventOverviewOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

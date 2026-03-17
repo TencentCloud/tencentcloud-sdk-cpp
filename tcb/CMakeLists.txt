@@ -43,6 +43,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/ModifyEnvResponse.h
   include/tencentcloud/tcb/v20180608/model/BindCloudBaseAccessDomainResponse.h
   include/tencentcloud/tcb/v20180608/model/LogServiceInfo.h
+  include/tencentcloud/tcb/v20180608/model/DescribeCurveDataResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeBaasPackageListRequest.h
   include/tencentcloud/tcb/v20180608/model/ClsInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeAuthDomainsResponse.h
@@ -133,6 +134,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DeleteCloudBaseGWDomainRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeTablesRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeUserListRequest.h
+  include/tencentcloud/tcb/v20180608/model/DescribeCurveDataRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeStaticStoreResponse.h
   include/tencentcloud/tcb/v20180608/model/ListTablesRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeQuotaDataRequest.h
@@ -207,6 +209,7 @@ set(tcb_src
   src/v20180608/model/ModifyEnvResponse.cpp
   src/v20180608/model/BindCloudBaseAccessDomainResponse.cpp
   src/v20180608/model/LogServiceInfo.cpp
+  src/v20180608/model/DescribeCurveDataResponse.cpp
   src/v20180608/model/DescribeBaasPackageListRequest.cpp
   src/v20180608/model/ClsInfo.cpp
   src/v20180608/model/DescribeAuthDomainsResponse.cpp
@@ -297,6 +300,7 @@ set(tcb_src
   src/v20180608/model/DeleteCloudBaseGWDomainRequest.cpp
   src/v20180608/model/DescribeTablesRequest.cpp
   src/v20180608/model/DescribeUserListRequest.cpp
+  src/v20180608/model/DescribeCurveDataRequest.cpp
   src/v20180608/model/DescribeStaticStoreResponse.cpp
   src/v20180608/model/ListTablesRequest.cpp
   src/v20180608/model/DescribeQuotaDataRequest.cpp
