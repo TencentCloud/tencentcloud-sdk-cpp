@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取被采集的点数
-                     * @return ScrapedRate 被采集的点数
+                     * 获取每秒被采集的点数
+                     * @return ScrapedRate 每秒被采集的点数
                      * 
                      */
                     double GetScrapedRate() const;
 
                     /**
-                     * 设置被采集的点数
-                     * @param _scrapedRate 被采集的点数
+                     * 设置每秒被采集的点数
+                     * @param _scrapedRate 每秒被采集的点数
                      * 
                      */
                     void SetScrapedRate(const double& _scrapedRate);
@@ -136,15 +136,15 @@ namespace TencentCloud
                     bool GlobalHasBeenSet() const;
 
                     /**
-                     * 获取过滤前的指标采集速率
-                     * @return SamplesRate 过滤前的指标采集速率
+                     * 获取过滤前的每秒指标采集速率
+                     * @return SamplesRate 过滤前的每秒指标采集速率
                      * 
                      */
                     double GetSamplesRate() const;
 
                     /**
-                     * 设置过滤前的指标采集速率
-                     * @param _samplesRate 过滤前的指标采集速率
+                     * 设置过滤前的每秒指标采集速率
+                     * @param _samplesRate 过滤前的每秒指标采集速率
                      * 
                      */
                     void SetSamplesRate(const double& _samplesRate);
@@ -165,7 +165,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 被采集的点数
+                     * 每秒被采集的点数
                      */
                     double m_scrapedRate;
                     bool m_scrapedRateHasBeenSet;
@@ -184,7 +184,7 @@ namespace TencentCloud
                     bool m_globalHasBeenSet;
 
                     /**
-                     * 过滤前的指标采集速率
+                     * 过滤前的每秒指标采集速率
                      */
                     double m_samplesRate;
                     bool m_samplesRateHasBeenSet;

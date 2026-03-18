@@ -170,6 +170,31 @@ namespace TencentCloud
                      */
                     bool AuditStatusHasBeenSet() const;
 
+                    /**
+                     * 获取审核失败原因，
+当 AuditStatus 返回2时，则会返回具体的原因。
+                     * @return Reason 审核失败原因，
+当 AuditStatus 返回2时，则会返回具体的原因。
+                     * 
+                     */
+                    std::string GetReason() const;
+
+                    /**
+                     * 设置审核失败原因，
+当 AuditStatus 返回2时，则会返回具体的原因。
+                     * @param _reason 审核失败原因，
+当 AuditStatus 返回2时，则会返回具体的原因。
+                     * 
+                     */
+                    void SetReason(const std::string& _reason);
+
+                    /**
+                     * 判断参数 Reason 是否已赋值
+                     * @return Reason 是否已赋值
+                     * 
+                     */
+                    bool ReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +230,13 @@ namespace TencentCloud
                      */
                     int64_t m_auditStatus;
                     bool m_auditStatusHasBeenSet;
+
+                    /**
+                     * 审核失败原因，
+当 AuditStatus 返回2时，则会返回具体的原因。
+                     */
+                    std::string m_reason;
+                    bool m_reasonHasBeenSet;
 
                 };
             }

@@ -119,6 +119,8 @@
 #include <tencentcloud/tione/v20211111/model/DescribeNotebooksResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribePlatformImagesRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribePlatformImagesResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribePublicAlgoVersionListRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribePublicAlgoVersionListResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeSubAccountLinuxUserInfosRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeSubAccountLinuxUserInfosResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionRequest.h>
@@ -319,6 +321,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePlatformImagesResponse> DescribePlatformImagesOutcome;
                 typedef std::future<DescribePlatformImagesOutcome> DescribePlatformImagesOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribePlatformImagesRequest&, DescribePlatformImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlatformImagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePublicAlgoVersionListResponse> DescribePublicAlgoVersionListOutcome;
+                typedef std::future<DescribePublicAlgoVersionListOutcome> DescribePublicAlgoVersionListOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribePublicAlgoVersionListRequest&, DescribePublicAlgoVersionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePublicAlgoVersionListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSubAccountLinuxUserInfosResponse> DescribeSubAccountLinuxUserInfosOutcome;
                 typedef std::future<DescribeSubAccountLinuxUserInfosOutcome> DescribeSubAccountLinuxUserInfosOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeSubAccountLinuxUserInfosRequest&, DescribeSubAccountLinuxUserInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubAccountLinuxUserInfosAsyncHandler;
@@ -821,6 +826,15 @@ https://cloud.tencent.com/document/product/1278/85305
                 DescribePlatformImagesOutcome DescribePlatformImages(const Model::DescribePlatformImagesRequest &request);
                 void DescribePlatformImagesAsync(const Model::DescribePlatformImagesRequest& request, const DescribePlatformImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePlatformImagesOutcomeCallable DescribePlatformImagesCallable(const Model::DescribePlatformImagesRequest& request);
+
+                /**
+                 *公共算法版本列表
+                 * @param req DescribePublicAlgoVersionListRequest
+                 * @return DescribePublicAlgoVersionListOutcome
+                 */
+                DescribePublicAlgoVersionListOutcome DescribePublicAlgoVersionList(const Model::DescribePublicAlgoVersionListRequest &request);
+                void DescribePublicAlgoVersionListAsync(const Model::DescribePublicAlgoVersionListRequest& request, const DescribePublicAlgoVersionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePublicAlgoVersionListOutcomeCallable DescribePublicAlgoVersionListCallable(const Model::DescribePublicAlgoVersionListRequest& request);
 
                 /**
                  *批量查询子账号Linux用户信息

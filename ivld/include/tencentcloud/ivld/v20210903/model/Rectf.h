@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取矩形框左上角水平座标
+                     * 获取<p>矩形框左上角水平座标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return X 矩形框左上角水平座标
+                     * @return X <p>矩形框左上角水平座标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetX() const;
 
                     /**
-                     * 设置矩形框左上角水平座标
+                     * 设置<p>矩形框左上角水平座标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _x 矩形框左上角水平座标
+                     * @param _x <p>矩形框左上角水平座标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool XHasBeenSet() const;
 
                     /**
-                     * 获取矩形框左上角竖直座标
+                     * 获取<p>矩形框左上角竖直座标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Y 矩形框左上角竖直座标
+                     * @return Y <p>矩形框左上角竖直座标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetY() const;
 
                     /**
-                     * 设置矩形框左上角竖直座标
+                     * 设置<p>矩形框左上角竖直座标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _y 矩形框左上角竖直座标
+                     * @param _y <p>矩形框左上角竖直座标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool YHasBeenSet() const;
 
                     /**
-                     * 获取矩形框宽度
+                     * 获取<p>矩形框宽度</p><p>单位：像素（px）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Width 矩形框宽度
+                     * @return Width <p>矩形框宽度</p><p>单位：像素（px）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetWidth() const;
 
                     /**
-                     * 设置矩形框宽度
+                     * 设置<p>矩形框宽度</p><p>单位：像素（px）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _width 矩形框宽度
+                     * @param _width <p>矩形框宽度</p><p>单位：像素（px）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取矩形框长度
+                     * 获取<p>矩形框长度</p><p>单位：像素（px）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Height 矩形框长度
+                     * @return Height <p>矩形框长度</p><p>单位：像素（px）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetHeight() const;
 
                     /**
-                     * 设置矩形框长度
+                     * 设置<p>矩形框长度</p><p>单位：像素（px）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _height 矩形框长度
+                     * @param _height <p>矩形框长度</p><p>单位：像素（px）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -149,28 +149,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 矩形框左上角水平座标
+                     * <p>矩形框左上角水平座标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_x;
                     bool m_xHasBeenSet;
 
                     /**
-                     * 矩形框左上角竖直座标
+                     * <p>矩形框左上角竖直座标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_y;
                     bool m_yHasBeenSet;
 
                     /**
-                     * 矩形框宽度
+                     * <p>矩形框宽度</p><p>单位：像素（px）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 矩形框长度
+                     * <p>矩形框长度</p><p>单位：像素（px）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_height;

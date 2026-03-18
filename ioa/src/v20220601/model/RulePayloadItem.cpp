@@ -25,7 +25,8 @@ RulePayloadItem::RulePayloadItem() :
     m_optionHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_groupsHasBeenSet(false),
-    m_relateOptionHasBeenSet(false)
+    m_relateOptionHasBeenSet(false),
+    m_valueTypeHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,16 @@ CoreInternalOutcome RulePayloadItem::Deserialize(const rapidjson::Value &value)
         m_relateOptionHasBeenSet = true;
     }
 
+    if (value.HasMember("ValueType") && !value["ValueType"].IsNull())
+    {
+        if (!value["ValueType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RulePayloadItem.ValueType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_valueType = string(value["ValueType"].GetString());
+        m_valueTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -154,6 +165,14 @@ void RulePayloadItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "RelateOption";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_relateOption.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_valueTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValueType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_valueType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -237,5 +256,21 @@ void RulePayloadItem::SetRelateOption(const string& _relateOption)
 bool RulePayloadItem::RelateOptionHasBeenSet() const
 {
     return m_relateOptionHasBeenSet;
+}
+
+string RulePayloadItem::GetValueType() const
+{
+    return m_valueType;
+}
+
+void RulePayloadItem::SetValueType(const string& _valueType)
+{
+    m_valueType = _valueType;
+    m_valueTypeHasBeenSet = true;
+}
+
+bool RulePayloadItem::ValueTypeHasBeenSet() const
+{
+    return m_valueTypeHasBeenSet;
 }
 

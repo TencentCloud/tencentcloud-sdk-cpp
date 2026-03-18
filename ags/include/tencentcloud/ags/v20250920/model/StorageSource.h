@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取对象存储桶配置
-                     * @return Cos 对象存储桶配置
+                     * 获取<p>对象存储桶配置</p>
+                     * @return Cos <p>对象存储桶配置</p>
                      * 
                      */
                     CosStorageSource GetCos() const;
 
                     /**
-                     * 设置对象存储桶配置
-                     * @param _cos 对象存储桶配置
+                     * 设置<p>对象存储桶配置</p>
+                     * @param _cos <p>对象存储桶配置</p>
                      * 
                      */
                     void SetCos(const CosStorageSource& _cos);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool CosHasBeenSet() const;
 
                     /**
-                     * 获取镜像卷配置
-                     * @return Image 镜像卷配置
+                     * 获取<p>镜像卷配置</p>
+                     * @return Image <p>镜像卷配置</p>
                      * 
                      */
                     ImageStorageSource GetImage() const;
 
                     /**
-                     * 设置镜像卷配置
-                     * @param _image 镜像卷配置
+                     * 设置<p>镜像卷配置</p>
+                     * @param _image <p>镜像卷配置</p>
                      * 
                      */
                     void SetImage(const ImageStorageSource& _image);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool ImageHasBeenSet() const;
 
                     /**
-                     * 获取文件存储配置
-                     * @return Cfs 文件存储配置
+                     * 获取<p>文件存储配置</p>
+                     * @return Cfs <p>文件存储配置</p>
                      * 
                      */
                     CfsStorageSource GetCfs() const;
 
                     /**
-                     * 设置文件存储配置
-                     * @param _cfs 文件存储配置
+                     * 设置<p>文件存储配置</p>
+                     * @param _cfs <p>文件存储配置</p>
                      * 
                      */
                     void SetCfs(const CfsStorageSource& _cfs);
@@ -115,19 +115,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 对象存储桶配置
+                     * <p>对象存储桶配置</p>
                      */
                     CosStorageSource m_cos;
                     bool m_cosHasBeenSet;
 
                     /**
-                     * 镜像卷配置
+                     * <p>镜像卷配置</p>
                      */
                     ImageStorageSource m_image;
                     bool m_imageHasBeenSet;
 
                     /**
-                     * 文件存储配置
+                     * <p>文件存储配置</p>
                      */
                     CfsStorageSource m_cfs;
                     bool m_cfsHasBeenSet;

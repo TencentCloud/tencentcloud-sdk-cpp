@@ -325,6 +325,31 @@ namespace TencentCloud
                     bool MapParamListHasBeenSet() const;
 
                     /**
+                     * 获取补录扩展属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MakeExtList 补录扩展属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<StrToStrMap> GetMakeExtList() const;
+
+                    /**
+                     * 设置补录扩展属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _makeExtList 补录扩展属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMakeExtList(const std::vector<StrToStrMap>& _makeExtList);
+
+                    /**
+                     * 判断参数 MakeExtList 是否已赋值
+                     * @return MakeExtList 是否已赋值
+                     * 
+                     */
+                    bool MakeExtListHasBeenSet() const;
+
+                    /**
                      * 获取创建人ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatorId 创建人ID
@@ -1056,6 +1081,13 @@ DATA_TIME：实例数据时间；SCHEDULE_TIME 计划调度时间
                      */
                     std::vector<StrToStrMap> m_mapParamList;
                     bool m_mapParamListHasBeenSet;
+
+                    /**
+                     * 补录扩展属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<StrToStrMap> m_makeExtList;
+                    bool m_makeExtListHasBeenSet;
 
                     /**
                      * 创建人ID

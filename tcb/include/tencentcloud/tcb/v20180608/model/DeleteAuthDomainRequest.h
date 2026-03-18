@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
-                     * 获取域名ID列表，支持批量
-                     * @return DomainIds 域名ID列表，支持批量
+                     * 获取域名ID列表，支持批量传递
+                     * @return DomainIds 域名ID列表，支持批量传递
                      * 
                      */
                     std::vector<std::string> GetDomainIds() const;
 
                     /**
-                     * 设置域名ID列表，支持批量
-                     * @param _domainIds 域名ID列表，支持批量
+                     * 设置域名ID列表，支持批量传递
+                     * @param _domainIds 域名ID列表，支持批量传递
                      * 
                      */
                     void SetDomainIds(const std::vector<std::string>& _domainIds);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_envIdHasBeenSet;
 
                     /**
-                     * 域名ID列表，支持批量
+                     * 域名ID列表，支持批量传递
                      */
                     std::vector<std::string> m_domainIds;
                     bool m_domainIdsHasBeenSet;

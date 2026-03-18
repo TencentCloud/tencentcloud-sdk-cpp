@@ -23,7 +23,8 @@ using namespace std;
 NumberInfo::NumberInfo() :
     m_numberHasBeenSet(false),
     m_callOutSkillGroupIdsHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_costTypeHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,16 @@ CoreInternalOutcome NumberInfo::Deserialize(const rapidjson::Value &value)
         m_stateHasBeenSet = true;
     }
 
+    if (value.HasMember("CostType") && !value["CostType"].IsNull())
+    {
+        if (!value["CostType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NumberInfo.CostType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_costType = value["CostType"].GetInt64();
+        m_costTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +110,14 @@ void NumberInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_state, allocator);
+    }
+
+    if (m_costTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CostType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_costType, allocator);
     }
 
 }
@@ -150,5 +169,21 @@ void NumberInfo::SetState(const int64_t& _state)
 bool NumberInfo::StateHasBeenSet() const
 {
     return m_stateHasBeenSet;
+}
+
+int64_t NumberInfo::GetCostType() const
+{
+    return m_costType;
+}
+
+void NumberInfo::SetCostType(const int64_t& _costType)
+{
+    m_costType = _costType;
+    m_costTypeHasBeenSet = true;
+}
+
+bool NumberInfo::CostTypeHasBeenSet() const
+{
+    return m_costTypeHasBeenSet;
 }
 

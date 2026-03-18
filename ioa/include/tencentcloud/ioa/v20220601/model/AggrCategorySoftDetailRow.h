@@ -342,6 +342,27 @@ namespace TencentCloud
                      */
                     bool UpgradableDeviceNumHasBeenSet() const;
 
+                    /**
+                     * 获取有新版本可升级的设备数量
+                     * @return UpgradeDeviceNum 有新版本可升级的设备数量
+                     * 
+                     */
+                    int64_t GetUpgradeDeviceNum() const;
+
+                    /**
+                     * 设置有新版本可升级的设备数量
+                     * @param _upgradeDeviceNum 有新版本可升级的设备数量
+                     * 
+                     */
+                    void SetUpgradeDeviceNum(const int64_t& _upgradeDeviceNum);
+
+                    /**
+                     * 判断参数 UpgradeDeviceNum 是否已赋值
+                     * @return UpgradeDeviceNum 是否已赋值
+                     * 
+                     */
+                    bool UpgradeDeviceNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -426,6 +447,12 @@ namespace TencentCloud
                      */
                     int64_t m_upgradableDeviceNum;
                     bool m_upgradableDeviceNumHasBeenSet;
+
+                    /**
+                     * 有新版本可升级的设备数量
+                     */
+                    int64_t m_upgradeDeviceNum;
+                    bool m_upgradeDeviceNumHasBeenSet;
 
                 };
             }

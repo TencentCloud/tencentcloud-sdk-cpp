@@ -32,7 +32,8 @@ AggrCategorySoftDetailRow::AggrCategorySoftDetailRow() :
     m_piracyInstalledUserNumHasBeenSet(false),
     m_authNumHasBeenSet(false),
     m_genuineRateHasBeenSet(false),
-    m_upgradableDeviceNumHasBeenSet(false)
+    m_upgradableDeviceNumHasBeenSet(false),
+    m_upgradeDeviceNumHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome AggrCategorySoftDetailRow::Deserialize(const rapidjson::Valu
         m_upgradableDeviceNumHasBeenSet = true;
     }
 
+    if (value.HasMember("UpgradeDeviceNum") && !value["UpgradeDeviceNum"].IsNull())
+    {
+        if (!value["UpgradeDeviceNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AggrCategorySoftDetailRow.UpgradeDeviceNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_upgradeDeviceNum = value["UpgradeDeviceNum"].GetInt64();
+        m_upgradeDeviceNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void AggrCategorySoftDetailRow::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "UpgradableDeviceNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_upgradableDeviceNum, allocator);
+    }
+
+    if (m_upgradeDeviceNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpgradeDeviceNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_upgradeDeviceNum, allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void AggrCategorySoftDetailRow::SetUpgradableDeviceNum(const int64_t& _upgradabl
 bool AggrCategorySoftDetailRow::UpgradableDeviceNumHasBeenSet() const
 {
     return m_upgradableDeviceNumHasBeenSet;
+}
+
+int64_t AggrCategorySoftDetailRow::GetUpgradeDeviceNum() const
+{
+    return m_upgradeDeviceNum;
+}
+
+void AggrCategorySoftDetailRow::SetUpgradeDeviceNum(const int64_t& _upgradeDeviceNum)
+{
+    m_upgradeDeviceNum = _upgradeDeviceNum;
+    m_upgradeDeviceNumHasBeenSet = true;
+}
+
+bool AggrCategorySoftDetailRow::UpgradeDeviceNumHasBeenSet() const
+{
+    return m_upgradeDeviceNumHasBeenSet;
 }
 

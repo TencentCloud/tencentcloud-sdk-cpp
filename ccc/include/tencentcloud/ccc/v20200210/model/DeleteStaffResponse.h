@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无法删除的状态为在线的客服列表
-                     * @return OnlineStaffList 无法删除的状态为在线的客服列表
+                     * 获取<p>无法删除的状态为在线的客服列表</p>
+                     * @return OnlineStaffList <p>无法删除的状态为在线的客服列表</p>
                      * 
                      */
                     std::vector<std::string> GetOnlineStaffList() const;
@@ -57,13 +57,33 @@ namespace TencentCloud
                      */
                     bool OnlineStaffListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>坐席删除详情</p>
+                     * @return DeleteStatusInfo <p>坐席删除详情</p>
+                     * 
+                     */
+                    std::string GetDeleteStatusInfo() const;
+
+                    /**
+                     * 判断参数 DeleteStatusInfo 是否已赋值
+                     * @return DeleteStatusInfo 是否已赋值
+                     * 
+                     */
+                    bool DeleteStatusInfoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 无法删除的状态为在线的客服列表
+                     * <p>无法删除的状态为在线的客服列表</p>
                      */
                     std::vector<std::string> m_onlineStaffList;
                     bool m_onlineStaffListHasBeenSet;
+
+                    /**
+                     * <p>坐席删除详情</p>
+                     */
+                    std::string m_deleteStatusInfo;
+                    bool m_deleteStatusInfoHasBeenSet;
 
                 };
             }

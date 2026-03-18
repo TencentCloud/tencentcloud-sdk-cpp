@@ -305,6 +305,31 @@ namespace TencentCloud
                      */
                     bool LatestSavedVersionIdHasBeenSet() const;
 
+                    /**
+                     * 获取任务状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 任务状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置任务状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _status 任务状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -378,6 +403,13 @@ namespace TencentCloud
                      */
                     std::string m_latestSavedVersionId;
                     bool m_latestSavedVersionIdHasBeenSet;
+
+                    /**
+                     * 任务状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

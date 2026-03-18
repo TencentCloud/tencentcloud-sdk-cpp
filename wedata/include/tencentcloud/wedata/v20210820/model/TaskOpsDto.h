@@ -2483,6 +2483,31 @@ CAN_MANAGE : 有权限管理操作
                      */
                     bool TaskExtDTOHasBeenSet() const;
 
+                    /**
+                     * 获取任务时区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScheduleTimeZone 任务时区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetScheduleTimeZone() const;
+
+                    /**
+                     * 设置任务时区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scheduleTimeZone 任务时区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScheduleTimeZone(const std::string& _scheduleTimeZone);
+
+                    /**
+                     * 判断参数 ScheduleTimeZone 是否已赋值
+                     * @return ScheduleTimeZone 是否已赋值
+                     * 
+                     */
+                    bool ScheduleTimeZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -3164,6 +3189,13 @@ CAN_MANAGE : 有权限管理操作
                      */
                     TaskExtOpsDto m_taskExtDTO;
                     bool m_taskExtDTOHasBeenSet;
+
+                    /**
+                     * 任务时区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_scheduleTimeZone;
+                    bool m_scheduleTimeZoneHasBeenSet;
 
                 };
             }

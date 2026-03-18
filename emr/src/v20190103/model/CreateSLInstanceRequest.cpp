@@ -32,7 +32,8 @@ CreateSLInstanceRequest::CreateSLInstanceRequest() :
     m_tagsHasBeenSet(false),
     m_prePaySettingHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
-    m_deploymentModeHasBeenSet(false)
+    m_deploymentModeHasBeenSet(false),
+    m_userNameHasBeenSet(false)
 {
 }
 
@@ -136,6 +137,14 @@ string CreateSLInstanceRequest::ToJsonString() const
         string key = "DeploymentMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_deploymentMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -304,6 +313,22 @@ void CreateSLInstanceRequest::SetDeploymentMode(const string& _deploymentMode)
 bool CreateSLInstanceRequest::DeploymentModeHasBeenSet() const
 {
     return m_deploymentModeHasBeenSet;
+}
+
+string CreateSLInstanceRequest::GetUserName() const
+{
+    return m_userName;
+}
+
+void CreateSLInstanceRequest::SetUserName(const string& _userName)
+{
+    m_userName = _userName;
+    m_userNameHasBeenSet = true;
+}
+
+bool CreateSLInstanceRequest::UserNameHasBeenSet() const
+{
+    return m_userNameHasBeenSet;
 }
 
 

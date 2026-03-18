@@ -27,7 +27,8 @@ NoticeContentTmplItem::NoticeContentTmplItem() :
     m_feiShuRobotHasBeenSet(false),
     m_webhookHasBeenSet(false),
     m_teamsRobotHasBeenSet(false),
-    m_pagerDutyRobotHasBeenSet(false)
+    m_pagerDutyRobotHasBeenSet(false),
+    m_googleChatRobotHasBeenSet(false)
 {
 }
 
@@ -176,6 +177,26 @@ CoreInternalOutcome NoticeContentTmplItem::Deserialize(const rapidjson::Value &v
         m_pagerDutyRobotHasBeenSet = true;
     }
 
+    if (value.HasMember("GoogleChatRobot") && !value["GoogleChatRobot"].IsNull())
+    {
+        if (!value["GoogleChatRobot"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NoticeContentTmplItem.GoogleChatRobot` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["GoogleChatRobot"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            GoogleChatRobotNoticeTmplMatcher item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_googleChatRobot.push_back(item);
+        }
+        m_googleChatRobotHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -282,6 +303,21 @@ void NoticeContentTmplItem::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
 
         int i=0;
         for (auto itr = m_pagerDutyRobot.begin(); itr != m_pagerDutyRobot.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_googleChatRobotHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GoogleChatRobot";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_googleChatRobot.begin(); itr != m_googleChatRobot.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -401,5 +437,21 @@ void NoticeContentTmplItem::SetPagerDutyRobot(const vector<PagerDutyRobotNoticeT
 bool NoticeContentTmplItem::PagerDutyRobotHasBeenSet() const
 {
     return m_pagerDutyRobotHasBeenSet;
+}
+
+vector<GoogleChatRobotNoticeTmplMatcher> NoticeContentTmplItem::GetGoogleChatRobot() const
+{
+    return m_googleChatRobot;
+}
+
+void NoticeContentTmplItem::SetGoogleChatRobot(const vector<GoogleChatRobotNoticeTmplMatcher>& _googleChatRobot)
+{
+    m_googleChatRobot = _googleChatRobot;
+    m_googleChatRobotHasBeenSet = true;
+}
+
+bool NoticeContentTmplItem::GoogleChatRobotHasBeenSet() const
+{
+    return m_googleChatRobotHasBeenSet;
 }
 

@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取沙箱实例唯一标识符
-                     * @return InstanceId 沙箱实例唯一标识符
+                     * 获取<p>沙箱实例唯一标识符</p>
+                     * @return InstanceId <p>沙箱实例唯一标识符</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置沙箱实例唯一标识符
-                     * @param _instanceId 沙箱实例唯一标识符
+                     * 设置<p>沙箱实例唯一标识符</p>
+                     * @param _instanceId <p>沙箱实例唯一标识符</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取所属沙箱工具 ID
-                     * @return ToolId 所属沙箱工具 ID
+                     * 获取<p>所属沙箱工具 ID</p>
+                     * @return ToolId <p>所属沙箱工具 ID</p>
                      * 
                      */
                     std::string GetToolId() const;
 
                     /**
-                     * 设置所属沙箱工具 ID
-                     * @param _toolId 所属沙箱工具 ID
+                     * 设置<p>所属沙箱工具 ID</p>
+                     * @param _toolId <p>所属沙箱工具 ID</p>
                      * 
                      */
                     void SetToolId(const std::string& _toolId);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool ToolIdHasBeenSet() const;
 
                     /**
-                     * 获取所属沙箱工具名称
-                     * @return ToolName 所属沙箱工具名称
+                     * 获取<p>所属沙箱工具名称</p>
+                     * @return ToolName <p>所属沙箱工具名称</p>
                      * 
                      */
                     std::string GetToolName() const;
 
                     /**
-                     * 设置所属沙箱工具名称
-                     * @param _toolName 所属沙箱工具名称
+                     * 设置<p>所属沙箱工具名称</p>
+                     * @param _toolName <p>所属沙箱工具名称</p>
                      * 
                      */
                     void SetToolName(const std::string& _toolName);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool ToolNameHasBeenSet() const;
 
                     /**
-                     * 获取实例状态：STARTING（启动中）、RUNNING（运行中）、STOPPING（停止中）、STOPPED（已停止）、STOP_FAILED（停止失败）、FAILED（失败状态）
-                     * @return Status 实例状态：STARTING（启动中）、RUNNING（运行中）、STOPPING（停止中）、STOPPED（已停止）、STOP_FAILED（停止失败）、FAILED（失败状态）
+                     * 获取<p>实例状态：STARTING（启动中）、RUNNING（运行中）、STOPPING（停止中）、STOPPED（已停止）、STOP_FAILED（停止失败）、FAILED（失败状态）</p>
+                     * @return Status <p>实例状态：STARTING（启动中）、RUNNING（运行中）、STOPPING（停止中）、STOPPED（已停止）、STOP_FAILED（停止失败）、FAILED（失败状态）</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置实例状态：STARTING（启动中）、RUNNING（运行中）、STOPPING（停止中）、STOPPED（已停止）、STOP_FAILED（停止失败）、FAILED（失败状态）
-                     * @param _status 实例状态：STARTING（启动中）、RUNNING（运行中）、STOPPING（停止中）、STOPPED（已停止）、STOP_FAILED（停止失败）、FAILED（失败状态）
+                     * 设置<p>实例状态：STARTING（启动中）、RUNNING（运行中）、STOPPING（停止中）、STOPPED（已停止）、STOP_FAILED（停止失败）、FAILED（失败状态）</p>
+                     * @param _status <p>实例状态：STARTING（启动中）、RUNNING（运行中）、STOPPING（停止中）、STOPPED（已停止）、STOP_FAILED（停止失败）、FAILED（失败状态）</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取超时时间（秒），null 表示无超时设置
-                     * @return TimeoutSeconds 超时时间（秒），null 表示无超时设置
+                     * 获取<p>超时时间（秒），null 表示无超时设置</p>
+                     * @return TimeoutSeconds <p>超时时间（秒），null 表示无超时设置</p>
                      * 
                      */
                     uint64_t GetTimeoutSeconds() const;
 
                     /**
-                     * 设置超时时间（秒），null 表示无超时设置
-                     * @param _timeoutSeconds 超时时间（秒），null 表示无超时设置
+                     * 设置<p>超时时间（秒），null 表示无超时设置</p>
+                     * @param _timeoutSeconds <p>超时时间（秒），null 表示无超时设置</p>
                      * 
                      */
                     void SetTimeoutSeconds(const uint64_t& _timeoutSeconds);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool TimeoutSecondsHasBeenSet() const;
 
                     /**
-                     * 获取过期时间（ISO 8601 格式），null 表示无过期时间
-                     * @return ExpiresAt 过期时间（ISO 8601 格式），null 表示无过期时间
+                     * 获取<p>过期时间（ISO 8601 格式），null 表示无过期时间</p>
+                     * @return ExpiresAt <p>过期时间（ISO 8601 格式），null 表示无过期时间</p>
                      * 
                      */
                     std::string GetExpiresAt() const;
 
                     /**
-                     * 设置过期时间（ISO 8601 格式），null 表示无过期时间
-                     * @param _expiresAt 过期时间（ISO 8601 格式），null 表示无过期时间
+                     * 设置<p>过期时间（ISO 8601 格式），null 表示无过期时间</p>
+                     * @param _expiresAt <p>过期时间（ISO 8601 格式），null 表示无过期时间</p>
                      * 
                      */
                     void SetExpiresAt(const std::string& _expiresAt);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool ExpiresAtHasBeenSet() const;
 
                     /**
-                     * 获取停止原因：manual（手动）、timeout（超时）、error（错误）、system（系统），仅在状态为 STOPPED、STOP_FAILED 或 FAILED 时有值。当 provider 停止失败时，状态为 STOP_FAILED，原因为 error
-                     * @return StopReason 停止原因：manual（手动）、timeout（超时）、error（错误）、system（系统），仅在状态为 STOPPED、STOP_FAILED 或 FAILED 时有值。当 provider 停止失败时，状态为 STOP_FAILED，原因为 error
+                     * 获取<p>停止原因：manual（手动）、timeout（超时）、error（错误）、system（系统），仅在状态为 STOPPED、STOP_FAILED 或 FAILED 时有值。当 provider 停止失败时，状态为 STOP_FAILED，原因为 error</p>
+                     * @return StopReason <p>停止原因：manual（手动）、timeout（超时）、error（错误）、system（系统），仅在状态为 STOPPED、STOP_FAILED 或 FAILED 时有值。当 provider 停止失败时，状态为 STOP_FAILED，原因为 error</p>
                      * 
                      */
                     std::string GetStopReason() const;
 
                     /**
-                     * 设置停止原因：manual（手动）、timeout（超时）、error（错误）、system（系统），仅在状态为 STOPPED、STOP_FAILED 或 FAILED 时有值。当 provider 停止失败时，状态为 STOP_FAILED，原因为 error
-                     * @param _stopReason 停止原因：manual（手动）、timeout（超时）、error（错误）、system（系统），仅在状态为 STOPPED、STOP_FAILED 或 FAILED 时有值。当 provider 停止失败时，状态为 STOP_FAILED，原因为 error
+                     * 设置<p>停止原因：manual（手动）、timeout（超时）、error（错误）、system（系统），仅在状态为 STOPPED、STOP_FAILED 或 FAILED 时有值。当 provider 停止失败时，状态为 STOP_FAILED，原因为 error</p>
+                     * @param _stopReason <p>停止原因：manual（手动）、timeout（超时）、error（错误）、system（系统），仅在状态为 STOPPED、STOP_FAILED 或 FAILED 时有值。当 provider 停止失败时，状态为 STOP_FAILED，原因为 error</p>
                      * 
                      */
                     void SetStopReason(const std::string& _stopReason);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool StopReasonHasBeenSet() const;
 
                     /**
-                     * 获取创建时间（ISO 8601 格式）
-                     * @return CreateTime 创建时间（ISO 8601 格式）
+                     * 获取<p>创建时间（ISO 8601 格式）</p>
+                     * @return CreateTime <p>创建时间（ISO 8601 格式）</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间（ISO 8601 格式）
-                     * @param _createTime 创建时间（ISO 8601 格式）
+                     * 设置<p>创建时间（ISO 8601 格式）</p>
+                     * @param _createTime <p>创建时间（ISO 8601 格式）</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间（ISO 8601 格式）
-                     * @return UpdateTime 更新时间（ISO 8601 格式）
+                     * 获取<p>更新时间（ISO 8601 格式）</p>
+                     * @return UpdateTime <p>更新时间（ISO 8601 格式）</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间（ISO 8601 格式）
-                     * @param _updateTime 更新时间（ISO 8601 格式）
+                     * 设置<p>更新时间（ISO 8601 格式）</p>
+                     * @param _updateTime <p>更新时间（ISO 8601 格式）</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -238,15 +238,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取存储挂载选项
-                     * @return MountOptions 存储挂载选项
+                     * 获取<p>存储挂载选项</p>
+                     * @return MountOptions <p>存储挂载选项</p>
                      * 
                      */
                     std::vector<MountOption> GetMountOptions() const;
 
                     /**
-                     * 设置存储挂载选项
-                     * @param _mountOptions 存储挂载选项
+                     * 设置<p>存储挂载选项</p>
+                     * @param _mountOptions <p>存储挂载选项</p>
                      * 
                      */
                     void SetMountOptions(const std::vector<MountOption>& _mountOptions);
@@ -259,15 +259,15 @@ namespace TencentCloud
                     bool MountOptionsHasBeenSet() const;
 
                     /**
-                     * 获取沙箱实例自定义配置
-                     * @return CustomConfiguration 沙箱实例自定义配置
+                     * 获取<p>沙箱实例自定义配置</p>
+                     * @return CustomConfiguration <p>沙箱实例自定义配置</p>
                      * 
                      */
                     CustomConfigurationDetail GetCustomConfiguration() const;
 
                     /**
-                     * 设置沙箱实例自定义配置
-                     * @param _customConfiguration 沙箱实例自定义配置
+                     * 设置<p>沙箱实例自定义配置</p>
+                     * @param _customConfiguration <p>沙箱实例自定义配置</p>
                      * 
                      */
                     void SetCustomConfiguration(const CustomConfigurationDetail& _customConfiguration);
@@ -282,67 +282,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 沙箱实例唯一标识符
+                     * <p>沙箱实例唯一标识符</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 所属沙箱工具 ID
+                     * <p>所属沙箱工具 ID</p>
                      */
                     std::string m_toolId;
                     bool m_toolIdHasBeenSet;
 
                     /**
-                     * 所属沙箱工具名称
+                     * <p>所属沙箱工具名称</p>
                      */
                     std::string m_toolName;
                     bool m_toolNameHasBeenSet;
 
                     /**
-                     * 实例状态：STARTING（启动中）、RUNNING（运行中）、STOPPING（停止中）、STOPPED（已停止）、STOP_FAILED（停止失败）、FAILED（失败状态）
+                     * <p>实例状态：STARTING（启动中）、RUNNING（运行中）、STOPPING（停止中）、STOPPED（已停止）、STOP_FAILED（停止失败）、FAILED（失败状态）</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 超时时间（秒），null 表示无超时设置
+                     * <p>超时时间（秒），null 表示无超时设置</p>
                      */
                     uint64_t m_timeoutSeconds;
                     bool m_timeoutSecondsHasBeenSet;
 
                     /**
-                     * 过期时间（ISO 8601 格式），null 表示无过期时间
+                     * <p>过期时间（ISO 8601 格式），null 表示无过期时间</p>
                      */
                     std::string m_expiresAt;
                     bool m_expiresAtHasBeenSet;
 
                     /**
-                     * 停止原因：manual（手动）、timeout（超时）、error（错误）、system（系统），仅在状态为 STOPPED、STOP_FAILED 或 FAILED 时有值。当 provider 停止失败时，状态为 STOP_FAILED，原因为 error
+                     * <p>停止原因：manual（手动）、timeout（超时）、error（错误）、system（系统），仅在状态为 STOPPED、STOP_FAILED 或 FAILED 时有值。当 provider 停止失败时，状态为 STOP_FAILED，原因为 error</p>
                      */
                     std::string m_stopReason;
                     bool m_stopReasonHasBeenSet;
 
                     /**
-                     * 创建时间（ISO 8601 格式）
+                     * <p>创建时间（ISO 8601 格式）</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间（ISO 8601 格式）
+                     * <p>更新时间（ISO 8601 格式）</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 存储挂载选项
+                     * <p>存储挂载选项</p>
                      */
                     std::vector<MountOption> m_mountOptions;
                     bool m_mountOptionsHasBeenSet;
 
                     /**
-                     * 沙箱实例自定义配置
+                     * <p>沙箱实例自定义配置</p>
                      */
                     CustomConfigurationDetail m_customConfiguration;
                     bool m_customConfigurationHasBeenSet;

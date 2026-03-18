@@ -29,7 +29,8 @@ BatchCreateTaskVersionAsyncRequest::BatchCreateTaskVersionAsyncRequest() :
     m_alarmWaysHasBeenSet(false),
     m_alarmRecipientTypesHasBeenSet(false),
     m_needCheckParentSubmittedHasBeenSet(false),
-    m_enableMakeUpHasBeenSet(false)
+    m_enableMakeUpHasBeenSet(false),
+    m_assignApprovalListHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,19 @@ string BatchCreateTaskVersionAsyncRequest::ToJsonString() const
         string key = "EnableMakeUp";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableMakeUp, allocator);
+    }
+
+    if (m_assignApprovalListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssignApprovalList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_assignApprovalList.begin(); itr != m_assignApprovalList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -221,6 +235,22 @@ void BatchCreateTaskVersionAsyncRequest::SetEnableMakeUp(const bool& _enableMake
 bool BatchCreateTaskVersionAsyncRequest::EnableMakeUpHasBeenSet() const
 {
     return m_enableMakeUpHasBeenSet;
+}
+
+vector<string> BatchCreateTaskVersionAsyncRequest::GetAssignApprovalList() const
+{
+    return m_assignApprovalList;
+}
+
+void BatchCreateTaskVersionAsyncRequest::SetAssignApprovalList(const vector<string>& _assignApprovalList)
+{
+    m_assignApprovalList = _assignApprovalList;
+    m_assignApprovalListHasBeenSet = true;
+}
+
+bool BatchCreateTaskVersionAsyncRequest::AssignApprovalListHasBeenSet() const
+{
+    return m_assignApprovalListHasBeenSet;
 }
 
 

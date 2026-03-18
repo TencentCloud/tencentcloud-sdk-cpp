@@ -98,7 +98,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/ModifyServiceGroupWeightsResponse.h
   include/tencentcloud/tione/v20211111/model/Usage.h
   include/tencentcloud/tione/v20211111/model/GatewayConfig.h
-  include/tencentcloud/tione/v20211111/model/AuthTokenBase.h
+  include/tencentcloud/tione/v20211111/model/Choice.h
   include/tencentcloud/tione/v20211111/model/DeleteNotebookRequest.h
   include/tencentcloud/tione/v20211111/model/PushTrainingMetricsRequest.h
   include/tencentcloud/tione/v20211111/model/Filter.h
@@ -106,6 +106,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/CreateDatasetRequest.h
   include/tencentcloud/tione/v20211111/model/CreateDatasetResponse.h
   include/tencentcloud/tione/v20211111/model/Service.h
+  include/tencentcloud/tione/v20211111/model/DeviceImageInfo.h
   include/tencentcloud/tione/v20211111/model/CrossTenantENIInfo.h
   include/tencentcloud/tione/v20211111/model/HyperParameter.h
   include/tencentcloud/tione/v20211111/model/DescribeDataSourcesRequest.h
@@ -140,6 +141,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeBuildInImagesRequest.h
   include/tencentcloud/tione/v20211111/model/MountConfigureInfo.h
   include/tencentcloud/tione/v20211111/model/StartTrainingTaskRequest.h
+  include/tencentcloud/tione/v20211111/model/DescribePlatformImagesResponse.h
   include/tencentcloud/tione/v20211111/model/ContainerStatus.h
   include/tencentcloud/tione/v20211111/model/DescribeMountInstancesResponse.h
   include/tencentcloud/tione/v20211111/model/UpdateMountLimitRequest.h
@@ -159,7 +161,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceGroupsResponse.h
   include/tencentcloud/tione/v20211111/model/Spec.h
   include/tencentcloud/tione/v20211111/model/DescribeDataSourceRequest.h
-  include/tencentcloud/tione/v20211111/model/HTTPGetAction.h
+  include/tencentcloud/tione/v20211111/model/DescribePublicAlgoVersionListResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingResourceInstanceRunningJobsResponse.h
   include/tencentcloud/tione/v20211111/model/InferGatewayCallInfo.h
   include/tencentcloud/tione/v20211111/model/CreateDataSourceResponse.h
@@ -177,7 +179,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeMountLimitsRequest.h
   include/tencentcloud/tione/v20211111/model/DeleteExportResponse.h
   include/tencentcloud/tione/v20211111/model/DefaultInnerCallInfo.h
-  include/tencentcloud/tione/v20211111/model/Choice.h
+  include/tencentcloud/tione/v20211111/model/AuthTokenBase.h
   include/tencentcloud/tione/v20211111/model/ModifyModelServiceAuthTokenRequest.h
   include/tencentcloud/tione/v20211111/model/SchedulingPolicy.h
   include/tencentcloud/tione/v20211111/model/LogIdentity.h
@@ -189,9 +191,11 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeBillingSpecsRequest.h
   include/tencentcloud/tione/v20211111/model/RDMAConfig.h
   include/tencentcloud/tione/v20211111/model/InferCodeInfo.h
+  include/tencentcloud/tione/v20211111/model/TrainParam.h
   include/tencentcloud/tione/v20211111/model/DescribeInferTemplatesRequest.h
   include/tencentcloud/tione/v20211111/model/ModifyModelServiceAuthorizationRequest.h
   include/tencentcloud/tione/v20211111/model/DeleteModelServiceGroupResponse.h
+  include/tencentcloud/tione/v20211111/model/DeviceMaterialInfo.h
   include/tencentcloud/tione/v20211111/model/GpuDetail.h
   include/tencentcloud/tione/v20211111/model/CreateExportResponse.h
   include/tencentcloud/tione/v20211111/model/CronScaleJob.h
@@ -206,6 +210,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/PodSSHInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceGroupsRequest.h
   include/tencentcloud/tione/v20211111/model/SubAccountInfo.h
+  include/tencentcloud/tione/v20211111/model/UpdateSubAccountLinuxUserInfoResponse.h
   include/tencentcloud/tione/v20211111/model/ImageInfo.h
   include/tencentcloud/tione/v20211111/model/Tag.h
   include/tencentcloud/tione/v20211111/model/ServiceInfo.h
@@ -239,6 +244,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeEventsResponse.h
   include/tencentcloud/tione/v20211111/model/DatasetGroup.h
   include/tencentcloud/tione/v20211111/model/StatefulSetCondition.h
+  include/tencentcloud/tione/v20211111/model/HTTPGetAction.h
   include/tencentcloud/tione/v20211111/model/SidecarSpec.h
   include/tencentcloud/tione/v20211111/model/TCPSocketAction.h
   include/tencentcloud/tione/v20211111/model/ResourceInfo.h
@@ -274,7 +280,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/HostPath.h
   include/tencentcloud/tione/v20211111/model/StopModelAccelerateTaskResponse.h
   include/tencentcloud/tione/v20211111/model/IngressPrivateLinkInfo.h
-  include/tencentcloud/tione/v20211111/model/UpdateSubAccountLinuxUserInfoResponse.h
+  include/tencentcloud/tione/v20211111/model/PublicAlgoVersion.h
   include/tencentcloud/tione/v20211111/model/ServiceEIPInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTasksResponse.h
   include/tencentcloud/tione/v20211111/model/UpdateMountLimitResponse.h
@@ -287,8 +293,10 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeExportRequest.h
   include/tencentcloud/tione/v20211111/model/UpdateSubAccountLinuxUserInfoRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeNotebookRequest.h
+  include/tencentcloud/tione/v20211111/model/DescribePublicAlgoVersionListRequest.h
   include/tencentcloud/tione/v20211111/model/StorageExtraConf.h
   include/tencentcloud/tione/v20211111/model/LocalDisk.h
+  include/tencentcloud/tione/v20211111/model/ResourceSpec.h
   include/tencentcloud/tione/v20211111/model/DescribeLogsResponse.h
   include/tencentcloud/tione/v20211111/model/EncodedStartCmdInfo.h
   include/tencentcloud/tione/v20211111/model/StopNotebookRequest.h
@@ -303,11 +311,12 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeSubAccountLinuxUserInfosRequest.h
   include/tencentcloud/tione/v20211111/model/ChatCompletionResponse.h
   include/tencentcloud/tione/v20211111/model/GooseFSx.h
-  include/tencentcloud/tione/v20211111/model/DescribePlatformImagesResponse.h
+  include/tencentcloud/tione/v20211111/model/AggregatePublicAlgoVersion.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTaskPodsRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionsResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeSubAccountLinuxUserInfosResponse.h
   include/tencentcloud/tione/v20211111/model/DeleteDatasetRequest.h
+  include/tencentcloud/tione/v20211111/model/MaterialInfo.h
   include/tencentcloud/tione/v20211111/model/DataConfig.h
   include/tencentcloud/tione/v20211111/model/ResourceConf.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceGroupRequest.h
@@ -421,7 +430,7 @@ set(tione_src
   src/v20211111/model/ModifyServiceGroupWeightsResponse.cpp
   src/v20211111/model/Usage.cpp
   src/v20211111/model/GatewayConfig.cpp
-  src/v20211111/model/AuthTokenBase.cpp
+  src/v20211111/model/Choice.cpp
   src/v20211111/model/DeleteNotebookRequest.cpp
   src/v20211111/model/PushTrainingMetricsRequest.cpp
   src/v20211111/model/Filter.cpp
@@ -429,6 +438,7 @@ set(tione_src
   src/v20211111/model/CreateDatasetRequest.cpp
   src/v20211111/model/CreateDatasetResponse.cpp
   src/v20211111/model/Service.cpp
+  src/v20211111/model/DeviceImageInfo.cpp
   src/v20211111/model/CrossTenantENIInfo.cpp
   src/v20211111/model/HyperParameter.cpp
   src/v20211111/model/DescribeDataSourcesRequest.cpp
@@ -463,6 +473,7 @@ set(tione_src
   src/v20211111/model/DescribeBuildInImagesRequest.cpp
   src/v20211111/model/MountConfigureInfo.cpp
   src/v20211111/model/StartTrainingTaskRequest.cpp
+  src/v20211111/model/DescribePlatformImagesResponse.cpp
   src/v20211111/model/ContainerStatus.cpp
   src/v20211111/model/DescribeMountInstancesResponse.cpp
   src/v20211111/model/UpdateMountLimitRequest.cpp
@@ -482,7 +493,7 @@ set(tione_src
   src/v20211111/model/DescribeModelServiceGroupsResponse.cpp
   src/v20211111/model/Spec.cpp
   src/v20211111/model/DescribeDataSourceRequest.cpp
-  src/v20211111/model/HTTPGetAction.cpp
+  src/v20211111/model/DescribePublicAlgoVersionListResponse.cpp
   src/v20211111/model/DescribeBillingResourceInstanceRunningJobsResponse.cpp
   src/v20211111/model/InferGatewayCallInfo.cpp
   src/v20211111/model/CreateDataSourceResponse.cpp
@@ -500,7 +511,7 @@ set(tione_src
   src/v20211111/model/DescribeMountLimitsRequest.cpp
   src/v20211111/model/DeleteExportResponse.cpp
   src/v20211111/model/DefaultInnerCallInfo.cpp
-  src/v20211111/model/Choice.cpp
+  src/v20211111/model/AuthTokenBase.cpp
   src/v20211111/model/ModifyModelServiceAuthTokenRequest.cpp
   src/v20211111/model/SchedulingPolicy.cpp
   src/v20211111/model/LogIdentity.cpp
@@ -512,9 +523,11 @@ set(tione_src
   src/v20211111/model/DescribeBillingSpecsRequest.cpp
   src/v20211111/model/RDMAConfig.cpp
   src/v20211111/model/InferCodeInfo.cpp
+  src/v20211111/model/TrainParam.cpp
   src/v20211111/model/DescribeInferTemplatesRequest.cpp
   src/v20211111/model/ModifyModelServiceAuthorizationRequest.cpp
   src/v20211111/model/DeleteModelServiceGroupResponse.cpp
+  src/v20211111/model/DeviceMaterialInfo.cpp
   src/v20211111/model/GpuDetail.cpp
   src/v20211111/model/CreateExportResponse.cpp
   src/v20211111/model/CronScaleJob.cpp
@@ -529,6 +542,7 @@ set(tione_src
   src/v20211111/model/PodSSHInfo.cpp
   src/v20211111/model/DescribeModelServiceGroupsRequest.cpp
   src/v20211111/model/SubAccountInfo.cpp
+  src/v20211111/model/UpdateSubAccountLinuxUserInfoResponse.cpp
   src/v20211111/model/ImageInfo.cpp
   src/v20211111/model/Tag.cpp
   src/v20211111/model/ServiceInfo.cpp
@@ -562,6 +576,7 @@ set(tione_src
   src/v20211111/model/DescribeEventsResponse.cpp
   src/v20211111/model/DatasetGroup.cpp
   src/v20211111/model/StatefulSetCondition.cpp
+  src/v20211111/model/HTTPGetAction.cpp
   src/v20211111/model/SidecarSpec.cpp
   src/v20211111/model/TCPSocketAction.cpp
   src/v20211111/model/ResourceInfo.cpp
@@ -597,7 +612,7 @@ set(tione_src
   src/v20211111/model/HostPath.cpp
   src/v20211111/model/StopModelAccelerateTaskResponse.cpp
   src/v20211111/model/IngressPrivateLinkInfo.cpp
-  src/v20211111/model/UpdateSubAccountLinuxUserInfoResponse.cpp
+  src/v20211111/model/PublicAlgoVersion.cpp
   src/v20211111/model/ServiceEIPInfo.cpp
   src/v20211111/model/DescribeTrainingTasksResponse.cpp
   src/v20211111/model/UpdateMountLimitResponse.cpp
@@ -610,8 +625,10 @@ set(tione_src
   src/v20211111/model/DescribeExportRequest.cpp
   src/v20211111/model/UpdateSubAccountLinuxUserInfoRequest.cpp
   src/v20211111/model/DescribeNotebookRequest.cpp
+  src/v20211111/model/DescribePublicAlgoVersionListRequest.cpp
   src/v20211111/model/StorageExtraConf.cpp
   src/v20211111/model/LocalDisk.cpp
+  src/v20211111/model/ResourceSpec.cpp
   src/v20211111/model/DescribeLogsResponse.cpp
   src/v20211111/model/EncodedStartCmdInfo.cpp
   src/v20211111/model/StopNotebookRequest.cpp
@@ -626,11 +643,12 @@ set(tione_src
   src/v20211111/model/DescribeSubAccountLinuxUserInfosRequest.cpp
   src/v20211111/model/ChatCompletionResponse.cpp
   src/v20211111/model/GooseFSx.cpp
-  src/v20211111/model/DescribePlatformImagesResponse.cpp
+  src/v20211111/model/AggregatePublicAlgoVersion.cpp
   src/v20211111/model/DescribeTrainingTaskPodsRequest.cpp
   src/v20211111/model/DescribeTrainingModelVersionsResponse.cpp
   src/v20211111/model/DescribeSubAccountLinuxUserInfosResponse.cpp
   src/v20211111/model/DeleteDatasetRequest.cpp
+  src/v20211111/model/MaterialInfo.cpp
   src/v20211111/model/DataConfig.cpp
   src/v20211111/model/ResourceConf.cpp
   src/v20211111/model/DescribeModelServiceGroupRequest.cpp

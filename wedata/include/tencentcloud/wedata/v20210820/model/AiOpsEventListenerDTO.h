@@ -222,6 +222,131 @@ namespace TencentCloud
                      */
                     bool EventBroadcastTypeHasBeenSet() const;
 
+                    /**
+                     * 获取事件生产者任务Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProducerTaskId 事件生产者任务Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProducerTaskId() const;
+
+                    /**
+                     * 设置事件生产者任务Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _producerTaskId 事件生产者任务Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProducerTaskId(const std::string& _producerTaskId);
+
+                    /**
+                     * 判断参数 ProducerTaskId 是否已赋值
+                     * @return ProducerTaskId 是否已赋值
+                     * 
+                     */
+                    bool ProducerTaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取事件维度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Dimension 事件维度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDimension() const;
+
+                    /**
+                     * 设置事件维度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dimension 事件维度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDimension(const std::string& _dimension);
+
+                    /**
+                     * 判断参数 Dimension 是否已赋值
+                     * @return Dimension 是否已赋值
+                     * 
+                     */
+                    bool DimensionHasBeenSet() const;
+
+                    /**
+                     * 获取事件状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 事件状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置事件状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _status 事件状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取事件触发时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EventTriggerTs 事件触发时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEventTriggerTs() const;
+
+                    /**
+                     * 设置事件触发时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _eventTriggerTs 事件触发时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEventTriggerTs(const std::string& _eventTriggerTs);
+
+                    /**
+                     * 判断参数 EventTriggerTs 是否已赋值
+                     * @return EventTriggerTs 是否已赋值
+                     * 
+                     */
+                    bool EventTriggerTsHasBeenSet() const;
+
+                    /**
+                     * 获取事件ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CaseId 事件ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCaseId() const;
+
+                    /**
+                     * 设置事件ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _caseId 事件ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCaseId(const std::string& _caseId);
+
+                    /**
+                     * 判断参数 CaseId 是否已赋值
+                     * @return CaseId 是否已赋值
+                     * 
+                     */
+                    bool CaseIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -272,6 +397,41 @@ namespace TencentCloud
                      */
                     std::string m_eventBroadcastType;
                     bool m_eventBroadcastTypeHasBeenSet;
+
+                    /**
+                     * 事件生产者任务Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_producerTaskId;
+                    bool m_producerTaskIdHasBeenSet;
+
+                    /**
+                     * 事件维度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dimension;
+                    bool m_dimensionHasBeenSet;
+
+                    /**
+                     * 事件状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 事件触发时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_eventTriggerTs;
+                    bool m_eventTriggerTsHasBeenSet;
+
+                    /**
+                     * 事件ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_caseId;
+                    bool m_caseIdHasBeenSet;
 
                 };
             }

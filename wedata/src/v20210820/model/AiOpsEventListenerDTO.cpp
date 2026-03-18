@@ -27,7 +27,12 @@ AiOpsEventListenerDTO::AiOpsEventListenerDTO() :
     m_eventSubTypeHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_propertiesListHasBeenSet(false),
-    m_eventBroadcastTypeHasBeenSet(false)
+    m_eventBroadcastTypeHasBeenSet(false),
+    m_producerTaskIdHasBeenSet(false),
+    m_dimensionHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_eventTriggerTsHasBeenSet(false),
+    m_caseIdHasBeenSet(false)
 {
 }
 
@@ -116,6 +121,56 @@ CoreInternalOutcome AiOpsEventListenerDTO::Deserialize(const rapidjson::Value &v
         m_eventBroadcastTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ProducerTaskId") && !value["ProducerTaskId"].IsNull())
+    {
+        if (!value["ProducerTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiOpsEventListenerDTO.ProducerTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_producerTaskId = string(value["ProducerTaskId"].GetString());
+        m_producerTaskIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Dimension") && !value["Dimension"].IsNull())
+    {
+        if (!value["Dimension"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiOpsEventListenerDTO.Dimension` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dimension = string(value["Dimension"].GetString());
+        m_dimensionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiOpsEventListenerDTO.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("EventTriggerTs") && !value["EventTriggerTs"].IsNull())
+    {
+        if (!value["EventTriggerTs"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiOpsEventListenerDTO.EventTriggerTs` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eventTriggerTs = string(value["EventTriggerTs"].GetString());
+        m_eventTriggerTsHasBeenSet = true;
+    }
+
+    if (value.HasMember("CaseId") && !value["CaseId"].IsNull())
+    {
+        if (!value["CaseId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiOpsEventListenerDTO.CaseId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_caseId = string(value["CaseId"].GetString());
+        m_caseIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +239,46 @@ void AiOpsEventListenerDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "EventBroadcastType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_eventBroadcastType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_producerTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProducerTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_producerTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dimensionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Dimension";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dimension.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eventTriggerTsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventTriggerTs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventTriggerTs.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_caseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CaseId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_caseId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -299,5 +394,85 @@ void AiOpsEventListenerDTO::SetEventBroadcastType(const string& _eventBroadcastT
 bool AiOpsEventListenerDTO::EventBroadcastTypeHasBeenSet() const
 {
     return m_eventBroadcastTypeHasBeenSet;
+}
+
+string AiOpsEventListenerDTO::GetProducerTaskId() const
+{
+    return m_producerTaskId;
+}
+
+void AiOpsEventListenerDTO::SetProducerTaskId(const string& _producerTaskId)
+{
+    m_producerTaskId = _producerTaskId;
+    m_producerTaskIdHasBeenSet = true;
+}
+
+bool AiOpsEventListenerDTO::ProducerTaskIdHasBeenSet() const
+{
+    return m_producerTaskIdHasBeenSet;
+}
+
+string AiOpsEventListenerDTO::GetDimension() const
+{
+    return m_dimension;
+}
+
+void AiOpsEventListenerDTO::SetDimension(const string& _dimension)
+{
+    m_dimension = _dimension;
+    m_dimensionHasBeenSet = true;
+}
+
+bool AiOpsEventListenerDTO::DimensionHasBeenSet() const
+{
+    return m_dimensionHasBeenSet;
+}
+
+string AiOpsEventListenerDTO::GetStatus() const
+{
+    return m_status;
+}
+
+void AiOpsEventListenerDTO::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool AiOpsEventListenerDTO::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string AiOpsEventListenerDTO::GetEventTriggerTs() const
+{
+    return m_eventTriggerTs;
+}
+
+void AiOpsEventListenerDTO::SetEventTriggerTs(const string& _eventTriggerTs)
+{
+    m_eventTriggerTs = _eventTriggerTs;
+    m_eventTriggerTsHasBeenSet = true;
+}
+
+bool AiOpsEventListenerDTO::EventTriggerTsHasBeenSet() const
+{
+    return m_eventTriggerTsHasBeenSet;
+}
+
+string AiOpsEventListenerDTO::GetCaseId() const
+{
+    return m_caseId;
+}
+
+void AiOpsEventListenerDTO::SetCaseId(const string& _caseId)
+{
+    m_caseId = _caseId;
+    m_caseIdHasBeenSet = true;
+}
+
+bool AiOpsEventListenerDTO::CaseIdHasBeenSet() const
+{
+    return m_caseIdHasBeenSet;
 }
 

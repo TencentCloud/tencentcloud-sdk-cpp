@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取基础指标用量
+                     * 获取基础指标用量个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Basic 基础指标用量
+                     * @return Basic 基础指标用量个数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetBasic() const;
 
                     /**
-                     * 设置基础指标用量
+                     * 设置基础指标用量个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _basic 基础指标用量
+                     * @param _basic 基础指标用量个数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool BasicHasBeenSet() const;
 
                     /**
-                     * 获取付费指标用量
+                     * 获取付费指标用量个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Fee 付费指标用量
+                     * @return Fee 付费指标用量个数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetFee() const;
 
                     /**
-                     * 设置付费指标用量
+                     * 设置付费指标用量个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fee 付费指标用量
+                     * @param _fee 付费指标用量个数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -195,14 +195,14 @@ namespace TencentCloud
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 基础指标用量
+                     * 基础指标用量个数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_basic;
                     bool m_basicHasBeenSet;
 
                     /**
-                     * 付费指标用量
+                     * 付费指标用量个数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_fee;

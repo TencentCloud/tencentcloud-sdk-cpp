@@ -756,6 +756,27 @@ namespace TencentCloud
                      */
                     bool RecordMergeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>转推开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     * @return EnableLiveRelay <p>转推开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     * 
+                     */
+                    uint64_t GetEnableLiveRelay() const;
+
+                    /**
+                     * 设置<p>转推开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     * @param _enableLiveRelay <p>转推开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     * 
+                     */
+                    void SetEnableLiveRelay(const uint64_t& _enableLiveRelay);
+
+                    /**
+                     * 判断参数 EnableLiveRelay 是否已赋值
+                     * @return EnableLiveRelay 是否已赋值
+                     * 
+                     */
+                    bool EnableLiveRelayHasBeenSet() const;
+
                 private:
 
                     /**
@@ -961,6 +982,12 @@ namespace TencentCloud
                      */
                     uint64_t m_recordMerge;
                     bool m_recordMergeHasBeenSet;
+
+                    /**
+                     * <p>转推开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     */
+                    uint64_t m_enableLiveRelay;
+                    bool m_enableLiveRelayHasBeenSet;
 
                 };
             }

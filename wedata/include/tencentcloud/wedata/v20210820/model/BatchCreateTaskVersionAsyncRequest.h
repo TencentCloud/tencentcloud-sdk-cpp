@@ -190,6 +190,27 @@ namespace TencentCloud
                      */
                     bool EnableMakeUpHasBeenSet() const;
 
+                    /**
+                     * 获取指定审批人列表
+                     * @return AssignApprovalList 指定审批人列表
+                     * 
+                     */
+                    std::vector<std::string> GetAssignApprovalList() const;
+
+                    /**
+                     * 设置指定审批人列表
+                     * @param _assignApprovalList 指定审批人列表
+                     * 
+                     */
+                    void SetAssignApprovalList(const std::vector<std::string>& _assignApprovalList);
+
+                    /**
+                     * 判断参数 AssignApprovalList 是否已赋值
+                     * @return AssignApprovalList 是否已赋值
+                     * 
+                     */
+                    bool AssignApprovalListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -233,6 +254,12 @@ namespace TencentCloud
                      */
                     bool m_enableMakeUp;
                     bool m_enableMakeUpHasBeenSet;
+
+                    /**
+                     * 指定审批人列表
+                     */
+                    std::vector<std::string> m_assignApprovalList;
+                    bool m_assignApprovalListHasBeenSet;
 
                 };
             }

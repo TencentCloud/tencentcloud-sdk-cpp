@@ -24,7 +24,8 @@ AuthRecord::AuthRecord() :
     m_operatorNameHasBeenSet(false),
     m_operatorMobileHasBeenSet(false),
     m_authTypeHasBeenSet(false),
-    m_auditStatusHasBeenSet(false)
+    m_auditStatusHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome AuthRecord::Deserialize(const rapidjson::Value &value)
         m_auditStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("Reason") && !value["Reason"].IsNull())
+    {
+        if (!value["Reason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuthRecord.Reason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reason = string(value["Reason"].GetString());
+        m_reasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void AuthRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "AuditStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_auditStatus, allocator);
+    }
+
+    if (m_reasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Reason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void AuthRecord::SetAuditStatus(const int64_t& _auditStatus)
 bool AuthRecord::AuditStatusHasBeenSet() const
 {
     return m_auditStatusHasBeenSet;
+}
+
+string AuthRecord::GetReason() const
+{
+    return m_reason;
+}
+
+void AuthRecord::SetReason(const string& _reason)
+{
+    m_reason = _reason;
+    m_reasonHasBeenSet = true;
+}
+
+bool AuthRecord::ReasonHasBeenSet() const
+{
+    return m_reasonHasBeenSet;
 }
 

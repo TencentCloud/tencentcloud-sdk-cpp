@@ -259,6 +259,27 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
+                     * 获取主可用区私有网络名
+                     * @return VpcName 主可用区私有网络名
+                     * 
+                     */
+                    std::string GetVpcName() const;
+
+                    /**
+                     * 设置主可用区私有网络名
+                     * @param _vpcName 主可用区私有网络名
+                     * 
+                     */
+                    void SetVpcName(const std::string& _vpcName);
+
+                    /**
+                     * 判断参数 VpcName 是否已赋值
+                     * @return VpcName 是否已赋值
+                     * 
+                     */
+                    bool VpcNameHasBeenSet() const;
+
+                    /**
                      * 获取主可用区子网ID
                      * @return SubnetId 主可用区子网ID
                      * 
@@ -278,6 +299,27 @@ namespace TencentCloud
                      * 
                      */
                     bool SubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取主可用区子网名
+                     * @return SubnetName 主可用区子网名
+                     * 
+                     */
+                    std::string GetSubnetName() const;
+
+                    /**
+                     * 设置主可用区子网名
+                     * @param _subnetName 主可用区子网名
+                     * 
+                     */
+                    void SetSubnetName(const std::string& _subnetName);
+
+                    /**
+                     * 判断参数 SubnetName 是否已赋值
+                     * @return SubnetName 是否已赋值
+                     * 
+                     */
+                    bool SubnetNameHasBeenSet() const;
 
                     /**
                      * 获取状态码
@@ -476,6 +518,27 @@ namespace TencentCloud
                      */
                     bool DeployRoleHasBeenSet() const;
 
+                    /**
+                     * 获取webui地址
+                     * @return WebUIUrl webui地址
+                     * 
+                     */
+                    std::string GetWebUIUrl() const;
+
+                    /**
+                     * 设置webui地址
+                     * @param _webUIUrl webui地址
+                     * 
+                     */
+                    void SetWebUIUrl(const std::string& _webUIUrl);
+
+                    /**
+                     * 判断参数 WebUIUrl 是否已赋值
+                     * @return WebUIUrl 是否已赋值
+                     * 
+                     */
+                    bool WebUIUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -539,10 +602,22 @@ namespace TencentCloud
                     bool m_vpcIdHasBeenSet;
 
                     /**
+                     * 主可用区私有网络名
+                     */
+                    std::string m_vpcName;
+                    bool m_vpcNameHasBeenSet;
+
+                    /**
                      * 主可用区子网ID
                      */
                     uint64_t m_subnetId;
                     bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 主可用区子网名
+                     */
+                    std::string m_subnetName;
+                    bool m_subnetNameHasBeenSet;
 
                     /**
                      * 状态码
@@ -599,6 +674,12 @@ namespace TencentCloud
                      */
                     std::string m_deployRole;
                     bool m_deployRoleHasBeenSet;
+
+                    /**
+                     * webui地址
+                     */
+                    std::string m_webUIUrl;
+                    bool m_webUIUrlHasBeenSet;
 
                 };
             }

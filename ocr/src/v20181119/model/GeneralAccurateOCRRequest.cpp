@@ -30,7 +30,9 @@ GeneralAccurateOCRRequest::GeneralAccurateOCRRequest() :
     m_isPdfHasBeenSet(false),
     m_pdfPageNumberHasBeenSet(false),
     m_enableDetectTextHasBeenSet(false),
-    m_configIDHasBeenSet(false)
+    m_configIDHasBeenSet(false),
+    m_wordsTypeHasBeenSet(false),
+    m_languageInfoHasBeenSet(false)
 {
 }
 
@@ -103,6 +105,22 @@ string GeneralAccurateOCRRequest::ToJsonString() const
         string key = "ConfigID";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_configID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wordsTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WordsType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_wordsType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_languageInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LanguageInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_languageInfo, allocator);
     }
 
 
@@ -239,6 +257,38 @@ void GeneralAccurateOCRRequest::SetConfigID(const string& _configID)
 bool GeneralAccurateOCRRequest::ConfigIDHasBeenSet() const
 {
     return m_configIDHasBeenSet;
+}
+
+string GeneralAccurateOCRRequest::GetWordsType() const
+{
+    return m_wordsType;
+}
+
+void GeneralAccurateOCRRequest::SetWordsType(const string& _wordsType)
+{
+    m_wordsType = _wordsType;
+    m_wordsTypeHasBeenSet = true;
+}
+
+bool GeneralAccurateOCRRequest::WordsTypeHasBeenSet() const
+{
+    return m_wordsTypeHasBeenSet;
+}
+
+bool GeneralAccurateOCRRequest::GetLanguageInfo() const
+{
+    return m_languageInfo;
+}
+
+void GeneralAccurateOCRRequest::SetLanguageInfo(const bool& _languageInfo)
+{
+    m_languageInfo = _languageInfo;
+    m_languageInfoHasBeenSet = true;
+}
+
+bool GeneralAccurateOCRRequest::LanguageInfoHasBeenSet() const
+{
+    return m_languageInfoHasBeenSet;
 }
 
 

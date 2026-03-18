@@ -69,18 +69,18 @@ namespace TencentCloud
                     bool ClusterIDHasBeenSet() const;
 
                     /**
-                     * 获取被采集的点数
+                     * 获取被采集的点个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScrapedRate 被采集的点数
+                     * @return ScrapedRate 被采集的点个数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetScrapedRate() const;
 
                     /**
-                     * 设置被采集的点数
+                     * 设置被采集的点个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scrapedRate 被采集的点数
+                     * @param _scrapedRate 被采集的点个数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -119,18 +119,18 @@ namespace TencentCloud
                     bool JobsHasBeenSet() const;
 
                     /**
-                     * 获取过滤前的指标采集速率
+                     * 获取每秒过滤前的指标采集速率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SamplesRate 过滤前的指标采集速率
+                     * @return SamplesRate 每秒过滤前的指标采集速率
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetSamplesRate() const;
 
                     /**
-                     * 设置过滤前的指标采集速率
+                     * 设置每秒过滤前的指标采集速率
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _samplesRate 过滤前的指标采集速率
+                     * @param _samplesRate 每秒过滤前的指标采集速率
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -152,7 +152,7 @@ namespace TencentCloud
                     bool m_clusterIDHasBeenSet;
 
                     /**
-                     * 被采集的点数
+                     * 被采集的点个数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_scrapedRate;
@@ -166,7 +166,7 @@ namespace TencentCloud
                     bool m_jobsHasBeenSet;
 
                     /**
-                     * 过滤前的指标采集速率
+                     * 每秒过滤前的指标采集速率
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_samplesRate;

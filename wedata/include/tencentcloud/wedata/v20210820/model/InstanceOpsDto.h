@@ -28,6 +28,7 @@
 #include <tencentcloud/wedata/v20210820/model/InstanceOpsDto.h>
 #include <tencentcloud/wedata/v20210820/model/InstanceLifeCycleOpsDto.h>
 #include <tencentcloud/wedata/v20210820/model/StrToStrMap.h>
+#include <tencentcloud/wedata/v20210820/model/EventCaseAuditLogOptDto.h>
 
 
 namespace TencentCloud
@@ -1834,6 +1835,31 @@ namespace TencentCloud
                      */
                     bool ExtHasBeenSet() const;
 
+                    /**
+                     * 获取事件列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RelatedEventList 事件列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<EventCaseAuditLogOptDto> GetRelatedEventList() const;
+
+                    /**
+                     * 设置事件列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _relatedEventList 事件列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRelatedEventList(const std::vector<EventCaseAuditLogOptDto>& _relatedEventList);
+
+                    /**
+                     * 判断参数 RelatedEventList 是否已赋值
+                     * @return RelatedEventList 是否已赋值
+                     * 
+                     */
+                    bool RelatedEventListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2335,6 +2361,13 @@ namespace TencentCloud
                      */
                     StrToStrMap m_ext;
                     bool m_extHasBeenSet;
+
+                    /**
+                     * 事件列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<EventCaseAuditLogOptDto> m_relatedEventList;
+                    bool m_relatedEventListHasBeenSet;
 
                 };
             }

@@ -27,7 +27,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20230616/model/DeleteNoticeContentTmplsRequest.h
   include/tencentcloud/monitor/v20230616/model/PageByNoParams.h
   include/tencentcloud/monitor/v20230616/model/QCloudYeheWeChatNoticeTmplItem.h
-  include/tencentcloud/monitor/v20230616/model/PagerDutyRobotNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/QCloudYeheNoticeTmpl.h
   include/tencentcloud/monitor/v20230616/model/NoticeContentTmpl.h
   include/tencentcloud/monitor/v20230616/model/WeWorkRobotNoticeTmplMatcher.h
   include/tencentcloud/monitor/v20230616/model/NoticeContentTmplItem.h
@@ -38,15 +38,17 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20230616/model/DescribeNoticeContentTmplResponse.h
   include/tencentcloud/monitor/v20230616/model/PagerDutyRobotNoticeTmplHeader.h
   include/tencentcloud/monitor/v20230616/model/DescribeAlarmNotifyHistoriesResponse.h
+  include/tencentcloud/monitor/v20230616/model/GoogleChatRobotNoticeTmpl.h
   include/tencentcloud/monitor/v20230616/model/DingDingRobotNoticeTmpl.h
   include/tencentcloud/monitor/v20230616/model/PagerDutyRobotNoticeTmplMatcher.h
   include/tencentcloud/monitor/v20230616/model/WebhookNoticeTmplHeader.h
   include/tencentcloud/monitor/v20230616/model/FeiShuRobotNoticeTmpl.h
   include/tencentcloud/monitor/v20230616/model/DingDingRobotNoticeTmplMatcher.h
   include/tencentcloud/monitor/v20230616/model/TeamsRobotNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/GoogleChatRobotNoticeTmplMatcher.h
   include/tencentcloud/monitor/v20230616/model/WeWorkRobotNoticeTmpl.h
   include/tencentcloud/monitor/v20230616/model/DeleteNoticeContentTmplsResponse.h
-  include/tencentcloud/monitor/v20230616/model/QCloudYeheNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/PagerDutyRobotNoticeTmpl.h
   include/tencentcloud/monitor/v20230616/model/DescribeNoticeContentTmplRequest.h
   include/tencentcloud/monitor/v20230616/model/ModifyNoticeContentTmplRequest.h
   include/tencentcloud/monitor/v20230616/model/CreateNoticeContentTmplRequest.h
@@ -555,7 +557,7 @@ set(monitor_src
   src/v20230616/model/DeleteNoticeContentTmplsRequest.cpp
   src/v20230616/model/PageByNoParams.cpp
   src/v20230616/model/QCloudYeheWeChatNoticeTmplItem.cpp
-  src/v20230616/model/PagerDutyRobotNoticeTmpl.cpp
+  src/v20230616/model/QCloudYeheNoticeTmpl.cpp
   src/v20230616/model/NoticeContentTmpl.cpp
   src/v20230616/model/WeWorkRobotNoticeTmplMatcher.cpp
   src/v20230616/model/NoticeContentTmplItem.cpp
@@ -566,15 +568,17 @@ set(monitor_src
   src/v20230616/model/DescribeNoticeContentTmplResponse.cpp
   src/v20230616/model/PagerDutyRobotNoticeTmplHeader.cpp
   src/v20230616/model/DescribeAlarmNotifyHistoriesResponse.cpp
+  src/v20230616/model/GoogleChatRobotNoticeTmpl.cpp
   src/v20230616/model/DingDingRobotNoticeTmpl.cpp
   src/v20230616/model/PagerDutyRobotNoticeTmplMatcher.cpp
   src/v20230616/model/WebhookNoticeTmplHeader.cpp
   src/v20230616/model/FeiShuRobotNoticeTmpl.cpp
   src/v20230616/model/DingDingRobotNoticeTmplMatcher.cpp
   src/v20230616/model/TeamsRobotNoticeTmpl.cpp
+  src/v20230616/model/GoogleChatRobotNoticeTmplMatcher.cpp
   src/v20230616/model/WeWorkRobotNoticeTmpl.cpp
   src/v20230616/model/DeleteNoticeContentTmplsResponse.cpp
-  src/v20230616/model/QCloudYeheNoticeTmpl.cpp
+  src/v20230616/model/PagerDutyRobotNoticeTmpl.cpp
   src/v20230616/model/DescribeNoticeContentTmplRequest.cpp
   src/v20230616/model/ModifyNoticeContentTmplRequest.cpp
   src/v20230616/model/CreateNoticeContentTmplRequest.cpp

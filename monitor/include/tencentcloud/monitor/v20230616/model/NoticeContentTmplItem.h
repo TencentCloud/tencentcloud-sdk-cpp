@@ -31,6 +31,7 @@
 #include <tencentcloud/monitor/v20230616/model/WebhookNoticeTmplMatcher.h>
 #include <tencentcloud/monitor/v20230616/model/TeamsRobotNoticeTmplMatcher.h>
 #include <tencentcloud/monitor/v20230616/model/PagerDutyRobotNoticeTmplMatcher.h>
+#include <tencentcloud/monitor/v20230616/model/GoogleChatRobotNoticeTmplMatcher.h>
 
 
 namespace TencentCloud
@@ -228,6 +229,27 @@ namespace TencentCloud
                      */
                     bool PagerDutyRobotHasBeenSet() const;
 
+                    /**
+                     * 获取GoogleChat
+                     * @return GoogleChatRobot GoogleChat
+                     * 
+                     */
+                    std::vector<GoogleChatRobotNoticeTmplMatcher> GetGoogleChatRobot() const;
+
+                    /**
+                     * 设置GoogleChat
+                     * @param _googleChatRobot GoogleChat
+                     * 
+                     */
+                    void SetGoogleChatRobot(const std::vector<GoogleChatRobotNoticeTmplMatcher>& _googleChatRobot);
+
+                    /**
+                     * 判断参数 GoogleChatRobot 是否已赋值
+                     * @return GoogleChatRobot 是否已赋值
+                     * 
+                     */
+                    bool GoogleChatRobotHasBeenSet() const;
+
                 private:
 
                     /**
@@ -278,6 +300,12 @@ namespace TencentCloud
                      */
                     std::vector<PagerDutyRobotNoticeTmplMatcher> m_pagerDutyRobot;
                     bool m_pagerDutyRobotHasBeenSet;
+
+                    /**
+                     * GoogleChat
+                     */
+                    std::vector<GoogleChatRobotNoticeTmplMatcher> m_googleChatRobot;
+                    bool m_googleChatRobotHasBeenSet;
 
                 };
             }

@@ -37,8 +37,12 @@
 #include <tencentcloud/cynosdb/v20190107/model/AssociateSecurityGroupsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/BindClusterResourcePackagesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/BindClusterResourcePackagesResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/CalculateBackupSaveSecExpiresRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/CalculateBackupSaveSecExpiresResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CheckCreateLibraDBInstanceRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CheckCreateLibraDBInstanceResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/CheckTransferClusterZoneRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/CheckTransferClusterZoneResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CloseAuditServiceRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CloseAuditServiceResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CloseClusterPasswordComplexityRequest.h>
@@ -51,6 +55,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/CloseSSLResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CloseWanRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CloseWanResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/CopyBackupToVaultRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/CopyBackupToVaultResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CopyClusterPasswordComplexityRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CopyClusterPasswordComplexityResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateAccountsRequest.h>
@@ -81,6 +87,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/CreateProxyEndPointResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateResourcePackageRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateResourcePackageResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateVaultRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateVaultResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteAccountsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteAccountsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteAuditLogFileRequest.h>
@@ -89,6 +97,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DeleteAuditRuleTemplatesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteBackupRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteBackupResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DeleteBackupVaultRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DeleteBackupVaultResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteCLSDeliveryRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteCLSDeliveryResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteClusterDatabaseRequest.h>
@@ -101,6 +111,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DeleteLibraDBClusterAccountsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteParamTemplateRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteParamTemplateResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DeleteVaultsRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DeleteVaultsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeAccountAllGrantPrivilegesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeAccountAllGrantPrivilegesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeAccountPrivilegesRequest.h>
@@ -127,10 +139,14 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBackupDownloadUserRestrictionResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBackupListRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBackupListResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeBackupListByVaultRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeBackupListByVaultResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBinlogConfigRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBinlogConfigResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBinlogDownloadUrlRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBinlogDownloadUrlResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeBinlogListByVaultRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeBinlogListByVaultResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBinlogSaveDaysRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBinlogSaveDaysResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBinlogsRequest.h>
@@ -225,6 +241,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeProxyNodesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeProxySpecsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeProxySpecsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeRedoLogListByVaultRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeRedoLogListByVaultResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeRedoLogsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeRedoLogsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeResourcePackageDetailRequest.h>
@@ -251,6 +269,10 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeSupportProxyVersionResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeTasksRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeTasksResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeVaultBackupClusterInfoRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeVaultBackupClusterInfoResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeVaultsRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeVaultsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeZonesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeZonesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DisassociateSecurityGroupsRequest.h>
@@ -305,6 +327,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/ModifyBinlogConfigResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyBinlogSaveDaysRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyBinlogSaveDaysResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyClusterBinlogRedoLogAutoCopyVaultRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyClusterBinlogRedoLogAutoCopyVaultResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterDatabaseRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterDatabaseResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterGlobalEncryptionRequest.h>
@@ -363,6 +387,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/ModifyServerlessStrategyResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifySnapBackupCrossRegionConfigRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifySnapBackupCrossRegionConfigResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyVaultRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyVaultResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyVipVportRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyVipVportResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/OfflineClusterRequest.h>
@@ -435,6 +461,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/SwitchClusterZoneResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/SwitchProxyVpcRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/SwitchProxyVpcResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/TransferClusterZoneRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/TransferClusterZoneResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/UnbindClusterResourcePackagesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/UnbindClusterResourcePackagesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/UpgradeClusterVersionRequest.h>
@@ -480,9 +508,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindClusterResourcePackagesResponse> BindClusterResourcePackagesOutcome;
                 typedef std::future<BindClusterResourcePackagesOutcome> BindClusterResourcePackagesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::BindClusterResourcePackagesRequest&, BindClusterResourcePackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindClusterResourcePackagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CalculateBackupSaveSecExpiresResponse> CalculateBackupSaveSecExpiresOutcome;
+                typedef std::future<CalculateBackupSaveSecExpiresOutcome> CalculateBackupSaveSecExpiresOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::CalculateBackupSaveSecExpiresRequest&, CalculateBackupSaveSecExpiresOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CalculateBackupSaveSecExpiresAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckCreateLibraDBInstanceResponse> CheckCreateLibraDBInstanceOutcome;
                 typedef std::future<CheckCreateLibraDBInstanceOutcome> CheckCreateLibraDBInstanceOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CheckCreateLibraDBInstanceRequest&, CheckCreateLibraDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckCreateLibraDBInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckTransferClusterZoneResponse> CheckTransferClusterZoneOutcome;
+                typedef std::future<CheckTransferClusterZoneOutcome> CheckTransferClusterZoneOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::CheckTransferClusterZoneRequest&, CheckTransferClusterZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckTransferClusterZoneAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloseAuditServiceResponse> CloseAuditServiceOutcome;
                 typedef std::future<CloseAuditServiceOutcome> CloseAuditServiceOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CloseAuditServiceRequest&, CloseAuditServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseAuditServiceAsyncHandler;
@@ -501,6 +535,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CloseWanResponse> CloseWanOutcome;
                 typedef std::future<CloseWanOutcome> CloseWanOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CloseWanRequest&, CloseWanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseWanAsyncHandler;
+                typedef Outcome<Core::Error, Model::CopyBackupToVaultResponse> CopyBackupToVaultOutcome;
+                typedef std::future<CopyBackupToVaultOutcome> CopyBackupToVaultOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::CopyBackupToVaultRequest&, CopyBackupToVaultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopyBackupToVaultAsyncHandler;
                 typedef Outcome<Core::Error, Model::CopyClusterPasswordComplexityResponse> CopyClusterPasswordComplexityOutcome;
                 typedef std::future<CopyClusterPasswordComplexityOutcome> CopyClusterPasswordComplexityOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CopyClusterPasswordComplexityRequest&, CopyClusterPasswordComplexityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopyClusterPasswordComplexityAsyncHandler;
@@ -546,6 +583,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateResourcePackageResponse> CreateResourcePackageOutcome;
                 typedef std::future<CreateResourcePackageOutcome> CreateResourcePackageOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CreateResourcePackageRequest&, CreateResourcePackageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourcePackageAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVaultResponse> CreateVaultOutcome;
+                typedef std::future<CreateVaultOutcome> CreateVaultOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::CreateVaultRequest&, CreateVaultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVaultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAccountsResponse> DeleteAccountsOutcome;
                 typedef std::future<DeleteAccountsOutcome> DeleteAccountsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DeleteAccountsRequest&, DeleteAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountsAsyncHandler;
@@ -558,6 +598,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteBackupResponse> DeleteBackupOutcome;
                 typedef std::future<DeleteBackupOutcome> DeleteBackupOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DeleteBackupRequest&, DeleteBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBackupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteBackupVaultResponse> DeleteBackupVaultOutcome;
+                typedef std::future<DeleteBackupVaultOutcome> DeleteBackupVaultOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DeleteBackupVaultRequest&, DeleteBackupVaultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBackupVaultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCLSDeliveryResponse> DeleteCLSDeliveryOutcome;
                 typedef std::future<DeleteCLSDeliveryOutcome> DeleteCLSDeliveryOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DeleteCLSDeliveryRequest&, DeleteCLSDeliveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCLSDeliveryAsyncHandler;
@@ -576,6 +619,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteParamTemplateResponse> DeleteParamTemplateOutcome;
                 typedef std::future<DeleteParamTemplateOutcome> DeleteParamTemplateOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DeleteParamTemplateRequest&, DeleteParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteParamTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteVaultsResponse> DeleteVaultsOutcome;
+                typedef std::future<DeleteVaultsOutcome> DeleteVaultsOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DeleteVaultsRequest&, DeleteVaultsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVaultsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAccountAllGrantPrivilegesResponse> DescribeAccountAllGrantPrivilegesOutcome;
                 typedef std::future<DescribeAccountAllGrantPrivilegesOutcome> DescribeAccountAllGrantPrivilegesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeAccountAllGrantPrivilegesRequest&, DescribeAccountAllGrantPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountAllGrantPrivilegesAsyncHandler;
@@ -615,12 +661,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBackupListResponse> DescribeBackupListOutcome;
                 typedef std::future<DescribeBackupListOutcome> DescribeBackupListOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeBackupListRequest&, DescribeBackupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackupListByVaultResponse> DescribeBackupListByVaultOutcome;
+                typedef std::future<DescribeBackupListByVaultOutcome> DescribeBackupListByVaultOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeBackupListByVaultRequest&, DescribeBackupListByVaultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupListByVaultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBinlogConfigResponse> DescribeBinlogConfigOutcome;
                 typedef std::future<DescribeBinlogConfigOutcome> DescribeBinlogConfigOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeBinlogConfigRequest&, DescribeBinlogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBinlogConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBinlogDownloadUrlResponse> DescribeBinlogDownloadUrlOutcome;
                 typedef std::future<DescribeBinlogDownloadUrlOutcome> DescribeBinlogDownloadUrlOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeBinlogDownloadUrlRequest&, DescribeBinlogDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBinlogDownloadUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBinlogListByVaultResponse> DescribeBinlogListByVaultOutcome;
+                typedef std::future<DescribeBinlogListByVaultOutcome> DescribeBinlogListByVaultOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeBinlogListByVaultRequest&, DescribeBinlogListByVaultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBinlogListByVaultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBinlogSaveDaysResponse> DescribeBinlogSaveDaysOutcome;
                 typedef std::future<DescribeBinlogSaveDaysOutcome> DescribeBinlogSaveDaysOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeBinlogSaveDaysRequest&, DescribeBinlogSaveDaysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBinlogSaveDaysAsyncHandler;
@@ -762,6 +814,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProxySpecsResponse> DescribeProxySpecsOutcome;
                 typedef std::future<DescribeProxySpecsOutcome> DescribeProxySpecsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeProxySpecsRequest&, DescribeProxySpecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProxySpecsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRedoLogListByVaultResponse> DescribeRedoLogListByVaultOutcome;
+                typedef std::future<DescribeRedoLogListByVaultOutcome> DescribeRedoLogListByVaultOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeRedoLogListByVaultRequest&, DescribeRedoLogListByVaultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedoLogListByVaultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRedoLogsResponse> DescribeRedoLogsOutcome;
                 typedef std::future<DescribeRedoLogsOutcome> DescribeRedoLogsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeRedoLogsRequest&, DescribeRedoLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedoLogsAsyncHandler;
@@ -801,6 +856,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTasksResponse> DescribeTasksOutcome;
                 typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeTasksRequest&, DescribeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVaultBackupClusterInfoResponse> DescribeVaultBackupClusterInfoOutcome;
+                typedef std::future<DescribeVaultBackupClusterInfoOutcome> DescribeVaultBackupClusterInfoOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeVaultBackupClusterInfoRequest&, DescribeVaultBackupClusterInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVaultBackupClusterInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVaultsResponse> DescribeVaultsOutcome;
+                typedef std::future<DescribeVaultsOutcome> DescribeVaultsOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeVaultsRequest&, DescribeVaultsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVaultsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeZonesResponse> DescribeZonesOutcome;
                 typedef std::future<DescribeZonesOutcome> DescribeZonesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeZonesRequest&, DescribeZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZonesAsyncHandler;
@@ -882,6 +943,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBinlogSaveDaysResponse> ModifyBinlogSaveDaysOutcome;
                 typedef std::future<ModifyBinlogSaveDaysOutcome> ModifyBinlogSaveDaysOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyBinlogSaveDaysRequest&, ModifyBinlogSaveDaysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBinlogSaveDaysAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyClusterBinlogRedoLogAutoCopyVaultResponse> ModifyClusterBinlogRedoLogAutoCopyVaultOutcome;
+                typedef std::future<ModifyClusterBinlogRedoLogAutoCopyVaultOutcome> ModifyClusterBinlogRedoLogAutoCopyVaultOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyClusterBinlogRedoLogAutoCopyVaultRequest&, ModifyClusterBinlogRedoLogAutoCopyVaultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterBinlogRedoLogAutoCopyVaultAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyClusterDatabaseResponse> ModifyClusterDatabaseOutcome;
                 typedef std::future<ModifyClusterDatabaseOutcome> ModifyClusterDatabaseOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyClusterDatabaseRequest&, ModifyClusterDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterDatabaseAsyncHandler;
@@ -969,6 +1033,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySnapBackupCrossRegionConfigResponse> ModifySnapBackupCrossRegionConfigOutcome;
                 typedef std::future<ModifySnapBackupCrossRegionConfigOutcome> ModifySnapBackupCrossRegionConfigOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifySnapBackupCrossRegionConfigRequest&, ModifySnapBackupCrossRegionConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySnapBackupCrossRegionConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyVaultResponse> ModifyVaultOutcome;
+                typedef std::future<ModifyVaultOutcome> ModifyVaultOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyVaultRequest&, ModifyVaultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVaultAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyVipVportResponse> ModifyVipVportOutcome;
                 typedef std::future<ModifyVipVportOutcome> ModifyVipVportOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyVipVportRequest&, ModifyVipVportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVipVportAsyncHandler;
@@ -1077,6 +1144,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SwitchProxyVpcResponse> SwitchProxyVpcOutcome;
                 typedef std::future<SwitchProxyVpcOutcome> SwitchProxyVpcOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::SwitchProxyVpcRequest&, SwitchProxyVpcOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchProxyVpcAsyncHandler;
+                typedef Outcome<Core::Error, Model::TransferClusterZoneResponse> TransferClusterZoneOutcome;
+                typedef std::future<TransferClusterZoneOutcome> TransferClusterZoneOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::TransferClusterZoneRequest&, TransferClusterZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransferClusterZoneAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnbindClusterResourcePackagesResponse> UnbindClusterResourcePackagesOutcome;
                 typedef std::future<UnbindClusterResourcePackagesOutcome> UnbindClusterResourcePackagesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::UnbindClusterResourcePackagesRequest&, UnbindClusterResourcePackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindClusterResourcePackagesAsyncHandler;
@@ -1159,6 +1229,15 @@ namespace TencentCloud
                 BindClusterResourcePackagesOutcomeCallable BindClusterResourcePackagesCallable(const Model::BindClusterResourcePackagesRequest& request);
 
                 /**
+                 *计算修改备份保留时长后将会过期删除的备份文件列表
+                 * @param req CalculateBackupSaveSecExpiresRequest
+                 * @return CalculateBackupSaveSecExpiresOutcome
+                 */
+                CalculateBackupSaveSecExpiresOutcome CalculateBackupSaveSecExpires(const Model::CalculateBackupSaveSecExpiresRequest &request);
+                void CalculateBackupSaveSecExpiresAsync(const Model::CalculateBackupSaveSecExpiresRequest& request, const CalculateBackupSaveSecExpiresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CalculateBackupSaveSecExpiresOutcomeCallable CalculateBackupSaveSecExpiresCallable(const Model::CalculateBackupSaveSecExpiresRequest& request);
+
+                /**
                  *本接口（CheckCreateLibraDBInstance）用于校验集群是否可以添加只读分析引擎实例
                  * @param req CheckCreateLibraDBInstanceRequest
                  * @return CheckCreateLibraDBInstanceOutcome
@@ -1166,6 +1245,15 @@ namespace TencentCloud
                 CheckCreateLibraDBInstanceOutcome CheckCreateLibraDBInstance(const Model::CheckCreateLibraDBInstanceRequest &request);
                 void CheckCreateLibraDBInstanceAsync(const Model::CheckCreateLibraDBInstanceRequest& request, const CheckCreateLibraDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckCreateLibraDBInstanceOutcomeCallable CheckCreateLibraDBInstanceCallable(const Model::CheckCreateLibraDBInstanceRequest& request);
+
+                /**
+                 *本接口（CheckTransferClusterZone）用于检查是否可以发起跨可用区迁移。
+                 * @param req CheckTransferClusterZoneRequest
+                 * @return CheckTransferClusterZoneOutcome
+                 */
+                CheckTransferClusterZoneOutcome CheckTransferClusterZone(const Model::CheckTransferClusterZoneRequest &request);
+                void CheckTransferClusterZoneAsync(const Model::CheckTransferClusterZoneRequest& request, const CheckTransferClusterZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckTransferClusterZoneOutcomeCallable CheckTransferClusterZoneCallable(const Model::CheckTransferClusterZoneRequest& request);
 
                 /**
                  *本接口（CloseAuditService）用于关闭 TDSQL-C MySQL 实例的数据库审计服务。
@@ -1220,6 +1308,15 @@ namespace TencentCloud
                 CloseWanOutcome CloseWan(const Model::CloseWanRequest &request);
                 void CloseWanAsync(const Model::CloseWanRequest& request, const CloseWanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CloseWanOutcomeCallable CloseWanCallable(const Model::CloseWanRequest& request);
+
+                /**
+                 *将备份文件复制到指定的备份保险箱
+                 * @param req CopyBackupToVaultRequest
+                 * @return CopyBackupToVaultOutcome
+                 */
+                CopyBackupToVaultOutcome CopyBackupToVault(const Model::CopyBackupToVaultRequest &request);
+                void CopyBackupToVaultAsync(const Model::CopyBackupToVaultRequest& request, const CopyBackupToVaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CopyBackupToVaultOutcomeCallable CopyBackupToVaultCallable(const Model::CopyBackupToVaultRequest& request);
 
                 /**
                  *本接口（CopyClusterPasswordComplexity）用于复制集群密码复杂度。
@@ -1357,6 +1454,15 @@ namespace TencentCloud
                 CreateResourcePackageOutcomeCallable CreateResourcePackageCallable(const Model::CreateResourcePackageRequest& request);
 
                 /**
+                 *创建备份保险箱
+                 * @param req CreateVaultRequest
+                 * @return CreateVaultOutcome
+                 */
+                CreateVaultOutcome CreateVault(const Model::CreateVaultRequest &request);
+                void CreateVaultAsync(const Model::CreateVaultRequest& request, const CreateVaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVaultOutcomeCallable CreateVaultCallable(const Model::CreateVaultRequest& request);
+
+                /**
                  *本接口（DeleteAccounts）用于删除用户账号。
                  * @param req DeleteAccountsRequest
                  * @return DeleteAccountsOutcome
@@ -1391,6 +1497,15 @@ namespace TencentCloud
                 DeleteBackupOutcome DeleteBackup(const Model::DeleteBackupRequest &request);
                 void DeleteBackupAsync(const Model::DeleteBackupRequest& request, const DeleteBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteBackupOutcomeCallable DeleteBackupCallable(const Model::DeleteBackupRequest& request);
+
+                /**
+                 *从备份保险箱中删除指定的备份文件
+                 * @param req DeleteBackupVaultRequest
+                 * @return DeleteBackupVaultOutcome
+                 */
+                DeleteBackupVaultOutcome DeleteBackupVault(const Model::DeleteBackupVaultRequest &request);
+                void DeleteBackupVaultAsync(const Model::DeleteBackupVaultRequest& request, const DeleteBackupVaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteBackupVaultOutcomeCallable DeleteBackupVaultCallable(const Model::DeleteBackupVaultRequest& request);
 
                 /**
                  *本接口（DeleteCLSDelivery）用于删除日志投递。
@@ -1445,6 +1560,15 @@ namespace TencentCloud
                 DeleteParamTemplateOutcome DeleteParamTemplate(const Model::DeleteParamTemplateRequest &request);
                 void DeleteParamTemplateAsync(const Model::DeleteParamTemplateRequest& request, const DeleteParamTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteParamTemplateOutcomeCallable DeleteParamTemplateCallable(const Model::DeleteParamTemplateRequest& request);
+
+                /**
+                 *批量删除备份保险箱
+                 * @param req DeleteVaultsRequest
+                 * @return DeleteVaultsOutcome
+                 */
+                DeleteVaultsOutcome DeleteVaults(const Model::DeleteVaultsRequest &request);
+                void DeleteVaultsAsync(const Model::DeleteVaultsRequest& request, const DeleteVaultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVaultsOutcomeCallable DeleteVaultsCallable(const Model::DeleteVaultsRequest& request);
 
                 /**
                  *本接口（DescribeAccountAllGrantPrivileges）用于查询账号所有可授予的权限。
@@ -1564,6 +1688,15 @@ namespace TencentCloud
                 DescribeBackupListOutcomeCallable DescribeBackupListCallable(const Model::DescribeBackupListRequest& request);
 
                 /**
+                 *根据保险箱ID查询备份文件列表
+                 * @param req DescribeBackupListByVaultRequest
+                 * @return DescribeBackupListByVaultOutcome
+                 */
+                DescribeBackupListByVaultOutcome DescribeBackupListByVault(const Model::DescribeBackupListByVaultRequest &request);
+                void DescribeBackupListByVaultAsync(const Model::DescribeBackupListByVaultRequest& request, const DescribeBackupListByVaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupListByVaultOutcomeCallable DescribeBackupListByVaultCallable(const Model::DescribeBackupListByVaultRequest& request);
+
+                /**
                  *该接口（DescribeBinlogConfig）用于查询binlog配置
                  * @param req DescribeBinlogConfigRequest
                  * @return DescribeBinlogConfigOutcome
@@ -1580,6 +1713,15 @@ namespace TencentCloud
                 DescribeBinlogDownloadUrlOutcome DescribeBinlogDownloadUrl(const Model::DescribeBinlogDownloadUrlRequest &request);
                 void DescribeBinlogDownloadUrlAsync(const Model::DescribeBinlogDownloadUrlRequest& request, const DescribeBinlogDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBinlogDownloadUrlOutcomeCallable DescribeBinlogDownloadUrlCallable(const Model::DescribeBinlogDownloadUrlRequest& request);
+
+                /**
+                 *查询保险箱内binlog备份
+                 * @param req DescribeBinlogListByVaultRequest
+                 * @return DescribeBinlogListByVaultOutcome
+                 */
+                DescribeBinlogListByVaultOutcome DescribeBinlogListByVault(const Model::DescribeBinlogListByVaultRequest &request);
+                void DescribeBinlogListByVaultAsync(const Model::DescribeBinlogListByVaultRequest& request, const DescribeBinlogListByVaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBinlogListByVaultOutcomeCallable DescribeBinlogListByVaultCallable(const Model::DescribeBinlogListByVaultRequest& request);
 
                 /**
                  *此接口（DescribeBinlogSaveDays）用于查询集群的Binlog保留天数。
@@ -2005,6 +2147,15 @@ namespace TencentCloud
                 DescribeProxySpecsOutcomeCallable DescribeProxySpecsCallable(const Model::DescribeProxySpecsRequest& request);
 
                 /**
+                 *查询RedoLog备份
+                 * @param req DescribeRedoLogListByVaultRequest
+                 * @return DescribeRedoLogListByVaultOutcome
+                 */
+                DescribeRedoLogListByVaultOutcome DescribeRedoLogListByVault(const Model::DescribeRedoLogListByVaultRequest &request);
+                void DescribeRedoLogListByVaultAsync(const Model::DescribeRedoLogListByVaultRequest& request, const DescribeRedoLogListByVaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRedoLogListByVaultOutcomeCallable DescribeRedoLogListByVaultCallable(const Model::DescribeRedoLogListByVaultRequest& request);
+
+                /**
                  *本接口（DescribeRedoLogs）用于查询redo日志列表。
                  * @param req DescribeRedoLogsRequest
                  * @return DescribeRedoLogsOutcome
@@ -2120,6 +2271,24 @@ namespace TencentCloud
                 DescribeTasksOutcome DescribeTasks(const Model::DescribeTasksRequest &request);
                 void DescribeTasksAsync(const Model::DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTasksOutcomeCallable DescribeTasksCallable(const Model::DescribeTasksRequest& request);
+
+                /**
+                 *查询备份保险箱关联的集群信息列表
+                 * @param req DescribeVaultBackupClusterInfoRequest
+                 * @return DescribeVaultBackupClusterInfoOutcome
+                 */
+                DescribeVaultBackupClusterInfoOutcome DescribeVaultBackupClusterInfo(const Model::DescribeVaultBackupClusterInfoRequest &request);
+                void DescribeVaultBackupClusterInfoAsync(const Model::DescribeVaultBackupClusterInfoRequest& request, const DescribeVaultBackupClusterInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVaultBackupClusterInfoOutcomeCallable DescribeVaultBackupClusterInfoCallable(const Model::DescribeVaultBackupClusterInfoRequest& request);
+
+                /**
+                 *查询备份保险箱列表，支持分页、筛选和排序
+                 * @param req DescribeVaultsRequest
+                 * @return DescribeVaultsOutcome
+                 */
+                DescribeVaultsOutcome DescribeVaults(const Model::DescribeVaultsRequest &request);
+                void DescribeVaultsAsync(const Model::DescribeVaultsRequest& request, const DescribeVaultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVaultsOutcomeCallable DescribeVaultsCallable(const Model::DescribeVaultsRequest& request);
 
                 /**
                  *本接口（DescribeZones）用于查询可售卖地域可用区信息。
@@ -2363,6 +2532,15 @@ namespace TencentCloud
                 ModifyBinlogSaveDaysOutcome ModifyBinlogSaveDays(const Model::ModifyBinlogSaveDaysRequest &request);
                 void ModifyBinlogSaveDaysAsync(const Model::ModifyBinlogSaveDaysRequest& request, const ModifyBinlogSaveDaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyBinlogSaveDaysOutcomeCallable ModifyBinlogSaveDaysCallable(const Model::ModifyBinlogSaveDaysRequest& request);
+
+                /**
+                 *修改集群Binlog和RedoLog自动拷贝到保险箱的配置
+                 * @param req ModifyClusterBinlogRedoLogAutoCopyVaultRequest
+                 * @return ModifyClusterBinlogRedoLogAutoCopyVaultOutcome
+                 */
+                ModifyClusterBinlogRedoLogAutoCopyVaultOutcome ModifyClusterBinlogRedoLogAutoCopyVault(const Model::ModifyClusterBinlogRedoLogAutoCopyVaultRequest &request);
+                void ModifyClusterBinlogRedoLogAutoCopyVaultAsync(const Model::ModifyClusterBinlogRedoLogAutoCopyVaultRequest& request, const ModifyClusterBinlogRedoLogAutoCopyVaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterBinlogRedoLogAutoCopyVaultOutcomeCallable ModifyClusterBinlogRedoLogAutoCopyVaultCallable(const Model::ModifyClusterBinlogRedoLogAutoCopyVaultRequest& request);
 
                 /**
                  *本接口（ModifyClusterDatabase）用于修改数据库的账号授权。
@@ -2624,6 +2802,15 @@ namespace TencentCloud
                 ModifySnapBackupCrossRegionConfigOutcome ModifySnapBackupCrossRegionConfig(const Model::ModifySnapBackupCrossRegionConfigRequest &request);
                 void ModifySnapBackupCrossRegionConfigAsync(const Model::ModifySnapBackupCrossRegionConfigRequest& request, const ModifySnapBackupCrossRegionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySnapBackupCrossRegionConfigOutcomeCallable ModifySnapBackupCrossRegionConfigCallable(const Model::ModifySnapBackupCrossRegionConfigRequest& request);
+
+                /**
+                 *修改备份保险箱配置，包括名称、描述、保留时长、加密密钥、锁定时间等
+                 * @param req ModifyVaultRequest
+                 * @return ModifyVaultOutcome
+                 */
+                ModifyVaultOutcome ModifyVault(const Model::ModifyVaultRequest &request);
+                void ModifyVaultAsync(const Model::ModifyVaultRequest& request, const ModifyVaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyVaultOutcomeCallable ModifyVaultCallable(const Model::ModifyVaultRequest& request);
 
                 /**
                  *本接口（ModifyVipVport）用于修改实例组ip，端口。
@@ -2948,6 +3135,15 @@ namespace TencentCloud
                 SwitchProxyVpcOutcome SwitchProxyVpc(const Model::SwitchProxyVpcRequest &request);
                 void SwitchProxyVpcAsync(const Model::SwitchProxyVpcRequest& request, const SwitchProxyVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SwitchProxyVpcOutcomeCallable SwitchProxyVpcCallable(const Model::SwitchProxyVpcRequest& request);
+
+                /**
+                 *本接口（TransferClusterZone）用于发起跨可用区迁移。
+                 * @param req TransferClusterZoneRequest
+                 * @return TransferClusterZoneOutcome
+                 */
+                TransferClusterZoneOutcome TransferClusterZone(const Model::TransferClusterZoneRequest &request);
+                void TransferClusterZoneAsync(const Model::TransferClusterZoneRequest& request, const TransferClusterZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TransferClusterZoneOutcomeCallable TransferClusterZoneCallable(const Model::TransferClusterZoneRequest& request);
 
                 /**
                  *本接口（UnbindClusterResourcePackages）用于解除资源包与集群之间的绑定关系。

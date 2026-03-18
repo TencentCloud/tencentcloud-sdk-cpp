@@ -53,7 +53,8 @@ RoomInfo::RoomInfo() :
     m_whiteBoardSnapshotModeHasBeenSet(false),
     m_subtitlesTranscriptionHasBeenSet(false),
     m_guestsHasBeenSet(false),
-    m_recordMergeHasBeenSet(false)
+    m_recordMergeHasBeenSet(false),
+    m_enableLiveRelayHasBeenSet(false)
 {
 }
 
@@ -398,6 +399,16 @@ CoreInternalOutcome RoomInfo::Deserialize(const rapidjson::Value &value)
         m_recordMergeHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableLiveRelay") && !value["EnableLiveRelay"].IsNull())
+    {
+        if (!value["EnableLiveRelay"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoomInfo.EnableLiveRelay` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableLiveRelay = value["EnableLiveRelay"].GetUint64();
+        m_enableLiveRelayHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -677,6 +688,14 @@ void RoomInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "RecordMerge";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_recordMerge, allocator);
+    }
+
+    if (m_enableLiveRelayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableLiveRelay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableLiveRelay, allocator);
     }
 
 }
@@ -1208,5 +1227,21 @@ void RoomInfo::SetRecordMerge(const uint64_t& _recordMerge)
 bool RoomInfo::RecordMergeHasBeenSet() const
 {
     return m_recordMergeHasBeenSet;
+}
+
+uint64_t RoomInfo::GetEnableLiveRelay() const
+{
+    return m_enableLiveRelay;
+}
+
+void RoomInfo::SetEnableLiveRelay(const uint64_t& _enableLiveRelay)
+{
+    m_enableLiveRelay = _enableLiveRelay;
+    m_enableLiveRelayHasBeenSet = true;
+}
+
+bool RoomInfo::EnableLiveRelayHasBeenSet() const
+{
+    return m_enableLiveRelayHasBeenSet;
 }
 

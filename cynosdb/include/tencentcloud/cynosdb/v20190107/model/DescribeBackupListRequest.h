@@ -361,6 +361,27 @@ namespace TencentCloud
                      */
                     bool IsCrossRegionsBackupHasBeenSet() const;
 
+                    /**
+                     * 获取需要查询的状态
+                     * @return BackupStatus 需要查询的状态
+                     * 
+                     */
+                    std::vector<std::string> GetBackupStatus() const;
+
+                    /**
+                     * 设置需要查询的状态
+                     * @param _backupStatus 需要查询的状态
+                     * 
+                     */
+                    void SetBackupStatus(const std::vector<std::string>& _backupStatus);
+
+                    /**
+                     * 判断参数 BackupStatus 是否已赋值
+                     * @return BackupStatus 是否已赋值
+                     * 
+                     */
+                    bool BackupStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -453,6 +474,12 @@ namespace TencentCloud
                      */
                     std::string m_isCrossRegionsBackup;
                     bool m_isCrossRegionsBackupHasBeenSet;
+
+                    /**
+                     * 需要查询的状态
+                     */
+                    std::vector<std::string> m_backupStatus;
+                    bool m_backupStatusHasBeenSet;
 
                 };
             }

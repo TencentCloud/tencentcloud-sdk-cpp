@@ -2440,6 +2440,56 @@ TioneClient::DescribePlatformImagesOutcomeCallable TioneClient::DescribePlatform
     return prom->get_future();
 }
 
+TioneClient::DescribePublicAlgoVersionListOutcome TioneClient::DescribePublicAlgoVersionList(const DescribePublicAlgoVersionListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePublicAlgoVersionList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePublicAlgoVersionListResponse rsp = DescribePublicAlgoVersionListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePublicAlgoVersionListOutcome(rsp);
+        else
+            return DescribePublicAlgoVersionListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePublicAlgoVersionListOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribePublicAlgoVersionListAsync(const DescribePublicAlgoVersionListRequest& request, const DescribePublicAlgoVersionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePublicAlgoVersionListRequest&;
+    using Resp = DescribePublicAlgoVersionListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePublicAlgoVersionList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DescribePublicAlgoVersionListOutcomeCallable TioneClient::DescribePublicAlgoVersionListCallable(const DescribePublicAlgoVersionListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePublicAlgoVersionListOutcome>>();
+    DescribePublicAlgoVersionListAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DescribePublicAlgoVersionListRequest&,
+        DescribePublicAlgoVersionListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TioneClient::DescribeSubAccountLinuxUserInfosOutcome TioneClient::DescribeSubAccountLinuxUserInfos(const DescribeSubAccountLinuxUserInfosRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSubAccountLinuxUserInfos");

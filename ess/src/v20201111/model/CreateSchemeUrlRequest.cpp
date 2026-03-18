@@ -39,7 +39,8 @@ CreateSchemeUrlRequest::CreateSchemeUrlRequest() :
     m_recipientIdHasBeenSet(false),
     m_flowGroupUrlInfoHasBeenSet(false),
     m_urlUseEnvHasBeenSet(false),
-    m_pickUpAfterJoinedHasBeenSet(false)
+    m_pickUpAfterJoinedHasBeenSet(false),
+    m_canSkipReadFlowHasBeenSet(false)
 {
 }
 
@@ -192,6 +193,14 @@ string CreateSchemeUrlRequest::ToJsonString() const
         string key = "PickUpAfterJoined";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pickUpAfterJoined, allocator);
+    }
+
+    if (m_canSkipReadFlowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanSkipReadFlow";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_canSkipReadFlow, allocator);
     }
 
 
@@ -472,6 +481,22 @@ void CreateSchemeUrlRequest::SetPickUpAfterJoined(const bool& _pickUpAfterJoined
 bool CreateSchemeUrlRequest::PickUpAfterJoinedHasBeenSet() const
 {
     return m_pickUpAfterJoinedHasBeenSet;
+}
+
+bool CreateSchemeUrlRequest::GetCanSkipReadFlow() const
+{
+    return m_canSkipReadFlow;
+}
+
+void CreateSchemeUrlRequest::SetCanSkipReadFlow(const bool& _canSkipReadFlow)
+{
+    m_canSkipReadFlow = _canSkipReadFlow;
+    m_canSkipReadFlowHasBeenSet = true;
+}
+
+bool CreateSchemeUrlRequest::CanSkipReadFlowHasBeenSet() const
+{
+    return m_canSkipReadFlowHasBeenSet;
 }
 
 

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取课堂名称。
-                     * @return Name 课堂名称。
+                     * 获取<p>课堂名称。</p>
+                     * @return Name <p>课堂名称。</p>
                      * 
                      */
                     std::string GetName() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取预定的课堂开始时间，unix时间戳（秒）。
-                     * @return StartTime 预定的课堂开始时间，unix时间戳（秒）。
+                     * 获取<p>预定的课堂开始时间，unix时间戳（秒）。</p>
+                     * @return StartTime <p>预定的课堂开始时间，unix时间戳（秒）。</p>
                      * 
                      */
                     uint64_t GetStartTime() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取预定的课堂结束时间，unix时间戳（秒）。
-                     * @return EndTime 预定的课堂结束时间，unix时间戳（秒）。
+                     * 获取<p>预定的课堂结束时间，unix时间戳（秒）。</p>
+                     * @return EndTime <p>预定的课堂结束时间，unix时间戳（秒）。</p>
                      * 
                      */
                     uint64_t GetEndTime() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取老师的UserId。
-                     * @return TeacherId 老师的UserId。
+                     * 获取<p>老师的UserId。</p>
+                     * @return TeacherId <p>老师的UserId。</p>
                      * 
                      */
                     std::string GetTeacherId() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool TeacherIdHasBeenSet() const;
 
                     /**
-                     * 获取低代码互动课堂的SdkAppId。
-                     * @return SdkAppId 低代码互动课堂的SdkAppId。
+                     * 获取<p>低代码互动课堂的SdkAppId。</p>
+                     * @return SdkAppId <p>低代码互动课堂的SdkAppId。</p>
                      * 
                      */
                     uint64_t GetSdkAppId() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取观看类型。互动观看 （默认）	
-                     * @return AudienceType 观看类型。互动观看 （默认）	
+                     * 获取<p>观看类型。互动观看 （默认）</p>
+                     * @return AudienceType <p>观看类型。互动观看 （默认）</p>
                      * 
                      */
                     uint64_t GetAudienceType() const;
@@ -128,14 +128,8 @@ namespace TencentCloud
                     bool AudienceTypeHasBeenSet() const;
 
                     /**
-                     * 获取头像区域，摄像头视频画面的分辨率。可以有如下取值：
-1 标清
-2 高清
-3 全高清
-                     * @return Resolution 头像区域，摄像头视频画面的分辨率。可以有如下取值：
-1 标清
-2 高清
-3 全高清
+                     * 获取<p>头像区域，摄像头视频画面的分辨率。可以有如下取值：<br>1 标清<br>2 高清<br>3 全高清</p>
+                     * @return Resolution <p>头像区域，摄像头视频画面的分辨率。可以有如下取值：<br>1 标清<br>2 高清<br>3 全高清</p>
                      * 
                      */
                     uint64_t GetResolution() const;
@@ -148,8 +142,8 @@ namespace TencentCloud
                     bool ResolutionHasBeenSet() const;
 
                     /**
-                     * 获取设置课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。
-                     * @return MaxMicNumber 设置课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。
+                     * 获取<p>设置课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。</p>
+                     * @return MaxMicNumber <p>设置课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。</p>
                      * 
                      */
                     uint64_t GetMaxMicNumber() const;
@@ -162,12 +156,8 @@ namespace TencentCloud
                     bool MaxMicNumberHasBeenSet() const;
 
                     /**
-                     * 获取进入课堂时是否自动连麦。可以有以下取值：
-0 不自动连麦（需要手动申请上麦，默认值）
-1 自动连麦
-                     * @return AutoMic 进入课堂时是否自动连麦。可以有以下取值：
-0 不自动连麦（需要手动申请上麦，默认值）
-1 自动连麦
+                     * 获取<p>进入课堂时是否自动连麦。可以有以下取值：<br>0 不自动连麦（需要手动申请上麦，默认值）<br>1 自动连麦</p>
+                     * @return AutoMic <p>进入课堂时是否自动连麦。可以有以下取值：<br>0 不自动连麦（需要手动申请上麦，默认值）<br>1 自动连麦</p>
                      * 
                      */
                     uint64_t GetAutoMic() const;
@@ -180,12 +170,8 @@ namespace TencentCloud
                     bool AutoMicHasBeenSet() const;
 
                     /**
-                     * 获取高音质模式。可以有以下取值：
-0 不开启高音质（默认值）
-1 开启高音质
-                     * @return AudioQuality 高音质模式。可以有以下取值：
-0 不开启高音质（默认值）
-1 开启高音质
+                     * 获取<p>高音质模式。可以有以下取值：<br>0 不开启高音质（默认值）<br>1 开启高音质</p>
+                     * @return AudioQuality <p>高音质模式。可以有以下取值：<br>0 不开启高音质（默认值）<br>1 开启高音质</p>
                      * 
                      */
                     uint64_t GetAudioQuality() const;
@@ -198,8 +184,8 @@ namespace TencentCloud
                     bool AudioQualityHasBeenSet() const;
 
                     /**
-                     * 获取课堂子类型，可以有以下取值：videodoc 文档+视频video 纯视频
-                     * @return SubType 课堂子类型，可以有以下取值：videodoc 文档+视频video 纯视频
+                     * 获取<p>课堂子类型，可以有以下取值：videodoc 文档+视频video 纯视频</p>
+                     * @return SubType <p>课堂子类型，可以有以下取值：videodoc 文档+视频video 纯视频</p>
                      * 
                      */
                     std::string GetSubType() const;
@@ -212,14 +198,8 @@ namespace TencentCloud
                     bool SubTypeHasBeenSet() const;
 
                     /**
-                     * 获取上课后是否禁止自动录制。可以有以下取值：
-0 不禁止录制（自动开启录制，默认值）
-1 禁止录制
-注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。
-                     * @return DisableRecord 上课后是否禁止自动录制。可以有以下取值：
-0 不禁止录制（自动开启录制，默认值）
-1 禁止录制
-注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。
+                     * 获取<p>录制方式。</p><p>枚举值：</p><ul><li>0： 开启自动录制</li><li>1： 禁止录制</li><li>2： 开启手动录制。（仅支持页面录制，需通过startRecord、stopRecord接口控制录制的开始和结束。）</li><li>3： 信令录制。</li></ul>
+                     * @return DisableRecord <p>录制方式。</p><p>枚举值：</p><ul><li>0： 开启自动录制</li><li>1： 禁止录制</li><li>2： 开启手动录制。（仅支持页面录制，需通过startRecord、stopRecord接口控制录制的开始和结束。）</li><li>3： 信令录制。</li></ul>
                      * 
                      */
                     uint64_t GetDisableRecord() const;
@@ -232,8 +212,8 @@ namespace TencentCloud
                     bool DisableRecordHasBeenSet() const;
 
                     /**
-                     * 获取助教UserId列表。
-                     * @return Assistants 助教UserId列表。
+                     * 获取<p>助教UserId列表。</p>
+                     * @return Assistants <p>助教UserId列表。</p>
                      * 
                      */
                     std::vector<std::string> GetAssistants() const;
@@ -246,8 +226,8 @@ namespace TencentCloud
                     bool AssistantsHasBeenSet() const;
 
                     /**
-                     * 获取录制地址（协议为https)。仅在房间结束后存在。
-                     * @return RecordUrl 录制地址（协议为https)。仅在房间结束后存在。
+                     * 获取<p>录制地址（协议为https)。仅在房间结束后存在。</p>
+                     * @return RecordUrl <p>录制地址（协议为https)。仅在房间结束后存在。</p>
                      * 
                      */
                     std::string GetRecordUrl() const;
@@ -260,8 +240,8 @@ namespace TencentCloud
                     bool RecordUrlHasBeenSet() const;
 
                     /**
-                     * 获取课堂状态。0为未开始，1为已开始，2为已结束，3为已过期。
-                     * @return Status 课堂状态。0为未开始，1为已开始，2为已结束，3为已过期。
+                     * 获取<p>课堂状态。0为未开始，1为已开始，2为已结束，3为已过期。</p>
+                     * @return Status <p>课堂状态。0为未开始，1为已开始，2为已结束，3为已过期。</p>
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -274,8 +254,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取课堂绑定的群组ID
-                     * @return GroupId 课堂绑定的群组ID
+                     * 获取<p>课堂绑定的群组ID</p>
+                     * @return GroupId <p>课堂绑定的群组ID</p>
                      * 
                      */
                     std::string GetGroupId() const;
@@ -288,8 +268,8 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取打开学生麦克风/摄像头的授权开关
-                     * @return EnableDirectControl 打开学生麦克风/摄像头的授权开关
+                     * 获取<p>打开学生麦克风/摄像头的授权开关</p>
+                     * @return EnableDirectControl <p>打开学生麦克风/摄像头的授权开关</p>
                      * 
                      */
                     uint64_t GetEnableDirectControl() const;
@@ -302,12 +282,8 @@ namespace TencentCloud
                     bool EnableDirectControlHasBeenSet() const;
 
                     /**
-                     * 获取开启专注模式。
-0 收看全部角色音视频(默认)
-1 只看老师和助教
-                     * @return InteractionMode 开启专注模式。
-0 收看全部角色音视频(默认)
-1 只看老师和助教
+                     * 获取<p>开启专注模式。<br>0 收看全部角色音视频(默认)<br>1 只看老师和助教</p>
+                     * @return InteractionMode <p>开启专注模式。<br>0 收看全部角色音视频(默认)<br>1 只看老师和助教</p>
                      * 
                      */
                     int64_t GetInteractionMode() const;
@@ -320,8 +296,8 @@ namespace TencentCloud
                     bool InteractionModeHasBeenSet() const;
 
                     /**
-                     * 获取横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
-                     * @return VideoOrientation 横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
+                     * 获取<p>横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型</p>
+                     * @return VideoOrientation <p>横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型</p>
                      * 
                      */
                     uint64_t GetVideoOrientation() const;
@@ -334,8 +310,8 @@ namespace TencentCloud
                     bool VideoOrientationHasBeenSet() const;
 
                     /**
-                     * 获取该课堂是否开启了课后评分功能。0：未开启  1：开启
-                     * @return IsGradingRequiredPostClass 该课堂是否开启了课后评分功能。0：未开启  1：开启
+                     * 获取<p>该课堂是否开启了课后评分功能。0：未开启  1：开启</p>
+                     * @return IsGradingRequiredPostClass <p>该课堂是否开启了课后评分功能。0：未开启  1：开启</p>
                      * 
                      */
                     int64_t GetIsGradingRequiredPostClass() const;
@@ -348,8 +324,8 @@ namespace TencentCloud
                     bool IsGradingRequiredPostClassHasBeenSet() const;
 
                     /**
-                     * 获取课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放); 3 圆桌会议 注：大班课的布局(layout)只有三分屏
-                     * @return RoomType 课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放); 3 圆桌会议 注：大班课的布局(layout)只有三分屏
+                     * 获取<p>课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放); 3 圆桌会议 注：大班课的布局(layout)只有三分屏</p>
+                     * @return RoomType <p>课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放); 3 圆桌会议 注：大班课的布局(layout)只有三分屏</p>
                      * 
                      */
                     int64_t GetRoomType() const;
@@ -362,8 +338,8 @@ namespace TencentCloud
                     bool RoomTypeHasBeenSet() const;
 
                     /**
-                     * 获取录制时长
-                     * @return VideoDuration 录制时长
+                     * 获取<p>录制时长</p>
+                     * @return VideoDuration <p>录制时长</p>
                      * 
                      */
                     uint64_t GetVideoDuration() const;
@@ -376,8 +352,8 @@ namespace TencentCloud
                     bool VideoDurationHasBeenSet() const;
 
                     /**
-                     * 获取拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟
-                     * @return EndDelayTime 拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟
+                     * 获取<p>拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟</p>
+                     * @return EndDelayTime <p>拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟</p>
                      * 
                      */
                     int64_t GetEndDelayTime() const;
@@ -390,8 +366,8 @@ namespace TencentCloud
                     bool EndDelayTimeHasBeenSet() const;
 
                     /**
-                     * 获取直播类型：0 常规（默认）1 伪直播 2 RTMP推流直播
-                     * @return LiveType 直播类型：0 常规（默认）1 伪直播 2 RTMP推流直播
+                     * 获取<p>直播类型：0 常规（默认）1 伪直播 2 RTMP推流直播</p>
+                     * @return LiveType <p>直播类型：0 常规（默认）1 伪直播 2 RTMP推流直播</p>
                      * 
                      */
                     uint64_t GetLiveType() const;
@@ -404,8 +380,8 @@ namespace TencentCloud
                     bool LiveTypeHasBeenSet() const;
 
                     /**
-                     * 获取伪直播链接
-                     * @return RecordLiveUrl 伪直播链接
+                     * 获取<p>伪直播链接</p>
+                     * @return RecordLiveUrl <p>伪直播链接</p>
                      * 
                      */
                     std::string GetRecordLiveUrl() const;
@@ -418,8 +394,8 @@ namespace TencentCloud
                     bool RecordLiveUrlHasBeenSet() const;
 
                     /**
-                     * 获取是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效
-                     * @return EnableAutoStart 是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效
+                     * 获取<p>是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效</p>
+                     * @return EnableAutoStart <p>是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效</p>
                      * 
                      */
                     uint64_t GetEnableAutoStart() const;
@@ -432,8 +408,8 @@ namespace TencentCloud
                     bool EnableAutoStartHasBeenSet() const;
 
                     /**
-                     * 获取录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道
-                     * @return RecordBackground 录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道
+                     * 获取<p>录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道</p>
+                     * @return RecordBackground <p>录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道</p>
                      * 
                      */
                     std::string GetRecordBackground() const;
@@ -446,8 +422,8 @@ namespace TencentCloud
                     bool RecordBackgroundHasBeenSet() const;
 
                     /**
-                     * 获取RTMP推流链接
-                     * @return RTMPStreamingURL RTMP推流链接
+                     * 获取<p>RTMP推流链接</p>
+                     * @return RTMPStreamingURL <p>RTMP推流链接</p>
                      * 
                      */
                     std::string GetRTMPStreamingURL() const;
@@ -460,8 +436,8 @@ namespace TencentCloud
                     bool RTMPStreamingURLHasBeenSet() const;
 
                     /**
-                     * 获取录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。自定义场景参数的含义。如下：     scene：自定义js/css对应的场景值。如scene=recordScene，会加载 recordScene 场景对应的 js/css，这样就可以自定义录制页面的元素。     lng：录制页面对应的语种。如lng=en，则录制界面为en。（枚举值：en,zh，zh-TW，jp，ar，kr，vi）     customToken：录制页面中涉及客户自己的服务需要鉴权时进行配置。一般情况下，无需配置。
-                     * @return RecordScene 录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。自定义场景参数的含义。如下：     scene：自定义js/css对应的场景值。如scene=recordScene，会加载 recordScene 场景对应的 js/css，这样就可以自定义录制页面的元素。     lng：录制页面对应的语种。如lng=en，则录制界面为en。（枚举值：en,zh，zh-TW，jp，ar，kr，vi）     customToken：录制页面中涉及客户自己的服务需要鉴权时进行配置。一般情况下，无需配置。
+                     * 获取<p>录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。自定义场景参数的含义。如下：     scene：自定义js/css对应的场景值。如scene=recordScene，会加载 recordScene 场景对应的 js/css，这样就可以自定义录制页面的元素。     lng：录制页面对应的语种。如lng=en，则录制界面为en。（枚举值：en,zh，zh-TW，jp，ar，kr，vi）     customToken：录制页面中涉及客户自己的服务需要鉴权时进行配置。一般情况下，无需配置。</p>
+                     * @return RecordScene <p>录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。自定义场景参数的含义。如下：     scene：自定义js/css对应的场景值。如scene=recordScene，会加载 recordScene 场景对应的 js/css，这样就可以自定义录制页面的元素。     lng：录制页面对应的语种。如lng=en，则录制界面为en。（枚举值：en,zh，zh-TW，jp，ar，kr，vi）     customToken：录制页面中涉及客户自己的服务需要鉴权时进行配置。一般情况下，无需配置。</p>
                      * 
                      */
                     std::string GetRecordScene() const;
@@ -474,8 +450,8 @@ namespace TencentCloud
                     bool RecordSceneHasBeenSet() const;
 
                     /**
-                     * 获取录制自定义语言，仅recordlayout=9的时候此参数有效
-                     * @return RecordLang 录制自定义语言，仅recordlayout=9的时候此参数有效
+                     * 获取<p>录制自定义语言，仅recordlayout=9的时候此参数有效</p>
+                     * @return RecordLang <p>录制自定义语言，仅recordlayout=9的时候此参数有效</p>
                      * 
                      */
                     std::string GetRecordLang() const;
@@ -488,8 +464,8 @@ namespace TencentCloud
                     bool RecordLangHasBeenSet() const;
 
                     /**
-                     * 获取录制类型 0 仅录制混流（默认） ;1 录制混流+单流，该模式下除混流录制基础上，分别录制老师、台上学生的音视频流，每路录制都会产生相应的录制费用 。示例：0
-                     * @return RecordStream 录制类型 0 仅录制混流（默认） ;1 录制混流+单流，该模式下除混流录制基础上，分别录制老师、台上学生的音视频流，每路录制都会产生相应的录制费用 。示例：0
+                     * 获取<p>录制类型 0 仅录制混流（默认） ;1 录制混流+单流，该模式下除混流录制基础上，分别录制老师、台上学生的音视频流，每路录制都会产生相应的录制费用 。示例：0</p>
+                     * @return RecordStream <p>录制类型 0 仅录制混流（默认） ;1 录制混流+单流，该模式下除混流录制基础上，分别录制老师、台上学生的音视频流，每路录制都会产生相应的录制费用 。示例：0</p>
                      * 
                      */
                     uint64_t GetRecordStream() const;
@@ -502,8 +478,8 @@ namespace TencentCloud
                     bool RecordStreamHasBeenSet() const;
 
                     /**
-                     * 获取录制模板。房间子类型为视频+白板（SubType=videodoc）时默认为3，房间子类型为纯视频（SubType=video）时默认为0。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
-                     * @return RecordLayout 录制模板。房间子类型为视频+白板（SubType=videodoc）时默认为3，房间子类型为纯视频（SubType=video）时默认为0。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
+                     * 获取<p>录制模板。房间子类型为视频+白板（SubType=videodoc）时默认为3，房间子类型为纯视频（SubType=video）时默认为0。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744</p>
+                     * @return RecordLayout <p>录制模板。房间子类型为视频+白板（SubType=videodoc）时默认为3，房间子类型为纯视频（SubType=video）时默认为0。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744</p>
                      * 
                      */
                     uint64_t GetRecordLayout() const;
@@ -516,8 +492,8 @@ namespace TencentCloud
                     bool RecordLayoutHasBeenSet() const;
 
                     /**
-                     * 获取板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式
-                     * @return WhiteBoardSnapshotMode 板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式
+                     * 获取<p>板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式</p>
+                     * @return WhiteBoardSnapshotMode <p>板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式</p>
                      * 
                      */
                     uint64_t GetWhiteBoardSnapshotMode() const;
@@ -530,16 +506,8 @@ namespace TencentCloud
                     bool WhiteBoardSnapshotModeHasBeenSet() const;
 
                     /**
-                     * 获取字幕转写功能开关。可以有以下取值：
-0 不开启字幕转写功能（默认值）
-1 自动转写模式：上课自动开启，下课自动停止
-2 手动转写模式：支持老师或者助教通过客户端API手动开启/关闭字幕转写
-设置0和1时客户端均不展示手动开关，设置2时老师或者助教端展示字幕转写开关
-                     * @return SubtitlesTranscription 字幕转写功能开关。可以有以下取值：
-0 不开启字幕转写功能（默认值）
-1 自动转写模式：上课自动开启，下课自动停止
-2 手动转写模式：支持老师或者助教通过客户端API手动开启/关闭字幕转写
-设置0和1时客户端均不展示手动开关，设置2时老师或者助教端展示字幕转写开关
+                     * 获取<p>字幕转写功能开关。可以有以下取值：<br>0 不开启字幕转写功能（默认值）<br>1 自动转写模式：上课自动开启，下课自动停止<br>2 手动转写模式：支持老师或者助教通过客户端API手动开启/关闭字幕转写<br>设置0和1时客户端均不展示手动开关，设置2时老师或者助教端展示字幕转写开关</p>
+                     * @return SubtitlesTranscription <p>字幕转写功能开关。可以有以下取值：<br>0 不开启字幕转写功能（默认值）<br>1 自动转写模式：上课自动开启，下课自动停止<br>2 手动转写模式：支持老师或者助教通过客户端API手动开启/关闭字幕转写<br>设置0和1时客户端均不展示手动开关，设置2时老师或者助教端展示字幕转写开关</p>
                      * 
                      */
                     uint64_t GetSubtitlesTranscription() const;
@@ -552,8 +520,8 @@ namespace TencentCloud
                     bool SubtitlesTranscriptionHasBeenSet() const;
 
                     /**
-                     * 获取嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效
-                     * @return Guests 嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效
+                     * 获取<p>嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效</p>
+                     * @return Guests <p>嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效</p>
                      * 
                      */
                     std::vector<std::string> GetGuests() const;
@@ -566,8 +534,8 @@ namespace TencentCloud
                     bool GuestsHasBeenSet() const;
 
                     /**
-                     * 获取录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效
-                     * @return RecordMerge 录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效
+                     * 获取<p>录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效</p>
+                     * @return RecordMerge <p>录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效</p>
                      * 
                      */
                     uint64_t GetRecordMerge() const;
@@ -579,239 +547,243 @@ namespace TencentCloud
                      */
                     bool RecordMergeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>转推开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     * @return EnableLiveRelay <p>转推开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     * 
+                     */
+                    uint64_t GetEnableLiveRelay() const;
+
+                    /**
+                     * 判断参数 EnableLiveRelay 是否已赋值
+                     * @return EnableLiveRelay 是否已赋值
+                     * 
+                     */
+                    bool EnableLiveRelayHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 课堂名称。
+                     * <p>课堂名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 预定的课堂开始时间，unix时间戳（秒）。
+                     * <p>预定的课堂开始时间，unix时间戳（秒）。</p>
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 预定的课堂结束时间，unix时间戳（秒）。
+                     * <p>预定的课堂结束时间，unix时间戳（秒）。</p>
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 老师的UserId。
+                     * <p>老师的UserId。</p>
                      */
                     std::string m_teacherId;
                     bool m_teacherIdHasBeenSet;
 
                     /**
-                     * 低代码互动课堂的SdkAppId。
+                     * <p>低代码互动课堂的SdkAppId。</p>
                      */
                     uint64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 观看类型。互动观看 （默认）	
+                     * <p>观看类型。互动观看 （默认）</p>
                      */
                     uint64_t m_audienceType;
                     bool m_audienceTypeHasBeenSet;
 
                     /**
-                     * 头像区域，摄像头视频画面的分辨率。可以有如下取值：
-1 标清
-2 高清
-3 全高清
+                     * <p>头像区域，摄像头视频画面的分辨率。可以有如下取值：<br>1 标清<br>2 高清<br>3 全高清</p>
                      */
                     uint64_t m_resolution;
                     bool m_resolutionHasBeenSet;
 
                     /**
-                     * 设置课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。
+                     * <p>设置课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。</p>
                      */
                     uint64_t m_maxMicNumber;
                     bool m_maxMicNumberHasBeenSet;
 
                     /**
-                     * 进入课堂时是否自动连麦。可以有以下取值：
-0 不自动连麦（需要手动申请上麦，默认值）
-1 自动连麦
+                     * <p>进入课堂时是否自动连麦。可以有以下取值：<br>0 不自动连麦（需要手动申请上麦，默认值）<br>1 自动连麦</p>
                      */
                     uint64_t m_autoMic;
                     bool m_autoMicHasBeenSet;
 
                     /**
-                     * 高音质模式。可以有以下取值：
-0 不开启高音质（默认值）
-1 开启高音质
+                     * <p>高音质模式。可以有以下取值：<br>0 不开启高音质（默认值）<br>1 开启高音质</p>
                      */
                     uint64_t m_audioQuality;
                     bool m_audioQualityHasBeenSet;
 
                     /**
-                     * 课堂子类型，可以有以下取值：videodoc 文档+视频video 纯视频
+                     * <p>课堂子类型，可以有以下取值：videodoc 文档+视频video 纯视频</p>
                      */
                     std::string m_subType;
                     bool m_subTypeHasBeenSet;
 
                     /**
-                     * 上课后是否禁止自动录制。可以有以下取值：
-0 不禁止录制（自动开启录制，默认值）
-1 禁止录制
-注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。
+                     * <p>录制方式。</p><p>枚举值：</p><ul><li>0： 开启自动录制</li><li>1： 禁止录制</li><li>2： 开启手动录制。（仅支持页面录制，需通过startRecord、stopRecord接口控制录制的开始和结束。）</li><li>3： 信令录制。</li></ul>
                      */
                     uint64_t m_disableRecord;
                     bool m_disableRecordHasBeenSet;
 
                     /**
-                     * 助教UserId列表。
+                     * <p>助教UserId列表。</p>
                      */
                     std::vector<std::string> m_assistants;
                     bool m_assistantsHasBeenSet;
 
                     /**
-                     * 录制地址（协议为https)。仅在房间结束后存在。
+                     * <p>录制地址（协议为https)。仅在房间结束后存在。</p>
                      */
                     std::string m_recordUrl;
                     bool m_recordUrlHasBeenSet;
 
                     /**
-                     * 课堂状态。0为未开始，1为已开始，2为已结束，3为已过期。
+                     * <p>课堂状态。0为未开始，1为已开始，2为已结束，3为已过期。</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 课堂绑定的群组ID
+                     * <p>课堂绑定的群组ID</p>
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 打开学生麦克风/摄像头的授权开关
+                     * <p>打开学生麦克风/摄像头的授权开关</p>
                      */
                     uint64_t m_enableDirectControl;
                     bool m_enableDirectControlHasBeenSet;
 
                     /**
-                     * 开启专注模式。
-0 收看全部角色音视频(默认)
-1 只看老师和助教
+                     * <p>开启专注模式。<br>0 收看全部角色音视频(默认)<br>1 只看老师和助教</p>
                      */
                     int64_t m_interactionMode;
                     bool m_interactionModeHasBeenSet;
 
                     /**
-                     * 横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型
+                     * <p>横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型</p>
                      */
                     uint64_t m_videoOrientation;
                     bool m_videoOrientationHasBeenSet;
 
                     /**
-                     * 该课堂是否开启了课后评分功能。0：未开启  1：开启
+                     * <p>该课堂是否开启了课后评分功能。0：未开启  1：开启</p>
                      */
                     int64_t m_isGradingRequiredPostClass;
                     bool m_isGradingRequiredPostClassHasBeenSet;
 
                     /**
-                     * 课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放); 3 圆桌会议 注：大班课的布局(layout)只有三分屏
+                     * <p>课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放); 3 圆桌会议 注：大班课的布局(layout)只有三分屏</p>
                      */
                     int64_t m_roomType;
                     bool m_roomTypeHasBeenSet;
 
                     /**
-                     * 录制时长
+                     * <p>录制时长</p>
                      */
                     uint64_t m_videoDuration;
                     bool m_videoDurationHasBeenSet;
 
                     /**
-                     * 拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟
+                     * <p>拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟</p>
                      */
                     int64_t m_endDelayTime;
                     bool m_endDelayTimeHasBeenSet;
 
                     /**
-                     * 直播类型：0 常规（默认）1 伪直播 2 RTMP推流直播
+                     * <p>直播类型：0 常规（默认）1 伪直播 2 RTMP推流直播</p>
                      */
                     uint64_t m_liveType;
                     bool m_liveTypeHasBeenSet;
 
                     /**
-                     * 伪直播链接
+                     * <p>伪直播链接</p>
                      */
                     std::string m_recordLiveUrl;
                     bool m_recordLiveUrlHasBeenSet;
 
                     /**
-                     * 是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效
+                     * <p>是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效</p>
                      */
                     uint64_t m_enableAutoStart;
                     bool m_enableAutoStartHasBeenSet;
 
                     /**
-                     * 录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道
+                     * <p>录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道</p>
                      */
                     std::string m_recordBackground;
                     bool m_recordBackgroundHasBeenSet;
 
                     /**
-                     * RTMP推流链接
+                     * <p>RTMP推流链接</p>
                      */
                     std::string m_rTMPStreamingURL;
                     bool m_rTMPStreamingURLHasBeenSet;
 
                     /**
-                     * 录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。自定义场景参数的含义。如下：     scene：自定义js/css对应的场景值。如scene=recordScene，会加载 recordScene 场景对应的 js/css，这样就可以自定义录制页面的元素。     lng：录制页面对应的语种。如lng=en，则录制界面为en。（枚举值：en,zh，zh-TW，jp，ar，kr，vi）     customToken：录制页面中涉及客户自己的服务需要鉴权时进行配置。一般情况下，无需配置。
+                     * <p>录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。自定义场景参数的含义。如下：     scene：自定义js/css对应的场景值。如scene=recordScene，会加载 recordScene 场景对应的 js/css，这样就可以自定义录制页面的元素。     lng：录制页面对应的语种。如lng=en，则录制界面为en。（枚举值：en,zh，zh-TW，jp，ar，kr，vi）     customToken：录制页面中涉及客户自己的服务需要鉴权时进行配置。一般情况下，无需配置。</p>
                      */
                     std::string m_recordScene;
                     bool m_recordSceneHasBeenSet;
 
                     /**
-                     * 录制自定义语言，仅recordlayout=9的时候此参数有效
+                     * <p>录制自定义语言，仅recordlayout=9的时候此参数有效</p>
                      */
                     std::string m_recordLang;
                     bool m_recordLangHasBeenSet;
 
                     /**
-                     * 录制类型 0 仅录制混流（默认） ;1 录制混流+单流，该模式下除混流录制基础上，分别录制老师、台上学生的音视频流，每路录制都会产生相应的录制费用 。示例：0
+                     * <p>录制类型 0 仅录制混流（默认） ;1 录制混流+单流，该模式下除混流录制基础上，分别录制老师、台上学生的音视频流，每路录制都会产生相应的录制费用 。示例：0</p>
                      */
                     uint64_t m_recordStream;
                     bool m_recordStreamHasBeenSet;
 
                     /**
-                     * 录制模板。房间子类型为视频+白板（SubType=videodoc）时默认为3，房间子类型为纯视频（SubType=video）时默认为0。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
+                     * <p>录制模板。房间子类型为视频+白板（SubType=videodoc）时默认为3，房间子类型为纯视频（SubType=video）时默认为0。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744</p>
                      */
                     uint64_t m_recordLayout;
                     bool m_recordLayoutHasBeenSet;
 
                     /**
-                     * 板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式
+                     * <p>板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式</p>
                      */
                     uint64_t m_whiteBoardSnapshotMode;
                     bool m_whiteBoardSnapshotModeHasBeenSet;
 
                     /**
-                     * 字幕转写功能开关。可以有以下取值：
-0 不开启字幕转写功能（默认值）
-1 自动转写模式：上课自动开启，下课自动停止
-2 手动转写模式：支持老师或者助教通过客户端API手动开启/关闭字幕转写
-设置0和1时客户端均不展示手动开关，设置2时老师或者助教端展示字幕转写开关
+                     * <p>字幕转写功能开关。可以有以下取值：<br>0 不开启字幕转写功能（默认值）<br>1 自动转写模式：上课自动开启，下课自动停止<br>2 手动转写模式：支持老师或者助教通过客户端API手动开启/关闭字幕转写<br>设置0和1时客户端均不展示手动开关，设置2时老师或者助教端展示字幕转写开关</p>
                      */
                     uint64_t m_subtitlesTranscription;
                     bool m_subtitlesTranscriptionHasBeenSet;
 
                     /**
-                     * 嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效
+                     * <p>嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效</p>
                      */
                     std::vector<std::string> m_guests;
                     bool m_guestsHasBeenSet;
 
                     /**
-                     * 录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效
+                     * <p>录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效</p>
                      */
                     uint64_t m_recordMerge;
                     bool m_recordMergeHasBeenSet;
+
+                    /**
+                     * <p>转推开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     */
+                    uint64_t m_enableLiveRelay;
+                    bool m_enableLiveRelayHasBeenSet;
 
                 };
             }

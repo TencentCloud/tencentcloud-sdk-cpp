@@ -30,7 +30,8 @@ TaskFormParams::TaskFormParams() :
     m_taskNameHasBeenSet(false),
     m_productNameHasBeenSet(false),
     m_latestSavedVersionHasBeenSet(false),
-    m_latestSavedVersionIdHasBeenSet(false)
+    m_latestSavedVersionIdHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,16 @@ CoreInternalOutcome TaskFormParams::Deserialize(const rapidjson::Value &value)
         m_latestSavedVersionIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskFormParams.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +252,14 @@ void TaskFormParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "LatestSavedVersionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_latestSavedVersionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -404,5 +423,21 @@ void TaskFormParams::SetLatestSavedVersionId(const string& _latestSavedVersionId
 bool TaskFormParams::LatestSavedVersionIdHasBeenSet() const
 {
     return m_latestSavedVersionIdHasBeenSet;
+}
+
+string TaskFormParams::GetStatus() const
+{
+    return m_status;
+}
+
+void TaskFormParams::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool TaskFormParams::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

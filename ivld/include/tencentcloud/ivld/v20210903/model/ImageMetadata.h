@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒资图片文件大小，单位为Byte
+                     * 获取<p>媒资图片文件大小，单位为Byte</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FileSize 媒资图片文件大小，单位为Byte
+                     * @return FileSize <p>媒资图片文件大小，单位为Byte</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFileSize() const;
 
                     /**
-                     * 设置媒资图片文件大小，单位为Byte
+                     * 设置<p>媒资图片文件大小，单位为Byte</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fileSize 媒资图片文件大小，单位为Byte
+                     * @param _fileSize <p>媒资图片文件大小，单位为Byte</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool FileSizeHasBeenSet() const;
 
                     /**
-                     * 获取媒资图片文件MD5
+                     * 获取<p>媒资图片文件MD5</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MD5 媒资图片文件MD5
+                     * @return MD5 <p>媒资图片文件MD5</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMD5() const;
 
                     /**
-                     * 设置媒资图片文件MD5
+                     * 设置<p>媒资图片文件MD5</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mD5 媒资图片文件MD5
+                     * @param _mD5 <p>媒资图片文件MD5</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool MD5HasBeenSet() const;
 
                     /**
-                     * 获取媒资图片文件宽度
+                     * 获取<p>媒资图片文件宽度</p><p>单位：像素（px）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Width 媒资图片文件宽度
+                     * @return Width <p>媒资图片文件宽度</p><p>单位：像素（px）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置媒资图片文件宽度
+                     * 设置<p>媒资图片文件宽度</p><p>单位：像素（px）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _width 媒资图片文件宽度
+                     * @param _width <p>媒资图片文件宽度</p><p>单位：像素（px）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取媒资图片文件高度
+                     * 获取<p>媒资图片文件高度</p><p>单位：像素（px）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Height 媒资图片文件高度
+                     * @return Height <p>媒资图片文件高度</p><p>单位：像素（px）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置媒资图片文件高度
+                     * 设置<p>媒资图片文件高度</p><p>单位：像素（px）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _height 媒资图片文件高度
+                     * @param _height <p>媒资图片文件高度</p><p>单位：像素（px）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取媒资图片文件格式
+                     * 获取<p>媒资图片文件格式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Format 媒资图片文件格式
+                     * @return Format <p>媒资图片文件格式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFormat() const;
 
                     /**
-                     * 设置媒资图片文件格式
+                     * 设置<p>媒资图片文件格式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _format 媒资图片文件格式
+                     * @param _format <p>媒资图片文件格式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -174,35 +174,35 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒资图片文件大小，单位为Byte
+                     * <p>媒资图片文件大小，单位为Byte</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fileSize;
                     bool m_fileSizeHasBeenSet;
 
                     /**
-                     * 媒资图片文件MD5
+                     * <p>媒资图片文件MD5</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mD5;
                     bool m_mD5HasBeenSet;
 
                     /**
-                     * 媒资图片文件宽度
+                     * <p>媒资图片文件宽度</p><p>单位：像素（px）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 媒资图片文件高度
+                     * <p>媒资图片文件高度</p><p>单位：像素（px）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * 媒资图片文件格式
+                     * <p>媒资图片文件格式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_format;

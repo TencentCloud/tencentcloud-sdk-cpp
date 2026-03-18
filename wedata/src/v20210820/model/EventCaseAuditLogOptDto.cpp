@@ -32,7 +32,8 @@ EventCaseAuditLogOptDto::EventCaseAuditLogOptDto() :
     m_statusHasBeenSet(false),
     m_eventTriggerTimestampHasBeenSet(false),
     m_logTimestampHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_consumeCountHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome EventCaseAuditLogOptDto::Deserialize(const rapidjson::Value 
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("ConsumeCount") && !value["ConsumeCount"].IsNull())
+    {
+        if (!value["ConsumeCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventCaseAuditLogOptDto.ConsumeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_consumeCount = value["ConsumeCount"].GetInt64();
+        m_consumeCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void EventCaseAuditLogOptDto::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_consumeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_consumeCount, allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void EventCaseAuditLogOptDto::SetDescription(const string& _description)
 bool EventCaseAuditLogOptDto::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+int64_t EventCaseAuditLogOptDto::GetConsumeCount() const
+{
+    return m_consumeCount;
+}
+
+void EventCaseAuditLogOptDto::SetConsumeCount(const int64_t& _consumeCount)
+{
+    m_consumeCount = _consumeCount;
+    m_consumeCountHasBeenSet = true;
+}
+
+bool EventCaseAuditLogOptDto::ConsumeCountHasBeenSet() const
+{
+    return m_consumeCountHasBeenSet;
 }
 

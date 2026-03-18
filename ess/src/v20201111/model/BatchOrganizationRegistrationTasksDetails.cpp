@@ -23,7 +23,8 @@ using namespace std;
 BatchOrganizationRegistrationTasksDetails::BatchOrganizationRegistrationTasksDetails() :
     m_taskIdHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+    m_errorMessageHasBeenSet(false),
+    m_authorizationInfoIdHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome BatchOrganizationRegistrationTasksDetails::Deserialize(const
         m_errorMessageHasBeenSet = true;
     }
 
+    if (value.HasMember("AuthorizationInfoId") && !value["AuthorizationInfoId"].IsNull())
+    {
+        if (!value["AuthorizationInfoId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BatchOrganizationRegistrationTasksDetails.AuthorizationInfoId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_authorizationInfoId = string(value["AuthorizationInfoId"].GetString());
+        m_authorizationInfoIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void BatchOrganizationRegistrationTasksDetails::ToJsonObject(rapidjson::Value &v
         string key = "ErrorMessage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_errorMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_authorizationInfoIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorizationInfoId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_authorizationInfoId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void BatchOrganizationRegistrationTasksDetails::SetErrorMessage(const string& _e
 bool BatchOrganizationRegistrationTasksDetails::ErrorMessageHasBeenSet() const
 {
     return m_errorMessageHasBeenSet;
+}
+
+string BatchOrganizationRegistrationTasksDetails::GetAuthorizationInfoId() const
+{
+    return m_authorizationInfoId;
+}
+
+void BatchOrganizationRegistrationTasksDetails::SetAuthorizationInfoId(const string& _authorizationInfoId)
+{
+    m_authorizationInfoId = _authorizationInfoId;
+    m_authorizationInfoIdHasBeenSet = true;
+}
+
+bool BatchOrganizationRegistrationTasksDetails::AuthorizationInfoIdHasBeenSet() const
+{
+    return m_authorizationInfoIdHasBeenSet;
 }
 

@@ -24,7 +24,8 @@ using namespace TencentCloud::Ccc::V20200210::Model;
 using namespace std;
 
 DeleteStaffResponse::DeleteStaffResponse() :
-    m_onlineStaffListHasBeenSet(false)
+    m_onlineStaffListHasBeenSet(false),
+    m_deleteStatusInfoHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,16 @@ CoreInternalOutcome DeleteStaffResponse::Deserialize(const string &payload)
         m_onlineStaffListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DeleteStatusInfo") && !rsp["DeleteStatusInfo"].IsNull())
+    {
+        if (!rsp["DeleteStatusInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeleteStatusInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleteStatusInfo = string(rsp["DeleteStatusInfo"].GetString());
+        m_deleteStatusInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -98,6 +109,14 @@ string DeleteStaffResponse::ToJsonString() const
         }
     }
 
+    if (m_deleteStatusInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteStatusInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deleteStatusInfo.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -118,6 +137,16 @@ vector<string> DeleteStaffResponse::GetOnlineStaffList() const
 bool DeleteStaffResponse::OnlineStaffListHasBeenSet() const
 {
     return m_onlineStaffListHasBeenSet;
+}
+
+string DeleteStaffResponse::GetDeleteStatusInfo() const
+{
+    return m_deleteStatusInfo;
+}
+
+bool DeleteStaffResponse::DeleteStatusInfoHasBeenSet() const
+{
+    return m_deleteStatusInfoHasBeenSet;
 }
 
 

@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool SubTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>禁止录制。可以有以下取值：<br>0 不禁止录制（默认值）<br>1 禁止录制<br>直播开始后不允许修改。</p>
-                     * @return DisableRecord <p>禁止录制。可以有以下取值：<br>0 不禁止录制（默认值）<br>1 禁止录制<br>直播开始后不允许修改。</p>
+                     * 获取<p>录制方式。</p><p>枚举值：</p><ul><li>0： 开启自动录制</li><li>1： 禁止录制</li><li>2： 开启手动录制。（仅支持页面录制，需通过startRecord、stopRecord接口控制录制的开始和结束。）</li><li>3： 信令录制</li></ul>
+                     * @return DisableRecord <p>录制方式。</p><p>枚举值：</p><ul><li>0： 开启自动录制</li><li>1： 禁止录制</li><li>2： 开启手动录制。（仅支持页面录制，需通过startRecord、stopRecord接口控制录制的开始和结束。）</li><li>3： 信令录制</li></ul>
                      * 
                      */
                     uint64_t GetDisableRecord() const;
 
                     /**
-                     * 设置<p>禁止录制。可以有以下取值：<br>0 不禁止录制（默认值）<br>1 禁止录制<br>直播开始后不允许修改。</p>
-                     * @param _disableRecord <p>禁止录制。可以有以下取值：<br>0 不禁止录制（默认值）<br>1 禁止录制<br>直播开始后不允许修改。</p>
+                     * 设置<p>录制方式。</p><p>枚举值：</p><ul><li>0： 开启自动录制</li><li>1： 禁止录制</li><li>2： 开启手动录制。（仅支持页面录制，需通过startRecord、stopRecord接口控制录制的开始和结束。）</li><li>3： 信令录制</li></ul>
+                     * @param _disableRecord <p>录制方式。</p><p>枚举值：</p><ul><li>0： 开启自动录制</li><li>1： 禁止录制</li><li>2： 开启手动录制。（仅支持页面录制，需通过startRecord、stopRecord接口控制录制的开始和结束。）</li><li>3： 信令录制</li></ul>
                      * 
                      */
                     void SetDisableRecord(const uint64_t& _disableRecord);
@@ -672,6 +672,27 @@ namespace TencentCloud
                      */
                     bool RecordMergeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>转推开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     * @return EnableLiveRelay <p>转推开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     * 
+                     */
+                    uint64_t GetEnableLiveRelay() const;
+
+                    /**
+                     * 设置<p>转推开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     * @param _enableLiveRelay <p>转推开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     * 
+                     */
+                    void SetEnableLiveRelay(const uint64_t& _enableLiveRelay);
+
+                    /**
+                     * 判断参数 EnableLiveRelay 是否已赋值
+                     * @return EnableLiveRelay 是否已赋值
+                     * 
+                     */
+                    bool EnableLiveRelayHasBeenSet() const;
+
                 private:
 
                     /**
@@ -741,7 +762,7 @@ namespace TencentCloud
                     bool m_subTypeHasBeenSet;
 
                     /**
-                     * <p>禁止录制。可以有以下取值：<br>0 不禁止录制（默认值）<br>1 禁止录制<br>直播开始后不允许修改。</p>
+                     * <p>录制方式。</p><p>枚举值：</p><ul><li>0： 开启自动录制</li><li>1： 禁止录制</li><li>2： 开启手动录制。（仅支持页面录制，需通过startRecord、stopRecord接口控制录制的开始和结束。）</li><li>3： 信令录制</li></ul>
                      */
                     uint64_t m_disableRecord;
                     bool m_disableRecordHasBeenSet;
@@ -853,6 +874,12 @@ namespace TencentCloud
                      */
                     uint64_t m_recordMerge;
                     bool m_recordMergeHasBeenSet;
+
+                    /**
+                     * <p>转推开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     */
+                    uint64_t m_enableLiveRelay;
+                    bool m_enableLiveRelayHasBeenSet;
 
                 };
             }

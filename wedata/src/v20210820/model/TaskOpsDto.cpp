@@ -117,7 +117,8 @@ TaskOpsDto::TaskOpsDto() :
     m_bundleIdHasBeenSet(false),
     m_bundleInfoHasBeenSet(false),
     m_workflowTypeHasBeenSet(false),
-    m_taskExtDTOHasBeenSet(false)
+    m_taskExtDTOHasBeenSet(false),
+    m_scheduleTimeZoneHasBeenSet(false)
 {
 }
 
@@ -1168,6 +1169,16 @@ CoreInternalOutcome TaskOpsDto::Deserialize(const rapidjson::Value &value)
         m_taskExtDTOHasBeenSet = true;
     }
 
+    if (value.HasMember("ScheduleTimeZone") && !value["ScheduleTimeZone"].IsNull())
+    {
+        if (!value["ScheduleTimeZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskOpsDto.ScheduleTimeZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleTimeZone = string(value["ScheduleTimeZone"].GetString());
+        m_scheduleTimeZoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1975,6 +1986,14 @@ void TaskOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_taskExtDTO.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_scheduleTimeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -3530,5 +3549,21 @@ void TaskOpsDto::SetTaskExtDTO(const TaskExtOpsDto& _taskExtDTO)
 bool TaskOpsDto::TaskExtDTOHasBeenSet() const
 {
     return m_taskExtDTOHasBeenSet;
+}
+
+string TaskOpsDto::GetScheduleTimeZone() const
+{
+    return m_scheduleTimeZone;
+}
+
+void TaskOpsDto::SetScheduleTimeZone(const string& _scheduleTimeZone)
+{
+    m_scheduleTimeZone = _scheduleTimeZone;
+    m_scheduleTimeZoneHasBeenSet = true;
+}
+
+bool TaskOpsDto::ScheduleTimeZoneHasBeenSet() const
+{
+    return m_scheduleTimeZoneHasBeenSet;
 }
 

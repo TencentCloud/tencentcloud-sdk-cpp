@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒资文本文件大小，单位为字节
+                     * 获取<p>媒资文本文件大小，单位为字节</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FileSize 媒资文本文件大小，单位为字节
+                     * @return FileSize <p>媒资文本文件大小，单位为字节</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFileSize() const;
 
                     /**
-                     * 设置媒资文本文件大小，单位为字节
+                     * 设置<p>媒资文本文件大小，单位为字节</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fileSize 媒资文本文件大小，单位为字节
+                     * @param _fileSize <p>媒资文本文件大小，单位为字节</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool FileSizeHasBeenSet() const;
 
                     /**
-                     * 获取媒资文本文件MD5
+                     * 获取<p>媒资文本文件MD5</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MD5 媒资文本文件MD5
+                     * @return MD5 <p>媒资文本文件MD5</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMD5() const;
 
                     /**
-                     * 设置媒资文本文件MD5
+                     * 设置<p>媒资文本文件MD5</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mD5 媒资文本文件MD5
+                     * @param _mD5 <p>媒资文本文件MD5</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool MD5HasBeenSet() const;
 
                     /**
-                     * 获取媒资文本文件字符数
+                     * 获取<p>媒资文本文件字符数</p><p>单位：字符</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Length 媒资文本文件字符数
+                     * @return Length <p>媒资文本文件字符数</p><p>单位：字符</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLength() const;
 
                     /**
-                     * 设置媒资文本文件字符数
+                     * 设置<p>媒资文本文件字符数</p><p>单位：字符</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _length 媒资文本文件字符数
+                     * @param _length <p>媒资文本文件字符数</p><p>单位：字符</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool LengthHasBeenSet() const;
 
                     /**
-                     * 获取媒资文本文件格式
+                     * 获取<p>媒资文本文件格式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Format 媒资文本文件格式
+                     * @return Format <p>媒资文本文件格式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFormat() const;
 
                     /**
-                     * 设置媒资文本文件格式
+                     * 设置<p>媒资文本文件格式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _format 媒资文本文件格式
+                     * @param _format <p>媒资文本文件格式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool FormatHasBeenSet() const;
 
                     /**
-                     * 获取封装格式短后缀
+                     * 获取<p>封装格式短后缀</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ShortFormat 封装格式短后缀
+                     * @return ShortFormat <p>封装格式短后缀</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetShortFormat() const;
 
                     /**
-                     * 设置封装格式短后缀
+                     * 设置<p>封装格式短后缀</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _shortFormat 封装格式短后缀
+                     * @param _shortFormat <p>封装格式短后缀</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -174,35 +174,35 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒资文本文件大小，单位为字节
+                     * <p>媒资文本文件大小，单位为字节</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fileSize;
                     bool m_fileSizeHasBeenSet;
 
                     /**
-                     * 媒资文本文件MD5
+                     * <p>媒资文本文件MD5</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mD5;
                     bool m_mD5HasBeenSet;
 
                     /**
-                     * 媒资文本文件字符数
+                     * <p>媒资文本文件字符数</p><p>单位：字符</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_length;
                     bool m_lengthHasBeenSet;
 
                     /**
-                     * 媒资文本文件格式
+                     * <p>媒资文本文件格式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;
 
                     /**
-                     * 封装格式短后缀
+                     * <p>封装格式短后缀</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_shortFormat;

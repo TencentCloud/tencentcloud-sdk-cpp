@@ -346,6 +346,31 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取消费次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConsumeCount 消费次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetConsumeCount() const;
+
+                    /**
+                     * 设置消费次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _consumeCount 消费次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConsumeCount(const int64_t& _consumeCount);
+
+                    /**
+                     * 判断参数 ConsumeCount 是否已赋值
+                     * @return ConsumeCount 是否已赋值
+                     * 
+                     */
+                    bool ConsumeCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -431,6 +456,13 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 消费次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_consumeCount;
+                    bool m_consumeCountHasBeenSet;
 
                 };
             }

@@ -172,6 +172,31 @@ namespace TencentCloud
                      */
                     bool RelateOptionHasBeenSet() const;
 
+                    /**
+                     * 获取值类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ValueType 值类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetValueType() const;
+
+                    /**
+                     * 设置值类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _valueType 值类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetValueType(const std::string& _valueType);
+
+                    /**
+                     * 判断参数 ValueType 是否已赋值
+                     * @return ValueType 是否已赋值
+                     * 
+                     */
+                    bool ValueTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -208,6 +233,13 @@ namespace TencentCloud
                      */
                     std::string m_relateOption;
                     bool m_relateOptionHasBeenSet;
+
+                    /**
+                     * 值类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_valueType;
+                    bool m_valueTypeHasBeenSet;
 
                 };
             }

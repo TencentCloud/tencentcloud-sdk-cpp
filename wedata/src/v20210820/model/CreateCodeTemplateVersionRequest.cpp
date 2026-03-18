@@ -28,7 +28,8 @@ CreateCodeTemplateVersionRequest::CreateCodeTemplateVersionRequest() :
     m_tasksHasBeenSet(false),
     m_originalParamsHasBeenSet(false),
     m_versionRemarkHasBeenSet(false),
-    m_needSubmitScheduleForTemplateHasBeenSet(false)
+    m_needSubmitScheduleForTemplateHasBeenSet(false),
+    m_assignApprovalListHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,19 @@ string CreateCodeTemplateVersionRequest::ToJsonString() const
         string key = "NeedSubmitScheduleForTemplate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needSubmitScheduleForTemplate, allocator);
+    }
+
+    if (m_assignApprovalListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssignApprovalList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_assignApprovalList.begin(); itr != m_assignApprovalList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -201,6 +215,22 @@ void CreateCodeTemplateVersionRequest::SetNeedSubmitScheduleForTemplate(const bo
 bool CreateCodeTemplateVersionRequest::NeedSubmitScheduleForTemplateHasBeenSet() const
 {
     return m_needSubmitScheduleForTemplateHasBeenSet;
+}
+
+vector<string> CreateCodeTemplateVersionRequest::GetAssignApprovalList() const
+{
+    return m_assignApprovalList;
+}
+
+void CreateCodeTemplateVersionRequest::SetAssignApprovalList(const vector<string>& _assignApprovalList)
+{
+    m_assignApprovalList = _assignApprovalList;
+    m_assignApprovalListHasBeenSet = true;
+}
+
+bool CreateCodeTemplateVersionRequest::AssignApprovalListHasBeenSet() const
+{
+    return m_assignApprovalListHasBeenSet;
 }
 
 

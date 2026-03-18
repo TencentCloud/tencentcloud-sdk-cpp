@@ -32,6 +32,7 @@ MakePlanOpsDto::MakePlanOpsDto() :
     m_targetTaskCycleHasBeenSet(false),
     m_targetTaskActionHasBeenSet(false),
     m_mapParamListHasBeenSet(false),
+    m_makeExtListHasBeenSet(false),
     m_creatorIdHasBeenSet(false),
     m_creatorHasBeenSet(false),
     m_createTimeHasBeenSet(false),
@@ -184,6 +185,26 @@ CoreInternalOutcome MakePlanOpsDto::Deserialize(const rapidjson::Value &value)
             m_mapParamList.push_back(item);
         }
         m_mapParamListHasBeenSet = true;
+    }
+
+    if (value.HasMember("MakeExtList") && !value["MakeExtList"].IsNull())
+    {
+        if (!value["MakeExtList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.MakeExtList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MakeExtList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            StrToStrMap item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_makeExtList.push_back(item);
+        }
+        m_makeExtListHasBeenSet = true;
     }
 
     if (value.HasMember("CreatorId") && !value["CreatorId"].IsNull())
@@ -562,6 +583,21 @@ void MakePlanOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
 
         int i=0;
         for (auto itr = m_mapParamList.begin(); itr != m_mapParamList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_makeExtListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MakeExtList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_makeExtList.begin(); itr != m_makeExtList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -966,6 +1002,22 @@ void MakePlanOpsDto::SetMapParamList(const vector<StrToStrMap>& _mapParamList)
 bool MakePlanOpsDto::MapParamListHasBeenSet() const
 {
     return m_mapParamListHasBeenSet;
+}
+
+vector<StrToStrMap> MakePlanOpsDto::GetMakeExtList() const
+{
+    return m_makeExtList;
+}
+
+void MakePlanOpsDto::SetMakeExtList(const vector<StrToStrMap>& _makeExtList)
+{
+    m_makeExtList = _makeExtList;
+    m_makeExtListHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::MakeExtListHasBeenSet() const
+{
+    return m_makeExtListHasBeenSet;
 }
 
 string MakePlanOpsDto::GetCreatorId() const

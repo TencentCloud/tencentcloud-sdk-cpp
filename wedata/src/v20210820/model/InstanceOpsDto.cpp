@@ -92,7 +92,8 @@ InstanceOpsDto::InstanceOpsDto() :
     m_taskExecutionIdHasBeenSet(false),
     m_dlcTaskIdHasBeenSet(false),
     m_dlcSparkJobIdHasBeenSet(false),
-    m_extHasBeenSet(false)
+    m_extHasBeenSet(false),
+    m_relatedEventListHasBeenSet(false)
 {
 }
 
@@ -868,6 +869,26 @@ CoreInternalOutcome InstanceOpsDto::Deserialize(const rapidjson::Value &value)
         m_extHasBeenSet = true;
     }
 
+    if (value.HasMember("RelatedEventList") && !value["RelatedEventList"].IsNull())
+    {
+        if (!value["RelatedEventList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.RelatedEventList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RelatedEventList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            EventCaseAuditLogOptDto item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_relatedEventList.push_back(item);
+        }
+        m_relatedEventListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1476,6 +1497,21 @@ void InstanceOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ext.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_relatedEventListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RelatedEventList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_relatedEventList.begin(); itr != m_relatedEventList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -2631,5 +2667,21 @@ void InstanceOpsDto::SetExt(const StrToStrMap& _ext)
 bool InstanceOpsDto::ExtHasBeenSet() const
 {
     return m_extHasBeenSet;
+}
+
+vector<EventCaseAuditLogOptDto> InstanceOpsDto::GetRelatedEventList() const
+{
+    return m_relatedEventList;
+}
+
+void InstanceOpsDto::SetRelatedEventList(const vector<EventCaseAuditLogOptDto>& _relatedEventList)
+{
+    m_relatedEventList = _relatedEventList;
+    m_relatedEventListHasBeenSet = true;
+}
+
+bool InstanceOpsDto::RelatedEventListHasBeenSet() const
+{
+    return m_relatedEventListHasBeenSet;
 }
 

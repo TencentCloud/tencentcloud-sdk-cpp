@@ -255,6 +255,27 @@ namespace TencentCloud
                      */
                     bool DeploymentModeHasBeenSet() const;
 
+                    /**
+                     * 获取服务用户名，对不需要用户名的服务不用传，8-16个字符，支持大写字母、小写字母、数字
+                     * @return UserName 服务用户名，对不需要用户名的服务不用传，8-16个字符，支持大写字母、小写字母、数字
+                     * 
+                     */
+                    std::string GetUserName() const;
+
+                    /**
+                     * 设置服务用户名，对不需要用户名的服务不用传，8-16个字符，支持大写字母、小写字母、数字
+                     * @param _userName 服务用户名，对不需要用户名的服务不用传，8-16个字符，支持大写字母、小写字母、数字
+                     * 
+                     */
+                    void SetUserName(const std::string& _userName);
+
+                    /**
+                     * 判断参数 UserName 是否已赋值
+                     * @return UserName 是否已赋值
+                     * 
+                     */
+                    bool UserNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -316,6 +337,12 @@ namespace TencentCloud
                      */
                     std::string m_deploymentMode;
                     bool m_deploymentModeHasBeenSet;
+
+                    /**
+                     * 服务用户名，对不需要用户名的服务不用传，8-16个字符，支持大写字母、小写字母、数字
+                     */
+                    std::string m_userName;
+                    bool m_userNameHasBeenSet;
 
                 };
             }

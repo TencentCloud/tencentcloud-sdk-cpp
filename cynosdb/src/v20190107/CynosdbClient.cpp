@@ -390,6 +390,56 @@ CynosdbClient::BindClusterResourcePackagesOutcomeCallable CynosdbClient::BindClu
     return prom->get_future();
 }
 
+CynosdbClient::CalculateBackupSaveSecExpiresOutcome CynosdbClient::CalculateBackupSaveSecExpires(const CalculateBackupSaveSecExpiresRequest &request)
+{
+    auto outcome = MakeRequest(request, "CalculateBackupSaveSecExpires");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CalculateBackupSaveSecExpiresResponse rsp = CalculateBackupSaveSecExpiresResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CalculateBackupSaveSecExpiresOutcome(rsp);
+        else
+            return CalculateBackupSaveSecExpiresOutcome(o.GetError());
+    }
+    else
+    {
+        return CalculateBackupSaveSecExpiresOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::CalculateBackupSaveSecExpiresAsync(const CalculateBackupSaveSecExpiresRequest& request, const CalculateBackupSaveSecExpiresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CalculateBackupSaveSecExpiresRequest&;
+    using Resp = CalculateBackupSaveSecExpiresResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CalculateBackupSaveSecExpires", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::CalculateBackupSaveSecExpiresOutcomeCallable CynosdbClient::CalculateBackupSaveSecExpiresCallable(const CalculateBackupSaveSecExpiresRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CalculateBackupSaveSecExpiresOutcome>>();
+    CalculateBackupSaveSecExpiresAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CalculateBackupSaveSecExpiresRequest&,
+        CalculateBackupSaveSecExpiresOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CynosdbClient::CheckCreateLibraDBInstanceOutcome CynosdbClient::CheckCreateLibraDBInstance(const CheckCreateLibraDBInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckCreateLibraDBInstance");
@@ -432,6 +482,56 @@ CynosdbClient::CheckCreateLibraDBInstanceOutcomeCallable CynosdbClient::CheckCre
         const CynosdbClient*,
         const CheckCreateLibraDBInstanceRequest&,
         CheckCreateLibraDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CynosdbClient::CheckTransferClusterZoneOutcome CynosdbClient::CheckTransferClusterZone(const CheckTransferClusterZoneRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckTransferClusterZone");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckTransferClusterZoneResponse rsp = CheckTransferClusterZoneResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckTransferClusterZoneOutcome(rsp);
+        else
+            return CheckTransferClusterZoneOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckTransferClusterZoneOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::CheckTransferClusterZoneAsync(const CheckTransferClusterZoneRequest& request, const CheckTransferClusterZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CheckTransferClusterZoneRequest&;
+    using Resp = CheckTransferClusterZoneResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CheckTransferClusterZone", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::CheckTransferClusterZoneOutcomeCallable CynosdbClient::CheckTransferClusterZoneCallable(const CheckTransferClusterZoneRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CheckTransferClusterZoneOutcome>>();
+    CheckTransferClusterZoneAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CheckTransferClusterZoneRequest&,
+        CheckTransferClusterZoneOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -732,6 +832,56 @@ CynosdbClient::CloseWanOutcomeCallable CynosdbClient::CloseWanCallable(const Clo
         const CynosdbClient*,
         const CloseWanRequest&,
         CloseWanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CynosdbClient::CopyBackupToVaultOutcome CynosdbClient::CopyBackupToVault(const CopyBackupToVaultRequest &request)
+{
+    auto outcome = MakeRequest(request, "CopyBackupToVault");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CopyBackupToVaultResponse rsp = CopyBackupToVaultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CopyBackupToVaultOutcome(rsp);
+        else
+            return CopyBackupToVaultOutcome(o.GetError());
+    }
+    else
+    {
+        return CopyBackupToVaultOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::CopyBackupToVaultAsync(const CopyBackupToVaultRequest& request, const CopyBackupToVaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CopyBackupToVaultRequest&;
+    using Resp = CopyBackupToVaultResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CopyBackupToVault", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::CopyBackupToVaultOutcomeCallable CynosdbClient::CopyBackupToVaultCallable(const CopyBackupToVaultRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CopyBackupToVaultOutcome>>();
+    CopyBackupToVaultAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CopyBackupToVaultRequest&,
+        CopyBackupToVaultOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1490,6 +1640,56 @@ CynosdbClient::CreateResourcePackageOutcomeCallable CynosdbClient::CreateResourc
     return prom->get_future();
 }
 
+CynosdbClient::CreateVaultOutcome CynosdbClient::CreateVault(const CreateVaultRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVault");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVaultResponse rsp = CreateVaultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVaultOutcome(rsp);
+        else
+            return CreateVaultOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVaultOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::CreateVaultAsync(const CreateVaultRequest& request, const CreateVaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateVaultRequest&;
+    using Resp = CreateVaultResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateVault", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::CreateVaultOutcomeCallable CynosdbClient::CreateVaultCallable(const CreateVaultRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateVaultOutcome>>();
+    CreateVaultAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CreateVaultRequest&,
+        CreateVaultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CynosdbClient::DeleteAccountsOutcome CynosdbClient::DeleteAccounts(const DeleteAccountsRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAccounts");
@@ -1682,6 +1882,56 @@ CynosdbClient::DeleteBackupOutcomeCallable CynosdbClient::DeleteBackupCallable(c
         const CynosdbClient*,
         const DeleteBackupRequest&,
         DeleteBackupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CynosdbClient::DeleteBackupVaultOutcome CynosdbClient::DeleteBackupVault(const DeleteBackupVaultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBackupVault");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBackupVaultResponse rsp = DeleteBackupVaultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBackupVaultOutcome(rsp);
+        else
+            return DeleteBackupVaultOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBackupVaultOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DeleteBackupVaultAsync(const DeleteBackupVaultRequest& request, const DeleteBackupVaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteBackupVaultRequest&;
+    using Resp = DeleteBackupVaultResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteBackupVault", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::DeleteBackupVaultOutcomeCallable CynosdbClient::DeleteBackupVaultCallable(const DeleteBackupVaultRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteBackupVaultOutcome>>();
+    DeleteBackupVaultAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DeleteBackupVaultRequest&,
+        DeleteBackupVaultOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1982,6 +2232,56 @@ CynosdbClient::DeleteParamTemplateOutcomeCallable CynosdbClient::DeleteParamTemp
         const CynosdbClient*,
         const DeleteParamTemplateRequest&,
         DeleteParamTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CynosdbClient::DeleteVaultsOutcome CynosdbClient::DeleteVaults(const DeleteVaultsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteVaults");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteVaultsResponse rsp = DeleteVaultsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteVaultsOutcome(rsp);
+        else
+            return DeleteVaultsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteVaultsOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DeleteVaultsAsync(const DeleteVaultsRequest& request, const DeleteVaultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteVaultsRequest&;
+    using Resp = DeleteVaultsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteVaults", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::DeleteVaultsOutcomeCallable CynosdbClient::DeleteVaultsCallable(const DeleteVaultsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteVaultsOutcome>>();
+    DeleteVaultsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DeleteVaultsRequest&,
+        DeleteVaultsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2640,6 +2940,56 @@ CynosdbClient::DescribeBackupListOutcomeCallable CynosdbClient::DescribeBackupLi
     return prom->get_future();
 }
 
+CynosdbClient::DescribeBackupListByVaultOutcome CynosdbClient::DescribeBackupListByVault(const DescribeBackupListByVaultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupListByVault");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupListByVaultResponse rsp = DescribeBackupListByVaultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupListByVaultOutcome(rsp);
+        else
+            return DescribeBackupListByVaultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupListByVaultOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeBackupListByVaultAsync(const DescribeBackupListByVaultRequest& request, const DescribeBackupListByVaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBackupListByVaultRequest&;
+    using Resp = DescribeBackupListByVaultResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupListByVault", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::DescribeBackupListByVaultOutcomeCallable CynosdbClient::DescribeBackupListByVaultCallable(const DescribeBackupListByVaultRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBackupListByVaultOutcome>>();
+    DescribeBackupListByVaultAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeBackupListByVaultRequest&,
+        DescribeBackupListByVaultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CynosdbClient::DescribeBinlogConfigOutcome CynosdbClient::DescribeBinlogConfig(const DescribeBinlogConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBinlogConfig");
@@ -2732,6 +3082,56 @@ CynosdbClient::DescribeBinlogDownloadUrlOutcomeCallable CynosdbClient::DescribeB
         const CynosdbClient*,
         const DescribeBinlogDownloadUrlRequest&,
         DescribeBinlogDownloadUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CynosdbClient::DescribeBinlogListByVaultOutcome CynosdbClient::DescribeBinlogListByVault(const DescribeBinlogListByVaultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBinlogListByVault");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBinlogListByVaultResponse rsp = DescribeBinlogListByVaultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBinlogListByVaultOutcome(rsp);
+        else
+            return DescribeBinlogListByVaultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBinlogListByVaultOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeBinlogListByVaultAsync(const DescribeBinlogListByVaultRequest& request, const DescribeBinlogListByVaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBinlogListByVaultRequest&;
+    using Resp = DescribeBinlogListByVaultResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBinlogListByVault", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::DescribeBinlogListByVaultOutcomeCallable CynosdbClient::DescribeBinlogListByVaultCallable(const DescribeBinlogListByVaultRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBinlogListByVaultOutcome>>();
+    DescribeBinlogListByVaultAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeBinlogListByVaultRequest&,
+        DescribeBinlogListByVaultOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5090,6 +5490,56 @@ CynosdbClient::DescribeProxySpecsOutcomeCallable CynosdbClient::DescribeProxySpe
     return prom->get_future();
 }
 
+CynosdbClient::DescribeRedoLogListByVaultOutcome CynosdbClient::DescribeRedoLogListByVault(const DescribeRedoLogListByVaultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRedoLogListByVault");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRedoLogListByVaultResponse rsp = DescribeRedoLogListByVaultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRedoLogListByVaultOutcome(rsp);
+        else
+            return DescribeRedoLogListByVaultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRedoLogListByVaultOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeRedoLogListByVaultAsync(const DescribeRedoLogListByVaultRequest& request, const DescribeRedoLogListByVaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRedoLogListByVaultRequest&;
+    using Resp = DescribeRedoLogListByVaultResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRedoLogListByVault", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::DescribeRedoLogListByVaultOutcomeCallable CynosdbClient::DescribeRedoLogListByVaultCallable(const DescribeRedoLogListByVaultRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRedoLogListByVaultOutcome>>();
+    DescribeRedoLogListByVaultAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeRedoLogListByVaultRequest&,
+        DescribeRedoLogListByVaultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CynosdbClient::DescribeRedoLogsOutcome CynosdbClient::DescribeRedoLogs(const DescribeRedoLogsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRedoLogs");
@@ -5732,6 +6182,106 @@ CynosdbClient::DescribeTasksOutcomeCallable CynosdbClient::DescribeTasksCallable
         const CynosdbClient*,
         const DescribeTasksRequest&,
         DescribeTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CynosdbClient::DescribeVaultBackupClusterInfoOutcome CynosdbClient::DescribeVaultBackupClusterInfo(const DescribeVaultBackupClusterInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVaultBackupClusterInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVaultBackupClusterInfoResponse rsp = DescribeVaultBackupClusterInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVaultBackupClusterInfoOutcome(rsp);
+        else
+            return DescribeVaultBackupClusterInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVaultBackupClusterInfoOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeVaultBackupClusterInfoAsync(const DescribeVaultBackupClusterInfoRequest& request, const DescribeVaultBackupClusterInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeVaultBackupClusterInfoRequest&;
+    using Resp = DescribeVaultBackupClusterInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeVaultBackupClusterInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::DescribeVaultBackupClusterInfoOutcomeCallable CynosdbClient::DescribeVaultBackupClusterInfoCallable(const DescribeVaultBackupClusterInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeVaultBackupClusterInfoOutcome>>();
+    DescribeVaultBackupClusterInfoAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeVaultBackupClusterInfoRequest&,
+        DescribeVaultBackupClusterInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CynosdbClient::DescribeVaultsOutcome CynosdbClient::DescribeVaults(const DescribeVaultsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVaults");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVaultsResponse rsp = DescribeVaultsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVaultsOutcome(rsp);
+        else
+            return DescribeVaultsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVaultsOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeVaultsAsync(const DescribeVaultsRequest& request, const DescribeVaultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeVaultsRequest&;
+    using Resp = DescribeVaultsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeVaults", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::DescribeVaultsOutcomeCallable CynosdbClient::DescribeVaultsCallable(const DescribeVaultsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeVaultsOutcome>>();
+    DescribeVaultsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeVaultsRequest&,
+        DescribeVaultsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -7082,6 +7632,56 @@ CynosdbClient::ModifyBinlogSaveDaysOutcomeCallable CynosdbClient::ModifyBinlogSa
         const CynosdbClient*,
         const ModifyBinlogSaveDaysRequest&,
         ModifyBinlogSaveDaysOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CynosdbClient::ModifyClusterBinlogRedoLogAutoCopyVaultOutcome CynosdbClient::ModifyClusterBinlogRedoLogAutoCopyVault(const ModifyClusterBinlogRedoLogAutoCopyVaultRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterBinlogRedoLogAutoCopyVault");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterBinlogRedoLogAutoCopyVaultResponse rsp = ModifyClusterBinlogRedoLogAutoCopyVaultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterBinlogRedoLogAutoCopyVaultOutcome(rsp);
+        else
+            return ModifyClusterBinlogRedoLogAutoCopyVaultOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterBinlogRedoLogAutoCopyVaultOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyClusterBinlogRedoLogAutoCopyVaultAsync(const ModifyClusterBinlogRedoLogAutoCopyVaultRequest& request, const ModifyClusterBinlogRedoLogAutoCopyVaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyClusterBinlogRedoLogAutoCopyVaultRequest&;
+    using Resp = ModifyClusterBinlogRedoLogAutoCopyVaultResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterBinlogRedoLogAutoCopyVault", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::ModifyClusterBinlogRedoLogAutoCopyVaultOutcomeCallable CynosdbClient::ModifyClusterBinlogRedoLogAutoCopyVaultCallable(const ModifyClusterBinlogRedoLogAutoCopyVaultRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyClusterBinlogRedoLogAutoCopyVaultOutcome>>();
+    ModifyClusterBinlogRedoLogAutoCopyVaultAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyClusterBinlogRedoLogAutoCopyVaultRequest&,
+        ModifyClusterBinlogRedoLogAutoCopyVaultOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -8532,6 +9132,56 @@ CynosdbClient::ModifySnapBackupCrossRegionConfigOutcomeCallable CynosdbClient::M
         const CynosdbClient*,
         const ModifySnapBackupCrossRegionConfigRequest&,
         ModifySnapBackupCrossRegionConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CynosdbClient::ModifyVaultOutcome CynosdbClient::ModifyVault(const ModifyVaultRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyVault");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyVaultResponse rsp = ModifyVaultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyVaultOutcome(rsp);
+        else
+            return ModifyVaultOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyVaultOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyVaultAsync(const ModifyVaultRequest& request, const ModifyVaultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyVaultRequest&;
+    using Resp = ModifyVaultResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyVault", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::ModifyVaultOutcomeCallable CynosdbClient::ModifyVaultCallable(const ModifyVaultRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyVaultOutcome>>();
+    ModifyVaultAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const ModifyVaultRequest&,
+        ModifyVaultOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -10332,6 +10982,56 @@ CynosdbClient::SwitchProxyVpcOutcomeCallable CynosdbClient::SwitchProxyVpcCallab
         const CynosdbClient*,
         const SwitchProxyVpcRequest&,
         SwitchProxyVpcOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CynosdbClient::TransferClusterZoneOutcome CynosdbClient::TransferClusterZone(const TransferClusterZoneRequest &request)
+{
+    auto outcome = MakeRequest(request, "TransferClusterZone");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TransferClusterZoneResponse rsp = TransferClusterZoneResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TransferClusterZoneOutcome(rsp);
+        else
+            return TransferClusterZoneOutcome(o.GetError());
+    }
+    else
+    {
+        return TransferClusterZoneOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::TransferClusterZoneAsync(const TransferClusterZoneRequest& request, const TransferClusterZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const TransferClusterZoneRequest&;
+    using Resp = TransferClusterZoneResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "TransferClusterZone", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::TransferClusterZoneOutcomeCallable CynosdbClient::TransferClusterZoneCallable(const TransferClusterZoneRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<TransferClusterZoneOutcome>>();
+    TransferClusterZoneAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const TransferClusterZoneRequest&,
+        TransferClusterZoneOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
