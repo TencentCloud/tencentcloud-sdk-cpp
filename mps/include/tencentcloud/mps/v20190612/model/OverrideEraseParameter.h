@@ -50,27 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取擦除类型
-- subtitle 去字幕
-- watermark 去水印
-- privacy 隐私保护
-                     * @return EraseType 擦除类型
-- subtitle 去字幕
-- watermark 去水印
-- privacy 隐私保护
+                     * 获取<p>擦除类型</p><ul><li>subtitle 去字幕</li><li>watermark 去水印</li><li>privacy 隐私保护</li></ul>
+                     * @return EraseType <p>擦除类型</p><ul><li>subtitle 去字幕</li><li>watermark 去水印</li><li>privacy 隐私保护</li></ul>
                      * 
                      */
                     std::string GetEraseType() const;
 
                     /**
-                     * 设置擦除类型
-- subtitle 去字幕
-- watermark 去水印
-- privacy 隐私保护
-                     * @param _eraseType 擦除类型
-- subtitle 去字幕
-- watermark 去水印
-- privacy 隐私保护
+                     * 设置<p>擦除类型</p><ul><li>subtitle 去字幕</li><li>watermark 去水印</li><li>privacy 隐私保护</li></ul>
+                     * @param _eraseType <p>擦除类型</p><ul><li>subtitle 去字幕</li><li>watermark 去水印</li><li>privacy 隐私保护</li></ul>
                      * 
                      */
                     void SetEraseType(const std::string& _eraseType);
@@ -83,19 +71,15 @@ namespace TencentCloud
                     bool EraseTypeHasBeenSet() const;
 
                     /**
-                     * 获取字幕擦除配置；
-当EraseType值为：subtitle，此字段为必填参数
-                     * @return EraseSubtitleConfig 字幕擦除配置；
-当EraseType值为：subtitle，此字段为必填参数
+                     * 获取<p>字幕擦除配置；<br>当EraseType值为：subtitle，此字段为必填参数</p>
+                     * @return EraseSubtitleConfig <p>字幕擦除配置；<br>当EraseType值为：subtitle，此字段为必填参数</p>
                      * 
                      */
                     UpdateSmartEraseSubtitleConfig GetEraseSubtitleConfig() const;
 
                     /**
-                     * 设置字幕擦除配置；
-当EraseType值为：subtitle，此字段为必填参数
-                     * @param _eraseSubtitleConfig 字幕擦除配置；
-当EraseType值为：subtitle，此字段为必填参数
+                     * 设置<p>字幕擦除配置；<br>当EraseType值为：subtitle，此字段为必填参数</p>
+                     * @param _eraseSubtitleConfig <p>字幕擦除配置；<br>当EraseType值为：subtitle，此字段为必填参数</p>
                      * 
                      */
                     void SetEraseSubtitleConfig(const UpdateSmartEraseSubtitleConfig& _eraseSubtitleConfig);
@@ -108,19 +92,15 @@ namespace TencentCloud
                     bool EraseSubtitleConfigHasBeenSet() const;
 
                     /**
-                     * 获取水印擦除配置；
-当EraseType值为：watermark，此字段为必填参数
-                     * @return EraseWatermarkConfig 水印擦除配置；
-当EraseType值为：watermark，此字段为必填参数
+                     * 获取<p>水印擦除配置；<br>当EraseType值为：watermark，此字段为必填参数</p>
+                     * @return EraseWatermarkConfig <p>水印擦除配置；<br>当EraseType值为：watermark，此字段为必填参数</p>
                      * 
                      */
                     UpdateSmartEraseWatermarkConfig GetEraseWatermarkConfig() const;
 
                     /**
-                     * 设置水印擦除配置；
-当EraseType值为：watermark，此字段为必填参数
-                     * @param _eraseWatermarkConfig 水印擦除配置；
-当EraseType值为：watermark，此字段为必填参数
+                     * 设置<p>水印擦除配置；<br>当EraseType值为：watermark，此字段为必填参数</p>
+                     * @param _eraseWatermarkConfig <p>水印擦除配置；<br>当EraseType值为：watermark，此字段为必填参数</p>
                      * 
                      */
                     void SetEraseWatermarkConfig(const UpdateSmartEraseWatermarkConfig& _eraseWatermarkConfig);
@@ -133,19 +113,15 @@ namespace TencentCloud
                     bool EraseWatermarkConfigHasBeenSet() const;
 
                     /**
-                     * 获取隐私保护配置；
-当EraseType值为：privacy，此字段为必填参数
-                     * @return ErasePrivacyConfig 隐私保护配置；
-当EraseType值为：privacy，此字段为必填参数
+                     * 获取<p>隐私保护配置；<br>当EraseType值为：privacy，此字段为必填参数</p>
+                     * @return ErasePrivacyConfig <p>隐私保护配置；<br>当EraseType值为：privacy，此字段为必填参数</p>
                      * 
                      */
                     UpdateSmartErasePrivacyConfig GetErasePrivacyConfig() const;
 
                     /**
-                     * 设置隐私保护配置；
-当EraseType值为：privacy，此字段为必填参数
-                     * @param _erasePrivacyConfig 隐私保护配置；
-当EraseType值为：privacy，此字段为必填参数
+                     * 设置<p>隐私保护配置；<br>当EraseType值为：privacy，此字段为必填参数</p>
+                     * @param _erasePrivacyConfig <p>隐私保护配置；<br>当EraseType值为：privacy，此字段为必填参数</p>
                      * 
                      */
                     void SetErasePrivacyConfig(const UpdateSmartErasePrivacyConfig& _erasePrivacyConfig);
@@ -157,37 +133,58 @@ namespace TencentCloud
                      */
                     bool ErasePrivacyConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>擦除压制字幕模板id。</p>
+                     * @return SubtitleEmbedId <p>擦除压制字幕模板id。</p>
+                     * 
+                     */
+                    int64_t GetSubtitleEmbedId() const;
+
+                    /**
+                     * 设置<p>擦除压制字幕模板id。</p>
+                     * @param _subtitleEmbedId <p>擦除压制字幕模板id。</p>
+                     * 
+                     */
+                    void SetSubtitleEmbedId(const int64_t& _subtitleEmbedId);
+
+                    /**
+                     * 判断参数 SubtitleEmbedId 是否已赋值
+                     * @return SubtitleEmbedId 是否已赋值
+                     * 
+                     */
+                    bool SubtitleEmbedIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 擦除类型
-- subtitle 去字幕
-- watermark 去水印
-- privacy 隐私保护
+                     * <p>擦除类型</p><ul><li>subtitle 去字幕</li><li>watermark 去水印</li><li>privacy 隐私保护</li></ul>
                      */
                     std::string m_eraseType;
                     bool m_eraseTypeHasBeenSet;
 
                     /**
-                     * 字幕擦除配置；
-当EraseType值为：subtitle，此字段为必填参数
+                     * <p>字幕擦除配置；<br>当EraseType值为：subtitle，此字段为必填参数</p>
                      */
                     UpdateSmartEraseSubtitleConfig m_eraseSubtitleConfig;
                     bool m_eraseSubtitleConfigHasBeenSet;
 
                     /**
-                     * 水印擦除配置；
-当EraseType值为：watermark，此字段为必填参数
+                     * <p>水印擦除配置；<br>当EraseType值为：watermark，此字段为必填参数</p>
                      */
                     UpdateSmartEraseWatermarkConfig m_eraseWatermarkConfig;
                     bool m_eraseWatermarkConfigHasBeenSet;
 
                     /**
-                     * 隐私保护配置；
-当EraseType值为：privacy，此字段为必填参数
+                     * <p>隐私保护配置；<br>当EraseType值为：privacy，此字段为必填参数</p>
                      */
                     UpdateSmartErasePrivacyConfig m_erasePrivacyConfig;
                     bool m_erasePrivacyConfigHasBeenSet;
+
+                    /**
+                     * <p>擦除压制字幕模板id。</p>
+                     */
+                    int64_t m_subtitleEmbedId;
+                    bool m_subtitleEmbedIdHasBeenSet;
 
                 };
             }

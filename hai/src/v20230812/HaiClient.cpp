@@ -90,6 +90,56 @@ HaiClient::CreateApplicationOutcomeCallable HaiClient::CreateApplicationCallable
     return prom->get_future();
 }
 
+HaiClient::CreateInferServiceByTemplateOutcome HaiClient::CreateInferServiceByTemplate(const CreateInferServiceByTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInferServiceByTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInferServiceByTemplateResponse rsp = CreateInferServiceByTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInferServiceByTemplateOutcome(rsp);
+        else
+            return CreateInferServiceByTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInferServiceByTemplateOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::CreateInferServiceByTemplateAsync(const CreateInferServiceByTemplateRequest& request, const CreateInferServiceByTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateInferServiceByTemplateRequest&;
+    using Resp = CreateInferServiceByTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateInferServiceByTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+HaiClient::CreateInferServiceByTemplateOutcomeCallable HaiClient::CreateInferServiceByTemplateCallable(const CreateInferServiceByTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateInferServiceByTemplateOutcome>>();
+    CreateInferServiceByTemplateAsync(
+    request,
+    [prom](
+        const HaiClient*,
+        const CreateInferServiceByTemplateRequest&,
+        CreateInferServiceByTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 HaiClient::CreateMuskPromptOutcome HaiClient::CreateMuskPrompt(const CreateMuskPromptRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateMuskPrompt");
@@ -140,6 +190,56 @@ HaiClient::CreateMuskPromptOutcomeCallable HaiClient::CreateMuskPromptCallable(c
     return prom->get_future();
 }
 
+HaiClient::DeployInferServiceOutcome HaiClient::DeployInferService(const DeployInferServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeployInferService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeployInferServiceResponse rsp = DeployInferServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeployInferServiceOutcome(rsp);
+        else
+            return DeployInferServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeployInferServiceOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::DeployInferServiceAsync(const DeployInferServiceRequest& request, const DeployInferServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeployInferServiceRequest&;
+    using Resp = DeployInferServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeployInferService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+HaiClient::DeployInferServiceOutcomeCallable HaiClient::DeployInferServiceCallable(const DeployInferServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeployInferServiceOutcome>>();
+    DeployInferServiceAsync(
+    request,
+    [prom](
+        const HaiClient*,
+        const DeployInferServiceRequest&,
+        DeployInferServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 HaiClient::DescribeApplicationsOutcome HaiClient::DescribeApplications(const DescribeApplicationsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeApplications");
@@ -182,6 +282,56 @@ HaiClient::DescribeApplicationsOutcomeCallable HaiClient::DescribeApplicationsCa
         const HaiClient*,
         const DescribeApplicationsRequest&,
         DescribeApplicationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+HaiClient::DescribeDeployTemplatesOutcome HaiClient::DescribeDeployTemplates(const DescribeDeployTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeployTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeployTemplatesResponse rsp = DescribeDeployTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeployTemplatesOutcome(rsp);
+        else
+            return DescribeDeployTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeployTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::DescribeDeployTemplatesAsync(const DescribeDeployTemplatesRequest& request, const DescribeDeployTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDeployTemplatesRequest&;
+    using Resp = DescribeDeployTemplatesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeployTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+HaiClient::DescribeDeployTemplatesOutcomeCallable HaiClient::DescribeDeployTemplatesCallable(const DescribeDeployTemplatesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDeployTemplatesOutcome>>();
+    DescribeDeployTemplatesAsync(
+    request,
+    [prom](
+        const HaiClient*,
+        const DescribeDeployTemplatesRequest&,
+        DescribeDeployTemplatesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -282,6 +432,56 @@ HaiClient::DescribeInstancesOutcomeCallable HaiClient::DescribeInstancesCallable
         const HaiClient*,
         const DescribeInstancesRequest&,
         DescribeInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+HaiClient::DescribeModelsOutcome HaiClient::DescribeModels(const DescribeModelsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModels");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelsResponse rsp = DescribeModelsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelsOutcome(rsp);
+        else
+            return DescribeModelsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelsOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::DescribeModelsAsync(const DescribeModelsRequest& request, const DescribeModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeModelsRequest&;
+    using Resp = DescribeModelsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeModels", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+HaiClient::DescribeModelsOutcomeCallable HaiClient::DescribeModelsCallable(const DescribeModelsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeModelsOutcome>>();
+    DescribeModelsAsync(
+    request,
+    [prom](
+        const HaiClient*,
+        const DescribeModelsRequest&,
+        DescribeModelsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

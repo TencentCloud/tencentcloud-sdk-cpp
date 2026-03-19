@@ -47,7 +47,9 @@ DescribeCloudNativeAPIGatewayResult::DescribeCloudNativeAPIGatewayResult() :
     m_loadBalancerTypeHasBeenSet(false),
     m_publicIpAddressesHasBeenSet(false),
     m_deleteProtectHasBeenSet(false),
-    m_availableVersionsHasBeenSet(false)
+    m_availableVersionsHasBeenSet(false),
+    m_availableUpgradeVersionsHasBeenSet(false),
+    m_availableUpgradeHasBeenSet(false)
 {
 }
 
@@ -363,6 +365,29 @@ CoreInternalOutcome DescribeCloudNativeAPIGatewayResult::Deserialize(const rapid
         m_availableVersionsHasBeenSet = true;
     }
 
+    if (value.HasMember("AvailableUpgradeVersions") && !value["AvailableUpgradeVersions"].IsNull())
+    {
+        if (!value["AvailableUpgradeVersions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeCloudNativeAPIGatewayResult.AvailableUpgradeVersions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AvailableUpgradeVersions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_availableUpgradeVersions.push_back((*itr).GetString());
+        }
+        m_availableUpgradeVersionsHasBeenSet = true;
+    }
+
+    if (value.HasMember("AvailableUpgrade") && !value["AvailableUpgrade"].IsNull())
+    {
+        if (!value["AvailableUpgrade"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeCloudNativeAPIGatewayResult.AvailableUpgrade` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_availableUpgrade = value["AvailableUpgrade"].GetBool();
+        m_availableUpgradeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -604,6 +629,27 @@ void DescribeCloudNativeAPIGatewayResult::ToJsonObject(rapidjson::Value &value, 
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_availableUpgradeVersionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailableUpgradeVersions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_availableUpgradeVersions.begin(); itr != m_availableUpgradeVersions.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_availableUpgradeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailableUpgrade";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_availableUpgrade, allocator);
     }
 
 }
@@ -1039,5 +1085,37 @@ void DescribeCloudNativeAPIGatewayResult::SetAvailableVersions(const vector<stri
 bool DescribeCloudNativeAPIGatewayResult::AvailableVersionsHasBeenSet() const
 {
     return m_availableVersionsHasBeenSet;
+}
+
+vector<string> DescribeCloudNativeAPIGatewayResult::GetAvailableUpgradeVersions() const
+{
+    return m_availableUpgradeVersions;
+}
+
+void DescribeCloudNativeAPIGatewayResult::SetAvailableUpgradeVersions(const vector<string>& _availableUpgradeVersions)
+{
+    m_availableUpgradeVersions = _availableUpgradeVersions;
+    m_availableUpgradeVersionsHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayResult::AvailableUpgradeVersionsHasBeenSet() const
+{
+    return m_availableUpgradeVersionsHasBeenSet;
+}
+
+bool DescribeCloudNativeAPIGatewayResult::GetAvailableUpgrade() const
+{
+    return m_availableUpgrade;
+}
+
+void DescribeCloudNativeAPIGatewayResult::SetAvailableUpgrade(const bool& _availableUpgrade)
+{
+    m_availableUpgrade = _availableUpgrade;
+    m_availableUpgradeHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayResult::AvailableUpgradeHasBeenSet() const
+{
+    return m_availableUpgradeHasBeenSet;
 }
 

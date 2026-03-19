@@ -49,18 +49,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取识别字幕结果
+                     * 获取<p>识别字幕结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RecognizeSubtitleResult 识别字幕结果
+                     * @return RecognizeSubtitleResult <p>识别字幕结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SubtitleResult> GetRecognizeSubtitleResult() const;
 
                     /**
-                     * 设置识别字幕结果
+                     * 设置<p>识别字幕结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _recognizeSubtitleResult 识别字幕结果
+                     * @param _recognizeSubtitleResult <p>识别字幕结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,18 +74,18 @@ namespace TencentCloud
                     bool RecognizeSubtitleResultHasBeenSet() const;
 
                     /**
-                     * 获取翻译字幕结果
+                     * 获取<p>翻译字幕结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TransSubtitleResult 翻译字幕结果
+                     * @return TransSubtitleResult <p>翻译字幕结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SubtitleResult> GetTransSubtitleResult() const;
 
                     /**
-                     * 设置翻译字幕结果
+                     * 设置<p>翻译字幕结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _transSubtitleResult 翻译字幕结果
+                     * @param _transSubtitleResult <p>翻译字幕结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,18 +99,18 @@ namespace TencentCloud
                     bool TransSubtitleResultHasBeenSet() const;
 
                     /**
-                     * 获取字幕文件存储位置
+                     * 获取<p>字幕文件存储位置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OutputStorage 字幕文件存储位置
+                     * @return OutputStorage <p>字幕文件存储位置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
-                     * 设置字幕文件存储位置
+                     * 设置<p>字幕文件存储位置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _outputStorage 字幕文件存储位置
+                     * @param _outputStorage <p>字幕文件存储位置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -126,21 +126,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 识别字幕结果
+                     * <p>识别字幕结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SubtitleResult> m_recognizeSubtitleResult;
                     bool m_recognizeSubtitleResultHasBeenSet;
 
                     /**
-                     * 翻译字幕结果
+                     * <p>翻译字幕结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SubtitleResult> m_transSubtitleResult;
                     bool m_transSubtitleResultHasBeenSet;
 
                     /**
-                     * 字幕文件存储位置
+                     * <p>字幕文件存储位置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskOutputStorage m_outputStorage;

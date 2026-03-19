@@ -97,6 +97,8 @@
 #include <tencentcloud/lcic/v20220817/model/DescribeGroupLiveCodesResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeGroupMemberListRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeGroupMemberListResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeLiveRelayConfigRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeLiveRelayConfigResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeMarqueeRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeMarqueeResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribePlayRecordsRequest.h>
@@ -157,6 +159,8 @@
 #include <tencentcloud/lcic/v20220817/model/ModifyAppResponse.h>
 #include <tencentcloud/lcic/v20220817/model/ModifyGroupRequest.h>
 #include <tencentcloud/lcic/v20220817/model/ModifyGroupResponse.h>
+#include <tencentcloud/lcic/v20220817/model/ModifyLiveRelayConfigRequest.h>
+#include <tencentcloud/lcic/v20220817/model/ModifyLiveRelayConfigResponse.h>
 #include <tencentcloud/lcic/v20220817/model/ModifyRoomRequest.h>
 #include <tencentcloud/lcic/v20220817/model/ModifyRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/ModifyUserProfileRequest.h>
@@ -308,6 +312,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGroupMemberListResponse> DescribeGroupMemberListOutcome;
                 typedef std::future<DescribeGroupMemberListOutcome> DescribeGroupMemberListOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeGroupMemberListRequest&, DescribeGroupMemberListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupMemberListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLiveRelayConfigResponse> DescribeLiveRelayConfigOutcome;
+                typedef std::future<DescribeLiveRelayConfigOutcome> DescribeLiveRelayConfigOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DescribeLiveRelayConfigRequest&, DescribeLiveRelayConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveRelayConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMarqueeResponse> DescribeMarqueeOutcome;
                 typedef std::future<DescribeMarqueeOutcome> DescribeMarqueeOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeMarqueeRequest&, DescribeMarqueeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMarqueeAsyncHandler;
@@ -398,6 +405,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyGroupResponse> ModifyGroupOutcome;
                 typedef std::future<ModifyGroupOutcome> ModifyGroupOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::ModifyGroupRequest&, ModifyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLiveRelayConfigResponse> ModifyLiveRelayConfigOutcome;
+                typedef std::future<ModifyLiveRelayConfigOutcome> ModifyLiveRelayConfigOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::ModifyLiveRelayConfigRequest&, ModifyLiveRelayConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveRelayConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRoomResponse> ModifyRoomOutcome;
                 typedef std::future<ModifyRoomOutcome> ModifyRoomOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::ModifyRoomRequest&, ModifyRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoomAsyncHandler;
@@ -797,6 +807,15 @@ namespace TencentCloud
                 DescribeGroupMemberListOutcomeCallable DescribeGroupMemberListCallable(const Model::DescribeGroupMemberListRequest& request);
 
                 /**
+                 *获取转推配置
+                 * @param req DescribeLiveRelayConfigRequest
+                 * @return DescribeLiveRelayConfigOutcome
+                 */
+                DescribeLiveRelayConfigOutcome DescribeLiveRelayConfig(const Model::DescribeLiveRelayConfigRequest &request);
+                void DescribeLiveRelayConfigAsync(const Model::DescribeLiveRelayConfigRequest& request, const DescribeLiveRelayConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLiveRelayConfigOutcomeCallable DescribeLiveRelayConfigCallable(const Model::DescribeLiveRelayConfigRequest& request);
+
+                /**
                  *查询跑马灯配置
                  * @param req DescribeMarqueeRequest
                  * @return DescribeMarqueeOutcome
@@ -1069,6 +1088,15 @@ namespace TencentCloud
                 ModifyGroupOutcome ModifyGroup(const Model::ModifyGroupRequest &request);
                 void ModifyGroupAsync(const Model::ModifyGroupRequest& request, const ModifyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyGroupOutcomeCallable ModifyGroupCallable(const Model::ModifyGroupRequest& request);
+
+                /**
+                 *修改转推配置
+                 * @param req ModifyLiveRelayConfigRequest
+                 * @return ModifyLiveRelayConfigOutcome
+                 */
+                ModifyLiveRelayConfigOutcome ModifyLiveRelayConfig(const Model::ModifyLiveRelayConfigRequest &request);
+                void ModifyLiveRelayConfigAsync(const Model::ModifyLiveRelayConfigRequest& request, const ModifyLiveRelayConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLiveRelayConfigOutcomeCallable ModifyLiveRelayConfigCallable(const Model::ModifyLiveRelayConfigRequest& request);
 
                 /**
                  *修改房间

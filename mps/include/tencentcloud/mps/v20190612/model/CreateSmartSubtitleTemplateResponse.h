@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取智能字幕模板唯一标识。
-                     * @return Definition 智能字幕模板唯一标识。
+                     * 获取<p>智能字幕模板唯一标识。</p>
+                     * @return Definition <p>智能字幕模板唯一标识。</p>
                      * 
                      */
                     int64_t GetDefinition() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 智能字幕模板唯一标识。
+                     * <p>智能字幕模板唯一标识。</p>
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;

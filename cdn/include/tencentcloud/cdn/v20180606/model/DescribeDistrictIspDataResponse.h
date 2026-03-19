@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取地区运营商数据明细
-                     * @return Data 地区运营商数据明细
+                     * 获取<p>地区运营商数据明细</p>
+                     * @return Data <p>地区运营商数据明细</p>
                      * 
                      */
                     std::vector<DistrictIspInfo> GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 地区运营商数据明细
+                     * <p>地区运营商数据明细</p>
                      */
                     std::vector<DistrictIspInfo> m_data;
                     bool m_dataHasBeenSet;

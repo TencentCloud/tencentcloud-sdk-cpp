@@ -24,7 +24,8 @@ PlaybackItem::PlaybackItem() :
     m_roomIdHasBeenSet(false),
     m_playbackUrlHasBeenSet(false),
     m_durationHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_fileSizeHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome PlaybackItem::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("FileSize") && !value["FileSize"].IsNull())
+    {
+        if (!value["FileSize"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `PlaybackItem.FileSize` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileSize = value["FileSize"].GetDouble();
+        m_fileSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void PlaybackItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
+    }
+
+    if (m_fileSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fileSize, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void PlaybackItem::SetCreateTime(const uint64_t& _createTime)
 bool PlaybackItem::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+double PlaybackItem::GetFileSize() const
+{
+    return m_fileSize;
+}
+
+void PlaybackItem::SetFileSize(const double& _fileSize)
+{
+    m_fileSize = _fileSize;
+    m_fileSizeHasBeenSet = true;
+}
+
+bool PlaybackItem::FileSizeHasBeenSet() const
+{
+    return m_fileSizeHasBeenSet;
 }
 

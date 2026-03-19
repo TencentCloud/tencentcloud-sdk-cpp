@@ -81,6 +81,8 @@
 #include <tencentcloud/mps/v20190612/model/CreateStreamLinkOutputInfoResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateStreamLinkSecurityGroupRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateStreamLinkSecurityGroupResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateSubtitleEmbedTemplateRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateSubtitleEmbedTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateTranscodeTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateTranscodeTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateVideoDatabaseEntryTaskRequest.h>
@@ -135,6 +137,8 @@
 #include <tencentcloud/mps/v20190612/model/DeleteStreamLinkOutputResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteStreamLinkSecurityGroupRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeleteStreamLinkSecurityGroupResponse.h>
+#include <tencentcloud/mps/v20190612/model/DeleteSubtitleEmbedTemplateRequest.h>
+#include <tencentcloud/mps/v20190612/model/DeleteSubtitleEmbedTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteTranscodeTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeleteTranscodeTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteWatermarkTemplateRequest.h>
@@ -217,6 +221,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeStreamLinkRegionsResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeStreamLinkSecurityGroupsRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeStreamLinkSecurityGroupsResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeSubtitleEmbedTemplatesRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeSubtitleEmbedTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeTaskDetailRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeTaskDetailResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeTasksRequest.h>
@@ -297,6 +303,8 @@
 #include <tencentcloud/mps/v20190612/model/ModifyStreamLinkOutputInfoResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyStreamLinkSecurityGroupRequest.h>
 #include <tencentcloud/mps/v20190612/model/ModifyStreamLinkSecurityGroupResponse.h>
+#include <tencentcloud/mps/v20190612/model/ModifySubtitleEmbedTemplateRequest.h>
+#include <tencentcloud/mps/v20190612/model/ModifySubtitleEmbedTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyTranscodeTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/ModifyTranscodeTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyWatermarkTemplateRequest.h>
@@ -430,6 +438,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateStreamLinkSecurityGroupResponse> CreateStreamLinkSecurityGroupOutcome;
                 typedef std::future<CreateStreamLinkSecurityGroupOutcome> CreateStreamLinkSecurityGroupOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateStreamLinkSecurityGroupRequest&, CreateStreamLinkSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStreamLinkSecurityGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSubtitleEmbedTemplateResponse> CreateSubtitleEmbedTemplateOutcome;
+                typedef std::future<CreateSubtitleEmbedTemplateOutcome> CreateSubtitleEmbedTemplateOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateSubtitleEmbedTemplateRequest&, CreateSubtitleEmbedTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSubtitleEmbedTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTranscodeTemplateResponse> CreateTranscodeTemplateOutcome;
                 typedef std::future<CreateTranscodeTemplateOutcome> CreateTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateTranscodeTemplateRequest&, CreateTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTranscodeTemplateAsyncHandler;
@@ -511,6 +522,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteStreamLinkSecurityGroupResponse> DeleteStreamLinkSecurityGroupOutcome;
                 typedef std::future<DeleteStreamLinkSecurityGroupOutcome> DeleteStreamLinkSecurityGroupOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeleteStreamLinkSecurityGroupRequest&, DeleteStreamLinkSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStreamLinkSecurityGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSubtitleEmbedTemplateResponse> DeleteSubtitleEmbedTemplateOutcome;
+                typedef std::future<DeleteSubtitleEmbedTemplateOutcome> DeleteSubtitleEmbedTemplateOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DeleteSubtitleEmbedTemplateRequest&, DeleteSubtitleEmbedTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSubtitleEmbedTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTranscodeTemplateResponse> DeleteTranscodeTemplateOutcome;
                 typedef std::future<DeleteTranscodeTemplateOutcome> DeleteTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeleteTranscodeTemplateRequest&, DeleteTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTranscodeTemplateAsyncHandler;
@@ -634,6 +648,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeStreamLinkSecurityGroupsResponse> DescribeStreamLinkSecurityGroupsOutcome;
                 typedef std::future<DescribeStreamLinkSecurityGroupsOutcome> DescribeStreamLinkSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeStreamLinkSecurityGroupsRequest&, DescribeStreamLinkSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamLinkSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSubtitleEmbedTemplatesResponse> DescribeSubtitleEmbedTemplatesOutcome;
+                typedef std::future<DescribeSubtitleEmbedTemplatesOutcome> DescribeSubtitleEmbedTemplatesOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeSubtitleEmbedTemplatesRequest&, DescribeSubtitleEmbedTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubtitleEmbedTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTaskDetailResponse> DescribeTaskDetailOutcome;
                 typedef std::future<DescribeTaskDetailOutcome> DescribeTaskDetailOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeTaskDetailRequest&, DescribeTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskDetailAsyncHandler;
@@ -754,6 +771,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyStreamLinkSecurityGroupResponse> ModifyStreamLinkSecurityGroupOutcome;
                 typedef std::future<ModifyStreamLinkSecurityGroupOutcome> ModifyStreamLinkSecurityGroupOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ModifyStreamLinkSecurityGroupRequest&, ModifyStreamLinkSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStreamLinkSecurityGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySubtitleEmbedTemplateResponse> ModifySubtitleEmbedTemplateOutcome;
+                typedef std::future<ModifySubtitleEmbedTemplateOutcome> ModifySubtitleEmbedTemplateOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ModifySubtitleEmbedTemplateRequest&, ModifySubtitleEmbedTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubtitleEmbedTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTranscodeTemplateResponse> ModifyTranscodeTemplateOutcome;
                 typedef std::future<ModifyTranscodeTemplateOutcome> ModifyTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ModifyTranscodeTemplateRequest&, ModifyTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTranscodeTemplateAsyncHandler;
@@ -1085,6 +1105,15 @@ namespace TencentCloud
                 CreateStreamLinkSecurityGroupOutcomeCallable CreateStreamLinkSecurityGroupCallable(const Model::CreateStreamLinkSecurityGroupRequest& request);
 
                 /**
+                 *创建自定义字幕压制模板
+                 * @param req CreateSubtitleEmbedTemplateRequest
+                 * @return CreateSubtitleEmbedTemplateOutcome
+                 */
+                CreateSubtitleEmbedTemplateOutcome CreateSubtitleEmbedTemplate(const Model::CreateSubtitleEmbedTemplateRequest &request);
+                void CreateSubtitleEmbedTemplateAsync(const Model::CreateSubtitleEmbedTemplateRequest& request, const CreateSubtitleEmbedTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSubtitleEmbedTemplateOutcomeCallable CreateSubtitleEmbedTemplateCallable(const Model::CreateSubtitleEmbedTemplateRequest& request);
+
+                /**
                  *创建用户自定义转码模板，数量上限：1000
                  * @param req CreateTranscodeTemplateRequest
                  * @return CreateTranscodeTemplateOutcome
@@ -1340,6 +1369,15 @@ namespace TencentCloud
                 DeleteStreamLinkSecurityGroupOutcome DeleteStreamLinkSecurityGroup(const Model::DeleteStreamLinkSecurityGroupRequest &request);
                 void DeleteStreamLinkSecurityGroupAsync(const Model::DeleteStreamLinkSecurityGroupRequest& request, const DeleteStreamLinkSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteStreamLinkSecurityGroupOutcomeCallable DeleteStreamLinkSecurityGroupCallable(const Model::DeleteStreamLinkSecurityGroupRequest& request);
+
+                /**
+                 *删除用户自定义字幕压制模板。
+                 * @param req DeleteSubtitleEmbedTemplateRequest
+                 * @return DeleteSubtitleEmbedTemplateOutcome
+                 */
+                DeleteSubtitleEmbedTemplateOutcome DeleteSubtitleEmbedTemplate(const Model::DeleteSubtitleEmbedTemplateRequest &request);
+                void DeleteSubtitleEmbedTemplateAsync(const Model::DeleteSubtitleEmbedTemplateRequest& request, const DeleteSubtitleEmbedTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSubtitleEmbedTemplateOutcomeCallable DeleteSubtitleEmbedTemplateCallable(const Model::DeleteSubtitleEmbedTemplateRequest& request);
 
                 /**
                  *删除用户自定义转码模板。
@@ -1709,6 +1747,15 @@ namespace TencentCloud
                 DescribeStreamLinkSecurityGroupsOutcome DescribeStreamLinkSecurityGroups(const Model::DescribeStreamLinkSecurityGroupsRequest &request);
                 void DescribeStreamLinkSecurityGroupsAsync(const Model::DescribeStreamLinkSecurityGroupsRequest& request, const DescribeStreamLinkSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeStreamLinkSecurityGroupsOutcomeCallable DescribeStreamLinkSecurityGroupsCallable(const Model::DescribeStreamLinkSecurityGroupsRequest& request);
+
+                /**
+                 *根据字幕压制模板唯一标识，获取字幕压制模板详情列表。返回结果包含符合条件的所有用户自定义字幕压制模板及系统预置字幕压制模板
+                 * @param req DescribeSubtitleEmbedTemplatesRequest
+                 * @return DescribeSubtitleEmbedTemplatesOutcome
+                 */
+                DescribeSubtitleEmbedTemplatesOutcome DescribeSubtitleEmbedTemplates(const Model::DescribeSubtitleEmbedTemplatesRequest &request);
+                void DescribeSubtitleEmbedTemplatesAsync(const Model::DescribeSubtitleEmbedTemplatesRequest& request, const DescribeSubtitleEmbedTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSubtitleEmbedTemplatesOutcomeCallable DescribeSubtitleEmbedTemplatesCallable(const Model::DescribeSubtitleEmbedTemplatesRequest& request);
 
                 /**
                  *通过任务 ID 查询任务的执行状态和结果的详细信息（最多可以查询7天之内提交的任务）。
@@ -2087,6 +2134,15 @@ namespace TencentCloud
                 ModifyStreamLinkSecurityGroupOutcome ModifyStreamLinkSecurityGroup(const Model::ModifyStreamLinkSecurityGroupRequest &request);
                 void ModifyStreamLinkSecurityGroupAsync(const Model::ModifyStreamLinkSecurityGroupRequest& request, const ModifyStreamLinkSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyStreamLinkSecurityGroupOutcomeCallable ModifyStreamLinkSecurityGroupCallable(const Model::ModifyStreamLinkSecurityGroupRequest& request);
+
+                /**
+                 *修改用户自定义字幕压制模板。
+                 * @param req ModifySubtitleEmbedTemplateRequest
+                 * @return ModifySubtitleEmbedTemplateOutcome
+                 */
+                ModifySubtitleEmbedTemplateOutcome ModifySubtitleEmbedTemplate(const Model::ModifySubtitleEmbedTemplateRequest &request);
+                void ModifySubtitleEmbedTemplateAsync(const Model::ModifySubtitleEmbedTemplateRequest& request, const ModifySubtitleEmbedTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySubtitleEmbedTemplateOutcomeCallable ModifySubtitleEmbedTemplateCallable(const Model::ModifySubtitleEmbedTemplateRequest& request);
 
                 /**
                  *修改用户自定义转码模板信息。

@@ -24,7 +24,10 @@ RawSmartEraseParameter::RawSmartEraseParameter() :
     m_eraseTypeHasBeenSet(false),
     m_eraseSubtitleConfigHasBeenSet(false),
     m_eraseWatermarkConfigHasBeenSet(false),
-    m_erasePrivacyConfigHasBeenSet(false)
+    m_erasePrivacyConfigHasBeenSet(false),
+    m_subtitleEmbedIdHasBeenSet(false),
+    m_useOriginalPosHasBeenSet(false),
+    m_useOriginalSizeHasBeenSet(false)
 {
 }
 
@@ -94,6 +97,36 @@ CoreInternalOutcome RawSmartEraseParameter::Deserialize(const rapidjson::Value &
         m_erasePrivacyConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleEmbedId") && !value["SubtitleEmbedId"].IsNull())
+    {
+        if (!value["SubtitleEmbedId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RawSmartEraseParameter.SubtitleEmbedId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitleEmbedId = value["SubtitleEmbedId"].GetInt64();
+        m_subtitleEmbedIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("UseOriginalPos") && !value["UseOriginalPos"].IsNull())
+    {
+        if (!value["UseOriginalPos"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RawSmartEraseParameter.UseOriginalPos` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_useOriginalPos = value["UseOriginalPos"].GetInt64();
+        m_useOriginalPosHasBeenSet = true;
+    }
+
+    if (value.HasMember("UseOriginalSize") && !value["UseOriginalSize"].IsNull())
+    {
+        if (!value["UseOriginalSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RawSmartEraseParameter.UseOriginalSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_useOriginalSize = value["UseOriginalSize"].GetInt64();
+        m_useOriginalSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +167,30 @@ void RawSmartEraseParameter::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_erasePrivacyConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_subtitleEmbedIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleEmbedId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subtitleEmbedId, allocator);
+    }
+
+    if (m_useOriginalPosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseOriginalPos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useOriginalPos, allocator);
+    }
+
+    if (m_useOriginalSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseOriginalSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useOriginalSize, allocator);
     }
 
 }
@@ -201,5 +258,53 @@ void RawSmartEraseParameter::SetErasePrivacyConfig(const SmartErasePrivacyConfig
 bool RawSmartEraseParameter::ErasePrivacyConfigHasBeenSet() const
 {
     return m_erasePrivacyConfigHasBeenSet;
+}
+
+int64_t RawSmartEraseParameter::GetSubtitleEmbedId() const
+{
+    return m_subtitleEmbedId;
+}
+
+void RawSmartEraseParameter::SetSubtitleEmbedId(const int64_t& _subtitleEmbedId)
+{
+    m_subtitleEmbedId = _subtitleEmbedId;
+    m_subtitleEmbedIdHasBeenSet = true;
+}
+
+bool RawSmartEraseParameter::SubtitleEmbedIdHasBeenSet() const
+{
+    return m_subtitleEmbedIdHasBeenSet;
+}
+
+int64_t RawSmartEraseParameter::GetUseOriginalPos() const
+{
+    return m_useOriginalPos;
+}
+
+void RawSmartEraseParameter::SetUseOriginalPos(const int64_t& _useOriginalPos)
+{
+    m_useOriginalPos = _useOriginalPos;
+    m_useOriginalPosHasBeenSet = true;
+}
+
+bool RawSmartEraseParameter::UseOriginalPosHasBeenSet() const
+{
+    return m_useOriginalPosHasBeenSet;
+}
+
+int64_t RawSmartEraseParameter::GetUseOriginalSize() const
+{
+    return m_useOriginalSize;
+}
+
+void RawSmartEraseParameter::SetUseOriginalSize(const int64_t& _useOriginalSize)
+{
+    m_useOriginalSize = _useOriginalSize;
+    m_useOriginalSizeHasBeenSet = true;
+}
+
+bool RawSmartEraseParameter::UseOriginalSizeHasBeenSet() const
+{
+    return m_useOriginalSizeHasBeenSet;
 }
 

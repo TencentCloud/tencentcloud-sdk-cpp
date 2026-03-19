@@ -32,7 +32,8 @@ CreateSmartSubtitleTemplateRequest::CreateSmartSubtitleTemplateRequest() :
     m_translateSwitchHasBeenSet(false),
     m_translateDstLanguageHasBeenSet(false),
     m_processTypeHasBeenSet(false),
-    m_selectingSubtitleAreasConfigHasBeenSet(false)
+    m_selectingSubtitleAreasConfigHasBeenSet(false),
+    m_subtitleEmbedIdHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,14 @@ string CreateSmartSubtitleTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_selectingSubtitleAreasConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_subtitleEmbedIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleEmbedId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subtitleEmbedId, allocator);
     }
 
 
@@ -291,6 +300,22 @@ void CreateSmartSubtitleTemplateRequest::SetSelectingSubtitleAreasConfig(const S
 bool CreateSmartSubtitleTemplateRequest::SelectingSubtitleAreasConfigHasBeenSet() const
 {
     return m_selectingSubtitleAreasConfigHasBeenSet;
+}
+
+int64_t CreateSmartSubtitleTemplateRequest::GetSubtitleEmbedId() const
+{
+    return m_subtitleEmbedId;
+}
+
+void CreateSmartSubtitleTemplateRequest::SetSubtitleEmbedId(const int64_t& _subtitleEmbedId)
+{
+    m_subtitleEmbedId = _subtitleEmbedId;
+    m_subtitleEmbedIdHasBeenSet = true;
+}
+
+bool CreateSmartSubtitleTemplateRequest::SubtitleEmbedIdHasBeenSet() const
+{
+    return m_subtitleEmbedIdHasBeenSet;
 }
 
 

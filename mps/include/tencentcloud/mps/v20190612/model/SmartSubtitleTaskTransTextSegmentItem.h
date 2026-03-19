@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取识别片段置信度。取值：0~100。
-                     * @return Confidence 识别片段置信度。取值：0~100。
+                     * 获取<p>识别片段置信度。取值：0~100。</p>
+                     * @return Confidence <p>识别片段置信度。取值：0~100。</p>
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置识别片段置信度。取值：0~100。
-                     * @param _confidence 识别片段置信度。取值：0~100。
+                     * 设置<p>识别片段置信度。取值：0~100。</p>
+                     * @param _confidence <p>识别片段置信度。取值：0~100。</p>
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取识别片段起始的偏移时间，单位：秒。
-                     * @return StartTimeOffset 识别片段起始的偏移时间，单位：秒。
+                     * 获取<p>识别片段起始的偏移时间，单位：秒。</p>
+                     * @return StartTimeOffset <p>识别片段起始的偏移时间，单位：秒。</p>
                      * 
                      */
                     double GetStartTimeOffset() const;
 
                     /**
-                     * 设置识别片段起始的偏移时间，单位：秒。
-                     * @param _startTimeOffset 识别片段起始的偏移时间，单位：秒。
+                     * 设置<p>识别片段起始的偏移时间，单位：秒。</p>
+                     * @param _startTimeOffset <p>识别片段起始的偏移时间，单位：秒。</p>
                      * 
                      */
                     void SetStartTimeOffset(const double& _startTimeOffset);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool StartTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取识别片段终止的偏移时间，单位：秒。
-                     * @return EndTimeOffset 识别片段终止的偏移时间，单位：秒。
+                     * 获取<p>识别片段终止的偏移时间，单位：秒。</p>
+                     * @return EndTimeOffset <p>识别片段终止的偏移时间，单位：秒。</p>
                      * 
                      */
                     double GetEndTimeOffset() const;
 
                     /**
-                     * 设置识别片段终止的偏移时间，单位：秒。
-                     * @param _endTimeOffset 识别片段终止的偏移时间，单位：秒。
+                     * 设置<p>识别片段终止的偏移时间，单位：秒。</p>
+                     * @param _endTimeOffset <p>识别片段终止的偏移时间，单位：秒。</p>
                      * 
                      */
                     void SetEndTimeOffset(const double& _endTimeOffset);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool EndTimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取识别文本。
-                     * @return Text 识别文本。
+                     * 获取<p>识别文本。</p>
+                     * @return Text <p>识别文本。</p>
                      * 
                      */
                     std::string GetText() const;
 
                     /**
-                     * 设置识别文本。
-                     * @param _text 识别文本。
+                     * 设置<p>识别文本。</p>
+                     * @param _text <p>识别文本。</p>
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool TextHasBeenSet() const;
 
                     /**
-                     * 获取翻译文本。
-                     * @return Trans 翻译文本。
+                     * 获取<p>翻译文本。</p>
+                     * @return Trans <p>翻译文本。</p>
                      * 
                      */
                     std::string GetTrans() const;
 
                     /**
-                     * 设置翻译文本。
-                     * @param _trans 翻译文本。
+                     * 设置<p>翻译文本。</p>
+                     * @param _trans <p>翻译文本。</p>
                      * 
                      */
                     void SetTrans(const std::string& _trans);
@@ -153,18 +153,18 @@ namespace TencentCloud
                     bool TransHasBeenSet() const;
 
                     /**
-                     * 获取字词时间戳信息。
+                     * 获取<p>字词时间戳信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Wordlist 字词时间戳信息。
+                     * @return Wordlist <p>字词时间戳信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<WordResult> GetWordlist() const;
 
                     /**
-                     * 设置字词时间戳信息。
+                     * 设置<p>字词时间戳信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _wordlist 字词时间戳信息。
+                     * @param _wordlist <p>字词时间戳信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -177,44 +177,71 @@ namespace TencentCloud
                      */
                     bool WordlistHasBeenSet() const;
 
+                    /**
+                     * 获取<p>说话人ID（如启用说话人识别）</p>
+                     * @return SpeakerId <p>说话人ID（如启用说话人识别）</p>
+                     * 
+                     */
+                    std::string GetSpeakerId() const;
+
+                    /**
+                     * 设置<p>说话人ID（如启用说话人识别）</p>
+                     * @param _speakerId <p>说话人ID（如启用说话人识别）</p>
+                     * 
+                     */
+                    void SetSpeakerId(const std::string& _speakerId);
+
+                    /**
+                     * 判断参数 SpeakerId 是否已赋值
+                     * @return SpeakerId 是否已赋值
+                     * 
+                     */
+                    bool SpeakerIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 识别片段置信度。取值：0~100。
+                     * <p>识别片段置信度。取值：0~100。</p>
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 识别片段起始的偏移时间，单位：秒。
+                     * <p>识别片段起始的偏移时间，单位：秒。</p>
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
-                     * 识别片段终止的偏移时间，单位：秒。
+                     * <p>识别片段终止的偏移时间，单位：秒。</p>
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;
 
                     /**
-                     * 识别文本。
+                     * <p>识别文本。</p>
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
-                     * 翻译文本。
+                     * <p>翻译文本。</p>
                      */
                     std::string m_trans;
                     bool m_transHasBeenSet;
 
                     /**
-                     * 字词时间戳信息。
+                     * <p>字词时间戳信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WordResult> m_wordlist;
                     bool m_wordlistHasBeenSet;
+
+                    /**
+                     * <p>说话人ID（如启用说话人识别）</p>
+                     */
+                    std::string m_speakerId;
+                    bool m_speakerIdHasBeenSet;
 
                 };
             }

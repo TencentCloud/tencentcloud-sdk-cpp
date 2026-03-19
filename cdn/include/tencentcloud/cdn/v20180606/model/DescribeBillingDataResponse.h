@@ -45,16 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时间粒度，根据查询时传递参数指定：
-min：1 分钟粒度
-5min：5 分钟粒度
-hour：1 小时粒度
-day：天粒度
-                     * @return Interval 时间粒度，根据查询时传递参数指定：
-min：1 分钟粒度
-5min：5 分钟粒度
-hour：1 小时粒度
-day：天粒度
+                     * 获取<p>时间粒度，根据查询时传递参数指定：<br>min：1 分钟粒度<br>5min：5 分钟粒度<br>hour：1 小时粒度<br>day：天粒度</p>
+                     * @return Interval <p>时间粒度，根据查询时传递参数指定：<br>min：1 分钟粒度<br>5min：5 分钟粒度<br>hour：1 小时粒度<br>day：天粒度</p>
                      * 
                      */
                     std::string GetInterval() const;
@@ -67,8 +59,8 @@ day：天粒度
                     bool IntervalHasBeenSet() const;
 
                     /**
-                     * 获取数据明细
-                     * @return Data 数据明细
+                     * 获取<p>数据明细</p>
+                     * @return Data <p>数据明细</p>
                      * 
                      */
                     std::vector<ResourceBillingData> GetData() const;
@@ -83,17 +75,13 @@ day：天粒度
                 private:
 
                     /**
-                     * 时间粒度，根据查询时传递参数指定：
-min：1 分钟粒度
-5min：5 分钟粒度
-hour：1 小时粒度
-day：天粒度
+                     * <p>时间粒度，根据查询时传递参数指定：<br>min：1 分钟粒度<br>5min：5 分钟粒度<br>hour：1 小时粒度<br>day：天粒度</p>
                      */
                     std::string m_interval;
                     bool m_intervalHasBeenSet;
 
                     /**
-                     * 数据明细
+                     * <p>数据明细</p>
                      */
                     std::vector<ResourceBillingData> m_data;
                     bool m_dataHasBeenSet;

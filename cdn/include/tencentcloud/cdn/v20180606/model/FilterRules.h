@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取封禁类型
+                     * 获取<p>封禁类型<br>forbidden - 封禁</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FilterType 封禁类型
+                     * @return FilterType <p>封禁类型<br>forbidden - 封禁</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFilterType() const;
 
                     /**
-                     * 设置封禁类型
+                     * 设置<p>封禁类型<br>forbidden - 封禁</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _filterType 封禁类型
+                     * @param _filterType <p>封禁类型<br>forbidden - 封禁</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool FilterTypeHasBeenSet() const;
 
                     /**
-                     * 获取封禁规则类型
+                     * 获取<p>封禁规则类型<br>all - 全部请求<br>file - 指定后缀的文件请求</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleType 封禁规则类型
+                     * @return RuleType <p>封禁规则类型<br>all - 全部请求<br>file - 指定后缀的文件请求</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleType() const;
 
                     /**
-                     * 设置封禁规则类型
+                     * 设置<p>封禁规则类型<br>all - 全部请求<br>file - 指定后缀的文件请求</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ruleType 封禁规则类型
+                     * @param _ruleType <p>封禁规则类型<br>all - 全部请求<br>file - 指定后缀的文件请求</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool RuleTypeHasBeenSet() const;
 
                     /**
-                     * 获取封禁规则路径
+                     * 获取<p>封禁规则路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RulePaths 封禁规则路径
+                     * @return RulePaths <p>封禁规则路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRulePaths() const;
 
                     /**
-                     * 设置封禁规则路径
+                     * 设置<p>封禁规则路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rulePaths 封禁规则路径
+                     * @param _rulePaths <p>封禁规则路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,21 +124,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 封禁类型
+                     * <p>封禁类型<br>forbidden - 封禁</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_filterType;
                     bool m_filterTypeHasBeenSet;
 
                     /**
-                     * 封禁规则类型
+                     * <p>封禁规则类型<br>all - 全部请求<br>file - 指定后缀的文件请求</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleType;
                     bool m_ruleTypeHasBeenSet;
 
                     /**
-                     * 封禁规则路径
+                     * <p>封禁规则路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_rulePaths;

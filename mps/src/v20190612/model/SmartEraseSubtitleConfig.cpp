@@ -29,7 +29,10 @@ SmartEraseSubtitleConfig::SmartEraseSubtitleConfig() :
     m_transSwitchHasBeenSet(false),
     m_transDstLangHasBeenSet(false),
     m_autoAreasHasBeenSet(false),
-    m_customAreasHasBeenSet(false)
+    m_customAreasHasBeenSet(false),
+    m_subtitleEmbedIdHasBeenSet(false),
+    m_useOriginalPosHasBeenSet(false),
+    m_useOriginalSizeHasBeenSet(false)
 {
 }
 
@@ -148,6 +151,36 @@ CoreInternalOutcome SmartEraseSubtitleConfig::Deserialize(const rapidjson::Value
         m_customAreasHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleEmbedId") && !value["SubtitleEmbedId"].IsNull())
+    {
+        if (!value["SubtitleEmbedId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmartEraseSubtitleConfig.SubtitleEmbedId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitleEmbedId = value["SubtitleEmbedId"].GetUint64();
+        m_subtitleEmbedIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("UseOriginalPos") && !value["UseOriginalPos"].IsNull())
+    {
+        if (!value["UseOriginalPos"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmartEraseSubtitleConfig.UseOriginalPos` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_useOriginalPos = value["UseOriginalPos"].GetInt64();
+        m_useOriginalPosHasBeenSet = true;
+    }
+
+    if (value.HasMember("UseOriginalSize") && !value["UseOriginalSize"].IsNull())
+    {
+        if (!value["UseOriginalSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmartEraseSubtitleConfig.UseOriginalSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_useOriginalSize = value["UseOriginalSize"].GetInt64();
+        m_useOriginalSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -239,6 +272,30 @@ void SmartEraseSubtitleConfig::ToJsonObject(rapidjson::Value &value, rapidjson::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_subtitleEmbedIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleEmbedId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subtitleEmbedId, allocator);
+    }
+
+    if (m_useOriginalPosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseOriginalPos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useOriginalPos, allocator);
+    }
+
+    if (m_useOriginalSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseOriginalSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useOriginalSize, allocator);
     }
 
 }
@@ -386,5 +443,53 @@ void SmartEraseSubtitleConfig::SetCustomAreas(const vector<EraseTimeArea>& _cust
 bool SmartEraseSubtitleConfig::CustomAreasHasBeenSet() const
 {
     return m_customAreasHasBeenSet;
+}
+
+uint64_t SmartEraseSubtitleConfig::GetSubtitleEmbedId() const
+{
+    return m_subtitleEmbedId;
+}
+
+void SmartEraseSubtitleConfig::SetSubtitleEmbedId(const uint64_t& _subtitleEmbedId)
+{
+    m_subtitleEmbedId = _subtitleEmbedId;
+    m_subtitleEmbedIdHasBeenSet = true;
+}
+
+bool SmartEraseSubtitleConfig::SubtitleEmbedIdHasBeenSet() const
+{
+    return m_subtitleEmbedIdHasBeenSet;
+}
+
+int64_t SmartEraseSubtitleConfig::GetUseOriginalPos() const
+{
+    return m_useOriginalPos;
+}
+
+void SmartEraseSubtitleConfig::SetUseOriginalPos(const int64_t& _useOriginalPos)
+{
+    m_useOriginalPos = _useOriginalPos;
+    m_useOriginalPosHasBeenSet = true;
+}
+
+bool SmartEraseSubtitleConfig::UseOriginalPosHasBeenSet() const
+{
+    return m_useOriginalPosHasBeenSet;
+}
+
+int64_t SmartEraseSubtitleConfig::GetUseOriginalSize() const
+{
+    return m_useOriginalSize;
+}
+
+void SmartEraseSubtitleConfig::SetUseOriginalSize(const int64_t& _useOriginalSize)
+{
+    m_useOriginalSize = _useOriginalSize;
+    m_useOriginalSizeHasBeenSet = true;
+}
+
+bool SmartEraseSubtitleConfig::UseOriginalSizeHasBeenSet() const
+{
+    return m_useOriginalSizeHasBeenSet;
 }
 

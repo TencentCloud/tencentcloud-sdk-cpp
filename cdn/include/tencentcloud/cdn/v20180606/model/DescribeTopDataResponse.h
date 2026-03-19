@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取各个资源的Top 访问数据详情。
-                     * @return Data 各个资源的Top 访问数据详情。
+                     * 获取<p>各个资源的Top 访问数据详情。</p>
+                     * @return Data <p>各个资源的Top 访问数据详情。</p>
                      * 
                      */
                     std::vector<TopDataMore> GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 各个资源的Top 访问数据详情。
+                     * <p>各个资源的Top 访问数据详情。</p>
                      */
                     std::vector<TopDataMore> m_data;
                     bool m_dataHasBeenSet;

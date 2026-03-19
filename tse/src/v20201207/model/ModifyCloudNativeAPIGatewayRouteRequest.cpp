@@ -39,7 +39,8 @@ ModifyCloudNativeAPIGatewayRouteRequest::ModifyCloudNativeAPIGatewayRouteRequest
     m_headersHasBeenSet(false),
     m_requestBufferingHasBeenSet(false),
     m_responseBufferingHasBeenSet(false),
-    m_regexPriorityHasBeenSet(false)
+    m_regexPriorityHasBeenSet(false),
+    m_queryStringParametersHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,21 @@ string ModifyCloudNativeAPIGatewayRouteRequest::ToJsonString() const
         string key = "RegexPriority";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_regexPriority, allocator);
+    }
+
+    if (m_queryStringParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryStringParameters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_queryStringParameters.begin(); itr != m_queryStringParameters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -496,6 +512,22 @@ void ModifyCloudNativeAPIGatewayRouteRequest::SetRegexPriority(const int64_t& _r
 bool ModifyCloudNativeAPIGatewayRouteRequest::RegexPriorityHasBeenSet() const
 {
     return m_regexPriorityHasBeenSet;
+}
+
+vector<KVMapping> ModifyCloudNativeAPIGatewayRouteRequest::GetQueryStringParameters() const
+{
+    return m_queryStringParameters;
+}
+
+void ModifyCloudNativeAPIGatewayRouteRequest::SetQueryStringParameters(const vector<KVMapping>& _queryStringParameters)
+{
+    m_queryStringParameters = _queryStringParameters;
+    m_queryStringParametersHasBeenSet = true;
+}
+
+bool ModifyCloudNativeAPIGatewayRouteRequest::QueryStringParametersHasBeenSet() const
+{
+    return m_queryStringParametersHasBeenSet;
 }
 
 

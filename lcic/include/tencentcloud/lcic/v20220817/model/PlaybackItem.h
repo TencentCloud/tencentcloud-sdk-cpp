@@ -130,6 +130,27 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>文件大小。</p><p>单位：MB</p>
+                     * @return FileSize <p>文件大小。</p><p>单位：MB</p>
+                     * 
+                     */
+                    double GetFileSize() const;
+
+                    /**
+                     * 设置<p>文件大小。</p><p>单位：MB</p>
+                     * @param _fileSize <p>文件大小。</p><p>单位：MB</p>
+                     * 
+                     */
+                    void SetFileSize(const double& _fileSize);
+
+                    /**
+                     * 判断参数 FileSize 是否已赋值
+                     * @return FileSize 是否已赋值
+                     * 
+                     */
+                    bool FileSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +176,12 @@ namespace TencentCloud
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * <p>文件大小。</p><p>单位：MB</p>
+                     */
+                    double m_fileSize;
+                    bool m_fileSizeHasBeenSet;
 
                 };
             }

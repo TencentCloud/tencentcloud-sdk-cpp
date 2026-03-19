@@ -210,48 +210,6 @@ namespace TencentCloud
                      */
                     bool ConfigIDHasBeenSet() const;
 
-                    /**
-                     * 获取<p>需要识别的文字类型，默认识别全部类型的文字。 0：自动识别全部类型文字 1：仅识别手写体文字 2：仅识别印刷体文字</p>
-                     * @return WordsType <p>需要识别的文字类型，默认识别全部类型的文字。 0：自动识别全部类型文字 1：仅识别手写体文字 2：仅识别印刷体文字</p>
-                     * 
-                     */
-                    std::string GetWordsType() const;
-
-                    /**
-                     * 设置<p>需要识别的文字类型，默认识别全部类型的文字。 0：自动识别全部类型文字 1：仅识别手写体文字 2：仅识别印刷体文字</p>
-                     * @param _wordsType <p>需要识别的文字类型，默认识别全部类型的文字。 0：自动识别全部类型文字 1：仅识别手写体文字 2：仅识别印刷体文字</p>
-                     * 
-                     */
-                    void SetWordsType(const std::string& _wordsType);
-
-                    /**
-                     * 判断参数 WordsType 是否已赋值
-                     * @return WordsType 是否已赋值
-                     * 
-                     */
-                    bool WordsTypeHasBeenSet() const;
-
-                    /**
-                     * 获取<p>支持输出单行文字的语种信息，开启后耗时会略有增加。</p>
-                     * @return LanguageInfo <p>支持输出单行文字的语种信息，开启后耗时会略有增加。</p>
-                     * 
-                     */
-                    bool GetLanguageInfo() const;
-
-                    /**
-                     * 设置<p>支持输出单行文字的语种信息，开启后耗时会略有增加。</p>
-                     * @param _languageInfo <p>支持输出单行文字的语种信息，开启后耗时会略有增加。</p>
-                     * 
-                     */
-                    void SetLanguageInfo(const bool& _languageInfo);
-
-                    /**
-                     * 判断参数 LanguageInfo 是否已赋值
-                     * @return LanguageInfo 是否已赋值
-                     * 
-                     */
-                    bool LanguageInfoHasBeenSet() const;
-
                 private:
 
                     /**
@@ -301,18 +259,6 @@ namespace TencentCloud
                      */
                     std::string m_configID;
                     bool m_configIDHasBeenSet;
-
-                    /**
-                     * <p>需要识别的文字类型，默认识别全部类型的文字。 0：自动识别全部类型文字 1：仅识别手写体文字 2：仅识别印刷体文字</p>
-                     */
-                    std::string m_wordsType;
-                    bool m_wordsTypeHasBeenSet;
-
-                    /**
-                     * <p>支持输出单行文字的语种信息，开启后耗时会略有增加。</p>
-                     */
-                    bool m_languageInfo;
-                    bool m_languageInfoHasBeenSet;
 
                 };
             }

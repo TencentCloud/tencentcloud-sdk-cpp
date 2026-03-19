@@ -212,6 +212,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DescribeInstanceResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/GetLoRaGatewayListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeProjectRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/SeeEventIdFilterConfig.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeSubscribedTopicPolicyRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/UploadFirmwareResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyTopicPolicyRequest.h
@@ -722,6 +723,7 @@ set(iotexplorer_src
   src/v20190423/model/DescribeInstanceResponse.cpp
   src/v20190423/model/GetLoRaGatewayListRequest.cpp
   src/v20190423/model/DescribeProjectRequest.cpp
+  src/v20190423/model/SeeEventIdFilterConfig.cpp
   src/v20190423/model/DescribeSubscribedTopicPolicyRequest.cpp
   src/v20190423/model/UploadFirmwareResponse.cpp
   src/v20190423/model/ModifyTopicPolicyRequest.cpp

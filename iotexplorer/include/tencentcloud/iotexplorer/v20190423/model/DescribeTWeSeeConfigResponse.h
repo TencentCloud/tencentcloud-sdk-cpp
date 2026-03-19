@@ -21,6 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iotexplorer/v20190423/model/VisionSummaryConfig.h>
+#include <tencentcloud/iotexplorer/v20190423/model/SeeEventIdFilterConfig.h>
 
 
 namespace TencentCloud
@@ -85,6 +87,34 @@ namespace TencentCloud
                      */
                     bool ConfigHasBeenSet() const;
 
+                    /**
+                     * 获取摘要配置参数
+                     * @return SummaryConfig 摘要配置参数
+                     * 
+                     */
+                    VisionSummaryConfig GetSummaryConfig() const;
+
+                    /**
+                     * 判断参数 SummaryConfig 是否已赋值
+                     * @return SummaryConfig 是否已赋值
+                     * 
+                     */
+                    bool SummaryConfigHasBeenSet() const;
+
+                    /**
+                     * 获取云存事件 ID 过滤规则配置项
+                     * @return EventIdFilterConfig 云存事件 ID 过滤规则配置项
+                     * 
+                     */
+                    SeeEventIdFilterConfig GetEventIdFilterConfig() const;
+
+                    /**
+                     * 判断参数 EventIdFilterConfig 是否已赋值
+                     * @return EventIdFilterConfig 是否已赋值
+                     * 
+                     */
+                    bool EventIdFilterConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -104,6 +134,18 @@ namespace TencentCloud
                      */
                     std::string m_config;
                     bool m_configHasBeenSet;
+
+                    /**
+                     * 摘要配置参数
+                     */
+                    VisionSummaryConfig m_summaryConfig;
+                    bool m_summaryConfigHasBeenSet;
+
+                    /**
+                     * 云存事件 ID 过滤规则配置项
+                     */
+                    SeeEventIdFilterConfig m_eventIdFilterConfig;
+                    bool m_eventIdFilterConfigHasBeenSet;
 
                 };
             }

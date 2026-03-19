@@ -26,7 +26,9 @@ using namespace std;
 DescribeTWeSeeConfigResponse::DescribeTWeSeeConfigResponse() :
     m_enableSummaryHasBeenSet(false),
     m_enableSearchHasBeenSet(false),
-    m_configHasBeenSet(false)
+    m_configHasBeenSet(false),
+    m_summaryConfigHasBeenSet(false),
+    m_eventIdFilterConfigHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,40 @@ CoreInternalOutcome DescribeTWeSeeConfigResponse::Deserialize(const string &payl
         m_configHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SummaryConfig") && !rsp["SummaryConfig"].IsNull())
+    {
+        if (!rsp["SummaryConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SummaryConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_summaryConfig.Deserialize(rsp["SummaryConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_summaryConfigHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EventIdFilterConfig") && !rsp["EventIdFilterConfig"].IsNull())
+    {
+        if (!rsp["EventIdFilterConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventIdFilterConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_eventIdFilterConfig.Deserialize(rsp["EventIdFilterConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_eventIdFilterConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +162,24 @@ string DescribeTWeSeeConfigResponse::ToJsonString() const
         string key = "Config";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_config.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_summaryConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SummaryConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_summaryConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_eventIdFilterConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventIdFilterConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_eventIdFilterConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +222,26 @@ string DescribeTWeSeeConfigResponse::GetConfig() const
 bool DescribeTWeSeeConfigResponse::ConfigHasBeenSet() const
 {
     return m_configHasBeenSet;
+}
+
+VisionSummaryConfig DescribeTWeSeeConfigResponse::GetSummaryConfig() const
+{
+    return m_summaryConfig;
+}
+
+bool DescribeTWeSeeConfigResponse::SummaryConfigHasBeenSet() const
+{
+    return m_summaryConfigHasBeenSet;
+}
+
+SeeEventIdFilterConfig DescribeTWeSeeConfigResponse::GetEventIdFilterConfig() const
+{
+    return m_eventIdFilterConfig;
+}
+
+bool DescribeTWeSeeConfigResponse::EventIdFilterConfigHasBeenSet() const
+{
+    return m_eventIdFilterConfigHasBeenSet;
 }
 
 

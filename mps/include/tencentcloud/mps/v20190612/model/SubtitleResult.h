@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取字幕文件语言
-                     * @return Language 字幕文件语言
+                     * 获取<p>字幕文件语言</p>
+                     * @return Language <p>字幕文件语言</p>
                      * 
                      */
                     std::string GetLanguage() const;
 
                     /**
-                     * 设置字幕文件语言
-                     * @param _language 字幕文件语言
+                     * 设置<p>字幕文件语言</p>
+                     * @param _language <p>字幕文件语言</p>
                      * 
                      */
                     void SetLanguage(const std::string& _language);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool LanguageHasBeenSet() const;
 
                     /**
-                     * 获取处理是否成功
-                     * @return Status 处理是否成功
+                     * 获取<p>处理是否成功</p>
+                     * @return Status <p>处理是否成功</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置处理是否成功
-                     * @param _status 处理是否成功
+                     * 设置<p>处理是否成功</p>
+                     * @param _status <p>处理是否成功</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取字幕文件地址
-                     * @return Path 字幕文件地址
+                     * 获取<p>字幕文件路径。</p>
+                     * @return Path <p>字幕文件路径。</p>
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置字幕文件地址
-                     * @param _path 字幕文件地址
+                     * 设置<p>字幕文件路径。</p>
+                     * @param _path <p>字幕文件路径。</p>
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -109,25 +109,52 @@ namespace TencentCloud
                      */
                     bool PathHasBeenSet() const;
 
+                    /**
+                     * 获取<p>字幕压制视频路径。</p>
+                     * @return SubtitleEmbedPath <p>字幕压制视频路径。</p>
+                     * 
+                     */
+                    std::string GetSubtitleEmbedPath() const;
+
+                    /**
+                     * 设置<p>字幕压制视频路径。</p>
+                     * @param _subtitleEmbedPath <p>字幕压制视频路径。</p>
+                     * 
+                     */
+                    void SetSubtitleEmbedPath(const std::string& _subtitleEmbedPath);
+
+                    /**
+                     * 判断参数 SubtitleEmbedPath 是否已赋值
+                     * @return SubtitleEmbedPath 是否已赋值
+                     * 
+                     */
+                    bool SubtitleEmbedPathHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 字幕文件语言
+                     * <p>字幕文件语言</p>
                      */
                     std::string m_language;
                     bool m_languageHasBeenSet;
 
                     /**
-                     * 处理是否成功
+                     * <p>处理是否成功</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 字幕文件地址
+                     * <p>字幕文件路径。</p>
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
+
+                    /**
+                     * <p>字幕压制视频路径。</p>
+                     */
+                    std::string m_subtitleEmbedPath;
+                    bool m_subtitleEmbedPathHasBeenSet;
 
                 };
             }

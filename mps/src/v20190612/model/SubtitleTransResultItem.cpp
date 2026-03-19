@@ -24,7 +24,8 @@ SubtitleTransResultItem::SubtitleTransResultItem() :
     m_statusHasBeenSet(false),
     m_transSrcHasBeenSet(false),
     m_transDstHasBeenSet(false),
-    m_pathHasBeenSet(false)
+    m_pathHasBeenSet(false),
+    m_subtitleEmbedPathHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome SubtitleTransResultItem::Deserialize(const rapidjson::Value 
         m_pathHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleEmbedPath") && !value["SubtitleEmbedPath"].IsNull())
+    {
+        if (!value["SubtitleEmbedPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubtitleTransResultItem.SubtitleEmbedPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitleEmbedPath = string(value["SubtitleEmbedPath"].GetString());
+        m_subtitleEmbedPathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void SubtitleTransResultItem::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "Path";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subtitleEmbedPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleEmbedPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subtitleEmbedPath.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void SubtitleTransResultItem::SetPath(const string& _path)
 bool SubtitleTransResultItem::PathHasBeenSet() const
 {
     return m_pathHasBeenSet;
+}
+
+string SubtitleTransResultItem::GetSubtitleEmbedPath() const
+{
+    return m_subtitleEmbedPath;
+}
+
+void SubtitleTransResultItem::SetSubtitleEmbedPath(const string& _subtitleEmbedPath)
+{
+    m_subtitleEmbedPath = _subtitleEmbedPath;
+    m_subtitleEmbedPathHasBeenSet = true;
+}
+
+bool SubtitleTransResultItem::SubtitleEmbedPathHasBeenSet() const
+{
+    return m_subtitleEmbedPathHasBeenSet;
 }
 

@@ -25,14 +25,22 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/hai/v20230812/model/CreateApplicationRequest.h>
 #include <tencentcloud/hai/v20230812/model/CreateApplicationResponse.h>
+#include <tencentcloud/hai/v20230812/model/CreateInferServiceByTemplateRequest.h>
+#include <tencentcloud/hai/v20230812/model/CreateInferServiceByTemplateResponse.h>
 #include <tencentcloud/hai/v20230812/model/CreateMuskPromptRequest.h>
 #include <tencentcloud/hai/v20230812/model/CreateMuskPromptResponse.h>
+#include <tencentcloud/hai/v20230812/model/DeployInferServiceRequest.h>
+#include <tencentcloud/hai/v20230812/model/DeployInferServiceResponse.h>
 #include <tencentcloud/hai/v20230812/model/DescribeApplicationsRequest.h>
 #include <tencentcloud/hai/v20230812/model/DescribeApplicationsResponse.h>
+#include <tencentcloud/hai/v20230812/model/DescribeDeployTemplatesRequest.h>
+#include <tencentcloud/hai/v20230812/model/DescribeDeployTemplatesResponse.h>
 #include <tencentcloud/hai/v20230812/model/DescribeInstanceNetworkStatusRequest.h>
 #include <tencentcloud/hai/v20230812/model/DescribeInstanceNetworkStatusResponse.h>
 #include <tencentcloud/hai/v20230812/model/DescribeInstancesRequest.h>
 #include <tencentcloud/hai/v20230812/model/DescribeInstancesResponse.h>
+#include <tencentcloud/hai/v20230812/model/DescribeModelsRequest.h>
+#include <tencentcloud/hai/v20230812/model/DescribeModelsResponse.h>
 #include <tencentcloud/hai/v20230812/model/DescribeMuskPromptsRequest.h>
 #include <tencentcloud/hai/v20230812/model/DescribeMuskPromptsResponse.h>
 #include <tencentcloud/hai/v20230812/model/DescribeRegionsRequest.h>
@@ -78,18 +86,30 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateApplicationResponse> CreateApplicationOutcome;
                 typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::CreateApplicationRequest&, CreateApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateInferServiceByTemplateResponse> CreateInferServiceByTemplateOutcome;
+                typedef std::future<CreateInferServiceByTemplateOutcome> CreateInferServiceByTemplateOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::CreateInferServiceByTemplateRequest&, CreateInferServiceByTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInferServiceByTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateMuskPromptResponse> CreateMuskPromptOutcome;
                 typedef std::future<CreateMuskPromptOutcome> CreateMuskPromptOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::CreateMuskPromptRequest&, CreateMuskPromptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMuskPromptAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeployInferServiceResponse> DeployInferServiceOutcome;
+                typedef std::future<DeployInferServiceOutcome> DeployInferServiceOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::DeployInferServiceRequest&, DeployInferServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployInferServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeApplicationsResponse> DescribeApplicationsOutcome;
                 typedef std::future<DescribeApplicationsOutcome> DescribeApplicationsOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::DescribeApplicationsRequest&, DescribeApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeployTemplatesResponse> DescribeDeployTemplatesOutcome;
+                typedef std::future<DescribeDeployTemplatesOutcome> DescribeDeployTemplatesOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::DescribeDeployTemplatesRequest&, DescribeDeployTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeployTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceNetworkStatusResponse> DescribeInstanceNetworkStatusOutcome;
                 typedef std::future<DescribeInstanceNetworkStatusOutcome> DescribeInstanceNetworkStatusOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::DescribeInstanceNetworkStatusRequest&, DescribeInstanceNetworkStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceNetworkStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeModelsResponse> DescribeModelsOutcome;
+                typedef std::future<DescribeModelsOutcome> DescribeModelsOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::DescribeModelsRequest&, DescribeModelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMuskPromptsResponse> DescribeMuskPromptsOutcome;
                 typedef std::future<DescribeMuskPromptsOutcome> DescribeMuskPromptsOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::DescribeMuskPromptsRequest&, DescribeMuskPromptsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMuskPromptsAsyncHandler;
@@ -145,6 +165,15 @@ namespace TencentCloud
                 CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request);
 
                 /**
+                 *本接口(CreateInferServiceByTemplate)用于根据模板创建服务
+                 * @param req CreateInferServiceByTemplateRequest
+                 * @return CreateInferServiceByTemplateOutcome
+                 */
+                CreateInferServiceByTemplateOutcome CreateInferServiceByTemplate(const Model::CreateInferServiceByTemplateRequest &request);
+                void CreateInferServiceByTemplateAsync(const Model::CreateInferServiceByTemplateRequest& request, const CreateInferServiceByTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInferServiceByTemplateOutcomeCallable CreateInferServiceByTemplateCallable(const Model::CreateInferServiceByTemplateRequest& request);
+
+                /**
                  *创建musk prompt 任务
                  * @param req CreateMuskPromptRequest
                  * @return CreateMuskPromptOutcome
@@ -154,6 +183,15 @@ namespace TencentCloud
                 CreateMuskPromptOutcomeCallable CreateMuskPromptCallable(const Model::CreateMuskPromptRequest& request);
 
                 /**
+                 *本接口(DeployInferService)用于部署推理服务
+                 * @param req DeployInferServiceRequest
+                 * @return DeployInferServiceOutcome
+                 */
+                DeployInferServiceOutcome DeployInferService(const Model::DeployInferServiceRequest &request);
+                void DeployInferServiceAsync(const Model::DeployInferServiceRequest& request, const DeployInferServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeployInferServiceOutcomeCallable DeployInferServiceCallable(const Model::DeployInferServiceRequest& request);
+
+                /**
                  *本接口（DescribeApplications）用于查询应用
                  * @param req DescribeApplicationsRequest
                  * @return DescribeApplicationsOutcome
@@ -161,6 +199,15 @@ namespace TencentCloud
                 DescribeApplicationsOutcome DescribeApplications(const Model::DescribeApplicationsRequest &request);
                 void DescribeApplicationsAsync(const Model::DescribeApplicationsRequest& request, const DescribeApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApplicationsOutcomeCallable DescribeApplicationsCallable(const Model::DescribeApplicationsRequest& request);
+
+                /**
+                 *本接口(DescribeDeployTemplates)用于查询模型支持的部署模板
+                 * @param req DescribeDeployTemplatesRequest
+                 * @return DescribeDeployTemplatesOutcome
+                 */
+                DescribeDeployTemplatesOutcome DescribeDeployTemplates(const Model::DescribeDeployTemplatesRequest &request);
+                void DescribeDeployTemplatesAsync(const Model::DescribeDeployTemplatesRequest& request, const DescribeDeployTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeployTemplatesOutcomeCallable DescribeDeployTemplatesCallable(const Model::DescribeDeployTemplatesRequest& request);
 
                 /**
                  *本接口（DescribeInstanceNetworkStatus）用于查询实例的网络配置及消耗情况
@@ -179,6 +226,15 @@ namespace TencentCloud
                 DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest &request);
                 void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
+
+                /**
+                 *本接口(DescribeModels)用于查询模型
+                 * @param req DescribeModelsRequest
+                 * @return DescribeModelsOutcome
+                 */
+                DescribeModelsOutcome DescribeModels(const Model::DescribeModelsRequest &request);
+                void DescribeModelsAsync(const Model::DescribeModelsRequest& request, const DescribeModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeModelsOutcomeCallable DescribeModelsCallable(const Model::DescribeModelsRequest& request);
 
                 /**
                  *获取prompt任务列表

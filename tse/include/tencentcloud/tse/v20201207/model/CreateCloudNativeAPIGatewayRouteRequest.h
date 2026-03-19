@@ -451,6 +451,27 @@ namespace TencentCloud
                      */
                     bool RegexPriorityHasBeenSet() const;
 
+                    /**
+                     * 获取queryString参数
+                     * @return QueryStringParameters queryString参数
+                     * 
+                     */
+                    std::vector<KVMapping> GetQueryStringParameters() const;
+
+                    /**
+                     * 设置queryString参数
+                     * @param _queryStringParameters queryString参数
+                     * 
+                     */
+                    void SetQueryStringParameters(const std::vector<KVMapping>& _queryStringParameters);
+
+                    /**
+                     * 判断参数 QueryStringParameters 是否已赋值
+                     * @return QueryStringParameters 是否已赋值
+                     * 
+                     */
+                    bool QueryStringParametersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -566,6 +587,12 @@ namespace TencentCloud
                      */
                     int64_t m_regexPriority;
                     bool m_regexPriorityHasBeenSet;
+
+                    /**
+                     * queryString参数
+                     */
+                    std::vector<KVMapping> m_queryStringParameters;
+                    bool m_queryStringParametersHasBeenSet;
 
                 };
             }

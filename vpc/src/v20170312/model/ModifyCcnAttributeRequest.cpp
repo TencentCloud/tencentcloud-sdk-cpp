@@ -28,7 +28,8 @@ ModifyCcnAttributeRequest::ModifyCcnAttributeRequest() :
     m_ccnDescriptionHasBeenSet(false),
     m_routeECMPFlagHasBeenSet(false),
     m_routeOverlapFlagHasBeenSet(false),
-    m_trafficMarkingPolicyFlagHasBeenSet(false)
+    m_trafficMarkingPolicyFlagHasBeenSet(false),
+    m_mixedBillingFlagHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string ModifyCcnAttributeRequest::ToJsonString() const
         string key = "TrafficMarkingPolicyFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_trafficMarkingPolicyFlag, allocator);
+    }
+
+    if (m_mixedBillingFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MixedBillingFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_mixedBillingFlag, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void ModifyCcnAttributeRequest::SetTrafficMarkingPolicyFlag(const bool& _traffic
 bool ModifyCcnAttributeRequest::TrafficMarkingPolicyFlagHasBeenSet() const
 {
     return m_trafficMarkingPolicyFlagHasBeenSet;
+}
+
+bool ModifyCcnAttributeRequest::GetMixedBillingFlag() const
+{
+    return m_mixedBillingFlag;
+}
+
+void ModifyCcnAttributeRequest::SetMixedBillingFlag(const bool& _mixedBillingFlag)
+{
+    m_mixedBillingFlag = _mixedBillingFlag;
+    m_mixedBillingFlagHasBeenSet = true;
+}
+
+bool ModifyCcnAttributeRequest::MixedBillingFlagHasBeenSet() const
+{
+    return m_mixedBillingFlagHasBeenSet;
 }
 
 

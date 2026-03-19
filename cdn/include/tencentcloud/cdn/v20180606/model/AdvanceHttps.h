@@ -49,18 +49,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自定义Tls数据开关
+                     * 获取<p>自定义Tls数据开关<br>on - 开<br>off - 关</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CustomTlsStatus 自定义Tls数据开关
+                     * @return CustomTlsStatus <p>自定义Tls数据开关<br>on - 开<br>off - 关</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCustomTlsStatus() const;
 
                     /**
-                     * 设置自定义Tls数据开关
+                     * 设置<p>自定义Tls数据开关<br>on - 开<br>off - 关</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _customTlsStatus 自定义Tls数据开关
+                     * @param _customTlsStatus <p>自定义Tls数据开关<br>on - 开<br>off - 关</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,18 +74,18 @@ namespace TencentCloud
                     bool CustomTlsStatusHasBeenSet() const;
 
                     /**
-                     * 获取Tls版本列表，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
+                     * 获取<p>Tls版本列表，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TlsVersion Tls版本列表，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
+                     * @return TlsVersion <p>Tls版本列表，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTlsVersion() const;
 
                     /**
-                     * 设置Tls版本列表，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
+                     * 设置<p>Tls版本列表，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tlsVersion Tls版本列表，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
+                     * @param _tlsVersion <p>Tls版本列表，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,18 +99,18 @@ namespace TencentCloud
                     bool TlsVersionHasBeenSet() const;
 
                     /**
-                     * 获取自定义加密套件
+                     * 获取<p>自定义加密套件</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Cipher 自定义加密套件
+                     * @return Cipher <p>自定义加密套件</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCipher() const;
 
                     /**
-                     * 设置自定义加密套件
+                     * 设置<p>自定义加密套件</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cipher 自定义加密套件
+                     * @param _cipher <p>自定义加密套件</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,30 +124,18 @@ namespace TencentCloud
                     bool CipherHasBeenSet() const;
 
                     /**
-                     * 获取回源双向校验开启状态
-off - 关闭校验
-oneWay - 校验源站
-twoWay - 双向校验
+                     * 获取<p>回源双向校验开启状态<br>off - 关闭校验<br>oneWay - 校验源站<br>twoWay - 双向校验</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VerifyOriginType 回源双向校验开启状态
-off - 关闭校验
-oneWay - 校验源站
-twoWay - 双向校验
+                     * @return VerifyOriginType <p>回源双向校验开启状态<br>off - 关闭校验<br>oneWay - 校验源站<br>twoWay - 双向校验</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVerifyOriginType() const;
 
                     /**
-                     * 设置回源双向校验开启状态
-off - 关闭校验
-oneWay - 校验源站
-twoWay - 双向校验
+                     * 设置<p>回源双向校验开启状态<br>off - 关闭校验<br>oneWay - 校验源站<br>twoWay - 双向校验</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _verifyOriginType 回源双向校验开启状态
-off - 关闭校验
-oneWay - 校验源站
-twoWay - 双向校验
+                     * @param _verifyOriginType <p>回源双向校验开启状态<br>off - 关闭校验<br>oneWay - 校验源站<br>twoWay - 双向校验</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -161,18 +149,18 @@ twoWay - 双向校验
                     bool VerifyOriginTypeHasBeenSet() const;
 
                     /**
-                     * 获取回源层证书配置信息
+                     * 获取<p>回源层证书配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CertInfo 回源层证书配置信息
+                     * @return CertInfo <p>回源层证书配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ServerCert GetCertInfo() const;
 
                     /**
-                     * 设置回源层证书配置信息
+                     * 设置<p>回源层证书配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _certInfo 回源层证书配置信息
+                     * @param _certInfo <p>回源层证书配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -186,18 +174,18 @@ twoWay - 双向校验
                     bool CertInfoHasBeenSet() const;
 
                     /**
-                     * 获取源站证书配置信息
+                     * 获取<p>源站证书配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OriginCertInfo 源站证书配置信息
+                     * @return OriginCertInfo <p>源站证书配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ClientCert GetOriginCertInfo() const;
 
                     /**
-                     * 设置源站证书配置信息
+                     * 设置<p>源站证书配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _originCertInfo 源站证书配置信息
+                     * @param _originCertInfo <p>源站证书配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -213,45 +201,42 @@ twoWay - 双向校验
                 private:
 
                     /**
-                     * 自定义Tls数据开关
+                     * <p>自定义Tls数据开关<br>on - 开<br>off - 关</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_customTlsStatus;
                     bool m_customTlsStatusHasBeenSet;
 
                     /**
-                     * Tls版本列表，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
+                     * <p>Tls版本列表，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tlsVersion;
                     bool m_tlsVersionHasBeenSet;
 
                     /**
-                     * 自定义加密套件
+                     * <p>自定义加密套件</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cipher;
                     bool m_cipherHasBeenSet;
 
                     /**
-                     * 回源双向校验开启状态
-off - 关闭校验
-oneWay - 校验源站
-twoWay - 双向校验
+                     * <p>回源双向校验开启状态<br>off - 关闭校验<br>oneWay - 校验源站<br>twoWay - 双向校验</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_verifyOriginType;
                     bool m_verifyOriginTypeHasBeenSet;
 
                     /**
-                     * 回源层证书配置信息
+                     * <p>回源层证书配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ServerCert m_certInfo;
                     bool m_certInfoHasBeenSet;
 
                     /**
-                     * 源站证书配置信息
+                     * <p>源站证书配置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ClientCert m_originCertInfo;

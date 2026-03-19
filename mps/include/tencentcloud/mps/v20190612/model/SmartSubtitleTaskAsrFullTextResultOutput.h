@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/SmartSubtitleTaskAsrFullTextSegmentItem.h>
+#include <tencentcloud/mps/v20190612/model/SubtitleResult.h>
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
 
 
@@ -49,18 +50,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取语音全文识别片段列表。
+                     * 获取<p>语音全文识别片段列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SegmentSet 语音全文识别片段列表。
+                     * @return SegmentSet <p>语音全文识别片段列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SmartSubtitleTaskAsrFullTextSegmentItem> GetSegmentSet() const;
 
                     /**
-                     * 设置语音全文识别片段列表。
+                     * 设置<p>语音全文识别片段列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _segmentSet 语音全文识别片段列表。
+                     * @param _segmentSet <p>语音全文识别片段列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,15 +75,15 @@ namespace TencentCloud
                     bool SegmentSetHasBeenSet() const;
 
                     /**
-                     * 获取字幕文件路径
-                     * @return Path 字幕文件路径
+                     * 获取<p>字幕文件路径</p>
+                     * @return Path <p>字幕文件路径</p>
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置字幕文件路径
-                     * @param _path 字幕文件路径
+                     * 设置<p>字幕文件路径</p>
+                     * @param _path <p>字幕文件路径</p>
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -95,15 +96,15 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取字幕文件地址。
-                     * @return SubtitlePath 字幕文件地址。
+                     * 获取<p>字幕文件地址。</p>
+                     * @return SubtitlePath <p>字幕文件地址。</p>
                      * 
                      */
                     std::string GetSubtitlePath() const;
 
                     /**
-                     * 设置字幕文件地址。
-                     * @param _subtitlePath 字幕文件地址。
+                     * 设置<p>字幕文件地址。</p>
+                     * @param _subtitlePath <p>字幕文件地址。</p>
                      * 
                      */
                     void SetSubtitlePath(const std::string& _subtitlePath);
@@ -116,15 +117,36 @@ namespace TencentCloud
                     bool SubtitlePathHasBeenSet() const;
 
                     /**
-                     * 获取字幕文件存储位置。
-                     * @return OutputStorage 字幕文件存储位置。
+                     * 获取<p>识别字幕结果信息。</p>
+                     * @return SubtitleInfo <p>识别字幕结果信息。</p>
+                     * 
+                     */
+                    SubtitleResult GetSubtitleInfo() const;
+
+                    /**
+                     * 设置<p>识别字幕结果信息。</p>
+                     * @param _subtitleInfo <p>识别字幕结果信息。</p>
+                     * 
+                     */
+                    void SetSubtitleInfo(const SubtitleResult& _subtitleInfo);
+
+                    /**
+                     * 判断参数 SubtitleInfo 是否已赋值
+                     * @return SubtitleInfo 是否已赋值
+                     * 
+                     */
+                    bool SubtitleInfoHasBeenSet() const;
+
+                    /**
+                     * 获取<p>字幕文件存储位置。</p>
+                     * @return OutputStorage <p>字幕文件存储位置。</p>
                      * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
-                     * 设置字幕文件存储位置。
-                     * @param _outputStorage 字幕文件存储位置。
+                     * 设置<p>字幕文件存储位置。</p>
+                     * @param _outputStorage <p>字幕文件存储位置。</p>
                      * 
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
@@ -139,26 +161,32 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 语音全文识别片段列表。
+                     * <p>语音全文识别片段列表。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SmartSubtitleTaskAsrFullTextSegmentItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;
 
                     /**
-                     * 字幕文件路径
+                     * <p>字幕文件路径</p>
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
-                     * 字幕文件地址。
+                     * <p>字幕文件地址。</p>
                      */
                     std::string m_subtitlePath;
                     bool m_subtitlePathHasBeenSet;
 
                     /**
-                     * 字幕文件存储位置。
+                     * <p>识别字幕结果信息。</p>
+                     */
+                    SubtitleResult m_subtitleInfo;
+                    bool m_subtitleInfoHasBeenSet;
+
+                    /**
+                     * <p>字幕文件存储位置。</p>
                      */
                     TaskOutputStorage m_outputStorage;
                     bool m_outputStorageHasBeenSet;

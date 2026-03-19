@@ -43,27 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询起始日期：yyyy-MM-dd HH:mm:ss
-仅支持按天粒度的数据查询，取入参中的天信息作为起始日期
-返回大于等于起始日期当天 00:00:00 点产生的数据，如 StartTime为2018-09-04 10:40:00，返回数据的起始时间为2018-09-04 00:00:00
-仅支持 90 天内数据查询
-                     * @return StartTime 查询起始日期：yyyy-MM-dd HH:mm:ss
-仅支持按天粒度的数据查询，取入参中的天信息作为起始日期
-返回大于等于起始日期当天 00:00:00 点产生的数据，如 StartTime为2018-09-04 10:40:00，返回数据的起始时间为2018-09-04 00:00:00
-仅支持 90 天内数据查询
+                     * 获取<p>查询起始日期：yyyy-MM-dd<br>仅支持按天粒度的数据查询，取入参中的天信息作为起始日期<br>返回大于等于起始日期当天 00:00:00 点产生的数据，如 StartTime为2018-09-04，返回数据的起始时间为2018-09-04 00:00:00<br>仅支持 90 天内数据查询</p>
+                     * @return StartTime <p>查询起始日期：yyyy-MM-dd<br>仅支持按天粒度的数据查询，取入参中的天信息作为起始日期<br>返回大于等于起始日期当天 00:00:00 点产生的数据，如 StartTime为2018-09-04，返回数据的起始时间为2018-09-04 00:00:00<br>仅支持 90 天内数据查询</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置查询起始日期：yyyy-MM-dd HH:mm:ss
-仅支持按天粒度的数据查询，取入参中的天信息作为起始日期
-返回大于等于起始日期当天 00:00:00 点产生的数据，如 StartTime为2018-09-04 10:40:00，返回数据的起始时间为2018-09-04 00:00:00
-仅支持 90 天内数据查询
-                     * @param _startTime 查询起始日期：yyyy-MM-dd HH:mm:ss
-仅支持按天粒度的数据查询，取入参中的天信息作为起始日期
-返回大于等于起始日期当天 00:00:00 点产生的数据，如 StartTime为2018-09-04 10:40:00，返回数据的起始时间为2018-09-04 00:00:00
-仅支持 90 天内数据查询
+                     * 设置<p>查询起始日期：yyyy-MM-dd<br>仅支持按天粒度的数据查询，取入参中的天信息作为起始日期<br>返回大于等于起始日期当天 00:00:00 点产生的数据，如 StartTime为2018-09-04，返回数据的起始时间为2018-09-04 00:00:00<br>仅支持 90 天内数据查询</p>
+                     * @param _startTime <p>查询起始日期：yyyy-MM-dd<br>仅支持按天粒度的数据查询，取入参中的天信息作为起始日期<br>返回大于等于起始日期当天 00:00:00 点产生的数据，如 StartTime为2018-09-04，返回数据的起始时间为2018-09-04 00:00:00<br>仅支持 90 天内数据查询</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -76,27 +64,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束日期：yyyy-MM-dd HH:mm:ss
-仅支持按天粒度的数据查询，取入参中的天信息作为结束日期
-返回小于等于结束日期当天 23:59:59 产生的数据，如EndTime为2018-09-05 22:40:00，返回数据的结束时间为2018-09-05 23:59:59
-EndTime 需要大于等于 StartTime
-                     * @return EndTime 查询结束日期：yyyy-MM-dd HH:mm:ss
-仅支持按天粒度的数据查询，取入参中的天信息作为结束日期
-返回小于等于结束日期当天 23:59:59 产生的数据，如EndTime为2018-09-05 22:40:00，返回数据的结束时间为2018-09-05 23:59:59
-EndTime 需要大于等于 StartTime
+                     * 获取<p>查询结束日期：yyyy-MM-dd<br>仅支持按天粒度的数据查询，取入参中的天信息作为结束日期<br>返回小于等于结束日期当天 23:59:59 产生的数据，如EndTime为2018-09-05，返回数据的结束时间为2018-09-05 23:59:59<br>EndTime 需要大于等于 StartTime</p>
+                     * @return EndTime <p>查询结束日期：yyyy-MM-dd<br>仅支持按天粒度的数据查询，取入参中的天信息作为结束日期<br>返回小于等于结束日期当天 23:59:59 产生的数据，如EndTime为2018-09-05，返回数据的结束时间为2018-09-05 23:59:59<br>EndTime 需要大于等于 StartTime</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置查询结束日期：yyyy-MM-dd HH:mm:ss
-仅支持按天粒度的数据查询，取入参中的天信息作为结束日期
-返回小于等于结束日期当天 23:59:59 产生的数据，如EndTime为2018-09-05 22:40:00，返回数据的结束时间为2018-09-05 23:59:59
-EndTime 需要大于等于 StartTime
-                     * @param _endTime 查询结束日期：yyyy-MM-dd HH:mm:ss
-仅支持按天粒度的数据查询，取入参中的天信息作为结束日期
-返回小于等于结束日期当天 23:59:59 产生的数据，如EndTime为2018-09-05 22:40:00，返回数据的结束时间为2018-09-05 23:59:59
-EndTime 需要大于等于 StartTime
+                     * 设置<p>查询结束日期：yyyy-MM-dd<br>仅支持按天粒度的数据查询，取入参中的天信息作为结束日期<br>返回小于等于结束日期当天 23:59:59 产生的数据，如EndTime为2018-09-05，返回数据的结束时间为2018-09-05 23:59:59<br>EndTime 需要大于等于 StartTime</p>
+                     * @param _endTime <p>查询结束日期：yyyy-MM-dd<br>仅支持按天粒度的数据查询，取入参中的天信息作为结束日期<br>返回小于等于结束日期当天 23:59:59 产生的数据，如EndTime为2018-09-05，返回数据的结束时间为2018-09-05 23:59:59<br>EndTime 需要大于等于 StartTime</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -109,19 +85,15 @@ EndTime 需要大于等于 StartTime
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取排序对象，支持以下几种形式：
-ip、ua_device、ua_browser、ua_os、referer
-                     * @return Metric 排序对象，支持以下几种形式：
-ip、ua_device、ua_browser、ua_os、referer
+                     * 获取<p>排序对象，支持以下几种形式：<br>ip、ua_device、ua_browser、ua_os、referer</p>
+                     * @return Metric <p>排序对象，支持以下几种形式：<br>ip、ua_device、ua_browser、ua_os、referer</p>
                      * 
                      */
                     std::string GetMetric() const;
 
                     /**
-                     * 设置排序对象，支持以下几种形式：
-ip、ua_device、ua_browser、ua_os、referer
-                     * @param _metric 排序对象，支持以下几种形式：
-ip、ua_device、ua_browser、ua_os、referer
+                     * 设置<p>排序对象，支持以下几种形式：<br>ip、ua_device、ua_browser、ua_os、referer</p>
+                     * @param _metric <p>排序对象，支持以下几种形式：<br>ip、ua_device、ua_browser、ua_os、referer</p>
                      * 
                      */
                     void SetMetric(const std::string& _metric);
@@ -134,23 +106,15 @@ ip、ua_device、ua_browser、ua_os、referer
                     bool MetricHasBeenSet() const;
 
                     /**
-                     * 获取排序使用的指标名称：
-flux：Metric 为 host 时指代访问流量
-request：Metric 为 host 时指代访问请求数
-                     * @return Filter 排序使用的指标名称：
-flux：Metric 为 host 时指代访问流量
-request：Metric 为 host 时指代访问请求数
+                     * 获取<p>排序使用的指标名称：<br>flux：Metric 为 host 时指代访问流量<br>request：Metric 为 host 时指代访问请求数</p>
+                     * @return Filter <p>排序使用的指标名称：<br>flux：Metric 为 host 时指代访问流量<br>request：Metric 为 host 时指代访问请求数</p>
                      * 
                      */
                     std::string GetFilter() const;
 
                     /**
-                     * 设置排序使用的指标名称：
-flux：Metric 为 host 时指代访问流量
-request：Metric 为 host 时指代访问请求数
-                     * @param _filter 排序使用的指标名称：
-flux：Metric 为 host 时指代访问流量
-request：Metric 为 host 时指代访问请求数
+                     * 设置<p>排序使用的指标名称：<br>flux：Metric 为 host 时指代访问流量<br>request：Metric 为 host 时指代访问请求数</p>
+                     * @param _filter <p>排序使用的指标名称：<br>flux：Metric 为 host 时指代访问流量<br>request：Metric 为 host 时指代访问请求数</p>
                      * 
                      */
                     void SetFilter(const std::string& _filter);
@@ -163,15 +127,15 @@ request：Metric 为 host 时指代访问请求数
                     bool FilterHasBeenSet() const;
 
                     /**
-                     * 获取指定查询域名列表，最多可一次性查询 30 个加速域名明细
-                     * @return Domains 指定查询域名列表，最多可一次性查询 30 个加速域名明细
+                     * 获取<p>指定查询域名列表，最多可一次性查询 30 个加速域名明细</p>
+                     * @return Domains <p>指定查询域名列表，最多可一次性查询 30 个加速域名明细</p>
                      * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
-                     * 设置指定查询域名列表，最多可一次性查询 30 个加速域名明细
-                     * @param _domains 指定查询域名列表，最多可一次性查询 30 个加速域名明细
+                     * 设置<p>指定查询域名列表，最多可一次性查询 30 个加速域名明细</p>
+                     * @param _domains <p>指定查询域名列表，最多可一次性查询 30 个加速域名明细</p>
                      * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
@@ -184,15 +148,15 @@ request：Metric 为 host 时指代访问请求数
                     bool DomainsHasBeenSet() const;
 
                     /**
-                     * 获取未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主
-                     * @return Project 未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主
+                     * 获取<p>未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主</p>
+                     * @return Project <p>未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主</p>
                      * 
                      */
                     int64_t GetProject() const;
 
                     /**
-                     * 设置未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主
-                     * @param _project 未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主
+                     * 设置<p>未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主</p>
+                     * @param _project <p>未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主</p>
                      * 
                      */
                     void SetProject(const int64_t& _project);
@@ -205,15 +169,15 @@ request：Metric 为 host 时指代访问请求数
                     bool ProjectHasBeenSet() const;
 
                     /**
-                     * 获取是否详细显示每个域名的的具体数值
-                     * @return Detail 是否详细显示每个域名的的具体数值
+                     * 获取<p>是否详细显示每个域名的的具体数值</p>
+                     * @return Detail <p>是否详细显示每个域名的的具体数值</p>
                      * 
                      */
                     bool GetDetail() const;
 
                     /**
-                     * 设置是否详细显示每个域名的的具体数值
-                     * @param _detail 是否详细显示每个域名的的具体数值
+                     * 设置<p>是否详细显示每个域名的的具体数值</p>
+                     * @param _detail <p>是否详细显示每个域名的的具体数值</p>
                      * 
                      */
                     void SetDetail(const bool& _detail);
@@ -226,23 +190,15 @@ request：Metric 为 host 时指代访问请求数
                     bool DetailHasBeenSet() const;
 
                     /**
-                     * 获取指定服务地域查询，不填充表示查询中国境内 CDN 数据
-mainland：指定查询中国境内 CDN 数据
-overseas：指定查询中国境外 CDN 数据
-                     * @return Area 指定服务地域查询，不填充表示查询中国境内 CDN 数据
-mainland：指定查询中国境内 CDN 数据
-overseas：指定查询中国境外 CDN 数据
+                     * 获取<p>指定服务地域查询，不填充表示查询中国境内 CDN 数据<br>mainland：指定查询中国境内 CDN 数据<br>overseas：指定查询中国境外 CDN 数据</p>
+                     * @return Area <p>指定服务地域查询，不填充表示查询中国境内 CDN 数据<br>mainland：指定查询中国境内 CDN 数据<br>overseas：指定查询中国境外 CDN 数据</p>
                      * 
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置指定服务地域查询，不填充表示查询中国境内 CDN 数据
-mainland：指定查询中国境内 CDN 数据
-overseas：指定查询中国境外 CDN 数据
-                     * @param _area 指定服务地域查询，不填充表示查询中国境内 CDN 数据
-mainland：指定查询中国境内 CDN 数据
-overseas：指定查询中国境外 CDN 数据
+                     * 设置<p>指定服务地域查询，不填充表示查询中国境内 CDN 数据<br>mainland：指定查询中国境内 CDN 数据<br>overseas：指定查询中国境外 CDN 数据</p>
+                     * @param _area <p>指定服务地域查询，不填充表示查询中国境内 CDN 数据<br>mainland：指定查询中国境内 CDN 数据<br>overseas：指定查询中国境外 CDN 数据</p>
                      * 
                      */
                     void SetArea(const std::string& _area);
@@ -255,15 +211,15 @@ overseas：指定查询中国境外 CDN 数据
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取指定查询的产品数据，目前仅可使用cdn
-                     * @return Product 指定查询的产品数据，目前仅可使用cdn
+                     * 获取<p>指定查询的产品数据，目前仅可使用cdn</p>
+                     * @return Product <p>指定查询的产品数据，目前仅可使用cdn</p>
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置指定查询的产品数据，目前仅可使用cdn
-                     * @param _product 指定查询的产品数据，目前仅可使用cdn
+                     * 设置<p>指定查询的产品数据，目前仅可使用cdn</p>
+                     * @param _product <p>指定查询的产品数据，目前仅可使用cdn</p>
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -278,66 +234,55 @@ overseas：指定查询中国境外 CDN 数据
                 private:
 
                     /**
-                     * 查询起始日期：yyyy-MM-dd HH:mm:ss
-仅支持按天粒度的数据查询，取入参中的天信息作为起始日期
-返回大于等于起始日期当天 00:00:00 点产生的数据，如 StartTime为2018-09-04 10:40:00，返回数据的起始时间为2018-09-04 00:00:00
-仅支持 90 天内数据查询
+                     * <p>查询起始日期：yyyy-MM-dd<br>仅支持按天粒度的数据查询，取入参中的天信息作为起始日期<br>返回大于等于起始日期当天 00:00:00 点产生的数据，如 StartTime为2018-09-04，返回数据的起始时间为2018-09-04 00:00:00<br>仅支持 90 天内数据查询</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询结束日期：yyyy-MM-dd HH:mm:ss
-仅支持按天粒度的数据查询，取入参中的天信息作为结束日期
-返回小于等于结束日期当天 23:59:59 产生的数据，如EndTime为2018-09-05 22:40:00，返回数据的结束时间为2018-09-05 23:59:59
-EndTime 需要大于等于 StartTime
+                     * <p>查询结束日期：yyyy-MM-dd<br>仅支持按天粒度的数据查询，取入参中的天信息作为结束日期<br>返回小于等于结束日期当天 23:59:59 产生的数据，如EndTime为2018-09-05，返回数据的结束时间为2018-09-05 23:59:59<br>EndTime 需要大于等于 StartTime</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 排序对象，支持以下几种形式：
-ip、ua_device、ua_browser、ua_os、referer
+                     * <p>排序对象，支持以下几种形式：<br>ip、ua_device、ua_browser、ua_os、referer</p>
                      */
                     std::string m_metric;
                     bool m_metricHasBeenSet;
 
                     /**
-                     * 排序使用的指标名称：
-flux：Metric 为 host 时指代访问流量
-request：Metric 为 host 时指代访问请求数
+                     * <p>排序使用的指标名称：<br>flux：Metric 为 host 时指代访问流量<br>request：Metric 为 host 时指代访问请求数</p>
                      */
                     std::string m_filter;
                     bool m_filterHasBeenSet;
 
                     /**
-                     * 指定查询域名列表，最多可一次性查询 30 个加速域名明细
+                     * <p>指定查询域名列表，最多可一次性查询 30 个加速域名明细</p>
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;
 
                     /**
-                     * 未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主
+                     * <p>未填充域名情况下，指定项目查询，若填充了具体域名信息，以域名为主</p>
                      */
                     int64_t m_project;
                     bool m_projectHasBeenSet;
 
                     /**
-                     * 是否详细显示每个域名的的具体数值
+                     * <p>是否详细显示每个域名的的具体数值</p>
                      */
                     bool m_detail;
                     bool m_detailHasBeenSet;
 
                     /**
-                     * 指定服务地域查询，不填充表示查询中国境内 CDN 数据
-mainland：指定查询中国境内 CDN 数据
-overseas：指定查询中国境外 CDN 数据
+                     * <p>指定服务地域查询，不填充表示查询中国境内 CDN 数据<br>mainland：指定查询中国境内 CDN 数据<br>overseas：指定查询中国境外 CDN 数据</p>
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
 
                     /**
-                     * 指定查询的产品数据，目前仅可使用cdn
+                     * <p>指定查询的产品数据，目前仅可使用cdn</p>
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;

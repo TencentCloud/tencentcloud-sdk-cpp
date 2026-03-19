@@ -1890,6 +1890,56 @@ LcicClient::DescribeGroupMemberListOutcomeCallable LcicClient::DescribeGroupMemb
     return prom->get_future();
 }
 
+LcicClient::DescribeLiveRelayConfigOutcome LcicClient::DescribeLiveRelayConfig(const DescribeLiveRelayConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLiveRelayConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLiveRelayConfigResponse rsp = DescribeLiveRelayConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLiveRelayConfigOutcome(rsp);
+        else
+            return DescribeLiveRelayConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLiveRelayConfigOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DescribeLiveRelayConfigAsync(const DescribeLiveRelayConfigRequest& request, const DescribeLiveRelayConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLiveRelayConfigRequest&;
+    using Resp = DescribeLiveRelayConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLiveRelayConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LcicClient::DescribeLiveRelayConfigOutcomeCallable LcicClient::DescribeLiveRelayConfigCallable(const DescribeLiveRelayConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLiveRelayConfigOutcome>>();
+    DescribeLiveRelayConfigAsync(
+    request,
+    [prom](
+        const LcicClient*,
+        const DescribeLiveRelayConfigRequest&,
+        DescribeLiveRelayConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LcicClient::DescribeMarqueeOutcome LcicClient::DescribeMarquee(const DescribeMarqueeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMarquee");
@@ -3382,6 +3432,56 @@ LcicClient::ModifyGroupOutcomeCallable LcicClient::ModifyGroupCallable(const Mod
         const LcicClient*,
         const ModifyGroupRequest&,
         ModifyGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LcicClient::ModifyLiveRelayConfigOutcome LcicClient::ModifyLiveRelayConfig(const ModifyLiveRelayConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLiveRelayConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLiveRelayConfigResponse rsp = ModifyLiveRelayConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLiveRelayConfigOutcome(rsp);
+        else
+            return ModifyLiveRelayConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLiveRelayConfigOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::ModifyLiveRelayConfigAsync(const ModifyLiveRelayConfigRequest& request, const ModifyLiveRelayConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyLiveRelayConfigRequest&;
+    using Resp = ModifyLiveRelayConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyLiveRelayConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LcicClient::ModifyLiveRelayConfigOutcomeCallable LcicClient::ModifyLiveRelayConfigCallable(const ModifyLiveRelayConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyLiveRelayConfigOutcome>>();
+    ModifyLiveRelayConfigAsync(
+    request,
+    [prom](
+        const LcicClient*,
+        const ModifyLiveRelayConfigRequest&,
+        ModifyLiveRelayConfigOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

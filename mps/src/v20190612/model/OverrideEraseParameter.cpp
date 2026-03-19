@@ -24,7 +24,8 @@ OverrideEraseParameter::OverrideEraseParameter() :
     m_eraseTypeHasBeenSet(false),
     m_eraseSubtitleConfigHasBeenSet(false),
     m_eraseWatermarkConfigHasBeenSet(false),
-    m_erasePrivacyConfigHasBeenSet(false)
+    m_erasePrivacyConfigHasBeenSet(false),
+    m_subtitleEmbedIdHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome OverrideEraseParameter::Deserialize(const rapidjson::Value &
         m_erasePrivacyConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleEmbedId") && !value["SubtitleEmbedId"].IsNull())
+    {
+        if (!value["SubtitleEmbedId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OverrideEraseParameter.SubtitleEmbedId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitleEmbedId = value["SubtitleEmbedId"].GetInt64();
+        m_subtitleEmbedIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +145,14 @@ void OverrideEraseParameter::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_erasePrivacyConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_subtitleEmbedIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleEmbedId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subtitleEmbedId, allocator);
     }
 
 }
@@ -201,5 +220,21 @@ void OverrideEraseParameter::SetErasePrivacyConfig(const UpdateSmartErasePrivacy
 bool OverrideEraseParameter::ErasePrivacyConfigHasBeenSet() const
 {
     return m_erasePrivacyConfigHasBeenSet;
+}
+
+int64_t OverrideEraseParameter::GetSubtitleEmbedId() const
+{
+    return m_subtitleEmbedId;
+}
+
+void OverrideEraseParameter::SetSubtitleEmbedId(const int64_t& _subtitleEmbedId)
+{
+    m_subtitleEmbedId = _subtitleEmbedId;
+    m_subtitleEmbedIdHasBeenSet = true;
+}
+
+bool OverrideEraseParameter::SubtitleEmbedIdHasBeenSet() const
+{
+    return m_subtitleEmbedIdHasBeenSet;
 }
 

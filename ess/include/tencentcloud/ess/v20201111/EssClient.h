@@ -63,6 +63,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateContractReviewWebUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateConvertTaskApiRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateConvertTaskApiResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateDigitalDataSignRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateDigitalDataSignResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateDocumentRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateDocumentResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateDynamicFlowApproverRequest.h>
@@ -303,6 +305,8 @@
 #include <tencentcloud/ess/v20201111/model/UploadFilesResponse.h>
 #include <tencentcloud/ess/v20201111/model/VerifyDigitFileRequest.h>
 #include <tencentcloud/ess/v20201111/model/VerifyDigitFileResponse.h>
+#include <tencentcloud/ess/v20201111/model/VerifyDigitalDataSignRequest.h>
+#include <tencentcloud/ess/v20201111/model/VerifyDigitalDataSignResponse.h>
 #include <tencentcloud/ess/v20201111/model/VerifyPdfRequest.h>
 #include <tencentcloud/ess/v20201111/model/VerifyPdfResponse.h>
 
@@ -379,6 +383,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateConvertTaskApiResponse> CreateConvertTaskApiOutcome;
                 typedef std::future<CreateConvertTaskApiOutcome> CreateConvertTaskApiOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateConvertTaskApiRequest&, CreateConvertTaskApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConvertTaskApiAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDigitalDataSignResponse> CreateDigitalDataSignOutcome;
+                typedef std::future<CreateDigitalDataSignOutcome> CreateDigitalDataSignOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateDigitalDataSignRequest&, CreateDigitalDataSignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDigitalDataSignAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDocumentResponse> CreateDocumentOutcome;
                 typedef std::future<CreateDocumentOutcome> CreateDocumentOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateDocumentRequest&, CreateDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDocumentAsyncHandler;
@@ -739,6 +746,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::VerifyDigitFileResponse> VerifyDigitFileOutcome;
                 typedef std::future<VerifyDigitFileOutcome> VerifyDigitFileOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::VerifyDigitFileRequest&, VerifyDigitFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyDigitFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::VerifyDigitalDataSignResponse> VerifyDigitalDataSignOutcome;
+                typedef std::future<VerifyDigitalDataSignOutcome> VerifyDigitalDataSignOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::VerifyDigitalDataSignRequest&, VerifyDigitalDataSignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyDigitalDataSignAsyncHandler;
                 typedef Outcome<Core::Error, Model::VerifyPdfResponse> VerifyPdfOutcome;
                 typedef std::future<VerifyPdfOutcome> VerifyPdfOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::VerifyPdfRequest&, VerifyPdfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyPdfAsyncHandler;
@@ -1092,6 +1102,15 @@ namespace TencentCloud
                 CreateConvertTaskApiOutcome CreateConvertTaskApi(const Model::CreateConvertTaskApiRequest &request);
                 void CreateConvertTaskApiAsync(const Model::CreateConvertTaskApiRequest& request, const CreateConvertTaskApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateConvertTaskApiOutcomeCallable CreateConvertTaskApiCallable(const Model::CreateConvertTaskApiRequest& request);
+
+                /**
+                 *创建数据加签请求
+                 * @param req CreateDigitalDataSignRequest
+                 * @return CreateDigitalDataSignOutcome
+                 */
+                CreateDigitalDataSignOutcome CreateDigitalDataSign(const Model::CreateDigitalDataSignRequest &request);
+                void CreateDigitalDataSignAsync(const Model::CreateDigitalDataSignRequest& request, const CreateDigitalDataSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDigitalDataSignOutcomeCallable CreateDigitalDataSignCallable(const Model::CreateDigitalDataSignRequest& request);
 
                 /**
                  *创建签署流程电子文档<br />
@@ -3105,6 +3124,15 @@ httpProfile.setEndpoint("file.test.ess.tencent.cn");
                 VerifyDigitFileOutcome VerifyDigitFile(const Model::VerifyDigitFileRequest &request);
                 void VerifyDigitFileAsync(const Model::VerifyDigitFileRequest& request, const VerifyDigitFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 VerifyDigitFileOutcomeCallable VerifyDigitFileCallable(const Model::VerifyDigitFileRequest& request);
+
+                /**
+                 *数据加签验签接口
+                 * @param req VerifyDigitalDataSignRequest
+                 * @return VerifyDigitalDataSignOutcome
+                 */
+                VerifyDigitalDataSignOutcome VerifyDigitalDataSign(const Model::VerifyDigitalDataSignRequest &request);
+                void VerifyDigitalDataSignAsync(const Model::VerifyDigitalDataSignRequest& request, const VerifyDigitalDataSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VerifyDigitalDataSignOutcomeCallable VerifyDigitalDataSignCallable(const Model::VerifyDigitalDataSignRequest& request);
 
                 /**
                  *对合同流程文件进行数字签名验证，判断数字签名是否有效，合同文件内容是否被篡改。

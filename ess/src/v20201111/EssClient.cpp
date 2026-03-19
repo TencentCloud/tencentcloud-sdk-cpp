@@ -1040,6 +1040,56 @@ EssClient::CreateConvertTaskApiOutcomeCallable EssClient::CreateConvertTaskApiCa
     return prom->get_future();
 }
 
+EssClient::CreateDigitalDataSignOutcome EssClient::CreateDigitalDataSign(const CreateDigitalDataSignRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDigitalDataSign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDigitalDataSignResponse rsp = CreateDigitalDataSignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDigitalDataSignOutcome(rsp);
+        else
+            return CreateDigitalDataSignOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDigitalDataSignOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateDigitalDataSignAsync(const CreateDigitalDataSignRequest& request, const CreateDigitalDataSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateDigitalDataSignRequest&;
+    using Resp = CreateDigitalDataSignResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateDigitalDataSign", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssClient::CreateDigitalDataSignOutcomeCallable EssClient::CreateDigitalDataSignCallable(const CreateDigitalDataSignRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateDigitalDataSignOutcome>>();
+    CreateDigitalDataSignAsync(
+    request,
+    [prom](
+        const EssClient*,
+        const CreateDigitalDataSignRequest&,
+        CreateDigitalDataSignOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EssClient::CreateDocumentOutcome EssClient::CreateDocument(const CreateDocumentRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDocument");
@@ -7032,6 +7082,56 @@ EssClient::VerifyDigitFileOutcomeCallable EssClient::VerifyDigitFileCallable(con
         const EssClient*,
         const VerifyDigitFileRequest&,
         VerifyDigitFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EssClient::VerifyDigitalDataSignOutcome EssClient::VerifyDigitalDataSign(const VerifyDigitalDataSignRequest &request)
+{
+    auto outcome = MakeRequest(request, "VerifyDigitalDataSign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyDigitalDataSignResponse rsp = VerifyDigitalDataSignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyDigitalDataSignOutcome(rsp);
+        else
+            return VerifyDigitalDataSignOutcome(o.GetError());
+    }
+    else
+    {
+        return VerifyDigitalDataSignOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::VerifyDigitalDataSignAsync(const VerifyDigitalDataSignRequest& request, const VerifyDigitalDataSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const VerifyDigitalDataSignRequest&;
+    using Resp = VerifyDigitalDataSignResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "VerifyDigitalDataSign", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssClient::VerifyDigitalDataSignOutcomeCallable EssClient::VerifyDigitalDataSignCallable(const VerifyDigitalDataSignRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<VerifyDigitalDataSignOutcome>>();
+    VerifyDigitalDataSignAsync(
+    request,
+    [prom](
+        const EssClient*,
+        const VerifyDigitalDataSignRequest&,
+        VerifyDigitalDataSignOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

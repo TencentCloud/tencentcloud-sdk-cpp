@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/iotexplorer/v20190423/model/VisionSummaryConfig.h>
+#include <tencentcloud/iotexplorer/v20190423/model/SeeEventIdFilterConfig.h>
 
 
 namespace TencentCloud
@@ -211,6 +212,27 @@ namespace TencentCloud
                      */
                     bool SummaryConfigHasBeenSet() const;
 
+                    /**
+                     * 获取云存事件 ID 过滤规则配置，不传则不修改
+                     * @return EventIdFilterConfig 云存事件 ID 过滤规则配置，不传则不修改
+                     * 
+                     */
+                    SeeEventIdFilterConfig GetEventIdFilterConfig() const;
+
+                    /**
+                     * 设置云存事件 ID 过滤规则配置，不传则不修改
+                     * @param _eventIdFilterConfig 云存事件 ID 过滤规则配置，不传则不修改
+                     * 
+                     */
+                    void SetEventIdFilterConfig(const SeeEventIdFilterConfig& _eventIdFilterConfig);
+
+                    /**
+                     * 判断参数 EventIdFilterConfig 是否已赋值
+                     * @return EventIdFilterConfig 是否已赋值
+                     * 
+                     */
+                    bool EventIdFilterConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -260,6 +282,12 @@ namespace TencentCloud
                      */
                     VisionSummaryConfig m_summaryConfig;
                     bool m_summaryConfigHasBeenSet;
+
+                    /**
+                     * 云存事件 ID 过滤规则配置，不传则不修改
+                     */
+                    SeeEventIdFilterConfig m_eventIdFilterConfig;
+                    bool m_eventIdFilterConfigHasBeenSet;
 
                 };
             }

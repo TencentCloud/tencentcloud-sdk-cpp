@@ -30,7 +30,8 @@ ModifyTWeSeeConfigRequest::ModifyTWeSeeConfigRequest() :
     m_enableSummaryHasBeenSet(false),
     m_enableSearchHasBeenSet(false),
     m_configHasBeenSet(false),
-    m_summaryConfigHasBeenSet(false)
+    m_summaryConfigHasBeenSet(false),
+    m_eventIdFilterConfigHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,15 @@ string ModifyTWeSeeConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_summaryConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_eventIdFilterConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventIdFilterConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_eventIdFilterConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -240,6 +250,22 @@ void ModifyTWeSeeConfigRequest::SetSummaryConfig(const VisionSummaryConfig& _sum
 bool ModifyTWeSeeConfigRequest::SummaryConfigHasBeenSet() const
 {
     return m_summaryConfigHasBeenSet;
+}
+
+SeeEventIdFilterConfig ModifyTWeSeeConfigRequest::GetEventIdFilterConfig() const
+{
+    return m_eventIdFilterConfig;
+}
+
+void ModifyTWeSeeConfigRequest::SetEventIdFilterConfig(const SeeEventIdFilterConfig& _eventIdFilterConfig)
+{
+    m_eventIdFilterConfig = _eventIdFilterConfig;
+    m_eventIdFilterConfigHasBeenSet = true;
+}
+
+bool ModifyTWeSeeConfigRequest::EventIdFilterConfigHasBeenSet() const
+{
+    return m_eventIdFilterConfigHasBeenSet;
 }
 
 

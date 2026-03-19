@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取擦除后文件的路径。
-                     * @return Path 擦除后文件的路径。
+                     * 获取<p>擦除后文件的路径。</p>
+                     * @return Path <p>擦除后文件的路径。</p>
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置擦除后文件的路径。
-                     * @param _path 擦除后文件的路径。
+                     * 设置<p>擦除后文件的路径。</p>
+                     * @param _path <p>擦除后文件的路径。</p>
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取擦除后文件的存储位置。
-                     * @return OutputStorage 擦除后文件的存储位置。
+                     * 获取<p>擦除后文件的存储位置。</p>
+                     * @return OutputStorage <p>擦除后文件的存储位置。</p>
                      * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
-                     * 设置擦除后文件的存储位置。
-                     * @param _outputStorage 擦除后文件的存储位置。
+                     * 设置<p>擦除后文件的存储位置。</p>
+                     * @param _outputStorage <p>擦除后文件的存储位置。</p>
                      * 
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool OutputStorageHasBeenSet() const;
 
                     /**
-                     * 获取基于画面提取的字幕文件路径。
-                     * @return OriginSubtitlePath 基于画面提取的字幕文件路径。
+                     * 获取<p>基于画面提取的字幕文件路径。</p>
+                     * @return OriginSubtitlePath <p>基于画面提取的字幕文件路径。</p>
                      * 
                      */
                     std::string GetOriginSubtitlePath() const;
 
                     /**
-                     * 设置基于画面提取的字幕文件路径。
-                     * @param _originSubtitlePath 基于画面提取的字幕文件路径。
+                     * 设置<p>基于画面提取的字幕文件路径。</p>
+                     * @param _originSubtitlePath <p>基于画面提取的字幕文件路径。</p>
                      * 
                      */
                     void SetOriginSubtitlePath(const std::string& _originSubtitlePath);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool OriginSubtitlePathHasBeenSet() const;
 
                     /**
-                     * 获取基于画面提取的字幕翻译文件路径。
-                     * @return TranslateSubtitlePath 基于画面提取的字幕翻译文件路径。
+                     * 获取<p>基于画面提取的字幕翻译文件路径。</p>
+                     * @return TranslateSubtitlePath <p>基于画面提取的字幕翻译文件路径。</p>
                      * 
                      */
                     std::string GetTranslateSubtitlePath() const;
 
                     /**
-                     * 设置基于画面提取的字幕翻译文件路径。
-                     * @param _translateSubtitlePath 基于画面提取的字幕翻译文件路径。
+                     * 设置<p>基于画面提取的字幕翻译文件路径。</p>
+                     * @param _translateSubtitlePath <p>基于画面提取的字幕翻译文件路径。</p>
                      * 
                      */
                     void SetTranslateSubtitlePath(const std::string& _translateSubtitlePath);
@@ -133,18 +133,18 @@ namespace TencentCloud
                     bool TranslateSubtitlePathHasBeenSet() const;
 
                     /**
-                     * 获取擦除的字幕位置。**注意**：仅对字幕提取且开启返回字幕位置时有效。
+                     * 获取<p>擦除的字幕位置。<strong>注意</strong>：仅对字幕提取且开启返回字幕位置时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubtitlePos 擦除的字幕位置。**注意**：仅对字幕提取且开启返回字幕位置时有效。
+                     * @return SubtitlePos <p>擦除的字幕位置。<strong>注意</strong>：仅对字幕提取且开启返回字幕位置时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SubtitlePosition GetSubtitlePos() const;
 
                     /**
-                     * 设置擦除的字幕位置。**注意**：仅对字幕提取且开启返回字幕位置时有效。
+                     * 设置<p>擦除的字幕位置。<strong>注意</strong>：仅对字幕提取且开启返回字幕位置时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subtitlePos 擦除的字幕位置。**注意**：仅对字幕提取且开启返回字幕位置时有效。
+                     * @param _subtitlePos <p>擦除的字幕位置。<strong>注意</strong>：仅对字幕提取且开启返回字幕位置时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -158,18 +158,18 @@ namespace TencentCloud
                     bool SubtitlePosHasBeenSet() const;
 
                     /**
-                     * 获取音色克隆后的视频文件地址
+                     * 获取<p>音色克隆后的视频文件地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VoiceClonedVideo 音色克隆后的视频文件地址
+                     * @return VoiceClonedVideo <p>音色克隆后的视频文件地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVoiceClonedVideo() const;
 
                     /**
-                     * 设置音色克隆后的视频文件地址
+                     * 设置<p>音色克隆后的视频文件地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _voiceClonedVideo 音色克隆后的视频文件地址
+                     * @param _voiceClonedVideo <p>音色克隆后的视频文件地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -183,18 +183,18 @@ namespace TencentCloud
                     bool VoiceClonedVideoHasBeenSet() const;
 
                     /**
-                     * 获取音色克隆的标注文件地址
+                     * 获取<p>音色克隆的标注文件地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VoiceClonedMarkFile 音色克隆的标注文件地址
+                     * @return VoiceClonedMarkFile <p>音色克隆的标注文件地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVoiceClonedMarkFile() const;
 
                     /**
-                     * 设置音色克隆的标注文件地址
+                     * 设置<p>音色克隆的标注文件地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _voiceClonedMarkFile 音色克隆的标注文件地址
+                     * @param _voiceClonedMarkFile <p>音色克隆的标注文件地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -210,45 +210,45 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 擦除后文件的路径。
+                     * <p>擦除后文件的路径。</p>
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
-                     * 擦除后文件的存储位置。
+                     * <p>擦除后文件的存储位置。</p>
                      */
                     TaskOutputStorage m_outputStorage;
                     bool m_outputStorageHasBeenSet;
 
                     /**
-                     * 基于画面提取的字幕文件路径。
+                     * <p>基于画面提取的字幕文件路径。</p>
                      */
                     std::string m_originSubtitlePath;
                     bool m_originSubtitlePathHasBeenSet;
 
                     /**
-                     * 基于画面提取的字幕翻译文件路径。
+                     * <p>基于画面提取的字幕翻译文件路径。</p>
                      */
                     std::string m_translateSubtitlePath;
                     bool m_translateSubtitlePathHasBeenSet;
 
                     /**
-                     * 擦除的字幕位置。**注意**：仅对字幕提取且开启返回字幕位置时有效。
+                     * <p>擦除的字幕位置。<strong>注意</strong>：仅对字幕提取且开启返回字幕位置时有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SubtitlePosition m_subtitlePos;
                     bool m_subtitlePosHasBeenSet;
 
                     /**
-                     * 音色克隆后的视频文件地址
+                     * <p>音色克隆后的视频文件地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_voiceClonedVideo;
                     bool m_voiceClonedVideoHasBeenSet;
 
                     /**
-                     * 音色克隆的标注文件地址
+                     * <p>音色克隆的标注文件地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_voiceClonedMarkFile;

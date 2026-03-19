@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件名称
-                     * @return FileName 文件名称
+                     * 获取<p>文件名称</p>
+                     * @return FileName <p>文件名称</p>
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置文件名称
-                     * @param _fileName 文件名称
+                     * 设置<p>文件名称</p>
+                     * @param _fileName <p>文件名称</p>
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取文件大小，字节
-                     * @return FileSize 文件大小，字节
+                     * 获取<p>文件大小，字节</p>
+                     * @return FileSize <p>文件大小，字节</p>
                      * 
                      */
                     double GetFileSize() const;
 
                     /**
-                     * 设置文件大小，字节
-                     * @param _fileSize 文件大小，字节
+                     * 设置<p>文件大小，字节</p>
+                     * @param _fileSize <p>文件大小，字节</p>
                      * 
                      */
                     void SetFileSize(const double& _fileSize);
@@ -90,19 +90,15 @@ namespace TencentCloud
                     bool FileSizeHasBeenSet() const;
 
                     /**
-                     * 获取文件类型,0=文本,1=表格，默认0
-
-                     * @return Type 文件类型,0=文本,1=表格，默认0
-
+                     * 获取<p>文件类型,0=文本,1=表格，默认0</p>
+                     * @return Type <p>文件类型,0=文本,1=表格，默认0</p>
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置文件类型,0=文本,1=表格，默认0
-
-                     * @param _type 文件类型,0=文本,1=表格，默认0
-
+                     * 设置<p>文件类型,0=文本,1=表格，默认0</p>
+                     * @param _type <p>文件类型,0=文本,1=表格，默认0</p>
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -115,15 +111,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取文件ID
-                     * @return FileId 文件ID
+                     * 获取<p>文件ID</p>
+                     * @return FileId <p>文件ID</p>
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置文件ID
-                     * @param _fileId 文件ID
+                     * 设置<p>文件ID</p>
+                     * @param _fileId <p>文件ID</p>
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -136,15 +132,15 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取状态，0：数据处理中  1：可用 -1：错误
-                     * @return Status 状态，0：数据处理中  1：可用 -1：错误
+                     * 获取<p>状态，0：数据处理中  1：可用 -1：错误</p>
+                     * @return Status <p>状态，0：数据处理中  1：可用 -1：错误</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态，0：数据处理中  1：可用 -1：错误
-                     * @param _status 状态，0：数据处理中  1：可用 -1：错误
+                     * 设置<p>状态，0：数据处理中  1：可用 -1：错误</p>
+                     * @param _status <p>状态，0：数据处理中  1：可用 -1：错误</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -157,19 +153,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取操作者
-
-                     * @return CreateUser 操作者
-
+                     * 获取<p>操作者</p>
+                     * @return CreateUser <p>操作者</p>
                      * 
                      */
                     std::string GetCreateUser() const;
 
                     /**
-                     * 设置操作者
-
-                     * @param _createUser 操作者
-
+                     * 设置<p>操作者</p>
+                     * @param _createUser <p>操作者</p>
                      * 
                      */
                     void SetCreateUser(const std::string& _createUser);
@@ -182,15 +174,15 @@ namespace TencentCloud
                     bool CreateUserHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -203,15 +195,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取分片策略
-                     * @return ChunkConfig 分片策略
+                     * 获取<p>分片策略</p>
+                     * @return ChunkConfig <p>分片策略</p>
                      * 
                      */
                     KnowledgeTaskConfig GetChunkConfig() const;
 
                     /**
-                     * 设置分片策略
-                     * @param _chunkConfig 分片策略
+                     * 设置<p>分片策略</p>
+                     * @param _chunkConfig <p>分片策略</p>
                      * 
                      */
                     void SetChunkConfig(const KnowledgeTaskConfig& _chunkConfig);
@@ -224,15 +216,15 @@ namespace TencentCloud
                     bool ChunkConfigHasBeenSet() const;
 
                     /**
-                     * 获取文件来源0=unknow,1=user_cos,2=local
-                     * @return Source 文件来源0=unknow,1=user_cos,2=local
+                     * 获取<p>文件来源0=unknow,1=user_cos,2=local</p>
+                     * @return Source <p>文件来源0=unknow,1=user_cos,2=local</p>
                      * 
                      */
                     int64_t GetSource() const;
 
                     /**
-                     * 设置文件来源0=unknow,1=user_cos,2=local
-                     * @param _source 文件来源0=unknow,1=user_cos,2=local
+                     * 设置<p>文件来源0=unknow,1=user_cos,2=local</p>
+                     * @param _source <p>文件来源0=unknow,1=user_cos,2=local</p>
                      * 
                      */
                     void SetSource(const int64_t& _source);
@@ -245,15 +237,15 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取文件url
-                     * @return FileUrl 文件url
+                     * 获取<p>文件url</p>
+                     * @return FileUrl <p>文件url</p>
                      * 
                      */
                     std::string GetFileUrl() const;
 
                     /**
-                     * 设置文件url
-                     * @param _fileUrl 文件url
+                     * 设置<p>文件url</p>
+                     * @param _fileUrl <p>文件url</p>
                      * 
                      */
                     void SetFileUrl(const std::string& _fileUrl);
@@ -266,15 +258,15 @@ namespace TencentCloud
                     bool FileUrlHasBeenSet() const;
 
                     /**
-                     * 获取是否官方示例，0=否，1=是
-                     * @return IsShowCase 是否官方示例，0=否，1=是
+                     * 获取<p>是否官方示例，0=否，1=是</p>
+                     * @return IsShowCase <p>是否官方示例，0=否，1=是</p>
                      * 
                      */
                     int64_t GetIsShowCase() const;
 
                     /**
-                     * 设置是否官方示例，0=否，1=是
-                     * @param _isShowCase 是否官方示例，0=否，1=是
+                     * 设置<p>是否官方示例，0=否，1=是</p>
+                     * @param _isShowCase <p>是否官方示例，0=否，1=是</p>
                      * 
                      */
                     void SetIsShowCase(const int64_t& _isShowCase);
@@ -287,15 +279,15 @@ namespace TencentCloud
                     bool IsShowCaseHasBeenSet() const;
 
                     /**
-                     * 获取文档摘要
-                     * @return DocumentSummary 文档摘要
+                     * 获取<p>文档摘要</p>
+                     * @return DocumentSummary <p>文档摘要</p>
                      * 
                      */
                     std::string GetDocumentSummary() const;
 
                     /**
-                     * 设置文档摘要
-                     * @param _documentSummary 文档摘要
+                     * 设置<p>文档摘要</p>
+                     * @param _documentSummary <p>文档摘要</p>
                      * 
                      */
                     void SetDocumentSummary(const std::string& _documentSummary);
@@ -307,81 +299,106 @@ namespace TencentCloud
                      */
                     bool DocumentSummaryHasBeenSet() const;
 
+                    /**
+                     * 获取<p>网页地址</p>
+                     * @return WebUrl <p>网页地址</p>
+                     * 
+                     */
+                    std::string GetWebUrl() const;
+
+                    /**
+                     * 设置<p>网页地址</p>
+                     * @param _webUrl <p>网页地址</p>
+                     * 
+                     */
+                    void SetWebUrl(const std::string& _webUrl);
+
+                    /**
+                     * 判断参数 WebUrl 是否已赋值
+                     * @return WebUrl 是否已赋值
+                     * 
+                     */
+                    bool WebUrlHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 文件名称
+                     * <p>文件名称</p>
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 文件大小，字节
+                     * <p>文件大小，字节</p>
                      */
                     double m_fileSize;
                     bool m_fileSizeHasBeenSet;
 
                     /**
-                     * 文件类型,0=文本,1=表格，默认0
-
+                     * <p>文件类型,0=文本,1=表格，默认0</p>
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 文件ID
+                     * <p>文件ID</p>
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 状态，0：数据处理中  1：可用 -1：错误
+                     * <p>状态，0：数据处理中  1：可用 -1：错误</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 操作者
-
+                     * <p>操作者</p>
                      */
                     std::string m_createUser;
                     bool m_createUserHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 分片策略
+                     * <p>分片策略</p>
                      */
                     KnowledgeTaskConfig m_chunkConfig;
                     bool m_chunkConfigHasBeenSet;
 
                     /**
-                     * 文件来源0=unknow,1=user_cos,2=local
+                     * <p>文件来源0=unknow,1=user_cos,2=local</p>
                      */
                     int64_t m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 文件url
+                     * <p>文件url</p>
                      */
                     std::string m_fileUrl;
                     bool m_fileUrlHasBeenSet;
 
                     /**
-                     * 是否官方示例，0=否，1=是
+                     * <p>是否官方示例，0=否，1=是</p>
                      */
                     int64_t m_isShowCase;
                     bool m_isShowCaseHasBeenSet;
 
                     /**
-                     * 文档摘要
+                     * <p>文档摘要</p>
                      */
                     std::string m_documentSummary;
                     bool m_documentSummaryHasBeenSet;
+
+                    /**
+                     * <p>网页地址</p>
+                     */
+                    std::string m_webUrl;
+                    bool m_webUrlHasBeenSet;
 
                 };
             }

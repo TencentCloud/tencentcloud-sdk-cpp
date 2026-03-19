@@ -1224,7 +1224,9 @@ namespace TencentCloud
                 DeleteGrafanaNotificationChannelOutcomeCallable DeleteGrafanaNotificationChannelCallable(const Model::DeleteGrafanaNotificationChannelRequest& request);
 
                 /**
-                 *删除告警策略组
+                 *告警 1.0 API，不能再使用否则会导致后端数据不一致
+
+删除告警策略组
                  * @param req DeletePolicyGroupRequest
                  * @return DeletePolicyGroupOutcome
                  */

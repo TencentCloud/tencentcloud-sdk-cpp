@@ -23,7 +23,8 @@ using namespace std;
 SubtitleResult::SubtitleResult() :
     m_languageHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_pathHasBeenSet(false)
+    m_pathHasBeenSet(false),
+    m_subtitleEmbedPathHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome SubtitleResult::Deserialize(const rapidjson::Value &value)
         m_pathHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleEmbedPath") && !value["SubtitleEmbedPath"].IsNull())
+    {
+        if (!value["SubtitleEmbedPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubtitleResult.SubtitleEmbedPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subtitleEmbedPath = string(value["SubtitleEmbedPath"].GetString());
+        m_subtitleEmbedPathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void SubtitleResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Path";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subtitleEmbedPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleEmbedPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subtitleEmbedPath.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void SubtitleResult::SetPath(const string& _path)
 bool SubtitleResult::PathHasBeenSet() const
 {
     return m_pathHasBeenSet;
+}
+
+string SubtitleResult::GetSubtitleEmbedPath() const
+{
+    return m_subtitleEmbedPath;
+}
+
+void SubtitleResult::SetSubtitleEmbedPath(const string& _subtitleEmbedPath)
+{
+    m_subtitleEmbedPath = _subtitleEmbedPath;
+    m_subtitleEmbedPathHasBeenSet = true;
+}
+
+bool SubtitleResult::SubtitleEmbedPathHasBeenSet() const
+{
+    return m_subtitleEmbedPathHasBeenSet;
 }
 

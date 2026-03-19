@@ -32,7 +32,8 @@ FileInfo::FileInfo() :
     m_sourceHasBeenSet(false),
     m_fileUrlHasBeenSet(false),
     m_isShowCaseHasBeenSet(false),
-    m_documentSummaryHasBeenSet(false)
+    m_documentSummaryHasBeenSet(false),
+    m_webUrlHasBeenSet(false)
 {
 }
 
@@ -168,6 +169,16 @@ CoreInternalOutcome FileInfo::Deserialize(const rapidjson::Value &value)
         m_documentSummaryHasBeenSet = true;
     }
 
+    if (value.HasMember("WebUrl") && !value["WebUrl"].IsNull())
+    {
+        if (!value["WebUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileInfo.WebUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_webUrl = string(value["WebUrl"].GetString());
+        m_webUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +281,14 @@ void FileInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "DocumentSummary";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_documentSummary.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_webUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_webUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -465,5 +484,21 @@ void FileInfo::SetDocumentSummary(const string& _documentSummary)
 bool FileInfo::DocumentSummaryHasBeenSet() const
 {
     return m_documentSummaryHasBeenSet;
+}
+
+string FileInfo::GetWebUrl() const
+{
+    return m_webUrl;
+}
+
+void FileInfo::SetWebUrl(const string& _webUrl)
+{
+    m_webUrl = _webUrl;
+    m_webUrlHasBeenSet = true;
+}
+
+bool FileInfo::WebUrlHasBeenSet() const
+{
+    return m_webUrlHasBeenSet;
 }
 

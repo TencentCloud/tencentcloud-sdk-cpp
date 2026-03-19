@@ -47,15 +47,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标签来源，1：标签
-                     * @return Source 标签来源，1：标签
+                     * 获取标签来源，1：标签。
+使用标签引用信息时，Source、AttributeBizId和LabelBizIds都需填写。
+                     * @return Source 标签来源，1：标签。
+使用标签引用信息时，Source、AttributeBizId和LabelBizIds都需填写。
                      * 
                      */
                     uint64_t GetSource() const;
 
                     /**
-                     * 设置标签来源，1：标签
-                     * @param _source 标签来源，1：标签
+                     * 设置标签来源，1：标签。
+使用标签引用信息时，Source、AttributeBizId和LabelBizIds都需填写。
+                     * @param _source 标签来源，1：标签。
+使用标签引用信息时，Source、AttributeBizId和LabelBizIds都需填写。
                      * 
                      */
                     void SetSource(const uint64_t& _source);
@@ -112,7 +116,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标签来源，1：标签
+                     * 标签来源，1：标签。
+使用标签引用信息时，Source、AttributeBizId和LabelBizIds都需填写。
                      */
                     uint64_t m_source;
                     bool m_sourceHasBeenSet;
