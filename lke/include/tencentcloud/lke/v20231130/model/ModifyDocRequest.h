@@ -46,14 +46,18 @@ namespace TencentCloud
 
                     /**
                      * 获取应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+修改知识库文档时，该参数填入知识库ID。
                      * @return BotBizId 应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+修改知识库文档时，该参数填入知识库ID。
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
                      * 设置应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+修改知识库文档时，该参数填入知识库ID。
                      * @param _botBizId 应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+修改知识库文档时，该参数填入知识库ID。
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -413,6 +417,7 @@ namespace TencentCloud
 
                     /**
                      * 应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+修改知识库文档时，该参数填入知识库ID。
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;

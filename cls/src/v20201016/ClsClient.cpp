@@ -8090,6 +8090,56 @@ ClsClient::ModifyWebCallbackOutcomeCallable ClsClient::ModifyWebCallbackCallable
     return prom->get_future();
 }
 
+ClsClient::OpenClawServiceOutcome ClsClient::OpenClawService(const OpenClawServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenClawService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenClawServiceResponse rsp = OpenClawServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenClawServiceOutcome(rsp);
+        else
+            return OpenClawServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenClawServiceOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::OpenClawServiceAsync(const OpenClawServiceRequest& request, const OpenClawServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const OpenClawServiceRequest&;
+    using Resp = OpenClawServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "OpenClawService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::OpenClawServiceOutcomeCallable ClsClient::OpenClawServiceCallable(const OpenClawServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<OpenClawServiceOutcome>>();
+    OpenClawServiceAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const OpenClawServiceRequest&,
+        OpenClawServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::OpenKafkaConsumerOutcome ClsClient::OpenKafkaConsumer(const OpenKafkaConsumerRequest &request)
 {
     auto outcome = MakeRequest(request, "OpenKafkaConsumer");

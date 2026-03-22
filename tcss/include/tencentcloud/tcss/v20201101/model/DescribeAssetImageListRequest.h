@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要返回的数量，默认为10，最大值为100
-                     * @return Limit 需要返回的数量，默认为10，最大值为100
+                     * 获取<p>需要返回的数量，默认为10，最大值为100</p>
+                     * @return Limit <p>需要返回的数量，默认为10，最大值为100</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置需要返回的数量，默认为10，最大值为100
-                     * @param _limit 需要返回的数量，默认为10，最大值为100
+                     * 设置<p>需要返回的数量，默认为10，最大值为100</p>
+                     * @param _limit <p>需要返回的数量，默认为10，最大值为100</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0。
-                     * @return Offset 偏移量，默认为0。
+                     * 获取<p>偏移量，默认为0。</p>
+                     * @return Offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0。
-                     * @param _offset 偏移量，默认为0。
+                     * 设置<p>偏移量，默认为0。</p>
+                     * @param _offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -86,31 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件。
-<li>ImageName- String - 是否必填：否 - 镜像名称筛选，</li>
-<li>ScanStatus - String - 是否必填：否 - 镜像扫描状态notScan，scanning，scanned，scanErr</li>
-<li>ImageID- String - 是否必填：否 - 镜像ID筛选，</li>
-<li>SecurityRisk- String - 是否必填：否 - 安全风险，VulCnt 、VirusCnt、RiskCnt、IsTrustImage</li>
-                     * @return Filters 过滤条件。
-<li>ImageName- String - 是否必填：否 - 镜像名称筛选，</li>
-<li>ScanStatus - String - 是否必填：否 - 镜像扫描状态notScan，scanning，scanned，scanErr</li>
-<li>ImageID- String - 是否必填：否 - 镜像ID筛选，</li>
-<li>SecurityRisk- String - 是否必填：否 - 安全风险，VulCnt 、VirusCnt、RiskCnt、IsTrustImage</li>
+                     * 获取<p>过滤条件。</p><li>ImageName- String - 是否必填：否 - 镜像名称筛选，</li><li>ScanStatus - String - 是否必填：否 - 镜像扫描状态notScan，scanning，scanned，scanErr</li><li>ImageID- String - 是否必填：否 - 镜像ID筛选，</li><li>SecurityRisk- String - 是否必填：否 - 安全风险，VirusCnt、RiskCnt、IsTrustImage、CriticalLevelVul、HighLevelVul、MediumLevelVul、LowLevelVul</li>
+                     * @return Filters <p>过滤条件。</p><li>ImageName- String - 是否必填：否 - 镜像名称筛选，</li><li>ScanStatus - String - 是否必填：否 - 镜像扫描状态notScan，scanning，scanned，scanErr</li><li>ImageID- String - 是否必填：否 - 镜像ID筛选，</li><li>SecurityRisk- String - 是否必填：否 - 安全风险，VirusCnt、RiskCnt、IsTrustImage、CriticalLevelVul、HighLevelVul、MediumLevelVul、LowLevelVul</li>
                      * 
                      */
                     std::vector<AssetFilters> GetFilters() const;
 
                     /**
-                     * 设置过滤条件。
-<li>ImageName- String - 是否必填：否 - 镜像名称筛选，</li>
-<li>ScanStatus - String - 是否必填：否 - 镜像扫描状态notScan，scanning，scanned，scanErr</li>
-<li>ImageID- String - 是否必填：否 - 镜像ID筛选，</li>
-<li>SecurityRisk- String - 是否必填：否 - 安全风险，VulCnt 、VirusCnt、RiskCnt、IsTrustImage</li>
-                     * @param _filters 过滤条件。
-<li>ImageName- String - 是否必填：否 - 镜像名称筛选，</li>
-<li>ScanStatus - String - 是否必填：否 - 镜像扫描状态notScan，scanning，scanned，scanErr</li>
-<li>ImageID- String - 是否必填：否 - 镜像ID筛选，</li>
-<li>SecurityRisk- String - 是否必填：否 - 安全风险，VulCnt 、VirusCnt、RiskCnt、IsTrustImage</li>
+                     * 设置<p>过滤条件。</p><li>ImageName- String - 是否必填：否 - 镜像名称筛选，</li><li>ScanStatus - String - 是否必填：否 - 镜像扫描状态notScan，scanning，scanned，scanErr</li><li>ImageID- String - 是否必填：否 - 镜像ID筛选，</li><li>SecurityRisk- String - 是否必填：否 - 安全风险，VirusCnt、RiskCnt、IsTrustImage、CriticalLevelVul、HighLevelVul、MediumLevelVul、LowLevelVul</li>
+                     * @param _filters <p>过滤条件。</p><li>ImageName- String - 是否必填：否 - 镜像名称筛选，</li><li>ScanStatus - String - 是否必填：否 - 镜像扫描状态notScan，scanning，scanned，scanErr</li><li>ImageID- String - 是否必填：否 - 镜像ID筛选，</li><li>SecurityRisk- String - 是否必填：否 - 安全风险，VirusCnt、RiskCnt、IsTrustImage、CriticalLevelVul、HighLevelVul、MediumLevelVul、LowLevelVul</li>
                      * 
                      */
                     void SetFilters(const std::vector<AssetFilters>& _filters);
@@ -123,15 +107,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取排序字段
-                     * @return By 排序字段
+                     * 获取<p>排序字段</p>
+                     * @return By <p>排序字段</p>
                      * 
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置排序字段
-                     * @param _by 排序字段
+                     * 设置<p>排序字段</p>
+                     * @param _by <p>排序字段</p>
                      * 
                      */
                     void SetBy(const std::string& _by);
@@ -144,15 +128,15 @@ namespace TencentCloud
                     bool ByHasBeenSet() const;
 
                     /**
-                     * 获取排序方式 asc,desc
-                     * @return Order 排序方式 asc,desc
+                     * 获取<p>排序方式 asc,desc</p>
+                     * @return Order <p>排序方式 asc,desc</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序方式 asc,desc
-                     * @param _order 排序方式 asc,desc
+                     * 设置<p>排序方式 asc,desc</p>
+                     * @param _order <p>排序方式 asc,desc</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -167,35 +151,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要返回的数量，默认为10，最大值为100
+                     * <p>需要返回的数量，默认为10，最大值为100</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0。
+                     * <p>偏移量，默认为0。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 过滤条件。
-<li>ImageName- String - 是否必填：否 - 镜像名称筛选，</li>
-<li>ScanStatus - String - 是否必填：否 - 镜像扫描状态notScan，scanning，scanned，scanErr</li>
-<li>ImageID- String - 是否必填：否 - 镜像ID筛选，</li>
-<li>SecurityRisk- String - 是否必填：否 - 安全风险，VulCnt 、VirusCnt、RiskCnt、IsTrustImage</li>
+                     * <p>过滤条件。</p><li>ImageName- String - 是否必填：否 - 镜像名称筛选，</li><li>ScanStatus - String - 是否必填：否 - 镜像扫描状态notScan，scanning，scanned，scanErr</li><li>ImageID- String - 是否必填：否 - 镜像ID筛选，</li><li>SecurityRisk- String - 是否必填：否 - 安全风险，VirusCnt、RiskCnt、IsTrustImage、CriticalLevelVul、HighLevelVul、MediumLevelVul、LowLevelVul</li>
                      */
                     std::vector<AssetFilters> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 排序字段
+                     * <p>排序字段</p>
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;
 
                     /**
-                     * 排序方式 asc,desc
+                     * <p>排序方式 asc,desc</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;

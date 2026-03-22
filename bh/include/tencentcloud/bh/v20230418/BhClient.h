@@ -111,6 +111,10 @@
 #include <tencentcloud/bh/v20230418/model/DescribeDepartmentsResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeDeviceAccountsRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeDeviceAccountsResponse.h>
+#include <tencentcloud/bh/v20230418/model/DescribeDeviceCountRequest.h>
+#include <tencentcloud/bh/v20230418/model/DescribeDeviceCountResponse.h>
+#include <tencentcloud/bh/v20230418/model/DescribeDeviceCountSummaryRequest.h>
+#include <tencentcloud/bh/v20230418/model/DescribeDeviceCountSummaryResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeDeviceGroupMembersRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeDeviceGroupMembersResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeDeviceGroupsRequest.h>
@@ -381,6 +385,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDeviceAccountsResponse> DescribeDeviceAccountsOutcome;
                 typedef std::future<DescribeDeviceAccountsOutcome> DescribeDeviceAccountsOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DescribeDeviceAccountsRequest&, DescribeDeviceAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceAccountsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeviceCountResponse> DescribeDeviceCountOutcome;
+                typedef std::future<DescribeDeviceCountOutcome> DescribeDeviceCountOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::DescribeDeviceCountRequest&, DescribeDeviceCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceCountAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeviceCountSummaryResponse> DescribeDeviceCountSummaryOutcome;
+                typedef std::future<DescribeDeviceCountSummaryOutcome> DescribeDeviceCountSummaryOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::DescribeDeviceCountSummaryRequest&, DescribeDeviceCountSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceCountSummaryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceGroupMembersResponse> DescribeDeviceGroupMembersOutcome;
                 typedef std::future<DescribeDeviceGroupMembersOutcome> DescribeDeviceGroupMembersOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DescribeDeviceGroupMembersRequest&, DescribeDeviceGroupMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceGroupMembersAsyncHandler;
@@ -965,6 +975,24 @@ namespace TencentCloud
                 DescribeDeviceAccountsOutcome DescribeDeviceAccounts(const Model::DescribeDeviceAccountsRequest &request);
                 void DescribeDeviceAccountsAsync(const Model::DescribeDeviceAccountsRequest& request, const DescribeDeviceAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDeviceAccountsOutcomeCallable DescribeDeviceAccountsCallable(const Model::DescribeDeviceAccountsRequest& request);
+
+                /**
+                 *查询用户导入的主机数
+                 * @param req DescribeDeviceCountRequest
+                 * @return DescribeDeviceCountOutcome
+                 */
+                DescribeDeviceCountOutcome DescribeDeviceCount(const Model::DescribeDeviceCountRequest &request);
+                void DescribeDeviceCountAsync(const Model::DescribeDeviceCountRequest& request, const DescribeDeviceCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceCountOutcomeCallable DescribeDeviceCountCallable(const Model::DescribeDeviceCountRequest& request);
+
+                /**
+                 *查询用户导入的主机数
+                 * @param req DescribeDeviceCountSummaryRequest
+                 * @return DescribeDeviceCountSummaryOutcome
+                 */
+                DescribeDeviceCountSummaryOutcome DescribeDeviceCountSummary(const Model::DescribeDeviceCountSummaryRequest &request);
+                void DescribeDeviceCountSummaryAsync(const Model::DescribeDeviceCountSummaryRequest& request, const DescribeDeviceCountSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceCountSummaryOutcomeCallable DescribeDeviceCountSummaryCallable(const Model::DescribeDeviceCountSummaryRequest& request);
 
                 /**
                  *查询资产组成员列表

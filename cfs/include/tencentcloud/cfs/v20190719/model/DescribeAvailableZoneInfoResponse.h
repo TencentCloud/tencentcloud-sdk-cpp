@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取各可用区的资源售卖情况以及支持的存储类型、存储协议等信息
-                     * @return RegionZones 各可用区的资源售卖情况以及支持的存储类型、存储协议等信息
+                     * 获取<p>各可用区的资源售卖情况以及支持的存储类型、存储协议等信息</p>
+                     * @return RegionZones <p>各可用区的资源售卖情况以及支持的存储类型、存储协议等信息</p>
                      * 
                      */
                     std::vector<AvailableRegion> GetRegionZones() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 各可用区的资源售卖情况以及支持的存储类型、存储协议等信息
+                     * <p>各可用区的资源售卖情况以及支持的存储类型、存储协议等信息</p>
                      */
                     std::vector<AvailableRegion> m_regionZones;
                     bool m_regionZonesHasBeenSet;

@@ -413,6 +413,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/CreateSplunkDeliverRequest.h
   include/tencentcloud/cls/v20201016/model/CreateMachineGroupResponse.h
   include/tencentcloud/cls/v20201016/model/RuleTagInfo.h
+  include/tencentcloud/cls/v20201016/model/OpenClawServiceRequest.h
   include/tencentcloud/cls/v20201016/model/SearchCosRechargeInfoRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeNoticeContentsRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeDlcDeliversRequest.h
@@ -472,6 +473,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/HostMetricConfig.h
   include/tencentcloud/cls/v20201016/model/CreateShipperResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyCloudProductLogCollectionRequest.h
+  include/tencentcloud/cls/v20201016/model/OpenClawServiceResponse.h
   include/tencentcloud/cls/v20201016/model/CosRechargeInfo.h
   include/tencentcloud/cls/v20201016/model/Column.h
   include/tencentcloud/cls/v20201016/model/DescribeDataTransformInfoRequest.h
@@ -913,6 +915,7 @@ set(cls_src
   src/v20201016/model/CreateSplunkDeliverRequest.cpp
   src/v20201016/model/CreateMachineGroupResponse.cpp
   src/v20201016/model/RuleTagInfo.cpp
+  src/v20201016/model/OpenClawServiceRequest.cpp
   src/v20201016/model/SearchCosRechargeInfoRequest.cpp
   src/v20201016/model/DescribeNoticeContentsRequest.cpp
   src/v20201016/model/DescribeDlcDeliversRequest.cpp
@@ -972,6 +975,7 @@ set(cls_src
   src/v20201016/model/HostMetricConfig.cpp
   src/v20201016/model/CreateShipperResponse.cpp
   src/v20201016/model/ModifyCloudProductLogCollectionRequest.cpp
+  src/v20201016/model/OpenClawServiceResponse.cpp
   src/v20201016/model/CosRechargeInfo.cpp
   src/v20201016/model/Column.cpp
   src/v20201016/model/DescribeDataTransformInfoRequest.cpp

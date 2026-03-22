@@ -46,15 +46,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
-                     * @return BotBizId 应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * 获取应用ID。应用ID 获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+导入知识库文档时，该参数填入知识库 ID。
+
+                     * @return BotBizId 应用ID。应用ID 获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+导入知识库文档时，该参数填入知识库 ID。
+
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
-                     * 设置应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
-                     * @param _botBizId 应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * 设置应用ID。应用ID 获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+导入知识库文档时，该参数填入知识库 ID。
+
+                     * @param _botBizId 应用ID。应用ID 获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+导入知识库文档时，该参数填入知识库 ID。
+
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -890,7 +898,9 @@ cos_hash为文档唯一性标识，与文件名无关 相同的cos_hash会被判
                 private:
 
                     /**
-                     * 应用ID，获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * 应用ID。应用ID 获取方法参看[如何获取   BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+导入知识库文档时，该参数填入知识库 ID。
+
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;

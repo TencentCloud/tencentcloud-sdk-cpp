@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人像渐变任务的Job id
-                     * @return JobId 人像渐变任务的Job id
+                     * 获取<p>人像渐变任务的Job id</p>
+                     * @return JobId <p>人像渐变任务的Job id</p>
                      * 
                      */
                     std::string GetJobId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取预估处理时间，粒度为秒
-                     * @return EstimatedProcessTime 预估处理时间，粒度为秒
+                     * 获取<p>预估处理时间，粒度为秒</p>
+                     * @return EstimatedProcessTime <p>预估处理时间，粒度为秒</p>
                      * 
                      */
                     int64_t GetEstimatedProcessTime() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 人像渐变任务的Job id
+                     * <p>人像渐变任务的Job id</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 预估处理时间，粒度为秒
+                     * <p>预估处理时间，粒度为秒</p>
                      */
                     int64_t m_estimatedProcessTime;
                     bool m_estimatedProcessTimeHasBeenSet;

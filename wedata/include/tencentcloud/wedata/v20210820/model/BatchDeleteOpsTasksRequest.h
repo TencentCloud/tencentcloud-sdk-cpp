@@ -134,6 +134,27 @@ false:  不通知下游任务责任人
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取删除任务时是否删除脚本文件
+                     * @return DeleteScript 删除任务时是否删除脚本文件
+                     * 
+                     */
+                    bool GetDeleteScript() const;
+
+                    /**
+                     * 设置删除任务时是否删除脚本文件
+                     * @param _deleteScript 删除任务时是否删除脚本文件
+                     * 
+                     */
+                    void SetDeleteScript(const bool& _deleteScript);
+
+                    /**
+                     * 判断参数 DeleteScript 是否已赋值
+                     * @return DeleteScript 是否已赋值
+                     * 
+                     */
+                    bool DeleteScriptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -161,6 +182,12 @@ false:  不通知下游任务责任人
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 删除任务时是否删除脚本文件
+                     */
+                    bool m_deleteScript;
+                    bool m_deleteScriptHasBeenSet;
 
                 };
             }

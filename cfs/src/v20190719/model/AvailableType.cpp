@@ -23,7 +23,8 @@ using namespace std;
 AvailableType::AvailableType() :
     m_protocolsHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_prepaymentHasBeenSet(false)
+    m_prepaymentHasBeenSet(false),
+    m_versionHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome AvailableType::Deserialize(const rapidjson::Value &value)
         m_prepaymentHasBeenSet = true;
     }
 
+    if (value.HasMember("Version") && !value["Version"].IsNull())
+    {
+        if (!value["Version"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AvailableType.Version` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = string(value["Version"].GetString());
+        m_versionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +119,14 @@ void AvailableType::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Prepayment";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_prepayment, allocator);
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -159,5 +178,21 @@ void AvailableType::SetPrepayment(const bool& _prepayment)
 bool AvailableType::PrepaymentHasBeenSet() const
 {
     return m_prepaymentHasBeenSet;
+}
+
+string AvailableType::GetVersion() const
+{
+    return m_version;
+}
+
+void AvailableType::SetVersion(const string& _version)
+{
+    m_version = _version;
+    m_versionHasBeenSet = true;
+}
+
+bool AvailableType::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
 }
 

@@ -44,15 +44,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID, 获取方式参看 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
-                     * @return BotBizId 应用ID, 获取方式参看 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * 获取应用ID, 获取方式参看 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)。
+查询知识库下文档时，该参数填入知识库ID。
+                     * @return BotBizId 应用ID, 获取方式参看 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)。
+查询知识库下文档时，该参数填入知识库ID。
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
-                     * 设置应用ID, 获取方式参看 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
-                     * @param _botBizId 应用ID, 获取方式参看 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * 设置应用ID, 获取方式参看 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)。
+查询知识库下文档时，该参数填入知识库ID。
+                     * @param _botBizId 应用ID, 获取方式参看 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)。
+查询知识库下文档时，该参数填入知识库ID。
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -289,7 +293,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID, 获取方式参看 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)
+                     * 应用ID, 获取方式参看 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)。
+查询知识库下文档时，该参数填入知识库ID。
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;

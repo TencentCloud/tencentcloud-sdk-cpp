@@ -345,6 +345,8 @@
 #include <tencentcloud/cls/v20201016/model/ModifyTopicResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyWebCallbackRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyWebCallbackResponse.h>
+#include <tencentcloud/cls/v20201016/model/OpenClawServiceRequest.h>
+#include <tencentcloud/cls/v20201016/model/OpenClawServiceResponse.h>
 #include <tencentcloud/cls/v20201016/model/OpenKafkaConsumerRequest.h>
 #include <tencentcloud/cls/v20201016/model/OpenKafkaConsumerResponse.h>
 #include <tencentcloud/cls/v20201016/model/PreviewKafkaRechargeRequest.h>
@@ -864,6 +866,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyWebCallbackResponse> ModifyWebCallbackOutcome;
                 typedef std::future<ModifyWebCallbackOutcome> ModifyWebCallbackOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyWebCallbackRequest&, ModifyWebCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWebCallbackAsyncHandler;
+                typedef Outcome<Core::Error, Model::OpenClawServiceResponse> OpenClawServiceOutcome;
+                typedef std::future<OpenClawServiceOutcome> OpenClawServiceOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::OpenClawServiceRequest&, OpenClawServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenClawServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::OpenKafkaConsumerResponse> OpenKafkaConsumerOutcome;
                 typedef std::future<OpenKafkaConsumerOutcome> OpenKafkaConsumerOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::OpenKafkaConsumerRequest&, OpenKafkaConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenKafkaConsumerAsyncHandler;
@@ -2363,6 +2368,15 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 ModifyWebCallbackOutcome ModifyWebCallback(const Model::ModifyWebCallbackRequest &request);
                 void ModifyWebCallbackAsync(const Model::ModifyWebCallbackRequest& request, const ModifyWebCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyWebCallbackOutcomeCallable ModifyWebCallbackCallable(const Model::ModifyWebCallbackRequest& request);
+
+                /**
+                 *本接口用于创建OpenClaw依赖的资源与索引
+                 * @param req OpenClawServiceRequest
+                 * @return OpenClawServiceOutcome
+                 */
+                OpenClawServiceOutcome OpenClawService(const Model::OpenClawServiceRequest &request);
+                void OpenClawServiceAsync(const Model::OpenClawServiceRequest& request, const OpenClawServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenClawServiceOutcomeCallable OpenClawServiceCallable(const Model::OpenClawServiceRequest& request);
 
                 /**
                  *打开Kafka协议消费功能

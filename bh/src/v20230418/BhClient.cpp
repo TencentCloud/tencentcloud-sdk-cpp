@@ -2240,6 +2240,106 @@ BhClient::DescribeDeviceAccountsOutcomeCallable BhClient::DescribeDeviceAccounts
     return prom->get_future();
 }
 
+BhClient::DescribeDeviceCountOutcome BhClient::DescribeDeviceCount(const DescribeDeviceCountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeviceCount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeviceCountResponse rsp = DescribeDeviceCountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeviceCountOutcome(rsp);
+        else
+            return DescribeDeviceCountOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeviceCountOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::DescribeDeviceCountAsync(const DescribeDeviceCountRequest& request, const DescribeDeviceCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDeviceCountRequest&;
+    using Resp = DescribeDeviceCountResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceCount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BhClient::DescribeDeviceCountOutcomeCallable BhClient::DescribeDeviceCountCallable(const DescribeDeviceCountRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDeviceCountOutcome>>();
+    DescribeDeviceCountAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeDeviceCountRequest&,
+        DescribeDeviceCountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BhClient::DescribeDeviceCountSummaryOutcome BhClient::DescribeDeviceCountSummary(const DescribeDeviceCountSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeviceCountSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeviceCountSummaryResponse rsp = DescribeDeviceCountSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeviceCountSummaryOutcome(rsp);
+        else
+            return DescribeDeviceCountSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeviceCountSummaryOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::DescribeDeviceCountSummaryAsync(const DescribeDeviceCountSummaryRequest& request, const DescribeDeviceCountSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDeviceCountSummaryRequest&;
+    using Resp = DescribeDeviceCountSummaryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceCountSummary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BhClient::DescribeDeviceCountSummaryOutcomeCallable BhClient::DescribeDeviceCountSummaryCallable(const DescribeDeviceCountSummaryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDeviceCountSummaryOutcome>>();
+    DescribeDeviceCountSummaryAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeDeviceCountSummaryRequest&,
+        DescribeDeviceCountSummaryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 BhClient::DescribeDeviceGroupMembersOutcome BhClient::DescribeDeviceGroupMembers(const DescribeDeviceGroupMembersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDeviceGroupMembers");

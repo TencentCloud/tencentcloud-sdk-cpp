@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取错误码，成功时返回0
-                     * @return ErrorCode 错误码，成功时返回0
+                     * 获取<p>错误码，成功时返回0</p>
+                     * @return ErrorCode <p>错误码，成功时返回0</p>
                      * 
                      */
                     int64_t GetErrorCode() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool ErrorCodeHasBeenSet() const;
 
                     /**
-                     * 获取错误信息，成功时返回success
-                     * @return Msg 错误信息，成功时返回success
+                     * 获取<p>错误信息，成功时返回success</p>
+                     * @return Msg <p>错误信息，成功时返回success</p>
                      * 
                      */
                     std::string GetMsg() const;
@@ -72,9 +72,9 @@ namespace TencentCloud
                     bool MsgHasBeenSet() const;
 
                     /**
-                     * 获取合成音频的base64编码，wav格式。
+                     * 获取<p>合成音频的base64编码，wav格式。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AudioData 合成音频的base64编码，wav格式。
+                     * @return AudioData <p>合成音频的base64编码，wav格式。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -88,9 +88,9 @@ namespace TencentCloud
                     bool AudioDataHasBeenSet() const;
 
                     /**
-                     * 获取克隆的音色Id。
+                     * 获取<p>克隆的音色Id。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VoiceId 克隆的音色Id。
+                     * @return VoiceId <p>克隆的音色Id。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -106,26 +106,26 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 错误码，成功时返回0
+                     * <p>错误码，成功时返回0</p>
                      */
                     int64_t m_errorCode;
                     bool m_errorCodeHasBeenSet;
 
                     /**
-                     * 错误信息，成功时返回success
+                     * <p>错误信息，成功时返回success</p>
                      */
                     std::string m_msg;
                     bool m_msgHasBeenSet;
 
                     /**
-                     * 合成音频的base64编码，wav格式。
+                     * <p>合成音频的base64编码，wav格式。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_audioData;
                     bool m_audioDataHasBeenSet;
 
                     /**
-                     * 克隆的音色Id。
+                     * <p>克隆的音色Id。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_voiceId;

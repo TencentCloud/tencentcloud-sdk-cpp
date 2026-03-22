@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取发件人邮箱地址。不使用别名时请直接填写发件人邮箱地址，例如：noreply@mail.qcloud.com如需填写发件人别名时，请按照如下方式（注意别名与邮箱地址之间必须使用一个空格隔开）：别名+一个空格+<邮箱地址>，别名中不能带有冒号(:)。
-                     * @return FromEmailAddress 发件人邮箱地址。不使用别名时请直接填写发件人邮箱地址，例如：noreply@mail.qcloud.com如需填写发件人别名时，请按照如下方式（注意别名与邮箱地址之间必须使用一个空格隔开）：别名+一个空格+<邮箱地址>，别名中不能带有冒号(:)。
+                     * 获取<p>发件人邮箱地址。不使用别名时请直接填写发件人邮箱地址，例如：noreply@mail.qcloud.com如需填写发件人别名时，请按照如下方式（注意别名与邮箱地址之间必须使用一个空格隔开）：别名+一个空格+&lt;邮箱地址&gt;，别名中不能带有冒号(:)。</p>
+                     * @return FromEmailAddress <p>发件人邮箱地址。不使用别名时请直接填写发件人邮箱地址，例如：noreply@mail.qcloud.com如需填写发件人别名时，请按照如下方式（注意别名与邮箱地址之间必须使用一个空格隔开）：别名+一个空格+&lt;邮箱地址&gt;，别名中不能带有冒号(:)。</p>
                      * 
                      */
                     std::string GetFromEmailAddress() const;
 
                     /**
-                     * 设置发件人邮箱地址。不使用别名时请直接填写发件人邮箱地址，例如：noreply@mail.qcloud.com如需填写发件人别名时，请按照如下方式（注意别名与邮箱地址之间必须使用一个空格隔开）：别名+一个空格+<邮箱地址>，别名中不能带有冒号(:)。
-                     * @param _fromEmailAddress 发件人邮箱地址。不使用别名时请直接填写发件人邮箱地址，例如：noreply@mail.qcloud.com如需填写发件人别名时，请按照如下方式（注意别名与邮箱地址之间必须使用一个空格隔开）：别名+一个空格+<邮箱地址>，别名中不能带有冒号(:)。
+                     * 设置<p>发件人邮箱地址。不使用别名时请直接填写发件人邮箱地址，例如：noreply@mail.qcloud.com如需填写发件人别名时，请按照如下方式（注意别名与邮箱地址之间必须使用一个空格隔开）：别名+一个空格+&lt;邮箱地址&gt;，别名中不能带有冒号(:)。</p>
+                     * @param _fromEmailAddress <p>发件人邮箱地址。不使用别名时请直接填写发件人邮箱地址，例如：noreply@mail.qcloud.com如需填写发件人别名时，请按照如下方式（注意别名与邮箱地址之间必须使用一个空格隔开）：别名+一个空格+&lt;邮箱地址&gt;，别名中不能带有冒号(:)。</p>
                      * 
                      */
                     void SetFromEmailAddress(const std::string& _fromEmailAddress);
@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool FromEmailAddressHasBeenSet() const;
 
                     /**
-                     * 获取邮件主题
-                     * @return Subject 邮件主题
+                     * 获取<p>邮件主题</p>
+                     * @return Subject <p>邮件主题</p>
                      * 
                      */
                     std::string GetSubject() const;
 
                     /**
-                     * 设置邮件主题
-                     * @param _subject 邮件主题
+                     * 设置<p>邮件主题</p>
+                     * @param _subject <p>邮件主题</p>
                      * 
                      */
                     void SetSubject(const std::string& _subject);
@@ -88,19 +88,15 @@ namespace TencentCloud
                     bool SubjectHasBeenSet() const;
 
                     /**
-                     * 获取收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。
-Destination/Cc/Bcc三个参数必须至少存在一个。
-                     * @return Destination 收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。
-Destination/Cc/Bcc三个参数必须至少存在一个。
+                     * 获取<p>收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。<br>Destination/Cc/Bcc三个参数必须至少存在一个。</p>
+                     * @return Destination <p>收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。<br>Destination/Cc/Bcc三个参数必须至少存在一个。</p>
                      * 
                      */
                     std::vector<std::string> GetDestination() const;
 
                     /**
-                     * 设置收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。
-Destination/Cc/Bcc三个参数必须至少存在一个。
-                     * @param _destination 收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。
-Destination/Cc/Bcc三个参数必须至少存在一个。
+                     * 设置<p>收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。<br>Destination/Cc/Bcc三个参数必须至少存在一个。</p>
+                     * @param _destination <p>收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。<br>Destination/Cc/Bcc三个参数必须至少存在一个。</p>
                      * 
                      */
                     void SetDestination(const std::vector<std::string>& _destination);
@@ -113,15 +109,15 @@ Destination/Cc/Bcc三个参数必须至少存在一个。
                     bool DestinationHasBeenSet() const;
 
                     /**
-                     * 获取邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
-                     * @return ReplyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
+                     * 获取<p>邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。</p>
+                     * @return ReplyToAddresses <p>邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。</p>
                      * 
                      */
                     std::string GetReplyToAddresses() const;
 
                     /**
-                     * 设置邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
-                     * @param _replyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
+                     * 设置<p>邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。</p>
+                     * @param _replyToAddresses <p>邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。</p>
                      * 
                      */
                     void SetReplyToAddresses(const std::string& _replyToAddresses);
@@ -134,15 +130,15 @@ Destination/Cc/Bcc三个参数必须至少存在一个。
                     bool ReplyToAddressesHasBeenSet() const;
 
                     /**
-                     * 获取抄送人邮箱地址，最多支持抄送20人。
-                     * @return Cc 抄送人邮箱地址，最多支持抄送20人。
+                     * 获取<p>抄送人邮箱地址，最多支持抄送20人。</p>
+                     * @return Cc <p>抄送人邮箱地址，最多支持抄送20人。</p>
                      * 
                      */
                     std::vector<std::string> GetCc() const;
 
                     /**
-                     * 设置抄送人邮箱地址，最多支持抄送20人。
-                     * @param _cc 抄送人邮箱地址，最多支持抄送20人。
+                     * 设置<p>抄送人邮箱地址，最多支持抄送20人。</p>
+                     * @param _cc <p>抄送人邮箱地址，最多支持抄送20人。</p>
                      * 
                      */
                     void SetCc(const std::vector<std::string>& _cc);
@@ -155,15 +151,15 @@ Destination/Cc/Bcc三个参数必须至少存在一个。
                     bool CcHasBeenSet() const;
 
                     /**
-                     * 获取密送人邮箱地址，最多支持抄送20人,Bcc和Destination不能重复。
-                     * @return Bcc 密送人邮箱地址，最多支持抄送20人,Bcc和Destination不能重复。
+                     * 获取<p>密送人邮箱地址，最多支持抄送20人,Bcc和Destination不能重复。</p>
+                     * @return Bcc <p>密送人邮箱地址，最多支持抄送20人,Bcc和Destination不能重复。</p>
                      * 
                      */
                     std::vector<std::string> GetBcc() const;
 
                     /**
-                     * 设置密送人邮箱地址，最多支持抄送20人,Bcc和Destination不能重复。
-                     * @param _bcc 密送人邮箱地址，最多支持抄送20人,Bcc和Destination不能重复。
+                     * 设置<p>密送人邮箱地址，最多支持抄送20人,Bcc和Destination不能重复。</p>
+                     * @param _bcc <p>密送人邮箱地址，最多支持抄送20人,Bcc和Destination不能重复。</p>
                      * 
                      */
                     void SetBcc(const std::vector<std::string>& _bcc);
@@ -176,19 +172,15 @@ Destination/Cc/Bcc三个参数必须至少存在一个。
                     bool BccHasBeenSet() const;
 
                     /**
-                     * 获取使用模板发送时，填写模板相关参数。
-<dx-alert infotype="notice" title="注意"> 如您未申请过特殊配置，则该字段为必填 </dx-alert>
-                     * @return Template 使用模板发送时，填写模板相关参数。
-<dx-alert infotype="notice" title="注意"> 如您未申请过特殊配置，则该字段为必填 </dx-alert>
+                     * 获取<p>使用模板发送时，填写模板相关参数。</p><blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">注意</div>        <div class="rno-document-tip-desc"><p>如您未申请过特殊配置，则该字段为必填</p></div>    </div></blockquote>
+                     * @return Template <p>使用模板发送时，填写模板相关参数。</p><blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">注意</div>        <div class="rno-document-tip-desc"><p>如您未申请过特殊配置，则该字段为必填</p></div>    </div></blockquote>
                      * 
                      */
                     Template GetTemplate() const;
 
                     /**
-                     * 设置使用模板发送时，填写模板相关参数。
-<dx-alert infotype="notice" title="注意"> 如您未申请过特殊配置，则该字段为必填 </dx-alert>
-                     * @param _template 使用模板发送时，填写模板相关参数。
-<dx-alert infotype="notice" title="注意"> 如您未申请过特殊配置，则该字段为必填 </dx-alert>
+                     * 设置<p>使用模板发送时，填写模板相关参数。</p><blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">注意</div>        <div class="rno-document-tip-desc"><p>如您未申请过特殊配置，则该字段为必填</p></div>    </div></blockquote>
+                     * @param _template <p>使用模板发送时，填写模板相关参数。</p><blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">注意</div>        <div class="rno-document-tip-desc"><p>如您未申请过特殊配置，则该字段为必填</p></div>    </div></blockquote>
                      * 
                      */
                     void SetTemplate(const Template& _template);
@@ -201,19 +193,15 @@ Destination/Cc/Bcc三个参数必须至少存在一个。
                     bool TemplateHasBeenSet() const;
 
                     /**
-                     * 获取已废弃
-<dx-alert infotype="notice" title="说明"> 仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</dx-alert>
-                     * @return Simple 已废弃
-<dx-alert infotype="notice" title="说明"> 仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</dx-alert>
+                     * 获取<p>已废弃</p><blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">说明</div>        <div class="rno-document-tip-desc"><p>仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</p></div>    </div></blockquote>
+                     * @return Simple <p>已废弃</p><blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">说明</div>        <div class="rno-document-tip-desc"><p>仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</p></div>    </div></blockquote>
                      * 
                      */
                     Simple GetSimple() const;
 
                     /**
-                     * 设置已废弃
-<dx-alert infotype="notice" title="说明"> 仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</dx-alert>
-                     * @param _simple 已废弃
-<dx-alert infotype="notice" title="说明"> 仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</dx-alert>
+                     * 设置<p>已废弃</p><blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">说明</div>        <div class="rno-document-tip-desc"><p>仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</p></div>    </div></blockquote>
+                     * @param _simple <p>已废弃</p><blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">说明</div>        <div class="rno-document-tip-desc"><p>仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</p></div>    </div></blockquote>
                      * 
                      */
                     void SetSimple(const Simple& _simple);
@@ -226,15 +214,15 @@ Destination/Cc/Bcc三个参数必须至少存在一个。
                     bool SimpleHasBeenSet() const;
 
                     /**
-                     * 获取需要发送附件时，填写附件相关参数。腾讯云接口请求最大支持 8M 的请求包，附件内容经过 Base64 预期扩大1.5倍，应该控制所有附件的总大小最大在 4M 以内，整体请求超出 8M 时接口会返回错误
-                     * @return Attachments 需要发送附件时，填写附件相关参数。腾讯云接口请求最大支持 8M 的请求包，附件内容经过 Base64 预期扩大1.5倍，应该控制所有附件的总大小最大在 4M 以内，整体请求超出 8M 时接口会返回错误
+                     * 获取<p>需要发送附件时，填写附件相关参数。腾讯云接口请求最大支持 8M 的请求包，附件内容经过 Base64 预期扩大1.5倍，应该控制所有附件的总大小最大在 4M 以内，整体请求超出 8M 时接口会返回错误</p>
+                     * @return Attachments <p>需要发送附件时，填写附件相关参数。腾讯云接口请求最大支持 8M 的请求包，附件内容经过 Base64 预期扩大1.5倍，应该控制所有附件的总大小最大在 4M 以内，整体请求超出 8M 时接口会返回错误</p>
                      * 
                      */
                     std::vector<Attachment> GetAttachments() const;
 
                     /**
-                     * 设置需要发送附件时，填写附件相关参数。腾讯云接口请求最大支持 8M 的请求包，附件内容经过 Base64 预期扩大1.5倍，应该控制所有附件的总大小最大在 4M 以内，整体请求超出 8M 时接口会返回错误
-                     * @param _attachments 需要发送附件时，填写附件相关参数。腾讯云接口请求最大支持 8M 的请求包，附件内容经过 Base64 预期扩大1.5倍，应该控制所有附件的总大小最大在 4M 以内，整体请求超出 8M 时接口会返回错误
+                     * 设置<p>需要发送附件时，填写附件相关参数。腾讯云接口请求最大支持 8M 的请求包，附件内容经过 Base64 预期扩大1.5倍，应该控制所有附件的总大小最大在 4M 以内，整体请求超出 8M 时接口会返回错误</p>
+                     * @param _attachments <p>需要发送附件时，填写附件相关参数。腾讯云接口请求最大支持 8M 的请求包，附件内容经过 Base64 预期扩大1.5倍，应该控制所有附件的总大小最大在 4M 以内，整体请求超出 8M 时接口会返回错误</p>
                      * 
                      */
                     void SetAttachments(const std::vector<Attachment>& _attachments);
@@ -247,15 +235,15 @@ Destination/Cc/Bcc三个参数必须至少存在一个。
                     bool AttachmentsHasBeenSet() const;
 
                     /**
-                     * 获取退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语 10: 泰语
-                     * @return Unsubscribe 退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语 10: 泰语
+                     * 获取<p>退订链接选项</p><p>枚举值：</p><ul><li>0： 不加入退订链接</li><li>1： 简体中文</li><li>2： 英文</li><li>3： 繁体中文</li><li>4： 西班牙语</li><li>5： 法语</li><li>6： 德语</li><li>7： 日语</li><li>8： 韩语</li><li>9： 阿拉伯语</li><li>10： 泰语</li><li>11： 印尼语</li></ul>
+                     * @return Unsubscribe <p>退订链接选项</p><p>枚举值：</p><ul><li>0： 不加入退订链接</li><li>1： 简体中文</li><li>2： 英文</li><li>3： 繁体中文</li><li>4： 西班牙语</li><li>5： 法语</li><li>6： 德语</li><li>7： 日语</li><li>8： 韩语</li><li>9： 阿拉伯语</li><li>10： 泰语</li><li>11： 印尼语</li></ul>
                      * 
                      */
                     std::string GetUnsubscribe() const;
 
                     /**
-                     * 设置退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语 10: 泰语
-                     * @param _unsubscribe 退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语 10: 泰语
+                     * 设置<p>退订链接选项</p><p>枚举值：</p><ul><li>0： 不加入退订链接</li><li>1： 简体中文</li><li>2： 英文</li><li>3： 繁体中文</li><li>4： 西班牙语</li><li>5： 法语</li><li>6： 德语</li><li>7： 日语</li><li>8： 韩语</li><li>9： 阿拉伯语</li><li>10： 泰语</li><li>11： 印尼语</li></ul>
+                     * @param _unsubscribe <p>退订链接选项</p><p>枚举值：</p><ul><li>0： 不加入退订链接</li><li>1： 简体中文</li><li>2： 英文</li><li>3： 繁体中文</li><li>4： 西班牙语</li><li>5： 法语</li><li>6： 德语</li><li>7： 日语</li><li>8： 韩语</li><li>9： 阿拉伯语</li><li>10： 泰语</li><li>11： 印尼语</li></ul>
                      * 
                      */
                     void SetUnsubscribe(const std::string& _unsubscribe);
@@ -268,15 +256,15 @@ Destination/Cc/Bcc三个参数必须至少存在一个。
                     bool UnsubscribeHasBeenSet() const;
 
                     /**
-                     * 获取邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道
-                     * @return TriggerType 邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道
+                     * 获取<p>邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道</p>
+                     * @return TriggerType <p>邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道</p>
                      * 
                      */
                     uint64_t GetTriggerType() const;
 
                     /**
-                     * 设置邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道
-                     * @param _triggerType 邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道
+                     * 设置<p>邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道</p>
+                     * @param _triggerType <p>邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道</p>
                      * 
                      */
                     void SetTriggerType(const uint64_t& _triggerType);
@@ -289,15 +277,15 @@ Destination/Cc/Bcc三个参数必须至少存在一个。
                     bool TriggerTypeHasBeenSet() const;
 
                     /**
-                     * 获取smtp头中的Message-Id字段
-                     * @return SmtpMessageId smtp头中的Message-Id字段
+                     * 获取<p>smtp头中的Message-Id字段</p>
+                     * @return SmtpMessageId <p>smtp头中的Message-Id字段</p>
                      * 
                      */
                     std::string GetSmtpMessageId() const;
 
                     /**
-                     * 设置smtp头中的Message-Id字段
-                     * @param _smtpMessageId smtp头中的Message-Id字段
+                     * 设置<p>smtp头中的Message-Id字段</p>
+                     * @param _smtpMessageId <p>smtp头中的Message-Id字段</p>
                      * 
                      */
                     void SetSmtpMessageId(const std::string& _smtpMessageId);
@@ -310,15 +298,15 @@ Destination/Cc/Bcc三个参数必须至少存在一个。
                     bool SmtpMessageIdHasBeenSet() const;
 
                     /**
-                     * 获取smtp头中可以设置的其它字段
-                     * @return SmtpHeaders smtp头中可以设置的其它字段
+                     * 获取<p>smtp头中可以设置的其它字段</p>
+                     * @return SmtpHeaders <p>smtp头中可以设置的其它字段</p>
                      * 
                      */
                     std::string GetSmtpHeaders() const;
 
                     /**
-                     * 设置smtp头中可以设置的其它字段
-                     * @param _smtpHeaders smtp头中可以设置的其它字段
+                     * 设置<p>smtp头中可以设置的其它字段</p>
+                     * @param _smtpHeaders <p>smtp头中可以设置的其它字段</p>
                      * 
                      */
                     void SetSmtpHeaders(const std::string& _smtpHeaders);
@@ -331,15 +319,15 @@ Destination/Cc/Bcc三个参数必须至少存在一个。
                     bool SmtpHeadersHasBeenSet() const;
 
                     /**
-                     * 获取smtp头中的from字段，建议域名与FromEmailAddress保持一致
-                     * @return HeaderFrom smtp头中的from字段，建议域名与FromEmailAddress保持一致
+                     * 获取<p>smtp头中的from字段，建议域名与FromEmailAddress保持一致</p>
+                     * @return HeaderFrom <p>smtp头中的from字段，建议域名与FromEmailAddress保持一致</p>
                      * 
                      */
                     std::string GetHeaderFrom() const;
 
                     /**
-                     * 设置smtp头中的from字段，建议域名与FromEmailAddress保持一致
-                     * @param _headerFrom smtp头中的from字段，建议域名与FromEmailAddress保持一致
+                     * 设置<p>smtp头中的from字段，建议域名与FromEmailAddress保持一致</p>
+                     * @param _headerFrom <p>smtp头中的from字段，建议域名与FromEmailAddress保持一致</p>
                      * 
                      */
                     void SetHeaderFrom(const std::string& _headerFrom);
@@ -354,88 +342,85 @@ Destination/Cc/Bcc三个参数必须至少存在一个。
                 private:
 
                     /**
-                     * 发件人邮箱地址。不使用别名时请直接填写发件人邮箱地址，例如：noreply@mail.qcloud.com如需填写发件人别名时，请按照如下方式（注意别名与邮箱地址之间必须使用一个空格隔开）：别名+一个空格+<邮箱地址>，别名中不能带有冒号(:)。
+                     * <p>发件人邮箱地址。不使用别名时请直接填写发件人邮箱地址，例如：noreply@mail.qcloud.com如需填写发件人别名时，请按照如下方式（注意别名与邮箱地址之间必须使用一个空格隔开）：别名+一个空格+&lt;邮箱地址&gt;，别名中不能带有冒号(:)。</p>
                      */
                     std::string m_fromEmailAddress;
                     bool m_fromEmailAddressHasBeenSet;
 
                     /**
-                     * 邮件主题
+                     * <p>邮件主题</p>
                      */
                     std::string m_subject;
                     bool m_subjectHasBeenSet;
 
                     /**
-                     * 收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。
-Destination/Cc/Bcc三个参数必须至少存在一个。
+                     * <p>收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。<br>Destination/Cc/Bcc三个参数必须至少存在一个。</p>
                      */
                     std::vector<std::string> m_destination;
                     bool m_destinationHasBeenSet;
 
                     /**
-                     * 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
+                     * <p>邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。</p>
                      */
                     std::string m_replyToAddresses;
                     bool m_replyToAddressesHasBeenSet;
 
                     /**
-                     * 抄送人邮箱地址，最多支持抄送20人。
+                     * <p>抄送人邮箱地址，最多支持抄送20人。</p>
                      */
                     std::vector<std::string> m_cc;
                     bool m_ccHasBeenSet;
 
                     /**
-                     * 密送人邮箱地址，最多支持抄送20人,Bcc和Destination不能重复。
+                     * <p>密送人邮箱地址，最多支持抄送20人,Bcc和Destination不能重复。</p>
                      */
                     std::vector<std::string> m_bcc;
                     bool m_bccHasBeenSet;
 
                     /**
-                     * 使用模板发送时，填写模板相关参数。
-<dx-alert infotype="notice" title="注意"> 如您未申请过特殊配置，则该字段为必填 </dx-alert>
+                     * <p>使用模板发送时，填写模板相关参数。</p><blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">注意</div>        <div class="rno-document-tip-desc"><p>如您未申请过特殊配置，则该字段为必填</p></div>    </div></blockquote>
                      */
                     Template m_template;
                     bool m_templateHasBeenSet;
 
                     /**
-                     * 已废弃
-<dx-alert infotype="notice" title="说明"> 仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</dx-alert>
+                     * <p>已废弃</p><blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">说明</div>        <div class="rno-document-tip-desc"><p>仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</p></div>    </div></blockquote>
                      */
                     Simple m_simple;
                     bool m_simpleHasBeenSet;
 
                     /**
-                     * 需要发送附件时，填写附件相关参数。腾讯云接口请求最大支持 8M 的请求包，附件内容经过 Base64 预期扩大1.5倍，应该控制所有附件的总大小最大在 4M 以内，整体请求超出 8M 时接口会返回错误
+                     * <p>需要发送附件时，填写附件相关参数。腾讯云接口请求最大支持 8M 的请求包，附件内容经过 Base64 预期扩大1.5倍，应该控制所有附件的总大小最大在 4M 以内，整体请求超出 8M 时接口会返回错误</p>
                      */
                     std::vector<Attachment> m_attachments;
                     bool m_attachmentsHasBeenSet;
 
                     /**
-                     * 退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语 10: 泰语
+                     * <p>退订链接选项</p><p>枚举值：</p><ul><li>0： 不加入退订链接</li><li>1： 简体中文</li><li>2： 英文</li><li>3： 繁体中文</li><li>4： 西班牙语</li><li>5： 法语</li><li>6： 德语</li><li>7： 日语</li><li>8： 韩语</li><li>9： 阿拉伯语</li><li>10： 泰语</li><li>11： 印尼语</li></ul>
                      */
                     std::string m_unsubscribe;
                     bool m_unsubscribeHasBeenSet;
 
                     /**
-                     * 邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道
+                     * <p>邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道</p>
                      */
                     uint64_t m_triggerType;
                     bool m_triggerTypeHasBeenSet;
 
                     /**
-                     * smtp头中的Message-Id字段
+                     * <p>smtp头中的Message-Id字段</p>
                      */
                     std::string m_smtpMessageId;
                     bool m_smtpMessageIdHasBeenSet;
 
                     /**
-                     * smtp头中可以设置的其它字段
+                     * <p>smtp头中可以设置的其它字段</p>
                      */
                     std::string m_smtpHeaders;
                     bool m_smtpHeadersHasBeenSet;
 
                     /**
-                     * smtp头中的from字段，建议域名与FromEmailAddress保持一致
+                     * <p>smtp头中的from字段，建议域名与FromEmailAddress保持一致</p>
                      */
                     std::string m_headerFrom;
                     bool m_headerFromHasBeenSet;

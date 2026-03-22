@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_VCLM_V20240523_MODEL_SUBMITTEMPLATETOVIDEOJOBRESPONSE_H_
-#define TENCENTCLOUD_VCLM_V20240523_MODEL_SUBMITTEMPLATETOVIDEOJOBRESPONSE_H_
+#ifndef TENCENTCLOUD_BH_V20230418_MODEL_DESCRIBEDEVICECOUNTRESPONSE_H_
+#define TENCENTCLOUD_BH_V20230418_MODEL_DESCRIBEDEVICECOUNTRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,45 +25,45 @@
 
 namespace TencentCloud
 {
-    namespace Vclm
+    namespace Bh
     {
-        namespace V20240523
+        namespace V20230418
         {
             namespace Model
             {
                 /**
-                * SubmitTemplateToVideoJob返回参数结构体
+                * DescribeDeviceCount返回参数结构体
                 */
-                class SubmitTemplateToVideoJobResponse : public AbstractModel
+                class DescribeDeviceCountResponse : public AbstractModel
                 {
                 public:
-                    SubmitTemplateToVideoJobResponse();
-                    ~SubmitTemplateToVideoJobResponse() = default;
+                    DescribeDeviceCountResponse();
+                    ~DescribeDeviceCountResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取<p>任务ID。</p>
-                     * @return JobId <p>任务ID。</p>
+                     * 获取主机总数
+                     * @return TotalCount 主机总数
                      * 
                      */
-                    std::string GetJobId() const;
+                    uint64_t GetTotalCount() const;
 
                     /**
-                     * 判断参数 JobId 是否已赋值
-                     * @return JobId 是否已赋值
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
                      * 
                      */
-                    bool JobIdHasBeenSet() const;
+                    bool TotalCountHasBeenSet() const;
 
                 private:
 
                     /**
-                     * <p>任务ID。</p>
+                     * 主机总数
                      */
-                    std::string m_jobId;
-                    bool m_jobIdHasBeenSet;
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }
@@ -71,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_VCLM_V20240523_MODEL_SUBMITTEMPLATETOVIDEOJOBRESPONSE_H_
+#endif // !TENCENTCLOUD_BH_V20230418_MODEL_DESCRIBEDEVICECOUNTRESPONSE_H_

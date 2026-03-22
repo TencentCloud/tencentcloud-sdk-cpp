@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取协议与售卖详情
-                     * @return Protocols 协议与售卖详情
+                     * 获取<p>协议与售卖详情</p>
+                     * @return Protocols <p>协议与售卖详情</p>
                      * 
                      */
                     std::vector<AvailableProtoStatus> GetProtocols() const;
 
                     /**
-                     * 设置协议与售卖详情
-                     * @param _protocols 协议与售卖详情
+                     * 设置<p>协议与售卖详情</p>
+                     * @param _protocols <p>协议与售卖详情</p>
                      * 
                      */
                     void SetProtocols(const std::vector<AvailableProtoStatus>& _protocols);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ProtocolsHasBeenSet() const;
 
                     /**
-                     * 获取存储类型。返回值中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。
-                     * @return Type 存储类型。返回值中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。
+                     * 获取<p>存储类型。返回值中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。</p>
+                     * @return Type <p>存储类型。返回值中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置存储类型。返回值中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。
-                     * @param _type 存储类型。返回值中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。
+                     * 设置<p>存储类型。返回值中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。</p>
+                     * @param _type <p>存储类型。返回值中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取是否支持预付费。返回值中 true 为支持、false 为不支持
-                     * @return Prepayment 是否支持预付费。返回值中 true 为支持、false 为不支持
+                     * 获取<p>是否支持预付费。返回值中 true 为支持、false 为不支持</p>
+                     * @return Prepayment <p>是否支持预付费。返回值中 true 为支持、false 为不支持</p>
                      * 
                      */
                     bool GetPrepayment() const;
 
                     /**
-                     * 设置是否支持预付费。返回值中 true 为支持、false 为不支持
-                     * @param _prepayment 是否支持预付费。返回值中 true 为支持、false 为不支持
+                     * 设置<p>是否支持预付费。返回值中 true 为支持、false 为不支持</p>
+                     * @param _prepayment <p>是否支持预付费。返回值中 true 为支持、false 为不支持</p>
                      * 
                      */
                     void SetPrepayment(const bool& _prepayment);
@@ -110,25 +110,52 @@ namespace TencentCloud
                      */
                     bool PrepaymentHasBeenSet() const;
 
+                    /**
+                     * 获取<p>文件系统版本</p><p>枚举值：</p><ul><li>v1.5： 通用系列</li><li>v3.1： 通用系列（增强型）</li><li>v4.0： Turbo系列</li></ul>
+                     * @return Version <p>文件系统版本</p><p>枚举值：</p><ul><li>v1.5： 通用系列</li><li>v3.1： 通用系列（增强型）</li><li>v4.0： Turbo系列</li></ul>
+                     * 
+                     */
+                    std::string GetVersion() const;
+
+                    /**
+                     * 设置<p>文件系统版本</p><p>枚举值：</p><ul><li>v1.5： 通用系列</li><li>v3.1： 通用系列（增强型）</li><li>v4.0： Turbo系列</li></ul>
+                     * @param _version <p>文件系统版本</p><p>枚举值：</p><ul><li>v1.5： 通用系列</li><li>v3.1： 通用系列（增强型）</li><li>v4.0： Turbo系列</li></ul>
+                     * 
+                     */
+                    void SetVersion(const std::string& _version);
+
+                    /**
+                     * 判断参数 Version 是否已赋值
+                     * @return Version 是否已赋值
+                     * 
+                     */
+                    bool VersionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 协议与售卖详情
+                     * <p>协议与售卖详情</p>
                      */
                     std::vector<AvailableProtoStatus> m_protocols;
                     bool m_protocolsHasBeenSet;
 
                     /**
-                     * 存储类型。返回值中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。
+                     * <p>存储类型。返回值中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 是否支持预付费。返回值中 true 为支持、false 为不支持
+                     * <p>是否支持预付费。返回值中 true 为支持、false 为不支持</p>
                      */
                     bool m_prepayment;
                     bool m_prepaymentHasBeenSet;
+
+                    /**
+                     * <p>文件系统版本</p><p>枚举值：</p><ul><li>v1.5： 通用系列</li><li>v3.1： 通用系列（增强型）</li><li>v4.0： Turbo系列</li></ul>
+                     */
+                    std::string m_version;
+                    bool m_versionHasBeenSet;
 
                 };
             }
