@@ -913,6 +913,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/ExportBaselineItemDetectListRequest.h
   include/tencentcloud/cwp/v20180228/model/CreateNetAttackWhiteListRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeMalwareInfoResponse.h
+  include/tencentcloud/cwp/v20180228/model/SkillInfo.h
   include/tencentcloud/cwp/v20180228/model/DeleteRiskDnsPolicyResponse.h
   include/tencentcloud/cwp/v20180228/model/DuplicateHosts.h
   include/tencentcloud/cwp/v20180228/model/DescribeLogStorageRecordRequest.h
@@ -1105,6 +1106,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeLoginWhiteListRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetDatabaseCountRequest.h
   include/tencentcloud/cwp/v20180228/model/ModifyWarningSettingRequest.h
+  include/tencentcloud/cwp/v20180228/model/ExportBruteAttacksResponse.h
   include/tencentcloud/cwp/v20180228/model/ExportVulDetectionReportResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeScanScheduleRequest.h
   include/tencentcloud/cwp/v20180228/model/CheckFirstScanBaselineRequest.h
@@ -1186,6 +1188,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/ModifyBanModeRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeBaselineDefaultStrategyListResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribePatchInfoRequest.h
+  include/tencentcloud/cwp/v20180228/model/DescribeSkillInfoResponse.h
   include/tencentcloud/cwp/v20180228/model/BanWhiteListDetail.h
   include/tencentcloud/cwp/v20180228/model/DeleteScanTaskResponse.h
   include/tencentcloud/cwp/v20180228/model/ModifyFileTamperRuleStatusRequest.h
@@ -1245,7 +1248,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeLicenseBindListRequest.h
   include/tencentcloud/cwp/v20180228/model/DeleteLicenseRecordAllRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeAccountStatisticsRequest.h
-  include/tencentcloud/cwp/v20180228/model/ExportBruteAttacksResponse.h
+  include/tencentcloud/cwp/v20180228/model/DescribeSkillInfoRequest.h
   include/tencentcloud/cwp/v20180228/model/JavaMemShellDetail.h
   include/tencentcloud/cwp/v20180228/model/WarningObject.h
   include/tencentcloud/cwp/v20180228/model/DescribeBaselineHostDetectListResponse.h
@@ -2253,6 +2256,7 @@ set(cwp_src
   src/v20180228/model/ExportBaselineItemDetectListRequest.cpp
   src/v20180228/model/CreateNetAttackWhiteListRequest.cpp
   src/v20180228/model/DescribeMalwareInfoResponse.cpp
+  src/v20180228/model/SkillInfo.cpp
   src/v20180228/model/DeleteRiskDnsPolicyResponse.cpp
   src/v20180228/model/DuplicateHosts.cpp
   src/v20180228/model/DescribeLogStorageRecordRequest.cpp
@@ -2445,6 +2449,7 @@ set(cwp_src
   src/v20180228/model/DescribeLoginWhiteListRequest.cpp
   src/v20180228/model/DescribeAssetDatabaseCountRequest.cpp
   src/v20180228/model/ModifyWarningSettingRequest.cpp
+  src/v20180228/model/ExportBruteAttacksResponse.cpp
   src/v20180228/model/ExportVulDetectionReportResponse.cpp
   src/v20180228/model/DescribeScanScheduleRequest.cpp
   src/v20180228/model/CheckFirstScanBaselineRequest.cpp
@@ -2526,6 +2531,7 @@ set(cwp_src
   src/v20180228/model/ModifyBanModeRequest.cpp
   src/v20180228/model/DescribeBaselineDefaultStrategyListResponse.cpp
   src/v20180228/model/DescribePatchInfoRequest.cpp
+  src/v20180228/model/DescribeSkillInfoResponse.cpp
   src/v20180228/model/BanWhiteListDetail.cpp
   src/v20180228/model/DeleteScanTaskResponse.cpp
   src/v20180228/model/ModifyFileTamperRuleStatusRequest.cpp
@@ -2585,7 +2591,7 @@ set(cwp_src
   src/v20180228/model/DescribeLicenseBindListRequest.cpp
   src/v20180228/model/DeleteLicenseRecordAllRequest.cpp
   src/v20180228/model/DescribeAccountStatisticsRequest.cpp
-  src/v20180228/model/ExportBruteAttacksResponse.cpp
+  src/v20180228/model/DescribeSkillInfoRequest.cpp
   src/v20180228/model/JavaMemShellDetail.cpp
   src/v20180228/model/WarningObject.cpp
   src/v20180228/model/DescribeBaselineHostDetectListResponse.cpp

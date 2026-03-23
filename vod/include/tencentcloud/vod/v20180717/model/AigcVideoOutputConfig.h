@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取存储模式。取值有： <li>Permanent：永久存储，生成的视频文件将存储到云点播，可在事件通知中获取到 FileId；</li> <li>Temporary：临时存储，生成的视频文件不会存储到云点播，可在事件通知中获取到临时访问的 URL；</li>
-默认值：Temporary
-                     * @return StorageMode 存储模式。取值有： <li>Permanent：永久存储，生成的视频文件将存储到云点播，可在事件通知中获取到 FileId；</li> <li>Temporary：临时存储，生成的视频文件不会存储到云点播，可在事件通知中获取到临时访问的 URL；</li>
-默认值：Temporary
+                     * 获取<p>存储模式。取值有： <li>Permanent：永久存储，生成的视频文件将存储到云点播，可在事件通知中获取到 FileId；</li> <li>Temporary：临时存储，生成的视频文件不会存储到云点播，可在事件通知中获取到临时访问的 URL；</li><br>默认值：Temporary</p>
+                     * @return StorageMode <p>存储模式。取值有： <li>Permanent：永久存储，生成的视频文件将存储到云点播，可在事件通知中获取到 FileId；</li> <li>Temporary：临时存储，生成的视频文件不会存储到云点播，可在事件通知中获取到临时访问的 URL；</li><br>默认值：Temporary</p>
                      * 
                      */
                     std::string GetStorageMode() const;
 
                     /**
-                     * 设置存储模式。取值有： <li>Permanent：永久存储，生成的视频文件将存储到云点播，可在事件通知中获取到 FileId；</li> <li>Temporary：临时存储，生成的视频文件不会存储到云点播，可在事件通知中获取到临时访问的 URL；</li>
-默认值：Temporary
-                     * @param _storageMode 存储模式。取值有： <li>Permanent：永久存储，生成的视频文件将存储到云点播，可在事件通知中获取到 FileId；</li> <li>Temporary：临时存储，生成的视频文件不会存储到云点播，可在事件通知中获取到临时访问的 URL；</li>
-默认值：Temporary
+                     * 设置<p>存储模式。取值有： <li>Permanent：永久存储，生成的视频文件将存储到云点播，可在事件通知中获取到 FileId；</li> <li>Temporary：临时存储，生成的视频文件不会存储到云点播，可在事件通知中获取到临时访问的 URL；</li><br>默认值：Temporary</p>
+                     * @param _storageMode <p>存储模式。取值有： <li>Permanent：永久存储，生成的视频文件将存储到云点播，可在事件通知中获取到 FileId；</li> <li>Temporary：临时存储，生成的视频文件不会存储到云点播，可在事件通知中获取到临时访问的 URL；</li><br>默认值：Temporary</p>
                      * 
                      */
                     void SetStorageMode(const std::string& _storageMode);
@@ -72,15 +68,15 @@ namespace TencentCloud
                     bool StorageModeHasBeenSet() const;
 
                     /**
-                     * 获取输出媒体文件名，最长 64 个字符。缺省由系统指定生成文件名。
-                     * @return MediaName 输出媒体文件名，最长 64 个字符。缺省由系统指定生成文件名。
+                     * 获取<p>输出媒体文件名，最长 64 个字符。缺省由系统指定生成文件名。</p>
+                     * @return MediaName <p>输出媒体文件名，最长 64 个字符。缺省由系统指定生成文件名。</p>
                      * 
                      */
                     std::string GetMediaName() const;
 
                     /**
-                     * 设置输出媒体文件名，最长 64 个字符。缺省由系统指定生成文件名。
-                     * @param _mediaName 输出媒体文件名，最长 64 个字符。缺省由系统指定生成文件名。
+                     * 设置<p>输出媒体文件名，最长 64 个字符。缺省由系统指定生成文件名。</p>
+                     * @param _mediaName <p>输出媒体文件名，最长 64 个字符。缺省由系统指定生成文件名。</p>
                      * 
                      */
                     void SetMediaName(const std::string& _mediaName);
@@ -93,19 +89,15 @@ namespace TencentCloud
                     bool MediaNameHasBeenSet() const;
 
                     /**
-                     * 获取分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。
-<li>默认值：0，表示其他分类。</li>
-                     * @return ClassId 分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。
-<li>默认值：0，表示其他分类。</li>
+                     * 获取<p>分类ID，用于对媒体进行分类管理，可通过 <a href="/document/product/266/7812">创建分类</a> 接口，创建分类，获得分类 ID。</p><li>默认值：0，表示其他分类。</li>
+                     * @return ClassId <p>分类ID，用于对媒体进行分类管理，可通过 <a href="/document/product/266/7812">创建分类</a> 接口，创建分类，获得分类 ID。</p><li>默认值：0，表示其他分类。</li>
                      * 
                      */
                     int64_t GetClassId() const;
 
                     /**
-                     * 设置分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。
-<li>默认值：0，表示其他分类。</li>
-                     * @param _classId 分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。
-<li>默认值：0，表示其他分类。</li>
+                     * 设置<p>分类ID，用于对媒体进行分类管理，可通过 <a href="/document/product/266/7812">创建分类</a> 接口，创建分类，获得分类 ID。</p><li>默认值：0，表示其他分类。</li>
+                     * @param _classId <p>分类ID，用于对媒体进行分类管理，可通过 <a href="/document/product/266/7812">创建分类</a> 接口，创建分类，获得分类 ID。</p><li>默认值：0，表示其他分类。</li>
                      * 
                      */
                     void SetClassId(const int64_t& _classId);
@@ -118,15 +110,15 @@ namespace TencentCloud
                     bool ClassIdHasBeenSet() const;
 
                     /**
-                     * 获取输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @return ExpireTime 输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 获取<p>输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式说明</a>。</p>
+                     * @return ExpireTime <p>输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式说明</a>。</p>
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param _expireTime 输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 设置<p>输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式说明</a>。</p>
+                     * @param _expireTime <p>输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式说明</a>。</p>
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -139,15 +131,15 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取生成视频的时长，单位：秒。<li>当 ModelName 是 Kling，可选值为 5、10，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li>
-                     * @return Duration 生成视频的时长，单位：秒。<li>当 ModelName 是 Kling，可选值为 5、10，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li>
+                     * 获取<p>生成视频的时长，单位：秒。<li>当 ModelName 是 Kling，可选值为 5、10，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li></p>
+                     * @return Duration <p>生成视频的时长，单位：秒。<li>当 ModelName 是 Kling，可选值为 5、10，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li></p>
                      * 
                      */
                     double GetDuration() const;
 
                     /**
-                     * 设置生成视频的时长，单位：秒。<li>当 ModelName 是 Kling，可选值为 5、10，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li>
-                     * @param _duration 生成视频的时长，单位：秒。<li>当 ModelName 是 Kling，可选值为 5、10，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li>
+                     * 设置<p>生成视频的时长，单位：秒。<li>当 ModelName 是 Kling，可选值为 5、10，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li></p>
+                     * @param _duration <p>生成视频的时长，单位：秒。<li>当 ModelName 是 Kling，可选值为 5、10，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li></p>
                      * 
                      */
                     void SetDuration(const double& _duration);
@@ -160,35 +152,15 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取生成视频的分辨率。
-<li>当 ModelName 是 Kling，可选值为 720P、1080P，默认为 720P；</li>
-<li>当 ModelName 是 Hailuo，可选值为 768P、1080P，默认为 768P；</li>
-<li>当 ModelName 是 Vidu，可选值为 720P、1080P，默认为 720P；</li>
-<li>当 ModelName 是 GV，可选值为 720P、1080P，默认为 720P；</li>
-<li>当 ModelName 是 OS，可选值为 720P；</li>
-                     * @return Resolution 生成视频的分辨率。
-<li>当 ModelName 是 Kling，可选值为 720P、1080P，默认为 720P；</li>
-<li>当 ModelName 是 Hailuo，可选值为 768P、1080P，默认为 768P；</li>
-<li>当 ModelName 是 Vidu，可选值为 720P、1080P，默认为 720P；</li>
-<li>当 ModelName 是 GV，可选值为 720P、1080P，默认为 720P；</li>
-<li>当 ModelName 是 OS，可选值为 720P；</li>
+                     * 获取<p>生成视频的分辨率。</p><li>当 ModelName 是 Kling，可选值为 720P、1080P，默认为 720P；</li><li>当 ModelName 是 Hailuo，可选值为 768P、1080P，默认为 768P；</li><li>当 ModelName 是 Vidu，可选值为 720P、1080P，默认为 720P；</li><li>当 ModelName 是 GV，可选值为 720P、1080P，默认为 720P；</li><li>当 ModelName 是 OS，可选值为 720P；</li>
+                     * @return Resolution <p>生成视频的分辨率。</p><li>当 ModelName 是 Kling，可选值为 720P、1080P，默认为 720P；</li><li>当 ModelName 是 Hailuo，可选值为 768P、1080P，默认为 768P；</li><li>当 ModelName 是 Vidu，可选值为 720P、1080P，默认为 720P；</li><li>当 ModelName 是 GV，可选值为 720P、1080P，默认为 720P；</li><li>当 ModelName 是 OS，可选值为 720P；</li>
                      * 
                      */
                     std::string GetResolution() const;
 
                     /**
-                     * 设置生成视频的分辨率。
-<li>当 ModelName 是 Kling，可选值为 720P、1080P，默认为 720P；</li>
-<li>当 ModelName 是 Hailuo，可选值为 768P、1080P，默认为 768P；</li>
-<li>当 ModelName 是 Vidu，可选值为 720P、1080P，默认为 720P；</li>
-<li>当 ModelName 是 GV，可选值为 720P、1080P，默认为 720P；</li>
-<li>当 ModelName 是 OS，可选值为 720P；</li>
-                     * @param _resolution 生成视频的分辨率。
-<li>当 ModelName 是 Kling，可选值为 720P、1080P，默认为 720P；</li>
-<li>当 ModelName 是 Hailuo，可选值为 768P、1080P，默认为 768P；</li>
-<li>当 ModelName 是 Vidu，可选值为 720P、1080P，默认为 720P；</li>
-<li>当 ModelName 是 GV，可选值为 720P、1080P，默认为 720P；</li>
-<li>当 ModelName 是 OS，可选值为 720P；</li>
+                     * 设置<p>生成视频的分辨率。</p><li>当 ModelName 是 Kling，可选值为 720P、1080P，默认为 720P；</li><li>当 ModelName 是 Hailuo，可选值为 768P、1080P，默认为 768P；</li><li>当 ModelName 是 Vidu，可选值为 720P、1080P，默认为 720P；</li><li>当 ModelName 是 GV，可选值为 720P、1080P，默认为 720P；</li><li>当 ModelName 是 OS，可选值为 720P；</li>
+                     * @param _resolution <p>生成视频的分辨率。</p><li>当 ModelName 是 Kling，可选值为 720P、1080P，默认为 720P；</li><li>当 ModelName 是 Hailuo，可选值为 768P、1080P，默认为 768P；</li><li>当 ModelName 是 Vidu，可选值为 720P、1080P，默认为 720P；</li><li>当 ModelName 是 GV，可选值为 720P、1080P，默认为 720P；</li><li>当 ModelName 是 OS，可选值为 720P；</li>
                      * 
                      */
                     void SetResolution(const std::string& _resolution);
@@ -201,35 +173,15 @@ namespace TencentCloud
                     bool ResolutionHasBeenSet() const;
 
                     /**
-                     * 获取指定所生成视频的宽高比。
-<li>当 ModelName 是 Kling，当文生视频时，则可选值为 16:9、9:16、 1:1，默认为16:9；</li>
-<li>当 ModelName 是 Vidu，当文生视频时和使用参考图片生成时，则可选值为 16:9、9:16、4:3、3:4、1:1，其中仅版本q2支持4:3、3:4</li>
-<li>当 ModelName 是 GV，则可选值为 16:9、9:16，默认为 16:9；</li>
-<li>当 ModelName 是 OS，当文生视频时，则可选值为 16:9、9:16，默认为 16:9；</li>
-<li>当 ModelName 是 Hailuo，则暂不支持。</li>
-                     * @return AspectRatio 指定所生成视频的宽高比。
-<li>当 ModelName 是 Kling，当文生视频时，则可选值为 16:9、9:16、 1:1，默认为16:9；</li>
-<li>当 ModelName 是 Vidu，当文生视频时和使用参考图片生成时，则可选值为 16:9、9:16、4:3、3:4、1:1，其中仅版本q2支持4:3、3:4</li>
-<li>当 ModelName 是 GV，则可选值为 16:9、9:16，默认为 16:9；</li>
-<li>当 ModelName 是 OS，当文生视频时，则可选值为 16:9、9:16，默认为 16:9；</li>
-<li>当 ModelName 是 Hailuo，则暂不支持。</li>
+                     * 获取<p>指定所生成视频的宽高比。</p><li>当 ModelName 是 Kling，当文生视频时，则可选值为 16:9、9:16、 1:1，默认为16:9；</li><li>当 ModelName 是 Vidu，当文生视频时和使用参考图片生成时，则可选值为 16:9、9:16、4:3、3:4、1:1，其中仅版本q2支持4:3、3:4</li><li>当 ModelName 是 GV，则可选值为 16:9、9:16，默认为 16:9；</li><li>当 ModelName 是 OS，当文生视频时，则可选值为 16:9、9:16，默认为 16:9；</li><li>当 ModelName 是 Hailuo，则暂不支持。</li>
+                     * @return AspectRatio <p>指定所生成视频的宽高比。</p><li>当 ModelName 是 Kling，当文生视频时，则可选值为 16:9、9:16、 1:1，默认为16:9；</li><li>当 ModelName 是 Vidu，当文生视频时和使用参考图片生成时，则可选值为 16:9、9:16、4:3、3:4、1:1，其中仅版本q2支持4:3、3:4</li><li>当 ModelName 是 GV，则可选值为 16:9、9:16，默认为 16:9；</li><li>当 ModelName 是 OS，当文生视频时，则可选值为 16:9、9:16，默认为 16:9；</li><li>当 ModelName 是 Hailuo，则暂不支持。</li>
                      * 
                      */
                     std::string GetAspectRatio() const;
 
                     /**
-                     * 设置指定所生成视频的宽高比。
-<li>当 ModelName 是 Kling，当文生视频时，则可选值为 16:9、9:16、 1:1，默认为16:9；</li>
-<li>当 ModelName 是 Vidu，当文生视频时和使用参考图片生成时，则可选值为 16:9、9:16、4:3、3:4、1:1，其中仅版本q2支持4:3、3:4</li>
-<li>当 ModelName 是 GV，则可选值为 16:9、9:16，默认为 16:9；</li>
-<li>当 ModelName 是 OS，当文生视频时，则可选值为 16:9、9:16，默认为 16:9；</li>
-<li>当 ModelName 是 Hailuo，则暂不支持。</li>
-                     * @param _aspectRatio 指定所生成视频的宽高比。
-<li>当 ModelName 是 Kling，当文生视频时，则可选值为 16:9、9:16、 1:1，默认为16:9；</li>
-<li>当 ModelName 是 Vidu，当文生视频时和使用参考图片生成时，则可选值为 16:9、9:16、4:3、3:4、1:1，其中仅版本q2支持4:3、3:4</li>
-<li>当 ModelName 是 GV，则可选值为 16:9、9:16，默认为 16:9；</li>
-<li>当 ModelName 是 OS，当文生视频时，则可选值为 16:9、9:16，默认为 16:9；</li>
-<li>当 ModelName 是 Hailuo，则暂不支持。</li>
+                     * 设置<p>指定所生成视频的宽高比。</p><li>当 ModelName 是 Kling，当文生视频时，则可选值为 16:9、9:16、 1:1，默认为16:9；</li><li>当 ModelName 是 Vidu，当文生视频时和使用参考图片生成时，则可选值为 16:9、9:16、4:3、3:4、1:1，其中仅版本q2支持4:3、3:4</li><li>当 ModelName 是 GV，则可选值为 16:9、9:16，默认为 16:9；</li><li>当 ModelName 是 OS，当文生视频时，则可选值为 16:9、9:16，默认为 16:9；</li><li>当 ModelName 是 Hailuo，则暂不支持。</li>
+                     * @param _aspectRatio <p>指定所生成视频的宽高比。</p><li>当 ModelName 是 Kling，当文生视频时，则可选值为 16:9、9:16、 1:1，默认为16:9；</li><li>当 ModelName 是 Vidu，当文生视频时和使用参考图片生成时，则可选值为 16:9、9:16、4:3、3:4、1:1，其中仅版本q2支持4:3、3:4</li><li>当 ModelName 是 GV，则可选值为 16:9、9:16，默认为 16:9；</li><li>当 ModelName 是 OS，当文生视频时，则可选值为 16:9、9:16，默认为 16:9；</li><li>当 ModelName 是 Hailuo，则暂不支持。</li>
                      * 
                      */
                     void SetAspectRatio(const std::string& _aspectRatio);
@@ -242,19 +194,15 @@ namespace TencentCloud
                     bool AspectRatioHasBeenSet() const;
 
                     /**
-                     * 获取是否生成音频。支持的模型包括 GV、OS、Vidu。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li>
-默认值：Disabled
-                     * @return AudioGeneration 是否生成音频。支持的模型包括 GV、OS、Vidu。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li>
-默认值：Disabled
+                     * 获取<p>是否生成音频。支持的模型包括 GV、OS、Vidu。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li><br>默认值：Disabled</p>
+                     * @return AudioGeneration <p>是否生成音频。支持的模型包括 GV、OS、Vidu。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li><br>默认值：Disabled</p>
                      * 
                      */
                     std::string GetAudioGeneration() const;
 
                     /**
-                     * 设置是否生成音频。支持的模型包括 GV、OS、Vidu。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li>
-默认值：Disabled
-                     * @param _audioGeneration 是否生成音频。支持的模型包括 GV、OS、Vidu。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li>
-默认值：Disabled
+                     * 设置<p>是否生成音频。支持的模型包括 GV、OS、Vidu。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li><br>默认值：Disabled</p>
+                     * @param _audioGeneration <p>是否生成音频。支持的模型包括 GV、OS、Vidu。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li><br>默认值：Disabled</p>
                      * 
                      */
                     void SetAudioGeneration(const std::string& _audioGeneration);
@@ -267,15 +215,15 @@ namespace TencentCloud
                     bool AudioGenerationHasBeenSet() const;
 
                     /**
-                     * 获取是否允许人物或人脸生成。取值有： <li>AllowAdult：允许生成成人；</li> <li>Disallowed：禁止在图片中包含人物或人脸；</li> 
-                     * @return PersonGeneration 是否允许人物或人脸生成。取值有： <li>AllowAdult：允许生成成人；</li> <li>Disallowed：禁止在图片中包含人物或人脸；</li> 
+                     * 获取<p>是否允许人物或人脸生成。取值有： <li>AllowAdult：允许生成成人；</li> <li>Disallowed：禁止在图片中包含人物或人脸；</li></p>
+                     * @return PersonGeneration <p>是否允许人物或人脸生成。取值有： <li>AllowAdult：允许生成成人；</li> <li>Disallowed：禁止在图片中包含人物或人脸；</li></p>
                      * 
                      */
                     std::string GetPersonGeneration() const;
 
                     /**
-                     * 设置是否允许人物或人脸生成。取值有： <li>AllowAdult：允许生成成人；</li> <li>Disallowed：禁止在图片中包含人物或人脸；</li> 
-                     * @param _personGeneration 是否允许人物或人脸生成。取值有： <li>AllowAdult：允许生成成人；</li> <li>Disallowed：禁止在图片中包含人物或人脸；</li> 
+                     * 设置<p>是否允许人物或人脸生成。取值有： <li>AllowAdult：允许生成成人；</li> <li>Disallowed：禁止在图片中包含人物或人脸；</li></p>
+                     * @param _personGeneration <p>是否允许人物或人脸生成。取值有： <li>AllowAdult：允许生成成人；</li> <li>Disallowed：禁止在图片中包含人物或人脸；</li></p>
                      * 
                      */
                     void SetPersonGeneration(const std::string& _personGeneration);
@@ -288,15 +236,15 @@ namespace TencentCloud
                     bool PersonGenerationHasBeenSet() const;
 
                     /**
-                     * 获取是否开启输入内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
-                     * @return InputComplianceCheck 是否开启输入内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+                     * 获取<p>是否开启输入内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
+                     * @return InputComplianceCheck <p>是否开启输入内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
                      * 
                      */
                     std::string GetInputComplianceCheck() const;
 
                     /**
-                     * 设置是否开启输入内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
-                     * @param _inputComplianceCheck 是否开启输入内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+                     * 设置<p>是否开启输入内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
+                     * @param _inputComplianceCheck <p>是否开启输入内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
                      * 
                      */
                     void SetInputComplianceCheck(const std::string& _inputComplianceCheck);
@@ -309,15 +257,15 @@ namespace TencentCloud
                     bool InputComplianceCheckHasBeenSet() const;
 
                     /**
-                     * 获取是否开启输出内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
-                     * @return OutputComplianceCheck 是否开启输出内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+                     * 获取<p>是否开启输出内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
+                     * @return OutputComplianceCheck <p>是否开启输出内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
                      * 
                      */
                     std::string GetOutputComplianceCheck() const;
 
                     /**
-                     * 设置是否开启输出内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
-                     * @param _outputComplianceCheck 是否开启输出内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+                     * 设置<p>是否开启输出内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
+                     * @param _outputComplianceCheck <p>是否开启输出内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
                      * 
                      */
                     void SetOutputComplianceCheck(const std::string& _outputComplianceCheck);
@@ -330,27 +278,15 @@ namespace TencentCloud
                     bool OutputComplianceCheckHasBeenSet() const;
 
                     /**
-                     * 获取是否启用视频增强。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
-说明：
-1. 对于选择的分辨率超过模型可生成分辨率时，默认会启用增强。
-2. 对于模型可以直出的分辨率，也可以主动选择模型直出低分辨率，使用增强获得指定分辨率。
-                     * @return EnhanceSwitch 是否启用视频增强。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
-说明：
-1. 对于选择的分辨率超过模型可生成分辨率时，默认会启用增强。
-2. 对于模型可以直出的分辨率，也可以主动选择模型直出低分辨率，使用增强获得指定分辨率。
+                     * 获取<p>是否启用视频增强。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li><br>说明：</p><ol><li>对于选择的分辨率超过模型可生成分辨率时，默认会启用增强。</li><li>对于模型可以直出的分辨率，也可以主动选择模型直出低分辨率，使用增强获得指定分辨率。</li></ol>
+                     * @return EnhanceSwitch <p>是否启用视频增强。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li><br>说明：</p><ol><li>对于选择的分辨率超过模型可生成分辨率时，默认会启用增强。</li><li>对于模型可以直出的分辨率，也可以主动选择模型直出低分辨率，使用增强获得指定分辨率。</li></ol>
                      * 
                      */
                     std::string GetEnhanceSwitch() const;
 
                     /**
-                     * 设置是否启用视频增强。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
-说明：
-1. 对于选择的分辨率超过模型可生成分辨率时，默认会启用增强。
-2. 对于模型可以直出的分辨率，也可以主动选择模型直出低分辨率，使用增强获得指定分辨率。
-                     * @param _enhanceSwitch 是否启用视频增强。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
-说明：
-1. 对于选择的分辨率超过模型可生成分辨率时，默认会启用增强。
-2. 对于模型可以直出的分辨率，也可以主动选择模型直出低分辨率，使用增强获得指定分辨率。
+                     * 设置<p>是否启用视频增强。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li><br>说明：</p><ol><li>对于选择的分辨率超过模型可生成分辨率时，默认会启用增强。</li><li>对于模型可以直出的分辨率，也可以主动选择模型直出低分辨率，使用增强获得指定分辨率。</li></ol>
+                     * @param _enhanceSwitch <p>是否启用视频增强。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li><br>说明：</p><ol><li>对于选择的分辨率超过模型可生成分辨率时，默认会启用增强。</li><li>对于模型可以直出的分辨率，也可以主动选择模型直出低分辨率，使用增强获得指定分辨率。</li></ol>
                      * 
                      */
                     void SetEnhanceSwitch(const std::string& _enhanceSwitch);
@@ -363,15 +299,36 @@ namespace TencentCloud
                     bool EnhanceSwitchHasBeenSet() const;
 
                     /**
-                     * 获取是否开启vidu智能插帧。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
-                     * @return FrameInterpolate 是否开启vidu智能插帧。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+                     * 获取<p>是否开启错峰。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
+                     * @return OffPeak <p>是否开启错峰。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
+                     * 
+                     */
+                    std::string GetOffPeak() const;
+
+                    /**
+                     * 设置<p>是否开启错峰。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
+                     * @param _offPeak <p>是否开启错峰。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
+                     * 
+                     */
+                    void SetOffPeak(const std::string& _offPeak);
+
+                    /**
+                     * 判断参数 OffPeak 是否已赋值
+                     * @return OffPeak 是否已赋值
+                     * 
+                     */
+                    bool OffPeakHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启vidu智能插帧。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
+                     * @return FrameInterpolate <p>是否开启vidu智能插帧。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
                      * 
                      */
                     std::string GetFrameInterpolate() const;
 
                     /**
-                     * 设置是否开启vidu智能插帧。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
-                     * @param _frameInterpolate 是否开启vidu智能插帧。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+                     * 设置<p>是否开启vidu智能插帧。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
+                     * @param _frameInterpolate <p>是否开启vidu智能插帧。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
                      * 
                      */
                     void SetFrameInterpolate(const std::string& _frameInterpolate);
@@ -384,19 +341,15 @@ namespace TencentCloud
                     bool FrameInterpolateHasBeenSet() const;
 
                     /**
-                     * 获取是否开启图标水印。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
-目前支持的模型有 Vidu，其他模型暂不支持。
-                     * @return LogoAdd 是否开启图标水印。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
-目前支持的模型有 Vidu，其他模型暂不支持。
+                     * 获取<p>是否开启图标水印。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li><br>目前支持的模型有 Vidu，其他模型暂不支持。</p>
+                     * @return LogoAdd <p>是否开启图标水印。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li><br>目前支持的模型有 Vidu，其他模型暂不支持。</p>
                      * 
                      */
                     std::string GetLogoAdd() const;
 
                     /**
-                     * 设置是否开启图标水印。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
-目前支持的模型有 Vidu，其他模型暂不支持。
-                     * @param _logoAdd 是否开启图标水印。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
-目前支持的模型有 Vidu，其他模型暂不支持。
+                     * 设置<p>是否开启图标水印。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li><br>目前支持的模型有 Vidu，其他模型暂不支持。</p>
+                     * @param _logoAdd <p>是否开启图标水印。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li><br>目前支持的模型有 Vidu，其他模型暂不支持。</p>
                      * 
                      */
                     void SetLogoAdd(const std::string& _logoAdd);
@@ -411,102 +364,91 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 存储模式。取值有： <li>Permanent：永久存储，生成的视频文件将存储到云点播，可在事件通知中获取到 FileId；</li> <li>Temporary：临时存储，生成的视频文件不会存储到云点播，可在事件通知中获取到临时访问的 URL；</li>
-默认值：Temporary
+                     * <p>存储模式。取值有： <li>Permanent：永久存储，生成的视频文件将存储到云点播，可在事件通知中获取到 FileId；</li> <li>Temporary：临时存储，生成的视频文件不会存储到云点播，可在事件通知中获取到临时访问的 URL；</li><br>默认值：Temporary</p>
                      */
                     std::string m_storageMode;
                     bool m_storageModeHasBeenSet;
 
                     /**
-                     * 输出媒体文件名，最长 64 个字符。缺省由系统指定生成文件名。
+                     * <p>输出媒体文件名，最长 64 个字符。缺省由系统指定生成文件名。</p>
                      */
                     std::string m_mediaName;
                     bool m_mediaNameHasBeenSet;
 
                     /**
-                     * 分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。
-<li>默认值：0，表示其他分类。</li>
+                     * <p>分类ID，用于对媒体进行分类管理，可通过 <a href="/document/product/266/7812">创建分类</a> 接口，创建分类，获得分类 ID。</p><li>默认值：0，表示其他分类。</li>
                      */
                     int64_t m_classId;
                     bool m_classIdHasBeenSet;
 
                     /**
-                     * 输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * <p>输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式说明</a>。</p>
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 生成视频的时长，单位：秒。<li>当 ModelName 是 Kling，可选值为 5、10，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li>
+                     * <p>生成视频的时长，单位：秒。<li>当 ModelName 是 Kling，可选值为 5、10，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li></p>
                      */
                     double m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 生成视频的分辨率。
-<li>当 ModelName 是 Kling，可选值为 720P、1080P，默认为 720P；</li>
-<li>当 ModelName 是 Hailuo，可选值为 768P、1080P，默认为 768P；</li>
-<li>当 ModelName 是 Vidu，可选值为 720P、1080P，默认为 720P；</li>
-<li>当 ModelName 是 GV，可选值为 720P、1080P，默认为 720P；</li>
-<li>当 ModelName 是 OS，可选值为 720P；</li>
+                     * <p>生成视频的分辨率。</p><li>当 ModelName 是 Kling，可选值为 720P、1080P，默认为 720P；</li><li>当 ModelName 是 Hailuo，可选值为 768P、1080P，默认为 768P；</li><li>当 ModelName 是 Vidu，可选值为 720P、1080P，默认为 720P；</li><li>当 ModelName 是 GV，可选值为 720P、1080P，默认为 720P；</li><li>当 ModelName 是 OS，可选值为 720P；</li>
                      */
                     std::string m_resolution;
                     bool m_resolutionHasBeenSet;
 
                     /**
-                     * 指定所生成视频的宽高比。
-<li>当 ModelName 是 Kling，当文生视频时，则可选值为 16:9、9:16、 1:1，默认为16:9；</li>
-<li>当 ModelName 是 Vidu，当文生视频时和使用参考图片生成时，则可选值为 16:9、9:16、4:3、3:4、1:1，其中仅版本q2支持4:3、3:4</li>
-<li>当 ModelName 是 GV，则可选值为 16:9、9:16，默认为 16:9；</li>
-<li>当 ModelName 是 OS，当文生视频时，则可选值为 16:9、9:16，默认为 16:9；</li>
-<li>当 ModelName 是 Hailuo，则暂不支持。</li>
+                     * <p>指定所生成视频的宽高比。</p><li>当 ModelName 是 Kling，当文生视频时，则可选值为 16:9、9:16、 1:1，默认为16:9；</li><li>当 ModelName 是 Vidu，当文生视频时和使用参考图片生成时，则可选值为 16:9、9:16、4:3、3:4、1:1，其中仅版本q2支持4:3、3:4</li><li>当 ModelName 是 GV，则可选值为 16:9、9:16，默认为 16:9；</li><li>当 ModelName 是 OS，当文生视频时，则可选值为 16:9、9:16，默认为 16:9；</li><li>当 ModelName 是 Hailuo，则暂不支持。</li>
                      */
                     std::string m_aspectRatio;
                     bool m_aspectRatioHasBeenSet;
 
                     /**
-                     * 是否生成音频。支持的模型包括 GV、OS、Vidu。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li>
-默认值：Disabled
+                     * <p>是否生成音频。支持的模型包括 GV、OS、Vidu。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li><br>默认值：Disabled</p>
                      */
                     std::string m_audioGeneration;
                     bool m_audioGenerationHasBeenSet;
 
                     /**
-                     * 是否允许人物或人脸生成。取值有： <li>AllowAdult：允许生成成人；</li> <li>Disallowed：禁止在图片中包含人物或人脸；</li> 
+                     * <p>是否允许人物或人脸生成。取值有： <li>AllowAdult：允许生成成人；</li> <li>Disallowed：禁止在图片中包含人物或人脸；</li></p>
                      */
                     std::string m_personGeneration;
                     bool m_personGenerationHasBeenSet;
 
                     /**
-                     * 是否开启输入内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+                     * <p>是否开启输入内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
                      */
                     std::string m_inputComplianceCheck;
                     bool m_inputComplianceCheckHasBeenSet;
 
                     /**
-                     * 是否开启输出内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+                     * <p>是否开启输出内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
                      */
                     std::string m_outputComplianceCheck;
                     bool m_outputComplianceCheckHasBeenSet;
 
                     /**
-                     * 是否启用视频增强。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
-说明：
-1. 对于选择的分辨率超过模型可生成分辨率时，默认会启用增强。
-2. 对于模型可以直出的分辨率，也可以主动选择模型直出低分辨率，使用增强获得指定分辨率。
+                     * <p>是否启用视频增强。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li><br>说明：</p><ol><li>对于选择的分辨率超过模型可生成分辨率时，默认会启用增强。</li><li>对于模型可以直出的分辨率，也可以主动选择模型直出低分辨率，使用增强获得指定分辨率。</li></ol>
                      */
                     std::string m_enhanceSwitch;
                     bool m_enhanceSwitchHasBeenSet;
 
                     /**
-                     * 是否开启vidu智能插帧。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+                     * <p>是否开启错峰。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
+                     */
+                    std::string m_offPeak;
+                    bool m_offPeakHasBeenSet;
+
+                    /**
+                     * <p>是否开启vidu智能插帧。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
                      */
                     std::string m_frameInterpolate;
                     bool m_frameInterpolateHasBeenSet;
 
                     /**
-                     * 是否开启图标水印。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
-目前支持的模型有 Vidu，其他模型暂不支持。
+                     * <p>是否开启图标水印。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li><br>目前支持的模型有 Vidu，其他模型暂不支持。</p>
                      */
                     std::string m_logoAdd;
                     bool m_logoAddHasBeenSet;

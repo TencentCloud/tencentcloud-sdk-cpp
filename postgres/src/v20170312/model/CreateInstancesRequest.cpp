@@ -54,7 +54,8 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_dBEngineConfigHasBeenSet(false),
     m_syncModeHasBeenSet(false),
     m_needSupportIpv6HasBeenSet(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_storageTypeHasBeenSet(false)
 {
 }
 
@@ -343,6 +344,14 @@ string CreateInstancesRequest::ToJsonString() const
         string key = "DeletionProtection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deletionProtection, allocator);
+    }
+
+    if (m_storageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -863,6 +872,22 @@ void CreateInstancesRequest::SetDeletionProtection(const bool& _deletionProtecti
 bool CreateInstancesRequest::DeletionProtectionHasBeenSet() const
 {
     return m_deletionProtectionHasBeenSet;
+}
+
+string CreateInstancesRequest::GetStorageType() const
+{
+    return m_storageType;
+}
+
+void CreateInstancesRequest::SetStorageType(const string& _storageType)
+{
+    m_storageType = _storageType;
+    m_storageTypeHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::StorageTypeHasBeenSet() const
+{
+    return m_storageTypeHasBeenSet;
 }
 
 

@@ -716,6 +716,27 @@ namespace TencentCloud
                      */
                     bool DeletionProtectionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>实例存储类型，可选值：PHYSICAL_LOCAL_SSD：物理机本地ssd硬盘 CLOUD_PREMIUM：高性能云硬盘 CLOUD_SSD：ssd云硬盘 CLOUD_HSSD：增强型ssd云硬盘</p>
+                     * @return StorageType <p>实例存储类型，可选值：PHYSICAL_LOCAL_SSD：物理机本地ssd硬盘 CLOUD_PREMIUM：高性能云硬盘 CLOUD_SSD：ssd云硬盘 CLOUD_HSSD：增强型ssd云硬盘</p>
+                     * 
+                     */
+                    std::string GetStorageType() const;
+
+                    /**
+                     * 设置<p>实例存储类型，可选值：PHYSICAL_LOCAL_SSD：物理机本地ssd硬盘 CLOUD_PREMIUM：高性能云硬盘 CLOUD_SSD：ssd云硬盘 CLOUD_HSSD：增强型ssd云硬盘</p>
+                     * @param _storageType <p>实例存储类型，可选值：PHYSICAL_LOCAL_SSD：物理机本地ssd硬盘 CLOUD_PREMIUM：高性能云硬盘 CLOUD_SSD：ssd云硬盘 CLOUD_HSSD：增强型ssd云硬盘</p>
+                     * 
+                     */
+                    void SetStorageType(const std::string& _storageType);
+
+                    /**
+                     * 判断参数 StorageType 是否已赋值
+                     * @return StorageType 是否已赋值
+                     * 
+                     */
+                    bool StorageTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -909,6 +930,12 @@ namespace TencentCloud
                      */
                     bool m_deletionProtection;
                     bool m_deletionProtectionHasBeenSet;
+
+                    /**
+                     * <p>实例存储类型，可选值：PHYSICAL_LOCAL_SSD：物理机本地ssd硬盘 CLOUD_PREMIUM：高性能云硬盘 CLOUD_SSD：ssd云硬盘 CLOUD_HSSD：增强型ssd云硬盘</p>
+                     */
+                    std::string m_storageType;
+                    bool m_storageTypeHasBeenSet;
 
                 };
             }

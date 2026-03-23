@@ -61,7 +61,8 @@ DBInstance::DBInstance() :
     m_networkAccessListHasBeenSet(false),
     m_supportIpv6HasBeenSet(false),
     m_expandedCpuHasBeenSet(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_dBInstanceStorageTypeHasBeenSet(false)
 {
 }
 
@@ -520,6 +521,16 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
         m_deletionProtectionHasBeenSet = true;
     }
 
+    if (value.HasMember("DBInstanceStorageType") && !value["DBInstanceStorageType"].IsNull())
+    {
+        if (!value["DBInstanceStorageType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.DBInstanceStorageType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dBInstanceStorageType = string(value["DBInstanceStorageType"].GetString());
+        m_dBInstanceStorageTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -881,6 +892,14 @@ void DBInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "DeletionProtection";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deletionProtection, allocator);
+    }
+
+    if (m_dBInstanceStorageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBInstanceStorageType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dBInstanceStorageType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1540,5 +1559,21 @@ void DBInstance::SetDeletionProtection(const bool& _deletionProtection)
 bool DBInstance::DeletionProtectionHasBeenSet() const
 {
     return m_deletionProtectionHasBeenSet;
+}
+
+string DBInstance::GetDBInstanceStorageType() const
+{
+    return m_dBInstanceStorageType;
+}
+
+void DBInstance::SetDBInstanceStorageType(const string& _dBInstanceStorageType)
+{
+    m_dBInstanceStorageType = _dBInstanceStorageType;
+    m_dBInstanceStorageTypeHasBeenSet = true;
+}
+
+bool DBInstance::DBInstanceStorageTypeHasBeenSet() const
+{
+    return m_dBInstanceStorageTypeHasBeenSet;
 }
 

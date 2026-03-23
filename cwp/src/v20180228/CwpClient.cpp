@@ -16090,6 +16090,56 @@ CwpClient::DescribeShellPolicyListOutcomeCallable CwpClient::DescribeShellPolicy
     return prom->get_future();
 }
 
+CwpClient::DescribeSkillInfoOutcome CwpClient::DescribeSkillInfo(const DescribeSkillInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSkillInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSkillInfoResponse rsp = DescribeSkillInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSkillInfoOutcome(rsp);
+        else
+            return DescribeSkillInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSkillInfoOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeSkillInfoAsync(const DescribeSkillInfoRequest& request, const DescribeSkillInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSkillInfoRequest&;
+    using Resp = DescribeSkillInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSkillInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CwpClient::DescribeSkillInfoOutcomeCallable CwpClient::DescribeSkillInfoCallable(const DescribeSkillInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSkillInfoOutcome>>();
+    DescribeSkillInfoAsync(
+    request,
+    [prom](
+        const CwpClient*,
+        const DescribeSkillInfoRequest&,
+        DescribeSkillInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CwpClient::DescribeStrategyExistOutcome CwpClient::DescribeStrategyExist(const DescribeStrategyExistRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeStrategyExist");

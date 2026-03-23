@@ -37,6 +37,8 @@
 #include <tencentcloud/csip/v20221121/model/DeleteDomainAndIpResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteRiskScanTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteRiskScanTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeAIAgentAssetListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeAIAgentAssetListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAbnormalCallRecordRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAbnormalCallRecordResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAccessKeyAlarmRequest.h>
@@ -222,6 +224,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRiskScanTaskResponse> DeleteRiskScanTaskOutcome;
                 typedef std::future<DeleteRiskScanTaskOutcome> DeleteRiskScanTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteRiskScanTaskRequest&, DeleteRiskScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRiskScanTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAIAgentAssetListResponse> DescribeAIAgentAssetListOutcome;
+                typedef std::future<DescribeAIAgentAssetListOutcome> DescribeAIAgentAssetListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeAIAgentAssetListRequest&, DescribeAIAgentAssetListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIAgentAssetListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAbnormalCallRecordResponse> DescribeAbnormalCallRecordOutcome;
                 typedef std::future<DescribeAbnormalCallRecordOutcome> DescribeAbnormalCallRecordOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeAbnormalCallRecordRequest&, DescribeAbnormalCallRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAbnormalCallRecordAsyncHandler;
@@ -512,6 +517,15 @@ namespace TencentCloud
                 DeleteRiskScanTaskOutcome DeleteRiskScanTask(const Model::DeleteRiskScanTaskRequest &request);
                 void DeleteRiskScanTaskAsync(const Model::DeleteRiskScanTaskRequest& request, const DeleteRiskScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteRiskScanTaskOutcomeCallable DeleteRiskScanTaskCallable(const Model::DeleteRiskScanTaskRequest& request);
+
+                /**
+                 *获取 AI agent 资产列表
+                 * @param req DescribeAIAgentAssetListRequest
+                 * @return DescribeAIAgentAssetListOutcome
+                 */
+                DescribeAIAgentAssetListOutcome DescribeAIAgentAssetList(const Model::DescribeAIAgentAssetListRequest &request);
+                void DescribeAIAgentAssetListAsync(const Model::DescribeAIAgentAssetListRequest& request, const DescribeAIAgentAssetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAIAgentAssetListOutcomeCallable DescribeAIAgentAssetListCallable(const Model::DescribeAIAgentAssetListRequest& request);
 
                 /**
                  *获取调用记录列表

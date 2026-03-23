@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体处理统计数据概览，展示所查询任务的概览以及详细数据。
-                     * @return Data 媒体处理统计数据概览，展示所查询任务的概览以及详细数据。
+                     * 获取<p>媒体处理统计数据概览，展示所查询任务的概览以及详细数据。</p>
+                     * @return Data <p>媒体处理统计数据概览，展示所查询任务的概览以及详细数据。</p>
                      * 
                      */
                     std::vector<TaskStatData> GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒体处理统计数据概览，展示所查询任务的概览以及详细数据。
+                     * <p>媒体处理统计数据概览，展示所查询任务的概览以及详细数据。</p>
                      */
                     std::vector<TaskStatData> m_data;
                     bool m_dataHasBeenSet;

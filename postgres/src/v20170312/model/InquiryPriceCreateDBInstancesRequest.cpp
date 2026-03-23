@@ -31,7 +31,8 @@ InquiryPriceCreateDBInstancesRequest::InquiryPriceCreateDBInstancesRequest() :
     m_pidHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_dBEngineHasBeenSet(false)
+    m_dBEngineHasBeenSet(false),
+    m_storageTypeHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string InquiryPriceCreateDBInstancesRequest::ToJsonString() const
         string key = "DBEngine";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dBEngine.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +273,22 @@ void InquiryPriceCreateDBInstancesRequest::SetDBEngine(const string& _dBEngine)
 bool InquiryPriceCreateDBInstancesRequest::DBEngineHasBeenSet() const
 {
     return m_dBEngineHasBeenSet;
+}
+
+string InquiryPriceCreateDBInstancesRequest::GetStorageType() const
+{
+    return m_storageType;
+}
+
+void InquiryPriceCreateDBInstancesRequest::SetStorageType(const string& _storageType)
+{
+    m_storageType = _storageType;
+    m_storageTypeHasBeenSet = true;
+}
+
+bool InquiryPriceCreateDBInstancesRequest::StorageTypeHasBeenSet() const
+{
+    return m_storageTypeHasBeenSet;
 }
 
 

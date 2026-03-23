@@ -22,7 +22,8 @@
 using namespace TencentCloud::Postgres::V20170312::Model;
 using namespace std;
 
-DescribeDBVersionsRequest::DescribeDBVersionsRequest()
+DescribeDBVersionsRequest::DescribeDBVersionsRequest() :
+    m_storageTypeHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeDBVersionsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_storageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeDBVersionsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeDBVersionsRequest::GetStorageType() const
+{
+    return m_storageType;
+}
+
+void DescribeDBVersionsRequest::SetStorageType(const string& _storageType)
+{
+    m_storageType = _storageType;
+    m_storageTypeHasBeenSet = true;
+}
+
+bool DescribeDBVersionsRequest::StorageTypeHasBeenSet() const
+{
+    return m_storageTypeHasBeenSet;
+}
 
 

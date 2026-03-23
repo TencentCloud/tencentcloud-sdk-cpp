@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mps/v20190612/model/SyncDubbingOutputOption.h>
 
 
 namespace TencentCloud
@@ -169,6 +170,27 @@ namespace TencentCloud
                     bool AudioLangHasBeenSet() const;
 
                     /**
+                     * 获取<p>输出相关参数</p><p>可以指定输出形式等</p>
+                     * @return Output <p>输出相关参数</p><p>可以指定输出形式等</p>
+                     * 
+                     */
+                    SyncDubbingOutputOption GetOutput() const;
+
+                    /**
+                     * 设置<p>输出相关参数</p><p>可以指定输出形式等</p>
+                     * @param _output <p>输出相关参数</p><p>可以指定输出形式等</p>
+                     * 
+                     */
+                    void SetOutput(const SyncDubbingOutputOption& _output);
+
+                    /**
+                     * 判断参数 Output 是否已赋值
+                     * @return Output 是否已赋值
+                     * 
+                     */
+                    bool OutputHasBeenSet() const;
+
+                    /**
                      * 获取<p>扩展参数，json字符串</p><p>synExt    Object    语音合成扩展参数<br>    -duration    Float    合成音频时长，单位秒，示例：5.2<br>    -sampleRate    Integer    合成音频采样率，默认16000，支持[8000,16000,22050,32000,44100]<br>    -pitch    Integer    音调，默认0原音色输出，取值[-12, 12]<br>cloneExt    Object    音色克隆扩展参数<br>    -timeRanges    Float[][]    指定克隆音频时间范围，默认[[0, 20]]，示例[[5.2, 10], [45, 59.8]]</p>
                      * @return ExtParam <p>扩展参数，json字符串</p><p>synExt    Object    语音合成扩展参数<br>    -duration    Float    合成音频时长，单位秒，示例：5.2<br>    -sampleRate    Integer    合成音频采样率，默认16000，支持[8000,16000,22050,32000,44100]<br>    -pitch    Integer    音调，默认0原音色输出，取值[-12, 12]<br>cloneExt    Object    音色克隆扩展参数<br>    -timeRanges    Float[][]    指定克隆音频时间范围，默认[[0, 20]]，示例[[5.2, 10], [45, 59.8]]</p>
                      * 
@@ -226,6 +248,12 @@ namespace TencentCloud
                      */
                     std::string m_audioLang;
                     bool m_audioLangHasBeenSet;
+
+                    /**
+                     * <p>输出相关参数</p><p>可以指定输出形式等</p>
+                     */
+                    SyncDubbingOutputOption m_output;
+                    bool m_outputHasBeenSet;
 
                     /**
                      * <p>扩展参数，json字符串</p><p>synExt    Object    语音合成扩展参数<br>    -duration    Float    合成音频时长，单位秒，示例：5.2<br>    -sampleRate    Integer    合成音频采样率，默认16000，支持[8000,16000,22050,32000,44100]<br>    -pitch    Integer    音调，默认0原音色输出，取值[-12, 12]<br>cloneExt    Object    音色克隆扩展参数<br>    -timeRanges    Float[][]    指定克隆音频时间范围，默认[[0, 20]]，示例[[5.2, 10], [45, 59.8]]</p>

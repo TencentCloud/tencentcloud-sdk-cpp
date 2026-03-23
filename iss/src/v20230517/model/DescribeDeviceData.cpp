@@ -51,7 +51,8 @@ DescribeDeviceData::DescribeDeviceData() :
     m_subscribeSwitchHasBeenSet(false),
     m_appNameHasBeenSet(false),
     m_streamNameHasBeenSet(false),
-    m_silentFrameSwitchHasBeenSet(false)
+    m_silentFrameSwitchHasBeenSet(false),
+    m_pushStreamSecureUrlHasBeenSet(false)
 {
 }
 
@@ -370,6 +371,16 @@ CoreInternalOutcome DescribeDeviceData::Deserialize(const rapidjson::Value &valu
         m_silentFrameSwitchHasBeenSet = true;
     }
 
+    if (value.HasMember("PushStreamSecureUrl") && !value["PushStreamSecureUrl"].IsNull())
+    {
+        if (!value["PushStreamSecureUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDeviceData.PushStreamSecureUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pushStreamSecureUrl = string(value["PushStreamSecureUrl"].GetString());
+        m_pushStreamSecureUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -623,6 +634,14 @@ void DescribeDeviceData::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "SilentFrameSwitch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_silentFrameSwitch, allocator);
+    }
+
+    if (m_pushStreamSecureUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PushStreamSecureUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pushStreamSecureUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1122,5 +1141,21 @@ void DescribeDeviceData::SetSilentFrameSwitch(const int64_t& _silentFrameSwitch)
 bool DescribeDeviceData::SilentFrameSwitchHasBeenSet() const
 {
     return m_silentFrameSwitchHasBeenSet;
+}
+
+string DescribeDeviceData::GetPushStreamSecureUrl() const
+{
+    return m_pushStreamSecureUrl;
+}
+
+void DescribeDeviceData::SetPushStreamSecureUrl(const string& _pushStreamSecureUrl)
+{
+    m_pushStreamSecureUrl = _pushStreamSecureUrl;
+    m_pushStreamSecureUrlHasBeenSet = true;
+}
+
+bool DescribeDeviceData::PushStreamSecureUrlHasBeenSet() const
+{
+    return m_pushStreamSecureUrlHasBeenSet;
 }
 

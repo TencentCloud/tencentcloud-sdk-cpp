@@ -361,15 +361,15 @@ SaaS需要调用分组接口DescribeDeviceChildGroups获取对应分组id
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
-                     * @return OsType 操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
+                     * 获取系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)，需要和GroupId或者GroupIds匹配
+                     * @return OsType 系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)，需要和GroupId或者GroupIds匹配
                      * 
                      */
                     int64_t GetOsType() const;
 
                     /**
-                     * 设置操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
-                     * @param _osType 操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
+                     * 设置系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)，需要和GroupId或者GroupIds匹配
+                     * @param _osType 系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)，需要和GroupId或者GroupIds匹配
                      * 
                      */
                     void SetOsType(const int64_t& _osType);
@@ -616,7 +616,7 @@ SaaS需要调用分组接口DescribeDeviceChildGroups获取对应分组id
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配
+                     * 系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)，需要和GroupId或者GroupIds匹配
                      */
                     int64_t m_osType;
                     bool m_osTypeHasBeenSet;

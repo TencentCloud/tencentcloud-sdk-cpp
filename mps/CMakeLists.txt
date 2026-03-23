@@ -618,6 +618,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AsrFullTextConfigureInfo.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskVideoRemakeResult.h
   include/tencentcloud/mps/v20190612/model/ArtifactRepairConfig.h
+  include/tencentcloud/mps/v20190612/model/SyncDubbingOutputOption.h
   include/tencentcloud/mps/v20190612/model/CreateAIRecognitionTemplateRequest.h
   include/tencentcloud/mps/v20190612/model/DescribeTaskDetailRequest.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskDubbingInput.h
@@ -1491,6 +1492,7 @@ set(mps_src
   src/v20190612/model/AsrFullTextConfigureInfo.cpp
   src/v20190612/model/AiAnalysisTaskVideoRemakeResult.cpp
   src/v20190612/model/ArtifactRepairConfig.cpp
+  src/v20190612/model/SyncDubbingOutputOption.cpp
   src/v20190612/model/CreateAIRecognitionTemplateRequest.cpp
   src/v20190612/model/DescribeTaskDetailRequest.cpp
   src/v20190612/model/AiAnalysisTaskDubbingInput.cpp

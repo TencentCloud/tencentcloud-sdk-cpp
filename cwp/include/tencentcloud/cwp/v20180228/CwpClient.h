@@ -665,6 +665,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeServersAndRiskAndFirstInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeShellPolicyListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeShellPolicyListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeSkillInfoRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeSkillInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeStrategyExistRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeStrategyExistResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeTagMachinesRequest.h>
@@ -2062,6 +2064,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeShellPolicyListResponse> DescribeShellPolicyListOutcome;
                 typedef std::future<DescribeShellPolicyListOutcome> DescribeShellPolicyListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeShellPolicyListRequest&, DescribeShellPolicyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeShellPolicyListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSkillInfoResponse> DescribeSkillInfoOutcome;
+                typedef std::future<DescribeSkillInfoOutcome> DescribeSkillInfoOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeSkillInfoRequest&, DescribeSkillInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSkillInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStrategyExistResponse> DescribeStrategyExistOutcome;
                 typedef std::future<DescribeStrategyExistOutcome> DescribeStrategyExistOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeStrategyExistRequest&, DescribeStrategyExistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStrategyExistAsyncHandler;
@@ -5586,6 +5591,15 @@ namespace TencentCloud
                 DescribeShellPolicyListOutcome DescribeShellPolicyList(const Model::DescribeShellPolicyListRequest &request);
                 void DescribeShellPolicyListAsync(const Model::DescribeShellPolicyListRequest& request, const DescribeShellPolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeShellPolicyListOutcomeCallable DescribeShellPolicyListCallable(const Model::DescribeShellPolicyListRequest& request);
+
+                /**
+                 *补丁详情
+                 * @param req DescribeSkillInfoRequest
+                 * @return DescribeSkillInfoOutcome
+                 */
+                DescribeSkillInfoOutcome DescribeSkillInfo(const Model::DescribeSkillInfoRequest &request);
+                void DescribeSkillInfoAsync(const Model::DescribeSkillInfoRequest& request, const DescribeSkillInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSkillInfoOutcomeCallable DescribeSkillInfoCallable(const Model::DescribeSkillInfoRequest& request);
 
                 /**
                  *根据策略名查询策略是否存在

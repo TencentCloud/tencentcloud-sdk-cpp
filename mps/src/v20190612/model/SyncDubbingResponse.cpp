@@ -27,7 +27,9 @@ SyncDubbingResponse::SyncDubbingResponse() :
     m_errorCodeHasBeenSet(false),
     m_msgHasBeenSet(false),
     m_audioDataHasBeenSet(false),
-    m_voiceIdHasBeenSet(false)
+    m_audioUrlHasBeenSet(false),
+    m_voiceIdHasBeenSet(false),
+    m_extInfoHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,16 @@ CoreInternalOutcome SyncDubbingResponse::Deserialize(const string &payload)
         m_audioDataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AudioUrl") && !rsp["AudioUrl"].IsNull())
+    {
+        if (!rsp["AudioUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_audioUrl = string(rsp["AudioUrl"].GetString());
+        m_audioUrlHasBeenSet = true;
+    }
+
     if (rsp.HasMember("VoiceId") && !rsp["VoiceId"].IsNull())
     {
         if (!rsp["VoiceId"].IsString())
@@ -103,6 +115,16 @@ CoreInternalOutcome SyncDubbingResponse::Deserialize(const string &payload)
         }
         m_voiceId = string(rsp["VoiceId"].GetString());
         m_voiceIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExtInfo") && !rsp["ExtInfo"].IsNull())
+    {
+        if (!rsp["ExtInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extInfo = string(rsp["ExtInfo"].GetString());
+        m_extInfoHasBeenSet = true;
     }
 
 
@@ -139,12 +161,28 @@ string SyncDubbingResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_audioData.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_audioUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_audioUrl.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_voiceIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VoiceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_voiceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -189,6 +227,16 @@ bool SyncDubbingResponse::AudioDataHasBeenSet() const
     return m_audioDataHasBeenSet;
 }
 
+string SyncDubbingResponse::GetAudioUrl() const
+{
+    return m_audioUrl;
+}
+
+bool SyncDubbingResponse::AudioUrlHasBeenSet() const
+{
+    return m_audioUrlHasBeenSet;
+}
+
 string SyncDubbingResponse::GetVoiceId() const
 {
     return m_voiceId;
@@ -197,6 +245,16 @@ string SyncDubbingResponse::GetVoiceId() const
 bool SyncDubbingResponse::VoiceIdHasBeenSet() const
 {
     return m_voiceIdHasBeenSet;
+}
+
+string SyncDubbingResponse::GetExtInfo() const
+{
+    return m_extInfo;
+}
+
+bool SyncDubbingResponse::ExtInfoHasBeenSet() const
+{
+    return m_extInfoHasBeenSet;
 }
 
 

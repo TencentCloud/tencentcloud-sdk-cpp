@@ -33,6 +33,7 @@ AigcVideoOutputConfig::AigcVideoOutputConfig() :
     m_inputComplianceCheckHasBeenSet(false),
     m_outputComplianceCheckHasBeenSet(false),
     m_enhanceSwitchHasBeenSet(false),
+    m_offPeakHasBeenSet(false),
     m_frameInterpolateHasBeenSet(false),
     m_logoAddHasBeenSet(false)
 {
@@ -163,6 +164,16 @@ CoreInternalOutcome AigcVideoOutputConfig::Deserialize(const rapidjson::Value &v
         m_enhanceSwitchHasBeenSet = true;
     }
 
+    if (value.HasMember("OffPeak") && !value["OffPeak"].IsNull())
+    {
+        if (!value["OffPeak"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoOutputConfig.OffPeak` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_offPeak = string(value["OffPeak"].GetString());
+        m_offPeakHasBeenSet = true;
+    }
+
     if (value.HasMember("FrameInterpolate") && !value["FrameInterpolate"].IsNull())
     {
         if (!value["FrameInterpolate"].IsString())
@@ -284,6 +295,14 @@ void AigcVideoOutputConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "EnhanceSwitch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_enhanceSwitch.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offPeakHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OffPeak";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_offPeak.c_str(), allocator).Move(), allocator);
     }
 
     if (m_frameInterpolateHasBeenSet)
@@ -495,6 +514,22 @@ void AigcVideoOutputConfig::SetEnhanceSwitch(const string& _enhanceSwitch)
 bool AigcVideoOutputConfig::EnhanceSwitchHasBeenSet() const
 {
     return m_enhanceSwitchHasBeenSet;
+}
+
+string AigcVideoOutputConfig::GetOffPeak() const
+{
+    return m_offPeak;
+}
+
+void AigcVideoOutputConfig::SetOffPeak(const string& _offPeak)
+{
+    m_offPeak = _offPeak;
+    m_offPeakHasBeenSet = true;
+}
+
+bool AigcVideoOutputConfig::OffPeakHasBeenSet() const
+{
+    return m_offPeakHasBeenSet;
 }
 
 string AigcVideoOutputConfig::GetFrameInterpolate() const

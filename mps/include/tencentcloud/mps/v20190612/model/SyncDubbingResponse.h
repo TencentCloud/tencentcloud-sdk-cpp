@@ -88,6 +88,20 @@ namespace TencentCloud
                     bool AudioDataHasBeenSet() const;
 
                     /**
+                     * 获取<p>合成音频url，有效期24小时</p>
+                     * @return AudioUrl <p>合成音频url，有效期24小时</p>
+                     * 
+                     */
+                    std::string GetAudioUrl() const;
+
+                    /**
+                     * 判断参数 AudioUrl 是否已赋值
+                     * @return AudioUrl 是否已赋值
+                     * 
+                     */
+                    bool AudioUrlHasBeenSet() const;
+
+                    /**
                      * 获取<p>克隆的音色Id。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return VoiceId <p>克隆的音色Id。</p>
@@ -102,6 +116,20 @@ namespace TencentCloud
                      * 
                      */
                     bool VoiceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>扩展信息，json字符串</p><p>duration: 结果音频时长，单位秒</p>
+                     * @return ExtInfo <p>扩展信息，json字符串</p><p>duration: 结果音频时长，单位秒</p>
+                     * 
+                     */
+                    std::string GetExtInfo() const;
+
+                    /**
+                     * 判断参数 ExtInfo 是否已赋值
+                     * @return ExtInfo 是否已赋值
+                     * 
+                     */
+                    bool ExtInfoHasBeenSet() const;
 
                 private:
 
@@ -125,11 +153,23 @@ namespace TencentCloud
                     bool m_audioDataHasBeenSet;
 
                     /**
+                     * <p>合成音频url，有效期24小时</p>
+                     */
+                    std::string m_audioUrl;
+                    bool m_audioUrlHasBeenSet;
+
+                    /**
                      * <p>克隆的音色Id。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_voiceId;
                     bool m_voiceIdHasBeenSet;
+
+                    /**
+                     * <p>扩展信息，json字符串</p><p>duration: 结果音频时长，单位秒</p>
+                     */
+                    std::string m_extInfo;
+                    bool m_extInfoHasBeenSet;
 
                 };
             }

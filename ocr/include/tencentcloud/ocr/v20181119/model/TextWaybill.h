@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取收件人姓名
-                     * @return RecName 收件人姓名
+                     * 获取<p>收件人姓名</p>
+                     * @return RecName <p>收件人姓名</p>
                      * 
                      */
                     WaybillObj GetRecName() const;
 
                     /**
-                     * 设置收件人姓名
-                     * @param _recName 收件人姓名
+                     * 设置<p>收件人姓名</p>
+                     * @param _recName <p>收件人姓名</p>
                      * 
                      */
                     void SetRecName(const WaybillObj& _recName);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool RecNameHasBeenSet() const;
 
                     /**
-                     * 获取收件人手机号
-                     * @return RecNum 收件人手机号
+                     * 获取<p>收件人手机号</p>
+                     * @return RecNum <p>收件人手机号</p>
                      * 
                      */
                     WaybillObj GetRecNum() const;
 
                     /**
-                     * 设置收件人手机号
-                     * @param _recNum 收件人手机号
+                     * 设置<p>收件人手机号</p>
+                     * @param _recNum <p>收件人手机号</p>
                      * 
                      */
                     void SetRecNum(const WaybillObj& _recNum);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool RecNumHasBeenSet() const;
 
                     /**
-                     * 获取收件人地址
-                     * @return RecAddr 收件人地址
+                     * 获取<p>收件人地址</p>
+                     * @return RecAddr <p>收件人地址</p>
                      * 
                      */
                     WaybillObj GetRecAddr() const;
 
                     /**
-                     * 设置收件人地址
-                     * @param _recAddr 收件人地址
+                     * 设置<p>收件人地址</p>
+                     * @param _recAddr <p>收件人地址</p>
                      * 
                      */
                     void SetRecAddr(const WaybillObj& _recAddr);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool RecAddrHasBeenSet() const;
 
                     /**
-                     * 获取寄件人姓名
-                     * @return SenderName 寄件人姓名
+                     * 获取<p>寄件人姓名</p>
+                     * @return SenderName <p>寄件人姓名</p>
                      * 
                      */
                     WaybillObj GetSenderName() const;
 
                     /**
-                     * 设置寄件人姓名
-                     * @param _senderName 寄件人姓名
+                     * 设置<p>寄件人姓名</p>
+                     * @param _senderName <p>寄件人姓名</p>
                      * 
                      */
                     void SetSenderName(const WaybillObj& _senderName);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool SenderNameHasBeenSet() const;
 
                     /**
-                     * 获取寄件人手机号
-                     * @return SenderNum 寄件人手机号
+                     * 获取<p>寄件人手机号</p>
+                     * @return SenderNum <p>寄件人手机号</p>
                      * 
                      */
                     WaybillObj GetSenderNum() const;
 
                     /**
-                     * 设置寄件人手机号
-                     * @param _senderNum 寄件人手机号
+                     * 设置<p>寄件人手机号</p>
+                     * @param _senderNum <p>寄件人手机号</p>
                      * 
                      */
                     void SetSenderNum(const WaybillObj& _senderNum);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool SenderNumHasBeenSet() const;
 
                     /**
-                     * 获取寄件人地址
-                     * @return SenderAddr 寄件人地址
+                     * 获取<p>寄件人地址</p>
+                     * @return SenderAddr <p>寄件人地址</p>
                      * 
                      */
                     WaybillObj GetSenderAddr() const;
 
                     /**
-                     * 设置寄件人地址
-                     * @param _senderAddr 寄件人地址
+                     * 设置<p>寄件人地址</p>
+                     * @param _senderAddr <p>寄件人地址</p>
                      * 
                      */
                     void SetSenderAddr(const WaybillObj& _senderAddr);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool SenderAddrHasBeenSet() const;
 
                     /**
-                     * 获取运单号
-                     * @return WaybillNum 运单号
+                     * 获取<p>运单号, 当同时存在 母 / 子 运单号时， 该字段为子运单号</p>
+                     * @return WaybillNum <p>运单号, 当同时存在 母 / 子 运单号时， 该字段为子运单号</p>
                      * 
                      */
                     WaybillObj GetWaybillNum() const;
 
                     /**
-                     * 设置运单号
-                     * @param _waybillNum 运单号
+                     * 设置<p>运单号, 当同时存在 母 / 子 运单号时， 该字段为子运单号</p>
+                     * @param _waybillNum <p>运单号, 当同时存在 母 / 子 运单号时， 该字段为子运单号</p>
                      * 
                      */
                     void SetWaybillNum(const WaybillObj& _waybillNum);
@@ -194,49 +194,76 @@ namespace TencentCloud
                      */
                     bool WaybillNumHasBeenSet() const;
 
+                    /**
+                     * 获取<p>母运单号， 当不存在母运单号时， 该字段为不存在</p>
+                     * @return MainWaybillNum <p>母运单号， 当不存在母运单号时， 该字段为不存在</p>
+                     * 
+                     */
+                    WaybillObj GetMainWaybillNum() const;
+
+                    /**
+                     * 设置<p>母运单号， 当不存在母运单号时， 该字段为不存在</p>
+                     * @param _mainWaybillNum <p>母运单号， 当不存在母运单号时， 该字段为不存在</p>
+                     * 
+                     */
+                    void SetMainWaybillNum(const WaybillObj& _mainWaybillNum);
+
+                    /**
+                     * 判断参数 MainWaybillNum 是否已赋值
+                     * @return MainWaybillNum 是否已赋值
+                     * 
+                     */
+                    bool MainWaybillNumHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 收件人姓名
+                     * <p>收件人姓名</p>
                      */
                     WaybillObj m_recName;
                     bool m_recNameHasBeenSet;
 
                     /**
-                     * 收件人手机号
+                     * <p>收件人手机号</p>
                      */
                     WaybillObj m_recNum;
                     bool m_recNumHasBeenSet;
 
                     /**
-                     * 收件人地址
+                     * <p>收件人地址</p>
                      */
                     WaybillObj m_recAddr;
                     bool m_recAddrHasBeenSet;
 
                     /**
-                     * 寄件人姓名
+                     * <p>寄件人姓名</p>
                      */
                     WaybillObj m_senderName;
                     bool m_senderNameHasBeenSet;
 
                     /**
-                     * 寄件人手机号
+                     * <p>寄件人手机号</p>
                      */
                     WaybillObj m_senderNum;
                     bool m_senderNumHasBeenSet;
 
                     /**
-                     * 寄件人地址
+                     * <p>寄件人地址</p>
                      */
                     WaybillObj m_senderAddr;
                     bool m_senderAddrHasBeenSet;
 
                     /**
-                     * 运单号
+                     * <p>运单号, 当同时存在 母 / 子 运单号时， 该字段为子运单号</p>
                      */
                     WaybillObj m_waybillNum;
                     bool m_waybillNumHasBeenSet;
+
+                    /**
+                     * <p>母运单号， 当不存在母运单号时， 该字段为不存在</p>
+                     */
+                    WaybillObj m_mainWaybillNum;
+                    bool m_mainWaybillNumHasBeenSet;
 
                 };
             }

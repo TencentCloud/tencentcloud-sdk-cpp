@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取起始日期。使用 ISO 日期格式。
-                     * @return StartTime 起始日期。使用 ISO 日期格式。
+                     * 获取<p>起始日期。使用 ISO 日期格式。</p>
+                     * @return StartTime <p>起始日期。使用 ISO 日期格式。</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置起始日期。使用 ISO 日期格式。
-                     * @param _startTime 起始日期。使用 ISO 日期格式。
+                     * 设置<p>起始日期。使用 ISO 日期格式。</p>
+                     * @param _startTime <p>起始日期。使用 ISO 日期格式。</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束日期，需大于等于起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @return EndTime 结束日期，需大于等于起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 获取<p>结束日期，需大于等于起始日期。使用 <a href="https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F">ISO 日期格式</a>。</p>
+                     * @return EndTime <p>结束日期，需大于等于起始日期。使用 <a href="https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F">ISO 日期格式</a>。</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束日期，需大于等于起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
-                     * @param _endTime 结束日期，需大于等于起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * 设置<p>结束日期，需大于等于起始日期。使用 <a href="https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F">ISO 日期格式</a>。</p>
+                     * @param _endTime <p>结束日期，需大于等于起始日期。使用 <a href="https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F">ISO 日期格式</a>。</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -85,71 +85,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询媒体处理任务类型，默认查询转码。
-<li>Transcode：转码</li>
-<li>Enhance：增强</li>
-<li>AIAnalysis：智能分析</li>
-<li>AIRecognition：智能识别</li>
-<li>AIReview：内容审核</li>
-<li>Snapshot：截图</li>
-<li>AnimatedGraphics：转动图</li>
-<li>AiQualityControl：质检</li>
-<li>Evaluation：视频评测</li>
-<li>ImageProcess: 图片处理</li>
-<li>AddBlindWatermark: 添加基础版权数字水印</li>
-<li>AddNagraWatermark: 添加NAGRA数字水印</li>
-<li>ExtractBlindWatermark: 提取基础版权数字水印</li>
-<li>AIGC: AIGC</li>
-                     * @return Types 查询媒体处理任务类型，默认查询转码。
-<li>Transcode：转码</li>
-<li>Enhance：增强</li>
-<li>AIAnalysis：智能分析</li>
-<li>AIRecognition：智能识别</li>
-<li>AIReview：内容审核</li>
-<li>Snapshot：截图</li>
-<li>AnimatedGraphics：转动图</li>
-<li>AiQualityControl：质检</li>
-<li>Evaluation：视频评测</li>
-<li>ImageProcess: 图片处理</li>
-<li>AddBlindWatermark: 添加基础版权数字水印</li>
-<li>AddNagraWatermark: 添加NAGRA数字水印</li>
-<li>ExtractBlindWatermark: 提取基础版权数字水印</li>
-<li>AIGC: AIGC</li>
+                     * 获取<p>查询媒体处理任务类型，默认查询转码。</p><li>Transcode：转码</li><li>Enhance：增强</li><li>AIAnalysis：智能分析</li><li>AIRecognition：智能识别</li><li>AIReview：内容审核</li><li>Snapshot：截图</li><li>AnimatedGraphics：转动图</li><li>AiQualityControl：质检</li><li>Evaluation：视频评测</li><li>ImageProcess: 图片处理</li><li>AddBlindWatermark: 添加基础版权数字水印</li><li>AddNagraWatermark: 添加NAGRA数字水印</li><li>ExtractBlindWatermark: 提取基础版权数字水印</li><li>AIGC: AIGCVideo</li>
+                     * @return Types <p>查询媒体处理任务类型，默认查询转码。</p><li>Transcode：转码</li><li>Enhance：增强</li><li>AIAnalysis：智能分析</li><li>AIRecognition：智能识别</li><li>AIReview：内容审核</li><li>Snapshot：截图</li><li>AnimatedGraphics：转动图</li><li>AiQualityControl：质检</li><li>Evaluation：视频评测</li><li>ImageProcess: 图片处理</li><li>AddBlindWatermark: 添加基础版权数字水印</li><li>AddNagraWatermark: 添加NAGRA数字水印</li><li>ExtractBlindWatermark: 提取基础版权数字水印</li><li>AIGC: AIGCVideo</li>
                      * 
                      */
                     std::vector<std::string> GetTypes() const;
 
                     /**
-                     * 设置查询媒体处理任务类型，默认查询转码。
-<li>Transcode：转码</li>
-<li>Enhance：增强</li>
-<li>AIAnalysis：智能分析</li>
-<li>AIRecognition：智能识别</li>
-<li>AIReview：内容审核</li>
-<li>Snapshot：截图</li>
-<li>AnimatedGraphics：转动图</li>
-<li>AiQualityControl：质检</li>
-<li>Evaluation：视频评测</li>
-<li>ImageProcess: 图片处理</li>
-<li>AddBlindWatermark: 添加基础版权数字水印</li>
-<li>AddNagraWatermark: 添加NAGRA数字水印</li>
-<li>ExtractBlindWatermark: 提取基础版权数字水印</li>
-<li>AIGC: AIGC</li>
-                     * @param _types 查询媒体处理任务类型，默认查询转码。
-<li>Transcode：转码</li>
-<li>Enhance：增强</li>
-<li>AIAnalysis：智能分析</li>
-<li>AIRecognition：智能识别</li>
-<li>AIReview：内容审核</li>
-<li>Snapshot：截图</li>
-<li>AnimatedGraphics：转动图</li>
-<li>AiQualityControl：质检</li>
-<li>Evaluation：视频评测</li>
-<li>ImageProcess: 图片处理</li>
-<li>AddBlindWatermark: 添加基础版权数字水印</li>
-<li>AddNagraWatermark: 添加NAGRA数字水印</li>
-<li>ExtractBlindWatermark: 提取基础版权数字水印</li>
-<li>AIGC: AIGC</li>
+                     * 设置<p>查询媒体处理任务类型，默认查询转码。</p><li>Transcode：转码</li><li>Enhance：增强</li><li>AIAnalysis：智能分析</li><li>AIRecognition：智能识别</li><li>AIReview：内容审核</li><li>Snapshot：截图</li><li>AnimatedGraphics：转动图</li><li>AiQualityControl：质检</li><li>Evaluation：视频评测</li><li>ImageProcess: 图片处理</li><li>AddBlindWatermark: 添加基础版权数字水印</li><li>AddNagraWatermark: 添加NAGRA数字水印</li><li>ExtractBlindWatermark: 提取基础版权数字水印</li><li>AIGC: AIGCVideo</li>
+                     * @param _types <p>查询媒体处理任务类型，默认查询转码。</p><li>Transcode：转码</li><li>Enhance：增强</li><li>AIAnalysis：智能分析</li><li>AIRecognition：智能识别</li><li>AIReview：内容审核</li><li>Snapshot：截图</li><li>AnimatedGraphics：转动图</li><li>AiQualityControl：质检</li><li>Evaluation：视频评测</li><li>ImageProcess: 图片处理</li><li>AddBlindWatermark: 添加基础版权数字水印</li><li>AddNagraWatermark: 添加NAGRA数字水印</li><li>ExtractBlindWatermark: 提取基础版权数字水印</li><li>AIGC: AIGCVideo</li>
                      * 
                      */
                     void SetTypes(const std::vector<std::string>& _types);
@@ -162,79 +106,15 @@ namespace TencentCloud
                     bool TypesHasBeenSet() const;
 
                     /**
-                     * 获取媒体处理园区，默认返回 ap-guangzhou 园区。
-<li>ap-guangzhou：广州</li>
-<li>ap-hongkong：中国香港</li>
-<li>ap-taipei：中国台北</li>
-<li>ap-singapore：新加坡</li>
-<li>ap-mumbai：印度</li>
-<li>ap-jakarta：雅加达</li>
-<li>ap-seoul：首尔</li>
-<li>ap-bangkok：泰国</li>
-<li>ap-tokyo：日本</li>
-<li>na-siliconvalley：美国硅谷</li>
-<li>na-ashburn：弗吉尼亚</li>
-<li>na-toronto：多伦多</li>
-<li>sa-saopaulo：圣保罗</li>
-<li>eu-frankfurt：法兰克福</li>
-<li>eu-moscow：俄罗斯</li>
-<li>aws：AWS</li>
-                     * @return ProcessRegions 媒体处理园区，默认返回 ap-guangzhou 园区。
-<li>ap-guangzhou：广州</li>
-<li>ap-hongkong：中国香港</li>
-<li>ap-taipei：中国台北</li>
-<li>ap-singapore：新加坡</li>
-<li>ap-mumbai：印度</li>
-<li>ap-jakarta：雅加达</li>
-<li>ap-seoul：首尔</li>
-<li>ap-bangkok：泰国</li>
-<li>ap-tokyo：日本</li>
-<li>na-siliconvalley：美国硅谷</li>
-<li>na-ashburn：弗吉尼亚</li>
-<li>na-toronto：多伦多</li>
-<li>sa-saopaulo：圣保罗</li>
-<li>eu-frankfurt：法兰克福</li>
-<li>eu-moscow：俄罗斯</li>
-<li>aws：AWS</li>
+                     * 获取<p>媒体处理园区，默认返回 ap-guangzhou 园区。</p><li>ap-guangzhou：广州</li><li>ap-hongkong：中国香港</li><li>ap-taipei：中国台北</li><li>ap-singapore：新加坡</li><li>ap-mumbai：印度</li><li>ap-jakarta：雅加达</li><li>ap-seoul：首尔</li><li>ap-bangkok：泰国</li><li>ap-tokyo：日本</li><li>na-siliconvalley：美国硅谷</li><li>na-ashburn：弗吉尼亚</li><li>na-toronto：多伦多</li><li>sa-saopaulo：圣保罗</li><li>eu-frankfurt：法兰克福</li><li>eu-moscow：俄罗斯</li><li>aws：AWS</li>
+                     * @return ProcessRegions <p>媒体处理园区，默认返回 ap-guangzhou 园区。</p><li>ap-guangzhou：广州</li><li>ap-hongkong：中国香港</li><li>ap-taipei：中国台北</li><li>ap-singapore：新加坡</li><li>ap-mumbai：印度</li><li>ap-jakarta：雅加达</li><li>ap-seoul：首尔</li><li>ap-bangkok：泰国</li><li>ap-tokyo：日本</li><li>na-siliconvalley：美国硅谷</li><li>na-ashburn：弗吉尼亚</li><li>na-toronto：多伦多</li><li>sa-saopaulo：圣保罗</li><li>eu-frankfurt：法兰克福</li><li>eu-moscow：俄罗斯</li><li>aws：AWS</li>
                      * 
                      */
                     std::vector<std::string> GetProcessRegions() const;
 
                     /**
-                     * 设置媒体处理园区，默认返回 ap-guangzhou 园区。
-<li>ap-guangzhou：广州</li>
-<li>ap-hongkong：中国香港</li>
-<li>ap-taipei：中国台北</li>
-<li>ap-singapore：新加坡</li>
-<li>ap-mumbai：印度</li>
-<li>ap-jakarta：雅加达</li>
-<li>ap-seoul：首尔</li>
-<li>ap-bangkok：泰国</li>
-<li>ap-tokyo：日本</li>
-<li>na-siliconvalley：美国硅谷</li>
-<li>na-ashburn：弗吉尼亚</li>
-<li>na-toronto：多伦多</li>
-<li>sa-saopaulo：圣保罗</li>
-<li>eu-frankfurt：法兰克福</li>
-<li>eu-moscow：俄罗斯</li>
-<li>aws：AWS</li>
-                     * @param _processRegions 媒体处理园区，默认返回 ap-guangzhou 园区。
-<li>ap-guangzhou：广州</li>
-<li>ap-hongkong：中国香港</li>
-<li>ap-taipei：中国台北</li>
-<li>ap-singapore：新加坡</li>
-<li>ap-mumbai：印度</li>
-<li>ap-jakarta：雅加达</li>
-<li>ap-seoul：首尔</li>
-<li>ap-bangkok：泰国</li>
-<li>ap-tokyo：日本</li>
-<li>na-siliconvalley：美国硅谷</li>
-<li>na-ashburn：弗吉尼亚</li>
-<li>na-toronto：多伦多</li>
-<li>sa-saopaulo：圣保罗</li>
-<li>eu-frankfurt：法兰克福</li>
-<li>eu-moscow：俄罗斯</li>
-<li>aws：AWS</li>
+                     * 设置<p>媒体处理园区，默认返回 ap-guangzhou 园区。</p><li>ap-guangzhou：广州</li><li>ap-hongkong：中国香港</li><li>ap-taipei：中国台北</li><li>ap-singapore：新加坡</li><li>ap-mumbai：印度</li><li>ap-jakarta：雅加达</li><li>ap-seoul：首尔</li><li>ap-bangkok：泰国</li><li>ap-tokyo：日本</li><li>na-siliconvalley：美国硅谷</li><li>na-ashburn：弗吉尼亚</li><li>na-toronto：多伦多</li><li>sa-saopaulo：圣保罗</li><li>eu-frankfurt：法兰克福</li><li>eu-moscow：俄罗斯</li><li>aws：AWS</li>
+                     * @param _processRegions <p>媒体处理园区，默认返回 ap-guangzhou 园区。</p><li>ap-guangzhou：广州</li><li>ap-hongkong：中国香港</li><li>ap-taipei：中国台北</li><li>ap-singapore：新加坡</li><li>ap-mumbai：印度</li><li>ap-jakarta：雅加达</li><li>ap-seoul：首尔</li><li>ap-bangkok：泰国</li><li>ap-tokyo：日本</li><li>na-siliconvalley：美国硅谷</li><li>na-ashburn：弗吉尼亚</li><li>na-toronto：多伦多</li><li>sa-saopaulo：圣保罗</li><li>eu-frankfurt：法兰克福</li><li>eu-moscow：俄罗斯</li><li>aws：AWS</li>
                      * 
                      */
                     void SetProcessRegions(const std::vector<std::string>& _processRegions);
@@ -249,55 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 起始日期。使用 ISO 日期格式。
+                     * <p>起始日期。使用 ISO 日期格式。</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束日期，需大于等于起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。
+                     * <p>结束日期，需大于等于起始日期。使用 <a href="https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F">ISO 日期格式</a>。</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 查询媒体处理任务类型，默认查询转码。
-<li>Transcode：转码</li>
-<li>Enhance：增强</li>
-<li>AIAnalysis：智能分析</li>
-<li>AIRecognition：智能识别</li>
-<li>AIReview：内容审核</li>
-<li>Snapshot：截图</li>
-<li>AnimatedGraphics：转动图</li>
-<li>AiQualityControl：质检</li>
-<li>Evaluation：视频评测</li>
-<li>ImageProcess: 图片处理</li>
-<li>AddBlindWatermark: 添加基础版权数字水印</li>
-<li>AddNagraWatermark: 添加NAGRA数字水印</li>
-<li>ExtractBlindWatermark: 提取基础版权数字水印</li>
-<li>AIGC: AIGC</li>
+                     * <p>查询媒体处理任务类型，默认查询转码。</p><li>Transcode：转码</li><li>Enhance：增强</li><li>AIAnalysis：智能分析</li><li>AIRecognition：智能识别</li><li>AIReview：内容审核</li><li>Snapshot：截图</li><li>AnimatedGraphics：转动图</li><li>AiQualityControl：质检</li><li>Evaluation：视频评测</li><li>ImageProcess: 图片处理</li><li>AddBlindWatermark: 添加基础版权数字水印</li><li>AddNagraWatermark: 添加NAGRA数字水印</li><li>ExtractBlindWatermark: 提取基础版权数字水印</li><li>AIGC: AIGCVideo</li>
                      */
                     std::vector<std::string> m_types;
                     bool m_typesHasBeenSet;
 
                     /**
-                     * 媒体处理园区，默认返回 ap-guangzhou 园区。
-<li>ap-guangzhou：广州</li>
-<li>ap-hongkong：中国香港</li>
-<li>ap-taipei：中国台北</li>
-<li>ap-singapore：新加坡</li>
-<li>ap-mumbai：印度</li>
-<li>ap-jakarta：雅加达</li>
-<li>ap-seoul：首尔</li>
-<li>ap-bangkok：泰国</li>
-<li>ap-tokyo：日本</li>
-<li>na-siliconvalley：美国硅谷</li>
-<li>na-ashburn：弗吉尼亚</li>
-<li>na-toronto：多伦多</li>
-<li>sa-saopaulo：圣保罗</li>
-<li>eu-frankfurt：法兰克福</li>
-<li>eu-moscow：俄罗斯</li>
-<li>aws：AWS</li>
+                     * <p>媒体处理园区，默认返回 ap-guangzhou 园区。</p><li>ap-guangzhou：广州</li><li>ap-hongkong：中国香港</li><li>ap-taipei：中国台北</li><li>ap-singapore：新加坡</li><li>ap-mumbai：印度</li><li>ap-jakarta：雅加达</li><li>ap-seoul：首尔</li><li>ap-bangkok：泰国</li><li>ap-tokyo：日本</li><li>na-siliconvalley：美国硅谷</li><li>na-ashburn：弗吉尼亚</li><li>na-toronto：多伦多</li><li>sa-saopaulo：圣保罗</li><li>eu-frankfurt：法兰克福</li><li>eu-moscow：俄罗斯</li><li>aws：AWS</li>
                      */
                     std::vector<std::string> m_processRegions;
                     bool m_processRegionsHasBeenSet;

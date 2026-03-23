@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool DeviceVirtualGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
-                     * @return OsType 系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
+                     * 获取系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)
+                     * @return OsType 系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)
                      * 
                      */
                     int64_t GetOsType() const;
 
                     /**
-                     * 设置系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
-                     * @param _osType 系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
+                     * 设置系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)
+                     * @param _osType 系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)
                      * 
                      */
                     void SetOsType(const int64_t& _osType);
@@ -169,7 +169,7 @@ namespace TencentCloud
                     bool m_deviceVirtualGroupIdHasBeenSet;
 
                     /**
-                     * 系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）
+                     * 系统类型（0: win，1：linux，2: mac，4：android，5：ios，-1：全系统（SaaS一体化版本） ； 不传默认为0）(只支持32位)
                      */
                     int64_t m_osType;
                     bool m_osTypeHasBeenSet;
