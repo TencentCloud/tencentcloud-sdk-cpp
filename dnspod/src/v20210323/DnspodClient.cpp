@@ -140,6 +140,56 @@ DnspodClient::CheckSnapshotRollbackOutcomeCallable DnspodClient::CheckSnapshotRo
     return prom->get_future();
 }
 
+DnspodClient::CreateAndPayDealOutcome DnspodClient::CreateAndPayDeal(const CreateAndPayDealRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAndPayDeal");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAndPayDealResponse rsp = CreateAndPayDealResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAndPayDealOutcome(rsp);
+        else
+            return CreateAndPayDealOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAndPayDealOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::CreateAndPayDealAsync(const CreateAndPayDealRequest& request, const CreateAndPayDealAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAndPayDealRequest&;
+    using Resp = CreateAndPayDealResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAndPayDeal", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DnspodClient::CreateAndPayDealOutcomeCallable DnspodClient::CreateAndPayDealCallable(const CreateAndPayDealRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAndPayDealOutcome>>();
+    CreateAndPayDealAsync(
+    request,
+    [prom](
+        const DnspodClient*,
+        const CreateAndPayDealRequest&,
+        CreateAndPayDealOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DnspodClient::CreateDealOutcome DnspodClient::CreateDeal(const CreateDealRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDeal");

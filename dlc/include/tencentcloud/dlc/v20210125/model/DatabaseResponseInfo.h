@@ -274,6 +274,81 @@ namespace TencentCloud
                      */
                     bool DatabaseIdHasBeenSet() const;
 
+                    /**
+                     * 获取所属catalog名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CatalogName 所属catalog名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCatalogName() const;
+
+                    /**
+                     * 设置所属catalog名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _catalogName 所属catalog名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCatalogName(const std::string& _catalogName);
+
+                    /**
+                     * 判断参数 CatalogName 是否已赋值
+                     * @return CatalogName 是否已赋值
+                     * 
+                     */
+                    bool CatalogNameHasBeenSet() const;
+
+                    /**
+                     * 获取所属catalog 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CatalogType 所属catalog 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCatalogType() const;
+
+                    /**
+                     * 设置所属catalog 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _catalogType 所属catalog 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCatalogType(const std::string& _catalogType);
+
+                    /**
+                     * 判断参数 CatalogType 是否已赋值
+                     * @return CatalogType 是否已赋值
+                     * 
+                     */
+                    bool CatalogTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否InformationSchema
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsInformationSchema 是否InformationSchema
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsInformationSchema() const;
+
+                    /**
+                     * 设置是否InformationSchema
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isInformationSchema 是否InformationSchema
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsInformationSchema(const bool& _isInformationSchema);
+
+                    /**
+                     * 判断参数 IsInformationSchema 是否已赋值
+                     * @return IsInformationSchema 是否已赋值
+                     * 
+                     */
+                    bool IsInformationSchemaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -339,6 +414,27 @@ namespace TencentCloud
                      */
                     std::string m_databaseId;
                     bool m_databaseIdHasBeenSet;
+
+                    /**
+                     * 所属catalog名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_catalogName;
+                    bool m_catalogNameHasBeenSet;
+
+                    /**
+                     * 所属catalog 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_catalogType;
+                    bool m_catalogTypeHasBeenSet;
+
+                    /**
+                     * 是否InformationSchema
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isInformationSchema;
+                    bool m_isInformationSchemaHasBeenSet;
 
                 };
             }

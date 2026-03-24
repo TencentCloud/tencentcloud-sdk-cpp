@@ -1040,6 +1040,56 @@ TcbClient::DeleteUsersOutcomeCallable TcbClient::DeleteUsersCallable(const Delet
     return prom->get_future();
 }
 
+TcbClient::DeleteVmInstanceOutcome TcbClient::DeleteVmInstance(const DeleteVmInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteVmInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteVmInstanceResponse rsp = DeleteVmInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteVmInstanceOutcome(rsp);
+        else
+            return DeleteVmInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteVmInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DeleteVmInstanceAsync(const DeleteVmInstanceRequest& request, const DeleteVmInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteVmInstanceRequest&;
+    using Resp = DeleteVmInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteVmInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DeleteVmInstanceOutcomeCallable TcbClient::DeleteVmInstanceCallable(const DeleteVmInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteVmInstanceOutcome>>();
+    DeleteVmInstanceAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DeleteVmInstanceRequest&,
+        DeleteVmInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::DescribeAuthDomainsOutcome TcbClient::DescribeAuthDomains(const DescribeAuthDomainsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAuthDomains");
@@ -2240,6 +2290,56 @@ TcbClient::DescribeUserListOutcomeCallable TcbClient::DescribeUserListCallable(c
     return prom->get_future();
 }
 
+TcbClient::DescribeVmInstancesOutcome TcbClient::DescribeVmInstances(const DescribeVmInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVmInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVmInstancesResponse rsp = DescribeVmInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVmInstancesOutcome(rsp);
+        else
+            return DescribeVmInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVmInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeVmInstancesAsync(const DescribeVmInstancesRequest& request, const DescribeVmInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeVmInstancesRequest&;
+    using Resp = DescribeVmInstancesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeVmInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeVmInstancesOutcomeCallable TcbClient::DescribeVmInstancesCallable(const DescribeVmInstancesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeVmInstancesOutcome>>();
+    DescribeVmInstancesAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeVmInstancesRequest&,
+        DescribeVmInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::DescribeVmSpecOutcome TcbClient::DescribeVmSpec(const DescribeVmSpecRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVmSpec");
@@ -2532,6 +2632,56 @@ TcbClient::GetProvidersOutcomeCallable TcbClient::GetProvidersCallable(const Get
         const TcbClient*,
         const GetProvidersRequest&,
         GetProvidersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::InquireVmPriceOutcome TcbClient::InquireVmPrice(const InquireVmPriceRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquireVmPrice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquireVmPriceResponse rsp = InquireVmPriceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquireVmPriceOutcome(rsp);
+        else
+            return InquireVmPriceOutcome(o.GetError());
+    }
+    else
+    {
+        return InquireVmPriceOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::InquireVmPriceAsync(const InquireVmPriceRequest& request, const InquireVmPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const InquireVmPriceRequest&;
+    using Resp = InquireVmPriceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "InquireVmPrice", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::InquireVmPriceOutcomeCallable TcbClient::InquireVmPriceCallable(const InquireVmPriceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<InquireVmPriceOutcome>>();
+    InquireVmPriceAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const InquireVmPriceRequest&,
+        InquireVmPriceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

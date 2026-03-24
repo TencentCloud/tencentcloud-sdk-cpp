@@ -27,6 +27,8 @@
 #include <tencentcloud/dnspod/v20210323/model/CheckRecordSnapshotRollbackResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/CheckSnapshotRollbackRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/CheckSnapshotRollbackResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateAndPayDealRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateAndPayDealResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateDealRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateDealResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateDomainRequest.h>
@@ -231,6 +233,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckSnapshotRollbackResponse> CheckSnapshotRollbackOutcome;
                 typedef std::future<CheckSnapshotRollbackOutcome> CheckSnapshotRollbackOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::CheckSnapshotRollbackRequest&, CheckSnapshotRollbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckSnapshotRollbackAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAndPayDealResponse> CreateAndPayDealOutcome;
+                typedef std::future<CreateAndPayDealOutcome> CreateAndPayDealOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::CreateAndPayDealRequest&, CreateAndPayDealOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndPayDealAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDealResponse> CreateDealOutcome;
                 typedef std::future<CreateDealOutcome> CreateDealOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::CreateDealRequest&, CreateDealOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDealAsyncHandler;
@@ -527,6 +532,15 @@ namespace TencentCloud
                 CheckSnapshotRollbackOutcome CheckSnapshotRollback(const Model::CheckSnapshotRollbackRequest &request);
                 void CheckSnapshotRollbackAsync(const Model::CheckSnapshotRollbackRequest& request, const CheckSnapshotRollbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckSnapshotRollbackOutcomeCallable CheckSnapshotRollbackCallable(const Model::CheckSnapshotRollbackRequest& request);
+
+                /**
+                 *DNSPod商品下单并支付
+                 * @param req CreateAndPayDealRequest
+                 * @return CreateAndPayDealOutcome
+                 */
+                CreateAndPayDealOutcome CreateAndPayDeal(const Model::CreateAndPayDealRequest &request);
+                void CreateAndPayDealAsync(const Model::CreateAndPayDealRequest& request, const CreateAndPayDealAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAndPayDealOutcomeCallable CreateAndPayDealCallable(const Model::CreateAndPayDealRequest& request);
 
                 /**
                  *DNSPod商品下单

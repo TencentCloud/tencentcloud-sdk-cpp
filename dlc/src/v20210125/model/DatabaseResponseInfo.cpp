@@ -30,7 +30,10 @@ DatabaseResponseInfo::DatabaseResponseInfo() :
     m_userAliasHasBeenSet(false),
     m_userSubUinHasBeenSet(false),
     m_governPolicyHasBeenSet(false),
-    m_databaseIdHasBeenSet(false)
+    m_databaseIdHasBeenSet(false),
+    m_catalogNameHasBeenSet(false),
+    m_catalogTypeHasBeenSet(false),
+    m_isInformationSchemaHasBeenSet(false)
 {
 }
 
@@ -156,6 +159,36 @@ CoreInternalOutcome DatabaseResponseInfo::Deserialize(const rapidjson::Value &va
         m_databaseIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CatalogName") && !value["CatalogName"].IsNull())
+    {
+        if (!value["CatalogName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseResponseInfo.CatalogName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_catalogName = string(value["CatalogName"].GetString());
+        m_catalogNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("CatalogType") && !value["CatalogType"].IsNull())
+    {
+        if (!value["CatalogType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseResponseInfo.CatalogType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_catalogType = string(value["CatalogType"].GetString());
+        m_catalogTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsInformationSchema") && !value["IsInformationSchema"].IsNull())
+    {
+        if (!value["IsInformationSchema"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseResponseInfo.IsInformationSchema` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isInformationSchema = value["IsInformationSchema"].GetBool();
+        m_isInformationSchemaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -249,6 +282,30 @@ void DatabaseResponseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "DatabaseId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_databaseId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_catalogNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CatalogName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_catalogName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_catalogTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CatalogType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_catalogType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isInformationSchemaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInformationSchema";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isInformationSchema, allocator);
     }
 
 }
@@ -412,5 +469,53 @@ void DatabaseResponseInfo::SetDatabaseId(const string& _databaseId)
 bool DatabaseResponseInfo::DatabaseIdHasBeenSet() const
 {
     return m_databaseIdHasBeenSet;
+}
+
+string DatabaseResponseInfo::GetCatalogName() const
+{
+    return m_catalogName;
+}
+
+void DatabaseResponseInfo::SetCatalogName(const string& _catalogName)
+{
+    m_catalogName = _catalogName;
+    m_catalogNameHasBeenSet = true;
+}
+
+bool DatabaseResponseInfo::CatalogNameHasBeenSet() const
+{
+    return m_catalogNameHasBeenSet;
+}
+
+string DatabaseResponseInfo::GetCatalogType() const
+{
+    return m_catalogType;
+}
+
+void DatabaseResponseInfo::SetCatalogType(const string& _catalogType)
+{
+    m_catalogType = _catalogType;
+    m_catalogTypeHasBeenSet = true;
+}
+
+bool DatabaseResponseInfo::CatalogTypeHasBeenSet() const
+{
+    return m_catalogTypeHasBeenSet;
+}
+
+bool DatabaseResponseInfo::GetIsInformationSchema() const
+{
+    return m_isInformationSchema;
+}
+
+void DatabaseResponseInfo::SetIsInformationSchema(const bool& _isInformationSchema)
+{
+    m_isInformationSchema = _isInformationSchema;
+    m_isInformationSchemaHasBeenSet = true;
+}
+
+bool DatabaseResponseInfo::IsInformationSchemaHasBeenSet() const
+{
+    return m_isInformationSchemaHasBeenSet;
 }
 

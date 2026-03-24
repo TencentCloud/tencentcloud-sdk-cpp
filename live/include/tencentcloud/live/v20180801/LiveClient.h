@@ -107,6 +107,8 @@
 #include <tencentcloud/live/v20180801/model/CreateRecordTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateScreenshotTaskRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateScreenshotTaskResponse.h>
+#include <tencentcloud/live/v20180801/model/CreateVideoRedrawTaskRequest.h>
+#include <tencentcloud/live/v20180801/model/CreateVideoRedrawTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteAuditKeywordsRequest.h>
 #include <tencentcloud/live/v20180801/model/DeleteAuditKeywordsResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteCasterRequest.h>
@@ -611,6 +613,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateScreenshotTaskResponse> CreateScreenshotTaskOutcome;
                 typedef std::future<CreateScreenshotTaskOutcome> CreateScreenshotTaskOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateScreenshotTaskRequest&, CreateScreenshotTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScreenshotTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVideoRedrawTaskResponse> CreateVideoRedrawTaskOutcome;
+                typedef std::future<CreateVideoRedrawTaskOutcome> CreateVideoRedrawTaskOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::CreateVideoRedrawTaskRequest&, CreateVideoRedrawTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoRedrawTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAuditKeywordsResponse> DeleteAuditKeywordsOutcome;
                 typedef std::future<DeleteAuditKeywordsOutcome> DeleteAuditKeywordsOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DeleteAuditKeywordsRequest&, DeleteAuditKeywordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuditKeywordsAsyncHandler;
@@ -1596,6 +1601,15 @@ namespace TencentCloud
                 CreateScreenshotTaskOutcome CreateScreenshotTask(const Model::CreateScreenshotTaskRequest &request);
                 void CreateScreenshotTaskAsync(const Model::CreateScreenshotTaskRequest& request, const CreateScreenshotTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateScreenshotTaskOutcomeCallable CreateScreenshotTaskCallable(const Model::CreateScreenshotTaskRequest& request);
+
+                /**
+                 *创建AI转绘任务
+                 * @param req CreateVideoRedrawTaskRequest
+                 * @return CreateVideoRedrawTaskOutcome
+                 */
+                CreateVideoRedrawTaskOutcome CreateVideoRedrawTask(const Model::CreateVideoRedrawTaskRequest &request);
+                void CreateVideoRedrawTaskAsync(const Model::CreateVideoRedrawTaskRequest& request, const CreateVideoRedrawTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVideoRedrawTaskOutcomeCallable CreateVideoRedrawTaskCallable(const Model::CreateVideoRedrawTaskRequest& request);
 
                 /**
                  *删除关键词信息。

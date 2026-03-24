@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例 ID。
-                     * @return LoadBalancerId 负载均衡实例 ID。
+                     * 获取<p>负载均衡实例 ID。</p>
+                     * @return LoadBalancerId <p>负载均衡实例 ID。</p>
                      * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡实例 ID。
-                     * @param _loadBalancerId 负载均衡实例 ID。
+                     * 设置<p>负载均衡实例 ID。</p>
+                     * @param _loadBalancerId <p>负载均衡实例 ID。</p>
                      * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取要批量修改权重的列表。
-                     * @return ModifyList 要批量修改权重的列表。
+                     * 获取<p>要批量修改权重的列表。ModifyList数组最多100个元素，ModifyList[i].Targets最多50个，全部Targets累加不超过500。</p>
+                     * @return ModifyList <p>要批量修改权重的列表。ModifyList数组最多100个元素，ModifyList[i].Targets最多50个，全部Targets累加不超过500。</p>
                      * 
                      */
                     std::vector<RsWeightRule> GetModifyList() const;
 
                     /**
-                     * 设置要批量修改权重的列表。
-                     * @param _modifyList 要批量修改权重的列表。
+                     * 设置<p>要批量修改权重的列表。ModifyList数组最多100个元素，ModifyList[i].Targets最多50个，全部Targets累加不超过500。</p>
+                     * @param _modifyList <p>要批量修改权重的列表。ModifyList数组最多100个元素，ModifyList[i].Targets最多50个，全部Targets累加不超过500。</p>
                      * 
                      */
                     void SetModifyList(const std::vector<RsWeightRule>& _modifyList);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡实例 ID。
+                     * <p>负载均衡实例 ID。</p>
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 要批量修改权重的列表。
+                     * <p>要批量修改权重的列表。ModifyList数组最多100个元素，ModifyList[i].Targets最多50个，全部Targets累加不超过500。</p>
                      */
                     std::vector<RsWeightRule> m_modifyList;
                     bool m_modifyListHasBeenSet;

@@ -28,7 +28,8 @@ ProdSchedulerTask::ProdSchedulerTask() :
     m_taskTypeHasBeenSet(false),
     m_scheduleTimeZoneHasBeenSet(false),
     m_inChargeIdListHasBeenSet(false),
-    m_inChargeNameListHasBeenSet(false)
+    m_inChargeNameListHasBeenSet(false),
+    m_taskStatusHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,16 @@ CoreInternalOutcome ProdSchedulerTask::Deserialize(const rapidjson::Value &value
         m_inChargeNameListHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskStatus") && !value["TaskStatus"].IsNull())
+    {
+        if (!value["TaskStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProdSchedulerTask.TaskStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskStatus = string(value["TaskStatus"].GetString());
+        m_taskStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +213,14 @@ void ProdSchedulerTask::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_taskStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -333,5 +352,21 @@ void ProdSchedulerTask::SetInChargeNameList(const vector<string>& _inChargeNameL
 bool ProdSchedulerTask::InChargeNameListHasBeenSet() const
 {
     return m_inChargeNameListHasBeenSet;
+}
+
+string ProdSchedulerTask::GetTaskStatus() const
+{
+    return m_taskStatus;
+}
+
+void ProdSchedulerTask::SetTaskStatus(const string& _taskStatus)
+{
+    m_taskStatus = _taskStatus;
+    m_taskStatusHasBeenSet = true;
+}
+
+bool ProdSchedulerTask::TaskStatusHasBeenSet() const
+{
+    return m_taskStatusHasBeenSet;
 }
 

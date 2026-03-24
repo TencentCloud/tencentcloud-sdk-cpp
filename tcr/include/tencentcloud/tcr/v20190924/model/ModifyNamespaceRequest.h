@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcr/v20190924/model/CVEWhitelistItem.h>
+#include <tencentcloud/tcr/v20190924/model/TagSpecification.h>
 
 
 namespace TencentCloud
@@ -44,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例Id
-                     * @return RegistryId 实例Id
+                     * 获取<p>实例Id</p>
+                     * @return RegistryId <p>实例Id</p>
                      * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
-                     * 设置实例Id
-                     * @param _registryId 实例Id
+                     * 设置<p>实例Id</p>
+                     * @param _registryId <p>实例Id</p>
                      * 
                      */
                     void SetRegistryId(const std::string& _registryId);
@@ -65,15 +66,15 @@ namespace TencentCloud
                     bool RegistryIdHasBeenSet() const;
 
                     /**
-                     * 获取命名空间名称
-                     * @return NamespaceName 命名空间名称
+                     * 获取<p>命名空间名称</p>
+                     * @return NamespaceName <p>命名空间名称</p>
                      * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
-                     * 设置命名空间名称
-                     * @param _namespaceName 命名空间名称
+                     * 设置<p>命名空间名称</p>
+                     * @param _namespaceName <p>命名空间名称</p>
                      * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
@@ -86,15 +87,15 @@ namespace TencentCloud
                     bool NamespaceNameHasBeenSet() const;
 
                     /**
-                     * 获取访问级别，True为公开，False为私有
-                     * @return IsPublic 访问级别，True为公开，False为私有
+                     * 获取<p>访问级别，True为公开，False为私有</p>
+                     * @return IsPublic <p>访问级别，True为公开，False为私有</p>
                      * 
                      */
                     bool GetIsPublic() const;
 
                     /**
-                     * 设置访问级别，True为公开，False为私有
-                     * @param _isPublic 访问级别，True为公开，False为私有
+                     * 设置<p>访问级别，True为公开，False为私有</p>
+                     * @param _isPublic <p>访问级别，True为公开，False为私有</p>
                      * 
                      */
                     void SetIsPublic(const bool& _isPublic);
@@ -107,15 +108,15 @@ namespace TencentCloud
                     bool IsPublicHasBeenSet() const;
 
                     /**
-                     * 获取扫描级别，True为自动，False为手动
-                     * @return IsAutoScan 扫描级别，True为自动，False为手动
+                     * 获取<p>扫描级别，True为自动，False为手动</p>
+                     * @return IsAutoScan <p>扫描级别，True为自动，False为手动</p>
                      * 
                      */
                     bool GetIsAutoScan() const;
 
                     /**
-                     * 设置扫描级别，True为自动，False为手动
-                     * @param _isAutoScan 扫描级别，True为自动，False为手动
+                     * 设置<p>扫描级别，True为自动，False为手动</p>
+                     * @param _isAutoScan <p>扫描级别，True为自动，False为手动</p>
                      * 
                      */
                     void SetIsAutoScan(const bool& _isAutoScan);
@@ -128,15 +129,15 @@ namespace TencentCloud
                     bool IsAutoScanHasBeenSet() const;
 
                     /**
-                     * 获取阻断开关，True为开放，False为关闭
-                     * @return IsPreventVUL 阻断开关，True为开放，False为关闭
+                     * 获取<p>阻断开关，True为开放，False为关闭</p>
+                     * @return IsPreventVUL <p>阻断开关，True为开放，False为关闭</p>
                      * 
                      */
                     bool GetIsPreventVUL() const;
 
                     /**
-                     * 设置阻断开关，True为开放，False为关闭
-                     * @param _isPreventVUL 阻断开关，True为开放，False为关闭
+                     * 设置<p>阻断开关，True为开放，False为关闭</p>
+                     * @param _isPreventVUL <p>阻断开关，True为开放，False为关闭</p>
                      * 
                      */
                     void SetIsPreventVUL(const bool& _isPreventVUL);
@@ -149,15 +150,15 @@ namespace TencentCloud
                     bool IsPreventVULHasBeenSet() const;
 
                     /**
-                     * 获取阻断漏洞等级，目前仅支持 low、medium、high
-                     * @return Severity 阻断漏洞等级，目前仅支持 low、medium、high
+                     * 获取<p>阻断漏洞等级，目前仅支持 low、medium、high</p>
+                     * @return Severity <p>阻断漏洞等级，目前仅支持 low、medium、high</p>
                      * 
                      */
                     std::string GetSeverity() const;
 
                     /**
-                     * 设置阻断漏洞等级，目前仅支持 low、medium、high
-                     * @param _severity 阻断漏洞等级，目前仅支持 low、medium、high
+                     * 设置<p>阻断漏洞等级，目前仅支持 low、medium、high</p>
+                     * @param _severity <p>阻断漏洞等级，目前仅支持 low、medium、high</p>
                      * 
                      */
                     void SetSeverity(const std::string& _severity);
@@ -170,15 +171,15 @@ namespace TencentCloud
                     bool SeverityHasBeenSet() const;
 
                     /**
-                     * 获取漏洞白名单列表
-                     * @return CVEWhitelistItems 漏洞白名单列表
+                     * 获取<p>漏洞白名单列表</p>
+                     * @return CVEWhitelistItems <p>漏洞白名单列表</p>
                      * 
                      */
                     std::vector<CVEWhitelistItem> GetCVEWhitelistItems() const;
 
                     /**
-                     * 设置漏洞白名单列表
-                     * @param _cVEWhitelistItems 漏洞白名单列表
+                     * 设置<p>漏洞白名单列表</p>
+                     * @param _cVEWhitelistItems <p>漏洞白名单列表</p>
                      * 
                      */
                     void SetCVEWhitelistItems(const std::vector<CVEWhitelistItem>& _cVEWhitelistItems);
@@ -190,49 +191,76 @@ namespace TencentCloud
                      */
                     bool CVEWhitelistItemsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>tag列表</p>
+                     * @return TagSpecification <p>tag列表</p>
+                     * 
+                     */
+                    TagSpecification GetTagSpecification() const;
+
+                    /**
+                     * 设置<p>tag列表</p>
+                     * @param _tagSpecification <p>tag列表</p>
+                     * 
+                     */
+                    void SetTagSpecification(const TagSpecification& _tagSpecification);
+
+                    /**
+                     * 判断参数 TagSpecification 是否已赋值
+                     * @return TagSpecification 是否已赋值
+                     * 
+                     */
+                    bool TagSpecificationHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例Id
+                     * <p>实例Id</p>
                      */
                     std::string m_registryId;
                     bool m_registryIdHasBeenSet;
 
                     /**
-                     * 命名空间名称
+                     * <p>命名空间名称</p>
                      */
                     std::string m_namespaceName;
                     bool m_namespaceNameHasBeenSet;
 
                     /**
-                     * 访问级别，True为公开，False为私有
+                     * <p>访问级别，True为公开，False为私有</p>
                      */
                     bool m_isPublic;
                     bool m_isPublicHasBeenSet;
 
                     /**
-                     * 扫描级别，True为自动，False为手动
+                     * <p>扫描级别，True为自动，False为手动</p>
                      */
                     bool m_isAutoScan;
                     bool m_isAutoScanHasBeenSet;
 
                     /**
-                     * 阻断开关，True为开放，False为关闭
+                     * <p>阻断开关，True为开放，False为关闭</p>
                      */
                     bool m_isPreventVUL;
                     bool m_isPreventVULHasBeenSet;
 
                     /**
-                     * 阻断漏洞等级，目前仅支持 low、medium、high
+                     * <p>阻断漏洞等级，目前仅支持 low、medium、high</p>
                      */
                     std::string m_severity;
                     bool m_severityHasBeenSet;
 
                     /**
-                     * 漏洞白名单列表
+                     * <p>漏洞白名单列表</p>
                      */
                     std::vector<CVEWhitelistItem> m_cVEWhitelistItems;
                     bool m_cVEWhitelistItemsHasBeenSet;
+
+                    /**
+                     * <p>tag列表</p>
+                     */
+                    TagSpecification m_tagSpecification;
+                    bool m_tagSpecificationHasBeenSet;
 
                 };
             }

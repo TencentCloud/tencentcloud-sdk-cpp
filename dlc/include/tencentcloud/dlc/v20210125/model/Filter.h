@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 查询列表过滤条件参数
+                * 筛选条件定义
                 */
                 class Filter : public AbstractModel
                 {

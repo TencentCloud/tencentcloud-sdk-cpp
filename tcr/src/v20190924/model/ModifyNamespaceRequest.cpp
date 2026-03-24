@@ -29,7 +29,8 @@ ModifyNamespaceRequest::ModifyNamespaceRequest() :
     m_isAutoScanHasBeenSet(false),
     m_isPreventVULHasBeenSet(false),
     m_severityHasBeenSet(false),
-    m_cVEWhitelistItemsHasBeenSet(false)
+    m_cVEWhitelistItemsHasBeenSet(false),
+    m_tagSpecificationHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,15 @@ string ModifyNamespaceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_tagSpecificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagSpecification";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tagSpecification.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -221,6 +231,22 @@ void ModifyNamespaceRequest::SetCVEWhitelistItems(const vector<CVEWhitelistItem>
 bool ModifyNamespaceRequest::CVEWhitelistItemsHasBeenSet() const
 {
     return m_cVEWhitelistItemsHasBeenSet;
+}
+
+TagSpecification ModifyNamespaceRequest::GetTagSpecification() const
+{
+    return m_tagSpecification;
+}
+
+void ModifyNamespaceRequest::SetTagSpecification(const TagSpecification& _tagSpecification)
+{
+    m_tagSpecification = _tagSpecification;
+    m_tagSpecificationHasBeenSet = true;
+}
+
+bool ModifyNamespaceRequest::TagSpecificationHasBeenSet() const
+{
+    return m_tagSpecificationHasBeenSet;
 }
 
 

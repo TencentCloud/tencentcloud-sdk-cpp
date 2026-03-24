@@ -5340,6 +5340,56 @@ IotexplorerClient::DescribeProductCloudStorageAIServiceOutcomeCallable Iotexplor
     return prom->get_future();
 }
 
+IotexplorerClient::DescribeProductDynamicRegisterOutcome IotexplorerClient::DescribeProductDynamicRegister(const DescribeProductDynamicRegisterRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProductDynamicRegister");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProductDynamicRegisterResponse rsp = DescribeProductDynamicRegisterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProductDynamicRegisterOutcome(rsp);
+        else
+            return DescribeProductDynamicRegisterOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProductDynamicRegisterOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeProductDynamicRegisterAsync(const DescribeProductDynamicRegisterRequest& request, const DescribeProductDynamicRegisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeProductDynamicRegisterRequest&;
+    using Resp = DescribeProductDynamicRegisterResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeProductDynamicRegister", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DescribeProductDynamicRegisterOutcomeCallable IotexplorerClient::DescribeProductDynamicRegisterCallable(const DescribeProductDynamicRegisterRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeProductDynamicRegisterOutcome>>();
+    DescribeProductDynamicRegisterAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DescribeProductDynamicRegisterRequest&,
+        DescribeProductDynamicRegisterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::DescribeProjectOutcome IotexplorerClient::DescribeProject(const DescribeProjectRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeProject");
@@ -8432,6 +8482,56 @@ IotexplorerClient::ModifyProductCloudStorageAIServiceOutcomeCallable Iotexplorer
         const IotexplorerClient*,
         const ModifyProductCloudStorageAIServiceRequest&,
         ModifyProductCloudStorageAIServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::ModifyProductDynamicRegisterOutcome IotexplorerClient::ModifyProductDynamicRegister(const ModifyProductDynamicRegisterRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyProductDynamicRegister");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyProductDynamicRegisterResponse rsp = ModifyProductDynamicRegisterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyProductDynamicRegisterOutcome(rsp);
+        else
+            return ModifyProductDynamicRegisterOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyProductDynamicRegisterOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ModifyProductDynamicRegisterAsync(const ModifyProductDynamicRegisterRequest& request, const ModifyProductDynamicRegisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyProductDynamicRegisterRequest&;
+    using Resp = ModifyProductDynamicRegisterResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyProductDynamicRegister", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::ModifyProductDynamicRegisterOutcomeCallable IotexplorerClient::ModifyProductDynamicRegisterCallable(const ModifyProductDynamicRegisterRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyProductDynamicRegisterOutcome>>();
+    ModifyProductDynamicRegisterAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const ModifyProductDynamicRegisterRequest&,
+        ModifyProductDynamicRegisterOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

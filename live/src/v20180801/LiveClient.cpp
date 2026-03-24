@@ -2140,6 +2140,56 @@ LiveClient::CreateScreenshotTaskOutcomeCallable LiveClient::CreateScreenshotTask
     return prom->get_future();
 }
 
+LiveClient::CreateVideoRedrawTaskOutcome LiveClient::CreateVideoRedrawTask(const CreateVideoRedrawTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVideoRedrawTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVideoRedrawTaskResponse rsp = CreateVideoRedrawTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVideoRedrawTaskOutcome(rsp);
+        else
+            return CreateVideoRedrawTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVideoRedrawTaskOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateVideoRedrawTaskAsync(const CreateVideoRedrawTaskRequest& request, const CreateVideoRedrawTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateVideoRedrawTaskRequest&;
+    using Resp = CreateVideoRedrawTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateVideoRedrawTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::CreateVideoRedrawTaskOutcomeCallable LiveClient::CreateVideoRedrawTaskCallable(const CreateVideoRedrawTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateVideoRedrawTaskOutcome>>();
+    CreateVideoRedrawTaskAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const CreateVideoRedrawTaskRequest&,
+        CreateVideoRedrawTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LiveClient::DeleteAuditKeywordsOutcome LiveClient::DeleteAuditKeywords(const DeleteAuditKeywordsRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAuditKeywords");

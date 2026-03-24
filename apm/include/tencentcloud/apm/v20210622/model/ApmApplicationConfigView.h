@@ -1099,6 +1099,27 @@ namespace TencentCloud
                      */
                     bool ResponseDurationWarningThresholdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否使用探针默认熔断阈值</p>
+                     * @return UseDefaultFuseConfig <p>是否使用探针默认熔断阈值</p>
+                     * 
+                     */
+                    bool GetUseDefaultFuseConfig() const;
+
+                    /**
+                     * 设置<p>是否使用探针默认熔断阈值</p>
+                     * @param _useDefaultFuseConfig <p>是否使用探针默认熔断阈值</p>
+                     * 
+                     */
+                    void SetUseDefaultFuseConfig(const bool& _useDefaultFuseConfig);
+
+                    /**
+                     * 判断参数 UseDefaultFuseConfig 是否已赋值
+                     * @return UseDefaultFuseConfig 是否已赋值
+                     * 
+                     */
+                    bool UseDefaultFuseConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1400,6 +1421,12 @@ namespace TencentCloud
                      */
                     int64_t m_responseDurationWarningThreshold;
                     bool m_responseDurationWarningThresholdHasBeenSet;
+
+                    /**
+                     * <p>是否使用探针默认熔断阈值</p>
+                     */
+                    bool m_useDefaultFuseConfig;
+                    bool m_useDefaultFuseConfigHasBeenSet;
 
                 };
             }

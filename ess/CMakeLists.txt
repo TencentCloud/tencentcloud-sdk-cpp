@@ -100,6 +100,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/VerifyDigitalDataSignRequest.h
   include/tencentcloud/ess/v20201111/model/IntegrationDepartment.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationRolesResponse.h
+  include/tencentcloud/ess/v20201111/model/ModifyExtendedServiceResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeBillUsageDetailResponse.h
   include/tencentcloud/ess/v20201111/model/FlowOperateLimit.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowBriefsResponse.h
@@ -218,6 +219,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/Caller.h
   include/tencentcloud/ess/v20201111/model/ExportContractComparisonTaskResponse.h
   include/tencentcloud/ess/v20201111/model/EmbedUrlOption.h
+  include/tencentcloud/ess/v20201111/model/DescribeContractReviewMarkedRiskExportTaskRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeContractComparisonTaskResponse.h
   include/tencentcloud/ess/v20201111/model/CreateModifyAdminAuthorizationUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateOrganizationInfoChangeUrlResponse.h
@@ -320,7 +322,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/VerifyDigitFileResult.h
   include/tencentcloud/ess/v20201111/model/CreatePrepareFlowRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeCancelFlowsTaskRequest.h
-  include/tencentcloud/ess/v20201111/model/ModifyExtendedServiceResponse.h
+  include/tencentcloud/ess/v20201111/model/DescribeContractReviewMarkedRiskExportTaskResponse.h
   include/tencentcloud/ess/v20201111/model/CreateSealPolicyRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeContractReviewTaskResponse.h
   include/tencentcloud/ess/v20201111/model/CancelFlowRequest.h
@@ -403,6 +405,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateContractReviewChecklistWebUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateUserMobileChangeUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateEmbedWebUrlRequest.h
+  include/tencentcloud/ess/v20201111/model/ExportContractReviewMarkedRiskResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowGroupByFilesResponse.h
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationRoleUsersRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowSignUrlRequest.h
@@ -417,6 +420,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DeleteOrganizationAuthorizationsRequest.h
   include/tencentcloud/ess/v20201111/model/CancelUserAutoSignEnableUrlRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeUserVerifyStatusResponse.h
+  include/tencentcloud/ess/v20201111/model/ExportContractReviewMarkedRiskRequest.h
   include/tencentcloud/ess/v20201111/model/OrgBillSummary.h
   include/tencentcloud/ess/v20201111/model/SubOrgBillSummary.h
   include/tencentcloud/ess/v20201111/model/DescribeBillUsageRequest.h
@@ -529,6 +533,7 @@ set(ess_src
   src/v20201111/model/VerifyDigitalDataSignRequest.cpp
   src/v20201111/model/IntegrationDepartment.cpp
   src/v20201111/model/DescribeIntegrationRolesResponse.cpp
+  src/v20201111/model/ModifyExtendedServiceResponse.cpp
   src/v20201111/model/DescribeBillUsageDetailResponse.cpp
   src/v20201111/model/FlowOperateLimit.cpp
   src/v20201111/model/DescribeFlowBriefsResponse.cpp
@@ -647,6 +652,7 @@ set(ess_src
   src/v20201111/model/Caller.cpp
   src/v20201111/model/ExportContractComparisonTaskResponse.cpp
   src/v20201111/model/EmbedUrlOption.cpp
+  src/v20201111/model/DescribeContractReviewMarkedRiskExportTaskRequest.cpp
   src/v20201111/model/DescribeContractComparisonTaskResponse.cpp
   src/v20201111/model/CreateModifyAdminAuthorizationUrlResponse.cpp
   src/v20201111/model/CreateOrganizationInfoChangeUrlResponse.cpp
@@ -749,7 +755,7 @@ set(ess_src
   src/v20201111/model/VerifyDigitFileResult.cpp
   src/v20201111/model/CreatePrepareFlowRequest.cpp
   src/v20201111/model/DescribeCancelFlowsTaskRequest.cpp
-  src/v20201111/model/ModifyExtendedServiceResponse.cpp
+  src/v20201111/model/DescribeContractReviewMarkedRiskExportTaskResponse.cpp
   src/v20201111/model/CreateSealPolicyRequest.cpp
   src/v20201111/model/DescribeContractReviewTaskResponse.cpp
   src/v20201111/model/CancelFlowRequest.cpp
@@ -832,6 +838,7 @@ set(ess_src
   src/v20201111/model/CreateContractReviewChecklistWebUrlRequest.cpp
   src/v20201111/model/CreateUserMobileChangeUrlRequest.cpp
   src/v20201111/model/CreateEmbedWebUrlRequest.cpp
+  src/v20201111/model/ExportContractReviewMarkedRiskResponse.cpp
   src/v20201111/model/CreateFlowGroupByFilesResponse.cpp
   src/v20201111/model/DeleteIntegrationRoleUsersRequest.cpp
   src/v20201111/model/CreateFlowSignUrlRequest.cpp
@@ -846,6 +853,7 @@ set(ess_src
   src/v20201111/model/DeleteOrganizationAuthorizationsRequest.cpp
   src/v20201111/model/CancelUserAutoSignEnableUrlRequest.cpp
   src/v20201111/model/DescribeUserVerifyStatusResponse.cpp
+  src/v20201111/model/ExportContractReviewMarkedRiskRequest.cpp
   src/v20201111/model/OrgBillSummary.cpp
   src/v20201111/model/SubOrgBillSummary.cpp
   src/v20201111/model/DescribeBillUsageRequest.cpp

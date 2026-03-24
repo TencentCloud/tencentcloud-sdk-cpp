@@ -80,7 +80,8 @@ ModifyApmApplicationConfigRequest::ModifyApmApplicationConfigRequest() :
     m_autoProfilingConfigHasBeenSet(false),
     m_enableThresholdConfigHasBeenSet(false),
     m_errRateThresholdHasBeenSet(false),
-    m_responseDurationWarningThresholdHasBeenSet(false)
+    m_responseDurationWarningThresholdHasBeenSet(false),
+    m_useDefaultFuseConfigHasBeenSet(false)
 {
 }
 
@@ -569,6 +570,14 @@ string ModifyApmApplicationConfigRequest::ToJsonString() const
         string key = "ResponseDurationWarningThreshold";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_responseDurationWarningThreshold, allocator);
+    }
+
+    if (m_useDefaultFuseConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseDefaultFuseConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useDefaultFuseConfig, allocator);
     }
 
 
@@ -1505,6 +1514,22 @@ void ModifyApmApplicationConfigRequest::SetResponseDurationWarningThreshold(cons
 bool ModifyApmApplicationConfigRequest::ResponseDurationWarningThresholdHasBeenSet() const
 {
     return m_responseDurationWarningThresholdHasBeenSet;
+}
+
+bool ModifyApmApplicationConfigRequest::GetUseDefaultFuseConfig() const
+{
+    return m_useDefaultFuseConfig;
+}
+
+void ModifyApmApplicationConfigRequest::SetUseDefaultFuseConfig(const bool& _useDefaultFuseConfig)
+{
+    m_useDefaultFuseConfig = _useDefaultFuseConfig;
+    m_useDefaultFuseConfigHasBeenSet = true;
+}
+
+bool ModifyApmApplicationConfigRequest::UseDefaultFuseConfigHasBeenSet() const
+{
+    return m_useDefaultFuseConfigHasBeenSet;
 }
 
 

@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取记录数
+                     * 获取查询结果总数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount 记录数
+                     * @return TotalCount 查询结果总数量
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
-                     * 设置记录数
+                     * 设置查询结果总数量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _totalCount 记录数
+                     * @param _totalCount 查询结果总数量
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,10 +97,35 @@ namespace TencentCloud
                      */
                     bool ItemsHasBeenSet() const;
 
+                    /**
+                     * 获取已开启监控任务数量（在查询结果总量中）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MonitorEnabledCount 已开启监控任务数量（在查询结果总量中）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetMonitorEnabledCount() const;
+
+                    /**
+                     * 设置已开启监控任务数量（在查询结果总量中）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _monitorEnabledCount 已开启监控任务数量（在查询结果总量中）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMonitorEnabledCount(const uint64_t& _monitorEnabledCount);
+
+                    /**
+                     * 判断参数 MonitorEnabledCount 是否已赋值
+                     * @return MonitorEnabledCount 是否已赋值
+                     * 
+                     */
+                    bool MonitorEnabledCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 记录数
+                     * 查询结果总数量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
@@ -112,6 +137,13 @@ namespace TencentCloud
                      */
                     std::vector<RuleGroup> m_items;
                     bool m_itemsHasBeenSet;
+
+                    /**
+                     * 已开启监控任务数量（在查询结果总量中）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_monitorEnabledCount;
+                    bool m_monitorEnabledCountHasBeenSet;
 
                 };
             }

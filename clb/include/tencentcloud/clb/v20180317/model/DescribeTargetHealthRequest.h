@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要查询的负载均衡实例ID列表。
-                     * @return LoadBalancerIds 要查询的负载均衡实例ID列表。
+                     * 获取<p>要查询的负载均衡实例ID列表。数组大小最大支持30。</p>
+                     * @return LoadBalancerIds <p>要查询的负载均衡实例ID列表。数组大小最大支持30。</p>
                      * 
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
 
                     /**
-                     * 设置要查询的负载均衡实例ID列表。
-                     * @param _loadBalancerIds 要查询的负载均衡实例ID列表。
+                     * 设置<p>要查询的负载均衡实例ID列表。数组大小最大支持30。</p>
+                     * @param _loadBalancerIds <p>要查询的负载均衡实例ID列表。数组大小最大支持30。</p>
                      * 
                      */
                     void SetLoadBalancerIds(const std::vector<std::string>& _loadBalancerIds);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool LoadBalancerIdsHasBeenSet() const;
 
                     /**
-                     * 获取要查询的监听器ID列表。
-                     * @return ListenerIds 要查询的监听器ID列表。
+                     * 获取<p>要查询的监听器ID列表。</p>
+                     * @return ListenerIds <p>要查询的监听器ID列表。</p>
                      * 
                      */
                     std::vector<std::string> GetListenerIds() const;
 
                     /**
-                     * 设置要查询的监听器ID列表。
-                     * @param _listenerIds 要查询的监听器ID列表。
+                     * 设置<p>要查询的监听器ID列表。</p>
+                     * @param _listenerIds <p>要查询的监听器ID列表。</p>
                      * 
                      */
                     void SetListenerIds(const std::vector<std::string>& _listenerIds);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ListenerIdsHasBeenSet() const;
 
                     /**
-                     * 获取要查询的转发规则ID列表。
-                     * @return LocationIds 要查询的转发规则ID列表。
+                     * 获取<p>要查询的转发规则ID列表。</p>
+                     * @return LocationIds <p>要查询的转发规则ID列表。</p>
                      * 
                      */
                     std::vector<std::string> GetLocationIds() const;
 
                     /**
-                     * 设置要查询的转发规则ID列表。
-                     * @param _locationIds 要查询的转发规则ID列表。
+                     * 设置<p>要查询的转发规则ID列表。</p>
+                     * @param _locationIds <p>要查询的转发规则ID列表。</p>
                      * 
                      */
                     void SetLocationIds(const std::vector<std::string>& _locationIds);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要查询的负载均衡实例ID列表。
+                     * <p>要查询的负载均衡实例ID列表。数组大小最大支持30。</p>
                      */
                     std::vector<std::string> m_loadBalancerIds;
                     bool m_loadBalancerIdsHasBeenSet;
 
                     /**
-                     * 要查询的监听器ID列表。
+                     * <p>要查询的监听器ID列表。</p>
                      */
                     std::vector<std::string> m_listenerIds;
                     bool m_listenerIdsHasBeenSet;
 
                     /**
-                     * 要查询的转发规则ID列表。
+                     * <p>要查询的转发规则ID列表。</p>
                      */
                     std::vector<std::string> m_locationIds;
                     bool m_locationIdsHasBeenSet;

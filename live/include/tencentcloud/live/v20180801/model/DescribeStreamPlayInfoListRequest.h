@@ -43,27 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取起始时间点，接口查询支持两种时间格式：
-1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
-2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。
-开始时间和结束时间的格式需要保持一致。
-                     * @return StartTime 起始时间点，接口查询支持两种时间格式：
-1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
-2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。
-开始时间和结束时间的格式需要保持一致。
+                     * 获取<p>起始时间点，接口查询支持两种时间格式：<br>1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I<br>2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。<br>开始时间和结束时间的格式需要保持一致。</p>
+                     * @return StartTime <p>起始时间点，接口查询支持两种时间格式：<br>1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I<br>2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。<br>开始时间和结束时间的格式需要保持一致。</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置起始时间点，接口查询支持两种时间格式：
-1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
-2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。
-开始时间和结束时间的格式需要保持一致。
-                     * @param _startTime 起始时间点，接口查询支持两种时间格式：
-1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
-2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。
-开始时间和结束时间的格式需要保持一致。
+                     * 设置<p>起始时间点，接口查询支持两种时间格式：<br>1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I<br>2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。<br>开始时间和结束时间的格式需要保持一致。</p>
+                     * @param _startTime <p>起始时间点，接口查询支持两种时间格式：<br>1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I<br>2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。<br>开始时间和结束时间的格式需要保持一致。</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -76,27 +64,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间点，接口查询支持两种时间格式：
-1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
-2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。
-开始时间和结束时间的格式需要保持一致。结束时间和开始时间跨度不支持超过24小时，支持距当前时间一个月内的数据查询。
-                     * @return EndTime 结束时间点，接口查询支持两种时间格式：
-1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
-2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。
-开始时间和结束时间的格式需要保持一致。结束时间和开始时间跨度不支持超过24小时，支持距当前时间一个月内的数据查询。
+                     * 获取<p>结束时间点，接口查询支持两种时间格式：<br>1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I<br>2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。<br>开始时间和结束时间的格式需要保持一致。结束时间和开始时间跨度不支持超过24小时，支持距当前时间一个月内的数据查询。</p>
+                     * @return EndTime <p>结束时间点，接口查询支持两种时间格式：<br>1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I<br>2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。<br>开始时间和结束时间的格式需要保持一致。结束时间和开始时间跨度不支持超过24小时，支持距当前时间一个月内的数据查询。</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间点，接口查询支持两种时间格式：
-1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
-2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。
-开始时间和结束时间的格式需要保持一致。结束时间和开始时间跨度不支持超过24小时，支持距当前时间一个月内的数据查询。
-                     * @param _endTime 结束时间点，接口查询支持两种时间格式：
-1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
-2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。
-开始时间和结束时间的格式需要保持一致。结束时间和开始时间跨度不支持超过24小时，支持距当前时间一个月内的数据查询。
+                     * 设置<p>结束时间点，接口查询支持两种时间格式：<br>1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I<br>2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。<br>开始时间和结束时间的格式需要保持一致。结束时间和开始时间跨度不支持超过24小时，支持距当前时间一个月内的数据查询。</p>
+                     * @param _endTime <p>结束时间点，接口查询支持两种时间格式：<br>1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I<br>2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。<br>开始时间和结束时间的格式需要保持一致。结束时间和开始时间跨度不支持超过24小时，支持距当前时间一个月内的数据查询。</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -109,19 +85,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取播放域名，
-若不填，则为查询所有播放域名的在线流数据。
-                     * @return PlayDomain 播放域名，
-若不填，则为查询所有播放域名的在线流数据。
+                     * 获取<p>播放域名，<br>若不填，则为查询所有播放域名的在线流数据。</p>
+                     * @return PlayDomain <p>播放域名，<br>若不填，则为查询所有播放域名的在线流数据。</p>
                      * 
                      */
                     std::string GetPlayDomain() const;
 
                     /**
-                     * 设置播放域名，
-若不填，则为查询所有播放域名的在线流数据。
-                     * @param _playDomain 播放域名，
-若不填，则为查询所有播放域名的在线流数据。
+                     * 设置<p>播放域名，<br>若不填，则为查询所有播放域名的在线流数据。</p>
+                     * @param _playDomain <p>播放域名，<br>若不填，则为查询所有播放域名的在线流数据。</p>
                      * 
                      */
                     void SetPlayDomain(const std::string& _playDomain);
@@ -134,19 +106,15 @@ namespace TencentCloud
                     bool PlayDomainHasBeenSet() const;
 
                     /**
-                     * 获取流名称，精确匹配。
-若不填，则为查询总体播放数据。
-                     * @return StreamName 流名称，精确匹配。
-若不填，则为查询总体播放数据。
+                     * 获取<p>流名称，精确匹配。<br>若不填，则为查询总体播放数据。</p>
+                     * @return StreamName <p>流名称，精确匹配。<br>若不填，则为查询总体播放数据。</p>
                      * 
                      */
                     std::string GetStreamName() const;
 
                     /**
-                     * 设置流名称，精确匹配。
-若不填，则为查询总体播放数据。
-                     * @param _streamName 流名称，精确匹配。
-若不填，则为查询总体播放数据。
+                     * 设置<p>流名称，精确匹配。<br>若不填，则为查询总体播放数据。</p>
+                     * @param _streamName <p>流名称，精确匹配。<br>若不填，则为查询总体播放数据。</p>
                      * 
                      */
                     void SetStreamName(const std::string& _streamName);
@@ -159,19 +127,15 @@ namespace TencentCloud
                     bool StreamNameHasBeenSet() const;
 
                     /**
-                     * 获取推流路径，与播放地址中的AppName保持一致，会精确匹配，在同时传递了StreamName时生效。
-若不填，则为查询总体播放数据。
-                     * @return AppName 推流路径，与播放地址中的AppName保持一致，会精确匹配，在同时传递了StreamName时生效。
-若不填，则为查询总体播放数据。
+                     * 获取<p>该参数暂不可用。</p>
+                     * @return AppName <p>该参数暂不可用。</p>
                      * 
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置推流路径，与播放地址中的AppName保持一致，会精确匹配，在同时传递了StreamName时生效。
-若不填，则为查询总体播放数据。
-                     * @param _appName 推流路径，与播放地址中的AppName保持一致，会精确匹配，在同时传递了StreamName时生效。
-若不填，则为查询总体播放数据。
+                     * 设置<p>该参数暂不可用。</p>
+                     * @param _appName <p>该参数暂不可用。</p>
                      * 
                      */
                     void SetAppName(const std::string& _appName);
@@ -184,15 +148,15 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。
-                     * @return ServiceName 服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。
+                     * 获取<p>服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。</p>
+                     * @return ServiceName <p>服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。</p>
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
-                     * 设置服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。
-                     * @param _serviceName 服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。
+                     * 设置<p>服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。</p>
+                     * @param _serviceName <p>服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。</p>
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -207,46 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 起始时间点，接口查询支持两种时间格式：
-1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
-2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。
-开始时间和结束时间的格式需要保持一致。
+                     * <p>起始时间点，接口查询支持两种时间格式：<br>1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I<br>2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。<br>开始时间和结束时间的格式需要保持一致。</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间点，接口查询支持两种时间格式：
-1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I
-2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。
-开始时间和结束时间的格式需要保持一致。结束时间和开始时间跨度不支持超过24小时，支持距当前时间一个月内的数据查询。
+                     * <p>结束时间点，接口查询支持两种时间格式：<br>1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I<br>2）yyyy-MM-dd HH:mm:ss：使用此格式时，默认代表北京时间。<br>开始时间和结束时间的格式需要保持一致。结束时间和开始时间跨度不支持超过24小时，支持距当前时间一个月内的数据查询。</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 播放域名，
-若不填，则为查询所有播放域名的在线流数据。
+                     * <p>播放域名，<br>若不填，则为查询所有播放域名的在线流数据。</p>
                      */
                     std::string m_playDomain;
                     bool m_playDomainHasBeenSet;
 
                     /**
-                     * 流名称，精确匹配。
-若不填，则为查询总体播放数据。
+                     * <p>流名称，精确匹配。<br>若不填，则为查询总体播放数据。</p>
                      */
                     std::string m_streamName;
                     bool m_streamNameHasBeenSet;
 
                     /**
-                     * 推流路径，与播放地址中的AppName保持一致，会精确匹配，在同时传递了StreamName时生效。
-若不填，则为查询总体播放数据。
+                     * <p>该参数暂不可用。</p>
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * 服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。
+                     * <p>服务名称，可选值包括LVB(标准直播)，LEB(快直播)，不填则查LVB+LEB总值。</p>
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;

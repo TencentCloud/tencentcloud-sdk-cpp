@@ -70,7 +70,8 @@ ApmApplicationConfigView::ApmApplicationConfigView() :
     m_autoProfilingConfigHasBeenSet(false),
     m_enableThresholdConfigHasBeenSet(false),
     m_errRateThresholdHasBeenSet(false),
-    m_responseDurationWarningThresholdHasBeenSet(false)
+    m_responseDurationWarningThresholdHasBeenSet(false),
+    m_useDefaultFuseConfigHasBeenSet(false)
 {
 }
 
@@ -606,6 +607,16 @@ CoreInternalOutcome ApmApplicationConfigView::Deserialize(const rapidjson::Value
         m_responseDurationWarningThresholdHasBeenSet = true;
     }
 
+    if (value.HasMember("UseDefaultFuseConfig") && !value["UseDefaultFuseConfig"].IsNull())
+    {
+        if (!value["UseDefaultFuseConfig"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmApplicationConfigView.UseDefaultFuseConfig` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_useDefaultFuseConfig = value["UseDefaultFuseConfig"].GetBool();
+        m_useDefaultFuseConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1026,6 +1037,14 @@ void ApmApplicationConfigView::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "ResponseDurationWarningThreshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_responseDurationWarningThreshold, allocator);
+    }
+
+    if (m_useDefaultFuseConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseDefaultFuseConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useDefaultFuseConfig, allocator);
     }
 
 }
@@ -1829,5 +1848,21 @@ void ApmApplicationConfigView::SetResponseDurationWarningThreshold(const int64_t
 bool ApmApplicationConfigView::ResponseDurationWarningThresholdHasBeenSet() const
 {
     return m_responseDurationWarningThresholdHasBeenSet;
+}
+
+bool ApmApplicationConfigView::GetUseDefaultFuseConfig() const
+{
+    return m_useDefaultFuseConfig;
+}
+
+void ApmApplicationConfigView::SetUseDefaultFuseConfig(const bool& _useDefaultFuseConfig)
+{
+    m_useDefaultFuseConfig = _useDefaultFuseConfig;
+    m_useDefaultFuseConfigHasBeenSet = true;
+}
+
+bool ApmApplicationConfigView::UseDefaultFuseConfigHasBeenSet() const
+{
+    return m_useDefaultFuseConfigHasBeenSet;
 }
 

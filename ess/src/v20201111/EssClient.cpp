@@ -4540,6 +4540,56 @@ EssClient::DescribeContractReviewChecklistsWebUrlOutcomeCallable EssClient::Desc
     return prom->get_future();
 }
 
+EssClient::DescribeContractReviewMarkedRiskExportTaskOutcome EssClient::DescribeContractReviewMarkedRiskExportTask(const DescribeContractReviewMarkedRiskExportTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeContractReviewMarkedRiskExportTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeContractReviewMarkedRiskExportTaskResponse rsp = DescribeContractReviewMarkedRiskExportTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeContractReviewMarkedRiskExportTaskOutcome(rsp);
+        else
+            return DescribeContractReviewMarkedRiskExportTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeContractReviewMarkedRiskExportTaskOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeContractReviewMarkedRiskExportTaskAsync(const DescribeContractReviewMarkedRiskExportTaskRequest& request, const DescribeContractReviewMarkedRiskExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeContractReviewMarkedRiskExportTaskRequest&;
+    using Resp = DescribeContractReviewMarkedRiskExportTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeContractReviewMarkedRiskExportTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssClient::DescribeContractReviewMarkedRiskExportTaskOutcomeCallable EssClient::DescribeContractReviewMarkedRiskExportTaskCallable(const DescribeContractReviewMarkedRiskExportTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeContractReviewMarkedRiskExportTaskOutcome>>();
+    DescribeContractReviewMarkedRiskExportTaskAsync(
+    request,
+    [prom](
+        const EssClient*,
+        const DescribeContractReviewMarkedRiskExportTaskRequest&,
+        DescribeContractReviewMarkedRiskExportTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EssClient::DescribeContractReviewTaskOutcome EssClient::DescribeContractReviewTask(const DescribeContractReviewTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeContractReviewTask");
@@ -6182,6 +6232,56 @@ EssClient::ExportContractComparisonTaskOutcomeCallable EssClient::ExportContract
         const EssClient*,
         const ExportContractComparisonTaskRequest&,
         ExportContractComparisonTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EssClient::ExportContractReviewMarkedRiskOutcome EssClient::ExportContractReviewMarkedRisk(const ExportContractReviewMarkedRiskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportContractReviewMarkedRisk");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportContractReviewMarkedRiskResponse rsp = ExportContractReviewMarkedRiskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportContractReviewMarkedRiskOutcome(rsp);
+        else
+            return ExportContractReviewMarkedRiskOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportContractReviewMarkedRiskOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::ExportContractReviewMarkedRiskAsync(const ExportContractReviewMarkedRiskRequest& request, const ExportContractReviewMarkedRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ExportContractReviewMarkedRiskRequest&;
+    using Resp = ExportContractReviewMarkedRiskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ExportContractReviewMarkedRisk", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssClient::ExportContractReviewMarkedRiskOutcomeCallable EssClient::ExportContractReviewMarkedRiskCallable(const ExportContractReviewMarkedRiskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ExportContractReviewMarkedRiskOutcome>>();
+    ExportContractReviewMarkedRiskAsync(
+    request,
+    [prom](
+        const EssClient*,
+        const ExportContractReviewMarkedRiskRequest&,
+        ExportContractReviewMarkedRiskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

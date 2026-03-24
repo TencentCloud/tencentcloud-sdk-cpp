@@ -275,6 +275,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeGatewayAssetsRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeCFWAssetStatisticsRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeAccessKeyUserListResponse.h
+  include/tencentcloud/csip/v20221121/model/SkillState.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskCallRecordRequest.h
   include/tencentcloud/csip/v20221121/model/AssetViewWeakPassRisk.h
   include/tencentcloud/csip/v20221121/model/AssetCluster.h
@@ -547,6 +548,7 @@ set(csip_src
   src/v20221121/model/DescribeGatewayAssetsRequest.cpp
   src/v20221121/model/DescribeCFWAssetStatisticsRequest.cpp
   src/v20221121/model/DescribeAccessKeyUserListResponse.cpp
+  src/v20221121/model/SkillState.cpp
   src/v20221121/model/DescribeRiskCallRecordRequest.cpp
   src/v20221121/model/AssetViewWeakPassRisk.cpp
   src/v20221121/model/AssetCluster.cpp

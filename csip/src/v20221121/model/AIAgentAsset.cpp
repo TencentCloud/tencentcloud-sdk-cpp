@@ -30,7 +30,8 @@ AIAgentAsset::AIAgentAsset() :
     m_identityTimeLastHasBeenSet(false),
     m_identityMethodHasBeenSet(false),
     m_exposureStatusHasBeenSet(false),
-    m_metadataRiskURLHasBeenSet(false)
+    m_metadataRiskURLHasBeenSet(false),
+    m_skillStateHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,23 @@ CoreInternalOutcome AIAgentAsset::Deserialize(const rapidjson::Value &value)
         m_metadataRiskURLHasBeenSet = true;
     }
 
+    if (value.HasMember("SkillState") && !value["SkillState"].IsNull())
+    {
+        if (!value["SkillState"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIAgentAsset.SkillState` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_skillState.Deserialize(value["SkillState"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_skillStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +258,15 @@ void AIAgentAsset::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "MetadataRiskURL";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_metadataRiskURL.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_skillStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkillState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_skillState.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -403,5 +430,21 @@ void AIAgentAsset::SetMetadataRiskURL(const string& _metadataRiskURL)
 bool AIAgentAsset::MetadataRiskURLHasBeenSet() const
 {
     return m_metadataRiskURLHasBeenSet;
+}
+
+SkillState AIAgentAsset::GetSkillState() const
+{
+    return m_skillState;
+}
+
+void AIAgentAsset::SetSkillState(const SkillState& _skillState)
+{
+    m_skillState = _skillState;
+    m_skillStateHasBeenSet = true;
+}
+
+bool AIAgentAsset::SkillStateHasBeenSet() const
+{
+    return m_skillStateHasBeenSet;
 }
 

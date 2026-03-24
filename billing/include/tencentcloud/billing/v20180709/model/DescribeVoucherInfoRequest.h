@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取一页多少条数据，默认是20条，最大不超过1000
-                     * @return Limit 一页多少条数据，默认是20条，最大不超过1000
+                     * 获取<p>一页多少条数据，默认是20条，最大不超过1000</p>
+                     * @return Limit <p>一页多少条数据，默认是20条，最大不超过1000</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置一页多少条数据，默认是20条，最大不超过1000
-                     * @param _limit 一页多少条数据，默认是20条，最大不超过1000
+                     * 设置<p>一页多少条数据，默认是20条，最大不超过1000</p>
+                     * @param _limit <p>一页多少条数据，默认是20条，最大不超过1000</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取第多少页，默认是1
-                     * @return Offset 第多少页，默认是1
+                     * 获取<p>第多少页，默认是1</p>
+                     * @return Offset <p>第多少页，默认是1</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置第多少页，默认是1
-                     * @param _offset 第多少页，默认是1
+                     * 设置<p>第多少页，默认是1</p>
+                     * @param _offset <p>第多少页，默认是1</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取券状态：待使用：unUsed，已使用： used，已发货：delivered，已作废： cancel，已过期：overdue
-                     * @return Status 券状态：待使用：unUsed，已使用： used，已发货：delivered，已作废： cancel，已过期：overdue
+                     * 获取<p>券状态：待使用：unUsed，已使用：&nbsp;used，已发货：delivered，已作废：&nbsp;cancel，已过期：overdue</p>
+                     * @return Status <p>券状态：待使用：unUsed，已使用：&nbsp;used，已发货：delivered，已作废：&nbsp;cancel，已过期：overdue</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置券状态：待使用：unUsed，已使用： used，已发货：delivered，已作废： cancel，已过期：overdue
-                     * @param _status 券状态：待使用：unUsed，已使用： used，已发货：delivered，已作废： cancel，已过期：overdue
+                     * 设置<p>券状态：待使用：unUsed，已使用：&nbsp;used，已发货：delivered，已作废：&nbsp;cancel，已过期：overdue</p>
+                     * @param _status <p>券状态：待使用：unUsed，已使用：&nbsp;used，已发货：delivered，已作废：&nbsp;cancel，已过期：overdue</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取代金券id
-                     * @return VoucherId 代金券id
+                     * 获取<p>代金券id</p>
+                     * @return VoucherId <p>代金券id</p>
                      * 
                      */
                     std::string GetVoucherId() const;
 
                     /**
-                     * 设置代金券id
-                     * @param _voucherId 代金券id
+                     * 设置<p>代金券id</p>
+                     * @param _voucherId <p>代金券id</p>
                      * 
                      */
                     void SetVoucherId(const std::string& _voucherId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool VoucherIdHasBeenSet() const;
 
                     /**
-                     * 获取代金券订单id
-                     * @return CodeId 代金券订单id
+                     * 获取<p>代金券订单id</p>
+                     * @return CodeId <p>代金券订单id</p>
                      * 
                      */
                     std::string GetCodeId() const;
 
                     /**
-                     * 设置代金券订单id
-                     * @param _codeId 代金券订单id
+                     * 设置<p>代金券订单id</p>
+                     * @param _codeId <p>代金券订单id</p>
                      * 
                      */
                     void SetCodeId(const std::string& _codeId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool CodeIdHasBeenSet() const;
 
                     /**
-                     * 获取商品码
-                     * @return ProductCode 商品码
+                     * 获取<p>商品码</p>
+                     * @return ProductCode <p>商品码</p>
                      * 
                      */
                     std::string GetProductCode() const;
 
                     /**
-                     * 设置商品码
-                     * @param _productCode 商品码
+                     * 设置<p>商品码</p>
+                     * @param _productCode <p>商品码</p>
                      * 
                      */
                     void SetProductCode(const std::string& _productCode);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool ProductCodeHasBeenSet() const;
 
                     /**
-                     * 获取活动id
-                     * @return ActivityId 活动id
+                     * 获取<p>活动id</p>
+                     * @return ActivityId <p>活动id</p>
                      * 
                      */
                     std::string GetActivityId() const;
 
                     /**
-                     * 设置活动id
-                     * @param _activityId 活动id
+                     * 设置<p>活动id</p>
+                     * @param _activityId <p>活动id</p>
                      * 
                      */
                     void SetActivityId(const std::string& _activityId);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool ActivityIdHasBeenSet() const;
 
                     /**
-                     * 获取代金券名称
-                     * @return VoucherName 代金券名称
+                     * 获取<p>代金券名称</p>
+                     * @return VoucherName <p>代金券名称</p>
                      * 
                      */
                     std::string GetVoucherName() const;
 
                     /**
-                     * 设置代金券名称
-                     * @param _voucherName 代金券名称
+                     * 设置<p>代金券名称</p>
+                     * @param _voucherName <p>代金券名称</p>
                      * 
                      */
                     void SetVoucherName(const std::string& _voucherName);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool VoucherNameHasBeenSet() const;
 
                     /**
-                     * 获取发放开始时间,例：2021-01-01
-                     * @return TimeFrom 发放开始时间,例：2021-01-01
+                     * 获取<p>发放开始时间,例：2021-01-01</p>
+                     * @return TimeFrom <p>发放开始时间,例：2021-01-01</p>
                      * 
                      */
                     std::string GetTimeFrom() const;
 
                     /**
-                     * 设置发放开始时间,例：2021-01-01
-                     * @param _timeFrom 发放开始时间,例：2021-01-01
+                     * 设置<p>发放开始时间,例：2021-01-01</p>
+                     * @param _timeFrom <p>发放开始时间,例：2021-01-01</p>
                      * 
                      */
                     void SetTimeFrom(const std::string& _timeFrom);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool TimeFromHasBeenSet() const;
 
                     /**
-                     * 获取发放结束时间，例：2021-01-01
-                     * @return TimeTo 发放结束时间，例：2021-01-01
+                     * 获取<p>发放结束时间，例：2021-01-01</p>
+                     * @return TimeTo <p>发放结束时间，例：2021-01-01</p>
                      * 
                      */
                     std::string GetTimeTo() const;
 
                     /**
-                     * 设置发放结束时间，例：2021-01-01
-                     * @param _timeTo 发放结束时间，例：2021-01-01
+                     * 设置<p>发放结束时间，例：2021-01-01</p>
+                     * @param _timeTo <p>发放结束时间，例：2021-01-01</p>
                      * 
                      */
                     void SetTimeTo(const std::string& _timeTo);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool TimeToHasBeenSet() const;
 
                     /**
-                     * 获取指定排序字段：BeginTime开始时间、EndTime到期时间、CreateTime创建时间
-                     * @return SortField 指定排序字段：BeginTime开始时间、EndTime到期时间、CreateTime创建时间
+                     * 获取<p>指定排序字段：BeginTime开始时间、EndTime到期时间、CreateTime创建时间</p>
+                     * @return SortField <p>指定排序字段：BeginTime开始时间、EndTime到期时间、CreateTime创建时间</p>
                      * 
                      */
                     std::string GetSortField() const;
 
                     /**
-                     * 设置指定排序字段：BeginTime开始时间、EndTime到期时间、CreateTime创建时间
-                     * @param _sortField 指定排序字段：BeginTime开始时间、EndTime到期时间、CreateTime创建时间
+                     * 设置<p>指定排序字段：BeginTime开始时间、EndTime到期时间、CreateTime创建时间</p>
+                     * @param _sortField <p>指定排序字段：BeginTime开始时间、EndTime到期时间、CreateTime创建时间</p>
                      * 
                      */
                     void SetSortField(const std::string& _sortField);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool SortFieldHasBeenSet() const;
 
                     /**
-                     * 获取指定升序降序：desc、asc
-                     * @return SortOrder 指定升序降序：desc、asc
+                     * 获取<p>指定升序降序：desc、asc</p>
+                     * @return SortOrder <p>指定升序降序：desc、asc</p>
                      * 
                      */
                     std::string GetSortOrder() const;
 
                     /**
-                     * 设置指定升序降序：desc、asc
-                     * @param _sortOrder 指定升序降序：desc、asc
+                     * 设置<p>指定升序降序：desc、asc</p>
+                     * @param _sortOrder <p>指定升序降序：desc、asc</p>
                      * 
                      */
                     void SetSortOrder(const std::string& _sortOrder);
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool SortOrderHasBeenSet() const;
 
                     /**
-                     * 获取付费模式，postPay后付费/prePay预付费/riPay预留实例/""或者"*"表示全部模式，如果payMode为""或"*"，那么productCode与subProductCode必须传空
-                     * @return PayMode 付费模式，postPay后付费/prePay预付费/riPay预留实例/""或者"*"表示全部模式，如果payMode为""或"*"，那么productCode与subProductCode必须传空
+                     * 获取<p>付费模式，postPay后付费/prePay预付费/riPay预留实例/&quot;&quot;或者&quot;*&quot;表示全部模式，如果payMode为&quot;&quot;或&quot;*&quot;，那么productCode与subProductCode必须传空</p>
+                     * @return PayMode <p>付费模式，postPay后付费/prePay预付费/riPay预留实例/&quot;&quot;或者&quot;*&quot;表示全部模式，如果payMode为&quot;&quot;或&quot;*&quot;，那么productCode与subProductCode必须传空</p>
                      * 
                      */
                     std::string GetPayMode() const;
 
                     /**
-                     * 设置付费模式，postPay后付费/prePay预付费/riPay预留实例/""或者"*"表示全部模式，如果payMode为""或"*"，那么productCode与subProductCode必须传空
-                     * @param _payMode 付费模式，postPay后付费/prePay预付费/riPay预留实例/""或者"*"表示全部模式，如果payMode为""或"*"，那么productCode与subProductCode必须传空
+                     * 设置<p>付费模式，postPay后付费/prePay预付费/riPay预留实例/&quot;&quot;或者&quot;*&quot;表示全部模式，如果payMode为&quot;&quot;或&quot;*&quot;，那么productCode与subProductCode必须传空</p>
+                     * @param _payMode <p>付费模式，postPay后付费/prePay预付费/riPay预留实例/&quot;&quot;或者&quot;*&quot;表示全部模式，如果payMode为&quot;&quot;或&quot;*&quot;，那么productCode与subProductCode必须传空</p>
                      * 
                      */
                     void SetPayMode(const std::string& _payMode);
@@ -316,15 +316,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取付费场景PayMode=postPay时：spotpay-竞价实例,"settle account"-普通后付费PayMode=prePay时：purchase-包年包月新购，renew-包年包月续费（自动续费），modify-包年包月配置变更(变配）PayMode=riPay时：oneOffFee-预留实例预付，hourlyFee-预留实例每小时扣费，*-支持全部付费场景
-                     * @return PayScene 付费场景PayMode=postPay时：spotpay-竞价实例,"settle account"-普通后付费PayMode=prePay时：purchase-包年包月新购，renew-包年包月续费（自动续费），modify-包年包月配置变更(变配）PayMode=riPay时：oneOffFee-预留实例预付，hourlyFee-预留实例每小时扣费，*-支持全部付费场景
+                     * 获取<p>付费场景PayMode=postPay时：spotpay-竞价实例,&quot;settle account&quot;-普通后付费PayMode=prePay时：purchase-包年包月新购，renew-包年包月续费（自动续费），modify-包年包月配置变更(变配）PayMode=riPay时：oneOffFee-预留实例预付，hourlyFee-预留实例每小时扣费，*-支持全部付费场景</p>
+                     * @return PayScene <p>付费场景PayMode=postPay时：spotpay-竞价实例,&quot;settle account&quot;-普通后付费PayMode=prePay时：purchase-包年包月新购，renew-包年包月续费（自动续费），modify-包年包月配置变更(变配）PayMode=riPay时：oneOffFee-预留实例预付，hourlyFee-预留实例每小时扣费，*-支持全部付费场景</p>
                      * 
                      */
                     std::string GetPayScene() const;
 
                     /**
-                     * 设置付费场景PayMode=postPay时：spotpay-竞价实例,"settle account"-普通后付费PayMode=prePay时：purchase-包年包月新购，renew-包年包月续费（自动续费），modify-包年包月配置变更(变配）PayMode=riPay时：oneOffFee-预留实例预付，hourlyFee-预留实例每小时扣费，*-支持全部付费场景
-                     * @param _payScene 付费场景PayMode=postPay时：spotpay-竞价实例,"settle account"-普通后付费PayMode=prePay时：purchase-包年包月新购，renew-包年包月续费（自动续费），modify-包年包月配置变更(变配）PayMode=riPay时：oneOffFee-预留实例预付，hourlyFee-预留实例每小时扣费，*-支持全部付费场景
+                     * 设置<p>付费场景PayMode=postPay时：spotpay-竞价实例,&quot;settle account&quot;-普通后付费PayMode=prePay时：purchase-包年包月新购，renew-包年包月续费（自动续费），modify-包年包月配置变更(变配）PayMode=riPay时：oneOffFee-预留实例预付，hourlyFee-预留实例每小时扣费，*-支持全部付费场景</p>
+                     * @param _payScene <p>付费场景PayMode=postPay时：spotpay-竞价实例,&quot;settle account&quot;-普通后付费PayMode=prePay时：purchase-包年包月新购，renew-包年包月续费（自动续费），modify-包年包月配置变更(变配）PayMode=riPay时：oneOffFee-预留实例预付，hourlyFee-预留实例每小时扣费，*-支持全部付费场景</p>
                      * 
                      */
                     void SetPayScene(const std::string& _payScene);
@@ -337,15 +337,15 @@ namespace TencentCloud
                     bool PaySceneHasBeenSet() const;
 
                     /**
-                     * 获取操作人，默认就是用户uin
-                     * @return Operator 操作人，默认就是用户uin
+                     * 获取<p>操作人，默认就是用户uin</p>
+                     * @return Operator <p>操作人，默认就是用户uin</p>
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作人，默认就是用户uin
-                     * @param _operator 操作人，默认就是用户uin
+                     * 设置<p>操作人，默认就是用户uin</p>
+                     * @param _operator <p>操作人，默认就是用户uin</p>
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -358,15 +358,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取代金券主类型 has_price 为有价现金券 no_price 为无价代金券
-                     * @return VoucherMainType 代金券主类型 has_price 为有价现金券 no_price 为无价代金券
+                     * 获取<p>代金券主类型 has_price 为有价现金券 no_price 为无价代金券</p>
+                     * @return VoucherMainType <p>代金券主类型 has_price 为有价现金券 no_price 为无价代金券</p>
                      * 
                      */
                     std::string GetVoucherMainType() const;
 
                     /**
-                     * 设置代金券主类型 has_price 为有价现金券 no_price 为无价代金券
-                     * @param _voucherMainType 代金券主类型 has_price 为有价现金券 no_price 为无价代金券
+                     * 设置<p>代金券主类型 has_price 为有价现金券 no_price 为无价代金券</p>
+                     * @param _voucherMainType <p>代金券主类型 has_price 为有价现金券 no_price 为无价代金券</p>
                      * 
                      */
                     void SetVoucherMainType(const std::string& _voucherMainType);
@@ -379,15 +379,15 @@ namespace TencentCloud
                     bool VoucherMainTypeHasBeenSet() const;
 
                     /**
-                     * 获取代金券副类型 discount 为折扣券 deduct 为抵扣券
-                     * @return VoucherSubType 代金券副类型 discount 为折扣券 deduct 为抵扣券
+                     * 获取<p>代金券副类型 discount 为折扣券 deduct 为抵扣券</p>
+                     * @return VoucherSubType <p>代金券副类型 discount 为折扣券 deduct 为抵扣券</p>
                      * 
                      */
                     std::string GetVoucherSubType() const;
 
                     /**
-                     * 设置代金券副类型 discount 为折扣券 deduct 为抵扣券
-                     * @param _voucherSubType 代金券副类型 discount 为折扣券 deduct 为抵扣券
+                     * 设置<p>代金券副类型 discount 为折扣券 deduct 为抵扣券</p>
+                     * @param _voucherSubType <p>代金券副类型 discount 为折扣券 deduct 为抵扣券</p>
                      * 
                      */
                     void SetVoucherSubType(const std::string& _voucherSubType);
@@ -400,15 +400,15 @@ namespace TencentCloud
                     bool VoucherSubTypeHasBeenSet() const;
 
                     /**
-                     * 获取券有效时间开始时间
-                     * @return StartTimeFrom 券有效时间开始时间
+                     * 获取<p>券有效时间开始时间</p>
+                     * @return StartTimeFrom <p>券有效时间开始时间</p>
                      * 
                      */
                     std::string GetStartTimeFrom() const;
 
                     /**
-                     * 设置券有效时间开始时间
-                     * @param _startTimeFrom 券有效时间开始时间
+                     * 设置<p>券有效时间开始时间</p>
+                     * @param _startTimeFrom <p>券有效时间开始时间</p>
                      * 
                      */
                     void SetStartTimeFrom(const std::string& _startTimeFrom);
@@ -421,15 +421,15 @@ namespace TencentCloud
                     bool StartTimeFromHasBeenSet() const;
 
                     /**
-                     * 获取券有效时间结束时间
-                     * @return StartTimeTo 券有效时间结束时间
+                     * 获取<p>券有效时间结束时间</p>
+                     * @return StartTimeTo <p>券有效时间结束时间</p>
                      * 
                      */
                     std::string GetStartTimeTo() const;
 
                     /**
-                     * 设置券有效时间结束时间
-                     * @param _startTimeTo 券有效时间结束时间
+                     * 设置<p>券有效时间结束时间</p>
+                     * @param _startTimeTo <p>券有效时间结束时间</p>
                      * 
                      */
                     void SetStartTimeTo(const std::string& _startTimeTo);
@@ -442,15 +442,15 @@ namespace TencentCloud
                     bool StartTimeToHasBeenSet() const;
 
                     /**
-                     * 获取券失效时间开始时间
-                     * @return EndTimeFrom 券失效时间开始时间
+                     * 获取<p>券失效时间开始时间</p>
+                     * @return EndTimeFrom <p>券失效时间开始时间</p>
                      * 
                      */
                     std::string GetEndTimeFrom() const;
 
                     /**
-                     * 设置券失效时间开始时间
-                     * @param _endTimeFrom 券失效时间开始时间
+                     * 设置<p>券失效时间开始时间</p>
+                     * @param _endTimeFrom <p>券失效时间开始时间</p>
                      * 
                      */
                     void SetEndTimeFrom(const std::string& _endTimeFrom);
@@ -463,15 +463,15 @@ namespace TencentCloud
                     bool EndTimeFromHasBeenSet() const;
 
                     /**
-                     * 获取券失效时间结束时间
-                     * @return EndTimeTo 券失效时间结束时间
+                     * 获取<p>券失效时间结束时间</p>
+                     * @return EndTimeTo <p>券失效时间结束时间</p>
                      * 
                      */
                     std::string GetEndTimeTo() const;
 
                     /**
-                     * 设置券失效时间结束时间
-                     * @param _endTimeTo 券失效时间结束时间
+                     * 设置<p>券失效时间结束时间</p>
+                     * @param _endTimeTo <p>券失效时间结束时间</p>
                      * 
                      */
                     void SetEndTimeTo(const std::string& _endTimeTo);
@@ -484,15 +484,15 @@ namespace TencentCloud
                     bool EndTimeToHasBeenSet() const;
 
                     /**
-                     * 获取发券时间开始时间
-                     * @return CreateTimeFrom 发券时间开始时间
+                     * 获取<p>发券时间开始时间</p>
+                     * @return CreateTimeFrom <p>发券时间开始时间</p>
                      * 
                      */
                     std::string GetCreateTimeFrom() const;
 
                     /**
-                     * 设置发券时间开始时间
-                     * @param _createTimeFrom 发券时间开始时间
+                     * 设置<p>发券时间开始时间</p>
+                     * @param _createTimeFrom <p>发券时间开始时间</p>
                      * 
                      */
                     void SetCreateTimeFrom(const std::string& _createTimeFrom);
@@ -505,15 +505,15 @@ namespace TencentCloud
                     bool CreateTimeFromHasBeenSet() const;
 
                     /**
-                     * 获取发券时间结束时间
-                     * @return CreateTimeTo 发券时间结束时间
+                     * 获取<p>发券时间结束时间</p>
+                     * @return CreateTimeTo <p>发券时间结束时间</p>
                      * 
                      */
                     std::string GetCreateTimeTo() const;
 
                     /**
-                     * 设置发券时间结束时间
-                     * @param _createTimeTo 发券时间结束时间
+                     * 设置<p>发券时间结束时间</p>
+                     * @param _createTimeTo <p>发券时间结束时间</p>
                      * 
                      */
                     void SetCreateTimeTo(const std::string& _createTimeTo);
@@ -525,145 +525,172 @@ namespace TencentCloud
                      */
                     bool CreateTimeToHasBeenSet() const;
 
+                    /**
+                     * 获取<p>语言参数</p><p>默认值：zh</p><p>期望返回产品名称中文或其他语言，目前仅支持中文、英文；填&quot;zh&quot;或不填时返回中文，其他情况返回英文</p>
+                     * @return Lang <p>语言参数</p><p>默认值：zh</p><p>期望返回产品名称中文或其他语言，目前仅支持中文、英文；填&quot;zh&quot;或不填时返回中文，其他情况返回英文</p>
+                     * 
+                     */
+                    std::string GetLang() const;
+
+                    /**
+                     * 设置<p>语言参数</p><p>默认值：zh</p><p>期望返回产品名称中文或其他语言，目前仅支持中文、英文；填&quot;zh&quot;或不填时返回中文，其他情况返回英文</p>
+                     * @param _lang <p>语言参数</p><p>默认值：zh</p><p>期望返回产品名称中文或其他语言，目前仅支持中文、英文；填&quot;zh&quot;或不填时返回中文，其他情况返回英文</p>
+                     * 
+                     */
+                    void SetLang(const std::string& _lang);
+
+                    /**
+                     * 判断参数 Lang 是否已赋值
+                     * @return Lang 是否已赋值
+                     * 
+                     */
+                    bool LangHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 一页多少条数据，默认是20条，最大不超过1000
+                     * <p>一页多少条数据，默认是20条，最大不超过1000</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 第多少页，默认是1
+                     * <p>第多少页，默认是1</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 券状态：待使用：unUsed，已使用： used，已发货：delivered，已作废： cancel，已过期：overdue
+                     * <p>券状态：待使用：unUsed，已使用：&nbsp;used，已发货：delivered，已作废：&nbsp;cancel，已过期：overdue</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 代金券id
+                     * <p>代金券id</p>
                      */
                     std::string m_voucherId;
                     bool m_voucherIdHasBeenSet;
 
                     /**
-                     * 代金券订单id
+                     * <p>代金券订单id</p>
                      */
                     std::string m_codeId;
                     bool m_codeIdHasBeenSet;
 
                     /**
-                     * 商品码
+                     * <p>商品码</p>
                      */
                     std::string m_productCode;
                     bool m_productCodeHasBeenSet;
 
                     /**
-                     * 活动id
+                     * <p>活动id</p>
                      */
                     std::string m_activityId;
                     bool m_activityIdHasBeenSet;
 
                     /**
-                     * 代金券名称
+                     * <p>代金券名称</p>
                      */
                     std::string m_voucherName;
                     bool m_voucherNameHasBeenSet;
 
                     /**
-                     * 发放开始时间,例：2021-01-01
+                     * <p>发放开始时间,例：2021-01-01</p>
                      */
                     std::string m_timeFrom;
                     bool m_timeFromHasBeenSet;
 
                     /**
-                     * 发放结束时间，例：2021-01-01
+                     * <p>发放结束时间，例：2021-01-01</p>
                      */
                     std::string m_timeTo;
                     bool m_timeToHasBeenSet;
 
                     /**
-                     * 指定排序字段：BeginTime开始时间、EndTime到期时间、CreateTime创建时间
+                     * <p>指定排序字段：BeginTime开始时间、EndTime到期时间、CreateTime创建时间</p>
                      */
                     std::string m_sortField;
                     bool m_sortFieldHasBeenSet;
 
                     /**
-                     * 指定升序降序：desc、asc
+                     * <p>指定升序降序：desc、asc</p>
                      */
                     std::string m_sortOrder;
                     bool m_sortOrderHasBeenSet;
 
                     /**
-                     * 付费模式，postPay后付费/prePay预付费/riPay预留实例/""或者"*"表示全部模式，如果payMode为""或"*"，那么productCode与subProductCode必须传空
+                     * <p>付费模式，postPay后付费/prePay预付费/riPay预留实例/&quot;&quot;或者&quot;*&quot;表示全部模式，如果payMode为&quot;&quot;或&quot;*&quot;，那么productCode与subProductCode必须传空</p>
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 付费场景PayMode=postPay时：spotpay-竞价实例,"settle account"-普通后付费PayMode=prePay时：purchase-包年包月新购，renew-包年包月续费（自动续费），modify-包年包月配置变更(变配）PayMode=riPay时：oneOffFee-预留实例预付，hourlyFee-预留实例每小时扣费，*-支持全部付费场景
+                     * <p>付费场景PayMode=postPay时：spotpay-竞价实例,&quot;settle account&quot;-普通后付费PayMode=prePay时：purchase-包年包月新购，renew-包年包月续费（自动续费），modify-包年包月配置变更(变配）PayMode=riPay时：oneOffFee-预留实例预付，hourlyFee-预留实例每小时扣费，*-支持全部付费场景</p>
                      */
                     std::string m_payScene;
                     bool m_paySceneHasBeenSet;
 
                     /**
-                     * 操作人，默认就是用户uin
+                     * <p>操作人，默认就是用户uin</p>
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 代金券主类型 has_price 为有价现金券 no_price 为无价代金券
+                     * <p>代金券主类型 has_price 为有价现金券 no_price 为无价代金券</p>
                      */
                     std::string m_voucherMainType;
                     bool m_voucherMainTypeHasBeenSet;
 
                     /**
-                     * 代金券副类型 discount 为折扣券 deduct 为抵扣券
+                     * <p>代金券副类型 discount 为折扣券 deduct 为抵扣券</p>
                      */
                     std::string m_voucherSubType;
                     bool m_voucherSubTypeHasBeenSet;
 
                     /**
-                     * 券有效时间开始时间
+                     * <p>券有效时间开始时间</p>
                      */
                     std::string m_startTimeFrom;
                     bool m_startTimeFromHasBeenSet;
 
                     /**
-                     * 券有效时间结束时间
+                     * <p>券有效时间结束时间</p>
                      */
                     std::string m_startTimeTo;
                     bool m_startTimeToHasBeenSet;
 
                     /**
-                     * 券失效时间开始时间
+                     * <p>券失效时间开始时间</p>
                      */
                     std::string m_endTimeFrom;
                     bool m_endTimeFromHasBeenSet;
 
                     /**
-                     * 券失效时间结束时间
+                     * <p>券失效时间结束时间</p>
                      */
                     std::string m_endTimeTo;
                     bool m_endTimeToHasBeenSet;
 
                     /**
-                     * 发券时间开始时间
+                     * <p>发券时间开始时间</p>
                      */
                     std::string m_createTimeFrom;
                     bool m_createTimeFromHasBeenSet;
 
                     /**
-                     * 发券时间结束时间
+                     * <p>发券时间结束时间</p>
                      */
                     std::string m_createTimeTo;
                     bool m_createTimeToHasBeenSet;
+
+                    /**
+                     * <p>语言参数</p><p>默认值：zh</p><p>期望返回产品名称中文或其他语言，目前仅支持中文、英文；填&quot;zh&quot;或不填时返回中文，其他情况返回英文</p>
+                     */
+                    std::string m_lang;
+                    bool m_langHasBeenSet;
 
                 };
             }

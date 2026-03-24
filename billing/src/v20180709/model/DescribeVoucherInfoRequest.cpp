@@ -45,7 +45,8 @@ DescribeVoucherInfoRequest::DescribeVoucherInfoRequest() :
     m_endTimeFromHasBeenSet(false),
     m_endTimeToHasBeenSet(false),
     m_createTimeFromHasBeenSet(false),
-    m_createTimeToHasBeenSet(false)
+    m_createTimeToHasBeenSet(false),
+    m_langHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,14 @@ string DescribeVoucherInfoRequest::ToJsonString() const
         string key = "CreateTimeTo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_createTimeTo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_langHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Lang";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_lang.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -614,6 +623,22 @@ void DescribeVoucherInfoRequest::SetCreateTimeTo(const string& _createTimeTo)
 bool DescribeVoucherInfoRequest::CreateTimeToHasBeenSet() const
 {
     return m_createTimeToHasBeenSet;
+}
+
+string DescribeVoucherInfoRequest::GetLang() const
+{
+    return m_lang;
+}
+
+void DescribeVoucherInfoRequest::SetLang(const string& _lang)
+{
+    m_lang = _lang;
+    m_langHasBeenSet = true;
+}
+
+bool DescribeVoucherInfoRequest::LangHasBeenSet() const
+{
+    return m_langHasBeenSet;
 }
 
 

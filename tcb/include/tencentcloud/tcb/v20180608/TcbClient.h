@@ -63,6 +63,8 @@
 #include <tencentcloud/tcb/v20180608/model/DeleteTableResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteUsersRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteUsersResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteVmInstanceRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteVmInstanceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeAuthDomainsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeAuthDomainsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeBaasPackageListRequest.h>
@@ -111,6 +113,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeTablesResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeUserListRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeUserListResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeVmInstancesRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeVmInstancesResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeVmSpecRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeVmSpecResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyEnvRequest.h>
@@ -123,6 +127,8 @@
 #include <tencentcloud/tcb/v20180608/model/EditAuthConfigResponse.h>
 #include <tencentcloud/tcb/v20180608/model/GetProvidersRequest.h>
 #include <tencentcloud/tcb/v20180608/model/GetProvidersResponse.h>
+#include <tencentcloud/tcb/v20180608/model/InquireVmPriceRequest.h>
+#include <tencentcloud/tcb/v20180608/model/InquireVmPriceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ListTablesRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ListTablesResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyClientRequest.h>
@@ -231,6 +237,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteUsersResponse> DeleteUsersOutcome;
                 typedef std::future<DeleteUsersOutcome> DeleteUsersOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteUsersRequest&, DeleteUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteVmInstanceResponse> DeleteVmInstanceOutcome;
+                typedef std::future<DeleteVmInstanceOutcome> DeleteVmInstanceOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DeleteVmInstanceRequest&, DeleteVmInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVmInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAuthDomainsResponse> DescribeAuthDomainsOutcome;
                 typedef std::future<DescribeAuthDomainsOutcome> DescribeAuthDomainsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeAuthDomainsRequest&, DescribeAuthDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuthDomainsAsyncHandler;
@@ -303,6 +312,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserListResponse> DescribeUserListOutcome;
                 typedef std::future<DescribeUserListOutcome> DescribeUserListOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeUserListRequest&, DescribeUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVmInstancesResponse> DescribeVmInstancesOutcome;
+                typedef std::future<DescribeVmInstancesOutcome> DescribeVmInstancesOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeVmInstancesRequest&, DescribeVmInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVmInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVmSpecResponse> DescribeVmSpecOutcome;
                 typedef std::future<DescribeVmSpecOutcome> DescribeVmSpecOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeVmSpecRequest&, DescribeVmSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVmSpecAsyncHandler;
@@ -321,6 +333,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetProvidersResponse> GetProvidersOutcome;
                 typedef std::future<GetProvidersOutcome> GetProvidersOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::GetProvidersRequest&, GetProvidersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetProvidersAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquireVmPriceResponse> InquireVmPriceOutcome;
+                typedef std::future<InquireVmPriceOutcome> InquireVmPriceOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::InquireVmPriceRequest&, InquireVmPriceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquireVmPriceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListTablesResponse> ListTablesOutcome;
                 typedef std::future<ListTablesOutcome> ListTablesOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ListTablesRequest&, ListTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTablesAsyncHandler;
@@ -595,6 +610,15 @@ namespace TencentCloud
                 DeleteUsersOutcomeCallable DeleteUsersCallable(const Model::DeleteUsersRequest& request);
 
                 /**
+                 *销毁云服务器实例
+                 * @param req DeleteVmInstanceRequest
+                 * @return DeleteVmInstanceOutcome
+                 */
+                DeleteVmInstanceOutcome DeleteVmInstance(const Model::DeleteVmInstanceRequest &request);
+                void DeleteVmInstanceAsync(const Model::DeleteVmInstanceRequest& request, const DeleteVmInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVmInstanceOutcomeCallable DeleteVmInstanceCallable(const Model::DeleteVmInstanceRequest& request);
+
+                /**
                  *本接口用于获取当前环境的安全域名列表。
 云开发会校验网页应用请求的来源域名，您需要将来源域名加入到WEB安全域名列表中。
 可以通过接口 [CreateAuthDomain](https://cloud.tencent.com/document/product/876/42764) 增加安全域名。
@@ -830,6 +854,15 @@ namespace TencentCloud
                 DescribeUserListOutcomeCallable DescribeUserListCallable(const Model::DescribeUserListRequest& request);
 
                 /**
+                 *查询环境下的云服务器列表
+                 * @param req DescribeVmInstancesRequest
+                 * @return DescribeVmInstancesOutcome
+                 */
+                DescribeVmInstancesOutcome DescribeVmInstances(const Model::DescribeVmInstancesRequest &request);
+                void DescribeVmInstancesAsync(const Model::DescribeVmInstancesRequest& request, const DescribeVmInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVmInstancesOutcomeCallable DescribeVmInstancesCallable(const Model::DescribeVmInstancesRequest& request);
+
+                /**
                  *云服务器规格list
                  * @param req DescribeVmSpecRequest
                  * @return DescribeVmSpecOutcome
@@ -893,6 +926,15 @@ namespace TencentCloud
                 GetProvidersOutcome GetProviders(const Model::GetProvidersRequest &request);
                 void GetProvidersAsync(const Model::GetProvidersRequest& request, const GetProvidersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetProvidersOutcomeCallable GetProvidersCallable(const Model::GetProvidersRequest& request);
+
+                /**
+                 *查询服务器价格
+                 * @param req InquireVmPriceRequest
+                 * @return InquireVmPriceOutcome
+                 */
+                InquireVmPriceOutcome InquireVmPrice(const Model::InquireVmPriceRequest &request);
+                void InquireVmPriceAsync(const Model::InquireVmPriceRequest& request, const InquireVmPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquireVmPriceOutcomeCallable InquireVmPriceCallable(const Model::InquireVmPriceRequest& request);
 
                 /**
                  *本接口(ListTables)用于查询文档型数据库所有表信息，包括表名、表中数据条数、表中数据量、索引个数及索引的大小等。

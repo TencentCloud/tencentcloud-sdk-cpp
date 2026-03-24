@@ -235,6 +235,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribePositionFenceListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeProductCloudStorageAIServiceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeProductCloudStorageAIServiceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeProductDynamicRegisterRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeProductDynamicRegisterResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeProjectRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeProjectResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeSpaceFenceEventListRequest.h>
@@ -359,6 +361,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyPositionSpaceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyProductCloudStorageAIServiceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyProductCloudStorageAIServiceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyProductDynamicRegisterRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyProductDynamicRegisterResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyProjectRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyProjectResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifySpacePropertyRequest.h>
@@ -761,6 +765,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProductCloudStorageAIServiceResponse> DescribeProductCloudStorageAIServiceOutcome;
                 typedef std::future<DescribeProductCloudStorageAIServiceOutcome> DescribeProductCloudStorageAIServiceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeProductCloudStorageAIServiceRequest&, DescribeProductCloudStorageAIServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductCloudStorageAIServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProductDynamicRegisterResponse> DescribeProductDynamicRegisterOutcome;
+                typedef std::future<DescribeProductDynamicRegisterOutcome> DescribeProductDynamicRegisterOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeProductDynamicRegisterRequest&, DescribeProductDynamicRegisterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductDynamicRegisterAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProjectResponse> DescribeProjectOutcome;
                 typedef std::future<DescribeProjectOutcome> DescribeProjectOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeProjectRequest&, DescribeProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectAsyncHandler;
@@ -947,6 +954,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyProductCloudStorageAIServiceResponse> ModifyProductCloudStorageAIServiceOutcome;
                 typedef std::future<ModifyProductCloudStorageAIServiceOutcome> ModifyProductCloudStorageAIServiceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyProductCloudStorageAIServiceRequest&, ModifyProductCloudStorageAIServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProductCloudStorageAIServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyProductDynamicRegisterResponse> ModifyProductDynamicRegisterOutcome;
+                typedef std::future<ModifyProductDynamicRegisterOutcome> ModifyProductDynamicRegisterOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ModifyProductDynamicRegisterRequest&, ModifyProductDynamicRegisterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProductDynamicRegisterAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyProjectResponse> ModifyProjectOutcome;
                 typedef std::future<ModifyProjectOutcome> ModifyProjectOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyProjectRequest&, ModifyProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProjectAsyncHandler;
@@ -2010,6 +2020,15 @@ namespace TencentCloud
                 DescribeProductCloudStorageAIServiceOutcomeCallable DescribeProductCloudStorageAIServiceCallable(const Model::DescribeProductCloudStorageAIServiceRequest& request);
 
                 /**
+                 *获取产品动态注册详情
+                 * @param req DescribeProductDynamicRegisterRequest
+                 * @return DescribeProductDynamicRegisterOutcome
+                 */
+                DescribeProductDynamicRegisterOutcome DescribeProductDynamicRegister(const Model::DescribeProductDynamicRegisterRequest &request);
+                void DescribeProductDynamicRegisterAsync(const Model::DescribeProductDynamicRegisterRequest& request, const DescribeProductDynamicRegisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProductDynamicRegisterOutcomeCallable DescribeProductDynamicRegisterCallable(const Model::DescribeProductDynamicRegisterRequest& request);
+
+                /**
                  *查询项目详情
                  * @param req DescribeProjectRequest
                  * @return DescribeProjectOutcome
@@ -2566,6 +2585,15 @@ namespace TencentCloud
                 ModifyProductCloudStorageAIServiceOutcome ModifyProductCloudStorageAIService(const Model::ModifyProductCloudStorageAIServiceRequest &request);
                 void ModifyProductCloudStorageAIServiceAsync(const Model::ModifyProductCloudStorageAIServiceRequest& request, const ModifyProductCloudStorageAIServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyProductCloudStorageAIServiceOutcomeCallable ModifyProductCloudStorageAIServiceCallable(const Model::ModifyProductCloudStorageAIServiceRequest& request);
+
+                /**
+                 *修改产品动态注册
+                 * @param req ModifyProductDynamicRegisterRequest
+                 * @return ModifyProductDynamicRegisterOutcome
+                 */
+                ModifyProductDynamicRegisterOutcome ModifyProductDynamicRegister(const Model::ModifyProductDynamicRegisterRequest &request);
+                void ModifyProductDynamicRegisterAsync(const Model::ModifyProductDynamicRegisterRequest& request, const ModifyProductDynamicRegisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyProductDynamicRegisterOutcomeCallable ModifyProductDynamicRegisterCallable(const Model::ModifyProductDynamicRegisterRequest& request);
 
                 /**
                  *修改项目。

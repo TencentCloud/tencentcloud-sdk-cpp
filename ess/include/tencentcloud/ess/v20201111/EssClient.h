@@ -203,6 +203,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeContractReviewChecklistWebUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeContractReviewChecklistsWebUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeContractReviewChecklistsWebUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeContractReviewMarkedRiskExportTaskRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeContractReviewMarkedRiskExportTaskResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeContractReviewTaskRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeContractReviewTaskResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeContractReviewTaskListWebUrlRequest.h>
@@ -269,6 +271,8 @@
 #include <tencentcloud/ess/v20201111/model/DisableUserAutoSignResponse.h>
 #include <tencentcloud/ess/v20201111/model/ExportContractComparisonTaskRequest.h>
 #include <tencentcloud/ess/v20201111/model/ExportContractComparisonTaskResponse.h>
+#include <tencentcloud/ess/v20201111/model/ExportContractReviewMarkedRiskRequest.h>
+#include <tencentcloud/ess/v20201111/model/ExportContractReviewMarkedRiskResponse.h>
 #include <tencentcloud/ess/v20201111/model/ExportContractReviewResultRequest.h>
 #include <tencentcloud/ess/v20201111/model/ExportContractReviewResultResponse.h>
 #include <tencentcloud/ess/v20201111/model/GetTaskResultApiRequest.h>
@@ -593,6 +597,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeContractReviewChecklistsWebUrlResponse> DescribeContractReviewChecklistsWebUrlOutcome;
                 typedef std::future<DescribeContractReviewChecklistsWebUrlOutcome> DescribeContractReviewChecklistsWebUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeContractReviewChecklistsWebUrlRequest&, DescribeContractReviewChecklistsWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContractReviewChecklistsWebUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeContractReviewMarkedRiskExportTaskResponse> DescribeContractReviewMarkedRiskExportTaskOutcome;
+                typedef std::future<DescribeContractReviewMarkedRiskExportTaskOutcome> DescribeContractReviewMarkedRiskExportTaskOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeContractReviewMarkedRiskExportTaskRequest&, DescribeContractReviewMarkedRiskExportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContractReviewMarkedRiskExportTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeContractReviewTaskResponse> DescribeContractReviewTaskOutcome;
                 typedef std::future<DescribeContractReviewTaskOutcome> DescribeContractReviewTaskOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeContractReviewTaskRequest&, DescribeContractReviewTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContractReviewTaskAsyncHandler;
@@ -692,6 +699,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ExportContractComparisonTaskResponse> ExportContractComparisonTaskOutcome;
                 typedef std::future<ExportContractComparisonTaskOutcome> ExportContractComparisonTaskOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::ExportContractComparisonTaskRequest&, ExportContractComparisonTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportContractComparisonTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportContractReviewMarkedRiskResponse> ExportContractReviewMarkedRiskOutcome;
+                typedef std::future<ExportContractReviewMarkedRiskOutcome> ExportContractReviewMarkedRiskOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::ExportContractReviewMarkedRiskRequest&, ExportContractReviewMarkedRiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportContractReviewMarkedRiskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExportContractReviewResultResponse> ExportContractReviewResultOutcome;
                 typedef std::future<ExportContractReviewResultOutcome> ExportContractReviewResultOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::ExportContractReviewResultRequest&, ExportContractReviewResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportContractReviewResultAsyncHandler;
@@ -2378,6 +2388,15 @@ namespace TencentCloud
                 DescribeContractReviewChecklistsWebUrlOutcomeCallable DescribeContractReviewChecklistsWebUrlCallable(const Model::DescribeContractReviewChecklistsWebUrlRequest& request);
 
                 /**
+                 *本接口（DescribeContractReviewMarkedRiskExportTask）用于查询由 ExportContractReviewMarkedRisk 接口创建的导出任务状态。
+                 * @param req DescribeContractReviewMarkedRiskExportTaskRequest
+                 * @return DescribeContractReviewMarkedRiskExportTaskOutcome
+                 */
+                DescribeContractReviewMarkedRiskExportTaskOutcome DescribeContractReviewMarkedRiskExportTask(const Model::DescribeContractReviewMarkedRiskExportTaskRequest &request);
+                void DescribeContractReviewMarkedRiskExportTaskAsync(const Model::DescribeContractReviewMarkedRiskExportTaskRequest& request, const DescribeContractReviewMarkedRiskExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeContractReviewMarkedRiskExportTaskOutcomeCallable DescribeContractReviewMarkedRiskExportTaskCallable(const Model::DescribeContractReviewMarkedRiskExportTaskRequest& request);
+
+                /**
                  *本接口（DescribeContractReviewTask）用于获取合同审查任务详情，包括任务的状态和识别出的风险信息。
                  * @param req DescribeContractReviewTaskRequest
                  * @return DescribeContractReviewTaskOutcome
@@ -2827,6 +2846,15 @@ namespace TencentCloud
                 ExportContractComparisonTaskOutcome ExportContractComparisonTask(const Model::ExportContractComparisonTaskRequest &request);
                 void ExportContractComparisonTaskAsync(const Model::ExportContractComparisonTaskRequest& request, const ExportContractComparisonTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ExportContractComparisonTaskOutcomeCallable ExportContractComparisonTaskCallable(const Model::ExportContractComparisonTaskRequest& request);
+
+                /**
+                 *本接口（ExportContractReviewMarkedRisk）用于创建导出任务，可以导出合同审查标注风险项,包括忽略的、标记错误的、人工标注的风险等
+                 * @param req ExportContractReviewMarkedRiskRequest
+                 * @return ExportContractReviewMarkedRiskOutcome
+                 */
+                ExportContractReviewMarkedRiskOutcome ExportContractReviewMarkedRisk(const Model::ExportContractReviewMarkedRiskRequest &request);
+                void ExportContractReviewMarkedRiskAsync(const Model::ExportContractReviewMarkedRiskRequest& request, const ExportContractReviewMarkedRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportContractReviewMarkedRiskOutcomeCallable ExportContractReviewMarkedRiskCallable(const Model::ExportContractReviewMarkedRiskRequest& request);
 
                 /**
                  *本接口（ExportContractReviewResult）用于导出和同审查结果。支持选择 1 “带风险批注文件”、 2 “审查结果＆摘要（.xIsx）”

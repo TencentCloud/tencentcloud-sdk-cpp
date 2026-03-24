@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/csip/v20221121/model/SkillState.h>
 
 
 namespace TencentCloud
@@ -260,6 +261,27 @@ namespace TencentCloud
                      */
                     bool MetadataRiskURLHasBeenSet() const;
 
+                    /**
+                     * 获取无
+                     * @return SkillState 无
+                     * 
+                     */
+                    SkillState GetSkillState() const;
+
+                    /**
+                     * 设置无
+                     * @param _skillState 无
+                     * 
+                     */
+                    void SetSkillState(const SkillState& _skillState);
+
+                    /**
+                     * 判断参数 SkillState 是否已赋值
+                     * @return SkillState 是否已赋值
+                     * 
+                     */
+                    bool SkillStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -322,6 +344,12 @@ namespace TencentCloud
                      */
                     std::string m_metadataRiskURL;
                     bool m_metadataRiskURLHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    SkillState m_skillState;
+                    bool m_skillStateHasBeenSet;
 
                 };
             }
