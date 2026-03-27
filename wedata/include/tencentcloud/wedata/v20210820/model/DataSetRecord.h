@@ -1736,6 +1736,31 @@ namespace TencentCloud
                      */
                     bool MetaFromHasBeenSet() const;
 
+                    /**
+                     * 获取引擎侧责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EngineOwner 引擎侧责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEngineOwner() const;
+
+                    /**
+                     * 设置引擎侧责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _engineOwner 引擎侧责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEngineOwner(const std::string& _engineOwner);
+
+                    /**
+                     * 判断参数 EngineOwner 是否已赋值
+                     * @return EngineOwner 是否已赋值
+                     * 
+                     */
+                    bool EngineOwnerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2208,6 +2233,13 @@ namespace TencentCloud
                      */
                     std::string m_metaFrom;
                     bool m_metaFromHasBeenSet;
+
+                    /**
+                     * 引擎侧责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_engineOwner;
+                    bool m_engineOwnerHasBeenSet;
 
                 };
             }

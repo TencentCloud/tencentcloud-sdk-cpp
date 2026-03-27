@@ -85,27 +85,6 @@ namespace TencentCloud
                     bool TopicHasBeenSet() const;
 
                     /**
-                     * 获取客户端ID
-                     * @return ClientId 客户端ID
-                     * 
-                     */
-                    std::string GetClientId() const;
-
-                    /**
-                     * 设置客户端ID
-                     * @param _clientId 客户端ID
-                     * 
-                     */
-                    void SetClientId(const std::string& _clientId);
-
-                    /**
-                     * 判断参数 ClientId 是否已赋值
-                     * @return ClientId 是否已赋值
-                     * 
-                     */
-                    bool ClientIdHasBeenSet() const;
-
-                    /**
                      * 获取消息ID
                      * @return MsgId 消息ID
                      * 
@@ -125,6 +104,27 @@ namespace TencentCloud
                      * 
                      */
                     bool MsgIdHasBeenSet() const;
+
+                    /**
+                     * 获取客户端 ID，不指定该参数时消息将被发送到对应消费组内任意客户端
+                     * @return ClientId 客户端 ID，不指定该参数时消息将被发送到对应消费组内任意客户端
+                     * 
+                     */
+                    std::string GetClientId() const;
+
+                    /**
+                     * 设置客户端 ID，不指定该参数时消息将被发送到对应消费组内任意客户端
+                     * @param _clientId 客户端 ID，不指定该参数时消息将被发送到对应消费组内任意客户端
+                     * 
+                     */
+                    void SetClientId(const std::string& _clientId);
+
+                    /**
+                     * 判断参数 ClientId 是否已赋值
+                     * @return ClientId 是否已赋值
+                     * 
+                     */
+                    bool ClientIdHasBeenSet() const;
 
                     /**
                      * 获取消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。
@@ -162,16 +162,16 @@ namespace TencentCloud
                     bool m_topicHasBeenSet;
 
                     /**
-                     * 客户端ID
-                     */
-                    std::string m_clientId;
-                    bool m_clientIdHasBeenSet;
-
-                    /**
                      * 消息ID
                      */
                     std::string m_msgId;
                     bool m_msgIdHasBeenSet;
+
+                    /**
+                     * 客户端 ID，不指定该参数时消息将被发送到对应消费组内任意客户端
+                     */
+                    std::string m_clientId;
+                    bool m_clientIdHasBeenSet;
 
                     /**
                      * 消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。

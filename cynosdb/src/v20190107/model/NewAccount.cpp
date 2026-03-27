@@ -22,8 +22,9 @@ using namespace std;
 
 NewAccount::NewAccount() :
     m_accountNameHasBeenSet(false),
-    m_accountPasswordHasBeenSet(false),
     m_hostHasBeenSet(false),
+    m_accountPasswordHasBeenSet(false),
+    m_passwordRotationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_maxUserConnectionsHasBeenSet(false)
 {
@@ -44,6 +45,16 @@ CoreInternalOutcome NewAccount::Deserialize(const rapidjson::Value &value)
         m_accountNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Host") && !value["Host"].IsNull())
+    {
+        if (!value["Host"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NewAccount.Host` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_host = string(value["Host"].GetString());
+        m_hostHasBeenSet = true;
+    }
+
     if (value.HasMember("AccountPassword") && !value["AccountPassword"].IsNull())
     {
         if (!value["AccountPassword"].IsString())
@@ -54,14 +65,14 @@ CoreInternalOutcome NewAccount::Deserialize(const rapidjson::Value &value)
         m_accountPasswordHasBeenSet = true;
     }
 
-    if (value.HasMember("Host") && !value["Host"].IsNull())
+    if (value.HasMember("PasswordRotation") && !value["PasswordRotation"].IsNull())
     {
-        if (!value["Host"].IsString())
+        if (!value["PasswordRotation"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `NewAccount.Host` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewAccount.PasswordRotation` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_host = string(value["Host"].GetString());
-        m_hostHasBeenSet = true;
+        m_passwordRotation = value["PasswordRotation"].GetInt64();
+        m_passwordRotationHasBeenSet = true;
     }
 
     if (value.HasMember("Description") && !value["Description"].IsNull())
@@ -99,6 +110,14 @@ void NewAccount::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, rapidjson::Value(m_accountName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_hostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Host";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_host.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_accountPasswordHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -107,12 +126,12 @@ void NewAccount::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, rapidjson::Value(m_accountPassword.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_hostHasBeenSet)
+    if (m_passwordRotationHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Host";
+        string key = "PasswordRotation";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_host.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_passwordRotation, allocator);
     }
 
     if (m_descriptionHasBeenSet)
@@ -150,6 +169,22 @@ bool NewAccount::AccountNameHasBeenSet() const
     return m_accountNameHasBeenSet;
 }
 
+string NewAccount::GetHost() const
+{
+    return m_host;
+}
+
+void NewAccount::SetHost(const string& _host)
+{
+    m_host = _host;
+    m_hostHasBeenSet = true;
+}
+
+bool NewAccount::HostHasBeenSet() const
+{
+    return m_hostHasBeenSet;
+}
+
 string NewAccount::GetAccountPassword() const
 {
     return m_accountPassword;
@@ -166,20 +201,20 @@ bool NewAccount::AccountPasswordHasBeenSet() const
     return m_accountPasswordHasBeenSet;
 }
 
-string NewAccount::GetHost() const
+int64_t NewAccount::GetPasswordRotation() const
 {
-    return m_host;
+    return m_passwordRotation;
 }
 
-void NewAccount::SetHost(const string& _host)
+void NewAccount::SetPasswordRotation(const int64_t& _passwordRotation)
 {
-    m_host = _host;
-    m_hostHasBeenSet = true;
+    m_passwordRotation = _passwordRotation;
+    m_passwordRotationHasBeenSet = true;
 }
 
-bool NewAccount::HostHasBeenSet() const
+bool NewAccount::PasswordRotationHasBeenSet() const
 {
-    return m_hostHasBeenSet;
+    return m_passwordRotationHasBeenSet;
 }
 
 string NewAccount::GetDescription() const

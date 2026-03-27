@@ -129,14 +129,22 @@ namespace TencentCloud
 
                     /**
                      * 获取实例机器类型
+1. common，通用型。
+2. exclusive，独享型。
                      * @return DeviceType 实例机器类型
+1. common，通用型。
+2. exclusive，独享型。
                      * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
                      * 设置实例机器类型
+1. common，通用型。
+2. exclusive，独享型。
                      * @param _deviceType 实例机器类型
+1. common，通用型。
+2. exclusive，独享型。
                      * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
@@ -302,6 +310,8 @@ namespace TencentCloud
 
                     /**
                      * 实例机器类型
+1. common，通用型。
+2. exclusive，独享型。
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;

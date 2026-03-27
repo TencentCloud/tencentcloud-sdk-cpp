@@ -49,18 +49,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>状态</p>
+                     * 获取<p>状态</p><p>枚举值：</p><ul><li>0： 未开启</li><li>1： 开启中</li><li>2： 已开启</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status <p>状态</p>
+                     * @return Status <p>状态</p><p>枚举值：</p><ul><li>0： 未开启</li><li>1： 开启中</li><li>2： 已开启</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置<p>状态</p>
+                     * 设置<p>状态</p><p>枚举值：</p><ul><li>0： 未开启</li><li>1： 开启中</li><li>2： 已开启</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status <p>状态</p>
+                     * @param _status <p>状态</p><p>枚举值：</p><ul><li>0： 未开启</li><li>1： 开启中</li><li>2： 已开启</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,18 +99,18 @@ namespace TencentCloud
                     bool LocationHasBeenSet() const;
 
                     /**
-                     * 获取<p>catalogtype</p>
+                     * 获取<p>catalog类型</p><p>枚举值：</p><ul><li>hadoop： hadoop catalog</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CatalogType <p>catalogtype</p>
+                     * @return CatalogType <p>catalog类型</p><p>枚举值：</p><ul><li>hadoop： hadoop catalog</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCatalogType() const;
 
                     /**
-                     * 设置<p>catalogtype</p>
+                     * 设置<p>catalog类型</p><p>枚举值：</p><ul><li>hadoop： hadoop catalog</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _catalogType <p>catalogtype</p>
+                     * @param _catalogType <p>catalog类型</p><p>枚举值：</p><ul><li>hadoop： hadoop catalog</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -297,7 +297,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>状态</p>
+                     * <p>状态</p><p>枚举值：</p><ul><li>0： 未开启</li><li>1： 开启中</li><li>2： 已开启</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
@@ -311,7 +311,7 @@ namespace TencentCloud
                     bool m_locationHasBeenSet;
 
                     /**
-                     * <p>catalogtype</p>
+                     * <p>catalog类型</p><p>枚举值：</p><ul><li>hadoop： hadoop catalog</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_catalogType;

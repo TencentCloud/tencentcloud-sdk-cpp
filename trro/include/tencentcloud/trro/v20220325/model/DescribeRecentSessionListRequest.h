@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ProjectId <p>项目ID</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _projectId <p>项目ID</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取页码，从1开始
-                     * @return PageNumber 页码，从1开始
+                     * 获取<p>页码，从1开始</p>
+                     * @return PageNumber <p>页码，从1开始</p>
                      * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
-                     * 设置页码，从1开始
-                     * @param _pageNumber 页码，从1开始
+                     * 设置<p>页码，从1开始</p>
+                     * @param _pageNumber <p>页码，从1开始</p>
                      * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取每页个数
-                     * @return PageSize 每页个数
+                     * 获取<p>每页个数</p>
+                     * @return PageSize <p>每页个数</p>
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置每页个数
-                     * @param _pageSize 每页个数
+                     * 设置<p>每页个数</p>
+                     * @param _pageSize <p>每页个数</p>
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取设备ID，支持过滤远端设备或现场设备
-                     * @return DeviceId 设备ID，支持过滤远端设备或现场设备
+                     * 获取<p>设备ID，支持过滤远端设备或现场设备</p>
+                     * @return DeviceId <p>设备ID，支持过滤远端设备或现场设备</p>
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置设备ID，支持过滤远端设备或现场设备
-                     * @param _deviceId 设备ID，支持过滤远端设备或现场设备
+                     * 设置<p>设备ID，支持过滤远端设备或现场设备</p>
+                     * @param _deviceId <p>设备ID，支持过滤远端设备或现场设备</p>
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DeviceIdHasBeenSet() const;
 
                     /**
-                     * 获取时间范围的起始时间。时间范围最大为最近两小时，若不传或超出范围，则起始时间按两小时前计算
-                     * @return StartTime 时间范围的起始时间。时间范围最大为最近两小时，若不传或超出范围，则起始时间按两小时前计算
+                     * 获取<p>时间范围的起始时间。时间范围最大为最近两小时，若不传或超出范围，则起始时间按两小时前计算</p>
+                     * @return StartTime <p>时间范围的起始时间。时间范围最大为最近两小时，若不传或超出范围，则起始时间按两小时前计算</p>
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置时间范围的起始时间。时间范围最大为最近两小时，若不传或超出范围，则起始时间按两小时前计算
-                     * @param _startTime 时间范围的起始时间。时间范围最大为最近两小时，若不传或超出范围，则起始时间按两小时前计算
+                     * 设置<p>时间范围的起始时间。时间范围最大为最近两小时，若不传或超出范围，则起始时间按两小时前计算</p>
+                     * @param _startTime <p>时间范围的起始时间。时间范围最大为最近两小时，若不传或超出范围，则起始时间按两小时前计算</p>
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取时间范围的结束时间。时间范围最大为最近两小时，若不传或超出范围，则结束时间按当前时间计算
-                     * @return EndTime 时间范围的结束时间。时间范围最大为最近两小时，若不传或超出范围，则结束时间按当前时间计算
+                     * 获取<p>时间范围的结束时间。时间范围最大为最近两小时，若不传或超出范围，则结束时间按当前时间计算</p>
+                     * @return EndTime <p>时间范围的结束时间。时间范围最大为最近两小时，若不传或超出范围，则结束时间按当前时间计算</p>
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置时间范围的结束时间。时间范围最大为最近两小时，若不传或超出范围，则结束时间按当前时间计算
-                     * @param _endTime 时间范围的结束时间。时间范围最大为最近两小时，若不传或超出范围，则结束时间按当前时间计算
+                     * 设置<p>时间范围的结束时间。时间范围最大为最近两小时，若不传或超出范围，则结束时间按当前时间计算</p>
+                     * @param _endTime <p>时间范围的结束时间。时间范围最大为最近两小时，若不传或超出范围，则结束时间按当前时间计算</p>
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -171,37 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 页码，从1开始
+                     * <p>页码，从1开始</p>
                      */
                     uint64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 每页个数
+                     * <p>每页个数</p>
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 设备ID，支持过滤远端设备或现场设备
+                     * <p>设备ID，支持过滤远端设备或现场设备</p>
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
-                     * 时间范围的起始时间。时间范围最大为最近两小时，若不传或超出范围，则起始时间按两小时前计算
+                     * <p>时间范围的起始时间。时间范围最大为最近两小时，若不传或超出范围，则起始时间按两小时前计算</p>
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 时间范围的结束时间。时间范围最大为最近两小时，若不传或超出范围，则结束时间按当前时间计算
+                     * <p>时间范围的结束时间。时间范围最大为最近两小时，若不传或超出范围，则结束时间按当前时间计算</p>
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;

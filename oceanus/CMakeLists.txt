@@ -111,6 +111,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/DeleteWorkSpaceResponse.h
   include/tencentcloud/oceanus/v20190422/model/HadoopYarnItem.h
   include/tencentcloud/oceanus/v20190422/model/TriggerJobSavepointResponse.h
+  include/tencentcloud/oceanus/v20190422/model/VariableItem.h
   include/tencentcloud/oceanus/v20190422/model/DeleteJobsResponse.h
   include/tencentcloud/oceanus/v20190422/model/Property.h
   include/tencentcloud/oceanus/v20190422/model/JobGraphEdge.h
@@ -269,6 +270,7 @@ set(oceanus_src
   src/v20190422/model/DeleteWorkSpaceResponse.cpp
   src/v20190422/model/HadoopYarnItem.cpp
   src/v20190422/model/TriggerJobSavepointResponse.cpp
+  src/v20190422/model/VariableItem.cpp
   src/v20190422/model/DeleteJobsResponse.cpp
   src/v20190422/model/Property.cpp
   src/v20190422/model/JobGraphEdge.cpp

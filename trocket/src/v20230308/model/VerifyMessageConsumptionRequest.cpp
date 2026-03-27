@@ -25,8 +25,8 @@ using namespace std;
 VerifyMessageConsumptionRequest::VerifyMessageConsumptionRequest() :
     m_instanceIdHasBeenSet(false),
     m_topicHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
     m_msgIdHasBeenSet(false),
+    m_clientIdHasBeenSet(false),
     m_consumerGroupHasBeenSet(false)
 {
 }
@@ -54,20 +54,20 @@ string VerifyMessageConsumptionRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_topic.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_clientIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClientId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_clientId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_msgIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MsgId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_msgId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clientId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_consumerGroupHasBeenSet)
@@ -118,22 +118,6 @@ bool VerifyMessageConsumptionRequest::TopicHasBeenSet() const
     return m_topicHasBeenSet;
 }
 
-string VerifyMessageConsumptionRequest::GetClientId() const
-{
-    return m_clientId;
-}
-
-void VerifyMessageConsumptionRequest::SetClientId(const string& _clientId)
-{
-    m_clientId = _clientId;
-    m_clientIdHasBeenSet = true;
-}
-
-bool VerifyMessageConsumptionRequest::ClientIdHasBeenSet() const
-{
-    return m_clientIdHasBeenSet;
-}
-
 string VerifyMessageConsumptionRequest::GetMsgId() const
 {
     return m_msgId;
@@ -148,6 +132,22 @@ void VerifyMessageConsumptionRequest::SetMsgId(const string& _msgId)
 bool VerifyMessageConsumptionRequest::MsgIdHasBeenSet() const
 {
     return m_msgIdHasBeenSet;
+}
+
+string VerifyMessageConsumptionRequest::GetClientId() const
+{
+    return m_clientId;
+}
+
+void VerifyMessageConsumptionRequest::SetClientId(const string& _clientId)
+{
+    m_clientId = _clientId;
+    m_clientIdHasBeenSet = true;
+}
+
+bool VerifyMessageConsumptionRequest::ClientIdHasBeenSet() const
+{
+    return m_clientIdHasBeenSet;
 }
 
 string VerifyMessageConsumptionRequest::GetConsumerGroup() const

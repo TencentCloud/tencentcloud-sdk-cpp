@@ -25,7 +25,8 @@ using namespace std;
 
 BatchGetPlaybackTokenResponse::BatchGetPlaybackTokenResponse() :
     m_resultsHasBeenSet(false),
-    m_totalHasBeenSet(false)
+    m_totalHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome BatchGetPlaybackTokenResponse::Deserialize(const string &pay
         m_totalHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UserId") && !rsp["UserId"].IsNull())
+    {
+        if (!rsp["UserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userId = string(rsp["UserId"].GetString());
+        m_userIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string BatchGetPlaybackTokenResponse::ToJsonString() const
         value.AddMember(iKey, m_total, allocator);
     }
 
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ uint64_t BatchGetPlaybackTokenResponse::GetTotal() const
 bool BatchGetPlaybackTokenResponse::TotalHasBeenSet() const
 {
     return m_totalHasBeenSet;
+}
+
+string BatchGetPlaybackTokenResponse::GetUserId() const
+{
+    return m_userId;
+}
+
+bool BatchGetPlaybackTokenResponse::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 
 

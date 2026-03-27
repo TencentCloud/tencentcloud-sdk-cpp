@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源id
+                     * 获取<p>资源id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceId 资源id
+                     * @return ResourceId <p>资源id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源id
+                     * 设置<p>资源id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourceId 资源id
+                     * @param _resourceId <p>资源id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取版本号
+                     * 获取<p>版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Version 版本号
+                     * @return Version <p>版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVersion() const;
 
                     /**
-                     * 设置版本号
+                     * 设置<p>版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _version 版本号
+                     * @param _version <p>版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取资源类型
+                     * 获取<p>资源类型</p><p>枚举值：</p><ul><li>1： Main资源</li><li>2： 依赖资源</li><li>3： python文件</li><li>4： 数据文件</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 资源类型
+                     * @return Type <p>资源类型</p><p>枚举值：</p><ul><li>1： Main资源</li><li>2： 依赖资源</li><li>3： python文件</li><li>4： 数据文件</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置资源类型
+                     * 设置<p>资源类型</p><p>枚举值：</p><ul><li>1： Main资源</li><li>2： 依赖资源</li><li>3： python文件</li><li>4： 数据文件</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 资源类型
+                     * @param _type <p>资源类型</p><p>枚举值：</p><ul><li>1： Main资源</li><li>2： 依赖资源</li><li>3： python文件</li><li>4： 数据文件</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取状态
+                     * 获取<p>状态</p><p>枚举值：</p><ul><li>1： 活跃</li><li>-2： 删除</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 状态
+                     * @return Status <p>状态</p><p>枚举值：</p><ul><li>1： 活跃</li><li>-2： 删除</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态
+                     * 设置<p>状态</p><p>枚举值：</p><ul><li>1： 活跃</li><li>-2： 删除</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 状态
+                     * @param _status <p>状态</p><p>枚举值：</p><ul><li>1： 活跃</li><li>-2： 删除</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取空间id
+                     * 获取<p>空间id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkspaceId 空间id
+                     * @return WorkspaceId <p>空间id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkspaceId() const;
 
                     /**
-                     * 设置空间id
+                     * 设置<p>空间id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workspaceId 空间id
+                     * @param _workspaceId <p>空间id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool WorkspaceIdHasBeenSet() const;
 
                     /**
-                     * 获取资源名称
+                     * 获取<p>资源名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 资源名称
+                     * @return Name <p>资源名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置资源名称
+                     * 设置<p>资源名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 资源名称
+                     * @param _name <p>资源名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -199,42 +199,42 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源id
+                     * <p>资源id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 版本号
+                     * <p>版本号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 资源类型
+                     * <p>资源类型</p><p>枚举值：</p><ul><li>1： Main资源</li><li>2： 依赖资源</li><li>3： python文件</li><li>4： 数据文件</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 状态
+                     * <p>状态</p><p>枚举值：</p><ul><li>1： 活跃</li><li>-2： 删除</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 空间id
+                     * <p>空间id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workspaceId;
                     bool m_workspaceIdHasBeenSet;
 
                     /**
-                     * 资源名称
+                     * <p>资源名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;

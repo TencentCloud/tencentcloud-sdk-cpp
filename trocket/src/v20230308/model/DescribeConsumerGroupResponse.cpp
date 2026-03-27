@@ -33,7 +33,8 @@ DescribeConsumerGroupResponse::DescribeConsumerGroupResponse() :
     m_consumeEnableHasBeenSet(false),
     m_maxRetryTimesHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_messageModelHasBeenSet(false)
+    m_messageModelHasBeenSet(false),
+    m_retryPolicyHasBeenSet(false)
 {
 }
 
@@ -171,6 +172,23 @@ CoreInternalOutcome DescribeConsumerGroupResponse::Deserialize(const string &pay
         m_messageModelHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RetryPolicy") && !rsp["RetryPolicy"].IsNull())
+    {
+        if (!rsp["RetryPolicy"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RetryPolicy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_retryPolicy.Deserialize(rsp["RetryPolicy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_retryPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +277,15 @@ string DescribeConsumerGroupResponse::ToJsonString() const
         string key = "MessageModel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_messageModel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_retryPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetryPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_retryPolicy.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -371,6 +398,16 @@ string DescribeConsumerGroupResponse::GetMessageModel() const
 bool DescribeConsumerGroupResponse::MessageModelHasBeenSet() const
 {
     return m_messageModelHasBeenSet;
+}
+
+RetryPolicy DescribeConsumerGroupResponse::GetRetryPolicy() const
+{
+    return m_retryPolicy;
+}
+
+bool DescribeConsumerGroupResponse::RetryPolicyHasBeenSet() const
+{
+    return m_retryPolicyHasBeenSet;
 }
 
 

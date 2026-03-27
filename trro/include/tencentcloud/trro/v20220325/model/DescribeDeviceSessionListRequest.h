@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ProjectId <p>项目ID</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _projectId <p>项目ID</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取页码，从1开始
-                     * @return PageNumber 页码，从1开始
+                     * 获取<p>页码，从1开始</p>
+                     * @return PageNumber <p>页码，从1开始</p>
                      * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
-                     * 设置页码，从1开始
-                     * @param _pageNumber 页码，从1开始
+                     * 设置<p>页码，从1开始</p>
+                     * @param _pageNumber <p>页码，从1开始</p>
                      * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取每页个数
-                     * @return PageSize 每页个数
+                     * 获取<p>每页个数</p>
+                     * @return PageSize <p>每页个数</p>
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置每页个数
-                     * @param _pageSize 每页个数
+                     * 设置<p>每页个数</p>
+                     * @param _pageSize <p>每页个数</p>
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取设备ID
-                     * @return DeviceId 设备ID
+                     * 获取<p>设备ID</p>
+                     * @return DeviceId <p>设备ID</p>
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置设备ID
-                     * @param _deviceId 设备ID
+                     * 设置<p>设备ID</p>
+                     * @param _deviceId <p>设备ID</p>
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DeviceIdHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取<p>开始时间</p>
+                     * @return StartTime <p>开始时间</p>
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置<p>开始时间</p>
+                     * @param _startTime <p>开始时间</p>
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取<p>结束时间</p>
+                     * @return EndTime <p>结束时间</p>
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置<p>结束时间</p>
+                     * @param _endTime <p>结束时间</p>
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -171,37 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 页码，从1开始
+                     * <p>页码，从1开始</p>
                      */
                     uint64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 每页个数
+                     * <p>每页个数</p>
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 设备ID
+                     * <p>设备ID</p>
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * <p>开始时间</p>
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * <p>结束时间</p>
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;

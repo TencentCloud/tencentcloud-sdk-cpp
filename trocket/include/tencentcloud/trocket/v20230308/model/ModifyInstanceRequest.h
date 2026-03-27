@@ -301,6 +301,27 @@ namespace TencentCloud
                      */
                     bool EnableDeletionProtectionHasBeenSet() const;
 
+                    /**
+                     * 获取部署可用区列表
+                     * @return ZoneIds 部署可用区列表
+                     * 
+                     */
+                    std::vector<std::string> GetZoneIds() const;
+
+                    /**
+                     * 设置部署可用区列表
+                     * @param _zoneIds 部署可用区列表
+                     * 
+                     */
+                    void SetZoneIds(const std::vector<std::string>& _zoneIds);
+
+                    /**
+                     * 判断参数 ZoneIds 是否已赋值
+                     * @return ZoneIds 是否已赋值
+                     * 
+                     */
+                    bool ZoneIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -375,6 +396,12 @@ namespace TencentCloud
                      */
                     bool m_enableDeletionProtection;
                     bool m_enableDeletionProtectionHasBeenSet;
+
+                    /**
+                     * 部署可用区列表
+                     */
+                    std::vector<std::string> m_zoneIds;
+                    bool m_zoneIdsHasBeenSet;
 
                 };
             }

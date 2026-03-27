@@ -169,6 +169,8 @@
 #include <tencentcloud/live/v20180801/model/DeleteRecordTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteScreenshotTaskRequest.h>
 #include <tencentcloud/live/v20180801/model/DeleteScreenshotTaskResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeAIGCTaskStatusRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeAIGCTaskStatusResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeAllStreamPlayInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeAllStreamPlayInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeAreaBillBandwidthAndFluxListRequest.h>
@@ -706,6 +708,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteScreenshotTaskResponse> DeleteScreenshotTaskOutcome;
                 typedef std::future<DeleteScreenshotTaskOutcome> DeleteScreenshotTaskOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DeleteScreenshotTaskRequest&, DeleteScreenshotTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScreenshotTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAIGCTaskStatusResponse> DescribeAIGCTaskStatusOutcome;
+                typedef std::future<DescribeAIGCTaskStatusOutcome> DescribeAIGCTaskStatusOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeAIGCTaskStatusRequest&, DescribeAIGCTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIGCTaskStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAllStreamPlayInfoListResponse> DescribeAllStreamPlayInfoListOutcome;
                 typedef std::future<DescribeAllStreamPlayInfoListOutcome> DescribeAllStreamPlayInfoListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeAllStreamPlayInfoListRequest&, DescribeAllStreamPlayInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllStreamPlayInfoListAsyncHandler;
@@ -1886,6 +1891,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DeleteScreenshotTaskOutcome DeleteScreenshotTask(const Model::DeleteScreenshotTaskRequest &request);
                 void DeleteScreenshotTaskAsync(const Model::DeleteScreenshotTaskRequest& request, const DeleteScreenshotTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteScreenshotTaskOutcomeCallable DeleteScreenshotTaskCallable(const Model::DeleteScreenshotTaskRequest& request);
+
+                /**
+                 *查询视频转绘任务
+                 * @param req DescribeAIGCTaskStatusRequest
+                 * @return DescribeAIGCTaskStatusOutcome
+                 */
+                DescribeAIGCTaskStatusOutcome DescribeAIGCTaskStatus(const Model::DescribeAIGCTaskStatusRequest &request);
+                void DescribeAIGCTaskStatusAsync(const Model::DescribeAIGCTaskStatusRequest& request, const DescribeAIGCTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAIGCTaskStatusOutcomeCallable DescribeAIGCTaskStatusCallable(const Model::DescribeAIGCTaskStatusRequest& request);
 
                 /**
                  *该接口为监控数据接口，数据采集及统计方式与计费数据不同，仅供运营分析使用，不能用于计费对账参考。

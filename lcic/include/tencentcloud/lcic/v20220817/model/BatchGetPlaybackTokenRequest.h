@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool ExpireSecondsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户ID</p>
+                     * @return UserId <p>用户ID</p>
+                     * 
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 设置<p>用户ID</p>
+                     * @param _userId <p>用户ID</p>
+                     * 
+                     */
+                    void SetUserId(const std::string& _userId);
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     * 
+                     */
+                    bool UserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     uint64_t m_expireSeconds;
                     bool m_expireSecondsHasBeenSet;
+
+                    /**
+                     * <p>用户ID</p>
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
 
                 };
             }

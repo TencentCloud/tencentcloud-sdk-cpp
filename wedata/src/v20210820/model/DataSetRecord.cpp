@@ -87,7 +87,8 @@ DataSetRecord::DataSetRecord() :
     m_modelTypeHasBeenSet(false),
     m_fullNameHasBeenSet(false),
     m_namespaceHasBeenSet(false),
-    m_metaFromHasBeenSet(false)
+    m_metaFromHasBeenSet(false),
+    m_engineOwnerHasBeenSet(false)
 {
 }
 
@@ -849,6 +850,16 @@ CoreInternalOutcome DataSetRecord::Deserialize(const rapidjson::Value &value)
         m_metaFromHasBeenSet = true;
     }
 
+    if (value.HasMember("EngineOwner") && !value["EngineOwner"].IsNull())
+    {
+        if (!value["EngineOwner"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSetRecord.EngineOwner` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_engineOwner = string(value["EngineOwner"].GetString());
+        m_engineOwnerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1449,6 +1460,14 @@ void DataSetRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "MetaFrom";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_metaFrom.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_engineOwnerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineOwner";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_engineOwner.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2524,5 +2543,21 @@ void DataSetRecord::SetMetaFrom(const string& _metaFrom)
 bool DataSetRecord::MetaFromHasBeenSet() const
 {
     return m_metaFromHasBeenSet;
+}
+
+string DataSetRecord::GetEngineOwner() const
+{
+    return m_engineOwner;
+}
+
+void DataSetRecord::SetEngineOwner(const string& _engineOwner)
+{
+    m_engineOwner = _engineOwner;
+    m_engineOwnerHasBeenSet = true;
+}
+
+bool DataSetRecord::EngineOwnerHasBeenSet() const
+{
+    return m_engineOwnerHasBeenSet;
 }
 

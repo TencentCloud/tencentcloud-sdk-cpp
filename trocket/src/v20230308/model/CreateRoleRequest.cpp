@@ -29,7 +29,10 @@ CreateRoleRequest::CreateRoleRequest() :
     m_permReadHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_permTypeHasBeenSet(false),
-    m_detailedPermsHasBeenSet(false)
+    m_detailedPermsHasBeenSet(false),
+    m_roleGenerateModeHasBeenSet(false),
+    m_accessKeyHasBeenSet(false),
+    m_secretKeyHasBeenSet(false)
 {
 }
 
@@ -101,6 +104,30 @@ string CreateRoleRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_roleGenerateModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleGenerateMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_roleGenerateMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accessKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secretKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_secretKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -221,6 +248,54 @@ void CreateRoleRequest::SetDetailedPerms(const vector<DetailedRolePerm>& _detail
 bool CreateRoleRequest::DetailedPermsHasBeenSet() const
 {
     return m_detailedPermsHasBeenSet;
+}
+
+string CreateRoleRequest::GetRoleGenerateMode() const
+{
+    return m_roleGenerateMode;
+}
+
+void CreateRoleRequest::SetRoleGenerateMode(const string& _roleGenerateMode)
+{
+    m_roleGenerateMode = _roleGenerateMode;
+    m_roleGenerateModeHasBeenSet = true;
+}
+
+bool CreateRoleRequest::RoleGenerateModeHasBeenSet() const
+{
+    return m_roleGenerateModeHasBeenSet;
+}
+
+string CreateRoleRequest::GetAccessKey() const
+{
+    return m_accessKey;
+}
+
+void CreateRoleRequest::SetAccessKey(const string& _accessKey)
+{
+    m_accessKey = _accessKey;
+    m_accessKeyHasBeenSet = true;
+}
+
+bool CreateRoleRequest::AccessKeyHasBeenSet() const
+{
+    return m_accessKeyHasBeenSet;
+}
+
+string CreateRoleRequest::GetSecretKey() const
+{
+    return m_secretKey;
+}
+
+void CreateRoleRequest::SetSecretKey(const string& _secretKey)
+{
+    m_secretKey = _secretKey;
+    m_secretKeyHasBeenSet = true;
+}
+
+bool CreateRoleRequest::SecretKeyHasBeenSet() const
+{
+    return m_secretKeyHasBeenSet;
 }
 
 

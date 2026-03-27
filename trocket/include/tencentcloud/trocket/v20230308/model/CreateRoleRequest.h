@@ -190,6 +190,69 @@ namespace TencentCloud
                      */
                     bool DetailedPermsHasBeenSet() const;
 
+                    /**
+                     * 获取AK、SK的生成方式，AUTO：后端自动生成，MANUAL：用户手动输入
+                     * @return RoleGenerateMode AK、SK的生成方式，AUTO：后端自动生成，MANUAL：用户手动输入
+                     * 
+                     */
+                    std::string GetRoleGenerateMode() const;
+
+                    /**
+                     * 设置AK、SK的生成方式，AUTO：后端自动生成，MANUAL：用户手动输入
+                     * @param _roleGenerateMode AK、SK的生成方式，AUTO：后端自动生成，MANUAL：用户手动输入
+                     * 
+                     */
+                    void SetRoleGenerateMode(const std::string& _roleGenerateMode);
+
+                    /**
+                     * 判断参数 RoleGenerateMode 是否已赋值
+                     * @return RoleGenerateMode 是否已赋值
+                     * 
+                     */
+                    bool RoleGenerateModeHasBeenSet() const;
+
+                    /**
+                     * 获取选择MANUAL模式下，需要手动输入AK值
+                     * @return AccessKey 选择MANUAL模式下，需要手动输入AK值
+                     * 
+                     */
+                    std::string GetAccessKey() const;
+
+                    /**
+                     * 设置选择MANUAL模式下，需要手动输入AK值
+                     * @param _accessKey 选择MANUAL模式下，需要手动输入AK值
+                     * 
+                     */
+                    void SetAccessKey(const std::string& _accessKey);
+
+                    /**
+                     * 判断参数 AccessKey 是否已赋值
+                     * @return AccessKey 是否已赋值
+                     * 
+                     */
+                    bool AccessKeyHasBeenSet() const;
+
+                    /**
+                     * 获取选择MANUAL模式下，需要手动输入SK值
+                     * @return SecretKey 选择MANUAL模式下，需要手动输入SK值
+                     * 
+                     */
+                    std::string GetSecretKey() const;
+
+                    /**
+                     * 设置选择MANUAL模式下，需要手动输入SK值
+                     * @param _secretKey 选择MANUAL模式下，需要手动输入SK值
+                     * 
+                     */
+                    void SetSecretKey(const std::string& _secretKey);
+
+                    /**
+                     * 判断参数 SecretKey 是否已赋值
+                     * @return SecretKey 是否已赋值
+                     * 
+                     */
+                    bool SecretKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -233,6 +296,24 @@ namespace TencentCloud
                      */
                     std::vector<DetailedRolePerm> m_detailedPerms;
                     bool m_detailedPermsHasBeenSet;
+
+                    /**
+                     * AK、SK的生成方式，AUTO：后端自动生成，MANUAL：用户手动输入
+                     */
+                    std::string m_roleGenerateMode;
+                    bool m_roleGenerateModeHasBeenSet;
+
+                    /**
+                     * 选择MANUAL模式下，需要手动输入AK值
+                     */
+                    std::string m_accessKey;
+                    bool m_accessKeyHasBeenSet;
+
+                    /**
+                     * 选择MANUAL模式下，需要手动输入SK值
+                     */
+                    std::string m_secretKey;
+                    bool m_secretKeyHasBeenSet;
 
                 };
             }

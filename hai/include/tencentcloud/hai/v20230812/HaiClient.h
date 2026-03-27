@@ -29,6 +29,8 @@
 #include <tencentcloud/hai/v20230812/model/CreateInferServiceByTemplateResponse.h>
 #include <tencentcloud/hai/v20230812/model/CreateMuskPromptRequest.h>
 #include <tencentcloud/hai/v20230812/model/CreateMuskPromptResponse.h>
+#include <tencentcloud/hai/v20230812/model/DeleteServiceRequest.h>
+#include <tencentcloud/hai/v20230812/model/DeleteServiceResponse.h>
 #include <tencentcloud/hai/v20230812/model/DeployInferServiceRequest.h>
 #include <tencentcloud/hai/v20230812/model/DeployInferServiceResponse.h>
 #include <tencentcloud/hai/v20230812/model/DescribeApplicationsRequest.h>
@@ -51,6 +53,8 @@
 #include <tencentcloud/hai/v20230812/model/DescribeServiceLoginSettingsResponse.h>
 #include <tencentcloud/hai/v20230812/model/DescribeServicesRequest.h>
 #include <tencentcloud/hai/v20230812/model/DescribeServicesResponse.h>
+#include <tencentcloud/hai/v20230812/model/DescribeServicesCallInfoRequest.h>
+#include <tencentcloud/hai/v20230812/model/DescribeServicesCallInfoResponse.h>
 #include <tencentcloud/hai/v20230812/model/InquirePriceRunInstancesRequest.h>
 #include <tencentcloud/hai/v20230812/model/InquirePriceRunInstancesResponse.h>
 #include <tencentcloud/hai/v20230812/model/InquirePriceUpdateServiceConfigsRequest.h>
@@ -92,6 +96,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateMuskPromptResponse> CreateMuskPromptOutcome;
                 typedef std::future<CreateMuskPromptOutcome> CreateMuskPromptOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::CreateMuskPromptRequest&, CreateMuskPromptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMuskPromptAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteServiceResponse> DeleteServiceOutcome;
+                typedef std::future<DeleteServiceOutcome> DeleteServiceOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::DeleteServiceRequest&, DeleteServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeployInferServiceResponse> DeployInferServiceOutcome;
                 typedef std::future<DeployInferServiceOutcome> DeployInferServiceOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::DeployInferServiceRequest&, DeployInferServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployInferServiceAsyncHandler;
@@ -125,6 +132,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeServicesResponse> DescribeServicesOutcome;
                 typedef std::future<DescribeServicesOutcome> DescribeServicesOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::DescribeServicesRequest&, DescribeServicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeServicesCallInfoResponse> DescribeServicesCallInfoOutcome;
+                typedef std::future<DescribeServicesCallInfoOutcome> DescribeServicesCallInfoOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::DescribeServicesCallInfoRequest&, DescribeServicesCallInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServicesCallInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquirePriceRunInstancesResponse> InquirePriceRunInstancesOutcome;
                 typedef std::future<InquirePriceRunInstancesOutcome> InquirePriceRunInstancesOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::InquirePriceRunInstancesRequest&, InquirePriceRunInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRunInstancesAsyncHandler;
@@ -181,6 +191,15 @@ namespace TencentCloud
                 CreateMuskPromptOutcome CreateMuskPrompt(const Model::CreateMuskPromptRequest &request);
                 void CreateMuskPromptAsync(const Model::CreateMuskPromptRequest& request, const CreateMuskPromptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateMuskPromptOutcomeCallable CreateMuskPromptCallable(const Model::CreateMuskPromptRequest& request);
+
+                /**
+                 *本接口 (DeleteService) 用于删除一个指定配置的实例。
+                 * @param req DeleteServiceRequest
+                 * @return DeleteServiceOutcome
+                 */
+                DeleteServiceOutcome DeleteService(const Model::DeleteServiceRequest &request);
+                void DeleteServiceAsync(const Model::DeleteServiceRequest& request, const DeleteServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteServiceOutcomeCallable DeleteServiceCallable(const Model::DeleteServiceRequest& request);
 
                 /**
                  *本接口(DeployInferService)用于部署推理服务
@@ -280,6 +299,15 @@ namespace TencentCloud
                 DescribeServicesOutcome DescribeServices(const Model::DescribeServicesRequest &request);
                 void DescribeServicesAsync(const Model::DescribeServicesRequest& request, const DescribeServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeServicesOutcomeCallable DescribeServicesCallable(const Model::DescribeServicesRequest& request);
+
+                /**
+                 *本接口 (DescribeServciesCallInfo) 用于查询服务调用信息。
+                 * @param req DescribeServicesCallInfoRequest
+                 * @return DescribeServicesCallInfoOutcome
+                 */
+                DescribeServicesCallInfoOutcome DescribeServicesCallInfo(const Model::DescribeServicesCallInfoRequest &request);
+                void DescribeServicesCallInfoAsync(const Model::DescribeServicesCallInfoRequest& request, const DescribeServicesCallInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeServicesCallInfoOutcomeCallable DescribeServicesCallInfoCallable(const Model::DescribeServicesCallInfoRequest& request);
 
                 /**
                  *本接口 (InquirePriceRunInstances) 用于实例询价。

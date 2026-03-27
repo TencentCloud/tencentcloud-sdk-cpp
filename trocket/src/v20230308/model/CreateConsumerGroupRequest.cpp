@@ -29,7 +29,8 @@ CreateConsumerGroupRequest::CreateConsumerGroupRequest() :
     m_consumeMessageOrderlyHasBeenSet(false),
     m_consumerGroupHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_retryPolicyHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,15 @@ string CreateConsumerGroupRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_retryPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetryPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_retryPolicy.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -221,6 +231,22 @@ void CreateConsumerGroupRequest::SetTagList(const vector<Tag>& _tagList)
 bool CreateConsumerGroupRequest::TagListHasBeenSet() const
 {
     return m_tagListHasBeenSet;
+}
+
+RetryPolicy CreateConsumerGroupRequest::GetRetryPolicy() const
+{
+    return m_retryPolicy;
+}
+
+void CreateConsumerGroupRequest::SetRetryPolicy(const RetryPolicy& _retryPolicy)
+{
+    m_retryPolicy = _retryPolicy;
+    m_retryPolicyHasBeenSet = true;
+}
+
+bool CreateConsumerGroupRequest::RetryPolicyHasBeenSet() const
+{
+    return m_retryPolicyHasBeenSet;
 }
 
 

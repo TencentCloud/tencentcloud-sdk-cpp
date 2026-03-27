@@ -23,7 +23,8 @@ using namespace std;
 RegisterInfoOption::RegisterInfoOption() :
     m_legalNameSameHasBeenSet(false),
     m_unifiedSocialCreditCodeCNameSameHasBeenSet(false),
-    m_organizationIdCardTypeSameHasBeenSet(false)
+    m_organizationIdCardTypeSameHasBeenSet(false),
+    m_unifiedSocialCreditCodeSameHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome RegisterInfoOption::Deserialize(const rapidjson::Value &valu
         m_organizationIdCardTypeSameHasBeenSet = true;
     }
 
+    if (value.HasMember("UnifiedSocialCreditCodeSame") && !value["UnifiedSocialCreditCodeSame"].IsNull())
+    {
+        if (!value["UnifiedSocialCreditCodeSame"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegisterInfoOption.UnifiedSocialCreditCodeSame` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_unifiedSocialCreditCodeSame = value["UnifiedSocialCreditCodeSame"].GetBool();
+        m_unifiedSocialCreditCodeSameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void RegisterInfoOption::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "OrganizationIdCardTypeSame";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_organizationIdCardTypeSame, allocator);
+    }
+
+    if (m_unifiedSocialCreditCodeSameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnifiedSocialCreditCodeSame";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_unifiedSocialCreditCodeSame, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void RegisterInfoOption::SetOrganizationIdCardTypeSame(const bool& _organization
 bool RegisterInfoOption::OrganizationIdCardTypeSameHasBeenSet() const
 {
     return m_organizationIdCardTypeSameHasBeenSet;
+}
+
+bool RegisterInfoOption::GetUnifiedSocialCreditCodeSame() const
+{
+    return m_unifiedSocialCreditCodeSame;
+}
+
+void RegisterInfoOption::SetUnifiedSocialCreditCodeSame(const bool& _unifiedSocialCreditCodeSame)
+{
+    m_unifiedSocialCreditCodeSame = _unifiedSocialCreditCodeSame;
+    m_unifiedSocialCreditCodeSameHasBeenSet = true;
+}
+
+bool RegisterInfoOption::UnifiedSocialCreditCodeSameHasBeenSet() const
+{
+    return m_unifiedSocialCreditCodeSameHasBeenSet;
 }
 

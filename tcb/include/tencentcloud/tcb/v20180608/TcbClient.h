@@ -25,22 +25,20 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/tcb/v20180608/model/AddProviderRequest.h>
 #include <tencentcloud/tcb/v20180608/model/AddProviderResponse.h>
-#include <tencentcloud/tcb/v20180608/model/BindCloudBaseAccessDomainRequest.h>
-#include <tencentcloud/tcb/v20180608/model/BindCloudBaseAccessDomainResponse.h>
-#include <tencentcloud/tcb/v20180608/model/BindCloudBaseGWDomainRequest.h>
-#include <tencentcloud/tcb/v20180608/model/BindCloudBaseGWDomainResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CheckTcbServiceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CheckTcbServiceResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreateApiKeyRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreateApiKeyResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateAuthDomainRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateAuthDomainResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateBillDealRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateBillDealResponse.h>
-#include <tencentcloud/tcb/v20180608/model/CreateCloudBaseGWAPIRequest.h>
-#include <tencentcloud/tcb/v20180608/model/CreateCloudBaseGWAPIResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateEnvResourceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateEnvResourceResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreateHTTPServiceRouteRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreateHTTPServiceRouteResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateHostingDomainRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateHostingDomainResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateMySQLRequest.h>
@@ -51,12 +49,14 @@
 #include <tencentcloud/tcb/v20180608/model/CreateTableResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateUserRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateUserResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreateVmInstanceRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreateVmInstanceResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteApiKeyRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteApiKeyResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteAuthDomainRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteAuthDomainResponse.h>
-#include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseGWAPIRequest.h>
-#include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseGWAPIResponse.h>
-#include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseGWDomainRequest.h>
-#include <tencentcloud/tcb/v20180608/model/DeleteCloudBaseGWDomainResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteHTTPServiceRouteRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DeleteHTTPServiceRouteResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteProviderRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteProviderResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteTableRequest.h>
@@ -65,6 +65,8 @@
 #include <tencentcloud/tcb/v20180608/model/DeleteUsersResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteVmInstanceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteVmInstanceResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeApiKeyListRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeApiKeyListResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeAuthDomainsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeAuthDomainsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeBaasPackageListRequest.h>
@@ -75,10 +77,6 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeClientResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceResponse.h>
-#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseGWAPIRequest.h>
-#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseGWAPIResponse.h>
-#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseGWServiceRequest.h>
-#include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseGWServiceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCreateMySQLResultRequest.h>
@@ -93,6 +91,10 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvLimitResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvsResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeGatewayVersionsRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeGatewayVersionsResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeHTTPServiceRouteRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeHTTPServiceRouteResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeHostingDomainTaskRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeHostingDomainTaskResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeLoginConfigRequest.h>
@@ -133,8 +135,6 @@
 #include <tencentcloud/tcb/v20180608/model/ListTablesResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyClientRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyClientResponse.h>
-#include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseGWAPIRequest.h>
-#include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseGWAPIResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyClsTopicRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyClsTopicResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyDatabaseACLRequest.h>
@@ -143,6 +143,8 @@
 #include <tencentcloud/tcb/v20180608/model/ModifyEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyEnvPlanRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyEnvPlanResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyHTTPServiceRouteRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyHTTPServiceRouteResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyLoginConfigRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyLoginConfigResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyProviderRequest.h>
@@ -180,30 +182,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddProviderResponse> AddProviderOutcome;
                 typedef std::future<AddProviderOutcome> AddProviderOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::AddProviderRequest&, AddProviderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddProviderAsyncHandler;
-                typedef Outcome<Core::Error, Model::BindCloudBaseAccessDomainResponse> BindCloudBaseAccessDomainOutcome;
-                typedef std::future<BindCloudBaseAccessDomainOutcome> BindCloudBaseAccessDomainOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::BindCloudBaseAccessDomainRequest&, BindCloudBaseAccessDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindCloudBaseAccessDomainAsyncHandler;
-                typedef Outcome<Core::Error, Model::BindCloudBaseGWDomainResponse> BindCloudBaseGWDomainOutcome;
-                typedef std::future<BindCloudBaseGWDomainOutcome> BindCloudBaseGWDomainOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::BindCloudBaseGWDomainRequest&, BindCloudBaseGWDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindCloudBaseGWDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckTcbServiceResponse> CheckTcbServiceOutcome;
                 typedef std::future<CheckTcbServiceOutcome> CheckTcbServiceOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CheckTcbServiceRequest&, CheckTcbServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckTcbServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateApiKeyResponse> CreateApiKeyOutcome;
+                typedef std::future<CreateApiKeyOutcome> CreateApiKeyOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreateApiKeyRequest&, CreateApiKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApiKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAuthDomainResponse> CreateAuthDomainOutcome;
                 typedef std::future<CreateAuthDomainOutcome> CreateAuthDomainOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateAuthDomainRequest&, CreateAuthDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuthDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBillDealResponse> CreateBillDealOutcome;
                 typedef std::future<CreateBillDealOutcome> CreateBillDealOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateBillDealRequest&, CreateBillDealOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBillDealAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateCloudBaseGWAPIResponse> CreateCloudBaseGWAPIOutcome;
-                typedef std::future<CreateCloudBaseGWAPIOutcome> CreateCloudBaseGWAPIOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::CreateCloudBaseGWAPIRequest&, CreateCloudBaseGWAPIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudBaseGWAPIAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateEnvResponse> CreateEnvOutcome;
                 typedef std::future<CreateEnvOutcome> CreateEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateEnvRequest&, CreateEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEnvAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateEnvResourceResponse> CreateEnvResourceOutcome;
                 typedef std::future<CreateEnvResourceOutcome> CreateEnvResourceOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateEnvResourceRequest&, CreateEnvResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEnvResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateHTTPServiceRouteResponse> CreateHTTPServiceRouteOutcome;
+                typedef std::future<CreateHTTPServiceRouteOutcome> CreateHTTPServiceRouteOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreateHTTPServiceRouteRequest&, CreateHTTPServiceRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHTTPServiceRouteAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateHostingDomainResponse> CreateHostingDomainOutcome;
                 typedef std::future<CreateHostingDomainOutcome> CreateHostingDomainOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateHostingDomainRequest&, CreateHostingDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHostingDomainAsyncHandler;
@@ -219,15 +218,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateUserResponse> CreateUserOutcome;
                 typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateUserRequest&, CreateUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVmInstanceResponse> CreateVmInstanceOutcome;
+                typedef std::future<CreateVmInstanceOutcome> CreateVmInstanceOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreateVmInstanceRequest&, CreateVmInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVmInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteApiKeyResponse> DeleteApiKeyOutcome;
+                typedef std::future<DeleteApiKeyOutcome> DeleteApiKeyOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DeleteApiKeyRequest&, DeleteApiKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApiKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAuthDomainResponse> DeleteAuthDomainOutcome;
                 typedef std::future<DeleteAuthDomainOutcome> DeleteAuthDomainOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteAuthDomainRequest&, DeleteAuthDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuthDomainAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteCloudBaseGWAPIResponse> DeleteCloudBaseGWAPIOutcome;
-                typedef std::future<DeleteCloudBaseGWAPIOutcome> DeleteCloudBaseGWAPIOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::DeleteCloudBaseGWAPIRequest&, DeleteCloudBaseGWAPIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudBaseGWAPIAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteCloudBaseGWDomainResponse> DeleteCloudBaseGWDomainOutcome;
-                typedef std::future<DeleteCloudBaseGWDomainOutcome> DeleteCloudBaseGWDomainOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::DeleteCloudBaseGWDomainRequest&, DeleteCloudBaseGWDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudBaseGWDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteHTTPServiceRouteResponse> DeleteHTTPServiceRouteOutcome;
+                typedef std::future<DeleteHTTPServiceRouteOutcome> DeleteHTTPServiceRouteOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DeleteHTTPServiceRouteRequest&, DeleteHTTPServiceRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHTTPServiceRouteAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteProviderResponse> DeleteProviderOutcome;
                 typedef std::future<DeleteProviderOutcome> DeleteProviderOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteProviderRequest&, DeleteProviderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProviderAsyncHandler;
@@ -240,6 +242,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteVmInstanceResponse> DeleteVmInstanceOutcome;
                 typedef std::future<DeleteVmInstanceOutcome> DeleteVmInstanceOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteVmInstanceRequest&, DeleteVmInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVmInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeApiKeyListResponse> DescribeApiKeyListOutcome;
+                typedef std::future<DescribeApiKeyListOutcome> DescribeApiKeyListOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeApiKeyListRequest&, DescribeApiKeyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiKeyListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAuthDomainsResponse> DescribeAuthDomainsOutcome;
                 typedef std::future<DescribeAuthDomainsOutcome> DescribeAuthDomainsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeAuthDomainsRequest&, DescribeAuthDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuthDomainsAsyncHandler;
@@ -255,12 +260,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudBaseBuildServiceResponse> DescribeCloudBaseBuildServiceOutcome;
                 typedef std::future<DescribeCloudBaseBuildServiceOutcome> DescribeCloudBaseBuildServiceOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseBuildServiceRequest&, DescribeCloudBaseBuildServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseBuildServiceAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeCloudBaseGWAPIResponse> DescribeCloudBaseGWAPIOutcome;
-                typedef std::future<DescribeCloudBaseGWAPIOutcome> DescribeCloudBaseGWAPIOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseGWAPIRequest&, DescribeCloudBaseGWAPIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseGWAPIAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeCloudBaseGWServiceResponse> DescribeCloudBaseGWServiceOutcome;
-                typedef std::future<DescribeCloudBaseGWServiceOutcome> DescribeCloudBaseGWServiceOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseGWServiceRequest&, DescribeCloudBaseGWServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseGWServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudBaseRunServerVersionResponse> DescribeCloudBaseRunServerVersionOutcome;
                 typedef std::future<DescribeCloudBaseRunServerVersionOutcome> DescribeCloudBaseRunServerVersionOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseRunServerVersionRequest&, DescribeCloudBaseRunServerVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseRunServerVersionAsyncHandler;
@@ -282,6 +281,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEnvsResponse> DescribeEnvsOutcome;
                 typedef std::future<DescribeEnvsOutcome> DescribeEnvsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeEnvsRequest&, DescribeEnvsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGatewayVersionsResponse> DescribeGatewayVersionsOutcome;
+                typedef std::future<DescribeGatewayVersionsOutcome> DescribeGatewayVersionsOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeGatewayVersionsRequest&, DescribeGatewayVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayVersionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHTTPServiceRouteResponse> DescribeHTTPServiceRouteOutcome;
+                typedef std::future<DescribeHTTPServiceRouteOutcome> DescribeHTTPServiceRouteOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeHTTPServiceRouteRequest&, DescribeHTTPServiceRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHTTPServiceRouteAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHostingDomainTaskResponse> DescribeHostingDomainTaskOutcome;
                 typedef std::future<DescribeHostingDomainTaskOutcome> DescribeHostingDomainTaskOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeHostingDomainTaskRequest&, DescribeHostingDomainTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostingDomainTaskAsyncHandler;
@@ -342,9 +347,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyClientResponse> ModifyClientOutcome;
                 typedef std::future<ModifyClientOutcome> ModifyClientOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyClientRequest&, ModifyClientOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClientAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyCloudBaseGWAPIResponse> ModifyCloudBaseGWAPIOutcome;
-                typedef std::future<ModifyCloudBaseGWAPIOutcome> ModifyCloudBaseGWAPIOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::ModifyCloudBaseGWAPIRequest&, ModifyCloudBaseGWAPIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudBaseGWAPIAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyClsTopicResponse> ModifyClsTopicOutcome;
                 typedef std::future<ModifyClsTopicOutcome> ModifyClsTopicOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyClsTopicRequest&, ModifyClsTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClsTopicAsyncHandler;
@@ -357,6 +359,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyEnvPlanResponse> ModifyEnvPlanOutcome;
                 typedef std::future<ModifyEnvPlanOutcome> ModifyEnvPlanOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyEnvPlanRequest&, ModifyEnvPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvPlanAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyHTTPServiceRouteResponse> ModifyHTTPServiceRouteOutcome;
+                typedef std::future<ModifyHTTPServiceRouteOutcome> ModifyHTTPServiceRouteOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ModifyHTTPServiceRouteRequest&, ModifyHTTPServiceRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHTTPServiceRouteAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLoginConfigResponse> ModifyLoginConfigOutcome;
                 typedef std::future<ModifyLoginConfigOutcome> ModifyLoginConfigOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyLoginConfigRequest&, ModifyLoginConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoginConfigAsyncHandler;
@@ -402,24 +407,6 @@ namespace TencentCloud
                 AddProviderOutcomeCallable AddProviderCallable(const Model::AddProviderRequest& request);
 
                 /**
-                 *绑定云开发自定义域名，用于云接入和静态托管
-                 * @param req BindCloudBaseAccessDomainRequest
-                 * @return BindCloudBaseAccessDomainOutcome
-                 */
-                BindCloudBaseAccessDomainOutcome BindCloudBaseAccessDomain(const Model::BindCloudBaseAccessDomainRequest &request);
-                void BindCloudBaseAccessDomainAsync(const Model::BindCloudBaseAccessDomainRequest& request, const BindCloudBaseAccessDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                BindCloudBaseAccessDomainOutcomeCallable BindCloudBaseAccessDomainCallable(const Model::BindCloudBaseAccessDomainRequest& request);
-
-                /**
-                 *绑定自定义域名
-                 * @param req BindCloudBaseGWDomainRequest
-                 * @return BindCloudBaseGWDomainOutcome
-                 */
-                BindCloudBaseGWDomainOutcome BindCloudBaseGWDomain(const Model::BindCloudBaseGWDomainRequest &request);
-                void BindCloudBaseGWDomainAsync(const Model::BindCloudBaseGWDomainRequest& request, const BindCloudBaseGWDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                BindCloudBaseGWDomainOutcomeCallable BindCloudBaseGWDomainCallable(const Model::BindCloudBaseGWDomainRequest& request);
-
-                /**
                  *检查是否开通Tcb服务
                  * @param req CheckTcbServiceRequest
                  * @return CheckTcbServiceOutcome
@@ -427,6 +414,15 @@ namespace TencentCloud
                 CheckTcbServiceOutcome CheckTcbService(const Model::CheckTcbServiceRequest &request);
                 void CheckTcbServiceAsync(const Model::CheckTcbServiceRequest& request, const CheckTcbServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckTcbServiceOutcomeCallable CheckTcbServiceCallable(const Model::CheckTcbServiceRequest& request);
+
+                /**
+                 *创建云开发平台的API Key。在指定云开发环境下创建一个 API Key 访问凭证。支持两种类型：api_key（服务端管理员访问凭证，以管理员身份签发，可设置有效期，不设置有效期则永不过期，单个环境最多创建 5 个）和 publish_key（前端匿名访问凭证，固定有效期，每个环境仅保留一个）。创建成功后将返回 API Key 明文 Token，该值仅在创建时返回一次，请妥善保存。需要管理员权限。
+                 * @param req CreateApiKeyRequest
+                 * @return CreateApiKeyOutcome
+                 */
+                CreateApiKeyOutcome CreateApiKey(const Model::CreateApiKeyRequest &request);
+                void CreateApiKeyAsync(const Model::CreateApiKeyRequest& request, const CreateApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateApiKeyOutcomeCallable CreateApiKeyCallable(const Model::CreateApiKeyRequest& request);
 
                 /**
                  *增加安全域名。
@@ -460,15 +456,6 @@ namespace TencentCloud
                 CreateBillDealOutcomeCallable CreateBillDealCallable(const Model::CreateBillDealRequest& request);
 
                 /**
-                 *创建云开发网关API
-                 * @param req CreateCloudBaseGWAPIRequest
-                 * @return CreateCloudBaseGWAPIOutcome
-                 */
-                CreateCloudBaseGWAPIOutcome CreateCloudBaseGWAPI(const Model::CreateCloudBaseGWAPIRequest &request);
-                void CreateCloudBaseGWAPIAsync(const Model::CreateCloudBaseGWAPIRequest& request, const CreateCloudBaseGWAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateCloudBaseGWAPIOutcomeCallable CreateCloudBaseGWAPICallable(const Model::CreateCloudBaseGWAPIRequest& request);
-
-                /**
                  *本接口用于购买云开发环境。
 该接口会自动下单并支付，会在腾讯云账户中扣除余额（余额不足会下单失败）。
 该接口支持自动扣除代金券（AutoVoucher=true时），符合条件的代金券会被自动扣除。
@@ -500,6 +487,15 @@ namespace TencentCloud
                 CreateEnvResourceOutcome CreateEnvResource(const Model::CreateEnvResourceRequest &request);
                 void CreateEnvResourceAsync(const Model::CreateEnvResourceRequest& request, const CreateEnvResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateEnvResourceOutcomeCallable CreateEnvResourceCallable(const Model::CreateEnvResourceRequest& request);
+
+                /**
+                 *本接口CreateHTTPServiceRoute用于创建HTTP访问服务路由。如果不传Domain.Routes，仅创建域名信息。首次创建域名后需要调用DescribeHTTPServiceRoute查询域名状态，如果状态是PROCESSING，需要轮询查询域名状态直到SUCCESS或者FAIL。如果状态是FAIL，可以删除后重新创建。创建成功后域名可能无法访问，原因是异步下发的路由，可通过http或者https探测路由是否下发，如果http访问返回404或者https访问握手失败，可等待一会再试，直到访问正常。
+                 * @param req CreateHTTPServiceRouteRequest
+                 * @return CreateHTTPServiceRouteOutcome
+                 */
+                CreateHTTPServiceRouteOutcome CreateHTTPServiceRoute(const Model::CreateHTTPServiceRouteRequest &request);
+                void CreateHTTPServiceRouteAsync(const Model::CreateHTTPServiceRouteRequest& request, const CreateHTTPServiceRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateHTTPServiceRouteOutcomeCallable CreateHTTPServiceRouteCallable(const Model::CreateHTTPServiceRouteRequest& request);
 
                 /**
                  *创建托管域名
@@ -549,6 +545,25 @@ namespace TencentCloud
                 CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request);
 
                 /**
+                 *创建虚拟服务器
+创建流程为先调用[DescribeVmSpec](https://cloud.tencent.com/document/product/876/129360)获取可购买的规格，同时调用[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)拉取镜像列表，选中一个规格和一个镜像后，调用[InquireVmPrice](https://cloud.tencent.com/document/product/876/129759)询价，如果价格可接受，调用此接口创建实例
+                 * @param req CreateVmInstanceRequest
+                 * @return CreateVmInstanceOutcome
+                 */
+                CreateVmInstanceOutcome CreateVmInstance(const Model::CreateVmInstanceRequest &request);
+                void CreateVmInstanceAsync(const Model::CreateVmInstanceRequest& request, const CreateVmInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVmInstanceOutcomeCallable CreateVmInstanceCallable(const Model::CreateVmInstanceRequest& request);
+
+                /**
+                 *删除指定云开发环境下的某个 API Key 服务端访问凭证。删除后，该 API Key 对应的 Token 将被吊销，已使用该 Key 发起的请求将失败。该操作具有幂等性，若指定的 API Key 不存在则直接返回成功。需要管理员权限。
+                 * @param req DeleteApiKeyRequest
+                 * @return DeleteApiKeyOutcome
+                 */
+                DeleteApiKeyOutcome DeleteApiKey(const Model::DeleteApiKeyRequest &request);
+                void DeleteApiKeyAsync(const Model::DeleteApiKeyRequest& request, const DeleteApiKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteApiKeyOutcomeCallable DeleteApiKeyCallable(const Model::DeleteApiKeyRequest& request);
+
+                /**
                  *删除合法域名。
 云开发会校验网页应用请求的来源域名，您需要将来源域名加入到WEB安全域名列表中。
 可以通过接口 [DescribeAuthDomains](https://cloud.tencent.com/document/product/876/42151) 获取当前已绑定生效的安全域名，将对应安全域名的id填入Domainlds中
@@ -563,22 +578,13 @@ namespace TencentCloud
                 DeleteAuthDomainOutcomeCallable DeleteAuthDomainCallable(const Model::DeleteAuthDomainRequest& request);
 
                 /**
-                 *删除网关API
-                 * @param req DeleteCloudBaseGWAPIRequest
-                 * @return DeleteCloudBaseGWAPIOutcome
+                 *本接口DeleteHTTPServiceRoute用于删除HTTP访问服务域名或者路由。可批量删除多条path路由、删除域名及所有path路由，如果Paths字段为空则删除域名及所有path路由，如果Paths不为空则仅删除path路由。
+                 * @param req DeleteHTTPServiceRouteRequest
+                 * @return DeleteHTTPServiceRouteOutcome
                  */
-                DeleteCloudBaseGWAPIOutcome DeleteCloudBaseGWAPI(const Model::DeleteCloudBaseGWAPIRequest &request);
-                void DeleteCloudBaseGWAPIAsync(const Model::DeleteCloudBaseGWAPIRequest& request, const DeleteCloudBaseGWAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteCloudBaseGWAPIOutcomeCallable DeleteCloudBaseGWAPICallable(const Model::DeleteCloudBaseGWAPIRequest& request);
-
-                /**
-                 *删除网关域名
-                 * @param req DeleteCloudBaseGWDomainRequest
-                 * @return DeleteCloudBaseGWDomainOutcome
-                 */
-                DeleteCloudBaseGWDomainOutcome DeleteCloudBaseGWDomain(const Model::DeleteCloudBaseGWDomainRequest &request);
-                void DeleteCloudBaseGWDomainAsync(const Model::DeleteCloudBaseGWDomainRequest& request, const DeleteCloudBaseGWDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteCloudBaseGWDomainOutcomeCallable DeleteCloudBaseGWDomainCallable(const Model::DeleteCloudBaseGWDomainRequest& request);
+                DeleteHTTPServiceRouteOutcome DeleteHTTPServiceRoute(const Model::DeleteHTTPServiceRouteRequest &request);
+                void DeleteHTTPServiceRouteAsync(const Model::DeleteHTTPServiceRouteRequest& request, const DeleteHTTPServiceRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteHTTPServiceRouteOutcomeCallable DeleteHTTPServiceRouteCallable(const Model::DeleteHTTPServiceRouteRequest& request);
 
                 /**
                  *删除认证源
@@ -617,6 +623,15 @@ namespace TencentCloud
                 DeleteVmInstanceOutcome DeleteVmInstance(const Model::DeleteVmInstanceRequest &request);
                 void DeleteVmInstanceAsync(const Model::DeleteVmInstanceRequest& request, const DeleteVmInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteVmInstanceOutcomeCallable DeleteVmInstanceCallable(const Model::DeleteVmInstanceRequest& request);
+
+                /**
+                 *查询 API Key 列表。分页查询指定云开发环境下的 API Key 访问凭证列表。支持按类型过滤（api_key 或 publish_key）。未指定类型时，默认仅返回 api_key 类型的记录。列表查询中 api_key 类型的令牌值将进行脱敏处理（仅保留前后各 6 位字符）；publish_key 类型始终返回完整明文。接口需要管理员权限。
+                 * @param req DescribeApiKeyListRequest
+                 * @return DescribeApiKeyListOutcome
+                 */
+                DescribeApiKeyListOutcome DescribeApiKeyList(const Model::DescribeApiKeyListRequest &request);
+                void DescribeApiKeyListAsync(const Model::DescribeApiKeyListRequest& request, const DescribeApiKeyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApiKeyListOutcomeCallable DescribeApiKeyListCallable(const Model::DescribeApiKeyListRequest& request);
 
                 /**
                  *本接口用于获取当前环境的安全域名列表。
@@ -664,24 +679,6 @@ namespace TencentCloud
                 DescribeCloudBaseBuildServiceOutcome DescribeCloudBaseBuildService(const Model::DescribeCloudBaseBuildServiceRequest &request);
                 void DescribeCloudBaseBuildServiceAsync(const Model::DescribeCloudBaseBuildServiceRequest& request, const DescribeCloudBaseBuildServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudBaseBuildServiceOutcomeCallable DescribeCloudBaseBuildServiceCallable(const Model::DescribeCloudBaseBuildServiceRequest& request);
-
-                /**
-                 *获取网关API列表
-                 * @param req DescribeCloudBaseGWAPIRequest
-                 * @return DescribeCloudBaseGWAPIOutcome
-                 */
-                DescribeCloudBaseGWAPIOutcome DescribeCloudBaseGWAPI(const Model::DescribeCloudBaseGWAPIRequest &request);
-                void DescribeCloudBaseGWAPIAsync(const Model::DescribeCloudBaseGWAPIRequest& request, const DescribeCloudBaseGWAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeCloudBaseGWAPIOutcomeCallable DescribeCloudBaseGWAPICallable(const Model::DescribeCloudBaseGWAPIRequest& request);
-
-                /**
-                 *获取网关服务
-                 * @param req DescribeCloudBaseGWServiceRequest
-                 * @return DescribeCloudBaseGWServiceOutcome
-                 */
-                DescribeCloudBaseGWServiceOutcome DescribeCloudBaseGWService(const Model::DescribeCloudBaseGWServiceRequest &request);
-                void DescribeCloudBaseGWServiceAsync(const Model::DescribeCloudBaseGWServiceRequest& request, const DescribeCloudBaseGWServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeCloudBaseGWServiceOutcomeCallable DescribeCloudBaseGWServiceCallable(const Model::DescribeCloudBaseGWServiceRequest& request);
 
                 /**
                  *查询服务版本的详情，CPU和MEM  请使用CPUSize和MemSize
@@ -757,6 +754,25 @@ namespace TencentCloud
                 DescribeEnvsOutcome DescribeEnvs(const Model::DescribeEnvsRequest &request);
                 void DescribeEnvsAsync(const Model::DescribeEnvsRequest& request, const DescribeEnvsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEnvsOutcomeCallable DescribeEnvsCallable(const Model::DescribeEnvsRequest& request);
+
+                /**
+                 *查询网关版本信息
+暂不鉴权
+                 * @param req DescribeGatewayVersionsRequest
+                 * @return DescribeGatewayVersionsOutcome
+                 */
+                DescribeGatewayVersionsOutcome DescribeGatewayVersions(const Model::DescribeGatewayVersionsRequest &request);
+                void DescribeGatewayVersionsAsync(const Model::DescribeGatewayVersionsRequest& request, const DescribeGatewayVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGatewayVersionsOutcomeCallable DescribeGatewayVersionsCallable(const Model::DescribeGatewayVersionsRequest& request);
+
+                /**
+                 *本接口DescribeHTTPServiceRoute用于查询环境下HTTP访问服务路由信息。可通过Filters过滤。如果不存在不会返回错误。
+                 * @param req DescribeHTTPServiceRouteRequest
+                 * @return DescribeHTTPServiceRouteOutcome
+                 */
+                DescribeHTTPServiceRouteOutcome DescribeHTTPServiceRoute(const Model::DescribeHTTPServiceRouteRequest &request);
+                void DescribeHTTPServiceRouteAsync(const Model::DescribeHTTPServiceRouteRequest& request, const DescribeHTTPServiceRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHTTPServiceRouteOutcomeCallable DescribeHTTPServiceRouteCallable(const Model::DescribeHTTPServiceRouteRequest& request);
 
                 /**
                  *查询静态托管域名任务状态
@@ -958,15 +974,6 @@ Id、Secret、CreatedAt、Meta 等字段在该接口中不可修改，当客户�
                 ModifyClientOutcomeCallable ModifyClientCallable(const Model::ModifyClientRequest& request);
 
                 /**
-                 *修改云开发网关API
-                 * @param req ModifyCloudBaseGWAPIRequest
-                 * @return ModifyCloudBaseGWAPIOutcome
-                 */
-                ModifyCloudBaseGWAPIOutcome ModifyCloudBaseGWAPI(const Model::ModifyCloudBaseGWAPIRequest &request);
-                void ModifyCloudBaseGWAPIAsync(const Model::ModifyCloudBaseGWAPIRequest& request, const ModifyCloudBaseGWAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyCloudBaseGWAPIOutcomeCallable ModifyCloudBaseGWAPICallable(const Model::ModifyCloudBaseGWAPIRequest& request);
-
-                /**
                  *修改日志主题
                  * @param req ModifyClsTopicRequest
                  * @return ModifyClsTopicOutcome
@@ -1003,6 +1010,15 @@ Id、Secret、CreatedAt、Meta 等字段在该接口中不可修改，当客户�
                 ModifyEnvPlanOutcome ModifyEnvPlan(const Model::ModifyEnvPlanRequest &request);
                 void ModifyEnvPlanAsync(const Model::ModifyEnvPlanRequest& request, const ModifyEnvPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyEnvPlanOutcomeCallable ModifyEnvPlanCallable(const Model::ModifyEnvPlanRequest& request);
+
+                /**
+                 *本接口ModifyHTTPServiceRoute用于修改HTTP访问服务路由。支持增量修改，对应字段不传参数表示不需要修改
+                 * @param req ModifyHTTPServiceRouteRequest
+                 * @return ModifyHTTPServiceRouteOutcome
+                 */
+                ModifyHTTPServiceRouteOutcome ModifyHTTPServiceRoute(const Model::ModifyHTTPServiceRouteRequest &request);
+                void ModifyHTTPServiceRouteAsync(const Model::ModifyHTTPServiceRouteRequest& request, const ModifyHTTPServiceRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyHTTPServiceRouteOutcomeCallable ModifyHTTPServiceRouteCallable(const Model::ModifyHTTPServiceRouteRequest& request);
 
                 /**
                  *修改指定云开发环境的登录策略配置。支持开启或关闭手机号短信登录、邮箱登录、用户名密码登录和匿名登录，同时可配置短信验证码发送通道、MFA 多因子认证和密码更新策略。

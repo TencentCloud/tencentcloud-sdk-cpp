@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取各时间段的会话统计数据
-                     * @return SessionStatistics 各时间段的会话统计数据
+                     * 获取<p>各时间段的会话统计数据</p>
+                     * @return SessionStatistics <p>各时间段的会话统计数据</p>
                      * 
                      */
                     std::vector<SessionIntervalStatistic> GetSessionStatistics() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 各时间段的会话统计数据
+                     * <p>各时间段的会话统计数据</p>
                      */
                     std::vector<SessionIntervalStatistic> m_sessionStatistics;
                     bool m_sessionStatisticsHasBeenSet;

@@ -127,27 +127,6 @@ namespace TencentCloud
                     bool MsgIdHasBeenSet() const;
 
                     /**
-                     * 获取客户端ID
-                     * @return ClientId 客户端ID
-                     * 
-                     */
-                    std::string GetClientId() const;
-
-                    /**
-                     * 设置客户端ID
-                     * @param _clientId 客户端ID
-                     * 
-                     */
-                    void SetClientId(const std::string& _clientId);
-
-                    /**
-                     * 判断参数 ClientId 是否已赋值
-                     * @return ClientId 是否已赋值
-                     * 
-                     */
-                    bool ClientIdHasBeenSet() const;
-
-                    /**
                      * 获取主题名称
                      * @return TopicName 主题名称
                      * 
@@ -167,6 +146,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TopicNameHasBeenSet() const;
+
+                    /**
+                     * 获取客户端 ID，不指定该参数时消息将被发送到对应消费组内任意客户端
+                     * @return ClientId 客户端 ID，不指定该参数时消息将被发送到对应消费组内任意客户端
+                     * 
+                     */
+                    std::string GetClientId() const;
+
+                    /**
+                     * 设置客户端 ID，不指定该参数时消息将被发送到对应消费组内任意客户端
+                     * @param _clientId 客户端 ID，不指定该参数时消息将被发送到对应消费组内任意客户端
+                     * 
+                     */
+                    void SetClientId(const std::string& _clientId);
+
+                    /**
+                     * 判断参数 ClientId 是否已赋值
+                     * @return ClientId 是否已赋值
+                     * 
+                     */
+                    bool ClientIdHasBeenSet() const;
 
                 private:
 
@@ -195,16 +195,16 @@ namespace TencentCloud
                     bool m_msgIdHasBeenSet;
 
                     /**
-                     * 客户端ID
-                     */
-                    std::string m_clientId;
-                    bool m_clientIdHasBeenSet;
-
-                    /**
                      * 主题名称
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
+
+                    /**
+                     * 客户端 ID，不指定该参数时消息将被发送到对应消费组内任意客户端
+                     */
+                    std::string m_clientId;
+                    bool m_clientIdHasBeenSet;
 
                 };
             }

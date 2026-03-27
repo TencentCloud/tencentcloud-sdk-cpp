@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/oceanus/v20190422/model/VariableItem.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取["x","y"]
+                     * @return VariableSet ["x","y"]
+                     * 
+                     */
+                    std::vector<VariableItem> GetVariableSet() const;
+
+                    /**
+                     * 判断参数 VariableSet 是否已赋值
+                     * @return VariableSet 是否已赋值
+                     * 
+                     */
+                    bool VariableSetHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * ["x","y"]
+                     */
+                    std::vector<VariableItem> m_variableSet;
+                    bool m_variableSetHasBeenSet;
 
                 };
             }

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取慢查询耗时时长。单位：毫秒。
-                     * @return Duration 慢查询耗时时长。单位：毫秒。
+                     * 获取<p>慢查询耗时时长。单位：毫秒。</p>
+                     * @return Duration <p>慢查询耗时时长。单位：毫秒。</p>
                      * 
                      */
                     int64_t GetDuration() const;
 
                     /**
-                     * 设置慢查询耗时时长。单位：毫秒。
-                     * @param _duration 慢查询耗时时长。单位：毫秒。
+                     * 设置<p>慢查询耗时时长。单位：毫秒。</p>
+                     * @param _duration <p>慢查询耗时时长。单位：毫秒。</p>
                      * 
                      */
                     void SetDuration(const int64_t& _duration);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取客户端地址。
-                     * @return Client 客户端地址。
+                     * 获取<p>客户端地址。</p>
+                     * @return Client <p>客户端地址。</p>
                      * 
                      */
                     std::string GetClient() const;
 
                     /**
-                     * 设置客户端地址。
-                     * @param _client 客户端地址。
+                     * 设置<p>客户端地址。</p>
+                     * @param _client <p>客户端地址。</p>
                      * 
                      */
                     void SetClient(const std::string& _client);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ClientHasBeenSet() const;
 
                     /**
-                     * 获取慢查询的命令。
-                     * @return Command 慢查询的命令。
+                     * 获取<p>慢查询的命令。</p>
+                     * @return Command <p>慢查询的命令。</p>
                      * 
                      */
                     std::string GetCommand() const;
 
                     /**
-                     * 设置慢查询的命令。
-                     * @param _command 慢查询的命令。
+                     * 设置<p>慢查询的命令。</p>
+                     * @param _command <p>慢查询的命令。</p>
                      * 
                      */
                     void SetCommand(const std::string& _command);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool CommandHasBeenSet() const;
 
                     /**
-                     * 获取慢查询详细命令行信息。
-                     * @return CommandLine 慢查询详细命令行信息。
+                     * 获取<p>慢查询详细命令行信息。</p>
+                     * @return CommandLine <p>慢查询详细命令行信息。</p>
                      * 
                      */
                     std::string GetCommandLine() const;
 
                     /**
-                     * 设置慢查询详细命令行信息。
-                     * @param _commandLine 慢查询详细命令行信息。
+                     * 设置<p>慢查询详细命令行信息。</p>
+                     * @param _commandLine <p>慢查询详细命令行信息。</p>
                      * 
                      */
                     void SetCommandLine(const std::string& _commandLine);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool CommandLineHasBeenSet() const;
 
                     /**
-                     * 获取执行时间。
-                     * @return ExecuteTime 执行时间。
+                     * 获取<p>执行时间。</p>
+                     * @return ExecuteTime <p>执行时间。</p>
                      * 
                      */
                     std::string GetExecuteTime() const;
 
                     /**
-                     * 设置执行时间。
-                     * @param _executeTime 执行时间。
+                     * 设置<p>执行时间。</p>
+                     * @param _executeTime <p>执行时间。</p>
                      * 
                      */
                     void SetExecuteTime(const std::string& _executeTime);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ExecuteTimeHasBeenSet() const;
 
                     /**
-                     * 获取收客户端请求时长(ms)
-                     * @return RecvClientEnd 收客户端请求时长(ms)
+                     * 获取<p>收客户端请求时长(ms)</p>
+                     * @return RecvClientEnd <p>收客户端请求时长(ms)</p>
                      * 
                      */
                     int64_t GetRecvClientEnd() const;
 
                     /**
-                     * 设置收客户端请求时长(ms)
-                     * @param _recvClientEnd 收客户端请求时长(ms)
+                     * 设置<p>收客户端请求时长(ms)</p>
+                     * @param _recvClientEnd <p>收客户端请求时长(ms)</p>
                      * 
                      */
                     void SetRecvClientEnd(const int64_t& _recvClientEnd);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool RecvClientEndHasBeenSet() const;
 
                     /**
-                     * 获取发送客户端请求时长(ms)
-                     * @return SendClientEnd 发送客户端请求时长(ms)
+                     * 获取<p>发送客户端请求时长(ms)</p>
+                     * @return SendClientEnd <p>发送客户端请求时长(ms)</p>
                      * 
                      */
                     int64_t GetSendClientEnd() const;
 
                     /**
-                     * 设置发送客户端请求时长(ms)
-                     * @param _sendClientEnd 发送客户端请求时长(ms)
+                     * 设置<p>发送客户端请求时长(ms)</p>
+                     * @param _sendClientEnd <p>发送客户端请求时长(ms)</p>
                      * 
                      */
                     void SetSendClientEnd(const int64_t& _sendClientEnd);
@@ -193,49 +193,76 @@ namespace TencentCloud
                      */
                     bool SendClientEndHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Proxy节点ID。</p>
+                     * @return Node <p>Proxy节点ID。</p>
+                     * 
+                     */
+                    std::string GetNode() const;
+
+                    /**
+                     * 设置<p>Proxy节点ID。</p>
+                     * @param _node <p>Proxy节点ID。</p>
+                     * 
+                     */
+                    void SetNode(const std::string& _node);
+
+                    /**
+                     * 判断参数 Node 是否已赋值
+                     * @return Node 是否已赋值
+                     * 
+                     */
+                    bool NodeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 慢查询耗时时长。单位：毫秒。
+                     * <p>慢查询耗时时长。单位：毫秒。</p>
                      */
                     int64_t m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 客户端地址。
+                     * <p>客户端地址。</p>
                      */
                     std::string m_client;
                     bool m_clientHasBeenSet;
 
                     /**
-                     * 慢查询的命令。
+                     * <p>慢查询的命令。</p>
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
 
                     /**
-                     * 慢查询详细命令行信息。
+                     * <p>慢查询详细命令行信息。</p>
                      */
                     std::string m_commandLine;
                     bool m_commandLineHasBeenSet;
 
                     /**
-                     * 执行时间。
+                     * <p>执行时间。</p>
                      */
                     std::string m_executeTime;
                     bool m_executeTimeHasBeenSet;
 
                     /**
-                     * 收客户端请求时长(ms)
+                     * <p>收客户端请求时长(ms)</p>
                      */
                     int64_t m_recvClientEnd;
                     bool m_recvClientEndHasBeenSet;
 
                     /**
-                     * 发送客户端请求时长(ms)
+                     * <p>发送客户端请求时长(ms)</p>
                      */
                     int64_t m_sendClientEnd;
                     bool m_sendClientEndHasBeenSet;
+
+                    /**
+                     * <p>Proxy节点ID。</p>
+                     */
+                    std::string m_node;
+                    bool m_nodeHasBeenSet;
 
                 };
             }

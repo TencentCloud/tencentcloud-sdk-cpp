@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要复制的作业serial id
-                     * @return SourceId 需要复制的作业serial id
+                     * 获取<p>需要复制的作业serial id</p>
+                     * @return SourceId <p>需要复制的作业serial id</p>
                      * 
                      */
                     std::string GetSourceId() const;
 
                     /**
-                     * 设置需要复制的作业serial id
-                     * @param _sourceId 需要复制的作业serial id
+                     * 设置<p>需要复制的作业serial id</p>
+                     * @param _sourceId <p>需要复制的作业serial id</p>
                      * 
                      */
                     void SetSourceId(const std::string& _sourceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool SourceIdHasBeenSet() const;
 
                     /**
-                     * 获取目标集群的cluster serial id
-                     * @return TargetClusterId 目标集群的cluster serial id
+                     * 获取<p>目标集群的cluster serial id</p>
+                     * @return TargetClusterId <p>目标集群的cluster serial id</p>
                      * 
                      */
                     std::string GetTargetClusterId() const;
 
                     /**
-                     * 设置目标集群的cluster serial id
-                     * @param _targetClusterId 目标集群的cluster serial id
+                     * 设置<p>目标集群的cluster serial id</p>
+                     * @param _targetClusterId <p>目标集群的cluster serial id</p>
                      * 
                      */
                     void SetTargetClusterId(const std::string& _targetClusterId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TargetClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取需要复制的作业名称
-                     * @return SourceName 需要复制的作业名称
+                     * 获取<p>需要复制的作业名称</p>
+                     * @return SourceName <p>需要复制的作业名称</p>
                      * 
                      */
                     std::string GetSourceName() const;
 
                     /**
-                     * 设置需要复制的作业名称
-                     * @param _sourceName 需要复制的作业名称
+                     * 设置<p>需要复制的作业名称</p>
+                     * @param _sourceName <p>需要复制的作业名称</p>
                      * 
                      */
                     void SetSourceName(const std::string& _sourceName);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool SourceNameHasBeenSet() const;
 
                     /**
-                     * 获取新作业的名称
-                     * @return TargetName 新作业的名称
+                     * 获取<p>新作业的名称</p>
+                     * @return TargetName <p>新作业的名称</p>
                      * 
                      */
                     std::string GetTargetName() const;
 
                     /**
-                     * 设置新作业的名称
-                     * @param _targetName 新作业的名称
+                     * 设置<p>新作业的名称</p>
+                     * @param _targetName <p>新作业的名称</p>
                      * 
                      */
                     void SetTargetName(const std::string& _targetName);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool TargetNameHasBeenSet() const;
 
                     /**
-                     * 获取新作业的目录id
-                     * @return TargetFolderId 新作业的目录id
+                     * 获取<p>新作业的目录id</p>
+                     * @return TargetFolderId <p>新作业的目录id</p>
                      * 
                      */
                     std::string GetTargetFolderId() const;
 
                     /**
-                     * 设置新作业的目录id
-                     * @param _targetFolderId 新作业的目录id
+                     * 设置<p>新作业的目录id</p>
+                     * @param _targetFolderId <p>新作业的目录id</p>
                      * 
                      */
                     void SetTargetFolderId(const std::string& _targetFolderId);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool TargetFolderIdHasBeenSet() const;
 
                     /**
-                     * 获取源作业类型
-                     * @return JobType 源作业类型
+                     * 获取<p>作业类型</p><p>枚举值：</p><ul><li>1： sql作业</li><li>2： jar作业</li><li>4： python作业</li></ul>
+                     * @return JobType <p>作业类型</p><p>枚举值：</p><ul><li>1： sql作业</li><li>2： jar作业</li><li>4： python作业</li></ul>
                      * 
                      */
                     int64_t GetJobType() const;
 
                     /**
-                     * 设置源作业类型
-                     * @param _jobType 源作业类型
+                     * 设置<p>作业类型</p><p>枚举值：</p><ul><li>1： sql作业</li><li>2： jar作业</li><li>4： python作业</li></ul>
+                     * @param _jobType <p>作业类型</p><p>枚举值：</p><ul><li>1： sql作业</li><li>2： jar作业</li><li>4： python作业</li></ul>
                      * 
                      */
                     void SetJobType(const int64_t& _jobType);
@@ -175,37 +175,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要复制的作业serial id
+                     * <p>需要复制的作业serial id</p>
                      */
                     std::string m_sourceId;
                     bool m_sourceIdHasBeenSet;
 
                     /**
-                     * 目标集群的cluster serial id
+                     * <p>目标集群的cluster serial id</p>
                      */
                     std::string m_targetClusterId;
                     bool m_targetClusterIdHasBeenSet;
 
                     /**
-                     * 需要复制的作业名称
+                     * <p>需要复制的作业名称</p>
                      */
                     std::string m_sourceName;
                     bool m_sourceNameHasBeenSet;
 
                     /**
-                     * 新作业的名称
+                     * <p>新作业的名称</p>
                      */
                     std::string m_targetName;
                     bool m_targetNameHasBeenSet;
 
                     /**
-                     * 新作业的目录id
+                     * <p>新作业的目录id</p>
                      */
                     std::string m_targetFolderId;
                     bool m_targetFolderIdHasBeenSet;
 
                     /**
-                     * 源作业类型
+                     * <p>作业类型</p><p>枚举值：</p><ul><li>1： sql作业</li><li>2： jar作业</li><li>4： python作业</li></ul>
                      */
                     int64_t m_jobType;
                     bool m_jobTypeHasBeenSet;

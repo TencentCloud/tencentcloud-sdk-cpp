@@ -3690,6 +3690,56 @@ LiveClient::DeleteScreenshotTaskOutcomeCallable LiveClient::DeleteScreenshotTask
     return prom->get_future();
 }
 
+LiveClient::DescribeAIGCTaskStatusOutcome LiveClient::DescribeAIGCTaskStatus(const DescribeAIGCTaskStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIGCTaskStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIGCTaskStatusResponse rsp = DescribeAIGCTaskStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIGCTaskStatusOutcome(rsp);
+        else
+            return DescribeAIGCTaskStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIGCTaskStatusOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeAIGCTaskStatusAsync(const DescribeAIGCTaskStatusRequest& request, const DescribeAIGCTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIGCTaskStatusRequest&;
+    using Resp = DescribeAIGCTaskStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIGCTaskStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DescribeAIGCTaskStatusOutcomeCallable LiveClient::DescribeAIGCTaskStatusCallable(const DescribeAIGCTaskStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIGCTaskStatusOutcome>>();
+    DescribeAIGCTaskStatusAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DescribeAIGCTaskStatusRequest&,
+        DescribeAIGCTaskStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LiveClient::DescribeAllStreamPlayInfoListOutcome LiveClient::DescribeAllStreamPlayInfoList(const DescribeAllStreamPlayInfoListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAllStreamPlayInfoList");

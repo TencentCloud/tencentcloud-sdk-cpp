@@ -68,6 +68,27 @@ namespace TencentCloud
                     bool AccountNameHasBeenSet() const;
 
                     /**
+                     * 获取主机
+                     * @return Host 主机
+                     * 
+                     */
+                    std::string GetHost() const;
+
+                    /**
+                     * 设置主机
+                     * @param _host 主机
+                     * 
+                     */
+                    void SetHost(const std::string& _host);
+
+                    /**
+                     * 判断参数 Host 是否已赋值
+                     * @return Host 是否已赋值
+                     * 
+                     */
+                    bool HostHasBeenSet() const;
+
+                    /**
                      * 获取数据库账号描述
                      * @return Description 数据库账号描述
                      * 
@@ -131,27 +152,6 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取主机
-                     * @return Host 主机
-                     * 
-                     */
-                    std::string GetHost() const;
-
-                    /**
-                     * 设置主机
-                     * @param _host 主机
-                     * 
-                     */
-                    void SetHost(const std::string& _host);
-
-                    /**
-                     * 判断参数 Host 是否已赋值
-                     * @return Host 是否已赋值
-                     * 
-                     */
-                    bool HostHasBeenSet() const;
-
-                    /**
                      * 获取用户最大连接数
                      * @return MaxUserConnections 用户最大连接数
                      * 
@@ -172,6 +172,27 @@ namespace TencentCloud
                      */
                     bool MaxUserConnectionsHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启密码轮转(0:关闭;1:开启)
+                     * @return PasswordRotation 是否开启密码轮转(0:关闭;1:开启)
+                     * 
+                     */
+                    int64_t GetPasswordRotation() const;
+
+                    /**
+                     * 设置是否开启密码轮转(0:关闭;1:开启)
+                     * @param _passwordRotation 是否开启密码轮转(0:关闭;1:开启)
+                     * 
+                     */
+                    void SetPasswordRotation(const int64_t& _passwordRotation);
+
+                    /**
+                     * 判断参数 PasswordRotation 是否已赋值
+                     * @return PasswordRotation 是否已赋值
+                     * 
+                     */
+                    bool PasswordRotationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +200,12 @@ namespace TencentCloud
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;
+
+                    /**
+                     * 主机
+                     */
+                    std::string m_host;
+                    bool m_hostHasBeenSet;
 
                     /**
                      * 数据库账号描述
@@ -199,16 +226,16 @@ namespace TencentCloud
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 主机
-                     */
-                    std::string m_host;
-                    bool m_hostHasBeenSet;
-
-                    /**
                      * 用户最大连接数
                      */
                     int64_t m_maxUserConnections;
                     bool m_maxUserConnectionsHasBeenSet;
+
+                    /**
+                     * 是否开启密码轮转(0:关闭;1:开启)
+                     */
+                    int64_t m_passwordRotation;
+                    bool m_passwordRotationHasBeenSet;
 
                 };
             }

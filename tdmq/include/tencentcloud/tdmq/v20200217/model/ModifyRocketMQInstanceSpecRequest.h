@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取专享实例ID
-                     * @return InstanceId 专享实例ID
+                     * 获取<p>专享实例ID</p>
+                     * @return InstanceId <p>专享实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置专享实例ID
-                     * @param _instanceId 专享实例ID
+                     * 设置<p>专享实例ID</p>
+                     * @param _instanceId <p>专享实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,31 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例规格，
-rocket-vip-basic-1 基础型
-rocket-vip-basic-2 标准型
-rocket-vip-basic-3 高阶Ⅰ型
-rocket-vip-basic-4 高阶Ⅱ型
-                     * @return Specification 实例规格，
-rocket-vip-basic-1 基础型
-rocket-vip-basic-2 标准型
-rocket-vip-basic-3 高阶Ⅰ型
-rocket-vip-basic-4 高阶Ⅱ型
+                     * 获取<p>实例规格，<br>rocket-vip-basic-1 基础型<br>rocket-vip-basic-2 标准型<br>rocket-vip-basic-3 高阶Ⅰ型<br>rocket-vip-basic-4 高阶Ⅱ型</p>
+                     * @return Specification <p>实例规格，<br>rocket-vip-basic-1 基础型<br>rocket-vip-basic-2 标准型<br>rocket-vip-basic-3 高阶Ⅰ型<br>rocket-vip-basic-4 高阶Ⅱ型</p>
                      * 
                      */
                     std::string GetSpecification() const;
 
                     /**
-                     * 设置实例规格，
-rocket-vip-basic-1 基础型
-rocket-vip-basic-2 标准型
-rocket-vip-basic-3 高阶Ⅰ型
-rocket-vip-basic-4 高阶Ⅱ型
-                     * @param _specification 实例规格，
-rocket-vip-basic-1 基础型
-rocket-vip-basic-2 标准型
-rocket-vip-basic-3 高阶Ⅰ型
-rocket-vip-basic-4 高阶Ⅱ型
+                     * 设置<p>实例规格，<br>rocket-vip-basic-1 基础型<br>rocket-vip-basic-2 标准型<br>rocket-vip-basic-3 高阶Ⅰ型<br>rocket-vip-basic-4 高阶Ⅱ型</p>
+                     * @param _specification <p>实例规格，<br>rocket-vip-basic-1 基础型<br>rocket-vip-basic-2 标准型<br>rocket-vip-basic-3 高阶Ⅰ型<br>rocket-vip-basic-4 高阶Ⅱ型</p>
                      * 
                      */
                     void SetSpecification(const std::string& _specification);
@@ -101,15 +85,15 @@ rocket-vip-basic-4 高阶Ⅱ型
                     bool SpecificationHasBeenSet() const;
 
                     /**
-                     * 获取节点数量
-                     * @return NodeCount 节点数量
+                     * 获取<p>节点数量</p>
+                     * @return NodeCount <p>节点数量</p>
                      * 
                      */
                     uint64_t GetNodeCount() const;
 
                     /**
-                     * 设置节点数量
-                     * @param _nodeCount 节点数量
+                     * 设置<p>节点数量</p>
+                     * @param _nodeCount <p>节点数量</p>
                      * 
                      */
                     void SetNodeCount(const uint64_t& _nodeCount);
@@ -122,15 +106,15 @@ rocket-vip-basic-4 高阶Ⅱ型
                     bool NodeCountHasBeenSet() const;
 
                     /**
-                     * 获取存储空间，GB为单位
-                     * @return StorageSize 存储空间，GB为单位
+                     * 获取<p>存储空间，GB为单位</p>
+                     * @return StorageSize <p>存储空间，GB为单位</p>
                      * 
                      */
                     uint64_t GetStorageSize() const;
 
                     /**
-                     * 设置存储空间，GB为单位
-                     * @param _storageSize 存储空间，GB为单位
+                     * 设置<p>存储空间，GB为单位</p>
+                     * @param _storageSize <p>存储空间，GB为单位</p>
                      * 
                      */
                     void SetStorageSize(const uint64_t& _storageSize);
@@ -142,35 +126,58 @@ rocket-vip-basic-4 高阶Ⅱ型
                      */
                     bool StorageSizeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>部署可用区列表</p>
+                     * @return ZoneIds <p>部署可用区列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetZoneIds() const;
+
+                    /**
+                     * 设置<p>部署可用区列表</p>
+                     * @param _zoneIds <p>部署可用区列表</p>
+                     * 
+                     */
+                    void SetZoneIds(const std::vector<std::string>& _zoneIds);
+
+                    /**
+                     * 判断参数 ZoneIds 是否已赋值
+                     * @return ZoneIds 是否已赋值
+                     * 
+                     */
+                    bool ZoneIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 专享实例ID
+                     * <p>专享实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例规格，
-rocket-vip-basic-1 基础型
-rocket-vip-basic-2 标准型
-rocket-vip-basic-3 高阶Ⅰ型
-rocket-vip-basic-4 高阶Ⅱ型
+                     * <p>实例规格，<br>rocket-vip-basic-1 基础型<br>rocket-vip-basic-2 标准型<br>rocket-vip-basic-3 高阶Ⅰ型<br>rocket-vip-basic-4 高阶Ⅱ型</p>
                      */
                     std::string m_specification;
                     bool m_specificationHasBeenSet;
 
                     /**
-                     * 节点数量
+                     * <p>节点数量</p>
                      */
                     uint64_t m_nodeCount;
                     bool m_nodeCountHasBeenSet;
 
                     /**
-                     * 存储空间，GB为单位
+                     * <p>存储空间，GB为单位</p>
                      */
                     uint64_t m_storageSize;
                     bool m_storageSizeHasBeenSet;
+
+                    /**
+                     * <p>部署可用区列表</p>
+                     */
+                    std::vector<std::string> m_zoneIds;
+                    bool m_zoneIdsHasBeenSet;
 
                 };
             }

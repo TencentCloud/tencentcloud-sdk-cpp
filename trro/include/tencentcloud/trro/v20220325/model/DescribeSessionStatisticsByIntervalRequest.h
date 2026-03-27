@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ProjectId <p>项目ID</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _projectId <p>项目ID</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取统计时间间隔：hour|day|month
-                     * @return StatisticInterval 统计时间间隔：hour|day|month
+                     * 获取<p>统计时间间隔：hour|day|month</p>
+                     * @return StatisticInterval <p>统计时间间隔：hour|day|month</p>
                      * 
                      */
                     std::string GetStatisticInterval() const;
 
                     /**
-                     * 设置统计时间间隔：hour|day|month
-                     * @param _statisticInterval 统计时间间隔：hour|day|month
+                     * 设置<p>统计时间间隔：hour|day|month</p>
+                     * @param _statisticInterval <p>统计时间间隔：hour|day|month</p>
                      * 
                      */
                     void SetStatisticInterval(const std::string& _statisticInterval);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StatisticIntervalHasBeenSet() const;
 
                     /**
-                     * 获取设备ID
-                     * @return DeviceId 设备ID
+                     * 获取<p>设备ID</p>
+                     * @return DeviceId <p>设备ID</p>
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置设备ID
-                     * @param _deviceId 设备ID
+                     * 设置<p>设备ID</p>
+                     * @param _deviceId <p>设备ID</p>
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DeviceIdHasBeenSet() const;
 
                     /**
-                     * 获取起始时间，单位：秒
-                     * @return StartTime 起始时间，单位：秒
+                     * 获取<p>起始时间，单位：秒</p>
+                     * @return StartTime <p>起始时间，单位：秒</p>
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置起始时间，单位：秒
-                     * @param _startTime 起始时间，单位：秒
+                     * 设置<p>起始时间，单位：秒</p>
+                     * @param _startTime <p>起始时间，单位：秒</p>
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间，单位：秒
-                     * @return EndTime 结束时间，单位：秒
+                     * 获取<p>结束时间，单位：秒</p>
+                     * @return EndTime <p>结束时间，单位：秒</p>
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间，单位：秒
-                     * @param _endTime 结束时间，单位：秒
+                     * 设置<p>结束时间，单位：秒</p>
+                     * @param _endTime <p>结束时间，单位：秒</p>
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 统计时间间隔：hour|day|month
+                     * <p>统计时间间隔：hour|day|month</p>
                      */
                     std::string m_statisticInterval;
                     bool m_statisticIntervalHasBeenSet;
 
                     /**
-                     * 设备ID
+                     * <p>设备ID</p>
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
-                     * 起始时间，单位：秒
+                     * <p>起始时间，单位：秒</p>
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间，单位：秒
+                     * <p>结束时间，单位：秒</p>
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;

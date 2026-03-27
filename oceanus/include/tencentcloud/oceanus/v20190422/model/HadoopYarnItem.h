@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ClusterGroupSerialId
-                     * @return ClusterGroupSerialId ClusterGroupSerialId
+                     * 获取<p>ClusterGroupSerialId</p>
+                     * @return ClusterGroupSerialId <p>ClusterGroupSerialId</p>
                      * 
                      */
                     std::string GetClusterGroupSerialId() const;
 
                     /**
-                     * 设置ClusterGroupSerialId
-                     * @param _clusterGroupSerialId ClusterGroupSerialId
+                     * 设置<p>ClusterGroupSerialId</p>
+                     * @param _clusterGroupSerialId <p>ClusterGroupSerialId</p>
                      * 
                      */
                     void SetClusterGroupSerialId(const std::string& _clusterGroupSerialId);
@@ -68,18 +68,18 @@ namespace TencentCloud
                     bool ClusterGroupSerialIdHasBeenSet() const;
 
                     /**
-                     * 获取状态
+                     * 获取<p>状态</p><p>枚举值：</p><ul><li>1： 停止</li><li>2： 开启中</li><li>3： 启动</li><li>4： 开启失败</li><li>5： 停止中</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 状态
+                     * @return Status <p>状态</p><p>枚举值：</p><ul><li>1： 停止</li><li>2： 开启中</li><li>3： 启动</li><li>4： 开启失败</li><li>5： 停止中</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态
+                     * 设置<p>状态</p><p>枚举值：</p><ul><li>1： 停止</li><li>2： 开启中</li><li>3： 启动</li><li>4： 开启失败</li><li>5： 停止中</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 状态
+                     * @param _status <p>状态</p><p>枚举值：</p><ul><li>1： 停止</li><li>2： 开启中</li><li>3： 启动</li><li>4： 开启失败</li><li>5： 停止中</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,18 +93,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取cpu
+                     * 获取<p>cpu</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Cpu cpu
+                     * @return Cpu <p>cpu</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetCpu() const;
 
                     /**
-                     * 设置cpu
+                     * 设置<p>cpu</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cpu cpu
+                     * @param _cpu <p>cpu</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -118,15 +118,15 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取mem
-                     * @return Mem mem
+                     * 获取<p>mem</p>
+                     * @return Mem <p>mem</p>
                      * 
                      */
                     double GetMem() const;
 
                     /**
-                     * 设置mem
-                     * @param _mem mem
+                     * 设置<p>mem</p>
+                     * @param _mem <p>mem</p>
                      * 
                      */
                     void SetMem(const double& _mem);
@@ -139,15 +139,15 @@ namespace TencentCloud
                     bool MemHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -160,15 +160,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdateTime 更新时间
+                     * 获取<p>更新时间</p>
+                     * @return UpdateTime <p>更新时间</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
-                     * @param _updateTime 更新时间
+                     * 设置<p>更新时间</p>
+                     * @param _updateTime <p>更新时间</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -181,15 +181,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取配置文件内容
-                     * @return Config 配置文件内容
+                     * 获取<p>配置文件内容</p>
+                     * @return Config <p>配置文件内容</p>
                      * 
                      */
                     std::string GetConfig() const;
 
                     /**
-                     * 设置配置文件内容
-                     * @param _config 配置文件内容
+                     * 设置<p>配置文件内容</p>
+                     * @param _config <p>配置文件内容</p>
                      * 
                      */
                     void SetConfig(const std::string& _config);
@@ -202,15 +202,15 @@ namespace TencentCloud
                     bool ConfigHasBeenSet() const;
 
                     /**
-                     * 获取CreatorUin
-                     * @return CreatorUin CreatorUin
+                     * 获取<p>CreatorUin</p>
+                     * @return CreatorUin <p>CreatorUin</p>
                      * 
                      */
                     std::string GetCreatorUin() const;
 
                     /**
-                     * 设置CreatorUin
-                     * @param _creatorUin CreatorUin
+                     * 设置<p>CreatorUin</p>
+                     * @param _creatorUin <p>CreatorUin</p>
                      * 
                      */
                     void SetCreatorUin(const std::string& _creatorUin);
@@ -225,51 +225,51 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ClusterGroupSerialId
+                     * <p>ClusterGroupSerialId</p>
                      */
                     std::string m_clusterGroupSerialId;
                     bool m_clusterGroupSerialIdHasBeenSet;
 
                     /**
-                     * 状态
+                     * <p>状态</p><p>枚举值：</p><ul><li>1： 停止</li><li>2： 开启中</li><li>3： 启动</li><li>4： 开启失败</li><li>5： 停止中</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * cpu
+                     * <p>cpu</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * mem
+                     * <p>mem</p>
                      */
                     double m_mem;
                     bool m_memHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 配置文件内容
+                     * <p>配置文件内容</p>
                      */
                     std::string m_config;
                     bool m_configHasBeenSet;
 
                     /**
-                     * CreatorUin
+                     * <p>CreatorUin</p>
                      */
                     std::string m_creatorUin;
                     bool m_creatorUinHasBeenSet;

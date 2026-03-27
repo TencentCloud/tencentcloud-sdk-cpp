@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trocket/v20230308/model/Tag.h>
+#include <tencentcloud/trocket/v20230308/model/RetryPolicy.h>
 
 
 namespace TencentCloud
@@ -344,6 +345,27 @@ namespace TencentCloud
                      */
                     bool TagListHasBeenSet() const;
 
+                    /**
+                     * 获取重试策略
+                     * @return RetryPolicy 重试策略
+                     * 
+                     */
+                    RetryPolicy GetRetryPolicy() const;
+
+                    /**
+                     * 设置重试策略
+                     * @param _retryPolicy 重试策略
+                     * 
+                     */
+                    void SetRetryPolicy(const RetryPolicy& _retryPolicy);
+
+                    /**
+                     * 判断参数 RetryPolicy 是否已赋值
+                     * @return RetryPolicy 是否已赋值
+                     * 
+                     */
+                    bool RetryPolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -429,6 +451,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tagList;
                     bool m_tagListHasBeenSet;
+
+                    /**
+                     * 重试策略
+                     */
+                    RetryPolicy m_retryPolicy;
+                    bool m_retryPolicyHasBeenSet;
 
                 };
             }

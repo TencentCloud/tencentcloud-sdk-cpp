@@ -33,7 +33,8 @@ ConsumeGroupItem::ConsumeGroupItem() :
     m_fullNamespaceV4HasBeenSet(false),
     m_subscribeTopicNumHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_retryPolicyHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,23 @@ CoreInternalOutcome ConsumeGroupItem::Deserialize(const rapidjson::Value &value)
         m_tagListHasBeenSet = true;
     }
 
+    if (value.HasMember("RetryPolicy") && !value["RetryPolicy"].IsNull())
+    {
+        if (!value["RetryPolicy"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumeGroupItem.RetryPolicy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_retryPolicy.Deserialize(value["RetryPolicy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_retryPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -298,6 +316,15 @@ void ConsumeGroupItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_retryPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetryPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_retryPolicy.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -509,5 +536,21 @@ void ConsumeGroupItem::SetTagList(const vector<Tag>& _tagList)
 bool ConsumeGroupItem::TagListHasBeenSet() const
 {
     return m_tagListHasBeenSet;
+}
+
+RetryPolicy ConsumeGroupItem::GetRetryPolicy() const
+{
+    return m_retryPolicy;
+}
+
+void ConsumeGroupItem::SetRetryPolicy(const RetryPolicy& _retryPolicy)
+{
+    m_retryPolicy = _retryPolicy;
+    m_retryPolicyHasBeenSet = true;
+}
+
+bool ConsumeGroupItem::RetryPolicyHasBeenSet() const
+{
+    return m_retryPolicyHasBeenSet;
 }
 

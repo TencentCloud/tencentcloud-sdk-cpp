@@ -384,15 +384,15 @@ namespace TencentCloud
                     bool ReferenceLinkHasBeenSet() const;
 
                     /**
-                     * 获取处理状态；[0:待处理|2:已加白|3:非信任状态|4:已处理|5:已忽略]
-                     * @return HandleStatus 处理状态；[0:待处理|2:已加白|3:非信任状态|4:已处理|5:已忽略]
+                     * 获取处理状态；[0:待处理|2:已加白|3:非信任状态|4:已处理|5:已忽略|6:已拦截]
+                     * @return HandleStatus 处理状态；[0:待处理|2:已加白|3:非信任状态|4:已处理|5:已忽略|6:已拦截]
                      * 
                      */
                     int64_t GetHandleStatus() const;
 
                     /**
-                     * 设置处理状态；[0:待处理|2:已加白|3:非信任状态|4:已处理|5:已忽略]
-                     * @param _handleStatus 处理状态；[0:待处理|2:已加白|3:非信任状态|4:已处理|5:已忽略]
+                     * 设置处理状态；[0:待处理|2:已加白|3:非信任状态|4:已处理|5:已忽略|6:已拦截]
+                     * @param _handleStatus 处理状态；[0:待处理|2:已加白|3:非信任状态|4:已处理|5:已忽略|6:已拦截]
                      * 
                      */
                     void SetHandleStatus(const int64_t& _handleStatus);
@@ -692,7 +692,7 @@ namespace TencentCloud
                     bool m_referenceLinkHasBeenSet;
 
                     /**
-                     * 处理状态；[0:待处理|2:已加白|3:非信任状态|4:已处理|5:已忽略]
+                     * 处理状态；[0:待处理|2:已加白|3:非信任状态|4:已处理|5:已忽略|6:已拦截]
                      */
                     int64_t m_handleStatus;
                     bool m_handleStatusHasBeenSet;

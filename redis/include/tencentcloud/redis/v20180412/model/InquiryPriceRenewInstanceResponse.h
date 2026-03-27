@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取价格
-                     * @return Price 价格
+                     * 获取<p>折扣后价格</p>
+                     * @return Price <p>折扣后价格</p>
                      * 
                      */
                     double GetPrice() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool PriceHasBeenSet() const;
 
                     /**
-                     * 获取高精度价格
-                     * @return HighPrecisionPrice 高精度价格
+                     * 获取<p>高精度折扣后价格</p>
+                     * @return HighPrecisionPrice <p>高精度折扣后价格</p>
                      * 
                      */
                     double GetHighPrecisionPrice() const;
@@ -72,8 +72,36 @@ namespace TencentCloud
                     bool HighPrecisionPriceHasBeenSet() const;
 
                     /**
-                     * 获取币种
-                     * @return Currency 币种
+                     * 获取<p>原价</p>
+                     * @return OriginalPrice <p>原价</p>
+                     * 
+                     */
+                    double GetOriginalPrice() const;
+
+                    /**
+                     * 判断参数 OriginalPrice 是否已赋值
+                     * @return OriginalPrice 是否已赋值
+                     * 
+                     */
+                    bool OriginalPriceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>高精度原价</p>
+                     * @return HighPrecisionOriginalPrice <p>高精度原价</p>
+                     * 
+                     */
+                    double GetHighPrecisionOriginalPrice() const;
+
+                    /**
+                     * 判断参数 HighPrecisionOriginalPrice 是否已赋值
+                     * @return HighPrecisionOriginalPrice 是否已赋值
+                     * 
+                     */
+                    bool HighPrecisionOriginalPriceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>币种</p>
+                     * @return Currency <p>币种</p>
                      * 
                      */
                     std::string GetCurrency() const;
@@ -86,14 +114,8 @@ namespace TencentCloud
                     bool CurrencyHasBeenSet() const;
 
                     /**
-                     * 获取价格金额单位
-
-- pent: 分
-- microPent: 微分
-                     * @return AmountUnit 价格金额单位
-
-- pent: 分
-- microPent: 微分
+                     * 获取<p>价格金额单位</p><ul><li>pent: 分</li><li>microPent: 微分</li></ul>
+                     * @return AmountUnit <p>价格金额单位</p><ul><li>pent: 分</li><li>microPent: 微分</li></ul>
                      * 
                      */
                     std::string GetAmountUnit() const;
@@ -108,28 +130,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 价格
+                     * <p>折扣后价格</p>
                      */
                     double m_price;
                     bool m_priceHasBeenSet;
 
                     /**
-                     * 高精度价格
+                     * <p>高精度折扣后价格</p>
                      */
                     double m_highPrecisionPrice;
                     bool m_highPrecisionPriceHasBeenSet;
 
                     /**
-                     * 币种
+                     * <p>原价</p>
+                     */
+                    double m_originalPrice;
+                    bool m_originalPriceHasBeenSet;
+
+                    /**
+                     * <p>高精度原价</p>
+                     */
+                    double m_highPrecisionOriginalPrice;
+                    bool m_highPrecisionOriginalPriceHasBeenSet;
+
+                    /**
+                     * <p>币种</p>
                      */
                     std::string m_currency;
                     bool m_currencyHasBeenSet;
 
                     /**
-                     * 价格金额单位
-
-- pent: 分
-- microPent: 微分
+                     * <p>价格金额单位</p><ul><li>pent: 分</li><li>microPent: 微分</li></ul>
                      */
                     std::string m_amountUnit;
                     bool m_amountUnitHasBeenSet;

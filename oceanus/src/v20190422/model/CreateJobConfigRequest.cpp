@@ -60,7 +60,8 @@ CreateJobConfigRequest::CreateJobConfigRequest() :
     m_useOldSystemConnectorHasBeenSet(false),
     m_programArgsAfterGzipHasBeenSet(false),
     m_checkpointTimeoutSecondHasBeenSet(false),
-    m_checkpointIntervalSecondHasBeenSet(false)
+    m_checkpointIntervalSecondHasBeenSet(false),
+    m_variableReplaceModeHasBeenSet(false)
 {
 }
 
@@ -397,6 +398,14 @@ string CreateJobConfigRequest::ToJsonString() const
         string key = "CheckpointIntervalSecond";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_checkpointIntervalSecond, allocator);
+    }
+
+    if (m_variableReplaceModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VariableReplaceMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_variableReplaceMode, allocator);
     }
 
 
@@ -1013,6 +1022,22 @@ void CreateJobConfigRequest::SetCheckpointIntervalSecond(const int64_t& _checkpo
 bool CreateJobConfigRequest::CheckpointIntervalSecondHasBeenSet() const
 {
     return m_checkpointIntervalSecondHasBeenSet;
+}
+
+int64_t CreateJobConfigRequest::GetVariableReplaceMode() const
+{
+    return m_variableReplaceMode;
+}
+
+void CreateJobConfigRequest::SetVariableReplaceMode(const int64_t& _variableReplaceMode)
+{
+    m_variableReplaceMode = _variableReplaceMode;
+    m_variableReplaceModeHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::VariableReplaceModeHasBeenSet() const
+{
+    return m_variableReplaceModeHasBeenSet;
 }
 
 

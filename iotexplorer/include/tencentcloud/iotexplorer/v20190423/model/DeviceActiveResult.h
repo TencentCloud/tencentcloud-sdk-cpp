@@ -114,6 +114,27 @@ namespace TencentCloud
                     bool ErrCodeHasBeenSet() const;
 
                     /**
+                     * 获取错误信息
+                     * @return ErrMessage 错误信息
+                     * 
+                     */
+                    std::string GetErrMessage() const;
+
+                    /**
+                     * 设置错误信息
+                     * @param _errMessage 错误信息
+                     * 
+                     */
+                    void SetErrMessage(const std::string& _errMessage);
+
+                    /**
+                     * 判断参数 ErrMessage 是否已赋值
+                     * @return ErrMessage 是否已赋值
+                     * 
+                     */
+                    bool ErrMessageHasBeenSet() const;
+
+                    /**
                      * 获取过期时间
                      * @return ExpireTime 过期时间
                      * 
@@ -154,6 +175,12 @@ namespace TencentCloud
                      */
                     uint64_t m_errCode;
                     bool m_errCodeHasBeenSet;
+
+                    /**
+                     * 错误信息
+                     */
+                    std::string m_errMessage;
+                    bool m_errMessageHasBeenSet;
 
                     /**
                      * 过期时间

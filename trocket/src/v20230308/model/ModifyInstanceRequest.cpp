@@ -33,7 +33,8 @@ ModifyInstanceRequest::ModifyInstanceRequest() :
     m_aclEnabledHasBeenSet(false),
     m_maxTopicNumHasBeenSet(false),
     m_extraTopicNumHasBeenSet(false),
-    m_enableDeletionProtectionHasBeenSet(false)
+    m_enableDeletionProtectionHasBeenSet(false),
+    m_zoneIdsHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,19 @@ string ModifyInstanceRequest::ToJsonString() const
         string key = "EnableDeletionProtection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableDeletionProtection, allocator);
+    }
+
+    if (m_zoneIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zoneIds.begin(); itr != m_zoneIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -314,6 +328,22 @@ void ModifyInstanceRequest::SetEnableDeletionProtection(const bool& _enableDelet
 bool ModifyInstanceRequest::EnableDeletionProtectionHasBeenSet() const
 {
     return m_enableDeletionProtectionHasBeenSet;
+}
+
+vector<string> ModifyInstanceRequest::GetZoneIds() const
+{
+    return m_zoneIds;
+}
+
+void ModifyInstanceRequest::SetZoneIds(const vector<string>& _zoneIds)
+{
+    m_zoneIds = _zoneIds;
+    m_zoneIdsHasBeenSet = true;
+}
+
+bool ModifyInstanceRequest::ZoneIdsHasBeenSet() const
+{
+    return m_zoneIdsHasBeenSet;
 }
 
 

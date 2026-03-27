@@ -72,6 +72,20 @@ namespace TencentCloud
                      */
                     bool TotalHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户ID</p>
+                     * @return UserId <p>用户ID</p>
+                     * 
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     * 
+                     */
+                    bool UserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +99,12 @@ namespace TencentCloud
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
+
+                    /**
+                     * <p>用户ID</p>
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
 
                 };
             }

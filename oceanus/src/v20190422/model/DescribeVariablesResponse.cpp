@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Oceanus::V20190422::Model;
 using namespace std;
 
-DescribeVariablesResponse::DescribeVariablesResponse()
+DescribeVariablesResponse::DescribeVariablesResponse() :
+    m_variableSetHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome DescribeVariablesResponse::Deserialize(const string &payload
     }
 
 
+    if (rsp.HasMember("VariableSet") && !rsp["VariableSet"].IsNull())
+    {
+        if (!rsp["VariableSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VariableSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["VariableSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VariableItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_variableSet.push_back(item);
+        }
+        m_variableSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +91,21 @@ string DescribeVariablesResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_variableSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VariableSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_variableSet.begin(); itr != m_variableSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +118,15 @@ string DescribeVariablesResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<VariableItem> DescribeVariablesResponse::GetVariableSet() const
+{
+    return m_variableSet;
+}
+
+bool DescribeVariablesResponse::VariableSetHasBeenSet() const
+{
+    return m_variableSetHasBeenSet;
+}
 
 

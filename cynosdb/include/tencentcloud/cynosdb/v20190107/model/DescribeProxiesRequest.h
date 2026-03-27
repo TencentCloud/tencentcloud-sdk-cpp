@@ -165,15 +165,19 @@ namespace TencentCloud
                     bool OrderByTypeHasBeenSet() const;
 
                     /**
-                     * 获取搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
-                     * @return Filters 搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
+                     * 获取搜索条件，若存在多个 Filter 时，Filter 间的关系为逻辑与（AND）关系。
+说明：此参数当前仅支持 Status 和 ProxyGroupId 两种过滤条件。
+                     * @return Filters 搜索条件，若存在多个 Filter 时，Filter 间的关系为逻辑与（AND）关系。
+说明：此参数当前仅支持 Status 和 ProxyGroupId 两种过滤条件。
                      * 
                      */
                     std::vector<QueryParamFilter> GetFilters() const;
 
                     /**
-                     * 设置搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
-                     * @param _filters 搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
+                     * 设置搜索条件，若存在多个 Filter 时，Filter 间的关系为逻辑与（AND）关系。
+说明：此参数当前仅支持 Status 和 ProxyGroupId 两种过滤条件。
+                     * @param _filters 搜索条件，若存在多个 Filter 时，Filter 间的关系为逻辑与（AND）关系。
+说明：此参数当前仅支持 Status 和 ProxyGroupId 两种过滤条件。
                      * 
                      */
                     void SetFilters(const std::vector<QueryParamFilter>& _filters);
@@ -222,7 +226,8 @@ namespace TencentCloud
                     bool m_orderByTypeHasBeenSet;
 
                     /**
-                     * 搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。
+                     * 搜索条件，若存在多个 Filter 时，Filter 间的关系为逻辑与（AND）关系。
+说明：此参数当前仅支持 Status 和 ProxyGroupId 两种过滤条件。
                      */
                     std::vector<QueryParamFilter> m_filters;
                     bool m_filtersHasBeenSet;

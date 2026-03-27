@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcb/v20180608/model/ExternalStorage.h>
 
 
 namespace TencentCloud
@@ -84,6 +85,27 @@ namespace TencentCloud
                      */
                     bool EnableUnionHasBeenSet() const;
 
+                    /**
+                     * 获取外部存储源。
+                     * @return ExternalStorage 外部存储源。
+                     * 
+                     */
+                    ExternalStorage GetExternalStorage() const;
+
+                    /**
+                     * 设置外部存储源。
+                     * @param _externalStorage 外部存储源。
+                     * 
+                     */
+                    void SetExternalStorage(const ExternalStorage& _externalStorage);
+
+                    /**
+                     * 判断参数 ExternalStorage 是否已赋值
+                     * @return ExternalStorage 是否已赋值
+                     * 
+                     */
+                    bool ExternalStorageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +119,12 @@ namespace TencentCloud
                      */
                     bool m_enableUnion;
                     bool m_enableUnionHasBeenSet;
+
+                    /**
+                     * 外部存储源。
+                     */
+                    ExternalStorage m_externalStorage;
+                    bool m_externalStorageHasBeenSet;
 
                 };
             }

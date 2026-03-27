@@ -26,7 +26,10 @@ CreateRocketMQRoleRequest::CreateRocketMQRoleRequest() :
     m_roleNameHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_permTypeHasBeenSet(false)
+    m_permTypeHasBeenSet(false),
+    m_roleGenerateModeHasBeenSet(false),
+    m_accessKeyHasBeenSet(false),
+    m_secretKeyHasBeenSet(false)
 {
 }
 
@@ -67,6 +70,30 @@ string CreateRocketMQRoleRequest::ToJsonString() const
         string key = "PermType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_permType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roleGenerateModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleGenerateMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_roleGenerateMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accessKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secretKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_secretKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +166,54 @@ void CreateRocketMQRoleRequest::SetPermType(const string& _permType)
 bool CreateRocketMQRoleRequest::PermTypeHasBeenSet() const
 {
     return m_permTypeHasBeenSet;
+}
+
+string CreateRocketMQRoleRequest::GetRoleGenerateMode() const
+{
+    return m_roleGenerateMode;
+}
+
+void CreateRocketMQRoleRequest::SetRoleGenerateMode(const string& _roleGenerateMode)
+{
+    m_roleGenerateMode = _roleGenerateMode;
+    m_roleGenerateModeHasBeenSet = true;
+}
+
+bool CreateRocketMQRoleRequest::RoleGenerateModeHasBeenSet() const
+{
+    return m_roleGenerateModeHasBeenSet;
+}
+
+string CreateRocketMQRoleRequest::GetAccessKey() const
+{
+    return m_accessKey;
+}
+
+void CreateRocketMQRoleRequest::SetAccessKey(const string& _accessKey)
+{
+    m_accessKey = _accessKey;
+    m_accessKeyHasBeenSet = true;
+}
+
+bool CreateRocketMQRoleRequest::AccessKeyHasBeenSet() const
+{
+    return m_accessKeyHasBeenSet;
+}
+
+string CreateRocketMQRoleRequest::GetSecretKey() const
+{
+    return m_secretKey;
+}
+
+void CreateRocketMQRoleRequest::SetSecretKey(const string& _secretKey)
+{
+    m_secretKey = _secretKey;
+    m_secretKeyHasBeenSet = true;
+}
+
+bool CreateRocketMQRoleRequest::SecretKeyHasBeenSet() const
+{
+    return m_secretKeyHasBeenSet;
 }
 
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取角色名称，不支持中字以及除了短线和下划线外的特殊字符且长度必须大于0且小等于32。
-                     * @return RoleName 角色名称，不支持中字以及除了短线和下划线外的特殊字符且长度必须大于0且小等于32。
+                     * 获取<p>角色名称，不支持中字以及除了短线和下划线外的特殊字符且长度必须大于0且小等于32。</p>
+                     * @return RoleName <p>角色名称，不支持中字以及除了短线和下划线外的特殊字符且长度必须大于0且小等于32。</p>
                      * 
                      */
                     std::string GetRoleName() const;
 
                     /**
-                     * 设置角色名称，不支持中字以及除了短线和下划线外的特殊字符且长度必须大于0且小等于32。
-                     * @param _roleName 角色名称，不支持中字以及除了短线和下划线外的特殊字符且长度必须大于0且小等于32。
+                     * 设置<p>角色名称，不支持中字以及除了短线和下划线外的特殊字符且长度必须大于0且小等于32。</p>
+                     * @param _roleName <p>角色名称，不支持中字以及除了短线和下划线外的特殊字符且长度必须大于0且小等于32。</p>
                      * 
                      */
                     void SetRoleName(const std::string& _roleName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool RoleNameHasBeenSet() const;
 
                     /**
-                     * 获取必填字段，集群Id
-                     * @return ClusterId 必填字段，集群Id
+                     * 获取<p>必填字段，集群Id</p>
+                     * @return ClusterId <p>必填字段，集群Id</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置必填字段，集群Id
-                     * @param _clusterId 必填字段，集群Id
+                     * 设置<p>必填字段，集群Id</p>
+                     * @param _clusterId <p>必填字段，集群Id</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取备注说明，长度必须大等于0且小等于128。
-                     * @return Remark 备注说明，长度必须大等于0且小等于128。
+                     * 获取<p>备注说明，长度必须大等于0且小等于128。</p>
+                     * @return Remark <p>备注说明，长度必须大等于0且小等于128。</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注说明，长度必须大等于0且小等于128。
-                     * @param _remark 备注说明，长度必须大等于0且小等于128。
+                     * 设置<p>备注说明，长度必须大等于0且小等于128。</p>
+                     * @param _remark <p>备注说明，长度必须大等于0且小等于128。</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取角色授权类型（集群：Cluster; 主题或消费组：TopicAndGroup）
-                     * @return PermType 角色授权类型（集群：Cluster; 主题或消费组：TopicAndGroup）
+                     * 获取<p>角色授权类型（集群：Cluster; 主题或消费组：TopicAndGroup）</p>
+                     * @return PermType <p>角色授权类型（集群：Cluster; 主题或消费组：TopicAndGroup）</p>
                      * 
                      */
                     std::string GetPermType() const;
 
                     /**
-                     * 设置角色授权类型（集群：Cluster; 主题或消费组：TopicAndGroup）
-                     * @param _permType 角色授权类型（集群：Cluster; 主题或消费组：TopicAndGroup）
+                     * 设置<p>角色授权类型（集群：Cluster; 主题或消费组：TopicAndGroup）</p>
+                     * @param _permType <p>角色授权类型（集群：Cluster; 主题或消费组：TopicAndGroup）</p>
                      * 
                      */
                     void SetPermType(const std::string& _permType);
@@ -126,31 +126,112 @@ namespace TencentCloud
                      */
                     bool PermTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>AK、SK的生成方式，AUTO：后端自动生成，MANUAL：用户手动输入</p>
+                     * @return RoleGenerateMode <p>AK、SK的生成方式，AUTO：后端自动生成，MANUAL：用户手动输入</p>
+                     * 
+                     */
+                    std::string GetRoleGenerateMode() const;
+
+                    /**
+                     * 设置<p>AK、SK的生成方式，AUTO：后端自动生成，MANUAL：用户手动输入</p>
+                     * @param _roleGenerateMode <p>AK、SK的生成方式，AUTO：后端自动生成，MANUAL：用户手动输入</p>
+                     * 
+                     */
+                    void SetRoleGenerateMode(const std::string& _roleGenerateMode);
+
+                    /**
+                     * 判断参数 RoleGenerateMode 是否已赋值
+                     * @return RoleGenerateMode 是否已赋值
+                     * 
+                     */
+                    bool RoleGenerateModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>选择MANUAL模式下，需要手动输入AK值</p>
+                     * @return AccessKey <p>选择MANUAL模式下，需要手动输入AK值</p>
+                     * 
+                     */
+                    std::string GetAccessKey() const;
+
+                    /**
+                     * 设置<p>选择MANUAL模式下，需要手动输入AK值</p>
+                     * @param _accessKey <p>选择MANUAL模式下，需要手动输入AK值</p>
+                     * 
+                     */
+                    void SetAccessKey(const std::string& _accessKey);
+
+                    /**
+                     * 判断参数 AccessKey 是否已赋值
+                     * @return AccessKey 是否已赋值
+                     * 
+                     */
+                    bool AccessKeyHasBeenSet() const;
+
+                    /**
+                     * 获取<p>选择MANUAL模式下，需要手动输入SK值</p>
+                     * @return SecretKey <p>选择MANUAL模式下，需要手动输入SK值</p>
+                     * 
+                     */
+                    std::string GetSecretKey() const;
+
+                    /**
+                     * 设置<p>选择MANUAL模式下，需要手动输入SK值</p>
+                     * @param _secretKey <p>选择MANUAL模式下，需要手动输入SK值</p>
+                     * 
+                     */
+                    void SetSecretKey(const std::string& _secretKey);
+
+                    /**
+                     * 判断参数 SecretKey 是否已赋值
+                     * @return SecretKey 是否已赋值
+                     * 
+                     */
+                    bool SecretKeyHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 角色名称，不支持中字以及除了短线和下划线外的特殊字符且长度必须大于0且小等于32。
+                     * <p>角色名称，不支持中字以及除了短线和下划线外的特殊字符且长度必须大于0且小等于32。</p>
                      */
                     std::string m_roleName;
                     bool m_roleNameHasBeenSet;
 
                     /**
-                     * 必填字段，集群Id
+                     * <p>必填字段，集群Id</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 备注说明，长度必须大等于0且小等于128。
+                     * <p>备注说明，长度必须大等于0且小等于128。</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 角色授权类型（集群：Cluster; 主题或消费组：TopicAndGroup）
+                     * <p>角色授权类型（集群：Cluster; 主题或消费组：TopicAndGroup）</p>
                      */
                     std::string m_permType;
                     bool m_permTypeHasBeenSet;
+
+                    /**
+                     * <p>AK、SK的生成方式，AUTO：后端自动生成，MANUAL：用户手动输入</p>
+                     */
+                    std::string m_roleGenerateMode;
+                    bool m_roleGenerateModeHasBeenSet;
+
+                    /**
+                     * <p>选择MANUAL模式下，需要手动输入AK值</p>
+                     */
+                    std::string m_accessKey;
+                    bool m_accessKeyHasBeenSet;
+
+                    /**
+                     * <p>选择MANUAL模式下，需要手动输入SK值</p>
+                     */
+                    std::string m_secretKey;
+                    bool m_secretKeyHasBeenSet;
 
                 };
             }

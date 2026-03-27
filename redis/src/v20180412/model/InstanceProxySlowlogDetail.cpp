@@ -27,7 +27,8 @@ InstanceProxySlowlogDetail::InstanceProxySlowlogDetail() :
     m_commandLineHasBeenSet(false),
     m_executeTimeHasBeenSet(false),
     m_recvClientEndHasBeenSet(false),
-    m_sendClientEndHasBeenSet(false)
+    m_sendClientEndHasBeenSet(false),
+    m_nodeHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome InstanceProxySlowlogDetail::Deserialize(const rapidjson::Val
         m_sendClientEndHasBeenSet = true;
     }
 
+    if (value.HasMember("Node") && !value["Node"].IsNull())
+    {
+        if (!value["Node"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceProxySlowlogDetail.Node` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_node = string(value["Node"].GetString());
+        m_nodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void InstanceProxySlowlogDetail::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "SendClientEnd";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sendClientEnd, allocator);
+    }
+
+    if (m_nodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Node";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_node.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void InstanceProxySlowlogDetail::SetSendClientEnd(const int64_t& _sendClientEnd)
 bool InstanceProxySlowlogDetail::SendClientEndHasBeenSet() const
 {
     return m_sendClientEndHasBeenSet;
+}
+
+string InstanceProxySlowlogDetail::GetNode() const
+{
+    return m_node;
+}
+
+void InstanceProxySlowlogDetail::SetNode(const string& _node)
+{
+    m_node = _node;
+    m_nodeHasBeenSet = true;
+}
+
+bool InstanceProxySlowlogDetail::NodeHasBeenSet() const
+{
+    return m_nodeHasBeenSet;
 }
 

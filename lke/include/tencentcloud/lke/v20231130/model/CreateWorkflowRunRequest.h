@@ -127,6 +127,27 @@ namespace TencentCloud
                      */
                     bool CustomVariablesHasBeenSet() const;
 
+                    /**
+                     * 获取用户ID
+                     * @return VisitorId 用户ID
+                     * 
+                     */
+                    std::string GetVisitorId() const;
+
+                    /**
+                     * 设置用户ID
+                     * @param _visitorId 用户ID
+                     * 
+                     */
+                    void SetVisitorId(const std::string& _visitorId);
+
+                    /**
+                     * 判断参数 VisitorId 是否已赋值
+                     * @return VisitorId 是否已赋值
+                     * 
+                     */
+                    bool VisitorIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +173,12 @@ namespace TencentCloud
                      */
                     std::vector<CustomVariable> m_customVariables;
                     bool m_customVariablesHasBeenSet;
+
+                    /**
+                     * 用户ID
+                     */
+                    std::string m_visitorId;
+                    bool m_visitorIdHasBeenSet;
 
                 };
             }

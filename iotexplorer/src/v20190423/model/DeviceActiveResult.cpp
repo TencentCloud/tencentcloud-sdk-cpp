@@ -24,6 +24,7 @@ DeviceActiveResult::DeviceActiveResult() :
     m_modelIdHasBeenSet(false),
     m_snHasBeenSet(false),
     m_errCodeHasBeenSet(false),
+    m_errMessageHasBeenSet(false),
     m_expireTimeHasBeenSet(false)
 {
 }
@@ -61,6 +62,16 @@ CoreInternalOutcome DeviceActiveResult::Deserialize(const rapidjson::Value &valu
         }
         m_errCode = value["ErrCode"].GetUint64();
         m_errCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrMessage") && !value["ErrMessage"].IsNull())
+    {
+        if (!value["ErrMessage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceActiveResult.ErrMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errMessage = string(value["ErrMessage"].GetString());
+        m_errMessageHasBeenSet = true;
     }
 
     if (value.HasMember("ExpireTime") && !value["ExpireTime"].IsNull())
@@ -102,6 +113,14 @@ void DeviceActiveResult::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "ErrCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_errCode, allocator);
+    }
+
+    if (m_errMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errMessage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_expireTimeHasBeenSet)
@@ -161,6 +180,22 @@ void DeviceActiveResult::SetErrCode(const uint64_t& _errCode)
 bool DeviceActiveResult::ErrCodeHasBeenSet() const
 {
     return m_errCodeHasBeenSet;
+}
+
+string DeviceActiveResult::GetErrMessage() const
+{
+    return m_errMessage;
+}
+
+void DeviceActiveResult::SetErrMessage(const string& _errMessage)
+{
+    m_errMessage = _errMessage;
+    m_errMessageHasBeenSet = true;
+}
+
+bool DeviceActiveResult::ErrMessageHasBeenSet() const
+{
+    return m_errMessageHasBeenSet;
 }
 
 int64_t DeviceActiveResult::GetExpireTime() const

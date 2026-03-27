@@ -2990,6 +2990,56 @@ MongodbClient::ModifyDBInstanceSpecOutcomeCallable MongodbClient::ModifyDBInstan
     return prom->get_future();
 }
 
+MongodbClient::ModifyInstanceAzOutcome MongodbClient::ModifyInstanceAz(const ModifyInstanceAzRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceAz");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceAzResponse rsp = ModifyInstanceAzResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceAzOutcome(rsp);
+        else
+            return ModifyInstanceAzOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceAzOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::ModifyInstanceAzAsync(const ModifyInstanceAzRequest& request, const ModifyInstanceAzAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyInstanceAzRequest&;
+    using Resp = ModifyInstanceAzResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceAz", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::ModifyInstanceAzOutcomeCallable MongodbClient::ModifyInstanceAzCallable(const ModifyInstanceAzRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyInstanceAzOutcome>>();
+    ModifyInstanceAzAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const ModifyInstanceAzRequest&,
+        ModifyInstanceAzOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MongodbClient::ModifyInstanceParamsOutcome MongodbClient::ModifyInstanceParams(const ModifyInstanceParamsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyInstanceParams");

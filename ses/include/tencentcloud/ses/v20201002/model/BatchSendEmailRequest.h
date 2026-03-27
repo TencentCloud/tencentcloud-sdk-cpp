@@ -48,23 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照
-发信人 &lt;邮件地址&gt; 的方式填写，例如：
-腾讯云团队 &lt;noreply@mail.qcloud.com&gt;
-                     * @return FromEmailAddress 发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照
-发信人 &lt;邮件地址&gt; 的方式填写，例如：
-腾讯云团队 &lt;noreply@mail.qcloud.com&gt;
+                     * 获取<p>发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照<br>发信人 &lt;邮件地址&gt; 的方式填写，例如：<br>腾讯云团队 &lt;noreply@mail.qcloud.com&gt;</p>
+                     * @return FromEmailAddress <p>发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照<br>发信人 &lt;邮件地址&gt; 的方式填写，例如：<br>腾讯云团队 &lt;noreply@mail.qcloud.com&gt;</p>
                      * 
                      */
                     std::string GetFromEmailAddress() const;
 
                     /**
-                     * 设置发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照
-发信人 &lt;邮件地址&gt; 的方式填写，例如：
-腾讯云团队 &lt;noreply@mail.qcloud.com&gt;
-                     * @param _fromEmailAddress 发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照
-发信人 &lt;邮件地址&gt; 的方式填写，例如：
-腾讯云团队 &lt;noreply@mail.qcloud.com&gt;
+                     * 设置<p>发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照<br>发信人 &lt;邮件地址&gt; 的方式填写，例如：<br>腾讯云团队 &lt;noreply@mail.qcloud.com&gt;</p>
+                     * @param _fromEmailAddress <p>发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照<br>发信人 &lt;邮件地址&gt; 的方式填写，例如：<br>腾讯云团队 &lt;noreply@mail.qcloud.com&gt;</p>
                      * 
                      */
                     void SetFromEmailAddress(const std::string& _fromEmailAddress);
@@ -77,15 +69,15 @@ namespace TencentCloud
                     bool FromEmailAddressHasBeenSet() const;
 
                     /**
-                     * 获取收件人列表ID
-                     * @return ReceiverId 收件人列表ID
+                     * 获取<p>收件人列表ID</p>
+                     * @return ReceiverId <p>收件人列表ID</p>
                      * 
                      */
                     uint64_t GetReceiverId() const;
 
                     /**
-                     * 设置收件人列表ID
-                     * @param _receiverId 收件人列表ID
+                     * 设置<p>收件人列表ID</p>
+                     * @param _receiverId <p>收件人列表ID</p>
                      * 
                      */
                     void SetReceiverId(const uint64_t& _receiverId);
@@ -98,15 +90,15 @@ namespace TencentCloud
                     bool ReceiverIdHasBeenSet() const;
 
                     /**
-                     * 获取邮件主题
-                     * @return Subject 邮件主题
+                     * 获取<p>邮件主题</p>
+                     * @return Subject <p>邮件主题</p>
                      * 
                      */
                     std::string GetSubject() const;
 
                     /**
-                     * 设置邮件主题
-                     * @param _subject 邮件主题
+                     * 设置<p>邮件主题</p>
+                     * @param _subject <p>邮件主题</p>
                      * 
                      */
                     void SetSubject(const std::string& _subject);
@@ -119,15 +111,15 @@ namespace TencentCloud
                     bool SubjectHasBeenSet() const;
 
                     /**
-                     * 获取任务类型 1: 立即发送 2: 定时发送 3: 周期（频率）发送
-                     * @return TaskType 任务类型 1: 立即发送 2: 定时发送 3: 周期（频率）发送
+                     * 获取<p>任务类型 1: 立即发送 2: 定时发送 3: 周期（频率）发送</p>
+                     * @return TaskType <p>任务类型 1: 立即发送 2: 定时发送 3: 周期（频率）发送</p>
                      * 
                      */
                     uint64_t GetTaskType() const;
 
                     /**
-                     * 设置任务类型 1: 立即发送 2: 定时发送 3: 周期（频率）发送
-                     * @param _taskType 任务类型 1: 立即发送 2: 定时发送 3: 周期（频率）发送
+                     * 设置<p>任务类型 1: 立即发送 2: 定时发送 3: 周期（频率）发送</p>
+                     * @param _taskType <p>任务类型 1: 立即发送 2: 定时发送 3: 周期（频率）发送</p>
                      * 
                      */
                     void SetTaskType(const uint64_t& _taskType);
@@ -140,15 +132,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
-                     * @return ReplyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
+                     * 获取<p>邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。</p>
+                     * @return ReplyToAddresses <p>邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。</p>
                      * 
                      */
                     std::string GetReplyToAddresses() const;
 
                     /**
-                     * 设置邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
-                     * @param _replyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
+                     * 设置<p>邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。</p>
+                     * @param _replyToAddresses <p>邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。</p>
                      * 
                      */
                     void SetReplyToAddresses(const std::string& _replyToAddresses);
@@ -161,19 +153,15 @@ namespace TencentCloud
                     bool ReplyToAddressesHasBeenSet() const;
 
                     /**
-                     * 获取使用模板发送时，填写的模板相关参数
-<dx-alert infotype="notice" title="注意"> 如您未申请过特殊配置，则该字段为必填 </dx-alert>
-                     * @return Template 使用模板发送时，填写的模板相关参数
-<dx-alert infotype="notice" title="注意"> 如您未申请过特殊配置，则该字段为必填 </dx-alert>
+                     * 获取<p>使用模板发送时，填写的模板相关参数</p><blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">注意</div>        <div class="rno-document-tip-desc"><p>如您未申请过特殊配置，则该字段为必填</p></div>    </div></blockquote>
+                     * @return Template <p>使用模板发送时，填写的模板相关参数</p><blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">注意</div>        <div class="rno-document-tip-desc"><p>如您未申请过特殊配置，则该字段为必填</p></div>    </div></blockquote>
                      * 
                      */
                     Template GetTemplate() const;
 
                     /**
-                     * 设置使用模板发送时，填写的模板相关参数
-<dx-alert infotype="notice" title="注意"> 如您未申请过特殊配置，则该字段为必填 </dx-alert>
-                     * @param _template 使用模板发送时，填写的模板相关参数
-<dx-alert infotype="notice" title="注意"> 如您未申请过特殊配置，则该字段为必填 </dx-alert>
+                     * 设置<p>使用模板发送时，填写的模板相关参数</p><blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">注意</div>        <div class="rno-document-tip-desc"><p>如您未申请过特殊配置，则该字段为必填</p></div>    </div></blockquote>
+                     * @param _template <p>使用模板发送时，填写的模板相关参数</p><blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">注意</div>        <div class="rno-document-tip-desc"><p>如您未申请过特殊配置，则该字段为必填</p></div>    </div></blockquote>
                      * 
                      */
                     void SetTemplate(const Template& _template);
@@ -186,15 +174,15 @@ namespace TencentCloud
                     bool TemplateHasBeenSet() const;
 
                     /**
-                     * 获取已废弃<dx-alert infotype="notice" title="说明"> 仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</dx-alert>
-                     * @return Simple 已废弃<dx-alert infotype="notice" title="说明"> 仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</dx-alert>
+                     * 获取<p>已废弃<blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">说明</div>        <div class="rno-document-tip-desc"><p>仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</p></div>    </div></blockquote></p>
+                     * @return Simple <p>已废弃<blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">说明</div>        <div class="rno-document-tip-desc"><p>仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</p></div>    </div></blockquote></p>
                      * 
                      */
                     Simple GetSimple() const;
 
                     /**
-                     * 设置已废弃<dx-alert infotype="notice" title="说明"> 仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</dx-alert>
-                     * @param _simple 已废弃<dx-alert infotype="notice" title="说明"> 仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</dx-alert>
+                     * 设置<p>已废弃<blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">说明</div>        <div class="rno-document-tip-desc"><p>仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</p></div>    </div></blockquote></p>
+                     * @param _simple <p>已废弃<blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">说明</div>        <div class="rno-document-tip-desc"><p>仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</p></div>    </div></blockquote></p>
                      * 
                      */
                     void SetSimple(const Simple& _simple);
@@ -207,15 +195,15 @@ namespace TencentCloud
                     bool SimpleHasBeenSet() const;
 
                     /**
-                     * 获取需要发送附件时，填写附件相关参数（暂未支持）
-                     * @return Attachments 需要发送附件时，填写附件相关参数（暂未支持）
+                     * 获取<p>需要发送附件时，填写附件相关参数（暂未支持）</p>
+                     * @return Attachments <p>需要发送附件时，填写附件相关参数（暂未支持）</p>
                      * 
                      */
                     std::vector<Attachment> GetAttachments() const;
 
                     /**
-                     * 设置需要发送附件时，填写附件相关参数（暂未支持）
-                     * @param _attachments 需要发送附件时，填写附件相关参数（暂未支持）
+                     * 设置<p>需要发送附件时，填写附件相关参数（暂未支持）</p>
+                     * @param _attachments <p>需要发送附件时，填写附件相关参数（暂未支持）</p>
                      * 
                      */
                     void SetAttachments(const std::vector<Attachment>& _attachments);
@@ -228,15 +216,15 @@ namespace TencentCloud
                     bool AttachmentsHasBeenSet() const;
 
                     /**
-                     * 获取周期发送任务的必要参数
-                     * @return CycleParam 周期发送任务的必要参数
+                     * 获取<p>周期发送任务的必要参数</p>
+                     * @return CycleParam <p>周期发送任务的必要参数</p>
                      * 
                      */
                     CycleEmailParam GetCycleParam() const;
 
                     /**
-                     * 设置周期发送任务的必要参数
-                     * @param _cycleParam 周期发送任务的必要参数
+                     * 设置<p>周期发送任务的必要参数</p>
+                     * @param _cycleParam <p>周期发送任务的必要参数</p>
                      * 
                      */
                     void SetCycleParam(const CycleEmailParam& _cycleParam);
@@ -249,15 +237,15 @@ namespace TencentCloud
                     bool CycleParamHasBeenSet() const;
 
                     /**
-                     * 获取定时发送任务的必要参数
-                     * @return TimedParam 定时发送任务的必要参数
+                     * 获取<p>定时发送任务的必要参数</p>
+                     * @return TimedParam <p>定时发送任务的必要参数</p>
                      * 
                      */
                     TimedEmailParam GetTimedParam() const;
 
                     /**
-                     * 设置定时发送任务的必要参数
-                     * @param _timedParam 定时发送任务的必要参数
+                     * 设置<p>定时发送任务的必要参数</p>
+                     * @param _timedParam <p>定时发送任务的必要参数</p>
                      * 
                      */
                     void SetTimedParam(const TimedEmailParam& _timedParam);
@@ -270,15 +258,15 @@ namespace TencentCloud
                     bool TimedParamHasBeenSet() const;
 
                     /**
-                     * 获取退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语 10: 泰语
-                     * @return Unsubscribe 退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语 10: 泰语
+                     * 获取<p>退订链接选项</p><p>枚举值：</p><ul><li>0： 不加入退订链接</li><li>1： 简体中文</li><li>2： 英文</li><li>3： 繁体中文</li><li>4： 西班牙语</li><li>5： 法语</li><li>6： 德语</li><li>7： 日语</li><li>8： 韩语</li><li>9： 阿拉伯语</li><li>10： 泰语</li><li>11： 印尼语</li></ul>
+                     * @return Unsubscribe <p>退订链接选项</p><p>枚举值：</p><ul><li>0： 不加入退订链接</li><li>1： 简体中文</li><li>2： 英文</li><li>3： 繁体中文</li><li>4： 西班牙语</li><li>5： 法语</li><li>6： 德语</li><li>7： 日语</li><li>8： 韩语</li><li>9： 阿拉伯语</li><li>10： 泰语</li><li>11： 印尼语</li></ul>
                      * 
                      */
                     std::string GetUnsubscribe() const;
 
                     /**
-                     * 设置退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语 10: 泰语
-                     * @param _unsubscribe 退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语 10: 泰语
+                     * 设置<p>退订链接选项</p><p>枚举值：</p><ul><li>0： 不加入退订链接</li><li>1： 简体中文</li><li>2： 英文</li><li>3： 繁体中文</li><li>4： 西班牙语</li><li>5： 法语</li><li>6： 德语</li><li>7： 日语</li><li>8： 韩语</li><li>9： 阿拉伯语</li><li>10： 泰语</li><li>11： 印尼语</li></ul>
+                     * @param _unsubscribe <p>退订链接选项</p><p>枚举值：</p><ul><li>0： 不加入退订链接</li><li>1： 简体中文</li><li>2： 英文</li><li>3： 繁体中文</li><li>4： 西班牙语</li><li>5： 法语</li><li>6： 德语</li><li>7： 日语</li><li>8： 韩语</li><li>9： 阿拉伯语</li><li>10： 泰语</li><li>11： 印尼语</li></ul>
                      * 
                      */
                     void SetUnsubscribe(const std::string& _unsubscribe);
@@ -291,15 +279,15 @@ namespace TencentCloud
                     bool UnsubscribeHasBeenSet() const;
 
                     /**
-                     * 获取是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面
-                     * @return ADLocation 是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面
+                     * 获取<p>是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面</p>
+                     * @return ADLocation <p>是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面</p>
                      * 
                      */
                     uint64_t GetADLocation() const;
 
                     /**
-                     * 设置是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面
-                     * @param _aDLocation 是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面
+                     * 设置<p>是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面</p>
+                     * @param _aDLocation <p>是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面</p>
                      * 
                      */
                     void SetADLocation(const uint64_t& _aDLocation);
@@ -314,76 +302,73 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照
-发信人 &lt;邮件地址&gt; 的方式填写，例如：
-腾讯云团队 &lt;noreply@mail.qcloud.com&gt;
+                     * <p>发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照<br>发信人 &lt;邮件地址&gt; 的方式填写，例如：<br>腾讯云团队 &lt;noreply@mail.qcloud.com&gt;</p>
                      */
                     std::string m_fromEmailAddress;
                     bool m_fromEmailAddressHasBeenSet;
 
                     /**
-                     * 收件人列表ID
+                     * <p>收件人列表ID</p>
                      */
                     uint64_t m_receiverId;
                     bool m_receiverIdHasBeenSet;
 
                     /**
-                     * 邮件主题
+                     * <p>邮件主题</p>
                      */
                     std::string m_subject;
                     bool m_subjectHasBeenSet;
 
                     /**
-                     * 任务类型 1: 立即发送 2: 定时发送 3: 周期（频率）发送
+                     * <p>任务类型 1: 立即发送 2: 定时发送 3: 周期（频率）发送</p>
                      */
                     uint64_t m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
+                     * <p>邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。</p>
                      */
                     std::string m_replyToAddresses;
                     bool m_replyToAddressesHasBeenSet;
 
                     /**
-                     * 使用模板发送时，填写的模板相关参数
-<dx-alert infotype="notice" title="注意"> 如您未申请过特殊配置，则该字段为必填 </dx-alert>
+                     * <p>使用模板发送时，填写的模板相关参数</p><blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">注意</div>        <div class="rno-document-tip-desc"><p>如您未申请过特殊配置，则该字段为必填</p></div>    </div></blockquote>
                      */
                     Template m_template;
                     bool m_templateHasBeenSet;
 
                     /**
-                     * 已废弃<dx-alert infotype="notice" title="说明"> 仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</dx-alert>
+                     * <p>已废弃<blockquote class="rno-document-tips rno-document-tips-notice">    <div class="rno-document-tips-body">        <i class="rno-document-tip-icon"></i>        <div class="rno-document-tip-title">说明</div>        <div class="rno-document-tip-desc"><p>仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</p></div>    </div></blockquote></p>
                      */
                     Simple m_simple;
                     bool m_simpleHasBeenSet;
 
                     /**
-                     * 需要发送附件时，填写附件相关参数（暂未支持）
+                     * <p>需要发送附件时，填写附件相关参数（暂未支持）</p>
                      */
                     std::vector<Attachment> m_attachments;
                     bool m_attachmentsHasBeenSet;
 
                     /**
-                     * 周期发送任务的必要参数
+                     * <p>周期发送任务的必要参数</p>
                      */
                     CycleEmailParam m_cycleParam;
                     bool m_cycleParamHasBeenSet;
 
                     /**
-                     * 定时发送任务的必要参数
+                     * <p>定时发送任务的必要参数</p>
                      */
                     TimedEmailParam m_timedParam;
                     bool m_timedParamHasBeenSet;
 
                     /**
-                     * 退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语 10: 泰语
+                     * <p>退订链接选项</p><p>枚举值：</p><ul><li>0： 不加入退订链接</li><li>1： 简体中文</li><li>2： 英文</li><li>3： 繁体中文</li><li>4： 西班牙语</li><li>5： 法语</li><li>6： 德语</li><li>7： 日语</li><li>8： 韩语</li><li>9： 阿拉伯语</li><li>10： 泰语</li><li>11： 印尼语</li></ul>
                      */
                     std::string m_unsubscribe;
                     bool m_unsubscribeHasBeenSet;
 
                     /**
-                     * 是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面
+                     * <p>是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面</p>
                      */
                     uint64_t m_aDLocation;
                     bool m_aDLocationHasBeenSet;

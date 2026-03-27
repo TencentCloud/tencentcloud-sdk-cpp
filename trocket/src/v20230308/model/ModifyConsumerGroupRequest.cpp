@@ -28,7 +28,8 @@ ModifyConsumerGroupRequest::ModifyConsumerGroupRequest() :
     m_consumeMessageOrderlyHasBeenSet(false),
     m_consumerGroupHasBeenSet(false),
     m_maxRetryTimesHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_retryPolicyHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,15 @@ string ModifyConsumerGroupRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_retryPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetryPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_retryPolicy.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -189,6 +199,22 @@ void ModifyConsumerGroupRequest::SetRemark(const string& _remark)
 bool ModifyConsumerGroupRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+RetryPolicy ModifyConsumerGroupRequest::GetRetryPolicy() const
+{
+    return m_retryPolicy;
+}
+
+void ModifyConsumerGroupRequest::SetRetryPolicy(const RetryPolicy& _retryPolicy)
+{
+    m_retryPolicy = _retryPolicy;
+    m_retryPolicyHasBeenSet = true;
+}
+
+bool ModifyConsumerGroupRequest::RetryPolicyHasBeenSet() const
+{
+    return m_retryPolicyHasBeenSet;
 }
 
 

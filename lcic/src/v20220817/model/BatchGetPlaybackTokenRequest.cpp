@@ -25,7 +25,8 @@ using namespace std;
 BatchGetPlaybackTokenRequest::BatchGetPlaybackTokenRequest() :
     m_sdkAppIdHasBeenSet(false),
     m_roomIdsHasBeenSet(false),
-    m_expireSecondsHasBeenSet(false)
+    m_expireSecondsHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string BatchGetPlaybackTokenRequest::ToJsonString() const
         string key = "ExpireSeconds";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_expireSeconds, allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void BatchGetPlaybackTokenRequest::SetExpireSeconds(const uint64_t& _expireSecon
 bool BatchGetPlaybackTokenRequest::ExpireSecondsHasBeenSet() const
 {
     return m_expireSecondsHasBeenSet;
+}
+
+string BatchGetPlaybackTokenRequest::GetUserId() const
+{
+    return m_userId;
+}
+
+void BatchGetPlaybackTokenRequest::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool BatchGetPlaybackTokenRequest::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 
 

@@ -540,6 +540,56 @@ RedisClient::CloneInstancesOutcomeCallable RedisClient::CloneInstancesCallable(c
     return prom->get_future();
 }
 
+RedisClient::CloseLogOutcome RedisClient::CloseLog(const CloseLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseLogResponse rsp = CloseLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseLogOutcome(rsp);
+        else
+            return CloseLogOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseLogOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::CloseLogAsync(const CloseLogRequest& request, const CloseLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CloseLogRequest&;
+    using Resp = CloseLogResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CloseLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RedisClient::CloseLogOutcomeCallable RedisClient::CloseLogCallable(const CloseLogRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CloseLogOutcome>>();
+    CloseLogAsync(
+    request,
+    [prom](
+        const RedisClient*,
+        const CloseLogRequest&,
+        CloseLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 RedisClient::CloseSSLOutcome RedisClient::CloseSSL(const CloseSSLRequest &request)
 {
     auto outcome = MakeRequest(request, "CloseSSL");
@@ -582,6 +632,56 @@ RedisClient::CloseSSLOutcomeCallable RedisClient::CloseSSLCallable(const CloseSS
         const RedisClient*,
         const CloseSSLRequest&,
         CloseSSLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RedisClient::CreateExportTaskOutcome RedisClient::CreateExportTask(const CreateExportTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateExportTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateExportTaskResponse rsp = CreateExportTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateExportTaskOutcome(rsp);
+        else
+            return CreateExportTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateExportTaskOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::CreateExportTaskAsync(const CreateExportTaskRequest& request, const CreateExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateExportTaskRequest&;
+    using Resp = CreateExportTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateExportTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RedisClient::CreateExportTaskOutcomeCallable RedisClient::CreateExportTaskCallable(const CreateExportTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateExportTaskOutcome>>();
+    CreateExportTaskAsync(
+    request,
+    [prom](
+        const RedisClient*,
+        const CreateExportTaskRequest&,
+        CreateExportTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -782,6 +882,56 @@ RedisClient::CreateReplicationGroupOutcomeCallable RedisClient::CreateReplicatio
         const RedisClient*,
         const CreateReplicationGroupRequest&,
         CreateReplicationGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RedisClient::DeleteExportTaskOutcome RedisClient::DeleteExportTask(const DeleteExportTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteExportTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteExportTaskResponse rsp = DeleteExportTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteExportTaskOutcome(rsp);
+        else
+            return DeleteExportTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteExportTaskOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DeleteExportTaskAsync(const DeleteExportTaskRequest& request, const DeleteExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteExportTaskRequest&;
+    using Resp = DeleteExportTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteExportTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RedisClient::DeleteExportTaskOutcomeCallable RedisClient::DeleteExportTaskCallable(const DeleteExportTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteExportTaskOutcome>>();
+    DeleteExportTaskAsync(
+    request,
+    [prom](
+        const RedisClient*,
+        const DeleteExportTaskRequest&,
+        DeleteExportTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1282,6 +1432,56 @@ RedisClient::DescribeDBSecurityGroupsOutcomeCallable RedisClient::DescribeDBSecu
         const RedisClient*,
         const DescribeDBSecurityGroupsRequest&,
         DescribeDBSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RedisClient::DescribeExportTasksOutcome RedisClient::DescribeExportTasks(const DescribeExportTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExportTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExportTasksResponse rsp = DescribeExportTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExportTasksOutcome(rsp);
+        else
+            return DescribeExportTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExportTasksOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeExportTasksAsync(const DescribeExportTasksRequest& request, const DescribeExportTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeExportTasksRequest&;
+    using Resp = DescribeExportTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeExportTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RedisClient::DescribeExportTasksOutcomeCallable RedisClient::DescribeExportTasksCallable(const DescribeExportTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeExportTasksOutcome>>();
+    DescribeExportTasksAsync(
+    request,
+    [prom](
+        const RedisClient*,
+        const DescribeExportTasksRequest&,
+        DescribeExportTasksOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2482,6 +2682,106 @@ RedisClient::DescribeInstancesOutcomeCallable RedisClient::DescribeInstancesCall
         const RedisClient*,
         const DescribeInstancesRequest&,
         DescribeInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RedisClient::DescribeLogInstanceListOutcome RedisClient::DescribeLogInstanceList(const DescribeLogInstanceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogInstanceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogInstanceListResponse rsp = DescribeLogInstanceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogInstanceListOutcome(rsp);
+        else
+            return DescribeLogInstanceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogInstanceListOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeLogInstanceListAsync(const DescribeLogInstanceListRequest& request, const DescribeLogInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLogInstanceListRequest&;
+    using Resp = DescribeLogInstanceListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogInstanceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RedisClient::DescribeLogInstanceListOutcomeCallable RedisClient::DescribeLogInstanceListCallable(const DescribeLogInstanceListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLogInstanceListOutcome>>();
+    DescribeLogInstanceListAsync(
+    request,
+    [prom](
+        const RedisClient*,
+        const DescribeLogInstanceListRequest&,
+        DescribeLogInstanceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RedisClient::DescribeLogsOutcome RedisClient::DescribeLogs(const DescribeLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogsResponse rsp = DescribeLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogsOutcome(rsp);
+        else
+            return DescribeLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogsOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeLogsAsync(const DescribeLogsRequest& request, const DescribeLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLogsRequest&;
+    using Resp = DescribeLogsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RedisClient::DescribeLogsOutcomeCallable RedisClient::DescribeLogsCallable(const DescribeLogsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLogsOutcome>>();
+    DescribeLogsAsync(
+    request,
+    [prom](
+        const RedisClient*,
+        const DescribeLogsRequest&,
+        DescribeLogsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4540,6 +4840,56 @@ RedisClient::ModifyInstanceReadOnlyOutcomeCallable RedisClient::ModifyInstanceRe
     return prom->get_future();
 }
 
+RedisClient::ModifyLogOutcome RedisClient::ModifyLog(const ModifyLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLogResponse rsp = ModifyLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLogOutcome(rsp);
+        else
+            return ModifyLogOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLogOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::ModifyLogAsync(const ModifyLogRequest& request, const ModifyLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyLogRequest&;
+    using Resp = ModifyLogResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RedisClient::ModifyLogOutcomeCallable RedisClient::ModifyLogCallable(const ModifyLogRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyLogOutcome>>();
+    ModifyLogAsync(
+    request,
+    [prom](
+        const RedisClient*,
+        const ModifyLogRequest&,
+        ModifyLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 RedisClient::ModifyMaintenanceWindowOutcome RedisClient::ModifyMaintenanceWindow(const ModifyMaintenanceWindowRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyMaintenanceWindow");
@@ -4732,6 +5082,56 @@ RedisClient::ModifyReplicationGroupOutcomeCallable RedisClient::ModifyReplicatio
         const RedisClient*,
         const ModifyReplicationGroupRequest&,
         ModifyReplicationGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RedisClient::OpenLogOutcome RedisClient::OpenLog(const OpenLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenLogResponse rsp = OpenLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenLogOutcome(rsp);
+        else
+            return OpenLogOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenLogOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::OpenLogAsync(const OpenLogRequest& request, const OpenLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const OpenLogRequest&;
+    using Resp = OpenLogResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "OpenLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RedisClient::OpenLogOutcomeCallable RedisClient::OpenLogCallable(const OpenLogRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<OpenLogOutcome>>();
+    OpenLogAsync(
+    request,
+    [prom](
+        const RedisClient*,
+        const OpenLogRequest&,
+        OpenLogOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

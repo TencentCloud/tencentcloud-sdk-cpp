@@ -36,7 +36,8 @@ Registry::Registry() :
     m_expiredAtHasBeenSet(false),
     m_payModHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_aIFeatureHasBeenSet(false)
 {
 }
 
@@ -212,6 +213,16 @@ CoreInternalOutcome Registry::Deserialize(const rapidjson::Value &value)
         m_deletionProtectionHasBeenSet = true;
     }
 
+    if (value.HasMember("AIFeature") && !value["AIFeature"].IsNull())
+    {
+        if (!value["AIFeature"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Registry.AIFeature` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_aIFeature = value["AIFeature"].GetBool();
+        m_aIFeatureHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -346,6 +357,14 @@ void Registry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "DeletionProtection";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deletionProtection, allocator);
+    }
+
+    if (m_aIFeatureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AIFeature";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aIFeature, allocator);
     }
 
 }
@@ -605,5 +624,21 @@ void Registry::SetDeletionProtection(const bool& _deletionProtection)
 bool Registry::DeletionProtectionHasBeenSet() const
 {
     return m_deletionProtectionHasBeenSet;
+}
+
+bool Registry::GetAIFeature() const
+{
+    return m_aIFeature;
+}
+
+void Registry::SetAIFeature(const bool& _aIFeature)
+{
+    m_aIFeature = _aIFeature;
+    m_aIFeatureHasBeenSet = true;
+}
+
+bool Registry::AIFeatureHasBeenSet() const
+{
+    return m_aIFeatureHasBeenSet;
 }
 

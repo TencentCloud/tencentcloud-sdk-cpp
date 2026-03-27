@@ -141,6 +141,8 @@
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSecurityGroupResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSpecRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSpecResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/ModifyInstanceAzRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/ModifyInstanceAzResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyInstanceParamsRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyInstanceParamsResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifySRVConnectionUrlRequest.h>
@@ -362,6 +364,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceSpecResponse> ModifyDBInstanceSpecOutcome;
                 typedef std::future<ModifyDBInstanceSpecOutcome> ModifyDBInstanceSpecOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::ModifyDBInstanceSpecRequest&, ModifyDBInstanceSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSpecAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceAzResponse> ModifyInstanceAzOutcome;
+                typedef std::future<ModifyInstanceAzOutcome> ModifyInstanceAzOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::ModifyInstanceAzRequest&, ModifyInstanceAzOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAzAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstanceParamsResponse> ModifyInstanceParamsOutcome;
                 typedef std::future<ModifyInstanceParamsOutcome> ModifyInstanceParamsOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::ModifyInstanceParamsRequest&, ModifyInstanceParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceParamsAsyncHandler;
@@ -946,6 +951,15 @@ namespace TencentCloud
                 ModifyDBInstanceSpecOutcome ModifyDBInstanceSpec(const Model::ModifyDBInstanceSpecRequest &request);
                 void ModifyDBInstanceSpecAsync(const Model::ModifyDBInstanceSpecRequest& request, const ModifyDBInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDBInstanceSpecOutcomeCallable ModifyDBInstanceSpecCallable(const Model::ModifyDBInstanceSpecRequest& request);
+
+                /**
+                 *本接口(ModifyInstanceAz)用于调整 MongoDB 云数据库的节点可用区分布，可通过指定主可用区和全部可用区分布信息完成云数据库的节点分布调整。
+                 * @param req ModifyInstanceAzRequest
+                 * @return ModifyInstanceAzOutcome
+                 */
+                ModifyInstanceAzOutcome ModifyInstanceAz(const Model::ModifyInstanceAzRequest &request);
+                void ModifyInstanceAzAsync(const Model::ModifyInstanceAzRequest& request, const ModifyInstanceAzAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceAzOutcomeCallable ModifyInstanceAzCallable(const Model::ModifyInstanceAzRequest& request);
 
                 /**
                  *本接口（ModifyInstanceParams）用于修改mongoDB实例的参数配置。

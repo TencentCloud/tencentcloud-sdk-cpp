@@ -27,8 +27,8 @@ VerifyRocketMQConsumeRequest::VerifyRocketMQConsumeRequest() :
     m_namespaceIdHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_msgIdHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_topicNameHasBeenSet(false)
+    m_topicNameHasBeenSet(false),
+    m_clientIdHasBeenSet(false)
 {
 }
 
@@ -71,20 +71,20 @@ string VerifyRocketMQConsumeRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_msgId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_clientIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClientId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_clientId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_topicNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TopicName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clientId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -159,22 +159,6 @@ bool VerifyRocketMQConsumeRequest::MsgIdHasBeenSet() const
     return m_msgIdHasBeenSet;
 }
 
-string VerifyRocketMQConsumeRequest::GetClientId() const
-{
-    return m_clientId;
-}
-
-void VerifyRocketMQConsumeRequest::SetClientId(const string& _clientId)
-{
-    m_clientId = _clientId;
-    m_clientIdHasBeenSet = true;
-}
-
-bool VerifyRocketMQConsumeRequest::ClientIdHasBeenSet() const
-{
-    return m_clientIdHasBeenSet;
-}
-
 string VerifyRocketMQConsumeRequest::GetTopicName() const
 {
     return m_topicName;
@@ -189,6 +173,22 @@ void VerifyRocketMQConsumeRequest::SetTopicName(const string& _topicName)
 bool VerifyRocketMQConsumeRequest::TopicNameHasBeenSet() const
 {
     return m_topicNameHasBeenSet;
+}
+
+string VerifyRocketMQConsumeRequest::GetClientId() const
+{
+    return m_clientId;
+}
+
+void VerifyRocketMQConsumeRequest::SetClientId(const string& _clientId)
+{
+    m_clientId = _clientId;
+    m_clientIdHasBeenSet = true;
+}
+
+bool VerifyRocketMQConsumeRequest::ClientIdHasBeenSet() const
+{
+    return m_clientIdHasBeenSet;
 }
 
 

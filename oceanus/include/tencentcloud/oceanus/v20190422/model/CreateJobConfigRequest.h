@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取作业Id
-                     * @return JobId 作业Id
+                     * 获取<p>作业Id</p>
+                     * @return JobId <p>作业Id</p>
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置作业Id
-                     * @param _jobId 作业Id
+                     * 设置<p>作业Id</p>
+                     * @param _jobId <p>作业Id</p>
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取主类
-                     * @return EntrypointClass 主类
+                     * 获取<p>主类</p>
+                     * @return EntrypointClass <p>主类</p>
                      * 
                      */
                     std::string GetEntrypointClass() const;
 
                     /**
-                     * 设置主类
-                     * @param _entrypointClass 主类
+                     * 设置<p>主类</p>
+                     * @param _entrypointClass <p>主类</p>
                      * 
                      */
                     void SetEntrypointClass(const std::string& _entrypointClass);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool EntrypointClassHasBeenSet() const;
 
                     /**
-                     * 获取主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值
-                     * @return ProgramArgs 主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值
+                     * 获取<p>主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值</p>
+                     * @return ProgramArgs <p>主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值</p>
                      * 
                      */
                     std::string GetProgramArgs() const;
 
                     /**
-                     * 设置主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值
-                     * @param _programArgs 主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值
+                     * 设置<p>主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值</p>
+                     * @param _programArgs <p>主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值</p>
                      * 
                      */
                     void SetProgramArgs(const std::string& _programArgs);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool ProgramArgsHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Remark 备注
+                     * 获取<p>备注</p>
+                     * @return Remark <p>备注</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注
-                     * @param _remark 备注
+                     * 设置<p>备注</p>
+                     * @param _remark <p>备注</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取资源引用数组
-                     * @return ResourceRefs 资源引用数组
+                     * 获取<p>资源引用数组</p>
+                     * @return ResourceRefs <p>资源引用数组</p>
                      * 
                      */
                     std::vector<ResourceRef> GetResourceRefs() const;
 
                     /**
-                     * 设置资源引用数组
-                     * @param _resourceRefs 资源引用数组
+                     * 设置<p>资源引用数组</p>
+                     * @param _resourceRefs <p>资源引用数组</p>
                      * 
                      */
                     void SetResourceRefs(const std::vector<ResourceRef>& _resourceRefs);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool ResourceRefsHasBeenSet() const;
 
                     /**
-                     * 获取作业默认并行度
-                     * @return DefaultParallelism 作业默认并行度
+                     * 获取<p>作业默认并行度</p>
+                     * @return DefaultParallelism <p>作业默认并行度</p>
                      * 
                      */
                     uint64_t GetDefaultParallelism() const;
 
                     /**
-                     * 设置作业默认并行度
-                     * @param _defaultParallelism 作业默认并行度
+                     * 设置<p>作业默认并行度</p>
+                     * @param _defaultParallelism <p>作业默认并行度</p>
                      * 
                      */
                     void SetDefaultParallelism(const uint64_t& _defaultParallelism);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool DefaultParallelismHasBeenSet() const;
 
                     /**
-                     * 获取系统参数
-                     * @return Properties 系统参数
+                     * 获取<p>系统参数</p>
+                     * @return Properties <p>系统参数</p>
                      * 
                      */
                     std::vector<Property> GetProperties() const;
 
                     /**
-                     * 设置系统参数
-                     * @param _properties 系统参数
+                     * 设置<p>系统参数</p>
+                     * @param _properties <p>系统参数</p>
                      * 
                      */
                     void SetProperties(const std::vector<Property>& _properties);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool PropertiesHasBeenSet() const;
 
                     /**
-                     * 获取1: 作业配置达到上限之后，自动删除可删除的最早版本
-                     * @return AutoDelete 1: 作业配置达到上限之后，自动删除可删除的最早版本
+                     * 获取<p>1: 作业配置达到上限之后，自动删除可删除的最早版本</p>
+                     * @return AutoDelete <p>1: 作业配置达到上限之后，自动删除可删除的最早版本</p>
                      * 
                      */
                     int64_t GetAutoDelete() const;
 
                     /**
-                     * 设置1: 作业配置达到上限之后，自动删除可删除的最早版本
-                     * @param _autoDelete 1: 作业配置达到上限之后，自动删除可删除的最早版本
+                     * 设置<p>1: 作业配置达到上限之后，自动删除可删除的最早版本</p>
+                     * @param _autoDelete <p>1: 作业配置达到上限之后，自动删除可删除的最早版本</p>
                      * 
                      */
                     void SetAutoDelete(const int64_t& _autoDelete);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool AutoDeleteHasBeenSet() const;
 
                     /**
-                     * 获取作业使用的 COS 存储桶名
-                     * @return COSBucket 作业使用的 COS 存储桶名
+                     * 获取<p>作业使用的 COS 存储桶名</p>
+                     * @return COSBucket <p>作业使用的 COS 存储桶名</p>
                      * 
                      */
                     std::string GetCOSBucket() const;
 
                     /**
-                     * 设置作业使用的 COS 存储桶名
-                     * @param _cOSBucket 作业使用的 COS 存储桶名
+                     * 设置<p>作业使用的 COS 存储桶名</p>
+                     * @param _cOSBucket <p>作业使用的 COS 存储桶名</p>
                      * 
                      */
                     void SetCOSBucket(const std::string& _cOSBucket);
@@ -238,15 +238,15 @@ namespace TencentCloud
                     bool COSBucketHasBeenSet() const;
 
                     /**
-                     * 获取是否采集作业日志
-                     * @return LogCollect 是否采集作业日志
+                     * 获取<p>是否采集作业日志</p>
+                     * @return LogCollect <p>是否采集作业日志</p>
                      * 
                      */
                     bool GetLogCollect() const;
 
                     /**
-                     * 设置是否采集作业日志
-                     * @param _logCollect 是否采集作业日志
+                     * 设置<p>是否采集作业日志</p>
+                     * @param _logCollect <p>是否采集作业日志</p>
                      * 
                      */
                     void SetLogCollect(const bool& _logCollect);
@@ -259,15 +259,15 @@ namespace TencentCloud
                     bool LogCollectHasBeenSet() const;
 
                     /**
-                     * 获取JobManager规格
-                     * @return JobManagerSpec JobManager规格
+                     * 获取<p>JobManager规格</p>
+                     * @return JobManagerSpec <p>JobManager规格</p>
                      * 
                      */
                     double GetJobManagerSpec() const;
 
                     /**
-                     * 设置JobManager规格
-                     * @param _jobManagerSpec JobManager规格
+                     * 设置<p>JobManager规格</p>
+                     * @param _jobManagerSpec <p>JobManager规格</p>
                      * 
                      */
                     void SetJobManagerSpec(const double& _jobManagerSpec);
@@ -280,15 +280,15 @@ namespace TencentCloud
                     bool JobManagerSpecHasBeenSet() const;
 
                     /**
-                     * 获取TaskManager规格
-                     * @return TaskManagerSpec TaskManager规格
+                     * 获取<p>TaskManager规格</p>
+                     * @return TaskManagerSpec <p>TaskManager规格</p>
                      * 
                      */
                     double GetTaskManagerSpec() const;
 
                     /**
-                     * 设置TaskManager规格
-                     * @param _taskManagerSpec TaskManager规格
+                     * 设置<p>TaskManager规格</p>
+                     * @param _taskManagerSpec <p>TaskManager规格</p>
                      * 
                      */
                     void SetTaskManagerSpec(const double& _taskManagerSpec);
@@ -301,15 +301,15 @@ namespace TencentCloud
                     bool TaskManagerSpecHasBeenSet() const;
 
                     /**
-                     * 获取CLS日志集ID
-                     * @return ClsLogsetId CLS日志集ID
+                     * 获取<p>CLS日志集ID</p>
+                     * @return ClsLogsetId <p>CLS日志集ID</p>
                      * 
                      */
                     std::string GetClsLogsetId() const;
 
                     /**
-                     * 设置CLS日志集ID
-                     * @param _clsLogsetId CLS日志集ID
+                     * 设置<p>CLS日志集ID</p>
+                     * @param _clsLogsetId <p>CLS日志集ID</p>
                      * 
                      */
                     void SetClsLogsetId(const std::string& _clsLogsetId);
@@ -322,15 +322,15 @@ namespace TencentCloud
                     bool ClsLogsetIdHasBeenSet() const;
 
                     /**
-                     * 获取CLS日志主题ID
-                     * @return ClsTopicId CLS日志主题ID
+                     * 获取<p>CLS日志主题ID</p>
+                     * @return ClsTopicId <p>CLS日志主题ID</p>
                      * 
                      */
                     std::string GetClsTopicId() const;
 
                     /**
-                     * 设置CLS日志主题ID
-                     * @param _clsTopicId CLS日志主题ID
+                     * 设置<p>CLS日志主题ID</p>
+                     * @param _clsTopicId <p>CLS日志主题ID</p>
                      * 
                      */
                     void SetClsTopicId(const std::string& _clsTopicId);
@@ -343,15 +343,15 @@ namespace TencentCloud
                     bool ClsTopicIdHasBeenSet() const;
 
                     /**
-                     * 获取日志采集类型 2：CLS；3：COS
-                     * @return LogCollectType 日志采集类型 2：CLS；3：COS
+                     * 获取<p>日志采集类型 2：CLS；3：COS</p>
+                     * @return LogCollectType <p>日志采集类型 2：CLS；3：COS</p>
                      * 
                      */
                     int64_t GetLogCollectType() const;
 
                     /**
-                     * 设置日志采集类型 2：CLS；3：COS
-                     * @param _logCollectType 日志采集类型 2：CLS；3：COS
+                     * 设置<p>日志采集类型 2：CLS；3：COS</p>
+                     * @param _logCollectType <p>日志采集类型 2：CLS；3：COS</p>
                      * 
                      */
                     void SetLogCollectType(const int64_t& _logCollectType);
@@ -364,15 +364,15 @@ namespace TencentCloud
                     bool LogCollectTypeHasBeenSet() const;
 
                     /**
-                     * 获取pyflink作业运行时使用的python版本
-                     * @return PythonVersion pyflink作业运行时使用的python版本
+                     * 获取<p>pyflink作业运行时使用的python版本</p>
+                     * @return PythonVersion <p>pyflink作业运行时使用的python版本</p>
                      * 
                      */
                     std::string GetPythonVersion() const;
 
                     /**
-                     * 设置pyflink作业运行时使用的python版本
-                     * @param _pythonVersion pyflink作业运行时使用的python版本
+                     * 设置<p>pyflink作业运行时使用的python版本</p>
+                     * @param _pythonVersion <p>pyflink作业运行时使用的python版本</p>
                      * 
                      */
                     void SetPythonVersion(const std::string& _pythonVersion);
@@ -385,15 +385,15 @@ namespace TencentCloud
                     bool PythonVersionHasBeenSet() const;
 
                     /**
-                     * 获取工作空间 SerialId
-                     * @return WorkSpaceId 工作空间 SerialId
+                     * 获取<p>工作空间 SerialId</p>
+                     * @return WorkSpaceId <p>工作空间 SerialId</p>
                      * 
                      */
                     std::string GetWorkSpaceId() const;
 
                     /**
-                     * 设置工作空间 SerialId
-                     * @param _workSpaceId 工作空间 SerialId
+                     * 设置<p>工作空间 SerialId</p>
+                     * @param _workSpaceId <p>工作空间 SerialId</p>
                      * 
                      */
                     void SetWorkSpaceId(const std::string& _workSpaceId);
@@ -406,15 +406,15 @@ namespace TencentCloud
                     bool WorkSpaceIdHasBeenSet() const;
 
                     /**
-                     * 获取日志级别
-                     * @return LogLevel 日志级别
+                     * 获取<p>日志级别</p>
+                     * @return LogLevel <p>日志级别</p>
                      * 
                      */
                     std::string GetLogLevel() const;
 
                     /**
-                     * 设置日志级别
-                     * @param _logLevel 日志级别
+                     * 设置<p>日志级别</p>
+                     * @param _logLevel <p>日志级别</p>
                      * 
                      */
                     void SetLogLevel(const std::string& _logLevel);
@@ -427,15 +427,15 @@ namespace TencentCloud
                     bool LogLevelHasBeenSet() const;
 
                     /**
-                     * 获取Oceanus 平台恢复作业开关 1:开启 -1: 关闭
-                     * @return AutoRecover Oceanus 平台恢复作业开关 1:开启 -1: 关闭
+                     * 获取<p>Oceanus 平台恢复作业开关 1:开启 -1: 关闭</p>
+                     * @return AutoRecover <p>Oceanus 平台恢复作业开关 1:开启 -1: 关闭</p>
                      * 
                      */
                     int64_t GetAutoRecover() const;
 
                     /**
-                     * 设置Oceanus 平台恢复作业开关 1:开启 -1: 关闭
-                     * @param _autoRecover Oceanus 平台恢复作业开关 1:开启 -1: 关闭
+                     * 设置<p>Oceanus 平台恢复作业开关 1:开启 -1: 关闭</p>
+                     * @param _autoRecover <p>Oceanus 平台恢复作业开关 1:开启 -1: 关闭</p>
                      * 
                      */
                     void SetAutoRecover(const int64_t& _autoRecover);
@@ -448,15 +448,15 @@ namespace TencentCloud
                     bool AutoRecoverHasBeenSet() const;
 
                     /**
-                     * 获取类日志级别
-                     * @return ClazzLevels 类日志级别
+                     * 获取<p>类日志级别</p>
+                     * @return ClazzLevels <p>类日志级别</p>
                      * 
                      */
                     std::vector<ClazzLevel> GetClazzLevels() const;
 
                     /**
-                     * 设置类日志级别
-                     * @param _clazzLevels 类日志级别
+                     * 设置<p>类日志级别</p>
+                     * @param _clazzLevels <p>类日志级别</p>
                      * 
                      */
                     void SetClazzLevels(const std::vector<ClazzLevel>& _clazzLevels);
@@ -469,15 +469,15 @@ namespace TencentCloud
                     bool ClazzLevelsHasBeenSet() const;
 
                     /**
-                     * 获取是否打开专家模式
-                     * @return ExpertModeOn 是否打开专家模式
+                     * 获取<p>是否打开专家模式</p>
+                     * @return ExpertModeOn <p>是否打开专家模式</p>
                      * 
                      */
                     bool GetExpertModeOn() const;
 
                     /**
-                     * 设置是否打开专家模式
-                     * @param _expertModeOn 是否打开专家模式
+                     * 设置<p>是否打开专家模式</p>
+                     * @param _expertModeOn <p>是否打开专家模式</p>
                      * 
                      */
                     void SetExpertModeOn(const bool& _expertModeOn);
@@ -490,15 +490,15 @@ namespace TencentCloud
                     bool ExpertModeOnHasBeenSet() const;
 
                     /**
-                     * 获取专家模式的配置
-                     * @return ExpertModeConfiguration 专家模式的配置
+                     * 获取<p>专家模式的配置</p>
+                     * @return ExpertModeConfiguration <p>专家模式的配置</p>
                      * 
                      */
                     ExpertModeConfiguration GetExpertModeConfiguration() const;
 
                     /**
-                     * 设置专家模式的配置
-                     * @param _expertModeConfiguration 专家模式的配置
+                     * 设置<p>专家模式的配置</p>
+                     * @param _expertModeConfiguration <p>专家模式的配置</p>
                      * 
                      */
                     void SetExpertModeConfiguration(const ExpertModeConfiguration& _expertModeConfiguration);
@@ -511,15 +511,15 @@ namespace TencentCloud
                     bool ExpertModeConfigurationHasBeenSet() const;
 
                     /**
-                     * 获取trace链路
-                     * @return TraceModeOn trace链路
+                     * 获取<p>trace链路</p>
+                     * @return TraceModeOn <p>trace链路</p>
                      * 
                      */
                     bool GetTraceModeOn() const;
 
                     /**
-                     * 设置trace链路
-                     * @param _traceModeOn trace链路
+                     * 设置<p>trace链路</p>
+                     * @param _traceModeOn <p>trace链路</p>
                      * 
                      */
                     void SetTraceModeOn(const bool& _traceModeOn);
@@ -532,15 +532,15 @@ namespace TencentCloud
                     bool TraceModeOnHasBeenSet() const;
 
                     /**
-                     * 获取trace链路配置
-                     * @return TraceModeConfiguration trace链路配置
+                     * 获取<p>trace链路配置</p>
+                     * @return TraceModeConfiguration <p>trace链路配置</p>
                      * 
                      */
                     TraceModeConfiguration GetTraceModeConfiguration() const;
 
                     /**
-                     * 设置trace链路配置
-                     * @param _traceModeConfiguration trace链路配置
+                     * 设置<p>trace链路配置</p>
+                     * @param _traceModeConfiguration <p>trace链路配置</p>
                      * 
                      */
                     void SetTraceModeConfiguration(const TraceModeConfiguration& _traceModeConfiguration);
@@ -553,15 +553,15 @@ namespace TencentCloud
                     bool TraceModeConfigurationHasBeenSet() const;
 
                     /**
-                     * 获取checkpoint保留个数
-                     * @return CheckpointRetainedNum checkpoint保留个数
+                     * 获取<p>checkpoint保留个数</p>
+                     * @return CheckpointRetainedNum <p>checkpoint保留个数</p>
                      * 
                      */
                     int64_t GetCheckpointRetainedNum() const;
 
                     /**
-                     * 设置checkpoint保留个数
-                     * @param _checkpointRetainedNum checkpoint保留个数
+                     * 设置<p>checkpoint保留个数</p>
+                     * @param _checkpointRetainedNum <p>checkpoint保留个数</p>
                      * 
                      */
                     void SetCheckpointRetainedNum(const int64_t& _checkpointRetainedNum);
@@ -574,15 +574,15 @@ namespace TencentCloud
                     bool CheckpointRetainedNumHasBeenSet() const;
 
                     /**
-                     * 获取算子拓扑图
-                     * @return JobGraph 算子拓扑图
+                     * 获取<p>算子拓扑图</p>
+                     * @return JobGraph <p>算子拓扑图</p>
                      * 
                      */
                     JobGraph GetJobGraph() const;
 
                     /**
-                     * 设置算子拓扑图
-                     * @param _jobGraph 算子拓扑图
+                     * 设置<p>算子拓扑图</p>
+                     * @param _jobGraph <p>算子拓扑图</p>
                      * 
                      */
                     void SetJobGraph(const JobGraph& _jobGraph);
@@ -595,15 +595,15 @@ namespace TencentCloud
                     bool JobGraphHasBeenSet() const;
 
                     /**
-                     * 获取es索引名称
-                     * @return EsServerlessIndex es索引名称
+                     * 获取<p>es索引名称</p>
+                     * @return EsServerlessIndex <p>es索引名称</p>
                      * 
                      */
                     std::string GetEsServerlessIndex() const;
 
                     /**
-                     * 设置es索引名称
-                     * @param _esServerlessIndex es索引名称
+                     * 设置<p>es索引名称</p>
+                     * @param _esServerlessIndex <p>es索引名称</p>
                      * 
                      */
                     void SetEsServerlessIndex(const std::string& _esServerlessIndex);
@@ -616,15 +616,15 @@ namespace TencentCloud
                     bool EsServerlessIndexHasBeenSet() const;
 
                     /**
-                     * 获取es索引空间
-                     * @return EsServerlessSpace es索引空间
+                     * 获取<p>es索引空间</p>
+                     * @return EsServerlessSpace <p>es索引空间</p>
                      * 
                      */
                     std::string GetEsServerlessSpace() const;
 
                     /**
-                     * 设置es索引空间
-                     * @param _esServerlessSpace es索引空间
+                     * 设置<p>es索引空间</p>
+                     * @param _esServerlessSpace <p>es索引空间</p>
                      * 
                      */
                     void SetEsServerlessSpace(const std::string& _esServerlessSpace);
@@ -637,15 +637,15 @@ namespace TencentCloud
                     bool EsServerlessSpaceHasBeenSet() const;
 
                     /**
-                     * 获取flink版本
-                     * @return FlinkVersion flink版本
+                     * 获取<p>flink版本</p>
+                     * @return FlinkVersion <p>flink版本</p>
                      * 
                      */
                     std::string GetFlinkVersion() const;
 
                     /**
-                     * 设置flink版本
-                     * @param _flinkVersion flink版本
+                     * 设置<p>flink版本</p>
+                     * @param _flinkVersion <p>flink版本</p>
                      * 
                      */
                     void SetFlinkVersion(const std::string& _flinkVersion);
@@ -658,15 +658,15 @@ namespace TencentCloud
                     bool FlinkVersionHasBeenSet() const;
 
                     /**
-                     * 获取JobManager cpu
-                     * @return JobManagerCpu JobManager cpu
+                     * 获取<p>JobManager cpu</p>
+                     * @return JobManagerCpu <p>JobManager cpu</p>
                      * 
                      */
                     double GetJobManagerCpu() const;
 
                     /**
-                     * 设置JobManager cpu
-                     * @param _jobManagerCpu JobManager cpu
+                     * 设置<p>JobManager cpu</p>
+                     * @param _jobManagerCpu <p>JobManager cpu</p>
                      * 
                      */
                     void SetJobManagerCpu(const double& _jobManagerCpu);
@@ -679,15 +679,15 @@ namespace TencentCloud
                     bool JobManagerCpuHasBeenSet() const;
 
                     /**
-                     * 获取JobManager 内存
-                     * @return JobManagerMem JobManager 内存
+                     * 获取<p>JobManager 内存</p>
+                     * @return JobManagerMem <p>JobManager 内存</p>
                      * 
                      */
                     double GetJobManagerMem() const;
 
                     /**
-                     * 设置JobManager 内存
-                     * @param _jobManagerMem JobManager 内存
+                     * 设置<p>JobManager 内存</p>
+                     * @param _jobManagerMem <p>JobManager 内存</p>
                      * 
                      */
                     void SetJobManagerMem(const double& _jobManagerMem);
@@ -700,15 +700,15 @@ namespace TencentCloud
                     bool JobManagerMemHasBeenSet() const;
 
                     /**
-                     * 获取jdk版本
-                     * @return JdkVersion jdk版本
+                     * 获取<p>jdk版本</p>
+                     * @return JdkVersion <p>jdk版本</p>
                      * 
                      */
                     std::string GetJdkVersion() const;
 
                     /**
-                     * 设置jdk版本
-                     * @param _jdkVersion jdk版本
+                     * 设置<p>jdk版本</p>
+                     * @param _jdkVersion <p>jdk版本</p>
                      * 
                      */
                     void SetJdkVersion(const std::string& _jdkVersion);
@@ -721,15 +721,15 @@ namespace TencentCloud
                     bool JdkVersionHasBeenSet() const;
 
                     /**
-                     * 获取TaskManager cpu
-                     * @return TaskManagerCpu TaskManager cpu
+                     * 获取<p>TaskManager cpu</p>
+                     * @return TaskManagerCpu <p>TaskManager cpu</p>
                      * 
                      */
                     double GetTaskManagerCpu() const;
 
                     /**
-                     * 设置TaskManager cpu
-                     * @param _taskManagerCpu TaskManager cpu
+                     * 设置<p>TaskManager cpu</p>
+                     * @param _taskManagerCpu <p>TaskManager cpu</p>
                      * 
                      */
                     void SetTaskManagerCpu(const double& _taskManagerCpu);
@@ -742,15 +742,15 @@ namespace TencentCloud
                     bool TaskManagerCpuHasBeenSet() const;
 
                     /**
-                     * 获取TaskManager 内存
-                     * @return TaskManagerMem TaskManager 内存
+                     * 获取<p>TaskManager 内存</p>
+                     * @return TaskManagerMem <p>TaskManager 内存</p>
                      * 
                      */
                     double GetTaskManagerMem() const;
 
                     /**
-                     * 设置TaskManager 内存
-                     * @param _taskManagerMem TaskManager 内存
+                     * 设置<p>TaskManager 内存</p>
+                     * @param _taskManagerMem <p>TaskManager 内存</p>
                      * 
                      */
                     void SetTaskManagerMem(const double& _taskManagerMem);
@@ -763,15 +763,15 @@ namespace TencentCloud
                     bool TaskManagerMemHasBeenSet() const;
 
                     /**
-                     * 获取0=默认使用老的 1=使用新的
-                     * @return UseOldSystemConnector 0=默认使用老的 1=使用新的
+                     * 获取<p>0=默认使用老的 1=使用新的</p>
+                     * @return UseOldSystemConnector <p>0=默认使用老的 1=使用新的</p>
                      * 
                      */
                     int64_t GetUseOldSystemConnector() const;
 
                     /**
-                     * 设置0=默认使用老的 1=使用新的
-                     * @param _useOldSystemConnector 0=默认使用老的 1=使用新的
+                     * 设置<p>0=默认使用老的 1=使用新的</p>
+                     * @param _useOldSystemConnector <p>0=默认使用老的 1=使用新的</p>
                      * 
                      */
                     void SetUseOldSystemConnector(const int64_t& _useOldSystemConnector);
@@ -784,15 +784,15 @@ namespace TencentCloud
                     bool UseOldSystemConnectorHasBeenSet() const;
 
                     /**
-                     * 获取压缩参数
-                     * @return ProgramArgsAfterGzip 压缩参数
+                     * 获取<p>压缩参数</p>
+                     * @return ProgramArgsAfterGzip <p>压缩参数</p>
                      * 
                      */
                     std::string GetProgramArgsAfterGzip() const;
 
                     /**
-                     * 设置压缩参数
-                     * @param _programArgsAfterGzip 压缩参数
+                     * 设置<p>压缩参数</p>
+                     * @param _programArgsAfterGzip <p>压缩参数</p>
                      * 
                      */
                     void SetProgramArgsAfterGzip(const std::string& _programArgsAfterGzip);
@@ -805,15 +805,15 @@ namespace TencentCloud
                     bool ProgramArgsAfterGzipHasBeenSet() const;
 
                     /**
-                     * 获取checkpoint 超时时间
-                     * @return CheckpointTimeoutSecond checkpoint 超时时间
+                     * 获取<p>checkpoint 超时时间</p>
+                     * @return CheckpointTimeoutSecond <p>checkpoint 超时时间</p>
                      * 
                      */
                     int64_t GetCheckpointTimeoutSecond() const;
 
                     /**
-                     * 设置checkpoint 超时时间
-                     * @param _checkpointTimeoutSecond checkpoint 超时时间
+                     * 设置<p>checkpoint 超时时间</p>
+                     * @param _checkpointTimeoutSecond <p>checkpoint 超时时间</p>
                      * 
                      */
                     void SetCheckpointTimeoutSecond(const int64_t& _checkpointTimeoutSecond);
@@ -826,15 +826,15 @@ namespace TencentCloud
                     bool CheckpointTimeoutSecondHasBeenSet() const;
 
                     /**
-                     * 获取checkpoint 间隔时间
-                     * @return CheckpointIntervalSecond checkpoint 间隔时间
+                     * 获取<p>checkpoint 间隔时间</p>
+                     * @return CheckpointIntervalSecond <p>checkpoint 间隔时间</p>
                      * 
                      */
                     int64_t GetCheckpointIntervalSecond() const;
 
                     /**
-                     * 设置checkpoint 间隔时间
-                     * @param _checkpointIntervalSecond checkpoint 间隔时间
+                     * 设置<p>checkpoint 间隔时间</p>
+                     * @param _checkpointIntervalSecond <p>checkpoint 间隔时间</p>
                      * 
                      */
                     void SetCheckpointIntervalSecond(const int64_t& _checkpointIntervalSecond);
@@ -846,235 +846,262 @@ namespace TencentCloud
                      */
                     bool CheckpointIntervalSecondHasBeenSet() const;
 
+                    /**
+                     * 获取<p>变量替换模式</p><p>枚举值：</p><ul><li>0： 表变量替换</li><li>1： SQL全局变量替换</li></ul><p>默认值：1</p>
+                     * @return VariableReplaceMode <p>变量替换模式</p><p>枚举值：</p><ul><li>0： 表变量替换</li><li>1： SQL全局变量替换</li></ul><p>默认值：1</p>
+                     * 
+                     */
+                    int64_t GetVariableReplaceMode() const;
+
+                    /**
+                     * 设置<p>变量替换模式</p><p>枚举值：</p><ul><li>0： 表变量替换</li><li>1： SQL全局变量替换</li></ul><p>默认值：1</p>
+                     * @param _variableReplaceMode <p>变量替换模式</p><p>枚举值：</p><ul><li>0： 表变量替换</li><li>1： SQL全局变量替换</li></ul><p>默认值：1</p>
+                     * 
+                     */
+                    void SetVariableReplaceMode(const int64_t& _variableReplaceMode);
+
+                    /**
+                     * 判断参数 VariableReplaceMode 是否已赋值
+                     * @return VariableReplaceMode 是否已赋值
+                     * 
+                     */
+                    bool VariableReplaceModeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 作业Id
+                     * <p>作业Id</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 主类
+                     * <p>主类</p>
                      */
                     std::string m_entrypointClass;
                     bool m_entrypointClassHasBeenSet;
 
                     /**
-                     * 主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值
+                     * <p>主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值</p>
                      */
                     std::string m_programArgs;
                     bool m_programArgsHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 资源引用数组
+                     * <p>资源引用数组</p>
                      */
                     std::vector<ResourceRef> m_resourceRefs;
                     bool m_resourceRefsHasBeenSet;
 
                     /**
-                     * 作业默认并行度
+                     * <p>作业默认并行度</p>
                      */
                     uint64_t m_defaultParallelism;
                     bool m_defaultParallelismHasBeenSet;
 
                     /**
-                     * 系统参数
+                     * <p>系统参数</p>
                      */
                     std::vector<Property> m_properties;
                     bool m_propertiesHasBeenSet;
 
                     /**
-                     * 1: 作业配置达到上限之后，自动删除可删除的最早版本
+                     * <p>1: 作业配置达到上限之后，自动删除可删除的最早版本</p>
                      */
                     int64_t m_autoDelete;
                     bool m_autoDeleteHasBeenSet;
 
                     /**
-                     * 作业使用的 COS 存储桶名
+                     * <p>作业使用的 COS 存储桶名</p>
                      */
                     std::string m_cOSBucket;
                     bool m_cOSBucketHasBeenSet;
 
                     /**
-                     * 是否采集作业日志
+                     * <p>是否采集作业日志</p>
                      */
                     bool m_logCollect;
                     bool m_logCollectHasBeenSet;
 
                     /**
-                     * JobManager规格
+                     * <p>JobManager规格</p>
                      */
                     double m_jobManagerSpec;
                     bool m_jobManagerSpecHasBeenSet;
 
                     /**
-                     * TaskManager规格
+                     * <p>TaskManager规格</p>
                      */
                     double m_taskManagerSpec;
                     bool m_taskManagerSpecHasBeenSet;
 
                     /**
-                     * CLS日志集ID
+                     * <p>CLS日志集ID</p>
                      */
                     std::string m_clsLogsetId;
                     bool m_clsLogsetIdHasBeenSet;
 
                     /**
-                     * CLS日志主题ID
+                     * <p>CLS日志主题ID</p>
                      */
                     std::string m_clsTopicId;
                     bool m_clsTopicIdHasBeenSet;
 
                     /**
-                     * 日志采集类型 2：CLS；3：COS
+                     * <p>日志采集类型 2：CLS；3：COS</p>
                      */
                     int64_t m_logCollectType;
                     bool m_logCollectTypeHasBeenSet;
 
                     /**
-                     * pyflink作业运行时使用的python版本
+                     * <p>pyflink作业运行时使用的python版本</p>
                      */
                     std::string m_pythonVersion;
                     bool m_pythonVersionHasBeenSet;
 
                     /**
-                     * 工作空间 SerialId
+                     * <p>工作空间 SerialId</p>
                      */
                     std::string m_workSpaceId;
                     bool m_workSpaceIdHasBeenSet;
 
                     /**
-                     * 日志级别
+                     * <p>日志级别</p>
                      */
                     std::string m_logLevel;
                     bool m_logLevelHasBeenSet;
 
                     /**
-                     * Oceanus 平台恢复作业开关 1:开启 -1: 关闭
+                     * <p>Oceanus 平台恢复作业开关 1:开启 -1: 关闭</p>
                      */
                     int64_t m_autoRecover;
                     bool m_autoRecoverHasBeenSet;
 
                     /**
-                     * 类日志级别
+                     * <p>类日志级别</p>
                      */
                     std::vector<ClazzLevel> m_clazzLevels;
                     bool m_clazzLevelsHasBeenSet;
 
                     /**
-                     * 是否打开专家模式
+                     * <p>是否打开专家模式</p>
                      */
                     bool m_expertModeOn;
                     bool m_expertModeOnHasBeenSet;
 
                     /**
-                     * 专家模式的配置
+                     * <p>专家模式的配置</p>
                      */
                     ExpertModeConfiguration m_expertModeConfiguration;
                     bool m_expertModeConfigurationHasBeenSet;
 
                     /**
-                     * trace链路
+                     * <p>trace链路</p>
                      */
                     bool m_traceModeOn;
                     bool m_traceModeOnHasBeenSet;
 
                     /**
-                     * trace链路配置
+                     * <p>trace链路配置</p>
                      */
                     TraceModeConfiguration m_traceModeConfiguration;
                     bool m_traceModeConfigurationHasBeenSet;
 
                     /**
-                     * checkpoint保留个数
+                     * <p>checkpoint保留个数</p>
                      */
                     int64_t m_checkpointRetainedNum;
                     bool m_checkpointRetainedNumHasBeenSet;
 
                     /**
-                     * 算子拓扑图
+                     * <p>算子拓扑图</p>
                      */
                     JobGraph m_jobGraph;
                     bool m_jobGraphHasBeenSet;
 
                     /**
-                     * es索引名称
+                     * <p>es索引名称</p>
                      */
                     std::string m_esServerlessIndex;
                     bool m_esServerlessIndexHasBeenSet;
 
                     /**
-                     * es索引空间
+                     * <p>es索引空间</p>
                      */
                     std::string m_esServerlessSpace;
                     bool m_esServerlessSpaceHasBeenSet;
 
                     /**
-                     * flink版本
+                     * <p>flink版本</p>
                      */
                     std::string m_flinkVersion;
                     bool m_flinkVersionHasBeenSet;
 
                     /**
-                     * JobManager cpu
+                     * <p>JobManager cpu</p>
                      */
                     double m_jobManagerCpu;
                     bool m_jobManagerCpuHasBeenSet;
 
                     /**
-                     * JobManager 内存
+                     * <p>JobManager 内存</p>
                      */
                     double m_jobManagerMem;
                     bool m_jobManagerMemHasBeenSet;
 
                     /**
-                     * jdk版本
+                     * <p>jdk版本</p>
                      */
                     std::string m_jdkVersion;
                     bool m_jdkVersionHasBeenSet;
 
                     /**
-                     * TaskManager cpu
+                     * <p>TaskManager cpu</p>
                      */
                     double m_taskManagerCpu;
                     bool m_taskManagerCpuHasBeenSet;
 
                     /**
-                     * TaskManager 内存
+                     * <p>TaskManager 内存</p>
                      */
                     double m_taskManagerMem;
                     bool m_taskManagerMemHasBeenSet;
 
                     /**
-                     * 0=默认使用老的 1=使用新的
+                     * <p>0=默认使用老的 1=使用新的</p>
                      */
                     int64_t m_useOldSystemConnector;
                     bool m_useOldSystemConnectorHasBeenSet;
 
                     /**
-                     * 压缩参数
+                     * <p>压缩参数</p>
                      */
                     std::string m_programArgsAfterGzip;
                     bool m_programArgsAfterGzipHasBeenSet;
 
                     /**
-                     * checkpoint 超时时间
+                     * <p>checkpoint 超时时间</p>
                      */
                     int64_t m_checkpointTimeoutSecond;
                     bool m_checkpointTimeoutSecondHasBeenSet;
 
                     /**
-                     * checkpoint 间隔时间
+                     * <p>checkpoint 间隔时间</p>
                      */
                     int64_t m_checkpointIntervalSecond;
                     bool m_checkpointIntervalSecondHasBeenSet;
+
+                    /**
+                     * <p>变量替换模式</p><p>枚举值：</p><ul><li>0： 表变量替换</li><li>1： SQL全局变量替换</li></ul><p>默认值：1</p>
+                     */
+                    int64_t m_variableReplaceMode;
+                    bool m_variableReplaceModeHasBeenSet;
 
                 };
             }

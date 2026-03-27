@@ -190,6 +190,56 @@ HaiClient::CreateMuskPromptOutcomeCallable HaiClient::CreateMuskPromptCallable(c
     return prom->get_future();
 }
 
+HaiClient::DeleteServiceOutcome HaiClient::DeleteService(const DeleteServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteServiceResponse rsp = DeleteServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteServiceOutcome(rsp);
+        else
+            return DeleteServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteServiceOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::DeleteServiceAsync(const DeleteServiceRequest& request, const DeleteServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteServiceRequest&;
+    using Resp = DeleteServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+HaiClient::DeleteServiceOutcomeCallable HaiClient::DeleteServiceCallable(const DeleteServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteServiceOutcome>>();
+    DeleteServiceAsync(
+    request,
+    [prom](
+        const HaiClient*,
+        const DeleteServiceRequest&,
+        DeleteServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 HaiClient::DeployInferServiceOutcome HaiClient::DeployInferService(const DeployInferServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "DeployInferService");
@@ -732,6 +782,56 @@ HaiClient::DescribeServicesOutcomeCallable HaiClient::DescribeServicesCallable(c
         const HaiClient*,
         const DescribeServicesRequest&,
         DescribeServicesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+HaiClient::DescribeServicesCallInfoOutcome HaiClient::DescribeServicesCallInfo(const DescribeServicesCallInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServicesCallInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServicesCallInfoResponse rsp = DescribeServicesCallInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServicesCallInfoOutcome(rsp);
+        else
+            return DescribeServicesCallInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServicesCallInfoOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::DescribeServicesCallInfoAsync(const DescribeServicesCallInfoRequest& request, const DescribeServicesCallInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeServicesCallInfoRequest&;
+    using Resp = DescribeServicesCallInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeServicesCallInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+HaiClient::DescribeServicesCallInfoOutcomeCallable HaiClient::DescribeServicesCallInfoCallable(const DescribeServicesCallInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeServicesCallInfoOutcome>>();
+    DescribeServicesCallInfoAsync(
+    request,
+    [prom](
+        const HaiClient*,
+        const DescribeServicesCallInfoRequest&,
+        DescribeServicesCallInfoOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

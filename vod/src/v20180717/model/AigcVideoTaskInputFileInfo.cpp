@@ -28,7 +28,8 @@ AigcVideoTaskInputFileInfo::AigcVideoTaskInputFileInfo() :
     m_referenceTypeHasBeenSet(false),
     m_objectIdHasBeenSet(false),
     m_voiceIdHasBeenSet(false),
-    m_keepOriginalSoundHasBeenSet(false)
+    m_keepOriginalSoundHasBeenSet(false),
+    m_usageHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome AigcVideoTaskInputFileInfo::Deserialize(const rapidjson::Val
         m_keepOriginalSoundHasBeenSet = true;
     }
 
+    if (value.HasMember("Usage") && !value["Usage"].IsNull())
+    {
+        if (!value["Usage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoTaskInputFileInfo.Usage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_usage = string(value["Usage"].GetString());
+        m_usageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void AigcVideoTaskInputFileInfo::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "KeepOriginalSound";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_keepOriginalSound.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_usageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Usage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_usage.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void AigcVideoTaskInputFileInfo::SetKeepOriginalSound(const string& _keepOrigina
 bool AigcVideoTaskInputFileInfo::KeepOriginalSoundHasBeenSet() const
 {
     return m_keepOriginalSoundHasBeenSet;
+}
+
+string AigcVideoTaskInputFileInfo::GetUsage() const
+{
+    return m_usage;
+}
+
+void AigcVideoTaskInputFileInfo::SetUsage(const string& _usage)
+{
+    m_usage = _usage;
+    m_usageHasBeenSet = true;
+}
+
+bool AigcVideoTaskInputFileInfo::UsageHasBeenSet() const
+{
+    return m_usageHasBeenSet;
 }
 

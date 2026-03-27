@@ -97,6 +97,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/CreateAuditLogFileResponse.h
   include/tencentcloud/mongodb/v20190725/model/AuditInstance.h
   include/tencentcloud/mongodb/v20190725/model/InstanceIntegerParam.h
+  include/tencentcloud/mongodb/v20190725/model/ModifyInstanceAzRequest.h
   include/tencentcloud/mongodb/v20190725/model/ModifyNetworkAddress.h
   include/tencentcloud/mongodb/v20190725/model/EnableSRVConnectionUrlResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeAsyncRequestInfoResponse.h
@@ -162,6 +163,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/FlashBackDBInstanceResponse.h
   include/tencentcloud/mongodb/v20190725/model/RenameInstanceResponse.h
   include/tencentcloud/mongodb/v20190725/model/DropDBInstanceParamTplRequest.h
+  include/tencentcloud/mongodb/v20190725/model/ModifyInstanceAzResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeTransparentDataEncryptionStatusResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeAuditConfigRequest.h
   include/tencentcloud/mongodb/v20190725/model/CreateBackupDBInstanceRequest.h
@@ -333,6 +335,7 @@ set(mongodb_src
   src/v20190725/model/CreateAuditLogFileResponse.cpp
   src/v20190725/model/AuditInstance.cpp
   src/v20190725/model/InstanceIntegerParam.cpp
+  src/v20190725/model/ModifyInstanceAzRequest.cpp
   src/v20190725/model/ModifyNetworkAddress.cpp
   src/v20190725/model/EnableSRVConnectionUrlResponse.cpp
   src/v20190725/model/DescribeAsyncRequestInfoResponse.cpp
@@ -398,6 +401,7 @@ set(mongodb_src
   src/v20190725/model/FlashBackDBInstanceResponse.cpp
   src/v20190725/model/RenameInstanceResponse.cpp
   src/v20190725/model/DropDBInstanceParamTplRequest.cpp
+  src/v20190725/model/ModifyInstanceAzResponse.cpp
   src/v20190725/model/DescribeTransparentDataEncryptionStatusResponse.cpp
   src/v20190725/model/DescribeAuditConfigRequest.cpp
   src/v20190725/model/CreateBackupDBInstanceRequest.cpp

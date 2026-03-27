@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取会话数量
-                     * @return SessionNum 会话数量
+                     * 获取<p>会话数量</p>
+                     * @return SessionNum <p>会话数量</p>
                      * 
                      */
                     uint64_t GetSessionNum() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool SessionNumHasBeenSet() const;
 
                     /**
-                     * 获取通话时长，单位：分钟
-                     * @return TotalDuration 通话时长，单位：分钟
+                     * 获取<p>通话时长，单位：分钟</p>
+                     * @return TotalDuration <p>通话时长，单位：分钟</p>
                      * 
                      */
                     uint64_t GetTotalDuration() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool TotalDurationHasBeenSet() const;
 
                     /**
-                     * 获取活跃现场设备数
-                     * @return ActiveFieldDeviceNum 活跃现场设备数
+                     * 获取<p>活跃现场设备数</p>
+                     * @return ActiveFieldDeviceNum <p>活跃现场设备数</p>
                      * 
                      */
                     uint64_t GetActiveFieldDeviceNum() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool ActiveFieldDeviceNumHasBeenSet() const;
 
                     /**
-                     * 获取活跃远端设备数
-                     * @return ActiveRemoteDeviceNum 活跃远端设备数
+                     * 获取<p>活跃远端设备数</p>
+                     * @return ActiveRemoteDeviceNum <p>活跃远端设备数</p>
                      * 
                      */
                     uint64_t GetActiveRemoteDeviceNum() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool ActiveRemoteDeviceNumHasBeenSet() const;
 
                     /**
-                     * 获取优良会话占比，单位：%
-                     * @return NotBadSessionRatio 优良会话占比，单位：%
+                     * 获取<p>优良会话占比，单位：%</p>
+                     * @return NotBadSessionRatio <p>优良会话占比，单位：%</p>
                      * 
                      */
                     uint64_t GetNotBadSessionRatio() const;
@@ -116,31 +116,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 会话数量
+                     * <p>会话数量</p>
                      */
                     uint64_t m_sessionNum;
                     bool m_sessionNumHasBeenSet;
 
                     /**
-                     * 通话时长，单位：分钟
+                     * <p>通话时长，单位：分钟</p>
                      */
                     uint64_t m_totalDuration;
                     bool m_totalDurationHasBeenSet;
 
                     /**
-                     * 活跃现场设备数
+                     * <p>活跃现场设备数</p>
                      */
                     uint64_t m_activeFieldDeviceNum;
                     bool m_activeFieldDeviceNumHasBeenSet;
 
                     /**
-                     * 活跃远端设备数
+                     * <p>活跃远端设备数</p>
                      */
                     uint64_t m_activeRemoteDeviceNum;
                     bool m_activeRemoteDeviceNumHasBeenSet;
 
                     /**
-                     * 优良会话占比，单位：%
+                     * <p>优良会话占比，单位：%</p>
                      */
                     uint64_t m_notBadSessionRatio;
                     bool m_notBadSessionRatioHasBeenSet;
