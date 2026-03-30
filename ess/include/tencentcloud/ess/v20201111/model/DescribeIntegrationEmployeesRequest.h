@@ -72,14 +72,18 @@ namespace TencentCloud
 
                     /**
                      * 获取指定分页每页返回的数据条数，单页最大支持 20。
+如果没有传递， 则为默认值20。
                      * @return Limit 指定分页每页返回的数据条数，单页最大支持 20。
+如果没有传递， 则为默认值20。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置指定分页每页返回的数据条数，单页最大支持 20。
+如果没有传递， 则为默认值20。
                      * @param _limit 指定分页每页返回的数据条数，单页最大支持 20。
+如果没有传递， 则为默认值20。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -205,6 +209,7 @@ namespace TencentCloud
 
                     /**
                      * 指定分页每页返回的数据条数，单页最大支持 20。
+如果没有传递， 则为默认值20。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

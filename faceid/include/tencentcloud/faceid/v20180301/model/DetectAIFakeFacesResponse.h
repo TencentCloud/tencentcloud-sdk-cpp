@@ -46,18 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取对于输入图片/视频的检测结果，检测是否存在人脸攻击。
-- Low：低攻击风险。
-- Mid：中度疑似攻击。
-- High：高度疑似攻击。
-
-建议返回值为High时判断为拦截，Mid和Low判断为通过，以更好平衡安全性和通过率。
-                     * @return AttackRiskLevel 对于输入图片/视频的检测结果，检测是否存在人脸攻击。
-- Low：低攻击风险。
-- Mid：中度疑似攻击。
-- High：高度疑似攻击。
-
-建议返回值为High时判断为拦截，Mid和Low判断为通过，以更好平衡安全性和通过率。
+                     * 获取<p>对于输入图片/视频的检测结果，检测是否存在人脸攻击。</p><ul><li>Low：低攻击风险。</li><li>Mid：中度疑似攻击。</li><li>High：高度疑似攻击。</li></ul><p>建议返回值为High时判断为拦截，Mid和Low判断为通过，以更好平衡安全性和通过率。</p>
+                     * @return AttackRiskLevel <p>对于输入图片/视频的检测结果，检测是否存在人脸攻击。</p><ul><li>Low：低攻击风险。</li><li>Mid：中度疑似攻击。</li><li>High：高度疑似攻击。</li></ul><p>建议返回值为High时判断为拦截，Mid和Low判断为通过，以更好平衡安全性和通过率。</p>
                      * 
                      */
                     std::string GetAttackRiskLevel() const;
@@ -70,12 +60,8 @@ namespace TencentCloud
                     bool AttackRiskLevelHasBeenSet() const;
 
                     /**
-                     * 获取检测到的疑似攻击痕迹列表，仅当AttackRiskLevel为High或Mid时返回。
-- 说明：未检测到攻击痕迹时，返回空数组。
-- 此出参仅作为结果判断的参考，实际应用仍建议使用AttackRiskLevel的结果。
-                     * @return AttackRiskDetailList 检测到的疑似攻击痕迹列表，仅当AttackRiskLevel为High或Mid时返回。
-- 说明：未检测到攻击痕迹时，返回空数组。
-- 此出参仅作为结果判断的参考，实际应用仍建议使用AttackRiskLevel的结果。
+                     * 获取<p>检测到的疑似攻击痕迹列表，仅当AttackRiskLevel为High或Mid时返回。</p><ul><li>说明：未检测到攻击痕迹时，返回空数组。</li><li>此出参仅作为结果判断的参考，实际应用仍建议使用AttackRiskLevel的结果。</li></ul>
+                     * @return AttackRiskDetailList <p>检测到的疑似攻击痕迹列表，仅当AttackRiskLevel为High或Mid时返回。</p><ul><li>说明：未检测到攻击痕迹时，返回空数组。</li><li>此出参仅作为结果判断的参考，实际应用仍建议使用AttackRiskLevel的结果。</li></ul>
                      * 
                      */
                     std::vector<AttackRiskDetail> GetAttackRiskDetailList() const;
@@ -88,8 +74,8 @@ namespace TencentCloud
                     bool AttackRiskDetailListHasBeenSet() const;
 
                     /**
-                     * 获取额外信息。
-                     * @return ExtraInfo 额外信息。
+                     * 获取<p>返回额外信息（包括命中模版的详细信息）。</p>
+                     * @return ExtraInfo <p>返回额外信息（包括命中模版的详细信息）。</p>
                      * 
                      */
                     ExtraInfo GetExtraInfo() const;
@@ -104,26 +90,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 对于输入图片/视频的检测结果，检测是否存在人脸攻击。
-- Low：低攻击风险。
-- Mid：中度疑似攻击。
-- High：高度疑似攻击。
-
-建议返回值为High时判断为拦截，Mid和Low判断为通过，以更好平衡安全性和通过率。
+                     * <p>对于输入图片/视频的检测结果，检测是否存在人脸攻击。</p><ul><li>Low：低攻击风险。</li><li>Mid：中度疑似攻击。</li><li>High：高度疑似攻击。</li></ul><p>建议返回值为High时判断为拦截，Mid和Low判断为通过，以更好平衡安全性和通过率。</p>
                      */
                     std::string m_attackRiskLevel;
                     bool m_attackRiskLevelHasBeenSet;
 
                     /**
-                     * 检测到的疑似攻击痕迹列表，仅当AttackRiskLevel为High或Mid时返回。
-- 说明：未检测到攻击痕迹时，返回空数组。
-- 此出参仅作为结果判断的参考，实际应用仍建议使用AttackRiskLevel的结果。
+                     * <p>检测到的疑似攻击痕迹列表，仅当AttackRiskLevel为High或Mid时返回。</p><ul><li>说明：未检测到攻击痕迹时，返回空数组。</li><li>此出参仅作为结果判断的参考，实际应用仍建议使用AttackRiskLevel的结果。</li></ul>
                      */
                     std::vector<AttackRiskDetail> m_attackRiskDetailList;
                     bool m_attackRiskDetailListHasBeenSet;
 
                     /**
-                     * 额外信息。
+                     * <p>返回额外信息（包括命中模版的详细信息）。</p>
                      */
                     ExtraInfo m_extraInfo;
                     bool m_extraInfoHasBeenSet;

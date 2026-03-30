@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流名称。
-                     * @return StreamName 流名称。
+                     * 获取<p>流名称。</p>
+                     * @return StreamName <p>流名称。</p>
                      * 
                      */
                     std::string GetStreamName() const;
 
                     /**
-                     * 设置流名称。
-                     * @param _streamName 流名称。
+                     * 设置<p>流名称。</p>
+                     * @param _streamName <p>流名称。</p>
                      * 
                      */
                     void SetStreamName(const std::string& _streamName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StreamNameHasBeenSet() const;
 
                     /**
-                     * 获取推流域名。
-                     * @return DomainName 推流域名。
+                     * 获取<p>推流域名。</p>
+                     * @return DomainName <p>推流域名。</p>
                      * 
                      */
                     std::string GetDomainName() const;
 
                     /**
-                     * 设置推流域名。
-                     * @param _domainName 推流域名。
+                     * 设置<p>推流域名。</p>
+                     * @param _domainName <p>推流域名。</p>
                      * 
                      */
                     void SetDomainName(const std::string& _domainName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取推流路径。
-                     * @return AppName 推流路径。
+                     * 获取<p>推流路径。</p>
+                     * @return AppName <p>推流路径。</p>
                      * 
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置推流路径。
-                     * @param _appName 推流路径。
+                     * 设置<p>推流路径。</p>
+                     * @param _appName <p>推流路径。</p>
                      * 
                      */
                     void SetAppName(const std::string& _appName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且小于当前时间+7天。
-                     * @return EndTime 录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且小于当前时间+7天。
+                     * 获取<p>录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且小于当前时间+7天。</p>
+                     * @return EndTime <p>录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且小于当前时间+7天。</p>
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且小于当前时间+7天。
-                     * @param _endTime 录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且小于当前时间+7天。
+                     * 设置<p>录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且小于当前时间+7天。</p>
+                     * @param _endTime <p>录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且小于当前时间+7天。</p>
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。EndTime - StartTime不能超过24小时。
-                     * @return StartTime 录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。EndTime - StartTime不能超过24小时。
+                     * 获取<p>录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。EndTime - StartTime不能超过24小时。</p>
+                     * @return StartTime <p>录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。EndTime - StartTime不能超过24小时。</p>
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。EndTime - StartTime不能超过24小时。
-                     * @param _startTime 录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。EndTime - StartTime不能超过24小时。
+                     * 设置<p>录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。EndTime - StartTime不能超过24小时。</p>
+                     * @param _startTime <p>录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。EndTime - StartTime不能超过24小时。</p>
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -148,23 +148,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取推流类型，默认0。取值：
-0-直播推流。
-1-合成流，即 A+B=C 类型混流。
-                     * @return StreamType 推流类型，默认0。取值：
-0-直播推流。
-1-合成流，即 A+B=C 类型混流。
+                     * 获取<p>推流类型，默认0。取值：<br>0-直播推流。<br>1-合成流，即 A+B=C 类型混流。</p>
+                     * @return StreamType <p>推流类型，默认0。取值：<br>0-直播推流。<br>1-合成流，即 A+B=C 类型混流。</p>
                      * 
                      */
                     uint64_t GetStreamType() const;
 
                     /**
-                     * 设置推流类型，默认0。取值：
-0-直播推流。
-1-合成流，即 A+B=C 类型混流。
-                     * @param _streamType 推流类型，默认0。取值：
-0-直播推流。
-1-合成流，即 A+B=C 类型混流。
+                     * 设置<p>推流类型，默认0。取值：<br>0-直播推流。<br>1-合成流，即 A+B=C 类型混流。</p>
+                     * @param _streamType <p>推流类型，默认0。取值：<br>0-直播推流。<br>1-合成流，即 A+B=C 类型混流。</p>
                      * 
                      */
                     void SetStreamType(const uint64_t& _streamType);
@@ -177,15 +169,15 @@ namespace TencentCloud
                     bool StreamTypeHasBeenSet() const;
 
                     /**
-                     * 获取录制模板ID，CreateLiveRecordTemplate 返回值。如果不填或者传入错误ID，则默认录制HLS格式、永久存储。
-                     * @return TemplateId 录制模板ID，CreateLiveRecordTemplate 返回值。如果不填或者传入错误ID，则默认录制HLS格式、永久存储。
+                     * 获取<p>录制模板ID，CreateLiveRecordTemplate 返回值。如果不填或者传入错误ID，则默认录制 HLS 格式、永久存储至 VOD 主应用下。<br>示例值：0。</p>
+                     * @return TemplateId <p>录制模板ID，CreateLiveRecordTemplate 返回值。如果不填或者传入错误ID，则默认录制 HLS 格式、永久存储至 VOD 主应用下。<br>示例值：0。</p>
                      * 
                      */
                     uint64_t GetTemplateId() const;
 
                     /**
-                     * 设置录制模板ID，CreateLiveRecordTemplate 返回值。如果不填或者传入错误ID，则默认录制HLS格式、永久存储。
-                     * @param _templateId 录制模板ID，CreateLiveRecordTemplate 返回值。如果不填或者传入错误ID，则默认录制HLS格式、永久存储。
+                     * 设置<p>录制模板ID，CreateLiveRecordTemplate 返回值。如果不填或者传入错误ID，则默认录制 HLS 格式、永久存储至 VOD 主应用下。<br>示例值：0。</p>
+                     * @param _templateId <p>录制模板ID，CreateLiveRecordTemplate 返回值。如果不填或者传入错误ID，则默认录制 HLS 格式、永久存储至 VOD 主应用下。<br>示例值：0。</p>
                      * 
                      */
                     void SetTemplateId(const uint64_t& _templateId);
@@ -198,15 +190,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取扩展字段，暂无定义。默认为空。
-                     * @return Extension 扩展字段，暂无定义。默认为空。
+                     * 获取<p>扩展字段，暂无定义。默认为空。</p>
+                     * @return Extension <p>扩展字段，暂无定义。默认为空。</p>
                      * 
                      */
                     std::string GetExtension() const;
 
                     /**
-                     * 设置扩展字段，暂无定义。默认为空。
-                     * @param _extension 扩展字段，暂无定义。默认为空。
+                     * 设置<p>扩展字段，暂无定义。默认为空。</p>
+                     * @param _extension <p>扩展字段，暂无定义。默认为空。</p>
                      * 
                      */
                     void SetExtension(const std::string& _extension);
@@ -221,51 +213,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流名称。
+                     * <p>流名称。</p>
                      */
                     std::string m_streamName;
                     bool m_streamNameHasBeenSet;
 
                     /**
-                     * 推流域名。
+                     * <p>推流域名。</p>
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 推流路径。
+                     * <p>推流路径。</p>
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * 录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且小于当前时间+7天。
+                     * <p>录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且小于当前时间+7天。</p>
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。EndTime - StartTime不能超过24小时。
+                     * <p>录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。EndTime - StartTime不能超过24小时。</p>
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 推流类型，默认0。取值：
-0-直播推流。
-1-合成流，即 A+B=C 类型混流。
+                     * <p>推流类型，默认0。取值：<br>0-直播推流。<br>1-合成流，即 A+B=C 类型混流。</p>
                      */
                     uint64_t m_streamType;
                     bool m_streamTypeHasBeenSet;
 
                     /**
-                     * 录制模板ID，CreateLiveRecordTemplate 返回值。如果不填或者传入错误ID，则默认录制HLS格式、永久存储。
+                     * <p>录制模板ID，CreateLiveRecordTemplate 返回值。如果不填或者传入错误ID，则默认录制 HLS 格式、永久存储至 VOD 主应用下。<br>示例值：0。</p>
                      */
                     uint64_t m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 扩展字段，暂无定义。默认为空。
+                     * <p>扩展字段，暂无定义。默认为空。</p>
                      */
                     std::string m_extension;
                     bool m_extensionHasBeenSet;

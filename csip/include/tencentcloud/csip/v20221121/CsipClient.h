@@ -99,6 +99,10 @@
 #include <tencentcloud/csip/v20221121/model/DescribeGatewayAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeHighBaseLineRiskListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeHighBaseLineRiskListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeKeySandboxCredentialRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeKeySandboxCredentialResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeKeySandboxCredentialListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeKeySandboxCredentialListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeListenerListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeListenerListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeNICAssetsRequest.h>
@@ -319,6 +323,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeHighBaseLineRiskListResponse> DescribeHighBaseLineRiskListOutcome;
                 typedef std::future<DescribeHighBaseLineRiskListOutcome> DescribeHighBaseLineRiskListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeHighBaseLineRiskListRequest&, DescribeHighBaseLineRiskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHighBaseLineRiskListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKeySandboxCredentialResponse> DescribeKeySandboxCredentialOutcome;
+                typedef std::future<DescribeKeySandboxCredentialOutcome> DescribeKeySandboxCredentialOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeKeySandboxCredentialRequest&, DescribeKeySandboxCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKeySandboxCredentialAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKeySandboxCredentialListResponse> DescribeKeySandboxCredentialListOutcome;
+                typedef std::future<DescribeKeySandboxCredentialListOutcome> DescribeKeySandboxCredentialListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeKeySandboxCredentialListRequest&, DescribeKeySandboxCredentialListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKeySandboxCredentialListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeListenerListResponse> DescribeListenerListOutcome;
                 typedef std::future<DescribeListenerListOutcome> DescribeListenerListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeListenerListRequest&, DescribeListenerListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeListenerListAsyncHandler;
@@ -801,6 +811,24 @@ namespace TencentCloud
                 DescribeHighBaseLineRiskListOutcome DescribeHighBaseLineRiskList(const Model::DescribeHighBaseLineRiskListRequest &request);
                 void DescribeHighBaseLineRiskListAsync(const Model::DescribeHighBaseLineRiskListRequest& request, const DescribeHighBaseLineRiskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeHighBaseLineRiskListOutcomeCallable DescribeHighBaseLineRiskListCallable(const Model::DescribeHighBaseLineRiskListRequest& request);
+
+                /**
+                 *查询凭证详情，返回凭证元数据和打码后的凭据数据。access类型返回Access数组（Key原文、Value打码），sts类型返回STS对象（System原文、SecretID和SecretKey打码）
+                 * @param req DescribeKeySandboxCredentialRequest
+                 * @return DescribeKeySandboxCredentialOutcome
+                 */
+                DescribeKeySandboxCredentialOutcome DescribeKeySandboxCredential(const Model::DescribeKeySandboxCredentialRequest &request);
+                void DescribeKeySandboxCredentialAsync(const Model::DescribeKeySandboxCredentialRequest& request, const DescribeKeySandboxCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKeySandboxCredentialOutcomeCallable DescribeKeySandboxCredentialCallable(const Model::DescribeKeySandboxCredentialRequest& request);
+
+                /**
+                 *查询凭证列表
+                 * @param req DescribeKeySandboxCredentialListRequest
+                 * @return DescribeKeySandboxCredentialListOutcome
+                 */
+                DescribeKeySandboxCredentialListOutcome DescribeKeySandboxCredentialList(const Model::DescribeKeySandboxCredentialListRequest &request);
+                void DescribeKeySandboxCredentialListAsync(const Model::DescribeKeySandboxCredentialListRequest& request, const DescribeKeySandboxCredentialListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKeySandboxCredentialListOutcomeCallable DescribeKeySandboxCredentialListCallable(const Model::DescribeKeySandboxCredentialListRequest& request);
 
                 /**
                  *查询clb监听器列表

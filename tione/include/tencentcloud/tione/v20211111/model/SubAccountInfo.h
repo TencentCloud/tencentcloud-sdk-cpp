@@ -172,6 +172,48 @@ namespace TencentCloud
                      */
                     bool LinuxUserNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启 root 登录
+                     * @return EnableRootLogin 是否开启 root 登录
+                     * 
+                     */
+                    bool GetEnableRootLogin() const;
+
+                    /**
+                     * 设置是否开启 root 登录
+                     * @param _enableRootLogin 是否开启 root 登录
+                     * 
+                     */
+                    void SetEnableRootLogin(const bool& _enableRootLogin);
+
+                    /**
+                     * 判断参数 EnableRootLogin 是否已赋值
+                     * @return EnableRootLogin 是否已赋值
+                     * 
+                     */
+                    bool EnableRootLoginHasBeenSet() const;
+
+                    /**
+                     * 获取更新时间
+                     * @return UpdateTime 更新时间
+                     * 
+                     */
+                    std::string GetUpdateTime() const;
+
+                    /**
+                     * 设置更新时间
+                     * @param _updateTime 更新时间
+                     * 
+                     */
+                    void SetUpdateTime(const std::string& _updateTime);
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     * 
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +251,18 @@ namespace TencentCloud
                      */
                     std::string m_linuxUserName;
                     bool m_linuxUserNameHasBeenSet;
+
+                    /**
+                     * 是否开启 root 登录
+                     */
+                    bool m_enableRootLogin;
+                    bool m_enableRootLoginHasBeenSet;
+
+                    /**
+                     * 更新时间
+                     */
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
 
                 };
             }

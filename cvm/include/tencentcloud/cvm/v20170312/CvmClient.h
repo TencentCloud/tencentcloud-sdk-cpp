@@ -115,6 +115,12 @@
 #include <tencentcloud/cvm/v20170312/model/DescribeLaunchTemplatesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeRegionsRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeRegionsResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeResourcePoolPackInstancesRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeResourcePoolPackInstancesResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeResourcePoolPackTypeConfigsRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeResourcePoolPackTypeConfigsResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeResourcePoolPacksRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeResourcePoolPacksResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeTaskInfoRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeTaskInfoResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeZoneInstanceConfigInfosRequest.h>
@@ -137,6 +143,8 @@
 #include <tencentcloud/cvm/v20170312/model/ImportInstancesActionTimerResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ImportKeyPairRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ImportKeyPairResponse.h>
+#include <tencentcloud/cvm/v20170312/model/InquirePricePurchaseResourcePoolPacksRequest.h>
+#include <tencentcloud/cvm/v20170312/model/InquirePricePurchaseResourcePoolPacksResponse.h>
 #include <tencentcloud/cvm/v20170312/model/InquiryPriceModifyInstancesChargeTypeRequest.h>
 #include <tencentcloud/cvm/v20170312/model/InquiryPriceModifyInstancesChargeTypeResponse.h>
 #include <tencentcloud/cvm/v20170312/model/InquiryPriceRenewHostsRequest.h>
@@ -187,6 +195,8 @@
 #include <tencentcloud/cvm/v20170312/model/ModifyLaunchTemplateDefaultVersionResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ProgramFpgaImageRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ProgramFpgaImageResponse.h>
+#include <tencentcloud/cvm/v20170312/model/PurchaseResourcePoolPacksRequest.h>
+#include <tencentcloud/cvm/v20170312/model/PurchaseResourcePoolPacksResponse.h>
 #include <tencentcloud/cvm/v20170312/model/RebootInstancesRequest.h>
 #include <tencentcloud/cvm/v20170312/model/RebootInstancesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/RemoveChcAssistVpcRequest.h>
@@ -219,6 +229,8 @@
 #include <tencentcloud/cvm/v20170312/model/SyncImagesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/TerminateInstancesRequest.h>
 #include <tencentcloud/cvm/v20170312/model/TerminateInstancesResponse.h>
+#include <tencentcloud/cvm/v20170312/model/TerminateResourcePoolPacksRequest.h>
+#include <tencentcloud/cvm/v20170312/model/TerminateResourcePoolPacksResponse.h>
 
 
 namespace TencentCloud
@@ -371,6 +383,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
                 typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourcePoolPackInstancesResponse> DescribeResourcePoolPackInstancesOutcome;
+                typedef std::future<DescribeResourcePoolPackInstancesOutcome> DescribeResourcePoolPackInstancesOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DescribeResourcePoolPackInstancesRequest&, DescribeResourcePoolPackInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourcePoolPackInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourcePoolPackTypeConfigsResponse> DescribeResourcePoolPackTypeConfigsOutcome;
+                typedef std::future<DescribeResourcePoolPackTypeConfigsOutcome> DescribeResourcePoolPackTypeConfigsOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DescribeResourcePoolPackTypeConfigsRequest&, DescribeResourcePoolPackTypeConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourcePoolPackTypeConfigsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourcePoolPacksResponse> DescribeResourcePoolPacksOutcome;
+                typedef std::future<DescribeResourcePoolPacksOutcome> DescribeResourcePoolPacksOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DescribeResourcePoolPacksRequest&, DescribeResourcePoolPacksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourcePoolPacksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTaskInfoResponse> DescribeTaskInfoOutcome;
                 typedef std::future<DescribeTaskInfoOutcome> DescribeTaskInfoOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeTaskInfoRequest&, DescribeTaskInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskInfoAsyncHandler;
@@ -404,6 +425,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ImportKeyPairResponse> ImportKeyPairOutcome;
                 typedef std::future<ImportKeyPairOutcome> ImportKeyPairOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ImportKeyPairRequest&, ImportKeyPairOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportKeyPairAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquirePricePurchaseResourcePoolPacksResponse> InquirePricePurchaseResourcePoolPacksOutcome;
+                typedef std::future<InquirePricePurchaseResourcePoolPacksOutcome> InquirePricePurchaseResourcePoolPacksOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::InquirePricePurchaseResourcePoolPacksRequest&, InquirePricePurchaseResourcePoolPacksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePricePurchaseResourcePoolPacksAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquiryPriceModifyInstancesChargeTypeResponse> InquiryPriceModifyInstancesChargeTypeOutcome;
                 typedef std::future<InquiryPriceModifyInstancesChargeTypeOutcome> InquiryPriceModifyInstancesChargeTypeOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::InquiryPriceModifyInstancesChargeTypeRequest&, InquiryPriceModifyInstancesChargeTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceModifyInstancesChargeTypeAsyncHandler;
@@ -479,6 +503,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ProgramFpgaImageResponse> ProgramFpgaImageOutcome;
                 typedef std::future<ProgramFpgaImageOutcome> ProgramFpgaImageOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ProgramFpgaImageRequest&, ProgramFpgaImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ProgramFpgaImageAsyncHandler;
+                typedef Outcome<Core::Error, Model::PurchaseResourcePoolPacksResponse> PurchaseResourcePoolPacksOutcome;
+                typedef std::future<PurchaseResourcePoolPacksOutcome> PurchaseResourcePoolPacksOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::PurchaseResourcePoolPacksRequest&, PurchaseResourcePoolPacksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PurchaseResourcePoolPacksAsyncHandler;
                 typedef Outcome<Core::Error, Model::RebootInstancesResponse> RebootInstancesOutcome;
                 typedef std::future<RebootInstancesOutcome> RebootInstancesOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::RebootInstancesRequest&, RebootInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebootInstancesAsyncHandler;
@@ -527,6 +554,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::TerminateInstancesResponse> TerminateInstancesOutcome;
                 typedef std::future<TerminateInstancesOutcome> TerminateInstancesOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::TerminateInstancesRequest&, TerminateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::TerminateResourcePoolPacksResponse> TerminateResourcePoolPacksOutcome;
+                typedef std::future<TerminateResourcePoolPacksOutcome> TerminateResourcePoolPacksOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::TerminateResourcePoolPacksRequest&, TerminateResourcePoolPacksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateResourcePoolPacksAsyncHandler;
 
 
 
@@ -1015,6 +1045,33 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 DescribeRegionsOutcomeCallable DescribeRegionsCallable(const Model::DescribeRegionsRequest& request);
 
                 /**
+                 *本接口(DescribeResourcePoolPackInstances)用于查询指定实例资源池内已创建的实例列表及其物理拓扑信息。
+                 * @param req DescribeResourcePoolPackInstancesRequest
+                 * @return DescribeResourcePoolPackInstancesOutcome
+                 */
+                DescribeResourcePoolPackInstancesOutcome DescribeResourcePoolPackInstances(const Model::DescribeResourcePoolPackInstancesRequest &request);
+                void DescribeResourcePoolPackInstancesAsync(const Model::DescribeResourcePoolPackInstancesRequest& request, const DescribeResourcePoolPackInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourcePoolPackInstancesOutcomeCallable DescribeResourcePoolPackInstancesCallable(const Model::DescribeResourcePoolPackInstancesRequest& request);
+
+                /**
+                 *本接口(DescribeResourcePoolPackTypeConfigs)用于查询当前地域/可用区支持创建实例资源池的整机/半整机规格列表。
+                 * @param req DescribeResourcePoolPackTypeConfigsRequest
+                 * @return DescribeResourcePoolPackTypeConfigsOutcome
+                 */
+                DescribeResourcePoolPackTypeConfigsOutcome DescribeResourcePoolPackTypeConfigs(const Model::DescribeResourcePoolPackTypeConfigsRequest &request);
+                void DescribeResourcePoolPackTypeConfigsAsync(const Model::DescribeResourcePoolPackTypeConfigsRequest& request, const DescribeResourcePoolPackTypeConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourcePoolPackTypeConfigsOutcomeCallable DescribeResourcePoolPackTypeConfigsCallable(const Model::DescribeResourcePoolPackTypeConfigsRequest& request);
+
+                /**
+                 *本接口(DescribeResourcePoolPacks)用于查询用户已创建的实例资源池列表，包括资源池基本信息、剩余容量、底层物理拓扑信息等。
+                 * @param req DescribeResourcePoolPacksRequest
+                 * @return DescribeResourcePoolPacksOutcome
+                 */
+                DescribeResourcePoolPacksOutcome DescribeResourcePoolPacks(const Model::DescribeResourcePoolPacksRequest &request);
+                void DescribeResourcePoolPacksAsync(const Model::DescribeResourcePoolPacksRequest& request, const DescribeResourcePoolPacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourcePoolPacksOutcomeCallable DescribeResourcePoolPacksCallable(const Model::DescribeResourcePoolPacksRequest& request);
+
+                /**
                  *本接口 (DescribeTaskInfo) 用于查询云服务器维修任务列表及详细信息。
 
 - 可以根据实例ID、实例名称或任务状态等信息来查询维修任务列表。过滤信息详情可参考入参说明。
@@ -1127,6 +1184,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 ImportKeyPairOutcome ImportKeyPair(const Model::ImportKeyPairRequest &request);
                 void ImportKeyPairAsync(const Model::ImportKeyPairRequest& request, const ImportKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ImportKeyPairOutcomeCallable ImportKeyPairCallable(const Model::ImportKeyPairRequest& request);
+
+                /**
+                 *本接口(InquirePricePurchaseResourcePoolPacks)用于查询创建实例资源池的价格。
+                 * @param req InquirePricePurchaseResourcePoolPacksRequest
+                 * @return InquirePricePurchaseResourcePoolPacksOutcome
+                 */
+                InquirePricePurchaseResourcePoolPacksOutcome InquirePricePurchaseResourcePoolPacks(const Model::InquirePricePurchaseResourcePoolPacksRequest &request);
+                void InquirePricePurchaseResourcePoolPacksAsync(const Model::InquirePricePurchaseResourcePoolPacksRequest& request, const InquirePricePurchaseResourcePoolPacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquirePricePurchaseResourcePoolPacksOutcomeCallable InquirePricePurchaseResourcePoolPacksCallable(const Model::InquirePricePurchaseResourcePoolPacksRequest& request);
 
                 /**
                  *本接口 (InquiryPriceModifyInstancesChargeType) 用于切换实例的计费模式询价。
@@ -1425,6 +1491,18 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 ProgramFpgaImageOutcomeCallable ProgramFpgaImageCallable(const Model::ProgramFpgaImageRequest& request);
 
                 /**
+                 *本接口(PurchaseResourcePoolPacks)用于创建一个或多个实例资源池，每个资源池绑定一个整机或半整机规格的物理资源容量。
+
+* 实例资源池为剩余容量按量付费模式，购买前请确保账户余额充足。
+* 本接口为异步接口，创建请求发送成功后会返回DedicatedResourcePackIds，此时创建任务并未完成。
+                 * @param req PurchaseResourcePoolPacksRequest
+                 * @return PurchaseResourcePoolPacksOutcome
+                 */
+                PurchaseResourcePoolPacksOutcome PurchaseResourcePoolPacks(const Model::PurchaseResourcePoolPacksRequest &request);
+                void PurchaseResourcePoolPacksAsync(const Model::PurchaseResourcePoolPacksRequest& request, const PurchaseResourcePoolPacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PurchaseResourcePoolPacksOutcomeCallable PurchaseResourcePoolPacksCallable(const Model::PurchaseResourcePoolPacksRequest& request);
+
+                /**
                  *本接口 (RebootInstances) 用于重启实例。
 
 * 只有状态为`RUNNING`的实例才可以进行此操作。
@@ -1646,6 +1724,20 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 TerminateInstancesOutcome TerminateInstances(const Model::TerminateInstancesRequest &request);
                 void TerminateInstancesAsync(const Model::TerminateInstancesRequest& request, const TerminateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TerminateInstancesOutcomeCallable TerminateInstancesCallable(const Model::TerminateInstancesRequest& request);
+
+                /**
+                 *本接口(TerminateResourcePoolPacks)用于销毁指定的实例资源池。
+
+* 销毁资源池不会销毁池内已创建的实例。
+* 池内实例会从专属资源池解绑，转移至公共资源池，继续按原生命周期运行。
+* 转移后无法再查询底层物理拓扑信息。
+* 释放底层物理资源并删除资源池记录。
+                 * @param req TerminateResourcePoolPacksRequest
+                 * @return TerminateResourcePoolPacksOutcome
+                 */
+                TerminateResourcePoolPacksOutcome TerminateResourcePoolPacks(const Model::TerminateResourcePoolPacksRequest &request);
+                void TerminateResourcePoolPacksAsync(const Model::TerminateResourcePoolPacksRequest& request, const TerminateResourcePoolPacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TerminateResourcePoolPacksOutcomeCallable TerminateResourcePoolPacksCallable(const Model::TerminateResourcePoolPacksRequest& request);
 
             };
         }

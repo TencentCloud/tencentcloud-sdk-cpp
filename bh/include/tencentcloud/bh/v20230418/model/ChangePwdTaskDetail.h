@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool AccountHasBeenSet() const;
 
                     /**
-                     * 获取上次改密结果。0-未改密  1-改密成功 2-改密失败
-                     * @return LastChangeStatus 上次改密结果。0-未改密  1-改密成功 2-改密失败
+                     * 获取上次改密结果。0-未改密  1-改密成功 2-改密失败,3-改密中，4-改密超时
+                     * @return LastChangeStatus 上次改密结果。0-未改密  1-改密成功 2-改密失败,3-改密中，4-改密超时
                      * 
                      */
                     uint64_t GetLastChangeStatus() const;
 
                     /**
-                     * 设置上次改密结果。0-未改密  1-改密成功 2-改密失败
-                     * @param _lastChangeStatus 上次改密结果。0-未改密  1-改密成功 2-改密失败
+                     * 设置上次改密结果。0-未改密  1-改密成功 2-改密失败,3-改密中，4-改密超时
+                     * @param _lastChangeStatus 上次改密结果。0-未改密  1-改密成功 2-改密失败,3-改密中，4-改密超时
                      * 
                      */
                     void SetLastChangeStatus(const uint64_t& _lastChangeStatus);
@@ -109,6 +109,27 @@ namespace TencentCloud
                      * 
                      */
                     bool LastChangeStatusHasBeenSet() const;
+
+                    /**
+                     * 获取改密任务状态，0-待执行，1-执行完成，2-执行失败，3-执行中，4-执行超时
+                     * @return TaskStatus 改密任务状态，0-待执行，1-执行完成，2-执行失败，3-执行中，4-执行超时
+                     * 
+                     */
+                    uint64_t GetTaskStatus() const;
+
+                    /**
+                     * 设置改密任务状态，0-待执行，1-执行完成，2-执行失败，3-执行中，4-执行超时
+                     * @param _taskStatus 改密任务状态，0-待执行，1-执行完成，2-执行失败，3-执行中，4-执行超时
+                     * 
+                     */
+                    void SetTaskStatus(const uint64_t& _taskStatus);
+
+                    /**
+                     * 判断参数 TaskStatus 是否已赋值
+                     * @return TaskStatus 是否已赋值
+                     * 
+                     */
+                    bool TaskStatusHasBeenSet() const;
 
                 private:
 
@@ -125,10 +146,16 @@ namespace TencentCloud
                     bool m_accountHasBeenSet;
 
                     /**
-                     * 上次改密结果。0-未改密  1-改密成功 2-改密失败
+                     * 上次改密结果。0-未改密  1-改密成功 2-改密失败,3-改密中，4-改密超时
                      */
                     uint64_t m_lastChangeStatus;
                     bool m_lastChangeStatusHasBeenSet;
+
+                    /**
+                     * 改密任务状态，0-待执行，1-执行完成，2-执行失败，3-执行中，4-执行超时
+                     */
+                    uint64_t m_taskStatus;
+                    bool m_taskStatusHasBeenSet;
 
                 };
             }

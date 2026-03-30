@@ -22,7 +22,8 @@ using namespace std;
 
 StopParams::StopParams() :
     m_stopPolicyHasBeenSet(false),
-    m_threadCountHasBeenSet(false)
+    m_threadCountHasBeenSet(false),
+    m_graceDownTimeHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome StopParams::Deserialize(const rapidjson::Value &value)
         m_threadCountHasBeenSet = true;
     }
 
+    if (value.HasMember("GraceDownTime") && !value["GraceDownTime"].IsNull())
+    {
+        if (!value["GraceDownTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `StopParams.GraceDownTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_graceDownTime = value["GraceDownTime"].GetInt64();
+        m_graceDownTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void StopParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ThreadCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_threadCount, allocator);
+    }
+
+    if (m_graceDownTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GraceDownTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_graceDownTime, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void StopParams::SetThreadCount(const int64_t& _threadCount)
 bool StopParams::ThreadCountHasBeenSet() const
 {
     return m_threadCountHasBeenSet;
+}
+
+int64_t StopParams::GetGraceDownTime() const
+{
+    return m_graceDownTime;
+}
+
+void StopParams::SetGraceDownTime(const int64_t& _graceDownTime)
+{
+    m_graceDownTime = _graceDownTime;
+    m_graceDownTimeHasBeenSet = true;
+}
+
+bool StopParams::GraceDownTimeHasBeenSet() const
+{
+    return m_graceDownTimeHasBeenSet;
 }
 

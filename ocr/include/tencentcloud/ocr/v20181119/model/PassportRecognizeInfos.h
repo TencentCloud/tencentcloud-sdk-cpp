@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取证件类型（护照信息页识别结果）
-                     * @return Type 证件类型（护照信息页识别结果）
+                     * 获取<p>证件类型（护照信息页识别结果）</p>
+                     * @return Type <p>证件类型（护照信息页识别结果）</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置证件类型（护照信息页识别结果）
-                     * @param _type 证件类型（护照信息页识别结果）
+                     * 设置<p>证件类型（护照信息页识别结果）</p>
+                     * @param _type <p>证件类型（护照信息页识别结果）</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取发行国家（护照信息页识别结果）
-                     * @return IssuingCountry 发行国家（护照信息页识别结果）
+                     * 获取<p>发行国家（护照信息页识别结果）</p>
+                     * @return IssuingCountry <p>发行国家（护照信息页识别结果）</p>
                      * 
                      */
                     std::string GetIssuingCountry() const;
 
                     /**
-                     * 设置发行国家（护照信息页识别结果）
-                     * @param _issuingCountry 发行国家（护照信息页识别结果）
+                     * 设置<p>发行国家（护照信息页识别结果）</p>
+                     * @param _issuingCountry <p>发行国家（护照信息页识别结果）</p>
                      * 
                      */
                     void SetIssuingCountry(const std::string& _issuingCountry);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool IssuingCountryHasBeenSet() const;
 
                     /**
-                     * 获取护照号码（护照信息页识别结果）
-                     * @return PassportID 护照号码（护照信息页识别结果）
+                     * 获取<p>护照号码（护照信息页识别结果）</p>
+                     * @return PassportID <p>护照号码（护照信息页识别结果）</p>
                      * 
                      */
                     std::string GetPassportID() const;
 
                     /**
-                     * 设置护照号码（护照信息页识别结果）
-                     * @param _passportID 护照号码（护照信息页识别结果）
+                     * 设置<p>护照号码（护照信息页识别结果）</p>
+                     * @param _passportID <p>护照号码（护照信息页识别结果）</p>
                      * 
                      */
                     void SetPassportID(const std::string& _passportID);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool PassportIDHasBeenSet() const;
 
                     /**
-                     * 获取姓（护照信息页识别结果）
-                     * @return Surname 姓（护照信息页识别结果）
+                     * 获取<p>姓（护照信息页识别结果）</p>
+                     * @return Surname <p>姓（护照信息页识别结果）</p>
                      * 
                      */
                     std::string GetSurname() const;
 
                     /**
-                     * 设置姓（护照信息页识别结果）
-                     * @param _surname 姓（护照信息页识别结果）
+                     * 设置<p>姓（护照信息页识别结果）</p>
+                     * @param _surname <p>姓（护照信息页识别结果）</p>
                      * 
                      */
                     void SetSurname(const std::string& _surname);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool SurnameHasBeenSet() const;
 
                     /**
-                     * 获取名（护照信息页识别结果）
-                     * @return GivenName 名（护照信息页识别结果）
+                     * 获取<p>名（护照信息页识别结果）</p>
+                     * @return GivenName <p>名（护照信息页识别结果）</p>
                      * 
                      */
                     std::string GetGivenName() const;
 
                     /**
-                     * 设置名（护照信息页识别结果）
-                     * @param _givenName 名（护照信息页识别结果）
+                     * 设置<p>名（护照信息页识别结果）</p>
+                     * @param _givenName <p>名（护照信息页识别结果）</p>
                      * 
                      */
                     void SetGivenName(const std::string& _givenName);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool GivenNameHasBeenSet() const;
 
                     /**
-                     * 获取姓名（护照信息页识别结果）
-                     * @return Name 姓名（护照信息页识别结果）
+                     * 获取<p>姓名（护照信息页识别结果）</p>
+                     * @return Name <p>姓名（护照信息页识别结果）</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置姓名（护照信息页识别结果）
-                     * @param _name 姓名（护照信息页识别结果）
+                     * 设置<p>姓名（护照信息页识别结果）</p>
+                     * @param _name <p>姓名（护照信息页识别结果）</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取国籍信息（护照信息页识别结果）
-                     * @return Nationality 国籍信息（护照信息页识别结果）
+                     * 获取<p>国籍信息（护照信息页识别结果）</p>
+                     * @return Nationality <p>国籍信息（护照信息页识别结果）</p>
                      * 
                      */
                     std::string GetNationality() const;
 
                     /**
-                     * 设置国籍信息（护照信息页识别结果）
-                     * @param _nationality 国籍信息（护照信息页识别结果）
+                     * 设置<p>国籍信息（护照信息页识别结果）</p>
+                     * @param _nationality <p>国籍信息（护照信息页识别结果）</p>
                      * 
                      */
                     void SetNationality(const std::string& _nationality);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool NationalityHasBeenSet() const;
 
                     /**
-                     * 获取出生日期（护照信息页识别结果）
-                     * @return DateOfBirth 出生日期（护照信息页识别结果）
+                     * 获取<p>出生日期（护照信息页识别结果）</p>
+                     * @return DateOfBirth <p>出生日期（护照信息页识别结果）</p>
                      * 
                      */
                     std::string GetDateOfBirth() const;
 
                     /**
-                     * 设置出生日期（护照信息页识别结果）
-                     * @param _dateOfBirth 出生日期（护照信息页识别结果）
+                     * 设置<p>出生日期（护照信息页识别结果）</p>
+                     * @param _dateOfBirth <p>出生日期（护照信息页识别结果）</p>
                      * 
                      */
                     void SetDateOfBirth(const std::string& _dateOfBirth);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool DateOfBirthHasBeenSet() const;
 
                     /**
-                     * 获取性别（护照信息页识别结果）
-                     * @return Sex 性别（护照信息页识别结果）
+                     * 获取<p>性别（护照信息页识别结果）</p>
+                     * @return Sex <p>性别（护照信息页识别结果）</p>
                      * 
                      */
                     std::string GetSex() const;
 
                     /**
-                     * 设置性别（护照信息页识别结果）
-                     * @param _sex 性别（护照信息页识别结果）
+                     * 设置<p>性别（护照信息页识别结果）</p>
+                     * @param _sex <p>性别（护照信息页识别结果）</p>
                      * 
                      */
                     void SetSex(const std::string& _sex);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool SexHasBeenSet() const;
 
                     /**
-                     * 获取发行日期（护照信息页识别结果）
-                     * @return DateOfIssuance 发行日期（护照信息页识别结果）
+                     * 获取<p>发行日期（护照信息页识别结果）</p>
+                     * @return DateOfIssuance <p>发行日期（护照信息页识别结果）</p>
                      * 
                      */
                     std::string GetDateOfIssuance() const;
 
                     /**
-                     * 设置发行日期（护照信息页识别结果）
-                     * @param _dateOfIssuance 发行日期（护照信息页识别结果）
+                     * 设置<p>发行日期（护照信息页识别结果）</p>
+                     * @param _dateOfIssuance <p>发行日期（护照信息页识别结果）</p>
                      * 
                      */
                     void SetDateOfIssuance(const std::string& _dateOfIssuance);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool DateOfIssuanceHasBeenSet() const;
 
                     /**
-                     * 获取截止日期（护照信息页识别结果）
-                     * @return DateOfExpiration 截止日期（护照信息页识别结果）
+                     * 获取<p>截止日期（护照信息页识别结果）</p>
+                     * @return DateOfExpiration <p>截止日期（护照信息页识别结果）</p>
                      * 
                      */
                     std::string GetDateOfExpiration() const;
 
                     /**
-                     * 设置截止日期（护照信息页识别结果）
-                     * @param _dateOfExpiration 截止日期（护照信息页识别结果）
+                     * 设置<p>截止日期（护照信息页识别结果）</p>
+                     * @param _dateOfExpiration <p>截止日期（护照信息页识别结果）</p>
                      * 
                      */
                     void SetDateOfExpiration(const std::string& _dateOfExpiration);
@@ -278,23 +278,15 @@ namespace TencentCloud
                     bool DateOfExpirationHasBeenSet() const;
 
                     /**
-                     * 获取持证人签名（护照信息页识别结果）
-
-仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
-                     * @return Signature 持证人签名（护照信息页识别结果）
-
-仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     * 获取<p>持证人签名（护照信息页识别结果）</p><p>仅中国大陆护照支持返回此字段，港澳台及境外护照不支持</p>
+                     * @return Signature <p>持证人签名（护照信息页识别结果）</p><p>仅中国大陆护照支持返回此字段，港澳台及境外护照不支持</p>
                      * 
                      */
                     std::string GetSignature() const;
 
                     /**
-                     * 设置持证人签名（护照信息页识别结果）
-
-仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
-                     * @param _signature 持证人签名（护照信息页识别结果）
-
-仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     * 设置<p>持证人签名（护照信息页识别结果）</p><p>仅中国大陆护照支持返回此字段，港澳台及境外护照不支持</p>
+                     * @param _signature <p>持证人签名（护照信息页识别结果）</p><p>仅中国大陆护照支持返回此字段，港澳台及境外护照不支持</p>
                      * 
                      */
                     void SetSignature(const std::string& _signature);
@@ -307,23 +299,15 @@ namespace TencentCloud
                     bool SignatureHasBeenSet() const;
 
                     /**
-                     * 获取签发地点（护照信息页识别结果）
-
-仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
-                     * @return IssuePlace 签发地点（护照信息页识别结果）
-
-仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     * 获取<p>签发地点（护照信息页识别结果）</p><p>仅中国大陆护照支持返回此字段，港澳台及境外护照不支持</p>
+                     * @return IssuePlace <p>签发地点（护照信息页识别结果）</p><p>仅中国大陆护照支持返回此字段，港澳台及境外护照不支持</p>
                      * 
                      */
                     std::string GetIssuePlace() const;
 
                     /**
-                     * 设置签发地点（护照信息页识别结果）
-
-仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
-                     * @param _issuePlace 签发地点（护照信息页识别结果）
-
-仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     * 设置<p>签发地点（护照信息页识别结果）</p><p>仅中国大陆护照支持返回此字段，港澳台及境外护照不支持</p>
+                     * @param _issuePlace <p>签发地点（护照信息页识别结果）</p><p>仅中国大陆护照支持返回此字段，港澳台及境外护照不支持</p>
                      * 
                      */
                     void SetIssuePlace(const std::string& _issuePlace);
@@ -336,23 +320,15 @@ namespace TencentCloud
                     bool IssuePlaceHasBeenSet() const;
 
                     /**
-                     * 获取签发机关（护照信息页识别结果）
-
-仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
-                     * @return IssuingAuthority 签发机关（护照信息页识别结果）
-
-仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     * 获取<p>签发机关（护照信息页识别结果）</p><p>仅中国大陆护照支持返回此字段，港澳台及境外护照不支持</p>
+                     * @return IssuingAuthority <p>签发机关（护照信息页识别结果）</p><p>仅中国大陆护照支持返回此字段，港澳台及境外护照不支持</p>
                      * 
                      */
                     std::string GetIssuingAuthority() const;
 
                     /**
-                     * 设置签发机关（护照信息页识别结果）
-
-仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
-                     * @param _issuingAuthority 签发机关（护照信息页识别结果）
-
-仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     * 设置<p>签发机关（护照信息页识别结果）</p><p>仅中国大陆护照支持返回此字段，港澳台及境外护照不支持</p>
+                     * @param _issuingAuthority <p>签发机关（护照信息页识别结果）</p><p>仅中国大陆护照支持返回此字段，港澳台及境外护照不支持</p>
                      * 
                      */
                     void SetIssuingAuthority(const std::string& _issuingAuthority);
@@ -364,97 +340,118 @@ namespace TencentCloud
                      */
                     bool IssuingAuthorityHasBeenSet() const;
 
+                    /**
+                     * 获取<p>出生地（护照信息页识别结果）</p>
+                     * @return BirthPlace <p>出生地（护照信息页识别结果）</p>
+                     * 
+                     */
+                    std::string GetBirthPlace() const;
+
+                    /**
+                     * 设置<p>出生地（护照信息页识别结果）</p>
+                     * @param _birthPlace <p>出生地（护照信息页识别结果）</p>
+                     * 
+                     */
+                    void SetBirthPlace(const std::string& _birthPlace);
+
+                    /**
+                     * 判断参数 BirthPlace 是否已赋值
+                     * @return BirthPlace 是否已赋值
+                     * 
+                     */
+                    bool BirthPlaceHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 证件类型（护照信息页识别结果）
+                     * <p>证件类型（护照信息页识别结果）</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 发行国家（护照信息页识别结果）
+                     * <p>发行国家（护照信息页识别结果）</p>
                      */
                     std::string m_issuingCountry;
                     bool m_issuingCountryHasBeenSet;
 
                     /**
-                     * 护照号码（护照信息页识别结果）
+                     * <p>护照号码（护照信息页识别结果）</p>
                      */
                     std::string m_passportID;
                     bool m_passportIDHasBeenSet;
 
                     /**
-                     * 姓（护照信息页识别结果）
+                     * <p>姓（护照信息页识别结果）</p>
                      */
                     std::string m_surname;
                     bool m_surnameHasBeenSet;
 
                     /**
-                     * 名（护照信息页识别结果）
+                     * <p>名（护照信息页识别结果）</p>
                      */
                     std::string m_givenName;
                     bool m_givenNameHasBeenSet;
 
                     /**
-                     * 姓名（护照信息页识别结果）
+                     * <p>姓名（护照信息页识别结果）</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 国籍信息（护照信息页识别结果）
+                     * <p>国籍信息（护照信息页识别结果）</p>
                      */
                     std::string m_nationality;
                     bool m_nationalityHasBeenSet;
 
                     /**
-                     * 出生日期（护照信息页识别结果）
+                     * <p>出生日期（护照信息页识别结果）</p>
                      */
                     std::string m_dateOfBirth;
                     bool m_dateOfBirthHasBeenSet;
 
                     /**
-                     * 性别（护照信息页识别结果）
+                     * <p>性别（护照信息页识别结果）</p>
                      */
                     std::string m_sex;
                     bool m_sexHasBeenSet;
 
                     /**
-                     * 发行日期（护照信息页识别结果）
+                     * <p>发行日期（护照信息页识别结果）</p>
                      */
                     std::string m_dateOfIssuance;
                     bool m_dateOfIssuanceHasBeenSet;
 
                     /**
-                     * 截止日期（护照信息页识别结果）
+                     * <p>截止日期（护照信息页识别结果）</p>
                      */
                     std::string m_dateOfExpiration;
                     bool m_dateOfExpirationHasBeenSet;
 
                     /**
-                     * 持证人签名（护照信息页识别结果）
-
-仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     * <p>持证人签名（护照信息页识别结果）</p><p>仅中国大陆护照支持返回此字段，港澳台及境外护照不支持</p>
                      */
                     std::string m_signature;
                     bool m_signatureHasBeenSet;
 
                     /**
-                     * 签发地点（护照信息页识别结果）
-
-仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     * <p>签发地点（护照信息页识别结果）</p><p>仅中国大陆护照支持返回此字段，港澳台及境外护照不支持</p>
                      */
                     std::string m_issuePlace;
                     bool m_issuePlaceHasBeenSet;
 
                     /**
-                     * 签发机关（护照信息页识别结果）
-
-仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     * <p>签发机关（护照信息页识别结果）</p><p>仅中国大陆护照支持返回此字段，港澳台及境外护照不支持</p>
                      */
                     std::string m_issuingAuthority;
                     bool m_issuingAuthorityHasBeenSet;
+
+                    /**
+                     * <p>出生地（护照信息页识别结果）</p>
+                     */
+                    std::string m_birthPlace;
+                    bool m_birthPlaceHasBeenSet;
 
                 };
             }

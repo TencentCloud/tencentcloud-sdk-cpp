@@ -130,6 +130,27 @@ namespace TencentCloud
                      */
                     bool HostIdHasBeenSet() const;
 
+                    /**
+                     * 获取实例所属的实例资源池机架ID，仅用于出参。
+                     * @return RackId 实例所属的实例资源池机架ID，仅用于出参。
+                     * 
+                     */
+                    std::string GetRackId() const;
+
+                    /**
+                     * 设置实例所属的实例资源池机架ID，仅用于出参。
+                     * @param _rackId 实例所属的实例资源池机架ID，仅用于出参。
+                     * 
+                     */
+                    void SetRackId(const std::string& _rackId);
+
+                    /**
+                     * 判断参数 RackId 是否已赋值
+                     * @return RackId 是否已赋值
+                     * 
+                     */
+                    bool RackIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +176,12 @@ namespace TencentCloud
                      */
                     std::string m_hostId;
                     bool m_hostIdHasBeenSet;
+
+                    /**
+                     * 实例所属的实例资源池机架ID，仅用于出参。
+                     */
+                    std::string m_rackId;
+                    bool m_rackIdHasBeenSet;
 
                 };
             }

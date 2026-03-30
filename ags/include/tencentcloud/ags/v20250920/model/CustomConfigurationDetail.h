@@ -28,6 +28,7 @@
 #include <tencentcloud/ags/v20250920/model/PortConfiguration.h>
 #include <tencentcloud/ags/v20250920/model/ResourceConfiguration.h>
 #include <tencentcloud/ags/v20250920/model/ProbeConfiguration.h>
+#include <tencentcloud/ags/v20250920/model/DNSConfig.h>
 
 
 namespace TencentCloud
@@ -51,15 +52,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取镜像地址
-                     * @return Image 镜像地址
+                     * 获取<p>镜像地址</p>
+                     * @return Image <p>镜像地址</p>
                      * 
                      */
                     std::string GetImage() const;
 
                     /**
-                     * 设置镜像地址
-                     * @param _image 镜像地址
+                     * 设置<p>镜像地址</p>
+                     * @param _image <p>镜像地址</p>
                      * 
                      */
                     void SetImage(const std::string& _image);
@@ -72,15 +73,15 @@ namespace TencentCloud
                     bool ImageHasBeenSet() const;
 
                     /**
-                     * 获取镜像仓库类型：`TCR`、`CCR`。
-                     * @return ImageRegistryType 镜像仓库类型：`TCR`、`CCR`。
+                     * 获取<p>镜像仓库类型：<code>TCR</code>、<code>CCR</code>。</p>
+                     * @return ImageRegistryType <p>镜像仓库类型：<code>TCR</code>、<code>CCR</code>。</p>
                      * 
                      */
                     std::string GetImageRegistryType() const;
 
                     /**
-                     * 设置镜像仓库类型：`TCR`、`CCR`。
-                     * @param _imageRegistryType 镜像仓库类型：`TCR`、`CCR`。
+                     * 设置<p>镜像仓库类型：<code>TCR</code>、<code>CCR</code>。</p>
+                     * @param _imageRegistryType <p>镜像仓库类型：<code>TCR</code>、<code>CCR</code>。</p>
                      * 
                      */
                     void SetImageRegistryType(const std::string& _imageRegistryType);
@@ -93,15 +94,15 @@ namespace TencentCloud
                     bool ImageRegistryTypeHasBeenSet() const;
 
                     /**
-                     * 获取镜像 Digest
-                     * @return ImageDigest 镜像 Digest
+                     * 获取<p>镜像 Digest</p>
+                     * @return ImageDigest <p>镜像 Digest</p>
                      * 
                      */
                     std::string GetImageDigest() const;
 
                     /**
-                     * 设置镜像 Digest
-                     * @param _imageDigest 镜像 Digest
+                     * 设置<p>镜像 Digest</p>
+                     * @param _imageDigest <p>镜像 Digest</p>
                      * 
                      */
                     void SetImageDigest(const std::string& _imageDigest);
@@ -114,15 +115,15 @@ namespace TencentCloud
                     bool ImageDigestHasBeenSet() const;
 
                     /**
-                     * 获取启动命令
-                     * @return Command 启动命令
+                     * 获取<p>启动命令</p>
+                     * @return Command <p>启动命令</p>
                      * 
                      */
                     std::vector<std::string> GetCommand() const;
 
                     /**
-                     * 设置启动命令
-                     * @param _command 启动命令
+                     * 设置<p>启动命令</p>
+                     * @param _command <p>启动命令</p>
                      * 
                      */
                     void SetCommand(const std::vector<std::string>& _command);
@@ -135,15 +136,15 @@ namespace TencentCloud
                     bool CommandHasBeenSet() const;
 
                     /**
-                     * 获取启动参数
-                     * @return Args 启动参数
+                     * 获取<p>启动参数</p>
+                     * @return Args <p>启动参数</p>
                      * 
                      */
                     std::vector<std::string> GetArgs() const;
 
                     /**
-                     * 设置启动参数
-                     * @param _args 启动参数
+                     * 设置<p>启动参数</p>
+                     * @param _args <p>启动参数</p>
                      * 
                      */
                     void SetArgs(const std::vector<std::string>& _args);
@@ -156,15 +157,15 @@ namespace TencentCloud
                     bool ArgsHasBeenSet() const;
 
                     /**
-                     * 获取环境变量
-                     * @return Env 环境变量
+                     * 获取<p>环境变量</p>
+                     * @return Env <p>环境变量</p>
                      * 
                      */
                     std::vector<EnvVar> GetEnv() const;
 
                     /**
-                     * 设置环境变量
-                     * @param _env 环境变量
+                     * 设置<p>环境变量</p>
+                     * @param _env <p>环境变量</p>
                      * 
                      */
                     void SetEnv(const std::vector<EnvVar>& _env);
@@ -177,15 +178,15 @@ namespace TencentCloud
                     bool EnvHasBeenSet() const;
 
                     /**
-                     * 获取端口配置
-                     * @return Ports 端口配置
+                     * 获取<p>端口配置</p>
+                     * @return Ports <p>端口配置</p>
                      * 
                      */
                     std::vector<PortConfiguration> GetPorts() const;
 
                     /**
-                     * 设置端口配置
-                     * @param _ports 端口配置
+                     * 设置<p>端口配置</p>
+                     * @param _ports <p>端口配置</p>
                      * 
                      */
                     void SetPorts(const std::vector<PortConfiguration>& _ports);
@@ -198,15 +199,15 @@ namespace TencentCloud
                     bool PortsHasBeenSet() const;
 
                     /**
-                     * 获取资源配置
-                     * @return Resources 资源配置
+                     * 获取<p>资源配置</p>
+                     * @return Resources <p>资源配置</p>
                      * 
                      */
                     ResourceConfiguration GetResources() const;
 
                     /**
-                     * 设置资源配置
-                     * @param _resources 资源配置
+                     * 设置<p>资源配置</p>
+                     * @param _resources <p>资源配置</p>
                      * 
                      */
                     void SetResources(const ResourceConfiguration& _resources);
@@ -219,15 +220,15 @@ namespace TencentCloud
                     bool ResourcesHasBeenSet() const;
 
                     /**
-                     * 获取探针配置
-                     * @return Probe 探针配置
+                     * 获取<p>探针配置</p>
+                     * @return Probe <p>探针配置</p>
                      * 
                      */
                     ProbeConfiguration GetProbe() const;
 
                     /**
-                     * 设置探针配置
-                     * @param _probe 探针配置
+                     * 设置<p>探针配置</p>
+                     * @param _probe <p>探针配置</p>
                      * 
                      */
                     void SetProbe(const ProbeConfiguration& _probe);
@@ -239,61 +240,88 @@ namespace TencentCloud
                      */
                     bool ProbeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>沙箱 DNS 配置</p>
+                     * @return DNSConfig <p>沙箱 DNS 配置</p>
+                     * 
+                     */
+                    DNSConfig GetDNSConfig() const;
+
+                    /**
+                     * 设置<p>沙箱 DNS 配置</p>
+                     * @param _dNSConfig <p>沙箱 DNS 配置</p>
+                     * 
+                     */
+                    void SetDNSConfig(const DNSConfig& _dNSConfig);
+
+                    /**
+                     * 判断参数 DNSConfig 是否已赋值
+                     * @return DNSConfig 是否已赋值
+                     * 
+                     */
+                    bool DNSConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 镜像地址
+                     * <p>镜像地址</p>
                      */
                     std::string m_image;
                     bool m_imageHasBeenSet;
 
                     /**
-                     * 镜像仓库类型：`TCR`、`CCR`。
+                     * <p>镜像仓库类型：<code>TCR</code>、<code>CCR</code>。</p>
                      */
                     std::string m_imageRegistryType;
                     bool m_imageRegistryTypeHasBeenSet;
 
                     /**
-                     * 镜像 Digest
+                     * <p>镜像 Digest</p>
                      */
                     std::string m_imageDigest;
                     bool m_imageDigestHasBeenSet;
 
                     /**
-                     * 启动命令
+                     * <p>启动命令</p>
                      */
                     std::vector<std::string> m_command;
                     bool m_commandHasBeenSet;
 
                     /**
-                     * 启动参数
+                     * <p>启动参数</p>
                      */
                     std::vector<std::string> m_args;
                     bool m_argsHasBeenSet;
 
                     /**
-                     * 环境变量
+                     * <p>环境变量</p>
                      */
                     std::vector<EnvVar> m_env;
                     bool m_envHasBeenSet;
 
                     /**
-                     * 端口配置
+                     * <p>端口配置</p>
                      */
                     std::vector<PortConfiguration> m_ports;
                     bool m_portsHasBeenSet;
 
                     /**
-                     * 资源配置
+                     * <p>资源配置</p>
                      */
                     ResourceConfiguration m_resources;
                     bool m_resourcesHasBeenSet;
 
                     /**
-                     * 探针配置
+                     * <p>探针配置</p>
                      */
                     ProbeConfiguration m_probe;
                     bool m_probeHasBeenSet;
+
+                    /**
+                     * <p>沙箱 DNS 配置</p>
+                     */
+                    DNSConfig m_dNSConfig;
+                    bool m_dNSConfigHasBeenSet;
 
                 };
             }

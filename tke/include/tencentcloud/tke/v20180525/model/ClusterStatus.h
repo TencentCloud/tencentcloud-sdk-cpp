@@ -69,14 +69,82 @@ namespace TencentCloud
 
                     /**
                      * 获取集群状态
+运行中：Running
+集群等级中：ClusterLevelUpgrading
+集群升级中：Upgrading
+集群控制面扩容中：MasterScaling
+托管集群修改参数中：RuntimeUpgrading
+节点升级中：NodeUpgrading
+集群删除中：Deleting
+集群创建中：Creating
+集群已隔离：Isolated
+集群升级暂停：Pause
+集群执行隔离：ResourceIsolate
+集群隔离：ResourceIsolated
+集群执行冲正：ResourceReverse
+集群冲正：ResourceReversal
+集群执行销毁：ResourceDestroy
+集群销毁：ResourceDestroyed
+集群变配交易中：ClusterLevelTrading
                      * @return ClusterState 集群状态
+运行中：Running
+集群等级中：ClusterLevelUpgrading
+集群升级中：Upgrading
+集群控制面扩容中：MasterScaling
+托管集群修改参数中：RuntimeUpgrading
+节点升级中：NodeUpgrading
+集群删除中：Deleting
+集群创建中：Creating
+集群已隔离：Isolated
+集群升级暂停：Pause
+集群执行隔离：ResourceIsolate
+集群隔离：ResourceIsolated
+集群执行冲正：ResourceReverse
+集群冲正：ResourceReversal
+集群执行销毁：ResourceDestroy
+集群销毁：ResourceDestroyed
+集群变配交易中：ClusterLevelTrading
                      * 
                      */
                     std::string GetClusterState() const;
 
                     /**
                      * 设置集群状态
+运行中：Running
+集群等级中：ClusterLevelUpgrading
+集群升级中：Upgrading
+集群控制面扩容中：MasterScaling
+托管集群修改参数中：RuntimeUpgrading
+节点升级中：NodeUpgrading
+集群删除中：Deleting
+集群创建中：Creating
+集群已隔离：Isolated
+集群升级暂停：Pause
+集群执行隔离：ResourceIsolate
+集群隔离：ResourceIsolated
+集群执行冲正：ResourceReverse
+集群冲正：ResourceReversal
+集群执行销毁：ResourceDestroy
+集群销毁：ResourceDestroyed
+集群变配交易中：ClusterLevelTrading
                      * @param _clusterState 集群状态
+运行中：Running
+集群等级中：ClusterLevelUpgrading
+集群升级中：Upgrading
+集群控制面扩容中：MasterScaling
+托管集群修改参数中：RuntimeUpgrading
+节点升级中：NodeUpgrading
+集群删除中：Deleting
+集群创建中：Creating
+集群已隔离：Isolated
+集群升级暂停：Pause
+集群执行隔离：ResourceIsolate
+集群隔离：ResourceIsolated
+集群执行冲正：ResourceReverse
+集群冲正：ResourceReversal
+集群执行销毁：ResourceDestroy
+集群销毁：ResourceDestroyed
+集群变配交易中：ClusterLevelTrading
                      * 
                      */
                     void SetClusterState(const std::string& _clusterState);
@@ -90,14 +158,30 @@ namespace TencentCloud
 
                     /**
                      * 获取集群下机器实例的状态
+节点全部正常：AllNormal
+节点全部异常：
+AllAbnormal
+节点部分异常：PartialAbnormal
                      * @return ClusterInstanceState 集群下机器实例的状态
+节点全部正常：AllNormal
+节点全部异常：
+AllAbnormal
+节点部分异常：PartialAbnormal
                      * 
                      */
                     std::string GetClusterInstanceState() const;
 
                     /**
                      * 设置集群下机器实例的状态
+节点全部正常：AllNormal
+节点全部异常：
+AllAbnormal
+节点部分异常：PartialAbnormal
                      * @param _clusterInstanceState 集群下机器实例的状态
+节点全部正常：AllNormal
+节点全部异常：
+AllAbnormal
+节点部分异常：PartialAbnormal
                      * 
                      */
                     void SetClusterInstanceState(const std::string& _clusterInstanceState);
@@ -287,12 +371,33 @@ namespace TencentCloud
 
                     /**
                      * 集群状态
+运行中：Running
+集群等级中：ClusterLevelUpgrading
+集群升级中：Upgrading
+集群控制面扩容中：MasterScaling
+托管集群修改参数中：RuntimeUpgrading
+节点升级中：NodeUpgrading
+集群删除中：Deleting
+集群创建中：Creating
+集群已隔离：Isolated
+集群升级暂停：Pause
+集群执行隔离：ResourceIsolate
+集群隔离：ResourceIsolated
+集群执行冲正：ResourceReverse
+集群冲正：ResourceReversal
+集群执行销毁：ResourceDestroy
+集群销毁：ResourceDestroyed
+集群变配交易中：ClusterLevelTrading
                      */
                     std::string m_clusterState;
                     bool m_clusterStateHasBeenSet;
 
                     /**
                      * 集群下机器实例的状态
+节点全部正常：AllNormal
+节点全部异常：
+AllAbnormal
+节点部分异常：PartialAbnormal
                      */
                     std::string m_clusterInstanceState;
                     bool m_clusterInstanceStateHasBeenSet;

@@ -510,6 +510,27 @@ namespace TencentCloud
                      */
                     bool LastTimeHasBeenSet() const;
 
+                    /**
+                     * 获取改密任务状态，0-待执行，1-执行完成，2-执行失败，3-执行中，4-执行超时
+                     * @return Status 改密任务状态，0-待执行，1-执行完成，2-执行失败，3-执行中，4-执行超时
+                     * 
+                     */
+                    uint64_t GetStatus() const;
+
+                    /**
+                     * 设置改密任务状态，0-待执行，1-执行完成，2-执行失败，3-执行中，4-执行超时
+                     * @param _status 改密任务状态，0-待执行，1-执行完成，2-执行失败，3-执行中，4-执行超时
+                     * 
+                     */
+                    void SetStatus(const uint64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -643,6 +664,12 @@ namespace TencentCloud
                      */
                     std::string m_lastTime;
                     bool m_lastTimeHasBeenSet;
+
+                    /**
+                     * 改密任务状态，0-待执行，1-执行完成，2-执行失败，3-执行中，4-执行超时
+                     */
+                    uint64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自适应转码模板唯一标识。
-                     * @return Definition 自适应转码模板唯一标识。
+                     * 获取<p>自适应转码模板唯一标识。</p>
+                     * @return Definition <p>自适应转码模板唯一标识。</p>
                      * 
                      */
                     uint64_t GetDefinition() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 自适应转码模板唯一标识。
+                     * <p>自适应转码模板唯一标识。</p>
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;

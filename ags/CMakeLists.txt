@@ -43,6 +43,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/NetworkConfiguration.h
   include/tencentcloud/ags/v20250920/model/DeleteSandboxToolResponse.h
   include/tencentcloud/ags/v20250920/model/PortConfiguration.h
+  include/tencentcloud/ags/v20250920/model/DNSConfig.h
   include/tencentcloud/ags/v20250920/model/SandboxTool.h
   include/tencentcloud/ags/v20250920/model/MountOption.h
   include/tencentcloud/ags/v20250920/model/Filter.h
@@ -102,6 +103,7 @@ set(ags_src
   src/v20250920/model/NetworkConfiguration.cpp
   src/v20250920/model/DeleteSandboxToolResponse.cpp
   src/v20250920/model/PortConfiguration.cpp
+  src/v20250920/model/DNSConfig.cpp
   src/v20250920/model/SandboxTool.cpp
   src/v20250920/model/MountOption.cpp
   src/v20250920/model/Filter.cpp

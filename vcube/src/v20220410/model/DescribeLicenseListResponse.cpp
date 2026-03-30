@@ -23,7 +23,11 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vcube::V20220410::Model;
 using namespace std;
 
-DescribeLicenseListResponse::DescribeLicenseListResponse()
+DescribeLicenseListResponse::DescribeLicenseListResponse() :
+    m_countHasBeenSet(false),
+    m_overviewHasBeenSet(false),
+    m_licenseListHasBeenSet(false),
+    m_trialOverviewHasBeenSet(false)
 {
 }
 
@@ -61,6 +65,70 @@ CoreInternalOutcome DescribeLicenseListResponse::Deserialize(const string &paylo
     }
 
 
+    if (rsp.HasMember("Count") && !rsp["Count"].IsNull())
+    {
+        if (!rsp["Count"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Count` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_count = rsp["Count"].GetUint64();
+        m_countHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Overview") && !rsp["Overview"].IsNull())
+    {
+        if (!rsp["Overview"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Overview` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_overview.Deserialize(rsp["Overview"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_overviewHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LicenseList") && !rsp["LicenseList"].IsNull())
+    {
+        if (!rsp["LicenseList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LicenseList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["LicenseList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            OverviewLicense item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_licenseList.push_back(item);
+        }
+        m_licenseListHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TrialOverview") && !rsp["TrialOverview"].IsNull())
+    {
+        if (!rsp["TrialOverview"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrialOverview` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_trialOverview.Deserialize(rsp["TrialOverview"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_trialOverviewHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +138,47 @@ string DescribeLicenseListResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_countHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Count";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_count, allocator);
+    }
+
+    if (m_overviewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Overview";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_overview.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_licenseListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LicenseList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_licenseList.begin(); itr != m_licenseList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_trialOverviewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrialOverview";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_trialOverview.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +191,45 @@ string DescribeLicenseListResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeLicenseListResponse::GetCount() const
+{
+    return m_count;
+}
+
+bool DescribeLicenseListResponse::CountHasBeenSet() const
+{
+    return m_countHasBeenSet;
+}
+
+Overview DescribeLicenseListResponse::GetOverview() const
+{
+    return m_overview;
+}
+
+bool DescribeLicenseListResponse::OverviewHasBeenSet() const
+{
+    return m_overviewHasBeenSet;
+}
+
+vector<OverviewLicense> DescribeLicenseListResponse::GetLicenseList() const
+{
+    return m_licenseList;
+}
+
+bool DescribeLicenseListResponse::LicenseListHasBeenSet() const
+{
+    return m_licenseListHasBeenSet;
+}
+
+Overview DescribeLicenseListResponse::GetTrialOverview() const
+{
+    return m_trialOverview;
+}
+
+bool DescribeLicenseListResponse::TrialOverviewHasBeenSet() const
+{
+    return m_trialOverviewHasBeenSet;
+}
 
 

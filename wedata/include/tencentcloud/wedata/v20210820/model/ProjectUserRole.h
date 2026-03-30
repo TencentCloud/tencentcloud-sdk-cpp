@@ -397,6 +397,31 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取0: 普通用户 1: entraId用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserTag 0: 普通用户 1: entraId用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetUserTag() const;
+
+                    /**
+                     * 设置0: 普通用户 1: entraId用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _userTag 0: 普通用户 1: entraId用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUserTag(const uint64_t& _userTag);
+
+                    /**
+                     * 判断参数 UserTag 是否已赋值
+                     * @return UserTag 是否已赋值
+                     * 
+                     */
+                    bool UserTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -496,6 +521,13 @@ namespace TencentCloud
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 0: 普通用户 1: entraId用户
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_userTag;
+                    bool m_userTagHasBeenSet;
 
                 };
             }

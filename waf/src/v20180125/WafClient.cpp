@@ -4390,6 +4390,56 @@ WafClient::DescribeIpHitItemsOutcomeCallable WafClient::DescribeIpHitItemsCallab
     return prom->get_future();
 }
 
+WafClient::DescribeLLMContentSecCheckOutcome WafClient::DescribeLLMContentSecCheck(const DescribeLLMContentSecCheckRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLLMContentSecCheck");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLLMContentSecCheckResponse rsp = DescribeLLMContentSecCheckResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLLMContentSecCheckOutcome(rsp);
+        else
+            return DescribeLLMContentSecCheckOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLLMContentSecCheckOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeLLMContentSecCheckAsync(const DescribeLLMContentSecCheckRequest& request, const DescribeLLMContentSecCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLLMContentSecCheckRequest&;
+    using Resp = DescribeLLMContentSecCheckResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLLMContentSecCheck", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DescribeLLMContentSecCheckOutcomeCallable WafClient::DescribeLLMContentSecCheckCallable(const DescribeLLMContentSecCheckRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLLMContentSecCheckOutcome>>();
+    DescribeLLMContentSecCheckAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DescribeLLMContentSecCheckRequest&,
+        DescribeLLMContentSecCheckOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::DescribeLogHistogramOutcome WafClient::DescribeLogHistogram(const DescribeLogHistogramRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLogHistogram");
@@ -5032,6 +5082,56 @@ WafClient::DescribeProtectionModesOutcomeCallable WafClient::DescribeProtectionM
         const WafClient*,
         const DescribeProtectionModesRequest&,
         DescribeProtectionModesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::DescribeQClawContentSecCheckOutcome WafClient::DescribeQClawContentSecCheck(const DescribeQClawContentSecCheckRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeQClawContentSecCheck");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeQClawContentSecCheckResponse rsp = DescribeQClawContentSecCheckResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeQClawContentSecCheckOutcome(rsp);
+        else
+            return DescribeQClawContentSecCheckOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeQClawContentSecCheckOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeQClawContentSecCheckAsync(const DescribeQClawContentSecCheckRequest& request, const DescribeQClawContentSecCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeQClawContentSecCheckRequest&;
+    using Resp = DescribeQClawContentSecCheckResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeQClawContentSecCheck", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DescribeQClawContentSecCheckOutcomeCallable WafClient::DescribeQClawContentSecCheckCallable(const DescribeQClawContentSecCheckRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeQClawContentSecCheckOutcome>>();
+    DescribeQClawContentSecCheckAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DescribeQClawContentSecCheckRequest&,
+        DescribeQClawContentSecCheckOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

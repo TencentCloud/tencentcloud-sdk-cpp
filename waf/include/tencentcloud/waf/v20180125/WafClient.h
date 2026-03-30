@@ -197,6 +197,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeIpAccessControlResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeIpHitItemsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeIpHitItemsResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMContentSecCheckRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMContentSecCheckResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeLogHistogramRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeLogHistogramResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeModuleStatusRequest.h>
@@ -223,6 +225,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribePostCLSFlowsResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeProtectionModesRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeProtectionModesResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeQClawContentSecCheckRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeQClawContentSecCheckResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeRateLimitsV2Request.h>
 #include <tencentcloud/waf/v20180125/model/DescribeRateLimitsV2Response.h>
 #include <tencentcloud/waf/v20180125/model/DescribeRuleLimitRequest.h>
@@ -698,6 +702,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIpHitItemsResponse> DescribeIpHitItemsOutcome;
                 typedef std::future<DescribeIpHitItemsOutcome> DescribeIpHitItemsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeIpHitItemsRequest&, DescribeIpHitItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpHitItemsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLLMContentSecCheckResponse> DescribeLLMContentSecCheckOutcome;
+                typedef std::future<DescribeLLMContentSecCheckOutcome> DescribeLLMContentSecCheckOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeLLMContentSecCheckRequest&, DescribeLLMContentSecCheckOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLLMContentSecCheckAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLogHistogramResponse> DescribeLogHistogramOutcome;
                 typedef std::future<DescribeLogHistogramOutcome> DescribeLogHistogramOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeLogHistogramRequest&, DescribeLogHistogramOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogHistogramAsyncHandler;
@@ -737,6 +744,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProtectionModesResponse> DescribeProtectionModesOutcome;
                 typedef std::future<DescribeProtectionModesOutcome> DescribeProtectionModesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeProtectionModesRequest&, DescribeProtectionModesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectionModesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeQClawContentSecCheckResponse> DescribeQClawContentSecCheckOutcome;
+                typedef std::future<DescribeQClawContentSecCheckOutcome> DescribeQClawContentSecCheckOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeQClawContentSecCheckRequest&, DescribeQClawContentSecCheckOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQClawContentSecCheckAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRateLimitsV2Response> DescribeRateLimitsV2Outcome;
                 typedef std::future<DescribeRateLimitsV2Outcome> DescribeRateLimitsV2OutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeRateLimitsV2Request&, DescribeRateLimitsV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRateLimitsV2AsyncHandler;
@@ -1824,6 +1834,15 @@ namespace TencentCloud
                 DescribeIpHitItemsOutcomeCallable DescribeIpHitItemsCallable(const Model::DescribeIpHitItemsRequest& request);
 
                 /**
+                 *大模型请求内容和响应内容审核接口
+                 * @param req DescribeLLMContentSecCheckRequest
+                 * @return DescribeLLMContentSecCheckOutcome
+                 */
+                DescribeLLMContentSecCheckOutcome DescribeLLMContentSecCheck(const Model::DescribeLLMContentSecCheckRequest &request);
+                void DescribeLLMContentSecCheckAsync(const Model::DescribeLLMContentSecCheckRequest& request, const DescribeLLMContentSecCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLLMContentSecCheckOutcomeCallable DescribeLLMContentSecCheckCallable(const Model::DescribeLLMContentSecCheckRequest& request);
+
+                /**
                  *本接口用于构建日志数量直方图
                  * @param req DescribeLogHistogramRequest
                  * @return DescribeLogHistogramOutcome
@@ -1939,6 +1958,15 @@ namespace TencentCloud
                 DescribeProtectionModesOutcome DescribeProtectionModes(const Model::DescribeProtectionModesRequest &request);
                 void DescribeProtectionModesAsync(const Model::DescribeProtectionModesRequest& request, const DescribeProtectionModesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProtectionModesOutcomeCallable DescribeProtectionModesCallable(const Model::DescribeProtectionModesRequest& request);
+
+                /**
+                 *大模型请求内容和响应内容审核接口
+                 * @param req DescribeQClawContentSecCheckRequest
+                 * @return DescribeQClawContentSecCheckOutcome
+                 */
+                DescribeQClawContentSecCheckOutcome DescribeQClawContentSecCheck(const Model::DescribeQClawContentSecCheckRequest &request);
+                void DescribeQClawContentSecCheckAsync(const Model::DescribeQClawContentSecCheckRequest& request, const DescribeQClawContentSecCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeQClawContentSecCheckOutcomeCallable DescribeQClawContentSecCheckCallable(const Model::DescribeQClawContentSecCheckRequest& request);
 
                 /**
                  *查询限流规则列表接口

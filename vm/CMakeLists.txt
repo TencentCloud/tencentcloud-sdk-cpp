@@ -34,12 +34,14 @@ set(vm_public_header_model
   include/tencentcloud/vm/v20210922/model/TaskLabel.h
   include/tencentcloud/vm/v20210922/model/CancelTaskRequest.h
   include/tencentcloud/vm/v20210922/model/DescribeTaskDetailResponse.h
+  include/tencentcloud/vm/v20210922/model/VideoSegmentResult.h
   include/tencentcloud/vm/v20210922/model/DescribeTasksRequest.h
   include/tencentcloud/vm/v20210922/model/TaskInput.h
   include/tencentcloud/vm/v20210922/model/DescribeTaskDetailRequest.h
   include/tencentcloud/vm/v20210922/model/User.h
   include/tencentcloud/vm/v20210922/model/LabelResult.h
   include/tencentcloud/vm/v20210922/model/ImageResultsResultDetail.h
+  include/tencentcloud/vm/v20210922/model/VideoSegment.h
   include/tencentcloud/vm/v20210922/model/InputInfo.h
   include/tencentcloud/vm/v20210922/model/OcrHitInfo.h
   include/tencentcloud/vm/v20210922/model/CreateVideoModerationTaskRequest.h
@@ -47,6 +49,7 @@ set(vm_public_header_model
   include/tencentcloud/vm/v20210922/model/AudioResultDetailLanguageResult.h
   include/tencentcloud/vm/v20210922/model/TaskFilter.h
   include/tencentcloud/vm/v20210922/model/RecognitionResult.h
+  include/tencentcloud/vm/v20210922/model/VideoLLMDetail.h
   include/tencentcloud/vm/v20210922/model/CancelTaskResponse.h
   include/tencentcloud/vm/v20210922/model/AudioResultDetailTextResult.h
   include/tencentcloud/vm/v20210922/model/SegmentCosUrlList.h
@@ -147,12 +150,14 @@ set(vm_src
   src/v20210922/model/TaskLabel.cpp
   src/v20210922/model/CancelTaskRequest.cpp
   src/v20210922/model/DescribeTaskDetailResponse.cpp
+  src/v20210922/model/VideoSegmentResult.cpp
   src/v20210922/model/DescribeTasksRequest.cpp
   src/v20210922/model/TaskInput.cpp
   src/v20210922/model/DescribeTaskDetailRequest.cpp
   src/v20210922/model/User.cpp
   src/v20210922/model/LabelResult.cpp
   src/v20210922/model/ImageResultsResultDetail.cpp
+  src/v20210922/model/VideoSegment.cpp
   src/v20210922/model/InputInfo.cpp
   src/v20210922/model/OcrHitInfo.cpp
   src/v20210922/model/CreateVideoModerationTaskRequest.cpp
@@ -160,6 +165,7 @@ set(vm_src
   src/v20210922/model/AudioResultDetailLanguageResult.cpp
   src/v20210922/model/TaskFilter.cpp
   src/v20210922/model/RecognitionResult.cpp
+  src/v20210922/model/VideoLLMDetail.cpp
   src/v20210922/model/CancelTaskResponse.cpp
   src/v20210922/model/AudioResultDetailTextResult.cpp
   src/v20210922/model/SegmentCosUrlList.cpp

@@ -1940,6 +1940,106 @@ CsipClient::DescribeHighBaseLineRiskListOutcomeCallable CsipClient::DescribeHigh
     return prom->get_future();
 }
 
+CsipClient::DescribeKeySandboxCredentialOutcome CsipClient::DescribeKeySandboxCredential(const DescribeKeySandboxCredentialRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKeySandboxCredential");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKeySandboxCredentialResponse rsp = DescribeKeySandboxCredentialResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKeySandboxCredentialOutcome(rsp);
+        else
+            return DescribeKeySandboxCredentialOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKeySandboxCredentialOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeKeySandboxCredentialAsync(const DescribeKeySandboxCredentialRequest& request, const DescribeKeySandboxCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeKeySandboxCredentialRequest&;
+    using Resp = DescribeKeySandboxCredentialResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeKeySandboxCredential", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeKeySandboxCredentialOutcomeCallable CsipClient::DescribeKeySandboxCredentialCallable(const DescribeKeySandboxCredentialRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeKeySandboxCredentialOutcome>>();
+    DescribeKeySandboxCredentialAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeKeySandboxCredentialRequest&,
+        DescribeKeySandboxCredentialOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CsipClient::DescribeKeySandboxCredentialListOutcome CsipClient::DescribeKeySandboxCredentialList(const DescribeKeySandboxCredentialListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKeySandboxCredentialList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKeySandboxCredentialListResponse rsp = DescribeKeySandboxCredentialListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKeySandboxCredentialListOutcome(rsp);
+        else
+            return DescribeKeySandboxCredentialListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKeySandboxCredentialListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeKeySandboxCredentialListAsync(const DescribeKeySandboxCredentialListRequest& request, const DescribeKeySandboxCredentialListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeKeySandboxCredentialListRequest&;
+    using Resp = DescribeKeySandboxCredentialListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeKeySandboxCredentialList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeKeySandboxCredentialListOutcomeCallable CsipClient::DescribeKeySandboxCredentialListCallable(const DescribeKeySandboxCredentialListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeKeySandboxCredentialListOutcome>>();
+    DescribeKeySandboxCredentialListAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeKeySandboxCredentialListRequest&,
+        DescribeKeySandboxCredentialListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::DescribeListenerListOutcome CsipClient::DescribeListenerList(const DescribeListenerListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeListenerList");

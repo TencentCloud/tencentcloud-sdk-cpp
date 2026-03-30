@@ -24,7 +24,8 @@ Placement::Placement() :
     m_zoneHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_hostIdsHasBeenSet(false),
-    m_hostIdHasBeenSet(false)
+    m_hostIdHasBeenSet(false),
+    m_rackIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,16 @@ CoreInternalOutcome Placement::Deserialize(const rapidjson::Value &value)
         m_hostIdHasBeenSet = true;
     }
 
+    if (value.HasMember("RackId") && !value["RackId"].IsNull())
+    {
+        if (!value["RackId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Placement.RackId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rackId = string(value["RackId"].GetString());
+        m_rackIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +129,14 @@ void Placement::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "HostId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hostId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rackIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RackId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rackId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -185,5 +204,21 @@ void Placement::SetHostId(const string& _hostId)
 bool Placement::HostIdHasBeenSet() const
 {
     return m_hostIdHasBeenSet;
+}
+
+string Placement::GetRackId() const
+{
+    return m_rackId;
+}
+
+void Placement::SetRackId(const string& _rackId)
+{
+    m_rackId = _rackId;
+    m_rackIdHasBeenSet = true;
+}
+
+bool Placement::RackIdHasBeenSet() const
+{
+    return m_rackIdHasBeenSet;
 }
 

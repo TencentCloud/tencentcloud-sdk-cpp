@@ -1090,6 +1090,56 @@ TseClient::CreateNativeGatewayServiceSourceOutcomeCallable TseClient::CreateNati
     return prom->get_future();
 }
 
+TseClient::CreateOrModifyCloudNativeAPIGatewayCORSOutcome TseClient::CreateOrModifyCloudNativeAPIGatewayCORS(const CreateOrModifyCloudNativeAPIGatewayCORSRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOrModifyCloudNativeAPIGatewayCORS");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOrModifyCloudNativeAPIGatewayCORSResponse rsp = CreateOrModifyCloudNativeAPIGatewayCORSResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOrModifyCloudNativeAPIGatewayCORSOutcome(rsp);
+        else
+            return CreateOrModifyCloudNativeAPIGatewayCORSOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOrModifyCloudNativeAPIGatewayCORSOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateOrModifyCloudNativeAPIGatewayCORSAsync(const CreateOrModifyCloudNativeAPIGatewayCORSRequest& request, const CreateOrModifyCloudNativeAPIGatewayCORSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateOrModifyCloudNativeAPIGatewayCORSRequest&;
+    using Resp = CreateOrModifyCloudNativeAPIGatewayCORSResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateOrModifyCloudNativeAPIGatewayCORS", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::CreateOrModifyCloudNativeAPIGatewayCORSOutcomeCallable TseClient::CreateOrModifyCloudNativeAPIGatewayCORSCallable(const CreateOrModifyCloudNativeAPIGatewayCORSRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateOrModifyCloudNativeAPIGatewayCORSOutcome>>();
+    CreateOrModifyCloudNativeAPIGatewayCORSAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const CreateOrModifyCloudNativeAPIGatewayCORSRequest&,
+        CreateOrModifyCloudNativeAPIGatewayCORSOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TseClient::CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcome TseClient::CreateOrModifyCloudNativeAPIGatewayIPRestriction(const CreateOrModifyCloudNativeAPIGatewayIPRestrictionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateOrModifyCloudNativeAPIGatewayIPRestriction");
@@ -1332,6 +1382,56 @@ TseClient::DeleteCloudNativeAPIGatewayOutcomeCallable TseClient::DeleteCloudNati
         const TseClient*,
         const DeleteCloudNativeAPIGatewayRequest&,
         DeleteCloudNativeAPIGatewayOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DeleteCloudNativeAPIGatewayCORSOutcome TseClient::DeleteCloudNativeAPIGatewayCORS(const DeleteCloudNativeAPIGatewayCORSRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewayCORS");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudNativeAPIGatewayCORSResponse rsp = DeleteCloudNativeAPIGatewayCORSResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudNativeAPIGatewayCORSOutcome(rsp);
+        else
+            return DeleteCloudNativeAPIGatewayCORSOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudNativeAPIGatewayCORSOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteCloudNativeAPIGatewayCORSAsync(const DeleteCloudNativeAPIGatewayCORSRequest& request, const DeleteCloudNativeAPIGatewayCORSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCloudNativeAPIGatewayCORSRequest&;
+    using Resp = DeleteCloudNativeAPIGatewayCORSResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCloudNativeAPIGatewayCORS", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DeleteCloudNativeAPIGatewayCORSOutcomeCallable TseClient::DeleteCloudNativeAPIGatewayCORSCallable(const DeleteCloudNativeAPIGatewayCORSRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCloudNativeAPIGatewayCORSOutcome>>();
+    DeleteCloudNativeAPIGatewayCORSAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DeleteCloudNativeAPIGatewayCORSRequest&,
+        DeleteCloudNativeAPIGatewayCORSOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2582,6 +2682,56 @@ TseClient::DescribeCloudNativeAPIGatewayOutcomeCallable TseClient::DescribeCloud
         const TseClient*,
         const DescribeCloudNativeAPIGatewayRequest&,
         DescribeCloudNativeAPIGatewayOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DescribeCloudNativeAPIGatewayCORSOutcome TseClient::DescribeCloudNativeAPIGatewayCORS(const DescribeCloudNativeAPIGatewayCORSRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayCORS");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayCORSResponse rsp = DescribeCloudNativeAPIGatewayCORSResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayCORSOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayCORSOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayCORSOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewayCORSAsync(const DescribeCloudNativeAPIGatewayCORSRequest& request, const DescribeCloudNativeAPIGatewayCORSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudNativeAPIGatewayCORSRequest&;
+    using Resp = DescribeCloudNativeAPIGatewayCORSResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudNativeAPIGatewayCORS", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DescribeCloudNativeAPIGatewayCORSOutcomeCallable TseClient::DescribeCloudNativeAPIGatewayCORSCallable(const DescribeCloudNativeAPIGatewayCORSRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudNativeAPIGatewayCORSOutcome>>();
+    DescribeCloudNativeAPIGatewayCORSAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DescribeCloudNativeAPIGatewayCORSRequest&,
+        DescribeCloudNativeAPIGatewayCORSOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

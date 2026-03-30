@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ai3d/v20250513/model/File3D.h>
+#include <tencentcloud/ai3d/v20250513/model/ViewImage.h>
 #include <tencentcloud/ai3d/v20250513/model/Image.h>
 
 
@@ -64,6 +65,48 @@ namespace TencentCloud
                      * 
                      */
                     bool File3DHasBeenSet() const;
+
+                    /**
+                     * 获取<p>混元生3D生成模型版本，默认为3.0，可选项：3.0，3.1<br>仅选择3.1版本时，多视图功能可用。</p>
+                     * @return Model <p>混元生3D生成模型版本，默认为3.0，可选项：3.0，3.1<br>仅选择3.1版本时，多视图功能可用。</p>
+                     * 
+                     */
+                    std::string GetModel() const;
+
+                    /**
+                     * 设置<p>混元生3D生成模型版本，默认为3.0，可选项：3.0，3.1<br>仅选择3.1版本时，多视图功能可用。</p>
+                     * @param _model <p>混元生3D生成模型版本，默认为3.0，可选项：3.0，3.1<br>仅选择3.1版本时，多视图功能可用。</p>
+                     * 
+                     */
+                    void SetModel(const std::string& _model);
+
+                    /**
+                     * 判断参数 Model 是否已赋值
+                     * @return Model 是否已赋值
+                     * 
+                     */
+                    bool ModelHasBeenSet() const;
+
+                    /**
+                     * 获取<p>多视角的模型图片（仅3.1版本支持），视角参考值：<br>left：左视图；<br>right：右视图；<br>back：后视图；<br>top：顶视图；<br>bottom：底视图；<br>left_front：左前45°视图；<br>right_front：右前45°视图；</p><p>每个视角仅限制一张图片。<br>●图片大小限制：编码后所有图片大小总和不可超过8M。（base64编码下图片大小总和不超过6M，因base64编码后图片大小会大30%左右）<br>●图片分辨率限制：单边分辨率小于5000且大于128。<br>●支持图片格式：支持jpg或png</p>
+                     * @return MultiViewImages <p>多视角的模型图片（仅3.1版本支持），视角参考值：<br>left：左视图；<br>right：右视图；<br>back：后视图；<br>top：顶视图；<br>bottom：底视图；<br>left_front：左前45°视图；<br>right_front：右前45°视图；</p><p>每个视角仅限制一张图片。<br>●图片大小限制：编码后所有图片大小总和不可超过8M。（base64编码下图片大小总和不超过6M，因base64编码后图片大小会大30%左右）<br>●图片分辨率限制：单边分辨率小于5000且大于128。<br>●支持图片格式：支持jpg或png</p>
+                     * 
+                     */
+                    std::vector<ViewImage> GetMultiViewImages() const;
+
+                    /**
+                     * 设置<p>多视角的模型图片（仅3.1版本支持），视角参考值：<br>left：左视图；<br>right：右视图；<br>back：后视图；<br>top：顶视图；<br>bottom：底视图；<br>left_front：左前45°视图；<br>right_front：右前45°视图；</p><p>每个视角仅限制一张图片。<br>●图片大小限制：编码后所有图片大小总和不可超过8M。（base64编码下图片大小总和不超过6M，因base64编码后图片大小会大30%左右）<br>●图片分辨率限制：单边分辨率小于5000且大于128。<br>●支持图片格式：支持jpg或png</p>
+                     * @param _multiViewImages <p>多视角的模型图片（仅3.1版本支持），视角参考值：<br>left：左视图；<br>right：右视图；<br>back：后视图；<br>top：顶视图；<br>bottom：底视图；<br>left_front：左前45°视图；<br>right_front：右前45°视图；</p><p>每个视角仅限制一张图片。<br>●图片大小限制：编码后所有图片大小总和不可超过8M。（base64编码下图片大小总和不超过6M，因base64编码后图片大小会大30%左右）<br>●图片分辨率限制：单边分辨率小于5000且大于128。<br>●支持图片格式：支持jpg或png</p>
+                     * 
+                     */
+                    void SetMultiViewImages(const std::vector<ViewImage>& _multiViewImages);
+
+                    /**
+                     * 判断参数 MultiViewImages 是否已赋值
+                     * @return MultiViewImages 是否已赋值
+                     * 
+                     */
+                    bool MultiViewImagesHasBeenSet() const;
 
                     /**
                      * 获取<p>文生3D，3D内容的描述，中文正向提示词。<br>最多支持200个 utf-8 字符。<br>文生3D, image、image_url和 prompt必填其一，且prompt和image/image_url不能同时存在。</p>
@@ -135,6 +178,18 @@ namespace TencentCloud
                      */
                     File3D m_file3D;
                     bool m_file3DHasBeenSet;
+
+                    /**
+                     * <p>混元生3D生成模型版本，默认为3.0，可选项：3.0，3.1<br>仅选择3.1版本时，多视图功能可用。</p>
+                     */
+                    std::string m_model;
+                    bool m_modelHasBeenSet;
+
+                    /**
+                     * <p>多视角的模型图片（仅3.1版本支持），视角参考值：<br>left：左视图；<br>right：右视图；<br>back：后视图；<br>top：顶视图；<br>bottom：底视图；<br>left_front：左前45°视图；<br>right_front：右前45°视图；</p><p>每个视角仅限制一张图片。<br>●图片大小限制：编码后所有图片大小总和不可超过8M。（base64编码下图片大小总和不超过6M，因base64编码后图片大小会大30%左右）<br>●图片分辨率限制：单边分辨率小于5000且大于128。<br>●支持图片格式：支持jpg或png</p>
+                     */
+                    std::vector<ViewImage> m_multiViewImages;
+                    bool m_multiViewImagesHasBeenSet;
 
                     /**
                      * <p>文生3D，3D内容的描述，中文正向提示词。<br>最多支持200个 utf-8 字符。<br>文生3D, image、image_url和 prompt必填其一，且prompt和image/image_url不能同时存在。</p>

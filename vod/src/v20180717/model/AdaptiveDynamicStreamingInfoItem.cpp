@@ -31,7 +31,8 @@ AdaptiveDynamicStreamingInfoItem::AdaptiveDynamicStreamingInfoItem() :
     m_copyRightWatermarkTextHasBeenSet(false),
     m_blindWatermarkDefinitionHasBeenSet(false),
     m_subtitleSetHasBeenSet(false),
-    m_defaultSubtitleIdHasBeenSet(false)
+    m_defaultSubtitleIdHasBeenSet(false),
+    m_drmEncryptTypeHasBeenSet(false)
 {
 }
 
@@ -170,6 +171,16 @@ CoreInternalOutcome AdaptiveDynamicStreamingInfoItem::Deserialize(const rapidjso
         m_defaultSubtitleIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DrmEncryptType") && !value["DrmEncryptType"].IsNull())
+    {
+        if (!value["DrmEncryptType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingInfoItem.DrmEncryptType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_drmEncryptType = string(value["DrmEncryptType"].GetString());
+        m_drmEncryptTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -277,6 +288,14 @@ void AdaptiveDynamicStreamingInfoItem::ToJsonObject(rapidjson::Value &value, rap
         string key = "DefaultSubtitleId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_defaultSubtitleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_drmEncryptTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DrmEncryptType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_drmEncryptType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -456,5 +475,21 @@ void AdaptiveDynamicStreamingInfoItem::SetDefaultSubtitleId(const string& _defau
 bool AdaptiveDynamicStreamingInfoItem::DefaultSubtitleIdHasBeenSet() const
 {
     return m_defaultSubtitleIdHasBeenSet;
+}
+
+string AdaptiveDynamicStreamingInfoItem::GetDrmEncryptType() const
+{
+    return m_drmEncryptType;
+}
+
+void AdaptiveDynamicStreamingInfoItem::SetDrmEncryptType(const string& _drmEncryptType)
+{
+    m_drmEncryptType = _drmEncryptType;
+    m_drmEncryptTypeHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingInfoItem::DrmEncryptTypeHasBeenSet() const
+{
+    return m_drmEncryptTypeHasBeenSet;
 }
 

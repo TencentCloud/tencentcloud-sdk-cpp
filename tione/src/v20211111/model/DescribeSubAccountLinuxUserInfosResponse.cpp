@@ -24,7 +24,8 @@ using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
 DescribeSubAccountLinuxUserInfosResponse::DescribeSubAccountLinuxUserInfosResponse() :
-    m_subAccountListHasBeenSet(false)
+    m_subAccountListHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,16 @@ CoreInternalOutcome DescribeSubAccountLinuxUserInfosResponse::Deserialize(const 
         m_subAccountListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string DescribeSubAccountLinuxUserInfosResponse::ToJsonString() const
         }
     }
 
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +146,16 @@ vector<SubAccountInfo> DescribeSubAccountLinuxUserInfosResponse::GetSubAccountLi
 bool DescribeSubAccountLinuxUserInfosResponse::SubAccountListHasBeenSet() const
 {
     return m_subAccountListHasBeenSet;
+}
+
+int64_t DescribeSubAccountLinuxUserInfosResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeSubAccountLinuxUserInfosResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

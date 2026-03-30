@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名
-                     * @return Domain 域名
+                     * 获取域名，当操作对象为全局规则时，Domain参数应填写为"global"
+                     * @return Domain 域名，当操作对象为全局规则时，Domain参数应填写为"global"
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置域名
-                     * @param _domain 域名
+                     * 设置域名，当操作对象为全局规则时，Domain参数应填写为"global"
+                     * @param _domain 域名，当操作对象为全局规则时，Domain参数应填写为"global"
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DeleteAllHasBeenSet() const;
 
                     /**
-                     * 获取是否为多域名黑白名单
-                     * @return SourceType 是否为多域名黑白名单
+                     * 获取用于按数据来源删除黑白名单记录，非必填，默认为custom。 custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护	），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则
+                     * @return SourceType 用于按数据来源删除黑白名单记录，非必填，默认为custom。 custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护	），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则
                      * 
                      */
                     std::string GetSourceType() const;
 
                     /**
-                     * 设置是否为多域名黑白名单
-                     * @param _sourceType 是否为多域名黑白名单
+                     * 设置用于按数据来源删除黑白名单记录，非必填，默认为custom。 custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护	），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则
+                     * @param _sourceType 用于按数据来源删除黑白名单记录，非必填，默认为custom。 custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护	），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则
                      * 
                      */
                     void SetSourceType(const std::string& _sourceType);
@@ -171,7 +171,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名
+                     * 域名，当操作对象为全局规则时，Domain参数应填写为"global"
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_deleteAllHasBeenSet;
 
                     /**
-                     * 是否为多域名黑白名单
+                     * 用于按数据来源删除黑白名单记录，非必填，默认为custom。 custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护	），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则
                      */
                     std::string m_sourceType;
                     bool m_sourceTypeHasBeenSet;

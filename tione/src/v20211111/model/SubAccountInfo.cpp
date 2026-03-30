@@ -26,7 +26,9 @@ SubAccountInfo::SubAccountInfo() :
     m_subUinNameHasBeenSet(false),
     m_linuxUidHasBeenSet(false),
     m_linuxGidHasBeenSet(false),
-    m_linuxUserNameHasBeenSet(false)
+    m_linuxUserNameHasBeenSet(false),
+    m_enableRootLoginHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome SubAccountInfo::Deserialize(const rapidjson::Value &value)
         m_linuxUserNameHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableRootLogin") && !value["EnableRootLogin"].IsNull())
+    {
+        if (!value["EnableRootLogin"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubAccountInfo.EnableRootLogin` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableRootLogin = value["EnableRootLogin"].GetBool();
+        m_enableRootLoginHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubAccountInfo.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void SubAccountInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "LinuxUserName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_linuxUserName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableRootLoginHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableRootLogin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableRootLogin, allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void SubAccountInfo::SetLinuxUserName(const string& _linuxUserName)
 bool SubAccountInfo::LinuxUserNameHasBeenSet() const
 {
     return m_linuxUserNameHasBeenSet;
+}
+
+bool SubAccountInfo::GetEnableRootLogin() const
+{
+    return m_enableRootLogin;
+}
+
+void SubAccountInfo::SetEnableRootLogin(const bool& _enableRootLogin)
+{
+    m_enableRootLogin = _enableRootLogin;
+    m_enableRootLoginHasBeenSet = true;
+}
+
+bool SubAccountInfo::EnableRootLoginHasBeenSet() const
+{
+    return m_enableRootLoginHasBeenSet;
+}
+
+string SubAccountInfo::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void SubAccountInfo::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool SubAccountInfo::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
 }
 

@@ -24,6 +24,8 @@ using namespace std;
 
 SubmitTextureTo3DJobRequest::SubmitTextureTo3DJobRequest() :
     m_file3DHasBeenSet(false),
+    m_modelHasBeenSet(false),
+    m_multiViewImagesHasBeenSet(false),
     m_promptHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_enablePBRHasBeenSet(false)
@@ -44,6 +46,29 @@ string SubmitTextureTo3DJobRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_file3D.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_modelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Model";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_model.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_multiViewImagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiViewImages";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_multiViewImages.begin(); itr != m_multiViewImages.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_promptHasBeenSet)
@@ -93,6 +118,38 @@ void SubmitTextureTo3DJobRequest::SetFile3D(const File3D& _file3D)
 bool SubmitTextureTo3DJobRequest::File3DHasBeenSet() const
 {
     return m_file3DHasBeenSet;
+}
+
+string SubmitTextureTo3DJobRequest::GetModel() const
+{
+    return m_model;
+}
+
+void SubmitTextureTo3DJobRequest::SetModel(const string& _model)
+{
+    m_model = _model;
+    m_modelHasBeenSet = true;
+}
+
+bool SubmitTextureTo3DJobRequest::ModelHasBeenSet() const
+{
+    return m_modelHasBeenSet;
+}
+
+vector<ViewImage> SubmitTextureTo3DJobRequest::GetMultiViewImages() const
+{
+    return m_multiViewImages;
+}
+
+void SubmitTextureTo3DJobRequest::SetMultiViewImages(const vector<ViewImage>& _multiViewImages)
+{
+    m_multiViewImages = _multiViewImages;
+    m_multiViewImagesHasBeenSet = true;
+}
+
+bool SubmitTextureTo3DJobRequest::MultiViewImagesHasBeenSet() const
+{
+    return m_multiViewImagesHasBeenSet;
 }
 
 string SubmitTextureTo3DJobRequest::GetPrompt() const

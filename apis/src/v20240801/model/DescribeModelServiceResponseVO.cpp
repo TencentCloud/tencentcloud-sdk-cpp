@@ -47,7 +47,9 @@ DescribeModelServiceResponseVO::DescribeModelServiceResponseVO() :
     m_timeoutHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_relateAgentAppNumHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_promptModerateStatusHasBeenSet(false),
+    m_promptModerateConfigHasBeenSet(false)
 {
 }
 
@@ -376,6 +378,33 @@ CoreInternalOutcome DescribeModelServiceResponseVO::Deserialize(const rapidjson:
         m_urlHasBeenSet = true;
     }
 
+    if (value.HasMember("PromptModerateStatus") && !value["PromptModerateStatus"].IsNull())
+    {
+        if (!value["PromptModerateStatus"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeModelServiceResponseVO.PromptModerateStatus` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_promptModerateStatus = value["PromptModerateStatus"].GetBool();
+        m_promptModerateStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("PromptModerateConfig") && !value["PromptModerateConfig"].IsNull())
+    {
+        if (!value["PromptModerateConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeModelServiceResponseVO.PromptModerateConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_promptModerateConfig.Deserialize(value["PromptModerateConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_promptModerateConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -629,6 +658,23 @@ void DescribeModelServiceResponseVO::ToJsonObject(rapidjson::Value &value, rapid
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_promptModerateStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PromptModerateStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_promptModerateStatus, allocator);
+    }
+
+    if (m_promptModerateConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PromptModerateConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_promptModerateConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1064,5 +1110,37 @@ void DescribeModelServiceResponseVO::SetUrl(const string& _url)
 bool DescribeModelServiceResponseVO::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+bool DescribeModelServiceResponseVO::GetPromptModerateStatus() const
+{
+    return m_promptModerateStatus;
+}
+
+void DescribeModelServiceResponseVO::SetPromptModerateStatus(const bool& _promptModerateStatus)
+{
+    m_promptModerateStatus = _promptModerateStatus;
+    m_promptModerateStatusHasBeenSet = true;
+}
+
+bool DescribeModelServiceResponseVO::PromptModerateStatusHasBeenSet() const
+{
+    return m_promptModerateStatusHasBeenSet;
+}
+
+PromptModerateConfigDTO DescribeModelServiceResponseVO::GetPromptModerateConfig() const
+{
+    return m_promptModerateConfig;
+}
+
+void DescribeModelServiceResponseVO::SetPromptModerateConfig(const PromptModerateConfigDTO& _promptModerateConfig)
+{
+    m_promptModerateConfig = _promptModerateConfig;
+    m_promptModerateConfigHasBeenSet = true;
+}
+
+bool DescribeModelServiceResponseVO::PromptModerateConfigHasBeenSet() const
+{
+    return m_promptModerateConfigHasBeenSet;
 }
 

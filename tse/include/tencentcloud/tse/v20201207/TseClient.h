@@ -65,6 +65,8 @@
 #include <tencentcloud/tse/v20201207/model/CreateNativeGatewayServerGroupResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateNativeGatewayServiceSourceRequest.h>
 #include <tencentcloud/tse/v20201207/model/CreateNativeGatewayServiceSourceResponse.h>
+#include <tencentcloud/tse/v20201207/model/CreateOrModifyCloudNativeAPIGatewayCORSRequest.h>
+#include <tencentcloud/tse/v20201207/model/CreateOrModifyCloudNativeAPIGatewayCORSResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateOrModifyCloudNativeAPIGatewayIPRestrictionRequest.h>
 #include <tencentcloud/tse/v20201207/model/CreateOrModifyCloudNativeAPIGatewayIPRestrictionResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateOrUpdateConfigFileAndReleaseRequest.h>
@@ -75,6 +77,8 @@
 #include <tencentcloud/tse/v20201207/model/DeleteAutoScalerResourceStrategyResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayRequest.h>
 #include <tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayResponse.h>
+#include <tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayCORSRequest.h>
+#include <tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayCORSResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayCanaryRuleRequest.h>
 #include <tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayCanaryRuleResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayCertificateRequest.h>
@@ -125,6 +129,8 @@
 #include <tencentcloud/tse/v20201207/model/DescribeAutoScalerResourceStrategyBindingGroupsResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayCORSRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayCORSResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayCanaryRulesRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayCanaryRulesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayCertificateDetailsRequest.h>
@@ -354,6 +360,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateNativeGatewayServiceSourceResponse> CreateNativeGatewayServiceSourceOutcome;
                 typedef std::future<CreateNativeGatewayServiceSourceOutcome> CreateNativeGatewayServiceSourceOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::CreateNativeGatewayServiceSourceRequest&, CreateNativeGatewayServiceSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNativeGatewayServiceSourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOrModifyCloudNativeAPIGatewayCORSResponse> CreateOrModifyCloudNativeAPIGatewayCORSOutcome;
+                typedef std::future<CreateOrModifyCloudNativeAPIGatewayCORSOutcome> CreateOrModifyCloudNativeAPIGatewayCORSOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::CreateOrModifyCloudNativeAPIGatewayCORSRequest&, CreateOrModifyCloudNativeAPIGatewayCORSOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrModifyCloudNativeAPIGatewayCORSAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateOrModifyCloudNativeAPIGatewayIPRestrictionResponse> CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcome;
                 typedef std::future<CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcome> CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::CreateOrModifyCloudNativeAPIGatewayIPRestrictionRequest&, CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrModifyCloudNativeAPIGatewayIPRestrictionAsyncHandler;
@@ -369,6 +378,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCloudNativeAPIGatewayResponse> DeleteCloudNativeAPIGatewayOutcome;
                 typedef std::future<DeleteCloudNativeAPIGatewayOutcome> DeleteCloudNativeAPIGatewayOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DeleteCloudNativeAPIGatewayRequest&, DeleteCloudNativeAPIGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudNativeAPIGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCloudNativeAPIGatewayCORSResponse> DeleteCloudNativeAPIGatewayCORSOutcome;
+                typedef std::future<DeleteCloudNativeAPIGatewayCORSOutcome> DeleteCloudNativeAPIGatewayCORSOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DeleteCloudNativeAPIGatewayCORSRequest&, DeleteCloudNativeAPIGatewayCORSOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudNativeAPIGatewayCORSAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCloudNativeAPIGatewayCanaryRuleResponse> DeleteCloudNativeAPIGatewayCanaryRuleOutcome;
                 typedef std::future<DeleteCloudNativeAPIGatewayCanaryRuleOutcome> DeleteCloudNativeAPIGatewayCanaryRuleOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DeleteCloudNativeAPIGatewayCanaryRuleRequest&, DeleteCloudNativeAPIGatewayCanaryRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudNativeAPIGatewayCanaryRuleAsyncHandler;
@@ -444,6 +456,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayResponse> DescribeCloudNativeAPIGatewayOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewayOutcome> DescribeCloudNativeAPIGatewayOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeCloudNativeAPIGatewayRequest&, DescribeCloudNativeAPIGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayCORSResponse> DescribeCloudNativeAPIGatewayCORSOutcome;
+                typedef std::future<DescribeCloudNativeAPIGatewayCORSOutcome> DescribeCloudNativeAPIGatewayCORSOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeCloudNativeAPIGatewayCORSRequest&, DescribeCloudNativeAPIGatewayCORSOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayCORSAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayCanaryRulesResponse> DescribeCloudNativeAPIGatewayCanaryRulesOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewayCanaryRulesOutcome> DescribeCloudNativeAPIGatewayCanaryRulesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeCloudNativeAPIGatewayCanaryRulesRequest&, DescribeCloudNativeAPIGatewayCanaryRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayCanaryRulesAsyncHandler;
@@ -865,6 +880,15 @@ namespace TencentCloud
                 CreateNativeGatewayServiceSourceOutcomeCallable CreateNativeGatewayServiceSourceCallable(const Model::CreateNativeGatewayServiceSourceRequest& request);
 
                 /**
+                 *创建或编辑云原生网关跨域配置
+                 * @param req CreateOrModifyCloudNativeAPIGatewayCORSRequest
+                 * @return CreateOrModifyCloudNativeAPIGatewayCORSOutcome
+                 */
+                CreateOrModifyCloudNativeAPIGatewayCORSOutcome CreateOrModifyCloudNativeAPIGatewayCORS(const Model::CreateOrModifyCloudNativeAPIGatewayCORSRequest &request);
+                void CreateOrModifyCloudNativeAPIGatewayCORSAsync(const Model::CreateOrModifyCloudNativeAPIGatewayCORSRequest& request, const CreateOrModifyCloudNativeAPIGatewayCORSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOrModifyCloudNativeAPIGatewayCORSOutcomeCallable CreateOrModifyCloudNativeAPIGatewayCORSCallable(const Model::CreateOrModifyCloudNativeAPIGatewayCORSRequest& request);
+
+                /**
                  *创建或编辑云原生网关访问控制
                  * @param req CreateOrModifyCloudNativeAPIGatewayIPRestrictionRequest
                  * @return CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcome
@@ -908,6 +932,15 @@ namespace TencentCloud
                 DeleteCloudNativeAPIGatewayOutcome DeleteCloudNativeAPIGateway(const Model::DeleteCloudNativeAPIGatewayRequest &request);
                 void DeleteCloudNativeAPIGatewayAsync(const Model::DeleteCloudNativeAPIGatewayRequest& request, const DeleteCloudNativeAPIGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteCloudNativeAPIGatewayOutcomeCallable DeleteCloudNativeAPIGatewayCallable(const Model::DeleteCloudNativeAPIGatewayRequest& request);
+
+                /**
+                 *删除云原生网关跨域插件
+                 * @param req DeleteCloudNativeAPIGatewayCORSRequest
+                 * @return DeleteCloudNativeAPIGatewayCORSOutcome
+                 */
+                DeleteCloudNativeAPIGatewayCORSOutcome DeleteCloudNativeAPIGatewayCORS(const Model::DeleteCloudNativeAPIGatewayCORSRequest &request);
+                void DeleteCloudNativeAPIGatewayCORSAsync(const Model::DeleteCloudNativeAPIGatewayCORSRequest& request, const DeleteCloudNativeAPIGatewayCORSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCloudNativeAPIGatewayCORSOutcomeCallable DeleteCloudNativeAPIGatewayCORSCallable(const Model::DeleteCloudNativeAPIGatewayCORSRequest& request);
 
                 /**
                  *删除云原生网关的灰度规则
@@ -1133,6 +1166,15 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewayOutcome DescribeCloudNativeAPIGateway(const Model::DescribeCloudNativeAPIGatewayRequest &request);
                 void DescribeCloudNativeAPIGatewayAsync(const Model::DescribeCloudNativeAPIGatewayRequest& request, const DescribeCloudNativeAPIGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudNativeAPIGatewayOutcomeCallable DescribeCloudNativeAPIGatewayCallable(const Model::DescribeCloudNativeAPIGatewayRequest& request);
+
+                /**
+                 *查询云原生网关跨域配置
+                 * @param req DescribeCloudNativeAPIGatewayCORSRequest
+                 * @return DescribeCloudNativeAPIGatewayCORSOutcome
+                 */
+                DescribeCloudNativeAPIGatewayCORSOutcome DescribeCloudNativeAPIGatewayCORS(const Model::DescribeCloudNativeAPIGatewayCORSRequest &request);
+                void DescribeCloudNativeAPIGatewayCORSAsync(const Model::DescribeCloudNativeAPIGatewayCORSRequest& request, const DescribeCloudNativeAPIGatewayCORSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudNativeAPIGatewayCORSOutcomeCallable DescribeCloudNativeAPIGatewayCORSCallable(const Model::DescribeCloudNativeAPIGatewayCORSRequest& request);
 
                 /**
                  *查询云原生网关灰度规则列表

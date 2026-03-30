@@ -29,6 +29,7 @@ CreateAdaptiveDynamicStreamingTemplateRequest::CreateAdaptiveDynamicStreamingTem
     m_nameHasBeenSet(false),
     m_drmTypeHasBeenSet(false),
     m_drmKeyProviderHasBeenSet(false),
+    m_drmEncryptTypeHasBeenSet(false),
     m_disableHigherVideoBitrateHasBeenSet(false),
     m_disableHigherVideoResolutionHasBeenSet(false),
     m_commentHasBeenSet(false),
@@ -96,6 +97,14 @@ string CreateAdaptiveDynamicStreamingTemplateRequest::ToJsonString() const
         string key = "DrmKeyProvider";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_drmKeyProvider.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_drmEncryptTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DrmEncryptType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_drmEncryptType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_disableHigherVideoBitrateHasBeenSet)
@@ -232,6 +241,22 @@ void CreateAdaptiveDynamicStreamingTemplateRequest::SetDrmKeyProvider(const stri
 bool CreateAdaptiveDynamicStreamingTemplateRequest::DrmKeyProviderHasBeenSet() const
 {
     return m_drmKeyProviderHasBeenSet;
+}
+
+string CreateAdaptiveDynamicStreamingTemplateRequest::GetDrmEncryptType() const
+{
+    return m_drmEncryptType;
+}
+
+void CreateAdaptiveDynamicStreamingTemplateRequest::SetDrmEncryptType(const string& _drmEncryptType)
+{
+    m_drmEncryptType = _drmEncryptType;
+    m_drmEncryptTypeHasBeenSet = true;
+}
+
+bool CreateAdaptiveDynamicStreamingTemplateRequest::DrmEncryptTypeHasBeenSet() const
+{
+    return m_drmEncryptTypeHasBeenSet;
 }
 
 uint64_t CreateAdaptiveDynamicStreamingTemplateRequest::GetDisableHigherVideoBitrate() const

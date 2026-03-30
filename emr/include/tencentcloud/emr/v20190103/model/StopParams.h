@@ -92,6 +92,27 @@ namespace TencentCloud
                      */
                     bool ThreadCountHasBeenSet() const;
 
+                    /**
+                     * 获取安全停止超时时间，单位秒
+                     * @return GraceDownTime 安全停止超时时间，单位秒
+                     * 
+                     */
+                    int64_t GetGraceDownTime() const;
+
+                    /**
+                     * 设置安全停止超时时间，单位秒
+                     * @param _graceDownTime 安全停止超时时间，单位秒
+                     * 
+                     */
+                    void SetGraceDownTime(const int64_t& _graceDownTime);
+
+                    /**
+                     * 判断参数 GraceDownTime 是否已赋值
+                     * @return GraceDownTime 是否已赋值
+                     * 
+                     */
+                    bool GraceDownTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -106,6 +127,12 @@ namespace TencentCloud
                      */
                     int64_t m_threadCount;
                     bool m_threadCountHasBeenSet;
+
+                    /**
+                     * 安全停止超时时间，单位秒
+                     */
+                    int64_t m_graceDownTime;
+                    bool m_graceDownTimeHasBeenSet;
 
                 };
             }

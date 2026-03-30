@@ -538,21 +538,21 @@ https：使用https协议回源
                     /**
                      * 获取HTTPS回源端口,仅UpstreamScheme为http时需要填当前字段
                      * @return HttpsUpstreamPort HTTPS回源端口,仅UpstreamScheme为http时需要填当前字段
-                     * 
+                     * @deprecated
                      */
                     std::string GetHttpsUpstreamPort() const;
 
                     /**
                      * 设置HTTPS回源端口,仅UpstreamScheme为http时需要填当前字段
                      * @param _httpsUpstreamPort HTTPS回源端口,仅UpstreamScheme为http时需要填当前字段
-                     * 
+                     * @deprecated
                      */
                     void SetHttpsUpstreamPort(const std::string& _httpsUpstreamPort);
 
                     /**
                      * 判断参数 HttpsUpstreamPort 是否已赋值
                      * @return HttpsUpstreamPort 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool HttpsUpstreamPortHasBeenSet() const;
 

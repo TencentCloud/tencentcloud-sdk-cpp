@@ -675,6 +675,27 @@ namespace TencentCloud
                      */
                     bool AvailableUpgradeHasBeenSet() const;
 
+                    /**
+                     * 获取可回退的版本
+                     * @return AvailableRollbackVersion 可回退的版本
+                     * 
+                     */
+                    std::string GetAvailableRollbackVersion() const;
+
+                    /**
+                     * 设置可回退的版本
+                     * @param _availableRollbackVersion 可回退的版本
+                     * 
+                     */
+                    void SetAvailableRollbackVersion(const std::string& _availableRollbackVersion);
+
+                    /**
+                     * 判断参数 AvailableRollbackVersion 是否已赋值
+                     * @return AvailableRollbackVersion 是否已赋值
+                     * 
+                     */
+                    bool AvailableRollbackVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -854,6 +875,12 @@ namespace TencentCloud
                      */
                     bool m_availableUpgrade;
                     bool m_availableUpgradeHasBeenSet;
+
+                    /**
+                     * 可回退的版本
+                     */
+                    std::string m_availableRollbackVersion;
+                    bool m_availableRollbackVersionHasBeenSet;
 
                 };
             }

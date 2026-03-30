@@ -1265,6 +1265,48 @@ namespace TencentCloud
                      */
                     bool PayModeHasBeenSet() const;
 
+                    /**
+                     * 获取计费侧地域
+                     * @return BillingRegion 计费侧地域
+                     * 
+                     */
+                    std::string GetBillingRegion() const;
+
+                    /**
+                     * 设置计费侧地域
+                     * @param _billingRegion 计费侧地域
+                     * 
+                     */
+                    void SetBillingRegion(const std::string& _billingRegion);
+
+                    /**
+                     * 判断参数 BillingRegion 是否已赋值
+                     * @return BillingRegion 是否已赋值
+                     * 
+                     */
+                    bool BillingRegionHasBeenSet() const;
+
+                    /**
+                     * 获取计费侧可用区
+                     * @return BillingZone 计费侧可用区
+                     * 
+                     */
+                    std::string GetBillingZone() const;
+
+                    /**
+                     * 设置计费侧可用区
+                     * @param _billingZone 计费侧可用区
+                     * 
+                     */
+                    void SetBillingZone(const std::string& _billingZone);
+
+                    /**
+                     * 判断参数 BillingZone 是否已赋值
+                     * @return BillingZone 是否已赋值
+                     * 
+                     */
+                    bool BillingZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1614,6 +1656,18 @@ namespace TencentCloud
                      */
                     uint64_t m_payMode;
                     bool m_payModeHasBeenSet;
+
+                    /**
+                     * 计费侧地域
+                     */
+                    std::string m_billingRegion;
+                    bool m_billingRegionHasBeenSet;
+
+                    /**
+                     * 计费侧可用区
+                     */
+                    std::string m_billingZone;
+                    bool m_billingZoneHasBeenSet;
 
                 };
             }

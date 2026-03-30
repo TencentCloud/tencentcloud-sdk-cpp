@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20230616::Model;
 using namespace std;
 
-DescribeAlarmNotifyHistoriesResponse::DescribeAlarmNotifyHistoriesResponse()
+DescribeAlarmNotifyHistoriesResponse::DescribeAlarmNotifyHistoriesResponse() :
+    m_alarmNotifyHistoryListHasBeenSet(false),
+    m_pageResultHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,43 @@ CoreInternalOutcome DescribeAlarmNotifyHistoriesResponse::Deserialize(const stri
     }
 
 
+    if (rsp.HasMember("AlarmNotifyHistoryList") && !rsp["AlarmNotifyHistoryList"].IsNull())
+    {
+        if (!rsp["AlarmNotifyHistoryList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AlarmNotifyHistoryList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["AlarmNotifyHistoryList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AlarmNotifyHistory item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_alarmNotifyHistoryList.push_back(item);
+        }
+        m_alarmNotifyHistoryListHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PageResult") && !rsp["PageResult"].IsNull())
+    {
+        if (!rsp["PageResult"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `PageResult` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_pageResult.Deserialize(rsp["PageResult"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_pageResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +109,30 @@ string DescribeAlarmNotifyHistoriesResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_alarmNotifyHistoryListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmNotifyHistoryList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_alarmNotifyHistoryList.begin(); itr != m_alarmNotifyHistoryList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_pageResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_pageResult.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +145,25 @@ string DescribeAlarmNotifyHistoriesResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<AlarmNotifyHistory> DescribeAlarmNotifyHistoriesResponse::GetAlarmNotifyHistoryList() const
+{
+    return m_alarmNotifyHistoryList;
+}
+
+bool DescribeAlarmNotifyHistoriesResponse::AlarmNotifyHistoryListHasBeenSet() const
+{
+    return m_alarmNotifyHistoryListHasBeenSet;
+}
+
+PageByNoResult DescribeAlarmNotifyHistoriesResponse::GetPageResult() const
+{
+    return m_pageResult;
+}
+
+bool DescribeAlarmNotifyHistoriesResponse::PageResultHasBeenSet() const
+{
+    return m_pageResultHasBeenSet;
+}
 
 

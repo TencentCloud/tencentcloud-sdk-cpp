@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取命中的模版类型，其中Common-公共库；Auto-自动聚类库；Owner-自建模版库
+                     * 获取<p>命中的模版类型，其中Common-公共库；Auto-自动聚类库；Owner-自建模版库</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HitGroup 命中的模版类型，其中Common-公共库；Auto-自动聚类库；Owner-自建模版库
+                     * @return HitGroup <p>命中的模版类型，其中Common-公共库；Auto-自动聚类库；Owner-自建模版库</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHitGroup() const;
 
                     /**
-                     * 设置命中的模版类型，其中Common-公共库；Auto-自动聚类库；Owner-自建模版库
+                     * 设置<p>命中的模版类型，其中Common-公共库；Auto-自动聚类库；Owner-自建模版库</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hitGroup 命中的模版类型，其中Common-公共库；Auto-自动聚类库；Owner-自建模版库
+                     * @param _hitGroup <p>命中的模版类型，其中Common-公共库；Auto-自动聚类库；Owner-自建模版库</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool HitGroupHasBeenSet() const;
 
                     /**
-                     * 获取命中的相似度
+                     * 获取<p>请求图像与命中攻击模板的相似度，相似度取值范围[0,2]，取值越小表示命中攻击模板的概率越高。默认阈值为0.6，当SimilarityScore≥0.6时判断为正常，SimilarityScore&lt;0.6是判断为攻击。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SimilarityScore 命中的相似度
+                     * @return SimilarityScore <p>请求图像与命中攻击模板的相似度，相似度取值范围[0,2]，取值越小表示命中攻击模板的概率越高。默认阈值为0.6，当SimilarityScore≥0.6时判断为正常，SimilarityScore&lt;0.6是判断为攻击。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetSimilarityScore() const;
 
                     /**
-                     * 设置命中的相似度
+                     * 设置<p>请求图像与命中攻击模板的相似度，相似度取值范围[0,2]，取值越小表示命中攻击模板的概率越高。默认阈值为0.6，当SimilarityScore≥0.6时判断为正常，SimilarityScore&lt;0.6是判断为攻击。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _similarityScore 命中的相似度
+                     * @param _similarityScore <p>请求图像与命中攻击模板的相似度，相似度取值范围[0,2]，取值越小表示命中攻击模板的概率越高。默认阈值为0.6，当SimilarityScore≥0.6时判断为正常，SimilarityScore&lt;0.6是判断为攻击。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool SimilarityScoreHasBeenSet() const;
 
                     /**
-                     * 获取命中的模板id
+                     * 获取<p>命中的模板id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HitTemplate 命中的模板id
+                     * @return HitTemplate <p>命中的模板id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHitTemplate() const;
 
                     /**
-                     * 设置命中的模板id
+                     * 设置<p>命中的模板id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hitTemplate 命中的模板id
+                     * @param _hitTemplate <p>命中的模板id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,21 +124,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 命中的模版类型，其中Common-公共库；Auto-自动聚类库；Owner-自建模版库
+                     * <p>命中的模版类型，其中Common-公共库；Auto-自动聚类库；Owner-自建模版库</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hitGroup;
                     bool m_hitGroupHasBeenSet;
 
                     /**
-                     * 命中的相似度
+                     * <p>请求图像与命中攻击模板的相似度，相似度取值范围[0,2]，取值越小表示命中攻击模板的概率越高。默认阈值为0.6，当SimilarityScore≥0.6时判断为正常，SimilarityScore&lt;0.6是判断为攻击。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_similarityScore;
                     bool m_similarityScoreHasBeenSet;
 
                     /**
-                     * 命中的模板id
+                     * <p>命中的模板id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hitTemplate;

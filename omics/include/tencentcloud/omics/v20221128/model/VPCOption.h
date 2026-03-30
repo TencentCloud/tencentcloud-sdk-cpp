@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取私有网络ID（VPCId和VPCCIDRBlock必选其一。若使用VPCId，则使用现用私有网络；若使用VPCCIDRBlock，则创建新的私有网络）
-                     * @return VPCId 私有网络ID（VPCId和VPCCIDRBlock必选其一。若使用VPCId，则使用现用私有网络；若使用VPCCIDRBlock，则创建新的私有网络）
+                     * 获取<p>私有网络ID（VPCId和VPCCIDRBlock必选其一。若使用VPCId，则使用现用私有网络；若使用VPCCIDRBlock，则创建新的私有网络）</p>
+                     * @return VPCId <p>私有网络ID（VPCId和VPCCIDRBlock必选其一。若使用VPCId，则使用现用私有网络；若使用VPCCIDRBlock，则创建新的私有网络）</p>
                      * 
                      */
                     std::string GetVPCId() const;
 
                     /**
-                     * 设置私有网络ID（VPCId和VPCCIDRBlock必选其一。若使用VPCId，则使用现用私有网络；若使用VPCCIDRBlock，则创建新的私有网络）
-                     * @param _vPCId 私有网络ID（VPCId和VPCCIDRBlock必选其一。若使用VPCId，则使用现用私有网络；若使用VPCCIDRBlock，则创建新的私有网络）
+                     * 设置<p>私有网络ID（VPCId和VPCCIDRBlock必选其一。若使用VPCId，则使用现用私有网络；若使用VPCCIDRBlock，则创建新的私有网络）</p>
+                     * @param _vPCId <p>私有网络ID（VPCId和VPCCIDRBlock必选其一。若使用VPCId，则使用现用私有网络；若使用VPCCIDRBlock，则创建新的私有网络）</p>
                      * 
                      */
                     void SetVPCId(const std::string& _vPCId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool VPCIdHasBeenSet() const;
 
                     /**
-                     * 获取子网ID（SubnetId和SubnetZone&SubnetCIDRBlock必选其一。若使用SubnetId，则使用现用子网；若使用SubnetZone&SubnetCIDRBlock，则创建新的子网）
-                     * @return SubnetId 子网ID（SubnetId和SubnetZone&SubnetCIDRBlock必选其一。若使用SubnetId，则使用现用子网；若使用SubnetZone&SubnetCIDRBlock，则创建新的子网）
+                     * 获取<p>子网ID（SubnetId和SubnetZone&amp;SubnetCIDRBlock必选其一。若使用SubnetId，则使用现用子网；若使用SubnetZone&amp;SubnetCIDRBlock，则创建新的子网）</p>
+                     * @return SubnetId <p>子网ID（SubnetId和SubnetZone&amp;SubnetCIDRBlock必选其一。若使用SubnetId，则使用现用子网；若使用SubnetZone&amp;SubnetCIDRBlock，则创建新的子网）</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网ID（SubnetId和SubnetZone&SubnetCIDRBlock必选其一。若使用SubnetId，则使用现用子网；若使用SubnetZone&SubnetCIDRBlock，则创建新的子网）
-                     * @param _subnetId 子网ID（SubnetId和SubnetZone&SubnetCIDRBlock必选其一。若使用SubnetId，则使用现用子网；若使用SubnetZone&SubnetCIDRBlock，则创建新的子网）
+                     * 设置<p>子网ID（SubnetId和SubnetZone&amp;SubnetCIDRBlock必选其一。若使用SubnetId，则使用现用子网；若使用SubnetZone&amp;SubnetCIDRBlock，则创建新的子网）</p>
+                     * @param _subnetId <p>子网ID（SubnetId和SubnetZone&amp;SubnetCIDRBlock必选其一。若使用SubnetId，则使用现用子网；若使用SubnetZone&amp;SubnetCIDRBlock，则创建新的子网）</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取子网可用区。
-                     * @return SubnetZone 子网可用区。
+                     * 获取<p>子网可用区。</p>
+                     * @return SubnetZone <p>子网可用区。</p>
                      * 
                      */
                     std::string GetSubnetZone() const;
 
                     /**
-                     * 设置子网可用区。
-                     * @param _subnetZone 子网可用区。
+                     * 设置<p>子网可用区。</p>
+                     * @param _subnetZone <p>子网可用区。</p>
                      * 
                      */
                     void SetSubnetZone(const std::string& _subnetZone);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool SubnetZoneHasBeenSet() const;
 
                     /**
-                     * 获取私有网络CIDR。
-                     * @return VPCCIDRBlock 私有网络CIDR。
+                     * 获取<p>私有网络CIDR。</p>
+                     * @return VPCCIDRBlock <p>私有网络CIDR。</p>
                      * 
                      */
                     std::string GetVPCCIDRBlock() const;
 
                     /**
-                     * 设置私有网络CIDR。
-                     * @param _vPCCIDRBlock 私有网络CIDR。
+                     * 设置<p>私有网络CIDR。</p>
+                     * @param _vPCCIDRBlock <p>私有网络CIDR。</p>
                      * 
                      */
                     void SetVPCCIDRBlock(const std::string& _vPCCIDRBlock);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool VPCCIDRBlockHasBeenSet() const;
 
                     /**
-                     * 获取子网CIDR。
-                     * @return SubnetCIDRBlock 子网CIDR。
+                     * 获取<p>子网CIDR。</p>
+                     * @return SubnetCIDRBlock <p>子网CIDR。</p>
                      * 
                      */
                     std::string GetSubnetCIDRBlock() const;
 
                     /**
-                     * 设置子网CIDR。
-                     * @param _subnetCIDRBlock 子网CIDR。
+                     * 设置<p>子网CIDR。</p>
+                     * @param _subnetCIDRBlock <p>子网CIDR。</p>
                      * 
                      */
                     void SetSubnetCIDRBlock(const std::string& _subnetCIDRBlock);
@@ -154,31 +154,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 私有网络ID（VPCId和VPCCIDRBlock必选其一。若使用VPCId，则使用现用私有网络；若使用VPCCIDRBlock，则创建新的私有网络）
+                     * <p>私有网络ID（VPCId和VPCCIDRBlock必选其一。若使用VPCId，则使用现用私有网络；若使用VPCCIDRBlock，则创建新的私有网络）</p>
                      */
                     std::string m_vPCId;
                     bool m_vPCIdHasBeenSet;
 
                     /**
-                     * 子网ID（SubnetId和SubnetZone&SubnetCIDRBlock必选其一。若使用SubnetId，则使用现用子网；若使用SubnetZone&SubnetCIDRBlock，则创建新的子网）
+                     * <p>子网ID（SubnetId和SubnetZone&amp;SubnetCIDRBlock必选其一。若使用SubnetId，则使用现用子网；若使用SubnetZone&amp;SubnetCIDRBlock，则创建新的子网）</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 子网可用区。
+                     * <p>子网可用区。</p>
                      */
                     std::string m_subnetZone;
                     bool m_subnetZoneHasBeenSet;
 
                     /**
-                     * 私有网络CIDR。
+                     * <p>私有网络CIDR。</p>
                      */
                     std::string m_vPCCIDRBlock;
                     bool m_vPCCIDRBlockHasBeenSet;
 
                     /**
-                     * 子网CIDR。
+                     * <p>子网CIDR。</p>
                      */
                     std::string m_subnetCIDRBlock;
                     bool m_subnetCIDRBlockHasBeenSet;

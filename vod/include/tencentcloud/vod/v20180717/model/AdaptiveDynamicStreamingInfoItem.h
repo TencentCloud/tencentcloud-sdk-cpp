@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取转自适应码流规格。
-                     * @return Definition 转自适应码流规格。
+                     * 获取<p>转自适应码流规格。</p>
+                     * @return Definition <p>转自适应码流规格。</p>
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置转自适应码流规格。
-                     * @param _definition 转自适应码流规格。
+                     * 设置<p>转自适应码流规格。</p>
+                     * @param _definition <p>转自适应码流规格。</p>
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -70,23 +70,15 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取打包格式，取值范围：
-<li>HLS；</li>
-<li>DASH。</li>
-                     * @return Package 打包格式，取值范围：
-<li>HLS；</li>
-<li>DASH。</li>
+                     * 获取<p>打包格式，取值范围：</p><li>HLS；</li><li>DASH。</li>
+                     * @return Package <p>打包格式，取值范围：</p><li>HLS；</li><li>DASH。</li>
                      * 
                      */
                     std::string GetPackage() const;
 
                     /**
-                     * 设置打包格式，取值范围：
-<li>HLS；</li>
-<li>DASH。</li>
-                     * @param _package 打包格式，取值范围：
-<li>HLS；</li>
-<li>DASH。</li>
+                     * 设置<p>打包格式，取值范围：</p><li>HLS；</li><li>DASH。</li>
+                     * @param _package <p>打包格式，取值范围：</p><li>HLS；</li><li>DASH。</li>
                      * 
                      */
                     void SetPackage(const std::string& _package);
@@ -99,15 +91,15 @@ namespace TencentCloud
                     bool PackageHasBeenSet() const;
 
                     /**
-                     * 获取加密类型。
-                     * @return DrmType 加密类型。
+                     * 获取<p>加密类型。</p>
+                     * @return DrmType <p>加密类型。</p>
                      * 
                      */
                     std::string GetDrmType() const;
 
                     /**
-                     * 设置加密类型。
-                     * @param _drmType 加密类型。
+                     * 设置<p>加密类型。</p>
+                     * @param _drmType <p>加密类型。</p>
                      * 
                      */
                     void SetDrmType(const std::string& _drmType);
@@ -120,15 +112,15 @@ namespace TencentCloud
                     bool DrmTypeHasBeenSet() const;
 
                     /**
-                     * 获取播放地址。
-                     * @return Url 播放地址。
+                     * 获取<p>播放地址。</p>
+                     * @return Url <p>播放地址。</p>
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置播放地址。
-                     * @param _url 播放地址。
+                     * 设置<p>播放地址。</p>
+                     * @param _url <p>播放地址。</p>
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -141,27 +133,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取媒体文件大小，单位：字节。
-<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和；</li>
-<li>当媒体文件为 DASH 时，大小是 mpd 和分片文件大小的总和；</li>
-<li><font color=red>注意</font>：在 2022-01-10T16:00:00Z 前处理生成的自适应码流文件此字段为0。</li>
-                     * @return Size 媒体文件大小，单位：字节。
-<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和；</li>
-<li>当媒体文件为 DASH 时，大小是 mpd 和分片文件大小的总和；</li>
-<li><font color=red>注意</font>：在 2022-01-10T16:00:00Z 前处理生成的自适应码流文件此字段为0。</li>
+                     * 获取<p>媒体文件大小，单位：字节。</p><li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和；</li><li>当媒体文件为 DASH 时，大小是 mpd 和分片文件大小的总和；</li><li><font color="red">注意</font>：在 2022-01-10T16:00:00Z 前处理生成的自适应码流文件此字段为0。</li>
+                     * @return Size <p>媒体文件大小，单位：字节。</p><li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和；</li><li>当媒体文件为 DASH 时，大小是 mpd 和分片文件大小的总和；</li><li><font color="red">注意</font>：在 2022-01-10T16:00:00Z 前处理生成的自适应码流文件此字段为0。</li>
                      * 
                      */
                     int64_t GetSize() const;
 
                     /**
-                     * 设置媒体文件大小，单位：字节。
-<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和；</li>
-<li>当媒体文件为 DASH 时，大小是 mpd 和分片文件大小的总和；</li>
-<li><font color=red>注意</font>：在 2022-01-10T16:00:00Z 前处理生成的自适应码流文件此字段为0。</li>
-                     * @param _size 媒体文件大小，单位：字节。
-<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和；</li>
-<li>当媒体文件为 DASH 时，大小是 mpd 和分片文件大小的总和；</li>
-<li><font color=red>注意</font>：在 2022-01-10T16:00:00Z 前处理生成的自适应码流文件此字段为0。</li>
+                     * 设置<p>媒体文件大小，单位：字节。</p><li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和；</li><li>当媒体文件为 DASH 时，大小是 mpd 和分片文件大小的总和；</li><li><font color="red">注意</font>：在 2022-01-10T16:00:00Z 前处理生成的自适应码流文件此字段为0。</li>
+                     * @param _size <p>媒体文件大小，单位：字节。</p><li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和；</li><li>当媒体文件为 DASH 时，大小是 mpd 和分片文件大小的总和；</li><li><font color="red">注意</font>：在 2022-01-10T16:00:00Z 前处理生成的自适应码流文件此字段为0。</li>
                      * 
                      */
                     void SetSize(const int64_t& _size);
@@ -174,27 +154,15 @@ namespace TencentCloud
                     bool SizeHasBeenSet() const;
 
                     /**
-                     * 获取数字水印类型。可选值：
-<li>Trace 表示经过溯源水印处理；</li>
-<li>CopyRight 表示经过版权水印处理；</li>
-<li>None 表示没有经过数字水印处理。</li>
-                     * @return DigitalWatermarkType 数字水印类型。可选值：
-<li>Trace 表示经过溯源水印处理；</li>
-<li>CopyRight 表示经过版权水印处理；</li>
-<li>None 表示没有经过数字水印处理。</li>
+                     * 获取<p>数字水印类型。可选值：</p><li>Trace 表示经过溯源水印处理；</li><li>CopyRight 表示经过版权水印处理；</li><li>None 表示没有经过数字水印处理。</li>
+                     * @return DigitalWatermarkType <p>数字水印类型。可选值：</p><li>Trace 表示经过溯源水印处理；</li><li>CopyRight 表示经过版权水印处理；</li><li>None 表示没有经过数字水印处理。</li>
                      * 
                      */
                     std::string GetDigitalWatermarkType() const;
 
                     /**
-                     * 设置数字水印类型。可选值：
-<li>Trace 表示经过溯源水印处理；</li>
-<li>CopyRight 表示经过版权水印处理；</li>
-<li>None 表示没有经过数字水印处理。</li>
-                     * @param _digitalWatermarkType 数字水印类型。可选值：
-<li>Trace 表示经过溯源水印处理；</li>
-<li>CopyRight 表示经过版权水印处理；</li>
-<li>None 表示没有经过数字水印处理。</li>
+                     * 设置<p>数字水印类型。可选值：</p><li>Trace 表示经过溯源水印处理；</li><li>CopyRight 表示经过版权水印处理；</li><li>None 表示没有经过数字水印处理。</li>
+                     * @param _digitalWatermarkType <p>数字水印类型。可选值：</p><li>Trace 表示经过溯源水印处理；</li><li>CopyRight 表示经过版权水印处理；</li><li>None 表示没有经过数字水印处理。</li>
                      * 
                      */
                     void SetDigitalWatermarkType(const std::string& _digitalWatermarkType);
@@ -207,15 +175,15 @@ namespace TencentCloud
                     bool DigitalWatermarkTypeHasBeenSet() const;
 
                     /**
-                     * 获取子流信息列表。
-                     * @return SubStreamSet 子流信息列表。
+                     * 获取<p>子流信息列表。</p>
+                     * @return SubStreamSet <p>子流信息列表。</p>
                      * 
                      */
                     std::vector<MediaSubStreamInfoItem> GetSubStreamSet() const;
 
                     /**
-                     * 设置子流信息列表。
-                     * @param _subStreamSet 子流信息列表。
+                     * 设置<p>子流信息列表。</p>
+                     * @param _subStreamSet <p>子流信息列表。</p>
                      * 
                      */
                     void SetSubStreamSet(const std::vector<MediaSubStreamInfoItem>& _subStreamSet);
@@ -228,15 +196,15 @@ namespace TencentCloud
                     bool SubStreamSetHasBeenSet() const;
 
                     /**
-                     * 获取版权信息。
-                     * @return CopyRightWatermarkText 版权信息。
+                     * 获取<p>版权信息。</p>
+                     * @return CopyRightWatermarkText <p>版权信息。</p>
                      * 
                      */
                     std::string GetCopyRightWatermarkText() const;
 
                     /**
-                     * 设置版权信息。
-                     * @param _copyRightWatermarkText 版权信息。
+                     * 设置<p>版权信息。</p>
+                     * @param _copyRightWatermarkText <p>版权信息。</p>
                      * 
                      */
                     void SetCopyRightWatermarkText(const std::string& _copyRightWatermarkText);
@@ -249,15 +217,15 @@ namespace TencentCloud
                     bool CopyRightWatermarkTextHasBeenSet() const;
 
                     /**
-                     * 获取数字水印模板id。
-                     * @return BlindWatermarkDefinition 数字水印模板id。
+                     * 获取<p>数字水印模板id。</p>
+                     * @return BlindWatermarkDefinition <p>数字水印模板id。</p>
                      * 
                      */
                     int64_t GetBlindWatermarkDefinition() const;
 
                     /**
-                     * 设置数字水印模板id。
-                     * @param _blindWatermarkDefinition 数字水印模板id。
+                     * 设置<p>数字水印模板id。</p>
+                     * @param _blindWatermarkDefinition <p>数字水印模板id。</p>
                      * 
                      */
                     void SetBlindWatermarkDefinition(const int64_t& _blindWatermarkDefinition);
@@ -270,15 +238,15 @@ namespace TencentCloud
                     bool BlindWatermarkDefinitionHasBeenSet() const;
 
                     /**
-                     * 获取字幕信息列表。
-                     * @return SubtitleSet 字幕信息列表。
+                     * 获取<p>字幕信息列表。</p>
+                     * @return SubtitleSet <p>字幕信息列表。</p>
                      * 
                      */
                     std::vector<MediaSubtitleItem> GetSubtitleSet() const;
 
                     /**
-                     * 设置字幕信息列表。
-                     * @param _subtitleSet 字幕信息列表。
+                     * 设置<p>字幕信息列表。</p>
+                     * @param _subtitleSet <p>字幕信息列表。</p>
                      * 
                      */
                     void SetSubtitleSet(const std::vector<MediaSubtitleItem>& _subtitleSet);
@@ -291,15 +259,15 @@ namespace TencentCloud
                     bool SubtitleSetHasBeenSet() const;
 
                     /**
-                     * 获取默认字幕的唯一标识。
-                     * @return DefaultSubtitleId 默认字幕的唯一标识。
+                     * 获取<p>默认字幕的唯一标识。</p>
+                     * @return DefaultSubtitleId <p>默认字幕的唯一标识。</p>
                      * 
                      */
                     std::string GetDefaultSubtitleId() const;
 
                     /**
-                     * 设置默认字幕的唯一标识。
-                     * @param _defaultSubtitleId 默认字幕的唯一标识。
+                     * 设置<p>默认字幕的唯一标识。</p>
+                     * @param _defaultSubtitleId <p>默认字幕的唯一标识。</p>
                      * 
                      */
                     void SetDefaultSubtitleId(const std::string& _defaultSubtitleId);
@@ -311,81 +279,100 @@ namespace TencentCloud
                      */
                     bool DefaultSubtitleIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>DRM加密方法。</p>
+                     * @return DrmEncryptType <p>DRM加密方法。</p>
+                     * 
+                     */
+                    std::string GetDrmEncryptType() const;
+
+                    /**
+                     * 设置<p>DRM加密方法。</p>
+                     * @param _drmEncryptType <p>DRM加密方法。</p>
+                     * 
+                     */
+                    void SetDrmEncryptType(const std::string& _drmEncryptType);
+
+                    /**
+                     * 判断参数 DrmEncryptType 是否已赋值
+                     * @return DrmEncryptType 是否已赋值
+                     * 
+                     */
+                    bool DrmEncryptTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 转自适应码流规格。
+                     * <p>转自适应码流规格。</p>
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * 打包格式，取值范围：
-<li>HLS；</li>
-<li>DASH。</li>
+                     * <p>打包格式，取值范围：</p><li>HLS；</li><li>DASH。</li>
                      */
                     std::string m_package;
                     bool m_packageHasBeenSet;
 
                     /**
-                     * 加密类型。
+                     * <p>加密类型。</p>
                      */
                     std::string m_drmType;
                     bool m_drmTypeHasBeenSet;
 
                     /**
-                     * 播放地址。
+                     * <p>播放地址。</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 媒体文件大小，单位：字节。
-<li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和；</li>
-<li>当媒体文件为 DASH 时，大小是 mpd 和分片文件大小的总和；</li>
-<li><font color=red>注意</font>：在 2022-01-10T16:00:00Z 前处理生成的自适应码流文件此字段为0。</li>
+                     * <p>媒体文件大小，单位：字节。</p><li>当媒体文件为 HLS 时，大小是 m3u8 和 ts 文件大小的总和；</li><li>当媒体文件为 DASH 时，大小是 mpd 和分片文件大小的总和；</li><li><font color="red">注意</font>：在 2022-01-10T16:00:00Z 前处理生成的自适应码流文件此字段为0。</li>
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
-                     * 数字水印类型。可选值：
-<li>Trace 表示经过溯源水印处理；</li>
-<li>CopyRight 表示经过版权水印处理；</li>
-<li>None 表示没有经过数字水印处理。</li>
+                     * <p>数字水印类型。可选值：</p><li>Trace 表示经过溯源水印处理；</li><li>CopyRight 表示经过版权水印处理；</li><li>None 表示没有经过数字水印处理。</li>
                      */
                     std::string m_digitalWatermarkType;
                     bool m_digitalWatermarkTypeHasBeenSet;
 
                     /**
-                     * 子流信息列表。
+                     * <p>子流信息列表。</p>
                      */
                     std::vector<MediaSubStreamInfoItem> m_subStreamSet;
                     bool m_subStreamSetHasBeenSet;
 
                     /**
-                     * 版权信息。
+                     * <p>版权信息。</p>
                      */
                     std::string m_copyRightWatermarkText;
                     bool m_copyRightWatermarkTextHasBeenSet;
 
                     /**
-                     * 数字水印模板id。
+                     * <p>数字水印模板id。</p>
                      */
                     int64_t m_blindWatermarkDefinition;
                     bool m_blindWatermarkDefinitionHasBeenSet;
 
                     /**
-                     * 字幕信息列表。
+                     * <p>字幕信息列表。</p>
                      */
                     std::vector<MediaSubtitleItem> m_subtitleSet;
                     bool m_subtitleSetHasBeenSet;
 
                     /**
-                     * 默认字幕的唯一标识。
+                     * <p>默认字幕的唯一标识。</p>
                      */
                     std::string m_defaultSubtitleId;
                     bool m_defaultSubtitleIdHasBeenSet;
+
+                    /**
+                     * <p>DRM加密方法。</p>
+                     */
+                    std::string m_drmEncryptType;
+                    bool m_drmEncryptTypeHasBeenSet;
 
                 };
             }

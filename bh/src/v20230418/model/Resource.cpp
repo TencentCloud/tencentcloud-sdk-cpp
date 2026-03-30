@@ -78,7 +78,9 @@ Resource::Resource() :
     m_resourceEditionHasBeenSet(false),
     m_timeUnitHasBeenSet(false),
     m_timeSpanHasBeenSet(false),
-    m_payModeHasBeenSet(false)
+    m_payModeHasBeenSet(false),
+    m_billingRegionHasBeenSet(false),
+    m_billingZoneHasBeenSet(false)
 {
 }
 
@@ -689,6 +691,26 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         m_payModeHasBeenSet = true;
     }
 
+    if (value.HasMember("BillingRegion") && !value["BillingRegion"].IsNull())
+    {
+        if (!value["BillingRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.BillingRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billingRegion = string(value["BillingRegion"].GetString());
+        m_billingRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("BillingZone") && !value["BillingZone"].IsNull())
+    {
+        if (!value["BillingZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.BillingZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billingZone = string(value["BillingZone"].GetString());
+        m_billingZoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1185,6 +1207,22 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "PayMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_payMode, allocator);
+    }
+
+    if (m_billingRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillingRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billingRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_billingZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillingZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billingZone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2116,5 +2154,37 @@ void Resource::SetPayMode(const uint64_t& _payMode)
 bool Resource::PayModeHasBeenSet() const
 {
     return m_payModeHasBeenSet;
+}
+
+string Resource::GetBillingRegion() const
+{
+    return m_billingRegion;
+}
+
+void Resource::SetBillingRegion(const string& _billingRegion)
+{
+    m_billingRegion = _billingRegion;
+    m_billingRegionHasBeenSet = true;
+}
+
+bool Resource::BillingRegionHasBeenSet() const
+{
+    return m_billingRegionHasBeenSet;
+}
+
+string Resource::GetBillingZone() const
+{
+    return m_billingZone;
+}
+
+void Resource::SetBillingZone(const string& _billingZone)
+{
+    m_billingZone = _billingZone;
+    m_billingZoneHasBeenSet = true;
+}
+
+bool Resource::BillingZoneHasBeenSet() const
+{
+    return m_billingZoneHasBeenSet;
 }
 

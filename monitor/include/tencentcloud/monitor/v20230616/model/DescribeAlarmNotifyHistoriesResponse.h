@@ -21,6 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/monitor/v20230616/model/AlarmNotifyHistory.h>
+#include <tencentcloud/monitor/v20230616/model/PageByNoResult.h>
 
 
 namespace TencentCloud
@@ -43,7 +45,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取告警历史
+                     * @return AlarmNotifyHistoryList 告警历史
+                     * 
+                     */
+                    std::vector<AlarmNotifyHistory> GetAlarmNotifyHistoryList() const;
+
+                    /**
+                     * 判断参数 AlarmNotifyHistoryList 是否已赋值
+                     * @return AlarmNotifyHistoryList 是否已赋值
+                     * 
+                     */
+                    bool AlarmNotifyHistoryListHasBeenSet() const;
+
+                    /**
+                     * 获取分页情况
+                     * @return PageResult 分页情况
+                     * 
+                     */
+                    PageByNoResult GetPageResult() const;
+
+                    /**
+                     * 判断参数 PageResult 是否已赋值
+                     * @return PageResult 是否已赋值
+                     * 
+                     */
+                    bool PageResultHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 告警历史
+                     */
+                    std::vector<AlarmNotifyHistory> m_alarmNotifyHistoryList;
+                    bool m_alarmNotifyHistoryListHasBeenSet;
+
+                    /**
+                     * 分页情况
+                     */
+                    PageByNoResult m_pageResult;
+                    bool m_pageResultHasBeenSet;
 
                 };
             }

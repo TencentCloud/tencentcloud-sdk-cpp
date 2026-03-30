@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool IsIdNumConsistentHasBeenSet() const;
 
                     /**
-                     * 获取<p>经营状态</p><p>枚举值：</p><ul><li>1： 开业（在营）</li><li>2： 迁出</li><li>3： 注销</li><li>4： 吊销</li><li>5： 撤销</li><li>6： 停业</li><li>0： 其他</li><li>-10002： 企业信息不正确，无法查询</li></ul>
-                     * @return OperatingStatus <p>经营状态</p><p>枚举值：</p><ul><li>1： 开业（在营）</li><li>2： 迁出</li><li>3： 注销</li><li>4： 吊销</li><li>5： 撤销</li><li>6： 停业</li><li>0： 其他</li><li>-10002： 企业信息不正确，无法查询</li></ul>
+                     * 获取<p>经营状态</p><p>枚举值：</p><ul><li>1： 开业（在营）</li><li>2： 迁出</li><li>3： 注销</li><li>4： 吊销</li><li>5： 撤销</li><li>6： 停业</li><li>7： 撤销登记</li><li>0： 其他</li><li>/： 无法查询</li></ul>
+                     * @return OperatingStatus <p>经营状态</p><p>枚举值：</p><ul><li>1： 开业（在营）</li><li>2： 迁出</li><li>3： 注销</li><li>4： 吊销</li><li>5： 撤销</li><li>6： 停业</li><li>7： 撤销登记</li><li>0： 其他</li><li>/： 无法查询</li></ul>
                      * 
                      */
                     std::string GetOperatingStatus() const;
@@ -142,8 +142,8 @@ namespace TencentCloud
                     bool OperatingStatusHasBeenSet() const;
 
                     /**
-                     * 获取<p>营业期限：一般包括营业开始时间和结束时间</p><p>参数格式：yyyy-MM-dd/yyyy-MM-dd</p><p>无固定期限的格式为：yyyy-MM-dd/<br>部分企业历史数据可能为空，将返回：/<br>企业信息不正确，无法查询，将返回：-10002</p>
-                     * @return OperatingPeriod <p>营业期限：一般包括营业开始时间和结束时间</p><p>参数格式：yyyy-MM-dd/yyyy-MM-dd</p><p>无固定期限的格式为：yyyy-MM-dd/<br>部分企业历史数据可能为空，将返回：/<br>企业信息不正确，无法查询，将返回：-10002</p>
+                     * 获取<p>营业期限：一般包括营业开始时间和结束时间</p><p>参数格式：yyyy-MM-dd/yyyy-MM-dd</p><p>无固定期限的格式为：yyyy-MM-dd/<br>部分企业历史数据可能为空，将返回：/<br>无法查询，将返回：/</p>
+                     * @return OperatingPeriod <p>营业期限：一般包括营业开始时间和结束时间</p><p>参数格式：yyyy-MM-dd/yyyy-MM-dd</p><p>无固定期限的格式为：yyyy-MM-dd/<br>部分企业历史数据可能为空，将返回：/<br>无法查询，将返回：/</p>
                      * 
                      */
                     std::string GetOperatingPeriod() const;
@@ -194,13 +194,13 @@ namespace TencentCloud
                     bool m_isIdNumConsistentHasBeenSet;
 
                     /**
-                     * <p>经营状态</p><p>枚举值：</p><ul><li>1： 开业（在营）</li><li>2： 迁出</li><li>3： 注销</li><li>4： 吊销</li><li>5： 撤销</li><li>6： 停业</li><li>0： 其他</li><li>-10002： 企业信息不正确，无法查询</li></ul>
+                     * <p>经营状态</p><p>枚举值：</p><ul><li>1： 开业（在营）</li><li>2： 迁出</li><li>3： 注销</li><li>4： 吊销</li><li>5： 撤销</li><li>6： 停业</li><li>7： 撤销登记</li><li>0： 其他</li><li>/： 无法查询</li></ul>
                      */
                     std::string m_operatingStatus;
                     bool m_operatingStatusHasBeenSet;
 
                     /**
-                     * <p>营业期限：一般包括营业开始时间和结束时间</p><p>参数格式：yyyy-MM-dd/yyyy-MM-dd</p><p>无固定期限的格式为：yyyy-MM-dd/<br>部分企业历史数据可能为空，将返回：/<br>企业信息不正确，无法查询，将返回：-10002</p>
+                     * <p>营业期限：一般包括营业开始时间和结束时间</p><p>参数格式：yyyy-MM-dd/yyyy-MM-dd</p><p>无固定期限的格式为：yyyy-MM-dd/<br>部分企业历史数据可能为空，将返回：/<br>无法查询，将返回：/</p>
                      */
                     std::string m_operatingPeriod;
                     bool m_operatingPeriodHasBeenSet;

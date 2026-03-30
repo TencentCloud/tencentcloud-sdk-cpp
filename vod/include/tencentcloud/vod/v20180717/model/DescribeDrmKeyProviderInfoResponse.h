@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取华曦达（SDMC）相关的 DRM 密钥提供商信息。
-                     * @return SDMCInfo 华曦达（SDMC）相关的 DRM 密钥提供商信息。
+                     * 获取<p>华曦达（SDMC）相关的 DRM 密钥提供商信息。</p><p>华曦达服务后续逐步下线，请使用VOD DRM加密服务。</p>
+                     * @return SDMCInfo <p>华曦达（SDMC）相关的 DRM 密钥提供商信息。</p><p>华曦达服务后续逐步下线，请使用VOD DRM加密服务。</p>
                      * 
                      */
                     SDMCDrmKeyProviderInfo GetSDMCInfo() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 华曦达（SDMC）相关的 DRM 密钥提供商信息。
+                     * <p>华曦达（SDMC）相关的 DRM 密钥提供商信息。</p><p>华曦达服务后续逐步下线，请使用VOD DRM加密服务。</p>
                      */
                     SDMCDrmKeyProviderInfo m_sDMCInfo;
                     bool m_sDMCInfoHasBeenSet;

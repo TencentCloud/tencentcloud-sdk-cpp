@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取传入的类型可选：URL，COS
-                     * @return Type 传入的类型可选：URL，COS
+                     * 获取<p>传入的类型可选：URL，COS</p>
+                     * @return Type <p>传入的类型可选：URL，COS</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置传入的类型可选：URL，COS
-                     * @param _type 传入的类型可选：URL，COS
+                     * 设置<p>传入的类型可选：URL，COS</p>
+                     * @param _type <p>传入的类型可选：URL，COS</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取Url地址
-                     * @return Url Url地址
+                     * 获取<p>Url地址</p>
+                     * @return Url <p>Url地址</p>
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置Url地址
-                     * @param _url Url地址
+                     * 设置<p>Url地址</p>
+                     * @param _url <p>Url地址</p>
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -89,18 +89,18 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取桶信息。当输入当时COS时，该字段不为空
+                     * 获取<p>桶信息。当输入当时COS时，该字段不为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BucketInfo 桶信息。当输入当时COS时，该字段不为空
+                     * @return BucketInfo <p>桶信息。当输入当时COS时，该字段不为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBucketInfo() const;
 
                     /**
-                     * 设置桶信息。当输入当时COS时，该字段不为空
+                     * 设置<p>桶信息。当输入当时COS时，该字段不为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _bucketInfo 桶信息。当输入当时COS时，该字段不为空
+                     * @param _bucketInfo <p>桶信息。当输入当时COS时，该字段不为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -113,26 +113,80 @@ namespace TencentCloud
                      */
                     bool BucketInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>大模型审核可选输入图片列表</p>
+                     * @return ImageUrlList <p>大模型审核可选输入图片列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetImageUrlList() const;
+
+                    /**
+                     * 设置<p>大模型审核可选输入图片列表</p>
+                     * @param _imageUrlList <p>大模型审核可选输入图片列表</p>
+                     * 
+                     */
+                    void SetImageUrlList(const std::vector<std::string>& _imageUrlList);
+
+                    /**
+                     * 判断参数 ImageUrlList 是否已赋值
+                     * @return ImageUrlList 是否已赋值
+                     * 
+                     */
+                    bool ImageUrlListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>大模型审核场景下，base64编码的审核要求内容</p>
+                     * @return TextContent <p>大模型审核场景下，base64编码的审核要求内容</p>
+                     * 
+                     */
+                    std::string GetTextContent() const;
+
+                    /**
+                     * 设置<p>大模型审核场景下，base64编码的审核要求内容</p>
+                     * @param _textContent <p>大模型审核场景下，base64编码的审核要求内容</p>
+                     * 
+                     */
+                    void SetTextContent(const std::string& _textContent);
+
+                    /**
+                     * 判断参数 TextContent 是否已赋值
+                     * @return TextContent 是否已赋值
+                     * 
+                     */
+                    bool TextContentHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 传入的类型可选：URL，COS
+                     * <p>传入的类型可选：URL，COS</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * Url地址
+                     * <p>Url地址</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 桶信息。当输入当时COS时，该字段不为空
+                     * <p>桶信息。当输入当时COS时，该字段不为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucketInfo;
                     bool m_bucketInfoHasBeenSet;
+
+                    /**
+                     * <p>大模型审核可选输入图片列表</p>
+                     */
+                    std::vector<std::string> m_imageUrlList;
+                    bool m_imageUrlListHasBeenSet;
+
+                    /**
+                     * <p>大模型审核场景下，base64编码的审核要求内容</p>
+                     */
+                    std::string m_textContent;
+                    bool m_textContentHasBeenSet;
 
                 };
             }

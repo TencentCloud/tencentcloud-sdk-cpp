@@ -28,6 +28,7 @@ AdaptiveDynamicStreamingTemplate::AdaptiveDynamicStreamingTemplate() :
     m_formatHasBeenSet(false),
     m_drmTypeHasBeenSet(false),
     m_drmKeyProviderHasBeenSet(false),
+    m_drmEncryptTypeHasBeenSet(false),
     m_streamInfosHasBeenSet(false),
     m_disableHigherVideoBitrateHasBeenSet(false),
     m_disableHigherVideoResolutionHasBeenSet(false),
@@ -110,6 +111,16 @@ CoreInternalOutcome AdaptiveDynamicStreamingTemplate::Deserialize(const rapidjso
         }
         m_drmKeyProvider = string(value["DrmKeyProvider"].GetString());
         m_drmKeyProviderHasBeenSet = true;
+    }
+
+    if (value.HasMember("DrmEncryptType") && !value["DrmEncryptType"].IsNull())
+    {
+        if (!value["DrmEncryptType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTemplate.DrmEncryptType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_drmEncryptType = string(value["DrmEncryptType"].GetString());
+        m_drmEncryptTypeHasBeenSet = true;
     }
 
     if (value.HasMember("StreamInfos") && !value["StreamInfos"].IsNull())
@@ -243,6 +254,14 @@ void AdaptiveDynamicStreamingTemplate::ToJsonObject(rapidjson::Value &value, rap
         string key = "DrmKeyProvider";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_drmKeyProvider.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_drmEncryptTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DrmEncryptType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_drmEncryptType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_streamInfosHasBeenSet)
@@ -413,6 +432,22 @@ void AdaptiveDynamicStreamingTemplate::SetDrmKeyProvider(const string& _drmKeyPr
 bool AdaptiveDynamicStreamingTemplate::DrmKeyProviderHasBeenSet() const
 {
     return m_drmKeyProviderHasBeenSet;
+}
+
+string AdaptiveDynamicStreamingTemplate::GetDrmEncryptType() const
+{
+    return m_drmEncryptType;
+}
+
+void AdaptiveDynamicStreamingTemplate::SetDrmEncryptType(const string& _drmEncryptType)
+{
+    m_drmEncryptType = _drmEncryptType;
+    m_drmEncryptTypeHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTemplate::DrmEncryptTypeHasBeenSet() const
+{
+    return m_drmEncryptTypeHasBeenSet;
 }
 
 vector<AdaptiveStreamTemplate> AdaptiveDynamicStreamingTemplate::GetStreamInfos() const

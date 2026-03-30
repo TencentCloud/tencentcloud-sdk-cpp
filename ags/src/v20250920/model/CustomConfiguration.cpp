@@ -28,7 +28,8 @@ CustomConfiguration::CustomConfiguration() :
     m_envHasBeenSet(false),
     m_portsHasBeenSet(false),
     m_resourcesHasBeenSet(false),
-    m_probeHasBeenSet(false)
+    m_probeHasBeenSet(false),
+    m_dNSConfigHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,23 @@ CoreInternalOutcome CustomConfiguration::Deserialize(const rapidjson::Value &val
         m_probeHasBeenSet = true;
     }
 
+    if (value.HasMember("DNSConfig") && !value["DNSConfig"].IsNull())
+    {
+        if (!value["DNSConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomConfiguration.DNSConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dNSConfig.Deserialize(value["DNSConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dNSConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -252,6 +270,15 @@ void CustomConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_probe.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dNSConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DNSConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dNSConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -383,5 +410,21 @@ void CustomConfiguration::SetProbe(const ProbeConfiguration& _probe)
 bool CustomConfiguration::ProbeHasBeenSet() const
 {
     return m_probeHasBeenSet;
+}
+
+DNSConfig CustomConfiguration::GetDNSConfig() const
+{
+    return m_dNSConfig;
+}
+
+void CustomConfiguration::SetDNSConfig(const DNSConfig& _dNSConfig)
+{
+    m_dNSConfig = _dNSConfig;
+    m_dNSConfigHasBeenSet = true;
+}
+
+bool CustomConfiguration::DNSConfigHasBeenSet() const
+{
+    return m_dNSConfigHasBeenSet;
 }
 

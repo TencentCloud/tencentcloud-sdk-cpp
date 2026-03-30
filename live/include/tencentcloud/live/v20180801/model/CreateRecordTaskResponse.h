@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID，全局唯一标识录制任务。返回TaskId字段说明录制任务创建成功。
-                     * @return TaskId 任务ID，全局唯一标识录制任务。返回TaskId字段说明录制任务创建成功。
+                     * 获取<p>任务ID，全局唯一标识录制任务。返回TaskId字段说明录制任务创建成功。</p>
+                     * @return TaskId <p>任务ID，全局唯一标识录制任务。返回TaskId字段说明录制任务创建成功。</p>
                      * 
                      */
                     std::string GetTaskId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务ID，全局唯一标识录制任务。返回TaskId字段说明录制任务创建成功。
+                     * <p>任务ID，全局唯一标识录制任务。返回TaskId字段说明录制任务创建成功。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

@@ -34,7 +34,8 @@ PassportRecognizeInfos::PassportRecognizeInfos() :
     m_dateOfExpirationHasBeenSet(false),
     m_signatureHasBeenSet(false),
     m_issuePlaceHasBeenSet(false),
-    m_issuingAuthorityHasBeenSet(false)
+    m_issuingAuthorityHasBeenSet(false),
+    m_birthPlaceHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome PassportRecognizeInfos::Deserialize(const rapidjson::Value &
         m_issuingAuthorityHasBeenSet = true;
     }
 
+    if (value.HasMember("BirthPlace") && !value["BirthPlace"].IsNull())
+    {
+        if (!value["BirthPlace"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PassportRecognizeInfos.BirthPlace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_birthPlace = string(value["BirthPlace"].GetString());
+        m_birthPlaceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +311,14 @@ void PassportRecognizeInfos::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "IssuingAuthority";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_issuingAuthority.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_birthPlaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BirthPlace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_birthPlace.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +546,21 @@ void PassportRecognizeInfos::SetIssuingAuthority(const string& _issuingAuthority
 bool PassportRecognizeInfos::IssuingAuthorityHasBeenSet() const
 {
     return m_issuingAuthorityHasBeenSet;
+}
+
+string PassportRecognizeInfos::GetBirthPlace() const
+{
+    return m_birthPlace;
+}
+
+void PassportRecognizeInfos::SetBirthPlace(const string& _birthPlace)
+{
+    m_birthPlace = _birthPlace;
+    m_birthPlaceHasBeenSet = true;
+}
+
+bool PassportRecognizeInfos::BirthPlaceHasBeenSet() const
+{
+    return m_birthPlaceHasBeenSet;
 }
 

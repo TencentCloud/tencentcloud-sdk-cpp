@@ -39,7 +39,9 @@ CreateModelServiceRequest::CreateModelServiceRequest() :
     m_ipWhiteListHasBeenSet(false),
     m_ipBlackListHasBeenSet(false),
     m_pluginConfigsHasBeenSet(false),
-    m_timeoutHasBeenSet(false)
+    m_timeoutHasBeenSet(false),
+    m_promptModerateStatusHasBeenSet(false),
+    m_promptModerateConfigHasBeenSet(false)
 {
 }
 
@@ -211,6 +213,23 @@ string CreateModelServiceRequest::ToJsonString() const
         string key = "Timeout";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_timeout, allocator);
+    }
+
+    if (m_promptModerateStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PromptModerateStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_promptModerateStatus, allocator);
+    }
+
+    if (m_promptModerateConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PromptModerateConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_promptModerateConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -491,6 +510,38 @@ void CreateModelServiceRequest::SetTimeout(const int64_t& _timeout)
 bool CreateModelServiceRequest::TimeoutHasBeenSet() const
 {
     return m_timeoutHasBeenSet;
+}
+
+bool CreateModelServiceRequest::GetPromptModerateStatus() const
+{
+    return m_promptModerateStatus;
+}
+
+void CreateModelServiceRequest::SetPromptModerateStatus(const bool& _promptModerateStatus)
+{
+    m_promptModerateStatus = _promptModerateStatus;
+    m_promptModerateStatusHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::PromptModerateStatusHasBeenSet() const
+{
+    return m_promptModerateStatusHasBeenSet;
+}
+
+PromptModerateConfigDTO CreateModelServiceRequest::GetPromptModerateConfig() const
+{
+    return m_promptModerateConfig;
+}
+
+void CreateModelServiceRequest::SetPromptModerateConfig(const PromptModerateConfigDTO& _promptModerateConfig)
+{
+    m_promptModerateConfig = _promptModerateConfig;
+    m_promptModerateConfigHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::PromptModerateConfigHasBeenSet() const
+{
+    return m_promptModerateConfigHasBeenSet;
 }
 
 

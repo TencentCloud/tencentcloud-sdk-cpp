@@ -27,7 +27,8 @@ TextDetection::TextDetection() :
     m_advancedInfoHasBeenSet(false),
     m_itemPolygonHasBeenSet(false),
     m_wordsHasBeenSet(false),
-    m_wordCoordPointHasBeenSet(false)
+    m_wordCoordPointHasBeenSet(false),
+    m_languageHasBeenSet(false)
 {
 }
 
@@ -143,6 +144,16 @@ CoreInternalOutcome TextDetection::Deserialize(const rapidjson::Value &value)
         m_wordCoordPointHasBeenSet = true;
     }
 
+    if (value.HasMember("Language") && !value["Language"].IsNull())
+    {
+        if (!value["Language"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TextDetection.Language` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_language = string(value["Language"].GetString());
+        m_languageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -226,6 +237,14 @@ void TextDetection::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_languageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Language";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_language.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -341,5 +360,21 @@ void TextDetection::SetWordCoordPoint(const vector<DetectedWordCoordPoint>& _wor
 bool TextDetection::WordCoordPointHasBeenSet() const
 {
     return m_wordCoordPointHasBeenSet;
+}
+
+string TextDetection::GetLanguage() const
+{
+    return m_language;
+}
+
+void TextDetection::SetLanguage(const string& _language)
+{
+    m_language = _language;
+    m_languageHasBeenSet = true;
+}
+
+bool TextDetection::LanguageHasBeenSet() const
+{
+    return m_languageHasBeenSet;
 }
 

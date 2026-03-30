@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID，创建任务后返回的TaskId字段
-                     * @return TaskId 任务ID，创建任务后返回的TaskId字段
+                     * 获取<p>任务ID，创建任务后返回的TaskId字段</p>
+                     * @return TaskId <p>任务ID，创建任务后返回的TaskId字段</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务ID，创建任务后返回的TaskId字段
-                     * @param _taskId 任务ID，创建任务后返回的TaskId字段
+                     * 设置<p>任务ID，创建任务后返回的TaskId字段</p>
+                     * @param _taskId <p>任务ID，创建任务后返回的TaskId字段</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取是否展示所有分片，默认只展示命中规则的分片
-                     * @return ShowAllSegments 是否展示所有分片，默认只展示命中规则的分片
+                     * 获取<p>是否展示所有分片，默认只展示命中规则的分片</p>
+                     * @return ShowAllSegments <p>是否展示所有分片，默认只展示命中规则的分片</p>
                      * 
                      */
                     bool GetShowAllSegments() const;
 
                     /**
-                     * 设置是否展示所有分片，默认只展示命中规则的分片
-                     * @param _showAllSegments 是否展示所有分片，默认只展示命中规则的分片
+                     * 设置<p>是否展示所有分片，默认只展示命中规则的分片</p>
+                     * @param _showAllSegments <p>是否展示所有分片，默认只展示命中规则的分片</p>
                      * 
                      */
                     void SetShowAllSegments(const bool& _showAllSegments);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务ID，创建任务后返回的TaskId字段
+                     * <p>任务ID，创建任务后返回的TaskId字段</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 是否展示所有分片，默认只展示命中规则的分片
+                     * <p>是否展示所有分片，默认只展示命中规则的分片</p>
                      */
                     bool m_showAllSegments;
                     bool m_showAllSegmentsHasBeenSet;

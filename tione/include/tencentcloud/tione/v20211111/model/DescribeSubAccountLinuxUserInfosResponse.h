@@ -58,6 +58,20 @@ namespace TencentCloud
                      */
                     bool SubAccountListHasBeenSet() const;
 
+                    /**
+                     * 获取总数（配合分页使用）
+                     * @return TotalCount 总数（配合分页使用）
+                     * 
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +79,12 @@ namespace TencentCloud
                      */
                     std::vector<SubAccountInfo> m_subAccountList;
                     bool m_subAccountListHasBeenSet;
+
+                    /**
+                     * 总数（配合分页使用）
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

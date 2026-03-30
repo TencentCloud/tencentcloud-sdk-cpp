@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份文件名
-                     * @return Name 备份文件名
+                     * 获取<p>备份文件名</p>
+                     * @return Name <p>备份文件名</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置备份文件名
-                     * @param _name 备份文件名
+                     * 设置<p>备份文件名</p>
+                     * @param _name <p>备份文件名</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取备份文件大小，单位：Byte
-                     * @return Size 备份文件大小，单位：Byte
+                     * 获取<p>备份文件大小，单位：Byte</p>
+                     * @return Size <p>备份文件大小，单位：Byte</p>
                      * 
                      */
                     int64_t GetSize() const;
 
                     /**
-                     * 设置备份文件大小，单位：Byte
-                     * @param _size 备份文件大小，单位：Byte
+                     * 设置<p>备份文件大小，单位：Byte</p>
+                     * @param _size <p>备份文件大小，单位：Byte</p>
                      * 
                      */
                     void SetSize(const int64_t& _size);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool SizeHasBeenSet() const;
 
                     /**
-                     * 获取备份快照时间，时间格式：2016-03-17 02:10:37
-                     * @return Date 备份快照时间，时间格式：2016-03-17 02:10:37
+                     * 获取<p>备份快照时间，时间格式：2016-03-17 02:10:37</p>
+                     * @return Date <p>备份快照时间，时间格式：2016-03-17 02:10:37</p>
                      * 
                      */
                     std::string GetDate() const;
 
                     /**
-                     * 设置备份快照时间，时间格式：2016-03-17 02:10:37
-                     * @param _date 备份快照时间，时间格式：2016-03-17 02:10:37
+                     * 设置<p>备份快照时间，时间格式：2016-03-17 02:10:37</p>
+                     * @param _date <p>备份快照时间，时间格式：2016-03-17 02:10:37</p>
                      * 
                      */
                     void SetDate(const std::string& _date);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool DateHasBeenSet() const;
 
                     /**
-                     * 获取下载地址
-                     * @return IntranetUrl 下载地址
+                     * 获取<p>下载地址</p>
+                     * @return IntranetUrl <p>下载地址</p>
                      * 
                      */
                     std::string GetIntranetUrl() const;
 
                     /**
-                     * 设置下载地址
-                     * @param _intranetUrl 下载地址
+                     * 设置<p>下载地址</p>
+                     * @param _intranetUrl <p>下载地址</p>
                      * 
                      */
                     void SetIntranetUrl(const std::string& _intranetUrl);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool IntranetUrlHasBeenSet() const;
 
                     /**
-                     * 获取下载地址
-                     * @return InternetUrl 下载地址
+                     * 获取<p>下载地址</p>
+                     * @return InternetUrl <p>下载地址</p>
                      * 
                      */
                     std::string GetInternetUrl() const;
 
                     /**
-                     * 设置下载地址
-                     * @param _internetUrl 下载地址
+                     * 设置<p>下载地址</p>
+                     * @param _internetUrl <p>下载地址</p>
                      * 
                      */
                     void SetInternetUrl(const std::string& _internetUrl);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool InternetUrlHasBeenSet() const;
 
                     /**
-                     * 获取日志具体类型。可能的值有 "logical": 逻辑冷备， "physical": 物理冷备。
-                     * @return Type 日志具体类型。可能的值有 "logical": 逻辑冷备， "physical": 物理冷备。
+                     * 获取<p>日志具体类型。可能的值有 &quot;logical&quot;: 逻辑冷备， &quot;physical&quot;: 物理冷备。</p>
+                     * @return Type <p>日志具体类型。可能的值有 &quot;logical&quot;: 逻辑冷备， &quot;physical&quot;: 物理冷备。</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置日志具体类型。可能的值有 "logical": 逻辑冷备， "physical": 物理冷备。
-                     * @param _type 日志具体类型。可能的值有 "logical": 逻辑冷备， "physical": 物理冷备。
+                     * 设置<p>日志具体类型。可能的值有 &quot;logical&quot;: 逻辑冷备， &quot;physical&quot;: 物理冷备。</p>
+                     * @param _type <p>日志具体类型。可能的值有 &quot;logical&quot;: 逻辑冷备， &quot;physical&quot;: 物理冷备。</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取备份子任务的ID，删除备份文件时使用
-                     * @return BackupId 备份子任务的ID，删除备份文件时使用
+                     * 获取<p>备份子任务的ID，删除备份文件时使用</p>
+                     * @return BackupId <p>备份子任务的ID，删除备份文件时使用</p>
                      * 
                      */
                     int64_t GetBackupId() const;
 
                     /**
-                     * 设置备份子任务的ID，删除备份文件时使用
-                     * @param _backupId 备份子任务的ID，删除备份文件时使用
+                     * 设置<p>备份子任务的ID，删除备份文件时使用</p>
+                     * @param _backupId <p>备份子任务的ID，删除备份文件时使用</p>
                      * 
                      */
                     void SetBackupId(const int64_t& _backupId);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool BackupIdHasBeenSet() const;
 
                     /**
-                     * 获取备份任务状态。可能的值有 "SUCCESS": 备份成功， "FAILED": 备份失败， "RUNNING": 备份进行中。
-                     * @return Status 备份任务状态。可能的值有 "SUCCESS": 备份成功， "FAILED": 备份失败， "RUNNING": 备份进行中。
+                     * 获取<p>备份任务状态。可能的值有 &quot;SUCCESS&quot;: 备份成功， &quot;FAILED&quot;: 备份失败， &quot;RUNNING&quot;: 备份进行中。</p>
+                     * @return Status <p>备份任务状态。可能的值有 &quot;SUCCESS&quot;: 备份成功， &quot;FAILED&quot;: 备份失败， &quot;RUNNING&quot;: 备份进行中。</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置备份任务状态。可能的值有 "SUCCESS": 备份成功， "FAILED": 备份失败， "RUNNING": 备份进行中。
-                     * @param _status 备份任务状态。可能的值有 "SUCCESS": 备份成功， "FAILED": 备份失败， "RUNNING": 备份进行中。
+                     * 设置<p>备份任务状态。可能的值有 &quot;SUCCESS&quot;: 备份成功， &quot;FAILED&quot;: 备份失败， &quot;RUNNING&quot;: 备份进行中。</p>
+                     * @param _status <p>备份任务状态。可能的值有 &quot;SUCCESS&quot;: 备份成功， &quot;FAILED&quot;: 备份失败， &quot;RUNNING&quot;: 备份进行中。</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取备份任务的完成时间
-                     * @return FinishTime 备份任务的完成时间
+                     * 获取<p>备份任务的完成时间</p>
+                     * @return FinishTime <p>备份任务的完成时间</p>
                      * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
-                     * 设置备份任务的完成时间
-                     * @param _finishTime 备份任务的完成时间
+                     * 设置<p>备份任务的完成时间</p>
+                     * @param _finishTime <p>备份任务的完成时间</p>
                      * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool FinishTimeHasBeenSet() const;
 
                     /**
-                     * 获取（该值将废弃，不建议使用）备份的创建者，可能的值：SYSTEM - 系统创建，Uin - 发起者Uin值。
-                     * @return Creator （该值将废弃，不建议使用）备份的创建者，可能的值：SYSTEM - 系统创建，Uin - 发起者Uin值。
+                     * 获取<p>（该值将废弃，不建议使用）备份的创建者，可能的值：SYSTEM - 系统创建，Uin - 发起者Uin值。</p>
+                     * @return Creator <p>（该值将废弃，不建议使用）备份的创建者，可能的值：SYSTEM - 系统创建，Uin - 发起者Uin值。</p>
                      * 
                      */
                     std::string GetCreator() const;
 
                     /**
-                     * 设置（该值将废弃，不建议使用）备份的创建者，可能的值：SYSTEM - 系统创建，Uin - 发起者Uin值。
-                     * @param _creator （该值将废弃，不建议使用）备份的创建者，可能的值：SYSTEM - 系统创建，Uin - 发起者Uin值。
+                     * 设置<p>（该值将废弃，不建议使用）备份的创建者，可能的值：SYSTEM - 系统创建，Uin - 发起者Uin值。</p>
+                     * @param _creator <p>（该值将废弃，不建议使用）备份的创建者，可能的值：SYSTEM - 系统创建，Uin - 发起者Uin值。</p>
                      * 
                      */
                     void SetCreator(const std::string& _creator);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool CreatorHasBeenSet() const;
 
                     /**
-                     * 获取备份任务的开始时间
-                     * @return StartTime 备份任务的开始时间
+                     * 获取<p>备份任务的开始时间</p>
+                     * @return StartTime <p>备份任务的开始时间</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置备份任务的开始时间
-                     * @param _startTime 备份任务的开始时间
+                     * 设置<p>备份任务的开始时间</p>
+                     * @param _startTime <p>备份任务的开始时间</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取备份方法。可能的值有 "full": 全量备份， "partial": 部分备份。
-                     * @return Method 备份方法。可能的值有 "full": 全量备份， "partial": 部分备份。
+                     * 获取<p>备份方法。可能的值有 &quot;full&quot;: 全量备份， &quot;partial&quot;: 部分备份。</p>
+                     * @return Method <p>备份方法。可能的值有 &quot;full&quot;: 全量备份， &quot;partial&quot;: 部分备份。</p>
                      * 
                      */
                     std::string GetMethod() const;
 
                     /**
-                     * 设置备份方法。可能的值有 "full": 全量备份， "partial": 部分备份。
-                     * @param _method 备份方法。可能的值有 "full": 全量备份， "partial": 部分备份。
+                     * 设置<p>备份方法。可能的值有 &quot;full&quot;: 全量备份， &quot;partial&quot;: 部分备份。</p>
+                     * @param _method <p>备份方法。可能的值有 &quot;full&quot;: 全量备份， &quot;partial&quot;: 部分备份。</p>
                      * 
                      */
                     void SetMethod(const std::string& _method);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool MethodHasBeenSet() const;
 
                     /**
-                     * 获取备份方式。可能的值有 "manual": 手动备份， "automatic": 自动备份。
-                     * @return Way 备份方式。可能的值有 "manual": 手动备份， "automatic": 自动备份。
+                     * 获取<p>备份方式。可能的值有 &quot;manual&quot;: 手动备份， &quot;automatic&quot;: 自动备份。</p>
+                     * @return Way <p>备份方式。可能的值有 &quot;manual&quot;: 手动备份， &quot;automatic&quot;: 自动备份。</p>
                      * 
                      */
                     std::string GetWay() const;
 
                     /**
-                     * 设置备份方式。可能的值有 "manual": 手动备份， "automatic": 自动备份。
-                     * @param _way 备份方式。可能的值有 "manual": 手动备份， "automatic": 自动备份。
+                     * 设置<p>备份方式。可能的值有 &quot;manual&quot;: 手动备份， &quot;automatic&quot;: 自动备份。</p>
+                     * @param _way <p>备份方式。可能的值有 &quot;manual&quot;: 手动备份， &quot;automatic&quot;: 自动备份。</p>
                      * 
                      */
                     void SetWay(const std::string& _way);
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool WayHasBeenSet() const;
 
                     /**
-                     * 获取手动备份别名
-                     * @return ManualBackupName 手动备份别名
+                     * 获取<p>手动备份别名</p>
+                     * @return ManualBackupName <p>手动备份别名</p>
                      * 
                      */
                     std::string GetManualBackupName() const;
 
                     /**
-                     * 设置手动备份别名
-                     * @param _manualBackupName 手动备份别名
+                     * 设置<p>手动备份别名</p>
+                     * @param _manualBackupName <p>手动备份别名</p>
                      * 
                      */
                     void SetManualBackupName(const std::string& _manualBackupName);
@@ -342,15 +342,15 @@ namespace TencentCloud
                     bool ManualBackupNameHasBeenSet() const;
 
                     /**
-                     * 获取备份保留类型，save_mode_regular - 常规保存备份，save_mode_period - 定期保存备份
-                     * @return SaveMode 备份保留类型，save_mode_regular - 常规保存备份，save_mode_period - 定期保存备份
+                     * 获取<p>备份保留类型，save_mode_regular - 常规保存备份，save_mode_period - 定期保存备份</p>
+                     * @return SaveMode <p>备份保留类型，save_mode_regular - 常规保存备份，save_mode_period - 定期保存备份</p>
                      * 
                      */
                     std::string GetSaveMode() const;
 
                     /**
-                     * 设置备份保留类型，save_mode_regular - 常规保存备份，save_mode_period - 定期保存备份
-                     * @param _saveMode 备份保留类型，save_mode_regular - 常规保存备份，save_mode_period - 定期保存备份
+                     * 设置<p>备份保留类型，save_mode_regular - 常规保存备份，save_mode_period - 定期保存备份</p>
+                     * @param _saveMode <p>备份保留类型，save_mode_regular - 常规保存备份，save_mode_period - 定期保存备份</p>
                      * 
                      */
                     void SetSaveMode(const std::string& _saveMode);
@@ -363,15 +363,15 @@ namespace TencentCloud
                     bool SaveModeHasBeenSet() const;
 
                     /**
-                     * 获取本地备份所在地域
-                     * @return Region 本地备份所在地域
+                     * 获取<p>本地备份所在地域</p>
+                     * @return Region <p>本地备份所在地域</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置本地备份所在地域
-                     * @param _region 本地备份所在地域
+                     * 设置<p>本地备份所在地域</p>
+                     * @param _region <p>本地备份所在地域</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -384,15 +384,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取异地备份详细信息
-                     * @return RemoteInfo 异地备份详细信息
+                     * 获取<p>异地备份详细信息</p>
+                     * @return RemoteInfo <p>异地备份详细信息</p>
                      * 
                      */
                     std::vector<RemoteBackupInfo> GetRemoteInfo() const;
 
                     /**
-                     * 设置异地备份详细信息
-                     * @param _remoteInfo 异地备份详细信息
+                     * 设置<p>异地备份详细信息</p>
+                     * @param _remoteInfo <p>异地备份详细信息</p>
                      * 
                      */
                     void SetRemoteInfo(const std::vector<RemoteBackupInfo>& _remoteInfo);
@@ -405,15 +405,15 @@ namespace TencentCloud
                     bool RemoteInfoHasBeenSet() const;
 
                     /**
-                     * 获取存储方式，0-常规存储，1-归档存储，2-标准存储，默认为0
-                     * @return CosStorageType 存储方式，0-常规存储，1-归档存储，2-标准存储，默认为0
+                     * 获取<p>存储方式，0-常规存储，1-归档存储，2-标准存储，默认为0</p>
+                     * @return CosStorageType <p>存储方式，0-常规存储，1-归档存储，2-标准存储，默认为0</p>
                      * 
                      */
                     int64_t GetCosStorageType() const;
 
                     /**
-                     * 设置存储方式，0-常规存储，1-归档存储，2-标准存储，默认为0
-                     * @param _cosStorageType 存储方式，0-常规存储，1-归档存储，2-标准存储，默认为0
+                     * 设置<p>存储方式，0-常规存储，1-归档存储，2-标准存储，默认为0</p>
+                     * @param _cosStorageType <p>存储方式，0-常规存储，1-归档存储，2-标准存储，默认为0</p>
                      * 
                      */
                     void SetCosStorageType(const int64_t& _cosStorageType);
@@ -426,15 +426,15 @@ namespace TencentCloud
                     bool CosStorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
-                     * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
+                     * 获取<p>实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。</p>
+                     * @return InstanceId <p>实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
-                     * @param _instanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
+                     * 设置<p>实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。</p>
+                     * @param _instanceId <p>实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -447,15 +447,36 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取备份文件是否加密， on-加密， off-未加密
-                     * @return EncryptionFlag 备份文件是否加密， on-加密， off-未加密
+                     * 获取<p>备份完成进度</p>
+                     * @return Progress <p>备份完成进度</p>
+                     * 
+                     */
+                    int64_t GetProgress() const;
+
+                    /**
+                     * 设置<p>备份完成进度</p>
+                     * @param _progress <p>备份完成进度</p>
+                     * 
+                     */
+                    void SetProgress(const int64_t& _progress);
+
+                    /**
+                     * 判断参数 Progress 是否已赋值
+                     * @return Progress 是否已赋值
+                     * 
+                     */
+                    bool ProgressHasBeenSet() const;
+
+                    /**
+                     * 获取<p>备份文件是否加密， on-加密， off-未加密</p>
+                     * @return EncryptionFlag <p>备份文件是否加密， on-加密， off-未加密</p>
                      * 
                      */
                     std::string GetEncryptionFlag() const;
 
                     /**
-                     * 设置备份文件是否加密， on-加密， off-未加密
-                     * @param _encryptionFlag 备份文件是否加密， on-加密， off-未加密
+                     * 设置<p>备份文件是否加密， on-加密， off-未加密</p>
+                     * @param _encryptionFlag <p>备份文件是否加密， on-加密， off-未加密</p>
                      * 
                      */
                     void SetEncryptionFlag(const std::string& _encryptionFlag);
@@ -468,15 +489,15 @@ namespace TencentCloud
                     bool EncryptionFlagHasBeenSet() const;
 
                     /**
-                     * 获取备份GTID点位
-                     * @return ExecutedGTIDSet 备份GTID点位
+                     * 获取<p>备份GTID点位</p>
+                     * @return ExecutedGTIDSet <p>备份GTID点位</p>
                      * 
                      */
                     std::string GetExecutedGTIDSet() const;
 
                     /**
-                     * 设置备份GTID点位
-                     * @param _executedGTIDSet 备份GTID点位
+                     * 设置<p>备份GTID点位</p>
+                     * @param _executedGTIDSet <p>备份GTID点位</p>
                      * 
                      */
                     void SetExecutedGTIDSet(const std::string& _executedGTIDSet);
@@ -489,15 +510,15 @@ namespace TencentCloud
                     bool ExecutedGTIDSetHasBeenSet() const;
 
                     /**
-                     * 获取备份文件MD5值
-                     * @return MD5 备份文件MD5值
+                     * 获取<p>备份文件MD5值</p>
+                     * @return MD5 <p>备份文件MD5值</p>
                      * 
                      */
                     std::string GetMD5() const;
 
                     /**
-                     * 设置备份文件MD5值
-                     * @param _mD5 备份文件MD5值
+                     * 设置<p>备份文件MD5值</p>
+                     * @param _mD5 <p>备份文件MD5值</p>
                      * 
                      */
                     void SetMD5(const std::string& _mD5);
@@ -512,133 +533,139 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 备份文件名
+                     * <p>备份文件名</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 备份文件大小，单位：Byte
+                     * <p>备份文件大小，单位：Byte</p>
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
-                     * 备份快照时间，时间格式：2016-03-17 02:10:37
+                     * <p>备份快照时间，时间格式：2016-03-17 02:10:37</p>
                      */
                     std::string m_date;
                     bool m_dateHasBeenSet;
 
                     /**
-                     * 下载地址
+                     * <p>下载地址</p>
                      */
                     std::string m_intranetUrl;
                     bool m_intranetUrlHasBeenSet;
 
                     /**
-                     * 下载地址
+                     * <p>下载地址</p>
                      */
                     std::string m_internetUrl;
                     bool m_internetUrlHasBeenSet;
 
                     /**
-                     * 日志具体类型。可能的值有 "logical": 逻辑冷备， "physical": 物理冷备。
+                     * <p>日志具体类型。可能的值有 &quot;logical&quot;: 逻辑冷备， &quot;physical&quot;: 物理冷备。</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 备份子任务的ID，删除备份文件时使用
+                     * <p>备份子任务的ID，删除备份文件时使用</p>
                      */
                     int64_t m_backupId;
                     bool m_backupIdHasBeenSet;
 
                     /**
-                     * 备份任务状态。可能的值有 "SUCCESS": 备份成功， "FAILED": 备份失败， "RUNNING": 备份进行中。
+                     * <p>备份任务状态。可能的值有 &quot;SUCCESS&quot;: 备份成功， &quot;FAILED&quot;: 备份失败， &quot;RUNNING&quot;: 备份进行中。</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 备份任务的完成时间
+                     * <p>备份任务的完成时间</p>
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;
 
                     /**
-                     * （该值将废弃，不建议使用）备份的创建者，可能的值：SYSTEM - 系统创建，Uin - 发起者Uin值。
+                     * <p>（该值将废弃，不建议使用）备份的创建者，可能的值：SYSTEM - 系统创建，Uin - 发起者Uin值。</p>
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
 
                     /**
-                     * 备份任务的开始时间
+                     * <p>备份任务的开始时间</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 备份方法。可能的值有 "full": 全量备份， "partial": 部分备份。
+                     * <p>备份方法。可能的值有 &quot;full&quot;: 全量备份， &quot;partial&quot;: 部分备份。</p>
                      */
                     std::string m_method;
                     bool m_methodHasBeenSet;
 
                     /**
-                     * 备份方式。可能的值有 "manual": 手动备份， "automatic": 自动备份。
+                     * <p>备份方式。可能的值有 &quot;manual&quot;: 手动备份， &quot;automatic&quot;: 自动备份。</p>
                      */
                     std::string m_way;
                     bool m_wayHasBeenSet;
 
                     /**
-                     * 手动备份别名
+                     * <p>手动备份别名</p>
                      */
                     std::string m_manualBackupName;
                     bool m_manualBackupNameHasBeenSet;
 
                     /**
-                     * 备份保留类型，save_mode_regular - 常规保存备份，save_mode_period - 定期保存备份
+                     * <p>备份保留类型，save_mode_regular - 常规保存备份，save_mode_period - 定期保存备份</p>
                      */
                     std::string m_saveMode;
                     bool m_saveModeHasBeenSet;
 
                     /**
-                     * 本地备份所在地域
+                     * <p>本地备份所在地域</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 异地备份详细信息
+                     * <p>异地备份详细信息</p>
                      */
                     std::vector<RemoteBackupInfo> m_remoteInfo;
                     bool m_remoteInfoHasBeenSet;
 
                     /**
-                     * 存储方式，0-常规存储，1-归档存储，2-标准存储，默认为0
+                     * <p>存储方式，0-常规存储，1-归档存储，2-标准存储，默认为0</p>
                      */
                     int64_t m_cosStorageType;
                     bool m_cosStorageTypeHasBeenSet;
 
                     /**
-                     * 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
+                     * <p>实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 备份文件是否加密， on-加密， off-未加密
+                     * <p>备份完成进度</p>
+                     */
+                    int64_t m_progress;
+                    bool m_progressHasBeenSet;
+
+                    /**
+                     * <p>备份文件是否加密， on-加密， off-未加密</p>
                      */
                     std::string m_encryptionFlag;
                     bool m_encryptionFlagHasBeenSet;
 
                     /**
-                     * 备份GTID点位
+                     * <p>备份GTID点位</p>
                      */
                     std::string m_executedGTIDSet;
                     bool m_executedGTIDSetHasBeenSet;
 
                     /**
-                     * 备份文件MD5值
+                     * <p>备份文件MD5值</p>
                      */
                     std::string m_mD5;
                     bool m_mD5HasBeenSet;

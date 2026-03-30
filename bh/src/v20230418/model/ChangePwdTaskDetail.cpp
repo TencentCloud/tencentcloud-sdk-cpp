@@ -23,7 +23,8 @@ using namespace std;
 ChangePwdTaskDetail::ChangePwdTaskDetail() :
     m_deviceHasBeenSet(false),
     m_accountHasBeenSet(false),
-    m_lastChangeStatusHasBeenSet(false)
+    m_lastChangeStatusHasBeenSet(false),
+    m_taskStatusHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,16 @@ CoreInternalOutcome ChangePwdTaskDetail::Deserialize(const rapidjson::Value &val
         m_lastChangeStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskStatus") && !value["TaskStatus"].IsNull())
+    {
+        if (!value["TaskStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChangePwdTaskDetail.TaskStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskStatus = value["TaskStatus"].GetUint64();
+        m_taskStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +110,14 @@ void ChangePwdTaskDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "LastChangeStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastChangeStatus, allocator);
+    }
+
+    if (m_taskStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskStatus, allocator);
     }
 
 }
@@ -150,5 +169,21 @@ void ChangePwdTaskDetail::SetLastChangeStatus(const uint64_t& _lastChangeStatus)
 bool ChangePwdTaskDetail::LastChangeStatusHasBeenSet() const
 {
     return m_lastChangeStatusHasBeenSet;
+}
+
+uint64_t ChangePwdTaskDetail::GetTaskStatus() const
+{
+    return m_taskStatus;
+}
+
+void ChangePwdTaskDetail::SetTaskStatus(const uint64_t& _taskStatus)
+{
+    m_taskStatus = _taskStatus;
+    m_taskStatusHasBeenSet = true;
+}
+
+bool ChangePwdTaskDetail::TaskStatusHasBeenSet() const
+{
+    return m_taskStatusHasBeenSet;
 }
 

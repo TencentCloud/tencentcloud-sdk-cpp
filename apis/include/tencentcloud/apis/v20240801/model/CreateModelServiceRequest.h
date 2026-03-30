@@ -26,6 +26,7 @@
 #include <tencentcloud/apis/v20240801/model/TokenLimitConfigDTO.h>
 #include <tencentcloud/apis/v20240801/model/TmsConfigDTO.h>
 #include <tencentcloud/apis/v20240801/model/PluginConfigDTO.h>
+#include <tencentcloud/apis/v20240801/model/PromptModerateConfigDTO.h>
 
 
 namespace TencentCloud
@@ -404,6 +405,48 @@ namespace TencentCloud
                      */
                     bool TimeoutHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启提示词安全检测
+                     * @return PromptModerateStatus 是否开启提示词安全检测
+                     * 
+                     */
+                    bool GetPromptModerateStatus() const;
+
+                    /**
+                     * 设置是否开启提示词安全检测
+                     * @param _promptModerateStatus 是否开启提示词安全检测
+                     * 
+                     */
+                    void SetPromptModerateStatus(const bool& _promptModerateStatus);
+
+                    /**
+                     * 判断参数 PromptModerateStatus 是否已赋值
+                     * @return PromptModerateStatus 是否已赋值
+                     * 
+                     */
+                    bool PromptModerateStatusHasBeenSet() const;
+
+                    /**
+                     * 获取提示词安全检测配置
+                     * @return PromptModerateConfig 提示词安全检测配置
+                     * 
+                     */
+                    PromptModerateConfigDTO GetPromptModerateConfig() const;
+
+                    /**
+                     * 设置提示词安全检测配置
+                     * @param _promptModerateConfig 提示词安全检测配置
+                     * 
+                     */
+                    void SetPromptModerateConfig(const PromptModerateConfigDTO& _promptModerateConfig);
+
+                    /**
+                     * 判断参数 PromptModerateConfig 是否已赋值
+                     * @return PromptModerateConfig 是否已赋值
+                     * 
+                     */
+                    bool PromptModerateConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -507,6 +550,18 @@ namespace TencentCloud
                      */
                     int64_t m_timeout;
                     bool m_timeoutHasBeenSet;
+
+                    /**
+                     * 是否开启提示词安全检测
+                     */
+                    bool m_promptModerateStatus;
+                    bool m_promptModerateStatusHasBeenSet;
+
+                    /**
+                     * 提示词安全检测配置
+                     */
+                    PromptModerateConfigDTO m_promptModerateConfig;
+                    bool m_promptModerateConfigHasBeenSet;
 
                 };
             }

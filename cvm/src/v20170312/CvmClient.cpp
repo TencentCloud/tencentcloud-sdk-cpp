@@ -2340,6 +2340,156 @@ CvmClient::DescribeRegionsOutcomeCallable CvmClient::DescribeRegionsCallable(con
     return prom->get_future();
 }
 
+CvmClient::DescribeResourcePoolPackInstancesOutcome CvmClient::DescribeResourcePoolPackInstances(const DescribeResourcePoolPackInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourcePoolPackInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourcePoolPackInstancesResponse rsp = DescribeResourcePoolPackInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourcePoolPackInstancesOutcome(rsp);
+        else
+            return DescribeResourcePoolPackInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourcePoolPackInstancesOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::DescribeResourcePoolPackInstancesAsync(const DescribeResourcePoolPackInstancesRequest& request, const DescribeResourcePoolPackInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeResourcePoolPackInstancesRequest&;
+    using Resp = DescribeResourcePoolPackInstancesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourcePoolPackInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CvmClient::DescribeResourcePoolPackInstancesOutcomeCallable CvmClient::DescribeResourcePoolPackInstancesCallable(const DescribeResourcePoolPackInstancesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeResourcePoolPackInstancesOutcome>>();
+    DescribeResourcePoolPackInstancesAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeResourcePoolPackInstancesRequest&,
+        DescribeResourcePoolPackInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CvmClient::DescribeResourcePoolPackTypeConfigsOutcome CvmClient::DescribeResourcePoolPackTypeConfigs(const DescribeResourcePoolPackTypeConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourcePoolPackTypeConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourcePoolPackTypeConfigsResponse rsp = DescribeResourcePoolPackTypeConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourcePoolPackTypeConfigsOutcome(rsp);
+        else
+            return DescribeResourcePoolPackTypeConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourcePoolPackTypeConfigsOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::DescribeResourcePoolPackTypeConfigsAsync(const DescribeResourcePoolPackTypeConfigsRequest& request, const DescribeResourcePoolPackTypeConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeResourcePoolPackTypeConfigsRequest&;
+    using Resp = DescribeResourcePoolPackTypeConfigsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourcePoolPackTypeConfigs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CvmClient::DescribeResourcePoolPackTypeConfigsOutcomeCallable CvmClient::DescribeResourcePoolPackTypeConfigsCallable(const DescribeResourcePoolPackTypeConfigsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeResourcePoolPackTypeConfigsOutcome>>();
+    DescribeResourcePoolPackTypeConfigsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeResourcePoolPackTypeConfigsRequest&,
+        DescribeResourcePoolPackTypeConfigsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CvmClient::DescribeResourcePoolPacksOutcome CvmClient::DescribeResourcePoolPacks(const DescribeResourcePoolPacksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourcePoolPacks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourcePoolPacksResponse rsp = DescribeResourcePoolPacksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourcePoolPacksOutcome(rsp);
+        else
+            return DescribeResourcePoolPacksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourcePoolPacksOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::DescribeResourcePoolPacksAsync(const DescribeResourcePoolPacksRequest& request, const DescribeResourcePoolPacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeResourcePoolPacksRequest&;
+    using Resp = DescribeResourcePoolPacksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeResourcePoolPacks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CvmClient::DescribeResourcePoolPacksOutcomeCallable CvmClient::DescribeResourcePoolPacksCallable(const DescribeResourcePoolPacksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeResourcePoolPacksOutcome>>();
+    DescribeResourcePoolPacksAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DescribeResourcePoolPacksRequest&,
+        DescribeResourcePoolPacksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CvmClient::DescribeTaskInfoOutcome CvmClient::DescribeTaskInfo(const DescribeTaskInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTaskInfo");
@@ -2882,6 +3032,56 @@ CvmClient::ImportKeyPairOutcomeCallable CvmClient::ImportKeyPairCallable(const I
         const CvmClient*,
         const ImportKeyPairRequest&,
         ImportKeyPairOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CvmClient::InquirePricePurchaseResourcePoolPacksOutcome CvmClient::InquirePricePurchaseResourcePoolPacks(const InquirePricePurchaseResourcePoolPacksRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePricePurchaseResourcePoolPacks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePricePurchaseResourcePoolPacksResponse rsp = InquirePricePurchaseResourcePoolPacksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePricePurchaseResourcePoolPacksOutcome(rsp);
+        else
+            return InquirePricePurchaseResourcePoolPacksOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePricePurchaseResourcePoolPacksOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::InquirePricePurchaseResourcePoolPacksAsync(const InquirePricePurchaseResourcePoolPacksRequest& request, const InquirePricePurchaseResourcePoolPacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const InquirePricePurchaseResourcePoolPacksRequest&;
+    using Resp = InquirePricePurchaseResourcePoolPacksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "InquirePricePurchaseResourcePoolPacks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CvmClient::InquirePricePurchaseResourcePoolPacksOutcomeCallable CvmClient::InquirePricePurchaseResourcePoolPacksCallable(const InquirePricePurchaseResourcePoolPacksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<InquirePricePurchaseResourcePoolPacksOutcome>>();
+    InquirePricePurchaseResourcePoolPacksAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const InquirePricePurchaseResourcePoolPacksRequest&,
+        InquirePricePurchaseResourcePoolPacksOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4140,6 +4340,56 @@ CvmClient::ProgramFpgaImageOutcomeCallable CvmClient::ProgramFpgaImageCallable(c
     return prom->get_future();
 }
 
+CvmClient::PurchaseResourcePoolPacksOutcome CvmClient::PurchaseResourcePoolPacks(const PurchaseResourcePoolPacksRequest &request)
+{
+    auto outcome = MakeRequest(request, "PurchaseResourcePoolPacks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PurchaseResourcePoolPacksResponse rsp = PurchaseResourcePoolPacksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PurchaseResourcePoolPacksOutcome(rsp);
+        else
+            return PurchaseResourcePoolPacksOutcome(o.GetError());
+    }
+    else
+    {
+        return PurchaseResourcePoolPacksOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::PurchaseResourcePoolPacksAsync(const PurchaseResourcePoolPacksRequest& request, const PurchaseResourcePoolPacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const PurchaseResourcePoolPacksRequest&;
+    using Resp = PurchaseResourcePoolPacksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "PurchaseResourcePoolPacks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CvmClient::PurchaseResourcePoolPacksOutcomeCallable CvmClient::PurchaseResourcePoolPacksCallable(const PurchaseResourcePoolPacksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<PurchaseResourcePoolPacksOutcome>>();
+    PurchaseResourcePoolPacksAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const PurchaseResourcePoolPacksRequest&,
+        PurchaseResourcePoolPacksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CvmClient::RebootInstancesOutcome CvmClient::RebootInstances(const RebootInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "RebootInstances");
@@ -4932,6 +5182,56 @@ CvmClient::TerminateInstancesOutcomeCallable CvmClient::TerminateInstancesCallab
         const CvmClient*,
         const TerminateInstancesRequest&,
         TerminateInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CvmClient::TerminateResourcePoolPacksOutcome CvmClient::TerminateResourcePoolPacks(const TerminateResourcePoolPacksRequest &request)
+{
+    auto outcome = MakeRequest(request, "TerminateResourcePoolPacks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TerminateResourcePoolPacksResponse rsp = TerminateResourcePoolPacksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TerminateResourcePoolPacksOutcome(rsp);
+        else
+            return TerminateResourcePoolPacksOutcome(o.GetError());
+    }
+    else
+    {
+        return TerminateResourcePoolPacksOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::TerminateResourcePoolPacksAsync(const TerminateResourcePoolPacksRequest& request, const TerminateResourcePoolPacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const TerminateResourcePoolPacksRequest&;
+    using Resp = TerminateResourcePoolPacksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "TerminateResourcePoolPacks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CvmClient::TerminateResourcePoolPacksOutcomeCallable CvmClient::TerminateResourcePoolPacksCallable(const TerminateResourcePoolPacksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<TerminateResourcePoolPacksOutcome>>();
+    TerminateResourcePoolPacksAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const TerminateResourcePoolPacksRequest&,
+        TerminateResourcePoolPacksOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

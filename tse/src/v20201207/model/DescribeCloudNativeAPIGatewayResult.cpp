@@ -49,7 +49,8 @@ DescribeCloudNativeAPIGatewayResult::DescribeCloudNativeAPIGatewayResult() :
     m_deleteProtectHasBeenSet(false),
     m_availableVersionsHasBeenSet(false),
     m_availableUpgradeVersionsHasBeenSet(false),
-    m_availableUpgradeHasBeenSet(false)
+    m_availableUpgradeHasBeenSet(false),
+    m_availableRollbackVersionHasBeenSet(false)
 {
 }
 
@@ -388,6 +389,16 @@ CoreInternalOutcome DescribeCloudNativeAPIGatewayResult::Deserialize(const rapid
         m_availableUpgradeHasBeenSet = true;
     }
 
+    if (value.HasMember("AvailableRollbackVersion") && !value["AvailableRollbackVersion"].IsNull())
+    {
+        if (!value["AvailableRollbackVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeCloudNativeAPIGatewayResult.AvailableRollbackVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_availableRollbackVersion = string(value["AvailableRollbackVersion"].GetString());
+        m_availableRollbackVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -650,6 +661,14 @@ void DescribeCloudNativeAPIGatewayResult::ToJsonObject(rapidjson::Value &value, 
         string key = "AvailableUpgrade";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_availableUpgrade, allocator);
+    }
+
+    if (m_availableRollbackVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailableRollbackVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_availableRollbackVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1117,5 +1136,21 @@ void DescribeCloudNativeAPIGatewayResult::SetAvailableUpgrade(const bool& _avail
 bool DescribeCloudNativeAPIGatewayResult::AvailableUpgradeHasBeenSet() const
 {
     return m_availableUpgradeHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewayResult::GetAvailableRollbackVersion() const
+{
+    return m_availableRollbackVersion;
+}
+
+void DescribeCloudNativeAPIGatewayResult::SetAvailableRollbackVersion(const string& _availableRollbackVersion)
+{
+    m_availableRollbackVersion = _availableRollbackVersion;
+    m_availableRollbackVersionHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayResult::AvailableRollbackVersionHasBeenSet() const
+{
+    return m_availableRollbackVersionHasBeenSet;
 }
 

@@ -240,6 +240,56 @@ SqlserverClient::CloseInterCommunicationOutcomeCallable SqlserverClient::CloseIn
     return prom->get_future();
 }
 
+SqlserverClient::CloseLogOutcome SqlserverClient::CloseLog(const CloseLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseLogResponse rsp = CloseLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseLogOutcome(rsp);
+        else
+            return CloseLogOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseLogOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::CloseLogAsync(const CloseLogRequest& request, const CloseLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CloseLogRequest&;
+    using Resp = CloseLogResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CloseLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+SqlserverClient::CloseLogOutcomeCallable SqlserverClient::CloseLogCallable(const CloseLogRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CloseLogOutcome>>();
+    CloseLogAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const CloseLogRequest&,
+        CloseLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 SqlserverClient::CompleteExpansionOutcome SqlserverClient::CompleteExpansion(const CompleteExpansionRequest &request)
 {
     auto outcome = MakeRequest(request, "CompleteExpansion");
@@ -840,6 +890,56 @@ SqlserverClient::CreateDBInstancesOutcomeCallable SqlserverClient::CreateDBInsta
     return prom->get_future();
 }
 
+SqlserverClient::CreateExportTaskOutcome SqlserverClient::CreateExportTask(const CreateExportTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateExportTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateExportTaskResponse rsp = CreateExportTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateExportTaskOutcome(rsp);
+        else
+            return CreateExportTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateExportTaskOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::CreateExportTaskAsync(const CreateExportTaskRequest& request, const CreateExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateExportTaskRequest&;
+    using Resp = CreateExportTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateExportTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+SqlserverClient::CreateExportTaskOutcomeCallable SqlserverClient::CreateExportTaskCallable(const CreateExportTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateExportTaskOutcome>>();
+    CreateExportTaskAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const CreateExportTaskRequest&,
+        CreateExportTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 SqlserverClient::CreateIncrementalMigrationOutcome SqlserverClient::CreateIncrementalMigration(const CreateIncrementalMigrationRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateIncrementalMigration");
@@ -1332,6 +1432,56 @@ SqlserverClient::DeleteDBInstanceOutcomeCallable SqlserverClient::DeleteDBInstan
         const SqlserverClient*,
         const DeleteDBInstanceRequest&,
         DeleteDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+SqlserverClient::DeleteExportTaskOutcome SqlserverClient::DeleteExportTask(const DeleteExportTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteExportTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteExportTaskResponse rsp = DeleteExportTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteExportTaskOutcome(rsp);
+        else
+            return DeleteExportTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteExportTaskOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DeleteExportTaskAsync(const DeleteExportTaskRequest& request, const DeleteExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteExportTaskRequest&;
+    using Resp = DeleteExportTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteExportTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+SqlserverClient::DeleteExportTaskOutcomeCallable SqlserverClient::DeleteExportTaskCallable(const DeleteExportTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteExportTaskOutcome>>();
+    DeleteExportTaskAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DeleteExportTaskRequest&,
+        DeleteExportTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2940,6 +3090,56 @@ SqlserverClient::DescribeDatabasesNormalOutcomeCallable SqlserverClient::Describ
     return prom->get_future();
 }
 
+SqlserverClient::DescribeExportTasksOutcome SqlserverClient::DescribeExportTasks(const DescribeExportTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExportTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExportTasksResponse rsp = DescribeExportTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExportTasksOutcome(rsp);
+        else
+            return DescribeExportTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExportTasksOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DescribeExportTasksAsync(const DescribeExportTasksRequest& request, const DescribeExportTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeExportTasksRequest&;
+    using Resp = DescribeExportTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeExportTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+SqlserverClient::DescribeExportTasksOutcomeCallable SqlserverClient::DescribeExportTasksCallable(const DescribeExportTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeExportTasksOutcome>>();
+    DescribeExportTasksAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeExportTasksRequest&,
+        DescribeExportTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 SqlserverClient::DescribeFlowStatusOutcome SqlserverClient::DescribeFlowStatus(const DescribeFlowStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFlowStatus");
@@ -3382,6 +3582,106 @@ SqlserverClient::DescribeInstanceTradeParameterOutcomeCallable SqlserverClient::
         const SqlserverClient*,
         const DescribeInstanceTradeParameterRequest&,
         DescribeInstanceTradeParameterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+SqlserverClient::DescribeLogInstanceListOutcome SqlserverClient::DescribeLogInstanceList(const DescribeLogInstanceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogInstanceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogInstanceListResponse rsp = DescribeLogInstanceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogInstanceListOutcome(rsp);
+        else
+            return DescribeLogInstanceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogInstanceListOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DescribeLogInstanceListAsync(const DescribeLogInstanceListRequest& request, const DescribeLogInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLogInstanceListRequest&;
+    using Resp = DescribeLogInstanceListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogInstanceList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+SqlserverClient::DescribeLogInstanceListOutcomeCallable SqlserverClient::DescribeLogInstanceListCallable(const DescribeLogInstanceListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLogInstanceListOutcome>>();
+    DescribeLogInstanceListAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeLogInstanceListRequest&,
+        DescribeLogInstanceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+SqlserverClient::DescribeLogsOutcome SqlserverClient::DescribeLogs(const DescribeLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogsResponse rsp = DescribeLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogsOutcome(rsp);
+        else
+            return DescribeLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogsOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DescribeLogsAsync(const DescribeLogsRequest& request, const DescribeLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLogsRequest&;
+    using Resp = DescribeLogsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+SqlserverClient::DescribeLogsOutcomeCallable SqlserverClient::DescribeLogsCallable(const DescribeLogsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLogsOutcome>>();
+    DescribeLogsAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const DescribeLogsRequest&,
+        DescribeLogsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -6140,6 +6440,56 @@ SqlserverClient::ModifyInstanceParamOutcomeCallable SqlserverClient::ModifyInsta
     return prom->get_future();
 }
 
+SqlserverClient::ModifyLogOutcome SqlserverClient::ModifyLog(const ModifyLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLogResponse rsp = ModifyLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLogOutcome(rsp);
+        else
+            return ModifyLogOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLogOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::ModifyLogAsync(const ModifyLogRequest& request, const ModifyLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyLogRequest&;
+    using Resp = ModifyLogResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+SqlserverClient::ModifyLogOutcomeCallable SqlserverClient::ModifyLogCallable(const ModifyLogRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyLogOutcome>>();
+    ModifyLogAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const ModifyLogRequest&,
+        ModifyLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 SqlserverClient::ModifyMaintenanceSpanOutcome SqlserverClient::ModifyMaintenanceSpan(const ModifyMaintenanceSpanRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyMaintenanceSpan");
@@ -6482,6 +6832,56 @@ SqlserverClient::OpenInterCommunicationOutcomeCallable SqlserverClient::OpenInte
         const SqlserverClient*,
         const OpenInterCommunicationRequest&,
         OpenInterCommunicationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+SqlserverClient::OpenLogOutcome SqlserverClient::OpenLog(const OpenLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenLogResponse rsp = OpenLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenLogOutcome(rsp);
+        else
+            return OpenLogOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenLogOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::OpenLogAsync(const OpenLogRequest& request, const OpenLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const OpenLogRequest&;
+    using Resp = OpenLogResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "OpenLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+SqlserverClient::OpenLogOutcomeCallable SqlserverClient::OpenLogCallable(const OpenLogRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<OpenLogOutcome>>();
+    OpenLogAsync(
+    request,
+    [prom](
+        const SqlserverClient*,
+        const OpenLogRequest&,
+        OpenLogOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

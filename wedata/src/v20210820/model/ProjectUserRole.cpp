@@ -34,7 +34,8 @@ ProjectUserRole::ProjectUserRole() :
     m_appIdHasBeenSet(false),
     m_isProjectOwnerHasBeenSet(false),
     m_createTimestampHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_userTagHasBeenSet(false)
 {
 }
 
@@ -193,6 +194,16 @@ CoreInternalOutcome ProjectUserRole::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("UserTag") && !value["UserTag"].IsNull())
+    {
+        if (!value["UserTag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProjectUserRole.UserTag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_userTag = value["UserTag"].GetUint64();
+        m_userTagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +328,14 @@ void ProjectUserRole::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_userTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_userTag, allocator);
     }
 
 }
@@ -544,5 +563,21 @@ void ProjectUserRole::SetStatus(const uint64_t& _status)
 bool ProjectUserRole::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+uint64_t ProjectUserRole::GetUserTag() const
+{
+    return m_userTag;
+}
+
+void ProjectUserRole::SetUserTag(const uint64_t& _userTag)
+{
+    m_userTag = _userTag;
+    m_userTagHasBeenSet = true;
+}
+
+bool ProjectUserRole::UserTagHasBeenSet() const
+{
+    return m_userTagHasBeenSet;
 }
 
