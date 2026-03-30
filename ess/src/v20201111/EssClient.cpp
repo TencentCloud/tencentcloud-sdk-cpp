@@ -1140,6 +1140,56 @@ EssClient::CreateDocumentOutcomeCallable EssClient::CreateDocumentCallable(const
     return prom->get_future();
 }
 
+EssClient::CreateDraftContractByPromptsTaskOutcome EssClient::CreateDraftContractByPromptsTask(const CreateDraftContractByPromptsTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDraftContractByPromptsTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDraftContractByPromptsTaskResponse rsp = CreateDraftContractByPromptsTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDraftContractByPromptsTaskOutcome(rsp);
+        else
+            return CreateDraftContractByPromptsTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDraftContractByPromptsTaskOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateDraftContractByPromptsTaskAsync(const CreateDraftContractByPromptsTaskRequest& request, const CreateDraftContractByPromptsTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateDraftContractByPromptsTaskRequest&;
+    using Resp = CreateDraftContractByPromptsTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateDraftContractByPromptsTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssClient::CreateDraftContractByPromptsTaskOutcomeCallable EssClient::CreateDraftContractByPromptsTaskCallable(const CreateDraftContractByPromptsTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateDraftContractByPromptsTaskOutcome>>();
+    CreateDraftContractByPromptsTaskAsync(
+    request,
+    [prom](
+        const EssClient*,
+        const CreateDraftContractByPromptsTaskRequest&,
+        CreateDraftContractByPromptsTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 EssClient::CreateDynamicFlowApproverOutcome EssClient::CreateDynamicFlowApprover(const CreateDynamicFlowApproverRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDynamicFlowApprover");
@@ -4732,6 +4782,56 @@ EssClient::DescribeContractReviewWebUrlOutcomeCallable EssClient::DescribeContra
         const EssClient*,
         const DescribeContractReviewWebUrlRequest&,
         DescribeContractReviewWebUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+EssClient::DescribeDraftContractByPromptsTaskOutcome EssClient::DescribeDraftContractByPromptsTask(const DescribeDraftContractByPromptsTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDraftContractByPromptsTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDraftContractByPromptsTaskResponse rsp = DescribeDraftContractByPromptsTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDraftContractByPromptsTaskOutcome(rsp);
+        else
+            return DescribeDraftContractByPromptsTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDraftContractByPromptsTaskOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeDraftContractByPromptsTaskAsync(const DescribeDraftContractByPromptsTaskRequest& request, const DescribeDraftContractByPromptsTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDraftContractByPromptsTaskRequest&;
+    using Resp = DescribeDraftContractByPromptsTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDraftContractByPromptsTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+EssClient::DescribeDraftContractByPromptsTaskOutcomeCallable EssClient::DescribeDraftContractByPromptsTaskCallable(const DescribeDraftContractByPromptsTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDraftContractByPromptsTaskOutcome>>();
+    DescribeDraftContractByPromptsTaskAsync(
+    request,
+    [prom](
+        const EssClient*,
+        const DescribeDraftContractByPromptsTaskRequest&,
+        DescribeDraftContractByPromptsTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

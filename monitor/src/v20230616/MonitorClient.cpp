@@ -140,6 +140,156 @@ MonitorClient::DeleteNoticeContentTmplsOutcomeCallable MonitorClient::DeleteNoti
     return prom->get_future();
 }
 
+MonitorClient::DescribeAIWorkbenchSREDigitalTwinTaskListOutcome MonitorClient::DescribeAIWorkbenchSREDigitalTwinTaskList(const DescribeAIWorkbenchSREDigitalTwinTaskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIWorkbenchSREDigitalTwinTaskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIWorkbenchSREDigitalTwinTaskListResponse rsp = DescribeAIWorkbenchSREDigitalTwinTaskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIWorkbenchSREDigitalTwinTaskListOutcome(rsp);
+        else
+            return DescribeAIWorkbenchSREDigitalTwinTaskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIWorkbenchSREDigitalTwinTaskListOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeAIWorkbenchSREDigitalTwinTaskListAsync(const DescribeAIWorkbenchSREDigitalTwinTaskListRequest& request, const DescribeAIWorkbenchSREDigitalTwinTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIWorkbenchSREDigitalTwinTaskListRequest&;
+    using Resp = DescribeAIWorkbenchSREDigitalTwinTaskListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIWorkbenchSREDigitalTwinTaskList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribeAIWorkbenchSREDigitalTwinTaskListOutcomeCallable MonitorClient::DescribeAIWorkbenchSREDigitalTwinTaskListCallable(const DescribeAIWorkbenchSREDigitalTwinTaskListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIWorkbenchSREDigitalTwinTaskListOutcome>>();
+    DescribeAIWorkbenchSREDigitalTwinTaskListAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribeAIWorkbenchSREDigitalTwinTaskListRequest&,
+        DescribeAIWorkbenchSREDigitalTwinTaskListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::DescribeAIWorkbenchSREDigitalTwinWorkLogDetailOutcome MonitorClient::DescribeAIWorkbenchSREDigitalTwinWorkLogDetail(const DescribeAIWorkbenchSREDigitalTwinWorkLogDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIWorkbenchSREDigitalTwinWorkLogDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIWorkbenchSREDigitalTwinWorkLogDetailResponse rsp = DescribeAIWorkbenchSREDigitalTwinWorkLogDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIWorkbenchSREDigitalTwinWorkLogDetailOutcome(rsp);
+        else
+            return DescribeAIWorkbenchSREDigitalTwinWorkLogDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIWorkbenchSREDigitalTwinWorkLogDetailOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeAIWorkbenchSREDigitalTwinWorkLogDetailAsync(const DescribeAIWorkbenchSREDigitalTwinWorkLogDetailRequest& request, const DescribeAIWorkbenchSREDigitalTwinWorkLogDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIWorkbenchSREDigitalTwinWorkLogDetailRequest&;
+    using Resp = DescribeAIWorkbenchSREDigitalTwinWorkLogDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIWorkbenchSREDigitalTwinWorkLogDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribeAIWorkbenchSREDigitalTwinWorkLogDetailOutcomeCallable MonitorClient::DescribeAIWorkbenchSREDigitalTwinWorkLogDetailCallable(const DescribeAIWorkbenchSREDigitalTwinWorkLogDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIWorkbenchSREDigitalTwinWorkLogDetailOutcome>>();
+    DescribeAIWorkbenchSREDigitalTwinWorkLogDetailAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribeAIWorkbenchSREDigitalTwinWorkLogDetailRequest&,
+        DescribeAIWorkbenchSREDigitalTwinWorkLogDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::DescribeAIWorkbenchSREDigitalTwinWorkLogListOutcome MonitorClient::DescribeAIWorkbenchSREDigitalTwinWorkLogList(const DescribeAIWorkbenchSREDigitalTwinWorkLogListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIWorkbenchSREDigitalTwinWorkLogList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIWorkbenchSREDigitalTwinWorkLogListResponse rsp = DescribeAIWorkbenchSREDigitalTwinWorkLogListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIWorkbenchSREDigitalTwinWorkLogListOutcome(rsp);
+        else
+            return DescribeAIWorkbenchSREDigitalTwinWorkLogListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIWorkbenchSREDigitalTwinWorkLogListOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeAIWorkbenchSREDigitalTwinWorkLogListAsync(const DescribeAIWorkbenchSREDigitalTwinWorkLogListRequest& request, const DescribeAIWorkbenchSREDigitalTwinWorkLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIWorkbenchSREDigitalTwinWorkLogListRequest&;
+    using Resp = DescribeAIWorkbenchSREDigitalTwinWorkLogListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIWorkbenchSREDigitalTwinWorkLogList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::DescribeAIWorkbenchSREDigitalTwinWorkLogListOutcomeCallable MonitorClient::DescribeAIWorkbenchSREDigitalTwinWorkLogListCallable(const DescribeAIWorkbenchSREDigitalTwinWorkLogListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIWorkbenchSREDigitalTwinWorkLogListOutcome>>();
+    DescribeAIWorkbenchSREDigitalTwinWorkLogListAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const DescribeAIWorkbenchSREDigitalTwinWorkLogListRequest&,
+        DescribeAIWorkbenchSREDigitalTwinWorkLogListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MonitorClient::DescribeAlarmNotifyHistoriesOutcome MonitorClient::DescribeAlarmNotifyHistories(const DescribeAlarmNotifyHistoriesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAlarmNotifyHistories");
@@ -282,6 +432,56 @@ MonitorClient::ModifyNoticeContentTmplOutcomeCallable MonitorClient::ModifyNotic
         const MonitorClient*,
         const ModifyNoticeContentTmplRequest&,
         ModifyNoticeContentTmplOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MonitorClient::TriggerAIWorkbenchSREDigitalTwinTaskOutcome MonitorClient::TriggerAIWorkbenchSREDigitalTwinTask(const TriggerAIWorkbenchSREDigitalTwinTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "TriggerAIWorkbenchSREDigitalTwinTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TriggerAIWorkbenchSREDigitalTwinTaskResponse rsp = TriggerAIWorkbenchSREDigitalTwinTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TriggerAIWorkbenchSREDigitalTwinTaskOutcome(rsp);
+        else
+            return TriggerAIWorkbenchSREDigitalTwinTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return TriggerAIWorkbenchSREDigitalTwinTaskOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::TriggerAIWorkbenchSREDigitalTwinTaskAsync(const TriggerAIWorkbenchSREDigitalTwinTaskRequest& request, const TriggerAIWorkbenchSREDigitalTwinTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const TriggerAIWorkbenchSREDigitalTwinTaskRequest&;
+    using Resp = TriggerAIWorkbenchSREDigitalTwinTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "TriggerAIWorkbenchSREDigitalTwinTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::TriggerAIWorkbenchSREDigitalTwinTaskOutcomeCallable MonitorClient::TriggerAIWorkbenchSREDigitalTwinTaskCallable(const TriggerAIWorkbenchSREDigitalTwinTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<TriggerAIWorkbenchSREDigitalTwinTaskOutcome>>();
+    TriggerAIWorkbenchSREDigitalTwinTaskAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const TriggerAIWorkbenchSREDigitalTwinTaskRequest&,
+        TriggerAIWorkbenchSREDigitalTwinTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

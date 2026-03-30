@@ -127,6 +127,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateFlowApproversResponse.h
   include/tencentcloud/ess/v20201111/model/ModifyExtendedServiceRequest.h
   include/tencentcloud/ess/v20201111/model/DeleteOrganizationAuthorizationInfo.h
+  include/tencentcloud/ess/v20201111/model/CreateDraftContractByPromptsTaskRequest.h
   include/tencentcloud/ess/v20201111/model/CreateLMInformationExtractionTaskFieldFeedbackRequest.h
   include/tencentcloud/ess/v20201111/model/ReviewerInfo.h
   include/tencentcloud/ess/v20201111/model/CreateContractReviewWebUrlResponse.h
@@ -201,8 +202,10 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/ExtractionTaskResult.h
   include/tencentcloud/ess/v20201111/model/ApproverRestriction.h
   include/tencentcloud/ess/v20201111/model/IntentionAction.h
+  include/tencentcloud/ess/v20201111/model/DescribeDraftContractByPromptsTaskResponse.h
   include/tencentcloud/ess/v20201111/model/CreateOrganizationBatchSignUrlRequest.h
   include/tencentcloud/ess/v20201111/model/IntegrateRole.h
+  include/tencentcloud/ess/v20201111/model/CreateDraftContractByPromptsTaskResponse.h
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationDepartmentRequest.h
   include/tencentcloud/ess/v20201111/model/MiniAppCreateApproverInfo.h
   include/tencentcloud/ess/v20201111/model/ExtendScene.h
@@ -434,6 +437,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/PermissionGroup.h
   include/tencentcloud/ess/v20201111/model/ProxyOrganizationInfo.h
   include/tencentcloud/ess/v20201111/model/CreateFlowRemindsRequest.h
+  include/tencentcloud/ess/v20201111/model/DescribeDraftContractByPromptsTaskRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeSignFaceVideoResponse.h
   include/tencentcloud/ess/v20201111/model/VerifyPdfResponse.h
   include/tencentcloud/ess/v20201111/model/DeleteStaffsResult.h
@@ -560,6 +564,7 @@ set(ess_src
   src/v20201111/model/CreateFlowApproversResponse.cpp
   src/v20201111/model/ModifyExtendedServiceRequest.cpp
   src/v20201111/model/DeleteOrganizationAuthorizationInfo.cpp
+  src/v20201111/model/CreateDraftContractByPromptsTaskRequest.cpp
   src/v20201111/model/CreateLMInformationExtractionTaskFieldFeedbackRequest.cpp
   src/v20201111/model/ReviewerInfo.cpp
   src/v20201111/model/CreateContractReviewWebUrlResponse.cpp
@@ -634,8 +639,10 @@ set(ess_src
   src/v20201111/model/ExtractionTaskResult.cpp
   src/v20201111/model/ApproverRestriction.cpp
   src/v20201111/model/IntentionAction.cpp
+  src/v20201111/model/DescribeDraftContractByPromptsTaskResponse.cpp
   src/v20201111/model/CreateOrganizationBatchSignUrlRequest.cpp
   src/v20201111/model/IntegrateRole.cpp
+  src/v20201111/model/CreateDraftContractByPromptsTaskResponse.cpp
   src/v20201111/model/DeleteIntegrationDepartmentRequest.cpp
   src/v20201111/model/MiniAppCreateApproverInfo.cpp
   src/v20201111/model/ExtendScene.cpp
@@ -867,6 +874,7 @@ set(ess_src
   src/v20201111/model/PermissionGroup.cpp
   src/v20201111/model/ProxyOrganizationInfo.cpp
   src/v20201111/model/CreateFlowRemindsRequest.cpp
+  src/v20201111/model/DescribeDraftContractByPromptsTaskRequest.cpp
   src/v20201111/model/DescribeSignFaceVideoResponse.cpp
   src/v20201111/model/VerifyPdfResponse.cpp
   src/v20201111/model/DeleteStaffsResult.cpp

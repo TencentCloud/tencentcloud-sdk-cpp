@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取base64编码的wav/mp3音频数据
-                     * @return Audio base64编码的wav/mp3音频数据
+                     * 获取<p>base64编码的wav/mp3音频数据</p>
+                     * @return Audio <p>base64编码的wav/mp3音频数据</p>
                      * 
                      */
                     std::string GetAudio() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool AudioHasBeenSet() const;
 
                     /**
-                     * 获取一次请求对应一个SessionId
-                     * @return SessionId 一次请求对应一个SessionId
+                     * 获取<p>一次请求对应一个SessionId</p>
+                     * @return SessionId <p>一次请求对应一个SessionId</p>
                      * 
                      */
                     std::string GetSessionId() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取时间戳信息，若未开启时间戳，则返回空数组。
-                     * @return Subtitles 时间戳信息，若未开启时间戳，则返回空数组。
+                     * 获取<p>时间戳信息，若未开启时间戳，则返回空数组。</p>
+                     * @return Subtitles <p>时间戳信息，若未开启时间戳，则返回空数组。</p>
                      * 
                      */
                     std::vector<Subtitle> GetSubtitles() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * base64编码的wav/mp3音频数据
+                     * <p>base64编码的wav/mp3音频数据</p>
                      */
                     std::string m_audio;
                     bool m_audioHasBeenSet;
 
                     /**
-                     * 一次请求对应一个SessionId
+                     * <p>一次请求对应一个SessionId</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 时间戳信息，若未开启时间戳，则返回空数组。
+                     * <p>时间戳信息，若未开启时间戳，则返回空数组。</p>
                      */
                     std::vector<Subtitle> m_subtitles;
                     bool m_subtitlesHasBeenSet;

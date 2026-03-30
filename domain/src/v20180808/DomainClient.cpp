@@ -2190,6 +2190,56 @@ DomainClient::ModifyDomainDNSBatchOutcomeCallable DomainClient::ModifyDomainDNSB
     return prom->get_future();
 }
 
+DomainClient::ModifyDomainOwnerOutcome DomainClient::ModifyDomainOwner(const ModifyDomainOwnerRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDomainOwner");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDomainOwnerResponse rsp = ModifyDomainOwnerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDomainOwnerOutcome(rsp);
+        else
+            return ModifyDomainOwnerOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDomainOwnerOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::ModifyDomainOwnerAsync(const ModifyDomainOwnerRequest& request, const ModifyDomainOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDomainOwnerRequest&;
+    using Resp = ModifyDomainOwnerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDomainOwner", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DomainClient::ModifyDomainOwnerOutcomeCallable DomainClient::ModifyDomainOwnerCallable(const ModifyDomainOwnerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDomainOwnerOutcome>>();
+    ModifyDomainOwnerAsync(
+    request,
+    [prom](
+        const DomainClient*,
+        const ModifyDomainOwnerRequest&,
+        ModifyDomainOwnerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DomainClient::ModifyDomainOwnerBatchOutcome DomainClient::ModifyDomainOwnerBatch(const ModifyDomainOwnerBatchRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDomainOwnerBatch");

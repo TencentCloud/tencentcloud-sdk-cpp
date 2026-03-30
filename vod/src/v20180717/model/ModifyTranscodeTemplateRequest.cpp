@@ -34,7 +34,8 @@ ModifyTranscodeTemplateRequest::ModifyTranscodeTemplateRequest() :
     m_audioTemplateHasBeenSet(false),
     m_tEHDConfigHasBeenSet(false),
     m_enhanceConfigHasBeenSet(false),
-    m_segmentTypeHasBeenSet(false)
+    m_segmentTypeHasBeenSet(false),
+    m_stdExtInfoHasBeenSet(false)
 {
 }
 
@@ -143,6 +144,14 @@ string ModifyTranscodeTemplateRequest::ToJsonString() const
         string key = "SegmentType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_segmentType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stdExtInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StdExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_stdExtInfo.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -343,6 +352,22 @@ void ModifyTranscodeTemplateRequest::SetSegmentType(const string& _segmentType)
 bool ModifyTranscodeTemplateRequest::SegmentTypeHasBeenSet() const
 {
     return m_segmentTypeHasBeenSet;
+}
+
+string ModifyTranscodeTemplateRequest::GetStdExtInfo() const
+{
+    return m_stdExtInfo;
+}
+
+void ModifyTranscodeTemplateRequest::SetStdExtInfo(const string& _stdExtInfo)
+{
+    m_stdExtInfo = _stdExtInfo;
+    m_stdExtInfoHasBeenSet = true;
+}
+
+bool ModifyTranscodeTemplateRequest::StdExtInfoHasBeenSet() const
+{
+    return m_stdExtInfoHasBeenSet;
 }
 
 

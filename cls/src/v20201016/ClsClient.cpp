@@ -690,6 +690,56 @@ ClsClient::CreateConfigExtraOutcomeCallable ClsClient::CreateConfigExtraCallable
     return prom->get_future();
 }
 
+ClsClient::CreateConsoleOutcome ClsClient::CreateConsole(const CreateConsoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateConsole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateConsoleResponse rsp = CreateConsoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateConsoleOutcome(rsp);
+        else
+            return CreateConsoleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateConsoleOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateConsoleAsync(const CreateConsoleRequest& request, const CreateConsoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateConsoleRequest&;
+    using Resp = CreateConsoleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateConsole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::CreateConsoleOutcomeCallable ClsClient::CreateConsoleCallable(const CreateConsoleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateConsoleOutcome>>();
+    CreateConsoleAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const CreateConsoleRequest&,
+        CreateConsoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::CreateConsoleSharingOutcome ClsClient::CreateConsoleSharing(const CreateConsoleSharingRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConsoleSharing");
@@ -2332,6 +2382,56 @@ ClsClient::DeleteConfigFromMachineGroupOutcomeCallable ClsClient::DeleteConfigFr
         const ClsClient*,
         const DeleteConfigFromMachineGroupRequest&,
         DeleteConfigFromMachineGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DeleteConsoleOutcome ClsClient::DeleteConsole(const DeleteConsoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteConsole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteConsoleResponse rsp = DeleteConsoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteConsoleOutcome(rsp);
+        else
+            return DeleteConsoleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteConsoleOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteConsoleAsync(const DeleteConsoleRequest& request, const DeleteConsoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteConsoleRequest&;
+    using Resp = DeleteConsoleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteConsole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DeleteConsoleOutcomeCallable ClsClient::DeleteConsoleCallable(const DeleteConsoleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteConsoleOutcome>>();
+    DeleteConsoleAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DeleteConsoleRequest&,
+        DeleteConsoleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4132,6 +4232,56 @@ ClsClient::DescribeConsoleSharingListOutcomeCallable ClsClient::DescribeConsoleS
         const ClsClient*,
         const DescribeConsoleSharingListRequest&,
         DescribeConsoleSharingListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::DescribeConsolesOutcome ClsClient::DescribeConsoles(const DescribeConsolesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConsoles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConsolesResponse rsp = DescribeConsolesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConsolesOutcome(rsp);
+        else
+            return DescribeConsolesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConsolesOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeConsolesAsync(const DescribeConsolesRequest& request, const DescribeConsolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeConsolesRequest&;
+    using Resp = DescribeConsolesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeConsoles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::DescribeConsolesOutcomeCallable ClsClient::DescribeConsolesCallable(const DescribeConsolesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeConsolesOutcome>>();
+    DescribeConsolesAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const DescribeConsolesRequest&,
+        DescribeConsolesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -6832,6 +6982,56 @@ ClsClient::ModifyConfigExtraOutcomeCallable ClsClient::ModifyConfigExtraCallable
         const ClsClient*,
         const ModifyConfigExtraRequest&,
         ModifyConfigExtraOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ClsClient::ModifyConsoleOutcome ClsClient::ModifyConsole(const ModifyConsoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyConsole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyConsoleResponse rsp = ModifyConsoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyConsoleOutcome(rsp);
+        else
+            return ModifyConsoleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyConsoleOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyConsoleAsync(const ModifyConsoleRequest& request, const ModifyConsoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyConsoleRequest&;
+    using Resp = ModifyConsoleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyConsole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::ModifyConsoleOutcomeCallable ClsClient::ModifyConsoleCallable(const ModifyConsoleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyConsoleOutcome>>();
+    ModifyConsoleAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const ModifyConsoleRequest&,
+        ModifyConsoleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -440,6 +440,56 @@ CsipClient::DescribeAIAgentAssetListOutcomeCallable CsipClient::DescribeAIAgentA
     return prom->get_future();
 }
 
+CsipClient::DescribeAKAnalysisDetailOutcome CsipClient::DescribeAKAnalysisDetail(const DescribeAKAnalysisDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAKAnalysisDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAKAnalysisDetailResponse rsp = DescribeAKAnalysisDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAKAnalysisDetailOutcome(rsp);
+        else
+            return DescribeAKAnalysisDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAKAnalysisDetailOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeAKAnalysisDetailAsync(const DescribeAKAnalysisDetailRequest& request, const DescribeAKAnalysisDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAKAnalysisDetailRequest&;
+    using Resp = DescribeAKAnalysisDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAKAnalysisDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CsipClient::DescribeAKAnalysisDetailOutcomeCallable CsipClient::DescribeAKAnalysisDetailCallable(const DescribeAKAnalysisDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAKAnalysisDetailOutcome>>();
+    DescribeAKAnalysisDetailAsync(
+    request,
+    [prom](
+        const CsipClient*,
+        const DescribeAKAnalysisDetailRequest&,
+        DescribeAKAnalysisDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CsipClient::DescribeAbnormalCallRecordOutcome CsipClient::DescribeAbnormalCallRecord(const DescribeAbnormalCallRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAbnormalCallRecord");

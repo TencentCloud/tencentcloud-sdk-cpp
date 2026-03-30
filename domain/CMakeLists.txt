@@ -98,9 +98,11 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/DeleteReservedPreDomainInfoRequest.h
   include/tencentcloud/domain/v20180808/model/ReservedPreDomainInfo.h
   include/tencentcloud/domain/v20180808/model/DeleteBiddingResponse.h
+  include/tencentcloud/domain/v20180808/model/ModifyDomainOwnerResponse.h
   include/tencentcloud/domain/v20180808/model/DescribeTemplateResponse.h
   include/tencentcloud/domain/v20180808/model/DescribePayWaitDetailRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainSimpleInfoRequest.h
+  include/tencentcloud/domain/v20180808/model/ModifyDomainOwnerRequest.h
   include/tencentcloud/domain/v20180808/model/TransferProhibitionBatchRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainSimpleInfoResponse.h
   include/tencentcloud/domain/v20180808/model/DescribeBiddingSuccessfulListResponse.h
@@ -236,9 +238,11 @@ set(domain_src
   src/v20180808/model/DeleteReservedPreDomainInfoRequest.cpp
   src/v20180808/model/ReservedPreDomainInfo.cpp
   src/v20180808/model/DeleteBiddingResponse.cpp
+  src/v20180808/model/ModifyDomainOwnerResponse.cpp
   src/v20180808/model/DescribeTemplateResponse.cpp
   src/v20180808/model/DescribePayWaitDetailRequest.cpp
   src/v20180808/model/DescribeDomainSimpleInfoRequest.cpp
+  src/v20180808/model/ModifyDomainOwnerRequest.cpp
   src/v20180808/model/TransferProhibitionBatchRequest.cpp
   src/v20180808/model/DescribeDomainSimpleInfoResponse.cpp
   src/v20180808/model/DescribeBiddingSuccessfulListResponse.cpp

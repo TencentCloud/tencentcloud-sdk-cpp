@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频参数信息。
-                     * @return Video 视频参数信息。
+                     * 获取<p>视频参数信息。</p>
+                     * @return Video <p>视频参数信息。</p>
                      * 
                      */
                     VideoTemplateInfo GetVideo() const;
 
                     /**
-                     * 设置视频参数信息。
-                     * @param _video 视频参数信息。
+                     * 设置<p>视频参数信息。</p>
+                     * @param _video <p>视频参数信息。</p>
                      * 
                      */
                     void SetVideo(const VideoTemplateInfo& _video);
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool VideoHasBeenSet() const;
 
                     /**
-                     * 获取音频参数信息。
-                     * @return Audio 音频参数信息。
+                     * 获取<p>音频参数信息。</p>
+                     * @return Audio <p>音频参数信息。</p>
                      * 
                      */
                     AudioTemplateInfo GetAudio() const;
 
                     /**
-                     * 设置音频参数信息。
-                     * @param _audio 音频参数信息。
+                     * 设置<p>音频参数信息。</p>
+                     * @param _audio <p>音频参数信息。</p>
                      * 
                      */
                     void SetAudio(const AudioTemplateInfo& _audio);
@@ -93,23 +93,15 @@ namespace TencentCloud
                     bool AudioHasBeenSet() const;
 
                     /**
-                     * 获取是否移除音频流，取值范围：
-<li>0：否，</li>
-<li>1：是。</li>
-                     * @return RemoveAudio 是否移除音频流，取值范围：
-<li>0：否，</li>
-<li>1：是。</li>
+                     * 获取<p>是否移除音频流，取值范围：</p><li>0：否，</li><li>1：是。</li>
+                     * @return RemoveAudio <p>是否移除音频流，取值范围：</p><li>0：否，</li><li>1：是。</li>
                      * 
                      */
                     uint64_t GetRemoveAudio() const;
 
                     /**
-                     * 设置是否移除音频流，取值范围：
-<li>0：否，</li>
-<li>1：是。</li>
-                     * @param _removeAudio 是否移除音频流，取值范围：
-<li>0：否，</li>
-<li>1：是。</li>
+                     * 设置<p>是否移除音频流，取值范围：</p><li>0：否，</li><li>1：是。</li>
+                     * @param _removeAudio <p>是否移除音频流，取值范围：</p><li>0：否，</li><li>1：是。</li>
                      * 
                      */
                     void SetRemoveAudio(const uint64_t& _removeAudio);
@@ -122,23 +114,15 @@ namespace TencentCloud
                     bool RemoveAudioHasBeenSet() const;
 
                     /**
-                     * 获取是否移除视频流，取值范围：
-<li>0：否，</li>
-<li>1：是。</li>
-                     * @return RemoveVideo 是否移除视频流，取值范围：
-<li>0：否，</li>
-<li>1：是。</li>
+                     * 获取<p>是否移除视频流，取值范围：</p><li>0：否，</li><li>1：是。</li>
+                     * @return RemoveVideo <p>是否移除视频流，取值范围：</p><li>0：否，</li><li>1：是。</li>
                      * 
                      */
                     uint64_t GetRemoveVideo() const;
 
                     /**
-                     * 设置是否移除视频流，取值范围：
-<li>0：否，</li>
-<li>1：是。</li>
-                     * @param _removeVideo 是否移除视频流，取值范围：
-<li>0：否，</li>
-<li>1：是。</li>
+                     * 设置<p>是否移除视频流，取值范围：</p><li>0：否，</li><li>1：是。</li>
+                     * @param _removeVideo <p>是否移除视频流，取值范围：</p><li>0：否，</li><li>1：是。</li>
                      * 
                      */
                     void SetRemoveVideo(const uint64_t& _removeVideo);
@@ -151,18 +135,18 @@ namespace TencentCloud
                     bool RemoveVideoHasBeenSet() const;
 
                     /**
-                     * 获取极速高清转码参数。
+                     * 获取<p>极速高清转码参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TEHDConfig 极速高清转码参数。
+                     * @return TEHDConfig <p>极速高清转码参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TEHDConfig GetTEHDConfig() const;
 
                     /**
-                     * 设置极速高清转码参数。
+                     * 设置<p>极速高清转码参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tEHDConfig 极速高清转码参数。
+                     * @param _tEHDConfig <p>极速高清转码参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -176,18 +160,18 @@ namespace TencentCloud
                     bool TEHDConfigHasBeenSet() const;
 
                     /**
-                     * 获取音视频增强配置。
+                     * 获取<p>音视频增强配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EnhanceConfig 音视频增强配置。
+                     * @return EnhanceConfig <p>音视频增强配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EnhanceConfig GetEnhanceConfig() const;
 
                     /**
-                     * 设置音视频增强配置。
+                     * 设置<p>音视频增强配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _enhanceConfig 音视频增强配置。
+                     * @param _enhanceConfig <p>音视频增强配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -200,49 +184,72 @@ namespace TencentCloud
                      */
                     bool EnhanceConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>扩展参数。</p>
+                     * @return StdExtInfo <p>扩展参数。</p>
+                     * 
+                     */
+                    std::string GetStdExtInfo() const;
+
+                    /**
+                     * 设置<p>扩展参数。</p>
+                     * @param _stdExtInfo <p>扩展参数。</p>
+                     * 
+                     */
+                    void SetStdExtInfo(const std::string& _stdExtInfo);
+
+                    /**
+                     * 判断参数 StdExtInfo 是否已赋值
+                     * @return StdExtInfo 是否已赋值
+                     * 
+                     */
+                    bool StdExtInfoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 视频参数信息。
+                     * <p>视频参数信息。</p>
                      */
                     VideoTemplateInfo m_video;
                     bool m_videoHasBeenSet;
 
                     /**
-                     * 音频参数信息。
+                     * <p>音频参数信息。</p>
                      */
                     AudioTemplateInfo m_audio;
                     bool m_audioHasBeenSet;
 
                     /**
-                     * 是否移除音频流，取值范围：
-<li>0：否，</li>
-<li>1：是。</li>
+                     * <p>是否移除音频流，取值范围：</p><li>0：否，</li><li>1：是。</li>
                      */
                     uint64_t m_removeAudio;
                     bool m_removeAudioHasBeenSet;
 
                     /**
-                     * 是否移除视频流，取值范围：
-<li>0：否，</li>
-<li>1：是。</li>
+                     * <p>是否移除视频流，取值范围：</p><li>0：否，</li><li>1：是。</li>
                      */
                     uint64_t m_removeVideo;
                     bool m_removeVideoHasBeenSet;
 
                     /**
-                     * 极速高清转码参数。
+                     * <p>极速高清转码参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TEHDConfig m_tEHDConfig;
                     bool m_tEHDConfigHasBeenSet;
 
                     /**
-                     * 音视频增强配置。
+                     * <p>音视频增强配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EnhanceConfig m_enhanceConfig;
                     bool m_enhanceConfigHasBeenSet;
+
+                    /**
+                     * <p>扩展参数。</p>
+                     */
+                    std::string m_stdExtInfo;
+                    bool m_stdExtInfoHasBeenSet;
 
                 };
             }

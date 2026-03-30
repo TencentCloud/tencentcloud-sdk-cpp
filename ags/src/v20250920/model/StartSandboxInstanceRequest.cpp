@@ -28,7 +28,9 @@ StartSandboxInstanceRequest::StartSandboxInstanceRequest() :
     m_timeoutHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_mountOptionsHasBeenSet(false),
-    m_customConfigurationHasBeenSet(false)
+    m_customConfigurationHasBeenSet(false),
+    m_authModeHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
 }
 
@@ -93,6 +95,29 @@ string StartSandboxInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_customConfiguration.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_authModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_authMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadata";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_metadata.begin(); itr != m_metadata.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -197,6 +222,38 @@ void StartSandboxInstanceRequest::SetCustomConfiguration(const CustomConfigurati
 bool StartSandboxInstanceRequest::CustomConfigurationHasBeenSet() const
 {
     return m_customConfigurationHasBeenSet;
+}
+
+string StartSandboxInstanceRequest::GetAuthMode() const
+{
+    return m_authMode;
+}
+
+void StartSandboxInstanceRequest::SetAuthMode(const string& _authMode)
+{
+    m_authMode = _authMode;
+    m_authModeHasBeenSet = true;
+}
+
+bool StartSandboxInstanceRequest::AuthModeHasBeenSet() const
+{
+    return m_authModeHasBeenSet;
+}
+
+vector<MetadataVar> StartSandboxInstanceRequest::GetMetadata() const
+{
+    return m_metadata;
+}
+
+void StartSandboxInstanceRequest::SetMetadata(const vector<MetadataVar>& _metadata)
+{
+    m_metadata = _metadata;
+    m_metadataHasBeenSet = true;
+}
+
+bool StartSandboxInstanceRequest::MetadataHasBeenSet() const
+{
+    return m_metadataHasBeenSet;
 }
 
 

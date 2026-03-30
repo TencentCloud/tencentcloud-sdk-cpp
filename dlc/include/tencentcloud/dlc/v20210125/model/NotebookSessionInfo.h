@@ -617,6 +617,27 @@ namespace TencentCloud
                      */
                     bool PodNumbersHasBeenSet() const;
 
+                    /**
+                     * 获取spark app名称
+                     * @return SparkAppName spark app名称
+                     * 
+                     */
+                    std::string GetSparkAppName() const;
+
+                    /**
+                     * 设置spark app名称
+                     * @param _sparkAppName spark app名称
+                     * 
+                     */
+                    void SetSparkAppName(const std::string& _sparkAppName);
+
+                    /**
+                     * 判断参数 SparkAppName 是否已赋值
+                     * @return SparkAppName 是否已赋值
+                     * 
+                     */
+                    bool SparkAppNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -780,6 +801,12 @@ namespace TencentCloud
                      */
                     int64_t m_podNumbers;
                     bool m_podNumbersHasBeenSet;
+
+                    /**
+                     * spark app名称
+                     */
+                    std::string m_sparkAppName;
+                    bool m_sparkAppNameHasBeenSet;
 
                 };
             }

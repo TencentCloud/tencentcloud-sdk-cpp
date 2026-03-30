@@ -67,6 +67,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateDigitalDataSignResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateDocumentRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateDocumentResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateDraftContractByPromptsTaskRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateDraftContractByPromptsTaskResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateDynamicFlowApproverRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateDynamicFlowApproverResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateEmbedWebUrlRequest.h>
@@ -211,6 +213,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeContractReviewTaskListWebUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeContractReviewWebUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeContractReviewWebUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeDraftContractByPromptsTaskRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeDraftContractByPromptsTaskResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeEnterpriseContractReviewChecklistsRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeEnterpriseContractReviewChecklistsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthDetailRequest.h>
@@ -393,6 +397,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDocumentResponse> CreateDocumentOutcome;
                 typedef std::future<CreateDocumentOutcome> CreateDocumentOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateDocumentRequest&, CreateDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDocumentAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDraftContractByPromptsTaskResponse> CreateDraftContractByPromptsTaskOutcome;
+                typedef std::future<CreateDraftContractByPromptsTaskOutcome> CreateDraftContractByPromptsTaskOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateDraftContractByPromptsTaskRequest&, CreateDraftContractByPromptsTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDraftContractByPromptsTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDynamicFlowApproverResponse> CreateDynamicFlowApproverOutcome;
                 typedef std::future<CreateDynamicFlowApproverOutcome> CreateDynamicFlowApproverOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateDynamicFlowApproverRequest&, CreateDynamicFlowApproverOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDynamicFlowApproverAsyncHandler;
@@ -609,6 +616,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeContractReviewWebUrlResponse> DescribeContractReviewWebUrlOutcome;
                 typedef std::future<DescribeContractReviewWebUrlOutcome> DescribeContractReviewWebUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeContractReviewWebUrlRequest&, DescribeContractReviewWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContractReviewWebUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDraftContractByPromptsTaskResponse> DescribeDraftContractByPromptsTaskOutcome;
+                typedef std::future<DescribeDraftContractByPromptsTaskOutcome> DescribeDraftContractByPromptsTaskOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeDraftContractByPromptsTaskRequest&, DescribeDraftContractByPromptsTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDraftContractByPromptsTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEnterpriseContractReviewChecklistsResponse> DescribeEnterpriseContractReviewChecklistsOutcome;
                 typedef std::future<DescribeEnterpriseContractReviewChecklistsOutcome> DescribeEnterpriseContractReviewChecklistsOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeEnterpriseContractReviewChecklistsRequest&, DescribeEnterpriseContractReviewChecklistsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnterpriseContractReviewChecklistsAsyncHandler;
@@ -1171,6 +1181,15 @@ namespace TencentCloud
                 CreateDocumentOutcome CreateDocument(const Model::CreateDocumentRequest &request);
                 void CreateDocumentAsync(const Model::CreateDocumentRequest& request, const CreateDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDocumentOutcomeCallable CreateDocumentCallable(const Model::CreateDocumentRequest& request);
+
+                /**
+                 *此接口（CreateDraftContractByPromptsTask）用于创建智能合同起草任务。
+                 * @param req CreateDraftContractByPromptsTaskRequest
+                 * @return CreateDraftContractByPromptsTaskOutcome
+                 */
+                CreateDraftContractByPromptsTaskOutcome CreateDraftContractByPromptsTask(const Model::CreateDraftContractByPromptsTaskRequest &request);
+                void CreateDraftContractByPromptsTaskAsync(const Model::CreateDraftContractByPromptsTaskRequest& request, const CreateDraftContractByPromptsTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDraftContractByPromptsTaskOutcomeCallable CreateDraftContractByPromptsTaskCallable(const Model::CreateDraftContractByPromptsTaskRequest& request);
 
                 /**
                  *此接口（CreateDynamicFlowApprover）接口主要用于补充动态签署方2.0合同的签署方信息，包括但不限于名字、手机号和签署区域等信息。
@@ -2430,6 +2449,15 @@ namespace TencentCloud
                 DescribeContractReviewWebUrlOutcome DescribeContractReviewWebUrl(const Model::DescribeContractReviewWebUrlRequest &request);
                 void DescribeContractReviewWebUrlAsync(const Model::DescribeContractReviewWebUrlRequest& request, const DescribeContractReviewWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeContractReviewWebUrlOutcomeCallable DescribeContractReviewWebUrlCallable(const Model::DescribeContractReviewWebUrlRequest& request);
+
+                /**
+                 *此接口（DescribeDraftContractByPromptsTask）用于查询智能合同起草任务状态。
+                 * @param req DescribeDraftContractByPromptsTaskRequest
+                 * @return DescribeDraftContractByPromptsTaskOutcome
+                 */
+                DescribeDraftContractByPromptsTaskOutcome DescribeDraftContractByPromptsTask(const Model::DescribeDraftContractByPromptsTaskRequest &request);
+                void DescribeDraftContractByPromptsTaskAsync(const Model::DescribeDraftContractByPromptsTaskRequest& request, const DescribeDraftContractByPromptsTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDraftContractByPromptsTaskOutcomeCallable DescribeDraftContractByPromptsTaskCallable(const Model::DescribeDraftContractByPromptsTaskRequest& request);
 
                 /**
                  *本接口（DescribeEnterpriseContractReviewChecklists）用于获取企业全部审查要点清单。

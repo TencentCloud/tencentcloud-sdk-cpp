@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ags/v20250920/model/MetadataVar.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取沙箱实例ID
-                     * @return InstanceId 沙箱实例ID
+                     * 获取<p>沙箱实例ID</p>
+                     * @return InstanceId <p>沙箱实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置沙箱实例ID
-                     * @param _instanceId 沙箱实例ID
+                     * 设置<p>沙箱实例ID</p>
+                     * @param _instanceId <p>沙箱实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取新的超时时间（从设置时开始重新计算超时），支持格式：5m、300s、1h等。最小30s，最大24h。如果不指定则保持原有超时设置
-                     * @return Timeout 新的超时时间（从设置时开始重新计算超时），支持格式：5m、300s、1h等。最小30s，最大24h。如果不指定则保持原有超时设置
+                     * 获取<p>新的超时时间（从设置时开始重新计算超时），支持格式：5m、300s、1h等。最小30s，最大24h。如果不指定则保持原有超时设置</p>
+                     * @return Timeout <p>新的超时时间（从设置时开始重新计算超时），支持格式：5m、300s、1h等。最小30s，最大24h。如果不指定则保持原有超时设置</p>
                      * 
                      */
                     std::string GetTimeout() const;
 
                     /**
-                     * 设置新的超时时间（从设置时开始重新计算超时），支持格式：5m、300s、1h等。最小30s，最大24h。如果不指定则保持原有超时设置
-                     * @param _timeout 新的超时时间（从设置时开始重新计算超时），支持格式：5m、300s、1h等。最小30s，最大24h。如果不指定则保持原有超时设置
+                     * 设置<p>新的超时时间（从设置时开始重新计算超时），支持格式：5m、300s、1h等。最小30s，最大24h。如果不指定则保持原有超时设置</p>
+                     * @param _timeout <p>新的超时时间（从设置时开始重新计算超时），支持格式：5m、300s、1h等。最小30s，最大24h。如果不指定则保持原有超时设置</p>
                      * 
                      */
                     void SetTimeout(const std::string& _timeout);
@@ -84,19 +85,46 @@ namespace TencentCloud
                      */
                     bool TimeoutHasBeenSet() const;
 
+                    /**
+                     * 获取<p>沙箱实例元数据</p>
+                     * @return Metadata <p>沙箱实例元数据</p>
+                     * 
+                     */
+                    std::vector<MetadataVar> GetMetadata() const;
+
+                    /**
+                     * 设置<p>沙箱实例元数据</p>
+                     * @param _metadata <p>沙箱实例元数据</p>
+                     * 
+                     */
+                    void SetMetadata(const std::vector<MetadataVar>& _metadata);
+
+                    /**
+                     * 判断参数 Metadata 是否已赋值
+                     * @return Metadata 是否已赋值
+                     * 
+                     */
+                    bool MetadataHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 沙箱实例ID
+                     * <p>沙箱实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 新的超时时间（从设置时开始重新计算超时），支持格式：5m、300s、1h等。最小30s，最大24h。如果不指定则保持原有超时设置
+                     * <p>新的超时时间（从设置时开始重新计算超时），支持格式：5m、300s、1h等。最小30s，最大24h。如果不指定则保持原有超时设置</p>
                      */
                     std::string m_timeout;
                     bool m_timeoutHasBeenSet;
+
+                    /**
+                     * <p>沙箱实例元数据</p>
+                     */
+                    std::vector<MetadataVar> m_metadata;
+                    bool m_metadataHasBeenSet;
 
                 };
             }

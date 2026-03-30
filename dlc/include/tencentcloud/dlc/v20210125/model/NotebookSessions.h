@@ -361,6 +361,48 @@ namespace TencentCloud
                      */
                     bool ResourceGroupNameHasBeenSet() const;
 
+                    /**
+                     * 获取Kernel id
+                     * @return KernelId Kernel id
+                     * 
+                     */
+                    std::string GetKernelId() const;
+
+                    /**
+                     * 设置Kernel id
+                     * @param _kernelId Kernel id
+                     * 
+                     */
+                    void SetKernelId(const std::string& _kernelId);
+
+                    /**
+                     * 判断参数 KernelId 是否已赋值
+                     * @return KernelId 是否已赋值
+                     * 
+                     */
+                    bool KernelIdHasBeenSet() const;
+
+                    /**
+                     * 获取spark app名称
+                     * @return SparkAppName spark app名称
+                     * 
+                     */
+                    std::string GetSparkAppName() const;
+
+                    /**
+                     * 设置spark app名称
+                     * @param _sparkAppName spark app名称
+                     * 
+                     */
+                    void SetSparkAppName(const std::string& _sparkAppName);
+
+                    /**
+                     * 判断参数 SparkAppName 是否已赋值
+                     * @return SparkAppName 是否已赋值
+                     * 
+                     */
+                    bool SparkAppNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,6 +494,18 @@ namespace TencentCloud
                      */
                     std::string m_resourceGroupName;
                     bool m_resourceGroupNameHasBeenSet;
+
+                    /**
+                     * Kernel id
+                     */
+                    std::string m_kernelId;
+                    bool m_kernelIdHasBeenSet;
+
+                    /**
+                     * spark app名称
+                     */
+                    std::string m_sparkAppName;
+                    bool m_sparkAppNameHasBeenSet;
 
                 };
             }

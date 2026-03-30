@@ -109,6 +109,8 @@
 #include <tencentcloud/domain/v20180808/model/ModifyCustomDnsHostResponse.h>
 #include <tencentcloud/domain/v20180808/model/ModifyDomainDNSBatchRequest.h>
 #include <tencentcloud/domain/v20180808/model/ModifyDomainDNSBatchResponse.h>
+#include <tencentcloud/domain/v20180808/model/ModifyDomainOwnerRequest.h>
+#include <tencentcloud/domain/v20180808/model/ModifyDomainOwnerResponse.h>
 #include <tencentcloud/domain/v20180808/model/ModifyDomainOwnerBatchRequest.h>
 #include <tencentcloud/domain/v20180808/model/ModifyDomainOwnerBatchResponse.h>
 #include <tencentcloud/domain/v20180808/model/ModifyIntlCustomDnsHostRequest.h>
@@ -276,6 +278,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDomainDNSBatchResponse> ModifyDomainDNSBatchOutcome;
                 typedef std::future<ModifyDomainDNSBatchOutcome> ModifyDomainDNSBatchOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::ModifyDomainDNSBatchRequest&, ModifyDomainDNSBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainDNSBatchAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDomainOwnerResponse> ModifyDomainOwnerOutcome;
+                typedef std::future<ModifyDomainOwnerOutcome> ModifyDomainOwnerOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::ModifyDomainOwnerRequest&, ModifyDomainOwnerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainOwnerAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDomainOwnerBatchResponse> ModifyDomainOwnerBatchOutcome;
                 typedef std::future<ModifyDomainOwnerBatchOutcome> ModifyDomainOwnerBatchOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::ModifyDomainOwnerBatchRequest&, ModifyDomainOwnerBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainOwnerBatchAsyncHandler;
@@ -706,6 +711,15 @@ namespace TencentCloud
                 ModifyDomainDNSBatchOutcome ModifyDomainDNSBatch(const Model::ModifyDomainDNSBatchRequest &request);
                 void ModifyDomainDNSBatchAsync(const Model::ModifyDomainDNSBatchRequest& request, const ModifyDomainDNSBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDomainDNSBatchOutcomeCallable ModifyDomainDNSBatchCallable(const Model::ModifyDomainDNSBatchRequest& request);
+
+                /**
+                 *本接口 (ModifyDomainOwner) 用于域名过户。
+                 * @param req ModifyDomainOwnerRequest
+                 * @return ModifyDomainOwnerOutcome
+                 */
+                ModifyDomainOwnerOutcome ModifyDomainOwner(const Model::ModifyDomainOwnerRequest &request);
+                void ModifyDomainOwnerAsync(const Model::ModifyDomainOwnerRequest& request, const ModifyDomainOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDomainOwnerOutcomeCallable ModifyDomainOwnerCallable(const Model::ModifyDomainOwnerRequest& request);
 
                 /**
                  *本接口 ( ModifyDomainOwnerBatch) 用于域名批量账号间转移 。

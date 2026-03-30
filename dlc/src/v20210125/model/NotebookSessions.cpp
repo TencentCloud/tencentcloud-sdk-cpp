@@ -35,7 +35,9 @@ NotebookSessions::NotebookSessions() :
     m_sessionTypeHasBeenSet(false),
     m_dataEngineIdHasBeenSet(false),
     m_resourceGroupIdHasBeenSet(false),
-    m_resourceGroupNameHasBeenSet(false)
+    m_resourceGroupNameHasBeenSet(false),
+    m_kernelIdHasBeenSet(false),
+    m_sparkAppNameHasBeenSet(false)
 {
 }
 
@@ -194,6 +196,26 @@ CoreInternalOutcome NotebookSessions::Deserialize(const rapidjson::Value &value)
         m_resourceGroupNameHasBeenSet = true;
     }
 
+    if (value.HasMember("KernelId") && !value["KernelId"].IsNull())
+    {
+        if (!value["KernelId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookSessions.KernelId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kernelId = string(value["KernelId"].GetString());
+        m_kernelIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SparkAppName") && !value["SparkAppName"].IsNull())
+    {
+        if (!value["SparkAppName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookSessions.SparkAppName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sparkAppName = string(value["SparkAppName"].GetString());
+        m_sparkAppNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +341,22 @@ void NotebookSessions::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ResourceGroupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kernelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KernelId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kernelId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sparkAppNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SparkAppName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sparkAppName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +600,37 @@ void NotebookSessions::SetResourceGroupName(const string& _resourceGroupName)
 bool NotebookSessions::ResourceGroupNameHasBeenSet() const
 {
     return m_resourceGroupNameHasBeenSet;
+}
+
+string NotebookSessions::GetKernelId() const
+{
+    return m_kernelId;
+}
+
+void NotebookSessions::SetKernelId(const string& _kernelId)
+{
+    m_kernelId = _kernelId;
+    m_kernelIdHasBeenSet = true;
+}
+
+bool NotebookSessions::KernelIdHasBeenSet() const
+{
+    return m_kernelIdHasBeenSet;
+}
+
+string NotebookSessions::GetSparkAppName() const
+{
+    return m_sparkAppName;
+}
+
+void NotebookSessions::SetSparkAppName(const string& _sparkAppName)
+{
+    m_sparkAppName = _sparkAppName;
+    m_sparkAppNameHasBeenSet = true;
+}
+
+bool NotebookSessions::SparkAppNameHasBeenSet() const
+{
+    return m_sparkAppNameHasBeenSet;
 }
 

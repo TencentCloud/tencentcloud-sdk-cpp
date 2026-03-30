@@ -30,8 +30,12 @@ VideoTemplateInfo::VideoTemplateInfo() :
     m_fillTypeHasBeenSet(false),
     m_vcrfHasBeenSet(false),
     m_gopHasBeenSet(false),
+    m_gopUnitHasBeenSet(false),
     m_preserveHDRSwitchHasBeenSet(false),
-    m_codecTagHasBeenSet(false)
+    m_codecTagHasBeenSet(false),
+    m_modeHasBeenSet(false),
+    m_bframesHasBeenSet(false),
+    m_hlsTimeHasBeenSet(false)
 {
 }
 
@@ -130,6 +134,16 @@ CoreInternalOutcome VideoTemplateInfo::Deserialize(const rapidjson::Value &value
         m_gopHasBeenSet = true;
     }
 
+    if (value.HasMember("GopUnit") && !value["GopUnit"].IsNull())
+    {
+        if (!value["GopUnit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfo.GopUnit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gopUnit = string(value["GopUnit"].GetString());
+        m_gopUnitHasBeenSet = true;
+    }
+
     if (value.HasMember("PreserveHDRSwitch") && !value["PreserveHDRSwitch"].IsNull())
     {
         if (!value["PreserveHDRSwitch"].IsString())
@@ -148,6 +162,36 @@ CoreInternalOutcome VideoTemplateInfo::Deserialize(const rapidjson::Value &value
         }
         m_codecTag = string(value["CodecTag"].GetString());
         m_codecTagHasBeenSet = true;
+    }
+
+    if (value.HasMember("Mode") && !value["Mode"].IsNull())
+    {
+        if (!value["Mode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfo.Mode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mode = string(value["Mode"].GetString());
+        m_modeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Bframes") && !value["Bframes"].IsNull())
+    {
+        if (!value["Bframes"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfo.Bframes` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bframes = value["Bframes"].GetInt64();
+        m_bframesHasBeenSet = true;
+    }
+
+    if (value.HasMember("HlsTime") && !value["HlsTime"].IsNull())
+    {
+        if (!value["HlsTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfo.HlsTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hlsTime = value["HlsTime"].GetInt64();
+        m_hlsTimeHasBeenSet = true;
     }
 
 
@@ -229,6 +273,14 @@ void VideoTemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, m_gop, allocator);
     }
 
+    if (m_gopUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GopUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gopUnit.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_preserveHDRSwitchHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -243,6 +295,30 @@ void VideoTemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "CodecTag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_codecTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bframesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bframes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bframes, allocator);
+    }
+
+    if (m_hlsTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HlsTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hlsTime, allocator);
     }
 
 }
@@ -392,6 +468,22 @@ bool VideoTemplateInfo::GopHasBeenSet() const
     return m_gopHasBeenSet;
 }
 
+string VideoTemplateInfo::GetGopUnit() const
+{
+    return m_gopUnit;
+}
+
+void VideoTemplateInfo::SetGopUnit(const string& _gopUnit)
+{
+    m_gopUnit = _gopUnit;
+    m_gopUnitHasBeenSet = true;
+}
+
+bool VideoTemplateInfo::GopUnitHasBeenSet() const
+{
+    return m_gopUnitHasBeenSet;
+}
+
 string VideoTemplateInfo::GetPreserveHDRSwitch() const
 {
     return m_preserveHDRSwitch;
@@ -422,5 +514,53 @@ void VideoTemplateInfo::SetCodecTag(const string& _codecTag)
 bool VideoTemplateInfo::CodecTagHasBeenSet() const
 {
     return m_codecTagHasBeenSet;
+}
+
+string VideoTemplateInfo::GetMode() const
+{
+    return m_mode;
+}
+
+void VideoTemplateInfo::SetMode(const string& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool VideoTemplateInfo::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
+}
+
+int64_t VideoTemplateInfo::GetBframes() const
+{
+    return m_bframes;
+}
+
+void VideoTemplateInfo::SetBframes(const int64_t& _bframes)
+{
+    m_bframes = _bframes;
+    m_bframesHasBeenSet = true;
+}
+
+bool VideoTemplateInfo::BframesHasBeenSet() const
+{
+    return m_bframesHasBeenSet;
+}
+
+int64_t VideoTemplateInfo::GetHlsTime() const
+{
+    return m_hlsTime;
+}
+
+void VideoTemplateInfo::SetHlsTime(const int64_t& _hlsTime)
+{
+    m_hlsTime = _hlsTime;
+    m_hlsTimeHasBeenSet = true;
+}
+
+bool VideoTemplateInfo::HlsTimeHasBeenSet() const
+{
+    return m_hlsTimeHasBeenSet;
 }
 

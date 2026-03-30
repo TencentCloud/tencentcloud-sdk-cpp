@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ags/v20250920/model/MountOption.h>
 #include <tencentcloud/ags/v20250920/model/CustomConfigurationDetail.h>
+#include <tencentcloud/ags/v20250920/model/MetadataVar.h>
 
 
 namespace TencentCloud
@@ -279,6 +280,48 @@ namespace TencentCloud
                      */
                     bool CustomConfigurationHasBeenSet() const;
 
+                    /**
+                     * 获取<p>网络模式</p><p>枚举值：</p><ul><li>PUBLIC： 公网访问</li><li>SANDBOX： 无网络</li><li>INTERNAL_SERVICE： 腾讯云内部公共服务</li></ul><p>可以覆盖工具级别的网络配置。但如果一个工具本身就不支持 VPC 网络，那么即便在实例设置里选了 VPC 模式，也是无效的</p>
+                     * @return NetworkMode <p>网络模式</p><p>枚举值：</p><ul><li>PUBLIC： 公网访问</li><li>SANDBOX： 无网络</li><li>INTERNAL_SERVICE： 腾讯云内部公共服务</li></ul><p>可以覆盖工具级别的网络配置。但如果一个工具本身就不支持 VPC 网络，那么即便在实例设置里选了 VPC 模式，也是无效的</p>
+                     * 
+                     */
+                    std::string GetNetworkMode() const;
+
+                    /**
+                     * 设置<p>网络模式</p><p>枚举值：</p><ul><li>PUBLIC： 公网访问</li><li>SANDBOX： 无网络</li><li>INTERNAL_SERVICE： 腾讯云内部公共服务</li></ul><p>可以覆盖工具级别的网络配置。但如果一个工具本身就不支持 VPC 网络，那么即便在实例设置里选了 VPC 模式，也是无效的</p>
+                     * @param _networkMode <p>网络模式</p><p>枚举值：</p><ul><li>PUBLIC： 公网访问</li><li>SANDBOX： 无网络</li><li>INTERNAL_SERVICE： 腾讯云内部公共服务</li></ul><p>可以覆盖工具级别的网络配置。但如果一个工具本身就不支持 VPC 网络，那么即便在实例设置里选了 VPC 模式，也是无效的</p>
+                     * 
+                     */
+                    void SetNetworkMode(const std::string& _networkMode);
+
+                    /**
+                     * 判断参数 NetworkMode 是否已赋值
+                     * @return NetworkMode 是否已赋值
+                     * 
+                     */
+                    bool NetworkModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>沙箱实例元数据</p>
+                     * @return Metadata <p>沙箱实例元数据</p>
+                     * 
+                     */
+                    std::vector<MetadataVar> GetMetadata() const;
+
+                    /**
+                     * 设置<p>沙箱实例元数据</p>
+                     * @param _metadata <p>沙箱实例元数据</p>
+                     * 
+                     */
+                    void SetMetadata(const std::vector<MetadataVar>& _metadata);
+
+                    /**
+                     * 判断参数 Metadata 是否已赋值
+                     * @return Metadata 是否已赋值
+                     * 
+                     */
+                    bool MetadataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -346,6 +389,18 @@ namespace TencentCloud
                      */
                     CustomConfigurationDetail m_customConfiguration;
                     bool m_customConfigurationHasBeenSet;
+
+                    /**
+                     * <p>网络模式</p><p>枚举值：</p><ul><li>PUBLIC： 公网访问</li><li>SANDBOX： 无网络</li><li>INTERNAL_SERVICE： 腾讯云内部公共服务</li></ul><p>可以覆盖工具级别的网络配置。但如果一个工具本身就不支持 VPC 网络，那么即便在实例设置里选了 VPC 模式，也是无效的</p>
+                     */
+                    std::string m_networkMode;
+                    bool m_networkModeHasBeenSet;
+
+                    /**
+                     * <p>沙箱实例元数据</p>
+                     */
+                    std::vector<MetadataVar> m_metadata;
+                    bool m_metadataHasBeenSet;
 
                 };
             }

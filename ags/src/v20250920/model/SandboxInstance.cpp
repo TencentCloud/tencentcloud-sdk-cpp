@@ -31,7 +31,9 @@ SandboxInstance::SandboxInstance() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_mountOptionsHasBeenSet(false),
-    m_customConfigurationHasBeenSet(false)
+    m_customConfigurationHasBeenSet(false),
+    m_networkModeHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
 }
 
@@ -167,6 +169,36 @@ CoreInternalOutcome SandboxInstance::Deserialize(const rapidjson::Value &value)
         m_customConfigurationHasBeenSet = true;
     }
 
+    if (value.HasMember("NetworkMode") && !value["NetworkMode"].IsNull())
+    {
+        if (!value["NetworkMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SandboxInstance.NetworkMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkMode = string(value["NetworkMode"].GetString());
+        m_networkModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Metadata") && !value["Metadata"].IsNull())
+    {
+        if (!value["Metadata"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SandboxInstance.Metadata` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Metadata"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MetadataVar item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_metadata.push_back(item);
+        }
+        m_metadataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -268,6 +300,29 @@ void SandboxInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_customConfiguration.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_networkModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadata";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_metadata.begin(); itr != m_metadata.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -447,5 +502,37 @@ void SandboxInstance::SetCustomConfiguration(const CustomConfigurationDetail& _c
 bool SandboxInstance::CustomConfigurationHasBeenSet() const
 {
     return m_customConfigurationHasBeenSet;
+}
+
+string SandboxInstance::GetNetworkMode() const
+{
+    return m_networkMode;
+}
+
+void SandboxInstance::SetNetworkMode(const string& _networkMode)
+{
+    m_networkMode = _networkMode;
+    m_networkModeHasBeenSet = true;
+}
+
+bool SandboxInstance::NetworkModeHasBeenSet() const
+{
+    return m_networkModeHasBeenSet;
+}
+
+vector<MetadataVar> SandboxInstance::GetMetadata() const
+{
+    return m_metadata;
+}
+
+void SandboxInstance::SetMetadata(const vector<MetadataVar>& _metadata)
+{
+    m_metadata = _metadata;
+    m_metadataHasBeenSet = true;
+}
+
+bool SandboxInstance::MetadataHasBeenSet() const
+{
+    return m_metadataHasBeenSet;
 }
 

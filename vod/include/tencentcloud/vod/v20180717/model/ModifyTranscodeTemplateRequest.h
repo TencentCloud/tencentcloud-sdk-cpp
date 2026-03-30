@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取转码模板唯一标识。
-                     * @return Definition 转码模板唯一标识。
+                     * 获取<p>转码模板唯一标识。</p>
+                     * @return Definition <p>转码模板唯一标识。</p>
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置转码模板唯一标识。
-                     * @param _definition 转码模板唯一标识。
+                     * 设置<p>转码模板唯一标识。</p>
+                     * @param _definition <p>转码模板唯一标识。</p>
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 获取<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @return SubAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @param _subAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 设置<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @param _subAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。
-                     * @return Container 封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。
+                     * 获取<p>封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。</p>
+                     * @return Container <p>封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。</p>
                      * 
                      */
                     std::string GetContainer() const;
 
                     /**
-                     * 设置封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。
-                     * @param _container 封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。
+                     * 设置<p>封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。</p>
+                     * @param _container <p>封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。</p>
                      * 
                      */
                     void SetContainer(const std::string& _container);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ContainerHasBeenSet() const;
 
                     /**
-                     * 获取转码模板名称，长度限制：64 个字符。
-                     * @return Name 转码模板名称，长度限制：64 个字符。
+                     * 获取<p>转码模板名称，长度限制：64 个字符。</p>
+                     * @return Name <p>转码模板名称，长度限制：64 个字符。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置转码模板名称，长度限制：64 个字符。
-                     * @param _name 转码模板名称，长度限制：64 个字符。
+                     * 设置<p>转码模板名称，长度限制：64 个字符。</p>
+                     * @param _name <p>转码模板名称，长度限制：64 个字符。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取模板描述信息，长度限制：256 个字符。
-                     * @return Comment 模板描述信息，长度限制：256 个字符。
+                     * 获取<p>模板描述信息，长度限制：256 个字符。</p>
+                     * @return Comment <p>模板描述信息，长度限制：256 个字符。</p>
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置模板描述信息，长度限制：256 个字符。
-                     * @param _comment 模板描述信息，长度限制：256 个字符。
+                     * 设置<p>模板描述信息，长度限制：256 个字符。</p>
+                     * @param _comment <p>模板描述信息，长度限制：256 个字符。</p>
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -152,23 +152,15 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取是否去除视频数据，可选值：
-<li>0：保留</li>
-<li>1：去除</li>
-                     * @return RemoveVideo 是否去除视频数据，可选值：
-<li>0：保留</li>
-<li>1：去除</li>
+                     * 获取<p>是否去除视频数据，可选值：</p><li>0：保留</li><li>1：去除</li>
+                     * @return RemoveVideo <p>是否去除视频数据，可选值：</p><li>0：保留</li><li>1：去除</li>
                      * 
                      */
                     int64_t GetRemoveVideo() const;
 
                     /**
-                     * 设置是否去除视频数据，可选值：
-<li>0：保留</li>
-<li>1：去除</li>
-                     * @param _removeVideo 是否去除视频数据，可选值：
-<li>0：保留</li>
-<li>1：去除</li>
+                     * 设置<p>是否去除视频数据，可选值：</p><li>0：保留</li><li>1：去除</li>
+                     * @param _removeVideo <p>是否去除视频数据，可选值：</p><li>0：保留</li><li>1：去除</li>
                      * 
                      */
                     void SetRemoveVideo(const int64_t& _removeVideo);
@@ -181,23 +173,15 @@ namespace TencentCloud
                     bool RemoveVideoHasBeenSet() const;
 
                     /**
-                     * 获取是否去除音频数据，可选值：
-<li>0：保留</li>
-<li>1：去除</li>
-                     * @return RemoveAudio 是否去除音频数据，可选值：
-<li>0：保留</li>
-<li>1：去除</li>
+                     * 获取<p>是否去除音频数据，可选值：</p><li>0：保留</li><li>1：去除</li>
+                     * @return RemoveAudio <p>是否去除音频数据，可选值：</p><li>0：保留</li><li>1：去除</li>
                      * 
                      */
                     int64_t GetRemoveAudio() const;
 
                     /**
-                     * 设置是否去除音频数据，可选值：
-<li>0：保留</li>
-<li>1：去除</li>
-                     * @param _removeAudio 是否去除音频数据，可选值：
-<li>0：保留</li>
-<li>1：去除</li>
+                     * 设置<p>是否去除音频数据，可选值：</p><li>0：保留</li><li>1：去除</li>
+                     * @param _removeAudio <p>是否去除音频数据，可选值：</p><li>0：保留</li><li>1：去除</li>
                      * 
                      */
                     void SetRemoveAudio(const int64_t& _removeAudio);
@@ -210,15 +194,15 @@ namespace TencentCloud
                     bool RemoveAudioHasBeenSet() const;
 
                     /**
-                     * 获取视频流配置参数。
-                     * @return VideoTemplate 视频流配置参数。
+                     * 获取<p>视频流配置参数。</p>
+                     * @return VideoTemplate <p>视频流配置参数。</p>
                      * 
                      */
                     VideoTemplateInfoForUpdate GetVideoTemplate() const;
 
                     /**
-                     * 设置视频流配置参数。
-                     * @param _videoTemplate 视频流配置参数。
+                     * 设置<p>视频流配置参数。</p>
+                     * @param _videoTemplate <p>视频流配置参数。</p>
                      * 
                      */
                     void SetVideoTemplate(const VideoTemplateInfoForUpdate& _videoTemplate);
@@ -231,15 +215,15 @@ namespace TencentCloud
                     bool VideoTemplateHasBeenSet() const;
 
                     /**
-                     * 获取音频流配置参数。
-                     * @return AudioTemplate 音频流配置参数。
+                     * 获取<p>音频流配置参数。</p>
+                     * @return AudioTemplate <p>音频流配置参数。</p>
                      * 
                      */
                     AudioTemplateInfoForUpdate GetAudioTemplate() const;
 
                     /**
-                     * 设置音频流配置参数。
-                     * @param _audioTemplate 音频流配置参数。
+                     * 设置<p>音频流配置参数。</p>
+                     * @param _audioTemplate <p>音频流配置参数。</p>
                      * 
                      */
                     void SetAudioTemplate(const AudioTemplateInfoForUpdate& _audioTemplate);
@@ -252,15 +236,15 @@ namespace TencentCloud
                     bool AudioTemplateHasBeenSet() const;
 
                     /**
-                     * 获取极速高清转码参数。
-                     * @return TEHDConfig 极速高清转码参数。
+                     * 获取<p>极速高清转码参数。</p>
+                     * @return TEHDConfig <p>极速高清转码参数。</p>
                      * 
                      */
                     TEHDConfigForUpdate GetTEHDConfig() const;
 
                     /**
-                     * 设置极速高清转码参数。
-                     * @param _tEHDConfig 极速高清转码参数。
+                     * 设置<p>极速高清转码参数。</p>
+                     * @param _tEHDConfig <p>极速高清转码参数。</p>
                      * 
                      */
                     void SetTEHDConfig(const TEHDConfigForUpdate& _tEHDConfig);
@@ -273,15 +257,15 @@ namespace TencentCloud
                     bool TEHDConfigHasBeenSet() const;
 
                     /**
-                     * 获取音视频增强配置。
-                     * @return EnhanceConfig 音视频增强配置。
+                     * 获取<p>音视频增强配置。</p>
+                     * @return EnhanceConfig <p>音视频增强配置。</p>
                      * 
                      */
                     EnhanceConfigForUpdate GetEnhanceConfig() const;
 
                     /**
-                     * 设置音视频增强配置。
-                     * @param _enhanceConfig 音视频增强配置。
+                     * 设置<p>音视频增强配置。</p>
+                     * @param _enhanceConfig <p>音视频增强配置。</p>
                      * 
                      */
                     void SetEnhanceConfig(const EnhanceConfigForUpdate& _enhanceConfig);
@@ -294,23 +278,15 @@ namespace TencentCloud
                     bool EnhanceConfigHasBeenSet() const;
 
                     /**
-                     * 获取切片类型，当 Container 为 hls 时有效，可选值：
-<li>ts：ts 切片；</li>
-<li>fmp4：fmp4 切片。</li>
-                     * @return SegmentType 切片类型，当 Container 为 hls 时有效，可选值：
-<li>ts：ts 切片；</li>
-<li>fmp4：fmp4 切片。</li>
+                     * 获取<p>切片类型，当 Container 为 hls 时有效，可选值：</p><li>ts：ts 切片；</li><li>fmp4：fmp4 切片。</li>
+                     * @return SegmentType <p>切片类型，当 Container 为 hls 时有效，可选值：</p><li>ts：ts 切片；</li><li>fmp4：fmp4 切片。</li>
                      * 
                      */
                     std::string GetSegmentType() const;
 
                     /**
-                     * 设置切片类型，当 Container 为 hls 时有效，可选值：
-<li>ts：ts 切片；</li>
-<li>fmp4：fmp4 切片。</li>
-                     * @param _segmentType 切片类型，当 Container 为 hls 时有效，可选值：
-<li>ts：ts 切片；</li>
-<li>fmp4：fmp4 切片。</li>
+                     * 设置<p>切片类型，当 Container 为 hls 时有效，可选值：</p><li>ts：ts 切片；</li><li>fmp4：fmp4 切片。</li>
+                     * @param _segmentType <p>切片类型，当 Container 为 hls 时有效，可选值：</p><li>ts：ts 切片；</li><li>fmp4：fmp4 切片。</li>
                      * 
                      */
                     void SetSegmentType(const std::string& _segmentType);
@@ -322,85 +298,106 @@ namespace TencentCloud
                      */
                     bool SegmentTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>扩展参数。</p>
+                     * @return StdExtInfo <p>扩展参数。</p>
+                     * 
+                     */
+                    std::string GetStdExtInfo() const;
+
+                    /**
+                     * 设置<p>扩展参数。</p>
+                     * @param _stdExtInfo <p>扩展参数。</p>
+                     * 
+                     */
+                    void SetStdExtInfo(const std::string& _stdExtInfo);
+
+                    /**
+                     * 判断参数 StdExtInfo 是否已赋值
+                     * @return StdExtInfo 是否已赋值
+                     * 
+                     */
+                    bool StdExtInfoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 转码模板唯一标识。
+                     * <p>转码模板唯一标识。</p>
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。
+                     * <p>封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a、wav。其中，mp3、flac、ogg、m4a、wav 为纯音频文件。</p>
                      */
                     std::string m_container;
                     bool m_containerHasBeenSet;
 
                     /**
-                     * 转码模板名称，长度限制：64 个字符。
+                     * <p>转码模板名称，长度限制：64 个字符。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 模板描述信息，长度限制：256 个字符。
+                     * <p>模板描述信息，长度限制：256 个字符。</p>
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * 是否去除视频数据，可选值：
-<li>0：保留</li>
-<li>1：去除</li>
+                     * <p>是否去除视频数据，可选值：</p><li>0：保留</li><li>1：去除</li>
                      */
                     int64_t m_removeVideo;
                     bool m_removeVideoHasBeenSet;
 
                     /**
-                     * 是否去除音频数据，可选值：
-<li>0：保留</li>
-<li>1：去除</li>
+                     * <p>是否去除音频数据，可选值：</p><li>0：保留</li><li>1：去除</li>
                      */
                     int64_t m_removeAudio;
                     bool m_removeAudioHasBeenSet;
 
                     /**
-                     * 视频流配置参数。
+                     * <p>视频流配置参数。</p>
                      */
                     VideoTemplateInfoForUpdate m_videoTemplate;
                     bool m_videoTemplateHasBeenSet;
 
                     /**
-                     * 音频流配置参数。
+                     * <p>音频流配置参数。</p>
                      */
                     AudioTemplateInfoForUpdate m_audioTemplate;
                     bool m_audioTemplateHasBeenSet;
 
                     /**
-                     * 极速高清转码参数。
+                     * <p>极速高清转码参数。</p>
                      */
                     TEHDConfigForUpdate m_tEHDConfig;
                     bool m_tEHDConfigHasBeenSet;
 
                     /**
-                     * 音视频增强配置。
+                     * <p>音视频增强配置。</p>
                      */
                     EnhanceConfigForUpdate m_enhanceConfig;
                     bool m_enhanceConfigHasBeenSet;
 
                     /**
-                     * 切片类型，当 Container 为 hls 时有效，可选值：
-<li>ts：ts 切片；</li>
-<li>fmp4：fmp4 切片。</li>
+                     * <p>切片类型，当 Container 为 hls 时有效，可选值：</p><li>ts：ts 切片；</li><li>fmp4：fmp4 切片。</li>
                      */
                     std::string m_segmentType;
                     bool m_segmentTypeHasBeenSet;
+
+                    /**
+                     * <p>扩展参数。</p>
+                     */
+                    std::string m_stdExtInfo;
+                    bool m_stdExtInfoHasBeenSet;
 
                 };
             }

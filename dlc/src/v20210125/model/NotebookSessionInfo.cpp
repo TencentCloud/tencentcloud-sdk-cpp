@@ -46,7 +46,8 @@ NotebookSessionInfo::NotebookSessionInfo() :
     m_resourceGroupIdHasBeenSet(false),
     m_resourceGroupNameHasBeenSet(false),
     m_podSizeHasBeenSet(false),
-    m_podNumbersHasBeenSet(false)
+    m_podNumbersHasBeenSet(false),
+    m_sparkAppNameHasBeenSet(false)
 {
 }
 
@@ -347,6 +348,16 @@ CoreInternalOutcome NotebookSessionInfo::Deserialize(const rapidjson::Value &val
         m_podNumbersHasBeenSet = true;
     }
 
+    if (value.HasMember("SparkAppName") && !value["SparkAppName"].IsNull())
+    {
+        if (!value["SparkAppName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookSessionInfo.SparkAppName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sparkAppName = string(value["SparkAppName"].GetString());
+        m_sparkAppNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -594,6 +605,14 @@ void NotebookSessionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "PodNumbers";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_podNumbers, allocator);
+    }
+
+    if (m_sparkAppNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SparkAppName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sparkAppName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1013,5 +1032,21 @@ void NotebookSessionInfo::SetPodNumbers(const int64_t& _podNumbers)
 bool NotebookSessionInfo::PodNumbersHasBeenSet() const
 {
     return m_podNumbersHasBeenSet;
+}
+
+string NotebookSessionInfo::GetSparkAppName() const
+{
+    return m_sparkAppName;
+}
+
+void NotebookSessionInfo::SetSparkAppName(const string& _sparkAppName)
+{
+    m_sparkAppName = _sparkAppName;
+    m_sparkAppNameHasBeenSet = true;
+}
+
+bool NotebookSessionInfo::SparkAppNameHasBeenSet() const
+{
+    return m_sparkAppNameHasBeenSet;
 }
 
