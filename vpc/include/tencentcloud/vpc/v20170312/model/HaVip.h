@@ -309,15 +309,15 @@ namespace TencentCloud
                     bool HaVipAssociationSetHasBeenSet() const;
 
                     /**
-                     * 获取是否开启`HAVIP`的飘移范围校验。
-                     * @return CheckAssociate 是否开启`HAVIP`的飘移范围校验。
+                     * 获取是否开启`HAVIP`的漂移范围校验。
+                     * @return CheckAssociate 是否开启`HAVIP`的漂移范围校验。
                      * 
                      */
                     bool GetCheckAssociate() const;
 
                     /**
-                     * 设置是否开启`HAVIP`的飘移范围校验。
-                     * @param _checkAssociate 是否开启`HAVIP`的飘移范围校验。
+                     * 设置是否开启`HAVIP`的漂移范围校验。
+                     * @param _checkAssociate 是否开启`HAVIP`的漂移范围校验。
                      * 
                      */
                     void SetCheckAssociate(const bool& _checkAssociate);
@@ -351,15 +351,15 @@ namespace TencentCloud
                     bool CdcIdHasBeenSet() const;
 
                     /**
-                     * 获取HAVIP 刷新时间。该参数只作为出参数。以下场景会触发 FlushTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00
-                     * @return FlushedTime HAVIP 刷新时间。该参数只作为出参数。以下场景会触发 FlushTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00
+                     * 获取HAVIP 刷新时间。该参数只作为出参数。以下场景会触发FlushedTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00
+                     * @return FlushedTime HAVIP 刷新时间。该参数只作为出参数。以下场景会触发FlushedTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00
                      * 
                      */
                     std::string GetFlushedTime() const;
 
                     /**
-                     * 设置HAVIP 刷新时间。该参数只作为出参数。以下场景会触发 FlushTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00
-                     * @param _flushedTime HAVIP 刷新时间。该参数只作为出参数。以下场景会触发 FlushTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00
+                     * 设置HAVIP 刷新时间。该参数只作为出参数。以下场景会触发FlushedTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00
+                     * @param _flushedTime HAVIP 刷新时间。该参数只作为出参数。以下场景会触发FlushedTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00
                      * 
                      */
                     void SetFlushedTime(const std::string& _flushedTime);
@@ -469,7 +469,7 @@ namespace TencentCloud
                     bool m_haVipAssociationSetHasBeenSet;
 
                     /**
-                     * 是否开启`HAVIP`的飘移范围校验。
+                     * 是否开启`HAVIP`的漂移范围校验。
                      */
                     bool m_checkAssociate;
                     bool m_checkAssociateHasBeenSet;
@@ -481,7 +481,7 @@ namespace TencentCloud
                     bool m_cdcIdHasBeenSet;
 
                     /**
-                     * HAVIP 刷新时间。该参数只作为出参数。以下场景会触发 FlushTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00
+                     * HAVIP 刷新时间。该参数只作为出参数。以下场景会触发FlushedTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00
                      */
                     std::string m_flushedTime;
                     bool m_flushedTimeHasBeenSet;

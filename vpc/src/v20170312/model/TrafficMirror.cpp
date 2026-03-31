@@ -34,7 +34,9 @@ TrafficMirror::TrafficMirror() :
     m_createTimeHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_targetInfoHasBeenSet(false)
+    m_targetInfoHasBeenSet(false),
+    m_ingressFilterRulesHasBeenSet(false),
+    m_egressFilterRulesHasBeenSet(false)
 {
 }
 
@@ -213,6 +215,46 @@ CoreInternalOutcome TrafficMirror::Deserialize(const rapidjson::Value &value)
         m_targetInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("IngressFilterRules") && !value["IngressFilterRules"].IsNull())
+    {
+        if (!value["IngressFilterRules"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TrafficMirror.IngressFilterRules` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["IngressFilterRules"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TrafficMirrorFilter item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ingressFilterRules.push_back(item);
+        }
+        m_ingressFilterRulesHasBeenSet = true;
+    }
+
+    if (value.HasMember("EgressFilterRules") && !value["EgressFilterRules"].IsNull())
+    {
+        if (!value["EgressFilterRules"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TrafficMirror.EgressFilterRules` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["EgressFilterRules"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TrafficMirrorFilter item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_egressFilterRules.push_back(item);
+        }
+        m_egressFilterRulesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -346,6 +388,36 @@ void TrafficMirror::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
 
         int i=0;
         for (auto itr = m_targetInfo.begin(); itr != m_targetInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_ingressFilterRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IngressFilterRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ingressFilterRules.begin(); itr != m_ingressFilterRules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_egressFilterRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EgressFilterRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_egressFilterRules.begin(); itr != m_egressFilterRules.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -577,5 +649,37 @@ void TrafficMirror::SetTargetInfo(const vector<TrafficMirrorTargetResourceInfo>&
 bool TrafficMirror::TargetInfoHasBeenSet() const
 {
     return m_targetInfoHasBeenSet;
+}
+
+vector<TrafficMirrorFilter> TrafficMirror::GetIngressFilterRules() const
+{
+    return m_ingressFilterRules;
+}
+
+void TrafficMirror::SetIngressFilterRules(const vector<TrafficMirrorFilter>& _ingressFilterRules)
+{
+    m_ingressFilterRules = _ingressFilterRules;
+    m_ingressFilterRulesHasBeenSet = true;
+}
+
+bool TrafficMirror::IngressFilterRulesHasBeenSet() const
+{
+    return m_ingressFilterRulesHasBeenSet;
+}
+
+vector<TrafficMirrorFilter> TrafficMirror::GetEgressFilterRules() const
+{
+    return m_egressFilterRules;
+}
+
+void TrafficMirror::SetEgressFilterRules(const vector<TrafficMirrorFilter>& _egressFilterRules)
+{
+    m_egressFilterRules = _egressFilterRules;
+    m_egressFilterRulesHasBeenSet = true;
+}
+
+bool TrafficMirror::EgressFilterRulesHasBeenSet() const
+{
+    return m_egressFilterRulesHasBeenSet;
 }
 

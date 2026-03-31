@@ -37,7 +37,9 @@ ModifyShipperRequest::ModifyShipperRequest() :
     m_filenameModeHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+    m_externalIdHasBeenSet(false),
+    m_timeZoneHasBeenSet(false),
+    m_dSLFilterHasBeenSet(false)
 {
 }
 
@@ -175,6 +177,22 @@ string ModifyShipperRequest::ToJsonString() const
         string key = "ExternalId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_externalId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_timeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dSLFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DSLFilter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dSLFilter.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -423,6 +441,38 @@ void ModifyShipperRequest::SetExternalId(const string& _externalId)
 bool ModifyShipperRequest::ExternalIdHasBeenSet() const
 {
     return m_externalIdHasBeenSet;
+}
+
+string ModifyShipperRequest::GetTimeZone() const
+{
+    return m_timeZone;
+}
+
+void ModifyShipperRequest::SetTimeZone(const string& _timeZone)
+{
+    m_timeZone = _timeZone;
+    m_timeZoneHasBeenSet = true;
+}
+
+bool ModifyShipperRequest::TimeZoneHasBeenSet() const
+{
+    return m_timeZoneHasBeenSet;
+}
+
+string ModifyShipperRequest::GetDSLFilter() const
+{
+    return m_dSLFilter;
+}
+
+void ModifyShipperRequest::SetDSLFilter(const string& _dSLFilter)
+{
+    m_dSLFilter = _dSLFilter;
+    m_dSLFilterHasBeenSet = true;
+}
+
+bool ModifyShipperRequest::DSLFilterHasBeenSet() const
+{
+    return m_dSLFilterHasBeenSet;
 }
 
 

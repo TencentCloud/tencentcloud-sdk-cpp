@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取投递任务ID
-                     * @return ShipperId 投递任务ID
+                     * 获取<p>投递任务ID</p>
+                     * @return ShipperId <p>投递任务ID</p>
                      * 
                      */
                     std::string GetShipperId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 投递任务ID
+                     * <p>投递任务ID</p>
                      */
                     std::string m_shipperId;
                     bool m_shipperIdHasBeenSet;

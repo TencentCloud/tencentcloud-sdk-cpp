@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tds/v20220801/model/RiskInfo.h>
+#include <tencentcloud/tds/v20220801/model/ExtraInfo.h>
 
 
 namespace TencentCloud
@@ -45,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取App版本信息
-                     * @return AppVersion App版本信息
+                     * 获取<p>App版本信息</p>
+                     * @return AppVersion <p>App版本信息</p>
                      * 
                      */
                     std::string GetAppVersion() const;
@@ -59,8 +60,8 @@ namespace TencentCloud
                     bool AppVersionHasBeenSet() const;
 
                     /**
-                     * 获取品牌
-                     * @return Brand 品牌
+                     * 获取<p>品牌</p>
+                     * @return Brand <p>品牌</p>
                      * 
                      */
                     std::string GetBrand() const;
@@ -73,8 +74,8 @@ namespace TencentCloud
                     bool BrandHasBeenSet() const;
 
                     /**
-                     * 获取客户端IP
-                     * @return ClientIp 客户端IP
+                     * 获取<p>客户端IP</p>
+                     * @return ClientIp <p>客户端IP</p>
                      * 
                      */
                     std::string GetClientIp() const;
@@ -87,8 +88,8 @@ namespace TencentCloud
                     bool ClientIpHasBeenSet() const;
 
                     /**
-                     * 获取机型
-                     * @return Model 机型
+                     * 获取<p>机型</p>
+                     * @return Model <p>机型</p>
                      * 
                      */
                     std::string GetModel() const;
@@ -101,8 +102,8 @@ namespace TencentCloud
                     bool ModelHasBeenSet() const;
 
                     /**
-                     * 获取网络类型
-                     * @return NetworkType 网络类型
+                     * 获取<p>网络类型</p>
+                     * @return NetworkType <p>网络类型</p>
                      * 
                      */
                     std::string GetNetworkType() const;
@@ -115,8 +116,8 @@ namespace TencentCloud
                     bool NetworkTypeHasBeenSet() const;
 
                     /**
-                     * 获取应用包名
-                     * @return PackageName 应用包名
+                     * 获取<p>应用包名</p>
+                     * @return PackageName <p>应用包名</p>
                      * 
                      */
                     std::string GetPackageName() const;
@@ -129,8 +130,8 @@ namespace TencentCloud
                     bool PackageNameHasBeenSet() const;
 
                     /**
-                     * 获取平台（2-Android，3-iOS，4-H5，5-微信小程序）
-                     * @return Platform 平台（2-Android，3-iOS，4-H5，5-微信小程序）
+                     * 获取<p>平台（2-Android，3-iOS，4-H5，5-微信小程序）</p>
+                     * @return Platform <p>平台（2-Android，3-iOS，4-H5，5-微信小程序）</p>
                      * 
                      */
                     std::string GetPlatform() const;
@@ -143,8 +144,8 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取系统版本
-                     * @return SystemVersion 系统版本
+                     * 获取<p>系统版本</p>
+                     * @return SystemVersion <p>系统版本</p>
                      * 
                      */
                     std::string GetSystemVersion() const;
@@ -157,8 +158,8 @@ namespace TencentCloud
                     bool SystemVersionHasBeenSet() const;
 
                     /**
-                     * 获取SDK版本号
-                     * @return SdkBuildNo SDK版本号
+                     * 获取<p>SDK版本号</p>
+                     * @return SdkBuildNo <p>SDK版本号</p>
                      * 
                      */
                     std::string GetSdkBuildNo() const;
@@ -171,8 +172,8 @@ namespace TencentCloud
                     bool SdkBuildNoHasBeenSet() const;
 
                     /**
-                     * 获取实时风险信息
-                     * @return RiskInfos 实时风险信息
+                     * 获取<p>实时风险信息</p>
+                     * @return RiskInfos <p>实时风险信息</p>
                      * 
                      */
                     std::vector<RiskInfo> GetRiskInfos() const;
@@ -185,8 +186,8 @@ namespace TencentCloud
                     bool RiskInfosHasBeenSet() const;
 
                     /**
-                     * 获取离线风险信息
-                     * @return HistRiskInfos 离线风险信息
+                     * 获取<p>离线风险信息</p>
+                     * @return HistRiskInfos <p>离线风险信息</p>
                      * 
                      */
                     std::vector<RiskInfo> GetHistRiskInfos() const;
@@ -199,8 +200,8 @@ namespace TencentCloud
                     bool HistRiskInfosHasBeenSet() const;
 
                     /**
-                     * 获取设备匿名标识
-                     * @return Openid 设备匿名标识
+                     * 获取<p>设备匿名标识</p>
+                     * @return Openid <p>设备匿名标识</p>
                      * 
                      */
                     std::string GetOpenid() const;
@@ -213,8 +214,8 @@ namespace TencentCloud
                     bool OpenidHasBeenSet() const;
 
                     /**
-                     * 获取场景风险信息
-                     * @return SceneRiskInfos 场景风险信息
+                     * 获取<p>场景风险信息</p>
+                     * @return SceneRiskInfos <p>场景风险信息</p>
                      * 
                      */
                     std::vector<RiskInfo> GetSceneRiskInfos() const;
@@ -227,8 +228,8 @@ namespace TencentCloud
                     bool SceneRiskInfosHasBeenSet() const;
 
                     /**
-                     * 获取建议等级。1-极差，2-较差，3-中等，4-良好，5-优秀
-                     * @return SuggestionLevel 建议等级。1-极差，2-较差，3-中等，4-良好，5-优秀
+                     * 获取<p>建议等级。1-极差，2-较差，3-中等，4-良好，5-优秀</p>
+                     * @return SuggestionLevel <p>建议等级。1-极差，2-较差，3-中等，4-良好，5-优秀</p>
                      * 
                      */
                     uint64_t GetSuggestionLevel() const;
@@ -241,8 +242,8 @@ namespace TencentCloud
                     bool SuggestionLevelHasBeenSet() const;
 
                     /**
-                     * 获取图灵盾统一ID
-                     * @return Unionid 图灵盾统一ID
+                     * 获取<p>图灵盾统一ID</p>
+                     * @return Unionid <p>图灵盾统一ID</p>
                      * 
                      */
                     std::string GetUnionid() const;
@@ -254,97 +255,137 @@ namespace TencentCloud
                      */
                     bool UnionidHasBeenSet() const;
 
+                    /**
+                     * 获取<p>检测时间戳（毫秒）</p>
+                     * @return RiskCheckTimestamp <p>检测时间戳（毫秒）</p>
+                     * 
+                     */
+                    std::string GetRiskCheckTimestamp() const;
+
+                    /**
+                     * 判断参数 RiskCheckTimestamp 是否已赋值
+                     * @return RiskCheckTimestamp 是否已赋值
+                     * 
+                     */
+                    bool RiskCheckTimestampHasBeenSet() const;
+
+                    /**
+                     * 获取<p>额外信息</p>
+                     * @return ExtraInfos <p>额外信息</p>
+                     * 
+                     */
+                    std::vector<ExtraInfo> GetExtraInfos() const;
+
+                    /**
+                     * 判断参数 ExtraInfos 是否已赋值
+                     * @return ExtraInfos 是否已赋值
+                     * 
+                     */
+                    bool ExtraInfosHasBeenSet() const;
+
                 private:
 
                     /**
-                     * App版本信息
+                     * <p>App版本信息</p>
                      */
                     std::string m_appVersion;
                     bool m_appVersionHasBeenSet;
 
                     /**
-                     * 品牌
+                     * <p>品牌</p>
                      */
                     std::string m_brand;
                     bool m_brandHasBeenSet;
 
                     /**
-                     * 客户端IP
+                     * <p>客户端IP</p>
                      */
                     std::string m_clientIp;
                     bool m_clientIpHasBeenSet;
 
                     /**
-                     * 机型
+                     * <p>机型</p>
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;
 
                     /**
-                     * 网络类型
+                     * <p>网络类型</p>
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;
 
                     /**
-                     * 应用包名
+                     * <p>应用包名</p>
                      */
                     std::string m_packageName;
                     bool m_packageNameHasBeenSet;
 
                     /**
-                     * 平台（2-Android，3-iOS，4-H5，5-微信小程序）
+                     * <p>平台（2-Android，3-iOS，4-H5，5-微信小程序）</p>
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 系统版本
+                     * <p>系统版本</p>
                      */
                     std::string m_systemVersion;
                     bool m_systemVersionHasBeenSet;
 
                     /**
-                     * SDK版本号
+                     * <p>SDK版本号</p>
                      */
                     std::string m_sdkBuildNo;
                     bool m_sdkBuildNoHasBeenSet;
 
                     /**
-                     * 实时风险信息
+                     * <p>实时风险信息</p>
                      */
                     std::vector<RiskInfo> m_riskInfos;
                     bool m_riskInfosHasBeenSet;
 
                     /**
-                     * 离线风险信息
+                     * <p>离线风险信息</p>
                      */
                     std::vector<RiskInfo> m_histRiskInfos;
                     bool m_histRiskInfosHasBeenSet;
 
                     /**
-                     * 设备匿名标识
+                     * <p>设备匿名标识</p>
                      */
                     std::string m_openid;
                     bool m_openidHasBeenSet;
 
                     /**
-                     * 场景风险信息
+                     * <p>场景风险信息</p>
                      */
                     std::vector<RiskInfo> m_sceneRiskInfos;
                     bool m_sceneRiskInfosHasBeenSet;
 
                     /**
-                     * 建议等级。1-极差，2-较差，3-中等，4-良好，5-优秀
+                     * <p>建议等级。1-极差，2-较差，3-中等，4-良好，5-优秀</p>
                      */
                     uint64_t m_suggestionLevel;
                     bool m_suggestionLevelHasBeenSet;
 
                     /**
-                     * 图灵盾统一ID
+                     * <p>图灵盾统一ID</p>
                      */
                     std::string m_unionid;
                     bool m_unionidHasBeenSet;
+
+                    /**
+                     * <p>检测时间戳（毫秒）</p>
+                     */
+                    std::string m_riskCheckTimestamp;
+                    bool m_riskCheckTimestampHasBeenSet;
+
+                    /**
+                     * <p>额外信息</p>
+                     */
+                    std::vector<ExtraInfo> m_extraInfos;
+                    bool m_extraInfosHasBeenSet;
 
                 };
             }

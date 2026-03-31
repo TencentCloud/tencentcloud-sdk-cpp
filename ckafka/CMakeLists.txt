@@ -97,6 +97,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/KafkaParam.h
   include/tencentcloud/ckafka/v20190819/model/Connection.h
   include/tencentcloud/ckafka/v20190819/model/BatchCreateAclResponse.h
+  include/tencentcloud/ckafka/v20190819/model/IpWhitelistDTO.h
   include/tencentcloud/ckafka/v20190819/model/DeleteRouteRequest.h
   include/tencentcloud/ckafka/v20190819/model/MongoDBConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/BatchModifyTopicAttributesResponse.h
@@ -467,6 +468,7 @@ set(ckafka_src
   src/v20190819/model/KafkaParam.cpp
   src/v20190819/model/Connection.cpp
   src/v20190819/model/BatchCreateAclResponse.cpp
+  src/v20190819/model/IpWhitelistDTO.cpp
   src/v20190819/model/DeleteRouteRequest.cpp
   src/v20190819/model/MongoDBConnectParam.cpp
   src/v20190819/model/BatchModifyTopicAttributesResponse.cpp

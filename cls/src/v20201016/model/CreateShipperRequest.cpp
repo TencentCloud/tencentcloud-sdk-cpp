@@ -38,7 +38,9 @@ CreateShipperRequest::CreateShipperRequest() :
     m_endTimeHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+    m_externalIdHasBeenSet(false),
+    m_timeZoneHasBeenSet(false),
+    m_dSLFilterHasBeenSet(false)
 {
 }
 
@@ -184,6 +186,22 @@ string CreateShipperRequest::ToJsonString() const
         string key = "ExternalId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_externalId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_timeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dSLFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DSLFilter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dSLFilter.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -448,6 +466,38 @@ void CreateShipperRequest::SetExternalId(const string& _externalId)
 bool CreateShipperRequest::ExternalIdHasBeenSet() const
 {
     return m_externalIdHasBeenSet;
+}
+
+string CreateShipperRequest::GetTimeZone() const
+{
+    return m_timeZone;
+}
+
+void CreateShipperRequest::SetTimeZone(const string& _timeZone)
+{
+    m_timeZone = _timeZone;
+    m_timeZoneHasBeenSet = true;
+}
+
+bool CreateShipperRequest::TimeZoneHasBeenSet() const
+{
+    return m_timeZoneHasBeenSet;
+}
+
+string CreateShipperRequest::GetDSLFilter() const
+{
+    return m_dSLFilter;
+}
+
+void CreateShipperRequest::SetDSLFilter(const string& _dSLFilter)
+{
+    m_dSLFilter = _dSLFilter;
+    m_dSLFilterHasBeenSet = true;
+}
+
+bool CreateShipperRequest::DSLFilterHasBeenSet() const
+{
+    return m_dSLFilterHasBeenSet;
 }
 
 

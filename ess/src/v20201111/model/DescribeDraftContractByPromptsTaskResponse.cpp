@@ -27,7 +27,8 @@ DescribeDraftContractByPromptsTaskResponse::DescribeDraftContractByPromptsTaskRe
     m_statusHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_contractNameHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+    m_resourceIdHasBeenSet(false),
+    m_contractUrlHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome DescribeDraftContractByPromptsTaskResponse::Deserialize(cons
         m_resourceIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ContractUrl") && !rsp["ContractUrl"].IsNull())
+    {
+        if (!rsp["ContractUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContractUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_contractUrl = string(rsp["ContractUrl"].GetString());
+        m_contractUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +156,14 @@ string DescribeDraftContractByPromptsTaskResponse::ToJsonString() const
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contractUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContractUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contractUrl.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +216,16 @@ string DescribeDraftContractByPromptsTaskResponse::GetResourceId() const
 bool DescribeDraftContractByPromptsTaskResponse::ResourceIdHasBeenSet() const
 {
     return m_resourceIdHasBeenSet;
+}
+
+string DescribeDraftContractByPromptsTaskResponse::GetContractUrl() const
+{
+    return m_contractUrl;
+}
+
+bool DescribeDraftContractByPromptsTaskResponse::ContractUrlHasBeenSet() const
+{
+    return m_contractUrlHasBeenSet;
 }
 
 

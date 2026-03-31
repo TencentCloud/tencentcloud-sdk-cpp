@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool ImagesHasBeenSet() const;
 
+                    /**
+                     * 获取容器镜像制作snapshotter
+                     * @return Snapshotter 容器镜像制作snapshotter
+                     * 
+                     */
+                    std::string GetSnapshotter() const;
+
+                    /**
+                     * 设置容器镜像制作snapshotter
+                     * @param _snapshotter 容器镜像制作snapshotter
+                     * 
+                     */
+                    void SetSnapshotter(const std::string& _snapshotter);
+
+                    /**
+                     * 判断参数 Snapshotter 是否已赋值
+                     * @return Snapshotter 是否已赋值
+                     * 
+                     */
+                    bool SnapshotterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_images;
                     bool m_imagesHasBeenSet;
+
+                    /**
+                     * 容器镜像制作snapshotter
+                     */
+                    std::string m_snapshotter;
+                    bool m_snapshotterHasBeenSet;
 
                 };
             }

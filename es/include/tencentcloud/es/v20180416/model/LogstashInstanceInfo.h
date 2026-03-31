@@ -726,6 +726,31 @@ namespace TencentCloud
                      */
                     bool MultiZoneInfoHasBeenSet() const;
 
+                    /**
+                     * 获取客户自定义dns配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserDnsIp 客户自定义dns配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUserDnsIp() const;
+
+                    /**
+                     * 设置客户自定义dns配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _userDnsIp 客户自定义dns配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUserDnsIp(const std::string& _userDnsIp);
+
+                    /**
+                     * 判断参数 UserDnsIp 是否已赋值
+                     * @return UserDnsIp 是否已赋值
+                     * 
+                     */
+                    bool UserDnsIpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -919,6 +944,13 @@ namespace TencentCloud
                      */
                     std::vector<ZoneDetail> m_multiZoneInfo;
                     bool m_multiZoneInfoHasBeenSet;
+
+                    /**
+                     * 客户自定义dns配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userDnsIp;
+                    bool m_userDnsIpHasBeenSet;
 
                 };
             }

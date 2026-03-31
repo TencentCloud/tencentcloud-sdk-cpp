@@ -532,6 +532,48 @@ namespace TencentCloud
                      */
                     bool TaskStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用于生成投递到COS 的文件路径中的时间变量</p>
+                     * @return TimeZone <p>用于生成投递到COS 的文件路径中的时间变量</p>
+                     * 
+                     */
+                    std::string GetTimeZone() const;
+
+                    /**
+                     * 设置<p>用于生成投递到COS 的文件路径中的时间变量</p>
+                     * @param _timeZone <p>用于生成投递到COS 的文件路径中的时间变量</p>
+                     * 
+                     */
+                    void SetTimeZone(const std::string& _timeZone);
+
+                    /**
+                     * 判断参数 TimeZone 是否已赋值
+                     * @return TimeZone 是否已赋值
+                     * 
+                     */
+                    bool TimeZoneHasBeenSet() const;
+
+                    /**
+                     * 获取<p>预过滤处理-对写入COS原始数据进行预过滤处理</p>
+                     * @return DSLFilter <p>预过滤处理-对写入COS原始数据进行预过滤处理</p>
+                     * 
+                     */
+                    std::string GetDSLFilter() const;
+
+                    /**
+                     * 设置<p>预过滤处理-对写入COS原始数据进行预过滤处理</p>
+                     * @param _dSLFilter <p>预过滤处理-对写入COS原始数据进行预过滤处理</p>
+                     * 
+                     */
+                    void SetDSLFilter(const std::string& _dSLFilter);
+
+                    /**
+                     * 判断参数 DSLFilter 是否已赋值
+                     * @return DSLFilter 是否已赋值
+                     * 
+                     */
+                    bool DSLFilterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -671,6 +713,18 @@ namespace TencentCloud
                      */
                     uint64_t m_taskStatus;
                     bool m_taskStatusHasBeenSet;
+
+                    /**
+                     * <p>用于生成投递到COS 的文件路径中的时间变量</p>
+                     */
+                    std::string m_timeZone;
+                    bool m_timeZoneHasBeenSet;
+
+                    /**
+                     * <p>预过滤处理-对写入COS原始数据进行预过滤处理</p>
+                     */
+                    std::string m_dSLFilter;
+                    bool m_dSLFilterHasBeenSet;
 
                 };
             }

@@ -33,7 +33,8 @@ CreateRouteRequest::CreateRouteRequest() :
     m_publicNetworkHasBeenSet(false),
     m_ipHasBeenSet(false),
     m_noteHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_ipWhitelistHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,21 @@ string CreateRouteRequest::ToJsonString() const
         for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_ipWhitelistHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpWhitelist";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ipWhitelist.begin(); itr != m_ipWhitelist.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -319,6 +335,22 @@ void CreateRouteRequest::SetSecurityGroupIds(const vector<string>& _securityGrou
 bool CreateRouteRequest::SecurityGroupIdsHasBeenSet() const
 {
     return m_securityGroupIdsHasBeenSet;
+}
+
+vector<IpWhitelistDTO> CreateRouteRequest::GetIpWhitelist() const
+{
+    return m_ipWhitelist;
+}
+
+void CreateRouteRequest::SetIpWhitelist(const vector<IpWhitelistDTO>& _ipWhitelist)
+{
+    m_ipWhitelist = _ipWhitelist;
+    m_ipWhitelistHasBeenSet = true;
+}
+
+bool CreateRouteRequest::IpWhitelistHasBeenSet() const
+{
+    return m_ipWhitelistHasBeenSet;
 }
 
 

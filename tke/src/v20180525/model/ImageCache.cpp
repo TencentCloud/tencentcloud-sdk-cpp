@@ -33,7 +33,9 @@ ImageCache::ImageCache() :
     m_statusHasBeenSet(false),
     m_retentionDaysHasBeenSet(false),
     m_imageRegistryCredentialsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_imageCacheTypeHasBeenSet(false),
+    m_snapshotterHasBeenSet(false)
 {
 }
 
@@ -205,6 +207,26 @@ CoreInternalOutcome ImageCache::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageCacheType") && !value["ImageCacheType"].IsNull())
+    {
+        if (!value["ImageCacheType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageCache.ImageCacheType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageCacheType = string(value["ImageCacheType"].GetString());
+        m_imageCacheTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Snapshotter") && !value["Snapshotter"].IsNull())
+    {
+        if (!value["Snapshotter"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageCache.Snapshotter` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_snapshotter = string(value["Snapshotter"].GetString());
+        m_snapshotterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -340,6 +362,22 @@ void ImageCache::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_imageCacheTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageCacheType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageCacheType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_snapshotterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Snapshotter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_snapshotter.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -551,5 +589,37 @@ void ImageCache::SetTags(const vector<Tag>& _tags)
 bool ImageCache::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string ImageCache::GetImageCacheType() const
+{
+    return m_imageCacheType;
+}
+
+void ImageCache::SetImageCacheType(const string& _imageCacheType)
+{
+    m_imageCacheType = _imageCacheType;
+    m_imageCacheTypeHasBeenSet = true;
+}
+
+bool ImageCache::ImageCacheTypeHasBeenSet() const
+{
+    return m_imageCacheTypeHasBeenSet;
+}
+
+string ImageCache::GetSnapshotter() const
+{
+    return m_snapshotter;
+}
+
+void ImageCache::SetSnapshotter(const string& _snapshotter)
+{
+    m_snapshotter = _snapshotter;
+    m_snapshotterHasBeenSet = true;
+}
+
+bool ImageCache::SnapshotterHasBeenSet() const
+{
+    return m_snapshotterHasBeenSet;
 }
 

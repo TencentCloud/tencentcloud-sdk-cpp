@@ -40,7 +40,8 @@ ExtractRuleInfo::ExtractRuleInfo() :
     m_pathRegexHasBeenSet(false),
     m_metaTagsHasBeenSet(false),
     m_eventLogRulesHasBeenSet(false),
-    m_advanceFilterRulesHasBeenSet(false)
+    m_advanceFilterRulesHasBeenSet(false),
+    m_rawLogKeyHasBeenSet(false)
 {
 }
 
@@ -292,6 +293,16 @@ CoreInternalOutcome ExtractRuleInfo::Deserialize(const rapidjson::Value &value)
         m_advanceFilterRulesHasBeenSet = true;
     }
 
+    if (value.HasMember("RawLogKey") && !value["RawLogKey"].IsNull())
+    {
+        if (!value["RawLogKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.RawLogKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rawLogKey = string(value["RawLogKey"].GetString());
+        m_rawLogKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -490,6 +501,14 @@ void ExtractRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_rawLogKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RawLogKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rawLogKey.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -813,5 +832,21 @@ void ExtractRuleInfo::SetAdvanceFilterRules(const vector<AdvanceFilterRuleInfo>&
 bool ExtractRuleInfo::AdvanceFilterRulesHasBeenSet() const
 {
     return m_advanceFilterRulesHasBeenSet;
+}
+
+string ExtractRuleInfo::GetRawLogKey() const
+{
+    return m_rawLogKey;
+}
+
+void ExtractRuleInfo::SetRawLogKey(const string& _rawLogKey)
+{
+    m_rawLogKey = _rawLogKey;
+    m_rawLogKeyHasBeenSet = true;
+}
+
+bool ExtractRuleInfo::RawLogKeyHasBeenSet() const
+{
+    return m_rawLogKeyHasBeenSet;
 }
 

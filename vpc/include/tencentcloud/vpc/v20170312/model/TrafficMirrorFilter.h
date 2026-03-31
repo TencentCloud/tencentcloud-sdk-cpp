@@ -151,6 +151,111 @@ namespace TencentCloud
                      */
                     bool DstPortHasBeenSet() const;
 
+                    /**
+                     * 获取流量镜像过滤规则唯一ID。
+                     * @return TrafficMirrorFilterRuleId 流量镜像过滤规则唯一ID。
+                     * 
+                     */
+                    std::string GetTrafficMirrorFilterRuleId() const;
+
+                    /**
+                     * 设置流量镜像过滤规则唯一ID。
+                     * @param _trafficMirrorFilterRuleId 流量镜像过滤规则唯一ID。
+                     * 
+                     */
+                    void SetTrafficMirrorFilterRuleId(const std::string& _trafficMirrorFilterRuleId);
+
+                    /**
+                     * 判断参数 TrafficMirrorFilterRuleId 是否已赋值
+                     * @return TrafficMirrorFilterRuleId 是否已赋值
+                     * 
+                     */
+                    bool TrafficMirrorFilterRuleIdHasBeenSet() const;
+
+                    /**
+                     * 获取流量镜像过滤规则优先级。
+                     * @return Priority 流量镜像过滤规则优先级。
+                     * 
+                     */
+                    uint64_t GetPriority() const;
+
+                    /**
+                     * 设置流量镜像过滤规则优先级。
+                     * @param _priority 流量镜像过滤规则优先级。
+                     * 
+                     */
+                    void SetPriority(const uint64_t& _priority);
+
+                    /**
+                     * 判断参数 Priority 是否已赋值
+                     * @return Priority 是否已赋值
+                     * 
+                     */
+                    bool PriorityHasBeenSet() const;
+
+                    /**
+                     * 获取流量镜像过滤规则策略，支持类型："ACCEPT", "DROP"。
+                     * @return Action 流量镜像过滤规则策略，支持类型："ACCEPT", "DROP"。
+                     * 
+                     */
+                    std::string GetAction() const;
+
+                    /**
+                     * 设置流量镜像过滤规则策略，支持类型："ACCEPT", "DROP"。
+                     * @param _action 流量镜像过滤规则策略，支持类型："ACCEPT", "DROP"。
+                     * 
+                     */
+                    void SetAction(const std::string& _action);
+
+                    /**
+                     * 判断参数 Action 是否已赋值
+                     * @return Action 是否已赋值
+                     * 
+                     */
+                    bool ActionHasBeenSet() const;
+
+                    /**
+                     * 获取流量镜像过滤规则描述。
+                     * @return Description 流量镜像过滤规则描述。
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置流量镜像过滤规则描述。
+                     * @param _description 流量镜像过滤规则描述。
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间。
+                     * @return CreatedTime 创建时间。
+                     * 
+                     */
+                    std::string GetCreatedTime() const;
+
+                    /**
+                     * 设置创建时间。
+                     * @param _createdTime 创建时间。
+                     * 
+                     */
+                    void SetCreatedTime(const std::string& _createdTime);
+
+                    /**
+                     * 判断参数 CreatedTime 是否已赋值
+                     * @return CreatedTime 是否已赋值
+                     * 
+                     */
+                    bool CreatedTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +287,36 @@ namespace TencentCloud
                      */
                     std::string m_dstPort;
                     bool m_dstPortHasBeenSet;
+
+                    /**
+                     * 流量镜像过滤规则唯一ID。
+                     */
+                    std::string m_trafficMirrorFilterRuleId;
+                    bool m_trafficMirrorFilterRuleIdHasBeenSet;
+
+                    /**
+                     * 流量镜像过滤规则优先级。
+                     */
+                    uint64_t m_priority;
+                    bool m_priorityHasBeenSet;
+
+                    /**
+                     * 流量镜像过滤规则策略，支持类型："ACCEPT", "DROP"。
+                     */
+                    std::string m_action;
+                    bool m_actionHasBeenSet;
+
+                    /**
+                     * 流量镜像过滤规则描述。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 创建时间。
+                     */
+                    std::string m_createdTime;
+                    bool m_createdTimeHasBeenSet;
 
                 };
             }

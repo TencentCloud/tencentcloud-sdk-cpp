@@ -110,6 +110,27 @@ namespace TencentCloud
                     bool YMLConfigHasBeenSet() const;
 
                     /**
+                     * 获取客户自定义dns配置
+                     * @return UserDnsIp 客户自定义dns配置
+                     * 
+                     */
+                    std::string GetUserDnsIp() const;
+
+                    /**
+                     * 设置客户自定义dns配置
+                     * @param _userDnsIp 客户自定义dns配置
+                     * 
+                     */
+                    void SetUserDnsIp(const std::string& _userDnsIp);
+
+                    /**
+                     * 判断参数 UserDnsIp 是否已赋值
+                     * @return UserDnsIp 是否已赋值
+                     * 
+                     */
+                    bool UserDnsIpHasBeenSet() const;
+
+                    /**
                      * 获取实例绑定的ES集群信息
                      * @return BindedES 实例绑定的ES集群信息
                      * 
@@ -275,6 +296,12 @@ namespace TencentCloud
                      */
                     std::string m_yMLConfig;
                     bool m_yMLConfigHasBeenSet;
+
+                    /**
+                     * 客户自定义dns配置
+                     */
+                    std::string m_userDnsIp;
+                    bool m_userDnsIpHasBeenSet;
 
                     /**
                      * 实例绑定的ES集群信息

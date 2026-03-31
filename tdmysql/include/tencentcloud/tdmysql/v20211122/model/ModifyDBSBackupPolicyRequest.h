@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份策略
-                     * @return BackupPolicy 备份策略
+                     * 获取<p>备份策略</p>
+                     * @return BackupPolicy <p>备份策略</p>
                      * 
                      */
                     BackupPolicyModelInput GetBackupPolicy() const;
 
                     /**
-                     * 设置备份策略
-                     * @param _backupPolicy 备份策略
+                     * 设置<p>备份策略</p>
+                     * @param _backupPolicy <p>备份策略</p>
                      * 
                      */
                     void SetBackupPolicy(const BackupPolicyModelInput& _backupPolicy);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool BackupPolicyHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 备份策略
+                     * <p>备份策略</p>
                      */
                     BackupPolicyModelInput m_backupPolicy;
                     bool m_backupPolicyHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

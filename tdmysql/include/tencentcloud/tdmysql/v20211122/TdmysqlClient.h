@@ -135,7 +135,7 @@ namespace TencentCloud
                 CancelIsolateDBInstancesOutcomeCallable CancelIsolateDBInstancesCallable(const Model::CancelIsolateDBInstancesRequest& request);
 
                 /**
-                 *创建实例备份集
+                 *创建实例手工备份  CreateDBSBackup
                  * @param req CreateDBSBackupRequest
                  * @return CreateDBSBackupOutcome
                  */
@@ -144,7 +144,7 @@ namespace TencentCloud
                 CreateDBSBackupOutcomeCallable CreateDBSBackupCallable(const Model::CreateDBSBackupRequest& request);
 
                 /**
-                 *删除实例备份集
+                 *删除实例手工备份 DeleteDBSBackupSets
                  * @param req DeleteDBSBackupSetsRequest
                  * @return DeleteDBSBackupSetsOutcome
                  */
@@ -162,7 +162,7 @@ namespace TencentCloud
                 DescribeDBParametersOutcomeCallable DescribeDBParametersCallable(const Model::DescribeDBParametersRequest& request);
 
                 /**
-                 *可恢复时间查询
+                 *获取可恢复时间 DescribeDBSAvailableRecoveryTime
                  * @param req DescribeDBSAvailableRecoveryTimeRequest
                  * @return DescribeDBSAvailableRecoveryTimeOutcome
                  */
@@ -171,7 +171,7 @@ namespace TencentCloud
                 DescribeDBSAvailableRecoveryTimeOutcomeCallable DescribeDBSAvailableRecoveryTimeCallable(const Model::DescribeDBSAvailableRecoveryTimeRequest& request);
 
                 /**
-                 *查询实例克隆列表
+                 *查询实例克隆列表 DescribeDBSCloneInstances
                  * @param req DescribeDBSCloneInstancesRequest
                  * @return DescribeDBSCloneInstancesOutcome
                  */
@@ -252,7 +252,7 @@ namespace TencentCloud
                 ModifyDBParametersOutcomeCallable ModifyDBParametersCallable(const Model::ModifyDBParametersRequest& request);
 
                 /**
-                 *修改实例备份策略
+                 *修改实例备份策略 ModifyDBSBackupPolicy
                  * @param req ModifyDBSBackupPolicyRequest
                  * @return ModifyDBSBackupPolicyOutcome
                  */
@@ -261,7 +261,7 @@ namespace TencentCloud
                 ModifyDBSBackupPolicyOutcomeCallable ModifyDBSBackupPolicyCallable(const Model::ModifyDBSBackupPolicyRequest& request);
 
                 /**
-                 *修改备份集备注
+                 *修改实例备份备注 ModifyDBSBackupSetComment
                  * @param req ModifyDBSBackupSetCommentRequest
                  * @return ModifyDBSBackupSetCommentOutcome
                  */

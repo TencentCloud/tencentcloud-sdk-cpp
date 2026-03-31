@@ -346,6 +346,48 @@ UpdateFailed：更新失败
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取镜像缓存类型
+                     * @return ImageCacheType 镜像缓存类型
+                     * 
+                     */
+                    std::string GetImageCacheType() const;
+
+                    /**
+                     * 设置镜像缓存类型
+                     * @param _imageCacheType 镜像缓存类型
+                     * 
+                     */
+                    void SetImageCacheType(const std::string& _imageCacheType);
+
+                    /**
+                     * 判断参数 ImageCacheType 是否已赋值
+                     * @return ImageCacheType 是否已赋值
+                     * 
+                     */
+                    bool ImageCacheTypeHasBeenSet() const;
+
+                    /**
+                     * 获取镜像缓存所属snapshotter类型
+                     * @return Snapshotter 镜像缓存所属snapshotter类型
+                     * 
+                     */
+                    std::string GetSnapshotter() const;
+
+                    /**
+                     * 设置镜像缓存所属snapshotter类型
+                     * @param _snapshotter 镜像缓存所属snapshotter类型
+                     * 
+                     */
+                    void SetSnapshotter(const std::string& _snapshotter);
+
+                    /**
+                     * 判断参数 Snapshotter 是否已赋值
+                     * @return Snapshotter 是否已赋值
+                     * 
+                     */
+                    bool SnapshotterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -431,6 +473,18 @@ UpdateFailed：更新失败
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 镜像缓存类型
+                     */
+                    std::string m_imageCacheType;
+                    bool m_imageCacheTypeHasBeenSet;
+
+                    /**
+                     * 镜像缓存所属snapshotter类型
+                     */
+                    std::string m_snapshotter;
+                    bool m_snapshotterHasBeenSet;
 
                 };
             }

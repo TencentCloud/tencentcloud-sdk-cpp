@@ -26,6 +26,7 @@ UpdateLogstashInstanceRequest::UpdateLogstashInstanceRequest() :
     m_instanceIdHasBeenSet(false),
     m_nodeNumHasBeenSet(false),
     m_yMLConfigHasBeenSet(false),
+    m_userDnsIpHasBeenSet(false),
     m_bindedESHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_extendedFilesHasBeenSet(false),
@@ -65,6 +66,14 @@ string UpdateLogstashInstanceRequest::ToJsonString() const
         string key = "YMLConfig";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_yMLConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userDnsIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserDnsIp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userDnsIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bindedESHasBeenSet)
@@ -193,6 +202,22 @@ void UpdateLogstashInstanceRequest::SetYMLConfig(const string& _yMLConfig)
 bool UpdateLogstashInstanceRequest::YMLConfigHasBeenSet() const
 {
     return m_yMLConfigHasBeenSet;
+}
+
+string UpdateLogstashInstanceRequest::GetUserDnsIp() const
+{
+    return m_userDnsIp;
+}
+
+void UpdateLogstashInstanceRequest::SetUserDnsIp(const string& _userDnsIp)
+{
+    m_userDnsIp = _userDnsIp;
+    m_userDnsIpHasBeenSet = true;
+}
+
+bool UpdateLogstashInstanceRequest::UserDnsIpHasBeenSet() const
+{
+    return m_userDnsIpHasBeenSet;
 }
 
 LogstashBindedES UpdateLogstashInstanceRequest::GetBindedES() const

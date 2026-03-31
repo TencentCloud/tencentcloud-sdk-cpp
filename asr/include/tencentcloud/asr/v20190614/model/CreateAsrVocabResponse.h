@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取词表ID，可用于获取词表信息
-                     * @return VocabId 词表ID，可用于获取词表信息
+                     * 获取<p>词表ID，可用于获取词表信息</p>
+                     * @return VocabId <p>词表ID，可用于获取词表信息</p>
                      * 
                      */
                     std::string GetVocabId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 词表ID，可用于获取词表信息
+                     * <p>词表ID，可用于获取词表信息</p>
                      */
                     std::string m_vocabId;
                     bool m_vocabIdHasBeenSet;

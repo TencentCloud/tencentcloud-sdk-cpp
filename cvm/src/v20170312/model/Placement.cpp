@@ -25,6 +25,8 @@ Placement::Placement() :
     m_projectIdHasBeenSet(false),
     m_hostIdsHasBeenSet(false),
     m_hostIdHasBeenSet(false),
+    m_dedicatedResourcePackTenancyHasBeenSet(false),
+    m_dedicatedResourcePackIdsHasBeenSet(false),
     m_rackIdHasBeenSet(false)
 {
 }
@@ -75,6 +77,29 @@ CoreInternalOutcome Placement::Deserialize(const rapidjson::Value &value)
         }
         m_hostId = string(value["HostId"].GetString());
         m_hostIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DedicatedResourcePackTenancy") && !value["DedicatedResourcePackTenancy"].IsNull())
+    {
+        if (!value["DedicatedResourcePackTenancy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Placement.DedicatedResourcePackTenancy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dedicatedResourcePackTenancy = string(value["DedicatedResourcePackTenancy"].GetString());
+        m_dedicatedResourcePackTenancyHasBeenSet = true;
+    }
+
+    if (value.HasMember("DedicatedResourcePackIds") && !value["DedicatedResourcePackIds"].IsNull())
+    {
+        if (!value["DedicatedResourcePackIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Placement.DedicatedResourcePackIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DedicatedResourcePackIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_dedicatedResourcePackIds.push_back((*itr).GetString());
+        }
+        m_dedicatedResourcePackIdsHasBeenSet = true;
     }
 
     if (value.HasMember("RackId") && !value["RackId"].IsNull())
@@ -129,6 +154,27 @@ void Placement::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "HostId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hostId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dedicatedResourcePackTenancyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DedicatedResourcePackTenancy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dedicatedResourcePackTenancy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dedicatedResourcePackIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DedicatedResourcePackIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_dedicatedResourcePackIds.begin(); itr != m_dedicatedResourcePackIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_rackIdHasBeenSet)
@@ -204,6 +250,38 @@ void Placement::SetHostId(const string& _hostId)
 bool Placement::HostIdHasBeenSet() const
 {
     return m_hostIdHasBeenSet;
+}
+
+string Placement::GetDedicatedResourcePackTenancy() const
+{
+    return m_dedicatedResourcePackTenancy;
+}
+
+void Placement::SetDedicatedResourcePackTenancy(const string& _dedicatedResourcePackTenancy)
+{
+    m_dedicatedResourcePackTenancy = _dedicatedResourcePackTenancy;
+    m_dedicatedResourcePackTenancyHasBeenSet = true;
+}
+
+bool Placement::DedicatedResourcePackTenancyHasBeenSet() const
+{
+    return m_dedicatedResourcePackTenancyHasBeenSet;
+}
+
+vector<string> Placement::GetDedicatedResourcePackIds() const
+{
+    return m_dedicatedResourcePackIds;
+}
+
+void Placement::SetDedicatedResourcePackIds(const vector<string>& _dedicatedResourcePackIds)
+{
+    m_dedicatedResourcePackIds = _dedicatedResourcePackIds;
+    m_dedicatedResourcePackIdsHasBeenSet = true;
+}
+
+bool Placement::DedicatedResourcePackIdsHasBeenSet() const
+{
+    return m_dedicatedResourcePackIdsHasBeenSet;
 }
 
 string Placement::GetRackId() const

@@ -43,7 +43,9 @@ ShipperInfo::ShipperInfo() :
     m_storageTypeHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_externalIdHasBeenSet(false),
-    m_taskStatusHasBeenSet(false)
+    m_taskStatusHasBeenSet(false),
+    m_timeZoneHasBeenSet(false),
+    m_dSLFilterHasBeenSet(false)
 {
 }
 
@@ -306,6 +308,26 @@ CoreInternalOutcome ShipperInfo::Deserialize(const rapidjson::Value &value)
         m_taskStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("TimeZone") && !value["TimeZone"].IsNull())
+    {
+        if (!value["TimeZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ShipperInfo.TimeZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeZone = string(value["TimeZone"].GetString());
+        m_timeZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("DSLFilter") && !value["DSLFilter"].IsNull())
+    {
+        if (!value["DSLFilter"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ShipperInfo.DSLFilter` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dSLFilter = string(value["DSLFilter"].GetString());
+        m_dSLFilterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -504,6 +526,22 @@ void ShipperInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "TaskStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskStatus, allocator);
+    }
+
+    if (m_timeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dSLFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DSLFilter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dSLFilter.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -875,5 +913,37 @@ void ShipperInfo::SetTaskStatus(const uint64_t& _taskStatus)
 bool ShipperInfo::TaskStatusHasBeenSet() const
 {
     return m_taskStatusHasBeenSet;
+}
+
+string ShipperInfo::GetTimeZone() const
+{
+    return m_timeZone;
+}
+
+void ShipperInfo::SetTimeZone(const string& _timeZone)
+{
+    m_timeZone = _timeZone;
+    m_timeZoneHasBeenSet = true;
+}
+
+bool ShipperInfo::TimeZoneHasBeenSet() const
+{
+    return m_timeZoneHasBeenSet;
+}
+
+string ShipperInfo::GetDSLFilter() const
+{
+    return m_dSLFilter;
+}
+
+void ShipperInfo::SetDSLFilter(const string& _dSLFilter)
+{
+    m_dSLFilter = _dSLFilter;
+    m_dSLFilterHasBeenSet = true;
+}
+
+bool ShipperInfo::DSLFilterHasBeenSet() const
+{
+    return m_dSLFilterHasBeenSet;
 }
 

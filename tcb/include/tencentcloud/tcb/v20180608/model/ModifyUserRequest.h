@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取用户类型：0-内部用户、1-外部用户，默认0（内部用户），不传该字段或传空字符串不修改
-                     * @return Type 用户类型：0-内部用户、1-外部用户，默认0（内部用户），不传该字段或传空字符串不修改
+                     * 获取用户类型：internalUser-内部用户、externalUser-外部用户，不传该字段或传空字符串不修改。
+                     * @return Type 用户类型：internalUser-内部用户、externalUser-外部用户，不传该字段或传空字符串不修改。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置用户类型：0-内部用户、1-外部用户，默认0（内部用户），不传该字段或传空字符串不修改
-                     * @param _type 用户类型：0-内部用户、1-外部用户，默认0（内部用户），不传该字段或传空字符串不修改
+                     * 设置用户类型：internalUser-内部用户、externalUser-外部用户，不传该字段或传空字符串不修改。
+                     * @param _type 用户类型：internalUser-内部用户、externalUser-外部用户，不传该字段或传空字符串不修改。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -294,7 +294,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 用户类型：0-内部用户、1-外部用户，默认0（内部用户），不传该字段或传空字符串不修改
+                     * 用户类型：internalUser-内部用户、externalUser-外部用户，不传该字段或传空字符串不修改。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

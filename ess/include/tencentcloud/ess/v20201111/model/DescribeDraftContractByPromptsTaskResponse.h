@@ -99,6 +99,20 @@ namespace TencentCloud
                      */
                     bool ResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取生成的合同文件下载链接，有效期2小时
+                     * @return ContractUrl 生成的合同文件下载链接，有效期2小时
+                     * 
+                     */
+                    std::string GetContractUrl() const;
+
+                    /**
+                     * 判断参数 ContractUrl 是否已赋值
+                     * @return ContractUrl 是否已赋值
+                     * 
+                     */
+                    bool ContractUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +138,12 @@ namespace TencentCloud
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
+
+                    /**
+                     * 生成的合同文件下载链接，有效期2小时
+                     */
+                    std::string m_contractUrl;
+                    bool m_contractUrlHasBeenSet;
 
                 };
             }

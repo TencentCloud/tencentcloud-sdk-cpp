@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取起草要求
-                     * @return Requirement 起草要求
+                     * 获取起草要求，范围要求 5-1000 字
+                     * @return Requirement 起草要求，范围要求 5-1000 字
                      * 
                      */
                     std::string GetRequirement() const;
 
                     /**
-                     * 设置起草要求
-                     * @param _requirement 起草要求
+                     * 设置起草要求，范围要求 5-1000 字
+                     * @param _requirement 起草要求，范围要求 5-1000 字
                      * 
                      */
                     void SetRequirement(const std::string& _requirement);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool RequirementHasBeenSet() const;
 
                     /**
-                     * 获取参考模板文件资源id（PDF/Word格式）
-                     * @return ReferenceTemplateId 参考模板文件资源id（PDF/Word格式）
+                     * 获取参考模板文件资源id（PDF/Word格式），大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。
+                     * @return ReferenceTemplateId 参考模板文件资源id（PDF/Word格式），大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。
                      * 
                      */
                     std::string GetReferenceTemplateId() const;
 
                     /**
-                     * 设置参考模板文件资源id（PDF/Word格式）
-                     * @param _referenceTemplateId 参考模板文件资源id（PDF/Word格式）
+                     * 设置参考模板文件资源id（PDF/Word格式），大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。
+                     * @param _referenceTemplateId 参考模板文件资源id（PDF/Word格式），大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。
                      * 
                      */
                     void SetReferenceTemplateId(const std::string& _referenceTemplateId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool ReferenceTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取相关规定文件资源id列表（PDF/Word格式）
-                     * @return RequirementFileIds 相关规定文件资源id列表（PDF/Word格式）
+                     * 获取相关规定文件资源id列表（PDF/Word格式），最多3个文件，每个大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。
+                     * @return RequirementFileIds 相关规定文件资源id列表（PDF/Word格式），最多3个文件，每个大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。
                      * 
                      */
                     std::vector<std::string> GetRequirementFileIds() const;
 
                     /**
-                     * 设置相关规定文件资源id列表（PDF/Word格式）
-                     * @param _requirementFileIds 相关规定文件资源id列表（PDF/Word格式）
+                     * 设置相关规定文件资源id列表（PDF/Word格式），最多3个文件，每个大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。
+                     * @param _requirementFileIds 相关规定文件资源id列表（PDF/Word格式），最多3个文件，每个大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。
                      * 
                      */
                     void SetRequirementFileIds(const std::vector<std::string>& _requirementFileIds);
@@ -157,19 +157,19 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 起草要求
+                     * 起草要求，范围要求 5-1000 字
                      */
                     std::string m_requirement;
                     bool m_requirementHasBeenSet;
 
                     /**
-                     * 参考模板文件资源id（PDF/Word格式）
+                     * 参考模板文件资源id（PDF/Word格式），大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。
                      */
                     std::string m_referenceTemplateId;
                     bool m_referenceTemplateIdHasBeenSet;
 
                     /**
-                     * 相关规定文件资源id列表（PDF/Word格式）
+                     * 相关规定文件资源id列表（PDF/Word格式），最多3个文件，每个大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。
                      */
                     std::vector<std::string> m_requirementFileIds;
                     bool m_requirementFileIdsHasBeenSet;

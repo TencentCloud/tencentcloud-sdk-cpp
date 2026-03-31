@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ckafka/v20190819/model/IpWhitelistDTO.h>
 
 
 namespace TencentCloud
@@ -127,15 +128,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0vipType=3,支持 0,1,3,4,5vipType=7,支持0,1,3vipType=1,支持1,3</p>
-                     * @return AccessType <p>访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0vipType=3,支持 0,1,3,4,5vipType=7,支持0,1,3vipType=1,支持1,3</p>
+                     * 获取<p>访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0<br>vipType=3,支持 0,1,3,4,5<br>vipType=7,支持0,1,3<br>vipType=1,支持1,3</p>
+                     * @return AccessType <p>访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0<br>vipType=3,支持 0,1,3,4,5<br>vipType=7,支持0,1,3<br>vipType=1,支持1,3</p>
                      * 
                      */
                     int64_t GetAccessType() const;
 
                     /**
-                     * 设置<p>访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0vipType=3,支持 0,1,3,4,5vipType=7,支持0,1,3vipType=1,支持1,3</p>
-                     * @param _accessType <p>访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0vipType=3,支持 0,1,3,4,5vipType=7,支持0,1,3vipType=1,支持1,3</p>
+                     * 设置<p>访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0<br>vipType=3,支持 0,1,3,4,5<br>vipType=7,支持0,1,3<br>vipType=1,支持1,3</p>
+                     * @param _accessType <p>访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0<br>vipType=3,支持 0,1,3,4,5<br>vipType=7,支持0,1,3<br>vipType=1,支持1,3</p>
                      * 
                      */
                     void SetAccessType(const int64_t& _accessType);
@@ -273,6 +274,27 @@ namespace TencentCloud
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>公网路由IP白名单预设配置</p><p>入参限制：vipType=1</p>
+                     * @return IpWhitelist <p>公网路由IP白名单预设配置</p><p>入参限制：vipType=1</p>
+                     * 
+                     */
+                    std::vector<IpWhitelistDTO> GetIpWhitelist() const;
+
+                    /**
+                     * 设置<p>公网路由IP白名单预设配置</p><p>入参限制：vipType=1</p>
+                     * @param _ipWhitelist <p>公网路由IP白名单预设配置</p><p>入参限制：vipType=1</p>
+                     * 
+                     */
+                    void SetIpWhitelist(const std::vector<IpWhitelistDTO>& _ipWhitelist);
+
+                    /**
+                     * 判断参数 IpWhitelist 是否已赋值
+                     * @return IpWhitelist 是否已赋值
+                     * 
+                     */
+                    bool IpWhitelistHasBeenSet() const;
+
                 private:
 
                     /**
@@ -300,7 +322,7 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * <p>访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0vipType=3,支持 0,1,3,4,5vipType=7,支持0,1,3vipType=1,支持1,3</p>
+                     * <p>访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0<br>vipType=3,支持 0,1,3,4,5<br>vipType=7,支持0,1,3<br>vipType=1,支持1,3</p>
                      */
                     int64_t m_accessType;
                     bool m_accessTypeHasBeenSet;
@@ -340,6 +362,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
+
+                    /**
+                     * <p>公网路由IP白名单预设配置</p><p>入参限制：vipType=1</p>
+                     */
+                    std::vector<IpWhitelistDTO> m_ipWhitelist;
+                    bool m_ipWhitelistHasBeenSet;
 
                 };
             }
