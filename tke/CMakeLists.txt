@@ -823,6 +823,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20220501/model/AutoUpgradeOptions.h
   include/tencentcloud/tke/v20220501/model/SuperNodePoolInfo.h
   include/tencentcloud/tke/v20220501/model/InternetAccessible.h
+  include/tencentcloud/tke/v20220501/model/ScaleNodePoolResponse.h
   include/tencentcloud/tke/v20220501/model/ModifyClusterMachineRequest.h
   include/tencentcloud/tke/v20220501/model/DescribeHealthCheckPoliciesResponse.h
   include/tencentcloud/tke/v20220501/model/RebootMachinesResponse.h
@@ -830,6 +831,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20220501/model/StopMachinesRequest.h
   include/tencentcloud/tke/v20220501/model/DescribeHealthCheckPoliciesRequest.h
   include/tencentcloud/tke/v20220501/model/DescribeHealthCheckTemplateResponse.h
+  include/tencentcloud/tke/v20220501/model/ScaleNodePoolRequest.h
   include/tencentcloud/tke/v20220501/model/InstanceAdvancedSettings.h
   include/tencentcloud/tke/v20220501/model/LifecycleConfig.h
   include/tencentcloud/tke/v20220501/model/InstanceChargePrepaid.h
@@ -1646,6 +1648,7 @@ set(tke_src
   src/v20220501/model/AutoUpgradeOptions.cpp
   src/v20220501/model/SuperNodePoolInfo.cpp
   src/v20220501/model/InternetAccessible.cpp
+  src/v20220501/model/ScaleNodePoolResponse.cpp
   src/v20220501/model/ModifyClusterMachineRequest.cpp
   src/v20220501/model/DescribeHealthCheckPoliciesResponse.cpp
   src/v20220501/model/RebootMachinesResponse.cpp
@@ -1653,6 +1656,7 @@ set(tke_src
   src/v20220501/model/StopMachinesRequest.cpp
   src/v20220501/model/DescribeHealthCheckPoliciesRequest.cpp
   src/v20220501/model/DescribeHealthCheckTemplateResponse.cpp
+  src/v20220501/model/ScaleNodePoolRequest.cpp
   src/v20220501/model/InstanceAdvancedSettings.cpp
   src/v20220501/model/LifecycleConfig.cpp
   src/v20220501/model/InstanceChargePrepaid.cpp

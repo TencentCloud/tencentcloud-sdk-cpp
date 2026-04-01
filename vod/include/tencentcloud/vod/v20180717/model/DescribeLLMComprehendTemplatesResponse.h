@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合过滤条件的记录总数。
-                     * @return TotalCount 符合过滤条件的记录总数。
+                     * 获取<p>符合过滤条件的记录总数。</p>
+                     * @return TotalCount <p>符合过滤条件的记录总数。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取图片异步处理模板详情列表。
-                     * @return LLMComprehendTemplateSet 图片异步处理模板详情列表。
+                     * 获取<p>大模型解析模板详情列表。</p>
+                     * @return LLMComprehendTemplateSet <p>大模型解析模板详情列表。</p>
                      * 
                      */
                     std::vector<LLMComprehendTemplateItem> GetLLMComprehendTemplateSet() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合过滤条件的记录总数。
+                     * <p>符合过滤条件的记录总数。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 图片异步处理模板详情列表。
+                     * <p>大模型解析模板详情列表。</p>
                      */
                     std::vector<LLMComprehendTemplateItem> m_lLMComprehendTemplateSet;
                     bool m_lLMComprehendTemplateSetHasBeenSet;

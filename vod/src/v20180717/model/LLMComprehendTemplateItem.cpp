@@ -27,6 +27,7 @@ LLMComprehendTemplateItem::LLMComprehendTemplateItem() :
     m_levelHasBeenSet(false),
     m_summaryHasBeenSet(false),
     m_asrHasBeenSet(false),
+    m_faceRecognitionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
@@ -111,6 +112,23 @@ CoreInternalOutcome LLMComprehendTemplateItem::Deserialize(const rapidjson::Valu
         m_asrHasBeenSet = true;
     }
 
+    if (value.HasMember("FaceRecognition") && !value["FaceRecognition"].IsNull())
+    {
+        if (!value["FaceRecognition"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LLMComprehendTemplateItem.FaceRecognition` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_faceRecognition.Deserialize(value["FaceRecognition"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_faceRecognitionHasBeenSet = true;
+    }
+
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
     {
         if (!value["CreateTime"].IsString())
@@ -186,6 +204,15 @@ void LLMComprehendTemplateItem::ToJsonObject(rapidjson::Value &value, rapidjson:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_asr.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_faceRecognitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FaceRecognition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_faceRecognition.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -301,6 +328,22 @@ void LLMComprehendTemplateItem::SetAsr(const LLMComprehendAsr& _asr)
 bool LLMComprehendTemplateItem::AsrHasBeenSet() const
 {
     return m_asrHasBeenSet;
+}
+
+LLMComprehendFaceRecognition LLMComprehendTemplateItem::GetFaceRecognition() const
+{
+    return m_faceRecognition;
+}
+
+void LLMComprehendTemplateItem::SetFaceRecognition(const LLMComprehendFaceRecognition& _faceRecognition)
+{
+    m_faceRecognition = _faceRecognition;
+    m_faceRecognitionHasBeenSet = true;
+}
+
+bool LLMComprehendTemplateItem::FaceRecognitionHasBeenSet() const
+{
+    return m_faceRecognitionHasBeenSet;
 }
 
 string LLMComprehendTemplateItem::GetCreateTime() const

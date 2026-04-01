@@ -31,7 +31,9 @@ InstanceConfigInfo::InstanceConfigInfo() :
     m_modifyRuleTypeHasBeenSet(false),
     m_modifyRuleValueHasBeenSet(false),
     m_uinHasBeenSet(false),
-    m_modifyTimeHasBeenSet(false)
+    m_modifyTimeHasBeenSet(false),
+    m_valueRangeHasBeenSet(false),
+    m_abnormalParamHasBeenSet(false)
 {
 }
 
@@ -150,6 +152,26 @@ CoreInternalOutcome InstanceConfigInfo::Deserialize(const rapidjson::Value &valu
         m_modifyTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ValueRange") && !value["ValueRange"].IsNull())
+    {
+        if (!value["ValueRange"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceConfigInfo.ValueRange` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_valueRange = string(value["ValueRange"].GetString());
+        m_valueRangeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AbnormalParam") && !value["AbnormalParam"].IsNull())
+    {
+        if (!value["AbnormalParam"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceConfigInfo.AbnormalParam` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_abnormalParam = string(value["AbnormalParam"].GetString());
+        m_abnormalParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +265,22 @@ void InstanceConfigInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "ModifyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_valueRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValueRange";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_valueRange.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_abnormalParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AbnormalParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_abnormalParam.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +460,37 @@ void InstanceConfigInfo::SetModifyTime(const string& _modifyTime)
 bool InstanceConfigInfo::ModifyTimeHasBeenSet() const
 {
     return m_modifyTimeHasBeenSet;
+}
+
+string InstanceConfigInfo::GetValueRange() const
+{
+    return m_valueRange;
+}
+
+void InstanceConfigInfo::SetValueRange(const string& _valueRange)
+{
+    m_valueRange = _valueRange;
+    m_valueRangeHasBeenSet = true;
+}
+
+bool InstanceConfigInfo::ValueRangeHasBeenSet() const
+{
+    return m_valueRangeHasBeenSet;
+}
+
+string InstanceConfigInfo::GetAbnormalParam() const
+{
+    return m_abnormalParam;
+}
+
+void InstanceConfigInfo::SetAbnormalParam(const string& _abnormalParam)
+{
+    m_abnormalParam = _abnormalParam;
+    m_abnormalParamHasBeenSet = true;
+}
+
+bool InstanceConfigInfo::AbnormalParamHasBeenSet() const
+{
+    return m_abnormalParamHasBeenSet;
 }
 

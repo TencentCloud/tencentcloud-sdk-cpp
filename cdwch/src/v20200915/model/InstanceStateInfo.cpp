@@ -29,7 +29,8 @@ InstanceStateInfo::InstanceStateInfo() :
     m_flowMsgHasBeenSet(false),
     m_processNameHasBeenSet(false),
     m_requestIdHasBeenSet(false),
-    m_processSubNameHasBeenSet(false)
+    m_processSubNameHasBeenSet(false),
+    m_requestIDHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome InstanceStateInfo::Deserialize(const rapidjson::Value &value
         m_processSubNameHasBeenSet = true;
     }
 
+    if (value.HasMember("RequestID") && !value["RequestID"].IsNull())
+    {
+        if (!value["RequestID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceStateInfo.RequestID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestID = string(value["RequestID"].GetString());
+        m_requestIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void InstanceStateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ProcessSubName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_processSubName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requestIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_requestID.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void InstanceStateInfo::SetProcessSubName(const string& _processSubName)
 bool InstanceStateInfo::ProcessSubNameHasBeenSet() const
 {
     return m_processSubNameHasBeenSet;
+}
+
+string InstanceStateInfo::GetRequestID() const
+{
+    return m_requestID;
+}
+
+void InstanceStateInfo::SetRequestID(const string& _requestID)
+{
+    m_requestID = _requestID;
+    m_requestIDHasBeenSet = true;
+}
+
+bool InstanceStateInfo::RequestIDHasBeenSet() const
+{
+    return m_requestIDHasBeenSet;
 }
 

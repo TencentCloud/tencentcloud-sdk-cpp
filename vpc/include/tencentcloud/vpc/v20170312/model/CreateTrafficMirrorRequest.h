@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool DirectionHasBeenSet() const;
 
                     /**
-                     * 获取流量镜像的采集对象。
-                     * @return CollectorSrcs 流量镜像的采集对象。
+                     * 获取流量镜像的采集对象 (最多支持20个采集对象)。
+                     * @return CollectorSrcs 流量镜像的采集对象 (最多支持20个采集对象)。
                      * 
                      */
                     std::vector<std::string> GetCollectorSrcs() const;
 
                     /**
-                     * 设置流量镜像的采集对象。
-                     * @param _collectorSrcs 流量镜像的采集对象。
+                     * 设置流量镜像的采集对象 (最多支持20个采集对象)。
+                     * @param _collectorSrcs 流量镜像的采集对象 (最多支持20个采集对象)。
                      * 
                      */
                     void SetCollectorSrcs(const std::vector<std::string>& _collectorSrcs);
@@ -297,6 +297,48 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取流量镜像入站过滤规则。
+                     * @return IngressFilterRules 流量镜像入站过滤规则。
+                     * 
+                     */
+                    std::vector<TrafficMirrorFilter> GetIngressFilterRules() const;
+
+                    /**
+                     * 设置流量镜像入站过滤规则。
+                     * @param _ingressFilterRules 流量镜像入站过滤规则。
+                     * 
+                     */
+                    void SetIngressFilterRules(const std::vector<TrafficMirrorFilter>& _ingressFilterRules);
+
+                    /**
+                     * 判断参数 IngressFilterRules 是否已赋值
+                     * @return IngressFilterRules 是否已赋值
+                     * 
+                     */
+                    bool IngressFilterRulesHasBeenSet() const;
+
+                    /**
+                     * 获取流量镜像出站过滤规则。
+                     * @return EgressFilterRules 流量镜像出站过滤规则。
+                     * 
+                     */
+                    std::vector<TrafficMirrorFilter> GetEgressFilterRules() const;
+
+                    /**
+                     * 设置流量镜像出站过滤规则。
+                     * @param _egressFilterRules 流量镜像出站过滤规则。
+                     * 
+                     */
+                    void SetEgressFilterRules(const std::vector<TrafficMirrorFilter>& _egressFilterRules);
+
+                    /**
+                     * 判断参数 EgressFilterRules 是否已赋值
+                     * @return EgressFilterRules 是否已赋值
+                     * 
+                     */
+                    bool EgressFilterRulesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -330,7 +372,7 @@ namespace TencentCloud
                     bool m_directionHasBeenSet;
 
                     /**
-                     * 流量镜像的采集对象。
+                     * 流量镜像的采集对象 (最多支持20个采集对象)。
                      */
                     std::vector<std::string> m_collectorSrcs;
                     bool m_collectorSrcsHasBeenSet;
@@ -370,6 +412,18 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 流量镜像入站过滤规则。
+                     */
+                    std::vector<TrafficMirrorFilter> m_ingressFilterRules;
+                    bool m_ingressFilterRulesHasBeenSet;
+
+                    /**
+                     * 流量镜像出站过滤规则。
+                     */
+                    std::vector<TrafficMirrorFilter> m_egressFilterRules;
+                    bool m_egressFilterRulesHasBeenSet;
 
                 };
             }

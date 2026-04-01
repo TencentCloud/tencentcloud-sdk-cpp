@@ -940,6 +940,56 @@ TkeClient::RebootMachinesOutcomeCallable TkeClient::RebootMachinesCallable(const
     return prom->get_future();
 }
 
+TkeClient::ScaleNodePoolOutcome TkeClient::ScaleNodePool(const ScaleNodePoolRequest &request)
+{
+    auto outcome = MakeRequest(request, "ScaleNodePool");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ScaleNodePoolResponse rsp = ScaleNodePoolResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ScaleNodePoolOutcome(rsp);
+        else
+            return ScaleNodePoolOutcome(o.GetError());
+    }
+    else
+    {
+        return ScaleNodePoolOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ScaleNodePoolAsync(const ScaleNodePoolRequest& request, const ScaleNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ScaleNodePoolRequest&;
+    using Resp = ScaleNodePoolResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ScaleNodePool", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::ScaleNodePoolOutcomeCallable TkeClient::ScaleNodePoolCallable(const ScaleNodePoolRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ScaleNodePoolOutcome>>();
+    ScaleNodePoolAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ScaleNodePoolRequest&,
+        ScaleNodePoolOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::SetMachineLoginOutcome TkeClient::SetMachineLogin(const SetMachineLoginRequest &request)
 {
     auto outcome = MakeRequest(request, "SetMachineLogin");

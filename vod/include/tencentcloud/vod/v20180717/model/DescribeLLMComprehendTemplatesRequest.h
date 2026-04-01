@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 获取<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @return SubAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @param _subAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 设置<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @param _subAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取大模型解析模板唯一标识过滤条件，数组长度最大值：100。
-                     * @return Definitions 大模型解析模板唯一标识过滤条件，数组长度最大值：100。
+                     * 获取<p>大模型解析模板唯一标识过滤条件，数组长度最大值：100。</p>
+                     * @return Definitions <p>大模型解析模板唯一标识过滤条件，数组长度最大值：100。</p>
                      * 
                      */
                     std::vector<int64_t> GetDefinitions() const;
 
                     /**
-                     * 设置大模型解析模板唯一标识过滤条件，数组长度最大值：100。
-                     * @param _definitions 大模型解析模板唯一标识过滤条件，数组长度最大值：100。
+                     * 设置<p>大模型解析模板唯一标识过滤条件，数组长度最大值：100。</p>
+                     * @param _definitions <p>大模型解析模板唯一标识过滤条件，数组长度最大值：100。</p>
                      * 
                      */
                     void SetDefinitions(const std::vector<int64_t>& _definitions);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DefinitionsHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量，默认值：0。
-                     * @return Offset 分页偏移量，默认值：0。
+                     * 获取<p>分页偏移量，默认值：0。</p>
+                     * @return Offset <p>分页偏移量，默认值：0。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量，默认值：0。
-                     * @param _offset 分页偏移量，默认值：0。
+                     * 设置<p>分页偏移量，默认值：0。</p>
+                     * @param _offset <p>分页偏移量，默认值：0。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回记录条数，默认值：10，最大值：100。
-                     * @return Limit 返回记录条数，默认值：10，最大值：100。
+                     * 获取<p>返回记录条数，默认值：10，最大值：100。</p>
+                     * @return Limit <p>返回记录条数，默认值：10，最大值：100。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回记录条数，默认值：10，最大值：100。
-                     * @param _limit 返回记录条数，默认值：10，最大值：100。
+                     * 设置<p>返回记录条数，默认值：10，最大值：100。</p>
+                     * @param _limit <p>返回记录条数，默认值：10，最大值：100。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 大模型解析模板唯一标识过滤条件，数组长度最大值：100。
+                     * <p>大模型解析模板唯一标识过滤条件，数组长度最大值：100。</p>
                      */
                     std::vector<int64_t> m_definitions;
                     bool m_definitionsHasBeenSet;
 
                     /**
-                     * 分页偏移量，默认值：0。
+                     * <p>分页偏移量，默认值：0。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回记录条数，默认值：10，最大值：100。
+                     * <p>返回记录条数，默认值：10，最大值：100。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

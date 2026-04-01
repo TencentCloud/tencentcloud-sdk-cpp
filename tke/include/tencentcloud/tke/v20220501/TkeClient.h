@@ -59,6 +59,8 @@
 #include <tencentcloud/tke/v20220501/model/ModifyNodePoolResponse.h>
 #include <tencentcloud/tke/v20220501/model/RebootMachinesRequest.h>
 #include <tencentcloud/tke/v20220501/model/RebootMachinesResponse.h>
+#include <tencentcloud/tke/v20220501/model/ScaleNodePoolRequest.h>
+#include <tencentcloud/tke/v20220501/model/ScaleNodePoolResponse.h>
 #include <tencentcloud/tke/v20220501/model/SetMachineLoginRequest.h>
 #include <tencentcloud/tke/v20220501/model/SetMachineLoginResponse.h>
 #include <tencentcloud/tke/v20220501/model/StartMachinesRequest.h>
@@ -133,6 +135,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RebootMachinesResponse> RebootMachinesOutcome;
                 typedef std::future<RebootMachinesOutcome> RebootMachinesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::RebootMachinesRequest&, RebootMachinesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebootMachinesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ScaleNodePoolResponse> ScaleNodePoolOutcome;
+                typedef std::future<ScaleNodePoolOutcome> ScaleNodePoolOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ScaleNodePoolRequest&, ScaleNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScaleNodePoolAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetMachineLoginResponse> SetMachineLoginOutcome;
                 typedef std::future<SetMachineLoginOutcome> SetMachineLoginOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::SetMachineLoginRequest&, SetMachineLoginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetMachineLoginAsyncHandler;
@@ -306,6 +311,15 @@ namespace TencentCloud
                 RebootMachinesOutcome RebootMachines(const Model::RebootMachinesRequest &request);
                 void RebootMachinesAsync(const Model::RebootMachinesRequest& request, const RebootMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RebootMachinesOutcomeCallable RebootMachinesCallable(const Model::RebootMachinesRequest& request);
+
+                /**
+                 *设置 TKE 节点池期望节点数
+                 * @param req ScaleNodePoolRequest
+                 * @return ScaleNodePoolOutcome
+                 */
+                ScaleNodePoolOutcome ScaleNodePool(const Model::ScaleNodePoolRequest &request);
+                void ScaleNodePoolAsync(const Model::ScaleNodePoolRequest& request, const ScaleNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ScaleNodePoolOutcomeCallable ScaleNodePoolCallable(const Model::ScaleNodePoolRequest& request);
 
                 /**
                  *设置是否开启节点登录

@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取是否开启剪贴板文件上行
-                     * @return AllowClipFileUp 是否开启剪贴板文件上行
+                     * 获取是否开启剪贴板文件上行，不传时默认为false
+                     * @return AllowClipFileUp 是否开启剪贴板文件上行，不传时默认为false
                      * 
                      */
                     bool GetAllowClipFileUp() const;
 
                     /**
-                     * 设置是否开启剪贴板文件上行
-                     * @param _allowClipFileUp 是否开启剪贴板文件上行
+                     * 设置是否开启剪贴板文件上行，不传时默认为false
+                     * @param _allowClipFileUp 是否开启剪贴板文件上行，不传时默认为false
                      * 
                      */
                     void SetAllowClipFileUp(const bool& _allowClipFileUp);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool AllowClipFileUpHasBeenSet() const;
 
                     /**
-                     * 获取是否开启剪贴板文件下行
-                     * @return AllowClipFileDown 是否开启剪贴板文件下行
+                     * 获取是否开启剪贴板文件下行，不传时默认为false
+                     * @return AllowClipFileDown 是否开启剪贴板文件下行，不传时默认为false
                      * 
                      */
                     bool GetAllowClipFileDown() const;
 
                     /**
-                     * 设置是否开启剪贴板文件下行
-                     * @param _allowClipFileDown 是否开启剪贴板文件下行
+                     * 设置是否开启剪贴板文件下行，不传时默认为false
+                     * @param _allowClipFileDown 是否开启剪贴板文件下行，不传时默认为false
                      * 
                      */
                     void SetAllowClipFileDown(const bool& _allowClipFileDown);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool AllowClipFileDownHasBeenSet() const;
 
                     /**
-                     * 获取是否开启剪贴板文本（含图片）上行
-                     * @return AllowClipTextUp 是否开启剪贴板文本（含图片）上行
+                     * 获取是否开启剪贴板文本（含图片）上行，不传时默认为false
+                     * @return AllowClipTextUp 是否开启剪贴板文本（含图片）上行，不传时默认为false
                      * 
                      */
                     bool GetAllowClipTextUp() const;
 
                     /**
-                     * 设置是否开启剪贴板文本（含图片）上行
-                     * @param _allowClipTextUp 是否开启剪贴板文本（含图片）上行
+                     * 设置是否开启剪贴板文本（含图片）上行，不传时默认为false
+                     * @param _allowClipTextUp 是否开启剪贴板文本（含图片）上行，不传时默认为false
                      * 
                      */
                     void SetAllowClipTextUp(const bool& _allowClipTextUp);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool AllowClipTextUpHasBeenSet() const;
 
                     /**
-                     * 获取是否开启剪贴板文本（含图片）下行
-                     * @return AllowClipTextDown 是否开启剪贴板文本（含图片）下行
+                     * 获取是否开启剪贴板文本（含图片）下行，不传时默认为false
+                     * @return AllowClipTextDown 是否开启剪贴板文本（含图片）下行，不传时默认为false
                      * 
                      */
                     bool GetAllowClipTextDown() const;
 
                     /**
-                     * 设置是否开启剪贴板文本（含图片）下行
-                     * @param _allowClipTextDown 是否开启剪贴板文本（含图片）下行
+                     * 设置是否开启剪贴板文本（含图片）下行，不传时默认为false
+                     * @param _allowClipTextDown 是否开启剪贴板文本（含图片）下行，不传时默认为false
                      * 
                      */
                     void SetAllowClipTextDown(const bool& _allowClipTextDown);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool AllowClipTextDownHasBeenSet() const;
 
                     /**
-                     * 获取是否开启文件传输上传
-                     * @return AllowFileUp 是否开启文件传输上传
+                     * 获取是否开启文件传输上传，不传时默认为false
+                     * @return AllowFileUp 是否开启文件传输上传，不传时默认为false
                      * 
                      */
                     bool GetAllowFileUp() const;
 
                     /**
-                     * 设置是否开启文件传输上传
-                     * @param _allowFileUp 是否开启文件传输上传
+                     * 设置是否开启文件传输上传，不传时默认为false
+                     * @param _allowFileUp 是否开启文件传输上传，不传时默认为false
                      * 
                      */
                     void SetAllowFileUp(const bool& _allowFileUp);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool AllowFileUpHasBeenSet() const;
 
                     /**
-                     * 获取文件传输上传大小限制（预留参数，目前暂未使用）
-                     * @return MaxFileUpSize 文件传输上传大小限制（预留参数，目前暂未使用）
+                     * 获取文件传输上传大小限制（预留参数，目前暂未使用），不传时默认为0
+                     * @return MaxFileUpSize 文件传输上传大小限制（预留参数，目前暂未使用），不传时默认为0
                      * 
                      */
                     uint64_t GetMaxFileUpSize() const;
 
                     /**
-                     * 设置文件传输上传大小限制（预留参数，目前暂未使用）
-                     * @param _maxFileUpSize 文件传输上传大小限制（预留参数，目前暂未使用）
+                     * 设置文件传输上传大小限制（预留参数，目前暂未使用），不传时默认为0
+                     * @param _maxFileUpSize 文件传输上传大小限制（预留参数，目前暂未使用），不传时默认为0
                      * 
                      */
                     void SetMaxFileUpSize(const uint64_t& _maxFileUpSize);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool MaxFileUpSizeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启文件传输下载
-                     * @return AllowFileDown 是否开启文件传输下载
+                     * 获取是否开启文件传输下载，不传时默认为false
+                     * @return AllowFileDown 是否开启文件传输下载，不传时默认为false
                      * 
                      */
                     bool GetAllowFileDown() const;
 
                     /**
-                     * 设置是否开启文件传输下载
-                     * @param _allowFileDown 是否开启文件传输下载
+                     * 设置是否开启文件传输下载，不传时默认为false
+                     * @param _allowFileDown 是否开启文件传输下载，不传时默认为false
                      * 
                      */
                     void SetAllowFileDown(const bool& _allowFileDown);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool AllowFileDownHasBeenSet() const;
 
                     /**
-                     * 获取文件传输下载大小限制（预留参数，目前暂未使用）
-                     * @return MaxFileDownSize 文件传输下载大小限制（预留参数，目前暂未使用）
+                     * 获取文件传输下载大小限制（预留参数，目前暂未使用），不传时默认为0
+                     * @return MaxFileDownSize 文件传输下载大小限制（预留参数，目前暂未使用），不传时默认为0
                      * 
                      */
                     uint64_t GetMaxFileDownSize() const;
 
                     /**
-                     * 设置文件传输下载大小限制（预留参数，目前暂未使用）
-                     * @param _maxFileDownSize 文件传输下载大小限制（预留参数，目前暂未使用）
+                     * 设置文件传输下载大小限制（预留参数，目前暂未使用），不传时默认为0
+                     * @param _maxFileDownSize 文件传输下载大小限制（预留参数，目前暂未使用），不传时默认为0
                      * 
                      */
                     void SetMaxFileDownSize(const uint64_t& _maxFileDownSize);
@@ -358,15 +358,15 @@ namespace TencentCloud
                     bool DeviceIdSetHasBeenSet() const;
 
                     /**
-                     * 获取关联的应用资产ID集合
-                     * @return AppAssetIdSet 关联的应用资产ID集合
+                     * 获取关联的应用资产ID集合，不传时表示不选择任何应用资产
+                     * @return AppAssetIdSet 关联的应用资产ID集合，不传时表示不选择任何应用资产
                      * 
                      */
                     std::vector<uint64_t> GetAppAssetIdSet() const;
 
                     /**
-                     * 设置关联的应用资产ID集合
-                     * @param _appAssetIdSet 关联的应用资产ID集合
+                     * 设置关联的应用资产ID集合，不传时表示不选择任何应用资产
+                     * @param _appAssetIdSet 关联的应用资产ID集合，不传时表示不选择任何应用资产
                      * 
                      */
                     void SetAppAssetIdSet(const std::vector<uint64_t>& _appAssetIdSet);
@@ -379,15 +379,15 @@ namespace TencentCloud
                     bool AppAssetIdSetHasBeenSet() const;
 
                     /**
-                     * 获取关联的资产组ID
-                     * @return DeviceGroupIdSet 关联的资产组ID
+                     * 获取关联的资产组ID，不传时表示不选择任何资产组
+                     * @return DeviceGroupIdSet 关联的资产组ID，不传时表示不选择任何资产组
                      * 
                      */
                     std::vector<uint64_t> GetDeviceGroupIdSet() const;
 
                     /**
-                     * 设置关联的资产组ID
-                     * @param _deviceGroupIdSet 关联的资产组ID
+                     * 设置关联的资产组ID，不传时表示不选择任何资产组
+                     * @param _deviceGroupIdSet 关联的资产组ID，不传时表示不选择任何资产组
                      * 
                      */
                     void SetDeviceGroupIdSet(const std::vector<uint64_t>& _deviceGroupIdSet);
@@ -400,15 +400,15 @@ namespace TencentCloud
                     bool DeviceGroupIdSetHasBeenSet() const;
 
                     /**
-                     * 获取关联的账号
-                     * @return AccountSet 关联的账号
+                     * 获取关联的资产账号，不传时表示不选择任何资产账号
+                     * @return AccountSet 关联的资产账号，不传时表示不选择任何资产账号
                      * 
                      */
                     std::vector<std::string> GetAccountSet() const;
 
                     /**
-                     * 设置关联的账号
-                     * @param _accountSet 关联的账号
+                     * 设置关联的资产账号，不传时表示不选择任何资产账号
+                     * @param _accountSet 关联的资产账号，不传时表示不选择任何资产账号
                      * 
                      */
                     void SetAccountSet(const std::vector<std::string>& _accountSet);
@@ -421,15 +421,15 @@ namespace TencentCloud
                     bool AccountSetHasBeenSet() const;
 
                     /**
-                     * 获取关联的高危命令模板ID
-                     * @return CmdTemplateIdSet 关联的高危命令模板ID
+                     * 获取关联的高危命令模板ID，不传时表示不选择任何模板
+                     * @return CmdTemplateIdSet 关联的高危命令模板ID，不传时表示不选择任何模板
                      * 
                      */
                     std::vector<uint64_t> GetCmdTemplateIdSet() const;
 
                     /**
-                     * 设置关联的高危命令模板ID
-                     * @param _cmdTemplateIdSet 关联的高危命令模板ID
+                     * 设置关联的高危命令模板ID，不传时表示不选择任何模板
+                     * @param _cmdTemplateIdSet 关联的高危命令模板ID，不传时表示不选择任何模板
                      * 
                      */
                     void SetCmdTemplateIdSet(const std::vector<uint64_t>& _cmdTemplateIdSet);
@@ -442,15 +442,15 @@ namespace TencentCloud
                     bool CmdTemplateIdSetHasBeenSet() const;
 
                     /**
-                     * 获取关联高危DB模板ID
-                     * @return ACTemplateIdSet 关联高危DB模板ID
+                     * 获取关联高危DB模板ID，不传时表示不选择任何模板
+                     * @return ACTemplateIdSet 关联高危DB模板ID，不传时表示不选择任何模板
                      * 
                      */
                     std::vector<std::string> GetACTemplateIdSet() const;
 
                     /**
-                     * 设置关联高危DB模板ID
-                     * @param _aCTemplateIdSet 关联高危DB模板ID
+                     * 设置关联高危DB模板ID，不传时表示不选择任何模板
+                     * @param _aCTemplateIdSet 关联高危DB模板ID，不传时表示不选择任何模板
                      * 
                      */
                     void SetACTemplateIdSet(const std::vector<std::string>& _aCTemplateIdSet);
@@ -463,15 +463,15 @@ namespace TencentCloud
                     bool ACTemplateIdSetHasBeenSet() const;
 
                     /**
-                     * 获取是否开启 RDP 磁盘映射文件上传
-                     * @return AllowDiskFileUp 是否开启 RDP 磁盘映射文件上传
+                     * 获取是否开启 RDP 磁盘映射文件上传，不传时默认为false
+                     * @return AllowDiskFileUp 是否开启 RDP 磁盘映射文件上传，不传时默认为false
                      * 
                      */
                     bool GetAllowDiskFileUp() const;
 
                     /**
-                     * 设置是否开启 RDP 磁盘映射文件上传
-                     * @param _allowDiskFileUp 是否开启 RDP 磁盘映射文件上传
+                     * 设置是否开启 RDP 磁盘映射文件上传，不传时默认为false
+                     * @param _allowDiskFileUp 是否开启 RDP 磁盘映射文件上传，不传时默认为false
                      * 
                      */
                     void SetAllowDiskFileUp(const bool& _allowDiskFileUp);
@@ -484,15 +484,15 @@ namespace TencentCloud
                     bool AllowDiskFileUpHasBeenSet() const;
 
                     /**
-                     * 获取是否开启 RDP 磁盘映射文件下载
-                     * @return AllowDiskFileDown 是否开启 RDP 磁盘映射文件下载
+                     * 获取是否开启 RDP 磁盘映射文件下载，不传时默认为false
+                     * @return AllowDiskFileDown 是否开启 RDP 磁盘映射文件下载，不传时默认为false
                      * 
                      */
                     bool GetAllowDiskFileDown() const;
 
                     /**
-                     * 设置是否开启 RDP 磁盘映射文件下载
-                     * @param _allowDiskFileDown 是否开启 RDP 磁盘映射文件下载
+                     * 设置是否开启 RDP 磁盘映射文件下载，不传时默认为false
+                     * @param _allowDiskFileDown 是否开启 RDP 磁盘映射文件下载，不传时默认为false
                      * 
                      */
                     void SetAllowDiskFileDown(const bool& _allowDiskFileDown);
@@ -505,15 +505,15 @@ namespace TencentCloud
                     bool AllowDiskFileDownHasBeenSet() const;
 
                     /**
-                     * 获取是否开启rz sz文件上传
-                     * @return AllowShellFileUp 是否开启rz sz文件上传
+                     * 获取是否开启rz sz文件上传，不传时默认为false
+                     * @return AllowShellFileUp 是否开启rz sz文件上传，不传时默认为false
                      * 
                      */
                     bool GetAllowShellFileUp() const;
 
                     /**
-                     * 设置是否开启rz sz文件上传
-                     * @param _allowShellFileUp 是否开启rz sz文件上传
+                     * 设置是否开启rz sz文件上传，不传时默认为false
+                     * @param _allowShellFileUp 是否开启rz sz文件上传，不传时默认为false
                      * 
                      */
                     void SetAllowShellFileUp(const bool& _allowShellFileUp);
@@ -526,15 +526,15 @@ namespace TencentCloud
                     bool AllowShellFileUpHasBeenSet() const;
 
                     /**
-                     * 获取是否开启rz sz文件下载
-                     * @return AllowShellFileDown 是否开启rz sz文件下载
+                     * 获取是否开启rz sz文件下载，不传时默认为false
+                     * @return AllowShellFileDown 是否开启rz sz文件下载，不传时默认为false
                      * 
                      */
                     bool GetAllowShellFileDown() const;
 
                     /**
-                     * 设置是否开启rz sz文件下载
-                     * @param _allowShellFileDown 是否开启rz sz文件下载
+                     * 设置是否开启rz sz文件下载，不传时默认为false
+                     * @param _allowShellFileDown 是否开启rz sz文件下载，不传时默认为false
                      * 
                      */
                     void SetAllowShellFileDown(const bool& _allowShellFileDown);
@@ -547,15 +547,15 @@ namespace TencentCloud
                     bool AllowShellFileDownHasBeenSet() const;
 
                     /**
-                     * 获取是否开启 SFTP 文件删除
-                     * @return AllowFileDel 是否开启 SFTP 文件删除
+                     * 获取是否开启 SFTP 文件删除，不传时默认为false
+                     * @return AllowFileDel 是否开启 SFTP 文件删除，不传时默认为false
                      * 
                      */
                     bool GetAllowFileDel() const;
 
                     /**
-                     * 设置是否开启 SFTP 文件删除
-                     * @param _allowFileDel 是否开启 SFTP 文件删除
+                     * 设置是否开启 SFTP 文件删除，不传时默认为false
+                     * @param _allowFileDel 是否开启 SFTP 文件删除，不传时默认为false
                      * 
                      */
                     void SetAllowFileDel(const bool& _allowFileDel);
@@ -639,15 +639,15 @@ namespace TencentCloud
                     bool DepartmentIdHasBeenSet() const;
 
                     /**
-                     * 获取是否允许使用访问串
-                     * @return AllowAccessCredential 是否允许使用访问串
+                     * 获取是否允许使用访问串，不传时默认为true
+                     * @return AllowAccessCredential 是否允许使用访问串，不传时默认为true
                      * 
                      */
                     bool GetAllowAccessCredential() const;
 
                     /**
-                     * 设置是否允许使用访问串
-                     * @param _allowAccessCredential 是否允许使用访问串
+                     * 设置是否允许使用访问串，不传时默认为true
+                     * @param _allowAccessCredential 是否允许使用访问串，不传时默认为true
                      * 
                      */
                     void SetAllowAccessCredential(const bool& _allowAccessCredential);
@@ -660,15 +660,15 @@ namespace TencentCloud
                     bool AllowAccessCredentialHasBeenSet() const;
 
                     /**
-                     * 获取是否允许键盘记录
-                     * @return AllowKeyboardLogger 是否允许键盘记录
+                     * 获取是否允许键盘记录，不传时默认为false
+                     * @return AllowKeyboardLogger 是否允许键盘记录，不传时默认为false
                      * 
                      */
                     bool GetAllowKeyboardLogger() const;
 
                     /**
-                     * 设置是否允许键盘记录
-                     * @param _allowKeyboardLogger 是否允许键盘记录
+                     * 设置是否允许键盘记录，不传时默认为false
+                     * @param _allowKeyboardLogger 是否允许键盘记录，不传时默认为false
                      * 
                      */
                     void SetAllowKeyboardLogger(const bool& _allowKeyboardLogger);
@@ -681,15 +681,15 @@ namespace TencentCloud
                     bool AllowKeyboardLoggerHasBeenSet() const;
 
                     /**
-                     * 获取访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍
-                     * @return MaxAccessCredentialDuration 访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍
+                     * 获取访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍，不传时默认为9999天对应的秒数
+                     * @return MaxAccessCredentialDuration 访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍，不传时默认为9999天对应的秒数
                      * 
                      */
                     uint64_t GetMaxAccessCredentialDuration() const;
 
                     /**
-                     * 设置访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍
-                     * @param _maxAccessCredentialDuration 访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍
+                     * 设置访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍，不传时默认为9999天对应的秒数
+                     * @param _maxAccessCredentialDuration 访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍，不传时默认为9999天对应的秒数
                      * 
                      */
                     void SetMaxAccessCredentialDuration(const uint64_t& _maxAccessCredentialDuration);
@@ -728,49 +728,49 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * 是否开启剪贴板文件上行
+                     * 是否开启剪贴板文件上行，不传时默认为false
                      */
                     bool m_allowClipFileUp;
                     bool m_allowClipFileUpHasBeenSet;
 
                     /**
-                     * 是否开启剪贴板文件下行
+                     * 是否开启剪贴板文件下行，不传时默认为false
                      */
                     bool m_allowClipFileDown;
                     bool m_allowClipFileDownHasBeenSet;
 
                     /**
-                     * 是否开启剪贴板文本（含图片）上行
+                     * 是否开启剪贴板文本（含图片）上行，不传时默认为false
                      */
                     bool m_allowClipTextUp;
                     bool m_allowClipTextUpHasBeenSet;
 
                     /**
-                     * 是否开启剪贴板文本（含图片）下行
+                     * 是否开启剪贴板文本（含图片）下行，不传时默认为false
                      */
                     bool m_allowClipTextDown;
                     bool m_allowClipTextDownHasBeenSet;
 
                     /**
-                     * 是否开启文件传输上传
+                     * 是否开启文件传输上传，不传时默认为false
                      */
                     bool m_allowFileUp;
                     bool m_allowFileUpHasBeenSet;
 
                     /**
-                     * 文件传输上传大小限制（预留参数，目前暂未使用）
+                     * 文件传输上传大小限制（预留参数，目前暂未使用），不传时默认为0
                      */
                     uint64_t m_maxFileUpSize;
                     bool m_maxFileUpSizeHasBeenSet;
 
                     /**
-                     * 是否开启文件传输下载
+                     * 是否开启文件传输下载，不传时默认为false
                      */
                     bool m_allowFileDown;
                     bool m_allowFileDownHasBeenSet;
 
                     /**
-                     * 文件传输下载大小限制（预留参数，目前暂未使用）
+                     * 文件传输下载大小限制（预留参数，目前暂未使用），不传时默认为0
                      */
                     uint64_t m_maxFileDownSize;
                     bool m_maxFileDownSizeHasBeenSet;
@@ -794,61 +794,61 @@ namespace TencentCloud
                     bool m_deviceIdSetHasBeenSet;
 
                     /**
-                     * 关联的应用资产ID集合
+                     * 关联的应用资产ID集合，不传时表示不选择任何应用资产
                      */
                     std::vector<uint64_t> m_appAssetIdSet;
                     bool m_appAssetIdSetHasBeenSet;
 
                     /**
-                     * 关联的资产组ID
+                     * 关联的资产组ID，不传时表示不选择任何资产组
                      */
                     std::vector<uint64_t> m_deviceGroupIdSet;
                     bool m_deviceGroupIdSetHasBeenSet;
 
                     /**
-                     * 关联的账号
+                     * 关联的资产账号，不传时表示不选择任何资产账号
                      */
                     std::vector<std::string> m_accountSet;
                     bool m_accountSetHasBeenSet;
 
                     /**
-                     * 关联的高危命令模板ID
+                     * 关联的高危命令模板ID，不传时表示不选择任何模板
                      */
                     std::vector<uint64_t> m_cmdTemplateIdSet;
                     bool m_cmdTemplateIdSetHasBeenSet;
 
                     /**
-                     * 关联高危DB模板ID
+                     * 关联高危DB模板ID，不传时表示不选择任何模板
                      */
                     std::vector<std::string> m_aCTemplateIdSet;
                     bool m_aCTemplateIdSetHasBeenSet;
 
                     /**
-                     * 是否开启 RDP 磁盘映射文件上传
+                     * 是否开启 RDP 磁盘映射文件上传，不传时默认为false
                      */
                     bool m_allowDiskFileUp;
                     bool m_allowDiskFileUpHasBeenSet;
 
                     /**
-                     * 是否开启 RDP 磁盘映射文件下载
+                     * 是否开启 RDP 磁盘映射文件下载，不传时默认为false
                      */
                     bool m_allowDiskFileDown;
                     bool m_allowDiskFileDownHasBeenSet;
 
                     /**
-                     * 是否开启rz sz文件上传
+                     * 是否开启rz sz文件上传，不传时默认为false
                      */
                     bool m_allowShellFileUp;
                     bool m_allowShellFileUpHasBeenSet;
 
                     /**
-                     * 是否开启rz sz文件下载
+                     * 是否开启rz sz文件下载，不传时默认为false
                      */
                     bool m_allowShellFileDown;
                     bool m_allowShellFileDownHasBeenSet;
 
                     /**
-                     * 是否开启 SFTP 文件删除
+                     * 是否开启 SFTP 文件删除，不传时默认为false
                      */
                     bool m_allowFileDel;
                     bool m_allowFileDelHasBeenSet;
@@ -874,19 +874,19 @@ namespace TencentCloud
                     bool m_departmentIdHasBeenSet;
 
                     /**
-                     * 是否允许使用访问串
+                     * 是否允许使用访问串，不传时默认为true
                      */
                     bool m_allowAccessCredential;
                     bool m_allowAccessCredentialHasBeenSet;
 
                     /**
-                     * 是否允许键盘记录
+                     * 是否允许键盘记录，不传时默认为false
                      */
                     bool m_allowKeyboardLogger;
                     bool m_allowKeyboardLoggerHasBeenSet;
 
                     /**
-                     * 访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍
+                     * 访问串有效期最大时长，秒数，允许使用访问串时需大于0且必须为86400整数倍，不传时默认为9999天对应的秒数
                      */
                     uint64_t m_maxAccessCredentialDuration;
                     bool m_maxAccessCredentialDurationHasBeenSet;

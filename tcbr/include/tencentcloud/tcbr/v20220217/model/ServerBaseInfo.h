@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务名
-                     * @return ServerName 服务名
+                     * 获取<p>服务名</p>
+                     * @return ServerName <p>服务名</p>
                      * 
                      */
                     std::string GetServerName() const;
 
                     /**
-                     * 设置服务名
-                     * @param _serverName 服务名
+                     * 设置<p>服务名</p>
+                     * @param _serverName <p>服务名</p>
                      * 
                      */
                     void SetServerName(const std::string& _serverName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ServerNameHasBeenSet() const;
 
                     /**
-                     * 获取默认服务域名
-                     * @return DefaultDomainName 默认服务域名
+                     * 获取<p>默认服务域名</p>
+                     * @return DefaultDomainName <p>默认服务域名</p>
                      * 
                      */
                     std::string GetDefaultDomainName() const;
 
                     /**
-                     * 设置默认服务域名
-                     * @param _defaultDomainName 默认服务域名
+                     * 设置<p>默认服务域名</p>
+                     * @param _defaultDomainName <p>默认服务域名</p>
                      * 
                      */
                     void SetDefaultDomainName(const std::string& _defaultDomainName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DefaultDomainNameHasBeenSet() const;
 
                     /**
-                     * 获取自定义域名
-                     * @return CustomDomainName 自定义域名
+                     * 获取<p>自定义域名</p>
+                     * @return CustomDomainName <p>自定义域名</p>
                      * 
                      */
                     std::string GetCustomDomainName() const;
 
                     /**
-                     * 设置自定义域名
-                     * @param _customDomainName 自定义域名
+                     * 设置<p>自定义域名</p>
+                     * @param _customDomainName <p>自定义域名</p>
                      * 
                      */
                     void SetCustomDomainName(const std::string& _customDomainName);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool CustomDomainNameHasBeenSet() const;
 
                     /**
-                     * 获取服务状态：running/deploying/deploy_failed
-                     * @return Status 服务状态：running/deploying/deploy_failed
+                     * 获取<p>服务状态：creating/create_failed/freezing/freeze_fail/froze/unfreezing/unfreeze_fail/normal/deleting/delete_failed/abnormal</p><p>枚举值：</p><ul><li>creating： 创建中</li><li>create_failed： 创建失败</li><li>freezing： 冻结中</li><li>freeze_fail： 冻结失败</li><li>froze： 已冻结</li><li>unfreezing： 解冻中</li><li>unfreeze_fail： 解冻失败</li><li>normal： 正常</li><li>deleting： 删除中</li><li>delete_failed： 删除失败</li><li>abnormal： 服务异常</li></ul>
+                     * @return Status <p>服务状态：creating/create_failed/freezing/freeze_fail/froze/unfreezing/unfreeze_fail/normal/deleting/delete_failed/abnormal</p><p>枚举值：</p><ul><li>creating： 创建中</li><li>create_failed： 创建失败</li><li>freezing： 冻结中</li><li>freeze_fail： 冻结失败</li><li>froze： 已冻结</li><li>unfreezing： 解冻中</li><li>unfreeze_fail： 解冻失败</li><li>normal： 正常</li><li>deleting： 删除中</li><li>delete_failed： 删除失败</li><li>abnormal： 服务异常</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置服务状态：running/deploying/deploy_failed
-                     * @param _status 服务状态：running/deploying/deploy_failed
+                     * 设置<p>服务状态：creating/create_failed/freezing/freeze_fail/froze/unfreezing/unfreeze_fail/normal/deleting/delete_failed/abnormal</p><p>枚举值：</p><ul><li>creating： 创建中</li><li>create_failed： 创建失败</li><li>freezing： 冻结中</li><li>freeze_fail： 冻结失败</li><li>froze： 已冻结</li><li>unfreezing： 解冻中</li><li>unfreeze_fail： 解冻失败</li><li>normal： 正常</li><li>deleting： 删除中</li><li>delete_failed： 删除失败</li><li>abnormal： 服务异常</li></ul>
+                     * @param _status <p>服务状态：creating/create_failed/freezing/freeze_fail/froze/unfreezing/unfreeze_fail/normal/deleting/delete_failed/abnormal</p><p>枚举值：</p><ul><li>creating： 创建中</li><li>create_failed： 创建失败</li><li>freezing： 冻结中</li><li>freeze_fail： 冻结失败</li><li>froze： 已冻结</li><li>unfreezing： 解冻中</li><li>unfreeze_fail： 解冻失败</li><li>normal： 正常</li><li>deleting： 删除中</li><li>delete_failed： 删除失败</li><li>abnormal： 服务异常</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdateTime 更新时间
+                     * 获取<p>更新时间</p>
+                     * @return UpdateTime <p>更新时间</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
-                     * @param _updateTime 更新时间
+                     * 设置<p>更新时间</p>
+                     * @param _updateTime <p>更新时间</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取公网访问类型
-                     * @return AccessTypes 公网访问类型
+                     * 获取<p>公网访问类型</p>
+                     * @return AccessTypes <p>公网访问类型</p>
                      * 
                      */
                     std::vector<std::string> GetAccessTypes() const;
 
                     /**
-                     * 设置公网访问类型
-                     * @param _accessTypes 公网访问类型
+                     * 设置<p>公网访问类型</p>
+                     * @param _accessTypes <p>公网访问类型</p>
                      * 
                      */
                     void SetAccessTypes(const std::vector<std::string>& _accessTypes);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool AccessTypesHasBeenSet() const;
 
                     /**
-                     * 获取展示自定义域名
-                     * @return CustomDomainNames 展示自定义域名
+                     * 获取<p>展示自定义域名</p>
+                     * @return CustomDomainNames <p>展示自定义域名</p>
                      * 
                      */
                     std::vector<std::string> GetCustomDomainNames() const;
 
                     /**
-                     * 设置展示自定义域名
-                     * @param _customDomainNames 展示自定义域名
+                     * 设置<p>展示自定义域名</p>
+                     * @param _customDomainNames <p>展示自定义域名</p>
                      * 
                      */
                     void SetCustomDomainNames(const std::vector<std::string>& _customDomainNames);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool CustomDomainNamesHasBeenSet() const;
 
                     /**
-                     * 获取服务类型: function 云函数2.0；container 容器服务
-                     * @return ServerType 服务类型: function 云函数2.0；container 容器服务
+                     * 获取<p>服务类型: function 云函数2.0；container 容器服务</p>
+                     * @return ServerType <p>服务类型: function 云函数2.0；container 容器服务</p>
                      * 
                      */
                     std::string GetServerType() const;
 
                     /**
-                     * 设置服务类型: function 云函数2.0；container 容器服务
-                     * @param _serverType 服务类型: function 云函数2.0；container 容器服务
+                     * 设置<p>服务类型: function 云函数2.0；container 容器服务</p>
+                     * @param _serverType <p>服务类型: function 云函数2.0；container 容器服务</p>
                      * 
                      */
                     void SetServerType(const std::string& _serverType);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ServerTypeHasBeenSet() const;
 
                     /**
-                     * 获取流量类型，目前只有 FLOW
-                     * @return TrafficType 流量类型，目前只有 FLOW
+                     * 获取<p>流量类型，目前只有 FLOW</p>
+                     * @return TrafficType <p>流量类型，目前只有 FLOW</p>
                      * 
                      */
                     std::string GetTrafficType() const;
 
                     /**
-                     * 设置流量类型，目前只有 FLOW
-                     * @param _trafficType 流量类型，目前只有 FLOW
+                     * 设置<p>流量类型，目前只有 FLOW</p>
+                     * @param _trafficType <p>流量类型，目前只有 FLOW</p>
                      * 
                      */
                     void SetTrafficType(const std::string& _trafficType);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool TrafficTypeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -259,61 +259,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务名
+                     * <p>服务名</p>
                      */
                     std::string m_serverName;
                     bool m_serverNameHasBeenSet;
 
                     /**
-                     * 默认服务域名
+                     * <p>默认服务域名</p>
                      */
                     std::string m_defaultDomainName;
                     bool m_defaultDomainNameHasBeenSet;
 
                     /**
-                     * 自定义域名
+                     * <p>自定义域名</p>
                      */
                     std::string m_customDomainName;
                     bool m_customDomainNameHasBeenSet;
 
                     /**
-                     * 服务状态：running/deploying/deploy_failed
+                     * <p>服务状态：creating/create_failed/freezing/freeze_fail/froze/unfreezing/unfreeze_fail/normal/deleting/delete_failed/abnormal</p><p>枚举值：</p><ul><li>creating： 创建中</li><li>create_failed： 创建失败</li><li>freezing： 冻结中</li><li>freeze_fail： 冻结失败</li><li>froze： 已冻结</li><li>unfreezing： 解冻中</li><li>unfreeze_fail： 解冻失败</li><li>normal： 正常</li><li>deleting： 删除中</li><li>delete_failed： 删除失败</li><li>abnormal： 服务异常</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 公网访问类型
+                     * <p>公网访问类型</p>
                      */
                     std::vector<std::string> m_accessTypes;
                     bool m_accessTypesHasBeenSet;
 
                     /**
-                     * 展示自定义域名
+                     * <p>展示自定义域名</p>
                      */
                     std::vector<std::string> m_customDomainNames;
                     bool m_customDomainNamesHasBeenSet;
 
                     /**
-                     * 服务类型: function 云函数2.0；container 容器服务
+                     * <p>服务类型: function 云函数2.0；container 容器服务</p>
                      */
                     std::string m_serverType;
                     bool m_serverTypeHasBeenSet;
 
                     /**
-                     * 流量类型，目前只有 FLOW
+                     * <p>流量类型，目前只有 FLOW</p>
                      */
                     std::string m_trafficType;
                     bool m_trafficTypeHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;

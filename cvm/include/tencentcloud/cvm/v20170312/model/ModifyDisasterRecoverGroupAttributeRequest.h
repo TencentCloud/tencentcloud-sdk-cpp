@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分散置放群组ID，可使用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。
-                     * @return DisasterRecoverGroupId 分散置放群组ID，可使用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。
+                     * 获取<p>分散置放群组ID，可使用<a href="https://cloud.tencent.com/document/api/213/17810">DescribeDisasterRecoverGroups</a>接口获取。</p>
+                     * @return DisasterRecoverGroupId <p>分散置放群组ID，可使用<a href="https://cloud.tencent.com/document/api/213/17810">DescribeDisasterRecoverGroups</a>接口获取。</p>
                      * 
                      */
                     std::string GetDisasterRecoverGroupId() const;
 
                     /**
-                     * 设置分散置放群组ID，可使用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。
-                     * @param _disasterRecoverGroupId 分散置放群组ID，可使用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。
+                     * 设置<p>分散置放群组ID，可使用<a href="https://cloud.tencent.com/document/api/213/17810">DescribeDisasterRecoverGroups</a>接口获取。</p>
+                     * @param _disasterRecoverGroupId <p>分散置放群组ID，可使用<a href="https://cloud.tencent.com/document/api/213/17810">DescribeDisasterRecoverGroups</a>接口获取。</p>
                      * 
                      */
                     void SetDisasterRecoverGroupId(const std::string& _disasterRecoverGroupId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DisasterRecoverGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取分散置放群组名称，长度1-60个字符，支持中、英文。
-                     * @return Name 分散置放群组名称，长度1-60个字符，支持中、英文。
+                     * 获取<p>分散置放群组名称，长度1-60个字符，支持中、英文。</p>
+                     * @return Name <p>分散置放群组名称，长度1-60个字符，支持中、英文。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置分散置放群组名称，长度1-60个字符，支持中、英文。
-                     * @param _name 分散置放群组名称，长度1-60个字符，支持中、英文。
+                     * 设置<p>分散置放群组名称，长度1-60个字符，支持中、英文。</p>
+                     * @param _name <p>分散置放群组名称，长度1-60个字符，支持中、英文。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -84,19 +84,46 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>分散置放群组的亲和度，在置放群组的实例会按该亲和度分布，亲和度的取值范围是：1-10。</p><p>取值范围：[1, 10]</p><p>调整只能从小调到大，不能从大调到小</p>
+                     * @return Affinity <p>分散置放群组的亲和度，在置放群组的实例会按该亲和度分布，亲和度的取值范围是：1-10。</p><p>取值范围：[1, 10]</p><p>调整只能从小调到大，不能从大调到小</p>
+                     * 
+                     */
+                    int64_t GetAffinity() const;
+
+                    /**
+                     * 设置<p>分散置放群组的亲和度，在置放群组的实例会按该亲和度分布，亲和度的取值范围是：1-10。</p><p>取值范围：[1, 10]</p><p>调整只能从小调到大，不能从大调到小</p>
+                     * @param _affinity <p>分散置放群组的亲和度，在置放群组的实例会按该亲和度分布，亲和度的取值范围是：1-10。</p><p>取值范围：[1, 10]</p><p>调整只能从小调到大，不能从大调到小</p>
+                     * 
+                     */
+                    void SetAffinity(const int64_t& _affinity);
+
+                    /**
+                     * 判断参数 Affinity 是否已赋值
+                     * @return Affinity 是否已赋值
+                     * 
+                     */
+                    bool AffinityHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 分散置放群组ID，可使用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。
+                     * <p>分散置放群组ID，可使用<a href="https://cloud.tencent.com/document/api/213/17810">DescribeDisasterRecoverGroups</a>接口获取。</p>
                      */
                     std::string m_disasterRecoverGroupId;
                     bool m_disasterRecoverGroupIdHasBeenSet;
 
                     /**
-                     * 分散置放群组名称，长度1-60个字符，支持中、英文。
+                     * <p>分散置放群组名称，长度1-60个字符，支持中、英文。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * <p>分散置放群组的亲和度，在置放群组的实例会按该亲和度分布，亲和度的取值范围是：1-10。</p><p>取值范围：[1, 10]</p><p>调整只能从小调到大，不能从大调到小</p>
+                     */
+                    int64_t m_affinity;
+                    bool m_affinityHasBeenSet;
 
                 };
             }

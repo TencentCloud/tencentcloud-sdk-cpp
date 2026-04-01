@@ -76,7 +76,8 @@ InstanceInfo::InstanceInfo() :
     m_hasPublicCloudClbHasBeenSet(false),
     m_upgradeZkVersionsHasBeenSet(false),
     m_showRipHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_enableConfigKeyValueHasBeenSet(false)
 {
 }
 
@@ -696,6 +697,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_instanceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableConfigKeyValue") && !value["EnableConfigKeyValue"].IsNull())
+    {
+        if (!value["EnableConfigKeyValue"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.EnableConfigKeyValue` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableConfigKeyValue = string(value["EnableConfigKeyValue"].GetString());
+        m_enableConfigKeyValueHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1172,6 +1183,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableConfigKeyValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableConfigKeyValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_enableConfigKeyValue.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2071,5 +2090,21 @@ void InstanceInfo::SetInstanceType(const string& _instanceType)
 bool InstanceInfo::InstanceTypeHasBeenSet() const
 {
     return m_instanceTypeHasBeenSet;
+}
+
+string InstanceInfo::GetEnableConfigKeyValue() const
+{
+    return m_enableConfigKeyValue;
+}
+
+void InstanceInfo::SetEnableConfigKeyValue(const string& _enableConfigKeyValue)
+{
+    m_enableConfigKeyValue = _enableConfigKeyValue;
+    m_enableConfigKeyValueHasBeenSet = true;
+}
+
+bool InstanceInfo::EnableConfigKeyValueHasBeenSet() const
+{
+    return m_enableConfigKeyValueHasBeenSet;
 }
 

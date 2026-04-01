@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例描述信息
-                     * @return InstanceInfo 实例描述信息
+                     * 获取<p>实例描述信息</p>
+                     * @return InstanceInfo <p>实例描述信息</p>
                      * 
                      */
                     InstanceInfo GetInstanceInfo() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例描述信息
+                     * <p>实例描述信息</p>
                      */
                     InstanceInfo m_instanceInfo;
                     bool m_instanceInfoHasBeenSet;

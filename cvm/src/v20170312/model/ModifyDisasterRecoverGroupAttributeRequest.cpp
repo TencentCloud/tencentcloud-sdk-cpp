@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyDisasterRecoverGroupAttributeRequest::ModifyDisasterRecoverGroupAttributeRequest() :
     m_disasterRecoverGroupIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_affinityHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ModifyDisasterRecoverGroupAttributeRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_affinityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Affinity";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_affinity, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void ModifyDisasterRecoverGroupAttributeRequest::SetName(const string& _name)
 bool ModifyDisasterRecoverGroupAttributeRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+int64_t ModifyDisasterRecoverGroupAttributeRequest::GetAffinity() const
+{
+    return m_affinity;
+}
+
+void ModifyDisasterRecoverGroupAttributeRequest::SetAffinity(const int64_t& _affinity)
+{
+    m_affinity = _affinity;
+    m_affinityHasBeenSet = true;
+}
+
+bool ModifyDisasterRecoverGroupAttributeRequest::AffinityHasBeenSet() const
+{
+    return m_affinityHasBeenSet;
 }
 
 

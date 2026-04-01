@@ -35,7 +35,9 @@ DescribeFraudPremiumResponse::DescribeFraudPremiumResponse() :
     m_sdkBuildNoHasBeenSet(false),
     m_riskInfosHasBeenSet(false),
     m_histRiskInfosHasBeenSet(false),
-    m_openidHasBeenSet(false)
+    m_openidHasBeenSet(false),
+    m_riskCheckTimestampHasBeenSet(false),
+    m_extraInfosHasBeenSet(false)
 {
 }
 
@@ -213,6 +215,36 @@ CoreInternalOutcome DescribeFraudPremiumResponse::Deserialize(const string &payl
         m_openidHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RiskCheckTimestamp") && !rsp["RiskCheckTimestamp"].IsNull())
+    {
+        if (!rsp["RiskCheckTimestamp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskCheckTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskCheckTimestamp = string(rsp["RiskCheckTimestamp"].GetString());
+        m_riskCheckTimestampHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExtraInfos") && !rsp["ExtraInfos"].IsNull())
+    {
+        if (!rsp["ExtraInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExtraInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ExtraInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ExtraInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_extraInfos.push_back(item);
+        }
+        m_extraInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -331,6 +363,29 @@ string DescribeFraudPremiumResponse::ToJsonString() const
         string key = "Openid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_openid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_riskCheckTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskCheckTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_riskCheckTimestamp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extraInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_extraInfos.begin(); itr != m_extraInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -463,6 +518,26 @@ string DescribeFraudPremiumResponse::GetOpenid() const
 bool DescribeFraudPremiumResponse::OpenidHasBeenSet() const
 {
     return m_openidHasBeenSet;
+}
+
+string DescribeFraudPremiumResponse::GetRiskCheckTimestamp() const
+{
+    return m_riskCheckTimestamp;
+}
+
+bool DescribeFraudPremiumResponse::RiskCheckTimestampHasBeenSet() const
+{
+    return m_riskCheckTimestampHasBeenSet;
+}
+
+vector<ExtraInfo> DescribeFraudPremiumResponse::GetExtraInfos() const
+{
+    return m_extraInfos;
+}
+
+bool DescribeFraudPremiumResponse::ExtraInfosHasBeenSet() const
+{
+    return m_extraInfosHasBeenSet;
 }
 
 

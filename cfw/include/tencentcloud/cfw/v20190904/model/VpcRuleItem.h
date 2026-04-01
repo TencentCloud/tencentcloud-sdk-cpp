@@ -698,6 +698,48 @@ log：观察
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取目的值的类型，与TargetType或DestType所代表的目的类型含义有所不同，如目的类型是template,但template分ip模板和域名模板，故需通过DestValueType进一步区分
+                     * @return DestValueType 目的值的类型，与TargetType或DestType所代表的目的类型含义有所不同，如目的类型是template,但template分ip模板和域名模板，故需通过DestValueType进一步区分
+                     * 
+                     */
+                    std::string GetDestValueType() const;
+
+                    /**
+                     * 设置目的值的类型，与TargetType或DestType所代表的目的类型含义有所不同，如目的类型是template,但template分ip模板和域名模板，故需通过DestValueType进一步区分
+                     * @param _destValueType 目的值的类型，与TargetType或DestType所代表的目的类型含义有所不同，如目的类型是template,但template分ip模板和域名模板，故需通过DestValueType进一步区分
+                     * 
+                     */
+                    void SetDestValueType(const std::string& _destValueType);
+
+                    /**
+                     * 判断参数 DestValueType 是否已赋值
+                     * @return DestValueType 是否已赋值
+                     * 
+                     */
+                    bool DestValueTypeHasBeenSet() const;
+
+                    /**
+                     * 获取规则分区，1最前分区，2中间分区，3最后分区，增删改查规则时无需传入此参数
+                     * @return RulePartition 规则分区，1最前分区，2中间分区，3最后分区，增删改查规则时无需传入此参数
+                     * 
+                     */
+                    int64_t GetRulePartition() const;
+
+                    /**
+                     * 设置规则分区，1最前分区，2中间分区，3最后分区，增删改查规则时无需传入此参数
+                     * @param _rulePartition 规则分区，1最前分区，2中间分区，3最后分区，增删改查规则时无需传入此参数
+                     * 
+                     */
+                    void SetRulePartition(const int64_t& _rulePartition);
+
+                    /**
+                     * 判断参数 RulePartition 是否已赋值
+                     * @return RulePartition 是否已赋值
+                     * 
+                     */
+                    bool RulePartitionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -882,6 +924,18 @@ log：观察
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 目的值的类型，与TargetType或DestType所代表的目的类型含义有所不同，如目的类型是template,但template分ip模板和域名模板，故需通过DestValueType进一步区分
+                     */
+                    std::string m_destValueType;
+                    bool m_destValueTypeHasBeenSet;
+
+                    /**
+                     * 规则分区，1最前分区，2中间分区，3最后分区，增删改查规则时无需传入此参数
+                     */
+                    int64_t m_rulePartition;
+                    bool m_rulePartitionHasBeenSet;
 
                 };
             }

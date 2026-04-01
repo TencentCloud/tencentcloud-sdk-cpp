@@ -150,21 +150,21 @@ namespace TencentCloud
                     /**
                      * 获取关键字匹配
                      * @return SearchWord 关键字匹配
-                     * 
+                     * @deprecated
                      */
                     std::string GetSearchWord() const;
 
                     /**
                      * 设置关键字匹配
                      * @param _searchWord 关键字匹配
-                     * 
+                     * @deprecated
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
                     /**
                      * 判断参数 SearchWord 是否已赋值
                      * @return SearchWord 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SearchWordHasBeenSet() const;
 

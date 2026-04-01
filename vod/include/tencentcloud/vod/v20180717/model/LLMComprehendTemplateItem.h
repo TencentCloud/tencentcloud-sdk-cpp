@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/LLMComprehendSummary.h>
 #include <tencentcloud/vod/v20180717/model/LLMComprehendAsr.h>
+#include <tencentcloud/vod/v20180717/model/LLMComprehendFaceRecognition.h>
 
 
 namespace TencentCloud
@@ -49,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片异步处理模板唯一标识。
-                     * @return Definition 图片异步处理模板唯一标识。
+                     * 获取<p>图片异步处理模板唯一标识。</p>
+                     * @return Definition <p>图片异步处理模板唯一标识。</p>
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置图片异步处理模板唯一标识。
-                     * @param _definition 图片异步处理模板唯一标识。
+                     * 设置<p>图片异步处理模板唯一标识。</p>
+                     * @param _definition <p>图片异步处理模板唯一标识。</p>
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -70,15 +71,15 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取图片异步处理模板名称。
-                     * @return Name 图片异步处理模板名称。
+                     * 获取<p>图片异步处理模板名称。</p>
+                     * @return Name <p>图片异步处理模板名称。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置图片异步处理模板名称。
-                     * @param _name 图片异步处理模板名称。
+                     * 设置<p>图片异步处理模板名称。</p>
+                     * @param _name <p>图片异步处理模板名称。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -91,15 +92,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取图片异步处理模板描述信息。
-                     * @return Comment 图片异步处理模板描述信息。
+                     * 获取<p>图片异步处理模板描述信息。</p>
+                     * @return Comment <p>图片异步处理模板描述信息。</p>
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置图片异步处理模板描述信息。
-                     * @param _comment 图片异步处理模板描述信息。
+                     * 设置<p>图片异步处理模板描述信息。</p>
+                     * @param _comment <p>图片异步处理模板描述信息。</p>
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -112,23 +113,15 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取解析级别，可选值为：
-- Audio: 音频级解析
-- Video: 视频级解析
-                     * @return Level 解析级别，可选值为：
-- Audio: 音频级解析
-- Video: 视频级解析
+                     * 获取<p>解析级别，可选值为：</p><ul><li>Audio: 音频级解析</li><li>Video: 视频级解析</li></ul>
+                     * @return Level <p>解析级别，可选值为：</p><ul><li>Audio: 音频级解析</li><li>Video: 视频级解析</li></ul>
                      * 
                      */
                     std::string GetLevel() const;
 
                     /**
-                     * 设置解析级别，可选值为：
-- Audio: 音频级解析
-- Video: 视频级解析
-                     * @param _level 解析级别，可选值为：
-- Audio: 音频级解析
-- Video: 视频级解析
+                     * 设置<p>解析级别，可选值为：</p><ul><li>Audio: 音频级解析</li><li>Video: 视频级解析</li></ul>
+                     * @param _level <p>解析级别，可选值为：</p><ul><li>Audio: 音频级解析</li><li>Video: 视频级解析</li></ul>
                      * 
                      */
                     void SetLevel(const std::string& _level);
@@ -141,15 +134,15 @@ namespace TencentCloud
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取分段摘要解析配置
-                     * @return Summary 分段摘要解析配置
+                     * 获取<p>分段摘要解析配置</p>
+                     * @return Summary <p>分段摘要解析配置</p>
                      * 
                      */
                     LLMComprehendSummary GetSummary() const;
 
                     /**
-                     * 设置分段摘要解析配置
-                     * @param _summary 分段摘要解析配置
+                     * 设置<p>分段摘要解析配置</p>
+                     * @param _summary <p>分段摘要解析配置</p>
                      * 
                      */
                     void SetSummary(const LLMComprehendSummary& _summary);
@@ -162,15 +155,15 @@ namespace TencentCloud
                     bool SummaryHasBeenSet() const;
 
                     /**
-                     * 获取文本转录解析配置
-                     * @return Asr 文本转录解析配置
+                     * 获取<p>文本转录解析配置</p>
+                     * @return Asr <p>文本转录解析配置</p>
                      * 
                      */
                     LLMComprehendAsr GetAsr() const;
 
                     /**
-                     * 设置文本转录解析配置
-                     * @param _asr 文本转录解析配置
+                     * 设置<p>文本转录解析配置</p>
+                     * @param _asr <p>文本转录解析配置</p>
                      * 
                      */
                     void SetAsr(const LLMComprehendAsr& _asr);
@@ -183,15 +176,36 @@ namespace TencentCloud
                     bool AsrHasBeenSet() const;
 
                     /**
-                     * 获取模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @return CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 获取<p>人脸识别解析配置</p>
+                     * @return FaceRecognition <p>人脸识别解析配置</p>
+                     * 
+                     */
+                    LLMComprehendFaceRecognition GetFaceRecognition() const;
+
+                    /**
+                     * 设置<p>人脸识别解析配置</p>
+                     * @param _faceRecognition <p>人脸识别解析配置</p>
+                     * 
+                     */
+                    void SetFaceRecognition(const LLMComprehendFaceRecognition& _faceRecognition);
+
+                    /**
+                     * 判断参数 FaceRecognition 是否已赋值
+                     * @return FaceRecognition 是否已赋值
+                     * 
+                     */
+                    bool FaceRecognitionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模板创建时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @return CreateTime <p>模板创建时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param _createTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 设置<p>模板创建时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @param _createTime <p>模板创建时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -204,15 +218,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @return UpdateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 获取<p>模板最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @return UpdateTime <p>模板最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
-                     * @param _updateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * 设置<p>模板最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
+                     * @param _updateTime <p>模板最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -227,51 +241,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 图片异步处理模板唯一标识。
+                     * <p>图片异步处理模板唯一标识。</p>
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * 图片异步处理模板名称。
+                     * <p>图片异步处理模板名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 图片异步处理模板描述信息。
+                     * <p>图片异步处理模板描述信息。</p>
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * 解析级别，可选值为：
-- Audio: 音频级解析
-- Video: 视频级解析
+                     * <p>解析级别，可选值为：</p><ul><li>Audio: 音频级解析</li><li>Video: 视频级解析</li></ul>
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;
 
                     /**
-                     * 分段摘要解析配置
+                     * <p>分段摘要解析配置</p>
                      */
                     LLMComprehendSummary m_summary;
                     bool m_summaryHasBeenSet;
 
                     /**
-                     * 文本转录解析配置
+                     * <p>文本转录解析配置</p>
                      */
                     LLMComprehendAsr m_asr;
                     bool m_asrHasBeenSet;
 
                     /**
-                     * 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * <p>人脸识别解析配置</p>
+                     */
+                    LLMComprehendFaceRecognition m_faceRecognition;
+                    bool m_faceRecognitionHasBeenSet;
+
+                    /**
+                     * <p>模板创建时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。
+                     * <p>模板最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/266/11732#I">ISO 日期格式</a>。</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

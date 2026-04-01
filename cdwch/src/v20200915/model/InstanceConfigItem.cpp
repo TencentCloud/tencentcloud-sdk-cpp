@@ -22,7 +22,10 @@ using namespace std;
 
 InstanceConfigItem::InstanceConfigItem() :
     m_confKeyHasBeenSet(false),
-    m_confValueHasBeenSet(false)
+    m_confValueHasBeenSet(false),
+    m_modifyTypeHasBeenSet(false),
+    m_needRestartHasBeenSet(false),
+    m_originalConfValueHasBeenSet(false)
 {
 }
 
@@ -51,6 +54,36 @@ CoreInternalOutcome InstanceConfigItem::Deserialize(const rapidjson::Value &valu
         m_confValueHasBeenSet = true;
     }
 
+    if (value.HasMember("ModifyType") && !value["ModifyType"].IsNull())
+    {
+        if (!value["ModifyType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceConfigItem.ModifyType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyType = string(value["ModifyType"].GetString());
+        m_modifyTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NeedRestart") && !value["NeedRestart"].IsNull())
+    {
+        if (!value["NeedRestart"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceConfigItem.NeedRestart` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_needRestart = value["NeedRestart"].GetBool();
+        m_needRestartHasBeenSet = true;
+    }
+
+    if (value.HasMember("OriginalConfValue") && !value["OriginalConfValue"].IsNull())
+    {
+        if (!value["OriginalConfValue"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceConfigItem.OriginalConfValue` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originalConfValue = string(value["OriginalConfValue"].GetString());
+        m_originalConfValueHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +105,30 @@ void InstanceConfigItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "ConfValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_confValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needRestartHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedRestart";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_needRestart, allocator);
+    }
+
+    if (m_originalConfValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginalConfValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originalConfValue.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +164,53 @@ void InstanceConfigItem::SetConfValue(const string& _confValue)
 bool InstanceConfigItem::ConfValueHasBeenSet() const
 {
     return m_confValueHasBeenSet;
+}
+
+string InstanceConfigItem::GetModifyType() const
+{
+    return m_modifyType;
+}
+
+void InstanceConfigItem::SetModifyType(const string& _modifyType)
+{
+    m_modifyType = _modifyType;
+    m_modifyTypeHasBeenSet = true;
+}
+
+bool InstanceConfigItem::ModifyTypeHasBeenSet() const
+{
+    return m_modifyTypeHasBeenSet;
+}
+
+bool InstanceConfigItem::GetNeedRestart() const
+{
+    return m_needRestart;
+}
+
+void InstanceConfigItem::SetNeedRestart(const bool& _needRestart)
+{
+    m_needRestart = _needRestart;
+    m_needRestartHasBeenSet = true;
+}
+
+bool InstanceConfigItem::NeedRestartHasBeenSet() const
+{
+    return m_needRestartHasBeenSet;
+}
+
+string InstanceConfigItem::GetOriginalConfValue() const
+{
+    return m_originalConfValue;
+}
+
+void InstanceConfigItem::SetOriginalConfValue(const string& _originalConfValue)
+{
+    m_originalConfValue = _originalConfValue;
+    m_originalConfValueHasBeenSet = true;
+}
+
+bool InstanceConfigItem::OriginalConfValueHasBeenSet() const
+{
+    return m_originalConfValueHasBeenSet;
 }
 

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群状态，例如：Serving
-                     * @return InstanceState 集群状态，例如：Serving
+                     * 获取<p>集群状态，例如：Serving</p>
+                     * @return InstanceState <p>集群状态，例如：Serving</p>
                      * 
                      */
                     std::string GetInstanceState() const;
 
                     /**
-                     * 设置集群状态，例如：Serving
-                     * @param _instanceState 集群状态，例如：Serving
+                     * 设置<p>集群状态，例如：Serving</p>
+                     * @param _instanceState <p>集群状态，例如：Serving</p>
                      * 
                      */
                     void SetInstanceState(const std::string& _instanceState);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InstanceStateHasBeenSet() const;
 
                     /**
-                     * 获取集群操作创建时间
-                     * @return FlowCreateTime 集群操作创建时间
+                     * 获取<p>集群操作创建时间</p>
+                     * @return FlowCreateTime <p>集群操作创建时间</p>
                      * 
                      */
                     std::string GetFlowCreateTime() const;
 
                     /**
-                     * 设置集群操作创建时间
-                     * @param _flowCreateTime 集群操作创建时间
+                     * 设置<p>集群操作创建时间</p>
+                     * @param _flowCreateTime <p>集群操作创建时间</p>
                      * 
                      */
                     void SetFlowCreateTime(const std::string& _flowCreateTime);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool FlowCreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取集群操作名称
-                     * @return FlowName 集群操作名称
+                     * 获取<p>集群操作名称</p>
+                     * @return FlowName <p>集群操作名称</p>
                      * 
                      */
                     std::string GetFlowName() const;
 
                     /**
-                     * 设置集群操作名称
-                     * @param _flowName 集群操作名称
+                     * 设置<p>集群操作名称</p>
+                     * @param _flowName <p>集群操作名称</p>
                      * 
                      */
                     void SetFlowName(const std::string& _flowName);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool FlowNameHasBeenSet() const;
 
                     /**
-                     * 获取集群操作进度
-                     * @return FlowProgress 集群操作进度
+                     * 获取<p>集群操作进度</p>
+                     * @return FlowProgress <p>集群操作进度</p>
                      * 
                      */
                     int64_t GetFlowProgress() const;
 
                     /**
-                     * 设置集群操作进度
-                     * @param _flowProgress 集群操作进度
+                     * 设置<p>集群操作进度</p>
+                     * @param _flowProgress <p>集群操作进度</p>
                      * 
                      */
                     void SetFlowProgress(const int64_t& _flowProgress);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool FlowProgressHasBeenSet() const;
 
                     /**
-                     * 获取集群状态描述，例如：运行中
-                     * @return InstanceStateDesc 集群状态描述，例如：运行中
+                     * 获取<p>集群状态描述，例如：运行中</p>
+                     * @return InstanceStateDesc <p>集群状态描述，例如：运行中</p>
                      * 
                      */
                     std::string GetInstanceStateDesc() const;
 
                     /**
-                     * 设置集群状态描述，例如：运行中
-                     * @param _instanceStateDesc 集群状态描述，例如：运行中
+                     * 设置<p>集群状态描述，例如：运行中</p>
+                     * @param _instanceStateDesc <p>集群状态描述，例如：运行中</p>
                      * 
                      */
                     void SetInstanceStateDesc(const std::string& _instanceStateDesc);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool InstanceStateDescHasBeenSet() const;
 
                     /**
-                     * 获取集群流程错误信息，例如：“创建失败，资源不足”
-                     * @return FlowMsg 集群流程错误信息，例如：“创建失败，资源不足”
+                     * 获取<p>集群流程错误信息，例如：“创建失败，资源不足”</p>
+                     * @return FlowMsg <p>集群流程错误信息，例如：“创建失败，资源不足”</p>
                      * 
                      */
                     std::string GetFlowMsg() const;
 
                     /**
-                     * 设置集群流程错误信息，例如：“创建失败，资源不足”
-                     * @param _flowMsg 集群流程错误信息，例如：“创建失败，资源不足”
+                     * 设置<p>集群流程错误信息，例如：“创建失败，资源不足”</p>
+                     * @param _flowMsg <p>集群流程错误信息，例如：“创建失败，资源不足”</p>
                      * 
                      */
                     void SetFlowMsg(const std::string& _flowMsg);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool FlowMsgHasBeenSet() const;
 
                     /**
-                     * 获取当前步骤的名称，例如：”购买资源中“
-                     * @return ProcessName 当前步骤的名称，例如：”购买资源中“
+                     * 获取<p>当前步骤的名称，例如：”购买资源中“</p>
+                     * @return ProcessName <p>当前步骤的名称，例如：”购买资源中“</p>
                      * 
                      */
                     std::string GetProcessName() const;
 
                     /**
-                     * 设置当前步骤的名称，例如：”购买资源中“
-                     * @param _processName 当前步骤的名称，例如：”购买资源中“
+                     * 设置<p>当前步骤的名称，例如：”购买资源中“</p>
+                     * @param _processName <p>当前步骤的名称，例如：”购买资源中“</p>
                      * 
                      */
                     void SetProcessName(const std::string& _processName);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool ProcessNameHasBeenSet() const;
 
                     /**
-                     * 获取请求id
-                     * @return RequestId 请求id
+                     * 获取<p>请求id</p>
+                     * @return RequestId <p>请求id</p>
                      * 
                      */
                     std::string GetRequestId() const;
 
                     /**
-                     * 设置请求id
-                     * @param _requestId 请求id
+                     * 设置<p>请求id</p>
+                     * @param _requestId <p>请求id</p>
                      * 
                      */
                     void SetRequestId(const std::string& _requestId);
@@ -215,15 +215,19 @@ namespace TencentCloud
                     bool RequestIdHasBeenSet() const;
 
                     /**
-                     * 获取流程的二级名称
-                     * @return ProcessSubName 流程的二级名称
+                     * 获取<p>流程的二级名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProcessSubName <p>流程的二级名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProcessSubName() const;
 
                     /**
-                     * 设置流程的二级名称
-                     * @param _processSubName 流程的二级名称
+                     * 设置<p>流程的二级名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _processSubName <p>流程的二级名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProcessSubName(const std::string& _processSubName);
@@ -235,61 +239,94 @@ namespace TencentCloud
                      */
                     bool ProcessSubNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>请求ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RequestID <p>请求ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRequestID() const;
+
+                    /**
+                     * 设置<p>请求ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _requestID <p>请求ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRequestID(const std::string& _requestID);
+
+                    /**
+                     * 判断参数 RequestID 是否已赋值
+                     * @return RequestID 是否已赋值
+                     * 
+                     */
+                    bool RequestIDHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群状态，例如：Serving
+                     * <p>集群状态，例如：Serving</p>
                      */
                     std::string m_instanceState;
                     bool m_instanceStateHasBeenSet;
 
                     /**
-                     * 集群操作创建时间
+                     * <p>集群操作创建时间</p>
                      */
                     std::string m_flowCreateTime;
                     bool m_flowCreateTimeHasBeenSet;
 
                     /**
-                     * 集群操作名称
+                     * <p>集群操作名称</p>
                      */
                     std::string m_flowName;
                     bool m_flowNameHasBeenSet;
 
                     /**
-                     * 集群操作进度
+                     * <p>集群操作进度</p>
                      */
                     int64_t m_flowProgress;
                     bool m_flowProgressHasBeenSet;
 
                     /**
-                     * 集群状态描述，例如：运行中
+                     * <p>集群状态描述，例如：运行中</p>
                      */
                     std::string m_instanceStateDesc;
                     bool m_instanceStateDescHasBeenSet;
 
                     /**
-                     * 集群流程错误信息，例如：“创建失败，资源不足”
+                     * <p>集群流程错误信息，例如：“创建失败，资源不足”</p>
                      */
                     std::string m_flowMsg;
                     bool m_flowMsgHasBeenSet;
 
                     /**
-                     * 当前步骤的名称，例如：”购买资源中“
+                     * <p>当前步骤的名称，例如：”购买资源中“</p>
                      */
                     std::string m_processName;
                     bool m_processNameHasBeenSet;
 
                     /**
-                     * 请求id
+                     * <p>请求id</p>
                      */
                     std::string m_requestId;
                     bool m_requestIdHasBeenSet;
 
                     /**
-                     * 流程的二级名称
+                     * <p>流程的二级名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_processSubName;
                     bool m_processSubNameHasBeenSet;
+
+                    /**
+                     * <p>请求ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_requestID;
+                    bool m_requestIDHasBeenSet;
 
                 };
             }

@@ -47,7 +47,9 @@ VpcRuleItem::VpcRuleItem() :
     m_ipVersionHasBeenSet(false),
     m_invalidHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_destValueTypeHasBeenSet(false),
+    m_rulePartitionHasBeenSet(false)
 {
 }
 
@@ -336,6 +338,26 @@ CoreInternalOutcome VpcRuleItem::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("DestValueType") && !value["DestValueType"].IsNull())
+    {
+        if (!value["DestValueType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.DestValueType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_destValueType = string(value["DestValueType"].GetString());
+        m_destValueTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RulePartition") && !value["RulePartition"].IsNull())
+    {
+        if (!value["RulePartition"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.RulePartition` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rulePartition = value["RulePartition"].GetInt64();
+        m_rulePartitionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -564,6 +586,22 @@ void VpcRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_destValueTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DestValueType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_destValueType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rulePartitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RulePartition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rulePartition, allocator);
     }
 
 }
@@ -999,5 +1037,37 @@ void VpcRuleItem::SetUpdateTime(const string& _updateTime)
 bool VpcRuleItem::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string VpcRuleItem::GetDestValueType() const
+{
+    return m_destValueType;
+}
+
+void VpcRuleItem::SetDestValueType(const string& _destValueType)
+{
+    m_destValueType = _destValueType;
+    m_destValueTypeHasBeenSet = true;
+}
+
+bool VpcRuleItem::DestValueTypeHasBeenSet() const
+{
+    return m_destValueTypeHasBeenSet;
+}
+
+int64_t VpcRuleItem::GetRulePartition() const
+{
+    return m_rulePartition;
+}
+
+void VpcRuleItem::SetRulePartition(const int64_t& _rulePartition)
+{
+    m_rulePartition = _rulePartition;
+    m_rulePartitionHasBeenSet = true;
+}
+
+bool VpcRuleItem::RulePartitionHasBeenSet() const
+{
+    return m_rulePartitionHasBeenSet;
 }
 

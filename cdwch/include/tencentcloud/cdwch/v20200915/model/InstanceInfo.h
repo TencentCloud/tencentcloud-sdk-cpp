@@ -52,15 +52,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群实例ID, "cdw-xxxx" 字符串类型
-                     * @return InstanceId 集群实例ID, "cdw-xxxx" 字符串类型
+                     * 获取<p>集群实例ID, &quot;cdw-xxxx&quot; 字符串类型</p>
+                     * @return InstanceId <p>集群实例ID, &quot;cdw-xxxx&quot; 字符串类型</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群实例ID, "cdw-xxxx" 字符串类型
-                     * @param _instanceId 集群实例ID, "cdw-xxxx" 字符串类型
+                     * 设置<p>集群实例ID, &quot;cdw-xxxx&quot; 字符串类型</p>
+                     * @param _instanceId <p>集群实例ID, &quot;cdw-xxxx&quot; 字符串类型</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -73,15 +73,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取集群实例名称
-                     * @return InstanceName 集群实例名称
+                     * 获取<p>集群实例名称</p>
+                     * @return InstanceName <p>集群实例名称</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置集群实例名称
-                     * @param _instanceName 集群实例名称
+                     * 设置<p>集群实例名称</p>
+                     * @param _instanceName <p>集群实例名称</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -94,27 +94,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取状态,
-Init 创建中; Serving 运行中； 
-Deleted已销毁；Deleting 销毁中；
-Modify 集群变更中；
-                     * @return Status 状态,
-Init 创建中; Serving 运行中； 
-Deleted已销毁；Deleting 销毁中；
-Modify 集群变更中；
+                     * 获取<p>状态,<br>Init 创建中; Serving 运行中；<br>Deleted已销毁；Deleting 销毁中；<br>Modify 集群变更中；</p>
+                     * @return Status <p>状态,<br>Init 创建中; Serving 运行中；<br>Deleted已销毁；Deleting 销毁中；<br>Modify 集群变更中；</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态,
-Init 创建中; Serving 运行中； 
-Deleted已销毁；Deleting 销毁中；
-Modify 集群变更中；
-                     * @param _status 状态,
-Init 创建中; Serving 运行中； 
-Deleted已销毁；Deleting 销毁中；
-Modify 集群变更中；
+                     * 设置<p>状态,<br>Init 创建中; Serving 运行中；<br>Deleted已销毁；Deleting 销毁中；<br>Modify 集群变更中；</p>
+                     * @param _status <p>状态,<br>Init 创建中; Serving 运行中；<br>Deleted已销毁；Deleting 销毁中；<br>Modify 集群变更中；</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -127,15 +115,15 @@ Modify 集群变更中；
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取版本
-                     * @return Version 版本
+                     * 获取<p>版本</p>
+                     * @return Version <p>版本</p>
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
-                     * 设置版本
-                     * @param _version 版本
+                     * 设置<p>版本</p>
+                     * @param _version <p>版本</p>
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -148,15 +136,15 @@ Modify 集群变更中；
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取地域, ap-guangzhou
-                     * @return Region 地域, ap-guangzhou
+                     * 获取<p>地域, ap-guangzhou</p>
+                     * @return Region <p>地域, ap-guangzhou</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域, ap-guangzhou
-                     * @param _region 地域, ap-guangzhou
+                     * 设置<p>地域, ap-guangzhou</p>
+                     * @param _region <p>地域, ap-guangzhou</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -169,15 +157,15 @@ Modify 集群变更中；
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取可用区， ap-guangzhou-3
-                     * @return Zone 可用区， ap-guangzhou-3
+                     * 获取<p>可用区， ap-guangzhou-3</p>
+                     * @return Zone <p>可用区， ap-guangzhou-3</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区， ap-guangzhou-3
-                     * @param _zone 可用区， ap-guangzhou-3
+                     * 设置<p>可用区， ap-guangzhou-3</p>
+                     * @param _zone <p>可用区， ap-guangzhou-3</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -190,15 +178,15 @@ Modify 集群变更中；
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取私有网络名称
-                     * @return VpcId 私有网络名称
+                     * 获取<p>私有网络名称</p>
+                     * @return VpcId <p>私有网络名称</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络名称
-                     * @param _vpcId 私有网络名称
+                     * 设置<p>私有网络名称</p>
+                     * @param _vpcId <p>私有网络名称</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -211,15 +199,15 @@ Modify 集群变更中；
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网名称
-                     * @return SubnetId 子网名称
+                     * 获取<p>子网名称</p>
+                     * @return SubnetId <p>子网名称</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网名称
-                     * @param _subnetId 子网名称
+                     * 设置<p>子网名称</p>
+                     * @param _subnetId <p>子网名称</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -232,15 +220,15 @@ Modify 集群变更中；
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取付费类型，"hour", "prepay"
-                     * @return PayMode 付费类型，"hour", "prepay"
+                     * 获取<p>付费类型，&quot;hour&quot;, &quot;prepay&quot;</p>
+                     * @return PayMode <p>付费类型，&quot;hour&quot;, &quot;prepay&quot;</p>
                      * 
                      */
                     std::string GetPayMode() const;
 
                     /**
-                     * 设置付费类型，"hour", "prepay"
-                     * @param _payMode 付费类型，"hour", "prepay"
+                     * 设置<p>付费类型，&quot;hour&quot;, &quot;prepay&quot;</p>
+                     * @param _payMode <p>付费类型，&quot;hour&quot;, &quot;prepay&quot;</p>
                      * 
                      */
                     void SetPayMode(const std::string& _payMode);
@@ -253,15 +241,15 @@ Modify 集群变更中；
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -274,15 +262,15 @@ Modify 集群变更中；
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取过期时间
-                     * @return ExpireTime 过期时间
+                     * 获取<p>过期时间</p>
+                     * @return ExpireTime <p>过期时间</p>
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置过期时间
-                     * @param _expireTime 过期时间
+                     * 设置<p>过期时间</p>
+                     * @param _expireTime <p>过期时间</p>
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -295,15 +283,15 @@ Modify 集群变更中；
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取数据节点描述信息
-                     * @return MasterSummary 数据节点描述信息
+                     * 获取<p>数据节点描述信息</p>
+                     * @return MasterSummary <p>数据节点描述信息</p>
                      * 
                      */
                     NodesSummary GetMasterSummary() const;
 
                     /**
-                     * 设置数据节点描述信息
-                     * @param _masterSummary 数据节点描述信息
+                     * 设置<p>数据节点描述信息</p>
+                     * @param _masterSummary <p>数据节点描述信息</p>
                      * 
                      */
                     void SetMasterSummary(const NodesSummary& _masterSummary);
@@ -316,15 +304,15 @@ Modify 集群变更中；
                     bool MasterSummaryHasBeenSet() const;
 
                     /**
-                     * 获取zookeeper节点描述信息
-                     * @return CommonSummary zookeeper节点描述信息
+                     * 获取<p>zookeeper节点描述信息</p>
+                     * @return CommonSummary <p>zookeeper节点描述信息</p>
                      * 
                      */
                     NodesSummary GetCommonSummary() const;
 
                     /**
-                     * 设置zookeeper节点描述信息
-                     * @param _commonSummary zookeeper节点描述信息
+                     * 设置<p>zookeeper节点描述信息</p>
+                     * @param _commonSummary <p>zookeeper节点描述信息</p>
                      * 
                      */
                     void SetCommonSummary(const NodesSummary& _commonSummary);
@@ -337,15 +325,15 @@ Modify 集群变更中；
                     bool CommonSummaryHasBeenSet() const;
 
                     /**
-                     * 获取高可用,"true" "false"
-                     * @return HA 高可用,"true" "false"
+                     * 获取<p>高可用,&quot;true&quot; &quot;false&quot;</p>
+                     * @return HA <p>高可用,&quot;true&quot; &quot;false&quot;</p>
                      * 
                      */
                     std::string GetHA() const;
 
                     /**
-                     * 设置高可用,"true" "false"
-                     * @param _hA 高可用,"true" "false"
+                     * 设置<p>高可用,&quot;true&quot; &quot;false&quot;</p>
+                     * @param _hA <p>高可用,&quot;true&quot; &quot;false&quot;</p>
                      * 
                      */
                     void SetHA(const std::string& _hA);
@@ -358,15 +346,15 @@ Modify 集群变更中；
                     bool HAHasBeenSet() const;
 
                     /**
-                     * 获取访问地址，例如 "10.0.0.1:9000"
-                     * @return AccessInfo 访问地址，例如 "10.0.0.1:9000"
+                     * 获取<p>访问地址，例如 &quot;10.0.0.1:9000&quot;</p>
+                     * @return AccessInfo <p>访问地址，例如 &quot;10.0.0.1:9000&quot;</p>
                      * 
                      */
                     std::string GetAccessInfo() const;
 
                     /**
-                     * 设置访问地址，例如 "10.0.0.1:9000"
-                     * @param _accessInfo 访问地址，例如 "10.0.0.1:9000"
+                     * 设置<p>访问地址，例如 &quot;10.0.0.1:9000&quot;</p>
+                     * @param _accessInfo <p>访问地址，例如 &quot;10.0.0.1:9000&quot;</p>
                      * 
                      */
                     void SetAccessInfo(const std::string& _accessInfo);
@@ -379,15 +367,15 @@ Modify 集群变更中；
                     bool AccessInfoHasBeenSet() const;
 
                     /**
-                     * 获取记录ID，数值型
-                     * @return Id 记录ID，数值型
+                     * 获取<p>记录ID，数值型</p>
+                     * @return Id <p>记录ID，数值型</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置记录ID，数值型
-                     * @param _id 记录ID，数值型
+                     * 设置<p>记录ID，数值型</p>
+                     * @param _id <p>记录ID，数值型</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -400,15 +388,15 @@ Modify 集群变更中；
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取regionId, 表示地域
-                     * @return RegionId regionId, 表示地域
+                     * 获取<p>regionId, 表示地域</p>
+                     * @return RegionId <p>regionId, 表示地域</p>
                      * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
-                     * 设置regionId, 表示地域
-                     * @param _regionId regionId, 表示地域
+                     * 设置<p>regionId, 表示地域</p>
+                     * @param _regionId <p>regionId, 表示地域</p>
                      * 
                      */
                     void SetRegionId(const int64_t& _regionId);
@@ -421,15 +409,15 @@ Modify 集群变更中；
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取可用区说明，例如 "广州二区"
-                     * @return ZoneDesc 可用区说明，例如 "广州二区"
+                     * 获取<p>可用区说明，例如 &quot;广州二区&quot;</p>
+                     * @return ZoneDesc <p>可用区说明，例如 &quot;广州二区&quot;</p>
                      * 
                      */
                     std::string GetZoneDesc() const;
 
                     /**
-                     * 设置可用区说明，例如 "广州二区"
-                     * @param _zoneDesc 可用区说明，例如 "广州二区"
+                     * 设置<p>可用区说明，例如 &quot;广州二区&quot;</p>
+                     * @param _zoneDesc <p>可用区说明，例如 &quot;广州二区&quot;</p>
                      * 
                      */
                     void SetZoneDesc(const std::string& _zoneDesc);
@@ -442,15 +430,15 @@ Modify 集群变更中；
                     bool ZoneDescHasBeenSet() const;
 
                     /**
-                     * 获取错误流程说明信息
-                     * @return FlowMsg 错误流程说明信息
+                     * 获取<p>错误流程说明信息</p>
+                     * @return FlowMsg <p>错误流程说明信息</p>
                      * 
                      */
                     std::string GetFlowMsg() const;
 
                     /**
-                     * 设置错误流程说明信息
-                     * @param _flowMsg 错误流程说明信息
+                     * 设置<p>错误流程说明信息</p>
+                     * @param _flowMsg <p>错误流程说明信息</p>
                      * 
                      */
                     void SetFlowMsg(const std::string& _flowMsg);
@@ -463,15 +451,15 @@ Modify 集群变更中；
                     bool FlowMsgHasBeenSet() const;
 
                     /**
-                     * 获取状态描述，例如“运行中”等
-                     * @return StatusDesc 状态描述，例如“运行中”等
+                     * 获取<p>状态描述，例如“运行中”等</p>
+                     * @return StatusDesc <p>状态描述，例如“运行中”等</p>
                      * 
                      */
                     std::string GetStatusDesc() const;
 
                     /**
-                     * 设置状态描述，例如“运行中”等
-                     * @param _statusDesc 状态描述，例如“运行中”等
+                     * 设置<p>状态描述，例如“运行中”等</p>
+                     * @param _statusDesc <p>状态描述，例如“运行中”等</p>
                      * 
                      */
                     void SetStatusDesc(const std::string& _statusDesc);
@@ -484,15 +472,15 @@ Modify 集群变更中；
                     bool StatusDescHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标记
-                     * @return RenewFlag 自动续费标记
+                     * 获取<p>自动续费标记</p>
+                     * @return RenewFlag <p>自动续费标记</p>
                      * 
                      */
                     bool GetRenewFlag() const;
 
                     /**
-                     * 设置自动续费标记
-                     * @param _renewFlag 自动续费标记
+                     * 设置<p>自动续费标记</p>
+                     * @param _renewFlag <p>自动续费标记</p>
                      * 
                      */
                     void SetRenewFlag(const bool& _renewFlag);
@@ -505,15 +493,15 @@ Modify 集群变更中；
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return Tags 标签列表
+                     * 获取<p>标签列表</p>
+                     * @return Tags <p>标签列表</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签列表
-                     * @param _tags 标签列表
+                     * 设置<p>标签列表</p>
+                     * @param _tags <p>标签列表</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -526,15 +514,15 @@ Modify 集群变更中；
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取监控信息
-                     * @return Monitor 监控信息
+                     * 获取<p>监控信息</p>
+                     * @return Monitor <p>监控信息</p>
                      * 
                      */
                     std::string GetMonitor() const;
 
                     /**
-                     * 设置监控信息
-                     * @param _monitor 监控信息
+                     * 设置<p>监控信息</p>
+                     * @param _monitor <p>监控信息</p>
                      * 
                      */
                     void SetMonitor(const std::string& _monitor);
@@ -547,15 +535,15 @@ Modify 集群变更中；
                     bool MonitorHasBeenSet() const;
 
                     /**
-                     * 获取是否开通日志
-                     * @return HasClsTopic 是否开通日志
+                     * 获取<p>是否开通日志</p>
+                     * @return HasClsTopic <p>是否开通日志</p>
                      * 
                      */
                     bool GetHasClsTopic() const;
 
                     /**
-                     * 设置是否开通日志
-                     * @param _hasClsTopic 是否开通日志
+                     * 设置<p>是否开通日志</p>
+                     * @param _hasClsTopic <p>是否开通日志</p>
                      * 
                      */
                     void SetHasClsTopic(const bool& _hasClsTopic);
@@ -568,15 +556,15 @@ Modify 集群变更中；
                     bool HasClsTopicHasBeenSet() const;
 
                     /**
-                     * 获取日志主题ID
-                     * @return ClsTopicId 日志主题ID
+                     * 获取<p>日志主题ID</p>
+                     * @return ClsTopicId <p>日志主题ID</p>
                      * 
                      */
                     std::string GetClsTopicId() const;
 
                     /**
-                     * 设置日志主题ID
-                     * @param _clsTopicId 日志主题ID
+                     * 设置<p>日志主题ID</p>
+                     * @param _clsTopicId <p>日志主题ID</p>
                      * 
                      */
                     void SetClsTopicId(const std::string& _clsTopicId);
@@ -589,15 +577,15 @@ Modify 集群变更中；
                     bool ClsTopicIdHasBeenSet() const;
 
                     /**
-                     * 获取日志集ID
-                     * @return ClsLogSetId 日志集ID
+                     * 获取<p>日志集ID</p>
+                     * @return ClsLogSetId <p>日志集ID</p>
                      * 
                      */
                     std::string GetClsLogSetId() const;
 
                     /**
-                     * 设置日志集ID
-                     * @param _clsLogSetId 日志集ID
+                     * 设置<p>日志集ID</p>
+                     * @param _clsLogSetId <p>日志集ID</p>
                      * 
                      */
                     void SetClsLogSetId(const std::string& _clsLogSetId);
@@ -610,15 +598,15 @@ Modify 集群变更中；
                     bool ClsLogSetIdHasBeenSet() const;
 
                     /**
-                     * 获取是否支持xml配置管理
-                     * @return EnableXMLConfig 是否支持xml配置管理
+                     * 获取<p>是否支持xml配置管理</p>
+                     * @return EnableXMLConfig <p>是否支持xml配置管理</p>
                      * 
                      */
                     int64_t GetEnableXMLConfig() const;
 
                     /**
-                     * 设置是否支持xml配置管理
-                     * @param _enableXMLConfig 是否支持xml配置管理
+                     * 设置<p>是否支持xml配置管理</p>
+                     * @param _enableXMLConfig <p>是否支持xml配置管理</p>
                      * 
                      */
                     void SetEnableXMLConfig(const int64_t& _enableXMLConfig);
@@ -631,15 +619,15 @@ Modify 集群变更中；
                     bool EnableXMLConfigHasBeenSet() const;
 
                     /**
-                     * 获取区域
-                     * @return RegionDesc 区域
+                     * 获取<p>区域</p>
+                     * @return RegionDesc <p>区域</p>
                      * 
                      */
                     std::string GetRegionDesc() const;
 
                     /**
-                     * 设置区域
-                     * @param _regionDesc 区域
+                     * 设置<p>区域</p>
+                     * @param _regionDesc <p>区域</p>
                      * 
                      */
                     void SetRegionDesc(const std::string& _regionDesc);
@@ -652,15 +640,15 @@ Modify 集群变更中；
                     bool RegionDescHasBeenSet() const;
 
                     /**
-                     * 获取弹性网卡地址
-                     * @return Eip 弹性网卡地址
+                     * 获取<p>弹性网卡地址</p>
+                     * @return Eip <p>弹性网卡地址</p>
                      * 
                      */
                     std::string GetEip() const;
 
                     /**
-                     * 设置弹性网卡地址
-                     * @param _eip 弹性网卡地址
+                     * 设置<p>弹性网卡地址</p>
+                     * @param _eip <p>弹性网卡地址</p>
                      * 
                      */
                     void SetEip(const std::string& _eip);
@@ -673,15 +661,15 @@ Modify 集群变更中；
                     bool EipHasBeenSet() const;
 
                     /**
-                     * 获取冷热分层系数
-                     * @return CosMoveFactor 冷热分层系数
+                     * 获取<p>冷热分层系数</p>
+                     * @return CosMoveFactor <p>冷热分层系数</p>
                      * 
                      */
                     int64_t GetCosMoveFactor() const;
 
                     /**
-                     * 设置冷热分层系数
-                     * @param _cosMoveFactor 冷热分层系数
+                     * 设置<p>冷热分层系数</p>
+                     * @param _cosMoveFactor <p>冷热分层系数</p>
                      * 
                      */
                     void SetCosMoveFactor(const int64_t& _cosMoveFactor);
@@ -694,15 +682,15 @@ Modify 集群变更中；
                     bool CosMoveFactorHasBeenSet() const;
 
                     /**
-                     * 获取external/local/yunti
-                     * @return Kind external/local/yunti
+                     * 获取<p>external/local/yunti</p>
+                     * @return Kind <p>external/local/yunti</p>
                      * 
                      */
                     std::string GetKind() const;
 
                     /**
-                     * 设置external/local/yunti
-                     * @param _kind external/local/yunti
+                     * 设置<p>external/local/yunti</p>
+                     * @param _kind <p>external/local/yunti</p>
                      * 
                      */
                     void SetKind(const std::string& _kind);
@@ -715,15 +703,15 @@ Modify 集群变更中；
                     bool KindHasBeenSet() const;
 
                     /**
-                     * 获取是否弹性ck
-                     * @return IsElastic 是否弹性ck
+                     * 获取<p>是否弹性ck</p>
+                     * @return IsElastic <p>是否弹性ck</p>
                      * 
                      */
                     bool GetIsElastic() const;
 
                     /**
-                     * 设置是否弹性ck
-                     * @param _isElastic 是否弹性ck
+                     * 设置<p>是否弹性ck</p>
+                     * @param _isElastic <p>是否弹性ck</p>
                      * 
                      */
                     void SetIsElastic(const bool& _isElastic);
@@ -736,15 +724,15 @@ Modify 集群变更中；
                     bool IsElasticHasBeenSet() const;
 
                     /**
-                     * 获取集群详细状态
-                     * @return InstanceStateInfo 集群详细状态
+                     * 获取<p>集群详细状态</p>
+                     * @return InstanceStateInfo <p>集群详细状态</p>
                      * 
                      */
                     InstanceStateInfo GetInstanceStateInfo() const;
 
                     /**
-                     * 设置集群详细状态
-                     * @param _instanceStateInfo 集群详细状态
+                     * 设置<p>集群详细状态</p>
+                     * @param _instanceStateInfo <p>集群详细状态</p>
                      * 
                      */
                     void SetInstanceStateInfo(const InstanceStateInfo& _instanceStateInfo);
@@ -757,15 +745,15 @@ Modify 集群变更中；
                     bool InstanceStateInfoHasBeenSet() const;
 
                     /**
-                     * 获取ZK高可用
-                     * @return HAZk ZK高可用
+                     * 获取<p>ZK高可用</p>
+                     * @return HAZk <p>ZK高可用</p>
                      * 
                      */
                     bool GetHAZk() const;
 
                     /**
-                     * 设置ZK高可用
-                     * @param _hAZk ZK高可用
+                     * 设置<p>ZK高可用</p>
+                     * @param _hAZk <p>ZK高可用</p>
                      * 
                      */
                     void SetHAZk(const bool& _hAZk);
@@ -778,15 +766,15 @@ Modify 集群变更中；
                     bool HAZkHasBeenSet() const;
 
                     /**
-                     * 获取挂载盘,默认0:没有类型；1:裸盘;2:lvm
-                     * @return MountDiskType 挂载盘,默认0:没有类型；1:裸盘;2:lvm
+                     * 获取<p>挂载盘,默认0:没有类型；1:裸盘;2:lvm</p>
+                     * @return MountDiskType <p>挂载盘,默认0:没有类型；1:裸盘;2:lvm</p>
                      * 
                      */
                     int64_t GetMountDiskType() const;
 
                     /**
-                     * 设置挂载盘,默认0:没有类型；1:裸盘;2:lvm
-                     * @param _mountDiskType 挂载盘,默认0:没有类型；1:裸盘;2:lvm
+                     * 设置<p>挂载盘,默认0:没有类型；1:裸盘;2:lvm</p>
+                     * @param _mountDiskType <p>挂载盘,默认0:没有类型；1:裸盘;2:lvm</p>
                      * 
                      */
                     void SetMountDiskType(const int64_t& _mountDiskType);
@@ -799,15 +787,15 @@ Modify 集群变更中；
                     bool MountDiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取chproxy连接ip
-                     * @return CHProxyVip chproxy连接ip
+                     * 获取<p>chproxy连接ip</p>
+                     * @return CHProxyVip <p>chproxy连接ip</p>
                      * 
                      */
                     std::string GetCHProxyVip() const;
 
                     /**
-                     * 设置chproxy连接ip
-                     * @param _cHProxyVip chproxy连接ip
+                     * 设置<p>chproxy连接ip</p>
+                     * @param _cHProxyVip <p>chproxy连接ip</p>
                      * 
                      */
                     void SetCHProxyVip(const std::string& _cHProxyVip);
@@ -820,15 +808,15 @@ Modify 集群变更中；
                     bool CHProxyVipHasBeenSet() const;
 
                     /**
-                     * 获取cos buket的名字
-                     * @return CosBucketName cos buket的名字
+                     * 获取<p>cos buket的名字</p>
+                     * @return CosBucketName <p>cos buket的名字</p>
                      * 
                      */
                     std::string GetCosBucketName() const;
 
                     /**
-                     * 设置cos buket的名字
-                     * @param _cosBucketName cos buket的名字
+                     * 设置<p>cos buket的名字</p>
+                     * @param _cosBucketName <p>cos buket的名字</p>
                      * 
                      */
                     void SetCosBucketName(const std::string& _cosBucketName);
@@ -841,15 +829,15 @@ Modify 集群变更中；
                     bool CosBucketNameHasBeenSet() const;
 
                     /**
-                     * 获取是否可以挂载云盘
-                     * @return CanAttachCbs 是否可以挂载云盘
+                     * 获取<p>是否可以挂载云盘</p>
+                     * @return CanAttachCbs <p>是否可以挂载云盘</p>
                      * 
                      */
                     bool GetCanAttachCbs() const;
 
                     /**
-                     * 设置是否可以挂载云盘
-                     * @param _canAttachCbs 是否可以挂载云盘
+                     * 设置<p>是否可以挂载云盘</p>
+                     * @param _canAttachCbs <p>是否可以挂载云盘</p>
                      * 
                      */
                     void SetCanAttachCbs(const bool& _canAttachCbs);
@@ -862,15 +850,15 @@ Modify 集群变更中；
                     bool CanAttachCbsHasBeenSet() const;
 
                     /**
-                     * 获取是否可以挂载云盘阵列
-                     * @return CanAttachCbsLvm 是否可以挂载云盘阵列
+                     * 获取<p>是否可以挂载云盘阵列</p>
+                     * @return CanAttachCbsLvm <p>是否可以挂载云盘阵列</p>
                      * 
                      */
                     bool GetCanAttachCbsLvm() const;
 
                     /**
-                     * 设置是否可以挂载云盘阵列
-                     * @param _canAttachCbsLvm 是否可以挂载云盘阵列
+                     * 设置<p>是否可以挂载云盘阵列</p>
+                     * @param _canAttachCbsLvm <p>是否可以挂载云盘阵列</p>
                      * 
                      */
                     void SetCanAttachCbsLvm(const bool& _canAttachCbsLvm);
@@ -883,15 +871,15 @@ Modify 集群变更中；
                     bool CanAttachCbsLvmHasBeenSet() const;
 
                     /**
-                     * 获取是否可以挂载cos
-                     * @return CanAttachCos 是否可以挂载cos
+                     * 获取<p>是否可以挂载cos</p>
+                     * @return CanAttachCos <p>是否可以挂载cos</p>
                      * 
                      */
                     bool GetCanAttachCos() const;
 
                     /**
-                     * 设置是否可以挂载cos
-                     * @param _canAttachCos 是否可以挂载cos
+                     * 设置<p>是否可以挂载cos</p>
+                     * @param _canAttachCos <p>是否可以挂载cos</p>
                      * 
                      */
                     void SetCanAttachCos(const bool& _canAttachCos);
@@ -904,15 +892,15 @@ Modify 集群变更中；
                     bool CanAttachCosHasBeenSet() const;
 
                     /**
-                     * 获取服务信息
-                     * @return Components 服务信息
+                     * 获取<p>服务信息</p>
+                     * @return Components <p>服务信息</p>
                      * 
                      */
                     std::vector<ServiceInfo> GetComponents() const;
 
                     /**
-                     * 设置服务信息
-                     * @param _components 服务信息
+                     * 设置<p>服务信息</p>
+                     * @param _components <p>服务信息</p>
                      * 
                      */
                     void SetComponents(const std::vector<ServiceInfo>& _components);
@@ -925,15 +913,15 @@ Modify 集群变更中；
                     bool ComponentsHasBeenSet() const;
 
                     /**
-                     * 获取可升级的内核版本
-                     * @return UpgradeVersions 可升级的内核版本
+                     * 获取<p>可升级的内核版本</p>
+                     * @return UpgradeVersions <p>可升级的内核版本</p>
                      * 
                      */
                     std::string GetUpgradeVersions() const;
 
                     /**
-                     * 设置可升级的内核版本
-                     * @param _upgradeVersions 可升级的内核版本
+                     * 设置<p>可升级的内核版本</p>
+                     * @param _upgradeVersions <p>可升级的内核版本</p>
                      * 
                      */
                     void SetUpgradeVersions(const std::string& _upgradeVersions);
@@ -946,15 +934,15 @@ Modify 集群变更中；
                     bool UpgradeVersionsHasBeenSet() const;
 
                     /**
-                     * 获取ex-index
-                     * @return EsIndexId ex-index
+                     * 获取<p>ex-index</p>
+                     * @return EsIndexId <p>ex-index</p>
                      * 
                      */
                     std::string GetEsIndexId() const;
 
                     /**
-                     * 设置ex-index
-                     * @param _esIndexId ex-index
+                     * 设置<p>ex-index</p>
+                     * @param _esIndexId <p>ex-index</p>
                      * 
                      */
                     void SetEsIndexId(const std::string& _esIndexId);
@@ -967,15 +955,15 @@ Modify 集群变更中；
                     bool EsIndexIdHasBeenSet() const;
 
                     /**
-                     * 获取username
-                     * @return EsIndexUsername username
+                     * 获取<p>username</p>
+                     * @return EsIndexUsername <p>username</p>
                      * 
                      */
                     std::string GetEsIndexUsername() const;
 
                     /**
-                     * 设置username
-                     * @param _esIndexUsername username
+                     * 设置<p>username</p>
+                     * @param _esIndexUsername <p>username</p>
                      * 
                      */
                     void SetEsIndexUsername(const std::string& _esIndexUsername);
@@ -988,15 +976,15 @@ Modify 集群变更中；
                     bool EsIndexUsernameHasBeenSet() const;
 
                     /**
-                     * 获取password
-                     * @return EsIndexPassword password
+                     * 获取<p>password</p>
+                     * @return EsIndexPassword <p>password</p>
                      * 
                      */
                     std::string GetEsIndexPassword() const;
 
                     /**
-                     * 设置password
-                     * @param _esIndexPassword password
+                     * 设置<p>password</p>
+                     * @param _esIndexPassword <p>password</p>
                      * 
                      */
                     void SetEsIndexPassword(const std::string& _esIndexPassword);
@@ -1009,15 +997,15 @@ Modify 集群变更中；
                     bool EsIndexPasswordHasBeenSet() const;
 
                     /**
-                     * 获取true
-                     * @return HasEsIndex true
+                     * 获取<p>true</p>
+                     * @return HasEsIndex <p>true</p>
                      * 
                      */
                     bool GetHasEsIndex() const;
 
                     /**
-                     * 设置true
-                     * @param _hasEsIndex true
+                     * 设置<p>true</p>
+                     * @param _hasEsIndex <p>true</p>
                      * 
                      */
                     void SetHasEsIndex(const bool& _hasEsIndex);
@@ -1030,15 +1018,15 @@ Modify 集群变更中；
                     bool HasEsIndexHasBeenSet() const;
 
                     /**
-                     * 获取true
-                     * @return IsSecondaryZone true
+                     * 获取<p>true</p>
+                     * @return IsSecondaryZone <p>true</p>
                      * 
                      */
                     bool GetIsSecondaryZone() const;
 
                     /**
-                     * 设置true
-                     * @param _isSecondaryZone true
+                     * 设置<p>true</p>
+                     * @param _isSecondaryZone <p>true</p>
                      * 
                      */
                     void SetIsSecondaryZone(const bool& _isSecondaryZone);
@@ -1051,15 +1039,15 @@ Modify 集群变更中；
                     bool IsSecondaryZoneHasBeenSet() const;
 
                     /**
-                     * 获取desc
-                     * @return SecondaryZoneInfo desc
+                     * 获取<p>desc</p>
+                     * @return SecondaryZoneInfo <p>desc</p>
                      * 
                      */
                     std::string GetSecondaryZoneInfo() const;
 
                     /**
-                     * 设置desc
-                     * @param _secondaryZoneInfo desc
+                     * 设置<p>desc</p>
+                     * @param _secondaryZoneInfo <p>desc</p>
                      * 
                      */
                     void SetSecondaryZoneInfo(const std::string& _secondaryZoneInfo);
@@ -1072,15 +1060,15 @@ Modify 集群变更中；
                     bool SecondaryZoneInfoHasBeenSet() const;
 
                     /**
-                     * 获取是否clickhouse-keeper
-                     * @return ClickHouseKeeper 是否clickhouse-keeper
+                     * 获取<p>是否clickhouse-keeper</p>
+                     * @return ClickHouseKeeper <p>是否clickhouse-keeper</p>
                      * 
                      */
                     bool GetClickHouseKeeper() const;
 
                     /**
-                     * 设置是否clickhouse-keeper
-                     * @param _clickHouseKeeper 是否clickhouse-keeper
+                     * 设置<p>是否clickhouse-keeper</p>
+                     * @param _clickHouseKeeper <p>是否clickhouse-keeper</p>
                      * 
                      */
                     void SetClickHouseKeeper(const bool& _clickHouseKeeper);
@@ -1093,15 +1081,15 @@ Modify 集群变更中；
                     bool ClickHouseKeeperHasBeenSet() const;
 
                     /**
-                     * 获取实例扩展信息
-                     * @return Details 实例扩展信息
+                     * 获取<p>实例扩展信息</p>
+                     * @return Details <p>实例扩展信息</p>
                      * 
                      */
                     InstanceDetail GetDetails() const;
 
                     /**
-                     * 设置实例扩展信息
-                     * @param _details 实例扩展信息
+                     * 设置<p>实例扩展信息</p>
+                     * @param _details <p>实例扩展信息</p>
                      * 
                      */
                     void SetDetails(const InstanceDetail& _details);
@@ -1114,15 +1102,15 @@ Modify 集群变更中；
                     bool DetailsHasBeenSet() const;
 
                     /**
-                     * 获取安全组白名单
-                     * @return IsWhiteSGs 安全组白名单
+                     * 获取<p>安全组白名单</p>
+                     * @return IsWhiteSGs <p>安全组白名单</p>
                      * 
                      */
                     bool GetIsWhiteSGs() const;
 
                     /**
-                     * 设置安全组白名单
-                     * @param _isWhiteSGs 安全组白名单
+                     * 设置<p>安全组白名单</p>
+                     * @param _isWhiteSGs <p>安全组白名单</p>
                      * 
                      */
                     void SetIsWhiteSGs(const bool& _isWhiteSGs);
@@ -1135,15 +1123,15 @@ Modify 集群变更中；
                     bool IsWhiteSGsHasBeenSet() const;
 
                     /**
-                     * 获取绑定的安全组
-                     * @return BindSGs 绑定的安全组
+                     * 获取<p>绑定的安全组</p>
+                     * @return BindSGs <p>绑定的安全组</p>
                      * 
                      */
                     std::vector<std::string> GetBindSGs() const;
 
                     /**
-                     * 设置绑定的安全组
-                     * @param _bindSGs 绑定的安全组
+                     * 设置<p>绑定的安全组</p>
+                     * @param _bindSGs <p>绑定的安全组</p>
                      * 
                      */
                     void SetBindSGs(const std::vector<std::string>& _bindSGs);
@@ -1156,15 +1144,15 @@ Modify 集群变更中；
                     bool BindSGsHasBeenSet() const;
 
                     /**
-                     * 获取是否开启公网clb
-                     * @return HasPublicCloudClb 是否开启公网clb
+                     * 获取<p>是否开启公网clb</p>
+                     * @return HasPublicCloudClb <p>是否开启公网clb</p>
                      * 
                      */
                     bool GetHasPublicCloudClb() const;
 
                     /**
-                     * 设置是否开启公网clb
-                     * @param _hasPublicCloudClb 是否开启公网clb
+                     * 设置<p>是否开启公网clb</p>
+                     * @param _hasPublicCloudClb <p>是否开启公网clb</p>
                      * 
                      */
                     void SetHasPublicCloudClb(const bool& _hasPublicCloudClb);
@@ -1177,15 +1165,15 @@ Modify 集群变更中；
                     bool HasPublicCloudClbHasBeenSet() const;
 
                     /**
-                     * 获取可升级的zk版本
-                     * @return UpgradeZkVersions 可升级的zk版本
+                     * 获取<p>可升级的zk版本</p>
+                     * @return UpgradeZkVersions <p>可升级的zk版本</p>
                      * 
                      */
                     std::string GetUpgradeZkVersions() const;
 
                     /**
-                     * 设置可升级的zk版本
-                     * @param _upgradeZkVersions 可升级的zk版本
+                     * 设置<p>可升级的zk版本</p>
+                     * @param _upgradeZkVersions <p>可升级的zk版本</p>
                      * 
                      */
                     void SetUpgradeZkVersions(const std::string& _upgradeZkVersions);
@@ -1198,15 +1186,15 @@ Modify 集群变更中；
                     bool UpgradeZkVersionsHasBeenSet() const;
 
                     /**
-                     * 获取是否显示rip
-                     * @return ShowRip 是否显示rip
+                     * 获取<p>是否显示rip</p>
+                     * @return ShowRip <p>是否显示rip</p>
                      * 
                      */
                     std::string GetShowRip() const;
 
                     /**
-                     * 设置是否显示rip
-                     * @param _showRip 是否显示rip
+                     * 设置<p>是否显示rip</p>
+                     * @param _showRip <p>是否显示rip</p>
                      * 
                      */
                     void SetShowRip(const std::string& _showRip);
@@ -1219,15 +1207,15 @@ Modify 集群变更中；
                     bool ShowRipHasBeenSet() const;
 
                     /**
-                     * 获取实例类型：标准型 standard，无keeper节点类型noKeeper；
-                     * @return InstanceType 实例类型：标准型 standard，无keeper节点类型noKeeper；
+                     * 获取<p>实例类型：标准型 standard，无keeper节点类型noKeeper；</p>
+                     * @return InstanceType <p>实例类型：标准型 standard，无keeper节点类型noKeeper；</p>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置实例类型：标准型 standard，无keeper节点类型noKeeper；
-                     * @param _instanceType 实例类型：标准型 standard，无keeper节点类型noKeeper；
+                     * 设置<p>实例类型：标准型 standard，无keeper节点类型noKeeper；</p>
+                     * @param _instanceType <p>实例类型：标准型 standard，无keeper节点类型noKeeper；</p>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -1239,346 +1227,370 @@ Modify 集群变更中；
                      */
                     bool InstanceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>keyvalue视图</p>
+                     * @return EnableConfigKeyValue <p>keyvalue视图</p>
+                     * 
+                     */
+                    std::string GetEnableConfigKeyValue() const;
+
+                    /**
+                     * 设置<p>keyvalue视图</p>
+                     * @param _enableConfigKeyValue <p>keyvalue视图</p>
+                     * 
+                     */
+                    void SetEnableConfigKeyValue(const std::string& _enableConfigKeyValue);
+
+                    /**
+                     * 判断参数 EnableConfigKeyValue 是否已赋值
+                     * @return EnableConfigKeyValue 是否已赋值
+                     * 
+                     */
+                    bool EnableConfigKeyValueHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群实例ID, "cdw-xxxx" 字符串类型
+                     * <p>集群实例ID, &quot;cdw-xxxx&quot; 字符串类型</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 集群实例名称
+                     * <p>集群实例名称</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 状态,
-Init 创建中; Serving 运行中； 
-Deleted已销毁；Deleting 销毁中；
-Modify 集群变更中；
+                     * <p>状态,<br>Init 创建中; Serving 运行中；<br>Deleted已销毁；Deleting 销毁中；<br>Modify 集群变更中；</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 版本
+                     * <p>版本</p>
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 地域, ap-guangzhou
+                     * <p>地域, ap-guangzhou</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 可用区， ap-guangzhou-3
+                     * <p>可用区， ap-guangzhou-3</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 私有网络名称
+                     * <p>私有网络名称</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网名称
+                     * <p>子网名称</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 付费类型，"hour", "prepay"
+                     * <p>付费类型，&quot;hour&quot;, &quot;prepay&quot;</p>
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 过期时间
+                     * <p>过期时间</p>
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 数据节点描述信息
+                     * <p>数据节点描述信息</p>
                      */
                     NodesSummary m_masterSummary;
                     bool m_masterSummaryHasBeenSet;
 
                     /**
-                     * zookeeper节点描述信息
+                     * <p>zookeeper节点描述信息</p>
                      */
                     NodesSummary m_commonSummary;
                     bool m_commonSummaryHasBeenSet;
 
                     /**
-                     * 高可用,"true" "false"
+                     * <p>高可用,&quot;true&quot; &quot;false&quot;</p>
                      */
                     std::string m_hA;
                     bool m_hAHasBeenSet;
 
                     /**
-                     * 访问地址，例如 "10.0.0.1:9000"
+                     * <p>访问地址，例如 &quot;10.0.0.1:9000&quot;</p>
                      */
                     std::string m_accessInfo;
                     bool m_accessInfoHasBeenSet;
 
                     /**
-                     * 记录ID，数值型
+                     * <p>记录ID，数值型</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * regionId, 表示地域
+                     * <p>regionId, 表示地域</p>
                      */
                     int64_t m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 可用区说明，例如 "广州二区"
+                     * <p>可用区说明，例如 &quot;广州二区&quot;</p>
                      */
                     std::string m_zoneDesc;
                     bool m_zoneDescHasBeenSet;
 
                     /**
-                     * 错误流程说明信息
+                     * <p>错误流程说明信息</p>
                      */
                     std::string m_flowMsg;
                     bool m_flowMsgHasBeenSet;
 
                     /**
-                     * 状态描述，例如“运行中”等
+                     * <p>状态描述，例如“运行中”等</p>
                      */
                     std::string m_statusDesc;
                     bool m_statusDescHasBeenSet;
 
                     /**
-                     * 自动续费标记
+                     * <p>自动续费标记</p>
                      */
                     bool m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * <p>标签列表</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 监控信息
+                     * <p>监控信息</p>
                      */
                     std::string m_monitor;
                     bool m_monitorHasBeenSet;
 
                     /**
-                     * 是否开通日志
+                     * <p>是否开通日志</p>
                      */
                     bool m_hasClsTopic;
                     bool m_hasClsTopicHasBeenSet;
 
                     /**
-                     * 日志主题ID
+                     * <p>日志主题ID</p>
                      */
                     std::string m_clsTopicId;
                     bool m_clsTopicIdHasBeenSet;
 
                     /**
-                     * 日志集ID
+                     * <p>日志集ID</p>
                      */
                     std::string m_clsLogSetId;
                     bool m_clsLogSetIdHasBeenSet;
 
                     /**
-                     * 是否支持xml配置管理
+                     * <p>是否支持xml配置管理</p>
                      */
                     int64_t m_enableXMLConfig;
                     bool m_enableXMLConfigHasBeenSet;
 
                     /**
-                     * 区域
+                     * <p>区域</p>
                      */
                     std::string m_regionDesc;
                     bool m_regionDescHasBeenSet;
 
                     /**
-                     * 弹性网卡地址
+                     * <p>弹性网卡地址</p>
                      */
                     std::string m_eip;
                     bool m_eipHasBeenSet;
 
                     /**
-                     * 冷热分层系数
+                     * <p>冷热分层系数</p>
                      */
                     int64_t m_cosMoveFactor;
                     bool m_cosMoveFactorHasBeenSet;
 
                     /**
-                     * external/local/yunti
+                     * <p>external/local/yunti</p>
                      */
                     std::string m_kind;
                     bool m_kindHasBeenSet;
 
                     /**
-                     * 是否弹性ck
+                     * <p>是否弹性ck</p>
                      */
                     bool m_isElastic;
                     bool m_isElasticHasBeenSet;
 
                     /**
-                     * 集群详细状态
+                     * <p>集群详细状态</p>
                      */
                     InstanceStateInfo m_instanceStateInfo;
                     bool m_instanceStateInfoHasBeenSet;
 
                     /**
-                     * ZK高可用
+                     * <p>ZK高可用</p>
                      */
                     bool m_hAZk;
                     bool m_hAZkHasBeenSet;
 
                     /**
-                     * 挂载盘,默认0:没有类型；1:裸盘;2:lvm
+                     * <p>挂载盘,默认0:没有类型；1:裸盘;2:lvm</p>
                      */
                     int64_t m_mountDiskType;
                     bool m_mountDiskTypeHasBeenSet;
 
                     /**
-                     * chproxy连接ip
+                     * <p>chproxy连接ip</p>
                      */
                     std::string m_cHProxyVip;
                     bool m_cHProxyVipHasBeenSet;
 
                     /**
-                     * cos buket的名字
+                     * <p>cos buket的名字</p>
                      */
                     std::string m_cosBucketName;
                     bool m_cosBucketNameHasBeenSet;
 
                     /**
-                     * 是否可以挂载云盘
+                     * <p>是否可以挂载云盘</p>
                      */
                     bool m_canAttachCbs;
                     bool m_canAttachCbsHasBeenSet;
 
                     /**
-                     * 是否可以挂载云盘阵列
+                     * <p>是否可以挂载云盘阵列</p>
                      */
                     bool m_canAttachCbsLvm;
                     bool m_canAttachCbsLvmHasBeenSet;
 
                     /**
-                     * 是否可以挂载cos
+                     * <p>是否可以挂载cos</p>
                      */
                     bool m_canAttachCos;
                     bool m_canAttachCosHasBeenSet;
 
                     /**
-                     * 服务信息
+                     * <p>服务信息</p>
                      */
                     std::vector<ServiceInfo> m_components;
                     bool m_componentsHasBeenSet;
 
                     /**
-                     * 可升级的内核版本
+                     * <p>可升级的内核版本</p>
                      */
                     std::string m_upgradeVersions;
                     bool m_upgradeVersionsHasBeenSet;
 
                     /**
-                     * ex-index
+                     * <p>ex-index</p>
                      */
                     std::string m_esIndexId;
                     bool m_esIndexIdHasBeenSet;
 
                     /**
-                     * username
+                     * <p>username</p>
                      */
                     std::string m_esIndexUsername;
                     bool m_esIndexUsernameHasBeenSet;
 
                     /**
-                     * password
+                     * <p>password</p>
                      */
                     std::string m_esIndexPassword;
                     bool m_esIndexPasswordHasBeenSet;
 
                     /**
-                     * true
+                     * <p>true</p>
                      */
                     bool m_hasEsIndex;
                     bool m_hasEsIndexHasBeenSet;
 
                     /**
-                     * true
+                     * <p>true</p>
                      */
                     bool m_isSecondaryZone;
                     bool m_isSecondaryZoneHasBeenSet;
 
                     /**
-                     * desc
+                     * <p>desc</p>
                      */
                     std::string m_secondaryZoneInfo;
                     bool m_secondaryZoneInfoHasBeenSet;
 
                     /**
-                     * 是否clickhouse-keeper
+                     * <p>是否clickhouse-keeper</p>
                      */
                     bool m_clickHouseKeeper;
                     bool m_clickHouseKeeperHasBeenSet;
 
                     /**
-                     * 实例扩展信息
+                     * <p>实例扩展信息</p>
                      */
                     InstanceDetail m_details;
                     bool m_detailsHasBeenSet;
 
                     /**
-                     * 安全组白名单
+                     * <p>安全组白名单</p>
                      */
                     bool m_isWhiteSGs;
                     bool m_isWhiteSGsHasBeenSet;
 
                     /**
-                     * 绑定的安全组
+                     * <p>绑定的安全组</p>
                      */
                     std::vector<std::string> m_bindSGs;
                     bool m_bindSGsHasBeenSet;
 
                     /**
-                     * 是否开启公网clb
+                     * <p>是否开启公网clb</p>
                      */
                     bool m_hasPublicCloudClb;
                     bool m_hasPublicCloudClbHasBeenSet;
 
                     /**
-                     * 可升级的zk版本
+                     * <p>可升级的zk版本</p>
                      */
                     std::string m_upgradeZkVersions;
                     bool m_upgradeZkVersionsHasBeenSet;
 
                     /**
-                     * 是否显示rip
+                     * <p>是否显示rip</p>
                      */
                     std::string m_showRip;
                     bool m_showRipHasBeenSet;
 
                     /**
-                     * 实例类型：标准型 standard，无keeper节点类型noKeeper；
+                     * <p>实例类型：标准型 standard，无keeper节点类型noKeeper；</p>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * <p>keyvalue视图</p>
+                     */
+                    std::string m_enableConfigKeyValue;
+                    bool m_enableConfigKeyValueHasBeenSet;
 
                 };
             }
