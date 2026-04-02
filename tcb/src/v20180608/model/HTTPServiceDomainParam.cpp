@@ -27,7 +27,8 @@ HTTPServiceDomainParam::HTTPServiceDomainParam() :
     m_protocolHasBeenSet(false),
     m_customCnameHasBeenSet(false),
     m_enableHasBeenSet(false),
-    m_routesHasBeenSet(false)
+    m_routesHasBeenSet(false),
+    m_extensionHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,23 @@ CoreInternalOutcome HTTPServiceDomainParam::Deserialize(const rapidjson::Value &
         m_routesHasBeenSet = true;
     }
 
+    if (value.HasMember("Extension") && !value["Extension"].IsNull())
+    {
+        if (!value["Extension"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `HTTPServiceDomainParam.Extension` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extension.Deserialize(value["Extension"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extensionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +202,15 @@ void HTTPServiceDomainParam::ToJsonObject(rapidjson::Value &value, rapidjson::Do
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_extensionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Extension";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extension.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -299,5 +326,21 @@ void HTTPServiceDomainParam::SetRoutes(const vector<HTTPServiceRouteParam>& _rou
 bool HTTPServiceDomainParam::RoutesHasBeenSet() const
 {
     return m_routesHasBeenSet;
+}
+
+HTTPServiceExtension HTTPServiceDomainParam::GetExtension() const
+{
+    return m_extension;
+}
+
+void HTTPServiceDomainParam::SetExtension(const HTTPServiceExtension& _extension)
+{
+    m_extension = _extension;
+    m_extensionHasBeenSet = true;
+}
+
+bool HTTPServiceDomainParam::ExtensionHasBeenSet() const
+{
+    return m_extensionHasBeenSet;
 }
 

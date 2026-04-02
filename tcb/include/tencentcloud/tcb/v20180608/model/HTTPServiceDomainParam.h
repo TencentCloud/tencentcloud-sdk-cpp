@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcb/v20180608/model/HTTPServiceRouteParam.h>
+#include <tencentcloud/tcb/v20180608/model/HTTPServiceExtension.h>
 
 
 namespace TencentCloud
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名。全局唯一。如果域名在其他环境下占用或者腾讯云CDN占用，可能会导致创建失败
-                     * @return Domain 域名。全局唯一。如果域名在其他环境下占用或者腾讯云CDN占用，可能会导致创建失败
+                     * 获取<p>域名。全局唯一。如果域名在其他环境下占用或者腾讯云CDN占用，可能会导致创建失败</p>
+                     * @return Domain <p>域名。全局唯一。如果域名在其他环境下占用或者腾讯云CDN占用，可能会导致创建失败</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置域名。全局唯一。如果域名在其他环境下占用或者腾讯云CDN占用，可能会导致创建失败
-                     * @param _domain 域名。全局唯一。如果域名在其他环境下占用或者腾讯云CDN占用，可能会导致创建失败
+                     * 设置<p>域名。全局唯一。如果域名在其他环境下占用或者腾讯云CDN占用，可能会导致创建失败</p>
+                     * @param _domain <p>域名。全局唯一。如果域名在其他环境下占用或者腾讯云CDN占用，可能会导致创建失败</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -69,15 +70,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）
-                     * @return AccessType 绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）
+                     * 获取<p>绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）</p>
+                     * @return AccessType <p>绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）</p>
                      * 
                      */
                     std::string GetAccessType() const;
 
                     /**
-                     * 设置绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）
-                     * @param _accessType 绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）
+                     * 设置<p>绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）</p>
+                     * @param _accessType <p>绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）</p>
                      * 
                      */
                     void SetAccessType(const std::string& _accessType);
@@ -90,15 +91,15 @@ namespace TencentCloud
                     bool AccessTypeHasBeenSet() const;
 
                     /**
-                     * 获取证书ID。当前账户下SSL平台的证书ID
-                     * @return CertId 证书ID。当前账户下SSL平台的证书ID
+                     * 获取<p>证书ID。当前账户下SSL平台的证书ID</p>
+                     * @return CertId <p>证书ID。当前账户下SSL平台的证书ID</p>
                      * 
                      */
                     std::string GetCertId() const;
 
                     /**
-                     * 设置证书ID。当前账户下SSL平台的证书ID
-                     * @param _certId 证书ID。当前账户下SSL平台的证书ID
+                     * 设置<p>证书ID。当前账户下SSL平台的证书ID</p>
+                     * @param _certId <p>证书ID。当前账户下SSL平台的证书ID</p>
                      * 
                      */
                     void SetCertId(const std::string& _certId);
@@ -111,15 +112,15 @@ namespace TencentCloud
                     bool CertIdHasBeenSet() const;
 
                     /**
-                     * 获取协议类型。默认HTTP_AND_HTTPS。HTTP_AND_HTTPS: 同时开启http和https，HTTP_TO_HTTPS: http重定向成https，HTTPS_TO_HTTP: https重定向成http。如果未配置证书无法访问https或者进行重定向
-                     * @return Protocol 协议类型。默认HTTP_AND_HTTPS。HTTP_AND_HTTPS: 同时开启http和https，HTTP_TO_HTTPS: http重定向成https，HTTPS_TO_HTTP: https重定向成http。如果未配置证书无法访问https或者进行重定向
+                     * 获取<p>协议类型。默认HTTP_AND_HTTPS。HTTP_AND_HTTPS: 同时开启http和https，HTTP_TO_HTTPS: http重定向成https，HTTPS_TO_HTTP: https重定向成http。如果未配置证书无法访问https或者进行重定向</p>
+                     * @return Protocol <p>协议类型。默认HTTP_AND_HTTPS。HTTP_AND_HTTPS: 同时开启http和https，HTTP_TO_HTTPS: http重定向成https，HTTPS_TO_HTTP: https重定向成http。如果未配置证书无法访问https或者进行重定向</p>
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议类型。默认HTTP_AND_HTTPS。HTTP_AND_HTTPS: 同时开启http和https，HTTP_TO_HTTPS: http重定向成https，HTTPS_TO_HTTP: https重定向成http。如果未配置证书无法访问https或者进行重定向
-                     * @param _protocol 协议类型。默认HTTP_AND_HTTPS。HTTP_AND_HTTPS: 同时开启http和https，HTTP_TO_HTTPS: http重定向成https，HTTPS_TO_HTTP: https重定向成http。如果未配置证书无法访问https或者进行重定向
+                     * 设置<p>协议类型。默认HTTP_AND_HTTPS。HTTP_AND_HTTPS: 同时开启http和https，HTTP_TO_HTTPS: http重定向成https，HTTPS_TO_HTTP: https重定向成http。如果未配置证书无法访问https或者进行重定向</p>
+                     * @param _protocol <p>协议类型。默认HTTP_AND_HTTPS。HTTP_AND_HTTPS: 同时开启http和https，HTTP_TO_HTTPS: http重定向成https，HTTPS_TO_HTTP: https重定向成http。如果未配置证书无法访问https或者进行重定向</p>
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -132,15 +133,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取自定义CNAME。对应AccessType: Custom
-                     * @return CustomCname 自定义CNAME。对应AccessType: Custom
+                     * 获取<p>自定义CNAME。对应AccessType: Custom</p>
+                     * @return CustomCname <p>自定义CNAME。对应AccessType: Custom</p>
                      * 
                      */
                     std::string GetCustomCname() const;
 
                     /**
-                     * 设置自定义CNAME。对应AccessType: Custom
-                     * @param _customCname 自定义CNAME。对应AccessType: Custom
+                     * 设置<p>自定义CNAME。对应AccessType: Custom</p>
+                     * @param _customCname <p>自定义CNAME。对应AccessType: Custom</p>
                      * 
                      */
                     void SetCustomCname(const std::string& _customCname);
@@ -153,15 +154,15 @@ namespace TencentCloud
                     bool CustomCnameHasBeenSet() const;
 
                     /**
-                     * 获取域名开启状态，不传默认开启
-                     * @return Enable 域名开启状态，不传默认开启
+                     * 获取<p>域名开启状态，不传默认开启</p>
+                     * @return Enable <p>域名开启状态，不传默认开启</p>
                      * 
                      */
                     bool GetEnable() const;
 
                     /**
-                     * 设置域名开启状态，不传默认开启
-                     * @param _enable 域名开启状态，不传默认开启
+                     * 设置<p>域名开启状态，不传默认开启</p>
+                     * @param _enable <p>域名开启状态，不传默认开启</p>
                      * 
                      */
                     void SetEnable(const bool& _enable);
@@ -174,15 +175,15 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取创建/修改的HTTP访问服务路由列表。如果不传，仅创建或修改域名信息。列表最大支持传入20个
-                     * @return Routes 创建/修改的HTTP访问服务路由列表。如果不传，仅创建或修改域名信息。列表最大支持传入20个
+                     * 获取<p>创建/修改的HTTP访问服务路由列表。如果不传，仅创建或修改域名信息。列表最大支持传入20个</p>
+                     * @return Routes <p>创建/修改的HTTP访问服务路由列表。如果不传，仅创建或修改域名信息。列表最大支持传入20个</p>
                      * 
                      */
                     std::vector<HTTPServiceRouteParam> GetRoutes() const;
 
                     /**
-                     * 设置创建/修改的HTTP访问服务路由列表。如果不传，仅创建或修改域名信息。列表最大支持传入20个
-                     * @param _routes 创建/修改的HTTP访问服务路由列表。如果不传，仅创建或修改域名信息。列表最大支持传入20个
+                     * 设置<p>创建/修改的HTTP访问服务路由列表。如果不传，仅创建或修改域名信息。列表最大支持传入20个</p>
+                     * @param _routes <p>创建/修改的HTTP访问服务路由列表。如果不传，仅创建或修改域名信息。列表最大支持传入20个</p>
                      * 
                      */
                     void SetRoutes(const std::vector<HTTPServiceRouteParam>& _routes);
@@ -194,49 +195,76 @@ namespace TencentCloud
                      */
                     bool RoutesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>扩展字段，内部包含headers处理等</p>
+                     * @return Extension <p>扩展字段，内部包含headers处理等</p>
+                     * 
+                     */
+                    HTTPServiceExtension GetExtension() const;
+
+                    /**
+                     * 设置<p>扩展字段，内部包含headers处理等</p>
+                     * @param _extension <p>扩展字段，内部包含headers处理等</p>
+                     * 
+                     */
+                    void SetExtension(const HTTPServiceExtension& _extension);
+
+                    /**
+                     * 判断参数 Extension 是否已赋值
+                     * @return Extension 是否已赋值
+                     * 
+                     */
+                    bool ExtensionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 域名。全局唯一。如果域名在其他环境下占用或者腾讯云CDN占用，可能会导致创建失败
+                     * <p>域名。全局唯一。如果域名在其他环境下占用或者腾讯云CDN占用，可能会导致创建失败</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）
+                     * <p>绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）</p>
                      */
                     std::string m_accessType;
                     bool m_accessTypeHasBeenSet;
 
                     /**
-                     * 证书ID。当前账户下SSL平台的证书ID
+                     * <p>证书ID。当前账户下SSL平台的证书ID</p>
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;
 
                     /**
-                     * 协议类型。默认HTTP_AND_HTTPS。HTTP_AND_HTTPS: 同时开启http和https，HTTP_TO_HTTPS: http重定向成https，HTTPS_TO_HTTP: https重定向成http。如果未配置证书无法访问https或者进行重定向
+                     * <p>协议类型。默认HTTP_AND_HTTPS。HTTP_AND_HTTPS: 同时开启http和https，HTTP_TO_HTTPS: http重定向成https，HTTPS_TO_HTTP: https重定向成http。如果未配置证书无法访问https或者进行重定向</p>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 自定义CNAME。对应AccessType: Custom
+                     * <p>自定义CNAME。对应AccessType: Custom</p>
                      */
                     std::string m_customCname;
                     bool m_customCnameHasBeenSet;
 
                     /**
-                     * 域名开启状态，不传默认开启
+                     * <p>域名开启状态，不传默认开启</p>
                      */
                     bool m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 创建/修改的HTTP访问服务路由列表。如果不传，仅创建或修改域名信息。列表最大支持传入20个
+                     * <p>创建/修改的HTTP访问服务路由列表。如果不传，仅创建或修改域名信息。列表最大支持传入20个</p>
                      */
                     std::vector<HTTPServiceRouteParam> m_routes;
                     bool m_routesHasBeenSet;
+
+                    /**
+                     * <p>扩展字段，内部包含headers处理等</p>
+                     */
+                    HTTPServiceExtension m_extension;
+                    bool m_extensionHasBeenSet;
 
                 };
             }

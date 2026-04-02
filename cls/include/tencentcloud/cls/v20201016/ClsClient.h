@@ -29,6 +29,8 @@
 #include <tencentcloud/cls/v20201016/model/ApplyConfigToMachineGroupResponse.h>
 #include <tencentcloud/cls/v20201016/model/CancelRebuildIndexTaskRequest.h>
 #include <tencentcloud/cls/v20201016/model/CancelRebuildIndexTaskResponse.h>
+#include <tencentcloud/cls/v20201016/model/ChatCompletionsRequest.h>
+#include <tencentcloud/cls/v20201016/model/ChatCompletionsResponse.h>
 #include <tencentcloud/cls/v20201016/model/CheckFunctionRequest.h>
 #include <tencentcloud/cls/v20201016/model/CheckFunctionResponse.h>
 #include <tencentcloud/cls/v20201016/model/CheckRechargeKafkaServerRequest.h>
@@ -400,6 +402,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelRebuildIndexTaskResponse> CancelRebuildIndexTaskOutcome;
                 typedef std::future<CancelRebuildIndexTaskOutcome> CancelRebuildIndexTaskOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CancelRebuildIndexTaskRequest&, CancelRebuildIndexTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelRebuildIndexTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChatCompletionsResponse> ChatCompletionsOutcome;
+                typedef std::future<ChatCompletionsOutcome> ChatCompletionsOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ChatCompletionsRequest&, ChatCompletionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChatCompletionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckFunctionResponse> CheckFunctionOutcome;
                 typedef std::future<CheckFunctionOutcome> CheckFunctionOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CheckFunctionRequest&, CheckFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckFunctionAsyncHandler;
@@ -951,6 +956,17 @@ namespace TencentCloud
                 CancelRebuildIndexTaskOutcome CancelRebuildIndexTask(const Model::CancelRebuildIndexTaskRequest &request);
                 void CancelRebuildIndexTaskAsync(const Model::CancelRebuildIndexTaskRequest& request, const CancelRebuildIndexTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CancelRebuildIndexTaskOutcomeCallable CancelRebuildIndexTaskCallable(const Model::CancelRebuildIndexTaskRequest& request);
+
+                /**
+                 *调用接口，发起一次对话请求。
+本接口支持智能生成检索分析语句等日志服务AI功能。
+⚠️注意：通过SSE流式调用此接口时，请务必设置请求域名（Endpoint）为 cls.ai.tencentcloudapi.com。
+                 * @param req ChatCompletionsRequest
+                 * @return ChatCompletionsOutcome
+                 */
+                ChatCompletionsOutcome ChatCompletions(const Model::ChatCompletionsRequest &request);
+                void ChatCompletionsAsync(const Model::ChatCompletionsRequest& request, const ChatCompletionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChatCompletionsOutcomeCallable ChatCompletionsCallable(const Model::ChatCompletionsRequest& request);
 
                 /**
                  *本接口用于数据加工DSL函数的语法校验。

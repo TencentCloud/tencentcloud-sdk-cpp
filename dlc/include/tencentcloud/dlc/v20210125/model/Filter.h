@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取属性名称, 若存在多个Filter时，Filter间的关系为逻辑或（OR）关系。
-                     * @return Name 属性名称, 若存在多个Filter时，Filter间的关系为逻辑或（OR）关系。
+                     * 获取筛选字段名，对应实体属性名（驼峰命名）
+                     * @return Name 筛选字段名，对应实体属性名（驼峰命名）
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置属性名称, 若存在多个Filter时，Filter间的关系为逻辑或（OR）关系。
-                     * @param _name 属性名称, 若存在多个Filter时，Filter间的关系为逻辑或（OR）关系。
+                     * 设置筛选字段名，对应实体属性名（驼峰命名）
+                     * @param _name 筛选字段名，对应实体属性名（驼峰命名）
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,15 +68,36 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。
-                     * @return Values 属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。
+                     * 获取筛选操作符：EQ/NE/GT/GE/LT/LE/LIKE/IN，默认EQ
+                     * @return Operator 筛选操作符：EQ/NE/GT/GE/LT/LE/LIKE/IN，默认EQ
+                     * 
+                     */
+                    std::string GetOperator() const;
+
+                    /**
+                     * 设置筛选操作符：EQ/NE/GT/GE/LT/LE/LIKE/IN，默认EQ
+                     * @param _operator 筛选操作符：EQ/NE/GT/GE/LT/LE/LIKE/IN，默认EQ
+                     * 
+                     */
+                    void SetOperator(const std::string& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     * 
+                     */
+                    bool OperatorHasBeenSet() const;
+
+                    /**
+                     * 获取筛选值列表，EQ/NE/GT/GE/LT/LE/LIKE取第一个值，IN使用完整列表
+                     * @return Values 筛选值列表，EQ/NE/GT/GE/LT/LE/LIKE取第一个值，IN使用完整列表
                      * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
-                     * 设置属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。
-                     * @param _values 属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。
+                     * 设置筛选值列表，EQ/NE/GT/GE/LT/LE/LIKE取第一个值，IN使用完整列表
+                     * @param _values 筛选值列表，EQ/NE/GT/GE/LT/LE/LIKE取第一个值，IN使用完整列表
                      * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
@@ -91,13 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 属性名称, 若存在多个Filter时，Filter间的关系为逻辑或（OR）关系。
+                     * 筛选字段名，对应实体属性名（驼峰命名）
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。
+                     * 筛选操作符：EQ/NE/GT/GE/LT/LE/LIKE/IN，默认EQ
+                     */
+                    std::string m_operator;
+                    bool m_operatorHasBeenSet;
+
+                    /**
+                     * 筛选值列表，EQ/NE/GT/GE/LT/LE/LIKE取第一个值，IN使用完整列表
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;

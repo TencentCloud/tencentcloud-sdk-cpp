@@ -290,6 +290,56 @@ TcbClient::CreateBillDealOutcomeCallable TcbClient::CreateBillDealCallable(const
     return prom->get_future();
 }
 
+TcbClient::CreateCustomLoginKeyOutcome TcbClient::CreateCustomLoginKey(const CreateCustomLoginKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCustomLoginKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCustomLoginKeyResponse rsp = CreateCustomLoginKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCustomLoginKeyOutcome(rsp);
+        else
+            return CreateCustomLoginKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCustomLoginKeyOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CreateCustomLoginKeyAsync(const CreateCustomLoginKeyRequest& request, const CreateCustomLoginKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCustomLoginKeyRequest&;
+    using Resp = CreateCustomLoginKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCustomLoginKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::CreateCustomLoginKeyOutcomeCallable TcbClient::CreateCustomLoginKeyCallable(const CreateCustomLoginKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCustomLoginKeyOutcome>>();
+    CreateCustomLoginKeyAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CreateCustomLoginKeyRequest&,
+        CreateCustomLoginKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::CreateEnvOutcome TcbClient::CreateEnv(const CreateEnvRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateEnv");

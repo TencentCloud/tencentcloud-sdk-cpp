@@ -62,7 +62,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/QualityInspectTaskOutput.h
   include/tencentcloud/vod/v20180717/model/QualityEnhanceTaskInput.h
   include/tencentcloud/vod/v20180717/model/CreateAigcAdvancedCustomElementRequest.h
-  include/tencentcloud/vod/v20180717/model/MediaSnapshotByTimeOffsetItem.h
+  include/tencentcloud/vod/v20180717/model/FaceRecognitionInfo.h
   include/tencentcloud/vod/v20180717/model/RebuildMediaTargetInfo.h
   include/tencentcloud/vod/v20180717/model/ModifySampleSnapshotTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/AiReviewPoliticalOcrTaskInput.h
@@ -157,6 +157,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/DeleteSuperPlayerConfigRequest.h
   include/tencentcloud/vod/v20180717/model/AiReviewTerrorismOcrTaskInput.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskOcrWordsResultInput.h
+  include/tencentcloud/vod/v20180717/model/MediaSnapshotByTimeOffsetItem.h
   include/tencentcloud/vod/v20180717/model/SceneAigcImageTaskOutputFileInfo.h
   include/tencentcloud/vod/v20180717/model/ModifyMediaStorageClassResponse.h
   include/tencentcloud/vod/v20180717/model/AiReviewPornTaskInput.h
@@ -380,6 +381,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/CreateSuperPlayerConfigResponse.h
   include/tencentcloud/vod/v20180717/model/AiAnalysisTaskFrameTagOutput.h
   include/tencentcloud/vod/v20180717/model/CreateEnhanceMediaTemplateResponse.h
+  include/tencentcloud/vod/v20180717/model/KnowledgeBasesInfo.h
   include/tencentcloud/vod/v20180717/model/DeleteReviewTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/DNSVerifyInfo.h
   include/tencentcloud/vod/v20180717/model/MediaAnimatedGraphicsItem.h
@@ -624,6 +626,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/CreateSampleSnapshotTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/AiAnalysisTaskHighlightInput.h
   include/tencentcloud/vod/v20180717/model/DeleteContentReviewTemplateResponse.h
+  include/tencentcloud/vod/v20180717/model/FaceRecognitionOutputFileInfo.h
   include/tencentcloud/vod/v20180717/model/MediaBasicInfo.h
   include/tencentcloud/vod/v20180717/model/AiReviewPoliticalAsrTaskInput.h
   include/tencentcloud/vod/v20180717/model/ExtractBlindWatermarkInputInfo.h
@@ -822,6 +825,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/CreateProcessImageAsyncTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/CreateCLSLogsetRequest.h
   include/tencentcloud/vod/v20180717/model/ExtractTraceWatermarkRequest.h
+  include/tencentcloud/vod/v20180717/model/FaceRecognitionTask.h
   include/tencentcloud/vod/v20180717/model/DescribeAigcApiTokensResponse.h
   include/tencentcloud/vod/v20180717/model/ReviewAudioVideoTask.h
   include/tencentcloud/vod/v20180717/model/DescribeSnapshotByTimeOffsetTemplatesResponse.h
@@ -1086,7 +1090,7 @@ set(vod_src
   src/v20180717/model/QualityInspectTaskOutput.cpp
   src/v20180717/model/QualityEnhanceTaskInput.cpp
   src/v20180717/model/CreateAigcAdvancedCustomElementRequest.cpp
-  src/v20180717/model/MediaSnapshotByTimeOffsetItem.cpp
+  src/v20180717/model/FaceRecognitionInfo.cpp
   src/v20180717/model/RebuildMediaTargetInfo.cpp
   src/v20180717/model/ModifySampleSnapshotTemplateRequest.cpp
   src/v20180717/model/AiReviewPoliticalOcrTaskInput.cpp
@@ -1181,6 +1185,7 @@ set(vod_src
   src/v20180717/model/DeleteSuperPlayerConfigRequest.cpp
   src/v20180717/model/AiReviewTerrorismOcrTaskInput.cpp
   src/v20180717/model/AiRecognitionTaskOcrWordsResultInput.cpp
+  src/v20180717/model/MediaSnapshotByTimeOffsetItem.cpp
   src/v20180717/model/SceneAigcImageTaskOutputFileInfo.cpp
   src/v20180717/model/ModifyMediaStorageClassResponse.cpp
   src/v20180717/model/AiReviewPornTaskInput.cpp
@@ -1404,6 +1409,7 @@ set(vod_src
   src/v20180717/model/CreateSuperPlayerConfigResponse.cpp
   src/v20180717/model/AiAnalysisTaskFrameTagOutput.cpp
   src/v20180717/model/CreateEnhanceMediaTemplateResponse.cpp
+  src/v20180717/model/KnowledgeBasesInfo.cpp
   src/v20180717/model/DeleteReviewTemplateResponse.cpp
   src/v20180717/model/DNSVerifyInfo.cpp
   src/v20180717/model/MediaAnimatedGraphicsItem.cpp
@@ -1648,6 +1654,7 @@ set(vod_src
   src/v20180717/model/CreateSampleSnapshotTemplateResponse.cpp
   src/v20180717/model/AiAnalysisTaskHighlightInput.cpp
   src/v20180717/model/DeleteContentReviewTemplateResponse.cpp
+  src/v20180717/model/FaceRecognitionOutputFileInfo.cpp
   src/v20180717/model/MediaBasicInfo.cpp
   src/v20180717/model/AiReviewPoliticalAsrTaskInput.cpp
   src/v20180717/model/ExtractBlindWatermarkInputInfo.cpp
@@ -1846,6 +1853,7 @@ set(vod_src
   src/v20180717/model/CreateProcessImageAsyncTemplateRequest.cpp
   src/v20180717/model/CreateCLSLogsetRequest.cpp
   src/v20180717/model/ExtractTraceWatermarkRequest.cpp
+  src/v20180717/model/FaceRecognitionTask.cpp
   src/v20180717/model/DescribeAigcApiTokensResponse.cpp
   src/v20180717/model/ReviewAudioVideoTask.cpp
   src/v20180717/model/DescribeSnapshotByTimeOffsetTemplatesResponse.cpp

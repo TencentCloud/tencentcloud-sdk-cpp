@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取 服务id,使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则
-                     * @return ServiceId  服务id,使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则
+                     * 获取<p>服务id,使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则</p>
+                     * @return ServiceId <p>服务id,使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则</p>
                      * 
                      */
                     std::string GetServiceId() const;
 
                     /**
-                     * 设置 服务id,使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则
-                     * @param _serviceId  服务id,使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则
+                     * 设置<p>服务id,使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则</p>
+                     * @param _serviceId <p>服务id,使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则</p>
                      * 
                      */
                     void SetServiceId(const std::string& _serviceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ServiceIdHasBeenSet() const;
 
                     /**
-                     * 获取要审核的内容
-                     * @return Content 要审核的内容
+                     * 获取<p>要审核的内容</p>
+                     * @return Content <p>要审核的内容</p>
                      * 
                      */
                     ApiGuardContent GetContent() const;
 
                     /**
-                     * 设置要审核的内容
-                     * @param _content 要审核的内容
+                     * 设置<p>要审核的内容</p>
+                     * @param _content <p>要审核的内容</p>
                      * 
                      */
                     void SetContent(const ApiGuardContent& _content);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取标识用户的id，限速使用，不填，则限速会不生效
-                     * @return UserId 标识用户的id，限速使用，不填，则限速会不生效
+                     * 获取<p>标识用户的id，限速使用，不填，则限速会不生效</p>
+                     * @return UserId <p>标识用户的id，限速使用，不填，则限速会不生效</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置标识用户的id，限速使用，不填，则限速会不生效
-                     * @param _userId 标识用户的id，限速使用，不填，则限速会不生效
+                     * 设置<p>标识用户的id，限速使用，不填，则限速会不生效</p>
+                     * @param _userId <p>标识用户的id，限速使用，不填，则限速会不生效</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取会话id
-                     * @return SessionId 会话id
+                     * 获取<p>会话id</p>
+                     * @return SessionId <p>会话id</p>
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置会话id
-                     * @param _sessionId 会话id
+                     * 设置<p>会话id</p>
+                     * @param _sessionId <p>会话id</p>
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -127,31 +127,85 @@ namespace TencentCloud
                      */
                     bool SessionIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>工具名称</p>
+                     * @return ToolName <p>工具名称</p>
+                     * 
+                     */
+                    std::string GetToolName() const;
+
+                    /**
+                     * 设置<p>工具名称</p>
+                     * @param _toolName <p>工具名称</p>
+                     * 
+                     */
+                    void SetToolName(const std::string& _toolName);
+
+                    /**
+                     * 判断参数 ToolName 是否已赋值
+                     * @return ToolName 是否已赋值
+                     * 
+                     */
+                    bool ToolNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>工具执行的参数</p>
+                     * @return ToolArgs <p>工具执行的参数</p>
+                     * 
+                     */
+                    std::string GetToolArgs() const;
+
+                    /**
+                     * 设置<p>工具执行的参数</p>
+                     * @param _toolArgs <p>工具执行的参数</p>
+                     * 
+                     */
+                    void SetToolArgs(const std::string& _toolArgs);
+
+                    /**
+                     * 判断参数 ToolArgs 是否已赋值
+                     * @return ToolArgs 是否已赋值
+                     * 
+                     */
+                    bool ToolArgsHasBeenSet() const;
+
                 private:
 
                     /**
-                     *  服务id,使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则
+                     * <p>服务id,使用哪一套防护策略，就需要传哪一套服务id，模型会检测该服务id下的所有规则</p>
                      */
                     std::string m_serviceId;
                     bool m_serviceIdHasBeenSet;
 
                     /**
-                     * 要审核的内容
+                     * <p>要审核的内容</p>
                      */
                     ApiGuardContent m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 标识用户的id，限速使用，不填，则限速会不生效
+                     * <p>标识用户的id，限速使用，不填，则限速会不生效</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 会话id
+                     * <p>会话id</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
+
+                    /**
+                     * <p>工具名称</p>
+                     */
+                    std::string m_toolName;
+                    bool m_toolNameHasBeenSet;
+
+                    /**
+                     * <p>工具执行的参数</p>
+                     */
+                    std::string m_toolArgs;
+                    bool m_toolArgsHasBeenSet;
 
                 };
             }

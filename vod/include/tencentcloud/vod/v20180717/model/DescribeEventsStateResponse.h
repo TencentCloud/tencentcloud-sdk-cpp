@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待进行拉取的事件通知数，为近似值，约5秒延迟。
-                     * @return CountOfEventsToPull 待进行拉取的事件通知数，为近似值，约5秒延迟。
+                     * 获取<p>待进行拉取的事件通知数，为近似值，约有3分钟延迟。</p><p><strong>注意：不建议使用此字段作为是否拉取事件通知的依据。</strong></p>
+                     * @return CountOfEventsToPull <p>待进行拉取的事件通知数，为近似值，约有3分钟延迟。</p><p><strong>注意：不建议使用此字段作为是否拉取事件通知的依据。</strong></p>
                      * 
                      */
                     uint64_t GetCountOfEventsToPull() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待进行拉取的事件通知数，为近似值，约5秒延迟。
+                     * <p>待进行拉取的事件通知数，为近似值，约有3分钟延迟。</p><p><strong>注意：不建议使用此字段作为是否拉取事件通知的依据。</strong></p>
                      */
                     uint64_t m_countOfEventsToPull;
                     bool m_countOfEventsToPullHasBeenSet;

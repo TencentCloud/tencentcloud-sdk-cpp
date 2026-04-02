@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ga2/v20250115/model/CreateGlobalAcceleratorRequest.h>
+#include <tencentcloud/ga2/v20250115/model/CreateGlobalAcceleratorResponse.h>
 #include <tencentcloud/ga2/v20250115/model/DescribeCrossBorderSettlementRequest.h>
 #include <tencentcloud/ga2/v20250115/model/DescribeCrossBorderSettlementResponse.h>
 
@@ -39,11 +41,23 @@ namespace TencentCloud
                 Ga2Client(const Credential &credential, const std::string &region);
                 Ga2Client(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateGlobalAcceleratorResponse> CreateGlobalAcceleratorOutcome;
+                typedef std::future<CreateGlobalAcceleratorOutcome> CreateGlobalAcceleratorOutcomeCallable;
+                typedef std::function<void(const Ga2Client*, const Model::CreateGlobalAcceleratorRequest&, CreateGlobalAcceleratorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGlobalAcceleratorAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCrossBorderSettlementResponse> DescribeCrossBorderSettlementOutcome;
                 typedef std::future<DescribeCrossBorderSettlementOutcome> DescribeCrossBorderSettlementOutcomeCallable;
                 typedef std::function<void(const Ga2Client*, const Model::DescribeCrossBorderSettlementRequest&, DescribeCrossBorderSettlementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCrossBorderSettlementAsyncHandler;
 
 
+
+                /**
+                 *创建全球加速实例
+                 * @param req CreateGlobalAcceleratorRequest
+                 * @return CreateGlobalAcceleratorOutcome
+                 */
+                CreateGlobalAcceleratorOutcome CreateGlobalAccelerator(const Model::CreateGlobalAcceleratorRequest &request);
+                void CreateGlobalAcceleratorAsync(const Model::CreateGlobalAcceleratorRequest& request, const CreateGlobalAcceleratorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGlobalAcceleratorOutcomeCallable CreateGlobalAcceleratorCallable(const Model::CreateGlobalAcceleratorRequest& request);
 
                 /**
                  *查询跨境账单

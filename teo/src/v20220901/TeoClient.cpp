@@ -6390,6 +6390,56 @@ TeoClient::DescribeSecurityTemplateBindingsOutcomeCallable TeoClient::DescribeSe
     return prom->get_future();
 }
 
+TeoClient::DescribeSharedCNAMEOutcome TeoClient::DescribeSharedCNAME(const DescribeSharedCNAMERequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSharedCNAME");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSharedCNAMEResponse rsp = DescribeSharedCNAMEResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSharedCNAMEOutcome(rsp);
+        else
+            return DescribeSharedCNAMEOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSharedCNAMEOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeSharedCNAMEAsync(const DescribeSharedCNAMERequest& request, const DescribeSharedCNAMEAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSharedCNAMERequest&;
+    using Resp = DescribeSharedCNAMEResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSharedCNAME", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeSharedCNAMEOutcomeCallable TeoClient::DescribeSharedCNAMECallable(const DescribeSharedCNAMERequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSharedCNAMEOutcome>>();
+    DescribeSharedCNAMEAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeSharedCNAMERequest&,
+        DescribeSharedCNAMEOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TeoClient::DescribeTimingL4DataOutcome TeoClient::DescribeTimingL4Data(const DescribeTimingL4DataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTimingL4Data");
@@ -9482,6 +9532,56 @@ TeoClient::ModifySecurityPolicyOutcomeCallable TeoClient::ModifySecurityPolicyCa
         const TeoClient*,
         const ModifySecurityPolicyRequest&,
         ModifySecurityPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::ModifySharedCNAMEOutcome TeoClient::ModifySharedCNAME(const ModifySharedCNAMERequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySharedCNAME");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySharedCNAMEResponse rsp = ModifySharedCNAMEResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySharedCNAMEOutcome(rsp);
+        else
+            return ModifySharedCNAMEOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySharedCNAMEOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifySharedCNAMEAsync(const ModifySharedCNAMERequest& request, const ModifySharedCNAMEAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifySharedCNAMERequest&;
+    using Resp = ModifySharedCNAMEResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifySharedCNAME", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::ModifySharedCNAMEOutcomeCallable TeoClient::ModifySharedCNAMECallable(const ModifySharedCNAMERequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifySharedCNAMEOutcome>>();
+    ModifySharedCNAMEAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const ModifySharedCNAMERequest&,
+        ModifySharedCNAMEOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体文件 ID 列表，N 从 0 开始取值，最大 19。
-                     * @return FileIds 媒体文件 ID 列表，N 从 0 开始取值，最大 19。
+                     * 获取<p>媒体文件 ID 列表，N 从 0 开始取值，最大 19。</p>
+                     * @return FileIds <p>媒体文件 ID 列表，N 从 0 开始取值，最大 19。</p>
                      * 
                      */
                     std::vector<std::string> GetFileIds() const;
 
                     /**
-                     * 设置媒体文件 ID 列表，N 从 0 开始取值，最大 19。
-                     * @param _fileIds 媒体文件 ID 列表，N 从 0 开始取值，最大 19。
+                     * 设置<p>媒体文件 ID 列表，N 从 0 开始取值，最大 19。</p>
+                     * @param _fileIds <p>媒体文件 ID 列表，N 从 0 开始取值，最大 19。</p>
                      * 
                      */
                     void SetFileIds(const std::vector<std::string>& _fileIds);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FileIdsHasBeenSet() const;
 
                     /**
-                     * 获取<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 获取<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @return SubAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
-                     * @param _subAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * 设置<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @param _subAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      * 
                      */
                     void SetSubAppId(const uint64_t& _subAppId);
@@ -85,63 +85,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
-<li>basicInfo（视频基础信息）。</li>
-<li>metaData（视频元信息）。</li>
-<li>transcodeInfo（视频转码结果信息）。</li>
-<li>animatedGraphicsInfo（视频转动图结果信息）。</li>
-<li>imageSpriteInfo（视频雪碧图信息）。</li>
-<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>
-<li>sampleSnapshotInfo（采样截图信息）。</li>
-<li>keyFrameDescInfo（打点信息）。</li>
-<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
-<li>miniProgramReviewInfo（小程序审核信息）。</li>
-<li>subtitleInfo（字幕信息）。</li>
-<li>reviewInfo（审核信息）。</li>
-                     * @return Filters 指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
-<li>basicInfo（视频基础信息）。</li>
-<li>metaData（视频元信息）。</li>
-<li>transcodeInfo（视频转码结果信息）。</li>
-<li>animatedGraphicsInfo（视频转动图结果信息）。</li>
-<li>imageSpriteInfo（视频雪碧图信息）。</li>
-<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>
-<li>sampleSnapshotInfo（采样截图信息）。</li>
-<li>keyFrameDescInfo（打点信息）。</li>
-<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
-<li>miniProgramReviewInfo（小程序审核信息）。</li>
-<li>subtitleInfo（字幕信息）。</li>
-<li>reviewInfo（审核信息）。</li>
+                     * 获取<p>指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：</p><li>basicInfo（视频基础信息）。</li><li>metaData（视频元信息）。</li><li>transcodeInfo（视频转码结果信息）。</li><li>animatedGraphicsInfo（视频转动图结果信息）。</li><li>imageSpriteInfo（视频雪碧图信息）。</li><li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li><li>sampleSnapshotInfo（采样截图信息）。</li><li>keyFrameDescInfo（打点信息）。</li><li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li><li>miniProgramReviewInfo（小程序审核信息）。</li><li>subtitleInfo（字幕信息）。</li><li>reviewInfo（审核信息）。</li><li>mpsAiMediaInfo（mps智能媒资信息）。</li>
+                     * @return Filters <p>指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：</p><li>basicInfo（视频基础信息）。</li><li>metaData（视频元信息）。</li><li>transcodeInfo（视频转码结果信息）。</li><li>animatedGraphicsInfo（视频转动图结果信息）。</li><li>imageSpriteInfo（视频雪碧图信息）。</li><li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li><li>sampleSnapshotInfo（采样截图信息）。</li><li>keyFrameDescInfo（打点信息）。</li><li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li><li>miniProgramReviewInfo（小程序审核信息）。</li><li>subtitleInfo（字幕信息）。</li><li>reviewInfo（审核信息）。</li><li>mpsAiMediaInfo（mps智能媒资信息）。</li>
                      * 
                      */
                     std::vector<std::string> GetFilters() const;
 
                     /**
-                     * 设置指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
-<li>basicInfo（视频基础信息）。</li>
-<li>metaData（视频元信息）。</li>
-<li>transcodeInfo（视频转码结果信息）。</li>
-<li>animatedGraphicsInfo（视频转动图结果信息）。</li>
-<li>imageSpriteInfo（视频雪碧图信息）。</li>
-<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>
-<li>sampleSnapshotInfo（采样截图信息）。</li>
-<li>keyFrameDescInfo（打点信息）。</li>
-<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
-<li>miniProgramReviewInfo（小程序审核信息）。</li>
-<li>subtitleInfo（字幕信息）。</li>
-<li>reviewInfo（审核信息）。</li>
-                     * @param _filters 指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
-<li>basicInfo（视频基础信息）。</li>
-<li>metaData（视频元信息）。</li>
-<li>transcodeInfo（视频转码结果信息）。</li>
-<li>animatedGraphicsInfo（视频转动图结果信息）。</li>
-<li>imageSpriteInfo（视频雪碧图信息）。</li>
-<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>
-<li>sampleSnapshotInfo（采样截图信息）。</li>
-<li>keyFrameDescInfo（打点信息）。</li>
-<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
-<li>miniProgramReviewInfo（小程序审核信息）。</li>
-<li>subtitleInfo（字幕信息）。</li>
-<li>reviewInfo（审核信息）。</li>
+                     * 设置<p>指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：</p><li>basicInfo（视频基础信息）。</li><li>metaData（视频元信息）。</li><li>transcodeInfo（视频转码结果信息）。</li><li>animatedGraphicsInfo（视频转动图结果信息）。</li><li>imageSpriteInfo（视频雪碧图信息）。</li><li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li><li>sampleSnapshotInfo（采样截图信息）。</li><li>keyFrameDescInfo（打点信息）。</li><li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li><li>miniProgramReviewInfo（小程序审核信息）。</li><li>subtitleInfo（字幕信息）。</li><li>reviewInfo（审核信息）。</li><li>mpsAiMediaInfo（mps智能媒资信息）。</li>
+                     * @param _filters <p>指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：</p><li>basicInfo（视频基础信息）。</li><li>metaData（视频元信息）。</li><li>transcodeInfo（视频转码结果信息）。</li><li>animatedGraphicsInfo（视频转动图结果信息）。</li><li>imageSpriteInfo（视频雪碧图信息）。</li><li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li><li>sampleSnapshotInfo（采样截图信息）。</li><li>keyFrameDescInfo（打点信息）。</li><li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li><li>miniProgramReviewInfo（小程序审核信息）。</li><li>subtitleInfo（字幕信息）。</li><li>reviewInfo（审核信息）。</li><li>mpsAiMediaInfo（mps智能媒资信息）。</li>
                      * 
                      */
                     void SetFilters(const std::vector<std::string>& _filters);
@@ -156,31 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒体文件 ID 列表，N 从 0 开始取值，最大 19。
+                     * <p>媒体文件 ID 列表，N 从 0 开始取值，最大 19。</p>
                      */
                     std::vector<std::string> m_fileIds;
                     bool m_fileIdsHasBeenSet;
 
                     /**
-                     * <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
+                     * <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
-<li>basicInfo（视频基础信息）。</li>
-<li>metaData（视频元信息）。</li>
-<li>transcodeInfo（视频转码结果信息）。</li>
-<li>animatedGraphicsInfo（视频转动图结果信息）。</li>
-<li>imageSpriteInfo（视频雪碧图信息）。</li>
-<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>
-<li>sampleSnapshotInfo（采样截图信息）。</li>
-<li>keyFrameDescInfo（打点信息）。</li>
-<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
-<li>miniProgramReviewInfo（小程序审核信息）。</li>
-<li>subtitleInfo（字幕信息）。</li>
-<li>reviewInfo（审核信息）。</li>
+                     * <p>指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：</p><li>basicInfo（视频基础信息）。</li><li>metaData（视频元信息）。</li><li>transcodeInfo（视频转码结果信息）。</li><li>animatedGraphicsInfo（视频转动图结果信息）。</li><li>imageSpriteInfo（视频雪碧图信息）。</li><li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li><li>sampleSnapshotInfo（采样截图信息）。</li><li>keyFrameDescInfo（打点信息）。</li><li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li><li>miniProgramReviewInfo（小程序审核信息）。</li><li>subtitleInfo（字幕信息）。</li><li>reviewInfo（审核信息）。</li><li>mpsAiMediaInfo（mps智能媒资信息）。</li>
                      */
                     std::vector<std::string> m_filters;
                     bool m_filtersHasBeenSet;

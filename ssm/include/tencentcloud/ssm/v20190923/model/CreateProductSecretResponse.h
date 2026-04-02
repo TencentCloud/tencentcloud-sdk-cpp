@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建的凭据名称。
-                     * @return SecretName 创建的凭据名称。
+                     * 获取<p>创建的凭据名称。</p>
+                     * @return SecretName <p>创建的凭据名称。</p>
                      * 
                      */
                     std::string GetSecretName() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool SecretNameHasBeenSet() const;
 
                     /**
-                     * 获取标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误。
-                     * @return TagCode 标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误。
+                     * 获取<p>标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误。</p>
+                     * @return TagCode <p>标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误。</p>
                      * 
                      */
                     uint64_t GetTagCode() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool TagCodeHasBeenSet() const;
 
                     /**
-                     * 获取标签操作的返回信息。
-                     * @return TagMsg 标签操作的返回信息。
+                     * 获取<p>标签操作的返回信息。</p>
+                     * @return TagMsg <p>标签操作的返回信息。</p>
                      * 
                      */
                     std::string GetTagMsg() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool TagMsgHasBeenSet() const;
 
                     /**
-                     * 获取创建云产品凭据异步任务ID号。
-                     * @return FlowID 创建云产品凭据异步任务ID号。
+                     * 获取<p>创建云产品凭据异步任务ID号。</p>
+                     * @return FlowID <p>创建云产品凭据异步任务ID号。</p>
                      * 
                      */
                     int64_t GetFlowID() const;
@@ -102,25 +102,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建的凭据名称。
+                     * <p>创建的凭据名称。</p>
                      */
                     std::string m_secretName;
                     bool m_secretNameHasBeenSet;
 
                     /**
-                     * 标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误。
+                     * <p>标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误。</p>
                      */
                     uint64_t m_tagCode;
                     bool m_tagCodeHasBeenSet;
 
                     /**
-                     * 标签操作的返回信息。
+                     * <p>标签操作的返回信息。</p>
                      */
                     std::string m_tagMsg;
                     bool m_tagMsgHasBeenSet;
 
                     /**
-                     * 创建云产品凭据异步任务ID号。
+                     * <p>创建云产品凭据异步任务ID号。</p>
                      */
                     int64_t m_flowID;
                     bool m_flowIDHasBeenSet;

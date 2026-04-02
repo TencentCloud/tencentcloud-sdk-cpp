@@ -26,7 +26,9 @@ DescribeQClawContentSecCheckRequest::DescribeQClawContentSecCheckRequest() :
     m_serviceIdHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_userIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
+    m_sessionIdHasBeenSet(false),
+    m_toolNameHasBeenSet(false),
+    m_toolArgsHasBeenSet(false)
 {
 }
 
@@ -68,6 +70,22 @@ string DescribeQClawContentSecCheckRequest::ToJsonString() const
         string key = "SessionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_toolNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToolName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_toolName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_toolArgsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToolArgs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_toolArgs.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +158,38 @@ void DescribeQClawContentSecCheckRequest::SetSessionId(const string& _sessionId)
 bool DescribeQClawContentSecCheckRequest::SessionIdHasBeenSet() const
 {
     return m_sessionIdHasBeenSet;
+}
+
+string DescribeQClawContentSecCheckRequest::GetToolName() const
+{
+    return m_toolName;
+}
+
+void DescribeQClawContentSecCheckRequest::SetToolName(const string& _toolName)
+{
+    m_toolName = _toolName;
+    m_toolNameHasBeenSet = true;
+}
+
+bool DescribeQClawContentSecCheckRequest::ToolNameHasBeenSet() const
+{
+    return m_toolNameHasBeenSet;
+}
+
+string DescribeQClawContentSecCheckRequest::GetToolArgs() const
+{
+    return m_toolArgs;
+}
+
+void DescribeQClawContentSecCheckRequest::SetToolArgs(const string& _toolArgs)
+{
+    m_toolArgs = _toolArgs;
+    m_toolArgsHasBeenSet = true;
+}
+
+bool DescribeQClawContentSecCheckRequest::ToolArgsHasBeenSet() const
+{
+    return m_toolArgsHasBeenSet;
 }
 
 

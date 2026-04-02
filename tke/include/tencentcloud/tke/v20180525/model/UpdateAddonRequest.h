@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool AddonVersionHasBeenSet() const;
 
                     /**
-                     * 获取addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传）。
-                     * @return RawValues addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传）。
+                     * 获取addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传）。不同的addon组件支持的RawValues参数参考文档：https://cloud.tencent.com/document/product/457/39048。
+                     * @return RawValues addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传）。不同的addon组件支持的RawValues参数参考文档：https://cloud.tencent.com/document/product/457/39048。
                      * 
                      */
                     std::string GetRawValues() const;
 
                     /**
-                     * 设置addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传）。
-                     * @param _rawValues addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传）。
+                     * 设置addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传）。不同的addon组件支持的RawValues参数参考文档：https://cloud.tencent.com/document/product/457/39048。
+                     * @param _rawValues addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传）。不同的addon组件支持的RawValues参数参考文档：https://cloud.tencent.com/document/product/457/39048。
                      * 
                      */
                     void SetRawValues(const std::string& _rawValues);
@@ -189,7 +189,7 @@ namespace TencentCloud
                     bool m_addonVersionHasBeenSet;
 
                     /**
-                     * addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传）。
+                     * addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传）。不同的addon组件支持的RawValues参数参考文档：https://cloud.tencent.com/document/product/457/39048。
                      */
                     std::string m_rawValues;
                     bool m_rawValuesHasBeenSet;

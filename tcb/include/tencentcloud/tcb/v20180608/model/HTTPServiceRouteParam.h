@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcb/v20180608/model/HTTPServicePathRewrite.h>
 #include <tencentcloud/tcb/v20180608/model/HTTPServiceRouteQPSPolicy.h>
+#include <tencentcloud/tcb/v20180608/model/HTTPServiceExtension.h>
 
 
 namespace TencentCloud
@@ -237,6 +238,27 @@ namespace TencentCloud
                      */
                     bool EnableHasBeenSet() const;
 
+                    /**
+                     * 获取扩展字段，内部包含headers处理等
+                     * @return Extension 扩展字段，内部包含headers处理等
+                     * 
+                     */
+                    HTTPServiceExtension GetExtension() const;
+
+                    /**
+                     * 设置扩展字段，内部包含headers处理等
+                     * @param _extension 扩展字段，内部包含headers处理等
+                     * 
+                     */
+                    void SetExtension(const HTTPServiceExtension& _extension);
+
+                    /**
+                     * 判断参数 Extension 是否已赋值
+                     * @return Extension 是否已赋值
+                     * 
+                     */
+                    bool ExtensionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -292,6 +314,12 @@ namespace TencentCloud
                      */
                     bool m_enable;
                     bool m_enableHasBeenSet;
+
+                    /**
+                     * 扩展字段，内部包含headers处理等
+                     */
+                    HTTPServiceExtension m_extension;
+                    bool m_extensionHasBeenSet;
 
                 };
             }

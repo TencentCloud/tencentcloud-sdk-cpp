@@ -35,7 +35,9 @@ MediaInfo::MediaInfo() :
     m_fileIdHasBeenSet(false),
     m_reviewInfoHasBeenSet(false),
     m_mPSAiMediaInfoHasBeenSet(false),
-    m_imageUnderstandingInfoHasBeenSet(false)
+    m_imageUnderstandingInfoHasBeenSet(false),
+    m_knowledgeBasesInfoHasBeenSet(false),
+    m_faceRecognitionInfoHasBeenSet(false)
 {
 }
 
@@ -292,6 +294,40 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
         m_imageUnderstandingInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("KnowledgeBasesInfo") && !value["KnowledgeBasesInfo"].IsNull())
+    {
+        if (!value["KnowledgeBasesInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.KnowledgeBasesInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_knowledgeBasesInfo.Deserialize(value["KnowledgeBasesInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_knowledgeBasesInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("FaceRecognitionInfo") && !value["FaceRecognitionInfo"].IsNull())
+    {
+        if (!value["FaceRecognitionInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.FaceRecognitionInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_faceRecognitionInfo.Deserialize(value["FaceRecognitionInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_faceRecognitionInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -431,6 +467,24 @@ void MediaInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_imageUnderstandingInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_knowledgeBasesInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeBasesInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_knowledgeBasesInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_faceRecognitionInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FaceRecognitionInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_faceRecognitionInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -674,5 +728,37 @@ void MediaInfo::SetImageUnderstandingInfo(const ImageUnderstandingInfo& _imageUn
 bool MediaInfo::ImageUnderstandingInfoHasBeenSet() const
 {
     return m_imageUnderstandingInfoHasBeenSet;
+}
+
+KnowledgeBasesInfo MediaInfo::GetKnowledgeBasesInfo() const
+{
+    return m_knowledgeBasesInfo;
+}
+
+void MediaInfo::SetKnowledgeBasesInfo(const KnowledgeBasesInfo& _knowledgeBasesInfo)
+{
+    m_knowledgeBasesInfo = _knowledgeBasesInfo;
+    m_knowledgeBasesInfoHasBeenSet = true;
+}
+
+bool MediaInfo::KnowledgeBasesInfoHasBeenSet() const
+{
+    return m_knowledgeBasesInfoHasBeenSet;
+}
+
+FaceRecognitionInfo MediaInfo::GetFaceRecognitionInfo() const
+{
+    return m_faceRecognitionInfo;
+}
+
+void MediaInfo::SetFaceRecognitionInfo(const FaceRecognitionInfo& _faceRecognitionInfo)
+{
+    m_faceRecognitionInfo = _faceRecognitionInfo;
+    m_faceRecognitionInfoHasBeenSet = true;
+}
+
+bool MediaInfo::FaceRecognitionInfoHasBeenSet() const
+{
+    return m_faceRecognitionInfoHasBeenSet;
 }
 

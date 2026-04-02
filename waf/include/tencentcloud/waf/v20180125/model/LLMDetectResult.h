@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取 仅输出侧：涉敏信息
-                     * @return SensitiveResult  仅输出侧：涉敏信息
+                     * 获取<p>仅输出侧：涉敏信息</p>
+                     * @return SensitiveResult <p>仅输出侧：涉敏信息</p>
                      * 
                      */
                     std::vector<LLMSensitiveValueLevel> GetSensitiveResult() const;
 
                     /**
-                     * 设置 仅输出侧：涉敏信息
-                     * @param _sensitiveResult  仅输出侧：涉敏信息
+                     * 设置<p>仅输出侧：涉敏信息</p>
+                     * @param _sensitiveResult <p>仅输出侧：涉敏信息</p>
                      * 
                      */
                     void SetSensitiveResult(const std::vector<LLMSensitiveValueLevel>& _sensitiveResult);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool SensitiveResultHasBeenSet() const;
 
                     /**
-                     * 获取 输入输出均检测：关键词库命中信息
-                     * @return KeyWordsResult  输入输出均检测：关键词库命中信息
+                     * 获取<p>输入输出均检测：关键词库命中信息</p>
+                     * @return KeyWordsResult <p>输入输出均检测：关键词库命中信息</p>
                      * 
                      */
                     std::vector<KeyWordInfo> GetKeyWordsResult() const;
 
                     /**
-                     * 设置 输入输出均检测：关键词库命中信息
-                     * @param _keyWordsResult  输入输出均检测：关键词库命中信息
+                     * 设置<p>输入输出均检测：关键词库命中信息</p>
+                     * @param _keyWordsResult <p>输入输出均检测：关键词库命中信息</p>
                      * 
                      */
                     void SetKeyWordsResult(const std::vector<KeyWordInfo>& _keyWordsResult);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool KeyWordsResultHasBeenSet() const;
 
                     /**
-                     * 获取输入输出均检测：数据分类分级结果
-                     * @return DataCategoryResult 输入输出均检测：数据分类分级结果
+                     * 获取<p>输入输出均检测：数据分类分级结果</p>
+                     * @return DataCategoryResult <p>输入输出均检测：数据分类分级结果</p>
                      * 
                      */
                     std::vector<std::string> GetDataCategoryResult() const;
 
                     /**
-                     * 设置输入输出均检测：数据分类分级结果
-                     * @param _dataCategoryResult 输入输出均检测：数据分类分级结果
+                     * 设置<p>输入输出均检测：数据分类分级结果</p>
+                     * @param _dataCategoryResult <p>输入输出均检测：数据分类分级结果</p>
                      * 
                      */
                     void SetDataCategoryResult(const std::vector<std::string>& _dataCategoryResult);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool DataCategoryResultHasBeenSet() const;
 
                     /**
-                     * 获取 仅输入侧检出：prompt检测的结果
-                     * @return PromptInjectionResult  仅输入侧检出：prompt检测的结果
+                     * 获取<p>仅输入侧检出：prompt检测的结果</p>
+                     * @return PromptInjectionResult <p>仅输入侧检出：prompt检测的结果</p>
                      * 
                      */
                     PromptDetectResult GetPromptInjectionResult() const;
 
                     /**
-                     * 设置 仅输入侧检出：prompt检测的结果
-                     * @param _promptInjectionResult  仅输入侧检出：prompt检测的结果
+                     * 设置<p>仅输入侧检出：prompt检测的结果</p>
+                     * @param _promptInjectionResult <p>仅输入侧检出：prompt检测的结果</p>
                      * 
                      */
                     void SetPromptInjectionResult(const PromptDetectResult& _promptInjectionResult);
@@ -134,15 +134,15 @@ namespace TencentCloud
                     bool PromptInjectionResultHasBeenSet() const;
 
                     /**
-                     * 获取命中的规则ID
-                     * @return RuleId 命中的规则ID
+                     * 获取<p>命中的规则ID</p>
+                     * @return RuleId <p>命中的规则ID</p>
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置命中的规则ID
-                     * @param _ruleId 命中的规则ID
+                     * 设置<p>命中的规则ID</p>
+                     * @param _ruleId <p>命中的规则ID</p>
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -155,15 +155,15 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取命中的规则名称
-                     * @return RuleName 命中的规则名称
+                     * 获取<p>命中的规则名称</p>
+                     * @return RuleName <p>命中的规则名称</p>
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置命中的规则名称
-                     * @param _ruleName 命中的规则名称
+                     * 设置<p>命中的规则名称</p>
+                     * @param _ruleName <p>命中的规则名称</p>
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -176,15 +176,15 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取规则动作
-                     * @return Action 规则动作
+                     * 获取<p>规则动作</p>
+                     * @return Action <p>规则动作</p>
                      * 
                      */
                     std::string GetAction() const;
 
                     /**
-                     * 设置规则动作
-                     * @param _action 规则动作
+                     * 设置<p>规则动作</p>
+                     * @param _action <p>规则动作</p>
                      * 
                      */
                     void SetAction(const std::string& _action);
@@ -197,15 +197,15 @@ namespace TencentCloud
                     bool ActionHasBeenSet() const;
 
                     /**
-                     * 获取攻击payload
-                     * @return Payload 攻击payload
+                     * 获取<p>攻击payload</p>
+                     * @return Payload <p>攻击payload</p>
                      * 
                      */
                     std::string GetPayload() const;
 
                     /**
-                     * 设置攻击payload
-                     * @param _payload 攻击payload
+                     * 设置<p>攻击payload</p>
+                     * @param _payload <p>攻击payload</p>
                      * 
                      */
                     void SetPayload(const std::string& _payload);
@@ -220,49 +220,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     *  仅输出侧：涉敏信息
+                     * <p>仅输出侧：涉敏信息</p>
                      */
                     std::vector<LLMSensitiveValueLevel> m_sensitiveResult;
                     bool m_sensitiveResultHasBeenSet;
 
                     /**
-                     *  输入输出均检测：关键词库命中信息
+                     * <p>输入输出均检测：关键词库命中信息</p>
                      */
                     std::vector<KeyWordInfo> m_keyWordsResult;
                     bool m_keyWordsResultHasBeenSet;
 
                     /**
-                     * 输入输出均检测：数据分类分级结果
+                     * <p>输入输出均检测：数据分类分级结果</p>
                      */
                     std::vector<std::string> m_dataCategoryResult;
                     bool m_dataCategoryResultHasBeenSet;
 
                     /**
-                     *  仅输入侧检出：prompt检测的结果
+                     * <p>仅输入侧检出：prompt检测的结果</p>
                      */
                     PromptDetectResult m_promptInjectionResult;
                     bool m_promptInjectionResultHasBeenSet;
 
                     /**
-                     * 命中的规则ID
+                     * <p>命中的规则ID</p>
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * 命中的规则名称
+                     * <p>命中的规则名称</p>
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 规则动作
+                     * <p>规则动作</p>
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
 
                     /**
-                     * 攻击payload
+                     * <p>攻击payload</p>
                      */
                     std::string m_payload;
                     bool m_payloadHasBeenSet;

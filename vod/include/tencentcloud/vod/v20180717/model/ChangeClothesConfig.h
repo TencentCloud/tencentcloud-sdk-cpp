@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取输入需要更换的**衣物**图片列表。目前最大支持4张图片。
-                     * @return ClothesFileInfos 输入需要更换的**衣物**图片列表。目前最大支持4张图片。
+                     * 获取<p>输入需要更换的<strong>衣物</strong>图片列表。各类型最大支持衣物数量：</p><ul><li>change_clothes：4 张图片；</li><li>change_clothes_under：1 张图片；</li><li>change_clothes_full_wear：1 张图片；</li><li>change_clothes_top_wear：1 张图片；</li><li>change_clothes_bottom_wear：1 张图片；</li></ul>
+                     * @return ClothesFileInfos <p>输入需要更换的<strong>衣物</strong>图片列表。各类型最大支持衣物数量：</p><ul><li>change_clothes：4 张图片；</li><li>change_clothes_under：1 张图片；</li><li>change_clothes_full_wear：1 张图片；</li><li>change_clothes_top_wear：1 张图片；</li><li>change_clothes_bottom_wear：1 张图片；</li></ul>
                      * 
                      */
                     std::vector<SceneAigcImageTaskInputFileInfo> GetClothesFileInfos() const;
 
                     /**
-                     * 设置输入需要更换的**衣物**图片列表。目前最大支持4张图片。
-                     * @param _clothesFileInfos 输入需要更换的**衣物**图片列表。目前最大支持4张图片。
+                     * 设置<p>输入需要更换的<strong>衣物</strong>图片列表。各类型最大支持衣物数量：</p><ul><li>change_clothes：4 张图片；</li><li>change_clothes_under：1 张图片；</li><li>change_clothes_full_wear：1 张图片；</li><li>change_clothes_top_wear：1 张图片；</li><li>change_clothes_bottom_wear：1 张图片；</li></ul>
+                     * @param _clothesFileInfos <p>输入需要更换的<strong>衣物</strong>图片列表。各类型最大支持衣物数量：</p><ul><li>change_clothes：4 张图片；</li><li>change_clothes_under：1 张图片；</li><li>change_clothes_full_wear：1 张图片；</li><li>change_clothes_top_wear：1 张图片；</li><li>change_clothes_bottom_wear：1 张图片；</li></ul>
                      * 
                      */
                     void SetClothesFileInfos(const std::vector<SceneAigcImageTaskInputFileInfo>& _clothesFileInfos);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ClothesFileInfosHasBeenSet() const;
 
                     /**
-                     * 获取AI换衣的提示词。
-                     * @return Prompt AI换衣的提示词。
+                     * 获取<p>AI换衣的提示词。<strong>仅Type为change_clothes有效。</strong></p>
+                     * @return Prompt <p>AI换衣的提示词。<strong>仅Type为change_clothes有效。</strong></p>
                      * 
                      */
                     std::string GetPrompt() const;
 
                     /**
-                     * 设置AI换衣的提示词。
-                     * @param _prompt AI换衣的提示词。
+                     * 设置<p>AI换衣的提示词。<strong>仅Type为change_clothes有效。</strong></p>
+                     * @param _prompt <p>AI换衣的提示词。<strong>仅Type为change_clothes有效。</strong></p>
                      * 
                      */
                     void SetPrompt(const std::string& _prompt);
@@ -92,13 +92,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 输入需要更换的**衣物**图片列表。目前最大支持4张图片。
+                     * <p>输入需要更换的<strong>衣物</strong>图片列表。各类型最大支持衣物数量：</p><ul><li>change_clothes：4 张图片；</li><li>change_clothes_under：1 张图片；</li><li>change_clothes_full_wear：1 张图片；</li><li>change_clothes_top_wear：1 张图片；</li><li>change_clothes_bottom_wear：1 张图片；</li></ul>
                      */
                     std::vector<SceneAigcImageTaskInputFileInfo> m_clothesFileInfos;
                     bool m_clothesFileInfosHasBeenSet;
 
                     /**
-                     * AI换衣的提示词。
+                     * <p>AI换衣的提示词。<strong>仅Type为change_clothes有效。</strong></p>
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;

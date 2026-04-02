@@ -277,6 +277,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityPolicyResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityTemplateBindingsRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityTemplateBindingsResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSharedCNAMERequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSharedCNAMEResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL4DataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL4DataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL7AnalysisDataRequest.h>
@@ -401,6 +403,8 @@
 #include <tencentcloud/teo/v20220901/model/ModifySecurityJSInjectionRuleResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifySecurityPolicyRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifySecurityPolicyResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifySharedCNAMERequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifySharedCNAMEResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyWebSecurityTemplateRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyWebSecurityTemplateResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyZoneRequest.h>
@@ -814,6 +818,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSecurityTemplateBindingsResponse> DescribeSecurityTemplateBindingsOutcome;
                 typedef std::future<DescribeSecurityTemplateBindingsOutcome> DescribeSecurityTemplateBindingsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeSecurityTemplateBindingsRequest&, DescribeSecurityTemplateBindingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityTemplateBindingsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSharedCNAMEResponse> DescribeSharedCNAMEOutcome;
+                typedef std::future<DescribeSharedCNAMEOutcome> DescribeSharedCNAMEOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeSharedCNAMERequest&, DescribeSharedCNAMEOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSharedCNAMEAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTimingL4DataResponse> DescribeTimingL4DataOutcome;
                 typedef std::future<DescribeTimingL4DataOutcome> DescribeTimingL4DataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeTimingL4DataRequest&, DescribeTimingL4DataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTimingL4DataAsyncHandler;
@@ -1000,6 +1007,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySecurityPolicyResponse> ModifySecurityPolicyOutcome;
                 typedef std::future<ModifySecurityPolicyOutcome> ModifySecurityPolicyOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifySecurityPolicyRequest&, ModifySecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySharedCNAMEResponse> ModifySharedCNAMEOutcome;
+                typedef std::future<ModifySharedCNAMEOutcome> ModifySharedCNAMEOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifySharedCNAMERequest&, ModifySharedCNAMEOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySharedCNAMEAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyWebSecurityTemplateResponse> ModifyWebSecurityTemplateOutcome;
                 typedef std::future<ModifyWebSecurityTemplateOutcome> ModifyWebSecurityTemplateOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyWebSecurityTemplateRequest&, ModifyWebSecurityTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWebSecurityTemplateAsyncHandler;
@@ -2215,6 +2225,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeSecurityTemplateBindingsOutcomeCallable DescribeSecurityTemplateBindingsCallable(const Model::DescribeSecurityTemplateBindingsRequest& request);
 
                 /**
+                 *查询共享CNAME列表，支持模糊搜索、分页、排序等。
+                 * @param req DescribeSharedCNAMERequest
+                 * @return DescribeSharedCNAMEOutcome
+                 */
+                DescribeSharedCNAMEOutcome DescribeSharedCNAME(const Model::DescribeSharedCNAMERequest &request);
+                void DescribeSharedCNAMEAsync(const Model::DescribeSharedCNAMERequest& request, const DescribeSharedCNAMEAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSharedCNAMEOutcomeCallable DescribeSharedCNAMECallable(const Model::DescribeSharedCNAMERequest& request);
+
+                /**
                  *<p>本接口（<code>DescribeTimingL4Data</code>）用于查询四层时序数据列表。</p>
                  * @param req DescribeTimingL4DataRequest
                  * @return DescribeTimingL4DataOutcome
@@ -2858,6 +2877,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 ModifySecurityPolicyOutcome ModifySecurityPolicy(const Model::ModifySecurityPolicyRequest &request);
                 void ModifySecurityPolicyAsync(const Model::ModifySecurityPolicyRequest& request, const ModifySecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySecurityPolicyOutcomeCallable ModifySecurityPolicyCallable(const Model::ModifySecurityPolicyRequest& request);
+
+                /**
+                 *用于修改共享 CNAME。当前仅支持修改共享 CNAME 的描述和设置 IP SSL类型的共享CNAME关联IP SSL 域名，共享 CNAME 本身创建后不支持修改。该功能白名单内测中。
+                 * @param req ModifySharedCNAMERequest
+                 * @return ModifySharedCNAMEOutcome
+                 */
+                ModifySharedCNAMEOutcome ModifySharedCNAME(const Model::ModifySharedCNAMERequest &request);
+                void ModifySharedCNAMEAsync(const Model::ModifySharedCNAMERequest& request, const ModifySharedCNAMEAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySharedCNAMEOutcomeCallable ModifySharedCNAMECallable(const Model::ModifySharedCNAMERequest& request);
 
                 /**
                  *修改安全策略配置模板

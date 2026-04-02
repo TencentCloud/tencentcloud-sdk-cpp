@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcb/v20180608/model/EmailSmtpConfig.h>
+#include <tencentcloud/tcb/v20180608/model/EmailTemplateConfig.h>
 
 
 namespace TencentCloud
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取smtp配置
-                     * @return SmtpConfig smtp配置
+                     * 获取<p>smtp配置</p>
+                     * @return SmtpConfig <p>smtp配置</p>
                      * 
                      */
                     EmailSmtpConfig GetSmtpConfig() const;
 
                     /**
-                     * 设置smtp配置
-                     * @param _smtpConfig smtp配置
+                     * 设置<p>smtp配置</p>
+                     * @param _smtpConfig <p>smtp配置</p>
                      * 
                      */
                     void SetSmtpConfig(const EmailSmtpConfig& _smtpConfig);
@@ -69,15 +70,15 @@ namespace TencentCloud
                     bool SmtpConfigHasBeenSet() const;
 
                     /**
-                     * 获取可选：TRUE，FALSE，如果On为TRUE，则表示采用默认代发。
-                     * @return On 可选：TRUE，FALSE，如果On为TRUE，则表示采用默认代发。
+                     * 获取<p>可选：TRUE，FALSE，如果On为TRUE，则表示采用默认代发。</p>
+                     * @return On <p>可选：TRUE，FALSE，如果On为TRUE，则表示采用默认代发。</p>
                      * 
                      */
                     std::string GetOn() const;
 
                     /**
-                     * 设置可选：TRUE，FALSE，如果On为TRUE，则表示采用默认代发。
-                     * @param _on 可选：TRUE，FALSE，如果On为TRUE，则表示采用默认代发。
+                     * 设置<p>可选：TRUE，FALSE，如果On为TRUE，则表示采用默认代发。</p>
+                     * @param _on <p>可选：TRUE，FALSE，如果On为TRUE，则表示采用默认代发。</p>
                      * 
                      */
                     void SetOn(const std::string& _on);
@@ -89,19 +90,51 @@ namespace TencentCloud
                      */
                     bool OnHasBeenSet() const;
 
+                    /**
+                     * 获取<p>邮件模板配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TemplateConfig <p>邮件模板配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    EmailTemplateConfig GetTemplateConfig() const;
+
+                    /**
+                     * 设置<p>邮件模板配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _templateConfig <p>邮件模板配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTemplateConfig(const EmailTemplateConfig& _templateConfig);
+
+                    /**
+                     * 判断参数 TemplateConfig 是否已赋值
+                     * @return TemplateConfig 是否已赋值
+                     * 
+                     */
+                    bool TemplateConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * smtp配置
+                     * <p>smtp配置</p>
                      */
                     EmailSmtpConfig m_smtpConfig;
                     bool m_smtpConfigHasBeenSet;
 
                     /**
-                     * 可选：TRUE，FALSE，如果On为TRUE，则表示采用默认代发。
+                     * <p>可选：TRUE，FALSE，如果On为TRUE，则表示采用默认代发。</p>
                      */
                     std::string m_on;
                     bool m_onHasBeenSet;
+
+                    /**
+                     * <p>邮件模板配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    EmailTemplateConfig m_templateConfig;
+                    bool m_templateConfigHasBeenSet;
 
                 };
             }

@@ -30,6 +30,7 @@ HTTPServiceRoute::HTTPServiceRoute() :
     m_enablePathTransmissionHasBeenSet(false),
     m_qPSPolicyHasBeenSet(false),
     m_enableHasBeenSet(false),
+    m_extensionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
@@ -144,6 +145,23 @@ CoreInternalOutcome HTTPServiceRoute::Deserialize(const rapidjson::Value &value)
         m_enableHasBeenSet = true;
     }
 
+    if (value.HasMember("Extension") && !value["Extension"].IsNull())
+    {
+        if (!value["Extension"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `HTTPServiceRoute.Extension` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extension.Deserialize(value["Extension"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extensionHasBeenSet = true;
+    }
+
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
     {
         if (!value["CreateTime"].IsString())
@@ -243,6 +261,15 @@ void HTTPServiceRoute::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Enable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enable, allocator);
+    }
+
+    if (m_extensionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Extension";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extension.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -406,6 +433,22 @@ void HTTPServiceRoute::SetEnable(const bool& _enable)
 bool HTTPServiceRoute::EnableHasBeenSet() const
 {
     return m_enableHasBeenSet;
+}
+
+HTTPServiceExtension HTTPServiceRoute::GetExtension() const
+{
+    return m_extension;
+}
+
+void HTTPServiceRoute::SetExtension(const HTTPServiceExtension& _extension)
+{
+    m_extension = _extension;
+    m_extensionHasBeenSet = true;
+}
+
+bool HTTPServiceRoute::ExtensionHasBeenSet() const
+{
+    return m_extensionHasBeenSet;
 }
 
 string HTTPServiceRoute::GetCreateTime() const

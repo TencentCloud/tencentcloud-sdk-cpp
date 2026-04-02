@@ -36,7 +36,8 @@ CreateProductSecretRequest::CreateProductSecretRequest() :
     m_enableRotationHasBeenSet(false),
     m_rotationFrequencyHasBeenSet(false),
     m_kmsHsmClusterIdHasBeenSet(false),
-    m_accountRemarkHasBeenSet(false)
+    m_accountRemarkHasBeenSet(false),
+    m_accountTypeHasBeenSet(false)
 {
 }
 
@@ -176,6 +177,14 @@ string CreateProductSecretRequest::ToJsonString() const
         string key = "AccountRemark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_accountRemark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accountTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accountType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -408,6 +417,22 @@ void CreateProductSecretRequest::SetAccountRemark(const string& _accountRemark)
 bool CreateProductSecretRequest::AccountRemarkHasBeenSet() const
 {
     return m_accountRemarkHasBeenSet;
+}
+
+string CreateProductSecretRequest::GetAccountType() const
+{
+    return m_accountType;
+}
+
+void CreateProductSecretRequest::SetAccountType(const string& _accountType)
+{
+    m_accountType = _accountType;
+    m_accountTypeHasBeenSet = true;
+}
+
+bool CreateProductSecretRequest::AccountTypeHasBeenSet() const
+{
+    return m_accountTypeHasBeenSet;
 }
 
 

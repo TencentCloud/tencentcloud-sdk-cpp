@@ -38,6 +38,8 @@
 #include <tencentcloud/vod/v20180717/model/FileReviewInfo.h>
 #include <tencentcloud/vod/v20180717/model/MPSAiMediaInfo.h>
 #include <tencentcloud/vod/v20180717/model/ImageUnderstandingInfo.h>
+#include <tencentcloud/vod/v20180717/model/KnowledgeBasesInfo.h>
+#include <tencentcloud/vod/v20180717/model/FaceRecognitionInfo.h>
 
 
 namespace TencentCloud
@@ -61,18 +63,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取基础信息。包括视频名称、分类、播放地址、封面图片等。
+                     * 获取<p>基础信息。包括视频名称、分类、播放地址、封面图片等。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BasicInfo 基础信息。包括视频名称、分类、播放地址、封面图片等。
+                     * @return BasicInfo <p>基础信息。包括视频名称、分类、播放地址、封面图片等。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaBasicInfo GetBasicInfo() const;
 
                     /**
-                     * 设置基础信息。包括视频名称、分类、播放地址、封面图片等。
+                     * 设置<p>基础信息。包括视频名称、分类、播放地址、封面图片等。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _basicInfo 基础信息。包括视频名称、分类、播放地址、封面图片等。
+                     * @param _basicInfo <p>基础信息。包括视频名称、分类、播放地址、封面图片等。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -86,18 +88,18 @@ namespace TencentCloud
                     bool BasicInfoHasBeenSet() const;
 
                     /**
-                     * 获取元信息。包括大小、时长、视频流信息、音频流信息等。
+                     * 获取<p>元信息。包括大小、时长、视频流信息、音频流信息等。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MetaData 元信息。包括大小、时长、视频流信息、音频流信息等。
+                     * @return MetaData <p>元信息。包括大小、时长、视频流信息、音频流信息等。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
-                     * 设置元信息。包括大小、时长、视频流信息、音频流信息等。
+                     * 设置<p>元信息。包括大小、时长、视频流信息、音频流信息等。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _metaData 元信息。包括大小、时长、视频流信息、音频流信息等。
+                     * @param _metaData <p>元信息。包括大小、时长、视频流信息、音频流信息等。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -111,18 +113,18 @@ namespace TencentCloud
                     bool MetaDataHasBeenSet() const;
 
                     /**
-                     * 获取转码结果信息。包括该视频转码生成的各种码率的视频的地址、规格、码率、分辨率等。
+                     * 获取<p>转码结果信息。包括该视频转码生成的各种码率的视频的地址、规格、码率、分辨率等。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TranscodeInfo 转码结果信息。包括该视频转码生成的各种码率的视频的地址、规格、码率、分辨率等。
+                     * @return TranscodeInfo <p>转码结果信息。包括该视频转码生成的各种码率的视频的地址、规格、码率、分辨率等。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaTranscodeInfo GetTranscodeInfo() const;
 
                     /**
-                     * 设置转码结果信息。包括该视频转码生成的各种码率的视频的地址、规格、码率、分辨率等。
+                     * 设置<p>转码结果信息。包括该视频转码生成的各种码率的视频的地址、规格、码率、分辨率等。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _transcodeInfo 转码结果信息。包括该视频转码生成的各种码率的视频的地址、规格、码率、分辨率等。
+                     * @param _transcodeInfo <p>转码结果信息。包括该视频转码生成的各种码率的视频的地址、规格、码率、分辨率等。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -136,18 +138,18 @@ namespace TencentCloud
                     bool TranscodeInfoHasBeenSet() const;
 
                     /**
-                     * 获取转动图结果信息。对视频转动图（如 gif）后，动图相关信息。
+                     * 获取<p>转动图结果信息。对视频转动图（如 gif）后，动图相关信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AnimatedGraphicsInfo 转动图结果信息。对视频转动图（如 gif）后，动图相关信息。
+                     * @return AnimatedGraphicsInfo <p>转动图结果信息。对视频转动图（如 gif）后，动图相关信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaAnimatedGraphicsInfo GetAnimatedGraphicsInfo() const;
 
                     /**
-                     * 设置转动图结果信息。对视频转动图（如 gif）后，动图相关信息。
+                     * 设置<p>转动图结果信息。对视频转动图（如 gif）后，动图相关信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _animatedGraphicsInfo 转动图结果信息。对视频转动图（如 gif）后，动图相关信息。
+                     * @param _animatedGraphicsInfo <p>转动图结果信息。对视频转动图（如 gif）后，动图相关信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -161,18 +163,18 @@ namespace TencentCloud
                     bool AnimatedGraphicsInfoHasBeenSet() const;
 
                     /**
-                     * 获取采样截图信息。对视频采样截图后，相关截图信息。
+                     * 获取<p>采样截图信息。对视频采样截图后，相关截图信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SampleSnapshotInfo 采样截图信息。对视频采样截图后，相关截图信息。
+                     * @return SampleSnapshotInfo <p>采样截图信息。对视频采样截图后，相关截图信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaSampleSnapshotInfo GetSampleSnapshotInfo() const;
 
                     /**
-                     * 设置采样截图信息。对视频采样截图后，相关截图信息。
+                     * 设置<p>采样截图信息。对视频采样截图后，相关截图信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sampleSnapshotInfo 采样截图信息。对视频采样截图后，相关截图信息。
+                     * @param _sampleSnapshotInfo <p>采样截图信息。对视频采样截图后，相关截图信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -186,18 +188,18 @@ namespace TencentCloud
                     bool SampleSnapshotInfoHasBeenSet() const;
 
                     /**
-                     * 获取雪碧图信息。对视频截取雪碧图之后，雪碧的相关信息。
+                     * 获取<p>雪碧图信息。对视频截取雪碧图之后，雪碧的相关信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ImageSpriteInfo 雪碧图信息。对视频截取雪碧图之后，雪碧的相关信息。
+                     * @return ImageSpriteInfo <p>雪碧图信息。对视频截取雪碧图之后，雪碧的相关信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaImageSpriteInfo GetImageSpriteInfo() const;
 
                     /**
-                     * 设置雪碧图信息。对视频截取雪碧图之后，雪碧的相关信息。
+                     * 设置<p>雪碧图信息。对视频截取雪碧图之后，雪碧的相关信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _imageSpriteInfo 雪碧图信息。对视频截取雪碧图之后，雪碧的相关信息。
+                     * @param _imageSpriteInfo <p>雪碧图信息。对视频截取雪碧图之后，雪碧的相关信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -211,18 +213,18 @@ namespace TencentCloud
                     bool ImageSpriteInfoHasBeenSet() const;
 
                     /**
-                     * 获取指定时间点截图信息。对视频依照指定时间点截图后，各个截图的信息。
+                     * 获取<p>指定时间点截图信息。对视频依照指定时间点截图后，各个截图的信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SnapshotByTimeOffsetInfo 指定时间点截图信息。对视频依照指定时间点截图后，各个截图的信息。
+                     * @return SnapshotByTimeOffsetInfo <p>指定时间点截图信息。对视频依照指定时间点截图后，各个截图的信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaSnapshotByTimeOffsetInfo GetSnapshotByTimeOffsetInfo() const;
 
                     /**
-                     * 设置指定时间点截图信息。对视频依照指定时间点截图后，各个截图的信息。
+                     * 设置<p>指定时间点截图信息。对视频依照指定时间点截图后，各个截图的信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _snapshotByTimeOffsetInfo 指定时间点截图信息。对视频依照指定时间点截图后，各个截图的信息。
+                     * @param _snapshotByTimeOffsetInfo <p>指定时间点截图信息。对视频依照指定时间点截图后，各个截图的信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -236,18 +238,18 @@ namespace TencentCloud
                     bool SnapshotByTimeOffsetInfoHasBeenSet() const;
 
                     /**
-                     * 获取视频打点信息。对视频设置的各个打点信息。
+                     * 获取<p>视频打点信息。对视频设置的各个打点信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KeyFrameDescInfo 视频打点信息。对视频设置的各个打点信息。
+                     * @return KeyFrameDescInfo <p>视频打点信息。对视频设置的各个打点信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaKeyFrameDescInfo GetKeyFrameDescInfo() const;
 
                     /**
-                     * 设置视频打点信息。对视频设置的各个打点信息。
+                     * 设置<p>视频打点信息。对视频设置的各个打点信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _keyFrameDescInfo 视频打点信息。对视频设置的各个打点信息。
+                     * @param _keyFrameDescInfo <p>视频打点信息。对视频设置的各个打点信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -261,18 +263,18 @@ namespace TencentCloud
                     bool KeyFrameDescInfoHasBeenSet() const;
 
                     /**
-                     * 获取转自适应码流信息。包括规格、加密类型、打包格式等相关信息。
+                     * 获取<p>转自适应码流信息。包括规格、加密类型、打包格式等相关信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AdaptiveDynamicStreamingInfo 转自适应码流信息。包括规格、加密类型、打包格式等相关信息。
+                     * @return AdaptiveDynamicStreamingInfo <p>转自适应码流信息。包括规格、加密类型、打包格式等相关信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaAdaptiveDynamicStreamingInfo GetAdaptiveDynamicStreamingInfo() const;
 
                     /**
-                     * 设置转自适应码流信息。包括规格、加密类型、打包格式等相关信息。
+                     * 设置<p>转自适应码流信息。包括规格、加密类型、打包格式等相关信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _adaptiveDynamicStreamingInfo 转自适应码流信息。包括规格、加密类型、打包格式等相关信息。
+                     * @param _adaptiveDynamicStreamingInfo <p>转自适应码流信息。包括规格、加密类型、打包格式等相关信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -286,18 +288,18 @@ namespace TencentCloud
                     bool AdaptiveDynamicStreamingInfoHasBeenSet() const;
 
                     /**
-                     * 获取小程序审核信息。
+                     * 获取<p>小程序审核信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MiniProgramReviewInfo 小程序审核信息。
+                     * @return MiniProgramReviewInfo <p>小程序审核信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaMiniProgramReviewInfo GetMiniProgramReviewInfo() const;
 
                     /**
-                     * 设置小程序审核信息。
+                     * 设置<p>小程序审核信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _miniProgramReviewInfo 小程序审核信息。
+                     * @param _miniProgramReviewInfo <p>小程序审核信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -311,18 +313,18 @@ namespace TencentCloud
                     bool MiniProgramReviewInfoHasBeenSet() const;
 
                     /**
-                     * 获取字幕信息。
+                     * 获取<p>字幕信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubtitleInfo 字幕信息。
+                     * @return SubtitleInfo <p>字幕信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaSubtitleInfo GetSubtitleInfo() const;
 
                     /**
-                     * 设置字幕信息。
+                     * 设置<p>字幕信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subtitleInfo 字幕信息。
+                     * @param _subtitleInfo <p>字幕信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -336,15 +338,15 @@ namespace TencentCloud
                     bool SubtitleInfoHasBeenSet() const;
 
                     /**
-                     * 获取媒体文件唯一标识 ID。
-                     * @return FileId 媒体文件唯一标识 ID。
+                     * 获取<p>媒体文件唯一标识 ID。</p>
+                     * @return FileId <p>媒体文件唯一标识 ID。</p>
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置媒体文件唯一标识 ID。
-                     * @param _fileId 媒体文件唯一标识 ID。
+                     * 设置<p>媒体文件唯一标识 ID。</p>
+                     * @param _fileId <p>媒体文件唯一标识 ID。</p>
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -357,18 +359,18 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取审核信息。
+                     * 获取<p>审核信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReviewInfo 审核信息。
+                     * @return ReviewInfo <p>审核信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FileReviewInfo GetReviewInfo() const;
 
                     /**
-                     * 设置审核信息。
+                     * 设置<p>审核信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _reviewInfo 审核信息。
+                     * @param _reviewInfo <p>审核信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -382,15 +384,15 @@ namespace TencentCloud
                     bool ReviewInfoHasBeenSet() const;
 
                     /**
-                     * 获取MPS智能媒资信息
-                     * @return MPSAiMediaInfo MPS智能媒资信息
+                     * 获取<p>MPS智能媒资信息</p>
+                     * @return MPSAiMediaInfo <p>MPS智能媒资信息</p>
                      * 
                      */
                     MPSAiMediaInfo GetMPSAiMediaInfo() const;
 
                     /**
-                     * 设置MPS智能媒资信息
-                     * @param _mPSAiMediaInfo MPS智能媒资信息
+                     * 设置<p>MPS智能媒资信息</p>
+                     * @param _mPSAiMediaInfo <p>MPS智能媒资信息</p>
                      * 
                      */
                     void SetMPSAiMediaInfo(const MPSAiMediaInfo& _mPSAiMediaInfo);
@@ -403,18 +405,18 @@ namespace TencentCloud
                     bool MPSAiMediaInfoHasBeenSet() const;
 
                     /**
-                     * 获取图片理解信息。
+                     * 获取<p>图片理解信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ImageUnderstandingInfo 图片理解信息。
+                     * @return ImageUnderstandingInfo <p>图片理解信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ImageUnderstandingInfo GetImageUnderstandingInfo() const;
 
                     /**
-                     * 设置图片理解信息。
+                     * 设置<p>图片理解信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _imageUnderstandingInfo 图片理解信息。
+                     * @param _imageUnderstandingInfo <p>图片理解信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -427,110 +429,164 @@ namespace TencentCloud
                      */
                     bool ImageUnderstandingInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>智能知识库信息。</p>
+                     * @return KnowledgeBasesInfo <p>智能知识库信息。</p>
+                     * 
+                     */
+                    KnowledgeBasesInfo GetKnowledgeBasesInfo() const;
+
+                    /**
+                     * 设置<p>智能知识库信息。</p>
+                     * @param _knowledgeBasesInfo <p>智能知识库信息。</p>
+                     * 
+                     */
+                    void SetKnowledgeBasesInfo(const KnowledgeBasesInfo& _knowledgeBasesInfo);
+
+                    /**
+                     * 判断参数 KnowledgeBasesInfo 是否已赋值
+                     * @return KnowledgeBasesInfo 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeBasesInfoHasBeenSet() const;
+
+                    /**
+                     * 获取<p>人脸识别信息。</p>
+                     * @return FaceRecognitionInfo <p>人脸识别信息。</p>
+                     * 
+                     */
+                    FaceRecognitionInfo GetFaceRecognitionInfo() const;
+
+                    /**
+                     * 设置<p>人脸识别信息。</p>
+                     * @param _faceRecognitionInfo <p>人脸识别信息。</p>
+                     * 
+                     */
+                    void SetFaceRecognitionInfo(const FaceRecognitionInfo& _faceRecognitionInfo);
+
+                    /**
+                     * 判断参数 FaceRecognitionInfo 是否已赋值
+                     * @return FaceRecognitionInfo 是否已赋值
+                     * 
+                     */
+                    bool FaceRecognitionInfoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 基础信息。包括视频名称、分类、播放地址、封面图片等。
+                     * <p>基础信息。包括视频名称、分类、播放地址、封面图片等。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaBasicInfo m_basicInfo;
                     bool m_basicInfoHasBeenSet;
 
                     /**
-                     * 元信息。包括大小、时长、视频流信息、音频流信息等。
+                     * <p>元信息。包括大小、时长、视频流信息、音频流信息等。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaMetaData m_metaData;
                     bool m_metaDataHasBeenSet;
 
                     /**
-                     * 转码结果信息。包括该视频转码生成的各种码率的视频的地址、规格、码率、分辨率等。
+                     * <p>转码结果信息。包括该视频转码生成的各种码率的视频的地址、规格、码率、分辨率等。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaTranscodeInfo m_transcodeInfo;
                     bool m_transcodeInfoHasBeenSet;
 
                     /**
-                     * 转动图结果信息。对视频转动图（如 gif）后，动图相关信息。
+                     * <p>转动图结果信息。对视频转动图（如 gif）后，动图相关信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaAnimatedGraphicsInfo m_animatedGraphicsInfo;
                     bool m_animatedGraphicsInfoHasBeenSet;
 
                     /**
-                     * 采样截图信息。对视频采样截图后，相关截图信息。
+                     * <p>采样截图信息。对视频采样截图后，相关截图信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaSampleSnapshotInfo m_sampleSnapshotInfo;
                     bool m_sampleSnapshotInfoHasBeenSet;
 
                     /**
-                     * 雪碧图信息。对视频截取雪碧图之后，雪碧的相关信息。
+                     * <p>雪碧图信息。对视频截取雪碧图之后，雪碧的相关信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaImageSpriteInfo m_imageSpriteInfo;
                     bool m_imageSpriteInfoHasBeenSet;
 
                     /**
-                     * 指定时间点截图信息。对视频依照指定时间点截图后，各个截图的信息。
+                     * <p>指定时间点截图信息。对视频依照指定时间点截图后，各个截图的信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaSnapshotByTimeOffsetInfo m_snapshotByTimeOffsetInfo;
                     bool m_snapshotByTimeOffsetInfoHasBeenSet;
 
                     /**
-                     * 视频打点信息。对视频设置的各个打点信息。
+                     * <p>视频打点信息。对视频设置的各个打点信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaKeyFrameDescInfo m_keyFrameDescInfo;
                     bool m_keyFrameDescInfoHasBeenSet;
 
                     /**
-                     * 转自适应码流信息。包括规格、加密类型、打包格式等相关信息。
+                     * <p>转自适应码流信息。包括规格、加密类型、打包格式等相关信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaAdaptiveDynamicStreamingInfo m_adaptiveDynamicStreamingInfo;
                     bool m_adaptiveDynamicStreamingInfoHasBeenSet;
 
                     /**
-                     * 小程序审核信息。
+                     * <p>小程序审核信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaMiniProgramReviewInfo m_miniProgramReviewInfo;
                     bool m_miniProgramReviewInfoHasBeenSet;
 
                     /**
-                     * 字幕信息。
+                     * <p>字幕信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaSubtitleInfo m_subtitleInfo;
                     bool m_subtitleInfoHasBeenSet;
 
                     /**
-                     * 媒体文件唯一标识 ID。
+                     * <p>媒体文件唯一标识 ID。</p>
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 审核信息。
+                     * <p>审核信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FileReviewInfo m_reviewInfo;
                     bool m_reviewInfoHasBeenSet;
 
                     /**
-                     * MPS智能媒资信息
+                     * <p>MPS智能媒资信息</p>
                      */
                     MPSAiMediaInfo m_mPSAiMediaInfo;
                     bool m_mPSAiMediaInfoHasBeenSet;
 
                     /**
-                     * 图片理解信息。
+                     * <p>图片理解信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ImageUnderstandingInfo m_imageUnderstandingInfo;
                     bool m_imageUnderstandingInfoHasBeenSet;
+
+                    /**
+                     * <p>智能知识库信息。</p>
+                     */
+                    KnowledgeBasesInfo m_knowledgeBasesInfo;
+                    bool m_knowledgeBasesInfoHasBeenSet;
+
+                    /**
+                     * <p>人脸识别信息。</p>
+                     */
+                    FaceRecognitionInfo m_faceRecognitionInfo;
+                    bool m_faceRecognitionInfoHasBeenSet;
 
                 };
             }

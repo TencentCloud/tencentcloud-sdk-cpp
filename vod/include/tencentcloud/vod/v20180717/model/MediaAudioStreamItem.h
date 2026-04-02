@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取音频流的码率，单位：bps。
-                     * @return Bitrate 音频流的码率，单位：bps。
+                     * 获取<p>音频流的码率，单位：bps。</p>
+                     * @return Bitrate <p>音频流的码率，单位：bps。</p>
                      * 
                      */
                     int64_t GetBitrate() const;
 
                     /**
-                     * 设置音频流的码率，单位：bps。
-                     * @param _bitrate 音频流的码率，单位：bps。
+                     * 设置<p>音频流的码率，单位：bps。</p>
+                     * @param _bitrate <p>音频流的码率，单位：bps。</p>
                      * 
                      */
                     void SetBitrate(const int64_t& _bitrate);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool BitrateHasBeenSet() const;
 
                     /**
-                     * 获取音频流的采样率，单位：hz。
-                     * @return SamplingRate 音频流的采样率，单位：hz。
+                     * 获取<p>音频流的采样率，单位：hz。</p>
+                     * @return SamplingRate <p>音频流的采样率，单位：hz。</p>
                      * 
                      */
                     int64_t GetSamplingRate() const;
 
                     /**
-                     * 设置音频流的采样率，单位：hz。
-                     * @param _samplingRate 音频流的采样率，单位：hz。
+                     * 设置<p>音频流的采样率，单位：hz。</p>
+                     * @param _samplingRate <p>音频流的采样率，单位：hz。</p>
                      * 
                      */
                     void SetSamplingRate(const int64_t& _samplingRate);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool SamplingRateHasBeenSet() const;
 
                     /**
-                     * 获取音频流的编码格式，例如 aac。
-                     * @return Codec 音频流的编码格式，例如 aac。
+                     * 获取<p>音频流的编码格式，例如 aac。</p>
+                     * @return Codec <p>音频流的编码格式，例如 aac。</p>
                      * 
                      */
                     std::string GetCodec() const;
 
                     /**
-                     * 设置音频流的编码格式，例如 aac。
-                     * @param _codec 音频流的编码格式，例如 aac。
+                     * 设置<p>音频流的编码格式，例如 aac。</p>
+                     * @param _codec <p>音频流的编码格式，例如 aac。</p>
                      * 
                      */
                     void SetCodec(const std::string& _codec);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 音频流的码率，单位：bps。
+                     * <p>音频流的码率，单位：bps。</p>
                      */
                     int64_t m_bitrate;
                     bool m_bitrateHasBeenSet;
 
                     /**
-                     * 音频流的采样率，单位：hz。
+                     * <p>音频流的采样率，单位：hz。</p>
                      */
                     int64_t m_samplingRate;
                     bool m_samplingRateHasBeenSet;
 
                     /**
-                     * 音频流的编码格式，例如 aac。
+                     * <p>音频流的编码格式，例如 aac。</p>
                      */
                     std::string m_codec;
                     bool m_codecHasBeenSet;

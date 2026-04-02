@@ -190,6 +190,56 @@ ClsClient::CancelRebuildIndexTaskOutcomeCallable ClsClient::CancelRebuildIndexTa
     return prom->get_future();
 }
 
+ClsClient::ChatCompletionsOutcome ClsClient::ChatCompletions(const ChatCompletionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChatCompletions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChatCompletionsResponse rsp = ChatCompletionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChatCompletionsOutcome(rsp);
+        else
+            return ChatCompletionsOutcome(o.GetError());
+    }
+    else
+    {
+        return ChatCompletionsOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ChatCompletionsAsync(const ChatCompletionsRequest& request, const ChatCompletionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ChatCompletionsRequest&;
+    using Resp = ChatCompletionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ChatCompletions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ClsClient::ChatCompletionsOutcomeCallable ClsClient::ChatCompletionsCallable(const ChatCompletionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ChatCompletionsOutcome>>();
+    ChatCompletionsAsync(
+    request,
+    [prom](
+        const ClsClient*,
+        const ChatCompletionsRequest&,
+        ChatCompletionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ClsClient::CheckFunctionOutcome ClsClient::CheckFunction(const CheckFunctionRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckFunction");

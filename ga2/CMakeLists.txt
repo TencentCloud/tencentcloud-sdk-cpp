@@ -19,12 +19,18 @@ set(ga2_public_header
   )
 
 set(ga2_public_header_model
+  include/tencentcloud/ga2/v20250115/model/CreateGlobalAcceleratorResponse.h
+  include/tencentcloud/ga2/v20250115/model/Tag.h
+  include/tencentcloud/ga2/v20250115/model/CreateGlobalAcceleratorRequest.h
   include/tencentcloud/ga2/v20250115/model/DescribeCrossBorderSettlementRequest.h
   include/tencentcloud/ga2/v20250115/model/DescribeCrossBorderSettlementResponse.h
   )
 
 set(ga2_src
   src/v20250115/Ga2Client.cpp
+  src/v20250115/model/CreateGlobalAcceleratorResponse.cpp
+  src/v20250115/model/Tag.cpp
+  src/v20250115/model/CreateGlobalAcceleratorRequest.cpp
   src/v20250115/model/DescribeCrossBorderSettlementRequest.cpp
   src/v20250115/model/DescribeCrossBorderSettlementResponse.cpp
   )

@@ -40,6 +40,56 @@ Ga2Client::Ga2Client(const Credential &credential, const string &region, const C
 }
 
 
+Ga2Client::CreateGlobalAcceleratorOutcome Ga2Client::CreateGlobalAccelerator(const CreateGlobalAcceleratorRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGlobalAccelerator");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGlobalAcceleratorResponse rsp = CreateGlobalAcceleratorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGlobalAcceleratorOutcome(rsp);
+        else
+            return CreateGlobalAcceleratorOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGlobalAcceleratorOutcome(outcome.GetError());
+    }
+}
+
+void Ga2Client::CreateGlobalAcceleratorAsync(const CreateGlobalAcceleratorRequest& request, const CreateGlobalAcceleratorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateGlobalAcceleratorRequest&;
+    using Resp = CreateGlobalAcceleratorResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateGlobalAccelerator", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+Ga2Client::CreateGlobalAcceleratorOutcomeCallable Ga2Client::CreateGlobalAcceleratorCallable(const CreateGlobalAcceleratorRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateGlobalAcceleratorOutcome>>();
+    CreateGlobalAcceleratorAsync(
+    request,
+    [prom](
+        const Ga2Client*,
+        const CreateGlobalAcceleratorRequest&,
+        CreateGlobalAcceleratorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 Ga2Client::DescribeCrossBorderSettlementOutcome Ga2Client::DescribeCrossBorderSettlement(const DescribeCrossBorderSettlementRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCrossBorderSettlement");

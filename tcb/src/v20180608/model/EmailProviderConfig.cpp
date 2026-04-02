@@ -22,7 +22,8 @@ using namespace std;
 
 EmailProviderConfig::EmailProviderConfig() :
     m_smtpConfigHasBeenSet(false),
-    m_onHasBeenSet(false)
+    m_onHasBeenSet(false),
+    m_templateConfigHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,23 @@ CoreInternalOutcome EmailProviderConfig::Deserialize(const rapidjson::Value &val
         m_onHasBeenSet = true;
     }
 
+    if (value.HasMember("TemplateConfig") && !value["TemplateConfig"].IsNull())
+    {
+        if (!value["TemplateConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmailProviderConfig.TemplateConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_templateConfig.Deserialize(value["TemplateConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_templateConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +98,15 @@ void EmailProviderConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "On";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_on.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_templateConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_templateConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -115,5 +142,21 @@ void EmailProviderConfig::SetOn(const string& _on)
 bool EmailProviderConfig::OnHasBeenSet() const
 {
     return m_onHasBeenSet;
+}
+
+EmailTemplateConfig EmailProviderConfig::GetTemplateConfig() const
+{
+    return m_templateConfig;
+}
+
+void EmailProviderConfig::SetTemplateConfig(const EmailTemplateConfig& _templateConfig)
+{
+    m_templateConfig = _templateConfig;
+    m_templateConfigHasBeenSet = true;
+}
+
+bool EmailProviderConfig::TemplateConfigHasBeenSet() const
+{
+    return m_templateConfigHasBeenSet;
 }
 

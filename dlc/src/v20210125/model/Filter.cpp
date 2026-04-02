@@ -22,6 +22,7 @@ using namespace std;
 
 Filter::Filter() :
     m_nameHasBeenSet(false),
+    m_operatorHasBeenSet(false),
     m_valuesHasBeenSet(false)
 {
 }
@@ -39,6 +40,16 @@ CoreInternalOutcome Filter::Deserialize(const rapidjson::Value &value)
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Operator") && !value["Operator"].IsNull())
+    {
+        if (!value["Operator"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Filter.Operator` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operator = string(value["Operator"].GetString());
+        m_operatorHasBeenSet = true;
     }
 
     if (value.HasMember("Values") && !value["Values"].IsNull())
@@ -67,6 +78,14 @@ void Filter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operator.c_str(), allocator).Move(), allocator);
     }
 
     if (m_valuesHasBeenSet)
@@ -99,6 +118,22 @@ void Filter::SetName(const string& _name)
 bool Filter::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string Filter::GetOperator() const
+{
+    return m_operator;
+}
+
+void Filter::SetOperator(const string& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool Filter::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 vector<string> Filter::GetValues() const

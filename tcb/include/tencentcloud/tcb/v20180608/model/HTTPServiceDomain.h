@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcb/v20180608/model/HTTPServiceRoute.h>
+#include <tencentcloud/tcb/v20180608/model/HTTPServiceExtension.h>
 
 
 namespace TencentCloud
@@ -279,6 +280,27 @@ namespace TencentCloud
                     bool RoutesHasBeenSet() const;
 
                     /**
+                     * 获取扩展字段，内部包含headers处理等
+                     * @return Extension 扩展字段，内部包含headers处理等
+                     * 
+                     */
+                    HTTPServiceExtension GetExtension() const;
+
+                    /**
+                     * 设置扩展字段，内部包含headers处理等
+                     * @param _extension 扩展字段，内部包含headers处理等
+                     * 
+                     */
+                    void SetExtension(const HTTPServiceExtension& _extension);
+
+                    /**
+                     * 判断参数 Extension 是否已赋值
+                     * @return Extension 是否已赋值
+                     * 
+                     */
+                    bool ExtensionHasBeenSet() const;
+
+                    /**
                      * 获取域名创建时间
                      * @return CreateTime 域名创建时间
                      * 
@@ -387,6 +409,12 @@ namespace TencentCloud
                      */
                     std::vector<HTTPServiceRoute> m_routes;
                     bool m_routesHasBeenSet;
+
+                    /**
+                     * 扩展字段，内部包含headers处理等
+                     */
+                    HTTPServiceExtension m_extension;
+                    bool m_extensionHasBeenSet;
 
                     /**
                      * 域名创建时间

@@ -49,27 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取AI生图场景类型，可选值：
-- change_clothes：AI换衣。
-- product_image：AI生商品图。
-- outpainting: AI扩图。
-                     * @return Type AI生图场景类型，可选值：
-- change_clothes：AI换衣。
-- product_image：AI生商品图。
-- outpainting: AI扩图。
+                     * 获取<p>AI生图场景类型，可选值：</p><ul><li>change_clothes：常规场景换衣。</li><li>change_clothes_under：特殊场景换衣。</li><li>change_clothes_top_wear：上半身换衣。</li><li>change_clothes_bottom_wear：下半身换衣。</li><li>change_clothes_full_wear：全身换衣。</li><li>product_image：AI生商品图。</li><li>outpainting: AI扩图。</li></ul>
+                     * @return Type <p>AI生图场景类型，可选值：</p><ul><li>change_clothes：常规场景换衣。</li><li>change_clothes_under：特殊场景换衣。</li><li>change_clothes_top_wear：上半身换衣。</li><li>change_clothes_bottom_wear：下半身换衣。</li><li>change_clothes_full_wear：全身换衣。</li><li>product_image：AI生商品图。</li><li>outpainting: AI扩图。</li></ul>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置AI生图场景类型，可选值：
-- change_clothes：AI换衣。
-- product_image：AI生商品图。
-- outpainting: AI扩图。
-                     * @param _type AI生图场景类型，可选值：
-- change_clothes：AI换衣。
-- product_image：AI生商品图。
-- outpainting: AI扩图。
+                     * 设置<p>AI生图场景类型，可选值：</p><ul><li>change_clothes：常规场景换衣。</li><li>change_clothes_under：特殊场景换衣。</li><li>change_clothes_top_wear：上半身换衣。</li><li>change_clothes_bottom_wear：下半身换衣。</li><li>change_clothes_full_wear：全身换衣。</li><li>product_image：AI生商品图。</li><li>outpainting: AI扩图。</li></ul>
+                     * @param _type <p>AI生图场景类型，可选值：</p><ul><li>change_clothes：常规场景换衣。</li><li>change_clothes_under：特殊场景换衣。</li><li>change_clothes_top_wear：上半身换衣。</li><li>change_clothes_bottom_wear：下半身换衣。</li><li>change_clothes_full_wear：全身换衣。</li><li>product_image：AI生商品图。</li><li>outpainting: AI扩图。</li></ul>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -82,15 +70,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取当 Type 为 change_clothes 时有效，则该项为必填，表示AI 换衣生图配置参数。
-                     * @return ChangeClothesConfig 当 Type 为 change_clothes 时有效，则该项为必填，表示AI 换衣生图配置参数。
+                     * 获取<p>当 Type 下列类型时，则该项为必填，表示AI 换衣生图配置参数：</p><ul><li>change_clothes</li><li>change_clothes_under</li><li>change_clothes_full_wear</li><li>change_clothes_top_wear</li><li>change_clothes_bottom_wear</li></ul>
+                     * @return ChangeClothesConfig <p>当 Type 下列类型时，则该项为必填，表示AI 换衣生图配置参数：</p><ul><li>change_clothes</li><li>change_clothes_under</li><li>change_clothes_full_wear</li><li>change_clothes_top_wear</li><li>change_clothes_bottom_wear</li></ul>
                      * 
                      */
                     ChangeClothesConfig GetChangeClothesConfig() const;
 
                     /**
-                     * 设置当 Type 为 change_clothes 时有效，则该项为必填，表示AI 换衣生图配置参数。
-                     * @param _changeClothesConfig 当 Type 为 change_clothes 时有效，则该项为必填，表示AI 换衣生图配置参数。
+                     * 设置<p>当 Type 下列类型时，则该项为必填，表示AI 换衣生图配置参数：</p><ul><li>change_clothes</li><li>change_clothes_under</li><li>change_clothes_full_wear</li><li>change_clothes_top_wear</li><li>change_clothes_bottom_wear</li></ul>
+                     * @param _changeClothesConfig <p>当 Type 下列类型时，则该项为必填，表示AI 换衣生图配置参数：</p><ul><li>change_clothes</li><li>change_clothes_under</li><li>change_clothes_full_wear</li><li>change_clothes_top_wear</li><li>change_clothes_bottom_wear</li></ul>
                      * 
                      */
                     void SetChangeClothesConfig(const ChangeClothesConfig& _changeClothesConfig);
@@ -103,15 +91,15 @@ namespace TencentCloud
                     bool ChangeClothesConfigHasBeenSet() const;
 
                     /**
-                     * 获取当 Type 为 product_image 时有效，表示AI 生商品图配置参数。
-                     * @return ProductImageConfig 当 Type 为 product_image 时有效，表示AI 生商品图配置参数。
+                     * 获取<p>当 Type 为 product_image 时有效，表示AI 生商品图配置参数。</p>
+                     * @return ProductImageConfig <p>当 Type 为 product_image 时有效，表示AI 生商品图配置参数。</p>
                      * 
                      */
                     ProductImageConfig GetProductImageConfig() const;
 
                     /**
-                     * 设置当 Type 为 product_image 时有效，表示AI 生商品图配置参数。
-                     * @param _productImageConfig 当 Type 为 product_image 时有效，表示AI 生商品图配置参数。
+                     * 设置<p>当 Type 为 product_image 时有效，表示AI 生商品图配置参数。</p>
+                     * @param _productImageConfig <p>当 Type 为 product_image 时有效，表示AI 生商品图配置参数。</p>
                      * 
                      */
                     void SetProductImageConfig(const ProductImageConfig& _productImageConfig);
@@ -126,22 +114,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * AI生图场景类型，可选值：
-- change_clothes：AI换衣。
-- product_image：AI生商品图。
-- outpainting: AI扩图。
+                     * <p>AI生图场景类型，可选值：</p><ul><li>change_clothes：常规场景换衣。</li><li>change_clothes_under：特殊场景换衣。</li><li>change_clothes_top_wear：上半身换衣。</li><li>change_clothes_bottom_wear：下半身换衣。</li><li>change_clothes_full_wear：全身换衣。</li><li>product_image：AI生商品图。</li><li>outpainting: AI扩图。</li></ul>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 当 Type 为 change_clothes 时有效，则该项为必填，表示AI 换衣生图配置参数。
+                     * <p>当 Type 下列类型时，则该项为必填，表示AI 换衣生图配置参数：</p><ul><li>change_clothes</li><li>change_clothes_under</li><li>change_clothes_full_wear</li><li>change_clothes_top_wear</li><li>change_clothes_bottom_wear</li></ul>
                      */
                     ChangeClothesConfig m_changeClothesConfig;
                     bool m_changeClothesConfigHasBeenSet;
 
                     /**
-                     * 当 Type 为 product_image 时有效，表示AI 生商品图配置参数。
+                     * <p>当 Type 为 product_image 时有效，表示AI 生商品图配置参数。</p>
                      */
                     ProductImageConfig m_productImageConfig;
                     bool m_productImageConfigHasBeenSet;

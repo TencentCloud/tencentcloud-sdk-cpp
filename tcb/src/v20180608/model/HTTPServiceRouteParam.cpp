@@ -29,7 +29,8 @@ HTTPServiceRouteParam::HTTPServiceRouteParam() :
     m_enableAuthHasBeenSet(false),
     m_enablePathTransmissionHasBeenSet(false),
     m_qPSPolicyHasBeenSet(false),
-    m_enableHasBeenSet(false)
+    m_enableHasBeenSet(false),
+    m_extensionHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,23 @@ CoreInternalOutcome HTTPServiceRouteParam::Deserialize(const rapidjson::Value &v
         m_enableHasBeenSet = true;
     }
 
+    if (value.HasMember("Extension") && !value["Extension"].IsNull())
+    {
+        if (!value["Extension"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `HTTPServiceRouteParam.Extension` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extension.Deserialize(value["Extension"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extensionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +239,15 @@ void HTTPServiceRouteParam::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Enable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enable, allocator);
+    }
+
+    if (m_extensionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Extension";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extension.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -368,5 +395,21 @@ void HTTPServiceRouteParam::SetEnable(const bool& _enable)
 bool HTTPServiceRouteParam::EnableHasBeenSet() const
 {
     return m_enableHasBeenSet;
+}
+
+HTTPServiceExtension HTTPServiceRouteParam::GetExtension() const
+{
+    return m_extension;
+}
+
+void HTTPServiceRouteParam::SetExtension(const HTTPServiceExtension& _extension)
+{
+    m_extension = _extension;
+    m_extensionHasBeenSet = true;
+}
+
+bool HTTPServiceRouteParam::ExtensionHasBeenSet() const
+{
+    return m_extensionHasBeenSet;
 }
 
