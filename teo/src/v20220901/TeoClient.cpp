@@ -890,6 +890,56 @@ TeoClient::CreateDnsRecordOutcomeCallable TeoClient::CreateDnsRecordCallable(con
     return prom->get_future();
 }
 
+TeoClient::CreateEdgeKVNamespaceOutcome TeoClient::CreateEdgeKVNamespace(const CreateEdgeKVNamespaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEdgeKVNamespace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEdgeKVNamespaceResponse rsp = CreateEdgeKVNamespaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEdgeKVNamespaceOutcome(rsp);
+        else
+            return CreateEdgeKVNamespaceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEdgeKVNamespaceOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateEdgeKVNamespaceAsync(const CreateEdgeKVNamespaceRequest& request, const CreateEdgeKVNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateEdgeKVNamespaceRequest&;
+    using Resp = CreateEdgeKVNamespaceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateEdgeKVNamespace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::CreateEdgeKVNamespaceOutcomeCallable TeoClient::CreateEdgeKVNamespaceCallable(const CreateEdgeKVNamespaceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateEdgeKVNamespaceOutcome>>();
+    CreateEdgeKVNamespaceAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const CreateEdgeKVNamespaceRequest&,
+        CreateEdgeKVNamespaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TeoClient::CreateFunctionOutcome TeoClient::CreateFunction(const CreateFunctionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFunction");
@@ -2482,6 +2532,56 @@ TeoClient::DeleteDnsRecordsOutcomeCallable TeoClient::DeleteDnsRecordsCallable(c
         const TeoClient*,
         const DeleteDnsRecordsRequest&,
         DeleteDnsRecordsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::DeleteEdgeKVNamespaceOutcome TeoClient::DeleteEdgeKVNamespace(const DeleteEdgeKVNamespaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteEdgeKVNamespace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteEdgeKVNamespaceResponse rsp = DeleteEdgeKVNamespaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteEdgeKVNamespaceOutcome(rsp);
+        else
+            return DeleteEdgeKVNamespaceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteEdgeKVNamespaceOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DeleteEdgeKVNamespaceAsync(const DeleteEdgeKVNamespaceRequest& request, const DeleteEdgeKVNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteEdgeKVNamespaceRequest&;
+    using Resp = DeleteEdgeKVNamespaceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteEdgeKVNamespace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DeleteEdgeKVNamespaceOutcomeCallable TeoClient::DeleteEdgeKVNamespaceCallable(const DeleteEdgeKVNamespaceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteEdgeKVNamespaceOutcome>>();
+    DeleteEdgeKVNamespaceAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DeleteEdgeKVNamespaceRequest&,
+        DeleteEdgeKVNamespaceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4390,6 +4490,56 @@ TeoClient::DescribeDnsRecordsOutcomeCallable TeoClient::DescribeDnsRecordsCallab
     return prom->get_future();
 }
 
+TeoClient::DescribeEdgeKVNamespacesOutcome TeoClient::DescribeEdgeKVNamespaces(const DescribeEdgeKVNamespacesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEdgeKVNamespaces");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEdgeKVNamespacesResponse rsp = DescribeEdgeKVNamespacesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEdgeKVNamespacesOutcome(rsp);
+        else
+            return DescribeEdgeKVNamespacesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEdgeKVNamespacesOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeEdgeKVNamespacesAsync(const DescribeEdgeKVNamespacesRequest& request, const DescribeEdgeKVNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeEdgeKVNamespacesRequest&;
+    using Resp = DescribeEdgeKVNamespacesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeEdgeKVNamespaces", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeEdgeKVNamespacesOutcomeCallable TeoClient::DescribeEdgeKVNamespacesCallable(const DescribeEdgeKVNamespacesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeEdgeKVNamespacesOutcome>>();
+    DescribeEdgeKVNamespacesAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeEdgeKVNamespacesRequest&,
+        DescribeEdgeKVNamespacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TeoClient::DescribeEnvironmentsOutcome TeoClient::DescribeEnvironments(const DescribeEnvironmentsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEnvironments");
@@ -4432,6 +4582,56 @@ TeoClient::DescribeEnvironmentsOutcomeCallable TeoClient::DescribeEnvironmentsCa
         const TeoClient*,
         const DescribeEnvironmentsRequest&,
         DescribeEnvironmentsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::DescribeFunctionComponentBindingsOutcome TeoClient::DescribeFunctionComponentBindings(const DescribeFunctionComponentBindingsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFunctionComponentBindings");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFunctionComponentBindingsResponse rsp = DescribeFunctionComponentBindingsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFunctionComponentBindingsOutcome(rsp);
+        else
+            return DescribeFunctionComponentBindingsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFunctionComponentBindingsOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeFunctionComponentBindingsAsync(const DescribeFunctionComponentBindingsRequest& request, const DescribeFunctionComponentBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeFunctionComponentBindingsRequest&;
+    using Resp = DescribeFunctionComponentBindingsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeFunctionComponentBindings", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeFunctionComponentBindingsOutcomeCallable TeoClient::DescribeFunctionComponentBindingsCallable(const DescribeFunctionComponentBindingsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeFunctionComponentBindingsOutcome>>();
+    DescribeFunctionComponentBindingsAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeFunctionComponentBindingsRequest&,
+        DescribeFunctionComponentBindingsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -7190,6 +7390,206 @@ TeoClient::DownloadL7LogsOutcomeCallable TeoClient::DownloadL7LogsCallable(const
     return prom->get_future();
 }
 
+TeoClient::EdgeKVDeleteOutcome TeoClient::EdgeKVDelete(const EdgeKVDeleteRequest &request)
+{
+    auto outcome = MakeRequest(request, "EdgeKVDelete");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EdgeKVDeleteResponse rsp = EdgeKVDeleteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EdgeKVDeleteOutcome(rsp);
+        else
+            return EdgeKVDeleteOutcome(o.GetError());
+    }
+    else
+    {
+        return EdgeKVDeleteOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::EdgeKVDeleteAsync(const EdgeKVDeleteRequest& request, const EdgeKVDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EdgeKVDeleteRequest&;
+    using Resp = EdgeKVDeleteResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EdgeKVDelete", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::EdgeKVDeleteOutcomeCallable TeoClient::EdgeKVDeleteCallable(const EdgeKVDeleteRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EdgeKVDeleteOutcome>>();
+    EdgeKVDeleteAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const EdgeKVDeleteRequest&,
+        EdgeKVDeleteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::EdgeKVGetOutcome TeoClient::EdgeKVGet(const EdgeKVGetRequest &request)
+{
+    auto outcome = MakeRequest(request, "EdgeKVGet");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EdgeKVGetResponse rsp = EdgeKVGetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EdgeKVGetOutcome(rsp);
+        else
+            return EdgeKVGetOutcome(o.GetError());
+    }
+    else
+    {
+        return EdgeKVGetOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::EdgeKVGetAsync(const EdgeKVGetRequest& request, const EdgeKVGetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EdgeKVGetRequest&;
+    using Resp = EdgeKVGetResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EdgeKVGet", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::EdgeKVGetOutcomeCallable TeoClient::EdgeKVGetCallable(const EdgeKVGetRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EdgeKVGetOutcome>>();
+    EdgeKVGetAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const EdgeKVGetRequest&,
+        EdgeKVGetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::EdgeKVListOutcome TeoClient::EdgeKVList(const EdgeKVListRequest &request)
+{
+    auto outcome = MakeRequest(request, "EdgeKVList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EdgeKVListResponse rsp = EdgeKVListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EdgeKVListOutcome(rsp);
+        else
+            return EdgeKVListOutcome(o.GetError());
+    }
+    else
+    {
+        return EdgeKVListOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::EdgeKVListAsync(const EdgeKVListRequest& request, const EdgeKVListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EdgeKVListRequest&;
+    using Resp = EdgeKVListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EdgeKVList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::EdgeKVListOutcomeCallable TeoClient::EdgeKVListCallable(const EdgeKVListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EdgeKVListOutcome>>();
+    EdgeKVListAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const EdgeKVListRequest&,
+        EdgeKVListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::EdgeKVPutOutcome TeoClient::EdgeKVPut(const EdgeKVPutRequest &request)
+{
+    auto outcome = MakeRequest(request, "EdgeKVPut");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EdgeKVPutResponse rsp = EdgeKVPutResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EdgeKVPutOutcome(rsp);
+        else
+            return EdgeKVPutOutcome(o.GetError());
+    }
+    else
+    {
+        return EdgeKVPutOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::EdgeKVPutAsync(const EdgeKVPutRequest& request, const EdgeKVPutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EdgeKVPutRequest&;
+    using Resp = EdgeKVPutResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EdgeKVPut", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::EdgeKVPutOutcomeCallable TeoClient::EdgeKVPutCallable(const EdgeKVPutRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EdgeKVPutOutcome>>();
+    EdgeKVPutAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const EdgeKVPutRequest&,
+        EdgeKVPutOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TeoClient::EnableOriginACLOutcome TeoClient::EnableOriginACL(const EnableOriginACLRequest &request)
 {
     auto outcome = MakeRequest(request, "EnableOriginACL");
@@ -8140,6 +8540,56 @@ TeoClient::ModifyDnsRecordsStatusOutcomeCallable TeoClient::ModifyDnsRecordsStat
     return prom->get_future();
 }
 
+TeoClient::ModifyEdgeKVNamespaceOutcome TeoClient::ModifyEdgeKVNamespace(const ModifyEdgeKVNamespaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyEdgeKVNamespace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyEdgeKVNamespaceResponse rsp = ModifyEdgeKVNamespaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyEdgeKVNamespaceOutcome(rsp);
+        else
+            return ModifyEdgeKVNamespaceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyEdgeKVNamespaceOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyEdgeKVNamespaceAsync(const ModifyEdgeKVNamespaceRequest& request, const ModifyEdgeKVNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyEdgeKVNamespaceRequest&;
+    using Resp = ModifyEdgeKVNamespaceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyEdgeKVNamespace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::ModifyEdgeKVNamespaceOutcomeCallable TeoClient::ModifyEdgeKVNamespaceCallable(const ModifyEdgeKVNamespaceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyEdgeKVNamespaceOutcome>>();
+    ModifyEdgeKVNamespaceAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const ModifyEdgeKVNamespaceRequest&,
+        ModifyEdgeKVNamespaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TeoClient::ModifyFunctionOutcome TeoClient::ModifyFunction(const ModifyFunctionRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyFunction");
@@ -8182,6 +8632,56 @@ TeoClient::ModifyFunctionOutcomeCallable TeoClient::ModifyFunctionCallable(const
         const TeoClient*,
         const ModifyFunctionRequest&,
         ModifyFunctionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::ModifyFunctionComponentBindingsOutcome TeoClient::ModifyFunctionComponentBindings(const ModifyFunctionComponentBindingsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyFunctionComponentBindings");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyFunctionComponentBindingsResponse rsp = ModifyFunctionComponentBindingsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyFunctionComponentBindingsOutcome(rsp);
+        else
+            return ModifyFunctionComponentBindingsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyFunctionComponentBindingsOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyFunctionComponentBindingsAsync(const ModifyFunctionComponentBindingsRequest& request, const ModifyFunctionComponentBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyFunctionComponentBindingsRequest&;
+    using Resp = ModifyFunctionComponentBindingsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyFunctionComponentBindings", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::ModifyFunctionComponentBindingsOutcomeCallable TeoClient::ModifyFunctionComponentBindingsCallable(const ModifyFunctionComponentBindingsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyFunctionComponentBindingsOutcome>>();
+    ModifyFunctionComponentBindingsAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const ModifyFunctionComponentBindingsRequest&,
+        ModifyFunctionComponentBindingsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

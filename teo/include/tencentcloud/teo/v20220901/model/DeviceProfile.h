@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取客户端设备类型。取值有：<li>iOS；</li><li>Android；</li><li>WebView。</li>
-                     * @return ClientType 客户端设备类型。取值有：<li>iOS；</li><li>Android；</li><li>WebView。</li>
+                     * 获取客户端设备类型。取值有：<li>iOS；</li><li>Android；</li><li>WebView；</li><li>WeChatMiniProgram。</li>
+                     * @return ClientType 客户端设备类型。取值有：<li>iOS；</li><li>Android；</li><li>WebView；</li><li>WeChatMiniProgram。</li>
                      * 
                      */
                     std::string GetClientType() const;
 
                     /**
-                     * 设置客户端设备类型。取值有：<li>iOS；</li><li>Android；</li><li>WebView。</li>
-                     * @param _clientType 客户端设备类型。取值有：<li>iOS；</li><li>Android；</li><li>WebView。</li>
+                     * 设置客户端设备类型。取值有：<li>iOS；</li><li>Android；</li><li>WebView；</li><li>WeChatMiniProgram。</li>
+                     * @param _clientType 客户端设备类型。取值有：<li>iOS；</li><li>Android；</li><li>WebView；</li><li>WeChatMiniProgram。</li>
                      * 
                      */
                     void SetClientType(const std::string& _clientType);
@@ -155,7 +155,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 客户端设备类型。取值有：<li>iOS；</li><li>Android；</li><li>WebView。</li>
+                     * 客户端设备类型。取值有：<li>iOS；</li><li>Android；</li><li>WebView；</li><li>WeChatMiniProgram。</li>
                      */
                     std::string m_clientType;
                     bool m_clientTypeHasBeenSet;

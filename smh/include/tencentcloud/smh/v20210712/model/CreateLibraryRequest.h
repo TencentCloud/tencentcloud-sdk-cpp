@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体库名称，最多 50 个字符
-                     * @return Name 媒体库名称，最多 50 个字符
+                     * 获取<p>媒体库名称，最多 50 个字符</p>
+                     * @return Name <p>媒体库名称，最多 50 个字符</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置媒体库名称，最多 50 个字符
-                     * @param _name 媒体库名称，最多 50 个字符
+                     * 设置<p>媒体库名称，最多 50 个字符</p>
+                     * @param _name <p>媒体库名称，最多 50 个字符</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取备注，最多 250 个字符
-                     * @return Remark 备注，最多 250 个字符
+                     * 获取<p>备注，最多 250 个字符</p>
+                     * @return Remark <p>备注，最多 250 个字符</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注，最多 250 个字符
-                     * @param _remark 备注，最多 250 个字符
+                     * 设置<p>备注，最多 250 个字符</p>
+                     * @param _remark <p>备注，最多 250 个字符</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取存储桶全名，新建后不可更改。当前版本不再支持指定存储桶。
-                     * @return BucketName 存储桶全名，新建后不可更改。当前版本不再支持指定存储桶。
+                     * 获取<p>存储桶全名，新建后不可更改。当前版本不再支持指定存储桶。</p>
+                     * @return BucketName <p>存储桶全名，新建后不可更改。当前版本不再支持指定存储桶。</p>
                      * 
                      */
                     std::string GetBucketName() const;
 
                     /**
-                     * 设置存储桶全名，新建后不可更改。当前版本不再支持指定存储桶。
-                     * @param _bucketName 存储桶全名，新建后不可更改。当前版本不再支持指定存储桶。
+                     * 设置<p>存储桶全名，新建后不可更改。当前版本不再支持指定存储桶。</p>
+                     * @param _bucketName <p>存储桶全名，新建后不可更改。当前版本不再支持指定存储桶。</p>
                      * 
                      */
                     void SetBucketName(const std::string& _bucketName);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool BucketNameHasBeenSet() const;
 
                     /**
-                     * 获取存储桶所在地域，新建后不可更改。当前版本不再支持指定存储桶所在地域。
-                     * @return BucketRegion 存储桶所在地域，新建后不可更改。当前版本不再支持指定存储桶所在地域。
+                     * 获取<p>存储桶所在地域，新建后不可更改。当前版本不再支持指定存储桶所在地域。</p>
+                     * @return BucketRegion <p>存储桶所在地域，新建后不可更改。当前版本不再支持指定存储桶所在地域。</p>
                      * 
                      */
                     std::string GetBucketRegion() const;
 
                     /**
-                     * 设置存储桶所在地域，新建后不可更改。当前版本不再支持指定存储桶所在地域。
-                     * @param _bucketRegion 存储桶所在地域，新建后不可更改。当前版本不再支持指定存储桶所在地域。
+                     * 设置<p>存储桶所在地域，新建后不可更改。当前版本不再支持指定存储桶所在地域。</p>
+                     * @param _bucketRegion <p>存储桶所在地域，新建后不可更改。当前版本不再支持指定存储桶所在地域。</p>
                      * 
                      */
                     void SetBucketRegion(const std::string& _bucketRegion);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool BucketRegionHasBeenSet() const;
 
                     /**
-                     * 获取媒体库配置项，部分参数新建后不可更改
-                     * @return LibraryExtension 媒体库配置项，部分参数新建后不可更改
+                     * 获取<p>媒体库配置项，部分参数新建后不可更改</p>
+                     * @return LibraryExtension <p>媒体库配置项，部分参数新建后不可更改</p>
                      * 
                      */
                     LibraryExtension GetLibraryExtension() const;
 
                     /**
-                     * 设置媒体库配置项，部分参数新建后不可更改
-                     * @param _libraryExtension 媒体库配置项，部分参数新建后不可更改
+                     * 设置<p>媒体库配置项，部分参数新建后不可更改</p>
+                     * @param _libraryExtension <p>媒体库配置项，部分参数新建后不可更改</p>
                      * 
                      */
                     void SetLibraryExtension(const LibraryExtension& _libraryExtension);
@@ -151,31 +151,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒体库名称，最多 50 个字符
+                     * <p>媒体库名称，最多 50 个字符</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 备注，最多 250 个字符
+                     * <p>备注，最多 250 个字符</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 存储桶全名，新建后不可更改。当前版本不再支持指定存储桶。
+                     * <p>存储桶全名，新建后不可更改。当前版本不再支持指定存储桶。</p>
                      */
                     std::string m_bucketName;
                     bool m_bucketNameHasBeenSet;
 
                     /**
-                     * 存储桶所在地域，新建后不可更改。当前版本不再支持指定存储桶所在地域。
+                     * <p>存储桶所在地域，新建后不可更改。当前版本不再支持指定存储桶所在地域。</p>
                      */
                     std::string m_bucketRegion;
                     bool m_bucketRegionHasBeenSet;
 
                     /**
-                     * 媒体库配置项，部分参数新建后不可更改
+                     * <p>媒体库配置项，部分参数新建后不可更改</p>
                      */
                     LibraryExtension m_libraryExtension;
                     bool m_libraryExtensionHasBeenSet;

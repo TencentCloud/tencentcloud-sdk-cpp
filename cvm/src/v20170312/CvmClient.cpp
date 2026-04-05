@@ -840,6 +840,56 @@ CvmClient::DeleteInstancesActionTimerOutcomeCallable CvmClient::DeleteInstancesA
     return prom->get_future();
 }
 
+CvmClient::DeleteInstancesDisasterRecoverGroupsOutcome CvmClient::DeleteInstancesDisasterRecoverGroups(const DeleteInstancesDisasterRecoverGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteInstancesDisasterRecoverGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteInstancesDisasterRecoverGroupsResponse rsp = DeleteInstancesDisasterRecoverGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteInstancesDisasterRecoverGroupsOutcome(rsp);
+        else
+            return DeleteInstancesDisasterRecoverGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteInstancesDisasterRecoverGroupsOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::DeleteInstancesDisasterRecoverGroupsAsync(const DeleteInstancesDisasterRecoverGroupsRequest& request, const DeleteInstancesDisasterRecoverGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteInstancesDisasterRecoverGroupsRequest&;
+    using Resp = DeleteInstancesDisasterRecoverGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteInstancesDisasterRecoverGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CvmClient::DeleteInstancesDisasterRecoverGroupsOutcomeCallable CvmClient::DeleteInstancesDisasterRecoverGroupsCallable(const DeleteInstancesDisasterRecoverGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteInstancesDisasterRecoverGroupsOutcome>>();
+    DeleteInstancesDisasterRecoverGroupsAsync(
+    request,
+    [prom](
+        const CvmClient*,
+        const DeleteInstancesDisasterRecoverGroupsRequest&,
+        DeleteInstancesDisasterRecoverGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CvmClient::DeleteKeyPairsOutcome CvmClient::DeleteKeyPairs(const DeleteKeyPairsRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteKeyPairs");

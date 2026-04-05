@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取删除虚拟集群的名称数组
-                     * @return DataEngineNames 删除虚拟集群的名称数组
+                     * 获取<p>删除虚拟集群的名称数组</p>
+                     * @return DataEngineNames <p>删除虚拟集群的名称数组</p>
                      * 
                      */
                     std::vector<std::string> GetDataEngineNames() const;
 
                     /**
-                     * 设置删除虚拟集群的名称数组
-                     * @param _dataEngineNames 删除虚拟集群的名称数组
+                     * 设置<p>删除虚拟集群的名称数组</p>
+                     * @param _dataEngineNames <p>删除虚拟集群的名称数组</p>
                      * 
                      */
                     void SetDataEngineNames(const std::vector<std::string>& _dataEngineNames);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 删除虚拟集群的名称数组
+                     * <p>删除虚拟集群的名称数组</p>
                      */
                     std::vector<std::string> m_dataEngineNames;
                     bool m_dataEngineNamesHasBeenSet;

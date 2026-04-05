@@ -25,7 +25,9 @@ using namespace std;
 DescribeLibrariesRequest::DescribeLibrariesRequest() :
     m_libraryIdsHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,22 @@ string DescribeLibrariesRequest::ToJsonString() const
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
 
@@ -119,6 +137,38 @@ void DescribeLibrariesRequest::SetPageSize(const uint64_t& _pageSize)
 bool DescribeLibrariesRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+uint64_t DescribeLibrariesRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeLibrariesRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeLibrariesRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+uint64_t DescribeLibrariesRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeLibrariesRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeLibrariesRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 

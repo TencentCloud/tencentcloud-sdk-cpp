@@ -27,7 +27,8 @@ SecurityPolicy::SecurityPolicy() :
     m_rateLimitingRulesHasBeenSet(false),
     m_exceptionRulesHasBeenSet(false),
     m_botManagementHasBeenSet(false),
-    m_botManagementLiteHasBeenSet(false)
+    m_botManagementLiteHasBeenSet(false),
+    m_defaultDenySecurityActionParametersHasBeenSet(false)
 {
 }
 
@@ -155,6 +156,23 @@ CoreInternalOutcome SecurityPolicy::Deserialize(const rapidjson::Value &value)
         m_botManagementLiteHasBeenSet = true;
     }
 
+    if (value.HasMember("DefaultDenySecurityActionParameters") && !value["DefaultDenySecurityActionParameters"].IsNull())
+    {
+        if (!value["DefaultDenySecurityActionParameters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityPolicy.DefaultDenySecurityActionParameters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_defaultDenySecurityActionParameters.Deserialize(value["DefaultDenySecurityActionParameters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_defaultDenySecurityActionParametersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -223,6 +241,15 @@ void SecurityPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_botManagementLite.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_defaultDenySecurityActionParametersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultDenySecurityActionParameters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_defaultDenySecurityActionParameters.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -338,5 +365,21 @@ void SecurityPolicy::SetBotManagementLite(const BotManagementLite& _botManagemen
 bool SecurityPolicy::BotManagementLiteHasBeenSet() const
 {
     return m_botManagementLiteHasBeenSet;
+}
+
+DefaultDenySecurityActionParameters SecurityPolicy::GetDefaultDenySecurityActionParameters() const
+{
+    return m_defaultDenySecurityActionParameters;
+}
+
+void SecurityPolicy::SetDefaultDenySecurityActionParameters(const DefaultDenySecurityActionParameters& _defaultDenySecurityActionParameters)
+{
+    m_defaultDenySecurityActionParameters = _defaultDenySecurityActionParameters;
+    m_defaultDenySecurityActionParametersHasBeenSet = true;
+}
+
+bool SecurityPolicy::DefaultDenySecurityActionParametersHasBeenSet() const
+{
+    return m_defaultDenySecurityActionParametersHasBeenSet;
 }
 

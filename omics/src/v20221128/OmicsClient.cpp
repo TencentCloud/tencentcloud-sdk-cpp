@@ -340,6 +340,106 @@ OmicsClient::DescribeEnvironmentsOutcomeCallable OmicsClient::DescribeEnvironmen
     return prom->get_future();
 }
 
+OmicsClient::DescribeHPCClustersOutcome OmicsClient::DescribeHPCClusters(const DescribeHPCClustersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHPCClusters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHPCClustersResponse rsp = DescribeHPCClustersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHPCClustersOutcome(rsp);
+        else
+            return DescribeHPCClustersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHPCClustersOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::DescribeHPCClustersAsync(const DescribeHPCClustersRequest& request, const DescribeHPCClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeHPCClustersRequest&;
+    using Resp = DescribeHPCClustersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeHPCClusters", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OmicsClient::DescribeHPCClustersOutcomeCallable OmicsClient::DescribeHPCClustersCallable(const DescribeHPCClustersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeHPCClustersOutcome>>();
+    DescribeHPCClustersAsync(
+    request,
+    [prom](
+        const OmicsClient*,
+        const DescribeHPCClustersRequest&,
+        DescribeHPCClustersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+OmicsClient::DescribeHPCNodesOutcome OmicsClient::DescribeHPCNodes(const DescribeHPCNodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHPCNodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHPCNodesResponse rsp = DescribeHPCNodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHPCNodesOutcome(rsp);
+        else
+            return DescribeHPCNodesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHPCNodesOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::DescribeHPCNodesAsync(const DescribeHPCNodesRequest& request, const DescribeHPCNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeHPCNodesRequest&;
+    using Resp = DescribeHPCNodesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeHPCNodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OmicsClient::DescribeHPCNodesOutcomeCallable OmicsClient::DescribeHPCNodesCallable(const DescribeHPCNodesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeHPCNodesOutcome>>();
+    DescribeHPCNodesAsync(
+    request,
+    [prom](
+        const OmicsClient*,
+        const DescribeHPCNodesRequest&,
+        DescribeHPCNodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OmicsClient::DescribeRunGroupsOutcome OmicsClient::DescribeRunGroups(const DescribeRunGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRunGroups");
@@ -832,6 +932,56 @@ OmicsClient::ModifyVolumeOutcomeCallable OmicsClient::ModifyVolumeCallable(const
         const OmicsClient*,
         const ModifyVolumeRequest&,
         ModifyVolumeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+OmicsClient::RebootHPCNodesOutcome OmicsClient::RebootHPCNodes(const RebootHPCNodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "RebootHPCNodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RebootHPCNodesResponse rsp = RebootHPCNodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RebootHPCNodesOutcome(rsp);
+        else
+            return RebootHPCNodesOutcome(o.GetError());
+    }
+    else
+    {
+        return RebootHPCNodesOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::RebootHPCNodesAsync(const RebootHPCNodesRequest& request, const RebootHPCNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RebootHPCNodesRequest&;
+    using Resp = RebootHPCNodesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RebootHPCNodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OmicsClient::RebootHPCNodesOutcomeCallable OmicsClient::RebootHPCNodesCallable(const RebootHPCNodesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RebootHPCNodesOutcome>>();
+    RebootHPCNodesAsync(
+    request,
+    [prom](
+        const OmicsClient*,
+        const RebootHPCNodesRequest&,
+        RebootHPCNodesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

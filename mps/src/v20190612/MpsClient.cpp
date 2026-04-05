@@ -5340,6 +5340,56 @@ MpsClient::DescribeVideoSearchTaskDetailOutcomeCallable MpsClient::DescribeVideo
     return prom->get_future();
 }
 
+MpsClient::DescribeVoicesOutcome MpsClient::DescribeVoices(const DescribeVoicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVoices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVoicesResponse rsp = DescribeVoicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVoicesOutcome(rsp);
+        else
+            return DescribeVoicesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVoicesOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeVoicesAsync(const DescribeVoicesRequest& request, const DescribeVoicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeVoicesRequest&;
+    using Resp = DescribeVoicesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeVoices", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::DescribeVoicesOutcomeCallable MpsClient::DescribeVoicesCallable(const DescribeVoicesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeVoicesOutcome>>();
+    DescribeVoicesAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const DescribeVoicesRequest&,
+        DescribeVoicesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::DescribeWatermarkTemplatesOutcome MpsClient::DescribeWatermarkTemplates(const DescribeWatermarkTemplatesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeWatermarkTemplates");

@@ -35,6 +35,10 @@
 #include <tencentcloud/omics/v20221128/model/DeleteVolumeDataResponse.h>
 #include <tencentcloud/omics/v20221128/model/DescribeEnvironmentsRequest.h>
 #include <tencentcloud/omics/v20221128/model/DescribeEnvironmentsResponse.h>
+#include <tencentcloud/omics/v20221128/model/DescribeHPCClustersRequest.h>
+#include <tencentcloud/omics/v20221128/model/DescribeHPCClustersResponse.h>
+#include <tencentcloud/omics/v20221128/model/DescribeHPCNodesRequest.h>
+#include <tencentcloud/omics/v20221128/model/DescribeHPCNodesResponse.h>
 #include <tencentcloud/omics/v20221128/model/DescribeRunGroupsRequest.h>
 #include <tencentcloud/omics/v20221128/model/DescribeRunGroupsResponse.h>
 #include <tencentcloud/omics/v20221128/model/DescribeRunsRequest.h>
@@ -55,6 +59,8 @@
 #include <tencentcloud/omics/v20221128/model/ImportTableFileResponse.h>
 #include <tencentcloud/omics/v20221128/model/ModifyVolumeRequest.h>
 #include <tencentcloud/omics/v20221128/model/ModifyVolumeResponse.h>
+#include <tencentcloud/omics/v20221128/model/RebootHPCNodesRequest.h>
+#include <tencentcloud/omics/v20221128/model/RebootHPCNodesResponse.h>
 #include <tencentcloud/omics/v20221128/model/RetryRunsRequest.h>
 #include <tencentcloud/omics/v20221128/model/RetryRunsResponse.h>
 #include <tencentcloud/omics/v20221128/model/RunApplicationRequest.h>
@@ -95,6 +101,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEnvironmentsResponse> DescribeEnvironmentsOutcome;
                 typedef std::future<DescribeEnvironmentsOutcome> DescribeEnvironmentsOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::DescribeEnvironmentsRequest&, DescribeEnvironmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvironmentsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHPCClustersResponse> DescribeHPCClustersOutcome;
+                typedef std::future<DescribeHPCClustersOutcome> DescribeHPCClustersOutcomeCallable;
+                typedef std::function<void(const OmicsClient*, const Model::DescribeHPCClustersRequest&, DescribeHPCClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHPCClustersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHPCNodesResponse> DescribeHPCNodesOutcome;
+                typedef std::future<DescribeHPCNodesOutcome> DescribeHPCNodesOutcomeCallable;
+                typedef std::function<void(const OmicsClient*, const Model::DescribeHPCNodesRequest&, DescribeHPCNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHPCNodesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRunGroupsResponse> DescribeRunGroupsOutcome;
                 typedef std::future<DescribeRunGroupsOutcome> DescribeRunGroupsOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::DescribeRunGroupsRequest&, DescribeRunGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRunGroupsAsyncHandler;
@@ -125,6 +137,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyVolumeResponse> ModifyVolumeOutcome;
                 typedef std::future<ModifyVolumeOutcome> ModifyVolumeOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::ModifyVolumeRequest&, ModifyVolumeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVolumeAsyncHandler;
+                typedef Outcome<Core::Error, Model::RebootHPCNodesResponse> RebootHPCNodesOutcome;
+                typedef std::future<RebootHPCNodesOutcome> RebootHPCNodesOutcomeCallable;
+                typedef std::function<void(const OmicsClient*, const Model::RebootHPCNodesRequest&, RebootHPCNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebootHPCNodesAsyncHandler;
                 typedef Outcome<Core::Error, Model::RetryRunsResponse> RetryRunsOutcome;
                 typedef std::future<RetryRunsOutcome> RetryRunsOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::RetryRunsRequest&, RetryRunsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetryRunsAsyncHandler;
@@ -193,6 +208,24 @@ namespace TencentCloud
                 DescribeEnvironmentsOutcome DescribeEnvironments(const Model::DescribeEnvironmentsRequest &request);
                 void DescribeEnvironmentsAsync(const Model::DescribeEnvironmentsRequest& request, const DescribeEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEnvironmentsOutcomeCallable DescribeEnvironmentsCallable(const Model::DescribeEnvironmentsRequest& request);
+
+                /**
+                 *查询HPC集群列表。
+                 * @param req DescribeHPCClustersRequest
+                 * @return DescribeHPCClustersOutcome
+                 */
+                DescribeHPCClustersOutcome DescribeHPCClusters(const Model::DescribeHPCClustersRequest &request);
+                void DescribeHPCClustersAsync(const Model::DescribeHPCClustersRequest& request, const DescribeHPCClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHPCClustersOutcomeCallable DescribeHPCClustersCallable(const Model::DescribeHPCClustersRequest& request);
+
+                /**
+                 *查询HPC节点列表。
+                 * @param req DescribeHPCNodesRequest
+                 * @return DescribeHPCNodesOutcome
+                 */
+                DescribeHPCNodesOutcome DescribeHPCNodes(const Model::DescribeHPCNodesRequest &request);
+                void DescribeHPCNodesAsync(const Model::DescribeHPCNodesRequest& request, const DescribeHPCNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHPCNodesOutcomeCallable DescribeHPCNodesCallable(const Model::DescribeHPCNodesRequest& request);
 
                 /**
                  *查询任务批次列表。
@@ -283,6 +316,15 @@ namespace TencentCloud
                 ModifyVolumeOutcome ModifyVolume(const Model::ModifyVolumeRequest &request);
                 void ModifyVolumeAsync(const Model::ModifyVolumeRequest& request, const ModifyVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyVolumeOutcomeCallable ModifyVolumeCallable(const Model::ModifyVolumeRequest& request);
+
+                /**
+                 *重启HPC节点
+                 * @param req RebootHPCNodesRequest
+                 * @return RebootHPCNodesOutcome
+                 */
+                RebootHPCNodesOutcome RebootHPCNodes(const Model::RebootHPCNodesRequest &request);
+                void RebootHPCNodesAsync(const Model::RebootHPCNodesRequest& request, const RebootHPCNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RebootHPCNodesOutcomeCallable RebootHPCNodesCallable(const Model::RebootHPCNodesRequest& request);
 
                 /**
                  *重试任务。

@@ -448,6 +448,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/LiveStreamTagRecognitionResult.h
   include/tencentcloud/mps/v20190612/model/ExecuteFunctionResponse.h
   include/tencentcloud/mps/v20190612/model/FlowRealtimeStatusRTP.h
+  include/tencentcloud/mps/v20190612/model/FaceConfigureInfo.h
   include/tencentcloud/mps/v20190612/model/AnimatedGraphicTaskInput.h
   include/tencentcloud/mps/v20190612/model/OutputAddress.h
   include/tencentcloud/mps/v20190612/model/LiveSmartSubtitlesTaskInput.h
@@ -713,6 +714,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/DeleteLiveRecordTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/SearchTaskResult.h
   include/tencentcloud/mps/v20190612/model/ModifySubtitleEmbedTemplateResponse.h
+  include/tencentcloud/mps/v20190612/model/VoiceInfo.h
   include/tencentcloud/mps/v20190612/model/DescribeSnapshotByTimeOffsetTemplatesResponse.h
   include/tencentcloud/mps/v20190612/model/MediaVideoStreamItem.h
   include/tencentcloud/mps/v20190612/model/SnapshotByTimeOffsetTemplate.h
@@ -781,6 +783,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/ExecuteFunctionRequest.h
   include/tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowLogsResponse.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskHeadTailOutput.h
+  include/tencentcloud/mps/v20190612/model/DescribeVoicesResponse.h
   include/tencentcloud/mps/v20190612/model/ExtractBlindWatermarkConfig.h
   include/tencentcloud/mps/v20190612/model/DescribeVideoDatabaseEntryTaskDetailResponse.h
   include/tencentcloud/mps/v20190612/model/SimpleAesDrm.h
@@ -813,7 +816,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/ComposeAudioStream.h
   include/tencentcloud/mps/v20190612/model/SmartSubtitleTaskTransTextSegmentItem.h
   include/tencentcloud/mps/v20190612/model/AddOnImageInput.h
-  include/tencentcloud/mps/v20190612/model/FaceConfigureInfo.h
+  include/tencentcloud/mps/v20190612/model/DescribeVoicesRequest.h
   include/tencentcloud/mps/v20190612/model/LiveAiParagraphInfo.h
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskFaceResultOutput.h
   include/tencentcloud/mps/v20190612/model/PornImgReviewTemplateInfoForUpdate.h
@@ -1322,6 +1325,7 @@ set(mps_src
   src/v20190612/model/LiveStreamTagRecognitionResult.cpp
   src/v20190612/model/ExecuteFunctionResponse.cpp
   src/v20190612/model/FlowRealtimeStatusRTP.cpp
+  src/v20190612/model/FaceConfigureInfo.cpp
   src/v20190612/model/AnimatedGraphicTaskInput.cpp
   src/v20190612/model/OutputAddress.cpp
   src/v20190612/model/LiveSmartSubtitlesTaskInput.cpp
@@ -1587,6 +1591,7 @@ set(mps_src
   src/v20190612/model/DeleteLiveRecordTemplateResponse.cpp
   src/v20190612/model/SearchTaskResult.cpp
   src/v20190612/model/ModifySubtitleEmbedTemplateResponse.cpp
+  src/v20190612/model/VoiceInfo.cpp
   src/v20190612/model/DescribeSnapshotByTimeOffsetTemplatesResponse.cpp
   src/v20190612/model/MediaVideoStreamItem.cpp
   src/v20190612/model/SnapshotByTimeOffsetTemplate.cpp
@@ -1655,6 +1660,7 @@ set(mps_src
   src/v20190612/model/ExecuteFunctionRequest.cpp
   src/v20190612/model/DescribeStreamLinkFlowLogsResponse.cpp
   src/v20190612/model/AiAnalysisTaskHeadTailOutput.cpp
+  src/v20190612/model/DescribeVoicesResponse.cpp
   src/v20190612/model/ExtractBlindWatermarkConfig.cpp
   src/v20190612/model/DescribeVideoDatabaseEntryTaskDetailResponse.cpp
   src/v20190612/model/SimpleAesDrm.cpp
@@ -1687,7 +1693,7 @@ set(mps_src
   src/v20190612/model/ComposeAudioStream.cpp
   src/v20190612/model/SmartSubtitleTaskTransTextSegmentItem.cpp
   src/v20190612/model/AddOnImageInput.cpp
-  src/v20190612/model/FaceConfigureInfo.cpp
+  src/v20190612/model/DescribeVoicesRequest.cpp
   src/v20190612/model/LiveAiParagraphInfo.cpp
   src/v20190612/model/AiRecognitionTaskFaceResultOutput.cpp
   src/v20190612/model/PornImgReviewTemplateInfoForUpdate.cpp

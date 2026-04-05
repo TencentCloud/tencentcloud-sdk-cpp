@@ -55,6 +55,8 @@
 #include <tencentcloud/cvm/v20170312/model/DeleteImagesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteInstancesActionTimerRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteInstancesActionTimerResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DeleteInstancesDisasterRecoverGroupsRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DeleteInstancesDisasterRecoverGroupsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteKeyPairsRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteKeyPairsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteLaunchTemplateRequest.h>
@@ -293,6 +295,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteInstancesActionTimerResponse> DeleteInstancesActionTimerOutcome;
                 typedef std::future<DeleteInstancesActionTimerOutcome> DeleteInstancesActionTimerOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DeleteInstancesActionTimerRequest&, DeleteInstancesActionTimerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstancesActionTimerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteInstancesDisasterRecoverGroupsResponse> DeleteInstancesDisasterRecoverGroupsOutcome;
+                typedef std::future<DeleteInstancesDisasterRecoverGroupsOutcome> DeleteInstancesDisasterRecoverGroupsOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DeleteInstancesDisasterRecoverGroupsRequest&, DeleteInstancesDisasterRecoverGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstancesDisasterRecoverGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteKeyPairsResponse> DeleteKeyPairsOutcome;
                 typedef std::future<DeleteKeyPairsOutcome> DeleteKeyPairsOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DeleteKeyPairsRequest&, DeleteKeyPairsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteKeyPairsAsyncHandler;
@@ -731,6 +736,15 @@ namespace TencentCloud
                 DeleteInstancesActionTimerOutcome DeleteInstancesActionTimer(const Model::DeleteInstancesActionTimerRequest &request);
                 void DeleteInstancesActionTimerAsync(const Model::DeleteInstancesActionTimerRequest& request, const DeleteInstancesActionTimerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteInstancesActionTimerOutcomeCallable DeleteInstancesActionTimerCallable(const Model::DeleteInstancesActionTimerRequest& request);
+
+                /**
+                 *本接口 (DeleteInstancesDisasterRecoverGroups) 用于将云服务器实例从指定的置放群组中批量移除。
+                 * @param req DeleteInstancesDisasterRecoverGroupsRequest
+                 * @return DeleteInstancesDisasterRecoverGroupsOutcome
+                 */
+                DeleteInstancesDisasterRecoverGroupsOutcome DeleteInstancesDisasterRecoverGroups(const Model::DeleteInstancesDisasterRecoverGroupsRequest &request);
+                void DeleteInstancesDisasterRecoverGroupsAsync(const Model::DeleteInstancesDisasterRecoverGroupsRequest& request, const DeleteInstancesDisasterRecoverGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteInstancesDisasterRecoverGroupsOutcomeCallable DeleteInstancesDisasterRecoverGroupsCallable(const Model::DeleteInstancesDisasterRecoverGroupsRequest& request);
 
                 /**
                  *本接口 (DeleteKeyPairs) 用于删除已在腾讯云托管的密钥对。

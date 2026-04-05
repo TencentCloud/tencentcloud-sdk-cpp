@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体库 ID
-                     * @return LibraryId 媒体库 ID
+                     * 获取<p>媒体库 ID</p>
+                     * @return LibraryId <p>媒体库 ID</p>
                      * 
                      */
                     std::string GetLibraryId() const;
 
                     /**
-                     * 设置媒体库 ID
-                     * @param _libraryId 媒体库 ID
+                     * 设置<p>媒体库 ID</p>
+                     * @param _libraryId <p>媒体库 ID</p>
                      * 
                      */
                     void SetLibraryId(const std::string& _libraryId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool LibraryIdHasBeenSet() const;
 
                     /**
-                     * 获取媒体库名称，最多 50 个字符。如不传则不修改。
-                     * @return Name 媒体库名称，最多 50 个字符。如不传则不修改。
+                     * 获取<p>媒体库名称，最多 50 个字符。如不传则不修改。</p>
+                     * @return Name <p>媒体库名称，最多 50 个字符。如不传则不修改。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置媒体库名称，最多 50 个字符。如不传则不修改。
-                     * @param _name 媒体库名称，最多 50 个字符。如不传则不修改。
+                     * 设置<p>媒体库名称，最多 50 个字符。如不传则不修改。</p>
+                     * @param _name <p>媒体库名称，最多 50 个字符。如不传则不修改。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取备注，最多 250 个字符。如不传则不修改。
-                     * @return Remark 备注，最多 250 个字符。如不传则不修改。
+                     * 获取<p>备注，最多 250 个字符。如不传则不修改。</p>
+                     * @return Remark <p>备注，最多 250 个字符。如不传则不修改。</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注，最多 250 个字符。如不传则不修改。
-                     * @param _remark 备注，最多 250 个字符。如不传则不修改。
+                     * 设置<p>备注，最多 250 个字符。如不传则不修改。</p>
+                     * @param _remark <p>备注，最多 250 个字符。如不传则不修改。</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取媒体库配置项，部分参数在新建后不可更改，且仅修改传入的参数。如不传该参数则不修改任何配置项。
-                     * @return LibraryExtension 媒体库配置项，部分参数在新建后不可更改，且仅修改传入的参数。如不传该参数则不修改任何配置项。
+                     * 获取<p>媒体库配置项，部分参数在新建后不可更改，且仅修改传入的参数。如不传该参数则不修改任何配置项。</p>
+                     * @return LibraryExtension <p>媒体库配置项，部分参数在新建后不可更改，且仅修改传入的参数。如不传该参数则不修改任何配置项。</p>
                      * 
                      */
                     LibraryExtension GetLibraryExtension() const;
 
                     /**
-                     * 设置媒体库配置项，部分参数在新建后不可更改，且仅修改传入的参数。如不传该参数则不修改任何配置项。
-                     * @param _libraryExtension 媒体库配置项，部分参数在新建后不可更改，且仅修改传入的参数。如不传该参数则不修改任何配置项。
+                     * 设置<p>媒体库配置项，部分参数在新建后不可更改，且仅修改传入的参数。如不传该参数则不修改任何配置项。</p>
+                     * @param _libraryExtension <p>媒体库配置项，部分参数在新建后不可更改，且仅修改传入的参数。如不传该参数则不修改任何配置项。</p>
                      * 
                      */
                     void SetLibraryExtension(const LibraryExtension& _libraryExtension);
@@ -130,25 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒体库 ID
+                     * <p>媒体库 ID</p>
                      */
                     std::string m_libraryId;
                     bool m_libraryIdHasBeenSet;
 
                     /**
-                     * 媒体库名称，最多 50 个字符。如不传则不修改。
+                     * <p>媒体库名称，最多 50 个字符。如不传则不修改。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 备注，最多 250 个字符。如不传则不修改。
+                     * <p>备注，最多 250 个字符。如不传则不修改。</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 媒体库配置项，部分参数在新建后不可更改，且仅修改传入的参数。如不传该参数则不修改任何配置项。
+                     * <p>媒体库配置项，部分参数在新建后不可更改，且仅修改传入的参数。如不传该参数则不修改任何配置项。</p>
                      */
                     LibraryExtension m_libraryExtension;
                     bool m_libraryExtensionHasBeenSet;

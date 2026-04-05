@@ -24,7 +24,8 @@ using namespace TencentCloud::Smh::V20210712::Model;
 using namespace std;
 
 CreateLibraryResponse::CreateLibraryResponse() :
-    m_libraryIdHasBeenSet(false)
+    m_libraryIdHasBeenSet(false),
+    m_accessDomainHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome CreateLibraryResponse::Deserialize(const string &payload)
         m_libraryIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AccessDomain") && !rsp["AccessDomain"].IsNull())
+    {
+        if (!rsp["AccessDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessDomain = string(rsp["AccessDomain"].GetString());
+        m_accessDomainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string CreateLibraryResponse::ToJsonString() const
         string key = "LibraryId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_libraryId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessDomain.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ string CreateLibraryResponse::GetLibraryId() const
 bool CreateLibraryResponse::LibraryIdHasBeenSet() const
 {
     return m_libraryIdHasBeenSet;
+}
+
+string CreateLibraryResponse::GetAccessDomain() const
+{
+    return m_accessDomain;
+}
+
+bool CreateLibraryResponse::AccessDomainHasBeenSet() const
+{
+    return m_accessDomainHasBeenSet;
 }
 
 

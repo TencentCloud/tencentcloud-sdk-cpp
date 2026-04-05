@@ -105,6 +105,48 @@ namespace TencentCloud
                      */
                     bool PageSizeHasBeenSet() const;
 
+                    /**
+                     * 获取偏移量，从0开始。
+                     * @return Offset 偏移量，从0开始。
+                     * 
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置偏移量，从0开始。
+                     * @param _offset 偏移量，从0开始。
+                     * 
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取单次列出的数量限制，不超过100.
+                     * @return Limit 单次列出的数量限制，不超过100.
+                     * 
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置单次列出的数量限制，不超过100.
+                     * @param _limit 单次列出的数量限制，不超过100.
+                     * 
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +166,18 @@ namespace TencentCloud
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * 偏移量，从0开始。
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 单次列出的数量限制，不超过100.
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
 
                 };
             }

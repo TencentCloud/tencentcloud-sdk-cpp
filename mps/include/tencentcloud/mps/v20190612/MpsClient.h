@@ -235,6 +235,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeVideoDatabaseEntryTaskDetailResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeVideoSearchTaskDetailRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeVideoSearchTaskDetailResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeVoicesRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeVoicesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeWatermarkTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeWatermarkTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeWordSamplesRequest.h>
@@ -669,6 +671,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVideoSearchTaskDetailResponse> DescribeVideoSearchTaskDetailOutcome;
                 typedef std::future<DescribeVideoSearchTaskDetailOutcome> DescribeVideoSearchTaskDetailOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeVideoSearchTaskDetailRequest&, DescribeVideoSearchTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoSearchTaskDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVoicesResponse> DescribeVoicesOutcome;
+                typedef std::future<DescribeVoicesOutcome> DescribeVoicesOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeVoicesRequest&, DescribeVoicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVoicesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWatermarkTemplatesResponse> DescribeWatermarkTemplatesOutcome;
                 typedef std::future<DescribeWatermarkTemplatesOutcome> DescribeWatermarkTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeWatermarkTemplatesRequest&, DescribeWatermarkTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWatermarkTemplatesAsyncHandler;
@@ -1814,6 +1819,15 @@ namespace TencentCloud
                 DescribeVideoSearchTaskDetailOutcome DescribeVideoSearchTaskDetail(const Model::DescribeVideoSearchTaskDetailRequest &request);
                 void DescribeVideoSearchTaskDetailAsync(const Model::DescribeVideoSearchTaskDetailRequest& request, const DescribeVideoSearchTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVideoSearchTaskDetailOutcomeCallable DescribeVideoSearchTaskDetailCallable(const Model::DescribeVideoSearchTaskDetailRequest& request);
+
+                /**
+                 *同步接口。查询可用音色，支持通过类型、标签、语言等条件检索音色
+                 * @param req DescribeVoicesRequest
+                 * @return DescribeVoicesOutcome
+                 */
+                DescribeVoicesOutcome DescribeVoices(const Model::DescribeVoicesRequest &request);
+                void DescribeVoicesAsync(const Model::DescribeVoicesRequest& request, const DescribeVoicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVoicesOutcomeCallable DescribeVoicesCallable(const Model::DescribeVoicesRequest& request);
 
                 /**
                  *查询用户自定义水印模板，支持根据条件，分页查询。

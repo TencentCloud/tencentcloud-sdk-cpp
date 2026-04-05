@@ -30,7 +30,8 @@ NodeRunBase::NodeRunBase() :
     m_failCodeHasBeenSet(false),
     m_failMessageHasBeenSet(false),
     m_costMillisecondsHasBeenSet(false),
-    m_totalTokensHasBeenSet(false)
+    m_totalTokensHasBeenSet(false),
+    m_branchIndexListHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,19 @@ CoreInternalOutcome NodeRunBase::Deserialize(const rapidjson::Value &value)
         m_totalTokensHasBeenSet = true;
     }
 
+    if (value.HasMember("BranchIndexList") && !value["BranchIndexList"].IsNull())
+    {
+        if (!value["BranchIndexList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NodeRunBase.BranchIndexList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BranchIndexList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_branchIndexList.push_back((*itr).GetInt64());
+        }
+        m_branchIndexListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +238,19 @@ void NodeRunBase::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "TotalTokens";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalTokens, allocator);
+    }
+
+    if (m_branchIndexListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BranchIndexList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_branchIndexList.begin(); itr != m_branchIndexList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -387,5 +414,21 @@ void NodeRunBase::SetTotalTokens(const uint64_t& _totalTokens)
 bool NodeRunBase::TotalTokensHasBeenSet() const
 {
     return m_totalTokensHasBeenSet;
+}
+
+vector<int64_t> NodeRunBase::GetBranchIndexList() const
+{
+    return m_branchIndexList;
+}
+
+void NodeRunBase::SetBranchIndexList(const vector<int64_t>& _branchIndexList)
+{
+    m_branchIndexList = _branchIndexList;
+    m_branchIndexListHasBeenSet = true;
+}
+
+bool NodeRunBase::BranchIndexListHasBeenSet() const
+{
+    return m_branchIndexListHasBeenSet;
 }
 

@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool AspectRatioHasBeenSet() const;
 
                     /**
-                     * 获取<p>是否生成音频。支持的模型包括 GV、OS、Vidu。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li><br>默认值：Disabled</p>
-                     * @return AudioGeneration <p>是否生成音频。支持的模型包括 GV、OS、Vidu。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li><br>默认值：Disabled</p>
+                     * 获取<p>是否生成音频。支持的模型包括 GV、OS、Vidu、Jimeng、Kling。</p><p>枚举值：</p><ul><li>Enabled： 开启</li><li>Disabled： 关闭</li></ul><p>默认值：Disabled</p>
+                     * @return AudioGeneration <p>是否生成音频。支持的模型包括 GV、OS、Vidu、Jimeng、Kling。</p><p>枚举值：</p><ul><li>Enabled： 开启</li><li>Disabled： 关闭</li></ul><p>默认值：Disabled</p>
                      * 
                      */
                     std::string GetAudioGeneration() const;
 
                     /**
-                     * 设置<p>是否生成音频。支持的模型包括 GV、OS、Vidu。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li><br>默认值：Disabled</p>
-                     * @param _audioGeneration <p>是否生成音频。支持的模型包括 GV、OS、Vidu。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li><br>默认值：Disabled</p>
+                     * 设置<p>是否生成音频。支持的模型包括 GV、OS、Vidu、Jimeng、Kling。</p><p>枚举值：</p><ul><li>Enabled： 开启</li><li>Disabled： 关闭</li></ul><p>默认值：Disabled</p>
+                     * @param _audioGeneration <p>是否生成音频。支持的模型包括 GV、OS、Vidu、Jimeng、Kling。</p><p>枚举值：</p><ul><li>Enabled： 开启</li><li>Disabled： 关闭</li></ul><p>默认值：Disabled</p>
                      * 
                      */
                     void SetAudioGeneration(const std::string& _audioGeneration);
@@ -406,7 +406,7 @@ namespace TencentCloud
                     bool m_aspectRatioHasBeenSet;
 
                     /**
-                     * <p>是否生成音频。支持的模型包括 GV、OS、Vidu。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li><br>默认值：Disabled</p>
+                     * <p>是否生成音频。支持的模型包括 GV、OS、Vidu、Jimeng、Kling。</p><p>枚举值：</p><ul><li>Enabled： 开启</li><li>Disabled： 关闭</li></ul><p>默认值：Disabled</p>
                      */
                     std::string m_audioGeneration;
                     bool m_audioGenerationHasBeenSet;

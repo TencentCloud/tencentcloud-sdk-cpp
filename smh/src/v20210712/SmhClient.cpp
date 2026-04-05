@@ -90,106 +90,6 @@ SmhClient::CreateLibraryOutcomeCallable SmhClient::CreateLibraryCallable(const C
     return prom->get_future();
 }
 
-SmhClient::CreateUserOutcome SmhClient::CreateUser(const CreateUserRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateUser");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateUserResponse rsp = CreateUserResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateUserOutcome(rsp);
-        else
-            return CreateUserOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateUserOutcome(outcome.GetError());
-    }
-}
-
-void SmhClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const CreateUserRequest&;
-    using Resp = CreateUserResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "CreateUser", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-SmhClient::CreateUserOutcomeCallable SmhClient::CreateUserCallable(const CreateUserRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<CreateUserOutcome>>();
-    CreateUserAsync(
-    request,
-    [prom](
-        const SmhClient*,
-        const CreateUserRequest&,
-        CreateUserOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-SmhClient::CreateUserLifecycleOutcome SmhClient::CreateUserLifecycle(const CreateUserLifecycleRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateUserLifecycle");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateUserLifecycleResponse rsp = CreateUserLifecycleResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateUserLifecycleOutcome(rsp);
-        else
-            return CreateUserLifecycleOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateUserLifecycleOutcome(outcome.GetError());
-    }
-}
-
-void SmhClient::CreateUserLifecycleAsync(const CreateUserLifecycleRequest& request, const CreateUserLifecycleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const CreateUserLifecycleRequest&;
-    using Resp = CreateUserLifecycleResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "CreateUserLifecycle", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-SmhClient::CreateUserLifecycleOutcomeCallable SmhClient::CreateUserLifecycleCallable(const CreateUserLifecycleRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<CreateUserLifecycleOutcome>>();
-    CreateUserLifecycleAsync(
-    request,
-    [prom](
-        const SmhClient*,
-        const CreateUserLifecycleRequest&,
-        CreateUserLifecycleOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 SmhClient::DeleteLibraryOutcome SmhClient::DeleteLibrary(const DeleteLibraryRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteLibrary");
@@ -232,56 +132,6 @@ SmhClient::DeleteLibraryOutcomeCallable SmhClient::DeleteLibraryCallable(const D
         const SmhClient*,
         const DeleteLibraryRequest&,
         DeleteLibraryOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-SmhClient::DeleteUserOutcome SmhClient::DeleteUser(const DeleteUserRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteUser");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteUserResponse rsp = DeleteUserResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteUserOutcome(rsp);
-        else
-            return DeleteUserOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteUserOutcome(outcome.GetError());
-    }
-}
-
-void SmhClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DeleteUserRequest&;
-    using Resp = DeleteUserResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DeleteUser", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-SmhClient::DeleteUserOutcomeCallable SmhClient::DeleteUserCallable(const DeleteUserRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DeleteUserOutcome>>();
-    DeleteUserAsync(
-    request,
-    [prom](
-        const SmhClient*,
-        const DeleteUserRequest&,
-        DeleteUserOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -540,56 +390,6 @@ SmhClient::DescribeTrafficPackagesOutcomeCallable SmhClient::DescribeTrafficPack
     return prom->get_future();
 }
 
-SmhClient::DescribeUserLifecycleOutcome SmhClient::DescribeUserLifecycle(const DescribeUserLifecycleRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeUserLifecycle");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeUserLifecycleResponse rsp = DescribeUserLifecycleResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeUserLifecycleOutcome(rsp);
-        else
-            return DescribeUserLifecycleOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeUserLifecycleOutcome(outcome.GetError());
-    }
-}
-
-void SmhClient::DescribeUserLifecycleAsync(const DescribeUserLifecycleRequest& request, const DescribeUserLifecycleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeUserLifecycleRequest&;
-    using Resp = DescribeUserLifecycleResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeUserLifecycle", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-SmhClient::DescribeUserLifecycleOutcomeCallable SmhClient::DescribeUserLifecycleCallable(const DescribeUserLifecycleRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeUserLifecycleOutcome>>();
-    DescribeUserLifecycleAsync(
-    request,
-    [prom](
-        const SmhClient*,
-        const DescribeUserLifecycleRequest&,
-        DescribeUserLifecycleOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 SmhClient::ModifyLibraryOutcome SmhClient::ModifyLibrary(const ModifyLibraryRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyLibrary");
@@ -632,56 +432,6 @@ SmhClient::ModifyLibraryOutcomeCallable SmhClient::ModifyLibraryCallable(const M
         const SmhClient*,
         const ModifyLibraryRequest&,
         ModifyLibraryOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-SmhClient::ModifyUserOutcome SmhClient::ModifyUser(const ModifyUserRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyUser");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyUserResponse rsp = ModifyUserResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyUserOutcome(rsp);
-        else
-            return ModifyUserOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyUserOutcome(outcome.GetError());
-    }
-}
-
-void SmhClient::ModifyUserAsync(const ModifyUserRequest& request, const ModifyUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const ModifyUserRequest&;
-    using Resp = ModifyUserResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "ModifyUser", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-SmhClient::ModifyUserOutcomeCallable SmhClient::ModifyUserCallable(const ModifyUserRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<ModifyUserOutcome>>();
-    ModifyUserAsync(
-    request,
-    [prom](
-        const SmhClient*,
-        const ModifyUserRequest&,
-        ModifyUserOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
