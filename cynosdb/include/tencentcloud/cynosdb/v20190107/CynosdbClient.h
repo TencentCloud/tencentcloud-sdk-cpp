@@ -193,6 +193,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceSlowQueriesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceSpecsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceSpecsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceSpecsByOperationTypeRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceSpecsByOperationTypeResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstancesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstancesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstancesWithinSameClusterRequest.h>
@@ -742,6 +744,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceSpecsResponse> DescribeInstanceSpecsOutcome;
                 typedef std::future<DescribeInstanceSpecsOutcome> DescribeInstanceSpecsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeInstanceSpecsRequest&, DescribeInstanceSpecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSpecsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceSpecsByOperationTypeResponse> DescribeInstanceSpecsByOperationTypeOutcome;
+                typedef std::future<DescribeInstanceSpecsByOperationTypeOutcome> DescribeInstanceSpecsByOperationTypeOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeInstanceSpecsByOperationTypeRequest&, DescribeInstanceSpecsByOperationTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSpecsByOperationTypeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
@@ -1929,6 +1934,15 @@ namespace TencentCloud
                 DescribeInstanceSpecsOutcome DescribeInstanceSpecs(const Model::DescribeInstanceSpecsRequest &request);
                 void DescribeInstanceSpecsAsync(const Model::DescribeInstanceSpecsRequest& request, const DescribeInstanceSpecsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceSpecsOutcomeCallable DescribeInstanceSpecsCallable(const Model::DescribeInstanceSpecsRequest& request);
+
+                /**
+                 *根据操作类型查询实例规格
+                 * @param req DescribeInstanceSpecsByOperationTypeRequest
+                 * @return DescribeInstanceSpecsByOperationTypeOutcome
+                 */
+                DescribeInstanceSpecsByOperationTypeOutcome DescribeInstanceSpecsByOperationType(const Model::DescribeInstanceSpecsByOperationTypeRequest &request);
+                void DescribeInstanceSpecsByOperationTypeAsync(const Model::DescribeInstanceSpecsByOperationTypeRequest& request, const DescribeInstanceSpecsByOperationTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceSpecsByOperationTypeOutcomeCallable DescribeInstanceSpecsByOperationTypeCallable(const Model::DescribeInstanceSpecsByOperationTypeRequest& request);
 
                 /**
                  *本接口(DescribeInstances)用于查询实例列表。

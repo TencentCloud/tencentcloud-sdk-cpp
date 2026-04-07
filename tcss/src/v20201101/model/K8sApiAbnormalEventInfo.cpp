@@ -39,7 +39,9 @@ K8sApiAbnormalEventInfo::K8sApiAbnormalEventInfo() :
     m_infoHasBeenSet(false),
     m_matchRuleIDHasBeenSet(false),
     m_highLightFieldsHasBeenSet(false),
-    m_matchRuleHasBeenSet(false)
+    m_matchRuleHasBeenSet(false),
+    m_highLightFieldsValHasBeenSet(false),
+    m_ruleTypeZHHasBeenSet(false)
 {
 }
 
@@ -251,6 +253,26 @@ CoreInternalOutcome K8sApiAbnormalEventInfo::Deserialize(const rapidjson::Value 
         m_matchRuleHasBeenSet = true;
     }
 
+    if (value.HasMember("HighLightFieldsVal") && !value["HighLightFieldsVal"].IsNull())
+    {
+        if (!value["HighLightFieldsVal"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `K8sApiAbnormalEventInfo.HighLightFieldsVal` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_highLightFieldsVal = string(value["HighLightFieldsVal"].GetString());
+        m_highLightFieldsValHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleTypeZH") && !value["RuleTypeZH"].IsNull())
+    {
+        if (!value["RuleTypeZH"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `K8sApiAbnormalEventInfo.RuleTypeZH` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleTypeZH = string(value["RuleTypeZH"].GetString());
+        m_ruleTypeZHHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -419,6 +441,22 @@ void K8sApiAbnormalEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::D
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_matchRule.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_highLightFieldsValHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HighLightFieldsVal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_highLightFieldsVal.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleTypeZHHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleTypeZH";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleTypeZH.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -726,5 +764,37 @@ void K8sApiAbnormalEventInfo::SetMatchRule(const K8sApiAbnormalRuleScopeInfo& _m
 bool K8sApiAbnormalEventInfo::MatchRuleHasBeenSet() const
 {
     return m_matchRuleHasBeenSet;
+}
+
+string K8sApiAbnormalEventInfo::GetHighLightFieldsVal() const
+{
+    return m_highLightFieldsVal;
+}
+
+void K8sApiAbnormalEventInfo::SetHighLightFieldsVal(const string& _highLightFieldsVal)
+{
+    m_highLightFieldsVal = _highLightFieldsVal;
+    m_highLightFieldsValHasBeenSet = true;
+}
+
+bool K8sApiAbnormalEventInfo::HighLightFieldsValHasBeenSet() const
+{
+    return m_highLightFieldsValHasBeenSet;
+}
+
+string K8sApiAbnormalEventInfo::GetRuleTypeZH() const
+{
+    return m_ruleTypeZH;
+}
+
+void K8sApiAbnormalEventInfo::SetRuleTypeZH(const string& _ruleTypeZH)
+{
+    m_ruleTypeZH = _ruleTypeZH;
+    m_ruleTypeZHHasBeenSet = true;
+}
+
+bool K8sApiAbnormalEventInfo::RuleTypeZHHasBeenSet() const
+{
+    return m_ruleTypeZHHasBeenSet;
 }
 

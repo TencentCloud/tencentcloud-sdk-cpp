@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcss/v20201101/model/K8sApiAbnormalTendencyItem.h>
+#include <tencentcloud/tcss/v20201101/model/K8SAPIRuleTypeZhItem.h>
 
 
 namespace TencentCloud
@@ -45,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取趋势列表
-                     * @return List 趋势列表
+                     * 获取<p>趋势列表</p>
+                     * @return List <p>趋势列表</p>
                      * 
                      */
                     std::vector<K8sApiAbnormalTendencyItem> GetList() const;
@@ -58,13 +59,33 @@ namespace TencentCloud
                      */
                     bool ListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>规则类型对应中文</p>
+                     * @return RuleTypeZhSet <p>规则类型对应中文</p>
+                     * 
+                     */
+                    std::vector<K8SAPIRuleTypeZhItem> GetRuleTypeZhSet() const;
+
+                    /**
+                     * 判断参数 RuleTypeZhSet 是否已赋值
+                     * @return RuleTypeZhSet 是否已赋值
+                     * 
+                     */
+                    bool RuleTypeZhSetHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 趋势列表
+                     * <p>趋势列表</p>
                      */
                     std::vector<K8sApiAbnormalTendencyItem> m_list;
                     bool m_listHasBeenSet;
+
+                    /**
+                     * <p>规则类型对应中文</p>
+                     */
+                    std::vector<K8SAPIRuleTypeZhItem> m_ruleTypeZhSet;
+                    bool m_ruleTypeZhSetHasBeenSet;
 
                 };
             }

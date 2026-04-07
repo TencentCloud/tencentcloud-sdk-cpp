@@ -4290,6 +4290,56 @@ CynosdbClient::DescribeInstanceSpecsOutcomeCallable CynosdbClient::DescribeInsta
     return prom->get_future();
 }
 
+CynosdbClient::DescribeInstanceSpecsByOperationTypeOutcome CynosdbClient::DescribeInstanceSpecsByOperationType(const DescribeInstanceSpecsByOperationTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceSpecsByOperationType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceSpecsByOperationTypeResponse rsp = DescribeInstanceSpecsByOperationTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceSpecsByOperationTypeOutcome(rsp);
+        else
+            return DescribeInstanceSpecsByOperationTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceSpecsByOperationTypeOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeInstanceSpecsByOperationTypeAsync(const DescribeInstanceSpecsByOperationTypeRequest& request, const DescribeInstanceSpecsByOperationTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeInstanceSpecsByOperationTypeRequest&;
+    using Resp = DescribeInstanceSpecsByOperationTypeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceSpecsByOperationType", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::DescribeInstanceSpecsByOperationTypeOutcomeCallable CynosdbClient::DescribeInstanceSpecsByOperationTypeCallable(const DescribeInstanceSpecsByOperationTypeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeInstanceSpecsByOperationTypeOutcome>>();
+    DescribeInstanceSpecsByOperationTypeAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeInstanceSpecsByOperationTypeRequest&,
+        DescribeInstanceSpecsByOperationTypeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CynosdbClient::DescribeInstancesOutcome CynosdbClient::DescribeInstances(const DescribeInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstances");

@@ -32,6 +32,7 @@
 #include <tencentcloud/monitor/v20230616/model/TeamsRobotNoticeTmplMatcher.h>
 #include <tencentcloud/monitor/v20230616/model/PagerDutyRobotNoticeTmplMatcher.h>
 #include <tencentcloud/monitor/v20230616/model/GoogleChatRobotNoticeTmplMatcher.h>
+#include <tencentcloud/monitor/v20230616/model/SlackRobotNoticeTmplMatcher.h>
 
 
 namespace TencentCloud
@@ -55,18 +56,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取官网通知渠道配置
+                     * 获取<p>官网通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QCloudYehe 官网通知渠道配置
+                     * @return QCloudYehe <p>官网通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<QCloudYeheNoticeTmplMatcher> GetQCloudYehe() const;
 
                     /**
-                     * 设置官网通知渠道配置
+                     * 设置<p>官网通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _qCloudYehe 官网通知渠道配置
+                     * @param _qCloudYehe <p>官网通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -80,18 +81,18 @@ namespace TencentCloud
                     bool QCloudYeheHasBeenSet() const;
 
                     /**
-                     * 获取企业微信机器人通知渠道配置
+                     * 获取<p>企业微信机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WeWorkRobot 企业微信机器人通知渠道配置
+                     * @return WeWorkRobot <p>企业微信机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<WeWorkRobotNoticeTmplMatcher> GetWeWorkRobot() const;
 
                     /**
-                     * 设置企业微信机器人通知渠道配置
+                     * 设置<p>企业微信机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _weWorkRobot 企业微信机器人通知渠道配置
+                     * @param _weWorkRobot <p>企业微信机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -105,18 +106,18 @@ namespace TencentCloud
                     bool WeWorkRobotHasBeenSet() const;
 
                     /**
-                     * 获取钉钉机器人通知渠道配置
+                     * 获取<p>钉钉机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DingDingRobot 钉钉机器人通知渠道配置
+                     * @return DingDingRobot <p>钉钉机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DingDingRobotNoticeTmplMatcher> GetDingDingRobot() const;
 
                     /**
-                     * 设置钉钉机器人通知渠道配置
+                     * 设置<p>钉钉机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dingDingRobot 钉钉机器人通知渠道配置
+                     * @param _dingDingRobot <p>钉钉机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -130,18 +131,18 @@ namespace TencentCloud
                     bool DingDingRobotHasBeenSet() const;
 
                     /**
-                     * 获取飞书机器人通知渠道配置
+                     * 获取<p>飞书机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FeiShuRobot 飞书机器人通知渠道配置
+                     * @return FeiShuRobot <p>飞书机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FeiShuRobotNoticeTmplMatcher> GetFeiShuRobot() const;
 
                     /**
-                     * 设置飞书机器人通知渠道配置
+                     * 设置<p>飞书机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _feiShuRobot 飞书机器人通知渠道配置
+                     * @param _feiShuRobot <p>飞书机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -155,18 +156,18 @@ namespace TencentCloud
                     bool FeiShuRobotHasBeenSet() const;
 
                     /**
-                     * 获取自定义Webhook通知渠道配置
+                     * 获取<p>自定义Webhook通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Webhook 自定义Webhook通知渠道配置
+                     * @return Webhook <p>自定义Webhook通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<WebhookNoticeTmplMatcher> GetWebhook() const;
 
                     /**
-                     * 设置自定义Webhook通知渠道配置
+                     * 设置<p>自定义Webhook通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _webhook 自定义Webhook通知渠道配置
+                     * @param _webhook <p>自定义Webhook通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -180,18 +181,18 @@ namespace TencentCloud
                     bool WebhookHasBeenSet() const;
 
                     /**
-                     * 获取Teams机器人通知渠道配置
+                     * 获取<p>Teams机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TeamsRobot Teams机器人通知渠道配置
+                     * @return TeamsRobot <p>Teams机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TeamsRobotNoticeTmplMatcher> GetTeamsRobot() const;
 
                     /**
-                     * 设置Teams机器人通知渠道配置
+                     * 设置<p>Teams机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _teamsRobot Teams机器人通知渠道配置
+                     * @param _teamsRobot <p>Teams机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -205,18 +206,18 @@ namespace TencentCloud
                     bool TeamsRobotHasBeenSet() const;
 
                     /**
-                     * 获取PagerDutyRobot机器人通知渠道配置
+                     * 获取<p>PagerDutyRobot机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PagerDutyRobot PagerDutyRobot机器人通知渠道配置
+                     * @return PagerDutyRobot <p>PagerDutyRobot机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PagerDutyRobotNoticeTmplMatcher> GetPagerDutyRobot() const;
 
                     /**
-                     * 设置PagerDutyRobot机器人通知渠道配置
+                     * 设置<p>PagerDutyRobot机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pagerDutyRobot PagerDutyRobot机器人通知渠道配置
+                     * @param _pagerDutyRobot <p>PagerDutyRobot机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -230,15 +231,15 @@ namespace TencentCloud
                     bool PagerDutyRobotHasBeenSet() const;
 
                     /**
-                     * 获取GoogleChat
-                     * @return GoogleChatRobot GoogleChat
+                     * 获取<p>GoogleChat</p>
+                     * @return GoogleChatRobot <p>GoogleChat</p>
                      * 
                      */
                     std::vector<GoogleChatRobotNoticeTmplMatcher> GetGoogleChatRobot() const;
 
                     /**
-                     * 设置GoogleChat
-                     * @param _googleChatRobot GoogleChat
+                     * 设置<p>GoogleChat</p>
+                     * @param _googleChatRobot <p>GoogleChat</p>
                      * 
                      */
                     void SetGoogleChatRobot(const std::vector<GoogleChatRobotNoticeTmplMatcher>& _googleChatRobot);
@@ -250,62 +251,89 @@ namespace TencentCloud
                      */
                     bool GoogleChatRobotHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Slack</p>
+                     * @return SlackRobot <p>Slack</p>
+                     * 
+                     */
+                    std::vector<SlackRobotNoticeTmplMatcher> GetSlackRobot() const;
+
+                    /**
+                     * 设置<p>Slack</p>
+                     * @param _slackRobot <p>Slack</p>
+                     * 
+                     */
+                    void SetSlackRobot(const std::vector<SlackRobotNoticeTmplMatcher>& _slackRobot);
+
+                    /**
+                     * 判断参数 SlackRobot 是否已赋值
+                     * @return SlackRobot 是否已赋值
+                     * 
+                     */
+                    bool SlackRobotHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 官网通知渠道配置
+                     * <p>官网通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<QCloudYeheNoticeTmplMatcher> m_qCloudYehe;
                     bool m_qCloudYeheHasBeenSet;
 
                     /**
-                     * 企业微信机器人通知渠道配置
+                     * <p>企业微信机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WeWorkRobotNoticeTmplMatcher> m_weWorkRobot;
                     bool m_weWorkRobotHasBeenSet;
 
                     /**
-                     * 钉钉机器人通知渠道配置
+                     * <p>钉钉机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DingDingRobotNoticeTmplMatcher> m_dingDingRobot;
                     bool m_dingDingRobotHasBeenSet;
 
                     /**
-                     * 飞书机器人通知渠道配置
+                     * <p>飞书机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FeiShuRobotNoticeTmplMatcher> m_feiShuRobot;
                     bool m_feiShuRobotHasBeenSet;
 
                     /**
-                     * 自定义Webhook通知渠道配置
+                     * <p>自定义Webhook通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WebhookNoticeTmplMatcher> m_webhook;
                     bool m_webhookHasBeenSet;
 
                     /**
-                     * Teams机器人通知渠道配置
+                     * <p>Teams机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TeamsRobotNoticeTmplMatcher> m_teamsRobot;
                     bool m_teamsRobotHasBeenSet;
 
                     /**
-                     * PagerDutyRobot机器人通知渠道配置
+                     * <p>PagerDutyRobot机器人通知渠道配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PagerDutyRobotNoticeTmplMatcher> m_pagerDutyRobot;
                     bool m_pagerDutyRobotHasBeenSet;
 
                     /**
-                     * GoogleChat
+                     * <p>GoogleChat</p>
                      */
                     std::vector<GoogleChatRobotNoticeTmplMatcher> m_googleChatRobot;
                     bool m_googleChatRobotHasBeenSet;
+
+                    /**
+                     * <p>Slack</p>
+                     */
+                    std::vector<SlackRobotNoticeTmplMatcher> m_slackRobot;
+                    bool m_slackRobotHasBeenSet;
 
                 };
             }

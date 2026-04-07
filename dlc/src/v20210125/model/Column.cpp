@@ -31,7 +31,8 @@ Column::Column() :
     m_createTimeHasBeenSet(false),
     m_modifiedTimeHasBeenSet(false),
     m_isPartitionHasBeenSet(false),
-    m_dataMaskStrategyInfoHasBeenSet(false)
+    m_dataMaskStrategyInfoHasBeenSet(false),
+    m_typeTextHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,16 @@ CoreInternalOutcome Column::Deserialize(const rapidjson::Value &value)
         m_dataMaskStrategyInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("TypeText") && !value["TypeText"].IsNull())
+    {
+        if (!value["TypeText"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Column.TypeText` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_typeText = string(value["TypeText"].GetString());
+        m_typeTextHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +262,14 @@ void Column::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_dataMaskStrategyInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_typeTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TypeText";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_typeText.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -430,5 +449,21 @@ void Column::SetDataMaskStrategyInfo(const DataMaskStrategyInfo& _dataMaskStrate
 bool Column::DataMaskStrategyInfoHasBeenSet() const
 {
     return m_dataMaskStrategyInfoHasBeenSet;
+}
+
+string Column::GetTypeText() const
+{
+    return m_typeText;
+}
+
+void Column::SetTypeText(const string& _typeText)
+{
+    m_typeText = _typeText;
+    m_typeTextHasBeenSet = true;
+}
+
+bool Column::TypeTextHasBeenSet() const
+{
+    return m_typeTextHasBeenSet;
 }
 

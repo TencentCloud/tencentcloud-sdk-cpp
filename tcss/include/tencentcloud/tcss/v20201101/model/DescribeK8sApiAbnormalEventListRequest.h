@@ -44,47 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤条件。
-<li>TimeRange - string -是否必填: 否 - 时间范围筛选 ["2022-03-31 16:55:00", "2022-03-31 17:00:00"]</li>
-<li>MatchRules - string  - 是否必填: 否 -命中规则筛选</li>
-<li>RiskLevel - string  - 是否必填: 否 -威胁等级筛选</li>
-<li>Status - string  - 是否必填: 否 -事件状态筛选</li>
-<li>MatchRuleType - string  - 是否必填: 否 -命中规则类型筛选</li>
-<li>ClusterRunningStatus - string  - 是否必填: 否 -集群运行状态</li>
-<li>ClusterName - string  - 是否必填: 否 -集群名称</li>
-<li>ClusterID - string  - 是否必填: 否 -集群ID</li>
-                     * @return Filters 过滤条件。
-<li>TimeRange - string -是否必填: 否 - 时间范围筛选 ["2022-03-31 16:55:00", "2022-03-31 17:00:00"]</li>
-<li>MatchRules - string  - 是否必填: 否 -命中规则筛选</li>
-<li>RiskLevel - string  - 是否必填: 否 -威胁等级筛选</li>
-<li>Status - string  - 是否必填: 否 -事件状态筛选</li>
-<li>MatchRuleType - string  - 是否必填: 否 -命中规则类型筛选</li>
-<li>ClusterRunningStatus - string  - 是否必填: 否 -集群运行状态</li>
-<li>ClusterName - string  - 是否必填: 否 -集群名称</li>
-<li>ClusterID - string  - 是否必填: 否 -集群ID</li>
+                     * 获取<p>过滤条件。</p><li>TimeRange - string -是否必填: 否 - 时间范围筛选 ["2022-03-31 16:55:00", "2022-03-31 17:00:00"]</li><li>MatchRules - string  - 是否必填: 否 -命中规则筛选</li><li>RiskLevel - string  - 是否必填: 否 -威胁等级筛选</li><li>Status - string  - 是否必填: 否 -事件状态筛选</li><li>MatchRuleType - string  - 是否必填: 否 -命中规则类型筛选</li><li>ClusterRunningStatus - string  - 是否必填: 否 -集群运行状态</li><li>ClusterName - string  - 是否必填: 否 -集群名称</li><li>ClusterID - string  - 是否必填: 否 -集群ID</li>
+                     * @return Filters <p>过滤条件。</p><li>TimeRange - string -是否必填: 否 - 时间范围筛选 ["2022-03-31 16:55:00", "2022-03-31 17:00:00"]</li><li>MatchRules - string  - 是否必填: 否 -命中规则筛选</li><li>RiskLevel - string  - 是否必填: 否 -威胁等级筛选</li><li>Status - string  - 是否必填: 否 -事件状态筛选</li><li>MatchRuleType - string  - 是否必填: 否 -命中规则类型筛选</li><li>ClusterRunningStatus - string  - 是否必填: 否 -集群运行状态</li><li>ClusterName - string  - 是否必填: 否 -集群名称</li><li>ClusterID - string  - 是否必填: 否 -集群ID</li>
                      * 
                      */
                     std::vector<RunTimeFilters> GetFilters() const;
 
                     /**
-                     * 设置过滤条件。
-<li>TimeRange - string -是否必填: 否 - 时间范围筛选 ["2022-03-31 16:55:00", "2022-03-31 17:00:00"]</li>
-<li>MatchRules - string  - 是否必填: 否 -命中规则筛选</li>
-<li>RiskLevel - string  - 是否必填: 否 -威胁等级筛选</li>
-<li>Status - string  - 是否必填: 否 -事件状态筛选</li>
-<li>MatchRuleType - string  - 是否必填: 否 -命中规则类型筛选</li>
-<li>ClusterRunningStatus - string  - 是否必填: 否 -集群运行状态</li>
-<li>ClusterName - string  - 是否必填: 否 -集群名称</li>
-<li>ClusterID - string  - 是否必填: 否 -集群ID</li>
-                     * @param _filters 过滤条件。
-<li>TimeRange - string -是否必填: 否 - 时间范围筛选 ["2022-03-31 16:55:00", "2022-03-31 17:00:00"]</li>
-<li>MatchRules - string  - 是否必填: 否 -命中规则筛选</li>
-<li>RiskLevel - string  - 是否必填: 否 -威胁等级筛选</li>
-<li>Status - string  - 是否必填: 否 -事件状态筛选</li>
-<li>MatchRuleType - string  - 是否必填: 否 -命中规则类型筛选</li>
-<li>ClusterRunningStatus - string  - 是否必填: 否 -集群运行状态</li>
-<li>ClusterName - string  - 是否必填: 否 -集群名称</li>
-<li>ClusterID - string  - 是否必填: 否 -集群ID</li>
+                     * 设置<p>过滤条件。</p><li>TimeRange - string -是否必填: 否 - 时间范围筛选 ["2022-03-31 16:55:00", "2022-03-31 17:00:00"]</li><li>MatchRules - string  - 是否必填: 否 -命中规则筛选</li><li>RiskLevel - string  - 是否必填: 否 -威胁等级筛选</li><li>Status - string  - 是否必填: 否 -事件状态筛选</li><li>MatchRuleType - string  - 是否必填: 否 -命中规则类型筛选</li><li>ClusterRunningStatus - string  - 是否必填: 否 -集群运行状态</li><li>ClusterName - string  - 是否必填: 否 -集群名称</li><li>ClusterID - string  - 是否必填: 否 -集群ID</li>
+                     * @param _filters <p>过滤条件。</p><li>TimeRange - string -是否必填: 否 - 时间范围筛选 ["2022-03-31 16:55:00", "2022-03-31 17:00:00"]</li><li>MatchRules - string  - 是否必填: 否 -命中规则筛选</li><li>RiskLevel - string  - 是否必填: 否 -威胁等级筛选</li><li>Status - string  - 是否必填: 否 -事件状态筛选</li><li>MatchRuleType - string  - 是否必填: 否 -命中规则类型筛选</li><li>ClusterRunningStatus - string  - 是否必填: 否 -集群运行状态</li><li>ClusterName - string  - 是否必填: 否 -集群名称</li><li>ClusterID - string  - 是否必填: 否 -集群ID</li>
                      * 
                      */
                     void SetFilters(const std::vector<RunTimeFilters>& _filters);
@@ -97,15 +65,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取需要返回的数量，默认为10，最大值为100
-                     * @return Limit 需要返回的数量，默认为10，最大值为100
+                     * 获取<p>需要返回的数量，默认为10，最大值为100</p>
+                     * @return Limit <p>需要返回的数量，默认为10，最大值为100</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置需要返回的数量，默认为10，最大值为100
-                     * @param _limit 需要返回的数量，默认为10，最大值为100
+                     * 设置<p>需要返回的数量，默认为10，最大值为100</p>
+                     * @param _limit <p>需要返回的数量，默认为10，最大值为100</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -118,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0。
-                     * @return Offset 偏移量，默认为0。
+                     * 获取<p>偏移量，默认为0。</p>
+                     * @return Offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0。
-                     * @param _offset 偏移量，默认为0。
+                     * 设置<p>偏移量，默认为0。</p>
+                     * @param _offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -139,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取排序方式
-                     * @return Order 排序方式
+                     * 获取<p>排序方式</p>
+                     * @return Order <p>排序方式</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序方式
-                     * @param _order 排序方式
+                     * 设置<p>排序方式</p>
+                     * @param _order <p>排序方式</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -160,23 +128,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取排序字段
-LatestFoundTime: 最近生成时间
-AlarmCount: 告警数量
-                     * @return By 排序字段
-LatestFoundTime: 最近生成时间
-AlarmCount: 告警数量
+                     * 获取<p>排序字段<br>LatestFoundTime: 最近生成时间<br>AlarmCount: 告警数量</p>
+                     * @return By <p>排序字段<br>LatestFoundTime: 最近生成时间<br>AlarmCount: 告警数量</p>
                      * 
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置排序字段
-LatestFoundTime: 最近生成时间
-AlarmCount: 告警数量
-                     * @param _by 排序字段
-LatestFoundTime: 最近生成时间
-AlarmCount: 告警数量
+                     * 设置<p>排序字段<br>LatestFoundTime: 最近生成时间<br>AlarmCount: 告警数量</p>
+                     * @param _by <p>排序字段<br>LatestFoundTime: 最近生成时间<br>AlarmCount: 告警数量</p>
                      * 
                      */
                     void SetBy(const std::string& _by);
@@ -191,41 +151,31 @@ AlarmCount: 告警数量
                 private:
 
                     /**
-                     * 过滤条件。
-<li>TimeRange - string -是否必填: 否 - 时间范围筛选 ["2022-03-31 16:55:00", "2022-03-31 17:00:00"]</li>
-<li>MatchRules - string  - 是否必填: 否 -命中规则筛选</li>
-<li>RiskLevel - string  - 是否必填: 否 -威胁等级筛选</li>
-<li>Status - string  - 是否必填: 否 -事件状态筛选</li>
-<li>MatchRuleType - string  - 是否必填: 否 -命中规则类型筛选</li>
-<li>ClusterRunningStatus - string  - 是否必填: 否 -集群运行状态</li>
-<li>ClusterName - string  - 是否必填: 否 -集群名称</li>
-<li>ClusterID - string  - 是否必填: 否 -集群ID</li>
+                     * <p>过滤条件。</p><li>TimeRange - string -是否必填: 否 - 时间范围筛选 ["2022-03-31 16:55:00", "2022-03-31 17:00:00"]</li><li>MatchRules - string  - 是否必填: 否 -命中规则筛选</li><li>RiskLevel - string  - 是否必填: 否 -威胁等级筛选</li><li>Status - string  - 是否必填: 否 -事件状态筛选</li><li>MatchRuleType - string  - 是否必填: 否 -命中规则类型筛选</li><li>ClusterRunningStatus - string  - 是否必填: 否 -集群运行状态</li><li>ClusterName - string  - 是否必填: 否 -集群名称</li><li>ClusterID - string  - 是否必填: 否 -集群ID</li>
                      */
                     std::vector<RunTimeFilters> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 需要返回的数量，默认为10，最大值为100
+                     * <p>需要返回的数量，默认为10，最大值为100</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0。
+                     * <p>偏移量，默认为0。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 排序方式
+                     * <p>排序方式</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 排序字段
-LatestFoundTime: 最近生成时间
-AlarmCount: 告警数量
+                     * <p>排序字段<br>LatestFoundTime: 最近生成时间<br>AlarmCount: 告警数量</p>
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;

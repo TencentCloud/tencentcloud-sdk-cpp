@@ -22,6 +22,7 @@ using namespace std;
 
 AvatarScriptInfo::AvatarScriptInfo() :
     m_scriptIdHasBeenSet(false),
+    m_productIdHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -45,6 +46,16 @@ CoreInternalOutcome AvatarScriptInfo::Deserialize(const rapidjson::Value &value)
         }
         m_scriptId = string(value["ScriptId"].GetString());
         m_scriptIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProductId") && !value["ProductId"].IsNull())
+    {
+        if (!value["ProductId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AvatarScriptInfo.ProductId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productId = string(value["ProductId"].GetString());
+        m_productIdHasBeenSet = true;
     }
 
     if (value.HasMember("Title") && !value["Title"].IsNull())
@@ -132,6 +143,14 @@ void AvatarScriptInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_scriptId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_productIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_titleHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -205,6 +224,22 @@ void AvatarScriptInfo::SetScriptId(const string& _scriptId)
 bool AvatarScriptInfo::ScriptIdHasBeenSet() const
 {
     return m_scriptIdHasBeenSet;
+}
+
+string AvatarScriptInfo::GetProductId() const
+{
+    return m_productId;
+}
+
+void AvatarScriptInfo::SetProductId(const string& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool AvatarScriptInfo::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
 }
 
 string AvatarScriptInfo::GetTitle() const

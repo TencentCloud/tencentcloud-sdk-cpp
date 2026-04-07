@@ -24,7 +24,8 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 DescribeK8sApiAbnormalTendencyResponse::DescribeK8sApiAbnormalTendencyResponse() :
-    m_listHasBeenSet(false)
+    m_listHasBeenSet(false),
+    m_ruleTypeZhSetHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,26 @@ CoreInternalOutcome DescribeK8sApiAbnormalTendencyResponse::Deserialize(const st
         m_listHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RuleTypeZhSet") && !rsp["RuleTypeZhSet"].IsNull())
+    {
+        if (!rsp["RuleTypeZhSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RuleTypeZhSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RuleTypeZhSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            K8SAPIRuleTypeZhItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ruleTypeZhSet.push_back(item);
+        }
+        m_ruleTypeZhSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -101,6 +122,21 @@ string DescribeK8sApiAbnormalTendencyResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_list.begin(); itr != m_list.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_ruleTypeZhSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleTypeZhSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ruleTypeZhSet.begin(); itr != m_ruleTypeZhSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -127,6 +163,16 @@ vector<K8sApiAbnormalTendencyItem> DescribeK8sApiAbnormalTendencyResponse::GetLi
 bool DescribeK8sApiAbnormalTendencyResponse::ListHasBeenSet() const
 {
     return m_listHasBeenSet;
+}
+
+vector<K8SAPIRuleTypeZhItem> DescribeK8sApiAbnormalTendencyResponse::GetRuleTypeZhSet() const
+{
+    return m_ruleTypeZhSet;
+}
+
+bool DescribeK8sApiAbnormalTendencyResponse::RuleTypeZhSetHasBeenSet() const
+{
+    return m_ruleTypeZhSetHasBeenSet;
 }
 
 

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数字人直播间话术 ID。
-                     * @return ScriptId 数字人直播间话术 ID。
+                     * 获取<p>数字人直播间话术 ID。</p>
+                     * @return ScriptId <p>数字人直播间话术 ID。</p>
                      * 
                      */
                     std::string GetScriptId() const;
 
                     /**
-                     * 设置数字人直播间话术 ID。
-                     * @param _scriptId 数字人直播间话术 ID。
+                     * 设置<p>数字人直播间话术 ID。</p>
+                     * @param _scriptId <p>数字人直播间话术 ID。</p>
                      * 
                      */
                     void SetScriptId(const std::string& _scriptId);
@@ -68,15 +68,36 @@ namespace TencentCloud
                     bool ScriptIdHasBeenSet() const;
 
                     /**
-                     * 获取话术标题。
-                     * @return Title 话术标题。
+                     * 获取<p>数字人直播间产品 ID。</p>
+                     * @return ProductId <p>数字人直播间产品 ID。</p>
+                     * 
+                     */
+                    std::string GetProductId() const;
+
+                    /**
+                     * 设置<p>数字人直播间产品 ID。</p>
+                     * @param _productId <p>数字人直播间产品 ID。</p>
+                     * 
+                     */
+                    void SetProductId(const std::string& _productId);
+
+                    /**
+                     * 判断参数 ProductId 是否已赋值
+                     * @return ProductId 是否已赋值
+                     * 
+                     */
+                    bool ProductIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>话术标题。</p>
+                     * @return Title <p>话术标题。</p>
                      * 
                      */
                     std::string GetTitle() const;
 
                     /**
-                     * 设置话术标题。
-                     * @param _title 话术标题。
+                     * 设置<p>话术标题。</p>
+                     * @param _title <p>话术标题。</p>
                      * 
                      */
                     void SetTitle(const std::string& _title);
@@ -89,15 +110,15 @@ namespace TencentCloud
                     bool TitleHasBeenSet() const;
 
                     /**
-                     * 获取话术内容。
-                     * @return Content 话术内容。
+                     * 获取<p>话术内容。</p>
+                     * @return Content <p>话术内容。</p>
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置话术内容。
-                     * @param _content 话术内容。
+                     * 设置<p>话术内容。</p>
+                     * @param _content <p>话术内容。</p>
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -110,27 +131,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取话术状态。
-PENDING --未生成。
-PROCESSING --生成中。
-READY --已生成。
-                     * @return Status 话术状态。
-PENDING --未生成。
-PROCESSING --生成中。
-READY --已生成。
+                     * 获取<p>话术状态。PENDING --未生成。PROCESSING --生成中。READY --已生成。FAILED-失败</p><p>枚举值：</p><ul><li>FAILED： 失败</li></ul>
+                     * @return Status <p>话术状态。PENDING --未生成。PROCESSING --生成中。READY --已生成。FAILED-失败</p><p>枚举值：</p><ul><li>FAILED： 失败</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置话术状态。
-PENDING --未生成。
-PROCESSING --生成中。
-READY --已生成。
-                     * @param _status 话术状态。
-PENDING --未生成。
-PROCESSING --生成中。
-READY --已生成。
+                     * 设置<p>话术状态。PENDING --未生成。PROCESSING --生成中。READY --已生成。FAILED-失败</p><p>枚举值：</p><ul><li>FAILED： 失败</li></ul>
+                     * @param _status <p>话术状态。PENDING --未生成。PROCESSING --生成中。READY --已生成。FAILED-失败</p><p>枚举值：</p><ul><li>FAILED： 失败</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -143,15 +152,15 @@ READY --已生成。
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取时长。单位：毫秒。
-                     * @return Duration 时长。单位：毫秒。
+                     * 获取<p>时长。单位：毫秒。</p>
+                     * @return Duration <p>时长。单位：毫秒。</p>
                      * 
                      */
                     int64_t GetDuration() const;
 
                     /**
-                     * 设置时长。单位：毫秒。
-                     * @param _duration 时长。单位：毫秒。
+                     * 设置<p>时长。单位：毫秒。</p>
+                     * @param _duration <p>时长。单位：毫秒。</p>
                      * 
                      */
                     void SetDuration(const int64_t& _duration);
@@ -164,15 +173,15 @@ READY --已生成。
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取话术位置。
-                     * @return Position 话术位置。
+                     * 获取<p>话术位置。</p>
+                     * @return Position <p>话术位置。</p>
                      * 
                      */
                     int64_t GetPosition() const;
 
                     /**
-                     * 设置话术位置。
-                     * @param _position 话术位置。
+                     * 设置<p>话术位置。</p>
+                     * @param _position <p>话术位置。</p>
                      * 
                      */
                     void SetPosition(const int64_t& _position);
@@ -185,19 +194,15 @@ READY --已生成。
                     bool PositionHasBeenSet() const;
 
                     /**
-                     * 获取话术创建时间，UTC时间。
-注意：UTC时间和北京时间相差八小时。
-                     * @return CreateTime 话术创建时间，UTC时间。
-注意：UTC时间和北京时间相差八小时。
+                     * 获取<p>话术创建时间，UTC时间。<br>注意：UTC时间和北京时间相差八小时。</p>
+                     * @return CreateTime <p>话术创建时间，UTC时间。<br>注意：UTC时间和北京时间相差八小时。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置话术创建时间，UTC时间。
-注意：UTC时间和北京时间相差八小时。
-                     * @param _createTime 话术创建时间，UTC时间。
-注意：UTC时间和北京时间相差八小时。
+                     * 设置<p>话术创建时间，UTC时间。<br>注意：UTC时间和北京时间相差八小时。</p>
+                     * @param _createTime <p>话术创建时间，UTC时间。<br>注意：UTC时间和北京时间相差八小时。</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -210,19 +215,15 @@ READY --已生成。
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取话术最后更新时间，UTC时间。
-注意：UTC时间和北京时间相差八小时。
-                     * @return UpdateTime 话术最后更新时间，UTC时间。
-注意：UTC时间和北京时间相差八小时。
+                     * 获取<p>话术最后更新时间，UTC时间。<br>注意：UTC时间和北京时间相差八小时。</p>
+                     * @return UpdateTime <p>话术最后更新时间，UTC时间。<br>注意：UTC时间和北京时间相差八小时。</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置话术最后更新时间，UTC时间。
-注意：UTC时间和北京时间相差八小时。
-                     * @param _updateTime 话术最后更新时间，UTC时间。
-注意：UTC时间和北京时间相差八小时。
+                     * 设置<p>话术最后更新时间，UTC时间。<br>注意：UTC时间和北京时间相差八小时。</p>
+                     * @param _updateTime <p>话术最后更新时间，UTC时间。<br>注意：UTC时间和北京时间相差八小时。</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -237,54 +238,55 @@ READY --已生成。
                 private:
 
                     /**
-                     * 数字人直播间话术 ID。
+                     * <p>数字人直播间话术 ID。</p>
                      */
                     std::string m_scriptId;
                     bool m_scriptIdHasBeenSet;
 
                     /**
-                     * 话术标题。
+                     * <p>数字人直播间产品 ID。</p>
+                     */
+                    std::string m_productId;
+                    bool m_productIdHasBeenSet;
+
+                    /**
+                     * <p>话术标题。</p>
                      */
                     std::string m_title;
                     bool m_titleHasBeenSet;
 
                     /**
-                     * 话术内容。
+                     * <p>话术内容。</p>
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 话术状态。
-PENDING --未生成。
-PROCESSING --生成中。
-READY --已生成。
+                     * <p>话术状态。PENDING --未生成。PROCESSING --生成中。READY --已生成。FAILED-失败</p><p>枚举值：</p><ul><li>FAILED： 失败</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 时长。单位：毫秒。
+                     * <p>时长。单位：毫秒。</p>
                      */
                     int64_t m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 话术位置。
+                     * <p>话术位置。</p>
                      */
                     int64_t m_position;
                     bool m_positionHasBeenSet;
 
                     /**
-                     * 话术创建时间，UTC时间。
-注意：UTC时间和北京时间相差八小时。
+                     * <p>话术创建时间，UTC时间。<br>注意：UTC时间和北京时间相差八小时。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 话术最后更新时间，UTC时间。
-注意：UTC时间和北京时间相差八小时。
+                     * <p>话术最后更新时间，UTC时间。<br>注意：UTC时间和北京时间相差八小时。</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

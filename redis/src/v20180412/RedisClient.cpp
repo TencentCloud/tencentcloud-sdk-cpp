@@ -4590,6 +4590,56 @@ RedisClient::ModifyInstanceBackupModeOutcomeCallable RedisClient::ModifyInstance
     return prom->get_future();
 }
 
+RedisClient::ModifyInstanceChargeTypeOutcome RedisClient::ModifyInstanceChargeType(const ModifyInstanceChargeTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceChargeType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceChargeTypeResponse rsp = ModifyInstanceChargeTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceChargeTypeOutcome(rsp);
+        else
+            return ModifyInstanceChargeTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceChargeTypeOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::ModifyInstanceChargeTypeAsync(const ModifyInstanceChargeTypeRequest& request, const ModifyInstanceChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyInstanceChargeTypeRequest&;
+    using Resp = ModifyInstanceChargeTypeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceChargeType", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RedisClient::ModifyInstanceChargeTypeOutcomeCallable RedisClient::ModifyInstanceChargeTypeCallable(const ModifyInstanceChargeTypeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyInstanceChargeTypeOutcome>>();
+    ModifyInstanceChargeTypeAsync(
+    request,
+    [prom](
+        const RedisClient*,
+        const ModifyInstanceChargeTypeRequest&,
+        ModifyInstanceChargeTypeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 RedisClient::ModifyInstanceEventOutcome RedisClient::ModifyInstanceEvent(const ModifyInstanceEventRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyInstanceEvent");

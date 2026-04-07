@@ -5540,6 +5540,56 @@ TkeClient::DescribeClusterRoutesOutcomeCallable TkeClient::DescribeClusterRoutes
     return prom->get_future();
 }
 
+TkeClient::DescribeClusterSchedulerPolicyOutcome TkeClient::DescribeClusterSchedulerPolicy(const DescribeClusterSchedulerPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterSchedulerPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterSchedulerPolicyResponse rsp = DescribeClusterSchedulerPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterSchedulerPolicyOutcome(rsp);
+        else
+            return DescribeClusterSchedulerPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterSchedulerPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterSchedulerPolicyAsync(const DescribeClusterSchedulerPolicyRequest& request, const DescribeClusterSchedulerPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeClusterSchedulerPolicyRequest&;
+    using Resp = DescribeClusterSchedulerPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeClusterSchedulerPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::DescribeClusterSchedulerPolicyOutcomeCallable TkeClient::DescribeClusterSchedulerPolicyCallable(const DescribeClusterSchedulerPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeClusterSchedulerPolicyOutcome>>();
+    DescribeClusterSchedulerPolicyAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const DescribeClusterSchedulerPolicyRequest&,
+        DescribeClusterSchedulerPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TkeClient::DescribeClusterSecurityOutcome TkeClient::DescribeClusterSecurity(const DescribeClusterSecurityRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterSecurity");
@@ -11332,6 +11382,56 @@ TkeClient::ModifyClusterRuntimeConfigOutcomeCallable TkeClient::ModifyClusterRun
         const TkeClient*,
         const ModifyClusterRuntimeConfigRequest&,
         ModifyClusterRuntimeConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TkeClient::ModifyClusterSchedulerPolicyOutcome TkeClient::ModifyClusterSchedulerPolicy(const ModifyClusterSchedulerPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterSchedulerPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterSchedulerPolicyResponse rsp = ModifyClusterSchedulerPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterSchedulerPolicyOutcome(rsp);
+        else
+            return ModifyClusterSchedulerPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterSchedulerPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyClusterSchedulerPolicyAsync(const ModifyClusterSchedulerPolicyRequest& request, const ModifyClusterSchedulerPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyClusterSchedulerPolicyRequest&;
+    using Resp = ModifyClusterSchedulerPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyClusterSchedulerPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TkeClient::ModifyClusterSchedulerPolicyOutcomeCallable TkeClient::ModifyClusterSchedulerPolicyCallable(const ModifyClusterSchedulerPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyClusterSchedulerPolicyOutcome>>();
+    ModifyClusterSchedulerPolicyAsync(
+    request,
+    [prom](
+        const TkeClient*,
+        const ModifyClusterSchedulerPolicyRequest&,
+        ModifyClusterSchedulerPolicyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

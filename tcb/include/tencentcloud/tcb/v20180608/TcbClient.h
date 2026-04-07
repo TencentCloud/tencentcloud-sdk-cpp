@@ -127,8 +127,6 @@
 #include <tencentcloud/tcb/v20180608/model/DestroyMySQLResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreResponse.h>
-#include <tencentcloud/tcb/v20180608/model/EditAuthConfigRequest.h>
-#include <tencentcloud/tcb/v20180608/model/EditAuthConfigResponse.h>
 #include <tencentcloud/tcb/v20180608/model/GetProvidersRequest.h>
 #include <tencentcloud/tcb/v20180608/model/GetProvidersResponse.h>
 #include <tencentcloud/tcb/v20180608/model/InquireVmPriceRequest.h>
@@ -155,8 +153,6 @@
 #include <tencentcloud/tcb/v20180608/model/ModifySafeRuleResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyUserRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyUserResponse.h>
-#include <tencentcloud/tcb/v20180608/model/ReinstateEnvRequest.h>
-#include <tencentcloud/tcb/v20180608/model/ReinstateEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/RenewEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/RenewEnvResponse.h>
 #include <tencentcloud/tcb/v20180608/model/RunCommandsRequest.h>
@@ -337,9 +333,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DestroyStaticStoreResponse> DestroyStaticStoreOutcome;
                 typedef std::future<DestroyStaticStoreOutcome> DestroyStaticStoreOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DestroyStaticStoreRequest&, DestroyStaticStoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyStaticStoreAsyncHandler;
-                typedef Outcome<Core::Error, Model::EditAuthConfigResponse> EditAuthConfigOutcome;
-                typedef std::future<EditAuthConfigOutcome> EditAuthConfigOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::EditAuthConfigRequest&, EditAuthConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EditAuthConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetProvidersResponse> GetProvidersOutcome;
                 typedef std::future<GetProvidersOutcome> GetProvidersOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::GetProvidersRequest&, GetProvidersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetProvidersAsyncHandler;
@@ -379,9 +372,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyUserResponse> ModifyUserOutcome;
                 typedef std::future<ModifyUserOutcome> ModifyUserOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyUserRequest&, ModifyUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserAsyncHandler;
-                typedef Outcome<Core::Error, Model::ReinstateEnvResponse> ReinstateEnvOutcome;
-                typedef std::future<ReinstateEnvOutcome> ReinstateEnvOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::ReinstateEnvRequest&, ReinstateEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReinstateEnvAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenewEnvResponse> RenewEnvOutcome;
                 typedef std::future<RenewEnvOutcome> RenewEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::RenewEnvRequest&, RenewEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewEnvAsyncHandler;
@@ -946,15 +936,6 @@ namespace TencentCloud
                 DestroyStaticStoreOutcomeCallable DestroyStaticStoreCallable(const Model::DestroyStaticStoreRequest& request);
 
                 /**
-                 *修改登录配置
-                 * @param req EditAuthConfigRequest
-                 * @return EditAuthConfigOutcome
-                 */
-                EditAuthConfigOutcome EditAuthConfig(const Model::EditAuthConfigRequest &request);
-                void EditAuthConfigAsync(const Model::EditAuthConfigRequest& request, const EditAuthConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                EditAuthConfigOutcomeCallable EditAuthConfigCallable(const Model::EditAuthConfigRequest& request);
-
-                /**
                  *查询指定云开发环境下的身份认证源列表。返回该环境已配置的所有身份认证源信息，包括第三方登录（OAuth、OIDC、SAML）、微信小程序登录、自定义登录和邮箱登录等。返回结果包含认证源基本信息、关联应用、配置状态及启用情况。若自定义登录或邮箱登录的身份源尚未创建，接口会自动追加一个默认关闭状态的身份源记录。
                  * @param req GetProvidersRequest
                  * @return GetProvidersOutcome
@@ -1079,15 +1060,6 @@ Id、Secret、CreatedAt、Meta 等字段在该接口中不可修改，当客户�
                 ModifyUserOutcome ModifyUser(const Model::ModifyUserRequest &request);
                 void ModifyUserAsync(const Model::ModifyUserRequest& request, const ModifyUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyUserOutcomeCallable ModifyUserCallable(const Model::ModifyUserRequest& request);
-
-                /**
-                 *针对已隔离的免费环境，可以通过本接口将其恢复访问。
-                 * @param req ReinstateEnvRequest
-                 * @return ReinstateEnvOutcome
-                 */
-                ReinstateEnvOutcome ReinstateEnv(const Model::ReinstateEnvRequest &request);
-                void ReinstateEnvAsync(const Model::ReinstateEnvRequest& request, const ReinstateEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ReinstateEnvOutcomeCallable ReinstateEnvCallable(const Model::ReinstateEnvRequest& request);
 
                 /**
                  *本接口用于云开发环境套餐续费。

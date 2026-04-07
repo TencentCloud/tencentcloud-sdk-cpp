@@ -223,11 +223,12 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/DescribeEscapeSafeStateResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeImageRiskSummaryRequest.h
   include/tencentcloud/tcss/v20201101/model/CreateDefenceVulExportJobResponse.h
-  include/tencentcloud/tcss/v20201101/model/StopVirusScanTaskRequest.h
+  include/tencentcloud/tcss/v20201101/model/K8SAPIRuleTypeCountItem.h
   include/tencentcloud/tcss/v20201101/model/AbnormalProcessRuleInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeRaspRuleVulsResponse.h
   include/tencentcloud/tcss/v20201101/model/ScanComplianceAssetsByPolicyItemResponse.h
   include/tencentcloud/tcss/v20201101/model/CreateRiskDnsEventExportJobRequest.h
+  include/tencentcloud/tcss/v20201101/model/K8SAPIRuleTypeZhItem.h
   include/tencentcloud/tcss/v20201101/model/ComplianceWhitelistItem.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetPortListRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeComplianceTaskPolicyItemSummaryListResponse.h
@@ -411,6 +412,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/ModifySecLogCleanSettingInfoRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeAccessControlEventsRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeCompliancePeriodTaskListRequest.h
+  include/tencentcloud/tcss/v20201101/model/StopVirusScanTaskRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeAccessControlRuleDetailRequest.h
   include/tencentcloud/tcss/v20201101/model/ModifyVirusScanTimeoutSettingRequest.h
   include/tencentcloud/tcss/v20201101/model/CreateProcessEventsExportJobResponse.h
@@ -1105,11 +1107,12 @@ set(tcss_src
   src/v20201101/model/DescribeEscapeSafeStateResponse.cpp
   src/v20201101/model/DescribeImageRiskSummaryRequest.cpp
   src/v20201101/model/CreateDefenceVulExportJobResponse.cpp
-  src/v20201101/model/StopVirusScanTaskRequest.cpp
+  src/v20201101/model/K8SAPIRuleTypeCountItem.cpp
   src/v20201101/model/AbnormalProcessRuleInfo.cpp
   src/v20201101/model/DescribeRaspRuleVulsResponse.cpp
   src/v20201101/model/ScanComplianceAssetsByPolicyItemResponse.cpp
   src/v20201101/model/CreateRiskDnsEventExportJobRequest.cpp
+  src/v20201101/model/K8SAPIRuleTypeZhItem.cpp
   src/v20201101/model/ComplianceWhitelistItem.cpp
   src/v20201101/model/DescribeAssetPortListRequest.cpp
   src/v20201101/model/DescribeComplianceTaskPolicyItemSummaryListResponse.cpp
@@ -1293,6 +1296,7 @@ set(tcss_src
   src/v20201101/model/ModifySecLogCleanSettingInfoRequest.cpp
   src/v20201101/model/DescribeAccessControlEventsRequest.cpp
   src/v20201101/model/DescribeCompliancePeriodTaskListRequest.cpp
+  src/v20201101/model/StopVirusScanTaskRequest.cpp
   src/v20201101/model/DescribeAccessControlRuleDetailRequest.cpp
   src/v20201101/model/ModifyVirusScanTimeoutSettingRequest.cpp
   src/v20201101/model/CreateProcessEventsExportJobResponse.cpp

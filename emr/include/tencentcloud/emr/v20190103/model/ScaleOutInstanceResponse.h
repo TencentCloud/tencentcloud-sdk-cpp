@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。
-                     * @return InstanceId 实例ID。
+                     * 获取<p>实例ID。</p>
+                     * @return InstanceId <p>实例ID。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -58,9 +58,9 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取订单号。
+                     * 获取<p>订单号。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DealNames 订单号。
+                     * @return DealNames <p>订单号。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool DealNamesHasBeenSet() const;
 
                     /**
-                     * 获取客户端Token。
-                     * @return ClientToken 客户端Token。
+                     * 获取<p>客户端Token。</p>
+                     * @return ClientToken <p>客户端Token。</p>
                      * 
                      */
                     std::string GetClientToken() const;
@@ -88,8 +88,8 @@ namespace TencentCloud
                     bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取扩容流程ID。
-                     * @return FlowId 扩容流程ID。
+                     * 获取<p>扩容流程ID。</p>
+                     * @return FlowId <p>扩容流程ID。</p>
                      * 
                      */
                     int64_t GetFlowId() const;
@@ -102,8 +102,8 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取大订单号。
-                     * @return BillId 大订单号。
+                     * 获取<p>大订单号。</p>
+                     * @return BillId <p>大订单号。</p>
                      * 
                      */
                     std::string GetBillId() const;
@@ -116,8 +116,8 @@ namespace TencentCloud
                     bool BillIdHasBeenSet() const;
 
                     /**
-                     * 获取扩容TraceId
-                     * @return TraceId 扩容TraceId
+                     * 获取<p>扩容TraceId</p>
+                     * @return TraceId <p>扩容TraceId</p>
                      * 
                      */
                     std::string GetTraceId() const;
@@ -132,38 +132,38 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID。
+                     * <p>实例ID。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 订单号。
+                     * <p>订单号。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_dealNames;
                     bool m_dealNamesHasBeenSet;
 
                     /**
-                     * 客户端Token。
+                     * <p>客户端Token。</p>
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
 
                     /**
-                     * 扩容流程ID。
+                     * <p>扩容流程ID。</p>
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 大订单号。
+                     * <p>大订单号。</p>
                      */
                     std::string m_billId;
                     bool m_billIdHasBeenSet;
 
                     /**
-                     * 扩容TraceId
+                     * <p>扩容TraceId</p>
                      */
                     std::string m_traceId;
                     bool m_traceIdHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取冻结流水，一次开通一个冻结流水。
-                     * @return TranId 冻结流水，一次开通一个冻结流水。
+                     * 获取<p>冻结流水，一次开通一个冻结流水。</p>
+                     * @return TranId <p>冻结流水，一次开通一个冻结流水。</p>
                      * 
                      */
                     std::string GetTranId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool TranIdHasBeenSet() const;
 
                     /**
-                     * 获取后付费订单号。
-                     * @return DealNames 后付费订单号。
+                     * 获取<p>付费的订单号。说明：建议您使用 <a href="https://cloud.tencent.com/document/product/1003/52131">DescribeResourcesByDealName</a> 接口查询订单关联实例。</p>
+                     * @return DealNames <p>付费的订单号。说明：建议您使用 <a href="https://cloud.tencent.com/document/product/1003/52131">DescribeResourcesByDealName</a> 接口查询订单关联实例。</p>
                      * 
                      */
                     std::vector<std::string> GetDealNames() const;
@@ -72,22 +72,22 @@ namespace TencentCloud
                     bool DealNamesHasBeenSet() const;
 
                     /**
-                     * 获取发货资源id列表。
-                     * @return ResourceIds 发货资源id列表。
-                     * 
+                     * 获取<p>发货资源id列表。</p>
+                     * @return ResourceIds <p>发货资源id列表。</p>
+                     * @deprecated
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
                      * 判断参数 ResourceIds 是否已赋值
                      * @return ResourceIds 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
-                     * 获取大订单号
-                     * @return BigDealIds 大订单号
+                     * 获取<p>大订单号</p>
+                     * @return BigDealIds <p>大订单号</p>
                      * 
                      */
                     std::vector<std::string> GetBigDealIds() const;
@@ -102,25 +102,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 冻结流水，一次开通一个冻结流水。
+                     * <p>冻结流水，一次开通一个冻结流水。</p>
                      */
                     std::string m_tranId;
                     bool m_tranIdHasBeenSet;
 
                     /**
-                     * 后付费订单号。
+                     * <p>付费的订单号。说明：建议您使用 <a href="https://cloud.tencent.com/document/product/1003/52131">DescribeResourcesByDealName</a> 接口查询订单关联实例。</p>
                      */
                     std::vector<std::string> m_dealNames;
                     bool m_dealNamesHasBeenSet;
 
                     /**
-                     * 发货资源id列表。
+                     * <p>发货资源id列表。</p>
                      */
                     std::vector<std::string> m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
 
                     /**
-                     * 大订单号
+                     * <p>大订单号</p>
                      */
                     std::vector<std::string> m_bigDealIds;
                     bool m_bigDealIdsHasBeenSet;

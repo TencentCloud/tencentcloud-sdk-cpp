@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件下载链接
-                     * @return Url 文件下载链接
+                     * 获取<p>文件下载链接</p>
+                     * @return Url <p>文件下载链接</p>
                      * 
                      */
                     std::string GetUrl() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件下载链接
+                     * <p>文件下载链接</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

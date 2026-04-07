@@ -32,7 +32,8 @@ K8sApiAbnormalTendencyItem::K8sApiAbnormalTendencyItem() :
     m_doubtfulContainerCreateCountHasBeenSet(false),
     m_userDefinedRuleCountHasBeenSet(false),
     m_anonymousAccessCountHasBeenSet(false),
-    m_privilegeContainerCountHasBeenSet(false)
+    m_privilegeContainerCountHasBeenSet(false),
+    m_ruleTypeCountSetHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,26 @@ CoreInternalOutcome K8sApiAbnormalTendencyItem::Deserialize(const rapidjson::Val
         m_privilegeContainerCountHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleTypeCountSet") && !value["RuleTypeCountSet"].IsNull())
+    {
+        if (!value["RuleTypeCountSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `K8sApiAbnormalTendencyItem.RuleTypeCountSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RuleTypeCountSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            K8SAPIRuleTypeCountItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ruleTypeCountSet.push_back(item);
+        }
+        m_ruleTypeCountSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +283,21 @@ void K8sApiAbnormalTendencyItem::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "PrivilegeContainerCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_privilegeContainerCount, allocator);
+    }
+
+    if (m_ruleTypeCountSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleTypeCountSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ruleTypeCountSet.begin(); itr != m_ruleTypeCountSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -457,5 +493,21 @@ void K8sApiAbnormalTendencyItem::SetPrivilegeContainerCount(const uint64_t& _pri
 bool K8sApiAbnormalTendencyItem::PrivilegeContainerCountHasBeenSet() const
 {
     return m_privilegeContainerCountHasBeenSet;
+}
+
+vector<K8SAPIRuleTypeCountItem> K8sApiAbnormalTendencyItem::GetRuleTypeCountSet() const
+{
+    return m_ruleTypeCountSet;
+}
+
+void K8sApiAbnormalTendencyItem::SetRuleTypeCountSet(const vector<K8SAPIRuleTypeCountItem>& _ruleTypeCountSet)
+{
+    m_ruleTypeCountSet = _ruleTypeCountSet;
+    m_ruleTypeCountSetHasBeenSet = true;
+}
+
+bool K8sApiAbnormalTendencyItem::RuleTypeCountSetHasBeenSet() const
+{
+    return m_ruleTypeCountSetHasBeenSet;
 }
 

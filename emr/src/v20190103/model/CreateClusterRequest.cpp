@@ -48,7 +48,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_loadBalancerIdHasBeenSet(false),
     m_defaultMetaVersionHasBeenSet(false),
     m_needCdbAuditHasBeenSet(false),
-    m_sgIPHasBeenSet(false)
+    m_sgIPHasBeenSet(false),
+    m_partitionNumberHasBeenSet(false)
 {
 }
 
@@ -314,6 +315,14 @@ string CreateClusterRequest::ToJsonString() const
         string key = "SgIP";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sgIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_partitionNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PartitionNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_partitionNumber, allocator);
     }
 
 
@@ -738,6 +747,22 @@ void CreateClusterRequest::SetSgIP(const string& _sgIP)
 bool CreateClusterRequest::SgIPHasBeenSet() const
 {
     return m_sgIPHasBeenSet;
+}
+
+int64_t CreateClusterRequest::GetPartitionNumber() const
+{
+    return m_partitionNumber;
+}
+
+void CreateClusterRequest::SetPartitionNumber(const int64_t& _partitionNumber)
+{
+    m_partitionNumber = _partitionNumber;
+    m_partitionNumberHasBeenSet = true;
+}
+
+bool CreateClusterRequest::PartitionNumberHasBeenSet() const
+{
+    return m_partitionNumberHasBeenSet;
 }
 
 

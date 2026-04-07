@@ -243,6 +243,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeClusterRouteTablesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterRoutesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterRoutesResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterSchedulerPolicyRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterSchedulerPolicyResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterSecurityRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterSecurityResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterStatusRequest.h>
@@ -475,6 +477,8 @@
 #include <tencentcloud/tke/v20180525/model/ModifyClusterRollOutSequenceTagsResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterRuntimeConfigRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterRuntimeConfigResponse.h>
+#include <tencentcloud/tke/v20180525/model/ModifyClusterSchedulerPolicyRequest.h>
+#include <tencentcloud/tke/v20180525/model/ModifyClusterSchedulerPolicyResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterTagsRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterTagsResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterVirtualNodePoolRequest.h>
@@ -903,6 +907,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterRoutesResponse> DescribeClusterRoutesOutcome;
                 typedef std::future<DescribeClusterRoutesOutcome> DescribeClusterRoutesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterRoutesRequest&, DescribeClusterRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterRoutesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterSchedulerPolicyResponse> DescribeClusterSchedulerPolicyOutcome;
+                typedef std::future<DescribeClusterSchedulerPolicyOutcome> DescribeClusterSchedulerPolicyOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeClusterSchedulerPolicyRequest&, DescribeClusterSchedulerPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterSchedulerPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterSecurityResponse> DescribeClusterSecurityOutcome;
                 typedef std::future<DescribeClusterSecurityOutcome> DescribeClusterSecurityOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterSecurityRequest&, DescribeClusterSecurityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterSecurityAsyncHandler;
@@ -1251,6 +1258,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyClusterRuntimeConfigResponse> ModifyClusterRuntimeConfigOutcome;
                 typedef std::future<ModifyClusterRuntimeConfigOutcome> ModifyClusterRuntimeConfigOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyClusterRuntimeConfigRequest&, ModifyClusterRuntimeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterRuntimeConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyClusterSchedulerPolicyResponse> ModifyClusterSchedulerPolicyOutcome;
+                typedef std::future<ModifyClusterSchedulerPolicyOutcome> ModifyClusterSchedulerPolicyOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ModifyClusterSchedulerPolicyRequest&, ModifyClusterSchedulerPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterSchedulerPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyClusterTagsResponse> ModifyClusterTagsOutcome;
                 typedef std::future<ModifyClusterTagsOutcome> ModifyClusterTagsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyClusterTagsRequest&, ModifyClusterTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterTagsAsyncHandler;
@@ -2371,6 +2381,15 @@ namespace TencentCloud
                 DescribeClusterRoutesOutcomeCallable DescribeClusterRoutesCallable(const Model::DescribeClusterRoutesRequest& request);
 
                 /**
+                 *查询集群调度策略
+                 * @param req DescribeClusterSchedulerPolicyRequest
+                 * @return DescribeClusterSchedulerPolicyOutcome
+                 */
+                DescribeClusterSchedulerPolicyOutcome DescribeClusterSchedulerPolicy(const Model::DescribeClusterSchedulerPolicyRequest &request);
+                void DescribeClusterSchedulerPolicyAsync(const Model::DescribeClusterSchedulerPolicyRequest& request, const DescribeClusterSchedulerPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterSchedulerPolicyOutcomeCallable DescribeClusterSchedulerPolicyCallable(const Model::DescribeClusterSchedulerPolicyRequest& request);
+
+                /**
                  *集群的密钥信息
                  * @param req DescribeClusterSecurityRequest
                  * @return DescribeClusterSecurityOutcome
@@ -3413,6 +3432,15 @@ namespace TencentCloud
                 ModifyClusterRuntimeConfigOutcome ModifyClusterRuntimeConfig(const Model::ModifyClusterRuntimeConfigRequest &request);
                 void ModifyClusterRuntimeConfigAsync(const Model::ModifyClusterRuntimeConfigRequest& request, const ModifyClusterRuntimeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyClusterRuntimeConfigOutcomeCallable ModifyClusterRuntimeConfigCallable(const Model::ModifyClusterRuntimeConfigRequest& request);
+
+                /**
+                 *修改集群调度策略
+                 * @param req ModifyClusterSchedulerPolicyRequest
+                 * @return ModifyClusterSchedulerPolicyOutcome
+                 */
+                ModifyClusterSchedulerPolicyOutcome ModifyClusterSchedulerPolicy(const Model::ModifyClusterSchedulerPolicyRequest &request);
+                void ModifyClusterSchedulerPolicyAsync(const Model::ModifyClusterSchedulerPolicyRequest& request, const ModifyClusterSchedulerPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterSchedulerPolicyOutcomeCallable ModifyClusterSchedulerPolicyCallable(const Model::ModifyClusterSchedulerPolicyRequest& request);
 
                 /**
                  *修改集群标签

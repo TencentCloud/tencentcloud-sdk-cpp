@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcss/v20201101/model/K8sApiAbnormalEventListItem.h>
+#include <tencentcloud/tcss/v20201101/model/K8SAPIRuleTypeZhItem.h>
 
 
 namespace TencentCloud
@@ -45,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取事件列表
-                     * @return List 事件列表
+                     * 获取<p>事件列表</p>
+                     * @return List <p>事件列表</p>
                      * 
                      */
                     std::vector<K8sApiAbnormalEventListItem> GetList() const;
@@ -59,8 +60,8 @@ namespace TencentCloud
                     bool ListHasBeenSet() const;
 
                     /**
-                     * 获取总数量
-                     * @return TotalCount 总数量
+                     * 获取<p>总数量</p>
+                     * @return TotalCount <p>总数量</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -72,19 +73,39 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>k8s告警类型和对应中文翻译</p>
+                     * @return RuleTypeZhSet <p>k8s告警类型和对应中文翻译</p>
+                     * 
+                     */
+                    std::vector<K8SAPIRuleTypeZhItem> GetRuleTypeZhSet() const;
+
+                    /**
+                     * 判断参数 RuleTypeZhSet 是否已赋值
+                     * @return RuleTypeZhSet 是否已赋值
+                     * 
+                     */
+                    bool RuleTypeZhSetHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 事件列表
+                     * <p>事件列表</p>
                      */
                     std::vector<K8sApiAbnormalEventListItem> m_list;
                     bool m_listHasBeenSet;
 
                     /**
-                     * 总数量
+                     * <p>总数量</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * <p>k8s告警类型和对应中文翻译</p>
+                     */
+                    std::vector<K8SAPIRuleTypeZhItem> m_ruleTypeZhSet;
+                    bool m_ruleTypeZhSetHasBeenSet;
 
                 };
             }

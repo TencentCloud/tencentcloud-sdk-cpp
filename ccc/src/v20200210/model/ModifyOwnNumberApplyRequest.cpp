@@ -28,7 +28,10 @@ ModifyOwnNumberApplyRequest::ModifyOwnNumberApplyRequest() :
     m_applyIdHasBeenSet(false),
     m_prefixHasBeenSet(false),
     m_mobileNddPrefixHasBeenSet(false),
-    m_localNumberTrimACHasBeenSet(false)
+    m_localNumberTrimACHasBeenSet(false),
+    m_calleeFormatPassthroughHasBeenSet(false),
+    m_callerFormatPassthroughHasBeenSet(false),
+    m_internationalNumberPrefixHasBeenSet(false)
 {
 }
 
@@ -92,6 +95,30 @@ string ModifyOwnNumberApplyRequest::ToJsonString() const
         string key = "LocalNumberTrimAC";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_localNumberTrimAC, allocator);
+    }
+
+    if (m_calleeFormatPassthroughHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CalleeFormatPassthrough";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_calleeFormatPassthrough, allocator);
+    }
+
+    if (m_callerFormatPassthroughHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallerFormatPassthrough";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_callerFormatPassthrough, allocator);
+    }
+
+    if (m_internationalNumberPrefixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InternationalNumberPrefix";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_internationalNumberPrefix.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -196,6 +223,54 @@ void ModifyOwnNumberApplyRequest::SetLocalNumberTrimAC(const bool& _localNumberT
 bool ModifyOwnNumberApplyRequest::LocalNumberTrimACHasBeenSet() const
 {
     return m_localNumberTrimACHasBeenSet;
+}
+
+bool ModifyOwnNumberApplyRequest::GetCalleeFormatPassthrough() const
+{
+    return m_calleeFormatPassthrough;
+}
+
+void ModifyOwnNumberApplyRequest::SetCalleeFormatPassthrough(const bool& _calleeFormatPassthrough)
+{
+    m_calleeFormatPassthrough = _calleeFormatPassthrough;
+    m_calleeFormatPassthroughHasBeenSet = true;
+}
+
+bool ModifyOwnNumberApplyRequest::CalleeFormatPassthroughHasBeenSet() const
+{
+    return m_calleeFormatPassthroughHasBeenSet;
+}
+
+bool ModifyOwnNumberApplyRequest::GetCallerFormatPassthrough() const
+{
+    return m_callerFormatPassthrough;
+}
+
+void ModifyOwnNumberApplyRequest::SetCallerFormatPassthrough(const bool& _callerFormatPassthrough)
+{
+    m_callerFormatPassthrough = _callerFormatPassthrough;
+    m_callerFormatPassthroughHasBeenSet = true;
+}
+
+bool ModifyOwnNumberApplyRequest::CallerFormatPassthroughHasBeenSet() const
+{
+    return m_callerFormatPassthroughHasBeenSet;
+}
+
+string ModifyOwnNumberApplyRequest::GetInternationalNumberPrefix() const
+{
+    return m_internationalNumberPrefix;
+}
+
+void ModifyOwnNumberApplyRequest::SetInternationalNumberPrefix(const string& _internationalNumberPrefix)
+{
+    m_internationalNumberPrefix = _internationalNumberPrefix;
+    m_internationalNumberPrefixHasBeenSet = true;
+}
+
+bool ModifyOwnNumberApplyRequest::InternationalNumberPrefixHasBeenSet() const
+{
+    return m_internationalNumberPrefixHasBeenSet;
 }
 
 

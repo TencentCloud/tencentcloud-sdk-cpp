@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeK8sApiAbnormalEventListResponse::DescribeK8sApiAbnormalEventListResponse() :
     m_listHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_ruleTypeZhSetHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,26 @@ CoreInternalOutcome DescribeK8sApiAbnormalEventListResponse::Deserialize(const s
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RuleTypeZhSet") && !rsp["RuleTypeZhSet"].IsNull())
+    {
+        if (!rsp["RuleTypeZhSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RuleTypeZhSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RuleTypeZhSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            K8SAPIRuleTypeZhItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ruleTypeZhSet.push_back(item);
+        }
+        m_ruleTypeZhSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +147,21 @@ string DescribeK8sApiAbnormalEventListResponse::ToJsonString() const
         value.AddMember(iKey, m_totalCount, allocator);
     }
 
+    if (m_ruleTypeZhSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleTypeZhSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ruleTypeZhSet.begin(); itr != m_ruleTypeZhSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +192,16 @@ uint64_t DescribeK8sApiAbnormalEventListResponse::GetTotalCount() const
 bool DescribeK8sApiAbnormalEventListResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+vector<K8SAPIRuleTypeZhItem> DescribeK8sApiAbnormalEventListResponse::GetRuleTypeZhSet() const
+{
+    return m_ruleTypeZhSet;
+}
+
+bool DescribeK8sApiAbnormalEventListResponse::RuleTypeZhSetHasBeenSet() const
+{
+    return m_ruleTypeZhSetHasBeenSet;
 }
 
 

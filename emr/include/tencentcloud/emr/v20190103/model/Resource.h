@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点规格描述，如CVM.SA2。
-                     * @return Spec 节点规格描述，如CVM.SA2。
+                     * 获取<p>节点规格描述，如CVM.SA2。</p>
+                     * @return Spec <p>节点规格描述，如CVM.SA2。</p>
                      * 
                      */
                     std::string GetSpec() const;
 
                     /**
-                     * 设置节点规格描述，如CVM.SA2。
-                     * @param _spec 节点规格描述，如CVM.SA2。
+                     * 设置<p>节点规格描述，如CVM.SA2。</p>
+                     * @param _spec <p>节点规格描述，如CVM.SA2。</p>
                      * 
                      */
                     void SetSpec(const std::string& _spec);
@@ -70,59 +70,15 @@ namespace TencentCloud
                     bool SpecHasBeenSet() const;
 
                     /**
-                     * 获取取值范围:
-"LOCAL_SSD"   3     //本地SSD 
-"CLOUD_SSD"   4     //云SSD 
-"CLOUD_PREMIUM"  5  //高效云盘
-"CLOUD_HSSD"   6    //增强型SSD云硬盘 
-"CLOUD_THROUGHPUT" 11//吞吐型云硬盘 
-"CLOUD_TSSD"  12     //极速型SSD云硬盘 
-"CLOUD_BSSD"    13   //通用型SSD云硬盘 
-"CLOUD_BIGDATA" 14   //大数据型云硬盘
-"CLOUD_HIGHIO"  15   //高IO型云硬盘 
-
-该类型字段为无效字段，实际系统盘类型会根据数据盘类型和节点类型判断，如果节点支持所选的数据盘类型，系统盘类型会跟数据盘保持一致，建议使用CreateCluster接口
-                     * @return StorageType 取值范围:
-"LOCAL_SSD"   3     //本地SSD 
-"CLOUD_SSD"   4     //云SSD 
-"CLOUD_PREMIUM"  5  //高效云盘
-"CLOUD_HSSD"   6    //增强型SSD云硬盘 
-"CLOUD_THROUGHPUT" 11//吞吐型云硬盘 
-"CLOUD_TSSD"  12     //极速型SSD云硬盘 
-"CLOUD_BSSD"    13   //通用型SSD云硬盘 
-"CLOUD_BIGDATA" 14   //大数据型云硬盘
-"CLOUD_HIGHIO"  15   //高IO型云硬盘 
-
-该类型字段为无效字段，实际系统盘类型会根据数据盘类型和节点类型判断，如果节点支持所选的数据盘类型，系统盘类型会跟数据盘保持一致，建议使用CreateCluster接口
+                     * 获取<p>取值范围:<br>&quot;LOCAL_SSD&quot;   3     //本地SSD<br>&quot;CLOUD_SSD&quot;   4     //云SSD<br>&quot;CLOUD_PREMIUM&quot;  5  //高效云盘<br>&quot;CLOUD_HSSD&quot;   6    //增强型SSD云硬盘<br>&quot;CLOUD_THROUGHPUT&quot; 11//吞吐型云硬盘<br>&quot;CLOUD_TSSD&quot;  12     //极速型SSD云硬盘<br>&quot;CLOUD_BSSD&quot;    13   //通用型SSD云硬盘<br>&quot;CLOUD_BIGDATA&quot; 14   //大数据型云硬盘<br>&quot;CLOUD_HIGHIO&quot;  15   //高IO型云硬盘 </p><p>该类型字段为无效字段，实际系统盘类型会根据数据盘类型和节点类型判断，如果节点支持所选的数据盘类型，系统盘类型会跟数据盘保持一致，建议使用CreateCluster接口</p>
+                     * @return StorageType <p>取值范围:<br>&quot;LOCAL_SSD&quot;   3     //本地SSD<br>&quot;CLOUD_SSD&quot;   4     //云SSD<br>&quot;CLOUD_PREMIUM&quot;  5  //高效云盘<br>&quot;CLOUD_HSSD&quot;   6    //增强型SSD云硬盘<br>&quot;CLOUD_THROUGHPUT&quot; 11//吞吐型云硬盘<br>&quot;CLOUD_TSSD&quot;  12     //极速型SSD云硬盘<br>&quot;CLOUD_BSSD&quot;    13   //通用型SSD云硬盘<br>&quot;CLOUD_BIGDATA&quot; 14   //大数据型云硬盘<br>&quot;CLOUD_HIGHIO&quot;  15   //高IO型云硬盘 </p><p>该类型字段为无效字段，实际系统盘类型会根据数据盘类型和节点类型判断，如果节点支持所选的数据盘类型，系统盘类型会跟数据盘保持一致，建议使用CreateCluster接口</p>
                      * 
                      */
                     int64_t GetStorageType() const;
 
                     /**
-                     * 设置取值范围:
-"LOCAL_SSD"   3     //本地SSD 
-"CLOUD_SSD"   4     //云SSD 
-"CLOUD_PREMIUM"  5  //高效云盘
-"CLOUD_HSSD"   6    //增强型SSD云硬盘 
-"CLOUD_THROUGHPUT" 11//吞吐型云硬盘 
-"CLOUD_TSSD"  12     //极速型SSD云硬盘 
-"CLOUD_BSSD"    13   //通用型SSD云硬盘 
-"CLOUD_BIGDATA" 14   //大数据型云硬盘
-"CLOUD_HIGHIO"  15   //高IO型云硬盘 
-
-该类型字段为无效字段，实际系统盘类型会根据数据盘类型和节点类型判断，如果节点支持所选的数据盘类型，系统盘类型会跟数据盘保持一致，建议使用CreateCluster接口
-                     * @param _storageType 取值范围:
-"LOCAL_SSD"   3     //本地SSD 
-"CLOUD_SSD"   4     //云SSD 
-"CLOUD_PREMIUM"  5  //高效云盘
-"CLOUD_HSSD"   6    //增强型SSD云硬盘 
-"CLOUD_THROUGHPUT" 11//吞吐型云硬盘 
-"CLOUD_TSSD"  12     //极速型SSD云硬盘 
-"CLOUD_BSSD"    13   //通用型SSD云硬盘 
-"CLOUD_BIGDATA" 14   //大数据型云硬盘
-"CLOUD_HIGHIO"  15   //高IO型云硬盘 
-
-该类型字段为无效字段，实际系统盘类型会根据数据盘类型和节点类型判断，如果节点支持所选的数据盘类型，系统盘类型会跟数据盘保持一致，建议使用CreateCluster接口
+                     * 设置<p>取值范围:<br>&quot;LOCAL_SSD&quot;   3     //本地SSD<br>&quot;CLOUD_SSD&quot;   4     //云SSD<br>&quot;CLOUD_PREMIUM&quot;  5  //高效云盘<br>&quot;CLOUD_HSSD&quot;   6    //增强型SSD云硬盘<br>&quot;CLOUD_THROUGHPUT&quot; 11//吞吐型云硬盘<br>&quot;CLOUD_TSSD&quot;  12     //极速型SSD云硬盘<br>&quot;CLOUD_BSSD&quot;    13   //通用型SSD云硬盘<br>&quot;CLOUD_BIGDATA&quot; 14   //大数据型云硬盘<br>&quot;CLOUD_HIGHIO&quot;  15   //高IO型云硬盘 </p><p>该类型字段为无效字段，实际系统盘类型会根据数据盘类型和节点类型判断，如果节点支持所选的数据盘类型，系统盘类型会跟数据盘保持一致，建议使用CreateCluster接口</p>
+                     * @param _storageType <p>取值范围:<br>&quot;LOCAL_SSD&quot;   3     //本地SSD<br>&quot;CLOUD_SSD&quot;   4     //云SSD<br>&quot;CLOUD_PREMIUM&quot;  5  //高效云盘<br>&quot;CLOUD_HSSD&quot;   6    //增强型SSD云硬盘<br>&quot;CLOUD_THROUGHPUT&quot; 11//吞吐型云硬盘<br>&quot;CLOUD_TSSD&quot;  12     //极速型SSD云硬盘<br>&quot;CLOUD_BSSD&quot;    13   //通用型SSD云硬盘<br>&quot;CLOUD_BIGDATA&quot; 14   //大数据型云硬盘<br>&quot;CLOUD_HIGHIO&quot;  15   //高IO型云硬盘 </p><p>该类型字段为无效字段，实际系统盘类型会根据数据盘类型和节点类型判断，如果节点支持所选的数据盘类型，系统盘类型会跟数据盘保持一致，建议使用CreateCluster接口</p>
                      * 
                      */
                     void SetStorageType(const int64_t& _storageType);
@@ -135,111 +91,15 @@ namespace TencentCloud
                     bool StorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据盘类型 取值范围：
-
-CLOUD_SSD：表示云SSD。
-
-CLOUD_PREMIUM：表示高效云盘。
-
-CLOUD_BASIC：表示云硬盘。
-
-LOCAL_BASIC：表示本地盘。
-
-LOCAL_SSD：表示本地SSD。
-
-CLOUD_HSSD：表示增强型SSD云硬盘。
-
-CLOUD_THROUGHPUT：表示吞吐型云硬盘。
-
-CLOUD_TSSD：表示极速型SSD云硬盘。
-
-CLOUD_BIGDATA：表示大数据型云硬盘。
-
-CLOUD_HIGHIO：表示高IO型云硬盘。
-
-CLOUD_BSSD：表示通用型SSD云硬盘。
-
-REMOTE_SSD：表示远端SSD盘。
-                     * @return DiskType 数据盘类型 取值范围：
-
-CLOUD_SSD：表示云SSD。
-
-CLOUD_PREMIUM：表示高效云盘。
-
-CLOUD_BASIC：表示云硬盘。
-
-LOCAL_BASIC：表示本地盘。
-
-LOCAL_SSD：表示本地SSD。
-
-CLOUD_HSSD：表示增强型SSD云硬盘。
-
-CLOUD_THROUGHPUT：表示吞吐型云硬盘。
-
-CLOUD_TSSD：表示极速型SSD云硬盘。
-
-CLOUD_BIGDATA：表示大数据型云硬盘。
-
-CLOUD_HIGHIO：表示高IO型云硬盘。
-
-CLOUD_BSSD：表示通用型SSD云硬盘。
-
-REMOTE_SSD：表示远端SSD盘。
+                     * 获取<p>数据盘类型 取值范围：</p><p>CLOUD_SSD：表示云SSD。</p><p>CLOUD_PREMIUM：表示高效云盘。</p><p>CLOUD_BASIC：表示云硬盘。</p><p>LOCAL_BASIC：表示本地盘。</p><p>LOCAL_SSD：表示本地SSD。</p><p>CLOUD_HSSD：表示增强型SSD云硬盘。</p><p>CLOUD_THROUGHPUT：表示吞吐型云硬盘。</p><p>CLOUD_TSSD：表示极速型SSD云硬盘。</p><p>CLOUD_BIGDATA：表示大数据型云硬盘。</p><p>CLOUD_HIGHIO：表示高IO型云硬盘。</p><p>CLOUD_BSSD：表示通用型SSD云硬盘。</p><p>REMOTE_SSD：表示远端SSD盘。</p>
+                     * @return DiskType <p>数据盘类型 取值范围：</p><p>CLOUD_SSD：表示云SSD。</p><p>CLOUD_PREMIUM：表示高效云盘。</p><p>CLOUD_BASIC：表示云硬盘。</p><p>LOCAL_BASIC：表示本地盘。</p><p>LOCAL_SSD：表示本地SSD。</p><p>CLOUD_HSSD：表示增强型SSD云硬盘。</p><p>CLOUD_THROUGHPUT：表示吞吐型云硬盘。</p><p>CLOUD_TSSD：表示极速型SSD云硬盘。</p><p>CLOUD_BIGDATA：表示大数据型云硬盘。</p><p>CLOUD_HIGHIO：表示高IO型云硬盘。</p><p>CLOUD_BSSD：表示通用型SSD云硬盘。</p><p>REMOTE_SSD：表示远端SSD盘。</p>
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置数据盘类型 取值范围：
-
-CLOUD_SSD：表示云SSD。
-
-CLOUD_PREMIUM：表示高效云盘。
-
-CLOUD_BASIC：表示云硬盘。
-
-LOCAL_BASIC：表示本地盘。
-
-LOCAL_SSD：表示本地SSD。
-
-CLOUD_HSSD：表示增强型SSD云硬盘。
-
-CLOUD_THROUGHPUT：表示吞吐型云硬盘。
-
-CLOUD_TSSD：表示极速型SSD云硬盘。
-
-CLOUD_BIGDATA：表示大数据型云硬盘。
-
-CLOUD_HIGHIO：表示高IO型云硬盘。
-
-CLOUD_BSSD：表示通用型SSD云硬盘。
-
-REMOTE_SSD：表示远端SSD盘。
-                     * @param _diskType 数据盘类型 取值范围：
-
-CLOUD_SSD：表示云SSD。
-
-CLOUD_PREMIUM：表示高效云盘。
-
-CLOUD_BASIC：表示云硬盘。
-
-LOCAL_BASIC：表示本地盘。
-
-LOCAL_SSD：表示本地SSD。
-
-CLOUD_HSSD：表示增强型SSD云硬盘。
-
-CLOUD_THROUGHPUT：表示吞吐型云硬盘。
-
-CLOUD_TSSD：表示极速型SSD云硬盘。
-
-CLOUD_BIGDATA：表示大数据型云硬盘。
-
-CLOUD_HIGHIO：表示高IO型云硬盘。
-
-CLOUD_BSSD：表示通用型SSD云硬盘。
-
-REMOTE_SSD：表示远端SSD盘。
+                     * 设置<p>数据盘类型 取值范围：</p><p>CLOUD_SSD：表示云SSD。</p><p>CLOUD_PREMIUM：表示高效云盘。</p><p>CLOUD_BASIC：表示云硬盘。</p><p>LOCAL_BASIC：表示本地盘。</p><p>LOCAL_SSD：表示本地SSD。</p><p>CLOUD_HSSD：表示增强型SSD云硬盘。</p><p>CLOUD_THROUGHPUT：表示吞吐型云硬盘。</p><p>CLOUD_TSSD：表示极速型SSD云硬盘。</p><p>CLOUD_BIGDATA：表示大数据型云硬盘。</p><p>CLOUD_HIGHIO：表示高IO型云硬盘。</p><p>CLOUD_BSSD：表示通用型SSD云硬盘。</p><p>REMOTE_SSD：表示远端SSD盘。</p>
+                     * @param _diskType <p>数据盘类型 取值范围：</p><p>CLOUD_SSD：表示云SSD。</p><p>CLOUD_PREMIUM：表示高效云盘。</p><p>CLOUD_BASIC：表示云硬盘。</p><p>LOCAL_BASIC：表示本地盘。</p><p>LOCAL_SSD：表示本地SSD。</p><p>CLOUD_HSSD：表示增强型SSD云硬盘。</p><p>CLOUD_THROUGHPUT：表示吞吐型云硬盘。</p><p>CLOUD_TSSD：表示极速型SSD云硬盘。</p><p>CLOUD_BIGDATA：表示大数据型云硬盘。</p><p>CLOUD_HIGHIO：表示高IO型云硬盘。</p><p>CLOUD_BSSD：表示通用型SSD云硬盘。</p><p>REMOTE_SSD：表示远端SSD盘。</p>
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -252,15 +112,15 @@ REMOTE_SSD：表示远端SSD盘。
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取内存容量,单位为M
-                     * @return MemSize 内存容量,单位为M
+                     * 获取<p>内存容量,单位为M</p>
+                     * @return MemSize <p>内存容量,单位为M</p>
                      * 
                      */
                     int64_t GetMemSize() const;
 
                     /**
-                     * 设置内存容量,单位为M
-                     * @param _memSize 内存容量,单位为M
+                     * 设置<p>内存容量,单位为M</p>
+                     * @param _memSize <p>内存容量,单位为M</p>
                      * 
                      */
                     void SetMemSize(const int64_t& _memSize);
@@ -273,15 +133,15 @@ REMOTE_SSD：表示远端SSD盘。
                     bool MemSizeHasBeenSet() const;
 
                     /**
-                     * 获取CPU核数
-                     * @return Cpu CPU核数
+                     * 获取<p>CPU核数</p>
+                     * @return Cpu <p>CPU核数</p>
                      * 
                      */
                     int64_t GetCpu() const;
 
                     /**
-                     * 设置CPU核数
-                     * @param _cpu CPU核数
+                     * 设置<p>CPU核数</p>
+                     * @param _cpu <p>CPU核数</p>
                      * 
                      */
                     void SetCpu(const int64_t& _cpu);
@@ -294,15 +154,15 @@ REMOTE_SSD：表示远端SSD盘。
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取数据盘容量
-                     * @return DiskSize 数据盘容量
+                     * 获取<p>数据盘容量</p>
+                     * @return DiskSize <p>数据盘容量</p>
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置数据盘容量
-                     * @param _diskSize 数据盘容量
+                     * 设置<p>数据盘容量</p>
+                     * @param _diskSize <p>数据盘容量</p>
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -315,15 +175,15 @@ REMOTE_SSD：表示远端SSD盘。
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取系统盘容量
-                     * @return RootSize 系统盘容量
+                     * 获取<p>系统盘容量</p>
+                     * @return RootSize <p>系统盘容量</p>
                      * 
                      */
                     int64_t GetRootSize() const;
 
                     /**
-                     * 设置系统盘容量
-                     * @param _rootSize 系统盘容量
+                     * 设置<p>系统盘容量</p>
+                     * @param _rootSize <p>系统盘容量</p>
                      * 
                      */
                     void SetRootSize(const int64_t& _rootSize);
@@ -336,18 +196,18 @@ REMOTE_SSD：表示远端SSD盘。
                     bool RootSizeHasBeenSet() const;
 
                     /**
-                     * 获取云盘列表，当数据盘为一块云盘时，直接使用DiskType和DiskSize参数，超出部分使用MultiDisks
+                     * 获取<p>云盘列表，当数据盘为一块云盘时，直接使用DiskType和DiskSize参数，超出部分使用MultiDisks</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MultiDisks 云盘列表，当数据盘为一块云盘时，直接使用DiskType和DiskSize参数，超出部分使用MultiDisks
+                     * @return MultiDisks <p>云盘列表，当数据盘为一块云盘时，直接使用DiskType和DiskSize参数，超出部分使用MultiDisks</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MultiDisk> GetMultiDisks() const;
 
                     /**
-                     * 设置云盘列表，当数据盘为一块云盘时，直接使用DiskType和DiskSize参数，超出部分使用MultiDisks
+                     * 设置<p>云盘列表，当数据盘为一块云盘时，直接使用DiskType和DiskSize参数，超出部分使用MultiDisks</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _multiDisks 云盘列表，当数据盘为一块云盘时，直接使用DiskType和DiskSize参数，超出部分使用MultiDisks
+                     * @param _multiDisks <p>云盘列表，当数据盘为一块云盘时，直接使用DiskType和DiskSize参数，超出部分使用MultiDisks</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -361,18 +221,18 @@ REMOTE_SSD：表示远端SSD盘。
                     bool MultiDisksHasBeenSet() const;
 
                     /**
-                     * 获取需要绑定的标签列表
+                     * 获取<p>需要绑定的标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 需要绑定的标签列表
+                     * @return Tags <p>需要绑定的标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置需要绑定的标签列表
+                     * 设置<p>需要绑定的标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tags 需要绑定的标签列表
+                     * @param _tags <p>需要绑定的标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -386,15 +246,15 @@ REMOTE_SSD：表示远端SSD盘。
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取规格类型，如S2.MEDIUM8
-                     * @return InstanceType 规格类型，如S2.MEDIUM8
+                     * 获取<p>规格类型，如S2.MEDIUM8</p>
+                     * @return InstanceType <p>规格类型，如S2.MEDIUM8</p>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置规格类型，如S2.MEDIUM8
-                     * @param _instanceType 规格类型，如S2.MEDIUM8
+                     * 设置<p>规格类型，如S2.MEDIUM8</p>
+                     * @param _instanceType <p>规格类型，如S2.MEDIUM8</p>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -407,15 +267,15 @@ REMOTE_SSD：表示远端SSD盘。
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取本地盘数量，该字段已废弃
-                     * @return LocalDiskNum 本地盘数量，该字段已废弃
+                     * 获取<p>本地盘数量，该字段已废弃</p>
+                     * @return LocalDiskNum <p>本地盘数量，该字段已废弃</p>
                      * 
                      */
                     uint64_t GetLocalDiskNum() const;
 
                     /**
-                     * 设置本地盘数量，该字段已废弃
-                     * @param _localDiskNum 本地盘数量，该字段已废弃
+                     * 设置<p>本地盘数量，该字段已废弃</p>
+                     * @param _localDiskNum <p>本地盘数量，该字段已废弃</p>
                      * 
                      */
                     void SetLocalDiskNum(const uint64_t& _localDiskNum);
@@ -428,15 +288,15 @@ REMOTE_SSD：表示远端SSD盘。
                     bool LocalDiskNumHasBeenSet() const;
 
                     /**
-                     * 获取本地盘数量，如2
-                     * @return DiskNum 本地盘数量，如2
+                     * 获取<p>本地盘数量，如2</p>
+                     * @return DiskNum <p>本地盘数量，如2</p>
                      * 
                      */
                     uint64_t GetDiskNum() const;
 
                     /**
-                     * 设置本地盘数量，如2
-                     * @param _diskNum 本地盘数量，如2
+                     * 设置<p>本地盘数量，如2</p>
+                     * @param _diskNum <p>本地盘数量，如2</p>
                      * 
                      */
                     void SetDiskNum(const uint64_t& _diskNum);
@@ -449,15 +309,15 @@ REMOTE_SSD：表示远端SSD盘。
                     bool DiskNumHasBeenSet() const;
 
                     /**
-                     * 获取GPU信息
-                     * @return GpuDesc GPU信息
+                     * 获取<p>GPU信息</p>
+                     * @return GpuDesc <p>GPU信息</p>
                      * 
                      */
                     std::string GetGpuDesc() const;
 
                     /**
-                     * 设置GPU信息
-                     * @param _gpuDesc GPU信息
+                     * 设置<p>GPU信息</p>
+                     * @param _gpuDesc <p>GPU信息</p>
                      * 
                      */
                     void SetGpuDesc(const std::string& _gpuDesc);
@@ -469,122 +329,114 @@ REMOTE_SSD：表示远端SSD盘。
                      */
                     bool GpuDescHasBeenSet() const;
 
+                    /**
+                     * 获取<p>分区置放群组分区数</p>
+                     * @return PartitionNumber <p>分区置放群组分区数</p>
+                     * 
+                     */
+                    int64_t GetPartitionNumber() const;
+
+                    /**
+                     * 设置<p>分区置放群组分区数</p>
+                     * @param _partitionNumber <p>分区置放群组分区数</p>
+                     * 
+                     */
+                    void SetPartitionNumber(const int64_t& _partitionNumber);
+
+                    /**
+                     * 判断参数 PartitionNumber 是否已赋值
+                     * @return PartitionNumber 是否已赋值
+                     * 
+                     */
+                    bool PartitionNumberHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 节点规格描述，如CVM.SA2。
+                     * <p>节点规格描述，如CVM.SA2。</p>
                      */
                     std::string m_spec;
                     bool m_specHasBeenSet;
 
                     /**
-                     * 取值范围:
-"LOCAL_SSD"   3     //本地SSD 
-"CLOUD_SSD"   4     //云SSD 
-"CLOUD_PREMIUM"  5  //高效云盘
-"CLOUD_HSSD"   6    //增强型SSD云硬盘 
-"CLOUD_THROUGHPUT" 11//吞吐型云硬盘 
-"CLOUD_TSSD"  12     //极速型SSD云硬盘 
-"CLOUD_BSSD"    13   //通用型SSD云硬盘 
-"CLOUD_BIGDATA" 14   //大数据型云硬盘
-"CLOUD_HIGHIO"  15   //高IO型云硬盘 
-
-该类型字段为无效字段，实际系统盘类型会根据数据盘类型和节点类型判断，如果节点支持所选的数据盘类型，系统盘类型会跟数据盘保持一致，建议使用CreateCluster接口
+                     * <p>取值范围:<br>&quot;LOCAL_SSD&quot;   3     //本地SSD<br>&quot;CLOUD_SSD&quot;   4     //云SSD<br>&quot;CLOUD_PREMIUM&quot;  5  //高效云盘<br>&quot;CLOUD_HSSD&quot;   6    //增强型SSD云硬盘<br>&quot;CLOUD_THROUGHPUT&quot; 11//吞吐型云硬盘<br>&quot;CLOUD_TSSD&quot;  12     //极速型SSD云硬盘<br>&quot;CLOUD_BSSD&quot;    13   //通用型SSD云硬盘<br>&quot;CLOUD_BIGDATA&quot; 14   //大数据型云硬盘<br>&quot;CLOUD_HIGHIO&quot;  15   //高IO型云硬盘 </p><p>该类型字段为无效字段，实际系统盘类型会根据数据盘类型和节点类型判断，如果节点支持所选的数据盘类型，系统盘类型会跟数据盘保持一致，建议使用CreateCluster接口</p>
                      */
                     int64_t m_storageType;
                     bool m_storageTypeHasBeenSet;
 
                     /**
-                     * 数据盘类型 取值范围：
-
-CLOUD_SSD：表示云SSD。
-
-CLOUD_PREMIUM：表示高效云盘。
-
-CLOUD_BASIC：表示云硬盘。
-
-LOCAL_BASIC：表示本地盘。
-
-LOCAL_SSD：表示本地SSD。
-
-CLOUD_HSSD：表示增强型SSD云硬盘。
-
-CLOUD_THROUGHPUT：表示吞吐型云硬盘。
-
-CLOUD_TSSD：表示极速型SSD云硬盘。
-
-CLOUD_BIGDATA：表示大数据型云硬盘。
-
-CLOUD_HIGHIO：表示高IO型云硬盘。
-
-CLOUD_BSSD：表示通用型SSD云硬盘。
-
-REMOTE_SSD：表示远端SSD盘。
+                     * <p>数据盘类型 取值范围：</p><p>CLOUD_SSD：表示云SSD。</p><p>CLOUD_PREMIUM：表示高效云盘。</p><p>CLOUD_BASIC：表示云硬盘。</p><p>LOCAL_BASIC：表示本地盘。</p><p>LOCAL_SSD：表示本地SSD。</p><p>CLOUD_HSSD：表示增强型SSD云硬盘。</p><p>CLOUD_THROUGHPUT：表示吞吐型云硬盘。</p><p>CLOUD_TSSD：表示极速型SSD云硬盘。</p><p>CLOUD_BIGDATA：表示大数据型云硬盘。</p><p>CLOUD_HIGHIO：表示高IO型云硬盘。</p><p>CLOUD_BSSD：表示通用型SSD云硬盘。</p><p>REMOTE_SSD：表示远端SSD盘。</p>
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 内存容量,单位为M
+                     * <p>内存容量,单位为M</p>
                      */
                     int64_t m_memSize;
                     bool m_memSizeHasBeenSet;
 
                     /**
-                     * CPU核数
+                     * <p>CPU核数</p>
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 数据盘容量
+                     * <p>数据盘容量</p>
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 系统盘容量
+                     * <p>系统盘容量</p>
                      */
                     int64_t m_rootSize;
                     bool m_rootSizeHasBeenSet;
 
                     /**
-                     * 云盘列表，当数据盘为一块云盘时，直接使用DiskType和DiskSize参数，超出部分使用MultiDisks
+                     * <p>云盘列表，当数据盘为一块云盘时，直接使用DiskType和DiskSize参数，超出部分使用MultiDisks</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MultiDisk> m_multiDisks;
                     bool m_multiDisksHasBeenSet;
 
                     /**
-                     * 需要绑定的标签列表
+                     * <p>需要绑定的标签列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 规格类型，如S2.MEDIUM8
+                     * <p>规格类型，如S2.MEDIUM8</p>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 本地盘数量，该字段已废弃
+                     * <p>本地盘数量，该字段已废弃</p>
                      */
                     uint64_t m_localDiskNum;
                     bool m_localDiskNumHasBeenSet;
 
                     /**
-                     * 本地盘数量，如2
+                     * <p>本地盘数量，如2</p>
                      */
                     uint64_t m_diskNum;
                     bool m_diskNumHasBeenSet;
 
                     /**
-                     * GPU信息
+                     * <p>GPU信息</p>
                      */
                     std::string m_gpuDesc;
                     bool m_gpuDescHasBeenSet;
+
+                    /**
+                     * <p>分区置放群组分区数</p>
+                     */
+                    int64_t m_partitionNumber;
+                    bool m_partitionNumberHasBeenSet;
 
                 };
             }

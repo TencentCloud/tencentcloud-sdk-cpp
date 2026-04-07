@@ -169,6 +169,69 @@ namespace TencentCloud
                      */
                     bool LocalNumberTrimACHasBeenSet() const;
 
+                    /**
+                     * 获取被叫格式透传 （完成透传用户输入，不做处理）
+                     * @return CalleeFormatPassthrough 被叫格式透传 （完成透传用户输入，不做处理）
+                     * 
+                     */
+                    bool GetCalleeFormatPassthrough() const;
+
+                    /**
+                     * 设置被叫格式透传 （完成透传用户输入，不做处理）
+                     * @param _calleeFormatPassthrough 被叫格式透传 （完成透传用户输入，不做处理）
+                     * 
+                     */
+                    void SetCalleeFormatPassthrough(const bool& _calleeFormatPassthrough);
+
+                    /**
+                     * 判断参数 CalleeFormatPassthrough 是否已赋值
+                     * @return CalleeFormatPassthrough 是否已赋值
+                     * 
+                     */
+                    bool CalleeFormatPassthroughHasBeenSet() const;
+
+                    /**
+                     * 获取主叫格式透传 （完成透传用户输入，不做处理）
+                     * @return CallerFormatPassthrough 主叫格式透传 （完成透传用户输入，不做处理）
+                     * 
+                     */
+                    bool GetCallerFormatPassthrough() const;
+
+                    /**
+                     * 设置主叫格式透传 （完成透传用户输入，不做处理）
+                     * @param _callerFormatPassthrough 主叫格式透传 （完成透传用户输入，不做处理）
+                     * 
+                     */
+                    void SetCallerFormatPassthrough(const bool& _callerFormatPassthrough);
+
+                    /**
+                     * 判断参数 CallerFormatPassthrough 是否已赋值
+                     * @return CallerFormatPassthrough 是否已赋值
+                     * 
+                     */
+                    bool CallerFormatPassthroughHasBeenSet() const;
+
+                    /**
+                     * 获取国际长途前缀码
+                     * @return InternationalNumberPrefix 国际长途前缀码
+                     * 
+                     */
+                    std::string GetInternationalNumberPrefix() const;
+
+                    /**
+                     * 设置国际长途前缀码
+                     * @param _internationalNumberPrefix 国际长途前缀码
+                     * 
+                     */
+                    void SetInternationalNumberPrefix(const std::string& _internationalNumberPrefix);
+
+                    /**
+                     * 判断参数 InternationalNumberPrefix 是否已赋值
+                     * @return InternationalNumberPrefix 是否已赋值
+                     * 
+                     */
+                    bool InternationalNumberPrefixHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +269,24 @@ namespace TencentCloud
                      */
                     bool m_localNumberTrimAC;
                     bool m_localNumberTrimACHasBeenSet;
+
+                    /**
+                     * 被叫格式透传 （完成透传用户输入，不做处理）
+                     */
+                    bool m_calleeFormatPassthrough;
+                    bool m_calleeFormatPassthroughHasBeenSet;
+
+                    /**
+                     * 主叫格式透传 （完成透传用户输入，不做处理）
+                     */
+                    bool m_callerFormatPassthrough;
+                    bool m_callerFormatPassthroughHasBeenSet;
+
+                    /**
+                     * 国际长途前缀码
+                     */
+                    std::string m_internationalNumberPrefix;
+                    bool m_internationalNumberPrefixHasBeenSet;
 
                 };
             }

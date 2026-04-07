@@ -23,6 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/mps/v20190612/model/ActivateSSAIRequest.h>
+#include <tencentcloud/mps/v20190612/model/ActivateSSAIResponse.h>
+#include <tencentcloud/mps/v20190612/model/ActivateStreamPackageRequest.h>
+#include <tencentcloud/mps/v20190612/model/ActivateStreamPackageResponse.h>
 #include <tencentcloud/mps/v20190612/model/BatchDeleteStreamLinkFlowRequest.h>
 #include <tencentcloud/mps/v20190612/model/BatchDeleteStreamLinkFlowResponse.h>
 #include <tencentcloud/mps/v20190612/model/BatchProcessMediaRequest.h>
@@ -81,6 +85,16 @@
 #include <tencentcloud/mps/v20190612/model/CreateStreamLinkOutputInfoResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateStreamLinkSecurityGroupRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateStreamLinkSecurityGroupResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateStreamPackageLinearAssemblyChannelRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateStreamPackageLinearAssemblyChannelResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateStreamPackageLinearAssemblyProgramRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateStreamPackageLinearAssemblyProgramResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateStreamPackageSSAIChannelRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateStreamPackageSSAIChannelResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateStreamPackageSourceRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateStreamPackageSourceResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateStreamPackageSourceLocationRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateStreamPackageSourceLocationResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateSubtitleEmbedTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateSubtitleEmbedTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateTranscodeTemplateRequest.h>
@@ -137,6 +151,22 @@
 #include <tencentcloud/mps/v20190612/model/DeleteStreamLinkOutputResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteStreamLinkSecurityGroupRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeleteStreamLinkSecurityGroupResponse.h>
+#include <tencentcloud/mps/v20190612/model/DeleteStreamPackageLinearAssemblyChannelRequest.h>
+#include <tencentcloud/mps/v20190612/model/DeleteStreamPackageLinearAssemblyChannelResponse.h>
+#include <tencentcloud/mps/v20190612/model/DeleteStreamPackageLinearAssemblyChannelsRequest.h>
+#include <tencentcloud/mps/v20190612/model/DeleteStreamPackageLinearAssemblyChannelsResponse.h>
+#include <tencentcloud/mps/v20190612/model/DeleteStreamPackageLinearAssemblyProgramRequest.h>
+#include <tencentcloud/mps/v20190612/model/DeleteStreamPackageLinearAssemblyProgramResponse.h>
+#include <tencentcloud/mps/v20190612/model/DeleteStreamPackageLinearAssemblyProgramsRequest.h>
+#include <tencentcloud/mps/v20190612/model/DeleteStreamPackageLinearAssemblyProgramsResponse.h>
+#include <tencentcloud/mps/v20190612/model/DeleteStreamPackageLinearAssemblyProgramsByChannelRequest.h>
+#include <tencentcloud/mps/v20190612/model/DeleteStreamPackageLinearAssemblyProgramsByChannelResponse.h>
+#include <tencentcloud/mps/v20190612/model/DeleteStreamPackageSSAIChannelRequest.h>
+#include <tencentcloud/mps/v20190612/model/DeleteStreamPackageSSAIChannelResponse.h>
+#include <tencentcloud/mps/v20190612/model/DeleteStreamPackageSourceRequest.h>
+#include <tencentcloud/mps/v20190612/model/DeleteStreamPackageSourceResponse.h>
+#include <tencentcloud/mps/v20190612/model/DeleteStreamPackageSourceLocationRequest.h>
+#include <tencentcloud/mps/v20190612/model/DeleteStreamPackageSourceLocationResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteSubtitleEmbedTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeleteSubtitleEmbedTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteTranscodeTemplateRequest.h>
@@ -177,6 +207,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeImageTaskDetailResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeLiveRecordTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeLiveRecordTemplatesResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeMDPMPSUserInfoRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeMDPMPSUserInfoResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeMediaMetaDataRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeMediaMetaDataResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribePersonSamplesRequest.h>
@@ -185,6 +217,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeProcessImageTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeQualityControlTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeQualityControlTemplatesResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeSSAIActivateStateRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeSSAIActivateStateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeSampleSnapshotTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeSampleSnapshotTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeSchedulesRequest.h>
@@ -221,6 +255,38 @@
 #include <tencentcloud/mps/v20190612/model/DescribeStreamLinkRegionsResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeStreamLinkSecurityGroupsRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeStreamLinkSecurityGroupsResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageActivateStateRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageActivateStateResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageLinearAssemblyChannelRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageLinearAssemblyChannelResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageLinearAssemblyChannelAlertsRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageLinearAssemblyChannelAlertsResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageLinearAssemblyChannelsRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageLinearAssemblyChannelsResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageLinearAssemblyProgramRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageLinearAssemblyProgramResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageLinearAssemblyProgramSchedulesRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageLinearAssemblyProgramSchedulesResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageLinearAssemblyProgramsRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageLinearAssemblyProgramsResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageLinearAssemblyUsageRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageLinearAssemblyUsageResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageSSAIChannelRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageSSAIChannelResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageSSAIChannelsRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageSSAIChannelsResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageSSAIUsageRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageSSAIUsageResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageSourceRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageSourceResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageSourceAlertsRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageSourceAlertsResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageSourceLocationRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageSourceLocationResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageSourceLocationsRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageSourceLocationsResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageSourcesRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamPackageSourcesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeSubtitleEmbedTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeSubtitleEmbedTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeTaskDetailRequest.h>
@@ -305,6 +371,16 @@
 #include <tencentcloud/mps/v20190612/model/ModifyStreamLinkOutputInfoResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyStreamLinkSecurityGroupRequest.h>
 #include <tencentcloud/mps/v20190612/model/ModifyStreamLinkSecurityGroupResponse.h>
+#include <tencentcloud/mps/v20190612/model/ModifyStreamPackageLinearAssemblyChannelRequest.h>
+#include <tencentcloud/mps/v20190612/model/ModifyStreamPackageLinearAssemblyChannelResponse.h>
+#include <tencentcloud/mps/v20190612/model/ModifyStreamPackageLinearAssemblyProgramRequest.h>
+#include <tencentcloud/mps/v20190612/model/ModifyStreamPackageLinearAssemblyProgramResponse.h>
+#include <tencentcloud/mps/v20190612/model/ModifyStreamPackageSSAIChannelRequest.h>
+#include <tencentcloud/mps/v20190612/model/ModifyStreamPackageSSAIChannelResponse.h>
+#include <tencentcloud/mps/v20190612/model/ModifyStreamPackageSourceRequest.h>
+#include <tencentcloud/mps/v20190612/model/ModifyStreamPackageSourceResponse.h>
+#include <tencentcloud/mps/v20190612/model/ModifyStreamPackageSourceLocationRequest.h>
+#include <tencentcloud/mps/v20190612/model/ModifyStreamPackageSourceLocationResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifySubtitleEmbedTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/ModifySubtitleEmbedTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyTranscodeTemplateRequest.h>
@@ -331,8 +407,12 @@
 #include <tencentcloud/mps/v20190612/model/ResetWorkflowResponse.h>
 #include <tencentcloud/mps/v20190612/model/StartStreamLinkFlowRequest.h>
 #include <tencentcloud/mps/v20190612/model/StartStreamLinkFlowResponse.h>
+#include <tencentcloud/mps/v20190612/model/StartStreamPackageLinearAssemblyChannelRequest.h>
+#include <tencentcloud/mps/v20190612/model/StartStreamPackageLinearAssemblyChannelResponse.h>
 #include <tencentcloud/mps/v20190612/model/StopStreamLinkFlowRequest.h>
 #include <tencentcloud/mps/v20190612/model/StopStreamLinkFlowResponse.h>
+#include <tencentcloud/mps/v20190612/model/StopStreamPackageLinearAssemblyChannelRequest.h>
+#include <tencentcloud/mps/v20190612/model/StopStreamPackageLinearAssemblyChannelResponse.h>
 #include <tencentcloud/mps/v20190612/model/SyncDubbingRequest.h>
 #include <tencentcloud/mps/v20190612/model/SyncDubbingResponse.h>
 #include <tencentcloud/mps/v20190612/model/TextTranslationRequest.h>
@@ -353,6 +433,12 @@ namespace TencentCloud
                 MpsClient(const Credential &credential, const std::string &region);
                 MpsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ActivateSSAIResponse> ActivateSSAIOutcome;
+                typedef std::future<ActivateSSAIOutcome> ActivateSSAIOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ActivateSSAIRequest&, ActivateSSAIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ActivateSSAIAsyncHandler;
+                typedef Outcome<Core::Error, Model::ActivateStreamPackageResponse> ActivateStreamPackageOutcome;
+                typedef std::future<ActivateStreamPackageOutcome> ActivateStreamPackageOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ActivateStreamPackageRequest&, ActivateStreamPackageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ActivateStreamPackageAsyncHandler;
                 typedef Outcome<Core::Error, Model::BatchDeleteStreamLinkFlowResponse> BatchDeleteStreamLinkFlowOutcome;
                 typedef std::future<BatchDeleteStreamLinkFlowOutcome> BatchDeleteStreamLinkFlowOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::BatchDeleteStreamLinkFlowRequest&, BatchDeleteStreamLinkFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteStreamLinkFlowAsyncHandler;
@@ -440,6 +526,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateStreamLinkSecurityGroupResponse> CreateStreamLinkSecurityGroupOutcome;
                 typedef std::future<CreateStreamLinkSecurityGroupOutcome> CreateStreamLinkSecurityGroupOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateStreamLinkSecurityGroupRequest&, CreateStreamLinkSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStreamLinkSecurityGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateStreamPackageLinearAssemblyChannelResponse> CreateStreamPackageLinearAssemblyChannelOutcome;
+                typedef std::future<CreateStreamPackageLinearAssemblyChannelOutcome> CreateStreamPackageLinearAssemblyChannelOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateStreamPackageLinearAssemblyChannelRequest&, CreateStreamPackageLinearAssemblyChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStreamPackageLinearAssemblyChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateStreamPackageLinearAssemblyProgramResponse> CreateStreamPackageLinearAssemblyProgramOutcome;
+                typedef std::future<CreateStreamPackageLinearAssemblyProgramOutcome> CreateStreamPackageLinearAssemblyProgramOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateStreamPackageLinearAssemblyProgramRequest&, CreateStreamPackageLinearAssemblyProgramOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStreamPackageLinearAssemblyProgramAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateStreamPackageSSAIChannelResponse> CreateStreamPackageSSAIChannelOutcome;
+                typedef std::future<CreateStreamPackageSSAIChannelOutcome> CreateStreamPackageSSAIChannelOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateStreamPackageSSAIChannelRequest&, CreateStreamPackageSSAIChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStreamPackageSSAIChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateStreamPackageSourceResponse> CreateStreamPackageSourceOutcome;
+                typedef std::future<CreateStreamPackageSourceOutcome> CreateStreamPackageSourceOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateStreamPackageSourceRequest&, CreateStreamPackageSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStreamPackageSourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateStreamPackageSourceLocationResponse> CreateStreamPackageSourceLocationOutcome;
+                typedef std::future<CreateStreamPackageSourceLocationOutcome> CreateStreamPackageSourceLocationOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateStreamPackageSourceLocationRequest&, CreateStreamPackageSourceLocationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStreamPackageSourceLocationAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSubtitleEmbedTemplateResponse> CreateSubtitleEmbedTemplateOutcome;
                 typedef std::future<CreateSubtitleEmbedTemplateOutcome> CreateSubtitleEmbedTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateSubtitleEmbedTemplateRequest&, CreateSubtitleEmbedTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSubtitleEmbedTemplateAsyncHandler;
@@ -524,6 +625,30 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteStreamLinkSecurityGroupResponse> DeleteStreamLinkSecurityGroupOutcome;
                 typedef std::future<DeleteStreamLinkSecurityGroupOutcome> DeleteStreamLinkSecurityGroupOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeleteStreamLinkSecurityGroupRequest&, DeleteStreamLinkSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStreamLinkSecurityGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteStreamPackageLinearAssemblyChannelResponse> DeleteStreamPackageLinearAssemblyChannelOutcome;
+                typedef std::future<DeleteStreamPackageLinearAssemblyChannelOutcome> DeleteStreamPackageLinearAssemblyChannelOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DeleteStreamPackageLinearAssemblyChannelRequest&, DeleteStreamPackageLinearAssemblyChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStreamPackageLinearAssemblyChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteStreamPackageLinearAssemblyChannelsResponse> DeleteStreamPackageLinearAssemblyChannelsOutcome;
+                typedef std::future<DeleteStreamPackageLinearAssemblyChannelsOutcome> DeleteStreamPackageLinearAssemblyChannelsOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DeleteStreamPackageLinearAssemblyChannelsRequest&, DeleteStreamPackageLinearAssemblyChannelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStreamPackageLinearAssemblyChannelsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteStreamPackageLinearAssemblyProgramResponse> DeleteStreamPackageLinearAssemblyProgramOutcome;
+                typedef std::future<DeleteStreamPackageLinearAssemblyProgramOutcome> DeleteStreamPackageLinearAssemblyProgramOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DeleteStreamPackageLinearAssemblyProgramRequest&, DeleteStreamPackageLinearAssemblyProgramOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStreamPackageLinearAssemblyProgramAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteStreamPackageLinearAssemblyProgramsResponse> DeleteStreamPackageLinearAssemblyProgramsOutcome;
+                typedef std::future<DeleteStreamPackageLinearAssemblyProgramsOutcome> DeleteStreamPackageLinearAssemblyProgramsOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DeleteStreamPackageLinearAssemblyProgramsRequest&, DeleteStreamPackageLinearAssemblyProgramsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStreamPackageLinearAssemblyProgramsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteStreamPackageLinearAssemblyProgramsByChannelResponse> DeleteStreamPackageLinearAssemblyProgramsByChannelOutcome;
+                typedef std::future<DeleteStreamPackageLinearAssemblyProgramsByChannelOutcome> DeleteStreamPackageLinearAssemblyProgramsByChannelOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DeleteStreamPackageLinearAssemblyProgramsByChannelRequest&, DeleteStreamPackageLinearAssemblyProgramsByChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStreamPackageLinearAssemblyProgramsByChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteStreamPackageSSAIChannelResponse> DeleteStreamPackageSSAIChannelOutcome;
+                typedef std::future<DeleteStreamPackageSSAIChannelOutcome> DeleteStreamPackageSSAIChannelOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DeleteStreamPackageSSAIChannelRequest&, DeleteStreamPackageSSAIChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStreamPackageSSAIChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteStreamPackageSourceResponse> DeleteStreamPackageSourceOutcome;
+                typedef std::future<DeleteStreamPackageSourceOutcome> DeleteStreamPackageSourceOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DeleteStreamPackageSourceRequest&, DeleteStreamPackageSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStreamPackageSourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteStreamPackageSourceLocationResponse> DeleteStreamPackageSourceLocationOutcome;
+                typedef std::future<DeleteStreamPackageSourceLocationOutcome> DeleteStreamPackageSourceLocationOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DeleteStreamPackageSourceLocationRequest&, DeleteStreamPackageSourceLocationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStreamPackageSourceLocationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSubtitleEmbedTemplateResponse> DeleteSubtitleEmbedTemplateOutcome;
                 typedef std::future<DeleteSubtitleEmbedTemplateOutcome> DeleteSubtitleEmbedTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeleteSubtitleEmbedTemplateRequest&, DeleteSubtitleEmbedTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSubtitleEmbedTemplateAsyncHandler;
@@ -584,6 +709,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLiveRecordTemplatesResponse> DescribeLiveRecordTemplatesOutcome;
                 typedef std::future<DescribeLiveRecordTemplatesOutcome> DescribeLiveRecordTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeLiveRecordTemplatesRequest&, DescribeLiveRecordTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveRecordTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMDPMPSUserInfoResponse> DescribeMDPMPSUserInfoOutcome;
+                typedef std::future<DescribeMDPMPSUserInfoOutcome> DescribeMDPMPSUserInfoOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeMDPMPSUserInfoRequest&, DescribeMDPMPSUserInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMDPMPSUserInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMediaMetaDataResponse> DescribeMediaMetaDataOutcome;
                 typedef std::future<DescribeMediaMetaDataOutcome> DescribeMediaMetaDataOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeMediaMetaDataRequest&, DescribeMediaMetaDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMediaMetaDataAsyncHandler;
@@ -596,6 +724,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeQualityControlTemplatesResponse> DescribeQualityControlTemplatesOutcome;
                 typedef std::future<DescribeQualityControlTemplatesOutcome> DescribeQualityControlTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeQualityControlTemplatesRequest&, DescribeQualityControlTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQualityControlTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSSAIActivateStateResponse> DescribeSSAIActivateStateOutcome;
+                typedef std::future<DescribeSSAIActivateStateOutcome> DescribeSSAIActivateStateOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeSSAIActivateStateRequest&, DescribeSSAIActivateStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSSAIActivateStateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSampleSnapshotTemplatesResponse> DescribeSampleSnapshotTemplatesOutcome;
                 typedef std::future<DescribeSampleSnapshotTemplatesOutcome> DescribeSampleSnapshotTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeSampleSnapshotTemplatesRequest&, DescribeSampleSnapshotTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSampleSnapshotTemplatesAsyncHandler;
@@ -650,6 +781,54 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeStreamLinkSecurityGroupsResponse> DescribeStreamLinkSecurityGroupsOutcome;
                 typedef std::future<DescribeStreamLinkSecurityGroupsOutcome> DescribeStreamLinkSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeStreamLinkSecurityGroupsRequest&, DescribeStreamLinkSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamLinkSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamPackageActivateStateResponse> DescribeStreamPackageActivateStateOutcome;
+                typedef std::future<DescribeStreamPackageActivateStateOutcome> DescribeStreamPackageActivateStateOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamPackageActivateStateRequest&, DescribeStreamPackageActivateStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamPackageActivateStateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamPackageLinearAssemblyChannelResponse> DescribeStreamPackageLinearAssemblyChannelOutcome;
+                typedef std::future<DescribeStreamPackageLinearAssemblyChannelOutcome> DescribeStreamPackageLinearAssemblyChannelOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamPackageLinearAssemblyChannelRequest&, DescribeStreamPackageLinearAssemblyChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamPackageLinearAssemblyChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamPackageLinearAssemblyChannelAlertsResponse> DescribeStreamPackageLinearAssemblyChannelAlertsOutcome;
+                typedef std::future<DescribeStreamPackageLinearAssemblyChannelAlertsOutcome> DescribeStreamPackageLinearAssemblyChannelAlertsOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamPackageLinearAssemblyChannelAlertsRequest&, DescribeStreamPackageLinearAssemblyChannelAlertsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamPackageLinearAssemblyChannelAlertsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamPackageLinearAssemblyChannelsResponse> DescribeStreamPackageLinearAssemblyChannelsOutcome;
+                typedef std::future<DescribeStreamPackageLinearAssemblyChannelsOutcome> DescribeStreamPackageLinearAssemblyChannelsOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamPackageLinearAssemblyChannelsRequest&, DescribeStreamPackageLinearAssemblyChannelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamPackageLinearAssemblyChannelsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamPackageLinearAssemblyProgramResponse> DescribeStreamPackageLinearAssemblyProgramOutcome;
+                typedef std::future<DescribeStreamPackageLinearAssemblyProgramOutcome> DescribeStreamPackageLinearAssemblyProgramOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamPackageLinearAssemblyProgramRequest&, DescribeStreamPackageLinearAssemblyProgramOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamPackageLinearAssemblyProgramAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamPackageLinearAssemblyProgramSchedulesResponse> DescribeStreamPackageLinearAssemblyProgramSchedulesOutcome;
+                typedef std::future<DescribeStreamPackageLinearAssemblyProgramSchedulesOutcome> DescribeStreamPackageLinearAssemblyProgramSchedulesOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamPackageLinearAssemblyProgramSchedulesRequest&, DescribeStreamPackageLinearAssemblyProgramSchedulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamPackageLinearAssemblyProgramSchedulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamPackageLinearAssemblyProgramsResponse> DescribeStreamPackageLinearAssemblyProgramsOutcome;
+                typedef std::future<DescribeStreamPackageLinearAssemblyProgramsOutcome> DescribeStreamPackageLinearAssemblyProgramsOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamPackageLinearAssemblyProgramsRequest&, DescribeStreamPackageLinearAssemblyProgramsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamPackageLinearAssemblyProgramsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamPackageLinearAssemblyUsageResponse> DescribeStreamPackageLinearAssemblyUsageOutcome;
+                typedef std::future<DescribeStreamPackageLinearAssemblyUsageOutcome> DescribeStreamPackageLinearAssemblyUsageOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamPackageLinearAssemblyUsageRequest&, DescribeStreamPackageLinearAssemblyUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamPackageLinearAssemblyUsageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamPackageSSAIChannelResponse> DescribeStreamPackageSSAIChannelOutcome;
+                typedef std::future<DescribeStreamPackageSSAIChannelOutcome> DescribeStreamPackageSSAIChannelOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamPackageSSAIChannelRequest&, DescribeStreamPackageSSAIChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamPackageSSAIChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamPackageSSAIChannelsResponse> DescribeStreamPackageSSAIChannelsOutcome;
+                typedef std::future<DescribeStreamPackageSSAIChannelsOutcome> DescribeStreamPackageSSAIChannelsOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamPackageSSAIChannelsRequest&, DescribeStreamPackageSSAIChannelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamPackageSSAIChannelsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamPackageSSAIUsageResponse> DescribeStreamPackageSSAIUsageOutcome;
+                typedef std::future<DescribeStreamPackageSSAIUsageOutcome> DescribeStreamPackageSSAIUsageOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamPackageSSAIUsageRequest&, DescribeStreamPackageSSAIUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamPackageSSAIUsageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamPackageSourceResponse> DescribeStreamPackageSourceOutcome;
+                typedef std::future<DescribeStreamPackageSourceOutcome> DescribeStreamPackageSourceOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamPackageSourceRequest&, DescribeStreamPackageSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamPackageSourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamPackageSourceAlertsResponse> DescribeStreamPackageSourceAlertsOutcome;
+                typedef std::future<DescribeStreamPackageSourceAlertsOutcome> DescribeStreamPackageSourceAlertsOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamPackageSourceAlertsRequest&, DescribeStreamPackageSourceAlertsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamPackageSourceAlertsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamPackageSourceLocationResponse> DescribeStreamPackageSourceLocationOutcome;
+                typedef std::future<DescribeStreamPackageSourceLocationOutcome> DescribeStreamPackageSourceLocationOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamPackageSourceLocationRequest&, DescribeStreamPackageSourceLocationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamPackageSourceLocationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamPackageSourceLocationsResponse> DescribeStreamPackageSourceLocationsOutcome;
+                typedef std::future<DescribeStreamPackageSourceLocationsOutcome> DescribeStreamPackageSourceLocationsOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamPackageSourceLocationsRequest&, DescribeStreamPackageSourceLocationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamPackageSourceLocationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamPackageSourcesResponse> DescribeStreamPackageSourcesOutcome;
+                typedef std::future<DescribeStreamPackageSourcesOutcome> DescribeStreamPackageSourcesOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamPackageSourcesRequest&, DescribeStreamPackageSourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamPackageSourcesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSubtitleEmbedTemplatesResponse> DescribeSubtitleEmbedTemplatesOutcome;
                 typedef std::future<DescribeSubtitleEmbedTemplatesOutcome> DescribeSubtitleEmbedTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeSubtitleEmbedTemplatesRequest&, DescribeSubtitleEmbedTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubtitleEmbedTemplatesAsyncHandler;
@@ -776,6 +955,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyStreamLinkSecurityGroupResponse> ModifyStreamLinkSecurityGroupOutcome;
                 typedef std::future<ModifyStreamLinkSecurityGroupOutcome> ModifyStreamLinkSecurityGroupOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ModifyStreamLinkSecurityGroupRequest&, ModifyStreamLinkSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStreamLinkSecurityGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyStreamPackageLinearAssemblyChannelResponse> ModifyStreamPackageLinearAssemblyChannelOutcome;
+                typedef std::future<ModifyStreamPackageLinearAssemblyChannelOutcome> ModifyStreamPackageLinearAssemblyChannelOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ModifyStreamPackageLinearAssemblyChannelRequest&, ModifyStreamPackageLinearAssemblyChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStreamPackageLinearAssemblyChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyStreamPackageLinearAssemblyProgramResponse> ModifyStreamPackageLinearAssemblyProgramOutcome;
+                typedef std::future<ModifyStreamPackageLinearAssemblyProgramOutcome> ModifyStreamPackageLinearAssemblyProgramOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ModifyStreamPackageLinearAssemblyProgramRequest&, ModifyStreamPackageLinearAssemblyProgramOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStreamPackageLinearAssemblyProgramAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyStreamPackageSSAIChannelResponse> ModifyStreamPackageSSAIChannelOutcome;
+                typedef std::future<ModifyStreamPackageSSAIChannelOutcome> ModifyStreamPackageSSAIChannelOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ModifyStreamPackageSSAIChannelRequest&, ModifyStreamPackageSSAIChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStreamPackageSSAIChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyStreamPackageSourceResponse> ModifyStreamPackageSourceOutcome;
+                typedef std::future<ModifyStreamPackageSourceOutcome> ModifyStreamPackageSourceOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ModifyStreamPackageSourceRequest&, ModifyStreamPackageSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStreamPackageSourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyStreamPackageSourceLocationResponse> ModifyStreamPackageSourceLocationOutcome;
+                typedef std::future<ModifyStreamPackageSourceLocationOutcome> ModifyStreamPackageSourceLocationOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ModifyStreamPackageSourceLocationRequest&, ModifyStreamPackageSourceLocationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStreamPackageSourceLocationAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySubtitleEmbedTemplateResponse> ModifySubtitleEmbedTemplateOutcome;
                 typedef std::future<ModifySubtitleEmbedTemplateOutcome> ModifySubtitleEmbedTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ModifySubtitleEmbedTemplateRequest&, ModifySubtitleEmbedTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubtitleEmbedTemplateAsyncHandler;
@@ -815,9 +1009,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartStreamLinkFlowResponse> StartStreamLinkFlowOutcome;
                 typedef std::future<StartStreamLinkFlowOutcome> StartStreamLinkFlowOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::StartStreamLinkFlowRequest&, StartStreamLinkFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartStreamLinkFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartStreamPackageLinearAssemblyChannelResponse> StartStreamPackageLinearAssemblyChannelOutcome;
+                typedef std::future<StartStreamPackageLinearAssemblyChannelOutcome> StartStreamPackageLinearAssemblyChannelOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::StartStreamPackageLinearAssemblyChannelRequest&, StartStreamPackageLinearAssemblyChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartStreamPackageLinearAssemblyChannelAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopStreamLinkFlowResponse> StopStreamLinkFlowOutcome;
                 typedef std::future<StopStreamLinkFlowOutcome> StopStreamLinkFlowOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::StopStreamLinkFlowRequest&, StopStreamLinkFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopStreamLinkFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopStreamPackageLinearAssemblyChannelResponse> StopStreamPackageLinearAssemblyChannelOutcome;
+                typedef std::future<StopStreamPackageLinearAssemblyChannelOutcome> StopStreamPackageLinearAssemblyChannelOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::StopStreamPackageLinearAssemblyChannelRequest&, StopStreamPackageLinearAssemblyChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopStreamPackageLinearAssemblyChannelAsyncHandler;
                 typedef Outcome<Core::Error, Model::SyncDubbingResponse> SyncDubbingOutcome;
                 typedef std::future<SyncDubbingOutcome> SyncDubbingOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::SyncDubbingRequest&, SyncDubbingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncDubbingAsyncHandler;
@@ -829,6 +1029,24 @@ namespace TencentCloud
                 typedef std::function<void(const MpsClient*, const Model::WithdrawsWatermarkRequest&, WithdrawsWatermarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> WithdrawsWatermarkAsyncHandler;
 
 
+
+                /**
+                 *开通SSAI
+                 * @param req ActivateSSAIRequest
+                 * @return ActivateSSAIOutcome
+                 */
+                ActivateSSAIOutcome ActivateSSAI(const Model::ActivateSSAIRequest &request);
+                void ActivateSSAIAsync(const Model::ActivateSSAIRequest& request, const ActivateSSAIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ActivateSSAIOutcomeCallable ActivateSSAICallable(const Model::ActivateSSAIRequest& request);
+
+                /**
+                 *创建媒体封装用户。
+                 * @param req ActivateStreamPackageRequest
+                 * @return ActivateStreamPackageOutcome
+                 */
+                ActivateStreamPackageOutcome ActivateStreamPackage(const Model::ActivateStreamPackageRequest &request);
+                void ActivateStreamPackageAsync(const Model::ActivateStreamPackageRequest& request, const ActivateStreamPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ActivateStreamPackageOutcomeCallable ActivateStreamPackageCallable(const Model::ActivateStreamPackageRequest& request);
 
                 /**
                  *批量删除媒体传输流。
@@ -1110,6 +1328,51 @@ namespace TencentCloud
                 CreateStreamLinkSecurityGroupOutcomeCallable CreateStreamLinkSecurityGroupCallable(const Model::CreateStreamLinkSecurityGroupRequest& request);
 
                 /**
+                 *创建媒体包装频道。
+                 * @param req CreateStreamPackageLinearAssemblyChannelRequest
+                 * @return CreateStreamPackageLinearAssemblyChannelOutcome
+                 */
+                CreateStreamPackageLinearAssemblyChannelOutcome CreateStreamPackageLinearAssemblyChannel(const Model::CreateStreamPackageLinearAssemblyChannelRequest &request);
+                void CreateStreamPackageLinearAssemblyChannelAsync(const Model::CreateStreamPackageLinearAssemblyChannelRequest& request, const CreateStreamPackageLinearAssemblyChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateStreamPackageLinearAssemblyChannelOutcomeCallable CreateStreamPackageLinearAssemblyChannelCallable(const Model::CreateStreamPackageLinearAssemblyChannelRequest& request);
+
+                /**
+                 *创建线性组装Program。
+                 * @param req CreateStreamPackageLinearAssemblyProgramRequest
+                 * @return CreateStreamPackageLinearAssemblyProgramOutcome
+                 */
+                CreateStreamPackageLinearAssemblyProgramOutcome CreateStreamPackageLinearAssemblyProgram(const Model::CreateStreamPackageLinearAssemblyProgramRequest &request);
+                void CreateStreamPackageLinearAssemblyProgramAsync(const Model::CreateStreamPackageLinearAssemblyProgramRequest& request, const CreateStreamPackageLinearAssemblyProgramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateStreamPackageLinearAssemblyProgramOutcomeCallable CreateStreamPackageLinearAssemblyProgramCallable(const Model::CreateStreamPackageLinearAssemblyProgramRequest& request);
+
+                /**
+                 *创建SSAI广告插入配置。
+                 * @param req CreateStreamPackageSSAIChannelRequest
+                 * @return CreateStreamPackageSSAIChannelOutcome
+                 */
+                CreateStreamPackageSSAIChannelOutcome CreateStreamPackageSSAIChannel(const Model::CreateStreamPackageSSAIChannelRequest &request);
+                void CreateStreamPackageSSAIChannelAsync(const Model::CreateStreamPackageSSAIChannelRequest& request, const CreateStreamPackageSSAIChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateStreamPackageSSAIChannelOutcomeCallable CreateStreamPackageSSAIChannelCallable(const Model::CreateStreamPackageSSAIChannelRequest& request);
+
+                /**
+                 *创建媒体包装频道。
+                 * @param req CreateStreamPackageSourceRequest
+                 * @return CreateStreamPackageSourceOutcome
+                 */
+                CreateStreamPackageSourceOutcome CreateStreamPackageSource(const Model::CreateStreamPackageSourceRequest &request);
+                void CreateStreamPackageSourceAsync(const Model::CreateStreamPackageSourceRequest& request, const CreateStreamPackageSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateStreamPackageSourceOutcomeCallable CreateStreamPackageSourceCallable(const Model::CreateStreamPackageSourceRequest& request);
+
+                /**
+                 *创建媒体包装频道。
+                 * @param req CreateStreamPackageSourceLocationRequest
+                 * @return CreateStreamPackageSourceLocationOutcome
+                 */
+                CreateStreamPackageSourceLocationOutcome CreateStreamPackageSourceLocation(const Model::CreateStreamPackageSourceLocationRequest &request);
+                void CreateStreamPackageSourceLocationAsync(const Model::CreateStreamPackageSourceLocationRequest& request, const CreateStreamPackageSourceLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateStreamPackageSourceLocationOutcomeCallable CreateStreamPackageSourceLocationCallable(const Model::CreateStreamPackageSourceLocationRequest& request);
+
+                /**
                  *创建自定义字幕压制模板
                  * @param req CreateSubtitleEmbedTemplateRequest
                  * @return CreateSubtitleEmbedTemplateOutcome
@@ -1376,6 +1639,78 @@ namespace TencentCloud
                 DeleteStreamLinkSecurityGroupOutcomeCallable DeleteStreamLinkSecurityGroupCallable(const Model::DeleteStreamLinkSecurityGroupRequest& request);
 
                 /**
+                 *删除媒体包装Channel。
+                 * @param req DeleteStreamPackageLinearAssemblyChannelRequest
+                 * @return DeleteStreamPackageLinearAssemblyChannelOutcome
+                 */
+                DeleteStreamPackageLinearAssemblyChannelOutcome DeleteStreamPackageLinearAssemblyChannel(const Model::DeleteStreamPackageLinearAssemblyChannelRequest &request);
+                void DeleteStreamPackageLinearAssemblyChannelAsync(const Model::DeleteStreamPackageLinearAssemblyChannelRequest& request, const DeleteStreamPackageLinearAssemblyChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteStreamPackageLinearAssemblyChannelOutcomeCallable DeleteStreamPackageLinearAssemblyChannelCallable(const Model::DeleteStreamPackageLinearAssemblyChannelRequest& request);
+
+                /**
+                 *批量删除媒体包装Channel。
+                 * @param req DeleteStreamPackageLinearAssemblyChannelsRequest
+                 * @return DeleteStreamPackageLinearAssemblyChannelsOutcome
+                 */
+                DeleteStreamPackageLinearAssemblyChannelsOutcome DeleteStreamPackageLinearAssemblyChannels(const Model::DeleteStreamPackageLinearAssemblyChannelsRequest &request);
+                void DeleteStreamPackageLinearAssemblyChannelsAsync(const Model::DeleteStreamPackageLinearAssemblyChannelsRequest& request, const DeleteStreamPackageLinearAssemblyChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteStreamPackageLinearAssemblyChannelsOutcomeCallable DeleteStreamPackageLinearAssemblyChannelsCallable(const Model::DeleteStreamPackageLinearAssemblyChannelsRequest& request);
+
+                /**
+                 *删除线性组装Program。
+                 * @param req DeleteStreamPackageLinearAssemblyProgramRequest
+                 * @return DeleteStreamPackageLinearAssemblyProgramOutcome
+                 */
+                DeleteStreamPackageLinearAssemblyProgramOutcome DeleteStreamPackageLinearAssemblyProgram(const Model::DeleteStreamPackageLinearAssemblyProgramRequest &request);
+                void DeleteStreamPackageLinearAssemblyProgramAsync(const Model::DeleteStreamPackageLinearAssemblyProgramRequest& request, const DeleteStreamPackageLinearAssemblyProgramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteStreamPackageLinearAssemblyProgramOutcomeCallable DeleteStreamPackageLinearAssemblyProgramCallable(const Model::DeleteStreamPackageLinearAssemblyProgramRequest& request);
+
+                /**
+                 *批量删除线性组装Program。
+                 * @param req DeleteStreamPackageLinearAssemblyProgramsRequest
+                 * @return DeleteStreamPackageLinearAssemblyProgramsOutcome
+                 */
+                DeleteStreamPackageLinearAssemblyProgramsOutcome DeleteStreamPackageLinearAssemblyPrograms(const Model::DeleteStreamPackageLinearAssemblyProgramsRequest &request);
+                void DeleteStreamPackageLinearAssemblyProgramsAsync(const Model::DeleteStreamPackageLinearAssemblyProgramsRequest& request, const DeleteStreamPackageLinearAssemblyProgramsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteStreamPackageLinearAssemblyProgramsOutcomeCallable DeleteStreamPackageLinearAssemblyProgramsCallable(const Model::DeleteStreamPackageLinearAssemblyProgramsRequest& request);
+
+                /**
+                 *批量删除同一Channel下的ID
+                 * @param req DeleteStreamPackageLinearAssemblyProgramsByChannelRequest
+                 * @return DeleteStreamPackageLinearAssemblyProgramsByChannelOutcome
+                 */
+                DeleteStreamPackageLinearAssemblyProgramsByChannelOutcome DeleteStreamPackageLinearAssemblyProgramsByChannel(const Model::DeleteStreamPackageLinearAssemblyProgramsByChannelRequest &request);
+                void DeleteStreamPackageLinearAssemblyProgramsByChannelAsync(const Model::DeleteStreamPackageLinearAssemblyProgramsByChannelRequest& request, const DeleteStreamPackageLinearAssemblyProgramsByChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteStreamPackageLinearAssemblyProgramsByChannelOutcomeCallable DeleteStreamPackageLinearAssemblyProgramsByChannelCallable(const Model::DeleteStreamPackageLinearAssemblyProgramsByChannelRequest& request);
+
+                /**
+                 *删除广告插入配置。
+                 * @param req DeleteStreamPackageSSAIChannelRequest
+                 * @return DeleteStreamPackageSSAIChannelOutcome
+                 */
+                DeleteStreamPackageSSAIChannelOutcome DeleteStreamPackageSSAIChannel(const Model::DeleteStreamPackageSSAIChannelRequest &request);
+                void DeleteStreamPackageSSAIChannelAsync(const Model::DeleteStreamPackageSSAIChannelRequest& request, const DeleteStreamPackageSSAIChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteStreamPackageSSAIChannelOutcomeCallable DeleteStreamPackageSSAIChannelCallable(const Model::DeleteStreamPackageSSAIChannelRequest& request);
+
+                /**
+                 *批量删除媒体包装Source。
+                 * @param req DeleteStreamPackageSourceRequest
+                 * @return DeleteStreamPackageSourceOutcome
+                 */
+                DeleteStreamPackageSourceOutcome DeleteStreamPackageSource(const Model::DeleteStreamPackageSourceRequest &request);
+                void DeleteStreamPackageSourceAsync(const Model::DeleteStreamPackageSourceRequest& request, const DeleteStreamPackageSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteStreamPackageSourceOutcomeCallable DeleteStreamPackageSourceCallable(const Model::DeleteStreamPackageSourceRequest& request);
+
+                /**
+                 *删除媒体包装SourceLocation。
+                 * @param req DeleteStreamPackageSourceLocationRequest
+                 * @return DeleteStreamPackageSourceLocationOutcome
+                 */
+                DeleteStreamPackageSourceLocationOutcome DeleteStreamPackageSourceLocation(const Model::DeleteStreamPackageSourceLocationRequest &request);
+                void DeleteStreamPackageSourceLocationAsync(const Model::DeleteStreamPackageSourceLocationRequest& request, const DeleteStreamPackageSourceLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteStreamPackageSourceLocationOutcomeCallable DeleteStreamPackageSourceLocationCallable(const Model::DeleteStreamPackageSourceLocationRequest& request);
+
+                /**
                  *删除用户自定义字幕压制模板。
                  * @param req DeleteSubtitleEmbedTemplateRequest
                  * @return DeleteSubtitleEmbedTemplateOutcome
@@ -1556,6 +1891,15 @@ namespace TencentCloud
                 DescribeLiveRecordTemplatesOutcomeCallable DescribeLiveRecordTemplatesCallable(const Model::DescribeLiveRecordTemplatesRequest& request);
 
                 /**
+                 *查询用户开通mps信息，是否开通/授权。
+                 * @param req DescribeMDPMPSUserInfoRequest
+                 * @return DescribeMDPMPSUserInfoOutcome
+                 */
+                DescribeMDPMPSUserInfoOutcome DescribeMDPMPSUserInfo(const Model::DescribeMDPMPSUserInfoRequest &request);
+                void DescribeMDPMPSUserInfoAsync(const Model::DescribeMDPMPSUserInfoRequest& request, const DescribeMDPMPSUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMDPMPSUserInfoOutcomeCallable DescribeMDPMPSUserInfoCallable(const Model::DescribeMDPMPSUserInfoRequest& request);
+
+                /**
                  *获取媒体的元信息，包括视频画面宽、高、编码格式、时长、帧率等。
                  * @param req DescribeMediaMetaDataRequest
                  * @return DescribeMediaMetaDataOutcome
@@ -1590,6 +1934,15 @@ namespace TencentCloud
                 DescribeQualityControlTemplatesOutcome DescribeQualityControlTemplates(const Model::DescribeQualityControlTemplatesRequest &request);
                 void DescribeQualityControlTemplatesAsync(const Model::DescribeQualityControlTemplatesRequest& request, const DescribeQualityControlTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeQualityControlTemplatesOutcomeCallable DescribeQualityControlTemplatesCallable(const Model::DescribeQualityControlTemplatesRequest& request);
+
+                /**
+                 *查询SSAI开通状态
+                 * @param req DescribeSSAIActivateStateRequest
+                 * @return DescribeSSAIActivateStateOutcome
+                 */
+                DescribeSSAIActivateStateOutcome DescribeSSAIActivateState(const Model::DescribeSSAIActivateStateRequest &request);
+                void DescribeSSAIActivateStateAsync(const Model::DescribeSSAIActivateStateRequest& request, const DescribeSSAIActivateStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSSAIActivateStateOutcomeCallable DescribeSSAIActivateStateCallable(const Model::DescribeSSAIActivateStateRequest& request);
 
                 /**
                  *查询采样截图模板，支持根据条件，分页查询。
@@ -1752,6 +2105,150 @@ namespace TencentCloud
                 DescribeStreamLinkSecurityGroupsOutcome DescribeStreamLinkSecurityGroups(const Model::DescribeStreamLinkSecurityGroupsRequest &request);
                 void DescribeStreamLinkSecurityGroupsAsync(const Model::DescribeStreamLinkSecurityGroupsRequest& request, const DescribeStreamLinkSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeStreamLinkSecurityGroupsOutcomeCallable DescribeStreamLinkSecurityGroupsCallable(const Model::DescribeStreamLinkSecurityGroupsRequest& request);
+
+                /**
+                 *查询媒体封装用户开通情况。
+                 * @param req DescribeStreamPackageActivateStateRequest
+                 * @return DescribeStreamPackageActivateStateOutcome
+                 */
+                DescribeStreamPackageActivateStateOutcome DescribeStreamPackageActivateState(const Model::DescribeStreamPackageActivateStateRequest &request);
+                void DescribeStreamPackageActivateStateAsync(const Model::DescribeStreamPackageActivateStateRequest& request, const DescribeStreamPackageActivateStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamPackageActivateStateOutcomeCallable DescribeStreamPackageActivateStateCallable(const Model::DescribeStreamPackageActivateStateRequest& request);
+
+                /**
+                 *查询媒体包装线性组装频道信息。
+                 * @param req DescribeStreamPackageLinearAssemblyChannelRequest
+                 * @return DescribeStreamPackageLinearAssemblyChannelOutcome
+                 */
+                DescribeStreamPackageLinearAssemblyChannelOutcome DescribeStreamPackageLinearAssemblyChannel(const Model::DescribeStreamPackageLinearAssemblyChannelRequest &request);
+                void DescribeStreamPackageLinearAssemblyChannelAsync(const Model::DescribeStreamPackageLinearAssemblyChannelRequest& request, const DescribeStreamPackageLinearAssemblyChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamPackageLinearAssemblyChannelOutcomeCallable DescribeStreamPackageLinearAssemblyChannelCallable(const Model::DescribeStreamPackageLinearAssemblyChannelRequest& request);
+
+                /**
+                 *查询线性组装频道告警信息。
+                 * @param req DescribeStreamPackageLinearAssemblyChannelAlertsRequest
+                 * @return DescribeStreamPackageLinearAssemblyChannelAlertsOutcome
+                 */
+                DescribeStreamPackageLinearAssemblyChannelAlertsOutcome DescribeStreamPackageLinearAssemblyChannelAlerts(const Model::DescribeStreamPackageLinearAssemblyChannelAlertsRequest &request);
+                void DescribeStreamPackageLinearAssemblyChannelAlertsAsync(const Model::DescribeStreamPackageLinearAssemblyChannelAlertsRequest& request, const DescribeStreamPackageLinearAssemblyChannelAlertsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamPackageLinearAssemblyChannelAlertsOutcomeCallable DescribeStreamPackageLinearAssemblyChannelAlertsCallable(const Model::DescribeStreamPackageLinearAssemblyChannelAlertsRequest& request);
+
+                /**
+                 *查询线性组装频道信息列表。
+                 * @param req DescribeStreamPackageLinearAssemblyChannelsRequest
+                 * @return DescribeStreamPackageLinearAssemblyChannelsOutcome
+                 */
+                DescribeStreamPackageLinearAssemblyChannelsOutcome DescribeStreamPackageLinearAssemblyChannels(const Model::DescribeStreamPackageLinearAssemblyChannelsRequest &request);
+                void DescribeStreamPackageLinearAssemblyChannelsAsync(const Model::DescribeStreamPackageLinearAssemblyChannelsRequest& request, const DescribeStreamPackageLinearAssemblyChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamPackageLinearAssemblyChannelsOutcomeCallable DescribeStreamPackageLinearAssemblyChannelsCallable(const Model::DescribeStreamPackageLinearAssemblyChannelsRequest& request);
+
+                /**
+                 *查询媒体包装Program信息。
+                 * @param req DescribeStreamPackageLinearAssemblyProgramRequest
+                 * @return DescribeStreamPackageLinearAssemblyProgramOutcome
+                 */
+                DescribeStreamPackageLinearAssemblyProgramOutcome DescribeStreamPackageLinearAssemblyProgram(const Model::DescribeStreamPackageLinearAssemblyProgramRequest &request);
+                void DescribeStreamPackageLinearAssemblyProgramAsync(const Model::DescribeStreamPackageLinearAssemblyProgramRequest& request, const DescribeStreamPackageLinearAssemblyProgramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamPackageLinearAssemblyProgramOutcomeCallable DescribeStreamPackageLinearAssemblyProgramCallable(const Model::DescribeStreamPackageLinearAssemblyProgramRequest& request);
+
+                /**
+                 *查询Programe信息列表。
+                 * @param req DescribeStreamPackageLinearAssemblyProgramSchedulesRequest
+                 * @return DescribeStreamPackageLinearAssemblyProgramSchedulesOutcome
+                 */
+                DescribeStreamPackageLinearAssemblyProgramSchedulesOutcome DescribeStreamPackageLinearAssemblyProgramSchedules(const Model::DescribeStreamPackageLinearAssemblyProgramSchedulesRequest &request);
+                void DescribeStreamPackageLinearAssemblyProgramSchedulesAsync(const Model::DescribeStreamPackageLinearAssemblyProgramSchedulesRequest& request, const DescribeStreamPackageLinearAssemblyProgramSchedulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamPackageLinearAssemblyProgramSchedulesOutcomeCallable DescribeStreamPackageLinearAssemblyProgramSchedulesCallable(const Model::DescribeStreamPackageLinearAssemblyProgramSchedulesRequest& request);
+
+                /**
+                 *查询Programe信息列表。
+                 * @param req DescribeStreamPackageLinearAssemblyProgramsRequest
+                 * @return DescribeStreamPackageLinearAssemblyProgramsOutcome
+                 */
+                DescribeStreamPackageLinearAssemblyProgramsOutcome DescribeStreamPackageLinearAssemblyPrograms(const Model::DescribeStreamPackageLinearAssemblyProgramsRequest &request);
+                void DescribeStreamPackageLinearAssemblyProgramsAsync(const Model::DescribeStreamPackageLinearAssemblyProgramsRequest& request, const DescribeStreamPackageLinearAssemblyProgramsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamPackageLinearAssemblyProgramsOutcomeCallable DescribeStreamPackageLinearAssemblyProgramsCallable(const Model::DescribeStreamPackageLinearAssemblyProgramsRequest& request);
+
+                /**
+                 *频道线性组装用量查询
+                 * @param req DescribeStreamPackageLinearAssemblyUsageRequest
+                 * @return DescribeStreamPackageLinearAssemblyUsageOutcome
+                 */
+                DescribeStreamPackageLinearAssemblyUsageOutcome DescribeStreamPackageLinearAssemblyUsage(const Model::DescribeStreamPackageLinearAssemblyUsageRequest &request);
+                void DescribeStreamPackageLinearAssemblyUsageAsync(const Model::DescribeStreamPackageLinearAssemblyUsageRequest& request, const DescribeStreamPackageLinearAssemblyUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamPackageLinearAssemblyUsageOutcomeCallable DescribeStreamPackageLinearAssemblyUsageCallable(const Model::DescribeStreamPackageLinearAssemblyUsageRequest& request);
+
+                /**
+                 *查询广告插入配置。
+                 * @param req DescribeStreamPackageSSAIChannelRequest
+                 * @return DescribeStreamPackageSSAIChannelOutcome
+                 */
+                DescribeStreamPackageSSAIChannelOutcome DescribeStreamPackageSSAIChannel(const Model::DescribeStreamPackageSSAIChannelRequest &request);
+                void DescribeStreamPackageSSAIChannelAsync(const Model::DescribeStreamPackageSSAIChannelRequest& request, const DescribeStreamPackageSSAIChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamPackageSSAIChannelOutcomeCallable DescribeStreamPackageSSAIChannelCallable(const Model::DescribeStreamPackageSSAIChannelRequest& request);
+
+                /**
+                 *批量查询广告插入配置。
+                 * @param req DescribeStreamPackageSSAIChannelsRequest
+                 * @return DescribeStreamPackageSSAIChannelsOutcome
+                 */
+                DescribeStreamPackageSSAIChannelsOutcome DescribeStreamPackageSSAIChannels(const Model::DescribeStreamPackageSSAIChannelsRequest &request);
+                void DescribeStreamPackageSSAIChannelsAsync(const Model::DescribeStreamPackageSSAIChannelsRequest& request, const DescribeStreamPackageSSAIChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamPackageSSAIChannelsOutcomeCallable DescribeStreamPackageSSAIChannelsCallable(const Model::DescribeStreamPackageSSAIChannelsRequest& request);
+
+                /**
+                 *SSAI广告替换用量查询
+                 * @param req DescribeStreamPackageSSAIUsageRequest
+                 * @return DescribeStreamPackageSSAIUsageOutcome
+                 */
+                DescribeStreamPackageSSAIUsageOutcome DescribeStreamPackageSSAIUsage(const Model::DescribeStreamPackageSSAIUsageRequest &request);
+                void DescribeStreamPackageSSAIUsageAsync(const Model::DescribeStreamPackageSSAIUsageRequest& request, const DescribeStreamPackageSSAIUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamPackageSSAIUsageOutcomeCallable DescribeStreamPackageSSAIUsageCallable(const Model::DescribeStreamPackageSSAIUsageRequest& request);
+
+                /**
+                 *查询媒体包装Source信息。
+                 * @param req DescribeStreamPackageSourceRequest
+                 * @return DescribeStreamPackageSourceOutcome
+                 */
+                DescribeStreamPackageSourceOutcome DescribeStreamPackageSource(const Model::DescribeStreamPackageSourceRequest &request);
+                void DescribeStreamPackageSourceAsync(const Model::DescribeStreamPackageSourceRequest& request, const DescribeStreamPackageSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamPackageSourceOutcomeCallable DescribeStreamPackageSourceCallable(const Model::DescribeStreamPackageSourceRequest& request);
+
+                /**
+                 *查询线性组装Source告警信息。
+                 * @param req DescribeStreamPackageSourceAlertsRequest
+                 * @return DescribeStreamPackageSourceAlertsOutcome
+                 */
+                DescribeStreamPackageSourceAlertsOutcome DescribeStreamPackageSourceAlerts(const Model::DescribeStreamPackageSourceAlertsRequest &request);
+                void DescribeStreamPackageSourceAlertsAsync(const Model::DescribeStreamPackageSourceAlertsRequest& request, const DescribeStreamPackageSourceAlertsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamPackageSourceAlertsOutcomeCallable DescribeStreamPackageSourceAlertsCallable(const Model::DescribeStreamPackageSourceAlertsRequest& request);
+
+                /**
+                 *查询媒体包装SourceLocation信息。
+                 * @param req DescribeStreamPackageSourceLocationRequest
+                 * @return DescribeStreamPackageSourceLocationOutcome
+                 */
+                DescribeStreamPackageSourceLocationOutcome DescribeStreamPackageSourceLocation(const Model::DescribeStreamPackageSourceLocationRequest &request);
+                void DescribeStreamPackageSourceLocationAsync(const Model::DescribeStreamPackageSourceLocationRequest& request, const DescribeStreamPackageSourceLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamPackageSourceLocationOutcomeCallable DescribeStreamPackageSourceLocationCallable(const Model::DescribeStreamPackageSourceLocationRequest& request);
+
+                /**
+                 *查询SourceLocation信息列表。
+                 * @param req DescribeStreamPackageSourceLocationsRequest
+                 * @return DescribeStreamPackageSourceLocationsOutcome
+                 */
+                DescribeStreamPackageSourceLocationsOutcome DescribeStreamPackageSourceLocations(const Model::DescribeStreamPackageSourceLocationsRequest &request);
+                void DescribeStreamPackageSourceLocationsAsync(const Model::DescribeStreamPackageSourceLocationsRequest& request, const DescribeStreamPackageSourceLocationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamPackageSourceLocationsOutcomeCallable DescribeStreamPackageSourceLocationsCallable(const Model::DescribeStreamPackageSourceLocationsRequest& request);
+
+                /**
+                 *查询Source信息列表。
+                 * @param req DescribeStreamPackageSourcesRequest
+                 * @return DescribeStreamPackageSourcesOutcome
+                 */
+                DescribeStreamPackageSourcesOutcome DescribeStreamPackageSources(const Model::DescribeStreamPackageSourcesRequest &request);
+                void DescribeStreamPackageSourcesAsync(const Model::DescribeStreamPackageSourcesRequest& request, const DescribeStreamPackageSourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamPackageSourcesOutcomeCallable DescribeStreamPackageSourcesCallable(const Model::DescribeStreamPackageSourcesRequest& request);
 
                 /**
                  *根据字幕压制模板唯一标识，获取字幕压制模板详情列表。返回结果包含符合条件的所有用户自定义字幕压制模板及系统预置字幕压制模板
@@ -2150,6 +2647,51 @@ namespace TencentCloud
                 ModifyStreamLinkSecurityGroupOutcomeCallable ModifyStreamLinkSecurityGroupCallable(const Model::ModifyStreamLinkSecurityGroupRequest& request);
 
                 /**
+                 *修改媒体包装Source信息。
+                 * @param req ModifyStreamPackageLinearAssemblyChannelRequest
+                 * @return ModifyStreamPackageLinearAssemblyChannelOutcome
+                 */
+                ModifyStreamPackageLinearAssemblyChannelOutcome ModifyStreamPackageLinearAssemblyChannel(const Model::ModifyStreamPackageLinearAssemblyChannelRequest &request);
+                void ModifyStreamPackageLinearAssemblyChannelAsync(const Model::ModifyStreamPackageLinearAssemblyChannelRequest& request, const ModifyStreamPackageLinearAssemblyChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyStreamPackageLinearAssemblyChannelOutcomeCallable ModifyStreamPackageLinearAssemblyChannelCallable(const Model::ModifyStreamPackageLinearAssemblyChannelRequest& request);
+
+                /**
+                 *修改媒体包装Program信息。
+                 * @param req ModifyStreamPackageLinearAssemblyProgramRequest
+                 * @return ModifyStreamPackageLinearAssemblyProgramOutcome
+                 */
+                ModifyStreamPackageLinearAssemblyProgramOutcome ModifyStreamPackageLinearAssemblyProgram(const Model::ModifyStreamPackageLinearAssemblyProgramRequest &request);
+                void ModifyStreamPackageLinearAssemblyProgramAsync(const Model::ModifyStreamPackageLinearAssemblyProgramRequest& request, const ModifyStreamPackageLinearAssemblyProgramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyStreamPackageLinearAssemblyProgramOutcomeCallable ModifyStreamPackageLinearAssemblyProgramCallable(const Model::ModifyStreamPackageLinearAssemblyProgramRequest& request);
+
+                /**
+                 *修改广告插入配置。
+                 * @param req ModifyStreamPackageSSAIChannelRequest
+                 * @return ModifyStreamPackageSSAIChannelOutcome
+                 */
+                ModifyStreamPackageSSAIChannelOutcome ModifyStreamPackageSSAIChannel(const Model::ModifyStreamPackageSSAIChannelRequest &request);
+                void ModifyStreamPackageSSAIChannelAsync(const Model::ModifyStreamPackageSSAIChannelRequest& request, const ModifyStreamPackageSSAIChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyStreamPackageSSAIChannelOutcomeCallable ModifyStreamPackageSSAIChannelCallable(const Model::ModifyStreamPackageSSAIChannelRequest& request);
+
+                /**
+                 *修改媒体包装Source信息。
+                 * @param req ModifyStreamPackageSourceRequest
+                 * @return ModifyStreamPackageSourceOutcome
+                 */
+                ModifyStreamPackageSourceOutcome ModifyStreamPackageSource(const Model::ModifyStreamPackageSourceRequest &request);
+                void ModifyStreamPackageSourceAsync(const Model::ModifyStreamPackageSourceRequest& request, const ModifyStreamPackageSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyStreamPackageSourceOutcomeCallable ModifyStreamPackageSourceCallable(const Model::ModifyStreamPackageSourceRequest& request);
+
+                /**
+                 *修改媒体包装SourceLocation信息。
+                 * @param req ModifyStreamPackageSourceLocationRequest
+                 * @return ModifyStreamPackageSourceLocationOutcome
+                 */
+                ModifyStreamPackageSourceLocationOutcome ModifyStreamPackageSourceLocation(const Model::ModifyStreamPackageSourceLocationRequest &request);
+                void ModifyStreamPackageSourceLocationAsync(const Model::ModifyStreamPackageSourceLocationRequest& request, const ModifyStreamPackageSourceLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyStreamPackageSourceLocationOutcomeCallable ModifyStreamPackageSourceLocationCallable(const Model::ModifyStreamPackageSourceLocationRequest& request);
+
+                /**
                  *修改用户自定义字幕压制模板。
                  * @param req ModifySubtitleEmbedTemplateRequest
                  * @return ModifySubtitleEmbedTemplateOutcome
@@ -2292,6 +2834,15 @@ namespace TencentCloud
                 StartStreamLinkFlowOutcomeCallable StartStreamLinkFlowCallable(const Model::StartStreamLinkFlowRequest& request);
 
                 /**
+                 *启动媒体包装频道。
+                 * @param req StartStreamPackageLinearAssemblyChannelRequest
+                 * @return StartStreamPackageLinearAssemblyChannelOutcome
+                 */
+                StartStreamPackageLinearAssemblyChannelOutcome StartStreamPackageLinearAssemblyChannel(const Model::StartStreamPackageLinearAssemblyChannelRequest &request);
+                void StartStreamPackageLinearAssemblyChannelAsync(const Model::StartStreamPackageLinearAssemblyChannelRequest& request, const StartStreamPackageLinearAssemblyChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartStreamPackageLinearAssemblyChannelOutcomeCallable StartStreamPackageLinearAssemblyChannelCallable(const Model::StartStreamPackageLinearAssemblyChannelRequest& request);
+
+                /**
                  *停止媒体传输流。
                  * @param req StopStreamLinkFlowRequest
                  * @return StopStreamLinkFlowOutcome
@@ -2299,6 +2850,15 @@ namespace TencentCloud
                 StopStreamLinkFlowOutcome StopStreamLinkFlow(const Model::StopStreamLinkFlowRequest &request);
                 void StopStreamLinkFlowAsync(const Model::StopStreamLinkFlowRequest& request, const StopStreamLinkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopStreamLinkFlowOutcomeCallable StopStreamLinkFlowCallable(const Model::StopStreamLinkFlowRequest& request);
+
+                /**
+                 *停止线性组装频道。
+                 * @param req StopStreamPackageLinearAssemblyChannelRequest
+                 * @return StopStreamPackageLinearAssemblyChannelOutcome
+                 */
+                StopStreamPackageLinearAssemblyChannelOutcome StopStreamPackageLinearAssemblyChannel(const Model::StopStreamPackageLinearAssemblyChannelRequest &request);
+                void StopStreamPackageLinearAssemblyChannelAsync(const Model::StopStreamPackageLinearAssemblyChannelRequest& request, const StopStreamPackageLinearAssemblyChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopStreamPackageLinearAssemblyChannelOutcomeCallable StopStreamPackageLinearAssemblyChannelCallable(const Model::StopStreamPackageLinearAssemblyChannelRequest& request);
 
                 /**
                  *同步接口，返回克隆音色Id或合成音频结果

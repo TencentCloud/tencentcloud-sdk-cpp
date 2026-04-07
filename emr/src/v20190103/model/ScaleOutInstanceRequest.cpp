@@ -53,7 +53,8 @@ ScaleOutInstanceRequest::ScaleOutInstanceRequest() :
     m_computeResourceIdHasBeenSet(false),
     m_computeResourceAdvanceParamsHasBeenSet(false),
     m_nodeMarksHasBeenSet(false),
-    m_warehouseNameHasBeenSet(false)
+    m_warehouseNameHasBeenSet(false),
+    m_partitionNumberHasBeenSet(false)
 {
 }
 
@@ -348,6 +349,14 @@ string ScaleOutInstanceRequest::ToJsonString() const
         string key = "WarehouseName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_warehouseName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_partitionNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PartitionNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_partitionNumber, allocator);
     }
 
 
@@ -852,6 +861,22 @@ void ScaleOutInstanceRequest::SetWarehouseName(const string& _warehouseName)
 bool ScaleOutInstanceRequest::WarehouseNameHasBeenSet() const
 {
     return m_warehouseNameHasBeenSet;
+}
+
+int64_t ScaleOutInstanceRequest::GetPartitionNumber() const
+{
+    return m_partitionNumber;
+}
+
+void ScaleOutInstanceRequest::SetPartitionNumber(const int64_t& _partitionNumber)
+{
+    m_partitionNumber = _partitionNumber;
+    m_partitionNumberHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::PartitionNumberHasBeenSet() const
+{
+    return m_partitionNumberHasBeenSet;
 }
 
 

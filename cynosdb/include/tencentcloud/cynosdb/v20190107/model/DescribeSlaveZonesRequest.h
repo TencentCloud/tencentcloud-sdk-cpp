@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool OssClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取存储架构类型。枚举值：1.0/2.0  默认值：1.0
+                     * @return StorageVersion 存储架构类型。枚举值：1.0/2.0  默认值：1.0
+                     * 
+                     */
+                    std::string GetStorageVersion() const;
+
+                    /**
+                     * 设置存储架构类型。枚举值：1.0/2.0  默认值：1.0
+                     * @param _storageVersion 存储架构类型。枚举值：1.0/2.0  默认值：1.0
+                     * 
+                     */
+                    void SetStorageVersion(const std::string& _storageVersion);
+
+                    /**
+                     * 判断参数 StorageVersion 是否已赋值
+                     * @return StorageVersion 是否已赋值
+                     * 
+                     */
+                    bool StorageVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     int64_t m_ossClusterId;
                     bool m_ossClusterIdHasBeenSet;
+
+                    /**
+                     * 存储架构类型。枚举值：1.0/2.0  默认值：1.0
+                     */
+                    std::string m_storageVersion;
+                    bool m_storageVersionHasBeenSet;
 
                 };
             }

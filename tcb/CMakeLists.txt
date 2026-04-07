@@ -101,7 +101,6 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DeleteApiKeyResponse.h
   include/tencentcloud/tcb/v20180608/model/DestroyStaticStoreRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyClientResponse.h
-  include/tencentcloud/tcb/v20180608/model/EditAuthConfigResponse.h
   include/tencentcloud/tcb/v20180608/model/VMLoginConfiguration.h
   include/tencentcloud/tcb/v20180608/model/RenewEnvRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeClientResponse.h
@@ -171,7 +170,6 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/Filter.h
   include/tencentcloud/tcb/v20180608/model/DropIndex.h
   include/tencentcloud/tcb/v20180608/model/PasswordUpdateLoginConfig.h
-  include/tencentcloud/tcb/v20180608/model/ReinstateEnvRequest.h
   include/tencentcloud/tcb/v20180608/model/HTTPServiceRouteQPSPolicy.h
   include/tencentcloud/tcb/v20180608/model/DescribeDatabaseACLRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateApiKeyResponse.h
@@ -189,7 +187,6 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/GetProvidersResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeQuotaDataRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateStaticStoreResponse.h
-  include/tencentcloud/tcb/v20180608/model/EditAuthConfigRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeVmInstancesResponse.h
   include/tencentcloud/tcb/v20180608/model/ApiKeyToken.h
   include/tencentcloud/tcb/v20180608/model/StorageInfo.h
@@ -231,7 +228,6 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/VMPrice.h
   include/tencentcloud/tcb/v20180608/model/DeleteProviderRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeVmSpecRequest.h
-  include/tencentcloud/tcb/v20180608/model/ReinstateEnvResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyProviderResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyEnvRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyUserRequest.h
@@ -327,7 +323,6 @@ set(tcb_src
   src/v20180608/model/DeleteApiKeyResponse.cpp
   src/v20180608/model/DestroyStaticStoreRequest.cpp
   src/v20180608/model/ModifyClientResponse.cpp
-  src/v20180608/model/EditAuthConfigResponse.cpp
   src/v20180608/model/VMLoginConfiguration.cpp
   src/v20180608/model/RenewEnvRequest.cpp
   src/v20180608/model/DescribeClientResponse.cpp
@@ -397,7 +392,6 @@ set(tcb_src
   src/v20180608/model/Filter.cpp
   src/v20180608/model/DropIndex.cpp
   src/v20180608/model/PasswordUpdateLoginConfig.cpp
-  src/v20180608/model/ReinstateEnvRequest.cpp
   src/v20180608/model/HTTPServiceRouteQPSPolicy.cpp
   src/v20180608/model/DescribeDatabaseACLRequest.cpp
   src/v20180608/model/CreateApiKeyResponse.cpp
@@ -415,7 +409,6 @@ set(tcb_src
   src/v20180608/model/GetProvidersResponse.cpp
   src/v20180608/model/DescribeQuotaDataRequest.cpp
   src/v20180608/model/CreateStaticStoreResponse.cpp
-  src/v20180608/model/EditAuthConfigRequest.cpp
   src/v20180608/model/DescribeVmInstancesResponse.cpp
   src/v20180608/model/ApiKeyToken.cpp
   src/v20180608/model/StorageInfo.cpp
@@ -457,7 +450,6 @@ set(tcb_src
   src/v20180608/model/VMPrice.cpp
   src/v20180608/model/DeleteProviderRequest.cpp
   src/v20180608/model/DescribeVmSpecRequest.cpp
-  src/v20180608/model/ReinstateEnvResponse.cpp
   src/v20180608/model/ModifyProviderResponse.cpp
   src/v20180608/model/ModifyEnvRequest.cpp
   src/v20180608/model/ModifyUserRequest.cpp

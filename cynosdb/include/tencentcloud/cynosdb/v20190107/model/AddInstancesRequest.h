@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取Cpu核数
-                     * @return Cpu Cpu核数
+                     * 获取<p>Cpu核数</p>
+                     * @return Cpu <p>Cpu核数</p>
                      * 
                      */
                     int64_t GetCpu() const;
 
                     /**
-                     * 设置Cpu核数
-                     * @param _cpu Cpu核数
+                     * 设置<p>Cpu核数</p>
+                     * @param _cpu <p>Cpu核数</p>
                      * 
                      */
                     void SetCpu(const int64_t& _cpu);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取内存，单位为GB
-                     * @return Memory 内存，单位为GB
+                     * 获取<p>内存，单位为GB</p>
+                     * @return Memory <p>内存，单位为GB</p>
                      * 
                      */
                     int64_t GetMemory() const;
 
                     /**
-                     * 设置内存，单位为GB
-                     * @param _memory 内存，单位为GB
+                     * 设置<p>内存，单位为GB</p>
+                     * @param _memory <p>内存，单位为GB</p>
                      * 
                      */
                     void SetMemory(const int64_t& _memory);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取新增只读实例数，取值范围为(0,15]
-                     * @return ReadOnlyCount 新增只读实例数，取值范围为(0,15]
+                     * 获取<p>新增只读实例数，取值范围为(0,15]</p>
+                     * @return ReadOnlyCount <p>新增只读实例数，取值范围为(0,15]</p>
                      * 
                      */
                     int64_t GetReadOnlyCount() const;
 
                     /**
-                     * 设置新增只读实例数，取值范围为(0,15]
-                     * @param _readOnlyCount 新增只读实例数，取值范围为(0,15]
+                     * 设置<p>新增只读实例数，取值范围为(0,15]</p>
+                     * @param _readOnlyCount <p>新增只读实例数，取值范围为(0,15]</p>
                      * 
                      */
                     void SetReadOnlyCount(const int64_t& _readOnlyCount);
@@ -129,23 +129,15 @@ namespace TencentCloud
                     bool ReadOnlyCountHasBeenSet() const;
 
                     /**
-                     * 获取实例机器类型，支持值如下：
-- common：表示通用型
-- exclusive：表示独享型
-                     * @return DeviceType 实例机器类型，支持值如下：
-- common：表示通用型
-- exclusive：表示独享型
+                     * 获取<p>实例机器类型，支持值如下：</p><ul><li>common：表示通用型</li><li>exclusive：表示独享型</li></ul>
+                     * @return DeviceType <p>实例机器类型，支持值如下：</p><ul><li>common：表示通用型</li><li>exclusive：表示独享型</li></ul>
                      * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
-                     * 设置实例机器类型，支持值如下：
-- common：表示通用型
-- exclusive：表示独享型
-                     * @param _deviceType 实例机器类型，支持值如下：
-- common：表示通用型
-- exclusive：表示独享型
+                     * 设置<p>实例机器类型，支持值如下：</p><ul><li>common：表示通用型</li><li>exclusive：表示独享型</li></ul>
+                     * @param _deviceType <p>实例机器类型，支持值如下：</p><ul><li>common：表示通用型</li><li>exclusive：表示独享型</li></ul>
                      * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
@@ -158,15 +150,15 @@ namespace TencentCloud
                     bool DeviceTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。
-                     * @return InstanceGrpId 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。
+                     * 获取<p>实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。</p>
+                     * @return InstanceGrpId <p>实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。</p>
                      * @deprecated
                      */
                     std::string GetInstanceGrpId() const;
 
                     /**
-                     * 设置实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。
-                     * @param _instanceGrpId 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。
+                     * 设置<p>实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。</p>
+                     * @param _instanceGrpId <p>实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。</p>
                      * @deprecated
                      */
                     void SetInstanceGrpId(const std::string& _instanceGrpId);
@@ -179,15 +171,15 @@ namespace TencentCloud
                     bool InstanceGrpIdHasBeenSet() const;
 
                     /**
-                     * 获取所属VPC网络ID。
-                     * @return VpcId 所属VPC网络ID。
+                     * 获取<p>所属VPC网络ID。</p>
+                     * @return VpcId <p>所属VPC网络ID。</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置所属VPC网络ID。
-                     * @param _vpcId 所属VPC网络ID。
+                     * 设置<p>所属VPC网络ID。</p>
+                     * @param _vpcId <p>所属VPC网络ID。</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -200,15 +192,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取所属子网ID，如果设置了VpcId，则SubnetId必填。
-                     * @return SubnetId 所属子网ID，如果设置了VpcId，则SubnetId必填。
+                     * 获取<p>所属子网ID，如果设置了VpcId，则SubnetId必填。</p>
+                     * @return SubnetId <p>所属子网ID，如果设置了VpcId，则SubnetId必填。</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置所属子网ID，如果设置了VpcId，则SubnetId必填。
-                     * @param _subnetId 所属子网ID，如果设置了VpcId，则SubnetId必填。
+                     * 设置<p>所属子网ID，如果设置了VpcId，则SubnetId必填。</p>
+                     * @param _subnetId <p>所属子网ID，如果设置了VpcId，则SubnetId必填。</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -221,15 +213,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取新增RO组时使用的Port，取值范围为[0,65535)
-                     * @return Port 新增RO组时使用的Port，取值范围为[0,65535)
+                     * 获取<p>新增RO组时使用的Port，取值范围为[0,65535)</p>
+                     * @return Port <p>新增RO组时使用的Port，取值范围为[0,65535)</p>
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置新增RO组时使用的Port，取值范围为[0,65535)
-                     * @param _port 新增RO组时使用的Port，取值范围为[0,65535)
+                     * 设置<p>新增RO组时使用的Port，取值范围为[0,65535)</p>
+                     * @param _port <p>新增RO组时使用的Port，取值范围为[0,65535)</p>
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -242,15 +234,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取实例名称，字符串长度范围为[0,64)，取值范围为大小写字母，0-9数字，'_','-','.'
-                     * @return InstanceName 实例名称，字符串长度范围为[0,64)，取值范围为大小写字母，0-9数字，'_','-','.'
+                     * 获取<p>实例名称，字符串长度范围为[0,64)，取值范围为大小写字母，0-9数字，&#39;_&#39;,&#39;-&#39;,&#39;.&#39;</p>
+                     * @return InstanceName <p>实例名称，字符串长度范围为[0,64)，取值范围为大小写字母，0-9数字，&#39;_&#39;,&#39;-&#39;,&#39;.&#39;</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称，字符串长度范围为[0,64)，取值范围为大小写字母，0-9数字，'_','-','.'
-                     * @param _instanceName 实例名称，字符串长度范围为[0,64)，取值范围为大小写字母，0-9数字，'_','-','.'
+                     * 设置<p>实例名称，字符串长度范围为[0,64)，取值范围为大小写字母，0-9数字，&#39;_&#39;,&#39;-&#39;,&#39;.&#39;</p>
+                     * @param _instanceName <p>实例名称，字符串长度范围为[0,64)，取值范围为大小写字母，0-9数字，&#39;_&#39;,&#39;-&#39;,&#39;.&#39;</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -263,15 +255,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取是否自动选择代金券 1是 0否 默认为0
-                     * @return AutoVoucher 是否自动选择代金券 1是 0否 默认为0
+                     * 获取<p>是否自动选择代金券 1是 0否 默认为0</p>
+                     * @return AutoVoucher <p>是否自动选择代金券 1是 0否 默认为0</p>
                      * 
                      */
                     int64_t GetAutoVoucher() const;
 
                     /**
-                     * 设置是否自动选择代金券 1是 0否 默认为0
-                     * @param _autoVoucher 是否自动选择代金券 1是 0否 默认为0
+                     * 设置<p>是否自动选择代金券 1是 0否 默认为0</p>
+                     * @param _autoVoucher <p>是否自动选择代金券 1是 0否 默认为0</p>
                      * 
                      */
                     void SetAutoVoucher(const int64_t& _autoVoucher);
@@ -284,19 +276,15 @@ namespace TencentCloud
                     bool AutoVoucherHasBeenSet() const;
 
                     /**
-                     * 获取数据库类型，取值范围: 
-<li> MYSQL </li>
-                     * @return DbType 数据库类型，取值范围: 
-<li> MYSQL </li>
+                     * 获取<p>数据库类型，取值范围: </p><li> MYSQL </li>
+                     * @return DbType <p>数据库类型，取值范围: </p><li> MYSQL </li>
                      * 
                      */
                     std::string GetDbType() const;
 
                     /**
-                     * 设置数据库类型，取值范围: 
-<li> MYSQL </li>
-                     * @param _dbType 数据库类型，取值范围: 
-<li> MYSQL </li>
+                     * 设置<p>数据库类型，取值范围: </p><li> MYSQL </li>
+                     * @param _dbType <p>数据库类型，取值范围: </p><li> MYSQL </li>
                      * 
                      */
                     void SetDbType(const std::string& _dbType);
@@ -309,15 +297,15 @@ namespace TencentCloud
                     bool DbTypeHasBeenSet() const;
 
                     /**
-                     * 获取订单来源，字符串长度范围为[0,64)
-                     * @return OrderSource 订单来源，字符串长度范围为[0,64)
+                     * 获取<p>订单来源，字符串长度范围为[0,64)</p>
+                     * @return OrderSource <p>订单来源，字符串长度范围为[0,64)</p>
                      * 
                      */
                     std::string GetOrderSource() const;
 
                     /**
-                     * 设置订单来源，字符串长度范围为[0,64)
-                     * @param _orderSource 订单来源，字符串长度范围为[0,64)
+                     * 设置<p>订单来源，字符串长度范围为[0,64)</p>
+                     * @param _orderSource <p>订单来源，字符串长度范围为[0,64)</p>
                      * 
                      */
                     void SetOrderSource(const std::string& _orderSource);
@@ -330,15 +318,15 @@ namespace TencentCloud
                     bool OrderSourceHasBeenSet() const;
 
                     /**
-                     * 获取交易模式 0-下单并支付 1-下单
-                     * @return DealMode 交易模式 0-下单并支付 1-下单
+                     * 获取<p>交易模式 0-下单并支付 1-下单</p>
+                     * @return DealMode <p>交易模式 0-下单并支付 1-下单</p>
                      * 
                      */
                     int64_t GetDealMode() const;
 
                     /**
-                     * 设置交易模式 0-下单并支付 1-下单
-                     * @param _dealMode 交易模式 0-下单并支付 1-下单
+                     * 设置<p>交易模式 0-下单并支付 1-下单</p>
+                     * @param _dealMode <p>交易模式 0-下单并支付 1-下单</p>
                      * 
                      */
                     void SetDealMode(const int64_t& _dealMode);
@@ -351,15 +339,15 @@ namespace TencentCloud
                     bool DealModeHasBeenSet() const;
 
                     /**
-                     * 获取参数模板ID
-                     * @return ParamTemplateId 参数模板ID
+                     * 获取<p>参数模板ID</p>
+                     * @return ParamTemplateId <p>参数模板ID</p>
                      * 
                      */
                     int64_t GetParamTemplateId() const;
 
                     /**
-                     * 设置参数模板ID
-                     * @param _paramTemplateId 参数模板ID
+                     * 设置<p>参数模板ID</p>
+                     * @param _paramTemplateId <p>参数模板ID</p>
                      * 
                      */
                     void SetParamTemplateId(const int64_t& _paramTemplateId);
@@ -372,15 +360,15 @@ namespace TencentCloud
                     bool ParamTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取参数列表，ParamTemplateId 传入时InstanceParams才有效
-                     * @return InstanceParams 参数列表，ParamTemplateId 传入时InstanceParams才有效
+                     * 获取<p>参数列表，ParamTemplateId 传入时InstanceParams才有效</p>
+                     * @return InstanceParams <p>参数列表，ParamTemplateId 传入时InstanceParams才有效</p>
                      * 
                      */
                     std::vector<ModifyParamItem> GetInstanceParams() const;
 
                     /**
-                     * 设置参数列表，ParamTemplateId 传入时InstanceParams才有效
-                     * @param _instanceParams 参数列表，ParamTemplateId 传入时InstanceParams才有效
+                     * 设置<p>参数列表，ParamTemplateId 传入时InstanceParams才有效</p>
+                     * @param _instanceParams <p>参数列表，ParamTemplateId 传入时InstanceParams才有效</p>
                      * 
                      */
                     void SetInstanceParams(const std::vector<ModifyParamItem>& _instanceParams);
@@ -393,15 +381,15 @@ namespace TencentCloud
                     bool InstanceParamsHasBeenSet() const;
 
                     /**
-                     * 获取安全组ID，新建只读实例时可以指定安全组。
-                     * @return SecurityGroupIds 安全组ID，新建只读实例时可以指定安全组。
+                     * 获取<p>安全组ID，新建只读实例时可以指定安全组。</p>
+                     * @return SecurityGroupIds <p>安全组ID，新建只读实例时可以指定安全组。</p>
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置安全组ID，新建只读实例时可以指定安全组。
-                     * @param _securityGroupIds 安全组ID，新建只读实例时可以指定安全组。
+                     * 设置<p>安全组ID，新建只读实例时可以指定安全组。</p>
+                     * @param _securityGroupIds <p>安全组ID，新建只读实例时可以指定安全组。</p>
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -414,15 +402,15 @@ namespace TencentCloud
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取proxy同步升级
-                     * @return UpgradeProxy proxy同步升级
+                     * 获取<p>proxy同步升级</p>
+                     * @return UpgradeProxy <p>proxy同步升级</p>
                      * 
                      */
                     UpgradeProxy GetUpgradeProxy() const;
 
                     /**
-                     * 设置proxy同步升级
-                     * @param _upgradeProxy proxy同步升级
+                     * 设置<p>proxy同步升级</p>
+                     * @param _upgradeProxy <p>proxy同步升级</p>
                      * 
                      */
                     void SetUpgradeProxy(const UpgradeProxy& _upgradeProxy);
@@ -437,112 +425,109 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * Cpu核数
+                     * <p>Cpu核数</p>
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 内存，单位为GB
+                     * <p>内存，单位为GB</p>
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 新增只读实例数，取值范围为(0,15]
+                     * <p>新增只读实例数，取值范围为(0,15]</p>
                      */
                     int64_t m_readOnlyCount;
                     bool m_readOnlyCountHasBeenSet;
 
                     /**
-                     * 实例机器类型，支持值如下：
-- common：表示通用型
-- exclusive：表示独享型
+                     * <p>实例机器类型，支持值如下：</p><ul><li>common：表示通用型</li><li>exclusive：表示独享型</li></ul>
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;
 
                     /**
-                     * 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。
+                     * <p>实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。</p>
                      */
                     std::string m_instanceGrpId;
                     bool m_instanceGrpIdHasBeenSet;
 
                     /**
-                     * 所属VPC网络ID。
+                     * <p>所属VPC网络ID。</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 所属子网ID，如果设置了VpcId，则SubnetId必填。
+                     * <p>所属子网ID，如果设置了VpcId，则SubnetId必填。</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 新增RO组时使用的Port，取值范围为[0,65535)
+                     * <p>新增RO组时使用的Port，取值范围为[0,65535)</p>
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 实例名称，字符串长度范围为[0,64)，取值范围为大小写字母，0-9数字，'_','-','.'
+                     * <p>实例名称，字符串长度范围为[0,64)，取值范围为大小写字母，0-9数字，&#39;_&#39;,&#39;-&#39;,&#39;.&#39;</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 是否自动选择代金券 1是 0否 默认为0
+                     * <p>是否自动选择代金券 1是 0否 默认为0</p>
                      */
                     int64_t m_autoVoucher;
                     bool m_autoVoucherHasBeenSet;
 
                     /**
-                     * 数据库类型，取值范围: 
-<li> MYSQL </li>
+                     * <p>数据库类型，取值范围: </p><li> MYSQL </li>
                      */
                     std::string m_dbType;
                     bool m_dbTypeHasBeenSet;
 
                     /**
-                     * 订单来源，字符串长度范围为[0,64)
+                     * <p>订单来源，字符串长度范围为[0,64)</p>
                      */
                     std::string m_orderSource;
                     bool m_orderSourceHasBeenSet;
 
                     /**
-                     * 交易模式 0-下单并支付 1-下单
+                     * <p>交易模式 0-下单并支付 1-下单</p>
                      */
                     int64_t m_dealMode;
                     bool m_dealModeHasBeenSet;
 
                     /**
-                     * 参数模板ID
+                     * <p>参数模板ID</p>
                      */
                     int64_t m_paramTemplateId;
                     bool m_paramTemplateIdHasBeenSet;
 
                     /**
-                     * 参数列表，ParamTemplateId 传入时InstanceParams才有效
+                     * <p>参数列表，ParamTemplateId 传入时InstanceParams才有效</p>
                      */
                     std::vector<ModifyParamItem> m_instanceParams;
                     bool m_instanceParamsHasBeenSet;
 
                     /**
-                     * 安全组ID，新建只读实例时可以指定安全组。
+                     * <p>安全组ID，新建只读实例时可以指定安全组。</p>
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
 
                     /**
-                     * proxy同步升级
+                     * <p>proxy同步升级</p>
                      */
                     UpgradeProxy m_upgradeProxy;
                     bool m_upgradeProxyHasBeenSet;

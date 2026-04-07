@@ -2640,56 +2640,6 @@ TcbClient::DestroyStaticStoreOutcomeCallable TcbClient::DestroyStaticStoreCallab
     return prom->get_future();
 }
 
-TcbClient::EditAuthConfigOutcome TcbClient::EditAuthConfig(const EditAuthConfigRequest &request)
-{
-    auto outcome = MakeRequest(request, "EditAuthConfig");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        EditAuthConfigResponse rsp = EditAuthConfigResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return EditAuthConfigOutcome(rsp);
-        else
-            return EditAuthConfigOutcome(o.GetError());
-    }
-    else
-    {
-        return EditAuthConfigOutcome(outcome.GetError());
-    }
-}
-
-void TcbClient::EditAuthConfigAsync(const EditAuthConfigRequest& request, const EditAuthConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const EditAuthConfigRequest&;
-    using Resp = EditAuthConfigResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "EditAuthConfig", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TcbClient::EditAuthConfigOutcomeCallable TcbClient::EditAuthConfigCallable(const EditAuthConfigRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<EditAuthConfigOutcome>>();
-    EditAuthConfigAsync(
-    request,
-    [prom](
-        const TcbClient*,
-        const EditAuthConfigRequest&,
-        EditAuthConfigOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 TcbClient::GetProvidersOutcome TcbClient::GetProviders(const GetProvidersRequest &request)
 {
     auto outcome = MakeRequest(request, "GetProviders");
@@ -3332,56 +3282,6 @@ TcbClient::ModifyUserOutcomeCallable TcbClient::ModifyUserCallable(const ModifyU
         const TcbClient*,
         const ModifyUserRequest&,
         ModifyUserOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-TcbClient::ReinstateEnvOutcome TcbClient::ReinstateEnv(const ReinstateEnvRequest &request)
-{
-    auto outcome = MakeRequest(request, "ReinstateEnv");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ReinstateEnvResponse rsp = ReinstateEnvResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ReinstateEnvOutcome(rsp);
-        else
-            return ReinstateEnvOutcome(o.GetError());
-    }
-    else
-    {
-        return ReinstateEnvOutcome(outcome.GetError());
-    }
-}
-
-void TcbClient::ReinstateEnvAsync(const ReinstateEnvRequest& request, const ReinstateEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const ReinstateEnvRequest&;
-    using Resp = ReinstateEnvResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "ReinstateEnv", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TcbClient::ReinstateEnvOutcomeCallable TcbClient::ReinstateEnvCallable(const ReinstateEnvRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<ReinstateEnvOutcome>>();
-    ReinstateEnvAsync(
-    request,
-    [prom](
-        const TcbClient*,
-        const ReinstateEnvRequest&,
-        ReinstateEnvOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

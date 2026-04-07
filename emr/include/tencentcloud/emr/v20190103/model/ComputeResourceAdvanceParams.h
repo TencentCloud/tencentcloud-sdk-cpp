@@ -49,15 +49,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点Label数组
-                     * @return Labels 节点Label数组
+                     * 获取<p>节点Label数组</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Labels <p>节点Label数组</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TkeLabel> GetLabels() const;
 
                     /**
-                     * 设置节点Label数组
-                     * @param _labels 节点Label数组
+                     * 设置<p>节点Label数组</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _labels <p>节点Label数组</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabels(const std::vector<TkeLabel>& _labels);
@@ -70,15 +74,19 @@ namespace TencentCloud
                     bool LabelsHasBeenSet() const;
 
                     /**
-                     * 获取节点污点
-                     * @return Taints 节点污点
+                     * 获取<p>节点污点</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Taints <p>节点污点</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Taint> GetTaints() const;
 
                     /**
-                     * 设置节点污点
-                     * @param _taints 节点污点
+                     * 设置<p>节点污点</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taints <p>节点污点</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaints(const std::vector<Taint>& _taints);
@@ -91,15 +99,15 @@ namespace TencentCloud
                     bool TaintsHasBeenSet() const;
 
                     /**
-                     * 获取base64 编码的用户脚本，在初始化节点之前执行
-                     * @return PreStartUserScript base64 编码的用户脚本，在初始化节点之前执行
+                     * 获取<p>base64 编码的用户脚本，在初始化节点之前执行</p>
+                     * @return PreStartUserScript <p>base64 编码的用户脚本，在初始化节点之前执行</p>
                      * 
                      */
                     std::string GetPreStartUserScript() const;
 
                     /**
-                     * 设置base64 编码的用户脚本，在初始化节点之前执行
-                     * @param _preStartUserScript base64 编码的用户脚本，在初始化节点之前执行
+                     * 设置<p>base64 编码的用户脚本，在初始化节点之前执行</p>
+                     * @param _preStartUserScript <p>base64 编码的用户脚本，在初始化节点之前执行</p>
                      * 
                      */
                     void SetPreStartUserScript(const std::string& _preStartUserScript);
@@ -112,15 +120,15 @@ namespace TencentCloud
                     bool PreStartUserScriptHasBeenSet() const;
 
                     /**
-                     * 获取base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看
-                     * @return UserScript base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看
+                     * 获取<p>base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看</p>
+                     * @return UserScript <p>base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看</p>
                      * 
                      */
                     std::string GetUserScript() const;
 
                     /**
-                     * 设置base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看
-                     * @param _userScript base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看
+                     * 设置<p>base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看</p>
+                     * @param _userScript <p>base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看</p>
                      * 
                      */
                     void SetUserScript(const std::string& _userScript);
@@ -135,25 +143,27 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 节点Label数组
+                     * <p>节点Label数组</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TkeLabel> m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
-                     * 节点污点
+                     * <p>节点污点</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Taint> m_taints;
                     bool m_taintsHasBeenSet;
 
                     /**
-                     * base64 编码的用户脚本，在初始化节点之前执行
+                     * <p>base64 编码的用户脚本，在初始化节点之前执行</p>
                      */
                     std::string m_preStartUserScript;
                     bool m_preStartUserScriptHasBeenSet;
 
                     /**
-                     * base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看
+                     * <p>base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看</p>
                      */
                     std::string m_userScript;
                     bool m_userScriptHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取趋势周期(默认为7天)
-                     * @return TendencyPeriod 趋势周期(默认为7天)
+                     * 获取<p>趋势周期(默认为7天)</p>
+                     * @return TendencyPeriod <p>趋势周期(默认为7天)</p>
                      * 
                      */
                     uint64_t GetTendencyPeriod() const;
 
                     /**
-                     * 设置趋势周期(默认为7天)
-                     * @param _tendencyPeriod 趋势周期(默认为7天)
+                     * 设置<p>趋势周期(默认为7天)</p>
+                     * @param _tendencyPeriod <p>趋势周期(默认为7天)</p>
                      * 
                      */
                     void SetTendencyPeriod(const uint64_t& _tendencyPeriod);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 趋势周期(默认为7天)
+                     * <p>趋势周期(默认为7天)</p>
                      */
                     uint64_t m_tendencyPeriod;
                     bool m_tendencyPeriodHasBeenSet;

@@ -56,6 +56,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSREDigitalTwinTaskListResponse.h
   include/tencentcloud/monitor/v20230616/model/FeiShuRobotNoticeTmpl.h
   include/tencentcloud/monitor/v20230616/model/DingDingRobotNoticeTmplMatcher.h
+  include/tencentcloud/monitor/v20230616/model/SlackRobotNoticeTmplMatcher.h
   include/tencentcloud/monitor/v20230616/model/AIWorkbenchSREDigitalTwinWorkLogDetail.h
   include/tencentcloud/monitor/v20230616/model/WeWorkRobotNoticeTmplMatcher.h
   include/tencentcloud/monitor/v20230616/model/AlarmNotifyHistory.h
@@ -65,6 +66,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20230616/model/QCloudYeheNoticeTmpl.h
   include/tencentcloud/monitor/v20230616/model/DeleteNoticeContentTmplsResponse.h
   include/tencentcloud/monitor/v20230616/model/PagerDutyRobotNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/SlackRobotNoticeTmpl.h
   include/tencentcloud/monitor/v20230616/model/AIWorkbenchSREDigitalTwinTaskList.h
   include/tencentcloud/monitor/v20230616/model/DescribeNoticeContentTmplRequest.h
   include/tencentcloud/monitor/v20230616/model/ModifyNoticeContentTmplRequest.h
@@ -605,6 +607,7 @@ set(monitor_src
   src/v20230616/model/DescribeAIWorkbenchSREDigitalTwinTaskListResponse.cpp
   src/v20230616/model/FeiShuRobotNoticeTmpl.cpp
   src/v20230616/model/DingDingRobotNoticeTmplMatcher.cpp
+  src/v20230616/model/SlackRobotNoticeTmplMatcher.cpp
   src/v20230616/model/AIWorkbenchSREDigitalTwinWorkLogDetail.cpp
   src/v20230616/model/WeWorkRobotNoticeTmplMatcher.cpp
   src/v20230616/model/AlarmNotifyHistory.cpp
@@ -614,6 +617,7 @@ set(monitor_src
   src/v20230616/model/QCloudYeheNoticeTmpl.cpp
   src/v20230616/model/DeleteNoticeContentTmplsResponse.cpp
   src/v20230616/model/PagerDutyRobotNoticeTmpl.cpp
+  src/v20230616/model/SlackRobotNoticeTmpl.cpp
   src/v20230616/model/AIWorkbenchSREDigitalTwinTaskList.cpp
   src/v20230616/model/DescribeNoticeContentTmplRequest.cpp
   src/v20230616/model/ModifyNoticeContentTmplRequest.cpp
