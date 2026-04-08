@@ -39,7 +39,8 @@ StartStreamIngestRequest::StartStreamIngestRequest() :
     m_maxDurationHasBeenSet(false),
     m_volumeHasBeenSet(false),
     m_enableProgressHasBeenSet(false),
-    m_tempoHasBeenSet(false)
+    m_tempoHasBeenSet(false),
+    m_idleTimeoutHasBeenSet(false)
 {
 }
 
@@ -191,6 +192,14 @@ string StartStreamIngestRequest::ToJsonString() const
         string key = "Tempo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_tempo, allocator);
+    }
+
+    if (m_idleTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdleTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_idleTimeout, allocator);
     }
 
 
@@ -471,6 +480,22 @@ void StartStreamIngestRequest::SetTempo(const double& _tempo)
 bool StartStreamIngestRequest::TempoHasBeenSet() const
 {
     return m_tempoHasBeenSet;
+}
+
+int64_t StartStreamIngestRequest::GetIdleTimeout() const
+{
+    return m_idleTimeout;
+}
+
+void StartStreamIngestRequest::SetIdleTimeout(const int64_t& _idleTimeout)
+{
+    m_idleTimeout = _idleTimeout;
+    m_idleTimeoutHasBeenSet = true;
+}
+
+bool StartStreamIngestRequest::IdleTimeoutHasBeenSet() const
+{
+    return m_idleTimeoutHasBeenSet;
 }
 
 

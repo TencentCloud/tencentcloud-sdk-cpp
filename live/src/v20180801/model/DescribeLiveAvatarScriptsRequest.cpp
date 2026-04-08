@@ -26,7 +26,8 @@ DescribeLiveAvatarScriptsRequest::DescribeLiveAvatarScriptsRequest() :
     m_roomIdHasBeenSet(false),
     m_scriptIdHasBeenSet(false),
     m_pageIndexHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_productIdHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeLiveAvatarScriptsRequest::ToJsonString() const
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_productIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeLiveAvatarScriptsRequest::SetPageSize(const int64_t& _pageSize)
 bool DescribeLiveAvatarScriptsRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+string DescribeLiveAvatarScriptsRequest::GetProductId() const
+{
+    return m_productId;
+}
+
+void DescribeLiveAvatarScriptsRequest::SetProductId(const string& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool DescribeLiveAvatarScriptsRequest::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
 }
 
 

@@ -25,7 +25,9 @@ Extenders::Extenders() :
     m_prioritizeVerbHasBeenSet(false),
     m_weightHasBeenSet(false),
     m_managedResourcesHasBeenSet(false),
-    m_extenderClientConfigHasBeenSet(false)
+    m_extenderClientConfigHasBeenSet(false),
+    m_preemptVerbHasBeenSet(false),
+    m_nodeCacheCapableHasBeenSet(false)
 {
 }
 
@@ -101,6 +103,26 @@ CoreInternalOutcome Extenders::Deserialize(const rapidjson::Value &value)
         m_extenderClientConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("PreemptVerb") && !value["PreemptVerb"].IsNull())
+    {
+        if (!value["PreemptVerb"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Extenders.PreemptVerb` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_preemptVerb = string(value["PreemptVerb"].GetString());
+        m_preemptVerbHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeCacheCapable") && !value["NodeCacheCapable"].IsNull())
+    {
+        if (!value["NodeCacheCapable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Extenders.NodeCacheCapable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeCacheCapable = value["NodeCacheCapable"].GetBool();
+        m_nodeCacheCapableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -154,6 +176,22 @@ void Extenders::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_extenderClientConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_preemptVerbHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreemptVerb";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_preemptVerb.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeCacheCapableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeCacheCapable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nodeCacheCapable, allocator);
     }
 
 }
@@ -237,5 +275,37 @@ void Extenders::SetExtenderClientConfig(const ExtenderClientConfig& _extenderCli
 bool Extenders::ExtenderClientConfigHasBeenSet() const
 {
     return m_extenderClientConfigHasBeenSet;
+}
+
+string Extenders::GetPreemptVerb() const
+{
+    return m_preemptVerb;
+}
+
+void Extenders::SetPreemptVerb(const string& _preemptVerb)
+{
+    m_preemptVerb = _preemptVerb;
+    m_preemptVerbHasBeenSet = true;
+}
+
+bool Extenders::PreemptVerbHasBeenSet() const
+{
+    return m_preemptVerbHasBeenSet;
+}
+
+bool Extenders::GetNodeCacheCapable() const
+{
+    return m_nodeCacheCapable;
+}
+
+void Extenders::SetNodeCacheCapable(const bool& _nodeCacheCapable)
+{
+    m_nodeCacheCapable = _nodeCacheCapable;
+    m_nodeCacheCapableHasBeenSet = true;
+}
+
+bool Extenders::NodeCacheCapableHasBeenSet() const
+{
+    return m_nodeCacheCapableHasBeenSet;
 }
 

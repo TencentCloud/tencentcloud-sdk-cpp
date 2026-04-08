@@ -47,22 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实时文档解析接口返回的 DocBizId
+                     * 获取<p>实时文档解析接口返回的 DocBizId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DocBizId 实时文档解析接口返回的 DocBizId
+                     * @return DocBizId <p>实时文档解析接口返回的 DocBizId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
-                    uint64_t GetDocBizId() const;
+                    std::string GetDocBizId() const;
 
                     /**
-                     * 设置实时文档解析接口返回的 DocBizId
+                     * 设置<p>实时文档解析接口返回的 DocBizId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _docBizId 实时文档解析接口返回的 DocBizId
+                     * @param _docBizId <p>实时文档解析接口返回的 DocBizId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
-                    void SetDocBizId(const uint64_t& _docBizId);
+                    void SetDocBizId(const std::string& _docBizId);
 
                     /**
                      * 判断参数 DocBizId 是否已赋值
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool DocBizIdHasBeenSet() const;
 
                     /**
-                     * 获取文件名称
+                     * 获取<p>文件名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FileName 文件名称
+                     * @return FileName <p>文件名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置文件名称
+                     * 设置<p>文件名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fileName 文件名称
+                     * @param _fileName <p>文件名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取文件类型
+                     * 获取<p>文件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FileType 文件类型
+                     * @return FileType <p>文件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileType() const;
 
                     /**
-                     * 设置文件类型
+                     * 设置<p>文件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fileType 文件类型
+                     * @param _fileType <p>文件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,22 +122,22 @@ namespace TencentCloud
                     bool FileTypeHasBeenSet() const;
 
                     /**
-                     * 获取文件大小
+                     * 获取<p>文件大小，单位为Byte</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FileSize 文件大小
+                     * @return FileSize <p>文件大小，单位为Byte</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    uint64_t GetFileSize() const;
+                    std::string GetFileSize() const;
 
                     /**
-                     * 设置文件大小
+                     * 设置<p>文件大小，单位为Byte</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fileSize 文件大小
+                     * @param _fileSize <p>文件大小，单位为Byte</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetFileSize(const uint64_t& _fileSize);
+                    void SetFileSize(const std::string& _fileSize);
 
                     /**
                      * 判断参数 FileSize 是否已赋值
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool FileSizeHasBeenSet() const;
 
                     /**
-                     * 获取文件 URL
+                     * 获取<p>文件 URL</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FileUrl 文件 URL
+                     * @return FileUrl <p>文件 URL</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileUrl() const;
 
                     /**
-                     * 设置文件 URL
+                     * 设置<p>文件 URL</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fileUrl 文件 URL
+                     * @param _fileUrl <p>文件 URL</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,22 +172,22 @@ namespace TencentCloud
                     bool FileUrlHasBeenSet() const;
 
                     /**
-                     * 获取实时文档解析接口返回的 doc_id。
+                     * 获取<p>实时文档解析接口返回的 doc_id。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DocId 实时文档解析接口返回的 doc_id。
+                     * @return DocId <p>实时文档解析接口返回的 doc_id。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    uint64_t GetDocId() const;
+                    std::string GetDocId() const;
 
                     /**
-                     * 设置实时文档解析接口返回的 doc_id。
+                     * 设置<p>实时文档解析接口返回的 doc_id。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _docId 实时文档解析接口返回的 doc_id。
+                     * @param _docId <p>实时文档解析接口返回的 doc_id。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetDocId(const uint64_t& _docId);
+                    void SetDocId(const std::string& _docId);
 
                     /**
                      * 判断参数 DocId 是否已赋值
@@ -197,22 +197,22 @@ namespace TencentCloud
                     bool DocIdHasBeenSet() const;
 
                     /**
-                     * 获取文件创建时间
+                     * 获取<p>文件创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 文件创建时间
+                     * @return CreateTime <p>文件创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    uint64_t GetCreateTime() const;
+                    std::string GetCreateTime() const;
 
                     /**
-                     * 设置文件创建时间
+                     * 设置<p>文件创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 文件创建时间
+                     * @param _createTime <p>文件创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetCreateTime(const uint64_t& _createTime);
+                    void SetCreateTime(const std::string& _createTime);
 
                     /**
                      * 判断参数 CreateTime 是否已赋值
@@ -224,52 +224,52 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实时文档解析接口返回的 DocBizId
+                     * <p>实时文档解析接口返回的 DocBizId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t m_docBizId;
+                    std::string m_docBizId;
                     bool m_docBizIdHasBeenSet;
 
                     /**
-                     * 文件名称
+                     * <p>文件名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 文件类型
+                     * <p>文件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileType;
                     bool m_fileTypeHasBeenSet;
 
                     /**
-                     * 文件大小
+                     * <p>文件大小，单位为Byte</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t m_fileSize;
+                    std::string m_fileSize;
                     bool m_fileSizeHasBeenSet;
 
                     /**
-                     * 文件 URL
+                     * <p>文件 URL</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileUrl;
                     bool m_fileUrlHasBeenSet;
 
                     /**
-                     * 实时文档解析接口返回的 doc_id。
+                     * <p>实时文档解析接口返回的 doc_id。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t m_docId;
+                    std::string m_docId;
                     bool m_docIdHasBeenSet;
 
                     /**
-                     * 文件创建时间
+                     * <p>文件创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    uint64_t m_createTime;
+                    std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                 };

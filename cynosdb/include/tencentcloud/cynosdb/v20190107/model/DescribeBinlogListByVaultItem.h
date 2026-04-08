@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取集群名称
-                     * @return ClusterName 集群名称
+                     * 获取<p>集群名称</p>
+                     * @return ClusterName <p>集群名称</p>
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置集群名称
-                     * @param _clusterName 集群名称
+                     * 设置<p>集群名称</p>
+                     * @param _clusterName <p>集群名称</p>
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取Binlog文件信息
-                     * @return BinlogFileInfo Binlog文件信息
+                     * 获取<p>Binlog文件信息</p>
+                     * @return BinlogFileInfo <p>Binlog文件信息</p>
                      * 
                      */
                     BinlogItem GetBinlogFileInfo() const;
 
                     /**
-                     * 设置Binlog文件信息
-                     * @param _binlogFileInfo Binlog文件信息
+                     * 设置<p>Binlog文件信息</p>
+                     * @param _binlogFileInfo <p>Binlog文件信息</p>
                      * 
                      */
                     void SetBinlogFileInfo(const BinlogItem& _binlogFileInfo);
@@ -113,19 +113,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 集群名称
+                     * <p>集群名称</p>
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * Binlog文件信息
+                     * <p>Binlog文件信息</p>
                      */
                     BinlogItem m_binlogFileInfo;
                     bool m_binlogFileInfoHasBeenSet;

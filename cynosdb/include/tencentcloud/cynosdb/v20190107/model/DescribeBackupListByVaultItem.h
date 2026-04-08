@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群id
-                     * @return ClusterId 集群id
+                     * 获取<p>集群id</p>
+                     * @return ClusterId <p>集群id</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群id
-                     * @param _clusterId 集群id
+                     * 设置<p>集群id</p>
+                     * @param _clusterId <p>集群id</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取集群name
-                     * @return ClusterName 集群name
+                     * 获取<p>集群name</p>
+                     * @return ClusterName <p>集群name</p>
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置集群name
-                     * @param _clusterName 集群name
+                     * 设置<p>集群name</p>
+                     * @param _clusterName <p>集群name</p>
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
-                     * 获取备份信息
-                     * @return BackupFileInfo 备份信息
+                     * 获取<p>备份信息</p>
+                     * @return BackupFileInfo <p>备份信息</p>
                      * 
                      */
                     BackupFileInfo GetBackupFileInfo() const;
 
                     /**
-                     * 设置备份信息
-                     * @param _backupFileInfo 备份信息
+                     * 设置<p>备份信息</p>
+                     * @param _backupFileInfo <p>备份信息</p>
                      * 
                      */
                     void SetBackupFileInfo(const BackupFileInfo& _backupFileInfo);
@@ -113,19 +113,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群id
+                     * <p>集群id</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 集群name
+                     * <p>集群name</p>
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
-                     * 备份信息
+                     * <p>备份信息</p>
                      */
                     BackupFileInfo m_backupFileInfo;
                     bool m_backupFileInfoHasBeenSet;

@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤阶段接口
-                     * @return FilterVerb 过滤阶段接口
+                     * 获取<p>过滤阶段接口</p>
+                     * @return FilterVerb <p>过滤阶段接口</p>
                      * 
                      */
                     std::string GetFilterVerb() const;
 
                     /**
-                     * 设置过滤阶段接口
-                     * @param _filterVerb 过滤阶段接口
+                     * 设置<p>过滤阶段接口</p>
+                     * @param _filterVerb <p>过滤阶段接口</p>
                      * 
                      */
                     void SetFilterVerb(const std::string& _filterVerb);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool FilterVerbHasBeenSet() const;
 
                     /**
-                     * 获取打分阶段扩展接口
-                     * @return PrioritizeVerb 打分阶段扩展接口
+                     * 获取<p>打分阶段扩展接口</p>
+                     * @return PrioritizeVerb <p>打分阶段扩展接口</p>
                      * 
                      */
                     std::string GetPrioritizeVerb() const;
 
                     /**
-                     * 设置打分阶段扩展接口
-                     * @param _prioritizeVerb 打分阶段扩展接口
+                     * 设置<p>打分阶段扩展接口</p>
+                     * @param _prioritizeVerb <p>打分阶段扩展接口</p>
                      * 
                      */
                     void SetPrioritizeVerb(const std::string& _prioritizeVerb);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool PrioritizeVerbHasBeenSet() const;
 
                     /**
-                     * 获取打分阶段节点分数的权重,取值范围限定(0,2】
-                     * @return Weight 打分阶段节点分数的权重,取值范围限定(0,2】
+                     * 获取<p>打分阶段节点分数的权重,取值范围限定(0,2】</p>
+                     * @return Weight <p>打分阶段节点分数的权重,取值范围限定(0,2】</p>
                      * 
                      */
                     int64_t GetWeight() const;
 
                     /**
-                     * 设置打分阶段节点分数的权重,取值范围限定(0,2】
-                     * @param _weight 打分阶段节点分数的权重,取值范围限定(0,2】
+                     * 设置<p>打分阶段节点分数的权重,取值范围限定(0,2】</p>
+                     * @param _weight <p>打分阶段节点分数的权重,取值范围限定(0,2】</p>
                      * 
                      */
                     void SetWeight(const int64_t& _weight);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool WeightHasBeenSet() const;
 
                     /**
-                     * 获取扩展调度器(Extender)管理的扩展资源
-                     * @return ManagedResources 扩展调度器(Extender)管理的扩展资源
+                     * 获取<p>扩展调度器(Extender)管理的扩展资源</p>
+                     * @return ManagedResources <p>扩展调度器(Extender)管理的扩展资源</p>
                      * 
                      */
                     std::vector<ExtenderManagedResource> GetManagedResources() const;
 
                     /**
-                     * 设置扩展调度器(Extender)管理的扩展资源
-                     * @param _managedResources 扩展调度器(Extender)管理的扩展资源
+                     * 设置<p>扩展调度器(Extender)管理的扩展资源</p>
+                     * @param _managedResources <p>扩展调度器(Extender)管理的扩展资源</p>
                      * 
                      */
                     void SetManagedResources(const std::vector<ExtenderManagedResource>& _managedResources);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool ManagedResourcesHasBeenSet() const;
 
                     /**
-                     * 获取extender客户端配置
-                     * @return ExtenderClientConfig extender客户端配置
+                     * 获取<p>extender客户端配置</p>
+                     * @return ExtenderClientConfig <p>extender客户端配置</p>
                      * 
                      */
                     ExtenderClientConfig GetExtenderClientConfig() const;
 
                     /**
-                     * 设置extender客户端配置
-                     * @param _extenderClientConfig extender客户端配置
+                     * 设置<p>extender客户端配置</p>
+                     * @param _extenderClientConfig <p>extender客户端配置</p>
                      * 
                      */
                     void SetExtenderClientConfig(const ExtenderClientConfig& _extenderClientConfig);
@@ -153,37 +153,91 @@ namespace TencentCloud
                      */
                     bool ExtenderClientConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>抢占接口</p>
+                     * @return PreemptVerb <p>抢占接口</p>
+                     * 
+                     */
+                    std::string GetPreemptVerb() const;
+
+                    /**
+                     * 设置<p>抢占接口</p>
+                     * @param _preemptVerb <p>抢占接口</p>
+                     * 
+                     */
+                    void SetPreemptVerb(const std::string& _preemptVerb);
+
+                    /**
+                     * 判断参数 PreemptVerb 是否已赋值
+                     * @return PreemptVerb 是否已赋值
+                     * 
+                     */
+                    bool PreemptVerbHasBeenSet() const;
+
+                    /**
+                     * 获取<p>节点缓存能力</p>
+                     * @return NodeCacheCapable <p>节点缓存能力</p>
+                     * 
+                     */
+                    bool GetNodeCacheCapable() const;
+
+                    /**
+                     * 设置<p>节点缓存能力</p>
+                     * @param _nodeCacheCapable <p>节点缓存能力</p>
+                     * 
+                     */
+                    void SetNodeCacheCapable(const bool& _nodeCacheCapable);
+
+                    /**
+                     * 判断参数 NodeCacheCapable 是否已赋值
+                     * @return NodeCacheCapable 是否已赋值
+                     * 
+                     */
+                    bool NodeCacheCapableHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 过滤阶段接口
+                     * <p>过滤阶段接口</p>
                      */
                     std::string m_filterVerb;
                     bool m_filterVerbHasBeenSet;
 
                     /**
-                     * 打分阶段扩展接口
+                     * <p>打分阶段扩展接口</p>
                      */
                     std::string m_prioritizeVerb;
                     bool m_prioritizeVerbHasBeenSet;
 
                     /**
-                     * 打分阶段节点分数的权重,取值范围限定(0,2】
+                     * <p>打分阶段节点分数的权重,取值范围限定(0,2】</p>
                      */
                     int64_t m_weight;
                     bool m_weightHasBeenSet;
 
                     /**
-                     * 扩展调度器(Extender)管理的扩展资源
+                     * <p>扩展调度器(Extender)管理的扩展资源</p>
                      */
                     std::vector<ExtenderManagedResource> m_managedResources;
                     bool m_managedResourcesHasBeenSet;
 
                     /**
-                     * extender客户端配置
+                     * <p>extender客户端配置</p>
                      */
                     ExtenderClientConfig m_extenderClientConfig;
                     bool m_extenderClientConfigHasBeenSet;
+
+                    /**
+                     * <p>抢占接口</p>
+                     */
+                    std::string m_preemptVerb;
+                    bool m_preemptVerbHasBeenSet;
+
+                    /**
+                     * <p>节点缓存能力</p>
+                     */
+                    bool m_nodeCacheCapable;
+                    bool m_nodeCacheCapableHasBeenSet;
 
                 };
             }

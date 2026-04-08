@@ -27,7 +27,8 @@ CreateLiveAvatarScriptRequest::CreateLiveAvatarScriptRequest() :
     m_contentHasBeenSet(false),
     m_roomIdHasBeenSet(false),
     m_specifyPositionHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_productIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string CreateLiveAvatarScriptRequest::ToJsonString() const
         string key = "Operator";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_operator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void CreateLiveAvatarScriptRequest::SetOperator(const string& _operator)
 bool CreateLiveAvatarScriptRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+string CreateLiveAvatarScriptRequest::GetProductId() const
+{
+    return m_productId;
+}
+
+void CreateLiveAvatarScriptRequest::SetProductId(const string& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool CreateLiveAvatarScriptRequest::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
 }
 
 

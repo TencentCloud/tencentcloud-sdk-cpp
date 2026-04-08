@@ -92,7 +92,7 @@ set(dnspod_public_header_model
   include/tencentcloud/dnspod/v20210323/model/ModifyPackageDomainResponse.h
   include/tencentcloud/dnspod/v20210323/model/DomainShareInfo.h
   include/tencentcloud/dnspod/v20210323/model/DescribeSnapshotConfigRequest.h
-  include/tencentcloud/dnspod/v20210323/model/VasListItem.h
+  include/tencentcloud/dnspod/v20210323/model/ModifyRecordBatchV3Request.h
   include/tencentcloud/dnspod/v20210323/model/LineInfo.h
   include/tencentcloud/dnspod/v20210323/model/DeleteLineGroupResponse.h
   include/tencentcloud/dnspod/v20210323/model/DescribeRecordLineListRequest.h
@@ -109,6 +109,7 @@ set(dnspod_public_header_model
   include/tencentcloud/dnspod/v20210323/model/ModifyDomainStatusResponse.h
   include/tencentcloud/dnspod/v20210323/model/AddRecordBatch.h
   include/tencentcloud/dnspod/v20210323/model/DescribeRecordRequest.h
+  include/tencentcloud/dnspod/v20210323/model/ModifyRecordBatchV3Response.h
   include/tencentcloud/dnspod/v20210323/model/CreateDomainGroupResponse.h
   include/tencentcloud/dnspod/v20210323/model/DescribeSubdomainAnalyticsRequest.h
   include/tencentcloud/dnspod/v20210323/model/DeleteRecordRequest.h
@@ -163,6 +164,7 @@ set(dnspod_public_header_model
   include/tencentcloud/dnspod/v20210323/model/ModifyDomainRecursiveStatusBatchRequest.h
   include/tencentcloud/dnspod/v20210323/model/CustomLineInfo.h
   include/tencentcloud/dnspod/v20210323/model/ModifyRecordBatchDetail.h
+  include/tencentcloud/dnspod/v20210323/model/ModifyRecordItem.h
   include/tencentcloud/dnspod/v20210323/model/DescribeSnapshotRollbackResultRequest.h
   include/tencentcloud/dnspod/v20210323/model/DescribeDomainShareUserListRequest.h
   include/tencentcloud/dnspod/v20210323/model/DeleteDomainBatchDetail.h
@@ -189,6 +191,7 @@ set(dnspod_public_header_model
   include/tencentcloud/dnspod/v20210323/model/DeleteSnapshotResponse.h
   include/tencentcloud/dnspod/v20210323/model/DescribeDomainPurviewResponse.h
   include/tencentcloud/dnspod/v20210323/model/Deals.h
+  include/tencentcloud/dnspod/v20210323/model/VasListItem.h
   include/tencentcloud/dnspod/v20210323/model/ModifySubdomainStatusResponse.h
   include/tencentcloud/dnspod/v20210323/model/DescribeSubdomainValidateStatusResponse.h
   include/tencentcloud/dnspod/v20210323/model/DescribeDomainAnalyticsResponse.h
@@ -348,7 +351,7 @@ set(dnspod_src
   src/v20210323/model/ModifyPackageDomainResponse.cpp
   src/v20210323/model/DomainShareInfo.cpp
   src/v20210323/model/DescribeSnapshotConfigRequest.cpp
-  src/v20210323/model/VasListItem.cpp
+  src/v20210323/model/ModifyRecordBatchV3Request.cpp
   src/v20210323/model/LineInfo.cpp
   src/v20210323/model/DeleteLineGroupResponse.cpp
   src/v20210323/model/DescribeRecordLineListRequest.cpp
@@ -365,6 +368,7 @@ set(dnspod_src
   src/v20210323/model/ModifyDomainStatusResponse.cpp
   src/v20210323/model/AddRecordBatch.cpp
   src/v20210323/model/DescribeRecordRequest.cpp
+  src/v20210323/model/ModifyRecordBatchV3Response.cpp
   src/v20210323/model/CreateDomainGroupResponse.cpp
   src/v20210323/model/DescribeSubdomainAnalyticsRequest.cpp
   src/v20210323/model/DeleteRecordRequest.cpp
@@ -419,6 +423,7 @@ set(dnspod_src
   src/v20210323/model/ModifyDomainRecursiveStatusBatchRequest.cpp
   src/v20210323/model/CustomLineInfo.cpp
   src/v20210323/model/ModifyRecordBatchDetail.cpp
+  src/v20210323/model/ModifyRecordItem.cpp
   src/v20210323/model/DescribeSnapshotRollbackResultRequest.cpp
   src/v20210323/model/DescribeDomainShareUserListRequest.cpp
   src/v20210323/model/DeleteDomainBatchDetail.cpp
@@ -445,6 +450,7 @@ set(dnspod_src
   src/v20210323/model/DeleteSnapshotResponse.cpp
   src/v20210323/model/DescribeDomainPurviewResponse.cpp
   src/v20210323/model/Deals.cpp
+  src/v20210323/model/VasListItem.cpp
   src/v20210323/model/ModifySubdomainStatusResponse.cpp
   src/v20210323/model/DescribeSubdomainValidateStatusResponse.cpp
   src/v20210323/model/DescribeDomainAnalyticsResponse.cpp

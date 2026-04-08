@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取门头照标签
-                     * @return StoreLabel 门头照标签
+                     * 获取<p>门头照标签</p>
+                     * @return StoreLabel <p>门头照标签</p>
                      * 
                      */
                     std::vector<std::string> GetStoreLabel() const;
@@ -57,13 +57,33 @@ namespace TencentCloud
                      */
                     bool StoreLabelHasBeenSet() const;
 
+                    /**
+                     * 获取<p>具体场景标签，输出3个最匹配的场景， 注：仅SceneType配置为true时支持。</p>
+                     * @return SceneType <p>具体场景标签，输出3个最匹配的场景， 注：仅SceneType配置为true时支持。</p>
+                     * 
+                     */
+                    std::string GetSceneType() const;
+
+                    /**
+                     * 判断参数 SceneType 是否已赋值
+                     * @return SceneType 是否已赋值
+                     * 
+                     */
+                    bool SceneTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 门头照标签
+                     * <p>门头照标签</p>
                      */
                     std::vector<std::string> m_storeLabel;
                     bool m_storeLabelHasBeenSet;
+
+                    /**
+                     * <p>具体场景标签，输出3个最匹配的场景， 注：仅SceneType配置为true时支持。</p>
+                     */
+                    std::string m_sceneType;
+                    bool m_sceneTypeHasBeenSet;
 
                 };
             }

@@ -4190,6 +4190,56 @@ DnspodClient::ModifyRecordBatchOutcomeCallable DnspodClient::ModifyRecordBatchCa
     return prom->get_future();
 }
 
+DnspodClient::ModifyRecordBatchV3Outcome DnspodClient::ModifyRecordBatchV3(const ModifyRecordBatchV3Request &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRecordBatchV3");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRecordBatchV3Response rsp = ModifyRecordBatchV3Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRecordBatchV3Outcome(rsp);
+        else
+            return ModifyRecordBatchV3Outcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRecordBatchV3Outcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::ModifyRecordBatchV3Async(const ModifyRecordBatchV3Request& request, const ModifyRecordBatchV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyRecordBatchV3Request&;
+    using Resp = ModifyRecordBatchV3Response;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyRecordBatchV3", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DnspodClient::ModifyRecordBatchV3OutcomeCallable DnspodClient::ModifyRecordBatchV3Callable(const ModifyRecordBatchV3Request &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyRecordBatchV3Outcome>>();
+    ModifyRecordBatchV3Async(
+    request,
+    [prom](
+        const DnspodClient*,
+        const ModifyRecordBatchV3Request&,
+        ModifyRecordBatchV3Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DnspodClient::ModifyRecordFieldsOutcome DnspodClient::ModifyRecordFields(const ModifyRecordFieldsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyRecordFields");

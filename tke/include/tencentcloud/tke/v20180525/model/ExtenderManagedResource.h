@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自定义资源的名称
-                     * @return Name 自定义资源的名称
+                     * 获取<p>自定义资源的名称</p>
+                     * @return Name <p>自定义资源的名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置自定义资源的名称
-                     * @param _name 自定义资源的名称
+                     * 设置<p>自定义资源的名称</p>
+                     * @param _name <p>自定义资源的名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -67,13 +67,40 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>调度器是否忽略该资源的默认处理</p>
+                     * @return IgnoredByScheduler <p>调度器是否忽略该资源的默认处理</p>
+                     * 
+                     */
+                    bool GetIgnoredByScheduler() const;
+
+                    /**
+                     * 设置<p>调度器是否忽略该资源的默认处理</p>
+                     * @param _ignoredByScheduler <p>调度器是否忽略该资源的默认处理</p>
+                     * 
+                     */
+                    void SetIgnoredByScheduler(const bool& _ignoredByScheduler);
+
+                    /**
+                     * 判断参数 IgnoredByScheduler 是否已赋值
+                     * @return IgnoredByScheduler 是否已赋值
+                     * 
+                     */
+                    bool IgnoredBySchedulerHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 自定义资源的名称
+                     * <p>自定义资源的名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * <p>调度器是否忽略该资源的默认处理</p>
+                     */
+                    bool m_ignoredByScheduler;
+                    bool m_ignoredBySchedulerHasBeenSet;
 
                 };
             }

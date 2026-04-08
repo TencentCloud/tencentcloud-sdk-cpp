@@ -21,7 +21,8 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
 ExtenderManagedResource::ExtenderManagedResource() :
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_ignoredBySchedulerHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome ExtenderManagedResource::Deserialize(const rapidjson::Value 
         m_nameHasBeenSet = true;
     }
 
+    if (value.HasMember("IgnoredByScheduler") && !value["IgnoredByScheduler"].IsNull())
+    {
+        if (!value["IgnoredByScheduler"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtenderManagedResource.IgnoredByScheduler` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_ignoredByScheduler = value["IgnoredByScheduler"].GetBool();
+        m_ignoredBySchedulerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void ExtenderManagedResource::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ignoredBySchedulerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoredByScheduler";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ignoredByScheduler, allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void ExtenderManagedResource::SetName(const string& _name)
 bool ExtenderManagedResource::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+bool ExtenderManagedResource::GetIgnoredByScheduler() const
+{
+    return m_ignoredByScheduler;
+}
+
+void ExtenderManagedResource::SetIgnoredByScheduler(const bool& _ignoredByScheduler)
+{
+    m_ignoredByScheduler = _ignoredByScheduler;
+    m_ignoredBySchedulerHasBeenSet = true;
+}
+
+bool ExtenderManagedResource::IgnoredBySchedulerHasBeenSet() const
+{
+    return m_ignoredBySchedulerHasBeenSet;
 }
 

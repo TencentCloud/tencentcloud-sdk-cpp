@@ -540,6 +540,56 @@ OcrClient::ClassifyStoreNameOutcomeCallable OcrClient::ClassifyStoreNameCallable
     return prom->get_future();
 }
 
+OcrClient::CropEnhanceImageOCROutcome OcrClient::CropEnhanceImageOCR(const CropEnhanceImageOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "CropEnhanceImageOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CropEnhanceImageOCRResponse rsp = CropEnhanceImageOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CropEnhanceImageOCROutcome(rsp);
+        else
+            return CropEnhanceImageOCROutcome(o.GetError());
+    }
+    else
+    {
+        return CropEnhanceImageOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::CropEnhanceImageOCRAsync(const CropEnhanceImageOCRRequest& request, const CropEnhanceImageOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CropEnhanceImageOCRRequest&;
+    using Resp = CropEnhanceImageOCRResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CropEnhanceImageOCR", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OcrClient::CropEnhanceImageOCROutcomeCallable OcrClient::CropEnhanceImageOCRCallable(const CropEnhanceImageOCRRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CropEnhanceImageOCROutcome>>();
+    CropEnhanceImageOCRAsync(
+    request,
+    [prom](
+        const OcrClient*,
+        const CropEnhanceImageOCRRequest&,
+        CropEnhanceImageOCROutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OcrClient::DescribeExtractDocAgentJobOutcome OcrClient::DescribeExtractDocAgentJob(const DescribeExtractDocAgentJobRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExtractDocAgentJob");
@@ -932,6 +982,56 @@ OcrClient::EnterpriseLicenseOCROutcomeCallable OcrClient::EnterpriseLicenseOCRCa
         const OcrClient*,
         const EnterpriseLicenseOCRRequest&,
         EnterpriseLicenseOCROutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+OcrClient::EraseHandwrittenImageOCROutcome OcrClient::EraseHandwrittenImageOCR(const EraseHandwrittenImageOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "EraseHandwrittenImageOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EraseHandwrittenImageOCRResponse rsp = EraseHandwrittenImageOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EraseHandwrittenImageOCROutcome(rsp);
+        else
+            return EraseHandwrittenImageOCROutcome(o.GetError());
+    }
+    else
+    {
+        return EraseHandwrittenImageOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::EraseHandwrittenImageOCRAsync(const EraseHandwrittenImageOCRRequest& request, const EraseHandwrittenImageOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EraseHandwrittenImageOCRRequest&;
+    using Resp = EraseHandwrittenImageOCRResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EraseHandwrittenImageOCR", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OcrClient::EraseHandwrittenImageOCROutcomeCallable OcrClient::EraseHandwrittenImageOCRCallable(const EraseHandwrittenImageOCRRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EraseHandwrittenImageOCROutcome>>();
+    EraseHandwrittenImageOCRAsync(
+    request,
+    [prom](
+        const OcrClient*,
+        const EraseHandwrittenImageOCRRequest&,
+        EraseHandwrittenImageOCROutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

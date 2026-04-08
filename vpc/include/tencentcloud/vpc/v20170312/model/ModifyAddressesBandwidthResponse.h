@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取异步任务TaskId。可以使用[DescribeTaskResult](https://cloud.tencent.com/document/api/215/36271)接口查询任务状态。
-                     * @return TaskId 异步任务TaskId。可以使用[DescribeTaskResult](https://cloud.tencent.com/document/api/215/36271)接口查询任务状态。
+                     * 获取<p>异步任务TaskId。可以使用<a href="https://cloud.tencent.com/document/api/215/36271">DescribeTaskResult</a>接口查询任务状态。</p>
+                     * @return TaskId <p>异步任务TaskId。可以使用<a href="https://cloud.tencent.com/document/api/215/36271">DescribeTaskResult</a>接口查询任务状态。</p>
                      * 
                      */
                     std::string GetTaskId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 异步任务TaskId。可以使用[DescribeTaskResult](https://cloud.tencent.com/document/api/215/36271)接口查询任务状态。
+                     * <p>异步任务TaskId。可以使用<a href="https://cloud.tencent.com/document/api/215/36271">DescribeTaskResult</a>接口查询任务状态。</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

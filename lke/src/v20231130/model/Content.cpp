@@ -34,7 +34,10 @@ Content::Content() :
     m_webSearchHasBeenSet(false),
     m_fileCollectionHasBeenSet(false),
     m_widgetHasBeenSet(false),
-    m_widgetActionHasBeenSet(false)
+    m_widgetActionHasBeenSet(false),
+    m_tasksHasBeenSet(false),
+    m_questionnaireHasBeenSet(false),
+    m_optionModeHasBeenSet(false)
 {
 }
 
@@ -261,6 +264,53 @@ CoreInternalOutcome Content::Deserialize(const rapidjson::Value &value)
         m_widgetActionHasBeenSet = true;
     }
 
+    if (value.HasMember("Tasks") && !value["Tasks"].IsNull())
+    {
+        if (!value["Tasks"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Content.Tasks` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tasks"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AgentTask item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tasks.push_back(item);
+        }
+        m_tasksHasBeenSet = true;
+    }
+
+    if (value.HasMember("Questionnaire") && !value["Questionnaire"].IsNull())
+    {
+        if (!value["Questionnaire"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Content.Questionnaire` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_questionnaire.Deserialize(value["Questionnaire"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_questionnaireHasBeenSet = true;
+    }
+
+    if (value.HasMember("OptionMode") && !value["OptionMode"].IsNull())
+    {
+        if (!value["OptionMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Content.OptionMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_optionMode = value["OptionMode"].GetInt64();
+        m_optionModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +464,38 @@ void Content::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_widgetAction.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tasksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tasks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tasks.begin(); itr != m_tasks.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_questionnaireHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Questionnaire";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_questionnaire.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_optionModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OptionMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_optionMode, allocator);
     }
 
 }
@@ -641,5 +723,53 @@ void Content::SetWidgetAction(const WidgetAction& _widgetAction)
 bool Content::WidgetActionHasBeenSet() const
 {
     return m_widgetActionHasBeenSet;
+}
+
+vector<AgentTask> Content::GetTasks() const
+{
+    return m_tasks;
+}
+
+void Content::SetTasks(const vector<AgentTask>& _tasks)
+{
+    m_tasks = _tasks;
+    m_tasksHasBeenSet = true;
+}
+
+bool Content::TasksHasBeenSet() const
+{
+    return m_tasksHasBeenSet;
+}
+
+Questionnaire Content::GetQuestionnaire() const
+{
+    return m_questionnaire;
+}
+
+void Content::SetQuestionnaire(const Questionnaire& _questionnaire)
+{
+    m_questionnaire = _questionnaire;
+    m_questionnaireHasBeenSet = true;
+}
+
+bool Content::QuestionnaireHasBeenSet() const
+{
+    return m_questionnaireHasBeenSet;
+}
+
+int64_t Content::GetOptionMode() const
+{
+    return m_optionMode;
+}
+
+void Content::SetOptionMode(const int64_t& _optionMode)
+{
+    m_optionMode = _optionMode;
+    m_optionModeHasBeenSet = true;
+}
+
+bool Content::OptionModeHasBeenSet() const
+{
+    return m_optionModeHasBeenSet;
 }
 

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数字人直播间话术信息列表。
-                     * @return InfoList 数字人直播间话术信息列表。
+                     * 获取<p>数字人直播间话术信息列表。</p>
+                     * @return InfoList <p>数字人直播间话术信息列表。</p>
                      * 
                      */
                     std::vector<AvatarScriptInfo> GetInfoList() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool InfoListHasBeenSet() const;
 
                     /**
-                     * 获取限制可创建的数字人直播间话术总条数。
-                     * @return LimitCreateNum 限制可创建的数字人直播间话术总条数。
+                     * 获取<p>限制可创建的数字人直播间话术总条数。</p>
+                     * @return LimitCreateNum <p>限制可创建的数字人直播间话术总条数。</p>
                      * 
                      */
                     int64_t GetLimitCreateNum() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool LimitCreateNumHasBeenSet() const;
 
                     /**
-                     * 获取当前数字人直播间话术总条数。
-                     * @return TotalNum 当前数字人直播间话术总条数。
+                     * 获取<p>当前数字人直播间话术总条数。</p>
+                     * @return TotalNum <p>当前数字人直播间话术总条数。</p>
                      * 
                      */
                     int64_t GetTotalNum() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数字人直播间话术信息列表。
+                     * <p>数字人直播间话术信息列表。</p>
                      */
                     std::vector<AvatarScriptInfo> m_infoList;
                     bool m_infoListHasBeenSet;
 
                     /**
-                     * 限制可创建的数字人直播间话术总条数。
+                     * <p>限制可创建的数字人直播间话术总条数。</p>
                      */
                     int64_t m_limitCreateNum;
                     bool m_limitCreateNumHasBeenSet;
 
                     /**
-                     * 当前数字人直播间话术总条数。
+                     * <p>当前数字人直播间话术总条数。</p>
                      */
                     int64_t m_totalNum;
                     bool m_totalNumHasBeenSet;

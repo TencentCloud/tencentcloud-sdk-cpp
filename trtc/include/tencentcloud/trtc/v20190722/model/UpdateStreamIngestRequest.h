@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool StreamUrlHasBeenSet() const;
 
                     /**
-                     * 获取音量，取值范围[0, 100]，默认100，表示原音量。
-                     * @return Volume 音量，取值范围[0, 100]，默认100，表示原音量。
+                     * 获取音量，取值范围[0, 200]，默认100，表示原音量。
+                     * @return Volume 音量，取值范围[0, 200]，默认100，表示原音量。
                      * 
                      */
                     uint64_t GetVolume() const;
 
                     /**
-                     * 设置音量，取值范围[0, 100]，默认100，表示原音量。
-                     * @param _volume 音量，取值范围[0, 100]，默认100，表示原音量。
+                     * 设置音量，取值范围[0, 200]，默认100，表示原音量。
+                     * @param _volume 音量，取值范围[0, 200]，默认100，表示原音量。
                      * 
                      */
                     void SetVolume(const uint64_t& _volume);
@@ -210,7 +210,7 @@ namespace TencentCloud
                     bool m_streamUrlHasBeenSet;
 
                     /**
-                     * 音量，取值范围[0, 100]，默认100，表示原音量。
+                     * 音量，取值范围[0, 200]，默认100，表示原音量。
                      */
                     uint64_t m_volume;
                     bool m_volumeHasBeenSet;

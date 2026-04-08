@@ -193,6 +193,8 @@
 #include <tencentcloud/vpc/v20170312/model/CreateSubnetsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateTrafficMirrorRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateTrafficMirrorResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateTrafficMirrorFilterRulesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateTrafficMirrorFilterRulesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateTrafficPackagesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateTrafficPackagesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateVpcRequest.h>
@@ -309,6 +311,8 @@
 #include <tencentcloud/vpc/v20170312/model/DeleteTemplateMemberResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteTrafficMirrorRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteTrafficMirrorResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteTrafficMirrorFilterRulesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteTrafficMirrorFilterRulesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteTrafficPackagesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteTrafficPackagesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteVpcRequest.h>
@@ -533,6 +537,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeTemplateLimitsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTenantCcnsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTenantCcnsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeTrafficMirrorFilterRulesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeTrafficMirrorFilterRulesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTrafficMirrorsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTrafficMirrorsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTrafficPackagesRequest.h>
@@ -785,6 +791,8 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyTemplateMemberResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyTrafficMirrorAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyTrafficMirrorAttributeResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyTrafficMirrorFilterRulesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyTrafficMirrorFilterRulesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpcAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpcAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpcEndPointAttributeRequest.h>
@@ -1178,6 +1186,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTrafficMirrorResponse> CreateTrafficMirrorOutcome;
                 typedef std::future<CreateTrafficMirrorOutcome> CreateTrafficMirrorOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateTrafficMirrorRequest&, CreateTrafficMirrorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTrafficMirrorAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTrafficMirrorFilterRulesResponse> CreateTrafficMirrorFilterRulesOutcome;
+                typedef std::future<CreateTrafficMirrorFilterRulesOutcome> CreateTrafficMirrorFilterRulesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateTrafficMirrorFilterRulesRequest&, CreateTrafficMirrorFilterRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTrafficMirrorFilterRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTrafficPackagesResponse> CreateTrafficPackagesOutcome;
                 typedef std::future<CreateTrafficPackagesOutcome> CreateTrafficPackagesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateTrafficPackagesRequest&, CreateTrafficPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTrafficPackagesAsyncHandler;
@@ -1352,6 +1363,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTrafficMirrorResponse> DeleteTrafficMirrorOutcome;
                 typedef std::future<DeleteTrafficMirrorOutcome> DeleteTrafficMirrorOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteTrafficMirrorRequest&, DeleteTrafficMirrorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTrafficMirrorAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTrafficMirrorFilterRulesResponse> DeleteTrafficMirrorFilterRulesOutcome;
+                typedef std::future<DeleteTrafficMirrorFilterRulesOutcome> DeleteTrafficMirrorFilterRulesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteTrafficMirrorFilterRulesRequest&, DeleteTrafficMirrorFilterRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTrafficMirrorFilterRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTrafficPackagesResponse> DeleteTrafficPackagesOutcome;
                 typedef std::future<DeleteTrafficPackagesOutcome> DeleteTrafficPackagesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteTrafficPackagesRequest&, DeleteTrafficPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTrafficPackagesAsyncHandler;
@@ -1688,6 +1702,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTenantCcnsResponse> DescribeTenantCcnsOutcome;
                 typedef std::future<DescribeTenantCcnsOutcome> DescribeTenantCcnsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeTenantCcnsRequest&, DescribeTenantCcnsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTenantCcnsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTrafficMirrorFilterRulesResponse> DescribeTrafficMirrorFilterRulesOutcome;
+                typedef std::future<DescribeTrafficMirrorFilterRulesOutcome> DescribeTrafficMirrorFilterRulesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeTrafficMirrorFilterRulesRequest&, DescribeTrafficMirrorFilterRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrafficMirrorFilterRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTrafficMirrorsResponse> DescribeTrafficMirrorsOutcome;
                 typedef std::future<DescribeTrafficMirrorsOutcome> DescribeTrafficMirrorsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeTrafficMirrorsRequest&, DescribeTrafficMirrorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrafficMirrorsAsyncHandler;
@@ -2066,6 +2083,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTrafficMirrorAttributeResponse> ModifyTrafficMirrorAttributeOutcome;
                 typedef std::future<ModifyTrafficMirrorAttributeOutcome> ModifyTrafficMirrorAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyTrafficMirrorAttributeRequest&, ModifyTrafficMirrorAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTrafficMirrorAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTrafficMirrorFilterRulesResponse> ModifyTrafficMirrorFilterRulesOutcome;
+                typedef std::future<ModifyTrafficMirrorFilterRulesOutcome> ModifyTrafficMirrorFilterRulesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyTrafficMirrorFilterRulesRequest&, ModifyTrafficMirrorFilterRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTrafficMirrorFilterRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyVpcAttributeResponse> ModifyVpcAttributeOutcome;
                 typedef std::future<ModifyVpcAttributeOutcome> ModifyVpcAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyVpcAttributeRequest&, ModifyVpcAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpcAttributeAsyncHandler;
@@ -3152,6 +3172,15 @@ namespace TencentCloud
                 CreateTrafficMirrorOutcomeCallable CreateTrafficMirrorCallable(const Model::CreateTrafficMirrorRequest& request);
 
                 /**
+                 *创建流量镜像五元组过滤规则。
+                 * @param req CreateTrafficMirrorFilterRulesRequest
+                 * @return CreateTrafficMirrorFilterRulesOutcome
+                 */
+                CreateTrafficMirrorFilterRulesOutcome CreateTrafficMirrorFilterRules(const Model::CreateTrafficMirrorFilterRulesRequest &request);
+                void CreateTrafficMirrorFilterRulesAsync(const Model::CreateTrafficMirrorFilterRulesRequest& request, const CreateTrafficMirrorFilterRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTrafficMirrorFilterRulesOutcomeCallable CreateTrafficMirrorFilterRulesCallable(const Model::CreateTrafficMirrorFilterRulesRequest& request);
+
+                /**
                  *本接口 (CreateTrafficPackages) 用于创建共享流量包。
                  * @param req CreateTrafficPackagesRequest
                  * @return CreateTrafficPackagesOutcome
@@ -3707,6 +3736,15 @@ namespace TencentCloud
                 DeleteTrafficMirrorOutcome DeleteTrafficMirror(const Model::DeleteTrafficMirrorRequest &request);
                 void DeleteTrafficMirrorAsync(const Model::DeleteTrafficMirrorRequest& request, const DeleteTrafficMirrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTrafficMirrorOutcomeCallable DeleteTrafficMirrorCallable(const Model::DeleteTrafficMirrorRequest& request);
+
+                /**
+                 *删除流量镜像五元组过滤规则。
+                 * @param req DeleteTrafficMirrorFilterRulesRequest
+                 * @return DeleteTrafficMirrorFilterRulesOutcome
+                 */
+                DeleteTrafficMirrorFilterRulesOutcome DeleteTrafficMirrorFilterRules(const Model::DeleteTrafficMirrorFilterRulesRequest &request);
+                void DeleteTrafficMirrorFilterRulesAsync(const Model::DeleteTrafficMirrorFilterRulesRequest& request, const DeleteTrafficMirrorFilterRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTrafficMirrorFilterRulesOutcomeCallable DeleteTrafficMirrorFilterRulesCallable(const Model::DeleteTrafficMirrorFilterRulesRequest& request);
 
                 /**
                  *删除共享带宽包（仅非活动状态的流量包可删除）。
@@ -4740,6 +4778,15 @@ namespace TencentCloud
                 DescribeTenantCcnsOutcome DescribeTenantCcns(const Model::DescribeTenantCcnsRequest &request);
                 void DescribeTenantCcnsAsync(const Model::DescribeTenantCcnsRequest& request, const DescribeTenantCcnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTenantCcnsOutcomeCallable DescribeTenantCcnsCallable(const Model::DescribeTenantCcnsRequest& request);
+
+                /**
+                 *查询流量镜像五元组过滤规则。
+                 * @param req DescribeTrafficMirrorFilterRulesRequest
+                 * @return DescribeTrafficMirrorFilterRulesOutcome
+                 */
+                DescribeTrafficMirrorFilterRulesOutcome DescribeTrafficMirrorFilterRules(const Model::DescribeTrafficMirrorFilterRulesRequest &request);
+                void DescribeTrafficMirrorFilterRulesAsync(const Model::DescribeTrafficMirrorFilterRulesRequest& request, const DescribeTrafficMirrorFilterRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTrafficMirrorFilterRulesOutcomeCallable DescribeTrafficMirrorFilterRulesCallable(const Model::DescribeTrafficMirrorFilterRulesRequest& request);
 
                 /**
                  *本接口（DescribeTrafficMirrors）用于查询流量镜像实例信息。
@@ -5975,6 +6022,15 @@ LimitTypes取值范围：
                 ModifyTrafficMirrorAttributeOutcome ModifyTrafficMirrorAttribute(const Model::ModifyTrafficMirrorAttributeRequest &request);
                 void ModifyTrafficMirrorAttributeAsync(const Model::ModifyTrafficMirrorAttributeRequest& request, const ModifyTrafficMirrorAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTrafficMirrorAttributeOutcomeCallable ModifyTrafficMirrorAttributeCallable(const Model::ModifyTrafficMirrorAttributeRequest& request);
+
+                /**
+                 *修改流量镜像五元组过滤规则。
+                 * @param req ModifyTrafficMirrorFilterRulesRequest
+                 * @return ModifyTrafficMirrorFilterRulesOutcome
+                 */
+                ModifyTrafficMirrorFilterRulesOutcome ModifyTrafficMirrorFilterRules(const Model::ModifyTrafficMirrorFilterRulesRequest &request);
+                void ModifyTrafficMirrorFilterRulesAsync(const Model::ModifyTrafficMirrorFilterRulesRequest& request, const ModifyTrafficMirrorFilterRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTrafficMirrorFilterRulesOutcomeCallable ModifyTrafficMirrorFilterRulesCallable(const Model::ModifyTrafficMirrorFilterRulesRequest& request);
 
                 /**
                  *本接口（ModifyVpcAttribute）用于修改私有网络（VPC）的相关属性。

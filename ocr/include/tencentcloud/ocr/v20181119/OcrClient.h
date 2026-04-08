@@ -43,6 +43,8 @@
 #include <tencentcloud/ocr/v20181119/model/ClassifyDetectOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ClassifyStoreNameRequest.h>
 #include <tencentcloud/ocr/v20181119/model/ClassifyStoreNameResponse.h>
+#include <tencentcloud/ocr/v20181119/model/CropEnhanceImageOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/CropEnhanceImageOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/DescribeExtractDocAgentJobRequest.h>
 #include <tencentcloud/ocr/v20181119/model/DescribeExtractDocAgentJobResponse.h>
 #include <tencentcloud/ocr/v20181119/model/DescribeMarkEssayAgentJobRequest.h>
@@ -59,6 +61,8 @@
 #include <tencentcloud/ocr/v20181119/model/EnglishOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/EnterpriseLicenseOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/EnterpriseLicenseOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/EraseHandwrittenImageOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/EraseHandwrittenImageOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/EstateCertOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/EstateCertOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ExtractDocAgentRequest.h>
@@ -249,6 +253,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ClassifyStoreNameResponse> ClassifyStoreNameOutcome;
                 typedef std::future<ClassifyStoreNameOutcome> ClassifyStoreNameOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::ClassifyStoreNameRequest&, ClassifyStoreNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClassifyStoreNameAsyncHandler;
+                typedef Outcome<Core::Error, Model::CropEnhanceImageOCRResponse> CropEnhanceImageOCROutcome;
+                typedef std::future<CropEnhanceImageOCROutcome> CropEnhanceImageOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::CropEnhanceImageOCRRequest&, CropEnhanceImageOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> CropEnhanceImageOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExtractDocAgentJobResponse> DescribeExtractDocAgentJobOutcome;
                 typedef std::future<DescribeExtractDocAgentJobOutcome> DescribeExtractDocAgentJobOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::DescribeExtractDocAgentJobRequest&, DescribeExtractDocAgentJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtractDocAgentJobAsyncHandler;
@@ -273,6 +280,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnterpriseLicenseOCRResponse> EnterpriseLicenseOCROutcome;
                 typedef std::future<EnterpriseLicenseOCROutcome> EnterpriseLicenseOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::EnterpriseLicenseOCRRequest&, EnterpriseLicenseOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnterpriseLicenseOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::EraseHandwrittenImageOCRResponse> EraseHandwrittenImageOCROutcome;
+                typedef std::future<EraseHandwrittenImageOCROutcome> EraseHandwrittenImageOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::EraseHandwrittenImageOCRRequest&, EraseHandwrittenImageOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> EraseHandwrittenImageOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::EstateCertOCRResponse> EstateCertOCROutcome;
                 typedef std::future<EstateCertOCROutcome> EstateCertOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::EstateCertOCRRequest&, EstateCertOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> EstateCertOCRAsyncHandler;
@@ -606,6 +616,15 @@ namespace TencentCloud
                 ClassifyStoreNameOutcomeCallable ClassifyStoreNameCallable(const Model::ClassifyStoreNameRequest& request);
 
                 /**
+                 *图像切边矫正增强是面向文档类图片提供的图像增强处理能力，包括切边增强、图像矫正、阴影去除、摩尔纹去除等；可以有效优化文档类的图片质量，提升文字的清晰度，可以作为所有识别场景的图像预处理原子能力，从而提升识别效果。
+                 * @param req CropEnhanceImageOCRRequest
+                 * @return CropEnhanceImageOCROutcome
+                 */
+                CropEnhanceImageOCROutcome CropEnhanceImageOCR(const Model::CropEnhanceImageOCRRequest &request);
+                void CropEnhanceImageOCRAsync(const Model::CropEnhanceImageOCRRequest& request, const CropEnhanceImageOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CropEnhanceImageOCROutcomeCallable CropEnhanceImageOCRCallable(const Model::CropEnhanceImageOCRRequest& request);
+
+                /**
                  *模型参数更大，速度更慢。推荐场景：可以接受异步（超过30s返回），样本输入输出token大于2000，长文本类文档建议用异步模型。需要 SubmitExtractDocAgentJob（提交任务）、DescribeExtractDocAgentJob（查询任务）两个接口配套使用，计费发生在提交任务后。【备注：1.固定价格不限抽取字段数，2.自适应价格抽取字段大于10记两次费用，小于等于10记一次费用】
                  * @param req DescribeExtractDocAgentJobRequest
                  * @return DescribeExtractDocAgentJobOutcome
@@ -699,6 +718,15 @@ namespace TencentCloud
                 EnterpriseLicenseOCROutcome EnterpriseLicenseOCR(const Model::EnterpriseLicenseOCRRequest &request);
                 void EnterpriseLicenseOCRAsync(const Model::EnterpriseLicenseOCRRequest& request, const EnterpriseLicenseOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnterpriseLicenseOCROutcomeCallable EnterpriseLicenseOCRCallable(const Model::EnterpriseLicenseOCRRequest& request);
+
+                /**
+                 *本功能可自动清除试卷图片中的手写与批改痕迹，并输出洁净的空白试卷。也可以配合集成图像切边矫正技术，能自动定位、拉平试卷区域，从而在最优预处理基础上实现更佳的擦除效果。
+                 * @param req EraseHandwrittenImageOCRRequest
+                 * @return EraseHandwrittenImageOCROutcome
+                 */
+                EraseHandwrittenImageOCROutcome EraseHandwrittenImageOCR(const Model::EraseHandwrittenImageOCRRequest &request);
+                void EraseHandwrittenImageOCRAsync(const Model::EraseHandwrittenImageOCRRequest& request, const EraseHandwrittenImageOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EraseHandwrittenImageOCROutcomeCallable EraseHandwrittenImageOCRCallable(const Model::EraseHandwrittenImageOCRRequest& request);
 
                 /**
                  *本接口支持不动产权证关键字段的识别，包括使用期限、面积、用途、权利性质、权利类型、坐落、共有情况、权利人、权利其他状况等。

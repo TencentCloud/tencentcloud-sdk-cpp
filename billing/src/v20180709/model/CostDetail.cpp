@@ -37,7 +37,10 @@ CostDetail::CostDetail() :
     m_feeEndTimeHasBeenSet(false),
     m_componentSetHasBeenSet(false),
     m_productCodeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_operateUinHasBeenSet(false),
+    m_ownerUinHasBeenSet(false),
+    m_payTimeHasBeenSet(false)
 {
 }
 
@@ -236,6 +239,36 @@ CoreInternalOutcome CostDetail::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("OperateUin") && !value["OperateUin"].IsNull())
+    {
+        if (!value["OperateUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CostDetail.OperateUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operateUin = string(value["OperateUin"].GetString());
+        m_operateUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnerUin") && !value["OwnerUin"].IsNull())
+    {
+        if (!value["OwnerUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CostDetail.OwnerUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerUin = string(value["OwnerUin"].GetString());
+        m_ownerUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("PayTime") && !value["PayTime"].IsNull())
+    {
+        if (!value["PayTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CostDetail.PayTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payTime = string(value["PayTime"].GetString());
+        m_payTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -391,6 +424,30 @@ void CostDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_operateUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperateUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operateUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -666,5 +723,53 @@ void CostDetail::SetTags(const vector<BillTagInfo>& _tags)
 bool CostDetail::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CostDetail::GetOperateUin() const
+{
+    return m_operateUin;
+}
+
+void CostDetail::SetOperateUin(const string& _operateUin)
+{
+    m_operateUin = _operateUin;
+    m_operateUinHasBeenSet = true;
+}
+
+bool CostDetail::OperateUinHasBeenSet() const
+{
+    return m_operateUinHasBeenSet;
+}
+
+string CostDetail::GetOwnerUin() const
+{
+    return m_ownerUin;
+}
+
+void CostDetail::SetOwnerUin(const string& _ownerUin)
+{
+    m_ownerUin = _ownerUin;
+    m_ownerUinHasBeenSet = true;
+}
+
+bool CostDetail::OwnerUinHasBeenSet() const
+{
+    return m_ownerUinHasBeenSet;
+}
+
+string CostDetail::GetPayTime() const
+{
+    return m_payTime;
+}
+
+void CostDetail::SetPayTime(const string& _payTime)
+{
+    m_payTime = _payTime;
+    m_payTimeHasBeenSet = true;
+}
+
+bool CostDetail::PayTimeHasBeenSet() const
+{
+    return m_payTimeHasBeenSet;
 }
 

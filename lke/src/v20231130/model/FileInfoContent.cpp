@@ -38,11 +38,11 @@ CoreInternalOutcome FileInfoContent::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("DocBizId") && !value["DocBizId"].IsNull())
     {
-        if (!value["DocBizId"].IsUint64())
+        if (!value["DocBizId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `FileInfoContent.DocBizId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfoContent.DocBizId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_docBizId = value["DocBizId"].GetUint64();
+        m_docBizId = string(value["DocBizId"].GetString());
         m_docBizIdHasBeenSet = true;
     }
 
@@ -68,11 +68,11 @@ CoreInternalOutcome FileInfoContent::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("FileSize") && !value["FileSize"].IsNull())
     {
-        if (!value["FileSize"].IsUint64())
+        if (!value["FileSize"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `FileInfoContent.FileSize` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfoContent.FileSize` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_fileSize = value["FileSize"].GetUint64();
+        m_fileSize = string(value["FileSize"].GetString());
         m_fileSizeHasBeenSet = true;
     }
 
@@ -88,21 +88,21 @@ CoreInternalOutcome FileInfoContent::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("DocId") && !value["DocId"].IsNull())
     {
-        if (!value["DocId"].IsUint64())
+        if (!value["DocId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `FileInfoContent.DocId` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfoContent.DocId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_docId = value["DocId"].GetUint64();
+        m_docId = string(value["DocId"].GetString());
         m_docIdHasBeenSet = true;
     }
 
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
     {
-        if (!value["CreateTime"].IsUint64())
+        if (!value["CreateTime"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `FileInfoContent.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FileInfoContent.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_createTime = value["CreateTime"].GetUint64();
+        m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
     }
 
@@ -118,7 +118,7 @@ void FileInfoContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DocBizId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_docBizId, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_docBizId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileNameHasBeenSet)
@@ -142,7 +142,7 @@ void FileInfoContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FileSize";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_fileSize, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileSize.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileUrlHasBeenSet)
@@ -158,7 +158,7 @@ void FileInfoContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DocId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_docId, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_docId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -166,18 +166,18 @@ void FileInfoContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_createTime, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
 
 
-uint64_t FileInfoContent::GetDocBizId() const
+string FileInfoContent::GetDocBizId() const
 {
     return m_docBizId;
 }
 
-void FileInfoContent::SetDocBizId(const uint64_t& _docBizId)
+void FileInfoContent::SetDocBizId(const string& _docBizId)
 {
     m_docBizId = _docBizId;
     m_docBizIdHasBeenSet = true;
@@ -220,12 +220,12 @@ bool FileInfoContent::FileTypeHasBeenSet() const
     return m_fileTypeHasBeenSet;
 }
 
-uint64_t FileInfoContent::GetFileSize() const
+string FileInfoContent::GetFileSize() const
 {
     return m_fileSize;
 }
 
-void FileInfoContent::SetFileSize(const uint64_t& _fileSize)
+void FileInfoContent::SetFileSize(const string& _fileSize)
 {
     m_fileSize = _fileSize;
     m_fileSizeHasBeenSet = true;
@@ -252,12 +252,12 @@ bool FileInfoContent::FileUrlHasBeenSet() const
     return m_fileUrlHasBeenSet;
 }
 
-uint64_t FileInfoContent::GetDocId() const
+string FileInfoContent::GetDocId() const
 {
     return m_docId;
 }
 
-void FileInfoContent::SetDocId(const uint64_t& _docId)
+void FileInfoContent::SetDocId(const string& _docId)
 {
     m_docId = _docId;
     m_docIdHasBeenSet = true;
@@ -268,12 +268,12 @@ bool FileInfoContent::DocIdHasBeenSet() const
     return m_docIdHasBeenSet;
 }
 
-uint64_t FileInfoContent::GetCreateTime() const
+string FileInfoContent::GetCreateTime() const
 {
     return m_createTime;
 }
 
-void FileInfoContent::SetCreateTime(const uint64_t& _createTime)
+void FileInfoContent::SetCreateTime(const string& _createTime)
 {
     m_createTime = _createTime;
     m_createTimeHasBeenSet = true;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数字人直播间 ID。
-                     * @return RoomId 数字人直播间 ID。
+                     * 获取<p>数字人直播间 ID。</p>
+                     * @return RoomId <p>数字人直播间 ID。</p>
                      * 
                      */
                     std::string GetRoomId() const;
 
                     /**
-                     * 设置数字人直播间 ID。
-                     * @param _roomId 数字人直播间 ID。
+                     * 设置<p>数字人直播间 ID。</p>
+                     * @param _roomId <p>数字人直播间 ID。</p>
                      * 
                      */
                     void SetRoomId(const std::string& _roomId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool RoomIdHasBeenSet() const;
 
                     /**
-                     * 获取数字人直播间话术 ID。
-                     * @return ScriptId 数字人直播间话术 ID。
+                     * 获取<p>数字人直播间话术 ID。</p>
+                     * @return ScriptId <p>数字人直播间话术 ID。</p>
                      * 
                      */
                     std::string GetScriptId() const;
 
                     /**
-                     * 设置数字人直播间话术 ID。
-                     * @param _scriptId 数字人直播间话术 ID。
+                     * 设置<p>数字人直播间话术 ID。</p>
+                     * @param _scriptId <p>数字人直播间话术 ID。</p>
                      * 
                      */
                     void SetScriptId(const std::string& _scriptId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ScriptIdHasBeenSet() const;
 
                     /**
-                     * 获取分页查询的页数。
-                     * @return PageIndex 分页查询的页数。
+                     * 获取<p>分页查询的页数。</p>
+                     * @return PageIndex <p>分页查询的页数。</p>
                      * 
                      */
                     int64_t GetPageIndex() const;
 
                     /**
-                     * 设置分页查询的页数。
-                     * @param _pageIndex 分页查询的页数。
+                     * 设置<p>分页查询的页数。</p>
+                     * @param _pageIndex <p>分页查询的页数。</p>
                      * 
                      */
                     void SetPageIndex(const int64_t& _pageIndex);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PageIndexHasBeenSet() const;
 
                     /**
-                     * 获取分页查询的每页个数。
-                     * @return PageSize 分页查询的每页个数。
+                     * 获取<p>分页查询的每页个数。</p>
+                     * @return PageSize <p>分页查询的每页个数。</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置分页查询的每页个数。
-                     * @param _pageSize 分页查询的每页个数。
+                     * 设置<p>分页查询的每页个数。</p>
+                     * @param _pageSize <p>分页查询的每页个数。</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -126,31 +126,58 @@ namespace TencentCloud
                      */
                     bool PageSizeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>数字人该话术所属的产品 ID。</p>
+                     * @return ProductId <p>数字人该话术所属的产品 ID。</p>
+                     * 
+                     */
+                    std::string GetProductId() const;
+
+                    /**
+                     * 设置<p>数字人该话术所属的产品 ID。</p>
+                     * @param _productId <p>数字人该话术所属的产品 ID。</p>
+                     * 
+                     */
+                    void SetProductId(const std::string& _productId);
+
+                    /**
+                     * 判断参数 ProductId 是否已赋值
+                     * @return ProductId 是否已赋值
+                     * 
+                     */
+                    bool ProductIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 数字人直播间 ID。
+                     * <p>数字人直播间 ID。</p>
                      */
                     std::string m_roomId;
                     bool m_roomIdHasBeenSet;
 
                     /**
-                     * 数字人直播间话术 ID。
+                     * <p>数字人直播间话术 ID。</p>
                      */
                     std::string m_scriptId;
                     bool m_scriptIdHasBeenSet;
 
                     /**
-                     * 分页查询的页数。
+                     * <p>分页查询的页数。</p>
                      */
                     int64_t m_pageIndex;
                     bool m_pageIndexHasBeenSet;
 
                     /**
-                     * 分页查询的每页个数。
+                     * <p>分页查询的每页个数。</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * <p>数字人该话术所属的产品 ID。</p>
+                     */
+                    std::string m_productId;
+                    bool m_productIdHasBeenSet;
 
                 };
             }

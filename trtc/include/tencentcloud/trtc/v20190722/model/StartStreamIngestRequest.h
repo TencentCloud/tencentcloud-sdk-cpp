@@ -162,15 +162,15 @@ namespace TencentCloud
                     bool UserSigHasBeenSet() const;
 
                     /**
-                     * 获取源流URL【必填】。如果是视频流，分辨率请保持不变。
-                     * @return StreamUrl 源流URL【必填】。如果是视频流，分辨率请保持不变。
+                     * 获取源流URL【必填】。如果是视频流，分辨率请保持不变，视频流的最大分辨率限制1080p，最大帧率限制30fps。
+                     * @return StreamUrl 源流URL【必填】。如果是视频流，分辨率请保持不变，视频流的最大分辨率限制1080p，最大帧率限制30fps。
                      * 
                      */
                     std::string GetStreamUrl() const;
 
                     /**
-                     * 设置源流URL【必填】。如果是视频流，分辨率请保持不变。
-                     * @param _streamUrl 源流URL【必填】。如果是视频流，分辨率请保持不变。
+                     * 设置源流URL【必填】。如果是视频流，分辨率请保持不变，视频流的最大分辨率限制1080p，最大帧率限制30fps。
+                     * @param _streamUrl 源流URL【必填】。如果是视频流，分辨率请保持不变，视频流的最大分辨率限制1080p，最大帧率限制30fps。
                      * 
                      */
                     void SetStreamUrl(const std::string& _streamUrl);
@@ -363,15 +363,15 @@ namespace TencentCloud
                     bool MaxDurationHasBeenSet() const;
 
                     /**
-                     * 获取音量，取值范围[0, 100]，默认100，表示原音量。
-                     * @return Volume 音量，取值范围[0, 100]，默认100，表示原音量。
+                     * 获取音量，取值范围[0, 200]，默认100，表示原音量。
+                     * @return Volume 音量，取值范围[0, 200]，默认100，表示原音量。
                      * 
                      */
                     uint64_t GetVolume() const;
 
                     /**
-                     * 设置音量，取值范围[0, 100]，默认100，表示原音量。
-                     * @param _volume 音量，取值范围[0, 100]，默认100，表示原音量。
+                     * 设置音量，取值范围[0, 200]，默认100，表示原音量。
+                     * @param _volume 音量，取值范围[0, 200]，默认100，表示原音量。
                      * 
                      */
                     void SetVolume(const uint64_t& _volume);
@@ -425,6 +425,27 @@ namespace TencentCloud
                      */
                     bool TempoHasBeenSet() const;
 
+                    /**
+                     * 获取播放任务处于空闲状态的最大时长（秒）, 不填时任务会自适应销毁，可取[0, 600]，空闲状态超过设置的 IdleTimeout 后，该播放任务会自动销毁
+                     * @return IdleTimeout 播放任务处于空闲状态的最大时长（秒）, 不填时任务会自适应销毁，可取[0, 600]，空闲状态超过设置的 IdleTimeout 后，该播放任务会自动销毁
+                     * 
+                     */
+                    int64_t GetIdleTimeout() const;
+
+                    /**
+                     * 设置播放任务处于空闲状态的最大时长（秒）, 不填时任务会自适应销毁，可取[0, 600]，空闲状态超过设置的 IdleTimeout 后，该播放任务会自动销毁
+                     * @param _idleTimeout 播放任务处于空闲状态的最大时长（秒）, 不填时任务会自适应销毁，可取[0, 600]，空闲状态超过设置的 IdleTimeout 后，该播放任务会自动销毁
+                     * 
+                     */
+                    void SetIdleTimeout(const int64_t& _idleTimeout);
+
+                    /**
+                     * 判断参数 IdleTimeout 是否已赋值
+                     * @return IdleTimeout 是否已赋值
+                     * 
+                     */
+                    bool IdleTimeoutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -461,7 +482,7 @@ namespace TencentCloud
                     bool m_userSigHasBeenSet;
 
                     /**
-                     * 源流URL【必填】。如果是视频流，分辨率请保持不变。
+                     * 源流URL【必填】。如果是视频流，分辨率请保持不变，视频流的最大分辨率限制1080p，最大帧率限制30fps。
                      */
                     std::string m_streamUrl;
                     bool m_streamUrlHasBeenSet;
@@ -518,7 +539,7 @@ namespace TencentCloud
                     bool m_maxDurationHasBeenSet;
 
                     /**
-                     * 音量，取值范围[0, 100]，默认100，表示原音量。
+                     * 音量，取值范围[0, 200]，默认100，表示原音量。
                      */
                     uint64_t m_volume;
                     bool m_volumeHasBeenSet;
@@ -534,6 +555,12 @@ namespace TencentCloud
                      */
                     double m_tempo;
                     bool m_tempoHasBeenSet;
+
+                    /**
+                     * 播放任务处于空闲状态的最大时长（秒）, 不填时任务会自适应销毁，可取[0, 600]，空闲状态超过设置的 IdleTimeout 后，该播放任务会自动销毁
+                     */
+                    int64_t m_idleTimeout;
+                    bool m_idleTimeoutHasBeenSet;
 
                 };
             }

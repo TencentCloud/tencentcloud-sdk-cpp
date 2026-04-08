@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取话术 ID。
-                     * @return ScriptId 话术 ID。
+                     * 获取<p>话术 ID。</p>
+                     * @return ScriptId <p>话术 ID。</p>
                      * 
                      */
                     std::string GetScriptId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 话术 ID。
+                     * <p>话术 ID。</p>
                      */
                     std::string m_scriptId;
                     bool m_scriptIdHasBeenSet;

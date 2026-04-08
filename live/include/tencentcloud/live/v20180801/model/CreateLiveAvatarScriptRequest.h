@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取话术标题。限制500字节。
-                     * @return Title 话术标题。限制500字节。
+                     * 获取<p>话术标题。限制500字节。</p>
+                     * @return Title <p>话术标题。限制500字节。</p>
                      * 
                      */
                     std::string GetTitle() const;
 
                     /**
-                     * 设置话术标题。限制500字节。
-                     * @param _title 话术标题。限制500字节。
+                     * 设置<p>话术标题。限制500字节。</p>
+                     * @param _title <p>话术标题。限制500字节。</p>
                      * 
                      */
                     void SetTitle(const std::string& _title);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TitleHasBeenSet() const;
 
                     /**
-                     * 获取话术内容。中文最大支持150个汉字（全角标点符号算一个汉字）；英文最大支持500个字母（半角标点符号算一个字母）。
-                     * @return Content 话术内容。中文最大支持150个汉字（全角标点符号算一个汉字）；英文最大支持500个字母（半角标点符号算一个字母）。
+                     * 获取<p>话术内容。中文最大支持150个汉字（全角标点符号算一个汉字）；英文最大支持500个字母（半角标点符号算一个字母）。</p>
+                     * @return Content <p>话术内容。中文最大支持150个汉字（全角标点符号算一个汉字）；英文最大支持500个字母（半角标点符号算一个字母）。</p>
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置话术内容。中文最大支持150个汉字（全角标点符号算一个汉字）；英文最大支持500个字母（半角标点符号算一个字母）。
-                     * @param _content 话术内容。中文最大支持150个汉字（全角标点符号算一个汉字）；英文最大支持500个字母（半角标点符号算一个字母）。
+                     * 设置<p>话术内容。中文最大支持150个汉字（全角标点符号算一个汉字）；英文最大支持500个字母（半角标点符号算一个字母）。</p>
+                     * @param _content <p>话术内容。中文最大支持150个汉字（全角标点符号算一个汉字）；英文最大支持500个字母（半角标点符号算一个字母）。</p>
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取话术所属的数字人直播间 ID。
-                     * @return RoomId 话术所属的数字人直播间 ID。
+                     * 获取<p>话术所属的数字人直播间 ID。</p>
+                     * @return RoomId <p>话术所属的数字人直播间 ID。</p>
                      * 
                      */
                     std::string GetRoomId() const;
 
                     /**
-                     * 设置话术所属的数字人直播间 ID。
-                     * @param _roomId 话术所属的数字人直播间 ID。
+                     * 设置<p>话术所属的数字人直播间 ID。</p>
+                     * @param _roomId <p>话术所属的数字人直播间 ID。</p>
                      * 
                      */
                     void SetRoomId(const std::string& _roomId);
@@ -106,23 +106,15 @@ namespace TencentCloud
                     bool RoomIdHasBeenSet() const;
 
                     /**
-                     * 获取话术插入时，可根据已有话术位置，指定新话术插入位置。
-如已有三条话术100，200，300。
-新话术可选择150插入到第一条和第二条中间。
-                     * @return SpecifyPosition 话术插入时，可根据已有话术位置，指定新话术插入位置。
-如已有三条话术100，200，300。
-新话术可选择150插入到第一条和第二条中间。
+                     * 获取<p>话术插入时，可根据已有话术位置，指定新话术插入位置。<br>如已有三条话术100，200，300。<br>新话术可选择150插入到第一条和第二条中间。</p>
+                     * @return SpecifyPosition <p>话术插入时，可根据已有话术位置，指定新话术插入位置。<br>如已有三条话术100，200，300。<br>新话术可选择150插入到第一条和第二条中间。</p>
                      * 
                      */
                     int64_t GetSpecifyPosition() const;
 
                     /**
-                     * 设置话术插入时，可根据已有话术位置，指定新话术插入位置。
-如已有三条话术100，200，300。
-新话术可选择150插入到第一条和第二条中间。
-                     * @param _specifyPosition 话术插入时，可根据已有话术位置，指定新话术插入位置。
-如已有三条话术100，200，300。
-新话术可选择150插入到第一条和第二条中间。
+                     * 设置<p>话术插入时，可根据已有话术位置，指定新话术插入位置。<br>如已有三条话术100，200，300。<br>新话术可选择150插入到第一条和第二条中间。</p>
+                     * @param _specifyPosition <p>话术插入时，可根据已有话术位置，指定新话术插入位置。<br>如已有三条话术100，200，300。<br>新话术可选择150插入到第一条和第二条中间。</p>
                      * 
                      */
                     void SetSpecifyPosition(const int64_t& _specifyPosition);
@@ -135,15 +127,15 @@ namespace TencentCloud
                     bool SpecifyPositionHasBeenSet() const;
 
                     /**
-                     * 获取操作者。
-                     * @return Operator 操作者。
+                     * 获取<p>操作者。</p>
+                     * @return Operator <p>操作者。</p>
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者。
-                     * @param _operator 操作者。
+                     * 设置<p>操作者。</p>
+                     * @param _operator <p>操作者。</p>
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -155,39 +147,64 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取<p>话术所属的数字人产品 ID。</p>
+                     * @return ProductId <p>话术所属的数字人产品 ID。</p>
+                     * 
+                     */
+                    std::string GetProductId() const;
+
+                    /**
+                     * 设置<p>话术所属的数字人产品 ID。</p>
+                     * @param _productId <p>话术所属的数字人产品 ID。</p>
+                     * 
+                     */
+                    void SetProductId(const std::string& _productId);
+
+                    /**
+                     * 判断参数 ProductId 是否已赋值
+                     * @return ProductId 是否已赋值
+                     * 
+                     */
+                    bool ProductIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 话术标题。限制500字节。
+                     * <p>话术标题。限制500字节。</p>
                      */
                     std::string m_title;
                     bool m_titleHasBeenSet;
 
                     /**
-                     * 话术内容。中文最大支持150个汉字（全角标点符号算一个汉字）；英文最大支持500个字母（半角标点符号算一个字母）。
+                     * <p>话术内容。中文最大支持150个汉字（全角标点符号算一个汉字）；英文最大支持500个字母（半角标点符号算一个字母）。</p>
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 话术所属的数字人直播间 ID。
+                     * <p>话术所属的数字人直播间 ID。</p>
                      */
                     std::string m_roomId;
                     bool m_roomIdHasBeenSet;
 
                     /**
-                     * 话术插入时，可根据已有话术位置，指定新话术插入位置。
-如已有三条话术100，200，300。
-新话术可选择150插入到第一条和第二条中间。
+                     * <p>话术插入时，可根据已有话术位置，指定新话术插入位置。<br>如已有三条话术100，200，300。<br>新话术可选择150插入到第一条和第二条中间。</p>
                      */
                     int64_t m_specifyPosition;
                     bool m_specifyPositionHasBeenSet;
 
                     /**
-                     * 操作者。
+                     * <p>操作者。</p>
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * <p>话术所属的数字人产品 ID。</p>
+                     */
+                    std::string m_productId;
+                    bool m_productIdHasBeenSet;
 
                 };
             }

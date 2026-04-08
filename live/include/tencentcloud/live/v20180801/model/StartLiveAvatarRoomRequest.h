@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数字人直播间 ID。
-                     * @return RoomId 数字人直播间 ID。
+                     * 获取<p>数字人直播间 ID。</p>
+                     * @return RoomId <p>数字人直播间 ID。</p>
                      * 
                      */
                     std::string GetRoomId() const;
 
                     /**
-                     * 设置数字人直播间 ID。
-                     * @param _roomId 数字人直播间 ID。
+                     * 设置<p>数字人直播间 ID。</p>
+                     * @param _roomId <p>数字人直播间 ID。</p>
                      * 
                      */
                     void SetRoomId(const std::string& _roomId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool RoomIdHasBeenSet() const;
 
                     /**
-                     * 获取目标地址描述。
-                     * @return Comment 目标地址描述。
+                     * 获取<p>目标地址描述。</p>
+                     * @return Comment <p>目标地址描述。</p>
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置目标地址描述。
-                     * @param _comment 目标地址描述。
+                     * 设置<p>目标地址描述。</p>
+                     * @param _comment <p>目标地址描述。</p>
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取推流目标地址。
-                     * @return ToUrl 推流目标地址。
+                     * 获取<p>推流目标地址。</p>
+                     * @return ToUrl <p>推流目标地址。</p>
                      * 
                      */
                     std::string GetToUrl() const;
 
                     /**
-                     * 设置推流目标地址。
-                     * @param _toUrl 推流目标地址。
+                     * 设置<p>推流目标地址。</p>
+                     * @param _toUrl <p>推流目标地址。</p>
                      * 
                      */
                     void SetToUrl(const std::string& _toUrl);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ToUrlHasBeenSet() const;
 
                     /**
-                     * 获取操作者。
-                     * @return Operator 操作者。
+                     * 获取<p>操作者。</p>
+                     * @return Operator <p>操作者。</p>
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者。
-                     * @param _operator 操作者。
+                     * 设置<p>操作者。</p>
+                     * @param _operator <p>操作者。</p>
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -126,31 +126,58 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取<p>房间类型。AIGC：AIGC形象房间；PRESET：预设形象房间</p><p>枚举值：</p><ul><li>AIGC： AIGC形象房间</li><li>PRESET： 预设形象房间</li></ul>
+                     * @return RoomType <p>房间类型。AIGC：AIGC形象房间；PRESET：预设形象房间</p><p>枚举值：</p><ul><li>AIGC： AIGC形象房间</li><li>PRESET： 预设形象房间</li></ul>
+                     * 
+                     */
+                    std::string GetRoomType() const;
+
+                    /**
+                     * 设置<p>房间类型。AIGC：AIGC形象房间；PRESET：预设形象房间</p><p>枚举值：</p><ul><li>AIGC： AIGC形象房间</li><li>PRESET： 预设形象房间</li></ul>
+                     * @param _roomType <p>房间类型。AIGC：AIGC形象房间；PRESET：预设形象房间</p><p>枚举值：</p><ul><li>AIGC： AIGC形象房间</li><li>PRESET： 预设形象房间</li></ul>
+                     * 
+                     */
+                    void SetRoomType(const std::string& _roomType);
+
+                    /**
+                     * 判断参数 RoomType 是否已赋值
+                     * @return RoomType 是否已赋值
+                     * 
+                     */
+                    bool RoomTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 数字人直播间 ID。
+                     * <p>数字人直播间 ID。</p>
                      */
                     std::string m_roomId;
                     bool m_roomIdHasBeenSet;
 
                     /**
-                     * 目标地址描述。
+                     * <p>目标地址描述。</p>
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * 推流目标地址。
+                     * <p>推流目标地址。</p>
                      */
                     std::string m_toUrl;
                     bool m_toUrlHasBeenSet;
 
                     /**
-                     * 操作者。
+                     * <p>操作者。</p>
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * <p>房间类型。AIGC：AIGC形象房间；PRESET：预设形象房间</p><p>枚举值：</p><ul><li>AIGC： AIGC形象房间</li><li>PRESET： 预设形象房间</li></ul>
+                     */
+                    std::string m_roomType;
+                    bool m_roomTypeHasBeenSet;
 
                 };
             }

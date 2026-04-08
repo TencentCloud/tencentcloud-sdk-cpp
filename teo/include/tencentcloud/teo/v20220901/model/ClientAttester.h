@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/TCRCEOption.h>
 #include <tencentcloud/teo/v20220901/model/TCCaptchaOption.h>
+#include <tencentcloud/teo/v20220901/model/TCEOCaptchaOption.h>
 
 
 namespace TencentCloud
@@ -122,10 +123,12 @@ namespace TencentCloud
                     /**
                      * 获取认证方法。取值有：
 <li>TC-RCE: 使用风险识别 RCE 进行认证；</li>
-<li>TC-CAPTCHA: 使用天御验证码进行认证。</li>
+<li>TC-CAPTCHA: 使用天御验证码进行认证；</li>
+<li>TC-EO-CAPTCHA: 使用 EdgeOne 人机校验进行认证。</li>
                      * @return AttesterSource 认证方法。取值有：
 <li>TC-RCE: 使用风险识别 RCE 进行认证；</li>
-<li>TC-CAPTCHA: 使用天御验证码进行认证。</li>
+<li>TC-CAPTCHA: 使用天御验证码进行认证；</li>
+<li>TC-EO-CAPTCHA: 使用 EdgeOne 人机校验进行认证。</li>
                      * 
                      */
                     std::string GetAttesterSource() const;
@@ -133,10 +136,12 @@ namespace TencentCloud
                     /**
                      * 设置认证方法。取值有：
 <li>TC-RCE: 使用风险识别 RCE 进行认证；</li>
-<li>TC-CAPTCHA: 使用天御验证码进行认证。</li>
+<li>TC-CAPTCHA: 使用天御验证码进行认证；</li>
+<li>TC-EO-CAPTCHA: 使用 EdgeOne 人机校验进行认证。</li>
                      * @param _attesterSource 认证方法。取值有：
 <li>TC-RCE: 使用风险识别 RCE 进行认证；</li>
-<li>TC-CAPTCHA: 使用天御验证码进行认证。</li>
+<li>TC-CAPTCHA: 使用天御验证码进行认证；</li>
+<li>TC-EO-CAPTCHA: 使用 EdgeOne 人机校验进行认证。</li>
                      * 
                      */
                     void SetAttesterSource(const std::string& _attesterSource);
@@ -231,6 +236,31 @@ namespace TencentCloud
                      */
                     bool TCCaptchaOptionHasBeenSet() const;
 
+                    /**
+                     * 获取TC-EO-CAPTCHA 认证的配置信息。
+<li>当 AttesterSource 参数值为 TC-EO-CAPTCHA 时，此字段必填。</li>
+                     * @return TCEOCaptchaOption TC-EO-CAPTCHA 认证的配置信息。
+<li>当 AttesterSource 参数值为 TC-EO-CAPTCHA 时，此字段必填。</li>
+                     * 
+                     */
+                    TCEOCaptchaOption GetTCEOCaptchaOption() const;
+
+                    /**
+                     * 设置TC-EO-CAPTCHA 认证的配置信息。
+<li>当 AttesterSource 参数值为 TC-EO-CAPTCHA 时，此字段必填。</li>
+                     * @param _tCEOCaptchaOption TC-EO-CAPTCHA 认证的配置信息。
+<li>当 AttesterSource 参数值为 TC-EO-CAPTCHA 时，此字段必填。</li>
+                     * 
+                     */
+                    void SetTCEOCaptchaOption(const TCEOCaptchaOption& _tCEOCaptchaOption);
+
+                    /**
+                     * 判断参数 TCEOCaptchaOption 是否已赋值
+                     * @return TCEOCaptchaOption 是否已赋值
+                     * 
+                     */
+                    bool TCEOCaptchaOptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -256,7 +286,8 @@ namespace TencentCloud
                     /**
                      * 认证方法。取值有：
 <li>TC-RCE: 使用风险识别 RCE 进行认证；</li>
-<li>TC-CAPTCHA: 使用天御验证码进行认证。</li>
+<li>TC-CAPTCHA: 使用天御验证码进行认证；</li>
+<li>TC-EO-CAPTCHA: 使用 EdgeOne 人机校验进行认证。</li>
                      */
                     std::string m_attesterSource;
                     bool m_attesterSourceHasBeenSet;
@@ -283,6 +314,13 @@ namespace TencentCloud
                      */
                     TCCaptchaOption m_tCCaptchaOption;
                     bool m_tCCaptchaOptionHasBeenSet;
+
+                    /**
+                     * TC-EO-CAPTCHA 认证的配置信息。
+<li>当 AttesterSource 参数值为 TC-EO-CAPTCHA 时，此字段必填。</li>
+                     */
+                    TCEOCaptchaOption m_tCEOCaptchaOption;
+                    bool m_tCEOCaptchaOptionHasBeenSet;
 
                 };
             }

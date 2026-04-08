@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数字人直播间 ID。
-                     * @return RoomId 数字人直播间 ID。
+                     * 获取<p>数字人直播间 ID。</p>
+                     * @return RoomId <p>数字人直播间 ID。</p>
                      * 
                      */
                     std::string GetRoomId() const;
 
                     /**
-                     * 设置数字人直播间 ID。
-                     * @param _roomId 数字人直播间 ID。
+                     * 设置<p>数字人直播间 ID。</p>
+                     * @param _roomId <p>数字人直播间 ID。</p>
                      * 
                      */
                     void SetRoomId(const std::string& _roomId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool RoomIdHasBeenSet() const;
 
                     /**
-                     * 获取直播间名称。
-                     * @return Name 直播间名称。
+                     * 获取<p>直播间名称。</p>
+                     * @return Name <p>直播间名称。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置直播间名称。
-                     * @param _name 直播间名称。
+                     * 设置<p>直播间名称。</p>
+                     * @param _name <p>直播间名称。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取数字人形象KEY。
-                     * @return AvatarKey 数字人形象KEY。
+                     * 获取<p>数字人形象KEY。</p>
+                     * @return AvatarKey <p>数字人形象KEY。</p>
                      * 
                      */
                     std::string GetAvatarKey() const;
 
                     /**
-                     * 设置数字人形象KEY。
-                     * @param _avatarKey 数字人形象KEY。
+                     * 设置<p>数字人形象KEY。</p>
+                     * @param _avatarKey <p>数字人形象KEY。</p>
                      * 
                      */
                     void SetAvatarKey(const std::string& _avatarKey);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool AvatarKeyHasBeenSet() const;
 
                     /**
-                     * 获取音色KEY。
-                     * @return TimbreKey 音色KEY。
+                     * 获取<p>音色KEY。</p>
+                     * @return TimbreKey <p>音色KEY。</p>
                      * 
                      */
                     std::string GetTimbreKey() const;
 
                     /**
-                     * 设置音色KEY。
-                     * @param _timbreKey 音色KEY。
+                     * 设置<p>音色KEY。</p>
+                     * @param _timbreKey <p>音色KEY。</p>
                      * 
                      */
                     void SetTimbreKey(const std::string& _timbreKey);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool TimbreKeyHasBeenSet() const;
 
                     /**
-                     * 获取背景图片URL。
-                     * @return BackgroundUrl 背景图片URL。
+                     * 获取<p>背景图片URL。</p>
+                     * @return BackgroundUrl <p>背景图片URL。</p>
                      * 
                      */
                     std::string GetBackgroundUrl() const;
 
                     /**
-                     * 设置背景图片URL。
-                     * @param _backgroundUrl 背景图片URL。
+                     * 设置<p>背景图片URL。</p>
+                     * @param _backgroundUrl <p>背景图片URL。</p>
                      * 
                      */
                     void SetBackgroundUrl(const std::string& _backgroundUrl);
@@ -148,23 +148,15 @@ namespace TencentCloud
                     bool BackgroundUrlHasBeenSet() const;
 
                     /**
-                     * 获取主播大小，默认1.00。
-取值范围(0, 15.00]。
-精度：使用小数点后两位。
-                     * @return AnchorScale 主播大小，默认1.00。
-取值范围(0, 15.00]。
-精度：使用小数点后两位。
+                     * 获取<p>主播大小，默认1.00。<br>取值范围(0, 15.00]。<br>精度：使用小数点后两位。</p>
+                     * @return AnchorScale <p>主播大小，默认1.00。<br>取值范围(0, 15.00]。<br>精度：使用小数点后两位。</p>
                      * 
                      */
                     double GetAnchorScale() const;
 
                     /**
-                     * 设置主播大小，默认1.00。
-取值范围(0, 15.00]。
-精度：使用小数点后两位。
-                     * @param _anchorScale 主播大小，默认1.00。
-取值范围(0, 15.00]。
-精度：使用小数点后两位。
+                     * 设置<p>主播大小，默认1.00。<br>取值范围(0, 15.00]。<br>精度：使用小数点后两位。</p>
+                     * @param _anchorScale <p>主播大小，默认1.00。<br>取值范围(0, 15.00]。<br>精度：使用小数点后两位。</p>
                      * 
                      */
                     void SetAnchorScale(const double& _anchorScale);
@@ -177,23 +169,15 @@ namespace TencentCloud
                     bool AnchorScaleHasBeenSet() const;
 
                     /**
-                     * 获取主播纵向位置。默认-1贴底部。
-左上角为原点，形象顶部离屏幕顶部的距离，最大不能使形象底部超出屏幕。
-即该纵向位置最大为：数字人分辨率的高 - 形象高。
-                     * @return AnchorVerticalPos 主播纵向位置。默认-1贴底部。
-左上角为原点，形象顶部离屏幕顶部的距离，最大不能使形象底部超出屏幕。
-即该纵向位置最大为：数字人分辨率的高 - 形象高。
+                     * 获取<p>主播纵向位置。默认-1贴底部。<br>左上角为原点，形象顶部离屏幕顶部的距离，最大不能使形象底部超出屏幕。<br>即该纵向位置最大为：数字人分辨率的高 - 形象高。</p>
+                     * @return AnchorVerticalPos <p>主播纵向位置。默认-1贴底部。<br>左上角为原点，形象顶部离屏幕顶部的距离，最大不能使形象底部超出屏幕。<br>即该纵向位置最大为：数字人分辨率的高 - 形象高。</p>
                      * 
                      */
                     int64_t GetAnchorVerticalPos() const;
 
                     /**
-                     * 设置主播纵向位置。默认-1贴底部。
-左上角为原点，形象顶部离屏幕顶部的距离，最大不能使形象底部超出屏幕。
-即该纵向位置最大为：数字人分辨率的高 - 形象高。
-                     * @param _anchorVerticalPos 主播纵向位置。默认-1贴底部。
-左上角为原点，形象顶部离屏幕顶部的距离，最大不能使形象底部超出屏幕。
-即该纵向位置最大为：数字人分辨率的高 - 形象高。
+                     * 设置<p>主播纵向位置。默认-1贴底部。<br>左上角为原点，形象顶部离屏幕顶部的距离，最大不能使形象底部超出屏幕。<br>即该纵向位置最大为：数字人分辨率的高 - 形象高。</p>
+                     * @param _anchorVerticalPos <p>主播纵向位置。默认-1贴底部。<br>左上角为原点，形象顶部离屏幕顶部的距离，最大不能使形象底部超出屏幕。<br>即该纵向位置最大为：数字人分辨率的高 - 形象高。</p>
                      * 
                      */
                     void SetAnchorVerticalPos(const int64_t& _anchorVerticalPos);
@@ -206,23 +190,15 @@ namespace TencentCloud
                     bool AnchorVerticalPosHasBeenSet() const;
 
                     /**
-                     * 获取主播横向位置。默认-1居中。
-左上角为原点，形象左侧离左侧屏幕的距离。最大值不可使形象右侧超出右侧屏幕。
-即最大值为：数字人分辨率的宽 - 形象宽。
-                     * @return AnchorHorizontalPos 主播横向位置。默认-1居中。
-左上角为原点，形象左侧离左侧屏幕的距离。最大值不可使形象右侧超出右侧屏幕。
-即最大值为：数字人分辨率的宽 - 形象宽。
+                     * 获取<p>主播横向位置。默认-1居中。<br>左上角为原点，形象左侧离左侧屏幕的距离。最大值不可使形象右侧超出右侧屏幕。<br>即最大值为：数字人分辨率的宽 - 形象宽。</p>
+                     * @return AnchorHorizontalPos <p>主播横向位置。默认-1居中。<br>左上角为原点，形象左侧离左侧屏幕的距离。最大值不可使形象右侧超出右侧屏幕。<br>即最大值为：数字人分辨率的宽 - 形象宽。</p>
                      * 
                      */
                     int64_t GetAnchorHorizontalPos() const;
 
                     /**
-                     * 设置主播横向位置。默认-1居中。
-左上角为原点，形象左侧离左侧屏幕的距离。最大值不可使形象右侧超出右侧屏幕。
-即最大值为：数字人分辨率的宽 - 形象宽。
-                     * @param _anchorHorizontalPos 主播横向位置。默认-1居中。
-左上角为原点，形象左侧离左侧屏幕的距离。最大值不可使形象右侧超出右侧屏幕。
-即最大值为：数字人分辨率的宽 - 形象宽。
+                     * 设置<p>主播横向位置。默认-1居中。<br>左上角为原点，形象左侧离左侧屏幕的距离。最大值不可使形象右侧超出右侧屏幕。<br>即最大值为：数字人分辨率的宽 - 形象宽。</p>
+                     * @param _anchorHorizontalPos <p>主播横向位置。默认-1居中。<br>左上角为原点，形象左侧离左侧屏幕的距离。最大值不可使形象右侧超出右侧屏幕。<br>即最大值为：数字人分辨率的宽 - 形象宽。</p>
                      * 
                      */
                     void SetAnchorHorizontalPos(const int64_t& _anchorHorizontalPos);
@@ -235,15 +211,15 @@ namespace TencentCloud
                     bool AnchorHorizontalPosHasBeenSet() const;
 
                     /**
-                     * 获取语速（1.0为正常语速，范围[0.6-2.5]，值为0.6时播报语速最慢，值为2.5时播报语速最快。
-                     * @return SpeechSpeed 语速（1.0为正常语速，范围[0.6-2.5]，值为0.6时播报语速最慢，值为2.5时播报语速最快。
+                     * 获取<p>语速（1.0为正常语速，范围[0.6-2.5]，值为0.6时播报语速最慢，值为2.5时播报语速最快。</p>
+                     * @return SpeechSpeed <p>语速（1.0为正常语速，范围[0.6-2.5]，值为0.6时播报语速最慢，值为2.5时播报语速最快。</p>
                      * 
                      */
                     double GetSpeechSpeed() const;
 
                     /**
-                     * 设置语速（1.0为正常语速，范围[0.6-2.5]，值为0.6时播报语速最慢，值为2.5时播报语速最快。
-                     * @param _speechSpeed 语速（1.0为正常语速，范围[0.6-2.5]，值为0.6时播报语速最慢，值为2.5时播报语速最快。
+                     * 设置<p>语速（1.0为正常语速，范围[0.6-2.5]，值为0.6时播报语速最慢，值为2.5时播报语速最快。</p>
+                     * @param _speechSpeed <p>语速（1.0为正常语速，范围[0.6-2.5]，值为0.6时播报语速最慢，值为2.5时播报语速最快。</p>
                      * 
                      */
                     void SetSpeechSpeed(const double& _speechSpeed);
@@ -256,15 +232,15 @@ namespace TencentCloud
                     bool SpeechSpeedHasBeenSet() const;
 
                     /**
-                     * 获取音量大小，范围[0，10]，对应音量大小。默认为5，代表正常音量，值越大音量越高。
-                     * @return SpeechVolume 音量大小，范围[0，10]，对应音量大小。默认为5，代表正常音量，值越大音量越高。
+                     * 获取<p>音量大小，范围[0，10]，对应音量大小。默认为5，代表正常音量，值越大音量越高。</p>
+                     * @return SpeechVolume <p>音量大小，范围[0，10]，对应音量大小。默认为5，代表正常音量，值越大音量越高。</p>
                      * 
                      */
                     int64_t GetSpeechVolume() const;
 
                     /**
-                     * 设置音量大小，范围[0，10]，对应音量大小。默认为5，代表正常音量，值越大音量越高。
-                     * @param _speechVolume 音量大小，范围[0，10]，对应音量大小。默认为5，代表正常音量，值越大音量越高。
+                     * 设置<p>音量大小，范围[0，10]，对应音量大小。默认为5，代表正常音量，值越大音量越高。</p>
+                     * @param _speechVolume <p>音量大小，范围[0，10]，对应音量大小。默认为5，代表正常音量，值越大音量越高。</p>
                      * 
                      */
                     void SetSpeechVolume(const int64_t& _speechVolume);
@@ -277,15 +253,15 @@ namespace TencentCloud
                     bool SpeechVolumeHasBeenSet() const;
 
                     /**
-                     * 获取操作者。
-                     * @return Operator 操作者。
+                     * 获取<p>操作者。</p>
+                     * @return Operator <p>操作者。</p>
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者。
-                     * @param _operator 操作者。
+                     * 设置<p>操作者。</p>
+                     * @param _operator <p>操作者。</p>
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -297,79 +273,100 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取<p>房间类型。AIGC：AIGC形象房间；PRESET：预设形象房间</p><p>枚举值：</p><ul><li>AIGC： AIGC形象房间</li><li>PRESET： 预设形象房间</li></ul>
+                     * @return RoomType <p>房间类型。AIGC：AIGC形象房间；PRESET：预设形象房间</p><p>枚举值：</p><ul><li>AIGC： AIGC形象房间</li><li>PRESET： 预设形象房间</li></ul>
+                     * 
+                     */
+                    std::string GetRoomType() const;
+
+                    /**
+                     * 设置<p>房间类型。AIGC：AIGC形象房间；PRESET：预设形象房间</p><p>枚举值：</p><ul><li>AIGC： AIGC形象房间</li><li>PRESET： 预设形象房间</li></ul>
+                     * @param _roomType <p>房间类型。AIGC：AIGC形象房间；PRESET：预设形象房间</p><p>枚举值：</p><ul><li>AIGC： AIGC形象房间</li><li>PRESET： 预设形象房间</li></ul>
+                     * 
+                     */
+                    void SetRoomType(const std::string& _roomType);
+
+                    /**
+                     * 判断参数 RoomType 是否已赋值
+                     * @return RoomType 是否已赋值
+                     * 
+                     */
+                    bool RoomTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 数字人直播间 ID。
+                     * <p>数字人直播间 ID。</p>
                      */
                     std::string m_roomId;
                     bool m_roomIdHasBeenSet;
 
                     /**
-                     * 直播间名称。
+                     * <p>直播间名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 数字人形象KEY。
+                     * <p>数字人形象KEY。</p>
                      */
                     std::string m_avatarKey;
                     bool m_avatarKeyHasBeenSet;
 
                     /**
-                     * 音色KEY。
+                     * <p>音色KEY。</p>
                      */
                     std::string m_timbreKey;
                     bool m_timbreKeyHasBeenSet;
 
                     /**
-                     * 背景图片URL。
+                     * <p>背景图片URL。</p>
                      */
                     std::string m_backgroundUrl;
                     bool m_backgroundUrlHasBeenSet;
 
                     /**
-                     * 主播大小，默认1.00。
-取值范围(0, 15.00]。
-精度：使用小数点后两位。
+                     * <p>主播大小，默认1.00。<br>取值范围(0, 15.00]。<br>精度：使用小数点后两位。</p>
                      */
                     double m_anchorScale;
                     bool m_anchorScaleHasBeenSet;
 
                     /**
-                     * 主播纵向位置。默认-1贴底部。
-左上角为原点，形象顶部离屏幕顶部的距离，最大不能使形象底部超出屏幕。
-即该纵向位置最大为：数字人分辨率的高 - 形象高。
+                     * <p>主播纵向位置。默认-1贴底部。<br>左上角为原点，形象顶部离屏幕顶部的距离，最大不能使形象底部超出屏幕。<br>即该纵向位置最大为：数字人分辨率的高 - 形象高。</p>
                      */
                     int64_t m_anchorVerticalPos;
                     bool m_anchorVerticalPosHasBeenSet;
 
                     /**
-                     * 主播横向位置。默认-1居中。
-左上角为原点，形象左侧离左侧屏幕的距离。最大值不可使形象右侧超出右侧屏幕。
-即最大值为：数字人分辨率的宽 - 形象宽。
+                     * <p>主播横向位置。默认-1居中。<br>左上角为原点，形象左侧离左侧屏幕的距离。最大值不可使形象右侧超出右侧屏幕。<br>即最大值为：数字人分辨率的宽 - 形象宽。</p>
                      */
                     int64_t m_anchorHorizontalPos;
                     bool m_anchorHorizontalPosHasBeenSet;
 
                     /**
-                     * 语速（1.0为正常语速，范围[0.6-2.5]，值为0.6时播报语速最慢，值为2.5时播报语速最快。
+                     * <p>语速（1.0为正常语速，范围[0.6-2.5]，值为0.6时播报语速最慢，值为2.5时播报语速最快。</p>
                      */
                     double m_speechSpeed;
                     bool m_speechSpeedHasBeenSet;
 
                     /**
-                     * 音量大小，范围[0，10]，对应音量大小。默认为5，代表正常音量，值越大音量越高。
+                     * <p>音量大小，范围[0，10]，对应音量大小。默认为5，代表正常音量，值越大音量越高。</p>
                      */
                     int64_t m_speechVolume;
                     bool m_speechVolumeHasBeenSet;
 
                     /**
-                     * 操作者。
+                     * <p>操作者。</p>
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * <p>房间类型。AIGC：AIGC形象房间；PRESET：预设形象房间</p><p>枚举值：</p><ul><li>AIGC： AIGC形象房间</li><li>PRESET： 预设形象房间</li></ul>
+                     */
+                    std::string m_roomType;
+                    bool m_roomTypeHasBeenSet;
 
                 };
             }

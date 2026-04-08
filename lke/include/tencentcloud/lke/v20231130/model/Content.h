@@ -33,6 +33,8 @@
 #include <tencentcloud/lke/v20231130/model/FileCollection.h>
 #include <tencentcloud/lke/v20231130/model/Widget.h>
 #include <tencentcloud/lke/v20231130/model/WidgetAction.h>
+#include <tencentcloud/lke/v20231130/model/AgentTask.h>
+#include <tencentcloud/lke/v20231130/model/Questionnaire.h>
 
 
 namespace TencentCloud
@@ -56,59 +58,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取消息内容类型
-text：文本
-image：图片
-file：文件
-option_cards：选项卡
-custom_params：用户自定义业务参数
-sandbox：云桌面
-custom_variables：自定义输入参数
-web_search: 网页搜索内容
-file_collection：文件收集信息
-widget：widget信息
-widget_action：用户端widget动作信息
-                     * @return Type 消息内容类型
-text：文本
-image：图片
-file：文件
-option_cards：选项卡
-custom_params：用户自定义业务参数
-sandbox：云桌面
-custom_variables：自定义输入参数
-web_search: 网页搜索内容
-file_collection：文件收集信息
-widget：widget信息
-widget_action：用户端widget动作信息
+                     * 获取<p>消息内容类型<br>text：文本<br>image：图片<br>file：文件<br>option_cards：选项卡<br>custom_params：用户自定义业务参数<br>sandbox：云桌面<br>custom_variables：自定义输入参数<br>web_search: 网页搜索内容<br>file_collection：文件收集信息<br>widget：widget信息<br>widget_action：用户端widget动作信息</p>
+                     * @return Type <p>消息内容类型<br>text：文本<br>image：图片<br>file：文件<br>option_cards：选项卡<br>custom_params：用户自定义业务参数<br>sandbox：云桌面<br>custom_variables：自定义输入参数<br>web_search: 网页搜索内容<br>file_collection：文件收集信息<br>widget：widget信息<br>widget_action：用户端widget动作信息</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置消息内容类型
-text：文本
-image：图片
-file：文件
-option_cards：选项卡
-custom_params：用户自定义业务参数
-sandbox：云桌面
-custom_variables：自定义输入参数
-web_search: 网页搜索内容
-file_collection：文件收集信息
-widget：widget信息
-widget_action：用户端widget动作信息
-                     * @param _type 消息内容类型
-text：文本
-image：图片
-file：文件
-option_cards：选项卡
-custom_params：用户自定义业务参数
-sandbox：云桌面
-custom_variables：自定义输入参数
-web_search: 网页搜索内容
-file_collection：文件收集信息
-widget：widget信息
-widget_action：用户端widget动作信息
+                     * 设置<p>消息内容类型<br>text：文本<br>image：图片<br>file：文件<br>option_cards：选项卡<br>custom_params：用户自定义业务参数<br>sandbox：云桌面<br>custom_variables：自定义输入参数<br>web_search: 网页搜索内容<br>file_collection：文件收集信息<br>widget：widget信息<br>widget_action：用户端widget动作信息</p>
+                     * @param _type <p>消息内容类型<br>text：文本<br>image：图片<br>file：文件<br>option_cards：选项卡<br>custom_params：用户自定义业务参数<br>sandbox：云桌面<br>custom_variables：自定义输入参数<br>web_search: 网页搜索内容<br>file_collection：文件收集信息<br>widget：widget信息<br>widget_action：用户端widget动作信息</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -121,18 +79,18 @@ widget_action：用户端widget动作信息
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取文本内容
+                     * 获取<p>文本内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Text 文本内容
+                     * @return Text <p>文本内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetText() const;
 
                     /**
-                     * 设置文本内容
+                     * 设置<p>文本内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _text 文本内容
+                     * @param _text <p>文本内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -146,18 +104,18 @@ widget_action：用户端widget动作信息
                     bool TextHasBeenSet() const;
 
                     /**
-                     * 获取引用信息
+                     * 获取<p>引用信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QuoteInfos 引用信息
+                     * @return QuoteInfos <p>引用信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<QuoteInfo> GetQuoteInfos() const;
 
                     /**
-                     * 设置引用信息
+                     * 设置<p>引用信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _quoteInfos 引用信息
+                     * @param _quoteInfos <p>引用信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -171,18 +129,18 @@ widget_action：用户端widget动作信息
                     bool QuoteInfosHasBeenSet() const;
 
                     /**
-                     * 获取参考文献信息
+                     * 获取<p>参考文献信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return References 参考文献信息
+                     * @return References <p>参考文献信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ContentReference> GetReferences() const;
 
                     /**
-                     * 设置参考文献信息
+                     * 设置<p>参考文献信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _references 参考文献信息
+                     * @param _references <p>参考文献信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -196,18 +154,18 @@ widget_action：用户端widget动作信息
                     bool ReferencesHasBeenSet() const;
 
                     /**
-                     * 获取图片信息
+                     * 获取<p>图片信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Image 图片信息
+                     * @return Image <p>图片信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ImageInfoContent GetImage() const;
 
                     /**
-                     * 设置图片信息
+                     * 设置<p>图片信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _image 图片信息
+                     * @param _image <p>图片信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -221,18 +179,18 @@ widget_action：用户端widget动作信息
                     bool ImageHasBeenSet() const;
 
                     /**
-                     * 获取文件信息
+                     * 获取<p>文件信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return File 文件信息
+                     * @return File <p>文件信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FileInfoContent GetFile() const;
 
                     /**
-                     * 设置文件信息
+                     * 设置<p>文件信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _file 文件信息
+                     * @param _file <p>文件信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -246,18 +204,18 @@ widget_action：用户端widget动作信息
                     bool FileHasBeenSet() const;
 
                     /**
-                     * 获取选项卡信息
+                     * 获取<p>选项卡信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OptionCards 选项卡信息
+                     * @return OptionCards <p>选项卡信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetOptionCards() const;
 
                     /**
-                     * 设置选项卡信息
+                     * 设置<p>选项卡信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _optionCards 选项卡信息
+                     * @param _optionCards <p>选项卡信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -271,18 +229,18 @@ widget_action：用户端widget动作信息
                     bool OptionCardsHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义业务参数信息
+                     * 获取<p>用户自定义业务参数信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CustomParams 用户自定义业务参数信息
+                     * @return CustomParams <p>用户自定义业务参数信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCustomParams() const;
 
                     /**
-                     * 设置用户自定义业务参数信息
+                     * 设置<p>用户自定义业务参数信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _customParams 用户自定义业务参数信息
+                     * @param _customParams <p>用户自定义业务参数信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -296,18 +254,18 @@ widget_action：用户端widget动作信息
                     bool CustomParamsHasBeenSet() const;
 
                     /**
-                     * 获取自定义变量
+                     * 获取<p>自定义变量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CustomVariables 自定义变量
+                     * @return CustomVariables <p>自定义变量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCustomVariables() const;
 
                     /**
-                     * 设置自定义变量
+                     * 设置<p>自定义变量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _customVariables 自定义变量
+                     * @param _customVariables <p>自定义变量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -321,18 +279,18 @@ widget_action：用户端widget动作信息
                     bool CustomVariablesHasBeenSet() const;
 
                     /**
-                     * 获取沙盒信息
+                     * 获取<p>沙盒信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Sandbox 沙盒信息
+                     * @return Sandbox <p>沙盒信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SandboxContent GetSandbox() const;
 
                     /**
-                     * 设置沙盒信息
+                     * 设置<p>沙盒信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sandbox 沙盒信息
+                     * @param _sandbox <p>沙盒信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -346,18 +304,18 @@ widget_action：用户端widget动作信息
                     bool SandboxHasBeenSet() const;
 
                     /**
-                     * 获取网页搜索内容
+                     * 获取<p>网页搜索内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WebSearch 网页搜索内容
+                     * @return WebSearch <p>网页搜索内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     WebSearchContent GetWebSearch() const;
 
                     /**
-                     * 设置网页搜索内容
+                     * 设置<p>网页搜索内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _webSearch 网页搜索内容
+                     * @param _webSearch <p>网页搜索内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -371,18 +329,18 @@ widget_action：用户端widget动作信息
                     bool WebSearchHasBeenSet() const;
 
                     /**
-                     * 获取文件收集信息
+                     * 获取<p>文件收集信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FileCollection 文件收集信息
+                     * @return FileCollection <p>文件收集信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FileCollection GetFileCollection() const;
 
                     /**
-                     * 设置文件收集信息
+                     * 设置<p>文件收集信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fileCollection 文件收集信息
+                     * @param _fileCollection <p>文件收集信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -396,18 +354,18 @@ widget_action：用户端widget动作信息
                     bool FileCollectionHasBeenSet() const;
 
                     /**
-                     * 获取Widget信息
+                     * 获取<p>Widget信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Widget Widget信息
+                     * @return Widget <p>Widget信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Widget GetWidget() const;
 
                     /**
-                     * 设置Widget信息
+                     * 设置<p>Widget信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _widget Widget信息
+                     * @param _widget <p>Widget信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -421,18 +379,18 @@ widget_action：用户端widget动作信息
                     bool WidgetHasBeenSet() const;
 
                     /**
-                     * 获取Widget动作信息
+                     * 获取<p>Widget动作信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WidgetAction Widget动作信息
+                     * @return WidgetAction <p>Widget动作信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     WidgetAction GetWidgetAction() const;
 
                     /**
-                     * 设置Widget动作信息
+                     * 设置<p>Widget动作信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _widgetAction Widget动作信息
+                     * @param _widgetAction <p>Widget动作信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -445,115 +403,195 @@ widget_action：用户端widget动作信息
                      */
                     bool WidgetActionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>任务列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tasks <p>任务列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<AgentTask> GetTasks() const;
+
+                    /**
+                     * 设置<p>任务列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tasks <p>任务列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTasks(const std::vector<AgentTask>& _tasks);
+
+                    /**
+                     * 判断参数 Tasks 是否已赋值
+                     * @return Tasks 是否已赋值
+                     * 
+                     */
+                    bool TasksHasBeenSet() const;
+
+                    /**
+                     * 获取<p>问卷信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Questionnaire <p>问卷信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    Questionnaire GetQuestionnaire() const;
+
+                    /**
+                     * 设置<p>问卷信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _questionnaire <p>问卷信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetQuestionnaire(const Questionnaire& _questionnaire);
+
+                    /**
+                     * 判断参数 Questionnaire 是否已赋值
+                     * @return Questionnaire 是否已赋值
+                     * 
+                     */
+                    bool QuestionnaireHasBeenSet() const;
+
+                    /**
+                     * 获取<p>选项卡模式</p>
+                     * @return OptionMode <p>选项卡模式</p>
+                     * 
+                     */
+                    int64_t GetOptionMode() const;
+
+                    /**
+                     * 设置<p>选项卡模式</p>
+                     * @param _optionMode <p>选项卡模式</p>
+                     * 
+                     */
+                    void SetOptionMode(const int64_t& _optionMode);
+
+                    /**
+                     * 判断参数 OptionMode 是否已赋值
+                     * @return OptionMode 是否已赋值
+                     * 
+                     */
+                    bool OptionModeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 消息内容类型
-text：文本
-image：图片
-file：文件
-option_cards：选项卡
-custom_params：用户自定义业务参数
-sandbox：云桌面
-custom_variables：自定义输入参数
-web_search: 网页搜索内容
-file_collection：文件收集信息
-widget：widget信息
-widget_action：用户端widget动作信息
+                     * <p>消息内容类型<br>text：文本<br>image：图片<br>file：文件<br>option_cards：选项卡<br>custom_params：用户自定义业务参数<br>sandbox：云桌面<br>custom_variables：自定义输入参数<br>web_search: 网页搜索内容<br>file_collection：文件收集信息<br>widget：widget信息<br>widget_action：用户端widget动作信息</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 文本内容
+                     * <p>文本内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
-                     * 引用信息
+                     * <p>引用信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<QuoteInfo> m_quoteInfos;
                     bool m_quoteInfosHasBeenSet;
 
                     /**
-                     * 参考文献信息
+                     * <p>参考文献信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ContentReference> m_references;
                     bool m_referencesHasBeenSet;
 
                     /**
-                     * 图片信息
+                     * <p>图片信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ImageInfoContent m_image;
                     bool m_imageHasBeenSet;
 
                     /**
-                     * 文件信息
+                     * <p>文件信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FileInfoContent m_file;
                     bool m_fileHasBeenSet;
 
                     /**
-                     * 选项卡信息
+                     * <p>选项卡信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_optionCards;
                     bool m_optionCardsHasBeenSet;
 
                     /**
-                     * 用户自定义业务参数信息
+                     * <p>用户自定义业务参数信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_customParams;
                     bool m_customParamsHasBeenSet;
 
                     /**
-                     * 自定义变量
+                     * <p>自定义变量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_customVariables;
                     bool m_customVariablesHasBeenSet;
 
                     /**
-                     * 沙盒信息
+                     * <p>沙盒信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SandboxContent m_sandbox;
                     bool m_sandboxHasBeenSet;
 
                     /**
-                     * 网页搜索内容
+                     * <p>网页搜索内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WebSearchContent m_webSearch;
                     bool m_webSearchHasBeenSet;
 
                     /**
-                     * 文件收集信息
+                     * <p>文件收集信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FileCollection m_fileCollection;
                     bool m_fileCollectionHasBeenSet;
 
                     /**
-                     * Widget信息
+                     * <p>Widget信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Widget m_widget;
                     bool m_widgetHasBeenSet;
 
                     /**
-                     * Widget动作信息
+                     * <p>Widget动作信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WidgetAction m_widgetAction;
                     bool m_widgetActionHasBeenSet;
+
+                    /**
+                     * <p>任务列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AgentTask> m_tasks;
+                    bool m_tasksHasBeenSet;
+
+                    /**
+                     * <p>问卷信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Questionnaire m_questionnaire;
+                    bool m_questionnaireHasBeenSet;
+
+                    /**
+                     * <p>选项卡模式</p>
+                     */
+                    int64_t m_optionMode;
+                    bool m_optionModeHasBeenSet;
 
                 };
             }

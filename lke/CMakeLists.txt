@@ -104,7 +104,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/ModifyRejectedQuestionRequest.h
   include/tencentcloud/lke/v20231130/model/DescribeWorkflowRunResponse.h
   include/tencentcloud/lke/v20231130/model/OptionCardIndex.h
-  include/tencentcloud/lke/v20231130/model/ListReleaseDocPreviewRequest.h
+  include/tencentcloud/lke/v20231130/model/TokenStat.h
   include/tencentcloud/lke/v20231130/model/AgentPluginHeader.h
   include/tencentcloud/lke/v20231130/model/DescribeStorageCredentialRequest.h
   include/tencentcloud/lke/v20231130/model/SearchStrategy.h
@@ -154,12 +154,15 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/RetryDocAuditRequest.h
   include/tencentcloud/lke/v20231130/model/ExportUnsatisfiedReplyRequest.h
   include/tencentcloud/lke/v20231130/model/FileCollection.h
-  include/tencentcloud/lke/v20231130/model/TokenStat.h
+  include/tencentcloud/lke/v20231130/model/ListReleaseDocPreviewRequest.h
+  include/tencentcloud/lke/v20231130/model/QuestionOption.h
   include/tencentcloud/lke/v20231130/model/DigitalHumanConfig.h
   include/tencentcloud/lke/v20231130/model/ExportUnsatisfiedReplyResponse.h
+  include/tencentcloud/lke/v20231130/model/DescribeStorageCredentialResponse.h
   include/tencentcloud/lke/v20231130/model/DescribeReferResponse.h
   include/tencentcloud/lke/v20231130/model/WorkflowRef.h
   include/tencentcloud/lke/v20231130/model/ListDocCateResponse.h
+  include/tencentcloud/lke/v20231130/model/QuestionnaireQuestion.h
   include/tencentcloud/lke/v20231130/model/AgentKnowledgeFilter.h
   include/tencentcloud/lke/v20231130/model/KnowledgeQaOutput.h
   include/tencentcloud/lke/v20231130/model/WorkflowRunBase.h
@@ -225,6 +228,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/CreateReleaseRequest.h
   include/tencentcloud/lke/v20231130/model/AgentProcedure.h
   include/tencentcloud/lke/v20231130/model/ExportAttributeLabelRequest.h
+  include/tencentcloud/lke/v20231130/model/AgentTask.h
   include/tencentcloud/lke/v20231130/model/ModifyQACateRequest.h
   include/tencentcloud/lke/v20231130/model/ProcedureDebugging.h
   include/tencentcloud/lke/v20231130/model/StopDocParseRequest.h
@@ -267,6 +271,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/IntentAchievement.h
   include/tencentcloud/lke/v20231130/model/VerifyQAResponse.h
   include/tencentcloud/lke/v20231130/model/DescribeSharedKnowledgeRequest.h
+  include/tencentcloud/lke/v20231130/model/Questionnaire.h
   include/tencentcloud/lke/v20231130/model/ModifyDocRequest.h
   include/tencentcloud/lke/v20231130/model/KnowledgeModelConfig.h
   include/tencentcloud/lke/v20231130/model/ListWorkflowRunsResponse.h
@@ -285,7 +290,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/ModifyDocCateResponse.h
   include/tencentcloud/lke/v20231130/model/QuoteInfo.h
   include/tencentcloud/lke/v20231130/model/DescribeCallStatsGraphResponse.h
-  include/tencentcloud/lke/v20231130/model/DescribeStorageCredentialResponse.h
+  include/tencentcloud/lke/v20231130/model/ReferDetail.h
   include/tencentcloud/lke/v20231130/model/CheckAttributeLabelExistResponse.h
   include/tencentcloud/lke/v20231130/model/GetTaskStatusRequest.h
   include/tencentcloud/lke/v20231130/model/AgentPluginQuery.h
@@ -316,7 +321,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/AgentModelInfo.h
   include/tencentcloud/lke/v20231130/model/AgentKnowledgeQAPlugin.h
   include/tencentcloud/lke/v20231130/model/SandboxContent.h
-  include/tencentcloud/lke/v20231130/model/ReferDetail.h
+  include/tencentcloud/lke/v20231130/model/QuestionnaireQuestionAnswer.h
   include/tencentcloud/lke/v20231130/model/KnowledgeUpdateInfo.h
   include/tencentcloud/lke/v20231130/model/CallbackWorkflowToolNodeResponse.h
   include/tencentcloud/lke/v20231130/model/GetDocPreviewRequest.h
@@ -476,7 +481,7 @@ set(lke_src
   src/v20231130/model/ModifyRejectedQuestionRequest.cpp
   src/v20231130/model/DescribeWorkflowRunResponse.cpp
   src/v20231130/model/OptionCardIndex.cpp
-  src/v20231130/model/ListReleaseDocPreviewRequest.cpp
+  src/v20231130/model/TokenStat.cpp
   src/v20231130/model/AgentPluginHeader.cpp
   src/v20231130/model/DescribeStorageCredentialRequest.cpp
   src/v20231130/model/SearchStrategy.cpp
@@ -526,12 +531,15 @@ set(lke_src
   src/v20231130/model/RetryDocAuditRequest.cpp
   src/v20231130/model/ExportUnsatisfiedReplyRequest.cpp
   src/v20231130/model/FileCollection.cpp
-  src/v20231130/model/TokenStat.cpp
+  src/v20231130/model/ListReleaseDocPreviewRequest.cpp
+  src/v20231130/model/QuestionOption.cpp
   src/v20231130/model/DigitalHumanConfig.cpp
   src/v20231130/model/ExportUnsatisfiedReplyResponse.cpp
+  src/v20231130/model/DescribeStorageCredentialResponse.cpp
   src/v20231130/model/DescribeReferResponse.cpp
   src/v20231130/model/WorkflowRef.cpp
   src/v20231130/model/ListDocCateResponse.cpp
+  src/v20231130/model/QuestionnaireQuestion.cpp
   src/v20231130/model/AgentKnowledgeFilter.cpp
   src/v20231130/model/KnowledgeQaOutput.cpp
   src/v20231130/model/WorkflowRunBase.cpp
@@ -597,6 +605,7 @@ set(lke_src
   src/v20231130/model/CreateReleaseRequest.cpp
   src/v20231130/model/AgentProcedure.cpp
   src/v20231130/model/ExportAttributeLabelRequest.cpp
+  src/v20231130/model/AgentTask.cpp
   src/v20231130/model/ModifyQACateRequest.cpp
   src/v20231130/model/ProcedureDebugging.cpp
   src/v20231130/model/StopDocParseRequest.cpp
@@ -639,6 +648,7 @@ set(lke_src
   src/v20231130/model/IntentAchievement.cpp
   src/v20231130/model/VerifyQAResponse.cpp
   src/v20231130/model/DescribeSharedKnowledgeRequest.cpp
+  src/v20231130/model/Questionnaire.cpp
   src/v20231130/model/ModifyDocRequest.cpp
   src/v20231130/model/KnowledgeModelConfig.cpp
   src/v20231130/model/ListWorkflowRunsResponse.cpp
@@ -657,7 +667,7 @@ set(lke_src
   src/v20231130/model/ModifyDocCateResponse.cpp
   src/v20231130/model/QuoteInfo.cpp
   src/v20231130/model/DescribeCallStatsGraphResponse.cpp
-  src/v20231130/model/DescribeStorageCredentialResponse.cpp
+  src/v20231130/model/ReferDetail.cpp
   src/v20231130/model/CheckAttributeLabelExistResponse.cpp
   src/v20231130/model/GetTaskStatusRequest.cpp
   src/v20231130/model/AgentPluginQuery.cpp
@@ -688,7 +698,7 @@ set(lke_src
   src/v20231130/model/AgentModelInfo.cpp
   src/v20231130/model/AgentKnowledgeQAPlugin.cpp
   src/v20231130/model/SandboxContent.cpp
-  src/v20231130/model/ReferDetail.cpp
+  src/v20231130/model/QuestionnaireQuestionAnswer.cpp
   src/v20231130/model/KnowledgeUpdateInfo.cpp
   src/v20231130/model/CallbackWorkflowToolNodeResponse.cpp
   src/v20231130/model/GetDocPreviewRequest.cpp

@@ -24,7 +24,9 @@ using namespace std;
 
 ClassifyStoreNameRequest::ClassifyStoreNameRequest() :
     m_imageBase64HasBeenSet(false),
-    m_imageUrlHasBeenSet(false)
+    m_imageUrlHasBeenSet(false),
+    m_sceneTypeHasBeenSet(false),
+    m_storeInfoHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string ClassifyStoreNameRequest::ToJsonString() const
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sceneTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sceneType, allocator);
+    }
+
+    if (m_storeInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StoreInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_storeInfo.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +107,38 @@ void ClassifyStoreNameRequest::SetImageUrl(const string& _imageUrl)
 bool ClassifyStoreNameRequest::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+bool ClassifyStoreNameRequest::GetSceneType() const
+{
+    return m_sceneType;
+}
+
+void ClassifyStoreNameRequest::SetSceneType(const bool& _sceneType)
+{
+    m_sceneType = _sceneType;
+    m_sceneTypeHasBeenSet = true;
+}
+
+bool ClassifyStoreNameRequest::SceneTypeHasBeenSet() const
+{
+    return m_sceneTypeHasBeenSet;
+}
+
+string ClassifyStoreNameRequest::GetStoreInfo() const
+{
+    return m_storeInfo;
+}
+
+void ClassifyStoreNameRequest::SetStoreInfo(const string& _storeInfo)
+{
+    m_storeInfo = _storeInfo;
+    m_storeInfoHasBeenSet = true;
+}
+
+bool ClassifyStoreNameRequest::StoreInfoHasBeenSet() const
+{
+    return m_storeInfoHasBeenSet;
 }
 
 

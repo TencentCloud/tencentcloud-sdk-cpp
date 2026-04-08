@@ -24,7 +24,8 @@ using namespace TencentCloud::Ocr::V20181119::Model;
 using namespace std;
 
 ClassifyStoreNameResponse::ClassifyStoreNameResponse() :
-    m_storeLabelHasBeenSet(false)
+    m_storeLabelHasBeenSet(false),
+    m_sceneTypeHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,16 @@ CoreInternalOutcome ClassifyStoreNameResponse::Deserialize(const string &payload
         m_storeLabelHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SceneType") && !rsp["SceneType"].IsNull())
+    {
+        if (!rsp["SceneType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SceneType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sceneType = string(rsp["SceneType"].GetString());
+        m_sceneTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -98,6 +109,14 @@ string ClassifyStoreNameResponse::ToJsonString() const
         }
     }
 
+    if (m_sceneTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sceneType.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -118,6 +137,16 @@ vector<string> ClassifyStoreNameResponse::GetStoreLabel() const
 bool ClassifyStoreNameResponse::StoreLabelHasBeenSet() const
 {
     return m_storeLabelHasBeenSet;
+}
+
+string ClassifyStoreNameResponse::GetSceneType() const
+{
+    return m_sceneType;
+}
+
+bool ClassifyStoreNameResponse::SceneTypeHasBeenSet() const
+{
+    return m_sceneTypeHasBeenSet;
 }
 
 

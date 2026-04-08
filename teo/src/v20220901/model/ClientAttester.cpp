@@ -27,7 +27,8 @@ ClientAttester::ClientAttester() :
     m_attesterSourceHasBeenSet(false),
     m_attesterDurationHasBeenSet(false),
     m_tCRCEOptionHasBeenSet(false),
-    m_tCCaptchaOptionHasBeenSet(false)
+    m_tCCaptchaOptionHasBeenSet(false),
+    m_tCEOCaptchaOptionHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,23 @@ CoreInternalOutcome ClientAttester::Deserialize(const rapidjson::Value &value)
         m_tCCaptchaOptionHasBeenSet = true;
     }
 
+    if (value.HasMember("TCEOCaptchaOption") && !value["TCEOCaptchaOption"].IsNull())
+    {
+        if (!value["TCEOCaptchaOption"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClientAttester.TCEOCaptchaOption` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tCEOCaptchaOption.Deserialize(value["TCEOCaptchaOption"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tCEOCaptchaOptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +201,15 @@ void ClientAttester::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tCCaptchaOption.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tCEOCaptchaOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TCEOCaptchaOption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tCEOCaptchaOption.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -298,5 +325,21 @@ void ClientAttester::SetTCCaptchaOption(const TCCaptchaOption& _tCCaptchaOption)
 bool ClientAttester::TCCaptchaOptionHasBeenSet() const
 {
     return m_tCCaptchaOptionHasBeenSet;
+}
+
+TCEOCaptchaOption ClientAttester::GetTCEOCaptchaOption() const
+{
+    return m_tCEOCaptchaOption;
+}
+
+void ClientAttester::SetTCEOCaptchaOption(const TCEOCaptchaOption& _tCEOCaptchaOption)
+{
+    m_tCEOCaptchaOption = _tCEOCaptchaOption;
+    m_tCEOCaptchaOptionHasBeenSet = true;
+}
+
+bool ClientAttester::TCEOCaptchaOptionHasBeenSet() const
+{
+    return m_tCEOCaptchaOptionHasBeenSet;
 }
 

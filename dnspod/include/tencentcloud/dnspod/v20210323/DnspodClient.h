@@ -189,6 +189,8 @@
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordBatchRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordBatchResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyRecordBatchV3Request.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyRecordBatchV3Response.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordFieldsRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordFieldsResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordGroupRequest.h>
@@ -476,6 +478,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRecordBatchResponse> ModifyRecordBatchOutcome;
                 typedef std::future<ModifyRecordBatchOutcome> ModifyRecordBatchOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyRecordBatchRequest&, ModifyRecordBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRecordBatchAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRecordBatchV3Response> ModifyRecordBatchV3Outcome;
+                typedef std::future<ModifyRecordBatchV3Outcome> ModifyRecordBatchV3OutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::ModifyRecordBatchV3Request&, ModifyRecordBatchV3Outcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRecordBatchV3AsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRecordFieldsResponse> ModifyRecordFieldsOutcome;
                 typedef std::future<ModifyRecordFieldsOutcome> ModifyRecordFieldsOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyRecordFieldsRequest&, ModifyRecordFieldsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRecordFieldsAsyncHandler;
@@ -1271,6 +1276,15 @@ namespace TencentCloud
                 ModifyRecordBatchOutcome ModifyRecordBatch(const Model::ModifyRecordBatchRequest &request);
                 void ModifyRecordBatchAsync(const Model::ModifyRecordBatchRequest& request, const ModifyRecordBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyRecordBatchOutcomeCallable ModifyRecordBatchCallable(const Model::ModifyRecordBatchRequest& request);
+
+                /**
+                 *批量修改记录
+                 * @param req ModifyRecordBatchV3Request
+                 * @return ModifyRecordBatchV3Outcome
+                 */
+                ModifyRecordBatchV3Outcome ModifyRecordBatchV3(const Model::ModifyRecordBatchV3Request &request);
+                void ModifyRecordBatchV3Async(const Model::ModifyRecordBatchV3Request& request, const ModifyRecordBatchV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRecordBatchV3OutcomeCallable ModifyRecordBatchV3Callable(const Model::ModifyRecordBatchV3Request& request);
 
                 /**
                  *修改记录可选字段

@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取插件id
-                     * @return PluginId 插件id
+                     * 获取<p>插件id</p>
+                     * @return PluginId <p>插件id</p>
                      * 
                      */
                     std::string GetPluginId() const;
 
                     /**
-                     * 设置插件id
-                     * @param _pluginId 插件id
+                     * 设置<p>插件id</p>
+                     * @param _pluginId <p>插件id</p>
                      * 
                      */
                     void SetPluginId(const std::string& _pluginId);
@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool PluginIdHasBeenSet() const;
 
                     /**
-                     * 获取应用配置的插件header信息
-                     * @return Headers 应用配置的插件header信息
+                     * 获取<p>应用配置的插件header信息</p>
+                     * @return Headers <p>应用配置的插件header信息</p>
                      * 
                      */
                     std::vector<AgentPluginHeader> GetHeaders() const;
 
                     /**
-                     * 设置应用配置的插件header信息
-                     * @param _headers 应用配置的插件header信息
+                     * 设置<p>应用配置的插件header信息</p>
+                     * @param _headers <p>应用配置的插件header信息</p>
                      * 
                      */
                     void SetHeaders(const std::vector<AgentPluginHeader>& _headers);
@@ -93,18 +93,18 @@ namespace TencentCloud
                     bool HeadersHasBeenSet() const;
 
                     /**
-                     * 获取插件调用LLM时使用的模型配置，一般用于指定知识库问答插件的生成模型
+                     * 获取<p>插件调用LLM时使用的模型配置，一般用于指定知识库问答插件的生成模型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Model 插件调用LLM时使用的模型配置，一般用于指定知识库问答插件的生成模型
+                     * @return Model <p>插件调用LLM时使用的模型配置，一般用于指定知识库问答插件的生成模型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AgentModelInfo GetModel() const;
 
                     /**
-                     * 设置插件调用LLM时使用的模型配置，一般用于指定知识库问答插件的生成模型
+                     * 设置<p>插件调用LLM时使用的模型配置，一般用于指定知识库问答插件的生成模型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _model 插件调用LLM时使用的模型配置，一般用于指定知识库问答插件的生成模型
+                     * @param _model <p>插件调用LLM时使用的模型配置，一般用于指定知识库问答插件的生成模型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -118,15 +118,15 @@ namespace TencentCloud
                     bool ModelHasBeenSet() const;
 
                     /**
-                     * 获取插件信息类型; 0: 未指定类型; 1: 知识库问答插件
-                     * @return PluginInfoType 插件信息类型; 0: 未指定类型; 1: 知识库问答插件
+                     * 获取<p>插件信息类型; 0: 未指定类型; 1: 知识库问答插件</p>
+                     * @return PluginInfoType <p>插件信息类型; 0: 未指定类型; 1: 知识库问答插件</p>
                      * 
                      */
                     uint64_t GetPluginInfoType() const;
 
                     /**
-                     * 设置插件信息类型; 0: 未指定类型; 1: 知识库问答插件
-                     * @param _pluginInfoType 插件信息类型; 0: 未指定类型; 1: 知识库问答插件
+                     * 设置<p>插件信息类型; 0: 未指定类型; 1: 知识库问答插件</p>
+                     * @param _pluginInfoType <p>插件信息类型; 0: 未指定类型; 1: 知识库问答插件</p>
                      * 
                      */
                     void SetPluginInfoType(const uint64_t& _pluginInfoType);
@@ -139,18 +139,18 @@ namespace TencentCloud
                     bool PluginInfoTypeHasBeenSet() const;
 
                     /**
-                     * 获取知识库问答插件配置
+                     * 获取<p>知识库问答插件配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KnowledgeQa 知识库问答插件配置
+                     * @return KnowledgeQa <p>知识库问答插件配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AgentKnowledgeQAPlugin GetKnowledgeQa() const;
 
                     /**
-                     * 设置知识库问答插件配置
+                     * 设置<p>知识库问答插件配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _knowledgeQa 知识库问答插件配置
+                     * @param _knowledgeQa <p>知识库问答插件配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -164,18 +164,18 @@ namespace TencentCloud
                     bool KnowledgeQaHasBeenSet() const;
 
                     /**
-                     * 获取是否使用一键授权
+                     * 获取<p>是否使用一键授权</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EnableRoleAuth 是否使用一键授权
+                     * @return EnableRoleAuth <p>是否使用一键授权</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableRoleAuth() const;
 
                     /**
-                     * 设置是否使用一键授权
+                     * 设置<p>是否使用一键授权</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _enableRoleAuth 是否使用一键授权
+                     * @param _enableRoleAuth <p>是否使用一键授权</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -189,15 +189,15 @@ namespace TencentCloud
                     bool EnableRoleAuthHasBeenSet() const;
 
                     /**
-                     * 获取应用配置的插件query信息
-                     * @return Query 应用配置的插件query信息
+                     * 获取<p>应用配置的插件query信息</p>
+                     * @return Query <p>应用配置的插件query信息</p>
                      * 
                      */
                     std::vector<AgentPluginQuery> GetQuery() const;
 
                     /**
-                     * 设置应用配置的插件query信息
-                     * @param _query 应用配置的插件query信息
+                     * 设置<p>应用配置的插件query信息</p>
+                     * @param _query <p>应用配置的插件query信息</p>
                      * 
                      */
                     void SetQuery(const std::vector<AgentPluginQuery>& _query);
@@ -210,15 +210,15 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取MCP类型
-                     * @return McpType MCP类型
+                     * 获取<p>MCP类型</p><p>枚举值：</p><ul><li>0： SSE 模式</li><li>1： Streamable Http 模式</li></ul>
+                     * @return McpType <p>MCP类型</p><p>枚举值：</p><ul><li>0： SSE 模式</li><li>1： Streamable Http 模式</li></ul>
                      * 
                      */
                     uint64_t GetMcpType() const;
 
                     /**
-                     * 设置MCP类型
-                     * @param _mcpType MCP类型
+                     * 设置<p>MCP类型</p><p>枚举值：</p><ul><li>0： SSE 模式</li><li>1： Streamable Http 模式</li></ul>
+                     * @param _mcpType <p>MCP类型</p><p>枚举值：</p><ul><li>0： SSE 模式</li><li>1： Streamable Http 模式</li></ul>
                      * 
                      */
                     void SetMcpType(const uint64_t& _mcpType);
@@ -233,52 +233,52 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 插件id
+                     * <p>插件id</p>
                      */
                     std::string m_pluginId;
                     bool m_pluginIdHasBeenSet;
 
                     /**
-                     * 应用配置的插件header信息
+                     * <p>应用配置的插件header信息</p>
                      */
                     std::vector<AgentPluginHeader> m_headers;
                     bool m_headersHasBeenSet;
 
                     /**
-                     * 插件调用LLM时使用的模型配置，一般用于指定知识库问答插件的生成模型
+                     * <p>插件调用LLM时使用的模型配置，一般用于指定知识库问答插件的生成模型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AgentModelInfo m_model;
                     bool m_modelHasBeenSet;
 
                     /**
-                     * 插件信息类型; 0: 未指定类型; 1: 知识库问答插件
+                     * <p>插件信息类型; 0: 未指定类型; 1: 知识库问答插件</p>
                      */
                     uint64_t m_pluginInfoType;
                     bool m_pluginInfoTypeHasBeenSet;
 
                     /**
-                     * 知识库问答插件配置
+                     * <p>知识库问答插件配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AgentKnowledgeQAPlugin m_knowledgeQa;
                     bool m_knowledgeQaHasBeenSet;
 
                     /**
-                     * 是否使用一键授权
+                     * <p>是否使用一键授权</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableRoleAuth;
                     bool m_enableRoleAuthHasBeenSet;
 
                     /**
-                     * 应用配置的插件query信息
+                     * <p>应用配置的插件query信息</p>
                      */
                     std::vector<AgentPluginQuery> m_query;
                     bool m_queryHasBeenSet;
 
                     /**
-                     * MCP类型
+                     * <p>MCP类型</p><p>枚举值：</p><ul><li>0： SSE 模式</li><li>1： Streamable Http 模式</li></ul>
                      */
                     uint64_t m_mcpType;
                     bool m_mcpTypeHasBeenSet;

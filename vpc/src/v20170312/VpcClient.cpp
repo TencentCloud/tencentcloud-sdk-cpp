@@ -4290,6 +4290,56 @@ VpcClient::CreateTrafficMirrorOutcomeCallable VpcClient::CreateTrafficMirrorCall
     return prom->get_future();
 }
 
+VpcClient::CreateTrafficMirrorFilterRulesOutcome VpcClient::CreateTrafficMirrorFilterRules(const CreateTrafficMirrorFilterRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTrafficMirrorFilterRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTrafficMirrorFilterRulesResponse rsp = CreateTrafficMirrorFilterRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTrafficMirrorFilterRulesOutcome(rsp);
+        else
+            return CreateTrafficMirrorFilterRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTrafficMirrorFilterRulesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateTrafficMirrorFilterRulesAsync(const CreateTrafficMirrorFilterRulesRequest& request, const CreateTrafficMirrorFilterRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateTrafficMirrorFilterRulesRequest&;
+    using Resp = CreateTrafficMirrorFilterRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateTrafficMirrorFilterRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VpcClient::CreateTrafficMirrorFilterRulesOutcomeCallable VpcClient::CreateTrafficMirrorFilterRulesCallable(const CreateTrafficMirrorFilterRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateTrafficMirrorFilterRulesOutcome>>();
+    CreateTrafficMirrorFilterRulesAsync(
+    request,
+    [prom](
+        const VpcClient*,
+        const CreateTrafficMirrorFilterRulesRequest&,
+        CreateTrafficMirrorFilterRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VpcClient::CreateTrafficPackagesOutcome VpcClient::CreateTrafficPackages(const CreateTrafficPackagesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTrafficPackages");
@@ -7182,6 +7232,56 @@ VpcClient::DeleteTrafficMirrorOutcomeCallable VpcClient::DeleteTrafficMirrorCall
         const VpcClient*,
         const DeleteTrafficMirrorRequest&,
         DeleteTrafficMirrorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VpcClient::DeleteTrafficMirrorFilterRulesOutcome VpcClient::DeleteTrafficMirrorFilterRules(const DeleteTrafficMirrorFilterRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTrafficMirrorFilterRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTrafficMirrorFilterRulesResponse rsp = DeleteTrafficMirrorFilterRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTrafficMirrorFilterRulesOutcome(rsp);
+        else
+            return DeleteTrafficMirrorFilterRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTrafficMirrorFilterRulesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteTrafficMirrorFilterRulesAsync(const DeleteTrafficMirrorFilterRulesRequest& request, const DeleteTrafficMirrorFilterRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteTrafficMirrorFilterRulesRequest&;
+    using Resp = DeleteTrafficMirrorFilterRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteTrafficMirrorFilterRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VpcClient::DeleteTrafficMirrorFilterRulesOutcomeCallable VpcClient::DeleteTrafficMirrorFilterRulesCallable(const DeleteTrafficMirrorFilterRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteTrafficMirrorFilterRulesOutcome>>();
+    DeleteTrafficMirrorFilterRulesAsync(
+    request,
+    [prom](
+        const VpcClient*,
+        const DeleteTrafficMirrorFilterRulesRequest&,
+        DeleteTrafficMirrorFilterRulesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -12782,6 +12882,56 @@ VpcClient::DescribeTenantCcnsOutcomeCallable VpcClient::DescribeTenantCcnsCallab
         const VpcClient*,
         const DescribeTenantCcnsRequest&,
         DescribeTenantCcnsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VpcClient::DescribeTrafficMirrorFilterRulesOutcome VpcClient::DescribeTrafficMirrorFilterRules(const DescribeTrafficMirrorFilterRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTrafficMirrorFilterRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTrafficMirrorFilterRulesResponse rsp = DescribeTrafficMirrorFilterRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTrafficMirrorFilterRulesOutcome(rsp);
+        else
+            return DescribeTrafficMirrorFilterRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTrafficMirrorFilterRulesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeTrafficMirrorFilterRulesAsync(const DescribeTrafficMirrorFilterRulesRequest& request, const DescribeTrafficMirrorFilterRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTrafficMirrorFilterRulesRequest&;
+    using Resp = DescribeTrafficMirrorFilterRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTrafficMirrorFilterRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VpcClient::DescribeTrafficMirrorFilterRulesOutcomeCallable VpcClient::DescribeTrafficMirrorFilterRulesCallable(const DescribeTrafficMirrorFilterRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTrafficMirrorFilterRulesOutcome>>();
+    DescribeTrafficMirrorFilterRulesAsync(
+    request,
+    [prom](
+        const VpcClient*,
+        const DescribeTrafficMirrorFilterRulesRequest&,
+        DescribeTrafficMirrorFilterRulesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -19082,6 +19232,56 @@ VpcClient::ModifyTrafficMirrorAttributeOutcomeCallable VpcClient::ModifyTrafficM
         const VpcClient*,
         const ModifyTrafficMirrorAttributeRequest&,
         ModifyTrafficMirrorAttributeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VpcClient::ModifyTrafficMirrorFilterRulesOutcome VpcClient::ModifyTrafficMirrorFilterRules(const ModifyTrafficMirrorFilterRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTrafficMirrorFilterRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTrafficMirrorFilterRulesResponse rsp = ModifyTrafficMirrorFilterRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTrafficMirrorFilterRulesOutcome(rsp);
+        else
+            return ModifyTrafficMirrorFilterRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTrafficMirrorFilterRulesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyTrafficMirrorFilterRulesAsync(const ModifyTrafficMirrorFilterRulesRequest& request, const ModifyTrafficMirrorFilterRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyTrafficMirrorFilterRulesRequest&;
+    using Resp = ModifyTrafficMirrorFilterRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyTrafficMirrorFilterRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VpcClient::ModifyTrafficMirrorFilterRulesOutcomeCallable VpcClient::ModifyTrafficMirrorFilterRulesCallable(const ModifyTrafficMirrorFilterRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyTrafficMirrorFilterRulesOutcome>>();
+    ModifyTrafficMirrorFilterRulesAsync(
+    request,
+    [prom](
+        const VpcClient*,
+        const ModifyTrafficMirrorFilterRulesRequest&,
+        ModifyTrafficMirrorFilterRulesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

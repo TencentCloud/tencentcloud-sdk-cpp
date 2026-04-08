@@ -83,6 +83,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/CreateCLSIndexResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeRealtimeLogDeliveryTasksRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeOriginProtectionResponse.h
+  include/tencentcloud/teo/v20220901/model/TCEOCaptchaOption.h
   include/tencentcloud/teo/v20220901/model/DescribeBillingDataRequest.h
   include/tencentcloud/teo/v20220901/model/LogFormat.h
   include/tencentcloud/teo/v20220901/model/DescribeEnvironmentsRequest.h
@@ -882,6 +883,7 @@ set(teo_src
   src/v20220901/model/CreateCLSIndexResponse.cpp
   src/v20220901/model/DescribeRealtimeLogDeliveryTasksRequest.cpp
   src/v20220901/model/DescribeOriginProtectionResponse.cpp
+  src/v20220901/model/TCEOCaptchaOption.cpp
   src/v20220901/model/DescribeBillingDataRequest.cpp
   src/v20220901/model/LogFormat.cpp
   src/v20220901/model/DescribeEnvironmentsRequest.cpp

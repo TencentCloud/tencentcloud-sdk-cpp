@@ -33,7 +33,8 @@ ModifyLiveAvatarRoomRequest::ModifyLiveAvatarRoomRequest() :
     m_anchorHorizontalPosHasBeenSet(false),
     m_speechSpeedHasBeenSet(false),
     m_speechVolumeHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_roomTypeHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,14 @@ string ModifyLiveAvatarRoomRequest::ToJsonString() const
         string key = "Operator";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_operator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roomTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoomType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_roomType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -314,6 +323,22 @@ void ModifyLiveAvatarRoomRequest::SetOperator(const string& _operator)
 bool ModifyLiveAvatarRoomRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+string ModifyLiveAvatarRoomRequest::GetRoomType() const
+{
+    return m_roomType;
+}
+
+void ModifyLiveAvatarRoomRequest::SetRoomType(const string& _roomType)
+{
+    m_roomType = _roomType;
+    m_roomTypeHasBeenSet = true;
+}
+
+bool ModifyLiveAvatarRoomRequest::RoomTypeHasBeenSet() const
+{
+    return m_roomTypeHasBeenSet;
 }
 
 
