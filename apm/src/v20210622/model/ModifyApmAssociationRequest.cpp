@@ -27,7 +27,8 @@ ModifyApmAssociationRequest::ModifyApmAssociationRequest() :
     m_statusHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_peerIdHasBeenSet(false),
-    m_topicHasBeenSet(false)
+    m_topicHasBeenSet(false),
+    m_metricTopicHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string ModifyApmAssociationRequest::ToJsonString() const
         string key = "Topic";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_topic.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metricTopicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetricTopic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_metricTopic.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void ModifyApmAssociationRequest::SetTopic(const string& _topic)
 bool ModifyApmAssociationRequest::TopicHasBeenSet() const
 {
     return m_topicHasBeenSet;
+}
+
+string ModifyApmAssociationRequest::GetMetricTopic() const
+{
+    return m_metricTopic;
+}
+
+void ModifyApmAssociationRequest::SetMetricTopic(const string& _metricTopic)
+{
+    m_metricTopic = _metricTopic;
+    m_metricTopicHasBeenSet = true;
+}
+
+bool ModifyApmAssociationRequest::MetricTopicHasBeenSet() const
+{
+    return m_metricTopicHasBeenSet;
 }
 
 

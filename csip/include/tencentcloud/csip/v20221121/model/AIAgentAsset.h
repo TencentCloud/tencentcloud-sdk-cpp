@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ID 标识
-                     * @return ID ID 标识
+                     * 获取<p>ID 标识</p>
+                     * @return ID <p>ID 标识</p>
                      * 
                      */
                     std::string GetID() const;
 
                     /**
-                     * 设置ID 标识
-                     * @param _iD ID 标识
+                     * 设置<p>ID 标识</p>
+                     * @param _iD <p>ID 标识</p>
                      * 
                      */
                     void SetID(const std::string& _iD);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取agent 名称
-                     * @return AgentName agent 名称
+                     * 获取<p>agent 名称</p>
+                     * @return AgentName <p>agent 名称</p>
                      * 
                      */
                     std::string GetAgentName() const;
 
                     /**
-                     * 设置agent 名称
-                     * @param _agentName agent 名称
+                     * 设置<p>agent 名称</p>
+                     * @param _agentName <p>agent 名称</p>
                      * 
                      */
                     void SetAgentName(const std::string& _agentName);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool AgentNameHasBeenSet() const;
 
                     /**
-                     * 获取agent 使用模型名称
-                     * @return AgentModel agent 使用模型名称
+                     * 获取<p>agent 使用模型名称</p>
+                     * @return AgentModel <p>agent 使用模型名称</p>
                      * 
                      */
                     std::vector<std::string> GetAgentModel() const;
 
                     /**
-                     * 设置agent 使用模型名称
-                     * @param _agentModel agent 使用模型名称
+                     * 设置<p>agent 使用模型名称</p>
+                     * @param _agentModel <p>agent 使用模型名称</p>
                      * 
                      */
                     void SetAgentModel(const std::vector<std::string>& _agentModel);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool AgentModelHasBeenSet() const;
 
                     /**
-                     * 获取实例 ID
-                     * @return InstanceID 实例 ID
+                     * 获取<p>实例 ID</p>
+                     * @return InstanceID <p>实例 ID</p>
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param _instanceID 实例 ID
+                     * 设置<p>实例 ID</p>
+                     * @param _instanceID <p>实例 ID</p>
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -132,15 +132,36 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取metadata 风险列表。有如下枚举值: 1. AK_TMP  2. USER_DATA
-                     * @return MetadataRiskList metadata 风险列表。有如下枚举值: 1. AK_TMP  2. USER_DATA
+                     * 获取<p>实例名称</p>
+                     * @return InstanceName <p>实例名称</p>
+                     * 
+                     */
+                    std::string GetInstanceName() const;
+
+                    /**
+                     * 设置<p>实例名称</p>
+                     * @param _instanceName <p>实例名称</p>
+                     * 
+                     */
+                    void SetInstanceName(const std::string& _instanceName);
+
+                    /**
+                     * 判断参数 InstanceName 是否已赋值
+                     * @return InstanceName 是否已赋值
+                     * 
+                     */
+                    bool InstanceNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>metadata 风险列表。有如下枚举值: 1. AK_TMP  2. USER_DATA</p>
+                     * @return MetadataRiskList <p>metadata 风险列表。有如下枚举值: 1. AK_TMP  2. USER_DATA</p>
                      * 
                      */
                     std::vector<std::string> GetMetadataRiskList() const;
 
                     /**
-                     * 设置metadata 风险列表。有如下枚举值: 1. AK_TMP  2. USER_DATA
-                     * @param _metadataRiskList metadata 风险列表。有如下枚举值: 1. AK_TMP  2. USER_DATA
+                     * 设置<p>metadata 风险列表。有如下枚举值: 1. AK_TMP  2. USER_DATA</p>
+                     * @param _metadataRiskList <p>metadata 风险列表。有如下枚举值: 1. AK_TMP  2. USER_DATA</p>
                      * 
                      */
                     void SetMetadataRiskList(const std::vector<std::string>& _metadataRiskList);
@@ -153,15 +174,15 @@ namespace TencentCloud
                     bool MetadataRiskListHasBeenSet() const;
 
                     /**
-                     * 获取首次检出时间
-                     * @return IdentityTimeFirst 首次检出时间
+                     * 获取<p>首次检出时间</p>
+                     * @return IdentityTimeFirst <p>首次检出时间</p>
                      * 
                      */
                     std::string GetIdentityTimeFirst() const;
 
                     /**
-                     * 设置首次检出时间
-                     * @param _identityTimeFirst 首次检出时间
+                     * 设置<p>首次检出时间</p>
+                     * @param _identityTimeFirst <p>首次检出时间</p>
                      * 
                      */
                     void SetIdentityTimeFirst(const std::string& _identityTimeFirst);
@@ -174,15 +195,15 @@ namespace TencentCloud
                     bool IdentityTimeFirstHasBeenSet() const;
 
                     /**
-                     * 获取最近检出时间
-                     * @return IdentityTimeLast 最近检出时间
+                     * 获取<p>最近检出时间</p>
+                     * @return IdentityTimeLast <p>最近检出时间</p>
                      * 
                      */
                     std::string GetIdentityTimeLast() const;
 
                     /**
-                     * 设置最近检出时间
-                     * @param _identityTimeLast 最近检出时间
+                     * 设置<p>最近检出时间</p>
+                     * @param _identityTimeLast <p>最近检出时间</p>
                      * 
                      */
                     void SetIdentityTimeLast(const std::string& _identityTimeLast);
@@ -195,15 +216,15 @@ namespace TencentCloud
                     bool IdentityTimeLastHasBeenSet() const;
 
                     /**
-                     * 获取检出方式。有如下枚举值 1. FINGER 资产指纹方式检出 2. NETWORK 网络访问方式检出
-                     * @return IdentityMethod 检出方式。有如下枚举值 1. FINGER 资产指纹方式检出 2. NETWORK 网络访问方式检出
+                     * 获取<p>检出方式。有如下枚举值 1. FINGER 资产指纹方式检出 2. NETWORK 网络访问方式检出</p>
+                     * @return IdentityMethod <p>检出方式。有如下枚举值 1. FINGER 资产指纹方式检出 2. NETWORK 网络访问方式检出</p>
                      * 
                      */
                     std::string GetIdentityMethod() const;
 
                     /**
-                     * 设置检出方式。有如下枚举值 1. FINGER 资产指纹方式检出 2. NETWORK 网络访问方式检出
-                     * @param _identityMethod 检出方式。有如下枚举值 1. FINGER 资产指纹方式检出 2. NETWORK 网络访问方式检出
+                     * 设置<p>检出方式。有如下枚举值 1. FINGER 资产指纹方式检出 2. NETWORK 网络访问方式检出</p>
+                     * @param _identityMethod <p>检出方式。有如下枚举值 1. FINGER 资产指纹方式检出 2. NETWORK 网络访问方式检出</p>
                      * 
                      */
                     void SetIdentityMethod(const std::string& _identityMethod);
@@ -216,19 +237,15 @@ namespace TencentCloud
                     bool IdentityMethodHasBeenSet() const;
 
                     /**
-                     * 获取暴露状态。有如下枚举值。1. EXPOSED；2.UNEXPOSED；
-3. UNKNOWN;
-                     * @return ExposureStatus 暴露状态。有如下枚举值。1. EXPOSED；2.UNEXPOSED；
-3. UNKNOWN;
+                     * 获取<p>暴露状态。有如下枚举值。1. EXPOSED；2.UNEXPOSED；</p><ol start="3"><li>UNKNOWN;</li></ol>
+                     * @return ExposureStatus <p>暴露状态。有如下枚举值。1. EXPOSED；2.UNEXPOSED；</p><ol start="3"><li>UNKNOWN;</li></ol>
                      * 
                      */
                     std::string GetExposureStatus() const;
 
                     /**
-                     * 设置暴露状态。有如下枚举值。1. EXPOSED；2.UNEXPOSED；
-3. UNKNOWN;
-                     * @param _exposureStatus 暴露状态。有如下枚举值。1. EXPOSED；2.UNEXPOSED；
-3. UNKNOWN;
+                     * 设置<p>暴露状态。有如下枚举值。1. EXPOSED；2.UNEXPOSED；</p><ol start="3"><li>UNKNOWN;</li></ol>
+                     * @param _exposureStatus <p>暴露状态。有如下枚举值。1. EXPOSED；2.UNEXPOSED；</p><ol start="3"><li>UNKNOWN;</li></ol>
                      * 
                      */
                     void SetExposureStatus(const std::string& _exposureStatus);
@@ -241,15 +258,15 @@ namespace TencentCloud
                     bool ExposureStatusHasBeenSet() const;
 
                     /**
-                     * 获取metadata 有风险时对应路径
-                     * @return MetadataRiskURL metadata 有风险时对应路径
+                     * 获取<p>metadata 有风险时对应路径</p>
+                     * @return MetadataRiskURL <p>metadata 有风险时对应路径</p>
                      * 
                      */
                     std::string GetMetadataRiskURL() const;
 
                     /**
-                     * 设置metadata 有风险时对应路径
-                     * @param _metadataRiskURL metadata 有风险时对应路径
+                     * 设置<p>metadata 有风险时对应路径</p>
+                     * @param _metadataRiskURL <p>metadata 有风险时对应路径</p>
                      * 
                      */
                     void SetMetadataRiskURL(const std::string& _metadataRiskURL);
@@ -262,15 +279,15 @@ namespace TencentCloud
                     bool MetadataRiskURLHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return SkillState 无
+                     * 获取<p>无</p>
+                     * @return SkillState <p>无</p>
                      * 
                      */
                     SkillState GetSkillState() const;
 
                     /**
-                     * 设置无
-                     * @param _skillState 无
+                     * 设置<p>无</p>
+                     * @param _skillState <p>无</p>
                      * 
                      */
                     void SetSkillState(const SkillState& _skillState);
@@ -285,68 +302,73 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ID 标识
+                     * <p>ID 标识</p>
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * agent 名称
+                     * <p>agent 名称</p>
                      */
                     std::string m_agentName;
                     bool m_agentNameHasBeenSet;
 
                     /**
-                     * agent 使用模型名称
+                     * <p>agent 使用模型名称</p>
                      */
                     std::vector<std::string> m_agentModel;
                     bool m_agentModelHasBeenSet;
 
                     /**
-                     * 实例 ID
+                     * <p>实例 ID</p>
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * metadata 风险列表。有如下枚举值: 1. AK_TMP  2. USER_DATA
+                     * <p>实例名称</p>
+                     */
+                    std::string m_instanceName;
+                    bool m_instanceNameHasBeenSet;
+
+                    /**
+                     * <p>metadata 风险列表。有如下枚举值: 1. AK_TMP  2. USER_DATA</p>
                      */
                     std::vector<std::string> m_metadataRiskList;
                     bool m_metadataRiskListHasBeenSet;
 
                     /**
-                     * 首次检出时间
+                     * <p>首次检出时间</p>
                      */
                     std::string m_identityTimeFirst;
                     bool m_identityTimeFirstHasBeenSet;
 
                     /**
-                     * 最近检出时间
+                     * <p>最近检出时间</p>
                      */
                     std::string m_identityTimeLast;
                     bool m_identityTimeLastHasBeenSet;
 
                     /**
-                     * 检出方式。有如下枚举值 1. FINGER 资产指纹方式检出 2. NETWORK 网络访问方式检出
+                     * <p>检出方式。有如下枚举值 1. FINGER 资产指纹方式检出 2. NETWORK 网络访问方式检出</p>
                      */
                     std::string m_identityMethod;
                     bool m_identityMethodHasBeenSet;
 
                     /**
-                     * 暴露状态。有如下枚举值。1. EXPOSED；2.UNEXPOSED；
-3. UNKNOWN;
+                     * <p>暴露状态。有如下枚举值。1. EXPOSED；2.UNEXPOSED；</p><ol start="3"><li>UNKNOWN;</li></ol>
                      */
                     std::string m_exposureStatus;
                     bool m_exposureStatusHasBeenSet;
 
                     /**
-                     * metadata 有风险时对应路径
+                     * <p>metadata 有风险时对应路径</p>
                      */
                     std::string m_metadataRiskURL;
                     bool m_metadataRiskURLHasBeenSet;
 
                     /**
-                     * 无
+                     * <p>无</p>
                      */
                     SkillState m_skillState;
                     bool m_skillStateHasBeenSet;

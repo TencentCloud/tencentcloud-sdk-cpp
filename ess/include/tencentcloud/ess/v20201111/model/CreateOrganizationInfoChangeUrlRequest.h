@@ -45,19 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
-                     * @return Operator 执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * 获取<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
+                     * @return Operator <p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
-                     * @param _operator 执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * 设置<p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
+                     * @param _operator <p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -70,19 +66,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取企业信息变更类型，可选类型如下：
-<ul><li>**1**：企业超管变更</li><li>**2**：企业基础信息变更</li></ul>
-                     * @return ChangeType 企业信息变更类型，可选类型如下：
-<ul><li>**1**：企业超管变更</li><li>**2**：企业基础信息变更</li></ul>
+                     * 获取<p>企业信息变更类型，可选类型如下：</p><ul><li>**1**：企业超管变更</li><li>**2**：企业基础信息变更</li></ul>
+                     * @return ChangeType <p>企业信息变更类型，可选类型如下：</p><ul><li>**1**：企业超管变更</li><li>**2**：企业基础信息变更</li></ul>
                      * 
                      */
                     uint64_t GetChangeType() const;
 
                     /**
-                     * 设置企业信息变更类型，可选类型如下：
-<ul><li>**1**：企业超管变更</li><li>**2**：企业基础信息变更</li></ul>
-                     * @param _changeType 企业信息变更类型，可选类型如下：
-<ul><li>**1**：企业超管变更</li><li>**2**：企业基础信息变更</li></ul>
+                     * 设置<p>企业信息变更类型，可选类型如下：</p><ul><li>**1**：企业超管变更</li><li>**2**：企业基础信息变更</li></ul>
+                     * @param _changeType <p>企业信息变更类型，可选类型如下：</p><ul><li>**1**：企业超管变更</li><li>**2**：企业基础信息变更</li></ul>
                      * 
                      */
                     void SetChangeType(const uint64_t& _changeType);
@@ -95,19 +87,15 @@ namespace TencentCloud
                     bool ChangeTypeHasBeenSet() const;
 
                     /**
-                     * 获取代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
-                     * @return Agent 代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 获取<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
+                     * @return Agent <p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
-                     * @param _agent 代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * 设置<p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
+                     * @param _agent <p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -119,28 +107,52 @@ namespace TencentCloud
                      */
                     bool AgentHasBeenSet() const;
 
+                    /**
+                     * 获取<p>他方企业的统一社会信用代码，如果不传默认生成当前企业信息变更链接</p>
+                     * @return UnifiedSocialCreditCode <p>他方企业的统一社会信用代码，如果不传默认生成当前企业信息变更链接</p>
+                     * 
+                     */
+                    std::string GetUnifiedSocialCreditCode() const;
+
+                    /**
+                     * 设置<p>他方企业的统一社会信用代码，如果不传默认生成当前企业信息变更链接</p>
+                     * @param _unifiedSocialCreditCode <p>他方企业的统一社会信用代码，如果不传默认生成当前企业信息变更链接</p>
+                     * 
+                     */
+                    void SetUnifiedSocialCreditCode(const std::string& _unifiedSocialCreditCode);
+
+                    /**
+                     * 判断参数 UnifiedSocialCreditCode 是否已赋值
+                     * @return UnifiedSocialCreditCode 是否已赋值
+                     * 
+                     */
+                    bool UnifiedSocialCreditCodeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 执行本接口操作的员工信息。
-注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
+                     * <p>执行本接口操作的员工信息。<br>注: <code>在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</code></p>
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 企业信息变更类型，可选类型如下：
-<ul><li>**1**：企业超管变更</li><li>**2**：企业基础信息变更</li></ul>
+                     * <p>企业信息变更类型，可选类型如下：</p><ul><li>**1**：企业超管变更</li><li>**2**：企业基础信息变更</li></ul>
                      */
                     uint64_t m_changeType;
                     bool m_changeTypeHasBeenSet;
 
                     /**
-                     * 代理企业和员工的信息。
-在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
+                     * <p>代理企业和员工的信息。<br>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。</p>
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * <p>他方企业的统一社会信用代码，如果不传默认生成当前企业信息变更链接</p>
+                     */
+                    std::string m_unifiedSocialCreditCode;
+                    bool m_unifiedSocialCreditCodeHasBeenSet;
 
                 };
             }

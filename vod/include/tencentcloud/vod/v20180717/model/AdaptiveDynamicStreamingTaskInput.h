@@ -28,6 +28,7 @@
 #include <tencentcloud/vod/v20180717/model/TraceWatermarkInput.h>
 #include <tencentcloud/vod/v20180717/model/CopyRightWatermarkInput.h>
 #include <tencentcloud/vod/v20180717/model/BlindWatermarkInput.h>
+#include <tencentcloud/vod/v20180717/model/SubtitleInfoInput.h>
 
 
 namespace TencentCloud
@@ -51,15 +52,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取转自适应码流模板 ID。
-                     * @return Definition 转自适应码流模板 ID。
+                     * 获取<p>转自适应码流模板 ID。</p>
+                     * @return Definition <p>转自适应码流模板 ID。</p>
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置转自适应码流模板 ID。
-                     * @param _definition 转自适应码流模板 ID。
+                     * 设置<p>转自适应码流模板 ID。</p>
+                     * @param _definition <p>转自适应码流模板 ID。</p>
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -72,15 +73,15 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取水印列表，支持多张图片或文字水印，最大可支持 10 张。
-                     * @return WatermarkSet 水印列表，支持多张图片或文字水印，最大可支持 10 张。
+                     * 获取<p>水印列表，支持多张图片或文字水印，最大可支持 10 张。</p>
+                     * @return WatermarkSet <p>水印列表，支持多张图片或文字水印，最大可支持 10 张。</p>
                      * 
                      */
                     std::vector<WatermarkInput> GetWatermarkSet() const;
 
                     /**
-                     * 设置水印列表，支持多张图片或文字水印，最大可支持 10 张。
-                     * @param _watermarkSet 水印列表，支持多张图片或文字水印，最大可支持 10 张。
+                     * 设置<p>水印列表，支持多张图片或文字水印，最大可支持 10 张。</p>
+                     * @param _watermarkSet <p>水印列表，支持多张图片或文字水印，最大可支持 10 张。</p>
                      * 
                      */
                     void SetWatermarkSet(const std::vector<WatermarkInput>& _watermarkSet);
@@ -93,15 +94,15 @@ namespace TencentCloud
                     bool WatermarkSetHasBeenSet() const;
 
                     /**
-                     * 获取溯源水印。
-                     * @return TraceWatermark 溯源水印。
+                     * 获取<p>溯源水印。</p>
+                     * @return TraceWatermark <p>溯源水印。</p>
                      * 
                      */
                     TraceWatermarkInput GetTraceWatermark() const;
 
                     /**
-                     * 设置溯源水印。
-                     * @param _traceWatermark 溯源水印。
+                     * 设置<p>溯源水印。</p>
+                     * @param _traceWatermark <p>溯源水印。</p>
                      * 
                      */
                     void SetTraceWatermark(const TraceWatermarkInput& _traceWatermark);
@@ -114,15 +115,15 @@ namespace TencentCloud
                     bool TraceWatermarkHasBeenSet() const;
 
                     /**
-                     * 获取版权水印。
-                     * @return CopyRightWatermark 版权水印。
+                     * 获取<p>版权水印。</p>
+                     * @return CopyRightWatermark <p>版权水印。</p>
                      * 
                      */
                     CopyRightWatermarkInput GetCopyRightWatermark() const;
 
                     /**
-                     * 设置版权水印。
-                     * @param _copyRightWatermark 版权水印。
+                     * 设置<p>版权水印。</p>
+                     * @param _copyRightWatermark <p>版权水印。</p>
                      * 
                      */
                     void SetCopyRightWatermark(const CopyRightWatermarkInput& _copyRightWatermark);
@@ -135,15 +136,15 @@ namespace TencentCloud
                     bool CopyRightWatermarkHasBeenSet() const;
 
                     /**
-                     * 获取数字水印。
-                     * @return BlindWatermark 数字水印。
+                     * 获取<p>数字水印。</p>
+                     * @return BlindWatermark <p>数字水印。</p>
                      * 
                      */
                     BlindWatermarkInput GetBlindWatermark() const;
 
                     /**
-                     * 设置数字水印。
-                     * @param _blindWatermark 数字水印。
+                     * 设置<p>数字水印。</p>
+                     * @param _blindWatermark <p>数字水印。</p>
                      * 
                      */
                     void SetBlindWatermark(const BlindWatermarkInput& _blindWatermark);
@@ -156,15 +157,15 @@ namespace TencentCloud
                     bool BlindWatermarkHasBeenSet() const;
 
                     /**
-                     * 获取字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。
-                     * @return SubtitleSet 字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。
+                     * 获取<p>外挂字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。</p>
+                     * @return SubtitleSet <p>外挂字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。</p>
                      * 
                      */
                     std::vector<std::string> GetSubtitleSet() const;
 
                     /**
-                     * 设置字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。
-                     * @param _subtitleSet 字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。
+                     * 设置<p>外挂字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。</p>
+                     * @param _subtitleSet <p>外挂字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。</p>
                      * 
                      */
                     void SetSubtitleSet(const std::vector<std::string>& _subtitleSet);
@@ -176,43 +177,70 @@ namespace TencentCloud
                      */
                     bool SubtitleSetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>字幕压制信息列表。最大可支持 2 个。</p>
+                     * @return SubtitleInfoSet <p>字幕压制信息列表。最大可支持 2 个。</p>
+                     * 
+                     */
+                    std::vector<SubtitleInfoInput> GetSubtitleInfoSet() const;
+
+                    /**
+                     * 设置<p>字幕压制信息列表。最大可支持 2 个。</p>
+                     * @param _subtitleInfoSet <p>字幕压制信息列表。最大可支持 2 个。</p>
+                     * 
+                     */
+                    void SetSubtitleInfoSet(const std::vector<SubtitleInfoInput>& _subtitleInfoSet);
+
+                    /**
+                     * 判断参数 SubtitleInfoSet 是否已赋值
+                     * @return SubtitleInfoSet 是否已赋值
+                     * 
+                     */
+                    bool SubtitleInfoSetHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 转自适应码流模板 ID。
+                     * <p>转自适应码流模板 ID。</p>
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * 水印列表，支持多张图片或文字水印，最大可支持 10 张。
+                     * <p>水印列表，支持多张图片或文字水印，最大可支持 10 张。</p>
                      */
                     std::vector<WatermarkInput> m_watermarkSet;
                     bool m_watermarkSetHasBeenSet;
 
                     /**
-                     * 溯源水印。
+                     * <p>溯源水印。</p>
                      */
                     TraceWatermarkInput m_traceWatermark;
                     bool m_traceWatermarkHasBeenSet;
 
                     /**
-                     * 版权水印。
+                     * <p>版权水印。</p>
                      */
                     CopyRightWatermarkInput m_copyRightWatermark;
                     bool m_copyRightWatermarkHasBeenSet;
 
                     /**
-                     * 数字水印。
+                     * <p>数字水印。</p>
                      */
                     BlindWatermarkInput m_blindWatermark;
                     bool m_blindWatermarkHasBeenSet;
 
                     /**
-                     * 字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。
+                     * <p>外挂字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。</p>
                      */
                     std::vector<std::string> m_subtitleSet;
                     bool m_subtitleSetHasBeenSet;
+
+                    /**
+                     * <p>字幕压制信息列表。最大可支持 2 个。</p>
+                     */
+                    std::vector<SubtitleInfoInput> m_subtitleInfoSet;
+                    bool m_subtitleInfoSetHasBeenSet;
 
                 };
             }

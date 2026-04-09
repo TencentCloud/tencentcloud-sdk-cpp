@@ -26,7 +26,8 @@ using namespace std;
 DescribeVoucherInfoResponse::DescribeVoucherInfoResponse() :
     m_totalCountHasBeenSet(false),
     m_totalBalanceHasBeenSet(false),
-    m_voucherInfosHasBeenSet(false)
+    m_voucherInfosHasBeenSet(false),
+    m_unitHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome DescribeVoucherInfoResponse::Deserialize(const string &paylo
         m_voucherInfosHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Unit") && !rsp["Unit"].IsNull())
+    {
+        if (!rsp["Unit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Unit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_unit = string(rsp["Unit"].GetString());
+        m_unitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +154,14 @@ string DescribeVoucherInfoResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_unitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Unit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unit.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -185,6 +204,16 @@ vector<VoucherInfos> DescribeVoucherInfoResponse::GetVoucherInfos() const
 bool DescribeVoucherInfoResponse::VoucherInfosHasBeenSet() const
 {
     return m_voucherInfosHasBeenSet;
+}
+
+string DescribeVoucherInfoResponse::GetUnit() const
+{
+    return m_unit;
+}
+
+bool DescribeVoucherInfoResponse::UnitHasBeenSet() const
+{
+    return m_unitHasBeenSet;
 }
 
 

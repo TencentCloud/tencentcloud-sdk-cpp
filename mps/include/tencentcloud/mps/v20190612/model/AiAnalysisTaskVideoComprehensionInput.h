@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频（音频）理解模板ID
-                     * @return Definition 视频（音频）理解模板ID
+                     * 获取<p>视频（音频）理解模板ID</p>
+                     * @return Definition <p>视频（音频）理解模板ID</p>
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置视频（音频）理解模板ID
-                     * @param _definition 视频（音频）理解模板ID
+                     * 设置<p>视频（音频）理解模板ID</p>
+                     * @param _definition <p>视频（音频）理解模板ID</p>
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -67,13 +67,40 @@ namespace TencentCloud
                      */
                     bool DefinitionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>扩展参数。</p>
+                     * @return ExtendedParameter <p>扩展参数。</p>
+                     * 
+                     */
+                    std::string GetExtendedParameter() const;
+
+                    /**
+                     * 设置<p>扩展参数。</p>
+                     * @param _extendedParameter <p>扩展参数。</p>
+                     * 
+                     */
+                    void SetExtendedParameter(const std::string& _extendedParameter);
+
+                    /**
+                     * 判断参数 ExtendedParameter 是否已赋值
+                     * @return ExtendedParameter 是否已赋值
+                     * 
+                     */
+                    bool ExtendedParameterHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 视频（音频）理解模板ID
+                     * <p>视频（音频）理解模板ID</p>
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
+
+                    /**
+                     * <p>扩展参数。</p>
+                     */
+                    std::string m_extendedParameter;
+                    bool m_extendedParameterHasBeenSet;
 
                 };
             }

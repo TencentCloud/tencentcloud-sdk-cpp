@@ -25,7 +25,8 @@ ContainerInfo::ContainerInfo() :
     m_portHasBeenSet(false),
     m_scriptsHasBeenSet(false),
     m_envsHasBeenSet(false),
-    m_storagesHasBeenSet(false)
+    m_storagesHasBeenSet(false),
+    m_probeHasBeenSet(false)
 {
 }
 
@@ -114,6 +115,23 @@ CoreInternalOutcome ContainerInfo::Deserialize(const rapidjson::Value &value)
         m_storagesHasBeenSet = true;
     }
 
+    if (value.HasMember("Probe") && !value["Probe"].IsNull())
+    {
+        if (!value["Probe"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerInfo.Probe` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_probe.Deserialize(value["Probe"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_probeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -179,6 +197,15 @@ void ContainerInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_probeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Probe";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_probe.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -262,5 +289,21 @@ void ContainerInfo::SetStorages(const vector<StorageInfo>& _storages)
 bool ContainerInfo::StoragesHasBeenSet() const
 {
     return m_storagesHasBeenSet;
+}
+
+ProbeInfo ContainerInfo::GetProbe() const
+{
+    return m_probe;
+}
+
+void ContainerInfo::SetProbe(const ProbeInfo& _probe)
+{
+    m_probe = _probe;
+    m_probeHasBeenSet = true;
+}
+
+bool ContainerInfo::ProbeHasBeenSet() const
+{
+    return m_probeHasBeenSet;
 }
 

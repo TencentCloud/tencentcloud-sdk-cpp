@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建的企业信息变更链接。
-                     * @return Url 创建的企业信息变更链接。
+                     * 获取<p>创建的企业信息变更链接。</p>
+                     * @return Url <p>创建的企业信息变更链接。</p>
                      * 
                      */
                     std::string GetUrl() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取链接过期时间。链接7天有效。
-                     * @return ExpiredTime 链接过期时间。链接7天有效。
+                     * 获取<p>链接过期时间。链接7天有效。</p>
+                     * @return ExpiredTime <p>链接过期时间。链接7天有效。</p>
                      * 
                      */
                     int64_t GetExpiredTime() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建的企业信息变更链接。
+                     * <p>创建的企业信息变更链接。</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 链接过期时间。链接7天有效。
+                     * <p>链接过期时间。链接7天有效。</p>
                      */
                     int64_t m_expiredTime;
                     bool m_expiredTimeHasBeenSet;

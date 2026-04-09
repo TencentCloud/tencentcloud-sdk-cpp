@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模版ID
-                     * @return TemplateId 模版ID
+                     * 获取<p>模版ID</p>
+                     * @return TemplateId <p>模版ID</p>
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置模版ID
-                     * @param _templateId 模版ID
+                     * 设置<p>模版ID</p>
+                     * @param _templateId <p>模版ID</p>
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取服务名称
-                     * @return ServiceName 服务名称
+                     * 获取<p>服务名称</p>
+                     * @return ServiceName <p>服务名称</p>
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
-                     * 设置服务名称
-                     * @param _serviceName 服务名称
+                     * 设置<p>服务名称</p>
+                     * @param _serviceName <p>服务名称</p>
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool ServiceNameHasBeenSet() const;
 
                     /**
-                     * 获取副本数
-                     * @return Replicas 副本数
+                     * 获取<p>副本数</p>
+                     * @return Replicas <p>副本数</p>
                      * 
                      */
                     int64_t GetReplicas() const;
 
                     /**
-                     * 设置副本数
-                     * @param _replicas 副本数
+                     * 设置<p>副本数</p>
+                     * @param _replicas <p>副本数</p>
                      * 
                      */
                     void SetReplicas(const int64_t& _replicas);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool ReplicasHasBeenSet() const;
 
                     /**
-                     * 获取付费方式，POSTPAID_BY_HOUR按量后付费
-                     * @return ServiceChargeType 付费方式，POSTPAID_BY_HOUR按量后付费
+                     * 获取<p>付费方式，POSTPAID_BY_HOUR按量后付费</p>
+                     * @return ServiceChargeType <p>付费方式，POSTPAID_BY_HOUR按量后付费</p>
                      * 
                      */
                     std::string GetServiceChargeType() const;
 
                     /**
-                     * 设置付费方式，POSTPAID_BY_HOUR按量后付费
-                     * @param _serviceChargeType 付费方式，POSTPAID_BY_HOUR按量后付费
+                     * 设置<p>付费方式，POSTPAID_BY_HOUR按量后付费</p>
+                     * @param _serviceChargeType <p>付费方式，POSTPAID_BY_HOUR按量后付费</p>
                      * 
                      */
                     void SetServiceChargeType(const std::string& _serviceChargeType);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool ServiceChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取描述了服务的超参数配置
-                     * @return HyperParam 描述了服务的超参数配置
+                     * 获取<p>描述了服务的超参数配置</p>
+                     * @return HyperParam <p>描述了服务的超参数配置</p>
                      * 
                      */
                     HyperParam GetHyperParam() const;
 
                     /**
-                     * 设置描述了服务的超参数配置
-                     * @param _hyperParam 描述了服务的超参数配置
+                     * 设置<p>描述了服务的超参数配置</p>
+                     * @param _hyperParam <p>描述了服务的超参数配置</p>
                      * 
                      */
                     void SetHyperParam(const HyperParam& _hyperParam);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool HyperParamHasBeenSet() const;
 
                     /**
-                     * 获取网络设置
-                     * @return NetworkSetting 网络设置
+                     * 获取<p>网络设置</p>
+                     * @return NetworkSetting <p>网络设置</p>
                      * 
                      */
                     NetworkSetting GetNetworkSetting() const;
 
                     /**
-                     * 设置网络设置
-                     * @param _networkSetting 网络设置
+                     * 设置<p>网络设置</p>
+                     * @param _networkSetting <p>网络设置</p>
                      * 
                      */
                     void SetNetworkSetting(const NetworkSetting& _networkSetting);
@@ -173,37 +173,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模版ID
+                     * <p>模版ID</p>
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 服务名称
+                     * <p>服务名称</p>
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
 
                     /**
-                     * 副本数
+                     * <p>副本数</p>
                      */
                     int64_t m_replicas;
                     bool m_replicasHasBeenSet;
 
                     /**
-                     * 付费方式，POSTPAID_BY_HOUR按量后付费
+                     * <p>付费方式，POSTPAID_BY_HOUR按量后付费</p>
                      */
                     std::string m_serviceChargeType;
                     bool m_serviceChargeTypeHasBeenSet;
 
                     /**
-                     * 描述了服务的超参数配置
+                     * <p>描述了服务的超参数配置</p>
                      */
                     HyperParam m_hyperParam;
                     bool m_hyperParamHasBeenSet;
 
                     /**
-                     * 网络设置
+                     * <p>网络设置</p>
                      */
                     NetworkSetting m_networkSetting;
                     bool m_networkSettingHasBeenSet;

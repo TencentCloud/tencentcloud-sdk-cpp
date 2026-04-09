@@ -25,7 +25,8 @@ using namespace std;
 CreateOrganizationInfoChangeUrlRequest::CreateOrganizationInfoChangeUrlRequest() :
     m_operatorHasBeenSet(false),
     m_changeTypeHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_agentHasBeenSet(false),
+    m_unifiedSocialCreditCodeHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,14 @@ string CreateOrganizationInfoChangeUrlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_unifiedSocialCreditCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnifiedSocialCreditCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_unifiedSocialCreditCode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -116,6 +125,22 @@ void CreateOrganizationInfoChangeUrlRequest::SetAgent(const Agent& _agent)
 bool CreateOrganizationInfoChangeUrlRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+string CreateOrganizationInfoChangeUrlRequest::GetUnifiedSocialCreditCode() const
+{
+    return m_unifiedSocialCreditCode;
+}
+
+void CreateOrganizationInfoChangeUrlRequest::SetUnifiedSocialCreditCode(const string& _unifiedSocialCreditCode)
+{
+    m_unifiedSocialCreditCode = _unifiedSocialCreditCode;
+    m_unifiedSocialCreditCodeHasBeenSet = true;
+}
+
+bool CreateOrganizationInfoChangeUrlRequest::UnifiedSocialCreditCodeHasBeenSet() const
+{
+    return m_unifiedSocialCreditCodeHasBeenSet;
 }
 
 

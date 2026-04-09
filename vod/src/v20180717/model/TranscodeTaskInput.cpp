@@ -29,7 +29,8 @@ TranscodeTaskInput::TranscodeTaskInput() :
     m_mosaicSetHasBeenSet(false),
     m_headTailSetHasBeenSet(false),
     m_startTimeOffsetHasBeenSet(false),
-    m_endTimeOffsetHasBeenSet(false)
+    m_endTimeOffsetHasBeenSet(false),
+    m_subtitleInfoSetHasBeenSet(false)
 {
 }
 
@@ -179,6 +180,26 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
         m_endTimeOffsetHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleInfoSet") && !value["SubtitleInfoSet"].IsNull())
+    {
+        if (!value["SubtitleInfoSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.SubtitleInfoSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SubtitleInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SubtitleInfoInput item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_subtitleInfoSet.push_back(item);
+        }
+        m_subtitleInfoSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -280,6 +301,21 @@ void TranscodeTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "EndTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTimeOffset, allocator);
+    }
+
+    if (m_subtitleInfoSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleInfoSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_subtitleInfoSet.begin(); itr != m_subtitleInfoSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -427,5 +463,21 @@ void TranscodeTaskInput::SetEndTimeOffset(const double& _endTimeOffset)
 bool TranscodeTaskInput::EndTimeOffsetHasBeenSet() const
 {
     return m_endTimeOffsetHasBeenSet;
+}
+
+vector<SubtitleInfoInput> TranscodeTaskInput::GetSubtitleInfoSet() const
+{
+    return m_subtitleInfoSet;
+}
+
+void TranscodeTaskInput::SetSubtitleInfoSet(const vector<SubtitleInfoInput>& _subtitleInfoSet)
+{
+    m_subtitleInfoSet = _subtitleInfoSet;
+    m_subtitleInfoSetHasBeenSet = true;
+}
+
+bool TranscodeTaskInput::SubtitleInfoSetHasBeenSet() const
+{
+    return m_subtitleInfoSetHasBeenSet;
 }
 

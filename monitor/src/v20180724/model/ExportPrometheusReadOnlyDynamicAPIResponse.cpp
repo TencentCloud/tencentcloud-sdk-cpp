@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
 using namespace std;
 
-ExportPrometheusReadOnlyDynamicAPIResponse::ExportPrometheusReadOnlyDynamicAPIResponse()
+ExportPrometheusReadOnlyDynamicAPIResponse::ExportPrometheusReadOnlyDynamicAPIResponse() :
+    m_hTTPHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,23 @@ CoreInternalOutcome ExportPrometheusReadOnlyDynamicAPIResponse::Deserialize(cons
     }
 
 
+    if (rsp.HasMember("HTTP") && !rsp["HTTP"].IsNull())
+    {
+        if (!rsp["HTTP"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `HTTP` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_hTTP.Deserialize(rsp["HTTP"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_hTTPHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +88,15 @@ string ExportPrometheusReadOnlyDynamicAPIResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_hTTPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HTTP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_hTTP.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string ExportPrometheusReadOnlyDynamicAPIResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+PrometheusDynamicAPIResponseHTTP ExportPrometheusReadOnlyDynamicAPIResponse::GetHTTP() const
+{
+    return m_hTTP;
+}
+
+bool ExportPrometheusReadOnlyDynamicAPIResponse::HTTPHasBeenSet() const
+{
+    return m_hTTPHasBeenSet;
+}
 
 

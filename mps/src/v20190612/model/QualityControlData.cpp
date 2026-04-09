@@ -25,6 +25,7 @@ QualityControlData::QualityControlData() :
     m_noVideoHasBeenSet(false),
     m_qualityEvaluationScoreHasBeenSet(false),
     m_qualityEvaluationMeanOpinionScoreHasBeenSet(false),
+    m_aestheticEvaluationScoreHasBeenSet(false),
     m_qualityControlResultSetHasBeenSet(false),
     m_containerDiagnoseResultSetHasBeenSet(false)
 {
@@ -73,6 +74,16 @@ CoreInternalOutcome QualityControlData::Deserialize(const rapidjson::Value &valu
         }
         m_qualityEvaluationMeanOpinionScore = value["QualityEvaluationMeanOpinionScore"].GetDouble();
         m_qualityEvaluationMeanOpinionScoreHasBeenSet = true;
+    }
+
+    if (value.HasMember("AestheticEvaluationScore") && !value["AestheticEvaluationScore"].IsNull())
+    {
+        if (!value["AestheticEvaluationScore"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QualityControlData.AestheticEvaluationScore` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_aestheticEvaluationScore = value["AestheticEvaluationScore"].GetInt64();
+        m_aestheticEvaluationScoreHasBeenSet = true;
     }
 
     if (value.HasMember("QualityControlResultSet") && !value["QualityControlResultSet"].IsNull())
@@ -152,6 +163,14 @@ void QualityControlData::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "QualityEvaluationMeanOpinionScore";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_qualityEvaluationMeanOpinionScore, allocator);
+    }
+
+    if (m_aestheticEvaluationScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AestheticEvaluationScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aestheticEvaluationScore, allocator);
     }
 
     if (m_qualityControlResultSetHasBeenSet)
@@ -249,6 +268,22 @@ void QualityControlData::SetQualityEvaluationMeanOpinionScore(const double& _qua
 bool QualityControlData::QualityEvaluationMeanOpinionScoreHasBeenSet() const
 {
     return m_qualityEvaluationMeanOpinionScoreHasBeenSet;
+}
+
+int64_t QualityControlData::GetAestheticEvaluationScore() const
+{
+    return m_aestheticEvaluationScore;
+}
+
+void QualityControlData::SetAestheticEvaluationScore(const int64_t& _aestheticEvaluationScore)
+{
+    m_aestheticEvaluationScore = _aestheticEvaluationScore;
+    m_aestheticEvaluationScoreHasBeenSet = true;
+}
+
+bool QualityControlData::AestheticEvaluationScoreHasBeenSet() const
+{
+    return m_aestheticEvaluationScoreHasBeenSet;
 }
 
 vector<QualityControlResult> QualityControlData::GetQualityControlResultSet() const

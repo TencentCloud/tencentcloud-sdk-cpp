@@ -25,6 +25,7 @@ AIAgentAsset::AIAgentAsset() :
     m_agentNameHasBeenSet(false),
     m_agentModelHasBeenSet(false),
     m_instanceIDHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
     m_metadataRiskListHasBeenSet(false),
     m_identityTimeFirstHasBeenSet(false),
     m_identityTimeLastHasBeenSet(false),
@@ -81,6 +82,16 @@ CoreInternalOutcome AIAgentAsset::Deserialize(const rapidjson::Value &value)
         }
         m_instanceID = string(value["InstanceID"].GetString());
         m_instanceIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceName") && !value["InstanceName"].IsNull())
+    {
+        if (!value["InstanceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIAgentAsset.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceName = string(value["InstanceName"].GetString());
+        m_instanceNameHasBeenSet = true;
     }
 
     if (value.HasMember("MetadataRiskList") && !value["MetadataRiskList"].IsNull())
@@ -205,6 +216,14 @@ void AIAgentAsset::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "InstanceID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_metadataRiskListHasBeenSet)
@@ -334,6 +353,22 @@ void AIAgentAsset::SetInstanceID(const string& _instanceID)
 bool AIAgentAsset::InstanceIDHasBeenSet() const
 {
     return m_instanceIDHasBeenSet;
+}
+
+string AIAgentAsset::GetInstanceName() const
+{
+    return m_instanceName;
+}
+
+void AIAgentAsset::SetInstanceName(const string& _instanceName)
+{
+    m_instanceName = _instanceName;
+    m_instanceNameHasBeenSet = true;
+}
+
+bool AIAgentAsset::InstanceNameHasBeenSet() const
+{
+    return m_instanceNameHasBeenSet;
 }
 
 vector<string> AIAgentAsset::GetMetadataRiskList() const

@@ -21,7 +21,8 @@ using namespace TencentCloud::Mps::V20190612::Model;
 using namespace std;
 
 AiAnalysisTaskDescriptionInput::AiAnalysisTaskDescriptionInput() :
-    m_definitionHasBeenSet(false)
+    m_definitionHasBeenSet(false),
+    m_extendedParameterHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome AiAnalysisTaskDescriptionInput::Deserialize(const rapidjson:
         m_definitionHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtendedParameter") && !value["ExtendedParameter"].IsNull())
+    {
+        if (!value["ExtendedParameter"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskDescriptionInput.ExtendedParameter` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extendedParameter = string(value["ExtendedParameter"].GetString());
+        m_extendedParameterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void AiAnalysisTaskDescriptionInput::ToJsonObject(rapidjson::Value &value, rapid
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_definition, allocator);
+    }
+
+    if (m_extendedParameterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtendedParameter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extendedParameter.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void AiAnalysisTaskDescriptionInput::SetDefinition(const uint64_t& _definition)
 bool AiAnalysisTaskDescriptionInput::DefinitionHasBeenSet() const
 {
     return m_definitionHasBeenSet;
+}
+
+string AiAnalysisTaskDescriptionInput::GetExtendedParameter() const
+{
+    return m_extendedParameter;
+}
+
+void AiAnalysisTaskDescriptionInput::SetExtendedParameter(const string& _extendedParameter)
+{
+    m_extendedParameter = _extendedParameter;
+    m_extendedParameterHasBeenSet = true;
+}
+
+bool AiAnalysisTaskDescriptionInput::ExtendedParameterHasBeenSet() const
+{
+    return m_extendedParameterHasBeenSet;
 }
 

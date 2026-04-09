@@ -305,6 +305,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DeleteAlarmPolicyResponse.h
   include/tencentcloud/monitor/v20180724/model/RemoteWriteHeader.h
   include/tencentcloud/monitor/v20180724/model/UninstallGrafanaPluginsRequest.h
+  include/tencentcloud/monitor/v20180724/model/PrometheusStringKeyValuePair.h
   include/tencentcloud/monitor/v20180724/model/DeleteSSOAccountResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupListGroup.h
   include/tencentcloud/monitor/v20180724/model/GrafanaAccountInfo.h
@@ -380,6 +381,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/AlarmPolicyFilter.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyNoticeResponse.h
   include/tencentcloud/monitor/v20180724/model/NoticeBindPolicys.h
+  include/tencentcloud/monitor/v20180724/model/PrometheusDynamicAPIResponseHTTP.h
   include/tencentcloud/monitor/v20180724/model/PrometheusAlertRule.h
   include/tencentcloud/monitor/v20180724/model/CleanGrafanaInstanceResponse.h
   include/tencentcloud/monitor/v20180724/model/UnbindPrometheusManagedGrafanaResponse.h
@@ -856,6 +858,7 @@ set(monitor_src
   src/v20180724/model/DeleteAlarmPolicyResponse.cpp
   src/v20180724/model/RemoteWriteHeader.cpp
   src/v20180724/model/UninstallGrafanaPluginsRequest.cpp
+  src/v20180724/model/PrometheusStringKeyValuePair.cpp
   src/v20180724/model/DeleteSSOAccountResponse.cpp
   src/v20180724/model/DescribePolicyGroupListGroup.cpp
   src/v20180724/model/GrafanaAccountInfo.cpp
@@ -931,6 +934,7 @@ set(monitor_src
   src/v20180724/model/AlarmPolicyFilter.cpp
   src/v20180724/model/ModifyAlarmPolicyNoticeResponse.cpp
   src/v20180724/model/NoticeBindPolicys.cpp
+  src/v20180724/model/PrometheusDynamicAPIResponseHTTP.cpp
   src/v20180724/model/PrometheusAlertRule.cpp
   src/v20180724/model/CleanGrafanaInstanceResponse.cpp
   src/v20180724/model/UnbindPrometheusManagedGrafanaResponse.cpp

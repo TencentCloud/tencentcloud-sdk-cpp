@@ -690,6 +690,56 @@ CfwClient::CreateDatabaseWhiteListRulesOutcomeCallable CfwClient::CreateDatabase
     return prom->get_future();
 }
 
+CfwClient::CreateNatFwDnatRuleOutcome CfwClient::CreateNatFwDnatRule(const CreateNatFwDnatRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNatFwDnatRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNatFwDnatRuleResponse rsp = CreateNatFwDnatRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNatFwDnatRuleOutcome(rsp);
+        else
+            return CreateNatFwDnatRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNatFwDnatRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::CreateNatFwDnatRuleAsync(const CreateNatFwDnatRuleRequest& request, const CreateNatFwDnatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateNatFwDnatRuleRequest&;
+    using Resp = CreateNatFwDnatRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateNatFwDnatRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::CreateNatFwDnatRuleOutcomeCallable CfwClient::CreateNatFwDnatRuleCallable(const CreateNatFwDnatRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateNatFwDnatRuleOutcome>>();
+    CreateNatFwDnatRuleAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const CreateNatFwDnatRuleRequest&,
+        CreateNatFwDnatRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::CreateNatFwInstanceOutcome CfwClient::CreateNatFwInstance(const CreateNatFwInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateNatFwInstance");
@@ -1082,6 +1132,56 @@ CfwClient::DeleteBlockIgnoreRuleNewOutcomeCallable CfwClient::DeleteBlockIgnoreR
         const CfwClient*,
         const DeleteBlockIgnoreRuleNewRequest&,
         DeleteBlockIgnoreRuleNewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfwClient::DeleteNatFwDnatRuleOutcome CfwClient::DeleteNatFwDnatRule(const DeleteNatFwDnatRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteNatFwDnatRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteNatFwDnatRuleResponse rsp = DeleteNatFwDnatRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteNatFwDnatRuleOutcome(rsp);
+        else
+            return DeleteNatFwDnatRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteNatFwDnatRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DeleteNatFwDnatRuleAsync(const DeleteNatFwDnatRuleRequest& request, const DeleteNatFwDnatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteNatFwDnatRuleRequest&;
+    using Resp = DeleteNatFwDnatRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteNatFwDnatRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DeleteNatFwDnatRuleOutcomeCallable CfwClient::DeleteNatFwDnatRuleCallable(const DeleteNatFwDnatRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteNatFwDnatRuleOutcome>>();
+    DeleteNatFwDnatRuleAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DeleteNatFwDnatRuleRequest&,
+        DeleteNatFwDnatRuleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

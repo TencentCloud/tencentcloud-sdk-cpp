@@ -49,6 +49,8 @@
 #include <tencentcloud/cfw/v20190904/model/CreateChooseVpcsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateDatabaseWhiteListRulesRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateDatabaseWhiteListRulesResponse.h>
+#include <tencentcloud/cfw/v20190904/model/CreateNatFwDnatRuleRequest.h>
+#include <tencentcloud/cfw/v20190904/model/CreateNatFwDnatRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateNatFwInstanceRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateNatFwInstanceResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateNatFwInstanceWithDomainRequest.h>
@@ -65,6 +67,8 @@
 #include <tencentcloud/cfw/v20190904/model/DeleteBlockIgnoreRuleListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteBlockIgnoreRuleNewRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteBlockIgnoreRuleNewResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DeleteNatFwDnatRuleRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DeleteNatFwDnatRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteNatFwInstanceRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteNatFwInstanceResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteRemoteAccessDomainRequest.h>
@@ -324,6 +328,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDatabaseWhiteListRulesResponse> CreateDatabaseWhiteListRulesOutcome;
                 typedef std::future<CreateDatabaseWhiteListRulesOutcome> CreateDatabaseWhiteListRulesOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateDatabaseWhiteListRulesRequest&, CreateDatabaseWhiteListRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatabaseWhiteListRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateNatFwDnatRuleResponse> CreateNatFwDnatRuleOutcome;
+                typedef std::future<CreateNatFwDnatRuleOutcome> CreateNatFwDnatRuleOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::CreateNatFwDnatRuleRequest&, CreateNatFwDnatRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNatFwDnatRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateNatFwInstanceResponse> CreateNatFwInstanceOutcome;
                 typedef std::future<CreateNatFwInstanceOutcome> CreateNatFwInstanceOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateNatFwInstanceRequest&, CreateNatFwInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNatFwInstanceAsyncHandler;
@@ -348,6 +355,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteBlockIgnoreRuleNewResponse> DeleteBlockIgnoreRuleNewOutcome;
                 typedef std::future<DeleteBlockIgnoreRuleNewOutcome> DeleteBlockIgnoreRuleNewOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteBlockIgnoreRuleNewRequest&, DeleteBlockIgnoreRuleNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBlockIgnoreRuleNewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteNatFwDnatRuleResponse> DeleteNatFwDnatRuleOutcome;
+                typedef std::future<DeleteNatFwDnatRuleOutcome> DeleteNatFwDnatRuleOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DeleteNatFwDnatRuleRequest&, DeleteNatFwDnatRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNatFwDnatRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteNatFwInstanceResponse> DeleteNatFwInstanceOutcome;
                 typedef std::future<DeleteNatFwInstanceOutcome> DeleteNatFwInstanceOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteNatFwInstanceRequest&, DeleteNatFwInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNatFwInstanceAsyncHandler;
@@ -778,6 +788,15 @@ namespace TencentCloud
                 CreateDatabaseWhiteListRulesOutcomeCallable CreateDatabaseWhiteListRulesCallable(const Model::CreateDatabaseWhiteListRulesRequest& request);
 
                 /**
+                 *创建Nat防火墙Dnat规则
+                 * @param req CreateNatFwDnatRuleRequest
+                 * @return CreateNatFwDnatRuleOutcome
+                 */
+                CreateNatFwDnatRuleOutcome CreateNatFwDnatRule(const Model::CreateNatFwDnatRuleRequest &request);
+                void CreateNatFwDnatRuleAsync(const Model::CreateNatFwDnatRuleRequest& request, const CreateNatFwDnatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateNatFwDnatRuleOutcomeCallable CreateNatFwDnatRuleCallable(const Model::CreateNatFwDnatRuleRequest& request);
+
+                /**
                  *创建NAT防火墙实例（Region参数必填）
                  * @param req CreateNatFwInstanceRequest
                  * @return CreateNatFwInstanceOutcome
@@ -848,6 +867,15 @@ namespace TencentCloud
                 DeleteBlockIgnoreRuleNewOutcome DeleteBlockIgnoreRuleNew(const Model::DeleteBlockIgnoreRuleNewRequest &request);
                 void DeleteBlockIgnoreRuleNewAsync(const Model::DeleteBlockIgnoreRuleNewRequest& request, const DeleteBlockIgnoreRuleNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteBlockIgnoreRuleNewOutcomeCallable DeleteBlockIgnoreRuleNewCallable(const Model::DeleteBlockIgnoreRuleNewRequest& request);
+
+                /**
+                 *删除Nat防火墙Dnat规则
+                 * @param req DeleteNatFwDnatRuleRequest
+                 * @return DeleteNatFwDnatRuleOutcome
+                 */
+                DeleteNatFwDnatRuleOutcome DeleteNatFwDnatRule(const Model::DeleteNatFwDnatRuleRequest &request);
+                void DeleteNatFwDnatRuleAsync(const Model::DeleteNatFwDnatRuleRequest& request, const DeleteNatFwDnatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteNatFwDnatRuleOutcomeCallable DeleteNatFwDnatRuleCallable(const Model::DeleteNatFwDnatRuleRequest& request);
 
                 /**
                  *销毁防火墙实例

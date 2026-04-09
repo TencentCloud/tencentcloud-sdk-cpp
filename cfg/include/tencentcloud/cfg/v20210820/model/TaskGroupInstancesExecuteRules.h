@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例选取模式
-                     * @return TaskGroupInstancesExecuteMode 实例选取模式
+                     * 获取<p>实例选取模式</p><p>枚举值：</p><ul><li>1： 全部注入</li><li>2： 随机选取指定比例注入</li><li>3： 随机选取指定数量注入</li></ul>
+                     * @return TaskGroupInstancesExecuteMode <p>实例选取模式</p><p>枚举值：</p><ul><li>1： 全部注入</li><li>2： 随机选取指定比例注入</li><li>3： 随机选取指定数量注入</li></ul>
                      * 
                      */
                     int64_t GetTaskGroupInstancesExecuteMode() const;
 
                     /**
-                     * 设置实例选取模式
-                     * @param _taskGroupInstancesExecuteMode 实例选取模式
+                     * 设置<p>实例选取模式</p><p>枚举值：</p><ul><li>1： 全部注入</li><li>2： 随机选取指定比例注入</li><li>3： 随机选取指定数量注入</li></ul>
+                     * @param _taskGroupInstancesExecuteMode <p>实例选取模式</p><p>枚举值：</p><ul><li>1： 全部注入</li><li>2： 随机选取指定比例注入</li><li>3： 随机选取指定数量注入</li></ul>
                      * 
                      */
                     void SetTaskGroupInstancesExecuteMode(const int64_t& _taskGroupInstancesExecuteMode);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TaskGroupInstancesExecuteModeHasBeenSet() const;
 
                     /**
-                     * 获取按比例选取模式下选取比例
-                     * @return TaskGroupInstancesExecutePercent 按比例选取模式下选取比例
+                     * 获取<p>按比例选取模式下选取比例</p>
+                     * @return TaskGroupInstancesExecutePercent <p>按比例选取模式下选取比例</p>
                      * 
                      */
                     int64_t GetTaskGroupInstancesExecutePercent() const;
 
                     /**
-                     * 设置按比例选取模式下选取比例
-                     * @param _taskGroupInstancesExecutePercent 按比例选取模式下选取比例
+                     * 设置<p>按比例选取模式下选取比例</p>
+                     * @param _taskGroupInstancesExecutePercent <p>按比例选取模式下选取比例</p>
                      * 
                      */
                     void SetTaskGroupInstancesExecutePercent(const int64_t& _taskGroupInstancesExecutePercent);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TaskGroupInstancesExecutePercentHasBeenSet() const;
 
                     /**
-                     * 获取按数量选取模式下选取数量
-                     * @return TaskGroupInstancesExecuteNum 按数量选取模式下选取数量
+                     * 获取<p>按数量选取模式下选取数量</p>
+                     * @return TaskGroupInstancesExecuteNum <p>按数量选取模式下选取数量</p>
                      * 
                      */
                     int64_t GetTaskGroupInstancesExecuteNum() const;
 
                     /**
-                     * 设置按数量选取模式下选取数量
-                     * @param _taskGroupInstancesExecuteNum 按数量选取模式下选取数量
+                     * 设置<p>按数量选取模式下选取数量</p>
+                     * @param _taskGroupInstancesExecuteNum <p>按数量选取模式下选取数量</p>
                      * 
                      */
                     void SetTaskGroupInstancesExecuteNum(const int64_t& _taskGroupInstancesExecuteNum);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例选取模式
+                     * <p>实例选取模式</p><p>枚举值：</p><ul><li>1： 全部注入</li><li>2： 随机选取指定比例注入</li><li>3： 随机选取指定数量注入</li></ul>
                      */
                     int64_t m_taskGroupInstancesExecuteMode;
                     bool m_taskGroupInstancesExecuteModeHasBeenSet;
 
                     /**
-                     * 按比例选取模式下选取比例
+                     * <p>按比例选取模式下选取比例</p>
                      */
                     int64_t m_taskGroupInstancesExecutePercent;
                     bool m_taskGroupInstancesExecutePercentHasBeenSet;
 
                     /**
-                     * 按数量选取模式下选取数量
+                     * <p>按数量选取模式下选取数量</p>
                      */
                     int64_t m_taskGroupInstancesExecuteNum;
                     bool m_taskGroupInstancesExecuteNumHasBeenSet;

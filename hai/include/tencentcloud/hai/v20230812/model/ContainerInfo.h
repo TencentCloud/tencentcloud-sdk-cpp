@@ -27,6 +27,7 @@
 #include <tencentcloud/hai/v20230812/model/ImageInfo.h>
 #include <tencentcloud/hai/v20230812/model/EnvParam.h>
 #include <tencentcloud/hai/v20230812/model/StorageInfo.h>
+#include <tencentcloud/hai/v20230812/model/ProbeInfo.h>
 
 
 namespace TencentCloud
@@ -50,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取镜像相关信息
-                     * @return Image 镜像相关信息
+                     * 获取<p>镜像相关信息</p>
+                     * @return Image <p>镜像相关信息</p>
                      * 
                      */
                     ImageInfo GetImage() const;
 
                     /**
-                     * 设置镜像相关信息
-                     * @param _image 镜像相关信息
+                     * 设置<p>镜像相关信息</p>
+                     * @param _image <p>镜像相关信息</p>
                      * 
                      */
                     void SetImage(const ImageInfo& _image);
@@ -71,15 +72,15 @@ namespace TencentCloud
                     bool ImageHasBeenSet() const;
 
                     /**
-                     * 获取服务监听端口
-                     * @return Port 服务监听端口
+                     * 获取<p>服务监听端口</p>
+                     * @return Port <p>服务监听端口</p>
                      * 
                      */
                     std::string GetPort() const;
 
                     /**
-                     * 设置服务监听端口
-                     * @param _port 服务监听端口
+                     * 设置<p>服务监听端口</p>
+                     * @param _port <p>服务监听端口</p>
                      * 
                      */
                     void SetPort(const std::string& _port);
@@ -92,15 +93,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取启动命令
-                     * @return Scripts 启动命令
+                     * 获取<p>启动命令</p>
+                     * @return Scripts <p>启动命令</p>
                      * 
                      */
                     std::vector<std::string> GetScripts() const;
 
                     /**
-                     * 设置启动命令
-                     * @param _scripts 启动命令
+                     * 设置<p>启动命令</p>
+                     * @param _scripts <p>启动命令</p>
                      * 
                      */
                     void SetScripts(const std::vector<std::string>& _scripts);
@@ -113,15 +114,15 @@ namespace TencentCloud
                     bool ScriptsHasBeenSet() const;
 
                     /**
-                     * 获取环境变量列表
-                     * @return Envs 环境变量列表
+                     * 获取<p>环境变量列表</p>
+                     * @return Envs <p>环境变量列表</p>
                      * 
                      */
                     std::vector<EnvParam> GetEnvs() const;
 
                     /**
-                     * 设置环境变量列表
-                     * @param _envs 环境变量列表
+                     * 设置<p>环境变量列表</p>
+                     * @param _envs <p>环境变量列表</p>
                      * 
                      */
                     void SetEnvs(const std::vector<EnvParam>& _envs);
@@ -134,15 +135,15 @@ namespace TencentCloud
                     bool EnvsHasBeenSet() const;
 
                     /**
-                     * 获取存储挂载配置
-                     * @return Storages 存储挂载配置
+                     * 获取<p>存储挂载配置</p>
+                     * @return Storages <p>存储挂载配置</p>
                      * 
                      */
                     std::vector<StorageInfo> GetStorages() const;
 
                     /**
-                     * 设置存储挂载配置
-                     * @param _storages 存储挂载配置
+                     * 设置<p>存储挂载配置</p>
+                     * @param _storages <p>存储挂载配置</p>
                      * 
                      */
                     void SetStorages(const std::vector<StorageInfo>& _storages);
@@ -154,37 +155,64 @@ namespace TencentCloud
                      */
                     bool StoragesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>探针信息</p>
+                     * @return Probe <p>探针信息</p>
+                     * 
+                     */
+                    ProbeInfo GetProbe() const;
+
+                    /**
+                     * 设置<p>探针信息</p>
+                     * @param _probe <p>探针信息</p>
+                     * 
+                     */
+                    void SetProbe(const ProbeInfo& _probe);
+
+                    /**
+                     * 判断参数 Probe 是否已赋值
+                     * @return Probe 是否已赋值
+                     * 
+                     */
+                    bool ProbeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 镜像相关信息
+                     * <p>镜像相关信息</p>
                      */
                     ImageInfo m_image;
                     bool m_imageHasBeenSet;
 
                     /**
-                     * 服务监听端口
+                     * <p>服务监听端口</p>
                      */
                     std::string m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 启动命令
+                     * <p>启动命令</p>
                      */
                     std::vector<std::string> m_scripts;
                     bool m_scriptsHasBeenSet;
 
                     /**
-                     * 环境变量列表
+                     * <p>环境变量列表</p>
                      */
                     std::vector<EnvParam> m_envs;
                     bool m_envsHasBeenSet;
 
                     /**
-                     * 存储挂载配置
+                     * <p>存储挂载配置</p>
                      */
                     std::vector<StorageInfo> m_storages;
                     bool m_storagesHasBeenSet;
+
+                    /**
+                     * <p>探针信息</p>
+                     */
+                    ProbeInfo m_probe;
+                    bool m_probeHasBeenSet;
 
                 };
             }

@@ -1002,6 +1002,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/DeleteWatermarkTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/DeleteQualityInspectTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/ComposeMediaOutput.h
+  include/tencentcloud/vod/v20180717/model/SubtitleInfoInput.h
   include/tencentcloud/vod/v20180717/model/DeleteJustInTimeTranscodeTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/ModifyWatermarkTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/DescribeJustInTimeTranscodeTemplatesRequest.h
@@ -2030,6 +2031,7 @@ set(vod_src
   src/v20180717/model/DeleteWatermarkTemplateResponse.cpp
   src/v20180717/model/DeleteQualityInspectTemplateRequest.cpp
   src/v20180717/model/ComposeMediaOutput.cpp
+  src/v20180717/model/SubtitleInfoInput.cpp
   src/v20180717/model/DeleteJustInTimeTranscodeTemplateResponse.cpp
   src/v20180717/model/ModifyWatermarkTemplateResponse.cpp
   src/v20180717/model/DescribeJustInTimeTranscodeTemplatesRequest.cpp

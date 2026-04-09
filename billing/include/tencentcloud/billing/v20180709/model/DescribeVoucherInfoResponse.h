@@ -86,6 +86,20 @@ namespace TencentCloud
                      */
                     bool VoucherInfosHasBeenSet() const;
 
+                    /**
+                     * 获取<p>接口返回的金额字段单位</p><p>默认值：micro</p><p>金额单位：micro（微分）<br>代金券发放和使用按8位高精度处理，所以金额单位默认为micro（微分），如需CNY或USD请按以下公式换算<br>CNY：1 micro = 10⁻⁸ 元<br>USD：1 micro = 10⁻⁸ 美元</p>
+                     * @return Unit <p>接口返回的金额字段单位</p><p>默认值：micro</p><p>金额单位：micro（微分）<br>代金券发放和使用按8位高精度处理，所以金额单位默认为micro（微分），如需CNY或USD请按以下公式换算<br>CNY：1 micro = 10⁻⁸ 元<br>USD：1 micro = 10⁻⁸ 美元</p>
+                     * 
+                     */
+                    std::string GetUnit() const;
+
+                    /**
+                     * 判断参数 Unit 是否已赋值
+                     * @return Unit 是否已赋值
+                     * 
+                     */
+                    bool UnitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,6 +119,12 @@ namespace TencentCloud
                      */
                     std::vector<VoucherInfos> m_voucherInfos;
                     bool m_voucherInfosHasBeenSet;
+
+                    /**
+                     * <p>接口返回的金额字段单位</p><p>默认值：micro</p><p>金额单位：micro（微分）<br>代金券发放和使用按8位高精度处理，所以金额单位默认为micro（微分），如需CNY或USD请按以下公式换算<br>CNY：1 micro = 10⁻⁸ 元<br>USD：1 micro = 10⁻⁸ 美元</p>
+                     */
+                    std::string m_unit;
+                    bool m_unitHasBeenSet;
 
                 };
             }

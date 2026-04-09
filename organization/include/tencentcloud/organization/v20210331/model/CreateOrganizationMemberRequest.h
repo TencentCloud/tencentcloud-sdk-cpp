@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,
-                     * @return Name 成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,
+                     * 获取<p>成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&amp;._[]-:,</p>
+                     * @return Name <p>成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&amp;._[]-:,</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,
-                     * @param _name 成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,
+                     * 设置<p>成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&amp;._[]-:,</p>
+                     * @param _name <p>成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&amp;._[]-:,</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取关系策略。取值：Financial
-                     * @return PolicyType 关系策略。取值：Financial
+                     * 获取<p>关系策略。取值：Financial</p>
+                     * @return PolicyType <p>关系策略。取值：Financial</p>
                      * 
                      */
                     std::string GetPolicyType() const;
 
                     /**
-                     * 设置关系策略。取值：Financial
-                     * @param _policyType 关系策略。取值：Financial
+                     * 设置<p>关系策略。取值：Financial</p>
+                     * @param _policyType <p>关系策略。取值：Financial</p>
                      * 
                      */
                     void SetPolicyType(const std::string& _policyType);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool PolicyTypeHasBeenSet() const;
 
                     /**
-                     * 获取成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨（若需要开启资金划拨权限，请联系您的商务经理内部开通。）、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析、9-预算管理、10-信用额度设置（若需要开启信用额度设置权限，请联系您的商务经理内部开通。），1、2 默认必须
-                     * @return PermissionIds 成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨（若需要开启资金划拨权限，请联系您的商务经理内部开通。）、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析、9-预算管理、10-信用额度设置（若需要开启信用额度设置权限，请联系您的商务经理内部开通。），1、2 默认必须
+                     * 获取<p>成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨（若需要开启资金划拨权限，请联系您的商务经理内部开通。）、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析、9-预算管理、10-信用额度设置（若需要开启信用额度设置权限，请联系您的商务经理内部开通。），1、2 默认必须</p>
+                     * @return PermissionIds <p>成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨（若需要开启资金划拨权限，请联系您的商务经理内部开通。）、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析、9-预算管理、10-信用额度设置（若需要开启信用额度设置权限，请联系您的商务经理内部开通。），1、2 默认必须</p>
                      * 
                      */
                     std::vector<uint64_t> GetPermissionIds() const;
 
                     /**
-                     * 设置成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨（若需要开启资金划拨权限，请联系您的商务经理内部开通。）、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析、9-预算管理、10-信用额度设置（若需要开启信用额度设置权限，请联系您的商务经理内部开通。），1、2 默认必须
-                     * @param _permissionIds 成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨（若需要开启资金划拨权限，请联系您的商务经理内部开通。）、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析、9-预算管理、10-信用额度设置（若需要开启信用额度设置权限，请联系您的商务经理内部开通。），1、2 默认必须
+                     * 设置<p>成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨（若需要开启资金划拨权限，请联系您的商务经理内部开通。）、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析、9-预算管理、10-信用额度设置（若需要开启信用额度设置权限，请联系您的商务经理内部开通。），1、2 默认必须</p>
+                     * @param _permissionIds <p>成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨（若需要开启资金划拨权限，请联系您的商务经理内部开通。）、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析、9-预算管理、10-信用额度设置（若需要开启信用额度设置权限，请联系您的商务经理内部开通。），1、2 默认必须</p>
                      * 
                      */
                     void SetPermissionIds(const std::vector<uint64_t>& _permissionIds);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool PermissionIdsHasBeenSet() const;
 
                     /**
-                     * 获取成员所属部门的节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
-                     * @return NodeId 成员所属部门的节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
+                     * 获取<p>成员所属部门的节点ID。可以通过<a href="https://cloud.tencent.com/document/product/850/82926">DescribeOrganizationNodes</a>获取</p>
+                     * @return NodeId <p>成员所属部门的节点ID。可以通过<a href="https://cloud.tencent.com/document/product/850/82926">DescribeOrganizationNodes</a>获取</p>
                      * 
                      */
                     int64_t GetNodeId() const;
 
                     /**
-                     * 设置成员所属部门的节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
-                     * @param _nodeId 成员所属部门的节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
+                     * 设置<p>成员所属部门的节点ID。可以通过<a href="https://cloud.tencent.com/document/product/850/82926">DescribeOrganizationNodes</a>获取</p>
+                     * @param _nodeId <p>成员所属部门的节点ID。可以通过<a href="https://cloud.tencent.com/document/product/850/82926">DescribeOrganizationNodes</a>获取</p>
                      * 
                      */
                     void SetNodeId(const int64_t& _nodeId);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool NodeIdHasBeenSet() const;
 
                     /**
-                     * 获取账号名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,
-                     * @return AccountName 账号名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,
+                     * 获取<p>账号名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&amp;._[]-:,</p>
+                     * @return AccountName <p>账号名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&amp;._[]-:,</p>
                      * 
                      */
                     std::string GetAccountName() const;
 
                     /**
-                     * 设置账号名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,
-                     * @param _accountName 账号名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,
+                     * 设置<p>账号名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&amp;._[]-:,</p>
+                     * @param _accountName <p>账号名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&amp;._[]-:,</p>
                      * 
                      */
                     void SetAccountName(const std::string& _accountName);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool AccountNameHasBeenSet() const;
 
                     /**
-                     * 获取备注。
-                     * @return Remark 备注。
+                     * 获取<p>备注。</p>
+                     * @return Remark <p>备注。</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注。
-                     * @param _remark 备注。
+                     * 设置<p>备注。</p>
+                     * @param _remark <p>备注。</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取成员创建记录ID。创建异常重试时需要
-                     * @return RecordId 成员创建记录ID。创建异常重试时需要
+                     * 获取<p>成员创建记录ID。创建异常重试时需要</p>
+                     * @return RecordId <p>成员创建记录ID。创建异常重试时需要</p>
                      * 
                      */
                     int64_t GetRecordId() const;
 
                     /**
-                     * 设置成员创建记录ID。创建异常重试时需要
-                     * @param _recordId 成员创建记录ID。创建异常重试时需要
+                     * 设置<p>成员创建记录ID。创建异常重试时需要</p>
+                     * @param _recordId <p>成员创建记录ID。创建异常重试时需要</p>
                      * 
                      */
                     void SetRecordId(const int64_t& _recordId);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool RecordIdHasBeenSet() const;
 
                     /**
-                     * 获取代付者Uin。成员代付费时需要
-                     * @return PayUin 代付者Uin。成员代付费时需要
+                     * 获取<p>代付者Uin。成员代付费时需要</p>
+                     * @return PayUin <p>代付者Uin。成员代付费时需要</p>
                      * 
                      */
                     std::string GetPayUin() const;
 
                     /**
-                     * 设置代付者Uin。成员代付费时需要
-                     * @param _payUin 代付者Uin。成员代付费时需要
+                     * 设置<p>代付者Uin。成员代付费时需要</p>
+                     * @param _payUin <p>代付者Uin。成员代付费时需要</p>
                      * 
                      */
                     void SetPayUin(const std::string& _payUin);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool PayUinHasBeenSet() const;
 
                     /**
-                     * 获取成员访问身份ID列表。可以调用ListOrganizationIdentity获取，1默认支持
-                     * @return IdentityRoleID 成员访问身份ID列表。可以调用ListOrganizationIdentity获取，1默认支持
+                     * 获取<p>成员访问身份ID列表。可以调用ListOrganizationIdentity获取，1默认支持</p>
+                     * @return IdentityRoleID <p>成员访问身份ID列表。可以调用ListOrganizationIdentity获取，1默认支持</p>
                      * 
                      */
                     std::vector<uint64_t> GetIdentityRoleID() const;
 
                     /**
-                     * 设置成员访问身份ID列表。可以调用ListOrganizationIdentity获取，1默认支持
-                     * @param _identityRoleID 成员访问身份ID列表。可以调用ListOrganizationIdentity获取，1默认支持
+                     * 设置<p>成员访问身份ID列表。可以调用ListOrganizationIdentity获取，1默认支持</p>
+                     * @param _identityRoleID <p>成员访问身份ID列表。可以调用ListOrganizationIdentity获取，1默认支持</p>
                      * 
                      */
                     void SetIdentityRoleID(const std::vector<uint64_t>& _identityRoleID);
@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool IdentityRoleIDHasBeenSet() const;
 
                     /**
-                     * 获取认证主体关系ID。给不同主体创建成员时需要，可以调用DescribeOrganizationAuthNode获取
-                     * @return AuthRelationId 认证主体关系ID。给不同主体创建成员时需要，可以调用DescribeOrganizationAuthNode获取
+                     * 获取<p>认证主体关系ID。给不同主体创建成员时需要，可以调用DescribeOrganizationAuthNode获取</p>
+                     * @return AuthRelationId <p>认证主体关系ID。给不同主体创建成员时需要，可以调用DescribeOrganizationAuthNode获取</p>
                      * 
                      */
                     int64_t GetAuthRelationId() const;
 
                     /**
-                     * 设置认证主体关系ID。给不同主体创建成员时需要，可以调用DescribeOrganizationAuthNode获取
-                     * @param _authRelationId 认证主体关系ID。给不同主体创建成员时需要，可以调用DescribeOrganizationAuthNode获取
+                     * 设置<p>认证主体关系ID。给不同主体创建成员时需要，可以调用DescribeOrganizationAuthNode获取</p>
+                     * @param _authRelationId <p>认证主体关系ID。给不同主体创建成员时需要，可以调用DescribeOrganizationAuthNode获取</p>
                      * 
                      */
                     void SetAuthRelationId(const int64_t& _authRelationId);
@@ -254,15 +254,15 @@ namespace TencentCloud
                     bool AuthRelationIdHasBeenSet() const;
 
                     /**
-                     * 获取成员标签列表。最大10个
-                     * @return Tags 成员标签列表。最大10个
+                     * 获取<p>成员标签列表。最大10个</p>
+                     * @return Tags <p>成员标签列表。最大10个</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置成员标签列表。最大10个
-                     * @param _tags 成员标签列表。最大10个
+                     * 设置<p>成员标签列表。最大10个</p>
+                     * @param _tags <p>成员标签列表。最大10个</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -277,67 +277,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,
+                     * <p>成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&amp;._[]-:,</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 关系策略。取值：Financial
+                     * <p>关系策略。取值：Financial</p>
                      */
                     std::string m_policyType;
                     bool m_policyTypeHasBeenSet;
 
                     /**
-                     * 成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨（若需要开启资金划拨权限，请联系您的商务经理内部开通。）、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析、9-预算管理、10-信用额度设置（若需要开启信用额度设置权限，请联系您的商务经理内部开通。），1、2 默认必须
+                     * <p>成员财务权限ID列表。取值：1-查看账单、2-查看余额、3-资金划拨（若需要开启资金划拨权限，请联系您的商务经理内部开通。）、4-合并出账、5-开票、6-优惠继承、7-代付费、8-成本分析、9-预算管理、10-信用额度设置（若需要开启信用额度设置权限，请联系您的商务经理内部开通。），1、2 默认必须</p>
                      */
                     std::vector<uint64_t> m_permissionIds;
                     bool m_permissionIdsHasBeenSet;
 
                     /**
-                     * 成员所属部门的节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
+                     * <p>成员所属部门的节点ID。可以通过<a href="https://cloud.tencent.com/document/product/850/82926">DescribeOrganizationNodes</a>获取</p>
                      */
                     int64_t m_nodeId;
                     bool m_nodeIdHasBeenSet;
 
                     /**
-                     * 账号名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,
+                     * <p>账号名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&amp;._[]-:,</p>
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;
 
                     /**
-                     * 备注。
+                     * <p>备注。</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 成员创建记录ID。创建异常重试时需要
+                     * <p>成员创建记录ID。创建异常重试时需要</p>
                      */
                     int64_t m_recordId;
                     bool m_recordIdHasBeenSet;
 
                     /**
-                     * 代付者Uin。成员代付费时需要
+                     * <p>代付者Uin。成员代付费时需要</p>
                      */
                     std::string m_payUin;
                     bool m_payUinHasBeenSet;
 
                     /**
-                     * 成员访问身份ID列表。可以调用ListOrganizationIdentity获取，1默认支持
+                     * <p>成员访问身份ID列表。可以调用ListOrganizationIdentity获取，1默认支持</p>
                      */
                     std::vector<uint64_t> m_identityRoleID;
                     bool m_identityRoleIDHasBeenSet;
 
                     /**
-                     * 认证主体关系ID。给不同主体创建成员时需要，可以调用DescribeOrganizationAuthNode获取
+                     * <p>认证主体关系ID。给不同主体创建成员时需要，可以调用DescribeOrganizationAuthNode获取</p>
                      */
                     int64_t m_authRelationId;
                     bool m_authRelationIdHasBeenSet;
 
                     /**
-                     * 成员标签列表。最大10个
+                     * <p>成员标签列表。最大10个</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

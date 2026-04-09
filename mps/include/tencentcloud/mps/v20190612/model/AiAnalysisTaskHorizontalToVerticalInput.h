@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频智能横转竖模板 ID
+                     * 获取<p>视频智能横转竖模板 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Definition 视频智能横转竖模板 ID
+                     * @return Definition <p>视频智能横转竖模板 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置视频智能横转竖模板 ID
+                     * 设置<p>视频智能横转竖模板 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _definition 视频智能横转竖模板 ID
+                     * @param _definition <p>视频智能横转竖模板 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -71,14 +71,41 @@ namespace TencentCloud
                      */
                     bool DefinitionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>扩展参数。</p>
+                     * @return ExtendedParameter <p>扩展参数。</p>
+                     * 
+                     */
+                    std::string GetExtendedParameter() const;
+
+                    /**
+                     * 设置<p>扩展参数。</p>
+                     * @param _extendedParameter <p>扩展参数。</p>
+                     * 
+                     */
+                    void SetExtendedParameter(const std::string& _extendedParameter);
+
+                    /**
+                     * 判断参数 ExtendedParameter 是否已赋值
+                     * @return ExtendedParameter 是否已赋值
+                     * 
+                     */
+                    bool ExtendedParameterHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 视频智能横转竖模板 ID
+                     * <p>视频智能横转竖模板 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
+
+                    /**
+                     * <p>扩展参数。</p>
+                     */
+                    std::string m_extendedParameter;
+                    bool m_extendedParameterHasBeenSet;
 
                 };
             }

@@ -62,12 +62,14 @@ set(hai_public_header_model
   include/tencentcloud/hai/v20230812/model/DescribeServicesRequest.h
   include/tencentcloud/hai/v20230812/model/ContainerInfo.h
   include/tencentcloud/hai/v20230812/model/DescribeInstancesResponse.h
+  include/tencentcloud/hai/v20230812/model/ServiceMetaData.h
   include/tencentcloud/hai/v20230812/model/EnvParam.h
   include/tencentcloud/hai/v20230812/model/UpdateServiceConfigsResponse.h
   include/tencentcloud/hai/v20230812/model/SystemDisk.h
   include/tencentcloud/hai/v20230812/model/ServiceDetail.h
   include/tencentcloud/hai/v20230812/model/LoginSetting.h
   include/tencentcloud/hai/v20230812/model/RegionInfo.h
+  include/tencentcloud/hai/v20230812/model/ProbeConfig.h
   include/tencentcloud/hai/v20230812/model/DescribeInstancesRequest.h
   include/tencentcloud/hai/v20230812/model/DescribeServicesCallInfoRequest.h
   include/tencentcloud/hai/v20230812/model/COSStorage.h
@@ -81,7 +83,7 @@ set(hai_public_header_model
   include/tencentcloud/hai/v20230812/model/DeploymentConfig.h
   include/tencentcloud/hai/v20230812/model/StartInstanceResponse.h
   include/tencentcloud/hai/v20230812/model/CreateMuskPromptResponse.h
-  include/tencentcloud/hai/v20230812/model/ServiceMetaData.h
+  include/tencentcloud/hai/v20230812/model/ProbeInfo.h
   include/tencentcloud/hai/v20230812/model/Filter.h
   include/tencentcloud/hai/v20230812/model/CreateInferServiceByTemplateRequest.h
   include/tencentcloud/hai/v20230812/model/ApplicationInfo.h
@@ -92,6 +94,7 @@ set(hai_public_header_model
   include/tencentcloud/hai/v20230812/model/DescribeModelsRequest.h
   include/tencentcloud/hai/v20230812/model/CreateMuskPromptRequest.h
   include/tencentcloud/hai/v20230812/model/DescribeApplicationsResponse.h
+  include/tencentcloud/hai/v20230812/model/HttpConfig.h
   include/tencentcloud/hai/v20230812/model/ItemPrice.h
   include/tencentcloud/hai/v20230812/model/DescribeInstanceNetworkStatusResponse.h
   include/tencentcloud/hai/v20230812/model/ResetInstancesPasswordRequest.h
@@ -148,12 +151,14 @@ set(hai_src
   src/v20230812/model/DescribeServicesRequest.cpp
   src/v20230812/model/ContainerInfo.cpp
   src/v20230812/model/DescribeInstancesResponse.cpp
+  src/v20230812/model/ServiceMetaData.cpp
   src/v20230812/model/EnvParam.cpp
   src/v20230812/model/UpdateServiceConfigsResponse.cpp
   src/v20230812/model/SystemDisk.cpp
   src/v20230812/model/ServiceDetail.cpp
   src/v20230812/model/LoginSetting.cpp
   src/v20230812/model/RegionInfo.cpp
+  src/v20230812/model/ProbeConfig.cpp
   src/v20230812/model/DescribeInstancesRequest.cpp
   src/v20230812/model/DescribeServicesCallInfoRequest.cpp
   src/v20230812/model/COSStorage.cpp
@@ -167,7 +172,7 @@ set(hai_src
   src/v20230812/model/DeploymentConfig.cpp
   src/v20230812/model/StartInstanceResponse.cpp
   src/v20230812/model/CreateMuskPromptResponse.cpp
-  src/v20230812/model/ServiceMetaData.cpp
+  src/v20230812/model/ProbeInfo.cpp
   src/v20230812/model/Filter.cpp
   src/v20230812/model/CreateInferServiceByTemplateRequest.cpp
   src/v20230812/model/ApplicationInfo.cpp
@@ -178,6 +183,7 @@ set(hai_src
   src/v20230812/model/DescribeModelsRequest.cpp
   src/v20230812/model/CreateMuskPromptRequest.cpp
   src/v20230812/model/DescribeApplicationsResponse.cpp
+  src/v20230812/model/HttpConfig.cpp
   src/v20230812/model/ItemPrice.cpp
   src/v20230812/model/DescribeInstanceNetworkStatusResponse.cpp
   src/v20230812/model/ResetInstancesPasswordRequest.cpp

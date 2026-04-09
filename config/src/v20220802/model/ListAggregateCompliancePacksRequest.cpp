@@ -30,7 +30,8 @@ ListAggregateCompliancePacksRequest::ListAggregateCompliancePacksRequest() :
     m_riskLevelHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_complianceResultHasBeenSet(false),
-    m_orderTypeHasBeenSet(false)
+    m_orderTypeHasBeenSet(false),
+    m_includeCompliancePackRuleResultHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,14 @@ string ListAggregateCompliancePacksRequest::ToJsonString() const
         string key = "OrderType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_orderType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_includeCompliancePackRuleResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncludeCompliancePackRuleResult";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_includeCompliancePackRuleResult.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -249,6 +258,22 @@ void ListAggregateCompliancePacksRequest::SetOrderType(const string& _orderType)
 bool ListAggregateCompliancePacksRequest::OrderTypeHasBeenSet() const
 {
     return m_orderTypeHasBeenSet;
+}
+
+string ListAggregateCompliancePacksRequest::GetIncludeCompliancePackRuleResult() const
+{
+    return m_includeCompliancePackRuleResult;
+}
+
+void ListAggregateCompliancePacksRequest::SetIncludeCompliancePackRuleResult(const string& _includeCompliancePackRuleResult)
+{
+    m_includeCompliancePackRuleResult = _includeCompliancePackRuleResult;
+    m_includeCompliancePackRuleResultHasBeenSet = true;
+}
+
+bool ListAggregateCompliancePacksRequest::IncludeCompliancePackRuleResultHasBeenSet() const
+{
+    return m_includeCompliancePackRuleResultHasBeenSet;
 }
 
 

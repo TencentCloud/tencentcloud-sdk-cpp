@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取关联的产品名，当前只支持Prometheus、CKafka
-                     * @return ProductName 关联的产品名，当前只支持Prometheus、CKafka
+                     * 获取<p>关联的产品名，当前只支持Prometheus、CKafka</p>
+                     * @return ProductName <p>关联的产品名，当前只支持Prometheus、CKafka</p>
                      * 
                      */
                     std::string GetProductName() const;
 
                     /**
-                     * 设置关联的产品名，当前只支持Prometheus、CKafka
-                     * @param _productName 关联的产品名，当前只支持Prometheus、CKafka
+                     * 设置<p>关联的产品名，当前只支持Prometheus、CKafka</p>
+                     * @param _productName <p>关联的产品名，当前只支持Prometheus、CKafka</p>
                      * 
                      */
                     void SetProductName(const std::string& _productName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProductNameHasBeenSet() const;
 
                     /**
-                     * 获取关联关系的状态：// 关联关系状态：1（启用）、2（不启用）
-                     * @return Status 关联关系的状态：// 关联关系状态：1（启用）、2（不启用）
+                     * 获取<p>关联关系的状态：// 关联关系状态：1（启用）、2（不启用）</p>
+                     * @return Status <p>关联关系的状态：// 关联关系状态：1（启用）、2（不启用）</p>
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置关联关系的状态：// 关联关系状态：1（启用）、2（不启用）
-                     * @param _status 关联关系的状态：// 关联关系状态：1（启用）、2（不启用）
+                     * 设置<p>关联关系的状态：// 关联关系状态：1（启用）、2（不启用）</p>
+                     * @param _status <p>关联关系的状态：// 关联关系状态：1（启用）、2（不启用）</p>
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取业务系统ID
-                     * @return InstanceId 业务系统ID
+                     * 获取<p>业务系统ID</p>
+                     * @return InstanceId <p>业务系统ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置业务系统ID
-                     * @param _instanceId 业务系统ID
+                     * 设置<p>业务系统ID</p>
+                     * @param _instanceId <p>业务系统ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取关联的产品实例ID
-                     * @return PeerId 关联的产品实例ID
+                     * 获取<p>关联的产品实例ID</p>
+                     * @return PeerId <p>关联的产品实例ID</p>
                      * 
                      */
                     std::string GetPeerId() const;
 
                     /**
-                     * 设置关联的产品实例ID
-                     * @param _peerId 关联的产品实例ID
+                     * 设置<p>关联的产品实例ID</p>
+                     * @param _peerId <p>关联的产品实例ID</p>
                      * 
                      */
                     void SetPeerId(const std::string& _peerId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool PeerIdHasBeenSet() const;
 
                     /**
-                     * 获取CKafka消息主题
-                     * @return Topic CKafka消息主题
+                     * 获取<p>CKafka消息主题</p>
+                     * @return Topic <p>CKafka消息主题</p>
                      * 
                      */
                     std::string GetTopic() const;
 
                     /**
-                     * 设置CKafka消息主题
-                     * @param _topic CKafka消息主题
+                     * 设置<p>CKafka消息主题</p>
+                     * @param _topic <p>CKafka消息主题</p>
                      * 
                      */
                     void SetTopic(const std::string& _topic);
@@ -147,37 +147,64 @@ namespace TencentCloud
                      */
                     bool TopicHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Ckafka消息主题</p>
+                     * @return MetricTopic <p>Ckafka消息主题</p>
+                     * 
+                     */
+                    std::string GetMetricTopic() const;
+
+                    /**
+                     * 设置<p>Ckafka消息主题</p>
+                     * @param _metricTopic <p>Ckafka消息主题</p>
+                     * 
+                     */
+                    void SetMetricTopic(const std::string& _metricTopic);
+
+                    /**
+                     * 判断参数 MetricTopic 是否已赋值
+                     * @return MetricTopic 是否已赋值
+                     * 
+                     */
+                    bool MetricTopicHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 关联的产品名，当前只支持Prometheus、CKafka
+                     * <p>关联的产品名，当前只支持Prometheus、CKafka</p>
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
-                     * 关联关系的状态：// 关联关系状态：1（启用）、2（不启用）
+                     * <p>关联关系的状态：// 关联关系状态：1（启用）、2（不启用）</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 业务系统ID
+                     * <p>业务系统ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 关联的产品实例ID
+                     * <p>关联的产品实例ID</p>
                      */
                     std::string m_peerId;
                     bool m_peerIdHasBeenSet;
 
                     /**
-                     * CKafka消息主题
+                     * <p>CKafka消息主题</p>
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
+
+                    /**
+                     * <p>Ckafka消息主题</p>
+                     */
+                    std::string m_metricTopic;
+                    bool m_metricTopicHasBeenSet;
 
                 };
             }

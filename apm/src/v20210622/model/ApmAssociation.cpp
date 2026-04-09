@@ -23,7 +23,8 @@ using namespace std;
 ApmAssociation::ApmAssociation() :
     m_peerIdHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_topicHasBeenSet(false)
+    m_topicHasBeenSet(false),
+    m_metricTopicHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome ApmAssociation::Deserialize(const rapidjson::Value &value)
         m_topicHasBeenSet = true;
     }
 
+    if (value.HasMember("MetricTopic") && !value["MetricTopic"].IsNull())
+    {
+        if (!value["MetricTopic"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmAssociation.MetricTopic` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_metricTopic = string(value["MetricTopic"].GetString());
+        m_metricTopicHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void ApmAssociation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Topic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_topic.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metricTopicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetricTopic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metricTopic.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void ApmAssociation::SetTopic(const string& _topic)
 bool ApmAssociation::TopicHasBeenSet() const
 {
     return m_topicHasBeenSet;
+}
+
+string ApmAssociation::GetMetricTopic() const
+{
+    return m_metricTopic;
+}
+
+void ApmAssociation::SetMetricTopic(const string& _metricTopic)
+{
+    m_metricTopic = _metricTopic;
+    m_metricTopicHasBeenSet = true;
+}
+
+bool ApmAssociation::MetricTopicHasBeenSet() const
+{
+    return m_metricTopicHasBeenSet;
 }
 
