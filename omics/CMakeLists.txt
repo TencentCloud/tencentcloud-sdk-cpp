@@ -22,7 +22,7 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/DeleteVolumeDataRequest.h
   include/tencentcloud/omics/v20221128/model/RetryRunsResponse.h
   include/tencentcloud/omics/v20221128/model/EnvironmentRuntimeConfig.h
-  include/tencentcloud/omics/v20221128/model/ImportTableFileResponse.h
+  include/tencentcloud/omics/v20221128/model/RebootHPCNodesRequest.h
   include/tencentcloud/omics/v20221128/model/CreateVolumeRequest.h
   include/tencentcloud/omics/v20221128/model/LimitRange.h
   include/tencentcloud/omics/v20221128/model/DescribeTablesResponse.h
@@ -34,20 +34,27 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/GitInfo.h
   include/tencentcloud/omics/v20221128/model/ApplicationVersion.h
   include/tencentcloud/omics/v20221128/model/RunGroup.h
+  include/tencentcloud/omics/v20221128/model/Project.h
+  include/tencentcloud/omics/v20221128/model/DescribeApplicationVersionsRequest.h
+  include/tencentcloud/omics/v20221128/model/InputTemplate.h
+  include/tencentcloud/omics/v20221128/model/ImportCommonApplicationResponse.h
   include/tencentcloud/omics/v20221128/model/GetRunStatusRequest.h
   include/tencentcloud/omics/v20221128/model/HPCInstance.h
   include/tencentcloud/omics/v20221128/model/CreateEnvironmentResponse.h
-  include/tencentcloud/omics/v20221128/model/RebootHPCNodesRequest.h
+  include/tencentcloud/omics/v20221128/model/ImportTableFileResponse.h
+  include/tencentcloud/omics/v20221128/model/ImportTableFileRequest.h
   include/tencentcloud/omics/v20221128/model/RunStatusCount.h
-  include/tencentcloud/omics/v20221128/model/Tag.h
+  include/tencentcloud/omics/v20221128/model/DescribeApplicationsResponse.h
+  include/tencentcloud/omics/v20221128/model/DescribeEnvironmentsRequest.h
   include/tencentcloud/omics/v20221128/model/RunGroupNotification.h
   include/tencentcloud/omics/v20221128/model/CreateEnvironmentRequest.h
+  include/tencentcloud/omics/v20221128/model/DescribeInputTemplatesRequest.h
+  include/tencentcloud/omics/v20221128/model/Application.h
   include/tencentcloud/omics/v20221128/model/NextflowConfig.h
-  include/tencentcloud/omics/v20221128/model/DescribeTablesRowsResponse.h
   include/tencentcloud/omics/v20221128/model/Run.h
   include/tencentcloud/omics/v20221128/model/NotificationType.h
   include/tencentcloud/omics/v20221128/model/DescribeTablesRowsRequest.h
-  include/tencentcloud/omics/v20221128/model/DescribeEnvironmentsRequest.h
+  include/tencentcloud/omics/v20221128/model/Tag.h
   include/tencentcloud/omics/v20221128/model/ResourceQuota.h
   include/tencentcloud/omics/v20221128/model/CacheInfo.h
   include/tencentcloud/omics/v20221128/model/HPCInternetInfo.h
@@ -70,6 +77,7 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/DescribeHPCNodesRequest.h
   include/tencentcloud/omics/v20221128/model/DescribeEnvironmentsResponse.h
   include/tencentcloud/omics/v20221128/model/RunApplicationResponse.h
+  include/tencentcloud/omics/v20221128/model/DescribeInputTemplatesResponse.h
   include/tencentcloud/omics/v20221128/model/DescribeHPCClustersResponse.h
   include/tencentcloud/omics/v20221128/model/DeleteEnvironmentRequest.h
   include/tencentcloud/omics/v20221128/model/DatabaseOption.h
@@ -85,21 +93,29 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/RunWorkflowResponse.h
   include/tencentcloud/omics/v20221128/model/HPCGPUInfo.h
   include/tencentcloud/omics/v20221128/model/RunGroupTimeoutNotification.h
+  include/tencentcloud/omics/v20221128/model/GetInputTemplateFileResponse.h
   include/tencentcloud/omics/v20221128/model/DescribeHPCClustersRequest.h
-  include/tencentcloud/omics/v20221128/model/DescribeRunsResponse.h
+  include/tencentcloud/omics/v20221128/model/DescribeApplicationVersionsResponse.h
+  include/tencentcloud/omics/v20221128/model/DescribeTablesRowsResponse.h
+  include/tencentcloud/omics/v20221128/model/DescribeProjectsRequest.h
   include/tencentcloud/omics/v20221128/model/CreateVolumeResponse.h
   include/tencentcloud/omics/v20221128/model/DeleteVolumeRequest.h
+  include/tencentcloud/omics/v20221128/model/DescribeProjectsResponse.h
   include/tencentcloud/omics/v20221128/model/Volume.h
   include/tencentcloud/omics/v20221128/model/ModifyVolumeResponse.h
+  include/tencentcloud/omics/v20221128/model/DescribeApplicationsRequest.h
   include/tencentcloud/omics/v20221128/model/CosFileInfo.h
   include/tencentcloud/omics/v20221128/model/VPCOption.h
-  include/tencentcloud/omics/v20221128/model/ImportTableFileRequest.h
+  include/tencentcloud/omics/v20221128/model/GetInputTemplateFileRequest.h
   include/tencentcloud/omics/v20221128/model/DeleteVolumeResponse.h
   include/tencentcloud/omics/v20221128/model/RunApplicationRequest.h
+  include/tencentcloud/omics/v20221128/model/RunConstraints.h
   include/tencentcloud/omics/v20221128/model/CromwellConfig.h
   include/tencentcloud/omics/v20221128/model/ResourceIds.h
   include/tencentcloud/omics/v20221128/model/DescribeRunGroupsResponse.h
   include/tencentcloud/omics/v20221128/model/EnvironmentConfig.h
+  include/tencentcloud/omics/v20221128/model/DescribeRunsResponse.h
+  include/tencentcloud/omics/v20221128/model/RunMetadata.h
   include/tencentcloud/omics/v20221128/model/ModifyVolumeRequest.h
   include/tencentcloud/omics/v20221128/model/DescribeRunGroupsRequest.h
   include/tencentcloud/omics/v20221128/model/HPCNode.h
@@ -107,7 +123,7 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/RunGroupResultNotification.h
   include/tencentcloud/omics/v20221128/model/Table.h
   include/tencentcloud/omics/v20221128/model/CVMOption.h
-  include/tencentcloud/omics/v20221128/model/RunMetadata.h
+  include/tencentcloud/omics/v20221128/model/ImportCommonApplicationRequest.h
   )
 
 set(omics_src
@@ -115,7 +131,7 @@ set(omics_src
   src/v20221128/model/DeleteVolumeDataRequest.cpp
   src/v20221128/model/RetryRunsResponse.cpp
   src/v20221128/model/EnvironmentRuntimeConfig.cpp
-  src/v20221128/model/ImportTableFileResponse.cpp
+  src/v20221128/model/RebootHPCNodesRequest.cpp
   src/v20221128/model/CreateVolumeRequest.cpp
   src/v20221128/model/LimitRange.cpp
   src/v20221128/model/DescribeTablesResponse.cpp
@@ -127,20 +143,27 @@ set(omics_src
   src/v20221128/model/GitInfo.cpp
   src/v20221128/model/ApplicationVersion.cpp
   src/v20221128/model/RunGroup.cpp
+  src/v20221128/model/Project.cpp
+  src/v20221128/model/DescribeApplicationVersionsRequest.cpp
+  src/v20221128/model/InputTemplate.cpp
+  src/v20221128/model/ImportCommonApplicationResponse.cpp
   src/v20221128/model/GetRunStatusRequest.cpp
   src/v20221128/model/HPCInstance.cpp
   src/v20221128/model/CreateEnvironmentResponse.cpp
-  src/v20221128/model/RebootHPCNodesRequest.cpp
+  src/v20221128/model/ImportTableFileResponse.cpp
+  src/v20221128/model/ImportTableFileRequest.cpp
   src/v20221128/model/RunStatusCount.cpp
-  src/v20221128/model/Tag.cpp
+  src/v20221128/model/DescribeApplicationsResponse.cpp
+  src/v20221128/model/DescribeEnvironmentsRequest.cpp
   src/v20221128/model/RunGroupNotification.cpp
   src/v20221128/model/CreateEnvironmentRequest.cpp
+  src/v20221128/model/DescribeInputTemplatesRequest.cpp
+  src/v20221128/model/Application.cpp
   src/v20221128/model/NextflowConfig.cpp
-  src/v20221128/model/DescribeTablesRowsResponse.cpp
   src/v20221128/model/Run.cpp
   src/v20221128/model/NotificationType.cpp
   src/v20221128/model/DescribeTablesRowsRequest.cpp
-  src/v20221128/model/DescribeEnvironmentsRequest.cpp
+  src/v20221128/model/Tag.cpp
   src/v20221128/model/ResourceQuota.cpp
   src/v20221128/model/CacheInfo.cpp
   src/v20221128/model/HPCInternetInfo.cpp
@@ -163,6 +186,7 @@ set(omics_src
   src/v20221128/model/DescribeHPCNodesRequest.cpp
   src/v20221128/model/DescribeEnvironmentsResponse.cpp
   src/v20221128/model/RunApplicationResponse.cpp
+  src/v20221128/model/DescribeInputTemplatesResponse.cpp
   src/v20221128/model/DescribeHPCClustersResponse.cpp
   src/v20221128/model/DeleteEnvironmentRequest.cpp
   src/v20221128/model/DatabaseOption.cpp
@@ -178,21 +202,29 @@ set(omics_src
   src/v20221128/model/RunWorkflowResponse.cpp
   src/v20221128/model/HPCGPUInfo.cpp
   src/v20221128/model/RunGroupTimeoutNotification.cpp
+  src/v20221128/model/GetInputTemplateFileResponse.cpp
   src/v20221128/model/DescribeHPCClustersRequest.cpp
-  src/v20221128/model/DescribeRunsResponse.cpp
+  src/v20221128/model/DescribeApplicationVersionsResponse.cpp
+  src/v20221128/model/DescribeTablesRowsResponse.cpp
+  src/v20221128/model/DescribeProjectsRequest.cpp
   src/v20221128/model/CreateVolumeResponse.cpp
   src/v20221128/model/DeleteVolumeRequest.cpp
+  src/v20221128/model/DescribeProjectsResponse.cpp
   src/v20221128/model/Volume.cpp
   src/v20221128/model/ModifyVolumeResponse.cpp
+  src/v20221128/model/DescribeApplicationsRequest.cpp
   src/v20221128/model/CosFileInfo.cpp
   src/v20221128/model/VPCOption.cpp
-  src/v20221128/model/ImportTableFileRequest.cpp
+  src/v20221128/model/GetInputTemplateFileRequest.cpp
   src/v20221128/model/DeleteVolumeResponse.cpp
   src/v20221128/model/RunApplicationRequest.cpp
+  src/v20221128/model/RunConstraints.cpp
   src/v20221128/model/CromwellConfig.cpp
   src/v20221128/model/ResourceIds.cpp
   src/v20221128/model/DescribeRunGroupsResponse.cpp
   src/v20221128/model/EnvironmentConfig.cpp
+  src/v20221128/model/DescribeRunsResponse.cpp
+  src/v20221128/model/RunMetadata.cpp
   src/v20221128/model/ModifyVolumeRequest.cpp
   src/v20221128/model/DescribeRunGroupsRequest.cpp
   src/v20221128/model/HPCNode.cpp
@@ -200,7 +232,7 @@ set(omics_src
   src/v20221128/model/RunGroupResultNotification.cpp
   src/v20221128/model/Table.cpp
   src/v20221128/model/CVMOption.cpp
-  src/v20221128/model/RunMetadata.cpp
+  src/v20221128/model/ImportCommonApplicationRequest.cpp
   )
 
 set(omics_include

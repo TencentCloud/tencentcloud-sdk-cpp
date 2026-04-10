@@ -15,11 +15,16 @@
 #
 
 set(rce_public_header
-  include/tencentcloud/rce/v20201103/RceClient.h
   include/tencentcloud/rce/v20250425/RceClient.h
+  include/tencentcloud/rce/v20201103/RceClient.h
   )
 
 set(rce_public_header_model
+  include/tencentcloud/rce/v20250425/model/ManageIPPortraitRiskOutput.h
+  include/tencentcloud/rce/v20250425/model/ManageIPPortraitRiskInput.h
+  include/tencentcloud/rce/v20250425/model/ManageIPPortraitRiskResponse.h
+  include/tencentcloud/rce/v20250425/model/ManageIPPortraitRiskRequest.h
+  include/tencentcloud/rce/v20250425/model/ManageIPPortraitRiskValueOutput.h
   include/tencentcloud/rce/v20201103/model/DataContentInfo.h
   include/tencentcloud/rce/v20201103/model/OutputDescribeNameListFrontFix.h
   include/tencentcloud/rce/v20201103/model/DescribeNameListResponse.h
@@ -81,16 +86,16 @@ set(rce_public_header_model
   include/tencentcloud/rce/v20201103/model/DeleteNameListResponse.h
   include/tencentcloud/rce/v20201103/model/InputModifyNameListDataFrontListData.h
   include/tencentcloud/rce/v20201103/model/DescribeUserUsageCntResponse.h
-  include/tencentcloud/rce/v20250425/model/ManageIPPortraitRiskOutput.h
-  include/tencentcloud/rce/v20250425/model/ManageIPPortraitRiskInput.h
-  include/tencentcloud/rce/v20250425/model/ManageIPPortraitRiskResponse.h
-  include/tencentcloud/rce/v20250425/model/ManageIPPortraitRiskRequest.h
-  include/tencentcloud/rce/v20250425/model/ManageIPPortraitRiskValueOutput.h
   )
 
 set(rce_src
-  src/v20201103/RceClient.cpp
   src/v20250425/RceClient.cpp
+  src/v20201103/RceClient.cpp
+  src/v20250425/model/ManageIPPortraitRiskOutput.cpp
+  src/v20250425/model/ManageIPPortraitRiskInput.cpp
+  src/v20250425/model/ManageIPPortraitRiskResponse.cpp
+  src/v20250425/model/ManageIPPortraitRiskRequest.cpp
+  src/v20250425/model/ManageIPPortraitRiskValueOutput.cpp
   src/v20201103/model/DataContentInfo.cpp
   src/v20201103/model/OutputDescribeNameListFrontFix.cpp
   src/v20201103/model/DescribeNameListResponse.cpp
@@ -152,11 +157,6 @@ set(rce_src
   src/v20201103/model/DeleteNameListResponse.cpp
   src/v20201103/model/InputModifyNameListDataFrontListData.cpp
   src/v20201103/model/DescribeUserUsageCntResponse.cpp
-  src/v20250425/model/ManageIPPortraitRiskOutput.cpp
-  src/v20250425/model/ManageIPPortraitRiskInput.cpp
-  src/v20250425/model/ManageIPPortraitRiskResponse.cpp
-  src/v20250425/model/ManageIPPortraitRiskRequest.cpp
-  src/v20250425/model/ManageIPPortraitRiskValueOutput.cpp
   )
 
 set(rce_include
@@ -185,9 +185,9 @@ target_link_libraries(rce
   core)
 
 #install(FILES ${rce_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/rce/v20250425)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/rce/v20201103)
 #install(FILES ${rce_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/rce/v20250425/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/rce/v20201103/model)
 install(DIRECTORY ${rce_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 

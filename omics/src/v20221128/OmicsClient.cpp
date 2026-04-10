@@ -290,6 +290,106 @@ OmicsClient::DeleteVolumeDataOutcomeCallable OmicsClient::DeleteVolumeDataCallab
     return prom->get_future();
 }
 
+OmicsClient::DescribeApplicationVersionsOutcome OmicsClient::DescribeApplicationVersions(const DescribeApplicationVersionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApplicationVersions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApplicationVersionsResponse rsp = DescribeApplicationVersionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApplicationVersionsOutcome(rsp);
+        else
+            return DescribeApplicationVersionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApplicationVersionsOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::DescribeApplicationVersionsAsync(const DescribeApplicationVersionsRequest& request, const DescribeApplicationVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeApplicationVersionsRequest&;
+    using Resp = DescribeApplicationVersionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeApplicationVersions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OmicsClient::DescribeApplicationVersionsOutcomeCallable OmicsClient::DescribeApplicationVersionsCallable(const DescribeApplicationVersionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeApplicationVersionsOutcome>>();
+    DescribeApplicationVersionsAsync(
+    request,
+    [prom](
+        const OmicsClient*,
+        const DescribeApplicationVersionsRequest&,
+        DescribeApplicationVersionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+OmicsClient::DescribeApplicationsOutcome OmicsClient::DescribeApplications(const DescribeApplicationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApplications");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApplicationsResponse rsp = DescribeApplicationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApplicationsOutcome(rsp);
+        else
+            return DescribeApplicationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApplicationsOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::DescribeApplicationsAsync(const DescribeApplicationsRequest& request, const DescribeApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeApplicationsRequest&;
+    using Resp = DescribeApplicationsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeApplications", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OmicsClient::DescribeApplicationsOutcomeCallable OmicsClient::DescribeApplicationsCallable(const DescribeApplicationsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeApplicationsOutcome>>();
+    DescribeApplicationsAsync(
+    request,
+    [prom](
+        const OmicsClient*,
+        const DescribeApplicationsRequest&,
+        DescribeApplicationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OmicsClient::DescribeEnvironmentsOutcome OmicsClient::DescribeEnvironments(const DescribeEnvironmentsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEnvironments");
@@ -432,6 +532,106 @@ OmicsClient::DescribeHPCNodesOutcomeCallable OmicsClient::DescribeHPCNodesCallab
         const OmicsClient*,
         const DescribeHPCNodesRequest&,
         DescribeHPCNodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+OmicsClient::DescribeInputTemplatesOutcome OmicsClient::DescribeInputTemplates(const DescribeInputTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInputTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInputTemplatesResponse rsp = DescribeInputTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInputTemplatesOutcome(rsp);
+        else
+            return DescribeInputTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInputTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::DescribeInputTemplatesAsync(const DescribeInputTemplatesRequest& request, const DescribeInputTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeInputTemplatesRequest&;
+    using Resp = DescribeInputTemplatesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeInputTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OmicsClient::DescribeInputTemplatesOutcomeCallable OmicsClient::DescribeInputTemplatesCallable(const DescribeInputTemplatesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeInputTemplatesOutcome>>();
+    DescribeInputTemplatesAsync(
+    request,
+    [prom](
+        const OmicsClient*,
+        const DescribeInputTemplatesRequest&,
+        DescribeInputTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+OmicsClient::DescribeProjectsOutcome OmicsClient::DescribeProjects(const DescribeProjectsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProjects");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProjectsResponse rsp = DescribeProjectsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProjectsOutcome(rsp);
+        else
+            return DescribeProjectsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProjectsOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::DescribeProjectsAsync(const DescribeProjectsRequest& request, const DescribeProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeProjectsRequest&;
+    using Resp = DescribeProjectsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeProjects", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OmicsClient::DescribeProjectsOutcomeCallable OmicsClient::DescribeProjectsCallable(const DescribeProjectsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeProjectsOutcome>>();
+    DescribeProjectsAsync(
+    request,
+    [prom](
+        const OmicsClient*,
+        const DescribeProjectsRequest&,
+        DescribeProjectsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -690,6 +890,56 @@ OmicsClient::DescribeVolumesOutcomeCallable OmicsClient::DescribeVolumesCallable
     return prom->get_future();
 }
 
+OmicsClient::GetInputTemplateFileOutcome OmicsClient::GetInputTemplateFile(const GetInputTemplateFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetInputTemplateFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetInputTemplateFileResponse rsp = GetInputTemplateFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetInputTemplateFileOutcome(rsp);
+        else
+            return GetInputTemplateFileOutcome(o.GetError());
+    }
+    else
+    {
+        return GetInputTemplateFileOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::GetInputTemplateFileAsync(const GetInputTemplateFileRequest& request, const GetInputTemplateFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetInputTemplateFileRequest&;
+    using Resp = GetInputTemplateFileResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetInputTemplateFile", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OmicsClient::GetInputTemplateFileOutcomeCallable OmicsClient::GetInputTemplateFileCallable(const GetInputTemplateFileRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetInputTemplateFileOutcome>>();
+    GetInputTemplateFileAsync(
+    request,
+    [prom](
+        const OmicsClient*,
+        const GetInputTemplateFileRequest&,
+        GetInputTemplateFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OmicsClient::GetRunCallsOutcome OmicsClient::GetRunCalls(const GetRunCallsRequest &request)
 {
     auto outcome = MakeRequest(request, "GetRunCalls");
@@ -832,6 +1082,56 @@ OmicsClient::GetRunStatusOutcomeCallable OmicsClient::GetRunStatusCallable(const
         const OmicsClient*,
         const GetRunStatusRequest&,
         GetRunStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+OmicsClient::ImportCommonApplicationOutcome OmicsClient::ImportCommonApplication(const ImportCommonApplicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImportCommonApplication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImportCommonApplicationResponse rsp = ImportCommonApplicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImportCommonApplicationOutcome(rsp);
+        else
+            return ImportCommonApplicationOutcome(o.GetError());
+    }
+    else
+    {
+        return ImportCommonApplicationOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::ImportCommonApplicationAsync(const ImportCommonApplicationRequest& request, const ImportCommonApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ImportCommonApplicationRequest&;
+    using Resp = ImportCommonApplicationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ImportCommonApplication", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OmicsClient::ImportCommonApplicationOutcomeCallable OmicsClient::ImportCommonApplicationCallable(const ImportCommonApplicationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ImportCommonApplicationOutcome>>();
+    ImportCommonApplicationAsync(
+    request,
+    [prom](
+        const OmicsClient*,
+        const ImportCommonApplicationRequest&,
+        ImportCommonApplicationOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
