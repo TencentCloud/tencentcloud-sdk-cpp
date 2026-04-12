@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体处理的文件输入信息。
-                     * @return InputInfo 媒体处理的文件输入信息。
+                     * 获取<p>媒体处理的文件输入信息。</p>
+                     * @return InputInfo <p>媒体处理的文件输入信息。</p>
                      * 
                      */
                     std::vector<MediaInputInfo> GetInputInfo() const;
 
                     /**
-                     * 设置媒体处理的文件输入信息。
-                     * @param _inputInfo 媒体处理的文件输入信息。
+                     * 设置<p>媒体处理的文件输入信息。</p>
+                     * @param _inputInfo <p>媒体处理的文件输入信息。</p>
                      * 
                      */
                     void SetInputInfo(const std::vector<MediaInputInfo>& _inputInfo);
@@ -68,19 +68,15 @@ namespace TencentCloud
                     bool InputInfoHasBeenSet() const;
 
                     /**
-                     * 获取媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
-注意：当InputInfo.Type为URL时，该参数是必填项，目前只支持COS输出
-                     * @return OutputStorage 媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
-注意：当InputInfo.Type为URL时，该参数是必填项，目前只支持COS输出
+                     * 获取<p>媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。<br>注意：当InputInfo.Type为URL时，该参数是必填项，目前只支持COS输出</p>
+                     * @return OutputStorage <p>媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。<br>注意：当InputInfo.Type为URL时，该参数是必填项，目前只支持COS输出</p>
                      * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
-                     * 设置媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
-注意：当InputInfo.Type为URL时，该参数是必填项，目前只支持COS输出
-                     * @param _outputStorage 媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
-注意：当InputInfo.Type为URL时，该参数是必填项，目前只支持COS输出
+                     * 设置<p>媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。<br>注意：当InputInfo.Type为URL时，该参数是必填项，目前只支持COS输出</p>
+                     * @param _outputStorage <p>媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。<br>注意：当InputInfo.Type为URL时，该参数是必填项，目前只支持COS输出</p>
                      * 
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
@@ -93,19 +89,15 @@ namespace TencentCloud
                     bool OutputStorageHasBeenSet() const;
 
                     /**
-                     * 获取媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
-如果不填，表示与 InputInfo 中文件所在的目录一致。
-                     * @return OutputDir 媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
-如果不填，表示与 InputInfo 中文件所在的目录一致。
+                     * 获取<p>媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如<code>/movie/201907/</code>。<br>如果不填，表示与 InputInfo 中文件所在的目录一致。</p>
+                     * @return OutputDir <p>媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如<code>/movie/201907/</code>。<br>如果不填，表示与 InputInfo 中文件所在的目录一致。</p>
                      * 
                      */
                     std::string GetOutputDir() const;
 
                     /**
-                     * 设置媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
-如果不填，表示与 InputInfo 中文件所在的目录一致。
-                     * @param _outputDir 媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
-如果不填，表示与 InputInfo 中文件所在的目录一致。
+                     * 设置<p>媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如<code>/movie/201907/</code>。<br>如果不填，表示与 InputInfo 中文件所在的目录一致。</p>
+                     * @param _outputDir <p>媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如<code>/movie/201907/</code>。<br>如果不填，表示与 InputInfo 中文件所在的目录一致。</p>
                      * 
                      */
                     void SetOutputDir(const std::string& _outputDir);
@@ -118,15 +110,15 @@ namespace TencentCloud
                     bool OutputDirHasBeenSet() const;
 
                     /**
-                     * 获取智能字幕
-                     * @return SmartSubtitlesTask 智能字幕
+                     * 获取<p>智能字幕</p>
+                     * @return SmartSubtitlesTask <p>智能字幕</p>
                      * 
                      */
                     SmartSubtitlesTaskInput GetSmartSubtitlesTask() const;
 
                     /**
-                     * 设置智能字幕
-                     * @param _smartSubtitlesTask 智能字幕
+                     * 设置<p>智能字幕</p>
+                     * @param _smartSubtitlesTask <p>智能字幕</p>
                      * 
                      */
                     void SetSmartSubtitlesTask(const SmartSubtitlesTaskInput& _smartSubtitlesTask);
@@ -139,15 +131,15 @@ namespace TencentCloud
                     bool SmartSubtitlesTaskHasBeenSet() const;
 
                     /**
-                     * 获取任务的事件通知信息，不填代表不获取事件通知。
-                     * @return TaskNotifyConfig 任务的事件通知信息，不填代表不获取事件通知。
+                     * 获取<p>任务的事件通知信息，不填代表不获取事件通知。</p>
+                     * @return TaskNotifyConfig <p>任务的事件通知信息，不填代表不获取事件通知。</p>
                      * 
                      */
                     TaskNotifyConfig GetTaskNotifyConfig() const;
 
                     /**
-                     * 设置任务的事件通知信息，不填代表不获取事件通知。
-                     * @param _taskNotifyConfig 任务的事件通知信息，不填代表不获取事件通知。
+                     * 设置<p>任务的事件通知信息，不填代表不获取事件通知。</p>
+                     * @param _taskNotifyConfig <p>任务的事件通知信息，不填代表不获取事件通知。</p>
                      * 
                      */
                     void SetTaskNotifyConfig(const TaskNotifyConfig& _taskNotifyConfig);
@@ -160,15 +152,15 @@ namespace TencentCloud
                     bool TaskNotifyConfigHasBeenSet() const;
 
                     /**
-                     * 获取任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
-                     * @return TasksPriority 任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
+                     * 获取<p>任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>
+                     * @return TasksPriority <p>任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>
                      * 
                      */
                     int64_t GetTasksPriority() const;
 
                     /**
-                     * 设置任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
-                     * @param _tasksPriority 任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
+                     * 设置<p>任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>
+                     * @param _tasksPriority <p>任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>
                      * 
                      */
                     void SetTasksPriority(const int64_t& _tasksPriority);
@@ -181,15 +173,15 @@ namespace TencentCloud
                     bool TasksPriorityHasBeenSet() const;
 
                     /**
-                     * 获取来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @return SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 获取<p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
+                     * @return SessionContext <p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @param _sessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 设置<p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
+                     * @param _sessionContext <p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -202,15 +194,15 @@ namespace TencentCloud
                     bool SessionContextHasBeenSet() const;
 
                     /**
-                     * 获取资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
-                     * @return ResourceId 资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
+                     * 获取<p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>
+                     * @return ResourceId <p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
-                     * @param _resourceId 资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
+                     * 设置<p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>
+                     * @param _resourceId <p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -223,27 +215,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取是否跳过元信息获取，可选值： 
-0：表示不跳过 
-1：表示跳过 
-默认值：0	
-                     * @return SkipMateData 是否跳过元信息获取，可选值： 
-0：表示不跳过 
-1：表示跳过 
-默认值：0	
+                     * 获取<p>是否跳过元信息获取，可选值：<br>0：表示不跳过<br>1：表示跳过<br>默认值：0</p>
+                     * @return SkipMateData <p>是否跳过元信息获取，可选值：<br>0：表示不跳过<br>1：表示跳过<br>默认值：0</p>
                      * 
                      */
                     int64_t GetSkipMateData() const;
 
                     /**
-                     * 设置是否跳过元信息获取，可选值： 
-0：表示不跳过 
-1：表示跳过 
-默认值：0	
-                     * @param _skipMateData 是否跳过元信息获取，可选值： 
-0：表示不跳过 
-1：表示跳过 
-默认值：0	
+                     * 设置<p>是否跳过元信息获取，可选值：<br>0：表示不跳过<br>1：表示跳过<br>默认值：0</p>
+                     * @param _skipMateData <p>是否跳过元信息获取，可选值：<br>0：表示不跳过<br>1：表示跳过<br>默认值：0</p>
                      * 
                      */
                     void SetSkipMateData(const int64_t& _skipMateData);
@@ -255,66 +235,88 @@ namespace TencentCloud
                      */
                     bool SkipMateDataHasBeenSet() const;
 
+                    /**
+                     * 获取<p>执行模式，可选值：</p><li>Parallel: 并发执行</li><li>Serial: 串行执行</li>注意：默认并发执行。
+                     * @return TaskMode <p>执行模式，可选值：</p><li>Parallel: 并发执行</li><li>Serial: 串行执行</li>注意：默认并发执行。
+                     * 
+                     */
+                    std::string GetTaskMode() const;
+
+                    /**
+                     * 设置<p>执行模式，可选值：</p><li>Parallel: 并发执行</li><li>Serial: 串行执行</li>注意：默认并发执行。
+                     * @param _taskMode <p>执行模式，可选值：</p><li>Parallel: 并发执行</li><li>Serial: 串行执行</li>注意：默认并发执行。
+                     * 
+                     */
+                    void SetTaskMode(const std::string& _taskMode);
+
+                    /**
+                     * 判断参数 TaskMode 是否已赋值
+                     * @return TaskMode 是否已赋值
+                     * 
+                     */
+                    bool TaskModeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 媒体处理的文件输入信息。
+                     * <p>媒体处理的文件输入信息。</p>
                      */
                     std::vector<MediaInputInfo> m_inputInfo;
                     bool m_inputInfoHasBeenSet;
 
                     /**
-                     * 媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。
-注意：当InputInfo.Type为URL时，该参数是必填项，目前只支持COS输出
+                     * <p>媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。<br>注意：当InputInfo.Type为URL时，该参数是必填项，目前只支持COS输出</p>
                      */
                     TaskOutputStorage m_outputStorage;
                     bool m_outputStorageHasBeenSet;
 
                     /**
-                     * 媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
-如果不填，表示与 InputInfo 中文件所在的目录一致。
+                     * <p>媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如<code>/movie/201907/</code>。<br>如果不填，表示与 InputInfo 中文件所在的目录一致。</p>
                      */
                     std::string m_outputDir;
                     bool m_outputDirHasBeenSet;
 
                     /**
-                     * 智能字幕
+                     * <p>智能字幕</p>
                      */
                     SmartSubtitlesTaskInput m_smartSubtitlesTask;
                     bool m_smartSubtitlesTaskHasBeenSet;
 
                     /**
-                     * 任务的事件通知信息，不填代表不获取事件通知。
+                     * <p>任务的事件通知信息，不填代表不获取事件通知。</p>
                      */
                     TaskNotifyConfig m_taskNotifyConfig;
                     bool m_taskNotifyConfigHasBeenSet;
 
                     /**
-                     * 任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。
+                     * <p>任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。</p>
                      */
                     int64_t m_tasksPriority;
                     bool m_tasksPriorityHasBeenSet;
 
                     /**
-                     * 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * <p>来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。</p>
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
 
                     /**
-                     * 资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
+                     * <p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 是否跳过元信息获取，可选值： 
-0：表示不跳过 
-1：表示跳过 
-默认值：0	
+                     * <p>是否跳过元信息获取，可选值：<br>0：表示不跳过<br>1：表示跳过<br>默认值：0</p>
                      */
                     int64_t m_skipMateData;
                     bool m_skipMateDataHasBeenSet;
+
+                    /**
+                     * <p>执行模式，可选值：</p><li>Parallel: 并发执行</li><li>Serial: 串行执行</li>注意：默认并发执行。
+                     */
+                    std::string m_taskMode;
+                    bool m_taskModeHasBeenSet;
 
                 };
             }

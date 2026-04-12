@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取0:公网, 1:集群内访问, 2：NodePort, 3: VPC 内网访问
-                     * @return AccessType 0:公网, 1:集群内访问, 2：NodePort, 3: VPC 内网访问
+                     * 获取<p>0:公网, 1:集群内访问, 2：NodePort, 3: VPC 内网访问</p>
+                     * @return AccessType <p>0:公网, 1:集群内访问, 2：NodePort, 3: VPC 内网访问</p>
                      * 
                      */
                     int64_t GetAccessType() const;
 
                     /**
-                     * 设置0:公网, 1:集群内访问, 2：NodePort, 3: VPC 内网访问
-                     * @param _accessType 0:公网, 1:集群内访问, 2：NodePort, 3: VPC 内网访问
+                     * 设置<p>0:公网, 1:集群内访问, 2：NodePort, 3: VPC 内网访问</p>
+                     * @param _accessType <p>0:公网, 1:集群内访问, 2：NodePort, 3: VPC 内网访问</p>
                      * 
                      */
                     void SetAccessType(const int64_t& _accessType);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool AccessTypeHasBeenSet() const;
 
                     /**
-                     * 获取容器端口映射
-                     * @return ProtocolPorts 容器端口映射
+                     * 获取<p>容器端口映射</p>
+                     * @return ProtocolPorts <p>容器端口映射</p>
                      * 
                      */
                     std::vector<ProtocolPort> GetProtocolPorts() const;
 
                     /**
-                     * 设置容器端口映射
-                     * @param _protocolPorts 容器端口映射
+                     * 设置<p>容器端口映射</p>
+                     * @param _protocolPorts <p>容器端口映射</p>
                      * 
                      */
                     void SetProtocolPorts(const std::vector<ProtocolPort>& _protocolPorts);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ProtocolPortsHasBeenSet() const;
 
                     /**
-                     * 获取子网ID
-                     * @return SubnetId 子网ID
+                     * 获取<p>子网ID</p>
+                     * @return SubnetId <p>子网ID</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网ID
-                     * @param _subnetId 子网ID
+                     * 设置<p>子网ID</p>
+                     * @param _subnetId <p>子网ID</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取是否创建 k8s service，默认为 false
-                     * @return DisableService 是否创建 k8s service，默认为 false
+                     * 获取<p>是否创建 k8s service，默认为 false</p>
+                     * @return DisableService <p>是否创建 k8s service，默认为 false</p>
                      * 
                      */
                     bool GetDisableService() const;
 
                     /**
-                     * 设置是否创建 k8s service，默认为 false
-                     * @param _disableService 是否创建 k8s service，默认为 false
+                     * 设置<p>是否创建 k8s service，默认为 false</p>
+                     * @param _disableService <p>是否创建 k8s service，默认为 false</p>
                      * 
                      */
                     void SetDisableService(const bool& _disableService);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool DisableServiceHasBeenSet() const;
 
                     /**
-                     * 获取service 是否为 headless 类型
-                     * @return HeadlessService service 是否为 headless 类型
+                     * 获取<p>service 是否为 headless 类型</p>
+                     * @return HeadlessService <p>service 是否为 headless 类型</p>
                      * 
                      */
                     bool GetHeadlessService() const;
 
                     /**
-                     * 设置service 是否为 headless 类型
-                     * @param _headlessService service 是否为 headless 类型
+                     * 设置<p>service 是否为 headless 类型</p>
+                     * @param _headlessService <p>service 是否为 headless 类型</p>
                      * 
                      */
                     void SetHeadlessService(const bool& _headlessService);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool HeadlessServiceHasBeenSet() const;
 
                     /**
-                     * 获取当为 true 且 DisableService 也为 true 时，会删除之前创建的 service，请小心使用
-                     * @return AllowDeleteService 当为 true 且 DisableService 也为 true 时，会删除之前创建的 service，请小心使用
+                     * 获取<p>当为 true 且 DisableService 也为 true 时，会删除之前创建的 service，请小心使用</p>
+                     * @return AllowDeleteService <p>当为 true 且 DisableService 也为 true 时，会删除之前创建的 service，请小心使用</p>
                      * 
                      */
                     bool GetAllowDeleteService() const;
 
                     /**
-                     * 设置当为 true 且 DisableService 也为 true 时，会删除之前创建的 service，请小心使用
-                     * @param _allowDeleteService 当为 true 且 DisableService 也为 true 时，会删除之前创建的 service，请小心使用
+                     * 设置<p>当为 true 且 DisableService 也为 true 时，会删除之前创建的 service，请小心使用</p>
+                     * @param _allowDeleteService <p>当为 true 且 DisableService 也为 true 时，会删除之前创建的 service，请小心使用</p>
                      * 
                      */
                     void SetAllowDeleteService(const bool& _allowDeleteService);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool AllowDeleteServiceHasBeenSet() const;
 
                     /**
-                     * 获取开启SessionAffinity，true为开启，false为不开启，默认为false
-                     * @return OpenSessionAffinity 开启SessionAffinity，true为开启，false为不开启，默认为false
+                     * 获取<p>开启SessionAffinity，true为开启，false为不开启，默认为false</p>
+                     * @return OpenSessionAffinity <p>开启SessionAffinity，true为开启，false为不开启，默认为false</p>
                      * 
                      */
                     bool GetOpenSessionAffinity() const;
 
                     /**
-                     * 设置开启SessionAffinity，true为开启，false为不开启，默认为false
-                     * @param _openSessionAffinity 开启SessionAffinity，true为开启，false为不开启，默认为false
+                     * 设置<p>开启SessionAffinity，true为开启，false为不开启，默认为false</p>
+                     * @param _openSessionAffinity <p>开启SessionAffinity，true为开启，false为不开启，默认为false</p>
                      * 
                      */
                     void SetOpenSessionAffinity(const bool& _openSessionAffinity);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool OpenSessionAffinityHasBeenSet() const;
 
                     /**
-                     * 获取SessionAffinity会话时间，默认10800
-                     * @return SessionAffinityTimeoutSeconds SessionAffinity会话时间，默认10800
+                     * 获取<p>SessionAffinity会话时间，默认10800</p>
+                     * @return SessionAffinityTimeoutSeconds <p>SessionAffinity会话时间，默认10800</p>
                      * 
                      */
                     int64_t GetSessionAffinityTimeoutSeconds() const;
 
                     /**
-                     * 设置SessionAffinity会话时间，默认10800
-                     * @param _sessionAffinityTimeoutSeconds SessionAffinity会话时间，默认10800
+                     * 设置<p>SessionAffinity会话时间，默认10800</p>
+                     * @param _sessionAffinityTimeoutSeconds <p>SessionAffinity会话时间，默认10800</p>
                      * 
                      */
                     void SetSessionAffinityTimeoutSeconds(const int64_t& _sessionAffinityTimeoutSeconds);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool SessionAffinityTimeoutSecondsHasBeenSet() const;
 
                     /**
-                     * 获取服务名称
-                     * @return ServiceName 服务名称
+                     * 获取<p>服务名称</p>
+                     * @return ServiceName <p>服务名称</p>
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
-                     * 设置服务名称
-                     * @param _serviceName 服务名称
+                     * 设置<p>服务名称</p>
+                     * @param _serviceName <p>服务名称</p>
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool ServiceNameHasBeenSet() const;
 
                     /**
-                     * 获取外部流量策略
-                     * @return ExternalTrafficStrategy 外部流量策略
+                     * 获取<p>外部流量策略</p>
+                     * @return ExternalTrafficStrategy <p>外部流量策略</p>
                      * 
                      */
                     std::string GetExternalTrafficStrategy() const;
 
                     /**
-                     * 设置外部流量策略
-                     * @param _externalTrafficStrategy 外部流量策略
+                     * 设置<p>外部流量策略</p>
+                     * @param _externalTrafficStrategy <p>外部流量策略</p>
                      * 
                      */
                     void SetExternalTrafficStrategy(const std::string& _externalTrafficStrategy);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool ExternalTrafficStrategyHasBeenSet() const;
 
                     /**
-                     * 获取外部流量策略
-                     * @return ExternalTrafficPolicy 外部流量策略
+                     * 获取<p>外部流量策略</p>
+                     * @return ExternalTrafficPolicy <p>外部流量策略</p>
                      * 
                      */
                     std::string GetExternalTrafficPolicy() const;
 
                     /**
-                     * 设置外部流量策略
-                     * @param _externalTrafficPolicy 外部流量策略
+                     * 设置<p>外部流量策略</p>
+                     * @param _externalTrafficPolicy <p>外部流量策略</p>
                      * 
                      */
                     void SetExternalTrafficPolicy(const std::string& _externalTrafficPolicy);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool ExternalTrafficPolicyHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡提供者
-                     * @return LoadBalancerProvisioner 负载均衡提供者
+                     * 获取<p>负载均衡提供者</p>
+                     * @return LoadBalancerProvisioner <p>负载均衡提供者</p>
                      * 
                      */
                     std::string GetLoadBalancerProvisioner() const;
 
                     /**
-                     * 设置负载均衡提供者
-                     * @param _loadBalancerProvisioner 负载均衡提供者
+                     * 设置<p>负载均衡提供者</p>
+                     * @param _loadBalancerProvisioner <p>负载均衡提供者</p>
                      * 
                      */
                     void SetLoadBalancerProvisioner(const std::string& _loadBalancerProvisioner);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool LoadBalancerProvisionerHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡类型，Intranet表示内网，Internet表示外网
-                     * @return LoadBalancingType 负载均衡类型，Intranet表示内网，Internet表示外网
+                     * 获取<p>负载均衡类型，Intranet表示内网，Internet表示外网</p>
+                     * @return LoadBalancingType <p>负载均衡类型，Intranet表示内网，Internet表示外网</p>
                      * 
                      */
                     std::string GetLoadBalancingType() const;
 
                     /**
-                     * 设置负载均衡类型，Intranet表示内网，Internet表示外网
-                     * @param _loadBalancingType 负载均衡类型，Intranet表示内网，Internet表示外网
+                     * 设置<p>负载均衡类型，Intranet表示内网，Internet表示外网</p>
+                     * @param _loadBalancingType <p>负载均衡类型，Intranet表示内网，Internet表示外网</p>
                      * 
                      */
                     void SetLoadBalancingType(const std::string& _loadBalancingType);
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool LoadBalancingTypeHasBeenSet() const;
 
                     /**
-                     * 获取k8s负载均衡内网vip
-                     * @return ClusterIp k8s负载均衡内网vip
+                     * 获取<p>k8s负载均衡内网vip</p>
+                     * @return ClusterIp <p>k8s负载均衡内网vip</p>
                      * 
                      */
                     std::string GetClusterIp() const;
 
                     /**
-                     * 设置k8s负载均衡内网vip
-                     * @param _clusterIp k8s负载均衡内网vip
+                     * 设置<p>k8s负载均衡内网vip</p>
+                     * @param _clusterIp <p>k8s负载均衡内网vip</p>
                      * 
                      */
                     void SetClusterIp(const std::string& _clusterIp);
@@ -342,15 +342,15 @@ namespace TencentCloud
                     bool ClusterIpHasBeenSet() const;
 
                     /**
-                     * 获取禁用服务Int记录
-                     * @return DisableServiceInt 禁用服务Int记录
+                     * 获取<p>禁用服务Int记录</p>
+                     * @return DisableServiceInt <p>禁用服务Int记录</p>
                      * 
                      */
                     uint64_t GetDisableServiceInt() const;
 
                     /**
-                     * 设置禁用服务Int记录
-                     * @param _disableServiceInt 禁用服务Int记录
+                     * 设置<p>禁用服务Int记录</p>
+                     * @param _disableServiceInt <p>禁用服务Int记录</p>
                      * 
                      */
                     void SetDisableServiceInt(const uint64_t& _disableServiceInt);
@@ -363,15 +363,15 @@ namespace TencentCloud
                     bool DisableServiceIntHasBeenSet() const;
 
                     /**
-                     * 获取开启SessionAffinity Int记录
-                     * @return OpenSessionAffinityInt 开启SessionAffinity Int记录
+                     * 获取<p>开启SessionAffinity Int记录</p>
+                     * @return OpenSessionAffinityInt <p>开启SessionAffinity Int记录</p>
                      * 
                      */
                     uint64_t GetOpenSessionAffinityInt() const;
 
                     /**
-                     * 设置开启SessionAffinity Int记录
-                     * @param _openSessionAffinityInt 开启SessionAffinity Int记录
+                     * 设置<p>开启SessionAffinity Int记录</p>
+                     * @param _openSessionAffinityInt <p>开启SessionAffinity Int记录</p>
                      * 
                      */
                     void SetOpenSessionAffinityInt(const uint64_t& _openSessionAffinityInt);
@@ -384,15 +384,15 @@ namespace TencentCloud
                     bool OpenSessionAffinityIntHasBeenSet() const;
 
                     /**
-                     * 获取开启HeadlessService int记录
-                     * @return HeadlessServiceInt 开启HeadlessService int记录
+                     * 获取<p>开启HeadlessService int记录</p>
+                     * @return HeadlessServiceInt <p>开启HeadlessService int记录</p>
                      * 
                      */
                     uint64_t GetHeadlessServiceInt() const;
 
                     /**
-                     * 设置开启HeadlessService int记录
-                     * @param _headlessServiceInt 开启HeadlessService int记录
+                     * 设置<p>开启HeadlessService int记录</p>
+                     * @param _headlessServiceInt <p>开启HeadlessService int记录</p>
                      * 
                      */
                     void SetHeadlessServiceInt(const uint64_t& _headlessServiceInt);
@@ -405,15 +405,15 @@ namespace TencentCloud
                     bool HeadlessServiceIntHasBeenSet() const;
 
                     /**
-                     * 获取服务名称
-                     * @return Name 服务名称
+                     * 获取<p>服务名称</p>
+                     * @return Name <p>服务名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置服务名称
-                     * @param _name 服务名称
+                     * 设置<p>服务名称</p>
+                     * @param _name <p>服务名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -426,15 +426,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取VPC网络ID
-                     * @return VpcId VPC网络ID
+                     * 获取<p>VPC网络ID</p>
+                     * @return VpcId <p>VPC网络ID</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC网络ID
-                     * @param _vpcId VPC网络ID
+                     * 设置<p>VPC网络ID</p>
+                     * @param _vpcId <p>VPC网络ID</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -447,15 +447,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡VIP
-                     * @return LoadBalancingIp 负载均衡VIP
+                     * 获取<p>负载均衡VIP</p>
+                     * @return LoadBalancingIp <p>负载均衡VIP</p>
                      * 
                      */
                     std::string GetLoadBalancingIp() const;
 
                     /**
-                     * 设置负载均衡VIP
-                     * @param _loadBalancingIp 负载均衡VIP
+                     * 设置<p>负载均衡VIP</p>
+                     * @param _loadBalancingIp <p>负载均衡VIP</p>
                      * 
                      */
                     void SetLoadBalancingIp(const std::string& _loadBalancingIp);
@@ -468,15 +468,15 @@ namespace TencentCloud
                     bool LoadBalancingIpHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡id
-                     * @return LoadBalancerId 负载均衡id
+                     * 获取<p>负载均衡id</p>
+                     * @return LoadBalancerId <p>负载均衡id</p>
                      * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡id
-                     * @param _loadBalancerId 负载均衡id
+                     * 设置<p>负载均衡id</p>
+                     * @param _loadBalancerId <p>负载均衡id</p>
                      * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
@@ -489,15 +489,15 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取已存在的负载均衡id
-                     * @return ExistingLoadBalancerId 已存在的负载均衡id
+                     * 获取<p>已存在的负载均衡id</p>
+                     * @return ExistingLoadBalancerId <p>已存在的负载均衡id</p>
                      * 
                      */
                     std::string GetExistingLoadBalancerId() const;
 
                     /**
-                     * 设置已存在的负载均衡id
-                     * @param _existingLoadBalancerId 已存在的负载均衡id
+                     * 设置<p>已存在的负载均衡id</p>
+                     * @param _existingLoadBalancerId <p>已存在的负载均衡id</p>
                      * 
                      */
                     void SetExistingLoadBalancerId(const std::string& _existingLoadBalancerId);
@@ -509,139 +509,166 @@ namespace TencentCloud
                      */
                     bool ExistingLoadBalancerIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否为全局服务（仅TCS环境使用）</p>
+                     * @return EnableGlobalService <p>是否为全局服务（仅TCS环境使用）</p>
+                     * 
+                     */
+                    bool GetEnableGlobalService() const;
+
+                    /**
+                     * 设置<p>是否为全局服务（仅TCS环境使用）</p>
+                     * @param _enableGlobalService <p>是否为全局服务（仅TCS环境使用）</p>
+                     * 
+                     */
+                    void SetEnableGlobalService(const bool& _enableGlobalService);
+
+                    /**
+                     * 判断参数 EnableGlobalService 是否已赋值
+                     * @return EnableGlobalService 是否已赋值
+                     * 
+                     */
+                    bool EnableGlobalServiceHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 0:公网, 1:集群内访问, 2：NodePort, 3: VPC 内网访问
+                     * <p>0:公网, 1:集群内访问, 2：NodePort, 3: VPC 内网访问</p>
                      */
                     int64_t m_accessType;
                     bool m_accessTypeHasBeenSet;
 
                     /**
-                     * 容器端口映射
+                     * <p>容器端口映射</p>
                      */
                     std::vector<ProtocolPort> m_protocolPorts;
                     bool m_protocolPortsHasBeenSet;
 
                     /**
-                     * 子网ID
+                     * <p>子网ID</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 是否创建 k8s service，默认为 false
+                     * <p>是否创建 k8s service，默认为 false</p>
                      */
                     bool m_disableService;
                     bool m_disableServiceHasBeenSet;
 
                     /**
-                     * service 是否为 headless 类型
+                     * <p>service 是否为 headless 类型</p>
                      */
                     bool m_headlessService;
                     bool m_headlessServiceHasBeenSet;
 
                     /**
-                     * 当为 true 且 DisableService 也为 true 时，会删除之前创建的 service，请小心使用
+                     * <p>当为 true 且 DisableService 也为 true 时，会删除之前创建的 service，请小心使用</p>
                      */
                     bool m_allowDeleteService;
                     bool m_allowDeleteServiceHasBeenSet;
 
                     /**
-                     * 开启SessionAffinity，true为开启，false为不开启，默认为false
+                     * <p>开启SessionAffinity，true为开启，false为不开启，默认为false</p>
                      */
                     bool m_openSessionAffinity;
                     bool m_openSessionAffinityHasBeenSet;
 
                     /**
-                     * SessionAffinity会话时间，默认10800
+                     * <p>SessionAffinity会话时间，默认10800</p>
                      */
                     int64_t m_sessionAffinityTimeoutSeconds;
                     bool m_sessionAffinityTimeoutSecondsHasBeenSet;
 
                     /**
-                     * 服务名称
+                     * <p>服务名称</p>
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
 
                     /**
-                     * 外部流量策略
+                     * <p>外部流量策略</p>
                      */
                     std::string m_externalTrafficStrategy;
                     bool m_externalTrafficStrategyHasBeenSet;
 
                     /**
-                     * 外部流量策略
+                     * <p>外部流量策略</p>
                      */
                     std::string m_externalTrafficPolicy;
                     bool m_externalTrafficPolicyHasBeenSet;
 
                     /**
-                     * 负载均衡提供者
+                     * <p>负载均衡提供者</p>
                      */
                     std::string m_loadBalancerProvisioner;
                     bool m_loadBalancerProvisionerHasBeenSet;
 
                     /**
-                     * 负载均衡类型，Intranet表示内网，Internet表示外网
+                     * <p>负载均衡类型，Intranet表示内网，Internet表示外网</p>
                      */
                     std::string m_loadBalancingType;
                     bool m_loadBalancingTypeHasBeenSet;
 
                     /**
-                     * k8s负载均衡内网vip
+                     * <p>k8s负载均衡内网vip</p>
                      */
                     std::string m_clusterIp;
                     bool m_clusterIpHasBeenSet;
 
                     /**
-                     * 禁用服务Int记录
+                     * <p>禁用服务Int记录</p>
                      */
                     uint64_t m_disableServiceInt;
                     bool m_disableServiceIntHasBeenSet;
 
                     /**
-                     * 开启SessionAffinity Int记录
+                     * <p>开启SessionAffinity Int记录</p>
                      */
                     uint64_t m_openSessionAffinityInt;
                     bool m_openSessionAffinityIntHasBeenSet;
 
                     /**
-                     * 开启HeadlessService int记录
+                     * <p>开启HeadlessService int记录</p>
                      */
                     uint64_t m_headlessServiceInt;
                     bool m_headlessServiceIntHasBeenSet;
 
                     /**
-                     * 服务名称
+                     * <p>服务名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * VPC网络ID
+                     * <p>VPC网络ID</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 负载均衡VIP
+                     * <p>负载均衡VIP</p>
                      */
                     std::string m_loadBalancingIp;
                     bool m_loadBalancingIpHasBeenSet;
 
                     /**
-                     * 负载均衡id
+                     * <p>负载均衡id</p>
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 已存在的负载均衡id
+                     * <p>已存在的负载均衡id</p>
                      */
                     std::string m_existingLoadBalancerId;
                     bool m_existingLoadBalancerIdHasBeenSet;
+
+                    /**
+                     * <p>是否为全局服务（仅TCS环境使用）</p>
+                     */
+                    bool m_enableGlobalService;
+                    bool m_enableGlobalServiceHasBeenSet;
 
                 };
             }

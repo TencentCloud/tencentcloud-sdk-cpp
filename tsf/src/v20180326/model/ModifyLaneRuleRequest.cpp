@@ -27,9 +27,9 @@ ModifyLaneRuleRequest::ModifyLaneRuleRequest() :
     m_ruleNameHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_ruleTagListHasBeenSet(false),
-    m_ruleTagRelationshipHasBeenSet(false),
     m_laneIdHasBeenSet(false),
-    m_enableHasBeenSet(false)
+    m_enableHasBeenSet(false),
+    m_ruleTagRelationshipHasBeenSet(false)
 {
 }
 
@@ -79,14 +79,6 @@ string ModifyLaneRuleRequest::ToJsonString() const
         }
     }
 
-    if (m_ruleTagRelationshipHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RuleTagRelationship";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_ruleTagRelationship.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_laneIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -101,6 +93,14 @@ string ModifyLaneRuleRequest::ToJsonString() const
         string key = "Enable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enable, allocator);
+    }
+
+    if (m_ruleTagRelationshipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleTagRelationship";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ruleTagRelationship.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -175,22 +175,6 @@ bool ModifyLaneRuleRequest::RuleTagListHasBeenSet() const
     return m_ruleTagListHasBeenSet;
 }
 
-string ModifyLaneRuleRequest::GetRuleTagRelationship() const
-{
-    return m_ruleTagRelationship;
-}
-
-void ModifyLaneRuleRequest::SetRuleTagRelationship(const string& _ruleTagRelationship)
-{
-    m_ruleTagRelationship = _ruleTagRelationship;
-    m_ruleTagRelationshipHasBeenSet = true;
-}
-
-bool ModifyLaneRuleRequest::RuleTagRelationshipHasBeenSet() const
-{
-    return m_ruleTagRelationshipHasBeenSet;
-}
-
 string ModifyLaneRuleRequest::GetLaneId() const
 {
     return m_laneId;
@@ -221,6 +205,22 @@ void ModifyLaneRuleRequest::SetEnable(const bool& _enable)
 bool ModifyLaneRuleRequest::EnableHasBeenSet() const
 {
     return m_enableHasBeenSet;
+}
+
+string ModifyLaneRuleRequest::GetRuleTagRelationship() const
+{
+    return m_ruleTagRelationship;
+}
+
+void ModifyLaneRuleRequest::SetRuleTagRelationship(const string& _ruleTagRelationship)
+{
+    m_ruleTagRelationship = _ruleTagRelationship;
+    m_ruleTagRelationshipHasBeenSet = true;
+}
+
+bool ModifyLaneRuleRequest::RuleTagRelationshipHasBeenSet() const
+{
+    return m_ruleTagRelationshipHasBeenSet;
 }
 
 

@@ -23,7 +23,10 @@ using namespace std;
 MarkInfo::MarkInfo() :
     m_markItemTitleHasBeenSet(false),
     m_answerInfosHasBeenSet(false),
-    m_markInfosHasBeenSet(false)
+    m_markInfosHasBeenSet(false),
+    m_questionPositionsHasBeenSet(false),
+    m_questionImagePositionsHasBeenSet(false),
+    m_rightAnswerHasBeenSet(false)
 {
 }
 
@@ -82,6 +85,49 @@ CoreInternalOutcome MarkInfo::Deserialize(const rapidjson::Value &value)
         m_markInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("QuestionPositions") && !value["QuestionPositions"].IsNull())
+    {
+        if (!value["QuestionPositions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MarkInfo.QuestionPositions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["QuestionPositions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_questionPositions.push_back((*itr).GetInt64());
+        }
+        m_questionPositionsHasBeenSet = true;
+    }
+
+    if (value.HasMember("QuestionImagePositions") && !value["QuestionImagePositions"].IsNull())
+    {
+        if (!value["QuestionImagePositions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MarkInfo.QuestionImagePositions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["QuestionImagePositions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Positions item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_questionImagePositions.push_back(item);
+        }
+        m_questionImagePositionsHasBeenSet = true;
+    }
+
+    if (value.HasMember("RightAnswer") && !value["RightAnswer"].IsNull())
+    {
+        if (!value["RightAnswer"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MarkInfo.RightAnswer` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rightAnswer = string(value["RightAnswer"].GetString());
+        m_rightAnswerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -125,6 +171,42 @@ void MarkInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_questionPositionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuestionPositions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_questionPositions.begin(); itr != m_questionPositions.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_questionImagePositionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuestionImagePositions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_questionImagePositions.begin(); itr != m_questionImagePositions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_rightAnswerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RightAnswer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rightAnswer.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -176,5 +258,53 @@ void MarkInfo::SetMarkInfos(const vector<MarkInfo>& _markInfos)
 bool MarkInfo::MarkInfosHasBeenSet() const
 {
     return m_markInfosHasBeenSet;
+}
+
+vector<int64_t> MarkInfo::GetQuestionPositions() const
+{
+    return m_questionPositions;
+}
+
+void MarkInfo::SetQuestionPositions(const vector<int64_t>& _questionPositions)
+{
+    m_questionPositions = _questionPositions;
+    m_questionPositionsHasBeenSet = true;
+}
+
+bool MarkInfo::QuestionPositionsHasBeenSet() const
+{
+    return m_questionPositionsHasBeenSet;
+}
+
+vector<Positions> MarkInfo::GetQuestionImagePositions() const
+{
+    return m_questionImagePositions;
+}
+
+void MarkInfo::SetQuestionImagePositions(const vector<Positions>& _questionImagePositions)
+{
+    m_questionImagePositions = _questionImagePositions;
+    m_questionImagePositionsHasBeenSet = true;
+}
+
+bool MarkInfo::QuestionImagePositionsHasBeenSet() const
+{
+    return m_questionImagePositionsHasBeenSet;
+}
+
+string MarkInfo::GetRightAnswer() const
+{
+    return m_rightAnswer;
+}
+
+void MarkInfo::SetRightAnswer(const string& _rightAnswer)
+{
+    m_rightAnswer = _rightAnswer;
+    m_rightAnswerHasBeenSet = true;
+}
+
+bool MarkInfo::RightAnswerHasBeenSet() const
+{
+    return m_rightAnswerHasBeenSet;
 }
 

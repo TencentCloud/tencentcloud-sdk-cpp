@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取类型英文名
-                     * @return Type 类型英文名
+                     * 获取<p>类型英文名</p>
+                     * @return Type <p>类型英文名</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型英文名
-                     * @param _type 类型英文名
+                     * 设置<p>类型英文名</p>
+                     * @param _type <p>类型英文名</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取存储实例ID
-                     * @return StorageId 存储实例ID
+                     * 获取<p>存储实例ID</p>
+                     * @return StorageId <p>存储实例ID</p>
                      * 
                      */
                     std::string GetStorageId() const;
 
                     /**
-                     * 设置存储实例ID
-                     * @param _storageId 存储实例ID
+                     * 设置<p>存储实例ID</p>
+                     * @param _storageId <p>存储实例ID</p>
                      * 
                      */
                     void SetStorageId(const std::string& _storageId);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool StorageIdHasBeenSet() const;
 
                     /**
-                     * 获取存储实例名称
-                     * @return StorageName 存储实例名称
+                     * 获取<p>存储实例名称</p>
+                     * @return StorageName <p>存储实例名称</p>
                      * 
                      */
                     std::string GetStorageName() const;
 
                     /**
-                     * 设置存储实例名称
-                     * @param _storageName 存储实例名称
+                     * 设置<p>存储实例名称</p>
+                     * @param _storageName <p>存储实例名称</p>
                      * 
                      */
                     void SetStorageName(const std::string& _storageName);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool StorageNameHasBeenSet() const;
 
                     /**
-                     * 获取状态，0可挂载 1不可挂载(挂载限制)
-                     * @return Status 状态，0可挂载 1不可挂载(挂载限制)
+                     * 获取<p>状态</p><p>枚举值：</p><ul><li>0： 可挂载（正常）</li><li>1： 不可挂载（挂载限制）</li><li>2： 不可挂载（存储配置关闭）</li></ul>
+                     * @return Status <p>状态</p><p>枚举值：</p><ul><li>0： 可挂载（正常）</li><li>1： 不可挂载（挂载限制）</li><li>2： 不可挂载（存储配置关闭）</li></ul>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态，0可挂载 1不可挂载(挂载限制)
-                     * @param _status 状态，0可挂载 1不可挂载(挂载限制)
+                     * 设置<p>状态</p><p>枚举值：</p><ul><li>0： 可挂载（正常）</li><li>1： 不可挂载（挂载限制）</li><li>2： 不可挂载（存储配置关闭）</li></ul>
+                     * @param _status <p>状态</p><p>枚举值：</p><ul><li>0： 可挂载（正常）</li><li>1： 不可挂载（挂载限制）</li><li>2： 不可挂载（存储配置关闭）</li></ul>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -132,18 +132,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取额外配置
+                     * 获取<p>额外配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExtraConf 额外配置
+                     * @return ExtraConf <p>额外配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     StorageExtraConf GetExtraConf() const;
 
                     /**
-                     * 设置额外配置
+                     * 设置<p>额外配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _extraConf 额外配置
+                     * @param _extraConf <p>额外配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -159,31 +159,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 类型英文名
+                     * <p>类型英文名</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 存储实例ID
+                     * <p>存储实例ID</p>
                      */
                     std::string m_storageId;
                     bool m_storageIdHasBeenSet;
 
                     /**
-                     * 存储实例名称
+                     * <p>存储实例名称</p>
                      */
                     std::string m_storageName;
                     bool m_storageNameHasBeenSet;
 
                     /**
-                     * 状态，0可挂载 1不可挂载(挂载限制)
+                     * <p>状态</p><p>枚举值：</p><ul><li>0： 可挂载（正常）</li><li>1： 不可挂载（挂载限制）</li><li>2： 不可挂载（存储配置关闭）</li></ul>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 额外配置
+                     * <p>额外配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     StorageExtraConf m_extraConf;

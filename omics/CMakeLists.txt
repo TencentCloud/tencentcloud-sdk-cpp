@@ -60,6 +60,7 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/HPCInternetInfo.h
   include/tencentcloud/omics/v20221128/model/GetRunCallsResponse.h
   include/tencentcloud/omics/v20221128/model/GetRunMetadataFileRequest.h
+  include/tencentcloud/omics/v20221128/model/ToolRepoTag.h
   include/tencentcloud/omics/v20221128/model/TableRow.h
   include/tencentcloud/omics/v20221128/model/StorageOption.h
   include/tencentcloud/omics/v20221128/model/RunOption.h
@@ -81,7 +82,9 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/DescribeHPCClustersResponse.h
   include/tencentcloud/omics/v20221128/model/DeleteEnvironmentRequest.h
   include/tencentcloud/omics/v20221128/model/DatabaseOption.h
+  include/tencentcloud/omics/v20221128/model/DescribePublicApplicationsRequest.h
   include/tencentcloud/omics/v20221128/model/Filter.h
+  include/tencentcloud/omics/v20221128/model/PublicApplication.h
   include/tencentcloud/omics/v20221128/model/VolumeInfo.h
   include/tencentcloud/omics/v20221128/model/HPCCluster.h
   include/tencentcloud/omics/v20221128/model/VolumeAutoScaleUpRule.h
@@ -118,6 +121,7 @@ set(omics_public_header_model
   include/tencentcloud/omics/v20221128/model/RunMetadata.h
   include/tencentcloud/omics/v20221128/model/ModifyVolumeRequest.h
   include/tencentcloud/omics/v20221128/model/DescribeRunGroupsRequest.h
+  include/tencentcloud/omics/v20221128/model/DescribePublicApplicationsResponse.h
   include/tencentcloud/omics/v20221128/model/HPCNode.h
   include/tencentcloud/omics/v20221128/model/NFOption.h
   include/tencentcloud/omics/v20221128/model/RunGroupResultNotification.h
@@ -169,6 +173,7 @@ set(omics_src
   src/v20221128/model/HPCInternetInfo.cpp
   src/v20221128/model/GetRunCallsResponse.cpp
   src/v20221128/model/GetRunMetadataFileRequest.cpp
+  src/v20221128/model/ToolRepoTag.cpp
   src/v20221128/model/TableRow.cpp
   src/v20221128/model/StorageOption.cpp
   src/v20221128/model/RunOption.cpp
@@ -190,7 +195,9 @@ set(omics_src
   src/v20221128/model/DescribeHPCClustersResponse.cpp
   src/v20221128/model/DeleteEnvironmentRequest.cpp
   src/v20221128/model/DatabaseOption.cpp
+  src/v20221128/model/DescribePublicApplicationsRequest.cpp
   src/v20221128/model/Filter.cpp
+  src/v20221128/model/PublicApplication.cpp
   src/v20221128/model/VolumeInfo.cpp
   src/v20221128/model/HPCCluster.cpp
   src/v20221128/model/VolumeAutoScaleUpRule.cpp
@@ -227,6 +234,7 @@ set(omics_src
   src/v20221128/model/RunMetadata.cpp
   src/v20221128/model/ModifyVolumeRequest.cpp
   src/v20221128/model/DescribeRunGroupsRequest.cpp
+  src/v20221128/model/DescribePublicApplicationsResponse.cpp
   src/v20221128/model/HPCNode.cpp
   src/v20221128/model/NFOption.cpp
   src/v20221128/model/RunGroupResultNotification.cpp

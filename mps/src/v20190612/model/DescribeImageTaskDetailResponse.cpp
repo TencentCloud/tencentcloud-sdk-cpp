@@ -31,7 +31,10 @@ DescribeImageTaskDetailResponse::DescribeImageTaskDetailResponse() :
     m_messageHasBeenSet(false),
     m_imageProcessTaskResultSetHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_finishTimeHasBeenSet(false)
+    m_finishTimeHasBeenSet(false),
+    m_definitionHasBeenSet(false),
+    m_imageTaskHasBeenSet(false),
+    m_inputInfoHasBeenSet(false)
 {
 }
 
@@ -159,6 +162,50 @@ CoreInternalOutcome DescribeImageTaskDetailResponse::Deserialize(const string &p
         m_finishTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Definition") && !rsp["Definition"].IsNull())
+    {
+        if (!rsp["Definition"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_definition = rsp["Definition"].GetInt64();
+        m_definitionHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ImageTask") && !rsp["ImageTask"].IsNull())
+    {
+        if (!rsp["ImageTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_imageTask.Deserialize(rsp["ImageTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageTaskHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("InputInfo") && !rsp["InputInfo"].IsNull())
+    {
+        if (!rsp["InputInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InputInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_inputInfo.Deserialize(rsp["InputInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_inputInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -238,6 +285,32 @@ string DescribeImageTaskDetailResponse::ToJsonString() const
         string key = "FinishTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_finishTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_definitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Definition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_definition, allocator);
+    }
+
+    if (m_imageTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_inputInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_inputInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -330,6 +403,36 @@ string DescribeImageTaskDetailResponse::GetFinishTime() const
 bool DescribeImageTaskDetailResponse::FinishTimeHasBeenSet() const
 {
     return m_finishTimeHasBeenSet;
+}
+
+int64_t DescribeImageTaskDetailResponse::GetDefinition() const
+{
+    return m_definition;
+}
+
+bool DescribeImageTaskDetailResponse::DefinitionHasBeenSet() const
+{
+    return m_definitionHasBeenSet;
+}
+
+ImageTaskInput DescribeImageTaskDetailResponse::GetImageTask() const
+{
+    return m_imageTask;
+}
+
+bool DescribeImageTaskDetailResponse::ImageTaskHasBeenSet() const
+{
+    return m_imageTaskHasBeenSet;
+}
+
+MediaInputInfo DescribeImageTaskDetailResponse::GetInputInfo() const
+{
+    return m_inputInfo;
+}
+
+bool DescribeImageTaskDetailResponse::InputInfoHasBeenSet() const
+{
+    return m_inputInfoHasBeenSet;
 }
 
 

@@ -340,6 +340,48 @@ namespace TencentCloud
                      */
                     bool K8sNamespaceNameHasBeenSet() const;
 
+                    /**
+                     * 获取创建时间
+                     * @return CreateTime 创建时间
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置创建时间
+                     * @param _createTime 创建时间
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取更新时间
+                     * @return UpdatedTime 更新时间
+                     * 
+                     */
+                    std::string GetUpdatedTime() const;
+
+                    /**
+                     * 设置更新时间
+                     * @param _updatedTime 更新时间
+                     * 
+                     */
+                    void SetUpdatedTime(const std::string& _updatedTime);
+
+                    /**
+                     * 判断参数 UpdatedTime 是否已赋值
+                     * @return UpdatedTime 是否已赋值
+                     * 
+                     */
+                    bool UpdatedTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -425,6 +467,18 @@ namespace TencentCloud
                      */
                     std::string m_k8sNamespaceName;
                     bool m_k8sNamespaceNameHasBeenSet;
+
+                    /**
+                     * 创建时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 更新时间
+                     */
+                    std::string m_updatedTime;
+                    bool m_updatedTimeHasBeenSet;
 
                 };
             }

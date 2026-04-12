@@ -22,6 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/ImageProcessTaskResult.h>
+#include <tencentcloud/mps/v20190612/model/ImageTaskInput.h>
+#include <tencentcloud/mps/v20190612/model/MediaInputInfo.h>
 
 
 namespace TencentCloud
@@ -45,11 +47,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务类型，目前取值有：
-<li>WorkflowTask：工作流处理任务。</li>
+                     * 获取<p>任务类型，目前取值有：</p><li>WorkflowTask：工作流处理任务。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskType 任务类型，目前取值有：
-<li>WorkflowTask：工作流处理任务。</li>
+                     * @return TaskType <p>任务类型，目前取值有：</p><li>WorkflowTask：工作流处理任务。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,15 +63,9 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务状态，取值：
-<li>WAITING：等待中；</li>
-<li>PROCESSING：处理中；</li>
-<li>FINISH：已完成。</li>
+                     * 获取<p>任务状态，取值：</p><li>WAITING：等待中；</li><li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 任务状态，取值：
-<li>WAITING：等待中；</li>
-<li>PROCESSING：处理中；</li>
-<li>FINISH：已完成。</li>
+                     * @return Status <p>任务状态，取值：</p><li>WAITING：等待中；</li><li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -85,8 +79,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取任务失败时的错误码。
-                     * @return ErrCode 任务失败时的错误码。
+                     * 获取<p>任务失败时的错误码。</p>
+                     * @return ErrCode <p>任务失败时的错误码。</p>
                      * 
                      */
                     int64_t GetErrCode() const;
@@ -99,8 +93,8 @@ namespace TencentCloud
                     bool ErrCodeHasBeenSet() const;
 
                     /**
-                     * 获取错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。
-                     * @return ErrMsg 错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。
+                     * 获取<p>错误码，空字符串表示成功，其他值表示失败，取值请参考 <a href="https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81">媒体处理类错误码</a> 列表。</p>
+                     * @return ErrMsg <p>错误码，空字符串表示成功，其他值表示失败，取值请参考 <a href="https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81">媒体处理类错误码</a> 列表。</p>
                      * 
                      */
                     std::string GetErrMsg() const;
@@ -113,8 +107,8 @@ namespace TencentCloud
                     bool ErrMsgHasBeenSet() const;
 
                     /**
-                     * 获取任务异常Message。
-                     * @return Message 任务异常Message。
+                     * 获取<p>任务异常Message。</p>
+                     * @return Message <p>任务异常Message。</p>
                      * 
                      */
                     std::string GetMessage() const;
@@ -127,9 +121,9 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取图片处理任务的执行状态与结果。
+                     * 获取<p>图片处理任务的执行状态与结果。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ImageProcessTaskResultSet 图片处理任务的执行状态与结果。
+                     * @return ImageProcessTaskResultSet <p>图片处理任务的执行状态与结果。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -143,9 +137,9 @@ namespace TencentCloud
                     bool ImageProcessTaskResultSetHasBeenSet() const;
 
                     /**
-                     * 获取任务的创建时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * 获取<p>任务的创建时间，采用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 任务的创建时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @return CreateTime <p>任务的创建时间，采用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -159,9 +153,9 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * 获取<p>任务执行完毕的时间，采用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FinishTime 任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @return FinishTime <p>任务执行完毕的时间，采用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -174,64 +168,120 @@ namespace TencentCloud
                      */
                     bool FinishTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模板唯一标识。</p>
+                     * @return Definition <p>模板唯一标识。</p>
+                     * 
+                     */
+                    int64_t GetDefinition() const;
+
+                    /**
+                     * 判断参数 Definition 是否已赋值
+                     * @return Definition 是否已赋值
+                     * 
+                     */
+                    bool DefinitionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>任务发起参数。</p>
+                     * @return ImageTask <p>任务发起参数。</p>
+                     * 
+                     */
+                    ImageTaskInput GetImageTask() const;
+
+                    /**
+                     * 判断参数 ImageTask 是否已赋值
+                     * @return ImageTask 是否已赋值
+                     * 
+                     */
+                    bool ImageTaskHasBeenSet() const;
+
+                    /**
+                     * 获取<p>图片任务输入信息。</p>
+                     * @return InputInfo <p>图片任务输入信息。</p>
+                     * 
+                     */
+                    MediaInputInfo GetInputInfo() const;
+
+                    /**
+                     * 判断参数 InputInfo 是否已赋值
+                     * @return InputInfo 是否已赋值
+                     * 
+                     */
+                    bool InputInfoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务类型，目前取值有：
-<li>WorkflowTask：工作流处理任务。</li>
+                     * <p>任务类型，目前取值有：</p><li>WorkflowTask：工作流处理任务。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 任务状态，取值：
-<li>WAITING：等待中；</li>
-<li>PROCESSING：处理中；</li>
-<li>FINISH：已完成。</li>
+                     * <p>任务状态，取值：</p><li>WAITING：等待中；</li><li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 任务失败时的错误码。
+                     * <p>任务失败时的错误码。</p>
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
-                     * 错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。
+                     * <p>错误码，空字符串表示成功，其他值表示失败，取值请参考 <a href="https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81">媒体处理类错误码</a> 列表。</p>
                      */
                     std::string m_errMsg;
                     bool m_errMsgHasBeenSet;
 
                     /**
-                     * 任务异常Message。
+                     * <p>任务异常Message。</p>
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 图片处理任务的执行状态与结果。
+                     * <p>图片处理任务的执行状态与结果。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageProcessTaskResult> m_imageProcessTaskResultSet;
                     bool m_imageProcessTaskResultSetHasBeenSet;
 
                     /**
-                     * 任务的创建时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * <p>任务的创建时间，采用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * <p>任务执行完毕的时间，采用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;
+
+                    /**
+                     * <p>模板唯一标识。</p>
+                     */
+                    int64_t m_definition;
+                    bool m_definitionHasBeenSet;
+
+                    /**
+                     * <p>任务发起参数。</p>
+                     */
+                    ImageTaskInput m_imageTask;
+                    bool m_imageTaskHasBeenSet;
+
+                    /**
+                     * <p>图片任务输入信息。</p>
+                     */
+                    MediaInputInfo m_inputInfo;
+                    bool m_inputInfoHasBeenSet;
 
                 };
             }

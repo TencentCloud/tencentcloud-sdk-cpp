@@ -34,7 +34,9 @@ SimpleGroup::SimpleGroup() :
     m_startupParametersHasBeenSet(false),
     m_groupResourceTypeHasBeenSet(false),
     m_appMicroServiceTypeHasBeenSet(false),
-    m_k8sNamespaceNameHasBeenSet(false)
+    m_k8sNamespaceNameHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_updatedTimeHasBeenSet(false)
 {
 }
 
@@ -183,6 +185,26 @@ CoreInternalOutcome SimpleGroup::Deserialize(const rapidjson::Value &value)
         m_k8sNamespaceNameHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SimpleGroup.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdatedTime") && !value["UpdatedTime"].IsNull())
+    {
+        if (!value["UpdatedTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SimpleGroup.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updatedTime = string(value["UpdatedTime"].GetString());
+        m_updatedTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +322,22 @@ void SimpleGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "K8sNamespaceName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_k8sNamespaceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updatedTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updatedTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +565,37 @@ void SimpleGroup::SetK8sNamespaceName(const string& _k8sNamespaceName)
 bool SimpleGroup::K8sNamespaceNameHasBeenSet() const
 {
     return m_k8sNamespaceNameHasBeenSet;
+}
+
+string SimpleGroup::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void SimpleGroup::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool SimpleGroup::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string SimpleGroup::GetUpdatedTime() const
+{
+    return m_updatedTime;
+}
+
+void SimpleGroup::SetUpdatedTime(const string& _updatedTime)
+{
+    m_updatedTime = _updatedTime;
+    m_updatedTimeHasBeenSet = true;
+}
+
+bool SimpleGroup::UpdatedTimeHasBeenSet() const
+{
+    return m_updatedTimeHasBeenSet;
 }
 

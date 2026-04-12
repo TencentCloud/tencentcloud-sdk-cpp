@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取临期license数量
-                     * @return Count 临期license数量
+                     * 获取<p>临期license数量</p>
+                     * @return Count <p>临期license数量</p>
                      * 
                      */
                     uint64_t GetCount() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取正式license总览统计数据
-                     * @return Overview 正式license总览统计数据
+                     * 获取<p>正式license总览统计数据</p>
+                     * @return Overview <p>正式license总览统计数据</p>
                      * 
                      */
                     Overview GetOverview() const;
@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool OverviewHasBeenSet() const;
 
                     /**
-                     * 获取临期license列表
-                     * @return LicenseList 临期license列表
+                     * 获取<p>临期license列表</p>
+                     * @return LicenseList <p>临期license列表</p>
                      * 
                      */
                     std::vector<OverviewLicense> GetLicenseList() const;
@@ -88,8 +88,8 @@ namespace TencentCloud
                     bool LicenseListHasBeenSet() const;
 
                     /**
-                     * 获取测试license总览统计数据
-                     * @return TrialOverview 测试license总览统计数据
+                     * 获取<p>测试license总览统计数据</p>
+                     * @return TrialOverview <p>测试license总览统计数据</p>
                      * 
                      */
                     Overview GetTrialOverview() const;
@@ -104,25 +104,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 临期license数量
+                     * <p>临期license数量</p>
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
-                     * 正式license总览统计数据
+                     * <p>正式license总览统计数据</p>
                      */
                     Overview m_overview;
                     bool m_overviewHasBeenSet;
 
                     /**
-                     * 临期license列表
+                     * <p>临期license列表</p>
                      */
                     std::vector<OverviewLicense> m_licenseList;
                     bool m_licenseListHasBeenSet;
 
                     /**
-                     * 测试license总览统计数据
+                     * <p>测试license总览统计数据</p>
                      */
                     Overview m_trialOverview;
                     bool m_trialOverviewHasBeenSet;

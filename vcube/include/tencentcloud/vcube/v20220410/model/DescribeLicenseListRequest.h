@@ -42,7 +42,88 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>页码，从0开始</p>
+                     * @return PageNumber <p>页码，从0开始</p>
+                     * 
+                     */
+                    uint64_t GetPageNumber() const;
+
+                    /**
+                     * 设置<p>页码，从0开始</p>
+                     * @param _pageNumber <p>页码，从0开始</p>
+                     * 
+                     */
+                    void SetPageNumber(const uint64_t& _pageNumber);
+
+                    /**
+                     * 判断参数 PageNumber 是否已赋值
+                     * @return PageNumber 是否已赋值
+                     * 
+                     */
+                    bool PageNumberHasBeenSet() const;
+
+                    /**
+                     * 获取<p>每页数据量</p>
+                     * @return PageSize <p>每页数据量</p>
+                     * 
+                     */
+                    uint64_t GetPageSize() const;
+
+                    /**
+                     * 设置<p>每页数据量</p>
+                     * @param _pageSize <p>每页数据量</p>
+                     * 
+                     */
+                    void SetPageSize(const uint64_t& _pageSize);
+
+                    /**
+                     * 判断参数 PageSize 是否已赋值
+                     * @return PageSize 是否已赋值
+                     * 
+                     */
+                    bool PageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>pc端还是mobile端</p>
+                     * @return Platform <p>pc端还是mobile端</p>
+                     * 
+                     */
+                    std::string GetPlatform() const;
+
+                    /**
+                     * 设置<p>pc端还是mobile端</p>
+                     * @param _platform <p>pc端还是mobile端</p>
+                     * 
+                     */
+                    void SetPlatform(const std::string& _platform);
+
+                    /**
+                     * 判断参数 Platform 是否已赋值
+                     * @return Platform 是否已赋值
+                     * 
+                     */
+                    bool PlatformHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>页码，从0开始</p>
+                     */
+                    uint64_t m_pageNumber;
+                    bool m_pageNumberHasBeenSet;
+
+                    /**
+                     * <p>每页数据量</p>
+                     */
+                    uint64_t m_pageSize;
+                    bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * <p>pc端还是mobile端</p>
+                     */
+                    std::string m_platform;
+                    bool m_platformHasBeenSet;
 
                 };
             }

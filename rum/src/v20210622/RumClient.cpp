@@ -640,6 +640,106 @@ RumClient::DescribeAppSingleCaseListOutcomeCallable RumClient::DescribeAppSingle
     return prom->get_future();
 }
 
+RumClient::DescribeApplicationExitReportDetailOutcome RumClient::DescribeApplicationExitReportDetail(const DescribeApplicationExitReportDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApplicationExitReportDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApplicationExitReportDetailResponse rsp = DescribeApplicationExitReportDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApplicationExitReportDetailOutcome(rsp);
+        else
+            return DescribeApplicationExitReportDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApplicationExitReportDetailOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeApplicationExitReportDetailAsync(const DescribeApplicationExitReportDetailRequest& request, const DescribeApplicationExitReportDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeApplicationExitReportDetailRequest&;
+    using Resp = DescribeApplicationExitReportDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeApplicationExitReportDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeApplicationExitReportDetailOutcomeCallable RumClient::DescribeApplicationExitReportDetailCallable(const DescribeApplicationExitReportDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeApplicationExitReportDetailOutcome>>();
+    DescribeApplicationExitReportDetailAsync(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeApplicationExitReportDetailRequest&,
+        DescribeApplicationExitReportDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RumClient::DescribeApplicationExitReportListOutcome RumClient::DescribeApplicationExitReportList(const DescribeApplicationExitReportListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApplicationExitReportList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApplicationExitReportListResponse rsp = DescribeApplicationExitReportListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApplicationExitReportListOutcome(rsp);
+        else
+            return DescribeApplicationExitReportListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApplicationExitReportListOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeApplicationExitReportListAsync(const DescribeApplicationExitReportListRequest& request, const DescribeApplicationExitReportListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeApplicationExitReportListRequest&;
+    using Resp = DescribeApplicationExitReportListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeApplicationExitReportList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeApplicationExitReportListOutcomeCallable RumClient::DescribeApplicationExitReportListCallable(const DescribeApplicationExitReportListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeApplicationExitReportListOutcome>>();
+    DescribeApplicationExitReportListAsync(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeApplicationExitReportListRequest&,
+        DescribeApplicationExitReportListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 RumClient::DescribeDataOutcome RumClient::DescribeData(const DescribeDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeData");
@@ -2190,6 +2290,706 @@ RumClient::DescribeErrorOutcomeCallable RumClient::DescribeErrorCallable(const D
     return prom->get_future();
 }
 
+RumClient::DescribeExceptionDetailOutcome RumClient::DescribeExceptionDetail(const DescribeExceptionDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExceptionDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExceptionDetailResponse rsp = DescribeExceptionDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExceptionDetailOutcome(rsp);
+        else
+            return DescribeExceptionDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExceptionDetailOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeExceptionDetailAsync(const DescribeExceptionDetailRequest& request, const DescribeExceptionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeExceptionDetailRequest&;
+    using Resp = DescribeExceptionDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeExceptionDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeExceptionDetailOutcomeCallable RumClient::DescribeExceptionDetailCallable(const DescribeExceptionDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeExceptionDetailOutcome>>();
+    DescribeExceptionDetailAsync(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeExceptionDetailRequest&,
+        DescribeExceptionDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RumClient::DescribeExceptionReportListOutcome RumClient::DescribeExceptionReportList(const DescribeExceptionReportListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExceptionReportList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExceptionReportListResponse rsp = DescribeExceptionReportListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExceptionReportListOutcome(rsp);
+        else
+            return DescribeExceptionReportListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExceptionReportListOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeExceptionReportListAsync(const DescribeExceptionReportListRequest& request, const DescribeExceptionReportListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeExceptionReportListRequest&;
+    using Resp = DescribeExceptionReportListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeExceptionReportList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeExceptionReportListOutcomeCallable RumClient::DescribeExceptionReportListCallable(const DescribeExceptionReportListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeExceptionReportListOutcome>>();
+    DescribeExceptionReportListAsync(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeExceptionReportListRequest&,
+        DescribeExceptionReportListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RumClient::DescribeFOOMMallocProblemDetailOutcome RumClient::DescribeFOOMMallocProblemDetail(const DescribeFOOMMallocProblemDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFOOMMallocProblemDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFOOMMallocProblemDetailResponse rsp = DescribeFOOMMallocProblemDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFOOMMallocProblemDetailOutcome(rsp);
+        else
+            return DescribeFOOMMallocProblemDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFOOMMallocProblemDetailOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeFOOMMallocProblemDetailAsync(const DescribeFOOMMallocProblemDetailRequest& request, const DescribeFOOMMallocProblemDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeFOOMMallocProblemDetailRequest&;
+    using Resp = DescribeFOOMMallocProblemDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeFOOMMallocProblemDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeFOOMMallocProblemDetailOutcomeCallable RumClient::DescribeFOOMMallocProblemDetailCallable(const DescribeFOOMMallocProblemDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeFOOMMallocProblemDetailOutcome>>();
+    DescribeFOOMMallocProblemDetailAsync(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeFOOMMallocProblemDetailRequest&,
+        DescribeFOOMMallocProblemDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RumClient::DescribeFOOMMallocProblemListOutcome RumClient::DescribeFOOMMallocProblemList(const DescribeFOOMMallocProblemListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFOOMMallocProblemList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFOOMMallocProblemListResponse rsp = DescribeFOOMMallocProblemListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFOOMMallocProblemListOutcome(rsp);
+        else
+            return DescribeFOOMMallocProblemListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFOOMMallocProblemListOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeFOOMMallocProblemListAsync(const DescribeFOOMMallocProblemListRequest& request, const DescribeFOOMMallocProblemListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeFOOMMallocProblemListRequest&;
+    using Resp = DescribeFOOMMallocProblemListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeFOOMMallocProblemList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeFOOMMallocProblemListOutcomeCallable RumClient::DescribeFOOMMallocProblemListCallable(const DescribeFOOMMallocProblemListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeFOOMMallocProblemListOutcome>>();
+    DescribeFOOMMallocProblemListAsync(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeFOOMMallocProblemListRequest&,
+        DescribeFOOMMallocProblemListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RumClient::DescribeFOOMMallocReportListOutcome RumClient::DescribeFOOMMallocReportList(const DescribeFOOMMallocReportListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFOOMMallocReportList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFOOMMallocReportListResponse rsp = DescribeFOOMMallocReportListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFOOMMallocReportListOutcome(rsp);
+        else
+            return DescribeFOOMMallocReportListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFOOMMallocReportListOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeFOOMMallocReportListAsync(const DescribeFOOMMallocReportListRequest& request, const DescribeFOOMMallocReportListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeFOOMMallocReportListRequest&;
+    using Resp = DescribeFOOMMallocReportListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeFOOMMallocReportList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeFOOMMallocReportListOutcomeCallable RumClient::DescribeFOOMMallocReportListCallable(const DescribeFOOMMallocReportListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeFOOMMallocReportListOutcome>>();
+    DescribeFOOMMallocReportListAsync(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeFOOMMallocReportListRequest&,
+        DescribeFOOMMallocReportListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RumClient::DescribeFOOMProblemDetailOutcome RumClient::DescribeFOOMProblemDetail(const DescribeFOOMProblemDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFOOMProblemDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFOOMProblemDetailResponse rsp = DescribeFOOMProblemDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFOOMProblemDetailOutcome(rsp);
+        else
+            return DescribeFOOMProblemDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFOOMProblemDetailOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeFOOMProblemDetailAsync(const DescribeFOOMProblemDetailRequest& request, const DescribeFOOMProblemDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeFOOMProblemDetailRequest&;
+    using Resp = DescribeFOOMProblemDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeFOOMProblemDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeFOOMProblemDetailOutcomeCallable RumClient::DescribeFOOMProblemDetailCallable(const DescribeFOOMProblemDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeFOOMProblemDetailOutcome>>();
+    DescribeFOOMProblemDetailAsync(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeFOOMProblemDetailRequest&,
+        DescribeFOOMProblemDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RumClient::DescribeFOOMProblemListOutcome RumClient::DescribeFOOMProblemList(const DescribeFOOMProblemListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFOOMProblemList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFOOMProblemListResponse rsp = DescribeFOOMProblemListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFOOMProblemListOutcome(rsp);
+        else
+            return DescribeFOOMProblemListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFOOMProblemListOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeFOOMProblemListAsync(const DescribeFOOMProblemListRequest& request, const DescribeFOOMProblemListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeFOOMProblemListRequest&;
+    using Resp = DescribeFOOMProblemListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeFOOMProblemList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeFOOMProblemListOutcomeCallable RumClient::DescribeFOOMProblemListCallable(const DescribeFOOMProblemListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeFOOMProblemListOutcome>>();
+    DescribeFOOMProblemListAsync(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeFOOMProblemListRequest&,
+        DescribeFOOMProblemListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RumClient::DescribeFOOMReportListOutcome RumClient::DescribeFOOMReportList(const DescribeFOOMReportListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFOOMReportList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFOOMReportListResponse rsp = DescribeFOOMReportListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFOOMReportListOutcome(rsp);
+        else
+            return DescribeFOOMReportListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFOOMReportListOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeFOOMReportListAsync(const DescribeFOOMReportListRequest& request, const DescribeFOOMReportListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeFOOMReportListRequest&;
+    using Resp = DescribeFOOMReportListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeFOOMReportList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeFOOMReportListOutcomeCallable RumClient::DescribeFOOMReportListCallable(const DescribeFOOMReportListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeFOOMReportListOutcome>>();
+    DescribeFOOMReportListAsync(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeFOOMReportListRequest&,
+        DescribeFOOMReportListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RumClient::DescribeIssuesDistributionOutcome RumClient::DescribeIssuesDistribution(const DescribeIssuesDistributionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIssuesDistribution");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIssuesDistributionResponse rsp = DescribeIssuesDistributionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIssuesDistributionOutcome(rsp);
+        else
+            return DescribeIssuesDistributionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIssuesDistributionOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeIssuesDistributionAsync(const DescribeIssuesDistributionRequest& request, const DescribeIssuesDistributionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeIssuesDistributionRequest&;
+    using Resp = DescribeIssuesDistributionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeIssuesDistribution", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeIssuesDistributionOutcomeCallable RumClient::DescribeIssuesDistributionCallable(const DescribeIssuesDistributionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeIssuesDistributionOutcome>>();
+    DescribeIssuesDistributionAsync(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeIssuesDistributionRequest&,
+        DescribeIssuesDistributionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RumClient::DescribeIssuesListOutcome RumClient::DescribeIssuesList(const DescribeIssuesListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIssuesList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIssuesListResponse rsp = DescribeIssuesListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIssuesListOutcome(rsp);
+        else
+            return DescribeIssuesListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIssuesListOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeIssuesListAsync(const DescribeIssuesListRequest& request, const DescribeIssuesListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeIssuesListRequest&;
+    using Resp = DescribeIssuesListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeIssuesList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeIssuesListOutcomeCallable RumClient::DescribeIssuesListCallable(const DescribeIssuesListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeIssuesListOutcome>>();
+    DescribeIssuesListAsync(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeIssuesListRequest&,
+        DescribeIssuesListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RumClient::DescribeIssuesStatisticsTrendOutcome RumClient::DescribeIssuesStatisticsTrend(const DescribeIssuesStatisticsTrendRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIssuesStatisticsTrend");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIssuesStatisticsTrendResponse rsp = DescribeIssuesStatisticsTrendResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIssuesStatisticsTrendOutcome(rsp);
+        else
+            return DescribeIssuesStatisticsTrendOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIssuesStatisticsTrendOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeIssuesStatisticsTrendAsync(const DescribeIssuesStatisticsTrendRequest& request, const DescribeIssuesStatisticsTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeIssuesStatisticsTrendRequest&;
+    using Resp = DescribeIssuesStatisticsTrendResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeIssuesStatisticsTrend", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeIssuesStatisticsTrendOutcomeCallable RumClient::DescribeIssuesStatisticsTrendCallable(const DescribeIssuesStatisticsTrendRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeIssuesStatisticsTrendOutcome>>();
+    DescribeIssuesStatisticsTrendAsync(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeIssuesStatisticsTrendRequest&,
+        DescribeIssuesStatisticsTrendOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RumClient::DescribeLagANRProblemAccountDetailOutcome RumClient::DescribeLagANRProblemAccountDetail(const DescribeLagANRProblemAccountDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLagANRProblemAccountDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLagANRProblemAccountDetailResponse rsp = DescribeLagANRProblemAccountDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLagANRProblemAccountDetailOutcome(rsp);
+        else
+            return DescribeLagANRProblemAccountDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLagANRProblemAccountDetailOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeLagANRProblemAccountDetailAsync(const DescribeLagANRProblemAccountDetailRequest& request, const DescribeLagANRProblemAccountDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLagANRProblemAccountDetailRequest&;
+    using Resp = DescribeLagANRProblemAccountDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLagANRProblemAccountDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeLagANRProblemAccountDetailOutcomeCallable RumClient::DescribeLagANRProblemAccountDetailCallable(const DescribeLagANRProblemAccountDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLagANRProblemAccountDetailOutcome>>();
+    DescribeLagANRProblemAccountDetailAsync(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeLagANRProblemAccountDetailRequest&,
+        DescribeLagANRProblemAccountDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RumClient::DescribeLagANRProblemFeatureAccountsOutcome RumClient::DescribeLagANRProblemFeatureAccounts(const DescribeLagANRProblemFeatureAccountsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLagANRProblemFeatureAccounts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLagANRProblemFeatureAccountsResponse rsp = DescribeLagANRProblemFeatureAccountsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLagANRProblemFeatureAccountsOutcome(rsp);
+        else
+            return DescribeLagANRProblemFeatureAccountsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLagANRProblemFeatureAccountsOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeLagANRProblemFeatureAccountsAsync(const DescribeLagANRProblemFeatureAccountsRequest& request, const DescribeLagANRProblemFeatureAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLagANRProblemFeatureAccountsRequest&;
+    using Resp = DescribeLagANRProblemFeatureAccountsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLagANRProblemFeatureAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeLagANRProblemFeatureAccountsOutcomeCallable RumClient::DescribeLagANRProblemFeatureAccountsCallable(const DescribeLagANRProblemFeatureAccountsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLagANRProblemFeatureAccountsOutcome>>();
+    DescribeLagANRProblemFeatureAccountsAsync(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeLagANRProblemFeatureAccountsRequest&,
+        DescribeLagANRProblemFeatureAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RumClient::DescribeLagANRProblemListOutcome RumClient::DescribeLagANRProblemList(const DescribeLagANRProblemListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLagANRProblemList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLagANRProblemListResponse rsp = DescribeLagANRProblemListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLagANRProblemListOutcome(rsp);
+        else
+            return DescribeLagANRProblemListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLagANRProblemListOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeLagANRProblemListAsync(const DescribeLagANRProblemListRequest& request, const DescribeLagANRProblemListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLagANRProblemListRequest&;
+    using Resp = DescribeLagANRProblemListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLagANRProblemList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeLagANRProblemListOutcomeCallable RumClient::DescribeLagANRProblemListCallable(const DescribeLagANRProblemListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLagANRProblemListOutcome>>();
+    DescribeLagANRProblemListAsync(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeLagANRProblemListRequest&,
+        DescribeLagANRProblemListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 RumClient::DescribeProjectLimitsOutcome RumClient::DescribeProjectLimits(const DescribeProjectLimitsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeProjectLimits");
@@ -2882,6 +3682,106 @@ RumClient::DescribeTawInstancesOutcomeCallable RumClient::DescribeTawInstancesCa
         const RumClient*,
         const DescribeTawInstancesRequest&,
         DescribeTawInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RumClient::DescribeTokenOutcome RumClient::DescribeToken(const DescribeTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTokenResponse rsp = DescribeTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTokenOutcome(rsp);
+        else
+            return DescribeTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTokenOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeTokenAsync(const DescribeTokenRequest& request, const DescribeTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTokenRequest&;
+    using Resp = DescribeTokenResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeTokenOutcomeCallable RumClient::DescribeTokenCallable(const DescribeTokenRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTokenOutcome>>();
+    DescribeTokenAsync(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeTokenRequest&,
+        DescribeTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RumClient::DescribeTopIssuesOutcome RumClient::DescribeTopIssues(const DescribeTopIssuesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTopIssues");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTopIssuesResponse rsp = DescribeTopIssuesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTopIssuesOutcome(rsp);
+        else
+            return DescribeTopIssuesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTopIssuesOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeTopIssuesAsync(const DescribeTopIssuesRequest& request, const DescribeTopIssuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTopIssuesRequest&;
+    using Resp = DescribeTopIssuesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTopIssues", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeTopIssuesOutcomeCallable RumClient::DescribeTopIssuesCallable(const DescribeTopIssuesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTopIssuesOutcome>>();
+    DescribeTopIssuesAsync(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeTopIssuesRequest&,
+        DescribeTopIssuesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

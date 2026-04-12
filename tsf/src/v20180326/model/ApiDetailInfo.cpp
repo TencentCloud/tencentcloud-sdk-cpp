@@ -46,7 +46,9 @@ ApiDetailInfo::ApiDetailInfo() :
     m_rpcExtHasBeenSet(false),
     m_gatewayDeployGroupIdHasBeenSet(false),
     m_md5HasBeenSet(false),
-    m_rpcTypeHasBeenSet(false)
+    m_rpcTypeHasBeenSet(false),
+    m_pathMappingUnsupportedHasBeenSet(false),
+    m_pathMappingUnsupportedMsgHasBeenSet(false)
 {
 }
 
@@ -315,6 +317,26 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
         m_rpcTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("PathMappingUnsupported") && !value["PathMappingUnsupported"].IsNull())
+    {
+        if (!value["PathMappingUnsupported"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.PathMappingUnsupported` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_pathMappingUnsupported = value["PathMappingUnsupported"].GetBool();
+        m_pathMappingUnsupportedHasBeenSet = true;
+    }
+
+    if (value.HasMember("PathMappingUnsupportedMsg") && !value["PathMappingUnsupportedMsg"].IsNull())
+    {
+        if (!value["PathMappingUnsupportedMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.PathMappingUnsupportedMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pathMappingUnsupportedMsg = string(value["PathMappingUnsupportedMsg"].GetString());
+        m_pathMappingUnsupportedMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -528,6 +550,22 @@ void ApiDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "RpcType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_rpcType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pathMappingUnsupportedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PathMappingUnsupported";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pathMappingUnsupported, allocator);
+    }
+
+    if (m_pathMappingUnsupportedMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PathMappingUnsupportedMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pathMappingUnsupportedMsg.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -947,5 +985,37 @@ void ApiDetailInfo::SetRpcType(const string& _rpcType)
 bool ApiDetailInfo::RpcTypeHasBeenSet() const
 {
     return m_rpcTypeHasBeenSet;
+}
+
+bool ApiDetailInfo::GetPathMappingUnsupported() const
+{
+    return m_pathMappingUnsupported;
+}
+
+void ApiDetailInfo::SetPathMappingUnsupported(const bool& _pathMappingUnsupported)
+{
+    m_pathMappingUnsupported = _pathMappingUnsupported;
+    m_pathMappingUnsupportedHasBeenSet = true;
+}
+
+bool ApiDetailInfo::PathMappingUnsupportedHasBeenSet() const
+{
+    return m_pathMappingUnsupportedHasBeenSet;
+}
+
+string ApiDetailInfo::GetPathMappingUnsupportedMsg() const
+{
+    return m_pathMappingUnsupportedMsg;
+}
+
+void ApiDetailInfo::SetPathMappingUnsupportedMsg(const string& _pathMappingUnsupportedMsg)
+{
+    m_pathMappingUnsupportedMsg = _pathMappingUnsupportedMsg;
+    m_pathMappingUnsupportedMsgHasBeenSet = true;
+}
+
+bool ApiDetailInfo::PathMappingUnsupportedMsgHasBeenSet() const
+{
+    return m_pathMappingUnsupportedMsgHasBeenSet;
 }
 

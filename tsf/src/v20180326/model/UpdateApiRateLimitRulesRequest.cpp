@@ -25,7 +25,8 @@ using namespace std;
 UpdateApiRateLimitRulesRequest::UpdateApiRateLimitRulesRequest() :
     m_apiIdsHasBeenSet(false),
     m_usableStatusHasBeenSet(false),
-    m_maxQpsHasBeenSet(false)
+    m_maxQpsHasBeenSet(false),
+    m_usePathAndMethodFormatHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string UpdateApiRateLimitRulesRequest::ToJsonString() const
         string key = "MaxQps";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxQps, allocator);
+    }
+
+    if (m_usePathAndMethodFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsePathAndMethodFormat";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_usePathAndMethodFormat, allocator);
     }
 
 
@@ -119,6 +128,22 @@ void UpdateApiRateLimitRulesRequest::SetMaxQps(const int64_t& _maxQps)
 bool UpdateApiRateLimitRulesRequest::MaxQpsHasBeenSet() const
 {
     return m_maxQpsHasBeenSet;
+}
+
+bool UpdateApiRateLimitRulesRequest::GetUsePathAndMethodFormat() const
+{
+    return m_usePathAndMethodFormat;
+}
+
+void UpdateApiRateLimitRulesRequest::SetUsePathAndMethodFormat(const bool& _usePathAndMethodFormat)
+{
+    m_usePathAndMethodFormat = _usePathAndMethodFormat;
+    m_usePathAndMethodFormatHasBeenSet = true;
+}
+
+bool UpdateApiRateLimitRulesRequest::UsePathAndMethodFormatHasBeenSet() const
+{
+    return m_usePathAndMethodFormatHasBeenSet;
 }
 
 

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据源类型英文名
-                     * @return Type 数据源类型英文名
+                     * 获取<p>数据源类型英文名</p>
+                     * @return Type <p>数据源类型英文名</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置数据源类型英文名
-                     * @param _type 数据源类型英文名
+                     * 设置<p>数据源类型英文名</p>
+                     * @param _type <p>数据源类型英文名</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取数据源所属存储实例ID
-                     * @return StorageId 数据源所属存储实例ID
+                     * 获取<p>数据源所属存储实例ID</p>
+                     * @return StorageId <p>数据源所属存储实例ID</p>
                      * 
                      */
                     std::string GetStorageId() const;
 
                     /**
-                     * 设置数据源所属存储实例ID
-                     * @param _storageId 数据源所属存储实例ID
+                     * 设置<p>数据源所属存储实例ID</p>
+                     * @param _storageId <p>数据源所属存储实例ID</p>
                      * 
                      */
                     void SetStorageId(const std::string& _storageId);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool StorageIdHasBeenSet() const;
 
                     /**
-                     * 获取数据源所属存储实例名称
-                     * @return StorageName 数据源所属存储实例名称
+                     * 获取<p>数据源所属存储实例名称</p>
+                     * @return StorageName <p>数据源所属存储实例名称</p>
                      * 
                      */
                     std::string GetStorageName() const;
 
                     /**
-                     * 设置数据源所属存储实例名称
-                     * @param _storageName 数据源所属存储实例名称
+                     * 设置<p>数据源所属存储实例名称</p>
+                     * @param _storageName <p>数据源所属存储实例名称</p>
                      * 
                      */
                     void SetStorageName(const std::string& _storageName);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool StorageNameHasBeenSet() const;
 
                     /**
-                     * 获取限制开关是否开启，只有开启时才有限制
-                     * @return LimitMount 限制开关是否开启，只有开启时才有限制
+                     * 获取<p>限制开关是否开启，只有开启时才有限制</p>
+                     * @return LimitMount <p>限制开关是否开启，只有开启时才有限制</p>
                      * 
                      */
                     bool GetLimitMount() const;
 
                     /**
-                     * 设置限制开关是否开启，只有开启时才有限制
-                     * @param _limitMount 限制开关是否开启，只有开启时才有限制
+                     * 设置<p>限制开关是否开启，只有开启时才有限制</p>
+                     * @param _limitMount <p>限制开关是否开启，只有开启时才有限制</p>
                      * 
                      */
                     void SetLimitMount(const bool& _limitMount);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool LimitMountHasBeenSet() const;
 
                     /**
-                     * 获取创建者uin
-                     * @return Creator 创建者uin
+                     * 获取<p>创建者uin</p>
+                     * @return Creator <p>创建者uin</p>
                      * 
                      */
                     std::string GetCreator() const;
 
                     /**
-                     * 设置创建者uin
-                     * @param _creator 创建者uin
+                     * 设置<p>创建者uin</p>
+                     * @param _creator <p>创建者uin</p>
                      * 
                      */
                     void SetCreator(const std::string& _creator);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool CreatorHasBeenSet() const;
 
                     /**
-                     * 获取创建者名称
-                     * @return CreatorName 创建者名称
+                     * 获取<p>创建者名称</p>
+                     * @return CreatorName <p>创建者名称</p>
                      * 
                      */
                     std::string GetCreatorName() const;
 
                     /**
-                     * 设置创建者名称
-                     * @param _creatorName 创建者名称
+                     * 设置<p>创建者名称</p>
+                     * @param _creatorName <p>创建者名称</p>
                      * 
                      */
                     void SetCreatorName(const std::string& _creatorName);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool CreatorNameHasBeenSet() const;
 
                     /**
-                     * 获取创建时间, 格式为yyyy-mm-ddThh:mm:ssZ
-                     * @return CreateTime 创建时间, 格式为yyyy-mm-ddThh:mm:ssZ
+                     * 获取<p>创建时间, 格式为yyyy-mm-ddThh:mm:ssZ</p>
+                     * @return CreateTime <p>创建时间, 格式为yyyy-mm-ddThh:mm:ssZ</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间, 格式为yyyy-mm-ddThh:mm:ssZ
-                     * @param _createTime 创建时间, 格式为yyyy-mm-ddThh:mm:ssZ
+                     * 设置<p>创建时间, 格式为yyyy-mm-ddThh:mm:ssZ</p>
+                     * @param _createTime <p>创建时间, 格式为yyyy-mm-ddThh:mm:ssZ</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间, 格式为yyyy-mm-ddThh:mm:ssZ
-                     * @return UpdateTime 更新时间, 格式为yyyy-mm-ddThh:mm:ssZ
+                     * 获取<p>更新时间, 格式为yyyy-mm-ddThh:mm:ssZ</p>
+                     * @return UpdateTime <p>更新时间, 格式为yyyy-mm-ddThh:mm:ssZ</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间, 格式为yyyy-mm-ddThh:mm:ssZ
-                     * @param _updateTime 更新时间, 格式为yyyy-mm-ddThh:mm:ssZ
+                     * 设置<p>更新时间, 格式为yyyy-mm-ddThh:mm:ssZ</p>
+                     * @param _updateTime <p>更新时间, 格式为yyyy-mm-ddThh:mm:ssZ</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -216,18 +216,18 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取额外配置
+                     * 获取<p>额外配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExtraConf 额外配置
+                     * @return ExtraConf <p>额外配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     StorageExtraConf GetExtraConf() const;
 
                     /**
-                     * 设置额外配置
+                     * 设置<p>额外配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _extraConf 额外配置
+                     * @param _extraConf <p>额外配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -243,55 +243,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据源类型英文名
+                     * <p>数据源类型英文名</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 数据源所属存储实例ID
+                     * <p>数据源所属存储实例ID</p>
                      */
                     std::string m_storageId;
                     bool m_storageIdHasBeenSet;
 
                     /**
-                     * 数据源所属存储实例名称
+                     * <p>数据源所属存储实例名称</p>
                      */
                     std::string m_storageName;
                     bool m_storageNameHasBeenSet;
 
                     /**
-                     * 限制开关是否开启，只有开启时才有限制
+                     * <p>限制开关是否开启，只有开启时才有限制</p>
                      */
                     bool m_limitMount;
                     bool m_limitMountHasBeenSet;
 
                     /**
-                     * 创建者uin
+                     * <p>创建者uin</p>
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
 
                     /**
-                     * 创建者名称
+                     * <p>创建者名称</p>
                      */
                     std::string m_creatorName;
                     bool m_creatorNameHasBeenSet;
 
                     /**
-                     * 创建时间, 格式为yyyy-mm-ddThh:mm:ssZ
+                     * <p>创建时间, 格式为yyyy-mm-ddThh:mm:ssZ</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间, 格式为yyyy-mm-ddThh:mm:ssZ
+                     * <p>更新时间, 格式为yyyy-mm-ddThh:mm:ssZ</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 额外配置
+                     * <p>额外配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     StorageExtraConf m_extraConf;

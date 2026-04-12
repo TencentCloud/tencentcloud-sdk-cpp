@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取训练任务ID
-                     * @return Id 训练任务ID
+                     * 获取<p>训练任务ID</p>
+                     * @return Id <p>训练任务ID</p>
                      * 
                      */
                     std::string GetId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 训练任务ID
+                     * <p>训练任务ID</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

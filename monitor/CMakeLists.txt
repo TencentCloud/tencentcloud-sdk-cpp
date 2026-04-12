@@ -15,11 +15,66 @@
 #
 
 set(monitor_public_header
-  include/tencentcloud/monitor/v20180724/MonitorClient.h
   include/tencentcloud/monitor/v20230616/MonitorClient.h
+  include/tencentcloud/monitor/v20180724/MonitorClient.h
   )
 
 set(monitor_public_header_model
+  include/tencentcloud/monitor/v20230616/model/DescribeAlarmNotifyHistoriesRequest.h
+  include/tencentcloud/monitor/v20230616/model/WebhookNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/TeamsRobotNoticeTmplMatcher.h
+  include/tencentcloud/monitor/v20230616/model/PageByNoResult.h
+  include/tencentcloud/monitor/v20230616/model/FeiShuRobotNoticeTmplMatcher.h
+  include/tencentcloud/monitor/v20230616/model/DeleteNoticeContentTmplsRequest.h
+  include/tencentcloud/monitor/v20230616/model/PageByNoParams.h
+  include/tencentcloud/monitor/v20230616/model/QCloudYeheWeChatNoticeTmplItem.h
+  include/tencentcloud/monitor/v20230616/model/AIWorkbenchSREDigitalTwinTask.h
+  include/tencentcloud/monitor/v20230616/model/ChannelsReceivers.h
+  include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSREDigitalTwinTaskListRequest.h
+  include/tencentcloud/monitor/v20230616/model/AIWorkbenchSREDigitalTwinWorkLogList.h
+  include/tencentcloud/monitor/v20230616/model/NotifyRelatedNotice.h
+  include/tencentcloud/monitor/v20230616/model/NoticeContentTmplItem.h
+  include/tencentcloud/monitor/v20230616/model/QCloudYeheNoticeTmplItem.h
+  include/tencentcloud/monitor/v20230616/model/CreateNoticeContentTmplResponse.h
+  include/tencentcloud/monitor/v20230616/model/NoticeContentTmplBindPolicyCount.h
+  include/tencentcloud/monitor/v20230616/model/AlarmLable.h
+  include/tencentcloud/monitor/v20230616/model/AIWorkbenchSREDigitalTwinWorkLog.h
+  include/tencentcloud/monitor/v20230616/model/TriggerAIWorkbenchSREDigitalTwinTaskRequest.h
+  include/tencentcloud/monitor/v20230616/model/TriggerAIWorkbenchSREDigitalTwinTaskResponse.h
+  include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogListResponse.h
+  include/tencentcloud/monitor/v20230616/model/TriggerDigitalTwinTaskResp.h
+  include/tencentcloud/monitor/v20230616/model/ModifyNoticeContentTmplResponse.h
+  include/tencentcloud/monitor/v20230616/model/DescribeNoticeContentTmplResponse.h
+  include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogDetailRequest.h
+  include/tencentcloud/monitor/v20230616/model/PagerDutyRobotNoticeTmplHeader.h
+  include/tencentcloud/monitor/v20230616/model/DescribeAlarmNotifyHistoriesResponse.h
+  include/tencentcloud/monitor/v20230616/model/TeamsRobotNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/GoogleChatRobotNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/DingDingRobotNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/PagerDutyRobotNoticeTmplMatcher.h
+  include/tencentcloud/monitor/v20230616/model/WebhookNoticeTmplHeader.h
+  include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSREDigitalTwinTaskListResponse.h
+  include/tencentcloud/monitor/v20230616/model/FeiShuRobotNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/DingDingRobotNoticeTmplMatcher.h
+  include/tencentcloud/monitor/v20230616/model/SlackRobotNoticeTmplMatcher.h
+  include/tencentcloud/monitor/v20230616/model/AIWorkbenchSREDigitalTwinWorkLogDetail.h
+  include/tencentcloud/monitor/v20230616/model/WeWorkRobotNoticeTmplMatcher.h
+  include/tencentcloud/monitor/v20230616/model/AlarmNotifyHistory.h
+  include/tencentcloud/monitor/v20230616/model/WeWorkRobotNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/QCloudYeheNoticeTmplMatcher.h
+  include/tencentcloud/monitor/v20230616/model/GoogleChatRobotNoticeTmplMatcher.h
+  include/tencentcloud/monitor/v20230616/model/QCloudYeheNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/DeleteNoticeContentTmplsResponse.h
+  include/tencentcloud/monitor/v20230616/model/PagerDutyRobotNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/SlackRobotNoticeTmpl.h
+  include/tencentcloud/monitor/v20230616/model/AIWorkbenchSREDigitalTwinTaskList.h
+  include/tencentcloud/monitor/v20230616/model/DescribeNoticeContentTmplRequest.h
+  include/tencentcloud/monitor/v20230616/model/ModifyNoticeContentTmplRequest.h
+  include/tencentcloud/monitor/v20230616/model/CreateNoticeContentTmplRequest.h
+  include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogListRequest.h
+  include/tencentcloud/monitor/v20230616/model/WebhookNoticeTmplMatcher.h
+  include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogDetailResponse.h
+  include/tencentcloud/monitor/v20230616/model/NoticeContentTmpl.h
   include/tencentcloud/monitor/v20180724/model/DeleteAlarmShieldsRequest.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyInfoRequest.h
   include/tencentcloud/monitor/v20180724/model/AlarmPolicyTriggerTask.h
@@ -513,66 +568,66 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DeleteAlarmShieldsResponse.h
   include/tencentcloud/monitor/v20180724/model/SetDefaultAlarmPolicyResponse.h
   include/tencentcloud/monitor/v20180724/model/BindingPolicyObjectResponse.h
-  include/tencentcloud/monitor/v20230616/model/DescribeAlarmNotifyHistoriesRequest.h
-  include/tencentcloud/monitor/v20230616/model/WebhookNoticeTmpl.h
-  include/tencentcloud/monitor/v20230616/model/TeamsRobotNoticeTmplMatcher.h
-  include/tencentcloud/monitor/v20230616/model/PageByNoResult.h
-  include/tencentcloud/monitor/v20230616/model/FeiShuRobotNoticeTmplMatcher.h
-  include/tencentcloud/monitor/v20230616/model/DeleteNoticeContentTmplsRequest.h
-  include/tencentcloud/monitor/v20230616/model/PageByNoParams.h
-  include/tencentcloud/monitor/v20230616/model/QCloudYeheWeChatNoticeTmplItem.h
-  include/tencentcloud/monitor/v20230616/model/AIWorkbenchSREDigitalTwinTask.h
-  include/tencentcloud/monitor/v20230616/model/ChannelsReceivers.h
-  include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSREDigitalTwinTaskListRequest.h
-  include/tencentcloud/monitor/v20230616/model/AIWorkbenchSREDigitalTwinWorkLogList.h
-  include/tencentcloud/monitor/v20230616/model/NotifyRelatedNotice.h
-  include/tencentcloud/monitor/v20230616/model/NoticeContentTmplItem.h
-  include/tencentcloud/monitor/v20230616/model/QCloudYeheNoticeTmplItem.h
-  include/tencentcloud/monitor/v20230616/model/CreateNoticeContentTmplResponse.h
-  include/tencentcloud/monitor/v20230616/model/NoticeContentTmplBindPolicyCount.h
-  include/tencentcloud/monitor/v20230616/model/AlarmLable.h
-  include/tencentcloud/monitor/v20230616/model/AIWorkbenchSREDigitalTwinWorkLog.h
-  include/tencentcloud/monitor/v20230616/model/TriggerAIWorkbenchSREDigitalTwinTaskRequest.h
-  include/tencentcloud/monitor/v20230616/model/TriggerAIWorkbenchSREDigitalTwinTaskResponse.h
-  include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogListResponse.h
-  include/tencentcloud/monitor/v20230616/model/TriggerDigitalTwinTaskResp.h
-  include/tencentcloud/monitor/v20230616/model/ModifyNoticeContentTmplResponse.h
-  include/tencentcloud/monitor/v20230616/model/DescribeNoticeContentTmplResponse.h
-  include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogDetailRequest.h
-  include/tencentcloud/monitor/v20230616/model/PagerDutyRobotNoticeTmplHeader.h
-  include/tencentcloud/monitor/v20230616/model/DescribeAlarmNotifyHistoriesResponse.h
-  include/tencentcloud/monitor/v20230616/model/TeamsRobotNoticeTmpl.h
-  include/tencentcloud/monitor/v20230616/model/GoogleChatRobotNoticeTmpl.h
-  include/tencentcloud/monitor/v20230616/model/DingDingRobotNoticeTmpl.h
-  include/tencentcloud/monitor/v20230616/model/PagerDutyRobotNoticeTmplMatcher.h
-  include/tencentcloud/monitor/v20230616/model/WebhookNoticeTmplHeader.h
-  include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSREDigitalTwinTaskListResponse.h
-  include/tencentcloud/monitor/v20230616/model/FeiShuRobotNoticeTmpl.h
-  include/tencentcloud/monitor/v20230616/model/DingDingRobotNoticeTmplMatcher.h
-  include/tencentcloud/monitor/v20230616/model/SlackRobotNoticeTmplMatcher.h
-  include/tencentcloud/monitor/v20230616/model/AIWorkbenchSREDigitalTwinWorkLogDetail.h
-  include/tencentcloud/monitor/v20230616/model/WeWorkRobotNoticeTmplMatcher.h
-  include/tencentcloud/monitor/v20230616/model/AlarmNotifyHistory.h
-  include/tencentcloud/monitor/v20230616/model/WeWorkRobotNoticeTmpl.h
-  include/tencentcloud/monitor/v20230616/model/QCloudYeheNoticeTmplMatcher.h
-  include/tencentcloud/monitor/v20230616/model/GoogleChatRobotNoticeTmplMatcher.h
-  include/tencentcloud/monitor/v20230616/model/QCloudYeheNoticeTmpl.h
-  include/tencentcloud/monitor/v20230616/model/DeleteNoticeContentTmplsResponse.h
-  include/tencentcloud/monitor/v20230616/model/PagerDutyRobotNoticeTmpl.h
-  include/tencentcloud/monitor/v20230616/model/SlackRobotNoticeTmpl.h
-  include/tencentcloud/monitor/v20230616/model/AIWorkbenchSREDigitalTwinTaskList.h
-  include/tencentcloud/monitor/v20230616/model/DescribeNoticeContentTmplRequest.h
-  include/tencentcloud/monitor/v20230616/model/ModifyNoticeContentTmplRequest.h
-  include/tencentcloud/monitor/v20230616/model/CreateNoticeContentTmplRequest.h
-  include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogListRequest.h
-  include/tencentcloud/monitor/v20230616/model/WebhookNoticeTmplMatcher.h
-  include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogDetailResponse.h
-  include/tencentcloud/monitor/v20230616/model/NoticeContentTmpl.h
   )
 
 set(monitor_src
-  src/v20180724/MonitorClient.cpp
   src/v20230616/MonitorClient.cpp
+  src/v20180724/MonitorClient.cpp
+  src/v20230616/model/DescribeAlarmNotifyHistoriesRequest.cpp
+  src/v20230616/model/WebhookNoticeTmpl.cpp
+  src/v20230616/model/TeamsRobotNoticeTmplMatcher.cpp
+  src/v20230616/model/PageByNoResult.cpp
+  src/v20230616/model/FeiShuRobotNoticeTmplMatcher.cpp
+  src/v20230616/model/DeleteNoticeContentTmplsRequest.cpp
+  src/v20230616/model/PageByNoParams.cpp
+  src/v20230616/model/QCloudYeheWeChatNoticeTmplItem.cpp
+  src/v20230616/model/AIWorkbenchSREDigitalTwinTask.cpp
+  src/v20230616/model/ChannelsReceivers.cpp
+  src/v20230616/model/DescribeAIWorkbenchSREDigitalTwinTaskListRequest.cpp
+  src/v20230616/model/AIWorkbenchSREDigitalTwinWorkLogList.cpp
+  src/v20230616/model/NotifyRelatedNotice.cpp
+  src/v20230616/model/NoticeContentTmplItem.cpp
+  src/v20230616/model/QCloudYeheNoticeTmplItem.cpp
+  src/v20230616/model/CreateNoticeContentTmplResponse.cpp
+  src/v20230616/model/NoticeContentTmplBindPolicyCount.cpp
+  src/v20230616/model/AlarmLable.cpp
+  src/v20230616/model/AIWorkbenchSREDigitalTwinWorkLog.cpp
+  src/v20230616/model/TriggerAIWorkbenchSREDigitalTwinTaskRequest.cpp
+  src/v20230616/model/TriggerAIWorkbenchSREDigitalTwinTaskResponse.cpp
+  src/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogListResponse.cpp
+  src/v20230616/model/TriggerDigitalTwinTaskResp.cpp
+  src/v20230616/model/ModifyNoticeContentTmplResponse.cpp
+  src/v20230616/model/DescribeNoticeContentTmplResponse.cpp
+  src/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogDetailRequest.cpp
+  src/v20230616/model/PagerDutyRobotNoticeTmplHeader.cpp
+  src/v20230616/model/DescribeAlarmNotifyHistoriesResponse.cpp
+  src/v20230616/model/TeamsRobotNoticeTmpl.cpp
+  src/v20230616/model/GoogleChatRobotNoticeTmpl.cpp
+  src/v20230616/model/DingDingRobotNoticeTmpl.cpp
+  src/v20230616/model/PagerDutyRobotNoticeTmplMatcher.cpp
+  src/v20230616/model/WebhookNoticeTmplHeader.cpp
+  src/v20230616/model/DescribeAIWorkbenchSREDigitalTwinTaskListResponse.cpp
+  src/v20230616/model/FeiShuRobotNoticeTmpl.cpp
+  src/v20230616/model/DingDingRobotNoticeTmplMatcher.cpp
+  src/v20230616/model/SlackRobotNoticeTmplMatcher.cpp
+  src/v20230616/model/AIWorkbenchSREDigitalTwinWorkLogDetail.cpp
+  src/v20230616/model/WeWorkRobotNoticeTmplMatcher.cpp
+  src/v20230616/model/AlarmNotifyHistory.cpp
+  src/v20230616/model/WeWorkRobotNoticeTmpl.cpp
+  src/v20230616/model/QCloudYeheNoticeTmplMatcher.cpp
+  src/v20230616/model/GoogleChatRobotNoticeTmplMatcher.cpp
+  src/v20230616/model/QCloudYeheNoticeTmpl.cpp
+  src/v20230616/model/DeleteNoticeContentTmplsResponse.cpp
+  src/v20230616/model/PagerDutyRobotNoticeTmpl.cpp
+  src/v20230616/model/SlackRobotNoticeTmpl.cpp
+  src/v20230616/model/AIWorkbenchSREDigitalTwinTaskList.cpp
+  src/v20230616/model/DescribeNoticeContentTmplRequest.cpp
+  src/v20230616/model/ModifyNoticeContentTmplRequest.cpp
+  src/v20230616/model/CreateNoticeContentTmplRequest.cpp
+  src/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogListRequest.cpp
+  src/v20230616/model/WebhookNoticeTmplMatcher.cpp
+  src/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogDetailResponse.cpp
+  src/v20230616/model/NoticeContentTmpl.cpp
   src/v20180724/model/DeleteAlarmShieldsRequest.cpp
   src/v20180724/model/ModifyAlarmPolicyInfoRequest.cpp
   src/v20180724/model/AlarmPolicyTriggerTask.cpp
@@ -1066,61 +1121,6 @@ set(monitor_src
   src/v20180724/model/DeleteAlarmShieldsResponse.cpp
   src/v20180724/model/SetDefaultAlarmPolicyResponse.cpp
   src/v20180724/model/BindingPolicyObjectResponse.cpp
-  src/v20230616/model/DescribeAlarmNotifyHistoriesRequest.cpp
-  src/v20230616/model/WebhookNoticeTmpl.cpp
-  src/v20230616/model/TeamsRobotNoticeTmplMatcher.cpp
-  src/v20230616/model/PageByNoResult.cpp
-  src/v20230616/model/FeiShuRobotNoticeTmplMatcher.cpp
-  src/v20230616/model/DeleteNoticeContentTmplsRequest.cpp
-  src/v20230616/model/PageByNoParams.cpp
-  src/v20230616/model/QCloudYeheWeChatNoticeTmplItem.cpp
-  src/v20230616/model/AIWorkbenchSREDigitalTwinTask.cpp
-  src/v20230616/model/ChannelsReceivers.cpp
-  src/v20230616/model/DescribeAIWorkbenchSREDigitalTwinTaskListRequest.cpp
-  src/v20230616/model/AIWorkbenchSREDigitalTwinWorkLogList.cpp
-  src/v20230616/model/NotifyRelatedNotice.cpp
-  src/v20230616/model/NoticeContentTmplItem.cpp
-  src/v20230616/model/QCloudYeheNoticeTmplItem.cpp
-  src/v20230616/model/CreateNoticeContentTmplResponse.cpp
-  src/v20230616/model/NoticeContentTmplBindPolicyCount.cpp
-  src/v20230616/model/AlarmLable.cpp
-  src/v20230616/model/AIWorkbenchSREDigitalTwinWorkLog.cpp
-  src/v20230616/model/TriggerAIWorkbenchSREDigitalTwinTaskRequest.cpp
-  src/v20230616/model/TriggerAIWorkbenchSREDigitalTwinTaskResponse.cpp
-  src/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogListResponse.cpp
-  src/v20230616/model/TriggerDigitalTwinTaskResp.cpp
-  src/v20230616/model/ModifyNoticeContentTmplResponse.cpp
-  src/v20230616/model/DescribeNoticeContentTmplResponse.cpp
-  src/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogDetailRequest.cpp
-  src/v20230616/model/PagerDutyRobotNoticeTmplHeader.cpp
-  src/v20230616/model/DescribeAlarmNotifyHistoriesResponse.cpp
-  src/v20230616/model/TeamsRobotNoticeTmpl.cpp
-  src/v20230616/model/GoogleChatRobotNoticeTmpl.cpp
-  src/v20230616/model/DingDingRobotNoticeTmpl.cpp
-  src/v20230616/model/PagerDutyRobotNoticeTmplMatcher.cpp
-  src/v20230616/model/WebhookNoticeTmplHeader.cpp
-  src/v20230616/model/DescribeAIWorkbenchSREDigitalTwinTaskListResponse.cpp
-  src/v20230616/model/FeiShuRobotNoticeTmpl.cpp
-  src/v20230616/model/DingDingRobotNoticeTmplMatcher.cpp
-  src/v20230616/model/SlackRobotNoticeTmplMatcher.cpp
-  src/v20230616/model/AIWorkbenchSREDigitalTwinWorkLogDetail.cpp
-  src/v20230616/model/WeWorkRobotNoticeTmplMatcher.cpp
-  src/v20230616/model/AlarmNotifyHistory.cpp
-  src/v20230616/model/WeWorkRobotNoticeTmpl.cpp
-  src/v20230616/model/QCloudYeheNoticeTmplMatcher.cpp
-  src/v20230616/model/GoogleChatRobotNoticeTmplMatcher.cpp
-  src/v20230616/model/QCloudYeheNoticeTmpl.cpp
-  src/v20230616/model/DeleteNoticeContentTmplsResponse.cpp
-  src/v20230616/model/PagerDutyRobotNoticeTmpl.cpp
-  src/v20230616/model/SlackRobotNoticeTmpl.cpp
-  src/v20230616/model/AIWorkbenchSREDigitalTwinTaskList.cpp
-  src/v20230616/model/DescribeNoticeContentTmplRequest.cpp
-  src/v20230616/model/ModifyNoticeContentTmplRequest.cpp
-  src/v20230616/model/CreateNoticeContentTmplRequest.cpp
-  src/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogListRequest.cpp
-  src/v20230616/model/WebhookNoticeTmplMatcher.cpp
-  src/v20230616/model/DescribeAIWorkbenchSREDigitalTwinWorkLogDetailResponse.cpp
-  src/v20230616/model/NoticeContentTmpl.cpp
   )
 
 set(monitor_include
@@ -1149,9 +1149,9 @@ target_link_libraries(monitor
   core)
 
 #install(FILES ${monitor_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/monitor/v20230616)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/monitor/v20180724)
 #install(FILES ${monitor_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/monitor/v20230616/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/monitor/v20180724/model)
 install(DIRECTORY ${monitor_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 

@@ -640,6 +640,56 @@ OmicsClient::DescribeProjectsOutcomeCallable OmicsClient::DescribeProjectsCallab
     return prom->get_future();
 }
 
+OmicsClient::DescribePublicApplicationsOutcome OmicsClient::DescribePublicApplications(const DescribePublicApplicationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePublicApplications");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePublicApplicationsResponse rsp = DescribePublicApplicationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePublicApplicationsOutcome(rsp);
+        else
+            return DescribePublicApplicationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePublicApplicationsOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::DescribePublicApplicationsAsync(const DescribePublicApplicationsRequest& request, const DescribePublicApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePublicApplicationsRequest&;
+    using Resp = DescribePublicApplicationsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePublicApplications", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OmicsClient::DescribePublicApplicationsOutcomeCallable OmicsClient::DescribePublicApplicationsCallable(const DescribePublicApplicationsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePublicApplicationsOutcome>>();
+    DescribePublicApplicationsAsync(
+    request,
+    [prom](
+        const OmicsClient*,
+        const DescribePublicApplicationsRequest&,
+        DescribePublicApplicationsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OmicsClient::DescribeRunGroupsOutcome OmicsClient::DescribeRunGroups(const DescribeRunGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRunGroups");

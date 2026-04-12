@@ -42,7 +42,8 @@ ServiceSetting::ServiceSetting() :
     m_vpcIdHasBeenSet(false),
     m_loadBalancingIpHasBeenSet(false),
     m_loadBalancerIdHasBeenSet(false),
-    m_existingLoadBalancerIdHasBeenSet(false)
+    m_existingLoadBalancerIdHasBeenSet(false),
+    m_enableGlobalServiceHasBeenSet(false)
 {
 }
 
@@ -281,6 +282,16 @@ CoreInternalOutcome ServiceSetting::Deserialize(const rapidjson::Value &value)
         m_existingLoadBalancerIdHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableGlobalService") && !value["EnableGlobalService"].IsNull())
+    {
+        if (!value["EnableGlobalService"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.EnableGlobalService` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableGlobalService = value["EnableGlobalService"].GetBool();
+        m_enableGlobalServiceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -469,6 +480,14 @@ void ServiceSetting::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ExistingLoadBalancerId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_existingLoadBalancerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableGlobalServiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableGlobalService";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableGlobalService, allocator);
     }
 
 }
@@ -824,5 +843,21 @@ void ServiceSetting::SetExistingLoadBalancerId(const string& _existingLoadBalanc
 bool ServiceSetting::ExistingLoadBalancerIdHasBeenSet() const
 {
     return m_existingLoadBalancerIdHasBeenSet;
+}
+
+bool ServiceSetting::GetEnableGlobalService() const
+{
+    return m_enableGlobalService;
+}
+
+void ServiceSetting::SetEnableGlobalService(const bool& _enableGlobalService)
+{
+    m_enableGlobalService = _enableGlobalService;
+    m_enableGlobalServiceHasBeenSet = true;
+}
+
+bool ServiceSetting::EnableGlobalServiceHasBeenSet() const
+{
+    return m_enableGlobalServiceHasBeenSet;
 }
 

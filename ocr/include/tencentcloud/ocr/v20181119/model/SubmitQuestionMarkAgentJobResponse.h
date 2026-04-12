@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务唯一ID。由服务端生成.
-                     * @return JobId 任务唯一ID。由服务端生成.
+                     * 获取<p>任务唯一ID。由服务端生成.</p>
+                     * @return JobId <p>任务唯一ID。由服务端生成.</p>
                      * 
                      */
                     std::string GetJobId() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取切题题目边框坐标列表 （如果BoolSingleQuestion为true则返回空）
-                     * @return QuestionInfo 切题题目边框坐标列表 （如果BoolSingleQuestion为true则返回空）
+                     * 获取<p>切题题目边框坐标列表 （如果BoolSingleQuestion为true则返回空）</p>
+                     * @return QuestionInfo <p>切题题目边框坐标列表 （如果BoolSingleQuestion为true则返回空）</p>
                      * 
                      */
                     std::vector<QuestionInfo> GetQuestionInfo() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool QuestionInfoHasBeenSet() const;
 
                     /**
-                     * 获取题目切题数量，作为计费题目数总量
-                     * @return QuestionCount 题目切题数量，作为计费题目数总量
+                     * 获取<p>题目切题数量，作为计费题目数总量</p>
+                     * @return QuestionCount <p>题目切题数量，作为计费题目数总量</p>
                      * 
                      */
                     std::string GetQuestionCount() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务唯一ID。由服务端生成.
+                     * <p>任务唯一ID。由服务端生成.</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 切题题目边框坐标列表 （如果BoolSingleQuestion为true则返回空）
+                     * <p>切题题目边框坐标列表 （如果BoolSingleQuestion为true则返回空）</p>
                      */
                     std::vector<QuestionInfo> m_questionInfo;
                     bool m_questionInfoHasBeenSet;
 
                     /**
-                     * 题目切题数量，作为计费题目数总量
+                     * <p>题目切题数量，作为计费题目数总量</p>
                      */
                     std::string m_questionCount;
                     bool m_questionCountHasBeenSet;

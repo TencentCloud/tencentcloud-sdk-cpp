@@ -47,6 +47,8 @@
 #include <tencentcloud/omics/v20221128/model/DescribeInputTemplatesResponse.h>
 #include <tencentcloud/omics/v20221128/model/DescribeProjectsRequest.h>
 #include <tencentcloud/omics/v20221128/model/DescribeProjectsResponse.h>
+#include <tencentcloud/omics/v20221128/model/DescribePublicApplicationsRequest.h>
+#include <tencentcloud/omics/v20221128/model/DescribePublicApplicationsResponse.h>
 #include <tencentcloud/omics/v20221128/model/DescribeRunGroupsRequest.h>
 #include <tencentcloud/omics/v20221128/model/DescribeRunGroupsResponse.h>
 #include <tencentcloud/omics/v20221128/model/DescribeRunsRequest.h>
@@ -131,6 +133,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProjectsResponse> DescribeProjectsOutcome;
                 typedef std::future<DescribeProjectsOutcome> DescribeProjectsOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::DescribeProjectsRequest&, DescribeProjectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePublicApplicationsResponse> DescribePublicApplicationsOutcome;
+                typedef std::future<DescribePublicApplicationsOutcome> DescribePublicApplicationsOutcomeCallable;
+                typedef std::function<void(const OmicsClient*, const Model::DescribePublicApplicationsRequest&, DescribePublicApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePublicApplicationsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRunGroupsResponse> DescribeRunGroupsOutcome;
                 typedef std::future<DescribeRunGroupsOutcome> DescribeRunGroupsOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::DescribeRunGroupsRequest&, DescribeRunGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRunGroupsAsyncHandler;
@@ -292,6 +297,15 @@ namespace TencentCloud
                 DescribeProjectsOutcome DescribeProjects(const Model::DescribeProjectsRequest &request);
                 void DescribeProjectsAsync(const Model::DescribeProjectsRequest& request, const DescribeProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProjectsOutcomeCallable DescribeProjectsCallable(const Model::DescribeProjectsRequest& request);
+
+                /**
+                 *查询公共应用列表。
+                 * @param req DescribePublicApplicationsRequest
+                 * @return DescribePublicApplicationsOutcome
+                 */
+                DescribePublicApplicationsOutcome DescribePublicApplications(const Model::DescribePublicApplicationsRequest &request);
+                void DescribePublicApplicationsAsync(const Model::DescribePublicApplicationsRequest& request, const DescribePublicApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePublicApplicationsOutcomeCallable DescribePublicApplicationsCallable(const Model::DescribePublicApplicationsRequest& request);
 
                 /**
                  *查询任务批次列表。

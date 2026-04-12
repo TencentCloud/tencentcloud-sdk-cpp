@@ -47,7 +47,8 @@ TrainingTaskSetItem::TrainingTaskSetItem() :
     m_callbackUrlHasBeenSet(false),
     m_subUinHasBeenSet(false),
     m_subUinNameHasBeenSet(false),
-    m_appIdHasBeenSet(false)
+    m_appIdHasBeenSet(false),
+    m_envsHasBeenSet(false)
 {
 }
 
@@ -360,6 +361,26 @@ CoreInternalOutcome TrainingTaskSetItem::Deserialize(const rapidjson::Value &val
         m_appIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Envs") && !value["Envs"].IsNull())
+    {
+        if (!value["Envs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TrainingTaskSetItem.Envs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Envs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            EnvVar item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_envs.push_back(item);
+        }
+        m_envsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -597,6 +618,21 @@ void TrainingTaskSetItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_envsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Envs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_envs.begin(); itr != m_envs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1032,5 +1068,21 @@ void TrainingTaskSetItem::SetAppId(const string& _appId)
 bool TrainingTaskSetItem::AppIdHasBeenSet() const
 {
     return m_appIdHasBeenSet;
+}
+
+vector<EnvVar> TrainingTaskSetItem::GetEnvs() const
+{
+    return m_envs;
+}
+
+void TrainingTaskSetItem::SetEnvs(const vector<EnvVar>& _envs)
+{
+    m_envs = _envs;
+    m_envsHasBeenSet = true;
+}
+
+bool TrainingTaskSetItem::EnvsHasBeenSet() const
+{
+    return m_envsHasBeenSet;
 }
 

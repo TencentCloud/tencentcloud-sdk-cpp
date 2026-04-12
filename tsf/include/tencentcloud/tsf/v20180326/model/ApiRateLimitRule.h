@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取rule Id
+                     * 获取<p>rule Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleId rule Id
+                     * @return RuleId <p>rule Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置rule Id
+                     * 设置<p>rule Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ruleId rule Id
+                     * @param _ruleId <p>rule Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取API ID
+                     * 获取<p>API ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApiId API ID
+                     * @return ApiId <p>API ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApiId() const;
 
                     /**
-                     * 设置API ID
+                     * 设置<p>API ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _apiId API ID
+                     * @param _apiId <p>API ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool ApiIdHasBeenSet() const;
 
                     /**
-                     * 获取限流名称
+                     * 获取<p>限流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleName 限流名称
+                     * @return RuleName <p>限流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置限流名称
+                     * 设置<p>限流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ruleName 限流名称
+                     * @param _ruleName <p>限流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取最大限流qps
+                     * 获取<p>最大限流qps</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxQps 最大限流qps
+                     * @return MaxQps <p>最大限流qps</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxQps() const;
 
                     /**
-                     * 设置最大限流qps
+                     * 设置<p>最大限流qps</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxQps 最大限流qps
+                     * @param _maxQps <p>最大限流qps</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool MaxQpsHasBeenSet() const;
 
                     /**
-                     * 获取生效/禁用, enabled/disabled
+                     * 获取<p>生效/禁用, enabled/disabled</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UsableStatus 生效/禁用, enabled/disabled
+                     * @return UsableStatus <p>生效/禁用, enabled/disabled</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUsableStatus() const;
 
                     /**
-                     * 设置生效/禁用, enabled/disabled
+                     * 设置<p>生效/禁用, enabled/disabled</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _usableStatus 生效/禁用, enabled/disabled
+                     * @param _usableStatus <p>生效/禁用, enabled/disabled</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool UsableStatusHasBeenSet() const;
 
                     /**
-                     * 获取规则内容
+                     * 获取<p>规则内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleContent 规则内容
+                     * @return RuleContent <p>规则内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleContent() const;
 
                     /**
-                     * 设置规则内容
+                     * 设置<p>规则内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ruleContent 规则内容
+                     * @param _ruleContent <p>规则内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool RuleContentHasBeenSet() const;
 
                     /**
-                     * 获取Tsf Rule ID
+                     * 获取<p>Tsf Rule ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TsfRuleId Tsf Rule ID
+                     * @return TsfRuleId <p>Tsf Rule ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTsfRuleId() const;
 
                     /**
-                     * 设置Tsf Rule ID
+                     * 设置<p>Tsf Rule ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tsfRuleId Tsf Rule ID
+                     * @param _tsfRuleId <p>Tsf Rule ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool TsfRuleIdHasBeenSet() const;
 
                     /**
-                     * 获取描述
+                     * 获取<p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 描述
+                     * @return Description <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
+                     * 设置<p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 描述
+                     * @param _description <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatedTime 创建时间
+                     * @return CreatedTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间
+                     * 设置<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createdTime 创建时间
+                     * @param _createdTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -272,18 +272,18 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
+                     * 获取<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdatedTime 更新时间
+                     * @return UpdatedTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
-                     * 设置更新时间
+                     * 设置<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updatedTime 更新时间
+                     * @param _updatedTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -297,18 +297,18 @@ namespace TencentCloud
                     bool UpdatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取分页参数limit
+                     * 获取<p>分页参数limit</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Limit 分页参数limit
+                     * @return Limit <p>分页参数limit</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页参数limit
+                     * 设置<p>分页参数limit</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _limit 分页参数limit
+                     * @param _limit <p>分页参数limit</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -322,18 +322,18 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页参数offset
+                     * 获取<p>分页参数offset</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Offset 分页参数offset
+                     * @return Offset <p>分页参数offset</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页参数offset
+                     * 设置<p>分页参数offset</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _offset 分页参数offset
+                     * @param _offset <p>分页参数offset</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -347,18 +347,18 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取AppId
+                     * 获取<p>AppId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppId AppId
+                     * @return AppId <p>AppId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
-                     * 设置AppId
+                     * 设置<p>AppId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _appId AppId
+                     * @param _appId <p>AppId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -371,98 +371,125 @@ namespace TencentCloud
                      */
                     bool AppIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>旧格式 method 与 path 分开，新格式 path-Method,如 /checkToken-GET，默认为新格式</p>
+                     * @return UsePathAndMethodFormat <p>旧格式 method 与 path 分开，新格式 path-Method,如 /checkToken-GET，默认为新格式</p>
+                     * 
+                     */
+                    bool GetUsePathAndMethodFormat() const;
+
+                    /**
+                     * 设置<p>旧格式 method 与 path 分开，新格式 path-Method,如 /checkToken-GET，默认为新格式</p>
+                     * @param _usePathAndMethodFormat <p>旧格式 method 与 path 分开，新格式 path-Method,如 /checkToken-GET，默认为新格式</p>
+                     * 
+                     */
+                    void SetUsePathAndMethodFormat(const bool& _usePathAndMethodFormat);
+
+                    /**
+                     * 判断参数 UsePathAndMethodFormat 是否已赋值
+                     * @return UsePathAndMethodFormat 是否已赋值
+                     * 
+                     */
+                    bool UsePathAndMethodFormatHasBeenSet() const;
+
                 private:
 
                     /**
-                     * rule Id
+                     * <p>rule Id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * API ID
+                     * <p>API ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_apiId;
                     bool m_apiIdHasBeenSet;
 
                     /**
-                     * 限流名称
+                     * <p>限流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 最大限流qps
+                     * <p>最大限流qps</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxQps;
                     bool m_maxQpsHasBeenSet;
 
                     /**
-                     * 生效/禁用, enabled/disabled
+                     * <p>生效/禁用, enabled/disabled</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_usableStatus;
                     bool m_usableStatusHasBeenSet;
 
                     /**
-                     * 规则内容
+                     * <p>规则内容</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleContent;
                     bool m_ruleContentHasBeenSet;
 
                     /**
-                     * Tsf Rule ID
+                     * <p>Tsf Rule ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tsfRuleId;
                     bool m_tsfRuleIdHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedTime;
                     bool m_updatedTimeHasBeenSet;
 
                     /**
-                     * 分页参数limit
+                     * <p>分页参数limit</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页参数offset
+                     * <p>分页参数offset</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * AppId
+                     * <p>AppId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
+
+                    /**
+                     * <p>旧格式 method 与 path 分开，新格式 path-Method,如 /checkToken-GET，默认为新格式</p>
+                     */
+                    bool m_usePathAndMethodFormat;
+                    bool m_usePathAndMethodFormatHasBeenSet;
 
                 };
             }

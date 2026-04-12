@@ -31,7 +31,8 @@ BatchProcessMediaRequest::BatchProcessMediaRequest() :
     m_tasksPriorityHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
-    m_skipMateDataHasBeenSet(false)
+    m_skipMateDataHasBeenSet(false),
+    m_taskModeHasBeenSet(false)
 {
 }
 
@@ -122,6 +123,14 @@ string BatchProcessMediaRequest::ToJsonString() const
         string key = "SkipMateData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_skipMateData, allocator);
+    }
+
+    if (m_taskModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -274,6 +283,22 @@ void BatchProcessMediaRequest::SetSkipMateData(const int64_t& _skipMateData)
 bool BatchProcessMediaRequest::SkipMateDataHasBeenSet() const
 {
     return m_skipMateDataHasBeenSet;
+}
+
+string BatchProcessMediaRequest::GetTaskMode() const
+{
+    return m_taskMode;
+}
+
+void BatchProcessMediaRequest::SetTaskMode(const string& _taskMode)
+{
+    m_taskMode = _taskMode;
+    m_taskModeHasBeenSet = true;
+}
+
+bool BatchProcessMediaRequest::TaskModeHasBeenSet() const
+{
+    return m_taskModeHasBeenSet;
 }
 
 

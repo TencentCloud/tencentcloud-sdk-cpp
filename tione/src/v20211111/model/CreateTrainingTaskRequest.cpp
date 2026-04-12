@@ -47,7 +47,8 @@ CreateTrainingTaskRequest::CreateTrainingTaskRequest() :
     m_callbackUrlHasBeenSet(false),
     m_encodedStartCmdInfoHasBeenSet(false),
     m_codeReposHasBeenSet(false),
-    m_exposeNetworkConfigHasBeenSet(false)
+    m_exposeNetworkConfigHasBeenSet(false),
+    m_envsHasBeenSet(false)
 {
 }
 
@@ -291,6 +292,21 @@ string CreateTrainingTaskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_exposeNetworkConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_envsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Envs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_envs.begin(); itr != m_envs.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -699,6 +715,22 @@ void CreateTrainingTaskRequest::SetExposeNetworkConfig(const ExposeNetworkConfig
 bool CreateTrainingTaskRequest::ExposeNetworkConfigHasBeenSet() const
 {
     return m_exposeNetworkConfigHasBeenSet;
+}
+
+vector<EnvVar> CreateTrainingTaskRequest::GetEnvs() const
+{
+    return m_envs;
+}
+
+void CreateTrainingTaskRequest::SetEnvs(const vector<EnvVar>& _envs)
+{
+    m_envs = _envs;
+    m_envsHasBeenSet = true;
+}
+
+bool CreateTrainingTaskRequest::EnvsHasBeenSet() const
+{
+    return m_envsHasBeenSet;
 }
 
 

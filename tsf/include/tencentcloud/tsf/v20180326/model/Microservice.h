@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取微服务ID
+                     * 获取<p>微服务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MicroserviceId 微服务ID
+                     * @return MicroserviceId <p>微服务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMicroserviceId() const;
 
                     /**
-                     * 设置微服务ID
+                     * 设置<p>微服务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _microserviceId 微服务ID
+                     * @param _microserviceId <p>微服务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool MicroserviceIdHasBeenSet() const;
 
                     /**
-                     * 获取微服务名称
+                     * 获取<p>微服务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MicroserviceName 微服务名称
+                     * @return MicroserviceName <p>微服务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMicroserviceName() const;
 
                     /**
-                     * 设置微服务名称
+                     * 设置<p>微服务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _microserviceName 微服务名称
+                     * @param _microserviceName <p>微服务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool MicroserviceNameHasBeenSet() const;
 
                     /**
-                     * 获取微服务描述
+                     * 获取<p>微服务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MicroserviceDesc 微服务描述
+                     * @return MicroserviceDesc <p>微服务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMicroserviceDesc() const;
 
                     /**
-                     * 设置微服务描述
+                     * 设置<p>微服务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _microserviceDesc 微服务描述
+                     * @param _microserviceDesc <p>微服务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool MicroserviceDescHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间
+                     * @return CreateTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
+                     * 设置<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 创建时间
+                     * @param _createTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
+                     * 获取<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间
+                     * @return UpdateTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
+                     * 设置<p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 更新时间
+                     * @param _updateTime <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取命名空间ID
+                     * 获取<p>命名空间ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NamespaceId 命名空间ID
+                     * @return NamespaceId <p>命名空间ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
-                     * 设置命名空间ID
+                     * 设置<p>命名空间ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _namespaceId 命名空间ID
+                     * @param _namespaceId <p>命名空间ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
-                     * 获取微服务的运行实例数目
+                     * 获取<p>微服务的运行实例数目</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RunInstanceCount 微服务的运行实例数目
+                     * @return RunInstanceCount <p>微服务的运行实例数目</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRunInstanceCount() const;
 
                     /**
-                     * 设置微服务的运行实例数目
+                     * 设置<p>微服务的运行实例数目</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _runInstanceCount 微服务的运行实例数目
+                     * @param _runInstanceCount <p>微服务的运行实例数目</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool RunInstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取微服务的离线实例数目
+                     * 获取<p>微服务的离线实例数目</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CriticalInstanceCount 微服务的离线实例数目
+                     * @return CriticalInstanceCount <p>微服务的离线实例数目</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCriticalInstanceCount() const;
 
                     /**
-                     * 设置微服务的离线实例数目
+                     * 设置<p>微服务的离线实例数目</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _criticalInstanceCount 微服务的离线实例数目
+                     * @param _criticalInstanceCount <p>微服务的离线实例数目</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -246,63 +246,127 @@ namespace TencentCloud
                      */
                     bool CriticalInstanceCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否禁用删除按钮，true：是；false：否。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeleteDisabled <p>是否禁用删除按钮，true：是；false：否。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetDeleteDisabled() const;
+
+                    /**
+                     * 设置<p>是否禁用删除按钮，true：是；false：否。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _deleteDisabled <p>是否禁用删除按钮，true：是；false：否。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeleteDisabled(const bool& _deleteDisabled);
+
+                    /**
+                     * 判断参数 DeleteDisabled 是否已赋值
+                     * @return DeleteDisabled 是否已赋值
+                     * 
+                     */
+                    bool DeleteDisabledHasBeenSet() const;
+
+                    /**
+                     * 获取<p>禁用删除原因。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeleteDisabledReason <p>禁用删除原因。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDeleteDisabledReason() const;
+
+                    /**
+                     * 设置<p>禁用删除原因。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _deleteDisabledReason <p>禁用删除原因。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeleteDisabledReason(const std::string& _deleteDisabledReason);
+
+                    /**
+                     * 判断参数 DeleteDisabledReason 是否已赋值
+                     * @return DeleteDisabledReason 是否已赋值
+                     * 
+                     */
+                    bool DeleteDisabledReasonHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 微服务ID
+                     * <p>微服务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_microserviceId;
                     bool m_microserviceIdHasBeenSet;
 
                     /**
-                     * 微服务名称
+                     * <p>微服务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_microserviceName;
                     bool m_microserviceNameHasBeenSet;
 
                     /**
-                     * 微服务描述
+                     * <p>微服务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_microserviceDesc;
                     bool m_microserviceDescHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 命名空间ID
+                     * <p>命名空间ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
 
                     /**
-                     * 微服务的运行实例数目
+                     * <p>微服务的运行实例数目</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_runInstanceCount;
                     bool m_runInstanceCountHasBeenSet;
 
                     /**
-                     * 微服务的离线实例数目
+                     * <p>微服务的离线实例数目</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_criticalInstanceCount;
                     bool m_criticalInstanceCountHasBeenSet;
+
+                    /**
+                     * <p>是否禁用删除按钮，true：是；false：否。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_deleteDisabled;
+                    bool m_deleteDisabledHasBeenSet;
+
+                    /**
+                     * <p>禁用删除原因。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deleteDisabledReason;
+                    bool m_deleteDisabledReasonHasBeenSet;
 
                 };
             }

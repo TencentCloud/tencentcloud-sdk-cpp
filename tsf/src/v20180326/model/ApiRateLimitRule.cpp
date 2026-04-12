@@ -33,7 +33,8 @@ ApiRateLimitRule::ApiRateLimitRule() :
     m_updatedTimeHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_appIdHasBeenSet(false)
+    m_appIdHasBeenSet(false),
+    m_usePathAndMethodFormatHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome ApiRateLimitRule::Deserialize(const rapidjson::Value &value)
         m_appIdHasBeenSet = true;
     }
 
+    if (value.HasMember("UsePathAndMethodFormat") && !value["UsePathAndMethodFormat"].IsNull())
+    {
+        if (!value["UsePathAndMethodFormat"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiRateLimitRule.UsePathAndMethodFormat` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_usePathAndMethodFormat = value["UsePathAndMethodFormat"].GetBool();
+        m_usePathAndMethodFormatHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void ApiRateLimitRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_usePathAndMethodFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsePathAndMethodFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_usePathAndMethodFormat, allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void ApiRateLimitRule::SetAppId(const string& _appId)
 bool ApiRateLimitRule::AppIdHasBeenSet() const
 {
     return m_appIdHasBeenSet;
+}
+
+bool ApiRateLimitRule::GetUsePathAndMethodFormat() const
+{
+    return m_usePathAndMethodFormat;
+}
+
+void ApiRateLimitRule::SetUsePathAndMethodFormat(const bool& _usePathAndMethodFormat)
+{
+    m_usePathAndMethodFormat = _usePathAndMethodFormat;
+    m_usePathAndMethodFormatHasBeenSet = true;
+}
+
+bool ApiRateLimitRule::UsePathAndMethodFormatHasBeenSet() const
+{
+    return m_usePathAndMethodFormatHasBeenSet;
 }
 

@@ -29,7 +29,9 @@ SubmitQuestionMarkAgentJobRequest::SubmitQuestionMarkAgentJobRequest() :
     m_boolSingleQuestionHasBeenSet(false),
     m_enableDeepThinkHasBeenSet(false),
     m_questionConfigMapHasBeenSet(false),
-    m_referenceAnswerHasBeenSet(false)
+    m_referenceAnswerHasBeenSet(false),
+    m_imageBase64ListHasBeenSet(false),
+    m_imageUrlListHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,32 @@ string SubmitQuestionMarkAgentJobRequest::ToJsonString() const
         string key = "ReferenceAnswer";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_referenceAnswer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageBase64ListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageBase64List";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_imageBase64List.begin(); itr != m_imageBase64List.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_imageUrlListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageUrlList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_imageUrlList.begin(); itr != m_imageUrlList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -214,6 +242,38 @@ void SubmitQuestionMarkAgentJobRequest::SetReferenceAnswer(const string& _refere
 bool SubmitQuestionMarkAgentJobRequest::ReferenceAnswerHasBeenSet() const
 {
     return m_referenceAnswerHasBeenSet;
+}
+
+vector<string> SubmitQuestionMarkAgentJobRequest::GetImageBase64List() const
+{
+    return m_imageBase64List;
+}
+
+void SubmitQuestionMarkAgentJobRequest::SetImageBase64List(const vector<string>& _imageBase64List)
+{
+    m_imageBase64List = _imageBase64List;
+    m_imageBase64ListHasBeenSet = true;
+}
+
+bool SubmitQuestionMarkAgentJobRequest::ImageBase64ListHasBeenSet() const
+{
+    return m_imageBase64ListHasBeenSet;
+}
+
+vector<string> SubmitQuestionMarkAgentJobRequest::GetImageUrlList() const
+{
+    return m_imageUrlList;
+}
+
+void SubmitQuestionMarkAgentJobRequest::SetImageUrlList(const vector<string>& _imageUrlList)
+{
+    m_imageUrlList = _imageUrlList;
+    m_imageUrlListHasBeenSet = true;
+}
+
+bool SubmitQuestionMarkAgentJobRequest::ImageUrlListHasBeenSet() const
+{
+    return m_imageUrlListHasBeenSet;
 }
 
 

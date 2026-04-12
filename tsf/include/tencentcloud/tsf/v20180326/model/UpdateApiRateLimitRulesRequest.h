@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool MaxQpsHasBeenSet() const;
 
+                    /**
+                     * 获取旧格式 method 与 path 分开，新格式 path-<Method>,如 /checkToken-GET，默认为新格式
+                     * @return UsePathAndMethodFormat 旧格式 method 与 path 分开，新格式 path-<Method>,如 /checkToken-GET，默认为新格式
+                     * 
+                     */
+                    bool GetUsePathAndMethodFormat() const;
+
+                    /**
+                     * 设置旧格式 method 与 path 分开，新格式 path-<Method>,如 /checkToken-GET，默认为新格式
+                     * @param _usePathAndMethodFormat 旧格式 method 与 path 分开，新格式 path-<Method>,如 /checkToken-GET，默认为新格式
+                     * 
+                     */
+                    void SetUsePathAndMethodFormat(const bool& _usePathAndMethodFormat);
+
+                    /**
+                     * 判断参数 UsePathAndMethodFormat 是否已赋值
+                     * @return UsePathAndMethodFormat 是否已赋值
+                     * 
+                     */
+                    bool UsePathAndMethodFormatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     int64_t m_maxQps;
                     bool m_maxQpsHasBeenSet;
+
+                    /**
+                     * 旧格式 method 与 path 分开，新格式 path-<Method>,如 /checkToken-GET，默认为新格式
+                     */
+                    bool m_usePathAndMethodFormat;
+                    bool m_usePathAndMethodFormatHasBeenSet;
 
                 };
             }
