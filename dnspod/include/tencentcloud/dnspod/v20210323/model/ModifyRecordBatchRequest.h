@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId。单次最多修改5000条记录。
-                     * @return RecordIdList 记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId。单次最多修改5000条记录。
+                     * 获取<p>记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId。单次最多修改5000条记录。</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1427/56166">DescribeRecordList</a></p>
+                     * @return RecordIdList <p>记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId。单次最多修改5000条记录。</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1427/56166">DescribeRecordList</a></p>
                      * 
                      */
                     std::vector<uint64_t> GetRecordIdList() const;
 
                     /**
-                     * 设置记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId。单次最多修改5000条记录。
-                     * @param _recordIdList 记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId。单次最多修改5000条记录。
+                     * 设置<p>记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId。单次最多修改5000条记录。</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1427/56166">DescribeRecordList</a></p>
+                     * @param _recordIdList <p>记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId。单次最多修改5000条记录。</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1427/56166">DescribeRecordList</a></p>
                      * 
                      */
                     void SetRecordIdList(const std::vector<uint64_t>& _recordIdList);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool RecordIdListHasBeenSet() const;
 
                     /**
-                     * 获取要修改的字段，可选值为 [“sub_domain”、”record_type”、”area”、”value”、”mx”、”ttl”、”status”] 中的某一个。
-                     * @return Change 要修改的字段，可选值为 [“sub_domain”、”record_type”、”area”、”value”、”mx”、”ttl”、”status”] 中的某一个。
+                     * 获取<p>要修改的字段，可选值为 [“sub_domain”、”record_type”、”area”、”value”、”mx”、”ttl”、”status”] 中的某一个。</p>
+                     * @return Change <p>要修改的字段，可选值为 [“sub_domain”、”record_type”、”area”、”value”、”mx”、”ttl”、”status”] 中的某一个。</p>
                      * 
                      */
                     std::string GetChange() const;
 
                     /**
-                     * 设置要修改的字段，可选值为 [“sub_domain”、”record_type”、”area”、”value”、”mx”、”ttl”、”status”] 中的某一个。
-                     * @param _change 要修改的字段，可选值为 [“sub_domain”、”record_type”、”area”、”value”、”mx”、”ttl”、”status”] 中的某一个。
+                     * 设置<p>要修改的字段，可选值为 [“sub_domain”、”record_type”、”area”、”value”、”mx”、”ttl”、”status”] 中的某一个。</p>
+                     * @param _change <p>要修改的字段，可选值为 [“sub_domain”、”record_type”、”area”、”value”、”mx”、”ttl”、”status”] 中的某一个。</p>
                      * 
                      */
                     void SetChange(const std::string& _change);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ChangeHasBeenSet() const;
 
                     /**
-                     * 获取修改为，具体依赖 change 字段，必填参数。
-                     * @return ChangeTo 修改为，具体依赖 change 字段，必填参数。
+                     * 获取<p>修改为，具体依赖 change 字段，必填参数。</p>
+                     * @return ChangeTo <p>修改为，具体依赖 change 字段，必填参数。</p>
                      * 
                      */
                     std::string GetChangeTo() const;
 
                     /**
-                     * 设置修改为，具体依赖 change 字段，必填参数。
-                     * @param _changeTo 修改为，具体依赖 change 字段，必填参数。
+                     * 设置<p>修改为，具体依赖 change 字段，必填参数。</p>
+                     * @param _changeTo <p>修改为，具体依赖 change 字段，必填参数。</p>
                      * 
                      */
                     void SetChangeTo(const std::string& _changeTo);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ChangeToHasBeenSet() const;
 
                     /**
-                     * 获取要修改到的记录值，仅当 change 字段为 “record_type” 时为必填参数。
-                     * @return Value 要修改到的记录值，仅当 change 字段为 “record_type” 时为必填参数。
+                     * 获取<p>要修改到的记录值，仅当 change 字段为 “record_type” 时为必填参数。</p>
+                     * @return Value <p>要修改到的记录值，仅当 change 字段为 “record_type” 时为必填参数。</p>
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置要修改到的记录值，仅当 change 字段为 “record_type” 时为必填参数。
-                     * @param _value 要修改到的记录值，仅当 change 字段为 “record_type” 时为必填参数。
+                     * 设置<p>要修改到的记录值，仅当 change 字段为 “record_type” 时为必填参数。</p>
+                     * @param _value <p>要修改到的记录值，仅当 change 字段为 “record_type” 时为必填参数。</p>
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ValueHasBeenSet() const;
 
                     /**
-                     * 获取MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
-                     * @return MX MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
+                     * 获取<p>MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围0-65535。</p>
+                     * @return MX <p>MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围0-65535。</p>
                      * 
                      */
                     std::string GetMX() const;
 
                     /**
-                     * 设置MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
-                     * @param _mX MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
+                     * 设置<p>MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围0-65535。</p>
+                     * @param _mX <p>MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围0-65535。</p>
                      * 
                      */
                     void SetMX(const std::string& _mX);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId。单次最多修改5000条记录。
+                     * <p>记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId。单次最多修改5000条记录。</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1427/56166">DescribeRecordList</a></p>
                      */
                     std::vector<uint64_t> m_recordIdList;
                     bool m_recordIdListHasBeenSet;
 
                     /**
-                     * 要修改的字段，可选值为 [“sub_domain”、”record_type”、”area”、”value”、”mx”、”ttl”、”status”] 中的某一个。
+                     * <p>要修改的字段，可选值为 [“sub_domain”、”record_type”、”area”、”value”、”mx”、”ttl”、”status”] 中的某一个。</p>
                      */
                     std::string m_change;
                     bool m_changeHasBeenSet;
 
                     /**
-                     * 修改为，具体依赖 change 字段，必填参数。
+                     * <p>修改为，具体依赖 change 字段，必填参数。</p>
                      */
                     std::string m_changeTo;
                     bool m_changeToHasBeenSet;
 
                     /**
-                     * 要修改到的记录值，仅当 change 字段为 “record_type” 时为必填参数。
+                     * <p>要修改到的记录值，仅当 change 字段为 “record_type” 时为必填参数。</p>
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
-                     * MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
+                     * <p>MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围0-65535。</p>
                      */
                     std::string m_mX;
                     bool m_mXHasBeenSet;

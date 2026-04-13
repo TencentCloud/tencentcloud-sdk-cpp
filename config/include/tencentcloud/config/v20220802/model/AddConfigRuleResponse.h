@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>规则ID</p>
+                     * @return RuleId <p>规则ID</p>
+                     * 
+                     */
+                    std::string GetRuleId() const;
+
+                    /**
+                     * 判断参数 RuleId 是否已赋值
+                     * @return RuleId 是否已赋值
+                     * 
+                     */
+                    bool RuleIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>规则ID</p>
+                     */
+                    std::string m_ruleId;
+                    bool m_ruleIdHasBeenSet;
 
                 };
             }

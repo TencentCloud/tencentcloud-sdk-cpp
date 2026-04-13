@@ -32,6 +32,7 @@ CreateAigcImageTaskRequest::CreateAigcImageTaskRequest() :
     m_enhancePromptHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
     m_inputRegionHasBeenSet(false),
+    m_seedHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
     m_tasksPriorityHasBeenSet(false),
@@ -124,6 +125,14 @@ string CreateAigcImageTaskRequest::ToJsonString() const
         string key = "InputRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_inputRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_seedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Seed";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_seed, allocator);
     }
 
     if (m_sessionIdHasBeenSet)
@@ -308,6 +317,22 @@ void CreateAigcImageTaskRequest::SetInputRegion(const string& _inputRegion)
 bool CreateAigcImageTaskRequest::InputRegionHasBeenSet() const
 {
     return m_inputRegionHasBeenSet;
+}
+
+int64_t CreateAigcImageTaskRequest::GetSeed() const
+{
+    return m_seed;
+}
+
+void CreateAigcImageTaskRequest::SetSeed(const int64_t& _seed)
+{
+    m_seed = _seed;
+    m_seedHasBeenSet = true;
+}
+
+bool CreateAigcImageTaskRequest::SeedHasBeenSet() const
+{
+    return m_seedHasBeenSet;
 }
 
 string CreateAigcImageTaskRequest::GetSessionId() const

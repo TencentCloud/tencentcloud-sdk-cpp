@@ -2640,6 +2640,56 @@ TcbClient::DestroyStaticStoreOutcomeCallable TcbClient::DestroyStaticStoreCallab
     return prom->get_future();
 }
 
+TcbClient::ExecutePGSqlOutcome TcbClient::ExecutePGSql(const ExecutePGSqlRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExecutePGSql");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExecutePGSqlResponse rsp = ExecutePGSqlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExecutePGSqlOutcome(rsp);
+        else
+            return ExecutePGSqlOutcome(o.GetError());
+    }
+    else
+    {
+        return ExecutePGSqlOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::ExecutePGSqlAsync(const ExecutePGSqlRequest& request, const ExecutePGSqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ExecutePGSqlRequest&;
+    using Resp = ExecutePGSqlResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ExecutePGSql", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::ExecutePGSqlOutcomeCallable TcbClient::ExecutePGSqlCallable(const ExecutePGSqlRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ExecutePGSqlOutcome>>();
+    ExecutePGSqlAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ExecutePGSqlRequest&,
+        ExecutePGSqlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::GetProvidersOutcome TcbClient::GetProviders(const GetProvidersRequest &request)
 {
     auto outcome = MakeRequest(request, "GetProviders");

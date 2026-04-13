@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务id
+                     * 获取<p>任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskId 任务id
+                     * @return TaskId <p>任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务id
+                     * 设置<p>任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskId 任务id
+                     * @param _taskId <p>任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务名称
+                     * 获取<p>任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskName 任务名称
+                     * @return TaskName <p>任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
-                     * 设置任务名称
+                     * 设置<p>任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskName 任务名称
+                     * @param _taskName <p>任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool TaskNameHasBeenSet() const;
 
                     /**
-                     * 获取工作流id
+                     * 获取<p>工作流id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkflowId 工作流id
+                     * @return WorkflowId <p>工作流id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkflowId() const;
 
                     /**
-                     * 设置工作流id
+                     * 设置<p>工作流id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workflowId 工作流id
+                     * @param _workflowId <p>工作流id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool WorkflowIdHasBeenSet() const;
 
                     /**
-                     * 获取工作流名称
+                     * 获取<p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkflowName 工作流名称
+                     * @return WorkflowName <p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkflowName() const;
 
                     /**
-                     * 设置工作流名称
+                     * 设置<p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _workflowName 工作流名称
+                     * @param _workflowName <p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool WorkflowNameHasBeenSet() const;
 
                     /**
-                     * 获取任务类型id
+                     * 获取<p>任务类型id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskTypeId 任务类型id
+                     * @return TaskTypeId <p>任务类型id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskTypeId() const;
 
                     /**
-                     * 设置任务类型id
+                     * 设置<p>任务类型id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskTypeId 任务类型id
+                     * @param _taskTypeId <p>任务类型id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool TaskTypeIdHasBeenSet() const;
 
                     /**
-                     * 获取任务类型名称
+                     * 获取<p>任务类型名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskType 任务类型名称
+                     * @return TaskType <p>任务类型名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置任务类型名称
+                     * 设置<p>任务类型名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskType 任务类型名称
+                     * @param _taskType <p>任务类型名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取项目id
+                     * 获取<p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProjectId 项目id
+                     * @return ProjectId <p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目id
+                     * 设置<p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _projectId 项目id
+                     * @param _projectId <p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取任务周期类型
+                     * 获取<p>任务周期类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CycleType 任务周期类型
+                     * @return CycleType <p>任务周期类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCycleType() const;
 
                     /**
-                     * 设置任务周期类型
+                     * 设置<p>任务周期类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cycleType 任务周期类型
+                     * @param _cycleType <p>任务周期类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -246,63 +246,95 @@ namespace TencentCloud
                      */
                     bool CycleTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>事件名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EventName <p>事件名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEventName() const;
+
+                    /**
+                     * 设置<p>事件名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _eventName <p>事件名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEventName(const std::string& _eventName);
+
+                    /**
+                     * 判断参数 EventName 是否已赋值
+                     * @return EventName 是否已赋值
+                     * 
+                     */
+                    bool EventNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务id
+                     * <p>任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务名称
+                     * <p>任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
-                     * 工作流id
+                     * <p>工作流id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workflowId;
                     bool m_workflowIdHasBeenSet;
 
                     /**
-                     * 工作流名称
+                     * <p>工作流名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workflowName;
                     bool m_workflowNameHasBeenSet;
 
                     /**
-                     * 任务类型id
+                     * <p>任务类型id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskTypeId;
                     bool m_taskTypeIdHasBeenSet;
 
                     /**
-                     * 任务类型名称
+                     * <p>任务类型名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 项目id
+                     * <p>项目id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 任务周期类型
+                     * <p>任务周期类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cycleType;
                     bool m_cycleTypeHasBeenSet;
+
+                    /**
+                     * <p>事件名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_eventName;
+                    bool m_eventNameHasBeenSet;
 
                 };
             }

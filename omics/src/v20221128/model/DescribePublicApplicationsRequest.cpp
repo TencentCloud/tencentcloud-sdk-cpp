@@ -24,7 +24,9 @@ using namespace std;
 
 DescribePublicApplicationsRequest::DescribePublicApplicationsRequest() :
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_parentAppIdHasBeenSet(false),
+    m_appTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string DescribePublicApplicationsRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_parentAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_parentAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +107,38 @@ void DescribePublicApplicationsRequest::SetOffset(const uint64_t& _offset)
 bool DescribePublicApplicationsRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribePublicApplicationsRequest::GetParentAppId() const
+{
+    return m_parentAppId;
+}
+
+void DescribePublicApplicationsRequest::SetParentAppId(const string& _parentAppId)
+{
+    m_parentAppId = _parentAppId;
+    m_parentAppIdHasBeenSet = true;
+}
+
+bool DescribePublicApplicationsRequest::ParentAppIdHasBeenSet() const
+{
+    return m_parentAppIdHasBeenSet;
+}
+
+string DescribePublicApplicationsRequest::GetAppType() const
+{
+    return m_appType;
+}
+
+void DescribePublicApplicationsRequest::SetAppType(const string& _appType)
+{
+    m_appType = _appType;
+    m_appTypeHasBeenSet = true;
+}
+
+bool DescribePublicApplicationsRequest::AppTypeHasBeenSet() const
+{
+    return m_appTypeHasBeenSet;
 }
 
 

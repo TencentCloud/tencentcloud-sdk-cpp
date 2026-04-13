@@ -28,7 +28,8 @@ EventListenerTaskInfo::EventListenerTaskInfo() :
     m_taskTypeIdHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_cycleTypeHasBeenSet(false)
+    m_cycleTypeHasBeenSet(false),
+    m_eventNameHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome EventListenerTaskInfo::Deserialize(const rapidjson::Value &v
         m_cycleTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("EventName") && !value["EventName"].IsNull())
+    {
+        if (!value["EventName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventListenerTaskInfo.EventName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eventName = string(value["EventName"].GetString());
+        m_eventNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void EventListenerTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "CycleType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cycleType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eventNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void EventListenerTaskInfo::SetCycleType(const string& _cycleType)
 bool EventListenerTaskInfo::CycleTypeHasBeenSet() const
 {
     return m_cycleTypeHasBeenSet;
+}
+
+string EventListenerTaskInfo::GetEventName() const
+{
+    return m_eventName;
+}
+
+void EventListenerTaskInfo::SetEventName(const string& _eventName)
+{
+    m_eventName = _eventName;
+    m_eventNameHasBeenSet = true;
+}
+
+bool EventListenerTaskInfo::EventNameHasBeenSet() const
+{
+    return m_eventNameHasBeenSet;
 }
 

@@ -140,6 +140,56 @@ ConfigClient::AddAggregateConfigRuleOutcomeCallable ConfigClient::AddAggregateCo
     return prom->get_future();
 }
 
+ConfigClient::AddAlarmPolicyOutcome ConfigClient::AddAlarmPolicy(const AddAlarmPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddAlarmPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddAlarmPolicyResponse rsp = AddAlarmPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddAlarmPolicyOutcome(rsp);
+        else
+            return AddAlarmPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return AddAlarmPolicyOutcome(outcome.GetError());
+    }
+}
+
+void ConfigClient::AddAlarmPolicyAsync(const AddAlarmPolicyRequest& request, const AddAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddAlarmPolicyRequest&;
+    using Resp = AddAlarmPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddAlarmPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ConfigClient::AddAlarmPolicyOutcomeCallable ConfigClient::AddAlarmPolicyCallable(const AddAlarmPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddAlarmPolicyOutcome>>();
+    AddAlarmPolicyAsync(
+    request,
+    [prom](
+        const ConfigClient*,
+        const AddAlarmPolicyRequest&,
+        AddAlarmPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ConfigClient::AddCompliancePackOutcome ConfigClient::AddCompliancePack(const AddCompliancePackRequest &request)
 {
     auto outcome = MakeRequest(request, "AddCompliancePack");
@@ -582,6 +632,56 @@ ConfigClient::DeleteAggregateConfigRuleOutcomeCallable ConfigClient::DeleteAggre
         const ConfigClient*,
         const DeleteAggregateConfigRuleRequest&,
         DeleteAggregateConfigRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ConfigClient::DeleteAlarmPolicyOutcome ConfigClient::DeleteAlarmPolicy(const DeleteAlarmPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAlarmPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAlarmPolicyResponse rsp = DeleteAlarmPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAlarmPolicyOutcome(rsp);
+        else
+            return DeleteAlarmPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAlarmPolicyOutcome(outcome.GetError());
+    }
+}
+
+void ConfigClient::DeleteAlarmPolicyAsync(const DeleteAlarmPolicyRequest& request, const DeleteAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAlarmPolicyRequest&;
+    using Resp = DeleteAlarmPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAlarmPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ConfigClient::DeleteAlarmPolicyOutcomeCallable ConfigClient::DeleteAlarmPolicyCallable(const DeleteAlarmPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAlarmPolicyOutcome>>();
+    DeleteAlarmPolicyAsync(
+    request,
+    [prom](
+        const ConfigClient*,
+        const DeleteAlarmPolicyRequest&,
+        DeleteAlarmPolicyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1690,6 +1790,56 @@ ConfigClient::ListAggregatorsOutcomeCallable ConfigClient::ListAggregatorsCallab
     return prom->get_future();
 }
 
+ConfigClient::ListAlarmPolicyOutcome ConfigClient::ListAlarmPolicy(const ListAlarmPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAlarmPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAlarmPolicyResponse rsp = ListAlarmPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAlarmPolicyOutcome(rsp);
+        else
+            return ListAlarmPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAlarmPolicyOutcome(outcome.GetError());
+    }
+}
+
+void ConfigClient::ListAlarmPolicyAsync(const ListAlarmPolicyRequest& request, const ListAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListAlarmPolicyRequest&;
+    using Resp = ListAlarmPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListAlarmPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ConfigClient::ListAlarmPolicyOutcomeCallable ConfigClient::ListAlarmPolicyCallable(const ListAlarmPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListAlarmPolicyOutcome>>();
+    ListAlarmPolicyAsync(
+    request,
+    [prom](
+        const ConfigClient*,
+        const ListAlarmPolicyRequest&,
+        ListAlarmPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 ConfigClient::ListCompliancePacksOutcome ConfigClient::ListCompliancePacks(const ListCompliancePacksRequest &request)
 {
     auto outcome = MakeRequest(request, "ListCompliancePacks");
@@ -2682,6 +2832,56 @@ ConfigClient::UpdateAggregateConfigRuleOutcomeCallable ConfigClient::UpdateAggre
         const ConfigClient*,
         const UpdateAggregateConfigRuleRequest&,
         UpdateAggregateConfigRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+ConfigClient::UpdateAlarmPolicyOutcome ConfigClient::UpdateAlarmPolicy(const UpdateAlarmPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAlarmPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAlarmPolicyResponse rsp = UpdateAlarmPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAlarmPolicyOutcome(rsp);
+        else
+            return UpdateAlarmPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAlarmPolicyOutcome(outcome.GetError());
+    }
+}
+
+void ConfigClient::UpdateAlarmPolicyAsync(const UpdateAlarmPolicyRequest& request, const UpdateAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateAlarmPolicyRequest&;
+    using Resp = UpdateAlarmPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateAlarmPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+ConfigClient::UpdateAlarmPolicyOutcomeCallable ConfigClient::UpdateAlarmPolicyCallable(const UpdateAlarmPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateAlarmPolicyOutcome>>();
+    UpdateAlarmPolicyAsync(
+    request,
+    [prom](
+        const ConfigClient*,
+        const UpdateAlarmPolicyRequest&,
+        UpdateAlarmPolicyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

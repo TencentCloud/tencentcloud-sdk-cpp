@@ -58,7 +58,8 @@ DescribeInstanceResponse::DescribeInstanceResponse() :
     m_topicPrefixSlashLimitHasBeenSet(false),
     m_messageRateHasBeenSet(false),
     m_transportLayerSecurityHasBeenSet(false),
-    m_messageEnrichmentRuleLimitHasBeenSet(false)
+    m_messageEnrichmentRuleLimitHasBeenSet(false),
+    m_blockRuleLimitHasBeenSet(false)
 {
 }
 
@@ -446,6 +447,16 @@ CoreInternalOutcome DescribeInstanceResponse::Deserialize(const string &payload)
         m_messageEnrichmentRuleLimitHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BlockRuleLimit") && !rsp["BlockRuleLimit"].IsNull())
+    {
+        if (!rsp["BlockRuleLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BlockRuleLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_blockRuleLimit = rsp["BlockRuleLimit"].GetInt64();
+        m_blockRuleLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -734,6 +745,14 @@ string DescribeInstanceResponse::ToJsonString() const
         string key = "MessageEnrichmentRuleLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_messageEnrichmentRuleLimit, allocator);
+    }
+
+    if (m_blockRuleLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlockRuleLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_blockRuleLimit, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1096,6 +1115,16 @@ int64_t DescribeInstanceResponse::GetMessageEnrichmentRuleLimit() const
 bool DescribeInstanceResponse::MessageEnrichmentRuleLimitHasBeenSet() const
 {
     return m_messageEnrichmentRuleLimitHasBeenSet;
+}
+
+int64_t DescribeInstanceResponse::GetBlockRuleLimit() const
+{
+    return m_blockRuleLimit;
+}
+
+bool DescribeInstanceResponse::BlockRuleLimitHasBeenSet() const
+{
+    return m_blockRuleLimitHasBeenSet;
 }
 
 

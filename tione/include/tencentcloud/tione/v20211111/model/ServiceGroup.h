@@ -52,15 +52,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务组id
-                     * @return ServiceGroupId 服务组id
+                     * 获取<p>服务组id</p>
+                     * @return ServiceGroupId <p>服务组id</p>
                      * 
                      */
                     std::string GetServiceGroupId() const;
 
                     /**
-                     * 设置服务组id
-                     * @param _serviceGroupId 服务组id
+                     * 设置<p>服务组id</p>
+                     * @param _serviceGroupId <p>服务组id</p>
                      * 
                      */
                     void SetServiceGroupId(const std::string& _serviceGroupId);
@@ -73,15 +73,15 @@ namespace TencentCloud
                     bool ServiceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取服务组名
-                     * @return ServiceGroupName 服务组名
+                     * 获取<p>服务组名</p>
+                     * @return ServiceGroupName <p>服务组名</p>
                      * 
                      */
                     std::string GetServiceGroupName() const;
 
                     /**
-                     * 设置服务组名
-                     * @param _serviceGroupName 服务组名
+                     * 设置<p>服务组名</p>
+                     * @param _serviceGroupName <p>服务组名</p>
                      * 
                      */
                     void SetServiceGroupName(const std::string& _serviceGroupName);
@@ -94,15 +94,15 @@ namespace TencentCloud
                     bool ServiceGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取创建者
-                     * @return CreatedBy 创建者
+                     * 获取<p>创建者</p>
+                     * @return CreatedBy <p>创建者</p>
                      * 
                      */
                     std::string GetCreatedBy() const;
 
                     /**
-                     * 设置创建者
-                     * @param _createdBy 创建者
+                     * 设置<p>创建者</p>
+                     * @param _createdBy <p>创建者</p>
                      * 
                      */
                     void SetCreatedBy(const std::string& _createdBy);
@@ -115,15 +115,15 @@ namespace TencentCloud
                     bool CreatedByHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -136,15 +136,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdateTime 更新时间
+                     * 获取<p>更新时间</p>
+                     * @return UpdateTime <p>更新时间</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
-                     * @param _updateTime 更新时间
+                     * 设置<p>更新时间</p>
+                     * @param _updateTime <p>更新时间</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -157,15 +157,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取主账号
-                     * @return Uin 主账号
+                     * 获取<p>主账号</p>
+                     * @return Uin <p>主账号</p>
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置主账号
-                     * @param _uin 主账号
+                     * 设置<p>主账号</p>
+                     * @param _uin <p>主账号</p>
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -178,18 +178,18 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取服务组下服务总数
+                     * 获取<p>服务组下服务总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServiceCount 服务组下服务总数
+                     * @return ServiceCount <p>服务组下服务总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetServiceCount() const;
 
                     /**
-                     * 设置服务组下服务总数
+                     * 设置<p>服务组下服务总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _serviceCount 服务组下服务总数
+                     * @param _serviceCount <p>服务组下服务总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -203,18 +203,18 @@ namespace TencentCloud
                     bool ServiceCountHasBeenSet() const;
 
                     /**
-                     * 获取服务组下在运行的服务数量
+                     * 获取<p>服务组下在运行的服务数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RunningServiceCount 服务组下在运行的服务数量
+                     * @return RunningServiceCount <p>服务组下在运行的服务数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRunningServiceCount() const;
 
                     /**
-                     * 设置服务组下在运行的服务数量
+                     * 设置<p>服务组下在运行的服务数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _runningServiceCount 服务组下在运行的服务数量
+                     * @param _runningServiceCount <p>服务组下在运行的服务数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -228,18 +228,18 @@ namespace TencentCloud
                     bool RunningServiceCountHasBeenSet() const;
 
                     /**
-                     * 获取服务描述
+                     * 获取<p>服务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Services 服务描述
+                     * @return Services <p>服务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Service> GetServices() const;
 
                     /**
-                     * 设置服务描述
+                     * 设置<p>服务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _services 服务描述
+                     * @param _services <p>服务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -253,50 +253,18 @@ namespace TencentCloud
                     bool ServicesHasBeenSet() const;
 
                     /**
-                     * 获取服务组状态，与服务一致
- CREATING 创建中
-     CREATE_FAILED 创建失败
-     Normal	正常运行中
-     Stopped  已停止
-     Stopping 停止中
-     Abnormal 异常
-     Pending 启动中
-     Waiting 就绪中
+                     * 获取<p>服务组状态，与服务一致<br> CREATING 创建中<br>     CREATE_FAILED 创建失败<br>     Normal    正常运行中<br>     Stopped  已停止<br>     Stopping 停止中<br>     Abnormal 异常<br>     Pending 启动中<br>     Waiting 就绪中</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 服务组状态，与服务一致
- CREATING 创建中
-     CREATE_FAILED 创建失败
-     Normal	正常运行中
-     Stopped  已停止
-     Stopping 停止中
-     Abnormal 异常
-     Pending 启动中
-     Waiting 就绪中
+                     * @return Status <p>服务组状态，与服务一致<br> CREATING 创建中<br>     CREATE_FAILED 创建失败<br>     Normal    正常运行中<br>     Stopped  已停止<br>     Stopping 停止中<br>     Abnormal 异常<br>     Pending 启动中<br>     Waiting 就绪中</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置服务组状态，与服务一致
- CREATING 创建中
-     CREATE_FAILED 创建失败
-     Normal	正常运行中
-     Stopped  已停止
-     Stopping 停止中
-     Abnormal 异常
-     Pending 启动中
-     Waiting 就绪中
+                     * 设置<p>服务组状态，与服务一致<br> CREATING 创建中<br>     CREATE_FAILED 创建失败<br>     Normal    正常运行中<br>     Stopped  已停止<br>     Stopping 停止中<br>     Abnormal 异常<br>     Pending 启动中<br>     Waiting 就绪中</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 服务组状态，与服务一致
- CREATING 创建中
-     CREATE_FAILED 创建失败
-     Normal	正常运行中
-     Stopped  已停止
-     Stopping 停止中
-     Abnormal 异常
-     Pending 启动中
-     Waiting 就绪中
+                     * @param _status <p>服务组状态，与服务一致<br> CREATING 创建中<br>     CREATE_FAILED 创建失败<br>     Normal    正常运行中<br>     Stopped  已停止<br>     Stopping 停止中<br>     Abnormal 异常<br>     Pending 启动中<br>     Waiting 就绪中</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -310,18 +278,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取服务组标签
+                     * 获取<p>服务组标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 服务组标签
+                     * @return Tags <p>服务组标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置服务组标签
+                     * 设置<p>服务组标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tags 服务组标签
+                     * @param _tags <p>服务组标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -335,18 +303,18 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取服务组下最高版本
+                     * 获取<p>服务组下最高版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LatestVersion 服务组下最高版本
+                     * @return LatestVersion <p>服务组下最高版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLatestVersion() const;
 
                     /**
-                     * 设置服务组下最高版本
+                     * 设置<p>服务组下最高版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _latestVersion 服务组下最高版本
+                     * @param _latestVersion <p>服务组下最高版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -360,42 +328,18 @@ namespace TencentCloud
                     bool LatestVersionHasBeenSet() const;
 
                     /**
-                     * 获取服务的业务状态
-CREATING 创建中
-     CREATE_FAILED 创建失败
-     ARREARS_STOP 因欠费被强制停止
-     BILLING 计费中
-     WHITELIST_USING 白名单试用中
-     WHITELIST_STOP 白名单额度不足
+                     * 获取<p>服务的业务状态<br>CREATING 创建中<br>     CREATE_FAILED 创建失败<br>     ARREARS_STOP 因欠费被强制停止<br>     BILLING 计费中<br>     WHITELIST_USING 白名单试用中<br>     WHITELIST_STOP 白名单额度不足</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BusinessStatus 服务的业务状态
-CREATING 创建中
-     CREATE_FAILED 创建失败
-     ARREARS_STOP 因欠费被强制停止
-     BILLING 计费中
-     WHITELIST_USING 白名单试用中
-     WHITELIST_STOP 白名单额度不足
+                     * @return BusinessStatus <p>服务的业务状态<br>CREATING 创建中<br>     CREATE_FAILED 创建失败<br>     ARREARS_STOP 因欠费被强制停止<br>     BILLING 计费中<br>     WHITELIST_USING 白名单试用中<br>     WHITELIST_STOP 白名单额度不足</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBusinessStatus() const;
 
                     /**
-                     * 设置服务的业务状态
-CREATING 创建中
-     CREATE_FAILED 创建失败
-     ARREARS_STOP 因欠费被强制停止
-     BILLING 计费中
-     WHITELIST_USING 白名单试用中
-     WHITELIST_STOP 白名单额度不足
+                     * 设置<p>服务的业务状态<br>CREATING 创建中<br>     CREATE_FAILED 创建失败<br>     ARREARS_STOP 因欠费被强制停止<br>     BILLING 计费中<br>     WHITELIST_USING 白名单试用中<br>     WHITELIST_STOP 白名单额度不足</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _businessStatus 服务的业务状态
-CREATING 创建中
-     CREATE_FAILED 创建失败
-     ARREARS_STOP 因欠费被强制停止
-     BILLING 计费中
-     WHITELIST_USING 白名单试用中
-     WHITELIST_STOP 白名单额度不足
+                     * @param _businessStatus <p>服务的业务状态<br>CREATING 创建中<br>     CREATE_FAILED 创建失败<br>     ARREARS_STOP 因欠费被强制停止<br>     BILLING 计费中<br>     WHITELIST_USING 白名单试用中<br>     WHITELIST_STOP 白名单额度不足</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -409,18 +353,18 @@ CREATING 创建中
                     bool BusinessStatusHasBeenSet() const;
 
                     /**
-                     * 获取服务的计费信息
+                     * 获取<p>服务的计费信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BillingInfo 服务的计费信息
+                     * @return BillingInfo <p>服务的计费信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBillingInfo() const;
 
                     /**
-                     * 设置服务的计费信息
+                     * 设置<p>服务的计费信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _billingInfo 服务的计费信息
+                     * @param _billingInfo <p>服务的计费信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -434,18 +378,18 @@ CREATING 创建中
                     bool BillingInfoHasBeenSet() const;
 
                     /**
-                     * 获取服务的创建来源
+                     * 获取<p>服务的创建来源</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateSource 服务的创建来源
+                     * @return CreateSource <p>服务的创建来源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateSource() const;
 
                     /**
-                     * 设置服务的创建来源
+                     * 设置<p>服务的创建来源</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createSource 服务的创建来源
+                     * @param _createSource <p>服务的创建来源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -459,30 +403,18 @@ CREATING 创建中
                     bool CreateSourceHasBeenSet() const;
 
                     /**
-                     * 获取服务组的权重更新状态 
-UPDATING 更新中
-     UPDATED 更新成功
-     UPDATE_FAILED 更新失败
+                     * 获取<p>服务组的权重更新状态<br>UPDATING 更新中<br>     UPDATED 更新成功<br>     UPDATE_FAILED 更新失败</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WeightUpdateStatus 服务组的权重更新状态 
-UPDATING 更新中
-     UPDATED 更新成功
-     UPDATE_FAILED 更新失败
+                     * @return WeightUpdateStatus <p>服务组的权重更新状态<br>UPDATING 更新中<br>     UPDATED 更新成功<br>     UPDATE_FAILED 更新失败</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWeightUpdateStatus() const;
 
                     /**
-                     * 设置服务组的权重更新状态 
-UPDATING 更新中
-     UPDATED 更新成功
-     UPDATE_FAILED 更新失败
+                     * 设置<p>服务组的权重更新状态<br>UPDATING 更新中<br>     UPDATED 更新成功<br>     UPDATE_FAILED 更新失败</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _weightUpdateStatus 服务组的权重更新状态 
-UPDATING 更新中
-     UPDATED 更新成功
-     UPDATE_FAILED 更新失败
+                     * @param _weightUpdateStatus <p>服务组的权重更新状态<br>UPDATING 更新中<br>     UPDATED 更新成功<br>     UPDATE_FAILED 更新失败</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -496,18 +428,18 @@ UPDATING 更新中
                     bool WeightUpdateStatusHasBeenSet() const;
 
                     /**
-                     * 获取服务组下运行的pod数量
+                     * 获取<p>服务组下运行的pod数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReplicasCount 服务组下运行的pod数量
+                     * @return ReplicasCount <p>服务组下运行的pod数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetReplicasCount() const;
 
                     /**
-                     * 设置服务组下运行的pod数量
+                     * 设置<p>服务组下运行的pod数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _replicasCount 服务组下运行的pod数量
+                     * @param _replicasCount <p>服务组下运行的pod数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -521,18 +453,18 @@ UPDATING 更新中
                     bool ReplicasCountHasBeenSet() const;
 
                     /**
-                     * 获取服务组下期望的pod数
+                     * 获取<p>服务组下期望的pod数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AvailableReplicasCount 服务组下期望的pod数
+                     * @return AvailableReplicasCount <p>服务组下期望的pod数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAvailableReplicasCount() const;
 
                     /**
-                     * 设置服务组下期望的pod数
+                     * 设置<p>服务组下期望的pod数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _availableReplicasCount 服务组下期望的pod数
+                     * @param _availableReplicasCount <p>服务组下期望的pod数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -546,15 +478,15 @@ UPDATING 更新中
                     bool AvailableReplicasCountHasBeenSet() const;
 
                     /**
-                     * 获取服务组的subuin
-                     * @return SubUin 服务组的subuin
+                     * 获取<p>服务组的subuin</p>
+                     * @return SubUin <p>服务组的subuin</p>
                      * 
                      */
                     std::string GetSubUin() const;
 
                     /**
-                     * 设置服务组的subuin
-                     * @param _subUin 服务组的subuin
+                     * 设置<p>服务组的subuin</p>
+                     * @param _subUin <p>服务组的subuin</p>
                      * 
                      */
                     void SetSubUin(const std::string& _subUin);
@@ -567,15 +499,15 @@ UPDATING 更新中
                     bool SubUinHasBeenSet() const;
 
                     /**
-                     * 获取服务组的app_id
-                     * @return AppId 服务组的app_id
+                     * 获取<p>服务组的app_id</p>
+                     * @return AppId <p>服务组的app_id</p>
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置服务组的app_id
-                     * @param _appId 服务组的app_id
+                     * 设置<p>服务组的app_id</p>
+                     * @param _appId <p>服务组的app_id</p>
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -588,15 +520,15 @@ UPDATING 更新中
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取是否开启鉴权
-                     * @return AuthorizationEnable 是否开启鉴权
+                     * 获取<p>是否开启鉴权</p>
+                     * @return AuthorizationEnable <p>是否开启鉴权</p>
                      * 
                      */
                     bool GetAuthorizationEnable() const;
 
                     /**
-                     * 设置是否开启鉴权
-                     * @param _authorizationEnable 是否开启鉴权
+                     * 设置<p>是否开启鉴权</p>
+                     * @param _authorizationEnable <p>是否开启鉴权</p>
                      * 
                      */
                     void SetAuthorizationEnable(const bool& _authorizationEnable);
@@ -609,15 +541,15 @@ UPDATING 更新中
                     bool AuthorizationEnableHasBeenSet() const;
 
                     /**
-                     * 获取限流鉴权 token 列表
-                     * @return AuthTokens 限流鉴权 token 列表
+                     * 获取<p>限流鉴权 token 列表</p>
+                     * @return AuthTokens <p>限流鉴权 token 列表</p>
                      * 
                      */
                     std::vector<AuthToken> GetAuthTokens() const;
 
                     /**
-                     * 设置限流鉴权 token 列表
-                     * @param _authTokens 限流鉴权 token 列表
+                     * 设置<p>限流鉴权 token 列表</p>
+                     * @param _authTokens <p>限流鉴权 token 列表</p>
                      * 
                      */
                     void SetAuthTokens(const std::vector<AuthToken>& _authTokens);
@@ -630,15 +562,15 @@ UPDATING 更新中
                     bool AuthTokensHasBeenSet() const;
 
                     /**
-                     * 获取用于监控的创建来源字段
-                     * @return MonitorSource 用于监控的创建来源字段
+                     * 获取<p>用于监控的创建来源字段</p>
+                     * @return MonitorSource <p>用于监控的创建来源字段</p>
                      * 
                      */
                     std::string GetMonitorSource() const;
 
                     /**
-                     * 设置用于监控的创建来源字段
-                     * @param _monitorSource 用于监控的创建来源字段
+                     * 设置<p>用于监控的创建来源字段</p>
+                     * @param _monitorSource <p>用于监控的创建来源字段</p>
                      * 
                      */
                     void SetMonitorSource(const std::string& _monitorSource);
@@ -651,15 +583,15 @@ UPDATING 更新中
                     bool MonitorSourceHasBeenSet() const;
 
                     /**
-                     * 获取子用户的 nickname
-                     * @return SubUinName 子用户的 nickname
+                     * 获取<p>子用户的 nickname</p>
+                     * @return SubUinName <p>子用户的 nickname</p>
                      * 
                      */
                     std::string GetSubUinName() const;
 
                     /**
-                     * 设置子用户的 nickname
-                     * @param _subUinName 子用户的 nickname
+                     * 设置<p>子用户的 nickname</p>
+                     * @param _subUinName <p>子用户的 nickname</p>
                      * 
                      */
                     void SetSubUinName(const std::string& _subUinName);
@@ -672,15 +604,15 @@ UPDATING 更新中
                     bool SubUinNameHasBeenSet() const;
 
                     /**
-                     * 获取网关日志投递相关配置
-                     * @return GatewayLogConfig 网关日志投递相关配置
+                     * 获取<p>网关日志投递相关配置</p>
+                     * @return GatewayLogConfig <p>网关日志投递相关配置</p>
                      * 
                      */
                     LogConfig GetGatewayLogConfig() const;
 
                     /**
-                     * 设置网关日志投递相关配置
-                     * @param _gatewayLogConfig 网关日志投递相关配置
+                     * 设置<p>网关日志投递相关配置</p>
+                     * @param _gatewayLogConfig <p>网关日志投递相关配置</p>
                      * 
                      */
                     void SetGatewayLogConfig(const LogConfig& _gatewayLogConfig);
@@ -693,15 +625,15 @@ UPDATING 更新中
                     bool GatewayLogConfigHasBeenSet() const;
 
                     /**
-                     * 获取网关路由相关配置
-                     * @return GatewayConfig 网关路由相关配置
+                     * 获取<p>网关路由相关配置</p>
+                     * @return GatewayConfig <p>网关路由相关配置</p>
                      * 
                      */
                     GatewayConfig GetGatewayConfig() const;
 
                     /**
-                     * 设置网关路由相关配置
-                     * @param _gatewayConfig 网关路由相关配置
+                     * 设置<p>网关路由相关配置</p>
+                     * @param _gatewayConfig <p>网关路由相关配置</p>
                      * 
                      */
                     void SetGatewayConfig(const GatewayConfig& _gatewayConfig);
@@ -716,186 +648,169 @@ UPDATING 更新中
                 private:
 
                     /**
-                     * 服务组id
+                     * <p>服务组id</p>
                      */
                     std::string m_serviceGroupId;
                     bool m_serviceGroupIdHasBeenSet;
 
                     /**
-                     * 服务组名
+                     * <p>服务组名</p>
                      */
                     std::string m_serviceGroupName;
                     bool m_serviceGroupNameHasBeenSet;
 
                     /**
-                     * 创建者
+                     * <p>创建者</p>
                      */
                     std::string m_createdBy;
                     bool m_createdByHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 主账号
+                     * <p>主账号</p>
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 服务组下服务总数
+                     * <p>服务组下服务总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_serviceCount;
                     bool m_serviceCountHasBeenSet;
 
                     /**
-                     * 服务组下在运行的服务数量
+                     * <p>服务组下在运行的服务数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_runningServiceCount;
                     bool m_runningServiceCountHasBeenSet;
 
                     /**
-                     * 服务描述
+                     * <p>服务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Service> m_services;
                     bool m_servicesHasBeenSet;
 
                     /**
-                     * 服务组状态，与服务一致
- CREATING 创建中
-     CREATE_FAILED 创建失败
-     Normal	正常运行中
-     Stopped  已停止
-     Stopping 停止中
-     Abnormal 异常
-     Pending 启动中
-     Waiting 就绪中
+                     * <p>服务组状态，与服务一致<br> CREATING 创建中<br>     CREATE_FAILED 创建失败<br>     Normal    正常运行中<br>     Stopped  已停止<br>     Stopping 停止中<br>     Abnormal 异常<br>     Pending 启动中<br>     Waiting 就绪中</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 服务组标签
+                     * <p>服务组标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 服务组下最高版本
+                     * <p>服务组下最高版本</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latestVersion;
                     bool m_latestVersionHasBeenSet;
 
                     /**
-                     * 服务的业务状态
-CREATING 创建中
-     CREATE_FAILED 创建失败
-     ARREARS_STOP 因欠费被强制停止
-     BILLING 计费中
-     WHITELIST_USING 白名单试用中
-     WHITELIST_STOP 白名单额度不足
+                     * <p>服务的业务状态<br>CREATING 创建中<br>     CREATE_FAILED 创建失败<br>     ARREARS_STOP 因欠费被强制停止<br>     BILLING 计费中<br>     WHITELIST_USING 白名单试用中<br>     WHITELIST_STOP 白名单额度不足</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_businessStatus;
                     bool m_businessStatusHasBeenSet;
 
                     /**
-                     * 服务的计费信息
+                     * <p>服务的计费信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billingInfo;
                     bool m_billingInfoHasBeenSet;
 
                     /**
-                     * 服务的创建来源
+                     * <p>服务的创建来源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createSource;
                     bool m_createSourceHasBeenSet;
 
                     /**
-                     * 服务组的权重更新状态 
-UPDATING 更新中
-     UPDATED 更新成功
-     UPDATE_FAILED 更新失败
+                     * <p>服务组的权重更新状态<br>UPDATING 更新中<br>     UPDATED 更新成功<br>     UPDATE_FAILED 更新失败</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_weightUpdateStatus;
                     bool m_weightUpdateStatusHasBeenSet;
 
                     /**
-                     * 服务组下运行的pod数量
+                     * <p>服务组下运行的pod数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_replicasCount;
                     bool m_replicasCountHasBeenSet;
 
                     /**
-                     * 服务组下期望的pod数
+                     * <p>服务组下期望的pod数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_availableReplicasCount;
                     bool m_availableReplicasCountHasBeenSet;
 
                     /**
-                     * 服务组的subuin
+                     * <p>服务组的subuin</p>
                      */
                     std::string m_subUin;
                     bool m_subUinHasBeenSet;
 
                     /**
-                     * 服务组的app_id
+                     * <p>服务组的app_id</p>
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 是否开启鉴权
+                     * <p>是否开启鉴权</p>
                      */
                     bool m_authorizationEnable;
                     bool m_authorizationEnableHasBeenSet;
 
                     /**
-                     * 限流鉴权 token 列表
+                     * <p>限流鉴权 token 列表</p>
                      */
                     std::vector<AuthToken> m_authTokens;
                     bool m_authTokensHasBeenSet;
 
                     /**
-                     * 用于监控的创建来源字段
+                     * <p>用于监控的创建来源字段</p>
                      */
                     std::string m_monitorSource;
                     bool m_monitorSourceHasBeenSet;
 
                     /**
-                     * 子用户的 nickname
+                     * <p>子用户的 nickname</p>
                      */
                     std::string m_subUinName;
                     bool m_subUinNameHasBeenSet;
 
                     /**
-                     * 网关日志投递相关配置
+                     * <p>网关日志投递相关配置</p>
                      */
                     LogConfig m_gatewayLogConfig;
                     bool m_gatewayLogConfigHasBeenSet;
 
                     /**
-                     * 网关路由相关配置
+                     * <p>网关路由相关配置</p>
                      */
                     GatewayConfig m_gatewayConfig;
                     bool m_gatewayConfigHasBeenSet;

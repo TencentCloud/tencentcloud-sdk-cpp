@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志推送CLS的配置。
-                     * @return CLSConfig 日志推送CLS的配置。
+                     * 获取<p>日志推送CLS的配置。</p>
+                     * @return CLSConfig <p>日志推送CLS的配置。</p>
                      * 
                      */
                     CLSConfig GetCLSConfig() const;
 
                     /**
-                     * 设置日志推送CLS的配置。
-                     * @param _cLSConfig 日志推送CLS的配置。
+                     * 设置<p>日志推送CLS的配置。</p>
+                     * @param _cLSConfig <p>日志推送CLS的配置。</p>
                      * 
                      */
                     void SetCLSConfig(const CLSConfig& _cLSConfig);
@@ -71,7 +71,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志推送CLS的配置。
+                     * <p>日志推送CLS的配置。</p>
                      */
                     CLSConfig m_cLSConfig;
                     bool m_cLSConfigHasBeenSet;

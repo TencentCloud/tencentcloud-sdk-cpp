@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取批量任务ID
-                     * @return JobId 批量任务ID
+                     * 获取<p>批量任务ID</p>
+                     * @return JobId <p>批量任务ID</p>
                      * 
                      */
                     uint64_t GetJobId() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取见ModifyRecordBatchDetail
-                     * @return DetailList 见ModifyRecordBatchDetail
+                     * 获取<p>见ModifyRecordBatchDetail</p>
+                     * @return DetailList <p>见ModifyRecordBatchDetail</p>
                      * 
                      */
                     std::vector<ModifyRecordBatchDetail> GetDetailList() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 批量任务ID
+                     * <p>批量任务ID</p>
                      */
                     uint64_t m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 见ModifyRecordBatchDetail
+                     * <p>见ModifyRecordBatchDetail</p>
                      */
                     std::vector<ModifyRecordBatchDetail> m_detailList;
                     bool m_detailListHasBeenSet;

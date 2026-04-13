@@ -42,7 +42,8 @@ AuditLog::AuditLog() :
     m_trxLivingTimeHasBeenSet(false),
     m_nsTimeHasBeenSet(false),
     m_templateInfoHasBeenSet(false),
-    m_trxIdHasBeenSet(false)
+    m_trxIdHasBeenSet(false),
+    m_clientPortHasBeenSet(false)
 {
 }
 
@@ -281,6 +282,16 @@ CoreInternalOutcome AuditLog::Deserialize(const rapidjson::Value &value)
         m_trxIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ClientPort") && !value["ClientPort"].IsNull())
+    {
+        if (!value["ClientPort"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuditLog.ClientPort` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientPort = value["ClientPort"].GetInt64();
+        m_clientPortHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -469,6 +480,14 @@ void AuditLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "TrxId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_trxId, allocator);
+    }
+
+    if (m_clientPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clientPort, allocator);
     }
 
 }
@@ -824,5 +843,21 @@ void AuditLog::SetTrxId(const int64_t& _trxId)
 bool AuditLog::TrxIdHasBeenSet() const
 {
     return m_trxIdHasBeenSet;
+}
+
+int64_t AuditLog::GetClientPort() const
+{
+    return m_clientPort;
+}
+
+void AuditLog::SetClientPort(const int64_t& _clientPort)
+{
+    m_clientPort = _clientPort;
+    m_clientPortHasBeenSet = true;
+}
+
+bool AuditLog::ClientPortHasBeenSet() const
+{
+    return m_clientPortHasBeenSet;
 }
 

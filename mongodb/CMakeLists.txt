@@ -139,6 +139,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/InquirePriceModifyDBInstanceSpecResponse.h
   include/tencentcloud/mongodb/v20190725/model/CreateDBInstanceHourRequest.h
   include/tencentcloud/mongodb/v20190725/model/SecurityGroupBound.h
+  include/tencentcloud/mongodb/v20190725/model/RestoreDBInstanceResponse.h
   include/tencentcloud/mongodb/v20190725/model/BackupTotalSize.h
   include/tencentcloud/mongodb/v20190725/model/DescribeDBInstanceNodePropertyResponse.h
   include/tencentcloud/mongodb/v20190725/model/CloseAuditServiceResponse.h
@@ -167,6 +168,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/DescribeTransparentDataEncryptionStatusResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeAuditConfigRequest.h
   include/tencentcloud/mongodb/v20190725/model/CreateBackupDBInstanceRequest.h
+  include/tencentcloud/mongodb/v20190725/model/RestoreDatabases.h
   include/tencentcloud/mongodb/v20190725/model/SetAccountUserPrivilegeRequest.h
   include/tencentcloud/mongodb/v20190725/model/UpgradeDbInstanceVersionResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeMongodbLogsResponse.h
@@ -216,6 +218,8 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/InstanceDetail.h
   include/tencentcloud/mongodb/v20190725/model/DescribeSlowLogPatternsRequest.h
   include/tencentcloud/mongodb/v20190725/model/Filters.h
+  include/tencentcloud/mongodb/v20190725/model/RestoreCollection.h
+  include/tencentcloud/mongodb/v20190725/model/RestoreDBInstanceRequest.h
   include/tencentcloud/mongodb/v20190725/model/InstanceChargePrepaid.h
   include/tencentcloud/mongodb/v20190725/model/RenewDBInstancesRequest.h
   include/tencentcloud/mongodb/v20190725/model/UpgradeDBInstanceKernelVersionRequest.h
@@ -377,6 +381,7 @@ set(mongodb_src
   src/v20190725/model/InquirePriceModifyDBInstanceSpecResponse.cpp
   src/v20190725/model/CreateDBInstanceHourRequest.cpp
   src/v20190725/model/SecurityGroupBound.cpp
+  src/v20190725/model/RestoreDBInstanceResponse.cpp
   src/v20190725/model/BackupTotalSize.cpp
   src/v20190725/model/DescribeDBInstanceNodePropertyResponse.cpp
   src/v20190725/model/CloseAuditServiceResponse.cpp
@@ -405,6 +410,7 @@ set(mongodb_src
   src/v20190725/model/DescribeTransparentDataEncryptionStatusResponse.cpp
   src/v20190725/model/DescribeAuditConfigRequest.cpp
   src/v20190725/model/CreateBackupDBInstanceRequest.cpp
+  src/v20190725/model/RestoreDatabases.cpp
   src/v20190725/model/SetAccountUserPrivilegeRequest.cpp
   src/v20190725/model/UpgradeDbInstanceVersionResponse.cpp
   src/v20190725/model/DescribeMongodbLogsResponse.cpp
@@ -454,6 +460,8 @@ set(mongodb_src
   src/v20190725/model/InstanceDetail.cpp
   src/v20190725/model/DescribeSlowLogPatternsRequest.cpp
   src/v20190725/model/Filters.cpp
+  src/v20190725/model/RestoreCollection.cpp
+  src/v20190725/model/RestoreDBInstanceRequest.cpp
   src/v20190725/model/InstanceChargePrepaid.cpp
   src/v20190725/model/RenewDBInstancesRequest.cpp
   src/v20190725/model/UpgradeDBInstanceKernelVersionRequest.cpp

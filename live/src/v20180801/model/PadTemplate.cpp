@@ -29,7 +29,8 @@ PadTemplate::PadTemplate() :
     m_descriptionHasBeenSet(false),
     m_waitDurationHasBeenSet(false),
     m_maxDurationHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_triggerConditionHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome PadTemplate::Deserialize(const rapidjson::Value &value)
         m_typeHasBeenSet = true;
     }
 
+    if (value.HasMember("TriggerCondition") && !value["TriggerCondition"].IsNull())
+    {
+        if (!value["TriggerCondition"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PadTemplate.TriggerCondition` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_triggerCondition = value["TriggerCondition"].GetUint64();
+        m_triggerConditionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void PadTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_type, allocator);
+    }
+
+    if (m_triggerConditionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerCondition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_triggerCondition, allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void PadTemplate::SetType(const uint64_t& _type)
 bool PadTemplate::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+uint64_t PadTemplate::GetTriggerCondition() const
+{
+    return m_triggerCondition;
+}
+
+void PadTemplate::SetTriggerCondition(const uint64_t& _triggerCondition)
+{
+    m_triggerCondition = _triggerCondition;
+    m_triggerConditionHasBeenSet = true;
+}
+
+bool PadTemplate::TriggerConditionHasBeenSet() const
+{
+    return m_triggerConditionHasBeenSet;
 }
 

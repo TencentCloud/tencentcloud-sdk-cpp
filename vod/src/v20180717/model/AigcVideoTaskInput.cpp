@@ -33,7 +33,8 @@ AigcVideoTaskInput::AigcVideoTaskInput() :
     m_generationModeHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
     m_inputRegionHasBeenSet(false),
-    m_sceneTypeHasBeenSet(false)
+    m_sceneTypeHasBeenSet(false),
+    m_seedHasBeenSet(false)
 {
 }
 
@@ -199,6 +200,16 @@ CoreInternalOutcome AigcVideoTaskInput::Deserialize(const rapidjson::Value &valu
         m_sceneTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Seed") && !value["Seed"].IsNull())
+    {
+        if (!value["Seed"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoTaskInput.Seed` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_seed = value["Seed"].GetInt64();
+        m_seedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -323,6 +334,14 @@ void AigcVideoTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "SceneType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sceneType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_seedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Seed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_seed, allocator);
     }
 
 }
@@ -534,5 +553,21 @@ void AigcVideoTaskInput::SetSceneType(const string& _sceneType)
 bool AigcVideoTaskInput::SceneTypeHasBeenSet() const
 {
     return m_sceneTypeHasBeenSet;
+}
+
+int64_t AigcVideoTaskInput::GetSeed() const
+{
+    return m_seed;
+}
+
+void AigcVideoTaskInput::SetSeed(const int64_t& _seed)
+{
+    m_seed = _seed;
+    m_seedHasBeenSet = true;
+}
+
+bool AigcVideoTaskInput::SeedHasBeenSet() const
+{
+    return m_seedHasBeenSet;
 }
 

@@ -322,6 +322,27 @@ namespace TencentCloud
                      */
                     bool SceneTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模型随机种子。</p>
+                     * @return Seed <p>模型随机种子。</p>
+                     * 
+                     */
+                    int64_t GetSeed() const;
+
+                    /**
+                     * 设置<p>模型随机种子。</p>
+                     * @param _seed <p>模型随机种子。</p>
+                     * 
+                     */
+                    void SetSeed(const int64_t& _seed);
+
+                    /**
+                     * 判断参数 Seed 是否已赋值
+                     * @return Seed 是否已赋值
+                     * 
+                     */
+                    bool SeedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -401,6 +422,12 @@ namespace TencentCloud
                      */
                     std::string m_sceneType;
                     bool m_sceneTypeHasBeenSet;
+
+                    /**
+                     * <p>模型随机种子。</p>
+                     */
+                    int64_t m_seed;
+                    bool m_seedHasBeenSet;
 
                 };
             }

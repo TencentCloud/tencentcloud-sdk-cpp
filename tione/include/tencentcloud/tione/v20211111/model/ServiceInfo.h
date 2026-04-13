@@ -63,46 +63,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取期望运行的Pod数量，停止状态是0
-不同计费模式和调节模式下对应关系如下
-PREPAID 和 POSTPAID_BY_HOUR:
-手动调节模式下对应 实例数量
-自动调节模式下对应 基于时间的默认策略的实例数量
-HYBRID_PAID:
-后付费实例手动调节模式下对应 实例数量
-后付费实例自动调节模式下对应 时间策略的默认策略的实例数量
+                     * 获取<p>期望运行的Pod数量，停止状态是0<br>不同计费模式和调节模式下对应关系如下<br>PREPAID 和 POSTPAID_BY_HOUR:<br>手动调节模式下对应 实例数量<br>自动调节模式下对应 基于时间的默认策略的实例数量<br>HYBRID_PAID:<br>后付费实例手动调节模式下对应 实例数量<br>后付费实例自动调节模式下对应 时间策略的默认策略的实例数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Replicas 期望运行的Pod数量，停止状态是0
-不同计费模式和调节模式下对应关系如下
-PREPAID 和 POSTPAID_BY_HOUR:
-手动调节模式下对应 实例数量
-自动调节模式下对应 基于时间的默认策略的实例数量
-HYBRID_PAID:
-后付费实例手动调节模式下对应 实例数量
-后付费实例自动调节模式下对应 时间策略的默认策略的实例数量
+                     * @return Replicas <p>期望运行的Pod数量，停止状态是0<br>不同计费模式和调节模式下对应关系如下<br>PREPAID 和 POSTPAID_BY_HOUR:<br>手动调节模式下对应 实例数量<br>自动调节模式下对应 基于时间的默认策略的实例数量<br>HYBRID_PAID:<br>后付费实例手动调节模式下对应 实例数量<br>后付费实例自动调节模式下对应 时间策略的默认策略的实例数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReplicas() const;
 
                     /**
-                     * 设置期望运行的Pod数量，停止状态是0
-不同计费模式和调节模式下对应关系如下
-PREPAID 和 POSTPAID_BY_HOUR:
-手动调节模式下对应 实例数量
-自动调节模式下对应 基于时间的默认策略的实例数量
-HYBRID_PAID:
-后付费实例手动调节模式下对应 实例数量
-后付费实例自动调节模式下对应 时间策略的默认策略的实例数量
+                     * 设置<p>期望运行的Pod数量，停止状态是0<br>不同计费模式和调节模式下对应关系如下<br>PREPAID 和 POSTPAID_BY_HOUR:<br>手动调节模式下对应 实例数量<br>自动调节模式下对应 基于时间的默认策略的实例数量<br>HYBRID_PAID:<br>后付费实例手动调节模式下对应 实例数量<br>后付费实例自动调节模式下对应 时间策略的默认策略的实例数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _replicas 期望运行的Pod数量，停止状态是0
-不同计费模式和调节模式下对应关系如下
-PREPAID 和 POSTPAID_BY_HOUR:
-手动调节模式下对应 实例数量
-自动调节模式下对应 基于时间的默认策略的实例数量
-HYBRID_PAID:
-后付费实例手动调节模式下对应 实例数量
-后付费实例自动调节模式下对应 时间策略的默认策略的实例数量
+                     * @param _replicas <p>期望运行的Pod数量，停止状态是0<br>不同计费模式和调节模式下对应关系如下<br>PREPAID 和 POSTPAID_BY_HOUR:<br>手动调节模式下对应 实例数量<br>自动调节模式下对应 基于时间的默认策略的实例数量<br>HYBRID_PAID:<br>后付费实例手动调节模式下对应 实例数量<br>后付费实例自动调节模式下对应 时间策略的默认策略的实例数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -116,18 +88,18 @@ HYBRID_PAID:
                     bool ReplicasHasBeenSet() const;
 
                     /**
-                     * 获取镜像信息
+                     * 获取<p>镜像信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ImageInfo 镜像信息
+                     * @return ImageInfo <p>镜像信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ImageInfo GetImageInfo() const;
 
                     /**
-                     * 设置镜像信息
+                     * 设置<p>镜像信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _imageInfo 镜像信息
+                     * @param _imageInfo <p>镜像信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -141,18 +113,18 @@ HYBRID_PAID:
                     bool ImageInfoHasBeenSet() const;
 
                     /**
-                     * 获取环境变量
+                     * 获取<p>环境变量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Env 环境变量
+                     * @return Env <p>环境变量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EnvVar> GetEnv() const;
 
                     /**
-                     * 设置环境变量
+                     * 设置<p>环境变量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _env 环境变量
+                     * @param _env <p>环境变量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -166,18 +138,18 @@ HYBRID_PAID:
                     bool EnvHasBeenSet() const;
 
                     /**
-                     * 获取资源信息
+                     * 获取<p>资源信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Resources 资源信息
+                     * @return Resources <p>资源信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ResourceInfo GetResources() const;
 
                     /**
-                     * 设置资源信息
+                     * 设置<p>资源信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resources 资源信息
+                     * @param _resources <p>资源信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -191,15 +163,15 @@ HYBRID_PAID:
                     bool ResourcesHasBeenSet() const;
 
                     /**
-                     * 获取后付费实例对应的机型规格
-                     * @return InstanceType 后付费实例对应的机型规格
+                     * 获取<p>后付费实例对应的机型规格</p>
+                     * @return InstanceType <p>后付费实例对应的机型规格</p>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置后付费实例对应的机型规格
-                     * @param _instanceType 后付费实例对应的机型规格
+                     * 设置<p>后付费实例对应的机型规格</p>
+                     * @param _instanceType <p>后付费实例对应的机型规格</p>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -212,15 +184,15 @@ HYBRID_PAID:
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取模型信息
-                     * @return ModelInfo 模型信息
+                     * 获取<p>模型信息</p>
+                     * @return ModelInfo <p>模型信息</p>
                      * 
                      */
                     ModelInfo GetModelInfo() const;
 
                     /**
-                     * 设置模型信息
-                     * @param _modelInfo 模型信息
+                     * 设置<p>模型信息</p>
+                     * @param _modelInfo <p>模型信息</p>
                      * 
                      */
                     void SetModelInfo(const ModelInfo& _modelInfo);
@@ -233,15 +205,15 @@ HYBRID_PAID:
                     bool ModelInfoHasBeenSet() const;
 
                     /**
-                     * 获取是否启用日志
-                     * @return LogEnable 是否启用日志
+                     * 获取<p>是否启用日志</p>
+                     * @return LogEnable <p>是否启用日志</p>
                      * 
                      */
                     bool GetLogEnable() const;
 
                     /**
-                     * 设置是否启用日志
-                     * @param _logEnable 是否启用日志
+                     * 设置<p>是否启用日志</p>
+                     * @param _logEnable <p>是否启用日志</p>
                      * 
                      */
                     void SetLogEnable(const bool& _logEnable);
@@ -254,15 +226,15 @@ HYBRID_PAID:
                     bool LogEnableHasBeenSet() const;
 
                     /**
-                     * 获取日志配置
-                     * @return LogConfig 日志配置
+                     * 获取<p>日志配置</p>
+                     * @return LogConfig <p>日志配置</p>
                      * 
                      */
                     LogConfig GetLogConfig() const;
 
                     /**
-                     * 设置日志配置
-                     * @param _logConfig 日志配置
+                     * 设置<p>日志配置</p>
+                     * @param _logConfig <p>日志配置</p>
                      * 
                      */
                     void SetLogConfig(const LogConfig& _logConfig);
@@ -275,15 +247,15 @@ HYBRID_PAID:
                     bool LogConfigHasBeenSet() const;
 
                     /**
-                     * 获取是否开启鉴权
-                     * @return AuthorizationEnable 是否开启鉴权
+                     * 获取<p>是否开启鉴权</p>
+                     * @return AuthorizationEnable <p>是否开启鉴权</p>
                      * 
                      */
                     bool GetAuthorizationEnable() const;
 
                     /**
-                     * 设置是否开启鉴权
-                     * @param _authorizationEnable 是否开启鉴权
+                     * 设置<p>是否开启鉴权</p>
+                     * @param _authorizationEnable <p>是否开启鉴权</p>
                      * 
                      */
                     void SetAuthorizationEnable(const bool& _authorizationEnable);
@@ -296,15 +268,15 @@ HYBRID_PAID:
                     bool AuthorizationEnableHasBeenSet() const;
 
                     /**
-                     * 获取hpa配置
-                     * @return HorizontalPodAutoscaler hpa配置
+                     * 获取<p>hpa配置</p>
+                     * @return HorizontalPodAutoscaler <p>hpa配置</p>
                      * 
                      */
                     HorizontalPodAutoscaler GetHorizontalPodAutoscaler() const;
 
                     /**
-                     * 设置hpa配置
-                     * @param _horizontalPodAutoscaler hpa配置
+                     * 设置<p>hpa配置</p>
+                     * @param _horizontalPodAutoscaler <p>hpa配置</p>
                      * 
                      */
                     void SetHorizontalPodAutoscaler(const HorizontalPodAutoscaler& _horizontalPodAutoscaler);
@@ -317,18 +289,18 @@ HYBRID_PAID:
                     bool HorizontalPodAutoscalerHasBeenSet() const;
 
                     /**
-                     * 获取服务的状态描述
+                     * 获取<p>服务的状态描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 服务的状态描述
+                     * @return Status <p>服务的状态描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     WorkloadStatus GetStatus() const;
 
                     /**
-                     * 设置服务的状态描述
+                     * 设置<p>服务的状态描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 服务的状态描述
+                     * @param _status <p>服务的状态描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -342,18 +314,18 @@ HYBRID_PAID:
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取权重
+                     * 获取<p>权重</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Weight 权重
+                     * @return Weight <p>权重</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
-                     * 设置权重
+                     * 设置<p>权重</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _weight 权重
+                     * @param _weight <p>权重</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -367,18 +339,18 @@ HYBRID_PAID:
                     bool WeightHasBeenSet() const;
 
                     /**
-                     * 获取资源总量
+                     * 获取<p>资源总量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceTotal 资源总量
+                     * @return ResourceTotal <p>资源总量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ResourceInfo GetResourceTotal() const;
 
                     /**
-                     * 设置资源总量
+                     * 设置<p>资源总量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourceTotal 资源总量
+                     * @param _resourceTotal <p>资源总量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -392,18 +364,18 @@ HYBRID_PAID:
                     bool ResourceTotalHasBeenSet() const;
 
                     /**
-                     * 获取历史实例数
+                     * 获取<p>历史实例数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OldReplicas 历史实例数
+                     * @return OldReplicas <p>历史实例数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOldReplicas() const;
 
                     /**
-                     * 设置历史实例数
+                     * 设置<p>历史实例数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _oldReplicas 历史实例数
+                     * @param _oldReplicas <p>历史实例数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -417,18 +389,18 @@ HYBRID_PAID:
                     bool OldReplicasHasBeenSet() const;
 
                     /**
-                     * 获取计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数, 若不填则默认为1
+                     * 获取<p>计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数, 若不填则默认为1</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HybridBillingPrepaidReplicas 计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数, 若不填则默认为1
+                     * @return HybridBillingPrepaidReplicas <p>计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数, 若不填则默认为1</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHybridBillingPrepaidReplicas() const;
 
                     /**
-                     * 设置计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数, 若不填则默认为1
+                     * 设置<p>计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数, 若不填则默认为1</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hybridBillingPrepaidReplicas 计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数, 若不填则默认为1
+                     * @param _hybridBillingPrepaidReplicas <p>计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数, 若不填则默认为1</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -442,18 +414,18 @@ HYBRID_PAID:
                     bool HybridBillingPrepaidReplicasHasBeenSet() const;
 
                     /**
-                     * 获取历史 HYBRID_PAID 时的实例数，用户恢复服务
+                     * 获取<p>历史 HYBRID_PAID 时的实例数，用户恢复服务</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OldHybridBillingPrepaidReplicas 历史 HYBRID_PAID 时的实例数，用户恢复服务
+                     * @return OldHybridBillingPrepaidReplicas <p>历史 HYBRID_PAID 时的实例数，用户恢复服务</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOldHybridBillingPrepaidReplicas() const;
 
                     /**
-                     * 设置历史 HYBRID_PAID 时的实例数，用户恢复服务
+                     * 设置<p>历史 HYBRID_PAID 时的实例数，用户恢复服务</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _oldHybridBillingPrepaidReplicas 历史 HYBRID_PAID 时的实例数，用户恢复服务
+                     * @param _oldHybridBillingPrepaidReplicas <p>历史 HYBRID_PAID 时的实例数，用户恢复服务</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -467,18 +439,18 @@ HYBRID_PAID:
                     bool OldHybridBillingPrepaidReplicasHasBeenSet() const;
 
                     /**
-                     * 获取是否开启模型的热更新。默认不开启
+                     * 获取<p>是否开启模型的热更新。默认不开启</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelHotUpdateEnable 是否开启模型的热更新。默认不开启
+                     * @return ModelHotUpdateEnable <p>是否开启模型的热更新。默认不开启</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetModelHotUpdateEnable() const;
 
                     /**
-                     * 设置是否开启模型的热更新。默认不开启
+                     * 设置<p>是否开启模型的热更新。默认不开启</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modelHotUpdateEnable 是否开启模型的热更新。默认不开启
+                     * @param _modelHotUpdateEnable <p>是否开启模型的热更新。默认不开启</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -492,15 +464,15 @@ HYBRID_PAID:
                     bool ModelHotUpdateEnableHasBeenSet() const;
 
                     /**
-                     * 获取服务的规格别名
-                     * @return InstanceAlias 服务的规格别名
+                     * 获取<p>服务的规格别名</p>
+                     * @return InstanceAlias <p>服务的规格别名</p>
                      * 
                      */
                     std::string GetInstanceAlias() const;
 
                     /**
-                     * 设置服务的规格别名
-                     * @param _instanceAlias 服务的规格别名
+                     * 设置<p>服务的规格别名</p>
+                     * @param _instanceAlias <p>服务的规格别名</p>
                      * 
                      */
                     void SetInstanceAlias(const std::string& _instanceAlias);
@@ -513,22 +485,18 @@ HYBRID_PAID:
                     bool InstanceAliasHasBeenSet() const;
 
                     /**
-                     * 获取实例数量调节方式,默认为手动
-支持：自动 - "AUTO", 手动 - "MANUAL"
+                     * 获取<p>实例数量调节方式,默认为手动<br>支持：自动 - &quot;AUTO&quot;, 手动 - &quot;MANUAL&quot;</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScaleMode 实例数量调节方式,默认为手动
-支持：自动 - "AUTO", 手动 - "MANUAL"
+                     * @return ScaleMode <p>实例数量调节方式,默认为手动<br>支持：自动 - &quot;AUTO&quot;, 手动 - &quot;MANUAL&quot;</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScaleMode() const;
 
                     /**
-                     * 设置实例数量调节方式,默认为手动
-支持：自动 - "AUTO", 手动 - "MANUAL"
+                     * 设置<p>实例数量调节方式,默认为手动<br>支持：自动 - &quot;AUTO&quot;, 手动 - &quot;MANUAL&quot;</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scaleMode 实例数量调节方式,默认为手动
-支持：自动 - "AUTO", 手动 - "MANUAL"
+                     * @param _scaleMode <p>实例数量调节方式,默认为手动<br>支持：自动 - &quot;AUTO&quot;, 手动 - &quot;MANUAL&quot;</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -542,18 +510,18 @@ HYBRID_PAID:
                     bool ScaleModeHasBeenSet() const;
 
                     /**
-                     * 获取定时伸缩任务
+                     * 获取<p>定时伸缩任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CronScaleJobs 定时伸缩任务
+                     * @return CronScaleJobs <p>定时伸缩任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CronScaleJob> GetCronScaleJobs() const;
 
                     /**
-                     * 设置定时伸缩任务
+                     * 设置<p>定时伸缩任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cronScaleJobs 定时伸缩任务
+                     * @param _cronScaleJobs <p>定时伸缩任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -567,18 +535,18 @@ HYBRID_PAID:
                     bool CronScaleJobsHasBeenSet() const;
 
                     /**
-                     * 获取定时伸缩策略
+                     * 获取<p>定时伸缩策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScaleStrategy 定时伸缩策略
+                     * @return ScaleStrategy <p>定时伸缩策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScaleStrategy() const;
 
                     /**
-                     * 设置定时伸缩策略
+                     * 设置<p>定时伸缩策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scaleStrategy 定时伸缩策略
+                     * @param _scaleStrategy <p>定时伸缩策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -592,18 +560,18 @@ HYBRID_PAID:
                     bool ScaleStrategyHasBeenSet() const;
 
                     /**
-                     * 获取定时停止的配置
+                     * 获取<p>定时停止的配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScheduledAction 定时停止的配置
+                     * @return ScheduledAction <p>定时停止的配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ScheduledAction GetScheduledAction() const;
 
                     /**
-                     * 设置定时停止的配置
+                     * 设置<p>定时停止的配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scheduledAction 定时停止的配置
+                     * @param _scheduledAction <p>定时停止的配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -617,18 +585,18 @@ HYBRID_PAID:
                     bool ScheduledActionHasBeenSet() const;
 
                     /**
-                     * 获取实例列表
+                     * 获取<p>实例列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PodList 实例列表
+                     * @return PodList <p>实例列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
                     std::vector<std::string> GetPodList() const;
 
                     /**
-                     * 设置实例列表
+                     * 设置<p>实例列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _podList 实例列表
+                     * @param _podList <p>实例列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
@@ -642,18 +610,18 @@ HYBRID_PAID:
                     bool PodListHasBeenSet() const;
 
                     /**
-                     * 获取Pod列表信息
+                     * 获取<p>Pod列表信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Pods Pod列表信息
+                     * @return Pods <p>Pod列表信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
                     Pod GetPods() const;
 
                     /**
-                     * 设置Pod列表信息
+                     * 设置<p>Pod列表信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pods Pod列表信息
+                     * @param _pods <p>Pod列表信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
@@ -667,18 +635,18 @@ HYBRID_PAID:
                     bool PodsHasBeenSet() const;
 
                     /**
-                     * 获取Pod列表信息
+                     * 获取<p>Pod列表信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PodInfos Pod列表信息
+                     * @return PodInfos <p>Pod列表信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Pod> GetPodInfos() const;
 
                     /**
-                     * 设置Pod列表信息
+                     * 设置<p>Pod列表信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _podInfos Pod列表信息
+                     * @param _podInfos <p>Pod列表信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -692,18 +660,18 @@ HYBRID_PAID:
                     bool PodInfosHasBeenSet() const;
 
                     /**
-                     * 获取服务限速限流相关配置
+                     * 获取<p>服务限速限流相关配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServiceLimit 服务限速限流相关配置
+                     * @return ServiceLimit <p>服务限速限流相关配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ServiceLimit GetServiceLimit() const;
 
                     /**
-                     * 设置服务限速限流相关配置
+                     * 设置<p>服务限速限流相关配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _serviceLimit 服务限速限流相关配置
+                     * @param _serviceLimit <p>服务限速限流相关配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -717,18 +685,18 @@ HYBRID_PAID:
                     bool ServiceLimitHasBeenSet() const;
 
                     /**
-                     * 获取是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。
+                     * 获取<p>是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelTurboEnable 是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。
+                     * @return ModelTurboEnable <p>是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetModelTurboEnable() const;
 
                     /**
-                     * 设置是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。
+                     * 设置<p>是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modelTurboEnable 是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。
+                     * @param _modelTurboEnable <p>是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -742,18 +710,18 @@ HYBRID_PAID:
                     bool ModelTurboEnableHasBeenSet() const;
 
                     /**
-                     * 获取挂载
+                     * 获取<p>挂载</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VolumeMount 挂载
+                     * @return VolumeMount <p>挂载</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     VolumeMount GetVolumeMount() const;
 
                     /**
-                     * 设置挂载
+                     * 设置<p>挂载</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _volumeMount 挂载
+                     * @param _volumeMount <p>挂载</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -767,18 +735,18 @@ HYBRID_PAID:
                     bool VolumeMountHasBeenSet() const;
 
                     /**
-                     * 获取推理代码信息
+                     * 获取<p>推理代码信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InferCodeInfo 推理代码信息
+                     * @return InferCodeInfo <p>推理代码信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InferCodeInfo GetInferCodeInfo() const;
 
                     /**
-                     * 设置推理代码信息
+                     * 设置<p>推理代码信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _inferCodeInfo 推理代码信息
+                     * @param _inferCodeInfo <p>推理代码信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -792,18 +760,18 @@ HYBRID_PAID:
                     bool InferCodeInfoHasBeenSet() const;
 
                     /**
-                     * 获取服务的启动命令
+                     * 获取<p>服务的启动命令</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Command 服务的启动命令
+                     * @return Command <p>服务的启动命令</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCommand() const;
 
                     /**
-                     * 设置服务的启动命令
+                     * 设置<p>服务的启动命令</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _command 服务的启动命令
+                     * @param _command <p>服务的启动命令</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -817,18 +785,18 @@ HYBRID_PAID:
                     bool CommandHasBeenSet() const;
 
                     /**
-                     * 获取开启TIONE内网访问外部设置
+                     * 获取<p>开启TIONE内网访问外部设置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServiceEIP 开启TIONE内网访问外部设置
+                     * @return ServiceEIP <p>开启TIONE内网访问外部设置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ServiceEIP GetServiceEIP() const;
 
                     /**
-                     * 设置开启TIONE内网访问外部设置
+                     * 设置<p>开启TIONE内网访问外部设置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _serviceEIP 开启TIONE内网访问外部设置
+                     * @param _serviceEIP <p>开启TIONE内网访问外部设置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -842,18 +810,18 @@ HYBRID_PAID:
                     bool ServiceEIPHasBeenSet() const;
 
                     /**
-                     * 获取服务端口，默认为8501
+                     * 获取<p>服务端口，默认为8501</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServicePort 服务端口，默认为8501
+                     * @return ServicePort <p>服务端口，默认为8501</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetServicePort() const;
 
                     /**
-                     * 设置服务端口，默认为8501
+                     * 设置<p>服务端口，默认为8501</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _servicePort 服务端口，默认为8501
+                     * @param _servicePort <p>服务端口，默认为8501</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -867,15 +835,15 @@ HYBRID_PAID:
                     bool ServicePortHasBeenSet() const;
 
                     /**
-                     * 获取服务的优雅退出时限。单位为秒，默认值为30，最小为1
-                     * @return TerminationGracePeriodSeconds 服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     * 获取<p>服务的优雅退出时限。单位为秒，默认值为30，最小为1</p>
+                     * @return TerminationGracePeriodSeconds <p>服务的优雅退出时限。单位为秒，默认值为30，最小为1</p>
                      * 
                      */
                     int64_t GetTerminationGracePeriodSeconds() const;
 
                     /**
-                     * 设置服务的优雅退出时限。单位为秒，默认值为30，最小为1
-                     * @param _terminationGracePeriodSeconds 服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     * 设置<p>服务的优雅退出时限。单位为秒，默认值为30，最小为1</p>
+                     * @param _terminationGracePeriodSeconds <p>服务的优雅退出时限。单位为秒，默认值为30，最小为1</p>
                      * 
                      */
                     void SetTerminationGracePeriodSeconds(const int64_t& _terminationGracePeriodSeconds);
@@ -888,15 +856,15 @@ HYBRID_PAID:
                     bool TerminationGracePeriodSecondsHasBeenSet() const;
 
                     /**
-                     * 获取服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
-                     * @return PreStopCommand 服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     * 获取<p>服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束</p>
+                     * @return PreStopCommand <p>服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束</p>
                      * 
                      */
                     std::vector<std::string> GetPreStopCommand() const;
 
                     /**
-                     * 设置服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
-                     * @param _preStopCommand 服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     * 设置<p>服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束</p>
+                     * @param _preStopCommand <p>服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束</p>
                      * 
                      */
                     void SetPreStopCommand(const std::vector<std::string>& _preStopCommand);
@@ -909,15 +877,15 @@ HYBRID_PAID:
                     bool PreStopCommandHasBeenSet() const;
 
                     /**
-                     * 获取是否启用grpc端口
-                     * @return GrpcEnable 是否启用grpc端口
+                     * 获取<p>是否启用grpc端口</p>
+                     * @return GrpcEnable <p>是否启用grpc端口</p>
                      * 
                      */
                     bool GetGrpcEnable() const;
 
                     /**
-                     * 设置是否启用grpc端口
-                     * @param _grpcEnable 是否启用grpc端口
+                     * 设置<p>是否启用grpc端口</p>
+                     * @param _grpcEnable <p>是否启用grpc端口</p>
                      * 
                      */
                     void SetGrpcEnable(const bool& _grpcEnable);
@@ -930,15 +898,15 @@ HYBRID_PAID:
                     bool GrpcEnableHasBeenSet() const;
 
                     /**
-                     * 获取健康探针
-                     * @return HealthProbe 健康探针
+                     * 获取<p>健康探针</p>
+                     * @return HealthProbe <p>健康探针</p>
                      * 
                      */
                     HealthProbe GetHealthProbe() const;
 
                     /**
-                     * 设置健康探针
-                     * @param _healthProbe 健康探针
+                     * 设置<p>健康探针</p>
+                     * @param _healthProbe <p>健康探针</p>
                      * 
                      */
                     void SetHealthProbe(const HealthProbe& _healthProbe);
@@ -951,15 +919,15 @@ HYBRID_PAID:
                     bool HealthProbeHasBeenSet() const;
 
                     /**
-                     * 获取滚动更新配置
-                     * @return RollingUpdate 滚动更新配置
+                     * 获取<p>滚动更新配置</p>
+                     * @return RollingUpdate <p>滚动更新配置</p>
                      * 
                      */
                     RollingUpdate GetRollingUpdate() const;
 
                     /**
-                     * 设置滚动更新配置
-                     * @param _rollingUpdate 滚动更新配置
+                     * 设置<p>滚动更新配置</p>
+                     * @param _rollingUpdate <p>滚动更新配置</p>
                      * 
                      */
                     void SetRollingUpdate(const RollingUpdate& _rollingUpdate);
@@ -972,15 +940,15 @@ HYBRID_PAID:
                     bool RollingUpdateHasBeenSet() const;
 
                     /**
-                     * 获取单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1
-                     * @return InstancePerReplicas 单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1
+                     * 获取<p>单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1</p>
+                     * @return InstancePerReplicas <p>单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1</p>
                      * 
                      */
                     int64_t GetInstancePerReplicas() const;
 
                     /**
-                     * 设置单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1
-                     * @param _instancePerReplicas 单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1
+                     * 设置<p>单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1</p>
+                     * @param _instancePerReplicas <p>单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1</p>
                      * 
                      */
                     void SetInstancePerReplicas(const int64_t& _instancePerReplicas);
@@ -993,15 +961,15 @@ HYBRID_PAID:
                     bool InstancePerReplicasHasBeenSet() const;
 
                     /**
-                     * 获取批量数据盘挂载配置
-                     * @return VolumeMounts 批量数据盘挂载配置
+                     * 获取<p>批量数据盘挂载配置</p>
+                     * @return VolumeMounts <p>批量数据盘挂载配置</p>
                      * 
                      */
                     std::vector<VolumeMount> GetVolumeMounts() const;
 
                     /**
-                     * 设置批量数据盘挂载配置
-                     * @param _volumeMounts 批量数据盘挂载配置
+                     * 设置<p>批量数据盘挂载配置</p>
+                     * @param _volumeMounts <p>批量数据盘挂载配置</p>
                      * 
                      */
                     void SetVolumeMounts(const std::vector<VolumeMount>& _volumeMounts);
@@ -1014,15 +982,15 @@ HYBRID_PAID:
                     bool VolumeMountsHasBeenSet() const;
 
                     /**
-                     * 获取调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用
-                     * @return SchedulingStrategy 调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用
+                     * 获取<p>调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用</p>
+                     * @return SchedulingStrategy <p>调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用</p>
                      * 
                      */
                     std::string GetSchedulingStrategy() const;
 
                     /**
-                     * 设置调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用
-                     * @param _schedulingStrategy 调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用
+                     * 设置<p>调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用</p>
+                     * @param _schedulingStrategy <p>调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用</p>
                      * 
                      */
                     void SetSchedulingStrategy(const std::string& _schedulingStrategy);
@@ -1035,15 +1003,15 @@ HYBRID_PAID:
                     bool SchedulingStrategyHasBeenSet() const;
 
                     /**
-                     * 获取服务实际运行的节点数
-                     * @return NodeCount 服务实际运行的节点数
+                     * 获取<p>服务实际运行的节点数</p>
+                     * @return NodeCount <p>服务实际运行的节点数</p>
                      * 
                      */
                     int64_t GetNodeCount() const;
 
                     /**
-                     * 设置服务实际运行的节点数
-                     * @param _nodeCount 服务实际运行的节点数
+                     * 设置<p>服务实际运行的节点数</p>
+                     * @param _nodeCount <p>服务实际运行的节点数</p>
                      * 
                      */
                     void SetNodeCount(const int64_t& _nodeCount);
@@ -1058,280 +1026,272 @@ HYBRID_PAID:
                 private:
 
                     /**
-                     * 期望运行的Pod数量，停止状态是0
-不同计费模式和调节模式下对应关系如下
-PREPAID 和 POSTPAID_BY_HOUR:
-手动调节模式下对应 实例数量
-自动调节模式下对应 基于时间的默认策略的实例数量
-HYBRID_PAID:
-后付费实例手动调节模式下对应 实例数量
-后付费实例自动调节模式下对应 时间策略的默认策略的实例数量
+                     * <p>期望运行的Pod数量，停止状态是0<br>不同计费模式和调节模式下对应关系如下<br>PREPAID 和 POSTPAID_BY_HOUR:<br>手动调节模式下对应 实例数量<br>自动调节模式下对应 基于时间的默认策略的实例数量<br>HYBRID_PAID:<br>后付费实例手动调节模式下对应 实例数量<br>后付费实例自动调节模式下对应 时间策略的默认策略的实例数量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_replicas;
                     bool m_replicasHasBeenSet;
 
                     /**
-                     * 镜像信息
+                     * <p>镜像信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ImageInfo m_imageInfo;
                     bool m_imageInfoHasBeenSet;
 
                     /**
-                     * 环境变量
+                     * <p>环境变量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EnvVar> m_env;
                     bool m_envHasBeenSet;
 
                     /**
-                     * 资源信息
+                     * <p>资源信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ResourceInfo m_resources;
                     bool m_resourcesHasBeenSet;
 
                     /**
-                     * 后付费实例对应的机型规格
+                     * <p>后付费实例对应的机型规格</p>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 模型信息
+                     * <p>模型信息</p>
                      */
                     ModelInfo m_modelInfo;
                     bool m_modelInfoHasBeenSet;
 
                     /**
-                     * 是否启用日志
+                     * <p>是否启用日志</p>
                      */
                     bool m_logEnable;
                     bool m_logEnableHasBeenSet;
 
                     /**
-                     * 日志配置
+                     * <p>日志配置</p>
                      */
                     LogConfig m_logConfig;
                     bool m_logConfigHasBeenSet;
 
                     /**
-                     * 是否开启鉴权
+                     * <p>是否开启鉴权</p>
                      */
                     bool m_authorizationEnable;
                     bool m_authorizationEnableHasBeenSet;
 
                     /**
-                     * hpa配置
+                     * <p>hpa配置</p>
                      */
                     HorizontalPodAutoscaler m_horizontalPodAutoscaler;
                     bool m_horizontalPodAutoscalerHasBeenSet;
 
                     /**
-                     * 服务的状态描述
+                     * <p>服务的状态描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WorkloadStatus m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 权重
+                     * <p>权重</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;
 
                     /**
-                     * 资源总量
+                     * <p>资源总量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ResourceInfo m_resourceTotal;
                     bool m_resourceTotalHasBeenSet;
 
                     /**
-                     * 历史实例数
+                     * <p>历史实例数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_oldReplicas;
                     bool m_oldReplicasHasBeenSet;
 
                     /**
-                     * 计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数, 若不填则默认为1
+                     * <p>计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数, 若不填则默认为1</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_hybridBillingPrepaidReplicas;
                     bool m_hybridBillingPrepaidReplicasHasBeenSet;
 
                     /**
-                     * 历史 HYBRID_PAID 时的实例数，用户恢复服务
+                     * <p>历史 HYBRID_PAID 时的实例数，用户恢复服务</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_oldHybridBillingPrepaidReplicas;
                     bool m_oldHybridBillingPrepaidReplicasHasBeenSet;
 
                     /**
-                     * 是否开启模型的热更新。默认不开启
+                     * <p>是否开启模型的热更新。默认不开启</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_modelHotUpdateEnable;
                     bool m_modelHotUpdateEnableHasBeenSet;
 
                     /**
-                     * 服务的规格别名
+                     * <p>服务的规格别名</p>
                      */
                     std::string m_instanceAlias;
                     bool m_instanceAliasHasBeenSet;
 
                     /**
-                     * 实例数量调节方式,默认为手动
-支持：自动 - "AUTO", 手动 - "MANUAL"
+                     * <p>实例数量调节方式,默认为手动<br>支持：自动 - &quot;AUTO&quot;, 手动 - &quot;MANUAL&quot;</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scaleMode;
                     bool m_scaleModeHasBeenSet;
 
                     /**
-                     * 定时伸缩任务
+                     * <p>定时伸缩任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CronScaleJob> m_cronScaleJobs;
                     bool m_cronScaleJobsHasBeenSet;
 
                     /**
-                     * 定时伸缩策略
+                     * <p>定时伸缩策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scaleStrategy;
                     bool m_scaleStrategyHasBeenSet;
 
                     /**
-                     * 定时停止的配置
+                     * <p>定时停止的配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScheduledAction m_scheduledAction;
                     bool m_scheduledActionHasBeenSet;
 
                     /**
-                     * 实例列表
+                     * <p>实例列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_podList;
                     bool m_podListHasBeenSet;
 
                     /**
-                     * Pod列表信息
+                     * <p>Pod列表信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Pod m_pods;
                     bool m_podsHasBeenSet;
 
                     /**
-                     * Pod列表信息
+                     * <p>Pod列表信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Pod> m_podInfos;
                     bool m_podInfosHasBeenSet;
 
                     /**
-                     * 服务限速限流相关配置
+                     * <p>服务限速限流相关配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ServiceLimit m_serviceLimit;
                     bool m_serviceLimitHasBeenSet;
 
                     /**
-                     * 是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。
+                     * <p>是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_modelTurboEnable;
                     bool m_modelTurboEnableHasBeenSet;
 
                     /**
-                     * 挂载
+                     * <p>挂载</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     VolumeMount m_volumeMount;
                     bool m_volumeMountHasBeenSet;
 
                     /**
-                     * 推理代码信息
+                     * <p>推理代码信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InferCodeInfo m_inferCodeInfo;
                     bool m_inferCodeInfoHasBeenSet;
 
                     /**
-                     * 服务的启动命令
+                     * <p>服务的启动命令</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
 
                     /**
-                     * 开启TIONE内网访问外部设置
+                     * <p>开启TIONE内网访问外部设置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ServiceEIP m_serviceEIP;
                     bool m_serviceEIPHasBeenSet;
 
                     /**
-                     * 服务端口，默认为8501
+                     * <p>服务端口，默认为8501</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_servicePort;
                     bool m_servicePortHasBeenSet;
 
                     /**
-                     * 服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     * <p>服务的优雅退出时限。单位为秒，默认值为30，最小为1</p>
                      */
                     int64_t m_terminationGracePeriodSeconds;
                     bool m_terminationGracePeriodSecondsHasBeenSet;
 
                     /**
-                     * 服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     * <p>服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束</p>
                      */
                     std::vector<std::string> m_preStopCommand;
                     bool m_preStopCommandHasBeenSet;
 
                     /**
-                     * 是否启用grpc端口
+                     * <p>是否启用grpc端口</p>
                      */
                     bool m_grpcEnable;
                     bool m_grpcEnableHasBeenSet;
 
                     /**
-                     * 健康探针
+                     * <p>健康探针</p>
                      */
                     HealthProbe m_healthProbe;
                     bool m_healthProbeHasBeenSet;
 
                     /**
-                     * 滚动更新配置
+                     * <p>滚动更新配置</p>
                      */
                     RollingUpdate m_rollingUpdate;
                     bool m_rollingUpdateHasBeenSet;
 
                     /**
-                     * 单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1
+                     * <p>单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1</p>
                      */
                     int64_t m_instancePerReplicas;
                     bool m_instancePerReplicasHasBeenSet;
 
                     /**
-                     * 批量数据盘挂载配置
+                     * <p>批量数据盘挂载配置</p>
                      */
                     std::vector<VolumeMount> m_volumeMounts;
                     bool m_volumeMountsHasBeenSet;
 
                     /**
-                     * 调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用
+                     * <p>调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用</p>
                      */
                     std::string m_schedulingStrategy;
                     bool m_schedulingStrategyHasBeenSet;
 
                     /**
-                     * 服务实际运行的节点数
+                     * <p>服务实际运行的节点数</p>
                      */
                     int64_t m_nodeCount;
                     bool m_nodeCountHasBeenSet;

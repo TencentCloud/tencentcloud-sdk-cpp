@@ -127,6 +127,8 @@
 #include <tencentcloud/tcb/v20180608/model/DestroyMySQLResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ExecutePGSqlRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ExecutePGSqlResponse.h>
 #include <tencentcloud/tcb/v20180608/model/GetProvidersRequest.h>
 #include <tencentcloud/tcb/v20180608/model/GetProvidersResponse.h>
 #include <tencentcloud/tcb/v20180608/model/InquireVmPriceRequest.h>
@@ -333,6 +335,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DestroyStaticStoreResponse> DestroyStaticStoreOutcome;
                 typedef std::future<DestroyStaticStoreOutcome> DestroyStaticStoreOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DestroyStaticStoreRequest&, DestroyStaticStoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyStaticStoreAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExecutePGSqlResponse> ExecutePGSqlOutcome;
+                typedef std::future<ExecutePGSqlOutcome> ExecutePGSqlOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ExecutePGSqlRequest&, ExecutePGSqlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecutePGSqlAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetProvidersResponse> GetProvidersOutcome;
                 typedef std::future<GetProvidersOutcome> GetProvidersOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::GetProvidersRequest&, GetProvidersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetProvidersAsyncHandler;
@@ -934,6 +939,15 @@ namespace TencentCloud
                 DestroyStaticStoreOutcome DestroyStaticStore(const Model::DestroyStaticStoreRequest &request);
                 void DestroyStaticStoreAsync(const Model::DestroyStaticStoreRequest& request, const DestroyStaticStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DestroyStaticStoreOutcomeCallable DestroyStaticStoreCallable(const Model::DestroyStaticStoreRequest& request);
+
+                /**
+                 *在Postgres数据库上执行SQL
+                 * @param req ExecutePGSqlRequest
+                 * @return ExecutePGSqlOutcome
+                 */
+                ExecutePGSqlOutcome ExecutePGSql(const Model::ExecutePGSqlRequest &request);
+                void ExecutePGSqlAsync(const Model::ExecutePGSqlRequest& request, const ExecutePGSqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExecutePGSqlOutcomeCallable ExecutePGSqlCallable(const Model::ExecutePGSqlRequest& request);
 
                 /**
                  *查询指定云开发环境下的身份认证源列表。返回该环境已配置的所有身份认证源信息，包括第三方登录（OAuth、OIDC、SAML）、微信小程序登录、自定义登录和邮箱登录等。返回结果包含认证源基本信息、关联应用、配置状态及启用情况。若自定义登录或邮箱登录的身份源尚未创建，接口会自动追加一个默认关闭状态的身份源记录。

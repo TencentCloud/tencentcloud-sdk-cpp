@@ -27,6 +27,8 @@
 #include <tencentcloud/config/v20220802/model/AddAggregateCompliancePackResponse.h>
 #include <tencentcloud/config/v20220802/model/AddAggregateConfigRuleRequest.h>
 #include <tencentcloud/config/v20220802/model/AddAggregateConfigRuleResponse.h>
+#include <tencentcloud/config/v20220802/model/AddAlarmPolicyRequest.h>
+#include <tencentcloud/config/v20220802/model/AddAlarmPolicyResponse.h>
 #include <tencentcloud/config/v20220802/model/AddCompliancePackRequest.h>
 #include <tencentcloud/config/v20220802/model/AddCompliancePackResponse.h>
 #include <tencentcloud/config/v20220802/model/AddConfigRuleRequest.h>
@@ -45,6 +47,8 @@
 #include <tencentcloud/config/v20220802/model/DeleteAggregateCompliancePackResponse.h>
 #include <tencentcloud/config/v20220802/model/DeleteAggregateConfigRuleRequest.h>
 #include <tencentcloud/config/v20220802/model/DeleteAggregateConfigRuleResponse.h>
+#include <tencentcloud/config/v20220802/model/DeleteAlarmPolicyRequest.h>
+#include <tencentcloud/config/v20220802/model/DeleteAlarmPolicyResponse.h>
 #include <tencentcloud/config/v20220802/model/DeleteCompliancePackRequest.h>
 #include <tencentcloud/config/v20220802/model/DeleteCompliancePackResponse.h>
 #include <tencentcloud/config/v20220802/model/DeleteConfigRuleRequest.h>
@@ -89,6 +93,8 @@
 #include <tencentcloud/config/v20220802/model/ListAggregateDiscoveredResourcesResponse.h>
 #include <tencentcloud/config/v20220802/model/ListAggregatorsRequest.h>
 #include <tencentcloud/config/v20220802/model/ListAggregatorsResponse.h>
+#include <tencentcloud/config/v20220802/model/ListAlarmPolicyRequest.h>
+#include <tencentcloud/config/v20220802/model/ListAlarmPolicyResponse.h>
 #include <tencentcloud/config/v20220802/model/ListCompliancePacksRequest.h>
 #include <tencentcloud/config/v20220802/model/ListCompliancePacksResponse.h>
 #include <tencentcloud/config/v20220802/model/ListConfigRuleEvaluationResultsRequest.h>
@@ -129,6 +135,8 @@
 #include <tencentcloud/config/v20220802/model/UpdateAggregateConfigDeliverResponse.h>
 #include <tencentcloud/config/v20220802/model/UpdateAggregateConfigRuleRequest.h>
 #include <tencentcloud/config/v20220802/model/UpdateAggregateConfigRuleResponse.h>
+#include <tencentcloud/config/v20220802/model/UpdateAlarmPolicyRequest.h>
+#include <tencentcloud/config/v20220802/model/UpdateAlarmPolicyResponse.h>
 #include <tencentcloud/config/v20220802/model/UpdateCompliancePackRequest.h>
 #include <tencentcloud/config/v20220802/model/UpdateCompliancePackResponse.h>
 #include <tencentcloud/config/v20220802/model/UpdateCompliancePackStatusRequest.h>
@@ -161,6 +169,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddAggregateConfigRuleResponse> AddAggregateConfigRuleOutcome;
                 typedef std::future<AddAggregateConfigRuleOutcome> AddAggregateConfigRuleOutcomeCallable;
                 typedef std::function<void(const ConfigClient*, const Model::AddAggregateConfigRuleRequest&, AddAggregateConfigRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddAggregateConfigRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddAlarmPolicyResponse> AddAlarmPolicyOutcome;
+                typedef std::future<AddAlarmPolicyOutcome> AddAlarmPolicyOutcomeCallable;
+                typedef std::function<void(const ConfigClient*, const Model::AddAlarmPolicyRequest&, AddAlarmPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddAlarmPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddCompliancePackResponse> AddCompliancePackOutcome;
                 typedef std::future<AddCompliancePackOutcome> AddCompliancePackOutcomeCallable;
                 typedef std::function<void(const ConfigClient*, const Model::AddCompliancePackRequest&, AddCompliancePackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCompliancePackAsyncHandler;
@@ -188,6 +199,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAggregateConfigRuleResponse> DeleteAggregateConfigRuleOutcome;
                 typedef std::future<DeleteAggregateConfigRuleOutcome> DeleteAggregateConfigRuleOutcomeCallable;
                 typedef std::function<void(const ConfigClient*, const Model::DeleteAggregateConfigRuleRequest&, DeleteAggregateConfigRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAggregateConfigRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAlarmPolicyResponse> DeleteAlarmPolicyOutcome;
+                typedef std::future<DeleteAlarmPolicyOutcome> DeleteAlarmPolicyOutcomeCallable;
+                typedef std::function<void(const ConfigClient*, const Model::DeleteAlarmPolicyRequest&, DeleteAlarmPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlarmPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCompliancePackResponse> DeleteCompliancePackOutcome;
                 typedef std::future<DeleteCompliancePackOutcome> DeleteCompliancePackOutcomeCallable;
                 typedef std::function<void(const ConfigClient*, const Model::DeleteCompliancePackRequest&, DeleteCompliancePackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCompliancePackAsyncHandler;
@@ -254,6 +268,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListAggregatorsResponse> ListAggregatorsOutcome;
                 typedef std::future<ListAggregatorsOutcome> ListAggregatorsOutcomeCallable;
                 typedef std::function<void(const ConfigClient*, const Model::ListAggregatorsRequest&, ListAggregatorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAggregatorsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListAlarmPolicyResponse> ListAlarmPolicyOutcome;
+                typedef std::future<ListAlarmPolicyOutcome> ListAlarmPolicyOutcomeCallable;
+                typedef std::function<void(const ConfigClient*, const Model::ListAlarmPolicyRequest&, ListAlarmPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAlarmPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListCompliancePacksResponse> ListCompliancePacksOutcome;
                 typedef std::future<ListCompliancePacksOutcome> ListCompliancePacksOutcomeCallable;
                 typedef std::function<void(const ConfigClient*, const Model::ListCompliancePacksRequest&, ListCompliancePacksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListCompliancePacksAsyncHandler;
@@ -314,6 +331,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateAggregateConfigRuleResponse> UpdateAggregateConfigRuleOutcome;
                 typedef std::future<UpdateAggregateConfigRuleOutcome> UpdateAggregateConfigRuleOutcomeCallable;
                 typedef std::function<void(const ConfigClient*, const Model::UpdateAggregateConfigRuleRequest&, UpdateAggregateConfigRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAggregateConfigRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateAlarmPolicyResponse> UpdateAlarmPolicyOutcome;
+                typedef std::future<UpdateAlarmPolicyOutcome> UpdateAlarmPolicyOutcomeCallable;
+                typedef std::function<void(const ConfigClient*, const Model::UpdateAlarmPolicyRequest&, UpdateAlarmPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAlarmPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateCompliancePackResponse> UpdateCompliancePackOutcome;
                 typedef std::future<UpdateCompliancePackOutcome> UpdateCompliancePackOutcomeCallable;
                 typedef std::function<void(const ConfigClient*, const Model::UpdateCompliancePackRequest&, UpdateCompliancePackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCompliancePackAsyncHandler;
@@ -352,6 +372,15 @@ namespace TencentCloud
                 AddAggregateConfigRuleOutcome AddAggregateConfigRule(const Model::AddAggregateConfigRuleRequest &request);
                 void AddAggregateConfigRuleAsync(const Model::AddAggregateConfigRuleRequest& request, const AddAggregateConfigRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddAggregateConfigRuleOutcomeCallable AddAggregateConfigRuleCallable(const Model::AddAggregateConfigRuleRequest& request);
+
+                /**
+                 *新增告警监控规则
+                 * @param req AddAlarmPolicyRequest
+                 * @return AddAlarmPolicyOutcome
+                 */
+                AddAlarmPolicyOutcome AddAlarmPolicy(const Model::AddAlarmPolicyRequest &request);
+                void AddAlarmPolicyAsync(const Model::AddAlarmPolicyRequest& request, const AddAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddAlarmPolicyOutcomeCallable AddAlarmPolicyCallable(const Model::AddAlarmPolicyRequest& request);
 
                 /**
                  *新建合规包
@@ -433,6 +462,15 @@ namespace TencentCloud
                 DeleteAggregateConfigRuleOutcome DeleteAggregateConfigRule(const Model::DeleteAggregateConfigRuleRequest &request);
                 void DeleteAggregateConfigRuleAsync(const Model::DeleteAggregateConfigRuleRequest& request, const DeleteAggregateConfigRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAggregateConfigRuleOutcomeCallable DeleteAggregateConfigRuleCallable(const Model::DeleteAggregateConfigRuleRequest& request);
+
+                /**
+                 *删除告警规则
+                 * @param req DeleteAlarmPolicyRequest
+                 * @return DeleteAlarmPolicyOutcome
+                 */
+                DeleteAlarmPolicyOutcome DeleteAlarmPolicy(const Model::DeleteAlarmPolicyRequest &request);
+                void DeleteAlarmPolicyAsync(const Model::DeleteAlarmPolicyRequest& request, const DeleteAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAlarmPolicyOutcomeCallable DeleteAlarmPolicyCallable(const Model::DeleteAlarmPolicyRequest& request);
 
                 /**
                  *删除合规包
@@ -633,6 +671,15 @@ namespace TencentCloud
                 ListAggregatorsOutcomeCallable ListAggregatorsCallable(const Model::ListAggregatorsRequest& request);
 
                 /**
+                 *告警规则列表
+                 * @param req ListAlarmPolicyRequest
+                 * @return ListAlarmPolicyOutcome
+                 */
+                ListAlarmPolicyOutcome ListAlarmPolicy(const Model::ListAlarmPolicyRequest &request);
+                void ListAlarmPolicyAsync(const Model::ListAlarmPolicyRequest& request, const ListAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListAlarmPolicyOutcomeCallable ListAlarmPolicyCallable(const Model::ListAlarmPolicyRequest& request);
+
+                /**
                  *获取合规包列表
                  * @param req ListCompliancePacksRequest
                  * @return ListCompliancePacksOutcome
@@ -811,6 +858,15 @@ namespace TencentCloud
                 UpdateAggregateConfigRuleOutcome UpdateAggregateConfigRule(const Model::UpdateAggregateConfigRuleRequest &request);
                 void UpdateAggregateConfigRuleAsync(const Model::UpdateAggregateConfigRuleRequest& request, const UpdateAggregateConfigRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateAggregateConfigRuleOutcomeCallable UpdateAggregateConfigRuleCallable(const Model::UpdateAggregateConfigRuleRequest& request);
+
+                /**
+                 *更新告警规则
+                 * @param req UpdateAlarmPolicyRequest
+                 * @return UpdateAlarmPolicyOutcome
+                 */
+                UpdateAlarmPolicyOutcome UpdateAlarmPolicy(const Model::UpdateAlarmPolicyRequest &request);
+                void UpdateAlarmPolicyAsync(const Model::UpdateAlarmPolicyRequest& request, const UpdateAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateAlarmPolicyOutcomeCallable UpdateAlarmPolicyCallable(const Model::UpdateAlarmPolicyRequest& request);
 
                 /**
                  *编辑合规包

@@ -509,6 +509,27 @@ namespace TencentCloud
                      */
                     bool TrxIdHasBeenSet() const;
 
+                    /**
+                     * 获取客户端端口
+                     * @return ClientPort 客户端端口
+                     * 
+                     */
+                    int64_t GetClientPort() const;
+
+                    /**
+                     * 设置客户端端口
+                     * @param _clientPort 客户端端口
+                     * 
+                     */
+                    void SetClientPort(const int64_t& _clientPort);
+
+                    /**
+                     * 判断参数 ClientPort 是否已赋值
+                     * @return ClientPort 是否已赋值
+                     * 
+                     */
+                    bool ClientPortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -642,6 +663,12 @@ namespace TencentCloud
                      */
                     int64_t m_trxId;
                     bool m_trxIdHasBeenSet;
+
+                    /**
+                     * 客户端端口
+                     */
+                    int64_t m_clientPort;
+                    bool m_clientPortHasBeenSet;
 
                 };
             }

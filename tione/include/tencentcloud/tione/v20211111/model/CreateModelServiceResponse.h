@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取生成的模型服务
-                     * @return Service 生成的模型服务
+                     * 获取<p>生成的模型服务</p>
+                     * @return Service <p>生成的模型服务</p>
                      * 
                      */
                     Service GetService() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 生成的模型服务
+                     * <p>生成的模型服务</p>
                      */
                     Service m_service;
                     bool m_serviceHasBeenSet;

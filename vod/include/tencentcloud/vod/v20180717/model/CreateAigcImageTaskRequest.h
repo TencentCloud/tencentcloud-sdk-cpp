@@ -234,6 +234,27 @@ namespace TencentCloud
                     bool InputRegionHasBeenSet() const;
 
                     /**
+                     * 获取<p>模型随机种子。</p>
+                     * @return Seed <p>模型随机种子。</p>
+                     * 
+                     */
+                    int64_t GetSeed() const;
+
+                    /**
+                     * 设置<p>模型随机种子。</p>
+                     * @param _seed <p>模型随机种子。</p>
+                     * 
+                     */
+                    void SetSeed(const int64_t& _seed);
+
+                    /**
+                     * 判断参数 Seed 是否已赋值
+                     * @return Seed 是否已赋值
+                     * 
+                     */
+                    bool SeedHasBeenSet() const;
+
+                    /**
                      * 获取<p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      * @return SessionId <p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      * 
@@ -372,6 +393,12 @@ namespace TencentCloud
                      */
                     std::string m_inputRegion;
                     bool m_inputRegionHasBeenSet;
+
+                    /**
+                     * <p>模型随机种子。</p>
+                     */
+                    int64_t m_seed;
+                    bool m_seedHasBeenSet;
 
                     /**
                      * <p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>

@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>模型名称。取值：<br>Kling：可灵；<br>Vidu；<br>Hailuo：海螺；<br>Jimeng：即梦；<br>Hunyuan：混元；<br>Mingmou：明眸；<br>GV；<br>OS；</p>
-                     * @return ModelName <p>模型名称。取值：<br>Kling：可灵；<br>Vidu；<br>Hailuo：海螺；<br>Jimeng：即梦；<br>Hunyuan：混元；<br>Mingmou：明眸；<br>GV；<br>OS；</p>
+                     * 获取<p>模型名称。取值：<br>Kling：可灵；<br>Vidu；<br>Hailuo：海螺；<br>Jimeng：即梦；<br>Hunyuan：混元；<br>Mingmou：明眸；<br>GV；<br>OS；<br>PixVerse;</p>
+                     * @return ModelName <p>模型名称。取值：<br>Kling：可灵；<br>Vidu；<br>Hailuo：海螺；<br>Jimeng：即梦；<br>Hunyuan：混元；<br>Mingmou：明眸；<br>GV；<br>OS；<br>PixVerse;</p>
                      * 
                      */
                     std::string GetModelName() const;
 
                     /**
-                     * 设置<p>模型名称。取值：<br>Kling：可灵；<br>Vidu；<br>Hailuo：海螺；<br>Jimeng：即梦；<br>Hunyuan：混元；<br>Mingmou：明眸；<br>GV；<br>OS；</p>
-                     * @param _modelName <p>模型名称。取值：<br>Kling：可灵；<br>Vidu；<br>Hailuo：海螺；<br>Jimeng：即梦；<br>Hunyuan：混元；<br>Mingmou：明眸；<br>GV；<br>OS；</p>
+                     * 设置<p>模型名称。取值：<br>Kling：可灵；<br>Vidu；<br>Hailuo：海螺；<br>Jimeng：即梦；<br>Hunyuan：混元；<br>Mingmou：明眸；<br>GV；<br>OS；<br>PixVerse;</p>
+                     * @param _modelName <p>模型名称。取值：<br>Kling：可灵；<br>Vidu；<br>Hailuo：海螺；<br>Jimeng：即梦；<br>Hunyuan：混元；<br>Mingmou：明眸；<br>GV；<br>OS；<br>PixVerse;</p>
                      * 
                      */
                     void SetModelName(const std::string& _modelName);
@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool ModelNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>模型版本。取值：<br>当 ModelName 是 Hailuo，可选值为 02、2.3、2.3-fast；<br>当 ModelName 是 Kling，可选值为 1.6、2.0、2.1、2.5、2.6、O1、3.0、3.0-Omni；<br>当 ModelName 是 Jimeng，可选值为 3.0pro；<br>当 ModelName 是 Vidu，可选值为 q2、q2-pro、q2-turbo、q3、q3-pro、q3-turbo；<br>当 ModelName 是 GV，可选值为 3.1、3.1-fast；<br>当 ModelName 是 OS，可选值为 2.0；<br>当 ModelName 是 Hunyuan，可选值为 1.5；<br>当 ModelName 是 Mingmou，可选值为 1.0；</p>
-                     * @return ModelVersion <p>模型版本。取值：<br>当 ModelName 是 Hailuo，可选值为 02、2.3、2.3-fast；<br>当 ModelName 是 Kling，可选值为 1.6、2.0、2.1、2.5、2.6、O1、3.0、3.0-Omni；<br>当 ModelName 是 Jimeng，可选值为 3.0pro；<br>当 ModelName 是 Vidu，可选值为 q2、q2-pro、q2-turbo、q3、q3-pro、q3-turbo；<br>当 ModelName 是 GV，可选值为 3.1、3.1-fast；<br>当 ModelName 是 OS，可选值为 2.0；<br>当 ModelName 是 Hunyuan，可选值为 1.5；<br>当 ModelName 是 Mingmou，可选值为 1.0；</p>
+                     * 获取<p>模型版本。取值：<br>当 ModelName 是 Hailuo，可选值为 02、2.3、2.3-fast；<br>当 ModelName 是 Kling，可选值为 1.6、2.0、2.1、2.5、2.6、O1、3.0、3.0-Omni；<br>当 ModelName 是 Jimeng，可选值为 3.0pro；<br>当 ModelName 是 Vidu，可选值为 q2、q2-pro、q2-turbo、q3、q3-pro、q3-turbo；<br>当 ModelName 是 GV，可选值为 3.1、3.1-fast；<br>当 ModelName 是 OS，可选值为 2.0；<br>当 ModelName 是 Hunyuan，可选值为 1.5；<br>当 ModelName 是 Mingmou，可选值为 1.0；<br>当 ModelName 是 PixVerse，可选值为 v5.6、v6、c1；</p>
+                     * @return ModelVersion <p>模型版本。取值：<br>当 ModelName 是 Hailuo，可选值为 02、2.3、2.3-fast；<br>当 ModelName 是 Kling，可选值为 1.6、2.0、2.1、2.5、2.6、O1、3.0、3.0-Omni；<br>当 ModelName 是 Jimeng，可选值为 3.0pro；<br>当 ModelName 是 Vidu，可选值为 q2、q2-pro、q2-turbo、q3、q3-pro、q3-turbo；<br>当 ModelName 是 GV，可选值为 3.1、3.1-fast；<br>当 ModelName 是 OS，可选值为 2.0；<br>当 ModelName 是 Hunyuan，可选值为 1.5；<br>当 ModelName 是 Mingmou，可选值为 1.0；<br>当 ModelName 是 PixVerse，可选值为 v5.6、v6、c1；</p>
                      * 
                      */
                     std::string GetModelVersion() const;
 
                     /**
-                     * 设置<p>模型版本。取值：<br>当 ModelName 是 Hailuo，可选值为 02、2.3、2.3-fast；<br>当 ModelName 是 Kling，可选值为 1.6、2.0、2.1、2.5、2.6、O1、3.0、3.0-Omni；<br>当 ModelName 是 Jimeng，可选值为 3.0pro；<br>当 ModelName 是 Vidu，可选值为 q2、q2-pro、q2-turbo、q3、q3-pro、q3-turbo；<br>当 ModelName 是 GV，可选值为 3.1、3.1-fast；<br>当 ModelName 是 OS，可选值为 2.0；<br>当 ModelName 是 Hunyuan，可选值为 1.5；<br>当 ModelName 是 Mingmou，可选值为 1.0；</p>
-                     * @param _modelVersion <p>模型版本。取值：<br>当 ModelName 是 Hailuo，可选值为 02、2.3、2.3-fast；<br>当 ModelName 是 Kling，可选值为 1.6、2.0、2.1、2.5、2.6、O1、3.0、3.0-Omni；<br>当 ModelName 是 Jimeng，可选值为 3.0pro；<br>当 ModelName 是 Vidu，可选值为 q2、q2-pro、q2-turbo、q3、q3-pro、q3-turbo；<br>当 ModelName 是 GV，可选值为 3.1、3.1-fast；<br>当 ModelName 是 OS，可选值为 2.0；<br>当 ModelName 是 Hunyuan，可选值为 1.5；<br>当 ModelName 是 Mingmou，可选值为 1.0；</p>
+                     * 设置<p>模型版本。取值：<br>当 ModelName 是 Hailuo，可选值为 02、2.3、2.3-fast；<br>当 ModelName 是 Kling，可选值为 1.6、2.0、2.1、2.5、2.6、O1、3.0、3.0-Omni；<br>当 ModelName 是 Jimeng，可选值为 3.0pro；<br>当 ModelName 是 Vidu，可选值为 q2、q2-pro、q2-turbo、q3、q3-pro、q3-turbo；<br>当 ModelName 是 GV，可选值为 3.1、3.1-fast；<br>当 ModelName 是 OS，可选值为 2.0；<br>当 ModelName 是 Hunyuan，可选值为 1.5；<br>当 ModelName 是 Mingmou，可选值为 1.0；<br>当 ModelName 是 PixVerse，可选值为 v5.6、v6、c1；</p>
+                     * @param _modelVersion <p>模型版本。取值：<br>当 ModelName 是 Hailuo，可选值为 02、2.3、2.3-fast；<br>当 ModelName 是 Kling，可选值为 1.6、2.0、2.1、2.5、2.6、O1、3.0、3.0-Omni；<br>当 ModelName 是 Jimeng，可选值为 3.0pro；<br>当 ModelName 是 Vidu，可选值为 q2、q2-pro、q2-turbo、q3、q3-pro、q3-turbo；<br>当 ModelName 是 GV，可选值为 3.1、3.1-fast；<br>当 ModelName 是 OS，可选值为 2.0；<br>当 ModelName 是 Hunyuan，可选值为 1.5；<br>当 ModelName 是 Mingmou，可选值为 1.0；<br>当 ModelName 是 PixVerse，可选值为 v5.6、v6、c1；</p>
                      * 
                      */
                     void SetModelVersion(const std::string& _modelVersion);
@@ -319,6 +319,27 @@ namespace TencentCloud
                     bool SceneTypeHasBeenSet() const;
 
                     /**
+                     * 获取<p>模型随机种子。</p>
+                     * @return Seed <p>模型随机种子。</p>
+                     * 
+                     */
+                    int64_t GetSeed() const;
+
+                    /**
+                     * 设置<p>模型随机种子。</p>
+                     * @param _seed <p>模型随机种子。</p>
+                     * 
+                     */
+                    void SetSeed(const int64_t& _seed);
+
+                    /**
+                     * 判断参数 Seed 是否已赋值
+                     * @return Seed 是否已赋值
+                     * 
+                     */
+                    bool SeedHasBeenSet() const;
+
+                    /**
                      * 获取<p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      * @return SessionId <p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>
                      * 
@@ -411,13 +432,13 @@ namespace TencentCloud
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * <p>模型名称。取值：<br>Kling：可灵；<br>Vidu；<br>Hailuo：海螺；<br>Jimeng：即梦；<br>Hunyuan：混元；<br>Mingmou：明眸；<br>GV；<br>OS；</p>
+                     * <p>模型名称。取值：<br>Kling：可灵；<br>Vidu；<br>Hailuo：海螺；<br>Jimeng：即梦；<br>Hunyuan：混元；<br>Mingmou：明眸；<br>GV；<br>OS；<br>PixVerse;</p>
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;
 
                     /**
-                     * <p>模型版本。取值：<br>当 ModelName 是 Hailuo，可选值为 02、2.3、2.3-fast；<br>当 ModelName 是 Kling，可选值为 1.6、2.0、2.1、2.5、2.6、O1、3.0、3.0-Omni；<br>当 ModelName 是 Jimeng，可选值为 3.0pro；<br>当 ModelName 是 Vidu，可选值为 q2、q2-pro、q2-turbo、q3、q3-pro、q3-turbo；<br>当 ModelName 是 GV，可选值为 3.1、3.1-fast；<br>当 ModelName 是 OS，可选值为 2.0；<br>当 ModelName 是 Hunyuan，可选值为 1.5；<br>当 ModelName 是 Mingmou，可选值为 1.0；</p>
+                     * <p>模型版本。取值：<br>当 ModelName 是 Hailuo，可选值为 02、2.3、2.3-fast；<br>当 ModelName 是 Kling，可选值为 1.6、2.0、2.1、2.5、2.6、O1、3.0、3.0-Omni；<br>当 ModelName 是 Jimeng，可选值为 3.0pro；<br>当 ModelName 是 Vidu，可选值为 q2、q2-pro、q2-turbo、q3、q3-pro、q3-turbo；<br>当 ModelName 是 GV，可选值为 3.1、3.1-fast；<br>当 ModelName 是 OS，可选值为 2.0；<br>当 ModelName 是 Hunyuan，可选值为 1.5；<br>当 ModelName 是 Mingmou，可选值为 1.0；<br>当 ModelName 是 PixVerse，可选值为 v5.6、v6、c1；</p>
                      */
                     std::string m_modelVersion;
                     bool m_modelVersionHasBeenSet;
@@ -481,6 +502,12 @@ namespace TencentCloud
                      */
                     std::string m_sceneType;
                     bool m_sceneTypeHasBeenSet;
+
+                    /**
+                     * <p>模型随机种子。</p>
+                     */
+                    int64_t m_seed;
+                    bool m_seedHasBeenSet;
 
                     /**
                      * <p>用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。</p>

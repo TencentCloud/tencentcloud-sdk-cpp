@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Config::V20220802::Model;
 using namespace std;
 
-AddConfigRuleResponse::AddConfigRuleResponse()
+AddConfigRuleResponse::AddConfigRuleResponse() :
+    m_ruleIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome AddConfigRuleResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("RuleId") && !rsp["RuleId"].IsNull())
+    {
+        if (!rsp["RuleId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleId = string(rsp["RuleId"].GetString());
+        m_ruleIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string AddConfigRuleResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_ruleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string AddConfigRuleResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string AddConfigRuleResponse::GetRuleId() const
+{
+    return m_ruleId;
+}
+
+bool AddConfigRuleResponse::RuleIdHasBeenSet() const
+{
+    return m_ruleIdHasBeenSet;
+}
 
 

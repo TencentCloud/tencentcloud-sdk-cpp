@@ -85,9 +85,11 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/FunctionInfo.h
   include/tencentcloud/tcb/v20180608/model/CreateEnvResponse.h
   include/tencentcloud/tcb/v20180608/model/RunCommandsResponse.h
+  include/tencentcloud/tcb/v20180608/model/ExecutePGSqlRequest.h
   include/tencentcloud/tcb/v20180608/model/StaticStoreInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeApiKeyListResponse.h
   include/tencentcloud/tcb/v20180608/model/RunSqlResponse.h
+  include/tencentcloud/tcb/v20180608/model/ExecutePGSqlResponse.h
   include/tencentcloud/tcb/v20180608/model/ProviderRequestParametersMap.h
   include/tencentcloud/tcb/v20180608/model/CreateUserResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvAccountCircleRequest.h
@@ -307,9 +309,11 @@ set(tcb_src
   src/v20180608/model/FunctionInfo.cpp
   src/v20180608/model/CreateEnvResponse.cpp
   src/v20180608/model/RunCommandsResponse.cpp
+  src/v20180608/model/ExecutePGSqlRequest.cpp
   src/v20180608/model/StaticStoreInfo.cpp
   src/v20180608/model/DescribeApiKeyListResponse.cpp
   src/v20180608/model/RunSqlResponse.cpp
+  src/v20180608/model/ExecutePGSqlResponse.cpp
   src/v20180608/model/ProviderRequestParametersMap.cpp
   src/v20180608/model/CreateUserResponse.cpp
   src/v20180608/model/DescribeEnvAccountCircleRequest.cpp

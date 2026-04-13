@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名
-                     * @return Domain 域名
+                     * 获取<p>域名</p>
+                     * @return Domain <p>域名</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置域名
-                     * @param _domain 域名
+                     * 设置<p>域名</p>
+                     * @param _domain <p>域名</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取记录类型，可通过接口DescribeRecordType获得，大写英文，比如：A 。
-                     * @return RecordType 记录类型，可通过接口DescribeRecordType获得，大写英文，比如：A 。
+                     * 获取<p>记录类型，可通过接口DescribeRecordType获得，大写英文，比如：A 。</p>
+                     * @return RecordType <p>记录类型，可通过接口DescribeRecordType获得，大写英文，比如：A 。</p>
                      * 
                      */
                     std::string GetRecordType() const;
 
                     /**
-                     * 设置记录类型，可通过接口DescribeRecordType获得，大写英文，比如：A 。
-                     * @param _recordType 记录类型，可通过接口DescribeRecordType获得，大写英文，比如：A 。
+                     * 设置<p>记录类型，可通过接口DescribeRecordType获得，大写英文，比如：A 。</p>
+                     * @param _recordType <p>记录类型，可通过接口DescribeRecordType获得，大写英文，比如：A 。</p>
                      * 
                      */
                     void SetRecordType(const std::string& _recordType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RecordTypeHasBeenSet() const;
 
                     /**
-                     * 获取记录线路，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息。比如：默认。
-                     * @return RecordLine 记录线路，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息。比如：默认。
+                     * 获取<p>记录线路，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息。比如：默认。</p>
+                     * @return RecordLine <p>记录线路，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息。比如：默认。</p>
                      * 
                      */
                     std::string GetRecordLine() const;
 
                     /**
-                     * 设置记录线路，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息。比如：默认。
-                     * @param _recordLine 记录线路，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息。比如：默认。
+                     * 设置<p>记录线路，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息。比如：默认。</p>
+                     * @param _recordLine <p>记录线路，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息。比如：默认。</p>
                      * 
                      */
                     void SetRecordLine(const std::string& _recordLine);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool RecordLineHasBeenSet() const;
 
                     /**
-                     * 获取记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。
-                     * @return Value 记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。
+                     * 获取<p>记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。</p>
+                     * @return Value <p>记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。</p>
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。
-                     * @param _value 记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。
+                     * 设置<p>记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。</p>
+                     * @param _value <p>记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。</p>
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ValueHasBeenSet() const;
 
                     /**
-                     * 获取记录 ID 。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
-                     * @return RecordId 记录 ID 。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
+                     * 获取<p>记录 ID 。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId</p>
+                     * @return RecordId <p>记录 ID 。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId</p>
                      * 
                      */
                     uint64_t GetRecordId() const;
 
                     /**
-                     * 设置记录 ID 。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
-                     * @param _recordId 记录 ID 。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
+                     * 设置<p>记录 ID 。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId</p>
+                     * @param _recordId <p>记录 ID 。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId</p>
                      * 
                      */
                     void SetRecordId(const uint64_t& _recordId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool RecordIdHasBeenSet() const;
 
                     /**
-                     * 获取域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
-                     * @return DomainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * 获取<p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>
+                     * @return DomainId <p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>
                      * 
                      */
                     uint64_t GetDomainId() const;
 
                     /**
-                     * 设置域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
-                     * @param _domainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * 设置<p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>
+                     * @param _domainId <p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>
                      * 
                      */
                     void SetDomainId(const uint64_t& _domainId);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool DomainIdHasBeenSet() const;
 
                     /**
-                     * 获取主机记录，如 www，如果不传，默认为 @。
-                     * @return SubDomain 主机记录，如 www，如果不传，默认为 @。
+                     * 获取<p>主机记录，如 www，如果不传，默认为 @。</p>
+                     * @return SubDomain <p>主机记录，如 www，如果不传，默认为 @。</p>
                      * 
                      */
                     std::string GetSubDomain() const;
 
                     /**
-                     * 设置主机记录，如 www，如果不传，默认为 @。
-                     * @param _subDomain 主机记录，如 www，如果不传，默认为 @。
+                     * 设置<p>主机记录，如 www，如果不传，默认为 @。</p>
+                     * @param _subDomain <p>主机记录，如 www，如果不传，默认为 @。</p>
                      * 
                      */
                     void SetSubDomain(const std::string& _subDomain);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool SubDomainHasBeenSet() const;
 
                     /**
-                     * 获取线路的 ID，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
-                     * @return RecordLineId 线路的 ID，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * 获取<p>线路的 ID，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。</p>
+                     * @return RecordLineId <p>线路的 ID，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。</p>
                      * 
                      */
                     std::string GetRecordLineId() const;
 
                     /**
-                     * 设置线路的 ID，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
-                     * @param _recordLineId 线路的 ID，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * 设置<p>线路的 ID，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。</p>
+                     * @param _recordLineId <p>线路的 ID，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。</p>
                      * 
                      */
                     void SetRecordLineId(const std::string& _recordLineId);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool RecordLineIdHasBeenSet() const;
 
                     /**
-                     * 获取MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
-                     * @return MX MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
+                     * 获取<p>MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围0-65535。</p><p>取值范围：[0, 65535]</p>
+                     * @return MX <p>MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围0-65535。</p><p>取值范围：[0, 65535]</p>
                      * 
                      */
                     uint64_t GetMX() const;
 
                     /**
-                     * 设置MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
-                     * @param _mX MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
+                     * 设置<p>MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围0-65535。</p><p>取值范围：[0, 65535]</p>
+                     * @param _mX <p>MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围0-65535。</p><p>取值范围：[0, 65535]</p>
                      * 
                      */
                     void SetMX(const uint64_t& _mX);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool MXHasBeenSet() const;
 
                     /**
-                     * 获取TTL，范围1-604800，不同等级域名最小值不同。
-                     * @return TTL TTL，范围1-604800，不同等级域名最小值不同。
+                     * 获取<p>TTL，范围1-604800，不同等级域名最小值不同。</p>
+                     * @return TTL <p>TTL，范围1-604800，不同等级域名最小值不同。</p>
                      * 
                      */
                     uint64_t GetTTL() const;
 
                     /**
-                     * 设置TTL，范围1-604800，不同等级域名最小值不同。
-                     * @param _tTL TTL，范围1-604800，不同等级域名最小值不同。
+                     * 设置<p>TTL，范围1-604800，不同等级域名最小值不同。</p>
+                     * @param _tTL <p>TTL，范围1-604800，不同等级域名最小值不同。</p>
                      * 
                      */
                     void SetTTL(const uint64_t& _tTL);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool TTLHasBeenSet() const;
 
                     /**
-                     * 获取权重信息，0到100的整数。0 表示关闭，不传该参数，表示不设置权重信息。
-                     * @return Weight 权重信息，0到100的整数。0 表示关闭，不传该参数，表示不设置权重信息。
+                     * 获取<p>权重信息，0到100的整数。0 表示关闭，不传该参数，表示不设置权重信息。</p>
+                     * @return Weight <p>权重信息，0到100的整数。0 表示关闭，不传该参数，表示不设置权重信息。</p>
                      * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
-                     * 设置权重信息，0到100的整数。0 表示关闭，不传该参数，表示不设置权重信息。
-                     * @param _weight 权重信息，0到100的整数。0 表示关闭，不传该参数，表示不设置权重信息。
+                     * 设置<p>权重信息，0到100的整数。0 表示关闭，不传该参数，表示不设置权重信息。</p>
+                     * @param _weight <p>权重信息，0到100的整数。0 表示关闭，不传该参数，表示不设置权重信息。</p>
                      * 
                      */
                     void SetWeight(const uint64_t& _weight);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool WeightHasBeenSet() const;
 
                     /**
-                     * 获取记录初始状态，取值范围为 ENABLE 和 DISABLE 。默认为 ENABLE ，如果传入 DISABLE，解析不会生效，也不会验证负载均衡的限制。
-                     * @return Status 记录初始状态，取值范围为 ENABLE 和 DISABLE 。默认为 ENABLE ，如果传入 DISABLE，解析不会生效，也不会验证负载均衡的限制。
+                     * 获取<p>记录初始状态，取值范围为 ENABLE 和 DISABLE 。默认为 ENABLE ，如果传入 DISABLE，解析不会生效，也不会验证负载均衡的限制。</p>
+                     * @return Status <p>记录初始状态，取值范围为 ENABLE 和 DISABLE 。默认为 ENABLE ，如果传入 DISABLE，解析不会生效，也不会验证负载均衡的限制。</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置记录初始状态，取值范围为 ENABLE 和 DISABLE 。默认为 ENABLE ，如果传入 DISABLE，解析不会生效，也不会验证负载均衡的限制。
-                     * @param _status 记录初始状态，取值范围为 ENABLE 和 DISABLE 。默认为 ENABLE ，如果传入 DISABLE，解析不会生效，也不会验证负载均衡的限制。
+                     * 设置<p>记录初始状态，取值范围为 ENABLE 和 DISABLE 。默认为 ENABLE ，如果传入 DISABLE，解析不会生效，也不会验证负载均衡的限制。</p>
+                     * @param _status <p>记录初始状态，取值范围为 ENABLE 和 DISABLE 。默认为 ENABLE ，如果传入 DISABLE，解析不会生效，也不会验证负载均衡的限制。</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取记录的备注信息。传空删除备注。
-                     * @return Remark 记录的备注信息。传空删除备注。
+                     * 获取<p>记录的备注信息。传空删除备注。</p>
+                     * @return Remark <p>记录的备注信息。传空删除备注。</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置记录的备注信息。传空删除备注。
-                     * @param _remark 记录的备注信息。传空删除备注。
+                     * 设置<p>记录的备注信息。传空删除备注。</p>
+                     * @param _remark <p>记录的备注信息。传空删除备注。</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -316,15 +316,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取开启DNSSEC时，强制将其它记录修改为CNAME/URL记录
-                     * @return DnssecConflictMode 开启DNSSEC时，强制将其它记录修改为CNAME/URL记录
+                     * 获取<p>开启DNSSEC时，强制将其它记录修改为CNAME/URL记录</p>
+                     * @return DnssecConflictMode <p>开启DNSSEC时，强制将其它记录修改为CNAME/URL记录</p>
                      * 
                      */
                     std::string GetDnssecConflictMode() const;
 
                     /**
-                     * 设置开启DNSSEC时，强制将其它记录修改为CNAME/URL记录
-                     * @param _dnssecConflictMode 开启DNSSEC时，强制将其它记录修改为CNAME/URL记录
+                     * 设置<p>开启DNSSEC时，强制将其它记录修改为CNAME/URL记录</p>
+                     * @param _dnssecConflictMode <p>开启DNSSEC时，强制将其它记录修改为CNAME/URL记录</p>
                      * 
                      */
                     void SetDnssecConflictMode(const std::string& _dnssecConflictMode);
@@ -339,85 +339,85 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名
+                     * <p>域名</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 记录类型，可通过接口DescribeRecordType获得，大写英文，比如：A 。
+                     * <p>记录类型，可通过接口DescribeRecordType获得，大写英文，比如：A 。</p>
                      */
                     std::string m_recordType;
                     bool m_recordTypeHasBeenSet;
 
                     /**
-                     * 记录线路，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息。比如：默认。
+                     * <p>记录线路，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息。比如：默认。</p>
                      */
                     std::string m_recordLine;
                     bool m_recordLineHasBeenSet;
 
                     /**
-                     * 记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。
+                     * <p>记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。</p>
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
-                     * 记录 ID 。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
+                     * <p>记录 ID 。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId</p>
                      */
                     uint64_t m_recordId;
                     bool m_recordIdHasBeenSet;
 
                     /**
-                     * 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * <p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>
                      */
                     uint64_t m_domainId;
                     bool m_domainIdHasBeenSet;
 
                     /**
-                     * 主机记录，如 www，如果不传，默认为 @。
+                     * <p>主机记录，如 www，如果不传，默认为 @。</p>
                      */
                     std::string m_subDomain;
                     bool m_subDomainHasBeenSet;
 
                     /**
-                     * 线路的 ID，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * <p>线路的 ID，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。</p>
                      */
                     std::string m_recordLineId;
                     bool m_recordLineIdHasBeenSet;
 
                     /**
-                     * MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。
+                     * <p>MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围0-65535。</p><p>取值范围：[0, 65535]</p>
                      */
                     uint64_t m_mX;
                     bool m_mXHasBeenSet;
 
                     /**
-                     * TTL，范围1-604800，不同等级域名最小值不同。
+                     * <p>TTL，范围1-604800，不同等级域名最小值不同。</p>
                      */
                     uint64_t m_tTL;
                     bool m_tTLHasBeenSet;
 
                     /**
-                     * 权重信息，0到100的整数。0 表示关闭，不传该参数，表示不设置权重信息。
+                     * <p>权重信息，0到100的整数。0 表示关闭，不传该参数，表示不设置权重信息。</p>
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;
 
                     /**
-                     * 记录初始状态，取值范围为 ENABLE 和 DISABLE 。默认为 ENABLE ，如果传入 DISABLE，解析不会生效，也不会验证负载均衡的限制。
+                     * <p>记录初始状态，取值范围为 ENABLE 和 DISABLE 。默认为 ENABLE ，如果传入 DISABLE，解析不会生效，也不会验证负载均衡的限制。</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 记录的备注信息。传空删除备注。
+                     * <p>记录的备注信息。传空删除备注。</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 开启DNSSEC时，强制将其它记录修改为CNAME/URL记录
+                     * <p>开启DNSSEC时，强制将其它记录修改为CNAME/URL记录</p>
                      */
                     std::string m_dnssecConflictMode;
                     bool m_dnssecConflictModeHasBeenSet;

@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取cfs的配置信息
-                     * @return CFSConfig cfs的配置信息
+                     * 获取<p>cfs的配置信息</p>
+                     * @return CFSConfig <p>cfs的配置信息</p>
                      * 
                      */
                     CFSConfig GetCFSConfig() const;
 
                     /**
-                     * 设置cfs的配置信息
-                     * @param _cFSConfig cfs的配置信息
+                     * 设置<p>cfs的配置信息</p>
+                     * @param _cFSConfig <p>cfs的配置信息</p>
                      * 
                      */
                     void SetCFSConfig(const CFSConfig& _cFSConfig);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool CFSConfigHasBeenSet() const;
 
                     /**
-                     * 获取挂载源类型，CFS、COS、PUBLIC_DATA_SOURCE，默认为CFS
-                     * @return VolumeSourceType 挂载源类型，CFS、COS、PUBLIC_DATA_SOURCE，默认为CFS
+                     * 获取<p>挂载源类型，CFS、COS、PUBLIC_DATA_SOURCE，默认为CFS</p>
+                     * @return VolumeSourceType <p>挂载源类型，CFS、COS、PUBLIC_DATA_SOURCE，默认为CFS</p>
                      * 
                      */
                     std::string GetVolumeSourceType() const;
 
                     /**
-                     * 设置挂载源类型，CFS、COS、PUBLIC_DATA_SOURCE，默认为CFS
-                     * @param _volumeSourceType 挂载源类型，CFS、COS、PUBLIC_DATA_SOURCE，默认为CFS
+                     * 设置<p>挂载源类型，CFS、COS、PUBLIC_DATA_SOURCE，默认为CFS</p>
+                     * @param _volumeSourceType <p>挂载源类型，CFS、COS、PUBLIC_DATA_SOURCE，默认为CFS</p>
                      * 
                      */
                     void SetVolumeSourceType(const std::string& _volumeSourceType);
@@ -91,18 +91,18 @@ namespace TencentCloud
                     bool VolumeSourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取自定义容器内挂载路径
+                     * 获取<p>自定义容器内挂载路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MountPath 自定义容器内挂载路径
+                     * @return MountPath <p>自定义容器内挂载路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMountPath() const;
 
                     /**
-                     * 设置自定义容器内挂载路径
+                     * 设置<p>自定义容器内挂载路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mountPath 自定义容器内挂载路径
+                     * @param _mountPath <p>自定义容器内挂载路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -116,15 +116,15 @@ namespace TencentCloud
                     bool MountPathHasBeenSet() const;
 
                     /**
-                     * 获取挂载数据源时的配置信息
-                     * @return PublicDataSource 挂载数据源时的配置信息
+                     * 获取<p>挂载数据源时的配置信息</p>
+                     * @return PublicDataSource <p>挂载数据源时的配置信息</p>
                      * 
                      */
                     PublicDataSourceFS GetPublicDataSource() const;
 
                     /**
-                     * 设置挂载数据源时的配置信息
-                     * @param _publicDataSource 挂载数据源时的配置信息
+                     * 设置<p>挂载数据源时的配置信息</p>
+                     * @param _publicDataSource <p>挂载数据源时的配置信息</p>
                      * 
                      */
                     void SetPublicDataSource(const PublicDataSourceFS& _publicDataSource);
@@ -139,26 +139,26 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * cfs的配置信息
+                     * <p>cfs的配置信息</p>
                      */
                     CFSConfig m_cFSConfig;
                     bool m_cFSConfigHasBeenSet;
 
                     /**
-                     * 挂载源类型，CFS、COS、PUBLIC_DATA_SOURCE，默认为CFS
+                     * <p>挂载源类型，CFS、COS、PUBLIC_DATA_SOURCE，默认为CFS</p>
                      */
                     std::string m_volumeSourceType;
                     bool m_volumeSourceTypeHasBeenSet;
 
                     /**
-                     * 自定义容器内挂载路径
+                     * <p>自定义容器内挂载路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mountPath;
                     bool m_mountPathHasBeenSet;
 
                     /**
-                     * 挂载数据源时的配置信息
+                     * <p>挂载数据源时的配置信息</p>
                      */
                     PublicDataSourceFS m_publicDataSource;
                     bool m_publicDataSourceHasBeenSet;

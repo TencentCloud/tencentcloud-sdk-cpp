@@ -159,6 +159,8 @@
 #include <tencentcloud/mongodb/v20190725/model/ResetDBInstancePasswordResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/RestartNodesRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/RestartNodesResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/RestoreDBInstanceRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/RestoreDBInstanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/SetAccountUserPrivilegeRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/SetAccountUserPrivilegeResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/SetBackupRulesRequest.h>
@@ -391,6 +393,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RestartNodesResponse> RestartNodesOutcome;
                 typedef std::future<RestartNodesOutcome> RestartNodesOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::RestartNodesRequest&, RestartNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartNodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::RestoreDBInstanceResponse> RestoreDBInstanceOutcome;
+                typedef std::future<RestoreDBInstanceOutcome> RestoreDBInstanceOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::RestoreDBInstanceRequest&, RestoreDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestoreDBInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetAccountUserPrivilegeResponse> SetAccountUserPrivilegeOutcome;
                 typedef std::future<SetAccountUserPrivilegeOutcome> SetAccountUserPrivilegeOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::SetAccountUserPrivilegeRequest&, SetAccountUserPrivilegeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAccountUserPrivilegeAsyncHandler;
@@ -1032,6 +1037,15 @@ namespace TencentCloud
                 RestartNodesOutcome RestartNodes(const Model::RestartNodesRequest &request);
                 void RestartNodesAsync(const Model::RestartNodesRequest& request, const RestartNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RestartNodesOutcomeCallable RestartNodesCallable(const Model::RestartNodesRequest& request);
+
+                /**
+                 *本接口(RestoreDBInstance)用于回档数据库实例到指定时间点。
+                 * @param req RestoreDBInstanceRequest
+                 * @return RestoreDBInstanceOutcome
+                 */
+                RestoreDBInstanceOutcome RestoreDBInstance(const Model::RestoreDBInstanceRequest &request);
+                void RestoreDBInstanceAsync(const Model::RestoreDBInstanceRequest& request, const RestoreDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestoreDBInstanceOutcomeCallable RestoreDBInstanceCallable(const Model::RestoreDBInstanceRequest& request);
 
                 /**
                  *本接口（SetAccountUserPrivilege）用于设置实例的账号权限。

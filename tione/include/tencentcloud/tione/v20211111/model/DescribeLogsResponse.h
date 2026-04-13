@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分页的游标
+                     * 获取<p>分页的游标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Context 分页的游标
+                     * @return Context <p>分页的游标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool ContextHasBeenSet() const;
 
                     /**
-                     * 获取日志数组
+                     * 获取<p>日志数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Content 日志数组
+                     * @return Content <p>日志数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -79,14 +79,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分页的游标
+                     * <p>分页的游标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;
 
                     /**
-                     * 日志数组
+                     * <p>日志数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LogIdentity> m_content;

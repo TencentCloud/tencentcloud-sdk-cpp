@@ -44,35 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务类型，TRAIN为任务式建模, NOTEBOOK为Notebook, INFER为在线服务, BATCH为批量预测
-枚举值：
-- TRAIN
-- NOTEBOOK
-- INFER
-- BATCH
-                     * @return Service 服务类型，TRAIN为任务式建模, NOTEBOOK为Notebook, INFER为在线服务, BATCH为批量预测
-枚举值：
-- TRAIN
-- NOTEBOOK
-- INFER
-- BATCH
+                     * 获取<p>服务类型，TRAIN为任务式建模, NOTEBOOK为Notebook, INFER为在线服务, BATCH为批量预测<br>枚举值：</p><ul><li>TRAIN</li><li>NOTEBOOK</li><li>INFER</li><li>BATCH</li></ul>
+                     * @return Service <p>服务类型，TRAIN为任务式建模, NOTEBOOK为Notebook, INFER为在线服务, BATCH为批量预测<br>枚举值：</p><ul><li>TRAIN</li><li>NOTEBOOK</li><li>INFER</li><li>BATCH</li></ul>
                      * 
                      */
                     std::string GetService() const;
 
                     /**
-                     * 设置服务类型，TRAIN为任务式建模, NOTEBOOK为Notebook, INFER为在线服务, BATCH为批量预测
-枚举值：
-- TRAIN
-- NOTEBOOK
-- INFER
-- BATCH
-                     * @param _service 服务类型，TRAIN为任务式建模, NOTEBOOK为Notebook, INFER为在线服务, BATCH为批量预测
-枚举值：
-- TRAIN
-- NOTEBOOK
-- INFER
-- BATCH
+                     * 设置<p>服务类型，TRAIN为任务式建模, NOTEBOOK为Notebook, INFER为在线服务, BATCH为批量预测<br>枚举值：</p><ul><li>TRAIN</li><li>NOTEBOOK</li><li>INFER</li><li>BATCH</li></ul>
+                     * @param _service <p>服务类型，TRAIN为任务式建模, NOTEBOOK为Notebook, INFER为在线服务, BATCH为批量预测<br>枚举值：</p><ul><li>TRAIN</li><li>NOTEBOOK</li><li>INFER</li><li>BATCH</li></ul>
                      * 
                      */
                     void SetService(const std::string& _service);
@@ -85,15 +65,15 @@ namespace TencentCloud
                     bool ServiceHasBeenSet() const;
 
                     /**
-                     * 获取日志查询开始时间（RFC3339格式的时间字符串），默认值为当前时间的前一个小时
-                     * @return StartTime 日志查询开始时间（RFC3339格式的时间字符串），默认值为当前时间的前一个小时
+                     * 获取<p>日志查询开始时间（RFC3339格式的时间字符串），默认值为当前时间的前一个小时</p>
+                     * @return StartTime <p>日志查询开始时间（RFC3339格式的时间字符串），默认值为当前时间的前一个小时</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置日志查询开始时间（RFC3339格式的时间字符串），默认值为当前时间的前一个小时
-                     * @param _startTime 日志查询开始时间（RFC3339格式的时间字符串），默认值为当前时间的前一个小时
+                     * 设置<p>日志查询开始时间（RFC3339格式的时间字符串），默认值为当前时间的前一个小时</p>
+                     * @param _startTime <p>日志查询开始时间（RFC3339格式的时间字符串），默认值为当前时间的前一个小时</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -106,15 +86,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取日志查询结束时间（RFC3339格式的时间字符串），默认值为当前时间
-                     * @return EndTime 日志查询结束时间（RFC3339格式的时间字符串），默认值为当前时间
+                     * 获取<p>日志查询结束时间（RFC3339格式的时间字符串），默认值为当前时间</p>
+                     * @return EndTime <p>日志查询结束时间（RFC3339格式的时间字符串），默认值为当前时间</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置日志查询结束时间（RFC3339格式的时间字符串），默认值为当前时间
-                     * @param _endTime 日志查询结束时间（RFC3339格式的时间字符串），默认值为当前时间
+                     * 设置<p>日志查询结束时间（RFC3339格式的时间字符串），默认值为当前时间</p>
+                     * @param _endTime <p>日志查询结束时间（RFC3339格式的时间字符串），默认值为当前时间</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -127,15 +107,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取日志查询条数，默认值100，最大值1000
-                     * @return Limit 日志查询条数，默认值100，最大值1000
+                     * 获取<p>日志查询条数，默认值100，最大值1000</p>
+                     * @return Limit <p>日志查询条数，默认值100，最大值1000</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置日志查询条数，默认值100，最大值1000
-                     * @param _limit 日志查询条数，默认值100，最大值1000
+                     * 设置<p>日志查询条数，默认值100，最大值1000</p>
+                     * @param _limit <p>日志查询条数，默认值100，最大值1000</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -148,47 +128,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取服务ID，和Service参数对应，不同Service的服务ID获取方式不同，具体如下：
-- Service类型为TRAIN：
-  调用[DescribeTrainingTask接口](/document/product/851/75089)查询训练任务详情，ServiceId为接口返回值中Response.TrainingTaskDetail.LatestInstanceId
-- Service类型为NOTEBOOK：
-  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，ServiceId为接口返回值中Response.NotebookDetail.PodName
-- Service类型为INFER：
-  调用[DescribeModelServiceGroup接口](/document/product/851/82285)查询服务组详情，ServiceId为接口返回值中Response.ServiceGroup.Services.ServiceId
-- Service类型为BATCH：
-  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，ServiceId为接口返回值中Response.BatchTaskDetail.LatestInstanceId
-                     * @return ServiceId 服务ID，和Service参数对应，不同Service的服务ID获取方式不同，具体如下：
-- Service类型为TRAIN：
-  调用[DescribeTrainingTask接口](/document/product/851/75089)查询训练任务详情，ServiceId为接口返回值中Response.TrainingTaskDetail.LatestInstanceId
-- Service类型为NOTEBOOK：
-  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，ServiceId为接口返回值中Response.NotebookDetail.PodName
-- Service类型为INFER：
-  调用[DescribeModelServiceGroup接口](/document/product/851/82285)查询服务组详情，ServiceId为接口返回值中Response.ServiceGroup.Services.ServiceId
-- Service类型为BATCH：
-  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，ServiceId为接口返回值中Response.BatchTaskDetail.LatestInstanceId
+                     * 获取<p>服务ID，和Service参数对应，不同Service的服务ID获取方式不同，具体如下：</p><ul><li>Service类型为TRAIN：<br>调用<a href="/document/product/851/75089">DescribeTrainingTask接口</a>查询训练任务详情，ServiceId为接口返回值中Response.TrainingTaskDetail.LatestInstanceId</li><li>Service类型为NOTEBOOK：<br>调用<a href="/document/product/851/95662">DescribeNotebook接口</a>查询Notebook详情，ServiceId为接口返回值中Response.NotebookDetail.PodName</li><li>Service类型为INFER：<br>调用<a href="/document/product/851/82285">DescribeModelServiceGroup接口</a>查询服务组详情，ServiceId为接口返回值中Response.ServiceGroup.Services.ServiceId</li><li>Service类型为BATCH：<br>调用<a href="/document/product/851/80180">DescribeBatchTask接口</a>查询跑批任务详情，ServiceId为接口返回值中Response.BatchTaskDetail.LatestInstanceId</li></ul>
+                     * @return ServiceId <p>服务ID，和Service参数对应，不同Service的服务ID获取方式不同，具体如下：</p><ul><li>Service类型为TRAIN：<br>调用<a href="/document/product/851/75089">DescribeTrainingTask接口</a>查询训练任务详情，ServiceId为接口返回值中Response.TrainingTaskDetail.LatestInstanceId</li><li>Service类型为NOTEBOOK：<br>调用<a href="/document/product/851/95662">DescribeNotebook接口</a>查询Notebook详情，ServiceId为接口返回值中Response.NotebookDetail.PodName</li><li>Service类型为INFER：<br>调用<a href="/document/product/851/82285">DescribeModelServiceGroup接口</a>查询服务组详情，ServiceId为接口返回值中Response.ServiceGroup.Services.ServiceId</li><li>Service类型为BATCH：<br>调用<a href="/document/product/851/80180">DescribeBatchTask接口</a>查询跑批任务详情，ServiceId为接口返回值中Response.BatchTaskDetail.LatestInstanceId</li></ul>
                      * 
                      */
                     std::string GetServiceId() const;
 
                     /**
-                     * 设置服务ID，和Service参数对应，不同Service的服务ID获取方式不同，具体如下：
-- Service类型为TRAIN：
-  调用[DescribeTrainingTask接口](/document/product/851/75089)查询训练任务详情，ServiceId为接口返回值中Response.TrainingTaskDetail.LatestInstanceId
-- Service类型为NOTEBOOK：
-  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，ServiceId为接口返回值中Response.NotebookDetail.PodName
-- Service类型为INFER：
-  调用[DescribeModelServiceGroup接口](/document/product/851/82285)查询服务组详情，ServiceId为接口返回值中Response.ServiceGroup.Services.ServiceId
-- Service类型为BATCH：
-  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，ServiceId为接口返回值中Response.BatchTaskDetail.LatestInstanceId
-                     * @param _serviceId 服务ID，和Service参数对应，不同Service的服务ID获取方式不同，具体如下：
-- Service类型为TRAIN：
-  调用[DescribeTrainingTask接口](/document/product/851/75089)查询训练任务详情，ServiceId为接口返回值中Response.TrainingTaskDetail.LatestInstanceId
-- Service类型为NOTEBOOK：
-  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，ServiceId为接口返回值中Response.NotebookDetail.PodName
-- Service类型为INFER：
-  调用[DescribeModelServiceGroup接口](/document/product/851/82285)查询服务组详情，ServiceId为接口返回值中Response.ServiceGroup.Services.ServiceId
-- Service类型为BATCH：
-  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，ServiceId为接口返回值中Response.BatchTaskDetail.LatestInstanceId
+                     * 设置<p>服务ID，和Service参数对应，不同Service的服务ID获取方式不同，具体如下：</p><ul><li>Service类型为TRAIN：<br>调用<a href="/document/product/851/75089">DescribeTrainingTask接口</a>查询训练任务详情，ServiceId为接口返回值中Response.TrainingTaskDetail.LatestInstanceId</li><li>Service类型为NOTEBOOK：<br>调用<a href="/document/product/851/95662">DescribeNotebook接口</a>查询Notebook详情，ServiceId为接口返回值中Response.NotebookDetail.PodName</li><li>Service类型为INFER：<br>调用<a href="/document/product/851/82285">DescribeModelServiceGroup接口</a>查询服务组详情，ServiceId为接口返回值中Response.ServiceGroup.Services.ServiceId</li><li>Service类型为BATCH：<br>调用<a href="/document/product/851/80180">DescribeBatchTask接口</a>查询跑批任务详情，ServiceId为接口返回值中Response.BatchTaskDetail.LatestInstanceId</li></ul>
+                     * @param _serviceId <p>服务ID，和Service参数对应，不同Service的服务ID获取方式不同，具体如下：</p><ul><li>Service类型为TRAIN：<br>调用<a href="/document/product/851/75089">DescribeTrainingTask接口</a>查询训练任务详情，ServiceId为接口返回值中Response.TrainingTaskDetail.LatestInstanceId</li><li>Service类型为NOTEBOOK：<br>调用<a href="/document/product/851/95662">DescribeNotebook接口</a>查询Notebook详情，ServiceId为接口返回值中Response.NotebookDetail.PodName</li><li>Service类型为INFER：<br>调用<a href="/document/product/851/82285">DescribeModelServiceGroup接口</a>查询服务组详情，ServiceId为接口返回值中Response.ServiceGroup.Services.ServiceId</li><li>Service类型为BATCH：<br>调用<a href="/document/product/851/80180">DescribeBatchTask接口</a>查询跑批任务详情，ServiceId为接口返回值中Response.BatchTaskDetail.LatestInstanceId</li></ul>
                      * 
                      */
                     void SetServiceId(const std::string& _serviceId);
@@ -201,51 +149,15 @@ namespace TencentCloud
                     bool ServiceIdHasBeenSet() const;
 
                     /**
-                     * 获取Pod的名称，即需要查询服务对应的Pod，和Service参数对应，不同Service的PodName获取方式不同，具体如下：
-- Service类型为TRAIN：
-  调用[DescribeTrainingTaskPods接口](/document/product/851/75088)查询训练任务pod列表，PodName为接口返回值中Response.PodNames
-- Service类型为NOTEBOOK：
-  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，PodName为接口返回值中Response.NotebookDetail.PodName
-- Service类型为INFER：
-  调用[DescribeModelService接口](/document/product/851/82287)查询单个服务详情，PodName为接口返回值中Response.Service.ServiceInfo.PodInfos
-- Service类型为BATCH：
-  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，PodName为接口返回值中Response.BatchTaskDetail. PodList
-注：支持结尾通配符*
-                     * @return PodName Pod的名称，即需要查询服务对应的Pod，和Service参数对应，不同Service的PodName获取方式不同，具体如下：
-- Service类型为TRAIN：
-  调用[DescribeTrainingTaskPods接口](/document/product/851/75088)查询训练任务pod列表，PodName为接口返回值中Response.PodNames
-- Service类型为NOTEBOOK：
-  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，PodName为接口返回值中Response.NotebookDetail.PodName
-- Service类型为INFER：
-  调用[DescribeModelService接口](/document/product/851/82287)查询单个服务详情，PodName为接口返回值中Response.Service.ServiceInfo.PodInfos
-- Service类型为BATCH：
-  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，PodName为接口返回值中Response.BatchTaskDetail. PodList
-注：支持结尾通配符*
+                     * 获取<p>Pod的名称，即需要查询服务对应的Pod，和Service参数对应，不同Service的PodName获取方式不同，具体如下：</p><ul><li>Service类型为TRAIN：<br>调用<a href="/document/product/851/75088">DescribeTrainingTaskPods接口</a>查询训练任务pod列表，PodName为接口返回值中Response.PodNames</li><li>Service类型为NOTEBOOK：<br>调用<a href="/document/product/851/95662">DescribeNotebook接口</a>查询Notebook详情，PodName为接口返回值中Response.NotebookDetail.PodName</li><li>Service类型为INFER：<br>调用<a href="/document/product/851/82287">DescribeModelService接口</a>查询单个服务详情，PodName为接口返回值中Response.Service.ServiceInfo.PodInfos</li><li>Service类型为BATCH：<br>调用<a href="/document/product/851/80180">DescribeBatchTask接口</a>查询跑批任务详情，PodName为接口返回值中Response.BatchTaskDetail. PodList<br>注：支持结尾通配符*</li></ul>
+                     * @return PodName <p>Pod的名称，即需要查询服务对应的Pod，和Service参数对应，不同Service的PodName获取方式不同，具体如下：</p><ul><li>Service类型为TRAIN：<br>调用<a href="/document/product/851/75088">DescribeTrainingTaskPods接口</a>查询训练任务pod列表，PodName为接口返回值中Response.PodNames</li><li>Service类型为NOTEBOOK：<br>调用<a href="/document/product/851/95662">DescribeNotebook接口</a>查询Notebook详情，PodName为接口返回值中Response.NotebookDetail.PodName</li><li>Service类型为INFER：<br>调用<a href="/document/product/851/82287">DescribeModelService接口</a>查询单个服务详情，PodName为接口返回值中Response.Service.ServiceInfo.PodInfos</li><li>Service类型为BATCH：<br>调用<a href="/document/product/851/80180">DescribeBatchTask接口</a>查询跑批任务详情，PodName为接口返回值中Response.BatchTaskDetail. PodList<br>注：支持结尾通配符*</li></ul>
                      * 
                      */
                     std::string GetPodName() const;
 
                     /**
-                     * 设置Pod的名称，即需要查询服务对应的Pod，和Service参数对应，不同Service的PodName获取方式不同，具体如下：
-- Service类型为TRAIN：
-  调用[DescribeTrainingTaskPods接口](/document/product/851/75088)查询训练任务pod列表，PodName为接口返回值中Response.PodNames
-- Service类型为NOTEBOOK：
-  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，PodName为接口返回值中Response.NotebookDetail.PodName
-- Service类型为INFER：
-  调用[DescribeModelService接口](/document/product/851/82287)查询单个服务详情，PodName为接口返回值中Response.Service.ServiceInfo.PodInfos
-- Service类型为BATCH：
-  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，PodName为接口返回值中Response.BatchTaskDetail. PodList
-注：支持结尾通配符*
-                     * @param _podName Pod的名称，即需要查询服务对应的Pod，和Service参数对应，不同Service的PodName获取方式不同，具体如下：
-- Service类型为TRAIN：
-  调用[DescribeTrainingTaskPods接口](/document/product/851/75088)查询训练任务pod列表，PodName为接口返回值中Response.PodNames
-- Service类型为NOTEBOOK：
-  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，PodName为接口返回值中Response.NotebookDetail.PodName
-- Service类型为INFER：
-  调用[DescribeModelService接口](/document/product/851/82287)查询单个服务详情，PodName为接口返回值中Response.Service.ServiceInfo.PodInfos
-- Service类型为BATCH：
-  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，PodName为接口返回值中Response.BatchTaskDetail. PodList
-注：支持结尾通配符*
+                     * 设置<p>Pod的名称，即需要查询服务对应的Pod，和Service参数对应，不同Service的PodName获取方式不同，具体如下：</p><ul><li>Service类型为TRAIN：<br>调用<a href="/document/product/851/75088">DescribeTrainingTaskPods接口</a>查询训练任务pod列表，PodName为接口返回值中Response.PodNames</li><li>Service类型为NOTEBOOK：<br>调用<a href="/document/product/851/95662">DescribeNotebook接口</a>查询Notebook详情，PodName为接口返回值中Response.NotebookDetail.PodName</li><li>Service类型为INFER：<br>调用<a href="/document/product/851/82287">DescribeModelService接口</a>查询单个服务详情，PodName为接口返回值中Response.Service.ServiceInfo.PodInfos</li><li>Service类型为BATCH：<br>调用<a href="/document/product/851/80180">DescribeBatchTask接口</a>查询跑批任务详情，PodName为接口返回值中Response.BatchTaskDetail. PodList<br>注：支持结尾通配符*</li></ul>
+                     * @param _podName <p>Pod的名称，即需要查询服务对应的Pod，和Service参数对应，不同Service的PodName获取方式不同，具体如下：</p><ul><li>Service类型为TRAIN：<br>调用<a href="/document/product/851/75088">DescribeTrainingTaskPods接口</a>查询训练任务pod列表，PodName为接口返回值中Response.PodNames</li><li>Service类型为NOTEBOOK：<br>调用<a href="/document/product/851/95662">DescribeNotebook接口</a>查询Notebook详情，PodName为接口返回值中Response.NotebookDetail.PodName</li><li>Service类型为INFER：<br>调用<a href="/document/product/851/82287">DescribeModelService接口</a>查询单个服务详情，PodName为接口返回值中Response.Service.ServiceInfo.PodInfos</li><li>Service类型为BATCH：<br>调用<a href="/document/product/851/80180">DescribeBatchTask接口</a>查询跑批任务详情，PodName为接口返回值中Response.BatchTaskDetail. PodList<br>注：支持结尾通配符*</li></ul>
                      * 
                      */
                     void SetPodName(const std::string& _podName);
@@ -258,15 +170,15 @@ namespace TencentCloud
                     bool PodNameHasBeenSet() const;
 
                     /**
-                     * 获取排序方向（可选值为ASC, DESC ），默认为DESC
-                     * @return Order 排序方向（可选值为ASC, DESC ），默认为DESC
+                     * 获取<p>排序方向（可选值为ASC, DESC ），默认为DESC</p>
+                     * @return Order <p>排序方向（可选值为ASC, DESC ），默认为DESC</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序方向（可选值为ASC, DESC ），默认为DESC
-                     * @param _order 排序方向（可选值为ASC, DESC ），默认为DESC
+                     * 设置<p>排序方向（可选值为ASC, DESC ），默认为DESC</p>
+                     * @param _order <p>排序方向（可选值为ASC, DESC ），默认为DESC</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -279,15 +191,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取按哪个字段排序（可选值为Timestamp），默认值为Timestamp
-                     * @return OrderField 按哪个字段排序（可选值为Timestamp），默认值为Timestamp
+                     * 获取<p>按哪个字段排序（可选值为Timestamp），默认值为Timestamp</p>
+                     * @return OrderField <p>按哪个字段排序（可选值为Timestamp），默认值为Timestamp</p>
                      * 
                      */
                     std::string GetOrderField() const;
 
                     /**
-                     * 设置按哪个字段排序（可选值为Timestamp），默认值为Timestamp
-                     * @param _orderField 按哪个字段排序（可选值为Timestamp），默认值为Timestamp
+                     * 设置<p>按哪个字段排序（可选值为Timestamp），默认值为Timestamp</p>
+                     * @param _orderField <p>按哪个字段排序（可选值为Timestamp），默认值为Timestamp</p>
                      * 
                      */
                     void SetOrderField(const std::string& _orderField);
@@ -300,15 +212,15 @@ namespace TencentCloud
                     bool OrderFieldHasBeenSet() const;
 
                     /**
-                     * 获取日志查询上下文，查询下一页的时候需要回传这个字段，该字段来自本接口的返回
-                     * @return Context 日志查询上下文，查询下一页的时候需要回传这个字段，该字段来自本接口的返回
+                     * 获取<p>日志查询上下文，查询下一页的时候需要回传这个字段，该字段来自本接口的返回</p>
+                     * @return Context <p>日志查询上下文，查询下一页的时候需要回传这个字段，该字段来自本接口的返回</p>
                      * 
                      */
                     std::string GetContext() const;
 
                     /**
-                     * 设置日志查询上下文，查询下一页的时候需要回传这个字段，该字段来自本接口的返回
-                     * @param _context 日志查询上下文，查询下一页的时候需要回传这个字段，该字段来自本接口的返回
+                     * 设置<p>日志查询上下文，查询下一页的时候需要回传这个字段，该字段来自本接口的返回</p>
+                     * @param _context <p>日志查询上下文，查询下一页的时候需要回传这个字段，该字段来自本接口的返回</p>
                      * 
                      */
                     void SetContext(const std::string& _context);
@@ -321,31 +233,15 @@ namespace TencentCloud
                     bool ContextHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件
-注意: 
-1. Filter.Name：目前只支持Key（也就是按关键字过滤日志）
-2. Filter.Values：表示过滤日志的关键字；Values为多个的时候表示同时满足
-3. Filter. Negative和Filter. Fuzzy没有使用
-                     * @return Filters 过滤条件
-注意: 
-1. Filter.Name：目前只支持Key（也就是按关键字过滤日志）
-2. Filter.Values：表示过滤日志的关键字；Values为多个的时候表示同时满足
-3. Filter. Negative和Filter. Fuzzy没有使用
+                     * 获取<p>过滤条件<br>注意: </p><ol><li>Filter.Name：目前只支持Key（也就是按关键字过滤日志）</li><li>Filter.Values：表示过滤日志的关键字；Values为多个的时候表示同时满足</li><li>Filter. Negative和Filter. Fuzzy没有使用</li></ol>
+                     * @return Filters <p>过滤条件<br>注意: </p><ol><li>Filter.Name：目前只支持Key（也就是按关键字过滤日志）</li><li>Filter.Values：表示过滤日志的关键字；Values为多个的时候表示同时满足</li><li>Filter. Negative和Filter. Fuzzy没有使用</li></ol>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件
-注意: 
-1. Filter.Name：目前只支持Key（也就是按关键字过滤日志）
-2. Filter.Values：表示过滤日志的关键字；Values为多个的时候表示同时满足
-3. Filter. Negative和Filter. Fuzzy没有使用
-                     * @param _filters 过滤条件
-注意: 
-1. Filter.Name：目前只支持Key（也就是按关键字过滤日志）
-2. Filter.Values：表示过滤日志的关键字；Values为多个的时候表示同时满足
-3. Filter. Negative和Filter. Fuzzy没有使用
+                     * 设置<p>过滤条件<br>注意: </p><ol><li>Filter.Name：目前只支持Key（也就是按关键字过滤日志）</li><li>Filter.Values：表示过滤日志的关键字；Values为多个的时候表示同时满足</li><li>Filter. Negative和Filter. Fuzzy没有使用</li></ol>
+                     * @param _filters <p>过滤条件<br>注意: </p><ol><li>Filter.Name：目前只支持Key（也就是按关键字过滤日志）</li><li>Filter.Values：表示过滤日志的关键字；Values为多个的时候表示同时满足</li><li>Filter. Negative和Filter. Fuzzy没有使用</li></ol>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -358,15 +254,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取使用OFFSET分页查询时，指定返回的数据偏移量，默认为0
-                     * @return Offset 使用OFFSET分页查询时，指定返回的数据偏移量，默认为0
+                     * 获取<p>使用OFFSET分页查询时，指定返回的数据偏移量，默认为0</p>
+                     * @return Offset <p>使用OFFSET分页查询时，指定返回的数据偏移量，默认为0</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置使用OFFSET分页查询时，指定返回的数据偏移量，默认为0
-                     * @param _offset 使用OFFSET分页查询时，指定返回的数据偏移量，默认为0
+                     * 设置<p>使用OFFSET分页查询时，指定返回的数据偏移量，默认为0</p>
+                     * @param _offset <p>使用OFFSET分页查询时，指定返回的数据偏移量，默认为0</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -381,93 +277,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务类型，TRAIN为任务式建模, NOTEBOOK为Notebook, INFER为在线服务, BATCH为批量预测
-枚举值：
-- TRAIN
-- NOTEBOOK
-- INFER
-- BATCH
+                     * <p>服务类型，TRAIN为任务式建模, NOTEBOOK为Notebook, INFER为在线服务, BATCH为批量预测<br>枚举值：</p><ul><li>TRAIN</li><li>NOTEBOOK</li><li>INFER</li><li>BATCH</li></ul>
                      */
                     std::string m_service;
                     bool m_serviceHasBeenSet;
 
                     /**
-                     * 日志查询开始时间（RFC3339格式的时间字符串），默认值为当前时间的前一个小时
+                     * <p>日志查询开始时间（RFC3339格式的时间字符串），默认值为当前时间的前一个小时</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 日志查询结束时间（RFC3339格式的时间字符串），默认值为当前时间
+                     * <p>日志查询结束时间（RFC3339格式的时间字符串），默认值为当前时间</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 日志查询条数，默认值100，最大值1000
+                     * <p>日志查询条数，默认值100，最大值1000</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 服务ID，和Service参数对应，不同Service的服务ID获取方式不同，具体如下：
-- Service类型为TRAIN：
-  调用[DescribeTrainingTask接口](/document/product/851/75089)查询训练任务详情，ServiceId为接口返回值中Response.TrainingTaskDetail.LatestInstanceId
-- Service类型为NOTEBOOK：
-  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，ServiceId为接口返回值中Response.NotebookDetail.PodName
-- Service类型为INFER：
-  调用[DescribeModelServiceGroup接口](/document/product/851/82285)查询服务组详情，ServiceId为接口返回值中Response.ServiceGroup.Services.ServiceId
-- Service类型为BATCH：
-  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，ServiceId为接口返回值中Response.BatchTaskDetail.LatestInstanceId
+                     * <p>服务ID，和Service参数对应，不同Service的服务ID获取方式不同，具体如下：</p><ul><li>Service类型为TRAIN：<br>调用<a href="/document/product/851/75089">DescribeTrainingTask接口</a>查询训练任务详情，ServiceId为接口返回值中Response.TrainingTaskDetail.LatestInstanceId</li><li>Service类型为NOTEBOOK：<br>调用<a href="/document/product/851/95662">DescribeNotebook接口</a>查询Notebook详情，ServiceId为接口返回值中Response.NotebookDetail.PodName</li><li>Service类型为INFER：<br>调用<a href="/document/product/851/82285">DescribeModelServiceGroup接口</a>查询服务组详情，ServiceId为接口返回值中Response.ServiceGroup.Services.ServiceId</li><li>Service类型为BATCH：<br>调用<a href="/document/product/851/80180">DescribeBatchTask接口</a>查询跑批任务详情，ServiceId为接口返回值中Response.BatchTaskDetail.LatestInstanceId</li></ul>
                      */
                     std::string m_serviceId;
                     bool m_serviceIdHasBeenSet;
 
                     /**
-                     * Pod的名称，即需要查询服务对应的Pod，和Service参数对应，不同Service的PodName获取方式不同，具体如下：
-- Service类型为TRAIN：
-  调用[DescribeTrainingTaskPods接口](/document/product/851/75088)查询训练任务pod列表，PodName为接口返回值中Response.PodNames
-- Service类型为NOTEBOOK：
-  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，PodName为接口返回值中Response.NotebookDetail.PodName
-- Service类型为INFER：
-  调用[DescribeModelService接口](/document/product/851/82287)查询单个服务详情，PodName为接口返回值中Response.Service.ServiceInfo.PodInfos
-- Service类型为BATCH：
-  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，PodName为接口返回值中Response.BatchTaskDetail. PodList
-注：支持结尾通配符*
+                     * <p>Pod的名称，即需要查询服务对应的Pod，和Service参数对应，不同Service的PodName获取方式不同，具体如下：</p><ul><li>Service类型为TRAIN：<br>调用<a href="/document/product/851/75088">DescribeTrainingTaskPods接口</a>查询训练任务pod列表，PodName为接口返回值中Response.PodNames</li><li>Service类型为NOTEBOOK：<br>调用<a href="/document/product/851/95662">DescribeNotebook接口</a>查询Notebook详情，PodName为接口返回值中Response.NotebookDetail.PodName</li><li>Service类型为INFER：<br>调用<a href="/document/product/851/82287">DescribeModelService接口</a>查询单个服务详情，PodName为接口返回值中Response.Service.ServiceInfo.PodInfos</li><li>Service类型为BATCH：<br>调用<a href="/document/product/851/80180">DescribeBatchTask接口</a>查询跑批任务详情，PodName为接口返回值中Response.BatchTaskDetail. PodList<br>注：支持结尾通配符*</li></ul>
                      */
                     std::string m_podName;
                     bool m_podNameHasBeenSet;
 
                     /**
-                     * 排序方向（可选值为ASC, DESC ），默认为DESC
+                     * <p>排序方向（可选值为ASC, DESC ），默认为DESC</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 按哪个字段排序（可选值为Timestamp），默认值为Timestamp
+                     * <p>按哪个字段排序（可选值为Timestamp），默认值为Timestamp</p>
                      */
                     std::string m_orderField;
                     bool m_orderFieldHasBeenSet;
 
                     /**
-                     * 日志查询上下文，查询下一页的时候需要回传这个字段，该字段来自本接口的返回
+                     * <p>日志查询上下文，查询下一页的时候需要回传这个字段，该字段来自本接口的返回</p>
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;
 
                     /**
-                     * 过滤条件
-注意: 
-1. Filter.Name：目前只支持Key（也就是按关键字过滤日志）
-2. Filter.Values：表示过滤日志的关键字；Values为多个的时候表示同时满足
-3. Filter. Negative和Filter. Fuzzy没有使用
+                     * <p>过滤条件<br>注意: </p><ol><li>Filter.Name：目前只支持Key（也就是按关键字过滤日志）</li><li>Filter.Values：表示过滤日志的关键字；Values为多个的时候表示同时满足</li><li>Filter. Negative和Filter. Fuzzy没有使用</li></ol>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 使用OFFSET分页查询时，指定返回的数据偏移量，默认为0
+                     * <p>使用OFFSET分页查询时，指定返回的数据偏移量，默认为0</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

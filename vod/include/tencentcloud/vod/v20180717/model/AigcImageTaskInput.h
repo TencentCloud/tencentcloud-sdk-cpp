@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型名称。
-                     * @return ModelName 模型名称。
+                     * 获取<p>模型名称。</p>
+                     * @return ModelName <p>模型名称。</p>
                      * 
                      */
                     std::string GetModelName() const;
 
                     /**
-                     * 设置模型名称。
-                     * @param _modelName 模型名称。
+                     * 设置<p>模型名称。</p>
+                     * @param _modelName <p>模型名称。</p>
                      * 
                      */
                     void SetModelName(const std::string& _modelName);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool ModelNameHasBeenSet() const;
 
                     /**
-                     * 获取模型版本。
-                     * @return ModelVersion 模型版本。
+                     * 获取<p>模型版本。</p>
+                     * @return ModelVersion <p>模型版本。</p>
                      * 
                      */
                     std::string GetModelVersion() const;
 
                     /**
-                     * 设置模型版本。
-                     * @param _modelVersion 模型版本。
+                     * 设置<p>模型版本。</p>
+                     * @param _modelVersion <p>模型版本。</p>
                      * 
                      */
                     void SetModelVersion(const std::string& _modelVersion);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool ModelVersionHasBeenSet() const;
 
                     /**
-                     * 获取AIGC生图任务输入文件信息。
-                     * @return FileInfos AIGC生图任务输入文件信息。
+                     * 获取<p>AIGC生图任务输入文件信息。</p>
+                     * @return FileInfos <p>AIGC生图任务输入文件信息。</p>
                      * 
                      */
                     std::vector<AigcImageTaskInputFileInfo> GetFileInfos() const;
 
                     /**
-                     * 设置AIGC生图任务输入文件信息。
-                     * @param _fileInfos AIGC生图任务输入文件信息。
+                     * 设置<p>AIGC生图任务输入文件信息。</p>
+                     * @param _fileInfos <p>AIGC生图任务输入文件信息。</p>
                      * 
                      */
                     void SetFileInfos(const std::vector<AigcImageTaskInputFileInfo>& _fileInfos);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool FileInfosHasBeenSet() const;
 
                     /**
-                     * 获取生成图片的提示词。最大支持1000字符，当 FileInfos 为空时，此参数必填。
-                     * @return Prompt 生成图片的提示词。最大支持1000字符，当 FileInfos 为空时，此参数必填。
+                     * 获取<p>生成图片的提示词。最大支持1000字符，当 FileInfos 为空时，此参数必填。</p>
+                     * @return Prompt <p>生成图片的提示词。最大支持1000字符，当 FileInfos 为空时，此参数必填。</p>
                      * 
                      */
                     std::string GetPrompt() const;
 
                     /**
-                     * 设置生成图片的提示词。最大支持1000字符，当 FileInfos 为空时，此参数必填。
-                     * @param _prompt 生成图片的提示词。最大支持1000字符，当 FileInfos 为空时，此参数必填。
+                     * 设置<p>生成图片的提示词。最大支持1000字符，当 FileInfos 为空时，此参数必填。</p>
+                     * @param _prompt <p>生成图片的提示词。最大支持1000字符，当 FileInfos 为空时，此参数必填。</p>
                      * 
                      */
                     void SetPrompt(const std::string& _prompt);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool PromptHasBeenSet() const;
 
                     /**
-                     * 获取要阻止模型生成图片的提示词。最大支持1000字符。
-                     * @return NegativePrompt 要阻止模型生成图片的提示词。最大支持1000字符。
+                     * 获取<p>要阻止模型生成图片的提示词。最大支持1000字符。</p>
+                     * @return NegativePrompt <p>要阻止模型生成图片的提示词。最大支持1000字符。</p>
                      * 
                      */
                     std::string GetNegativePrompt() const;
 
                     /**
-                     * 设置要阻止模型生成图片的提示词。最大支持1000字符。
-                     * @param _negativePrompt 要阻止模型生成图片的提示词。最大支持1000字符。
+                     * 设置<p>要阻止模型生成图片的提示词。最大支持1000字符。</p>
+                     * @param _negativePrompt <p>要阻止模型生成图片的提示词。最大支持1000字符。</p>
                      * 
                      */
                     void SetNegativePrompt(const std::string& _negativePrompt);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool NegativePromptHasBeenSet() const;
 
                     /**
-                     * 获取是否自动优化提示词。开启时将自动优化传入的Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
-                     * @return EnhancePrompt 是否自动优化提示词。开启时将自动优化传入的Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+                     * 获取<p>是否自动优化提示词。开启时将自动优化传入的Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
+                     * @return EnhancePrompt <p>是否自动优化提示词。开启时将自动优化传入的Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
                      * 
                      */
                     std::string GetEnhancePrompt() const;
 
                     /**
-                     * 设置是否自动优化提示词。开启时将自动优化传入的Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
-                     * @param _enhancePrompt 是否自动优化提示词。开启时将自动优化传入的Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+                     * 设置<p>是否自动优化提示词。开启时将自动优化传入的Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
+                     * @param _enhancePrompt <p>是否自动优化提示词。开启时将自动优化传入的Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
                      * 
                      */
                     void SetEnhancePrompt(const std::string& _enhancePrompt);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool EnhancePromptHasBeenSet() const;
 
                     /**
-                     * 获取生成模式。取值有： <li>Standard：标准模式；</li> <li>Professional：高品质模式；</li> 
-                     * @return GenerationMode 生成模式。取值有： <li>Standard：标准模式；</li> <li>Professional：高品质模式；</li> 
+                     * 获取<p>生成模式。取值有： <li>Standard：标准模式；</li> <li>Professional：高品质模式；</li></p>
+                     * @return GenerationMode <p>生成模式。取值有： <li>Standard：标准模式；</li> <li>Professional：高品质模式；</li></p>
                      * 
                      */
                     std::string GetGenerationMode() const;
 
                     /**
-                     * 设置生成模式。取值有： <li>Standard：标准模式；</li> <li>Professional：高品质模式；</li> 
-                     * @param _generationMode 生成模式。取值有： <li>Standard：标准模式；</li> <li>Professional：高品质模式；</li> 
+                     * 设置<p>生成模式。取值有： <li>Standard：标准模式；</li> <li>Professional：高品质模式；</li></p>
+                     * @param _generationMode <p>生成模式。取值有： <li>Standard：标准模式；</li> <li>Professional：高品质模式；</li></p>
                      * 
                      */
                     void SetGenerationMode(const std::string& _generationMode);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool GenerationModeHasBeenSet() const;
 
                     /**
-                     * 获取AIGC 生图输出结果文件输出。
-                     * @return OutputConfig AIGC 生图输出结果文件输出。
+                     * 获取<p>AIGC 生图输出结果文件输出。</p>
+                     * @return OutputConfig <p>AIGC 生图输出结果文件输出。</p>
                      * 
                      */
                     AigcImageOutputConfig GetOutputConfig() const;
 
                     /**
-                     * 设置AIGC 生图输出结果文件输出。
-                     * @param _outputConfig AIGC 生图输出结果文件输出。
+                     * 设置<p>AIGC 生图输出结果文件输出。</p>
+                     * @param _outputConfig <p>AIGC 生图输出结果文件输出。</p>
                      * 
                      */
                     void SetOutputConfig(const AigcImageOutputConfig& _outputConfig);
@@ -216,55 +216,82 @@ namespace TencentCloud
                      */
                     bool OutputConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模型随机种子。</p>
+                     * @return Seed <p>模型随机种子。</p>
+                     * 
+                     */
+                    int64_t GetSeed() const;
+
+                    /**
+                     * 设置<p>模型随机种子。</p>
+                     * @param _seed <p>模型随机种子。</p>
+                     * 
+                     */
+                    void SetSeed(const int64_t& _seed);
+
+                    /**
+                     * 判断参数 Seed 是否已赋值
+                     * @return Seed 是否已赋值
+                     * 
+                     */
+                    bool SeedHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 模型名称。
+                     * <p>模型名称。</p>
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;
 
                     /**
-                     * 模型版本。
+                     * <p>模型版本。</p>
                      */
                     std::string m_modelVersion;
                     bool m_modelVersionHasBeenSet;
 
                     /**
-                     * AIGC生图任务输入文件信息。
+                     * <p>AIGC生图任务输入文件信息。</p>
                      */
                     std::vector<AigcImageTaskInputFileInfo> m_fileInfos;
                     bool m_fileInfosHasBeenSet;
 
                     /**
-                     * 生成图片的提示词。最大支持1000字符，当 FileInfos 为空时，此参数必填。
+                     * <p>生成图片的提示词。最大支持1000字符，当 FileInfos 为空时，此参数必填。</p>
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
 
                     /**
-                     * 要阻止模型生成图片的提示词。最大支持1000字符。
+                     * <p>要阻止模型生成图片的提示词。最大支持1000字符。</p>
                      */
                     std::string m_negativePrompt;
                     bool m_negativePromptHasBeenSet;
 
                     /**
-                     * 是否自动优化提示词。开启时将自动优化传入的Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> 
+                     * <p>是否自动优化提示词。开启时将自动优化传入的Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li></p>
                      */
                     std::string m_enhancePrompt;
                     bool m_enhancePromptHasBeenSet;
 
                     /**
-                     * 生成模式。取值有： <li>Standard：标准模式；</li> <li>Professional：高品质模式；</li> 
+                     * <p>生成模式。取值有： <li>Standard：标准模式；</li> <li>Professional：高品质模式；</li></p>
                      */
                     std::string m_generationMode;
                     bool m_generationModeHasBeenSet;
 
                     /**
-                     * AIGC 生图输出结果文件输出。
+                     * <p>AIGC 生图输出结果文件输出。</p>
                      */
                     AigcImageOutputConfig m_outputConfig;
                     bool m_outputConfigHasBeenSet;
+
+                    /**
+                     * <p>模型随机种子。</p>
+                     */
+                    int64_t m_seed;
+                    bool m_seedHasBeenSet;
 
                 };
             }

@@ -190,6 +190,56 @@ TrocketClient::CreateInstanceOutcomeCallable TrocketClient::CreateInstanceCallab
     return prom->get_future();
 }
 
+TrocketClient::CreateMigrationTaskOutcome TrocketClient::CreateMigrationTask(const CreateMigrationTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMigrationTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMigrationTaskResponse rsp = CreateMigrationTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMigrationTaskOutcome(rsp);
+        else
+            return CreateMigrationTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMigrationTaskOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::CreateMigrationTaskAsync(const CreateMigrationTaskRequest& request, const CreateMigrationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMigrationTaskRequest&;
+    using Resp = CreateMigrationTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMigrationTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrocketClient::CreateMigrationTaskOutcomeCallable TrocketClient::CreateMigrationTaskCallable(const CreateMigrationTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMigrationTaskOutcome>>();
+    CreateMigrationTaskAsync(
+    request,
+    [prom](
+        const TrocketClient*,
+        const CreateMigrationTaskRequest&,
+        CreateMigrationTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TrocketClient::CreateRoleOutcome TrocketClient::CreateRole(const CreateRoleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRole");

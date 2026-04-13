@@ -24,6 +24,7 @@ set(config_public_header_model
   include/tencentcloud/config/v20220802/model/AddAggregateCompliancePackResponse.h
   include/tencentcloud/config/v20220802/model/CloseAggregateConfigRuleResponse.h
   include/tencentcloud/config/v20220802/model/AddCompliancePackRequest.h
+  include/tencentcloud/config/v20220802/model/CompliancePackRules.h
   include/tencentcloud/config/v20220802/model/ListRemediationsRequest.h
   include/tencentcloud/config/v20220802/model/DescribeAggregatorRequest.h
   include/tencentcloud/config/v20220802/model/PutEvaluationsResponse.h
@@ -40,19 +41,20 @@ set(config_public_header_model
   include/tencentcloud/config/v20220802/model/UpdateRemediationResponse.h
   include/tencentcloud/config/v20220802/model/ListSystemRulesResponse.h
   include/tencentcloud/config/v20220802/model/CreateAggregatorResponse.h
-  include/tencentcloud/config/v20220802/model/UpdateConfigRecorderRequest.h
+  include/tencentcloud/config/v20220802/model/DeleteAlarmPolicyRequest.h
   include/tencentcloud/config/v20220802/model/ListAggregateCompliancePacksResponse.h
   include/tencentcloud/config/v20220802/model/ListSystemCompliancePacksResponse.h
+  include/tencentcloud/config/v20220802/model/Remediation.h
   include/tencentcloud/config/v20220802/model/ListAggregateConfigRuleEvaluationResultsResponse.h
   include/tencentcloud/config/v20220802/model/CloseAggregateConfigRuleRequest.h
   include/tencentcloud/config/v20220802/model/DescribeAggregateDiscoveredResourceResponse.h
   include/tencentcloud/config/v20220802/model/AggregatorAccount.h
-  include/tencentcloud/config/v20220802/model/InputParameterForManage.h
   include/tencentcloud/config/v20220802/model/ListConfigRulesRequest.h
   include/tencentcloud/config/v20220802/model/DescribeAggregateConfigRuleRequest.h
   include/tencentcloud/config/v20220802/model/Control.h
   include/tencentcloud/config/v20220802/model/ListAggregateConfigRulesRequest.h
   include/tencentcloud/config/v20220802/model/ListConfigRuleEvaluationResultsResponse.h
+  include/tencentcloud/config/v20220802/model/UpdateAlarmPolicyResponse.h
   include/tencentcloud/config/v20220802/model/DescribeCompliancePackRequest.h
   include/tencentcloud/config/v20220802/model/ListDiscoveredResourcesResponse.h
   include/tencentcloud/config/v20220802/model/UpdateAggregateCompliancePackStatusResponse.h
@@ -66,12 +68,13 @@ set(config_public_header_model
   include/tencentcloud/config/v20220802/model/UpdateCompliancePackStatusResponse.h
   include/tencentcloud/config/v20220802/model/UpdateAggregateCompliancePackStatusRequest.h
   include/tencentcloud/config/v20220802/model/UpdateConfigRecorderResponse.h
+  include/tencentcloud/config/v20220802/model/ListAlarmPolicyRequest.h
   include/tencentcloud/config/v20220802/model/DescribeSystemCompliancePackResponse.h
-  include/tencentcloud/config/v20220802/model/CompliancePackRules.h
+  include/tencentcloud/config/v20220802/model/InputParameterForManage.h
   include/tencentcloud/config/v20220802/model/ComplianceConfigRule.h
   include/tencentcloud/config/v20220802/model/OpenAggregateConfigRuleRequest.h
   include/tencentcloud/config/v20220802/model/ListSystemCompliancePacksRequest.h
-  include/tencentcloud/config/v20220802/model/Tag.h
+  include/tencentcloud/config/v20220802/model/ListAlarmPolicyResponse.h
   include/tencentcloud/config/v20220802/model/ListAggregatorsResponse.h
   include/tencentcloud/config/v20220802/model/ListConfigRuleEvaluationResultsRequest.h
   include/tencentcloud/config/v20220802/model/DeleteAggregateConfigRuleResponse.h
@@ -80,6 +83,7 @@ set(config_public_header_model
   include/tencentcloud/config/v20220802/model/UpdateAggregateCompliancePackRequest.h
   include/tencentcloud/config/v20220802/model/CreateRemediationRequest.h
   include/tencentcloud/config/v20220802/model/AddCompliancePackResponse.h
+  include/tencentcloud/config/v20220802/model/TriggerType.h
   include/tencentcloud/config/v20220802/model/ConfigResource.h
   include/tencentcloud/config/v20220802/model/DescribeAggregateConfigDeliverRequest.h
   include/tencentcloud/config/v20220802/model/ListAggregatorsRequest.h
@@ -99,6 +103,7 @@ set(config_public_header_model
   include/tencentcloud/config/v20220802/model/ListCompliancePacksResponse.h
   include/tencentcloud/config/v20220802/model/DescribeConfigDeliverResponse.h
   include/tencentcloud/config/v20220802/model/DetachConfigRuleToCompliancePackResponse.h
+  include/tencentcloud/config/v20220802/model/UpdateAlarmPolicyRequest.h
   include/tencentcloud/config/v20220802/model/CloseConfigRuleRequest.h
   include/tencentcloud/config/v20220802/model/DescribeSystemCompliancePackRequest.h
   include/tencentcloud/config/v20220802/model/Evaluation.h
@@ -106,6 +111,7 @@ set(config_public_header_model
   include/tencentcloud/config/v20220802/model/OpenConfigRuleResponse.h
   include/tencentcloud/config/v20220802/model/DescribeDiscoveredResourceResponse.h
   include/tencentcloud/config/v20220802/model/RemediationExecutions.h
+  include/tencentcloud/config/v20220802/model/DescribeConfigDeliverRequest.h
   include/tencentcloud/config/v20220802/model/UpdateConfigRuleResponse.h
   include/tencentcloud/config/v20220802/model/DetachAggregateConfigRuleToCompliancePackRequest.h
   include/tencentcloud/config/v20220802/model/ListAggregateCompliancePacksRequest.h
@@ -125,7 +131,7 @@ set(config_public_header_model
   include/tencentcloud/config/v20220802/model/ListSystemRulesRequest.h
   include/tencentcloud/config/v20220802/model/AggregateResourceInfo.h
   include/tencentcloud/config/v20220802/model/DescribeAggregatorResponse.h
-  include/tencentcloud/config/v20220802/model/TriggerType.h
+  include/tencentcloud/config/v20220802/model/AddAlarmPolicyResponse.h
   include/tencentcloud/config/v20220802/model/EvaluationResult.h
   include/tencentcloud/config/v20220802/model/ConfigCompliancePack.h
   include/tencentcloud/config/v20220802/model/DescribeAggregateConfigRuleResponse.h
@@ -140,9 +146,11 @@ set(config_public_header_model
   include/tencentcloud/config/v20220802/model/DescribeConfigRuleRequest.h
   include/tencentcloud/config/v20220802/model/UpdateConfigDeliverRequest.h
   include/tencentcloud/config/v20220802/model/ListDiscoveredResourcesRequest.h
-  include/tencentcloud/config/v20220802/model/Remediation.h
+  include/tencentcloud/config/v20220802/model/AddAlarmPolicyRequest.h
   include/tencentcloud/config/v20220802/model/ConfigRule.h
+  include/tencentcloud/config/v20220802/model/Tag.h
   include/tencentcloud/config/v20220802/model/ListResourceTypesRequest.h
+  include/tencentcloud/config/v20220802/model/UpdateConfigRecorderRequest.h
   include/tencentcloud/config/v20220802/model/UpdateCompliancePackResponse.h
   include/tencentcloud/config/v20220802/model/ListAggregateConfigRulesResponse.h
   include/tencentcloud/config/v20220802/model/StartRemediationResponse.h
@@ -153,9 +161,10 @@ set(config_public_header_model
   include/tencentcloud/config/v20220802/model/StartRemediationRequest.h
   include/tencentcloud/config/v20220802/model/CloseConfigRuleResponse.h
   include/tencentcloud/config/v20220802/model/DescribeSystemRuleResponse.h
-  include/tencentcloud/config/v20220802/model/DescribeConfigDeliverRequest.h
+  include/tencentcloud/config/v20220802/model/AlarmPolicyRsp.h
   include/tencentcloud/config/v20220802/model/UpdateAggregateConfigRuleRequest.h
   include/tencentcloud/config/v20220802/model/OpenConfigRecorderRequest.h
+  include/tencentcloud/config/v20220802/model/DeleteAlarmPolicyResponse.h
   include/tencentcloud/config/v20220802/model/AddAggregateConfigRuleRequest.h
   include/tencentcloud/config/v20220802/model/DeleteCompliancePackRequest.h
   include/tencentcloud/config/v20220802/model/StartConfigRuleEvaluationResponse.h
@@ -173,6 +182,7 @@ set(config_src
   src/v20220802/model/AddAggregateCompliancePackResponse.cpp
   src/v20220802/model/CloseAggregateConfigRuleResponse.cpp
   src/v20220802/model/AddCompliancePackRequest.cpp
+  src/v20220802/model/CompliancePackRules.cpp
   src/v20220802/model/ListRemediationsRequest.cpp
   src/v20220802/model/DescribeAggregatorRequest.cpp
   src/v20220802/model/PutEvaluationsResponse.cpp
@@ -189,19 +199,20 @@ set(config_src
   src/v20220802/model/UpdateRemediationResponse.cpp
   src/v20220802/model/ListSystemRulesResponse.cpp
   src/v20220802/model/CreateAggregatorResponse.cpp
-  src/v20220802/model/UpdateConfigRecorderRequest.cpp
+  src/v20220802/model/DeleteAlarmPolicyRequest.cpp
   src/v20220802/model/ListAggregateCompliancePacksResponse.cpp
   src/v20220802/model/ListSystemCompliancePacksResponse.cpp
+  src/v20220802/model/Remediation.cpp
   src/v20220802/model/ListAggregateConfigRuleEvaluationResultsResponse.cpp
   src/v20220802/model/CloseAggregateConfigRuleRequest.cpp
   src/v20220802/model/DescribeAggregateDiscoveredResourceResponse.cpp
   src/v20220802/model/AggregatorAccount.cpp
-  src/v20220802/model/InputParameterForManage.cpp
   src/v20220802/model/ListConfigRulesRequest.cpp
   src/v20220802/model/DescribeAggregateConfigRuleRequest.cpp
   src/v20220802/model/Control.cpp
   src/v20220802/model/ListAggregateConfigRulesRequest.cpp
   src/v20220802/model/ListConfigRuleEvaluationResultsResponse.cpp
+  src/v20220802/model/UpdateAlarmPolicyResponse.cpp
   src/v20220802/model/DescribeCompliancePackRequest.cpp
   src/v20220802/model/ListDiscoveredResourcesResponse.cpp
   src/v20220802/model/UpdateAggregateCompliancePackStatusResponse.cpp
@@ -215,12 +226,13 @@ set(config_src
   src/v20220802/model/UpdateCompliancePackStatusResponse.cpp
   src/v20220802/model/UpdateAggregateCompliancePackStatusRequest.cpp
   src/v20220802/model/UpdateConfigRecorderResponse.cpp
+  src/v20220802/model/ListAlarmPolicyRequest.cpp
   src/v20220802/model/DescribeSystemCompliancePackResponse.cpp
-  src/v20220802/model/CompliancePackRules.cpp
+  src/v20220802/model/InputParameterForManage.cpp
   src/v20220802/model/ComplianceConfigRule.cpp
   src/v20220802/model/OpenAggregateConfigRuleRequest.cpp
   src/v20220802/model/ListSystemCompliancePacksRequest.cpp
-  src/v20220802/model/Tag.cpp
+  src/v20220802/model/ListAlarmPolicyResponse.cpp
   src/v20220802/model/ListAggregatorsResponse.cpp
   src/v20220802/model/ListConfigRuleEvaluationResultsRequest.cpp
   src/v20220802/model/DeleteAggregateConfigRuleResponse.cpp
@@ -229,6 +241,7 @@ set(config_src
   src/v20220802/model/UpdateAggregateCompliancePackRequest.cpp
   src/v20220802/model/CreateRemediationRequest.cpp
   src/v20220802/model/AddCompliancePackResponse.cpp
+  src/v20220802/model/TriggerType.cpp
   src/v20220802/model/ConfigResource.cpp
   src/v20220802/model/DescribeAggregateConfigDeliverRequest.cpp
   src/v20220802/model/ListAggregatorsRequest.cpp
@@ -248,6 +261,7 @@ set(config_src
   src/v20220802/model/ListCompliancePacksResponse.cpp
   src/v20220802/model/DescribeConfigDeliverResponse.cpp
   src/v20220802/model/DetachConfigRuleToCompliancePackResponse.cpp
+  src/v20220802/model/UpdateAlarmPolicyRequest.cpp
   src/v20220802/model/CloseConfigRuleRequest.cpp
   src/v20220802/model/DescribeSystemCompliancePackRequest.cpp
   src/v20220802/model/Evaluation.cpp
@@ -255,6 +269,7 @@ set(config_src
   src/v20220802/model/OpenConfigRuleResponse.cpp
   src/v20220802/model/DescribeDiscoveredResourceResponse.cpp
   src/v20220802/model/RemediationExecutions.cpp
+  src/v20220802/model/DescribeConfigDeliverRequest.cpp
   src/v20220802/model/UpdateConfigRuleResponse.cpp
   src/v20220802/model/DetachAggregateConfigRuleToCompliancePackRequest.cpp
   src/v20220802/model/ListAggregateCompliancePacksRequest.cpp
@@ -274,7 +289,7 @@ set(config_src
   src/v20220802/model/ListSystemRulesRequest.cpp
   src/v20220802/model/AggregateResourceInfo.cpp
   src/v20220802/model/DescribeAggregatorResponse.cpp
-  src/v20220802/model/TriggerType.cpp
+  src/v20220802/model/AddAlarmPolicyResponse.cpp
   src/v20220802/model/EvaluationResult.cpp
   src/v20220802/model/ConfigCompliancePack.cpp
   src/v20220802/model/DescribeAggregateConfigRuleResponse.cpp
@@ -289,9 +304,11 @@ set(config_src
   src/v20220802/model/DescribeConfigRuleRequest.cpp
   src/v20220802/model/UpdateConfigDeliverRequest.cpp
   src/v20220802/model/ListDiscoveredResourcesRequest.cpp
-  src/v20220802/model/Remediation.cpp
+  src/v20220802/model/AddAlarmPolicyRequest.cpp
   src/v20220802/model/ConfigRule.cpp
+  src/v20220802/model/Tag.cpp
   src/v20220802/model/ListResourceTypesRequest.cpp
+  src/v20220802/model/UpdateConfigRecorderRequest.cpp
   src/v20220802/model/UpdateCompliancePackResponse.cpp
   src/v20220802/model/ListAggregateConfigRulesResponse.cpp
   src/v20220802/model/StartRemediationResponse.cpp
@@ -302,9 +319,10 @@ set(config_src
   src/v20220802/model/StartRemediationRequest.cpp
   src/v20220802/model/CloseConfigRuleResponse.cpp
   src/v20220802/model/DescribeSystemRuleResponse.cpp
-  src/v20220802/model/DescribeConfigDeliverRequest.cpp
+  src/v20220802/model/AlarmPolicyRsp.cpp
   src/v20220802/model/UpdateAggregateConfigRuleRequest.cpp
   src/v20220802/model/OpenConfigRecorderRequest.cpp
+  src/v20220802/model/DeleteAlarmPolicyResponse.cpp
   src/v20220802/model/AddAggregateConfigRuleRequest.cpp
   src/v20220802/model/DeleteCompliancePackRequest.cpp
   src/v20220802/model/StartConfigRuleEvaluationResponse.cpp

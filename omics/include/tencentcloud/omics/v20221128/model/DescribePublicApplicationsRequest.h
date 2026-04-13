@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回数量，默认为20，最大值为100。
-                     * @return Limit 返回数量，默认为20，最大值为100。
+                     * 获取<p>返回数量，默认为20，最大值为100。</p>
+                     * @return Limit <p>返回数量，默认为20，最大值为100。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为20，最大值为100。
-                     * @param _limit 返回数量，默认为20，最大值为100。
+                     * 设置<p>返回数量，默认为20，最大值为100。</p>
+                     * @param _limit <p>返回数量，默认为20，最大值为100。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0。
-                     * @return Offset 偏移量，默认为0。
+                     * 获取<p>偏移量，默认为0。</p>
+                     * @return Offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0。
-                     * @param _offset 偏移量，默认为0。
+                     * 设置<p>偏移量，默认为0。</p>
+                     * @param _offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -84,19 +84,73 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>父应用ID</p>
+                     * @return ParentAppId <p>父应用ID</p>
+                     * 
+                     */
+                    std::string GetParentAppId() const;
+
+                    /**
+                     * 设置<p>父应用ID</p>
+                     * @param _parentAppId <p>父应用ID</p>
+                     * 
+                     */
+                    void SetParentAppId(const std::string& _parentAppId);
+
+                    /**
+                     * 判断参数 ParentAppId 是否已赋值
+                     * @return ParentAppId 是否已赋值
+                     * 
+                     */
+                    bool ParentAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>应用类型</p><p>枚举值：</p><ul><li>WDL： WDL</li><li>NEXTFLOW： NEXTFLOW</li></ul>
+                     * @return AppType <p>应用类型</p><p>枚举值：</p><ul><li>WDL： WDL</li><li>NEXTFLOW： NEXTFLOW</li></ul>
+                     * 
+                     */
+                    std::string GetAppType() const;
+
+                    /**
+                     * 设置<p>应用类型</p><p>枚举值：</p><ul><li>WDL： WDL</li><li>NEXTFLOW： NEXTFLOW</li></ul>
+                     * @param _appType <p>应用类型</p><p>枚举值：</p><ul><li>WDL： WDL</li><li>NEXTFLOW： NEXTFLOW</li></ul>
+                     * 
+                     */
+                    void SetAppType(const std::string& _appType);
+
+                    /**
+                     * 判断参数 AppType 是否已赋值
+                     * @return AppType 是否已赋值
+                     * 
+                     */
+                    bool AppTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 返回数量，默认为20，最大值为100。
+                     * <p>返回数量，默认为20，最大值为100。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0。
+                     * <p>偏移量，默认为0。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * <p>父应用ID</p>
+                     */
+                    std::string m_parentAppId;
+                    bool m_parentAppIdHasBeenSet;
+
+                    /**
+                     * <p>应用类型</p><p>枚举值：</p><ul><li>WDL： WDL</li><li>NEXTFLOW： NEXTFLOW</li></ul>
+                     */
+                    std::string m_appType;
+                    bool m_appTypeHasBeenSet;
 
                 };
             }

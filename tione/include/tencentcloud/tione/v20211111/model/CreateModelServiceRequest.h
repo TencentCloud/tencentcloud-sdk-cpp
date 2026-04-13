@@ -59,15 +59,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取新增版本时需要填写
-                     * @return ServiceGroupId 新增版本时需要填写
+                     * 获取<p>新增版本时需要填写</p>
+                     * @return ServiceGroupId <p>新增版本时需要填写</p>
                      * 
                      */
                     std::string GetServiceGroupId() const;
 
                     /**
-                     * 设置新增版本时需要填写
-                     * @param _serviceGroupId 新增版本时需要填写
+                     * 设置<p>新增版本时需要填写</p>
+                     * @param _serviceGroupId <p>新增版本时需要填写</p>
                      * 
                      */
                     void SetServiceGroupId(const std::string& _serviceGroupId);
@@ -80,15 +80,15 @@ namespace TencentCloud
                     bool ServiceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取不超过60个字，仅支持英文、数字、下划线"_"、短横"-"，只能以英文、数字开头
-                     * @return ServiceGroupName 不超过60个字，仅支持英文、数字、下划线"_"、短横"-"，只能以英文、数字开头
+                     * 获取<p>不超过60个字，仅支持英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以英文、数字开头</p>
+                     * @return ServiceGroupName <p>不超过60个字，仅支持英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以英文、数字开头</p>
                      * 
                      */
                     std::string GetServiceGroupName() const;
 
                     /**
-                     * 设置不超过60个字，仅支持英文、数字、下划线"_"、短横"-"，只能以英文、数字开头
-                     * @param _serviceGroupName 不超过60个字，仅支持英文、数字、下划线"_"、短横"-"，只能以英文、数字开头
+                     * 设置<p>不超过60个字，仅支持英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以英文、数字开头</p>
+                     * @param _serviceGroupName <p>不超过60个字，仅支持英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以英文、数字开头</p>
                      * 
                      */
                     void SetServiceGroupName(const std::string& _serviceGroupName);
@@ -101,15 +101,15 @@ namespace TencentCloud
                     bool ServiceGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取模型服务的描述
-                     * @return ServiceDescription 模型服务的描述
+                     * 获取<p>模型服务的描述</p>
+                     * @return ServiceDescription <p>模型服务的描述</p>
                      * 
                      */
                     std::string GetServiceDescription() const;
 
                     /**
-                     * 设置模型服务的描述
-                     * @param _serviceDescription 模型服务的描述
+                     * 设置<p>模型服务的描述</p>
+                     * @param _serviceDescription <p>模型服务的描述</p>
                      * 
                      */
                     void SetServiceDescription(const std::string& _serviceDescription);
@@ -122,15 +122,15 @@ namespace TencentCloud
                     bool ServiceDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取付费模式,有 PREPAID （包年包月）和 POSTPAID_BY_HOUR（按量付费）
-                     * @return ChargeType 付费模式,有 PREPAID （包年包月）和 POSTPAID_BY_HOUR（按量付费）
+                     * 获取<p>付费模式,有 PREPAID （包年包月）和 POSTPAID_BY_HOUR（按量付费）</p>
+                     * @return ChargeType <p>付费模式,有 PREPAID （包年包月）和 POSTPAID_BY_HOUR（按量付费）</p>
                      * 
                      */
                     std::string GetChargeType() const;
 
                     /**
-                     * 设置付费模式,有 PREPAID （包年包月）和 POSTPAID_BY_HOUR（按量付费）
-                     * @param _chargeType 付费模式,有 PREPAID （包年包月）和 POSTPAID_BY_HOUR（按量付费）
+                     * 设置<p>付费模式,有 PREPAID （包年包月）和 POSTPAID_BY_HOUR（按量付费）</p>
+                     * @param _chargeType <p>付费模式,有 PREPAID （包年包月）和 POSTPAID_BY_HOUR（按量付费）</p>
                      * 
                      */
                     void SetChargeType(const std::string& _chargeType);
@@ -143,15 +143,15 @@ namespace TencentCloud
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取预付费模式下所属的资源组id，同服务组下唯一
-                     * @return ResourceGroupId 预付费模式下所属的资源组id，同服务组下唯一
+                     * 获取<p>预付费模式下所属的资源组id，同服务组下唯一</p>
+                     * @return ResourceGroupId <p>预付费模式下所属的资源组id，同服务组下唯一</p>
                      * 
                      */
                     std::string GetResourceGroupId() const;
 
                     /**
-                     * 设置预付费模式下所属的资源组id，同服务组下唯一
-                     * @param _resourceGroupId 预付费模式下所属的资源组id，同服务组下唯一
+                     * 设置<p>预付费模式下所属的资源组id，同服务组下唯一</p>
+                     * @param _resourceGroupId <p>预付费模式下所属的资源组id，同服务组下唯一</p>
                      * 
                      */
                     void SetResourceGroupId(const std::string& _resourceGroupId);
@@ -164,15 +164,15 @@ namespace TencentCloud
                     bool ResourceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取模型信息，需要挂载模型时填写
-                     * @return ModelInfo 模型信息，需要挂载模型时填写
+                     * 获取<p>模型信息，需要挂载模型时填写</p>
+                     * @return ModelInfo <p>模型信息，需要挂载模型时填写</p>
                      * 
                      */
                     ModelInfo GetModelInfo() const;
 
                     /**
-                     * 设置模型信息，需要挂载模型时填写
-                     * @param _modelInfo 模型信息，需要挂载模型时填写
+                     * 设置<p>模型信息，需要挂载模型时填写</p>
+                     * @param _modelInfo <p>模型信息，需要挂载模型时填写</p>
                      * 
                      */
                     void SetModelInfo(const ModelInfo& _modelInfo);
@@ -185,15 +185,15 @@ namespace TencentCloud
                     bool ModelInfoHasBeenSet() const;
 
                     /**
-                     * 获取镜像信息，配置服务运行所需的镜像地址等信息
-                     * @return ImageInfo 镜像信息，配置服务运行所需的镜像地址等信息
+                     * 获取<p>镜像信息，配置服务运行所需的镜像地址等信息</p>
+                     * @return ImageInfo <p>镜像信息，配置服务运行所需的镜像地址等信息</p>
                      * 
                      */
                     ImageInfo GetImageInfo() const;
 
                     /**
-                     * 设置镜像信息，配置服务运行所需的镜像地址等信息
-                     * @param _imageInfo 镜像信息，配置服务运行所需的镜像地址等信息
+                     * 设置<p>镜像信息，配置服务运行所需的镜像地址等信息</p>
+                     * @param _imageInfo <p>镜像信息，配置服务运行所需的镜像地址等信息</p>
                      * 
                      */
                     void SetImageInfo(const ImageInfo& _imageInfo);
@@ -206,15 +206,15 @@ namespace TencentCloud
                     bool ImageInfoHasBeenSet() const;
 
                     /**
-                     * 获取环境变量，可选参数，用于配置容器中的环境变量
-                     * @return Env 环境变量，可选参数，用于配置容器中的环境变量
+                     * 获取<p>环境变量，可选参数，用于配置容器中的环境变量</p>
+                     * @return Env <p>环境变量，可选参数，用于配置容器中的环境变量</p>
                      * 
                      */
                     std::vector<EnvVar> GetEnv() const;
 
                     /**
-                     * 设置环境变量，可选参数，用于配置容器中的环境变量
-                     * @param _env 环境变量，可选参数，用于配置容器中的环境变量
+                     * 设置<p>环境变量，可选参数，用于配置容器中的环境变量</p>
+                     * @param _env <p>环境变量，可选参数，用于配置容器中的环境变量</p>
                      * 
                      */
                     void SetEnv(const std::vector<EnvVar>& _env);
@@ -227,15 +227,15 @@ namespace TencentCloud
                     bool EnvHasBeenSet() const;
 
                     /**
-                     * 获取资源描述，指定包年包月模式下的cpu,mem,gpu等信息，后付费无需填写
-                     * @return Resources 资源描述，指定包年包月模式下的cpu,mem,gpu等信息，后付费无需填写
+                     * 获取<p>资源描述，指定包年包月模式下的cpu,mem,gpu等信息，后付费无需填写</p>
+                     * @return Resources <p>资源描述，指定包年包月模式下的cpu,mem,gpu等信息，后付费无需填写</p>
                      * 
                      */
                     ResourceInfo GetResources() const;
 
                     /**
-                     * 设置资源描述，指定包年包月模式下的cpu,mem,gpu等信息，后付费无需填写
-                     * @param _resources 资源描述，指定包年包月模式下的cpu,mem,gpu等信息，后付费无需填写
+                     * 设置<p>资源描述，指定包年包月模式下的cpu,mem,gpu等信息，后付费无需填写</p>
+                     * @param _resources <p>资源描述，指定包年包月模式下的cpu,mem,gpu等信息，后付费无需填写</p>
                      * 
                      */
                     void SetResources(const ResourceInfo& _resources);
@@ -248,83 +248,15 @@ namespace TencentCloud
                     bool ResourcesHasBeenSet() const;
 
                     /**
-                     * 获取使用DescribeBillingSpecs接口返回的规格列表中的值，或者参考实例列表:
-TI.S.MEDIUM.POST	2C4G
-TI.S.LARGE.POST	4C8G
-TI.S.2XLARGE16.POST	8C16G
-TI.S.2XLARGE32.POST	8C32G
-TI.S.4XLARGE32.POST	16C32G
-TI.S.4XLARGE64.POST	16C64G
-TI.S.6XLARGE48.POST	24C48G
-TI.S.6XLARGE96.POST	24C96G
-TI.S.8XLARGE64.POST	32C64G
-TI.S.8XLARGE128.POST 32C128G
-TI.GN7.LARGE20.POST	4C20G T4*1/4
-TI.GN7.2XLARGE40.POST	10C40G T4*1/2
-TI.GN7.2XLARGE32.POST	8C32G T4*1
-TI.GN7.5XLARGE80.POST	20C80G T4*1
-TI.GN7.8XLARGE128.POST	32C128G T4*1
-TI.GN7.10XLARGE160.POST	40C160G T4*2
-TI.GN7.20XLARGE320.POST	80C320G T4*4
-                     * @return InstanceType 使用DescribeBillingSpecs接口返回的规格列表中的值，或者参考实例列表:
-TI.S.MEDIUM.POST	2C4G
-TI.S.LARGE.POST	4C8G
-TI.S.2XLARGE16.POST	8C16G
-TI.S.2XLARGE32.POST	8C32G
-TI.S.4XLARGE32.POST	16C32G
-TI.S.4XLARGE64.POST	16C64G
-TI.S.6XLARGE48.POST	24C48G
-TI.S.6XLARGE96.POST	24C96G
-TI.S.8XLARGE64.POST	32C64G
-TI.S.8XLARGE128.POST 32C128G
-TI.GN7.LARGE20.POST	4C20G T4*1/4
-TI.GN7.2XLARGE40.POST	10C40G T4*1/2
-TI.GN7.2XLARGE32.POST	8C32G T4*1
-TI.GN7.5XLARGE80.POST	20C80G T4*1
-TI.GN7.8XLARGE128.POST	32C128G T4*1
-TI.GN7.10XLARGE160.POST	40C160G T4*2
-TI.GN7.20XLARGE320.POST	80C320G T4*4
+                     * 获取<p>使用DescribeBillingSpecs接口返回的规格列表中的值，或者参考实例列表:<br>TI.S.MEDIUM.POST    2C4G<br>TI.S.LARGE.POST    4C8G<br>TI.S.2XLARGE16.POST    8C16G<br>TI.S.2XLARGE32.POST    8C32G<br>TI.S.4XLARGE32.POST    16C32G<br>TI.S.4XLARGE64.POST    16C64G<br>TI.S.6XLARGE48.POST    24C48G<br>TI.S.6XLARGE96.POST    24C96G<br>TI.S.8XLARGE64.POST    32C64G<br>TI.S.8XLARGE128.POST 32C128G<br>TI.GN7.LARGE20.POST    4C20G T4<em>1/4<br>TI.GN7.2XLARGE40.POST    10C40G T4</em>1/2<br>TI.GN7.2XLARGE32.POST    8C32G T4<em>1<br>TI.GN7.5XLARGE80.POST    20C80G T4</em>1<br>TI.GN7.8XLARGE128.POST    32C128G T4<em>1<br>TI.GN7.10XLARGE160.POST    40C160G T4</em>2<br>TI.GN7.20XLARGE320.POST    80C320G T4*4</p>
+                     * @return InstanceType <p>使用DescribeBillingSpecs接口返回的规格列表中的值，或者参考实例列表:<br>TI.S.MEDIUM.POST    2C4G<br>TI.S.LARGE.POST    4C8G<br>TI.S.2XLARGE16.POST    8C16G<br>TI.S.2XLARGE32.POST    8C32G<br>TI.S.4XLARGE32.POST    16C32G<br>TI.S.4XLARGE64.POST    16C64G<br>TI.S.6XLARGE48.POST    24C48G<br>TI.S.6XLARGE96.POST    24C96G<br>TI.S.8XLARGE64.POST    32C64G<br>TI.S.8XLARGE128.POST 32C128G<br>TI.GN7.LARGE20.POST    4C20G T4<em>1/4<br>TI.GN7.2XLARGE40.POST    10C40G T4</em>1/2<br>TI.GN7.2XLARGE32.POST    8C32G T4<em>1<br>TI.GN7.5XLARGE80.POST    20C80G T4</em>1<br>TI.GN7.8XLARGE128.POST    32C128G T4<em>1<br>TI.GN7.10XLARGE160.POST    40C160G T4</em>2<br>TI.GN7.20XLARGE320.POST    80C320G T4*4</p>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置使用DescribeBillingSpecs接口返回的规格列表中的值，或者参考实例列表:
-TI.S.MEDIUM.POST	2C4G
-TI.S.LARGE.POST	4C8G
-TI.S.2XLARGE16.POST	8C16G
-TI.S.2XLARGE32.POST	8C32G
-TI.S.4XLARGE32.POST	16C32G
-TI.S.4XLARGE64.POST	16C64G
-TI.S.6XLARGE48.POST	24C48G
-TI.S.6XLARGE96.POST	24C96G
-TI.S.8XLARGE64.POST	32C64G
-TI.S.8XLARGE128.POST 32C128G
-TI.GN7.LARGE20.POST	4C20G T4*1/4
-TI.GN7.2XLARGE40.POST	10C40G T4*1/2
-TI.GN7.2XLARGE32.POST	8C32G T4*1
-TI.GN7.5XLARGE80.POST	20C80G T4*1
-TI.GN7.8XLARGE128.POST	32C128G T4*1
-TI.GN7.10XLARGE160.POST	40C160G T4*2
-TI.GN7.20XLARGE320.POST	80C320G T4*4
-                     * @param _instanceType 使用DescribeBillingSpecs接口返回的规格列表中的值，或者参考实例列表:
-TI.S.MEDIUM.POST	2C4G
-TI.S.LARGE.POST	4C8G
-TI.S.2XLARGE16.POST	8C16G
-TI.S.2XLARGE32.POST	8C32G
-TI.S.4XLARGE32.POST	16C32G
-TI.S.4XLARGE64.POST	16C64G
-TI.S.6XLARGE48.POST	24C48G
-TI.S.6XLARGE96.POST	24C96G
-TI.S.8XLARGE64.POST	32C64G
-TI.S.8XLARGE128.POST 32C128G
-TI.GN7.LARGE20.POST	4C20G T4*1/4
-TI.GN7.2XLARGE40.POST	10C40G T4*1/2
-TI.GN7.2XLARGE32.POST	8C32G T4*1
-TI.GN7.5XLARGE80.POST	20C80G T4*1
-TI.GN7.8XLARGE128.POST	32C128G T4*1
-TI.GN7.10XLARGE160.POST	40C160G T4*2
-TI.GN7.20XLARGE320.POST	80C320G T4*4
+                     * 设置<p>使用DescribeBillingSpecs接口返回的规格列表中的值，或者参考实例列表:<br>TI.S.MEDIUM.POST    2C4G<br>TI.S.LARGE.POST    4C8G<br>TI.S.2XLARGE16.POST    8C16G<br>TI.S.2XLARGE32.POST    8C32G<br>TI.S.4XLARGE32.POST    16C32G<br>TI.S.4XLARGE64.POST    16C64G<br>TI.S.6XLARGE48.POST    24C48G<br>TI.S.6XLARGE96.POST    24C96G<br>TI.S.8XLARGE64.POST    32C64G<br>TI.S.8XLARGE128.POST 32C128G<br>TI.GN7.LARGE20.POST    4C20G T4<em>1/4<br>TI.GN7.2XLARGE40.POST    10C40G T4</em>1/2<br>TI.GN7.2XLARGE32.POST    8C32G T4<em>1<br>TI.GN7.5XLARGE80.POST    20C80G T4</em>1<br>TI.GN7.8XLARGE128.POST    32C128G T4<em>1<br>TI.GN7.10XLARGE160.POST    40C160G T4</em>2<br>TI.GN7.20XLARGE320.POST    80C320G T4*4</p>
+                     * @param _instanceType <p>使用DescribeBillingSpecs接口返回的规格列表中的值，或者参考实例列表:<br>TI.S.MEDIUM.POST    2C4G<br>TI.S.LARGE.POST    4C8G<br>TI.S.2XLARGE16.POST    8C16G<br>TI.S.2XLARGE32.POST    8C32G<br>TI.S.4XLARGE32.POST    16C32G<br>TI.S.4XLARGE64.POST    16C64G<br>TI.S.6XLARGE48.POST    24C48G<br>TI.S.6XLARGE96.POST    24C96G<br>TI.S.8XLARGE64.POST    32C64G<br>TI.S.8XLARGE128.POST 32C128G<br>TI.GN7.LARGE20.POST    4C20G T4<em>1/4<br>TI.GN7.2XLARGE40.POST    10C40G T4</em>1/2<br>TI.GN7.2XLARGE32.POST    8C32G T4<em>1<br>TI.GN7.5XLARGE80.POST    20C80G T4</em>1<br>TI.GN7.8XLARGE128.POST    32C128G T4<em>1<br>TI.GN7.10XLARGE160.POST    40C160G T4</em>2<br>TI.GN7.20XLARGE320.POST    80C320G T4*4</p>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -337,15 +269,15 @@ TI.GN7.20XLARGE320.POST	80C320G T4*4
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取扩缩容类型 支持：自动 - "AUTO", 手动 - "MANUAL",默认为MANUAL
-                     * @return ScaleMode 扩缩容类型 支持：自动 - "AUTO", 手动 - "MANUAL",默认为MANUAL
+                     * 获取<p>扩缩容类型 支持：自动 - &quot;AUTO&quot;, 手动 - &quot;MANUAL&quot;,默认为MANUAL</p>
+                     * @return ScaleMode <p>扩缩容类型 支持：自动 - &quot;AUTO&quot;, 手动 - &quot;MANUAL&quot;,默认为MANUAL</p>
                      * 
                      */
                     std::string GetScaleMode() const;
 
                     /**
-                     * 设置扩缩容类型 支持：自动 - "AUTO", 手动 - "MANUAL",默认为MANUAL
-                     * @param _scaleMode 扩缩容类型 支持：自动 - "AUTO", 手动 - "MANUAL",默认为MANUAL
+                     * 设置<p>扩缩容类型 支持：自动 - &quot;AUTO&quot;, 手动 - &quot;MANUAL&quot;,默认为MANUAL</p>
+                     * @param _scaleMode <p>扩缩容类型 支持：自动 - &quot;AUTO&quot;, 手动 - &quot;MANUAL&quot;,默认为MANUAL</p>
                      * 
                      */
                     void SetScaleMode(const std::string& _scaleMode);
@@ -358,39 +290,15 @@ TI.GN7.20XLARGE320.POST	80C320G T4*4
                     bool ScaleModeHasBeenSet() const;
 
                     /**
-                     * 获取实例数量, 不同计费模式和调节模式下对应关系如下
-PREPAID 和 POSTPAID_BY_HOUR:
-手动调节模式下对应 实例数量
-自动调节模式下对应 基于时间的默认策略的实例数量
-HYBRID_PAID:
-后付费实例手动调节模式下对应 实例数量
-后付费实例自动调节模式下对应 时间策略的默认策略的实例数量
-                     * @return Replicas 实例数量, 不同计费模式和调节模式下对应关系如下
-PREPAID 和 POSTPAID_BY_HOUR:
-手动调节模式下对应 实例数量
-自动调节模式下对应 基于时间的默认策略的实例数量
-HYBRID_PAID:
-后付费实例手动调节模式下对应 实例数量
-后付费实例自动调节模式下对应 时间策略的默认策略的实例数量
+                     * 获取<p>实例数量, 不同计费模式和调节模式下对应关系如下<br>PREPAID 和 POSTPAID_BY_HOUR:<br>手动调节模式下对应 实例数量<br>自动调节模式下对应 基于时间的默认策略的实例数量<br>HYBRID_PAID:<br>后付费实例手动调节模式下对应 实例数量<br>后付费实例自动调节模式下对应 时间策略的默认策略的实例数量</p>
+                     * @return Replicas <p>实例数量, 不同计费模式和调节模式下对应关系如下<br>PREPAID 和 POSTPAID_BY_HOUR:<br>手动调节模式下对应 实例数量<br>自动调节模式下对应 基于时间的默认策略的实例数量<br>HYBRID_PAID:<br>后付费实例手动调节模式下对应 实例数量<br>后付费实例自动调节模式下对应 时间策略的默认策略的实例数量</p>
                      * 
                      */
                     int64_t GetReplicas() const;
 
                     /**
-                     * 设置实例数量, 不同计费模式和调节模式下对应关系如下
-PREPAID 和 POSTPAID_BY_HOUR:
-手动调节模式下对应 实例数量
-自动调节模式下对应 基于时间的默认策略的实例数量
-HYBRID_PAID:
-后付费实例手动调节模式下对应 实例数量
-后付费实例自动调节模式下对应 时间策略的默认策略的实例数量
-                     * @param _replicas 实例数量, 不同计费模式和调节模式下对应关系如下
-PREPAID 和 POSTPAID_BY_HOUR:
-手动调节模式下对应 实例数量
-自动调节模式下对应 基于时间的默认策略的实例数量
-HYBRID_PAID:
-后付费实例手动调节模式下对应 实例数量
-后付费实例自动调节模式下对应 时间策略的默认策略的实例数量
+                     * 设置<p>实例数量, 不同计费模式和调节模式下对应关系如下<br>PREPAID 和 POSTPAID_BY_HOUR:<br>手动调节模式下对应 实例数量<br>自动调节模式下对应 基于时间的默认策略的实例数量<br>HYBRID_PAID:<br>后付费实例手动调节模式下对应 实例数量<br>后付费实例自动调节模式下对应 时间策略的默认策略的实例数量</p>
+                     * @param _replicas <p>实例数量, 不同计费模式和调节模式下对应关系如下<br>PREPAID 和 POSTPAID_BY_HOUR:<br>手动调节模式下对应 实例数量<br>自动调节模式下对应 基于时间的默认策略的实例数量<br>HYBRID_PAID:<br>后付费实例手动调节模式下对应 实例数量<br>后付费实例自动调节模式下对应 时间策略的默认策略的实例数量</p>
                      * 
                      */
                     void SetReplicas(const int64_t& _replicas);
@@ -403,15 +311,15 @@ HYBRID_PAID:
                     bool ReplicasHasBeenSet() const;
 
                     /**
-                     * 获取自动伸缩信息
-                     * @return HorizontalPodAutoscaler 自动伸缩信息
+                     * 获取<p>自动伸缩信息</p>
+                     * @return HorizontalPodAutoscaler <p>自动伸缩信息</p>
                      * 
                      */
                     HorizontalPodAutoscaler GetHorizontalPodAutoscaler() const;
 
                     /**
-                     * 设置自动伸缩信息
-                     * @param _horizontalPodAutoscaler 自动伸缩信息
+                     * 设置<p>自动伸缩信息</p>
+                     * @param _horizontalPodAutoscaler <p>自动伸缩信息</p>
                      * 
                      */
                     void SetHorizontalPodAutoscaler(const HorizontalPodAutoscaler& _horizontalPodAutoscaler);
@@ -424,15 +332,15 @@ HYBRID_PAID:
                     bool HorizontalPodAutoscalerHasBeenSet() const;
 
                     /**
-                     * 获取是否开启日志投递，开启后需填写配置投递到指定cls
-                     * @return LogEnable 是否开启日志投递，开启后需填写配置投递到指定cls
+                     * 获取<p>是否开启日志投递，开启后需填写配置投递到指定cls</p>
+                     * @return LogEnable <p>是否开启日志投递，开启后需填写配置投递到指定cls</p>
                      * 
                      */
                     bool GetLogEnable() const;
 
                     /**
-                     * 设置是否开启日志投递，开启后需填写配置投递到指定cls
-                     * @param _logEnable 是否开启日志投递，开启后需填写配置投递到指定cls
+                     * 设置<p>是否开启日志投递，开启后需填写配置投递到指定cls</p>
+                     * @param _logEnable <p>是否开启日志投递，开启后需填写配置投递到指定cls</p>
                      * 
                      */
                     void SetLogEnable(const bool& _logEnable);
@@ -445,15 +353,15 @@ HYBRID_PAID:
                     bool LogEnableHasBeenSet() const;
 
                     /**
-                     * 获取日志配置，需要投递服务日志到指定cls时填写
-                     * @return LogConfig 日志配置，需要投递服务日志到指定cls时填写
+                     * 获取<p>日志配置，需要投递服务日志到指定cls时填写</p>
+                     * @return LogConfig <p>日志配置，需要投递服务日志到指定cls时填写</p>
                      * 
                      */
                     LogConfig GetLogConfig() const;
 
                     /**
-                     * 设置日志配置，需要投递服务日志到指定cls时填写
-                     * @param _logConfig 日志配置，需要投递服务日志到指定cls时填写
+                     * 设置<p>日志配置，需要投递服务日志到指定cls时填写</p>
+                     * @param _logConfig <p>日志配置，需要投递服务日志到指定cls时填写</p>
                      * 
                      */
                     void SetLogConfig(const LogConfig& _logConfig);
@@ -466,15 +374,15 @@ HYBRID_PAID:
                     bool LogConfigHasBeenSet() const;
 
                     /**
-                     * 获取是否开启接口鉴权，开启后自动生成token信息，访问需要token鉴权
-                     * @return AuthorizationEnable 是否开启接口鉴权，开启后自动生成token信息，访问需要token鉴权
+                     * 获取<p>是否开启接口鉴权，开启后自动生成token信息，访问需要token鉴权</p>
+                     * @return AuthorizationEnable <p>是否开启接口鉴权，开启后自动生成token信息，访问需要token鉴权</p>
                      * 
                      */
                     bool GetAuthorizationEnable() const;
 
                     /**
-                     * 设置是否开启接口鉴权，开启后自动生成token信息，访问需要token鉴权
-                     * @param _authorizationEnable 是否开启接口鉴权，开启后自动生成token信息，访问需要token鉴权
+                     * 设置<p>是否开启接口鉴权，开启后自动生成token信息，访问需要token鉴权</p>
+                     * @param _authorizationEnable <p>是否开启接口鉴权，开启后自动生成token信息，访问需要token鉴权</p>
                      * 
                      */
                     void SetAuthorizationEnable(const bool& _authorizationEnable);
@@ -487,15 +395,15 @@ HYBRID_PAID:
                     bool AuthorizationEnableHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云标签
-                     * @return Tags 腾讯云标签
+                     * 获取<p>腾讯云标签</p>
+                     * @return Tags <p>腾讯云标签</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置腾讯云标签
-                     * @param _tags 腾讯云标签
+                     * 设置<p>腾讯云标签</p>
+                     * @param _tags <p>腾讯云标签</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -508,15 +416,15 @@ HYBRID_PAID:
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取是否新增版本
-                     * @return NewVersion 是否新增版本
+                     * 获取<p>是否新增版本</p>
+                     * @return NewVersion <p>是否新增版本</p>
                      * 
                      */
                     bool GetNewVersion() const;
 
                     /**
-                     * 设置是否新增版本
-                     * @param _newVersion 是否新增版本
+                     * 设置<p>是否新增版本</p>
+                     * @param _newVersion <p>是否新增版本</p>
                      * 
                      */
                     void SetNewVersion(const bool& _newVersion);
@@ -529,15 +437,15 @@ HYBRID_PAID:
                     bool NewVersionHasBeenSet() const;
 
                     /**
-                     * 获取定时任务配置，使用定时策略时填写
-                     * @return CronScaleJobs 定时任务配置，使用定时策略时填写
+                     * 获取<p>定时任务配置，使用定时策略时填写</p>
+                     * @return CronScaleJobs <p>定时任务配置，使用定时策略时填写</p>
                      * 
                      */
                     std::vector<CronScaleJob> GetCronScaleJobs() const;
 
                     /**
-                     * 设置定时任务配置，使用定时策略时填写
-                     * @param _cronScaleJobs 定时任务配置，使用定时策略时填写
+                     * 设置<p>定时任务配置，使用定时策略时填写</p>
+                     * @param _cronScaleJobs <p>定时任务配置，使用定时策略时填写</p>
                      * 
                      */
                     void SetCronScaleJobs(const std::vector<CronScaleJob>& _cronScaleJobs);
@@ -550,15 +458,15 @@ HYBRID_PAID:
                     bool CronScaleJobsHasBeenSet() const;
 
                     /**
-                     * 获取自动伸缩策略配置 HPA : 通过HPA进行弹性伸缩 CRON 通过定时任务进行伸缩
-                     * @return ScaleStrategy 自动伸缩策略配置 HPA : 通过HPA进行弹性伸缩 CRON 通过定时任务进行伸缩
+                     * 获取<p>自动伸缩策略配置 HPA : 通过HPA进行弹性伸缩 CRON 通过定时任务进行伸缩</p>
+                     * @return ScaleStrategy <p>自动伸缩策略配置 HPA : 通过HPA进行弹性伸缩 CRON 通过定时任务进行伸缩</p>
                      * 
                      */
                     std::string GetScaleStrategy() const;
 
                     /**
-                     * 设置自动伸缩策略配置 HPA : 通过HPA进行弹性伸缩 CRON 通过定时任务进行伸缩
-                     * @param _scaleStrategy 自动伸缩策略配置 HPA : 通过HPA进行弹性伸缩 CRON 通过定时任务进行伸缩
+                     * 设置<p>自动伸缩策略配置 HPA : 通过HPA进行弹性伸缩 CRON 通过定时任务进行伸缩</p>
+                     * @param _scaleStrategy <p>自动伸缩策略配置 HPA : 通过HPA进行弹性伸缩 CRON 通过定时任务进行伸缩</p>
                      * 
                      */
                     void SetScaleStrategy(const std::string& _scaleStrategy);
@@ -571,15 +479,15 @@ HYBRID_PAID:
                     bool ScaleStrategyHasBeenSet() const;
 
                     /**
-                     * 获取计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数
-                     * @return HybridBillingPrepaidReplicas 计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数
+                     * 获取<p>计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数</p>
+                     * @return HybridBillingPrepaidReplicas <p>计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数</p>
                      * 
                      */
                     int64_t GetHybridBillingPrepaidReplicas() const;
 
                     /**
-                     * 设置计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数
-                     * @param _hybridBillingPrepaidReplicas 计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数
+                     * 设置<p>计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数</p>
+                     * @param _hybridBillingPrepaidReplicas <p>计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数</p>
                      * 
                      */
                     void SetHybridBillingPrepaidReplicas(const int64_t& _hybridBillingPrepaidReplicas);
@@ -592,15 +500,15 @@ HYBRID_PAID:
                     bool HybridBillingPrepaidReplicasHasBeenSet() const;
 
                     /**
-                     * 获取[AUTO_ML 自动学习，自动学习正式发布 AUTO_ML_FORMAL, DEFAULT 默认]
-                     * @return CreateSource [AUTO_ML 自动学习，自动学习正式发布 AUTO_ML_FORMAL, DEFAULT 默认]
+                     * 获取<p>[AUTO_ML 自动学习，自动学习正式发布 AUTO_ML_FORMAL, DEFAULT 默认]</p>
+                     * @return CreateSource <p>[AUTO_ML 自动学习，自动学习正式发布 AUTO_ML_FORMAL, DEFAULT 默认]</p>
                      * 
                      */
                     std::string GetCreateSource() const;
 
                     /**
-                     * 设置[AUTO_ML 自动学习，自动学习正式发布 AUTO_ML_FORMAL, DEFAULT 默认]
-                     * @param _createSource [AUTO_ML 自动学习，自动学习正式发布 AUTO_ML_FORMAL, DEFAULT 默认]
+                     * 设置<p>[AUTO_ML 自动学习，自动学习正式发布 AUTO_ML_FORMAL, DEFAULT 默认]</p>
+                     * @param _createSource <p>[AUTO_ML 自动学习，自动学习正式发布 AUTO_ML_FORMAL, DEFAULT 默认]</p>
                      * 
                      */
                     void SetCreateSource(const std::string& _createSource);
@@ -613,15 +521,15 @@ HYBRID_PAID:
                     bool CreateSourceHasBeenSet() const;
 
                     /**
-                     * 获取是否开启模型的热更新。默认不开启
-                     * @return ModelHotUpdateEnable 是否开启模型的热更新。默认不开启
+                     * 获取<p>是否开启模型的热更新。默认不开启</p>
+                     * @return ModelHotUpdateEnable <p>是否开启模型的热更新。默认不开启</p>
                      * 
                      */
                     bool GetModelHotUpdateEnable() const;
 
                     /**
-                     * 设置是否开启模型的热更新。默认不开启
-                     * @param _modelHotUpdateEnable 是否开启模型的热更新。默认不开启
+                     * 设置<p>是否开启模型的热更新。默认不开启</p>
+                     * @param _modelHotUpdateEnable <p>是否开启模型的热更新。默认不开启</p>
                      * 
                      */
                     void SetModelHotUpdateEnable(const bool& _modelHotUpdateEnable);
@@ -634,15 +542,15 @@ HYBRID_PAID:
                     bool ModelHotUpdateEnableHasBeenSet() const;
 
                     /**
-                     * 获取定时停止配置
-                     * @return ScheduledAction 定时停止配置
+                     * 获取<p>定时停止配置</p>
+                     * @return ScheduledAction <p>定时停止配置</p>
                      * 
                      */
                     ScheduledAction GetScheduledAction() const;
 
                     /**
-                     * 设置定时停止配置
-                     * @param _scheduledAction 定时停止配置
+                     * 设置<p>定时停止配置</p>
+                     * @param _scheduledAction <p>定时停止配置</p>
                      * 
                      */
                     void SetScheduledAction(const ScheduledAction& _scheduledAction);
@@ -655,15 +563,15 @@ HYBRID_PAID:
                     bool ScheduledActionHasBeenSet() const;
 
                     /**
-                     * 获取挂载配置，目前只支持CFS
-                     * @return VolumeMount 挂载配置，目前只支持CFS
+                     * 获取<p>挂载配置，目前只支持CFS</p>
+                     * @return VolumeMount <p>挂载配置，目前只支持CFS</p>
                      * 
                      */
                     VolumeMount GetVolumeMount() const;
 
                     /**
-                     * 设置挂载配置，目前只支持CFS
-                     * @param _volumeMount 挂载配置，目前只支持CFS
+                     * 设置<p>挂载配置，目前只支持CFS</p>
+                     * @param _volumeMount <p>挂载配置，目前只支持CFS</p>
                      * 
                      */
                     void SetVolumeMount(const VolumeMount& _volumeMount);
@@ -676,15 +584,15 @@ HYBRID_PAID:
                     bool VolumeMountHasBeenSet() const;
 
                     /**
-                     * 获取服务限速限流相关配置
-                     * @return ServiceLimit 服务限速限流相关配置
+                     * 获取<p>服务限速限流相关配置</p>
+                     * @return ServiceLimit <p>服务限速限流相关配置</p>
                      * 
                      */
                     ServiceLimit GetServiceLimit() const;
 
                     /**
-                     * 设置服务限速限流相关配置
-                     * @param _serviceLimit 服务限速限流相关配置
+                     * 设置<p>服务限速限流相关配置</p>
+                     * @param _serviceLimit <p>服务限速限流相关配置</p>
                      * 
                      */
                     void SetServiceLimit(const ServiceLimit& _serviceLimit);
@@ -697,15 +605,15 @@ HYBRID_PAID:
                     bool ServiceLimitHasBeenSet() const;
 
                     /**
-                     * 获取回调地址，用于回调创建服务状态信息，回调格式&内容详情见：[TI-ONE 接口回调说明](https://cloud.tencent.com/document/product/851/84292)
-                     * @return CallbackUrl 回调地址，用于回调创建服务状态信息，回调格式&内容详情见：[TI-ONE 接口回调说明](https://cloud.tencent.com/document/product/851/84292)
+                     * 获取<p>回调地址，用于回调创建服务状态信息，回调格式&amp;内容详情见：<a href="https://cloud.tencent.com/document/product/851/84292">TI-ONE 接口回调说明</a></p>
+                     * @return CallbackUrl <p>回调地址，用于回调创建服务状态信息，回调格式&amp;内容详情见：<a href="https://cloud.tencent.com/document/product/851/84292">TI-ONE 接口回调说明</a></p>
                      * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
-                     * 设置回调地址，用于回调创建服务状态信息，回调格式&内容详情见：[TI-ONE 接口回调说明](https://cloud.tencent.com/document/product/851/84292)
-                     * @param _callbackUrl 回调地址，用于回调创建服务状态信息，回调格式&内容详情见：[TI-ONE 接口回调说明](https://cloud.tencent.com/document/product/851/84292)
+                     * 设置<p>回调地址，用于回调创建服务状态信息，回调格式&amp;内容详情见：<a href="https://cloud.tencent.com/document/product/851/84292">TI-ONE 接口回调说明</a></p>
+                     * @param _callbackUrl <p>回调地址，用于回调创建服务状态信息，回调格式&amp;内容详情见：<a href="https://cloud.tencent.com/document/product/851/84292">TI-ONE 接口回调说明</a></p>
                      * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
@@ -718,15 +626,15 @@ HYBRID_PAID:
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
-                     * 获取是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。
-                     * @return ModelTurboEnable 是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。
+                     * 获取<p>是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。</p>
+                     * @return ModelTurboEnable <p>是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。</p>
                      * 
                      */
                     bool GetModelTurboEnable() const;
 
                     /**
-                     * 设置是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。
-                     * @param _modelTurboEnable 是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。
+                     * 设置<p>是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。</p>
+                     * @param _modelTurboEnable <p>是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。</p>
                      * 
                      */
                     void SetModelTurboEnable(const bool& _modelTurboEnable);
@@ -739,15 +647,15 @@ HYBRID_PAID:
                     bool ModelTurboEnableHasBeenSet() const;
 
                     /**
-                     * 获取服务分类
-                     * @return ServiceCategory 服务分类
+                     * 获取<p>服务分类</p>
+                     * @return ServiceCategory <p>服务分类</p>
                      * 
                      */
                     std::string GetServiceCategory() const;
 
                     /**
-                     * 设置服务分类
-                     * @param _serviceCategory 服务分类
+                     * 设置<p>服务分类</p>
+                     * @param _serviceCategory <p>服务分类</p>
                      * 
                      */
                     void SetServiceCategory(const std::string& _serviceCategory);
@@ -760,15 +668,15 @@ HYBRID_PAID:
                     bool ServiceCategoryHasBeenSet() const;
 
                     /**
-                     * 获取服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数
-                     * @return Command 服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数
+                     * 获取<p>服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数</p>
+                     * @return Command <p>服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数</p>
                      * 
                      */
                     std::string GetCommand() const;
 
                     /**
-                     * 设置服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数
-                     * @param _command 服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数
+                     * 设置<p>服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数</p>
+                     * @param _command <p>服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数</p>
                      * 
                      */
                     void SetCommand(const std::string& _command);
@@ -781,15 +689,15 @@ HYBRID_PAID:
                     bool CommandHasBeenSet() const;
 
                     /**
-                     * 获取是否开启TIONE内网访问外部，此功能仅支持后付费机型与从TIONE平台购买的预付费机型；使用从CVM选择资源组时此配置不生效。
-                     * @return ServiceEIP 是否开启TIONE内网访问外部，此功能仅支持后付费机型与从TIONE平台购买的预付费机型；使用从CVM选择资源组时此配置不生效。
+                     * 获取<p>是否开启TIONE内网访问外部，此功能仅支持后付费机型与从TIONE平台购买的预付费机型；使用从CVM选择资源组时此配置不生效。</p>
+                     * @return ServiceEIP <p>是否开启TIONE内网访问外部，此功能仅支持后付费机型与从TIONE平台购买的预付费机型；使用从CVM选择资源组时此配置不生效。</p>
                      * 
                      */
                     ServiceEIP GetServiceEIP() const;
 
                     /**
-                     * 设置是否开启TIONE内网访问外部，此功能仅支持后付费机型与从TIONE平台购买的预付费机型；使用从CVM选择资源组时此配置不生效。
-                     * @param _serviceEIP 是否开启TIONE内网访问外部，此功能仅支持后付费机型与从TIONE平台购买的预付费机型；使用从CVM选择资源组时此配置不生效。
+                     * 设置<p>是否开启TIONE内网访问外部，此功能仅支持后付费机型与从TIONE平台购买的预付费机型；使用从CVM选择资源组时此配置不生效。</p>
+                     * @param _serviceEIP <p>是否开启TIONE内网访问外部，此功能仅支持后付费机型与从TIONE平台购买的预付费机型；使用从CVM选择资源组时此配置不生效。</p>
                      * 
                      */
                     void SetServiceEIP(const ServiceEIP& _serviceEIP);
@@ -802,15 +710,15 @@ HYBRID_PAID:
                     bool ServiceEIPHasBeenSet() const;
 
                     /**
-                     * 获取服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效
-                     * @return CommandBase64 服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效
+                     * 获取<p>服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效</p>
+                     * @return CommandBase64 <p>服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效</p>
                      * 
                      */
                     std::string GetCommandBase64() const;
 
                     /**
-                     * 设置服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效
-                     * @param _commandBase64 服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效
+                     * 设置<p>服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效</p>
+                     * @param _commandBase64 <p>服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效</p>
                      * 
                      */
                     void SetCommandBase64(const std::string& _commandBase64);
@@ -823,15 +731,15 @@ HYBRID_PAID:
                     bool CommandBase64HasBeenSet() const;
 
                     /**
-                     * 获取服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092
-                     * @return ServicePort 服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092
+                     * 获取<p>服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092</p>
+                     * @return ServicePort <p>服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092</p>
                      * 
                      */
                     int64_t GetServicePort() const;
 
                     /**
-                     * 设置服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092
-                     * @param _servicePort 服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092
+                     * 设置<p>服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092</p>
+                     * @param _servicePort <p>服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092</p>
                      * 
                      */
                     void SetServicePort(const int64_t& _servicePort);
@@ -844,15 +752,15 @@ HYBRID_PAID:
                     bool ServicePortHasBeenSet() const;
 
                     /**
-                     * 获取服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD
-                     * @return DeployType 服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD
+                     * 获取<p>服务的部署类型 [标准部署，分布式多机部署，] 默认STANDARD</p><p>枚举值：</p><ul><li>STANDARD： 标准部署</li><li>DIST： 多机分布式部署</li><li>ROLE_SET： 多角色部署</li></ul>
+                     * @return DeployType <p>服务的部署类型 [标准部署，分布式多机部署，] 默认STANDARD</p><p>枚举值：</p><ul><li>STANDARD： 标准部署</li><li>DIST： 多机分布式部署</li><li>ROLE_SET： 多角色部署</li></ul>
                      * 
                      */
                     std::string GetDeployType() const;
 
                     /**
-                     * 设置服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD
-                     * @param _deployType 服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD
+                     * 设置<p>服务的部署类型 [标准部署，分布式多机部署，] 默认STANDARD</p><p>枚举值：</p><ul><li>STANDARD： 标准部署</li><li>DIST： 多机分布式部署</li><li>ROLE_SET： 多角色部署</li></ul>
+                     * @param _deployType <p>服务的部署类型 [标准部署，分布式多机部署，] 默认STANDARD</p><p>枚举值：</p><ul><li>STANDARD： 标准部署</li><li>DIST： 多机分布式部署</li><li>ROLE_SET： 多角色部署</li></ul>
                      * 
                      */
                     void SetDeployType(const std::string& _deployType);
@@ -865,15 +773,15 @@ HYBRID_PAID:
                     bool DeployTypeHasBeenSet() const;
 
                     /**
-                     * 获取单副本下的实例数，仅在部署类型为DIST时生效，默认1
-                     * @return InstancePerReplicas 单副本下的实例数，仅在部署类型为DIST时生效，默认1
+                     * 获取<p>单副本下的实例数，仅在部署类型为DIST时生效，默认1</p>
+                     * @return InstancePerReplicas <p>单副本下的实例数，仅在部署类型为DIST时生效，默认1</p>
                      * 
                      */
                     int64_t GetInstancePerReplicas() const;
 
                     /**
-                     * 设置单副本下的实例数，仅在部署类型为DIST时生效，默认1
-                     * @param _instancePerReplicas 单副本下的实例数，仅在部署类型为DIST时生效，默认1
+                     * 设置<p>单副本下的实例数，仅在部署类型为DIST时生效，默认1</p>
+                     * @param _instancePerReplicas <p>单副本下的实例数，仅在部署类型为DIST时生效，默认1</p>
                      * 
                      */
                     void SetInstancePerReplicas(const int64_t& _instancePerReplicas);
@@ -886,15 +794,15 @@ HYBRID_PAID:
                     bool InstancePerReplicasHasBeenSet() const;
 
                     /**
-                     * 获取服务的优雅退出时限。单位为秒，默认值为30，最小为1
-                     * @return TerminationGracePeriodSeconds 服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     * 获取<p>服务的优雅退出时限。单位为秒，默认值为30，最小为1</p>
+                     * @return TerminationGracePeriodSeconds <p>服务的优雅退出时限。单位为秒，默认值为30，最小为1</p>
                      * 
                      */
                     int64_t GetTerminationGracePeriodSeconds() const;
 
                     /**
-                     * 设置服务的优雅退出时限。单位为秒，默认值为30，最小为1
-                     * @param _terminationGracePeriodSeconds 服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     * 设置<p>服务的优雅退出时限。单位为秒，默认值为30，最小为1</p>
+                     * @param _terminationGracePeriodSeconds <p>服务的优雅退出时限。单位为秒，默认值为30，最小为1</p>
                      * 
                      */
                     void SetTerminationGracePeriodSeconds(const int64_t& _terminationGracePeriodSeconds);
@@ -907,15 +815,15 @@ HYBRID_PAID:
                     bool TerminationGracePeriodSecondsHasBeenSet() const;
 
                     /**
-                     * 获取服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
-                     * @return PreStopCommand 服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     * 获取<p>服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束</p>
+                     * @return PreStopCommand <p>服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束</p>
                      * 
                      */
                     std::vector<std::string> GetPreStopCommand() const;
 
                     /**
-                     * 设置服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
-                     * @param _preStopCommand 服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     * 设置<p>服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束</p>
+                     * @param _preStopCommand <p>服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束</p>
                      * 
                      */
                     void SetPreStopCommand(const std::vector<std::string>& _preStopCommand);
@@ -928,15 +836,15 @@ HYBRID_PAID:
                     bool PreStopCommandHasBeenSet() const;
 
                     /**
-                     * 获取是否启用 grpc 端口
-                     * @return GrpcEnable 是否启用 grpc 端口
+                     * 获取<p>是否启用 grpc 端口</p>
+                     * @return GrpcEnable <p>是否启用 grpc 端口</p>
                      * 
                      */
                     bool GetGrpcEnable() const;
 
                     /**
-                     * 设置是否启用 grpc 端口
-                     * @param _grpcEnable 是否启用 grpc 端口
+                     * 设置<p>是否启用 grpc 端口</p>
+                     * @param _grpcEnable <p>是否启用 grpc 端口</p>
                      * 
                      */
                     void SetGrpcEnable(const bool& _grpcEnable);
@@ -949,15 +857,15 @@ HYBRID_PAID:
                     bool GrpcEnableHasBeenSet() const;
 
                     /**
-                     * 获取健康探针
-                     * @return HealthProbe 健康探针
+                     * 获取<p>健康探针</p>
+                     * @return HealthProbe <p>健康探针</p>
                      * 
                      */
                     HealthProbe GetHealthProbe() const;
 
                     /**
-                     * 设置健康探针
-                     * @param _healthProbe 健康探针
+                     * 设置<p>健康探针</p>
+                     * @param _healthProbe <p>健康探针</p>
                      * 
                      */
                     void SetHealthProbe(const HealthProbe& _healthProbe);
@@ -970,15 +878,15 @@ HYBRID_PAID:
                     bool HealthProbeHasBeenSet() const;
 
                     /**
-                     * 获取滚动更新策略
-                     * @return RollingUpdate 滚动更新策略
+                     * 获取<p>滚动更新策略</p>
+                     * @return RollingUpdate <p>滚动更新策略</p>
                      * 
                      */
                     RollingUpdate GetRollingUpdate() const;
 
                     /**
-                     * 设置滚动更新策略
-                     * @param _rollingUpdate 滚动更新策略
+                     * 设置<p>滚动更新策略</p>
+                     * @param _rollingUpdate <p>滚动更新策略</p>
                      * 
                      */
                     void SetRollingUpdate(const RollingUpdate& _rollingUpdate);
@@ -991,15 +899,15 @@ HYBRID_PAID:
                     bool RollingUpdateHasBeenSet() const;
 
                     /**
-                     * 获取sidecar配置
-                     * @return Sidecar sidecar配置
+                     * 获取<p>sidecar配置</p>
+                     * @return Sidecar <p>sidecar配置</p>
                      * 
                      */
                     SidecarSpec GetSidecar() const;
 
                     /**
-                     * 设置sidecar配置
-                     * @param _sidecar sidecar配置
+                     * 设置<p>sidecar配置</p>
+                     * @param _sidecar <p>sidecar配置</p>
                      * 
                      */
                     void SetSidecar(const SidecarSpec& _sidecar);
@@ -1012,15 +920,15 @@ HYBRID_PAID:
                     bool SidecarHasBeenSet() const;
 
                     /**
-                     * 获取数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-腾讯云存储、模型来源-腾讯云容器镜像、模型来源-资源组、模型来源-数据源”。
-                     * @return VolumeMounts 数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-腾讯云存储、模型来源-腾讯云容器镜像、模型来源-资源组、模型来源-数据源”。
+                     * 获取<p>数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-腾讯云存储、模型来源-腾讯云容器镜像、模型来源-资源组、模型来源-数据源”。</p>
+                     * @return VolumeMounts <p>数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-腾讯云存储、模型来源-腾讯云容器镜像、模型来源-资源组、模型来源-数据源”。</p>
                      * 
                      */
                     std::vector<VolumeMount> GetVolumeMounts() const;
 
                     /**
-                     * 设置数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-腾讯云存储、模型来源-腾讯云容器镜像、模型来源-资源组、模型来源-数据源”。
-                     * @param _volumeMounts 数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-腾讯云存储、模型来源-腾讯云容器镜像、模型来源-资源组、模型来源-数据源”。
+                     * 设置<p>数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-腾讯云存储、模型来源-腾讯云容器镜像、模型来源-资源组、模型来源-数据源”。</p>
+                     * @param _volumeMounts <p>数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-腾讯云存储、模型来源-腾讯云容器镜像、模型来源-资源组、模型来源-数据源”。</p>
                      * 
                      */
                     void SetVolumeMounts(const std::vector<VolumeMount>& _volumeMounts);
@@ -1033,15 +941,15 @@ HYBRID_PAID:
                     bool VolumeMountsHasBeenSet() const;
 
                     /**
-                     * 获取调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用
-                     * @return SchedulingStrategy 调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用
+                     * 获取<p>调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用</p>
+                     * @return SchedulingStrategy <p>调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用</p>
                      * 
                      */
                     std::string GetSchedulingStrategy() const;
 
                     /**
-                     * 设置调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用
-                     * @param _schedulingStrategy 调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用
+                     * 设置<p>调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用</p>
+                     * @param _schedulingStrategy <p>调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用</p>
                      * 
                      */
                     void SetSchedulingStrategy(const std::string& _schedulingStrategy);
@@ -1054,15 +962,15 @@ HYBRID_PAID:
                     bool SchedulingStrategyHasBeenSet() const;
 
                     /**
-                     * 获取网关日志投递相关配置
-                     * @return GatewayLogConfig 网关日志投递相关配置
+                     * 获取<p>网关日志投递相关配置</p>
+                     * @return GatewayLogConfig <p>网关日志投递相关配置</p>
                      * 
                      */
                     LogConfig GetGatewayLogConfig() const;
 
                     /**
-                     * 设置网关日志投递相关配置
-                     * @param _gatewayLogConfig 网关日志投递相关配置
+                     * 设置<p>网关日志投递相关配置</p>
+                     * @param _gatewayLogConfig <p>网关日志投递相关配置</p>
                      * 
                      */
                     void SetGatewayLogConfig(const LogConfig& _gatewayLogConfig);
@@ -1075,15 +983,15 @@ HYBRID_PAID:
                     bool GatewayLogConfigHasBeenSet() const;
 
                     /**
-                     * 获取网关相关配置
-                     * @return GatewayConfig 网关相关配置
+                     * 获取<p>网关相关配置</p>
+                     * @return GatewayConfig <p>网关相关配置</p>
                      * 
                      */
                     GatewayConfig GetGatewayConfig() const;
 
                     /**
-                     * 设置网关相关配置
-                     * @param _gatewayConfig 网关相关配置
+                     * 设置<p>网关相关配置</p>
+                     * @param _gatewayConfig <p>网关相关配置</p>
                      * 
                      */
                     void SetGatewayConfig(const GatewayConfig& _gatewayConfig);
@@ -1098,294 +1006,271 @@ HYBRID_PAID:
                 private:
 
                     /**
-                     * 新增版本时需要填写
+                     * <p>新增版本时需要填写</p>
                      */
                     std::string m_serviceGroupId;
                     bool m_serviceGroupIdHasBeenSet;
 
                     /**
-                     * 不超过60个字，仅支持英文、数字、下划线"_"、短横"-"，只能以英文、数字开头
+                     * <p>不超过60个字，仅支持英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以英文、数字开头</p>
                      */
                     std::string m_serviceGroupName;
                     bool m_serviceGroupNameHasBeenSet;
 
                     /**
-                     * 模型服务的描述
+                     * <p>模型服务的描述</p>
                      */
                     std::string m_serviceDescription;
                     bool m_serviceDescriptionHasBeenSet;
 
                     /**
-                     * 付费模式,有 PREPAID （包年包月）和 POSTPAID_BY_HOUR（按量付费）
+                     * <p>付费模式,有 PREPAID （包年包月）和 POSTPAID_BY_HOUR（按量付费）</p>
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;
 
                     /**
-                     * 预付费模式下所属的资源组id，同服务组下唯一
+                     * <p>预付费模式下所属的资源组id，同服务组下唯一</p>
                      */
                     std::string m_resourceGroupId;
                     bool m_resourceGroupIdHasBeenSet;
 
                     /**
-                     * 模型信息，需要挂载模型时填写
+                     * <p>模型信息，需要挂载模型时填写</p>
                      */
                     ModelInfo m_modelInfo;
                     bool m_modelInfoHasBeenSet;
 
                     /**
-                     * 镜像信息，配置服务运行所需的镜像地址等信息
+                     * <p>镜像信息，配置服务运行所需的镜像地址等信息</p>
                      */
                     ImageInfo m_imageInfo;
                     bool m_imageInfoHasBeenSet;
 
                     /**
-                     * 环境变量，可选参数，用于配置容器中的环境变量
+                     * <p>环境变量，可选参数，用于配置容器中的环境变量</p>
                      */
                     std::vector<EnvVar> m_env;
                     bool m_envHasBeenSet;
 
                     /**
-                     * 资源描述，指定包年包月模式下的cpu,mem,gpu等信息，后付费无需填写
+                     * <p>资源描述，指定包年包月模式下的cpu,mem,gpu等信息，后付费无需填写</p>
                      */
                     ResourceInfo m_resources;
                     bool m_resourcesHasBeenSet;
 
                     /**
-                     * 使用DescribeBillingSpecs接口返回的规格列表中的值，或者参考实例列表:
-TI.S.MEDIUM.POST	2C4G
-TI.S.LARGE.POST	4C8G
-TI.S.2XLARGE16.POST	8C16G
-TI.S.2XLARGE32.POST	8C32G
-TI.S.4XLARGE32.POST	16C32G
-TI.S.4XLARGE64.POST	16C64G
-TI.S.6XLARGE48.POST	24C48G
-TI.S.6XLARGE96.POST	24C96G
-TI.S.8XLARGE64.POST	32C64G
-TI.S.8XLARGE128.POST 32C128G
-TI.GN7.LARGE20.POST	4C20G T4*1/4
-TI.GN7.2XLARGE40.POST	10C40G T4*1/2
-TI.GN7.2XLARGE32.POST	8C32G T4*1
-TI.GN7.5XLARGE80.POST	20C80G T4*1
-TI.GN7.8XLARGE128.POST	32C128G T4*1
-TI.GN7.10XLARGE160.POST	40C160G T4*2
-TI.GN7.20XLARGE320.POST	80C320G T4*4
+                     * <p>使用DescribeBillingSpecs接口返回的规格列表中的值，或者参考实例列表:<br>TI.S.MEDIUM.POST    2C4G<br>TI.S.LARGE.POST    4C8G<br>TI.S.2XLARGE16.POST    8C16G<br>TI.S.2XLARGE32.POST    8C32G<br>TI.S.4XLARGE32.POST    16C32G<br>TI.S.4XLARGE64.POST    16C64G<br>TI.S.6XLARGE48.POST    24C48G<br>TI.S.6XLARGE96.POST    24C96G<br>TI.S.8XLARGE64.POST    32C64G<br>TI.S.8XLARGE128.POST 32C128G<br>TI.GN7.LARGE20.POST    4C20G T4<em>1/4<br>TI.GN7.2XLARGE40.POST    10C40G T4</em>1/2<br>TI.GN7.2XLARGE32.POST    8C32G T4<em>1<br>TI.GN7.5XLARGE80.POST    20C80G T4</em>1<br>TI.GN7.8XLARGE128.POST    32C128G T4<em>1<br>TI.GN7.10XLARGE160.POST    40C160G T4</em>2<br>TI.GN7.20XLARGE320.POST    80C320G T4*4</p>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 扩缩容类型 支持：自动 - "AUTO", 手动 - "MANUAL",默认为MANUAL
+                     * <p>扩缩容类型 支持：自动 - &quot;AUTO&quot;, 手动 - &quot;MANUAL&quot;,默认为MANUAL</p>
                      */
                     std::string m_scaleMode;
                     bool m_scaleModeHasBeenSet;
 
                     /**
-                     * 实例数量, 不同计费模式和调节模式下对应关系如下
-PREPAID 和 POSTPAID_BY_HOUR:
-手动调节模式下对应 实例数量
-自动调节模式下对应 基于时间的默认策略的实例数量
-HYBRID_PAID:
-后付费实例手动调节模式下对应 实例数量
-后付费实例自动调节模式下对应 时间策略的默认策略的实例数量
+                     * <p>实例数量, 不同计费模式和调节模式下对应关系如下<br>PREPAID 和 POSTPAID_BY_HOUR:<br>手动调节模式下对应 实例数量<br>自动调节模式下对应 基于时间的默认策略的实例数量<br>HYBRID_PAID:<br>后付费实例手动调节模式下对应 实例数量<br>后付费实例自动调节模式下对应 时间策略的默认策略的实例数量</p>
                      */
                     int64_t m_replicas;
                     bool m_replicasHasBeenSet;
 
                     /**
-                     * 自动伸缩信息
+                     * <p>自动伸缩信息</p>
                      */
                     HorizontalPodAutoscaler m_horizontalPodAutoscaler;
                     bool m_horizontalPodAutoscalerHasBeenSet;
 
                     /**
-                     * 是否开启日志投递，开启后需填写配置投递到指定cls
+                     * <p>是否开启日志投递，开启后需填写配置投递到指定cls</p>
                      */
                     bool m_logEnable;
                     bool m_logEnableHasBeenSet;
 
                     /**
-                     * 日志配置，需要投递服务日志到指定cls时填写
+                     * <p>日志配置，需要投递服务日志到指定cls时填写</p>
                      */
                     LogConfig m_logConfig;
                     bool m_logConfigHasBeenSet;
 
                     /**
-                     * 是否开启接口鉴权，开启后自动生成token信息，访问需要token鉴权
+                     * <p>是否开启接口鉴权，开启后自动生成token信息，访问需要token鉴权</p>
                      */
                     bool m_authorizationEnable;
                     bool m_authorizationEnableHasBeenSet;
 
                     /**
-                     * 腾讯云标签
+                     * <p>腾讯云标签</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 是否新增版本
+                     * <p>是否新增版本</p>
                      */
                     bool m_newVersion;
                     bool m_newVersionHasBeenSet;
 
                     /**
-                     * 定时任务配置，使用定时策略时填写
+                     * <p>定时任务配置，使用定时策略时填写</p>
                      */
                     std::vector<CronScaleJob> m_cronScaleJobs;
                     bool m_cronScaleJobsHasBeenSet;
 
                     /**
-                     * 自动伸缩策略配置 HPA : 通过HPA进行弹性伸缩 CRON 通过定时任务进行伸缩
+                     * <p>自动伸缩策略配置 HPA : 通过HPA进行弹性伸缩 CRON 通过定时任务进行伸缩</p>
                      */
                     std::string m_scaleStrategy;
                     bool m_scaleStrategyHasBeenSet;
 
                     /**
-                     * 计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数
+                     * <p>计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数</p>
                      */
                     int64_t m_hybridBillingPrepaidReplicas;
                     bool m_hybridBillingPrepaidReplicasHasBeenSet;
 
                     /**
-                     * [AUTO_ML 自动学习，自动学习正式发布 AUTO_ML_FORMAL, DEFAULT 默认]
+                     * <p>[AUTO_ML 自动学习，自动学习正式发布 AUTO_ML_FORMAL, DEFAULT 默认]</p>
                      */
                     std::string m_createSource;
                     bool m_createSourceHasBeenSet;
 
                     /**
-                     * 是否开启模型的热更新。默认不开启
+                     * <p>是否开启模型的热更新。默认不开启</p>
                      */
                     bool m_modelHotUpdateEnable;
                     bool m_modelHotUpdateEnableHasBeenSet;
 
                     /**
-                     * 定时停止配置
+                     * <p>定时停止配置</p>
                      */
                     ScheduledAction m_scheduledAction;
                     bool m_scheduledActionHasBeenSet;
 
                     /**
-                     * 挂载配置，目前只支持CFS
+                     * <p>挂载配置，目前只支持CFS</p>
                      */
                     VolumeMount m_volumeMount;
                     bool m_volumeMountHasBeenSet;
 
                     /**
-                     * 服务限速限流相关配置
+                     * <p>服务限速限流相关配置</p>
                      */
                     ServiceLimit m_serviceLimit;
                     bool m_serviceLimitHasBeenSet;
 
                     /**
-                     * 回调地址，用于回调创建服务状态信息，回调格式&内容详情见：[TI-ONE 接口回调说明](https://cloud.tencent.com/document/product/851/84292)
+                     * <p>回调地址，用于回调创建服务状态信息，回调格式&amp;内容详情见：<a href="https://cloud.tencent.com/document/product/851/84292">TI-ONE 接口回调说明</a></p>
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
 
                     /**
-                     * 是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。
+                     * <p>是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。</p>
                      */
                     bool m_modelTurboEnable;
                     bool m_modelTurboEnableHasBeenSet;
 
                     /**
-                     * 服务分类
+                     * <p>服务分类</p>
                      */
                     std::string m_serviceCategory;
                     bool m_serviceCategoryHasBeenSet;
 
                     /**
-                     * 服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数
+                     * <p>服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数</p>
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
 
                     /**
-                     * 是否开启TIONE内网访问外部，此功能仅支持后付费机型与从TIONE平台购买的预付费机型；使用从CVM选择资源组时此配置不生效。
+                     * <p>是否开启TIONE内网访问外部，此功能仅支持后付费机型与从TIONE平台购买的预付费机型；使用从CVM选择资源组时此配置不生效。</p>
                      */
                     ServiceEIP m_serviceEIP;
                     bool m_serviceEIPHasBeenSet;
 
                     /**
-                     * 服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效
+                     * <p>服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效</p>
                      */
                     std::string m_commandBase64;
                     bool m_commandBase64HasBeenSet;
 
                     /**
-                     * 服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092
+                     * <p>服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092</p>
                      */
                     int64_t m_servicePort;
                     bool m_servicePortHasBeenSet;
 
                     /**
-                     * 服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD
+                     * <p>服务的部署类型 [标准部署，分布式多机部署，] 默认STANDARD</p><p>枚举值：</p><ul><li>STANDARD： 标准部署</li><li>DIST： 多机分布式部署</li><li>ROLE_SET： 多角色部署</li></ul>
                      */
                     std::string m_deployType;
                     bool m_deployTypeHasBeenSet;
 
                     /**
-                     * 单副本下的实例数，仅在部署类型为DIST时生效，默认1
+                     * <p>单副本下的实例数，仅在部署类型为DIST时生效，默认1</p>
                      */
                     int64_t m_instancePerReplicas;
                     bool m_instancePerReplicasHasBeenSet;
 
                     /**
-                     * 服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     * <p>服务的优雅退出时限。单位为秒，默认值为30，最小为1</p>
                      */
                     int64_t m_terminationGracePeriodSeconds;
                     bool m_terminationGracePeriodSecondsHasBeenSet;
 
                     /**
-                     * 服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     * <p>服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束</p>
                      */
                     std::vector<std::string> m_preStopCommand;
                     bool m_preStopCommandHasBeenSet;
 
                     /**
-                     * 是否启用 grpc 端口
+                     * <p>是否启用 grpc 端口</p>
                      */
                     bool m_grpcEnable;
                     bool m_grpcEnableHasBeenSet;
 
                     /**
-                     * 健康探针
+                     * <p>健康探针</p>
                      */
                     HealthProbe m_healthProbe;
                     bool m_healthProbeHasBeenSet;
 
                     /**
-                     * 滚动更新策略
+                     * <p>滚动更新策略</p>
                      */
                     RollingUpdate m_rollingUpdate;
                     bool m_rollingUpdateHasBeenSet;
 
                     /**
-                     * sidecar配置
+                     * <p>sidecar配置</p>
                      */
                     SidecarSpec m_sidecar;
                     bool m_sidecarHasBeenSet;
 
                     /**
-                     * 数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-腾讯云存储、模型来源-腾讯云容器镜像、模型来源-资源组、模型来源-数据源”。
+                     * <p>数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-腾讯云存储、模型来源-腾讯云容器镜像、模型来源-资源组、模型来源-数据源”。</p>
                      */
                     std::vector<VolumeMount> m_volumeMounts;
                     bool m_volumeMountsHasBeenSet;
 
                     /**
-                     * 调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用
+                     * <p>调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用</p>
                      */
                     std::string m_schedulingStrategy;
                     bool m_schedulingStrategyHasBeenSet;
 
                     /**
-                     * 网关日志投递相关配置
+                     * <p>网关日志投递相关配置</p>
                      */
                     LogConfig m_gatewayLogConfig;
                     bool m_gatewayLogConfigHasBeenSet;
 
                     /**
-                     * 网关相关配置
+                     * <p>网关相关配置</p>
                      */
                     GatewayConfig m_gatewayConfig;
                     bool m_gatewayConfigHasBeenSet;

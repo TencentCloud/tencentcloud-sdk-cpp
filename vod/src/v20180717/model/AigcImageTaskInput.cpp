@@ -28,7 +28,8 @@ AigcImageTaskInput::AigcImageTaskInput() :
     m_negativePromptHasBeenSet(false),
     m_enhancePromptHasBeenSet(false),
     m_generationModeHasBeenSet(false),
-    m_outputConfigHasBeenSet(false)
+    m_outputConfigHasBeenSet(false),
+    m_seedHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,16 @@ CoreInternalOutcome AigcImageTaskInput::Deserialize(const rapidjson::Value &valu
         m_outputConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("Seed") && !value["Seed"].IsNull())
+    {
+        if (!value["Seed"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcImageTaskInput.Seed` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_seed = value["Seed"].GetInt64();
+        m_seedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -211,6 +222,14 @@ void AigcImageTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_outputConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_seedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Seed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_seed, allocator);
     }
 
 }
@@ -342,5 +361,21 @@ void AigcImageTaskInput::SetOutputConfig(const AigcImageOutputConfig& _outputCon
 bool AigcImageTaskInput::OutputConfigHasBeenSet() const
 {
     return m_outputConfigHasBeenSet;
+}
+
+int64_t AigcImageTaskInput::GetSeed() const
+{
+    return m_seed;
+}
+
+void AigcImageTaskInput::SetSeed(const int64_t& _seed)
+{
+    m_seed = _seed;
+    m_seedHasBeenSet = true;
+}
+
+bool AigcImageTaskInput::SeedHasBeenSet() const
+{
+    return m_seedHasBeenSet;
 }
 

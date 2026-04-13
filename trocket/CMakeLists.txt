@@ -21,6 +21,7 @@ set(trocket_public_header
 set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DetailedRolePerm.h
   include/tencentcloud/trocket/v20230308/model/DescribeProductSKUsRequest.h
+  include/tencentcloud/trocket/v20230308/model/CreateMigrationTaskRequest.h
   include/tencentcloud/trocket/v20230308/model/ResetConsumerGroupOffsetResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeSmoothMigrationTaskListRequest.h
   include/tencentcloud/trocket/v20230308/model/ProductSKU.h
@@ -63,6 +64,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/ModifyRoleResponse.h
   include/tencentcloud/trocket/v20230308/model/TopicStageChangeResult.h
   include/tencentcloud/trocket/v20230308/model/ImportSourceClusterTopicsRequest.h
+  include/tencentcloud/trocket/v20230308/model/SourceClusterGroupConfig.h
   include/tencentcloud/trocket/v20230308/model/DeleteInstanceResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeTopicResponse.h
   include/tencentcloud/trocket/v20230308/model/SmoothMigrationTaskItem.h
@@ -124,7 +126,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DoHealthCheckOnMigratingTopicResponse.h
   include/tencentcloud/trocket/v20230308/model/CreateRoleResponse.h
   include/tencentcloud/trocket/v20230308/model/ModifyInstanceEndpointRequest.h
-  include/tencentcloud/trocket/v20230308/model/SourceClusterGroupConfig.h
+  include/tencentcloud/trocket/v20230308/model/CreateMigrationTaskResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeTopicListResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeConsumerClientListRequest.h
   include/tencentcloud/trocket/v20230308/model/MigratingTopic.h
@@ -150,6 +152,7 @@ set(trocket_src
   src/v20230308/TrocketClient.cpp
   src/v20230308/model/DetailedRolePerm.cpp
   src/v20230308/model/DescribeProductSKUsRequest.cpp
+  src/v20230308/model/CreateMigrationTaskRequest.cpp
   src/v20230308/model/ResetConsumerGroupOffsetResponse.cpp
   src/v20230308/model/DescribeSmoothMigrationTaskListRequest.cpp
   src/v20230308/model/ProductSKU.cpp
@@ -192,6 +195,7 @@ set(trocket_src
   src/v20230308/model/ModifyRoleResponse.cpp
   src/v20230308/model/TopicStageChangeResult.cpp
   src/v20230308/model/ImportSourceClusterTopicsRequest.cpp
+  src/v20230308/model/SourceClusterGroupConfig.cpp
   src/v20230308/model/DeleteInstanceResponse.cpp
   src/v20230308/model/DescribeTopicResponse.cpp
   src/v20230308/model/SmoothMigrationTaskItem.cpp
@@ -253,7 +257,7 @@ set(trocket_src
   src/v20230308/model/DoHealthCheckOnMigratingTopicResponse.cpp
   src/v20230308/model/CreateRoleResponse.cpp
   src/v20230308/model/ModifyInstanceEndpointRequest.cpp
-  src/v20230308/model/SourceClusterGroupConfig.cpp
+  src/v20230308/model/CreateMigrationTaskResponse.cpp
   src/v20230308/model/DescribeTopicListResponse.cpp
   src/v20230308/model/DescribeConsumerClientListRequest.cpp
   src/v20230308/model/MigratingTopic.cpp

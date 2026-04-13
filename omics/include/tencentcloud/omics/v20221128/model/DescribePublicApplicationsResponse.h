@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取公共应用。
+                     * 获取<p>公共应用。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Applications 公共应用。
+                     * @return Applications <p>公共应用。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool ApplicationsHasBeenSet() const;
 
                     /**
-                     * 获取符合条件的数量。
+                     * 获取<p>符合条件的数量。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount 符合条件的数量。
+                     * @return TotalCount <p>符合条件的数量。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -79,14 +79,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 公共应用。
+                     * <p>公共应用。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PublicApplication> m_applications;
                     bool m_applicationsHasBeenSet;
 
                     /**
-                     * 符合条件的数量。
+                     * <p>符合条件的数量。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;

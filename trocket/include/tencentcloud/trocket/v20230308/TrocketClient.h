@@ -29,6 +29,8 @@
 #include <tencentcloud/trocket/v20230308/model/CreateConsumerGroupResponse.h>
 #include <tencentcloud/trocket/v20230308/model/CreateInstanceRequest.h>
 #include <tencentcloud/trocket/v20230308/model/CreateInstanceResponse.h>
+#include <tencentcloud/trocket/v20230308/model/CreateMigrationTaskRequest.h>
+#include <tencentcloud/trocket/v20230308/model/CreateMigrationTaskResponse.h>
 #include <tencentcloud/trocket/v20230308/model/CreateRoleRequest.h>
 #include <tencentcloud/trocket/v20230308/model/CreateRoleResponse.h>
 #include <tencentcloud/trocket/v20230308/model/CreateTopicRequest.h>
@@ -140,6 +142,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateInstanceResponse> CreateInstanceOutcome;
                 typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::CreateInstanceRequest&, CreateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMigrationTaskResponse> CreateMigrationTaskOutcome;
+                typedef std::future<CreateMigrationTaskOutcome> CreateMigrationTaskOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::CreateMigrationTaskRequest&, CreateMigrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMigrationTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRoleResponse> CreateRoleOutcome;
                 typedef std::future<CreateRoleOutcome> CreateRoleOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::CreateRoleRequest&, CreateRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoleAsyncHandler;
@@ -303,6 +308,15 @@ namespace TencentCloud
                 CreateInstanceOutcome CreateInstance(const Model::CreateInstanceRequest &request);
                 void CreateInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateInstanceOutcomeCallable CreateInstanceCallable(const Model::CreateInstanceRequest& request);
+
+                /**
+                 *创建元数据迁移上云任务
+                 * @param req CreateMigrationTaskRequest
+                 * @return CreateMigrationTaskOutcome
+                 */
+                CreateMigrationTaskOutcome CreateMigrationTask(const Model::CreateMigrationTaskRequest &request);
+                void CreateMigrationTaskAsync(const Model::CreateMigrationTaskRequest& request, const CreateMigrationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMigrationTaskOutcomeCallable CreateMigrationTaskCallable(const Model::CreateMigrationTaskRequest& request);
 
                 /**
                  *添加角色。
